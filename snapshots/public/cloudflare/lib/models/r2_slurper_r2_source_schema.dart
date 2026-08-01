@@ -21,13 +21,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'R2SlurperR2SourceSchemaVendor($value)'; } 
  }
-@immutable final class R2SlurperR2SourceSchema {const R2SlurperR2SourceSchema({required this.bucket, required this.secret, required this.vendor, this.jurisdiction, this.keys, this.pathPrefix, });
+@immutable final class R2SlurperR2SourceSchema {const R2SlurperR2SourceSchema({required this.bucket, required this.secret, required this.vendor, this.jurisdiction, this.keys = const Omittable.absent(), this.pathPrefix = const Omittable.absent(), });
 
 factory R2SlurperR2SourceSchema.fromJson(Map<String, dynamic> json) { return R2SlurperR2SourceSchema(
   bucket: json['bucket'] as String,
   jurisdiction: json['jurisdiction'] != null ? R2SlurperJurisdiction.fromJson(json['jurisdiction'] as String) : null,
-  keys: (json['keys'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  pathPrefix: json['pathPrefix'] as String?,
+  keys: json.containsKey('keys') ? Omittable((json['keys'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
+  pathPrefix: json.containsKey('pathPrefix') ? Omittable(json['pathPrefix'] as String?) : const Omittable.absent(),
   secret: R2SlurperS3LikeCredsSchema.fromJson(json['secret'] as Map<String, dynamic>),
   vendor: R2SlurperR2SourceSchemaVendor.fromJson(json['vendor'] as String),
 ); }
@@ -36,9 +36,9 @@ final String bucket;
 
 final R2SlurperJurisdiction? jurisdiction;
 
-final List<String>? keys;
+final Omittable<List<String>?> keys;
 
-final String? pathPrefix;
+final Omittable<String?> pathPrefix;
 
 final R2SlurperS3LikeCredsSchema secret;
 
@@ -47,19 +47,19 @@ final R2SlurperR2SourceSchemaVendor vendor;
 Map<String, dynamic> toJson() { return {
   'bucket': bucket,
   if (jurisdiction != null) 'jurisdiction': jurisdiction?.toJson(),
-  'keys': ?keys,
-  'pathPrefix': ?pathPrefix,
+  if (keys.isPresent) 'keys': keys.value,
+  if (pathPrefix.isPresent) 'pathPrefix': pathPrefix.value,
   'secret': secret.toJson(),
   'vendor': vendor.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucket') && json['bucket'] is String &&
       json.containsKey('secret') &&
       json.containsKey('vendor'); } 
-R2SlurperR2SourceSchema copyWith({String? bucket, R2SlurperJurisdiction Function()? jurisdiction, List<String>? Function()? keys, String? Function()? pathPrefix, R2SlurperS3LikeCredsSchema? secret, R2SlurperR2SourceSchemaVendor? vendor, }) { return R2SlurperR2SourceSchema(
+R2SlurperR2SourceSchema copyWith({String? bucket, R2SlurperJurisdiction? Function()? jurisdiction, Omittable<List<String>?>? keys, Omittable<String?>? pathPrefix, R2SlurperS3LikeCredsSchema? secret, R2SlurperR2SourceSchemaVendor? vendor, }) { return R2SlurperR2SourceSchema(
   bucket: bucket ?? this.bucket,
   jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
-  keys: keys != null ? keys() : this.keys,
-  pathPrefix: pathPrefix != null ? pathPrefix() : this.pathPrefix,
+  keys: keys ?? this.keys,
+  pathPrefix: pathPrefix ?? this.pathPrefix,
   secret: secret ?? this.secret,
   vendor: vendor ?? this.vendor,
 ); } 
@@ -67,10 +67,11 @@ R2SlurperR2SourceSchema copyWith({String? bucket, R2SlurperJurisdiction Function
       other is R2SlurperR2SourceSchema &&
           bucket == other.bucket &&
           jurisdiction == other.jurisdiction &&
-          listEquals(keys, other.keys) &&
+          keys.isPresent == other.keys.isPresent &&
+          listEquals(keys.value, other.keys.value) &&
           pathPrefix == other.pathPrefix &&
           secret == other.secret &&
           vendor == other.vendor; } 
-@override int get hashCode { return Object.hash(bucket, jurisdiction, Object.hashAll(keys ?? const []), pathPrefix, secret, vendor); } 
+@override int get hashCode { return Object.hash(bucket, jurisdiction, Object.hashAll(keys.value ?? const []), pathPrefix, secret, vendor); } 
 @override String toString() { return 'R2SlurperR2SourceSchema(bucket: $bucket, jurisdiction: $jurisdiction, keys: $keys, pathPrefix: $pathPrefix, secret: $secret, vendor: $vendor)'; } 
  }

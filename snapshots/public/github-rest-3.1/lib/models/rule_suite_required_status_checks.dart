@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   if (checks != null) 'checks': checks?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'checks'}.contains(key)); } 
-RuleSuiteRequiredStatusChecks copyWith({List<RuleSuiteRequiredStatusChecksChecks> Function()? checks}) { return RuleSuiteRequiredStatusChecks(
+RuleSuiteRequiredStatusChecks copyWith({List<RuleSuiteRequiredStatusChecksChecks>? Function()? checks}) { return RuleSuiteRequiredStatusChecks(
   checks: checks != null ? checks() : this.checks,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

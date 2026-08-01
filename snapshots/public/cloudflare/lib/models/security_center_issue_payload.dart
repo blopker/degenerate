@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'zone_tag': ?zoneTag,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'detection_method', 'zone_tag'}.contains(key)); } 
-SecurityCenterIssuePayload copyWith({String Function()? detectionMethod, String Function()? zoneTag, }) { return SecurityCenterIssuePayload(
+SecurityCenterIssuePayload copyWith({String? Function()? detectionMethod, String? Function()? zoneTag, }) { return SecurityCenterIssuePayload(
   detectionMethod: detectionMethod != null ? detectionMethod() : this.detectionMethod,
   zoneTag: zoneTag != null ? zoneTag() : this.zoneTag,
 ); } 

@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'key': ?key,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'key'}.contains(key)); } 
-LogshareFieldsResponse copyWith({String Function()? key}) { return LogshareFieldsResponse(
+LogshareFieldsResponse copyWith({String? Function()? key}) { return LogshareFieldsResponse(
   key: key != null ? key() : this.key,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('email'); } 
-ZeroTrustUsersCreateUserRequest copyWith({AccessSchemasEmail? email, AccessUsersComponentsSchemasName Function()? name, }) { return ZeroTrustUsersCreateUserRequest(
+ZeroTrustUsersCreateUserRequest copyWith({AccessSchemasEmail? email, AccessUsersComponentsSchemasName? Function()? name, }) { return ZeroTrustUsersCreateUserRequest(
   email: email ?? this.email,
   name: name != null ? name() : this.name,
 ); } 

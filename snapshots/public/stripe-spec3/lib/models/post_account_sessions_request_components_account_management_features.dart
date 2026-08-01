@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'external_account_collection': ?externalAccountCollection,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disable_stripe_user_authentication', 'external_account_collection'}.contains(key)); } 
-PostAccountSessionsRequestComponentsAccountManagementFeatures copyWith({bool Function()? disableStripeUserAuthentication, bool Function()? externalAccountCollection, }) { return PostAccountSessionsRequestComponentsAccountManagementFeatures(
+PostAccountSessionsRequestComponentsAccountManagementFeatures copyWith({bool? Function()? disableStripeUserAuthentication, bool? Function()? externalAccountCollection, }) { return PostAccountSessionsRequestComponentsAccountManagementFeatures(
   disableStripeUserAuthentication: disableStripeUserAuthentication != null ? disableStripeUserAuthentication() : this.disableStripeUserAuthentication,
   externalAccountCollection: externalAccountCollection != null ? externalAccountCollection() : this.externalAccountCollection,
 ); } 

@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name'}.contains(key)); } 
-AccessNameResponseResult copyWith({AccessTagsComponentsSchemasName Function()? name}) { return AccessNameResponseResult(
+AccessNameResponseResult copyWith({AccessTagsComponentsSchemasName? Function()? name}) { return AccessNameResponseResult(
   name: name != null ? name() : this.name,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

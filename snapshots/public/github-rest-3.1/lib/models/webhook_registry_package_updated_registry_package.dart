@@ -43,7 +43,7 @@ final String updatedAt;
 
 Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
-  'description': ?description,
+  'description': description,
   'ecosystem': ecosystem,
   'html_url': htmlUrl,
   'id': id,
@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'owner': owner.toJson(),
   'package_type': packageType,
   'package_version': packageVersion.toJson(),
-  'registry': ?registry,
+  'registry': registry,
   'updated_at': updatedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&

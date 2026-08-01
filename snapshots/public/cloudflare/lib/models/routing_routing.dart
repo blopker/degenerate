@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'route': ?route,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'last_updated', 'route'}.contains(key)); } 
-RoutingRouting copyWith({ShieldTimestamp Function()? lastUpdated, String Function()? route, }) { return RoutingRouting(
+RoutingRouting copyWith({ShieldTimestamp? Function()? lastUpdated, String? Function()? route, }) { return RoutingRouting(
   lastUpdated: lastUpdated != null ? lastUpdated() : this.lastUpdated,
   route: route != null ? route() : this.route,
 ); } 

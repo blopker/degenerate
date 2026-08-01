@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
       json.containsKey('scopes') &&
       json.containsKey('value'); } 
-SecretsStoreCreateSecretObject copyWith({SecretsStoreComment Function()? comment, SecretsStoreSecretName? name, List<String>? scopes, SecretsStoreValue? value, }) { return SecretsStoreCreateSecretObject(
+SecretsStoreCreateSecretObject copyWith({SecretsStoreComment? Function()? comment, SecretsStoreSecretName? name, List<String>? scopes, SecretsStoreValue? value, }) { return SecretsStoreCreateSecretObject(
   comment: comment != null ? comment() : this.comment,
   name: name ?? this.name,
   scopes: scopes ?? this.scopes,

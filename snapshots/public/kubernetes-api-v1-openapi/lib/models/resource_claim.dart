@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'request': ?request,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ResourceClaim copyWith({String? name, String Function()? request, }) { return ResourceClaim(
+ResourceClaim copyWith({String? name, String? Function()? request, }) { return ResourceClaim(
   name: name ?? this.name,
   request: request != null ? request() : this.request,
 ); } 

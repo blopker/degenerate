@@ -24,12 +24,12 @@ Map<String, dynamic> toJson() { return {
   if (conflictsWith != null) 'conflicts_with': conflictsWith?.map((e) => e.toJson()).toList(),
   'enabled': enabled,
   'has_conflict': hasConflict,
-  'id': ?id,
+  'id': id,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('has_conflict') && json['has_conflict'] is bool &&
       json.containsKey('id'); } 
-RulesetsManagedTransformsManagedRequestHeaders copyWith({List<RulesetsManagedTransformId> Function()? conflictsWith, bool? enabled, bool? hasConflict, dynamic Function()? id, }) { return RulesetsManagedTransformsManagedRequestHeaders(
+RulesetsManagedTransformsManagedRequestHeaders copyWith({List<RulesetsManagedTransformId>? Function()? conflictsWith, bool? enabled, bool? hasConflict, dynamic Function()? id, }) { return RulesetsManagedTransformsManagedRequestHeaders(
   conflictsWith: conflictsWith != null ? conflictsWith() : this.conflictsWith,
   enabled: enabled ?? this.enabled,
   hasConflict: hasConflict ?? this.hasConflict,

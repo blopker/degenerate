@@ -26,13 +26,13 @@ Map<String, dynamic> toJson() { return {
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-  'result': ?result,
+  'result': result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-IpAddressManagementAddressMapsRemoveAZoneMembershipFromAnAddressMapResponse4Xx copyWith({List<AddressingMessages2>? errors, List<AddressingMessages2>? messages, bool? success, IpAddressManagementAddressMapsRemoveAZoneMembershipFromAnAddressMapResponse4XxResultInfo Function()? resultInfo, Map<String, dynamic>? Function()? result, }) { return IpAddressManagementAddressMapsRemoveAZoneMembershipFromAnAddressMapResponse4Xx(
+IpAddressManagementAddressMapsRemoveAZoneMembershipFromAnAddressMapResponse4Xx copyWith({List<AddressingMessages2>? errors, List<AddressingMessages2>? messages, bool? success, IpAddressManagementAddressMapsRemoveAZoneMembershipFromAnAddressMapResponse4XxResultInfo? Function()? resultInfo, Map<String, dynamic>? Function()? result, }) { return IpAddressManagementAddressMapsRemoveAZoneMembershipFromAnAddressMapResponse4Xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

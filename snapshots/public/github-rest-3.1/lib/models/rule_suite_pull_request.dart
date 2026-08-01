@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   if (pullRequest != null) 'pull_request': pullRequest?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'pull_request'}.contains(key)); } 
-RuleSuitePullRequest copyWith({RuleSuitePullRequestPullRequest Function()? pullRequest}) { return RuleSuitePullRequest(
+RuleSuitePullRequest copyWith({RuleSuitePullRequestPullRequest? Function()? pullRequest}) { return RuleSuitePullRequest(
   pullRequest: pullRequest != null ? pullRequest() : this.pullRequest,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Service binding.
-@immutable final class PagesDeploymentConfigValuesServicesValue {const PagesDeploymentConfigValuesServicesValue({required this.environment, required this.service, this.entrypoint, });
+@immutable final class PagesDeploymentConfigValuesServicesValue {const PagesDeploymentConfigValuesServicesValue({required this.environment, required this.service, this.entrypoint = const Omittable.absent(), });
 
 factory PagesDeploymentConfigValuesServicesValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesServicesValue(
-  entrypoint: json['entrypoint'] as String?,
+  entrypoint: json.containsKey('entrypoint') ? Omittable(json['entrypoint'] as String?) : const Omittable.absent(),
   environment: json['environment'] as String,
   service: json['service'] as String,
 ); }
 
 /// The entrypoint to bind to.
-final String? entrypoint;
+final Omittable<String?> entrypoint;
 
 /// The Service environment.
 final String environment;
@@ -19,14 +19,14 @@ final String environment;
 final String service;
 
 Map<String, dynamic> toJson() { return {
-  'entrypoint': ?entrypoint,
+  if (entrypoint.isPresent) 'entrypoint': entrypoint.value,
   'environment': environment,
   'service': service,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('environment') && json['environment'] is String &&
       json.containsKey('service') && json['service'] is String; } 
-PagesDeploymentConfigValuesServicesValue copyWith({String? Function()? entrypoint, String? environment, String? service, }) { return PagesDeploymentConfigValuesServicesValue(
-  entrypoint: entrypoint != null ? entrypoint() : this.entrypoint,
+PagesDeploymentConfigValuesServicesValue copyWith({Omittable<String?>? entrypoint, String? environment, String? service, }) { return PagesDeploymentConfigValuesServicesValue(
+  entrypoint: entrypoint ?? this.entrypoint,
   environment: environment ?? this.environment,
   service: service ?? this.service,
 ); } 

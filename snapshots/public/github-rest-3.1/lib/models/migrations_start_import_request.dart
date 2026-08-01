@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
   'tfvc_project': ?tfvcProject,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('vcs_url') && json['vcs_url'] is String; } 
-MigrationsStartImportRequest copyWith({String? vcsUrl, MigrationsStartImportRequestVcs Function()? vcs, String Function()? vcsUsername, String Function()? vcsPassword, String Function()? tfvcProject, }) { return MigrationsStartImportRequest(
+MigrationsStartImportRequest copyWith({String? vcsUrl, MigrationsStartImportRequestVcs? Function()? vcs, String? Function()? vcsUsername, String? Function()? vcsPassword, String? Function()? tfvcProject, }) { return MigrationsStartImportRequest(
   vcsUrl: vcsUrl ?? this.vcsUrl,
   vcs: vcs != null ? vcs() : this.vcs,
   vcsUsername: vcsUsername != null ? vcsUsername() : this.vcsUsername,

@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'recording_minutes_consumed': ?recordingMinutesConsumed,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'day_stats', 'recording_count', 'recording_minutes_consumed'}.contains(key)); } 
-GetOrgAnalyticsResponseDataRecordingStats copyWith({List<GetOrgAnalyticsResponseDataRecordingStatsDayStats> Function()? dayStats, int Function()? recordingCount, double Function()? recordingMinutesConsumed, }) { return GetOrgAnalyticsResponseDataRecordingStats(
+GetOrgAnalyticsResponseDataRecordingStats copyWith({List<GetOrgAnalyticsResponseDataRecordingStatsDayStats>? Function()? dayStats, int? Function()? recordingCount, double? Function()? recordingMinutesConsumed, }) { return GetOrgAnalyticsResponseDataRecordingStats(
   dayStats: dayStats != null ? dayStats() : this.dayStats,
   recordingCount: recordingCount != null ? recordingCount() : this.recordingCount,
   recordingMinutesConsumed: recordingMinutesConsumed != null ? recordingMinutesConsumed() : this.recordingMinutesConsumed,

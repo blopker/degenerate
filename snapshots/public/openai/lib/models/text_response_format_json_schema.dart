@@ -25,14 +25,14 @@ bool get isUnknown { return !values.contains(this); }
 /// JSON Schema response format. Used to generate structured JSON responses.
 /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
 /// 
-@immutable final class TextResponseFormatJsonSchema {const TextResponseFormatJsonSchema({required this.type, required this.name, required this.schema, this.description, this.strict, });
+@immutable final class TextResponseFormatJsonSchema {const TextResponseFormatJsonSchema({required this.type, required this.name, required this.schema, this.description, this.strict = const Omittable.absent(), });
 
 factory TextResponseFormatJsonSchema.fromJson(Map<String, dynamic> json) { return TextResponseFormatJsonSchema(
   type: TextResponseFormatJsonSchemaType.fromJson(json['type'] as String),
   description: json['description'] as String?,
   name: json['name'] as String,
   schema: json['schema'] as Map<String, dynamic>,
-  strict: json['strict'] as bool?,
+  strict: json.containsKey('strict') ? Omittable(json['strict'] as bool?) : const Omittable.absent(),
 ); }
 
 /// The type of response format being defined. Always `json_schema`.
@@ -59,24 +59,24 @@ final Map<String,dynamic> schema;
 /// `strict` is `true`. To learn more, read the [Structured Outputs
 /// guide](/docs/guides/structured-outputs).
 /// 
-final bool? strict;
+final Omittable<bool?> strict;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'description': ?description,
   'name': name,
   'schema': schema,
-  'strict': ?strict,
+  if (strict.isPresent) 'strict': strict.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('schema'); } 
-TextResponseFormatJsonSchema copyWith({TextResponseFormatJsonSchemaType? type, String Function()? description, String? name, Map<String,dynamic>? schema, bool? Function()? strict, }) { return TextResponseFormatJsonSchema(
+TextResponseFormatJsonSchema copyWith({TextResponseFormatJsonSchemaType? type, String? Function()? description, String? name, Map<String,dynamic>? schema, Omittable<bool?>? strict, }) { return TextResponseFormatJsonSchema(
   type: type ?? this.type,
   description: description != null ? description() : this.description,
   name: name ?? this.name,
   schema: schema ?? this.schema,
-  strict: strict != null ? strict() : this.strict,
+  strict: strict ?? this.strict,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TextResponseFormatJsonSchema &&

@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (images != null) 'images': images?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'images'}.contains(key)); } 
-ImagesImagesListResponseResult copyWith({List<ImagesImage> Function()? images}) { return ImagesImagesListResponseResult(
+ImagesImagesListResponseResult copyWith({List<ImagesImage>? Function()? images}) { return ImagesImagesListResponseResult(
   images: images != null ? images() : this.images,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

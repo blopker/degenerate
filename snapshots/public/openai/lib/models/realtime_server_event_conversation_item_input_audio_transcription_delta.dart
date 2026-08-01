@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'log_prob_properties.dart';/// Returned when the text value of an input audio transcription content part is updated with incremental transcription results.
 /// 
-@immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionDelta {const RealtimeServerEventConversationItemInputAudioTranscriptionDelta({required this.eventId, required this.type, required this.itemId, this.contentIndex, this.delta, this.logprobs, });
+@immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionDelta {const RealtimeServerEventConversationItemInputAudioTranscriptionDelta({required this.eventId, required this.type, required this.itemId, this.contentIndex, this.delta, this.logprobs = const Omittable.absent(), });
 
 factory RealtimeServerEventConversationItemInputAudioTranscriptionDelta.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemInputAudioTranscriptionDelta(
   eventId: json['event_id'] as String,
@@ -10,7 +10,7 @@ factory RealtimeServerEventConversationItemInputAudioTranscriptionDelta.fromJson
   itemId: json['item_id'] as String,
   contentIndex: json['content_index'] != null ? (json['content_index'] as num).toInt() : null,
   delta: json['delta'] as String?,
-  logprobs: (json['logprobs'] as List<dynamic>?)?.map((e) => LogProbProperties.fromJson(e as Map<String, dynamic>)).toList(),
+  logprobs: json.containsKey('logprobs') ? Omittable((json['logprobs'] as List<dynamic>?)?.map((e) => LogProbProperties.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
 ); }
 
 /// The unique ID of the server event.
@@ -29,7 +29,7 @@ final int? contentIndex;
 final String? delta;
 
 /// The log probabilities of the transcription. These can be enabled by configurating the session with `"include": ["item.input_audio_transcription.logprobs"]`. Each entry in the array corresponds a log probability of which token would be selected for this chunk of transcription. This can help to identify if it was possible there were multiple valid options for a given chunk of transcription.
-final List<LogProbProperties>? logprobs;
+final Omittable<List<LogProbProperties>?> logprobs;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
@@ -37,18 +37,18 @@ Map<String, dynamic> toJson() { return {
   'item_id': itemId,
   'content_index': ?contentIndex,
   'delta': ?delta,
-  if (logprobs != null) 'logprobs': logprobs?.map((e) => e.toJson()).toList(),
+  if (logprobs.isPresent) 'logprobs': logprobs.value?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeServerEventConversationItemInputAudioTranscriptionDelta copyWith({String? eventId, String? type, String? itemId, int Function()? contentIndex, String Function()? delta, List<LogProbProperties>? Function()? logprobs, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionDelta(
+RealtimeServerEventConversationItemInputAudioTranscriptionDelta copyWith({String? eventId, String? type, String? itemId, int? Function()? contentIndex, String? Function()? delta, Omittable<List<LogProbProperties>?>? logprobs, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionDelta(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   contentIndex: contentIndex != null ? contentIndex() : this.contentIndex,
   delta: delta != null ? delta() : this.delta,
-  logprobs: logprobs != null ? logprobs() : this.logprobs,
+  logprobs: logprobs ?? this.logprobs,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RealtimeServerEventConversationItemInputAudioTranscriptionDelta &&
@@ -57,7 +57,8 @@ RealtimeServerEventConversationItemInputAudioTranscriptionDelta copyWith({String
           itemId == other.itemId &&
           contentIndex == other.contentIndex &&
           delta == other.delta &&
-          listEquals(logprobs, other.logprobs); } 
-@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, delta, Object.hashAll(logprobs ?? const [])); } 
+          logprobs.isPresent == other.logprobs.isPresent &&
+          listEquals(logprobs.value, other.logprobs.value); } 
+@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, delta, Object.hashAll(logprobs.value ?? const [])); } 
 @override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionDelta(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, delta: $delta, logprobs: $logprobs)'; } 
  }

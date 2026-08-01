@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   'target_url': targetUrl.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_url'); } 
-RulesetsRedirectFromValue copyWith({bool Function()? preserveQueryString, RulesetsRedirectFromValueStatusCode Function()? statusCode, RulesetsRedirectFromValueTargetUrl? targetUrl, }) { return RulesetsRedirectFromValue(
+RulesetsRedirectFromValue copyWith({bool Function()? preserveQueryString, RulesetsRedirectFromValueStatusCode? Function()? statusCode, RulesetsRedirectFromValueTargetUrl? targetUrl, }) { return RulesetsRedirectFromValue(
   preserveQueryString: preserveQueryString != null ? preserveQueryString() : this.preserveQueryString,
   statusCode: statusCode != null ? statusCode() : this.statusCode,
   targetUrl: targetUrl ?? this.targetUrl,

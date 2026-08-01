@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('email') && json['email'] is String; } 
-ReposCreateOrUpdateFileContentsRequestCommitter copyWith({String? name, String? email, String Function()? date, }) { return ReposCreateOrUpdateFileContentsRequestCommitter(
+ReposCreateOrUpdateFileContentsRequestCommitter copyWith({String? name, String? email, String? Function()? date, }) { return ReposCreateOrUpdateFileContentsRequestCommitter(
   name: name ?? this.name,
   email: email ?? this.email,
   date: date != null ? date() : this.date,

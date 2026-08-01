@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (disableForTime != null) 'disable_for_time': disableForTime?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disable_for_time'}.contains(key)); } 
-TeamsDevicesOverrideCodesResponseResult copyWith({TeamsDevicesDisableForTime Function()? disableForTime}) { return TeamsDevicesOverrideCodesResponseResult(
+TeamsDevicesOverrideCodesResponseResult copyWith({TeamsDevicesDisableForTime? Function()? disableForTime}) { return TeamsDevicesOverrideCodesResponseResult(
   disableForTime: disableForTime != null ? disableForTime() : this.disableForTime,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'enable_customer_cancellation': ?enableCustomerCancellation,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enable_customer_cancellation'}.contains(key)); } 
-PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig copyWith({bool Function()? enableCustomerCancellation}) { return PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig(
+PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig copyWith({bool? Function()? enableCustomerCancellation}) { return PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig(
   enableCustomerCancellation: enableCustomerCancellation != null ? enableCustomerCancellation() : this.enableCustomerCancellation,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   if (verifyWithMicrodeposits != null) 'verify_with_microdeposits': verifyWithMicrodeposits?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-SetupIntentNextAction copyWith({PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode Function()? cashappHandleRedirectOrDisplayQrCode, SetupIntentNextActionRedirectToUrl Function()? redirectToUrl, String? type, Map<String, dynamic> Function()? useStripeSdk, SetupIntentNextActionVerifyWithMicrodeposits Function()? verifyWithMicrodeposits, }) { return SetupIntentNextAction(
+SetupIntentNextAction copyWith({PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode? Function()? cashappHandleRedirectOrDisplayQrCode, SetupIntentNextActionRedirectToUrl? Function()? redirectToUrl, String? type, Map<String, dynamic>? Function()? useStripeSdk, SetupIntentNextActionVerifyWithMicrodeposits? Function()? verifyWithMicrodeposits, }) { return SetupIntentNextAction(
   cashappHandleRedirectOrDisplayQrCode: cashappHandleRedirectOrDisplayQrCode != null ? cashappHandleRedirectOrDisplayQrCode() : this.cashappHandleRedirectOrDisplayQrCode,
   redirectToUrl: redirectToUrl != null ? redirectToUrl() : this.redirectToUrl,
   type: type ?? this.type,

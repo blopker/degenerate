@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('operating_system') &&
       json.containsKey('path') && json['path'] is String; } 
-TeamsDevicesCarbonblackInputRequest copyWith({TeamsDevicesCarbonblackInputRequestOperatingSystem? operatingSystem, String? path, String Function()? sha256, String Function()? thumbprint, }) { return TeamsDevicesCarbonblackInputRequest(
+TeamsDevicesCarbonblackInputRequest copyWith({TeamsDevicesCarbonblackInputRequestOperatingSystem? operatingSystem, String? path, String? Function()? sha256, String? Function()? thumbprint, }) { return TeamsDevicesCarbonblackInputRequest(
   operatingSystem: operatingSystem ?? this.operatingSystem,
   path: path ?? this.path,
   sha256: sha256 != null ? sha256() : this.sha256,

@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (watermark != null) 'watermark': watermark?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-StreamVideoCopyRequest copyWith({List<String> Function()? allowedOrigins, StreamCreator Function()? creator, Map<String, dynamic> Function()? meta, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamScheduledDeletion Function()? scheduledDeletion, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, Uri? url, StreamWatermarkAtUpload Function()? watermark, }) { return StreamVideoCopyRequest(
+StreamVideoCopyRequest copyWith({List<String>? Function()? allowedOrigins, StreamCreator? Function()? creator, Map<String, dynamic>? Function()? meta, StreamRequireSignedUrLs? Function()? requireSignedUrLs, StreamScheduledDeletion? Function()? scheduledDeletion, StreamThumbnailTimestampPct? Function()? thumbnailTimestampPct, Uri? url, StreamWatermarkAtUpload? Function()? watermark, }) { return StreamVideoCopyRequest(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   creator: creator != null ? creator() : this.creator,
   meta: meta != null ? meta() : this.meta,

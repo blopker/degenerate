@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-IamPermissionGroup copyWith({String? id, IamPermissionGroupMeta Function()? meta, String Function()? name, }) { return IamPermissionGroup(
+IamPermissionGroup copyWith({String? id, IamPermissionGroupMeta? Function()? meta, String? Function()? name, }) { return IamPermissionGroup(
   id: id ?? this.id,
   meta: meta != null ? meta() : this.meta,
   name: name != null ? name() : this.name,

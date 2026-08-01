@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'simple_user.dart';import 'timeline_reviewed_event_links.dart';/// Timeline Reviewed Event
-@immutable final class TimelineReviewedEvent {const TimelineReviewedEvent({required this.event, required this.id, required this.nodeId, required this.user, required this.body, required this.state, required this.htmlUrl, required this.pullRequestUrl, required this.links, required this.commitId, required this.authorAssociation, this.submittedAt, this.updatedAt, this.bodyHtml, this.bodyText, });
+@immutable final class TimelineReviewedEvent {const TimelineReviewedEvent({required this.event, required this.id, required this.nodeId, required this.user, required this.body, required this.state, required this.htmlUrl, required this.pullRequestUrl, required this.links, required this.commitId, required this.authorAssociation, this.submittedAt, this.updatedAt = const Omittable.absent(), this.bodyHtml, this.bodyText, });
 
 factory TimelineReviewedEvent.fromJson(Map<String, dynamic> json) { return TimelineReviewedEvent(
   event: json['event'] as String,
@@ -14,7 +14,7 @@ factory TimelineReviewedEvent.fromJson(Map<String, dynamic> json) { return Timel
   pullRequestUrl: Uri.parse(json['pull_request_url'] as String),
   links: TimelineReviewedEventLinks.fromJson(json['_links'] as Map<String, dynamic>),
   submittedAt: json['submitted_at'] != null ? DateTime.parse(json['submitted_at'] as String) : null,
-  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
+  updatedAt: json.containsKey('updated_at') ? Omittable(json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null) : const Omittable.absent(),
   commitId: json['commit_id'] as String,
   bodyHtml: json['body_html'] as String?,
   bodyText: json['body_text'] as String?,
@@ -43,7 +43,7 @@ final TimelineReviewedEventLinks links;
 
 final DateTime? submittedAt;
 
-final DateTime? updatedAt;
+final Omittable<DateTime?> updatedAt;
 
 /// A commit SHA for the review.
 final String commitId;
@@ -60,13 +60,13 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'node_id': nodeId,
   'user': user.toJson(),
-  'body': ?body,
+  'body': body,
   'state': state,
   'html_url': htmlUrl.toString(),
   'pull_request_url': pullRequestUrl.toString(),
   '_links': links.toJson(),
   if (submittedAt != null) 'submitted_at': submittedAt?.toIso8601String(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  if (updatedAt.isPresent) 'updated_at': updatedAt.value?.toIso8601String(),
   'commit_id': commitId,
   'body_html': ?bodyHtml,
   'body_text': ?bodyText,
@@ -76,14 +76,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('user') &&
-      json.containsKey('body') && json['body'] is String &&
+      json.containsKey('body') && (json['body'] == null || json['body'] is String) &&
       json.containsKey('state') && json['state'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('pull_request_url') && json['pull_request_url'] is String &&
       json.containsKey('_links') &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
       json.containsKey('author_association'); } 
-TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUser? user, String? Function()? body, String? state, Uri? htmlUrl, Uri? pullRequestUrl, TimelineReviewedEventLinks? links, DateTime Function()? submittedAt, DateTime? Function()? updatedAt, String? commitId, String Function()? bodyHtml, String Function()? bodyText, AuthorAssociation? authorAssociation, }) { return TimelineReviewedEvent(
+TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUser? user, String? Function()? body, String? state, Uri? htmlUrl, Uri? pullRequestUrl, TimelineReviewedEventLinks? links, DateTime? Function()? submittedAt, Omittable<DateTime?>? updatedAt, String? commitId, String? Function()? bodyHtml, String? Function()? bodyText, AuthorAssociation? authorAssociation, }) { return TimelineReviewedEvent(
   event: event ?? this.event,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -94,7 +94,7 @@ TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUs
   pullRequestUrl: pullRequestUrl ?? this.pullRequestUrl,
   links: links ?? this.links,
   submittedAt: submittedAt != null ? submittedAt() : this.submittedAt,
-  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+  updatedAt: updatedAt ?? this.updatedAt,
   commitId: commitId ?? this.commitId,
   bodyHtml: bodyHtml != null ? bodyHtml() : this.bodyHtml,
   bodyText: bodyText != null ? bodyText() : this.bodyText,

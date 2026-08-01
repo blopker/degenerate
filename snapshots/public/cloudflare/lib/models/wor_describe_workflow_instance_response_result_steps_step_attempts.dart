@@ -18,15 +18,15 @@ final DateTime start;
 final bool? success;
 
 Map<String, dynamic> toJson() { return {
-  if (end != null) 'end': end?.toIso8601String(),
-  if (error != null) 'error': error?.toJson(),
+  'end': end?.toIso8601String(),
+  'error': error?.toJson(),
   'start': start.toIso8601String(),
-  'success': ?success,
+  'success': success,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('end') && json['end'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('end') && (json['end'] == null || json['end'] is String) &&
       json.containsKey('error') &&
       json.containsKey('start') && json['start'] is String &&
-      json.containsKey('success') && json['success'] is bool; } 
+      json.containsKey('success') && (json['success'] == null || json['success'] is bool); } 
 WorDescribeWorkflowInstanceResponseResultStepsStepAttempts copyWith({DateTime? Function()? end, WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError? Function()? error, DateTime? start, bool? Function()? success, }) { return WorDescribeWorkflowInstanceResponseResultStepsStepAttempts(
   end: end != null ? end() : this.end,
   error: error != null ? error() : this.error,

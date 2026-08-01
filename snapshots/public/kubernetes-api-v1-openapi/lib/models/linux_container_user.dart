@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('gid') && json['gid'] is num &&
       json.containsKey('uid') && json['uid'] is num; } 
-LinuxContainerUser copyWith({int? gid, List<int> Function()? supplementalGroups, int? uid, }) { return LinuxContainerUser(
+LinuxContainerUser copyWith({int? gid, List<int>? Function()? supplementalGroups, int? uid, }) { return LinuxContainerUser(
   gid: gid ?? this.gid,
   supplementalGroups: supplementalGroups != null ? supplementalGroups() : this.supplementalGroups,
   uid: uid ?? this.uid,

@@ -78,7 +78,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('budget_scope') && json['budget_scope'] is String &&
       json.containsKey('budget_product_sku') && json['budget_product_sku'] is String &&
       json.containsKey('budget_alerting'); } 
-Budget copyWith({String? id, BudgetBudgetType? budgetType, int? budgetAmount, bool? preventFurtherUsage, String? budgetScope, String Function()? budgetEntityName, String? budgetProductSku, BudgetBudgetAlerting? budgetAlerting, }) { return Budget(
+Budget copyWith({String? id, BudgetBudgetType? budgetType, int? budgetAmount, bool? preventFurtherUsage, String? budgetScope, String? Function()? budgetEntityName, String? budgetProductSku, BudgetBudgetAlerting? budgetAlerting, }) { return Budget(
   id: id ?? this.id,
   budgetType: budgetType ?? this.budgetType,
   budgetAmount: budgetAmount ?? this.budgetAmount,

@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('network') &&
       json.containsKey('tunnel_id'); } 
-TunnelRouteCreateATunnelRouteRequest copyWith({TunnelRouteComment Function()? comment, TunnelIpNetwork? network, TunnelTunnelId? tunnelId, TunnelVirtualNetworkIdComputedOptional Function()? virtualNetworkId, }) { return TunnelRouteCreateATunnelRouteRequest(
+TunnelRouteCreateATunnelRouteRequest copyWith({TunnelRouteComment? Function()? comment, TunnelIpNetwork? network, TunnelTunnelId? tunnelId, TunnelVirtualNetworkIdComputedOptional? Function()? virtualNetworkId, }) { return TunnelRouteCreateATunnelRouteRequest(
   comment: comment != null ? comment() : this.comment,
   network: network ?? this.network,
   tunnelId: tunnelId ?? this.tunnelId,

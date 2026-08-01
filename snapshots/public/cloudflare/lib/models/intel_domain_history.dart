@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (domain != null) 'domain': domain?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'categorizations', 'domain'}.contains(key)); } 
-IntelDomainHistory copyWith({List<IntelDomainHistoryCategorizations> Function()? categorizations, IntelDomainName Function()? domain, }) { return IntelDomainHistory(
+IntelDomainHistory copyWith({List<IntelDomainHistoryCategorizations>? Function()? categorizations, IntelDomainName? Function()? domain, }) { return IntelDomainHistory(
   categorizations: categorizations != null ? categorizations() : this.categorizations,
   domain: domain != null ? domain() : this.domain,
 ); } 

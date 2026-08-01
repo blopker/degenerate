@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (words != null) 'words': words?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
-AutomaticSpeechRecognition2 copyWith({String? text, String Function()? vtt, double Function()? wordCount, List<AutomaticSpeechRecognition2Words> Function()? words, }) { return AutomaticSpeechRecognition2(
+AutomaticSpeechRecognition2 copyWith({String? text, String? Function()? vtt, double? Function()? wordCount, List<AutomaticSpeechRecognition2Words>? Function()? words, }) { return AutomaticSpeechRecognition2(
   text: text ?? this.text,
   vtt: vtt != null ? vtt() : this.vtt,
   wordCount: wordCount != null ? wordCount() : this.wordCount,

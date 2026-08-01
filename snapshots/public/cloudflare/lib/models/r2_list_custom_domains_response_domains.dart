@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') && json['domain'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('status'); } 
-R2ListCustomDomainsResponseDomains copyWith({List<String> Function()? ciphers, String? domain, bool? enabled, R2ListCustomDomainsResponseDomainsMinTls Function()? minTls, R2ListCustomDomainsResponseDomainsStatus? status, String Function()? zoneId, String Function()? zoneName, }) { return R2ListCustomDomainsResponseDomains(
+R2ListCustomDomainsResponseDomains copyWith({List<String>? Function()? ciphers, String? domain, bool? enabled, R2ListCustomDomainsResponseDomainsMinTls? Function()? minTls, R2ListCustomDomainsResponseDomainsStatus? status, String? Function()? zoneId, String? Function()? zoneName, }) { return R2ListCustomDomainsResponseDomains(
   ciphers: ciphers != null ? ciphers() : this.ciphers,
   domain: domain ?? this.domain,
   enabled: enabled ?? this.enabled,

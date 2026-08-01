@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'resourceID': resourceId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('resourceID') && json['resourceID'] is String; } 
-ResourceHealth copyWith({String Function()? health, String Function()? message, String? resourceId, }) { return ResourceHealth(
+ResourceHealth copyWith({String? Function()? health, String? Function()? message, String? resourceId, }) { return ResourceHealth(
   health: health != null ? health() : this.health,
   message: message != null ? message() : this.message,
   resourceId: resourceId ?? this.resourceId,

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FunctionObject {const FunctionObject({required this.name, this.description, this.parameters, this.strict, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FunctionObject {const FunctionObject({required this.name, this.description, this.parameters, this.strict = const Omittable.absent(), });
 
 factory FunctionObject.fromJson(Map<String, dynamic> json) { return FunctionObject(
   description: json['description'] as String?,
   name: json['name'] as String,
   parameters: json['parameters'] as Map<String, dynamic>?,
-  strict: json['strict'] as bool?,
+  strict: json.containsKey('strict') ? Omittable(json['strict'] as bool?) : const Omittable.absent(),
 ); }
 
 /// A description of what the function does, used by the model to choose when and how to call the function.
@@ -18,20 +18,20 @@ final String name;
 final Map<String,dynamic>? parameters;
 
 /// Whether to enable strict schema adherence when generating the function call. If set to true, the model will follow the exact schema defined in the `parameters` field. Only a subset of JSON Schema is supported when `strict` is `true`. Learn more about Structured Outputs in the [function calling guide](/docs/guides/function-calling).
-final bool? strict;
+final Omittable<bool?> strict;
 
 Map<String, dynamic> toJson() { return {
   'description': ?description,
   'name': name,
   'parameters': ?parameters,
-  'strict': ?strict,
+  if (strict.isPresent) 'strict': strict.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-FunctionObject copyWith({String Function()? description, String? name, Map<String, dynamic> Function()? parameters, bool? Function()? strict, }) { return FunctionObject(
+FunctionObject copyWith({String? Function()? description, String? name, Map<String, dynamic>? Function()? parameters, Omittable<bool?>? strict, }) { return FunctionObject(
   description: description != null ? description() : this.description,
   name: name ?? this.name,
   parameters: parameters != null ? parameters() : this.parameters,
-  strict: strict != null ? strict() : this.strict,
+  strict: strict ?? this.strict,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is FunctionObject &&

@@ -24,12 +24,12 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A Climate product represents a type of carbon removal unit available for reservation.
 /// You can retrieve it to see the current price and availability.
-@immutable final class ClimateProduct {const ClimateProduct({required this.created, required this.currentPricesPerMetricTon, required this.id, required this.livemode, required this.metricTonsAvailable, required this.name, required this.object, required this.suppliers, this.deliveryYear, });
+@immutable final class ClimateProduct {const ClimateProduct({required this.created, required this.currentPricesPerMetricTon, required this.id, required this.livemode, required this.metricTonsAvailable, required this.name, required this.object, required this.suppliers, this.deliveryYear = const Omittable.absent(), });
 
 factory ClimateProduct.fromJson(Map<String, dynamic> json) { return ClimateProduct(
   created: (json['created'] as num).toInt(),
   currentPricesPerMetricTon: (json['current_prices_per_metric_ton'] as Map<String, dynamic>).map((k, v) => MapEntry(k, ClimateRemovalsProductsPrice.fromJson(v as Map<String, dynamic>))),
-  deliveryYear: json['delivery_year'] != null ? (json['delivery_year'] as num).toInt() : null,
+  deliveryYear: json.containsKey('delivery_year') ? Omittable(json['delivery_year'] != null ? (json['delivery_year'] as num).toInt() : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   metricTonsAvailable: json['metric_tons_available'] as String,
@@ -45,7 +45,7 @@ final int created;
 final Map<String,ClimateRemovalsProductsPrice> currentPricesPerMetricTon;
 
 /// The year in which the carbon removal is expected to be delivered.
-final int? deliveryYear;
+final Omittable<int?> deliveryYear;
 
 /// Unique identifier for the object. For convenience, Climate product IDs are human-readable strings
 /// that start with `climsku_`. See [carbon removal inventory](https://stripe.com/docs/climate/orders/carbon-removal-inventory)
@@ -70,7 +70,7 @@ final List<ClimateSupplier> suppliers;
 Map<String, dynamic> toJson() { return {
   'created': created,
   'current_prices_per_metric_ton': currentPricesPerMetricTon.map((k, v) => MapEntry(k, v.toJson())),
-  'delivery_year': ?deliveryYear,
+  if (deliveryYear.isPresent) 'delivery_year': deliveryYear.value,
   'id': id,
   'livemode': livemode,
   'metric_tons_available': metricTonsAvailable,
@@ -86,10 +86,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('object') &&
       json.containsKey('suppliers'); } 
-ClimateProduct copyWith({int? created, Map<String,ClimateRemovalsProductsPrice>? currentPricesPerMetricTon, int? Function()? deliveryYear, String? id, bool? livemode, String? metricTonsAvailable, String? name, ClimateProductObject? object, List<ClimateSupplier>? suppliers, }) { return ClimateProduct(
+ClimateProduct copyWith({int? created, Map<String,ClimateRemovalsProductsPrice>? currentPricesPerMetricTon, Omittable<int?>? deliveryYear, String? id, bool? livemode, String? metricTonsAvailable, String? name, ClimateProductObject? object, List<ClimateSupplier>? suppliers, }) { return ClimateProduct(
   created: created ?? this.created,
   currentPricesPerMetricTon: currentPricesPerMetricTon ?? this.currentPricesPerMetricTon,
-  deliveryYear: deliveryYear != null ? deliveryYear() : this.deliveryYear,
+  deliveryYear: deliveryYear ?? this.deliveryYear,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   metricTonsAvailable: metricTonsAvailable ?? this.metricTonsAvailable,

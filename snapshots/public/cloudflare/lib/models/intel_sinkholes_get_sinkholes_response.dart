@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-IntelSinkholesGetSinkholesResponse copyWith({List<IntelSinkholesMessages2>? errors, List<IntelSinkholesMessages2>? messages, bool? success, List<IntelSinkholesSinkholeItem> Function()? result, }) { return IntelSinkholesGetSinkholesResponse(
+IntelSinkholesGetSinkholesResponse copyWith({List<IntelSinkholesMessages2>? errors, List<IntelSinkholesMessages2>? messages, bool? success, List<IntelSinkholesSinkholeItem>? Function()? result, }) { return IntelSinkholesGetSinkholesResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

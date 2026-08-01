@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'service_token_id': ?serviceTokenId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'doh_jwt_duration', 'service_token_id'}.contains(key)); } 
-ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest copyWith({AccessDohJwtDuration Function()? dohJwtDuration, String Function()? serviceTokenId, }) { return ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest(
+ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest copyWith({AccessDohJwtDuration? Function()? dohJwtDuration, String? Function()? serviceTokenId, }) { return ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest(
   dohJwtDuration: dohJwtDuration != null ? dohJwtDuration() : this.dohJwtDuration,
   serviceTokenId: serviceTokenId != null ? serviceTokenId() : this.serviceTokenId,
 ); } 

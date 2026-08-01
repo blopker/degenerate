@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
       json.containsKey('path') && json['path'] is String; } 
-KeyToPath copyWith({String? key, int Function()? mode, String? path, }) { return KeyToPath(
+KeyToPath copyWith({String? key, int? Function()? mode, String? path, }) { return KeyToPath(
   key: key ?? this.key,
   mode: mode != null ? mode() : this.mode,
   path: path ?? this.path,

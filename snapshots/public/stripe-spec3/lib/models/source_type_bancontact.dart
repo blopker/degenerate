@@ -1,44 +1,44 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeBancontact {const SourceTypeBancontact({this.bankCode, this.bankName, this.bic, this.ibanLast4, this.preferredLanguage, this.statementDescriptor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeBancontact {const SourceTypeBancontact({this.bankCode = const Omittable.absent(), this.bankName = const Omittable.absent(), this.bic = const Omittable.absent(), this.ibanLast4 = const Omittable.absent(), this.preferredLanguage = const Omittable.absent(), this.statementDescriptor = const Omittable.absent(), });
 
 factory SourceTypeBancontact.fromJson(Map<String, dynamic> json) { return SourceTypeBancontact(
-  bankCode: json['bank_code'] as String?,
-  bankName: json['bank_name'] as String?,
-  bic: json['bic'] as String?,
-  ibanLast4: json['iban_last4'] as String?,
-  preferredLanguage: json['preferred_language'] as String?,
-  statementDescriptor: json['statement_descriptor'] as String?,
+  bankCode: json.containsKey('bank_code') ? Omittable(json['bank_code'] as String?) : const Omittable.absent(),
+  bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
+  bic: json.containsKey('bic') ? Omittable(json['bic'] as String?) : const Omittable.absent(),
+  ibanLast4: json.containsKey('iban_last4') ? Omittable(json['iban_last4'] as String?) : const Omittable.absent(),
+  preferredLanguage: json.containsKey('preferred_language') ? Omittable(json['preferred_language'] as String?) : const Omittable.absent(),
+  statementDescriptor: json.containsKey('statement_descriptor') ? Omittable(json['statement_descriptor'] as String?) : const Omittable.absent(),
 ); }
 
-final String? bankCode;
+final Omittable<String?> bankCode;
 
-final String? bankName;
+final Omittable<String?> bankName;
 
-final String? bic;
+final Omittable<String?> bic;
 
-final String? ibanLast4;
+final Omittable<String?> ibanLast4;
 
-final String? preferredLanguage;
+final Omittable<String?> preferredLanguage;
 
-final String? statementDescriptor;
+final Omittable<String?> statementDescriptor;
 
 Map<String, dynamic> toJson() { return {
-  'bank_code': ?bankCode,
-  'bank_name': ?bankName,
-  'bic': ?bic,
-  'iban_last4': ?ibanLast4,
-  'preferred_language': ?preferredLanguage,
-  'statement_descriptor': ?statementDescriptor,
+  if (bankCode.isPresent) 'bank_code': bankCode.value,
+  if (bankName.isPresent) 'bank_name': bankName.value,
+  if (bic.isPresent) 'bic': bic.value,
+  if (ibanLast4.isPresent) 'iban_last4': ibanLast4.value,
+  if (preferredLanguage.isPresent) 'preferred_language': preferredLanguage.value,
+  if (statementDescriptor.isPresent) 'statement_descriptor': statementDescriptor.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_code', 'bank_name', 'bic', 'iban_last4', 'preferred_language', 'statement_descriptor'}.contains(key)); } 
-SourceTypeBancontact copyWith({String? Function()? bankCode, String? Function()? bankName, String? Function()? bic, String? Function()? ibanLast4, String? Function()? preferredLanguage, String? Function()? statementDescriptor, }) { return SourceTypeBancontact(
-  bankCode: bankCode != null ? bankCode() : this.bankCode,
-  bankName: bankName != null ? bankName() : this.bankName,
-  bic: bic != null ? bic() : this.bic,
-  ibanLast4: ibanLast4 != null ? ibanLast4() : this.ibanLast4,
-  preferredLanguage: preferredLanguage != null ? preferredLanguage() : this.preferredLanguage,
-  statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
+SourceTypeBancontact copyWith({Omittable<String?>? bankCode, Omittable<String?>? bankName, Omittable<String?>? bic, Omittable<String?>? ibanLast4, Omittable<String?>? preferredLanguage, Omittable<String?>? statementDescriptor, }) { return SourceTypeBancontact(
+  bankCode: bankCode ?? this.bankCode,
+  bankName: bankName ?? this.bankName,
+  bic: bic ?? this.bic,
+  ibanLast4: ibanLast4 ?? this.ibanLast4,
+  preferredLanguage: preferredLanguage ?? this.preferredLanguage,
+  statementDescriptor: statementDescriptor ?? this.statementDescriptor,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is SourceTypeBancontact &&

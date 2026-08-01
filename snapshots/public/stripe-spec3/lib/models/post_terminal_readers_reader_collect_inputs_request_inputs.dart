@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('custom_text') &&
       json.containsKey('type'); } 
-PostTerminalReadersReaderCollectInputsRequestInputs copyWith({PostTerminalReadersReaderCollectInputsRequestInputsCustomText? customText, bool Function()? $required, PostTerminalReadersReaderCollectInputsRequestInputsSelection Function()? selection, List<PostTerminalReadersReaderCollectInputsRequestInputsToggles> Function()? toggles, PostTerminalReadersReaderCollectInputsRequestInputsType? type, }) { return PostTerminalReadersReaderCollectInputsRequestInputs(
+PostTerminalReadersReaderCollectInputsRequestInputs copyWith({PostTerminalReadersReaderCollectInputsRequestInputsCustomText? customText, bool? Function()? $required, PostTerminalReadersReaderCollectInputsRequestInputsSelection? Function()? selection, List<PostTerminalReadersReaderCollectInputsRequestInputsToggles>? Function()? toggles, PostTerminalReadersReaderCollectInputsRequestInputsType? type, }) { return PostTerminalReadersReaderCollectInputsRequestInputs(
   customText: customText ?? this.customText,
   $required: $required != null ? $required() : this.$required,
   selection: selection != null ? selection() : this.selection,

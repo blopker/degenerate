@@ -27,13 +27,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FetchServersResponseResultAuthType($value)'; } 
  }
-@immutable final class FetchServersResponseResult {const FetchServersResponseResult({required this.authType, required this.hostname, required this.id, required this.name, required this.prompts, required this.tools, this.createdAt, this.createdBy, this.description, this.error, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, this.status = 'waiting', });
+@immutable final class FetchServersResponseResult {const FetchServersResponseResult({required this.authType, required this.hostname, required this.id, required this.name, required this.prompts, required this.tools, this.createdAt, this.createdBy, this.description = const Omittable.absent(), this.error, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, this.status = 'waiting', });
 
 factory FetchServersResponseResult.fromJson(Map<String, dynamic> json) { return FetchServersResponseResult(
   authType: FetchServersResponseResultAuthType.fromJson(json['auth_type'] as String),
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   createdBy: json['created_by'] as String?,
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   error: json['error'] as String?,
   hostname: Uri.parse(json['hostname'] as String),
   id: json['id'] as String,
@@ -53,7 +53,7 @@ final DateTime? createdAt;
 
 final String? createdBy;
 
-final String? description;
+final Omittable<String?> description;
 
 final String? error;
 
@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   'auth_type': authType.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'created_by': ?createdBy,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'error': ?error,
   'hostname': hostname.toString(),
   'id': id,
@@ -101,11 +101,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('prompts') &&
       json.containsKey('tools'); } 
-FetchServersResponseResult copyWith({FetchServersResponseResultAuthType? authType, DateTime Function()? createdAt, String Function()? createdBy, String? Function()? description, String Function()? error, Uri? hostname, String? id, DateTime Function()? lastSuccessfulSync, DateTime Function()? lastSynced, DateTime Function()? modifiedAt, String Function()? modifiedBy, String? name, List<Map<String,dynamic>>? prompts, String Function()? status, List<Map<String,dynamic>>? tools, }) { return FetchServersResponseResult(
+FetchServersResponseResult copyWith({FetchServersResponseResultAuthType? authType, DateTime? Function()? createdAt, String? Function()? createdBy, Omittable<String?>? description, String? Function()? error, Uri? hostname, String? id, DateTime? Function()? lastSuccessfulSync, DateTime? Function()? lastSynced, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, List<Map<String,dynamic>>? prompts, String Function()? status, List<Map<String,dynamic>>? tools, }) { return FetchServersResponseResult(
   authType: authType ?? this.authType,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   error: error != null ? error() : this.error,
   hostname: hostname ?? this.hostname,
   id: id ?? this.id,

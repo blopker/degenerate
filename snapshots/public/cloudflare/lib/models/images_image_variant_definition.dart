@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('options'); } 
-ImagesImageVariantDefinition copyWith({ImagesImageVariantIdentifier? id, ImagesImageVariantNeverRequireSignedUrLs Function()? neverRequireSignedUrLs, ImagesImageVariantOptions? options, }) { return ImagesImageVariantDefinition(
+ImagesImageVariantDefinition copyWith({ImagesImageVariantIdentifier? id, ImagesImageVariantNeverRequireSignedUrLs? Function()? neverRequireSignedUrLs, ImagesImageVariantOptions? options, }) { return ImagesImageVariantDefinition(
   id: id ?? this.id,
   neverRequireSignedUrLs: neverRequireSignedUrLs != null ? neverRequireSignedUrLs() : this.neverRequireSignedUrLs,
   options: options ?? this.options,

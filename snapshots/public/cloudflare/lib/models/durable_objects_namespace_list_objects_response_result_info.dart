@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (cursor != null) 'cursor': cursor?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'cursor'}.contains(key)); } 
-DurableObjectsNamespaceListObjectsResponseResultInfo copyWith({double Function()? count, WorkersCursor Function()? cursor, }) { return DurableObjectsNamespaceListObjectsResponseResultInfo(
+DurableObjectsNamespaceListObjectsResponseResultInfo copyWith({double? Function()? count, WorkersCursor? Function()? cursor, }) { return DurableObjectsNamespaceListObjectsResponseResultInfo(
   count: count != null ? count() : this.count,
   cursor: cursor != null ? cursor() : this.cursor,
 ); } 

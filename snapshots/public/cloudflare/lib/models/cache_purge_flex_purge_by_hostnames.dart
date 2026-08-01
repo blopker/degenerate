@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'hosts': ?hosts,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hosts'}.contains(key)); } 
-CachePurgeFlexPurgeByHostnames copyWith({List<String> Function()? hosts}) { return CachePurgeFlexPurgeByHostnames(
+CachePurgeFlexPurgeByHostnames copyWith({List<String>? Function()? hosts}) { return CachePurgeFlexPurgeByHostnames(
   hosts: hosts != null ? hosts() : this.hosts,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

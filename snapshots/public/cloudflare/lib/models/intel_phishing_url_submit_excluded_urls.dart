@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url'}.contains(key)); } 
-IntelPhishingUrlSubmitExcludedUrls copyWith({String Function()? url}) { return IntelPhishingUrlSubmitExcludedUrls(
+IntelPhishingUrlSubmitExcludedUrls copyWith({String? Function()? url}) { return IntelPhishingUrlSubmitExcludedUrls(
   url: url != null ? url() : this.url,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

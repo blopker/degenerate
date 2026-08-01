@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'target': target.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('target'); } 
-Binding copyWith({String Function()? apiVersion, String Function()? kind, ObjectMeta Function()? metadata, ObjectReference? target, }) { return Binding(
+Binding copyWith({String? Function()? apiVersion, String? Function()? kind, ObjectMeta? Function()? metadata, ObjectReference? target, }) { return Binding(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,

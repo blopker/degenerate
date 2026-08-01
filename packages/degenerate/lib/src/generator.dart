@@ -6,6 +6,7 @@ library;
 
 import 'dart:io';
 
+import 'package:degenerate/src/emitter/emit_utils.dart' show OmittableMode;
 import 'package:degenerate/src/emitter/file_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
@@ -15,6 +16,8 @@ import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
 import 'package:degenerate/src/parser/ref_inliner.dart';
 import 'package:path/path.dart' as p;
+
+export 'package:degenerate/src/emitter/emit_utils.dart' show OmittableMode;
 
 // packageVersion updated by scripts/release.dart
 /// Current package version.
@@ -46,6 +49,7 @@ class GeneratorConfig {
     this.workspace = false,
     this.stdinContent,
     this.unwrapFields = const [],
+    this.omittable = OmittableMode.nullableOnly,
   });
 
   /// Path to the input OpenAPI spec file.
@@ -100,6 +104,10 @@ class GeneratorConfig {
   /// full envelope. For example, `['result']` unwraps
   /// `{errors, messages, success, result: T}` to just `T`.
   final List<String> unwrapFields;
+
+  /// How generated models represent "field omitted" vs "field set to null"
+  /// on optional fields. See [OmittableMode].
+  final OmittableMode omittable;
 }
 
 /// The main code generator pipeline.
@@ -325,6 +333,7 @@ class Generator {
       defaultServerUrl: defaultServerUrl,
       warnings: emitterWarnings,
       unwrapFields: config.unwrapFields,
+      omittable: config.omittable,
     );
 
     // In workspace mode, Dart source files live under lib/.

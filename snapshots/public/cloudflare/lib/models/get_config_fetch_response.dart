@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-GetConfigFetchResponse copyWith({List<Messages22>? errors, List<Messages22>? messages, bool? success, List<ScanConfig> Function()? result, }) { return GetConfigFetchResponse(
+GetConfigFetchResponse copyWith({List<Messages22>? errors, List<Messages22>? messages, bool? success, List<ScanConfig>? Function()? result, }) { return GetConfigFetchResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

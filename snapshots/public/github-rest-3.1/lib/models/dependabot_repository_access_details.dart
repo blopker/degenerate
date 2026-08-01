@@ -29,25 +29,25 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DependabotRepositoryAccessDetailsDefaultLevel($value)'; } 
  }
 /// Information about repositories that Dependabot is able to access in an organization
-@immutable final class DependabotRepositoryAccessDetails {const DependabotRepositoryAccessDetails({this.defaultLevel, this.accessibleRepositories, });
+@immutable final class DependabotRepositoryAccessDetails {const DependabotRepositoryAccessDetails({this.defaultLevel = const Omittable.absent(), this.accessibleRepositories, });
 
 factory DependabotRepositoryAccessDetails.fromJson(Map<String, dynamic> json) { return DependabotRepositoryAccessDetails(
-  defaultLevel: json['default_level'] != null ? DependabotRepositoryAccessDetailsDefaultLevel.fromJson(json['default_level'] as String) : null,
+  defaultLevel: json.containsKey('default_level') ? Omittable(json['default_level'] != null ? DependabotRepositoryAccessDetailsDefaultLevel.fromJson(json['default_level'] as String) : null) : const Omittable.absent(),
   accessibleRepositories: (json['accessible_repositories'] as List<dynamic>?)?.map((e) => e == null ? null : SimpleRepository.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// The default repository access level for Dependabot updates.
-final DependabotRepositoryAccessDetailsDefaultLevel? defaultLevel;
+final Omittable<DependabotRepositoryAccessDetailsDefaultLevel?> defaultLevel;
 
 final List<SimpleRepository?>? accessibleRepositories;
 
 Map<String, dynamic> toJson() { return {
-  if (defaultLevel != null) 'default_level': defaultLevel?.toJson(),
+  if (defaultLevel.isPresent) 'default_level': defaultLevel.value?.toJson(),
   if (accessibleRepositories != null) 'accessible_repositories': accessibleRepositories?.map((e) => e?.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_level', 'accessible_repositories'}.contains(key)); } 
-DependabotRepositoryAccessDetails copyWith({DependabotRepositoryAccessDetailsDefaultLevel? Function()? defaultLevel, List<SimpleRepository?> Function()? accessibleRepositories, }) { return DependabotRepositoryAccessDetails(
-  defaultLevel: defaultLevel != null ? defaultLevel() : this.defaultLevel,
+DependabotRepositoryAccessDetails copyWith({Omittable<DependabotRepositoryAccessDetailsDefaultLevel?>? defaultLevel, List<SimpleRepository?>? Function()? accessibleRepositories, }) { return DependabotRepositoryAccessDetails(
+  defaultLevel: defaultLevel ?? this.defaultLevel,
   accessibleRepositories: accessibleRepositories != null ? accessibleRepositories() : this.accessibleRepositories,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

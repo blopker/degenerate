@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (targetCriteria != null) 'target_criteria': targetCriteria?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'target_criteria'}.contains(key)); } 
-AccessAppRespEmbeddedTargetCriteriaInfra copyWith({List<AccessTargetCriteriaInfraApp> Function()? targetCriteria}) { return AccessAppRespEmbeddedTargetCriteriaInfra(
+AccessAppRespEmbeddedTargetCriteriaInfra copyWith({List<AccessTargetCriteriaInfraApp>? Function()? targetCriteria}) { return AccessAppRespEmbeddedTargetCriteriaInfra(
   targetCriteria: targetCriteria != null ? targetCriteria() : this.targetCriteria,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

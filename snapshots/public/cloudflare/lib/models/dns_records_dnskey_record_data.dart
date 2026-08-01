@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'public_key': ?publicKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'algorithm', 'flags', 'protocol', 'public_key'}.contains(key)); } 
-DnsRecordsDnskeyRecordData copyWith({double Function()? algorithm, double Function()? flags, double Function()? protocol, String Function()? publicKey, }) { return DnsRecordsDnskeyRecordData(
+DnsRecordsDnskeyRecordData copyWith({double? Function()? algorithm, double? Function()? flags, double? Function()? protocol, String? Function()? publicKey, }) { return DnsRecordsDnskeyRecordData(
   algorithm: algorithm != null ? algorithm() : this.algorithm,
   flags: flags != null ? flags() : this.flags,
   protocol: protocol != null ? protocol() : this.protocol,

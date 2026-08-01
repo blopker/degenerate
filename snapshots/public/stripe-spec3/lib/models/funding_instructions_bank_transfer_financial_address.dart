@@ -122,7 +122,7 @@ Map<String, dynamic> toJson() { return {
   if (zengin != null) 'zengin': zengin?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-FundingInstructionsBankTransferFinancialAddress copyWith({FundingInstructionsBankTransferAbaRecord Function()? aba, FundingInstructionsBankTransferIbanRecord Function()? iban, FundingInstructionsBankTransferSortCodeRecord Function()? sortCode, FundingInstructionsBankTransferSpeiRecord Function()? spei, List<FundingInstructionsBankTransferFinancialAddressSupportedNetworks> Function()? supportedNetworks, FundingInstructionsBankTransferSwiftRecord Function()? swift, FundingInstructionsBankTransferFinancialAddressType? type, FundingInstructionsBankTransferZenginRecord Function()? zengin, }) { return FundingInstructionsBankTransferFinancialAddress(
+FundingInstructionsBankTransferFinancialAddress copyWith({FundingInstructionsBankTransferAbaRecord? Function()? aba, FundingInstructionsBankTransferIbanRecord? Function()? iban, FundingInstructionsBankTransferSortCodeRecord? Function()? sortCode, FundingInstructionsBankTransferSpeiRecord? Function()? spei, List<FundingInstructionsBankTransferFinancialAddressSupportedNetworks>? Function()? supportedNetworks, FundingInstructionsBankTransferSwiftRecord? Function()? swift, FundingInstructionsBankTransferFinancialAddressType? type, FundingInstructionsBankTransferZenginRecord? Function()? zengin, }) { return FundingInstructionsBankTransferFinancialAddress(
   aba: aba != null ? aba() : this.aba,
   iban: iban != null ? iban() : this.iban,
   sortCode: sortCode != null ? sortCode() : this.sortCode,

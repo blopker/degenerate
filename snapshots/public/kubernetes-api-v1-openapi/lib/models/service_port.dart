@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (targetPort != null) 'targetPort': targetPort?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('port') && json['port'] is num; } 
-ServicePort copyWith({String Function()? appProtocol, String Function()? name, int Function()? nodePort, int? port, String Function()? protocol, IoK8sApimachineryPkgUtilIntstrIntOrString Function()? targetPort, }) { return ServicePort(
+ServicePort copyWith({String? Function()? appProtocol, String? Function()? name, int? Function()? nodePort, int? port, String Function()? protocol, IoK8sApimachineryPkgUtilIntstrIntOrString? Function()? targetPort, }) { return ServicePort(
   appProtocol: appProtocol != null ? appProtocol() : this.appProtocol,
   name: name != null ? name() : this.name,
   nodePort: nodePort != null ? nodePort() : this.nodePort,

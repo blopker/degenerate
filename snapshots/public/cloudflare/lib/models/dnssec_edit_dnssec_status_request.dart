@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dnssec_multi_signer', 'dnssec_presigned', 'dnssec_use_nsec3', 'status'}.contains(key)); } 
-DnssecEditDnssecStatusRequest copyWith({DnssecDnssecMultiSigner Function()? dnssecMultiSigner, DnssecDnssecPresigned Function()? dnssecPresigned, DnssecDnssecUseNsec3 Function()? dnssecUseNsec3, DnssecEditDnssecStatusRequestStatus Function()? status, }) { return DnssecEditDnssecStatusRequest(
+DnssecEditDnssecStatusRequest copyWith({DnssecDnssecMultiSigner? Function()? dnssecMultiSigner, DnssecDnssecPresigned? Function()? dnssecPresigned, DnssecDnssecUseNsec3? Function()? dnssecUseNsec3, DnssecEditDnssecStatusRequestStatus? Function()? status, }) { return DnssecEditDnssecStatusRequest(
   dnssecMultiSigner: dnssecMultiSigner != null ? dnssecMultiSigner() : this.dnssecMultiSigner,
   dnssecPresigned: dnssecPresigned != null ? dnssecPresigned() : this.dnssecPresigned,
   dnssecUseNsec3: dnssecUseNsec3 != null ? dnssecUseNsec3() : this.dnssecUseNsec3,

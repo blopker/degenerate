@@ -97,7 +97,7 @@ Map<String, dynamic> toJson() { return {
   if (prorationBehavior != null) 'proration_behavior': prorationBehavior?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_settings', 'end_behavior', 'expand', 'metadata', 'phases', 'proration_behavior'}.contains(key)); } 
-PostSubscriptionSchedulesScheduleRequest copyWith({PostSubscriptionSchedulesScheduleRequestDefaultSettings Function()? defaultSettings, PostSubscriptionSchedulesScheduleRequestEndBehavior Function()? endBehavior, List<String> Function()? expand, PostSubscriptionSchedulesScheduleRequestMetadata Function()? metadata, List<PostSubscriptionSchedulesScheduleRequestPhases> Function()? phases, PostSubscriptionSchedulesScheduleRequestProrationBehavior Function()? prorationBehavior, }) { return PostSubscriptionSchedulesScheduleRequest(
+PostSubscriptionSchedulesScheduleRequest copyWith({PostSubscriptionSchedulesScheduleRequestDefaultSettings? Function()? defaultSettings, PostSubscriptionSchedulesScheduleRequestEndBehavior? Function()? endBehavior, List<String>? Function()? expand, PostSubscriptionSchedulesScheduleRequestMetadata? Function()? metadata, List<PostSubscriptionSchedulesScheduleRequestPhases>? Function()? phases, PostSubscriptionSchedulesScheduleRequestProrationBehavior? Function()? prorationBehavior, }) { return PostSubscriptionSchedulesScheduleRequest(
   defaultSettings: defaultSettings != null ? defaultSettings() : this.defaultSettings,
   endBehavior: endBehavior != null ? endBehavior() : this.endBehavior,
   expand: expand != null ? expand() : this.expand,

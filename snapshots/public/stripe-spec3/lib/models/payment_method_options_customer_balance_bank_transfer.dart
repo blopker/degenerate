@@ -74,12 +74,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsCustomerBalanceBankTransferType($value)'; } 
  }
 /// 
-@immutable final class PaymentMethodOptionsCustomerBalanceBankTransfer {const PaymentMethodOptionsCustomerBalanceBankTransfer({this.euBankTransfer, this.requestedAddressTypes, this.type, });
+@immutable final class PaymentMethodOptionsCustomerBalanceBankTransfer {const PaymentMethodOptionsCustomerBalanceBankTransfer({this.euBankTransfer, this.requestedAddressTypes, this.type = const Omittable.absent(), });
 
 factory PaymentMethodOptionsCustomerBalanceBankTransfer.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsCustomerBalanceBankTransfer(
   euBankTransfer: json['eu_bank_transfer'] != null ? PaymentMethodOptionsCustomerBalanceEuBankAccount.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>) : null,
   requestedAddressTypes: (json['requested_address_types'] as List<dynamic>?)?.map((e) => PaymentMethodOptionsCustomerBalanceBankTransferRequestedAddressTypes.fromJson(e as String)).toList(),
-  type: json['type'] != null ? PaymentMethodOptionsCustomerBalanceBankTransferType.fromJson(json['type'] as String) : null,
+  type: json.containsKey('type') ? Omittable(json['type'] != null ? PaymentMethodOptionsCustomerBalanceBankTransferType.fromJson(json['type'] as String) : null) : const Omittable.absent(),
 ); }
 
 final PaymentMethodOptionsCustomerBalanceEuBankAccount? euBankTransfer;
@@ -90,18 +90,18 @@ final PaymentMethodOptionsCustomerBalanceEuBankAccount? euBankTransfer;
 final List<PaymentMethodOptionsCustomerBalanceBankTransferRequestedAddressTypes>? requestedAddressTypes;
 
 /// The bank transfer type that this PaymentIntent is allowed to use for funding Permitted values include: `eu_bank_transfer`, `gb_bank_transfer`, `jp_bank_transfer`, `mx_bank_transfer`, or `us_bank_transfer`.
-final PaymentMethodOptionsCustomerBalanceBankTransferType? type;
+final Omittable<PaymentMethodOptionsCustomerBalanceBankTransferType?> type;
 
 Map<String, dynamic> toJson() { return {
   if (euBankTransfer != null) 'eu_bank_transfer': euBankTransfer?.toJson(),
   if (requestedAddressTypes != null) 'requested_address_types': requestedAddressTypes?.map((e) => e.toJson()).toList(),
-  if (type != null) 'type': type?.toJson(),
+  if (type.isPresent) 'type': type.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'eu_bank_transfer', 'requested_address_types', 'type'}.contains(key)); } 
-PaymentMethodOptionsCustomerBalanceBankTransfer copyWith({PaymentMethodOptionsCustomerBalanceEuBankAccount Function()? euBankTransfer, List<PaymentMethodOptionsCustomerBalanceBankTransferRequestedAddressTypes> Function()? requestedAddressTypes, PaymentMethodOptionsCustomerBalanceBankTransferType? Function()? type, }) { return PaymentMethodOptionsCustomerBalanceBankTransfer(
+PaymentMethodOptionsCustomerBalanceBankTransfer copyWith({PaymentMethodOptionsCustomerBalanceEuBankAccount? Function()? euBankTransfer, List<PaymentMethodOptionsCustomerBalanceBankTransferRequestedAddressTypes>? Function()? requestedAddressTypes, Omittable<PaymentMethodOptionsCustomerBalanceBankTransferType?>? type, }) { return PaymentMethodOptionsCustomerBalanceBankTransfer(
   euBankTransfer: euBankTransfer != null ? euBankTransfer() : this.euBankTransfer,
   requestedAddressTypes: requestedAddressTypes != null ? requestedAddressTypes() : this.requestedAddressTypes,
-  type: type != null ? type() : this.type,
+  type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentMethodOptionsCustomerBalanceBankTransfer &&

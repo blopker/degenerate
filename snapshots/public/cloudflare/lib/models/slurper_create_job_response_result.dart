@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'id': ?id,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-SlurperCreateJobResponseResult copyWith({String Function()? id}) { return SlurperCreateJobResponseResult(
+SlurperCreateJobResponseResult copyWith({String? Function()? id}) { return SlurperCreateJobResponseResult(
   id: id != null ? id() : this.id,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

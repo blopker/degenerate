@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SimpleCommitStatus {const SimpleCommitStatus({required this.description, required this.id, required this.nodeId, required this.state, required this.context, required this.targetUrl, required this.avatarUrl, required this.url, required this.createdAt, required this.updatedAt, this.$required, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SimpleCommitStatus {const SimpleCommitStatus({required this.description, required this.id, required this.nodeId, required this.state, required this.context, required this.targetUrl, required this.avatarUrl, required this.url, required this.createdAt, required this.updatedAt, this.$required = const Omittable.absent(), });
 
 factory SimpleCommitStatus.fromJson(Map<String, dynamic> json) { return SimpleCommitStatus(
   description: json['description'] as String?,
@@ -9,7 +9,7 @@ factory SimpleCommitStatus.fromJson(Map<String, dynamic> json) { return SimpleCo
   state: json['state'] as String,
   context: json['context'] as String,
   targetUrl: json['target_url'] != null ? Uri.parse(json['target_url'] as String) : null,
-  $required: json['required'] as bool?,
+  $required: json.containsKey('required') ? Omittable(json['required'] as bool?) : const Omittable.absent(),
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,
   url: Uri.parse(json['url'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -28,7 +28,7 @@ final String context;
 
 final Uri? targetUrl;
 
-final bool? $required;
+final Omittable<bool?> $required;
 
 final Uri? avatarUrl;
 
@@ -39,36 +39,36 @@ final DateTime createdAt;
 final DateTime updatedAt;
 
 Map<String, dynamic> toJson() { return {
-  'description': ?description,
+  'description': description,
   'id': id,
   'node_id': nodeId,
   'state': state,
   'context': context,
-  if (targetUrl != null) 'target_url': targetUrl?.toString(),
-  'required': ?$required,
-  if (avatarUrl != null) 'avatar_url': avatarUrl?.toString(),
+  'target_url': targetUrl?.toString(),
+  if ($required.isPresent) 'required': $required.value,
+  'avatar_url': avatarUrl?.toString(),
   'url': url.toString(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('state') && json['state'] is String &&
       json.containsKey('context') && json['context'] is String &&
-      json.containsKey('target_url') && json['target_url'] is String &&
-      json.containsKey('avatar_url') && json['avatar_url'] is String &&
+      json.containsKey('target_url') && (json['target_url'] == null || json['target_url'] is String) &&
+      json.containsKey('avatar_url') && (json['avatar_url'] == null || json['avatar_url'] is String) &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-SimpleCommitStatus copyWith({String? Function()? description, int? id, String? nodeId, String? state, String? context, Uri? Function()? targetUrl, bool? Function()? $required, Uri? Function()? avatarUrl, Uri? url, DateTime? createdAt, DateTime? updatedAt, }) { return SimpleCommitStatus(
+SimpleCommitStatus copyWith({String? Function()? description, int? id, String? nodeId, String? state, String? context, Uri? Function()? targetUrl, Omittable<bool?>? $required, Uri? Function()? avatarUrl, Uri? url, DateTime? createdAt, DateTime? updatedAt, }) { return SimpleCommitStatus(
   description: description != null ? description() : this.description,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   state: state ?? this.state,
   context: context ?? this.context,
   targetUrl: targetUrl != null ? targetUrl() : this.targetUrl,
-  $required: $required != null ? $required() : this.$required,
+  $required: $required ?? this.$required,
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   url: url ?? this.url,
   createdAt: createdAt ?? this.createdAt,

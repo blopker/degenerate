@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
   'transform_jsonata': ?transformJsonata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('schema') && json['schema'] is String; } 
-AccessScimConfigMapping copyWith({bool Function()? enabled, String Function()? filter, AccessScimConfigMappingOperations Function()? operations, String? schema, AccessScimConfigMappingStrictness Function()? strictness, String Function()? transformJsonata, }) { return AccessScimConfigMapping(
+AccessScimConfigMapping copyWith({bool? Function()? enabled, String? Function()? filter, AccessScimConfigMappingOperations? Function()? operations, String? schema, AccessScimConfigMappingStrictness? Function()? strictness, String? Function()? transformJsonata, }) { return AccessScimConfigMapping(
   enabled: enabled != null ? enabled() : this.enabled,
   filter: filter != null ? filter() : this.filter,
   operations: operations != null ? operations() : this.operations,

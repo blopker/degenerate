@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'minimum': ?minimum,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity copyWith({bool? enabled, int Function()? maximum, int Function()? minimum, }) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity(
+PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity copyWith({bool? enabled, int? Function()? maximum, int? Function()? minimum, }) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity(
   enabled: enabled ?? this.enabled,
   maximum: maximum != null ? maximum() : this.maximum,
   minimum: minimum != null ? minimum() : this.minimum,

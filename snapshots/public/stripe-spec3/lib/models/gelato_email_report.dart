@@ -26,32 +26,32 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoEmailReportStatus($value)'; } 
  }
 /// Result from a email check
-@immutable final class GelatoEmailReport {const GelatoEmailReport({required this.status, this.email, this.error, });
+@immutable final class GelatoEmailReport {const GelatoEmailReport({required this.status, this.email = const Omittable.absent(), this.error = const Omittable.absent(), });
 
 factory GelatoEmailReport.fromJson(Map<String, dynamic> json) { return GelatoEmailReport(
-  email: json['email'] as String?,
-  error: json['error'] != null ? GelatoEmailReportError.fromJson(json['error'] as Map<String, dynamic>) : null,
+  email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
+  error: json.containsKey('error') ? Omittable(json['error'] != null ? GelatoEmailReportError.fromJson(json['error'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   status: GelatoEmailReportStatus.fromJson(json['status'] as String),
 ); }
 
 /// Email to be verified.
-final String? email;
+final Omittable<String?> email;
 
 /// Details on the verification error. Present when status is `unverified`.
-final GelatoEmailReportError? error;
+final Omittable<GelatoEmailReportError?> error;
 
 /// Status of this `email` check.
 final GelatoEmailReportStatus status;
 
 Map<String, dynamic> toJson() { return {
-  'email': ?email,
-  if (error != null) 'error': error?.toJson(),
+  if (email.isPresent) 'email': email.value,
+  if (error.isPresent) 'error': error.value?.toJson(),
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-GelatoEmailReport copyWith({String? Function()? email, GelatoEmailReportError? Function()? error, GelatoEmailReportStatus? status, }) { return GelatoEmailReport(
-  email: email != null ? email() : this.email,
-  error: error != null ? error() : this.error,
+GelatoEmailReport copyWith({Omittable<String?>? email, Omittable<GelatoEmailReportError?>? error, GelatoEmailReportStatus? status, }) { return GelatoEmailReport(
+  email: email ?? this.email,
+  error: error ?? this.error,
   status: status ?? this.status,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

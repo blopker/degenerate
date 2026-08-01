@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'timestamp': ?timestamp,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'schemas', 'timestamp'}.contains(key)); } 
-ShieldSchemaResponseWithThresholdsResult copyWith({List<Map<String, dynamic>> Function()? schemas, String Function()? timestamp, }) { return ShieldSchemaResponseWithThresholdsResult(
+ShieldSchemaResponseWithThresholdsResult copyWith({List<Map<String, dynamic>>? Function()? schemas, String? Function()? timestamp, }) { return ShieldSchemaResponseWithThresholdsResult(
   schemas: schemas != null ? schemas() : this.schemas,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
 ); } 

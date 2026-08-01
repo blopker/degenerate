@@ -52,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('healt
       json.containsKey('health_value') && json['health_value'] is num &&
       json.containsKey('interface_name') && json['interface_name'] is String &&
       json.containsKey('tunnel_id') && json['tunnel_id'] is String; } 
-MconnSnapshotTunnel copyWith({String Function()? connectorId, String? healthState, double? healthValue, String? interfaceName, double Function()? probedMtu, double Function()? recentHealthyPings, double Function()? recentUnhealthyPings, String? tunnelId, }) { return MconnSnapshotTunnel(
+MconnSnapshotTunnel copyWith({String? Function()? connectorId, String? healthState, double? healthValue, String? interfaceName, double? Function()? probedMtu, double? Function()? recentHealthyPings, double? Function()? recentUnhealthyPings, String? tunnelId, }) { return MconnSnapshotTunnel(
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   healthState: healthState ?? this.healthState,
   healthValue: healthValue ?? this.healthValue,

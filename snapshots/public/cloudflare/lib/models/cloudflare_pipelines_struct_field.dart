@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_source_field.dart';@immutable final class CloudflarePipelinesStructField {const CloudflarePipelinesStructField({required this.fields, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_source_field.dart';@immutable final class CloudflarePipelinesStructField {const CloudflarePipelinesStructField({required this.fields, this.name = const Omittable.absent(), });
 
 factory CloudflarePipelinesStructField.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesStructField(
   fields: (json['fields'] as List<dynamic>).map((e) => CloudflarePipelinesSourceField.fromJson(e as Map<String, dynamic>)).toList(),
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
 ); }
 
 final List<CloudflarePipelinesSourceField> fields;
 
-final String? name;
+final Omittable<String?> name;
 
 Map<String, dynamic> toJson() { return {
   'fields': fields.map((e) => e.toJson()).toList(),
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('fields'); } 
-CloudflarePipelinesStructField copyWith({List<CloudflarePipelinesSourceField>? fields, String? Function()? name, }) { return CloudflarePipelinesStructField(
+CloudflarePipelinesStructField copyWith({List<CloudflarePipelinesSourceField>? fields, Omittable<String?>? name, }) { return CloudflarePipelinesStructField(
   fields: fields ?? this.fields,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CloudflarePipelinesStructField &&

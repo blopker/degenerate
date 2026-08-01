@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'jdcloud_cidrs': ?jdcloudCidrs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'etag', 'ipv4_cidrs', 'ipv6_cidrs', 'jdcloud_cidrs'}.contains(key)); } 
-PublicIpIpsJdcloud copyWith({PublicIpEtag Function()? etag, List<String> Function()? ipv4Cidrs, List<String> Function()? ipv6Cidrs, List<String> Function()? jdcloudCidrs, }) { return PublicIpIpsJdcloud(
+PublicIpIpsJdcloud copyWith({PublicIpEtag? Function()? etag, List<String>? Function()? ipv4Cidrs, List<String>? Function()? ipv6Cidrs, List<String>? Function()? jdcloudCidrs, }) { return PublicIpIpsJdcloud(
   etag: etag != null ? etag() : this.etag,
   ipv4Cidrs: ipv4Cidrs != null ? ipv4Cidrs() : this.ipv4Cidrs,
   ipv6Cidrs: ipv6Cidrs != null ? ipv6Cidrs() : this.ipv6Cidrs,

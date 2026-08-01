@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'user': ?user,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'database', 'password', 'scheme', 'user'}.contains(key)); } 
-HyperdriveHyperdriveDatabase copyWith({String Function()? database, String Function()? password, HyperdriveHyperdriveScheme Function()? scheme, String Function()? user, }) { return HyperdriveHyperdriveDatabase(
+HyperdriveHyperdriveDatabase copyWith({String? Function()? database, String? Function()? password, HyperdriveHyperdriveScheme? Function()? scheme, String? Function()? user, }) { return HyperdriveHyperdriveDatabase(
   database: database != null ? database() : this.database,
   password: password != null ? password() : this.password,
   scheme: scheme != null ? scheme() : this.scheme,

@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
       json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindSendEmail copyWith({List<String> Function()? allowedDestinationAddresses, List<String> Function()? allowedSenderAddresses, String Function()? destinationAddress, WorkersBindingName? name, String? type, }) { return WorkersBindingKindSendEmail(
+WorkersBindingKindSendEmail copyWith({List<String>? Function()? allowedDestinationAddresses, List<String>? Function()? allowedSenderAddresses, String? Function()? destinationAddress, WorkersBindingName? name, String? type, }) { return WorkersBindingKindSendEmail(
   allowedDestinationAddresses: allowedDestinationAddresses != null ? allowedDestinationAddresses() : this.allowedDestinationAddresses,
   allowedSenderAddresses: allowedSenderAddresses != null ? allowedSenderAddresses() : this.allowedSenderAddresses,
   destinationAddress: destinationAddress != null ? destinationAddress() : this.destinationAddress,

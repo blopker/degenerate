@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DependabotAlertDismissedReason($value)'; } 
  }
 /// A Dependabot alert.
-@immutable final class DependabotAlert {const DependabotAlert({required this.number, required this.state, required this.dependency, required this.securityAdvisory, required this.securityVulnerability, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.dismissedComment, required this.fixedAt, this.autoDismissedAt, this.dismissalRequest, this.assignees, });
+@immutable final class DependabotAlert {const DependabotAlert({required this.number, required this.state, required this.dependency, required this.securityAdvisory, required this.securityVulnerability, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.dismissedComment, required this.fixedAt, this.autoDismissedAt = const Omittable.absent(), this.dismissalRequest, this.assignees, });
 
 factory DependabotAlert.fromJson(Map<String, dynamic> json) { return DependabotAlert(
   number: AlertNumber.fromJson(json['number'] as num),
@@ -86,7 +86,7 @@ factory DependabotAlert.fromJson(Map<String, dynamic> json) { return DependabotA
   dismissedReason: json['dismissed_reason'] != null ? DependabotAlertDismissedReason.fromJson(json['dismissed_reason'] as String) : null,
   dismissedComment: json['dismissed_comment'] as String?,
   fixedAt: json['fixed_at'] != null ? AlertFixedAt.fromJson(json['fixed_at'] as String) : null,
-  autoDismissedAt: json['auto_dismissed_at'] != null ? AlertAutoDismissedAt.fromJson(json['auto_dismissed_at'] as String) : null,
+  autoDismissedAt: json.containsKey('auto_dismissed_at') ? Omittable(json['auto_dismissed_at'] != null ? AlertAutoDismissedAt.fromJson(json['auto_dismissed_at'] as String) : null) : const Omittable.absent(),
   dismissalRequest: json['dismissal_request'] != null ? DependabotAlertDismissalRequestSimple.fromJson(json['dismissal_request'] as Map<String, dynamic>) : null,
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
@@ -131,7 +131,7 @@ final String? dismissedComment;
 final AlertFixedAt? fixedAt;
 
 /// The time that the alert was auto-dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-final AlertAutoDismissedAt? autoDismissedAt;
+final Omittable<AlertAutoDismissedAt?> autoDismissedAt;
 
 final DependabotAlertDismissalRequestSimple? dismissalRequest;
 
@@ -148,12 +148,12 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl.toJson(),
   'created_at': createdAt.toJson(),
   'updated_at': updatedAt.toJson(),
-  if (dismissedAt != null) 'dismissed_at': dismissedAt?.toJson(),
-  if (dismissedBy != null) 'dismissed_by': dismissedBy?.toJson(),
-  if (dismissedReason != null) 'dismissed_reason': dismissedReason?.toJson(),
-  'dismissed_comment': ?dismissedComment,
-  if (fixedAt != null) 'fixed_at': fixedAt?.toJson(),
-  if (autoDismissedAt != null) 'auto_dismissed_at': autoDismissedAt?.toJson(),
+  'dismissed_at': dismissedAt?.toJson(),
+  'dismissed_by': dismissedBy?.toJson(),
+  'dismissed_reason': dismissedReason?.toJson(),
+  'dismissed_comment': dismissedComment,
+  'fixed_at': fixedAt?.toJson(),
+  if (autoDismissedAt.isPresent) 'auto_dismissed_at': autoDismissedAt.value?.toJson(),
   if (dismissalRequest != null) 'dismissal_request': dismissalRequest?.toJson(),
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
 }; } 
@@ -169,9 +169,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('numbe
       json.containsKey('dismissed_at') &&
       json.containsKey('dismissed_by') &&
       json.containsKey('dismissed_reason') &&
-      json.containsKey('dismissed_comment') && json['dismissed_comment'] is String &&
+      json.containsKey('dismissed_comment') && (json['dismissed_comment'] == null || json['dismissed_comment'] is String) &&
       json.containsKey('fixed_at'); } 
-DependabotAlert copyWith({AlertNumber? number, DependabotAlertState? state, DependabotAlertDependency? dependency, DependabotAlertSecurityAdvisory? securityAdvisory, DependabotAlertSecurityVulnerability? securityVulnerability, AlertUrl? url, AlertHtmlUrl? htmlUrl, AlertCreatedAt? createdAt, AlertUpdatedAt? updatedAt, AlertDismissedAt? Function()? dismissedAt, SimpleUser? Function()? dismissedBy, DependabotAlertDismissedReason? Function()? dismissedReason, String? Function()? dismissedComment, AlertFixedAt? Function()? fixedAt, AlertAutoDismissedAt? Function()? autoDismissedAt, DependabotAlertDismissalRequestSimple Function()? dismissalRequest, List<SimpleUser> Function()? assignees, }) { return DependabotAlert(
+DependabotAlert copyWith({AlertNumber? number, DependabotAlertState? state, DependabotAlertDependency? dependency, DependabotAlertSecurityAdvisory? securityAdvisory, DependabotAlertSecurityVulnerability? securityVulnerability, AlertUrl? url, AlertHtmlUrl? htmlUrl, AlertCreatedAt? createdAt, AlertUpdatedAt? updatedAt, AlertDismissedAt? Function()? dismissedAt, SimpleUser? Function()? dismissedBy, DependabotAlertDismissedReason? Function()? dismissedReason, String? Function()? dismissedComment, AlertFixedAt? Function()? fixedAt, Omittable<AlertAutoDismissedAt?>? autoDismissedAt, DependabotAlertDismissalRequestSimple? Function()? dismissalRequest, List<SimpleUser>? Function()? assignees, }) { return DependabotAlert(
   number: number ?? this.number,
   state: state ?? this.state,
   dependency: dependency ?? this.dependency,
@@ -186,7 +186,7 @@ DependabotAlert copyWith({AlertNumber? number, DependabotAlertState? state, Depe
   dismissedReason: dismissedReason != null ? dismissedReason() : this.dismissedReason,
   dismissedComment: dismissedComment != null ? dismissedComment() : this.dismissedComment,
   fixedAt: fixedAt != null ? fixedAt() : this.fixedAt,
-  autoDismissedAt: autoDismissedAt != null ? autoDismissedAt() : this.autoDismissedAt,
+  autoDismissedAt: autoDismissedAt ?? this.autoDismissedAt,
   dismissalRequest: dismissalRequest != null ? dismissalRequest() : this.dismissalRequest,
   assignees: assignees != null ? assignees() : this.assignees,
 ); } 

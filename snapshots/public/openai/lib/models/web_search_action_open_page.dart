@@ -25,11 +25,11 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Action type "open_page" - Opens a specific URL from search results.
 /// 
-@immutable final class WebSearchActionOpenPage {const WebSearchActionOpenPage({required this.type, this.url, });
+@immutable final class WebSearchActionOpenPage {const WebSearchActionOpenPage({required this.type, this.url = const Omittable.absent(), });
 
 factory WebSearchActionOpenPage.fromJson(Map<String, dynamic> json) { return WebSearchActionOpenPage(
   type: WebSearchActionOpenPageType.fromJson(json['type'] as String),
-  url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
+  url: json.containsKey('url') ? Omittable(json['url'] != null ? Uri.parse(json['url'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// The action type.
@@ -38,16 +38,16 @@ final WebSearchActionOpenPageType type;
 
 /// The URL opened by the model.
 /// 
-final Uri? url;
+final Omittable<Uri?> url;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
-  if (url != null) 'url': url?.toString(),
+  if (url.isPresent) 'url': url.value?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-WebSearchActionOpenPage copyWith({WebSearchActionOpenPageType? type, Uri? Function()? url, }) { return WebSearchActionOpenPage(
+WebSearchActionOpenPage copyWith({WebSearchActionOpenPageType? type, Omittable<Uri?>? url, }) { return WebSearchActionOpenPage(
   type: type ?? this.type,
-  url: url != null ? url() : this.url,
+  url: url ?? this.url,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WebSearchActionOpenPage &&

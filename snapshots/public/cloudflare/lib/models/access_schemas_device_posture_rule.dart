@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'check', 'data', 'description', 'error', 'id', 'rule_name', 'success', 'timestamp', 'type'}.contains(key)); } 
-AccessSchemasDevicePostureRule copyWith({AccessDevicePostureCheck Function()? check, Map<String, dynamic> Function()? data, String Function()? description, String Function()? error, String Function()? id, String Function()? ruleName, bool Function()? success, String Function()? timestamp, String Function()? type, }) { return AccessSchemasDevicePostureRule(
+AccessSchemasDevicePostureRule copyWith({AccessDevicePostureCheck? Function()? check, Map<String, dynamic>? Function()? data, String? Function()? description, String? Function()? error, String? Function()? id, String? Function()? ruleName, bool? Function()? success, String? Function()? timestamp, String? Function()? type, }) { return AccessSchemasDevicePostureRule(
   check: check != null ? check() : this.check,
   data: data != null ? data() : this.data,
   description: description != null ? description() : this.description,

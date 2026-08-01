@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'uncached': ?uncached,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'all', 'cached', 'uncached'}.contains(key)); } 
-BandwidthByColo copyWith({int Function()? all, int Function()? cached, int Function()? uncached, }) { return BandwidthByColo(
+BandwidthByColo copyWith({int? Function()? all, int? Function()? cached, int? Function()? uncached, }) { return BandwidthByColo(
   all: all != null ? all() : this.all,
   cached: cached != null ? cached() : this.cached,
   uncached: uncached != null ? uncached() : this.uncached,

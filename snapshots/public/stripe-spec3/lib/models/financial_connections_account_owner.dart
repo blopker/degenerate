@@ -23,21 +23,21 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FinancialConnectionsAccountOwnerObject($value)'; } 
  }
 /// Describes an owner of an account.
-@immutable final class FinancialConnectionsAccountOwner {const FinancialConnectionsAccountOwner({required this.id, required this.name, required this.object, required this.ownership, this.email, this.phone, this.rawAddress, this.refreshedAt, });
+@immutable final class FinancialConnectionsAccountOwner {const FinancialConnectionsAccountOwner({required this.id, required this.name, required this.object, required this.ownership, this.email = const Omittable.absent(), this.phone = const Omittable.absent(), this.rawAddress = const Omittable.absent(), this.refreshedAt = const Omittable.absent(), });
 
 factory FinancialConnectionsAccountOwner.fromJson(Map<String, dynamic> json) { return FinancialConnectionsAccountOwner(
-  email: json['email'] as String?,
+  email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   name: json['name'] as String,
   object: FinancialConnectionsAccountOwnerObject.fromJson(json['object'] as String),
   ownership: json['ownership'] as String,
-  phone: json['phone'] as String?,
-  rawAddress: json['raw_address'] as String?,
-  refreshedAt: json['refreshed_at'] != null ? (json['refreshed_at'] as num).toInt() : null,
+  phone: json.containsKey('phone') ? Omittable(json['phone'] as String?) : const Omittable.absent(),
+  rawAddress: json.containsKey('raw_address') ? Omittable(json['raw_address'] as String?) : const Omittable.absent(),
+  refreshedAt: json.containsKey('refreshed_at') ? Omittable(json['refreshed_at'] != null ? (json['refreshed_at'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
 /// The email address of the owner.
-final String? email;
+final Omittable<String?> email;
 
 /// Unique identifier for the object.
 final String id;
@@ -52,37 +52,37 @@ final FinancialConnectionsAccountOwnerObject object;
 final String ownership;
 
 /// The raw phone number of the owner.
-final String? phone;
+final Omittable<String?> phone;
 
 /// The raw physical address of the owner.
-final String? rawAddress;
+final Omittable<String?> rawAddress;
 
 /// The timestamp of the refresh that updated this owner.
-final int? refreshedAt;
+final Omittable<int?> refreshedAt;
 
 Map<String, dynamic> toJson() { return {
-  'email': ?email,
+  if (email.isPresent) 'email': email.value,
   'id': id,
   'name': name,
   'object': object.toJson(),
   'ownership': ownership,
-  'phone': ?phone,
-  'raw_address': ?rawAddress,
-  'refreshed_at': ?refreshedAt,
+  if (phone.isPresent) 'phone': phone.value,
+  if (rawAddress.isPresent) 'raw_address': rawAddress.value,
+  if (refreshedAt.isPresent) 'refreshed_at': refreshedAt.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('object') &&
       json.containsKey('ownership') && json['ownership'] is String; } 
-FinancialConnectionsAccountOwner copyWith({String? Function()? email, String? id, String? name, FinancialConnectionsAccountOwnerObject? object, String? ownership, String? Function()? phone, String? Function()? rawAddress, int? Function()? refreshedAt, }) { return FinancialConnectionsAccountOwner(
-  email: email != null ? email() : this.email,
+FinancialConnectionsAccountOwner copyWith({Omittable<String?>? email, String? id, String? name, FinancialConnectionsAccountOwnerObject? object, String? ownership, Omittable<String?>? phone, Omittable<String?>? rawAddress, Omittable<int?>? refreshedAt, }) { return FinancialConnectionsAccountOwner(
+  email: email ?? this.email,
   id: id ?? this.id,
   name: name ?? this.name,
   object: object ?? this.object,
   ownership: ownership ?? this.ownership,
-  phone: phone != null ? phone() : this.phone,
-  rawAddress: rawAddress != null ? rawAddress() : this.rawAddress,
-  refreshedAt: refreshedAt != null ? refreshedAt() : this.refreshedAt,
+  phone: phone ?? this.phone,
+  rawAddress: rawAddress ?? this.rawAddress,
+  refreshedAt: refreshedAt ?? this.refreshedAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is FinancialConnectionsAccountOwner &&

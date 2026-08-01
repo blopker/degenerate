@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'approved_apps', 'created_at', 'in_review_apps', 'unapproved_apps', 'updated_at'}.contains(key)); } 
-ZeroTrustGatewayApplicationsReviewStatusResponseContent copyWith({List<int> Function()? approvedApps, ZeroTrustGatewayReadOnlyTimestamp Function()? createdAt, List<int> Function()? inReviewApps, List<int> Function()? unapprovedApps, ZeroTrustGatewayReadOnlyTimestamp Function()? updatedAt, }) { return ZeroTrustGatewayApplicationsReviewStatusResponseContent(
+ZeroTrustGatewayApplicationsReviewStatusResponseContent copyWith({List<int>? Function()? approvedApps, ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, List<int>? Function()? inReviewApps, List<int>? Function()? unapprovedApps, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) { return ZeroTrustGatewayApplicationsReviewStatusResponseContent(
   approvedApps: approvedApps != null ? approvedApps() : this.approvedApps,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   inReviewApps: inReviewApps != null ? inReviewApps() : this.inReviewApps,

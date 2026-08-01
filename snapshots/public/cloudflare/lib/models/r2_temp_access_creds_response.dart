@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'sessionToken': ?sessionToken,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessKeyId', 'secretAccessKey', 'sessionToken'}.contains(key)); } 
-R2TempAccessCredsResponse copyWith({String Function()? accessKeyId, String Function()? secretAccessKey, String Function()? sessionToken, }) { return R2TempAccessCredsResponse(
+R2TempAccessCredsResponse copyWith({String? Function()? accessKeyId, String? Function()? secretAccessKey, String? Function()? sessionToken, }) { return R2TempAccessCredsResponse(
   accessKeyId: accessKeyId != null ? accessKeyId() : this.accessKeyId,
   secretAccessKey: secretAccessKey != null ? secretAccessKey() : this.secretAccessKey,
   sessionToken: sessionToken != null ? sessionToken() : this.sessionToken,

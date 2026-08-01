@@ -47,14 +47,14 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssueTypeColor($value)'; } 
  }
 /// The type of issue.
-@immutable final class IssueType {const IssueType({required this.id, required this.nodeId, required this.name, required this.description, this.color, this.createdAt, this.updatedAt, this.isEnabled, });
+@immutable final class IssueType {const IssueType({required this.id, required this.nodeId, required this.name, required this.description, this.color = const Omittable.absent(), this.createdAt, this.updatedAt, this.isEnabled, });
 
 factory IssueType.fromJson(Map<String, dynamic> json) { return IssueType(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   name: json['name'] as String,
   description: json['description'] as String?,
-  color: json['color'] != null ? IssueTypeColor.fromJson(json['color'] as String) : null,
+  color: json.containsKey('color') ? Omittable(json['color'] != null ? IssueTypeColor.fromJson(json['color'] as String) : null) : const Omittable.absent(),
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   isEnabled: json['is_enabled'] as bool?,
@@ -73,7 +73,7 @@ final String name;
 final String? description;
 
 /// The color of the issue type.
-final IssueTypeColor? color;
+final Omittable<IssueTypeColor?> color;
 
 /// The time the issue type created.
 final DateTime? createdAt;
@@ -88,8 +88,8 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'node_id': nodeId,
   'name': name,
-  'description': ?description,
-  if (color != null) 'color': color?.toJson(),
+  'description': description,
+  if (color.isPresent) 'color': color.value?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
   'is_enabled': ?isEnabled,
@@ -97,13 +97,13 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('description') && json['description'] is String; } 
-IssueType copyWith({int? id, String? nodeId, String? name, String? Function()? description, IssueTypeColor? Function()? color, DateTime Function()? createdAt, DateTime Function()? updatedAt, bool Function()? isEnabled, }) { return IssueType(
+      json.containsKey('description') && (json['description'] == null || json['description'] is String); } 
+IssueType copyWith({int? id, String? nodeId, String? name, String? Function()? description, Omittable<IssueTypeColor?>? color, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, bool? Function()? isEnabled, }) { return IssueType(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,
   description: description != null ? description() : this.description,
-  color: color != null ? color() : this.color,
+  color: color ?? this.color,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   isEnabled: isEnabled != null ? isEnabled() : this.isEnabled,

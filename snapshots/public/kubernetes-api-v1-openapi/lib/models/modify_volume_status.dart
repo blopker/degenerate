@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'targetVolumeAttributesClassName': ?targetVolumeAttributesClassName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String; } 
-ModifyVolumeStatus copyWith({String? status, String Function()? targetVolumeAttributesClassName, }) { return ModifyVolumeStatus(
+ModifyVolumeStatus copyWith({String? status, String? Function()? targetVolumeAttributesClassName, }) { return ModifyVolumeStatus(
   status: status ?? this.status,
   targetVolumeAttributesClassName: targetVolumeAttributesClassName != null ? targetVolumeAttributesClassName() : this.targetVolumeAttributesClassName,
 ); } 

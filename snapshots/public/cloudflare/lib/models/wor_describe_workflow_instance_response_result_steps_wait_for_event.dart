@@ -49,7 +49,7 @@ final WorDescribeWorkflowInstanceResponseResultStepsWaitForEventType type;
 
 Map<String, dynamic> toJson() { return {
   'end': end.toIso8601String(),
-  if (error != null) 'error': error?.toJson(),
+  'error': error?.toJson(),
   'finished': finished,
   'name': name,
   'output': output.toJson(),

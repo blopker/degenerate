@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'mandate_reference': ?mandateReference,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'creditor_identifier', 'last4', 'mandate_reference'}.contains(key)); } 
-SourceMandateNotificationSepaDebitData copyWith({String Function()? creditorIdentifier, String Function()? last4, String Function()? mandateReference, }) { return SourceMandateNotificationSepaDebitData(
+SourceMandateNotificationSepaDebitData copyWith({String? Function()? creditorIdentifier, String? Function()? last4, String? Function()? mandateReference, }) { return SourceMandateNotificationSepaDebitData(
   creditorIdentifier: creditorIdentifier != null ? creditorIdentifier() : this.creditorIdentifier,
   last4: last4 != null ? last4() : this.last4,
   mandateReference: mandateReference != null ? mandateReference() : this.mandateReference,

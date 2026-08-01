@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   if (canProduce != null) 'can_produce': canProduce?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_produce'}.contains(key)); } 
-RealtimekitUpdatePresetPermissionsMediaVideo copyWith({RealtimekitUpdatePresetPermissionsMediaVideoCanProduce Function()? canProduce}) { return RealtimekitUpdatePresetPermissionsMediaVideo(
+RealtimekitUpdatePresetPermissionsMediaVideo copyWith({RealtimekitUpdatePresetPermissionsMediaVideoCanProduce? Function()? canProduce}) { return RealtimekitUpdatePresetPermissionsMediaVideo(
   canProduce: canProduce != null ? canProduce() : this.canProduce,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

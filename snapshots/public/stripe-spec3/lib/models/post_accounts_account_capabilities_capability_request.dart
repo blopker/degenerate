@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'requested': ?requested,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'requested'}.contains(key)); } 
-PostAccountsAccountCapabilitiesCapabilityRequest copyWith({List<String> Function()? expand, bool Function()? requested, }) { return PostAccountsAccountCapabilitiesCapabilityRequest(
+PostAccountsAccountCapabilitiesCapabilityRequest copyWith({List<String>? Function()? expand, bool? Function()? requested, }) { return PostAccountsAccountCapabilitiesCapabilityRequest(
   expand: expand != null ? expand() : this.expand,
   requested: requested != null ? requested() : this.requested,
 ); } 

@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('childId') && json['childId'] is String &&
       json.containsKey('error') && json['error'] is String; } 
-PostCreateEventRelationshipResponseErrors copyWith({String? childId, String? error, String Function()? errorType, }) { return PostCreateEventRelationshipResponseErrors(
+PostCreateEventRelationshipResponseErrors copyWith({String? childId, String? error, String? Function()? errorType, }) { return PostCreateEventRelationshipResponseErrors(
   childId: childId ?? this.childId,
   error: error ?? this.error,
   errorType: errorType != null ? errorType() : this.errorType,

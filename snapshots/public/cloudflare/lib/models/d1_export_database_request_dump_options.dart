@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'tables': ?tables,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'no_data', 'no_schema', 'tables'}.contains(key)); } 
-D1ExportDatabaseRequestDumpOptions copyWith({bool Function()? noData, bool Function()? noSchema, List<String> Function()? tables, }) { return D1ExportDatabaseRequestDumpOptions(
+D1ExportDatabaseRequestDumpOptions copyWith({bool? Function()? noData, bool? Function()? noSchema, List<String>? Function()? tables, }) { return D1ExportDatabaseRequestDumpOptions(
   noData: noData != null ? noData() : this.noData,
   noSchema: noSchema != null ? noSchema() : this.noSchema,
   tables: tables != null ? tables() : this.tables,

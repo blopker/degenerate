@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'purge_everything': ?purgeEverything,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'purge_everything'}.contains(key)); } 
-CachePurgeEverything copyWith({bool Function()? purgeEverything}) { return CachePurgeEverything(
+CachePurgeEverything copyWith({bool? Function()? purgeEverything}) { return CachePurgeEverything(
   purgeEverything: purgeEverything != null ? purgeEverything() : this.purgeEverything,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('workflow_name') && json['workflow_name'] is String; } 
-WorkersBindingKindWorkflow copyWith({String Function()? className, WorkersBindingName? name, String Function()? scriptName, String? type, String? workflowName, }) { return WorkersBindingKindWorkflow(
+WorkersBindingKindWorkflow copyWith({String? Function()? className, WorkersBindingName? name, String? Function()? scriptName, String? type, String? workflowName, }) { return WorkersBindingKindWorkflow(
   className: className != null ? className() : this.className,
   name: name ?? this.name,
   scriptName: scriptName != null ? scriptName() : this.scriptName,

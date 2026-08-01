@@ -66,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha')
       json.containsKey('parents') &&
       json.containsKey('verification') &&
       json.containsKey('html_url') && json['html_url'] is String; } 
-TimelineCommittedEvent copyWith({String Function()? event, String? sha, String? nodeId, Uri? url, TimelineCommittedEventAuthor? author, TimelineCommittedEventCommitter? committer, String? message, TimelineCommittedEventTree? tree, List<TimelineCommittedEventParents>? parents, TimelineCommittedEventVerification? verification, Uri? htmlUrl, }) { return TimelineCommittedEvent(
+TimelineCommittedEvent copyWith({String? Function()? event, String? sha, String? nodeId, Uri? url, TimelineCommittedEventAuthor? author, TimelineCommittedEventCommitter? committer, String? message, TimelineCommittedEventTree? tree, List<TimelineCommittedEventParents>? parents, TimelineCommittedEventVerification? verification, Uri? htmlUrl, }) { return TimelineCommittedEvent(
   event: event != null ? event() : this.event,
   sha: sha ?? this.sha,
   nodeId: nodeId ?? this.nodeId,

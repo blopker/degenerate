@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_method') && json['payment_method'] is String &&
       json.containsKey('replacements') &&
       json.containsKey('url') && json['url'] is String; } 
-PostForwardingRequestsRequest copyWith({List<String> Function()? expand, Map<String, String> Function()? metadata, String? paymentMethod, List<PostForwardingRequestsRequestReplacements>? replacements, PostForwardingRequestsRequestRequest Function()? request, String? url, }) { return PostForwardingRequestsRequest(
+PostForwardingRequestsRequest copyWith({List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? paymentMethod, List<PostForwardingRequestsRequestReplacements>? replacements, PostForwardingRequestsRequestRequest? Function()? request, String? url, }) { return PostForwardingRequestsRequest(
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   paymentMethod: paymentMethod ?? this.paymentMethod,

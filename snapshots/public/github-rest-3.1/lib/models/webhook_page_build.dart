@@ -40,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('build
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookPageBuild copyWith({WebhookPageBuildBuild? build, EnterpriseWebhooks Function()? enterprise, int? id, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPageBuild(
+WebhookPageBuild copyWith({WebhookPageBuildBuild? build, EnterpriseWebhooks? Function()? enterprise, int? id, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPageBuild(
   build: build ?? this.build,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   id: id ?? this.id,

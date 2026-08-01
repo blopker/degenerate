@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (permissions != null) 'permissions': permissions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'repositories', 'repository_ids', 'permissions'}.contains(key)); } 
-AppsCreateInstallationAccessTokenRequest copyWith({List<String> Function()? repositories, List<int> Function()? repositoryIds, AppPermissions Function()? permissions, }) { return AppsCreateInstallationAccessTokenRequest(
+AppsCreateInstallationAccessTokenRequest copyWith({List<String>? Function()? repositories, List<int>? Function()? repositoryIds, AppPermissions? Function()? permissions, }) { return AppsCreateInstallationAccessTokenRequest(
   repositories: repositories != null ? repositories() : this.repositories,
   repositoryIds: repositoryIds != null ? repositoryIds() : this.repositoryIds,
   permissions: permissions != null ? permissions() : this.permissions,

@@ -43,21 +43,21 @@ final WebhookPackagePublishedPackageRegistry? registry;
 final String? updatedAt;
 
 Map<String, dynamic> toJson() { return {
-  'created_at': ?createdAt,
-  'description': ?description,
+  'created_at': createdAt,
+  'description': description,
   'ecosystem': ecosystem,
   'html_url': htmlUrl.toString(),
   'id': id,
   'name': name,
   'namespace': namespace,
-  if (owner != null) 'owner': owner?.toJson(),
+  'owner': owner?.toJson(),
   'package_type': packageType,
-  if (packageVersion != null) 'package_version': packageVersion?.toJson(),
-  if (registry != null) 'registry': registry?.toJson(),
-  'updated_at': ?updatedAt,
+  'package_version': packageVersion?.toJson(),
+  'registry': registry?.toJson(),
+  'updated_at': updatedAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('ecosystem') && json['ecosystem'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
@@ -67,7 +67,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('package_type') && json['package_type'] is String &&
       json.containsKey('package_version') &&
       json.containsKey('registry') &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String); } 
 WebhookPackagePublishedPackage copyWith({String? Function()? createdAt, String? Function()? description, String? ecosystem, Uri? htmlUrl, int? id, String? name, String? namespace, WebhookPackagePublishedPackageOwner? Function()? owner, String? packageType, WebhookPackagePublishedPackagePackageVersion? Function()? packageVersion, WebhookPackagePublishedPackageRegistry? Function()? registry, String? Function()? updatedAt, }) { return WebhookPackagePublishedPackage(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description != null ? description() : this.description,

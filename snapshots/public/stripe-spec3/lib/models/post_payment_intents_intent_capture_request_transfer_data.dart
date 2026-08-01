@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'amount': ?amount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount'}.contains(key)); } 
-PostPaymentIntentsIntentCaptureRequestTransferData copyWith({int Function()? amount}) { return PostPaymentIntentsIntentCaptureRequestTransferData(
+PostPaymentIntentsIntentCaptureRequestTransferData copyWith({int? Function()? amount}) { return PostPaymentIntentsIntentCaptureRequestTransferData(
   amount: amount != null ? amount() : this.amount,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

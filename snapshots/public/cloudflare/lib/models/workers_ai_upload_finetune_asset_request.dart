@@ -16,14 +16,14 @@ Map<String, dynamic> toJson() { return {
   'file_name': ?fileName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file', 'file_name'}.contains(key)); } 
-WorkersAiUploadFinetuneAssetRequest copyWith({Uint8List Function()? file, String Function()? fileName, }) { return WorkersAiUploadFinetuneAssetRequest(
+WorkersAiUploadFinetuneAssetRequest copyWith({Uint8List? Function()? file, String? Function()? fileName, }) { return WorkersAiUploadFinetuneAssetRequest(
   file: file != null ? file() : this.file,
   fileName: fileName != null ? fileName() : this.fileName,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WorkersAiUploadFinetuneAssetRequest &&
-          file == other.file &&
+          listEquals(file, other.file) &&
           fileName == other.fileName; } 
-@override int get hashCode { return Object.hash(file, fileName); } 
+@override int get hashCode { return Object.hash(Object.hashAll(file ?? const []), fileName); } 
 @override String toString() { return 'WorkersAiUploadFinetuneAssetRequest(file: $file, fileName: $fileName)'; } 
  }

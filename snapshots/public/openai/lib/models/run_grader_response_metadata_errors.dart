@@ -55,13 +55,13 @@ Map<String, dynamic> toJson() { return {
   'invalid_variable_error': invalidVariableError,
   'other_error': otherError,
   'python_grader_server_error': pythonGraderServerError,
-  'python_grader_server_error_type': ?pythonGraderServerErrorType,
+  'python_grader_server_error_type': pythonGraderServerErrorType,
   'python_grader_runtime_error': pythonGraderRuntimeError,
-  'python_grader_runtime_error_details': ?pythonGraderRuntimeErrorDetails,
+  'python_grader_runtime_error_details': pythonGraderRuntimeErrorDetails,
   'model_grader_server_error': modelGraderServerError,
   'model_grader_refusal_error': modelGraderRefusalError,
   'model_grader_parse_error': modelGraderParseError,
-  'model_grader_server_error_details': ?modelGraderServerErrorDetails,
+  'model_grader_server_error_details': modelGraderServerErrorDetails,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('formula_parse_error') && json['formula_parse_error'] is bool &&
       json.containsKey('sample_parse_error') && json['sample_parse_error'] is bool &&
@@ -70,13 +70,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('formu
       json.containsKey('invalid_variable_error') && json['invalid_variable_error'] is bool &&
       json.containsKey('other_error') && json['other_error'] is bool &&
       json.containsKey('python_grader_server_error') && json['python_grader_server_error'] is bool &&
-      json.containsKey('python_grader_server_error_type') && json['python_grader_server_error_type'] is String &&
+      json.containsKey('python_grader_server_error_type') && (json['python_grader_server_error_type'] == null || json['python_grader_server_error_type'] is String) &&
       json.containsKey('python_grader_runtime_error') && json['python_grader_runtime_error'] is bool &&
-      json.containsKey('python_grader_runtime_error_details') && json['python_grader_runtime_error_details'] is String &&
+      json.containsKey('python_grader_runtime_error_details') && (json['python_grader_runtime_error_details'] == null || json['python_grader_runtime_error_details'] is String) &&
       json.containsKey('model_grader_server_error') && json['model_grader_server_error'] is bool &&
       json.containsKey('model_grader_refusal_error') && json['model_grader_refusal_error'] is bool &&
       json.containsKey('model_grader_parse_error') && json['model_grader_parse_error'] is bool &&
-      json.containsKey('model_grader_server_error_details') && json['model_grader_server_error_details'] is String; } 
+      json.containsKey('model_grader_server_error_details') && (json['model_grader_server_error_details'] == null || json['model_grader_server_error_details'] is String); } 
 RunGraderResponseMetadataErrors copyWith({bool? formulaParseError, bool? sampleParseError, bool? truncatedObservationError, bool? unresponsiveRewardError, bool? invalidVariableError, bool? otherError, bool? pythonGraderServerError, String? Function()? pythonGraderServerErrorType, bool? pythonGraderRuntimeError, String? Function()? pythonGraderRuntimeErrorDetails, bool? modelGraderServerError, bool? modelGraderRefusalError, bool? modelGraderParseError, String? Function()? modelGraderServerErrorDetails, }) { return RunGraderResponseMetadataErrors(
   formulaParseError: formulaParseError ?? this.formulaParseError,
   sampleParseError: sampleParseError ?? this.sampleParseError,

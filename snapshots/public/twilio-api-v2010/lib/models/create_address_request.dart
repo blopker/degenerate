@@ -63,7 +63,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('Custo
       json.containsKey('Region') && json['Region'] is String &&
       json.containsKey('PostalCode') && json['PostalCode'] is String &&
       json.containsKey('IsoCountry') && json['IsoCountry'] is String; } 
-CreateAddressRequest copyWith({String? customerName, String? street, String? city, String? region, String? postalCode, String? isoCountry, String Function()? friendlyName, bool Function()? emergencyEnabled, bool Function()? autoCorrectAddress, String Function()? streetSecondary, }) { return CreateAddressRequest(
+CreateAddressRequest copyWith({String? customerName, String? street, String? city, String? region, String? postalCode, String? isoCountry, String? Function()? friendlyName, bool? Function()? emergencyEnabled, bool? Function()? autoCorrectAddress, String? Function()? streetSecondary, }) { return CreateAddressRequest(
   customerName: customerName ?? this.customerName,
   street: street ?? this.street,
   city: city ?? this.city,

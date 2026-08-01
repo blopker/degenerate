@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('CallbackUrl') && json['CallbackUrl'] is String &&
       json.containsKey('TriggerValue') && json['TriggerValue'] is String &&
       json.containsKey('UsageCategory') && json['UsageCategory'] is String; } 
-CreateUsageTriggerRequest copyWith({Uri? callbackUrl, String? triggerValue, String? usageCategory, CreateUsageTriggerRequestCallbackMethod Function()? callbackMethod, String Function()? friendlyName, UsageTriggerEnumRecurring Function()? recurring, UsageTriggerEnumTriggerField Function()? triggerBy, }) { return CreateUsageTriggerRequest(
+CreateUsageTriggerRequest copyWith({Uri? callbackUrl, String? triggerValue, String? usageCategory, CreateUsageTriggerRequestCallbackMethod? Function()? callbackMethod, String? Function()? friendlyName, UsageTriggerEnumRecurring? Function()? recurring, UsageTriggerEnumTriggerField? Function()? triggerBy, }) { return CreateUsageTriggerRequest(
   callbackUrl: callbackUrl ?? this.callbackUrl,
   triggerValue: triggerValue ?? this.triggerValue,
   usageCategory: usageCategory ?? this.usageCategory,

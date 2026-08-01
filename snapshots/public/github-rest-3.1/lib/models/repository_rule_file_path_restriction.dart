@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (parameters != null) 'parameters': parameters?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RepositoryRuleFilePathRestriction copyWith({RepositoryRuleFilePathRestrictionType? type, RepositoryRuleFilePathRestrictionParameters Function()? parameters, }) { return RepositoryRuleFilePathRestriction(
+RepositoryRuleFilePathRestriction copyWith({RepositoryRuleFilePathRestrictionType? type, RepositoryRuleFilePathRestrictionParameters? Function()? parameters, }) { return RepositoryRuleFilePathRestriction(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 

@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-StreamSignedTokenResponse copyWith({List<StreamMessages2>? errors, List<StreamMessages2>? messages, bool? success, StreamSignedTokenResponseResult Function()? result, }) { return StreamSignedTokenResponse(
+StreamSignedTokenResponse copyWith({List<StreamMessages2>? errors, List<StreamMessages2>? messages, bool? success, StreamSignedTokenResponseResult? Function()? result, }) { return StreamSignedTokenResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

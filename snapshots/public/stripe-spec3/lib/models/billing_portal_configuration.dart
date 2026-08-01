@@ -23,21 +23,21 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingPortalConfigurationObject($value)'; } 
  }
 /// A portal configuration describes the functionality and behavior you embed in a portal session. Related guide: [Configure the customer portal](/customer-management/configure-portal).
-@immutable final class BillingPortalConfiguration {const BillingPortalConfiguration({required this.active, required this.businessProfile, required this.created, required this.features, required this.id, required this.isDefault, required this.livemode, required this.loginPage, required this.object, required this.updated, this.application, this.defaultReturnUrl, this.metadata, this.name, });
+@immutable final class BillingPortalConfiguration {const BillingPortalConfiguration({required this.active, required this.businessProfile, required this.created, required this.features, required this.id, required this.isDefault, required this.livemode, required this.loginPage, required this.object, required this.updated, this.application = const Omittable.absent(), this.defaultReturnUrl = const Omittable.absent(), this.metadata = const Omittable.absent(), this.name = const Omittable.absent(), });
 
 factory BillingPortalConfiguration.fromJson(Map<String, dynamic> json) { return BillingPortalConfiguration(
   active: json['active'] as bool,
-  application: json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null,
+  application: json.containsKey('application') ? Omittable(json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   businessProfile: PortalBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>),
   created: (json['created'] as num).toInt(),
-  defaultReturnUrl: json['default_return_url'] as String?,
+  defaultReturnUrl: json.containsKey('default_return_url') ? Omittable(json['default_return_url'] as String?) : const Omittable.absent(),
   features: PortalFeatures.fromJson(json['features'] as Map<String, dynamic>),
   id: json['id'] as String,
   isDefault: json['is_default'] as bool,
   livemode: json['livemode'] as bool,
   loginPage: PortalLoginPage.fromJson(json['login_page'] as Map<String, dynamic>),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  name: json['name'] as String?,
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   object: BillingPortalConfigurationObject.fromJson(json['object'] as String),
   updated: (json['updated'] as num).toInt(),
 ); }
@@ -46,7 +46,7 @@ factory BillingPortalConfiguration.fromJson(Map<String, dynamic> json) { return 
 final bool active;
 
 /// ID of the Connect Application that created the configuration.
-final BillingPortalConfigurationApplication? application;
+final Omittable<BillingPortalConfigurationApplication?> application;
 
 final PortalBusinessProfile businessProfile;
 
@@ -54,7 +54,7 @@ final PortalBusinessProfile businessProfile;
 final int created;
 
 /// The default URL to redirect customers to when they click on the portal's link to return to your website. This can be [overriden](https://docs.stripe.com/api/customer_portal/sessions/create#create_portal_session-return_url) when creating the session.
-final String? defaultReturnUrl;
+final Omittable<String?> defaultReturnUrl;
 
 final PortalFeatures features;
 
@@ -70,10 +70,10 @@ final bool livemode;
 final PortalLoginPage loginPage;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// The name of the configuration.
-final String? name;
+final Omittable<String?> name;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final BillingPortalConfigurationObject object;
@@ -83,17 +83,17 @@ final int updated;
 
 Map<String, dynamic> toJson() { return {
   'active': active,
-  if (application != null) 'application': application?.toJson(),
+  if (application.isPresent) 'application': application.value?.toJson(),
   'business_profile': businessProfile.toJson(),
   'created': created,
-  'default_return_url': ?defaultReturnUrl,
+  if (defaultReturnUrl.isPresent) 'default_return_url': defaultReturnUrl.value,
   'features': features.toJson(),
   'id': id,
   'is_default': isDefault,
   'livemode': livemode,
   'login_page': loginPage.toJson(),
-  'metadata': ?metadata,
-  'name': ?name,
+  if (metadata.isPresent) 'metadata': metadata.value,
+  if (name.isPresent) 'name': name.value,
   'object': object.toJson(),
   'updated': updated,
 }; } 
@@ -107,19 +107,19 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('login_page') &&
       json.containsKey('object') &&
       json.containsKey('updated') && json['updated'] is num; } 
-BillingPortalConfiguration copyWith({bool? active, BillingPortalConfigurationApplication? Function()? application, PortalBusinessProfile? businessProfile, int? created, String? Function()? defaultReturnUrl, PortalFeatures? features, String? id, bool? isDefault, bool? livemode, PortalLoginPage? loginPage, Map<String, String>? Function()? metadata, String? Function()? name, BillingPortalConfigurationObject? object, int? updated, }) { return BillingPortalConfiguration(
+BillingPortalConfiguration copyWith({bool? active, Omittable<BillingPortalConfigurationApplication?>? application, PortalBusinessProfile? businessProfile, int? created, Omittable<String?>? defaultReturnUrl, PortalFeatures? features, String? id, bool? isDefault, bool? livemode, PortalLoginPage? loginPage, Omittable<Map<String,String>?>? metadata, Omittable<String?>? name, BillingPortalConfigurationObject? object, int? updated, }) { return BillingPortalConfiguration(
   active: active ?? this.active,
-  application: application != null ? application() : this.application,
+  application: application ?? this.application,
   businessProfile: businessProfile ?? this.businessProfile,
   created: created ?? this.created,
-  defaultReturnUrl: defaultReturnUrl != null ? defaultReturnUrl() : this.defaultReturnUrl,
+  defaultReturnUrl: defaultReturnUrl ?? this.defaultReturnUrl,
   features: features ?? this.features,
   id: id ?? this.id,
   isDefault: isDefault ?? this.isDefault,
   livemode: livemode ?? this.livemode,
   loginPage: loginPage ?? this.loginPage,
-  metadata: metadata != null ? metadata() : this.metadata,
-  name: name != null ? name() : this.name,
+  metadata: metadata ?? this.metadata,
+  name: name ?? this.name,
   object: object ?? this.object,
   updated: updated ?? this.updated,
 ); } 

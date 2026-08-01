@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String &&
       json.containsKey('tree') && json['tree'] is String; } 
-GitCreateCommitRequest copyWith({String? message, String? tree, List<String> Function()? parents, GitCreateCommitRequestAuthor Function()? author, GitCreateCommitRequestCommitter Function()? committer, String Function()? signature, }) { return GitCreateCommitRequest(
+GitCreateCommitRequest copyWith({String? message, String? tree, List<String>? Function()? parents, GitCreateCommitRequestAuthor? Function()? author, GitCreateCommitRequestCommitter? Function()? committer, String? Function()? signature, }) { return GitCreateCommitRequest(
   message: message ?? this.message,
   tree: tree ?? this.tree,
   parents: parents != null ? parents() : this.parents,

@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
       json.containsKey('interval') && json['interval'] is num &&
       json.containsKey('sampleInterval') && json['sampleInterval'] is num &&
       json.containsKey('value') && json['value'] is num; } 
-WorkersObservabilityQueryResultsPatternsSeriesData copyWith({double? count, List<WorkersObservabilityQueryResultsPatternsSeriesDataGroups> Function()? groups, double? interval, double? sampleInterval, double? value, }) { return WorkersObservabilityQueryResultsPatternsSeriesData(
+WorkersObservabilityQueryResultsPatternsSeriesData copyWith({double? count, List<WorkersObservabilityQueryResultsPatternsSeriesDataGroups>? Function()? groups, double? interval, double? sampleInterval, double? value, }) { return WorkersObservabilityQueryResultsPatternsSeriesData(
   count: count ?? this.count,
   groups: groups != null ? groups() : this.groups,
   interval: interval ?? this.interval,

@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'result', 'time', 'type'}.contains(key)); } 
-AaaAuditLogs2Action copyWith({String Function()? description, String Function()? result, DateTime Function()? time, String Function()? type, }) { return AaaAuditLogs2Action(
+AaaAuditLogs2Action copyWith({String? Function()? description, String? Function()? result, DateTime? Function()? time, String? Function()? type, }) { return AaaAuditLogs2Action(
   description: description != null ? description() : this.description,
   result: result != null ? result() : this.result,
   time: time != null ? time() : this.time,

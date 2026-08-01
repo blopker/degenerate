@@ -95,7 +95,7 @@ Map<String, dynamic> toJson() { return {
   'upload_url': ?uploadUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'at_bookmark', 'error', 'filename', 'messages', 'result', 'status', 'success', 'type', 'upload_url'}.contains(key)); } 
-D1ImportDatabaseResponseResult copyWith({String Function()? atBookmark, String Function()? error, String Function()? filename, List<String> Function()? messages, D1ImportDatabaseResponseResultResult Function()? result, D1ImportDatabaseResponseResultStatus Function()? status, bool Function()? success, D1ImportDatabaseResponseResultType Function()? type, String Function()? uploadUrl, }) { return D1ImportDatabaseResponseResult(
+D1ImportDatabaseResponseResult copyWith({String? Function()? atBookmark, String? Function()? error, String? Function()? filename, List<String>? Function()? messages, D1ImportDatabaseResponseResultResult? Function()? result, D1ImportDatabaseResponseResultStatus? Function()? status, bool? Function()? success, D1ImportDatabaseResponseResultType? Function()? type, String? Function()? uploadUrl, }) { return D1ImportDatabaseResponseResult(
   atBookmark: atBookmark != null ? atBookmark() : this.atBookmark,
   error: error != null ? error() : this.error,
   filename: filename != null ? filename() : this.filename,

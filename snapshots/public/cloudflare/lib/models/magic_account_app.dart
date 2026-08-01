@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_app_id'); } 
-MagicAccountApp copyWith({MagicAccountAppId? accountAppId, List<String> Function()? hostnames, List<MagicCidr> Function()? ipSubnets, MagicAppName Function()? name, List<MagicCidr> Function()? sourceSubnets, MagicAppType Function()? type, }) { return MagicAccountApp(
+MagicAccountApp copyWith({MagicAccountAppId? accountAppId, List<String>? Function()? hostnames, List<MagicCidr>? Function()? ipSubnets, MagicAppName? Function()? name, List<MagicCidr>? Function()? sourceSubnets, MagicAppType? Function()? type, }) { return MagicAccountApp(
   accountAppId: accountAppId ?? this.accountAppId,
   hostnames: hostnames != null ? hostnames() : this.hostnames,
   ipSubnets: ipSubnets != null ? ipSubnets() : this.ipSubnets,

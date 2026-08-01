@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('type'); } 
-SinksResponse2Result copyWith({SinksResponse2ResultConfig Function()? config, DateTime? createdAt, CloudflarePipelinesFormat Function()? format, String? id, DateTime? modifiedAt, String? name, CloudflarePipelinesConnectionSchema Function()? schema, SinksResponse2ResultType? type, }) { return SinksResponse2Result(
+SinksResponse2Result copyWith({SinksResponse2ResultConfig? Function()? config, DateTime? createdAt, CloudflarePipelinesFormat? Function()? format, String? id, DateTime? modifiedAt, String? name, CloudflarePipelinesConnectionSchema? Function()? schema, SinksResponse2ResultType? type, }) { return SinksResponse2Result(
   config: config != null ? config() : this.config,
   createdAt: createdAt ?? this.createdAt,
   format: format != null ? format() : this.format,

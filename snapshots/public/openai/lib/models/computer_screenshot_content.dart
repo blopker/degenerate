@@ -46,13 +46,13 @@ final ImageDetail detail;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
-  'image_url': ?imageUrl,
-  'file_id': ?fileId,
+  'image_url': imageUrl,
+  'file_id': fileId,
   'detail': detail.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('image_url') && json['image_url'] is String &&
-      json.containsKey('file_id') && json['file_id'] is String &&
+      json.containsKey('image_url') && (json['image_url'] == null || json['image_url'] is String) &&
+      json.containsKey('file_id') && (json['file_id'] == null || json['file_id'] is String) &&
       json.containsKey('detail'); } 
 ComputerScreenshotContent copyWith({ComputerScreenshotContentType? type, String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) { return ComputerScreenshotContent(
   type: type ?? this.type,

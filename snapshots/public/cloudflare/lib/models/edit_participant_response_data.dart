@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EditParticipantResponseData {const EditParticipantResponseData({required this.createdAt, required this.customParticipantId, required this.id, required this.presetName, required this.updatedAt, required this.token, this.name, this.picture, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EditParticipantResponseData {const EditParticipantResponseData({required this.createdAt, required this.customParticipantId, required this.id, required this.presetName, required this.updatedAt, required this.token, this.name = const Omittable.absent(), this.picture = const Omittable.absent(), });
 
 factory EditParticipantResponseData.fromJson(Map<String, dynamic> json) { return EditParticipantResponseData(
   createdAt: DateTime.parse(json['created_at'] as String),
   customParticipantId: json['custom_participant_id'] as String,
   id: json['id'] as String,
-  name: json['name'] as String?,
-  picture: json['picture'] != null ? Uri.parse(json['picture'] as String) : null,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
+  picture: json.containsKey('picture') ? Omittable(json['picture'] != null ? Uri.parse(json['picture'] as String) : null) : const Omittable.absent(),
   presetName: json['preset_name'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   token: json['token'] as String,
@@ -23,10 +23,10 @@ final String customParticipantId;
 final String id;
 
 /// Name of the participant.
-final String? name;
+final Omittable<String?> name;
 
 /// URL to a picture of the participant.
-final Uri? picture;
+final Omittable<Uri?> picture;
 
 /// Preset applied to the participant.
 final String presetName;
@@ -41,8 +41,8 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   'custom_participant_id': customParticipantId,
   'id': id,
-  'name': ?name,
-  if (picture != null) 'picture': picture?.toString(),
+  if (name.isPresent) 'name': name.value,
+  if (picture.isPresent) 'picture': picture.value?.toString(),
   'preset_name': presetName,
   'updated_at': updatedAt.toIso8601String(),
   'token': token,
@@ -53,12 +53,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('preset_name') && json['preset_name'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('token') && json['token'] is String; } 
-EditParticipantResponseData copyWith({DateTime? createdAt, String? customParticipantId, String? id, String? Function()? name, Uri? Function()? picture, String? presetName, DateTime? updatedAt, String? token, }) { return EditParticipantResponseData(
+EditParticipantResponseData copyWith({DateTime? createdAt, String? customParticipantId, String? id, Omittable<String?>? name, Omittable<Uri?>? picture, String? presetName, DateTime? updatedAt, String? token, }) { return EditParticipantResponseData(
   createdAt: createdAt ?? this.createdAt,
   customParticipantId: customParticipantId ?? this.customParticipantId,
   id: id ?? this.id,
-  name: name != null ? name() : this.name,
-  picture: picture != null ? picture() : this.picture,
+  name: name ?? this.name,
+  picture: picture ?? this.picture,
   presetName: presetName ?? this.presetName,
   updatedAt: updatedAt ?? this.updatedAt,
   token: token ?? this.token,

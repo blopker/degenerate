@@ -233,7 +233,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Customer objects to store instrument details for future payments.
 /// 
 /// Related guides: [Payment Methods](https://docs.stripe.com/payments/payment-methods) and [More Payment Scenarios](https://docs.stripe.com/payments/more-payment-scenarios).
-@immutable final class PaymentMethod {const PaymentMethod({required this.type, required this.billingDetails, required this.created, required this.id, required this.livemode, required this.object, this.customerAccount, this.auBecsDebit, this.bacsDebit, this.bancontact, this.billie, this.affirm, this.blik, this.boleto, this.card, this.cardPresent, this.cashapp, this.afterpayClearpay, this.crypto, this.custom, this.customer, this.acssDebit, this.customerBalance, this.eps, this.fpx, this.giropay, this.grabpay, this.alipay, this.ideal, this.interacPresent, this.kakaoPay, this.klarna, this.konbini, this.krCard, this.link, this.allowRedisplay, this.mbWay, this.metadata, this.mobilepay, this.multibanco, this.naverPay, this.zip, this.alma, this.oxxo, this.p24, this.payByBank, this.payco, this.paynow, this.paypal, this.payto, this.pix, this.promptpay, this.radarOptions, this.revolutPay, this.samsungPay, this.satispay, this.sepaDebit, this.sofort, this.swish, this.twint, this.amazonPay, this.usBankAccount, this.wechatPay, this.nzBankAccount, });
+@immutable final class PaymentMethod {const PaymentMethod({required this.type, required this.billingDetails, required this.created, required this.id, required this.livemode, required this.object, this.customerAccount = const Omittable.absent(), this.auBecsDebit, this.bacsDebit, this.bancontact, this.billie, this.affirm, this.blik, this.boleto, this.card, this.cardPresent, this.cashapp, this.afterpayClearpay, this.crypto, this.custom, this.customer = const Omittable.absent(), this.acssDebit, this.customerBalance, this.eps, this.fpx, this.giropay, this.grabpay, this.alipay, this.ideal, this.interacPresent, this.kakaoPay, this.klarna, this.konbini, this.krCard, this.link, this.allowRedisplay, this.mbWay, this.metadata = const Omittable.absent(), this.mobilepay, this.multibanco, this.naverPay, this.zip, this.alma, this.oxxo, this.p24, this.payByBank, this.payco, this.paynow, this.paypal, this.payto, this.pix, this.promptpay, this.radarOptions, this.revolutPay, this.samsungPay, this.satispay, this.sepaDebit, this.sofort, this.swish, this.twint, this.amazonPay, this.usBankAccount, this.wechatPay, this.nzBankAccount, });
 
 factory PaymentMethod.fromJson(Map<String, dynamic> json) { return PaymentMethod(
   acssDebit: json['acss_debit'] != null ? PaymentMethodAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
@@ -256,8 +256,8 @@ factory PaymentMethod.fromJson(Map<String, dynamic> json) { return PaymentMethod
   created: (json['created'] as num).toInt(),
   crypto: json['crypto'] != null ? PaymentMethodCrypto.fromJson(json['crypto'] as Map<String, dynamic>) : null,
   custom: json['custom'] != null ? PaymentMethodCustom.fromJson(json['custom'] as Map<String, dynamic>) : null,
-  customer: json['customer'] != null ? OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),) : null,
-  customerAccount: json['customer_account'] as String?,
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   customerBalance: json['customer_balance'] != null ? PaymentMethodCustomerBalance.fromJson(json['customer_balance'] as Map<String, dynamic>) : null,
   eps: json['eps'] != null ? PaymentMethodEps.fromJson(json['eps'] as Map<String, dynamic>) : null,
   fpx: json['fpx'] != null ? PaymentMethodFpx.fromJson(json['fpx'] as Map<String, dynamic>) : null,
@@ -273,7 +273,7 @@ factory PaymentMethod.fromJson(Map<String, dynamic> json) { return PaymentMethod
   link: json['link'] != null ? PaymentMethodLink.fromJson(json['link'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   mbWay: json['mb_way'] != null ? PaymentMethodMbWay.fromJson(json['mb_way'] as Map<String, dynamic>) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   mobilepay: json['mobilepay'] != null ? PaymentMethodMobilepay.fromJson(json['mobilepay'] as Map<String, dynamic>) : null,
   multibanco: json['multibanco'] != null ? PaymentMethodMultibanco.fromJson(json['multibanco'] as Map<String, dynamic>) : null,
   naverPay: json['naver_pay'] != null ? PaymentMethodNaverPay.fromJson(json['naver_pay'] as Map<String, dynamic>) : null,
@@ -345,9 +345,9 @@ final PaymentMethodCrypto? crypto;
 final PaymentMethodCustom? custom;
 
 /// The ID of the Customer to which this PaymentMethod is saved. This will not be set when the PaymentMethod has not been saved to a Customer.
-final PaymentMethodCustomer? customer;
+final Omittable<PaymentMethodCustomer?> customer;
 
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 final PaymentMethodCustomerBalance? customerBalance;
 
@@ -382,7 +382,7 @@ final bool livemode;
 final PaymentMethodMbWay? mbWay;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 final PaymentMethodMobilepay? mobilepay;
 
@@ -459,8 +459,8 @@ Map<String, dynamic> toJson() { return {
   'created': created,
   if (crypto != null) 'crypto': crypto?.toJson(),
   if (custom != null) 'custom': custom?.toJson(),
-  if (customer != null) 'customer': customer?.toJson(),
-  'customer_account': ?customerAccount,
+  if (customer.isPresent) 'customer': customer.value?.toJson(),
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   if (customerBalance != null) 'customer_balance': customerBalance?.toJson(),
   if (eps != null) 'eps': eps?.toJson(),
   if (fpx != null) 'fpx': fpx?.toJson(),
@@ -476,7 +476,7 @@ Map<String, dynamic> toJson() { return {
   if (link != null) 'link': link?.toJson(),
   'livemode': livemode,
   if (mbWay != null) 'mb_way': mbWay?.toJson(),
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   if (mobilepay != null) 'mobilepay': mobilepay?.toJson(),
   if (multibanco != null) 'multibanco': multibanco?.toJson(),
   if (naverPay != null) 'naver_pay': naverPay?.toJson(),
@@ -510,7 +510,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billi
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('type'); } 
-PaymentMethod copyWith({PaymentMethodAcssDebit Function()? acssDebit, PaymentMethodAffirm Function()? affirm, PaymentMethodAfterpayClearpay Function()? afterpayClearpay, PaymentFlowsPrivatePaymentMethodsAlipay Function()? alipay, PaymentMethodAllowRedisplay Function()? allowRedisplay, PaymentMethodAlma Function()? alma, PaymentMethodAmazonPay Function()? amazonPay, PaymentMethodAuBecsDebit Function()? auBecsDebit, PaymentMethodBacsDebit Function()? bacsDebit, PaymentMethodBancontact Function()? bancontact, PaymentMethodBillie Function()? billie, BillingDetails? billingDetails, PaymentMethodBlik Function()? blik, PaymentMethodBoleto Function()? boleto, PaymentMethodCard Function()? card, PaymentMethodCardPresent Function()? cardPresent, PaymentMethodCashapp Function()? cashapp, int? created, PaymentMethodCrypto Function()? crypto, PaymentMethodCustom Function()? custom, PaymentMethodCustomer? Function()? customer, String? Function()? customerAccount, PaymentMethodCustomerBalance Function()? customerBalance, PaymentMethodEps Function()? eps, PaymentMethodFpx Function()? fpx, PaymentMethodGiropay Function()? giropay, PaymentMethodGrabpay Function()? grabpay, String? id, PaymentMethodIdeal Function()? ideal, PaymentMethodInteracPresent Function()? interacPresent, PaymentMethodKakaoPay Function()? kakaoPay, PaymentMethodKlarna Function()? klarna, PaymentMethodKonbini Function()? konbini, PaymentMethodKrCard Function()? krCard, PaymentMethodLink Function()? link, bool? livemode, PaymentMethodMbWay Function()? mbWay, Map<String, String>? Function()? metadata, PaymentMethodMobilepay Function()? mobilepay, PaymentMethodMultibanco Function()? multibanco, PaymentMethodNaverPay Function()? naverPay, PaymentMethodNzBankAccount Function()? nzBankAccount, PaymentMethodObject? object, PaymentMethodOxxo Function()? oxxo, PaymentMethodP24 Function()? p24, PaymentMethodPayByBank Function()? payByBank, PaymentMethodPayco Function()? payco, PaymentMethodPaynow Function()? paynow, PaymentMethodPaypal Function()? paypal, PaymentMethodPayto Function()? payto, PaymentMethodPix Function()? pix, PaymentMethodPromptpay Function()? promptpay, RadarRadarOptions Function()? radarOptions, PaymentMethodRevolutPay Function()? revolutPay, PaymentMethodSamsungPay Function()? samsungPay, PaymentMethodSatispay Function()? satispay, PaymentMethodSepaDebit Function()? sepaDebit, PaymentMethodSofort Function()? sofort, PaymentMethodSwish Function()? swish, PaymentMethodTwint Function()? twint, PaymentMethodType? type, PaymentMethodUsBankAccount Function()? usBankAccount, PaymentMethodWechatPay Function()? wechatPay, PaymentMethodZip Function()? zip, }) { return PaymentMethod(
+PaymentMethod copyWith({PaymentMethodAcssDebit? Function()? acssDebit, PaymentMethodAffirm? Function()? affirm, PaymentMethodAfterpayClearpay? Function()? afterpayClearpay, PaymentFlowsPrivatePaymentMethodsAlipay? Function()? alipay, PaymentMethodAllowRedisplay? Function()? allowRedisplay, PaymentMethodAlma? Function()? alma, PaymentMethodAmazonPay? Function()? amazonPay, PaymentMethodAuBecsDebit? Function()? auBecsDebit, PaymentMethodBacsDebit? Function()? bacsDebit, PaymentMethodBancontact? Function()? bancontact, PaymentMethodBillie? Function()? billie, BillingDetails? billingDetails, PaymentMethodBlik? Function()? blik, PaymentMethodBoleto? Function()? boleto, PaymentMethodCard? Function()? card, PaymentMethodCardPresent? Function()? cardPresent, PaymentMethodCashapp? Function()? cashapp, int? created, PaymentMethodCrypto? Function()? crypto, PaymentMethodCustom? Function()? custom, Omittable<PaymentMethodCustomer?>? customer, Omittable<String?>? customerAccount, PaymentMethodCustomerBalance? Function()? customerBalance, PaymentMethodEps? Function()? eps, PaymentMethodFpx? Function()? fpx, PaymentMethodGiropay? Function()? giropay, PaymentMethodGrabpay? Function()? grabpay, String? id, PaymentMethodIdeal? Function()? ideal, PaymentMethodInteracPresent? Function()? interacPresent, PaymentMethodKakaoPay? Function()? kakaoPay, PaymentMethodKlarna? Function()? klarna, PaymentMethodKonbini? Function()? konbini, PaymentMethodKrCard? Function()? krCard, PaymentMethodLink? Function()? link, bool? livemode, PaymentMethodMbWay? Function()? mbWay, Omittable<Map<String,String>?>? metadata, PaymentMethodMobilepay? Function()? mobilepay, PaymentMethodMultibanco? Function()? multibanco, PaymentMethodNaverPay? Function()? naverPay, PaymentMethodNzBankAccount? Function()? nzBankAccount, PaymentMethodObject? object, PaymentMethodOxxo? Function()? oxxo, PaymentMethodP24? Function()? p24, PaymentMethodPayByBank? Function()? payByBank, PaymentMethodPayco? Function()? payco, PaymentMethodPaynow? Function()? paynow, PaymentMethodPaypal? Function()? paypal, PaymentMethodPayto? Function()? payto, PaymentMethodPix? Function()? pix, PaymentMethodPromptpay? Function()? promptpay, RadarRadarOptions? Function()? radarOptions, PaymentMethodRevolutPay? Function()? revolutPay, PaymentMethodSamsungPay? Function()? samsungPay, PaymentMethodSatispay? Function()? satispay, PaymentMethodSepaDebit? Function()? sepaDebit, PaymentMethodSofort? Function()? sofort, PaymentMethodSwish? Function()? swish, PaymentMethodTwint? Function()? twint, PaymentMethodType? type, PaymentMethodUsBankAccount? Function()? usBankAccount, PaymentMethodWechatPay? Function()? wechatPay, PaymentMethodZip? Function()? zip, }) { return PaymentMethod(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   affirm: affirm != null ? affirm() : this.affirm,
   afterpayClearpay: afterpayClearpay != null ? afterpayClearpay() : this.afterpayClearpay,
@@ -531,8 +531,8 @@ PaymentMethod copyWith({PaymentMethodAcssDebit Function()? acssDebit, PaymentMet
   created: created ?? this.created,
   crypto: crypto != null ? crypto() : this.crypto,
   custom: custom != null ? custom() : this.custom,
-  customer: customer != null ? customer() : this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  customer: customer ?? this.customer,
+  customerAccount: customerAccount ?? this.customerAccount,
   customerBalance: customerBalance != null ? customerBalance() : this.customerBalance,
   eps: eps != null ? eps() : this.eps,
   fpx: fpx != null ? fpx() : this.fpx,
@@ -548,7 +548,7 @@ PaymentMethod copyWith({PaymentMethodAcssDebit Function()? acssDebit, PaymentMet
   link: link != null ? link() : this.link,
   livemode: livemode ?? this.livemode,
   mbWay: mbWay != null ? mbWay() : this.mbWay,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   mobilepay: mobilepay != null ? mobilepay() : this.mobilepay,
   multibanco: multibanco != null ? multibanco() : this.multibanco,
   naverPay: naverPay != null ? naverPay() : this.naverPay,

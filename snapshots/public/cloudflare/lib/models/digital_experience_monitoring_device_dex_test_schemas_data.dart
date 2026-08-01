@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('host') && json['host'] is String &&
       json.containsKey('kind'); } 
-DigitalExperienceMonitoringDeviceDexTestSchemasData copyWith({String? host, DigitalExperienceMonitoringDeviceDexTestSchemasDataKind? kind, DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod Function()? method, }) { return DigitalExperienceMonitoringDeviceDexTestSchemasData(
+DigitalExperienceMonitoringDeviceDexTestSchemasData copyWith({String? host, DigitalExperienceMonitoringDeviceDexTestSchemasDataKind? kind, DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod? Function()? method, }) { return DigitalExperienceMonitoringDeviceDexTestSchemasData(
   host: host ?? this.host,
   kind: kind ?? this.kind,
   method: method != null ? method() : this.method,

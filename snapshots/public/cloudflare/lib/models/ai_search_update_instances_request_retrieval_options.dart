@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'keyword_match_mode': keywordMatchMode.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'boost_by', 'keyword_match_mode'}.contains(key)); } 
-AiSearchUpdateInstancesRequestRetrievalOptions copyWith({List<AiSearchUpdateInstancesRequestRetrievalOptionsBoostBy> Function()? boostBy, AiSearchUpdateInstancesRequestRetrievalOptionsKeywordMatchMode Function()? keywordMatchMode, }) { return AiSearchUpdateInstancesRequestRetrievalOptions(
+AiSearchUpdateInstancesRequestRetrievalOptions copyWith({List<AiSearchUpdateInstancesRequestRetrievalOptionsBoostBy>? Function()? boostBy, AiSearchUpdateInstancesRequestRetrievalOptionsKeywordMatchMode Function()? keywordMatchMode, }) { return AiSearchUpdateInstancesRequestRetrievalOptions(
   boostBy: boostBy != null ? boostBy() : this.boostBy,
   keywordMatchMode: keywordMatchMode != null ? keywordMatchMode() : this.keywordMatchMode,
 ); } 

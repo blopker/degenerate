@@ -120,7 +120,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('first
       json.containsKey('last_seen_at') && json['last_seen_at'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('type'); } 
-PageShieldCookie copyWith({String Function()? domainAttribute, DateTime Function()? expiresAttribute, DateTime? firstSeenAt, String? host, bool Function()? httpOnlyAttribute, PageShieldId? id, DateTime? lastSeenAt, int Function()? maxAgeAttribute, String? name, List<String> Function()? pageUrls, String Function()? pathAttribute, PageShieldCookieSameSiteAttribute Function()? sameSiteAttribute, bool Function()? secureAttribute, PageShieldCookieType? type, }) { return PageShieldCookie(
+PageShieldCookie copyWith({String? Function()? domainAttribute, DateTime? Function()? expiresAttribute, DateTime? firstSeenAt, String? host, bool? Function()? httpOnlyAttribute, PageShieldId? id, DateTime? lastSeenAt, int? Function()? maxAgeAttribute, String? name, List<String>? Function()? pageUrls, String? Function()? pathAttribute, PageShieldCookieSameSiteAttribute? Function()? sameSiteAttribute, bool? Function()? secureAttribute, PageShieldCookieType? type, }) { return PageShieldCookie(
   domainAttribute: domainAttribute != null ? domainAttribute() : this.domainAttribute,
   expiresAttribute: expiresAttribute != null ? expiresAttribute() : this.expiresAttribute,
   firstSeenAt: firstSeenAt ?? this.firstSeenAt,

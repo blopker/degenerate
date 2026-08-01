@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-CacheRulesZoneCacheSettingsDeleteResponseSingle copyWith({List<CacheRulesMessages2>? errors, List<CacheRulesMessages2>? messages, bool? success, CacheRulesResultObjectDelete Function()? result, }) { return CacheRulesZoneCacheSettingsDeleteResponseSingle(
+CacheRulesZoneCacheSettingsDeleteResponseSingle copyWith({List<CacheRulesMessages2>? errors, List<CacheRulesMessages2>? messages, bool? success, CacheRulesResultObjectDelete? Function()? result, }) { return CacheRulesZoneCacheSettingsDeleteResponseSingle(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

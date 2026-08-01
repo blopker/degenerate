@@ -81,7 +81,7 @@ Map<String, dynamic> toJson() { return {
   'return_url': ?returnUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filters', 'permissions', 'prefetch', 'return_url'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam28FinancialConnections copyWith({PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFilters Function()? filters, List<PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsPermissions> Function()? permissions, List<PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsPrefetch> Function()? prefetch, String Function()? returnUrl, }) { return PaymentIntentPaymentMethodOptionsParam28FinancialConnections(
+PaymentIntentPaymentMethodOptionsParam28FinancialConnections copyWith({PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFilters? Function()? filters, List<PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsPermissions>? Function()? permissions, List<PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsPrefetch>? Function()? prefetch, String? Function()? returnUrl, }) { return PaymentIntentPaymentMethodOptionsParam28FinancialConnections(
   filters: filters != null ? filters() : this.filters,
   permissions: permissions != null ? permissions() : this.permissions,
   prefetch: prefetch != null ? prefetch() : this.prefetch,

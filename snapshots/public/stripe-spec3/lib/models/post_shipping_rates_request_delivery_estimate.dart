@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (minimum != null) 'minimum': minimum?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'maximum', 'minimum'}.contains(key)); } 
-PostShippingRatesRequestDeliveryEstimate copyWith({PostShippingRatesRequestDeliveryEstimateMaximum Function()? maximum, PostShippingRatesRequestDeliveryEstimateMinimum Function()? minimum, }) { return PostShippingRatesRequestDeliveryEstimate(
+PostShippingRatesRequestDeliveryEstimate copyWith({PostShippingRatesRequestDeliveryEstimateMaximum? Function()? maximum, PostShippingRatesRequestDeliveryEstimateMinimum? Function()? minimum, }) { return PostShippingRatesRequestDeliveryEstimate(
   maximum: maximum != null ? maximum() : this.maximum,
   minimum: minimum != null ? minimum() : this.minimum,
 ); } 

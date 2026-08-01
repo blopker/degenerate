@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'received_debit': receivedDebit,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('received_debit') && json['received_debit'] is String; } 
-PostTreasuryDebitReversalsRequest copyWith({List<String> Function()? expand, Map<String, String> Function()? metadata, String? receivedDebit, }) { return PostTreasuryDebitReversalsRequest(
+PostTreasuryDebitReversalsRequest copyWith({List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? receivedDebit, }) { return PostTreasuryDebitReversalsRequest(
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   receivedDebit: receivedDebit ?? this.receivedDebit,

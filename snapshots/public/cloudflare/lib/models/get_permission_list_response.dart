@@ -116,7 +116,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('subjectType') &&
       json.containsKey('updatedAt') && json['updatedAt'] is String &&
       json.containsKey('uuid') && json['uuid'] is String; } 
-GetPermissionListResponse copyWith({DateTime? createdAt, String Function()? resourceId, GetPermissionListResponseResourceType? resourceType, GetPermissionListResponseRole? role, String? subjectId, GetPermissionListResponseSubjectType? subjectType, DateTime? updatedAt, String? uuid, }) { return GetPermissionListResponse(
+GetPermissionListResponse copyWith({DateTime? createdAt, String? Function()? resourceId, GetPermissionListResponseResourceType? resourceType, GetPermissionListResponseRole? role, String? subjectId, GetPermissionListResponseSubjectType? subjectType, DateTime? updatedAt, String? uuid, }) { return GetPermissionListResponse(
   createdAt: createdAt ?? this.createdAt,
   resourceId: resourceId != null ? resourceId() : this.resourceId,
   resourceType: resourceType ?? this.resourceType,

@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('registry_package') &&
       json.containsKey('sender'); } 
-WebhookRegistryPackageUpdated copyWith({WebhookRegistryPackageUpdatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhookRegistryPackageUpdatedRegistryPackage? registryPackage, RepositoryWebhooks Function()? repository, SimpleUser? sender, }) { return WebhookRegistryPackageUpdated(
+WebhookRegistryPackageUpdated copyWith({WebhookRegistryPackageUpdatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookRegistryPackageUpdatedRegistryPackage? registryPackage, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) { return WebhookRegistryPackageUpdated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

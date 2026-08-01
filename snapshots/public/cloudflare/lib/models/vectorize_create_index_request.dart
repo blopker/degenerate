@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name'); } 
-VectorizeCreateIndexRequest copyWith({VectorizeIndexConfiguration? config, VectorizeIndexDescription Function()? description, VectorizeIndexName? name, }) { return VectorizeCreateIndexRequest(
+VectorizeCreateIndexRequest copyWith({VectorizeIndexConfiguration? config, VectorizeIndexDescription? Function()? description, VectorizeIndexName? name, }) { return VectorizeCreateIndexRequest(
   config: config ?? this.config,
   description: description != null ? description() : this.description,
   name: name ?? this.name,

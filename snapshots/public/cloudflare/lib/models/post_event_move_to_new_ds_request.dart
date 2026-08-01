@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'eventIds': ?eventIds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('destDatasetId') && json['destDatasetId'] is String; } 
-PostEventMoveToNewDsRequest copyWith({String? destDatasetId, List<String> Function()? eventIds, }) { return PostEventMoveToNewDsRequest(
+PostEventMoveToNewDsRequest copyWith({String? destDatasetId, List<String>? Function()? eventIds, }) { return PostEventMoveToNewDsRequest(
   destDatasetId: destDatasetId ?? this.destDatasetId,
   eventIds: eventIds != null ? eventIds() : this.eventIds,
 ); } 

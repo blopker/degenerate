@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'name', 'proxied', 'settings', 'tags', 'ttl', 'content', 'data', 'type'}.contains(key)); } 
-DnsRecordsSrvRecord copyWith({DnsRecordsComment Function()? comment, DnsRecordsName Function()? name, DnsRecordsProxied Function()? proxied, DnsRecordsSettings Function()? settings, List<String> Function()? tags, DnsRecordsTtl Function()? ttl, String Function()? content, DnsRecordsSrvRecordData Function()? data, DnsRecordsSrvRecordType Function()? type, }) { return DnsRecordsSrvRecord(
+DnsRecordsSrvRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsName? Function()? name, DnsRecordsProxied? Function()? proxied, DnsRecordsSettings? Function()? settings, List<String>? Function()? tags, DnsRecordsTtl? Function()? ttl, String? Function()? content, DnsRecordsSrvRecordData? Function()? data, DnsRecordsSrvRecordType? Function()? type, }) { return DnsRecordsSrvRecord(
   comment: comment != null ? comment() : this.comment,
   name: name != null ? name() : this.name,
   proxied: proxied != null ? proxied() : this.proxied,

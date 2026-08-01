@@ -95,7 +95,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('involvedObject') &&
       json.containsKey('metadata'); } 
-Event copyWith({String Function()? action, String Function()? apiVersion, int Function()? count, MicroTime Function()? eventTime, Time Function()? firstTimestamp, ObjectReference? involvedObject, String Function()? kind, Time Function()? lastTimestamp, String Function()? message, ObjectMeta? metadata, String Function()? reason, ObjectReference Function()? related, String Function()? reportingComponent, String Function()? reportingInstance, EventSeries Function()? series, EventSource Function()? source, String Function()? type, }) { return Event(
+Event copyWith({String? Function()? action, String? Function()? apiVersion, int? Function()? count, MicroTime? Function()? eventTime, Time? Function()? firstTimestamp, ObjectReference? involvedObject, String? Function()? kind, Time? Function()? lastTimestamp, String? Function()? message, ObjectMeta? metadata, String? Function()? reason, ObjectReference? Function()? related, String Function()? reportingComponent, String Function()? reportingInstance, EventSeries? Function()? series, EventSource? Function()? source, String? Function()? type, }) { return Event(
   action: action != null ? action() : this.action,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   count: count != null ? count() : this.count,

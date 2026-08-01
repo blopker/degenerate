@@ -66,7 +66,7 @@ final RepositoryWebhooks repository;
 final SimpleUser sender;
 
 Map<String, dynamic> toJson() { return {
-  'description': ?description,
+  'description': description,
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   'master_branch': masterBranch,
@@ -77,14 +77,14 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   'sender': sender.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('master_branch') && json['master_branch'] is String &&
       json.containsKey('pusher_type') &&
       json.containsKey('ref') &&
       json.containsKey('ref_type') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookCreate copyWith({String? Function()? description, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, String? masterBranch, OrganizationSimpleWebhooks Function()? organization, WebhooksDeployPusherType? pusherType, WebhooksRef0? ref, WebhookCreateRefType? refType, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCreate(
+WebhookCreate copyWith({String? Function()? description, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, String? masterBranch, OrganizationSimpleWebhooks? Function()? organization, WebhooksDeployPusherType? pusherType, WebhooksRef0? ref, WebhookCreateRefType? refType, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCreate(
   description: description != null ? description() : this.description,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

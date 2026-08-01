@@ -365,52 +365,52 @@ bool get isUnknown { return !values.contains(this); }
 /// authentication flows and ultimately creates at most one successful charge.
 /// 
 /// Related guide: [Payment Intents API](https://docs.stripe.com/payments/payment-intents)
-@immutable final class PaymentIntent {const PaymentIntent({required this.status, required this.created, required this.id, required this.livemode, required this.object, this.customer, this.automaticPaymentMethods, this.canceledAt, this.cancellationReason, this.captureMethod, this.clientSecret, this.confirmationMethod, this.amountCapturable, this.currency, this.amount, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.hooks, this.amountDetails, this.lastPaymentError, this.latestCharge, this.amountReceived, this.metadata, this.nextAction, this.application, this.onBehalfOf, this.paymentDetails, this.transferGroup, this.paymentMethodConfigurationDetails, this.paymentMethodOptions, this.paymentMethodTypes, this.presentmentDetails, this.processing, this.receiptEmail, this.review, this.setupFutureUsage, this.shipping, this.statementDescriptor, this.statementDescriptorSuffix, this.applicationFeeAmount, this.transferData, this.paymentMethod, });
+@immutable final class PaymentIntent {const PaymentIntent({required this.status, required this.created, required this.id, required this.livemode, required this.object, this.customer = const Omittable.absent(), this.automaticPaymentMethods = const Omittable.absent(), this.canceledAt = const Omittable.absent(), this.cancellationReason = const Omittable.absent(), this.captureMethod, this.clientSecret = const Omittable.absent(), this.confirmationMethod, this.amountCapturable, this.currency, this.amount, this.customerAccount = const Omittable.absent(), this.description = const Omittable.absent(), this.excludedPaymentMethodTypes = const Omittable.absent(), this.hooks, this.amountDetails, this.lastPaymentError = const Omittable.absent(), this.latestCharge = const Omittable.absent(), this.amountReceived, this.metadata, this.nextAction = const Omittable.absent(), this.application = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.paymentDetails, this.transferGroup = const Omittable.absent(), this.paymentMethodConfigurationDetails = const Omittable.absent(), this.paymentMethodOptions = const Omittable.absent(), this.paymentMethodTypes, this.presentmentDetails, this.processing = const Omittable.absent(), this.receiptEmail = const Omittable.absent(), this.review = const Omittable.absent(), this.setupFutureUsage = const Omittable.absent(), this.shipping = const Omittable.absent(), this.statementDescriptor = const Omittable.absent(), this.statementDescriptorSuffix = const Omittable.absent(), this.applicationFeeAmount = const Omittable.absent(), this.transferData = const Omittable.absent(), this.paymentMethod = const Omittable.absent(), });
 
 factory PaymentIntent.fromJson(Map<String, dynamic> json) { return PaymentIntent(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   amountCapturable: json['amount_capturable'] != null ? (json['amount_capturable'] as num).toInt() : null,
   amountDetails: json['amount_details'] != null ? OneOf2.parse(json['amount_details'], fromA: (v) => PaymentFlowsAmountDetails.fromJson(v as Map<String, dynamic>), fromB: (v) => PaymentFlowsAmountDetailsClient.fromJson(v as Map<String, dynamic>),) : null,
   amountReceived: json['amount_received'] != null ? (json['amount_received'] as num).toInt() : null,
-  application: json['application'] != null ? OneOf2.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>),) : null,
-  applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
-  automaticPaymentMethods: json['automatic_payment_methods'] != null ? PaymentFlowsAutomaticPaymentMethodsPaymentIntent.fromJson(json['automatic_payment_methods'] as Map<String, dynamic>) : null,
-  canceledAt: json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null,
-  cancellationReason: json['cancellation_reason'] != null ? PaymentIntentCancellationReason.fromJson(json['cancellation_reason'] as String) : null,
+  application: json.containsKey('application') ? Omittable(json['application'] != null ? OneOf2.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  applicationFeeAmount: json.containsKey('application_fee_amount') ? Omittable(json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null) : const Omittable.absent(),
+  automaticPaymentMethods: json.containsKey('automatic_payment_methods') ? Omittable(json['automatic_payment_methods'] != null ? PaymentFlowsAutomaticPaymentMethodsPaymentIntent.fromJson(json['automatic_payment_methods'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  canceledAt: json.containsKey('canceled_at') ? Omittable(json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null) : const Omittable.absent(),
+  cancellationReason: json.containsKey('cancellation_reason') ? Omittable(json['cancellation_reason'] != null ? PaymentIntentCancellationReason.fromJson(json['cancellation_reason'] as String) : null) : const Omittable.absent(),
   captureMethod: json['capture_method'] != null ? PaymentIntentCaptureMethod.fromJson(json['capture_method'] as String) : null,
-  clientSecret: json['client_secret'] as String?,
+  clientSecret: json.containsKey('client_secret') ? Omittable(json['client_secret'] as String?) : const Omittable.absent(),
   confirmationMethod: json['confirmation_method'] != null ? PaymentIntentConfirmationMethod.fromJson(json['confirmation_method'] as String) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String?,
-  customer: json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null,
-  customerAccount: json['customer_account'] as String?,
-  description: json['description'] as String?,
-  excludedPaymentMethodTypes: (json['excluded_payment_method_types'] as List<dynamic>?)?.map((e) => PaymentIntentExcludedPaymentMethodTypes.fromJson(e as String)).toList(),
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
+  excludedPaymentMethodTypes: json.containsKey('excluded_payment_method_types') ? Omittable((json['excluded_payment_method_types'] as List<dynamic>?)?.map((e) => PaymentIntentExcludedPaymentMethodTypes.fromJson(e as String)).toList()) : const Omittable.absent(),
   hooks: json['hooks'] != null ? PaymentFlowsPaymentIntentAsyncWorkflows.fromJson(json['hooks'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
-  lastPaymentError: json['last_payment_error'] != null ? Errors.fromJson(json['last_payment_error'] as Map<String, dynamic>) : null,
-  latestCharge: json['latest_charge'] != null ? OneOf2.parse(json['latest_charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null,
+  lastPaymentError: json.containsKey('last_payment_error') ? Omittable(json['last_payment_error'] != null ? Errors.fromJson(json['last_payment_error'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  latestCharge: json.containsKey('latest_charge') ? Omittable(json['latest_charge'] != null ? OneOf2.parse(json['latest_charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  nextAction: json['next_action'] != null ? PaymentIntentNextAction.fromJson(json['next_action'] as Map<String, dynamic>) : null,
+  nextAction: json.containsKey('next_action') ? Omittable(json['next_action'] != null ? PaymentIntentNextAction.fromJson(json['next_action'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   object: PaymentIntentObject.fromJson(json['object'] as String),
-  onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
+  onBehalfOf: json.containsKey('on_behalf_of') ? Omittable(json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   paymentDetails: json['payment_details'] != null ? PaymentFlowsPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>) : null,
-  paymentMethod: json['payment_method'] != null ? OneOf2.parse(json['payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null,
-  paymentMethodConfigurationDetails: json['payment_method_configuration_details'] != null ? PaymentMethodConfigBizPaymentMethodConfigurationDetails.fromJson(json['payment_method_configuration_details'] as Map<String, dynamic>) : null,
-  paymentMethodOptions: json['payment_method_options'] != null ? PaymentIntentPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
+  paymentMethod: json.containsKey('payment_method') ? Omittable(json['payment_method'] != null ? OneOf2.parse(json['payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  paymentMethodConfigurationDetails: json.containsKey('payment_method_configuration_details') ? Omittable(json['payment_method_configuration_details'] != null ? PaymentMethodConfigBizPaymentMethodConfigurationDetails.fromJson(json['payment_method_configuration_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  paymentMethodOptions: json.containsKey('payment_method_options') ? Omittable(json['payment_method_options'] != null ? PaymentIntentPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => e as String).toList(),
   presentmentDetails: json['presentment_details'] != null ? PaymentFlowsPaymentIntentPresentmentDetails.fromJson(json['presentment_details'] as Map<String, dynamic>) : null,
-  processing: json['processing'] != null ? PaymentIntentProcessing.fromJson(json['processing'] as Map<String, dynamic>) : null,
-  receiptEmail: json['receipt_email'] as String?,
-  review: json['review'] != null ? OneOf2.parse(json['review'], fromA: (v) => v as String, fromB: (v) => Review.fromJson(v as Map<String, dynamic>),) : null,
-  setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  shipping: json['shipping'] != null ? Shipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
-  statementDescriptor: json['statement_descriptor'] as String?,
-  statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
+  processing: json.containsKey('processing') ? Omittable(json['processing'] != null ? PaymentIntentProcessing.fromJson(json['processing'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  receiptEmail: json.containsKey('receipt_email') ? Omittable(json['receipt_email'] as String?) : const Omittable.absent(),
+  review: json.containsKey('review') ? Omittable(json['review'] != null ? OneOf2.parse(json['review'], fromA: (v) => v as String, fromB: (v) => Review.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  setupFutureUsage: json.containsKey('setup_future_usage') ? Omittable(json['setup_future_usage'] != null ? PaymentIntentSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null) : const Omittable.absent(),
+  shipping: json.containsKey('shipping') ? Omittable(json['shipping'] != null ? Shipping.fromJson(json['shipping'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  statementDescriptor: json.containsKey('statement_descriptor') ? Omittable(json['statement_descriptor'] as String?) : const Omittable.absent(),
+  statementDescriptorSuffix: json.containsKey('statement_descriptor_suffix') ? Omittable(json['statement_descriptor_suffix'] as String?) : const Omittable.absent(),
   status: PaymentIntentStatus.fromJson(json['status'] as String),
-  transferData: json['transfer_data'] != null ? TransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
-  transferGroup: json['transfer_group'] as String?,
+  transferData: json.containsKey('transfer_data') ? Omittable(json['transfer_data'] != null ? TransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  transferGroup: json.containsKey('transfer_group') ? Omittable(json['transfer_group'] as String?) : const Omittable.absent(),
 ); }
 
 /// Amount intended to be collected by this PaymentIntent. A positive integer representing how much to charge in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal) (e.g., 100 cents to charge $1.00 or 100 to charge ¥100, a zero-decimal currency). The minimum amount is $0.50 US or [equivalent in charge currency](https://docs.stripe.com/currencies#minimum-and-maximum-charge-amounts). The amount value supports up to eight digits (e.g., a value of 99999999 for a USD charge of $999,999.99).
@@ -425,19 +425,19 @@ final PaymentIntentAmountDetails? amountDetails;
 final int? amountReceived;
 
 /// ID of the Connect application that created the PaymentIntent.
-final PaymentIntentApplication? application;
+final Omittable<PaymentIntentApplication?> application;
 
 /// The amount of the application fee (if any) that will be requested to be applied to the payment and transferred to the application owner's Stripe account. The amount of the application fee collected will be capped at the total amount captured. For more information, see the PaymentIntents [use case for connected accounts](https://docs.stripe.com/payments/connected-accounts).
-final int? applicationFeeAmount;
+final Omittable<int?> applicationFeeAmount;
 
 /// Settings to configure compatible payment methods from the [Stripe Dashboard](https://dashboard.stripe.com/settings/payment_methods)
-final PaymentFlowsAutomaticPaymentMethodsPaymentIntent? automaticPaymentMethods;
+final Omittable<PaymentFlowsAutomaticPaymentMethodsPaymentIntent?> automaticPaymentMethods;
 
 /// Populated when `status` is `canceled`, this is the time at which the PaymentIntent was canceled. Measured in seconds since the Unix epoch.
-final int? canceledAt;
+final Omittable<int?> canceledAt;
 
 /// Reason for cancellation of this PaymentIntent, either user-provided (`duplicate`, `fraudulent`, `requested_by_customer`, or `abandoned`) or generated by Stripe internally (`failed_invoice`, `void_invoice`, `automatic`, or `expired`).
-final PaymentIntentCancellationReason? cancellationReason;
+final Omittable<PaymentIntentCancellationReason?> cancellationReason;
 
 /// Controls when the funds will be captured from the customer's account.
 final PaymentIntentCaptureMethod? captureMethod;
@@ -447,7 +447,7 @@ final PaymentIntentCaptureMethod? captureMethod;
 /// The client secret can be used to complete a payment from your frontend. It should not be stored, logged, or exposed to anyone other than the customer. Make sure that you have TLS enabled on any page that includes the client secret.
 /// 
 /// Refer to our docs to [accept a payment](https://docs.stripe.com/payments/accept-a-payment?ui=elements) and learn about how `client_secret` should be handled.
-final String? clientSecret;
+final Omittable<String?> clientSecret;
 
 /// Describes whether we can confirm this PaymentIntent automatically, or if it requires customer action to confirm the payment.
 final PaymentIntentConfirmationMethod? confirmationMethod;
@@ -463,20 +463,20 @@ final String? currency;
 /// Payment methods attached to other Customers cannot be used with this PaymentIntent.
 /// 
 /// If [setup_future_usage](https://api.stripe.com#payment_intent_object-setup_future_usage) is set and this PaymentIntent's payment method is not `card_present`, then the payment method attaches to the Customer after the PaymentIntent has been confirmed and any required actions from the user are complete. If the payment method is `card_present` and isn't a digital wallet, then a [generated_card](https://docs.stripe.com/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card is created and attached to the Customer instead.
-final PaymentIntentCustomer? customer;
+final Omittable<PaymentIntentCustomer?> customer;
 
 /// ID of the Account representing the customer that this PaymentIntent belongs to, if one exists.
 /// 
 /// Payment methods attached to other Accounts cannot be used with this PaymentIntent.
 /// 
 /// If [setup_future_usage](https://api.stripe.com#payment_intent_object-setup_future_usage) is set and this PaymentIntent's payment method is not `card_present`, then the payment method attaches to the Account after the PaymentIntent has been confirmed and any required actions from the user are complete. If the payment method is `card_present` and isn't a digital wallet, then a [generated_card](https://docs.stripe.com/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card is created and attached to the Account instead.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.
-final String? description;
+final Omittable<String?> description;
 
 /// The list of payment method types to exclude from use with this payment.
-final List<PaymentIntentExcludedPaymentMethodTypes>? excludedPaymentMethodTypes;
+final Omittable<List<PaymentIntentExcludedPaymentMethodTypes>?> excludedPaymentMethodTypes;
 
 final PaymentFlowsPaymentIntentAsyncWorkflows? hooks;
 
@@ -484,10 +484,10 @@ final PaymentFlowsPaymentIntentAsyncWorkflows? hooks;
 final String id;
 
 /// The payment error encountered in the previous PaymentIntent confirmation. It will be cleared if the PaymentIntent is later updated for any reason.
-final Errors? lastPaymentError;
+final Omittable<Errors?> lastPaymentError;
 
 /// ID of the latest [Charge object](https://docs.stripe.com/api/charges) created by this PaymentIntent. This property is `null` until PaymentIntent confirmation is attempted.
-final PaymentIntentLatestCharge? latestCharge;
+final Omittable<PaymentIntentLatestCharge?> latestCharge;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -496,25 +496,25 @@ final bool livemode;
 final Map<String,String>? metadata;
 
 /// If present, this property tells you what actions you need to take in order for your customer to fulfill a payment using the provided source.
-final PaymentIntentNextAction? nextAction;
+final Omittable<PaymentIntentNextAction?> nextAction;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final PaymentIntentObject object;
 
 /// You can specify the settlement merchant as the
 /// connected account using the `on_behalf_of` attribute on the charge. See the PaymentIntents [use case for connected accounts](/payments/connected-accounts) for details.
-final PaymentIntentOnBehalfOf? onBehalfOf;
+final Omittable<PaymentIntentOnBehalfOf?> onBehalfOf;
 
 final PaymentFlowsPaymentDetails? paymentDetails;
 
 /// ID of the payment method used in this PaymentIntent.
-final PaymentIntentPaymentMethod? paymentMethod;
+final Omittable<PaymentIntentPaymentMethod?> paymentMethod;
 
 /// Information about the [payment method configuration](https://docs.stripe.com/api/payment_method_configurations) used for this PaymentIntent.
-final PaymentMethodConfigBizPaymentMethodConfigurationDetails? paymentMethodConfigurationDetails;
+final Omittable<PaymentMethodConfigBizPaymentMethodConfigurationDetails?> paymentMethodConfigurationDetails;
 
 /// Payment-method-specific configuration for this PaymentIntent.
-final PaymentIntentPaymentMethodOptions? paymentMethodOptions;
+final Omittable<PaymentIntentPaymentMethodOptions?> paymentMethodOptions;
 
 /// The list of payment method types (e.g. card) that this PaymentIntent is allowed to use. A comprehensive list of valid payment method types can be found [here](https://docs.stripe.com/api/payment_methods/object#payment_method_object-type).
 final List<String>? paymentMethodTypes;
@@ -522,13 +522,13 @@ final List<String>? paymentMethodTypes;
 final PaymentFlowsPaymentIntentPresentmentDetails? presentmentDetails;
 
 /// If present, this property tells you about the processing state of the payment.
-final PaymentIntentProcessing? processing;
+final Omittable<PaymentIntentProcessing?> processing;
 
 /// Email address that the receipt for the resulting payment will be sent to. If `receipt_email` is specified for a payment in live mode, a receipt will be sent regardless of your [email settings](https://dashboard.stripe.com/account/emails).
-final String? receiptEmail;
+final Omittable<String?> receiptEmail;
 
 /// ID of the review associated with this PaymentIntent, if any.
-final PaymentIntentReview? review;
+final Omittable<PaymentIntentReview?> review;
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -537,122 +537,122 @@ final PaymentIntentReview? review;
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final PaymentIntentSetupFutureUsage? setupFutureUsage;
+final Omittable<PaymentIntentSetupFutureUsage?> setupFutureUsage;
 
 /// Shipping information for this PaymentIntent.
-final Shipping? shipping;
+final Omittable<Shipping?> shipping;
 
 /// Text that appears on the customer's statement as the statement descriptor for a non-card charge. This value overrides the account's default statement descriptor. For information about requirements, including the 22-character limit, see [the Statement Descriptor docs](https://docs.stripe.com/get-started/account/statement-descriptors).
 /// 
 /// Setting this value for a card charge returns an error. For card charges, set the [statement_descriptor_suffix](https://docs.stripe.com/get-started/account/statement-descriptors#dynamic) instead.
-final String? statementDescriptor;
+final Omittable<String?> statementDescriptor;
 
 /// Provides information about a card charge. Concatenated to the account's [statement descriptor prefix](https://docs.stripe.com/get-started/account/statement-descriptors#static) to form the complete statement descriptor that appears on the customer's statement.
-final String? statementDescriptorSuffix;
+final Omittable<String?> statementDescriptorSuffix;
 
 /// Status of this PaymentIntent, one of `requires_payment_method`, `requires_confirmation`, `requires_action`, `processing`, `requires_capture`, `canceled`, or `succeeded`. Read more about each PaymentIntent [status](https://docs.stripe.com/payments/intents#intent-statuses).
 final PaymentIntentStatus status;
 
 /// The data that automatically creates a Transfer after the payment finalizes. Learn more about the [use case for connected accounts](https://docs.stripe.com/payments/connected-accounts).
-final TransferData? transferData;
+final Omittable<TransferData?> transferData;
 
 /// A string that identifies the resulting payment as part of a group. Learn more about the [use case for connected accounts](https://docs.stripe.com/connect/separate-charges-and-transfers).
-final String? transferGroup;
+final Omittable<String?> transferGroup;
 
 Map<String, dynamic> toJson() { return {
   'amount': ?amount,
   'amount_capturable': ?amountCapturable,
   if (amountDetails != null) 'amount_details': amountDetails?.toJson(),
   'amount_received': ?amountReceived,
-  if (application != null) 'application': application?.toJson(),
-  'application_fee_amount': ?applicationFeeAmount,
-  if (automaticPaymentMethods != null) 'automatic_payment_methods': automaticPaymentMethods?.toJson(),
-  'canceled_at': ?canceledAt,
-  if (cancellationReason != null) 'cancellation_reason': cancellationReason?.toJson(),
+  if (application.isPresent) 'application': application.value?.toJson(),
+  if (applicationFeeAmount.isPresent) 'application_fee_amount': applicationFeeAmount.value,
+  if (automaticPaymentMethods.isPresent) 'automatic_payment_methods': automaticPaymentMethods.value?.toJson(),
+  if (canceledAt.isPresent) 'canceled_at': canceledAt.value,
+  if (cancellationReason.isPresent) 'cancellation_reason': cancellationReason.value?.toJson(),
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
-  'client_secret': ?clientSecret,
+  if (clientSecret.isPresent) 'client_secret': clientSecret.value,
   if (confirmationMethod != null) 'confirmation_method': confirmationMethod?.toJson(),
   'created': created,
   'currency': ?currency,
-  if (customer != null) 'customer': customer?.toJson(),
-  'customer_account': ?customerAccount,
-  'description': ?description,
-  if (excludedPaymentMethodTypes != null) 'excluded_payment_method_types': excludedPaymentMethodTypes?.map((e) => e.toJson()).toList(),
+  if (customer.isPresent) 'customer': customer.value?.toJson(),
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
+  if (description.isPresent) 'description': description.value,
+  if (excludedPaymentMethodTypes.isPresent) 'excluded_payment_method_types': excludedPaymentMethodTypes.value?.map((e) => e.toJson()).toList(),
   if (hooks != null) 'hooks': hooks?.toJson(),
   'id': id,
-  if (lastPaymentError != null) 'last_payment_error': lastPaymentError?.toJson(),
-  if (latestCharge != null) 'latest_charge': latestCharge?.toJson(),
+  if (lastPaymentError.isPresent) 'last_payment_error': lastPaymentError.value?.toJson(),
+  if (latestCharge.isPresent) 'latest_charge': latestCharge.value?.toJson(),
   'livemode': livemode,
   'metadata': ?metadata,
-  if (nextAction != null) 'next_action': nextAction?.toJson(),
+  if (nextAction.isPresent) 'next_action': nextAction.value?.toJson(),
   'object': object.toJson(),
-  if (onBehalfOf != null) 'on_behalf_of': onBehalfOf?.toJson(),
+  if (onBehalfOf.isPresent) 'on_behalf_of': onBehalfOf.value?.toJson(),
   if (paymentDetails != null) 'payment_details': paymentDetails?.toJson(),
-  if (paymentMethod != null) 'payment_method': paymentMethod?.toJson(),
-  if (paymentMethodConfigurationDetails != null) 'payment_method_configuration_details': paymentMethodConfigurationDetails?.toJson(),
-  if (paymentMethodOptions != null) 'payment_method_options': paymentMethodOptions?.toJson(),
+  if (paymentMethod.isPresent) 'payment_method': paymentMethod.value?.toJson(),
+  if (paymentMethodConfigurationDetails.isPresent) 'payment_method_configuration_details': paymentMethodConfigurationDetails.value?.toJson(),
+  if (paymentMethodOptions.isPresent) 'payment_method_options': paymentMethodOptions.value?.toJson(),
   'payment_method_types': ?paymentMethodTypes,
   if (presentmentDetails != null) 'presentment_details': presentmentDetails?.toJson(),
-  if (processing != null) 'processing': processing?.toJson(),
-  'receipt_email': ?receiptEmail,
-  if (review != null) 'review': review?.toJson(),
-  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-  if (shipping != null) 'shipping': shipping?.toJson(),
-  'statement_descriptor': ?statementDescriptor,
-  'statement_descriptor_suffix': ?statementDescriptorSuffix,
+  if (processing.isPresent) 'processing': processing.value?.toJson(),
+  if (receiptEmail.isPresent) 'receipt_email': receiptEmail.value,
+  if (review.isPresent) 'review': review.value?.toJson(),
+  if (setupFutureUsage.isPresent) 'setup_future_usage': setupFutureUsage.value?.toJson(),
+  if (shipping.isPresent) 'shipping': shipping.value?.toJson(),
+  if (statementDescriptor.isPresent) 'statement_descriptor': statementDescriptor.value,
+  if (statementDescriptorSuffix.isPresent) 'statement_descriptor_suffix': statementDescriptorSuffix.value,
   'status': status.toJson(),
-  if (transferData != null) 'transfer_data': transferData?.toJson(),
-  'transfer_group': ?transferGroup,
+  if (transferData.isPresent) 'transfer_data': transferData.value?.toJson(),
+  if (transferGroup.isPresent) 'transfer_group': transferGroup.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('status'); } 
-PaymentIntent copyWith({int Function()? amount, int Function()? amountCapturable, PaymentIntentAmountDetails Function()? amountDetails, int Function()? amountReceived, PaymentIntentApplication? Function()? application, int? Function()? applicationFeeAmount, PaymentFlowsAutomaticPaymentMethodsPaymentIntent? Function()? automaticPaymentMethods, int? Function()? canceledAt, PaymentIntentCancellationReason? Function()? cancellationReason, PaymentIntentCaptureMethod Function()? captureMethod, String? Function()? clientSecret, PaymentIntentConfirmationMethod Function()? confirmationMethod, int? created, String Function()? currency, PaymentIntentCustomer? Function()? customer, String? Function()? customerAccount, String? Function()? description, List<PaymentIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, PaymentFlowsPaymentIntentAsyncWorkflows Function()? hooks, String? id, Errors? Function()? lastPaymentError, PaymentIntentLatestCharge? Function()? latestCharge, bool? livemode, Map<String, String> Function()? metadata, PaymentIntentNextAction? Function()? nextAction, PaymentIntentObject? object, PaymentIntentOnBehalfOf? Function()? onBehalfOf, PaymentFlowsPaymentDetails Function()? paymentDetails, PaymentIntentPaymentMethod? Function()? paymentMethod, PaymentMethodConfigBizPaymentMethodConfigurationDetails? Function()? paymentMethodConfigurationDetails, PaymentIntentPaymentMethodOptions? Function()? paymentMethodOptions, List<String> Function()? paymentMethodTypes, PaymentFlowsPaymentIntentPresentmentDetails Function()? presentmentDetails, PaymentIntentProcessing? Function()? processing, String? Function()? receiptEmail, PaymentIntentReview? Function()? review, PaymentIntentSetupFutureUsage? Function()? setupFutureUsage, Shipping? Function()? shipping, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PaymentIntentStatus? status, TransferData? Function()? transferData, String? Function()? transferGroup, }) { return PaymentIntent(
+PaymentIntent copyWith({int? Function()? amount, int? Function()? amountCapturable, PaymentIntentAmountDetails? Function()? amountDetails, int? Function()? amountReceived, Omittable<PaymentIntentApplication?>? application, Omittable<int?>? applicationFeeAmount, Omittable<PaymentFlowsAutomaticPaymentMethodsPaymentIntent?>? automaticPaymentMethods, Omittable<int?>? canceledAt, Omittable<PaymentIntentCancellationReason?>? cancellationReason, PaymentIntentCaptureMethod? Function()? captureMethod, Omittable<String?>? clientSecret, PaymentIntentConfirmationMethod? Function()? confirmationMethod, int? created, String? Function()? currency, Omittable<PaymentIntentCustomer?>? customer, Omittable<String?>? customerAccount, Omittable<String?>? description, Omittable<List<PaymentIntentExcludedPaymentMethodTypes>?>? excludedPaymentMethodTypes, PaymentFlowsPaymentIntentAsyncWorkflows? Function()? hooks, String? id, Omittable<Errors?>? lastPaymentError, Omittable<PaymentIntentLatestCharge?>? latestCharge, bool? livemode, Map<String, String>? Function()? metadata, Omittable<PaymentIntentNextAction?>? nextAction, PaymentIntentObject? object, Omittable<PaymentIntentOnBehalfOf?>? onBehalfOf, PaymentFlowsPaymentDetails? Function()? paymentDetails, Omittable<PaymentIntentPaymentMethod?>? paymentMethod, Omittable<PaymentMethodConfigBizPaymentMethodConfigurationDetails?>? paymentMethodConfigurationDetails, Omittable<PaymentIntentPaymentMethodOptions?>? paymentMethodOptions, List<String>? Function()? paymentMethodTypes, PaymentFlowsPaymentIntentPresentmentDetails? Function()? presentmentDetails, Omittable<PaymentIntentProcessing?>? processing, Omittable<String?>? receiptEmail, Omittable<PaymentIntentReview?>? review, Omittable<PaymentIntentSetupFutureUsage?>? setupFutureUsage, Omittable<Shipping?>? shipping, Omittable<String?>? statementDescriptor, Omittable<String?>? statementDescriptorSuffix, PaymentIntentStatus? status, Omittable<TransferData?>? transferData, Omittable<String?>? transferGroup, }) { return PaymentIntent(
   amount: amount != null ? amount() : this.amount,
   amountCapturable: amountCapturable != null ? amountCapturable() : this.amountCapturable,
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   amountReceived: amountReceived != null ? amountReceived() : this.amountReceived,
-  application: application != null ? application() : this.application,
-  applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
-  automaticPaymentMethods: automaticPaymentMethods != null ? automaticPaymentMethods() : this.automaticPaymentMethods,
-  canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,
-  cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,
+  application: application ?? this.application,
+  applicationFeeAmount: applicationFeeAmount ?? this.applicationFeeAmount,
+  automaticPaymentMethods: automaticPaymentMethods ?? this.automaticPaymentMethods,
+  canceledAt: canceledAt ?? this.canceledAt,
+  cancellationReason: cancellationReason ?? this.cancellationReason,
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
-  clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
+  clientSecret: clientSecret ?? this.clientSecret,
   confirmationMethod: confirmationMethod != null ? confirmationMethod() : this.confirmationMethod,
   created: created ?? this.created,
   currency: currency != null ? currency() : this.currency,
-  customer: customer != null ? customer() : this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
-  description: description != null ? description() : this.description,
-  excludedPaymentMethodTypes: excludedPaymentMethodTypes != null ? excludedPaymentMethodTypes() : this.excludedPaymentMethodTypes,
+  customer: customer ?? this.customer,
+  customerAccount: customerAccount ?? this.customerAccount,
+  description: description ?? this.description,
+  excludedPaymentMethodTypes: excludedPaymentMethodTypes ?? this.excludedPaymentMethodTypes,
   hooks: hooks != null ? hooks() : this.hooks,
   id: id ?? this.id,
-  lastPaymentError: lastPaymentError != null ? lastPaymentError() : this.lastPaymentError,
-  latestCharge: latestCharge != null ? latestCharge() : this.latestCharge,
+  lastPaymentError: lastPaymentError ?? this.lastPaymentError,
+  latestCharge: latestCharge ?? this.latestCharge,
   livemode: livemode ?? this.livemode,
   metadata: metadata != null ? metadata() : this.metadata,
-  nextAction: nextAction != null ? nextAction() : this.nextAction,
+  nextAction: nextAction ?? this.nextAction,
   object: object ?? this.object,
-  onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
+  onBehalfOf: onBehalfOf ?? this.onBehalfOf,
   paymentDetails: paymentDetails != null ? paymentDetails() : this.paymentDetails,
-  paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,
-  paymentMethodConfigurationDetails: paymentMethodConfigurationDetails != null ? paymentMethodConfigurationDetails() : this.paymentMethodConfigurationDetails,
-  paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,
+  paymentMethod: paymentMethod ?? this.paymentMethod,
+  paymentMethodConfigurationDetails: paymentMethodConfigurationDetails ?? this.paymentMethodConfigurationDetails,
+  paymentMethodOptions: paymentMethodOptions ?? this.paymentMethodOptions,
   paymentMethodTypes: paymentMethodTypes != null ? paymentMethodTypes() : this.paymentMethodTypes,
   presentmentDetails: presentmentDetails != null ? presentmentDetails() : this.presentmentDetails,
-  processing: processing != null ? processing() : this.processing,
-  receiptEmail: receiptEmail != null ? receiptEmail() : this.receiptEmail,
-  review: review != null ? review() : this.review,
-  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-  shipping: shipping != null ? shipping() : this.shipping,
-  statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
-  statementDescriptorSuffix: statementDescriptorSuffix != null ? statementDescriptorSuffix() : this.statementDescriptorSuffix,
+  processing: processing ?? this.processing,
+  receiptEmail: receiptEmail ?? this.receiptEmail,
+  review: review ?? this.review,
+  setupFutureUsage: setupFutureUsage ?? this.setupFutureUsage,
+  shipping: shipping ?? this.shipping,
+  statementDescriptor: statementDescriptor ?? this.statementDescriptor,
+  statementDescriptorSuffix: statementDescriptorSuffix ?? this.statementDescriptorSuffix,
   status: status ?? this.status,
-  transferData: transferData != null ? transferData() : this.transferData,
-  transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
+  transferData: transferData ?? this.transferData,
+  transferGroup: transferGroup ?? this.transferGroup,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentIntent &&
@@ -673,7 +673,8 @@ PaymentIntent copyWith({int Function()? amount, int Function()? amountCapturable
           customer == other.customer &&
           customerAccount == other.customerAccount &&
           description == other.description &&
-          listEquals(excludedPaymentMethodTypes, other.excludedPaymentMethodTypes) &&
+          excludedPaymentMethodTypes.isPresent == other.excludedPaymentMethodTypes.isPresent &&
+          listEquals(excludedPaymentMethodTypes.value, other.excludedPaymentMethodTypes.value) &&
           hooks == other.hooks &&
           id == other.id &&
           lastPaymentError == other.lastPaymentError &&
@@ -699,6 +700,6 @@ PaymentIntent copyWith({int Function()? amount, int Function()? amountCapturable
           status == other.status &&
           transferData == other.transferData &&
           transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hashAll([amount, amountCapturable, amountDetails, amountReceived, application, applicationFeeAmount, automaticPaymentMethods, canceledAt, cancellationReason, captureMethod, clientSecret, confirmationMethod, created, currency, customer, customerAccount, description, Object.hashAll(excludedPaymentMethodTypes ?? const []), hooks, id, lastPaymentError, latestCharge, livemode, metadata, nextAction, object, onBehalfOf, paymentDetails, paymentMethod, paymentMethodConfigurationDetails, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), presentmentDetails, processing, receiptEmail, review, setupFutureUsage, shipping, statementDescriptor, statementDescriptorSuffix, status, transferData, transferGroup]); } 
+@override int get hashCode { return Object.hashAll([amount, amountCapturable, amountDetails, amountReceived, application, applicationFeeAmount, automaticPaymentMethods, canceledAt, cancellationReason, captureMethod, clientSecret, confirmationMethod, created, currency, customer, customerAccount, description, Object.hashAll(excludedPaymentMethodTypes.value ?? const []), hooks, id, lastPaymentError, latestCharge, livemode, metadata, nextAction, object, onBehalfOf, paymentDetails, paymentMethod, paymentMethodConfigurationDetails, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), presentmentDetails, processing, receiptEmail, review, setupFutureUsage, shipping, statementDescriptor, statementDescriptorSuffix, status, transferData, transferGroup]); } 
 @override String toString() { return 'PaymentIntent(amount: $amount, amountCapturable: $amountCapturable, amountDetails: $amountDetails, amountReceived: $amountReceived, application: $application, applicationFeeAmount: $applicationFeeAmount, automaticPaymentMethods: $automaticPaymentMethods, canceledAt: $canceledAt, cancellationReason: $cancellationReason, captureMethod: $captureMethod, clientSecret: $clientSecret, confirmationMethod: $confirmationMethod, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, hooks: $hooks, id: $id, lastPaymentError: $lastPaymentError, latestCharge: $latestCharge, livemode: $livemode, metadata: $metadata, nextAction: $nextAction, object: $object, onBehalfOf: $onBehalfOf, paymentDetails: $paymentDetails, paymentMethod: $paymentMethod, paymentMethodConfigurationDetails: $paymentMethodConfigurationDetails, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, presentmentDetails: $presentmentDetails, processing: $processing, receiptEmail: $receiptEmail, review: $review, setupFutureUsage: $setupFutureUsage, shipping: $shipping, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, status: $status, transferData: $transferData, transferGroup: $transferGroup)'; } 
  }

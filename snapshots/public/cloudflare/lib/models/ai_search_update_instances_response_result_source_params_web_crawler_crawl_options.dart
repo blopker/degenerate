@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   'source': source.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'depth', 'include_external_links', 'include_subdomains', 'max_age', 'source'}.contains(key)); } 
-AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions copyWith({double Function()? depth, bool Function()? includeExternalLinks, bool Function()? includeSubdomains, double Function()? maxAge, AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource Function()? source, }) { return AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions(
+AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions copyWith({double? Function()? depth, bool Function()? includeExternalLinks, bool Function()? includeSubdomains, double? Function()? maxAge, AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource Function()? source, }) { return AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions(
   depth: depth != null ? depth() : this.depth,
   includeExternalLinks: includeExternalLinks != null ? includeExternalLinks() : this.includeExternalLinks,
   includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,

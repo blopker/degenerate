@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (account != null) 'account': account?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account'}.contains(key)); } 
-PostTokensRequestPersonAdditionalTosAcceptances copyWith({PostTokensRequestPersonAdditionalTosAcceptancesAccount Function()? account}) { return PostTokensRequestPersonAdditionalTosAcceptances(
+PostTokensRequestPersonAdditionalTosAcceptances copyWith({PostTokensRequestPersonAdditionalTosAcceptancesAccount? Function()? account}) { return PostTokensRequestPersonAdditionalTosAcceptances(
   account: account != null ? account() : this.account,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

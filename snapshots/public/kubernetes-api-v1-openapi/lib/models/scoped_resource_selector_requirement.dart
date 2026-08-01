@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('operator') && json['operator'] is String &&
       json.containsKey('scopeName') && json['scopeName'] is String; } 
-ScopedResourceSelectorRequirement copyWith({String? $operator, String? scopeName, List<String> Function()? values, }) { return ScopedResourceSelectorRequirement(
+ScopedResourceSelectorRequirement copyWith({String? $operator, String? scopeName, List<String>? Function()? values, }) { return ScopedResourceSelectorRequirement(
   $operator: $operator ?? this.$operator,
   scopeName: scopeName ?? this.scopeName,
   values: values != null ? values() : this.values,

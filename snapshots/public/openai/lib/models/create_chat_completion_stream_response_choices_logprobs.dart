@@ -15,8 +15,8 @@ final List<ChatCompletionTokenLogprob>? content;
 final List<ChatCompletionTokenLogprob>? refusal;
 
 Map<String, dynamic> toJson() { return {
-  if (content != null) 'content': content?.map((e) => e.toJson()).toList(),
-  if (refusal != null) 'refusal': refusal?.map((e) => e.toJson()).toList(),
+  'content': content?.map((e) => e.toJson()).toList(),
+  'refusal': refusal?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
       json.containsKey('refusal'); } 

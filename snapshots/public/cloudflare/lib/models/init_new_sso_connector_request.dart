@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (useFedrampLanguage != null) 'use_fedramp_language': useFedrampLanguage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('email_domain') && json['email_domain'] is String; } 
-InitNewSsoConnectorRequest copyWith({bool Function()? beginVerification, String? emailDomain, IamUseFedrampLanguage Function()? useFedrampLanguage, }) { return InitNewSsoConnectorRequest(
+InitNewSsoConnectorRequest copyWith({bool Function()? beginVerification, String? emailDomain, IamUseFedrampLanguage? Function()? useFedrampLanguage, }) { return InitNewSsoConnectorRequest(
   beginVerification: beginVerification != null ? beginVerification() : this.beginVerification,
   emailDomain: emailDomain ?? this.emailDomain,
   useFedrampLanguage: useFedrampLanguage != null ? useFedrampLanguage() : this.useFedrampLanguage,

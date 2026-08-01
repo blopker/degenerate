@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'name'}.contains(key)); } 
-CustomIndicatorFeedsCreateFeed copyWith({CustomIndicatorFeedsDescription Function()? description, CustomIndicatorFeedsName Function()? name, }) { return CustomIndicatorFeedsCreateFeed(
+CustomIndicatorFeedsCreateFeed copyWith({CustomIndicatorFeedsDescription? Function()? description, CustomIndicatorFeedsName? Function()? name, }) { return CustomIndicatorFeedsCreateFeed(
   description: description != null ? description() : this.description,
   name: name != null ? name() : this.name,
 ); } 

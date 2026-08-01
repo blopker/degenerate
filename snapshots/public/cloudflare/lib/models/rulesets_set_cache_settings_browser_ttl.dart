@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   'mode': mode.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode'); } 
-RulesetsSetCacheSettingsBrowserTtl copyWith({int Function()? $default, RulesetsSetCacheSettingsBrowserTtlMode? mode, }) { return RulesetsSetCacheSettingsBrowserTtl(
+RulesetsSetCacheSettingsBrowserTtl copyWith({int? Function()? $default, RulesetsSetCacheSettingsBrowserTtlMode? mode, }) { return RulesetsSetCacheSettingsBrowserTtl(
   $default: $default != null ? $default() : this.$default,
   mode: mode ?? this.mode,
 ); } 

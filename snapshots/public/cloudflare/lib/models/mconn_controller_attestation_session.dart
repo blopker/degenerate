@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ak_public') && json['ak_public'] is String &&
       json.containsKey('device') &&
       json.containsKey('nonce') && json['nonce'] is String; } 
-MconnControllerAttestationSession copyWith({String? akPublic, MconnControllerConnectorIdentity Function()? connector, MconnControllerDeviceIdentity? device, String? nonce, }) { return MconnControllerAttestationSession(
+MconnControllerAttestationSession copyWith({String? akPublic, MconnControllerConnectorIdentity? Function()? connector, MconnControllerDeviceIdentity? device, String? nonce, }) { return MconnControllerAttestationSession(
   akPublic: akPublic ?? this.akPublic,
   connector: connector != null ? connector() : this.connector,
   device: device ?? this.device,

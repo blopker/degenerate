@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('choices') &&
       json.containsKey('chunks'); } 
-AiSearchInstanceChatCompletionResponse copyWith({List<AiSearchInstanceChatCompletionResponseChoices>? choices, List<AiSearchInstanceChatCompletionResponseChunks>? chunks, String Function()? id, String Function()? model, String Function()? object, Map<String, dynamic>? additionalProperties, }) { return AiSearchInstanceChatCompletionResponse(
+AiSearchInstanceChatCompletionResponse copyWith({List<AiSearchInstanceChatCompletionResponseChoices>? choices, List<AiSearchInstanceChatCompletionResponseChunks>? chunks, String? Function()? id, String? Function()? model, String? Function()? object, Map<String, dynamic>? additionalProperties, }) { return AiSearchInstanceChatCompletionResponse(
   choices: choices ?? this.choices,
   chunks: chunks ?? this.chunks,
   id: id != null ? id() : this.id,

@@ -50,11 +50,11 @@ bool get isUnknown { return !values.contains(this); }
 /// You can use Tax `Settings` to manage configurations used by Stripe Tax calculations.
 /// 
 /// Related guide: [Using the Settings API](https://docs.stripe.com/tax/settings-api)
-@immutable final class TaxSettings {const TaxSettings({required this.defaults, required this.livemode, required this.object, required this.status, required this.statusDetails, this.headOffice, });
+@immutable final class TaxSettings {const TaxSettings({required this.defaults, required this.livemode, required this.object, required this.status, required this.statusDetails, this.headOffice = const Omittable.absent(), });
 
 factory TaxSettings.fromJson(Map<String, dynamic> json) { return TaxSettings(
   defaults: TaxProductResourceTaxSettingsDefaults.fromJson(json['defaults'] as Map<String, dynamic>),
-  headOffice: json['head_office'] != null ? TaxProductResourceTaxSettingsHeadOffice.fromJson(json['head_office'] as Map<String, dynamic>) : null,
+  headOffice: json.containsKey('head_office') ? Omittable(json['head_office'] != null ? TaxProductResourceTaxSettingsHeadOffice.fromJson(json['head_office'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   object: TaxSettingsObject.fromJson(json['object'] as String),
   status: TaxSettingsStatus.fromJson(json['status'] as String),
@@ -64,7 +64,7 @@ factory TaxSettings.fromJson(Map<String, dynamic> json) { return TaxSettings(
 final TaxProductResourceTaxSettingsDefaults defaults;
 
 /// The place where your business is located.
-final TaxProductResourceTaxSettingsHeadOffice? headOffice;
+final Omittable<TaxProductResourceTaxSettingsHeadOffice?> headOffice;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -79,7 +79,7 @@ final TaxProductResourceTaxSettingsStatusDetails statusDetails;
 
 Map<String, dynamic> toJson() { return {
   'defaults': defaults.toJson(),
-  if (headOffice != null) 'head_office': headOffice?.toJson(),
+  if (headOffice.isPresent) 'head_office': headOffice.value?.toJson(),
   'livemode': livemode,
   'object': object.toJson(),
   'status': status.toJson(),
@@ -90,9 +90,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('defau
       json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('status_details'); } 
-TaxSettings copyWith({TaxProductResourceTaxSettingsDefaults? defaults, TaxProductResourceTaxSettingsHeadOffice? Function()? headOffice, bool? livemode, TaxSettingsObject? object, TaxSettingsStatus? status, TaxProductResourceTaxSettingsStatusDetails? statusDetails, }) { return TaxSettings(
+TaxSettings copyWith({TaxProductResourceTaxSettingsDefaults? defaults, Omittable<TaxProductResourceTaxSettingsHeadOffice?>? headOffice, bool? livemode, TaxSettingsObject? object, TaxSettingsStatus? status, TaxProductResourceTaxSettingsStatusDetails? statusDetails, }) { return TaxSettings(
   defaults: defaults ?? this.defaults,
-  headOffice: headOffice != null ? headOffice() : this.headOffice,
+  headOffice: headOffice ?? this.headOffice,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
   status: status ?? this.status,

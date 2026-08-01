@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (updated != null) 'updated': updated?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'added', 'deleted', 'updated'}.contains(key)); } 
-WebhookRepositoryRulesetEditedChangesRules copyWith({List<RepositoryRule> Function()? added, List<RepositoryRule> Function()? deleted, List<WebhookRepositoryRulesetEditedChangesRulesUpdated> Function()? updated, }) { return WebhookRepositoryRulesetEditedChangesRules(
+WebhookRepositoryRulesetEditedChangesRules copyWith({List<RepositoryRule>? Function()? added, List<RepositoryRule>? Function()? deleted, List<WebhookRepositoryRulesetEditedChangesRulesUpdated>? Function()? updated, }) { return WebhookRepositoryRulesetEditedChangesRules(
   added: added != null ? added() : this.added,
   deleted: deleted != null ? deleted() : this.deleted,
   updated: updated != null ? updated() : this.updated,

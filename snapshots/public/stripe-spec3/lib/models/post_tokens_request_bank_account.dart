@@ -96,7 +96,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_number') && json['account_number'] is String &&
       json.containsKey('country') && json['country'] is String; } 
-PostTokensRequestBankAccount copyWith({String Function()? accountHolderName, PostTokensRequestBankAccountAccountHolderType Function()? accountHolderType, String? accountNumber, PostTokensRequestBankAccountAccountType Function()? accountType, String? country, String Function()? currency, String Function()? paymentMethod, String Function()? routingNumber, }) { return PostTokensRequestBankAccount(
+PostTokensRequestBankAccount copyWith({String? Function()? accountHolderName, PostTokensRequestBankAccountAccountHolderType? Function()? accountHolderType, String? accountNumber, PostTokensRequestBankAccountAccountType? Function()? accountType, String? country, String? Function()? currency, String? Function()? paymentMethod, String? Function()? routingNumber, }) { return PostTokensRequestBankAccount(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountNumber: accountNumber ?? this.accountNumber,

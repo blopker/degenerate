@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd copyWith({int Function()? timestamp, PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEndType? type, }) { return PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd(
+PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd copyWith({int? Function()? timestamp, PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEndType? type, }) { return PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd(
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   type: type ?? this.type,
 ); } 

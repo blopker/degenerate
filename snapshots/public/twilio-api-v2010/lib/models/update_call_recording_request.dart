@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'PauseBehavior': ?pauseBehavior,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('Status'); } 
-UpdateCallRecordingRequest copyWith({CallRecordingEnumStatus? status, String Function()? pauseBehavior, }) { return UpdateCallRecordingRequest(
+UpdateCallRecordingRequest copyWith({CallRecordingEnumStatus? status, String? Function()? pauseBehavior, }) { return UpdateCallRecordingRequest(
   status: status ?? this.status,
   pauseBehavior: pauseBehavior != null ? pauseBehavior() : this.pauseBehavior,
 ); } 

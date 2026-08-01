@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   'selected_repository_ids': ?selectedRepositoryIds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'value', 'visibility', 'selected_repository_ids'}.contains(key)); } 
-ActionsUpdateOrgVariableRequest copyWith({String Function()? name, String Function()? value, ActionsUpdateOrgVariableRequestVisibility Function()? visibility, List<int> Function()? selectedRepositoryIds, }) { return ActionsUpdateOrgVariableRequest(
+ActionsUpdateOrgVariableRequest copyWith({String? Function()? name, String? Function()? value, ActionsUpdateOrgVariableRequestVisibility? Function()? visibility, List<int>? Function()? selectedRepositoryIds, }) { return ActionsUpdateOrgVariableRequest(
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,
   visibility: visibility != null ? visibility() : this.visibility,

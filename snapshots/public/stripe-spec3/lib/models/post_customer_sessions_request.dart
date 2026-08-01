@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('components'); } 
-PostCustomerSessionsRequest copyWith({PostCustomerSessionsRequestComponents? components, String Function()? customer, String Function()? customerAccount, List<String> Function()? expand, }) { return PostCustomerSessionsRequest(
+PostCustomerSessionsRequest copyWith({PostCustomerSessionsRequestComponents? components, String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, }) { return PostCustomerSessionsRequest(
   components: components ?? this.components,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,

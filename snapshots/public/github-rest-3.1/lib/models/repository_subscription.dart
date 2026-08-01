@@ -29,14 +29,14 @@ final Uri repositoryUrl;
 Map<String, dynamic> toJson() { return {
   'subscribed': subscribed,
   'ignored': ignored,
-  'reason': ?reason,
+  'reason': reason,
   'created_at': createdAt.toIso8601String(),
   'url': url.toString(),
   'repository_url': repositoryUrl.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('subscribed') && json['subscribed'] is bool &&
       json.containsKey('ignored') && json['ignored'] is bool &&
-      json.containsKey('reason') && json['reason'] is String &&
+      json.containsKey('reason') && (json['reason'] == null || json['reason'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('repository_url') && json['repository_url'] is String; } 

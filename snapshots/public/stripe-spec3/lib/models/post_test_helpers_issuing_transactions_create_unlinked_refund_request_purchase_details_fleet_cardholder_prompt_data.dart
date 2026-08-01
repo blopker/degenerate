@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'vehicle_number': ?vehicleNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'driver_id', 'odometer', 'unspecified_id', 'user_id', 'vehicle_number'}.contains(key)); } 
-PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetCardholderPromptData copyWith({String Function()? driverId, int Function()? odometer, String Function()? unspecifiedId, String Function()? userId, String Function()? vehicleNumber, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetCardholderPromptData(
+PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetCardholderPromptData copyWith({String? Function()? driverId, int? Function()? odometer, String? Function()? unspecifiedId, String? Function()? userId, String? Function()? vehicleNumber, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetCardholderPromptData(
   driverId: driverId != null ? driverId() : this.driverId,
   odometer: odometer != null ? odometer() : this.odometer,
   unspecifiedId: unspecifiedId != null ? unspecifiedId() : this.unspecifiedId,

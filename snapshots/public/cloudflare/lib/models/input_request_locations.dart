@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (trustStores != null) 'trust_stores': trustStores?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'paths', 'trust_stores'}.contains(key)); } 
-InputRequestLocations copyWith({List<String> Function()? paths, List<TeamsDevicesTrustStoresEnum> Function()? trustStores, }) { return InputRequestLocations(
+InputRequestLocations copyWith({List<String>? Function()? paths, List<TeamsDevicesTrustStoresEnum>? Function()? trustStores, }) { return InputRequestLocations(
   paths: paths != null ? paths() : this.paths,
   trustStores: trustStores != null ? trustStores() : this.trustStores,
 ); } 

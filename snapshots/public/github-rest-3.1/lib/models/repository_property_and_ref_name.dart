@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'repository_property': repositoryProperty.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('repository_property'); } 
-RepositoryPropertyAndRefName copyWith({RepositoryPropertyAndRefNameRefName Function()? refName, RepositoryPropertyAndRefNameRepositoryProperty? repositoryProperty, }) { return RepositoryPropertyAndRefName(
+RepositoryPropertyAndRefName copyWith({RepositoryPropertyAndRefNameRefName? Function()? refName, RepositoryPropertyAndRefNameRepositoryProperty? repositoryProperty, }) { return RepositoryPropertyAndRefName(
   refName: refName != null ? refName() : this.refName,
   repositoryProperty: repositoryProperty ?? this.repositoryProperty,
 ); } 

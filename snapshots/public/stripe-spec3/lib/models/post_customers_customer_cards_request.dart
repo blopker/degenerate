@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'source': ?source,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'alipay_account', 'bank_account', 'card', 'expand', 'metadata', 'source'}.contains(key)); } 
-PostCustomersCustomerCardsRequest copyWith({String Function()? alipayAccount, PostCustomersCustomerCardsRequestBankAccount Function()? bankAccount, PostCustomersCustomerCardsRequestCard Function()? card, List<String> Function()? expand, Map<String, String> Function()? metadata, String Function()? source, }) { return PostCustomersCustomerCardsRequest(
+PostCustomersCustomerCardsRequest copyWith({String? Function()? alipayAccount, PostCustomersCustomerCardsRequestBankAccount? Function()? bankAccount, PostCustomersCustomerCardsRequestCard? Function()? card, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? source, }) { return PostCustomersCustomerCardsRequest(
   alipayAccount: alipayAccount != null ? alipayAccount() : this.alipayAccount,
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
   card: card != null ? card() : this.card,

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'team_ids': ?teamIds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('new_owner') && json['new_owner'] is String; } 
-ReposTransferRequest copyWith({String? newOwner, String Function()? newName, List<int> Function()? teamIds, }) { return ReposTransferRequest(
+ReposTransferRequest copyWith({String? newOwner, String? Function()? newName, List<int>? Function()? teamIds, }) { return ReposTransferRequest(
   newOwner: newOwner ?? this.newOwner,
   newName: newName != null ? newName() : this.newName,
   teamIds: teamIds != null ? teamIds() : this.teamIds,

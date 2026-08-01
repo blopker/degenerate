@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_payload_log_masking_level.dart';/// Request model for the legacy payload log settings endpoint.
-@immutable final class DlpPayloadLogSettingUpdateLegacy {const DlpPayloadLogSettingUpdateLegacy({this.maskingLevel, this.publicKey, });
+@immutable final class DlpPayloadLogSettingUpdateLegacy {const DlpPayloadLogSettingUpdateLegacy({this.maskingLevel, this.publicKey = const Omittable.absent(), });
 
 factory DlpPayloadLogSettingUpdateLegacy.fromJson(Map<String, dynamic> json) { return DlpPayloadLogSettingUpdateLegacy(
   maskingLevel: json['masking_level'] != null ? DlpPayloadLogMaskingLevel.fromJson(json['masking_level'] as String) : null,
-  publicKey: json['public_key'] as String?,
+  publicKey: json.containsKey('public_key') ? Omittable(json['public_key'] as String?) : const Omittable.absent(),
 ); }
 
 /// Masking level for payload logs.
@@ -26,16 +26,16 @@ final DlpPayloadLogMaskingLevel? maskingLevel;
 /// 
 /// For all other customers:
 /// - If the field is missing, the existing setting will be cleared.
-final String? publicKey;
+final Omittable<String?> publicKey;
 
 Map<String, dynamic> toJson() { return {
   if (maskingLevel != null) 'masking_level': maskingLevel?.toJson(),
-  'public_key': ?publicKey,
+  if (publicKey.isPresent) 'public_key': publicKey.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'masking_level', 'public_key'}.contains(key)); } 
-DlpPayloadLogSettingUpdateLegacy copyWith({DlpPayloadLogMaskingLevel Function()? maskingLevel, String? Function()? publicKey, }) { return DlpPayloadLogSettingUpdateLegacy(
+DlpPayloadLogSettingUpdateLegacy copyWith({DlpPayloadLogMaskingLevel? Function()? maskingLevel, Omittable<String?>? publicKey, }) { return DlpPayloadLogSettingUpdateLegacy(
   maskingLevel: maskingLevel != null ? maskingLevel() : this.maskingLevel,
-  publicKey: publicKey != null ? publicKey() : this.publicKey,
+  publicKey: publicKey ?? this.publicKey,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DlpPayloadLogSettingUpdateLegacy &&

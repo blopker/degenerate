@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('page') && json['page'] is num &&
       json.containsKey('per_page') && json['per_page'] is num; } 
-CloudforceOneRequestsRequestMessageList copyWith({CloudforceOneRequestsTime Function()? after, CloudforceOneRequestsTime Function()? before, int? page, int? perPage, String Function()? sortBy, CloudforceOneRequestsRequestMessageListSortOrder Function()? sortOrder, }) { return CloudforceOneRequestsRequestMessageList(
+CloudforceOneRequestsRequestMessageList copyWith({CloudforceOneRequestsTime? Function()? after, CloudforceOneRequestsTime? Function()? before, int? page, int? perPage, String? Function()? sortBy, CloudforceOneRequestsRequestMessageListSortOrder? Function()? sortOrder, }) { return CloudforceOneRequestsRequestMessageList(
   after: after != null ? after() : this.after,
   before: before != null ? before() : this.before,
   page: page ?? this.page,

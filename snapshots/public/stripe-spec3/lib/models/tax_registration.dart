@@ -55,14 +55,14 @@ bool get isUnknown { return !values.contains(this); }
 /// Stripe doesn't register on your behalf with the relevant authorities when you create a Tax `Registration` object. For more information on how to register to collect tax, see [our guide](https://docs.stripe.com/tax/registering).
 /// 
 /// Related guide: [Using the Registrations API](https://docs.stripe.com/tax/registrations-api)
-@immutable final class TaxRegistration {const TaxRegistration({required this.activeFrom, required this.country, required this.countryOptions, required this.created, required this.id, required this.livemode, required this.object, required this.status, this.expiresAt, });
+@immutable final class TaxRegistration {const TaxRegistration({required this.activeFrom, required this.country, required this.countryOptions, required this.created, required this.id, required this.livemode, required this.object, required this.status, this.expiresAt = const Omittable.absent(), });
 
 factory TaxRegistration.fromJson(Map<String, dynamic> json) { return TaxRegistration(
   activeFrom: (json['active_from'] as num).toInt(),
   country: json['country'] as String,
   countryOptions: TaxProductRegistrationsResourceCountryOptions.fromJson(json['country_options'] as Map<String, dynamic>),
   created: (json['created'] as num).toInt(),
-  expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
+  expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: TaxRegistrationObject.fromJson(json['object'] as String),
@@ -81,7 +81,7 @@ final TaxProductRegistrationsResourceCountryOptions countryOptions;
 final int created;
 
 /// If set, the registration stops being active at this time. If not set, the registration will be active indefinitely. Measured in seconds since the Unix epoch.
-final int? expiresAt;
+final Omittable<int?> expiresAt;
 
 /// Unique identifier for the object.
 final String id;
@@ -100,7 +100,7 @@ Map<String, dynamic> toJson() { return {
   'country': country,
   'country_options': countryOptions.toJson(),
   'created': created,
-  'expires_at': ?expiresAt,
+  if (expiresAt.isPresent) 'expires_at': expiresAt.value,
   'id': id,
   'livemode': livemode,
   'object': object.toJson(),
@@ -114,12 +114,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('status'); } 
-TaxRegistration copyWith({int? activeFrom, String? country, TaxProductRegistrationsResourceCountryOptions? countryOptions, int? created, int? Function()? expiresAt, String? id, bool? livemode, TaxRegistrationObject? object, TaxRegistrationStatus? status, }) { return TaxRegistration(
+TaxRegistration copyWith({int? activeFrom, String? country, TaxProductRegistrationsResourceCountryOptions? countryOptions, int? created, Omittable<int?>? expiresAt, String? id, bool? livemode, TaxRegistrationObject? object, TaxRegistrationStatus? status, }) { return TaxRegistration(
   activeFrom: activeFrom ?? this.activeFrom,
   country: country ?? this.country,
   countryOptions: countryOptions ?? this.countryOptions,
   created: created ?? this.created,
-  expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
+  expiresAt: expiresAt ?? this.expiresAt,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,

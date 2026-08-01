@@ -117,53 +117,53 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EmailSecurityDomainSpfStatus($value)'; } 
  }
-@immutable final class EmailSecurityDomain {const EmailSecurityDomain({required this.allowedDeliveryModes, required this.createdAt, required this.domain, required this.dropDispositions, required this.id, required this.ipRestrictions, required this.lastModified, required this.lookbackHops, required this.regions, required this.transport, this.authorization, this.dmarcStatus, this.emailsProcessed, this.folder, this.inboxProvider, this.integrationId, this.o365TenantId, this.requireTlsInbound, this.requireTlsOutbound, this.spfStatus, });
+@immutable final class EmailSecurityDomain {const EmailSecurityDomain({required this.allowedDeliveryModes, required this.createdAt, required this.domain, required this.dropDispositions, required this.id, required this.ipRestrictions, required this.lastModified, required this.lookbackHops, required this.regions, required this.transport, this.authorization = const Omittable.absent(), this.dmarcStatus = const Omittable.absent(), this.emailsProcessed = const Omittable.absent(), this.folder = const Omittable.absent(), this.inboxProvider = const Omittable.absent(), this.integrationId = const Omittable.absent(), this.o365TenantId = const Omittable.absent(), this.requireTlsInbound = const Omittable.absent(), this.requireTlsOutbound = const Omittable.absent(), this.spfStatus = const Omittable.absent(), });
 
 factory EmailSecurityDomain.fromJson(Map<String, dynamic> json) { return EmailSecurityDomain(
   allowedDeliveryModes: (json['allowed_delivery_modes'] as List<dynamic>).map((e) => EmailSecurityDeliveryMode.fromJson(e as String)).toList(),
-  authorization: json['authorization'] != null ? EmailSecurityDomainAuthorization.fromJson(json['authorization'] as Map<String, dynamic>) : null,
+  authorization: json.containsKey('authorization') ? Omittable(json['authorization'] != null ? EmailSecurityDomainAuthorization.fromJson(json['authorization'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   createdAt: DateTime.parse(json['created_at'] as String),
-  dmarcStatus: json['dmarc_status'] != null ? EmailSecurityDomainDmarcStatus.fromJson(json['dmarc_status'] as String) : null,
+  dmarcStatus: json.containsKey('dmarc_status') ? Omittable(json['dmarc_status'] != null ? EmailSecurityDomainDmarcStatus.fromJson(json['dmarc_status'] as String) : null) : const Omittable.absent(),
   domain: json['domain'] as String,
   dropDispositions: (json['drop_dispositions'] as List<dynamic>).map((e) => EmailSecurityDispositionLabel.fromJson(e as String)).toList(),
-  emailsProcessed: json['emails_processed'] != null ? EmailSecurityDomainEmailsProcessed.fromJson(json['emails_processed'] as Map<String, dynamic>) : null,
-  folder: json['folder'] != null ? EmailSecurityScannableFolder.fromJson(json['folder'] as String) : null,
+  emailsProcessed: json.containsKey('emails_processed') ? Omittable(json['emails_processed'] != null ? EmailSecurityDomainEmailsProcessed.fromJson(json['emails_processed'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  folder: json.containsKey('folder') ? Omittable(json['folder'] != null ? EmailSecurityScannableFolder.fromJson(json['folder'] as String) : null) : const Omittable.absent(),
   id: (json['id'] as num).toInt(),
-  inboxProvider: json['inbox_provider'] != null ? EmailSecurityDomainInboxProvider.fromJson(json['inbox_provider'] as String) : null,
-  integrationId: json['integration_id'] as String?,
+  inboxProvider: json.containsKey('inbox_provider') ? Omittable(json['inbox_provider'] != null ? EmailSecurityDomainInboxProvider.fromJson(json['inbox_provider'] as String) : null) : const Omittable.absent(),
+  integrationId: json.containsKey('integration_id') ? Omittable(json['integration_id'] as String?) : const Omittable.absent(),
   ipRestrictions: (json['ip_restrictions'] as List<dynamic>).map((e) => e as String).toList(),
   lastModified: DateTime.parse(json['last_modified'] as String),
   lookbackHops: (json['lookback_hops'] as num).toInt(),
-  o365TenantId: json['o365_tenant_id'] as String?,
+  o365TenantId: json.containsKey('o365_tenant_id') ? Omittable(json['o365_tenant_id'] as String?) : const Omittable.absent(),
   regions: (json['regions'] as List<dynamic>).map((e) => EmailSecurityDomainRegions.fromJson(e as String)).toList(),
-  requireTlsInbound: json['require_tls_inbound'] as bool?,
-  requireTlsOutbound: json['require_tls_outbound'] as bool?,
-  spfStatus: json['spf_status'] != null ? EmailSecurityDomainSpfStatus.fromJson(json['spf_status'] as String) : null,
+  requireTlsInbound: json.containsKey('require_tls_inbound') ? Omittable(json['require_tls_inbound'] as bool?) : const Omittable.absent(),
+  requireTlsOutbound: json.containsKey('require_tls_outbound') ? Omittable(json['require_tls_outbound'] as bool?) : const Omittable.absent(),
+  spfStatus: json.containsKey('spf_status') ? Omittable(json['spf_status'] != null ? EmailSecurityDomainSpfStatus.fromJson(json['spf_status'] as String) : null) : const Omittable.absent(),
   transport: json['transport'] as String,
 ); }
 
 final List<EmailSecurityDeliveryMode> allowedDeliveryModes;
 
-final EmailSecurityDomainAuthorization? authorization;
+final Omittable<EmailSecurityDomainAuthorization?> authorization;
 
 final DateTime createdAt;
 
-final EmailSecurityDomainDmarcStatus? dmarcStatus;
+final Omittable<EmailSecurityDomainDmarcStatus?> dmarcStatus;
 
 final String domain;
 
 final List<EmailSecurityDispositionLabel> dropDispositions;
 
-final EmailSecurityDomainEmailsProcessed? emailsProcessed;
+final Omittable<EmailSecurityDomainEmailsProcessed?> emailsProcessed;
 
-final EmailSecurityScannableFolder? folder;
+final Omittable<EmailSecurityScannableFolder?> folder;
 
 /// The unique identifier for the domain.
 final int id;
 
-final EmailSecurityDomainInboxProvider? inboxProvider;
+final Omittable<EmailSecurityDomainInboxProvider?> inboxProvider;
 
-final String? integrationId;
+final Omittable<String?> integrationId;
 
 final List<String> ipRestrictions;
 
@@ -171,38 +171,38 @@ final DateTime lastModified;
 
 final int lookbackHops;
 
-final String? o365TenantId;
+final Omittable<String?> o365TenantId;
 
 final List<EmailSecurityDomainRegions> regions;
 
-final bool? requireTlsInbound;
+final Omittable<bool?> requireTlsInbound;
 
-final bool? requireTlsOutbound;
+final Omittable<bool?> requireTlsOutbound;
 
-final EmailSecurityDomainSpfStatus? spfStatus;
+final Omittable<EmailSecurityDomainSpfStatus?> spfStatus;
 
 final String transport;
 
 Map<String, dynamic> toJson() { return {
   'allowed_delivery_modes': allowedDeliveryModes.map((e) => e.toJson()).toList(),
-  if (authorization != null) 'authorization': authorization?.toJson(),
+  if (authorization.isPresent) 'authorization': authorization.value?.toJson(),
   'created_at': createdAt.toIso8601String(),
-  if (dmarcStatus != null) 'dmarc_status': dmarcStatus?.toJson(),
+  if (dmarcStatus.isPresent) 'dmarc_status': dmarcStatus.value?.toJson(),
   'domain': domain,
   'drop_dispositions': dropDispositions.map((e) => e.toJson()).toList(),
-  if (emailsProcessed != null) 'emails_processed': emailsProcessed?.toJson(),
-  if (folder != null) 'folder': folder?.toJson(),
+  if (emailsProcessed.isPresent) 'emails_processed': emailsProcessed.value?.toJson(),
+  if (folder.isPresent) 'folder': folder.value?.toJson(),
   'id': id,
-  if (inboxProvider != null) 'inbox_provider': inboxProvider?.toJson(),
-  'integration_id': ?integrationId,
+  if (inboxProvider.isPresent) 'inbox_provider': inboxProvider.value?.toJson(),
+  if (integrationId.isPresent) 'integration_id': integrationId.value,
   'ip_restrictions': ipRestrictions,
   'last_modified': lastModified.toIso8601String(),
   'lookback_hops': lookbackHops,
-  'o365_tenant_id': ?o365TenantId,
+  if (o365TenantId.isPresent) 'o365_tenant_id': o365TenantId.value,
   'regions': regions.map((e) => e.toJson()).toList(),
-  'require_tls_inbound': ?requireTlsInbound,
-  'require_tls_outbound': ?requireTlsOutbound,
-  if (spfStatus != null) 'spf_status': spfStatus?.toJson(),
+  if (requireTlsInbound.isPresent) 'require_tls_inbound': requireTlsInbound.value,
+  if (requireTlsOutbound.isPresent) 'require_tls_outbound': requireTlsOutbound.value,
+  if (spfStatus.isPresent) 'spf_status': spfStatus.value?.toJson(),
   'transport': transport,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed_delivery_modes') &&
@@ -215,26 +215,26 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow
       json.containsKey('lookback_hops') && json['lookback_hops'] is num &&
       json.containsKey('regions') &&
       json.containsKey('transport') && json['transport'] is String; } 
-EmailSecurityDomain copyWith({List<EmailSecurityDeliveryMode>? allowedDeliveryModes, EmailSecurityDomainAuthorization? Function()? authorization, DateTime? createdAt, EmailSecurityDomainDmarcStatus? Function()? dmarcStatus, String? domain, List<EmailSecurityDispositionLabel>? dropDispositions, EmailSecurityDomainEmailsProcessed? Function()? emailsProcessed, EmailSecurityScannableFolder? Function()? folder, int? id, EmailSecurityDomainInboxProvider? Function()? inboxProvider, String? Function()? integrationId, List<String>? ipRestrictions, DateTime? lastModified, int? lookbackHops, String? Function()? o365TenantId, List<EmailSecurityDomainRegions>? regions, bool? Function()? requireTlsInbound, bool? Function()? requireTlsOutbound, EmailSecurityDomainSpfStatus? Function()? spfStatus, String? transport, }) { return EmailSecurityDomain(
+EmailSecurityDomain copyWith({List<EmailSecurityDeliveryMode>? allowedDeliveryModes, Omittable<EmailSecurityDomainAuthorization?>? authorization, DateTime? createdAt, Omittable<EmailSecurityDomainDmarcStatus?>? dmarcStatus, String? domain, List<EmailSecurityDispositionLabel>? dropDispositions, Omittable<EmailSecurityDomainEmailsProcessed?>? emailsProcessed, Omittable<EmailSecurityScannableFolder?>? folder, int? id, Omittable<EmailSecurityDomainInboxProvider?>? inboxProvider, Omittable<String?>? integrationId, List<String>? ipRestrictions, DateTime? lastModified, int? lookbackHops, Omittable<String?>? o365TenantId, List<EmailSecurityDomainRegions>? regions, Omittable<bool?>? requireTlsInbound, Omittable<bool?>? requireTlsOutbound, Omittable<EmailSecurityDomainSpfStatus?>? spfStatus, String? transport, }) { return EmailSecurityDomain(
   allowedDeliveryModes: allowedDeliveryModes ?? this.allowedDeliveryModes,
-  authorization: authorization != null ? authorization() : this.authorization,
+  authorization: authorization ?? this.authorization,
   createdAt: createdAt ?? this.createdAt,
-  dmarcStatus: dmarcStatus != null ? dmarcStatus() : this.dmarcStatus,
+  dmarcStatus: dmarcStatus ?? this.dmarcStatus,
   domain: domain ?? this.domain,
   dropDispositions: dropDispositions ?? this.dropDispositions,
-  emailsProcessed: emailsProcessed != null ? emailsProcessed() : this.emailsProcessed,
-  folder: folder != null ? folder() : this.folder,
+  emailsProcessed: emailsProcessed ?? this.emailsProcessed,
+  folder: folder ?? this.folder,
   id: id ?? this.id,
-  inboxProvider: inboxProvider != null ? inboxProvider() : this.inboxProvider,
-  integrationId: integrationId != null ? integrationId() : this.integrationId,
+  inboxProvider: inboxProvider ?? this.inboxProvider,
+  integrationId: integrationId ?? this.integrationId,
   ipRestrictions: ipRestrictions ?? this.ipRestrictions,
   lastModified: lastModified ?? this.lastModified,
   lookbackHops: lookbackHops ?? this.lookbackHops,
-  o365TenantId: o365TenantId != null ? o365TenantId() : this.o365TenantId,
+  o365TenantId: o365TenantId ?? this.o365TenantId,
   regions: regions ?? this.regions,
-  requireTlsInbound: requireTlsInbound != null ? requireTlsInbound() : this.requireTlsInbound,
-  requireTlsOutbound: requireTlsOutbound != null ? requireTlsOutbound() : this.requireTlsOutbound,
-  spfStatus: spfStatus != null ? spfStatus() : this.spfStatus,
+  requireTlsInbound: requireTlsInbound ?? this.requireTlsInbound,
+  requireTlsOutbound: requireTlsOutbound ?? this.requireTlsOutbound,
+  spfStatus: spfStatus ?? this.spfStatus,
   transport: transport ?? this.transport,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BatchStatus($value)'; } 
  }
-@immutable final class Batch {const Batch({required this.id, required this.object, required this.endpoint, required this.inputFileId, required this.completionWindow, required this.status, required this.createdAt, this.model, this.errors, this.outputFileId, this.errorFileId, this.inProgressAt, this.expiresAt, this.finalizingAt, this.completedAt, this.failedAt, this.expiredAt, this.cancellingAt, this.cancelledAt, this.requestCounts, this.usage, this.metadata, });
+@immutable final class Batch {const Batch({required this.id, required this.object, required this.endpoint, required this.inputFileId, required this.completionWindow, required this.status, required this.createdAt, this.model, this.errors, this.outputFileId, this.errorFileId, this.inProgressAt, this.expiresAt, this.finalizingAt, this.completedAt, this.failedAt, this.expiredAt, this.cancellingAt, this.cancelledAt, this.requestCounts, this.usage, this.metadata = const Omittable.absent(), });
 
 factory Batch.fromJson(Map<String, dynamic> json) { return Batch(
   id: json['id'] as String,
@@ -89,7 +89,7 @@ factory Batch.fromJson(Map<String, dynamic> json) { return Batch(
   cancelledAt: json['cancelled_at'] != null ? (json['cancelled_at'] as num).toInt() : null,
   requestCounts: json['request_counts'] != null ? BatchRequestCounts.fromJson(json['request_counts'] as Map<String, dynamic>) : null,
   usage: json['usage'] != null ? BatchUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
 ); }
 
 final String id;
@@ -160,7 +160,7 @@ final BatchRequestCounts? requestCounts;
 /// 
 final BatchUsage? usage;
 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -184,7 +184,7 @@ Map<String, dynamic> toJson() { return {
   'cancelled_at': ?cancelledAt,
   if (requestCounts != null) 'request_counts': requestCounts?.toJson(),
   if (usage != null) 'usage': usage?.toJson(),
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
@@ -193,7 +193,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('completion_window') && json['completion_window'] is String &&
       json.containsKey('status') &&
       json.containsKey('created_at') && json['created_at'] is num; } 
-Batch copyWith({String? id, BatchObject? object, String? endpoint, String Function()? model, BatchErrors Function()? errors, String? inputFileId, String? completionWindow, BatchStatus? status, String Function()? outputFileId, String Function()? errorFileId, int? createdAt, int Function()? inProgressAt, int Function()? expiresAt, int Function()? finalizingAt, int Function()? completedAt, int Function()? failedAt, int Function()? expiredAt, int Function()? cancellingAt, int Function()? cancelledAt, BatchRequestCounts Function()? requestCounts, BatchUsage Function()? usage, Map<String, String>? Function()? metadata, }) { return Batch(
+Batch copyWith({String? id, BatchObject? object, String? endpoint, String? Function()? model, BatchErrors? Function()? errors, String? inputFileId, String? completionWindow, BatchStatus? status, String? Function()? outputFileId, String? Function()? errorFileId, int? createdAt, int? Function()? inProgressAt, int? Function()? expiresAt, int? Function()? finalizingAt, int? Function()? completedAt, int? Function()? failedAt, int? Function()? expiredAt, int? Function()? cancellingAt, int? Function()? cancelledAt, BatchRequestCounts? Function()? requestCounts, BatchUsage? Function()? usage, Omittable<Map<String,String>?>? metadata, }) { return Batch(
   id: id ?? this.id,
   object: object ?? this.object,
   endpoint: endpoint ?? this.endpoint,
@@ -215,7 +215,7 @@ Batch copyWith({String? id, BatchObject? object, String? endpoint, String Functi
   cancelledAt: cancelledAt != null ? cancelledAt() : this.cancelledAt,
   requestCounts: requestCounts != null ? requestCounts() : this.requestCounts,
   usage: usage != null ? usage() : this.usage,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Batch &&

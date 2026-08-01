@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'total_pages': ?totalPages,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'first_page', 'last_page', 'next_page', 'page', 'previous_page', 'total', 'total_pages'}.contains(key)); } 
-PaginationMetadata copyWith({int Function()? firstPage, int Function()? lastPage, int Function()? nextPage, int Function()? page, int Function()? previousPage, int Function()? total, int Function()? totalPages, }) { return PaginationMetadata(
+PaginationMetadata copyWith({int? Function()? firstPage, int? Function()? lastPage, int? Function()? nextPage, int? Function()? page, int? Function()? previousPage, int? Function()? total, int? Function()? totalPages, }) { return PaginationMetadata(
   firstPage: firstPage != null ? firstPage() : this.firstPage,
   lastPage: lastPage != null ? lastPage() : this.lastPage,
   nextPage: nextPage != null ? nextPage() : this.nextPage,

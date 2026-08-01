@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (shippingDetails != null) 'shipping_details': shippingDetails?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'shipping_details'}.contains(key)); } 
-PostCheckoutSessionsSessionRequestCollectedInformation copyWith({PostCheckoutSessionsSessionRequestCollectedInformationShippingDetails Function()? shippingDetails}) { return PostCheckoutSessionsSessionRequestCollectedInformation(
+PostCheckoutSessionsSessionRequestCollectedInformation copyWith({PostCheckoutSessionsSessionRequestCollectedInformationShippingDetails? Function()? shippingDetails}) { return PostCheckoutSessionsSessionRequestCollectedInformation(
   shippingDetails: shippingDetails != null ? shippingDetails() : this.shippingDetails,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

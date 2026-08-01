@@ -53,14 +53,14 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RuleSuiteRuleEvaluationsResult($value)'; } 
  }
-@immutable final class RuleSuiteRuleEvaluations {const RuleSuiteRuleEvaluations({this.ruleSource, this.enforcement, this.result, this.ruleType, this.details, });
+@immutable final class RuleSuiteRuleEvaluations {const RuleSuiteRuleEvaluations({this.ruleSource, this.enforcement, this.result, this.ruleType, this.details = const Omittable.absent(), });
 
 factory RuleSuiteRuleEvaluations.fromJson(Map<String, dynamic> json) { return RuleSuiteRuleEvaluations(
   ruleSource: json['rule_source'] != null ? RuleSuiteRuleEvaluationsRuleSource.fromJson(json['rule_source'] as Map<String, dynamic>) : null,
   enforcement: json['enforcement'] != null ? RuleSuiteRuleEvaluationsEnforcement.fromJson(json['enforcement'] as String) : null,
   result: json['result'] != null ? RuleSuiteRuleEvaluationsResult.fromJson(json['result'] as String) : null,
   ruleType: json['rule_type'] as String?,
-  details: json['details'] as String?,
+  details: json.containsKey('details') ? Omittable(json['details'] as String?) : const Omittable.absent(),
 ); }
 
 final RuleSuiteRuleEvaluationsRuleSource? ruleSource;
@@ -75,22 +75,22 @@ final RuleSuiteRuleEvaluationsResult? result;
 final String? ruleType;
 
 /// The detailed failure message for the rule. Null if the rule passed.
-final String? details;
+final Omittable<String?> details;
 
 Map<String, dynamic> toJson() { return {
   if (ruleSource != null) 'rule_source': ruleSource?.toJson(),
   if (enforcement != null) 'enforcement': enforcement?.toJson(),
   if (result != null) 'result': result?.toJson(),
   'rule_type': ?ruleType,
-  'details': ?details,
+  if (details.isPresent) 'details': details.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'rule_source', 'enforcement', 'result', 'rule_type', 'details'}.contains(key)); } 
-RuleSuiteRuleEvaluations copyWith({RuleSuiteRuleEvaluationsRuleSource Function()? ruleSource, RuleSuiteRuleEvaluationsEnforcement Function()? enforcement, RuleSuiteRuleEvaluationsResult Function()? result, String Function()? ruleType, String? Function()? details, }) { return RuleSuiteRuleEvaluations(
+RuleSuiteRuleEvaluations copyWith({RuleSuiteRuleEvaluationsRuleSource? Function()? ruleSource, RuleSuiteRuleEvaluationsEnforcement? Function()? enforcement, RuleSuiteRuleEvaluationsResult? Function()? result, String? Function()? ruleType, Omittable<String?>? details, }) { return RuleSuiteRuleEvaluations(
   ruleSource: ruleSource != null ? ruleSource() : this.ruleSource,
   enforcement: enforcement != null ? enforcement() : this.enforcement,
   result: result != null ? result() : this.result,
   ruleType: ruleType != null ? ruleType() : this.ruleType,
-  details: details != null ? details() : this.details,
+  details: details ?? this.details,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RuleSuiteRuleEvaluations &&

@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   'since': since,
   if (workflowJobRun != null) 'workflow_job_run': workflowJobRun?.toJson(),
   if (workflowJobRuns != null) 'workflow_job_runs': workflowJobRuns?.map((e) => e.toJson()).toList(),
-  if (workflowRun != null) 'workflow_run': workflowRun?.toJson(),
+  'workflow_run': workflowRun?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('organization') &&
@@ -86,7 +86,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('sender') &&
       json.containsKey('since') && json['since'] is String &&
       json.containsKey('workflow_run'); } 
-WebhookDeploymentReviewRejected copyWith({WebhookDeploymentReviewRejectedAction? action, WebhooksApprover Function()? approver, String Function()? comment, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, List<WebhooksReviewers2> Function()? reviewers, SimpleUser? sender, String? since, WebhooksWorkflowJobRun Function()? workflowJobRun, List<WebhookDeploymentReviewRejectedWorkflowJobRuns> Function()? workflowJobRuns, WebhookDeploymentReviewRejectedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentReviewRejected(
+WebhookDeploymentReviewRejected copyWith({WebhookDeploymentReviewRejectedAction? action, WebhooksApprover? Function()? approver, String? Function()? comment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, List<WebhooksReviewers2>? Function()? reviewers, SimpleUser? sender, String? since, WebhooksWorkflowJobRun? Function()? workflowJobRun, List<WebhookDeploymentReviewRejectedWorkflowJobRuns>? Function()? workflowJobRuns, WebhookDeploymentReviewRejectedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentReviewRejected(
   action: action ?? this.action,
   approver: approver != null ? approver() : this.approver,
   comment: comment != null ? comment() : this.comment,

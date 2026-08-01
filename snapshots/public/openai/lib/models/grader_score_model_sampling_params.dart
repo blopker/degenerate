@@ -1,48 +1,48 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reasoning_effort.dart';/// The sampling parameters for the model.
-@immutable final class GraderScoreModelSamplingParams {const GraderScoreModelSamplingParams({this.seed, this.topP, this.temperature, this.maxCompletionsTokens, this.reasoningEffort, });
+@immutable final class GraderScoreModelSamplingParams {const GraderScoreModelSamplingParams({this.seed = const Omittable.absent(), this.topP = const Omittable.absent(), this.temperature = const Omittable.absent(), this.maxCompletionsTokens = const Omittable.absent(), this.reasoningEffort = const Omittable.absent(), });
 
 factory GraderScoreModelSamplingParams.fromJson(Map<String, dynamic> json) { return GraderScoreModelSamplingParams(
-  seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
-  topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
-  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
-  maxCompletionsTokens: json['max_completions_tokens'] != null ? (json['max_completions_tokens'] as num).toInt() : null,
-  reasoningEffort: json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null,
+  seed: json.containsKey('seed') ? Omittable(json['seed'] != null ? (json['seed'] as num).toInt() : null) : const Omittable.absent(),
+  topP: json.containsKey('top_p') ? Omittable(json['top_p'] != null ? (json['top_p'] as num).toDouble() : null) : const Omittable.absent(),
+  temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
+  maxCompletionsTokens: json.containsKey('max_completions_tokens') ? Omittable(json['max_completions_tokens'] != null ? (json['max_completions_tokens'] as num).toInt() : null) : const Omittable.absent(),
+  reasoningEffort: json.containsKey('reasoning_effort') ? Omittable(json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// A seed value to initialize the randomness, during sampling.
 /// 
-final int? seed;
+final Omittable<int?> seed;
 
 /// An alternative to temperature for nucleus sampling; 1.0 includes all tokens.
 /// 
-final double? topP;
+final Omittable<double?> topP;
 
 /// A higher temperature increases randomness in the outputs.
 /// 
-final double? temperature;
+final Omittable<double?> temperature;
 
 /// The maximum number of tokens the grader model may generate in its response.
 /// 
-final int? maxCompletionsTokens;
+final Omittable<int?> maxCompletionsTokens;
 
-final ReasoningEffort? reasoningEffort;
+final Omittable<ReasoningEffort?> reasoningEffort;
 
 Map<String, dynamic> toJson() { return {
-  'seed': ?seed,
-  'top_p': ?topP,
-  'temperature': ?temperature,
-  'max_completions_tokens': ?maxCompletionsTokens,
-  if (reasoningEffort != null) 'reasoning_effort': reasoningEffort?.toJson(),
+  if (seed.isPresent) 'seed': seed.value,
+  if (topP.isPresent) 'top_p': topP.value,
+  if (temperature.isPresent) 'temperature': temperature.value,
+  if (maxCompletionsTokens.isPresent) 'max_completions_tokens': maxCompletionsTokens.value,
+  if (reasoningEffort.isPresent) 'reasoning_effort': reasoningEffort.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'seed', 'top_p', 'temperature', 'max_completions_tokens', 'reasoning_effort'}.contains(key)); } 
-GraderScoreModelSamplingParams copyWith({int? Function()? seed, double? Function()? topP, double? Function()? temperature, int? Function()? maxCompletionsTokens, ReasoningEffort? Function()? reasoningEffort, }) { return GraderScoreModelSamplingParams(
-  seed: seed != null ? seed() : this.seed,
-  topP: topP != null ? topP() : this.topP,
-  temperature: temperature != null ? temperature() : this.temperature,
-  maxCompletionsTokens: maxCompletionsTokens != null ? maxCompletionsTokens() : this.maxCompletionsTokens,
-  reasoningEffort: reasoningEffort != null ? reasoningEffort() : this.reasoningEffort,
+GraderScoreModelSamplingParams copyWith({Omittable<int?>? seed, Omittable<double?>? topP, Omittable<double?>? temperature, Omittable<int?>? maxCompletionsTokens, Omittable<ReasoningEffort?>? reasoningEffort, }) { return GraderScoreModelSamplingParams(
+  seed: seed ?? this.seed,
+  topP: topP ?? this.topP,
+  temperature: temperature ?? this.temperature,
+  maxCompletionsTokens: maxCompletionsTokens ?? this.maxCompletionsTokens,
+  reasoningEffort: reasoningEffort ?? this.reasoningEffort,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is GraderScoreModelSamplingParams &&

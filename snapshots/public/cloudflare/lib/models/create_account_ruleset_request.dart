@@ -53,7 +53,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('version') &&
       json.containsKey('kind') &&
       json.containsKey('phase'); } 
-CreateAccountRulesetRequest copyWith({String Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? name, RulesetsRulesetVersion? version, RulesetsRulesetKind? kind, RulesetsRulesetPhase? phase, List<RulesetsRequestRule> Function()? rules, }) { return CreateAccountRulesetRequest(
+CreateAccountRulesetRequest copyWith({String Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? name, RulesetsRulesetVersion? version, RulesetsRulesetKind? kind, RulesetsRulesetPhase? phase, List<RulesetsRequestRule>? Function()? rules, }) { return CreateAccountRulesetRequest(
   description: description != null ? description() : this.description,
   id: id ?? this.id,
   lastUpdated: lastUpdated ?? this.lastUpdated,

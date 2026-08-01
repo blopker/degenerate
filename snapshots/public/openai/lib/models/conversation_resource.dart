@@ -47,7 +47,7 @@ final int createdAt;
 Map<String, dynamic> toJson() { return {
   'id': id,
   'object': object.toJson(),
-  'metadata': ?metadata,
+  'metadata': metadata,
   'created_at': createdAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&

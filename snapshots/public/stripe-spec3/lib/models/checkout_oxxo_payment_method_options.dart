@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('expires_after_days') && json['expires_after_days'] is num; } 
-CheckoutOxxoPaymentMethodOptions copyWith({int? expiresAfterDays, CheckoutOxxoPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return CheckoutOxxoPaymentMethodOptions(
+CheckoutOxxoPaymentMethodOptions copyWith({int? expiresAfterDays, CheckoutOxxoPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return CheckoutOxxoPaymentMethodOptions(
   expiresAfterDays: expiresAfterDays ?? this.expiresAfterDays,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 

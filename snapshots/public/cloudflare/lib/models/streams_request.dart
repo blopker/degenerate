@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (workerBinding != null) 'worker_binding': workerBinding?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-StreamsRequest copyWith({CloudflarePipelinesFormat Function()? format, StreamsRequestHttp Function()? http, String? name, CloudflarePipelinesConnectionSchema Function()? schema, StreamsRequestWorkerBinding Function()? workerBinding, }) { return StreamsRequest(
+StreamsRequest copyWith({CloudflarePipelinesFormat? Function()? format, StreamsRequestHttp? Function()? http, String? name, CloudflarePipelinesConnectionSchema? Function()? schema, StreamsRequestWorkerBinding? Function()? workerBinding, }) { return StreamsRequest(
   format: format != null ? format() : this.format,
   http: http != null ? http() : this.http,
   name: name ?? this.name,

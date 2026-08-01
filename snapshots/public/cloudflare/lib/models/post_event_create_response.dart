@@ -135,7 +135,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('attac
       json.containsKey('targetIndustry') && json['targetIndustry'] is String &&
       json.containsKey('tlp') && json['tlp'] is String &&
       json.containsKey('uuid') && json['uuid'] is String; } 
-PostEventCreateResponse copyWith({String? attacker, String? attackerCountry, String? category, String? datasetId, String? date, String? event, bool? hasChildren, String? indicator, String? indicatorType, double? indicatorTypeId, String Function()? insight, double? killChain, List<String>? mitreAttack, double? numReferenced, double? numReferences, String? rawId, List<String>? referenced, List<double>? referencedIds, List<String>? references, List<double>? referencesIds, String Function()? releasabilityId, List<String>? tags, String? targetCountry, String? targetIndustry, String? tlp, String? uuid, }) { return PostEventCreateResponse(
+PostEventCreateResponse copyWith({String? attacker, String? attackerCountry, String? category, String? datasetId, String? date, String? event, bool? hasChildren, String? indicator, String? indicatorType, double? indicatorTypeId, String? Function()? insight, double? killChain, List<String>? mitreAttack, double? numReferenced, double? numReferences, String? rawId, List<String>? referenced, List<double>? referencedIds, List<String>? references, List<double>? referencesIds, String? Function()? releasabilityId, List<String>? tags, String? targetCountry, String? targetIndustry, String? tlp, String? uuid, }) { return PostEventCreateResponse(
   attacker: attacker ?? this.attacker,
   attackerCountry: attackerCountry ?? this.attackerCountry,
   category: category ?? this.category,

@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (permission != null) 'permission': permission?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'permission'}.contains(key)); } 
-TeamsAddOrUpdateRepoPermissionsLegacyRequest copyWith({TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission Function()? permission}) { return TeamsAddOrUpdateRepoPermissionsLegacyRequest(
+TeamsAddOrUpdateRepoPermissionsLegacyRequest copyWith({TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission? Function()? permission}) { return TeamsAddOrUpdateRepoPermissionsLegacyRequest(
   permission: permission != null ? permission() : this.permission,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

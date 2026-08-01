@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (uploadStatus != null) 'upload_status': uploadStatus?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'upload_status'}.contains(key)); } 
-DlpEntryWithUploadStatus copyWith({DlpDatasetUploadStatus Function()? uploadStatus}) { return DlpEntryWithUploadStatus(
+DlpEntryWithUploadStatus copyWith({DlpDatasetUploadStatus? Function()? uploadStatus}) { return DlpEntryWithUploadStatus(
   uploadStatus: uploadStatus != null ? uploadStatus() : this.uploadStatus,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

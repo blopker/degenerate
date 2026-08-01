@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'modified_on': modifiedOn.toIso8601String(),
   'name': name,
   'script_name': scriptName,
-  if (triggeredOn != null) 'triggered_on': triggeredOn?.toIso8601String(),
+  'triggered_on': triggeredOn?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('class_name') && json['class_name'] is String &&
       json.containsKey('created_on') && json['created_on'] is String &&
@@ -46,7 +46,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('class
       json.containsKey('modified_on') && json['modified_on'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('script_name') && json['script_name'] is String &&
-      json.containsKey('triggered_on') && json['triggered_on'] is String; } 
+      json.containsKey('triggered_on') && (json['triggered_on'] == null || json['triggered_on'] is String); } 
 WorGetWorkflowDetailsResponseResult copyWith({String? className, DateTime? createdOn, String? id, WorGetWorkflowDetailsResponseResultInstances? instances, DateTime? modifiedOn, String? name, String? scriptName, DateTime? Function()? triggeredOn, }) { return WorGetWorkflowDetailsResponseResult(
   className: className ?? this.className,
   createdOn: createdOn ?? this.createdOn,

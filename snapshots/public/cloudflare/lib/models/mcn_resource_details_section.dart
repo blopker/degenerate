@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('hidden_items') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('visible_items'); } 
-McnResourceDetailsSection copyWith({String Function()? helpText, List<McnResourceDetailsSectionItem>? hiddenItems, String? name, List<McnResourceDetailsSectionItem>? visibleItems, }) { return McnResourceDetailsSection(
+McnResourceDetailsSection copyWith({String? Function()? helpText, List<McnResourceDetailsSectionItem>? hiddenItems, String? name, List<McnResourceDetailsSectionItem>? visibleItems, }) { return McnResourceDetailsSection(
   helpText: helpText != null ? helpText() : this.helpText,
   hiddenItems: hiddenItems ?? this.hiddenItems,
   name: name ?? this.name,

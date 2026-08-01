@@ -50,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow
       json.containsKey('entries') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-DlpPredefinedProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence Function()? confidenceThreshold, DlpContextAwareness Function()? contextAwareness, List<DlpEntry>? entries, String? id, String? name, bool Function()? ocrEnabled, bool Function()? openAccess, }) { return DlpPredefinedProfile(
+DlpPredefinedProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence Function()? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, List<DlpEntry>? entries, String? id, String? name, bool Function()? ocrEnabled, bool? Function()? openAccess, }) { return DlpPredefinedProfile(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount ?? this.allowedMatchCount,
   confidenceThreshold: confidenceThreshold != null ? confidenceThreshold() : this.confidenceThreshold,

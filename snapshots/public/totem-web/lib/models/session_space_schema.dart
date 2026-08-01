@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'public_user_schema.dart';@immutable final class SessionSpaceSchema {const SessionSpaceSchema({required this.author, required this.title, required this.dateCreated, required this.dateModified, required this.subtitle, required this.categories, required this.recurring, this.slug, this.shortDescription, this.image, this.content = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'public_user_schema.dart';@immutable final class SessionSpaceSchema {const SessionSpaceSchema({required this.author, required this.title, required this.dateCreated, required this.dateModified, required this.subtitle, required this.categories, required this.recurring, this.slug = const Omittable.absent(), this.shortDescription = const Omittable.absent(), this.image = const Omittable.absent(), this.content = '', });
 
 factory SessionSpaceSchema.fromJson(Map<String, dynamic> json) { return SessionSpaceSchema(
   author: PublicUserSchema.fromJson(json['author'] as Map<String, dynamic>),
   title: json['title'] as String,
-  slug: json['slug'] as String?,
+  slug: json.containsKey('slug') ? Omittable(json['slug'] as String?) : const Omittable.absent(),
   dateCreated: DateTime.parse(json['date_created'] as String),
   dateModified: DateTime.parse(json['date_modified'] as String),
   subtitle: json['subtitle'] as String,
   categories: (json['categories'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
-  shortDescription: json['short_description'] as String?,
+  shortDescription: json.containsKey('short_description') ? Omittable(json['short_description'] as String?) : const Omittable.absent(),
   recurring: json['recurring'] as String,
-  image: json['image'] as String?,
+  image: json.containsKey('image') ? Omittable(json['image'] as String?) : const Omittable.absent(),
   content: json.containsKey('content') ? json['content'] as String : '',
 ); }
 
@@ -20,7 +20,7 @@ final PublicUserSchema author;
 
 final String title;
 
-final String? slug;
+final Omittable<String?> slug;
 
 final DateTime dateCreated;
 
@@ -31,27 +31,27 @@ final String subtitle;
 final List<int> categories;
 
 /// Short description, max 255 characters
-final String? shortDescription;
+final Omittable<String?> shortDescription;
 
 /// Example: Once a month (or week, day, etc). Do not put specific times or days of the week.
 final String recurring;
 
 /// Image for the Space header, must be under 5mb
-final String? image;
+final Omittable<String?> image;
 
 final String content;
 
 Map<String, dynamic> toJson() { return {
   'author': author.toJson(),
   'title': title,
-  'slug': ?slug,
+  if (slug.isPresent) 'slug': slug.value,
   'date_created': dateCreated.toIso8601String(),
   'date_modified': dateModified.toIso8601String(),
   'subtitle': subtitle,
   'categories': categories,
-  'short_description': ?shortDescription,
+  if (shortDescription.isPresent) 'short_description': shortDescription.value,
   'recurring': recurring,
-  'image': ?image,
+  if (image.isPresent) 'image': image.value,
   'content': content,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('author') &&
@@ -61,17 +61,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('subtitle') && json['subtitle'] is String &&
       json.containsKey('categories') &&
       json.containsKey('recurring') && json['recurring'] is String; } 
-SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, String? Function()? slug, DateTime? dateCreated, DateTime? dateModified, String? subtitle, List<int>? categories, String? Function()? shortDescription, String? recurring, String? Function()? image, String Function()? content, }) { return SessionSpaceSchema(
+SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, Omittable<String?>? slug, DateTime? dateCreated, DateTime? dateModified, String? subtitle, List<int>? categories, Omittable<String?>? shortDescription, String? recurring, Omittable<String?>? image, String Function()? content, }) { return SessionSpaceSchema(
   author: author ?? this.author,
   title: title ?? this.title,
-  slug: slug != null ? slug() : this.slug,
+  slug: slug ?? this.slug,
   dateCreated: dateCreated ?? this.dateCreated,
   dateModified: dateModified ?? this.dateModified,
   subtitle: subtitle ?? this.subtitle,
   categories: categories ?? this.categories,
-  shortDescription: shortDescription != null ? shortDescription() : this.shortDescription,
+  shortDescription: shortDescription ?? this.shortDescription,
   recurring: recurring ?? this.recurring,
-  image: image != null ? image() : this.image,
+  image: image ?? this.image,
   content: content != null ? content() : this.content,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

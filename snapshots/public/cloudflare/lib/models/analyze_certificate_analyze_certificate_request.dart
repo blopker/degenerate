@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (certificate != null) 'certificate': certificate?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bundle_method', 'certificate'}.contains(key)); } 
-AnalyzeCertificateAnalyzeCertificateRequest copyWith({TlsCertificatesAndHostnamesBundleMethod Function()? bundleMethod, TlsCertificatesAndHostnamesCertificate Function()? certificate, }) { return AnalyzeCertificateAnalyzeCertificateRequest(
+AnalyzeCertificateAnalyzeCertificateRequest copyWith({TlsCertificatesAndHostnamesBundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesCertificate? Function()? certificate, }) { return AnalyzeCertificateAnalyzeCertificateRequest(
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   certificate: certificate != null ? certificate() : this.certificate,
 ); } 

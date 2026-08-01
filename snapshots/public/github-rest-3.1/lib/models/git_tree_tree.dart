@@ -35,7 +35,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('path'
       json.containsKey('mode') && json['mode'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('sha') && json['sha'] is String; } 
-GitTreeTree copyWith({String? path, String? mode, String? type, String? sha, int Function()? size, String Function()? url, }) { return GitTreeTree(
+GitTreeTree copyWith({String? path, String? mode, String? type, String? sha, int? Function()? size, String? Function()? url, }) { return GitTreeTree(
   path: path ?? this.path,
   mode: mode ?? this.mode,
   type: type ?? this.type,

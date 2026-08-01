@@ -102,7 +102,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('behind_by') && json['behind_by'] is num &&
       json.containsKey('total_commits') && json['total_commits'] is num &&
       json.containsKey('commits'); } 
-CommitComparison copyWith({Uri? url, Uri? htmlUrl, Uri? permalinkUrl, Uri? diffUrl, Uri? patchUrl, Commit? baseCommit, Commit? mergeBaseCommit, CommitComparisonStatus? status, int? aheadBy, int? behindBy, int? totalCommits, List<Commit>? commits, List<DiffEntry> Function()? files, }) { return CommitComparison(
+CommitComparison copyWith({Uri? url, Uri? htmlUrl, Uri? permalinkUrl, Uri? diffUrl, Uri? patchUrl, Commit? baseCommit, Commit? mergeBaseCommit, CommitComparisonStatus? status, int? aheadBy, int? behindBy, int? totalCommits, List<Commit>? commits, List<DiffEntry>? Function()? files, }) { return CommitComparison(
   url: url ?? this.url,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   permalinkUrl: permalinkUrl ?? this.permalinkUrl,

@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'name': name.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-TunnelVirtualNetworkCreateAVirtualNetworkRequest copyWith({TunnelVirtualNetworkComment Function()? comment, bool Function()? isDefault, TunnelIsDefaultNetworkOptional Function()? isDefaultNetwork, TunnelVirtualNetworkName? name, }) { return TunnelVirtualNetworkCreateAVirtualNetworkRequest(
+TunnelVirtualNetworkCreateAVirtualNetworkRequest copyWith({TunnelVirtualNetworkComment? Function()? comment, bool? Function()? isDefault, TunnelIsDefaultNetworkOptional? Function()? isDefaultNetwork, TunnelVirtualNetworkName? name, }) { return TunnelVirtualNetworkCreateAVirtualNetworkRequest(
   comment: comment != null ? comment() : this.comment,
   isDefault: isDefault != null ? isDefault() : this.isDefault,
   isDefaultNetwork: isDefaultNetwork != null ? isDefaultNetwork() : this.isDefaultNetwork,

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'pdID': pdId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('pdID') && json['pdID'] is String; } 
-PhotonPersistentDiskVolumeSource copyWith({String Function()? fsType, String? pdId, }) { return PhotonPersistentDiskVolumeSource(
+PhotonPersistentDiskVolumeSource copyWith({String? Function()? fsType, String? pdId, }) { return PhotonPersistentDiskVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   pdId: pdId ?? this.pdId,
 ); } 

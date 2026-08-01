@@ -83,22 +83,22 @@ bool get isUnknown { return !values.contains(this); }
 /// or by creating a Customer Balance Transaction, which increments or decrements the customer's `balance` by the specified `amount`.
 /// 
 /// Related guide: [Customer balance](https://docs.stripe.com/billing/customer/balance)
-@immutable final class CustomerBalanceTransaction {const CustomerBalanceTransaction({required this.amount, required this.created, required this.currency, required this.customer, required this.endingBalance, required this.id, required this.livemode, required this.object, required this.type, this.checkoutSession, this.creditNote, this.customerAccount, this.description, this.invoice, this.metadata, });
+@immutable final class CustomerBalanceTransaction {const CustomerBalanceTransaction({required this.amount, required this.created, required this.currency, required this.customer, required this.endingBalance, required this.id, required this.livemode, required this.object, required this.type, this.checkoutSession = const Omittable.absent(), this.creditNote = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.description = const Omittable.absent(), this.invoice = const Omittable.absent(), this.metadata = const Omittable.absent(), });
 
 factory CustomerBalanceTransaction.fromJson(Map<String, dynamic> json) { return CustomerBalanceTransaction(
   amount: (json['amount'] as num).toInt(),
-  checkoutSession: json['checkout_session'] != null ? OneOf2.parse(json['checkout_session'], fromA: (v) => v as String, fromB: (v) => CheckoutSession.fromJson(v as Map<String, dynamic>),) : null,
+  checkoutSession: json.containsKey('checkout_session') ? Omittable(json['checkout_session'] != null ? OneOf2.parse(json['checkout_session'], fromA: (v) => v as String, fromB: (v) => CheckoutSession.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
-  creditNote: json['credit_note'] != null ? OneOf2.parse(json['credit_note'], fromA: (v) => v as String, fromB: (v) => CreditNote.fromJson(v as Map<String, dynamic>),) : null,
+  creditNote: json.containsKey('credit_note') ? Omittable(json['credit_note'] != null ? OneOf2.parse(json['credit_note'], fromA: (v) => v as String, fromB: (v) => CreditNote.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   currency: json['currency'] as String,
   customer: OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),),
-  customerAccount: json['customer_account'] as String?,
-  description: json['description'] as String?,
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   endingBalance: (json['ending_balance'] as num).toInt(),
   id: json['id'] as String,
-  invoice: json['invoice'] != null ? OneOf2.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>),) : null,
+  invoice: json.containsKey('invoice') ? Omittable(json['invoice'] != null ? OneOf2.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   object: CustomerBalanceTransactionObject.fromJson(json['object'] as String),
   type: CustomerBalanceTransactionType.fromJson(json['type'] as String),
 ); }
@@ -107,13 +107,13 @@ factory CustomerBalanceTransaction.fromJson(Map<String, dynamic> json) { return 
 final int amount;
 
 /// The ID of the checkout session (if any) that created the transaction.
-final CustomerBalanceTransactionCheckoutSession? checkoutSession;
+final Omittable<CustomerBalanceTransactionCheckoutSession?> checkoutSession;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
 
 /// The ID of the credit note (if any) related to the transaction.
-final CustomerBalanceTransactionCreditNote? creditNote;
+final Omittable<CustomerBalanceTransactionCreditNote?> creditNote;
 
 /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
 final String currency;
@@ -122,10 +122,10 @@ final String currency;
 final CustomerBalanceTransactionCustomer customer;
 
 /// The ID of an Account representing a customer that the transaction belongs to.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.
-final String? description;
+final Omittable<String?> description;
 
 /// The customer's `balance` after the transaction was applied. A negative value decreases the amount due on the customer's next invoice. A positive value increases the amount due on the customer's next invoice.
 final int endingBalance;
@@ -134,13 +134,13 @@ final int endingBalance;
 final String id;
 
 /// The ID of the invoice (if any) related to the transaction.
-final CustomerBalanceTransactionInvoice? invoice;
+final Omittable<CustomerBalanceTransactionInvoice?> invoice;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final CustomerBalanceTransactionObject object;
@@ -150,18 +150,18 @@ final CustomerBalanceTransactionType type;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
-  if (checkoutSession != null) 'checkout_session': checkoutSession?.toJson(),
+  if (checkoutSession.isPresent) 'checkout_session': checkoutSession.value?.toJson(),
   'created': created,
-  if (creditNote != null) 'credit_note': creditNote?.toJson(),
+  if (creditNote.isPresent) 'credit_note': creditNote.value?.toJson(),
   'currency': currency,
   'customer': customer.toJson(),
-  'customer_account': ?customerAccount,
-  'description': ?description,
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
+  if (description.isPresent) 'description': description.value,
   'ending_balance': endingBalance,
   'id': id,
-  if (invoice != null) 'invoice': invoice?.toJson(),
+  if (invoice.isPresent) 'invoice': invoice.value?.toJson(),
   'livemode': livemode,
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   'object': object.toJson(),
   'type': type.toJson(),
 }; } 
@@ -174,20 +174,20 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('type'); } 
-CustomerBalanceTransaction copyWith({int? amount, CustomerBalanceTransactionCheckoutSession? Function()? checkoutSession, int? created, CustomerBalanceTransactionCreditNote? Function()? creditNote, String? currency, CustomerBalanceTransactionCustomer? customer, String? Function()? customerAccount, String? Function()? description, int? endingBalance, String? id, CustomerBalanceTransactionInvoice? Function()? invoice, bool? livemode, Map<String, String>? Function()? metadata, CustomerBalanceTransactionObject? object, CustomerBalanceTransactionType? type, }) { return CustomerBalanceTransaction(
+CustomerBalanceTransaction copyWith({int? amount, Omittable<CustomerBalanceTransactionCheckoutSession?>? checkoutSession, int? created, Omittable<CustomerBalanceTransactionCreditNote?>? creditNote, String? currency, CustomerBalanceTransactionCustomer? customer, Omittable<String?>? customerAccount, Omittable<String?>? description, int? endingBalance, String? id, Omittable<CustomerBalanceTransactionInvoice?>? invoice, bool? livemode, Omittable<Map<String,String>?>? metadata, CustomerBalanceTransactionObject? object, CustomerBalanceTransactionType? type, }) { return CustomerBalanceTransaction(
   amount: amount ?? this.amount,
-  checkoutSession: checkoutSession != null ? checkoutSession() : this.checkoutSession,
+  checkoutSession: checkoutSession ?? this.checkoutSession,
   created: created ?? this.created,
-  creditNote: creditNote != null ? creditNote() : this.creditNote,
+  creditNote: creditNote ?? this.creditNote,
   currency: currency ?? this.currency,
   customer: customer ?? this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
-  description: description != null ? description() : this.description,
+  customerAccount: customerAccount ?? this.customerAccount,
+  description: description ?? this.description,
   endingBalance: endingBalance ?? this.endingBalance,
   id: id ?? this.id,
-  invoice: invoice != null ? invoice() : this.invoice,
+  invoice: invoice ?? this.invoice,
   livemode: livemode ?? this.livemode,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   object: object ?? this.object,
   type: type ?? this.type,
 ); } 

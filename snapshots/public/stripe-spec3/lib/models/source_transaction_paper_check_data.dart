@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'invoices': ?invoices,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'available_at', 'invoices'}.contains(key)); } 
-SourceTransactionPaperCheckData copyWith({String Function()? availableAt, String Function()? invoices, }) { return SourceTransactionPaperCheckData(
+SourceTransactionPaperCheckData copyWith({String? Function()? availableAt, String? Function()? invoices, }) { return SourceTransactionPaperCheckData(
   availableAt: availableAt != null ? availableAt() : this.availableAt,
   invoices: invoices != null ? invoices() : this.invoices,
 ); } 

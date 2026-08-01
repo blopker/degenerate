@@ -19,10 +19,10 @@ final GetZoneEntrypointRulesetResponseResult result;
 final dynamic success;
 
 Map<String, dynamic> toJson() { return {
-  'errors': ?errors,
+  'errors': errors,
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
-  'success': ?success,
+  'success': success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&

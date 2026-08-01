@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'previous': ?previous,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'has_next', 'has_previous', 'next', 'previous'}.contains(key)); } 
-UsersListAttestationsBulkResponsePageInfo copyWith({bool Function()? hasNext, bool Function()? hasPrevious, String Function()? next, String Function()? previous, }) { return UsersListAttestationsBulkResponsePageInfo(
+UsersListAttestationsBulkResponsePageInfo copyWith({bool? Function()? hasNext, bool? Function()? hasPrevious, String? Function()? next, String? Function()? previous, }) { return UsersListAttestationsBulkResponsePageInfo(
   hasNext: hasNext != null ? hasNext() : this.hasNext,
   hasPrevious: hasPrevious != null ? hasPrevious() : this.hasPrevious,
   next: next != null ? next() : this.next,

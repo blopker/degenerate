@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (individual != null) 'individual': individual?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'business', 'individual'}.contains(key)); } 
-PostPaymentLinksRequestNameCollection copyWith({PostPaymentLinksRequestNameCollectionBusiness Function()? business, PostPaymentLinksRequestNameCollectionIndividual Function()? individual, }) { return PostPaymentLinksRequestNameCollection(
+PostPaymentLinksRequestNameCollection copyWith({PostPaymentLinksRequestNameCollectionBusiness? Function()? business, PostPaymentLinksRequestNameCollectionIndividual? Function()? individual, }) { return PostPaymentLinksRequestNameCollection(
   business: business != null ? business() : this.business,
   individual: individual != null ? individual() : this.individual,
 ); } 

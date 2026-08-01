@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksIssueCommentAuthorAssociation($value)'; } 
  }
 /// The [comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment) itself.
-@immutable final class WebhooksIssueComment {const WebhooksIssueComment({required this.authorAssociation, required this.body, required this.createdAt, required this.htmlUrl, required this.id, required this.issueUrl, required this.nodeId, required this.performedViaGithubApp, required this.reactions, required this.updatedAt, required this.url, required this.user, this.pin, });
+@immutable final class WebhooksIssueComment {const WebhooksIssueComment({required this.authorAssociation, required this.body, required this.createdAt, required this.htmlUrl, required this.id, required this.issueUrl, required this.nodeId, required this.performedViaGithubApp, required this.reactions, required this.updatedAt, required this.url, required this.user, this.pin = const Omittable.absent(), });
 
 factory WebhooksIssueComment.fromJson(Map<String, dynamic> json) { return WebhooksIssueComment(
   authorAssociation: WebhooksIssueCommentAuthorAssociation.fromJson(json['author_association'] as String),
@@ -59,7 +59,7 @@ factory WebhooksIssueComment.fromJson(Map<String, dynamic> json) { return Webhoo
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
   user: json['user'] != null ? WebhooksIssueCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-  pin: json['pin'] != null ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>) : null,
+  pin: json.containsKey('pin') ? Omittable(json['pin'] != null ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// How the author is associated with the repository.
@@ -90,7 +90,7 @@ final Uri url;
 
 final WebhooksIssueCommentUser? user;
 
-final PinnedIssueComment? pin;
+final Omittable<PinnedIssueComment?> pin;
 
 Map<String, dynamic> toJson() { return {
   'author_association': authorAssociation.toJson(),
@@ -104,8 +104,8 @@ Map<String, dynamic> toJson() { return {
   'reactions': reactions.toJson(),
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
-  if (user != null) 'user': user?.toJson(),
-  if (pin != null) 'pin': pin?.toJson(),
+  'user': user?.toJson(),
+  if (pin.isPresent) 'pin': pin.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('author_association') &&
       json.containsKey('body') && json['body'] is String &&
@@ -119,7 +119,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhooksIssueComment copyWith({WebhooksIssueCommentAuthorAssociation? authorAssociation, String? body, DateTime? createdAt, Uri? htmlUrl, int? id, Uri? issueUrl, String? nodeId, Integration? performedViaGithubApp, WebhooksIssueCommentReactions? reactions, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, PinnedIssueComment? Function()? pin, }) { return WebhooksIssueComment(
+WebhooksIssueComment copyWith({WebhooksIssueCommentAuthorAssociation? authorAssociation, String? body, DateTime? createdAt, Uri? htmlUrl, int? id, Uri? issueUrl, String? nodeId, Integration? performedViaGithubApp, WebhooksIssueCommentReactions? reactions, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, Omittable<PinnedIssueComment?>? pin, }) { return WebhooksIssueComment(
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
   createdAt: createdAt ?? this.createdAt,
@@ -132,7 +132,7 @@ WebhooksIssueComment copyWith({WebhooksIssueCommentAuthorAssociation? authorAsso
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
   user: user != null ? user() : this.user,
-  pin: pin != null ? pin() : this.pin,
+  pin: pin ?? this.pin,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WebhooksIssueComment &&

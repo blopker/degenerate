@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('state') &&
       json.containsKey('tcp_established') && json['tcp_established'] is bool &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-MagicBgpStatusWithState copyWith({String Function()? bgpState, String Function()? cfSpeakerIp, int Function()? cfSpeakerPort, String Function()? customerSpeakerIp, int Function()? customerSpeakerPort, MagicBgpStatusWithStateState? state, bool? tcpEstablished, DateTime? updatedAt, }) { return MagicBgpStatusWithState(
+MagicBgpStatusWithState copyWith({String? Function()? bgpState, String? Function()? cfSpeakerIp, int? Function()? cfSpeakerPort, String? Function()? customerSpeakerIp, int? Function()? customerSpeakerPort, MagicBgpStatusWithStateState? state, bool? tcpEstablished, DateTime? updatedAt, }) { return MagicBgpStatusWithState(
   bgpState: bgpState != null ? bgpState() : this.bgpState,
   cfSpeakerIp: cfSpeakerIp != null ? cfSpeakerIp() : this.cfSpeakerIp,
   cfSpeakerPort: cfSpeakerPort != null ? cfSpeakerPort() : this.cfSpeakerPort,

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (description != null) 'description': description?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address'); } 
-TeamsDevicesExcludeSplitTunnelWithAddress copyWith({TeamsDevicesSplitTunnelAddress? address, TeamsDevicesSplitTunnelDescription Function()? description, }) { return TeamsDevicesExcludeSplitTunnelWithAddress(
+TeamsDevicesExcludeSplitTunnelWithAddress copyWith({TeamsDevicesSplitTunnelAddress? address, TeamsDevicesSplitTunnelDescription? Function()? description, }) { return TeamsDevicesExcludeSplitTunnelWithAddress(
   address: address ?? this.address,
   description: description != null ? description() : this.description,
 ); } 

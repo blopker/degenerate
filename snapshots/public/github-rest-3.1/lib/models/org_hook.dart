@@ -62,7 +62,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-OrgHook copyWith({int? id, Uri? url, Uri? pingUrl, Uri Function()? deliveriesUrl, String? name, List<String>? events, bool? active, OrgHookConfig? config, DateTime? updatedAt, DateTime? createdAt, String? type, }) { return OrgHook(
+OrgHook copyWith({int? id, Uri? url, Uri? pingUrl, Uri? Function()? deliveriesUrl, String? name, List<String>? events, bool? active, OrgHookConfig? config, DateTime? updatedAt, DateTime? createdAt, String? type, }) { return OrgHook(
   id: id ?? this.id,
   url: url ?? this.url,
   pingUrl: pingUrl ?? this.pingUrl,

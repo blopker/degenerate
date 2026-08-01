@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (networks != null) 'networks': networks?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exp_month', 'exp_year', 'networks'}.contains(key)); } 
-PostPaymentMethodsPaymentMethodRequestCard copyWith({int Function()? expMonth, int Function()? expYear, PostPaymentMethodsPaymentMethodRequestCardNetworks Function()? networks, }) { return PostPaymentMethodsPaymentMethodRequestCard(
+PostPaymentMethodsPaymentMethodRequestCard copyWith({int? Function()? expMonth, int? Function()? expYear, PostPaymentMethodsPaymentMethodRequestCardNetworks? Function()? networks, }) { return PostPaymentMethodsPaymentMethodRequestCard(
   expMonth: expMonth != null ? expMonth() : this.expMonth,
   expYear: expYear != null ? expYear() : this.expYear,
   networks: networks != null ? networks() : this.networks,

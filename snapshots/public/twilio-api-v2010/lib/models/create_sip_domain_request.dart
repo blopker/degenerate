@@ -148,7 +148,7 @@ Map<String, dynamic> toJson() { return {
   'EmergencyCallerSid': ?emergencyCallerSid,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('DomainName') && json['DomainName'] is String; } 
-CreateSipDomainRequest copyWith({String? domainName, String Function()? friendlyName, Uri Function()? voiceUrl, CreateSipDomainRequestVoiceMethod Function()? voiceMethod, Uri Function()? voiceFallbackUrl, CreateSipDomainRequestVoiceFallbackMethod Function()? voiceFallbackMethod, Uri Function()? voiceStatusCallbackUrl, CreateSipDomainRequestVoiceStatusCallbackMethod Function()? voiceStatusCallbackMethod, bool Function()? sipRegistration, bool Function()? emergencyCallingEnabled, bool Function()? secure, String Function()? byocTrunkSid, String Function()? emergencyCallerSid, }) { return CreateSipDomainRequest(
+CreateSipDomainRequest copyWith({String? domainName, String? Function()? friendlyName, Uri? Function()? voiceUrl, CreateSipDomainRequestVoiceMethod? Function()? voiceMethod, Uri? Function()? voiceFallbackUrl, CreateSipDomainRequestVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceStatusCallbackUrl, CreateSipDomainRequestVoiceStatusCallbackMethod? Function()? voiceStatusCallbackMethod, bool? Function()? sipRegistration, bool? Function()? emergencyCallingEnabled, bool? Function()? secure, String? Function()? byocTrunkSid, String? Function()? emergencyCallerSid, }) { return CreateSipDomainRequest(
   domainName: domainName ?? this.domainName,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   voiceUrl: voiceUrl != null ? voiceUrl() : this.voiceUrl,

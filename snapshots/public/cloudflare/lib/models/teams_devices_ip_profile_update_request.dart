@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (subnetId != null) 'subnet_id': subnetId?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'enabled', 'match', 'name', 'precedence', 'subnet_id'}.contains(key)); } 
-TeamsDevicesIpProfileUpdateRequest copyWith({String Function()? description, TeamsDevicesIpProfileEnabled Function()? enabled, TeamsDevicesIpProfileMatch Function()? match, TeamsDevicesIpProfileName Function()? name, TeamsDevicesIpProfilePrecedence Function()? precedence, TeamsDevicesIpProfileSubnetId Function()? subnetId, }) { return TeamsDevicesIpProfileUpdateRequest(
+TeamsDevicesIpProfileUpdateRequest copyWith({String? Function()? description, TeamsDevicesIpProfileEnabled? Function()? enabled, TeamsDevicesIpProfileMatch? Function()? match, TeamsDevicesIpProfileName? Function()? name, TeamsDevicesIpProfilePrecedence? Function()? precedence, TeamsDevicesIpProfileSubnetId? Function()? subnetId, }) { return TeamsDevicesIpProfileUpdateRequest(
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,
   match: match != null ? match() : this.match,

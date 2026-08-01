@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('run') &&
       json.containsKey('statistics'); } 
-WorkersObservabilityQueryResults copyWith({List<WorkersObservabilityQueryResultsCalculations> Function()? calculations, List<WorkersObservabilityQueryResultsCompare> Function()? compare, WorkersObservabilityQueryResultsEvents Function()? events, Map<String, List<WorkersObservabilityTelemetryEvent>> Function()? invocations, List<WorkersObservabilityQueryResultsPatterns> Function()? patterns, WorkersObservabilityQueryRun? run, WorkersObservabilityPerformanceInformation? statistics, List<WorkersObservabilityQueryResultsTraces> Function()? traces, }) { return WorkersObservabilityQueryResults(
+WorkersObservabilityQueryResults copyWith({List<WorkersObservabilityQueryResultsCalculations>? Function()? calculations, List<WorkersObservabilityQueryResultsCompare>? Function()? compare, WorkersObservabilityQueryResultsEvents? Function()? events, Map<String, List<WorkersObservabilityTelemetryEvent>>? Function()? invocations, List<WorkersObservabilityQueryResultsPatterns>? Function()? patterns, WorkersObservabilityQueryRun? run, WorkersObservabilityPerformanceInformation? statistics, List<WorkersObservabilityQueryResultsTraces>? Function()? traces, }) { return WorkersObservabilityQueryResults(
   calculations: calculations != null ? calculations() : this.calculations,
   compare: compare != null ? compare() : this.compare,
   events: events != null ? events() : this.events,

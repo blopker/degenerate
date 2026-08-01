@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (bypassPlaceholders != null) 'bypass_placeholders': bypassPlaceholders?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bypass_placeholders'}.contains(key)); } 
-RepositoryRuleViolationErrorMetadataSecretScanning copyWith({List<RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholders> Function()? bypassPlaceholders}) { return RepositoryRuleViolationErrorMetadataSecretScanning(
+RepositoryRuleViolationErrorMetadataSecretScanning copyWith({List<RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholders>? Function()? bypassPlaceholders}) { return RepositoryRuleViolationErrorMetadataSecretScanning(
   bypassPlaceholders: bypassPlaceholders != null ? bypassPlaceholders() : this.bypassPlaceholders,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -23,25 +23,25 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CashBalanceObject($value)'; } 
  }
 /// A customer's `Cash balance` represents real funds. Customers can add funds to their cash balance by sending a bank transfer. These funds can be used for payment and can eventually be paid out to your bank account.
-@immutable final class CashBalance {const CashBalance({required this.customer, required this.livemode, required this.object, required this.settings, this.available, this.customerAccount, });
+@immutable final class CashBalance {const CashBalance({required this.customer, required this.livemode, required this.object, required this.settings, this.available = const Omittable.absent(), this.customerAccount = const Omittable.absent(), });
 
 factory CashBalance.fromJson(Map<String, dynamic> json) { return CashBalance(
-  available: (json['available'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toInt())),
+  available: json.containsKey('available') ? Omittable((json['available'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toInt()))) : const Omittable.absent(),
   customer: json['customer'] as String,
-  customerAccount: json['customer_account'] as String?,
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   object: CashBalanceObject.fromJson(json['object'] as String),
   settings: CustomerBalanceCustomerBalanceSettings.fromJson(json['settings'] as Map<String, dynamic>),
 ); }
 
 /// A hash of all cash balances available to this customer. You cannot delete a customer with any cash balances, even if the balance is 0. Amounts are represented in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
-final Map<String,int>? available;
+final Omittable<Map<String,int>?> available;
 
 /// The ID of the customer whose cash balance this object represents.
 final String customer;
 
 /// The ID of an Account representing a customer whose cash balance this object represents.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -52,9 +52,9 @@ final CashBalanceObject object;
 final CustomerBalanceCustomerBalanceSettings settings;
 
 Map<String, dynamic> toJson() { return {
-  'available': ?available,
+  if (available.isPresent) 'available': available.value,
   'customer': customer,
-  'customer_account': ?customerAccount,
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   'livemode': livemode,
   'object': object.toJson(),
   'settings': settings.toJson(),
@@ -63,10 +63,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('custo
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('settings'); } 
-CashBalance copyWith({Map<String, int>? Function()? available, String? customer, String? Function()? customerAccount, bool? livemode, CashBalanceObject? object, CustomerBalanceCustomerBalanceSettings? settings, }) { return CashBalance(
-  available: available != null ? available() : this.available,
+CashBalance copyWith({Omittable<Map<String,int>?>? available, String? customer, Omittable<String?>? customerAccount, bool? livemode, CashBalanceObject? object, CustomerBalanceCustomerBalanceSettings? settings, }) { return CashBalance(
+  available: available ?? this.available,
   customer: customer ?? this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  customerAccount: customerAccount ?? this.customerAccount,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
   settings: settings ?? this.settings,

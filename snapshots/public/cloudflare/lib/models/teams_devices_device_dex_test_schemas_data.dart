@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'method': ?method,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'host', 'kind', 'method'}.contains(key)); } 
-TeamsDevicesDeviceDexTestSchemasData copyWith({String Function()? host, String Function()? kind, String Function()? method, }) { return TeamsDevicesDeviceDexTestSchemasData(
+TeamsDevicesDeviceDexTestSchemasData copyWith({String? Function()? host, String? Function()? kind, String? Function()? method, }) { return TeamsDevicesDeviceDexTestSchemasData(
   host: host != null ? host() : this.host,
   kind: kind != null ? kind() : this.kind,
   method: method != null ? method() : this.method,

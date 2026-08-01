@@ -106,7 +106,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('block
       json.containsKey('settings') &&
       json.containsKey('type') &&
       json.containsKey('worker'); } 
-ZarazCustomManagedComponent copyWith({List<String>? blockingTriggers, Map<String,dynamic>? defaultFields, String Function()? defaultPurpose, bool? enabled, String? name, String Function()? vendorName, String Function()? vendorPolicyUrl, Map<String, ZarazCustomManagedComponentActionsValue> Function()? actions, String? component, List<ZarazCustomManagedComponentNeoEvents> Function()? neoEvents, List<String>? permissions, Map<String,dynamic>? settings, ZarazCustomManagedComponentType? type, ZarazCustomManagedComponentWorker? worker, }) { return ZarazCustomManagedComponent(
+ZarazCustomManagedComponent copyWith({List<String>? blockingTriggers, Map<String,dynamic>? defaultFields, String? Function()? defaultPurpose, bool? enabled, String? name, String? Function()? vendorName, String? Function()? vendorPolicyUrl, Map<String, ZarazCustomManagedComponentActionsValue>? Function()? actions, String? component, List<ZarazCustomManagedComponentNeoEvents>? Function()? neoEvents, List<String>? permissions, Map<String,dynamic>? settings, ZarazCustomManagedComponentType? type, ZarazCustomManagedComponentWorker? worker, }) { return ZarazCustomManagedComponent(
   blockingTriggers: blockingTriggers ?? this.blockingTriggers,
   defaultFields: defaultFields ?? this.defaultFields,
   defaultPurpose: defaultPurpose != null ? defaultPurpose() : this.defaultPurpose,

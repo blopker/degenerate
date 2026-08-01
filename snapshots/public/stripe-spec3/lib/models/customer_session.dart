@@ -28,14 +28,14 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guides: [Customer Session with the Payment Element](/payments/accept-a-payment-deferred?platform=web&type=payment#save-payment-methods),
 /// [Customer Session with the Pricing Table](/payments/checkout/pricing-table#customer-session),
 /// [Customer Session with the Buy Button](/payment-links/buy-button#pass-an-existing-customer).
-@immutable final class CustomerSession {const CustomerSession({required this.clientSecret, required this.created, required this.customer, required this.expiresAt, required this.livemode, required this.object, this.components, this.customerAccount, });
+@immutable final class CustomerSession {const CustomerSession({required this.clientSecret, required this.created, required this.customer, required this.expiresAt, required this.livemode, required this.object, this.components, this.customerAccount = const Omittable.absent(), });
 
 factory CustomerSession.fromJson(Map<String, dynamic> json) { return CustomerSession(
   clientSecret: json['client_secret'] as String,
   components: json['components'] != null ? CustomerSessionResourceComponents.fromJson(json['components'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   customer: OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),),
-  customerAccount: json['customer_account'] as String?,
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   expiresAt: (json['expires_at'] as num).toInt(),
   livemode: json['livemode'] as bool,
   object: CustomerSessionObject.fromJson(json['object'] as String),
@@ -55,7 +55,7 @@ final int created;
 final CustomerSessionCustomer customer;
 
 /// The Account that the Customer Session was created for.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// The timestamp at which this Customer Session will expire.
 final int expiresAt;
@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   if (components != null) 'components': components?.toJson(),
   'created': created,
   'customer': customer.toJson(),
-  'customer_account': ?customerAccount,
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   'expires_at': expiresAt,
   'livemode': livemode,
   'object': object.toJson(),
@@ -82,12 +82,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('clien
       json.containsKey('expires_at') && json['expires_at'] is num &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-CustomerSession copyWith({String? clientSecret, CustomerSessionResourceComponents Function()? components, int? created, CustomerSessionCustomer? customer, String? Function()? customerAccount, int? expiresAt, bool? livemode, CustomerSessionObject? object, }) { return CustomerSession(
+CustomerSession copyWith({String? clientSecret, CustomerSessionResourceComponents? Function()? components, int? created, CustomerSessionCustomer? customer, Omittable<String?>? customerAccount, int? expiresAt, bool? livemode, CustomerSessionObject? object, }) { return CustomerSession(
   clientSecret: clientSecret ?? this.clientSecret,
   components: components != null ? components() : this.components,
   created: created ?? this.created,
   customer: customer ?? this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  customerAccount: customerAccount ?? this.customerAccount,
   expiresAt: expiresAt ?? this.expiresAt,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,

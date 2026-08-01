@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   'members_url': membersUrl,
   'public_members_url': publicMembersUrl,
   'avatar_url': avatarUrl,
-  'description': ?description,
+  'description': description,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&
       json.containsKey('id') && json['id'] is num &&
@@ -67,7 +67,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('members_url') && json['members_url'] is String &&
       json.containsKey('public_members_url') && json['public_members_url'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String &&
-      json.containsKey('description') && json['description'] is String; } 
+      json.containsKey('description') && (json['description'] == null || json['description'] is String); } 
 OrganizationSimple copyWith({String? login, int? id, String? nodeId, Uri? url, Uri? reposUrl, Uri? eventsUrl, String? hooksUrl, String? issuesUrl, String? membersUrl, String? publicMembersUrl, String? avatarUrl, String? Function()? description, }) { return OrganizationSimple(
   login: login ?? this.login,
   id: id ?? this.id,

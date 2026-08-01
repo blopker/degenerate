@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (smartTieredCache != null) 'smart_tiered_cache': smartTieredCache?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cache_reserve', 'regional_tiered_cache', 'smart_routing', 'smart_tiered_cache'}.contains(key)); } 
-SmartshieldSmartShieldSettingsPatchBody copyWith({SmartshieldSmartShieldSettingsPatchBodyCacheReserve Function()? cacheReserve, SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache Function()? regionalTieredCache, SmartshieldSmartShieldSettingsPatchBodySmartRouting Function()? smartRouting, SmartshieldSmartShieldSettingsPatchBodySmartTieredCache Function()? smartTieredCache, }) { return SmartshieldSmartShieldSettingsPatchBody(
+SmartshieldSmartShieldSettingsPatchBody copyWith({SmartshieldSmartShieldSettingsPatchBodyCacheReserve? Function()? cacheReserve, SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache? Function()? regionalTieredCache, SmartshieldSmartShieldSettingsPatchBodySmartRouting? Function()? smartRouting, SmartshieldSmartShieldSettingsPatchBodySmartTieredCache? Function()? smartTieredCache, }) { return SmartshieldSmartShieldSettingsPatchBody(
   cacheReserve: cacheReserve != null ? cacheReserve() : this.cacheReserve,
   regionalTieredCache: regionalTieredCache != null ? regionalTieredCache() : this.regionalTieredCache,
   smartRouting: smartRouting != null ? smartRouting() : this.smartRouting,

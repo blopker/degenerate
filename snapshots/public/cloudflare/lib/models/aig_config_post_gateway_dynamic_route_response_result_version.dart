@@ -24,11 +24,11 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigPostGatewayDynamicRouteResponseResultVersionActive($value)'; } 
  }
-@immutable final class AigConfigPostGatewayDynamicRouteResponseResultVersion {const AigConfigPostGatewayDynamicRouteResponseResultVersion({required this.active, required this.createdAt, required this.data, required this.versionId, this.comment, });
+@immutable final class AigConfigPostGatewayDynamicRouteResponseResultVersion {const AigConfigPostGatewayDynamicRouteResponseResultVersion({required this.active, required this.createdAt, required this.data, required this.versionId, this.comment = const Omittable.absent(), });
 
 factory AigConfigPostGatewayDynamicRouteResponseResultVersion.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteResponseResultVersion(
   active: AigConfigPostGatewayDynamicRouteResponseResultVersionActive.fromJson(json['active'] as String),
-  comment: json['comment'] as String?,
+  comment: json.containsKey('comment') ? Omittable(json['comment'] as String?) : const Omittable.absent(),
   createdAt: json['created_at'] as String,
   data: json['data'] as String,
   versionId: json['version_id'] as String,
@@ -36,7 +36,7 @@ factory AigConfigPostGatewayDynamicRouteResponseResultVersion.fromJson(Map<Strin
 
 final AigConfigPostGatewayDynamicRouteResponseResultVersionActive active;
 
-final String? comment;
+final Omittable<String?> comment;
 
 final String createdAt;
 
@@ -46,7 +46,7 @@ final String versionId;
 
 Map<String, dynamic> toJson() { return {
   'active': active.toJson(),
-  'comment': ?comment,
+  if (comment.isPresent) 'comment': comment.value,
   'created_at': createdAt,
   'data': data,
   'version_id': versionId,
@@ -55,9 +55,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('data') && json['data'] is String &&
       json.containsKey('version_id') && json['version_id'] is String; } 
-AigConfigPostGatewayDynamicRouteResponseResultVersion copyWith({AigConfigPostGatewayDynamicRouteResponseResultVersionActive? active, String? Function()? comment, String? createdAt, String? data, String? versionId, }) { return AigConfigPostGatewayDynamicRouteResponseResultVersion(
+AigConfigPostGatewayDynamicRouteResponseResultVersion copyWith({AigConfigPostGatewayDynamicRouteResponseResultVersionActive? active, Omittable<String?>? comment, String? createdAt, String? data, String? versionId, }) { return AigConfigPostGatewayDynamicRouteResponseResultVersion(
   active: active ?? this.active,
-  comment: comment != null ? comment() : this.comment,
+  comment: comment ?? this.comment,
   createdAt: createdAt ?? this.createdAt,
   data: data ?? this.data,
   versionId: versionId ?? this.versionId,

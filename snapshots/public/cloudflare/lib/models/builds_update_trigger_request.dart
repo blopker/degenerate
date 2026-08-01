@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (triggerName != null) 'trigger_name': triggerName?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'branch_excludes', 'branch_includes', 'build_caching_enabled', 'build_command', 'build_token_uuid', 'deploy_command', 'path_excludes', 'path_includes', 'root_directory', 'trigger_name'}.contains(key)); } 
-BuildsUpdateTriggerRequest copyWith({List<String> Function()? branchExcludes, List<String> Function()? branchIncludes, BuildsBuildCachingEnabled Function()? buildCachingEnabled, BuildsBuildCommand Function()? buildCommand, BuildsBuildTokenUuid Function()? buildTokenUuid, BuildsDeployCommand Function()? deployCommand, List<String> Function()? pathExcludes, List<String> Function()? pathIncludes, BuildsRootDirectory Function()? rootDirectory, BuildsTriggerName Function()? triggerName, }) { return BuildsUpdateTriggerRequest(
+BuildsUpdateTriggerRequest copyWith({List<String>? Function()? branchExcludes, List<String>? Function()? branchIncludes, BuildsBuildCachingEnabled? Function()? buildCachingEnabled, BuildsBuildCommand? Function()? buildCommand, BuildsBuildTokenUuid? Function()? buildTokenUuid, BuildsDeployCommand? Function()? deployCommand, List<String>? Function()? pathExcludes, List<String>? Function()? pathIncludes, BuildsRootDirectory? Function()? rootDirectory, BuildsTriggerName? Function()? triggerName, }) { return BuildsUpdateTriggerRequest(
   branchExcludes: branchExcludes != null ? branchExcludes() : this.branchExcludes,
   branchIncludes: branchIncludes != null ? branchIncludes() : this.branchIncludes,
   buildCachingEnabled: buildCachingEnabled != null ? buildCachingEnabled() : this.buildCachingEnabled,

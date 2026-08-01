@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (targetRef != null) 'targetRef': targetRef?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip') && json['ip'] is String; } 
-EndpointAddress copyWith({String Function()? hostname, String? ip, String Function()? nodeName, ObjectReference Function()? targetRef, }) { return EndpointAddress(
+EndpointAddress copyWith({String? Function()? hostname, String? ip, String? Function()? nodeName, ObjectReference? Function()? targetRef, }) { return EndpointAddress(
   hostname: hostname != null ? hostname() : this.hostname,
   ip: ip ?? this.ip,
   nodeName: nodeName != null ? nodeName() : this.nodeName,

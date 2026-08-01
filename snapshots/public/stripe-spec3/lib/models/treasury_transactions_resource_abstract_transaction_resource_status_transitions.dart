@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions {const TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions({this.postedAt, this.voidAt, });
+@immutable final class TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions {const TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions({this.postedAt = const Omittable.absent(), this.voidAt = const Omittable.absent(), });
 
 factory TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions.fromJson(Map<String, dynamic> json) { return TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions(
-  postedAt: json['posted_at'] != null ? (json['posted_at'] as num).toInt() : null,
-  voidAt: json['void_at'] != null ? (json['void_at'] as num).toInt() : null,
+  postedAt: json.containsKey('posted_at') ? Omittable(json['posted_at'] != null ? (json['posted_at'] as num).toInt() : null) : const Omittable.absent(),
+  voidAt: json.containsKey('void_at') ? Omittable(json['void_at'] != null ? (json['void_at'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
 /// Timestamp describing when the Transaction changed status to `posted`.
-final int? postedAt;
+final Omittable<int?> postedAt;
 
 /// Timestamp describing when the Transaction changed status to `void`.
-final int? voidAt;
+final Omittable<int?> voidAt;
 
 Map<String, dynamic> toJson() { return {
-  'posted_at': ?postedAt,
-  'void_at': ?voidAt,
+  if (postedAt.isPresent) 'posted_at': postedAt.value,
+  if (voidAt.isPresent) 'void_at': voidAt.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'posted_at', 'void_at'}.contains(key)); } 
-TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions copyWith({int? Function()? postedAt, int? Function()? voidAt, }) { return TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions(
-  postedAt: postedAt != null ? postedAt() : this.postedAt,
-  voidAt: voidAt != null ? voidAt() : this.voidAt,
+TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions copyWith({Omittable<int?>? postedAt, Omittable<int?>? voidAt, }) { return TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions(
+  postedAt: postedAt ?? this.postedAt,
+  voidAt: voidAt ?? this.voidAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions &&

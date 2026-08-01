@@ -65,7 +65,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('repository') &&
       json.containsKey('rule') &&
       json.containsKey('sender'); } 
-WebhookBranchProtectionRuleEdited copyWith({WebhookBranchProtectionRuleEditedAction? action, WebhookBranchProtectionRuleEditedChanges Function()? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, WebhooksRule? rule, SimpleUser? sender, }) { return WebhookBranchProtectionRuleEdited(
+WebhookBranchProtectionRuleEdited copyWith({WebhookBranchProtectionRuleEditedAction? action, WebhookBranchProtectionRuleEditedChanges? Function()? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, WebhooksRule? rule, SimpleUser? sender, }) { return WebhookBranchProtectionRuleEdited(
   action: action ?? this.action,
   changes: changes != null ? changes() : this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

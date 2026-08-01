@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'replicas': replicas,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('replicas') && json['replicas'] is num; } 
-ReplicationControllerStatus copyWith({int Function()? availableReplicas, List<ReplicationControllerCondition> Function()? conditions, int Function()? fullyLabeledReplicas, int Function()? observedGeneration, int Function()? readyReplicas, int? replicas, }) { return ReplicationControllerStatus(
+ReplicationControllerStatus copyWith({int? Function()? availableReplicas, List<ReplicationControllerCondition>? Function()? conditions, int? Function()? fullyLabeledReplicas, int? Function()? observedGeneration, int? Function()? readyReplicas, int? replicas, }) { return ReplicationControllerStatus(
   availableReplicas: availableReplicas != null ? availableReplicas() : this.availableReplicas,
   conditions: conditions != null ? conditions() : this.conditions,
   fullyLabeledReplicas: fullyLabeledReplicas != null ? fullyLabeledReplicas() : this.fullyLabeledReplicas,

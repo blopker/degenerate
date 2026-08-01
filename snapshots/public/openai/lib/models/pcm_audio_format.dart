@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   if (rate != null) 'rate': rate?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'rate'}.contains(key)); } 
-PcmAudioFormat copyWith({PcmAudioFormatType Function()? type, PcmAudioFormatRate Function()? rate, }) { return PcmAudioFormat(
+PcmAudioFormat copyWith({PcmAudioFormatType? Function()? type, PcmAudioFormatRate? Function()? rate, }) { return PcmAudioFormat(
   type: type != null ? type() : this.type,
   rate: rate != null ? rate() : this.rate,
 ); } 

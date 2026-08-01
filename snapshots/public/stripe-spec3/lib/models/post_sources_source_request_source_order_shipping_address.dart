@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'state': ?state,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('line1') && json['line1'] is String; } 
-PostSourcesSourceRequestSourceOrderShippingAddress copyWith({String Function()? city, String Function()? country, String? line1, String Function()? line2, String Function()? postalCode, String Function()? state, }) { return PostSourcesSourceRequestSourceOrderShippingAddress(
+PostSourcesSourceRequestSourceOrderShippingAddress copyWith({String? Function()? city, String? Function()? country, String? line1, String? Function()? line2, String? Function()? postalCode, String? Function()? state, }) { return PostSourcesSourceRequestSourceOrderShippingAddress(
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,
   line1: line1 ?? this.line1,

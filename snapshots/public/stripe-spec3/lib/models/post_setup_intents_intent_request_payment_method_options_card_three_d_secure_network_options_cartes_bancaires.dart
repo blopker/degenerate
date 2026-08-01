@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   'cb_score': ?cbScore,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('cb_avalgo'); } 
-PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires copyWith({PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo? cbAvalgo, String Function()? cbExemption, int Function()? cbScore, }) { return PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires(
+PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires copyWith({PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo? cbAvalgo, String? Function()? cbExemption, int? Function()? cbScore, }) { return PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires(
   cbAvalgo: cbAvalgo ?? this.cbAvalgo,
   cbExemption: cbExemption != null ? cbExemption() : this.cbExemption,
   cbScore: cbScore != null ? cbScore() : this.cbScore,

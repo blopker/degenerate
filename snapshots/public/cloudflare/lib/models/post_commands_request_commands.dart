@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('command_type') &&
       json.containsKey('device_id') && json['device_id'] is String &&
       json.containsKey('user_email') && json['user_email'] is String; } 
-PostCommandsRequestCommands copyWith({PostCommandsRequestCommandsCommandArgs Function()? commandArgs, PostCommandsRequestCommandsCommandType? commandType, String? deviceId, String Function()? registrationId, String? userEmail, }) { return PostCommandsRequestCommands(
+PostCommandsRequestCommands copyWith({PostCommandsRequestCommandsCommandArgs? Function()? commandArgs, PostCommandsRequestCommandsCommandType? commandType, String? deviceId, String? Function()? registrationId, String? userEmail, }) { return PostCommandsRequestCommands(
   commandArgs: commandArgs != null ? commandArgs() : this.commandArgs,
   commandType: commandType ?? this.commandType,
   deviceId: deviceId ?? this.deviceId,

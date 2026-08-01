@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateEvalRequest {const UpdateEvalRequest({this.name, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateEvalRequest {const UpdateEvalRequest({this.name, this.metadata = const Omittable.absent(), });
 
 factory UpdateEvalRequest.fromJson(Map<String, dynamic> json) { return UpdateEvalRequest(
   name: json['name'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
 ); }
 
 /// Rename the evaluation.
@@ -17,16 +17,16 @@ final String? name;
 /// Keys are strings with a maximum length of 64 characters. Values are strings
 /// with a maximum length of 512 characters.
 /// 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 Map<String, dynamic> toJson() { return {
   'name': ?name,
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'metadata'}.contains(key)); } 
-UpdateEvalRequest copyWith({String Function()? name, Map<String, String>? Function()? metadata, }) { return UpdateEvalRequest(
+UpdateEvalRequest copyWith({String? Function()? name, Omittable<Map<String,String>?>? metadata, }) { return UpdateEvalRequest(
   name: name != null ? name() : this.name,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is UpdateEvalRequest &&

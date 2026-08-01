@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'production_environment': ?productionEnvironment,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref') && json['ref'] is String; } 
-ReposCreateDeploymentRequest copyWith({String? ref, String Function()? task, bool Function()? autoMerge, List<String> Function()? requiredContexts, ReposCreateDeploymentRequestPayload Function()? payload, String Function()? environment, String? Function()? description, bool Function()? transientEnvironment, bool Function()? productionEnvironment, }) { return ReposCreateDeploymentRequest(
+ReposCreateDeploymentRequest copyWith({String? ref, String Function()? task, bool Function()? autoMerge, List<String>? Function()? requiredContexts, ReposCreateDeploymentRequestPayload? Function()? payload, String Function()? environment, String? Function()? description, bool Function()? transientEnvironment, bool? Function()? productionEnvironment, }) { return ReposCreateDeploymentRequest(
   ref: ref ?? this.ref,
   task: task != null ? task() : this.task,
   autoMerge: autoMerge != null ? autoMerge() : this.autoMerge,

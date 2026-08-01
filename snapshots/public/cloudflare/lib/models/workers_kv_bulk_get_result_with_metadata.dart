@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (values != null) 'values': values?.map((k, v) => MapEntry(k, v?.toJson())),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'values'}.contains(key)); } 
-WorkersKvBulkGetResultWithMetadata copyWith({Map<String, WorkersKvBulkGetResultWithMetadataValuesValue?> Function()? values}) { return WorkersKvBulkGetResultWithMetadata(
+WorkersKvBulkGetResultWithMetadata copyWith({Map<String, WorkersKvBulkGetResultWithMetadataValuesValue?>? Function()? values}) { return WorkersKvBulkGetResultWithMetadata(
   values: values != null ? values() : this.values,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

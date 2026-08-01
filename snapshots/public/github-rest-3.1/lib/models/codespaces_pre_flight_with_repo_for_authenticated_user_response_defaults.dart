@@ -13,10 +13,10 @@ final String? devcontainerPath;
 
 Map<String, dynamic> toJson() { return {
   'location': location,
-  'devcontainer_path': ?devcontainerPath,
+  'devcontainer_path': devcontainerPath,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('location') && json['location'] is String &&
-      json.containsKey('devcontainer_path') && json['devcontainer_path'] is String; } 
+      json.containsKey('devcontainer_path') && (json['devcontainer_path'] == null || json['devcontainer_path'] is String); } 
 CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults copyWith({String? location, String? Function()? devcontainerPath, }) { return CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults(
   location: location ?? this.location,
   devcontainerPath: devcontainerPath != null ? devcontainerPath() : this.devcontainerPath,

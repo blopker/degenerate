@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'workers/tag': ?workersTag,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'workers/message', 'workers/tag'}.contains(key)); } 
-WorkerScriptUploadWorkerModuleRequestMetadataAnnotations copyWith({String Function()? workersMessage, String Function()? workersTag, }) { return WorkerScriptUploadWorkerModuleRequestMetadataAnnotations(
+WorkerScriptUploadWorkerModuleRequestMetadataAnnotations copyWith({String? Function()? workersMessage, String? Function()? workersTag, }) { return WorkerScriptUploadWorkerModuleRequestMetadataAnnotations(
   workersMessage: workersMessage != null ? workersMessage() : this.workersMessage,
   workersTag: workersTag != null ? workersTag() : this.workersTag,
 ); } 

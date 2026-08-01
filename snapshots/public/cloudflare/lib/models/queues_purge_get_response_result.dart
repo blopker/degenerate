@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'started_at': ?startedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'completed', 'started_at'}.contains(key)); } 
-QueuesPurgeGetResponseResult copyWith({String Function()? completed, String Function()? startedAt, }) { return QueuesPurgeGetResponseResult(
+QueuesPurgeGetResponseResult copyWith({String? Function()? completed, String? Function()? startedAt, }) { return QueuesPurgeGetResponseResult(
   completed: completed != null ? completed() : this.completed,
   startedAt: startedAt != null ? startedAt() : this.startedAt,
 ); } 

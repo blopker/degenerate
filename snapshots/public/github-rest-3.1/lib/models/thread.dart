@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'reason': reason,
   'unread': unread,
   'updated_at': updatedAt,
-  'last_read_at': ?lastReadAt,
+  'last_read_at': lastReadAt,
   'url': url,
   'subscription_url': subscriptionUrl,
 }; } 
@@ -50,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('reason') && json['reason'] is String &&
       json.containsKey('unread') && json['unread'] is bool &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('last_read_at') && json['last_read_at'] is String &&
+      json.containsKey('last_read_at') && (json['last_read_at'] == null || json['last_read_at'] is String) &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('subscription_url') && json['subscription_url'] is String; } 
 Thread copyWith({String? id, MinimalRepository? repository, ThreadSubject? subject, String? reason, bool? unread, String? updatedAt, String? Function()? lastReadAt, String? url, String? subscriptionUrl, }) { return Thread(

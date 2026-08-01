@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String; } 
-CloudforceOneRequestsRequestAssetItem copyWith({CloudforceOneRequestsTime Function()? created, String Function()? description, String Function()? fileType, int? id, String? name, }) { return CloudforceOneRequestsRequestAssetItem(
+CloudforceOneRequestsRequestAssetItem copyWith({CloudforceOneRequestsTime? Function()? created, String? Function()? description, String? Function()? fileType, int? id, String? name, }) { return CloudforceOneRequestsRequestAssetItem(
   created: created != null ? created() : this.created,
   description: description != null ? description() : this.description,
   fileType: fileType != null ? fileType() : this.fileType,

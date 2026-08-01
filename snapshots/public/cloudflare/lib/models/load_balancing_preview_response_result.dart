@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (previewId != null) 'preview_id': previewId?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'pools', 'preview_id'}.contains(key)); } 
-LoadBalancingPreviewResponseResult copyWith({Map<String, String> Function()? pools, LoadBalancingIdentifier Function()? previewId, }) { return LoadBalancingPreviewResponseResult(
+LoadBalancingPreviewResponseResult copyWith({Map<String, String>? Function()? pools, LoadBalancingIdentifier? Function()? previewId, }) { return LoadBalancingPreviewResponseResult(
   pools: pools != null ? pools() : this.pools,
   previewId: previewId != null ? previewId() : this.previewId,
 ); } 

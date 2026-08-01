@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'payment_intent': paymentIntent.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_intent'); } 
-TerminalReaderReaderResourceConfirmPaymentIntentAction copyWith({TerminalReaderReaderResourceConfirmConfig Function()? confirmConfig, TerminalReaderReaderResourceConfirmPaymentIntentActionPaymentIntent? paymentIntent, }) { return TerminalReaderReaderResourceConfirmPaymentIntentAction(
+TerminalReaderReaderResourceConfirmPaymentIntentAction copyWith({TerminalReaderReaderResourceConfirmConfig? Function()? confirmConfig, TerminalReaderReaderResourceConfirmPaymentIntentActionPaymentIntent? paymentIntent, }) { return TerminalReaderReaderResourceConfirmPaymentIntentAction(
   confirmConfig: confirmConfig != null ? confirmConfig() : this.confirmConfig,
   paymentIntent: paymentIntent ?? this.paymentIntent,
 ); } 

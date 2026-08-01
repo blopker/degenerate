@@ -21,11 +21,11 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IntegrationProfileType($value)'; } 
  }
-@immutable final class IntegrationProfile {const IntegrationProfile({required this.createdAt, required this.entries, required this.id, required this.name, required this.sharedEntries, required this.updatedAt, required this.type, this.description, });
+@immutable final class IntegrationProfile {const IntegrationProfile({required this.createdAt, required this.entries, required this.id, required this.name, required this.sharedEntries, required this.updatedAt, required this.type, this.description = const Omittable.absent(), });
 
 factory IntegrationProfile.fromJson(Map<String, dynamic> json) { return IntegrationProfile(
   createdAt: DateTime.parse(json['created_at'] as String),
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   entries: (json['entries'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => CustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => ExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => WordListEntry.fromJson(v as Map<String, dynamic>),)).toList(),
   id: json['id'] as String,
   name: json['name'] as String,
@@ -37,7 +37,7 @@ factory IntegrationProfile.fromJson(Map<String, dynamic> json) { return Integrat
 final DateTime createdAt;
 
 /// The description of the profile.
-final String? description;
+final Omittable<String?> description;
 
 final List<DlpEntry> entries;
 
@@ -53,7 +53,7 @@ final IntegrationProfileType type;
 
 Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'entries': entries.map((e) => e.toJson()).toList(),
   'id': id,
   'name': name,
@@ -68,9 +68,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('shared_entries') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('type'); } 
-IntegrationProfile copyWith({DateTime? createdAt, String? Function()? description, List<DlpEntry>? entries, String? id, String? name, List<DlpEntry>? sharedEntries, DateTime? updatedAt, IntegrationProfileType? type, }) { return IntegrationProfile(
+IntegrationProfile copyWith({DateTime? createdAt, Omittable<String?>? description, List<DlpEntry>? entries, String? id, String? name, List<DlpEntry>? sharedEntries, DateTime? updatedAt, IntegrationProfileType? type, }) { return IntegrationProfile(
   createdAt: createdAt ?? this.createdAt,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   entries: entries ?? this.entries,
   id: id ?? this.id,
   name: name ?? this.name,

@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (certificates != null) 'certificates': certificates?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'certificates'}.contains(key)); } 
-AuditLogCertificatesDeactivated copyWith({List<AuditLogCertificatesDeactivatedCertificates> Function()? certificates}) { return AuditLogCertificatesDeactivated(
+AuditLogCertificatesDeactivated copyWith({List<AuditLogCertificatesDeactivatedCertificates>? Function()? certificates}) { return AuditLogCertificatesDeactivated(
   certificates: certificates != null ? certificates() : this.certificates,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

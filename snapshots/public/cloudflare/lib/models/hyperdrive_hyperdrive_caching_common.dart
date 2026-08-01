@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'disabled': ?disabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disabled'}.contains(key)); } 
-HyperdriveHyperdriveCachingCommon copyWith({bool Function()? disabled}) { return HyperdriveHyperdriveCachingCommon(
+HyperdriveHyperdriveCachingCommon copyWith({bool? Function()? disabled}) { return HyperdriveHyperdriveCachingCommon(
   disabled: disabled != null ? disabled() : this.disabled,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

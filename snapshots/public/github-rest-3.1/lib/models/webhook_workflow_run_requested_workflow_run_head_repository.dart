@@ -158,7 +158,7 @@ Map<String, dynamic> toJson() { return {
   'contents_url': contentsUrl,
   'contributors_url': contributorsUrl.toString(),
   'deployments_url': deploymentsUrl.toString(),
-  'description': ?description,
+  'description': description,
   'downloads_url': downloadsUrl.toString(),
   'events_url': eventsUrl.toString(),
   'fork': fork,
@@ -181,7 +181,7 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'node_id': nodeId,
   'notifications_url': notificationsUrl,
-  if (owner != null) 'owner': owner?.toJson(),
+  'owner': owner?.toJson(),
   'private': private,
   'pulls_url': pullsUrl,
   'releases_url': releasesUrl,
@@ -205,7 +205,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('contents_url') && json['contents_url'] is String &&
       json.containsKey('contributors_url') && json['contributors_url'] is String &&
       json.containsKey('deployments_url') && json['deployments_url'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('downloads_url') && json['downloads_url'] is String &&
       json.containsKey('events_url') && json['events_url'] is String &&
       json.containsKey('fork') && json['fork'] is bool &&

@@ -138,11 +138,11 @@ bool get isUnknown { return !values.contains(this); }
 /// As a [card issuer](https://docs.stripe.com/issuing), you can dispute transactions that the cardholder does not recognize, suspects to be fraudulent, or has other issues with.
 /// 
 /// Related guide: [Issuing disputes](https://docs.stripe.com/issuing/purchases/disputes)
-@immutable final class IssuingDispute {const IssuingDispute({required this.amount, required this.created, required this.currency, required this.evidence, required this.id, required this.livemode, required this.metadata, required this.object, required this.status, required this.transaction, this.balanceTransactions, this.lossReason, this.treasury, });
+@immutable final class IssuingDispute {const IssuingDispute({required this.amount, required this.created, required this.currency, required this.evidence, required this.id, required this.livemode, required this.metadata, required this.object, required this.status, required this.transaction, this.balanceTransactions = const Omittable.absent(), this.lossReason, this.treasury = const Omittable.absent(), });
 
 factory IssuingDispute.fromJson(Map<String, dynamic> json) { return IssuingDispute(
   amount: (json['amount'] as num).toInt(),
-  balanceTransactions: (json['balance_transactions'] as List<dynamic>?)?.map((e) => BalanceTransaction.fromJson(e as Map<String, dynamic>)).toList(),
+  balanceTransactions: json.containsKey('balance_transactions') ? Omittable((json['balance_transactions'] as List<dynamic>?)?.map((e) => BalanceTransaction.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   evidence: IssuingDisputeEvidence.fromJson(json['evidence'] as Map<String, dynamic>),
@@ -153,14 +153,14 @@ factory IssuingDispute.fromJson(Map<String, dynamic> json) { return IssuingDispu
   object: IssuingDisputeObject.fromJson(json['object'] as String),
   status: IssuingDisputeStatus.fromJson(json['status'] as String),
   transaction: OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => IssuingTransaction.fromJson(v as Map<String, dynamic>),),
-  treasury: json['treasury'] != null ? IssuingDisputeTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null,
+  treasury: json.containsKey('treasury') ? Omittable(json['treasury'] != null ? IssuingDisputeTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// Disputed amount in the card's currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal). Usually the amount of the `transaction`, but can differ (usually because of currency fluctuation).
 final int amount;
 
 /// List of balance transactions associated with the dispute.
-final List<BalanceTransaction>? balanceTransactions;
+final Omittable<List<BalanceTransaction>?> balanceTransactions;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -192,11 +192,11 @@ final IssuingDisputeStatus status;
 final IssuingDisputeTransaction transaction;
 
 /// [Treasury](https://docs.stripe.com/api/treasury) details related to this dispute if it was created on a [FinancialAccount](/docs/api/treasury/financial_accounts
-final IssuingDisputeTreasury? treasury;
+final Omittable<IssuingDisputeTreasury?> treasury;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
-  if (balanceTransactions != null) 'balance_transactions': balanceTransactions?.map((e) => e.toJson()).toList(),
+  if (balanceTransactions.isPresent) 'balance_transactions': balanceTransactions.value?.map((e) => e.toJson()).toList(),
   'created': created,
   'currency': currency,
   'evidence': evidence.toJson(),
@@ -207,7 +207,7 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'status': status.toJson(),
   'transaction': transaction.toJson(),
-  if (treasury != null) 'treasury': treasury?.toJson(),
+  if (treasury.isPresent) 'treasury': treasury.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
@@ -219,9 +219,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('transaction'); } 
-IssuingDispute copyWith({int? amount, List<BalanceTransaction>? Function()? balanceTransactions, int? created, String? currency, IssuingDisputeEvidence? evidence, String? id, bool? livemode, IssuingDisputeLossReason Function()? lossReason, Map<String,String>? metadata, IssuingDisputeObject? object, IssuingDisputeStatus? status, IssuingDisputeTransaction? transaction, IssuingDisputeTreasury? Function()? treasury, }) { return IssuingDispute(
+IssuingDispute copyWith({int? amount, Omittable<List<BalanceTransaction>?>? balanceTransactions, int? created, String? currency, IssuingDisputeEvidence? evidence, String? id, bool? livemode, IssuingDisputeLossReason? Function()? lossReason, Map<String,String>? metadata, IssuingDisputeObject? object, IssuingDisputeStatus? status, IssuingDisputeTransaction? transaction, Omittable<IssuingDisputeTreasury?>? treasury, }) { return IssuingDispute(
   amount: amount ?? this.amount,
-  balanceTransactions: balanceTransactions != null ? balanceTransactions() : this.balanceTransactions,
+  balanceTransactions: balanceTransactions ?? this.balanceTransactions,
   created: created ?? this.created,
   currency: currency ?? this.currency,
   evidence: evidence ?? this.evidence,
@@ -232,12 +232,13 @@ IssuingDispute copyWith({int? amount, List<BalanceTransaction>? Function()? bala
   object: object ?? this.object,
   status: status ?? this.status,
   transaction: transaction ?? this.transaction,
-  treasury: treasury != null ? treasury() : this.treasury,
+  treasury: treasury ?? this.treasury,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingDispute &&
           amount == other.amount &&
-          listEquals(balanceTransactions, other.balanceTransactions) &&
+          balanceTransactions.isPresent == other.balanceTransactions.isPresent &&
+          listEquals(balanceTransactions.value, other.balanceTransactions.value) &&
           created == other.created &&
           currency == other.currency &&
           evidence == other.evidence &&
@@ -249,6 +250,6 @@ IssuingDispute copyWith({int? amount, List<BalanceTransaction>? Function()? bala
           status == other.status &&
           transaction == other.transaction &&
           treasury == other.treasury; } 
-@override int get hashCode { return Object.hash(amount, Object.hashAll(balanceTransactions ?? const []), created, currency, evidence, id, livemode, lossReason, metadata, object, status, transaction, treasury); } 
+@override int get hashCode { return Object.hash(amount, Object.hashAll(balanceTransactions.value ?? const []), created, currency, evidence, id, livemode, lossReason, metadata, object, status, transaction, treasury); } 
 @override String toString() { return 'IssuingDispute(amount: $amount, balanceTransactions: $balanceTransactions, created: $created, currency: $currency, evidence: $evidence, id: $id, livemode: $livemode, lossReason: $lossReason, metadata: $metadata, object: $object, status: $status, transaction: $transaction, treasury: $treasury)'; } 
  }

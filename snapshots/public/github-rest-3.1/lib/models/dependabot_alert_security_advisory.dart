@@ -97,7 +97,7 @@ final DateTime? withdrawnAt;
 
 Map<String, dynamic> toJson() { return {
   'ghsa_id': ghsaId,
-  'cve_id': ?cveId,
+  'cve_id': cveId,
   'summary': summary,
   'description': description,
   'vulnerabilities': vulnerabilities.map((e) => e.toJson()).toList(),
@@ -110,10 +110,10 @@ Map<String, dynamic> toJson() { return {
   'references': references.map((e) => e.toJson()).toList(),
   'published_at': publishedAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  if (withdrawnAt != null) 'withdrawn_at': withdrawnAt?.toIso8601String(),
+  'withdrawn_at': withdrawnAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
-      json.containsKey('cve_id') && json['cve_id'] is String &&
+      json.containsKey('cve_id') && (json['cve_id'] == null || json['cve_id'] is String) &&
       json.containsKey('summary') && json['summary'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('vulnerabilities') &&
@@ -124,8 +124,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('references') &&
       json.containsKey('published_at') && json['published_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('withdrawn_at') && json['withdrawn_at'] is String; } 
-DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? summary, String? description, List<DependabotAlertSecurityVulnerability>? vulnerabilities, DependabotAlertSecurityAdvisorySeverity? severity, DependabotAlertSecurityAdvisoryCvss? cvss, CvssSeverities Function()? cvssSeverities, SecurityAdvisoryEpss Function()? epss, List<DependabotAlertSecurityAdvisoryCwes>? cwes, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, List<DependabotAlertSecurityAdvisoryReferences>? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? withdrawnAt, }) { return DependabotAlertSecurityAdvisory(
+      json.containsKey('withdrawn_at') && (json['withdrawn_at'] == null || json['withdrawn_at'] is String); } 
+DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? summary, String? description, List<DependabotAlertSecurityVulnerability>? vulnerabilities, DependabotAlertSecurityAdvisorySeverity? severity, DependabotAlertSecurityAdvisoryCvss? cvss, CvssSeverities? Function()? cvssSeverities, SecurityAdvisoryEpss? Function()? epss, List<DependabotAlertSecurityAdvisoryCwes>? cwes, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, List<DependabotAlertSecurityAdvisoryReferences>? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? withdrawnAt, }) { return DependabotAlertSecurityAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,
   summary: summary ?? this.summary,

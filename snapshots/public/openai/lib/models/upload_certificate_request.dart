@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'content': content,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String; } 
-UploadCertificateRequest copyWith({String Function()? name, String? content, }) { return UploadCertificateRequest(
+UploadCertificateRequest copyWith({String? Function()? name, String? content, }) { return UploadCertificateRequest(
   name: name != null ? name() : this.name,
   content: content ?? this.content,
 ); } 

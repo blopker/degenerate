@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   if (matchExpressions != null) 'matchExpressions': matchExpressions?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'matchExpressions'}.contains(key)); } 
-ScopeSelector copyWith({List<ScopedResourceSelectorRequirement> Function()? matchExpressions}) { return ScopeSelector(
+ScopeSelector copyWith({List<ScopedResourceSelectorRequirement>? Function()? matchExpressions}) { return ScopeSelector(
   matchExpressions: matchExpressions != null ? matchExpressions() : this.matchExpressions,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

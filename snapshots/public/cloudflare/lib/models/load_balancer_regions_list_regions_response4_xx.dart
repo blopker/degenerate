@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-  'result': ?result,
+  'result': result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&

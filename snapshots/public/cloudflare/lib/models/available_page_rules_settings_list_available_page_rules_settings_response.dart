@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-AvailablePageRulesSettingsListAvailablePageRulesSettingsResponse copyWith({List<ZonesSchemasMessages2>? errors, List<ZonesSchemasMessages2>? messages, bool? success, List<Map<String, dynamic>> Function()? result, }) { return AvailablePageRulesSettingsListAvailablePageRulesSettingsResponse(
+AvailablePageRulesSettingsListAvailablePageRulesSettingsResponse copyWith({List<ZonesSchemasMessages2>? errors, List<ZonesSchemasMessages2>? messages, bool? success, List<Map<String, dynamic>>? Function()? result, }) { return AvailablePageRulesSettingsListAvailablePageRulesSettingsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_registration_details.dart';import 'teams_devices_user.dart';/// A WARP Device.
-@immutable final class TeamsDevicesPhysicalDevice {const TeamsDevicesPhysicalDevice({required this.activeRegistrations, required this.createdAt, required this.id, required this.lastSeenAt, required this.name, required this.updatedAt, this.clientVersion, this.deletedAt, this.deviceType, this.hardwareId, this.lastSeenRegistration, this.lastSeenUser, this.macAddress, this.manufacturer, this.model, this.osVersion, this.osVersionExtra, this.publicIp, this.serialNumber, });
+@immutable final class TeamsDevicesPhysicalDevice {const TeamsDevicesPhysicalDevice({required this.activeRegistrations, required this.createdAt, required this.id, required this.lastSeenAt, required this.name, required this.updatedAt, this.clientVersion = const Omittable.absent(), this.deletedAt = const Omittable.absent(), this.deviceType = const Omittable.absent(), this.hardwareId = const Omittable.absent(), this.lastSeenRegistration = const Omittable.absent(), this.lastSeenUser = const Omittable.absent(), this.macAddress = const Omittable.absent(), this.manufacturer = const Omittable.absent(), this.model = const Omittable.absent(), this.osVersion = const Omittable.absent(), this.osVersionExtra = const Omittable.absent(), this.publicIp = const Omittable.absent(), this.serialNumber = const Omittable.absent(), });
 
 factory TeamsDevicesPhysicalDevice.fromJson(Map<String, dynamic> json) { return TeamsDevicesPhysicalDevice(
   activeRegistrations: (json['active_registrations'] as num).toInt(),
-  clientVersion: json['client_version'] as String?,
+  clientVersion: json.containsKey('client_version') ? Omittable(json['client_version'] as String?) : const Omittable.absent(),
   createdAt: json['created_at'] as String,
-  deletedAt: json['deleted_at'] as String?,
-  deviceType: json['device_type'] as String?,
-  hardwareId: json['hardware_id'] as String?,
+  deletedAt: json.containsKey('deleted_at') ? Omittable(json['deleted_at'] as String?) : const Omittable.absent(),
+  deviceType: json.containsKey('device_type') ? Omittable(json['device_type'] as String?) : const Omittable.absent(),
+  hardwareId: json.containsKey('hardware_id') ? Omittable(json['hardware_id'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   lastSeenAt: json['last_seen_at'] as String?,
-  lastSeenRegistration: json['last_seen_registration'] != null ? TeamsDevicesRegistrationDetails.fromJson(json['last_seen_registration'] as Map<String, dynamic>) : null,
-  lastSeenUser: json['last_seen_user'] != null ? TeamsDevicesUser.fromJson(json['last_seen_user'] as Map<String, dynamic>) : null,
-  macAddress: json['mac_address'] as String?,
-  manufacturer: json['manufacturer'] as String?,
-  model: json['model'] as String?,
+  lastSeenRegistration: json.containsKey('last_seen_registration') ? Omittable(json['last_seen_registration'] != null ? TeamsDevicesRegistrationDetails.fromJson(json['last_seen_registration'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  lastSeenUser: json.containsKey('last_seen_user') ? Omittable(json['last_seen_user'] != null ? TeamsDevicesUser.fromJson(json['last_seen_user'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  macAddress: json.containsKey('mac_address') ? Omittable(json['mac_address'] as String?) : const Omittable.absent(),
+  manufacturer: json.containsKey('manufacturer') ? Omittable(json['manufacturer'] as String?) : const Omittable.absent(),
+  model: json.containsKey('model') ? Omittable(json['model'] as String?) : const Omittable.absent(),
   name: json['name'] as String,
-  osVersion: json['os_version'] as String?,
-  osVersionExtra: json['os_version_extra'] as String?,
-  publicIp: json['public_ip'] as String?,
-  serialNumber: json['serial_number'] as String?,
+  osVersion: json.containsKey('os_version') ? Omittable(json['os_version'] as String?) : const Omittable.absent(),
+  osVersionExtra: json.containsKey('os_version_extra') ? Omittable(json['os_version_extra'] as String?) : const Omittable.absent(),
+  publicIp: json.containsKey('public_ip') ? Omittable(json['public_ip'] as String?) : const Omittable.absent(),
+  serialNumber: json.containsKey('serial_number') ? Omittable(json['serial_number'] as String?) : const Omittable.absent(),
   updatedAt: json['updated_at'] as String,
 ); }
 
@@ -29,19 +29,19 @@ factory TeamsDevicesPhysicalDevice.fromJson(Map<String, dynamic> json) { return 
 final int activeRegistrations;
 
 /// Version of the WARP client.
-final String? clientVersion;
+final Omittable<String?> clientVersion;
 
 /// The RFC3339 timestamp when the device was created.
 final String createdAt;
 
 /// The RFC3339 timestamp when the device was deleted.
-final String? deletedAt;
+final Omittable<String?> deletedAt;
 
 /// The device operating system.
-final String? deviceType;
+final Omittable<String?> deviceType;
 
 /// A string that uniquely identifies the hardware or virtual machine (VM).
-final String? hardwareId;
+final Omittable<String?> hardwareId;
 
 /// The unique ID of the device.
 final String id;
@@ -50,85 +50,85 @@ final String id;
 final String? lastSeenAt;
 
 /// The last seen registration for the device.
-final TeamsDevicesRegistrationDetails? lastSeenRegistration;
+final Omittable<TeamsDevicesRegistrationDetails?> lastSeenRegistration;
 
 /// The last user to use the WARP device.
-final TeamsDevicesUser? lastSeenUser;
+final Omittable<TeamsDevicesUser?> lastSeenUser;
 
 /// The device MAC address.
-final String? macAddress;
+final Omittable<String?> macAddress;
 
 /// The device manufacturer.
-final String? manufacturer;
+final Omittable<String?> manufacturer;
 
 /// The model name of the device.
-final String? model;
+final Omittable<String?> model;
 
 /// The name of the device.
 final String name;
 
 /// The device operating system version number.
-final String? osVersion;
+final Omittable<String?> osVersion;
 
 /// Additional operating system version details. For Windows, the UBR (Update Build Revision). For Mac or iOS, the Product Version Extra. For Linux, the distribution name and version.
-final String? osVersionExtra;
+final Omittable<String?> osVersionExtra;
 
 /// **Deprecated**: IP information is provided by DEX - see https://developers.cloudflare.com/api/resources/zero_trust/subresources/dex/subresources/fleet_status/subresources/devices/methods/list/
 /// 
-final String? publicIp;
+final Omittable<String?> publicIp;
 
 /// The device serial number.
-final String? serialNumber;
+final Omittable<String?> serialNumber;
 
 /// The RFC3339 timestamp when the device was last updated.
 final String updatedAt;
 
 Map<String, dynamic> toJson() { return {
   'active_registrations': activeRegistrations,
-  'client_version': ?clientVersion,
+  if (clientVersion.isPresent) 'client_version': clientVersion.value,
   'created_at': createdAt,
-  'deleted_at': ?deletedAt,
-  'device_type': ?deviceType,
-  'hardware_id': ?hardwareId,
+  if (deletedAt.isPresent) 'deleted_at': deletedAt.value,
+  if (deviceType.isPresent) 'device_type': deviceType.value,
+  if (hardwareId.isPresent) 'hardware_id': hardwareId.value,
   'id': id,
-  'last_seen_at': ?lastSeenAt,
-  if (lastSeenRegistration != null) 'last_seen_registration': lastSeenRegistration?.toJson(),
-  if (lastSeenUser != null) 'last_seen_user': lastSeenUser?.toJson(),
-  'mac_address': ?macAddress,
-  'manufacturer': ?manufacturer,
-  'model': ?model,
+  'last_seen_at': lastSeenAt,
+  if (lastSeenRegistration.isPresent) 'last_seen_registration': lastSeenRegistration.value?.toJson(),
+  if (lastSeenUser.isPresent) 'last_seen_user': lastSeenUser.value?.toJson(),
+  if (macAddress.isPresent) 'mac_address': macAddress.value,
+  if (manufacturer.isPresent) 'manufacturer': manufacturer.value,
+  if (model.isPresent) 'model': model.value,
   'name': name,
-  'os_version': ?osVersion,
-  'os_version_extra': ?osVersionExtra,
-  'public_ip': ?publicIp,
-  'serial_number': ?serialNumber,
+  if (osVersion.isPresent) 'os_version': osVersion.value,
+  if (osVersionExtra.isPresent) 'os_version_extra': osVersionExtra.value,
+  if (publicIp.isPresent) 'public_ip': publicIp.value,
+  if (serialNumber.isPresent) 'serial_number': serialNumber.value,
   'updated_at': updatedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_registrations') && json['active_registrations'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('last_seen_at') && json['last_seen_at'] is String &&
+      json.containsKey('last_seen_at') && (json['last_seen_at'] == null || json['last_seen_at'] is String) &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-TeamsDevicesPhysicalDevice copyWith({int? activeRegistrations, String? Function()? clientVersion, String? createdAt, String? Function()? deletedAt, String? Function()? deviceType, String? Function()? hardwareId, String? id, String? Function()? lastSeenAt, TeamsDevicesRegistrationDetails? Function()? lastSeenRegistration, TeamsDevicesUser? Function()? lastSeenUser, String? Function()? macAddress, String? Function()? manufacturer, String? Function()? model, String? name, String? Function()? osVersion, String? Function()? osVersionExtra, String? Function()? publicIp, String? Function()? serialNumber, String? updatedAt, }) { return TeamsDevicesPhysicalDevice(
+TeamsDevicesPhysicalDevice copyWith({int? activeRegistrations, Omittable<String?>? clientVersion, String? createdAt, Omittable<String?>? deletedAt, Omittable<String?>? deviceType, Omittable<String?>? hardwareId, String? id, String? Function()? lastSeenAt, Omittable<TeamsDevicesRegistrationDetails?>? lastSeenRegistration, Omittable<TeamsDevicesUser?>? lastSeenUser, Omittable<String?>? macAddress, Omittable<String?>? manufacturer, Omittable<String?>? model, String? name, Omittable<String?>? osVersion, Omittable<String?>? osVersionExtra, Omittable<String?>? publicIp, Omittable<String?>? serialNumber, String? updatedAt, }) { return TeamsDevicesPhysicalDevice(
   activeRegistrations: activeRegistrations ?? this.activeRegistrations,
-  clientVersion: clientVersion != null ? clientVersion() : this.clientVersion,
+  clientVersion: clientVersion ?? this.clientVersion,
   createdAt: createdAt ?? this.createdAt,
-  deletedAt: deletedAt != null ? deletedAt() : this.deletedAt,
-  deviceType: deviceType != null ? deviceType() : this.deviceType,
-  hardwareId: hardwareId != null ? hardwareId() : this.hardwareId,
+  deletedAt: deletedAt ?? this.deletedAt,
+  deviceType: deviceType ?? this.deviceType,
+  hardwareId: hardwareId ?? this.hardwareId,
   id: id ?? this.id,
   lastSeenAt: lastSeenAt != null ? lastSeenAt() : this.lastSeenAt,
-  lastSeenRegistration: lastSeenRegistration != null ? lastSeenRegistration() : this.lastSeenRegistration,
-  lastSeenUser: lastSeenUser != null ? lastSeenUser() : this.lastSeenUser,
-  macAddress: macAddress != null ? macAddress() : this.macAddress,
-  manufacturer: manufacturer != null ? manufacturer() : this.manufacturer,
-  model: model != null ? model() : this.model,
+  lastSeenRegistration: lastSeenRegistration ?? this.lastSeenRegistration,
+  lastSeenUser: lastSeenUser ?? this.lastSeenUser,
+  macAddress: macAddress ?? this.macAddress,
+  manufacturer: manufacturer ?? this.manufacturer,
+  model: model ?? this.model,
   name: name ?? this.name,
-  osVersion: osVersion != null ? osVersion() : this.osVersion,
-  osVersionExtra: osVersionExtra != null ? osVersionExtra() : this.osVersionExtra,
-  publicIp: publicIp != null ? publicIp() : this.publicIp,
-  serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
+  osVersion: osVersion ?? this.osVersion,
+  osVersionExtra: osVersionExtra ?? this.osVersionExtra,
+  publicIp: publicIp ?? this.publicIp,
+  serialNumber: serialNumber ?? this.serialNumber,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

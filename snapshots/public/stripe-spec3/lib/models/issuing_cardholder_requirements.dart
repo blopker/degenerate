@@ -77,32 +77,33 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardholderRequirementsPastDue($value)'; } 
  }
 /// 
-@immutable final class IssuingCardholderRequirements {const IssuingCardholderRequirements({this.disabledReason, this.pastDue, });
+@immutable final class IssuingCardholderRequirements {const IssuingCardholderRequirements({this.disabledReason = const Omittable.absent(), this.pastDue = const Omittable.absent(), });
 
 factory IssuingCardholderRequirements.fromJson(Map<String, dynamic> json) { return IssuingCardholderRequirements(
-  disabledReason: json['disabled_reason'] != null ? IssuingCardholderRequirementsDisabledReason.fromJson(json['disabled_reason'] as String) : null,
-  pastDue: (json['past_due'] as List<dynamic>?)?.map((e) => IssuingCardholderRequirementsPastDue.fromJson(e as String)).toList(),
+  disabledReason: json.containsKey('disabled_reason') ? Omittable(json['disabled_reason'] != null ? IssuingCardholderRequirementsDisabledReason.fromJson(json['disabled_reason'] as String) : null) : const Omittable.absent(),
+  pastDue: json.containsKey('past_due') ? Omittable((json['past_due'] as List<dynamic>?)?.map((e) => IssuingCardholderRequirementsPastDue.fromJson(e as String)).toList()) : const Omittable.absent(),
 ); }
 
 /// If `disabled_reason` is present, all cards will decline authorizations with `cardholder_verification_required` reason.
-final IssuingCardholderRequirementsDisabledReason? disabledReason;
+final Omittable<IssuingCardholderRequirementsDisabledReason?> disabledReason;
 
 /// Array of fields that need to be collected in order to verify and re-enable the cardholder.
-final List<IssuingCardholderRequirementsPastDue>? pastDue;
+final Omittable<List<IssuingCardholderRequirementsPastDue>?> pastDue;
 
 Map<String, dynamic> toJson() { return {
-  if (disabledReason != null) 'disabled_reason': disabledReason?.toJson(),
-  if (pastDue != null) 'past_due': pastDue?.map((e) => e.toJson()).toList(),
+  if (disabledReason.isPresent) 'disabled_reason': disabledReason.value?.toJson(),
+  if (pastDue.isPresent) 'past_due': pastDue.value?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disabled_reason', 'past_due'}.contains(key)); } 
-IssuingCardholderRequirements copyWith({IssuingCardholderRequirementsDisabledReason? Function()? disabledReason, List<IssuingCardholderRequirementsPastDue>? Function()? pastDue, }) { return IssuingCardholderRequirements(
-  disabledReason: disabledReason != null ? disabledReason() : this.disabledReason,
-  pastDue: pastDue != null ? pastDue() : this.pastDue,
+IssuingCardholderRequirements copyWith({Omittable<IssuingCardholderRequirementsDisabledReason?>? disabledReason, Omittable<List<IssuingCardholderRequirementsPastDue>?>? pastDue, }) { return IssuingCardholderRequirements(
+  disabledReason: disabledReason ?? this.disabledReason,
+  pastDue: pastDue ?? this.pastDue,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingCardholderRequirements &&
           disabledReason == other.disabledReason &&
-          listEquals(pastDue, other.pastDue); } 
-@override int get hashCode { return Object.hash(disabledReason, Object.hashAll(pastDue ?? const [])); } 
+          pastDue.isPresent == other.pastDue.isPresent &&
+          listEquals(pastDue.value, other.pastDue.value); } 
+@override int get hashCode { return Object.hash(disabledReason, Object.hashAll(pastDue.value ?? const [])); } 
 @override String toString() { return 'IssuingCardholderRequirements(disabledReason: $disabledReason, pastDue: $pastDue)'; } 
  }

@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'representative': ?representative,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authorizer', 'director', 'executive', 'legal_guardian', 'owner', 'representative'}.contains(key)); } 
-GetAccountsAccountPeopleRelationship copyWith({bool Function()? authorizer, bool Function()? director, bool Function()? executive, bool Function()? legalGuardian, bool Function()? owner, bool Function()? representative, }) { return GetAccountsAccountPeopleRelationship(
+GetAccountsAccountPeopleRelationship copyWith({bool? Function()? authorizer, bool? Function()? director, bool? Function()? executive, bool? Function()? legalGuardian, bool? Function()? owner, bool? Function()? representative, }) { return GetAccountsAccountPeopleRelationship(
   authorizer: authorizer != null ? authorizer() : this.authorizer,
   director: director != null ? director() : this.director,
   executive: executive != null ? executive() : this.executive,

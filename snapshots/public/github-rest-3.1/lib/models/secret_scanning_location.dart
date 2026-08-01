@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   if (details != null) 'details': details?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'details'}.contains(key)); } 
-SecretScanningLocation copyWith({SecretScanningLocationType Function()? type, SecretScanningLocationDetails Function()? details, }) { return SecretScanningLocation(
+SecretScanningLocation copyWith({SecretScanningLocationType? Function()? type, SecretScanningLocationDetails? Function()? details, }) { return SecretScanningLocation(
   type: type != null ? type() : this.type,
   details: details != null ? details() : this.details,
 ); } 

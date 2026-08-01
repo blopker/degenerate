@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   if (runWorkerFirst != null) 'run_worker_first': runWorkerFirst?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'html_handling', 'not_found_handling', 'run_worker_first'}.contains(key)); } 
-WorkersVersionAssetsConfig copyWith({WorkersVersionAssetsConfigHtmlHandling Function()? htmlHandling, WorkersVersionAssetsConfigNotFoundHandling Function()? notFoundHandling, WorkersVersionAssetsConfigRunWorkerFirst Function()? runWorkerFirst, }) { return WorkersVersionAssetsConfig(
+WorkersVersionAssetsConfig copyWith({WorkersVersionAssetsConfigHtmlHandling Function()? htmlHandling, WorkersVersionAssetsConfigNotFoundHandling Function()? notFoundHandling, WorkersVersionAssetsConfigRunWorkerFirst? Function()? runWorkerFirst, }) { return WorkersVersionAssetsConfig(
   htmlHandling: htmlHandling != null ? htmlHandling() : this.htmlHandling,
   notFoundHandling: notFoundHandling != null ? notFoundHandling() : this.notFoundHandling,
   runWorkerFirst: runWorkerFirst != null ? runWorkerFirst() : this.runWorkerFirst,

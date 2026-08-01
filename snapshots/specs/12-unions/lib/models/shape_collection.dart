@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('shapes'); } 
-ShapeCollection copyWith({String? name, List<Shape>? shapes, List<String> Function()? tags, }) { return ShapeCollection(
+ShapeCollection copyWith({String? name, List<Shape>? shapes, List<String>? Function()? tags, }) { return ShapeCollection(
   name: name ?? this.name,
   shapes: shapes ?? this.shapes,
   tags: tags != null ? tags() : this.tags,

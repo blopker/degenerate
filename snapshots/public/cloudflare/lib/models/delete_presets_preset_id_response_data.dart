@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('confi
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('ui') &&
       json.containsKey('id') && json['id'] is String; } 
-DeletePresetsPresetIdResponseData copyWith({DeletePresetsPresetIdResponseDataConfig? config, String? name, DeletePresetsPresetIdResponseDataPermissions Function()? permissions, DeletePresetsPresetIdResponseDataUi? ui, String? id, }) { return DeletePresetsPresetIdResponseData(
+DeletePresetsPresetIdResponseData copyWith({DeletePresetsPresetIdResponseDataConfig? config, String? name, DeletePresetsPresetIdResponseDataPermissions? Function()? permissions, DeletePresetsPresetIdResponseDataUi? ui, String? id, }) { return DeletePresetsPresetIdResponseData(
   config: config ?? this.config,
   name: name ?? this.name,
   permissions: permissions != null ? permissions() : this.permissions,

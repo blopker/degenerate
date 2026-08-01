@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class BillingCreditGrantsResourceApplicablePrice {const BillingCreditGrantsResourceApplicablePrice({this.id});
+@immutable final class BillingCreditGrantsResourceApplicablePrice {const BillingCreditGrantsResourceApplicablePrice({this.id = const Omittable.absent()});
 
 factory BillingCreditGrantsResourceApplicablePrice.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceApplicablePrice(
-  id: json['id'] as String?,
+  id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),
 ); }
 
 /// Unique identifier for the object.
-final String? id;
+final Omittable<String?> id;
 
 Map<String, dynamic> toJson() { return {
-  'id': ?id,
+  if (id.isPresent) 'id': id.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-BillingCreditGrantsResourceApplicablePrice copyWith({String? Function()? id}) { return BillingCreditGrantsResourceApplicablePrice(
-  id: id != null ? id() : this.id,
+BillingCreditGrantsResourceApplicablePrice copyWith({Omittable<String?>? id}) { return BillingCreditGrantsResourceApplicablePrice(
+  id: id ?? this.id,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is BillingCreditGrantsResourceApplicablePrice &&

@@ -97,11 +97,11 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl,
   'id': id,
   'node_id': nodeId,
-  'parent_id': ?parentId,
+  'parent_id': parentId,
   'reactions': reactions.toJson(),
   'repository_url': repositoryUrl,
   'updated_at': updatedAt,
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('author_association') &&
       json.containsKey('body') && json['body'] is String &&
@@ -111,7 +111,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
-      json.containsKey('parent_id') && json['parent_id'] is num &&
+      json.containsKey('parent_id') && (json['parent_id'] == null || json['parent_id'] is num) &&
       json.containsKey('reactions') &&
       json.containsKey('repository_url') && json['repository_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&

@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('base') && json['base'] is String &&
       json.containsKey('head') && json['head'] is String; } 
-ReposMergeRequest copyWith({String? base, String? head, String Function()? commitMessage, }) { return ReposMergeRequest(
+ReposMergeRequest copyWith({String? base, String? head, String? Function()? commitMessage, }) { return ReposMergeRequest(
   base: base ?? this.base,
   head: head ?? this.head,
   commitMessage: commitMessage != null ? commitMessage() : this.commitMessage,

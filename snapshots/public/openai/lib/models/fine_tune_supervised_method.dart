@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (hyperparameters != null) 'hyperparameters': hyperparameters?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hyperparameters'}.contains(key)); } 
-FineTuneSupervisedMethod copyWith({FineTuneSupervisedHyperparameters Function()? hyperparameters}) { return FineTuneSupervisedMethod(
+FineTuneSupervisedMethod copyWith({FineTuneSupervisedHyperparameters? Function()? hyperparameters}) { return FineTuneSupervisedMethod(
   hyperparameters: hyperparameters != null ? hyperparameters() : this.hyperparameters,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

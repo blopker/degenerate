@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class TreasuryReceivedDebitsResourceStatusTransitions {const TreasuryReceivedDebitsResourceStatusTransitions({this.completedAt});
+@immutable final class TreasuryReceivedDebitsResourceStatusTransitions {const TreasuryReceivedDebitsResourceStatusTransitions({this.completedAt = const Omittable.absent()});
 
 factory TreasuryReceivedDebitsResourceStatusTransitions.fromJson(Map<String, dynamic> json) { return TreasuryReceivedDebitsResourceStatusTransitions(
-  completedAt: json['completed_at'] != null ? (json['completed_at'] as num).toInt() : null,
+  completedAt: json.containsKey('completed_at') ? Omittable(json['completed_at'] != null ? (json['completed_at'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
 /// Timestamp describing when the DebitReversal changed status to `completed`.
-final int? completedAt;
+final Omittable<int?> completedAt;
 
 Map<String, dynamic> toJson() { return {
-  'completed_at': ?completedAt,
+  if (completedAt.isPresent) 'completed_at': completedAt.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'completed_at'}.contains(key)); } 
-TreasuryReceivedDebitsResourceStatusTransitions copyWith({int? Function()? completedAt}) { return TreasuryReceivedDebitsResourceStatusTransitions(
-  completedAt: completedAt != null ? completedAt() : this.completedAt,
+TreasuryReceivedDebitsResourceStatusTransitions copyWith({Omittable<int?>? completedAt}) { return TreasuryReceivedDebitsResourceStatusTransitions(
+  completedAt: completedAt ?? this.completedAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TreasuryReceivedDebitsResourceStatusTransitions &&

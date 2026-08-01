@@ -60,21 +60,21 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EnterpriseTeamsCreateRequestOrganizationSelectionType($value)'; } 
  }
-@immutable final class EnterpriseTeamsCreateRequest {const EnterpriseTeamsCreateRequest({required this.name, this.description, this.syncToOrganizations = EnterpriseTeamsCreateRequestSyncToOrganizations.disabled, this.organizationSelectionType = EnterpriseTeamsCreateRequestOrganizationSelectionType.disabled, this.groupId, });
+@immutable final class EnterpriseTeamsCreateRequest {const EnterpriseTeamsCreateRequest({required this.name, this.description = const Omittable.absent(), this.syncToOrganizations = EnterpriseTeamsCreateRequestSyncToOrganizations.disabled, this.organizationSelectionType = EnterpriseTeamsCreateRequestOrganizationSelectionType.disabled, this.groupId = const Omittable.absent(), });
 
 factory EnterpriseTeamsCreateRequest.fromJson(Map<String, dynamic> json) { return EnterpriseTeamsCreateRequest(
   name: json['name'] as String,
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   syncToOrganizations: json.containsKey('sync_to_organizations') ? EnterpriseTeamsCreateRequestSyncToOrganizations.fromJson(json['sync_to_organizations'] as String) : EnterpriseTeamsCreateRequestSyncToOrganizations.disabled,
   organizationSelectionType: json.containsKey('organization_selection_type') ? EnterpriseTeamsCreateRequestOrganizationSelectionType.fromJson(json['organization_selection_type'] as String) : EnterpriseTeamsCreateRequestOrganizationSelectionType.disabled,
-  groupId: json['group_id'] as String?,
+  groupId: json.containsKey('group_id') ? Omittable(json['group_id'] as String?) : const Omittable.absent(),
 ); }
 
 /// The name of the team.
 final String name;
 
 /// A description of the team.
-final String? description;
+final Omittable<String?> description;
 
 /// Retired: this field is no longer supported.
 /// Whether the enterprise team should be reflected in each organization.
@@ -90,22 +90,22 @@ final EnterpriseTeamsCreateRequestSyncToOrganizations syncToOrganizations;
 final EnterpriseTeamsCreateRequestOrganizationSelectionType organizationSelectionType;
 
 /// The ID of the IdP group to assign team membership with. You can get this value from the [REST API endpoints for SCIM](https://docs.github.com/rest/scim#list-provisioned-scim-groups-for-an-enterprise).
-final String? groupId;
+final Omittable<String?> groupId;
 
 Map<String, dynamic> toJson() { return {
   'name': name,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'sync_to_organizations': syncToOrganizations.toJson(),
   'organization_selection_type': organizationSelectionType.toJson(),
-  'group_id': ?groupId,
+  if (groupId.isPresent) 'group_id': groupId.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-EnterpriseTeamsCreateRequest copyWith({String? name, String? Function()? description, EnterpriseTeamsCreateRequestSyncToOrganizations Function()? syncToOrganizations, EnterpriseTeamsCreateRequestOrganizationSelectionType Function()? organizationSelectionType, String? Function()? groupId, }) { return EnterpriseTeamsCreateRequest(
+EnterpriseTeamsCreateRequest copyWith({String? name, Omittable<String?>? description, EnterpriseTeamsCreateRequestSyncToOrganizations Function()? syncToOrganizations, EnterpriseTeamsCreateRequestOrganizationSelectionType Function()? organizationSelectionType, Omittable<String?>? groupId, }) { return EnterpriseTeamsCreateRequest(
   name: name ?? this.name,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   syncToOrganizations: syncToOrganizations != null ? syncToOrganizations() : this.syncToOrganizations,
   organizationSelectionType: organizationSelectionType != null ? organizationSelectionType() : this.organizationSelectionType,
-  groupId: groupId != null ? groupId() : this.groupId,
+  groupId: groupId ?? this.groupId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is EnterpriseTeamsCreateRequest &&

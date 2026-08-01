@@ -34,14 +34,14 @@ Map<String, dynamic> toJson() { return {
   'full_name': fullName,
   'private': private,
   'stargazers_count': stargazersCount,
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  'updated_at': updatedAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('full_name') && json['full_name'] is String &&
       json.containsKey('private') && json['private'] is bool &&
       json.containsKey('stargazers_count') && json['stargazers_count'] is num &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String); } 
 CodeScanningVariantAnalysisRepository copyWith({int? id, String? name, String? fullName, bool? private, int? stargazersCount, DateTime? Function()? updatedAt, }) { return CodeScanningVariantAnalysisRepository(
   id: id ?? this.id,
   name: name ?? this.name,

@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   'ruleset_id': ?rulesetId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RepositoryRuleDetailedVariant16 copyWith({RepositoryRuleDetailedVariant16Type? type, RepositoryRuleDetailedVariant16Parameters Function()? parameters, RepositoryRuleDetailedVariant16RulesetSourceType Function()? rulesetSourceType, String Function()? rulesetSource, int Function()? rulesetId, }) { return RepositoryRuleDetailedVariant16(
+RepositoryRuleDetailedVariant16 copyWith({RepositoryRuleDetailedVariant16Type? type, RepositoryRuleDetailedVariant16Parameters? Function()? parameters, RepositoryRuleDetailedVariant16RulesetSourceType? Function()? rulesetSourceType, String? Function()? rulesetSource, int? Function()? rulesetId, }) { return RepositoryRuleDetailedVariant16(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
   rulesetSourceType: rulesetSourceType != null ? rulesetSourceType() : this.rulesetSourceType,

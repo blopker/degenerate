@@ -26,12 +26,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsCardPresentCaptureMethod($value)'; } 
  }
 /// 
-@immutable final class PaymentMethodOptionsCardPresent {const PaymentMethodOptionsCardPresent({this.captureMethod, this.requestExtendedAuthorization, this.requestIncrementalAuthorizationSupport, this.routing, });
+@immutable final class PaymentMethodOptionsCardPresent {const PaymentMethodOptionsCardPresent({this.captureMethod, this.requestExtendedAuthorization = const Omittable.absent(), this.requestIncrementalAuthorizationSupport = const Omittable.absent(), this.routing, });
 
 factory PaymentMethodOptionsCardPresent.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsCardPresent(
   captureMethod: json['capture_method'] != null ? PaymentMethodOptionsCardPresentCaptureMethod.fromJson(json['capture_method'] as String) : null,
-  requestExtendedAuthorization: json['request_extended_authorization'] as bool?,
-  requestIncrementalAuthorizationSupport: json['request_incremental_authorization_support'] as bool?,
+  requestExtendedAuthorization: json.containsKey('request_extended_authorization') ? Omittable(json['request_extended_authorization'] as bool?) : const Omittable.absent(),
+  requestIncrementalAuthorizationSupport: json.containsKey('request_incremental_authorization_support') ? Omittable(json['request_incremental_authorization_support'] as bool?) : const Omittable.absent(),
   routing: json['routing'] != null ? PaymentMethodOptionsCardPresentRouting.fromJson(json['routing'] as Map<String, dynamic>) : null,
 ); }
 
@@ -39,24 +39,24 @@ factory PaymentMethodOptionsCardPresent.fromJson(Map<String, dynamic> json) { re
 final PaymentMethodOptionsCardPresentCaptureMethod? captureMethod;
 
 /// Request ability to capture this payment beyond the standard [authorization validity window](https://docs.stripe.com/terminal/features/extended-authorizations#authorization-validity)
-final bool? requestExtendedAuthorization;
+final Omittable<bool?> requestExtendedAuthorization;
 
 /// Request ability to [increment](https://docs.stripe.com/terminal/features/incremental-authorizations) this PaymentIntent if the combination of MCC and card brand is eligible. Check [incremental_authorization_supported](https://docs.stripe.com/api/charges/object#charge_object-payment_method_details-card_present-incremental_authorization_supported) in the [Confirm](https://docs.stripe.com/api/payment_intents/confirm) response to verify support.
-final bool? requestIncrementalAuthorizationSupport;
+final Omittable<bool?> requestIncrementalAuthorizationSupport;
 
 final PaymentMethodOptionsCardPresentRouting? routing;
 
 Map<String, dynamic> toJson() { return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
-  'request_extended_authorization': ?requestExtendedAuthorization,
-  'request_incremental_authorization_support': ?requestIncrementalAuthorizationSupport,
+  if (requestExtendedAuthorization.isPresent) 'request_extended_authorization': requestExtendedAuthorization.value,
+  if (requestIncrementalAuthorizationSupport.isPresent) 'request_incremental_authorization_support': requestIncrementalAuthorizationSupport.value,
   if (routing != null) 'routing': routing?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'request_extended_authorization', 'request_incremental_authorization_support', 'routing'}.contains(key)); } 
-PaymentMethodOptionsCardPresent copyWith({PaymentMethodOptionsCardPresentCaptureMethod Function()? captureMethod, bool? Function()? requestExtendedAuthorization, bool? Function()? requestIncrementalAuthorizationSupport, PaymentMethodOptionsCardPresentRouting Function()? routing, }) { return PaymentMethodOptionsCardPresent(
+PaymentMethodOptionsCardPresent copyWith({PaymentMethodOptionsCardPresentCaptureMethod? Function()? captureMethod, Omittable<bool?>? requestExtendedAuthorization, Omittable<bool?>? requestIncrementalAuthorizationSupport, PaymentMethodOptionsCardPresentRouting? Function()? routing, }) { return PaymentMethodOptionsCardPresent(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
-  requestExtendedAuthorization: requestExtendedAuthorization != null ? requestExtendedAuthorization() : this.requestExtendedAuthorization,
-  requestIncrementalAuthorizationSupport: requestIncrementalAuthorizationSupport != null ? requestIncrementalAuthorizationSupport() : this.requestIncrementalAuthorizationSupport,
+  requestExtendedAuthorization: requestExtendedAuthorization ?? this.requestExtendedAuthorization,
+  requestIncrementalAuthorizationSupport: requestIncrementalAuthorizationSupport ?? this.requestIncrementalAuthorizationSupport,
   routing: routing != null ? routing() : this.routing,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

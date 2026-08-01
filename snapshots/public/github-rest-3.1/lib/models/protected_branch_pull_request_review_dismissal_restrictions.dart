@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'teams_url': ?teamsUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'users', 'teams', 'apps', 'url', 'users_url', 'teams_url'}.contains(key)); } 
-ProtectedBranchPullRequestReviewDismissalRestrictions copyWith({List<SimpleUser> Function()? users, List<Team> Function()? teams, List<Integration> Function()? apps, String Function()? url, String Function()? usersUrl, String Function()? teamsUrl, }) { return ProtectedBranchPullRequestReviewDismissalRestrictions(
+ProtectedBranchPullRequestReviewDismissalRestrictions copyWith({List<SimpleUser>? Function()? users, List<Team>? Function()? teams, List<Integration>? Function()? apps, String? Function()? url, String? Function()? usersUrl, String? Function()? teamsUrl, }) { return ProtectedBranchPullRequestReviewDismissalRestrictions(
   users: users != null ? users() : this.users,
   teams: teams != null ? teams() : this.teams,
   apps: apps != null ? apps() : this.apps,

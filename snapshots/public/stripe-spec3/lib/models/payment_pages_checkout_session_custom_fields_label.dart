@@ -23,26 +23,26 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionCustomFieldsLabelType($value)'; } 
  }
 /// 
-@immutable final class PaymentPagesCheckoutSessionCustomFieldsLabel {const PaymentPagesCheckoutSessionCustomFieldsLabel({required this.type, this.custom, });
+@immutable final class PaymentPagesCheckoutSessionCustomFieldsLabel {const PaymentPagesCheckoutSessionCustomFieldsLabel({required this.type, this.custom = const Omittable.absent(), });
 
 factory PaymentPagesCheckoutSessionCustomFieldsLabel.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomFieldsLabel(
-  custom: json['custom'] as String?,
+  custom: json.containsKey('custom') ? Omittable(json['custom'] as String?) : const Omittable.absent(),
   type: PaymentPagesCheckoutSessionCustomFieldsLabelType.fromJson(json['type'] as String),
 ); }
 
 /// Custom text for the label, displayed to the customer. Up to 50 characters.
-final String? custom;
+final Omittable<String?> custom;
 
 /// The type of the label.
 final PaymentPagesCheckoutSessionCustomFieldsLabelType type;
 
 Map<String, dynamic> toJson() { return {
-  'custom': ?custom,
+  if (custom.isPresent) 'custom': custom.value,
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentPagesCheckoutSessionCustomFieldsLabel copyWith({String? Function()? custom, PaymentPagesCheckoutSessionCustomFieldsLabelType? type, }) { return PaymentPagesCheckoutSessionCustomFieldsLabel(
-  custom: custom != null ? custom() : this.custom,
+PaymentPagesCheckoutSessionCustomFieldsLabel copyWith({Omittable<String?>? custom, PaymentPagesCheckoutSessionCustomFieldsLabelType? type, }) { return PaymentPagesCheckoutSessionCustomFieldsLabel(
+  custom: custom ?? this.custom,
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -26,26 +26,26 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodNaverPayFunding($value)'; } 
  }
 /// 
-@immutable final class PaymentMethodNaverPay {const PaymentMethodNaverPay({required this.funding, this.buyerId, });
+@immutable final class PaymentMethodNaverPay {const PaymentMethodNaverPay({required this.funding, this.buyerId = const Omittable.absent(), });
 
 factory PaymentMethodNaverPay.fromJson(Map<String, dynamic> json) { return PaymentMethodNaverPay(
-  buyerId: json['buyer_id'] as String?,
+  buyerId: json.containsKey('buyer_id') ? Omittable(json['buyer_id'] as String?) : const Omittable.absent(),
   funding: PaymentMethodNaverPayFunding.fromJson(json['funding'] as String),
 ); }
 
 /// Uniquely identifies this particular Naver Pay account. You can use this attribute to check whether two Naver Pay accounts are the same.
-final String? buyerId;
+final Omittable<String?> buyerId;
 
 /// Whether to fund this transaction with Naver Pay points or a card.
 final PaymentMethodNaverPayFunding funding;
 
 Map<String, dynamic> toJson() { return {
-  'buyer_id': ?buyerId,
+  if (buyerId.isPresent) 'buyer_id': buyerId.value,
   'funding': funding.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('funding'); } 
-PaymentMethodNaverPay copyWith({String? Function()? buyerId, PaymentMethodNaverPayFunding? funding, }) { return PaymentMethodNaverPay(
-  buyerId: buyerId != null ? buyerId() : this.buyerId,
+PaymentMethodNaverPay copyWith({Omittable<String?>? buyerId, PaymentMethodNaverPayFunding? funding, }) { return PaymentMethodNaverPay(
+  buyerId: buyerId ?? this.buyerId,
   funding: funding ?? this.funding,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

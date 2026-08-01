@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'network_configuration_id': ?networkConfigurationId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ActionsCreateSelfHostedRunnerGroupForOrgRequest copyWith({String? name, ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility Function()? visibility, List<int> Function()? selectedRepositoryIds, List<int> Function()? runners, bool Function()? allowsPublicRepositories, bool Function()? restrictedToWorkflows, List<String> Function()? selectedWorkflows, String Function()? networkConfigurationId, }) { return ActionsCreateSelfHostedRunnerGroupForOrgRequest(
+ActionsCreateSelfHostedRunnerGroupForOrgRequest copyWith({String? name, ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility Function()? visibility, List<int>? Function()? selectedRepositoryIds, List<int>? Function()? runners, bool Function()? allowsPublicRepositories, bool Function()? restrictedToWorkflows, List<String>? Function()? selectedWorkflows, String? Function()? networkConfigurationId, }) { return ActionsCreateSelfHostedRunnerGroupForOrgRequest(
   name: name ?? this.name,
   visibility: visibility != null ? visibility() : this.visibility,
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,

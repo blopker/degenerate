@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ActionsHostedRunnerStatus($value)'; } 
  }
 /// A Github-hosted hosted runner.
-@immutable final class ActionsHostedRunner {const ActionsHostedRunner({required this.id, required this.name, required this.imageDetails, required this.machineSizeDetails, required this.status, required this.platform, required this.publicIpEnabled, this.runnerGroupId, this.maximumRunners = 10, this.publicIps, this.lastActiveOn, this.imageGen, });
+@immutable final class ActionsHostedRunner {const ActionsHostedRunner({required this.id, required this.name, required this.imageDetails, required this.machineSizeDetails, required this.status, required this.platform, required this.publicIpEnabled, this.runnerGroupId, this.maximumRunners = 10, this.publicIps, this.lastActiveOn = const Omittable.absent(), this.imageGen, });
 
 factory ActionsHostedRunner.fromJson(Map<String, dynamic> json) { return ActionsHostedRunner(
   id: (json['id'] as num).toInt(),
@@ -48,7 +48,7 @@ factory ActionsHostedRunner.fromJson(Map<String, dynamic> json) { return Actions
   maximumRunners: json.containsKey('maximum_runners') ? (json['maximum_runners'] as num).toInt() : 10,
   publicIpEnabled: json['public_ip_enabled'] as bool,
   publicIps: (json['public_ips'] as List<dynamic>?)?.map((e) => PublicIp.fromJson(e as Map<String, dynamic>)).toList(),
-  lastActiveOn: json['last_active_on'] != null ? DateTime.parse(json['last_active_on'] as String) : null,
+  lastActiveOn: json.containsKey('last_active_on') ? Omittable(json['last_active_on'] != null ? DateTime.parse(json['last_active_on'] as String) : null) : const Omittable.absent(),
   imageGen: json['image_gen'] as bool?,
 ); }
 
@@ -81,7 +81,7 @@ final bool publicIpEnabled;
 final List<PublicIp>? publicIps;
 
 /// The time at which the runner was last used, in ISO 8601 format.
-final DateTime? lastActiveOn;
+final Omittable<DateTime?> lastActiveOn;
 
 /// Whether custom image generation is enabled for the hosted runners.
 final bool? imageGen;
@@ -90,14 +90,14 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'name': name,
   'runner_group_id': ?runnerGroupId,
-  if (imageDetails != null) 'image_details': imageDetails?.toJson(),
+  'image_details': imageDetails?.toJson(),
   'machine_size_details': machineSizeDetails.toJson(),
   'status': status.toJson(),
   'platform': platform,
   'maximum_runners': maximumRunners,
   'public_ip_enabled': publicIpEnabled,
   if (publicIps != null) 'public_ips': publicIps?.map((e) => e.toJson()).toList(),
-  if (lastActiveOn != null) 'last_active_on': lastActiveOn?.toIso8601String(),
+  if (lastActiveOn.isPresent) 'last_active_on': lastActiveOn.value?.toIso8601String(),
   'image_gen': ?imageGen,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
@@ -107,7 +107,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('status') &&
       json.containsKey('platform') && json['platform'] is String &&
       json.containsKey('public_ip_enabled') && json['public_ip_enabled'] is bool; } 
-ActionsHostedRunner copyWith({int? id, String? name, int Function()? runnerGroupId, ActionsHostedRunnerPoolImage? Function()? imageDetails, ActionsHostedRunnerMachineSpec? machineSizeDetails, ActionsHostedRunnerStatus? status, String? platform, int Function()? maximumRunners, bool? publicIpEnabled, List<PublicIp> Function()? publicIps, DateTime? Function()? lastActiveOn, bool Function()? imageGen, }) { return ActionsHostedRunner(
+ActionsHostedRunner copyWith({int? id, String? name, int? Function()? runnerGroupId, ActionsHostedRunnerPoolImage? Function()? imageDetails, ActionsHostedRunnerMachineSpec? machineSizeDetails, ActionsHostedRunnerStatus? status, String? platform, int Function()? maximumRunners, bool? publicIpEnabled, List<PublicIp>? Function()? publicIps, Omittable<DateTime?>? lastActiveOn, bool? Function()? imageGen, }) { return ActionsHostedRunner(
   id: id ?? this.id,
   name: name ?? this.name,
   runnerGroupId: runnerGroupId != null ? runnerGroupId() : this.runnerGroupId,
@@ -118,7 +118,7 @@ ActionsHostedRunner copyWith({int? id, String? name, int Function()? runnerGroup
   maximumRunners: maximumRunners != null ? maximumRunners() : this.maximumRunners,
   publicIpEnabled: publicIpEnabled ?? this.publicIpEnabled,
   publicIps: publicIps != null ? publicIps() : this.publicIps,
-  lastActiveOn: lastActiveOn != null ? lastActiveOn() : this.lastActiveOn,
+  lastActiveOn: lastActiveOn ?? this.lastActiveOn,
   imageGen: imageGen != null ? imageGen() : this.imageGen,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

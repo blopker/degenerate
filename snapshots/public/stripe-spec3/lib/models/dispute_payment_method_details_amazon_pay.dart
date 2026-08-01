@@ -26,21 +26,21 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DisputePaymentMethodDetailsAmazonPayDisputeType($value)'; } 
  }
 /// 
-@immutable final class DisputePaymentMethodDetailsAmazonPay {const DisputePaymentMethodDetailsAmazonPay({this.disputeType});
+@immutable final class DisputePaymentMethodDetailsAmazonPay {const DisputePaymentMethodDetailsAmazonPay({this.disputeType = const Omittable.absent()});
 
 factory DisputePaymentMethodDetailsAmazonPay.fromJson(Map<String, dynamic> json) { return DisputePaymentMethodDetailsAmazonPay(
-  disputeType: json['dispute_type'] != null ? DisputePaymentMethodDetailsAmazonPayDisputeType.fromJson(json['dispute_type'] as String) : null,
+  disputeType: json.containsKey('dispute_type') ? Omittable(json['dispute_type'] != null ? DisputePaymentMethodDetailsAmazonPayDisputeType.fromJson(json['dispute_type'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// The AmazonPay dispute type, chargeback or claim
-final DisputePaymentMethodDetailsAmazonPayDisputeType? disputeType;
+final Omittable<DisputePaymentMethodDetailsAmazonPayDisputeType?> disputeType;
 
 Map<String, dynamic> toJson() { return {
-  if (disputeType != null) 'dispute_type': disputeType?.toJson(),
+  if (disputeType.isPresent) 'dispute_type': disputeType.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dispute_type'}.contains(key)); } 
-DisputePaymentMethodDetailsAmazonPay copyWith({DisputePaymentMethodDetailsAmazonPayDisputeType? Function()? disputeType}) { return DisputePaymentMethodDetailsAmazonPay(
-  disputeType: disputeType != null ? disputeType() : this.disputeType,
+DisputePaymentMethodDetailsAmazonPay copyWith({Omittable<DisputePaymentMethodDetailsAmazonPayDisputeType?>? disputeType}) { return DisputePaymentMethodDetailsAmazonPay(
+  disputeType: disputeType ?? this.disputeType,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DisputePaymentMethodDetailsAmazonPay &&

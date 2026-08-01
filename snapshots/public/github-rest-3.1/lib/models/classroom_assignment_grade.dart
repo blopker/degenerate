@@ -73,7 +73,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('assig
       json.containsKey('submission_timestamp') && json['submission_timestamp'] is String &&
       json.containsKey('points_awarded') && json['points_awarded'] is num &&
       json.containsKey('points_available') && json['points_available'] is num; } 
-ClassroomAssignmentGrade copyWith({String? assignmentName, String? assignmentUrl, String? starterCodeUrl, String? githubUsername, String? rosterIdentifier, String? studentRepositoryName, String? studentRepositoryUrl, String? submissionTimestamp, int? pointsAwarded, int? pointsAvailable, String Function()? groupName, }) { return ClassroomAssignmentGrade(
+ClassroomAssignmentGrade copyWith({String? assignmentName, String? assignmentUrl, String? starterCodeUrl, String? githubUsername, String? rosterIdentifier, String? studentRepositoryName, String? studentRepositoryUrl, String? submissionTimestamp, int? pointsAwarded, int? pointsAvailable, String? Function()? groupName, }) { return ClassroomAssignmentGrade(
   assignmentName: assignmentName ?? this.assignmentName,
   assignmentUrl: assignmentUrl ?? this.assignmentUrl,
   starterCodeUrl: starterCodeUrl ?? this.starterCodeUrl,

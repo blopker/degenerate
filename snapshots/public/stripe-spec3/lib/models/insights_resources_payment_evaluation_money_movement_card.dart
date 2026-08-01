@@ -57,27 +57,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType($value)'; } 
  }
 /// Money Movement card details attached to this payment.
-@immutable final class InsightsResourcesPaymentEvaluationMoneyMovementCard {const InsightsResourcesPaymentEvaluationMoneyMovementCard({this.customerPresence, this.paymentType, });
+@immutable final class InsightsResourcesPaymentEvaluationMoneyMovementCard {const InsightsResourcesPaymentEvaluationMoneyMovementCard({this.customerPresence = const Omittable.absent(), this.paymentType = const Omittable.absent(), });
 
 factory InsightsResourcesPaymentEvaluationMoneyMovementCard.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationMoneyMovementCard(
-  customerPresence: json['customer_presence'] != null ? InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence.fromJson(json['customer_presence'] as String) : null,
-  paymentType: json['payment_type'] != null ? InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType.fromJson(json['payment_type'] as String) : null,
+  customerPresence: json.containsKey('customer_presence') ? Omittable(json['customer_presence'] != null ? InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence.fromJson(json['customer_presence'] as String) : null) : const Omittable.absent(),
+  paymentType: json.containsKey('payment_type') ? Omittable(json['payment_type'] != null ? InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType.fromJson(json['payment_type'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Describes the presence of the customer during the payment.
-final InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence? customerPresence;
+final Omittable<InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence?> customerPresence;
 
 /// Describes the type of payment.
-final InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType? paymentType;
+final Omittable<InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType?> paymentType;
 
 Map<String, dynamic> toJson() { return {
-  if (customerPresence != null) 'customer_presence': customerPresence?.toJson(),
-  if (paymentType != null) 'payment_type': paymentType?.toJson(),
+  if (customerPresence.isPresent) 'customer_presence': customerPresence.value?.toJson(),
+  if (paymentType.isPresent) 'payment_type': paymentType.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer_presence', 'payment_type'}.contains(key)); } 
-InsightsResourcesPaymentEvaluationMoneyMovementCard copyWith({InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence? Function()? customerPresence, InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType? Function()? paymentType, }) { return InsightsResourcesPaymentEvaluationMoneyMovementCard(
-  customerPresence: customerPresence != null ? customerPresence() : this.customerPresence,
-  paymentType: paymentType != null ? paymentType() : this.paymentType,
+InsightsResourcesPaymentEvaluationMoneyMovementCard copyWith({Omittable<InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence?>? customerPresence, Omittable<InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType?>? paymentType, }) { return InsightsResourcesPaymentEvaluationMoneyMovementCard(
+  customerPresence: customerPresence ?? this.customerPresence,
+  paymentType: paymentType ?? this.paymentType,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationMoneyMovementCard &&

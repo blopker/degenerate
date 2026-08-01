@@ -16,10 +16,10 @@ final int? recentThreads;
 
 Map<String, dynamic> toJson() { return {
   'enabled': enabled,
-  'recent_threads': ?recentThreads,
+  'recent_threads': recentThreads,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('recent_threads') && json['recent_threads'] is num; } 
+      json.containsKey('recent_threads') && (json['recent_threads'] == null || json['recent_threads'] is num); } 
 ChatSessionHistory copyWith({bool? enabled, int? Function()? recentThreads, }) { return ChatSessionHistory(
   enabled: enabled ?? this.enabled,
   recentThreads: recentThreads != null ? recentThreads() : this.recentThreads,

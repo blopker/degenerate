@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'require_approval_for_fork_pr_workflows': ?requireApprovalForForkPrWorkflows,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('run_workflows_from_fork_pull_requests') && json['run_workflows_from_fork_pull_requests'] is bool; } 
-ActionsForkPrWorkflowsPrivateReposRequest copyWith({bool? runWorkflowsFromForkPullRequests, bool Function()? sendWriteTokensToWorkflows, bool Function()? sendSecretsAndVariables, bool Function()? requireApprovalForForkPrWorkflows, }) { return ActionsForkPrWorkflowsPrivateReposRequest(
+ActionsForkPrWorkflowsPrivateReposRequest copyWith({bool? runWorkflowsFromForkPullRequests, bool? Function()? sendWriteTokensToWorkflows, bool? Function()? sendSecretsAndVariables, bool? Function()? requireApprovalForForkPrWorkflows, }) { return ActionsForkPrWorkflowsPrivateReposRequest(
   runWorkflowsFromForkPullRequests: runWorkflowsFromForkPullRequests ?? this.runWorkflowsFromForkPullRequests,
   sendWriteTokensToWorkflows: sendWriteTokensToWorkflows != null ? sendWriteTokensToWorkflows() : this.sendWriteTokensToWorkflows,
   sendSecretsAndVariables: sendSecretsAndVariables != null ? sendSecretsAndVariables() : this.sendSecretsAndVariables,

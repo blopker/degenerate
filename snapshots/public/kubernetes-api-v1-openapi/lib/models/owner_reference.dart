@@ -42,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('apiVe
       json.containsKey('kind') && json['kind'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('uid') && json['uid'] is String; } 
-OwnerReference copyWith({String? apiVersion, bool Function()? blockOwnerDeletion, bool Function()? controller, String? kind, String? name, String? uid, }) { return OwnerReference(
+OwnerReference copyWith({String? apiVersion, bool? Function()? blockOwnerDeletion, bool? Function()? controller, String? kind, String? name, String? uid, }) { return OwnerReference(
   apiVersion: apiVersion ?? this.apiVersion,
   blockOwnerDeletion: blockOwnerDeletion != null ? blockOwnerDeletion() : this.blockOwnerDeletion,
   controller: controller != null ? controller() : this.controller,

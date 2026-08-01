@@ -24,16 +24,16 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A Configurations object represents how features should be configured for terminal readers.
 /// For information about how to use it, see the [Terminal configurations documentation](https://docs.stripe.com/terminal/fleet/configurations-overview).
-@immutable final class TerminalConfiguration {const TerminalConfiguration({required this.id, required this.livemode, required this.object, this.bbposWisepad3, this.bbposWiseposE, this.cellular, this.isAccountDefault, this.name, this.offline, this.rebootWindow, this.stripeS700, this.stripeS710, this.tipping, this.verifoneP400, this.wifi, });
+@immutable final class TerminalConfiguration {const TerminalConfiguration({required this.id, required this.livemode, required this.object, this.bbposWisepad3, this.bbposWiseposE, this.cellular, this.isAccountDefault = const Omittable.absent(), this.name = const Omittable.absent(), this.offline, this.rebootWindow, this.stripeS700, this.stripeS710, this.tipping, this.verifoneP400, this.wifi, });
 
 factory TerminalConfiguration.fromJson(Map<String, dynamic> json) { return TerminalConfiguration(
   bbposWisepad3: json['bbpos_wisepad3'] != null ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(json['bbpos_wisepad3'] as Map<String, dynamic>) : null,
   bbposWiseposE: json['bbpos_wisepos_e'] != null ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(json['bbpos_wisepos_e'] as Map<String, dynamic>) : null,
   cellular: json['cellular'] != null ? TerminalConfigurationConfigurationResourceCellularConfig.fromJson(json['cellular'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
-  isAccountDefault: json['is_account_default'] as bool?,
+  isAccountDefault: json.containsKey('is_account_default') ? Omittable(json['is_account_default'] as bool?) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   object: TerminalConfigurationObject.fromJson(json['object'] as String),
   offline: json['offline'] != null ? TerminalConfigurationConfigurationResourceOfflineConfig.fromJson(json['offline'] as Map<String, dynamic>) : null,
   rebootWindow: json['reboot_window'] != null ? TerminalConfigurationConfigurationResourceRebootWindow.fromJson(json['reboot_window'] as Map<String, dynamic>) : null,
@@ -54,13 +54,13 @@ final TerminalConfigurationConfigurationResourceCellularConfig? cellular;
 final String id;
 
 /// Whether this Configuration is the default for your account
-final bool? isAccountDefault;
+final Omittable<bool?> isAccountDefault;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
 
 /// String indicating the name of the Configuration object, set by the user
-final String? name;
+final Omittable<String?> name;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final TerminalConfigurationObject object;
@@ -84,9 +84,9 @@ Map<String, dynamic> toJson() { return {
   if (bbposWiseposE != null) 'bbpos_wisepos_e': bbposWiseposE?.toJson(),
   if (cellular != null) 'cellular': cellular?.toJson(),
   'id': id,
-  'is_account_default': ?isAccountDefault,
+  if (isAccountDefault.isPresent) 'is_account_default': isAccountDefault.value,
   'livemode': livemode,
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
   'object': object.toJson(),
   if (offline != null) 'offline': offline?.toJson(),
   if (rebootWindow != null) 'reboot_window': rebootWindow?.toJson(),
@@ -99,14 +99,14 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-TerminalConfiguration copyWith({TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig Function()? bbposWisepad3, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig Function()? bbposWiseposE, TerminalConfigurationConfigurationResourceCellularConfig Function()? cellular, String? id, bool? Function()? isAccountDefault, bool? livemode, String? Function()? name, TerminalConfigurationObject? object, TerminalConfigurationConfigurationResourceOfflineConfig Function()? offline, TerminalConfigurationConfigurationResourceRebootWindow Function()? rebootWindow, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig Function()? stripeS700, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig Function()? stripeS710, TerminalConfigurationConfigurationResourceTipping Function()? tipping, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig Function()? verifoneP400, TerminalConfigurationConfigurationResourceWifiConfig Function()? wifi, }) { return TerminalConfiguration(
+TerminalConfiguration copyWith({TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? bbposWisepad3, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? bbposWiseposE, TerminalConfigurationConfigurationResourceCellularConfig? Function()? cellular, String? id, Omittable<bool?>? isAccountDefault, bool? livemode, Omittable<String?>? name, TerminalConfigurationObject? object, TerminalConfigurationConfigurationResourceOfflineConfig? Function()? offline, TerminalConfigurationConfigurationResourceRebootWindow? Function()? rebootWindow, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? stripeS700, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? stripeS710, TerminalConfigurationConfigurationResourceTipping? Function()? tipping, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? verifoneP400, TerminalConfigurationConfigurationResourceWifiConfig? Function()? wifi, }) { return TerminalConfiguration(
   bbposWisepad3: bbposWisepad3 != null ? bbposWisepad3() : this.bbposWisepad3,
   bbposWiseposE: bbposWiseposE != null ? bbposWiseposE() : this.bbposWiseposE,
   cellular: cellular != null ? cellular() : this.cellular,
   id: id ?? this.id,
-  isAccountDefault: isAccountDefault != null ? isAccountDefault() : this.isAccountDefault,
+  isAccountDefault: isAccountDefault ?? this.isAccountDefault,
   livemode: livemode ?? this.livemode,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
   object: object ?? this.object,
   offline: offline != null ? offline() : this.offline,
   rebootWindow: rebootWindow != null ? rebootWindow() : this.rebootWindow,

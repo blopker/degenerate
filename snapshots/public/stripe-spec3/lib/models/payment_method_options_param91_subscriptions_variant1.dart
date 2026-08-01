@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval') &&
       json.containsKey('reference') && json['reference'] is String; } 
-PaymentMethodOptionsParam91SubscriptionsVariant1 copyWith({PaymentMethodOptionsParam91SubscriptionsVariant1Interval? interval, int Function()? intervalCount, String Function()? name, PaymentMethodOptionsParam91SubscriptionsVariant1NextBilling Function()? nextBilling, String? reference, }) { return PaymentMethodOptionsParam91SubscriptionsVariant1(
+PaymentMethodOptionsParam91SubscriptionsVariant1 copyWith({PaymentMethodOptionsParam91SubscriptionsVariant1Interval? interval, int? Function()? intervalCount, String? Function()? name, PaymentMethodOptionsParam91SubscriptionsVariant1NextBilling? Function()? nextBilling, String? reference, }) { return PaymentMethodOptionsParam91SubscriptionsVariant1(
   interval: interval ?? this.interval,
   intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,
   name: name != null ? name() : this.name,

@@ -29,32 +29,33 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountInvoicesSettingsHostedPaymentMethodSave($value)'; } 
  }
 /// 
-@immutable final class AccountInvoicesSettings {const AccountInvoicesSettings({this.defaultAccountTaxIds, this.hostedPaymentMethodSave, });
+@immutable final class AccountInvoicesSettings {const AccountInvoicesSettings({this.defaultAccountTaxIds = const Omittable.absent(), this.hostedPaymentMethodSave = const Omittable.absent(), });
 
 factory AccountInvoicesSettings.fromJson(Map<String, dynamic> json) { return AccountInvoicesSettings(
-  defaultAccountTaxIds: (json['default_account_tax_ids'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => TaxId.fromJson(v as Map<String, dynamic>),)).toList(),
-  hostedPaymentMethodSave: json['hosted_payment_method_save'] != null ? AccountInvoicesSettingsHostedPaymentMethodSave.fromJson(json['hosted_payment_method_save'] as String) : null,
+  defaultAccountTaxIds: json.containsKey('default_account_tax_ids') ? Omittable((json['default_account_tax_ids'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => TaxId.fromJson(v as Map<String, dynamic>),)).toList()) : const Omittable.absent(),
+  hostedPaymentMethodSave: json.containsKey('hosted_payment_method_save') ? Omittable(json['hosted_payment_method_save'] != null ? AccountInvoicesSettingsHostedPaymentMethodSave.fromJson(json['hosted_payment_method_save'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// The list of default Account Tax IDs to automatically include on invoices. Account Tax IDs get added when an invoice is finalized.
-final List<AccountInvoicesSettingsDefaultAccountTaxIds>? defaultAccountTaxIds;
+final Omittable<List<AccountInvoicesSettingsDefaultAccountTaxIds>?> defaultAccountTaxIds;
 
 /// Whether to save the payment method after a payment is completed for a one-time invoice or a subscription invoice when the customer already has a default payment method on the hosted invoice page.
-final AccountInvoicesSettingsHostedPaymentMethodSave? hostedPaymentMethodSave;
+final Omittable<AccountInvoicesSettingsHostedPaymentMethodSave?> hostedPaymentMethodSave;
 
 Map<String, dynamic> toJson() { return {
-  if (defaultAccountTaxIds != null) 'default_account_tax_ids': defaultAccountTaxIds?.map((e) => e.toJson()).toList(),
-  if (hostedPaymentMethodSave != null) 'hosted_payment_method_save': hostedPaymentMethodSave?.toJson(),
+  if (defaultAccountTaxIds.isPresent) 'default_account_tax_ids': defaultAccountTaxIds.value?.map((e) => e.toJson()).toList(),
+  if (hostedPaymentMethodSave.isPresent) 'hosted_payment_method_save': hostedPaymentMethodSave.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_account_tax_ids', 'hosted_payment_method_save'}.contains(key)); } 
-AccountInvoicesSettings copyWith({List<AccountInvoicesSettingsDefaultAccountTaxIds>? Function()? defaultAccountTaxIds, AccountInvoicesSettingsHostedPaymentMethodSave? Function()? hostedPaymentMethodSave, }) { return AccountInvoicesSettings(
-  defaultAccountTaxIds: defaultAccountTaxIds != null ? defaultAccountTaxIds() : this.defaultAccountTaxIds,
-  hostedPaymentMethodSave: hostedPaymentMethodSave != null ? hostedPaymentMethodSave() : this.hostedPaymentMethodSave,
+AccountInvoicesSettings copyWith({Omittable<List<AccountInvoicesSettingsDefaultAccountTaxIds>?>? defaultAccountTaxIds, Omittable<AccountInvoicesSettingsHostedPaymentMethodSave?>? hostedPaymentMethodSave, }) { return AccountInvoicesSettings(
+  defaultAccountTaxIds: defaultAccountTaxIds ?? this.defaultAccountTaxIds,
+  hostedPaymentMethodSave: hostedPaymentMethodSave ?? this.hostedPaymentMethodSave,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccountInvoicesSettings &&
-          listEquals(defaultAccountTaxIds, other.defaultAccountTaxIds) &&
+          defaultAccountTaxIds.isPresent == other.defaultAccountTaxIds.isPresent &&
+          listEquals(defaultAccountTaxIds.value, other.defaultAccountTaxIds.value) &&
           hostedPaymentMethodSave == other.hostedPaymentMethodSave; } 
-@override int get hashCode { return Object.hash(Object.hashAll(defaultAccountTaxIds ?? const []), hostedPaymentMethodSave); } 
+@override int get hashCode { return Object.hash(Object.hashAll(defaultAccountTaxIds.value ?? const []), hostedPaymentMethodSave); } 
 @override String toString() { return 'AccountInvoicesSettings(defaultAccountTaxIds: $defaultAccountTaxIds, hostedPaymentMethodSave: $hostedPaymentMethodSave)'; } 
  }

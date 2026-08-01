@@ -17,7 +17,7 @@ factory IamCreateResourceGroupScopeScopeObject.fromJson(Map<String, dynamic> jso
 final IamCreateResourceGroupScopeScopeObjectKey? key;
 
 Map<String, dynamic> toJson() { return {
-  if (key != null) 'key': key?.toJson(),
+  'key': key?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key'); } 
 IamCreateResourceGroupScopeScopeObject copyWith({IamCreateResourceGroupScopeScopeObjectKey? Function()? key}) { return IamCreateResourceGroupScopeScopeObject(

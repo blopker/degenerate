@@ -54,16 +54,16 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod($value)'; } 
  }
 /// 
-@immutable final class SetupIntentPaymentMethodOptionsAcssDebit {const SetupIntentPaymentMethodOptionsAcssDebit({this.currency, this.mandateOptions, this.verificationMethod, });
+@immutable final class SetupIntentPaymentMethodOptionsAcssDebit {const SetupIntentPaymentMethodOptionsAcssDebit({this.currency = const Omittable.absent(), this.mandateOptions, this.verificationMethod, });
 
 factory SetupIntentPaymentMethodOptionsAcssDebit.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsAcssDebit(
-  currency: json['currency'] != null ? SetupIntentPaymentMethodOptionsAcssDebitCurrency.fromJson(json['currency'] as String) : null,
+  currency: json.containsKey('currency') ? Omittable(json['currency'] != null ? SetupIntentPaymentMethodOptionsAcssDebitCurrency.fromJson(json['currency'] as String) : null) : const Omittable.absent(),
   mandateOptions: json['mandate_options'] != null ? SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   verificationMethod: json['verification_method'] != null ? SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod.fromJson(json['verification_method'] as String) : null,
 ); }
 
 /// Currency supported by the bank account
-final SetupIntentPaymentMethodOptionsAcssDebitCurrency? currency;
+final Omittable<SetupIntentPaymentMethodOptionsAcssDebitCurrency?> currency;
 
 final SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit? mandateOptions;
 
@@ -71,13 +71,13 @@ final SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit? mandateOptions;
 final SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod? verificationMethod;
 
 Map<String, dynamic> toJson() { return {
-  if (currency != null) 'currency': currency?.toJson(),
+  if (currency.isPresent) 'currency': currency.value?.toJson(),
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency', 'mandate_options', 'verification_method'}.contains(key)); } 
-SetupIntentPaymentMethodOptionsAcssDebit copyWith({SetupIntentPaymentMethodOptionsAcssDebitCurrency? Function()? currency, SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit Function()? mandateOptions, SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod Function()? verificationMethod, }) { return SetupIntentPaymentMethodOptionsAcssDebit(
-  currency: currency != null ? currency() : this.currency,
+SetupIntentPaymentMethodOptionsAcssDebit copyWith({Omittable<SetupIntentPaymentMethodOptionsAcssDebitCurrency?>? currency, SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit? Function()? mandateOptions, SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod? Function()? verificationMethod, }) { return SetupIntentPaymentMethodOptionsAcssDebit(
+  currency: currency ?? this.currency,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
 ); } 

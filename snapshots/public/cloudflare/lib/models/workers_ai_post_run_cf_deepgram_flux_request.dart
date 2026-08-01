@@ -96,7 +96,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('encoding') &&
       json.containsKey('sample_rate') && json['sample_rate'] is String; } 
-WorkersAiPostRunCfDeepgramFluxRequest copyWith({String Function()? eagerEotThreshold, WorkersAiPostRunCfDeepgramFluxRequestEncoding? encoding, String Function()? eotThreshold, String Function()? eotTimeoutMs, String Function()? keyterm, WorkersAiPostRunCfDeepgramFluxRequestMipOptOut Function()? mipOptOut, String? sampleRate, String Function()? tag, }) { return WorkersAiPostRunCfDeepgramFluxRequest(
+WorkersAiPostRunCfDeepgramFluxRequest copyWith({String? Function()? eagerEotThreshold, WorkersAiPostRunCfDeepgramFluxRequestEncoding? encoding, String Function()? eotThreshold, String Function()? eotTimeoutMs, String? Function()? keyterm, WorkersAiPostRunCfDeepgramFluxRequestMipOptOut Function()? mipOptOut, String? sampleRate, String? Function()? tag, }) { return WorkersAiPostRunCfDeepgramFluxRequest(
   eagerEotThreshold: eagerEotThreshold != null ? eagerEotThreshold() : this.eagerEotThreshold,
   encoding: encoding ?? this.encoding,
   eotThreshold: eotThreshold != null ? eotThreshold() : this.eotThreshold,

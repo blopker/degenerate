@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   'query_id': queryId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('query_id') && json['query_id'] is num; } 
-PostEventQueryAlertCreateRequest copyWith({bool Function()? enabled, PostEventQueryAlertCreateRequestFrequency Function()? frequency, String Function()? notificationType, int? queryId, }) { return PostEventQueryAlertCreateRequest(
+PostEventQueryAlertCreateRequest copyWith({bool? Function()? enabled, PostEventQueryAlertCreateRequestFrequency Function()? frequency, String Function()? notificationType, int? queryId, }) { return PostEventQueryAlertCreateRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   frequency: frequency != null ? frequency() : this.frequency,
   notificationType: notificationType != null ? notificationType() : this.notificationType,

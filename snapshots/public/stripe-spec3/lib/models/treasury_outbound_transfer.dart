@@ -61,28 +61,28 @@ bool get isUnknown { return !values.contains(this); }
 /// Simulate OutboundTransfer state changes with the `/v1/test_helpers/treasury/outbound_transfers` endpoints. These methods can only be called on test mode objects.
 /// 
 /// Related guide: [Moving money with Treasury using OutboundTransfer objects](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/out-of/outbound-transfers)
-@immutable final class TreasuryOutboundTransfer {const TreasuryOutboundTransfer({required this.amount, required this.cancelable, required this.created, required this.currency, required this.destinationPaymentMethodDetails, required this.expectedArrivalDate, required this.financialAccount, required this.id, required this.livemode, required this.metadata, required this.object, required this.statementDescriptor, required this.status, required this.statusTransitions, required this.transaction, this.description, this.destinationPaymentMethod, this.hostedRegulatoryReceiptUrl, this.returnedDetails, this.trackingDetails, });
+@immutable final class TreasuryOutboundTransfer {const TreasuryOutboundTransfer({required this.amount, required this.cancelable, required this.created, required this.currency, required this.destinationPaymentMethodDetails, required this.expectedArrivalDate, required this.financialAccount, required this.id, required this.livemode, required this.metadata, required this.object, required this.statementDescriptor, required this.status, required this.statusTransitions, required this.transaction, this.description = const Omittable.absent(), this.destinationPaymentMethod = const Omittable.absent(), this.hostedRegulatoryReceiptUrl = const Omittable.absent(), this.returnedDetails = const Omittable.absent(), this.trackingDetails = const Omittable.absent(), });
 
 factory TreasuryOutboundTransfer.fromJson(Map<String, dynamic> json) { return TreasuryOutboundTransfer(
   amount: (json['amount'] as num).toInt(),
   cancelable: json['cancelable'] as bool,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  description: json['description'] as String?,
-  destinationPaymentMethod: json['destination_payment_method'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
+  destinationPaymentMethod: json.containsKey('destination_payment_method') ? Omittable(json['destination_payment_method'] as String?) : const Omittable.absent(),
   destinationPaymentMethodDetails: OutboundTransfersPaymentMethodDetails.fromJson(json['destination_payment_method_details'] as Map<String, dynamic>),
   expectedArrivalDate: (json['expected_arrival_date'] as num).toInt(),
   financialAccount: json['financial_account'] as String,
-  hostedRegulatoryReceiptUrl: json['hosted_regulatory_receipt_url'] as String?,
+  hostedRegulatoryReceiptUrl: json.containsKey('hosted_regulatory_receipt_url') ? Omittable(json['hosted_regulatory_receipt_url'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: TreasuryOutboundTransferObject.fromJson(json['object'] as String),
-  returnedDetails: json['returned_details'] != null ? TreasuryOutboundTransfersResourceReturnedDetails.fromJson(json['returned_details'] as Map<String, dynamic>) : null,
+  returnedDetails: json.containsKey('returned_details') ? Omittable(json['returned_details'] != null ? TreasuryOutboundTransfersResourceReturnedDetails.fromJson(json['returned_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   statementDescriptor: json['statement_descriptor'] as String,
   status: TreasuryOutboundTransferStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryOutboundTransfersResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
-  trackingDetails: json['tracking_details'] != null ? TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails.fromJson(json['tracking_details'] as Map<String, dynamic>) : null,
+  trackingDetails: json.containsKey('tracking_details') ? Omittable(json['tracking_details'] != null ? TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails.fromJson(json['tracking_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   transaction: OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),),
 ); }
 
@@ -99,10 +99,10 @@ final int created;
 final String currency;
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.
-final String? description;
+final Omittable<String?> description;
 
 /// The PaymentMethod used as the payment instrument for an OutboundTransfer.
-final String? destinationPaymentMethod;
+final Omittable<String?> destinationPaymentMethod;
 
 final OutboundTransfersPaymentMethodDetails destinationPaymentMethodDetails;
 
@@ -113,7 +113,7 @@ final int expectedArrivalDate;
 final String financialAccount;
 
 /// A [hosted transaction receipt](https://docs.stripe.com/treasury/moving-money/regulatory-receipts) URL that is provided when money movement is considered regulated under Stripe's money transmission licenses.
-final String? hostedRegulatoryReceiptUrl;
+final Omittable<String?> hostedRegulatoryReceiptUrl;
 
 /// Unique identifier for the object.
 final String id;
@@ -128,7 +128,7 @@ final Map<String,String> metadata;
 final TreasuryOutboundTransferObject object;
 
 /// Details about a returned OutboundTransfer. Only set when the status is `returned`.
-final TreasuryOutboundTransfersResourceReturnedDetails? returnedDetails;
+final Omittable<TreasuryOutboundTransfersResourceReturnedDetails?> returnedDetails;
 
 /// Information about the OutboundTransfer to be sent to the recipient account.
 final String statementDescriptor;
@@ -139,7 +139,7 @@ final TreasuryOutboundTransferStatus status;
 final TreasuryOutboundTransfersResourceStatusTransitions statusTransitions;
 
 /// Details about network-specific tracking information if available.
-final TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails? trackingDetails;
+final Omittable<TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails?> trackingDetails;
 
 /// The Transaction associated with this object.
 final TreasuryOutboundTransferTransaction transaction;
@@ -149,21 +149,21 @@ Map<String, dynamic> toJson() { return {
   'cancelable': cancelable,
   'created': created,
   'currency': currency,
-  'description': ?description,
-  'destination_payment_method': ?destinationPaymentMethod,
+  if (description.isPresent) 'description': description.value,
+  if (destinationPaymentMethod.isPresent) 'destination_payment_method': destinationPaymentMethod.value,
   'destination_payment_method_details': destinationPaymentMethodDetails.toJson(),
   'expected_arrival_date': expectedArrivalDate,
   'financial_account': financialAccount,
-  'hosted_regulatory_receipt_url': ?hostedRegulatoryReceiptUrl,
+  if (hostedRegulatoryReceiptUrl.isPresent) 'hosted_regulatory_receipt_url': hostedRegulatoryReceiptUrl.value,
   'id': id,
   'livemode': livemode,
   'metadata': metadata,
   'object': object.toJson(),
-  if (returnedDetails != null) 'returned_details': returnedDetails?.toJson(),
+  if (returnedDetails.isPresent) 'returned_details': returnedDetails.value?.toJson(),
   'statement_descriptor': statementDescriptor,
   'status': status.toJson(),
   'status_transitions': statusTransitions.toJson(),
-  if (trackingDetails != null) 'tracking_details': trackingDetails?.toJson(),
+  if (trackingDetails.isPresent) 'tracking_details': trackingDetails.value?.toJson(),
   'transaction': transaction.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
@@ -181,26 +181,26 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status') &&
       json.containsKey('status_transitions') &&
       json.containsKey('transaction'); } 
-TreasuryOutboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, String? Function()? description, String? Function()? destinationPaymentMethod, OutboundTransfersPaymentMethodDetails? destinationPaymentMethodDetails, int? expectedArrivalDate, String? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryOutboundTransferObject? object, TreasuryOutboundTransfersResourceReturnedDetails? Function()? returnedDetails, String? statementDescriptor, TreasuryOutboundTransferStatus? status, TreasuryOutboundTransfersResourceStatusTransitions? statusTransitions, TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails? Function()? trackingDetails, TreasuryOutboundTransferTransaction? transaction, }) { return TreasuryOutboundTransfer(
+TreasuryOutboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, Omittable<String?>? description, Omittable<String?>? destinationPaymentMethod, OutboundTransfersPaymentMethodDetails? destinationPaymentMethodDetails, int? expectedArrivalDate, String? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryOutboundTransferObject? object, Omittable<TreasuryOutboundTransfersResourceReturnedDetails?>? returnedDetails, String? statementDescriptor, TreasuryOutboundTransferStatus? status, TreasuryOutboundTransfersResourceStatusTransitions? statusTransitions, Omittable<TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails?>? trackingDetails, TreasuryOutboundTransferTransaction? transaction, }) { return TreasuryOutboundTransfer(
   amount: amount ?? this.amount,
   cancelable: cancelable ?? this.cancelable,
   created: created ?? this.created,
   currency: currency ?? this.currency,
-  description: description != null ? description() : this.description,
-  destinationPaymentMethod: destinationPaymentMethod != null ? destinationPaymentMethod() : this.destinationPaymentMethod,
+  description: description ?? this.description,
+  destinationPaymentMethod: destinationPaymentMethod ?? this.destinationPaymentMethod,
   destinationPaymentMethodDetails: destinationPaymentMethodDetails ?? this.destinationPaymentMethodDetails,
   expectedArrivalDate: expectedArrivalDate ?? this.expectedArrivalDate,
   financialAccount: financialAccount ?? this.financialAccount,
-  hostedRegulatoryReceiptUrl: hostedRegulatoryReceiptUrl != null ? hostedRegulatoryReceiptUrl() : this.hostedRegulatoryReceiptUrl,
+  hostedRegulatoryReceiptUrl: hostedRegulatoryReceiptUrl ?? this.hostedRegulatoryReceiptUrl,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   metadata: metadata ?? this.metadata,
   object: object ?? this.object,
-  returnedDetails: returnedDetails != null ? returnedDetails() : this.returnedDetails,
+  returnedDetails: returnedDetails ?? this.returnedDetails,
   statementDescriptor: statementDescriptor ?? this.statementDescriptor,
   status: status ?? this.status,
   statusTransitions: statusTransitions ?? this.statusTransitions,
-  trackingDetails: trackingDetails != null ? trackingDetails() : this.trackingDetails,
+  trackingDetails: trackingDetails ?? this.trackingDetails,
   transaction: transaction ?? this.transaction,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

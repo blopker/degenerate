@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'binaryData', 'data', 'immutable', 'kind', 'metadata'}.contains(key)); } 
-ConfigMap copyWith({String Function()? apiVersion, Map<String, Uint8List> Function()? binaryData, Map<String, String> Function()? data, bool Function()? immutable, String Function()? kind, ObjectMeta Function()? metadata, }) { return ConfigMap(
+ConfigMap copyWith({String? Function()? apiVersion, Map<String, Uint8List>? Function()? binaryData, Map<String, String>? Function()? data, bool? Function()? immutable, String? Function()? kind, ObjectMeta? Function()? metadata, }) { return ConfigMap(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   binaryData: binaryData != null ? binaryData() : this.binaryData,
   data: data != null ? data() : this.data,

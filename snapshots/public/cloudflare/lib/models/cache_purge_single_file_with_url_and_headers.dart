@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (files != null) 'files': files?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'files'}.contains(key)); } 
-CachePurgeSingleFileWithUrlAndHeaders copyWith({List<CachePurgeSingleFileWithUrlAndHeadersFiles> Function()? files}) { return CachePurgeSingleFileWithUrlAndHeaders(
+CachePurgeSingleFileWithUrlAndHeaders copyWith({List<CachePurgeSingleFileWithUrlAndHeadersFiles>? Function()? files}) { return CachePurgeSingleFileWithUrlAndHeaders(
   files: files != null ? files() : this.files,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type'}.contains(key)); } 
-MqEventSourceKv copyWith({MqEventSourceKvType Function()? type}) { return MqEventSourceKv(
+MqEventSourceKv copyWith({MqEventSourceKvType? Function()? type}) { return MqEventSourceKv(
   type: type != null ? type() : this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

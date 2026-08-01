@@ -65,13 +65,13 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LineItemsTaxAmountTaxabilityReason($value)'; } 
  }
 /// 
-@immutable final class LineItemsTaxAmount {const LineItemsTaxAmount({required this.amount, required this.rate, this.taxabilityReason, this.taxableAmount, });
+@immutable final class LineItemsTaxAmount {const LineItemsTaxAmount({required this.amount, required this.rate, this.taxabilityReason = const Omittable.absent(), this.taxableAmount = const Omittable.absent(), });
 
 factory LineItemsTaxAmount.fromJson(Map<String, dynamic> json) { return LineItemsTaxAmount(
   amount: (json['amount'] as num).toInt(),
   rate: TaxRate.fromJson(json['rate'] as Map<String, dynamic>),
-  taxabilityReason: json['taxability_reason'] != null ? LineItemsTaxAmountTaxabilityReason.fromJson(json['taxability_reason'] as String) : null,
-  taxableAmount: json['taxable_amount'] != null ? (json['taxable_amount'] as num).toInt() : null,
+  taxabilityReason: json.containsKey('taxability_reason') ? Omittable(json['taxability_reason'] != null ? LineItemsTaxAmountTaxabilityReason.fromJson(json['taxability_reason'] as String) : null) : const Omittable.absent(),
+  taxableAmount: json.containsKey('taxable_amount') ? Omittable(json['taxable_amount'] != null ? (json['taxable_amount'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
 /// Amount of tax applied for this rate.
@@ -80,24 +80,24 @@ final int amount;
 final TaxRate rate;
 
 /// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
-final LineItemsTaxAmountTaxabilityReason? taxabilityReason;
+final Omittable<LineItemsTaxAmountTaxabilityReason?> taxabilityReason;
 
 /// The amount on which tax is calculated, in cents (or local equivalent).
-final int? taxableAmount;
+final Omittable<int?> taxableAmount;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
   'rate': rate.toJson(),
-  if (taxabilityReason != null) 'taxability_reason': taxabilityReason?.toJson(),
-  'taxable_amount': ?taxableAmount,
+  if (taxabilityReason.isPresent) 'taxability_reason': taxabilityReason.value?.toJson(),
+  if (taxableAmount.isPresent) 'taxable_amount': taxableAmount.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('rate'); } 
-LineItemsTaxAmount copyWith({int? amount, TaxRate? rate, LineItemsTaxAmountTaxabilityReason? Function()? taxabilityReason, int? Function()? taxableAmount, }) { return LineItemsTaxAmount(
+LineItemsTaxAmount copyWith({int? amount, TaxRate? rate, Omittable<LineItemsTaxAmountTaxabilityReason?>? taxabilityReason, Omittable<int?>? taxableAmount, }) { return LineItemsTaxAmount(
   amount: amount ?? this.amount,
   rate: rate ?? this.rate,
-  taxabilityReason: taxabilityReason != null ? taxabilityReason() : this.taxabilityReason,
-  taxableAmount: taxableAmount != null ? taxableAmount() : this.taxableAmount,
+  taxabilityReason: taxabilityReason ?? this.taxabilityReason,
+  taxableAmount: taxableAmount ?? this.taxableAmount,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is LineItemsTaxAmount &&

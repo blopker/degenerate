@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_tip', 'card', 'card_present', 'expand', 'interac_present', 'type'}.contains(key)); } 
-PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest copyWith({int Function()? amountTip, PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard Function()? card, PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCardPresent Function()? cardPresent, List<String> Function()? expand, PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent Function()? interacPresent, PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType Function()? type, }) { return PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest(
+PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest copyWith({int? Function()? amountTip, PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard? Function()? card, PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCardPresent? Function()? cardPresent, List<String>? Function()? expand, PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent? Function()? interacPresent, PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType? Function()? type, }) { return PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest(
   amountTip: amountTip != null ? amountTip() : this.amountTip,
   card: card != null ? card() : this.card,
   cardPresent: cardPresent != null ? cardPresent() : this.cardPresent,

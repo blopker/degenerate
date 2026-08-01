@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'verification_method'}.contains(key)); } 
-InvoicePaymentMethodOptionsUsBankAccount copyWith({InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions Function()? financialConnections, InvoicePaymentMethodOptionsUsBankAccountVerificationMethod Function()? verificationMethod, }) { return InvoicePaymentMethodOptionsUsBankAccount(
+InvoicePaymentMethodOptionsUsBankAccount copyWith({InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions? Function()? financialConnections, InvoicePaymentMethodOptionsUsBankAccountVerificationMethod? Function()? verificationMethod, }) { return InvoicePaymentMethodOptionsUsBankAccount(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
 ); } 

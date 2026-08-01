@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'after': ?after,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'after'}.contains(key)); } 
-ShieldAfter copyWith({String Function()? after}) { return ShieldAfter(
+ShieldAfter copyWith({String? Function()? after}) { return ShieldAfter(
   after: after != null ? after() : this.after,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

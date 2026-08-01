@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (resolved != null) 'resolved': resolved?.map((k, v) => MapEntry(k, v.toJson())),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-Manifest copyWith({String? name, ManifestFile Function()? file, Map<String, dynamic> Function()? metadata, Map<String, Dependency> Function()? resolved, }) { return Manifest(
+Manifest copyWith({String? name, ManifestFile? Function()? file, Map<String, dynamic>? Function()? metadata, Map<String, Dependency>? Function()? resolved, }) { return Manifest(
   name: name ?? this.name,
   file: file != null ? file() : this.file,
   metadata: metadata != null ? metadata() : this.metadata,

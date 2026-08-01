@@ -65,7 +65,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-EphemeralKey copyWith({int? created, int? expires, String? id, bool? livemode, EphemeralKeyObject? object, String Function()? secret, }) { return EphemeralKey(
+EphemeralKey copyWith({int? created, int? expires, String? id, bool? livemode, EphemeralKeyObject? object, String? Function()? secret, }) { return EphemeralKey(
   created: created ?? this.created,
   expires: expires ?? this.expires,
   id: id ?? this.id,

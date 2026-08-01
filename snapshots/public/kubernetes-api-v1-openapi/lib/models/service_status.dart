@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (loadBalancer != null) 'loadBalancer': loadBalancer?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'conditions', 'loadBalancer'}.contains(key)); } 
-ServiceStatus copyWith({List<Condition> Function()? conditions, LoadBalancerStatus Function()? loadBalancer, }) { return ServiceStatus(
+ServiceStatus copyWith({List<Condition>? Function()? conditions, LoadBalancerStatus? Function()? loadBalancer, }) { return ServiceStatus(
   conditions: conditions != null ? conditions() : this.conditions,
   loadBalancer: loadBalancer != null ? loadBalancer() : this.loadBalancer,
 ); } 

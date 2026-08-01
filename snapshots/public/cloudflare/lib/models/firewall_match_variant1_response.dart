@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (originTraffic != null) 'origin_traffic': originTraffic?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'origin_traffic'}.contains(key)); } 
-FirewallMatchVariant1Response copyWith({FirewallOriginTraffic Function()? originTraffic}) { return FirewallMatchVariant1Response(
+FirewallMatchVariant1Response copyWith({FirewallOriginTraffic? Function()? originTraffic}) { return FirewallMatchVariant1Response(
   originTraffic: originTraffic != null ? originTraffic() : this.originTraffic,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

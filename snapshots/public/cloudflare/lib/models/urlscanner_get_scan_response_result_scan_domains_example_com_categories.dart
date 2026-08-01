@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (risks != null) 'risks': risks?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('inherited'); } 
-UrlscannerGetScanResponseResultScanDomainsExampleComCategories copyWith({List<UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesContent> Function()? content, UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInherited? inherited, List<UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesRisks> Function()? risks, }) { return UrlscannerGetScanResponseResultScanDomainsExampleComCategories(
+UrlscannerGetScanResponseResultScanDomainsExampleComCategories copyWith({List<UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesContent>? Function()? content, UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInherited? inherited, List<UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesRisks>? Function()? risks, }) { return UrlscannerGetScanResponseResultScanDomainsExampleComCategories(
   content: content != null ? content() : this.content,
   inherited: inherited ?? this.inherited,
   risks: risks != null ? risks() : this.risks,

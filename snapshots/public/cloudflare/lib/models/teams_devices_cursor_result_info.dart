@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// V4 public API Pagination/Cursor info.
-@immutable final class TeamsDevicesCursorResultInfo {const TeamsDevicesCursorResultInfo({required this.count, required this.cursor, required this.perPage, this.totalCount, });
+@immutable final class TeamsDevicesCursorResultInfo {const TeamsDevicesCursorResultInfo({required this.count, required this.cursor, required this.perPage, this.totalCount = const Omittable.absent(), });
 
 factory TeamsDevicesCursorResultInfo.fromJson(Map<String, dynamic> json) { return TeamsDevicesCursorResultInfo(
   count: (json['count'] as num).toInt(),
   cursor: json['cursor'] as String,
   perPage: (json['per_page'] as num).toInt(),
-  totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
+  totalCount: json.containsKey('total_count') ? Omittable(json['total_count'] != null ? (json['total_count'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
 /// Number of records in the response.
@@ -20,22 +20,22 @@ final String cursor;
 final int perPage;
 
 /// Total number of records available.
-final int? totalCount;
+final Omittable<int?> totalCount;
 
 Map<String, dynamic> toJson() { return {
   'count': count,
   'cursor': cursor,
   'per_page': perPage,
-  'total_count': ?totalCount,
+  if (totalCount.isPresent) 'total_count': totalCount.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
       json.containsKey('cursor') && json['cursor'] is String &&
       json.containsKey('per_page') && json['per_page'] is num; } 
-TeamsDevicesCursorResultInfo copyWith({int? count, String? cursor, int? perPage, int? Function()? totalCount, }) { return TeamsDevicesCursorResultInfo(
+TeamsDevicesCursorResultInfo copyWith({int? count, String? cursor, int? perPage, Omittable<int?>? totalCount, }) { return TeamsDevicesCursorResultInfo(
   count: count ?? this.count,
   cursor: cursor ?? this.cursor,
   perPage: perPage ?? this.perPage,
-  totalCount: totalCount != null ? totalCount() : this.totalCount,
+  totalCount: totalCount ?? this.totalCount,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TeamsDevicesCursorResultInfo &&

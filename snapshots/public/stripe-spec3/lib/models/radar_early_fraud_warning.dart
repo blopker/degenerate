@@ -80,7 +80,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-RadarEarlyFraudWarning copyWith({bool? actionable, RadarEarlyFraudWarningCharge? charge, int? created, String? fraudType, String? id, bool? livemode, RadarEarlyFraudWarningObject? object, RadarEarlyFraudWarningPaymentIntent Function()? paymentIntent, }) { return RadarEarlyFraudWarning(
+RadarEarlyFraudWarning copyWith({bool? actionable, RadarEarlyFraudWarningCharge? charge, int? created, String? fraudType, String? id, bool? livemode, RadarEarlyFraudWarningObject? object, RadarEarlyFraudWarningPaymentIntent? Function()? paymentIntent, }) { return RadarEarlyFraudWarning(
   actionable: actionable ?? this.actionable,
   charge: charge ?? this.charge,
   created: created ?? this.created,

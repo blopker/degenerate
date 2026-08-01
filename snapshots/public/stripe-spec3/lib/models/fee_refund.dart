@@ -27,16 +27,16 @@ bool get isUnknown { return !values.contains(this); }
 /// the Stripe account from which the fee was originally collected.
 /// 
 /// Related guide: [Refunding application fees](https://docs.stripe.com/connect/destination-charges#refunding-app-fee)
-@immutable final class FeeRefund {const FeeRefund({required this.amount, required this.created, required this.currency, required this.fee, required this.id, required this.object, this.balanceTransaction, this.metadata, });
+@immutable final class FeeRefund {const FeeRefund({required this.amount, required this.created, required this.currency, required this.fee, required this.id, required this.object, this.balanceTransaction = const Omittable.absent(), this.metadata = const Omittable.absent(), });
 
 factory FeeRefund.fromJson(Map<String, dynamic> json) { return FeeRefund(
   amount: (json['amount'] as num).toInt(),
-  balanceTransaction: json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null,
+  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   fee: OneOf2.parse(json['fee'], fromA: (v) => v as String, fromB: (v) => ApplicationFee.fromJson(v as Map<String, dynamic>),),
   id: json['id'] as String,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   object: FeeRefundObject.fromJson(json['object'] as String),
 ); }
 
@@ -44,7 +44,7 @@ factory FeeRefund.fromJson(Map<String, dynamic> json) { return FeeRefund(
 final int amount;
 
 /// Balance transaction that describes the impact on your account balance.
-final FeeRefundBalanceTransaction? balanceTransaction;
+final Omittable<FeeRefundBalanceTransaction?> balanceTransaction;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -59,19 +59,19 @@ final FeeRefundFee fee;
 final String id;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final FeeRefundObject object;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
-  if (balanceTransaction != null) 'balance_transaction': balanceTransaction?.toJson(),
+  if (balanceTransaction.isPresent) 'balance_transaction': balanceTransaction.value?.toJson(),
   'created': created,
   'currency': currency,
   'fee': fee.toJson(),
   'id': id,
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   'object': object.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
@@ -80,14 +80,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('fee') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
-FeeRefund copyWith({int? amount, FeeRefundBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, FeeRefundFee? fee, String? id, Map<String, String>? Function()? metadata, FeeRefundObject? object, }) { return FeeRefund(
+FeeRefund copyWith({int? amount, Omittable<FeeRefundBalanceTransaction?>? balanceTransaction, int? created, String? currency, FeeRefundFee? fee, String? id, Omittable<Map<String,String>?>? metadata, FeeRefundObject? object, }) { return FeeRefund(
   amount: amount ?? this.amount,
-  balanceTransaction: balanceTransaction != null ? balanceTransaction() : this.balanceTransaction,
+  balanceTransaction: balanceTransaction ?? this.balanceTransaction,
   created: created ?? this.created,
   currency: currency ?? this.currency,
   fee: fee ?? this.fee,
   id: id ?? this.id,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   object: object ?? this.object,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

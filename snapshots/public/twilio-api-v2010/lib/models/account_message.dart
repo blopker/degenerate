@@ -89,133 +89,133 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MessageEnumDirection($value)'; } 
  }
-@immutable final class AccountMessage {const AccountMessage({this.body, this.numSegments, this.direction, this.from, this.to, this.dateUpdated, this.price, this.errorMessage, this.uri, this.accountSid, this.numMedia, this.status, this.messagingServiceSid, this.sid, this.dateSent, this.dateCreated, this.errorCode, this.priceUnit, this.apiVersion, this.subresourceUris, });
+@immutable final class AccountMessage {const AccountMessage({this.body = const Omittable.absent(), this.numSegments = const Omittable.absent(), this.direction, this.from = const Omittable.absent(), this.to = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.price = const Omittable.absent(), this.errorMessage = const Omittable.absent(), this.uri = const Omittable.absent(), this.accountSid = const Omittable.absent(), this.numMedia = const Omittable.absent(), this.status, this.messagingServiceSid = const Omittable.absent(), this.sid = const Omittable.absent(), this.dateSent = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.errorCode = const Omittable.absent(), this.priceUnit = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.subresourceUris = const Omittable.absent(), });
 
 factory AccountMessage.fromJson(Map<String, dynamic> json) { return AccountMessage(
-  body: json['body'] as String?,
-  numSegments: json['num_segments'] as String?,
+  body: json.containsKey('body') ? Omittable(json['body'] as String?) : const Omittable.absent(),
+  numSegments: json.containsKey('num_segments') ? Omittable(json['num_segments'] as String?) : const Omittable.absent(),
   direction: json['direction'] != null ? MessageEnumDirection.fromJson(json['direction'] as String) : null,
-  from: json['from'] as String?,
-  to: json['to'] as String?,
-  dateUpdated: json['date_updated'] as String?,
-  price: json['price'] as String?,
-  errorMessage: json['error_message'] as String?,
-  uri: json['uri'] as String?,
-  accountSid: json['account_sid'] as String?,
-  numMedia: json['num_media'] as String?,
+  from: json.containsKey('from') ? Omittable(json['from'] as String?) : const Omittable.absent(),
+  to: json.containsKey('to') ? Omittable(json['to'] as String?) : const Omittable.absent(),
+  dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
+  price: json.containsKey('price') ? Omittable(json['price'] as String?) : const Omittable.absent(),
+  errorMessage: json.containsKey('error_message') ? Omittable(json['error_message'] as String?) : const Omittable.absent(),
+  uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
+  accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
+  numMedia: json.containsKey('num_media') ? Omittable(json['num_media'] as String?) : const Omittable.absent(),
   status: json['status'] != null ? MessageEnumStatus.fromJson(json['status'] as String) : null,
-  messagingServiceSid: json['messaging_service_sid'] as String?,
-  sid: json['sid'] as String?,
-  dateSent: json['date_sent'] as String?,
-  dateCreated: json['date_created'] as String?,
-  errorCode: json['error_code'] != null ? (json['error_code'] as num).toInt() : null,
-  priceUnit: json['price_unit'] as String?,
-  apiVersion: json['api_version'] as String?,
-  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
+  messagingServiceSid: json.containsKey('messaging_service_sid') ? Omittable(json['messaging_service_sid'] as String?) : const Omittable.absent(),
+  sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
+  dateSent: json.containsKey('date_sent') ? Omittable(json['date_sent'] as String?) : const Omittable.absent(),
+  dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
+  errorCode: json.containsKey('error_code') ? Omittable(json['error_code'] != null ? (json['error_code'] as num).toInt() : null) : const Omittable.absent(),
+  priceUnit: json.containsKey('price_unit') ? Omittable(json['price_unit'] as String?) : const Omittable.absent(),
+  apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
+  subresourceUris: json.containsKey('subresource_uris') ? Omittable(json['subresource_uris'] as Map<String, dynamic>?) : const Omittable.absent(),
 ); }
 
 /// The text content of the message
-final String? body;
+final Omittable<String?> body;
 
 /// The number of segments that make up the complete message. SMS message bodies that exceed the [character limit](https://www.twilio.com/docs/glossary/what-sms-character-limit) are segmented and charged as multiple messages. Note: For messages sent via a Messaging Service, `num_segments` is initially `0`, since a sender hasn't yet been assigned.
-final String? numSegments;
+final Omittable<String?> numSegments;
 
 final MessageEnumDirection? direction;
 
 /// The sender's phone number (in [E.164](https://en.wikipedia.org/wiki/E.164) format), [alphanumeric sender ID](https://www.twilio.com/docs/sms/quickstart), [Wireless SIM](https://www.twilio.com/docs/iot/wireless/programmable-wireless-send-machine-machine-sms-commands), [short code](https://www.twilio.com/en-us/messaging/channels/sms/short-codes), or  [channel address](https://www.twilio.com/docs/messaging/channels) (e.g., `whatsapp:+15554449999`). For incoming messages, this is the number or channel address of the sender. For outgoing messages, this value is a Twilio phone number, alphanumeric sender ID, short code, or channel address from which the message is sent.
-final String? from;
+final Omittable<String?> from;
 
 /// The recipient's phone number (in [E.164](https://en.wikipedia.org/wiki/E.164) format) or [channel address](https://www.twilio.com/docs/messaging/channels) (e.g. `whatsapp:+15552229999`)
-final String? to;
+final Omittable<String?> to;
 
 /// The [RFC 2822](https://datatracker.ietf.org/doc/html/rfc2822#section-3.3) timestamp (in GMT) of when the Message resource was last updated
-final String? dateUpdated;
+final Omittable<String?> dateUpdated;
 
 /// The amount billed for the message in the currency specified by `price_unit`. The `price` is populated after the message has been sent/received, and may not be immediately availalble. View the [Pricing page](https://www.twilio.com/en-us/pricing) for more details.
-final String? price;
+final Omittable<String?> price;
 
 /// The description of the `error_code` if the Message `status` is `failed` or `undelivered`. If no error was encountered, the value is `null`. The value returned in this field for a specific error cause is subject to change as Twilio improves errors. Users should not use the `error_code` and `error_message` fields programmatically.
-final String? errorMessage;
+final Omittable<String?> errorMessage;
 
 /// The URI of the Message resource, relative to `https://api.twilio.com`.
-final String? uri;
+final Omittable<String?> uri;
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) associated with the Message resource
-final String? accountSid;
+final Omittable<String?> accountSid;
 
 /// The number of media files associated with the Message resource.
-final String? numMedia;
+final Omittable<String?> numMedia;
 
 final MessageEnumStatus? status;
 
 /// The SID of the [Messaging Service](https://www.twilio.com/docs/messaging/api/service-resource) associated with the Message resource. A unique default value is assigned if a Messaging Service is not used.
-final String? messagingServiceSid;
+final Omittable<String?> messagingServiceSid;
 
 /// The unique, Twilio-provided string that identifies the Message resource.
-final String? sid;
+final Omittable<String?> sid;
 
 /// The [RFC 2822](https://datatracker.ietf.org/doc/html/rfc2822#section-3.3) timestamp (in GMT) of when the Message was sent. For an outgoing message, this is when Twilio sent the message. For an incoming message, this is when Twilio sent the HTTP request to your incoming message webhook URL.
-final String? dateSent;
+final Omittable<String?> dateSent;
 
 /// The [RFC 2822](https://datatracker.ietf.org/doc/html/rfc2822#section-3.3) timestamp (in GMT) of when the Message resource was created
-final String? dateCreated;
+final Omittable<String?> dateCreated;
 
 /// The [error code](https://www.twilio.com/docs/api/errors) returned if the Message `status` is `failed` or `undelivered`. If no error was encountered, the value is `null`. The value returned in this field for a specific error cause is subject to change as Twilio improves errors. Users should not use the `error_code` and `error_message` fields programmatically.
-final int? errorCode;
+final Omittable<int?> errorCode;
 
 /// The currency in which `price` is measured, in [ISO 4127](https://www.iso.org/iso/home/standards/currency_codes.htm) format (e.g. `usd`, `eur`, `jpy`).
-final String? priceUnit;
+final Omittable<String?> priceUnit;
 
 /// The API version used to process the Message
-final String? apiVersion;
+final Omittable<String?> apiVersion;
 
 /// A list of related resources identified by their URIs relative to `https://api.twilio.com`
-final Map<String,dynamic>? subresourceUris;
+final Omittable<Map<String,dynamic>?> subresourceUris;
 
 Map<String, dynamic> toJson() { return {
-  'body': ?body,
-  'num_segments': ?numSegments,
+  if (body.isPresent) 'body': body.value,
+  if (numSegments.isPresent) 'num_segments': numSegments.value,
   if (direction != null) 'direction': direction?.toJson(),
-  'from': ?from,
-  'to': ?to,
-  'date_updated': ?dateUpdated,
-  'price': ?price,
-  'error_message': ?errorMessage,
-  'uri': ?uri,
-  'account_sid': ?accountSid,
-  'num_media': ?numMedia,
+  if (from.isPresent) 'from': from.value,
+  if (to.isPresent) 'to': to.value,
+  if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
+  if (price.isPresent) 'price': price.value,
+  if (errorMessage.isPresent) 'error_message': errorMessage.value,
+  if (uri.isPresent) 'uri': uri.value,
+  if (accountSid.isPresent) 'account_sid': accountSid.value,
+  if (numMedia.isPresent) 'num_media': numMedia.value,
   if (status != null) 'status': status?.toJson(),
-  'messaging_service_sid': ?messagingServiceSid,
-  'sid': ?sid,
-  'date_sent': ?dateSent,
-  'date_created': ?dateCreated,
-  'error_code': ?errorCode,
-  'price_unit': ?priceUnit,
-  'api_version': ?apiVersion,
-  'subresource_uris': ?subresourceUris,
+  if (messagingServiceSid.isPresent) 'messaging_service_sid': messagingServiceSid.value,
+  if (sid.isPresent) 'sid': sid.value,
+  if (dateSent.isPresent) 'date_sent': dateSent.value,
+  if (dateCreated.isPresent) 'date_created': dateCreated.value,
+  if (errorCode.isPresent) 'error_code': errorCode.value,
+  if (priceUnit.isPresent) 'price_unit': priceUnit.value,
+  if (apiVersion.isPresent) 'api_version': apiVersion.value,
+  if (subresourceUris.isPresent) 'subresource_uris': subresourceUris.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body', 'num_segments', 'direction', 'from', 'to', 'date_updated', 'price', 'error_message', 'uri', 'account_sid', 'num_media', 'status', 'messaging_service_sid', 'sid', 'date_sent', 'date_created', 'error_code', 'price_unit', 'api_version', 'subresource_uris'}.contains(key)); } 
-AccountMessage copyWith({String? Function()? body, String? Function()? numSegments, MessageEnumDirection Function()? direction, String? Function()? from, String? Function()? to, String? Function()? dateUpdated, String? Function()? price, String? Function()? errorMessage, String? Function()? uri, String? Function()? accountSid, String? Function()? numMedia, MessageEnumStatus Function()? status, String? Function()? messagingServiceSid, String? Function()? sid, String? Function()? dateSent, String? Function()? dateCreated, int? Function()? errorCode, String? Function()? priceUnit, String? Function()? apiVersion, Map<String, dynamic>? Function()? subresourceUris, }) { return AccountMessage(
-  body: body != null ? body() : this.body,
-  numSegments: numSegments != null ? numSegments() : this.numSegments,
+AccountMessage copyWith({Omittable<String?>? body, Omittable<String?>? numSegments, MessageEnumDirection? Function()? direction, Omittable<String?>? from, Omittable<String?>? to, Omittable<String?>? dateUpdated, Omittable<String?>? price, Omittable<String?>? errorMessage, Omittable<String?>? uri, Omittable<String?>? accountSid, Omittable<String?>? numMedia, MessageEnumStatus? Function()? status, Omittable<String?>? messagingServiceSid, Omittable<String?>? sid, Omittable<String?>? dateSent, Omittable<String?>? dateCreated, Omittable<int?>? errorCode, Omittable<String?>? priceUnit, Omittable<String?>? apiVersion, Omittable<Map<String,dynamic>?>? subresourceUris, }) { return AccountMessage(
+  body: body ?? this.body,
+  numSegments: numSegments ?? this.numSegments,
   direction: direction != null ? direction() : this.direction,
-  from: from != null ? from() : this.from,
-  to: to != null ? to() : this.to,
-  dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
-  price: price != null ? price() : this.price,
-  errorMessage: errorMessage != null ? errorMessage() : this.errorMessage,
-  uri: uri != null ? uri() : this.uri,
-  accountSid: accountSid != null ? accountSid() : this.accountSid,
-  numMedia: numMedia != null ? numMedia() : this.numMedia,
+  from: from ?? this.from,
+  to: to ?? this.to,
+  dateUpdated: dateUpdated ?? this.dateUpdated,
+  price: price ?? this.price,
+  errorMessage: errorMessage ?? this.errorMessage,
+  uri: uri ?? this.uri,
+  accountSid: accountSid ?? this.accountSid,
+  numMedia: numMedia ?? this.numMedia,
   status: status != null ? status() : this.status,
-  messagingServiceSid: messagingServiceSid != null ? messagingServiceSid() : this.messagingServiceSid,
-  sid: sid != null ? sid() : this.sid,
-  dateSent: dateSent != null ? dateSent() : this.dateSent,
-  dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
-  errorCode: errorCode != null ? errorCode() : this.errorCode,
-  priceUnit: priceUnit != null ? priceUnit() : this.priceUnit,
-  apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
-  subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
+  messagingServiceSid: messagingServiceSid ?? this.messagingServiceSid,
+  sid: sid ?? this.sid,
+  dateSent: dateSent ?? this.dateSent,
+  dateCreated: dateCreated ?? this.dateCreated,
+  errorCode: errorCode ?? this.errorCode,
+  priceUnit: priceUnit ?? this.priceUnit,
+  apiVersion: apiVersion ?? this.apiVersion,
+  subresourceUris: subresourceUris ?? this.subresourceUris,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccountMessage &&

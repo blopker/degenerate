@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (invoiceData != null) 'invoice_data': invoiceData?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostCheckoutSessionsRequestInvoiceCreation copyWith({bool? enabled, PostCheckoutSessionsRequestInvoiceCreationInvoiceData Function()? invoiceData, }) { return PostCheckoutSessionsRequestInvoiceCreation(
+PostCheckoutSessionsRequestInvoiceCreation copyWith({bool? enabled, PostCheckoutSessionsRequestInvoiceCreationInvoiceData? Function()? invoiceData, }) { return PostCheckoutSessionsRequestInvoiceCreation(
   enabled: enabled ?? this.enabled,
   invoiceData: invoiceData != null ? invoiceData() : this.invoiceData,
 ); } 

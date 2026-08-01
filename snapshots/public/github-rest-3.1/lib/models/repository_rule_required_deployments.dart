@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (parameters != null) 'parameters': parameters?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RepositoryRuleRequiredDeployments copyWith({RepositoryRuleRequiredDeploymentsType? type, RepositoryRuleRequiredDeploymentsParameters Function()? parameters, }) { return RepositoryRuleRequiredDeployments(
+RepositoryRuleRequiredDeployments copyWith({RepositoryRuleRequiredDeploymentsType? type, RepositoryRuleRequiredDeploymentsParameters? Function()? parameters, }) { return RepositoryRuleRequiredDeployments(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 

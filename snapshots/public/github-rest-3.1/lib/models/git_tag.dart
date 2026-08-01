@@ -50,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('node_
       json.containsKey('message') && json['message'] is String &&
       json.containsKey('tagger') &&
       json.containsKey('object'); } 
-GitTag copyWith({String? nodeId, String? tag, String? sha, Uri? url, String? message, GitTagTagger? tagger, GitTagObject? object, Verification Function()? verification, }) { return GitTag(
+GitTag copyWith({String? nodeId, String? tag, String? sha, Uri? url, String? message, GitTagTagger? tagger, GitTagObject? object, Verification? Function()? verification, }) { return GitTag(
   nodeId: nodeId ?? this.nodeId,
   tag: tag ?? this.tag,
   sha: sha ?? this.sha,

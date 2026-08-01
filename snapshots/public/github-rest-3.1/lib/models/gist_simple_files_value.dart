@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   'encoding': encoding,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filename', 'type', 'language', 'raw_url', 'size', 'truncated', 'content', 'encoding'}.contains(key)); } 
-GistSimpleFilesValue copyWith({String Function()? filename, String Function()? type, String Function()? language, String Function()? rawUrl, int Function()? size, bool Function()? truncated, String Function()? content, String Function()? encoding, }) { return GistSimpleFilesValue(
+GistSimpleFilesValue copyWith({String? Function()? filename, String? Function()? type, String? Function()? language, String? Function()? rawUrl, int? Function()? size, bool? Function()? truncated, String? Function()? content, String Function()? encoding, }) { return GistSimpleFilesValue(
   filename: filename != null ? filename() : this.filename,
   type: type != null ? type() : this.type,
   language: language != null ? language() : this.language,

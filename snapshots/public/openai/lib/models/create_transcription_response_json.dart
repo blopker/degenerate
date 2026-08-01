@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (usage != null) 'usage': usage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
-CreateTranscriptionResponseJson copyWith({String? text, List<CreateTranscriptionResponseJsonLogprobs> Function()? logprobs, CreateTranscriptionResponseJsonUsage Function()? usage, }) { return CreateTranscriptionResponseJson(
+CreateTranscriptionResponseJson copyWith({String? text, List<CreateTranscriptionResponseJsonLogprobs>? Function()? logprobs, CreateTranscriptionResponseJsonUsage? Function()? usage, }) { return CreateTranscriptionResponseJson(
   text: text ?? this.text,
   logprobs: logprobs != null ? logprobs() : this.logprobs,
   usage: usage != null ? usage() : this.usage,

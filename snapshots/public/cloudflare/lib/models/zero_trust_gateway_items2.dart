@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'description', 'value'}.contains(key)); } 
-ZeroTrustGatewayItems2 copyWith({ZeroTrustGatewayReadOnlyTimestamp Function()? createdAt, ZeroTrustGatewayDescriptionItem Function()? description, ZeroTrustGatewayValue Function()? value, }) { return ZeroTrustGatewayItems2(
+ZeroTrustGatewayItems2 copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayDescriptionItem? Function()? description, ZeroTrustGatewayValue? Function()? value, }) { return ZeroTrustGatewayItems2(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description != null ? description() : this.description,
   value: value != null ? value() : this.value,

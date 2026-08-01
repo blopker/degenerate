@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (fuel != null) 'fuel': fuel?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('final_amount') && json['final_amount'] is num; } 
-PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest copyWith({List<String> Function()? expand, int? finalAmount, PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet Function()? fleet, PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel Function()? fuel, }) { return PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest(
+PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest copyWith({List<String>? Function()? expand, int? finalAmount, PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet? Function()? fleet, PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel? Function()? fuel, }) { return PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest(
   expand: expand != null ? expand() : this.expand,
   finalAmount: finalAmount ?? this.finalAmount,
   fleet: fleet != null ? fleet() : this.fleet,

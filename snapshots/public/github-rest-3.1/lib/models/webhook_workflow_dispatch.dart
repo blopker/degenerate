@@ -31,7 +31,7 @@ final String workflow;
 
 Map<String, dynamic> toJson() { return {
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
-  'inputs': ?inputs,
+  'inputs': inputs,
   if (installation != null) 'installation': installation?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
   'ref': ref,
@@ -44,7 +44,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('input
       json.containsKey('repository') &&
       json.containsKey('sender') &&
       json.containsKey('workflow') && json['workflow'] is String; } 
-WebhookWorkflowDispatch copyWith({EnterpriseWebhooks Function()? enterprise, Map<String, dynamic>? Function()? inputs, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, String? ref, RepositoryWebhooks? repository, SimpleUser? sender, String? workflow, }) { return WebhookWorkflowDispatch(
+WebhookWorkflowDispatch copyWith({EnterpriseWebhooks? Function()? enterprise, Map<String, dynamic>? Function()? inputs, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, String? ref, RepositoryWebhooks? repository, SimpleUser? sender, String? workflow, }) { return WebhookWorkflowDispatch(
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   inputs: inputs != null ? inputs() : this.inputs,
   installation: installation != null ? installation() : this.installation,

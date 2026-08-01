@@ -99,7 +99,7 @@ Map<String, dynamic> toJson() { return {
   'retention_period_minutes': ?retentionPeriodMinutes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('repository_id') && json['repository_id'] is num; } 
-CodespacesCreateForAuthenticatedUserRequestVariant1 copyWith({int? repositoryId, String Function()? ref, String Function()? location, CodespacesCreateForAuthenticatedUserRequestVariant1Geo Function()? geo, String Function()? clientIp, String Function()? machine, String Function()? devcontainerPath, bool Function()? multiRepoPermissionsOptOut, String Function()? workingDirectory, int Function()? idleTimeoutMinutes, String Function()? displayName, int Function()? retentionPeriodMinutes, }) { return CodespacesCreateForAuthenticatedUserRequestVariant1(
+CodespacesCreateForAuthenticatedUserRequestVariant1 copyWith({int? repositoryId, String? Function()? ref, String? Function()? location, CodespacesCreateForAuthenticatedUserRequestVariant1Geo? Function()? geo, String? Function()? clientIp, String? Function()? machine, String? Function()? devcontainerPath, bool? Function()? multiRepoPermissionsOptOut, String? Function()? workingDirectory, int? Function()? idleTimeoutMinutes, String? Function()? displayName, int? Function()? retentionPeriodMinutes, }) { return CodespacesCreateForAuthenticatedUserRequestVariant1(
   repositoryId: repositoryId ?? this.repositoryId,
   ref: ref != null ? ref() : this.ref,
   location: location != null ? location() : this.location,

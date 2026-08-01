@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (tokenSources != null) 'token_sources': tokenSources?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'title', 'token_sources'}.contains(key)); } 
-TokenValidationConfigEditRequest copyWith({ShieldDescription Function()? description, ShieldTitle Function()? title, List<ShieldHeader> Function()? tokenSources, }) { return TokenValidationConfigEditRequest(
+TokenValidationConfigEditRequest copyWith({ShieldDescription? Function()? description, ShieldTitle? Function()? title, List<ShieldHeader>? Function()? tokenSources, }) { return TokenValidationConfigEditRequest(
   description: description != null ? description() : this.description,
   title: title != null ? title() : this.title,
   tokenSources: tokenSources != null ? tokenSources() : this.tokenSources,

@@ -36,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('datas
       json.containsKey('encoding_version') && json['encoding_version'] is num &&
       json.containsKey('max_cells') && json['max_cells'] is num &&
       json.containsKey('version') && json['version'] is num; } 
-DlpDatasetCreation copyWith({DlpDataset? dataset, int? encodingVersion, int? maxCells, String Function()? secret, int? version, }) { return DlpDatasetCreation(
+DlpDatasetCreation copyWith({DlpDataset? dataset, int? encodingVersion, int? maxCells, String? Function()? secret, int? version, }) { return DlpDatasetCreation(
   dataset: dataset ?? this.dataset,
   encodingVersion: encodingVersion ?? this.encodingVersion,
   maxCells: maxCells ?? this.maxCells,

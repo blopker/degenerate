@@ -30,18 +30,18 @@ final Uri? repositoryUrl;
 Map<String, dynamic> toJson() { return {
   'subscribed': subscribed,
   'ignored': ignored,
-  'reason': ?reason,
-  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
+  'reason': reason,
+  'created_at': createdAt?.toIso8601String(),
   'url': url.toString(),
   if (threadUrl != null) 'thread_url': threadUrl?.toString(),
   if (repositoryUrl != null) 'repository_url': repositoryUrl?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('subscribed') && json['subscribed'] is bool &&
       json.containsKey('ignored') && json['ignored'] is bool &&
-      json.containsKey('reason') && json['reason'] is String &&
-      json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('reason') && (json['reason'] == null || json['reason'] is String) &&
+      json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
       json.containsKey('url') && json['url'] is String; } 
-ThreadSubscription copyWith({bool? subscribed, bool? ignored, String? Function()? reason, DateTime? Function()? createdAt, Uri? url, Uri Function()? threadUrl, Uri Function()? repositoryUrl, }) { return ThreadSubscription(
+ThreadSubscription copyWith({bool? subscribed, bool? ignored, String? Function()? reason, DateTime? Function()? createdAt, Uri? url, Uri? Function()? threadUrl, Uri? Function()? repositoryUrl, }) { return ThreadSubscription(
   subscribed: subscribed ?? this.subscribed,
   ignored: ignored ?? this.ignored,
   reason: reason != null ? reason() : this.reason,

@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('messa
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('errors') &&
       json.containsKey('result'); } 
-McnReadAccountResourcesResponse copyWith({List<McnError>? messages, McnResultInfo Function()? resultInfo, bool? success, List<McnError>? errors, List<McnResourceDetails>? result, }) { return McnReadAccountResourcesResponse(
+McnReadAccountResourcesResponse copyWith({List<McnError>? messages, McnResultInfo? Function()? resultInfo, bool? success, List<McnError>? errors, List<McnResourceDetails>? result, }) { return McnReadAccountResourcesResponse(
   messages: messages ?? this.messages,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   success: success ?? this.success,

@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (role != null) 'role': role?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'role'}.contains(key)); } 
-InviteProjects copyWith({String Function()? id, InviteProjectsRole Function()? role, }) { return InviteProjects(
+InviteProjects copyWith({String? Function()? id, InviteProjectsRole? Function()? role, }) { return InviteProjects(
   id: id != null ? id() : this.id,
   role: role != null ? role() : this.role,
 ); } 

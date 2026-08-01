@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
       json.containsKey('label') &&
       json.containsKey('type'); } 
-PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1 copyWith({PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Dropdown Function()? dropdown, String? key, PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Label? label, PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Numeric Function()? numeric, bool Function()? optional, PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Text Function()? text, PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type? type, }) { return PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1(
+PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1 copyWith({PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Dropdown? Function()? dropdown, String? key, PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Label? label, PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Numeric? Function()? numeric, bool? Function()? optional, PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Text? Function()? text, PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type? type, }) { return PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1(
   dropdown: dropdown != null ? dropdown() : this.dropdown,
   key: key ?? this.key,
   label: label ?? this.label,

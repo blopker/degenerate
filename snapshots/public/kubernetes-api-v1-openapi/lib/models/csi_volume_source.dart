@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'volumeAttributes': ?volumeAttributes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('driver') && json['driver'] is String; } 
-CsiVolumeSource copyWith({String? driver, String Function()? fsType, LocalObjectReference Function()? nodePublishSecretRef, bool Function()? readOnly, Map<String, String> Function()? volumeAttributes, }) { return CsiVolumeSource(
+CsiVolumeSource copyWith({String? driver, String? Function()? fsType, LocalObjectReference? Function()? nodePublishSecretRef, bool? Function()? readOnly, Map<String, String>? Function()? volumeAttributes, }) { return CsiVolumeSource(
   driver: driver ?? this.driver,
   fsType: fsType != null ? fsType() : this.fsType,
   nodePublishSecretRef: nodePublishSecretRef != null ? nodePublishSecretRef() : this.nodePublishSecretRef,

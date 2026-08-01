@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') && json['file'] is String; } 
-PostFileLinksRequest copyWith({List<String> Function()? expand, int Function()? expiresAt, String? file, PostFileLinksRequestMetadata Function()? metadata, }) { return PostFileLinksRequest(
+PostFileLinksRequest copyWith({List<String>? Function()? expand, int? Function()? expiresAt, String? file, PostFileLinksRequestMetadata? Function()? metadata, }) { return PostFileLinksRequest(
   expand: expand != null ? expand() : this.expand,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   file: file ?? this.file,

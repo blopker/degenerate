@@ -53,7 +53,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('csr')
       json.containsKey('hostnames') &&
       json.containsKey('request_type') &&
       json.containsKey('requested_validity'); } 
-TlsCertificatesAndHostnamesCertificates copyWith({TlsCertificatesAndHostnamesCertificatesComponentsSchemasCertificate Function()? certificate, TlsCertificatesAndHostnamesCsr? csr, TlsCertificatesAndHostnamesComponentsSchemasExpiresOn Function()? expiresOn, List<String>? hostnames, TlsCertificatesAndHostnamesIdentifier Function()? id, TlsCertificatesAndHostnamesRequestType? requestType, TlsCertificatesAndHostnamesRequestedValidity? requestedValidity, }) { return TlsCertificatesAndHostnamesCertificates(
+TlsCertificatesAndHostnamesCertificates copyWith({TlsCertificatesAndHostnamesCertificatesComponentsSchemasCertificate? Function()? certificate, TlsCertificatesAndHostnamesCsr? csr, TlsCertificatesAndHostnamesComponentsSchemasExpiresOn? Function()? expiresOn, List<String>? hostnames, TlsCertificatesAndHostnamesIdentifier? Function()? id, TlsCertificatesAndHostnamesRequestType? requestType, TlsCertificatesAndHostnamesRequestedValidity? requestedValidity, }) { return TlsCertificatesAndHostnamesCertificates(
   certificate: certificate != null ? certificate() : this.certificate,
   csr: csr ?? this.csr,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,

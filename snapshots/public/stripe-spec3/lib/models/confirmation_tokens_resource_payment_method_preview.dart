@@ -207,7 +207,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ConfirmationTokensResourcePaymentMethodPreviewType($value)'; } 
  }
 /// Details of the PaymentMethod collected by Payment Element
-@immutable final class ConfirmationTokensResourcePaymentMethodPreview {const ConfirmationTokensResourcePaymentMethodPreview({required this.type, required this.billingDetails, this.customerAccount, this.alipay, this.allowRedisplay, this.alma, this.amazonPay, this.auBecsDebit, this.bacsDebit, this.bancontact, this.billie, this.affirm, this.blik, this.boleto, this.card, this.cardPresent, this.cashapp, this.crypto, this.customer, this.acssDebit, this.customerBalance, this.eps, this.fpx, this.giropay, this.grabpay, this.ideal, this.interacPresent, this.kakaoPay, this.klarna, this.konbini, this.krCard, this.link, this.mbWay, this.mobilepay, this.multibanco, this.naverPay, this.nzBankAccount, this.zip, this.p24, this.payByBank, this.payco, this.paynow, this.paypal, this.payto, this.pix, this.promptpay, this.revolutPay, this.samsungPay, this.satispay, this.sepaDebit, this.sofort, this.swish, this.twint, this.afterpayClearpay, this.usBankAccount, this.wechatPay, this.oxxo, });
+@immutable final class ConfirmationTokensResourcePaymentMethodPreview {const ConfirmationTokensResourcePaymentMethodPreview({required this.type, required this.billingDetails, this.customerAccount = const Omittable.absent(), this.alipay, this.allowRedisplay, this.alma, this.amazonPay, this.auBecsDebit, this.bacsDebit, this.bancontact, this.billie, this.affirm, this.blik, this.boleto, this.card, this.cardPresent, this.cashapp, this.crypto, this.customer = const Omittable.absent(), this.acssDebit, this.customerBalance, this.eps, this.fpx, this.giropay, this.grabpay, this.ideal, this.interacPresent, this.kakaoPay, this.klarna, this.konbini, this.krCard, this.link, this.mbWay, this.mobilepay, this.multibanco, this.naverPay, this.nzBankAccount, this.zip, this.p24, this.payByBank, this.payco, this.paynow, this.paypal, this.payto, this.pix, this.promptpay, this.revolutPay, this.samsungPay, this.satispay, this.sepaDebit, this.sofort, this.swish, this.twint, this.afterpayClearpay, this.usBankAccount, this.wechatPay, this.oxxo, });
 
 factory ConfirmationTokensResourcePaymentMethodPreview.fromJson(Map<String, dynamic> json) { return ConfirmationTokensResourcePaymentMethodPreview(
   acssDebit: json['acss_debit'] != null ? PaymentMethodAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
@@ -228,8 +228,8 @@ factory ConfirmationTokensResourcePaymentMethodPreview.fromJson(Map<String, dyna
   cardPresent: json['card_present'] != null ? PaymentMethodCardPresent.fromJson(json['card_present'] as Map<String, dynamic>) : null,
   cashapp: json['cashapp'] != null ? PaymentMethodCashapp.fromJson(json['cashapp'] as Map<String, dynamic>) : null,
   crypto: json['crypto'] != null ? PaymentMethodCrypto.fromJson(json['crypto'] as Map<String, dynamic>) : null,
-  customer: json['customer'] != null ? OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),) : null,
-  customerAccount: json['customer_account'] as String?,
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   customerBalance: json['customer_balance'] != null ? PaymentMethodCustomerBalance.fromJson(json['customer_balance'] as Map<String, dynamic>) : null,
   eps: json['eps'] != null ? PaymentMethodEps.fromJson(json['eps'] as Map<String, dynamic>) : null,
   fpx: json['fpx'] != null ? PaymentMethodFpx.fromJson(json['fpx'] as Map<String, dynamic>) : null,
@@ -307,9 +307,9 @@ final PaymentMethodCashapp? cashapp;
 final PaymentMethodCrypto? crypto;
 
 /// The ID of the Customer to which this PaymentMethod is saved. This will not be set when the PaymentMethod has not been saved to a Customer.
-final ConfirmationTokensResourcePaymentMethodPreviewCustomer? customer;
+final Omittable<ConfirmationTokensResourcePaymentMethodPreviewCustomer?> customer;
 
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 final PaymentMethodCustomerBalance? customerBalance;
 
@@ -405,8 +405,8 @@ Map<String, dynamic> toJson() { return {
   if (cardPresent != null) 'card_present': cardPresent?.toJson(),
   if (cashapp != null) 'cashapp': cashapp?.toJson(),
   if (crypto != null) 'crypto': crypto?.toJson(),
-  if (customer != null) 'customer': customer?.toJson(),
-  'customer_account': ?customerAccount,
+  if (customer.isPresent) 'customer': customer.value?.toJson(),
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   if (customerBalance != null) 'customer_balance': customerBalance?.toJson(),
   if (eps != null) 'eps': eps?.toJson(),
   if (fpx != null) 'fpx': fpx?.toJson(),
@@ -447,7 +447,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_details') &&
       json.containsKey('type'); } 
-ConfirmationTokensResourcePaymentMethodPreview copyWith({PaymentMethodAcssDebit Function()? acssDebit, PaymentMethodAffirm Function()? affirm, PaymentMethodAfterpayClearpay Function()? afterpayClearpay, PaymentFlowsPrivatePaymentMethodsAlipay Function()? alipay, ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay Function()? allowRedisplay, PaymentMethodAlma Function()? alma, PaymentMethodAmazonPay Function()? amazonPay, PaymentMethodAuBecsDebit Function()? auBecsDebit, PaymentMethodBacsDebit Function()? bacsDebit, PaymentMethodBancontact Function()? bancontact, PaymentMethodBillie Function()? billie, BillingDetails? billingDetails, PaymentMethodBlik Function()? blik, PaymentMethodBoleto Function()? boleto, PaymentMethodCard Function()? card, PaymentMethodCardPresent Function()? cardPresent, PaymentMethodCashapp Function()? cashapp, PaymentMethodCrypto Function()? crypto, ConfirmationTokensResourcePaymentMethodPreviewCustomer? Function()? customer, String? Function()? customerAccount, PaymentMethodCustomerBalance Function()? customerBalance, PaymentMethodEps Function()? eps, PaymentMethodFpx Function()? fpx, PaymentMethodGiropay Function()? giropay, PaymentMethodGrabpay Function()? grabpay, PaymentMethodIdeal Function()? ideal, PaymentMethodInteracPresent Function()? interacPresent, PaymentMethodKakaoPay Function()? kakaoPay, PaymentMethodKlarna Function()? klarna, PaymentMethodKonbini Function()? konbini, PaymentMethodKrCard Function()? krCard, PaymentMethodLink Function()? link, PaymentMethodMbWay Function()? mbWay, PaymentMethodMobilepay Function()? mobilepay, PaymentMethodMultibanco Function()? multibanco, PaymentMethodNaverPay Function()? naverPay, PaymentMethodNzBankAccount Function()? nzBankAccount, PaymentMethodOxxo Function()? oxxo, PaymentMethodP24 Function()? p24, PaymentMethodPayByBank Function()? payByBank, PaymentMethodPayco Function()? payco, PaymentMethodPaynow Function()? paynow, PaymentMethodPaypal Function()? paypal, PaymentMethodPayto Function()? payto, PaymentMethodPix Function()? pix, PaymentMethodPromptpay Function()? promptpay, PaymentMethodRevolutPay Function()? revolutPay, PaymentMethodSamsungPay Function()? samsungPay, PaymentMethodSatispay Function()? satispay, PaymentMethodSepaDebit Function()? sepaDebit, PaymentMethodSofort Function()? sofort, PaymentMethodSwish Function()? swish, PaymentMethodTwint Function()? twint, ConfirmationTokensResourcePaymentMethodPreviewType? type, PaymentMethodUsBankAccount Function()? usBankAccount, PaymentMethodWechatPay Function()? wechatPay, PaymentMethodZip Function()? zip, }) { return ConfirmationTokensResourcePaymentMethodPreview(
+ConfirmationTokensResourcePaymentMethodPreview copyWith({PaymentMethodAcssDebit? Function()? acssDebit, PaymentMethodAffirm? Function()? affirm, PaymentMethodAfterpayClearpay? Function()? afterpayClearpay, PaymentFlowsPrivatePaymentMethodsAlipay? Function()? alipay, ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay? Function()? allowRedisplay, PaymentMethodAlma? Function()? alma, PaymentMethodAmazonPay? Function()? amazonPay, PaymentMethodAuBecsDebit? Function()? auBecsDebit, PaymentMethodBacsDebit? Function()? bacsDebit, PaymentMethodBancontact? Function()? bancontact, PaymentMethodBillie? Function()? billie, BillingDetails? billingDetails, PaymentMethodBlik? Function()? blik, PaymentMethodBoleto? Function()? boleto, PaymentMethodCard? Function()? card, PaymentMethodCardPresent? Function()? cardPresent, PaymentMethodCashapp? Function()? cashapp, PaymentMethodCrypto? Function()? crypto, Omittable<ConfirmationTokensResourcePaymentMethodPreviewCustomer?>? customer, Omittable<String?>? customerAccount, PaymentMethodCustomerBalance? Function()? customerBalance, PaymentMethodEps? Function()? eps, PaymentMethodFpx? Function()? fpx, PaymentMethodGiropay? Function()? giropay, PaymentMethodGrabpay? Function()? grabpay, PaymentMethodIdeal? Function()? ideal, PaymentMethodInteracPresent? Function()? interacPresent, PaymentMethodKakaoPay? Function()? kakaoPay, PaymentMethodKlarna? Function()? klarna, PaymentMethodKonbini? Function()? konbini, PaymentMethodKrCard? Function()? krCard, PaymentMethodLink? Function()? link, PaymentMethodMbWay? Function()? mbWay, PaymentMethodMobilepay? Function()? mobilepay, PaymentMethodMultibanco? Function()? multibanco, PaymentMethodNaverPay? Function()? naverPay, PaymentMethodNzBankAccount? Function()? nzBankAccount, PaymentMethodOxxo? Function()? oxxo, PaymentMethodP24? Function()? p24, PaymentMethodPayByBank? Function()? payByBank, PaymentMethodPayco? Function()? payco, PaymentMethodPaynow? Function()? paynow, PaymentMethodPaypal? Function()? paypal, PaymentMethodPayto? Function()? payto, PaymentMethodPix? Function()? pix, PaymentMethodPromptpay? Function()? promptpay, PaymentMethodRevolutPay? Function()? revolutPay, PaymentMethodSamsungPay? Function()? samsungPay, PaymentMethodSatispay? Function()? satispay, PaymentMethodSepaDebit? Function()? sepaDebit, PaymentMethodSofort? Function()? sofort, PaymentMethodSwish? Function()? swish, PaymentMethodTwint? Function()? twint, ConfirmationTokensResourcePaymentMethodPreviewType? type, PaymentMethodUsBankAccount? Function()? usBankAccount, PaymentMethodWechatPay? Function()? wechatPay, PaymentMethodZip? Function()? zip, }) { return ConfirmationTokensResourcePaymentMethodPreview(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   affirm: affirm != null ? affirm() : this.affirm,
   afterpayClearpay: afterpayClearpay != null ? afterpayClearpay() : this.afterpayClearpay,
@@ -466,8 +466,8 @@ ConfirmationTokensResourcePaymentMethodPreview copyWith({PaymentMethodAcssDebit 
   cardPresent: cardPresent != null ? cardPresent() : this.cardPresent,
   cashapp: cashapp != null ? cashapp() : this.cashapp,
   crypto: crypto != null ? crypto() : this.crypto,
-  customer: customer != null ? customer() : this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  customer: customer ?? this.customer,
+  customerAccount: customerAccount ?? this.customerAccount,
   customerBalance: customerBalance != null ? customerBalance() : this.customerBalance,
   eps: eps != null ? eps() : this.eps,
   fpx: fpx != null ? fpx() : this.fpx,

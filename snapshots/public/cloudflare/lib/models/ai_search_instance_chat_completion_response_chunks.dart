@@ -35,7 +35,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('score') && json['score'] is num &&
       json.containsKey('text') && json['text'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-AiSearchInstanceChatCompletionResponseChunks copyWith({String? id, AiSearchInstanceChatCompletionResponseChunksItem Function()? item, double? score, AiSearchInstanceChatCompletionResponseChunksScoringDetails Function()? scoringDetails, String? text, String? type, }) { return AiSearchInstanceChatCompletionResponseChunks(
+AiSearchInstanceChatCompletionResponseChunks copyWith({String? id, AiSearchInstanceChatCompletionResponseChunksItem? Function()? item, double? score, AiSearchInstanceChatCompletionResponseChunksScoringDetails? Function()? scoringDetails, String? text, String? type, }) { return AiSearchInstanceChatCompletionResponseChunks(
   id: id ?? this.id,
   item: item != null ? item() : this.item,
   score: score ?? this.score,

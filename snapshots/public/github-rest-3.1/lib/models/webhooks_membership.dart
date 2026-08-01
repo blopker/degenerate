@@ -37,14 +37,14 @@ Map<String, dynamic> toJson() { return {
   'enterprise_teams_providing_indirect_membership': ?enterpriseTeamsProvidingIndirectMembership,
   'state': state,
   'url': url.toString(),
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('organization_url') && json['organization_url'] is String &&
       json.containsKey('role') && json['role'] is String &&
       json.containsKey('state') && json['state'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhooksMembership copyWith({Uri? organizationUrl, String? role, bool Function()? directMembership, List<String> Function()? enterpriseTeamsProvidingIndirectMembership, String? state, Uri? url, WebhooksMembershipUser? Function()? user, }) { return WebhooksMembership(
+WebhooksMembership copyWith({Uri? organizationUrl, String? role, bool? Function()? directMembership, List<String>? Function()? enterpriseTeamsProvidingIndirectMembership, String? state, Uri? url, WebhooksMembershipUser? Function()? user, }) { return WebhooksMembership(
   organizationUrl: organizationUrl ?? this.organizationUrl,
   role: role ?? this.role,
   directMembership: directMembership != null ? directMembership() : this.directMembership,

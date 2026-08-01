@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   if (subcategories != null) 'subcategories': subcategories?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'beta', 'class', 'description', 'id', 'name', 'subcategories'}.contains(key)); } 
-ZeroTrustGatewayCategories copyWith({ZeroTrustGatewayBeta Function()? beta, ZeroTrustGatewayClass Function()? $class, ZeroTrustGatewayComponentsSchemasDescription Function()? description, ZeroTrustGatewayId Function()? id, ZeroTrustGatewayCategoriesComponentsSchemasName Function()? name, List<ZeroTrustGatewaySubcategory> Function()? subcategories, }) { return ZeroTrustGatewayCategories(
+ZeroTrustGatewayCategories copyWith({ZeroTrustGatewayBeta? Function()? beta, ZeroTrustGatewayClass? Function()? $class, ZeroTrustGatewayComponentsSchemasDescription? Function()? description, ZeroTrustGatewayId? Function()? id, ZeroTrustGatewayCategoriesComponentsSchemasName? Function()? name, List<ZeroTrustGatewaySubcategory>? Function()? subcategories, }) { return ZeroTrustGatewayCategories(
   beta: beta != null ? beta() : this.beta,
   $class: $class != null ? $class() : this.$class,
   description: description != null ? description() : this.description,

@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('resource_id') &&
       json.containsKey('resource_type'); } 
-ResourceTaggingSetTagsRequestAccountLevelBase copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingAccountResourceTypeBaseEnum? resourceType, Map<String, String> Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelBase(
+ResourceTaggingSetTagsRequestAccountLevelBase copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingAccountResourceTypeBaseEnum? resourceType, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelBase(
   resourceId: resourceId ?? this.resourceId,
   resourceType: resourceType ?? this.resourceType,
   tags: tags != null ? tags() : this.tags,

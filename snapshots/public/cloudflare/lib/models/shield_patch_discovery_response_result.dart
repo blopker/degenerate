@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'state'}.contains(key)); } 
-ShieldPatchDiscoveryResponseResult copyWith({DiscoveryState Function()? state}) { return ShieldPatchDiscoveryResponseResult(
+ShieldPatchDiscoveryResponseResult copyWith({DiscoveryState? Function()? state}) { return ShieldPatchDiscoveryResponseResult(
   state: state != null ? state() : this.state,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

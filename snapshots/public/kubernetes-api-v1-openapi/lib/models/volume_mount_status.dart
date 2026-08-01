@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('mountPath') && json['mountPath'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-VolumeMountStatus copyWith({String? mountPath, String? name, bool Function()? readOnly, String Function()? recursiveReadOnly, VolumeStatus Function()? volumeStatus, }) { return VolumeMountStatus(
+VolumeMountStatus copyWith({String? mountPath, String? name, bool? Function()? readOnly, String? Function()? recursiveReadOnly, VolumeStatus? Function()? volumeStatus, }) { return VolumeMountStatus(
   mountPath: mountPath ?? this.mountPath,
   name: name ?? this.name,
   readOnly: readOnly != null ? readOnly() : this.readOnly,

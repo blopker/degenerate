@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   'volumeID': volumeId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('volumeID') && json['volumeID'] is String; } 
-AwsElasticBlockStoreVolumeSource copyWith({String Function()? fsType, int Function()? partition, bool Function()? readOnly, String? volumeId, }) { return AwsElasticBlockStoreVolumeSource(
+AwsElasticBlockStoreVolumeSource copyWith({String? Function()? fsType, int? Function()? partition, bool? Function()? readOnly, String? volumeId, }) { return AwsElasticBlockStoreVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   partition: partition != null ? partition() : this.partition,
   readOnly: readOnly != null ? readOnly() : this.readOnly,

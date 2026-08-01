@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (verification != null) 'verification': verification?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'email_domain', 'enabled', 'id', 'updated_on', 'use_fedramp_language', 'verification'}.contains(key)); } 
-IamSsoConnector copyWith({DateTime Function()? createdOn, String Function()? emailDomain, bool Function()? enabled, IamCommonComponentsSchemasIdentifier Function()? id, DateTime Function()? updatedOn, IamUseFedrampLanguage Function()? useFedrampLanguage, IamSsoConnectorVerificationInfo Function()? verification, }) { return IamSsoConnector(
+IamSsoConnector copyWith({DateTime? Function()? createdOn, String? Function()? emailDomain, bool? Function()? enabled, IamCommonComponentsSchemasIdentifier? Function()? id, DateTime? Function()? updatedOn, IamUseFedrampLanguage? Function()? useFedrampLanguage, IamSsoConnectorVerificationInfo? Function()? verification, }) { return IamSsoConnector(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   emailDomain: emailDomain != null ? emailDomain() : this.emailDomain,
   enabled: enabled != null ? enabled() : this.enabled,

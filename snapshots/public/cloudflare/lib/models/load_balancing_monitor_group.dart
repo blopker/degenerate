@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
       json.containsKey('id') &&
       json.containsKey('members'); } 
-LoadBalancingMonitorGroup copyWith({DateTime Function()? createdAt, String? description, LoadBalancingMonitorGroupId? id, List<LoadBalancingMonitorGroupMember>? members, DateTime Function()? updatedAt, }) { return LoadBalancingMonitorGroup(
+LoadBalancingMonitorGroup copyWith({DateTime? Function()? createdAt, String? description, LoadBalancingMonitorGroupId? id, List<LoadBalancingMonitorGroupMember>? members, DateTime? Function()? updatedAt, }) { return LoadBalancingMonitorGroup(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description ?? this.description,
   id: id ?? this.id,

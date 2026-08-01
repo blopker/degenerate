@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String &&
       json.containsKey('sha') && json['sha'] is String; } 
-WebhookDeploymentCreatedWorkflowRunReferencedWorkflows copyWith({String? path, String Function()? ref, String? sha, }) { return WebhookDeploymentCreatedWorkflowRunReferencedWorkflows(
+WebhookDeploymentCreatedWorkflowRunReferencedWorkflows copyWith({String? path, String? Function()? ref, String? sha, }) { return WebhookDeploymentCreatedWorkflowRunReferencedWorkflows(
   path: path ?? this.path,
   ref: ref != null ? ref() : this.ref,
   sha: sha ?? this.sha,

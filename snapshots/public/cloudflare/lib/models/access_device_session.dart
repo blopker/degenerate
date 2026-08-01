@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'last_authenticated': ?lastAuthenticated,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'last_authenticated'}.contains(key)); } 
-AccessDeviceSession copyWith({double Function()? lastAuthenticated}) { return AccessDeviceSession(
+AccessDeviceSession copyWith({double? Function()? lastAuthenticated}) { return AccessDeviceSession(
   lastAuthenticated: lastAuthenticated != null ? lastAuthenticated() : this.lastAuthenticated,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

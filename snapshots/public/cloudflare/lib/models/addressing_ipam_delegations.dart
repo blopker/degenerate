@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   if (parentPrefixId != null) 'parent_prefix_id': parentPrefixId?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cidr', 'created_at', 'delegated_account_id', 'id', 'modified_at', 'parent_prefix_id'}.contains(key)); } 
-AddressingIpamDelegations copyWith({AddressingCidr Function()? cidr, AddressingTimestamp Function()? createdAt, AddressingDelegatedAccountIdentifier Function()? delegatedAccountId, AddressingDelegationIdentifier Function()? id, AddressingTimestamp Function()? modifiedAt, AddressingPrefixIdentifier Function()? parentPrefixId, }) { return AddressingIpamDelegations(
+AddressingIpamDelegations copyWith({AddressingCidr? Function()? cidr, AddressingTimestamp? Function()? createdAt, AddressingDelegatedAccountIdentifier? Function()? delegatedAccountId, AddressingDelegationIdentifier? Function()? id, AddressingTimestamp? Function()? modifiedAt, AddressingPrefixIdentifier? Function()? parentPrefixId, }) { return AddressingIpamDelegations(
   cidr: cidr != null ? cidr() : this.cidr,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   delegatedAccountId: delegatedAccountId != null ? delegatedAccountId() : this.delegatedAccountId,

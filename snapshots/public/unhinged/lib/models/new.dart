@@ -2,7 +2,9 @@
 
 import 'dart:convert';
 import 'dart:typed_data';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+
 import 'n3_incident.dart';
 
 @immutable
@@ -295,7 +297,7 @@ final class New {
   Map<String, dynamic> toJson() {
     return {
       'false': $false,
-      'none': ?none,
+      'none': none,
       'null': $null.toJson(),
       '0': $0.toJson(),
       '': $empty,
@@ -330,18 +332,18 @@ final class New {
     NewNull? $null,
     New0? $0,
     String? $empty,
-    String Function()? constructor,
-    String Function()? proto,
-    String Function()? hasOwnProperty,
-    NewType Function()? type,
-    String Function()? $ref,
-    String Function()? $id,
-    String Function()? xExtensionLookalike,
-    String Function()? $class,
-    List<$3Incident> Function()? $import,
+    String? Function()? constructor,
+    String? Function()? proto,
+    String? Function()? hasOwnProperty,
+    NewType? Function()? type,
+    String? Function()? $ref,
+    String? Function()? $id,
+    String? Function()? xExtensionLookalike,
+    String? Function()? $class,
+    List<$3Incident>? Function()? $import,
     bool Function()? $return,
-    Uint8List Function()? $void,
-    String Function()? package,
+    Uint8List? Function()? $void,
+    String? Function()? package,
   }) {
     return New(
       $false: $false ?? this.$false,
@@ -387,7 +389,7 @@ final class New {
             $class == other.$class &&
             listEquals($import, other.$import) &&
             $return == other.$return &&
-            $void == other.$void &&
+            listEquals($void, other.$void) &&
             package == other.package;
   }
 
@@ -409,7 +411,7 @@ final class New {
       $class,
       Object.hashAll($import ?? const []),
       $return,
-      $void,
+      Object.hashAll($void ?? const []),
       package,
     );
   }

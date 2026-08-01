@@ -55,7 +55,7 @@ final String text;
 Map<String, dynamic> toJson() { return {
   'finish_reason': finishReason.toJson(),
   'index': index,
-  if (logprobs != null) 'logprobs': logprobs?.toJson(),
+  'logprobs': logprobs?.toJson(),
   'text': text,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('finish_reason') &&

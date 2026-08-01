@@ -941,11 +941,11 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardholderSpendingLimitInterval($value)'; } 
  }
 /// 
-@immutable final class IssuingCardholderSpendingLimit {const IssuingCardholderSpendingLimit({required this.amount, required this.interval, this.categories, });
+@immutable final class IssuingCardholderSpendingLimit {const IssuingCardholderSpendingLimit({required this.amount, required this.interval, this.categories = const Omittable.absent(), });
 
 factory IssuingCardholderSpendingLimit.fromJson(Map<String, dynamic> json) { return IssuingCardholderSpendingLimit(
   amount: (json['amount'] as num).toInt(),
-  categories: (json['categories'] as List<dynamic>?)?.map((e) => IssuingCardholderSpendingLimitCategories.fromJson(e as String)).toList(),
+  categories: json.containsKey('categories') ? Omittable((json['categories'] as List<dynamic>?)?.map((e) => IssuingCardholderSpendingLimitCategories.fromJson(e as String)).toList()) : const Omittable.absent(),
   interval: IssuingCardholderSpendingLimitInterval.fromJson(json['interval'] as String),
 ); }
 
@@ -953,28 +953,29 @@ factory IssuingCardholderSpendingLimit.fromJson(Map<String, dynamic> json) { ret
 final int amount;
 
 /// Array of strings containing [categories](https://docs.stripe.com/api#issuing_authorization_object-merchant_data-category) this limit applies to. Omitting this field will apply the limit to all categories.
-final List<IssuingCardholderSpendingLimitCategories>? categories;
+final Omittable<List<IssuingCardholderSpendingLimitCategories>?> categories;
 
 /// Interval (or event) to which the amount applies.
 final IssuingCardholderSpendingLimitInterval interval;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
-  if (categories != null) 'categories': categories?.map((e) => e.toJson()).toList(),
+  if (categories.isPresent) 'categories': categories.value?.map((e) => e.toJson()).toList(),
   'interval': interval.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('interval'); } 
-IssuingCardholderSpendingLimit copyWith({int? amount, List<IssuingCardholderSpendingLimitCategories>? Function()? categories, IssuingCardholderSpendingLimitInterval? interval, }) { return IssuingCardholderSpendingLimit(
+IssuingCardholderSpendingLimit copyWith({int? amount, Omittable<List<IssuingCardholderSpendingLimitCategories>?>? categories, IssuingCardholderSpendingLimitInterval? interval, }) { return IssuingCardholderSpendingLimit(
   amount: amount ?? this.amount,
-  categories: categories != null ? categories() : this.categories,
+  categories: categories ?? this.categories,
   interval: interval ?? this.interval,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingCardholderSpendingLimit &&
           amount == other.amount &&
-          listEquals(categories, other.categories) &&
+          categories.isPresent == other.categories.isPresent &&
+          listEquals(categories.value, other.categories.value) &&
           interval == other.interval; } 
-@override int get hashCode { return Object.hash(amount, Object.hashAll(categories ?? const []), interval); } 
+@override int get hashCode { return Object.hash(amount, Object.hashAll(categories.value ?? const []), interval); } 
 @override String toString() { return 'IssuingCardholderSpendingLimit(amount: $amount, categories: $categories, interval: $interval)'; } 
  }

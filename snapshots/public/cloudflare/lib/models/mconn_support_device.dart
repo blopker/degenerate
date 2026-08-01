@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('last_updated') && json['last_updated'] is String &&
       json.containsKey('metadata') && json['metadata'] is String; } 
-MconnSupportDevice copyWith({String Function()? cryptKeyRotationFinishedAt, String Function()? cryptKeyRotationStartedAt, double Function()? cryptKeyRotationStatusCode, String Function()? deviceType, String Function()? ekCert, MconnUuid? id, String Function()? imagedAt, String? lastUpdated, String? metadata, String Function()? pkiRotationFinishedAt, String Function()? pkiRotationStartedAt, double Function()? pkiRotationStatusCode, String Function()? serialNumber, }) { return MconnSupportDevice(
+MconnSupportDevice copyWith({String? Function()? cryptKeyRotationFinishedAt, String? Function()? cryptKeyRotationStartedAt, double? Function()? cryptKeyRotationStatusCode, String? Function()? deviceType, String? Function()? ekCert, MconnUuid? id, String? Function()? imagedAt, String? lastUpdated, String? metadata, String? Function()? pkiRotationFinishedAt, String? Function()? pkiRotationStartedAt, double? Function()? pkiRotationStatusCode, String? Function()? serialNumber, }) { return MconnSupportDevice(
   cryptKeyRotationFinishedAt: cryptKeyRotationFinishedAt != null ? cryptKeyRotationFinishedAt() : this.cryptKeyRotationFinishedAt,
   cryptKeyRotationStartedAt: cryptKeyRotationStartedAt != null ? cryptKeyRotationStartedAt() : this.cryptKeyRotationStartedAt,
   cryptKeyRotationStatusCode: cryptKeyRotationStatusCode != null ? cryptKeyRotationStatusCode() : this.cryptKeyRotationStatusCode,

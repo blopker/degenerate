@@ -71,7 +71,7 @@ final SimpleUser? sender;
 
 Map<String, dynamic> toJson() { return {
   'after': after,
-  if (baseRef != null) 'base_ref': baseRef?.toJson(),
+  'base_ref': baseRef?.toJson(),
   'before': before,
   'commits': commits.map((e) => e.toJson()).toList(),
   'compare': compare,
@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   'deleted': deleted,
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'forced': forced,
-  if (headCommit != null) 'head_commit': headCommit?.toJson(),
+  'head_commit': headCommit?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
   'pusher': pusher.toJson(),
@@ -99,7 +99,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('after
       json.containsKey('pusher') &&
       json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('repository'); } 
-WebhookPush copyWith({String? after, WebhooksNullableString? Function()? baseRef, String? before, List<WebhookPushCommits>? commits, String? compare, bool? created, bool? deleted, EnterpriseWebhooks Function()? enterprise, bool? forced, WebhookPushHeadCommit? Function()? headCommit, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhookPushPusher? pusher, String? ref, WebhookPushRepository? repository, SimpleUser Function()? sender, }) { return WebhookPush(
+WebhookPush copyWith({String? after, WebhooksNullableString? Function()? baseRef, String? before, List<WebhookPushCommits>? commits, String? compare, bool? created, bool? deleted, EnterpriseWebhooks? Function()? enterprise, bool? forced, WebhookPushHeadCommit? Function()? headCommit, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookPushPusher? pusher, String? ref, WebhookPushRepository? repository, SimpleUser? Function()? sender, }) { return WebhookPush(
   after: after ?? this.after,
   baseRef: baseRef != null ? baseRef() : this.baseRef,
   before: before ?? this.before,

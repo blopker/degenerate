@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   if (termsOfService != null) 'terms_of_service': termsOfService?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payment_method_reuse_agreement', 'promotions', 'terms_of_service'}.contains(key)); } 
-PostCheckoutSessionsRequestConsentCollection copyWith({PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreement Function()? paymentMethodReuseAgreement, PostCheckoutSessionsRequestConsentCollectionPromotions Function()? promotions, PostCheckoutSessionsRequestConsentCollectionTermsOfService Function()? termsOfService, }) { return PostCheckoutSessionsRequestConsentCollection(
+PostCheckoutSessionsRequestConsentCollection copyWith({PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreement? Function()? paymentMethodReuseAgreement, PostCheckoutSessionsRequestConsentCollectionPromotions? Function()? promotions, PostCheckoutSessionsRequestConsentCollectionTermsOfService? Function()? termsOfService, }) { return PostCheckoutSessionsRequestConsentCollection(
   paymentMethodReuseAgreement: paymentMethodReuseAgreement != null ? paymentMethodReuseAgreement() : this.paymentMethodReuseAgreement,
   promotions: promotions != null ? promotions() : this.promotions,
   termsOfService: termsOfService != null ? termsOfService() : this.termsOfService,

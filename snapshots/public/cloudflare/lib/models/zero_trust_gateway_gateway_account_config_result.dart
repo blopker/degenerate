@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'settings', 'created_at', 'updated_at'}.contains(key)); } 
-ZeroTrustGatewayGatewayAccountConfigResult copyWith({ZeroTrustGatewayGatewayAccountConfigResultSettings Function()? settings, ZeroTrustGatewayReadOnlyTimestamp Function()? createdAt, ZeroTrustGatewayReadOnlyTimestamp Function()? updatedAt, }) { return ZeroTrustGatewayGatewayAccountConfigResult(
+ZeroTrustGatewayGatewayAccountConfigResult copyWith({ZeroTrustGatewayGatewayAccountConfigResultSettings? Function()? settings, ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) { return ZeroTrustGatewayGatewayAccountConfigResult(
   settings: settings != null ? settings() : this.settings,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,

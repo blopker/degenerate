@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpNewDataset {const DlpNewDataset({required this.name, this.caseSensitive, this.description, this.encodingVersion, this.secret, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpNewDataset {const DlpNewDataset({required this.name, this.caseSensitive, this.description = const Omittable.absent(), this.encodingVersion, this.secret, });
 
 factory DlpNewDataset.fromJson(Map<String, dynamic> json) { return DlpNewDataset(
   caseSensitive: json['case_sensitive'] as bool?,
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   encodingVersion: json['encoding_version'] != null ? (json['encoding_version'] as num).toInt() : null,
   name: json['name'] as String,
   secret: json['secret'] as bool?,
@@ -16,7 +16,7 @@ factory DlpNewDataset.fromJson(Map<String, dynamic> json) { return DlpNewDataset
 final bool? caseSensitive;
 
 /// The description of the dataset.
-final String? description;
+final Omittable<String?> description;
 
 /// Dataset encoding version
 /// 
@@ -37,15 +37,15 @@ final bool? secret;
 
 Map<String, dynamic> toJson() { return {
   'case_sensitive': ?caseSensitive,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'encoding_version': ?encodingVersion,
   'name': name,
   'secret': ?secret,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-DlpNewDataset copyWith({bool Function()? caseSensitive, String? Function()? description, int Function()? encodingVersion, String? name, bool Function()? secret, }) { return DlpNewDataset(
+DlpNewDataset copyWith({bool? Function()? caseSensitive, Omittable<String?>? description, int? Function()? encodingVersion, String? name, bool? Function()? secret, }) { return DlpNewDataset(
   caseSensitive: caseSensitive != null ? caseSensitive() : this.caseSensitive,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   encodingVersion: encodingVersion != null ? encodingVersion() : this.encodingVersion,
   name: name ?? this.name,
   secret: secret != null ? secret() : this.secret,

@@ -91,7 +91,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('output') && json['output'] is String; } 
-RealtimeConversationItemFunctionCallOutput copyWith({String Function()? id, RealtimeConversationItemFunctionCallOutputObject Function()? object, String? type, RealtimeConversationItemFunctionCallOutputStatus Function()? status, String? callId, String? output, }) { return RealtimeConversationItemFunctionCallOutput(
+RealtimeConversationItemFunctionCallOutput copyWith({String? Function()? id, RealtimeConversationItemFunctionCallOutputObject? Function()? object, String? type, RealtimeConversationItemFunctionCallOutputStatus? Function()? status, String? callId, String? output, }) { return RealtimeConversationItemFunctionCallOutput(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   type: type ?? this.type,

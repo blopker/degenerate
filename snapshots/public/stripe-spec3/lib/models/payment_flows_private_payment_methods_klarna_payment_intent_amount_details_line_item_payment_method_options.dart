@@ -1,35 +1,35 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions {const PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions({this.imageUrl, this.productUrl, this.reference, this.subscriptionReference, });
+@immutable final class PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions {const PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions({this.imageUrl = const Omittable.absent(), this.productUrl = const Omittable.absent(), this.reference = const Omittable.absent(), this.subscriptionReference = const Omittable.absent(), });
 
 factory PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions(
-  imageUrl: json['image_url'] as String?,
-  productUrl: json['product_url'] as String?,
-  reference: json['reference'] as String?,
-  subscriptionReference: json['subscription_reference'] as String?,
+  imageUrl: json.containsKey('image_url') ? Omittable(json['image_url'] as String?) : const Omittable.absent(),
+  productUrl: json.containsKey('product_url') ? Omittable(json['product_url'] as String?) : const Omittable.absent(),
+  reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
+  subscriptionReference: json.containsKey('subscription_reference') ? Omittable(json['subscription_reference'] as String?) : const Omittable.absent(),
 ); }
 
-final String? imageUrl;
+final Omittable<String?> imageUrl;
 
-final String? productUrl;
+final Omittable<String?> productUrl;
 
-final String? reference;
+final Omittable<String?> reference;
 
-final String? subscriptionReference;
+final Omittable<String?> subscriptionReference;
 
 Map<String, dynamic> toJson() { return {
-  'image_url': ?imageUrl,
-  'product_url': ?productUrl,
-  'reference': ?reference,
-  'subscription_reference': ?subscriptionReference,
+  if (imageUrl.isPresent) 'image_url': imageUrl.value,
+  if (productUrl.isPresent) 'product_url': productUrl.value,
+  if (reference.isPresent) 'reference': reference.value,
+  if (subscriptionReference.isPresent) 'subscription_reference': subscriptionReference.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'image_url', 'product_url', 'reference', 'subscription_reference'}.contains(key)); } 
-PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions copyWith({String? Function()? imageUrl, String? Function()? productUrl, String? Function()? reference, String? Function()? subscriptionReference, }) { return PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions(
-  imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
-  productUrl: productUrl != null ? productUrl() : this.productUrl,
-  reference: reference != null ? reference() : this.reference,
-  subscriptionReference: subscriptionReference != null ? subscriptionReference() : this.subscriptionReference,
+PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions copyWith({Omittable<String?>? imageUrl, Omittable<String?>? productUrl, Omittable<String?>? reference, Omittable<String?>? subscriptionReference, }) { return PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions(
+  imageUrl: imageUrl ?? this.imageUrl,
+  productUrl: productUrl ?? this.productUrl,
+  reference: reference ?? this.reference,
+  subscriptionReference: subscriptionReference ?? this.subscriptionReference,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions &&

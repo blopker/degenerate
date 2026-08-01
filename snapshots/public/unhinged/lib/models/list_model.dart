@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+
 import 'n3_incident.dart';
 
 @immutable
@@ -40,7 +41,7 @@ final class ListModel {
   ListModel copyWith({
     List<$3Incident>? items,
     int? size,
-    Uri Function()? next,
+    Uri? Function()? next,
   }) {
     return ListModel(
       items: items ?? this.items,

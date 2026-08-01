@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (version != null) 'version': version?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'description', 'enabled', 'expression', 'id', 'last_updated', 'version'}.contains(key)); } 
-WaitingroomRuleResult copyWith({WaitingroomRuleAction Function()? action, WaitingroomRuleDescription Function()? description, WaitingroomRuleEnabled Function()? enabled, WaitingroomRuleExpression Function()? expression, WaitingroomRuleId Function()? id, WaitingroomTimestamp Function()? lastUpdated, WaitingroomRuleVersion Function()? version, }) { return WaitingroomRuleResult(
+WaitingroomRuleResult copyWith({WaitingroomRuleAction? Function()? action, WaitingroomRuleDescription? Function()? description, WaitingroomRuleEnabled? Function()? enabled, WaitingroomRuleExpression? Function()? expression, WaitingroomRuleId? Function()? id, WaitingroomTimestamp? Function()? lastUpdated, WaitingroomRuleVersion? Function()? version, }) { return WaitingroomRuleResult(
   action: action != null ? action() : this.action,
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,

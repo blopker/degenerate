@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'sslmode': ?sslmode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ca_certificate_id', 'mtls_certificate_id', 'sslmode'}.contains(key)); } 
-HyperdriveHyperdriveMtls copyWith({String Function()? caCertificateId, String Function()? mtlsCertificateId, String Function()? sslmode, }) { return HyperdriveHyperdriveMtls(
+HyperdriveHyperdriveMtls copyWith({String? Function()? caCertificateId, String? Function()? mtlsCertificateId, String? Function()? sslmode, }) { return HyperdriveHyperdriveMtls(
   caCertificateId: caCertificateId != null ? caCertificateId() : this.caCertificateId,
   mtlsCertificateId: mtlsCertificateId != null ? mtlsCertificateId() : this.mtlsCertificateId,
   sslmode: sslmode != null ? sslmode() : this.sslmode,

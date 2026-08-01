@@ -142,7 +142,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('display_name') && json['display_name'] is String &&
       json.containsKey('inclusive') && json['inclusive'] is bool &&
       json.containsKey('percentage') && json['percentage'] is num; } 
-PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateData copyWith({String Function()? country, String Function()? description, String? displayName, bool? inclusive, String Function()? jurisdiction, PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateDataJurisdictionLevel Function()? jurisdictionLevel, double? percentage, String Function()? state, PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateDataTaxType Function()? taxType, }) { return PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateData(
+PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateData copyWith({String? Function()? country, String? Function()? description, String? displayName, bool? inclusive, String? Function()? jurisdiction, PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateDataJurisdictionLevel? Function()? jurisdictionLevel, double? percentage, String? Function()? state, PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateDataTaxType? Function()? taxType, }) { return PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateData(
   country: country != null ? country() : this.country,
   description: description != null ? description() : this.description,
   displayName: displayName ?? this.displayName,

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (liability != null) 'liability': liability?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostSubscriptionSchedulesScheduleRequestPhasesAutomaticTax copyWith({bool? enabled, PostSubscriptionSchedulesScheduleRequestPhasesAutomaticTaxLiability Function()? liability, }) { return PostSubscriptionSchedulesScheduleRequestPhasesAutomaticTax(
+PostSubscriptionSchedulesScheduleRequestPhasesAutomaticTax copyWith({bool? enabled, PostSubscriptionSchedulesScheduleRequestPhasesAutomaticTaxLiability? Function()? liability, }) { return PostSubscriptionSchedulesScheduleRequestPhasesAutomaticTax(
   enabled: enabled ?? this.enabled,
   liability: liability != null ? liability() : this.liability,
 ); } 

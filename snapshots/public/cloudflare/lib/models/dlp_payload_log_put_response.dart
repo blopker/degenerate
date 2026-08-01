@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-DlpPayloadLogPutResponse copyWith({List<DlpMessages2>? errors, List<DlpMessages2>? messages, bool? success, DlpPayloadLogSetting Function()? result, }) { return DlpPayloadLogPutResponse(
+DlpPayloadLogPutResponse copyWith({List<DlpMessages2>? errors, List<DlpMessages2>? messages, bool? success, DlpPayloadLogSetting? Function()? result, }) { return DlpPayloadLogPutResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

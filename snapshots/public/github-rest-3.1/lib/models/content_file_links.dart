@@ -15,12 +15,12 @@ final Uri? html;
 final Uri self;
 
 Map<String, dynamic> toJson() { return {
-  if (git != null) 'git': git?.toString(),
-  if (html != null) 'html': html?.toString(),
+  'git': git?.toString(),
+  'html': html?.toString(),
   'self': self.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('git') && json['git'] is String &&
-      json.containsKey('html') && json['html'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('git') && (json['git'] == null || json['git'] is String) &&
+      json.containsKey('html') && (json['html'] == null || json['html'] is String) &&
       json.containsKey('self') && json['self'] is String; } 
 ContentFileLinks copyWith({Uri? Function()? git, Uri? Function()? html, Uri? self, }) { return ContentFileLinks(
   git: git != null ? git() : this.git,

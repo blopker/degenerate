@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'rewrite_query': rewriteQuery,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('query') && json['query'] is String; } 
-AutoragConfigSearchRequest copyWith({AutoragConfigSearchRequestFilters Function()? filters, int Function()? maxNumResults, String? query, AutoragConfigSearchRequestRankingOptions Function()? rankingOptions, AutoragConfigSearchRequestReranking Function()? reranking, bool Function()? rewriteQuery, }) { return AutoragConfigSearchRequest(
+AutoragConfigSearchRequest copyWith({AutoragConfigSearchRequestFilters? Function()? filters, int Function()? maxNumResults, String? query, AutoragConfigSearchRequestRankingOptions? Function()? rankingOptions, AutoragConfigSearchRequestReranking? Function()? reranking, bool Function()? rewriteQuery, }) { return AutoragConfigSearchRequest(
   filters: filters != null ? filters() : this.filters,
   maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,
   query: query ?? this.query,

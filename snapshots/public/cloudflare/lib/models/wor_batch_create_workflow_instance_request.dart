@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'params': ?params,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'instance_id', 'instance_retention', 'params'}.contains(key)); } 
-WorBatchCreateWorkflowInstanceRequest copyWith({String Function()? instanceId, WorBatchCreateWorkflowInstanceRequestInstanceRetention Function()? instanceRetention, Map<String, dynamic> Function()? params, }) { return WorBatchCreateWorkflowInstanceRequest(
+WorBatchCreateWorkflowInstanceRequest copyWith({String? Function()? instanceId, WorBatchCreateWorkflowInstanceRequestInstanceRetention? Function()? instanceRetention, Map<String, dynamic>? Function()? params, }) { return WorBatchCreateWorkflowInstanceRequest(
   instanceId: instanceId != null ? instanceId() : this.instanceId,
   instanceRetention: instanceRetention != null ? instanceRetention() : this.instanceRetention,
   params: params != null ? params() : this.params,

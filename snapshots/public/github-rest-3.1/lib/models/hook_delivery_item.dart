@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Delivery made by a webhook, without request and response information.
-@immutable final class HookDeliveryItem {const HookDeliveryItem({required this.id, required this.guid, required this.deliveredAt, required this.redelivery, required this.duration, required this.status, required this.statusCode, required this.event, required this.action, required this.installationId, required this.repositoryId, this.throttledAt, });
+@immutable final class HookDeliveryItem {const HookDeliveryItem({required this.id, required this.guid, required this.deliveredAt, required this.redelivery, required this.duration, required this.status, required this.statusCode, required this.event, required this.action, required this.installationId, required this.repositoryId, this.throttledAt = const Omittable.absent(), });
 
 factory HookDeliveryItem.fromJson(Map<String, dynamic> json) { return HookDeliveryItem(
   id: (json['id'] as num).toInt(),
@@ -15,7 +15,7 @@ factory HookDeliveryItem.fromJson(Map<String, dynamic> json) { return HookDelive
   action: json['action'] as String?,
   installationId: json['installation_id'] != null ? (json['installation_id'] as num).toInt() : null,
   repositoryId: json['repository_id'] != null ? (json['repository_id'] as num).toInt() : null,
-  throttledAt: json['throttled_at'] != null ? DateTime.parse(json['throttled_at'] as String) : null,
+  throttledAt: json.containsKey('throttled_at') ? Omittable(json['throttled_at'] != null ? DateTime.parse(json['throttled_at'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Unique identifier of the webhook delivery.
@@ -52,7 +52,7 @@ final int? installationId;
 final int? repositoryId;
 
 /// Time when the webhook delivery was throttled.
-final DateTime? throttledAt;
+final Omittable<DateTime?> throttledAt;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -63,10 +63,10 @@ Map<String, dynamic> toJson() { return {
   'status': status,
   'status_code': statusCode,
   'event': event,
-  'action': ?action,
-  'installation_id': ?installationId,
-  'repository_id': ?repositoryId,
-  if (throttledAt != null) 'throttled_at': throttledAt?.toIso8601String(),
+  'action': action,
+  'installation_id': installationId,
+  'repository_id': repositoryId,
+  if (throttledAt.isPresent) 'throttled_at': throttledAt.value?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('guid') && json['guid'] is String &&
@@ -76,10 +76,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('status_code') && json['status_code'] is num &&
       json.containsKey('event') && json['event'] is String &&
-      json.containsKey('action') && json['action'] is String &&
-      json.containsKey('installation_id') && json['installation_id'] is num &&
-      json.containsKey('repository_id') && json['repository_id'] is num; } 
-HookDeliveryItem copyWith({int? id, String? guid, DateTime? deliveredAt, bool? redelivery, double? duration, String? status, int? statusCode, String? event, String? Function()? action, int? Function()? installationId, int? Function()? repositoryId, DateTime? Function()? throttledAt, }) { return HookDeliveryItem(
+      json.containsKey('action') && (json['action'] == null || json['action'] is String) &&
+      json.containsKey('installation_id') && (json['installation_id'] == null || json['installation_id'] is num) &&
+      json.containsKey('repository_id') && (json['repository_id'] == null || json['repository_id'] is num); } 
+HookDeliveryItem copyWith({int? id, String? guid, DateTime? deliveredAt, bool? redelivery, double? duration, String? status, int? statusCode, String? event, String? Function()? action, int? Function()? installationId, int? Function()? repositoryId, Omittable<DateTime?>? throttledAt, }) { return HookDeliveryItem(
   id: id ?? this.id,
   guid: guid ?? this.guid,
   deliveredAt: deliveredAt ?? this.deliveredAt,
@@ -91,7 +91,7 @@ HookDeliveryItem copyWith({int? id, String? guid, DateTime? deliveredAt, bool? r
   action: action != null ? action() : this.action,
   installationId: installationId != null ? installationId() : this.installationId,
   repositoryId: repositoryId != null ? repositoryId() : this.repositoryId,
-  throttledAt: throttledAt != null ? throttledAt() : this.throttledAt,
+  throttledAt: throttledAt ?? this.throttledAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is HookDeliveryItem &&

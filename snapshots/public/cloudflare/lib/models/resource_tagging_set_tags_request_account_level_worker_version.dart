@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('resource_id') &&
       json.containsKey('resource_type') &&
       json.containsKey('worker_id'); } 
-ResourceTaggingSetTagsRequestAccountLevelWorkerVersion copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingAccountResourceTypeWorkerVersionEnum? resourceType, ResourceTaggingWorkerId? workerId, Map<String, String> Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelWorkerVersion(
+ResourceTaggingSetTagsRequestAccountLevelWorkerVersion copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingAccountResourceTypeWorkerVersionEnum? resourceType, ResourceTaggingWorkerId? workerId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestAccountLevelWorkerVersion(
   resourceId: resourceId ?? this.resourceId,
   resourceType: resourceType ?? this.resourceType,
   workerId: workerId ?? this.workerId,

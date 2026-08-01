@@ -114,7 +114,7 @@ Map<String, dynamic> toJson() { return {
   if (bank != null) 'bank': bank?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank'}.contains(key)); } 
-PostSetupIntentsIntentRequestPaymentMethodDataEps copyWith({PostSetupIntentsIntentRequestPaymentMethodDataEpsBank Function()? bank}) { return PostSetupIntentsIntentRequestPaymentMethodDataEps(
+PostSetupIntentsIntentRequestPaymentMethodDataEps copyWith({PostSetupIntentsIntentRequestPaymentMethodDataEpsBank? Function()? bank}) { return PostSetupIntentsIntentRequestPaymentMethodDataEps(
   bank: bank != null ? bank() : this.bank,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

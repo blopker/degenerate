@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (event != null) 'event': event?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-PullsDismissReviewRequest copyWith({String? message, PullsDismissReviewRequestEvent Function()? event, }) { return PullsDismissReviewRequest(
+PullsDismissReviewRequest copyWith({String? message, PullsDismissReviewRequestEvent? Function()? event, }) { return PullsDismissReviewRequest(
   message: message ?? this.message,
   event: event != null ? event() : this.event,
 ); } 

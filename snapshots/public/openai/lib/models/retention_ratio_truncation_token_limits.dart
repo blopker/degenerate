@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'post_instructions': ?postInstructions,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'post_instructions'}.contains(key)); } 
-RetentionRatioTruncationTokenLimits copyWith({int Function()? postInstructions}) { return RetentionRatioTruncationTokenLimits(
+RetentionRatioTruncationTokenLimits copyWith({int? Function()? postInstructions}) { return RetentionRatioTruncationTokenLimits(
   postInstructions: postInstructions != null ? postInstructions() : this.postInstructions,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

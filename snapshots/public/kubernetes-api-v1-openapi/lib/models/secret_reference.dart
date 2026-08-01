@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'namespace': ?namespace,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'namespace'}.contains(key)); } 
-SecretReference copyWith({String Function()? name, String Function()? namespace, }) { return SecretReference(
+SecretReference copyWith({String? Function()? name, String? Function()? namespace, }) { return SecretReference(
   name: name != null ? name() : this.name,
   namespace: namespace != null ? namespace() : this.namespace,
 ); } 

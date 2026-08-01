@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'percentComplete', 'status', 'url'}.contains(key)); } 
-StreamDownloads copyWith({StreamDownloadPercentComplete Function()? percentComplete, StreamDownloadStatus Function()? status, StreamDownloadUrl Function()? url, }) { return StreamDownloads(
+StreamDownloads copyWith({StreamDownloadPercentComplete? Function()? percentComplete, StreamDownloadStatus? Function()? status, StreamDownloadUrl? Function()? url, }) { return StreamDownloads(
   percentComplete: percentComplete != null ? percentComplete() : this.percentComplete,
   status: status != null ? status() : this.status,
   url: url != null ? url() : this.url,

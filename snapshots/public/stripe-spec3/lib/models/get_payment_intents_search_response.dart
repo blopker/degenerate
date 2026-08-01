@@ -23,12 +23,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetPaymentIntentsSearchResponseObject($value)'; } 
  }
 /// 
-@immutable final class GetPaymentIntentsSearchResponse {const GetPaymentIntentsSearchResponse({required this.data, required this.hasMore, required this.object, required this.url, this.nextPage, this.totalCount, });
+@immutable final class GetPaymentIntentsSearchResponse {const GetPaymentIntentsSearchResponse({required this.data, required this.hasMore, required this.object, required this.url, this.nextPage = const Omittable.absent(), this.totalCount, });
 
 factory GetPaymentIntentsSearchResponse.fromJson(Map<String, dynamic> json) { return GetPaymentIntentsSearchResponse(
   data: (json['data'] as List<dynamic>).map((e) => PaymentIntent.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  nextPage: json['next_page'] as String?,
+  nextPage: json.containsKey('next_page') ? Omittable(json['next_page'] as String?) : const Omittable.absent(),
   object: GetPaymentIntentsSearchResponseObject.fromJson(json['object'] as String),
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
   url: json['url'] as String,
@@ -38,7 +38,7 @@ final List<PaymentIntent> data;
 
 final bool hasMore;
 
-final String? nextPage;
+final Omittable<String?> nextPage;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final GetPaymentIntentsSearchResponseObject object;
@@ -51,7 +51,7 @@ final String url;
 Map<String, dynamic> toJson() { return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
-  'next_page': ?nextPage,
+  if (nextPage.isPresent) 'next_page': nextPage.value,
   'object': object.toJson(),
   'total_count': ?totalCount,
   'url': url,
@@ -60,10 +60,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-GetPaymentIntentsSearchResponse copyWith({List<PaymentIntent>? data, bool? hasMore, String? Function()? nextPage, GetPaymentIntentsSearchResponseObject? object, int Function()? totalCount, String? url, }) { return GetPaymentIntentsSearchResponse(
+GetPaymentIntentsSearchResponse copyWith({List<PaymentIntent>? data, bool? hasMore, Omittable<String?>? nextPage, GetPaymentIntentsSearchResponseObject? object, int? Function()? totalCount, String? url, }) { return GetPaymentIntentsSearchResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
-  nextPage: nextPage != null ? nextPage() : this.nextPage,
+  nextPage: nextPage ?? this.nextPage,
   object: object ?? this.object,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   url: url ?? this.url,

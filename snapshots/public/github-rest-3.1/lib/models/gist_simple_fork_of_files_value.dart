@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'size': ?size,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filename', 'type', 'language', 'raw_url', 'size'}.contains(key)); } 
-GistSimpleForkOfFilesValue copyWith({String Function()? filename, String Function()? type, String Function()? language, String Function()? rawUrl, int Function()? size, }) { return GistSimpleForkOfFilesValue(
+GistSimpleForkOfFilesValue copyWith({String? Function()? filename, String? Function()? type, String? Function()? language, String? Function()? rawUrl, int? Function()? size, }) { return GistSimpleForkOfFilesValue(
   filename: filename != null ? filename() : this.filename,
   type: type != null ? type() : this.type,
   language: language != null ? language() : this.language,

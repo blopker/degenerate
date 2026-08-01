@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'tax_id': ?taxId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tax_id'}.contains(key)); } 
-PostIssuingCardholdersRequestCompany copyWith({String Function()? taxId}) { return PostIssuingCardholdersRequestCompany(
+PostIssuingCardholdersRequestCompany copyWith({String? Function()? taxId}) { return PostIssuingCardholdersRequestCompany(
   taxId: taxId != null ? taxId() : this.taxId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

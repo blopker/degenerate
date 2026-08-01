@@ -42,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('is_follow_on_request') && json['is_follow_on_request'] is bool &&
       json.containsKey('updated'); } 
-CloudforceOneRequestsRequestMessageItem copyWith({String? author, CloudforceOneRequestsMessageContent? content, CloudforceOneRequestsTime Function()? created, int? id, bool? isFollowOnRequest, CloudforceOneRequestsTime? updated, }) { return CloudforceOneRequestsRequestMessageItem(
+CloudforceOneRequestsRequestMessageItem copyWith({String? author, CloudforceOneRequestsMessageContent? content, CloudforceOneRequestsTime? Function()? created, int? id, bool? isFollowOnRequest, CloudforceOneRequestsTime? updated, }) { return CloudforceOneRequestsRequestMessageItem(
   author: author ?? this.author,
   content: content ?? this.content,
   created: created != null ? created() : this.created,

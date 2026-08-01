@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'trial_period_days': ?trialPeriodDays,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'expand', 'metadata', 'nickname', 'product', 'trial_period_days'}.contains(key)); } 
-PostPlansPlanRequest copyWith({bool Function()? active, List<String> Function()? expand, PostPlansPlanRequestMetadata Function()? metadata, String Function()? nickname, String Function()? product, int Function()? trialPeriodDays, }) { return PostPlansPlanRequest(
+PostPlansPlanRequest copyWith({bool? Function()? active, List<String>? Function()? expand, PostPlansPlanRequestMetadata? Function()? metadata, String? Function()? nickname, String? Function()? product, int? Function()? trialPeriodDays, }) { return PostPlansPlanRequest(
   active: active != null ? active() : this.active,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,

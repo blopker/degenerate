@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'weight': ?weight,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'port', 'priority', 'target', 'weight'}.contains(key)); } 
-DnsRecordsSrvRecordData copyWith({double Function()? port, DnsRecordsPriority Function()? priority, String Function()? target, double Function()? weight, }) { return DnsRecordsSrvRecordData(
+DnsRecordsSrvRecordData copyWith({double? Function()? port, DnsRecordsPriority? Function()? priority, String? Function()? target, double? Function()? weight, }) { return DnsRecordsSrvRecordData(
   port: port != null ? port() : this.port,
   priority: priority != null ? priority() : this.priority,
   target: target != null ? target() : this.target,

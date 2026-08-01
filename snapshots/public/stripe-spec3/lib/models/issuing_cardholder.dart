@@ -111,23 +111,23 @@ bool get isUnknown { return !values.contains(this); }
 /// An Issuing `Cardholder` object represents an individual or business entity who is [issued](https://docs.stripe.com/issuing) cards.
 /// 
 /// Related guide: [How to create a cardholder](https://docs.stripe.com/issuing/cards/virtual/issue-cards#create-cardholder)
-@immutable final class IssuingCardholder {const IssuingCardholder({required this.billing, required this.created, required this.id, required this.livemode, required this.metadata, required this.name, required this.object, required this.requirements, required this.status, required this.type, this.company, this.email, this.individual, this.phoneNumber, this.preferredLocales, this.spendingControls, });
+@immutable final class IssuingCardholder {const IssuingCardholder({required this.billing, required this.created, required this.id, required this.livemode, required this.metadata, required this.name, required this.object, required this.requirements, required this.status, required this.type, this.company = const Omittable.absent(), this.email = const Omittable.absent(), this.individual = const Omittable.absent(), this.phoneNumber = const Omittable.absent(), this.preferredLocales = const Omittable.absent(), this.spendingControls = const Omittable.absent(), });
 
 factory IssuingCardholder.fromJson(Map<String, dynamic> json) { return IssuingCardholder(
   billing: IssuingCardholderAddress.fromJson(json['billing'] as Map<String, dynamic>),
-  company: json['company'] != null ? IssuingCardholderCompany.fromJson(json['company'] as Map<String, dynamic>) : null,
+  company: json.containsKey('company') ? Omittable(json['company'] != null ? IssuingCardholderCompany.fromJson(json['company'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
-  email: json['email'] as String?,
+  email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
-  individual: json['individual'] != null ? IssuingCardholderIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
+  individual: json.containsKey('individual') ? Omittable(json['individual'] != null ? IssuingCardholderIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String,
   object: IssuingCardholderObject.fromJson(json['object'] as String),
-  phoneNumber: json['phone_number'] as String?,
-  preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => IssuingCardholderPreferredLocales.fromJson(e as String)).toList(),
+  phoneNumber: json.containsKey('phone_number') ? Omittable(json['phone_number'] as String?) : const Omittable.absent(),
+  preferredLocales: json.containsKey('preferred_locales') ? Omittable((json['preferred_locales'] as List<dynamic>?)?.map((e) => IssuingCardholderPreferredLocales.fromJson(e as String)).toList()) : const Omittable.absent(),
   requirements: IssuingCardholderRequirements.fromJson(json['requirements'] as Map<String, dynamic>),
-  spendingControls: json['spending_controls'] != null ? IssuingCardholderAuthorizationControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
+  spendingControls: json.containsKey('spending_controls') ? Omittable(json['spending_controls'] != null ? IssuingCardholderAuthorizationControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   status: IssuingCardholderStatus.fromJson(json['status'] as String),
   type: IssuingCardholderType.fromJson(json['type'] as String),
 ); }
@@ -135,19 +135,19 @@ factory IssuingCardholder.fromJson(Map<String, dynamic> json) { return IssuingCa
 final IssuingCardholderAddress billing;
 
 /// Additional information about a `company` cardholder.
-final IssuingCardholderCompany? company;
+final Omittable<IssuingCardholderCompany?> company;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
 
 /// The cardholder's email address.
-final String? email;
+final Omittable<String?> email;
 
 /// Unique identifier for the object.
 final String id;
 
 /// Additional information about an `individual` cardholder.
-final IssuingCardholderIndividual? individual;
+final Omittable<IssuingCardholderIndividual?> individual;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -162,16 +162,16 @@ final String name;
 final IssuingCardholderObject object;
 
 /// The cardholder's phone number. This is required for all cardholders who will be creating EU cards. See the [3D Secure documentation](https://docs.stripe.com/issuing/3d-secure#when-is-3d-secure-applied) for more details.
-final String? phoneNumber;
+final Omittable<String?> phoneNumber;
 
 /// The cardholder’s preferred locales (languages), ordered by preference. Locales can be `de`, `en`, `es`, `fr`, or `it`.
 ///  This changes the language of the [3D Secure flow](https://docs.stripe.com/issuing/3d-secure) and one-time password messages sent to the cardholder.
-final List<IssuingCardholderPreferredLocales>? preferredLocales;
+final Omittable<List<IssuingCardholderPreferredLocales>?> preferredLocales;
 
 final IssuingCardholderRequirements requirements;
 
 /// Rules that control spending across this cardholder's cards. Refer to our [documentation](https://docs.stripe.com/issuing/controls/spending-controls) for more details.
-final IssuingCardholderAuthorizationControls? spendingControls;
+final Omittable<IssuingCardholderAuthorizationControls?> spendingControls;
 
 /// Specifies whether to permit authorizations on this cardholder's cards.
 final IssuingCardholderStatus status;
@@ -181,19 +181,19 @@ final IssuingCardholderType type;
 
 Map<String, dynamic> toJson() { return {
   'billing': billing.toJson(),
-  if (company != null) 'company': company?.toJson(),
+  if (company.isPresent) 'company': company.value?.toJson(),
   'created': created,
-  'email': ?email,
+  if (email.isPresent) 'email': email.value,
   'id': id,
-  if (individual != null) 'individual': individual?.toJson(),
+  if (individual.isPresent) 'individual': individual.value?.toJson(),
   'livemode': livemode,
   'metadata': metadata,
   'name': name,
   'object': object.toJson(),
-  'phone_number': ?phoneNumber,
-  if (preferredLocales != null) 'preferred_locales': preferredLocales?.map((e) => e.toJson()).toList(),
+  if (phoneNumber.isPresent) 'phone_number': phoneNumber.value,
+  if (preferredLocales.isPresent) 'preferred_locales': preferredLocales.value?.map((e) => e.toJson()).toList(),
   'requirements': requirements.toJson(),
-  if (spendingControls != null) 'spending_controls': spendingControls?.toJson(),
+  if (spendingControls.isPresent) 'spending_controls': spendingControls.value?.toJson(),
   'status': status.toJson(),
   'type': type.toJson(),
 }; } 
@@ -207,21 +207,21 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billi
       json.containsKey('requirements') &&
       json.containsKey('status') &&
       json.containsKey('type'); } 
-IssuingCardholder copyWith({IssuingCardholderAddress? billing, IssuingCardholderCompany? Function()? company, int? created, String? Function()? email, String? id, IssuingCardholderIndividual? Function()? individual, bool? livemode, Map<String,String>? metadata, String? name, IssuingCardholderObject? object, String? Function()? phoneNumber, List<IssuingCardholderPreferredLocales>? Function()? preferredLocales, IssuingCardholderRequirements? requirements, IssuingCardholderAuthorizationControls? Function()? spendingControls, IssuingCardholderStatus? status, IssuingCardholderType? type, }) { return IssuingCardholder(
+IssuingCardholder copyWith({IssuingCardholderAddress? billing, Omittable<IssuingCardholderCompany?>? company, int? created, Omittable<String?>? email, String? id, Omittable<IssuingCardholderIndividual?>? individual, bool? livemode, Map<String,String>? metadata, String? name, IssuingCardholderObject? object, Omittable<String?>? phoneNumber, Omittable<List<IssuingCardholderPreferredLocales>?>? preferredLocales, IssuingCardholderRequirements? requirements, Omittable<IssuingCardholderAuthorizationControls?>? spendingControls, IssuingCardholderStatus? status, IssuingCardholderType? type, }) { return IssuingCardholder(
   billing: billing ?? this.billing,
-  company: company != null ? company() : this.company,
+  company: company ?? this.company,
   created: created ?? this.created,
-  email: email != null ? email() : this.email,
+  email: email ?? this.email,
   id: id ?? this.id,
-  individual: individual != null ? individual() : this.individual,
+  individual: individual ?? this.individual,
   livemode: livemode ?? this.livemode,
   metadata: metadata ?? this.metadata,
   name: name ?? this.name,
   object: object ?? this.object,
-  phoneNumber: phoneNumber != null ? phoneNumber() : this.phoneNumber,
-  preferredLocales: preferredLocales != null ? preferredLocales() : this.preferredLocales,
+  phoneNumber: phoneNumber ?? this.phoneNumber,
+  preferredLocales: preferredLocales ?? this.preferredLocales,
   requirements: requirements ?? this.requirements,
-  spendingControls: spendingControls != null ? spendingControls() : this.spendingControls,
+  spendingControls: spendingControls ?? this.spendingControls,
   status: status ?? this.status,
   type: type ?? this.type,
 ); } 
@@ -238,11 +238,12 @@ IssuingCardholder copyWith({IssuingCardholderAddress? billing, IssuingCardholder
           name == other.name &&
           object == other.object &&
           phoneNumber == other.phoneNumber &&
-          listEquals(preferredLocales, other.preferredLocales) &&
+          preferredLocales.isPresent == other.preferredLocales.isPresent &&
+          listEquals(preferredLocales.value, other.preferredLocales.value) &&
           requirements == other.requirements &&
           spendingControls == other.spendingControls &&
           status == other.status &&
           type == other.type; } 
-@override int get hashCode { return Object.hash(billing, company, created, email, id, individual, livemode, metadata, name, object, phoneNumber, Object.hashAll(preferredLocales ?? const []), requirements, spendingControls, status, type); } 
+@override int get hashCode { return Object.hash(billing, company, created, email, id, individual, livemode, metadata, name, object, phoneNumber, Object.hashAll(preferredLocales.value ?? const []), requirements, spendingControls, status, type); } 
 @override String toString() { return 'IssuingCardholder(billing: $billing, company: $company, created: $created, email: $email, id: $id, individual: $individual, livemode: $livemode, metadata: $metadata, name: $name, object: $object, phoneNumber: $phoneNumber, preferredLocales: $preferredLocales, requirements: $requirements, spendingControls: $spendingControls, status: $status, type: $type)'; } 
  }

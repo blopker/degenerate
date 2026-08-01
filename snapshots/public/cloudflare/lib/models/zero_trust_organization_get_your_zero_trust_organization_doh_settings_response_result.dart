@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'doh_jwt_duration': ?dohJwtDuration,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'doh_jwt_duration'}.contains(key)); } 
-ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult copyWith({String Function()? dohJwtDuration}) { return ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult(
+ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult copyWith({String? Function()? dohJwtDuration}) { return ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult(
   dohJwtDuration: dohJwtDuration != null ? dohJwtDuration() : this.dohJwtDuration,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

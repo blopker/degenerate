@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (method != null) 'Method': method?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('Callback') && json['Callback'] is String; } 
-CreateUserDefinedMessageSubscriptionRequest copyWith({Uri? callback, String Function()? idempotencyKey, CreateUserDefinedMessageSubscriptionRequestMethod Function()? method, }) { return CreateUserDefinedMessageSubscriptionRequest(
+CreateUserDefinedMessageSubscriptionRequest copyWith({Uri? callback, String? Function()? idempotencyKey, CreateUserDefinedMessageSubscriptionRequestMethod? Function()? method, }) { return CreateUserDefinedMessageSubscriptionRequest(
   callback: callback ?? this.callback,
   idempotencyKey: idempotencyKey != null ? idempotencyKey() : this.idempotencyKey,
   method: method != null ? method() : this.method,

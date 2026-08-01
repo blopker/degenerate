@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'quantity': ?quantity,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems copyWith({String? id, String Function()? price, int Function()? quantity, }) { return PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems(
+PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems copyWith({String? id, String? Function()? price, int? Function()? quantity, }) { return PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems(
   id: id ?? this.id,
   price: price != null ? price() : this.price,
   quantity: quantity != null ? quantity() : this.quantity,

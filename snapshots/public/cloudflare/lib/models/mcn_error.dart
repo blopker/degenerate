@@ -512,7 +512,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
       json.containsKey('message') && json['message'] is String; } 
-McnError copyWith({McnErrorCode? code, String Function()? documentationUrl, String? message, McnErrorMeta Function()? meta, McnErrorSource Function()? source, }) { return McnError(
+McnError copyWith({McnErrorCode? code, String? Function()? documentationUrl, String? message, McnErrorMeta? Function()? meta, McnErrorSource? Function()? source, }) { return McnError(
   code: code ?? this.code,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
   message: message ?? this.message,

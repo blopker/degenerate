@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'slug', 'name'}.contains(key)); } 
-RuleSuiteRequiredStatusChecksChecksApp copyWith({int Function()? id, String Function()? slug, String Function()? name, }) { return RuleSuiteRequiredStatusChecksChecksApp(
+RuleSuiteRequiredStatusChecksChecksApp copyWith({int? Function()? id, String? Function()? slug, String? Function()? name, }) { return RuleSuiteRequiredStatusChecksChecksApp(
   id: id != null ? id() : this.id,
   slug: slug != null ? slug() : this.slug,
   name: name != null ? name() : this.name,

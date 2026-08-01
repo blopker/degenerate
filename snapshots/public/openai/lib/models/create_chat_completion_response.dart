@@ -23,14 +23,14 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateChatCompletionResponseObject($value)'; } 
  }
 /// Represents a chat completion response returned by model, based on the provided input.
-@immutable final class CreateChatCompletionResponse {const CreateChatCompletionResponse({required this.id, required this.choices, required this.created, required this.model, required this.object, this.serviceTier, this.systemFingerprint, this.usage, });
+@immutable final class CreateChatCompletionResponse {const CreateChatCompletionResponse({required this.id, required this.choices, required this.created, required this.model, required this.object, this.serviceTier = const Omittable.absent(), this.systemFingerprint, this.usage, });
 
 factory CreateChatCompletionResponse.fromJson(Map<String, dynamic> json) { return CreateChatCompletionResponse(
   id: json['id'] as String,
   choices: (json['choices'] as List<dynamic>).map((e) => CreateChatCompletionResponseChoices.fromJson(e as Map<String, dynamic>)).toList(),
   created: (json['created'] as num).toInt(),
   model: json['model'] as String,
-  serviceTier: json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null,
+  serviceTier: json.containsKey('service_tier') ? Omittable(json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null) : const Omittable.absent(),
   systemFingerprint: json['system_fingerprint'] as String?,
   object: CreateChatCompletionResponseObject.fromJson(json['object'] as String),
   usage: json['usage'] != null ? CompletionUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
@@ -48,7 +48,7 @@ final int created;
 /// The model used for the chat completion.
 final String model;
 
-final ServiceTier? serviceTier;
+final Omittable<ServiceTier?> serviceTier;
 
 /// This fingerprint represents the backend configuration that the model runs with.
 /// 
@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   'choices': choices.map((e) => e.toJson()).toList(),
   'created': created,
   'model': model,
-  if (serviceTier != null) 'service_tier': serviceTier?.toJson(),
+  if (serviceTier.isPresent) 'service_tier': serviceTier.value?.toJson(),
   'system_fingerprint': ?systemFingerprint,
   'object': object.toJson(),
   if (usage != null) 'usage': usage?.toJson(),
@@ -76,12 +76,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('object'); } 
-CreateChatCompletionResponse copyWith({String? id, List<CreateChatCompletionResponseChoices>? choices, int? created, String? model, ServiceTier? Function()? serviceTier, String Function()? systemFingerprint, CreateChatCompletionResponseObject? object, CompletionUsage Function()? usage, }) { return CreateChatCompletionResponse(
+CreateChatCompletionResponse copyWith({String? id, List<CreateChatCompletionResponseChoices>? choices, int? created, String? model, Omittable<ServiceTier?>? serviceTier, String? Function()? systemFingerprint, CreateChatCompletionResponseObject? object, CompletionUsage? Function()? usage, }) { return CreateChatCompletionResponse(
   id: id ?? this.id,
   choices: choices ?? this.choices,
   created: created ?? this.created,
   model: model ?? this.model,
-  serviceTier: serviceTier != null ? serviceTier() : this.serviceTier,
+  serviceTier: serviceTier ?? this.serviceTier,
   systemFingerprint: systemFingerprint != null ? systemFingerprint() : this.systemFingerprint,
   object: object ?? this.object,
   usage: usage != null ? usage() : this.usage,

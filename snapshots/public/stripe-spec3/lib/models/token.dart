@@ -42,12 +42,12 @@ bool get isUnknown { return !values.contains(this); }
 /// objects or [External accounts](/api#external_accounts).
 /// [Radar](https://docs.stripe.com/radar), our integrated solution for automatic fraud protection,
 /// performs best with integrations that use client-side tokenization.
-@immutable final class Token {const Token({required this.created, required this.id, required this.livemode, required this.object, required this.type, required this.used, this.bankAccount, this.card, this.clientIp, });
+@immutable final class Token {const Token({required this.created, required this.id, required this.livemode, required this.object, required this.type, required this.used, this.bankAccount, this.card, this.clientIp = const Omittable.absent(), });
 
 factory Token.fromJson(Map<String, dynamic> json) { return Token(
   bankAccount: json['bank_account'] != null ? BankAccount.fromJson(json['bank_account'] as Map<String, dynamic>) : null,
   card: json['card'] != null ? Card.fromJson(json['card'] as Map<String, dynamic>) : null,
-  clientIp: json['client_ip'] as String?,
+  clientIp: json.containsKey('client_ip') ? Omittable(json['client_ip'] as String?) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
@@ -61,7 +61,7 @@ final BankAccount? bankAccount;
 final Card? card;
 
 /// IP address of the client that generates the token.
-final String? clientIp;
+final Omittable<String?> clientIp;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -84,7 +84,7 @@ final bool used;
 Map<String, dynamic> toJson() { return {
   if (bankAccount != null) 'bank_account': bankAccount?.toJson(),
   if (card != null) 'card': card?.toJson(),
-  'client_ip': ?clientIp,
+  if (clientIp.isPresent) 'client_ip': clientIp.value,
   'created': created,
   'id': id,
   'livemode': livemode,
@@ -98,10 +98,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('used') && json['used'] is bool; } 
-Token copyWith({BankAccount Function()? bankAccount, Card Function()? card, String? Function()? clientIp, int? created, String? id, bool? livemode, TokenObject? object, String? type, bool? used, }) { return Token(
+Token copyWith({BankAccount? Function()? bankAccount, Card? Function()? card, Omittable<String?>? clientIp, int? created, String? id, bool? livemode, TokenObject? object, String? type, bool? used, }) { return Token(
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
   card: card != null ? card() : this.card,
-  clientIp: clientIp != null ? clientIp() : this.clientIp,
+  clientIp: clientIp ?? this.clientIp,
   created: created ?? this.created,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,

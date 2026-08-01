@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (schemaInfo != null) 'schema_info': schemaInfo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'schema_info'}.contains(key)); } 
-ShieldOperationFeatureSchemaInfo copyWith({ShieldOperationFeatureSchemaInfoSchemaInfo Function()? schemaInfo}) { return ShieldOperationFeatureSchemaInfo(
+ShieldOperationFeatureSchemaInfo copyWith({ShieldOperationFeatureSchemaInfoSchemaInfo? Function()? schemaInfo}) { return ShieldOperationFeatureSchemaInfo(
   schemaInfo: schemaInfo != null ? schemaInfo() : this.schemaInfo,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

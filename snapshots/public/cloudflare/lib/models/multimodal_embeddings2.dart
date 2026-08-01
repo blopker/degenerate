@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'shape': ?shape,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'shape'}.contains(key)); } 
-MultimodalEmbeddings2 copyWith({List<List<double>> Function()? data, List<double> Function()? shape, }) { return MultimodalEmbeddings2(
+MultimodalEmbeddings2 copyWith({List<List<double>>? Function()? data, List<double>? Function()? shape, }) { return MultimodalEmbeddings2(
   data: data != null ? data() : this.data,
   shape: shape != null ? shape() : this.shape,
 ); } 

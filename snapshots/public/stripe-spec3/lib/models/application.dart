@@ -23,11 +23,11 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ApplicationObject($value)'; } 
  }
 /// 
-@immutable final class Application {const Application({required this.id, required this.object, this.name, });
+@immutable final class Application {const Application({required this.id, required this.object, this.name = const Omittable.absent(), });
 
 factory Application.fromJson(Map<String, dynamic> json) { return Application(
   id: json['id'] as String,
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   object: ApplicationObject.fromJson(json['object'] as String),
 ); }
 
@@ -35,21 +35,21 @@ factory Application.fromJson(Map<String, dynamic> json) { return Application(
 final String id;
 
 /// The name of the application.
-final String? name;
+final Omittable<String?> name;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final ApplicationObject object;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
   'object': object.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
-Application copyWith({String? id, String? Function()? name, ApplicationObject? object, }) { return Application(
+Application copyWith({String? id, Omittable<String?>? name, ApplicationObject? object, }) { return Application(
   id: id ?? this.id,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
   object: object ?? this.object,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

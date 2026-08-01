@@ -31,16 +31,16 @@ final String updatedAt;
 final Uri url;
 
 Map<String, dynamic> toJson() { return {
-  'commit': ?commit,
+  'commit': commit,
   'created_at': createdAt,
   'duration': duration,
   'error': error.toJson(),
-  if (pusher != null) 'pusher': pusher?.toJson(),
+  'pusher': pusher?.toJson(),
   'status': status,
   'updated_at': updatedAt,
   'url': url.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('commit') && json['commit'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('commit') && (json['commit'] == null || json['commit'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('duration') && json['duration'] is num &&
       json.containsKey('error') &&

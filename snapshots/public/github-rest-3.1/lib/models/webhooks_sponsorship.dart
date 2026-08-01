@@ -32,8 +32,8 @@ Map<String, dynamic> toJson() { return {
   if (maintainer != null) 'maintainer': maintainer?.toJson(),
   'node_id': nodeId,
   'privacy_level': privacyLevel,
-  if (sponsor != null) 'sponsor': sponsor?.toJson(),
-  if (sponsorable != null) 'sponsorable': sponsorable?.toJson(),
+  'sponsor': sponsor?.toJson(),
+  'sponsorable': sponsorable?.toJson(),
   'tier': tier.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
@@ -42,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('sponsor') &&
       json.containsKey('sponsorable') &&
       json.containsKey('tier'); } 
-WebhooksSponsorship copyWith({String? createdAt, WebhooksSponsorshipMaintainer Function()? maintainer, String? nodeId, String? privacyLevel, WebhooksSponsorshipSponsor? Function()? sponsor, WebhooksSponsorshipSponsorable? Function()? sponsorable, WebhooksSponsorshipTier? tier, }) { return WebhooksSponsorship(
+WebhooksSponsorship copyWith({String? createdAt, WebhooksSponsorshipMaintainer? Function()? maintainer, String? nodeId, String? privacyLevel, WebhooksSponsorshipSponsor? Function()? sponsor, WebhooksSponsorshipSponsorable? Function()? sponsorable, WebhooksSponsorshipTier? tier, }) { return WebhooksSponsorship(
   createdAt: createdAt ?? this.createdAt,
   maintainer: maintainer != null ? maintainer() : this.maintainer,
   nodeId: nodeId ?? this.nodeId,

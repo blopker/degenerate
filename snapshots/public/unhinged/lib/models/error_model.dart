@@ -52,7 +52,7 @@ final class ErrorModel {
     String? code,
     String? message,
     bool Function()? isYourFault,
-    ErrorModel Function()? error,
+    ErrorModel? Function()? error,
   }) {
     return ErrorModel(
       code: code ?? this.code,

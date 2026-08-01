@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
   'tfvc_project': ?tfvcProject,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'vcs_username', 'vcs_password', 'vcs', 'tfvc_project'}.contains(key)); } 
-MigrationsUpdateImportRequest copyWith({String Function()? vcsUsername, String Function()? vcsPassword, MigrationsUpdateImportRequestVcs Function()? vcs, String Function()? tfvcProject, }) { return MigrationsUpdateImportRequest(
+MigrationsUpdateImportRequest copyWith({String? Function()? vcsUsername, String? Function()? vcsPassword, MigrationsUpdateImportRequestVcs? Function()? vcs, String? Function()? tfvcProject, }) { return MigrationsUpdateImportRequest(
   vcsUsername: vcsUsername != null ? vcsUsername() : this.vcsUsername,
   vcsPassword: vcsPassword != null ? vcsPassword() : this.vcsPassword,
   vcs: vcs != null ? vcs() : this.vcs,

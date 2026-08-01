@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   if (time != null) 'time': time?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'fieldsType', 'fieldsV1', 'manager', 'operation', 'subresource', 'time'}.contains(key)); } 
-ManagedFieldsEntry copyWith({String Function()? apiVersion, String Function()? fieldsType, Map<String, dynamic> Function()? fieldsV1, String Function()? manager, String Function()? operation, String Function()? subresource, Time Function()? time, }) { return ManagedFieldsEntry(
+ManagedFieldsEntry copyWith({String? Function()? apiVersion, String? Function()? fieldsType, Map<String, dynamic>? Function()? fieldsV1, String? Function()? manager, String? Function()? operation, String? Function()? subresource, Time? Function()? time, }) { return ManagedFieldsEntry(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   fieldsType: fieldsType != null ? fieldsType() : this.fieldsType,
   fieldsV1: fieldsV1 != null ? fieldsV1() : this.fieldsV1,

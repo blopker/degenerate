@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (sni != null) 'sni': sni?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'host_header', 'origin', 'sni'}.contains(key)); } 
-RulesetsRouteRuleActionParameters copyWith({RulesetsRouteHostHeader Function()? hostHeader, RulesetsRouteOrigin Function()? origin, RulesetsRouteSni Function()? sni, }) { return RulesetsRouteRuleActionParameters(
+RulesetsRouteRuleActionParameters copyWith({RulesetsRouteHostHeader? Function()? hostHeader, RulesetsRouteOrigin? Function()? origin, RulesetsRouteSni? Function()? sni, }) { return RulesetsRouteRuleActionParameters(
   hostHeader: hostHeader != null ? hostHeader() : this.hostHeader,
   origin: origin != null ? origin() : this.origin,
   sni: sni != null ? sni() : this.sni,

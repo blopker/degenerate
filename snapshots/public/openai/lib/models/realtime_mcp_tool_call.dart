@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_mcp_protocol_error.dart';import 'realtime_mcp_tool_call_error.dart';import 'realtime_mcp_tool_execution_error.dart';import 'realtime_mcphttp_error.dart';/// A Realtime item representing an invocation of a tool on an MCP server.
 /// 
-@immutable final class RealtimeMcpToolCall {const RealtimeMcpToolCall({required this.type, required this.id, required this.serverLabel, required this.name, required this.arguments, this.approvalRequestId, this.output, this.error, });
+@immutable final class RealtimeMcpToolCall {const RealtimeMcpToolCall({required this.type, required this.id, required this.serverLabel, required this.name, required this.arguments, this.approvalRequestId = const Omittable.absent(), this.output = const Omittable.absent(), this.error = const Omittable.absent(), });
 
 factory RealtimeMcpToolCall.fromJson(Map<String, dynamic> json) { return RealtimeMcpToolCall(
   type: json['type'] as String,
@@ -10,9 +10,9 @@ factory RealtimeMcpToolCall.fromJson(Map<String, dynamic> json) { return Realtim
   serverLabel: json['server_label'] as String,
   name: json['name'] as String,
   arguments: json['arguments'] as String,
-  approvalRequestId: json['approval_request_id'] as String?,
-  output: json['output'] as String?,
-  error: json['error'] != null ? OneOf3.parse(json['error'], fromA: (v) => RealtimeMcpProtocolError.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeMcpToolExecutionError.fromJson(v as Map<String, dynamic>), fromC: (v) => RealtimeMcphttpError.fromJson(v as Map<String, dynamic>),) : null,
+  approvalRequestId: json.containsKey('approval_request_id') ? Omittable(json['approval_request_id'] as String?) : const Omittable.absent(),
+  output: json.containsKey('output') ? Omittable(json['output'] as String?) : const Omittable.absent(),
+  error: json.containsKey('error') ? Omittable(json['error'] != null ? OneOf3.parse(json['error'], fromA: (v) => RealtimeMcpProtocolError.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeMcpToolExecutionError.fromJson(v as Map<String, dynamic>), fromC: (v) => RealtimeMcphttpError.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
 ); }
 
 /// The type of the item. Always `mcp_call`.
@@ -31,13 +31,13 @@ final String name;
 final String arguments;
 
 /// The ID of an associated approval request, if any.
-final String? approvalRequestId;
+final Omittable<String?> approvalRequestId;
 
 /// The output from the tool call.
-final String? output;
+final Omittable<String?> output;
 
 /// The error from the tool call, if any.
-final RealtimeMcpToolCallError? error;
+final Omittable<RealtimeMcpToolCallError?> error;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
@@ -45,24 +45,24 @@ Map<String, dynamic> toJson() { return {
   'server_label': serverLabel,
   'name': name,
   'arguments': arguments,
-  'approval_request_id': ?approvalRequestId,
-  'output': ?output,
-  if (error != null) 'error': error?.toJson(),
+  if (approvalRequestId.isPresent) 'approval_request_id': approvalRequestId.value,
+  if (output.isPresent) 'output': output.value,
+  if (error.isPresent) 'error': error.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('server_label') && json['server_label'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('arguments') && json['arguments'] is String; } 
-RealtimeMcpToolCall copyWith({String? type, String? id, String? serverLabel, String? name, String? arguments, String? Function()? approvalRequestId, String? Function()? output, RealtimeMcpToolCallError? Function()? error, }) { return RealtimeMcpToolCall(
+RealtimeMcpToolCall copyWith({String? type, String? id, String? serverLabel, String? name, String? arguments, Omittable<String?>? approvalRequestId, Omittable<String?>? output, Omittable<RealtimeMcpToolCallError?>? error, }) { return RealtimeMcpToolCall(
   type: type ?? this.type,
   id: id ?? this.id,
   serverLabel: serverLabel ?? this.serverLabel,
   name: name ?? this.name,
   arguments: arguments ?? this.arguments,
-  approvalRequestId: approvalRequestId != null ? approvalRequestId() : this.approvalRequestId,
-  output: output != null ? output() : this.output,
-  error: error != null ? error() : this.error,
+  approvalRequestId: approvalRequestId ?? this.approvalRequestId,
+  output: output ?? this.output,
+  error: error ?? this.error,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RealtimeMcpToolCall &&

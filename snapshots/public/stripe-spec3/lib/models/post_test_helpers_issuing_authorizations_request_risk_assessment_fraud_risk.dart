@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'score': ?score,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('level'); } 
-PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk copyWith({PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel? level, double Function()? score, }) { return PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk(
+PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk copyWith({PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel? level, double? Function()? score, }) { return PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk(
   level: level ?? this.level,
   score: score != null ? score() : this.score,
 ); } 

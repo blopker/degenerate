@@ -56,7 +56,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias
       json.containsKey('provider_slug') && json['provider_slug'] is String &&
       json.containsKey('secret_id') && json['secret_id'] is String &&
       json.containsKey('secret_preview') && json['secret_preview'] is String; } 
-AigConfigCreateProvidersResponseResult copyWith({String? alias, bool? defaultConfig, String? gatewayId, String? id, DateTime? modifiedAt, String? providerSlug, double Function()? rateLimit, double Function()? rateLimitPeriod, String? secretId, String? secretPreview, }) { return AigConfigCreateProvidersResponseResult(
+AigConfigCreateProvidersResponseResult copyWith({String? alias, bool? defaultConfig, String? gatewayId, String? id, DateTime? modifiedAt, String? providerSlug, double? Function()? rateLimit, double Function()? rateLimitPeriod, String? secretId, String? secretPreview, }) { return AigConfigCreateProvidersResponseResult(
   alias: alias ?? this.alias,
   defaultConfig: defaultConfig ?? this.defaultConfig,
   gatewayId: gatewayId ?? this.gatewayId,

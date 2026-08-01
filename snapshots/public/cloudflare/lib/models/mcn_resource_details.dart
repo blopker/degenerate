@@ -111,7 +111,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('tags') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-McnResourceDetails copyWith({McnAccountId? accountId, McnCloudType? cloudType, Map<String,dynamic>? config, McnProviderId? deploymentProvider, McnResourceId? id, bool? managed, List<McnCloudPlatformClient> Function()? managedBy, McnCost? monthlyCostEstimate, String? name, String? nativeId, Map<String,McnObservation>? observations, List<McnProviderId>? providerIds, Map<String,String>? providerNamesById, String? region, String? resourceGroup, McnResourceType? resourceType, List<McnResourceDetailsSection>? sections, Map<String,dynamic>? state, Map<String,String>? tags, String? updatedAt, String? url, }) { return McnResourceDetails(
+McnResourceDetails copyWith({McnAccountId? accountId, McnCloudType? cloudType, Map<String,dynamic>? config, McnProviderId? deploymentProvider, McnResourceId? id, bool? managed, List<McnCloudPlatformClient>? Function()? managedBy, McnCost? monthlyCostEstimate, String? name, String? nativeId, Map<String,McnObservation>? observations, List<McnProviderId>? providerIds, Map<String,String>? providerNamesById, String? region, String? resourceGroup, McnResourceType? resourceType, List<McnResourceDetailsSection>? sections, Map<String,dynamic>? state, Map<String,String>? tags, String? updatedAt, String? url, }) { return McnResourceDetails(
   accountId: accountId ?? this.accountId,
   cloudType: cloudType ?? this.cloudType,
   config: config ?? this.config,

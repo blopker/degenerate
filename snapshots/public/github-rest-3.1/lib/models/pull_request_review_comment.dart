@@ -79,7 +79,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PullRequestReviewCommentSubjectType($value)'; } 
  }
 /// Pull Request Review Comments are comments on a portion of the Pull Request's diff.
-@immutable final class PullRequestReviewComment {const PullRequestReviewComment({required this.url, required this.pullRequestReviewId, required this.id, required this.nodeId, required this.diffHunk, required this.path, required this.commitId, required this.originalCommitId, required this.user, required this.body, required this.createdAt, required this.updatedAt, required this.htmlUrl, required this.pullRequestUrl, required this.authorAssociation, required this.links, this.position, this.originalPosition, this.inReplyToId, this.startLine, this.originalStartLine, this.startSide = PullRequestReviewCommentStartSide.right, this.line, this.originalLine, this.side = PullRequestReviewCommentSide.right, this.subjectType, this.reactions, this.bodyHtml, this.bodyText, });
+@immutable final class PullRequestReviewComment {const PullRequestReviewComment({required this.url, required this.pullRequestReviewId, required this.id, required this.nodeId, required this.diffHunk, required this.path, required this.commitId, required this.originalCommitId, required this.user, required this.body, required this.createdAt, required this.updatedAt, required this.htmlUrl, required this.pullRequestUrl, required this.authorAssociation, required this.links, this.position, this.originalPosition, this.inReplyToId, this.startLine = const Omittable.absent(), this.originalStartLine = const Omittable.absent(), this.startSide = PullRequestReviewCommentStartSide.right, this.line, this.originalLine, this.side = PullRequestReviewCommentSide.right, this.subjectType, this.reactions, this.bodyHtml, this.bodyText, });
 
 factory PullRequestReviewComment.fromJson(Map<String, dynamic> json) { return PullRequestReviewComment(
   url: json['url'] as String,
@@ -101,8 +101,8 @@ factory PullRequestReviewComment.fromJson(Map<String, dynamic> json) { return Pu
   pullRequestUrl: Uri.parse(json['pull_request_url'] as String),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   links: PullRequestReviewCommentLinks.fromJson(json['_links'] as Map<String, dynamic>),
-  startLine: json['start_line'] != null ? (json['start_line'] as num).toInt() : null,
-  originalStartLine: json['original_start_line'] != null ? (json['original_start_line'] as num).toInt() : null,
+  startLine: json.containsKey('start_line') ? Omittable(json['start_line'] != null ? (json['start_line'] as num).toInt() : null) : const Omittable.absent(),
+  originalStartLine: json.containsKey('original_start_line') ? Omittable(json['original_start_line'] != null ? (json['original_start_line'] as num).toInt() : null) : const Omittable.absent(),
   startSide: json.containsKey('start_side') ? json['start_side'] != null ? PullRequestReviewCommentStartSide.fromJson(json['start_side'] as String) : null : PullRequestReviewCommentStartSide.right,
   line: json['line'] != null ? (json['line'] as num).toInt() : null,
   originalLine: json['original_line'] != null ? (json['original_line'] as num).toInt() : null,
@@ -167,10 +167,10 @@ final AuthorAssociation authorAssociation;
 final PullRequestReviewCommentLinks links;
 
 /// The first line of the range for a multi-line comment.
-final int? startLine;
+final Omittable<int?> startLine;
 
 /// The first line of the range for a multi-line comment.
-final int? originalStartLine;
+final Omittable<int?> originalStartLine;
 
 /// The side of the first line of the range for a multi-line comment.
 final PullRequestReviewCommentStartSide? startSide;
@@ -195,7 +195,7 @@ final String? bodyText;
 
 Map<String, dynamic> toJson() { return {
   'url': url,
-  'pull_request_review_id': ?pullRequestReviewId,
+  'pull_request_review_id': pullRequestReviewId,
   'id': id,
   'node_id': nodeId,
   'diff_hunk': diffHunk,
@@ -205,7 +205,7 @@ Map<String, dynamic> toJson() { return {
   'commit_id': commitId,
   'original_commit_id': originalCommitId,
   'in_reply_to_id': ?inReplyToId,
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
   'body': body,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
@@ -213,8 +213,8 @@ Map<String, dynamic> toJson() { return {
   'pull_request_url': pullRequestUrl.toString(),
   'author_association': authorAssociation.toJson(),
   '_links': links.toJson(),
-  'start_line': ?startLine,
-  'original_start_line': ?originalStartLine,
+  if (startLine.isPresent) 'start_line': startLine.value,
+  if (originalStartLine.isPresent) 'original_start_line': originalStartLine.value,
   if (startSide != null) 'start_side': startSide?.toJson(),
   'line': ?line,
   'original_line': ?originalLine,
@@ -225,7 +225,7 @@ Map<String, dynamic> toJson() { return {
   'body_text': ?bodyText,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
-      json.containsKey('pull_request_review_id') && json['pull_request_review_id'] is num &&
+      json.containsKey('pull_request_review_id') && (json['pull_request_review_id'] == null || json['pull_request_review_id'] is num) &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('diff_hunk') && json['diff_hunk'] is String &&
@@ -240,7 +240,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('pull_request_url') && json['pull_request_url'] is String &&
       json.containsKey('author_association') &&
       json.containsKey('_links'); } 
-PullRequestReviewComment copyWith({String? url, int? Function()? pullRequestReviewId, int? id, String? nodeId, String? diffHunk, String? path, int Function()? position, int Function()? originalPosition, String? commitId, String? originalCommitId, int Function()? inReplyToId, SimpleUser? Function()? user, String? body, DateTime? createdAt, DateTime? updatedAt, Uri? htmlUrl, Uri? pullRequestUrl, AuthorAssociation? authorAssociation, PullRequestReviewCommentLinks? links, int? Function()? startLine, int? Function()? originalStartLine, PullRequestReviewCommentStartSide? Function()? startSide, int Function()? line, int Function()? originalLine, PullRequestReviewCommentSide Function()? side, PullRequestReviewCommentSubjectType Function()? subjectType, ReactionRollup Function()? reactions, String Function()? bodyHtml, String Function()? bodyText, }) { return PullRequestReviewComment(
+PullRequestReviewComment copyWith({String? url, int? Function()? pullRequestReviewId, int? id, String? nodeId, String? diffHunk, String? path, int? Function()? position, int? Function()? originalPosition, String? commitId, String? originalCommitId, int? Function()? inReplyToId, SimpleUser? Function()? user, String? body, DateTime? createdAt, DateTime? updatedAt, Uri? htmlUrl, Uri? pullRequestUrl, AuthorAssociation? authorAssociation, PullRequestReviewCommentLinks? links, Omittable<int?>? startLine, Omittable<int?>? originalStartLine, PullRequestReviewCommentStartSide? Function()? startSide, int? Function()? line, int? Function()? originalLine, PullRequestReviewCommentSide Function()? side, PullRequestReviewCommentSubjectType? Function()? subjectType, ReactionRollup? Function()? reactions, String? Function()? bodyHtml, String? Function()? bodyText, }) { return PullRequestReviewComment(
   url: url ?? this.url,
   pullRequestReviewId: pullRequestReviewId != null ? pullRequestReviewId() : this.pullRequestReviewId,
   id: id ?? this.id,
@@ -260,8 +260,8 @@ PullRequestReviewComment copyWith({String? url, int? Function()? pullRequestRevi
   pullRequestUrl: pullRequestUrl ?? this.pullRequestUrl,
   authorAssociation: authorAssociation ?? this.authorAssociation,
   links: links ?? this.links,
-  startLine: startLine != null ? startLine() : this.startLine,
-  originalStartLine: originalStartLine != null ? originalStartLine() : this.originalStartLine,
+  startLine: startLine ?? this.startLine,
+  originalStartLine: originalStartLine ?? this.originalStartLine,
   startSide: startSide != null ? startSide() : this.startSide,
   line: line != null ? line() : this.line,
   originalLine: originalLine != null ? originalLine() : this.originalLine,

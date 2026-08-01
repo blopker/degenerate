@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'features': features.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('features'); } 
-PostLinkedAccountsAccountRefreshRequest copyWith({List<String> Function()? expand, List<PostLinkedAccountsAccountRefreshRequestFeatures>? features, }) { return PostLinkedAccountsAccountRefreshRequest(
+PostLinkedAccountsAccountRefreshRequest copyWith({List<String>? Function()? expand, List<PostLinkedAccountsAccountRefreshRequestFeatures>? features, }) { return PostLinkedAccountsAccountRefreshRequest(
   expand: expand != null ? expand() : this.expand,
   features: features ?? this.features,
 ); } 

@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('pattern') && json['pattern'] is String; } 
-WorkersRoute copyWith({WorkersIdentifier? id, String? pattern, String Function()? script, }) { return WorkersRoute(
+WorkersRoute copyWith({WorkersIdentifier? id, String? pattern, String? Function()? script, }) { return WorkersRoute(
   id: id ?? this.id,
   pattern: pattern ?? this.pattern,
   script: script != null ? script() : this.script,

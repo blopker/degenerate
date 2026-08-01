@@ -1,57 +1,57 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentMethodDetailsAcssDebit {const PaymentMethodDetailsAcssDebit({this.bankName, this.expectedDebitDate, this.fingerprint, this.institutionNumber, this.last4, this.mandate, this.transitNumber, });
+@immutable final class PaymentMethodDetailsAcssDebit {const PaymentMethodDetailsAcssDebit({this.bankName = const Omittable.absent(), this.expectedDebitDate, this.fingerprint = const Omittable.absent(), this.institutionNumber = const Omittable.absent(), this.last4 = const Omittable.absent(), this.mandate, this.transitNumber = const Omittable.absent(), });
 
 factory PaymentMethodDetailsAcssDebit.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsAcssDebit(
-  bankName: json['bank_name'] as String?,
+  bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
   expectedDebitDate: json['expected_debit_date'] as String?,
-  fingerprint: json['fingerprint'] as String?,
-  institutionNumber: json['institution_number'] as String?,
-  last4: json['last4'] as String?,
+  fingerprint: json.containsKey('fingerprint') ? Omittable(json['fingerprint'] as String?) : const Omittable.absent(),
+  institutionNumber: json.containsKey('institution_number') ? Omittable(json['institution_number'] as String?) : const Omittable.absent(),
+  last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
   mandate: json['mandate'] as String?,
-  transitNumber: json['transit_number'] as String?,
+  transitNumber: json.containsKey('transit_number') ? Omittable(json['transit_number'] as String?) : const Omittable.absent(),
 ); }
 
 /// Name of the bank associated with the bank account.
-final String? bankName;
+final Omittable<String?> bankName;
 
 /// Estimated date to debit the customer's bank account. A date string in YYYY-MM-DD format.
 final String? expectedDebitDate;
 
 /// Uniquely identifies this particular bank account. You can use this attribute to check whether two bank accounts are the same.
-final String? fingerprint;
+final Omittable<String?> fingerprint;
 
 /// Institution number of the bank account
-final String? institutionNumber;
+final Omittable<String?> institutionNumber;
 
 /// Last four digits of the bank account number.
-final String? last4;
+final Omittable<String?> last4;
 
 /// ID of the mandate used to make this payment.
 final String? mandate;
 
 /// Transit number of the bank account.
-final String? transitNumber;
+final Omittable<String?> transitNumber;
 
 Map<String, dynamic> toJson() { return {
-  'bank_name': ?bankName,
+  if (bankName.isPresent) 'bank_name': bankName.value,
   'expected_debit_date': ?expectedDebitDate,
-  'fingerprint': ?fingerprint,
-  'institution_number': ?institutionNumber,
-  'last4': ?last4,
+  if (fingerprint.isPresent) 'fingerprint': fingerprint.value,
+  if (institutionNumber.isPresent) 'institution_number': institutionNumber.value,
+  if (last4.isPresent) 'last4': last4.value,
   'mandate': ?mandate,
-  'transit_number': ?transitNumber,
+  if (transitNumber.isPresent) 'transit_number': transitNumber.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_name', 'expected_debit_date', 'fingerprint', 'institution_number', 'last4', 'mandate', 'transit_number'}.contains(key)); } 
-PaymentMethodDetailsAcssDebit copyWith({String? Function()? bankName, String Function()? expectedDebitDate, String? Function()? fingerprint, String? Function()? institutionNumber, String? Function()? last4, String Function()? mandate, String? Function()? transitNumber, }) { return PaymentMethodDetailsAcssDebit(
-  bankName: bankName != null ? bankName() : this.bankName,
+PaymentMethodDetailsAcssDebit copyWith({Omittable<String?>? bankName, String? Function()? expectedDebitDate, Omittable<String?>? fingerprint, Omittable<String?>? institutionNumber, Omittable<String?>? last4, String? Function()? mandate, Omittable<String?>? transitNumber, }) { return PaymentMethodDetailsAcssDebit(
+  bankName: bankName ?? this.bankName,
   expectedDebitDate: expectedDebitDate != null ? expectedDebitDate() : this.expectedDebitDate,
-  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
-  institutionNumber: institutionNumber != null ? institutionNumber() : this.institutionNumber,
-  last4: last4 != null ? last4() : this.last4,
+  fingerprint: fingerprint ?? this.fingerprint,
+  institutionNumber: institutionNumber ?? this.institutionNumber,
+  last4: last4 ?? this.last4,
   mandate: mandate != null ? mandate() : this.mandate,
-  transitNumber: transitNumber != null ? transitNumber() : this.transitNumber,
+  transitNumber: transitNumber ?? this.transitNumber,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentMethodDetailsAcssDebit &&

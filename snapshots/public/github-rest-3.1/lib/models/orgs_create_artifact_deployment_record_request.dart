@@ -130,7 +130,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('status') &&
       json.containsKey('logical_environment') && json['logical_environment'] is String &&
       json.containsKey('deployment_name') && json['deployment_name'] is String; } 
-OrgsCreateArtifactDeploymentRecordRequest copyWith({String? name, String? digest, String Function()? version, OrgsCreateArtifactDeploymentRecordRequestStatus? status, String? logicalEnvironment, String Function()? physicalEnvironment, String Function()? cluster, String? deploymentName, Map<String, String> Function()? tags, List<OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks> Function()? runtimeRisks, String Function()? githubRepository, }) { return OrgsCreateArtifactDeploymentRecordRequest(
+OrgsCreateArtifactDeploymentRecordRequest copyWith({String? name, String? digest, String? Function()? version, OrgsCreateArtifactDeploymentRecordRequestStatus? status, String? logicalEnvironment, String? Function()? physicalEnvironment, String? Function()? cluster, String? deploymentName, Map<String, String>? Function()? tags, List<OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks>? Function()? runtimeRisks, String? Function()? githubRepository, }) { return OrgsCreateArtifactDeploymentRecordRequest(
   name: name ?? this.name,
   digest: digest ?? this.digest,
   version: version != null ? version() : this.version,

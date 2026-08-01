@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'offense_count': ?offenseCount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cidr', 'date', 'offense_count'}.contains(key)); } 
-BotnetThreatFeedGetDayReportResponseResult copyWith({String Function()? cidr, DateTime Function()? date, int Function()? offenseCount, }) { return BotnetThreatFeedGetDayReportResponseResult(
+BotnetThreatFeedGetDayReportResponseResult copyWith({String? Function()? cidr, DateTime? Function()? date, int? Function()? offenseCount, }) { return BotnetThreatFeedGetDayReportResponseResult(
   cidr: cidr != null ? cidr() : this.cidr,
   date: date != null ? date() : this.date,
   offenseCount: offenseCount != null ? offenseCount() : this.offenseCount,

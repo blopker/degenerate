@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'previous_attributes': ?previousAttributes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object'); } 
-NotificationEventData copyWith({Map<String,dynamic>? object, Map<String, dynamic> Function()? previousAttributes, }) { return NotificationEventData(
+NotificationEventData copyWith({Map<String,dynamic>? object, Map<String, dynamic>? Function()? previousAttributes, }) { return NotificationEventData(
   object: object ?? this.object,
   previousAttributes: previousAttributes != null ? previousAttributes() : this.previousAttributes,
 ); } 

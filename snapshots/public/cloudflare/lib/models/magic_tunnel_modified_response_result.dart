@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (modifiedGreTunnel != null) 'modified_gre_tunnel': modifiedGreTunnel?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'modified', 'modified_gre_tunnel'}.contains(key)); } 
-MagicTunnelModifiedResponseResult copyWith({bool Function()? modified, MagicGreTunnel Function()? modifiedGreTunnel, }) { return MagicTunnelModifiedResponseResult(
+MagicTunnelModifiedResponseResult copyWith({bool? Function()? modified, MagicGreTunnel? Function()? modifiedGreTunnel, }) { return MagicTunnelModifiedResponseResult(
   modified: modified != null ? modified() : this.modified,
   modifiedGreTunnel: modifiedGreTunnel != null ? modifiedGreTunnel() : this.modifiedGreTunnel,
 ); } 

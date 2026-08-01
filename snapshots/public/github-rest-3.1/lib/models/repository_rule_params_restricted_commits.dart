@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'reason': ?reason,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('oid') && json['oid'] is String; } 
-RepositoryRuleParamsRestrictedCommits copyWith({String? oid, String Function()? reason, }) { return RepositoryRuleParamsRestrictedCommits(
+RepositoryRuleParamsRestrictedCommits copyWith({String? oid, String? Function()? reason, }) { return RepositoryRuleParamsRestrictedCommits(
   oid: oid ?? this.oid,
   reason: reason != null ? reason() : this.reason,
 ); } 

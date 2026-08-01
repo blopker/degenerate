@@ -106,20 +106,20 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PortalSubscriptionUpdateTrialUpdateBehavior($value)'; } 
  }
 /// 
-@immutable final class PortalSubscriptionUpdate {const PortalSubscriptionUpdate({required this.defaultAllowedUpdates, required this.enabled, required this.prorationBehavior, required this.scheduleAtPeriodEnd, required this.trialUpdateBehavior, this.billingCycleAnchor, this.products, });
+@immutable final class PortalSubscriptionUpdate {const PortalSubscriptionUpdate({required this.defaultAllowedUpdates, required this.enabled, required this.prorationBehavior, required this.scheduleAtPeriodEnd, required this.trialUpdateBehavior, this.billingCycleAnchor = const Omittable.absent(), this.products = const Omittable.absent(), });
 
 factory PortalSubscriptionUpdate.fromJson(Map<String, dynamic> json) { return PortalSubscriptionUpdate(
-  billingCycleAnchor: json['billing_cycle_anchor'] != null ? PortalSubscriptionUpdateBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,
+  billingCycleAnchor: json.containsKey('billing_cycle_anchor') ? Omittable(json['billing_cycle_anchor'] != null ? PortalSubscriptionUpdateBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null) : const Omittable.absent(),
   defaultAllowedUpdates: (json['default_allowed_updates'] as List<dynamic>).map((e) => PortalSubscriptionUpdateDefaultAllowedUpdates.fromJson(e as String)).toList(),
   enabled: json['enabled'] as bool,
-  products: (json['products'] as List<dynamic>?)?.map((e) => PortalSubscriptionUpdateProduct.fromJson(e as Map<String, dynamic>)).toList(),
+  products: json.containsKey('products') ? Omittable((json['products'] as List<dynamic>?)?.map((e) => PortalSubscriptionUpdateProduct.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   prorationBehavior: PortalSubscriptionUpdateProrationBehavior.fromJson(json['proration_behavior'] as String),
   scheduleAtPeriodEnd: PortalResourceScheduleUpdateAtPeriodEnd.fromJson(json['schedule_at_period_end'] as Map<String, dynamic>),
   trialUpdateBehavior: PortalSubscriptionUpdateTrialUpdateBehavior.fromJson(json['trial_update_behavior'] as String),
 ); }
 
 /// Determines the value to use for the billing cycle anchor on subscription updates. Valid values are `now` or `unchanged`, and the default value is `unchanged`. Setting the value to `now` resets the subscription's billing cycle anchor to the current time (in UTC). For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
-final PortalSubscriptionUpdateBillingCycleAnchor? billingCycleAnchor;
+final Omittable<PortalSubscriptionUpdateBillingCycleAnchor?> billingCycleAnchor;
 
 /// The types of subscription updates that are supported for items listed in the `products` attribute. When empty, subscriptions are not updateable.
 final List<PortalSubscriptionUpdateDefaultAllowedUpdates> defaultAllowedUpdates;
@@ -128,7 +128,7 @@ final List<PortalSubscriptionUpdateDefaultAllowedUpdates> defaultAllowedUpdates;
 final bool enabled;
 
 /// The list of up to 10 products that support subscription updates.
-final List<PortalSubscriptionUpdateProduct>? products;
+final Omittable<List<PortalSubscriptionUpdateProduct>?> products;
 
 /// Determines how to handle prorations resulting from subscription updates. Valid values are `none`, `create_prorations`, and `always_invoice`. Defaults to a value of `none` if you don't set it during creation.
 final PortalSubscriptionUpdateProrationBehavior prorationBehavior;
@@ -139,10 +139,10 @@ final PortalResourceScheduleUpdateAtPeriodEnd scheduleAtPeriodEnd;
 final PortalSubscriptionUpdateTrialUpdateBehavior trialUpdateBehavior;
 
 Map<String, dynamic> toJson() { return {
-  if (billingCycleAnchor != null) 'billing_cycle_anchor': billingCycleAnchor?.toJson(),
+  if (billingCycleAnchor.isPresent) 'billing_cycle_anchor': billingCycleAnchor.value?.toJson(),
   'default_allowed_updates': defaultAllowedUpdates.map((e) => e.toJson()).toList(),
   'enabled': enabled,
-  if (products != null) 'products': products?.map((e) => e.toJson()).toList(),
+  if (products.isPresent) 'products': products.value?.map((e) => e.toJson()).toList(),
   'proration_behavior': prorationBehavior.toJson(),
   'schedule_at_period_end': scheduleAtPeriodEnd.toJson(),
   'trial_update_behavior': trialUpdateBehavior.toJson(),
@@ -152,11 +152,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('defau
       json.containsKey('proration_behavior') &&
       json.containsKey('schedule_at_period_end') &&
       json.containsKey('trial_update_behavior'); } 
-PortalSubscriptionUpdate copyWith({PortalSubscriptionUpdateBillingCycleAnchor? Function()? billingCycleAnchor, List<PortalSubscriptionUpdateDefaultAllowedUpdates>? defaultAllowedUpdates, bool? enabled, List<PortalSubscriptionUpdateProduct>? Function()? products, PortalSubscriptionUpdateProrationBehavior? prorationBehavior, PortalResourceScheduleUpdateAtPeriodEnd? scheduleAtPeriodEnd, PortalSubscriptionUpdateTrialUpdateBehavior? trialUpdateBehavior, }) { return PortalSubscriptionUpdate(
-  billingCycleAnchor: billingCycleAnchor != null ? billingCycleAnchor() : this.billingCycleAnchor,
+PortalSubscriptionUpdate copyWith({Omittable<PortalSubscriptionUpdateBillingCycleAnchor?>? billingCycleAnchor, List<PortalSubscriptionUpdateDefaultAllowedUpdates>? defaultAllowedUpdates, bool? enabled, Omittable<List<PortalSubscriptionUpdateProduct>?>? products, PortalSubscriptionUpdateProrationBehavior? prorationBehavior, PortalResourceScheduleUpdateAtPeriodEnd? scheduleAtPeriodEnd, PortalSubscriptionUpdateTrialUpdateBehavior? trialUpdateBehavior, }) { return PortalSubscriptionUpdate(
+  billingCycleAnchor: billingCycleAnchor ?? this.billingCycleAnchor,
   defaultAllowedUpdates: defaultAllowedUpdates ?? this.defaultAllowedUpdates,
   enabled: enabled ?? this.enabled,
-  products: products != null ? products() : this.products,
+  products: products ?? this.products,
   prorationBehavior: prorationBehavior ?? this.prorationBehavior,
   scheduleAtPeriodEnd: scheduleAtPeriodEnd ?? this.scheduleAtPeriodEnd,
   trialUpdateBehavior: trialUpdateBehavior ?? this.trialUpdateBehavior,
@@ -166,10 +166,11 @@ PortalSubscriptionUpdate copyWith({PortalSubscriptionUpdateBillingCycleAnchor? F
           billingCycleAnchor == other.billingCycleAnchor &&
           listEquals(defaultAllowedUpdates, other.defaultAllowedUpdates) &&
           enabled == other.enabled &&
-          listEquals(products, other.products) &&
+          products.isPresent == other.products.isPresent &&
+          listEquals(products.value, other.products.value) &&
           prorationBehavior == other.prorationBehavior &&
           scheduleAtPeriodEnd == other.scheduleAtPeriodEnd &&
           trialUpdateBehavior == other.trialUpdateBehavior; } 
-@override int get hashCode { return Object.hash(billingCycleAnchor, Object.hashAll(defaultAllowedUpdates), enabled, Object.hashAll(products ?? const []), prorationBehavior, scheduleAtPeriodEnd, trialUpdateBehavior); } 
+@override int get hashCode { return Object.hash(billingCycleAnchor, Object.hashAll(defaultAllowedUpdates), enabled, Object.hashAll(products.value ?? const []), prorationBehavior, scheduleAtPeriodEnd, trialUpdateBehavior); } 
 @override String toString() { return 'PortalSubscriptionUpdate(billingCycleAnchor: $billingCycleAnchor, defaultAllowedUpdates: $defaultAllowedUpdates, enabled: $enabled, products: $products, prorationBehavior: $prorationBehavior, scheduleAtPeriodEnd: $scheduleAtPeriodEnd, trialUpdateBehavior: $trialUpdateBehavior)'; } 
  }

@@ -10,7 +10,7 @@ factory UserSInvitesRespondToInvitationRequest.fromJson(Map<String, dynamic> jso
 final dynamic status;
 
 Map<String, dynamic> toJson() { return {
-  'status': ?status,
+  'status': status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
 UserSInvitesRespondToInvitationRequest copyWith({dynamic Function()? status}) { return UserSInvitesRespondToInvitationRequest(

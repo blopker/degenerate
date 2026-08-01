@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (roundTripTimeMs != null) 'roundTripTimeMs': roundTripTimeMs?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hopsCount', 'packetLossPct', 'roundTripTimeMs'}.contains(key)); } 
-DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse copyWith({DigitalExperienceMonitoringPercentiles Function()? hopsCount, DigitalExperienceMonitoringPercentiles Function()? packetLossPct, DigitalExperienceMonitoringPercentiles Function()? roundTripTimeMs, }) { return DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse(
+DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse copyWith({DigitalExperienceMonitoringPercentiles? Function()? hopsCount, DigitalExperienceMonitoringPercentiles? Function()? packetLossPct, DigitalExperienceMonitoringPercentiles? Function()? roundTripTimeMs, }) { return DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse(
   hopsCount: hopsCount != null ? hopsCount() : this.hopsCount,
   packetLossPct: packetLossPct != null ? packetLossPct() : this.packetLossPct,
   roundTripTimeMs: roundTripTimeMs != null ? roundTripTimeMs() : this.roundTripTimeMs,

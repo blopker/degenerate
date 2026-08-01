@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'sampling_rate': ?samplingRate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('collector_ip') && json['collector_ip'] is String; } 
-MagicNetflowConfig copyWith({int Function()? activeTimeout, String? collectorIp, int Function()? collectorPort, int Function()? inactiveTimeout, int Function()? samplingRate, }) { return MagicNetflowConfig(
+MagicNetflowConfig copyWith({int? Function()? activeTimeout, String? collectorIp, int? Function()? collectorPort, int? Function()? inactiveTimeout, int? Function()? samplingRate, }) { return MagicNetflowConfig(
   activeTimeout: activeTimeout != null ? activeTimeout() : this.activeTimeout,
   collectorIp: collectorIp ?? this.collectorIp,
   collectorPort: collectorPort != null ? collectorPort() : this.collectorPort,

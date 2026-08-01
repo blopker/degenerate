@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (payments != null) 'payments': payments?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'payments'}.contains(key)); } 
-PostBalanceSettingsRequest copyWith({List<String> Function()? expand, PostBalanceSettingsRequestPayments Function()? payments, }) { return PostBalanceSettingsRequest(
+PostBalanceSettingsRequest copyWith({List<String>? Function()? expand, PostBalanceSettingsRequestPayments? Function()? payments, }) { return PostBalanceSettingsRequest(
   expand: expand != null ? expand() : this.expand,
   payments: payments != null ? payments() : this.payments,
 ); } 

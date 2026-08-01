@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'type': type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-MqHttpConsumerRequest copyWith({MqQueueName Function()? deadLetterQueue, MqHttpConsumerRequestSettings Function()? settings, String? type, }) { return MqHttpConsumerRequest(
+MqHttpConsumerRequest copyWith({MqQueueName? Function()? deadLetterQueue, MqHttpConsumerRequestSettings? Function()? settings, String? type, }) { return MqHttpConsumerRequest(
   deadLetterQueue: deadLetterQueue != null ? deadLetterQueue() : this.deadLetterQueue,
   settings: settings != null ? settings() : this.settings,
   type: type ?? this.type,

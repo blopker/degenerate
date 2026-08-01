@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String &&
       json.containsKey('body') && json['body'] is String; } 
-PullsCreateReviewRequestComments copyWith({String? path, int Function()? position, String? body, int Function()? line, String Function()? side, int Function()? startLine, String Function()? startSide, }) { return PullsCreateReviewRequestComments(
+PullsCreateReviewRequestComments copyWith({String? path, int? Function()? position, String? body, int? Function()? line, String? Function()? side, int? Function()? startLine, String? Function()? startSide, }) { return PullsCreateReviewRequestComments(
   path: path ?? this.path,
   position: position != null ? position() : this.position,
   body: body ?? this.body,

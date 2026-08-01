@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'campaign_state.dart';@immutable final class CampaignsUpdateCampaignRequest {const CampaignsUpdateCampaignRequest({this.name, this.description, this.managers, this.teamManagers, this.endsAt, this.contactLink, this.state, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'campaign_state.dart';@immutable final class CampaignsUpdateCampaignRequest {const CampaignsUpdateCampaignRequest({this.name, this.description, this.managers, this.teamManagers, this.endsAt, this.contactLink = const Omittable.absent(), this.state, });
 
 factory CampaignsUpdateCampaignRequest.fromJson(Map<String, dynamic> json) { return CampaignsUpdateCampaignRequest(
   name: json['name'] as String?,
@@ -8,7 +8,7 @@ factory CampaignsUpdateCampaignRequest.fromJson(Map<String, dynamic> json) { ret
   managers: (json['managers'] as List<dynamic>?)?.map((e) => e as String).toList(),
   teamManagers: (json['team_managers'] as List<dynamic>?)?.map((e) => e as String).toList(),
   endsAt: json['ends_at'] != null ? DateTime.parse(json['ends_at'] as String) : null,
-  contactLink: json['contact_link'] != null ? Uri.parse(json['contact_link'] as String) : null,
+  contactLink: json.containsKey('contact_link') ? Omittable(json['contact_link'] != null ? Uri.parse(json['contact_link'] as String) : null) : const Omittable.absent(),
   state: json['state'] != null ? CampaignState.fromJson(json['state'] as String) : null,
 ); }
 
@@ -28,7 +28,7 @@ final List<String>? teamManagers;
 final DateTime? endsAt;
 
 /// The contact link of the campaign. Must be a URI.
-final Uri? contactLink;
+final Omittable<Uri?> contactLink;
 
 /// Indicates whether a campaign is open or closed
 final CampaignState? state;
@@ -39,17 +39,17 @@ Map<String, dynamic> toJson() { return {
   'managers': ?managers,
   'team_managers': ?teamManagers,
   if (endsAt != null) 'ends_at': endsAt?.toIso8601String(),
-  if (contactLink != null) 'contact_link': contactLink?.toString(),
+  if (contactLink.isPresent) 'contact_link': contactLink.value?.toString(),
   if (state != null) 'state': state?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'managers', 'team_managers', 'ends_at', 'contact_link', 'state'}.contains(key)); } 
-CampaignsUpdateCampaignRequest copyWith({String Function()? name, String Function()? description, List<String> Function()? managers, List<String> Function()? teamManagers, DateTime Function()? endsAt, Uri? Function()? contactLink, CampaignState Function()? state, }) { return CampaignsUpdateCampaignRequest(
+CampaignsUpdateCampaignRequest copyWith({String? Function()? name, String? Function()? description, List<String>? Function()? managers, List<String>? Function()? teamManagers, DateTime? Function()? endsAt, Omittable<Uri?>? contactLink, CampaignState? Function()? state, }) { return CampaignsUpdateCampaignRequest(
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,
   managers: managers != null ? managers() : this.managers,
   teamManagers: teamManagers != null ? teamManagers() : this.teamManagers,
   endsAt: endsAt != null ? endsAt() : this.endsAt,
-  contactLink: contactLink != null ? contactLink() : this.contactLink,
+  contactLink: contactLink ?? this.contactLink,
   state: state != null ? state() : this.state,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

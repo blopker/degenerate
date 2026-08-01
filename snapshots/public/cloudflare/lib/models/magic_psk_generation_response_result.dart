@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (pskMetadata != null) 'psk_metadata': pskMetadata?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ipsec_tunnel_id', 'psk', 'psk_metadata'}.contains(key)); } 
-MagicPskGenerationResponseResult copyWith({MagicIdentifier Function()? ipsecTunnelId, MagicPsk Function()? psk, MagicPskMetadata Function()? pskMetadata, }) { return MagicPskGenerationResponseResult(
+MagicPskGenerationResponseResult copyWith({MagicIdentifier? Function()? ipsecTunnelId, MagicPsk? Function()? psk, MagicPskMetadata? Function()? pskMetadata, }) { return MagicPskGenerationResponseResult(
   ipsecTunnelId: ipsecTunnelId != null ? ipsecTunnelId() : this.ipsecTunnelId,
   psk: psk != null ? psk() : this.psk,
   pskMetadata: pskMetadata != null ? pskMetadata() : this.pskMetadata,

@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'uid': ?uid,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'causes', 'group', 'kind', 'name', 'retryAfterSeconds', 'uid'}.contains(key)); } 
-StatusDetails copyWith({List<StatusCause> Function()? causes, String Function()? group, String Function()? kind, String Function()? name, int Function()? retryAfterSeconds, String Function()? uid, }) { return StatusDetails(
+StatusDetails copyWith({List<StatusCause>? Function()? causes, String? Function()? group, String? Function()? kind, String? Function()? name, int? Function()? retryAfterSeconds, String? Function()? uid, }) { return StatusDetails(
   causes: causes != null ? causes() : this.causes,
   group: group != null ? group() : this.group,
   kind: kind != null ? kind() : this.kind,

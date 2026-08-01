@@ -33,7 +33,7 @@ final request = ApiRequest(
       'Input=${Uri.encodeQueryComponent(input$)}',
     if (body.minPostalCodeLength case final minPostalCodeLength$?)
       'MinPostalCodeLength=${Uri.encodeQueryComponent(minPostalCodeLength$.toString())}',
-    if (body.parameter case final parameter$?)
+    if (body.parameter.value case final parameter$?)
       'Parameter=${Uri.encodeQueryComponent(parameter$.toString())}',
     if (body.paymentConnector case final paymentConnector$?)
       'PaymentConnector=${Uri.encodeQueryComponent(paymentConnector$)}',

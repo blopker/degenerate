@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
       json.containsKey('url'); } 
-NotificationWebhooksCreateAWebhookRequest copyWith({AaaComponentsSchemasName? name, AaaSecret Function()? secret, AaaUrl? url, }) { return NotificationWebhooksCreateAWebhookRequest(
+NotificationWebhooksCreateAWebhookRequest copyWith({AaaComponentsSchemasName? name, AaaSecret? Function()? secret, AaaUrl? url, }) { return NotificationWebhooksCreateAWebhookRequest(
   name: name ?? this.name,
   secret: secret != null ? secret() : this.secret,
   url: url ?? this.url,

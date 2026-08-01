@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'present': present,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('present') && json['present'] is bool; } 
-PostTreasuryOutboundPaymentsRequestEndUserDetails copyWith({String Function()? ipAddress, bool? present, }) { return PostTreasuryOutboundPaymentsRequestEndUserDetails(
+PostTreasuryOutboundPaymentsRequestEndUserDetails copyWith({String? Function()? ipAddress, bool? present, }) { return PostTreasuryOutboundPaymentsRequestEndUserDetails(
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   present: present ?? this.present,
 ); } 

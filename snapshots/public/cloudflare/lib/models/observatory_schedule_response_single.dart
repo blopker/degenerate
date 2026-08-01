@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-ObservatoryScheduleResponseSingle copyWith({List<ObservatoryMessages2>? errors, List<ObservatoryMessages2>? messages, bool? success, ObservatorySchedule Function()? result, }) { return ObservatoryScheduleResponseSingle(
+ObservatoryScheduleResponseSingle copyWith({List<ObservatoryMessages2>? errors, List<ObservatoryMessages2>? messages, bool? success, ObservatorySchedule? Function()? result, }) { return ObservatoryScheduleResponseSingle(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

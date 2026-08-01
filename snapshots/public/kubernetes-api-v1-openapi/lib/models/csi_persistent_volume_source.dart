@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('driver') && json['driver'] is String &&
       json.containsKey('volumeHandle') && json['volumeHandle'] is String; } 
-CsiPersistentVolumeSource copyWith({SecretReference Function()? controllerExpandSecretRef, SecretReference Function()? controllerPublishSecretRef, String? driver, String Function()? fsType, SecretReference Function()? nodeExpandSecretRef, SecretReference Function()? nodePublishSecretRef, SecretReference Function()? nodeStageSecretRef, bool Function()? readOnly, Map<String, String> Function()? volumeAttributes, String? volumeHandle, }) { return CsiPersistentVolumeSource(
+CsiPersistentVolumeSource copyWith({SecretReference? Function()? controllerExpandSecretRef, SecretReference? Function()? controllerPublishSecretRef, String? driver, String? Function()? fsType, SecretReference? Function()? nodeExpandSecretRef, SecretReference? Function()? nodePublishSecretRef, SecretReference? Function()? nodeStageSecretRef, bool? Function()? readOnly, Map<String, String>? Function()? volumeAttributes, String? volumeHandle, }) { return CsiPersistentVolumeSource(
   controllerExpandSecretRef: controllerExpandSecretRef != null ? controllerExpandSecretRef() : this.controllerExpandSecretRef,
   controllerPublishSecretRef: controllerPublishSecretRef != null ? controllerPublishSecretRef() : this.controllerPublishSecretRef,
   driver: driver ?? this.driver,

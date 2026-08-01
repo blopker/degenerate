@@ -21,30 +21,30 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'StructType($value)'; } 
  }
-@immutable final class Struct {const Struct({required this.fields, required this.type, this.name, });
+@immutable final class Struct {const Struct({required this.fields, required this.type, this.name = const Omittable.absent(), });
 
 factory Struct.fromJson(Map<String, dynamic> json) { return Struct(
   fields: (json['fields'] as List<dynamic>).map((e) => CloudflarePipelinesSourceField.fromJson(e as Map<String, dynamic>)).toList(),
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   type: StructType.fromJson(json['type'] as String),
 ); }
 
 final List<CloudflarePipelinesSourceField> fields;
 
-final String? name;
+final Omittable<String?> name;
 
 final StructType type;
 
 Map<String, dynamic> toJson() { return {
   'fields': fields.map((e) => e.toJson()).toList(),
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('fields') &&
       json.containsKey('type'); } 
-Struct copyWith({List<CloudflarePipelinesSourceField>? fields, String? Function()? name, StructType? type, }) { return Struct(
+Struct copyWith({List<CloudflarePipelinesSourceField>? fields, Omittable<String?>? name, StructType? type, }) { return Struct(
   fields: fields ?? this.fields,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

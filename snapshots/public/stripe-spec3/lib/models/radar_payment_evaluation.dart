@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarPaymentEvaluationObject($value)'; } 
  }
 /// Payment Evaluations represent the risk lifecycle of an externally processed payment. It includes the Radar risk score from Stripe, payment outcome taken by the merchant or processor, and any post transaction events, such as refunds or disputes. See the [Radar API guide](/radar/multiprocessor) for integration steps.
-@immutable final class RadarPaymentEvaluation {const RadarPaymentEvaluation({required this.createdAt, required this.events, required this.id, required this.insights, required this.livemode, required this.object, this.clientDeviceMetadataDetails, this.customerDetails, this.metadata, this.outcome, this.paymentDetails, });
+@immutable final class RadarPaymentEvaluation {const RadarPaymentEvaluation({required this.createdAt, required this.events, required this.id, required this.insights, required this.livemode, required this.object, this.clientDeviceMetadataDetails, this.customerDetails, this.metadata = const Omittable.absent(), this.outcome = const Omittable.absent(), this.paymentDetails, });
 
 factory RadarPaymentEvaluation.fromJson(Map<String, dynamic> json) { return RadarPaymentEvaluation(
   clientDeviceMetadataDetails: json['client_device_metadata_details'] != null ? InsightsResourcesPaymentEvaluationClientDeviceMetadata.fromJson(json['client_device_metadata_details'] as Map<String, dynamic>) : null,
@@ -33,9 +33,9 @@ factory RadarPaymentEvaluation.fromJson(Map<String, dynamic> json) { return Rada
   id: json['id'] as String,
   insights: InsightsResourcesPaymentEvaluationInsights.fromJson(json['insights'] as Map<String, dynamic>),
   livemode: json['livemode'] as bool,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   object: RadarPaymentEvaluationObject.fromJson(json['object'] as String),
-  outcome: json['outcome'] != null ? InsightsResourcesPaymentEvaluationOutcome.fromJson(json['outcome'] as Map<String, dynamic>) : null,
+  outcome: json.containsKey('outcome') ? Omittable(json['outcome'] != null ? InsightsResourcesPaymentEvaluationOutcome.fromJson(json['outcome'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   paymentDetails: json['payment_details'] != null ? InsightsResourcesPaymentEvaluationPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>) : null,
 ); }
 
@@ -58,13 +58,13 @@ final InsightsResourcesPaymentEvaluationInsights insights;
 final bool livemode;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final RadarPaymentEvaluationObject object;
 
 /// Indicates the final outcome for the payment evaluation.
-final InsightsResourcesPaymentEvaluationOutcome? outcome;
+final Omittable<InsightsResourcesPaymentEvaluationOutcome?> outcome;
 
 final InsightsResourcesPaymentEvaluationPaymentDetails? paymentDetails;
 
@@ -76,9 +76,9 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'insights': insights.toJson(),
   'livemode': livemode,
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   'object': object.toJson(),
-  if (outcome != null) 'outcome': outcome?.toJson(),
+  if (outcome.isPresent) 'outcome': outcome.value?.toJson(),
   if (paymentDetails != null) 'payment_details': paymentDetails?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is num &&
@@ -87,7 +87,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('insights') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceMetadata Function()? clientDeviceMetadataDetails, int? createdAt, InsightsResourcesPaymentEvaluationCustomerDetails Function()? customerDetails, List<InsightsResourcesPaymentEvaluationEvent>? events, String? id, InsightsResourcesPaymentEvaluationInsights? insights, bool? livemode, Map<String, String>? Function()? metadata, RadarPaymentEvaluationObject? object, InsightsResourcesPaymentEvaluationOutcome? Function()? outcome, InsightsResourcesPaymentEvaluationPaymentDetails Function()? paymentDetails, }) { return RadarPaymentEvaluation(
+RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceMetadata? Function()? clientDeviceMetadataDetails, int? createdAt, InsightsResourcesPaymentEvaluationCustomerDetails? Function()? customerDetails, List<InsightsResourcesPaymentEvaluationEvent>? events, String? id, InsightsResourcesPaymentEvaluationInsights? insights, bool? livemode, Omittable<Map<String,String>?>? metadata, RadarPaymentEvaluationObject? object, Omittable<InsightsResourcesPaymentEvaluationOutcome?>? outcome, InsightsResourcesPaymentEvaluationPaymentDetails? Function()? paymentDetails, }) { return RadarPaymentEvaluation(
   clientDeviceMetadataDetails: clientDeviceMetadataDetails != null ? clientDeviceMetadataDetails() : this.clientDeviceMetadataDetails,
   createdAt: createdAt ?? this.createdAt,
   customerDetails: customerDetails != null ? customerDetails() : this.customerDetails,
@@ -95,9 +95,9 @@ RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceM
   id: id ?? this.id,
   insights: insights ?? this.insights,
   livemode: livemode ?? this.livemode,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   object: object ?? this.object,
-  outcome: outcome != null ? outcome() : this.outcome,
+  outcome: outcome ?? this.outcome,
   paymentDetails: paymentDetails != null ? paymentDetails() : this.paymentDetails,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

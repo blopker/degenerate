@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'logprob': ?logprob,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'token', 'logprob'}.contains(key)); } 
-ResponseLogProbTopLogprobs copyWith({String Function()? token, double Function()? logprob, }) { return ResponseLogProbTopLogprobs(
+ResponseLogProbTopLogprobs copyWith({String? Function()? token, double? Function()? logprob, }) { return ResponseLogProbTopLogprobs(
   token: token != null ? token() : this.token,
   logprob: logprob != null ? logprob() : this.logprob,
 ); } 

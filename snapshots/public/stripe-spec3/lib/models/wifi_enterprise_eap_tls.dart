@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_certificate_file') && json['client_certificate_file'] is String &&
       json.containsKey('private_key_file') && json['private_key_file'] is String &&
       json.containsKey('ssid') && json['ssid'] is String; } 
-WifiEnterpriseEapTls copyWith({String Function()? caCertificateFile, String? clientCertificateFile, String? privateKeyFile, String Function()? privateKeyFilePassword, String? ssid, }) { return WifiEnterpriseEapTls(
+WifiEnterpriseEapTls copyWith({String? Function()? caCertificateFile, String? clientCertificateFile, String? privateKeyFile, String? Function()? privateKeyFilePassword, String? ssid, }) { return WifiEnterpriseEapTls(
   caCertificateFile: caCertificateFile != null ? caCertificateFile() : this.caCertificateFile,
   clientCertificateFile: clientCertificateFile ?? this.clientCertificateFile,
   privateKeyFile: privateKeyFile ?? this.privateKeyFile,

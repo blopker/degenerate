@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
       json.containsKey('kind'); } 
-ShieldSchemaValidationPostSchemaRequest copyWith({Uint8List? file, ShieldOldKind? kind, String Function()? name, ShieldSchemaValidationPostSchemaRequestValidationEnabled Function()? validationEnabled, }) { return ShieldSchemaValidationPostSchemaRequest(
+ShieldSchemaValidationPostSchemaRequest copyWith({Uint8List? file, ShieldOldKind? kind, String? Function()? name, ShieldSchemaValidationPostSchemaRequestValidationEnabled? Function()? validationEnabled, }) { return ShieldSchemaValidationPostSchemaRequest(
   file: file ?? this.file,
   kind: kind ?? this.kind,
   name: name != null ? name() : this.name,
@@ -62,10 +62,10 @@ ShieldSchemaValidationPostSchemaRequest copyWith({Uint8List? file, ShieldOldKind
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ShieldSchemaValidationPostSchemaRequest &&
-          file == other.file &&
+          listEquals(file, other.file) &&
           kind == other.kind &&
           name == other.name &&
           validationEnabled == other.validationEnabled; } 
-@override int get hashCode { return Object.hash(file, kind, name, validationEnabled); } 
+@override int get hashCode { return Object.hash(Object.hashAll(file), kind, name, validationEnabled); } 
 @override String toString() { return 'ShieldSchemaValidationPostSchemaRequest(file: $file, kind: $kind, name: $name, validationEnabled: $validationEnabled)'; } 
  }

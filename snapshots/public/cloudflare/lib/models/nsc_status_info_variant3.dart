@@ -21,25 +21,25 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'NscStatusInfoVariant3State($value)'; } 
  }
-@immutable final class NscStatusInfoVariant3 {const NscStatusInfoVariant3({required this.state, this.reason, });
+@immutable final class NscStatusInfoVariant3 {const NscStatusInfoVariant3({required this.state, this.reason = const Omittable.absent(), });
 
 factory NscStatusInfoVariant3.fromJson(Map<String, dynamic> json) { return NscStatusInfoVariant3(
-  reason: json['reason'] as String?,
+  reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
   state: NscStatusInfoVariant3State.fromJson(json['state'] as String),
 ); }
 
 /// Diagnostic information, if available
-final String? reason;
+final Omittable<String?> reason;
 
 final NscStatusInfoVariant3State state;
 
 Map<String, dynamic> toJson() { return {
-  'reason': ?reason,
+  if (reason.isPresent) 'reason': reason.value,
   'state': state.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('state'); } 
-NscStatusInfoVariant3 copyWith({String? Function()? reason, NscStatusInfoVariant3State? state, }) { return NscStatusInfoVariant3(
-  reason: reason != null ? reason() : this.reason,
+NscStatusInfoVariant3 copyWith({Omittable<String?>? reason, NscStatusInfoVariant3State? state, }) { return NscStatusInfoVariant3(
+  reason: reason ?? this.reason,
   state: state ?? this.state,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

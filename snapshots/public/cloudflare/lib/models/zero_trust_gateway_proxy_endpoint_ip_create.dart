@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'name': name.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-ZeroTrustGatewayProxyEndpointIpCreate copyWith({ZeroTrustGatewayProxyEndpointIpCreateKind Function()? kind, ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name, }) { return ZeroTrustGatewayProxyEndpointIpCreate(
+ZeroTrustGatewayProxyEndpointIpCreate copyWith({ZeroTrustGatewayProxyEndpointIpCreateKind? Function()? kind, ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name, }) { return ZeroTrustGatewayProxyEndpointIpCreate(
   kind: kind != null ? kind() : this.kind,
   name: name ?? this.name,
 ); } 

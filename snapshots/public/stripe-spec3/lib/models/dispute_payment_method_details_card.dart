@@ -35,12 +35,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DisputePaymentMethodDetailsCardCaseType($value)'; } 
  }
 /// 
-@immutable final class DisputePaymentMethodDetailsCard {const DisputePaymentMethodDetailsCard({required this.brand, required this.caseType, this.networkReasonCode, });
+@immutable final class DisputePaymentMethodDetailsCard {const DisputePaymentMethodDetailsCard({required this.brand, required this.caseType, this.networkReasonCode = const Omittable.absent(), });
 
 factory DisputePaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) { return DisputePaymentMethodDetailsCard(
   brand: json['brand'] as String,
   caseType: DisputePaymentMethodDetailsCardCaseType.fromJson(json['case_type'] as String),
-  networkReasonCode: json['network_reason_code'] as String?,
+  networkReasonCode: json.containsKey('network_reason_code') ? Omittable(json['network_reason_code'] as String?) : const Omittable.absent(),
 ); }
 
 /// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.
@@ -50,19 +50,19 @@ final String brand;
 final DisputePaymentMethodDetailsCardCaseType caseType;
 
 /// The card network's specific dispute reason code, which maps to one of Stripe's primary dispute categories to simplify response guidance. The [Network code map](https://stripe.com/docs/disputes/categories#network-code-map) lists all available dispute reason codes by network.
-final String? networkReasonCode;
+final Omittable<String?> networkReasonCode;
 
 Map<String, dynamic> toJson() { return {
   'brand': brand,
   'case_type': caseType.toJson(),
-  'network_reason_code': ?networkReasonCode,
+  if (networkReasonCode.isPresent) 'network_reason_code': networkReasonCode.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand') && json['brand'] is String &&
       json.containsKey('case_type'); } 
-DisputePaymentMethodDetailsCard copyWith({String? brand, DisputePaymentMethodDetailsCardCaseType? caseType, String? Function()? networkReasonCode, }) { return DisputePaymentMethodDetailsCard(
+DisputePaymentMethodDetailsCard copyWith({String? brand, DisputePaymentMethodDetailsCardCaseType? caseType, Omittable<String?>? networkReasonCode, }) { return DisputePaymentMethodDetailsCard(
   brand: brand ?? this.brand,
   caseType: caseType ?? this.caseType,
-  networkReasonCode: networkReasonCode != null ? networkReasonCode() : this.networkReasonCode,
+  networkReasonCode: networkReasonCode ?? this.networkReasonCode,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DisputePaymentMethodDetailsCard &&

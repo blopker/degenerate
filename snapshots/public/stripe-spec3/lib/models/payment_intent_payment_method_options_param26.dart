@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   'target_date': ?targetDate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'setup_future_usage', 'target_date'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam26 copyWith({PaymentIntentPaymentMethodOptionsParam26MandateOptions Function()? mandateOptions, PaymentIntentPaymentMethodOptionsParam26SetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, }) { return PaymentIntentPaymentMethodOptionsParam26(
+PaymentIntentPaymentMethodOptionsParam26 copyWith({PaymentIntentPaymentMethodOptionsParam26MandateOptions? Function()? mandateOptions, PaymentIntentPaymentMethodOptionsParam26SetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, }) { return PaymentIntentPaymentMethodOptionsParam26(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,

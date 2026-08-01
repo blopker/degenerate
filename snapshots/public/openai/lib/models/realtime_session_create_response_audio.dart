@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (output != null) 'output': output?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'input', 'output'}.contains(key)); } 
-RealtimeSessionCreateResponseAudio copyWith({RealtimeSessionCreateResponseAudioInput Function()? input, RealtimeSessionCreateResponseAudioOutput Function()? output, }) { return RealtimeSessionCreateResponseAudio(
+RealtimeSessionCreateResponseAudio copyWith({RealtimeSessionCreateResponseAudioInput? Function()? input, RealtimeSessionCreateResponseAudioOutput? Function()? output, }) { return RealtimeSessionCreateResponseAudio(
   input: input != null ? input() : this.input,
   output: output != null ? output() : this.output,
 ); } 

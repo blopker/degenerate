@@ -55,36 +55,37 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove($value)'; } 
  }
 /// This hash contains the features the customer sheet supports.
-@immutable final class CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures {const CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures({this.paymentMethodAllowRedisplayFilters, this.paymentMethodRemove, });
+@immutable final class CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures {const CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures({this.paymentMethodAllowRedisplayFilters = const Omittable.absent(), this.paymentMethodRemove = const Omittable.absent(), });
 
 factory CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures.fromJson(Map<String, dynamic> json) { return CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures(
-  paymentMethodAllowRedisplayFilters: (json['payment_method_allow_redisplay_filters'] as List<dynamic>?)?.map((e) => CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters.fromJson(e as String)).toList(),
-  paymentMethodRemove: json['payment_method_remove'] != null ? CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove.fromJson(json['payment_method_remove'] as String) : null,
+  paymentMethodAllowRedisplayFilters: json.containsKey('payment_method_allow_redisplay_filters') ? Omittable((json['payment_method_allow_redisplay_filters'] as List<dynamic>?)?.map((e) => CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters.fromJson(e as String)).toList()) : const Omittable.absent(),
+  paymentMethodRemove: json.containsKey('payment_method_remove') ? Omittable(json['payment_method_remove'] != null ? CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove.fromJson(json['payment_method_remove'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// A list of [`allow_redisplay`](https://docs.stripe.com/api/payment_methods/object#payment_method_object-allow_redisplay) values that controls which saved payment methods the customer sheet displays by filtering to only show payment methods with an `allow_redisplay` value that is present in this list.
 /// 
 /// If not specified, defaults to `["always"]`. In order to display all saved payment methods, specify `["always", "limited", "unspecified"]`.
-final List<CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters>? paymentMethodAllowRedisplayFilters;
+final Omittable<List<CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters>?> paymentMethodAllowRedisplayFilters;
 
 /// Controls whether the customer sheet displays the option to remove a saved payment method."
 /// 
 /// Allowing buyers to remove their saved payment methods impacts subscriptions that depend on that payment method. Removing the payment method detaches the [`customer` object](https://docs.stripe.com/api/payment_methods/object#payment_method_object-customer) from that [PaymentMethod](https://docs.stripe.com/api/payment_methods).
-final CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove? paymentMethodRemove;
+final Omittable<CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove?> paymentMethodRemove;
 
 Map<String, dynamic> toJson() { return {
-  if (paymentMethodAllowRedisplayFilters != null) 'payment_method_allow_redisplay_filters': paymentMethodAllowRedisplayFilters?.map((e) => e.toJson()).toList(),
-  if (paymentMethodRemove != null) 'payment_method_remove': paymentMethodRemove?.toJson(),
+  if (paymentMethodAllowRedisplayFilters.isPresent) 'payment_method_allow_redisplay_filters': paymentMethodAllowRedisplayFilters.value?.map((e) => e.toJson()).toList(),
+  if (paymentMethodRemove.isPresent) 'payment_method_remove': paymentMethodRemove.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payment_method_allow_redisplay_filters', 'payment_method_remove'}.contains(key)); } 
-CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures copyWith({List<CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters>? Function()? paymentMethodAllowRedisplayFilters, CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove? Function()? paymentMethodRemove, }) { return CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures(
-  paymentMethodAllowRedisplayFilters: paymentMethodAllowRedisplayFilters != null ? paymentMethodAllowRedisplayFilters() : this.paymentMethodAllowRedisplayFilters,
-  paymentMethodRemove: paymentMethodRemove != null ? paymentMethodRemove() : this.paymentMethodRemove,
+CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures copyWith({Omittable<List<CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters>?>? paymentMethodAllowRedisplayFilters, Omittable<CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove?>? paymentMethodRemove, }) { return CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures(
+  paymentMethodAllowRedisplayFilters: paymentMethodAllowRedisplayFilters ?? this.paymentMethodAllowRedisplayFilters,
+  paymentMethodRemove: paymentMethodRemove ?? this.paymentMethodRemove,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures &&
-          listEquals(paymentMethodAllowRedisplayFilters, other.paymentMethodAllowRedisplayFilters) &&
+          paymentMethodAllowRedisplayFilters.isPresent == other.paymentMethodAllowRedisplayFilters.isPresent &&
+          listEquals(paymentMethodAllowRedisplayFilters.value, other.paymentMethodAllowRedisplayFilters.value) &&
           paymentMethodRemove == other.paymentMethodRemove; } 
-@override int get hashCode { return Object.hash(Object.hashAll(paymentMethodAllowRedisplayFilters ?? const []), paymentMethodRemove); } 
+@override int get hashCode { return Object.hash(Object.hashAll(paymentMethodAllowRedisplayFilters.value ?? const []), paymentMethodRemove); } 
 @override String toString() { return 'CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures(paymentMethodAllowRedisplayFilters: $paymentMethodAllowRedisplayFilters, paymentMethodRemove: $paymentMethodRemove)'; } 
  }

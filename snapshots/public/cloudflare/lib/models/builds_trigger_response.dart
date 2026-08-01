@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_build_caching_enabled.dart';import 'builds_build_command.dart';import 'builds_build_token_name.dart';import 'builds_build_token_uuid.dart';import 'builds_created_on.dart';import 'builds_deleted_on.dart';import 'builds_deploy_command.dart';import 'builds_external_script_id.dart';import 'builds_modified_on.dart';import 'builds_root_directory.dart';import 'builds_trigger_name.dart';import 'builds_trigger_uuid.dart';import 'builds_upsert_repo_connection_response.dart';@immutable final class BuildsTriggerResponse {const BuildsTriggerResponse({this.branchExcludes, this.branchIncludes, this.buildCachingEnabled, this.buildCommand, this.buildTokenName, this.buildTokenUuid, this.createdOn, this.deletedOn, this.deployCommand, this.externalScriptId, this.modifiedOn, this.pathExcludes, this.pathIncludes, this.repoConnection, this.rootDirectory, this.triggerName, this.triggerUuid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_build_caching_enabled.dart';import 'builds_build_command.dart';import 'builds_build_token_name.dart';import 'builds_build_token_uuid.dart';import 'builds_created_on.dart';import 'builds_deleted_on.dart';import 'builds_deploy_command.dart';import 'builds_external_script_id.dart';import 'builds_modified_on.dart';import 'builds_root_directory.dart';import 'builds_trigger_name.dart';import 'builds_trigger_uuid.dart';import 'builds_upsert_repo_connection_response.dart';@immutable final class BuildsTriggerResponse {const BuildsTriggerResponse({this.branchExcludes, this.branchIncludes, this.buildCachingEnabled, this.buildCommand, this.buildTokenName, this.buildTokenUuid, this.createdOn, this.deletedOn = const Omittable.absent(), this.deployCommand, this.externalScriptId, this.modifiedOn, this.pathExcludes, this.pathIncludes, this.repoConnection, this.rootDirectory, this.triggerName, this.triggerUuid, });
 
 factory BuildsTriggerResponse.fromJson(Map<String, dynamic> json) { return BuildsTriggerResponse(
   branchExcludes: (json['branch_excludes'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -10,7 +10,7 @@ factory BuildsTriggerResponse.fromJson(Map<String, dynamic> json) { return Build
   buildTokenName: json['build_token_name'] != null ? BuildsBuildTokenName.fromJson(json['build_token_name'] as String) : null,
   buildTokenUuid: json['build_token_uuid'] != null ? BuildsBuildTokenUuid.fromJson(json['build_token_uuid'] as String) : null,
   createdOn: json['created_on'] != null ? BuildsCreatedOn.fromJson(json['created_on'] as String) : null,
-  deletedOn: json['deleted_on'] != null ? BuildsDeletedOn.fromJson(json['deleted_on'] as String) : null,
+  deletedOn: json.containsKey('deleted_on') ? Omittable(json['deleted_on'] != null ? BuildsDeletedOn.fromJson(json['deleted_on'] as String) : null) : const Omittable.absent(),
   deployCommand: json['deploy_command'] != null ? BuildsDeployCommand.fromJson(json['deploy_command'] as String) : null,
   externalScriptId: json['external_script_id'] != null ? BuildsExternalScriptId.fromJson(json['external_script_id'] as String) : null,
   modifiedOn: json['modified_on'] != null ? BuildsModifiedOn.fromJson(json['modified_on'] as String) : null,
@@ -36,7 +36,7 @@ final BuildsBuildTokenUuid? buildTokenUuid;
 
 final BuildsCreatedOn? createdOn;
 
-final BuildsDeletedOn? deletedOn;
+final Omittable<BuildsDeletedOn?> deletedOn;
 
 final BuildsDeployCommand? deployCommand;
 
@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
   if (buildTokenName != null) 'build_token_name': buildTokenName?.toJson(),
   if (buildTokenUuid != null) 'build_token_uuid': buildTokenUuid?.toJson(),
   if (createdOn != null) 'created_on': createdOn?.toJson(),
-  if (deletedOn != null) 'deleted_on': deletedOn?.toJson(),
+  if (deletedOn.isPresent) 'deleted_on': deletedOn.value?.toJson(),
   if (deployCommand != null) 'deploy_command': deployCommand?.toJson(),
   if (externalScriptId != null) 'external_script_id': externalScriptId?.toJson(),
   if (modifiedOn != null) 'modified_on': modifiedOn?.toJson(),
@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   if (triggerUuid != null) 'trigger_uuid': triggerUuid?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'branch_excludes', 'branch_includes', 'build_caching_enabled', 'build_command', 'build_token_name', 'build_token_uuid', 'created_on', 'deleted_on', 'deploy_command', 'external_script_id', 'modified_on', 'path_excludes', 'path_includes', 'repo_connection', 'root_directory', 'trigger_name', 'trigger_uuid'}.contains(key)); } 
-BuildsTriggerResponse copyWith({List<String> Function()? branchExcludes, List<String> Function()? branchIncludes, BuildsBuildCachingEnabled Function()? buildCachingEnabled, BuildsBuildCommand Function()? buildCommand, BuildsBuildTokenName Function()? buildTokenName, BuildsBuildTokenUuid Function()? buildTokenUuid, BuildsCreatedOn Function()? createdOn, BuildsDeletedOn? Function()? deletedOn, BuildsDeployCommand Function()? deployCommand, BuildsExternalScriptId Function()? externalScriptId, BuildsModifiedOn Function()? modifiedOn, List<String> Function()? pathExcludes, List<String> Function()? pathIncludes, BuildsUpsertRepoConnectionResponse Function()? repoConnection, BuildsRootDirectory Function()? rootDirectory, BuildsTriggerName Function()? triggerName, BuildsTriggerUuid Function()? triggerUuid, }) { return BuildsTriggerResponse(
+BuildsTriggerResponse copyWith({List<String>? Function()? branchExcludes, List<String>? Function()? branchIncludes, BuildsBuildCachingEnabled? Function()? buildCachingEnabled, BuildsBuildCommand? Function()? buildCommand, BuildsBuildTokenName? Function()? buildTokenName, BuildsBuildTokenUuid? Function()? buildTokenUuid, BuildsCreatedOn? Function()? createdOn, Omittable<BuildsDeletedOn?>? deletedOn, BuildsDeployCommand? Function()? deployCommand, BuildsExternalScriptId? Function()? externalScriptId, BuildsModifiedOn? Function()? modifiedOn, List<String>? Function()? pathExcludes, List<String>? Function()? pathIncludes, BuildsUpsertRepoConnectionResponse? Function()? repoConnection, BuildsRootDirectory? Function()? rootDirectory, BuildsTriggerName? Function()? triggerName, BuildsTriggerUuid? Function()? triggerUuid, }) { return BuildsTriggerResponse(
   branchExcludes: branchExcludes != null ? branchExcludes() : this.branchExcludes,
   branchIncludes: branchIncludes != null ? branchIncludes() : this.branchIncludes,
   buildCachingEnabled: buildCachingEnabled != null ? buildCachingEnabled() : this.buildCachingEnabled,
@@ -84,7 +84,7 @@ BuildsTriggerResponse copyWith({List<String> Function()? branchExcludes, List<St
   buildTokenName: buildTokenName != null ? buildTokenName() : this.buildTokenName,
   buildTokenUuid: buildTokenUuid != null ? buildTokenUuid() : this.buildTokenUuid,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
-  deletedOn: deletedOn != null ? deletedOn() : this.deletedOn,
+  deletedOn: deletedOn ?? this.deletedOn,
   deployCommand: deployCommand != null ? deployCommand() : this.deployCommand,
   externalScriptId: externalScriptId != null ? externalScriptId() : this.externalScriptId,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,

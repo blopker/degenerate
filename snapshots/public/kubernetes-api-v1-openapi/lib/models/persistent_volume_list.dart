@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('items'); } 
-PersistentVolumeList copyWith({String Function()? apiVersion, List<PersistentVolume>? items, String Function()? kind, ListMeta Function()? metadata, }) { return PersistentVolumeList(
+PersistentVolumeList copyWith({String? Function()? apiVersion, List<PersistentVolume>? items, String? Function()? kind, ListMeta? Function()? metadata, }) { return PersistentVolumeList(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   items: items ?? this.items,
   kind: kind != null ? kind() : this.kind,

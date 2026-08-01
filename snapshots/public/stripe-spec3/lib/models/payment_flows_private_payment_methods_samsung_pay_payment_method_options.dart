@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method'}.contains(key)); } 
-PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions copyWith({PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptionsCaptureMethod Function()? captureMethod}) { return PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions(
+PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions copyWith({PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptionsCaptureMethod? Function()? captureMethod}) { return PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

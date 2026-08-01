@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'metadata'}.contains(key)); } 
-PostChargesChargeRefundsRefundRequest copyWith({List<String> Function()? expand, PostChargesChargeRefundsRefundRequestMetadata Function()? metadata, }) { return PostChargesChargeRefundsRefundRequest(
+PostChargesChargeRefundsRefundRequest copyWith({List<String>? Function()? expand, PostChargesChargeRefundsRefundRequestMetadata? Function()? metadata, }) { return PostChargesChargeRefundsRefundRequest(
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 

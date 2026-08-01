@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'maxAgeSeconds': ?maxAgeSeconds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed'); } 
-R2CorsRule copyWith({R2CorsRuleAllowed? allowed, List<String> Function()? exposeHeaders, String Function()? id, double Function()? maxAgeSeconds, }) { return R2CorsRule(
+R2CorsRule copyWith({R2CorsRuleAllowed? allowed, List<String>? Function()? exposeHeaders, String? Function()? id, double? Function()? maxAgeSeconds, }) { return R2CorsRule(
   allowed: allowed ?? this.allowed,
   exposeHeaders: exposeHeaders != null ? exposeHeaders() : this.exposeHeaders,
   id: id != null ? id() : this.id,

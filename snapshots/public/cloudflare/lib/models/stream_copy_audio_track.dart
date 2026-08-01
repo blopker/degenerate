@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('label'); } 
-StreamCopyAudioTrack copyWith({StreamAudioLabel? label, Uri Function()? url, }) { return StreamCopyAudioTrack(
+StreamCopyAudioTrack copyWith({StreamAudioLabel? label, Uri? Function()? url, }) { return StreamCopyAudioTrack(
   label: label ?? this.label,
   url: url != null ? url() : this.url,
 ); } 

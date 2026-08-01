@@ -73,7 +73,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') &&
       json.containsKey('status') &&
       json.containsKey('store_id'); } 
-SecretsStoreSecretObject copyWith({SecretsStoreComment Function()? comment, SecretsStoreCreated? created, SecretsStoreIdentifier? id, SecretsStoreModified? modified, SecretsStoreSecretName? name, SecretsStoreSecretStatus? status, SecretsStoreStoreIdentifier? storeId, }) { return SecretsStoreSecretObject(
+SecretsStoreSecretObject copyWith({SecretsStoreComment? Function()? comment, SecretsStoreCreated? created, SecretsStoreIdentifier? id, SecretsStoreModified? modified, SecretsStoreSecretName? name, SecretsStoreSecretStatus? status, SecretsStoreStoreIdentifier? storeId, }) { return SecretsStoreSecretObject(
   comment: comment != null ? comment() : this.comment,
   created: created ?? this.created,
   id: id ?? this.id,

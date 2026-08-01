@@ -69,7 +69,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('dns_r
       json.containsKey('ns_name') &&
       json.containsKey('status') &&
       json.containsKey('zone_tag'); } 
-DnsCustomNameserversCustomNs copyWith({List<DnsCustomNameserversCustomNsDnsRecords>? dnsRecords, DnsCustomNameserversNsName? nsName, DnsCustomNameserversNsSet Function()? nsSet, DnsCustomNameserversCustomNsStatus? status, DnsCustomNameserversSchemasIdentifier? zoneTag, }) { return DnsCustomNameserversCustomNs(
+DnsCustomNameserversCustomNs copyWith({List<DnsCustomNameserversCustomNsDnsRecords>? dnsRecords, DnsCustomNameserversNsName? nsName, DnsCustomNameserversNsSet? Function()? nsSet, DnsCustomNameserversCustomNsStatus? status, DnsCustomNameserversSchemasIdentifier? zoneTag, }) { return DnsCustomNameserversCustomNs(
   dnsRecords: dnsRecords ?? this.dnsRecords,
   nsName: nsName ?? this.nsName,
   nsSet: nsSet != null ? nsSet() : this.nsSet,

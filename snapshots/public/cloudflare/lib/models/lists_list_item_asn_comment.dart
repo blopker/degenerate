@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (comment != null) 'comment': comment?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn'); } 
-ListsListItemAsnComment copyWith({ListsItemAsn? asn, ListsItemComment Function()? comment, }) { return ListsListItemAsnComment(
+ListsListItemAsnComment copyWith({ListsItemAsn? asn, ListsItemComment? Function()? comment, }) { return ListsListItemAsnComment(
   asn: asn ?? this.asn,
   comment: comment != null ? comment() : this.comment,
 ); } 

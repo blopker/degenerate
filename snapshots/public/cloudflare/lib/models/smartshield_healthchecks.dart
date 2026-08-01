@@ -44,11 +44,11 @@ factory SmartshieldTimestamp.fromJson(String json) => SmartshieldTimestamp(DateT
 String toJson() => value.toIso8601String();
 
 }
-@immutable final class SmartshieldHealthchecks {const SmartshieldHealthchecks({this.address, this.checkRegions, this.consecutiveFails, this.consecutiveSuccesses, this.createdOn, this.description, this.failureReason, this.httpConfig, this.id, this.interval, this.modifiedOn, this.name, this.retries, this.status, this.suspended, this.tcpConfig, this.timeout, this.type, });
+@immutable final class SmartshieldHealthchecks {const SmartshieldHealthchecks({this.address, this.checkRegions = const Omittable.absent(), this.consecutiveFails, this.consecutiveSuccesses, this.createdOn, this.description, this.failureReason, this.httpConfig, this.id, this.interval, this.modifiedOn, this.name, this.retries, this.status, this.suspended, this.tcpConfig, this.timeout, this.type, });
 
 factory SmartshieldHealthchecks.fromJson(Map<String, dynamic> json) { return SmartshieldHealthchecks(
   address: json['address'] != null ? SmartshieldAddress.fromJson(json['address'] as String) : null,
-  checkRegions: (json['check_regions'] as List<dynamic>?)?.map((e) => SmartshieldCheckRegions2.fromJson(e as String)).toList(),
+  checkRegions: json.containsKey('check_regions') ? Omittable((json['check_regions'] as List<dynamic>?)?.map((e) => SmartshieldCheckRegions2.fromJson(e as String)).toList()) : const Omittable.absent(),
   consecutiveFails: json['consecutive_fails'] != null ? SmartshieldConsecutiveFails.fromJson(json['consecutive_fails'] as num) : null,
   consecutiveSuccesses: json['consecutive_successes'] != null ? SmartshieldConsecutiveSuccesses.fromJson(json['consecutive_successes'] as num) : null,
   createdOn: json['created_on'] != null ? SmartshieldTimestamp.fromJson(json['created_on'] as String) : null,
@@ -71,7 +71,7 @@ factory SmartshieldHealthchecks.fromJson(Map<String, dynamic> json) { return Sma
 final SmartshieldAddress? address;
 
 /// A list of regions from which to run health checks. Null means Cloudflare will pick a default region.
-final List<SmartshieldCheckRegions2>? checkRegions;
+final Omittable<List<SmartshieldCheckRegions2>?> checkRegions;
 
 /// The number of consecutive fails required from a health check before changing the health to unhealthy.
 final SmartshieldConsecutiveFails? consecutiveFails;
@@ -111,7 +111,7 @@ final SmartshieldType? type;
 
 Map<String, dynamic> toJson() { return {
   if (address != null) 'address': address?.toJson(),
-  if (checkRegions != null) 'check_regions': checkRegions?.map((e) => e.toJson()).toList(),
+  if (checkRegions.isPresent) 'check_regions': checkRegions.value?.map((e) => e.toJson()).toList(),
   if (consecutiveFails != null) 'consecutive_fails': consecutiveFails?.toJson(),
   if (consecutiveSuccesses != null) 'consecutive_successes': consecutiveSuccesses?.toJson(),
   if (createdOn != null) 'created_on': createdOn?.toJson(),
@@ -130,9 +130,9 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'check_regions', 'consecutive_fails', 'consecutive_successes', 'created_on', 'description', 'failure_reason', 'http_config', 'id', 'interval', 'modified_on', 'name', 'retries', 'status', 'suspended', 'tcp_config', 'timeout', 'type'}.contains(key)); } 
-SmartshieldHealthchecks copyWith({SmartshieldAddress Function()? address, List<SmartshieldCheckRegions2>? Function()? checkRegions, SmartshieldConsecutiveFails Function()? consecutiveFails, SmartshieldConsecutiveSuccesses Function()? consecutiveSuccesses, SmartshieldTimestamp Function()? createdOn, SmartshieldDescription Function()? description, SmartshieldFailureReason Function()? failureReason, SmartshieldHttpConfig Function()? httpConfig, SmartshieldIdentifier Function()? id, SmartshieldInterval Function()? interval, SmartshieldTimestamp Function()? modifiedOn, SmartshieldName Function()? name, SmartshieldRetries Function()? retries, SmartshieldStatus Function()? status, SmartshieldSuspended Function()? suspended, SmartshieldTcpConfig Function()? tcpConfig, SmartshieldTimeout Function()? timeout, SmartshieldType Function()? type, }) { return SmartshieldHealthchecks(
+SmartshieldHealthchecks copyWith({SmartshieldAddress? Function()? address, Omittable<List<SmartshieldCheckRegions2>?>? checkRegions, SmartshieldConsecutiveFails? Function()? consecutiveFails, SmartshieldConsecutiveSuccesses? Function()? consecutiveSuccesses, SmartshieldTimestamp? Function()? createdOn, SmartshieldDescription? Function()? description, SmartshieldFailureReason? Function()? failureReason, SmartshieldHttpConfig? Function()? httpConfig, SmartshieldIdentifier? Function()? id, SmartshieldInterval? Function()? interval, SmartshieldTimestamp? Function()? modifiedOn, SmartshieldName? Function()? name, SmartshieldRetries? Function()? retries, SmartshieldStatus? Function()? status, SmartshieldSuspended? Function()? suspended, SmartshieldTcpConfig? Function()? tcpConfig, SmartshieldTimeout? Function()? timeout, SmartshieldType? Function()? type, }) { return SmartshieldHealthchecks(
   address: address != null ? address() : this.address,
-  checkRegions: checkRegions != null ? checkRegions() : this.checkRegions,
+  checkRegions: checkRegions ?? this.checkRegions,
   consecutiveFails: consecutiveFails != null ? consecutiveFails() : this.consecutiveFails,
   consecutiveSuccesses: consecutiveSuccesses != null ? consecutiveSuccesses() : this.consecutiveSuccesses,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
@@ -153,7 +153,8 @@ SmartshieldHealthchecks copyWith({SmartshieldAddress Function()? address, List<S
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is SmartshieldHealthchecks &&
           address == other.address &&
-          listEquals(checkRegions, other.checkRegions) &&
+          checkRegions.isPresent == other.checkRegions.isPresent &&
+          listEquals(checkRegions.value, other.checkRegions.value) &&
           consecutiveFails == other.consecutiveFails &&
           consecutiveSuccesses == other.consecutiveSuccesses &&
           createdOn == other.createdOn &&
@@ -170,6 +171,6 @@ SmartshieldHealthchecks copyWith({SmartshieldAddress Function()? address, List<S
           tcpConfig == other.tcpConfig &&
           timeout == other.timeout &&
           type == other.type; } 
-@override int get hashCode { return Object.hash(address, Object.hashAll(checkRegions ?? const []), consecutiveFails, consecutiveSuccesses, createdOn, description, failureReason, httpConfig, id, interval, modifiedOn, name, retries, status, suspended, tcpConfig, timeout, type); } 
+@override int get hashCode { return Object.hash(address, Object.hashAll(checkRegions.value ?? const []), consecutiveFails, consecutiveSuccesses, createdOn, description, failureReason, httpConfig, id, interval, modifiedOn, name, retries, status, suspended, tcpConfig, timeout, type); } 
 @override String toString() { return 'SmartshieldHealthchecks(address: $address, checkRegions: $checkRegions, consecutiveFails: $consecutiveFails, consecutiveSuccesses: $consecutiveSuccesses, createdOn: $createdOn, description: $description, failureReason: $failureReason, httpConfig: $httpConfig, id: $id, interval: $interval, modifiedOn: $modifiedOn, name: $name, retries: $retries, status: $status, suspended: $suspended, tcpConfig: $tcpConfig, timeout: $timeout, type: $type)'; } 
  }

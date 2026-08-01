@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (secretRef != null) 'secretRef': secretRef?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configMapRef', 'prefix', 'secretRef'}.contains(key)); } 
-EnvFromSource copyWith({ConfigMapEnvSource Function()? configMapRef, String Function()? prefix, SecretEnvSource Function()? secretRef, }) { return EnvFromSource(
+EnvFromSource copyWith({ConfigMapEnvSource? Function()? configMapRef, String? Function()? prefix, SecretEnvSource? Function()? secretRef, }) { return EnvFromSource(
   configMapRef: configMapRef != null ? configMapRef() : this.configMapRef,
   prefix: prefix != null ? prefix() : this.prefix,
   secretRef: secretRef != null ? secretRef() : this.secretRef,

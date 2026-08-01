@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-DosInfraPrefixListResponse copyWith({List<DosMessages2>? errors, List<DosMessages2>? messages, bool? success, DosInfraPrefixListResponseResultInfo Function()? resultInfo, List<DosInfraPrefix> Function()? result, }) { return DosInfraPrefixListResponse(
+DosInfraPrefixListResponse copyWith({List<DosMessages2>? errors, List<DosMessages2>? messages, bool? success, DosInfraPrefixListResponseResultInfo? Function()? resultInfo, List<DosInfraPrefix>? Function()? result, }) { return DosInfraPrefixListResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

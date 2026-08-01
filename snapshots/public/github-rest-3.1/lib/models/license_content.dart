@@ -51,23 +51,23 @@ Map<String, dynamic> toJson() { return {
   'sha': sha,
   'size': size,
   'url': url.toString(),
-  if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
-  if (gitUrl != null) 'git_url': gitUrl?.toString(),
-  if (downloadUrl != null) 'download_url': downloadUrl?.toString(),
+  'html_url': htmlUrl?.toString(),
+  'git_url': gitUrl?.toString(),
+  'download_url': downloadUrl?.toString(),
   'type': type,
   'content': content,
   'encoding': encoding,
   '_links': links.toJson(),
-  if (license != null) 'license': license?.toJson(),
+  'license': license?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('git_url') && json['git_url'] is String &&
-      json.containsKey('download_url') && json['download_url'] is String &&
+      json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String) &&
+      json.containsKey('git_url') && (json['git_url'] == null || json['git_url'] is String) &&
+      json.containsKey('download_url') && (json['download_url'] == null || json['download_url'] is String) &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('content') && json['content'] is String &&
       json.containsKey('encoding') && json['encoding'] is String &&

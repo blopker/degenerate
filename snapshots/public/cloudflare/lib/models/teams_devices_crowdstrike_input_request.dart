@@ -149,7 +149,7 @@ Map<String, dynamic> toJson() { return {
   if (versionOperator != null) 'versionOperator': versionOperator?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('connection_id') && json['connection_id'] is String; } 
-TeamsDevicesCrowdstrikeInputRequest copyWith({String? connectionId, String Function()? lastSeen, TeamsDevicesCrowdstrikeInputRequestOperator Function()? $operator, String Function()? os, String Function()? overall, String Function()? sensorConfig, TeamsDevicesCrowdstrikeInputRequestState Function()? state, String Function()? version, TeamsDevicesCrowdstrikeInputRequestVersionOperator Function()? versionOperator, }) { return TeamsDevicesCrowdstrikeInputRequest(
+TeamsDevicesCrowdstrikeInputRequest copyWith({String? connectionId, String? Function()? lastSeen, TeamsDevicesCrowdstrikeInputRequestOperator? Function()? $operator, String? Function()? os, String? Function()? overall, String? Function()? sensorConfig, TeamsDevicesCrowdstrikeInputRequestState? Function()? state, String? Function()? version, TeamsDevicesCrowdstrikeInputRequestVersionOperator? Function()? versionOperator, }) { return TeamsDevicesCrowdstrikeInputRequest(
   connectionId: connectionId ?? this.connectionId,
   lastSeen: lastSeen != null ? lastSeen() : this.lastSeen,
   $operator: $operator != null ? $operator() : this.$operator,

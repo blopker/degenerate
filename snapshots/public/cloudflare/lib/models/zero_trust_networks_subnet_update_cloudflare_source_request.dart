@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (network != null) 'network': network?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'name', 'network'}.contains(key)); } 
-ZeroTrustNetworksSubnetUpdateCloudflareSourceRequest copyWith({TunnelSubnetComment Function()? comment, TunnelSubnetName Function()? name, TunnelSubnetIpNetwork Function()? network, }) { return ZeroTrustNetworksSubnetUpdateCloudflareSourceRequest(
+ZeroTrustNetworksSubnetUpdateCloudflareSourceRequest copyWith({TunnelSubnetComment? Function()? comment, TunnelSubnetName? Function()? name, TunnelSubnetIpNetwork? Function()? network, }) { return ZeroTrustNetworksSubnetUpdateCloudflareSourceRequest(
   comment: comment != null ? comment() : this.comment,
   name: name != null ? name() : this.name,
   network: network != null ? network() : this.network,

@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UsageCompletionsResultObject($value)'; } 
  }
 /// The aggregated completions usage details of the specific time bucket.
-@immutable final class UsageCompletionsResult {const UsageCompletionsResult({required this.object, required this.inputTokens, required this.outputTokens, required this.numModelRequests, this.inputCachedTokens, this.inputAudioTokens, this.outputAudioTokens, this.projectId, this.userId, this.apiKeyId, this.model, this.batch, this.serviceTier, });
+@immutable final class UsageCompletionsResult {const UsageCompletionsResult({required this.object, required this.inputTokens, required this.outputTokens, required this.numModelRequests, this.inputCachedTokens, this.inputAudioTokens, this.outputAudioTokens, this.projectId = const Omittable.absent(), this.userId = const Omittable.absent(), this.apiKeyId = const Omittable.absent(), this.model = const Omittable.absent(), this.batch = const Omittable.absent(), this.serviceTier = const Omittable.absent(), });
 
 factory UsageCompletionsResult.fromJson(Map<String, dynamic> json) { return UsageCompletionsResult(
   object: UsageCompletionsResultObject.fromJson(json['object'] as String),
@@ -32,12 +32,12 @@ factory UsageCompletionsResult.fromJson(Map<String, dynamic> json) { return Usag
   inputAudioTokens: json['input_audio_tokens'] != null ? (json['input_audio_tokens'] as num).toInt() : null,
   outputAudioTokens: json['output_audio_tokens'] != null ? (json['output_audio_tokens'] as num).toInt() : null,
   numModelRequests: (json['num_model_requests'] as num).toInt(),
-  projectId: json['project_id'] as String?,
-  userId: json['user_id'] as String?,
-  apiKeyId: json['api_key_id'] as String?,
-  model: json['model'] as String?,
-  batch: json['batch'] as bool?,
-  serviceTier: json['service_tier'] as String?,
+  projectId: json.containsKey('project_id') ? Omittable(json['project_id'] as String?) : const Omittable.absent(),
+  userId: json.containsKey('user_id') ? Omittable(json['user_id'] as String?) : const Omittable.absent(),
+  apiKeyId: json.containsKey('api_key_id') ? Omittable(json['api_key_id'] as String?) : const Omittable.absent(),
+  model: json.containsKey('model') ? Omittable(json['model'] as String?) : const Omittable.absent(),
+  batch: json.containsKey('batch') ? Omittable(json['batch'] as bool?) : const Omittable.absent(),
+  serviceTier: json.containsKey('service_tier') ? Omittable(json['service_tier'] as String?) : const Omittable.absent(),
 ); }
 
 final UsageCompletionsResultObject object;
@@ -61,22 +61,22 @@ final int? outputAudioTokens;
 final int numModelRequests;
 
 /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
-final String? projectId;
+final Omittable<String?> projectId;
 
 /// When `group_by=user_id`, this field provides the user ID of the grouped usage result.
-final String? userId;
+final Omittable<String?> userId;
 
 /// When `group_by=api_key_id`, this field provides the API key ID of the grouped usage result.
-final String? apiKeyId;
+final Omittable<String?> apiKeyId;
 
 /// When `group_by=model`, this field provides the model name of the grouped usage result.
-final String? model;
+final Omittable<String?> model;
 
 /// When `group_by=batch`, this field tells whether the grouped usage result is batch or not.
-final bool? batch;
+final Omittable<bool?> batch;
 
 /// When `group_by=service_tier`, this field provides the service tier of the grouped usage result.
-final String? serviceTier;
+final Omittable<String?> serviceTier;
 
 Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
@@ -86,18 +86,18 @@ Map<String, dynamic> toJson() { return {
   'input_audio_tokens': ?inputAudioTokens,
   'output_audio_tokens': ?outputAudioTokens,
   'num_model_requests': numModelRequests,
-  'project_id': ?projectId,
-  'user_id': ?userId,
-  'api_key_id': ?apiKeyId,
-  'model': ?model,
-  'batch': ?batch,
-  'service_tier': ?serviceTier,
+  if (projectId.isPresent) 'project_id': projectId.value,
+  if (userId.isPresent) 'user_id': userId.value,
+  if (apiKeyId.isPresent) 'api_key_id': apiKeyId.value,
+  if (model.isPresent) 'model': model.value,
+  if (batch.isPresent) 'batch': batch.value,
+  if (serviceTier.isPresent) 'service_tier': serviceTier.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('input_tokens') && json['input_tokens'] is num &&
       json.containsKey('output_tokens') && json['output_tokens'] is num &&
       json.containsKey('num_model_requests') && json['num_model_requests'] is num; } 
-UsageCompletionsResult copyWith({UsageCompletionsResultObject? object, int? inputTokens, int Function()? inputCachedTokens, int? outputTokens, int Function()? inputAudioTokens, int Function()? outputAudioTokens, int? numModelRequests, String? Function()? projectId, String? Function()? userId, String? Function()? apiKeyId, String? Function()? model, bool? Function()? batch, String? Function()? serviceTier, }) { return UsageCompletionsResult(
+UsageCompletionsResult copyWith({UsageCompletionsResultObject? object, int? inputTokens, int? Function()? inputCachedTokens, int? outputTokens, int? Function()? inputAudioTokens, int? Function()? outputAudioTokens, int? numModelRequests, Omittable<String?>? projectId, Omittable<String?>? userId, Omittable<String?>? apiKeyId, Omittable<String?>? model, Omittable<bool?>? batch, Omittable<String?>? serviceTier, }) { return UsageCompletionsResult(
   object: object ?? this.object,
   inputTokens: inputTokens ?? this.inputTokens,
   inputCachedTokens: inputCachedTokens != null ? inputCachedTokens() : this.inputCachedTokens,
@@ -105,12 +105,12 @@ UsageCompletionsResult copyWith({UsageCompletionsResultObject? object, int? inpu
   inputAudioTokens: inputAudioTokens != null ? inputAudioTokens() : this.inputAudioTokens,
   outputAudioTokens: outputAudioTokens != null ? outputAudioTokens() : this.outputAudioTokens,
   numModelRequests: numModelRequests ?? this.numModelRequests,
-  projectId: projectId != null ? projectId() : this.projectId,
-  userId: userId != null ? userId() : this.userId,
-  apiKeyId: apiKeyId != null ? apiKeyId() : this.apiKeyId,
-  model: model != null ? model() : this.model,
-  batch: batch != null ? batch() : this.batch,
-  serviceTier: serviceTier != null ? serviceTier() : this.serviceTier,
+  projectId: projectId ?? this.projectId,
+  userId: userId ?? this.userId,
+  apiKeyId: apiKeyId ?? this.apiKeyId,
+  model: model ?? this.model,
+  batch: batch ?? this.batch,
+  serviceTier: serviceTier ?? this.serviceTier,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is UsageCompletionsResult &&

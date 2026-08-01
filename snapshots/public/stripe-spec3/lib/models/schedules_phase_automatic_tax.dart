@@ -23,33 +23,33 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SchedulesPhaseAutomaticTaxDisabledReason($value)'; } 
  }
 /// 
-@immutable final class SchedulesPhaseAutomaticTax {const SchedulesPhaseAutomaticTax({required this.enabled, this.disabledReason, this.liability, });
+@immutable final class SchedulesPhaseAutomaticTax {const SchedulesPhaseAutomaticTax({required this.enabled, this.disabledReason = const Omittable.absent(), this.liability = const Omittable.absent(), });
 
 factory SchedulesPhaseAutomaticTax.fromJson(Map<String, dynamic> json) { return SchedulesPhaseAutomaticTax(
-  disabledReason: json['disabled_reason'] != null ? SchedulesPhaseAutomaticTaxDisabledReason.fromJson(json['disabled_reason'] as String) : null,
+  disabledReason: json.containsKey('disabled_reason') ? Omittable(json['disabled_reason'] != null ? SchedulesPhaseAutomaticTaxDisabledReason.fromJson(json['disabled_reason'] as String) : null) : const Omittable.absent(),
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null ? ConnectAccountReference.fromJson(json['liability'] as Map<String, dynamic>) : null,
+  liability: json.containsKey('liability') ? Omittable(json['liability'] != null ? ConnectAccountReference.fromJson(json['liability'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// If Stripe disabled automatic tax, this enum describes why.
-final SchedulesPhaseAutomaticTaxDisabledReason? disabledReason;
+final Omittable<SchedulesPhaseAutomaticTaxDisabledReason?> disabledReason;
 
 /// Whether Stripe automatically computes tax on invoices created during this phase.
 final bool enabled;
 
 /// The account that's liable for tax. If set, the business address and tax registrations required to perform the tax calculation are loaded from this account. The tax transaction is returned in the report of the connected account.
-final ConnectAccountReference? liability;
+final Omittable<ConnectAccountReference?> liability;
 
 Map<String, dynamic> toJson() { return {
-  if (disabledReason != null) 'disabled_reason': disabledReason?.toJson(),
+  if (disabledReason.isPresent) 'disabled_reason': disabledReason.value?.toJson(),
   'enabled': enabled,
-  if (liability != null) 'liability': liability?.toJson(),
+  if (liability.isPresent) 'liability': liability.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-SchedulesPhaseAutomaticTax copyWith({SchedulesPhaseAutomaticTaxDisabledReason? Function()? disabledReason, bool? enabled, ConnectAccountReference? Function()? liability, }) { return SchedulesPhaseAutomaticTax(
-  disabledReason: disabledReason != null ? disabledReason() : this.disabledReason,
+SchedulesPhaseAutomaticTax copyWith({Omittable<SchedulesPhaseAutomaticTaxDisabledReason?>? disabledReason, bool? enabled, Omittable<ConnectAccountReference?>? liability, }) { return SchedulesPhaseAutomaticTax(
+  disabledReason: disabledReason ?? this.disabledReason,
   enabled: enabled ?? this.enabled,
-  liability: liability != null ? liability() : this.liability,
+  liability: liability ?? this.liability,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is SchedulesPhaseAutomaticTax &&

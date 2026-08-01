@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (plan != null) 'plan': plan?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PaymentFlowsInstallmentOptions copyWith({bool? enabled, PaymentMethodDetailsCardInstallmentsPlan Function()? plan, }) { return PaymentFlowsInstallmentOptions(
+PaymentFlowsInstallmentOptions copyWith({bool? enabled, PaymentMethodDetailsCardInstallmentsPlan? Function()? plan, }) { return PaymentFlowsInstallmentOptions(
   enabled: enabled ?? this.enabled,
   plan: plan != null ? plan() : this.plan,
 ); } 

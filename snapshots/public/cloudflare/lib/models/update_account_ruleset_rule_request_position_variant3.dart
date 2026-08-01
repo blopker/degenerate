@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'index': ?index,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'index'}.contains(key)); } 
-UpdateAccountRulesetRuleRequestPositionVariant3 copyWith({int Function()? index}) { return UpdateAccountRulesetRuleRequestPositionVariant3(
+UpdateAccountRulesetRuleRequestPositionVariant3 copyWith({int? Function()? index}) { return UpdateAccountRulesetRuleRequestPositionVariant3(
   index: index != null ? index() : this.index,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

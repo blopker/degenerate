@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'selected_repository_ids': ?selectedRepositoryIds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('scope'); } 
-CodeSecurityAttachConfigurationRequest copyWith({CodeSecurityAttachConfigurationRequestScope? scope, List<int> Function()? selectedRepositoryIds, }) { return CodeSecurityAttachConfigurationRequest(
+CodeSecurityAttachConfigurationRequest copyWith({CodeSecurityAttachConfigurationRequestScope? scope, List<int>? Function()? selectedRepositoryIds, }) { return CodeSecurityAttachConfigurationRequest(
   scope: scope ?? this.scope,
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
 ); } 

@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'configuration_file_path': ?configurationFilePath,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('tag_name') && json['tag_name'] is String; } 
-ReposGenerateReleaseNotesRequest copyWith({String? tagName, String Function()? targetCommitish, String Function()? previousTagName, String Function()? configurationFilePath, }) { return ReposGenerateReleaseNotesRequest(
+ReposGenerateReleaseNotesRequest copyWith({String? tagName, String? Function()? targetCommitish, String? Function()? previousTagName, String? Function()? configurationFilePath, }) { return ReposGenerateReleaseNotesRequest(
   tagName: tagName ?? this.tagName,
   targetCommitish: targetCommitish != null ? targetCommitish() : this.targetCommitish,
   previousTagName: previousTagName != null ? previousTagName() : this.previousTagName,

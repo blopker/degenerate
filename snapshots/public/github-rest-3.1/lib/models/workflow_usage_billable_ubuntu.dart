@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'total_ms': ?totalMs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_ms'}.contains(key)); } 
-WorkflowUsageBillableUbuntu copyWith({int Function()? totalMs}) { return WorkflowUsageBillableUbuntu(
+WorkflowUsageBillableUbuntu copyWith({int? Function()? totalMs}) { return WorkflowUsageBillableUbuntu(
   totalMs: totalMs != null ? totalMs() : this.totalMs,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

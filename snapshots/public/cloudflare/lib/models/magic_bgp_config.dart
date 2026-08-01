@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'md5_key': ?md5Key,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('customer_asn') && json['customer_asn'] is num; } 
-MagicBgpConfig copyWith({int? customerAsn, List<String> Function()? extraPrefixes, String Function()? md5Key, }) { return MagicBgpConfig(
+MagicBgpConfig copyWith({int? customerAsn, List<String>? Function()? extraPrefixes, String? Function()? md5Key, }) { return MagicBgpConfig(
   customerAsn: customerAsn ?? this.customerAsn,
   extraPrefixes: extraPrefixes != null ? extraPrefixes() : this.extraPrefixes,
   md5Key: md5Key != null ? md5Key() : this.md5Key,

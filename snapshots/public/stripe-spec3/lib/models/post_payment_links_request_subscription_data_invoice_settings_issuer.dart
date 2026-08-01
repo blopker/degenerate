@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostPaymentLinksRequestSubscriptionDataInvoiceSettingsIssuer copyWith({String Function()? account, PostPaymentLinksRequestSubscriptionDataInvoiceSettingsIssuerType? type, }) { return PostPaymentLinksRequestSubscriptionDataInvoiceSettingsIssuer(
+PostPaymentLinksRequestSubscriptionDataInvoiceSettingsIssuer copyWith({String? Function()? account, PostPaymentLinksRequestSubscriptionDataInvoiceSettingsIssuerType? type, }) { return PostPaymentLinksRequestSubscriptionDataInvoiceSettingsIssuer(
   account: account != null ? account() : this.account,
   type: type ?? this.type,
 ); } 

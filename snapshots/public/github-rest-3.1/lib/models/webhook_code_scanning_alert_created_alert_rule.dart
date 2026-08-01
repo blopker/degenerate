@@ -34,17 +34,17 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCodeScanningAlertCreatedAlertRuleSeverity($value)'; } 
  }
-@immutable final class WebhookCodeScanningAlertCreatedAlertRule {const WebhookCodeScanningAlertCreatedAlertRule({required this.description, required this.id, required this.severity, this.fullDescription, this.help, this.helpUri, this.name, this.tags, });
+@immutable final class WebhookCodeScanningAlertCreatedAlertRule {const WebhookCodeScanningAlertCreatedAlertRule({required this.description, required this.id, required this.severity, this.fullDescription, this.help = const Omittable.absent(), this.helpUri = const Omittable.absent(), this.name, this.tags = const Omittable.absent(), });
 
 factory WebhookCodeScanningAlertCreatedAlertRule.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertCreatedAlertRule(
   description: json['description'] as String,
   fullDescription: json['full_description'] as String?,
-  help: json['help'] as String?,
-  helpUri: json['help_uri'] as String?,
+  help: json.containsKey('help') ? Omittable(json['help'] as String?) : const Omittable.absent(),
+  helpUri: json.containsKey('help_uri') ? Omittable(json['help_uri'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   name: json['name'] as String?,
   severity: json['severity'] != null ? WebhookCodeScanningAlertCreatedAlertRuleSeverity.fromJson(json['severity'] as String) : null,
-  tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  tags: json.containsKey('tags') ? Omittable((json['tags'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
 ); }
 
 /// A short description of the rule used to detect the alert.
@@ -52,10 +52,10 @@ final String description;
 
 final String? fullDescription;
 
-final String? help;
+final Omittable<String?> help;
 
 /// A link to the documentation for the rule used to detect the alert.
-final String? helpUri;
+final Omittable<String?> helpUri;
 
 /// A unique identifier for the rule used to detect the alert.
 final String id;
@@ -65,30 +65,30 @@ final String? name;
 /// The severity of the alert.
 final WebhookCodeScanningAlertCreatedAlertRuleSeverity? severity;
 
-final List<String>? tags;
+final Omittable<List<String>?> tags;
 
 Map<String, dynamic> toJson() { return {
   'description': description,
   'full_description': ?fullDescription,
-  'help': ?help,
-  'help_uri': ?helpUri,
+  if (help.isPresent) 'help': help.value,
+  if (helpUri.isPresent) 'help_uri': helpUri.value,
   'id': id,
   'name': ?name,
-  if (severity != null) 'severity': severity?.toJson(),
-  'tags': ?tags,
+  'severity': severity?.toJson(),
+  if (tags.isPresent) 'tags': tags.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('severity'); } 
-WebhookCodeScanningAlertCreatedAlertRule copyWith({String? description, String Function()? fullDescription, String? Function()? help, String? Function()? helpUri, String? id, String Function()? name, WebhookCodeScanningAlertCreatedAlertRuleSeverity? Function()? severity, List<String>? Function()? tags, }) { return WebhookCodeScanningAlertCreatedAlertRule(
+WebhookCodeScanningAlertCreatedAlertRule copyWith({String? description, String? Function()? fullDescription, Omittable<String?>? help, Omittable<String?>? helpUri, String? id, String? Function()? name, WebhookCodeScanningAlertCreatedAlertRuleSeverity? Function()? severity, Omittable<List<String>?>? tags, }) { return WebhookCodeScanningAlertCreatedAlertRule(
   description: description ?? this.description,
   fullDescription: fullDescription != null ? fullDescription() : this.fullDescription,
-  help: help != null ? help() : this.help,
-  helpUri: helpUri != null ? helpUri() : this.helpUri,
+  help: help ?? this.help,
+  helpUri: helpUri ?? this.helpUri,
   id: id ?? this.id,
   name: name != null ? name() : this.name,
   severity: severity != null ? severity() : this.severity,
-  tags: tags != null ? tags() : this.tags,
+  tags: tags ?? this.tags,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WebhookCodeScanningAlertCreatedAlertRule &&
@@ -99,7 +99,8 @@ WebhookCodeScanningAlertCreatedAlertRule copyWith({String? description, String F
           id == other.id &&
           name == other.name &&
           severity == other.severity &&
-          listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hash(description, fullDescription, help, helpUri, id, name, severity, Object.hashAll(tags ?? const [])); } 
+          tags.isPresent == other.tags.isPresent &&
+          listEquals(tags.value, other.tags.value); } 
+@override int get hashCode { return Object.hash(description, fullDescription, help, helpUri, id, name, severity, Object.hashAll(tags.value ?? const [])); } 
 @override String toString() { return 'WebhookCodeScanningAlertCreatedAlertRule(description: $description, fullDescription: $fullDescription, help: $help, helpUri: $helpUri, id: $id, name: $name, severity: $severity, tags: $tags)'; } 
  }

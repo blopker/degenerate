@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'include_obfuscation': ?includeObfuscation,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'include_usage', 'include_obfuscation'}.contains(key)); } 
-ChatCompletionStreamOptions copyWith({bool Function()? includeUsage, bool Function()? includeObfuscation, }) { return ChatCompletionStreamOptions(
+ChatCompletionStreamOptions copyWith({bool? Function()? includeUsage, bool? Function()? includeObfuscation, }) { return ChatCompletionStreamOptions(
   includeUsage: includeUsage != null ? includeUsage() : this.includeUsage,
   includeObfuscation: includeObfuscation != null ? includeObfuscation() : this.includeObfuscation,
 ); } 

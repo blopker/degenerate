@@ -137,7 +137,7 @@ Map<String, dynamic> toJson() { return {
   'total_score': ?totalScore,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('connection_id') && json['connection_id'] is String; } 
-TeamsDevicesTaniumInputRequest copyWith({String? connectionId, String Function()? eidLastSeen, TeamsDevicesTaniumInputRequestOperator Function()? $operator, TeamsDevicesTaniumInputRequestRiskLevel Function()? riskLevel, TeamsDevicesTaniumInputRequestScoreOperator Function()? scoreOperator, double Function()? totalScore, }) { return TeamsDevicesTaniumInputRequest(
+TeamsDevicesTaniumInputRequest copyWith({String? connectionId, String? Function()? eidLastSeen, TeamsDevicesTaniumInputRequestOperator? Function()? $operator, TeamsDevicesTaniumInputRequestRiskLevel? Function()? riskLevel, TeamsDevicesTaniumInputRequestScoreOperator? Function()? scoreOperator, double? Function()? totalScore, }) { return TeamsDevicesTaniumInputRequest(
   connectionId: connectionId ?? this.connectionId,
   eidLastSeen: eidLastSeen != null ? eidLastSeen() : this.eidLastSeen,
   $operator: $operator != null ? $operator() : this.$operator,

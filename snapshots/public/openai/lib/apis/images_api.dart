@@ -70,7 +70,7 @@ final request = ApiRequest(
   headers: headers,
   body: [
     ApiMultipartField.file('image', body.image),
-    if (body.model case final model$?)
+    if (body.model.value case final model$?)
       ApiMultipartField.text('model', model$.toString()),
     if (body.n case final n$?)
       ApiMultipartField.text('n', n$.toString()),

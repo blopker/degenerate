@@ -52,11 +52,11 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SearchContentType($value)'; } 
  }
 /// This tool searches the web for relevant results to use in a response. Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search).
-@immutable final class WebSearchPreviewTool {const WebSearchPreviewTool({this.type = 'web_search_preview', this.userLocation, this.searchContextSize, this.searchContentTypes, });
+@immutable final class WebSearchPreviewTool {const WebSearchPreviewTool({this.type = 'web_search_preview', this.userLocation = const Omittable.absent(), this.searchContextSize, this.searchContentTypes, });
 
 factory WebSearchPreviewTool.fromJson(Map<String, dynamic> json) { return WebSearchPreviewTool(
   type: json['type'] as String,
-  userLocation: json['user_location'] != null ? ApproximateLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null,
+  userLocation: json.containsKey('user_location') ? Omittable(json['user_location'] != null ? ApproximateLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   searchContextSize: json['search_context_size'] != null ? SearchContextSize.fromJson(json['search_context_size'] as String) : null,
   searchContentTypes: (json['search_content_types'] as List<dynamic>?)?.map((e) => SearchContentType.fromJson(e as String)).toList(),
 ); }
@@ -65,7 +65,7 @@ factory WebSearchPreviewTool.fromJson(Map<String, dynamic> json) { return WebSea
 final String type;
 
 /// The user's location.
-final ApproximateLocation? userLocation;
+final Omittable<ApproximateLocation?> userLocation;
 
 /// High level guidance for the amount of context window space to use for the search. One of `low`, `medium`, or `high`. `medium` is the default.
 final SearchContextSize? searchContextSize;
@@ -74,14 +74,14 @@ final List<SearchContentType>? searchContentTypes;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
-  if (userLocation != null) 'user_location': userLocation?.toJson(),
+  if (userLocation.isPresent) 'user_location': userLocation.value?.toJson(),
   if (searchContextSize != null) 'search_context_size': searchContextSize?.toJson(),
   if (searchContentTypes != null) 'search_content_types': searchContentTypes?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-WebSearchPreviewTool copyWith({String? type, ApproximateLocation? Function()? userLocation, SearchContextSize Function()? searchContextSize, List<SearchContentType> Function()? searchContentTypes, }) { return WebSearchPreviewTool(
+WebSearchPreviewTool copyWith({String? type, Omittable<ApproximateLocation?>? userLocation, SearchContextSize? Function()? searchContextSize, List<SearchContentType>? Function()? searchContentTypes, }) { return WebSearchPreviewTool(
   type: type ?? this.type,
-  userLocation: userLocation != null ? userLocation() : this.userLocation,
+  userLocation: userLocation ?? this.userLocation,
   searchContextSize: searchContextSize != null ? searchContextSize() : this.searchContextSize,
   searchContentTypes: searchContentTypes != null ? searchContentTypes() : this.searchContentTypes,
 ); } 

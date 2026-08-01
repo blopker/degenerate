@@ -29,39 +29,39 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CopilotSeatDetailsPlanType($value)'; } 
  }
 /// Information about a Copilot Business seat assignment for a user, team, or organization.
-@immutable final class CopilotSeatDetails {const CopilotSeatDetails({required this.createdAt, this.assignee, this.organization, this.assigningTeam, this.pendingCancellationDate, this.lastActivityAt, this.lastActivityEditor, this.lastAuthenticatedAt, this.updatedAt, this.planType, });
+@immutable final class CopilotSeatDetails {const CopilotSeatDetails({required this.createdAt, this.assignee = const Omittable.absent(), this.organization = const Omittable.absent(), this.assigningTeam = const Omittable.absent(), this.pendingCancellationDate = const Omittable.absent(), this.lastActivityAt = const Omittable.absent(), this.lastActivityEditor = const Omittable.absent(), this.lastAuthenticatedAt = const Omittable.absent(), this.updatedAt, this.planType, });
 
 factory CopilotSeatDetails.fromJson(Map<String, dynamic> json) { return CopilotSeatDetails(
-  assignee: json['assignee'] != null ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null,
-  organization: json['organization'] != null ? OrganizationSimple.fromJson(json['organization'] as Map<String, dynamic>) : null,
-  assigningTeam: json['assigning_team'] != null ? OneOf2.parse(json['assigning_team'], fromA: (v) => Team.fromJson(v as Map<String, dynamic>), fromB: (v) => EnterpriseTeam.fromJson(v as Map<String, dynamic>),) : null,
-  pendingCancellationDate: json['pending_cancellation_date'] as String?,
-  lastActivityAt: json['last_activity_at'] != null ? DateTime.parse(json['last_activity_at'] as String) : null,
-  lastActivityEditor: json['last_activity_editor'] as String?,
-  lastAuthenticatedAt: json['last_authenticated_at'] != null ? DateTime.parse(json['last_authenticated_at'] as String) : null,
+  assignee: json.containsKey('assignee') ? Omittable(json['assignee'] != null ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  organization: json.containsKey('organization') ? Omittable(json['organization'] != null ? OrganizationSimple.fromJson(json['organization'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  assigningTeam: json.containsKey('assigning_team') ? Omittable(json['assigning_team'] != null ? OneOf2.parse(json['assigning_team'], fromA: (v) => Team.fromJson(v as Map<String, dynamic>), fromB: (v) => EnterpriseTeam.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  pendingCancellationDate: json.containsKey('pending_cancellation_date') ? Omittable(json['pending_cancellation_date'] as String?) : const Omittable.absent(),
+  lastActivityAt: json.containsKey('last_activity_at') ? Omittable(json['last_activity_at'] != null ? DateTime.parse(json['last_activity_at'] as String) : null) : const Omittable.absent(),
+  lastActivityEditor: json.containsKey('last_activity_editor') ? Omittable(json['last_activity_editor'] as String?) : const Omittable.absent(),
+  lastAuthenticatedAt: json.containsKey('last_authenticated_at') ? Omittable(json['last_authenticated_at'] != null ? DateTime.parse(json['last_authenticated_at'] as String) : null) : const Omittable.absent(),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   planType: json['plan_type'] != null ? CopilotSeatDetailsPlanType.fromJson(json['plan_type'] as String) : null,
 ); }
 
-final SimpleUser? assignee;
+final Omittable<SimpleUser?> assignee;
 
-final OrganizationSimple? organization;
+final Omittable<OrganizationSimple?> organization;
 
 /// The team through which the assignee is granted access to GitHub Copilot, if applicable.
-final CopilotSeatDetailsAssigningTeam? assigningTeam;
+final Omittable<CopilotSeatDetailsAssigningTeam?> assigningTeam;
 
 /// The pending cancellation date for the seat, in `YYYY-MM-DD` format. This will be null unless the assignee's Copilot access has been canceled during the current billing cycle. If the seat has been cancelled, this corresponds to the start of the organization's next billing cycle.
-final String? pendingCancellationDate;
+final Omittable<String?> pendingCancellationDate;
 
 /// Timestamp of user's last GitHub Copilot activity, in ISO 8601 format.
-final DateTime? lastActivityAt;
+final Omittable<DateTime?> lastActivityAt;
 
 /// Last editor that was used by the user for a GitHub Copilot completion.
-final String? lastActivityEditor;
+final Omittable<String?> lastActivityEditor;
 
 /// Timestamp of the last time the user authenticated with GitHub Copilot, in ISO 8601 format.
-final DateTime? lastAuthenticatedAt;
+final Omittable<DateTime?> lastAuthenticatedAt;
 
 /// Timestamp of when the assignee was last granted access to GitHub Copilot, in ISO 8601 format.
 final DateTime createdAt;
@@ -73,26 +73,26 @@ final DateTime? updatedAt;
 final CopilotSeatDetailsPlanType? planType;
 
 Map<String, dynamic> toJson() { return {
-  if (assignee != null) 'assignee': assignee?.toJson(),
-  if (organization != null) 'organization': organization?.toJson(),
-  if (assigningTeam != null) 'assigning_team': assigningTeam?.toJson(),
-  'pending_cancellation_date': ?pendingCancellationDate,
-  if (lastActivityAt != null) 'last_activity_at': lastActivityAt?.toIso8601String(),
-  'last_activity_editor': ?lastActivityEditor,
-  if (lastAuthenticatedAt != null) 'last_authenticated_at': lastAuthenticatedAt?.toIso8601String(),
+  if (assignee.isPresent) 'assignee': assignee.value?.toJson(),
+  if (organization.isPresent) 'organization': organization.value?.toJson(),
+  if (assigningTeam.isPresent) 'assigning_team': assigningTeam.value?.toJson(),
+  if (pendingCancellationDate.isPresent) 'pending_cancellation_date': pendingCancellationDate.value,
+  if (lastActivityAt.isPresent) 'last_activity_at': lastActivityAt.value?.toIso8601String(),
+  if (lastActivityEditor.isPresent) 'last_activity_editor': lastActivityEditor.value,
+  if (lastAuthenticatedAt.isPresent) 'last_authenticated_at': lastAuthenticatedAt.value?.toIso8601String(),
   'created_at': createdAt.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
   if (planType != null) 'plan_type': planType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String; } 
-CopilotSeatDetails copyWith({SimpleUser? Function()? assignee, OrganizationSimple? Function()? organization, CopilotSeatDetailsAssigningTeam? Function()? assigningTeam, String? Function()? pendingCancellationDate, DateTime? Function()? lastActivityAt, String? Function()? lastActivityEditor, DateTime? Function()? lastAuthenticatedAt, DateTime? createdAt, DateTime Function()? updatedAt, CopilotSeatDetailsPlanType Function()? planType, }) { return CopilotSeatDetails(
-  assignee: assignee != null ? assignee() : this.assignee,
-  organization: organization != null ? organization() : this.organization,
-  assigningTeam: assigningTeam != null ? assigningTeam() : this.assigningTeam,
-  pendingCancellationDate: pendingCancellationDate != null ? pendingCancellationDate() : this.pendingCancellationDate,
-  lastActivityAt: lastActivityAt != null ? lastActivityAt() : this.lastActivityAt,
-  lastActivityEditor: lastActivityEditor != null ? lastActivityEditor() : this.lastActivityEditor,
-  lastAuthenticatedAt: lastAuthenticatedAt != null ? lastAuthenticatedAt() : this.lastAuthenticatedAt,
+CopilotSeatDetails copyWith({Omittable<SimpleUser?>? assignee, Omittable<OrganizationSimple?>? organization, Omittable<CopilotSeatDetailsAssigningTeam?>? assigningTeam, Omittable<String?>? pendingCancellationDate, Omittable<DateTime?>? lastActivityAt, Omittable<String?>? lastActivityEditor, Omittable<DateTime?>? lastAuthenticatedAt, DateTime? createdAt, DateTime? Function()? updatedAt, CopilotSeatDetailsPlanType? Function()? planType, }) { return CopilotSeatDetails(
+  assignee: assignee ?? this.assignee,
+  organization: organization ?? this.organization,
+  assigningTeam: assigningTeam ?? this.assigningTeam,
+  pendingCancellationDate: pendingCancellationDate ?? this.pendingCancellationDate,
+  lastActivityAt: lastActivityAt ?? this.lastActivityAt,
+  lastActivityEditor: lastActivityEditor ?? this.lastActivityEditor,
+  lastAuthenticatedAt: lastAuthenticatedAt ?? this.lastAuthenticatedAt,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   planType: planType != null ? planType() : this.planType,

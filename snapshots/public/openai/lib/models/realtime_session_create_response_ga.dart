@@ -71,7 +71,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A new Realtime session configuration, with an ephemeral key. Default TTL
 /// for keys is one minute.
 /// 
-@immutable final class RealtimeSessionCreateResponseGa {const RealtimeSessionCreateResponseGa({required this.clientSecret, required this.type, this.outputModalities, this.model, this.instructions, this.audio, this.include, this.tracing, this.tools, this.toolChoice, this.maxOutputTokens, this.truncation, this.prompt, });
+@immutable final class RealtimeSessionCreateResponseGa {const RealtimeSessionCreateResponseGa({required this.clientSecret, required this.type, this.outputModalities, this.model, this.instructions, this.audio, this.include, this.tracing = const Omittable.absent(), this.tools, this.toolChoice, this.maxOutputTokens, this.truncation, this.prompt, });
 
 factory RealtimeSessionCreateResponseGa.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateResponseGa(
   clientSecret: RealtimeSessionCreateResponseGaClientSecret.fromJson(json['client_secret'] as Map<String, dynamic>),
@@ -81,7 +81,7 @@ factory RealtimeSessionCreateResponseGa.fromJson(Map<String, dynamic> json) { re
   instructions: json['instructions'] as String?,
   audio: json['audio'] != null ? RealtimeSessionCreateResponseGaAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
   include: (json['include'] as List<dynamic>?)?.map((e) => RealtimeSessionCreateResponseGaInclude.fromJson(e as String)).toList(),
-  tracing: json['tracing'] != null ? OneOf2.parse(json['tracing'], fromA: (v) => Auto.fromJson(v as String), fromB: (v) => TracingConfiguration5.fromJson(v as Map<String, dynamic>),) : null,
+  tracing: json.containsKey('tracing') ? Omittable(json['tracing'] != null ? OneOf2.parse(json['tracing'], fromA: (v) => Auto.fromJson(v as String), fromB: (v) => TracingConfiguration5.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => RealtimeFunctionTool.fromJson(v as Map<String, dynamic>), fromB: (v) => McpTool.fromJson(v as Map<String, dynamic>),)).toList(),
   toolChoice: json['tool_choice'] != null ? OneOf3.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>),) : null,
   maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => RealtimeSessionCreateResponseGaMaxOutputTokensVariant2.fromJson(v as String),) : null,
@@ -128,7 +128,7 @@ final List<RealtimeSessionCreateResponseGaInclude>? include;
 /// `auto` will create a trace for the session with default values for the
 /// workflow name, group id, and metadata.
 /// 
-final RealtimeSessionCreateResponseGaTracing? tracing;
+final Omittable<RealtimeSessionCreateResponseGaTracing?> tracing;
 
 /// Tools available to the model.
 final List<RealtimeSessionCreateResponseGaTools>? tools;
@@ -157,7 +157,7 @@ Map<String, dynamic> toJson() { return {
   'instructions': ?instructions,
   if (audio != null) 'audio': audio?.toJson(),
   if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
-  if (tracing != null) 'tracing': tracing?.toJson(),
+  if (tracing.isPresent) 'tracing': tracing.value?.toJson(),
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
   if (toolChoice != null) 'tool_choice': toolChoice?.toJson(),
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
@@ -166,7 +166,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_secret') &&
       json.containsKey('type'); } 
-RealtimeSessionCreateResponseGa copyWith({RealtimeSessionCreateResponseGaClientSecret? clientSecret, RealtimeSessionCreateResponseGaType? type, List<RealtimeSessionCreateResponseGaOutputModalities> Function()? outputModalities, RealtimeSessionCreateResponseGaModel Function()? model, String Function()? instructions, RealtimeSessionCreateResponseGaAudio Function()? audio, List<RealtimeSessionCreateResponseGaInclude> Function()? include, RealtimeSessionCreateResponseGaTracing? Function()? tracing, List<RealtimeSessionCreateResponseGaTools> Function()? tools, RealtimeSessionCreateResponseGaToolChoice Function()? toolChoice, RealtimeSessionCreateResponseGaMaxOutputTokens Function()? maxOutputTokens, RealtimeTruncation Function()? truncation, Prompt Function()? prompt, }) { return RealtimeSessionCreateResponseGa(
+RealtimeSessionCreateResponseGa copyWith({RealtimeSessionCreateResponseGaClientSecret? clientSecret, RealtimeSessionCreateResponseGaType? type, List<RealtimeSessionCreateResponseGaOutputModalities>? Function()? outputModalities, RealtimeSessionCreateResponseGaModel? Function()? model, String? Function()? instructions, RealtimeSessionCreateResponseGaAudio? Function()? audio, List<RealtimeSessionCreateResponseGaInclude>? Function()? include, Omittable<RealtimeSessionCreateResponseGaTracing?>? tracing, List<RealtimeSessionCreateResponseGaTools>? Function()? tools, RealtimeSessionCreateResponseGaToolChoice? Function()? toolChoice, RealtimeSessionCreateResponseGaMaxOutputTokens? Function()? maxOutputTokens, RealtimeTruncation? Function()? truncation, Prompt? Function()? prompt, }) { return RealtimeSessionCreateResponseGa(
   clientSecret: clientSecret ?? this.clientSecret,
   type: type ?? this.type,
   outputModalities: outputModalities != null ? outputModalities() : this.outputModalities,
@@ -174,7 +174,7 @@ RealtimeSessionCreateResponseGa copyWith({RealtimeSessionCreateResponseGaClientS
   instructions: instructions != null ? instructions() : this.instructions,
   audio: audio != null ? audio() : this.audio,
   include: include != null ? include() : this.include,
-  tracing: tracing != null ? tracing() : this.tracing,
+  tracing: tracing ?? this.tracing,
   tools: tools != null ? tools() : this.tools,
   toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
   maxOutputTokens: maxOutputTokens != null ? maxOutputTokens() : this.maxOutputTokens,

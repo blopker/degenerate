@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'is_amount_controllable': ?isAmountControllable,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('increment_amount') && json['increment_amount'] is num; } 
-PostTestHelpersIssuingAuthorizationsAuthorizationIncrementRequest copyWith({List<String> Function()? expand, int? incrementAmount, bool Function()? isAmountControllable, }) { return PostTestHelpersIssuingAuthorizationsAuthorizationIncrementRequest(
+PostTestHelpersIssuingAuthorizationsAuthorizationIncrementRequest copyWith({List<String>? Function()? expand, int? incrementAmount, bool? Function()? isAmountControllable, }) { return PostTestHelpersIssuingAuthorizationsAuthorizationIncrementRequest(
   expand: expand != null ? expand() : this.expand,
   incrementAmount: incrementAmount ?? this.incrementAmount,
   isAmountControllable: isAmountControllable != null ? isAmountControllable() : this.isAmountControllable,

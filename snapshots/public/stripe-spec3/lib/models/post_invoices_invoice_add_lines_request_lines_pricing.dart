@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'price': ?price,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'price'}.contains(key)); } 
-PostInvoicesInvoiceAddLinesRequestLinesPricing copyWith({String Function()? price}) { return PostInvoicesInvoiceAddLinesRequestLinesPricing(
+PostInvoicesInvoiceAddLinesRequestLinesPricing copyWith({String? Function()? price}) { return PostInvoicesInvoiceAddLinesRequestLinesPricing(
   price: price != null ? price() : this.price,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

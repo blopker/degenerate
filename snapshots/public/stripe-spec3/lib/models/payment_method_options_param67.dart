@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsParam67 copyWith({PaymentMethodOptionsParam67SetupFutureUsage Function()? setupFutureUsage}) { return PaymentMethodOptionsParam67(
+PaymentMethodOptionsParam67 copyWith({PaymentMethodOptionsParam67SetupFutureUsage? Function()? setupFutureUsage}) { return PaymentMethodOptionsParam67(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

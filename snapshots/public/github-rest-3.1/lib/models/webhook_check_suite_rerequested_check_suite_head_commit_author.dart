@@ -21,13 +21,13 @@ final String? username;
 
 Map<String, dynamic> toJson() { return {
   if (date != null) 'date': date?.toIso8601String(),
-  'email': ?email,
+  'email': email,
   'name': name,
   'username': ?username,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') && json['email'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') && (json['email'] == null || json['email'] is String) &&
       json.containsKey('name') && json['name'] is String; } 
-WebhookCheckSuiteRerequestedCheckSuiteHeadCommitAuthor copyWith({DateTime Function()? date, String? Function()? email, String? name, String Function()? username, }) { return WebhookCheckSuiteRerequestedCheckSuiteHeadCommitAuthor(
+WebhookCheckSuiteRerequestedCheckSuiteHeadCommitAuthor copyWith({DateTime? Function()? date, String? Function()? email, String? name, String? Function()? username, }) { return WebhookCheckSuiteRerequestedCheckSuiteHeadCommitAuthor(
   date: date != null ? date() : this.date,
   email: email != null ? email() : this.email,
   name: name ?? this.name,

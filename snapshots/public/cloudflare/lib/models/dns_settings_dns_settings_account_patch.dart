@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (nameservers != null) 'nameservers': nameservers?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'flatten_all_cnames', 'foundation_dns', 'internal_dns', 'multi_provider', 'ns_ttl', 'secondary_overrides', 'soa', 'zone_mode', 'nameservers'}.contains(key)); } 
-DnsSettingsDnsSettingsAccountPatch copyWith({DnsSettingsFlattenAllCnames Function()? flattenAllCnames, DnsSettingsFoundationDns Function()? foundationDns, DnsSettingsInternalDnsBase Function()? internalDns, DnsSettingsMultiProvider Function()? multiProvider, DnsSettingsNsTtl Function()? nsTtl, DnsSettingsSecondaryOverrides Function()? secondaryOverrides, DnsSettingsSoaBase Function()? soa, DnsSettingsZoneMode Function()? zoneMode, DnsSettingsDnsSettingsAccountPatchNameservers Function()? nameservers, }) { return DnsSettingsDnsSettingsAccountPatch(
+DnsSettingsDnsSettingsAccountPatch copyWith({DnsSettingsFlattenAllCnames? Function()? flattenAllCnames, DnsSettingsFoundationDns? Function()? foundationDns, DnsSettingsInternalDnsBase? Function()? internalDns, DnsSettingsMultiProvider? Function()? multiProvider, DnsSettingsNsTtl? Function()? nsTtl, DnsSettingsSecondaryOverrides? Function()? secondaryOverrides, DnsSettingsSoaBase? Function()? soa, DnsSettingsZoneMode? Function()? zoneMode, DnsSettingsDnsSettingsAccountPatchNameservers? Function()? nameservers, }) { return DnsSettingsDnsSettingsAccountPatch(
   flattenAllCnames: flattenAllCnames != null ? flattenAllCnames() : this.flattenAllCnames,
   foundationDns: foundationDns != null ? foundationDns() : this.foundationDns,
   internalDns: internalDns != null ? internalDns() : this.internalDns,

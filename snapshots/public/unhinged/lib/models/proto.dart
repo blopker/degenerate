@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+
 import 'new.dart';
 
 @immutable
@@ -58,10 +59,10 @@ final class Proto {
   }
 
   Proto copyWith({
-    New Function()? constructor,
+    New? Function()? constructor,
     String Function()? $toString,
-    int Function()? valueOf,
-    Proto Function()? prototype,
+    int? Function()? valueOf,
+    Proto? Function()? prototype,
   }) {
     return Proto(
       constructor: constructor != null ? constructor() : this.constructor,

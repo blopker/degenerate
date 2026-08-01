@@ -44,7 +44,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alert
       json.containsKey('enabled') &&
       json.containsKey('mechanisms') &&
       json.containsKey('name'); } 
-NotificationPoliciesCreateANotificationPolicyRequest copyWith({AaaAlertInterval Function()? alertInterval, AaaAlertType? alertType, AaaSchemasDescription Function()? description, AaaEnabled? enabled, AaaFilters Function()? filters, AaaMechanisms? mechanisms, AaaSchemasName? name, }) { return NotificationPoliciesCreateANotificationPolicyRequest(
+NotificationPoliciesCreateANotificationPolicyRequest copyWith({AaaAlertInterval? Function()? alertInterval, AaaAlertType? alertType, AaaSchemasDescription? Function()? description, AaaEnabled? enabled, AaaFilters? Function()? filters, AaaMechanisms? mechanisms, AaaSchemasName? name, }) { return NotificationPoliciesCreateANotificationPolicyRequest(
   alertInterval: alertInterval != null ? alertInterval() : this.alertInterval,
   alertType: alertType ?? this.alertType,
   description: description != null ? description() : this.description,

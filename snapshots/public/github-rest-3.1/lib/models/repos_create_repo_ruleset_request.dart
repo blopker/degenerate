@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('enforcement'); } 
-ReposCreateRepoRulesetRequest copyWith({String? name, ReposCreateRepoRulesetRequestTarget Function()? target, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor> Function()? bypassActors, RepositoryRulesetConditions Function()? conditions, List<RepositoryRule> Function()? rules, }) { return ReposCreateRepoRulesetRequest(
+ReposCreateRepoRulesetRequest copyWith({String? name, ReposCreateRepoRulesetRequestTarget Function()? target, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, RepositoryRulesetConditions? Function()? conditions, List<RepositoryRule>? Function()? rules, }) { return ReposCreateRepoRulesetRequest(
   name: name ?? this.name,
   target: target != null ? target() : this.target,
   enforcement: enforcement ?? this.enforcement,

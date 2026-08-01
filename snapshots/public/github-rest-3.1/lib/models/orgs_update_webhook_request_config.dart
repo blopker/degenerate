@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (insecureSsl != null) 'insecure_ssl': insecureSsl?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url'); } 
-OrgsUpdateWebhookRequestConfig copyWith({WebhookConfigUrl? url, WebhookConfigContentType Function()? contentType, WebhookConfigSecret Function()? secret, WebhookConfigInsecureSsl Function()? insecureSsl, }) { return OrgsUpdateWebhookRequestConfig(
+OrgsUpdateWebhookRequestConfig copyWith({WebhookConfigUrl? url, WebhookConfigContentType? Function()? contentType, WebhookConfigSecret? Function()? secret, WebhookConfigInsecureSsl? Function()? insecureSsl, }) { return OrgsUpdateWebhookRequestConfig(
   url: url ?? this.url,
   contentType: contentType != null ? contentType() : this.contentType,
   secret: secret != null ? secret() : this.secret,

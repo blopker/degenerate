@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'pointer': ?pointer,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'parameter', 'parameter_value_index', 'pointer'}.contains(key)); } 
-PayPerCrawlSource copyWith({String Function()? parameter, int Function()? parameterValueIndex, List<String> Function()? pointer, }) { return PayPerCrawlSource(
+PayPerCrawlSource copyWith({String? Function()? parameter, int? Function()? parameterValueIndex, List<String>? Function()? pointer, }) { return PayPerCrawlSource(
   parameter: parameter != null ? parameter() : this.parameter,
   parameterValueIndex: parameterValueIndex != null ? parameterValueIndex() : this.parameterValueIndex,
   pointer: pointer != null ? pointer() : this.pointer,

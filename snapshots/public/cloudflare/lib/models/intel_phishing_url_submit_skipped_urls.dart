@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'url_id': ?urlId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url', 'url_id'}.contains(key)); } 
-IntelPhishingUrlSubmitSkippedUrls copyWith({String Function()? url, int Function()? urlId, }) { return IntelPhishingUrlSubmitSkippedUrls(
+IntelPhishingUrlSubmitSkippedUrls copyWith({String? Function()? url, int? Function()? urlId, }) { return IntelPhishingUrlSubmitSkippedUrls(
   url: url != null ? url() : this.url,
   urlId: urlId != null ? urlId() : this.urlId,
 ); } 

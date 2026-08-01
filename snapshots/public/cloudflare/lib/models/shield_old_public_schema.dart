@@ -38,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('kind') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('schema_id'); } 
-ShieldOldPublicSchema copyWith({ShieldTimestamp? createdAt, ShieldOldKind? kind, String? name, ShieldUuid? schemaId, String Function()? source, ShieldOldValidationEnabled Function()? validationEnabled, }) { return ShieldOldPublicSchema(
+ShieldOldPublicSchema copyWith({ShieldTimestamp? createdAt, ShieldOldKind? kind, String? name, ShieldUuid? schemaId, String? Function()? source, ShieldOldValidationEnabled? Function()? validationEnabled, }) { return ShieldOldPublicSchema(
   createdAt: createdAt ?? this.createdAt,
   kind: kind ?? this.kind,
   name: name ?? this.name,

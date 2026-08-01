@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'title': title,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('title') && json['title'] is String; } 
-PostTerminalReadersReaderCollectInputsRequestInputsCustomText copyWith({String Function()? description, String Function()? skipButton, String Function()? submitButton, String? title, }) { return PostTerminalReadersReaderCollectInputsRequestInputsCustomText(
+PostTerminalReadersReaderCollectInputsRequestInputsCustomText copyWith({String? Function()? description, String? Function()? skipButton, String? Function()? submitButton, String? title, }) { return PostTerminalReadersReaderCollectInputsRequestInputsCustomText(
   description: description != null ? description() : this.description,
   skipButton: skipButton != null ? skipButton() : this.skipButton,
   submitButton: submitButton != null ? submitButton() : this.submitButton,

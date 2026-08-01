@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'reference_zone_id': ?referenceZoneId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference_zone_id'}.contains(key)); } 
-DnsSettingsInternalDnsBase copyWith({String Function()? referenceZoneId}) { return DnsSettingsInternalDnsBase(
+DnsSettingsInternalDnsBase copyWith({String? Function()? referenceZoneId}) { return DnsSettingsInternalDnsBase(
   referenceZoneId: referenceZoneId != null ? referenceZoneId() : this.referenceZoneId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

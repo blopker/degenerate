@@ -21,10 +21,10 @@ factory FirewallPriority.fromJson(num json) => FirewallPriority(json.toDouble())
 num toJson() => value;
 
 }
-@immutable final class FirewallOverride {const FirewallOverride({this.description, this.groups, this.id, this.paused, this.priority, this.rewriteAction, this.rules, this.urls, });
+@immutable final class FirewallOverride {const FirewallOverride({this.description = const Omittable.absent(), this.groups, this.id, this.paused, this.priority, this.rewriteAction, this.rules, this.urls, });
 
 factory FirewallOverride.fromJson(Map<String, dynamic> json) { return FirewallOverride(
-  description: json['description'] != null ? FirewallComponentsSchemasDescription.fromJson(json['description'] as String) : null,
+  description: json.containsKey('description') ? Omittable(json['description'] != null ? FirewallComponentsSchemasDescription.fromJson(json['description'] as String) : null) : const Omittable.absent(),
   groups: json['groups'] as Map<String, dynamic>?,
   id: json['id'] != null ? FirewallOverridesId.fromJson(json['id'] as String) : null,
   paused: json['paused'] != null ? FirewallPaused.fromJson(json['paused'] as bool) : null,
@@ -35,7 +35,7 @@ factory FirewallOverride.fromJson(Map<String, dynamic> json) { return FirewallOv
 ); }
 
 /// An informative summary of the current URI-based WAF override.
-final FirewallComponentsSchemasDescription? description;
+final Omittable<FirewallComponentsSchemasDescription?> description;
 
 /// An object that allows you to enable or disable WAF rule groups for the current WAF override. Each key of this object must be the ID of a WAF rule group, and each value must be a valid WAF action (usually `default` or `disable`). When creating a new URI-based WAF override, you must provide a `groups` object or a `rules` object.
 final Map<String,dynamic>? groups;
@@ -53,7 +53,7 @@ final Map<String,FirewallWafAction?>? rules;
 final List<String>? urls;
 
 Map<String, dynamic> toJson() { return {
-  if (description != null) 'description': description?.toJson(),
+  if (description.isPresent) 'description': description.value?.toJson(),
   'groups': ?groups,
   if (id != null) 'id': id?.toJson(),
   if (paused != null) 'paused': paused?.toJson(),
@@ -63,8 +63,8 @@ Map<String, dynamic> toJson() { return {
   'urls': ?urls,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'groups', 'id', 'paused', 'priority', 'rewrite_action', 'rules', 'urls'}.contains(key)); } 
-FirewallOverride copyWith({FirewallComponentsSchemasDescription? Function()? description, Map<String, dynamic> Function()? groups, FirewallOverridesId Function()? id, FirewallPaused Function()? paused, FirewallPriority Function()? priority, FirewallRewriteAction Function()? rewriteAction, Map<String, FirewallWafAction?> Function()? rules, List<String> Function()? urls, }) { return FirewallOverride(
-  description: description != null ? description() : this.description,
+FirewallOverride copyWith({Omittable<FirewallComponentsSchemasDescription?>? description, Map<String, dynamic>? Function()? groups, FirewallOverridesId? Function()? id, FirewallPaused? Function()? paused, FirewallPriority? Function()? priority, FirewallRewriteAction? Function()? rewriteAction, Map<String, FirewallWafAction?>? Function()? rules, List<String>? Function()? urls, }) { return FirewallOverride(
+  description: description ?? this.description,
   groups: groups != null ? groups() : this.groups,
   id: id != null ? id() : this.id,
   paused: paused != null ? paused() : this.paused,

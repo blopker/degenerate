@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'type'}.contains(key)); } 
-AccessActiveSessionResponseResultIdp copyWith({String Function()? id, String Function()? type, }) { return AccessActiveSessionResponseResultIdp(
+AccessActiveSessionResponseResultIdp copyWith({String? Function()? id, String? Function()? type, }) { return AccessActiveSessionResponseResultIdp(
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,
 ); } 

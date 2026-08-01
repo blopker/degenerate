@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (uid != null) 'uid': uid?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'deleteRecordingAfterDays', 'enabled', 'meta', 'modified', 'uid'}.contains(key)); } 
-StreamLiveInputObjectWithoutUrl copyWith({StreamLiveInputCreated Function()? created, StreamLiveInputRecordingDeletion Function()? deleteRecordingAfterDays, StreamLiveInputEnabled Function()? enabled, Map<String, dynamic> Function()? meta, StreamLiveInputModified Function()? modified, StreamLiveInputIdentifier Function()? uid, }) { return StreamLiveInputObjectWithoutUrl(
+StreamLiveInputObjectWithoutUrl copyWith({StreamLiveInputCreated? Function()? created, StreamLiveInputRecordingDeletion? Function()? deleteRecordingAfterDays, StreamLiveInputEnabled? Function()? enabled, Map<String, dynamic>? Function()? meta, StreamLiveInputModified? Function()? modified, StreamLiveInputIdentifier? Function()? uid, }) { return StreamLiveInputObjectWithoutUrl(
   created: created != null ? created() : this.created,
   deleteRecordingAfterDays: deleteRecordingAfterDays != null ? deleteRecordingAfterDays() : this.deleteRecordingAfterDays,
   enabled: enabled != null ? enabled() : this.enabled,

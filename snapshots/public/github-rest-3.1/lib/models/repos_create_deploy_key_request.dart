@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'read_only': ?readOnly,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
-ReposCreateDeployKeyRequest copyWith({String Function()? title, String? key, bool Function()? readOnly, }) { return ReposCreateDeployKeyRequest(
+ReposCreateDeployKeyRequest copyWith({String? Function()? title, String? key, bool? Function()? readOnly, }) { return ReposCreateDeployKeyRequest(
   title: title != null ? title() : this.title,
   key: key ?? this.key,
   readOnly: readOnly != null ? readOnly() : this.readOnly,

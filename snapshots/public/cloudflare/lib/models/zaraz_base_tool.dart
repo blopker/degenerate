@@ -46,7 +46,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('block
       json.containsKey('defaultFields') &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('name') && json['name'] is String; } 
-ZarazBaseTool copyWith({List<String>? blockingTriggers, Map<String,dynamic>? defaultFields, String Function()? defaultPurpose, bool? enabled, String? name, String Function()? vendorName, String Function()? vendorPolicyUrl, }) { return ZarazBaseTool(
+ZarazBaseTool copyWith({List<String>? blockingTriggers, Map<String,dynamic>? defaultFields, String? Function()? defaultPurpose, bool? enabled, String? name, String? Function()? vendorName, String? Function()? vendorPolicyUrl, }) { return ZarazBaseTool(
   blockingTriggers: blockingTriggers ?? this.blockingTriggers,
   defaultFields: defaultFields ?? this.defaultFields,
   defaultPurpose: defaultPurpose != null ? defaultPurpose() : this.defaultPurpose,

@@ -19,11 +19,11 @@ final String name;
 
 Map<String, dynamic> toJson() { return {
   'role': role,
-  'content': ?content,
+  'content': content,
   'name': name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') && json['role'] is String &&
-      json.containsKey('content') && json['content'] is String &&
+      json.containsKey('content') && (json['content'] == null || json['content'] is String) &&
       json.containsKey('name') && json['name'] is String; } 
 ChatCompletionRequestFunctionMessage copyWith({String? role, String? Function()? content, String? name, }) { return ChatCompletionRequestFunctionMessage(
   role: role ?? this.role,

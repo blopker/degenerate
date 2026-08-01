@@ -73,19 +73,19 @@ final String workflowId;
 
 Map<String, dynamic> toJson() { return {
   'created_on': createdOn.toIso8601String(),
-  if (endedOn != null) 'ended_on': endedOn?.toIso8601String(),
+  'ended_on': endedOn?.toIso8601String(),
   'id': id,
   'modified_on': modifiedOn.toIso8601String(),
-  if (startedOn != null) 'started_on': startedOn?.toIso8601String(),
+  'started_on': startedOn?.toIso8601String(),
   'status': status.toJson(),
   'version_id': versionId,
   'workflow_id': workflowId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') && json['created_on'] is String &&
-      json.containsKey('ended_on') && json['ended_on'] is String &&
+      json.containsKey('ended_on') && (json['ended_on'] == null || json['ended_on'] is String) &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_on') && json['modified_on'] is String &&
-      json.containsKey('started_on') && json['started_on'] is String &&
+      json.containsKey('started_on') && (json['started_on'] == null || json['started_on'] is String) &&
       json.containsKey('status') &&
       json.containsKey('version_id') && json['version_id'] is String &&
       json.containsKey('workflow_id') && json['workflow_id'] is String; } 

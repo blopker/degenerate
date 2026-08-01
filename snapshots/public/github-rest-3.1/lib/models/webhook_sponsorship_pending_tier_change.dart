@@ -69,7 +69,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('changes') &&
       json.containsKey('sender') &&
       json.containsKey('sponsorship'); } 
-WebhookSponsorshipPendingTierChange copyWith({WebhookSponsorshipPendingTierChangeAction? action, WebhooksChanges8? changes, WebhooksEffectiveDate Function()? effectiveDate, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) { return WebhookSponsorshipPendingTierChange(
+WebhookSponsorshipPendingTierChange copyWith({WebhookSponsorshipPendingTierChangeAction? action, WebhooksChanges8? changes, WebhooksEffectiveDate? Function()? effectiveDate, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) { return WebhookSponsorshipPendingTierChange(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   effectiveDate: effectiveDate != null ? effectiveDate() : this.effectiveDate,

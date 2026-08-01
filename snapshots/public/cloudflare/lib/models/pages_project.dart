@@ -68,21 +68,21 @@ final bool? usesFunctions;
 
 Map<String, dynamic> toJson() { return {
   if (buildConfig != null) 'build_config': buildConfig?.toJson(),
-  if (canonicalDeployment != null) 'canonical_deployment': canonicalDeployment?.toJson(),
+  'canonical_deployment': canonicalDeployment?.toJson(),
   'created_on': createdOn.toIso8601String(),
   'deployment_configs': deploymentConfigs.toJson(),
   'domains': ?domains,
   'framework': framework,
   'framework_version': frameworkVersion,
   'id': id,
-  if (latestDeployment != null) 'latest_deployment': latestDeployment?.toJson(),
+  'latest_deployment': latestDeployment?.toJson(),
   'name': name.toJson(),
   'preview_script_name': previewScriptName,
   'production_branch': productionBranch,
   'production_script_name': productionScriptName,
   if (source != null) 'source': source?.toJson(),
   'subdomain': ?subdomain,
-  'uses_functions': ?usesFunctions,
+  'uses_functions': usesFunctions,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('canonical_deployment') &&
       json.containsKey('created_on') && json['created_on'] is String &&
@@ -95,8 +95,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('canon
       json.containsKey('preview_script_name') && json['preview_script_name'] is String &&
       json.containsKey('production_branch') && json['production_branch'] is String &&
       json.containsKey('production_script_name') && json['production_script_name'] is String &&
-      json.containsKey('uses_functions') && json['uses_functions'] is bool; } 
-PagesProject copyWith({PagesBuildConfig Function()? buildConfig, PagesDeployment? Function()? canonicalDeployment, DateTime? createdOn, PagesProjectDeploymentConfigs? deploymentConfigs, List<String> Function()? domains, String? framework, String? frameworkVersion, String? id, PagesDeployment? Function()? latestDeployment, PagesProjectName? name, String? previewScriptName, String? productionBranch, String? productionScriptName, PagesSource Function()? source, String Function()? subdomain, bool? Function()? usesFunctions, }) { return PagesProject(
+      json.containsKey('uses_functions') && (json['uses_functions'] == null || json['uses_functions'] is bool); } 
+PagesProject copyWith({PagesBuildConfig? Function()? buildConfig, PagesDeployment? Function()? canonicalDeployment, DateTime? createdOn, PagesProjectDeploymentConfigs? deploymentConfigs, List<String>? Function()? domains, String? framework, String? frameworkVersion, String? id, PagesDeployment? Function()? latestDeployment, PagesProjectName? name, String? previewScriptName, String? productionBranch, String? productionScriptName, PagesSource? Function()? source, String? Function()? subdomain, bool? Function()? usesFunctions, }) { return PagesProject(
   buildConfig: buildConfig != null ? buildConfig() : this.buildConfig,
   canonicalDeployment: canonicalDeployment != null ? canonicalDeployment() : this.canonicalDeployment,
   createdOn: createdOn ?? this.createdOn,

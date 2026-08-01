@@ -109,14 +109,16 @@ final class RoomErrorResponse {
   const RoomErrorResponse({
     required this.code,
     required this.message,
-    this.detail,
+    this.detail = const Omittable.absent(),
   });
 
   factory RoomErrorResponse.fromJson(Map<String, dynamic> json) {
     return RoomErrorResponse(
       code: ErrorCode.fromJson(json['code'] as String),
       message: json['message'] as String,
-      detail: json['detail'] as String?,
+      detail: json.containsKey('detail')
+          ? Omittable(json['detail'] as String?)
+          : const Omittable.absent(),
     );
   }
 
@@ -126,10 +128,14 @@ final class RoomErrorResponse {
 
   final String message;
 
-  final String? detail;
+  final Omittable<String?> detail;
 
   Map<String, dynamic> toJson() {
-    return {'code': code.toJson(), 'message': message, 'detail': ?detail};
+    return {
+      'code': code.toJson(),
+      'message': message,
+      if (detail.isPresent) 'detail': detail.value,
+    };
   }
 
   static bool canParse(Map<String, dynamic> json) {
@@ -141,12 +147,12 @@ final class RoomErrorResponse {
   RoomErrorResponse copyWith({
     ErrorCode? code,
     String? message,
-    String? Function()? detail,
+    Omittable<String?>? detail,
   }) {
     return RoomErrorResponse(
       code: code ?? this.code,
       message: message ?? this.message,
-      detail: detail != null ? detail() : this.detail,
+      detail: detail ?? this.detail,
     );
   }
 

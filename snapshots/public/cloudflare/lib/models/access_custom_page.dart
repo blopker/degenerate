@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('custom_html') && json['custom_html'] is String &&
       json.containsKey('name') &&
       json.containsKey('type'); } 
-AccessCustomPage copyWith({AccessSchemasAppCount Function()? appCount, AccessTimestamp Function()? createdAt, String? customHtml, AccessCustomPagesComponentsSchemasName? name, AccessSchemasType? type, AccessUuid Function()? uid, AccessTimestamp Function()? updatedAt, }) { return AccessCustomPage(
+AccessCustomPage copyWith({AccessSchemasAppCount? Function()? appCount, AccessTimestamp? Function()? createdAt, String? customHtml, AccessCustomPagesComponentsSchemasName? name, AccessSchemasType? type, AccessUuid? Function()? uid, AccessTimestamp? Function()? updatedAt, }) { return AccessCustomPage(
   appCount: appCount != null ? appCount() : this.appCount,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   customHtml: customHtml ?? this.customHtml,

@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (rdp != null) 'rdp': rdp?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'rdp'}.contains(key)); } 
-AccessConnectionRules copyWith({AccessConnectionRulesRdp Function()? rdp}) { return AccessConnectionRules(
+AccessConnectionRules copyWith({AccessConnectionRulesRdp? Function()? rdp}) { return AccessConnectionRules(
   rdp: rdp != null ? rdp() : this.rdp,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

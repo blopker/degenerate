@@ -53,7 +53,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostn
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('servers'); } 
-FetchGatewaysResponseResult copyWith({DateTime Function()? createdAt, String Function()? createdBy, String Function()? description, String? hostname, String? id, DateTime Function()? modifiedAt, String Function()? modifiedBy, String? name, bool Function()? secureWebGateway, List<FetchGatewaysResponseResultServers>? servers, }) { return FetchGatewaysResponseResult(
+FetchGatewaysResponseResult copyWith({DateTime? Function()? createdAt, String? Function()? createdBy, String? Function()? description, String? hostname, String? id, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, bool? Function()? secureWebGateway, List<FetchGatewaysResponseResultServers>? servers, }) { return FetchGatewaysResponseResult(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
   description: description != null ? description() : this.description,

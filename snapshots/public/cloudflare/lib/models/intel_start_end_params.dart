@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'start': ?start,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'end', 'start'}.contains(key)); } 
-IntelStartEndParams copyWith({String Function()? end, String Function()? start, }) { return IntelStartEndParams(
+IntelStartEndParams copyWith({String? Function()? end, String? Function()? start, }) { return IntelStartEndParams(
   end: end != null ? end() : this.end,
   start: start != null ? start() : this.start,
 ); } 

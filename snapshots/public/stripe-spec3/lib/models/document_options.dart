@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   'require_matching_selfie': ?requireMatchingSelfie,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_types', 'require_id_number', 'require_live_capture', 'require_matching_selfie'}.contains(key)); } 
-DocumentOptions copyWith({List<DocumentOptionsAllowedTypes> Function()? allowedTypes, bool Function()? requireIdNumber, bool Function()? requireLiveCapture, bool Function()? requireMatchingSelfie, }) { return DocumentOptions(
+DocumentOptions copyWith({List<DocumentOptionsAllowedTypes>? Function()? allowedTypes, bool? Function()? requireIdNumber, bool? Function()? requireLiveCapture, bool? Function()? requireMatchingSelfie, }) { return DocumentOptions(
   allowedTypes: allowedTypes != null ? allowedTypes() : this.allowedTypes,
   requireIdNumber: requireIdNumber != null ? requireIdNumber() : this.requireIdNumber,
   requireLiveCapture: requireLiveCapture != null ? requireLiveCapture() : this.requireLiveCapture,

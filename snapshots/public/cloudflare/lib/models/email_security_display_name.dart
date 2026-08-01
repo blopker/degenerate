@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityDisplayName {const EmailSecurityDisplayName({required this.email, required this.isEmailRegex, required this.name, required this.createdAt, required this.id, required this.lastModified, this.comments, this.directoryId, this.directoryNodeId, this.externalDirectoryNodeId, this.provenance, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityDisplayName {const EmailSecurityDisplayName({required this.email, required this.isEmailRegex, required this.name, required this.createdAt, required this.id, required this.lastModified, this.comments = const Omittable.absent(), this.directoryId = const Omittable.absent(), this.directoryNodeId = const Omittable.absent(), this.externalDirectoryNodeId = const Omittable.absent(), this.provenance = const Omittable.absent(), });
 
 factory EmailSecurityDisplayName.fromJson(Map<String, dynamic> json) { return EmailSecurityDisplayName(
   email: json['email'] as String,
   isEmailRegex: json['is_email_regex'] as bool,
   name: json['name'] as String,
-  comments: json['comments'] as String?,
+  comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   createdAt: DateTime.parse(json['created_at'] as String),
-  directoryId: json['directory_id'] != null ? (json['directory_id'] as num).toInt() : null,
-  directoryNodeId: json['directory_node_id'] != null ? (json['directory_node_id'] as num).toInt() : null,
-  externalDirectoryNodeId: json['external_directory_node_id'] as String?,
+  directoryId: json.containsKey('directory_id') ? Omittable(json['directory_id'] != null ? (json['directory_id'] as num).toInt() : null) : const Omittable.absent(),
+  directoryNodeId: json.containsKey('directory_node_id') ? Omittable(json['directory_node_id'] != null ? (json['directory_node_id'] as num).toInt() : null) : const Omittable.absent(),
+  externalDirectoryNodeId: json.containsKey('external_directory_node_id') ? Omittable(json['external_directory_node_id'] as String?) : const Omittable.absent(),
   id: (json['id'] as num).toInt(),
   lastModified: DateTime.parse(json['last_modified'] as String),
-  provenance: json['provenance'] as String?,
+  provenance: json.containsKey('provenance') ? Omittable(json['provenance'] as String?) : const Omittable.absent(),
 ); }
 
 final String email;
@@ -22,34 +22,34 @@ final bool isEmailRegex;
 
 final String name;
 
-final String? comments;
+final Omittable<String?> comments;
 
 final DateTime createdAt;
 
-final int? directoryId;
+final Omittable<int?> directoryId;
 
-final int? directoryNodeId;
+final Omittable<int?> directoryNodeId;
 
-final String? externalDirectoryNodeId;
+final Omittable<String?> externalDirectoryNodeId;
 
 final int id;
 
 final DateTime lastModified;
 
-final String? provenance;
+final Omittable<String?> provenance;
 
 Map<String, dynamic> toJson() { return {
   'email': email,
   'is_email_regex': isEmailRegex,
   'name': name,
-  'comments': ?comments,
+  if (comments.isPresent) 'comments': comments.value,
   'created_at': createdAt.toIso8601String(),
-  'directory_id': ?directoryId,
-  'directory_node_id': ?directoryNodeId,
-  'external_directory_node_id': ?externalDirectoryNodeId,
+  if (directoryId.isPresent) 'directory_id': directoryId.value,
+  if (directoryNodeId.isPresent) 'directory_node_id': directoryNodeId.value,
+  if (externalDirectoryNodeId.isPresent) 'external_directory_node_id': externalDirectoryNodeId.value,
   'id': id,
   'last_modified': lastModified.toIso8601String(),
-  'provenance': ?provenance,
+  if (provenance.isPresent) 'provenance': provenance.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') && json['email'] is String &&
       json.containsKey('is_email_regex') && json['is_email_regex'] is bool &&
@@ -57,18 +57,18 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('email
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('last_modified') && json['last_modified'] is String; } 
-EmailSecurityDisplayName copyWith({String? email, bool? isEmailRegex, String? name, String? Function()? comments, DateTime? createdAt, int? Function()? directoryId, int? Function()? directoryNodeId, String? Function()? externalDirectoryNodeId, int? id, DateTime? lastModified, String? Function()? provenance, }) { return EmailSecurityDisplayName(
+EmailSecurityDisplayName copyWith({String? email, bool? isEmailRegex, String? name, Omittable<String?>? comments, DateTime? createdAt, Omittable<int?>? directoryId, Omittable<int?>? directoryNodeId, Omittable<String?>? externalDirectoryNodeId, int? id, DateTime? lastModified, Omittable<String?>? provenance, }) { return EmailSecurityDisplayName(
   email: email ?? this.email,
   isEmailRegex: isEmailRegex ?? this.isEmailRegex,
   name: name ?? this.name,
-  comments: comments != null ? comments() : this.comments,
+  comments: comments ?? this.comments,
   createdAt: createdAt ?? this.createdAt,
-  directoryId: directoryId != null ? directoryId() : this.directoryId,
-  directoryNodeId: directoryNodeId != null ? directoryNodeId() : this.directoryNodeId,
-  externalDirectoryNodeId: externalDirectoryNodeId != null ? externalDirectoryNodeId() : this.externalDirectoryNodeId,
+  directoryId: directoryId ?? this.directoryId,
+  directoryNodeId: directoryNodeId ?? this.directoryNodeId,
+  externalDirectoryNodeId: externalDirectoryNodeId ?? this.externalDirectoryNodeId,
   id: id ?? this.id,
   lastModified: lastModified ?? this.lastModified,
-  provenance: provenance != null ? provenance() : this.provenance,
+  provenance: provenance ?? this.provenance,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is EmailSecurityDisplayName &&

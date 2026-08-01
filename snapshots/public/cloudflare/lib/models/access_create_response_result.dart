@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_secret', 'created_at', 'duration', 'id', 'name', 'updated_at'}.contains(key)); } 
-AccessCreateResponseResult copyWith({AccessClientId Function()? clientId, AccessClientSecret Function()? clientSecret, AccessTimestamp Function()? createdAt, AccessDuration Function()? duration, String Function()? id, AccessSchemasName Function()? name, AccessTimestamp Function()? updatedAt, }) { return AccessCreateResponseResult(
+AccessCreateResponseResult copyWith({AccessClientId? Function()? clientId, AccessClientSecret? Function()? clientSecret, AccessTimestamp? Function()? createdAt, AccessDuration? Function()? duration, String? Function()? id, AccessSchemasName? Function()? name, AccessTimestamp? Function()? updatedAt, }) { return AccessCreateResponseResult(
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   if (ingress != null) 'ingress': ingress?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ingress'}.contains(key)); } 
-LoadBalancerStatus copyWith({List<LoadBalancerIngress> Function()? ingress}) { return LoadBalancerStatus(
+LoadBalancerStatus copyWith({List<LoadBalancerIngress>? Function()? ingress}) { return LoadBalancerStatus(
   ingress: ingress != null ? ingress() : this.ingress,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

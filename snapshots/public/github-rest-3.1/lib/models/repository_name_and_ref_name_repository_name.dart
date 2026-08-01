@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'protected': ?protected,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'include', 'exclude', 'protected'}.contains(key)); } 
-RepositoryNameAndRefNameRepositoryName copyWith({List<String> Function()? include, List<String> Function()? exclude, bool Function()? protected, }) { return RepositoryNameAndRefNameRepositoryName(
+RepositoryNameAndRefNameRepositoryName copyWith({List<String>? Function()? include, List<String>? Function()? exclude, bool? Function()? protected, }) { return RepositoryNameAndRefNameRepositoryName(
   include: include != null ? include() : this.include,
   exclude: exclude != null ? exclude() : this.exclude,
   protected: protected != null ? protected() : this.protected,

@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (uniqueDevicesTotal != null) 'uniqueDevicesTotal': uniqueDevicesTotal?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'byMode', 'byStatus', 'uniqueDevicesTotal'}.contains(key)); } 
-DigitalExperienceMonitoringFleetStatusOverTimeResponseResultDeviceStats copyWith({List<DigitalExperienceMonitoringSchemasAggregateStat> Function()? byMode, List<DigitalExperienceMonitoringSchemasAggregateStat> Function()? byStatus, DigitalExperienceMonitoringUniqueDevicesTotal Function()? uniqueDevicesTotal, }) { return DigitalExperienceMonitoringFleetStatusOverTimeResponseResultDeviceStats(
+DigitalExperienceMonitoringFleetStatusOverTimeResponseResultDeviceStats copyWith({List<DigitalExperienceMonitoringSchemasAggregateStat>? Function()? byMode, List<DigitalExperienceMonitoringSchemasAggregateStat>? Function()? byStatus, DigitalExperienceMonitoringUniqueDevicesTotal? Function()? uniqueDevicesTotal, }) { return DigitalExperienceMonitoringFleetStatusOverTimeResponseResultDeviceStats(
   byMode: byMode != null ? byMode() : this.byMode,
   byStatus: byStatus != null ? byStatus() : this.byStatus,
   uniqueDevicesTotal: uniqueDevicesTotal != null ? uniqueDevicesTotal() : this.uniqueDevicesTotal,

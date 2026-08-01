@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('status'); } 
-IamTokenVerifyResponseSingleSegmentResult copyWith({IamExpiresOn Function()? expiresOn, IamTokenIdentifier? id, IamNotBefore Function()? notBefore, IamTokenStatus? status, }) { return IamTokenVerifyResponseSingleSegmentResult(
+IamTokenVerifyResponseSingleSegmentResult copyWith({IamExpiresOn? Function()? expiresOn, IamTokenIdentifier? id, IamNotBefore? Function()? notBefore, IamTokenStatus? status, }) { return IamTokenVerifyResponseSingleSegmentResult(
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
   id: id ?? this.id,
   notBefore: notBefore != null ? notBefore() : this.notBefore,

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// A draft issue in a project
-@immutable final class DraftIssue {const DraftIssue({required this.id, required this.nodeId, required this.title, required this.user, required this.createdAt, required this.updatedAt, this.body, });
+@immutable final class DraftIssue {const DraftIssue({required this.id, required this.nodeId, required this.title, required this.user, required this.createdAt, required this.updatedAt, this.body = const Omittable.absent(), });
 
 factory DraftIssue.fromJson(Map<String, dynamic> json) { return DraftIssue(
   id: (json['id'] as num).toDouble(),
   nodeId: json['node_id'] as String,
   title: json['title'] as String,
-  body: json['body'] as String?,
+  body: json.containsKey('body') ? Omittable(json['body'] as String?) : const Omittable.absent(),
   user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
@@ -23,7 +23,7 @@ final String nodeId;
 final String title;
 
 /// The body content of the draft issue
-final String? body;
+final Omittable<String?> body;
 
 final SimpleUser? user;
 
@@ -37,8 +37,8 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'node_id': nodeId,
   'title': title,
-  'body': ?body,
-  if (user != null) 'user': user?.toJson(),
+  if (body.isPresent) 'body': body.value,
+  'user': user?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
 }; } 
@@ -48,11 +48,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('user') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-DraftIssue copyWith({double? id, String? nodeId, String? title, String? Function()? body, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, }) { return DraftIssue(
+DraftIssue copyWith({double? id, String? nodeId, String? title, Omittable<String?>? body, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, }) { return DraftIssue(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   title: title ?? this.title,
-  body: body != null ? body() : this.body,
+  body: body ?? this.body,
   user: user != null ? user() : this.user,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,

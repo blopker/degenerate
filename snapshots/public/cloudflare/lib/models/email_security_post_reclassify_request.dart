@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   'expected_disposition': expectedDisposition.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('expected_disposition'); } 
-EmailSecurityPostReclassifyRequest copyWith({String Function()? emlContent, String Function()? escalatedSubmissionId, EmailSecurityPostReclassifyRequestExpectedDisposition? expectedDisposition, }) { return EmailSecurityPostReclassifyRequest(
+EmailSecurityPostReclassifyRequest copyWith({String? Function()? emlContent, String? Function()? escalatedSubmissionId, EmailSecurityPostReclassifyRequestExpectedDisposition? expectedDisposition, }) { return EmailSecurityPostReclassifyRequest(
   emlContent: emlContent != null ? emlContent() : this.emlContent,
   escalatedSubmissionId: escalatedSubmissionId != null ? escalatedSubmissionId() : this.escalatedSubmissionId,
   expectedDisposition: expectedDisposition ?? this.expectedDisposition,

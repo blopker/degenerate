@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('accountId') && json['accountId'] is String &&
       json.containsKey('groupId') && json['groupId'] is String &&
       json.containsKey('uuid') && json['uuid'] is String; } 
-GetGroupMemberListResponse copyWith({String? accountId, DateTime Function()? createdAt, String? groupId, DateTime Function()? updatedAt, String? uuid, }) { return GetGroupMemberListResponse(
+GetGroupMemberListResponse copyWith({String? accountId, DateTime? Function()? createdAt, String? groupId, DateTime? Function()? updatedAt, String? uuid, }) { return GetGroupMemberListResponse(
   accountId: accountId ?? this.accountId,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   groupId: groupId ?? this.groupId,

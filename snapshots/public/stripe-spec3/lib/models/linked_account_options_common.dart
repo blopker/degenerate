@@ -58,12 +58,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LinkedAccountOptionsCommonPrefetch($value)'; } 
  }
 /// 
-@immutable final class LinkedAccountOptionsCommon {const LinkedAccountOptionsCommon({this.filters, this.permissions, this.prefetch, this.returnUrl, });
+@immutable final class LinkedAccountOptionsCommon {const LinkedAccountOptionsCommon({this.filters, this.permissions, this.prefetch = const Omittable.absent(), this.returnUrl, });
 
 factory LinkedAccountOptionsCommon.fromJson(Map<String, dynamic> json) { return LinkedAccountOptionsCommon(
   filters: json['filters'] != null ? PaymentFlowsPrivatePaymentMethodsFinancialConnectionsCommonLinkedAccountOptionsFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
   permissions: (json['permissions'] as List<dynamic>?)?.map((e) => LinkedAccountOptionsCommonPermissions.fromJson(e as String)).toList(),
-  prefetch: (json['prefetch'] as List<dynamic>?)?.map((e) => LinkedAccountOptionsCommonPrefetch.fromJson(e as String)).toList(),
+  prefetch: json.containsKey('prefetch') ? Omittable((json['prefetch'] as List<dynamic>?)?.map((e) => LinkedAccountOptionsCommonPrefetch.fromJson(e as String)).toList()) : const Omittable.absent(),
   returnUrl: json['return_url'] as String?,
 ); }
 
@@ -73,7 +73,7 @@ final PaymentFlowsPrivatePaymentMethodsFinancialConnectionsCommonLinkedAccountOp
 final List<LinkedAccountOptionsCommonPermissions>? permissions;
 
 /// Data features requested to be retrieved upon account creation.
-final List<LinkedAccountOptionsCommonPrefetch>? prefetch;
+final Omittable<List<LinkedAccountOptionsCommonPrefetch>?> prefetch;
 
 /// For webview integrations only. Upon completing OAuth login in the native browser, the user will be redirected to this URL to return to your app.
 final String? returnUrl;
@@ -81,22 +81,23 @@ final String? returnUrl;
 Map<String, dynamic> toJson() { return {
   if (filters != null) 'filters': filters?.toJson(),
   if (permissions != null) 'permissions': permissions?.map((e) => e.toJson()).toList(),
-  if (prefetch != null) 'prefetch': prefetch?.map((e) => e.toJson()).toList(),
+  if (prefetch.isPresent) 'prefetch': prefetch.value?.map((e) => e.toJson()).toList(),
   'return_url': ?returnUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filters', 'permissions', 'prefetch', 'return_url'}.contains(key)); } 
-LinkedAccountOptionsCommon copyWith({PaymentFlowsPrivatePaymentMethodsFinancialConnectionsCommonLinkedAccountOptionsFilters Function()? filters, List<LinkedAccountOptionsCommonPermissions> Function()? permissions, List<LinkedAccountOptionsCommonPrefetch>? Function()? prefetch, String Function()? returnUrl, }) { return LinkedAccountOptionsCommon(
+LinkedAccountOptionsCommon copyWith({PaymentFlowsPrivatePaymentMethodsFinancialConnectionsCommonLinkedAccountOptionsFilters? Function()? filters, List<LinkedAccountOptionsCommonPermissions>? Function()? permissions, Omittable<List<LinkedAccountOptionsCommonPrefetch>?>? prefetch, String? Function()? returnUrl, }) { return LinkedAccountOptionsCommon(
   filters: filters != null ? filters() : this.filters,
   permissions: permissions != null ? permissions() : this.permissions,
-  prefetch: prefetch != null ? prefetch() : this.prefetch,
+  prefetch: prefetch ?? this.prefetch,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is LinkedAccountOptionsCommon &&
           filters == other.filters &&
           listEquals(permissions, other.permissions) &&
-          listEquals(prefetch, other.prefetch) &&
+          prefetch.isPresent == other.prefetch.isPresent &&
+          listEquals(prefetch.value, other.prefetch.value) &&
           returnUrl == other.returnUrl; } 
-@override int get hashCode { return Object.hash(filters, Object.hashAll(permissions ?? const []), Object.hashAll(prefetch ?? const []), returnUrl); } 
+@override int get hashCode { return Object.hash(filters, Object.hashAll(permissions ?? const []), Object.hashAll(prefetch.value ?? const []), returnUrl); } 
 @override String toString() { return 'LinkedAccountOptionsCommon(filters: $filters, permissions: $permissions, prefetch: $prefetch, returnUrl: $returnUrl)'; } 
  }

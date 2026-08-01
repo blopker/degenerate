@@ -67,8 +67,8 @@ Map<String, dynamic> toJson() { return {
   'thread_id': threadId,
   'type': type,
   'task_type': taskType.toJson(),
-  'heading': ?heading,
-  'summary': ?summary,
+  'heading': heading,
+  'summary': summary,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
@@ -76,8 +76,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('thread_id') && json['thread_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('task_type') &&
-      json.containsKey('heading') && json['heading'] is String &&
-      json.containsKey('summary') && json['summary'] is String; } 
+      json.containsKey('heading') && (json['heading'] == null || json['heading'] is String) &&
+      json.containsKey('summary') && (json['summary'] == null || json['summary'] is String); } 
 TaskItem copyWith({String? id, TaskItemObject? object, int? createdAt, String? threadId, String? type, TaskType? taskType, String? Function()? heading, String? Function()? summary, }) { return TaskItem(
   id: id ?? this.id,
   object: object ?? this.object,

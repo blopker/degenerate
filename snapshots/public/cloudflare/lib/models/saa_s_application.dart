@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_idps', 'app_launcher_visible', 'auto_redirect_to_identity', 'custom_pages', 'logo_url', 'name', 'saas_app', 'scim_config', 'tags', 'type', 'policies'}.contains(key)); } 
-SaaSApplication copyWith({List<String> Function()? allowedIdps, AccessAppLauncherVisible Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity Function()? autoRedirectToIdentity, List<String> Function()? customPages, AccessLogoUrl Function()? logoUrl, AccessAppsComponentsSchemasName Function()? name, SaaSApplicationSaasApp Function()? saasApp, AccessScimConfig Function()? scimConfig, List<String> Function()? tags, AccessType Function()? type, List<SaaSApplicationPolicies> Function()? policies, }) { return SaaSApplication(
+SaaSApplication copyWith({List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, List<String>? Function()? customPages, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, SaaSApplicationSaasApp? Function()? saasApp, AccessScimConfig? Function()? scimConfig, List<String>? Function()? tags, AccessType? Function()? type, List<SaaSApplicationPolicies>? Function()? policies, }) { return SaaSApplication(
   allowedIdps: allowedIdps != null ? allowedIdps() : this.allowedIdps,
   appLauncherVisible: appLauncherVisible != null ? appLauncherVisible() : this.appLauncherVisible,
   autoRedirectToIdentity: autoRedirectToIdentity != null ? autoRedirectToIdentity() : this.autoRedirectToIdentity,

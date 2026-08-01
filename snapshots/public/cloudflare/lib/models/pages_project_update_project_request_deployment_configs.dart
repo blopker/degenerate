@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (production != null) 'production': production?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preview', 'production'}.contains(key)); } 
-PagesProjectUpdateProjectRequestDeploymentConfigs copyWith({PagesDeploymentConfigValuesRequest Function()? preview, PagesDeploymentConfigValuesRequest Function()? production, }) { return PagesProjectUpdateProjectRequestDeploymentConfigs(
+PagesProjectUpdateProjectRequestDeploymentConfigs copyWith({PagesDeploymentConfigValuesRequest? Function()? preview, PagesDeploymentConfigValuesRequest? Function()? production, }) { return PagesProjectUpdateProjectRequestDeploymentConfigs(
   preview: preview != null ? preview() : this.preview,
   production: production != null ? production() : this.production,
 ); } 

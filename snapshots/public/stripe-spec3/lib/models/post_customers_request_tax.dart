@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (validateLocation != null) 'validate_location': validateLocation?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ip_address', 'validate_location'}.contains(key)); } 
-PostCustomersRequestTax copyWith({PostCustomersRequestTaxIpAddress Function()? ipAddress, PostCustomersRequestTaxValidateLocation Function()? validateLocation, }) { return PostCustomersRequestTax(
+PostCustomersRequestTax copyWith({PostCustomersRequestTaxIpAddress? Function()? ipAddress, PostCustomersRequestTaxValidateLocation? Function()? validateLocation, }) { return PostCustomersRequestTax(
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   validateLocation: validateLocation != null ? validateLocation() : this.validateLocation,
 ); } 

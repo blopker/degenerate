@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('methods') &&
       json.containsKey('origins'); } 
-R2CorsRuleAllowed copyWith({List<String> Function()? headers, List<R2CorsRuleAllowedMethods>? methods, List<String>? origins, }) { return R2CorsRuleAllowed(
+R2CorsRuleAllowed copyWith({List<String>? Function()? headers, List<R2CorsRuleAllowedMethods>? methods, List<String>? origins, }) { return R2CorsRuleAllowed(
   headers: headers != null ? headers() : this.headers,
   methods: methods ?? this.methods,
   origins: origins ?? this.origins,

@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'version': ?version,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'version'}.contains(key)); } 
-WebhookRubygemsMetadataVersionInfo copyWith({String Function()? version}) { return WebhookRubygemsMetadataVersionInfo(
+WebhookRubygemsMetadataVersionInfo copyWith({String? Function()? version}) { return WebhookRubygemsMetadataVersionInfo(
   version: version != null ? version() : this.version,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

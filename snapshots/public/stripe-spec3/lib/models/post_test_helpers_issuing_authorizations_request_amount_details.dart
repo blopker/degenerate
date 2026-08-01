@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'cashback_amount': ?cashbackAmount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'atm_fee', 'cashback_amount'}.contains(key)); } 
-PostTestHelpersIssuingAuthorizationsRequestAmountDetails copyWith({int Function()? atmFee, int Function()? cashbackAmount, }) { return PostTestHelpersIssuingAuthorizationsRequestAmountDetails(
+PostTestHelpersIssuingAuthorizationsRequestAmountDetails copyWith({int? Function()? atmFee, int? Function()? cashbackAmount, }) { return PostTestHelpersIssuingAuthorizationsRequestAmountDetails(
   atmFee: atmFee != null ? atmFee() : this.atmFee,
   cashbackAmount: cashbackAmount != null ? cashbackAmount() : this.cashbackAmount,
 ); } 

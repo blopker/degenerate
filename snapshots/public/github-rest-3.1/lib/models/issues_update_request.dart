@@ -59,18 +59,18 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IssuesUpdateRequestStateReason($value)'; } 
  }
-@immutable final class IssuesUpdateRequest {const IssuesUpdateRequest({this.title, this.body, this.assignee, this.state, this.stateReason, this.milestone, this.labels, this.assignees, this.type, });
+@immutable final class IssuesUpdateRequest {const IssuesUpdateRequest({this.title = const Omittable.absent(), this.body = const Omittable.absent(), this.assignee = const Omittable.absent(), this.state, this.stateReason = const Omittable.absent(), this.milestone = const Omittable.absent(), this.labels, this.assignees, this.type = const Omittable.absent(), });
 
 factory IssuesUpdateRequest.fromJson(Map<String, dynamic> json) { return IssuesUpdateRequest(
-  title: json['title'],
-  body: json['body'] as String?,
-  assignee: json['assignee'] as String?,
+  title: json.containsKey('title') ? Omittable(json['title']) : const Omittable.absent(),
+  body: json.containsKey('body') ? Omittable(json['body'] as String?) : const Omittable.absent(),
+  assignee: json.containsKey('assignee') ? Omittable(json['assignee'] as String?) : const Omittable.absent(),
   state: json['state'] != null ? IssuesUpdateRequestState.fromJson(json['state'] as String) : null,
-  stateReason: json['state_reason'] != null ? IssuesUpdateRequestStateReason.fromJson(json['state_reason'] as String) : null,
-  milestone: json['milestone'],
+  stateReason: json.containsKey('state_reason') ? Omittable(json['state_reason'] != null ? IssuesUpdateRequestStateReason.fromJson(json['state_reason'] as String) : null) : const Omittable.absent(),
+  milestone: json.containsKey('milestone') ? Omittable(json['milestone']) : const Omittable.absent(),
   labels: (json['labels'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => IssuesUpdateRequestLabelsVariant2.fromJson(v as Map<String, dynamic>),)).toList(),
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  type: json['type'] as String?,
+  type: json.containsKey('type') ? Omittable(json['type'] as String?) : const Omittable.absent(),
 ); }
 
 /// The title of the issue.
@@ -78,22 +78,22 @@ factory IssuesUpdateRequest.fromJson(Map<String, dynamic> json) { return IssuesU
 /// The title of the issue.
 /// 
 /// One of: String, int
-final dynamic title;
+final Omittable<dynamic> title;
 
 /// The contents of the issue.
-final String? body;
+final Omittable<String?> body;
 
 /// Username to assign to this issue. **This field is closing down.**
-final String? assignee;
+final Omittable<String?> assignee;
 
 /// The open or closed state of the issue.
 final IssuesUpdateRequestState? state;
 
 /// The reason for the state change. Ignored unless `state` is changed.
-final IssuesUpdateRequestStateReason? stateReason;
+final Omittable<IssuesUpdateRequestStateReason?> stateReason;
 
 /// One of: String, int
-final dynamic milestone;
+final Omittable<dynamic> milestone;
 
 /// Labels to associate with this issue. Pass one or more labels to _replace_ the set of labels on this issue. Send an empty array (`[]`) to clear all labels from the issue. Only users with push access can set labels for issues. Without push access to the repository, label changes are silently dropped.
 final List<IssuesUpdateRequestLabels>? labels;
@@ -102,30 +102,30 @@ final List<IssuesUpdateRequestLabels>? labels;
 final List<String>? assignees;
 
 /// The name of the issue type to associate with this issue or use `null` to remove the current issue type. Only users with push access can set the type for issues. Without push access to the repository, type changes are silently dropped.
-final String? type;
+final Omittable<String?> type;
 
 Map<String, dynamic> toJson() { return {
-  'title': ?title,
-  'body': ?body,
-  'assignee': ?assignee,
+  if (title.isPresent) 'title': title.value,
+  if (body.isPresent) 'body': body.value,
+  if (assignee.isPresent) 'assignee': assignee.value,
   if (state != null) 'state': state?.toJson(),
-  if (stateReason != null) 'state_reason': stateReason?.toJson(),
-  'milestone': ?milestone,
+  if (stateReason.isPresent) 'state_reason': stateReason.value?.toJson(),
+  if (milestone.isPresent) 'milestone': milestone.value,
   if (labels != null) 'labels': labels?.map((e) => e.toJson()).toList(),
   'assignees': ?assignees,
-  'type': ?type,
+  if (type.isPresent) 'type': type.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'title', 'body', 'assignee', 'state', 'state_reason', 'milestone', 'labels', 'assignees', 'type'}.contains(key)); } 
-IssuesUpdateRequest copyWith({dynamic Function()? title, String? Function()? body, String? Function()? assignee, IssuesUpdateRequestState Function()? state, IssuesUpdateRequestStateReason? Function()? stateReason, dynamic Function()? milestone, List<IssuesUpdateRequestLabels> Function()? labels, List<String> Function()? assignees, String? Function()? type, }) { return IssuesUpdateRequest(
-  title: title != null ? title() : this.title,
-  body: body != null ? body() : this.body,
-  assignee: assignee != null ? assignee() : this.assignee,
+IssuesUpdateRequest copyWith({Omittable<dynamic>? title, Omittable<String?>? body, Omittable<String?>? assignee, IssuesUpdateRequestState? Function()? state, Omittable<IssuesUpdateRequestStateReason?>? stateReason, Omittable<dynamic>? milestone, List<IssuesUpdateRequestLabels>? Function()? labels, List<String>? Function()? assignees, Omittable<String?>? type, }) { return IssuesUpdateRequest(
+  title: title ?? this.title,
+  body: body ?? this.body,
+  assignee: assignee ?? this.assignee,
   state: state != null ? state() : this.state,
-  stateReason: stateReason != null ? stateReason() : this.stateReason,
-  milestone: milestone != null ? milestone() : this.milestone,
+  stateReason: stateReason ?? this.stateReason,
+  milestone: milestone ?? this.milestone,
   labels: labels != null ? labels() : this.labels,
   assignees: assignees != null ? assignees() : this.assignees,
-  type: type != null ? type() : this.type,
+  type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuesUpdateRequest &&

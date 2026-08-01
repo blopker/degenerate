@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('value') && json['value'] is num; } 
-RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultTop0 copyWith({int Function()? fully, String? name, int Function()? partially, int? value, }) { return RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultTop0(
+RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultTop0 copyWith({int? Function()? fully, String? name, int? Function()? partially, int? value, }) { return RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultTop0(
   fully: fully != null ? fully() : this.fully,
   name: name ?? this.name,
   partially: partially != null ? partially() : this.partially,

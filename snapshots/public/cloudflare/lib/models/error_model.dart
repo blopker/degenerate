@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'errors', 'message', 'status'}.contains(key)); } 
-ErrorModel copyWith({int Function()? code, Map<String, dynamic> Function()? errors, String Function()? message, String Function()? status, }) { return ErrorModel(
+ErrorModel copyWith({int? Function()? code, Map<String, dynamic>? Function()? errors, String? Function()? message, String? Function()? status, }) { return ErrorModel(
   code: code != null ? code() : this.code,
   errors: errors != null ? errors() : this.errors,
   message: message != null ? message() : this.message,

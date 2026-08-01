@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'locations': locations.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('locations'); } 
-RadarGetEntitiesAsnByIpResponseResultAsnEstimatedUsers copyWith({int Function()? estimatedUsers, List<RadarGetEntitiesAsnByIpResponseResultAsnEstimatedUsersLocations>? locations, }) { return RadarGetEntitiesAsnByIpResponseResultAsnEstimatedUsers(
+RadarGetEntitiesAsnByIpResponseResultAsnEstimatedUsers copyWith({int? Function()? estimatedUsers, List<RadarGetEntitiesAsnByIpResponseResultAsnEstimatedUsersLocations>? locations, }) { return RadarGetEntitiesAsnByIpResponseResultAsnEstimatedUsers(
   estimatedUsers: estimatedUsers != null ? estimatedUsers() : this.estimatedUsers,
   locations: locations ?? this.locations,
 ); } 

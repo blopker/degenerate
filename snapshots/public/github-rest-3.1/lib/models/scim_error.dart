@@ -1,44 +1,44 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Scim Error
-@immutable final class ScimError {const ScimError({this.message, this.documentationUrl, this.detail, this.status, this.scimType, this.schemas, });
+@immutable final class ScimError {const ScimError({this.message = const Omittable.absent(), this.documentationUrl = const Omittable.absent(), this.detail = const Omittable.absent(), this.status, this.scimType = const Omittable.absent(), this.schemas, });
 
 factory ScimError.fromJson(Map<String, dynamic> json) { return ScimError(
-  message: json['message'] as String?,
-  documentationUrl: json['documentation_url'] as String?,
-  detail: json['detail'] as String?,
+  message: json.containsKey('message') ? Omittable(json['message'] as String?) : const Omittable.absent(),
+  documentationUrl: json.containsKey('documentation_url') ? Omittable(json['documentation_url'] as String?) : const Omittable.absent(),
+  detail: json.containsKey('detail') ? Omittable(json['detail'] as String?) : const Omittable.absent(),
   status: json['status'] != null ? (json['status'] as num).toInt() : null,
-  scimType: json['scimType'] as String?,
+  scimType: json.containsKey('scimType') ? Omittable(json['scimType'] as String?) : const Omittable.absent(),
   schemas: (json['schemas'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
-final String? message;
+final Omittable<String?> message;
 
-final String? documentationUrl;
+final Omittable<String?> documentationUrl;
 
-final String? detail;
+final Omittable<String?> detail;
 
 final int? status;
 
-final String? scimType;
+final Omittable<String?> scimType;
 
 final List<String>? schemas;
 
 Map<String, dynamic> toJson() { return {
-  'message': ?message,
-  'documentation_url': ?documentationUrl,
-  'detail': ?detail,
+  if (message.isPresent) 'message': message.value,
+  if (documentationUrl.isPresent) 'documentation_url': documentationUrl.value,
+  if (detail.isPresent) 'detail': detail.value,
   'status': ?status,
-  'scimType': ?scimType,
+  if (scimType.isPresent) 'scimType': scimType.value,
   'schemas': ?schemas,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message', 'documentation_url', 'detail', 'status', 'scimType', 'schemas'}.contains(key)); } 
-ScimError copyWith({String? Function()? message, String? Function()? documentationUrl, String? Function()? detail, int Function()? status, String? Function()? scimType, List<String> Function()? schemas, }) { return ScimError(
-  message: message != null ? message() : this.message,
-  documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
-  detail: detail != null ? detail() : this.detail,
+ScimError copyWith({Omittable<String?>? message, Omittable<String?>? documentationUrl, Omittable<String?>? detail, int? Function()? status, Omittable<String?>? scimType, List<String>? Function()? schemas, }) { return ScimError(
+  message: message ?? this.message,
+  documentationUrl: documentationUrl ?? this.documentationUrl,
+  detail: detail ?? this.detail,
   status: status != null ? status() : this.status,
-  scimType: scimType != null ? scimType() : this.scimType,
+  scimType: scimType ?? this.scimType,
   schemas: schemas != null ? schemas() : this.schemas,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

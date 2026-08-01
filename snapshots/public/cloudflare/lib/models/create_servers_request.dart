@@ -27,12 +27,12 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateServersRequestAuthType($value)'; } 
  }
-@immutable final class CreateServersRequest {const CreateServersRequest({required this.authType, required this.hostname, required this.id, required this.name, this.authCredentials, this.description, });
+@immutable final class CreateServersRequest {const CreateServersRequest({required this.authType, required this.hostname, required this.id, required this.name, this.authCredentials, this.description = const Omittable.absent(), });
 
 factory CreateServersRequest.fromJson(Map<String, dynamic> json) { return CreateServersRequest(
   authCredentials: json['auth_credentials'] as String?,
   authType: CreateServersRequestAuthType.fromJson(json['auth_type'] as String),
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   hostname: Uri.parse(json['hostname'] as String),
   id: json['id'] as String,
   name: json['name'] as String,
@@ -42,7 +42,7 @@ final String? authCredentials;
 
 final CreateServersRequestAuthType authType;
 
-final String? description;
+final Omittable<String?> description;
 
 final Uri hostname;
 
@@ -54,7 +54,7 @@ final String name;
 Map<String, dynamic> toJson() { return {
   'auth_credentials': ?authCredentials,
   'auth_type': authType.toJson(),
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'hostname': hostname.toString(),
   'id': id,
   'name': name,
@@ -63,10 +63,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_
       json.containsKey('hostname') && json['hostname'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-CreateServersRequest copyWith({String Function()? authCredentials, CreateServersRequestAuthType? authType, String? Function()? description, Uri? hostname, String? id, String? name, }) { return CreateServersRequest(
+CreateServersRequest copyWith({String? Function()? authCredentials, CreateServersRequestAuthType? authType, Omittable<String?>? description, Uri? hostname, String? id, String? name, }) { return CreateServersRequest(
   authCredentials: authCredentials != null ? authCredentials() : this.authCredentials,
   authType: authType ?? this.authType,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   hostname: hostname ?? this.hostname,
   id: id ?? this.id,
   name: name ?? this.name,

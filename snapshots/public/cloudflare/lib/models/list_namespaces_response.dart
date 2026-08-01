@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success'); } 
-ListNamespacesResponse copyWith({List<ResponseErrors3>? errors, List<ResponseMessages2>? messages, ResponseSuccess? success, R2DataCatalogNamespaceListResponse Function()? result, }) { return ListNamespacesResponse(
+ListNamespacesResponse copyWith({List<ResponseErrors3>? errors, List<ResponseMessages2>? messages, ResponseSuccess? success, R2DataCatalogNamespaceListResponse? Function()? result, }) { return ListNamespacesResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

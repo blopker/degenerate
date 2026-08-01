@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'setup_intent': setupIntent.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('setup_intent'); } 
-TerminalReaderReaderResourceProcessSetupIntentAction copyWith({String Function()? generatedCard, TerminalReaderReaderResourceProcessSetupConfig Function()? processConfig, TerminalReaderReaderResourceProcessSetupIntentActionSetupIntent? setupIntent, }) { return TerminalReaderReaderResourceProcessSetupIntentAction(
+TerminalReaderReaderResourceProcessSetupIntentAction copyWith({String? Function()? generatedCard, TerminalReaderReaderResourceProcessSetupConfig? Function()? processConfig, TerminalReaderReaderResourceProcessSetupIntentActionSetupIntent? setupIntent, }) { return TerminalReaderReaderResourceProcessSetupIntentAction(
   generatedCard: generatedCard != null ? generatedCard() : this.generatedCard,
   processConfig: processConfig != null ? processConfig() : this.processConfig,
   setupIntent: setupIntent ?? this.setupIntent,

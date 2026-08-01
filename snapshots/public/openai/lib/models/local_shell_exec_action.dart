@@ -23,15 +23,15 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LocalShellExecActionType($value)'; } 
  }
 /// Execute a shell command on the server.
-@immutable final class LocalShellExecAction {const LocalShellExecAction({required this.command, required this.env, this.type = LocalShellExecActionType.exec, this.timeoutMs, this.workingDirectory, this.user, });
+@immutable final class LocalShellExecAction {const LocalShellExecAction({required this.command, required this.env, this.type = LocalShellExecActionType.exec, this.timeoutMs = const Omittable.absent(), this.workingDirectory = const Omittable.absent(), this.user = const Omittable.absent(), });
 
 factory LocalShellExecAction.fromJson(Map<String, dynamic> json) { return LocalShellExecAction(
   type: LocalShellExecActionType.fromJson(json['type'] as String),
   command: (json['command'] as List<dynamic>).map((e) => e as String).toList(),
-  timeoutMs: json['timeout_ms'] != null ? (json['timeout_ms'] as num).toInt() : null,
-  workingDirectory: json['working_directory'] as String?,
+  timeoutMs: json.containsKey('timeout_ms') ? Omittable(json['timeout_ms'] != null ? (json['timeout_ms'] as num).toInt() : null) : const Omittable.absent(),
+  workingDirectory: json.containsKey('working_directory') ? Omittable(json['working_directory'] as String?) : const Omittable.absent(),
   env: (json['env'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  user: json['user'] as String?,
+  user: json.containsKey('user') ? Omittable(json['user'] as String?) : const Omittable.absent(),
 ); }
 
 /// The type of the local shell action. Always `exec`.
@@ -41,35 +41,35 @@ final LocalShellExecActionType type;
 final List<String> command;
 
 /// Optional timeout in milliseconds for the command.
-final int? timeoutMs;
+final Omittable<int?> timeoutMs;
 
 /// Optional working directory to run the command in.
-final String? workingDirectory;
+final Omittable<String?> workingDirectory;
 
 /// Environment variables to set for the command.
 final Map<String,String> env;
 
 /// Optional user to run the command as.
-final String? user;
+final Omittable<String?> user;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'command': command,
-  'timeout_ms': ?timeoutMs,
-  'working_directory': ?workingDirectory,
+  if (timeoutMs.isPresent) 'timeout_ms': timeoutMs.value,
+  if (workingDirectory.isPresent) 'working_directory': workingDirectory.value,
   'env': env,
-  'user': ?user,
+  if (user.isPresent) 'user': user.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('command') &&
       json.containsKey('env'); } 
-LocalShellExecAction copyWith({LocalShellExecActionType? type, List<String>? command, int? Function()? timeoutMs, String? Function()? workingDirectory, Map<String,String>? env, String? Function()? user, }) { return LocalShellExecAction(
+LocalShellExecAction copyWith({LocalShellExecActionType? type, List<String>? command, Omittable<int?>? timeoutMs, Omittable<String?>? workingDirectory, Map<String,String>? env, Omittable<String?>? user, }) { return LocalShellExecAction(
   type: type ?? this.type,
   command: command ?? this.command,
-  timeoutMs: timeoutMs != null ? timeoutMs() : this.timeoutMs,
-  workingDirectory: workingDirectory != null ? workingDirectory() : this.workingDirectory,
+  timeoutMs: timeoutMs ?? this.timeoutMs,
+  workingDirectory: workingDirectory ?? this.workingDirectory,
   env: env ?? this.env,
-  user: user != null ? user() : this.user,
+  user: user ?? this.user,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is LocalShellExecAction &&

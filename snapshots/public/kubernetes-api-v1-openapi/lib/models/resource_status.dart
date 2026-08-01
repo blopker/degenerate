@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (resources != null) 'resources': resources?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ResourceStatus copyWith({String? name, List<ResourceHealth> Function()? resources, }) { return ResourceStatus(
+ResourceStatus copyWith({String? name, List<ResourceHealth>? Function()? resources, }) { return ResourceStatus(
   name: name ?? this.name,
   resources: resources != null ? resources() : this.resources,
 ); } 

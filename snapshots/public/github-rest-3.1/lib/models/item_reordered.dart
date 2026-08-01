@@ -57,7 +57,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('organization') &&
       json.containsKey('projects_v2_item') &&
       json.containsKey('sender'); } 
-ItemReordered copyWith({ItemReorderedAction? action, ItemReorderedChanges? changes, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, Item? projectsV2Item, SimpleUser? sender, }) { return ItemReordered(
+ItemReordered copyWith({ItemReorderedAction? action, ItemReorderedChanges? changes, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, Item? projectsV2Item, SimpleUser? sender, }) { return ItemReordered(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   installation: installation != null ? installation() : this.installation,

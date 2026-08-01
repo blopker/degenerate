@@ -119,7 +119,7 @@ Map<String, dynamic> toJson() { return {
   'size': ?size,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'altitude', 'lat_degrees', 'lat_direction', 'lat_minutes', 'lat_seconds', 'long_degrees', 'long_direction', 'long_minutes', 'long_seconds', 'precision_horz', 'precision_vert', 'size'}.contains(key)); } 
-DnsRecordsLocRecordData copyWith({double Function()? altitude, double Function()? latDegrees, DnsRecordsLocRecordDataLatDirection Function()? latDirection, double Function()? latMinutes, double Function()? latSeconds, double Function()? longDegrees, DnsRecordsLocRecordDataLongDirection Function()? longDirection, double Function()? longMinutes, double Function()? longSeconds, double Function()? precisionHorz, double Function()? precisionVert, double Function()? size, }) { return DnsRecordsLocRecordData(
+DnsRecordsLocRecordData copyWith({double? Function()? altitude, double? Function()? latDegrees, DnsRecordsLocRecordDataLatDirection? Function()? latDirection, double? Function()? latMinutes, double? Function()? latSeconds, double? Function()? longDegrees, DnsRecordsLocRecordDataLongDirection? Function()? longDirection, double? Function()? longMinutes, double? Function()? longSeconds, double? Function()? precisionHorz, double? Function()? precisionVert, double? Function()? size, }) { return DnsRecordsLocRecordData(
   altitude: altitude != null ? altitude() : this.altitude,
   latDegrees: latDegrees != null ? latDegrees() : this.latDegrees,
   latDirection: latDirection != null ? latDirection() : this.latDirection,

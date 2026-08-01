@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'LivestreamSessionDetailsResponseDataLivestreamsStatus($value)'; } 
  }
-@immutable final class LivestreamSessionDetailsResponseDataLivestreams {const LivestreamSessionDetailsResponseDataLivestreams({this.createdAt, this.disabled, this.id, this.ingestServer, this.meetingId, this.name, this.playbackUrl, this.status, this.streamKey, this.updatedAt, });
+@immutable final class LivestreamSessionDetailsResponseDataLivestreams {const LivestreamSessionDetailsResponseDataLivestreams({this.createdAt, this.disabled, this.id, this.ingestServer, this.meetingId, this.name = const Omittable.absent(), this.playbackUrl, this.status, this.streamKey, this.updatedAt, });
 
 factory LivestreamSessionDetailsResponseDataLivestreams.fromJson(Map<String, dynamic> json) { return LivestreamSessionDetailsResponseDataLivestreams(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
@@ -38,7 +38,7 @@ factory LivestreamSessionDetailsResponseDataLivestreams.fromJson(Map<String, dyn
   id: json['id'] as String?,
   ingestServer: json['ingest_server'] as String?,
   meetingId: json['meeting_id'] as String?,
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   playbackUrl: json['playback_url'] as String?,
   status: json['status'] != null ? LivestreamSessionDetailsResponseDataLivestreamsStatus.fromJson(json['status'] as String) : null,
   streamKey: json['stream_key'] as String?,
@@ -61,7 +61,7 @@ final String? ingestServer;
 final String? meetingId;
 
 /// Name of the livestream.
-final String? name;
+final Omittable<String?> name;
 
 /// The web address that viewers can use to watch the livestream.
 final String? playbackUrl;
@@ -80,20 +80,20 @@ Map<String, dynamic> toJson() { return {
   'id': ?id,
   'ingest_server': ?ingestServer,
   'meeting_id': ?meetingId,
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
   'playback_url': ?playbackUrl,
   if (status != null) 'status': status?.toJson(),
   'stream_key': ?streamKey,
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'disabled', 'id', 'ingest_server', 'meeting_id', 'name', 'playback_url', 'status', 'stream_key', 'updated_at'}.contains(key)); } 
-LivestreamSessionDetailsResponseDataLivestreams copyWith({DateTime Function()? createdAt, bool Function()? disabled, String Function()? id, String Function()? ingestServer, String Function()? meetingId, String? Function()? name, String Function()? playbackUrl, LivestreamSessionDetailsResponseDataLivestreamsStatus Function()? status, String Function()? streamKey, DateTime Function()? updatedAt, }) { return LivestreamSessionDetailsResponseDataLivestreams(
+LivestreamSessionDetailsResponseDataLivestreams copyWith({DateTime? Function()? createdAt, bool? Function()? disabled, String? Function()? id, String? Function()? ingestServer, String? Function()? meetingId, Omittable<String?>? name, String? Function()? playbackUrl, LivestreamSessionDetailsResponseDataLivestreamsStatus? Function()? status, String? Function()? streamKey, DateTime? Function()? updatedAt, }) { return LivestreamSessionDetailsResponseDataLivestreams(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   disabled: disabled != null ? disabled() : this.disabled,
   id: id != null ? id() : this.id,
   ingestServer: ingestServer != null ? ingestServer() : this.ingestServer,
   meetingId: meetingId != null ? meetingId() : this.meetingId,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
   playbackUrl: playbackUrl != null ? playbackUrl() : this.playbackUrl,
   status: status != null ? status() : this.status,
   streamKey: streamKey != null ? streamKey() : this.streamKey,

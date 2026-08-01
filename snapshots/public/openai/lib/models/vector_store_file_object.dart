@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VectorStoreFileObjectStatus($value)'; } 
  }
 /// A list of files attached to a vector store.
-@immutable final class VectorStoreFileObject {const VectorStoreFileObject({required this.id, required this.object, required this.usageBytes, required this.createdAt, required this.vectorStoreId, required this.status, required this.lastError, this.chunkingStrategy, this.attributes, });
+@immutable final class VectorStoreFileObject {const VectorStoreFileObject({required this.id, required this.object, required this.usageBytes, required this.createdAt, required this.vectorStoreId, required this.status, required this.lastError, this.chunkingStrategy, this.attributes = const Omittable.absent(), });
 
 factory VectorStoreFileObject.fromJson(Map<String, dynamic> json) { return VectorStoreFileObject(
   id: json['id'] as String,
@@ -65,7 +65,7 @@ factory VectorStoreFileObject.fromJson(Map<String, dynamic> json) { return Vecto
   status: VectorStoreFileObjectStatus.fromJson(json['status'] as String),
   lastError: json['last_error'] != null ? VectorStoreFileObjectLastError.fromJson(json['last_error'] as Map<String, dynamic>) : null,
   chunkingStrategy: json['chunking_strategy'] != null ? OneOf2.parse(json['chunking_strategy'], fromA: (v) => StaticChunkingStrategyResponseParam.fromJson(v as Map<String, dynamic>), fromB: (v) => OtherChunkingStrategyResponseParam.fromJson(v as Map<String, dynamic>),) : null,
-  attributes: json['attributes'] as Map<String, dynamic>?,
+  attributes: json.containsKey('attributes') ? Omittable(json['attributes'] as Map<String, dynamic>?) : const Omittable.absent(),
 ); }
 
 /// The identifier, which can be referenced in API endpoints.
@@ -98,7 +98,7 @@ final VectorStoreFileObjectChunkingStrategy? chunkingStrategy;
 /// with a maximum length of 64 characters. Values are strings with a maximum
 /// length of 512 characters, booleans, or numbers.
 /// 
-final Map<String,dynamic>? attributes;
+final Omittable<Map<String,dynamic>?> attributes;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -107,9 +107,9 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'vector_store_id': vectorStoreId,
   'status': status.toJson(),
-  if (lastError != null) 'last_error': lastError?.toJson(),
+  'last_error': lastError?.toJson(),
   if (chunkingStrategy != null) 'chunking_strategy': chunkingStrategy?.toJson(),
-  'attributes': ?attributes,
+  if (attributes.isPresent) 'attributes': attributes.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
@@ -118,7 +118,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('vector_store_id') && json['vector_store_id'] is String &&
       json.containsKey('status') &&
       json.containsKey('last_error'); } 
-VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object, int? usageBytes, int? createdAt, String? vectorStoreId, VectorStoreFileObjectStatus? status, VectorStoreFileObjectLastError? Function()? lastError, VectorStoreFileObjectChunkingStrategy Function()? chunkingStrategy, Map<String, dynamic>? Function()? attributes, }) { return VectorStoreFileObject(
+VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object, int? usageBytes, int? createdAt, String? vectorStoreId, VectorStoreFileObjectStatus? status, VectorStoreFileObjectLastError? Function()? lastError, VectorStoreFileObjectChunkingStrategy? Function()? chunkingStrategy, Omittable<Map<String,dynamic>?>? attributes, }) { return VectorStoreFileObject(
   id: id ?? this.id,
   object: object ?? this.object,
   usageBytes: usageBytes ?? this.usageBytes,
@@ -127,7 +127,7 @@ VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object,
   status: status ?? this.status,
   lastError: lastError != null ? lastError() : this.lastError,
   chunkingStrategy: chunkingStrategy != null ? chunkingStrategy() : this.chunkingStrategy,
-  attributes: attributes != null ? attributes() : this.attributes,
+  attributes: attributes ?? this.attributes,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is VectorStoreFileObject &&

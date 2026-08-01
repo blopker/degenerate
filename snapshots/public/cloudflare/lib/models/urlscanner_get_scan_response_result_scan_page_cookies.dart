@@ -71,7 +71,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('domai
       json.containsKey('sourcePort') && json['sourcePort'] is num &&
       json.containsKey('sourceScheme') && json['sourceScheme'] is String &&
       json.containsKey('value') && json['value'] is String; } 
-UrlscannerGetScanResponseResultScanPageCookies copyWith({String? domain, double? expires, bool? httpOnly, String? name, String? path, String Function()? priority, bool? sameParty, bool? secure, bool? session, double? size, double? sourcePort, String? sourceScheme, String? value, }) { return UrlscannerGetScanResponseResultScanPageCookies(
+UrlscannerGetScanResponseResultScanPageCookies copyWith({String? domain, double? expires, bool? httpOnly, String? name, String? path, String? Function()? priority, bool? sameParty, bool? secure, bool? session, double? size, double? sourcePort, String? sourceScheme, String? value, }) { return UrlscannerGetScanResponseResultScanPageCookies(
   domain: domain ?? this.domain,
   expires: expires ?? this.expires,
   httpOnly: httpOnly ?? this.httpOnly,

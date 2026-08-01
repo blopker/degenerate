@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails copyWith({PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType? type, PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsUsBankAccount Function()? usBankAccount, }) { return PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails(
+PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails copyWith({PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType? type, PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsUsBankAccount? Function()? usBankAccount, }) { return PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails(
   type: type ?? this.type,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
 ); } 

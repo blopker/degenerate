@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'tax_code': ?taxCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'shipping_rate', 'tax_behavior', 'tax_code'}.contains(key)); } 
-PostTaxCalculationsRequestShippingCost copyWith({int Function()? amount, String Function()? shippingRate, PostTaxCalculationsRequestShippingCostTaxBehavior Function()? taxBehavior, String Function()? taxCode, }) { return PostTaxCalculationsRequestShippingCost(
+PostTaxCalculationsRequestShippingCost copyWith({int? Function()? amount, String? Function()? shippingRate, PostTaxCalculationsRequestShippingCostTaxBehavior? Function()? taxBehavior, String? Function()? taxCode, }) { return PostTaxCalculationsRequestShippingCost(
   amount: amount != null ? amount() : this.amount,
   shippingRate: shippingRate != null ? shippingRate() : this.shippingRate,
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (deploymentRecords != null) 'deployment_records': deploymentRecords?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_count', 'deployment_records'}.contains(key)); } 
-OrgsListArtifactDeploymentRecordsResponse copyWith({int Function()? totalCount, List<ArtifactDeploymentRecord> Function()? deploymentRecords, }) { return OrgsListArtifactDeploymentRecordsResponse(
+OrgsListArtifactDeploymentRecordsResponse copyWith({int? Function()? totalCount, List<ArtifactDeploymentRecord>? Function()? deploymentRecords, }) { return OrgsListArtifactDeploymentRecordsResponse(
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   deploymentRecords: deploymentRecords != null ? deploymentRecords() : this.deploymentRecords,
 ); } 

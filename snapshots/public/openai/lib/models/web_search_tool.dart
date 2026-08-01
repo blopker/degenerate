@@ -31,11 +31,11 @@ bool get isUnknown { return !values.contains(this); }
 /// Search the Internet for sources related to the prompt. Learn more about the
 /// [web search tool](/docs/guides/tools-web-search).
 /// 
-@immutable final class WebSearchTool {const WebSearchTool({this.type = 'web_search', this.filters, this.userLocation, this.searchContextSize = WebSearchToolSearchContextSize.medium, });
+@immutable final class WebSearchTool {const WebSearchTool({this.type = 'web_search', this.filters = const Omittable.absent(), this.userLocation, this.searchContextSize = WebSearchToolSearchContextSize.medium, });
 
 factory WebSearchTool.fromJson(Map<String, dynamic> json) { return WebSearchTool(
   type: json['type'] as String,
-  filters: json['filters'] != null ? WebSearchToolFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
+  filters: json.containsKey('filters') ? Omittable(json['filters'] != null ? WebSearchToolFilters.fromJson(json['filters'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   userLocation: json['user_location'] != null ? WebSearchApproximateLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null,
   searchContextSize: json.containsKey('search_context_size') ? WebSearchToolSearchContextSize.fromJson(json['search_context_size'] as String) : WebSearchToolSearchContextSize.medium,
 ); }
@@ -45,7 +45,7 @@ final String type;
 
 /// Filters for the search.
 /// 
-final WebSearchToolFilters? filters;
+final Omittable<WebSearchToolFilters?> filters;
 
 final WebSearchApproximateLocation? userLocation;
 
@@ -54,14 +54,14 @@ final WebSearchToolSearchContextSize searchContextSize;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
-  if (filters != null) 'filters': filters?.toJson(),
+  if (filters.isPresent) 'filters': filters.value?.toJson(),
   if (userLocation != null) 'user_location': userLocation?.toJson(),
   'search_context_size': searchContextSize.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-WebSearchTool copyWith({String? type, WebSearchToolFilters? Function()? filters, WebSearchApproximateLocation Function()? userLocation, WebSearchToolSearchContextSize Function()? searchContextSize, }) { return WebSearchTool(
+WebSearchTool copyWith({String? type, Omittable<WebSearchToolFilters?>? filters, WebSearchApproximateLocation? Function()? userLocation, WebSearchToolSearchContextSize Function()? searchContextSize, }) { return WebSearchTool(
   type: type ?? this.type,
-  filters: filters != null ? filters() : this.filters,
+  filters: filters ?? this.filters,
   userLocation: userLocation != null ? userLocation() : this.userLocation,
   searchContextSize: searchContextSize != null ? searchContextSize() : this.searchContextSize,
 ); } 

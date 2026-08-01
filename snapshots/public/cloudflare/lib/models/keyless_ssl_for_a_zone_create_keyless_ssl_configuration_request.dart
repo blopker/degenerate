@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate') &&
       json.containsKey('host') &&
       json.containsKey('port'); } 
-KeylessSslForAZoneCreateKeylessSslConfigurationRequest copyWith({TlsCertificatesAndHostnamesBundleMethod Function()? bundleMethod, TlsCertificatesAndHostnamesSchemasCertificate? certificate, TlsCertificatesAndHostnamesHost? host, TlsCertificatesAndHostnamesNameWrite Function()? name, TlsCertificatesAndHostnamesPort? port, TlsCertificatesAndHostnamesKeylessTunnel Function()? tunnel, }) { return KeylessSslForAZoneCreateKeylessSslConfigurationRequest(
+KeylessSslForAZoneCreateKeylessSslConfigurationRequest copyWith({TlsCertificatesAndHostnamesBundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesSchemasCertificate? certificate, TlsCertificatesAndHostnamesHost? host, TlsCertificatesAndHostnamesNameWrite? Function()? name, TlsCertificatesAndHostnamesPort? port, TlsCertificatesAndHostnamesKeylessTunnel? Function()? tunnel, }) { return KeylessSslForAZoneCreateKeylessSslConfigurationRequest(
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   certificate: certificate ?? this.certificate,
   host: host ?? this.host,

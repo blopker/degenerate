@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (usDomesticWire != null) 'us_domestic_wire': usDomesticWire?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ach', 'us_domestic_wire'}.contains(key)); } 
-PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesOutboundTransfers copyWith({PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesOutboundTransfersAch Function()? ach, PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesOutboundTransfersUsDomesticWire Function()? usDomesticWire, }) { return PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesOutboundTransfers(
+PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesOutboundTransfers copyWith({PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesOutboundTransfersAch? Function()? ach, PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesOutboundTransfersUsDomesticWire? Function()? usDomesticWire, }) { return PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesOutboundTransfers(
   ach: ach != null ? ach() : this.ach,
   usDomesticWire: usDomesticWire != null ? usDomesticWire() : this.usDomesticWire,
 ); } 

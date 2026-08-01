@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'operating_system': operatingSystem.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('operating_system'); } 
-TeamsDevicesDomainJoinedInputRequest copyWith({String Function()? domain, TeamsDevicesDomainJoinedInputRequestOperatingSystem? operatingSystem, }) { return TeamsDevicesDomainJoinedInputRequest(
+TeamsDevicesDomainJoinedInputRequest copyWith({String? Function()? domain, TeamsDevicesDomainJoinedInputRequestOperatingSystem? operatingSystem, }) { return TeamsDevicesDomainJoinedInputRequest(
   domain: domain != null ? domain() : this.domain,
   operatingSystem: operatingSystem ?? this.operatingSystem,
 ); } 

@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'uid': ?uid,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'uid'}.contains(key)); } 
-StreamWatermarkAtUpload copyWith({String Function()? uid}) { return StreamWatermarkAtUpload(
+StreamWatermarkAtUpload copyWith({String? Function()? uid}) { return StreamWatermarkAtUpload(
   uid: uid != null ? uid() : this.uid,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

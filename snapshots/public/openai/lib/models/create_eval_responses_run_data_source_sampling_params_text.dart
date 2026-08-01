@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (format != null) 'format': format?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format'}.contains(key)); } 
-CreateEvalResponsesRunDataSourceSamplingParamsText copyWith({TextResponseFormatConfiguration Function()? format}) { return CreateEvalResponsesRunDataSourceSamplingParamsText(
+CreateEvalResponsesRunDataSourceSamplingParamsText copyWith({TextResponseFormatConfiguration? Function()? format}) { return CreateEvalResponsesRunDataSourceSamplingParamsText(
   format: format != null ? format() : this.format,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

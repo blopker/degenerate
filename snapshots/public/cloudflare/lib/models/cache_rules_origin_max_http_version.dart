@@ -23,11 +23,11 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CacheRulesOriginMaxHttpVersionId($value)'; } 
  }
 /// Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is "2" for all plan types except Enterprise where it is "1".
-@immutable final class CacheRulesOriginMaxHttpVersion {const CacheRulesOriginMaxHttpVersion({required this.id, this.modifiedOn, this.value, });
+@immutable final class CacheRulesOriginMaxHttpVersion {const CacheRulesOriginMaxHttpVersion({required this.id, this.modifiedOn = const Omittable.absent(), this.value, });
 
 factory CacheRulesOriginMaxHttpVersion.fromJson(Map<String, dynamic> json) { return CacheRulesOriginMaxHttpVersion(
   id: CacheRulesOriginMaxHttpVersionId.fromJson(json['id'] as String),
-  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
+  modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: json['value'] != null ? CacheRulesOriginMaxHttpVersionValue.fromJson(json['value'] as String) : null,
 ); }
 
@@ -35,19 +35,19 @@ factory CacheRulesOriginMaxHttpVersion.fromJson(Map<String, dynamic> json) { ret
 final CacheRulesOriginMaxHttpVersionId id;
 
 /// Last time this setting was modified.
-final DateTime? modifiedOn;
+final Omittable<DateTime?> modifiedOn;
 
 final CacheRulesOriginMaxHttpVersionValue? value;
 
 Map<String, dynamic> toJson() { return {
   'id': id.toJson(),
-  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
+  if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-CacheRulesOriginMaxHttpVersion copyWith({CacheRulesOriginMaxHttpVersionId? id, DateTime? Function()? modifiedOn, CacheRulesOriginMaxHttpVersionValue Function()? value, }) { return CacheRulesOriginMaxHttpVersion(
+CacheRulesOriginMaxHttpVersion copyWith({CacheRulesOriginMaxHttpVersionId? id, Omittable<DateTime?>? modifiedOn, CacheRulesOriginMaxHttpVersionValue? Function()? value, }) { return CacheRulesOriginMaxHttpVersion(
   id: id ?? this.id,
-  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value != null ? value() : this.value,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

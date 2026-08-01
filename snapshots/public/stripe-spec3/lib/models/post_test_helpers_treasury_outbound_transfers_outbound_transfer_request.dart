@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'tracking_details': trackingDetails.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('tracking_details'); } 
-PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest copyWith({List<String> Function()? expand, PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails? trackingDetails, }) { return PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest(
+PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest copyWith({List<String>? Function()? expand, PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails? trackingDetails, }) { return PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest(
   expand: expand != null ? expand() : this.expand,
   trackingDetails: trackingDetails ?? this.trackingDetails,
 ); } 

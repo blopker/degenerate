@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('items'); } 
-PodTemplateList copyWith({String Function()? apiVersion, List<PodTemplate>? items, String Function()? kind, ListMeta Function()? metadata, }) { return PodTemplateList(
+PodTemplateList copyWith({String? Function()? apiVersion, List<PodTemplate>? items, String? Function()? kind, ListMeta? Function()? metadata, }) { return PodTemplateList(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   items: items ?? this.items,
   kind: kind != null ? kind() : this.kind,

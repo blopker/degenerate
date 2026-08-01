@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('status_url') && json['status_url'] is String &&
       json.containsKey('page_url') && json['page_url'] is String; } 
-PageDeployment copyWith({dynamic id, Uri? statusUrl, Uri? pageUrl, Uri Function()? previewUrl, }) { return PageDeployment(
+PageDeployment copyWith({dynamic id, Uri? statusUrl, Uri? pageUrl, Uri? Function()? previewUrl, }) { return PageDeployment(
   id: id ?? this.id,
   statusUrl: statusUrl ?? this.statusUrl,
   pageUrl: pageUrl ?? this.pageUrl,

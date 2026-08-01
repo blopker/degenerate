@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (warnings != null) 'warnings': warnings?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'warnings'}.contains(key)); } 
-ShieldOldSchemaUploadDetailsWarningsOnly copyWith({List<ShieldOldSchemaUploadLogEvent> Function()? warnings}) { return ShieldOldSchemaUploadDetailsWarningsOnly(
+ShieldOldSchemaUploadDetailsWarningsOnly copyWith({List<ShieldOldSchemaUploadLogEvent>? Function()? warnings}) { return ShieldOldSchemaUploadDetailsWarningsOnly(
   warnings: warnings != null ? warnings() : this.warnings,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

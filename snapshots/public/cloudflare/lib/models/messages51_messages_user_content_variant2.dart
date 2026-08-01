@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-Messages51MessagesUserContentVariant2 copyWith({Messages51MessagesUserContentVariant2File Function()? file, Messages51MessagesUserContentVariant2ImageUrl Function()? imageUrl, Messages51MessagesUserContentVariant2InputAudio Function()? inputAudio, String Function()? text, Messages51MessagesUserContentVariant2Type? type, }) { return Messages51MessagesUserContentVariant2(
+Messages51MessagesUserContentVariant2 copyWith({Messages51MessagesUserContentVariant2File? Function()? file, Messages51MessagesUserContentVariant2ImageUrl? Function()? imageUrl, Messages51MessagesUserContentVariant2InputAudio? Function()? inputAudio, String? Function()? text, Messages51MessagesUserContentVariant2Type? type, }) { return Messages51MessagesUserContentVariant2(
   file: file != null ? file() : this.file,
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   inputAudio: inputAudio != null ? inputAudio() : this.inputAudio,

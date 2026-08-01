@@ -40,11 +40,11 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// You can access events through the [Retrieve Event API](https://docs.stripe.com/api/events#retrieve_event)
 /// for 30 days.
-@immutable final class Event {const Event({required this.created, required this.data, required this.id, required this.livemode, required this.object, required this.pendingWebhooks, required this.type, this.account, this.apiVersion, this.context, this.request, });
+@immutable final class Event {const Event({required this.created, required this.data, required this.id, required this.livemode, required this.object, required this.pendingWebhooks, required this.type, this.account, this.apiVersion = const Omittable.absent(), this.context, this.request = const Omittable.absent(), });
 
 factory Event.fromJson(Map<String, dynamic> json) { return Event(
   account: json['account'] as String?,
-  apiVersion: json['api_version'] as String?,
+  apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
   context: json['context'] as String?,
   created: (json['created'] as num).toInt(),
   data: NotificationEventData.fromJson(json['data'] as Map<String, dynamic>),
@@ -52,7 +52,7 @@ factory Event.fromJson(Map<String, dynamic> json) { return Event(
   livemode: json['livemode'] as bool,
   object: EventObject.fromJson(json['object'] as String),
   pendingWebhooks: (json['pending_webhooks'] as num).toInt(),
-  request: json['request'] != null ? NotificationEventRequest.fromJson(json['request'] as Map<String, dynamic>) : null,
+  request: json.containsKey('request') ? Omittable(json['request'] != null ? NotificationEventRequest.fromJson(json['request'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: json['type'] as String,
 ); }
 
@@ -60,7 +60,7 @@ factory Event.fromJson(Map<String, dynamic> json) { return Event(
 final String? account;
 
 /// The Stripe API version used to render `data` when the event was created. The contents of `data` never change, so this value remains static regardless of the API version currently in use. This property is populated only for events created on or after October 31, 2014.
-final String? apiVersion;
+final Omittable<String?> apiVersion;
 
 /// Authentication context needed to fetch the event or related object.
 final String? context;
@@ -83,14 +83,14 @@ final EventObject object;
 final int pendingWebhooks;
 
 /// Information on the API request that triggers the event.
-final NotificationEventRequest? request;
+final Omittable<NotificationEventRequest?> request;
 
 /// Description of the event (for example, `invoice.created` or `charge.refunded`).
 final String type;
 
 Map<String, dynamic> toJson() { return {
   'account': ?account,
-  'api_version': ?apiVersion,
+  if (apiVersion.isPresent) 'api_version': apiVersion.value,
   'context': ?context,
   'created': created,
   'data': data.toJson(),
@@ -98,7 +98,7 @@ Map<String, dynamic> toJson() { return {
   'livemode': livemode,
   'object': object.toJson(),
   'pending_webhooks': pendingWebhooks,
-  if (request != null) 'request': request?.toJson(),
+  if (request.isPresent) 'request': request.value?.toJson(),
   'type': type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
@@ -108,9 +108,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('pending_webhooks') && json['pending_webhooks'] is num &&
       json.containsKey('type') && json['type'] is String; } 
-Event copyWith({String Function()? account, String? Function()? apiVersion, String Function()? context, int? created, NotificationEventData? data, String? id, bool? livemode, EventObject? object, int? pendingWebhooks, NotificationEventRequest? Function()? request, String? type, }) { return Event(
+Event copyWith({String? Function()? account, Omittable<String?>? apiVersion, String? Function()? context, int? created, NotificationEventData? data, String? id, bool? livemode, EventObject? object, int? pendingWebhooks, Omittable<NotificationEventRequest?>? request, String? type, }) { return Event(
   account: account != null ? account() : this.account,
-  apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
+  apiVersion: apiVersion ?? this.apiVersion,
   context: context != null ? context() : this.context,
   created: created ?? this.created,
   data: data ?? this.data,
@@ -118,7 +118,7 @@ Event copyWith({String Function()? account, String? Function()? apiVersion, Stri
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
   pendingWebhooks: pendingWebhooks ?? this.pendingWebhooks,
-  request: request != null ? request() : this.request,
+  request: request ?? this.request,
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

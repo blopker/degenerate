@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-RealtimekitMeeting copyWith({DateTime? createdAt, String? id, bool Function()? liveStreamOnStart, bool Function()? persistChat, bool Function()? recordOnStart, double Function()? sessionKeepAliveTimeInSecs, RealtimekitMeetingStatus Function()? status, bool Function()? summarizeOnEnd, String Function()? title, DateTime? updatedAt, }) { return RealtimekitMeeting(
+RealtimekitMeeting copyWith({DateTime? createdAt, String? id, bool? Function()? liveStreamOnStart, bool? Function()? persistChat, bool? Function()? recordOnStart, double Function()? sessionKeepAliveTimeInSecs, RealtimekitMeetingStatus? Function()? status, bool? Function()? summarizeOnEnd, String? Function()? title, DateTime? updatedAt, }) { return RealtimekitMeeting(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   liveStreamOnStart: liveStreamOnStart != null ? liveStreamOnStart() : this.liveStreamOnStart,

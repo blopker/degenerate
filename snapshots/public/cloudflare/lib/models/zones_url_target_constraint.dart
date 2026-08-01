@@ -15,7 +15,7 @@ final dynamic $operator;
 final String value;
 
 Map<String, dynamic> toJson() { return {
-  'operator': ?$operator,
+  'operator': $operator,
   'value': value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('operator') &&

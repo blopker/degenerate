@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'ignore_query_strings_order': ?ignoreQueryStringsOrder,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cache_by_device_type', 'cache_deception_armor', 'custom_key', 'ignore_query_strings_order'}.contains(key)); } 
-RulesetsSetCacheSettingsCacheKey copyWith({bool Function()? cacheByDeviceType, bool Function()? cacheDeceptionArmor, RulesetsSetCacheSettingsCustomCacheKey Function()? customKey, bool Function()? ignoreQueryStringsOrder, }) { return RulesetsSetCacheSettingsCacheKey(
+RulesetsSetCacheSettingsCacheKey copyWith({bool? Function()? cacheByDeviceType, bool? Function()? cacheDeceptionArmor, RulesetsSetCacheSettingsCustomCacheKey? Function()? customKey, bool? Function()? ignoreQueryStringsOrder, }) { return RulesetsSetCacheSettingsCacheKey(
   cacheByDeviceType: cacheByDeviceType != null ? cacheByDeviceType() : this.cacheByDeviceType,
   cacheDeceptionArmor: cacheDeceptionArmor != null ? cacheDeceptionArmor() : this.cacheDeceptionArmor,
   customKey: customKey != null ? customKey() : this.customKey,

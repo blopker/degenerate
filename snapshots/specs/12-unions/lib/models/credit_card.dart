@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('cardNumber') && json['cardNumber'] is String &&
       json.containsKey('expiryMonth') && json['expiryMonth'] is num &&
       json.containsKey('expiryYear') && json['expiryYear'] is num; } 
-CreditCard copyWith({String? cardNumber, int? expiryMonth, int? expiryYear, String Function()? cardholderName, }) { return CreditCard(
+CreditCard copyWith({String? cardNumber, int? expiryMonth, int? expiryYear, String? Function()? cardholderName, }) { return CreditCard(
   cardNumber: cardNumber ?? this.cardNumber,
   expiryMonth: expiryMonth ?? this.expiryMonth,
   expiryYear: expiryYear ?? this.expiryYear,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_registry_package_published_registry_package_package_version_release_author.dart';@immutable final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease {const WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease({this.author, this.createdAt, this.draft, this.htmlUrl, this.id, this.name, this.prerelease, this.publishedAt, this.tagName, this.targetCommitish, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_registry_package_published_registry_package_package_version_release_author.dart';@immutable final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease {const WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease({this.author, this.createdAt, this.draft, this.htmlUrl, this.id, this.name = const Omittable.absent(), this.prerelease, this.publishedAt, this.tagName, this.targetCommitish, this.url, });
 
 factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease(
   author: json['author'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionReleaseAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
@@ -8,7 +8,7 @@ factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease.from
   draft: json['draft'] as bool?,
   htmlUrl: json['html_url'] as String?,
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   prerelease: json['prerelease'] as bool?,
   publishedAt: json['published_at'] as String?,
   tagName: json['tag_name'] as String?,
@@ -26,7 +26,7 @@ final String? htmlUrl;
 
 final int? id;
 
-final String? name;
+final Omittable<String?> name;
 
 final bool? prerelease;
 
@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'draft': ?draft,
   'html_url': ?htmlUrl,
   'id': ?id,
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
   'prerelease': ?prerelease,
   'published_at': ?publishedAt,
   'tag_name': ?tagName,
@@ -52,13 +52,13 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'author', 'created_at', 'draft', 'html_url', 'id', 'name', 'prerelease', 'published_at', 'tag_name', 'target_commitish', 'url'}.contains(key)); } 
-WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease copyWith({WebhookRegistryPackagePublishedRegistryPackagePackageVersionReleaseAuthor Function()? author, String Function()? createdAt, bool Function()? draft, String Function()? htmlUrl, int Function()? id, String? Function()? name, bool Function()? prerelease, String Function()? publishedAt, String Function()? tagName, String Function()? targetCommitish, String Function()? url, }) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease(
+WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease copyWith({WebhookRegistryPackagePublishedRegistryPackagePackageVersionReleaseAuthor? Function()? author, String? Function()? createdAt, bool? Function()? draft, String? Function()? htmlUrl, int? Function()? id, Omittable<String?>? name, bool? Function()? prerelease, String? Function()? publishedAt, String? Function()? tagName, String? Function()? targetCommitish, String? Function()? url, }) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease(
   author: author != null ? author() : this.author,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   draft: draft != null ? draft() : this.draft,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   id: id != null ? id() : this.id,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
   prerelease: prerelease != null ? prerelease() : this.prerelease,
   publishedAt: publishedAt != null ? publishedAt() : this.publishedAt,
   tagName: tagName != null ? tagName() : this.tagName,

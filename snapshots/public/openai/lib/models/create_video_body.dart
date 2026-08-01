@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   if (size != null) 'size': size?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-CreateVideoBody copyWith({VideoModel Function()? model, String? prompt, Uint8List Function()? inputReference, ImageRefParam2 Function()? imageReference, VideoSeconds Function()? seconds, VideoSize Function()? size, }) { return CreateVideoBody(
+CreateVideoBody copyWith({VideoModel? Function()? model, String? prompt, Uint8List? Function()? inputReference, ImageRefParam2? Function()? imageReference, VideoSeconds? Function()? seconds, VideoSize? Function()? size, }) { return CreateVideoBody(
   model: model != null ? model() : this.model,
   prompt: prompt ?? this.prompt,
   inputReference: inputReference != null ? inputReference() : this.inputReference,
@@ -78,10 +78,10 @@ CreateVideoBody copyWith({VideoModel Function()? model, String? prompt, Uint8Lis
       other is CreateVideoBody &&
           model == other.model &&
           prompt == other.prompt &&
-          inputReference == other.inputReference &&
+          listEquals(inputReference, other.inputReference) &&
           imageReference == other.imageReference &&
           seconds == other.seconds &&
           size == other.size; } 
-@override int get hashCode { return Object.hash(model, prompt, inputReference, imageReference, seconds, size); } 
+@override int get hashCode { return Object.hash(model, prompt, Object.hashAll(inputReference ?? const []), imageReference, seconds, size); } 
 @override String toString() { return 'CreateVideoBody(model: $model, prompt: $prompt, inputReference: $inputReference, imageReference: $imageReference, seconds: $seconds, size: $size)'; } 
  }

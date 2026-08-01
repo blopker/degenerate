@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   if (geography != null) 'geography': geography?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ProjectCreateRequest copyWith({String? name, ProjectCreateRequestGeography Function()? geography, }) { return ProjectCreateRequest(
+ProjectCreateRequest copyWith({String? name, ProjectCreateRequestGeography? Function()? geography, }) { return ProjectCreateRequest(
   name: name ?? this.name,
   geography: geography != null ? geography() : this.geography,
 ); } 

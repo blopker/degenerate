@@ -30,12 +30,12 @@ final String status;
 final String updatedAt;
 
 Map<String, dynamic> toJson() { return {
-  'conclusion': ?conclusion,
+  'conclusion': conclusion,
   'created_at': createdAt,
   'environment': environment,
   'html_url': htmlUrl,
   'id': id,
-  'name': ?name,
+  'name': name,
   'status': status,
   'updated_at': updatedAt,
 }; } 
@@ -44,7 +44,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('concl
       json.containsKey('environment') && json['environment'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
-      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
 WebhookDeploymentReviewRequestedWorkflowJobRun copyWith({dynamic Function()? conclusion, String? createdAt, String? environment, String? htmlUrl, int? id, String? Function()? name, String? status, String? updatedAt, }) { return WebhookDeploymentReviewRequestedWorkflowJobRun(

@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when an
 /// message item that will be created, thus a `conversation.item.created` event
 /// will also be sent to the client.
 /// 
-@immutable final class RealtimeServerEventInputAudioBufferCommitted {const RealtimeServerEventInputAudioBufferCommitted({required this.eventId, required this.type, required this.itemId, this.previousItemId, });
+@immutable final class RealtimeServerEventInputAudioBufferCommitted {const RealtimeServerEventInputAudioBufferCommitted({required this.eventId, required this.type, required this.itemId, this.previousItemId = const Omittable.absent(), });
 
 factory RealtimeServerEventInputAudioBufferCommitted.fromJson(Map<String, dynamic> json) { return RealtimeServerEventInputAudioBufferCommitted(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
-  previousItemId: json['previous_item_id'] as String?,
+  previousItemId: json.containsKey('previous_item_id') ? Omittable(json['previous_item_id'] as String?) : const Omittable.absent(),
   itemId: json['item_id'] as String,
 ); }
 
@@ -23,7 +23,7 @@ final String type;
 /// The ID of the preceding item after which the new item will be inserted.
 /// Can be `null` if the item has no predecessor.
 /// 
-final String? previousItemId;
+final Omittable<String?> previousItemId;
 
 /// The ID of the user message item that will be created.
 final String itemId;
@@ -31,16 +31,16 @@ final String itemId;
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
   'type': type,
-  'previous_item_id': ?previousItemId,
+  if (previousItemId.isPresent) 'previous_item_id': previousItemId.value,
   'item_id': itemId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeServerEventInputAudioBufferCommitted copyWith({String? eventId, String? type, String? Function()? previousItemId, String? itemId, }) { return RealtimeServerEventInputAudioBufferCommitted(
+RealtimeServerEventInputAudioBufferCommitted copyWith({String? eventId, String? type, Omittable<String?>? previousItemId, String? itemId, }) { return RealtimeServerEventInputAudioBufferCommitted(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
-  previousItemId: previousItemId != null ? previousItemId() : this.previousItemId,
+  previousItemId: previousItemId ?? this.previousItemId,
   itemId: itemId ?? this.itemId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

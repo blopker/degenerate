@@ -96,14 +96,14 @@ Map<String, dynamic> toJson() { return {
   'permissions_upgraded': permissionsUpgraded.toJson(),
   'permissions_result': permissionsResult.toJson(),
   'repository_selection': repositorySelection.toJson(),
-  'repository_count': ?repositoryCount,
-  if (repositories != null) 'repositories': repositories?.map((e) => e.toJson()).toList(),
+  'repository_count': repositoryCount,
+  'repositories': repositories?.map((e) => e.toJson()).toList(),
   'created_at': createdAt,
   'token_id': tokenId,
   'token_name': tokenName,
   'token_expired': tokenExpired,
-  'token_expires_at': ?tokenExpiresAt,
-  'token_last_used_at': ?tokenLastUsedAt,
+  'token_expires_at': tokenExpiresAt,
+  'token_last_used_at': tokenLastUsedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('owner') &&
@@ -111,14 +111,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('permissions_upgraded') &&
       json.containsKey('permissions_result') &&
       json.containsKey('repository_selection') &&
-      json.containsKey('repository_count') && json['repository_count'] is num &&
+      json.containsKey('repository_count') && (json['repository_count'] == null || json['repository_count'] is num) &&
       json.containsKey('repositories') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('token_id') && json['token_id'] is num &&
       json.containsKey('token_name') && json['token_name'] is String &&
       json.containsKey('token_expired') && json['token_expired'] is bool &&
-      json.containsKey('token_expires_at') && json['token_expires_at'] is String &&
-      json.containsKey('token_last_used_at') && json['token_last_used_at'] is String; } 
+      json.containsKey('token_expires_at') && (json['token_expires_at'] == null || json['token_expires_at'] is String) &&
+      json.containsKey('token_last_used_at') && (json['token_last_used_at'] == null || json['token_last_used_at'] is String); } 
 PersonalAccessTokenRequest copyWith({int? id, SimpleUser? owner, PersonalAccessTokenRequestPermissionsAdded? permissionsAdded, PersonalAccessTokenRequestPermissionsUpgraded? permissionsUpgraded, PersonalAccessTokenRequestPermissionsResult? permissionsResult, PersonalAccessTokenRequestRepositorySelection? repositorySelection, int? Function()? repositoryCount, List<PersonalAccessTokenRequestRepositories>? Function()? repositories, String? createdAt, int? tokenId, String? tokenName, bool? tokenExpired, String? Function()? tokenExpiresAt, String? Function()? tokenLastUsedAt, }) { return PersonalAccessTokenRequest(
   id: id ?? this.id,
   owner: owner ?? this.owner,

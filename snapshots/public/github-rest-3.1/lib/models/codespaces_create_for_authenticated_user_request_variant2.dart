@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   'idle_timeout_minutes': ?idleTimeoutMinutes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('pull_request'); } 
-CodespacesCreateForAuthenticatedUserRequestVariant2 copyWith({CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest? pullRequest, String Function()? location, CodespacesCreateForAuthenticatedUserRequestVariant2Geo Function()? geo, String Function()? machine, String Function()? devcontainerPath, String Function()? workingDirectory, int Function()? idleTimeoutMinutes, }) { return CodespacesCreateForAuthenticatedUserRequestVariant2(
+CodespacesCreateForAuthenticatedUserRequestVariant2 copyWith({CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest? pullRequest, String? Function()? location, CodespacesCreateForAuthenticatedUserRequestVariant2Geo? Function()? geo, String? Function()? machine, String? Function()? devcontainerPath, String? Function()? workingDirectory, int? Function()? idleTimeoutMinutes, }) { return CodespacesCreateForAuthenticatedUserRequestVariant2(
   pullRequest: pullRequest ?? this.pullRequest,
   location: location != null ? location() : this.location,
   geo: geo != null ? geo() : this.geo,

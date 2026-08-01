@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'compatibility_date', 'compatibility_flags', 'limits', 'migration_tag', 'usage_model'}.contains(key)); } 
-WorkersVersionItemUploadedResourcesScriptRuntime copyWith({String Function()? compatibilityDate, List<String> Function()? compatibilityFlags, WorkersVersionItemUploadedResourcesScriptRuntimeLimits Function()? limits, String Function()? migrationTag, WorkersVersionItemUploadedResourcesScriptRuntimeUsageModel Function()? usageModel, }) { return WorkersVersionItemUploadedResourcesScriptRuntime(
+WorkersVersionItemUploadedResourcesScriptRuntime copyWith({String? Function()? compatibilityDate, List<String>? Function()? compatibilityFlags, WorkersVersionItemUploadedResourcesScriptRuntimeLimits? Function()? limits, String? Function()? migrationTag, WorkersVersionItemUploadedResourcesScriptRuntimeUsageModel? Function()? usageModel, }) { return WorkersVersionItemUploadedResourcesScriptRuntime(
   compatibilityDate: compatibilityDate != null ? compatibilityDate() : this.compatibilityDate,
   compatibilityFlags: compatibilityFlags != null ? compatibilityFlags() : this.compatibilityFlags,
   limits: limits != null ? limits() : this.limits,

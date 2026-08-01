@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('keyType') && json['keyType'] is String &&
       json.containsKey('signerName') && json['signerName'] is String; } 
-PodCertificateProjection copyWith({String Function()? certificateChainPath, String Function()? credentialBundlePath, String Function()? keyPath, String? keyType, int Function()? maxExpirationSeconds, String? signerName, Map<String, String> Function()? userAnnotations, }) { return PodCertificateProjection(
+PodCertificateProjection copyWith({String? Function()? certificateChainPath, String? Function()? credentialBundlePath, String? Function()? keyPath, String? keyType, int? Function()? maxExpirationSeconds, String? signerName, Map<String, String>? Function()? userAnnotations, }) { return PodCertificateProjection(
   certificateChainPath: certificateChainPath != null ? certificateChainPath() : this.certificateChainPath,
   credentialBundlePath: credentialBundlePath != null ? credentialBundlePath() : this.credentialBundlePath,
   keyPath: keyPath != null ? keyPath() : this.keyPath,

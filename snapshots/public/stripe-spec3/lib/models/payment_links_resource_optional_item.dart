@@ -1,29 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_optional_item_adjustable_quantity.dart';/// 
-@immutable final class PaymentLinksResourceOptionalItem {const PaymentLinksResourceOptionalItem({required this.price, required this.quantity, this.adjustableQuantity, });
+@immutable final class PaymentLinksResourceOptionalItem {const PaymentLinksResourceOptionalItem({required this.price, required this.quantity, this.adjustableQuantity = const Omittable.absent(), });
 
 factory PaymentLinksResourceOptionalItem.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceOptionalItem(
-  adjustableQuantity: json['adjustable_quantity'] != null ? PaymentLinksResourceOptionalItemAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
+  adjustableQuantity: json.containsKey('adjustable_quantity') ? Omittable(json['adjustable_quantity'] != null ? PaymentLinksResourceOptionalItemAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   price: json['price'] as String,
   quantity: (json['quantity'] as num).toInt(),
 ); }
 
-final PaymentLinksResourceOptionalItemAdjustableQuantity? adjustableQuantity;
+final Omittable<PaymentLinksResourceOptionalItemAdjustableQuantity?> adjustableQuantity;
 
 final String price;
 
 final int quantity;
 
 Map<String, dynamic> toJson() { return {
-  if (adjustableQuantity != null) 'adjustable_quantity': adjustableQuantity?.toJson(),
+  if (adjustableQuantity.isPresent) 'adjustable_quantity': adjustableQuantity.value?.toJson(),
   'price': price,
   'quantity': quantity,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('price') && json['price'] is String &&
       json.containsKey('quantity') && json['quantity'] is num; } 
-PaymentLinksResourceOptionalItem copyWith({PaymentLinksResourceOptionalItemAdjustableQuantity? Function()? adjustableQuantity, String? price, int? quantity, }) { return PaymentLinksResourceOptionalItem(
-  adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,
+PaymentLinksResourceOptionalItem copyWith({Omittable<PaymentLinksResourceOptionalItemAdjustableQuantity?>? adjustableQuantity, String? price, int? quantity, }) { return PaymentLinksResourceOptionalItem(
+  adjustableQuantity: adjustableQuantity ?? this.adjustableQuantity,
   price: price ?? this.price,
   quantity: quantity ?? this.quantity,
 ); } 

@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (totals != null) 'totals': totals?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'colo_id', 'timeseries', 'totals'}.contains(key)); } 
-Datacenters2 copyWith({String Function()? coloId, List<TimeseriesByColo2> Function()? timeseries, TotalsByColo Function()? totals, }) { return Datacenters2(
+Datacenters2 copyWith({String? Function()? coloId, List<TimeseriesByColo2>? Function()? timeseries, TotalsByColo? Function()? totals, }) { return Datacenters2(
   coloId: coloId != null ? coloId() : this.coloId,
   timeseries: timeseries != null ? timeseries() : this.timeseries,
   totals: totals != null ? totals() : this.totals,

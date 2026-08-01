@@ -58,14 +58,14 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl.toString(),
   'page_name': pageName,
   'sha': sha,
-  'summary': ?summary,
+  'summary': summary,
   'title': title,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('page_name') && json['page_name'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
-      json.containsKey('summary') && json['summary'] is String &&
+      json.containsKey('summary') && (json['summary'] == null || json['summary'] is String) &&
       json.containsKey('title') && json['title'] is String; } 
 WebhookGollumPages copyWith({WebhookGollumPagesAction? action, Uri? htmlUrl, String? pageName, String? sha, String? Function()? summary, String? title, }) { return WebhookGollumPages(
   action: action ?? this.action,

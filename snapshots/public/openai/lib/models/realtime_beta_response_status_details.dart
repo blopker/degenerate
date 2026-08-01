@@ -104,7 +104,7 @@ Map<String, dynamic> toJson() { return {
   if (error != null) 'error': error?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'reason', 'error'}.contains(key)); } 
-RealtimeBetaResponseStatusDetails copyWith({RealtimeBetaResponseStatusDetailsType Function()? type, RealtimeBetaResponseStatusDetailsReason Function()? reason, RealtimeBetaResponseStatusDetailsError Function()? error, }) { return RealtimeBetaResponseStatusDetails(
+RealtimeBetaResponseStatusDetails copyWith({RealtimeBetaResponseStatusDetailsType? Function()? type, RealtimeBetaResponseStatusDetailsReason? Function()? reason, RealtimeBetaResponseStatusDetailsError? Function()? error, }) { return RealtimeBetaResponseStatusDetails(
   type: type != null ? type() : this.type,
   reason: reason != null ? reason() : this.reason,
   error: error != null ? error() : this.error,

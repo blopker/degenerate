@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'resolved': ?resolved,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'resolved'}.contains(key)); } 
-RulesetsSetCacheSettingsCustomCacheKeyHost copyWith({bool Function()? resolved}) { return RulesetsSetCacheSettingsCustomCacheKeyHost(
+RulesetsSetCacheSettingsCustomCacheKeyHost copyWith({bool? Function()? resolved}) { return RulesetsSetCacheSettingsCustomCacheKeyHost(
   resolved: resolved != null ? resolved() : this.resolved,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

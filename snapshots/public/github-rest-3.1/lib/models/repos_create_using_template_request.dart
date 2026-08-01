@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'private': private,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ReposCreateUsingTemplateRequest copyWith({String Function()? owner, String? name, String Function()? description, bool Function()? includeAllBranches, bool Function()? private, }) { return ReposCreateUsingTemplateRequest(
+ReposCreateUsingTemplateRequest copyWith({String? Function()? owner, String? name, String? Function()? description, bool Function()? includeAllBranches, bool Function()? private, }) { return ReposCreateUsingTemplateRequest(
   owner: owner != null ? owner() : this.owner,
   name: name ?? this.name,
   description: description != null ? description() : this.description,

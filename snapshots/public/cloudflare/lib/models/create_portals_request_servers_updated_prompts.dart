@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'name': name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-CreatePortalsRequestServersUpdatedPrompts copyWith({String Function()? description, bool Function()? enabled, String? name, }) { return CreatePortalsRequestServersUpdatedPrompts(
+CreatePortalsRequestServersUpdatedPrompts copyWith({String? Function()? description, bool? Function()? enabled, String? name, }) { return CreatePortalsRequestServersUpdatedPrompts(
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,
   name: name ?? this.name,

@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ModifyMessageRequest {const ModifyMessageRequest({this.metadata});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ModifyMessageRequest {const ModifyMessageRequest({this.metadata = const Omittable.absent()});
 
 factory ModifyMessageRequest.fromJson(Map<String, dynamic> json) { return ModifyMessageRequest(
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
 ); }
 
 /// Set of 16 key-value pairs that can be attached to an object. This can be
@@ -13,14 +13,14 @@ factory ModifyMessageRequest.fromJson(Map<String, dynamic> json) { return Modify
 /// Keys are strings with a maximum length of 64 characters. Values are strings
 /// with a maximum length of 512 characters.
 /// 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 Map<String, dynamic> toJson() { return {
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata'}.contains(key)); } 
-ModifyMessageRequest copyWith({Map<String, String>? Function()? metadata}) { return ModifyMessageRequest(
-  metadata: metadata != null ? metadata() : this.metadata,
+ModifyMessageRequest copyWith({Omittable<Map<String,String>?>? metadata}) { return ModifyMessageRequest(
+  metadata: metadata ?? this.metadata,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ModifyMessageRequest &&

@@ -78,10 +78,10 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchUpdateInstancesRequestFusionMethod($value)'; } 
  }
-@immutable final class AiSearchUpdateInstancesRequest {const AiSearchUpdateInstancesRequest({this.aiGatewayId, this.aiSearchModel, this.cache = true, this.cacheThreshold = AiSearchUpdateInstancesRequestCacheThreshold.closeEnough, this.chunk = true, this.chunkOverlap = 10, this.chunkSize = 256, this.customMetadata, this.embeddingModel, this.fusionMethod = AiSearchUpdateInstancesRequestFusionMethod.rrf, this.hybridSearchEnabled = false, this.maxNumResults = 10, this.metadata, this.paused = false, this.publicEndpointParams, this.reranking = false, this.rerankingModel, this.retrievalOptions, this.rewriteModel, this.rewriteQuery = false, this.scoreThreshold = 0.4, this.sourceParams, this.summarization = false, this.summarizationModel, this.systemPromptAiSearch, this.systemPromptIndexSummarization, this.systemPromptRewriteQuery, this.tokenId, });
+@immutable final class AiSearchUpdateInstancesRequest {const AiSearchUpdateInstancesRequest({this.aiGatewayId = const Omittable.absent(), this.aiSearchModel, this.cache = true, this.cacheThreshold = AiSearchUpdateInstancesRequestCacheThreshold.closeEnough, this.chunk = true, this.chunkOverlap = 10, this.chunkSize = 256, this.customMetadata, this.embeddingModel, this.fusionMethod = AiSearchUpdateInstancesRequestFusionMethod.rrf, this.hybridSearchEnabled = false, this.maxNumResults = 10, this.metadata, this.paused = false, this.publicEndpointParams, this.reranking = false, this.rerankingModel, this.retrievalOptions = const Omittable.absent(), this.rewriteModel, this.rewriteQuery = false, this.scoreThreshold = 0.4, this.sourceParams = const Omittable.absent(), this.summarization = false, this.summarizationModel, this.systemPromptAiSearch = const Omittable.absent(), this.systemPromptIndexSummarization = const Omittable.absent(), this.systemPromptRewriteQuery = const Omittable.absent(), this.tokenId, });
 
 factory AiSearchUpdateInstancesRequest.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesRequest(
-  aiGatewayId: json['ai_gateway_id'] as String?,
+  aiGatewayId: json.containsKey('ai_gateway_id') ? Omittable(json['ai_gateway_id'] as String?) : const Omittable.absent(),
   aiSearchModel: json['ai_search_model'] != null ? OneOf2.parse(json['ai_search_model'], fromA: (v) => AiSearchUpdateInstancesRequestAiSearchModelVariant1.fromJson(v as String), fromB: (v) => AiSearchUpdateInstancesRequestAiSearchModelVariant2.fromJson(v as String),) : null,
   cache: json.containsKey('cache') ? json['cache'] as bool : true,
   cacheThreshold: json.containsKey('cache_threshold') ? AiSearchUpdateInstancesRequestCacheThreshold.fromJson(json['cache_threshold'] as String) : AiSearchUpdateInstancesRequestCacheThreshold.closeEnough,
@@ -98,20 +98,20 @@ factory AiSearchUpdateInstancesRequest.fromJson(Map<String, dynamic> json) { ret
   publicEndpointParams: json['public_endpoint_params'] != null ? AiSearchUpdateInstancesRequestPublicEndpointParams.fromJson(json['public_endpoint_params'] as Map<String, dynamic>) : null,
   reranking: json.containsKey('reranking') ? json['reranking'] as bool : false,
   rerankingModel: json['reranking_model'] != null ? AiSearchUpdateInstancesRequestRerankingModel.fromJson(json['reranking_model'] as String) : null,
-  retrievalOptions: json['retrieval_options'] != null ? AiSearchUpdateInstancesRequestRetrievalOptions.fromJson(json['retrieval_options'] as Map<String, dynamic>) : null,
+  retrievalOptions: json.containsKey('retrieval_options') ? Omittable(json['retrieval_options'] != null ? AiSearchUpdateInstancesRequestRetrievalOptions.fromJson(json['retrieval_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   rewriteModel: json['rewrite_model'] != null ? OneOf2.parse(json['rewrite_model'], fromA: (v) => AiSearchUpdateInstancesRequestRewriteModelVariant1.fromJson(v as String), fromB: (v) => AiSearchUpdateInstancesRequestRewriteModelVariant2.fromJson(v as String),) : null,
   rewriteQuery: json.containsKey('rewrite_query') ? json['rewrite_query'] as bool : false,
   scoreThreshold: json.containsKey('score_threshold') ? (json['score_threshold'] as num).toDouble() : 0.4,
-  sourceParams: json['source_params'] != null ? AiSearchUpdateInstancesRequestSourceParams.fromJson(json['source_params'] as Map<String, dynamic>) : null,
+  sourceParams: json.containsKey('source_params') ? Omittable(json['source_params'] != null ? AiSearchUpdateInstancesRequestSourceParams.fromJson(json['source_params'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   summarization: json.containsKey('summarization') ? json['summarization'] as bool : false,
   summarizationModel: json['summarization_model'] != null ? OneOf2.parse(json['summarization_model'], fromA: (v) => AiSearchUpdateInstancesRequestSummarizationModelVariant1.fromJson(v as String), fromB: (v) => AiSearchUpdateInstancesRequestSummarizationModelVariant2.fromJson(v as String),) : null,
-  systemPromptAiSearch: json['system_prompt_ai_search'] as String?,
-  systemPromptIndexSummarization: json['system_prompt_index_summarization'] as String?,
-  systemPromptRewriteQuery: json['system_prompt_rewrite_query'] as String?,
+  systemPromptAiSearch: json.containsKey('system_prompt_ai_search') ? Omittable(json['system_prompt_ai_search'] as String?) : const Omittable.absent(),
+  systemPromptIndexSummarization: json.containsKey('system_prompt_index_summarization') ? Omittable(json['system_prompt_index_summarization'] as String?) : const Omittable.absent(),
+  systemPromptRewriteQuery: json.containsKey('system_prompt_rewrite_query') ? Omittable(json['system_prompt_rewrite_query'] as String?) : const Omittable.absent(),
   tokenId: json['token_id'] as String?,
 ); }
 
-final String? aiGatewayId;
+final Omittable<String?> aiGatewayId;
 
 final AiSearchUpdateInstancesRequestAiSearchModel? aiSearchModel;
 
@@ -145,7 +145,7 @@ final bool reranking;
 
 final AiSearchUpdateInstancesRequestRerankingModel? rerankingModel;
 
-final AiSearchUpdateInstancesRequestRetrievalOptions? retrievalOptions;
+final Omittable<AiSearchUpdateInstancesRequestRetrievalOptions?> retrievalOptions;
 
 final AiSearchUpdateInstancesRequestRewriteModel? rewriteModel;
 
@@ -153,22 +153,22 @@ final bool rewriteQuery;
 
 final double scoreThreshold;
 
-final AiSearchUpdateInstancesRequestSourceParams? sourceParams;
+final Omittable<AiSearchUpdateInstancesRequestSourceParams?> sourceParams;
 
 final bool summarization;
 
 final AiSearchUpdateInstancesRequestSummarizationModel? summarizationModel;
 
-final String? systemPromptAiSearch;
+final Omittable<String?> systemPromptAiSearch;
 
-final String? systemPromptIndexSummarization;
+final Omittable<String?> systemPromptIndexSummarization;
 
-final String? systemPromptRewriteQuery;
+final Omittable<String?> systemPromptRewriteQuery;
 
 final String? tokenId;
 
 Map<String, dynamic> toJson() { return {
-  'ai_gateway_id': ?aiGatewayId,
+  if (aiGatewayId.isPresent) 'ai_gateway_id': aiGatewayId.value,
   if (aiSearchModel != null) 'ai_search_model': aiSearchModel?.toJson(),
   'cache': cache,
   'cache_threshold': cacheThreshold.toJson(),
@@ -185,21 +185,21 @@ Map<String, dynamic> toJson() { return {
   if (publicEndpointParams != null) 'public_endpoint_params': publicEndpointParams?.toJson(),
   'reranking': reranking,
   if (rerankingModel != null) 'reranking_model': rerankingModel?.toJson(),
-  if (retrievalOptions != null) 'retrieval_options': retrievalOptions?.toJson(),
+  if (retrievalOptions.isPresent) 'retrieval_options': retrievalOptions.value?.toJson(),
   if (rewriteModel != null) 'rewrite_model': rewriteModel?.toJson(),
   'rewrite_query': rewriteQuery,
   'score_threshold': scoreThreshold,
-  if (sourceParams != null) 'source_params': sourceParams?.toJson(),
+  if (sourceParams.isPresent) 'source_params': sourceParams.value?.toJson(),
   'summarization': summarization,
   if (summarizationModel != null) 'summarization_model': summarizationModel?.toJson(),
-  'system_prompt_ai_search': ?systemPromptAiSearch,
-  'system_prompt_index_summarization': ?systemPromptIndexSummarization,
-  'system_prompt_rewrite_query': ?systemPromptRewriteQuery,
+  if (systemPromptAiSearch.isPresent) 'system_prompt_ai_search': systemPromptAiSearch.value,
+  if (systemPromptIndexSummarization.isPresent) 'system_prompt_index_summarization': systemPromptIndexSummarization.value,
+  if (systemPromptRewriteQuery.isPresent) 'system_prompt_rewrite_query': systemPromptRewriteQuery.value,
   'token_id': ?tokenId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ai_gateway_id', 'ai_search_model', 'cache', 'cache_threshold', 'chunk', 'chunk_overlap', 'chunk_size', 'custom_metadata', 'embedding_model', 'fusion_method', 'hybrid_search_enabled', 'max_num_results', 'metadata', 'paused', 'public_endpoint_params', 'reranking', 'reranking_model', 'retrieval_options', 'rewrite_model', 'rewrite_query', 'score_threshold', 'source_params', 'summarization', 'summarization_model', 'system_prompt_ai_search', 'system_prompt_index_summarization', 'system_prompt_rewrite_query', 'token_id'}.contains(key)); } 
-AiSearchUpdateInstancesRequest copyWith({String? Function()? aiGatewayId, AiSearchUpdateInstancesRequestAiSearchModel Function()? aiSearchModel, bool Function()? cache, AiSearchUpdateInstancesRequestCacheThreshold Function()? cacheThreshold, bool Function()? chunk, int Function()? chunkOverlap, int Function()? chunkSize, List<AiSearchUpdateInstancesRequestCustomMetadata> Function()? customMetadata, AiSearchUpdateInstancesRequestEmbeddingModel Function()? embeddingModel, AiSearchUpdateInstancesRequestFusionMethod Function()? fusionMethod, bool Function()? hybridSearchEnabled, int Function()? maxNumResults, AiSearchUpdateInstancesRequestMetadata Function()? metadata, bool Function()? paused, AiSearchUpdateInstancesRequestPublicEndpointParams Function()? publicEndpointParams, bool Function()? reranking, AiSearchUpdateInstancesRequestRerankingModel Function()? rerankingModel, AiSearchUpdateInstancesRequestRetrievalOptions? Function()? retrievalOptions, AiSearchUpdateInstancesRequestRewriteModel Function()? rewriteModel, bool Function()? rewriteQuery, double Function()? scoreThreshold, AiSearchUpdateInstancesRequestSourceParams? Function()? sourceParams, bool Function()? summarization, AiSearchUpdateInstancesRequestSummarizationModel Function()? summarizationModel, String? Function()? systemPromptAiSearch, String? Function()? systemPromptIndexSummarization, String? Function()? systemPromptRewriteQuery, String Function()? tokenId, }) { return AiSearchUpdateInstancesRequest(
-  aiGatewayId: aiGatewayId != null ? aiGatewayId() : this.aiGatewayId,
+AiSearchUpdateInstancesRequest copyWith({Omittable<String?>? aiGatewayId, AiSearchUpdateInstancesRequestAiSearchModel? Function()? aiSearchModel, bool Function()? cache, AiSearchUpdateInstancesRequestCacheThreshold Function()? cacheThreshold, bool Function()? chunk, int Function()? chunkOverlap, int Function()? chunkSize, List<AiSearchUpdateInstancesRequestCustomMetadata>? Function()? customMetadata, AiSearchUpdateInstancesRequestEmbeddingModel? Function()? embeddingModel, AiSearchUpdateInstancesRequestFusionMethod Function()? fusionMethod, bool Function()? hybridSearchEnabled, int Function()? maxNumResults, AiSearchUpdateInstancesRequestMetadata? Function()? metadata, bool Function()? paused, AiSearchUpdateInstancesRequestPublicEndpointParams? Function()? publicEndpointParams, bool Function()? reranking, AiSearchUpdateInstancesRequestRerankingModel? Function()? rerankingModel, Omittable<AiSearchUpdateInstancesRequestRetrievalOptions?>? retrievalOptions, AiSearchUpdateInstancesRequestRewriteModel? Function()? rewriteModel, bool Function()? rewriteQuery, double Function()? scoreThreshold, Omittable<AiSearchUpdateInstancesRequestSourceParams?>? sourceParams, bool Function()? summarization, AiSearchUpdateInstancesRequestSummarizationModel? Function()? summarizationModel, Omittable<String?>? systemPromptAiSearch, Omittable<String?>? systemPromptIndexSummarization, Omittable<String?>? systemPromptRewriteQuery, String? Function()? tokenId, }) { return AiSearchUpdateInstancesRequest(
+  aiGatewayId: aiGatewayId ?? this.aiGatewayId,
   aiSearchModel: aiSearchModel != null ? aiSearchModel() : this.aiSearchModel,
   cache: cache != null ? cache() : this.cache,
   cacheThreshold: cacheThreshold != null ? cacheThreshold() : this.cacheThreshold,
@@ -216,16 +216,16 @@ AiSearchUpdateInstancesRequest copyWith({String? Function()? aiGatewayId, AiSear
   publicEndpointParams: publicEndpointParams != null ? publicEndpointParams() : this.publicEndpointParams,
   reranking: reranking != null ? reranking() : this.reranking,
   rerankingModel: rerankingModel != null ? rerankingModel() : this.rerankingModel,
-  retrievalOptions: retrievalOptions != null ? retrievalOptions() : this.retrievalOptions,
+  retrievalOptions: retrievalOptions ?? this.retrievalOptions,
   rewriteModel: rewriteModel != null ? rewriteModel() : this.rewriteModel,
   rewriteQuery: rewriteQuery != null ? rewriteQuery() : this.rewriteQuery,
   scoreThreshold: scoreThreshold != null ? scoreThreshold() : this.scoreThreshold,
-  sourceParams: sourceParams != null ? sourceParams() : this.sourceParams,
+  sourceParams: sourceParams ?? this.sourceParams,
   summarization: summarization != null ? summarization() : this.summarization,
   summarizationModel: summarizationModel != null ? summarizationModel() : this.summarizationModel,
-  systemPromptAiSearch: systemPromptAiSearch != null ? systemPromptAiSearch() : this.systemPromptAiSearch,
-  systemPromptIndexSummarization: systemPromptIndexSummarization != null ? systemPromptIndexSummarization() : this.systemPromptIndexSummarization,
-  systemPromptRewriteQuery: systemPromptRewriteQuery != null ? systemPromptRewriteQuery() : this.systemPromptRewriteQuery,
+  systemPromptAiSearch: systemPromptAiSearch ?? this.systemPromptAiSearch,
+  systemPromptIndexSummarization: systemPromptIndexSummarization ?? this.systemPromptIndexSummarization,
+  systemPromptRewriteQuery: systemPromptRewriteQuery ?? this.systemPromptRewriteQuery,
   tokenId: tokenId != null ? tokenId() : this.tokenId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   if (tlp != null) 'tlp': tlp?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content', 'priority', 'request_type', 'summary', 'tlp'}.contains(key)); } 
-CloudforceOneRequestsRequestEdit copyWith({CloudforceOneRequestsRequestContent Function()? content, String Function()? priority, CloudforceOneRequestsRequestType Function()? requestType, CloudforceOneRequestsRequestSummary Function()? summary, CloudforceOneRequestsTlp Function()? tlp, }) { return CloudforceOneRequestsRequestEdit(
+CloudforceOneRequestsRequestEdit copyWith({CloudforceOneRequestsRequestContent? Function()? content, String? Function()? priority, CloudforceOneRequestsRequestType? Function()? requestType, CloudforceOneRequestsRequestSummary? Function()? summary, CloudforceOneRequestsTlp? Function()? tlp, }) { return CloudforceOneRequestsRequestEdit(
   content: content != null ? content() : this.content,
   priority: priority != null ? priority() : this.priority,
   requestType: requestType != null ? requestType() : this.requestType,

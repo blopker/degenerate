@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (ssl != null) 'ssl': ssl?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_metadata', 'custom_origin_server', 'custom_origin_sni', 'ssl'}.contains(key)); } 
-CustomHostnameForAZoneEditCustomHostnameRequest copyWith({Map<String, String> Function()? customMetadata, TlsCertificatesAndHostnamesCustomOriginServer Function()? customOriginServer, TlsCertificatesAndHostnamesCustomOriginSni Function()? customOriginSni, TlsCertificatesAndHostnamesSslpost Function()? ssl, }) { return CustomHostnameForAZoneEditCustomHostnameRequest(
+CustomHostnameForAZoneEditCustomHostnameRequest copyWith({Map<String, String>? Function()? customMetadata, TlsCertificatesAndHostnamesCustomOriginServer? Function()? customOriginServer, TlsCertificatesAndHostnamesCustomOriginSni? Function()? customOriginSni, TlsCertificatesAndHostnamesSslpost? Function()? ssl, }) { return CustomHostnameForAZoneEditCustomHostnameRequest(
   customMetadata: customMetadata != null ? customMetadata() : this.customMetadata,
   customOriginServer: customOriginServer != null ? customOriginServer() : this.customOriginServer,
   customOriginSni: customOriginSni != null ? customOriginSni() : this.customOriginSni,

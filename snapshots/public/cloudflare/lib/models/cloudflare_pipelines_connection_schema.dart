@@ -1,29 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_format.dart';import 'cloudflare_pipelines_source_field.dart';@immutable final class CloudflarePipelinesConnectionSchema {const CloudflarePipelinesConnectionSchema({this.fields, this.format, this.inferred, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_format.dart';import 'cloudflare_pipelines_source_field.dart';@immutable final class CloudflarePipelinesConnectionSchema {const CloudflarePipelinesConnectionSchema({this.fields, this.format, this.inferred = const Omittable.absent(), });
 
 factory CloudflarePipelinesConnectionSchema.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesConnectionSchema(
   fields: (json['fields'] as List<dynamic>?)?.map((e) => CloudflarePipelinesSourceField.fromJson(e as Map<String, dynamic>)).toList(),
   format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
-  inferred: json['inferred'] as bool?,
+  inferred: json.containsKey('inferred') ? Omittable(json['inferred'] as bool?) : const Omittable.absent(),
 ); }
 
 final List<CloudflarePipelinesSourceField>? fields;
 
 final CloudflarePipelinesFormat? format;
 
-final bool? inferred;
+final Omittable<bool?> inferred;
 
 Map<String, dynamic> toJson() { return {
   if (fields != null) 'fields': fields?.map((e) => e.toJson()).toList(),
   if (format != null) 'format': format?.toJson(),
-  'inferred': ?inferred,
+  if (inferred.isPresent) 'inferred': inferred.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fields', 'format', 'inferred'}.contains(key)); } 
-CloudflarePipelinesConnectionSchema copyWith({List<CloudflarePipelinesSourceField> Function()? fields, CloudflarePipelinesFormat Function()? format, bool? Function()? inferred, }) { return CloudflarePipelinesConnectionSchema(
+CloudflarePipelinesConnectionSchema copyWith({List<CloudflarePipelinesSourceField>? Function()? fields, CloudflarePipelinesFormat? Function()? format, Omittable<bool?>? inferred, }) { return CloudflarePipelinesConnectionSchema(
   fields: fields != null ? fields() : this.fields,
   format: format != null ? format() : this.format,
-  inferred: inferred != null ? inferred() : this.inferred,
+  inferred: inferred ?? this.inferred,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CloudflarePipelinesConnectionSchema &&

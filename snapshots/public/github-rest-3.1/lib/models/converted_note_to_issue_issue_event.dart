@@ -42,8 +42,8 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'actor': actor.toJson(),
   'event': event,
-  'commit_id': ?commitId,
-  'commit_url': ?commitUrl,
+  'commit_id': commitId,
+  'commit_url': commitUrl,
   'created_at': createdAt,
   'performed_via_github_app': performedViaGithubApp.toJson(),
   if (projectCard != null) 'project_card': projectCard?.toJson(),
@@ -53,11 +53,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('actor') &&
       json.containsKey('event') && json['event'] is String &&
-      json.containsKey('commit_id') && json['commit_id'] is String &&
-      json.containsKey('commit_url') && json['commit_url'] is String &&
+      json.containsKey('commit_id') && (json['commit_id'] == null || json['commit_id'] is String) &&
+      json.containsKey('commit_url') && (json['commit_url'] == null || json['commit_url'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('performed_via_github_app'); } 
-ConvertedNoteToIssueIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? performedViaGithubApp, ConvertedNoteToIssueIssueEventProjectCard Function()? projectCard, }) { return ConvertedNoteToIssueIssueEvent(
+ConvertedNoteToIssueIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? performedViaGithubApp, ConvertedNoteToIssueIssueEventProjectCard? Function()? projectCard, }) { return ConvertedNoteToIssueIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,

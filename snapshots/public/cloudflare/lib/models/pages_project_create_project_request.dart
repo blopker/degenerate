@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('production_branch') && json['production_branch'] is String; } 
-PagesProjectCreateProjectRequest copyWith({PagesProjectCreateProjectRequestBuildConfig Function()? buildConfig, PagesProjectCreateProjectRequestDeploymentConfigs Function()? deploymentConfigs, String? name, String? productionBranch, PagesProjectCreateProjectRequestSource Function()? source, }) { return PagesProjectCreateProjectRequest(
+PagesProjectCreateProjectRequest copyWith({PagesProjectCreateProjectRequestBuildConfig? Function()? buildConfig, PagesProjectCreateProjectRequestDeploymentConfigs? Function()? deploymentConfigs, String? name, String? productionBranch, PagesProjectCreateProjectRequestSource? Function()? source, }) { return PagesProjectCreateProjectRequest(
   buildConfig: buildConfig != null ? buildConfig() : this.buildConfig,
   deploymentConfigs: deploymentConfigs != null ? deploymentConfigs() : this.deploymentConfigs,
   name: name ?? this.name,

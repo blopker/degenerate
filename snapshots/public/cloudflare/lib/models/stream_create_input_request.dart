@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (recording != null) 'recording': recording?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'defaultCreator', 'deleteRecordingAfterDays', 'enabled', 'meta', 'recording'}.contains(key)); } 
-StreamCreateInputRequest copyWith({StreamLiveInputDefaultCreator Function()? defaultCreator, StreamLiveInputRecordingDeletion Function()? deleteRecordingAfterDays, StreamLiveInputEnabled Function()? enabled, Map<String, dynamic> Function()? meta, StreamLiveInputRecordingSettings Function()? recording, }) { return StreamCreateInputRequest(
+StreamCreateInputRequest copyWith({StreamLiveInputDefaultCreator? Function()? defaultCreator, StreamLiveInputRecordingDeletion? Function()? deleteRecordingAfterDays, StreamLiveInputEnabled? Function()? enabled, Map<String, dynamic>? Function()? meta, StreamLiveInputRecordingSettings? Function()? recording, }) { return StreamCreateInputRequest(
   defaultCreator: defaultCreator != null ? defaultCreator() : this.defaultCreator,
   deleteRecordingAfterDays: deleteRecordingAfterDays != null ? deleteRecordingAfterDays() : this.deleteRecordingAfterDays,
   enabled: enabled != null ? enabled() : this.enabled,

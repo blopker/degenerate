@@ -50,29 +50,29 @@ bool get isUnknown { return !values.contains(this); }
 /// whether that confirmation is successful or unsuccessful. You can use
 /// SetupAttempts to inspect details of a specific attempt at setting up a
 /// payment method using a SetupIntent.
-@immutable final class SetupAttempt {const SetupAttempt({required this.created, required this.id, required this.livemode, required this.object, required this.paymentMethod, required this.paymentMethodDetails, required this.setupIntent, required this.status, required this.usage, this.application, this.attachToSelf, this.customer, this.customerAccount, this.flowDirections, this.onBehalfOf, this.setupError, });
+@immutable final class SetupAttempt {const SetupAttempt({required this.created, required this.id, required this.livemode, required this.object, required this.paymentMethod, required this.paymentMethodDetails, required this.setupIntent, required this.status, required this.usage, this.application = const Omittable.absent(), this.attachToSelf, this.customer = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.flowDirections = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.setupError = const Omittable.absent(), });
 
 factory SetupAttempt.fromJson(Map<String, dynamic> json) { return SetupAttempt(
-  application: json['application'] != null ? OneOf2.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>),) : null,
+  application: json.containsKey('application') ? Omittable(json['application'] != null ? OneOf2.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   attachToSelf: json['attach_to_self'] as bool?,
   created: (json['created'] as num).toInt(),
-  customer: json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null,
-  customerAccount: json['customer_account'] as String?,
-  flowDirections: (json['flow_directions'] as List<dynamic>?)?.map((e) => SetupAttemptFlowDirections.fromJson(e as String)).toList(),
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
+  flowDirections: json.containsKey('flow_directions') ? Omittable((json['flow_directions'] as List<dynamic>?)?.map((e) => SetupAttemptFlowDirections.fromJson(e as String)).toList()) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: SetupAttemptObject.fromJson(json['object'] as String),
-  onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
+  onBehalfOf: json.containsKey('on_behalf_of') ? Omittable(json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   paymentMethod: OneOf2.parse(json['payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),),
   paymentMethodDetails: SetupAttemptPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>),
-  setupError: json['setup_error'] != null ? Errors.fromJson(json['setup_error'] as Map<String, dynamic>) : null,
+  setupError: json.containsKey('setup_error') ? Omittable(json['setup_error'] != null ? Errors.fromJson(json['setup_error'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   setupIntent: OneOf2.parse(json['setup_intent'], fromA: (v) => v as String, fromB: (v) => SetupIntent.fromJson(v as Map<String, dynamic>),),
   status: json['status'] as String,
   usage: json['usage'] as String,
 ); }
 
 /// The value of [application](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-application) on the SetupIntent at the time of this confirmation.
-final SetupAttemptApplication? application;
+final Omittable<SetupAttemptApplication?> application;
 
 /// If present, the SetupIntent's payment method will be attached to the in-context Stripe Account.
 /// 
@@ -83,15 +83,15 @@ final bool? attachToSelf;
 final int created;
 
 /// The value of [customer](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-customer) on the SetupIntent at the time of this confirmation.
-final SetupAttemptCustomer? customer;
+final Omittable<SetupAttemptCustomer?> customer;
 
 /// The value of [customer_account](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-customer_account) on the SetupIntent at the time of this confirmation.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// Indicates the directions of money movement for which this payment method is intended to be used.
 /// 
 /// Include `inbound` if you intend to use the payment method as the origin to pull funds from. Include `outbound` if you intend to use the payment method as the destination to send funds to. You can include both if you intend to use the payment method for both purposes.
-final List<SetupAttemptFlowDirections>? flowDirections;
+final Omittable<List<SetupAttemptFlowDirections>?> flowDirections;
 
 /// Unique identifier for the object.
 final String id;
@@ -103,7 +103,7 @@ final bool livemode;
 final SetupAttemptObject object;
 
 /// The value of [on_behalf_of](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-on_behalf_of) on the SetupIntent at the time of this confirmation.
-final SetupAttemptOnBehalfOf? onBehalfOf;
+final Omittable<SetupAttemptOnBehalfOf?> onBehalfOf;
 
 /// ID of the payment method used with this SetupAttempt.
 final SetupAttemptPaymentMethod paymentMethod;
@@ -111,7 +111,7 @@ final SetupAttemptPaymentMethod paymentMethod;
 final SetupAttemptPaymentMethodDetails paymentMethodDetails;
 
 /// The error encountered during this attempt to confirm the SetupIntent, if any.
-final Errors? setupError;
+final Omittable<Errors?> setupError;
 
 /// ID of the SetupIntent that this attempt belongs to.
 final SetupAttemptSetupIntent setupIntent;
@@ -123,19 +123,19 @@ final String status;
 final String usage;
 
 Map<String, dynamic> toJson() { return {
-  if (application != null) 'application': application?.toJson(),
+  if (application.isPresent) 'application': application.value?.toJson(),
   'attach_to_self': ?attachToSelf,
   'created': created,
-  if (customer != null) 'customer': customer?.toJson(),
-  'customer_account': ?customerAccount,
-  if (flowDirections != null) 'flow_directions': flowDirections?.map((e) => e.toJson()).toList(),
+  if (customer.isPresent) 'customer': customer.value?.toJson(),
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
+  if (flowDirections.isPresent) 'flow_directions': flowDirections.value?.map((e) => e.toJson()).toList(),
   'id': id,
   'livemode': livemode,
   'object': object.toJson(),
-  if (onBehalfOf != null) 'on_behalf_of': onBehalfOf?.toJson(),
+  if (onBehalfOf.isPresent) 'on_behalf_of': onBehalfOf.value?.toJson(),
   'payment_method': paymentMethod.toJson(),
   'payment_method_details': paymentMethodDetails.toJson(),
-  if (setupError != null) 'setup_error': setupError?.toJson(),
+  if (setupError.isPresent) 'setup_error': setupError.value?.toJson(),
   'setup_intent': setupIntent.toJson(),
   'status': status,
   'usage': usage,
@@ -149,20 +149,20 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('setup_intent') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('usage') && json['usage'] is String; } 
-SetupAttempt copyWith({SetupAttemptApplication? Function()? application, bool Function()? attachToSelf, int? created, SetupAttemptCustomer? Function()? customer, String? Function()? customerAccount, List<SetupAttemptFlowDirections>? Function()? flowDirections, String? id, bool? livemode, SetupAttemptObject? object, SetupAttemptOnBehalfOf? Function()? onBehalfOf, SetupAttemptPaymentMethod? paymentMethod, SetupAttemptPaymentMethodDetails? paymentMethodDetails, Errors? Function()? setupError, SetupAttemptSetupIntent? setupIntent, String? status, String? usage, }) { return SetupAttempt(
-  application: application != null ? application() : this.application,
+SetupAttempt copyWith({Omittable<SetupAttemptApplication?>? application, bool? Function()? attachToSelf, int? created, Omittable<SetupAttemptCustomer?>? customer, Omittable<String?>? customerAccount, Omittable<List<SetupAttemptFlowDirections>?>? flowDirections, String? id, bool? livemode, SetupAttemptObject? object, Omittable<SetupAttemptOnBehalfOf?>? onBehalfOf, SetupAttemptPaymentMethod? paymentMethod, SetupAttemptPaymentMethodDetails? paymentMethodDetails, Omittable<Errors?>? setupError, SetupAttemptSetupIntent? setupIntent, String? status, String? usage, }) { return SetupAttempt(
+  application: application ?? this.application,
   attachToSelf: attachToSelf != null ? attachToSelf() : this.attachToSelf,
   created: created ?? this.created,
-  customer: customer != null ? customer() : this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
-  flowDirections: flowDirections != null ? flowDirections() : this.flowDirections,
+  customer: customer ?? this.customer,
+  customerAccount: customerAccount ?? this.customerAccount,
+  flowDirections: flowDirections ?? this.flowDirections,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
-  onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
+  onBehalfOf: onBehalfOf ?? this.onBehalfOf,
   paymentMethod: paymentMethod ?? this.paymentMethod,
   paymentMethodDetails: paymentMethodDetails ?? this.paymentMethodDetails,
-  setupError: setupError != null ? setupError() : this.setupError,
+  setupError: setupError ?? this.setupError,
   setupIntent: setupIntent ?? this.setupIntent,
   status: status ?? this.status,
   usage: usage ?? this.usage,
@@ -174,7 +174,8 @@ SetupAttempt copyWith({SetupAttemptApplication? Function()? application, bool Fu
           created == other.created &&
           customer == other.customer &&
           customerAccount == other.customerAccount &&
-          listEquals(flowDirections, other.flowDirections) &&
+          flowDirections.isPresent == other.flowDirections.isPresent &&
+          listEquals(flowDirections.value, other.flowDirections.value) &&
           id == other.id &&
           livemode == other.livemode &&
           object == other.object &&
@@ -185,6 +186,6 @@ SetupAttempt copyWith({SetupAttemptApplication? Function()? application, bool Fu
           setupIntent == other.setupIntent &&
           status == other.status &&
           usage == other.usage; } 
-@override int get hashCode { return Object.hash(application, attachToSelf, created, customer, customerAccount, Object.hashAll(flowDirections ?? const []), id, livemode, object, onBehalfOf, paymentMethod, paymentMethodDetails, setupError, setupIntent, status, usage); } 
+@override int get hashCode { return Object.hash(application, attachToSelf, created, customer, customerAccount, Object.hashAll(flowDirections.value ?? const []), id, livemode, object, onBehalfOf, paymentMethod, paymentMethodDetails, setupError, setupIntent, status, usage); } 
 @override String toString() { return 'SetupAttempt(application: $application, attachToSelf: $attachToSelf, created: $created, customer: $customer, customerAccount: $customerAccount, flowDirections: $flowDirections, id: $id, livemode: $livemode, object: $object, onBehalfOf: $onBehalfOf, paymentMethod: $paymentMethod, paymentMethodDetails: $paymentMethodDetails, setupError: $setupError, setupIntent: $setupIntent, status: $status, usage: $usage)'; } 
  }

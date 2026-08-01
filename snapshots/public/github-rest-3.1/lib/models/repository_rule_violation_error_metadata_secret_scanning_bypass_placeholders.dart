@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'token_type': ?tokenType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'placeholder_id', 'token_type'}.contains(key)); } 
-RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholders copyWith({SecretScanningPushProtectionBypassPlaceholderId Function()? placeholderId, String Function()? tokenType, }) { return RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholders(
+RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholders copyWith({SecretScanningPushProtectionBypassPlaceholderId? Function()? placeholderId, String? Function()? tokenType, }) { return RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholders(
   placeholderId: placeholderId != null ? placeholderId() : this.placeholderId,
   tokenType: tokenType != null ? tokenType() : this.tokenType,
 ); } 

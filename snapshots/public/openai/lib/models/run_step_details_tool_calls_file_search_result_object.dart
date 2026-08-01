@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file_id') && json['file_id'] is String &&
       json.containsKey('file_name') && json['file_name'] is String &&
       json.containsKey('score') && json['score'] is num; } 
-RunStepDetailsToolCallsFileSearchResultObject copyWith({String? fileId, String? fileName, double? score, List<RunStepDetailsToolCallsFileSearchResultObjectContent> Function()? content, }) { return RunStepDetailsToolCallsFileSearchResultObject(
+RunStepDetailsToolCallsFileSearchResultObject copyWith({String? fileId, String? fileName, double? score, List<RunStepDetailsToolCallsFileSearchResultObjectContent>? Function()? content, }) { return RunStepDetailsToolCallsFileSearchResultObject(
   fileId: fileId ?? this.fileId,
   fileName: fileName ?? this.fileName,
   score: score ?? this.score,

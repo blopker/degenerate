@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-IntelAsnComponentsSchemasResponse copyWith({List<IntelSchemasMessages2>? errors, List<IntelSchemasMessages2>? messages, bool? success, IntelAsn Function()? result, }) { return IntelAsnComponentsSchemasResponse(
+IntelAsnComponentsSchemasResponse copyWith({List<IntelSchemasMessages2>? errors, List<IntelSchemasMessages2>? messages, bool? success, IntelAsn? Function()? result, }) { return IntelAsnComponentsSchemasResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

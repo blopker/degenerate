@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesAutomaticHttpsRewrites copyWith({ZonesAutomaticHttpsRewritesId Function()? id, ZonesAutomaticHttpsRewritesValue2 Function()? value, }) { return ZonesAutomaticHttpsRewrites(
+ZonesAutomaticHttpsRewrites copyWith({ZonesAutomaticHttpsRewritesId? Function()? id, ZonesAutomaticHttpsRewritesValue2? Function()? value, }) { return ZonesAutomaticHttpsRewrites(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

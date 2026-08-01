@@ -1,5 +1,6 @@
 import 'package:code_builder/code_builder.dart';
 
+import 'package:degenerate/src/escaping.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming.dart';
 
@@ -31,6 +32,99 @@ String emitRaw(Library library) {
   );
   return '${raw.trimRight()}\n';
 }
+
+/// How generated models represent "field omitted" vs "field set to null".
+enum OmittableMode {
+  /// No presence wrappers; optional fields are plain `T?` and null is
+  /// serialized as absent (pre-0.5 behavior).
+  off,
+
+  /// Wrap optional fields whose spec type is nullable in `Omittable<T?>`
+  /// (the default): those fields have three legal wire states.
+  nullableOnly,
+
+  /// Wrap ALL optional fields, forcing the inner type nullable, so callers
+  /// can send explicit nulls the spec doesn't declare (escape hatch for
+  /// servers that accept null-clears on non-nullable fields).
+  all,
+}
+
+/// Whether [f] is emitted as an `Omittable<...>` presence-wrapped field.
+///
+/// Required fields always serialize their key, so they have no third state.
+/// Fields with usable Dart defaults deliberately collapse "absent" into the
+/// default value. Both ModelEmitter and ApiEmitter must agree on this
+/// predicate — drift produces uncompilable multipart/form body code.
+bool isOmittableField(IrField f, OmittableMode mode) {
+  if (mode == OmittableMode.off) return false;
+  if (f.isRequired || hasUsableDartDefault(f)) return false;
+  return mode == OmittableMode.all || f.type.isNullable;
+}
+
+/// Whether a field's spec default can be represented as a Dart compile-time
+/// constant (making the generated field non-nullable). Single source of
+/// truth: `defaultFieldCode`.
+bool hasUsableDartDefault(IrField f) => defaultFieldCode(f) != null;
+
+/// The Dart constant expression for a field's spec default, or null when the
+/// default can't be represented (type mismatch, object-typed empty maps, …).
+Code? defaultFieldCode(IrField f) {
+  if (f.defaultValue == null) return null;
+  final v = f.defaultValue;
+  // Don't use empty map/object defaults for object-typed fields -
+  // they don't make sense as Dart defaults (const {} is Map, not the object).
+  if (v is Map && v.isEmpty && _isObjectLikeType(f.type)) return null;
+  // For enum-typed fields, emit the enum constant instead of a raw string.
+  if (v is String && f.type is IrEnum) {
+    final enumType = f.type as IrEnum;
+    final enumName = enumType.name;
+    final dartValue = enumValueName(v);
+    return Code('$enumName.$dartValue');
+  }
+  if (v is String) {
+    // Only emit string default if the field type is actually a String
+    if (f.type is IrPrimitive) {
+      final kind = (f.type as IrPrimitive).kind;
+      if (kind == PrimitiveKind.string) {
+        return Code(dartStringLiteral(v));
+      }
+      if (kind == PrimitiveKind.dynamic_) {
+        return null;
+      }
+      // Non-string primitive with string default → skip
+      return null;
+    }
+    // Non-primitive type with string default (e.g., IrTypeRef to enum,
+    // IrList) → skip
+    return null;
+  }
+  if (v is bool) {
+    if (f.type is! IrPrimitive ||
+        (f.type as IrPrimitive).kind != PrimitiveKind.bool) {
+      return null; // Type mismatch
+    }
+    return Code('$v');
+  }
+  if (v is num) {
+    if (f.type is! IrPrimitive) return null; // Type mismatch
+    final kind = (f.type as IrPrimitive).kind;
+    if (kind == PrimitiveKind.int) return Code('${v.toInt()}');
+    if (kind == PrimitiveKind.double) return Code('${v.toDouble()}');
+    return Code('$v');
+  }
+  if (v is List && v.isEmpty) return const Code('const []');
+  if (v is Map && v.isEmpty) return const Code('const {}');
+  return null;
+}
+
+bool _isObjectLikeType(IrType type) => switch (type) {
+  IrObject() ||
+  IrTypeRef() ||
+  IrDiscriminatedUnion() ||
+  IrUntaggedUnion() ||
+  IrAnyOf() => true,
+  _ => false,
+};
 
 /// Build a type [Reference] from an [IrType].
 Reference irTypeToReference(
@@ -443,7 +537,12 @@ bool _isOneOfInRegistry(String name, Map<String, IrType> registry) {
 }
 
 /// Check whether an [IrType] represents a list (used for equality checks).
-bool isListType(IrType type) => type is IrList;
+/// Whether a field of this type is a Dart `List` at runtime — `IrList`, or
+/// bytes (`Uint8List` implements `List<int>`). These need `listEquals` /
+/// `Object.hashAll` for value equality instead of `==`/`hashCode`.
+bool isListType(IrType type) =>
+    type is IrList ||
+    (type is IrPrimitive && type.kind == PrimitiveKind.bytes);
 
 // ─── OneOf helpers ──────────────────────────────────────
 

@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-Timestamp copyWith({CloudflarePipelinesTimestampUnit Function()? unit, TimestampType? type, }) { return Timestamp(
+Timestamp copyWith({CloudflarePipelinesTimestampUnit? Function()? unit, TimestampType? type, }) { return Timestamp(
   unit: unit != null ? unit() : this.unit,
   type: type ?? this.type,
 ); } 

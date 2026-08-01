@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   'startup_time_ms': ?startupTimeMs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('resources'); } 
-WorkersVersionItemUploaded copyWith({String Function()? id, WorkersVersionItemUploadedMetadata Function()? metadata, double Function()? number, WorkersVersionItemUploadedResources? resources, int Function()? startupTimeMs, }) { return WorkersVersionItemUploaded(
+WorkersVersionItemUploaded copyWith({String? Function()? id, WorkersVersionItemUploadedMetadata? Function()? metadata, double? Function()? number, WorkersVersionItemUploadedResources? resources, int? Function()? startupTimeMs, }) { return WorkersVersionItemUploaded(
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,
   number: number != null ? number() : this.number,

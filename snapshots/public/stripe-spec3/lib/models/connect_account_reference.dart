@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-ConnectAccountReference copyWith({ConnectAccountReferenceAccount Function()? account, ConnectAccountReferenceType? type, }) { return ConnectAccountReference(
+ConnectAccountReference copyWith({ConnectAccountReferenceAccount? Function()? account, ConnectAccountReferenceType? type, }) { return ConnectAccountReference(
   account: account != null ? account() : this.account,
   type: type ?? this.type,
 ); } 

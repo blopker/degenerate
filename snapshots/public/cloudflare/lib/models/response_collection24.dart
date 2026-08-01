@@ -24,7 +24,7 @@ final IntelResultInfo? resultInfo;
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
+  'result': result?.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
 }; } 
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCollection24 copyWith({List<IntelMessages2>? errors, List<IntelMessages2>? messages, List<ResponseCollection24Result>? Function()? result, bool? success, IntelResultInfo Function()? resultInfo, }) { return ResponseCollection24(
+ResponseCollection24 copyWith({List<IntelMessages2>? errors, List<IntelMessages2>? messages, List<ResponseCollection24Result>? Function()? result, bool? success, IntelResultInfo? Function()? resultInfo, }) { return ResponseCollection24(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

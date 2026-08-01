@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('delay') &&
       json.containsKey('limit') && json['limit'] is num; } 
-WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries copyWith({WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff Function()? backoff, dynamic delay, double? limit, }) { return WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries(
+WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries copyWith({WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff? Function()? backoff, dynamic delay, double? limit, }) { return WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries(
   backoff: backoff != null ? backoff() : this.backoff,
   delay: delay ?? this.delay,
   limit: limit ?? this.limit,

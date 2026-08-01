@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'success', 'result'}.contains(key)); } 
-SlurperListJobsResponse copyWith({List<ErrorModel32> Function()? errors, List<String> Function()? messages, bool Function()? success, List<R2SlurperJobResponse> Function()? result, }) { return SlurperListJobsResponse(
+SlurperListJobsResponse copyWith({List<ErrorModel32>? Function()? errors, List<String>? Function()? messages, bool? Function()? success, List<R2SlurperJobResponse>? Function()? result, }) { return SlurperListJobsResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success != null ? success() : this.success,

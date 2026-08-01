@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('name') && json['name'] is String; } 
-PostChargesChargeRequestShipping copyWith({PostChargesChargeRequestShippingAddress? address, String Function()? carrier, String? name, String Function()? phone, String Function()? trackingNumber, }) { return PostChargesChargeRequestShipping(
+PostChargesChargeRequestShipping copyWith({PostChargesChargeRequestShippingAddress? address, String? Function()? carrier, String? name, String? Function()? phone, String? Function()? trackingNumber, }) { return PostChargesChargeRequestShipping(
   address: address ?? this.address,
   carrier: carrier != null ? carrier() : this.carrier,
   name: name ?? this.name,

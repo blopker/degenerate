@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (windows != null) 'WINDOWS': windows?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'UBUNTU', 'MACOS', 'WINDOWS'}.contains(key)); } 
-WorkflowRunUsageBillable copyWith({WorkflowRunUsageBillableUbuntu Function()? ubuntu, WorkflowRunUsageBillableMacos Function()? macos, WorkflowRunUsageBillableWindows Function()? windows, }) { return WorkflowRunUsageBillable(
+WorkflowRunUsageBillable copyWith({WorkflowRunUsageBillableUbuntu? Function()? ubuntu, WorkflowRunUsageBillableMacos? Function()? macos, WorkflowRunUsageBillableWindows? Function()? windows, }) { return WorkflowRunUsageBillable(
   ubuntu: ubuntu != null ? ubuntu() : this.ubuntu,
   macos: macos != null ? macos() : this.macos,
   windows: windows != null ? windows() : this.windows,

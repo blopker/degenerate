@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content', 'url'}.contains(key)); } 
-BrapiPostContentRequestVariant2AddStyleTag copyWith({String Function()? content, String Function()? url, }) { return BrapiPostContentRequestVariant2AddStyleTag(
+BrapiPostContentRequestVariant2AddStyleTag copyWith({String? Function()? content, String? Function()? url, }) { return BrapiPostContentRequestVariant2AddStyleTag(
   content: content != null ? content() : this.content,
   url: url != null ? url() : this.url,
 ); } 

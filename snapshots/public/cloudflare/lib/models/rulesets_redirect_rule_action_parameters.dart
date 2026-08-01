@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (fromValue != null) 'from_value': fromValue?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from_list', 'from_value'}.contains(key)); } 
-RulesetsRedirectRuleActionParameters copyWith({RulesetsRedirectFromList Function()? fromList, RulesetsRedirectFromValue Function()? fromValue, }) { return RulesetsRedirectRuleActionParameters(
+RulesetsRedirectRuleActionParameters copyWith({RulesetsRedirectFromList? Function()? fromList, RulesetsRedirectFromValue? Function()? fromValue, }) { return RulesetsRedirectRuleActionParameters(
   fromList: fromList != null ? fromList() : this.fromList,
   fromValue: fromValue != null ? fromValue() : this.fromValue,
 ); } 

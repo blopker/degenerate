@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (platform != null) 'platform': platform?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'platform'}.contains(key)); } 
-TeamsDevicesMatchItem copyWith({TeamsDevicesPlatform Function()? platform}) { return TeamsDevicesMatchItem(
+TeamsDevicesMatchItem copyWith({TeamsDevicesPlatform? Function()? platform}) { return TeamsDevicesMatchItem(
   platform: platform != null ? platform() : this.platform,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

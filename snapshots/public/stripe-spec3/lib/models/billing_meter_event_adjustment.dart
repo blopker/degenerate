@@ -70,10 +70,10 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingMeterEventAdjustmentType($value)'; } 
  }
 /// A billing meter event adjustment is a resource that allows you to cancel a meter event. For example, you might create a billing meter event adjustment to cancel a meter event that was created in error or attached to the wrong customer.
-@immutable final class BillingMeterEventAdjustment {const BillingMeterEventAdjustment({required this.eventName, required this.livemode, required this.object, required this.status, required this.type, this.cancel, });
+@immutable final class BillingMeterEventAdjustment {const BillingMeterEventAdjustment({required this.eventName, required this.livemode, required this.object, required this.status, required this.type, this.cancel = const Omittable.absent(), });
 
 factory BillingMeterEventAdjustment.fromJson(Map<String, dynamic> json) { return BillingMeterEventAdjustment(
-  cancel: json['cancel'] != null ? BillingMeterResourceBillingMeterEventAdjustmentCancel.fromJson(json['cancel'] as Map<String, dynamic>) : null,
+  cancel: json.containsKey('cancel') ? Omittable(json['cancel'] != null ? BillingMeterResourceBillingMeterEventAdjustmentCancel.fromJson(json['cancel'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   eventName: json['event_name'] as String,
   livemode: json['livemode'] as bool,
   object: BillingMeterEventAdjustmentObject.fromJson(json['object'] as String),
@@ -82,7 +82,7 @@ factory BillingMeterEventAdjustment.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// Specifies which event to cancel.
-final BillingMeterResourceBillingMeterEventAdjustmentCancel? cancel;
+final Omittable<BillingMeterResourceBillingMeterEventAdjustmentCancel?> cancel;
 
 /// The name of the meter event. Corresponds with the `event_name` field on a meter.
 final String eventName;
@@ -100,7 +100,7 @@ final BillingMeterEventAdjustmentStatus status;
 final BillingMeterEventAdjustmentType type;
 
 Map<String, dynamic> toJson() { return {
-  if (cancel != null) 'cancel': cancel?.toJson(),
+  if (cancel.isPresent) 'cancel': cancel.value?.toJson(),
   'event_name': eventName,
   'livemode': livemode,
   'object': object.toJson(),
@@ -112,8 +112,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('type'); } 
-BillingMeterEventAdjustment copyWith({BillingMeterResourceBillingMeterEventAdjustmentCancel? Function()? cancel, String? eventName, bool? livemode, BillingMeterEventAdjustmentObject? object, BillingMeterEventAdjustmentStatus? status, BillingMeterEventAdjustmentType? type, }) { return BillingMeterEventAdjustment(
-  cancel: cancel != null ? cancel() : this.cancel,
+BillingMeterEventAdjustment copyWith({Omittable<BillingMeterResourceBillingMeterEventAdjustmentCancel?>? cancel, String? eventName, bool? livemode, BillingMeterEventAdjustmentObject? object, BillingMeterEventAdjustmentStatus? status, BillingMeterEventAdjustmentType? type, }) { return BillingMeterEventAdjustment(
+  cancel: cancel ?? this.cancel,
   eventName: eventName ?? this.eventName,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,

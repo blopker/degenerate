@@ -20,12 +20,12 @@ final int? maxFiles;
 
 Map<String, dynamic> toJson() { return {
   'enabled': enabled,
-  'max_file_size': ?maxFileSize,
-  'max_files': ?maxFiles,
+  'max_file_size': maxFileSize,
+  'max_files': maxFiles,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('max_file_size') && json['max_file_size'] is num &&
-      json.containsKey('max_files') && json['max_files'] is num; } 
+      json.containsKey('max_file_size') && (json['max_file_size'] == null || json['max_file_size'] is num) &&
+      json.containsKey('max_files') && (json['max_files'] == null || json['max_files'] is num); } 
 ChatSessionFileUpload copyWith({bool? enabled, int? Function()? maxFileSize, int? Function()? maxFiles, }) { return ChatSessionFileUpload(
   enabled: enabled ?? this.enabled,
   maxFileSize: maxFileSize != null ? maxFileSize() : this.maxFileSize,

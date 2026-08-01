@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (connectionRules != null) 'connection_rules': connectionRules?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'decision', 'exclude', 'id', 'include', 'name', 'require', 'updated_at', 'connection_rules'}.contains(key)); } 
-AccessInfraPolicyResp copyWith({AccessTimestamp Function()? createdAt, AccessDecision Function()? decision, List<AccessRule> Function()? exclude, AccessSchemasUuid Function()? id, List<AccessRule> Function()? include, AccessPolicyComponentsSchemasName Function()? name, List<AccessRule> Function()? require, AccessTimestamp Function()? updatedAt, AccessConnectionRulesInfra Function()? connectionRules, }) { return AccessInfraPolicyResp(
+AccessInfraPolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDecision? Function()? decision, List<AccessRule>? Function()? exclude, AccessSchemasUuid? Function()? id, List<AccessRule>? Function()? include, AccessPolicyComponentsSchemasName? Function()? name, List<AccessRule>? Function()? require, AccessTimestamp? Function()? updatedAt, AccessConnectionRulesInfra? Function()? connectionRules, }) { return AccessInfraPolicyResp(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   decision: decision != null ? decision() : this.decision,
   exclude: exclude != null ? exclude() : this.exclude,

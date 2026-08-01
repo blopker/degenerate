@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Address {const Address({required this.street, required this.city, required this.country, this.state, this.postalCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Address {const Address({required this.street, required this.city, required this.country, this.state = const Omittable.absent(), this.postalCode, });
 
 factory Address.fromJson(Map<String, dynamic> json) { return Address(
   street: json['street'] as String,
   city: json['city'] as String,
-  state: json['state'] as String?,
+  state: json.containsKey('state') ? Omittable(json['state'] as String?) : const Omittable.absent(),
   postalCode: json['postalCode'] as String?,
   country: json['country'] as String,
 ); }
@@ -14,7 +14,7 @@ final String street;
 
 final String city;
 
-final String? state;
+final Omittable<String?> state;
 
 final String? postalCode;
 
@@ -23,17 +23,17 @@ final String country;
 Map<String, dynamic> toJson() { return {
   'street': street,
   'city': city,
-  'state': ?state,
+  if (state.isPresent) 'state': state.value,
   'postalCode': ?postalCode,
   'country': country,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('street') && json['street'] is String &&
       json.containsKey('city') && json['city'] is String &&
       json.containsKey('country') && json['country'] is String; } 
-Address copyWith({String? street, String? city, String? Function()? state, String Function()? postalCode, String? country, }) { return Address(
+Address copyWith({String? street, String? city, Omittable<String?>? state, String? Function()? postalCode, String? country, }) { return Address(
   street: street ?? this.street,
   city: city ?? this.city,
-  state: state != null ? state() : this.state,
+  state: state ?? this.state,
   postalCode: postalCode != null ? postalCode() : this.postalCode,
   country: country ?? this.country,
 ); } 

@@ -119,7 +119,7 @@ Map<String, dynamic> toJson() { return {
   if (rulesets != null) 'rulesets': rulesets?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'phase', 'phases', 'products', 'rules', 'ruleset', 'rulesets'}.contains(key)); } 
-RulesetsSkipRuleActionParameters copyWith({RulesetsSkipPhase Function()? phase, List<RulesetsRulesetPhase> Function()? phases, List<RulesetsSkipProducts2> Function()? products, Map<String, List<RulesetsRuleId>> Function()? rules, RulesetsSkipRuleset Function()? ruleset, List<RulesetsRulesetId> Function()? rulesets, }) { return RulesetsSkipRuleActionParameters(
+RulesetsSkipRuleActionParameters copyWith({RulesetsSkipPhase? Function()? phase, List<RulesetsRulesetPhase>? Function()? phases, List<RulesetsSkipProducts2>? Function()? products, Map<String, List<RulesetsRuleId>>? Function()? rules, RulesetsSkipRuleset? Function()? ruleset, List<RulesetsRulesetId>? Function()? rulesets, }) { return RulesetsSkipRuleActionParameters(
   phase: phase != null ? phase() : this.phase,
   phases: phases != null ? phases() : this.phases,
   products: products != null ? products() : this.products,

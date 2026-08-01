@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (function != null) 'function': function?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num; } 
-ChatCompletionMessageToolCallChunk copyWith({int? index, String Function()? id, ChatCompletionMessageToolCallChunkType Function()? type, ChatCompletionMessageToolCallChunkFunction Function()? function, }) { return ChatCompletionMessageToolCallChunk(
+ChatCompletionMessageToolCallChunk copyWith({int? index, String? Function()? id, ChatCompletionMessageToolCallChunkType? Function()? type, ChatCompletionMessageToolCallChunkFunction? Function()? function, }) { return ChatCompletionMessageToolCallChunk(
   index: index ?? this.index,
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,

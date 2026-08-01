@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('killChain') && json['killChain'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('uuid') && json['uuid'] is String; } 
-GetCategoryReadResponse copyWith({double? killChain, List<String> Function()? mitreAttack, String? name, String Function()? shortname, String? uuid, }) { return GetCategoryReadResponse(
+GetCategoryReadResponse copyWith({double? killChain, List<String>? Function()? mitreAttack, String? name, String? Function()? shortname, String? uuid, }) { return GetCategoryReadResponse(
   killChain: killChain ?? this.killChain,
   mitreAttack: mitreAttack != null ? mitreAttack() : this.mitreAttack,
   name: name ?? this.name,

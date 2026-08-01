@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (shippingRateData != null) 'shipping_rate_data': shippingRateData?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'shipping_rate', 'shipping_rate_data'}.contains(key)); } 
-ShippingCost copyWith({String Function()? shippingRate, ShippingCostShippingRateData Function()? shippingRateData, }) { return ShippingCost(
+ShippingCost copyWith({String? Function()? shippingRate, ShippingCostShippingRateData? Function()? shippingRateData, }) { return ShippingCost(
   shippingRate: shippingRate != null ? shippingRate() : this.shippingRate,
   shippingRateData: shippingRateData != null ? shippingRateData() : this.shippingRateData,
 ); } 

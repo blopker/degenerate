@@ -94,7 +94,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name') &&
       json.containsKey('type'); } 
-AccessOkta copyWith({AccessOktaConfig? config, AccessUuid Function()? id, AccessComponentsSchemasName? name, AccessOktaScimConfig Function()? scimConfig, AccessOktaType? type, }) { return AccessOkta(
+AccessOkta copyWith({AccessOktaConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessOktaScimConfig? Function()? scimConfig, AccessOktaType? type, }) { return AccessOkta(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,

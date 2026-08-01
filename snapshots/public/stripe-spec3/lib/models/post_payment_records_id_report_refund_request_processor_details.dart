@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostPaymentRecordsIdReportRefundRequestProcessorDetails copyWith({PostPaymentRecordsIdReportRefundRequestProcessorDetailsCustom Function()? custom, PostPaymentRecordsIdReportRefundRequestProcessorDetailsType? type, }) { return PostPaymentRecordsIdReportRefundRequestProcessorDetails(
+PostPaymentRecordsIdReportRefundRequestProcessorDetails copyWith({PostPaymentRecordsIdReportRefundRequestProcessorDetailsCustom? Function()? custom, PostPaymentRecordsIdReportRefundRequestProcessorDetailsType? type, }) { return PostPaymentRecordsIdReportRefundRequestProcessorDetails(
   custom: custom != null ? custom() : this.custom,
   type: type ?? this.type,
 ); } 

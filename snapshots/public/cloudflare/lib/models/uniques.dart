@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'all': ?all,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'all'}.contains(key)); } 
-Uniques copyWith({int Function()? all}) { return Uniques(
+Uniques copyWith({int? Function()? all}) { return Uniques(
   all: all != null ? all() : this.all,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

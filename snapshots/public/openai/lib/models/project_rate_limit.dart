@@ -80,7 +80,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('max_requests_per_1_minute') && json['max_requests_per_1_minute'] is num &&
       json.containsKey('max_tokens_per_1_minute') && json['max_tokens_per_1_minute'] is num; } 
-ProjectRateLimit copyWith({ProjectRateLimitObject? object, String? id, String? model, int? maxRequestsPer1Minute, int? maxTokensPer1Minute, int Function()? maxImagesPer1Minute, int Function()? maxAudioMegabytesPer1Minute, int Function()? maxRequestsPer1Day, int Function()? batch1DayMaxInputTokens, }) { return ProjectRateLimit(
+ProjectRateLimit copyWith({ProjectRateLimitObject? object, String? id, String? model, int? maxRequestsPer1Minute, int? maxTokensPer1Minute, int? Function()? maxImagesPer1Minute, int? Function()? maxAudioMegabytesPer1Minute, int? Function()? maxRequestsPer1Day, int? Function()? batch1DayMaxInputTokens, }) { return ProjectRateLimit(
   object: object ?? this.object,
   id: id ?? this.id,
   model: model ?? this.model,

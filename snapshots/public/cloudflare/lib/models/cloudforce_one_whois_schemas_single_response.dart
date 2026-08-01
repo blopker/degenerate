@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-CloudforceOneWhoisSchemasSingleResponse copyWith({List<CloudforceOneWhoisSchemasMessages2>? errors, List<CloudforceOneWhoisSchemasMessages2>? messages, bool? success, CloudforceOneWhoisWhois Function()? result, }) { return CloudforceOneWhoisSchemasSingleResponse(
+CloudforceOneWhoisSchemasSingleResponse copyWith({List<CloudforceOneWhoisSchemasMessages2>? errors, List<CloudforceOneWhoisSchemasMessages2>? messages, bool? success, CloudforceOneWhoisWhois? Function()? result, }) { return CloudforceOneWhoisSchemasSingleResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

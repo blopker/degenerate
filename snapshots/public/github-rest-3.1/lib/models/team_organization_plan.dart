@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('space') && json['space'] is num &&
       json.containsKey('private_repos') && json['private_repos'] is num; } 
-TeamOrganizationPlan copyWith({String? name, int? space, int? privateRepos, int Function()? filledSeats, int Function()? seats, }) { return TeamOrganizationPlan(
+TeamOrganizationPlan copyWith({String? name, int? space, int? privateRepos, int? Function()? filledSeats, int? Function()? seats, }) { return TeamOrganizationPlan(
   name: name ?? this.name,
   space: space ?? this.space,
   privateRepos: privateRepos ?? this.privateRepos,

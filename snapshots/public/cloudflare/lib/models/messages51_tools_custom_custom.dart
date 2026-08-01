@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'name': name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-Messages51ToolsCustomCustom copyWith({String Function()? description, Messages51ToolsCustomCustomFormat Function()? format, String? name, }) { return Messages51ToolsCustomCustom(
+Messages51ToolsCustomCustom copyWith({String? Function()? description, Messages51ToolsCustomCustomFormat? Function()? format, String? name, }) { return Messages51ToolsCustomCustom(
   description: description != null ? description() : this.description,
   format: format != null ? format() : this.format,
   name: name ?? this.name,

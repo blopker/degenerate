@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (splashscreen != null) 'splashscreen': splashscreen?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'splashscreen'}.contains(key)); } 
-PostTerminalConfigurationsRequestBbposWiseposE copyWith({PostTerminalConfigurationsRequestBbposWiseposESplashscreen Function()? splashscreen}) { return PostTerminalConfigurationsRequestBbposWiseposE(
+PostTerminalConfigurationsRequestBbposWiseposE copyWith({PostTerminalConfigurationsRequestBbposWiseposESplashscreen? Function()? splashscreen}) { return PostTerminalConfigurationsRequestBbposWiseposE(
   splashscreen: splashscreen != null ? splashscreen() : this.splashscreen,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

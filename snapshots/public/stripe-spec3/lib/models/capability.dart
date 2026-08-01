@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 /// This is an object representing a capability for a Stripe account.
 /// 
 /// Related guide: [Account capabilities](https://docs.stripe.com/connect/account-capabilities)
-@immutable final class Capability {const Capability({required this.account, required this.id, required this.object, required this.requested, required this.status, this.futureRequirements, this.requestedAt, this.requirements, });
+@immutable final class Capability {const Capability({required this.account, required this.id, required this.object, required this.requested, required this.status, this.futureRequirements, this.requestedAt = const Omittable.absent(), this.requirements, });
 
 factory Capability.fromJson(Map<String, dynamic> json) { return Capability(
   account: OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),),
@@ -64,7 +64,7 @@ factory Capability.fromJson(Map<String, dynamic> json) { return Capability(
   id: json['id'] as String,
   object: CapabilityObject.fromJson(json['object'] as String),
   requested: json['requested'] as bool,
-  requestedAt: json['requested_at'] != null ? (json['requested_at'] as num).toInt() : null,
+  requestedAt: json.containsKey('requested_at') ? Omittable(json['requested_at'] != null ? (json['requested_at'] as num).toInt() : null) : const Omittable.absent(),
   requirements: json['requirements'] != null ? AccountCapabilityRequirements.fromJson(json['requirements'] as Map<String, dynamic>) : null,
   status: CapabilityStatus.fromJson(json['status'] as String),
 ); }
@@ -84,7 +84,7 @@ final CapabilityObject object;
 final bool requested;
 
 /// Time at which the capability was requested. Measured in seconds since the Unix epoch.
-final int? requestedAt;
+final Omittable<int?> requestedAt;
 
 final AccountCapabilityRequirements? requirements;
 
@@ -97,7 +97,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'object': object.toJson(),
   'requested': requested,
-  'requested_at': ?requestedAt,
+  if (requestedAt.isPresent) 'requested_at': requestedAt.value,
   if (requirements != null) 'requirements': requirements?.toJson(),
   'status': status.toJson(),
 }; } 
@@ -106,13 +106,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('object') &&
       json.containsKey('requested') && json['requested'] is bool &&
       json.containsKey('status'); } 
-Capability copyWith({CapabilityAccount? account, AccountCapabilityFutureRequirements Function()? futureRequirements, String? id, CapabilityObject? object, bool? requested, int? Function()? requestedAt, AccountCapabilityRequirements Function()? requirements, CapabilityStatus? status, }) { return Capability(
+Capability copyWith({CapabilityAccount? account, AccountCapabilityFutureRequirements? Function()? futureRequirements, String? id, CapabilityObject? object, bool? requested, Omittable<int?>? requestedAt, AccountCapabilityRequirements? Function()? requirements, CapabilityStatus? status, }) { return Capability(
   account: account ?? this.account,
   futureRequirements: futureRequirements != null ? futureRequirements() : this.futureRequirements,
   id: id ?? this.id,
   object: object ?? this.object,
   requested: requested ?? this.requested,
-  requestedAt: requestedAt != null ? requestedAt() : this.requestedAt,
+  requestedAt: requestedAt ?? this.requestedAt,
   requirements: requirements != null ? requirements() : this.requirements,
   status: status ?? this.status,
 ); } 

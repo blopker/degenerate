@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (worker != null) 'worker': worker?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'params', 'worker'}.contains(key)); } 
-WorkersBindingKindDispatchNamespaceOutbound copyWith({List<WorkersBindingKindDispatchNamespaceOutboundParams> Function()? params, WorkersBindingKindDispatchNamespaceOutboundWorker Function()? worker, }) { return WorkersBindingKindDispatchNamespaceOutbound(
+WorkersBindingKindDispatchNamespaceOutbound copyWith({List<WorkersBindingKindDispatchNamespaceOutboundParams>? Function()? params, WorkersBindingKindDispatchNamespaceOutboundWorker? Function()? worker, }) { return WorkersBindingKindDispatchNamespaceOutbound(
   params: params != null ? params() : this.params,
   worker: worker != null ? worker() : this.worker,
 ); } 

@@ -161,7 +161,7 @@ final String signature;
 final String state;
 
 Map<String, dynamic> toJson() { return {
-  'act': ?act,
+  'act': act,
   'comments': ?comments,
   'company': ?company,
   'email': email,
@@ -198,7 +198,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('act')
       json.containsKey('owner_notification') &&
       json.containsKey('signature') && json['signature'] is String &&
       json.containsKey('state') && json['state'] is String; } 
-AbuseReportsDmcaReport copyWith({dynamic Function()? act, String Function()? comments, String Function()? company, String? email, String? email2, String? name, String Function()? reportedCountry, String Function()? reportedUserAgent, String Function()? tele, String Function()? title, String? urls, String? address1, String? agentName, AbuseReportsDmcaReportAgree? agree, String? city, String? country, AbuseReportsDmcaReportHostNotification? hostNotification, String? originalWork, AbuseReportsDmcaReportOwnerNotification? ownerNotification, String? signature, String? state, }) { return AbuseReportsDmcaReport(
+AbuseReportsDmcaReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? address1, String? agentName, AbuseReportsDmcaReportAgree? agree, String? city, String? country, AbuseReportsDmcaReportHostNotification? hostNotification, String? originalWork, AbuseReportsDmcaReportOwnerNotification? ownerNotification, String? signature, String? state, }) { return AbuseReportsDmcaReport(
   act: act != null ? act() : this.act,
   comments: comments != null ? comments() : this.comments,
   company: company != null ? company() : this.company,

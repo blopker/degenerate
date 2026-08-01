@@ -218,14 +218,14 @@ final WebhookPullRequestReviewThreadUnresolvedPullRequestUser? user;
 
 Map<String, dynamic> toJson() { return {
   '_links': links.toJson(),
-  if (activeLockReason != null) 'active_lock_reason': activeLockReason?.toJson(),
-  if (assignee != null) 'assignee': assignee?.toJson(),
+  'active_lock_reason': activeLockReason?.toJson(),
+  'assignee': assignee?.toJson(),
   'assignees': assignees.map((e) => e?.toJson()).toList(),
   'author_association': authorAssociation.toJson(),
-  if (autoMerge != null) 'auto_merge': autoMerge?.toJson(),
+  'auto_merge': autoMerge?.toJson(),
   'base': base.toJson(),
-  'body': ?body,
-  'closed_at': ?closedAt,
+  'body': body,
+  'closed_at': closedAt,
   'comments_url': commentsUrl.toString(),
   'commits_url': commitsUrl.toString(),
   'created_at': createdAt,
@@ -237,9 +237,9 @@ Map<String, dynamic> toJson() { return {
   'issue_url': issueUrl.toString(),
   'labels': labels.map((e) => e.toJson()).toList(),
   'locked': locked,
-  'merge_commit_sha': ?mergeCommitSha,
-  'merged_at': ?mergedAt,
-  if (milestone != null) 'milestone': milestone?.toJson(),
+  'merge_commit_sha': mergeCommitSha,
+  'merged_at': mergedAt,
+  'milestone': milestone?.toJson(),
   'node_id': nodeId,
   'number': number,
   'patch_url': patchUrl.toString(),
@@ -252,7 +252,7 @@ Map<String, dynamic> toJson() { return {
   'title': title,
   'updated_at': updatedAt,
   'url': url.toString(),
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
       json.containsKey('active_lock_reason') &&
@@ -261,8 +261,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('author_association') &&
       json.containsKey('auto_merge') &&
       json.containsKey('base') &&
-      json.containsKey('body') && json['body'] is String &&
-      json.containsKey('closed_at') && json['closed_at'] is String &&
+      json.containsKey('body') && (json['body'] == null || json['body'] is String) &&
+      json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
       json.containsKey('comments_url') && json['comments_url'] is String &&
       json.containsKey('commits_url') && json['commits_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -274,8 +274,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('issue_url') && json['issue_url'] is String &&
       json.containsKey('labels') &&
       json.containsKey('locked') && json['locked'] is bool &&
-      json.containsKey('merge_commit_sha') && json['merge_commit_sha'] is String &&
-      json.containsKey('merged_at') && json['merged_at'] is String &&
+      json.containsKey('merge_commit_sha') && (json['merge_commit_sha'] == null || json['merge_commit_sha'] is String) &&
+      json.containsKey('merged_at') && (json['merged_at'] == null || json['merged_at'] is String) &&
       json.containsKey('milestone') &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('number') && json['number'] is num &&

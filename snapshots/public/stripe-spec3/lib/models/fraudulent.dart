@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (explanation != null) 'explanation': explanation?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'explanation'}.contains(key)); } 
-Fraudulent copyWith({FraudulentAdditionalDocumentation Function()? additionalDocumentation, FraudulentExplanation Function()? explanation, }) { return Fraudulent(
+Fraudulent copyWith({FraudulentAdditionalDocumentation? Function()? additionalDocumentation, FraudulentExplanation? Function()? explanation, }) { return Fraudulent(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   explanation: explanation != null ? explanation() : this.explanation,
 ); } 

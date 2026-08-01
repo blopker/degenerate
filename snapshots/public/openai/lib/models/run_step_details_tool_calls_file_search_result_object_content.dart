@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'text': ?text,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'text'}.contains(key)); } 
-RunStepDetailsToolCallsFileSearchResultObjectContent copyWith({RunStepDetailsToolCallsFileSearchResultObjectContentType Function()? type, String Function()? text, }) { return RunStepDetailsToolCallsFileSearchResultObjectContent(
+RunStepDetailsToolCallsFileSearchResultObjectContent copyWith({RunStepDetailsToolCallsFileSearchResultObjectContentType? Function()? type, String? Function()? text, }) { return RunStepDetailsToolCallsFileSearchResultObjectContent(
   type: type != null ? type() : this.type,
   text: text != null ? text() : this.text,
 ); } 

@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'action_parameters', 'description', 'expression', 'kind', 'matched', 'name', 'step_name', 'trace', 'type'}.contains(key)); } 
-RequestTracerTrace2 copyWith({String Function()? action, Map<String, dynamic> Function()? actionParameters, String Function()? description, String Function()? expression, String Function()? kind, bool Function()? matched, String Function()? name, String Function()? stepName, List<RequestTracerTrace2> Function()? trace, String Function()? type, }) { return RequestTracerTrace2(
+RequestTracerTrace2 copyWith({String? Function()? action, Map<String, dynamic>? Function()? actionParameters, String? Function()? description, String? Function()? expression, String? Function()? kind, bool? Function()? matched, String? Function()? name, String? Function()? stepName, List<RequestTracerTrace2>? Function()? trace, String? Function()? type, }) { return RequestTracerTrace2(
   action: action != null ? action() : this.action,
   actionParameters: actionParameters != null ? actionParameters() : this.actionParameters,
   description: description != null ? description() : this.description,

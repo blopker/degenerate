@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (model != null) 'model': model?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('input'); } 
-CreateModerationRequest copyWith({CreateModerationRequestInput? input, CreateModerationRequestModel Function()? model, }) { return CreateModerationRequest(
+CreateModerationRequest copyWith({CreateModerationRequestInput? input, CreateModerationRequestModel? Function()? model, }) { return CreateModerationRequest(
   input: input ?? this.input,
   model: model != null ? model() : this.model,
 ); } 

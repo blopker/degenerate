@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'exists': ?exists,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exists'}.contains(key)); } 
-LogpushDestinationExistsResponseResult copyWith({bool Function()? exists}) { return LogpushDestinationExistsResponseResult(
+LogpushDestinationExistsResponseResult copyWith({bool? Function()? exists}) { return LogpushDestinationExistsResponseResult(
   exists: exists != null ? exists() : this.exists,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

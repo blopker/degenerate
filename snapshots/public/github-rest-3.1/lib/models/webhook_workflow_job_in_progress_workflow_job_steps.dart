@@ -54,18 +54,18 @@ final String? startedAt;
 final WebhookWorkflowJobInProgressWorkflowJobStepsStatus status;
 
 Map<String, dynamic> toJson() { return {
-  'completed_at': ?completedAt,
-  'conclusion': ?conclusion,
+  'completed_at': completedAt,
+  'conclusion': conclusion,
   'name': name,
   'number': number,
-  'started_at': ?startedAt,
+  'started_at': startedAt,
   'status': status.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('completed_at') && json['completed_at'] is String &&
-      json.containsKey('conclusion') && json['conclusion'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is String) &&
+      json.containsKey('conclusion') && (json['conclusion'] == null || json['conclusion'] is String) &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('number') && json['number'] is num &&
-      json.containsKey('started_at') && json['started_at'] is String &&
+      json.containsKey('started_at') && (json['started_at'] == null || json['started_at'] is String) &&
       json.containsKey('status'); } 
 WebhookWorkflowJobInProgressWorkflowJobSteps copyWith({String? Function()? completedAt, String? Function()? conclusion, String? name, int? number, String? Function()? startedAt, WebhookWorkflowJobInProgressWorkflowJobStepsStatus? status, }) { return WebhookWorkflowJobInProgressWorkflowJobSteps(
   completedAt: completedAt != null ? completedAt() : this.completedAt,

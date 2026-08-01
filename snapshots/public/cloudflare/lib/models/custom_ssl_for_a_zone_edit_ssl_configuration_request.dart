@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (privateKey != null) 'private_key': privateKey?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bundle_method', 'certificate', 'deploy', 'geo_restrictions', 'policy', 'private_key'}.contains(key)); } 
-CustomSslForAZoneEditSslConfigurationRequest copyWith({TlsCertificatesAndHostnamesBundleMethod Function()? bundleMethod, TlsCertificatesAndHostnamesCertificate Function()? certificate, TlsCertificatesAndHostnamesDeploy Function()? deploy, TlsCertificatesAndHostnamesGeoRestrictions Function()? geoRestrictions, TlsCertificatesAndHostnamesPolicy Function()? policy, TlsCertificatesAndHostnamesPrivateKey Function()? privateKey, }) { return CustomSslForAZoneEditSslConfigurationRequest(
+CustomSslForAZoneEditSslConfigurationRequest copyWith({TlsCertificatesAndHostnamesBundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesCertificate? Function()? certificate, TlsCertificatesAndHostnamesDeploy? Function()? deploy, TlsCertificatesAndHostnamesGeoRestrictions? Function()? geoRestrictions, TlsCertificatesAndHostnamesPolicy? Function()? policy, TlsCertificatesAndHostnamesPrivateKey? Function()? privateKey, }) { return CustomSslForAZoneEditSslConfigurationRequest(
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   certificate: certificate != null ? certificate() : this.certificate,
   deploy: deploy != null ? deploy() : this.deploy,

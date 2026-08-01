@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'role': ?role,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'object', 'id', 'name', 'created_at', 'role'}.contains(key)); } 
-KeyOwner copyWith({String Function()? type, String Function()? object, String Function()? id, String Function()? name, int Function()? createdAt, String Function()? role, }) { return KeyOwner(
+KeyOwner copyWith({String? Function()? type, String? Function()? object, String? Function()? id, String? Function()? name, int? Function()? createdAt, String? Function()? role, }) { return KeyOwner(
   type: type != null ? type() : this.type,
   object: object != null ? object() : this.object,
   id: id != null ? id() : this.id,

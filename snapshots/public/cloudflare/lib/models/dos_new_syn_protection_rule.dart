@@ -42,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('burst
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('rate_sensitivity') && json['rate_sensitivity'] is String &&
       json.containsKey('scope') && json['scope'] is String; } 
-DosNewSynProtectionRule copyWith({String? burstSensitivity, String Function()? mitigationType, String? mode, String? name, String? rateSensitivity, String? scope, }) { return DosNewSynProtectionRule(
+DosNewSynProtectionRule copyWith({String? burstSensitivity, String? Function()? mitigationType, String? mode, String? name, String? rateSensitivity, String? scope, }) { return DosNewSynProtectionRule(
   burstSensitivity: burstSensitivity ?? this.burstSensitivity,
   mitigationType: mitigationType != null ? mitigationType() : this.mitigationType,
   mode: mode ?? this.mode,

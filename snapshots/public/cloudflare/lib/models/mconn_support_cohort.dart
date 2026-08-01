@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('name') && json['name'] is String; } 
-MconnSupportCohort copyWith({String Function()? desiredVersion, MconnUuid? id, String? name, }) { return MconnSupportCohort(
+MconnSupportCohort copyWith({String? Function()? desiredVersion, MconnUuid? id, String? name, }) { return MconnSupportCohort(
   desiredVersion: desiredVersion != null ? desiredVersion() : this.desiredVersion,
   id: id ?? this.id,
   name: name ?? this.name,

@@ -34,32 +34,34 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories($value)'; } 
  }
 /// 
-@immutable final class BankConnectionsResourceLinkAccountSessionFilters {const BankConnectionsResourceLinkAccountSessionFilters({this.accountSubcategories, this.countries, });
+@immutable final class BankConnectionsResourceLinkAccountSessionFilters {const BankConnectionsResourceLinkAccountSessionFilters({this.accountSubcategories = const Omittable.absent(), this.countries = const Omittable.absent(), });
 
 factory BankConnectionsResourceLinkAccountSessionFilters.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceLinkAccountSessionFilters(
-  accountSubcategories: (json['account_subcategories'] as List<dynamic>?)?.map((e) => BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories.fromJson(e as String)).toList(),
-  countries: (json['countries'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  accountSubcategories: json.containsKey('account_subcategories') ? Omittable((json['account_subcategories'] as List<dynamic>?)?.map((e) => BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories.fromJson(e as String)).toList()) : const Omittable.absent(),
+  countries: json.containsKey('countries') ? Omittable((json['countries'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
 ); }
 
 /// Restricts the Session to subcategories of accounts that can be linked. Valid subcategories are: `checking`, `savings`, `mortgage`, `line_of_credit`, `credit_card`.
-final List<BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories>? accountSubcategories;
+final Omittable<List<BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories>?> accountSubcategories;
 
 /// List of countries from which to filter accounts.
-final List<String>? countries;
+final Omittable<List<String>?> countries;
 
 Map<String, dynamic> toJson() { return {
-  if (accountSubcategories != null) 'account_subcategories': accountSubcategories?.map((e) => e.toJson()).toList(),
-  'countries': ?countries,
+  if (accountSubcategories.isPresent) 'account_subcategories': accountSubcategories.value?.map((e) => e.toJson()).toList(),
+  if (countries.isPresent) 'countries': countries.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_subcategories', 'countries'}.contains(key)); } 
-BankConnectionsResourceLinkAccountSessionFilters copyWith({List<BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories>? Function()? accountSubcategories, List<String>? Function()? countries, }) { return BankConnectionsResourceLinkAccountSessionFilters(
-  accountSubcategories: accountSubcategories != null ? accountSubcategories() : this.accountSubcategories,
-  countries: countries != null ? countries() : this.countries,
+BankConnectionsResourceLinkAccountSessionFilters copyWith({Omittable<List<BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories>?>? accountSubcategories, Omittable<List<String>?>? countries, }) { return BankConnectionsResourceLinkAccountSessionFilters(
+  accountSubcategories: accountSubcategories ?? this.accountSubcategories,
+  countries: countries ?? this.countries,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is BankConnectionsResourceLinkAccountSessionFilters &&
-          listEquals(accountSubcategories, other.accountSubcategories) &&
-          listEquals(countries, other.countries); } 
-@override int get hashCode { return Object.hash(Object.hashAll(accountSubcategories ?? const []), Object.hashAll(countries ?? const [])); } 
+          accountSubcategories.isPresent == other.accountSubcategories.isPresent &&
+          listEquals(accountSubcategories.value, other.accountSubcategories.value) &&
+          countries.isPresent == other.countries.isPresent &&
+          listEquals(countries.value, other.countries.value); } 
+@override int get hashCode { return Object.hash(Object.hashAll(accountSubcategories.value ?? const []), Object.hashAll(countries.value ?? const [])); } 
 @override String toString() { return 'BankConnectionsResourceLinkAccountSessionFilters(accountSubcategories: $accountSubcategories, countries: $countries)'; } 
  }

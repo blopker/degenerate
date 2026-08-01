@@ -54,7 +54,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('site') &&
       json.containsKey('slot_id') && json['slot_id'] is String &&
       json.containsKey('speed') && json['speed'] is String; } 
-NscInterconnectPhysicalBody copyWith({String? account, String? name, String Function()? owner, String? type, NscFacilityInfo? facility, NscCloudflareSite? site, String? slotId, String? speed, }) { return NscInterconnectPhysicalBody(
+NscInterconnectPhysicalBody copyWith({String? account, String? name, String? Function()? owner, String? type, NscFacilityInfo? facility, NscCloudflareSite? site, String? slotId, String? speed, }) { return NscInterconnectPhysicalBody(
   account: account ?? this.account,
   name: name ?? this.name,
   owner: owner != null ? owner() : this.owner,

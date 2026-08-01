@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'description': ?description,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-IssuesCreateLabelRequest copyWith({String? name, String Function()? color, String Function()? description, }) { return IssuesCreateLabelRequest(
+IssuesCreateLabelRequest copyWith({String? name, String? Function()? color, String? Function()? description, }) { return IssuesCreateLabelRequest(
   name: name ?? this.name,
   color: color != null ? color() : this.color,
   description: description != null ? description() : this.description,

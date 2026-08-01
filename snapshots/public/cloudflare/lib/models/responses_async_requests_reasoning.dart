@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   if (summary != null) 'summary': summary?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'effort', 'summary'}.contains(key)); } 
-ResponsesAsyncRequestsReasoning copyWith({ResponsesAsyncRequestsReasoningEffort Function()? effort, ResponsesAsyncRequestsReasoningSummary Function()? summary, }) { return ResponsesAsyncRequestsReasoning(
+ResponsesAsyncRequestsReasoning copyWith({ResponsesAsyncRequestsReasoningEffort? Function()? effort, ResponsesAsyncRequestsReasoningSummary? Function()? summary, }) { return ResponsesAsyncRequestsReasoning(
   effort: effort != null ? effort() : this.effort,
   summary: summary != null ? summary() : this.summary,
 ); } 

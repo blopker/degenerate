@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (parameters != null) 'parameters': parameters?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RepositoryRuleMaxFilePathLength copyWith({RepositoryRuleMaxFilePathLengthType? type, RepositoryRuleMaxFilePathLengthParameters Function()? parameters, }) { return RepositoryRuleMaxFilePathLength(
+RepositoryRuleMaxFilePathLength copyWith({RepositoryRuleMaxFilePathLengthType? type, RepositoryRuleMaxFilePathLengthParameters? Function()? parameters, }) { return RepositoryRuleMaxFilePathLength(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 

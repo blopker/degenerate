@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'name': name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-UpdatePortalsRequestServersUpdatedTools copyWith({String Function()? description, bool Function()? enabled, String? name, }) { return UpdatePortalsRequestServersUpdatedTools(
+UpdatePortalsRequestServersUpdatedTools copyWith({String? Function()? description, bool? Function()? enabled, String? name, }) { return UpdatePortalsRequestServersUpdatedTools(
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,
   name: name ?? this.name,

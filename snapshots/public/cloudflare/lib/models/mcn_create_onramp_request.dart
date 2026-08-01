@@ -79,7 +79,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cloud
       json.containsKey('install_routes_in_magic_wan') && json['install_routes_in_magic_wan'] is bool &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('type'); } 
-McnCreateOnrampRequest copyWith({McnResourceId Function()? adoptedHubId, List<McnResourceId> Function()? attachedHubs, List<McnResourceId> Function()? attachedVpcs, int Function()? cloudAsn, McnOnrampCloudType? cloudType, String Function()? description, bool? dynamicRouting, McnProviderId Function()? hubProviderId, bool? installRoutesInCloud, bool? installRoutesInMagicWan, bool Function()? manageHubToHubAttachments, bool Function()? manageVpcToHubAttachments, String? name, String Function()? region, McnOnrampType? type, McnResourceId Function()? vpc, }) { return McnCreateOnrampRequest(
+McnCreateOnrampRequest copyWith({McnResourceId? Function()? adoptedHubId, List<McnResourceId>? Function()? attachedHubs, List<McnResourceId>? Function()? attachedVpcs, int? Function()? cloudAsn, McnOnrampCloudType? cloudType, String? Function()? description, bool? dynamicRouting, McnProviderId? Function()? hubProviderId, bool? installRoutesInCloud, bool? installRoutesInMagicWan, bool? Function()? manageHubToHubAttachments, bool? Function()? manageVpcToHubAttachments, String? name, String? Function()? region, McnOnrampType? type, McnResourceId? Function()? vpc, }) { return McnCreateOnrampRequest(
   adoptedHubId: adoptedHubId != null ? adoptedHubId() : this.adoptedHubId,
   attachedHubs: attachedHubs != null ? attachedHubs() : this.attachedHubs,
   attachedVpcs: attachedVpcs != null ? attachedVpcs() : this.attachedVpcs,

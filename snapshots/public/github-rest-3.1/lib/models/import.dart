@@ -67,7 +67,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ImportStatus($value)'; } 
  }
 /// A repository import from an external source.
-@immutable final class Import {const Import({required this.vcs, required this.vcsUrl, required this.status, required this.url, required this.htmlUrl, required this.authorsUrl, required this.repositoryUrl, this.useLfs, this.svcRoot, this.tfvcProject, this.statusText, this.failedStep, this.errorMessage, this.importPercent, this.commitCount, this.pushPercent, this.hasLargeFiles, this.largeFilesSize, this.largeFilesCount, this.projectChoices, this.message, this.authorsCount, this.svnRoot, });
+@immutable final class Import {const Import({required this.vcs, required this.vcsUrl, required this.status, required this.url, required this.htmlUrl, required this.authorsUrl, required this.repositoryUrl, this.useLfs, this.svcRoot, this.tfvcProject, this.statusText = const Omittable.absent(), this.failedStep = const Omittable.absent(), this.errorMessage = const Omittable.absent(), this.importPercent = const Omittable.absent(), this.commitCount = const Omittable.absent(), this.pushPercent = const Omittable.absent(), this.hasLargeFiles, this.largeFilesSize, this.largeFilesCount, this.projectChoices, this.message, this.authorsCount = const Omittable.absent(), this.svnRoot, });
 
 factory Import.fromJson(Map<String, dynamic> json) { return Import(
   vcs: json['vcs'] as String?,
@@ -76,18 +76,18 @@ factory Import.fromJson(Map<String, dynamic> json) { return Import(
   svcRoot: json['svc_root'] as String?,
   tfvcProject: json['tfvc_project'] as String?,
   status: ImportStatus.fromJson(json['status'] as String),
-  statusText: json['status_text'] as String?,
-  failedStep: json['failed_step'] as String?,
-  errorMessage: json['error_message'] as String?,
-  importPercent: json['import_percent'] != null ? (json['import_percent'] as num).toInt() : null,
-  commitCount: json['commit_count'] != null ? (json['commit_count'] as num).toInt() : null,
-  pushPercent: json['push_percent'] != null ? (json['push_percent'] as num).toInt() : null,
+  statusText: json.containsKey('status_text') ? Omittable(json['status_text'] as String?) : const Omittable.absent(),
+  failedStep: json.containsKey('failed_step') ? Omittable(json['failed_step'] as String?) : const Omittable.absent(),
+  errorMessage: json.containsKey('error_message') ? Omittable(json['error_message'] as String?) : const Omittable.absent(),
+  importPercent: json.containsKey('import_percent') ? Omittable(json['import_percent'] != null ? (json['import_percent'] as num).toInt() : null) : const Omittable.absent(),
+  commitCount: json.containsKey('commit_count') ? Omittable(json['commit_count'] != null ? (json['commit_count'] as num).toInt() : null) : const Omittable.absent(),
+  pushPercent: json.containsKey('push_percent') ? Omittable(json['push_percent'] != null ? (json['push_percent'] as num).toInt() : null) : const Omittable.absent(),
   hasLargeFiles: json['has_large_files'] as bool?,
   largeFilesSize: json['large_files_size'] != null ? (json['large_files_size'] as num).toInt() : null,
   largeFilesCount: json['large_files_count'] != null ? (json['large_files_count'] as num).toInt() : null,
   projectChoices: (json['project_choices'] as List<dynamic>?)?.map((e) => ImportProjectChoices.fromJson(e as Map<String, dynamic>)).toList(),
   message: json['message'] as String?,
-  authorsCount: json['authors_count'] != null ? (json['authors_count'] as num).toInt() : null,
+  authorsCount: json.containsKey('authors_count') ? Omittable(json['authors_count'] != null ? (json['authors_count'] as num).toInt() : null) : const Omittable.absent(),
   url: Uri.parse(json['url'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
   authorsUrl: Uri.parse(json['authors_url'] as String),
@@ -108,17 +108,17 @@ final String? tfvcProject;
 
 final ImportStatus status;
 
-final String? statusText;
+final Omittable<String?> statusText;
 
-final String? failedStep;
+final Omittable<String?> failedStep;
 
-final String? errorMessage;
+final Omittable<String?> errorMessage;
 
-final int? importPercent;
+final Omittable<int?> importPercent;
 
-final int? commitCount;
+final Omittable<int?> commitCount;
 
-final int? pushPercent;
+final Omittable<int?> pushPercent;
 
 final bool? hasLargeFiles;
 
@@ -130,7 +130,7 @@ final List<ImportProjectChoices>? projectChoices;
 
 final String? message;
 
-final int? authorsCount;
+final Omittable<int?> authorsCount;
 
 final Uri url;
 
@@ -143,56 +143,56 @@ final Uri repositoryUrl;
 final String? svnRoot;
 
 Map<String, dynamic> toJson() { return {
-  'vcs': ?vcs,
+  'vcs': vcs,
   'use_lfs': ?useLfs,
   'vcs_url': vcsUrl,
   'svc_root': ?svcRoot,
   'tfvc_project': ?tfvcProject,
   'status': status.toJson(),
-  'status_text': ?statusText,
-  'failed_step': ?failedStep,
-  'error_message': ?errorMessage,
-  'import_percent': ?importPercent,
-  'commit_count': ?commitCount,
-  'push_percent': ?pushPercent,
+  if (statusText.isPresent) 'status_text': statusText.value,
+  if (failedStep.isPresent) 'failed_step': failedStep.value,
+  if (errorMessage.isPresent) 'error_message': errorMessage.value,
+  if (importPercent.isPresent) 'import_percent': importPercent.value,
+  if (commitCount.isPresent) 'commit_count': commitCount.value,
+  if (pushPercent.isPresent) 'push_percent': pushPercent.value,
   'has_large_files': ?hasLargeFiles,
   'large_files_size': ?largeFilesSize,
   'large_files_count': ?largeFilesCount,
   if (projectChoices != null) 'project_choices': projectChoices?.map((e) => e.toJson()).toList(),
   'message': ?message,
-  'authors_count': ?authorsCount,
+  if (authorsCount.isPresent) 'authors_count': authorsCount.value,
   'url': url.toString(),
   'html_url': htmlUrl.toString(),
   'authors_url': authorsUrl.toString(),
   'repository_url': repositoryUrl.toString(),
   'svn_root': ?svnRoot,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('vcs') && json['vcs'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('vcs') && (json['vcs'] == null || json['vcs'] is String) &&
       json.containsKey('vcs_url') && json['vcs_url'] is String &&
       json.containsKey('status') &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('authors_url') && json['authors_url'] is String &&
       json.containsKey('repository_url') && json['repository_url'] is String; } 
-Import copyWith({String? Function()? vcs, bool Function()? useLfs, String? vcsUrl, String Function()? svcRoot, String Function()? tfvcProject, ImportStatus? status, String? Function()? statusText, String? Function()? failedStep, String? Function()? errorMessage, int? Function()? importPercent, int? Function()? commitCount, int? Function()? pushPercent, bool Function()? hasLargeFiles, int Function()? largeFilesSize, int Function()? largeFilesCount, List<ImportProjectChoices> Function()? projectChoices, String Function()? message, int? Function()? authorsCount, Uri? url, Uri? htmlUrl, Uri? authorsUrl, Uri? repositoryUrl, String Function()? svnRoot, }) { return Import(
+Import copyWith({String? Function()? vcs, bool? Function()? useLfs, String? vcsUrl, String? Function()? svcRoot, String? Function()? tfvcProject, ImportStatus? status, Omittable<String?>? statusText, Omittable<String?>? failedStep, Omittable<String?>? errorMessage, Omittable<int?>? importPercent, Omittable<int?>? commitCount, Omittable<int?>? pushPercent, bool? Function()? hasLargeFiles, int? Function()? largeFilesSize, int? Function()? largeFilesCount, List<ImportProjectChoices>? Function()? projectChoices, String? Function()? message, Omittable<int?>? authorsCount, Uri? url, Uri? htmlUrl, Uri? authorsUrl, Uri? repositoryUrl, String? Function()? svnRoot, }) { return Import(
   vcs: vcs != null ? vcs() : this.vcs,
   useLfs: useLfs != null ? useLfs() : this.useLfs,
   vcsUrl: vcsUrl ?? this.vcsUrl,
   svcRoot: svcRoot != null ? svcRoot() : this.svcRoot,
   tfvcProject: tfvcProject != null ? tfvcProject() : this.tfvcProject,
   status: status ?? this.status,
-  statusText: statusText != null ? statusText() : this.statusText,
-  failedStep: failedStep != null ? failedStep() : this.failedStep,
-  errorMessage: errorMessage != null ? errorMessage() : this.errorMessage,
-  importPercent: importPercent != null ? importPercent() : this.importPercent,
-  commitCount: commitCount != null ? commitCount() : this.commitCount,
-  pushPercent: pushPercent != null ? pushPercent() : this.pushPercent,
+  statusText: statusText ?? this.statusText,
+  failedStep: failedStep ?? this.failedStep,
+  errorMessage: errorMessage ?? this.errorMessage,
+  importPercent: importPercent ?? this.importPercent,
+  commitCount: commitCount ?? this.commitCount,
+  pushPercent: pushPercent ?? this.pushPercent,
   hasLargeFiles: hasLargeFiles != null ? hasLargeFiles() : this.hasLargeFiles,
   largeFilesSize: largeFilesSize != null ? largeFilesSize() : this.largeFilesSize,
   largeFilesCount: largeFilesCount != null ? largeFilesCount() : this.largeFilesCount,
   projectChoices: projectChoices != null ? projectChoices() : this.projectChoices,
   message: message != null ? message() : this.message,
-  authorsCount: authorsCount != null ? authorsCount() : this.authorsCount,
+  authorsCount: authorsCount ?? this.authorsCount,
   url: url ?? this.url,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   authorsUrl: authorsUrl ?? this.authorsUrl,

@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('radius') && json['radius'] is num; } 
-Circle copyWith({String? type, double? radius, String Function()? color, }) { return Circle(
+Circle copyWith({String? type, double? radius, String? Function()? color, }) { return Circle(
   type: type ?? this.type,
   radius: radius ?? this.radius,
   color: color != null ? color() : this.color,

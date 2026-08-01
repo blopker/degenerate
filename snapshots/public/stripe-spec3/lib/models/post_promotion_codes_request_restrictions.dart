@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'minimum_amount_currency': ?minimumAmountCurrency,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency_options', 'first_time_transaction', 'minimum_amount', 'minimum_amount_currency'}.contains(key)); } 
-PostPromotionCodesRequestRestrictions copyWith({Map<String, PostPromotionCodesRequestRestrictionsCurrencyOptionsValue> Function()? currencyOptions, bool Function()? firstTimeTransaction, int Function()? minimumAmount, String Function()? minimumAmountCurrency, }) { return PostPromotionCodesRequestRestrictions(
+PostPromotionCodesRequestRestrictions copyWith({Map<String, PostPromotionCodesRequestRestrictionsCurrencyOptionsValue>? Function()? currencyOptions, bool? Function()? firstTimeTransaction, int? Function()? minimumAmount, String? Function()? minimumAmountCurrency, }) { return PostPromotionCodesRequestRestrictions(
   currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
   firstTimeTransaction: firstTimeTransaction != null ? firstTimeTransaction() : this.firstTimeTransaction,
   minimumAmount: minimumAmount != null ? minimumAmount() : this.minimumAmount,

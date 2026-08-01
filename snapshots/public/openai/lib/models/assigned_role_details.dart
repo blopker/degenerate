@@ -56,22 +56,22 @@ Map<String, dynamic> toJson() { return {
   'permissions': permissions,
   'resource_type': resourceType,
   'predefined_role': predefinedRole,
-  'description': ?description,
-  'created_at': ?createdAt,
-  'updated_at': ?updatedAt,
-  'created_by': ?createdBy,
-  'created_by_user_obj': ?createdByUserObj,
-  'metadata': ?metadata,
+  'description': description,
+  'created_at': createdAt,
+  'updated_at': updatedAt,
+  'created_by': createdBy,
+  'created_by_user_obj': createdByUserObj,
+  'metadata': metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('permissions') &&
       json.containsKey('resource_type') && json['resource_type'] is String &&
       json.containsKey('predefined_role') && json['predefined_role'] is bool &&
-      json.containsKey('description') && json['description'] is String &&
-      json.containsKey('created_at') && json['created_at'] is num &&
-      json.containsKey('updated_at') && json['updated_at'] is num &&
-      json.containsKey('created_by') && json['created_by'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
+      json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is num) &&
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is num) &&
+      json.containsKey('created_by') && (json['created_by'] == null || json['created_by'] is String) &&
       json.containsKey('created_by_user_obj') &&
       json.containsKey('metadata'); } 
 AssignedRoleDetails copyWith({String? id, String? name, List<String>? permissions, String? resourceType, bool? predefinedRole, String? Function()? description, int? Function()? createdAt, int? Function()? updatedAt, String? Function()? createdBy, Map<String, dynamic>? Function()? createdByUserObj, Map<String, dynamic>? Function()? metadata, }) { return AssignedRoleDetails(

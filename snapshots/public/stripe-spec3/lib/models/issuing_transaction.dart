@@ -80,50 +80,50 @@ bool get isUnknown { return !values.contains(this); }
 /// `Transaction` object.
 /// 
 /// Related guide: [Issued card transactions](https://docs.stripe.com/issuing/purchases/transactions)
-@immutable final class IssuingTransaction {const IssuingTransaction({required this.amount, required this.card, required this.created, required this.currency, required this.id, required this.livemode, required this.merchantAmount, required this.merchantCurrency, required this.merchantData, required this.metadata, required this.object, required this.type, this.amountDetails, this.authorization, this.balanceTransaction, this.cardholder, this.dispute, this.networkData, this.purchaseDetails, this.token, this.treasury, this.wallet, });
+@immutable final class IssuingTransaction {const IssuingTransaction({required this.amount, required this.card, required this.created, required this.currency, required this.id, required this.livemode, required this.merchantAmount, required this.merchantCurrency, required this.merchantData, required this.metadata, required this.object, required this.type, this.amountDetails = const Omittable.absent(), this.authorization = const Omittable.absent(), this.balanceTransaction = const Omittable.absent(), this.cardholder = const Omittable.absent(), this.dispute = const Omittable.absent(), this.networkData = const Omittable.absent(), this.purchaseDetails = const Omittable.absent(), this.token = const Omittable.absent(), this.treasury = const Omittable.absent(), this.wallet = const Omittable.absent(), });
 
 factory IssuingTransaction.fromJson(Map<String, dynamic> json) { return IssuingTransaction(
   amount: (json['amount'] as num).toInt(),
-  amountDetails: json['amount_details'] != null ? IssuingTransactionAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
-  authorization: json['authorization'] != null ? OneOf2.parse(json['authorization'], fromA: (v) => v as String, fromB: (v) => IssuingAuthorization.fromJson(v as Map<String, dynamic>),) : null,
-  balanceTransaction: json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null,
+  amountDetails: json.containsKey('amount_details') ? Omittable(json['amount_details'] != null ? IssuingTransactionAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  authorization: json.containsKey('authorization') ? Omittable(json['authorization'] != null ? OneOf2.parse(json['authorization'], fromA: (v) => v as String, fromB: (v) => IssuingAuthorization.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   card: OneOf2.parse(json['card'], fromA: (v) => v as String, fromB: (v) => IssuingCard.fromJson(v as Map<String, dynamic>),),
-  cardholder: json['cardholder'] != null ? OneOf2.parse(json['cardholder'], fromA: (v) => v as String, fromB: (v) => IssuingCardholder.fromJson(v as Map<String, dynamic>),) : null,
+  cardholder: json.containsKey('cardholder') ? Omittable(json['cardholder'] != null ? OneOf2.parse(json['cardholder'], fromA: (v) => v as String, fromB: (v) => IssuingCardholder.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  dispute: json['dispute'] != null ? OneOf2.parse(json['dispute'], fromA: (v) => v as String, fromB: (v) => IssuingDispute.fromJson(v as Map<String, dynamic>),) : null,
+  dispute: json.containsKey('dispute') ? Omittable(json['dispute'] != null ? OneOf2.parse(json['dispute'], fromA: (v) => v as String, fromB: (v) => IssuingDispute.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   merchantAmount: (json['merchant_amount'] as num).toInt(),
   merchantCurrency: json['merchant_currency'] as String,
   merchantData: IssuingAuthorizationMerchantData.fromJson(json['merchant_data'] as Map<String, dynamic>),
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  networkData: json['network_data'] != null ? IssuingTransactionNetworkData.fromJson(json['network_data'] as Map<String, dynamic>) : null,
+  networkData: json.containsKey('network_data') ? Omittable(json['network_data'] != null ? IssuingTransactionNetworkData.fromJson(json['network_data'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   object: IssuingTransactionObject.fromJson(json['object'] as String),
-  purchaseDetails: json['purchase_details'] != null ? IssuingTransactionPurchaseDetails.fromJson(json['purchase_details'] as Map<String, dynamic>) : null,
-  token: json['token'] != null ? OneOf2.parse(json['token'], fromA: (v) => v as String, fromB: (v) => IssuingToken.fromJson(v as Map<String, dynamic>),) : null,
-  treasury: json['treasury'] != null ? IssuingTransactionTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null,
+  purchaseDetails: json.containsKey('purchase_details') ? Omittable(json['purchase_details'] != null ? IssuingTransactionPurchaseDetails.fromJson(json['purchase_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  token: json.containsKey('token') ? Omittable(json['token'] != null ? OneOf2.parse(json['token'], fromA: (v) => v as String, fromB: (v) => IssuingToken.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  treasury: json.containsKey('treasury') ? Omittable(json['treasury'] != null ? IssuingTransactionTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: IssuingTransactionType.fromJson(json['type'] as String),
-  wallet: json['wallet'] != null ? IssuingTransactionWallet.fromJson(json['wallet'] as String) : null,
+  wallet: json.containsKey('wallet') ? Omittable(json['wallet'] != null ? IssuingTransactionWallet.fromJson(json['wallet'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// The transaction amount, which will be reflected in your balance. This amount is in your currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
 final int amount;
 
 /// Detailed breakdown of amount components. These amounts are denominated in `currency` and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
-final IssuingTransactionAmountDetails? amountDetails;
+final Omittable<IssuingTransactionAmountDetails?> amountDetails;
 
 /// The `Authorization` object that led to this transaction.
-final IssuingTransactionAuthorization? authorization;
+final Omittable<IssuingTransactionAuthorization?> authorization;
 
 /// ID of the [balance transaction](https://docs.stripe.com/api/balance_transactions) associated with this transaction.
-final IssuingTransactionBalanceTransaction? balanceTransaction;
+final Omittable<IssuingTransactionBalanceTransaction?> balanceTransaction;
 
 /// The card used to make this transaction.
 final IssuingTransactionCard card;
 
 /// The cardholder to whom this transaction belongs.
-final IssuingTransactionCardholder? cardholder;
+final Omittable<IssuingTransactionCardholder?> cardholder;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -132,7 +132,7 @@ final int created;
 final String currency;
 
 /// If you've disputed the transaction, the ID of the dispute.
-final IssuingTransactionDispute? dispute;
+final Omittable<IssuingTransactionDispute?> dispute;
 
 /// Unique identifier for the object.
 final String id;
@@ -152,49 +152,49 @@ final IssuingAuthorizationMerchantData merchantData;
 final Map<String,String> metadata;
 
 /// Details about the transaction, such as processing dates, set by the card network.
-final IssuingTransactionNetworkData? networkData;
+final Omittable<IssuingTransactionNetworkData?> networkData;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final IssuingTransactionObject object;
 
 /// Additional purchase information that is optionally provided by the merchant.
-final IssuingTransactionPurchaseDetails? purchaseDetails;
+final Omittable<IssuingTransactionPurchaseDetails?> purchaseDetails;
 
 /// [Token](https://docs.stripe.com/api/issuing/tokens/object) object used for this transaction. If a network token was not used for this transaction, this field will be null.
-final IssuingTransactionToken? token;
+final Omittable<IssuingTransactionToken?> token;
 
 /// [Treasury](https://docs.stripe.com/api/treasury) details related to this transaction if it was created on a [FinancialAccount](/docs/api/treasury/financial_accounts
-final IssuingTransactionTreasury? treasury;
+final Omittable<IssuingTransactionTreasury?> treasury;
 
 /// The nature of the transaction.
 final IssuingTransactionType type;
 
 /// The digital wallet used for this transaction. One of `apple_pay`, `google_pay`, or `samsung_pay`.
-final IssuingTransactionWallet? wallet;
+final Omittable<IssuingTransactionWallet?> wallet;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
-  if (amountDetails != null) 'amount_details': amountDetails?.toJson(),
-  if (authorization != null) 'authorization': authorization?.toJson(),
-  if (balanceTransaction != null) 'balance_transaction': balanceTransaction?.toJson(),
+  if (amountDetails.isPresent) 'amount_details': amountDetails.value?.toJson(),
+  if (authorization.isPresent) 'authorization': authorization.value?.toJson(),
+  if (balanceTransaction.isPresent) 'balance_transaction': balanceTransaction.value?.toJson(),
   'card': card.toJson(),
-  if (cardholder != null) 'cardholder': cardholder?.toJson(),
+  if (cardholder.isPresent) 'cardholder': cardholder.value?.toJson(),
   'created': created,
   'currency': currency,
-  if (dispute != null) 'dispute': dispute?.toJson(),
+  if (dispute.isPresent) 'dispute': dispute.value?.toJson(),
   'id': id,
   'livemode': livemode,
   'merchant_amount': merchantAmount,
   'merchant_currency': merchantCurrency,
   'merchant_data': merchantData.toJson(),
   'metadata': metadata,
-  if (networkData != null) 'network_data': networkData?.toJson(),
+  if (networkData.isPresent) 'network_data': networkData.value?.toJson(),
   'object': object.toJson(),
-  if (purchaseDetails != null) 'purchase_details': purchaseDetails?.toJson(),
-  if (token != null) 'token': token?.toJson(),
-  if (treasury != null) 'treasury': treasury?.toJson(),
+  if (purchaseDetails.isPresent) 'purchase_details': purchaseDetails.value?.toJson(),
+  if (token.isPresent) 'token': token.value?.toJson(),
+  if (treasury.isPresent) 'treasury': treasury.value?.toJson(),
   'type': type.toJson(),
-  if (wallet != null) 'wallet': wallet?.toJson(),
+  if (wallet.isPresent) 'wallet': wallet.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('card') &&
@@ -208,29 +208,29 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('type'); } 
-IssuingTransaction copyWith({int? amount, IssuingTransactionAmountDetails? Function()? amountDetails, IssuingTransactionAuthorization? Function()? authorization, IssuingTransactionBalanceTransaction? Function()? balanceTransaction, IssuingTransactionCard? card, IssuingTransactionCardholder? Function()? cardholder, int? created, String? currency, IssuingTransactionDispute? Function()? dispute, String? id, bool? livemode, int? merchantAmount, String? merchantCurrency, IssuingAuthorizationMerchantData? merchantData, Map<String,String>? metadata, IssuingTransactionNetworkData? Function()? networkData, IssuingTransactionObject? object, IssuingTransactionPurchaseDetails? Function()? purchaseDetails, IssuingTransactionToken? Function()? token, IssuingTransactionTreasury? Function()? treasury, IssuingTransactionType? type, IssuingTransactionWallet? Function()? wallet, }) { return IssuingTransaction(
+IssuingTransaction copyWith({int? amount, Omittable<IssuingTransactionAmountDetails?>? amountDetails, Omittable<IssuingTransactionAuthorization?>? authorization, Omittable<IssuingTransactionBalanceTransaction?>? balanceTransaction, IssuingTransactionCard? card, Omittable<IssuingTransactionCardholder?>? cardholder, int? created, String? currency, Omittable<IssuingTransactionDispute?>? dispute, String? id, bool? livemode, int? merchantAmount, String? merchantCurrency, IssuingAuthorizationMerchantData? merchantData, Map<String,String>? metadata, Omittable<IssuingTransactionNetworkData?>? networkData, IssuingTransactionObject? object, Omittable<IssuingTransactionPurchaseDetails?>? purchaseDetails, Omittable<IssuingTransactionToken?>? token, Omittable<IssuingTransactionTreasury?>? treasury, IssuingTransactionType? type, Omittable<IssuingTransactionWallet?>? wallet, }) { return IssuingTransaction(
   amount: amount ?? this.amount,
-  amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
-  authorization: authorization != null ? authorization() : this.authorization,
-  balanceTransaction: balanceTransaction != null ? balanceTransaction() : this.balanceTransaction,
+  amountDetails: amountDetails ?? this.amountDetails,
+  authorization: authorization ?? this.authorization,
+  balanceTransaction: balanceTransaction ?? this.balanceTransaction,
   card: card ?? this.card,
-  cardholder: cardholder != null ? cardholder() : this.cardholder,
+  cardholder: cardholder ?? this.cardholder,
   created: created ?? this.created,
   currency: currency ?? this.currency,
-  dispute: dispute != null ? dispute() : this.dispute,
+  dispute: dispute ?? this.dispute,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   merchantAmount: merchantAmount ?? this.merchantAmount,
   merchantCurrency: merchantCurrency ?? this.merchantCurrency,
   merchantData: merchantData ?? this.merchantData,
   metadata: metadata ?? this.metadata,
-  networkData: networkData != null ? networkData() : this.networkData,
+  networkData: networkData ?? this.networkData,
   object: object ?? this.object,
-  purchaseDetails: purchaseDetails != null ? purchaseDetails() : this.purchaseDetails,
-  token: token != null ? token() : this.token,
-  treasury: treasury != null ? treasury() : this.treasury,
+  purchaseDetails: purchaseDetails ?? this.purchaseDetails,
+  token: token ?? this.token,
+  treasury: treasury ?? this.treasury,
   type: type ?? this.type,
-  wallet: wallet != null ? wallet() : this.wallet,
+  wallet: wallet ?? this.wallet,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingTransaction &&

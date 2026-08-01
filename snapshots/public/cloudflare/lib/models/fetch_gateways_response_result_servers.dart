@@ -27,14 +27,14 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FetchGatewaysResponseResultServersAuthType($value)'; } 
  }
-@immutable final class FetchGatewaysResponseResultServers {const FetchGatewaysResponseResultServers({required this.authType, required this.hostname, required this.id, required this.name, required this.prompts, required this.tools, required this.updatedPrompts, required this.updatedTools, this.createdAt, this.createdBy, this.defaultDisabled = false, this.description, this.error, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, this.onBehalf = true, this.status = 'waiting', });
+@immutable final class FetchGatewaysResponseResultServers {const FetchGatewaysResponseResultServers({required this.authType, required this.hostname, required this.id, required this.name, required this.prompts, required this.tools, required this.updatedPrompts, required this.updatedTools, this.createdAt, this.createdBy, this.defaultDisabled = false, this.description = const Omittable.absent(), this.error, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, this.onBehalf = true, this.status = 'waiting', });
 
 factory FetchGatewaysResponseResultServers.fromJson(Map<String, dynamic> json) { return FetchGatewaysResponseResultServers(
   authType: FetchGatewaysResponseResultServersAuthType.fromJson(json['auth_type'] as String),
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   createdBy: json['created_by'] as String?,
   defaultDisabled: json.containsKey('default_disabled') ? json['default_disabled'] as bool : false,
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   error: json['error'] as String?,
   hostname: Uri.parse(json['hostname'] as String),
   id: json['id'] as String,
@@ -59,7 +59,7 @@ final String? createdBy;
 
 final bool defaultDisabled;
 
-final String? description;
+final Omittable<String?> description;
 
 final String? error;
 
@@ -95,7 +95,7 @@ Map<String, dynamic> toJson() { return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'created_by': ?createdBy,
   'default_disabled': defaultDisabled,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'error': ?error,
   'hostname': hostname.toString(),
   'id': id,
@@ -119,12 +119,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_
       json.containsKey('tools') &&
       json.containsKey('updated_prompts') &&
       json.containsKey('updated_tools'); } 
-FetchGatewaysResponseResultServers copyWith({FetchGatewaysResponseResultServersAuthType? authType, DateTime Function()? createdAt, String Function()? createdBy, bool Function()? defaultDisabled, String? Function()? description, String Function()? error, Uri? hostname, String? id, DateTime Function()? lastSuccessfulSync, DateTime Function()? lastSynced, DateTime Function()? modifiedAt, String Function()? modifiedBy, String? name, bool Function()? onBehalf, List<Map<String,dynamic>>? prompts, String Function()? status, List<Map<String,dynamic>>? tools, List<Map<String,dynamic>>? updatedPrompts, List<Map<String,dynamic>>? updatedTools, }) { return FetchGatewaysResponseResultServers(
+FetchGatewaysResponseResultServers copyWith({FetchGatewaysResponseResultServersAuthType? authType, DateTime? Function()? createdAt, String? Function()? createdBy, bool Function()? defaultDisabled, Omittable<String?>? description, String? Function()? error, Uri? hostname, String? id, DateTime? Function()? lastSuccessfulSync, DateTime? Function()? lastSynced, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, bool Function()? onBehalf, List<Map<String,dynamic>>? prompts, String Function()? status, List<Map<String,dynamic>>? tools, List<Map<String,dynamic>>? updatedPrompts, List<Map<String,dynamic>>? updatedTools, }) { return FetchGatewaysResponseResultServers(
   authType: authType ?? this.authType,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
   defaultDisabled: defaultDisabled != null ? defaultDisabled() : this.defaultDisabled,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   error: error != null ? error() : this.error,
   hostname: hostname ?? this.hostname,
   id: id ?? this.id,

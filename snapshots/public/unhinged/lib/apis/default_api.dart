@@ -2,7 +2,9 @@
 
 import 'dart:async';
 import 'dart:convert';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+
 import '../models/list_model.dart';
 import '../models/object_model.dart';
 import '../models/proto.dart';

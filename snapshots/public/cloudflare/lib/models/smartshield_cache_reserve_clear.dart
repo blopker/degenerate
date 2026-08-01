@@ -23,27 +23,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SmartshieldCacheReserveClearId($value)'; } 
  }
 /// You can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. In most cases, this will be accomplished within 24 hours. You cannot re-enable Cache Reserve while this process is ongoing. Keep in mind that you cannot undo or cancel this operation.
-@immutable final class SmartshieldCacheReserveClear {const SmartshieldCacheReserveClear({required this.id, this.modifiedOn, });
+@immutable final class SmartshieldCacheReserveClear {const SmartshieldCacheReserveClear({required this.id, this.modifiedOn = const Omittable.absent(), });
 
 factory SmartshieldCacheReserveClear.fromJson(Map<String, dynamic> json) { return SmartshieldCacheReserveClear(
   id: SmartshieldCacheReserveClearId.fromJson(json['id'] as String),
-  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
+  modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// ID of the zone setting.
 final SmartshieldCacheReserveClearId id;
 
 /// Last time this setting was modified.
-final DateTime? modifiedOn;
+final Omittable<DateTime?> modifiedOn;
 
 Map<String, dynamic> toJson() { return {
   'id': id.toJson(),
-  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
+  if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-SmartshieldCacheReserveClear copyWith({SmartshieldCacheReserveClearId? id, DateTime? Function()? modifiedOn, }) { return SmartshieldCacheReserveClear(
+SmartshieldCacheReserveClear copyWith({SmartshieldCacheReserveClearId? id, Omittable<DateTime?>? modifiedOn, }) { return SmartshieldCacheReserveClear(
   id: id ?? this.id,
-  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is SmartshieldCacheReserveClear &&

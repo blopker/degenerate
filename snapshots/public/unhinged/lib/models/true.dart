@@ -232,7 +232,7 @@ final class True {
   Map<String, dynamic> toJson() {
     return {
       'false': $false,
-      'none': ?none,
+      'none': none,
       'null': $null.toJson(),
       '0': $0.toJson(),
       '': $empty,
@@ -263,13 +263,13 @@ final class True {
     TrueNull? $null,
     True0? $0,
     String? $empty,
-    String Function()? constructor,
-    String Function()? proto,
-    String Function()? hasOwnProperty,
-    String Function()? type,
-    String Function()? $ref,
-    String Function()? $id,
-    String Function()? xExtensionLookalike,
+    String? Function()? constructor,
+    String? Function()? proto,
+    String? Function()? hasOwnProperty,
+    String? Function()? type,
+    String? Function()? $ref,
+    String? Function()? $id,
+    String? Function()? xExtensionLookalike,
     Map<String, True>? additionalProperties,
   }) {
     return True(

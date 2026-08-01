@@ -14,12 +14,12 @@ num toJson() => value;
 
 }
 /// The details of the D1 database.
-@immutable final class D1DatabaseDetailsResponse {const D1DatabaseDetailsResponse({this.createdAt, this.fileSize, this.jurisdiction, this.name, this.numTables, this.readReplication, this.uuid, this.version, });
+@immutable final class D1DatabaseDetailsResponse {const D1DatabaseDetailsResponse({this.createdAt, this.fileSize, this.jurisdiction = const Omittable.absent(), this.name, this.numTables, this.readReplication, this.uuid, this.version, });
 
 factory D1DatabaseDetailsResponse.fromJson(Map<String, dynamic> json) { return D1DatabaseDetailsResponse(
   createdAt: json['created_at'] != null ? D1CreatedAt.fromJson(json['created_at'] as String) : null,
   fileSize: json['file_size'] != null ? D1FileSize.fromJson(json['file_size'] as num) : null,
-  jurisdiction: json['jurisdiction'] != null ? D1JurisdictionNullable.fromJson(json['jurisdiction'] as String) : null,
+  jurisdiction: json.containsKey('jurisdiction') ? Omittable(json['jurisdiction'] != null ? D1JurisdictionNullable.fromJson(json['jurisdiction'] as String) : null) : const Omittable.absent(),
   name: json['name'] != null ? D1DatabaseName.fromJson(json['name'] as String) : null,
   numTables: json['num_tables'] != null ? D1TableCount.fromJson(json['num_tables'] as num) : null,
   readReplication: json['read_replication'] != null ? D1ReadReplicationDetails.fromJson(json['read_replication'] as Map<String, dynamic>) : null,
@@ -32,7 +32,7 @@ final D1CreatedAt? createdAt;
 
 final D1FileSize? fileSize;
 
-final D1JurisdictionNullable? jurisdiction;
+final Omittable<D1JurisdictionNullable?> jurisdiction;
 
 final D1DatabaseName? name;
 
@@ -47,7 +47,7 @@ final D1DatabaseVersion? version;
 Map<String, dynamic> toJson() { return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (fileSize != null) 'file_size': fileSize?.toJson(),
-  if (jurisdiction != null) 'jurisdiction': jurisdiction?.toJson(),
+  if (jurisdiction.isPresent) 'jurisdiction': jurisdiction.value?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (numTables != null) 'num_tables': numTables?.toJson(),
   if (readReplication != null) 'read_replication': readReplication?.toJson(),
@@ -55,10 +55,10 @@ Map<String, dynamic> toJson() { return {
   if (version != null) 'version': version?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'file_size', 'jurisdiction', 'name', 'num_tables', 'read_replication', 'uuid', 'version'}.contains(key)); } 
-D1DatabaseDetailsResponse copyWith({D1CreatedAt Function()? createdAt, D1FileSize Function()? fileSize, D1JurisdictionNullable? Function()? jurisdiction, D1DatabaseName Function()? name, D1TableCount Function()? numTables, D1ReadReplicationDetails Function()? readReplication, D1DatabaseIdentifier Function()? uuid, D1DatabaseVersion Function()? version, }) { return D1DatabaseDetailsResponse(
+D1DatabaseDetailsResponse copyWith({D1CreatedAt? Function()? createdAt, D1FileSize? Function()? fileSize, Omittable<D1JurisdictionNullable?>? jurisdiction, D1DatabaseName? Function()? name, D1TableCount? Function()? numTables, D1ReadReplicationDetails? Function()? readReplication, D1DatabaseIdentifier? Function()? uuid, D1DatabaseVersion? Function()? version, }) { return D1DatabaseDetailsResponse(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   fileSize: fileSize != null ? fileSize() : this.fileSize,
-  jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
+  jurisdiction: jurisdiction ?? this.jurisdiction,
   name: name != null ? name() : this.name,
   numTables: numTables != null ? numTables() : this.numTables,
   readReplication: readReplication != null ? readReplication() : this.readReplication,

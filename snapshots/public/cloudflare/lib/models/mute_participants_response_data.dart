@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (participants != null) 'participants': participants?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'participants'}.contains(key)); } 
-MuteParticipantsResponseData copyWith({String Function()? action, List<RealtimekitSessionParticipant> Function()? participants, }) { return MuteParticipantsResponseData(
+MuteParticipantsResponseData copyWith({String? Function()? action, List<RealtimekitSessionParticipant>? Function()? participants, }) { return MuteParticipantsResponseData(
   action: action != null ? action() : this.action,
   participants: participants != null ? participants() : this.participants,
 ); } 

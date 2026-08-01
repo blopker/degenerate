@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (issuer != null) 'issuer': issuer?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tax_ids', 'issuer'}.contains(key)); } 
-PostSubscriptionsRequestInvoiceSettings copyWith({PostSubscriptionsRequestInvoiceSettingsAccountTaxIds Function()? accountTaxIds, PostSubscriptionsRequestInvoiceSettingsIssuer Function()? issuer, }) { return PostSubscriptionsRequestInvoiceSettings(
+PostSubscriptionsRequestInvoiceSettings copyWith({PostSubscriptionsRequestInvoiceSettingsAccountTaxIds? Function()? accountTaxIds, PostSubscriptionsRequestInvoiceSettingsIssuer? Function()? issuer, }) { return PostSubscriptionsRequestInvoiceSettings(
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   issuer: issuer != null ? issuer() : this.issuer,
 ); } 

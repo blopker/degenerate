@@ -14,8 +14,8 @@ final Map<String,dynamic>? headers;
 final Map<String,dynamic>? payload;
 
 Map<String, dynamic> toJson() { return {
-  'headers': ?headers,
-  'payload': ?payload,
+  'headers': headers,
+  'payload': payload,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('headers') &&
       json.containsKey('payload'); } 

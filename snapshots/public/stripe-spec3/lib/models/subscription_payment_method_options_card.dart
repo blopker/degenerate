@@ -87,32 +87,32 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionPaymentMethodOptionsCardRequestThreeDSecure($value)'; } 
  }
 /// 
-@immutable final class SubscriptionPaymentMethodOptionsCard {const SubscriptionPaymentMethodOptionsCard({this.mandateOptions, this.network, this.requestThreeDSecure, });
+@immutable final class SubscriptionPaymentMethodOptionsCard {const SubscriptionPaymentMethodOptionsCard({this.mandateOptions, this.network = const Omittable.absent(), this.requestThreeDSecure = const Omittable.absent(), });
 
 factory SubscriptionPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return SubscriptionPaymentMethodOptionsCard(
   mandateOptions: json['mandate_options'] != null ? InvoiceMandateOptionsCard.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
-  network: json['network'] != null ? SubscriptionPaymentMethodOptionsCardNetwork.fromJson(json['network'] as String) : null,
-  requestThreeDSecure: json['request_three_d_secure'] != null ? SubscriptionPaymentMethodOptionsCardRequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null,
+  network: json.containsKey('network') ? Omittable(json['network'] != null ? SubscriptionPaymentMethodOptionsCardNetwork.fromJson(json['network'] as String) : null) : const Omittable.absent(),
+  requestThreeDSecure: json.containsKey('request_three_d_secure') ? Omittable(json['request_three_d_secure'] != null ? SubscriptionPaymentMethodOptionsCardRequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null) : const Omittable.absent(),
 ); }
 
 final InvoiceMandateOptionsCard? mandateOptions;
 
 /// Selected network to process this Subscription on. Depends on the available networks of the card attached to the Subscription. Can be only set confirm-time.
-final SubscriptionPaymentMethodOptionsCardNetwork? network;
+final Omittable<SubscriptionPaymentMethodOptionsCardNetwork?> network;
 
 /// We strongly recommend that you rely on our SCA Engine to automatically prompt your customers for authentication based on risk level and [other requirements](https://docs.stripe.com/strong-customer-authentication). However, if you wish to request 3D Secure based on logic from your own fraud engine, provide this option. Read our guide on [manually requesting 3D Secure](https://docs.stripe.com/payments/3d-secure/authentication-flow#manual-three-ds) for more information on how this configuration interacts with Radar and our SCA Engine.
-final SubscriptionPaymentMethodOptionsCardRequestThreeDSecure? requestThreeDSecure;
+final Omittable<SubscriptionPaymentMethodOptionsCardRequestThreeDSecure?> requestThreeDSecure;
 
 Map<String, dynamic> toJson() { return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
-  if (network != null) 'network': network?.toJson(),
-  if (requestThreeDSecure != null) 'request_three_d_secure': requestThreeDSecure?.toJson(),
+  if (network.isPresent) 'network': network.value?.toJson(),
+  if (requestThreeDSecure.isPresent) 'request_three_d_secure': requestThreeDSecure.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'network', 'request_three_d_secure'}.contains(key)); } 
-SubscriptionPaymentMethodOptionsCard copyWith({InvoiceMandateOptionsCard Function()? mandateOptions, SubscriptionPaymentMethodOptionsCardNetwork? Function()? network, SubscriptionPaymentMethodOptionsCardRequestThreeDSecure? Function()? requestThreeDSecure, }) { return SubscriptionPaymentMethodOptionsCard(
+SubscriptionPaymentMethodOptionsCard copyWith({InvoiceMandateOptionsCard? Function()? mandateOptions, Omittable<SubscriptionPaymentMethodOptionsCardNetwork?>? network, Omittable<SubscriptionPaymentMethodOptionsCardRequestThreeDSecure?>? requestThreeDSecure, }) { return SubscriptionPaymentMethodOptionsCard(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
-  network: network != null ? network() : this.network,
-  requestThreeDSecure: requestThreeDSecure != null ? requestThreeDSecure() : this.requestThreeDSecure,
+  network: network ?? this.network,
+  requestThreeDSecure: requestThreeDSecure ?? this.requestThreeDSecure,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is SubscriptionPaymentMethodOptionsCard &&

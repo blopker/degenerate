@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   if (serviceAccount != null) 'service_account': serviceAccount?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'user', 'service_account'}.contains(key)); } 
-Key3Owner copyWith({Key3OwnerType Function()? type, ProjectUser Function()? user, ProjectServiceAccount Function()? serviceAccount, }) { return Key3Owner(
+Key3Owner copyWith({Key3OwnerType? Function()? type, ProjectUser? Function()? user, ProjectServiceAccount? Function()? serviceAccount, }) { return Key3Owner(
   type: type != null ? type() : this.type,
   user: user != null ? user() : this.user,
   serviceAccount: serviceAccount != null ? serviceAccount() : this.serviceAccount,

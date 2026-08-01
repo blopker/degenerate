@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   'schemas': ?schemas,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'displayName', 'emails', 'externalId', 'id', 'meta', 'schemas'}.contains(key)); } 
-AccessUsers copyWith({bool Function()? active, String Function()? displayName, List<AccessUsersEmails> Function()? emails, String Function()? externalId, AccessId Function()? id, AccessMeta Function()? meta, List<String> Function()? schemas, }) { return AccessUsers(
+AccessUsers copyWith({bool? Function()? active, String? Function()? displayName, List<AccessUsersEmails>? Function()? emails, String? Function()? externalId, AccessId? Function()? id, AccessMeta? Function()? meta, List<String>? Function()? schemas, }) { return AccessUsers(
   active: active != null ? active() : this.active,
   displayName: displayName != null ? displayName() : this.displayName,
   emails: emails != null ? emails() : this.emails,

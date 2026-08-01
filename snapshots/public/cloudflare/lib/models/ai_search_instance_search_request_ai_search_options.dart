@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (retrieval != null) 'retrieval': retrieval?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'query_rewrite', 'reranking', 'retrieval'}.contains(key)); } 
-AiSearchInstanceSearchRequestAiSearchOptions copyWith({AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite Function()? queryRewrite, AiSearchInstanceSearchRequestAiSearchOptionsReranking Function()? reranking, AiSearchInstanceSearchRequestAiSearchOptionsRetrieval Function()? retrieval, }) { return AiSearchInstanceSearchRequestAiSearchOptions(
+AiSearchInstanceSearchRequestAiSearchOptions copyWith({AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite? Function()? queryRewrite, AiSearchInstanceSearchRequestAiSearchOptionsReranking? Function()? reranking, AiSearchInstanceSearchRequestAiSearchOptionsRetrieval? Function()? retrieval, }) { return AiSearchInstanceSearchRequestAiSearchOptions(
   queryRewrite: queryRewrite != null ? queryRewrite() : this.queryRewrite,
   reranking: reranking != null ? reranking() : this.reranking,
   retrieval: retrieval != null ? retrieval() : this.retrieval,

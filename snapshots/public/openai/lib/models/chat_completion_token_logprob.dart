@@ -24,7 +24,7 @@ final List<ChatCompletionTokenLogprobTopLogprobs> topLogprobs;
 Map<String, dynamic> toJson() { return {
   'token': token,
   'logprob': logprob,
-  'bytes': ?bytes,
+  'bytes': bytes,
   'top_logprobs': topLogprobs.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('token') && json['token'] is String &&

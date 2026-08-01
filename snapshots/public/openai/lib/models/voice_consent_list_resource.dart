@@ -21,13 +21,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'VoiceConsentListResourceObject($value)'; } 
  }
-@immutable final class VoiceConsentListResource {const VoiceConsentListResource({required this.object, required this.data, required this.hasMore, this.firstId, this.lastId, });
+@immutable final class VoiceConsentListResource {const VoiceConsentListResource({required this.object, required this.data, required this.hasMore, this.firstId = const Omittable.absent(), this.lastId = const Omittable.absent(), });
 
 factory VoiceConsentListResource.fromJson(Map<String, dynamic> json) { return VoiceConsentListResource(
   object: VoiceConsentListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => VoiceConsentResource.fromJson(e as Map<String, dynamic>)).toList(),
-  firstId: json['first_id'] as String?,
-  lastId: json['last_id'] as String?,
+  firstId: json.containsKey('first_id') ? Omittable(json['first_id'] as String?) : const Omittable.absent(),
+  lastId: json.containsKey('last_id') ? Omittable(json['last_id'] as String?) : const Omittable.absent(),
   hasMore: json['has_more'] as bool,
 ); }
 
@@ -35,27 +35,27 @@ final VoiceConsentListResourceObject object;
 
 final List<VoiceConsentResource> data;
 
-final String? firstId;
+final Omittable<String?> firstId;
 
-final String? lastId;
+final Omittable<String?> lastId;
 
 final bool hasMore;
 
 Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'data': data.map((e) => e.toJson()).toList(),
-  'first_id': ?firstId,
-  'last_id': ?lastId,
+  if (firstId.isPresent) 'first_id': firstId.value,
+  if (lastId.isPresent) 'last_id': lastId.value,
   'has_more': hasMore,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
-VoiceConsentListResource copyWith({VoiceConsentListResourceObject? object, List<VoiceConsentResource>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return VoiceConsentListResource(
+VoiceConsentListResource copyWith({VoiceConsentListResourceObject? object, List<VoiceConsentResource>? data, Omittable<String?>? firstId, Omittable<String?>? lastId, bool? hasMore, }) { return VoiceConsentListResource(
   object: object ?? this.object,
   data: data ?? this.data,
-  firstId: firstId != null ? firstId() : this.firstId,
-  lastId: lastId != null ? lastId() : this.lastId,
+  firstId: firstId ?? this.firstId,
+  lastId: lastId ?? this.lastId,
   hasMore: hasMore ?? this.hasMore,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

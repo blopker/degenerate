@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'virtual_network_id': ?virtualNetworkId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ip_addr', 'virtual_network_id'}.contains(key)); } 
-InfraIpInfoIpv4 copyWith({String Function()? ipAddr, String Function()? virtualNetworkId, }) { return InfraIpInfoIpv4(
+InfraIpInfoIpv4 copyWith({String? Function()? ipAddr, String? Function()? virtualNetworkId, }) { return InfraIpInfoIpv4(
   ipAddr: ipAddr != null ? ipAddr() : this.ipAddr,
   virtualNetworkId: virtualNetworkId != null ? virtualNetworkId() : this.virtualNetworkId,
 ); } 

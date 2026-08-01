@@ -106,14 +106,14 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'html_url': htmlUrl.toString(),
   'id': id,
-  'line': ?line,
+  'line': line,
   'node_id': nodeId,
-  'path': ?path,
-  'position': ?position,
+  'path': path,
+  'position': position,
   if (reactions != null) 'reactions': reactions?.toJson(),
   'updated_at': updatedAt,
   'url': url.toString(),
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('author_association') &&
       json.containsKey('body') && json['body'] is String &&
@@ -121,14 +121,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
-      json.containsKey('line') && json['line'] is num &&
+      json.containsKey('line') && (json['line'] == null || json['line'] is num) &&
       json.containsKey('node_id') && json['node_id'] is String &&
-      json.containsKey('path') && json['path'] is String &&
-      json.containsKey('position') && json['position'] is num &&
+      json.containsKey('path') && (json['path'] == null || json['path'] is String) &&
+      json.containsKey('position') && (json['position'] == null || json['position'] is num) &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhookCommitCommentCreatedComment copyWith({WebhookCommitCommentCreatedCommentAuthorAssociation? authorAssociation, String? body, String? commitId, String? createdAt, Uri? htmlUrl, int? id, int? Function()? line, String? nodeId, String? Function()? path, int? Function()? position, WebhookCommitCommentCreatedCommentReactions Function()? reactions, String? updatedAt, Uri? url, WebhookCommitCommentCreatedCommentUser? Function()? user, }) { return WebhookCommitCommentCreatedComment(
+WebhookCommitCommentCreatedComment copyWith({WebhookCommitCommentCreatedCommentAuthorAssociation? authorAssociation, String? body, String? commitId, String? createdAt, Uri? htmlUrl, int? id, int? Function()? line, String? nodeId, String? Function()? path, int? Function()? position, WebhookCommitCommentCreatedCommentReactions? Function()? reactions, String? updatedAt, Uri? url, WebhookCommitCommentCreatedCommentUser? Function()? user, }) { return WebhookCommitCommentCreatedComment(
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
   commitId: commitId ?? this.commitId,

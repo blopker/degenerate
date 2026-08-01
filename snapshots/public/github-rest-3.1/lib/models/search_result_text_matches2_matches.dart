@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'indices': ?indices,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'text', 'indices'}.contains(key)); } 
-SearchResultTextMatches2Matches copyWith({String Function()? text, List<int> Function()? indices, }) { return SearchResultTextMatches2Matches(
+SearchResultTextMatches2Matches copyWith({String? Function()? text, List<int>? Function()? indices, }) { return SearchResultTextMatches2Matches(
   text: text != null ? text() : this.text,
   indices: indices != null ? indices() : this.indices,
 ); } 

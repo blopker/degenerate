@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'device': device.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('device'); } 
-MconnCustomerConnectorCreateRequest copyWith({bool Function()? activated, List<MconnDayOfWeek> Function()? interruptWindowDaysOfWeek, double Function()? interruptWindowDurationHours, List<MconnEmbargoDate> Function()? interruptWindowEmbargoDates, double Function()? interruptWindowHourOfDay, String Function()? notes, String Function()? timezone, MconnCustomerDeviceOptions? device, }) { return MconnCustomerConnectorCreateRequest(
+MconnCustomerConnectorCreateRequest copyWith({bool? Function()? activated, List<MconnDayOfWeek>? Function()? interruptWindowDaysOfWeek, double? Function()? interruptWindowDurationHours, List<MconnEmbargoDate>? Function()? interruptWindowEmbargoDates, double? Function()? interruptWindowHourOfDay, String? Function()? notes, String? Function()? timezone, MconnCustomerDeviceOptions? device, }) { return MconnCustomerConnectorCreateRequest(
   activated: activated != null ? activated() : this.activated,
   interruptWindowDaysOfWeek: interruptWindowDaysOfWeek != null ? interruptWindowDaysOfWeek() : this.interruptWindowDaysOfWeek,
   interruptWindowDurationHours: interruptWindowDurationHours != null ? interruptWindowDurationHours() : this.interruptWindowDurationHours,

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'success': success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
-BrapiPostScreenshotResponse400 copyWith({List<BrapiPostScreenshotResponse400Errors> Function()? errors, bool? success, }) { return BrapiPostScreenshotResponse400(
+BrapiPostScreenshotResponse400 copyWith({List<BrapiPostScreenshotResponse400Errors>? Function()? errors, bool? success, }) { return BrapiPostScreenshotResponse400(
   errors: errors != null ? errors() : this.errors,
   success: success ?? this.success,
 ); } 

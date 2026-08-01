@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookDeploymentReviewApprovedWorkflowJobRuns {const WebhookDeploymentReviewApprovedWorkflowJobRuns({this.conclusion, this.createdAt, this.environment, this.htmlUrl, this.id, this.name, this.status, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookDeploymentReviewApprovedWorkflowJobRuns {const WebhookDeploymentReviewApprovedWorkflowJobRuns({this.conclusion = const Omittable.absent(), this.createdAt, this.environment, this.htmlUrl, this.id, this.name = const Omittable.absent(), this.status, this.updatedAt, });
 
 factory WebhookDeploymentReviewApprovedWorkflowJobRuns.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewApprovedWorkflowJobRuns(
-  conclusion: json['conclusion'],
+  conclusion: json.containsKey('conclusion') ? Omittable(json['conclusion']) : const Omittable.absent(),
   createdAt: json['created_at'] as String?,
   environment: json['environment'] as String?,
   htmlUrl: json['html_url'] as String?,
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   status: json['status'] as String?,
   updatedAt: json['updated_at'] as String?,
 ); }
 
-final dynamic conclusion;
+final Omittable<dynamic> conclusion;
 
 final String? createdAt;
 
@@ -23,30 +23,30 @@ final String? htmlUrl;
 
 final int? id;
 
-final String? name;
+final Omittable<String?> name;
 
 final String? status;
 
 final String? updatedAt;
 
 Map<String, dynamic> toJson() { return {
-  'conclusion': ?conclusion,
+  if (conclusion.isPresent) 'conclusion': conclusion.value,
   'created_at': ?createdAt,
   'environment': ?environment,
   'html_url': ?htmlUrl,
   'id': ?id,
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
   'status': ?status,
   'updated_at': ?updatedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'conclusion', 'created_at', 'environment', 'html_url', 'id', 'name', 'status', 'updated_at'}.contains(key)); } 
-WebhookDeploymentReviewApprovedWorkflowJobRuns copyWith({dynamic Function()? conclusion, String Function()? createdAt, String Function()? environment, String Function()? htmlUrl, int Function()? id, String? Function()? name, String Function()? status, String Function()? updatedAt, }) { return WebhookDeploymentReviewApprovedWorkflowJobRuns(
-  conclusion: conclusion != null ? conclusion() : this.conclusion,
+WebhookDeploymentReviewApprovedWorkflowJobRuns copyWith({Omittable<dynamic>? conclusion, String? Function()? createdAt, String? Function()? environment, String? Function()? htmlUrl, int? Function()? id, Omittable<String?>? name, String? Function()? status, String? Function()? updatedAt, }) { return WebhookDeploymentReviewApprovedWorkflowJobRuns(
+  conclusion: conclusion ?? this.conclusion,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   environment: environment != null ? environment() : this.environment,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   id: id != null ? id() : this.id,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
   status: status != null ? status() : this.status,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 

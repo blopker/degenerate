@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (requests != null) 'requests': requests?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requests'}.contains(key)); } 
-AsyncBatch2 copyWith({List<AsyncBatch2Requests> Function()? requests}) { return AsyncBatch2(
+AsyncBatch2 copyWith({List<AsyncBatch2Requests>? Function()? requests}) { return AsyncBatch2(
   requests: requests != null ? requests() : this.requests,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

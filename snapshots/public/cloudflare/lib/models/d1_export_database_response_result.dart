@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'at_bookmark', 'error', 'messages', 'result', 'status', 'success', 'type'}.contains(key)); } 
-D1ExportDatabaseResponseResult copyWith({String Function()? atBookmark, String Function()? error, List<String> Function()? messages, D1ExportDatabaseResponseResultResult Function()? result, D1ExportDatabaseResponseResultStatus Function()? status, bool Function()? success, D1ExportDatabaseResponseResultType Function()? type, }) { return D1ExportDatabaseResponseResult(
+D1ExportDatabaseResponseResult copyWith({String? Function()? atBookmark, String? Function()? error, List<String>? Function()? messages, D1ExportDatabaseResponseResultResult? Function()? result, D1ExportDatabaseResponseResultStatus? Function()? status, bool? Function()? success, D1ExportDatabaseResponseResultType? Function()? type, }) { return D1ExportDatabaseResponseResult(
   atBookmark: atBookmark != null ? atBookmark() : this.atBookmark,
   error: error != null ? error() : this.error,
   messages: messages != null ? messages() : this.messages,

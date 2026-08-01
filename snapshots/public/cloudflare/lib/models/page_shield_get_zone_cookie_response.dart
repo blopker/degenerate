@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-PageShieldGetZoneCookieResponse copyWith({List<PageShieldMessages2> Function()? errors, List<PageShieldMessages2> Function()? messages, bool? success, PageShieldCookie? result, }) { return PageShieldGetZoneCookieResponse(
+PageShieldGetZoneCookieResponse copyWith({List<PageShieldMessages2>? Function()? errors, List<PageShieldMessages2>? Function()? messages, bool? success, PageShieldCookie? result, }) { return PageShieldGetZoneCookieResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success ?? this.success,

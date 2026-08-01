@@ -32,13 +32,13 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxIDsOwnerType($value)'; } 
  }
 /// 
-@immutable final class TaxIDsOwner {const TaxIDsOwner({required this.type, this.account, this.application, this.customer, this.customerAccount, });
+@immutable final class TaxIDsOwner {const TaxIDsOwner({required this.type, this.account, this.application, this.customer, this.customerAccount = const Omittable.absent(), });
 
 factory TaxIDsOwner.fromJson(Map<String, dynamic> json) { return TaxIDsOwner(
   account: json['account'] != null ? OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
   application: json['application'] != null ? OneOf2.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>),) : null,
   customer: json['customer'] != null ? OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),) : null,
-  customerAccount: json['customer_account'] as String?,
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   type: TaxIDsOwnerType.fromJson(json['type'] as String),
 ); }
 
@@ -52,7 +52,7 @@ final TaxIDsOwnerApplication? application;
 final TaxIDsOwnerCustomer? customer;
 
 /// The Account representing the customer being referenced when `type` is `customer`.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// Type of owner referenced.
 final TaxIDsOwnerType type;
@@ -61,15 +61,15 @@ Map<String, dynamic> toJson() { return {
   if (account != null) 'account': account?.toJson(),
   if (application != null) 'application': application?.toJson(),
   if (customer != null) 'customer': customer?.toJson(),
-  'customer_account': ?customerAccount,
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TaxIDsOwner copyWith({TaxIDsOwnerAccount Function()? account, TaxIDsOwnerApplication Function()? application, TaxIDsOwnerCustomer Function()? customer, String? Function()? customerAccount, TaxIDsOwnerType? type, }) { return TaxIDsOwner(
+TaxIDsOwner copyWith({TaxIDsOwnerAccount? Function()? account, TaxIDsOwnerApplication? Function()? application, TaxIDsOwnerCustomer? Function()? customer, Omittable<String?>? customerAccount, TaxIDsOwnerType? type, }) { return TaxIDsOwner(
   account: account != null ? account() : this.account,
   application: application != null ? application() : this.application,
   customer: customer != null ? customer() : this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  customerAccount: customerAccount ?? this.customerAccount,
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

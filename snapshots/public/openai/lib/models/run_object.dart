@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunObjectStatus($value)'; } 
  }
 /// Represents an execution run on a [thread](/docs/api-reference/threads).
-@immutable final class RunObject {const RunObject({required this.id, required this.object, required this.createdAt, required this.threadId, required this.assistantId, required this.status, required this.requiredAction, required this.lastError, required this.expiresAt, required this.startedAt, required this.cancelledAt, required this.failedAt, required this.completedAt, required this.incompleteDetails, required this.model, required this.instructions, required this.metadata, required this.usage, required this.maxPromptTokens, required this.maxCompletionTokens, required this.truncationStrategy, required this.toolChoice, required this.parallelToolCalls, required this.responseFormat, this.tools = const [], this.temperature, this.topP, });
+@immutable final class RunObject {const RunObject({required this.id, required this.object, required this.createdAt, required this.threadId, required this.assistantId, required this.status, required this.requiredAction, required this.lastError, required this.expiresAt, required this.startedAt, required this.cancelledAt, required this.failedAt, required this.completedAt, required this.incompleteDetails, required this.model, required this.instructions, required this.metadata, required this.usage, required this.maxPromptTokens, required this.maxCompletionTokens, required this.truncationStrategy, required this.toolChoice, required this.parallelToolCalls, required this.responseFormat, this.tools = const [], this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), });
 
 factory RunObject.fromJson(Map<String, dynamic> json) { return RunObject(
   id: json['id'] as String,
@@ -91,8 +91,8 @@ factory RunObject.fromJson(Map<String, dynamic> json) { return RunObject(
   tools: (json['tools'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   usage: RunCompletionUsage.fromJson(json['usage'] as Map<String, dynamic>),
-  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
-  topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
+  temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
+  topP: json.containsKey('top_p') ? Omittable(json['top_p'] != null ? (json['top_p'] as num).toDouble() : null) : const Omittable.absent(),
   maxPromptTokens: json['max_prompt_tokens'] != null ? (json['max_prompt_tokens'] as num).toInt() : null,
   maxCompletionTokens: json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null,
   truncationStrategy: json['truncation_strategy'] != null ? TruncationObject.fromJson(json['truncation_strategy'] as Map<String, dynamic>) : null,
@@ -164,10 +164,10 @@ final Map<String,String>? metadata;
 final RunCompletionUsage usage;
 
 /// The sampling temperature used for this run. If not set, defaults to 1.
-final double? temperature;
+final Omittable<double?> temperature;
 
 /// The nucleus sampling value used for this run. If not set, defaults to 1.
-final double? topP;
+final Omittable<double?> topP;
 
 /// The maximum number of prompt tokens specified to have been used over the course of the run.
 /// 
@@ -193,27 +193,27 @@ Map<String, dynamic> toJson() { return {
   'thread_id': threadId,
   'assistant_id': assistantId,
   'status': status.toJson(),
-  if (requiredAction != null) 'required_action': requiredAction?.toJson(),
-  if (lastError != null) 'last_error': lastError?.toJson(),
-  'expires_at': ?expiresAt,
-  'started_at': ?startedAt,
-  'cancelled_at': ?cancelledAt,
-  'failed_at': ?failedAt,
-  'completed_at': ?completedAt,
-  if (incompleteDetails != null) 'incomplete_details': incompleteDetails?.toJson(),
+  'required_action': requiredAction?.toJson(),
+  'last_error': lastError?.toJson(),
+  'expires_at': expiresAt,
+  'started_at': startedAt,
+  'cancelled_at': cancelledAt,
+  'failed_at': failedAt,
+  'completed_at': completedAt,
+  'incomplete_details': incompleteDetails?.toJson(),
   'model': model,
   'instructions': instructions,
   'tools': tools.map((e) => e.toJson()).toList(),
-  'metadata': ?metadata,
+  'metadata': metadata,
   'usage': usage.toJson(),
-  'temperature': ?temperature,
-  'top_p': ?topP,
-  'max_prompt_tokens': ?maxPromptTokens,
-  'max_completion_tokens': ?maxCompletionTokens,
-  if (truncationStrategy != null) 'truncation_strategy': truncationStrategy?.toJson(),
-  if (toolChoice != null) 'tool_choice': toolChoice?.toJson(),
+  if (temperature.isPresent) 'temperature': temperature.value,
+  if (topP.isPresent) 'top_p': topP.value,
+  'max_prompt_tokens': maxPromptTokens,
+  'max_completion_tokens': maxCompletionTokens,
+  'truncation_strategy': truncationStrategy?.toJson(),
+  'tool_choice': toolChoice?.toJson(),
   'parallel_tool_calls': parallelToolCalls.toJson(),
-  if (responseFormat != null) 'response_format': responseFormat?.toJson(),
+  'response_format': responseFormat?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
@@ -223,24 +223,24 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('status') &&
       json.containsKey('required_action') &&
       json.containsKey('last_error') &&
-      json.containsKey('expires_at') && json['expires_at'] is num &&
-      json.containsKey('started_at') && json['started_at'] is num &&
-      json.containsKey('cancelled_at') && json['cancelled_at'] is num &&
-      json.containsKey('failed_at') && json['failed_at'] is num &&
-      json.containsKey('completed_at') && json['completed_at'] is num &&
+      json.containsKey('expires_at') && (json['expires_at'] == null || json['expires_at'] is num) &&
+      json.containsKey('started_at') && (json['started_at'] == null || json['started_at'] is num) &&
+      json.containsKey('cancelled_at') && (json['cancelled_at'] == null || json['cancelled_at'] is num) &&
+      json.containsKey('failed_at') && (json['failed_at'] == null || json['failed_at'] is num) &&
+      json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is num) &&
       json.containsKey('incomplete_details') &&
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('instructions') && json['instructions'] is String &&
       json.containsKey('tools') &&
       json.containsKey('metadata') &&
       json.containsKey('usage') &&
-      json.containsKey('max_prompt_tokens') && json['max_prompt_tokens'] is num &&
-      json.containsKey('max_completion_tokens') && json['max_completion_tokens'] is num &&
+      json.containsKey('max_prompt_tokens') && (json['max_prompt_tokens'] == null || json['max_prompt_tokens'] is num) &&
+      json.containsKey('max_completion_tokens') && (json['max_completion_tokens'] == null || json['max_completion_tokens'] is num) &&
       json.containsKey('truncation_strategy') &&
       json.containsKey('tool_choice') &&
       json.containsKey('parallel_tool_calls') &&
       json.containsKey('response_format'); } 
-RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String? threadId, String? assistantId, RunObjectStatus? status, RunObjectRequiredAction? Function()? requiredAction, RunObjectLastError? Function()? lastError, int? Function()? expiresAt, int? Function()? startedAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, RunObjectIncompleteDetails? Function()? incompleteDetails, String? model, String? instructions, List<RunObjectTools>? tools, Map<String, String>? Function()? metadata, RunCompletionUsage? usage, double? Function()? temperature, double? Function()? topP, int? Function()? maxPromptTokens, int? Function()? maxCompletionTokens, TruncationObject? Function()? truncationStrategy, ToolChoiceOption? Function()? toolChoice, ParallelToolCalls? parallelToolCalls, ResponseFormatOption? Function()? responseFormat, }) { return RunObject(
+RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String? threadId, String? assistantId, RunObjectStatus? status, RunObjectRequiredAction? Function()? requiredAction, RunObjectLastError? Function()? lastError, int? Function()? expiresAt, int? Function()? startedAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, RunObjectIncompleteDetails? Function()? incompleteDetails, String? model, String? instructions, List<RunObjectTools>? tools, Map<String, String>? Function()? metadata, RunCompletionUsage? usage, Omittable<double?>? temperature, Omittable<double?>? topP, int? Function()? maxPromptTokens, int? Function()? maxCompletionTokens, TruncationObject? Function()? truncationStrategy, ToolChoiceOption? Function()? toolChoice, ParallelToolCalls? parallelToolCalls, ResponseFormatOption? Function()? responseFormat, }) { return RunObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
@@ -260,8 +260,8 @@ RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String?
   tools: tools ?? this.tools,
   metadata: metadata != null ? metadata() : this.metadata,
   usage: usage ?? this.usage,
-  temperature: temperature != null ? temperature() : this.temperature,
-  topP: topP != null ? topP() : this.topP,
+  temperature: temperature ?? this.temperature,
+  topP: topP ?? this.topP,
   maxPromptTokens: maxPromptTokens != null ? maxPromptTokens() : this.maxPromptTokens,
   maxCompletionTokens: maxCompletionTokens != null ? maxCompletionTokens() : this.maxCompletionTokens,
   truncationStrategy: truncationStrategy != null ? truncationStrategy() : this.truncationStrategy,

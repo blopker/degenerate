@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookCodeScanningAlertReopenedAlertTool {const WebhookCodeScanningAlertReopenedAlertTool({required this.name, required this.version, this.guid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookCodeScanningAlertReopenedAlertTool {const WebhookCodeScanningAlertReopenedAlertTool({required this.name, required this.version, this.guid = const Omittable.absent(), });
 
 factory WebhookCodeScanningAlertReopenedAlertTool.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertReopenedAlertTool(
-  guid: json['guid'] as String?,
+  guid: json.containsKey('guid') ? Omittable(json['guid'] as String?) : const Omittable.absent(),
   name: json['name'] as String,
   version: json['version'] as String?,
 ); }
 
-final String? guid;
+final Omittable<String?> guid;
 
 /// The name of the tool used to generate the code scanning analysis alert.
 final String name;
@@ -17,14 +17,14 @@ final String name;
 final String? version;
 
 Map<String, dynamic> toJson() { return {
-  'guid': ?guid,
+  if (guid.isPresent) 'guid': guid.value,
   'name': name,
-  'version': ?version,
+  'version': version,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('version') && json['version'] is String; } 
-WebhookCodeScanningAlertReopenedAlertTool copyWith({String? Function()? guid, String? name, String? Function()? version, }) { return WebhookCodeScanningAlertReopenedAlertTool(
-  guid: guid != null ? guid() : this.guid,
+      json.containsKey('version') && (json['version'] == null || json['version'] is String); } 
+WebhookCodeScanningAlertReopenedAlertTool copyWith({Omittable<String?>? guid, String? name, String? Function()? version, }) { return WebhookCodeScanningAlertReopenedAlertTool(
+  guid: guid ?? this.guid,
   name: name ?? this.name,
   version: version != null ? version() : this.version,
 ); } 

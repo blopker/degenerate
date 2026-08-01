@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'data', 'immutable', 'kind', 'metadata', 'stringData', 'type'}.contains(key)); } 
-Secret copyWith({String Function()? apiVersion, Map<String, Uint8List> Function()? data, bool Function()? immutable, String Function()? kind, ObjectMeta Function()? metadata, Map<String, String> Function()? stringData, String Function()? type, }) { return Secret(
+Secret copyWith({String? Function()? apiVersion, Map<String, Uint8List>? Function()? data, bool? Function()? immutable, String? Function()? kind, ObjectMeta? Function()? metadata, Map<String, String>? Function()? stringData, String? Function()? type, }) { return Secret(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   data: data != null ? data() : this.data,
   immutable: immutable != null ? immutable() : this.immutable,

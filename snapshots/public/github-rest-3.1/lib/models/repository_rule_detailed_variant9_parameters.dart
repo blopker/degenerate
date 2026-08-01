@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('required_status_checks') &&
       json.containsKey('strict_required_status_checks_policy') && json['strict_required_status_checks_policy'] is bool; } 
-RepositoryRuleDetailedVariant9Parameters copyWith({bool Function()? doNotEnforceOnCreate, List<RepositoryRuleParamsStatusCheckConfiguration>? requiredStatusChecks, bool? strictRequiredStatusChecksPolicy, }) { return RepositoryRuleDetailedVariant9Parameters(
+RepositoryRuleDetailedVariant9Parameters copyWith({bool? Function()? doNotEnforceOnCreate, List<RepositoryRuleParamsStatusCheckConfiguration>? requiredStatusChecks, bool? strictRequiredStatusChecksPolicy, }) { return RepositoryRuleDetailedVariant9Parameters(
   doNotEnforceOnCreate: doNotEnforceOnCreate != null ? doNotEnforceOnCreate() : this.doNotEnforceOnCreate,
   requiredStatusChecks: requiredStatusChecks ?? this.requiredStatusChecks,
   strictRequiredStatusChecksPolicy: strictRequiredStatusChecksPolicy ?? this.strictRequiredStatusChecksPolicy,

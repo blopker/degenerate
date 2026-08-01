@@ -22,25 +22,25 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ThresholdsResourceUsageAlertFilterType($value)'; } 
  }
 /// 
-@immutable final class ThresholdsResourceUsageAlertFilter {const ThresholdsResourceUsageAlertFilter({required this.type, this.customer, });
+@immutable final class ThresholdsResourceUsageAlertFilter {const ThresholdsResourceUsageAlertFilter({required this.type, this.customer = const Omittable.absent(), });
 
 factory ThresholdsResourceUsageAlertFilter.fromJson(Map<String, dynamic> json) { return ThresholdsResourceUsageAlertFilter(
-  customer: json['customer'] != null ? OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),) : null,
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   type: ThresholdsResourceUsageAlertFilterType.fromJson(json['type'] as String),
 ); }
 
 /// Limit the scope of the alert to this customer ID
-final ThresholdsResourceUsageAlertFilterCustomer? customer;
+final Omittable<ThresholdsResourceUsageAlertFilterCustomer?> customer;
 
 final ThresholdsResourceUsageAlertFilterType type;
 
 Map<String, dynamic> toJson() { return {
-  if (customer != null) 'customer': customer?.toJson(),
+  if (customer.isPresent) 'customer': customer.value?.toJson(),
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-ThresholdsResourceUsageAlertFilter copyWith({ThresholdsResourceUsageAlertFilterCustomer? Function()? customer, ThresholdsResourceUsageAlertFilterType? type, }) { return ThresholdsResourceUsageAlertFilter(
-  customer: customer != null ? customer() : this.customer,
+ThresholdsResourceUsageAlertFilter copyWith({Omittable<ThresholdsResourceUsageAlertFilterCustomer?>? customer, ThresholdsResourceUsageAlertFilterType? type, }) { return ThresholdsResourceUsageAlertFilter(
+  customer: customer ?? this.customer,
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-AccessAppPoliciesComponentsSchemasIdResponse copyWith({List<AccessMessages2>? errors, List<AccessMessages2>? messages, bool? success, AccessAppPoliciesComponentsSchemasIdResponseResult Function()? result, }) { return AccessAppPoliciesComponentsSchemasIdResponse(
+AccessAppPoliciesComponentsSchemasIdResponse copyWith({List<AccessMessages2>? errors, List<AccessMessages2>? messages, bool? success, AccessAppPoliciesComponentsSchemasIdResponseResult? Function()? result, }) { return AccessAppPoliciesComponentsSchemasIdResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

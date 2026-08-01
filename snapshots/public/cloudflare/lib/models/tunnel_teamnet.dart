@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   if (virtualNetworkName != null) 'virtual_network_name': virtualNetworkName?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'created_at', 'deleted_at', 'id', 'network', 'tun_type', 'tunnel_id', 'tunnel_name', 'virtual_network_id', 'virtual_network_name'}.contains(key)); } 
-TunnelTeamnet copyWith({TunnelRouteComment Function()? comment, TunnelCreatedAt Function()? createdAt, TunnelDeletedAt Function()? deletedAt, TunnelRouteId Function()? id, TunnelIpNetwork Function()? network, TunnelTunnelType Function()? tunType, TunnelTunnelId Function()? tunnelId, TunnelTunnelName Function()? tunnelName, TunnelVirtualNetworkIdComputedOptional Function()? virtualNetworkId, TunnelVirtualNetworkName Function()? virtualNetworkName, }) { return TunnelTeamnet(
+TunnelTeamnet copyWith({TunnelRouteComment? Function()? comment, TunnelCreatedAt? Function()? createdAt, TunnelDeletedAt? Function()? deletedAt, TunnelRouteId? Function()? id, TunnelIpNetwork? Function()? network, TunnelTunnelType? Function()? tunType, TunnelTunnelId? Function()? tunnelId, TunnelTunnelName? Function()? tunnelName, TunnelVirtualNetworkIdComputedOptional? Function()? virtualNetworkId, TunnelVirtualNetworkName? Function()? virtualNetworkName, }) { return TunnelTeamnet(
   comment: comment != null ? comment() : this.comment,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   deletedAt: deletedAt != null ? deletedAt() : this.deletedAt,

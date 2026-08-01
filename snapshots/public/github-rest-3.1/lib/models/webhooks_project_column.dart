@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksProjectColumn {const WebhooksProjectColumn({required this.cardsUrl, required this.createdAt, required this.id, required this.name, required this.nodeId, required this.projectUrl, required this.updatedAt, required this.url, this.afterId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksProjectColumn {const WebhooksProjectColumn({required this.cardsUrl, required this.createdAt, required this.id, required this.name, required this.nodeId, required this.projectUrl, required this.updatedAt, required this.url, this.afterId = const Omittable.absent(), });
 
 factory WebhooksProjectColumn.fromJson(Map<String, dynamic> json) { return WebhooksProjectColumn(
-  afterId: json['after_id'] != null ? (json['after_id'] as num).toInt() : null,
+  afterId: json.containsKey('after_id') ? Omittable(json['after_id'] != null ? (json['after_id'] as num).toInt() : null) : const Omittable.absent(),
   cardsUrl: Uri.parse(json['cards_url'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
   id: (json['id'] as num).toInt(),
@@ -14,7 +14,7 @@ factory WebhooksProjectColumn.fromJson(Map<String, dynamic> json) { return Webho
   url: Uri.parse(json['url'] as String),
 ); }
 
-final int? afterId;
+final Omittable<int?> afterId;
 
 final Uri cardsUrl;
 
@@ -35,7 +35,7 @@ final DateTime updatedAt;
 final Uri url;
 
 Map<String, dynamic> toJson() { return {
-  'after_id': ?afterId,
+  if (afterId.isPresent) 'after_id': afterId.value,
   'cards_url': cardsUrl.toString(),
   'created_at': createdAt.toIso8601String(),
   'id': id,
@@ -53,8 +53,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cards
       json.containsKey('project_url') && json['project_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhooksProjectColumn copyWith({int? Function()? afterId, Uri? cardsUrl, DateTime? createdAt, int? id, String? name, String? nodeId, Uri? projectUrl, DateTime? updatedAt, Uri? url, }) { return WebhooksProjectColumn(
-  afterId: afterId != null ? afterId() : this.afterId,
+WebhooksProjectColumn copyWith({Omittable<int?>? afterId, Uri? cardsUrl, DateTime? createdAt, int? id, String? name, String? nodeId, Uri? projectUrl, DateTime? updatedAt, Uri? url, }) { return WebhooksProjectColumn(
+  afterId: afterId ?? this.afterId,
   cardsUrl: cardsUrl ?? this.cardsUrl,
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,

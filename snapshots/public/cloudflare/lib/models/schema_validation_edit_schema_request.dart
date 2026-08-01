@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'validation_enabled': ?validationEnabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'validation_enabled'}.contains(key)); } 
-SchemaValidationEditSchemaRequest copyWith({bool Function()? validationEnabled}) { return SchemaValidationEditSchemaRequest(
+SchemaValidationEditSchemaRequest copyWith({bool? Function()? validationEnabled}) { return SchemaValidationEditSchemaRequest(
   validationEnabled: validationEnabled != null ? validationEnabled() : this.validationEnabled,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

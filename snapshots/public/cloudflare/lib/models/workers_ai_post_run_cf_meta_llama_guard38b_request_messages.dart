@@ -15,7 +15,7 @@ final dynamic role;
 
 Map<String, dynamic> toJson() { return {
   'content': content,
-  'role': ?role,
+  'role': role,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String &&
       json.containsKey('role'); } 

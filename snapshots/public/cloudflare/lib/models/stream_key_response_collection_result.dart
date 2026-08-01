@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'id'}.contains(key)); } 
-StreamKeyResponseCollectionResult copyWith({StreamSigningKeyCreated Function()? created, StreamSchemasIdentifier Function()? id, }) { return StreamKeyResponseCollectionResult(
+StreamKeyResponseCollectionResult copyWith({StreamSigningKeyCreated? Function()? created, StreamSchemasIdentifier? Function()? id, }) { return StreamKeyResponseCollectionResult(
   created: created != null ? created() : this.created,
   id: id != null ? id() : this.id,
 ); } 

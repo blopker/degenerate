@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-IntelResolvesToRef copyWith({IntelStixIdentifier Function()? id, String Function()? value, }) { return IntelResolvesToRef(
+IntelResolvesToRef copyWith({IntelStixIdentifier? Function()? id, String? Function()? value, }) { return IntelResolvesToRef(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

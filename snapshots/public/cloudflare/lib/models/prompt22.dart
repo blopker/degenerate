@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'top_p': ?topP,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-Prompt22 copyWith({double Function()? frequencyPenalty, Prompt22Image Function()? image, String Function()? lora, int Function()? maxTokens, double Function()? presencePenalty, String? prompt, bool Function()? raw, double Function()? repetitionPenalty, int Function()? seed, bool Function()? stream, double Function()? temperature, int Function()? topK, double Function()? topP, }) { return Prompt22(
+Prompt22 copyWith({double? Function()? frequencyPenalty, Prompt22Image? Function()? image, String? Function()? lora, int Function()? maxTokens, double? Function()? presencePenalty, String? prompt, bool Function()? raw, double? Function()? repetitionPenalty, int? Function()? seed, bool Function()? stream, double Function()? temperature, int? Function()? topK, double? Function()? topP, }) { return Prompt22(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   image: image != null ? image() : this.image,
   lora: lora != null ? lora() : this.lora,

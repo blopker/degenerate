@@ -1,39 +1,39 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentMethodDetailsAchCreditTransfer {const PaymentMethodDetailsAchCreditTransfer({this.accountNumber, this.bankName, this.routingNumber, this.swiftCode, });
+@immutable final class PaymentMethodDetailsAchCreditTransfer {const PaymentMethodDetailsAchCreditTransfer({this.accountNumber = const Omittable.absent(), this.bankName = const Omittable.absent(), this.routingNumber = const Omittable.absent(), this.swiftCode = const Omittable.absent(), });
 
 factory PaymentMethodDetailsAchCreditTransfer.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsAchCreditTransfer(
-  accountNumber: json['account_number'] as String?,
-  bankName: json['bank_name'] as String?,
-  routingNumber: json['routing_number'] as String?,
-  swiftCode: json['swift_code'] as String?,
+  accountNumber: json.containsKey('account_number') ? Omittable(json['account_number'] as String?) : const Omittable.absent(),
+  bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
+  routingNumber: json.containsKey('routing_number') ? Omittable(json['routing_number'] as String?) : const Omittable.absent(),
+  swiftCode: json.containsKey('swift_code') ? Omittable(json['swift_code'] as String?) : const Omittable.absent(),
 ); }
 
 /// Account number to transfer funds to.
-final String? accountNumber;
+final Omittable<String?> accountNumber;
 
 /// Name of the bank associated with the routing number.
-final String? bankName;
+final Omittable<String?> bankName;
 
 /// Routing transit number for the bank account to transfer funds to.
-final String? routingNumber;
+final Omittable<String?> routingNumber;
 
 /// SWIFT code of the bank associated with the routing number.
-final String? swiftCode;
+final Omittable<String?> swiftCode;
 
 Map<String, dynamic> toJson() { return {
-  'account_number': ?accountNumber,
-  'bank_name': ?bankName,
-  'routing_number': ?routingNumber,
-  'swift_code': ?swiftCode,
+  if (accountNumber.isPresent) 'account_number': accountNumber.value,
+  if (bankName.isPresent) 'bank_name': bankName.value,
+  if (routingNumber.isPresent) 'routing_number': routingNumber.value,
+  if (swiftCode.isPresent) 'swift_code': swiftCode.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_number', 'bank_name', 'routing_number', 'swift_code'}.contains(key)); } 
-PaymentMethodDetailsAchCreditTransfer copyWith({String? Function()? accountNumber, String? Function()? bankName, String? Function()? routingNumber, String? Function()? swiftCode, }) { return PaymentMethodDetailsAchCreditTransfer(
-  accountNumber: accountNumber != null ? accountNumber() : this.accountNumber,
-  bankName: bankName != null ? bankName() : this.bankName,
-  routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
-  swiftCode: swiftCode != null ? swiftCode() : this.swiftCode,
+PaymentMethodDetailsAchCreditTransfer copyWith({Omittable<String?>? accountNumber, Omittable<String?>? bankName, Omittable<String?>? routingNumber, Omittable<String?>? swiftCode, }) { return PaymentMethodDetailsAchCreditTransfer(
+  accountNumber: accountNumber ?? this.accountNumber,
+  bankName: bankName ?? this.bankName,
+  routingNumber: routingNumber ?? this.routingNumber,
+  swiftCode: swiftCode ?? this.swiftCode,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentMethodDetailsAchCreditTransfer &&

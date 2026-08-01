@@ -78,11 +78,11 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MandateAcssDebitTransactionType($value)'; } 
  }
 /// 
-@immutable final class MandateAcssDebit {const MandateAcssDebit({required this.paymentSchedule, required this.transactionType, this.defaultFor, this.intervalDescription, });
+@immutable final class MandateAcssDebit {const MandateAcssDebit({required this.paymentSchedule, required this.transactionType, this.defaultFor, this.intervalDescription = const Omittable.absent(), });
 
 factory MandateAcssDebit.fromJson(Map<String, dynamic> json) { return MandateAcssDebit(
   defaultFor: (json['default_for'] as List<dynamic>?)?.map((e) => MandateAcssDebitDefaultFor.fromJson(e as String)).toList(),
-  intervalDescription: json['interval_description'] as String?,
+  intervalDescription: json.containsKey('interval_description') ? Omittable(json['interval_description'] as String?) : const Omittable.absent(),
   paymentSchedule: MandateAcssDebitPaymentSchedule.fromJson(json['payment_schedule'] as String),
   transactionType: MandateAcssDebitTransactionType.fromJson(json['transaction_type'] as String),
 ); }
@@ -91,7 +91,7 @@ factory MandateAcssDebit.fromJson(Map<String, dynamic> json) { return MandateAcs
 final List<MandateAcssDebitDefaultFor>? defaultFor;
 
 /// Description of the interval. Only required if the 'payment_schedule' parameter is 'interval' or 'combined'.
-final String? intervalDescription;
+final Omittable<String?> intervalDescription;
 
 /// Payment schedule for the mandate.
 final MandateAcssDebitPaymentSchedule paymentSchedule;
@@ -101,15 +101,15 @@ final MandateAcssDebitTransactionType transactionType;
 
 Map<String, dynamic> toJson() { return {
   if (defaultFor != null) 'default_for': defaultFor?.map((e) => e.toJson()).toList(),
-  'interval_description': ?intervalDescription,
+  if (intervalDescription.isPresent) 'interval_description': intervalDescription.value,
   'payment_schedule': paymentSchedule.toJson(),
   'transaction_type': transactionType.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_schedule') &&
       json.containsKey('transaction_type'); } 
-MandateAcssDebit copyWith({List<MandateAcssDebitDefaultFor> Function()? defaultFor, String? Function()? intervalDescription, MandateAcssDebitPaymentSchedule? paymentSchedule, MandateAcssDebitTransactionType? transactionType, }) { return MandateAcssDebit(
+MandateAcssDebit copyWith({List<MandateAcssDebitDefaultFor>? Function()? defaultFor, Omittable<String?>? intervalDescription, MandateAcssDebitPaymentSchedule? paymentSchedule, MandateAcssDebitTransactionType? transactionType, }) { return MandateAcssDebit(
   defaultFor: defaultFor != null ? defaultFor() : this.defaultFor,
-  intervalDescription: intervalDescription != null ? intervalDescription() : this.intervalDescription,
+  intervalDescription: intervalDescription ?? this.intervalDescription,
   paymentSchedule: paymentSchedule ?? this.paymentSchedule,
   transactionType: transactionType ?? this.transactionType,
 ); } 

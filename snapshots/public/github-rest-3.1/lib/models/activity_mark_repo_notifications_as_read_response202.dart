@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message', 'url'}.contains(key)); } 
-ActivityMarkRepoNotificationsAsReadResponse202 copyWith({String Function()? message, String Function()? url, }) { return ActivityMarkRepoNotificationsAsReadResponse202(
+ActivityMarkRepoNotificationsAsReadResponse202 copyWith({String? Function()? message, String? Function()? url, }) { return ActivityMarkRepoNotificationsAsReadResponse202(
   message: message != null ? message() : this.message,
   url: url != null ? url() : this.url,
 ); } 

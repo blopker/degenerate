@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String &&
       json.containsKey('documentation_url') && json['documentation_url'] is String; } 
-ValidationErrorSimple copyWith({String? message, String? documentationUrl, List<String> Function()? errors, }) { return ValidationErrorSimple(
+ValidationErrorSimple copyWith({String? message, String? documentationUrl, List<String>? Function()? errors, }) { return ValidationErrorSimple(
   message: message ?? this.message,
   documentationUrl: documentationUrl ?? this.documentationUrl,
   errors: errors != null ? errors() : this.errors,

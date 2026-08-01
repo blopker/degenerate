@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
       json.containsKey('policies'); } 
-IamCreatePayload copyWith({IamCondition Function()? condition, IamExpiresOn Function()? expiresOn, IamName? name, IamNotBefore Function()? notBefore, List<IamPolicyWithPermissionGroupsAndResources>? policies, }) { return IamCreatePayload(
+IamCreatePayload copyWith({IamCondition? Function()? condition, IamExpiresOn? Function()? expiresOn, IamName? name, IamNotBefore? Function()? notBefore, List<IamPolicyWithPermissionGroupsAndResources>? policies, }) { return IamCreatePayload(
   condition: condition != null ? condition() : this.condition,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
   name: name ?? this.name,

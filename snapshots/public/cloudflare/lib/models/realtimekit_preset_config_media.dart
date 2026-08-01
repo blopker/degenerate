@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('screenshare') &&
       json.containsKey('video'); } 
-RealtimekitPresetConfigMedia copyWith({RealtimekitPresetConfigMediaAudio Function()? audio, RealtimekitPresetConfigMediaScreenshare? screenshare, RealtimekitPresetConfigMediaVideo? video, }) { return RealtimekitPresetConfigMedia(
+RealtimekitPresetConfigMedia copyWith({RealtimekitPresetConfigMediaAudio? Function()? audio, RealtimekitPresetConfigMediaScreenshare? screenshare, RealtimekitPresetConfigMediaVideo? video, }) { return RealtimekitPresetConfigMedia(
   audio: audio != null ? audio() : this.audio,
   screenshare: screenshare ?? this.screenshare,
   video: video ?? this.video,

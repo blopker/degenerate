@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String; } 
-BalanceAmountNet copyWith({int? amount, String? currency, List<BalanceNetAvailable> Function()? netAvailable, BalanceAmountBySourceType Function()? sourceTypes, }) { return BalanceAmountNet(
+BalanceAmountNet copyWith({int? amount, String? currency, List<BalanceNetAvailable>? Function()? netAvailable, BalanceAmountBySourceType? Function()? sourceTypes, }) { return BalanceAmountNet(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   netAvailable: netAvailable != null ? netAvailable() : this.netAvailable,

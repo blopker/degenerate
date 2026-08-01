@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String &&
       json.containsKey('sha') && json['sha'] is String; } 
-ReferencedWorkflow copyWith({String? path, String? sha, String Function()? ref, }) { return ReferencedWorkflow(
+ReferencedWorkflow copyWith({String? path, String? sha, String? Function()? ref, }) { return ReferencedWorkflow(
   path: path ?? this.path,
   sha: sha ?? this.sha,
   ref: ref != null ? ref() : this.ref,

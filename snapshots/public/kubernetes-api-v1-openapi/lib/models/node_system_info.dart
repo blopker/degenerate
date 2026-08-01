@@ -73,7 +73,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('operatingSystem') && json['operatingSystem'] is String &&
       json.containsKey('osImage') && json['osImage'] is String &&
       json.containsKey('systemUUID') && json['systemUUID'] is String; } 
-NodeSystemInfo copyWith({String? architecture, String? bootId, String? containerRuntimeVersion, String? kernelVersion, String? kubeProxyVersion, String? kubeletVersion, String? machineId, String? operatingSystem, String? osImage, NodeSwapStatus Function()? swap, String? systemUuid, }) { return NodeSystemInfo(
+NodeSystemInfo copyWith({String? architecture, String? bootId, String? containerRuntimeVersion, String? kernelVersion, String? kubeProxyVersion, String? kubeletVersion, String? machineId, String? operatingSystem, String? osImage, NodeSwapStatus? Function()? swap, String? systemUuid, }) { return NodeSystemInfo(
   architecture: architecture ?? this.architecture,
   bootId: bootId ?? this.bootId,
   containerRuntimeVersion: containerRuntimeVersion ?? this.containerRuntimeVersion,

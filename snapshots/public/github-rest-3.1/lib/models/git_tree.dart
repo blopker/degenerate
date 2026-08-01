@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('truncated') && json['truncated'] is bool &&
       json.containsKey('tree'); } 
-GitTree copyWith({String? sha, Uri Function()? url, bool? truncated, List<GitTreeTree>? tree, }) { return GitTree(
+GitTree copyWith({String? sha, Uri? Function()? url, bool? truncated, List<GitTreeTree>? tree, }) { return GitTree(
   sha: sha ?? this.sha,
   url: url != null ? url() : this.url,
   truncated: truncated ?? this.truncated,

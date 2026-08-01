@@ -83,7 +83,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias') && json['alias'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-PostRadarValueListsRequest copyWith({String? alias, List<String> Function()? expand, PostRadarValueListsRequestItemType Function()? itemType, Map<String, String> Function()? metadata, String? name, }) { return PostRadarValueListsRequest(
+PostRadarValueListsRequest copyWith({String? alias, List<String>? Function()? expand, PostRadarValueListsRequestItemType? Function()? itemType, Map<String, String>? Function()? metadata, String? name, }) { return PostRadarValueListsRequest(
   alias: alias ?? this.alias,
   expand: expand != null ? expand() : this.expand,
   itemType: itemType != null ? itemType() : this.itemType,

@@ -23,27 +23,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsCardPresentOfflineType($value)'; } 
  }
 /// 
-@immutable final class PaymentMethodDetailsCardPresentOffline {const PaymentMethodDetailsCardPresentOffline({this.storedAt, this.type, });
+@immutable final class PaymentMethodDetailsCardPresentOffline {const PaymentMethodDetailsCardPresentOffline({this.storedAt = const Omittable.absent(), this.type = const Omittable.absent(), });
 
 factory PaymentMethodDetailsCardPresentOffline.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardPresentOffline(
-  storedAt: json['stored_at'] != null ? (json['stored_at'] as num).toInt() : null,
-  type: json['type'] != null ? PaymentMethodDetailsCardPresentOfflineType.fromJson(json['type'] as String) : null,
+  storedAt: json.containsKey('stored_at') ? Omittable(json['stored_at'] != null ? (json['stored_at'] as num).toInt() : null) : const Omittable.absent(),
+  type: json.containsKey('type') ? Omittable(json['type'] != null ? PaymentMethodDetailsCardPresentOfflineType.fromJson(json['type'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Time at which the payment was collected while offline
-final int? storedAt;
+final Omittable<int?> storedAt;
 
 /// The method used to process this payment method offline. Only deferred is allowed.
-final PaymentMethodDetailsCardPresentOfflineType? type;
+final Omittable<PaymentMethodDetailsCardPresentOfflineType?> type;
 
 Map<String, dynamic> toJson() { return {
-  'stored_at': ?storedAt,
-  if (type != null) 'type': type?.toJson(),
+  if (storedAt.isPresent) 'stored_at': storedAt.value,
+  if (type.isPresent) 'type': type.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'stored_at', 'type'}.contains(key)); } 
-PaymentMethodDetailsCardPresentOffline copyWith({int? Function()? storedAt, PaymentMethodDetailsCardPresentOfflineType? Function()? type, }) { return PaymentMethodDetailsCardPresentOffline(
-  storedAt: storedAt != null ? storedAt() : this.storedAt,
-  type: type != null ? type() : this.type,
+PaymentMethodDetailsCardPresentOffline copyWith({Omittable<int?>? storedAt, Omittable<PaymentMethodDetailsCardPresentOfflineType?>? type, }) { return PaymentMethodDetailsCardPresentOffline(
+  storedAt: storedAt ?? this.storedAt,
+  type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentMethodDetailsCardPresentOffline &&

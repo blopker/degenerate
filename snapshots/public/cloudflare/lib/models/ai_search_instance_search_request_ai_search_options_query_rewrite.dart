@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'rewrite_prompt': ?rewritePrompt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'model', 'rewrite_prompt'}.contains(key)); } 
-AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite copyWith({bool Function()? enabled, AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModel Function()? model, String Function()? rewritePrompt, }) { return AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite(
+AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite copyWith({bool? Function()? enabled, AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModel? Function()? model, String? Function()? rewritePrompt, }) { return AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite(
   enabled: enabled != null ? enabled() : this.enabled,
   model: model != null ? model() : this.model,
   rewritePrompt: rewritePrompt != null ? rewritePrompt() : this.rewritePrompt,

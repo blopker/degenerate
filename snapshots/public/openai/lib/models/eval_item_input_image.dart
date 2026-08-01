@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('image_url') && json['image_url'] is String; } 
-EvalItemInputImage copyWith({EvalItemInputImageType? type, String? imageUrl, String Function()? detail, }) { return EvalItemInputImage(
+EvalItemInputImage copyWith({EvalItemInputImageType? type, String? imageUrl, String? Function()? detail, }) { return EvalItemInputImage(
   type: type ?? this.type,
   imageUrl: imageUrl ?? this.imageUrl,
   detail: detail != null ? detail() : this.detail,

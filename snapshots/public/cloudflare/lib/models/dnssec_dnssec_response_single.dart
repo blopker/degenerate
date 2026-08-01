@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-DnssecDnssecResponseSingle copyWith({List<DnssecMessages2>? errors, List<DnssecMessages2>? messages, bool? success, DnssecDnssec Function()? result, }) { return DnssecDnssecResponseSingle(
+DnssecDnssecResponseSingle copyWith({List<DnssecMessages2>? errors, List<DnssecMessages2>? messages, bool? success, DnssecDnssec? Function()? result, }) { return DnssecDnssecResponseSingle(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

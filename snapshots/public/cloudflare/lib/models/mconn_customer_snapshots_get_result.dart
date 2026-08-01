@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
       json.containsKey('items'); } 
-MconnCustomerSnapshotsGetResult copyWith({double? count, String Function()? cursor, List<MconnSnapshotMetadata>? items, }) { return MconnCustomerSnapshotsGetResult(
+MconnCustomerSnapshotsGetResult copyWith({double? count, String? Function()? cursor, List<MconnSnapshotMetadata>? items, }) { return MconnCustomerSnapshotsGetResult(
   count: count ?? this.count,
   cursor: cursor != null ? cursor() : this.cursor,
   items: items ?? this.items,

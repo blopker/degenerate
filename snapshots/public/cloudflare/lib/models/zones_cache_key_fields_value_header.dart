@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   'include': ?include,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'check_presence', 'exclude', 'include'}.contains(key)); } 
-ZonesCacheKeyFieldsValueHeader copyWith({List<String> Function()? checkPresence, List<String> Function()? exclude, List<String> Function()? include, }) { return ZonesCacheKeyFieldsValueHeader(
+ZonesCacheKeyFieldsValueHeader copyWith({List<String>? Function()? checkPresence, List<String>? Function()? exclude, List<String>? Function()? include, }) { return ZonesCacheKeyFieldsValueHeader(
   checkPresence: checkPresence != null ? checkPresence() : this.checkPresence,
   exclude: exclude != null ? exclude() : this.exclude,
   include: include != null ? include() : this.include,

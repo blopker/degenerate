@@ -104,8 +104,8 @@ Map<String, dynamic> toJson() { return {
   'status_code': ?statusCode,
   'step': ?step,
   'success': success,
-  'tokens_in': ?tokensIn,
-  'tokens_out': ?tokensOut,
+  'tokens_in': tokensIn,
+  'tokens_out': tokensOut,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('cached') && json['cached'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -115,9 +115,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cache
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('provider') && json['provider'] is String &&
       json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('tokens_in') && json['tokens_in'] is num &&
-      json.containsKey('tokens_out') && json['tokens_out'] is num; } 
-AigConfigGetGatewayLogDetailResponseResult copyWith({bool? cached, double Function()? cost, DateTime? createdAt, bool Function()? customCost, int? duration, String? id, String Function()? metadata, String? model, String Function()? modelType, String? path, String? provider, String Function()? requestContentType, String Function()? requestHead, bool Function()? requestHeadComplete, int Function()? requestSize, String Function()? requestType, String Function()? responseContentType, String Function()? responseHead, bool Function()? responseHeadComplete, int Function()? responseSize, int Function()? statusCode, int Function()? step, bool? success, int? Function()? tokensIn, int? Function()? tokensOut, }) { return AigConfigGetGatewayLogDetailResponseResult(
+      json.containsKey('tokens_in') && (json['tokens_in'] == null || json['tokens_in'] is num) &&
+      json.containsKey('tokens_out') && (json['tokens_out'] == null || json['tokens_out'] is num); } 
+AigConfigGetGatewayLogDetailResponseResult copyWith({bool? cached, double? Function()? cost, DateTime? createdAt, bool? Function()? customCost, int? duration, String? id, String? Function()? metadata, String? model, String? Function()? modelType, String? path, String? provider, String? Function()? requestContentType, String? Function()? requestHead, bool? Function()? requestHeadComplete, int? Function()? requestSize, String? Function()? requestType, String? Function()? responseContentType, String? Function()? responseHead, bool? Function()? responseHeadComplete, int? Function()? responseSize, int? Function()? statusCode, int? Function()? step, bool? success, int? Function()? tokensIn, int? Function()? tokensOut, }) { return AigConfigGetGatewayLogDetailResponseResult(
   cached: cached ?? this.cached,
   cost: cost != null ? cost() : this.cost,
   createdAt: createdAt ?? this.createdAt,

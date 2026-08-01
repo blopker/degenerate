@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('merge_group'); } 
-WebhookMergeGroupDestroyed copyWith({WebhookMergeGroupDestroyedAction? action, WebhookMergeGroupDestroyedReason Function()? reason, SimpleInstallation Function()? installation, MergeGroup? mergeGroup, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks Function()? repository, SimpleUser Function()? sender, }) { return WebhookMergeGroupDestroyed(
+WebhookMergeGroupDestroyed copyWith({WebhookMergeGroupDestroyedAction? action, WebhookMergeGroupDestroyedReason? Function()? reason, SimpleInstallation? Function()? installation, MergeGroup? mergeGroup, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, }) { return WebhookMergeGroupDestroyed(
   action: action ?? this.action,
   reason: reason != null ? reason() : this.reason,
   installation: installation != null ? installation() : this.installation,

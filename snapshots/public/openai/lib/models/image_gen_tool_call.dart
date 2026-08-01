@@ -63,12 +63,12 @@ Map<String, dynamic> toJson() { return {
   'type': type,
   'id': id,
   'status': status.toJson(),
-  'result': ?result,
+  'result': result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('status') &&
-      json.containsKey('result') && json['result'] is String; } 
+      json.containsKey('result') && (json['result'] == null || json['result'] is String); } 
 ImageGenToolCall copyWith({String? type, String? id, ImageGenToolCallStatus? status, String? Function()? result, }) { return ImageGenToolCall(
   type: type ?? this.type,
   id: id ?? this.id,

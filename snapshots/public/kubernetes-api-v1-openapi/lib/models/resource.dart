@@ -63,7 +63,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind'
       json.containsKey('namespaced') && json['namespaced'] is bool &&
       json.containsKey('singularName') && json['singularName'] is String &&
       json.containsKey('verbs'); } 
-Resource copyWith({List<String> Function()? categories, String Function()? group, String? kind, String? name, bool? namespaced, List<String> Function()? shortNames, String? singularName, String Function()? storageVersionHash, List<String>? verbs, String Function()? version, }) { return Resource(
+Resource copyWith({List<String>? Function()? categories, String? Function()? group, String? kind, String? name, bool? namespaced, List<String>? Function()? shortNames, String? singularName, String? Function()? storageVersionHash, List<String>? verbs, String? Function()? version, }) { return Resource(
   categories: categories != null ? categories() : this.categories,
   group: group != null ? group() : this.group,
   kind: kind ?? this.kind,

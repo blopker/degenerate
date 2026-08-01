@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('lan_1') &&
       json.containsKey('lan_2') &&
       json.containsKey('name') && json['name'] is String; } 
-MagicAclsAddSingleRequest copyWith({String Function()? description, MagicForwardLocally Function()? forwardLocally, MagicLanAclConfiguration? lan1, MagicLanAclConfiguration? lan2, String? name, List<MagicAclsAddSingleRequestProtocols> Function()? protocols, MagicUnidirectional Function()? unidirectional, }) { return MagicAclsAddSingleRequest(
+MagicAclsAddSingleRequest copyWith({String? Function()? description, MagicForwardLocally? Function()? forwardLocally, MagicLanAclConfiguration? lan1, MagicLanAclConfiguration? lan2, String? name, List<MagicAclsAddSingleRequestProtocols>? Function()? protocols, MagicUnidirectional? Function()? unidirectional, }) { return MagicAclsAddSingleRequest(
   description: description != null ? description() : this.description,
   forwardLocally: forwardLocally != null ? forwardLocally() : this.forwardLocally,
   lan1: lan1 ?? this.lan1,

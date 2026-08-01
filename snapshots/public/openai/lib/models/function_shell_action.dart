@@ -19,12 +19,12 @@ final int? maxOutputLength;
 
 Map<String, dynamic> toJson() { return {
   'commands': commands,
-  'timeout_ms': ?timeoutMs,
-  'max_output_length': ?maxOutputLength,
+  'timeout_ms': timeoutMs,
+  'max_output_length': maxOutputLength,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('commands') &&
-      json.containsKey('timeout_ms') && json['timeout_ms'] is num &&
-      json.containsKey('max_output_length') && json['max_output_length'] is num; } 
+      json.containsKey('timeout_ms') && (json['timeout_ms'] == null || json['timeout_ms'] is num) &&
+      json.containsKey('max_output_length') && (json['max_output_length'] == null || json['max_output_length'] is num); } 
 FunctionShellAction copyWith({List<String>? commands, int? Function()? timeoutMs, int? Function()? maxOutputLength, }) { return FunctionShellAction(
   commands: commands ?? this.commands,
   timeoutMs: timeoutMs != null ? timeoutMs() : this.timeoutMs,

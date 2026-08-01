@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'use_sqlite': ?useSqlite,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'class', 'id', 'name', 'script', 'use_sqlite'}.contains(key)); } 
-WorkersNamespace copyWith({String Function()? $class, String Function()? id, String Function()? name, String Function()? script, bool Function()? useSqlite, }) { return WorkersNamespace(
+WorkersNamespace copyWith({String? Function()? $class, String? Function()? id, String? Function()? name, String? Function()? script, bool? Function()? useSqlite, }) { return WorkersNamespace(
   $class: $class != null ? $class() : this.$class,
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,

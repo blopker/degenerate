@@ -69,7 +69,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('policy') && json['policy'] is String &&
       json.containsKey('update_mode'); } 
-McnCatalogSync copyWith({String? description, McnCatalogSyncDestinationId? destinationId, McnCatalogSyncDestinationType? destinationType, Map<String, McnError> Function()? errors, McnCatalogSyncId? id, String Function()? includesDiscoveriesUntil, String Function()? lastAttemptedUpdateAt, String Function()? lastSuccessfulUpdateAt, String? lastUserUpdateAt, String? name, String? policy, McnCatalogSyncUpdateMode? updateMode, }) { return McnCatalogSync(
+McnCatalogSync copyWith({String? description, McnCatalogSyncDestinationId? destinationId, McnCatalogSyncDestinationType? destinationType, Map<String, McnError>? Function()? errors, McnCatalogSyncId? id, String? Function()? includesDiscoveriesUntil, String? Function()? lastAttemptedUpdateAt, String? Function()? lastSuccessfulUpdateAt, String? lastUserUpdateAt, String? name, String? policy, McnCatalogSyncUpdateMode? updateMode, }) { return McnCatalogSync(
   description: description ?? this.description,
   destinationId: destinationId ?? this.destinationId,
   destinationType: destinationType ?? this.destinationType,

@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (series != null) 'series': series?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'events', 'fields', 'series'}.contains(key)); } 
-WorkersObservabilityQueryResultsEvents copyWith({double Function()? count, List<WorkersObservabilityTelemetryEvent> Function()? events, List<WorkersObservabilityQueryResultsEventsFields> Function()? fields, List<WorkersObservabilityQueryResultsEventsSeries> Function()? series, }) { return WorkersObservabilityQueryResultsEvents(
+WorkersObservabilityQueryResultsEvents copyWith({double? Function()? count, List<WorkersObservabilityTelemetryEvent>? Function()? events, List<WorkersObservabilityQueryResultsEventsFields>? Function()? fields, List<WorkersObservabilityQueryResultsEventsSeries>? Function()? series, }) { return WorkersObservabilityQueryResultsEvents(
   count: count != null ? count() : this.count,
   events: events != null ? events() : this.events,
   fields: fields != null ? fields() : this.fields,

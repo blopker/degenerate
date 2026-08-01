@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'videoCount': ?videoCount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'creator', 'totalStorageMinutes', 'totalStorageMinutesLimit', 'videoCount'}.contains(key)); } 
-StreamStorageUseResponseResult copyWith({StreamCreator Function()? creator, int Function()? totalStorageMinutes, int Function()? totalStorageMinutesLimit, int Function()? videoCount, }) { return StreamStorageUseResponseResult(
+StreamStorageUseResponseResult copyWith({StreamCreator? Function()? creator, int? Function()? totalStorageMinutes, int? Function()? totalStorageMinutesLimit, int? Function()? videoCount, }) { return StreamStorageUseResponseResult(
   creator: creator != null ? creator() : this.creator,
   totalStorageMinutes: totalStorageMinutes != null ? totalStorageMinutes() : this.totalStorageMinutes,
   totalStorageMinutesLimit: totalStorageMinutesLimit != null ? totalStorageMinutesLimit() : this.totalStorageMinutesLimit,

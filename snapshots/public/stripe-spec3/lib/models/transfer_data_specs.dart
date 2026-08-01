@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'destination': destination,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination') && json['destination'] is String; } 
-TransferDataSpecs copyWith({double Function()? amountPercent, String? destination, }) { return TransferDataSpecs(
+TransferDataSpecs copyWith({double? Function()? amountPercent, String? destination, }) { return TransferDataSpecs(
   amountPercent: amountPercent != null ? amountPercent() : this.amountPercent,
   destination: destination ?? this.destination,
 ); } 

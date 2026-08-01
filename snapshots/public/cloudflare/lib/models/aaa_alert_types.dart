@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'display_name', 'filter_options', 'type'}.contains(key)); } 
-AaaAlertTypes copyWith({AaaDescription Function()? description, AaaDisplayName Function()? displayName, List<dynamic> Function()? filterOptions, AaaType Function()? type, }) { return AaaAlertTypes(
+AaaAlertTypes copyWith({AaaDescription? Function()? description, AaaDisplayName? Function()? displayName, List<dynamic>? Function()? filterOptions, AaaType? Function()? type, }) { return AaaAlertTypes(
   description: description != null ? description() : this.description,
   displayName: displayName != null ? displayName() : this.displayName,
   filterOptions: filterOptions != null ? filterOptions() : this.filterOptions,

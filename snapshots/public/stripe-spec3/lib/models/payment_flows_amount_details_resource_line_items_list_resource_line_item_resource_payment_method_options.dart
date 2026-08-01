@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (paypal != null) 'paypal': paypal?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card', 'card_present', 'klarna', 'paypal'}.contains(key)); } 
-PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions copyWith({PaymentFlowsPrivatePaymentMethodsCardPaymentIntentAmountDetailsLineItemPaymentMethodOptions Function()? card, PaymentFlowsPrivatePaymentMethodsCardPresentAmountDetailsLineItemPaymentMethodOptions Function()? cardPresent, PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions Function()? klarna, PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptions Function()? paypal, }) { return PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions(
+PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions copyWith({PaymentFlowsPrivatePaymentMethodsCardPaymentIntentAmountDetailsLineItemPaymentMethodOptions? Function()? card, PaymentFlowsPrivatePaymentMethodsCardPresentAmountDetailsLineItemPaymentMethodOptions? Function()? cardPresent, PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions? Function()? klarna, PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptions? Function()? paypal, }) { return PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions(
   card: card != null ? card() : this.card,
   cardPresent: cardPresent != null ? cardPresent() : this.cardPresent,
   klarna: klarna != null ? klarna() : this.klarna,

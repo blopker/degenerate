@@ -23,12 +23,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ReserveTransactionObject($value)'; } 
  }
 /// 
-@immutable final class ReserveTransaction {const ReserveTransaction({required this.amount, required this.currency, required this.id, required this.object, this.description, });
+@immutable final class ReserveTransaction {const ReserveTransaction({required this.amount, required this.currency, required this.id, required this.object, this.description = const Omittable.absent(), });
 
 factory ReserveTransaction.fromJson(Map<String, dynamic> json) { return ReserveTransaction(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   object: ReserveTransactionObject.fromJson(json['object'] as String),
 ); }
@@ -39,7 +39,7 @@ final int amount;
 final String currency;
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.
-final String? description;
+final Omittable<String?> description;
 
 /// Unique identifier for the object.
 final String id;
@@ -50,7 +50,7 @@ final ReserveTransactionObject object;
 Map<String, dynamic> toJson() { return {
   'amount': amount,
   'currency': currency,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'id': id,
   'object': object.toJson(),
 }; } 
@@ -58,10 +58,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
-ReserveTransaction copyWith({int? amount, String? currency, String? Function()? description, String? id, ReserveTransactionObject? object, }) { return ReserveTransaction(
+ReserveTransaction copyWith({int? amount, String? currency, Omittable<String?>? description, String? id, ReserveTransactionObject? object, }) { return ReserveTransaction(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   id: id ?? this.id,
   object: object ?? this.object,
 ); } 

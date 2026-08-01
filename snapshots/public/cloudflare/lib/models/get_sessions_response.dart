@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'success': ?success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'success'}.contains(key)); } 
-GetSessionsResponse copyWith({GetSessionsResponseData Function()? data, bool Function()? success, }) { return GetSessionsResponse(
+GetSessionsResponse copyWith({GetSessionsResponseData? Function()? data, bool? Function()? success, }) { return GetSessionsResponse(
   data: data != null ? data() : this.data,
   success: success != null ? success() : this.success,
 ); } 

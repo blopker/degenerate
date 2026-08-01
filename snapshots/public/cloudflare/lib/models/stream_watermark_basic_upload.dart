@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (scale != null) 'scale': scale?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') && json['file'] is String; } 
-StreamWatermarkBasicUpload copyWith({String? file, StreamName Function()? name, StreamOpacity Function()? opacity, StreamPadding Function()? padding, StreamPosition Function()? position, StreamScale Function()? scale, }) { return StreamWatermarkBasicUpload(
+StreamWatermarkBasicUpload copyWith({String? file, StreamName? Function()? name, StreamOpacity? Function()? opacity, StreamPadding? Function()? padding, StreamPosition? Function()? position, StreamScale? Function()? scale, }) { return StreamWatermarkBasicUpload(
   file: file ?? this.file,
   name: name != null ? name() : this.name,
   opacity: opacity != null ? opacity() : this.opacity,

@@ -127,8 +127,8 @@ final WebhookDeploymentStatusCreatedCheckRunStatus status;
 final Uri url;
 
 Map<String, dynamic> toJson() { return {
-  if (completedAt != null) 'completed_at': completedAt?.toIso8601String(),
-  if (conclusion != null) 'conclusion': conclusion?.toJson(),
+  'completed_at': completedAt?.toIso8601String(),
+  'conclusion': conclusion?.toJson(),
   'details_url': detailsUrl.toString(),
   'external_id': externalId,
   'head_sha': headSha,
@@ -140,7 +140,7 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'url': url.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('completed_at') && json['completed_at'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is String) &&
       json.containsKey('conclusion') &&
       json.containsKey('details_url') && json['details_url'] is String &&
       json.containsKey('external_id') && json['external_id'] is String &&

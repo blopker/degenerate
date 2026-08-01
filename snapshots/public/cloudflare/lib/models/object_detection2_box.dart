@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'ymin': ?ymin,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'xmax', 'xmin', 'ymax', 'ymin'}.contains(key)); } 
-ObjectDetection2Box copyWith({double Function()? xmax, double Function()? xmin, double Function()? ymax, double Function()? ymin, }) { return ObjectDetection2Box(
+ObjectDetection2Box copyWith({double? Function()? xmax, double? Function()? xmin, double? Function()? ymax, double? Function()? ymin, }) { return ObjectDetection2Box(
   xmax: xmax != null ? xmax() : this.xmax,
   xmin: xmin != null ? xmin() : this.xmin,
   ymax: ymax != null ? ymax() : this.ymax,

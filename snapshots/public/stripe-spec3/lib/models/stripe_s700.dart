@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (splashscreen != null) 'splashscreen': splashscreen?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'splashscreen'}.contains(key)); } 
-StripeS700 copyWith({StripeS700Splashscreen Function()? splashscreen}) { return StripeS700(
+StripeS700 copyWith({StripeS700Splashscreen? Function()? splashscreen}) { return StripeS700(
   splashscreen: splashscreen != null ? splashscreen() : this.splashscreen,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

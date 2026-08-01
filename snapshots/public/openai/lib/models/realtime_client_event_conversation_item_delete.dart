@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeClientEventConversationItemDelete copyWith({String Function()? eventId, String? type, String? itemId, }) { return RealtimeClientEventConversationItemDelete(
+RealtimeClientEventConversationItemDelete copyWith({String? Function()? eventId, String? type, String? itemId, }) { return RealtimeClientEventConversationItemDelete(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,

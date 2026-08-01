@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'streamKey', 'uid', 'url'}.contains(key)); } 
-StreamOutput copyWith({StreamOutputEnabled Function()? enabled, StreamOutputStreamKey Function()? streamKey, StreamOutputIdentifier Function()? uid, StreamOutputUrl Function()? url, }) { return StreamOutput(
+StreamOutput copyWith({StreamOutputEnabled? Function()? enabled, StreamOutputStreamKey? Function()? streamKey, StreamOutputIdentifier? Function()? uid, StreamOutputUrl? Function()? url, }) { return StreamOutput(
   enabled: enabled != null ? enabled() : this.enabled,
   streamKey: streamKey != null ? streamKey() : this.streamKey,
   uid: uid != null ? uid() : this.uid,

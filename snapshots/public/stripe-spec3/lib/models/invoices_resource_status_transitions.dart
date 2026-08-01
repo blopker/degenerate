@@ -1,39 +1,39 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class InvoicesResourceStatusTransitions {const InvoicesResourceStatusTransitions({this.finalizedAt, this.markedUncollectibleAt, this.paidAt, this.voidedAt, });
+@immutable final class InvoicesResourceStatusTransitions {const InvoicesResourceStatusTransitions({this.finalizedAt = const Omittable.absent(), this.markedUncollectibleAt = const Omittable.absent(), this.paidAt = const Omittable.absent(), this.voidedAt = const Omittable.absent(), });
 
 factory InvoicesResourceStatusTransitions.fromJson(Map<String, dynamic> json) { return InvoicesResourceStatusTransitions(
-  finalizedAt: json['finalized_at'] != null ? (json['finalized_at'] as num).toInt() : null,
-  markedUncollectibleAt: json['marked_uncollectible_at'] != null ? (json['marked_uncollectible_at'] as num).toInt() : null,
-  paidAt: json['paid_at'] != null ? (json['paid_at'] as num).toInt() : null,
-  voidedAt: json['voided_at'] != null ? (json['voided_at'] as num).toInt() : null,
+  finalizedAt: json.containsKey('finalized_at') ? Omittable(json['finalized_at'] != null ? (json['finalized_at'] as num).toInt() : null) : const Omittable.absent(),
+  markedUncollectibleAt: json.containsKey('marked_uncollectible_at') ? Omittable(json['marked_uncollectible_at'] != null ? (json['marked_uncollectible_at'] as num).toInt() : null) : const Omittable.absent(),
+  paidAt: json.containsKey('paid_at') ? Omittable(json['paid_at'] != null ? (json['paid_at'] as num).toInt() : null) : const Omittable.absent(),
+  voidedAt: json.containsKey('voided_at') ? Omittable(json['voided_at'] != null ? (json['voided_at'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
 /// The time that the invoice draft was finalized.
-final int? finalizedAt;
+final Omittable<int?> finalizedAt;
 
 /// The time that the invoice was marked uncollectible.
-final int? markedUncollectibleAt;
+final Omittable<int?> markedUncollectibleAt;
 
 /// The time that the invoice was paid.
-final int? paidAt;
+final Omittable<int?> paidAt;
 
 /// The time that the invoice was voided.
-final int? voidedAt;
+final Omittable<int?> voidedAt;
 
 Map<String, dynamic> toJson() { return {
-  'finalized_at': ?finalizedAt,
-  'marked_uncollectible_at': ?markedUncollectibleAt,
-  'paid_at': ?paidAt,
-  'voided_at': ?voidedAt,
+  if (finalizedAt.isPresent) 'finalized_at': finalizedAt.value,
+  if (markedUncollectibleAt.isPresent) 'marked_uncollectible_at': markedUncollectibleAt.value,
+  if (paidAt.isPresent) 'paid_at': paidAt.value,
+  if (voidedAt.isPresent) 'voided_at': voidedAt.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'finalized_at', 'marked_uncollectible_at', 'paid_at', 'voided_at'}.contains(key)); } 
-InvoicesResourceStatusTransitions copyWith({int? Function()? finalizedAt, int? Function()? markedUncollectibleAt, int? Function()? paidAt, int? Function()? voidedAt, }) { return InvoicesResourceStatusTransitions(
-  finalizedAt: finalizedAt != null ? finalizedAt() : this.finalizedAt,
-  markedUncollectibleAt: markedUncollectibleAt != null ? markedUncollectibleAt() : this.markedUncollectibleAt,
-  paidAt: paidAt != null ? paidAt() : this.paidAt,
-  voidedAt: voidedAt != null ? voidedAt() : this.voidedAt,
+InvoicesResourceStatusTransitions copyWith({Omittable<int?>? finalizedAt, Omittable<int?>? markedUncollectibleAt, Omittable<int?>? paidAt, Omittable<int?>? voidedAt, }) { return InvoicesResourceStatusTransitions(
+  finalizedAt: finalizedAt ?? this.finalizedAt,
+  markedUncollectibleAt: markedUncollectibleAt ?? this.markedUncollectibleAt,
+  paidAt: paidAt ?? this.paidAt,
+  voidedAt: voidedAt ?? this.voidedAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is InvoicesResourceStatusTransitions &&

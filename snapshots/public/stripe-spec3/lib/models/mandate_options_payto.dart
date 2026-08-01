@@ -121,57 +121,57 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MandateOptionsPaytoPurpose($value)'; } 
  }
 /// 
-@immutable final class MandateOptionsPayto {const MandateOptionsPayto({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, this.startDate, });
+@immutable final class MandateOptionsPayto {const MandateOptionsPayto({this.amount = const Omittable.absent(), this.amountType = const Omittable.absent(), this.endDate = const Omittable.absent(), this.paymentSchedule = const Omittable.absent(), this.paymentsPerPeriod = const Omittable.absent(), this.purpose = const Omittable.absent(), this.startDate = const Omittable.absent(), });
 
 factory MandateOptionsPayto.fromJson(Map<String, dynamic> json) { return MandateOptionsPayto(
-  amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-  amountType: json['amount_type'] != null ? MandateOptionsPaytoAmountType.fromJson(json['amount_type'] as String) : null,
-  endDate: json['end_date'] as String?,
-  paymentSchedule: json['payment_schedule'] != null ? MandateOptionsPaytoPaymentSchedule.fromJson(json['payment_schedule'] as String) : null,
-  paymentsPerPeriod: json['payments_per_period'] != null ? (json['payments_per_period'] as num).toInt() : null,
-  purpose: json['purpose'] != null ? MandateOptionsPaytoPurpose.fromJson(json['purpose'] as String) : null,
-  startDate: json['start_date'] as String?,
+  amount: json.containsKey('amount') ? Omittable(json['amount'] != null ? (json['amount'] as num).toInt() : null) : const Omittable.absent(),
+  amountType: json.containsKey('amount_type') ? Omittable(json['amount_type'] != null ? MandateOptionsPaytoAmountType.fromJson(json['amount_type'] as String) : null) : const Omittable.absent(),
+  endDate: json.containsKey('end_date') ? Omittable(json['end_date'] as String?) : const Omittable.absent(),
+  paymentSchedule: json.containsKey('payment_schedule') ? Omittable(json['payment_schedule'] != null ? MandateOptionsPaytoPaymentSchedule.fromJson(json['payment_schedule'] as String) : null) : const Omittable.absent(),
+  paymentsPerPeriod: json.containsKey('payments_per_period') ? Omittable(json['payments_per_period'] != null ? (json['payments_per_period'] as num).toInt() : null) : const Omittable.absent(),
+  purpose: json.containsKey('purpose') ? Omittable(json['purpose'] != null ? MandateOptionsPaytoPurpose.fromJson(json['purpose'] as String) : null) : const Omittable.absent(),
+  startDate: json.containsKey('start_date') ? Omittable(json['start_date'] as String?) : const Omittable.absent(),
 ); }
 
 /// Amount that will be collected. It is required when `amount_type` is `fixed`.
-final int? amount;
+final Omittable<int?> amount;
 
 /// The type of amount that will be collected. The amount charged must be exact or up to the value of `amount` param for `fixed` or `maximum` type respectively. Defaults to `maximum`.
-final MandateOptionsPaytoAmountType? amountType;
+final Omittable<MandateOptionsPaytoAmountType?> amountType;
 
 /// Date, in YYYY-MM-DD format, after which payments will not be collected. Defaults to no end date.
-final String? endDate;
+final Omittable<String?> endDate;
 
 /// The periodicity at which payments will be collected. Defaults to `adhoc`.
-final MandateOptionsPaytoPaymentSchedule? paymentSchedule;
+final Omittable<MandateOptionsPaytoPaymentSchedule?> paymentSchedule;
 
 /// The number of payments that will be made during a payment period. Defaults to 1 except for when `payment_schedule` is `adhoc`. In that case, it defaults to no limit.
-final int? paymentsPerPeriod;
+final Omittable<int?> paymentsPerPeriod;
 
 /// The purpose for which payments are made. Has a default value based on your merchant category code.
-final MandateOptionsPaytoPurpose? purpose;
+final Omittable<MandateOptionsPaytoPurpose?> purpose;
 
 /// Date, in YYYY-MM-DD format, from which payments will be collected. Defaults to confirmation time.
-final String? startDate;
+final Omittable<String?> startDate;
 
 Map<String, dynamic> toJson() { return {
-  'amount': ?amount,
-  if (amountType != null) 'amount_type': amountType?.toJson(),
-  'end_date': ?endDate,
-  if (paymentSchedule != null) 'payment_schedule': paymentSchedule?.toJson(),
-  'payments_per_period': ?paymentsPerPeriod,
-  if (purpose != null) 'purpose': purpose?.toJson(),
-  'start_date': ?startDate,
+  if (amount.isPresent) 'amount': amount.value,
+  if (amountType.isPresent) 'amount_type': amountType.value?.toJson(),
+  if (endDate.isPresent) 'end_date': endDate.value,
+  if (paymentSchedule.isPresent) 'payment_schedule': paymentSchedule.value?.toJson(),
+  if (paymentsPerPeriod.isPresent) 'payments_per_period': paymentsPerPeriod.value,
+  if (purpose.isPresent) 'purpose': purpose.value?.toJson(),
+  if (startDate.isPresent) 'start_date': startDate.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_type', 'end_date', 'payment_schedule', 'payments_per_period', 'purpose', 'start_date'}.contains(key)); } 
-MandateOptionsPayto copyWith({int? Function()? amount, MandateOptionsPaytoAmountType? Function()? amountType, String? Function()? endDate, MandateOptionsPaytoPaymentSchedule? Function()? paymentSchedule, int? Function()? paymentsPerPeriod, MandateOptionsPaytoPurpose? Function()? purpose, String? Function()? startDate, }) { return MandateOptionsPayto(
-  amount: amount != null ? amount() : this.amount,
-  amountType: amountType != null ? amountType() : this.amountType,
-  endDate: endDate != null ? endDate() : this.endDate,
-  paymentSchedule: paymentSchedule != null ? paymentSchedule() : this.paymentSchedule,
-  paymentsPerPeriod: paymentsPerPeriod != null ? paymentsPerPeriod() : this.paymentsPerPeriod,
-  purpose: purpose != null ? purpose() : this.purpose,
-  startDate: startDate != null ? startDate() : this.startDate,
+MandateOptionsPayto copyWith({Omittable<int?>? amount, Omittable<MandateOptionsPaytoAmountType?>? amountType, Omittable<String?>? endDate, Omittable<MandateOptionsPaytoPaymentSchedule?>? paymentSchedule, Omittable<int?>? paymentsPerPeriod, Omittable<MandateOptionsPaytoPurpose?>? purpose, Omittable<String?>? startDate, }) { return MandateOptionsPayto(
+  amount: amount ?? this.amount,
+  amountType: amountType ?? this.amountType,
+  endDate: endDate ?? this.endDate,
+  paymentSchedule: paymentSchedule ?? this.paymentSchedule,
+  paymentsPerPeriod: paymentsPerPeriod ?? this.paymentsPerPeriod,
+  purpose: purpose ?? this.purpose,
+  startDate: startDate ?? this.startDate,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is MandateOptionsPayto &&

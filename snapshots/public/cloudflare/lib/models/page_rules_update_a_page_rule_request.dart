@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('actions') &&
       json.containsKey('targets'); } 
-PageRulesUpdateAPageRuleRequest copyWith({List<ZonesActions2>? actions, ZonesPriority Function()? priority, ZonesStatus Function()? status, List<ZonesTarget>? targets, }) { return PageRulesUpdateAPageRuleRequest(
+PageRulesUpdateAPageRuleRequest copyWith({List<ZonesActions2>? actions, ZonesPriority? Function()? priority, ZonesStatus? Function()? status, List<ZonesTarget>? targets, }) { return PageRulesUpdateAPageRuleRequest(
   actions: actions ?? this.actions,
   priority: priority != null ? priority() : this.priority,
   status: status != null ? status() : this.status,

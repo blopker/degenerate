@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'team_reviewers': ?teamReviewers,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('reviewers'); } 
-PullsRemoveRequestedReviewersRequest copyWith({List<String>? reviewers, List<String> Function()? teamReviewers, }) { return PullsRemoveRequestedReviewersRequest(
+PullsRemoveRequestedReviewersRequest copyWith({List<String>? reviewers, List<String>? Function()? teamReviewers, }) { return PullsRemoveRequestedReviewersRequest(
   reviewers: reviewers ?? this.reviewers,
   teamReviewers: teamReviewers != null ? teamReviewers() : this.teamReviewers,
 ); } 

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'email': ?email,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-Owner copyWith({String? name, String Function()? email, }) { return Owner(
+Owner copyWith({String? name, String? Function()? email, }) { return Owner(
   name: name ?? this.name,
   email: email != null ? email() : this.email,
 ); } 

@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   if (secretRef != null) 'secretRef': secretRef?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('driver') && json['driver'] is String; } 
-FlexPersistentVolumeSource copyWith({String? driver, String Function()? fsType, Map<String, String> Function()? options, bool Function()? readOnly, SecretReference Function()? secretRef, }) { return FlexPersistentVolumeSource(
+FlexPersistentVolumeSource copyWith({String? driver, String? Function()? fsType, Map<String, String>? Function()? options, bool? Function()? readOnly, SecretReference? Function()? secretRef, }) { return FlexPersistentVolumeSource(
   driver: driver ?? this.driver,
   fsType: fsType != null ? fsType() : this.fsType,
   options: options != null ? options() : this.options,

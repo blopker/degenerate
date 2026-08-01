@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookMemberEditedChangesPermission {const WebhookMemberEditedChangesPermission({this.from, this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookMemberEditedChangesPermission {const WebhookMemberEditedChangesPermission({this.from = const Omittable.absent(), this.to = const Omittable.absent(), });
 
 factory WebhookMemberEditedChangesPermission.fromJson(Map<String, dynamic> json) { return WebhookMemberEditedChangesPermission(
-  from: json['from'] as String?,
-  to: json['to'] as String?,
+  from: json.containsKey('from') ? Omittable(json['from'] as String?) : const Omittable.absent(),
+  to: json.containsKey('to') ? Omittable(json['to'] as String?) : const Omittable.absent(),
 ); }
 
-final String? from;
+final Omittable<String?> from;
 
-final String? to;
+final Omittable<String?> to;
 
 Map<String, dynamic> toJson() { return {
-  'from': ?from,
-  'to': ?to,
+  if (from.isPresent) 'from': from.value,
+  if (to.isPresent) 'to': to.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from', 'to'}.contains(key)); } 
-WebhookMemberEditedChangesPermission copyWith({String? Function()? from, String? Function()? to, }) { return WebhookMemberEditedChangesPermission(
-  from: from != null ? from() : this.from,
-  to: to != null ? to() : this.to,
+WebhookMemberEditedChangesPermission copyWith({Omittable<String?>? from, Omittable<String?>? to, }) { return WebhookMemberEditedChangesPermission(
+  from: from ?? this.from,
+  to: to ?? this.to,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WebhookMemberEditedChangesPermission &&

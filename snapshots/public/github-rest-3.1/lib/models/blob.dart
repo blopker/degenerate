@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'encoding': encoding,
   'url': url.toString(),
   'sha': sha,
-  'size': ?size,
+  'size': size,
   'node_id': nodeId,
   'highlighted_content': ?highlightedContent,
 }; } 
@@ -40,9 +40,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('conte
       json.containsKey('encoding') && json['encoding'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
-      json.containsKey('size') && json['size'] is num &&
+      json.containsKey('size') && (json['size'] == null || json['size'] is num) &&
       json.containsKey('node_id') && json['node_id'] is String; } 
-Blob copyWith({String? content, String? encoding, Uri? url, String? sha, int? Function()? size, String? nodeId, String Function()? highlightedContent, }) { return Blob(
+Blob copyWith({String? content, String? encoding, Uri? url, String? sha, int? Function()? size, String? nodeId, String? Function()? highlightedContent, }) { return Blob(
   content: content ?? this.content,
   encoding: encoding ?? this.encoding,
   url: url ?? this.url,

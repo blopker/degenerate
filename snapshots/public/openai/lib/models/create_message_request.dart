@@ -28,13 +28,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateMessageRequestRole($value)'; } 
  }
-@immutable final class CreateMessageRequest {const CreateMessageRequest({required this.role, required this.content, this.attachments, this.metadata, });
+@immutable final class CreateMessageRequest {const CreateMessageRequest({required this.role, required this.content, this.attachments = const Omittable.absent(), this.metadata = const Omittable.absent(), });
 
 factory CreateMessageRequest.fromJson(Map<String, dynamic> json) { return CreateMessageRequest(
   role: CreateMessageRequestRole.fromJson(json['role'] as String),
   content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => MessageContentImageFileObject.fromJson(v as Map<String, dynamic>), fromB: (v) => MessageContentImageUrlObject.fromJson(v as Map<String, dynamic>), fromC: (v) => MessageRequestContentTextObject.fromJson(v as Map<String, dynamic>),)).toList(),),
-  attachments: (json['attachments'] as List<dynamic>?)?.map((e) => CreateMessageRequestAttachments2.fromJson(e as Map<String, dynamic>)).toList(),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  attachments: json.containsKey('attachments') ? Omittable((json['attachments'] as List<dynamic>?)?.map((e) => CreateMessageRequestAttachments2.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
 ); }
 
 /// The role of the entity that is creating the message. Allowed values include:
@@ -46,30 +46,31 @@ final CreateMessageRequestRole role;
 final CreateMessageRequestContent content;
 
 /// A list of files attached to the message, and the tools they should be added to.
-final List<CreateMessageRequestAttachments2>? attachments;
+final Omittable<List<CreateMessageRequestAttachments2>?> attachments;
 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 Map<String, dynamic> toJson() { return {
   'role': role.toJson(),
   'content': content.toJson(),
-  if (attachments != null) 'attachments': attachments?.map((e) => e.toJson()).toList(),
-  'metadata': ?metadata,
+  if (attachments.isPresent) 'attachments': attachments.value?.map((e) => e.toJson()).toList(),
+  if (metadata.isPresent) 'metadata': metadata.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') &&
       json.containsKey('content'); } 
-CreateMessageRequest copyWith({CreateMessageRequestRole? role, CreateMessageRequestContent? content, List<CreateMessageRequestAttachments2>? Function()? attachments, Map<String, String>? Function()? metadata, }) { return CreateMessageRequest(
+CreateMessageRequest copyWith({CreateMessageRequestRole? role, CreateMessageRequestContent? content, Omittable<List<CreateMessageRequestAttachments2>?>? attachments, Omittable<Map<String,String>?>? metadata, }) { return CreateMessageRequest(
   role: role ?? this.role,
   content: content ?? this.content,
-  attachments: attachments != null ? attachments() : this.attachments,
-  metadata: metadata != null ? metadata() : this.metadata,
+  attachments: attachments ?? this.attachments,
+  metadata: metadata ?? this.metadata,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CreateMessageRequest &&
           role == other.role &&
           content == other.content &&
-          listEquals(attachments, other.attachments) &&
+          attachments.isPresent == other.attachments.isPresent &&
+          listEquals(attachments.value, other.attachments.value) &&
           metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(role, content, Object.hashAll(attachments ?? const []), metadata); } 
+@override int get hashCode { return Object.hash(role, content, Object.hashAll(attachments.value ?? const []), metadata); } 
 @override String toString() { return 'CreateMessageRequest(role: $role, content: $content, attachments: $attachments, metadata: $metadata)'; } 
  }

@@ -96,11 +96,11 @@ bool get isUnknown { return !values.contains(this); }
 /// is `stripe`, which includes Standard and Express accounts, some properties are only returned
 /// until you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions)
 /// to start Connect Onboarding. Learn about the [differences between accounts](/connect/accounts).
-@immutable final class Account {const Account({required this.id, required this.object, this.businessProfile, this.businessType, this.capabilities, this.chargesEnabled, this.company, this.controller, this.country, this.created, this.defaultCurrency, this.detailsSubmitted, this.email, this.externalAccounts, this.futureRequirements, this.groups, this.individual, this.metadata, this.payoutsEnabled, this.requirements, this.settings, this.tosAcceptance, this.type, });
+@immutable final class Account {const Account({required this.id, required this.object, this.businessProfile = const Omittable.absent(), this.businessType = const Omittable.absent(), this.capabilities, this.chargesEnabled, this.company, this.controller, this.country, this.created, this.defaultCurrency, this.detailsSubmitted, this.email = const Omittable.absent(), this.externalAccounts, this.futureRequirements, this.groups = const Omittable.absent(), this.individual, this.metadata, this.payoutsEnabled, this.requirements, this.settings = const Omittable.absent(), this.tosAcceptance, this.type, });
 
 factory Account.fromJson(Map<String, dynamic> json) { return Account(
-  businessProfile: json['business_profile'] != null ? AccountBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null,
-  businessType: json['business_type'] != null ? AccountBusinessType.fromJson(json['business_type'] as String) : null,
+  businessProfile: json.containsKey('business_profile') ? Omittable(json['business_profile'] != null ? AccountBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  businessType: json.containsKey('business_type') ? Omittable(json['business_type'] != null ? AccountBusinessType.fromJson(json['business_type'] as String) : null) : const Omittable.absent(),
   capabilities: json['capabilities'] != null ? AccountCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,
   chargesEnabled: json['charges_enabled'] as bool?,
   company: json['company'] != null ? LegalEntityCompany.fromJson(json['company'] as Map<String, dynamic>) : null,
@@ -109,26 +109,26 @@ factory Account.fromJson(Map<String, dynamic> json) { return Account(
   created: json['created'] != null ? (json['created'] as num).toInt() : null,
   defaultCurrency: json['default_currency'] as String?,
   detailsSubmitted: json['details_submitted'] as bool?,
-  email: json['email'] as String?,
+  email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
   externalAccounts: json['external_accounts'] != null ? AccountExternalAccounts.fromJson(json['external_accounts'] as Map<String, dynamic>) : null,
   futureRequirements: json['future_requirements'] != null ? AccountFutureRequirements.fromJson(json['future_requirements'] as Map<String, dynamic>) : null,
-  groups: json['groups'] != null ? AccountGroupMembership.fromJson(json['groups'] as Map<String, dynamic>) : null,
+  groups: json.containsKey('groups') ? Omittable(json['groups'] != null ? AccountGroupMembership.fromJson(json['groups'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   id: json['id'] as String,
   individual: json['individual'] != null ? Person.fromJson(json['individual'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   object: AccountObject.fromJson(json['object'] as String),
   payoutsEnabled: json['payouts_enabled'] as bool?,
   requirements: json['requirements'] != null ? AccountRequirements.fromJson(json['requirements'] as Map<String, dynamic>) : null,
-  settings: json['settings'] != null ? AccountSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
+  settings: json.containsKey('settings') ? Omittable(json['settings'] != null ? AccountSettings.fromJson(json['settings'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   tosAcceptance: json['tos_acceptance'] != null ? AccountTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? AccountType.fromJson(json['type'] as String) : null,
 ); }
 
 /// Business information about the account.
-final AccountBusinessProfile? businessProfile;
+final Omittable<AccountBusinessProfile?> businessProfile;
 
 /// The business type.
-final AccountBusinessType? businessType;
+final Omittable<AccountBusinessType?> businessType;
 
 final AccountCapabilities? capabilities;
 
@@ -152,7 +152,7 @@ final String? defaultCurrency;
 final bool? detailsSubmitted;
 
 /// An email address associated with the account. It's not used for authentication and Stripe doesn't market to this field without explicit approval from the platform.
-final String? email;
+final Omittable<String?> email;
 
 /// External accounts (bank accounts and debit cards) currently attached to this account. External accounts are only returned for requests where `controller[is_controller]` is true.
 final AccountExternalAccounts? externalAccounts;
@@ -160,7 +160,7 @@ final AccountExternalAccounts? externalAccounts;
 final AccountFutureRequirements? futureRequirements;
 
 /// The groups associated with the account.
-final AccountGroupMembership? groups;
+final Omittable<AccountGroupMembership?> groups;
 
 /// Unique identifier for the object.
 final String id;
@@ -179,7 +179,7 @@ final bool? payoutsEnabled;
 final AccountRequirements? requirements;
 
 /// Options for customizing how the account functions within Stripe.
-final AccountSettings? settings;
+final Omittable<AccountSettings?> settings;
 
 final AccountTosAcceptance? tosAcceptance;
 
@@ -187,8 +187,8 @@ final AccountTosAcceptance? tosAcceptance;
 final AccountType? type;
 
 Map<String, dynamic> toJson() { return {
-  if (businessProfile != null) 'business_profile': businessProfile?.toJson(),
-  if (businessType != null) 'business_type': businessType?.toJson(),
+  if (businessProfile.isPresent) 'business_profile': businessProfile.value?.toJson(),
+  if (businessType.isPresent) 'business_type': businessType.value?.toJson(),
   if (capabilities != null) 'capabilities': capabilities?.toJson(),
   'charges_enabled': ?chargesEnabled,
   if (company != null) 'company': company?.toJson(),
@@ -197,25 +197,25 @@ Map<String, dynamic> toJson() { return {
   'created': ?created,
   'default_currency': ?defaultCurrency,
   'details_submitted': ?detailsSubmitted,
-  'email': ?email,
+  if (email.isPresent) 'email': email.value,
   if (externalAccounts != null) 'external_accounts': externalAccounts?.toJson(),
   if (futureRequirements != null) 'future_requirements': futureRequirements?.toJson(),
-  if (groups != null) 'groups': groups?.toJson(),
+  if (groups.isPresent) 'groups': groups.value?.toJson(),
   'id': id,
   if (individual != null) 'individual': individual?.toJson(),
   'metadata': ?metadata,
   'object': object.toJson(),
   'payouts_enabled': ?payoutsEnabled,
   if (requirements != null) 'requirements': requirements?.toJson(),
-  if (settings != null) 'settings': settings?.toJson(),
+  if (settings.isPresent) 'settings': settings.value?.toJson(),
   if (tosAcceptance != null) 'tos_acceptance': tosAcceptance?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
-Account copyWith({AccountBusinessProfile? Function()? businessProfile, AccountBusinessType? Function()? businessType, AccountCapabilities Function()? capabilities, bool Function()? chargesEnabled, LegalEntityCompany Function()? company, AccountUnificationAccountController Function()? controller, String Function()? country, int Function()? created, String Function()? defaultCurrency, bool Function()? detailsSubmitted, String? Function()? email, AccountExternalAccounts Function()? externalAccounts, AccountFutureRequirements Function()? futureRequirements, AccountGroupMembership? Function()? groups, String? id, Person Function()? individual, Map<String, String> Function()? metadata, AccountObject? object, bool Function()? payoutsEnabled, AccountRequirements Function()? requirements, AccountSettings? Function()? settings, AccountTosAcceptance Function()? tosAcceptance, AccountType Function()? type, }) { return Account(
-  businessProfile: businessProfile != null ? businessProfile() : this.businessProfile,
-  businessType: businessType != null ? businessType() : this.businessType,
+Account copyWith({Omittable<AccountBusinessProfile?>? businessProfile, Omittable<AccountBusinessType?>? businessType, AccountCapabilities? Function()? capabilities, bool? Function()? chargesEnabled, LegalEntityCompany? Function()? company, AccountUnificationAccountController? Function()? controller, String? Function()? country, int? Function()? created, String? Function()? defaultCurrency, bool? Function()? detailsSubmitted, Omittable<String?>? email, AccountExternalAccounts? Function()? externalAccounts, AccountFutureRequirements? Function()? futureRequirements, Omittable<AccountGroupMembership?>? groups, String? id, Person? Function()? individual, Map<String, String>? Function()? metadata, AccountObject? object, bool? Function()? payoutsEnabled, AccountRequirements? Function()? requirements, Omittable<AccountSettings?>? settings, AccountTosAcceptance? Function()? tosAcceptance, AccountType? Function()? type, }) { return Account(
+  businessProfile: businessProfile ?? this.businessProfile,
+  businessType: businessType ?? this.businessType,
   capabilities: capabilities != null ? capabilities() : this.capabilities,
   chargesEnabled: chargesEnabled != null ? chargesEnabled() : this.chargesEnabled,
   company: company != null ? company() : this.company,
@@ -224,17 +224,17 @@ Account copyWith({AccountBusinessProfile? Function()? businessProfile, AccountBu
   created: created != null ? created() : this.created,
   defaultCurrency: defaultCurrency != null ? defaultCurrency() : this.defaultCurrency,
   detailsSubmitted: detailsSubmitted != null ? detailsSubmitted() : this.detailsSubmitted,
-  email: email != null ? email() : this.email,
+  email: email ?? this.email,
   externalAccounts: externalAccounts != null ? externalAccounts() : this.externalAccounts,
   futureRequirements: futureRequirements != null ? futureRequirements() : this.futureRequirements,
-  groups: groups != null ? groups() : this.groups,
+  groups: groups ?? this.groups,
   id: id ?? this.id,
   individual: individual != null ? individual() : this.individual,
   metadata: metadata != null ? metadata() : this.metadata,
   object: object ?? this.object,
   payoutsEnabled: payoutsEnabled != null ? payoutsEnabled() : this.payoutsEnabled,
   requirements: requirements != null ? requirements() : this.requirements,
-  settings: settings != null ? settings() : this.settings,
+  settings: settings ?? this.settings,
   tosAcceptance: tosAcceptance != null ? tosAcceptance() : this.tosAcceptance,
   type: type != null ? type() : this.type,
 ); } 

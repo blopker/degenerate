@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('date') && json['date'] is String; } 
-CopilotUsageMetricsDay copyWith({String? date, int Function()? totalActiveUsers, int Function()? totalEngagedUsers, CopilotIdeCodeCompletions Function()? copilotIdeCodeCompletions, CopilotIdeChat Function()? copilotIdeChat, CopilotDotcomChat Function()? copilotDotcomChat, CopilotDotcomPullRequests Function()? copilotDotcomPullRequests, Map<String, dynamic>? additionalProperties, }) { return CopilotUsageMetricsDay(
+CopilotUsageMetricsDay copyWith({String? date, int? Function()? totalActiveUsers, int? Function()? totalEngagedUsers, CopilotIdeCodeCompletions? Function()? copilotIdeCodeCompletions, CopilotIdeChat? Function()? copilotIdeChat, CopilotDotcomChat? Function()? copilotDotcomChat, CopilotDotcomPullRequests? Function()? copilotDotcomPullRequests, Map<String, dynamic>? additionalProperties, }) { return CopilotUsageMetricsDay(
   date: date ?? this.date,
   totalActiveUsers: totalActiveUsers != null ? totalActiveUsers() : this.totalActiveUsers,
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,

@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   '24': ?$24,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'1', '3', '6', '12', '24'}.contains(key)); } 
-TeamsDevicesDisableForTime copyWith({String Function()? $1, String Function()? $3, String Function()? $6, String Function()? $12, String Function()? $24, }) { return TeamsDevicesDisableForTime(
+TeamsDevicesDisableForTime copyWith({String? Function()? $1, String? Function()? $3, String? Function()? $6, String? Function()? $12, String? Function()? $24, }) { return TeamsDevicesDisableForTime(
   $1: $1 != null ? $1() : this.$1,
   $3: $3 != null ? $3() : this.$3,
   $6: $6 != null ? $6() : this.$6,

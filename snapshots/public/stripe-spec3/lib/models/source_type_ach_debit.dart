@@ -1,44 +1,44 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeAchDebit {const SourceTypeAchDebit({this.bankName, this.country, this.fingerprint, this.last4, this.routingNumber, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeAchDebit {const SourceTypeAchDebit({this.bankName = const Omittable.absent(), this.country = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.last4 = const Omittable.absent(), this.routingNumber = const Omittable.absent(), this.type = const Omittable.absent(), });
 
 factory SourceTypeAchDebit.fromJson(Map<String, dynamic> json) { return SourceTypeAchDebit(
-  bankName: json['bank_name'] as String?,
-  country: json['country'] as String?,
-  fingerprint: json['fingerprint'] as String?,
-  last4: json['last4'] as String?,
-  routingNumber: json['routing_number'] as String?,
-  type: json['type'] as String?,
+  bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
+  country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
+  fingerprint: json.containsKey('fingerprint') ? Omittable(json['fingerprint'] as String?) : const Omittable.absent(),
+  last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
+  routingNumber: json.containsKey('routing_number') ? Omittable(json['routing_number'] as String?) : const Omittable.absent(),
+  type: json.containsKey('type') ? Omittable(json['type'] as String?) : const Omittable.absent(),
 ); }
 
-final String? bankName;
+final Omittable<String?> bankName;
 
-final String? country;
+final Omittable<String?> country;
 
-final String? fingerprint;
+final Omittable<String?> fingerprint;
 
-final String? last4;
+final Omittable<String?> last4;
 
-final String? routingNumber;
+final Omittable<String?> routingNumber;
 
-final String? type;
+final Omittable<String?> type;
 
 Map<String, dynamic> toJson() { return {
-  'bank_name': ?bankName,
-  'country': ?country,
-  'fingerprint': ?fingerprint,
-  'last4': ?last4,
-  'routing_number': ?routingNumber,
-  'type': ?type,
+  if (bankName.isPresent) 'bank_name': bankName.value,
+  if (country.isPresent) 'country': country.value,
+  if (fingerprint.isPresent) 'fingerprint': fingerprint.value,
+  if (last4.isPresent) 'last4': last4.value,
+  if (routingNumber.isPresent) 'routing_number': routingNumber.value,
+  if (type.isPresent) 'type': type.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_name', 'country', 'fingerprint', 'last4', 'routing_number', 'type'}.contains(key)); } 
-SourceTypeAchDebit copyWith({String? Function()? bankName, String? Function()? country, String? Function()? fingerprint, String? Function()? last4, String? Function()? routingNumber, String? Function()? type, }) { return SourceTypeAchDebit(
-  bankName: bankName != null ? bankName() : this.bankName,
-  country: country != null ? country() : this.country,
-  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
-  last4: last4 != null ? last4() : this.last4,
-  routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
-  type: type != null ? type() : this.type,
+SourceTypeAchDebit copyWith({Omittable<String?>? bankName, Omittable<String?>? country, Omittable<String?>? fingerprint, Omittable<String?>? last4, Omittable<String?>? routingNumber, Omittable<String?>? type, }) { return SourceTypeAchDebit(
+  bankName: bankName ?? this.bankName,
+  country: country ?? this.country,
+  fingerprint: fingerprint ?? this.fingerprint,
+  last4: last4 ?? this.last4,
+  routingNumber: routingNumber ?? this.routingNumber,
+  type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is SourceTypeAchDebit &&

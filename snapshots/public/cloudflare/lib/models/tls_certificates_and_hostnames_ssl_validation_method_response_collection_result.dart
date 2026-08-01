@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (validationMethod != null) 'validation_method': validationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status', 'validation_method'}.contains(key)); } 
-TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult copyWith({TlsCertificatesAndHostnamesValidationMethodComponentsSchemasStatus Function()? status, TlsCertificatesAndHostnamesValidationMethodDefinition Function()? validationMethod, }) { return TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult(
+TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult copyWith({TlsCertificatesAndHostnamesValidationMethodComponentsSchemasStatus? Function()? status, TlsCertificatesAndHostnamesValidationMethodDefinition? Function()? validationMethod, }) { return TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult(
   status: status != null ? status() : this.status,
   validationMethod: validationMethod != null ? validationMethod() : this.validationMethod,
 ); } 

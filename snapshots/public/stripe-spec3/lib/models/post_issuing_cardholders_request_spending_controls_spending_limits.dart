@@ -960,7 +960,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('interval'); } 
-PostIssuingCardholdersRequestSpendingControlsSpendingLimits copyWith({int? amount, List<PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories> Function()? categories, PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval? interval, }) { return PostIssuingCardholdersRequestSpendingControlsSpendingLimits(
+PostIssuingCardholdersRequestSpendingControlsSpendingLimits copyWith({int? amount, List<PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories>? Function()? categories, PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval? interval, }) { return PostIssuingCardholdersRequestSpendingControlsSpendingLimits(
   amount: amount ?? this.amount,
   categories: categories != null ? categories() : this.categories,
   interval: interval ?? this.interval,

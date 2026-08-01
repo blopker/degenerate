@@ -84,17 +84,17 @@ final bool verified;
 final String? verifiedAt;
 
 Map<String, dynamic> toJson() { return {
-  'payload': ?payload,
+  'payload': payload,
   'reason': reason.toJson(),
-  'signature': ?signature,
+  'signature': signature,
   'verified': verified,
-  'verified_at': ?verifiedAt,
+  'verified_at': verifiedAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('payload') && json['payload'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('payload') && (json['payload'] == null || json['payload'] is String) &&
       json.containsKey('reason') &&
-      json.containsKey('signature') && json['signature'] is String &&
+      json.containsKey('signature') && (json['signature'] == null || json['signature'] is String) &&
       json.containsKey('verified') && json['verified'] is bool &&
-      json.containsKey('verified_at') && json['verified_at'] is String; } 
+      json.containsKey('verified_at') && (json['verified_at'] == null || json['verified_at'] is String); } 
 WebhookStatusCommitCommitVerification copyWith({String? Function()? payload, WebhookStatusCommitCommitVerificationReason? reason, String? Function()? signature, bool? verified, String? Function()? verifiedAt, }) { return WebhookStatusCommitCommitVerification(
   payload: payload != null ? payload() : this.payload,
   reason: reason ?? this.reason,

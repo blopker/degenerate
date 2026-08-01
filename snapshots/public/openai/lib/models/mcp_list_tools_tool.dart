@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A tool available on an MCP server.
 /// 
-@immutable final class McpListToolsTool {const McpListToolsTool({required this.name, required this.inputSchema, this.description, this.annotations, });
+@immutable final class McpListToolsTool {const McpListToolsTool({required this.name, required this.inputSchema, this.description = const Omittable.absent(), this.annotations = const Omittable.absent(), });
 
 factory McpListToolsTool.fromJson(Map<String, dynamic> json) { return McpListToolsTool(
   name: json['name'] as String,
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   inputSchema: json['input_schema'] as Map<String, dynamic>,
-  annotations: json['annotations'] as Map<String, dynamic>?,
+  annotations: json.containsKey('annotations') ? Omittable(json['annotations'] as Map<String, dynamic>?) : const Omittable.absent(),
 ); }
 
 /// The name of the tool.
@@ -17,7 +17,7 @@ final String name;
 
 /// The description of the tool.
 /// 
-final String? description;
+final Omittable<String?> description;
 
 /// The JSON schema describing the tool's input.
 /// 
@@ -25,21 +25,21 @@ final Map<String,dynamic> inputSchema;
 
 /// Additional annotations about the tool.
 /// 
-final Map<String,dynamic>? annotations;
+final Omittable<Map<String,dynamic>?> annotations;
 
 Map<String, dynamic> toJson() { return {
   'name': name,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'input_schema': inputSchema,
-  'annotations': ?annotations,
+  if (annotations.isPresent) 'annotations': annotations.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('input_schema'); } 
-McpListToolsTool copyWith({String? name, String? Function()? description, Map<String,dynamic>? inputSchema, Map<String, dynamic>? Function()? annotations, }) { return McpListToolsTool(
+McpListToolsTool copyWith({String? name, Omittable<String?>? description, Map<String,dynamic>? inputSchema, Omittable<Map<String,dynamic>?>? annotations, }) { return McpListToolsTool(
   name: name ?? this.name,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   inputSchema: inputSchema ?? this.inputSchema,
-  annotations: annotations != null ? annotations() : this.annotations,
+  annotations: annotations ?? this.annotations,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is McpListToolsTool &&

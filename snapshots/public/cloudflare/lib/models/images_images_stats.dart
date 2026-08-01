@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (count != null) 'count': count?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count'}.contains(key)); } 
-ImagesImagesStats copyWith({ImagesImagesStatsCount Function()? count}) { return ImagesImagesStats(
+ImagesImagesStats copyWith({ImagesImagesStatsCount? Function()? count}) { return ImagesImagesStats(
   count: count != null ? count() : this.count,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

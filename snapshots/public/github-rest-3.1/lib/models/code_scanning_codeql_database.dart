@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// A CodeQL database.
-@immutable final class CodeScanningCodeqlDatabase {const CodeScanningCodeqlDatabase({required this.id, required this.name, required this.language, required this.uploader, required this.contentType, required this.size, required this.createdAt, required this.updatedAt, required this.url, this.commitOid, });
+@immutable final class CodeScanningCodeqlDatabase {const CodeScanningCodeqlDatabase({required this.id, required this.name, required this.language, required this.uploader, required this.contentType, required this.size, required this.createdAt, required this.updatedAt, required this.url, this.commitOid = const Omittable.absent(), });
 
 factory CodeScanningCodeqlDatabase.fromJson(Map<String, dynamic> json) { return CodeScanningCodeqlDatabase(
   id: (json['id'] as num).toInt(),
@@ -13,7 +13,7 @@ factory CodeScanningCodeqlDatabase.fromJson(Map<String, dynamic> json) { return 
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
-  commitOid: json['commit_oid'] as String?,
+  commitOid: json.containsKey('commit_oid') ? Omittable(json['commit_oid'] as String?) : const Omittable.absent(),
 ); }
 
 /// The ID of the CodeQL database.
@@ -43,7 +43,7 @@ final DateTime updatedAt;
 final Uri url;
 
 /// The commit SHA of the repository at the time the CodeQL database was created.
-final String? commitOid;
+final Omittable<String?> commitOid;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
-  'commit_oid': ?commitOid,
+  if (commitOid.isPresent) 'commit_oid': commitOid.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
@@ -66,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-CodeScanningCodeqlDatabase copyWith({int? id, String? name, String? language, SimpleUser? uploader, String? contentType, int? size, DateTime? createdAt, DateTime? updatedAt, Uri? url, String? Function()? commitOid, }) { return CodeScanningCodeqlDatabase(
+CodeScanningCodeqlDatabase copyWith({int? id, String? name, String? language, SimpleUser? uploader, String? contentType, int? size, DateTime? createdAt, DateTime? updatedAt, Uri? url, Omittable<String?>? commitOid, }) { return CodeScanningCodeqlDatabase(
   id: id ?? this.id,
   name: name ?? this.name,
   language: language ?? this.language,
@@ -76,7 +76,7 @@ CodeScanningCodeqlDatabase copyWith({int? id, String? name, String? language, Si
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-  commitOid: commitOid != null ? commitOid() : this.commitOid,
+  commitOid: commitOid ?? this.commitOid,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CodeScanningCodeqlDatabase &&

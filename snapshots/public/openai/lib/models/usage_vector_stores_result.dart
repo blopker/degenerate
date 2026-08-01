@@ -22,12 +22,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UsageVectorStoresResultObject($value)'; } 
  }
 /// The aggregated vector stores usage details of the specific time bucket.
-@immutable final class UsageVectorStoresResult {const UsageVectorStoresResult({required this.object, required this.usageBytes, this.projectId, });
+@immutable final class UsageVectorStoresResult {const UsageVectorStoresResult({required this.object, required this.usageBytes, this.projectId = const Omittable.absent(), });
 
 factory UsageVectorStoresResult.fromJson(Map<String, dynamic> json) { return UsageVectorStoresResult(
   object: UsageVectorStoresResultObject.fromJson(json['object'] as String),
   usageBytes: (json['usage_bytes'] as num).toInt(),
-  projectId: json['project_id'] as String?,
+  projectId: json.containsKey('project_id') ? Omittable(json['project_id'] as String?) : const Omittable.absent(),
 ); }
 
 final UsageVectorStoresResultObject object;
@@ -36,19 +36,19 @@ final UsageVectorStoresResultObject object;
 final int usageBytes;
 
 /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
-final String? projectId;
+final Omittable<String?> projectId;
 
 Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'usage_bytes': usageBytes,
-  'project_id': ?projectId,
+  if (projectId.isPresent) 'project_id': projectId.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('usage_bytes') && json['usage_bytes'] is num; } 
-UsageVectorStoresResult copyWith({UsageVectorStoresResultObject? object, int? usageBytes, String? Function()? projectId, }) { return UsageVectorStoresResult(
+UsageVectorStoresResult copyWith({UsageVectorStoresResultObject? object, int? usageBytes, Omittable<String?>? projectId, }) { return UsageVectorStoresResult(
   object: object ?? this.object,
   usageBytes: usageBytes ?? this.usageBytes,
-  projectId: projectId != null ? projectId() : this.projectId,
+  projectId: projectId ?? this.projectId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is UsageVectorStoresResult &&
