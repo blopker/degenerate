@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class UsersDeleteSshSigningKeyForAuthenticatedUserError {const UsersDeleteSshSigningKeyForAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static UsersDeleteSshSigningKeyForAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static UsersDeleteSshSigningKeyForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const UsersDeleteSshSigningKeyForAuthenticatedUserError304();
 case 401:
@@ -19,37 +19,37 @@ return UsersDeleteSshSigningKeyForAuthenticatedUserError404(BasicError.fromJson(
 default:
 return UsersDeleteSshSigningKeyForAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class UsersDeleteSshSigningKeyForAuthenticatedUserError304 extends UsersDeleteSshSigningKeyForAuthenticatedUserError {const UsersDeleteSshSigningKeyForAuthenticatedUserError304();
 
- }
+}
 /// Response for 401 (application/json).
 final class UsersDeleteSshSigningKeyForAuthenticatedUserError401 extends UsersDeleteSshSigningKeyForAuthenticatedUserError {const UsersDeleteSshSigningKeyForAuthenticatedUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class UsersDeleteSshSigningKeyForAuthenticatedUserError403 extends UsersDeleteSshSigningKeyForAuthenticatedUserError {const UsersDeleteSshSigningKeyForAuthenticatedUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class UsersDeleteSshSigningKeyForAuthenticatedUserError404 extends UsersDeleteSshSigningKeyForAuthenticatedUserError {const UsersDeleteSshSigningKeyForAuthenticatedUserError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class UsersDeleteSshSigningKeyForAuthenticatedUserErrorUnknown extends UsersDeleteSshSigningKeyForAuthenticatedUserError {const UsersDeleteSshSigningKeyForAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

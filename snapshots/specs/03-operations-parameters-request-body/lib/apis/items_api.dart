@@ -13,7 +13,7 @@ final class ItemsApi with ApiExecutor {const ItemsApi(this.apiConfig);
 /// Returns one item
 ///
 /// `GET /items/{itemId}`
-Future<ApiResult<void, Never>> getItem({required String itemId, List<String>? fields, List<String>? tagsPipe, List<String>? tagsSpace, GetItemFilter? filter, String? xTraceId, String? session, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getItem({required String itemId, List<String>? fields, List<String>? tagsPipe, List<String>? tagsSpace, GetItemFilter? filter, String? xTraceId, String? session, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
 queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.join(','), allowReserved: true));
@@ -53,11 +53,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Upload a file with metadata
 ///
 /// `POST /upload`
-Future<ApiResult<void, Never>> uploadFile({required UploadFileRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> uploadFile({required UploadFileRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -77,11 +77,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Create an auth token
 ///
 /// `POST /token`
-Future<ApiResult<void, Never>> createToken({required CreateTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> createToken({required CreateTokenRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -102,5 +102,5 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

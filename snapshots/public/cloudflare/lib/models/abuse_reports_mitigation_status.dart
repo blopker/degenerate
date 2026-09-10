@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of a mitigation
 @immutable final class AbuseReportsMitigationStatus {const AbuseReportsMitigationStatus._(this.value);
 
-factory AbuseReportsMitigationStatus.fromJson(String json) { return switch (json) {
+factory AbuseReportsMitigationStatus.fromJson(String json) {return switch (json) {
   'pending' => pending,
   'active' => active,
   'in_review' => inReview,
   'cancelled' => cancelled,
   'removed' => removed,
   _ => AbuseReportsMitigationStatus._(json),
-}; }
+};}
 
 static const AbuseReportsMitigationStatus pending = AbuseReportsMitigationStatus._('pending');
 
@@ -26,11 +26,11 @@ static const List<AbuseReportsMitigationStatus> values = [pending, active, inRev
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsMitigationStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AbuseReportsMitigationStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsMitigationStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AbuseReportsMitigationStatus($value)';}
+}

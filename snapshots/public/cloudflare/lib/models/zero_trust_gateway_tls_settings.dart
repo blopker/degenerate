@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify whether to inspect encrypted HTTP traffic.
 @immutable final class ZeroTrustGatewayTlsSettings {const ZeroTrustGatewayTlsSettings({this.enabled});
 
-factory ZeroTrustGatewayTlsSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayTlsSettings(
+factory ZeroTrustGatewayTlsSettings.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayTlsSettings(
   enabled: json['enabled'] as bool?,
-); }
+);}
 
 /// Specify whether to inspect encrypted HTTP traffic.
 final bool? enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled'}.contains(key)); } 
-ZeroTrustGatewayTlsSettings copyWith({bool? Function()? enabled}) { return ZeroTrustGatewayTlsSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled'}.contains(key));}
+ZeroTrustGatewayTlsSettings copyWith({bool? Function()? enabled}) {return ZeroTrustGatewayTlsSettings(
   enabled: enabled != null ? enabled() : this.enabled,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewayTlsSettings &&
-          enabled == other.enabled; } 
-@override int get hashCode { return enabled.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayTlsSettings(enabled: $enabled)'; } 
- }
+          enabled == other.enabled;}
+@override int get hashCode {return enabled.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayTlsSettings(enabled: $enabled)';}
+}

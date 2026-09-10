@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_credit_notes_request_lines_tax_amounts.dart';import 'post_credit_notes_request_lines_tax_rates.dart';@immutable final class PostCreditNotesRequestLinesType {const PostCreditNotesRequestLinesType._(this.value);
 
-factory PostCreditNotesRequestLinesType.fromJson(String json) { return switch (json) {
+factory PostCreditNotesRequestLinesType.fromJson(String json) {return switch (json) {
   'custom_line_item' => customLineItem,
   'invoice_line_item' => invoiceLineItem,
   _ => PostCreditNotesRequestLinesType._(json),
-}; }
+};}
 
 static const PostCreditNotesRequestLinesType customLineItem = PostCreditNotesRequestLinesType._('custom_line_item');
 
@@ -16,17 +16,17 @@ static const List<PostCreditNotesRequestLinesType> values = [customLineItem, inv
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCreditNotesRequestLinesType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCreditNotesRequestLinesType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCreditNotesRequestLinesType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCreditNotesRequestLinesType($value)';}
+}
 @immutable final class PostCreditNotesRequestLines {const PostCreditNotesRequestLines({required this.type, this.amount, this.description, this.invoiceLineItem, this.quantity, this.taxAmounts, this.taxRates, this.unitAmount, this.unitAmountDecimal, });
 
-factory PostCreditNotesRequestLines.fromJson(Map<String, dynamic> json) { return PostCreditNotesRequestLines(
+factory PostCreditNotesRequestLines.fromJson(Map<String, dynamic> json) {return PostCreditNotesRequestLines(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   description: json['description'] as String?,
   invoiceLineItem: json['invoice_line_item'] as String?,
@@ -36,7 +36,7 @@ factory PostCreditNotesRequestLines.fromJson(Map<String, dynamic> json) { return
   type: PostCreditNotesRequestLinesType.fromJson(json['type'] as String),
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
-); }
+);}
 
 final int? amount;
 
@@ -56,7 +56,7 @@ final int? unitAmount;
 
 final String? unitAmountDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'description': ?description,
   'invoice_line_item': ?invoiceLineItem,
@@ -66,9 +66,9 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'unit_amount': ?unitAmount,
   'unit_amount_decimal': ?unitAmountDecimal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostCreditNotesRequestLines copyWith({int? Function()? amount, String? Function()? description, String? Function()? invoiceLineItem, int? Function()? quantity, PostCreditNotesRequestLinesTaxAmounts? Function()? taxAmounts, PostCreditNotesRequestLinesTaxRates? Function()? taxRates, PostCreditNotesRequestLinesType? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return PostCreditNotesRequestLines(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostCreditNotesRequestLines copyWith({int? Function()? amount, String? Function()? description, String? Function()? invoiceLineItem, int? Function()? quantity, PostCreditNotesRequestLinesTaxAmounts? Function()? taxAmounts, PostCreditNotesRequestLinesTaxRates? Function()? taxRates, PostCreditNotesRequestLinesType? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) {return PostCreditNotesRequestLines(
   amount: amount != null ? amount() : this.amount,
   description: description != null ? description() : this.description,
   invoiceLineItem: invoiceLineItem != null ? invoiceLineItem() : this.invoiceLineItem,
@@ -78,8 +78,8 @@ PostCreditNotesRequestLines copyWith({int? Function()? amount, String? Function(
   type: type ?? this.type,
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCreditNotesRequestLines &&
           amount == other.amount &&
           description == other.description &&
@@ -89,7 +89,7 @@ PostCreditNotesRequestLines copyWith({int? Function()? amount, String? Function(
           taxRates == other.taxRates &&
           type == other.type &&
           unitAmount == other.unitAmount &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(amount, description, invoiceLineItem, quantity, taxAmounts, taxRates, type, unitAmount, unitAmountDecimal); } 
-@override String toString() { return 'PostCreditNotesRequestLines(amount: $amount, description: $description, invoiceLineItem: $invoiceLineItem, quantity: $quantity, taxAmounts: $taxAmounts, taxRates: $taxRates, type: $type, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
- }
+          unitAmountDecimal == other.unitAmountDecimal;}
+@override int get hashCode {return Object.hash(amount, description, invoiceLineItem, quantity, taxAmounts, taxRates, type, unitAmount, unitAmountDecimal);}
+@override String toString() {return 'PostCreditNotesRequestLines(amount: $amount, description: $description, invoiceLineItem: $invoiceLineItem, quantity: $quantity, taxAmounts: $taxAmounts, taxRates: $taxRates, type: $type, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';}
+}

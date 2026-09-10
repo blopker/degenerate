@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityCreateDisplayNameResponseResult {const EmailSecurityCreateDisplayNameResponseResult({required this.email, required this.isEmailRegex, required this.name, required this.createdAt, required this.id, required this.lastModified, this.comments = const Omittable.absent(), this.directoryId = const Omittable.absent(), this.directoryNodeId = const Omittable.absent(), this.externalDirectoryNodeId = const Omittable.absent(), this.provenance = const Omittable.absent(), });
 
-factory EmailSecurityCreateDisplayNameResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityCreateDisplayNameResponseResult(
+factory EmailSecurityCreateDisplayNameResponseResult.fromJson(Map<String, dynamic> json) {return EmailSecurityCreateDisplayNameResponseResult(
   email: json['email'] as String,
   isEmailRegex: json['is_email_regex'] as bool,
   name: json['name'] as String,
@@ -14,7 +14,7 @@ factory EmailSecurityCreateDisplayNameResponseResult.fromJson(Map<String, dynami
   id: (json['id'] as num).toInt(),
   lastModified: DateTime.parse(json['last_modified'] as String),
   provenance: json.containsKey('provenance') ? Omittable(json['provenance'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final String email;
 
@@ -38,7 +38,7 @@ final DateTime lastModified;
 
 final Omittable<String?> provenance;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'email': email,
   'is_email_regex': isEmailRegex,
   'name': name,
@@ -50,14 +50,14 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'last_modified': lastModified.toIso8601String(),
   if (provenance.isPresent) 'provenance': provenance.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') && json['email'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('email') && json['email'] is String &&
       json.containsKey('is_email_regex') && json['is_email_regex'] is bool &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is num &&
-      json.containsKey('last_modified') && json['last_modified'] is String; } 
-EmailSecurityCreateDisplayNameResponseResult copyWith({String? email, bool? isEmailRegex, String? name, Omittable<String?>? comments, DateTime? createdAt, Omittable<int?>? directoryId, Omittable<int?>? directoryNodeId, Omittable<String?>? externalDirectoryNodeId, int? id, DateTime? lastModified, Omittable<String?>? provenance, }) { return EmailSecurityCreateDisplayNameResponseResult(
+      json.containsKey('last_modified') && json['last_modified'] is String;}
+EmailSecurityCreateDisplayNameResponseResult copyWith({String? email, bool? isEmailRegex, String? name, Omittable<String?>? comments, DateTime? createdAt, Omittable<int?>? directoryId, Omittable<int?>? directoryNodeId, Omittable<String?>? externalDirectoryNodeId, int? id, DateTime? lastModified, Omittable<String?>? provenance, }) {return EmailSecurityCreateDisplayNameResponseResult(
   email: email ?? this.email,
   isEmailRegex: isEmailRegex ?? this.isEmailRegex,
   name: name ?? this.name,
@@ -69,8 +69,8 @@ EmailSecurityCreateDisplayNameResponseResult copyWith({String? email, bool? isEm
   id: id ?? this.id,
   lastModified: lastModified ?? this.lastModified,
   provenance: provenance ?? this.provenance,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSecurityCreateDisplayNameResponseResult &&
           email == other.email &&
           isEmailRegex == other.isEmailRegex &&
@@ -82,7 +82,7 @@ EmailSecurityCreateDisplayNameResponseResult copyWith({String? email, bool? isEm
           externalDirectoryNodeId == other.externalDirectoryNodeId &&
           id == other.id &&
           lastModified == other.lastModified &&
-          provenance == other.provenance; } 
-@override int get hashCode { return Object.hash(email, isEmailRegex, name, comments, createdAt, directoryId, directoryNodeId, externalDirectoryNodeId, id, lastModified, provenance); } 
-@override String toString() { return 'EmailSecurityCreateDisplayNameResponseResult(email: $email, isEmailRegex: $isEmailRegex, name: $name, comments: $comments, createdAt: $createdAt, directoryId: $directoryId, directoryNodeId: $directoryNodeId, externalDirectoryNodeId: $externalDirectoryNodeId, id: $id, lastModified: $lastModified, provenance: $provenance)'; } 
- }
+          provenance == other.provenance;}
+@override int get hashCode {return Object.hash(email, isEmailRegex, name, comments, createdAt, directoryId, directoryNodeId, externalDirectoryNodeId, id, lastModified, provenance);}
+@override String toString() {return 'EmailSecurityCreateDisplayNameResponseResult(email: $email, isEmailRegex: $isEmailRegex, name: $name, comments: $comments, createdAt: $createdAt, directoryId: $directoryId, directoryNodeId: $directoryNodeId, externalDirectoryNodeId: $externalDirectoryNodeId, id: $id, lastModified: $lastModified, provenance: $provenance)';}
+}

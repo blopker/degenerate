@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'contributor_activity_weeks.dart';import 'simple_user.dart';/// Contributor Activity
 @immutable final class ContributorActivity {const ContributorActivity({required this.author, required this.total, required this.weeks, });
 
-factory ContributorActivity.fromJson(Map<String, dynamic> json) { return ContributorActivity(
+factory ContributorActivity.fromJson(Map<String, dynamic> json) {return ContributorActivity(
   author: json['author'] != null ? SimpleUser.fromJson(json['author'] as Map<String, dynamic>) : null,
   total: (json['total'] as num).toInt(),
   weeks: (json['weeks'] as List<dynamic>).map((e) => ContributorActivityWeeks.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final SimpleUser? author;
 
@@ -15,24 +15,24 @@ final int total;
 
 final List<ContributorActivityWeeks> weeks;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author': author?.toJson(),
   'total': total,
   'weeks': weeks.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('author') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('author') &&
       json.containsKey('total') && json['total'] is num &&
-      json.containsKey('weeks'); } 
-ContributorActivity copyWith({SimpleUser? Function()? author, int? total, List<ContributorActivityWeeks>? weeks, }) { return ContributorActivity(
+      json.containsKey('weeks');}
+ContributorActivity copyWith({SimpleUser? Function()? author, int? total, List<ContributorActivityWeeks>? weeks, }) {return ContributorActivity(
   author: author != null ? author() : this.author,
   total: total ?? this.total,
   weeks: weeks ?? this.weeks,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ContributorActivity &&
           author == other.author &&
           total == other.total &&
-          listEquals(weeks, other.weeks); } 
-@override int get hashCode { return Object.hash(author, total, Object.hashAll(weeks)); } 
-@override String toString() { return 'ContributorActivity(author: $author, total: $total, weeks: $weeks)'; } 
- }
+          listEquals(weeks, other.weeks);}
+@override int get hashCode {return Object.hash(author, total, Object.hashAll(weeks));}
+@override String toString() {return 'ContributorActivity(author: $author, total: $total, weeks: $weeks)';}
+}

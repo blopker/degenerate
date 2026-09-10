@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustApplicationsReviewStatusUpdateRequest {const ZeroTrustApplicationsReviewStatusUpdateRequest({required this.approvedApps, required this.inReviewApps, required this.unapprovedApps, });
 
-factory ZeroTrustApplicationsReviewStatusUpdateRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustApplicationsReviewStatusUpdateRequest(
+factory ZeroTrustApplicationsReviewStatusUpdateRequest.fromJson(Map<String, dynamic> json) {return ZeroTrustApplicationsReviewStatusUpdateRequest(
   approvedApps: (json['approved_apps'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
   inReviewApps: (json['in_review_apps'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
   unapprovedApps: (json['unapproved_apps'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// Contains the ids of the approved applications.
 final List<int> approvedApps;
@@ -17,24 +17,24 @@ final List<int> inReviewApps;
 /// Contains the ids of the unapproved applications.
 final List<int> unapprovedApps;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'approved_apps': approvedApps,
   'in_review_apps': inReviewApps,
   'unapproved_apps': unapprovedApps,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('approved_apps') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('approved_apps') &&
       json.containsKey('in_review_apps') &&
-      json.containsKey('unapproved_apps'); } 
-ZeroTrustApplicationsReviewStatusUpdateRequest copyWith({List<int>? approvedApps, List<int>? inReviewApps, List<int>? unapprovedApps, }) { return ZeroTrustApplicationsReviewStatusUpdateRequest(
+      json.containsKey('unapproved_apps');}
+ZeroTrustApplicationsReviewStatusUpdateRequest copyWith({List<int>? approvedApps, List<int>? inReviewApps, List<int>? unapprovedApps, }) {return ZeroTrustApplicationsReviewStatusUpdateRequest(
   approvedApps: approvedApps ?? this.approvedApps,
   inReviewApps: inReviewApps ?? this.inReviewApps,
   unapprovedApps: unapprovedApps ?? this.unapprovedApps,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustApplicationsReviewStatusUpdateRequest &&
           listEquals(approvedApps, other.approvedApps) &&
           listEquals(inReviewApps, other.inReviewApps) &&
-          listEquals(unapprovedApps, other.unapprovedApps); } 
-@override int get hashCode { return Object.hash(Object.hashAll(approvedApps), Object.hashAll(inReviewApps), Object.hashAll(unapprovedApps)); } 
-@override String toString() { return 'ZeroTrustApplicationsReviewStatusUpdateRequest(approvedApps: $approvedApps, inReviewApps: $inReviewApps, unapprovedApps: $unapprovedApps)'; } 
- }
+          listEquals(unapprovedApps, other.unapprovedApps);}
+@override int get hashCode {return Object.hash(Object.hashAll(approvedApps), Object.hashAll(inReviewApps), Object.hashAll(unapprovedApps));}
+@override String toString() {return 'ZeroTrustApplicationsReviewStatusUpdateRequest(approvedApps: $approvedApps, inReviewApps: $inReviewApps, unapprovedApps: $unapprovedApps)';}
+}

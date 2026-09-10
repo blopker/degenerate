@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VideoSize {const VideoSize._(this.value);
 
-factory VideoSize.fromJson(String json) { return switch (json) {
+factory VideoSize.fromJson(String json) {return switch (json) {
   '720x1280' => $720x1280,
   '1280x720' => $1280x720,
   '1024x1792' => $1024x1792,
   '1792x1024' => $1792x1024,
   _ => VideoSize._(json),
-}; }
+};}
 
 static const VideoSize $720x1280 = VideoSize._('720x1280');
 
@@ -22,11 +22,11 @@ static const List<VideoSize> values = [$720x1280, $1280x720, $1024x1792, $1792x1
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VideoSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VideoSize($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is VideoSize && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'VideoSize($value)';}
+}

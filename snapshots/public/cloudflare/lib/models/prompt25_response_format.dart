@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt25ResponseFormatType {const Prompt25ResponseFormatType._(this.value);
 
-factory Prompt25ResponseFormatType.fromJson(String json) { return switch (json) {
+factory Prompt25ResponseFormatType.fromJson(String json) {return switch (json) {
   'json_object' => jsonObject,
   'json_schema' => jsonSchema,
   _ => Prompt25ResponseFormatType._(json),
-}; }
+};}
 
 static const Prompt25ResponseFormatType jsonObject = Prompt25ResponseFormatType._('json_object');
 
@@ -16,38 +16,38 @@ static const List<Prompt25ResponseFormatType> values = [jsonObject, jsonSchema];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Prompt25ResponseFormatType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Prompt25ResponseFormatType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Prompt25ResponseFormatType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Prompt25ResponseFormatType($value)';}
+}
 @immutable final class Prompt25ResponseFormat {const Prompt25ResponseFormat({this.jsonSchema = const Omittable.absent(), this.type, });
 
-factory Prompt25ResponseFormat.fromJson(Map<String, dynamic> json) { return Prompt25ResponseFormat(
+factory Prompt25ResponseFormat.fromJson(Map<String, dynamic> json) {return Prompt25ResponseFormat(
   jsonSchema: json.containsKey('json_schema') ? Omittable(json['json_schema']) : const Omittable.absent(),
   type: json['type'] != null ? Prompt25ResponseFormatType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final Omittable<dynamic> jsonSchema;
 
 final Prompt25ResponseFormatType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (jsonSchema.isPresent) 'json_schema': jsonSchema.value,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'json_schema', 'type'}.contains(key)); } 
-Prompt25ResponseFormat copyWith({Omittable<dynamic>? jsonSchema, Prompt25ResponseFormatType? Function()? type, }) { return Prompt25ResponseFormat(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'json_schema', 'type'}.contains(key));}
+Prompt25ResponseFormat copyWith({Omittable<dynamic>? jsonSchema, Prompt25ResponseFormatType? Function()? type, }) {return Prompt25ResponseFormat(
   jsonSchema: jsonSchema ?? this.jsonSchema,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Prompt25ResponseFormat &&
           jsonSchema == other.jsonSchema &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(jsonSchema, type); } 
-@override String toString() { return 'Prompt25ResponseFormat(jsonSchema: $jsonSchema, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(jsonSchema, type);}
+@override String toString() {return 'Prompt25ResponseFormat(jsonSchema: $jsonSchema, type: $type)';}
+}

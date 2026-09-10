@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ranking_top_domains_response_result_meta_confidence_info.dart';import 'radar_get_ranking_top_domains_response_result_meta_date_range.dart';import 'radar_get_ranking_top_domains_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 @immutable final class RadarGetRankingTopDomainsResponseResultMetaNormalization {const RadarGetRankingTopDomainsResponseResultMetaNormalization._(this.value);
 
-factory RadarGetRankingTopDomainsResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+factory RadarGetRankingTopDomainsResponseResultMetaNormalization.fromJson(String json) {return switch (json) {
   'PERCENTAGE' => percentage,
   'MIN0_MAX' => min0Max,
   'MIN_MAX' => minMax,
@@ -13,7 +13,7 @@ factory RadarGetRankingTopDomainsResponseResultMetaNormalization.fromJson(String
   'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
   'RATIO' => ratio,
   _ => RadarGetRankingTopDomainsResponseResultMetaNormalization._(json),
-}; }
+};}
 
 static const RadarGetRankingTopDomainsResponseResultMetaNormalization percentage = RadarGetRankingTopDomainsResponseResultMetaNormalization._('PERCENTAGE');
 
@@ -35,23 +35,23 @@ static const List<RadarGetRankingTopDomainsResponseResultMetaNormalization> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetRankingTopDomainsResponseResultMetaNormalization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetRankingTopDomainsResponseResultMetaNormalization($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetRankingTopDomainsResponseResultMetaNormalization && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetRankingTopDomainsResponseResultMetaNormalization($value)';}
+}
 @immutable final class RadarGetRankingTopDomainsResponseResultMeta {const RadarGetRankingTopDomainsResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
-factory RadarGetRankingTopDomainsResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetRankingTopDomainsResponseResultMeta(
+factory RadarGetRankingTopDomainsResponseResultMeta.fromJson(Map<String, dynamic> json) {return RadarGetRankingTopDomainsResponseResultMeta(
   confidenceInfo: json['confidenceInfo'] != null ? RadarGetRankingTopDomainsResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetRankingTopDomainsResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
   lastUpdated: DateTime.parse(json['lastUpdated'] as String),
   normalization: RadarGetRankingTopDomainsResponseResultMetaNormalization.fromJson(json['normalization'] as String),
   units: (json['units'] as List<dynamic>).map((e) => RadarGetRankingTopDomainsResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final RadarGetRankingTopDomainsResponseResultMetaConfidenceInfo? confidenceInfo;
 
@@ -66,32 +66,32 @@ final RadarGetRankingTopDomainsResponseResultMetaNormalization normalization;
 /// Measurement units for the results.
 final List<RadarGetRankingTopDomainsResponseResultMetaUnits> units;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'confidenceInfo': confidenceInfo?.toJson(),
   'dateRange': dateRange.map((e) => e.toJson()).toList(),
   'lastUpdated': lastUpdated.toIso8601String(),
   'normalization': normalization.toJson(),
   'units': units.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('confidenceInfo') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('confidenceInfo') &&
       json.containsKey('dateRange') &&
       json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
       json.containsKey('normalization') &&
-      json.containsKey('units'); } 
-RadarGetRankingTopDomainsResponseResultMeta copyWith({RadarGetRankingTopDomainsResponseResultMetaConfidenceInfo? Function()? confidenceInfo, List<RadarGetRankingTopDomainsResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetRankingTopDomainsResponseResultMetaNormalization? normalization, List<RadarGetRankingTopDomainsResponseResultMetaUnits>? units, }) { return RadarGetRankingTopDomainsResponseResultMeta(
+      json.containsKey('units');}
+RadarGetRankingTopDomainsResponseResultMeta copyWith({RadarGetRankingTopDomainsResponseResultMetaConfidenceInfo? Function()? confidenceInfo, List<RadarGetRankingTopDomainsResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetRankingTopDomainsResponseResultMetaNormalization? normalization, List<RadarGetRankingTopDomainsResponseResultMetaUnits>? units, }) {return RadarGetRankingTopDomainsResponseResultMeta(
   confidenceInfo: confidenceInfo != null ? confidenceInfo() : this.confidenceInfo,
   dateRange: dateRange ?? this.dateRange,
   lastUpdated: lastUpdated ?? this.lastUpdated,
   normalization: normalization ?? this.normalization,
   units: units ?? this.units,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetRankingTopDomainsResponseResultMeta &&
           confidenceInfo == other.confidenceInfo &&
           listEquals(dateRange, other.dateRange) &&
           lastUpdated == other.lastUpdated &&
           normalization == other.normalization &&
-          listEquals(units, other.units); } 
-@override int get hashCode { return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
-@override String toString() { return 'RadarGetRankingTopDomainsResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
- }
+          listEquals(units, other.units);}
+@override int get hashCode {return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units));}
+@override String toString() {return 'RadarGetRankingTopDomainsResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)';}
+}

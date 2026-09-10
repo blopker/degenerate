@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue.dart';import 'organization_simple_webhooks.dart';import 'repository.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookIssueDependenciesBlockedByAddedAction {const WebhookIssueDependenciesBlockedByAddedAction._(this.value);
 
-factory WebhookIssueDependenciesBlockedByAddedAction.fromJson(String json) { return switch (json) {
+factory WebhookIssueDependenciesBlockedByAddedAction.fromJson(String json) {return switch (json) {
   'blocked_by_added' => blockedByAdded,
   _ => WebhookIssueDependenciesBlockedByAddedAction._(json),
-}; }
+};}
 
 static const WebhookIssueDependenciesBlockedByAddedAction blockedByAdded = WebhookIssueDependenciesBlockedByAddedAction._('blocked_by_added');
 
@@ -13,17 +13,17 @@ static const List<WebhookIssueDependenciesBlockedByAddedAction> values = [blocke
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssueDependenciesBlockedByAddedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssueDependenciesBlockedByAddedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssueDependenciesBlockedByAddedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssueDependenciesBlockedByAddedAction($value)';}
+}
 @immutable final class WebhookIssueDependenciesBlockedByAdded {const WebhookIssueDependenciesBlockedByAdded({required this.action, required this.organization, required this.repository, required this.sender, this.blockedIssueId, this.blockedIssue, this.blockingIssueId, this.blockingIssue, this.blockingIssueRepo, this.installation, });
 
-factory WebhookIssueDependenciesBlockedByAdded.fromJson(Map<String, dynamic> json) { return WebhookIssueDependenciesBlockedByAdded(
+factory WebhookIssueDependenciesBlockedByAdded.fromJson(Map<String, dynamic> json) {return WebhookIssueDependenciesBlockedByAdded(
   action: WebhookIssueDependenciesBlockedByAddedAction.fromJson(json['action'] as String),
   blockedIssueId: json['blocked_issue_id'] != null ? (json['blocked_issue_id'] as num).toDouble() : null,
   blockedIssue: json['blocked_issue'] != null ? Issue.fromJson(json['blocked_issue'] as Map<String, dynamic>) : null,
@@ -34,7 +34,7 @@ factory WebhookIssueDependenciesBlockedByAdded.fromJson(Map<String, dynamic> jso
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookIssueDependenciesBlockedByAddedAction action;
 
@@ -58,7 +58,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'blocked_issue_id': ?blockedIssueId,
   if (blockedIssue != null) 'blocked_issue': blockedIssue?.toJson(),
@@ -69,12 +69,12 @@ Map<String, dynamic> toJson() { return {
   'organization': organization.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('organization') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookIssueDependenciesBlockedByAdded copyWith({WebhookIssueDependenciesBlockedByAddedAction? action, double? Function()? blockedIssueId, Issue? Function()? blockedIssue, double? Function()? blockingIssueId, Issue? Function()? blockingIssue, Repository? Function()? blockingIssueRepo, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssueDependenciesBlockedByAdded(
+      json.containsKey('sender');}
+WebhookIssueDependenciesBlockedByAdded copyWith({WebhookIssueDependenciesBlockedByAddedAction? action, double? Function()? blockedIssueId, Issue? Function()? blockedIssue, double? Function()? blockingIssueId, Issue? Function()? blockingIssue, Repository? Function()? blockingIssueRepo, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookIssueDependenciesBlockedByAdded(
   action: action ?? this.action,
   blockedIssueId: blockedIssueId != null ? blockedIssueId() : this.blockedIssueId,
   blockedIssue: blockedIssue != null ? blockedIssue() : this.blockedIssue,
@@ -85,8 +85,8 @@ WebhookIssueDependenciesBlockedByAdded copyWith({WebhookIssueDependenciesBlocked
   organization: organization ?? this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookIssueDependenciesBlockedByAdded &&
           action == other.action &&
           blockedIssueId == other.blockedIssueId &&
@@ -97,7 +97,7 @@ WebhookIssueDependenciesBlockedByAdded copyWith({WebhookIssueDependenciesBlocked
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, blockedIssueId, blockedIssue, blockingIssueId, blockingIssue, blockingIssueRepo, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookIssueDependenciesBlockedByAdded(action: $action, blockedIssueId: $blockedIssueId, blockedIssue: $blockedIssue, blockingIssueId: $blockingIssueId, blockingIssue: $blockingIssue, blockingIssueRepo: $blockingIssueRepo, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, blockedIssueId, blockedIssue, blockingIssueId, blockingIssue, blockingIssueRepo, installation, organization, repository, sender);}
+@override String toString() {return 'WebhookIssueDependenciesBlockedByAdded(action: $action, blockedIssueId: $blockedIssueId, blockedIssue: $blockedIssue, blockingIssueId: $blockingIssueId, blockingIssue: $blockingIssue, blockingIssueRepo: $blockingIssueRepo, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';}
+}

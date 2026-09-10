@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitChatMessage {const RealtimekitChatMessage({required this.chatDownloadUrl, required this.chatDownloadUrlExpiry, });
 
-factory RealtimekitChatMessage.fromJson(Map<String, dynamic> json) { return RealtimekitChatMessage(
+factory RealtimekitChatMessage.fromJson(Map<String, dynamic> json) {return RealtimekitChatMessage(
   chatDownloadUrl: json['chat_download_url'] as String,
   chatDownloadUrlExpiry: json['chat_download_url_expiry'] as String,
-); }
+);}
 
 /// URL where the chat logs can be downloaded
 final String chatDownloadUrl;
@@ -13,20 +13,20 @@ final String chatDownloadUrl;
 /// Time when the download URL will expire
 final String chatDownloadUrlExpiry;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'chat_download_url': chatDownloadUrl,
   'chat_download_url_expiry': chatDownloadUrlExpiry,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('chat_download_url') && json['chat_download_url'] is String &&
-      json.containsKey('chat_download_url_expiry') && json['chat_download_url_expiry'] is String; } 
-RealtimekitChatMessage copyWith({String? chatDownloadUrl, String? chatDownloadUrlExpiry, }) { return RealtimekitChatMessage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('chat_download_url') && json['chat_download_url'] is String &&
+      json.containsKey('chat_download_url_expiry') && json['chat_download_url_expiry'] is String;}
+RealtimekitChatMessage copyWith({String? chatDownloadUrl, String? chatDownloadUrlExpiry, }) {return RealtimekitChatMessage(
   chatDownloadUrl: chatDownloadUrl ?? this.chatDownloadUrl,
   chatDownloadUrlExpiry: chatDownloadUrlExpiry ?? this.chatDownloadUrlExpiry,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitChatMessage &&
           chatDownloadUrl == other.chatDownloadUrl &&
-          chatDownloadUrlExpiry == other.chatDownloadUrlExpiry; } 
-@override int get hashCode { return Object.hash(chatDownloadUrl, chatDownloadUrlExpiry); } 
-@override String toString() { return 'RealtimekitChatMessage(chatDownloadUrl: $chatDownloadUrl, chatDownloadUrlExpiry: $chatDownloadUrlExpiry)'; } 
- }
+          chatDownloadUrlExpiry == other.chatDownloadUrlExpiry;}
+@override int get hashCode {return Object.hash(chatDownloadUrl, chatDownloadUrlExpiry);}
+@override String toString() {return 'RealtimekitChatMessage(chatDownloadUrl: $chatDownloadUrl, chatDownloadUrlExpiry: $chatDownloadUrlExpiry)';}
+}

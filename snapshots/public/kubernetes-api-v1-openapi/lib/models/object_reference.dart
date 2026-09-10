@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ObjectReference contains enough information to let you inspect or modify the referred object.
 @immutable final class ObjectReference {const ObjectReference({this.apiVersion, this.fieldPath, this.kind, this.name, this.namespace, this.resourceVersion, this.uid, });
 
-factory ObjectReference.fromJson(Map<String, dynamic> json) { return ObjectReference(
+factory ObjectReference.fromJson(Map<String, dynamic> json) {return ObjectReference(
   apiVersion: json['apiVersion'] as String?,
   fieldPath: json['fieldPath'] as String?,
   kind: json['kind'] as String?,
@@ -11,7 +11,7 @@ factory ObjectReference.fromJson(Map<String, dynamic> json) { return ObjectRefer
   namespace: json['namespace'] as String?,
   resourceVersion: json['resourceVersion'] as String?,
   uid: json['uid'] as String?,
-); }
+);}
 
 /// API version of the referent.
 final String? apiVersion;
@@ -34,7 +34,7 @@ final String? resourceVersion;
 /// UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids
 final String? uid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   'fieldPath': ?fieldPath,
   'kind': ?kind,
@@ -42,9 +42,9 @@ Map<String, dynamic> toJson() { return {
   'namespace': ?namespace,
   'resourceVersion': ?resourceVersion,
   'uid': ?uid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'fieldPath', 'kind', 'name', 'namespace', 'resourceVersion', 'uid'}.contains(key)); } 
-ObjectReference copyWith({String? Function()? apiVersion, String? Function()? fieldPath, String? Function()? kind, String? Function()? name, String? Function()? namespace, String? Function()? resourceVersion, String? Function()? uid, }) { return ObjectReference(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'apiVersion', 'fieldPath', 'kind', 'name', 'namespace', 'resourceVersion', 'uid'}.contains(key));}
+ObjectReference copyWith({String? Function()? apiVersion, String? Function()? fieldPath, String? Function()? kind, String? Function()? name, String? Function()? namespace, String? Function()? resourceVersion, String? Function()? uid, }) {return ObjectReference(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   fieldPath: fieldPath != null ? fieldPath() : this.fieldPath,
   kind: kind != null ? kind() : this.kind,
@@ -52,8 +52,8 @@ ObjectReference copyWith({String? Function()? apiVersion, String? Function()? fi
   namespace: namespace != null ? namespace() : this.namespace,
   resourceVersion: resourceVersion != null ? resourceVersion() : this.resourceVersion,
   uid: uid != null ? uid() : this.uid,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ObjectReference &&
           apiVersion == other.apiVersion &&
           fieldPath == other.fieldPath &&
@@ -61,7 +61,7 @@ ObjectReference copyWith({String? Function()? apiVersion, String? Function()? fi
           name == other.name &&
           namespace == other.namespace &&
           resourceVersion == other.resourceVersion &&
-          uid == other.uid; } 
-@override int get hashCode { return Object.hash(apiVersion, fieldPath, kind, name, namespace, resourceVersion, uid); } 
-@override String toString() { return 'ObjectReference(apiVersion: $apiVersion, fieldPath: $fieldPath, kind: $kind, name: $name, namespace: $namespace, resourceVersion: $resourceVersion, uid: $uid)'; } 
- }
+          uid == other.uid;}
+@override int get hashCode {return Object.hash(apiVersion, fieldPath, kind, name, namespace, resourceVersion, uid);}
+@override String toString() {return 'ObjectReference(apiVersion: $apiVersion, fieldPath: $fieldPath, kind: $kind, name: $name, namespace: $namespace, resourceVersion: $resourceVersion, uid: $uid)';}
+}

@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VideoModelVariant2 {const VideoModelVariant2._(this.value);
 
-factory VideoModelVariant2.fromJson(String json) { return switch (json) {
+factory VideoModelVariant2.fromJson(String json) {return switch (json) {
   'sora-2' => sora2,
   'sora-2-pro' => sora2Pro,
   'sora-2-2025-10-06' => sora220251006,
   'sora-2-pro-2025-10-06' => sora2Pro20251006,
   'sora-2-2025-12-08' => sora220251208,
   _ => VideoModelVariant2._(json),
-}; }
+};}
 
 static const VideoModelVariant2 sora2 = VideoModelVariant2._('sora-2');
 
@@ -25,14 +25,14 @@ static const List<VideoModelVariant2> values = [sora2, sora2Pro, sora220251006, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VideoModelVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VideoModelVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is VideoModelVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'VideoModelVariant2($value)';}
+}
 
 @immutable
 final class VideoModel {

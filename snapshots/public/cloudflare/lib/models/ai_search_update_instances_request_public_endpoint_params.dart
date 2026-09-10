@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_update_instances_request_public_endpoint_params_chat_completions_endpoint.dart';import 'ai_search_update_instances_request_public_endpoint_params_mcp.dart';import 'ai_search_update_instances_request_public_endpoint_params_rate_limit.dart';import 'ai_search_update_instances_request_public_endpoint_params_search_endpoint.dart';@immutable final class AiSearchUpdateInstancesRequestPublicEndpointParams {const AiSearchUpdateInstancesRequestPublicEndpointParams({this.authorizedHosts, this.chatCompletionsEndpoint, this.enabled, this.mcp, this.rateLimit, this.searchEndpoint, });
 
-factory AiSearchUpdateInstancesRequestPublicEndpointParams.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesRequestPublicEndpointParams(
+factory AiSearchUpdateInstancesRequestPublicEndpointParams.fromJson(Map<String, dynamic> json) {return AiSearchUpdateInstancesRequestPublicEndpointParams(
   authorizedHosts: (json['authorized_hosts'] as List<dynamic>?)?.map((e) => e as String).toList(),
   chatCompletionsEndpoint: json['chat_completions_endpoint'] != null ? AiSearchUpdateInstancesRequestPublicEndpointParamsChatCompletionsEndpoint.fromJson(json['chat_completions_endpoint'] as Map<String, dynamic>) : null,
   enabled: json['enabled'] as bool?,
   mcp: json['mcp'] != null ? AiSearchUpdateInstancesRequestPublicEndpointParamsMcp.fromJson(json['mcp'] as Map<String, dynamic>) : null,
   rateLimit: json['rate_limit'] != null ? AiSearchUpdateInstancesRequestPublicEndpointParamsRateLimit.fromJson(json['rate_limit'] as Map<String, dynamic>) : null,
   searchEndpoint: json['search_endpoint'] != null ? AiSearchUpdateInstancesRequestPublicEndpointParamsSearchEndpoint.fromJson(json['search_endpoint'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<String>? authorizedHosts;
 
@@ -24,32 +24,32 @@ final AiSearchUpdateInstancesRequestPublicEndpointParamsRateLimit? rateLimit;
 final AiSearchUpdateInstancesRequestPublicEndpointParamsSearchEndpoint? searchEndpoint;
 
 /// The value with the schema default applied when absent.
-bool get enabledOrDefault { return enabled ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get enabledOrDefault {return enabled ?? false;}
+Map<String, dynamic> toJson() {return {
   'authorized_hosts': ?authorizedHosts,
   if (chatCompletionsEndpoint != null) 'chat_completions_endpoint': chatCompletionsEndpoint?.toJson(),
   'enabled': ?enabled,
   if (mcp != null) 'mcp': mcp?.toJson(),
   if (rateLimit != null) 'rate_limit': rateLimit?.toJson(),
   if (searchEndpoint != null) 'search_endpoint': searchEndpoint?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authorized_hosts', 'chat_completions_endpoint', 'enabled', 'mcp', 'rate_limit', 'search_endpoint'}.contains(key)); } 
-AiSearchUpdateInstancesRequestPublicEndpointParams copyWith({List<String>? Function()? authorizedHosts, AiSearchUpdateInstancesRequestPublicEndpointParamsChatCompletionsEndpoint? Function()? chatCompletionsEndpoint, bool? Function()? enabled, AiSearchUpdateInstancesRequestPublicEndpointParamsMcp? Function()? mcp, AiSearchUpdateInstancesRequestPublicEndpointParamsRateLimit? Function()? rateLimit, AiSearchUpdateInstancesRequestPublicEndpointParamsSearchEndpoint? Function()? searchEndpoint, }) { return AiSearchUpdateInstancesRequestPublicEndpointParams(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'authorized_hosts', 'chat_completions_endpoint', 'enabled', 'mcp', 'rate_limit', 'search_endpoint'}.contains(key));}
+AiSearchUpdateInstancesRequestPublicEndpointParams copyWith({List<String>? Function()? authorizedHosts, AiSearchUpdateInstancesRequestPublicEndpointParamsChatCompletionsEndpoint? Function()? chatCompletionsEndpoint, bool? Function()? enabled, AiSearchUpdateInstancesRequestPublicEndpointParamsMcp? Function()? mcp, AiSearchUpdateInstancesRequestPublicEndpointParamsRateLimit? Function()? rateLimit, AiSearchUpdateInstancesRequestPublicEndpointParamsSearchEndpoint? Function()? searchEndpoint, }) {return AiSearchUpdateInstancesRequestPublicEndpointParams(
   authorizedHosts: authorizedHosts != null ? authorizedHosts() : this.authorizedHosts,
   chatCompletionsEndpoint: chatCompletionsEndpoint != null ? chatCompletionsEndpoint() : this.chatCompletionsEndpoint,
   enabled: enabled != null ? enabled() : this.enabled,
   mcp: mcp != null ? mcp() : this.mcp,
   rateLimit: rateLimit != null ? rateLimit() : this.rateLimit,
   searchEndpoint: searchEndpoint != null ? searchEndpoint() : this.searchEndpoint,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchUpdateInstancesRequestPublicEndpointParams &&
           listEquals(authorizedHosts, other.authorizedHosts) &&
           chatCompletionsEndpoint == other.chatCompletionsEndpoint &&
           enabled == other.enabled &&
           mcp == other.mcp &&
           rateLimit == other.rateLimit &&
-          searchEndpoint == other.searchEndpoint; } 
-@override int get hashCode { return Object.hash(Object.hashAll(authorizedHosts ?? const []), chatCompletionsEndpoint, enabled, mcp, rateLimit, searchEndpoint); } 
-@override String toString() { return 'AiSearchUpdateInstancesRequestPublicEndpointParams(authorizedHosts: $authorizedHosts, chatCompletionsEndpoint: $chatCompletionsEndpoint, enabled: $enabled, mcp: $mcp, rateLimit: $rateLimit, searchEndpoint: $searchEndpoint)'; } 
- }
+          searchEndpoint == other.searchEndpoint;}
+@override int get hashCode {return Object.hash(Object.hashAll(authorizedHosts ?? const []), chatCompletionsEndpoint, enabled, mcp, rateLimit, searchEndpoint);}
+@override String toString() {return 'AiSearchUpdateInstancesRequestPublicEndpointParams(authorizedHosts: $authorizedHosts, chatCompletionsEndpoint: $chatCompletionsEndpoint, enabled: $enabled, mcp: $mcp, rateLimit: $rateLimit, searchEndpoint: $searchEndpoint)';}
+}

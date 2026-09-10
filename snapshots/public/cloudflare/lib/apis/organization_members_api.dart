@@ -13,7 +13,7 @@ final class OrganizationMembersApi with ApiExecutor {const OrganizationMembersAp
 /// List memberships for an Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/members`
-Future<ApiResult<List<Member>, ErrorResponse>> membersList({required OrganizationId organizationId, List<MembersListStatus>? status, String? userEmail, String? userEmailContains, String? userEmailStartsWith, String? userEmailEndsWith, String? pageToken, int? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Member>, ErrorResponse>> membersList({required OrganizationId organizationId, List<MembersListStatus>? status, String? userEmail, String? userEmailContains, String? userEmailStartsWith, String? userEmailEndsWith, String? pageToken, int? pageSize, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
 for (final item in status) {
@@ -67,13 +67,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create organization member
 ///
 /// Create a membership that grants access to a specific Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `POST /organizations/{organization_id}/members`
-Future<ApiResult<Member, ErrorResponse>> membersCreate({required OrganizationId organizationId, required CreateMemberRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Member, ErrorResponse>> membersCreate({required OrganizationId organizationId, required CreateMemberRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -101,13 +101,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get organization member
 ///
 /// Retrieve a single membership from an Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/members/{member_id}`
-Future<ApiResult<Member, ErrorResponse>> membersRetrieve({required OrganizationId organizationId, required MemberId memberId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Member, ErrorResponse>> membersRetrieve({required OrganizationId organizationId, required MemberId memberId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -133,13 +133,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete organization member
 ///
 /// Delete a membership to a particular Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `DELETE /organizations/{organization_id}/members/{member_id}`
-Future<ApiResult<void, ErrorResponse>> membersDelete({required OrganizationId organizationId, required MemberId memberId, required MembersDeleteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ErrorResponse>> membersDelete({required OrganizationId organizationId, required MemberId memberId, required MembersDeleteRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -164,13 +164,13 @@ return null;
 
   },
 );
- } 
+}
 /// Batch create organization members
 ///
 /// Batch create multiple memberships that grant access to a specific Organization.
 ///
 /// `POST /organizations/{organization_id}/members:batchCreate`
-Future<ApiResult<List<Member>, ErrorResponse>> membersBatchCreate({required OrganizationId organizationId, required BatchCreateMembersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Member>, ErrorResponse>> membersBatchCreate({required OrganizationId organizationId, required BatchCreateMembersRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -198,5 +198,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

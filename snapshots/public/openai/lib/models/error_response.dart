@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error_model.dart';@immutable final class ErrorResponse {const ErrorResponse({required this.error});
 
-factory ErrorResponse.fromJson(Map<String, dynamic> json) { return ErrorResponse(
+factory ErrorResponse.fromJson(Map<String, dynamic> json) {return ErrorResponse(
   error: ErrorModel.fromJson(json['error'] as Map<String, dynamic>),
-); }
+);}
 
 final ErrorModel error;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error': error.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('error'); } 
-ErrorResponse copyWith({ErrorModel? error}) { return ErrorResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('error');}
+ErrorResponse copyWith({ErrorModel? error}) {return ErrorResponse(
   error: error ?? this.error,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ErrorResponse &&
-          error == other.error; } 
-@override int get hashCode { return error.hashCode; } 
-@override String toString() { return 'ErrorResponse(error: $error)'; } 
- }
+          error == other.error;}
+@override int get hashCode {return error.hashCode;}
+@override String toString() {return 'ErrorResponse(error: $error)';}
+}

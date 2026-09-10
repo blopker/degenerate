@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cvss_severities.dart';import 'repository_advisory_credit.dart';import 'repository_advisory_credits.dart';import 'repository_advisory_cvss.dart';import 'repository_advisory_cwes.dart';import 'repository_advisory_identifiers.dart';import 'repository_advisory_submission.dart';import 'repository_advisory_vulnerability.dart';import 'simple_repository.dart';import 'simple_user.dart';import 'team.dart';/// The severity of the advisory.
 @immutable final class RepositoryAdvisorySeverity {const RepositoryAdvisorySeverity._(this.value);
 
-factory RepositoryAdvisorySeverity.fromJson(String json) { return switch (json) {
+factory RepositoryAdvisorySeverity.fromJson(String json) {return switch (json) {
   'critical' => critical,
   'high' => high,
   'medium' => medium,
   'low' => low,
   'null' => $null,
   _ => RepositoryAdvisorySeverity._(json),
-}; }
+};}
 
 static const RepositoryAdvisorySeverity critical = RepositoryAdvisorySeverity._('critical');
 
@@ -26,25 +26,25 @@ static const List<RepositoryAdvisorySeverity> values = [critical, high, medium, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryAdvisorySeverity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryAdvisorySeverity($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryAdvisorySeverity && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryAdvisorySeverity($value)';}
+}
 /// The state of the advisory.
 @immutable final class RepositoryAdvisoryState {const RepositoryAdvisoryState._(this.value);
 
-factory RepositoryAdvisoryState.fromJson(String json) { return switch (json) {
+factory RepositoryAdvisoryState.fromJson(String json) {return switch (json) {
   'published' => published,
   'closed' => closed,
   'withdrawn' => withdrawn,
   'draft' => draft,
   'triage' => triage,
   _ => RepositoryAdvisoryState._(json),
-}; }
+};}
 
 static const RepositoryAdvisoryState published = RepositoryAdvisoryState._('published');
 
@@ -60,18 +60,18 @@ static const List<RepositoryAdvisoryState> values = [published, closed, withdraw
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryAdvisoryState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryAdvisoryState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryAdvisoryState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryAdvisoryState($value)';}
+}
 /// A repository security advisory.
 @immutable final class RepositoryAdvisory {const RepositoryAdvisory({required this.ghsaId, required this.cveId, required this.url, required this.htmlUrl, required this.summary, required this.description, required this.severity, required this.author, required this.publisher, required this.identifiers, required this.state, required this.createdAt, required this.updatedAt, required this.publishedAt, required this.closedAt, required this.withdrawnAt, required this.submission, required this.vulnerabilities, required this.cvss, required this.cwes, required this.cweIds, required this.credits, required this.creditsDetailed, required this.collaboratingUsers, required this.collaboratingTeams, required this.privateFork, this.cvssSeverities = const Omittable.absent(), });
 
-factory RepositoryAdvisory.fromJson(Map<String, dynamic> json) { return RepositoryAdvisory(
+factory RepositoryAdvisory.fromJson(Map<String, dynamic> json) {return RepositoryAdvisory(
   ghsaId: json['ghsa_id'] as String,
   cveId: json['cve_id'] as String?,
   url: Uri.parse(json['url'] as String),
@@ -99,7 +99,7 @@ factory RepositoryAdvisory.fromJson(Map<String, dynamic> json) { return Reposito
   collaboratingUsers: (json['collaborating_users'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   collaboratingTeams: (json['collaborating_teams'] as List<dynamic>?)?.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList(),
   privateFork: json['private_fork'] != null ? SimpleRepository.fromJson(json['private_fork'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The GitHub Security Advisory ID.
 final String ghsaId;
@@ -174,7 +174,7 @@ final List<Team>? collaboratingTeams;
 /// A temporary private fork of the advisory's repository for collaborating on a fix.
 final SimpleRepository? privateFork;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ghsa_id': ghsaId,
   'cve_id': cveId,
   'url': url.toString(),
@@ -202,8 +202,8 @@ Map<String, dynamic> toJson() { return {
   'collaborating_users': collaboratingUsers?.map((e) => e.toJson()).toList(),
   'collaborating_teams': collaboratingTeams?.map((e) => e.toJson()).toList(),
   'private_fork': privateFork?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
       json.containsKey('cve_id') && (json['cve_id'] == null || json['cve_id'] is String) &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -228,8 +228,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('credits_detailed') &&
       json.containsKey('collaborating_users') &&
       json.containsKey('collaborating_teams') &&
-      json.containsKey('private_fork'); } 
-RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url, Uri? htmlUrl, String? summary, String? Function()? description, RepositoryAdvisorySeverity? Function()? severity, SimpleUser? Function()? author, SimpleUser? Function()? publisher, List<RepositoryAdvisoryIdentifiers>? identifiers, RepositoryAdvisoryState? state, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, DateTime? Function()? publishedAt, DateTime? Function()? closedAt, DateTime? Function()? withdrawnAt, RepositoryAdvisorySubmission? Function()? submission, List<RepositoryAdvisoryVulnerability>? Function()? vulnerabilities, RepositoryAdvisoryCvss? Function()? cvss, Omittable<CvssSeverities?>? cvssSeverities, List<RepositoryAdvisoryCwes>? Function()? cwes, List<String>? Function()? cweIds, List<RepositoryAdvisoryCredits>? Function()? credits, List<RepositoryAdvisoryCredit>? Function()? creditsDetailed, List<SimpleUser>? Function()? collaboratingUsers, List<Team>? Function()? collaboratingTeams, SimpleRepository? Function()? privateFork, }) { return RepositoryAdvisory(
+      json.containsKey('private_fork');}
+RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url, Uri? htmlUrl, String? summary, String? Function()? description, RepositoryAdvisorySeverity? Function()? severity, SimpleUser? Function()? author, SimpleUser? Function()? publisher, List<RepositoryAdvisoryIdentifiers>? identifiers, RepositoryAdvisoryState? state, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, DateTime? Function()? publishedAt, DateTime? Function()? closedAt, DateTime? Function()? withdrawnAt, RepositoryAdvisorySubmission? Function()? submission, List<RepositoryAdvisoryVulnerability>? Function()? vulnerabilities, RepositoryAdvisoryCvss? Function()? cvss, Omittable<CvssSeverities?>? cvssSeverities, List<RepositoryAdvisoryCwes>? Function()? cwes, List<String>? Function()? cweIds, List<RepositoryAdvisoryCredits>? Function()? credits, List<RepositoryAdvisoryCredit>? Function()? creditsDetailed, List<SimpleUser>? Function()? collaboratingUsers, List<Team>? Function()? collaboratingTeams, SimpleRepository? Function()? privateFork, }) {return RepositoryAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,
   url: url ?? this.url,
@@ -257,8 +257,8 @@ RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url
   collaboratingUsers: collaboratingUsers != null ? collaboratingUsers() : this.collaboratingUsers,
   collaboratingTeams: collaboratingTeams != null ? collaboratingTeams() : this.collaboratingTeams,
   privateFork: privateFork != null ? privateFork() : this.privateFork,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepositoryAdvisory &&
           ghsaId == other.ghsaId &&
           cveId == other.cveId &&
@@ -286,7 +286,7 @@ RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url
           listEquals(creditsDetailed, other.creditsDetailed) &&
           listEquals(collaboratingUsers, other.collaboratingUsers) &&
           listEquals(collaboratingTeams, other.collaboratingTeams) &&
-          privateFork == other.privateFork; } 
-@override int get hashCode { return Object.hashAll([ghsaId, cveId, url, htmlUrl, summary, description, severity, author, publisher, Object.hashAll(identifiers), state, createdAt, updatedAt, publishedAt, closedAt, withdrawnAt, submission, Object.hashAll(vulnerabilities ?? const []), cvss, cvssSeverities, Object.hashAll(cwes ?? const []), Object.hashAll(cweIds ?? const []), Object.hashAll(credits ?? const []), Object.hashAll(creditsDetailed ?? const []), Object.hashAll(collaboratingUsers ?? const []), Object.hashAll(collaboratingTeams ?? const []), privateFork]); } 
-@override String toString() { return 'RepositoryAdvisory(ghsaId: $ghsaId, cveId: $cveId, url: $url, htmlUrl: $htmlUrl, summary: $summary, description: $description, severity: $severity, author: $author, publisher: $publisher, identifiers: $identifiers, state: $state, createdAt: $createdAt, updatedAt: $updatedAt, publishedAt: $publishedAt, closedAt: $closedAt, withdrawnAt: $withdrawnAt, submission: $submission, vulnerabilities: $vulnerabilities, cvss: $cvss, cvssSeverities: $cvssSeverities, cwes: $cwes, cweIds: $cweIds, credits: $credits, creditsDetailed: $creditsDetailed, collaboratingUsers: $collaboratingUsers, collaboratingTeams: $collaboratingTeams, privateFork: $privateFork)'; } 
- }
+          privateFork == other.privateFork;}
+@override int get hashCode {return Object.hashAll([ghsaId, cveId, url, htmlUrl, summary, description, severity, author, publisher, Object.hashAll(identifiers), state, createdAt, updatedAt, publishedAt, closedAt, withdrawnAt, submission, Object.hashAll(vulnerabilities ?? const []), cvss, cvssSeverities, Object.hashAll(cwes ?? const []), Object.hashAll(cweIds ?? const []), Object.hashAll(credits ?? const []), Object.hashAll(creditsDetailed ?? const []), Object.hashAll(collaboratingUsers ?? const []), Object.hashAll(collaboratingTeams ?? const []), privateFork]);}
+@override String toString() {return 'RepositoryAdvisory(ghsaId: $ghsaId, cveId: $cveId, url: $url, htmlUrl: $htmlUrl, summary: $summary, description: $description, severity: $severity, author: $author, publisher: $publisher, identifiers: $identifiers, state: $state, createdAt: $createdAt, updatedAt: $updatedAt, publishedAt: $publishedAt, closedAt: $closedAt, withdrawnAt: $withdrawnAt, submission: $submission, vulnerabilities: $vulnerabilities, cvss: $cvss, cvssSeverities: $cvssSeverities, cwes: $cwes, cweIds: $cweIds, credits: $credits, creditsDetailed: $creditsDetailed, collaboratingUsers: $collaboratingUsers, collaboratingTeams: $collaboratingTeams, privateFork: $privateFork)';}
+}

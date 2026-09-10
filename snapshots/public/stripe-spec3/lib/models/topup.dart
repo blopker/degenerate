@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'source.dart';import 'topup_balance_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TopupObject {const TopupObject._(this.value);
 
-factory TopupObject.fromJson(String json) { return switch (json) {
+factory TopupObject.fromJson(String json) {return switch (json) {
   'topup' => topup,
   _ => TopupObject._(json),
-}; }
+};}
 
 static const TopupObject topup = TopupObject._('topup');
 
@@ -14,25 +14,25 @@ static const List<TopupObject> values = [topup];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TopupObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TopupObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TopupObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TopupObject($value)';}
+}
 /// The status of the top-up is either `canceled`, `failed`, `pending`, `reversed`, or `succeeded`.
 @immutable final class TopupStatus {const TopupStatus._(this.value);
 
-factory TopupStatus.fromJson(String json) { return switch (json) {
+factory TopupStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'failed' => failed,
   'pending' => pending,
   'reversed' => reversed,
   'succeeded' => succeeded,
   _ => TopupStatus._(json),
-}; }
+};}
 
 static const TopupStatus canceled = TopupStatus._('canceled');
 
@@ -48,14 +48,14 @@ static const List<TopupStatus> values = [canceled, failed, pending, reversed, su
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TopupStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TopupStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TopupStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TopupStatus($value)';}
+}
 /// To top up your Stripe balance, you create a top-up object. You can retrieve
 /// individual top-ups, as well as list all top-ups. Top-ups are identified by a
 /// unique, random ID.
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guide: [Topping up your platform account](https://docs.stripe.com/connect/top-ups)
 @immutable final class Topup {const Topup({required this.amount, required this.created, required this.currency, required this.id, required this.livemode, required this.metadata, required this.object, required this.status, this.balanceTransaction = const Omittable.absent(), this.description = const Omittable.absent(), this.expectedAvailabilityDate = const Omittable.absent(), this.failureCode = const Omittable.absent(), this.failureMessage = const Omittable.absent(), this.source = const Omittable.absent(), this.statementDescriptor = const Omittable.absent(), this.transferGroup = const Omittable.absent(), });
 
-factory Topup.fromJson(Map<String, dynamic> json) { return Topup(
+factory Topup.fromJson(Map<String, dynamic> json) {return Topup(
   amount: (json['amount'] as num).toInt(),
   balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? TopupBalanceTransaction.fromJson(json['balance_transaction']) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
@@ -80,7 +80,7 @@ factory Topup.fromJson(Map<String, dynamic> json) { return Topup(
   statementDescriptor: json.containsKey('statement_descriptor') ? Omittable(json['statement_descriptor'] as String?) : const Omittable.absent(),
   status: TopupStatus.fromJson(json['status'] as String),
   transferGroup: json.containsKey('transfer_group') ? Omittable(json['transfer_group'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Amount transferred.
 final int amount;
@@ -130,7 +130,7 @@ final TopupStatus status;
 /// A string that identifies this top-up as part of a group.
 final Omittable<String?> transferGroup;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   if (balanceTransaction.isPresent) 'balance_transaction': balanceTransaction.value?.toJson(),
   'created': created,
@@ -147,16 +147,16 @@ Map<String, dynamic> toJson() { return {
   if (statementDescriptor.isPresent) 'statement_descriptor': statementDescriptor.value,
   'status': status.toJson(),
   if (transferGroup.isPresent) 'transfer_group': transferGroup.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
       json.containsKey('object') &&
-      json.containsKey('status'); } 
-Topup copyWith({int? amount, Omittable<TopupBalanceTransaction?>? balanceTransaction, int? created, String? currency, Omittable<String?>? description, Omittable<int?>? expectedAvailabilityDate, Omittable<String?>? failureCode, Omittable<String?>? failureMessage, String? id, bool? livemode, Map<String,String>? metadata, TopupObject? object, Omittable<Source?>? source, Omittable<String?>? statementDescriptor, TopupStatus? status, Omittable<String?>? transferGroup, }) { return Topup(
+      json.containsKey('status');}
+Topup copyWith({int? amount, Omittable<TopupBalanceTransaction?>? balanceTransaction, int? created, String? currency, Omittable<String?>? description, Omittable<int?>? expectedAvailabilityDate, Omittable<String?>? failureCode, Omittable<String?>? failureMessage, String? id, bool? livemode, Map<String,String>? metadata, TopupObject? object, Omittable<Source?>? source, Omittable<String?>? statementDescriptor, TopupStatus? status, Omittable<String?>? transferGroup, }) {return Topup(
   amount: amount ?? this.amount,
   balanceTransaction: balanceTransaction ?? this.balanceTransaction,
   created: created ?? this.created,
@@ -173,8 +173,8 @@ Topup copyWith({int? amount, Omittable<TopupBalanceTransaction?>? balanceTransac
   statementDescriptor: statementDescriptor ?? this.statementDescriptor,
   status: status ?? this.status,
   transferGroup: transferGroup ?? this.transferGroup,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Topup &&
           amount == other.amount &&
           balanceTransaction == other.balanceTransaction &&
@@ -191,7 +191,7 @@ Topup copyWith({int? amount, Omittable<TopupBalanceTransaction?>? balanceTransac
           source == other.source &&
           statementDescriptor == other.statementDescriptor &&
           status == other.status &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(amount, balanceTransaction, created, currency, description, expectedAvailabilityDate, failureCode, failureMessage, id, livemode, metadata, object, source, statementDescriptor, status, transferGroup); } 
-@override String toString() { return 'Topup(amount: $amount, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, description: $description, expectedAvailabilityDate: $expectedAvailabilityDate, failureCode: $failureCode, failureMessage: $failureMessage, id: $id, livemode: $livemode, metadata: $metadata, object: $object, source: $source, statementDescriptor: $statementDescriptor, status: $status, transferGroup: $transferGroup)'; } 
- }
+          transferGroup == other.transferGroup;}
+@override int get hashCode {return Object.hash(amount, balanceTransaction, created, currency, description, expectedAvailabilityDate, failureCode, failureMessage, id, livemode, metadata, object, source, statementDescriptor, status, transferGroup);}
+@override String toString() {return 'Topup(amount: $amount, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, description: $description, expectedAvailabilityDate: $expectedAvailabilityDate, failureCode: $failureCode, failureMessage: $failureMessage, id: $id, livemode: $livemode, metadata: $metadata, object: $object, source: $source, statementDescriptor: $statementDescriptor, status: $status, transferGroup: $transferGroup)';}
+}

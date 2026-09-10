@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'log_prob_pro
 /// 
 @immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType._(this.value);
 
-factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType.fromJson(String json) {return switch (json) {
   'conversation.item.input_audio_transcription.completed' => conversationItemInputAudioTranscriptionCompleted,
   _ => RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType._(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType conversationItemInputAudioTranscriptionCompleted = RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType._('conversation.item.input_audio_transcription.completed');
 
@@ -16,14 +16,14 @@ static const List<RealtimeBetaServerEventConversationItemInputAudioTranscription
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType($value)';}
+}
 /// This event is the output of audio transcription for user audio written to the
 /// user audio buffer. Transcription begins when the input audio buffer is
 /// committed by the client or server (in `server_vad` mode). Transcription runs
@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.transcript, required this.usage, this.logprobs = const Omittable.absent(), });
 
-factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted(
+factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType.fromJson(json['type'] as String),
   itemId: json['item_id'] as String,
@@ -45,7 +45,7 @@ factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted.
   transcript: json['transcript'] as String,
   logprobs: json.containsKey('logprobs') ? Omittable((json['logprobs'] as List<dynamic>?)?.map((e) => LogProbProperties.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   usage: OneOf2.parse(json['usage'], fromA: (v) => TranscriptTextUsageTokens.fromJson(v as Map<String, dynamic>), fromB: (v) => TranscriptTextUsageDuration.fromJson(v as Map<String, dynamic>),),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -70,7 +70,7 @@ final Omittable<List<LogProbProperties>?> logprobs;
 /// Usage statistics for the transcription.
 final RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsage usage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'item_id': itemId,
@@ -78,14 +78,14 @@ Map<String, dynamic> toJson() { return {
   'transcript': transcript,
   if (logprobs.isPresent) 'logprobs': logprobs.value?.map((e) => e.toJson()).toList(),
   'usage': usage.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('transcript') && json['transcript'] is String &&
-      json.containsKey('usage'); } 
-RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted copyWith({String? eventId, RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType? type, String? itemId, int? contentIndex, String? transcript, Omittable<List<LogProbProperties>?>? logprobs, RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsage? usage, }) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted(
+      json.containsKey('usage');}
+RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted copyWith({String? eventId, RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType? type, String? itemId, int? contentIndex, String? transcript, Omittable<List<LogProbProperties>?>? logprobs, RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsage? usage, }) {return RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
@@ -93,8 +93,8 @@ RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted copyWith
   transcript: transcript ?? this.transcript,
   logprobs: logprobs ?? this.logprobs,
   usage: usage ?? this.usage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted &&
           eventId == other.eventId &&
           type == other.type &&
@@ -103,7 +103,7 @@ RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted copyWith
           transcript == other.transcript &&
           logprobs.isPresent == other.logprobs.isPresent &&
           listEquals(logprobs.value, other.logprobs.value) &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, transcript, Object.hashAll(logprobs.value ?? const []), usage); } 
-@override String toString() { return 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, transcript: $transcript, logprobs: $logprobs, usage: $usage)'; } 
- }
+          usage == other.usage;}
+@override int get hashCode {return Object.hash(eventId, type, itemId, contentIndex, transcript, Object.hashAll(logprobs.value ?? const []), usage);}
+@override String toString() {return 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, transcript: $transcript, logprobs: $logprobs, usage: $usage)';}
+}

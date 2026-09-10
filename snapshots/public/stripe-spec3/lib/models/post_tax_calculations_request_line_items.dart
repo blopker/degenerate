@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxCalculationsRequestLineItemsTaxBehavior {const PostTaxCalculationsRequestLineItemsTaxBehavior._(this.value);
 
-factory PostTaxCalculationsRequestLineItemsTaxBehavior.fromJson(String json) { return switch (json) {
+factory PostTaxCalculationsRequestLineItemsTaxBehavior.fromJson(String json) {return switch (json) {
   'exclusive' => exclusive,
   'inclusive' => inclusive,
   _ => PostTaxCalculationsRequestLineItemsTaxBehavior._(json),
-}; }
+};}
 
 static const PostTaxCalculationsRequestLineItemsTaxBehavior exclusive = PostTaxCalculationsRequestLineItemsTaxBehavior._('exclusive');
 
@@ -16,17 +16,17 @@ static const List<PostTaxCalculationsRequestLineItemsTaxBehavior> values = [excl
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTaxCalculationsRequestLineItemsTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTaxCalculationsRequestLineItemsTaxBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTaxCalculationsRequestLineItemsTaxBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTaxCalculationsRequestLineItemsTaxBehavior($value)';}
+}
 @immutable final class PostTaxCalculationsRequestLineItems {const PostTaxCalculationsRequestLineItems({required this.amount, this.metadata, this.product, this.quantity, this.reference, this.taxBehavior, this.taxCode, });
 
-factory PostTaxCalculationsRequestLineItems.fromJson(Map<String, dynamic> json) { return PostTaxCalculationsRequestLineItems(
+factory PostTaxCalculationsRequestLineItems.fromJson(Map<String, dynamic> json) {return PostTaxCalculationsRequestLineItems(
   amount: (json['amount'] as num).toInt(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   product: json['product'] as String?,
@@ -34,7 +34,7 @@ factory PostTaxCalculationsRequestLineItems.fromJson(Map<String, dynamic> json) 
   reference: json['reference'] as String?,
   taxBehavior: json['tax_behavior'] != null ? PostTaxCalculationsRequestLineItemsTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   taxCode: json['tax_code'] as String?,
-); }
+);}
 
 final int amount;
 
@@ -50,7 +50,7 @@ final PostTaxCalculationsRequestLineItemsTaxBehavior? taxBehavior;
 
 final String? taxCode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'metadata': ?metadata,
   'product': ?product,
@@ -58,9 +58,9 @@ Map<String, dynamic> toJson() { return {
   'reference': ?reference,
   if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
   'tax_code': ?taxCode,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num; } 
-PostTaxCalculationsRequestLineItems copyWith({int? amount, Map<String, String>? Function()? metadata, String? Function()? product, int? Function()? quantity, String? Function()? reference, PostTaxCalculationsRequestLineItemsTaxBehavior? Function()? taxBehavior, String? Function()? taxCode, }) { return PostTaxCalculationsRequestLineItems(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num;}
+PostTaxCalculationsRequestLineItems copyWith({int? amount, Map<String, String>? Function()? metadata, String? Function()? product, int? Function()? quantity, String? Function()? reference, PostTaxCalculationsRequestLineItemsTaxBehavior? Function()? taxBehavior, String? Function()? taxCode, }) {return PostTaxCalculationsRequestLineItems(
   amount: amount ?? this.amount,
   metadata: metadata != null ? metadata() : this.metadata,
   product: product != null ? product() : this.product,
@@ -68,8 +68,8 @@ PostTaxCalculationsRequestLineItems copyWith({int? amount, Map<String, String>? 
   reference: reference != null ? reference() : this.reference,
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
   taxCode: taxCode != null ? taxCode() : this.taxCode,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTaxCalculationsRequestLineItems &&
           amount == other.amount &&
           metadata == other.metadata &&
@@ -77,7 +77,7 @@ PostTaxCalculationsRequestLineItems copyWith({int? amount, Map<String, String>? 
           quantity == other.quantity &&
           reference == other.reference &&
           taxBehavior == other.taxBehavior &&
-          taxCode == other.taxCode; } 
-@override int get hashCode { return Object.hash(amount, metadata, product, quantity, reference, taxBehavior, taxCode); } 
-@override String toString() { return 'PostTaxCalculationsRequestLineItems(amount: $amount, metadata: $metadata, product: $product, quantity: $quantity, reference: $reference, taxBehavior: $taxBehavior, taxCode: $taxCode)'; } 
- }
+          taxCode == other.taxCode;}
+@override int get hashCode {return Object.hash(amount, metadata, product, quantity, reference, taxBehavior, taxCode);}
+@override String toString() {return 'PostTaxCalculationsRequestLineItems(amount: $amount, metadata: $metadata, product: $product, quantity: $quantity, reference: $reference, taxBehavior: $taxBehavior, taxCode: $taxCode)';}
+}

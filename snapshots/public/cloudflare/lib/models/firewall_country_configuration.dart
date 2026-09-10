@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `country` when specifying a country code in the rule.
 @immutable final class FirewallCountryConfigurationTarget {const FirewallCountryConfigurationTarget._(this.value);
 
-factory FirewallCountryConfigurationTarget.fromJson(String json) { return switch (json) {
+factory FirewallCountryConfigurationTarget.fromJson(String json) {return switch (json) {
   'country' => country,
   _ => FirewallCountryConfigurationTarget._(json),
-}; }
+};}
 
 static const FirewallCountryConfigurationTarget country = FirewallCountryConfigurationTarget._('country');
 
@@ -14,20 +14,20 @@ static const List<FirewallCountryConfigurationTarget> values = [country];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallCountryConfigurationTarget && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallCountryConfigurationTarget($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FirewallCountryConfigurationTarget && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FirewallCountryConfigurationTarget($value)';}
+}
 @immutable final class FirewallCountryConfiguration {const FirewallCountryConfiguration({this.target, this.value, });
 
-factory FirewallCountryConfiguration.fromJson(Map<String, dynamic> json) { return FirewallCountryConfiguration(
+factory FirewallCountryConfiguration.fromJson(Map<String, dynamic> json) {return FirewallCountryConfiguration(
   target: json['target'] != null ? FirewallCountryConfigurationTarget.fromJson(json['target'] as String) : null,
   value: json['value'] as String?,
-); }
+);}
 
 /// The configuration target. You must set the target to `country` when specifying a country code in the rule.
 final FirewallCountryConfigurationTarget? target;
@@ -35,19 +35,19 @@ final FirewallCountryConfigurationTarget? target;
 /// The two-letter ISO-3166-1 alpha-2 code to match. For more information, refer to [IP Access rules: Parameters](https://developers.cloudflare.com/waf/tools/ip-access-rules/parameters/#country).
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (target != null) 'target': target?.toJson(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'target', 'value'}.contains(key)); } 
-FirewallCountryConfiguration copyWith({FirewallCountryConfigurationTarget? Function()? target, String? Function()? value, }) { return FirewallCountryConfiguration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'target', 'value'}.contains(key));}
+FirewallCountryConfiguration copyWith({FirewallCountryConfigurationTarget? Function()? target, String? Function()? value, }) {return FirewallCountryConfiguration(
   target: target != null ? target() : this.target,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FirewallCountryConfiguration &&
           target == other.target &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(target, value); } 
-@override String toString() { return 'FirewallCountryConfiguration(target: $target, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(target, value);}
+@override String toString() {return 'FirewallCountryConfiguration(target: $target, value: $value)';}
+}

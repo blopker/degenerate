@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// HostAlias holds the mapping between IP and hostnames that will be injected as an entry in the pod's hosts file.
 @immutable final class HostAlias {const HostAlias({required this.ip, this.hostnames, });
 
-factory HostAlias.fromJson(Map<String, dynamic> json) { return HostAlias(
+factory HostAlias.fromJson(Map<String, dynamic> json) {return HostAlias(
   hostnames: (json['hostnames'] as List<dynamic>?)?.map((e) => e as String).toList(),
   ip: json['ip'] as String,
-); }
+);}
 
 /// Hostnames for the above IP address.
 final List<String>? hostnames;
@@ -14,19 +14,19 @@ final List<String>? hostnames;
 /// IP address of the host file entry.
 final String ip;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'hostnames': ?hostnames,
   'ip': ip,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip') && json['ip'] is String; } 
-HostAlias copyWith({List<String>? Function()? hostnames, String? ip, }) { return HostAlias(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ip') && json['ip'] is String;}
+HostAlias copyWith({List<String>? Function()? hostnames, String? ip, }) {return HostAlias(
   hostnames: hostnames != null ? hostnames() : this.hostnames,
   ip: ip ?? this.ip,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is HostAlias &&
           listEquals(hostnames, other.hostnames) &&
-          ip == other.ip; } 
-@override int get hashCode { return Object.hash(Object.hashAll(hostnames ?? const []), ip); } 
-@override String toString() { return 'HostAlias(hostnames: $hostnames, ip: $ip)'; } 
- }
+          ip == other.ip;}
+@override int get hashCode {return Object.hash(Object.hashAll(hostnames ?? const []), ip);}
+@override String toString() {return 'HostAlias(hostnames: $hostnames, ip: $ip)';}
+}

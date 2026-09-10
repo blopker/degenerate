@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CampaignSummaryAlertStats {const CampaignSummaryAlertStats({required this.openCount, required this.closedCount, required this.inProgressCount, });
 
-factory CampaignSummaryAlertStats.fromJson(Map<String, dynamic> json) { return CampaignSummaryAlertStats(
+factory CampaignSummaryAlertStats.fromJson(Map<String, dynamic> json) {return CampaignSummaryAlertStats(
   openCount: (json['open_count'] as num).toInt(),
   closedCount: (json['closed_count'] as num).toInt(),
   inProgressCount: (json['in_progress_count'] as num).toInt(),
-); }
+);}
 
 /// The number of open alerts
 final int openCount;
@@ -17,24 +17,24 @@ final int closedCount;
 /// The number of in-progress alerts
 final int inProgressCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'open_count': openCount,
   'closed_count': closedCount,
   'in_progress_count': inProgressCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('open_count') && json['open_count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('open_count') && json['open_count'] is num &&
       json.containsKey('closed_count') && json['closed_count'] is num &&
-      json.containsKey('in_progress_count') && json['in_progress_count'] is num; } 
-CampaignSummaryAlertStats copyWith({int? openCount, int? closedCount, int? inProgressCount, }) { return CampaignSummaryAlertStats(
+      json.containsKey('in_progress_count') && json['in_progress_count'] is num;}
+CampaignSummaryAlertStats copyWith({int? openCount, int? closedCount, int? inProgressCount, }) {return CampaignSummaryAlertStats(
   openCount: openCount ?? this.openCount,
   closedCount: closedCount ?? this.closedCount,
   inProgressCount: inProgressCount ?? this.inProgressCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CampaignSummaryAlertStats &&
           openCount == other.openCount &&
           closedCount == other.closedCount &&
-          inProgressCount == other.inProgressCount; } 
-@override int get hashCode { return Object.hash(openCount, closedCount, inProgressCount); } 
-@override String toString() { return 'CampaignSummaryAlertStats(openCount: $openCount, closedCount: $closedCount, inProgressCount: $inProgressCount)'; } 
- }
+          inProgressCount == other.inProgressCount;}
+@override int get hashCode {return Object.hash(openCount, closedCount, inProgressCount);}
+@override String toString() {return 'CampaignSummaryAlertStats(openCount: $openCount, closedCount: $closedCount, inProgressCount: $inProgressCount)';}
+}

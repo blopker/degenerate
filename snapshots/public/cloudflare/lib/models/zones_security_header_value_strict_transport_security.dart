@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Strict Transport Security.
 @immutable final class ZonesSecurityHeaderValueStrictTransportSecurity {const ZonesSecurityHeaderValueStrictTransportSecurity({this.enabled, this.includeSubdomains, this.maxAge, this.nosniff, this.preload, });
 
-factory ZonesSecurityHeaderValueStrictTransportSecurity.fromJson(Map<String, dynamic> json) { return ZonesSecurityHeaderValueStrictTransportSecurity(
+factory ZonesSecurityHeaderValueStrictTransportSecurity.fromJson(Map<String, dynamic> json) {return ZonesSecurityHeaderValueStrictTransportSecurity(
   enabled: json['enabled'] as bool?,
   includeSubdomains: json['include_subdomains'] as bool?,
   maxAge: json['max_age'] != null ? (json['max_age'] as num).toDouble() : null,
   nosniff: json['nosniff'] as bool?,
   preload: json['preload'] as bool?,
-); }
+);}
 
 /// Whether or not strict transport security is enabled.
 final bool? enabled;
@@ -26,28 +26,28 @@ final bool? nosniff;
 /// Enable automatic preload of the HSTS configuration.
 final bool? preload;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   'include_subdomains': ?includeSubdomains,
   'max_age': ?maxAge,
   'nosniff': ?nosniff,
   'preload': ?preload,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'include_subdomains', 'max_age', 'nosniff', 'preload'}.contains(key)); } 
-ZonesSecurityHeaderValueStrictTransportSecurity copyWith({bool? Function()? enabled, bool? Function()? includeSubdomains, double? Function()? maxAge, bool? Function()? nosniff, bool? Function()? preload, }) { return ZonesSecurityHeaderValueStrictTransportSecurity(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'include_subdomains', 'max_age', 'nosniff', 'preload'}.contains(key));}
+ZonesSecurityHeaderValueStrictTransportSecurity copyWith({bool? Function()? enabled, bool? Function()? includeSubdomains, double? Function()? maxAge, bool? Function()? nosniff, bool? Function()? preload, }) {return ZonesSecurityHeaderValueStrictTransportSecurity(
   enabled: enabled != null ? enabled() : this.enabled,
   includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,
   maxAge: maxAge != null ? maxAge() : this.maxAge,
   nosniff: nosniff != null ? nosniff() : this.nosniff,
   preload: preload != null ? preload() : this.preload,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZonesSecurityHeaderValueStrictTransportSecurity &&
           enabled == other.enabled &&
           includeSubdomains == other.includeSubdomains &&
           maxAge == other.maxAge &&
           nosniff == other.nosniff &&
-          preload == other.preload; } 
-@override int get hashCode { return Object.hash(enabled, includeSubdomains, maxAge, nosniff, preload); } 
-@override String toString() { return 'ZonesSecurityHeaderValueStrictTransportSecurity(enabled: $enabled, includeSubdomains: $includeSubdomains, maxAge: $maxAge, nosniff: $nosniff, preload: $preload)'; } 
- }
+          preload == other.preload;}
+@override int get hashCode {return Object.hash(enabled, includeSubdomains, maxAge, nosniff, preload);}
+@override String toString() {return 'ZonesSecurityHeaderValueStrictTransportSecurity(enabled: $enabled, includeSubdomains: $includeSubdomains, maxAge: $maxAge, nosniff: $nosniff, preload: $preload)';}
+}

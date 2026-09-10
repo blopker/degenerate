@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static CodespacesListDevcontainersInRepositoryForAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static CodespacesListDevcontainersInRepositoryForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -33,54 +33,54 @@ return CodespacesListDevcontainersInRepositoryForAuthenticatedUserError500(Basic
 default:
 return CodespacesListDevcontainersInRepositoryForAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError400ApplicationJson extends CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError400ApplicationJson(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 400 (application/scim+json).
 final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError400ApplicationScimJson extends CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError400ApplicationScimJson(this.data);
 
 /// The decoded response payload.
 final ScimError data;
 
- }
+}
 /// Response for 401 (application/json).
 final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError401 extends CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError403 extends CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError404 extends CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 500 (application/json).
 final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError500 extends CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError500(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserErrorUnknown extends CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

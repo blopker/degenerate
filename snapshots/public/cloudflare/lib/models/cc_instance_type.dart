@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CcInstanceTypeVariant1 {const CcInstanceTypeVariant1._(this.value);
 
-factory CcInstanceTypeVariant1.fromJson(String json) { return switch (json) {
+factory CcInstanceTypeVariant1.fromJson(String json) {return switch (json) {
   'lite' => lite,
   'basic' => basic,
   'standard-1' => standard1,
@@ -10,7 +10,7 @@ factory CcInstanceTypeVariant1.fromJson(String json) { return switch (json) {
   'standard-3' => standard3,
   'standard-4' => standard4,
   _ => CcInstanceTypeVariant1._(json),
-}; }
+};}
 
 static const CcInstanceTypeVariant1 lite = CcInstanceTypeVariant1._('lite');
 
@@ -28,14 +28,14 @@ static const List<CcInstanceTypeVariant1> values = [lite, basic, standard1, stan
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CcInstanceTypeVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CcInstanceTypeVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CcInstanceTypeVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CcInstanceTypeVariant1($value)';}
+}
 /// The instance type will be used to configure vCPU, memory, and disk.
 /// 
 /// - "lite": 1/16 vCPU, 256 MiB memory, 2 GB disk

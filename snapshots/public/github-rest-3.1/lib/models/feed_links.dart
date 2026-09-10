@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'link_with_type.dart';@immutable final class FeedLinks {const FeedLinks({required this.timeline, required this.user, this.securityAdvisories, this.currentUser, this.currentUserPublic, this.currentUserActor, this.currentUserOrganization, this.currentUserOrganizations, this.repositoryDiscussions, this.repositoryDiscussionsCategory, });
 
-factory FeedLinks.fromJson(Map<String, dynamic> json) { return FeedLinks(
+factory FeedLinks.fromJson(Map<String, dynamic> json) {return FeedLinks(
   timeline: LinkWithType.fromJson(json['timeline'] as Map<String, dynamic>),
   user: LinkWithType.fromJson(json['user'] as Map<String, dynamic>),
   securityAdvisories: json['security_advisories'] != null ? LinkWithType.fromJson(json['security_advisories'] as Map<String, dynamic>) : null,
@@ -13,7 +13,7 @@ factory FeedLinks.fromJson(Map<String, dynamic> json) { return FeedLinks(
   currentUserOrganizations: (json['current_user_organizations'] as List<dynamic>?)?.map((e) => LinkWithType.fromJson(e as Map<String, dynamic>)).toList(),
   repositoryDiscussions: json['repository_discussions'] != null ? LinkWithType.fromJson(json['repository_discussions'] as Map<String, dynamic>) : null,
   repositoryDiscussionsCategory: json['repository_discussions_category'] != null ? LinkWithType.fromJson(json['repository_discussions_category'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final LinkWithType timeline;
 
@@ -35,7 +35,7 @@ final LinkWithType? repositoryDiscussions;
 
 final LinkWithType? repositoryDiscussionsCategory;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'timeline': timeline.toJson(),
   'user': user.toJson(),
   if (securityAdvisories != null) 'security_advisories': securityAdvisories?.toJson(),
@@ -46,10 +46,10 @@ Map<String, dynamic> toJson() { return {
   if (currentUserOrganizations != null) 'current_user_organizations': currentUserOrganizations?.map((e) => e.toJson()).toList(),
   if (repositoryDiscussions != null) 'repository_discussions': repositoryDiscussions?.toJson(),
   if (repositoryDiscussionsCategory != null) 'repository_discussions_category': repositoryDiscussionsCategory?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('timeline') &&
-      json.containsKey('user'); } 
-FeedLinks copyWith({LinkWithType? timeline, LinkWithType? user, LinkWithType? Function()? securityAdvisories, LinkWithType? Function()? currentUser, LinkWithType? Function()? currentUserPublic, LinkWithType? Function()? currentUserActor, LinkWithType? Function()? currentUserOrganization, List<LinkWithType>? Function()? currentUserOrganizations, LinkWithType? Function()? repositoryDiscussions, LinkWithType? Function()? repositoryDiscussionsCategory, }) { return FeedLinks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('timeline') &&
+      json.containsKey('user');}
+FeedLinks copyWith({LinkWithType? timeline, LinkWithType? user, LinkWithType? Function()? securityAdvisories, LinkWithType? Function()? currentUser, LinkWithType? Function()? currentUserPublic, LinkWithType? Function()? currentUserActor, LinkWithType? Function()? currentUserOrganization, List<LinkWithType>? Function()? currentUserOrganizations, LinkWithType? Function()? repositoryDiscussions, LinkWithType? Function()? repositoryDiscussionsCategory, }) {return FeedLinks(
   timeline: timeline ?? this.timeline,
   user: user ?? this.user,
   securityAdvisories: securityAdvisories != null ? securityAdvisories() : this.securityAdvisories,
@@ -60,8 +60,8 @@ FeedLinks copyWith({LinkWithType? timeline, LinkWithType? user, LinkWithType? Fu
   currentUserOrganizations: currentUserOrganizations != null ? currentUserOrganizations() : this.currentUserOrganizations,
   repositoryDiscussions: repositoryDiscussions != null ? repositoryDiscussions() : this.repositoryDiscussions,
   repositoryDiscussionsCategory: repositoryDiscussionsCategory != null ? repositoryDiscussionsCategory() : this.repositoryDiscussionsCategory,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FeedLinks &&
           timeline == other.timeline &&
           user == other.user &&
@@ -72,7 +72,7 @@ FeedLinks copyWith({LinkWithType? timeline, LinkWithType? user, LinkWithType? Fu
           currentUserOrganization == other.currentUserOrganization &&
           listEquals(currentUserOrganizations, other.currentUserOrganizations) &&
           repositoryDiscussions == other.repositoryDiscussions &&
-          repositoryDiscussionsCategory == other.repositoryDiscussionsCategory; } 
-@override int get hashCode { return Object.hash(timeline, user, securityAdvisories, currentUser, currentUserPublic, currentUserActor, currentUserOrganization, Object.hashAll(currentUserOrganizations ?? const []), repositoryDiscussions, repositoryDiscussionsCategory); } 
-@override String toString() { return 'FeedLinks(timeline: $timeline, user: $user, securityAdvisories: $securityAdvisories, currentUser: $currentUser, currentUserPublic: $currentUserPublic, currentUserActor: $currentUserActor, currentUserOrganization: $currentUserOrganization, currentUserOrganizations: $currentUserOrganizations, repositoryDiscussions: $repositoryDiscussions, repositoryDiscussionsCategory: $repositoryDiscussionsCategory)'; } 
- }
+          repositoryDiscussionsCategory == other.repositoryDiscussionsCategory;}
+@override int get hashCode {return Object.hash(timeline, user, securityAdvisories, currentUser, currentUserPublic, currentUserActor, currentUserOrganization, Object.hashAll(currentUserOrganizations ?? const []), repositoryDiscussions, repositoryDiscussionsCategory);}
+@override String toString() {return 'FeedLinks(timeline: $timeline, user: $user, securityAdvisories: $securityAdvisories, currentUser: $currentUser, currentUserPublic: $currentUserPublic, currentUserActor: $currentUserActor, currentUserOrganization: $currentUserOrganization, currentUserOrganizations: $currentUserOrganizations, repositoryDiscussions: $repositoryDiscussions, repositoryDiscussionsCategory: $repositoryDiscussionsCategory)';}
+}

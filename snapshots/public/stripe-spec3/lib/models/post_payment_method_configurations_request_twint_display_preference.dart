@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference._(this.value);
 
-factory PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference.fromJson(String json) { return switch (json) {
+factory PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference.fromJson(String json) {return switch (json) {
   'none' => none,
   'off' => off,
   'on' => $on,
   _ => PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference._(json),
-}; }
+};}
 
 static const PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference none = PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference._('none');
 
@@ -19,32 +19,32 @@ static const List<PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePr
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference($value)';}
+}
 @immutable final class PostPaymentMethodConfigurationsRequestTwintDisplayPreference {const PostPaymentMethodConfigurationsRequestTwintDisplayPreference({this.preference});
 
-factory PostPaymentMethodConfigurationsRequestTwintDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestTwintDisplayPreference(
+factory PostPaymentMethodConfigurationsRequestTwintDisplayPreference.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsRequestTwintDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference.fromJson(json['preference'] as String) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference? preference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (preference != null) 'preference': preference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsRequestTwintDisplayPreference copyWith({PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference? Function()? preference}) { return PostPaymentMethodConfigurationsRequestTwintDisplayPreference(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'preference'}.contains(key));}
+PostPaymentMethodConfigurationsRequestTwintDisplayPreference copyWith({PostPaymentMethodConfigurationsRequestTwintDisplayPreferencePreference? Function()? preference}) {return PostPaymentMethodConfigurationsRequestTwintDisplayPreference(
   preference: preference != null ? preference() : this.preference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsRequestTwintDisplayPreference &&
-          preference == other.preference; } 
-@override int get hashCode { return preference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestTwintDisplayPreference(preference: $preference)'; } 
- }
+          preference == other.preference;}
+@override int get hashCode {return preference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestTwintDisplayPreference(preference: $preference)';}
+}

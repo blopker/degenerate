@@ -13,7 +13,7 @@ final class DcvDelegationApi with ApiExecutor {const DcvDelegationApi(this.apiCo
 /// Retrieve the account and zone specific unique identifier used as part of the CNAME target for DCV Delegation.
 ///
 /// `GET /zones/{zone_id}/dcv_delegation/uuid`
-Future<ApiResult<TlsCertificatesAndHostnamesUuidObject?, DcvDelegationUuidGetResponse4xx>> dcvDelegationUuidGet({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesUuidObject?, DcvDelegationUuidGetResponse4xx>> dcvDelegationUuidGet({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,5 +39,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

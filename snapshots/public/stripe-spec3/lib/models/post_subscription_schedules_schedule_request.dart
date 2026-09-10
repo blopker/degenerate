@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_schedule_request_default_settings.dart';import 'post_subscription_schedules_schedule_request_metadata.dart';import 'post_subscription_schedules_schedule_request_phases.dart';/// Behavior of the subscription schedule and underlying subscription when it ends. Possible values are `release` or `cancel` with the default being `release`. `release` will end the subscription schedule and keep the underlying subscription running. `cancel` will end the subscription schedule and cancel the underlying subscription.
 @immutable final class PostSubscriptionSchedulesScheduleRequestEndBehavior {const PostSubscriptionSchedulesScheduleRequestEndBehavior._(this.value);
 
-factory PostSubscriptionSchedulesScheduleRequestEndBehavior.fromJson(String json) { return switch (json) {
+factory PostSubscriptionSchedulesScheduleRequestEndBehavior.fromJson(String json) {return switch (json) {
   'cancel' => cancel,
   'none' => none,
   'release' => release,
   'renew' => renew,
   _ => PostSubscriptionSchedulesScheduleRequestEndBehavior._(json),
-}; }
+};}
 
 static const PostSubscriptionSchedulesScheduleRequestEndBehavior cancel = PostSubscriptionSchedulesScheduleRequestEndBehavior._('cancel');
 
@@ -23,23 +23,23 @@ static const List<PostSubscriptionSchedulesScheduleRequestEndBehavior> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesScheduleRequestEndBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesScheduleRequestEndBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionSchedulesScheduleRequestEndBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionSchedulesScheduleRequestEndBehavior($value)';}
+}
 /// If the update changes the billing configuration (item price, quantity, etc.) of the current phase, indicates how prorations from this change should be handled. The default value is `create_prorations`.
 @immutable final class PostSubscriptionSchedulesScheduleRequestProrationBehavior {const PostSubscriptionSchedulesScheduleRequestProrationBehavior._(this.value);
 
-factory PostSubscriptionSchedulesScheduleRequestProrationBehavior.fromJson(String json) { return switch (json) {
+factory PostSubscriptionSchedulesScheduleRequestProrationBehavior.fromJson(String json) {return switch (json) {
   'always_invoice' => alwaysInvoice,
   'create_prorations' => createProrations,
   'none' => none,
   _ => PostSubscriptionSchedulesScheduleRequestProrationBehavior._(json),
-}; }
+};}
 
 static const PostSubscriptionSchedulesScheduleRequestProrationBehavior alwaysInvoice = PostSubscriptionSchedulesScheduleRequestProrationBehavior._('always_invoice');
 
@@ -51,24 +51,24 @@ static const List<PostSubscriptionSchedulesScheduleRequestProrationBehavior> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesScheduleRequestProrationBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesScheduleRequestProrationBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionSchedulesScheduleRequestProrationBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionSchedulesScheduleRequestProrationBehavior($value)';}
+}
 @immutable final class PostSubscriptionSchedulesScheduleRequest {const PostSubscriptionSchedulesScheduleRequest({this.defaultSettings, this.endBehavior, this.expand, this.metadata, this.phases, this.prorationBehavior, });
 
-factory PostSubscriptionSchedulesScheduleRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesScheduleRequest(
+factory PostSubscriptionSchedulesScheduleRequest.fromJson(Map<String, dynamic> json) {return PostSubscriptionSchedulesScheduleRequest(
   defaultSettings: json['default_settings'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettings.fromJson(json['default_settings'] as Map<String, dynamic>) : null,
   endBehavior: json['end_behavior'] != null ? PostSubscriptionSchedulesScheduleRequestEndBehavior.fromJson(json['end_behavior'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: json['metadata'] != null ? PostSubscriptionSchedulesScheduleRequestMetadata.fromJson(json['metadata']) : null,
   phases: (json['phases'] as List<dynamic>?)?.map((e) => PostSubscriptionSchedulesScheduleRequestPhases.fromJson(e as Map<String, dynamic>)).toList(),
   prorationBehavior: json['proration_behavior'] != null ? PostSubscriptionSchedulesScheduleRequestProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
-); }
+);}
 
 /// Object representing the subscription schedule's default settings.
 final PostSubscriptionSchedulesScheduleRequestDefaultSettings? defaultSettings;
@@ -88,31 +88,31 @@ final List<PostSubscriptionSchedulesScheduleRequestPhases>? phases;
 /// If the update changes the billing configuration (item price, quantity, etc.) of the current phase, indicates how prorations from this change should be handled. The default value is `create_prorations`.
 final PostSubscriptionSchedulesScheduleRequestProrationBehavior? prorationBehavior;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (defaultSettings != null) 'default_settings': defaultSettings?.toJson(),
   if (endBehavior != null) 'end_behavior': endBehavior?.toJson(),
   'expand': ?expand,
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (phases != null) 'phases': phases?.map((e) => e.toJson()).toList(),
   if (prorationBehavior != null) 'proration_behavior': prorationBehavior?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_settings', 'end_behavior', 'expand', 'metadata', 'phases', 'proration_behavior'}.contains(key)); } 
-PostSubscriptionSchedulesScheduleRequest copyWith({PostSubscriptionSchedulesScheduleRequestDefaultSettings? Function()? defaultSettings, PostSubscriptionSchedulesScheduleRequestEndBehavior? Function()? endBehavior, List<String>? Function()? expand, PostSubscriptionSchedulesScheduleRequestMetadata? Function()? metadata, List<PostSubscriptionSchedulesScheduleRequestPhases>? Function()? phases, PostSubscriptionSchedulesScheduleRequestProrationBehavior? Function()? prorationBehavior, }) { return PostSubscriptionSchedulesScheduleRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'default_settings', 'end_behavior', 'expand', 'metadata', 'phases', 'proration_behavior'}.contains(key));}
+PostSubscriptionSchedulesScheduleRequest copyWith({PostSubscriptionSchedulesScheduleRequestDefaultSettings? Function()? defaultSettings, PostSubscriptionSchedulesScheduleRequestEndBehavior? Function()? endBehavior, List<String>? Function()? expand, PostSubscriptionSchedulesScheduleRequestMetadata? Function()? metadata, List<PostSubscriptionSchedulesScheduleRequestPhases>? Function()? phases, PostSubscriptionSchedulesScheduleRequestProrationBehavior? Function()? prorationBehavior, }) {return PostSubscriptionSchedulesScheduleRequest(
   defaultSettings: defaultSettings != null ? defaultSettings() : this.defaultSettings,
   endBehavior: endBehavior != null ? endBehavior() : this.endBehavior,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   phases: phases != null ? phases() : this.phases,
   prorationBehavior: prorationBehavior != null ? prorationBehavior() : this.prorationBehavior,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionSchedulesScheduleRequest &&
           defaultSettings == other.defaultSettings &&
           endBehavior == other.endBehavior &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
           listEquals(phases, other.phases) &&
-          prorationBehavior == other.prorationBehavior; } 
-@override int get hashCode { return Object.hash(defaultSettings, endBehavior, Object.hashAll(expand ?? const []), metadata, Object.hashAll(phases ?? const []), prorationBehavior); } 
-@override String toString() { return 'PostSubscriptionSchedulesScheduleRequest(defaultSettings: $defaultSettings, endBehavior: $endBehavior, expand: $expand, metadata: $metadata, phases: $phases, prorationBehavior: $prorationBehavior)'; } 
- }
+          prorationBehavior == other.prorationBehavior;}
+@override int get hashCode {return Object.hash(defaultSettings, endBehavior, Object.hashAll(expand ?? const []), metadata, Object.hashAll(phases ?? const []), prorationBehavior);}
+@override String toString() {return 'PostSubscriptionSchedulesScheduleRequest(defaultSettings: $defaultSettings, endBehavior: $endBehavior, expand: $expand, metadata: $metadata, phases: $phases, prorationBehavior: $prorationBehavior)';}
+}

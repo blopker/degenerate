@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetPermissionListResponseResourceType {const GetPermissionListResponseResourceType._(this.value);
 
-factory GetPermissionListResponseResourceType.fromJson(String json) { return switch (json) {
+factory GetPermissionListResponseResourceType.fromJson(String json) {return switch (json) {
   'dataset' => dataset,
   _ => GetPermissionListResponseResourceType._(json),
-}; }
+};}
 
 static const GetPermissionListResponseResourceType dataset = GetPermissionListResponseResourceType._('dataset');
 
@@ -13,21 +13,21 @@ static const List<GetPermissionListResponseResourceType> values = [dataset];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetPermissionListResponseResourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetPermissionListResponseResourceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetPermissionListResponseResourceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetPermissionListResponseResourceType($value)';}
+}
 @immutable final class GetPermissionListResponseRole {const GetPermissionListResponseRole._(this.value);
 
-factory GetPermissionListResponseRole.fromJson(String json) { return switch (json) {
+factory GetPermissionListResponseRole.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => GetPermissionListResponseRole._(json),
-}; }
+};}
 
 static const GetPermissionListResponseRole read = GetPermissionListResponseRole._('read');
 
@@ -37,21 +37,21 @@ static const List<GetPermissionListResponseRole> values = [read, write];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetPermissionListResponseRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetPermissionListResponseRole($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetPermissionListResponseRole && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetPermissionListResponseRole($value)';}
+}
 @immutable final class GetPermissionListResponseSubjectType {const GetPermissionListResponseSubjectType._(this.value);
 
-factory GetPermissionListResponseSubjectType.fromJson(String json) { return switch (json) {
+factory GetPermissionListResponseSubjectType.fromJson(String json) {return switch (json) {
   'account' => account,
   'group' => group,
   _ => GetPermissionListResponseSubjectType._(json),
-}; }
+};}
 
 static const GetPermissionListResponseSubjectType account = GetPermissionListResponseSubjectType._('account');
 
@@ -61,17 +61,17 @@ static const List<GetPermissionListResponseSubjectType> values = [account, group
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetPermissionListResponseSubjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetPermissionListResponseSubjectType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetPermissionListResponseSubjectType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetPermissionListResponseSubjectType($value)';}
+}
 @immutable final class GetPermissionListResponse {const GetPermissionListResponse({required this.createdAt, required this.resourceType, required this.role, required this.subjectId, required this.subjectType, required this.updatedAt, required this.uuid, this.resourceId, });
 
-factory GetPermissionListResponse.fromJson(Map<String, dynamic> json) { return GetPermissionListResponse(
+factory GetPermissionListResponse.fromJson(Map<String, dynamic> json) {return GetPermissionListResponse(
   createdAt: DateTime.parse(json['createdAt'] as String),
   resourceId: json['resourceId'] as String?,
   resourceType: GetPermissionListResponseResourceType.fromJson(json['resourceType'] as String),
@@ -80,7 +80,7 @@ factory GetPermissionListResponse.fromJson(Map<String, dynamic> json) { return G
   subjectType: GetPermissionListResponseSubjectType.fromJson(json['subjectType'] as String),
   updatedAt: DateTime.parse(json['updatedAt'] as String),
   uuid: json['uuid'] as String,
-); }
+);}
 
 final DateTime createdAt;
 
@@ -99,7 +99,7 @@ final DateTime updatedAt;
 
 final String uuid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'createdAt': createdAt.toIso8601String(),
   'resourceId': ?resourceId,
   'resourceType': resourceType.toJson(),
@@ -108,15 +108,15 @@ Map<String, dynamic> toJson() { return {
   'subjectType': subjectType.toJson(),
   'updatedAt': updatedAt.toIso8601String(),
   'uuid': uuid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('createdAt') && json['createdAt'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('createdAt') && json['createdAt'] is String &&
       json.containsKey('resourceType') &&
       json.containsKey('role') &&
       json.containsKey('subjectId') && json['subjectId'] is String &&
       json.containsKey('subjectType') &&
       json.containsKey('updatedAt') && json['updatedAt'] is String &&
-      json.containsKey('uuid') && json['uuid'] is String; } 
-GetPermissionListResponse copyWith({DateTime? createdAt, String? Function()? resourceId, GetPermissionListResponseResourceType? resourceType, GetPermissionListResponseRole? role, String? subjectId, GetPermissionListResponseSubjectType? subjectType, DateTime? updatedAt, String? uuid, }) { return GetPermissionListResponse(
+      json.containsKey('uuid') && json['uuid'] is String;}
+GetPermissionListResponse copyWith({DateTime? createdAt, String? Function()? resourceId, GetPermissionListResponseResourceType? resourceType, GetPermissionListResponseRole? role, String? subjectId, GetPermissionListResponseSubjectType? subjectType, DateTime? updatedAt, String? uuid, }) {return GetPermissionListResponse(
   createdAt: createdAt ?? this.createdAt,
   resourceId: resourceId != null ? resourceId() : this.resourceId,
   resourceType: resourceType ?? this.resourceType,
@@ -125,8 +125,8 @@ GetPermissionListResponse copyWith({DateTime? createdAt, String? Function()? res
   subjectType: subjectType ?? this.subjectType,
   updatedAt: updatedAt ?? this.updatedAt,
   uuid: uuid ?? this.uuid,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetPermissionListResponse &&
           createdAt == other.createdAt &&
           resourceId == other.resourceId &&
@@ -135,7 +135,7 @@ GetPermissionListResponse copyWith({DateTime? createdAt, String? Function()? res
           subjectId == other.subjectId &&
           subjectType == other.subjectType &&
           updatedAt == other.updatedAt &&
-          uuid == other.uuid; } 
-@override int get hashCode { return Object.hash(createdAt, resourceId, resourceType, role, subjectId, subjectType, updatedAt, uuid); } 
-@override String toString() { return 'GetPermissionListResponse(createdAt: $createdAt, resourceId: $resourceId, resourceType: $resourceType, role: $role, subjectId: $subjectId, subjectType: $subjectType, updatedAt: $updatedAt, uuid: $uuid)'; } 
- }
+          uuid == other.uuid;}
+@override int get hashCode {return Object.hash(createdAt, resourceId, resourceType, role, subjectId, subjectType, updatedAt, uuid);}
+@override String toString() {return 'GetPermissionListResponse(createdAt: $createdAt, resourceId: $resourceId, resourceType: $resourceType, role: $role, subjectId: $subjectId, subjectType: $subjectType, updatedAt: $updatedAt, uuid: $uuid)';}
+}

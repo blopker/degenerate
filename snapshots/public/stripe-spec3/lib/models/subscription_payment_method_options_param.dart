@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscription_payment_method_options_param_mandate_options.dart';@immutable final class SubscriptionPaymentMethodOptionsParamNetwork {const SubscriptionPaymentMethodOptionsParamNetwork._(this.value);
 
-factory SubscriptionPaymentMethodOptionsParamNetwork.fromJson(String json) { return switch (json) {
+factory SubscriptionPaymentMethodOptionsParamNetwork.fromJson(String json) {return switch (json) {
   'amex' => amex,
   'cartes_bancaires' => cartesBancaires,
   'diners' => diners,
@@ -17,7 +17,7 @@ factory SubscriptionPaymentMethodOptionsParamNetwork.fromJson(String json) { ret
   'unknown' => unknown,
   'visa' => visa,
   _ => SubscriptionPaymentMethodOptionsParamNetwork._(json),
-}; }
+};}
 
 static const SubscriptionPaymentMethodOptionsParamNetwork amex = SubscriptionPaymentMethodOptionsParamNetwork._('amex');
 
@@ -49,22 +49,22 @@ static const List<SubscriptionPaymentMethodOptionsParamNetwork> values = [amex, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionPaymentMethodOptionsParamNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionPaymentMethodOptionsParamNetwork($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionPaymentMethodOptionsParamNetwork && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionPaymentMethodOptionsParamNetwork($value)';}
+}
 @immutable final class SubscriptionPaymentMethodOptionsParamRequestThreeDSecure {const SubscriptionPaymentMethodOptionsParamRequestThreeDSecure._(this.value);
 
-factory SubscriptionPaymentMethodOptionsParamRequestThreeDSecure.fromJson(String json) { return switch (json) {
+factory SubscriptionPaymentMethodOptionsParamRequestThreeDSecure.fromJson(String json) {return switch (json) {
   'any' => any,
   'automatic' => automatic,
   'challenge' => challenge,
   _ => SubscriptionPaymentMethodOptionsParamRequestThreeDSecure._(json),
-}; }
+};}
 
 static const SubscriptionPaymentMethodOptionsParamRequestThreeDSecure any = SubscriptionPaymentMethodOptionsParamRequestThreeDSecure._('any');
 
@@ -76,21 +76,21 @@ static const List<SubscriptionPaymentMethodOptionsParamRequestThreeDSecure> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionPaymentMethodOptionsParamRequestThreeDSecure && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionPaymentMethodOptionsParamRequestThreeDSecure($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionPaymentMethodOptionsParamRequestThreeDSecure && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionPaymentMethodOptionsParamRequestThreeDSecure($value)';}
+}
 @immutable final class SubscriptionPaymentMethodOptionsParam {const SubscriptionPaymentMethodOptionsParam({this.mandateOptions, this.network, this.requestThreeDSecure, });
 
-factory SubscriptionPaymentMethodOptionsParam.fromJson(Map<String, dynamic> json) { return SubscriptionPaymentMethodOptionsParam(
+factory SubscriptionPaymentMethodOptionsParam.fromJson(Map<String, dynamic> json) {return SubscriptionPaymentMethodOptionsParam(
   mandateOptions: json['mandate_options'] != null ? SubscriptionPaymentMethodOptionsParamMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   network: json['network'] != null ? SubscriptionPaymentMethodOptionsParamNetwork.fromJson(json['network'] as String) : null,
   requestThreeDSecure: json['request_three_d_secure'] != null ? SubscriptionPaymentMethodOptionsParamRequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null,
-); }
+);}
 
 final SubscriptionPaymentMethodOptionsParamMandateOptions? mandateOptions;
 
@@ -98,22 +98,22 @@ final SubscriptionPaymentMethodOptionsParamNetwork? network;
 
 final SubscriptionPaymentMethodOptionsParamRequestThreeDSecure? requestThreeDSecure;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
   if (network != null) 'network': network?.toJson(),
   if (requestThreeDSecure != null) 'request_three_d_secure': requestThreeDSecure?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'network', 'request_three_d_secure'}.contains(key)); } 
-SubscriptionPaymentMethodOptionsParam copyWith({SubscriptionPaymentMethodOptionsParamMandateOptions? Function()? mandateOptions, SubscriptionPaymentMethodOptionsParamNetwork? Function()? network, SubscriptionPaymentMethodOptionsParamRequestThreeDSecure? Function()? requestThreeDSecure, }) { return SubscriptionPaymentMethodOptionsParam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mandate_options', 'network', 'request_three_d_secure'}.contains(key));}
+SubscriptionPaymentMethodOptionsParam copyWith({SubscriptionPaymentMethodOptionsParamMandateOptions? Function()? mandateOptions, SubscriptionPaymentMethodOptionsParamNetwork? Function()? network, SubscriptionPaymentMethodOptionsParamRequestThreeDSecure? Function()? requestThreeDSecure, }) {return SubscriptionPaymentMethodOptionsParam(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   network: network != null ? network() : this.network,
   requestThreeDSecure: requestThreeDSecure != null ? requestThreeDSecure() : this.requestThreeDSecure,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SubscriptionPaymentMethodOptionsParam &&
           mandateOptions == other.mandateOptions &&
           network == other.network &&
-          requestThreeDSecure == other.requestThreeDSecure; } 
-@override int get hashCode { return Object.hash(mandateOptions, network, requestThreeDSecure); } 
-@override String toString() { return 'SubscriptionPaymentMethodOptionsParam(mandateOptions: $mandateOptions, network: $network, requestThreeDSecure: $requestThreeDSecure)'; } 
- }
+          requestThreeDSecure == other.requestThreeDSecure;}
+@override int get hashCode {return Object.hash(mandateOptions, network, requestThreeDSecure);}
+@override String toString() {return 'SubscriptionPaymentMethodOptionsParam(mandateOptions: $mandateOptions, network: $network, requestThreeDSecure: $requestThreeDSecure)';}
+}

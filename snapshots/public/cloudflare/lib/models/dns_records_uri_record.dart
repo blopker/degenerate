@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_comment.dart';import 'dns_records_name.dart';import 'dns_records_priority.dart';import 'dns_records_proxied.dart';import 'dns_records_settings.dart';import 'dns_records_ttl.dart';import 'dns_records_uri_record_data.dart';/// Record type.
 @immutable final class DnsRecordsUriRecordType {const DnsRecordsUriRecordType._(this.value);
 
-factory DnsRecordsUriRecordType.fromJson(String json) { return switch (json) {
+factory DnsRecordsUriRecordType.fromJson(String json) {return switch (json) {
   'URI' => uri,
   _ => DnsRecordsUriRecordType._(json),
-}; }
+};}
 
 static const DnsRecordsUriRecordType uri = DnsRecordsUriRecordType._('URI');
 
@@ -14,17 +14,17 @@ static const List<DnsRecordsUriRecordType> values = [uri];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsUriRecordType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DnsRecordsUriRecordType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DnsRecordsUriRecordType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DnsRecordsUriRecordType($value)';}
+}
 @immutable final class DnsRecordsUriRecord {const DnsRecordsUriRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.priority, this.type, });
 
-factory DnsRecordsUriRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsUriRecord(
+factory DnsRecordsUriRecord.fromJson(Map<String, dynamic> json) {return DnsRecordsUriRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,
   name: json['name'] != null ? DnsRecordsName.fromJson(json['name'] as String) : null,
   proxied: json['proxied'] != null ? DnsRecordsProxied.fromJson(json['proxied'] as bool) : null,
@@ -35,7 +35,7 @@ factory DnsRecordsUriRecord.fromJson(Map<String, dynamic> json) { return DnsReco
   data: json['data'] != null ? DnsRecordsUriRecordData.fromJson(json['data'] as Map<String, dynamic>) : null,
   priority: json['priority'] != null ? DnsRecordsPriority.fromJson(json['priority'] as num) : null,
   type: json['type'] != null ? DnsRecordsUriRecordType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final DnsRecordsComment? comment;
 
@@ -60,7 +60,7 @@ final DnsRecordsPriority? priority;
 /// Record type.
 final DnsRecordsUriRecordType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment != null) 'comment': comment?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (proxied != null) 'proxied': proxied?.toJson(),
@@ -71,9 +71,9 @@ Map<String, dynamic> toJson() { return {
   if (data != null) 'data': data?.toJson(),
   if (priority != null) 'priority': priority?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'name', 'proxied', 'settings', 'tags', 'ttl', 'content', 'data', 'priority', 'type'}.contains(key)); } 
-DnsRecordsUriRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsName? Function()? name, DnsRecordsProxied? Function()? proxied, DnsRecordsSettings? Function()? settings, List<String>? Function()? tags, DnsRecordsTtl? Function()? ttl, String? Function()? content, DnsRecordsUriRecordData? Function()? data, DnsRecordsPriority? Function()? priority, DnsRecordsUriRecordType? Function()? type, }) { return DnsRecordsUriRecord(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'comment', 'name', 'proxied', 'settings', 'tags', 'ttl', 'content', 'data', 'priority', 'type'}.contains(key));}
+DnsRecordsUriRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsName? Function()? name, DnsRecordsProxied? Function()? proxied, DnsRecordsSettings? Function()? settings, List<String>? Function()? tags, DnsRecordsTtl? Function()? ttl, String? Function()? content, DnsRecordsUriRecordData? Function()? data, DnsRecordsPriority? Function()? priority, DnsRecordsUriRecordType? Function()? type, }) {return DnsRecordsUriRecord(
   comment: comment != null ? comment() : this.comment,
   name: name != null ? name() : this.name,
   proxied: proxied != null ? proxied() : this.proxied,
@@ -84,8 +84,8 @@ DnsRecordsUriRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecords
   data: data != null ? data() : this.data,
   priority: priority != null ? priority() : this.priority,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnsRecordsUriRecord &&
           comment == other.comment &&
           name == other.name &&
@@ -96,7 +96,7 @@ DnsRecordsUriRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecords
           content == other.content &&
           data == other.data &&
           priority == other.priority &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(comment, name, proxied, settings, Object.hashAll(tags ?? const []), ttl, content, data, priority, type); } 
-@override String toString() { return 'DnsRecordsUriRecord(comment: $comment, name: $name, proxied: $proxied, settings: $settings, tags: $tags, ttl: $ttl, content: $content, data: $data, priority: $priority, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(comment, name, proxied, settings, Object.hashAll(tags ?? const []), ttl, content, data, priority, type);}
+@override String toString() {return 'DnsRecordsUriRecord(comment: $comment, name: $name, proxied: $proxied, settings: $settings, tags: $tags, ttl: $ttl, content: $content, data: $data, priority: $priority, type: $type)';}
+}

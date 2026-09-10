@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_delta_content_text_object_text.dart';/// Always `text`.
 @immutable final class MessageDeltaContentTextObjectType {const MessageDeltaContentTextObjectType._(this.value);
 
-factory MessageDeltaContentTextObjectType.fromJson(String json) { return switch (json) {
+factory MessageDeltaContentTextObjectType.fromJson(String json) {return switch (json) {
   'text' => text,
   _ => MessageDeltaContentTextObjectType._(json),
-}; }
+};}
 
 static const MessageDeltaContentTextObjectType text = MessageDeltaContentTextObjectType._('text');
 
@@ -14,22 +14,22 @@ static const List<MessageDeltaContentTextObjectType> values = [text];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageDeltaContentTextObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageDeltaContentTextObjectType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageDeltaContentTextObjectType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageDeltaContentTextObjectType($value)';}
+}
 /// The text content that is part of a message.
 @immutable final class MessageDeltaContentTextObject {const MessageDeltaContentTextObject({required this.index, required this.type, this.text, });
 
-factory MessageDeltaContentTextObject.fromJson(Map<String, dynamic> json) { return MessageDeltaContentTextObject(
+factory MessageDeltaContentTextObject.fromJson(Map<String, dynamic> json) {return MessageDeltaContentTextObject(
   index: (json['index'] as num).toInt(),
   type: MessageDeltaContentTextObjectType.fromJson(json['type'] as String),
   text: json['text'] != null ? MessageDeltaContentTextObjectText.fromJson(json['text'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The index of the content part in the message.
 final int index;
@@ -39,23 +39,23 @@ final MessageDeltaContentTextObjectType type;
 
 final MessageDeltaContentTextObjectText? text;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'index': index,
   'type': type.toJson(),
   if (text != null) 'text': text?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
-      json.containsKey('type'); } 
-MessageDeltaContentTextObject copyWith({int? index, MessageDeltaContentTextObjectType? type, MessageDeltaContentTextObjectText? Function()? text, }) { return MessageDeltaContentTextObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('index') && json['index'] is num &&
+      json.containsKey('type');}
+MessageDeltaContentTextObject copyWith({int? index, MessageDeltaContentTextObjectType? type, MessageDeltaContentTextObjectText? Function()? text, }) {return MessageDeltaContentTextObject(
   index: index ?? this.index,
   type: type ?? this.type,
   text: text != null ? text() : this.text,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MessageDeltaContentTextObject &&
           index == other.index &&
           type == other.type &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(index, type, text); } 
-@override String toString() { return 'MessageDeltaContentTextObject(index: $index, type: $type, text: $text)'; } 
- }
+          text == other.text;}
+@override int get hashCode {return Object.hash(index, type, text);}
+@override String toString() {return 'MessageDeltaContentTextObject(index: $index, type: $type, text: $text)';}
+}

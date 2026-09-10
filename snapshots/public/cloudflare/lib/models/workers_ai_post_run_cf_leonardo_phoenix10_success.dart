@@ -4,7 +4,7 @@ import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtim
 sealed class WorkersAiPostRunCfLeonardoPhoenix10Success {const WorkersAiPostRunCfLeonardoPhoenix10Success();
 
 /// Decodes the payload for its declared status and content type.
-static WorkersAiPostRunCfLeonardoPhoenix10Success parse(ApiResponse response) { switch (response.statusCode) {
+static WorkersAiPostRunCfLeonardoPhoenix10Success parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -21,26 +21,26 @@ return WorkersAiPostRunCfLeonardoPhoenix10Success200ApplicationJson(json as Map<
 default:
 return WorkersAiPostRunCfLeonardoPhoenix10SuccessUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 200 (application/json).
 final class WorkersAiPostRunCfLeonardoPhoenix10Success200ApplicationJson extends WorkersAiPostRunCfLeonardoPhoenix10Success {const WorkersAiPostRunCfLeonardoPhoenix10Success200ApplicationJson(this.data);
 
 /// The decoded response payload.
 final Map<String, dynamic> data;
 
- }
+}
 /// Response for 200 (image/jpeg).
 final class WorkersAiPostRunCfLeonardoPhoenix10Success200ImageJpeg extends WorkersAiPostRunCfLeonardoPhoenix10Success {const WorkersAiPostRunCfLeonardoPhoenix10Success200ImageJpeg(this.data);
 
 /// The decoded response payload.
 final Uint8List data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class WorkersAiPostRunCfLeonardoPhoenix10SuccessUnknown extends WorkersAiPostRunCfLeonardoPhoenix10Success {const WorkersAiPostRunCfLeonardoPhoenix10SuccessUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_email.dart';import 'access_users_components_schemas_name.dart';@immutable final class ZeroTrustUsersCreateUserRequest {const ZeroTrustUsersCreateUserRequest({required this.email, this.name, });
 
-factory ZeroTrustUsersCreateUserRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustUsersCreateUserRequest(
+factory ZeroTrustUsersCreateUserRequest.fromJson(Map<String, dynamic> json) {return ZeroTrustUsersCreateUserRequest(
   email: AccessSchemasEmail.fromJson(json['email'] as String),
   name: json['name'] != null ? AccessUsersComponentsSchemasName.fromJson(json['name'] as String) : null,
-); }
+);}
 
 /// The email of the user.
 final AccessSchemasEmail email;
@@ -13,19 +13,19 @@ final AccessSchemasEmail email;
 /// The name of the user.
 final AccessUsersComponentsSchemasName? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'email': email.toJson(),
   if (name != null) 'name': name?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('email'); } 
-ZeroTrustUsersCreateUserRequest copyWith({AccessSchemasEmail? email, AccessUsersComponentsSchemasName? Function()? name, }) { return ZeroTrustUsersCreateUserRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('email');}
+ZeroTrustUsersCreateUserRequest copyWith({AccessSchemasEmail? email, AccessUsersComponentsSchemasName? Function()? name, }) {return ZeroTrustUsersCreateUserRequest(
   email: email ?? this.email,
   name: name != null ? name() : this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustUsersCreateUserRequest &&
           email == other.email &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(email, name); } 
-@override String toString() { return 'ZeroTrustUsersCreateUserRequest(email: $email, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(email, name);}
+@override String toString() {return 'ZeroTrustUsersCreateUserRequest(email: $email, name: $name)';}
+}

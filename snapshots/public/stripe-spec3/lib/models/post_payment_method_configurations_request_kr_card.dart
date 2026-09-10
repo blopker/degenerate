@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_kr_card_display_preference.dart';/// Korean cards let users pay using locally issued cards from South Korea.
 @immutable final class PostPaymentMethodConfigurationsRequestKrCard {const PostPaymentMethodConfigurationsRequestKrCard({this.displayPreference});
 
-factory PostPaymentMethodConfigurationsRequestKrCard.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestKrCard(
+factory PostPaymentMethodConfigurationsRequestKrCard.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsRequestKrCard(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestKrCardDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsRequestKrCardDisplayPreference? displayPreference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsRequestKrCard copyWith({PostPaymentMethodConfigurationsRequestKrCardDisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsRequestKrCard(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_preference'}.contains(key));}
+PostPaymentMethodConfigurationsRequestKrCard copyWith({PostPaymentMethodConfigurationsRequestKrCardDisplayPreference? Function()? displayPreference}) {return PostPaymentMethodConfigurationsRequestKrCard(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsRequestKrCard &&
-          displayPreference == other.displayPreference; } 
-@override int get hashCode { return displayPreference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestKrCard(displayPreference: $displayPreference)'; } 
- }
+          displayPreference == other.displayPreference;}
+@override int get hashCode {return displayPreference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestKrCard(displayPreference: $displayPreference)';}
+}

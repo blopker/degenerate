@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigSearchRequestRerankingModel {const AutoragConfigSearchRequestRerankingModel._(this.value);
 
-factory AutoragConfigSearchRequestRerankingModel.fromJson(String json) { return switch (json) {
+factory AutoragConfigSearchRequestRerankingModel.fromJson(String json) {return switch (json) {
   '@cf/baai/bge-reranker-base' => cfBaaiBgeRerankerBase,
   '' => $empty,
   _ => AutoragConfigSearchRequestRerankingModel._(json),
-}; }
+};}
 
 static const AutoragConfigSearchRequestRerankingModel cfBaaiBgeRerankerBase = AutoragConfigSearchRequestRerankingModel._('@cf/baai/bge-reranker-base');
 
@@ -16,40 +16,40 @@ static const List<AutoragConfigSearchRequestRerankingModel> values = [cfBaaiBgeR
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AutoragConfigSearchRequestRerankingModel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AutoragConfigSearchRequestRerankingModel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AutoragConfigSearchRequestRerankingModel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AutoragConfigSearchRequestRerankingModel($value)';}
+}
 @immutable final class AutoragConfigSearchRequestReranking {const AutoragConfigSearchRequestReranking({this.enabled, this.model, });
 
-factory AutoragConfigSearchRequestReranking.fromJson(Map<String, dynamic> json) { return AutoragConfigSearchRequestReranking(
+factory AutoragConfigSearchRequestReranking.fromJson(Map<String, dynamic> json) {return AutoragConfigSearchRequestReranking(
   enabled: json['enabled'] as bool?,
   model: json['model'] != null ? AutoragConfigSearchRequestRerankingModel.fromJson(json['model'] as String) : null,
-); }
+);}
 
 final bool? enabled;
 
 final AutoragConfigSearchRequestRerankingModel? model;
 
 /// The value with the schema default applied when absent.
-bool get enabledOrDefault { return enabled ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get enabledOrDefault {return enabled ?? false;}
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   if (model != null) 'model': model?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'model'}.contains(key)); } 
-AutoragConfigSearchRequestReranking copyWith({bool? Function()? enabled, AutoragConfigSearchRequestRerankingModel? Function()? model, }) { return AutoragConfigSearchRequestReranking(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'model'}.contains(key));}
+AutoragConfigSearchRequestReranking copyWith({bool? Function()? enabled, AutoragConfigSearchRequestRerankingModel? Function()? model, }) {return AutoragConfigSearchRequestReranking(
   enabled: enabled != null ? enabled() : this.enabled,
   model: model != null ? model() : this.model,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AutoragConfigSearchRequestReranking &&
           enabled == other.enabled &&
-          model == other.model; } 
-@override int get hashCode { return Object.hash(enabled, model); } 
-@override String toString() { return 'AutoragConfigSearchRequestReranking(enabled: $enabled, model: $model)'; } 
- }
+          model == other.model;}
+@override int get hashCode {return Object.hash(enabled, model);}
+@override String toString() {return 'AutoragConfigSearchRequestReranking(enabled: $enabled, model: $model)';}
+}

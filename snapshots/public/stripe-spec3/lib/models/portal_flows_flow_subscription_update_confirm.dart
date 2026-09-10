@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'portal_flows_subscription_update_confirm_discount.dart';import 'portal_flows_subscription_update_confirm_item.dart';/// 
 @immutable final class PortalFlowsFlowSubscriptionUpdateConfirm {const PortalFlowsFlowSubscriptionUpdateConfirm({required this.items, required this.subscription, this.discounts = const Omittable.absent(), });
 
-factory PortalFlowsFlowSubscriptionUpdateConfirm.fromJson(Map<String, dynamic> json) { return PortalFlowsFlowSubscriptionUpdateConfirm(
+factory PortalFlowsFlowSubscriptionUpdateConfirm.fromJson(Map<String, dynamic> json) {return PortalFlowsFlowSubscriptionUpdateConfirm(
   discounts: json.containsKey('discounts') ? Omittable((json['discounts'] as List<dynamic>?)?.map((e) => PortalFlowsSubscriptionUpdateConfirmDiscount.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   items: (json['items'] as List<dynamic>).map((e) => PortalFlowsSubscriptionUpdateConfirmItem.fromJson(e as Map<String, dynamic>)).toList(),
   subscription: json['subscription'] as String,
-); }
+);}
 
 /// The coupon or promotion code to apply to this subscription update.
 final Omittable<List<PortalFlowsSubscriptionUpdateConfirmDiscount>?> discounts;
@@ -18,24 +18,24 @@ final List<PortalFlowsSubscriptionUpdateConfirmItem> items;
 /// The ID of the subscription to be updated.
 final String subscription;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (discounts.isPresent) 'discounts': discounts.value?.map((e) => e.toJson()).toList(),
   'items': items.map((e) => e.toJson()).toList(),
   'subscription': subscription,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('items') &&
-      json.containsKey('subscription') && json['subscription'] is String; } 
-PortalFlowsFlowSubscriptionUpdateConfirm copyWith({Omittable<List<PortalFlowsSubscriptionUpdateConfirmDiscount>?>? discounts, List<PortalFlowsSubscriptionUpdateConfirmItem>? items, String? subscription, }) { return PortalFlowsFlowSubscriptionUpdateConfirm(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('items') &&
+      json.containsKey('subscription') && json['subscription'] is String;}
+PortalFlowsFlowSubscriptionUpdateConfirm copyWith({Omittable<List<PortalFlowsSubscriptionUpdateConfirmDiscount>?>? discounts, List<PortalFlowsSubscriptionUpdateConfirmItem>? items, String? subscription, }) {return PortalFlowsFlowSubscriptionUpdateConfirm(
   discounts: discounts ?? this.discounts,
   items: items ?? this.items,
   subscription: subscription ?? this.subscription,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PortalFlowsFlowSubscriptionUpdateConfirm &&
           discounts.isPresent == other.discounts.isPresent &&
           listEquals(discounts.value, other.discounts.value) &&
           listEquals(items, other.items) &&
-          subscription == other.subscription; } 
-@override int get hashCode { return Object.hash(Object.hashAll(discounts.value ?? const []), Object.hashAll(items), subscription); } 
-@override String toString() { return 'PortalFlowsFlowSubscriptionUpdateConfirm(discounts: $discounts, items: $items, subscription: $subscription)'; } 
- }
+          subscription == other.subscription;}
+@override int get hashCode {return Object.hash(Object.hashAll(discounts.value ?? const []), Object.hashAll(items), subscription);}
+@override String toString() {return 'PortalFlowsFlowSubscriptionUpdateConfirm(discounts: $discounts, items: $items, subscription: $subscription)';}
+}

@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class PostTagCreateError {const PostTagCreateError();
 
 /// Decodes the payload for its declared status and content type.
-static PostTagCreateError parse(ApiResponse response) { switch (response.statusCode) {
+static PostTagCreateError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
 return PostTagCreateError400(PostTagCreateResponse400.fromJson(json as Map<String, dynamic>));
@@ -14,26 +14,26 @@ return PostTagCreateError404(PostTagCreateResponse404.fromJson(json as Map<Strin
 default:
 return PostTagCreateErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class PostTagCreateError400 extends PostTagCreateError {const PostTagCreateError400(this.data);
 
 /// The decoded response payload.
 final PostTagCreateResponse400 data;
 
- }
+}
 /// Response for 404 (application/json).
 final class PostTagCreateError404 extends PostTagCreateError {const PostTagCreateError404(this.data);
 
 /// The decoded response payload.
 final PostTagCreateResponse404 data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class PostTagCreateErrorUnknown extends PostTagCreateError {const PostTagCreateErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

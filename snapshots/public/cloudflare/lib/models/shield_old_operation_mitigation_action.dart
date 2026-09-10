@@ -9,13 +9,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// When set, this a
 /// 
 @immutable final class ShieldOldOperationMitigationAction {const ShieldOldOperationMitigationAction._(this.value);
 
-factory ShieldOldOperationMitigationAction.fromJson(String json) { return switch (json) {
+factory ShieldOldOperationMitigationAction.fromJson(String json) {return switch (json) {
   'log' => log,
   'block' => block,
   'none' => none,
   'null' => $null,
   _ => ShieldOldOperationMitigationAction._(json),
-}; }
+};}
 
 static const ShieldOldOperationMitigationAction log = ShieldOldOperationMitigationAction._('log');
 
@@ -29,11 +29,11 @@ static const List<ShieldOldOperationMitigationAction> values = [log, block, none
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldOldOperationMitigationAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldOldOperationMitigationAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ShieldOldOperationMitigationAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ShieldOldOperationMitigationAction($value)';}
+}

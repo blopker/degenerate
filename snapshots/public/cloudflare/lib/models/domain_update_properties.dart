@@ -16,11 +16,11 @@ bool toJson() => value;
 }
 @immutable final class DomainUpdateProperties {const DomainUpdateProperties({this.autoRenew, this.locked, this.privacy, });
 
-factory DomainUpdateProperties.fromJson(Map<String, dynamic> json) { return DomainUpdateProperties(
+factory DomainUpdateProperties.fromJson(Map<String, dynamic> json) {return DomainUpdateProperties(
   autoRenew: json['auto_renew'] != null ? AutoRenew.fromJson(json['auto_renew'] as bool) : null,
   locked: json['locked'] != null ? Locked.fromJson(json['locked'] as bool) : null,
   privacy: json['privacy'] != null ? Privacy.fromJson(json['privacy'] as bool) : null,
-); }
+);}
 
 /// Auto-renew controls whether subscription is automatically renewed upon domain expiration.
 final AutoRenew? autoRenew;
@@ -29,22 +29,22 @@ final Locked? locked;
 
 final Privacy? privacy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (autoRenew != null) 'auto_renew': autoRenew?.toJson(),
   if (locked != null) 'locked': locked?.toJson(),
   if (privacy != null) 'privacy': privacy?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auto_renew', 'locked', 'privacy'}.contains(key)); } 
-DomainUpdateProperties copyWith({AutoRenew? Function()? autoRenew, Locked? Function()? locked, Privacy? Function()? privacy, }) { return DomainUpdateProperties(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'auto_renew', 'locked', 'privacy'}.contains(key));}
+DomainUpdateProperties copyWith({AutoRenew? Function()? autoRenew, Locked? Function()? locked, Privacy? Function()? privacy, }) {return DomainUpdateProperties(
   autoRenew: autoRenew != null ? autoRenew() : this.autoRenew,
   locked: locked != null ? locked() : this.locked,
   privacy: privacy != null ? privacy() : this.privacy,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DomainUpdateProperties &&
           autoRenew == other.autoRenew &&
           locked == other.locked &&
-          privacy == other.privacy; } 
-@override int get hashCode { return Object.hash(autoRenew, locked, privacy); } 
-@override String toString() { return 'DomainUpdateProperties(autoRenew: $autoRenew, locked: $locked, privacy: $privacy)'; } 
- }
+          privacy == other.privacy;}
+@override int get hashCode {return Object.hash(autoRenew, locked, privacy);}
+@override String toString() {return 'DomainUpdateProperties(autoRenew: $autoRenew, locked: $locked, privacy: $privacy)';}
+}

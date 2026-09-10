@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'service_tier
 /// 
 @immutable final class CreateModelResponsePropertiesPromptCacheRetention {const CreateModelResponsePropertiesPromptCacheRetention._(this.value);
 
-factory CreateModelResponsePropertiesPromptCacheRetention.fromJson(String json) { return switch (json) {
+factory CreateModelResponsePropertiesPromptCacheRetention.fromJson(String json) {return switch (json) {
   'in-memory' => inMemory,
   '24h' => $24h,
   _ => CreateModelResponsePropertiesPromptCacheRetention._(json),
-}; }
+};}
 
 static const CreateModelResponsePropertiesPromptCacheRetention inMemory = CreateModelResponsePropertiesPromptCacheRetention._('in-memory');
 
@@ -18,17 +18,17 @@ static const List<CreateModelResponsePropertiesPromptCacheRetention> values = [i
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateModelResponsePropertiesPromptCacheRetention && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateModelResponsePropertiesPromptCacheRetention($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateModelResponsePropertiesPromptCacheRetention && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateModelResponsePropertiesPromptCacheRetention($value)';}
+}
 @immutable final class CreateModelResponseProperties {const CreateModelResponseProperties({this.metadata = const Omittable.absent(), this.topLogprobs, this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier = const Omittable.absent(), this.promptCacheRetention = const Omittable.absent(), });
 
-factory CreateModelResponseProperties.fromJson(Map<String, dynamic> json) { return CreateModelResponseProperties(
+factory CreateModelResponseProperties.fromJson(Map<String, dynamic> json) {return CreateModelResponseProperties(
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   topLogprobs: json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null,
   temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
@@ -38,7 +38,7 @@ factory CreateModelResponseProperties.fromJson(Map<String, dynamic> json) { retu
   promptCacheKey: json['prompt_cache_key'] as String?,
   serviceTier: json.containsKey('service_tier') ? Omittable(json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null) : const Omittable.absent(),
   promptCacheRetention: json.containsKey('prompt_cache_retention') ? Omittable(json['prompt_cache_retention'] != null ? CreateModelResponsePropertiesPromptCacheRetention.fromJson(json['prompt_cache_retention'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 final Omittable<Map<String,String>?> metadata;
 
@@ -82,7 +82,7 @@ final Omittable<ServiceTier?> serviceTier;
 /// 
 final Omittable<CreateModelResponsePropertiesPromptCacheRetention?> promptCacheRetention;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (metadata.isPresent) 'metadata': metadata.value,
   'top_logprobs': ?topLogprobs,
   if (temperature.isPresent) 'temperature': temperature.value,
@@ -92,9 +92,9 @@ Map<String, dynamic> toJson() { return {
   'prompt_cache_key': ?promptCacheKey,
   if (serviceTier.isPresent) 'service_tier': serviceTier.value?.toJson(),
   if (promptCacheRetention.isPresent) 'prompt_cache_retention': promptCacheRetention.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata', 'top_logprobs', 'temperature', 'top_p', 'user', 'safety_identifier', 'prompt_cache_key', 'service_tier', 'prompt_cache_retention'}.contains(key)); } 
-CreateModelResponseProperties copyWith({Omittable<Map<String,String>?>? metadata, int? Function()? topLogprobs, Omittable<double?>? temperature, Omittable<double?>? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, Omittable<ServiceTier?>? serviceTier, Omittable<CreateModelResponsePropertiesPromptCacheRetention?>? promptCacheRetention, }) { return CreateModelResponseProperties(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'metadata', 'top_logprobs', 'temperature', 'top_p', 'user', 'safety_identifier', 'prompt_cache_key', 'service_tier', 'prompt_cache_retention'}.contains(key));}
+CreateModelResponseProperties copyWith({Omittable<Map<String,String>?>? metadata, int? Function()? topLogprobs, Omittable<double?>? temperature, Omittable<double?>? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, Omittable<ServiceTier?>? serviceTier, Omittable<CreateModelResponsePropertiesPromptCacheRetention?>? promptCacheRetention, }) {return CreateModelResponseProperties(
   metadata: metadata ?? this.metadata,
   topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,
   temperature: temperature ?? this.temperature,
@@ -104,8 +104,8 @@ CreateModelResponseProperties copyWith({Omittable<Map<String,String>?>? metadata
   promptCacheKey: promptCacheKey != null ? promptCacheKey() : this.promptCacheKey,
   serviceTier: serviceTier ?? this.serviceTier,
   promptCacheRetention: promptCacheRetention ?? this.promptCacheRetention,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateModelResponseProperties &&
           metadata == other.metadata &&
           topLogprobs == other.topLogprobs &&
@@ -115,7 +115,7 @@ CreateModelResponseProperties copyWith({Omittable<Map<String,String>?>? metadata
           safetyIdentifier == other.safetyIdentifier &&
           promptCacheKey == other.promptCacheKey &&
           serviceTier == other.serviceTier &&
-          promptCacheRetention == other.promptCacheRetention; } 
-@override int get hashCode { return Object.hash(metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention); } 
-@override String toString() { return 'CreateModelResponseProperties(metadata: $metadata, topLogprobs: $topLogprobs, temperature: $temperature, topP: $topP, user: $user, safetyIdentifier: $safetyIdentifier, promptCacheKey: $promptCacheKey, serviceTier: $serviceTier, promptCacheRetention: $promptCacheRetention)'; } 
- }
+          promptCacheRetention == other.promptCacheRetention;}
+@override int get hashCode {return Object.hash(metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention);}
+@override String toString() {return 'CreateModelResponseProperties(metadata: $metadata, topLogprobs: $topLogprobs, temperature: $temperature, topP: $topP, user: $user, safetyIdentifier: $safetyIdentifier, promptCacheKey: $promptCacheKey, serviceTier: $serviceTier, promptCacheRetention: $promptCacheRetention)';}
+}

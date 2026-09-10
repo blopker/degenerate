@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details of the transcription error.
 @immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionFailedError {const RealtimeServerEventConversationItemInputAudioTranscriptionFailedError({this.type, this.code, this.message, this.param, });
 
-factory RealtimeServerEventConversationItemInputAudioTranscriptionFailedError.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemInputAudioTranscriptionFailedError(
+factory RealtimeServerEventConversationItemInputAudioTranscriptionFailedError.fromJson(Map<String, dynamic> json) {return RealtimeServerEventConversationItemInputAudioTranscriptionFailedError(
   type: json['type'] as String?,
   code: json['code'] as String?,
   message: json['message'] as String?,
   param: json['param'] as String?,
-); }
+);}
 
 /// The type of error.
 final String? type;
@@ -22,25 +22,25 @@ final String? message;
 /// Parameter related to the error, if any.
 final String? param;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': ?type,
   'code': ?code,
   'message': ?message,
   'param': ?param,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'code', 'message', 'param'}.contains(key)); } 
-RealtimeServerEventConversationItemInputAudioTranscriptionFailedError copyWith({String? Function()? type, String? Function()? code, String? Function()? message, String? Function()? param, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionFailedError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'code', 'message', 'param'}.contains(key));}
+RealtimeServerEventConversationItemInputAudioTranscriptionFailedError copyWith({String? Function()? type, String? Function()? code, String? Function()? message, String? Function()? param, }) {return RealtimeServerEventConversationItemInputAudioTranscriptionFailedError(
   type: type != null ? type() : this.type,
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,
   param: param != null ? param() : this.param,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventConversationItemInputAudioTranscriptionFailedError &&
           type == other.type &&
           code == other.code &&
           message == other.message &&
-          param == other.param; } 
-@override int get hashCode { return Object.hash(type, code, message, param); } 
-@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionFailedError(type: $type, code: $code, message: $message, param: $param)'; } 
- }
+          param == other.param;}
+@override int get hashCode {return Object.hash(type, code, message, param);}
+@override String toString() {return 'RealtimeServerEventConversationItemInputAudioTranscriptionFailedError(type: $type, code: $code, message: $message, param: $param)';}
+}

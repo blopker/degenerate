@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigPostGatewayDynamicRouteVersionResponseResultElementsModelOutputsFallback {const AigConfigPostGatewayDynamicRouteVersionResponseResultElementsModelOutputsFallback({required this.elementId});
 
-factory AigConfigPostGatewayDynamicRouteVersionResponseResultElementsModelOutputsFallback.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteVersionResponseResultElementsModelOutputsFallback(
+factory AigConfigPostGatewayDynamicRouteVersionResponseResultElementsModelOutputsFallback.fromJson(Map<String, dynamic> json) {return AigConfigPostGatewayDynamicRouteVersionResponseResultElementsModelOutputsFallback(
   elementId: json['elementId'] as String,
-); }
+);}
 
 final String elementId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'elementId': elementId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('elementId') && json['elementId'] is String; } 
-AigConfigPostGatewayDynamicRouteVersionResponseResultElementsModelOutputsFallback copyWith({String? elementId}) { return AigConfigPostGatewayDynamicRouteVersionResponseResultElementsModelOutputsFallback(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('elementId') && json['elementId'] is String;}
+AigConfigPostGatewayDynamicRouteVersionResponseResultElementsModelOutputsFallback copyWith({String? elementId}) {return AigConfigPostGatewayDynamicRouteVersionResponseResultElementsModelOutputsFallback(
   elementId: elementId ?? this.elementId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigPostGatewayDynamicRouteVersionResponseResultElementsModelOutputsFallback &&
-          elementId == other.elementId; } 
-@override int get hashCode { return elementId.hashCode; } 
-@override String toString() { return 'AigConfigPostGatewayDynamicRouteVersionResponseResultElementsModelOutputsFallback(elementId: $elementId)'; } 
- }
+          elementId == other.elementId;}
+@override int get hashCode {return elementId.hashCode;}
+@override String toString() {return 'AigConfigPostGatewayDynamicRouteVersionResponseResultElementsModelOutputsFallback(elementId: $elementId)';}
+}

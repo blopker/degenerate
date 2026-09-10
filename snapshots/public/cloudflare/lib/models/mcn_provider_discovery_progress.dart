@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnProviderDiscoveryProgress {const McnProviderDiscoveryProgress({required this.done, required this.total, required this.unit, });
 
-factory McnProviderDiscoveryProgress.fromJson(Map<String, dynamic> json) { return McnProviderDiscoveryProgress(
+factory McnProviderDiscoveryProgress.fromJson(Map<String, dynamic> json) {return McnProviderDiscoveryProgress(
   done: (json['done'] as num).toInt(),
   total: (json['total'] as num).toInt(),
   unit: json['unit'] as String,
-); }
+);}
 
 final int done;
 
@@ -14,24 +14,24 @@ final int total;
 
 final String unit;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'done': done,
   'total': total,
   'unit': unit,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('done') && json['done'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('done') && json['done'] is num &&
       json.containsKey('total') && json['total'] is num &&
-      json.containsKey('unit') && json['unit'] is String; } 
-McnProviderDiscoveryProgress copyWith({int? done, int? total, String? unit, }) { return McnProviderDiscoveryProgress(
+      json.containsKey('unit') && json['unit'] is String;}
+McnProviderDiscoveryProgress copyWith({int? done, int? total, String? unit, }) {return McnProviderDiscoveryProgress(
   done: done ?? this.done,
   total: total ?? this.total,
   unit: unit ?? this.unit,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is McnProviderDiscoveryProgress &&
           done == other.done &&
           total == other.total &&
-          unit == other.unit; } 
-@override int get hashCode { return Object.hash(done, total, unit); } 
-@override String toString() { return 'McnProviderDiscoveryProgress(done: $done, total: $total, unit: $unit)'; } 
- }
+          unit == other.unit;}
+@override int get hashCode {return Object.hash(done, total, unit);}
+@override String toString() {return 'McnProviderDiscoveryProgress(done: $done, total: $total, unit: $unit)';}
+}

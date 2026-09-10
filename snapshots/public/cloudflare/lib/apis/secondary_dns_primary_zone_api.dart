@@ -13,7 +13,7 @@ final class SecondaryDnsPrimaryZoneApi with ApiExecutor {const SecondaryDnsPrima
 /// Get primary zone configuration for outgoing zone transfers.
 ///
 /// `GET /zones/{zone_id}/secondary_dns/outgoing`
-Future<ApiResult<SecondaryDnsSingleResponseOutgoingResult?, SecondaryDnsPrimaryZonePrimaryZoneConfigurationDetailsResponse4xx>> secondaryDnsPrimaryZonePrimaryZoneConfigurationDetails({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsSingleResponseOutgoingResult?, SecondaryDnsPrimaryZonePrimaryZoneConfigurationDetailsResponse4xx>> secondaryDnsPrimaryZonePrimaryZoneConfigurationDetails({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create Primary Zone Configuration
 ///
 /// Create primary zone configuration for outgoing zone transfers.
 ///
 /// `POST /zones/{zone_id}/secondary_dns/outgoing`
-Future<ApiResult<SecondaryDnsSingleResponseOutgoingResult?, SecondaryDnsPrimaryZoneCreatePrimaryZoneConfigurationResponse4xx>> secondaryDnsPrimaryZoneCreatePrimaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, required SecondaryDnsSingleRequestOutgoingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsSingleResponseOutgoingResult?, SecondaryDnsPrimaryZoneCreatePrimaryZoneConfigurationResponse4xx>> secondaryDnsPrimaryZoneCreatePrimaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, required SecondaryDnsSingleRequestOutgoingRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update Primary Zone Configuration
 ///
 /// Update primary zone configuration for outgoing zone transfers.
 ///
 /// `PUT /zones/{zone_id}/secondary_dns/outgoing`
-Future<ApiResult<SecondaryDnsSingleResponseOutgoingResult?, SecondaryDnsPrimaryZoneUpdatePrimaryZoneConfigurationResponse4xx>> secondaryDnsPrimaryZoneUpdatePrimaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, required SecondaryDnsSingleRequestOutgoingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsSingleResponseOutgoingResult?, SecondaryDnsPrimaryZoneUpdatePrimaryZoneConfigurationResponse4xx>> secondaryDnsPrimaryZoneUpdatePrimaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, required SecondaryDnsSingleRequestOutgoingRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,13 +107,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Primary Zone Configuration
 ///
 /// Delete primary zone configuration for outgoing zone transfers.
 ///
 /// `DELETE /zones/{zone_id}/secondary_dns/outgoing`
-Future<ApiResult<SecondaryDnsIdResponseResult?, SecondaryDnsPrimaryZoneDeletePrimaryZoneConfigurationResponse4xx>> secondaryDnsPrimaryZoneDeletePrimaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsIdResponseResult?, SecondaryDnsPrimaryZoneDeletePrimaryZoneConfigurationResponse4xx>> secondaryDnsPrimaryZoneDeletePrimaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -139,13 +139,13 @@ return null;
 
   },
 );
- } 
+}
 /// Disable Outgoing Zone Transfers
 ///
 /// Disable outgoing zone transfers for primary zone and clears IXFR backlog of primary zone.
 ///
 /// `POST /zones/{zone_id}/secondary_dns/outgoing/disable`
-Future<ApiResult<SecondaryDnsDisableTransferResult?, SecondaryDnsPrimaryZoneDisableOutgoingZoneTransfersResponse4xx>> secondaryDnsPrimaryZoneDisableOutgoingZoneTransfers({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsDisableTransferResult?, SecondaryDnsPrimaryZoneDisableOutgoingZoneTransfersResponse4xx>> secondaryDnsPrimaryZoneDisableOutgoingZoneTransfers({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -171,13 +171,13 @@ return null;
 
   },
 );
- } 
+}
 /// Enable Outgoing Zone Transfers
 ///
 /// Enable outgoing zone transfers for primary zone.
 ///
 /// `POST /zones/{zone_id}/secondary_dns/outgoing/enable`
-Future<ApiResult<SecondaryDnsEnableTransferResult?, SecondaryDnsPrimaryZoneEnableOutgoingZoneTransfersResponse4xx>> secondaryDnsPrimaryZoneEnableOutgoingZoneTransfers({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsEnableTransferResult?, SecondaryDnsPrimaryZoneEnableOutgoingZoneTransfersResponse4xx>> secondaryDnsPrimaryZoneEnableOutgoingZoneTransfers({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -203,13 +203,13 @@ return null;
 
   },
 );
- } 
+}
 /// Force DNS NOTIFY
 ///
 /// Notifies the secondary nameserver(s) and clears IXFR backlog of primary zone.
 ///
 /// `POST /zones/{zone_id}/secondary_dns/outgoing/force_notify`
-Future<ApiResult<SecondaryDnsSchemasForceResult?, SecondaryDnsPrimaryZoneForceDnsNotifyResponse4xx>> secondaryDnsPrimaryZoneForceDnsNotify({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsSchemasForceResult?, SecondaryDnsPrimaryZoneForceDnsNotifyResponse4xx>> secondaryDnsPrimaryZoneForceDnsNotify({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -235,13 +235,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get Outgoing Zone Transfer Status
 ///
 /// Get primary zone transfer status.
 ///
 /// `GET /zones/{zone_id}/secondary_dns/outgoing/status`
-Future<ApiResult<SecondaryDnsEnableTransferResult?, SecondaryDnsPrimaryZoneGetOutgoingZoneTransferStatusResponse4xx>> secondaryDnsPrimaryZoneGetOutgoingZoneTransferStatus({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsEnableTransferResult?, SecondaryDnsPrimaryZoneGetOutgoingZoneTransferStatusResponse4xx>> secondaryDnsPrimaryZoneGetOutgoingZoneTransferStatus({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -267,5 +267,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

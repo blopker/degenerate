@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ranking_top_domains_response_result_top0_categories.dart';@immutable final class RadarGetRankingTopDomainsResponseResultTop0 {const RadarGetRankingTopDomainsResponseResultTop0({required this.categories, required this.domain, required this.rank, this.pctRankChange, });
 
-factory RadarGetRankingTopDomainsResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetRankingTopDomainsResponseResultTop0(
+factory RadarGetRankingTopDomainsResponseResultTop0.fromJson(Map<String, dynamic> json) {return RadarGetRankingTopDomainsResponseResultTop0(
   categories: (json['categories'] as List<dynamic>).map((e) => RadarGetRankingTopDomainsResponseResultTop0Categories.fromJson(e as Map<String, dynamic>)).toList(),
   domain: json['domain'] as String,
   pctRankChange: json['pctRankChange'] != null ? (json['pctRankChange'] as num).toDouble() : null,
   rank: (json['rank'] as num).toInt(),
-); }
+);}
 
 final List<RadarGetRankingTopDomainsResponseResultTop0Categories> categories;
 
@@ -18,27 +18,27 @@ final double? pctRankChange;
 
 final int rank;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'categories': categories.map((e) => e.toJson()).toList(),
   'domain': domain,
   'pctRankChange': ?pctRankChange,
   'rank': rank,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('categories') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('categories') &&
       json.containsKey('domain') && json['domain'] is String &&
-      json.containsKey('rank') && json['rank'] is num; } 
-RadarGetRankingTopDomainsResponseResultTop0 copyWith({List<RadarGetRankingTopDomainsResponseResultTop0Categories>? categories, String? domain, double? Function()? pctRankChange, int? rank, }) { return RadarGetRankingTopDomainsResponseResultTop0(
+      json.containsKey('rank') && json['rank'] is num;}
+RadarGetRankingTopDomainsResponseResultTop0 copyWith({List<RadarGetRankingTopDomainsResponseResultTop0Categories>? categories, String? domain, double? Function()? pctRankChange, int? rank, }) {return RadarGetRankingTopDomainsResponseResultTop0(
   categories: categories ?? this.categories,
   domain: domain ?? this.domain,
   pctRankChange: pctRankChange != null ? pctRankChange() : this.pctRankChange,
   rank: rank ?? this.rank,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetRankingTopDomainsResponseResultTop0 &&
           listEquals(categories, other.categories) &&
           domain == other.domain &&
           pctRankChange == other.pctRankChange &&
-          rank == other.rank; } 
-@override int get hashCode { return Object.hash(Object.hashAll(categories), domain, pctRankChange, rank); } 
-@override String toString() { return 'RadarGetRankingTopDomainsResponseResultTop0(categories: $categories, domain: $domain, pctRankChange: $pctRankChange, rank: $rank)'; } 
- }
+          rank == other.rank;}
+@override int get hashCode {return Object.hash(Object.hashAll(categories), domain, pctRankChange, rank);}
+@override String toString() {return 'RadarGetRankingTopDomainsResponseResultTop0(categories: $categories, domain: $domain, pctRankChange: $pctRankChange, rank: $rank)';}
+}

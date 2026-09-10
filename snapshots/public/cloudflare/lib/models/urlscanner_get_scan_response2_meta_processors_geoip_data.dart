@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_geoip_data_geoip.dart';@immutable final class UrlscannerGetScanResponse2MetaProcessorsGeoipData {const UrlscannerGetScanResponse2MetaProcessorsGeoipData({required this.geoip, required this.ip, });
 
-factory UrlscannerGetScanResponse2MetaProcessorsGeoipData.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsGeoipData(
+factory UrlscannerGetScanResponse2MetaProcessorsGeoipData.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2MetaProcessorsGeoipData(
   geoip: UrlscannerGetScanResponse2MetaProcessorsGeoipDataGeoip.fromJson(json['geoip'] as Map<String, dynamic>),
   ip: json['ip'] as String,
-); }
+);}
 
 final UrlscannerGetScanResponse2MetaProcessorsGeoipDataGeoip geoip;
 
 final String ip;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'geoip': geoip.toJson(),
   'ip': ip,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('geoip') &&
-      json.containsKey('ip') && json['ip'] is String; } 
-UrlscannerGetScanResponse2MetaProcessorsGeoipData copyWith({UrlscannerGetScanResponse2MetaProcessorsGeoipDataGeoip? geoip, String? ip, }) { return UrlscannerGetScanResponse2MetaProcessorsGeoipData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('geoip') &&
+      json.containsKey('ip') && json['ip'] is String;}
+UrlscannerGetScanResponse2MetaProcessorsGeoipData copyWith({UrlscannerGetScanResponse2MetaProcessorsGeoipDataGeoip? geoip, String? ip, }) {return UrlscannerGetScanResponse2MetaProcessorsGeoipData(
   geoip: geoip ?? this.geoip,
   ip: ip ?? this.ip,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponse2MetaProcessorsGeoipData &&
           geoip == other.geoip &&
-          ip == other.ip; } 
-@override int get hashCode { return Object.hash(geoip, ip); } 
-@override String toString() { return 'UrlscannerGetScanResponse2MetaProcessorsGeoipData(geoip: $geoip, ip: $ip)'; } 
- }
+          ip == other.ip;}
+@override int get hashCode {return Object.hash(geoip, ip);}
+@override String toString() {return 'UrlscannerGetScanResponse2MetaProcessorsGeoipData(geoip: $geoip, ip: $ip)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';import 'team.dart';/// Review Request Removed Issue Event
 @immutable final class ReviewRequestRemovedIssueEvent {const ReviewRequestRemovedIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.reviewRequester, this.requestedTeam, this.requestedReviewer, });
 
-factory ReviewRequestRemovedIssueEvent.fromJson(Map<String, dynamic> json) { return ReviewRequestRemovedIssueEvent(
+factory ReviewRequestRemovedIssueEvent.fromJson(Map<String, dynamic> json) {return ReviewRequestRemovedIssueEvent(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: json['url'] as String,
@@ -16,7 +16,7 @@ factory ReviewRequestRemovedIssueEvent.fromJson(Map<String, dynamic> json) { ret
   reviewRequester: SimpleUser.fromJson(json['review_requester'] as Map<String, dynamic>),
   requestedTeam: json['requested_team'] != null ? Team.fromJson(json['requested_team'] as Map<String, dynamic>) : null,
   requestedReviewer: json['requested_reviewer'] != null ? SimpleUser.fromJson(json['requested_reviewer'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final int id;
 
@@ -42,7 +42,7 @@ final Team? requestedTeam;
 
 final SimpleUser? requestedReviewer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url,
@@ -55,8 +55,8 @@ Map<String, dynamic> toJson() { return {
   'review_requester': reviewRequester.toJson(),
   if (requestedTeam != null) 'requested_team': requestedTeam?.toJson(),
   if (requestedReviewer != null) 'requested_reviewer': requestedReviewer?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('actor') &&
@@ -65,8 +65,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('commit_url') && (json['commit_url'] == null || json['commit_url'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('performed_via_github_app') &&
-      json.containsKey('review_requester'); } 
-ReviewRequestRemovedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, SimpleUser? reviewRequester, Team? Function()? requestedTeam, SimpleUser? Function()? requestedReviewer, }) { return ReviewRequestRemovedIssueEvent(
+      json.containsKey('review_requester');}
+ReviewRequestRemovedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, SimpleUser? reviewRequester, Team? Function()? requestedTeam, SimpleUser? Function()? requestedReviewer, }) {return ReviewRequestRemovedIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -79,8 +79,8 @@ ReviewRequestRemovedIssueEvent copyWith({int? id, String? nodeId, String? url, S
   reviewRequester: reviewRequester ?? this.reviewRequester,
   requestedTeam: requestedTeam != null ? requestedTeam() : this.requestedTeam,
   requestedReviewer: requestedReviewer != null ? requestedReviewer() : this.requestedReviewer,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReviewRequestRemovedIssueEvent &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -93,7 +93,7 @@ ReviewRequestRemovedIssueEvent copyWith({int? id, String? nodeId, String? url, S
           performedViaGithubApp == other.performedViaGithubApp &&
           reviewRequester == other.reviewRequester &&
           requestedTeam == other.requestedTeam &&
-          requestedReviewer == other.requestedReviewer; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, reviewRequester, requestedTeam, requestedReviewer); } 
-@override String toString() { return 'ReviewRequestRemovedIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, reviewRequester: $reviewRequester, requestedTeam: $requestedTeam, requestedReviewer: $requestedReviewer)'; } 
- }
+          requestedReviewer == other.requestedReviewer;}
+@override int get hashCode {return Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, reviewRequester, requestedTeam, requestedReviewer);}
+@override String toString() {return 'ReviewRequestRemovedIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, reviewRequester: $reviewRequester, requestedTeam: $requestedTeam, requestedReviewer: $requestedReviewer)';}
+}

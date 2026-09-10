@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustGatewayIpNetwork {const ZeroTrustGatewayIpNetwork({required this.network});
 
-factory ZeroTrustGatewayIpNetwork.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayIpNetwork(
+factory ZeroTrustGatewayIpNetwork.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayIpNetwork(
   network: json['network'] as String,
-); }
+);}
 
 /// Specify the IP address or IP CIDR.
 final String network;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'network': network,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('network') && json['network'] is String; } 
-ZeroTrustGatewayIpNetwork copyWith({String? network}) { return ZeroTrustGatewayIpNetwork(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('network') && json['network'] is String;}
+ZeroTrustGatewayIpNetwork copyWith({String? network}) {return ZeroTrustGatewayIpNetwork(
   network: network ?? this.network,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewayIpNetwork &&
-          network == other.network; } 
-@override int get hashCode { return network.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayIpNetwork(network: $network)'; } 
- }
+          network == other.network;}
+@override int get hashCode {return network.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayIpNetwork(network: $network)';}
+}

@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of the me
 /// 
 @immutable final class IamMemberInvitationStatus {const IamMemberInvitationStatus._(this.value);
 
-factory IamMemberInvitationStatus.fromJson(String json) { return switch (json) {
+factory IamMemberInvitationStatus.fromJson(String json) {return switch (json) {
   'accepted' => accepted,
   'pending' => pending,
   _ => IamMemberInvitationStatus._(json),
-}; }
+};}
 
 static const IamMemberInvitationStatus accepted = IamMemberInvitationStatus._('accepted');
 
@@ -19,11 +19,11 @@ static const List<IamMemberInvitationStatus> values = [accepted, pending];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IamMemberInvitationStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IamMemberInvitationStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IamMemberInvitationStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IamMemberInvitationStatus($value)';}
+}

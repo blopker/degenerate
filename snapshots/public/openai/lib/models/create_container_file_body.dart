@@ -2,10 +2,10 @@
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateContainerFileBody {const CreateContainerFileBody({this.fileId, this.file, });
 
-factory CreateContainerFileBody.fromJson(Map<String, dynamic> json) { return CreateContainerFileBody(
+factory CreateContainerFileBody.fromJson(Map<String, dynamic> json) {return CreateContainerFileBody(
   fileId: json['file_id'] as String?,
   file: json['file'] != null ? base64Decode(json['file'] as String) : null,
-); }
+);}
 
 /// Name of the file to create.
 final String? fileId;
@@ -14,19 +14,19 @@ final String? fileId;
 /// 
 final Uint8List? file;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'file_id': ?fileId,
   if (file != null) 'file': switch (file) { final bytes? => base64Encode(bytes), _ => null },
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_id', 'file'}.contains(key)); } 
-CreateContainerFileBody copyWith({String? Function()? fileId, Uint8List? Function()? file, }) { return CreateContainerFileBody(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'file_id', 'file'}.contains(key));}
+CreateContainerFileBody copyWith({String? Function()? fileId, Uint8List? Function()? file, }) {return CreateContainerFileBody(
   fileId: fileId != null ? fileId() : this.fileId,
   file: file != null ? file() : this.file,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateContainerFileBody &&
           fileId == other.fileId &&
-          listEquals(file, other.file); } 
-@override int get hashCode { return Object.hash(fileId, Object.hashAll(file ?? const [])); } 
-@override String toString() { return 'CreateContainerFileBody(fileId: $fileId, file: $file)'; } 
- }
+          listEquals(file, other.file);}
+@override int get hashCode {return Object.hash(fileId, Object.hashAll(file ?? const []));}
+@override String toString() {return 'CreateContainerFileBody(fileId: $fileId, file: $file)';}
+}

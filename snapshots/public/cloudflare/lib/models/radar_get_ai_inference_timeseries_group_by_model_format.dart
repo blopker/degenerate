@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetAiInferenceTimeseriesGroupByModelFormat {const RadarGetAiInferenceTimeseriesGroupByModelFormat._(this.value);
 
-factory RadarGetAiInferenceTimeseriesGroupByModelFormat.fromJson(String json) { return switch (json) {
+factory RadarGetAiInferenceTimeseriesGroupByModelFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAiInferenceTimeseriesGroupByModelFormat._(json),
-}; }
+};}
 
 static const RadarGetAiInferenceTimeseriesGroupByModelFormat $json = RadarGetAiInferenceTimeseriesGroupByModelFormat._('JSON');
 
@@ -17,11 +17,11 @@ static const List<RadarGetAiInferenceTimeseriesGroupByModelFormat> values = [$js
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAiInferenceTimeseriesGroupByModelFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAiInferenceTimeseriesGroupByModelFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAiInferenceTimeseriesGroupByModelFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAiInferenceTimeseriesGroupByModelFormat($value)';}
+}

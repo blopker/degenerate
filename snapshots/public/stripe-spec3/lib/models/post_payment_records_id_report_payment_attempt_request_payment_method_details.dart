@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_id_report_payment_attempt_request_payment_method_details_billing_details.dart';import 'post_payment_records_id_report_payment_attempt_request_payment_method_details_custom.dart';@immutable final class PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType {const PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType._(this.value);
 
-factory PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType.fromJson(String json) { return switch (json) {
+factory PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType.fromJson(String json) {return switch (json) {
   'custom' => custom,
   _ => PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType._(json),
-}; }
+};}
 
 static const PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType custom = PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType._('custom');
 
@@ -13,23 +13,23 @@ static const List<PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType($value)';}
+}
 /// Information about the Payment Method debited for this payment.
 @immutable final class PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails {const PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails({this.billingDetails, this.custom, this.paymentMethod, this.type, });
 
-factory PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails(
+factory PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails.fromJson(Map<String, dynamic> json) {return PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails(
   billingDetails: json['billing_details'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null,
   custom: json['custom'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsCustom.fromJson(json['custom'] as Map<String, dynamic>) : null,
   paymentMethod: json['payment_method'] as String?,
   type: json['type'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsBillingDetails? billingDetails;
 
@@ -39,25 +39,25 @@ final String? paymentMethod;
 
 final PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingDetails != null) 'billing_details': billingDetails?.toJson(),
   if (custom != null) 'custom': custom?.toJson(),
   'payment_method': ?paymentMethod,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_details', 'custom', 'payment_method', 'type'}.contains(key)); } 
-PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails copyWith({PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsBillingDetails? Function()? billingDetails, PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsCustom? Function()? custom, String? Function()? paymentMethod, PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType? Function()? type, }) { return PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'billing_details', 'custom', 'payment_method', 'type'}.contains(key));}
+PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails copyWith({PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsBillingDetails? Function()? billingDetails, PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsCustom? Function()? custom, String? Function()? paymentMethod, PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType? Function()? type, }) {return PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails(
   billingDetails: billingDetails != null ? billingDetails() : this.billingDetails,
   custom: custom != null ? custom() : this.custom,
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails &&
           billingDetails == other.billingDetails &&
           custom == other.custom &&
           paymentMethod == other.paymentMethod &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(billingDetails, custom, paymentMethod, type); } 
-@override String toString() { return 'PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails(billingDetails: $billingDetails, custom: $custom, paymentMethod: $paymentMethod, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(billingDetails, custom, paymentMethod, type);}
+@override String toString() {return 'PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails(billingDetails: $billingDetails, custom: $custom, paymentMethod: $paymentMethod, type: $type)';}
+}

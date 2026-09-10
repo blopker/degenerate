@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InvoicePaymentMethodOptionsParamMandateOptionsTransactionType {const InvoicePaymentMethodOptionsParamMandateOptionsTransactionType._(this.value);
 
-factory InvoicePaymentMethodOptionsParamMandateOptionsTransactionType.fromJson(String json) { return switch (json) {
+factory InvoicePaymentMethodOptionsParamMandateOptionsTransactionType.fromJson(String json) {return switch (json) {
   'business' => business,
   'personal' => personal,
   _ => InvoicePaymentMethodOptionsParamMandateOptionsTransactionType._(json),
-}; }
+};}
 
 static const InvoicePaymentMethodOptionsParamMandateOptionsTransactionType business = InvoicePaymentMethodOptionsParamMandateOptionsTransactionType._('business');
 
@@ -16,32 +16,32 @@ static const List<InvoicePaymentMethodOptionsParamMandateOptionsTransactionType>
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoicePaymentMethodOptionsParamMandateOptionsTransactionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParamMandateOptionsTransactionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoicePaymentMethodOptionsParamMandateOptionsTransactionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoicePaymentMethodOptionsParamMandateOptionsTransactionType($value)';}
+}
 @immutable final class InvoicePaymentMethodOptionsParamMandateOptions {const InvoicePaymentMethodOptionsParamMandateOptions({this.transactionType});
 
-factory InvoicePaymentMethodOptionsParamMandateOptions.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParamMandateOptions(
+factory InvoicePaymentMethodOptionsParamMandateOptions.fromJson(Map<String, dynamic> json) {return InvoicePaymentMethodOptionsParamMandateOptions(
   transactionType: json['transaction_type'] != null ? InvoicePaymentMethodOptionsParamMandateOptionsTransactionType.fromJson(json['transaction_type'] as String) : null,
-); }
+);}
 
 final InvoicePaymentMethodOptionsParamMandateOptionsTransactionType? transactionType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (transactionType != null) 'transaction_type': transactionType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'transaction_type'}.contains(key)); } 
-InvoicePaymentMethodOptionsParamMandateOptions copyWith({InvoicePaymentMethodOptionsParamMandateOptionsTransactionType? Function()? transactionType}) { return InvoicePaymentMethodOptionsParamMandateOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'transaction_type'}.contains(key));}
+InvoicePaymentMethodOptionsParamMandateOptions copyWith({InvoicePaymentMethodOptionsParamMandateOptionsTransactionType? Function()? transactionType}) {return InvoicePaymentMethodOptionsParamMandateOptions(
   transactionType: transactionType != null ? transactionType() : this.transactionType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InvoicePaymentMethodOptionsParamMandateOptions &&
-          transactionType == other.transactionType; } 
-@override int get hashCode { return transactionType.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParamMandateOptions(transactionType: $transactionType)'; } 
- }
+          transactionType == other.transactionType;}
+@override int get hashCode {return transactionType.hashCode;}
+@override String toString() {return 'InvoicePaymentMethodOptionsParamMandateOptions(transactionType: $transactionType)';}
+}

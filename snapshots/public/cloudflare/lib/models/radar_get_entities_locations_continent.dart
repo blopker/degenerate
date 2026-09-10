@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by continent code.
 @immutable final class RadarGetEntitiesLocationsContinent {const RadarGetEntitiesLocationsContinent._(this.value);
 
-factory RadarGetEntitiesLocationsContinent.fromJson(String json) { return switch (json) {
+factory RadarGetEntitiesLocationsContinent.fromJson(String json) {return switch (json) {
   'AF' => af,
   'AS' => $as,
   'EU' => eu,
@@ -11,7 +11,7 @@ factory RadarGetEntitiesLocationsContinent.fromJson(String json) { return switch
   'OC' => oc,
   'SA' => sa,
   _ => RadarGetEntitiesLocationsContinent._(json),
-}; }
+};}
 
 static const RadarGetEntitiesLocationsContinent af = RadarGetEntitiesLocationsContinent._('AF');
 
@@ -29,11 +29,11 @@ static const List<RadarGetEntitiesLocationsContinent> values = [af, $as, eu, na,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetEntitiesLocationsContinent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetEntitiesLocationsContinent($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetEntitiesLocationsContinent && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetEntitiesLocationsContinent($value)';}
+}

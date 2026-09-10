@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_automatic_tax.dart';import 'post_invoices_create_preview_request_customer_details.dart';import 'post_invoices_create_preview_request_discounts.dart';import 'post_invoices_create_preview_request_invoice_items.dart';import 'post_invoices_create_preview_request_issuer.dart';import 'post_invoices_create_preview_request_on_behalf_of.dart';import 'post_invoices_create_preview_request_schedule_details.dart';import 'post_invoices_create_preview_request_subscription_details.dart';/// Customizes the types of values to include when calculating the invoice. Defaults to `next` if unspecified.
 @immutable final class PostInvoicesCreatePreviewRequestPreviewMode {const PostInvoicesCreatePreviewRequestPreviewMode._(this.value);
 
-factory PostInvoicesCreatePreviewRequestPreviewMode.fromJson(String json) { return switch (json) {
+factory PostInvoicesCreatePreviewRequestPreviewMode.fromJson(String json) {return switch (json) {
   'next' => next,
   'recurring' => recurring,
   _ => PostInvoicesCreatePreviewRequestPreviewMode._(json),
-}; }
+};}
 
 static const PostInvoicesCreatePreviewRequestPreviewMode next = PostInvoicesCreatePreviewRequestPreviewMode._('next');
 
@@ -17,17 +17,17 @@ static const List<PostInvoicesCreatePreviewRequestPreviewMode> values = [next, r
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestPreviewMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestPreviewMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestPreviewMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestPreviewMode($value)';}
+}
 @immutable final class PostInvoicesCreatePreviewRequest {const PostInvoicesCreatePreviewRequest({this.automaticTax, this.currency, this.customer, this.customerAccount, this.customerDetails, this.discounts, this.expand, this.invoiceItems, this.issuer, this.onBehalfOf, this.previewMode, this.schedule, this.scheduleDetails, this.subscription, this.subscriptionDetails, });
 
-factory PostInvoicesCreatePreviewRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequest(
+factory PostInvoicesCreatePreviewRequest.fromJson(Map<String, dynamic> json) {return PostInvoicesCreatePreviewRequest(
   automaticTax: json['automatic_tax'] != null ? PostInvoicesCreatePreviewRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String?,
   customer: json['customer'] as String?,
@@ -43,7 +43,7 @@ factory PostInvoicesCreatePreviewRequest.fromJson(Map<String, dynamic> json) { r
   scheduleDetails: json['schedule_details'] != null ? PostInvoicesCreatePreviewRequestScheduleDetails.fromJson(json['schedule_details'] as Map<String, dynamic>) : null,
   subscription: json['subscription'] as String?,
   subscriptionDetails: json['subscription_details'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetails.fromJson(json['subscription_details'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Settings for automatic tax lookup for this invoice preview.
 final PostInvoicesCreatePreviewRequestAutomaticTax? automaticTax;
@@ -90,7 +90,7 @@ final String? subscription;
 /// The subscription creation or modification params to apply as a preview. Cannot be used with `schedule` or `schedule_details` fields.
 final PostInvoicesCreatePreviewRequestSubscriptionDetails? subscriptionDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (automaticTax != null) 'automatic_tax': automaticTax?.toJson(),
   'currency': ?currency,
   'customer': ?customer,
@@ -106,9 +106,9 @@ Map<String, dynamic> toJson() { return {
   if (scheduleDetails != null) 'schedule_details': scheduleDetails?.toJson(),
   'subscription': ?subscription,
   if (subscriptionDetails != null) 'subscription_details': subscriptionDetails?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'automatic_tax', 'currency', 'customer', 'customer_account', 'customer_details', 'discounts', 'expand', 'invoice_items', 'issuer', 'on_behalf_of', 'preview_mode', 'schedule', 'schedule_details', 'subscription', 'subscription_details'}.contains(key)); } 
-PostInvoicesCreatePreviewRequest copyWith({PostInvoicesCreatePreviewRequestAutomaticTax? Function()? automaticTax, String? Function()? currency, String? Function()? customer, String? Function()? customerAccount, PostInvoicesCreatePreviewRequestCustomerDetails? Function()? customerDetails, PostInvoicesCreatePreviewRequestDiscounts? Function()? discounts, List<String>? Function()? expand, List<PostInvoicesCreatePreviewRequestInvoiceItems>? Function()? invoiceItems, PostInvoicesCreatePreviewRequestIssuer? Function()? issuer, PostInvoicesCreatePreviewRequestOnBehalfOf? Function()? onBehalfOf, PostInvoicesCreatePreviewRequestPreviewMode? Function()? previewMode, String? Function()? schedule, PostInvoicesCreatePreviewRequestScheduleDetails? Function()? scheduleDetails, String? Function()? subscription, PostInvoicesCreatePreviewRequestSubscriptionDetails? Function()? subscriptionDetails, }) { return PostInvoicesCreatePreviewRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'automatic_tax', 'currency', 'customer', 'customer_account', 'customer_details', 'discounts', 'expand', 'invoice_items', 'issuer', 'on_behalf_of', 'preview_mode', 'schedule', 'schedule_details', 'subscription', 'subscription_details'}.contains(key));}
+PostInvoicesCreatePreviewRequest copyWith({PostInvoicesCreatePreviewRequestAutomaticTax? Function()? automaticTax, String? Function()? currency, String? Function()? customer, String? Function()? customerAccount, PostInvoicesCreatePreviewRequestCustomerDetails? Function()? customerDetails, PostInvoicesCreatePreviewRequestDiscounts? Function()? discounts, List<String>? Function()? expand, List<PostInvoicesCreatePreviewRequestInvoiceItems>? Function()? invoiceItems, PostInvoicesCreatePreviewRequestIssuer? Function()? issuer, PostInvoicesCreatePreviewRequestOnBehalfOf? Function()? onBehalfOf, PostInvoicesCreatePreviewRequestPreviewMode? Function()? previewMode, String? Function()? schedule, PostInvoicesCreatePreviewRequestScheduleDetails? Function()? scheduleDetails, String? Function()? subscription, PostInvoicesCreatePreviewRequestSubscriptionDetails? Function()? subscriptionDetails, }) {return PostInvoicesCreatePreviewRequest(
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
   currency: currency != null ? currency() : this.currency,
   customer: customer != null ? customer() : this.customer,
@@ -124,8 +124,8 @@ PostInvoicesCreatePreviewRequest copyWith({PostInvoicesCreatePreviewRequestAutom
   scheduleDetails: scheduleDetails != null ? scheduleDetails() : this.scheduleDetails,
   subscription: subscription != null ? subscription() : this.subscription,
   subscriptionDetails: subscriptionDetails != null ? subscriptionDetails() : this.subscriptionDetails,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesCreatePreviewRequest &&
           automaticTax == other.automaticTax &&
           currency == other.currency &&
@@ -141,7 +141,7 @@ PostInvoicesCreatePreviewRequest copyWith({PostInvoicesCreatePreviewRequestAutom
           schedule == other.schedule &&
           scheduleDetails == other.scheduleDetails &&
           subscription == other.subscription &&
-          subscriptionDetails == other.subscriptionDetails; } 
-@override int get hashCode { return Object.hash(automaticTax, currency, customer, customerAccount, customerDetails, discounts, Object.hashAll(expand ?? const []), Object.hashAll(invoiceItems ?? const []), issuer, onBehalfOf, previewMode, schedule, scheduleDetails, subscription, subscriptionDetails); } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequest(automaticTax: $automaticTax, currency: $currency, customer: $customer, customerAccount: $customerAccount, customerDetails: $customerDetails, discounts: $discounts, expand: $expand, invoiceItems: $invoiceItems, issuer: $issuer, onBehalfOf: $onBehalfOf, previewMode: $previewMode, schedule: $schedule, scheduleDetails: $scheduleDetails, subscription: $subscription, subscriptionDetails: $subscriptionDetails)'; } 
- }
+          subscriptionDetails == other.subscriptionDetails;}
+@override int get hashCode {return Object.hash(automaticTax, currency, customer, customerAccount, customerDetails, discounts, Object.hashAll(expand ?? const []), Object.hashAll(invoiceItems ?? const []), issuer, onBehalfOf, previewMode, schedule, scheduleDetails, subscription, subscriptionDetails);}
+@override String toString() {return 'PostInvoicesCreatePreviewRequest(automaticTax: $automaticTax, currency: $currency, customer: $customer, customerAccount: $customerAccount, customerDetails: $customerDetails, discounts: $discounts, expand: $expand, invoiceItems: $invoiceItems, issuer: $issuer, onBehalfOf: $onBehalfOf, previewMode: $previewMode, schedule: $schedule, scheduleDetails: $scheduleDetails, subscription: $subscription, subscriptionDetails: $subscriptionDetails)';}
+}

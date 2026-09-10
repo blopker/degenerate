@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IncomingPhoneNumberEnumVoiceReceiveMode {const IncomingPhoneNumberEnumVoiceReceiveMode._(this.value);
 
-factory IncomingPhoneNumberEnumVoiceReceiveMode.fromJson(String json) { return switch (json) {
+factory IncomingPhoneNumberEnumVoiceReceiveMode.fromJson(String json) {return switch (json) {
   'voice' => voice,
   'fax' => fax,
   _ => IncomingPhoneNumberEnumVoiceReceiveMode._(json),
-}; }
+};}
 
 static const IncomingPhoneNumberEnumVoiceReceiveMode voice = IncomingPhoneNumberEnumVoiceReceiveMode._('voice');
 
@@ -16,11 +16,11 @@ static const List<IncomingPhoneNumberEnumVoiceReceiveMode> values = [voice, fax]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IncomingPhoneNumberEnumVoiceReceiveMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IncomingPhoneNumberEnumVoiceReceiveMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IncomingPhoneNumberEnumVoiceReceiveMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IncomingPhoneNumberEnumVoiceReceiveMode($value)';}
+}

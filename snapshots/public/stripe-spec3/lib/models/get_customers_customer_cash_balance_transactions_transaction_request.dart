@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCustomersCustomerCashBalanceTransactionsTransactionRequest {const GetCustomersCustomerCashBalanceTransactionsTransactionRequest();
 
-factory GetCustomersCustomerCashBalanceTransactionsTransactionRequest.fromJson(Map<String, dynamic> _) { return const GetCustomersCustomerCashBalanceTransactionsTransactionRequest(); }
+factory GetCustomersCustomerCashBalanceTransactionsTransactionRequest.fromJson(Map<String, dynamic> _) {return const GetCustomersCustomerCashBalanceTransactionsTransactionRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-GetCustomersCustomerCashBalanceTransactionsTransactionRequest copyWith() { return const GetCustomersCustomerCashBalanceTransactionsTransactionRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+GetCustomersCustomerCashBalanceTransactionsTransactionRequest copyWith() {return const GetCustomersCustomerCashBalanceTransactionsTransactionRequest(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is GetCustomersCustomerCashBalanceTransactionsTransactionRequest; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'GetCustomersCustomerCashBalanceTransactionsTransactionRequest()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is GetCustomersCustomerCashBalanceTransactionsTransactionRequest;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'GetCustomersCustomerCashBalanceTransactionsTransactionRequest()';}
+}

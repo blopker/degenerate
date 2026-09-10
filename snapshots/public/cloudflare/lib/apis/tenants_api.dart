@@ -13,7 +13,7 @@ final class TenantsApi with ApiExecutor {const TenantsApi(this.apiConfig);
 /// Retrieves a Tenant by Tenant ID.
 ///
 /// `GET /tenants/{tenant_id}`
-Future<ApiResult<Tenant, ErrorResponse>> tenantsRetrieveTenant({required String tenantId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Tenant, ErrorResponse>> tenantsRetrieveTenant({required String tenantId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get tenant account types
 ///
 /// List of account types available for the Tenant to provision accounts.
 ///
 /// `GET /tenants/{tenant_id}/account_types`
-Future<ApiResult<List<String>, ErrorResponse>> tenantsValidAccountTypes({required String tenantId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<String>, ErrorResponse>> tenantsValidAccountTypes({required String tenantId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,13 +71,13 @@ return null;
 
   },
 );
- } 
+}
 /// List tenant accounts
 ///
 /// List of accounts for the Tenant.
 ///
 /// `GET /tenants/{tenant_id}/accounts`
-Future<ApiResult<List<Account>, ErrorResponse>> tenantsListAccounts({required String tenantId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Account>, ErrorResponse>> tenantsListAccounts({required String tenantId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -103,13 +103,13 @@ return null;
 
   },
 );
- } 
+}
 /// List tenant entitlements
 ///
 /// List of innate entitlements available for the Tenant.
 ///
 /// `GET /tenants/{tenant_id}/entitlements`
-Future<ApiResult<InnateEntitlements, ErrorResponse>> tenantsListEntitlements({required String tenantId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InnateEntitlements, ErrorResponse>> tenantsListEntitlements({required String tenantId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -135,13 +135,13 @@ return null;
 
   },
 );
- } 
+}
 /// List tenant memberships
 ///
 /// List of active members (Cloudflare users) for the Tenant.
 ///
 /// `GET /tenants/{tenant_id}/memberships`
-Future<ApiResult<List<TenantMembership>, ErrorResponse>> tenantsListMemberships({required String tenantId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TenantMembership>, ErrorResponse>> tenantsListMemberships({required String tenantId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -167,5 +167,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

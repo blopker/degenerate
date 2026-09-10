@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gelato_document_report.dart';import 'gelato_email_report.dart';import 'gelato_id_number_report.dart';import 'gelato_phone_report.dart';import 'gelato_selfie_report.dart';import 'gelato_verification_report_options.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IdentityVerificationReportObject {const IdentityVerificationReportObject._(this.value);
 
-factory IdentityVerificationReportObject.fromJson(String json) { return switch (json) {
+factory IdentityVerificationReportObject.fromJson(String json) {return switch (json) {
   'identity.verification_report' => identityVerificationReport,
   _ => IdentityVerificationReportObject._(json),
-}; }
+};}
 
 static const IdentityVerificationReportObject identityVerificationReport = IdentityVerificationReportObject._('identity.verification_report');
 
@@ -14,23 +14,23 @@ static const List<IdentityVerificationReportObject> values = [identityVerificati
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IdentityVerificationReportObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IdentityVerificationReportObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IdentityVerificationReportObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IdentityVerificationReportObject($value)';}
+}
 /// Type of report.
 @immutable final class IdentityVerificationReportType {const IdentityVerificationReportType._(this.value);
 
-factory IdentityVerificationReportType.fromJson(String json) { return switch (json) {
+factory IdentityVerificationReportType.fromJson(String json) {return switch (json) {
   'document' => document,
   'id_number' => idNumber,
   'verification_flow' => verificationFlow,
   _ => IdentityVerificationReportType._(json),
-}; }
+};}
 
 static const IdentityVerificationReportType document = IdentityVerificationReportType._('document');
 
@@ -42,14 +42,14 @@ static const List<IdentityVerificationReportType> values = [document, idNumber, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IdentityVerificationReportType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IdentityVerificationReportType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IdentityVerificationReportType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IdentityVerificationReportType($value)';}
+}
 /// A VerificationReport is the result of an attempt to collect and verify data from a user.
 /// The collection of verification checks performed is determined from the `type` and `options`
 /// parameters used. You can find the result of each verification check performed in the
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guide: [Accessing verification results](https://docs.stripe.com/identity/verification-sessions#results).
 @immutable final class IdentityVerificationReport {const IdentityVerificationReport({required this.created, required this.id, required this.livemode, required this.object, required this.type, this.clientReferenceId = const Omittable.absent(), this.document, this.email, this.idNumber, this.options, this.phone, this.selfie, this.verificationFlow, this.verificationSession = const Omittable.absent(), });
 
-factory IdentityVerificationReport.fromJson(Map<String, dynamic> json) { return IdentityVerificationReport(
+factory IdentityVerificationReport.fromJson(Map<String, dynamic> json) {return IdentityVerificationReport(
   clientReferenceId: json.containsKey('client_reference_id') ? Omittable(json['client_reference_id'] as String?) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   document: json['document'] != null ? GelatoDocumentReport.fromJson(json['document'] as Map<String, dynamic>) : null,
@@ -78,7 +78,7 @@ factory IdentityVerificationReport.fromJson(Map<String, dynamic> json) { return 
   type: IdentityVerificationReportType.fromJson(json['type'] as String),
   verificationFlow: json['verification_flow'] as String?,
   verificationSession: json.containsKey('verification_session') ? Omittable(json['verification_session'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// A string to reference this user. This can be a customer ID, a session ID, or similar, and can be used to reconcile this verification with your internal systems.
 final Omittable<String?> clientReferenceId;
@@ -116,7 +116,7 @@ final String? verificationFlow;
 /// ID of the VerificationSession that created this report.
 final Omittable<String?> verificationSession;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (clientReferenceId.isPresent) 'client_reference_id': clientReferenceId.value,
   'created': created,
   if (document != null) 'document': document?.toJson(),
@@ -131,13 +131,13 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'verification_flow': ?verificationFlow,
   if (verificationSession.isPresent) 'verification_session': verificationSession.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('type'); } 
-IdentityVerificationReport copyWith({Omittable<String?>? clientReferenceId, int? created, GelatoDocumentReport? Function()? document, GelatoEmailReport? Function()? email, String? id, GelatoIdNumberReport? Function()? idNumber, bool? livemode, IdentityVerificationReportObject? object, GelatoVerificationReportOptions? Function()? options, GelatoPhoneReport? Function()? phone, GelatoSelfieReport? Function()? selfie, IdentityVerificationReportType? type, String? Function()? verificationFlow, Omittable<String?>? verificationSession, }) { return IdentityVerificationReport(
+      json.containsKey('type');}
+IdentityVerificationReport copyWith({Omittable<String?>? clientReferenceId, int? created, GelatoDocumentReport? Function()? document, GelatoEmailReport? Function()? email, String? id, GelatoIdNumberReport? Function()? idNumber, bool? livemode, IdentityVerificationReportObject? object, GelatoVerificationReportOptions? Function()? options, GelatoPhoneReport? Function()? phone, GelatoSelfieReport? Function()? selfie, IdentityVerificationReportType? type, String? Function()? verificationFlow, Omittable<String?>? verificationSession, }) {return IdentityVerificationReport(
   clientReferenceId: clientReferenceId ?? this.clientReferenceId,
   created: created ?? this.created,
   document: document != null ? document() : this.document,
@@ -152,8 +152,8 @@ IdentityVerificationReport copyWith({Omittable<String?>? clientReferenceId, int?
   type: type ?? this.type,
   verificationFlow: verificationFlow != null ? verificationFlow() : this.verificationFlow,
   verificationSession: verificationSession ?? this.verificationSession,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IdentityVerificationReport &&
           clientReferenceId == other.clientReferenceId &&
           created == other.created &&
@@ -168,7 +168,7 @@ IdentityVerificationReport copyWith({Omittable<String?>? clientReferenceId, int?
           selfie == other.selfie &&
           type == other.type &&
           verificationFlow == other.verificationFlow &&
-          verificationSession == other.verificationSession; } 
-@override int get hashCode { return Object.hash(clientReferenceId, created, document, email, id, idNumber, livemode, object, options, phone, selfie, type, verificationFlow, verificationSession); } 
-@override String toString() { return 'IdentityVerificationReport(clientReferenceId: $clientReferenceId, created: $created, document: $document, email: $email, id: $id, idNumber: $idNumber, livemode: $livemode, object: $object, options: $options, phone: $phone, selfie: $selfie, type: $type, verificationFlow: $verificationFlow, verificationSession: $verificationSession)'; } 
- }
+          verificationSession == other.verificationSession;}
+@override int get hashCode {return Object.hash(clientReferenceId, created, document, email, id, idNumber, livemode, object, options, phone, selfie, type, verificationFlow, verificationSession);}
+@override String toString() {return 'IdentityVerificationReport(clientReferenceId: $clientReferenceId, created: $created, document: $document, email: $email, id: $id, idNumber: $idNumber, livemode: $livemode, object: $object, options: $options, phone: $phone, selfie: $selfie, type: $type, verificationFlow: $verificationFlow, verificationSession: $verificationSession)';}
+}

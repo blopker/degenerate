@@ -13,7 +13,7 @@ final class RadarBotsApi with ApiExecutor {const RadarBotsApi(this.apiConfig);
 /// Retrieves a list of bots.
 ///
 /// `GET /radar/bots`
-Future<ApiResult<RadarGetBotsResponseResult, RadarGetBotsResponse400>> radarGetBots({int? limit, int? offset, RadarGetBotsBotCategory? botCategory, String? botOperator, RadarGetBotsKind? kind, RadarGetBotsBotVerificationStatus? botVerificationStatus, RadarGetBotsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBotsResponseResult, RadarGetBotsResponse400>> radarGetBots({int? limit, int? offset, RadarGetBotsBotCategory? botCategory, String? botOperator, RadarGetBotsKind? kind, RadarGetBotsBotVerificationStatus? botVerificationStatus, RadarGetBotsFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -65,13 +65,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get bot details
 ///
 /// Retrieves the requested bot information.
 ///
 /// `GET /radar/bots/{bot_slug}`
-Future<ApiResult<RadarGetBotDetailsResponseResult, RadarGetBotDetailsResponse404>> radarGetBotDetails({required String botSlug, RadarGetBotDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBotDetailsResponseResult, RadarGetBotDetailsResponse404>> radarGetBotDetails({required String botSlug, RadarGetBotDetailsFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) {
   queryParameters['format'] = format.toJson();
@@ -105,13 +105,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get bots HTTP requests distribution by dimension
 ///
 /// Retrieves an aggregated summary of bots HTTP requests grouped by the specified dimension.
 ///
 /// `GET /radar/bots/summary/{dimension}`
-Future<ApiResult<RadarGetBotsSummaryResponseResult, RadarGetBotsSummaryResponse400>> radarGetBotsSummary({required RadarGetBotsSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? limitPerGroup, List<String>? bot, List<String>? botOperator, List<RadarGetBotsSummaryBotCategory>? botCategory, List<RadarGetBotsSummaryBotKind>? botKind, List<RadarGetBotsSummaryBotVerificationStatus>? botVerificationStatus, RadarGetBotsSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBotsSummaryResponseResult, RadarGetBotsSummaryResponse400>> radarGetBotsSummary({required RadarGetBotsSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? limitPerGroup, List<String>? bot, List<String>? botOperator, List<RadarGetBotsSummaryBotCategory>? botCategory, List<RadarGetBotsSummaryBotKind>? botKind, List<RadarGetBotsSummaryBotVerificationStatus>? botVerificationStatus, RadarGetBotsSummaryFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -208,13 +208,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get bots HTTP requests time series
 ///
 /// Retrieves bots HTTP request volume over time.
 ///
 /// `GET /radar/bots/timeseries`
-Future<ApiResult<RadarGetBotsTimeseriesResponseResult, RadarGetBotsTimeseriesResponse400>> radarGetBotsTimeseries({RadarGetBotsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? bot, List<String>? botOperator, List<RadarGetBotsTimeseriesBotCategory>? botCategory, List<RadarGetBotsTimeseriesBotKind>? botKind, List<RadarGetBotsTimeseriesBotVerificationStatus>? botVerificationStatus, RadarGetBotsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBotsTimeseriesResponseResult, RadarGetBotsTimeseriesResponse400>> radarGetBotsTimeseries({RadarGetBotsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? bot, List<String>? botOperator, List<RadarGetBotsTimeseriesBotCategory>? botCategory, List<RadarGetBotsTimeseriesBotKind>? botKind, List<RadarGetBotsTimeseriesBotVerificationStatus>? botVerificationStatus, RadarGetBotsTimeseriesFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -311,13 +311,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get time series distribution of bots HTTP requests by dimension.
 ///
 /// Retrieves the distribution of HTTP requests from bots, grouped by the specified dimension over time.
 ///
 /// `GET /radar/bots/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetBotsTimeseriesGroupResponseResult, RadarGetBotsTimeseriesGroupResponse400>> radarGetBotsTimeseriesGroup({required RadarGetBotsTimeseriesGroupDimension dimension, RadarGetBotsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? limitPerGroup, List<String>? bot, List<String>? botOperator, List<RadarGetBotsTimeseriesGroupBotCategory>? botCategory, List<RadarGetBotsTimeseriesGroupBotKind>? botKind, List<RadarGetBotsTimeseriesGroupBotVerificationStatus>? botVerificationStatus, RadarGetBotsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBotsTimeseriesGroupResponseResult, RadarGetBotsTimeseriesGroupResponse400>> radarGetBotsTimeseriesGroup({required RadarGetBotsTimeseriesGroupDimension dimension, RadarGetBotsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? limitPerGroup, List<String>? bot, List<String>? botOperator, List<RadarGetBotsTimeseriesGroupBotCategory>? botCategory, List<RadarGetBotsTimeseriesGroupBotKind>? botKind, List<RadarGetBotsTimeseriesGroupBotVerificationStatus>? botVerificationStatus, RadarGetBotsTimeseriesGroupFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -417,5 +417,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

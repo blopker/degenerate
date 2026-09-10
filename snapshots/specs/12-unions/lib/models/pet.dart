@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pet_status.dart';@immutable final class Pet {const Pet({required this.id, required this.name, this.status, });
 
-factory Pet.fromJson(Map<String, dynamic> json) { return Pet(
+factory Pet.fromJson(Map<String, dynamic> json) {return Pet(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   status: json['status'] != null ? PetStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 final int id;
 
@@ -14,23 +14,23 @@ final String name;
 
 final PetStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('name') && json['name'] is String; } 
-Pet copyWith({int? id, String? name, PetStatus? Function()? status, }) { return Pet(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('name') && json['name'] is String;}
+Pet copyWith({int? id, String? name, PetStatus? Function()? status, }) {return Pet(
   id: id ?? this.id,
   name: name ?? this.name,
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Pet &&
           id == other.id &&
           name == other.name &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(id, name, status); } 
-@override String toString() { return 'Pet(id: $id, name: $name, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(id, name, status);}
+@override String toString() {return 'Pet(id: $id, name: $name, status: $status)';}
+}

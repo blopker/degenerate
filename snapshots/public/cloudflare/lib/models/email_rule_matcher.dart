@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field for type matcher.
 @immutable final class EmailRuleMatcherField {const EmailRuleMatcherField._(this.value);
 
-factory EmailRuleMatcherField.fromJson(String json) { return switch (json) {
+factory EmailRuleMatcherField.fromJson(String json) {return switch (json) {
   'to' => to,
   _ => EmailRuleMatcherField._(json),
-}; }
+};}
 
 static const EmailRuleMatcherField to = EmailRuleMatcherField._('to');
 
@@ -14,22 +14,22 @@ static const List<EmailRuleMatcherField> values = [to];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailRuleMatcherField && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailRuleMatcherField($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailRuleMatcherField && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailRuleMatcherField($value)';}
+}
 /// Type of matcher.
 @immutable final class EmailRuleMatcherType {const EmailRuleMatcherType._(this.value);
 
-factory EmailRuleMatcherType.fromJson(String json) { return switch (json) {
+factory EmailRuleMatcherType.fromJson(String json) {return switch (json) {
   'all' => all,
   'literal' => literal,
   _ => EmailRuleMatcherType._(json),
-}; }
+};}
 
 static const EmailRuleMatcherType all = EmailRuleMatcherType._('all');
 
@@ -39,22 +39,22 @@ static const List<EmailRuleMatcherType> values = [all, literal];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailRuleMatcherType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailRuleMatcherType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailRuleMatcherType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailRuleMatcherType($value)';}
+}
 /// Matching pattern to forward your actions.
 @immutable final class EmailRuleMatcher {const EmailRuleMatcher({required this.type, this.field, this.value, });
 
-factory EmailRuleMatcher.fromJson(Map<String, dynamic> json) { return EmailRuleMatcher(
+factory EmailRuleMatcher.fromJson(Map<String, dynamic> json) {return EmailRuleMatcher(
   field: json['field'] != null ? EmailRuleMatcherField.fromJson(json['field'] as String) : null,
   type: EmailRuleMatcherType.fromJson(json['type'] as String),
   value: json['value'] as String?,
-); }
+);}
 
 /// Field for type matcher.
 final EmailRuleMatcherField? field;
@@ -65,22 +65,22 @@ final EmailRuleMatcherType type;
 /// Value for matcher.
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (field != null) 'field': field?.toJson(),
   'type': type.toJson(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-EmailRuleMatcher copyWith({EmailRuleMatcherField? Function()? field, EmailRuleMatcherType? type, String? Function()? value, }) { return EmailRuleMatcher(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+EmailRuleMatcher copyWith({EmailRuleMatcherField? Function()? field, EmailRuleMatcherType? type, String? Function()? value, }) {return EmailRuleMatcher(
   field: field != null ? field() : this.field,
   type: type ?? this.type,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailRuleMatcher &&
           field == other.field &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(field, type, value); } 
-@override String toString() { return 'EmailRuleMatcher(field: $field, type: $type, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(field, type, value);}
+@override String toString() {return 'EmailRuleMatcher(field: $field, type: $type, value: $value)';}
+}

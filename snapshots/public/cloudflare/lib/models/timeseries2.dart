@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bandwidth2.dart';import 'pageviews.dart';import 'requests.dart';import 'since.dart';import 'threats.dart';import 'uniques.dart';import 'until.dart';@immutable final class Timeseries2 {const Timeseries2({this.bandwidth, this.pageviews, this.requests, this.since, this.threats, this.uniques, this.until, });
 
-factory Timeseries2.fromJson(Map<String, dynamic> json) { return Timeseries2(
+factory Timeseries2.fromJson(Map<String, dynamic> json) {return Timeseries2(
   bandwidth: json['bandwidth'] != null ? Bandwidth2.fromJson(json['bandwidth'] as Map<String, dynamic>) : null,
   pageviews: json['pageviews'] != null ? Pageviews.fromJson(json['pageviews'] as Map<String, dynamic>) : null,
   requests: json['requests'] != null ? Requests.fromJson(json['requests'] as Map<String, dynamic>) : null,
@@ -10,7 +10,7 @@ factory Timeseries2.fromJson(Map<String, dynamic> json) { return Timeseries2(
   threats: json['threats'] != null ? Threats.fromJson(json['threats'] as Map<String, dynamic>) : null,
   uniques: json['uniques'] != null ? Uniques.fromJson(json['uniques'] as Map<String, dynamic>) : null,
   until: json['until'] != null ? Until.fromJson(json['until']) : null,
-); }
+);}
 
 final Bandwidth2? bandwidth;
 
@@ -26,7 +26,7 @@ final Uniques? uniques;
 
 final Until? until;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bandwidth != null) 'bandwidth': bandwidth?.toJson(),
   if (pageviews != null) 'pageviews': pageviews?.toJson(),
   if (requests != null) 'requests': requests?.toJson(),
@@ -34,9 +34,9 @@ Map<String, dynamic> toJson() { return {
   if (threats != null) 'threats': threats?.toJson(),
   if (uniques != null) 'uniques': uniques?.toJson(),
   if (until != null) 'until': until?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bandwidth', 'pageviews', 'requests', 'since', 'threats', 'uniques', 'until'}.contains(key)); } 
-Timeseries2 copyWith({Bandwidth2? Function()? bandwidth, Pageviews? Function()? pageviews, Requests? Function()? requests, Since? Function()? since, Threats? Function()? threats, Uniques? Function()? uniques, Until? Function()? until, }) { return Timeseries2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bandwidth', 'pageviews', 'requests', 'since', 'threats', 'uniques', 'until'}.contains(key));}
+Timeseries2 copyWith({Bandwidth2? Function()? bandwidth, Pageviews? Function()? pageviews, Requests? Function()? requests, Since? Function()? since, Threats? Function()? threats, Uniques? Function()? uniques, Until? Function()? until, }) {return Timeseries2(
   bandwidth: bandwidth != null ? bandwidth() : this.bandwidth,
   pageviews: pageviews != null ? pageviews() : this.pageviews,
   requests: requests != null ? requests() : this.requests,
@@ -44,8 +44,8 @@ Timeseries2 copyWith({Bandwidth2? Function()? bandwidth, Pageviews? Function()? 
   threats: threats != null ? threats() : this.threats,
   uniques: uniques != null ? uniques() : this.uniques,
   until: until != null ? until() : this.until,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Timeseries2 &&
           bandwidth == other.bandwidth &&
           pageviews == other.pageviews &&
@@ -53,7 +53,7 @@ Timeseries2 copyWith({Bandwidth2? Function()? bandwidth, Pageviews? Function()? 
           since == other.since &&
           threats == other.threats &&
           uniques == other.uniques &&
-          until == other.until; } 
-@override int get hashCode { return Object.hash(bandwidth, pageviews, requests, since, threats, uniques, until); } 
-@override String toString() { return 'Timeseries2(bandwidth: $bandwidth, pageviews: $pageviews, requests: $requests, since: $since, threats: $threats, uniques: $uniques, until: $until)'; } 
- }
+          until == other.until;}
+@override int get hashCode {return Object.hash(bandwidth, pageviews, requests, since, threats, uniques, until);}
+@override String toString() {return 'Timeseries2(bandwidth: $bandwidth, pageviews: $pageviews, requests: $requests, since: $since, threats: $threats, uniques: $uniques, until: $until)';}
+}

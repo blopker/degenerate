@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the detail level of the image if specified by the user. `low` uses fewer tokens, you can opt in to high resolution using `high`.
 @immutable final class MessageDeltaContentImageFileObjectImageFileDetail {const MessageDeltaContentImageFileObjectImageFileDetail._(this.value);
 
-factory MessageDeltaContentImageFileObjectImageFileDetail.fromJson(String json) { return switch (json) {
+factory MessageDeltaContentImageFileObjectImageFileDetail.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'low' => low,
   'high' => high,
   _ => MessageDeltaContentImageFileObjectImageFileDetail._(json),
-}; }
+};}
 
 static const MessageDeltaContentImageFileObjectImageFileDetail auto = MessageDeltaContentImageFileObjectImageFileDetail._('auto');
 
@@ -20,20 +20,20 @@ static const List<MessageDeltaContentImageFileObjectImageFileDetail> values = [a
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageDeltaContentImageFileObjectImageFileDetail && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageDeltaContentImageFileObjectImageFileDetail($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageDeltaContentImageFileObjectImageFileDetail && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageDeltaContentImageFileObjectImageFileDetail($value)';}
+}
 @immutable final class MessageDeltaContentImageFileObjectImageFile {const MessageDeltaContentImageFileObjectImageFile({this.fileId, this.detail, });
 
-factory MessageDeltaContentImageFileObjectImageFile.fromJson(Map<String, dynamic> json) { return MessageDeltaContentImageFileObjectImageFile(
+factory MessageDeltaContentImageFileObjectImageFile.fromJson(Map<String, dynamic> json) {return MessageDeltaContentImageFileObjectImageFile(
   fileId: json['file_id'] as String?,
   detail: json['detail'] != null ? MessageDeltaContentImageFileObjectImageFileDetail.fromJson(json['detail'] as String) : null,
-); }
+);}
 
 /// The [File](/docs/api-reference/files) ID of the image in the message content. Set `purpose="vision"` when uploading the File if you need to later display the file content.
 final String? fileId;
@@ -42,20 +42,20 @@ final String? fileId;
 final MessageDeltaContentImageFileObjectImageFileDetail? detail;
 
 /// The value with the schema default applied when absent.
-MessageDeltaContentImageFileObjectImageFileDetail get detailOrDefault { return detail ?? MessageDeltaContentImageFileObjectImageFileDetail.fromJson('auto'); } 
-Map<String, dynamic> toJson() { return {
+MessageDeltaContentImageFileObjectImageFileDetail get detailOrDefault {return detail ?? MessageDeltaContentImageFileObjectImageFileDetail.fromJson('auto');}
+Map<String, dynamic> toJson() {return {
   'file_id': ?fileId,
   if (detail != null) 'detail': detail?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_id', 'detail'}.contains(key)); } 
-MessageDeltaContentImageFileObjectImageFile copyWith({String? Function()? fileId, MessageDeltaContentImageFileObjectImageFileDetail? Function()? detail, }) { return MessageDeltaContentImageFileObjectImageFile(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'file_id', 'detail'}.contains(key));}
+MessageDeltaContentImageFileObjectImageFile copyWith({String? Function()? fileId, MessageDeltaContentImageFileObjectImageFileDetail? Function()? detail, }) {return MessageDeltaContentImageFileObjectImageFile(
   fileId: fileId != null ? fileId() : this.fileId,
   detail: detail != null ? detail() : this.detail,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MessageDeltaContentImageFileObjectImageFile &&
           fileId == other.fileId &&
-          detail == other.detail; } 
-@override int get hashCode { return Object.hash(fileId, detail); } 
-@override String toString() { return 'MessageDeltaContentImageFileObjectImageFile(fileId: $fileId, detail: $detail)'; } 
- }
+          detail == other.detail;}
+@override int get hashCode {return Object.hash(fileId, detail);}
+@override String toString() {return 'MessageDeltaContentImageFileObjectImageFile(fileId: $fileId, detail: $detail)';}
+}

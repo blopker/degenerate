@@ -11,7 +11,7 @@ final class Api20100401AddressApi with ApiExecutor {const Api20100401AddressApi(
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Addresses.json`
-Future<ApiResult<ListAddressResponse, Never>> listAddress({required String accountSid, String? customerName, String? friendlyName, bool? emergencyEnabled, String? isoCountry, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListAddressResponse, Never>> listAddress({required String accountSid, String? customerName, String? friendlyName, bool? emergencyEnabled, String? isoCountry, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (customerName != null) {
   queryParameters['CustomerName'] = customerName;
@@ -53,11 +53,11 @@ final json = jsonDecode(response.body);
 return ListAddressResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Addresses.json`
-Future<ApiResult<AccountAddress, Never>> createAddress({required String accountSid, CreateAddressRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountAddress, Never>> createAddress({required String accountSid, CreateAddressRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -90,11 +90,11 @@ final json = jsonDecode(response.body);
 return AccountAddress.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Addresses/{Sid}.json`
-Future<ApiResult<AccountAddress, Never>> fetchAddress({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountAddress, Never>> fetchAddress({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -110,11 +110,11 @@ final json = jsonDecode(response.body);
 return AccountAddress.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Addresses/{Sid}.json`
-Future<ApiResult<AccountAddress, Never>> updateAddress({required String accountSid, required String sid, UpdateAddressRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountAddress, Never>> updateAddress({required String accountSid, required String sid, UpdateAddressRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -151,11 +151,11 @@ final json = jsonDecode(response.body);
 return AccountAddress.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// 
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Addresses/{Sid}.json`
-Future<ApiResult<void, Never>> deleteAddress({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteAddress({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -168,5 +168,5 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

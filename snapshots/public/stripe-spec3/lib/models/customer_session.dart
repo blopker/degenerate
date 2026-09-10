@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_session_customer.dart';import 'customer_session_resource_components.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CustomerSessionObject {const CustomerSessionObject._(this.value);
 
-factory CustomerSessionObject.fromJson(String json) { return switch (json) {
+factory CustomerSessionObject.fromJson(String json) {return switch (json) {
   'customer_session' => customerSession,
   _ => CustomerSessionObject._(json),
-}; }
+};}
 
 static const CustomerSessionObject customerSession = CustomerSessionObject._('customer_session');
 
@@ -14,14 +14,14 @@ static const List<CustomerSessionObject> values = [customerSession];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerSessionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerSessionObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CustomerSessionObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CustomerSessionObject($value)';}
+}
 /// A Customer Session allows you to grant Stripe's frontend SDKs (like Stripe.js) client-side access
 /// control over a Customer.
 /// 
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 /// [Customer Session with the Buy Button](/payment-links/buy-button#pass-an-existing-customer).
 @immutable final class CustomerSession {const CustomerSession({required this.clientSecret, required this.created, required this.customer, required this.expiresAt, required this.livemode, required this.object, this.components, this.customerAccount = const Omittable.absent(), });
 
-factory CustomerSession.fromJson(Map<String, dynamic> json) { return CustomerSession(
+factory CustomerSession.fromJson(Map<String, dynamic> json) {return CustomerSession(
   clientSecret: json['client_secret'] as String,
   components: json['components'] != null ? CustomerSessionResourceComponents.fromJson(json['components'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
@@ -39,7 +39,7 @@ factory CustomerSession.fromJson(Map<String, dynamic> json) { return CustomerSes
   expiresAt: (json['expires_at'] as num).toInt(),
   livemode: json['livemode'] as bool,
   object: CustomerSessionObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// The client secret of this Customer Session. Used on the client to set up secure access to the given `customer`.
 /// 
@@ -66,7 +66,7 @@ final bool livemode;
 /// String representing the object's type. Objects of the same type share the same value.
 final CustomerSessionObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_secret': clientSecret,
   if (components != null) 'components': components?.toJson(),
   'created': created,
@@ -75,14 +75,14 @@ Map<String, dynamic> toJson() { return {
   'expires_at': expiresAt,
   'livemode': livemode,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_secret') && json['client_secret'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('client_secret') && json['client_secret'] is String &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('customer') &&
       json.containsKey('expires_at') && json['expires_at'] is num &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object'); } 
-CustomerSession copyWith({String? clientSecret, CustomerSessionResourceComponents? Function()? components, int? created, CustomerSessionCustomer? customer, Omittable<String?>? customerAccount, int? expiresAt, bool? livemode, CustomerSessionObject? object, }) { return CustomerSession(
+      json.containsKey('object');}
+CustomerSession copyWith({String? clientSecret, CustomerSessionResourceComponents? Function()? components, int? created, CustomerSessionCustomer? customer, Omittable<String?>? customerAccount, int? expiresAt, bool? livemode, CustomerSessionObject? object, }) {return CustomerSession(
   clientSecret: clientSecret ?? this.clientSecret,
   components: components != null ? components() : this.components,
   created: created ?? this.created,
@@ -91,8 +91,8 @@ CustomerSession copyWith({String? clientSecret, CustomerSessionResourceComponent
   expiresAt: expiresAt ?? this.expiresAt,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomerSession &&
           clientSecret == other.clientSecret &&
           components == other.components &&
@@ -101,7 +101,7 @@ CustomerSession copyWith({String? clientSecret, CustomerSessionResourceComponent
           customerAccount == other.customerAccount &&
           expiresAt == other.expiresAt &&
           livemode == other.livemode &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(clientSecret, components, created, customer, customerAccount, expiresAt, livemode, object); } 
-@override String toString() { return 'CustomerSession(clientSecret: $clientSecret, components: $components, created: $created, customer: $customer, customerAccount: $customerAccount, expiresAt: $expiresAt, livemode: $livemode, object: $object)'; } 
- }
+          object == other.object;}
+@override int get hashCode {return Object.hash(clientSecret, components, created, customer, customerAccount, expiresAt, livemode, object);}
+@override String toString() {return 'CustomerSession(clientSecret: $clientSecret, components: $components, created: $created, customer: $customer, customerAccount: $customerAccount, expiresAt: $expiresAt, livemode: $livemode, object: $object)';}
+}

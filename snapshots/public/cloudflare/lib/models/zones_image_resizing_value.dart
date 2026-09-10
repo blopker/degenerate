@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the feature is enabled, disabled, or enabled in `open proxy` mode.
 @immutable final class ZonesImageResizingValue {const ZonesImageResizingValue._(this.value);
 
-factory ZonesImageResizingValue.fromJson(String json) { return switch (json) {
+factory ZonesImageResizingValue.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   'open' => open,
   _ => ZonesImageResizingValue._(json),
-}; }
+};}
 
 static const ZonesImageResizingValue $on = ZonesImageResizingValue._('on');
 
@@ -20,11 +20,11 @@ static const List<ZonesImageResizingValue> values = [$on, off, open];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesImageResizingValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesImageResizingValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesImageResizingValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesImageResizingValue($value)';}
+}

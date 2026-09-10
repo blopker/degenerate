@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_issue2.dart';@immutable final class WebhookIssuesUnpinnedAction {const WebhookIssuesUnpinnedAction._(this.value);
 
-factory WebhookIssuesUnpinnedAction.fromJson(String json) { return switch (json) {
+factory WebhookIssuesUnpinnedAction.fromJson(String json) {return switch (json) {
   'unpinned' => unpinned,
   _ => WebhookIssuesUnpinnedAction._(json),
-}; }
+};}
 
 static const WebhookIssuesUnpinnedAction unpinned = WebhookIssuesUnpinnedAction._('unpinned');
 
@@ -13,17 +13,17 @@ static const List<WebhookIssuesUnpinnedAction> values = [unpinned];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesUnpinnedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesUnpinnedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesUnpinnedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesUnpinnedAction($value)';}
+}
 @immutable final class WebhookIssuesUnpinned {const WebhookIssuesUnpinned({required this.action, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookIssuesUnpinned.fromJson(Map<String, dynamic> json) { return WebhookIssuesUnpinned(
+factory WebhookIssuesUnpinned.fromJson(Map<String, dynamic> json) {return WebhookIssuesUnpinned(
   action: WebhookIssuesUnpinnedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookIssuesUnpinned.fromJson(Map<String, dynamic> json) { return Webho
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookIssuesUnpinnedAction action;
 
@@ -47,7 +47,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -55,12 +55,12 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('issue') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookIssuesUnpinned copyWith({WebhookIssuesUnpinnedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksIssue2? issue, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesUnpinned(
+      json.containsKey('sender');}
+WebhookIssuesUnpinned copyWith({WebhookIssuesUnpinnedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksIssue2? issue, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookIssuesUnpinned(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -68,8 +68,8 @@ WebhookIssuesUnpinned copyWith({WebhookIssuesUnpinnedAction? action, EnterpriseW
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookIssuesUnpinned &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -77,7 +77,7 @@ WebhookIssuesUnpinned copyWith({WebhookIssuesUnpinnedAction? action, EnterpriseW
           issue == other.issue &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, issue, organization, repository, sender); } 
-@override String toString() { return 'WebhookIssuesUnpinned(action: $action, enterprise: $enterprise, installation: $installation, issue: $issue, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, issue, organization, repository, sender);}
+@override String toString() {return 'WebhookIssuesUnpinned(action: $action, enterprise: $enterprise, installation: $installation, issue: $issue, organization: $organization, repository: $repository, sender: $sender)';}
+}

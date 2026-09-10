@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBotsTimeseriesGroupResponseResultMetaUnits {const RadarGetBotsTimeseriesGroupResponseResultMetaUnits({required this.name, required this.value, });
 
-factory RadarGetBotsTimeseriesGroupResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetBotsTimeseriesGroupResponseResultMetaUnits(
+factory RadarGetBotsTimeseriesGroupResponseResultMetaUnits.fromJson(Map<String, dynamic> json) {return RadarGetBotsTimeseriesGroupResponseResultMetaUnits(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String name;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetBotsTimeseriesGroupResponseResultMetaUnits copyWith({String? name, String? value, }) { return RadarGetBotsTimeseriesGroupResponseResultMetaUnits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+RadarGetBotsTimeseriesGroupResponseResultMetaUnits copyWith({String? name, String? value, }) {return RadarGetBotsTimeseriesGroupResponseResultMetaUnits(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetBotsTimeseriesGroupResponseResultMetaUnits &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'RadarGetBotsTimeseriesGroupResponseResultMetaUnits(name: $name, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(name, value);}
+@override String toString() {return 'RadarGetBotsTimeseriesGroupResponseResultMetaUnits(name: $name, value: $value)';}
+}

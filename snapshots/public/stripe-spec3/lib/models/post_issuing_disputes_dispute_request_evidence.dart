@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_disputes_dispute_request_evidence_canceled.dart';import 'post_issuing_disputes_dispute_request_evidence_duplicate.dart';import 'post_issuing_disputes_dispute_request_evidence_fraudulent.dart';import 'post_issuing_disputes_dispute_request_evidence_merchandise_not_as_described.dart';import 'post_issuing_disputes_dispute_request_evidence_no_valid_authorization.dart';import 'post_issuing_disputes_dispute_request_evidence_not_received.dart';import 'post_issuing_disputes_dispute_request_evidence_other.dart';import 'post_issuing_disputes_dispute_request_evidence_service_not_as_described.dart';@immutable final class PostIssuingDisputesDisputeRequestEvidenceReason {const PostIssuingDisputesDisputeRequestEvidenceReason._(this.value);
 
-factory PostIssuingDisputesDisputeRequestEvidenceReason.fromJson(String json) { return switch (json) {
+factory PostIssuingDisputesDisputeRequestEvidenceReason.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'duplicate' => duplicate,
   'fraudulent' => fraudulent,
@@ -12,7 +12,7 @@ factory PostIssuingDisputesDisputeRequestEvidenceReason.fromJson(String json) { 
   'other' => $other,
   'service_not_as_described' => serviceNotAsDescribed,
   _ => PostIssuingDisputesDisputeRequestEvidenceReason._(json),
-}; }
+};}
 
 static const PostIssuingDisputesDisputeRequestEvidenceReason canceled = PostIssuingDisputesDisputeRequestEvidenceReason._('canceled');
 
@@ -34,18 +34,18 @@ static const List<PostIssuingDisputesDisputeRequestEvidenceReason> values = [can
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingDisputesDisputeRequestEvidenceReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingDisputesDisputeRequestEvidenceReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostIssuingDisputesDisputeRequestEvidenceReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostIssuingDisputesDisputeRequestEvidenceReason($value)';}
+}
 /// Evidence provided for the dispute.
 @immutable final class PostIssuingDisputesDisputeRequestEvidence {const PostIssuingDisputesDisputeRequestEvidence({this.canceled, this.duplicate, this.fraudulent, this.merchandiseNotAsDescribed, this.noValidAuthorization, this.notReceived, this.other, this.reason, this.serviceNotAsDescribed, });
 
-factory PostIssuingDisputesDisputeRequestEvidence.fromJson(Map<String, dynamic> json) { return PostIssuingDisputesDisputeRequestEvidence(
+factory PostIssuingDisputesDisputeRequestEvidence.fromJson(Map<String, dynamic> json) {return PostIssuingDisputesDisputeRequestEvidence(
   canceled: json['canceled'] != null ? PostIssuingDisputesDisputeRequestEvidenceCanceled.fromJson(json['canceled']) : null,
   duplicate: json['duplicate'] != null ? PostIssuingDisputesDisputeRequestEvidenceDuplicate.fromJson(json['duplicate']) : null,
   fraudulent: json['fraudulent'] != null ? PostIssuingDisputesDisputeRequestEvidenceFraudulent.fromJson(json['fraudulent']) : null,
@@ -55,7 +55,7 @@ factory PostIssuingDisputesDisputeRequestEvidence.fromJson(Map<String, dynamic> 
   other: json['other'] != null ? PostIssuingDisputesDisputeRequestEvidenceOther.fromJson(json['other']) : null,
   reason: json['reason'] != null ? PostIssuingDisputesDisputeRequestEvidenceReason.fromJson(json['reason'] as String) : null,
   serviceNotAsDescribed: json['service_not_as_described'] != null ? PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribed.fromJson(json['service_not_as_described']) : null,
-); }
+);}
 
 final PostIssuingDisputesDisputeRequestEvidenceCanceled? canceled;
 
@@ -75,7 +75,7 @@ final PostIssuingDisputesDisputeRequestEvidenceReason? reason;
 
 final PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribed? serviceNotAsDescribed;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (canceled != null) 'canceled': canceled?.toJson(),
   if (duplicate != null) 'duplicate': duplicate?.toJson(),
   if (fraudulent != null) 'fraudulent': fraudulent?.toJson(),
@@ -85,9 +85,9 @@ Map<String, dynamic> toJson() { return {
   if (other != null) 'other': other?.toJson(),
   if (reason != null) 'reason': reason?.toJson(),
   if (serviceNotAsDescribed != null) 'service_not_as_described': serviceNotAsDescribed?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'canceled', 'duplicate', 'fraudulent', 'merchandise_not_as_described', 'no_valid_authorization', 'not_received', 'other', 'reason', 'service_not_as_described'}.contains(key)); } 
-PostIssuingDisputesDisputeRequestEvidence copyWith({PostIssuingDisputesDisputeRequestEvidenceCanceled? Function()? canceled, PostIssuingDisputesDisputeRequestEvidenceDuplicate? Function()? duplicate, PostIssuingDisputesDisputeRequestEvidenceFraudulent? Function()? fraudulent, PostIssuingDisputesDisputeRequestEvidenceMerchandiseNotAsDescribed? Function()? merchandiseNotAsDescribed, PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorization? Function()? noValidAuthorization, PostIssuingDisputesDisputeRequestEvidenceNotReceived? Function()? notReceived, PostIssuingDisputesDisputeRequestEvidenceOther? Function()? other, PostIssuingDisputesDisputeRequestEvidenceReason? Function()? reason, PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribed? Function()? serviceNotAsDescribed, }) { return PostIssuingDisputesDisputeRequestEvidence(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'canceled', 'duplicate', 'fraudulent', 'merchandise_not_as_described', 'no_valid_authorization', 'not_received', 'other', 'reason', 'service_not_as_described'}.contains(key));}
+PostIssuingDisputesDisputeRequestEvidence copyWith({PostIssuingDisputesDisputeRequestEvidenceCanceled? Function()? canceled, PostIssuingDisputesDisputeRequestEvidenceDuplicate? Function()? duplicate, PostIssuingDisputesDisputeRequestEvidenceFraudulent? Function()? fraudulent, PostIssuingDisputesDisputeRequestEvidenceMerchandiseNotAsDescribed? Function()? merchandiseNotAsDescribed, PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorization? Function()? noValidAuthorization, PostIssuingDisputesDisputeRequestEvidenceNotReceived? Function()? notReceived, PostIssuingDisputesDisputeRequestEvidenceOther? Function()? other, PostIssuingDisputesDisputeRequestEvidenceReason? Function()? reason, PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribed? Function()? serviceNotAsDescribed, }) {return PostIssuingDisputesDisputeRequestEvidence(
   canceled: canceled != null ? canceled() : this.canceled,
   duplicate: duplicate != null ? duplicate() : this.duplicate,
   fraudulent: fraudulent != null ? fraudulent() : this.fraudulent,
@@ -97,8 +97,8 @@ PostIssuingDisputesDisputeRequestEvidence copyWith({PostIssuingDisputesDisputeRe
   other: other != null ? other() : this.other,
   reason: reason != null ? reason() : this.reason,
   serviceNotAsDescribed: serviceNotAsDescribed != null ? serviceNotAsDescribed() : this.serviceNotAsDescribed,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostIssuingDisputesDisputeRequestEvidence &&
           canceled == other.canceled &&
           duplicate == other.duplicate &&
@@ -108,7 +108,7 @@ PostIssuingDisputesDisputeRequestEvidence copyWith({PostIssuingDisputesDisputeRe
           notReceived == other.notReceived &&
           this.other == other.other &&
           reason == other.reason &&
-          serviceNotAsDescribed == other.serviceNotAsDescribed; } 
-@override int get hashCode { return Object.hash(canceled, duplicate, fraudulent, merchandiseNotAsDescribed, noValidAuthorization, notReceived, other, reason, serviceNotAsDescribed); } 
-@override String toString() { return 'PostIssuingDisputesDisputeRequestEvidence(canceled: $canceled, duplicate: $duplicate, fraudulent: $fraudulent, merchandiseNotAsDescribed: $merchandiseNotAsDescribed, noValidAuthorization: $noValidAuthorization, notReceived: $notReceived, other: $other, reason: $reason, serviceNotAsDescribed: $serviceNotAsDescribed)'; } 
- }
+          serviceNotAsDescribed == other.serviceNotAsDescribed;}
+@override int get hashCode {return Object.hash(canceled, duplicate, fraudulent, merchandiseNotAsDescribed, noValidAuthorization, notReceived, other, reason, serviceNotAsDescribed);}
+@override String toString() {return 'PostIssuingDisputesDisputeRequestEvidence(canceled: $canceled, duplicate: $duplicate, fraudulent: $fraudulent, merchandiseNotAsDescribed: $merchandiseNotAsDescribed, noValidAuthorization: $noValidAuthorization, notReceived: $notReceived, other: $other, reason: $reason, serviceNotAsDescribed: $serviceNotAsDescribed)';}
+}

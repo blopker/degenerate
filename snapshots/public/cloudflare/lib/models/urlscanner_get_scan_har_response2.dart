@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response2_log.dart';@immutable final class UrlscannerGetScanHarResponse2 {const UrlscannerGetScanHarResponse2({required this.log});
 
-factory UrlscannerGetScanHarResponse2.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse2(
+factory UrlscannerGetScanHarResponse2.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanHarResponse2(
   log: UrlscannerGetScanHarResponse2Log.fromJson(json['log'] as Map<String, dynamic>),
-); }
+);}
 
 final UrlscannerGetScanHarResponse2Log log;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'log': log.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('log'); } 
-UrlscannerGetScanHarResponse2 copyWith({UrlscannerGetScanHarResponse2Log? log}) { return UrlscannerGetScanHarResponse2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('log');}
+UrlscannerGetScanHarResponse2 copyWith({UrlscannerGetScanHarResponse2Log? log}) {return UrlscannerGetScanHarResponse2(
   log: log ?? this.log,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanHarResponse2 &&
-          log == other.log; } 
-@override int get hashCode { return log.hashCode; } 
-@override String toString() { return 'UrlscannerGetScanHarResponse2(log: $log)'; } 
- }
+          log == other.log;}
+@override int get hashCode {return log.hashCode;}
+@override String toString() {return 'UrlscannerGetScanHarResponse2(log: $log)';}
+}

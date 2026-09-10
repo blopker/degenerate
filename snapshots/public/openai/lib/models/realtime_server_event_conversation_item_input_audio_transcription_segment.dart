@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when an input audio transcription segment is identified for an item.
 @immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionSegment {const RealtimeServerEventConversationItemInputAudioTranscriptionSegment({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.text, required this.id, required this.speaker, required this.start, required this.end, });
 
-factory RealtimeServerEventConversationItemInputAudioTranscriptionSegment.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemInputAudioTranscriptionSegment(
+factory RealtimeServerEventConversationItemInputAudioTranscriptionSegment.fromJson(Map<String, dynamic> json) {return RealtimeServerEventConversationItemInputAudioTranscriptionSegment(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   itemId: json['item_id'] as String,
@@ -13,7 +13,7 @@ factory RealtimeServerEventConversationItemInputAudioTranscriptionSegment.fromJs
   speaker: json['speaker'] as String,
   start: (json['start'] as num).toDouble(),
   end: (json['end'] as num).toDouble(),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -42,7 +42,7 @@ final double start;
 /// End time of the segment in seconds.
 final double end;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'item_id': itemId,
@@ -52,8 +52,8 @@ Map<String, dynamic> toJson() { return {
   'speaker': speaker,
   'start': start,
   'end': end,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('content_index') && json['content_index'] is num &&
@@ -61,8 +61,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('speaker') && json['speaker'] is String &&
       json.containsKey('start') && json['start'] is num &&
-      json.containsKey('end') && json['end'] is num; } 
-RealtimeServerEventConversationItemInputAudioTranscriptionSegment copyWith({String? eventId, String? type, String? itemId, int? contentIndex, String? text, String? id, String? speaker, double? start, double? end, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionSegment(
+      json.containsKey('end') && json['end'] is num;}
+RealtimeServerEventConversationItemInputAudioTranscriptionSegment copyWith({String? eventId, String? type, String? itemId, int? contentIndex, String? text, String? id, String? speaker, double? start, double? end, }) {return RealtimeServerEventConversationItemInputAudioTranscriptionSegment(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
@@ -72,8 +72,8 @@ RealtimeServerEventConversationItemInputAudioTranscriptionSegment copyWith({Stri
   speaker: speaker ?? this.speaker,
   start: start ?? this.start,
   end: end ?? this.end,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventConversationItemInputAudioTranscriptionSegment &&
           eventId == other.eventId &&
           type == other.type &&
@@ -83,7 +83,7 @@ RealtimeServerEventConversationItemInputAudioTranscriptionSegment copyWith({Stri
           id == other.id &&
           speaker == other.speaker &&
           start == other.start &&
-          end == other.end; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, text, id, speaker, start, end); } 
-@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionSegment(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, text: $text, id: $id, speaker: $speaker, start: $start, end: $end)'; } 
- }
+          end == other.end;}
+@override int get hashCode {return Object.hash(eventId, type, itemId, contentIndex, text, id, speaker, start, end);}
+@override String toString() {return 'RealtimeServerEventConversationItemInputAudioTranscriptionSegment(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, text: $text, id: $id, speaker: $speaker, start: $start, end: $end)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_payload_log_masking_level.dart';@immutable final class DlpPayloadLogSetting {const DlpPayloadLogSetting({required this.updatedAt, this.maskingLevel, this.publicKey = const Omittable.absent(), });
 
-factory DlpPayloadLogSetting.fromJson(Map<String, dynamic> json) { return DlpPayloadLogSetting(
+factory DlpPayloadLogSetting.fromJson(Map<String, dynamic> json) {return DlpPayloadLogSetting(
   maskingLevel: json['masking_level'] != null ? DlpPayloadLogMaskingLevel.fromJson(json['masking_level'] as String) : null,
   publicKey: json.containsKey('public_key') ? Omittable(json['public_key'] as String?) : const Omittable.absent(),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 /// Masking level for payload logs.
 /// 
@@ -21,22 +21,22 @@ final Omittable<String?> publicKey;
 
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (maskingLevel != null) 'masking_level': maskingLevel?.toJson(),
   if (publicKey.isPresent) 'public_key': publicKey.value,
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('updated_at') && json['updated_at'] is String; } 
-DlpPayloadLogSetting copyWith({DlpPayloadLogMaskingLevel? Function()? maskingLevel, Omittable<String?>? publicKey, DateTime? updatedAt, }) { return DlpPayloadLogSetting(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('updated_at') && json['updated_at'] is String;}
+DlpPayloadLogSetting copyWith({DlpPayloadLogMaskingLevel? Function()? maskingLevel, Omittable<String?>? publicKey, DateTime? updatedAt, }) {return DlpPayloadLogSetting(
   maskingLevel: maskingLevel != null ? maskingLevel() : this.maskingLevel,
   publicKey: publicKey ?? this.publicKey,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpPayloadLogSetting &&
           maskingLevel == other.maskingLevel &&
           publicKey == other.publicKey &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(maskingLevel, publicKey, updatedAt); } 
-@override String toString() { return 'DlpPayloadLogSetting(maskingLevel: $maskingLevel, publicKey: $publicKey, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(maskingLevel, publicKey, updatedAt);}
+@override String toString() {return 'DlpPayloadLogSetting(maskingLevel: $maskingLevel, publicKey: $publicKey, updatedAt: $updatedAt)';}
+}

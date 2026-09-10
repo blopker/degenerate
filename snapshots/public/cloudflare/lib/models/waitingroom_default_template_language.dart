@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The language of the default page template. If no default_template_language is provided, then `en-US` (English) will be used.
 @immutable final class WaitingroomDefaultTemplateLanguage {const WaitingroomDefaultTemplateLanguage._(this.value);
 
-factory WaitingroomDefaultTemplateLanguage.fromJson(String json) { return switch (json) {
+factory WaitingroomDefaultTemplateLanguage.fromJson(String json) {return switch (json) {
   'en-US' => enUs,
   'es-ES' => esEs,
   'de-DE' => deDe,
@@ -43,7 +43,7 @@ factory WaitingroomDefaultTemplateLanguage.fromJson(String json) { return switch
   'uk-UA' => ukUa,
   'vi-VN' => viVn,
   _ => WaitingroomDefaultTemplateLanguage._(json),
-}; }
+};}
 
 static const WaitingroomDefaultTemplateLanguage enUs = WaitingroomDefaultTemplateLanguage._('en-US');
 
@@ -125,11 +125,11 @@ static const List<WaitingroomDefaultTemplateLanguage> values = [enUs, esEs, deDe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WaitingroomDefaultTemplateLanguage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WaitingroomDefaultTemplateLanguage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WaitingroomDefaultTemplateLanguage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WaitingroomDefaultTemplateLanguage($value)';}
+}

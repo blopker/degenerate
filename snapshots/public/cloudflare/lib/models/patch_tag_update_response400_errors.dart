@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchTagUpdateResponse400Errors {const PatchTagUpdateResponse400Errors({required this.message});
 
-factory PatchTagUpdateResponse400Errors.fromJson(Map<String, dynamic> json) { return PatchTagUpdateResponse400Errors(
+factory PatchTagUpdateResponse400Errors.fromJson(Map<String, dynamic> json) {return PatchTagUpdateResponse400Errors(
   message: json['message'] as String,
-); }
+);}
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-PatchTagUpdateResponse400Errors copyWith({String? message}) { return PatchTagUpdateResponse400Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+PatchTagUpdateResponse400Errors copyWith({String? message}) {return PatchTagUpdateResponse400Errors(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PatchTagUpdateResponse400Errors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'PatchTagUpdateResponse400Errors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'PatchTagUpdateResponse400Errors(message: $message)';}
+}

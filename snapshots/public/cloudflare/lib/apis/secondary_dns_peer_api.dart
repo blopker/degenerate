@@ -13,7 +13,7 @@ final class SecondaryDnsPeerApi with ApiExecutor {const SecondaryDnsPeerApi(this
 /// List Peers.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/peers`
-Future<ApiResult<List<SecondaryDnsPeer>?, SecondaryDnsPeerListPeersResponse4xx>> secondaryDnsPeerListPeers({required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecondaryDnsPeer>?, SecondaryDnsPeerListPeersResponse4xx>> secondaryDnsPeerListPeers({required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create Peer
 ///
 /// Create Peer.
 ///
 /// `POST /accounts/{account_id}/secondary_dns/peers`
-Future<ApiResult<SecondaryDnsPeer?, SecondaryDnsPeerCreatePeerResponse4xx>> secondaryDnsPeerCreatePeer({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsPeerCreatePeerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsPeer?, SecondaryDnsPeerCreatePeerResponse4xx>> secondaryDnsPeerCreatePeer({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsPeerCreatePeerRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Peer Details
 ///
 /// Get Peer.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/peers/{peer_id}`
-Future<ApiResult<SecondaryDnsPeer?, SecondaryDnsPeerPeerDetailsResponse4xx>> secondaryDnsPeerPeerDetails({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsPeer?, SecondaryDnsPeerPeerDetailsResponse4xx>> secondaryDnsPeerPeerDetails({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -105,13 +105,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update Peer
 ///
 /// Modify Peer.
 ///
 /// `PUT /accounts/{account_id}/secondary_dns/peers/{peer_id}`
-Future<ApiResult<SecondaryDnsPeer?, SecondaryDnsPeerUpdatePeerResponse4xx>> secondaryDnsPeerUpdatePeer({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsPeerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsPeer?, SecondaryDnsPeerUpdatePeerResponse4xx>> secondaryDnsPeerUpdatePeer({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsPeerRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,13 +139,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Peer
 ///
 /// Delete Peer.
 ///
 /// `DELETE /accounts/{account_id}/secondary_dns/peers/{peer_id}`
-Future<ApiResult<SecondaryDnsComponentsSchemasIdResponseResult?, SecondaryDnsPeerDeletePeerResponse4xx>> secondaryDnsPeerDeletePeer({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsComponentsSchemasIdResponseResult?, SecondaryDnsPeerDeletePeerResponse4xx>> secondaryDnsPeerDeletePeer({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -171,5 +171,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationError();
 
 /// Decodes the payload for its declared status and content type.
-static CopilotSetCopilotContentExclusionForOrganizationError parse(ApiResponse response) { switch (response.statusCode) {
+static CopilotSetCopilotContentExclusionForOrganizationError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
 return CopilotSetCopilotContentExclusionForOrganizationError401(BasicError.fromJson(json as Map<String, dynamic>));
@@ -26,54 +26,54 @@ return CopilotSetCopilotContentExclusionForOrganizationError500(BasicError.fromJ
 default:
 return CopilotSetCopilotContentExclusionForOrganizationErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 401 (application/json).
 final class CopilotSetCopilotContentExclusionForOrganizationError401 extends CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class CopilotSetCopilotContentExclusionForOrganizationError403 extends CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class CopilotSetCopilotContentExclusionForOrganizationError404 extends CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 413 (application/json).
 final class CopilotSetCopilotContentExclusionForOrganizationError413 extends CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationError413(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class CopilotSetCopilotContentExclusionForOrganizationError422 extends CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationError422(this.data);
 
 /// The decoded response payload.
 final ValidationErrorSimple data;
 
- }
+}
 /// Response for 500 (application/json).
 final class CopilotSetCopilotContentExclusionForOrganizationError500 extends CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationError500(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class CopilotSetCopilotContentExclusionForOrganizationErrorUnknown extends CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

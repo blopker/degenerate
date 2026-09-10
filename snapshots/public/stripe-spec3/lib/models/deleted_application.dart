@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class DeletedApplicationObject {const DeletedApplicationObject._(this.value);
 
-factory DeletedApplicationObject.fromJson(String json) { return switch (json) {
+factory DeletedApplicationObject.fromJson(String json) {return switch (json) {
   'application' => application,
   _ => DeletedApplicationObject._(json),
-}; }
+};}
 
 static const DeletedApplicationObject application = DeletedApplicationObject._('application');
 
@@ -14,23 +14,23 @@ static const List<DeletedApplicationObject> values = [application];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeletedApplicationObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeletedApplicationObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DeletedApplicationObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DeletedApplicationObject($value)';}
+}
 /// 
 @immutable final class DeletedApplication {const DeletedApplication({required this.deleted, required this.id, required this.object, this.name = const Omittable.absent(), });
 
-factory DeletedApplication.fromJson(Map<String, dynamic> json) { return DeletedApplication(
+factory DeletedApplication.fromJson(Map<String, dynamic> json) {return DeletedApplication(
   deleted: json['deleted'] as bool,
   id: json['id'] as String,
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   object: DeletedApplicationObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// Always true for a deleted object
 final bool deleted;
@@ -44,27 +44,27 @@ final Omittable<String?> name;
 /// String representing the object's type. Objects of the same type share the same value.
 final DeletedApplicationObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deleted': deleted,
   'id': id,
   if (name.isPresent) 'name': name.value,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('deleted') && json['deleted'] is bool &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object'); } 
-DeletedApplication copyWith({bool? deleted, String? id, Omittable<String?>? name, DeletedApplicationObject? object, }) { return DeletedApplication(
+      json.containsKey('object');}
+DeletedApplication copyWith({bool? deleted, String? id, Omittable<String?>? name, DeletedApplicationObject? object, }) {return DeletedApplication(
   deleted: deleted ?? this.deleted,
   id: id ?? this.id,
   name: name ?? this.name,
   object: object ?? this.object,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DeletedApplication &&
           deleted == other.deleted &&
           id == other.id &&
           name == other.name &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(deleted, id, name, object); } 
-@override String toString() { return 'DeletedApplication(deleted: $deleted, id: $id, name: $name, object: $object)'; } 
- }
+          object == other.object;}
+@override int get hashCode {return Object.hash(deleted, id, name, object);}
+@override String toString() {return 'DeletedApplication(deleted: $deleted, id: $id, name: $name, object: $object)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_thresholds_param9.dart';@immutable final class PostSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2 {const PostSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2._(this.value);
 
-factory PostSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2.fromJson(String json) { return switch (json) {
+factory PostSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2._(json),
-}; }
+};}
 
 static const PostSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2 $empty = PostSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSubscriptionsSubscriptionExposedIdRequestBillingThresholds
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2($value)';}
+}
 /// Define thresholds at which an invoice will be sent, and the subscription advanced to a new billing period. When updating, pass an empty string to remove previously-defined thresholds.
 @immutable
 final class PostSubscriptionsSubscriptionExposedIdRequestBillingThresholds {

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param107.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSatispayVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSatispayVariant2._(this.value);
 
-factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSatispayVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSatispayVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSatispayVariant2._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSatispayVariant2 $empty = PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSatispayVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSati
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSatispayVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSatispayVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSatispayVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSatispayVariant2($value)';}
+}
 
 @immutable
 final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSatispay {

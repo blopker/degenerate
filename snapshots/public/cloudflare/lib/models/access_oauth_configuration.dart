@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_oauth
 /// 
 @immutable final class AccessOauthConfiguration {const AccessOauthConfiguration({this.dynamicClientRegistration, this.enabled, this.grant, });
 
-factory AccessOauthConfiguration.fromJson(Map<String, dynamic> json) { return AccessOauthConfiguration(
+factory AccessOauthConfiguration.fromJson(Map<String, dynamic> json) {return AccessOauthConfiguration(
   dynamicClientRegistration: json['dynamic_client_registration'] != null ? AccessOauthConfigurationDynamicClientRegistration.fromJson(json['dynamic_client_registration'] as Map<String, dynamic>) : null,
   enabled: json['enabled'] as bool?,
   grant: json['grant'] != null ? AccessOauthConfigurationGrant.fromJson(json['grant'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Settings for OAuth dynamic client registration.
 final AccessOauthConfigurationDynamicClientRegistration? dynamicClientRegistration;
@@ -21,23 +21,23 @@ final bool? enabled;
 final AccessOauthConfigurationGrant? grant;
 
 /// The value with the schema default applied when absent.
-bool get enabledOrDefault { return enabled ?? true; } 
-Map<String, dynamic> toJson() { return {
+bool get enabledOrDefault {return enabled ?? true;}
+Map<String, dynamic> toJson() {return {
   if (dynamicClientRegistration != null) 'dynamic_client_registration': dynamicClientRegistration?.toJson(),
   'enabled': ?enabled,
   if (grant != null) 'grant': grant?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dynamic_client_registration', 'enabled', 'grant'}.contains(key)); } 
-AccessOauthConfiguration copyWith({AccessOauthConfigurationDynamicClientRegistration? Function()? dynamicClientRegistration, bool? Function()? enabled, AccessOauthConfigurationGrant? Function()? grant, }) { return AccessOauthConfiguration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'dynamic_client_registration', 'enabled', 'grant'}.contains(key));}
+AccessOauthConfiguration copyWith({AccessOauthConfigurationDynamicClientRegistration? Function()? dynamicClientRegistration, bool? Function()? enabled, AccessOauthConfigurationGrant? Function()? grant, }) {return AccessOauthConfiguration(
   dynamicClientRegistration: dynamicClientRegistration != null ? dynamicClientRegistration() : this.dynamicClientRegistration,
   enabled: enabled != null ? enabled() : this.enabled,
   grant: grant != null ? grant() : this.grant,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessOauthConfiguration &&
           dynamicClientRegistration == other.dynamicClientRegistration &&
           enabled == other.enabled &&
-          grant == other.grant; } 
-@override int get hashCode { return Object.hash(dynamicClientRegistration, enabled, grant); } 
-@override String toString() { return 'AccessOauthConfiguration(dynamicClientRegistration: $dynamicClientRegistration, enabled: $enabled, grant: $grant)'; } 
- }
+          grant == other.grant;}
+@override int get hashCode {return Object.hash(dynamicClientRegistration, enabled, grant);}
+@override String toString() {return 'AccessOauthConfiguration(dynamicClientRegistration: $dynamicClientRegistration, enabled: $enabled, grant: $grant)';}
+}

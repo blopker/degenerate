@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksWorkflow {const WebhooksWorkflow({required this.badgeUrl, required this.createdAt, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.path, required this.state, required this.updatedAt, required this.url, });
 
-factory WebhooksWorkflow.fromJson(Map<String, dynamic> json) { return WebhooksWorkflow(
+factory WebhooksWorkflow.fromJson(Map<String, dynamic> json) {return WebhooksWorkflow(
   badgeUrl: Uri.parse(json['badge_url'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
@@ -13,7 +13,7 @@ factory WebhooksWorkflow.fromJson(Map<String, dynamic> json) { return WebhooksWo
   state: json['state'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final Uri badgeUrl;
 
@@ -35,7 +35,7 @@ final DateTime updatedAt;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'badge_url': badgeUrl.toString(),
   'created_at': createdAt.toIso8601String(),
   'html_url': htmlUrl.toString(),
@@ -46,8 +46,8 @@ Map<String, dynamic> toJson() { return {
   'state': state,
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('badge_url') && json['badge_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('badge_url') && json['badge_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
@@ -56,8 +56,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('badge
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('state') && json['state'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhooksWorkflow copyWith({Uri? badgeUrl, DateTime? createdAt, Uri? htmlUrl, int? id, String? name, String? nodeId, String? path, String? state, DateTime? updatedAt, Uri? url, }) { return WebhooksWorkflow(
+      json.containsKey('url') && json['url'] is String;}
+WebhooksWorkflow copyWith({Uri? badgeUrl, DateTime? createdAt, Uri? htmlUrl, int? id, String? name, String? nodeId, String? path, String? state, DateTime? updatedAt, Uri? url, }) {return WebhooksWorkflow(
   badgeUrl: badgeUrl ?? this.badgeUrl,
   createdAt: createdAt ?? this.createdAt,
   htmlUrl: htmlUrl ?? this.htmlUrl,
@@ -68,8 +68,8 @@ WebhooksWorkflow copyWith({Uri? badgeUrl, DateTime? createdAt, Uri? htmlUrl, int
   state: state ?? this.state,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhooksWorkflow &&
           badgeUrl == other.badgeUrl &&
           createdAt == other.createdAt &&
@@ -80,7 +80,7 @@ WebhooksWorkflow copyWith({Uri? badgeUrl, DateTime? createdAt, Uri? htmlUrl, int
           path == other.path &&
           state == other.state &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(badgeUrl, createdAt, htmlUrl, id, name, nodeId, path, state, updatedAt, url); } 
-@override String toString() { return 'WebhooksWorkflow(badgeUrl: $badgeUrl, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, path: $path, state: $state, updatedAt: $updatedAt, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(badgeUrl, createdAt, htmlUrl, id, name, nodeId, path, state, updatedAt, url);}
+@override String toString() {return 'WebhooksWorkflow(badgeUrl: $badgeUrl, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, path: $path, state: $state, updatedAt: $updatedAt, url: $url)';}
+}

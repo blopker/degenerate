@@ -2,30 +2,30 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_timing_aggregates.dart';@immutable final class DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo {const DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo({required this.colo, required this.roundTripTime, });
 
-factory DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo(
+factory DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo(
   colo: json['colo'] as String,
   roundTripTime: DigitalExperienceMonitoringTimingAggregates.fromJson(json['roundTripTime'] as Map<String, dynamic>),
-); }
+);}
 
 /// Cloudflare colo
 final String colo;
 
 final DigitalExperienceMonitoringTimingAggregates roundTripTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'colo': colo,
   'roundTripTime': roundTripTime.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('colo') && json['colo'] is String &&
-      json.containsKey('roundTripTime'); } 
-DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo copyWith({String? colo, DigitalExperienceMonitoringTimingAggregates? roundTripTime, }) { return DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('colo') && json['colo'] is String &&
+      json.containsKey('roundTripTime');}
+DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo copyWith({String? colo, DigitalExperienceMonitoringTimingAggregates? roundTripTime, }) {return DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo(
   colo: colo ?? this.colo,
   roundTripTime: roundTripTime ?? this.roundTripTime,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo &&
           colo == other.colo &&
-          roundTripTime == other.roundTripTime; } 
-@override int get hashCode { return Object.hash(colo, roundTripTime); } 
-@override String toString() { return 'DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo(colo: $colo, roundTripTime: $roundTripTime)'; } 
- }
+          roundTripTime == other.roundTripTime;}
+@override int get hashCode {return Object.hash(colo, roundTripTime);}
+@override String toString() {return 'DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo(colo: $colo, roundTripTime: $roundTripTime)';}
+}

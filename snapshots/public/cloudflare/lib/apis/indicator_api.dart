@@ -13,7 +13,7 @@ final class IndicatorApi with ApiExecutor {const IndicatorApi(this.apiConfig);
 /// Retrieves a paginated list of indicators for the account.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators`
-Future<ApiResult<GetIndicatorListLegacyResponse, Never>> getIndicatorListLegacy({required String accountId, required String datasetId, double? page, double? pageSize, String? search, String? indicatorType, List<String>? relatedEvent, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIndicatorListLegacyResponse, Never>> getIndicatorListLegacy({required String accountId, required String datasetId, double? page, double? pageSize, String? search, String? indicatorType, List<String>? relatedEvent, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -51,13 +51,13 @@ final json = jsonDecode(response.body);
 return GetIndicatorListLegacyResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Reads an indicator
 ///
 /// Retrieves a specific indicator by its UUID.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}`
-Future<ApiResult<GetIndicatorReadResponse, GetIndicatorReadResponse404>> getIndicatorRead({required String accountId, required String datasetId, required String indicatorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetIndicatorReadResponse, GetIndicatorReadResponse404>> getIndicatorRead({required String accountId, required String datasetId, required String indicatorId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -83,13 +83,13 @@ return null;
 
   },
 );
- } 
+}
 /// Updates an indicator
 ///
 /// Updates an existing indicator's properties.
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}`
-Future<ApiResult<PatchIndicatorUpdateResponse, PatchIndicatorUpdateError>> patchIndicatorUpdate({required String accountId, required String datasetId, required String indicatorId, PatchIndicatorUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PatchIndicatorUpdateResponse, PatchIndicatorUpdateError>> patchIndicatorUpdate({required String accountId, required String datasetId, required String indicatorId, PatchIndicatorUpdateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -108,13 +108,13 @@ return PatchIndicatorUpdateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: PatchIndicatorUpdateError.parse,
 );
- } 
+}
 /// Deletes an indicator
 ///
 /// Deletes a specific indicator by its UUID.
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}`
-Future<ApiResult<DeleteIndicatorDeleteResponse, DeleteIndicatorDeleteResponse404>> deleteIndicatorDelete({required String accountId, required String datasetId, required String indicatorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteIndicatorDeleteResponse, DeleteIndicatorDeleteResponse404>> deleteIndicatorDelete({required String accountId, required String datasetId, required String indicatorId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -140,13 +140,13 @@ return null;
 
   },
 );
- } 
+}
 /// Creates multiple indicators in bulk
 ///
 /// Creates multiple indicators at once with their respective types and related datasets.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/bulk`
-Future<ApiResult<double, PostIndicatorCreateBulkResponse400>> postIndicatorCreateBulk({required String accountId, required String datasetId, PostIndicatorCreateBulkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<double, PostIndicatorCreateBulkResponse400>> postIndicatorCreateBulk({required String accountId, required String datasetId, PostIndicatorCreateBulkRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -174,13 +174,13 @@ return null;
 
   },
 );
- } 
+}
 /// Creates a new indicator
 ///
 /// Creates a new indicator with the specified type and related datasets.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/create`
-Future<ApiResult<PostIndicatorCreateResponse, PostIndicatorCreateResponse400>> postIndicatorCreate({required String accountId, required String datasetId, PostIndicatorCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostIndicatorCreateResponse, PostIndicatorCreateResponse400>> postIndicatorCreate({required String accountId, required String datasetId, PostIndicatorCreateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -208,13 +208,13 @@ return null;
 
   },
 );
- } 
+}
 /// List mirrored tags for an indicator dataset
 ///
 /// Returns all mirrored tags from the indicator dataset (DO mirror table). No pagination.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/tags`
-Future<ApiResult<List<Map<String, dynamic>>, GetIndicatorTagsListError>> getIndicatorTagsList({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Map<String, dynamic>>, GetIndicatorTagsListError>> getIndicatorTagsList({required String accountId, required String datasetId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -231,13 +231,13 @@ return (json as List<dynamic>).map((e) => e as Map<String, dynamic>).toList();
   },
   onError: GetIndicatorTagsListError.parse,
 );
- } 
+}
 /// Lists indicators across multiple datasets
 ///
 /// Retrieves a paginated list of indicators across specified datasets. Use datasetIds=all or datasetIds=* to query all datasets for the account. If no datasetIds provided, uses the default dataset.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/indicators`
-Future<ApiResult<GetIndicatorListResponse, GetIndicatorListResponse400>> getIndicatorList({required String accountId, List<String>? datasetIds, double? page, double? pageSize, String? search, String? indicatorType, List<String>? relatedEvents, List<String>? tags, DateTime? createdAfter, DateTime? createdBefore, double? relatedEventsLimit, bool? includeTags, bool? includeTotalCount, GetIndicatorListFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIndicatorListResponse, GetIndicatorListResponse400>> getIndicatorList({required String accountId, List<String>? datasetIds, double? page, double? pageSize, String? search, String? indicatorType, List<String>? relatedEvents, List<String>? tags, DateTime? createdAfter, DateTime? createdBefore, double? relatedEventsLimit, bool? includeTags, bool? includeTotalCount, GetIndicatorListFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
@@ -313,5 +313,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

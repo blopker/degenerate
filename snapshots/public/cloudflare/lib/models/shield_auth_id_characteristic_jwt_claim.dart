@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of characteristic.
 @immutable final class ShieldAuthIdCharacteristicJwtClaimType {const ShieldAuthIdCharacteristicJwtClaimType._(this.value);
 
-factory ShieldAuthIdCharacteristicJwtClaimType.fromJson(String json) { return switch (json) {
+factory ShieldAuthIdCharacteristicJwtClaimType.fromJson(String json) {return switch (json) {
   'jwt' => jwt,
   _ => ShieldAuthIdCharacteristicJwtClaimType._(json),
-}; }
+};}
 
 static const ShieldAuthIdCharacteristicJwtClaimType jwt = ShieldAuthIdCharacteristicJwtClaimType._('jwt');
 
@@ -14,21 +14,21 @@ static const List<ShieldAuthIdCharacteristicJwtClaimType> values = [jwt];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldAuthIdCharacteristicJwtClaimType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldAuthIdCharacteristicJwtClaimType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ShieldAuthIdCharacteristicJwtClaimType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ShieldAuthIdCharacteristicJwtClaimType($value)';}
+}
 /// Auth ID Characteristic extracted from JWT Token Claims
 @immutable final class ShieldAuthIdCharacteristicJwtClaim {const ShieldAuthIdCharacteristicJwtClaim({required this.name, required this.type, });
 
-factory ShieldAuthIdCharacteristicJwtClaim.fromJson(Map<String, dynamic> json) { return ShieldAuthIdCharacteristicJwtClaim(
+factory ShieldAuthIdCharacteristicJwtClaim.fromJson(Map<String, dynamic> json) {return ShieldAuthIdCharacteristicJwtClaim(
   name: json['name'] as String,
   type: ShieldAuthIdCharacteristicJwtClaimType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Claim location expressed as `$(token_config_id):$(json_path)`, where `token_config_id`
 /// is the ID of the token configuration used in validating the JWT, and `json_path` is a RFC 9535
@@ -41,20 +41,20 @@ final String name;
 /// The type of characteristic.
 final ShieldAuthIdCharacteristicJwtClaimType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('type'); } 
-ShieldAuthIdCharacteristicJwtClaim copyWith({String? name, ShieldAuthIdCharacteristicJwtClaimType? type, }) { return ShieldAuthIdCharacteristicJwtClaim(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('type');}
+ShieldAuthIdCharacteristicJwtClaim copyWith({String? name, ShieldAuthIdCharacteristicJwtClaimType? type, }) {return ShieldAuthIdCharacteristicJwtClaim(
   name: name ?? this.name,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShieldAuthIdCharacteristicJwtClaim &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, type); } 
-@override String toString() { return 'ShieldAuthIdCharacteristicJwtClaim(name: $name, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(name, type);}
+@override String toString() {return 'ShieldAuthIdCharacteristicJwtClaim(name: $name, type: $type)';}
+}

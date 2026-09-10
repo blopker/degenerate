@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_attachment.dart';import 'email_security_disposition_label.dart';import 'email_security_get_message_detections_response_result_sender_info.dart';import 'email_security_get_message_detections_response_result_validation.dart';import 'email_security_link.dart';import 'email_security_message_header.dart';import 'email_security_threat_category.dart';@immutable final class EmailSecurityGetMessageDetectionsResponseResult {const EmailSecurityGetMessageDetectionsResponseResult({required this.action, required this.attachments, required this.headers, required this.links, required this.senderInfo, required this.threatCategories, required this.validation, this.finalDisposition = const Omittable.absent(), });
 
-factory EmailSecurityGetMessageDetectionsResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityGetMessageDetectionsResponseResult(
+factory EmailSecurityGetMessageDetectionsResponseResult.fromJson(Map<String, dynamic> json) {return EmailSecurityGetMessageDetectionsResponseResult(
   action: json['action'] as String,
   attachments: (json['attachments'] as List<dynamic>).map((e) => EmailSecurityAttachment.fromJson(e as Map<String, dynamic>)).toList(),
   finalDisposition: json.containsKey('final_disposition') ? Omittable(json['final_disposition'] != null ? EmailSecurityDispositionLabel.fromJson(json['final_disposition'] as String) : null) : const Omittable.absent(),
@@ -11,7 +11,7 @@ factory EmailSecurityGetMessageDetectionsResponseResult.fromJson(Map<String, dyn
   senderInfo: EmailSecurityGetMessageDetectionsResponseResultSenderInfo.fromJson(json['sender_info'] as Map<String, dynamic>),
   threatCategories: (json['threat_categories'] as List<dynamic>).map((e) => EmailSecurityThreatCategory.fromJson(e as Map<String, dynamic>)).toList(),
   validation: EmailSecurityGetMessageDetectionsResponseResultValidation.fromJson(json['validation'] as Map<String, dynamic>),
-); }
+);}
 
 final String action;
 
@@ -29,7 +29,7 @@ final List<EmailSecurityThreatCategory> threatCategories;
 
 final EmailSecurityGetMessageDetectionsResponseResultValidation validation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action,
   'attachments': attachments.map((e) => e.toJson()).toList(),
   if (finalDisposition.isPresent) 'final_disposition': finalDisposition.value?.toJson(),
@@ -38,15 +38,15 @@ Map<String, dynamic> toJson() { return {
   'sender_info': senderInfo.toJson(),
   'threat_categories': threatCategories.map((e) => e.toJson()).toList(),
   'validation': validation.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') && json['action'] is String &&
       json.containsKey('attachments') &&
       json.containsKey('headers') &&
       json.containsKey('links') &&
       json.containsKey('sender_info') &&
       json.containsKey('threat_categories') &&
-      json.containsKey('validation'); } 
-EmailSecurityGetMessageDetectionsResponseResult copyWith({String? action, List<EmailSecurityAttachment>? attachments, Omittable<EmailSecurityDispositionLabel?>? finalDisposition, List<EmailSecurityMessageHeader>? headers, List<EmailSecurityLink>? links, EmailSecurityGetMessageDetectionsResponseResultSenderInfo? senderInfo, List<EmailSecurityThreatCategory>? threatCategories, EmailSecurityGetMessageDetectionsResponseResultValidation? validation, }) { return EmailSecurityGetMessageDetectionsResponseResult(
+      json.containsKey('validation');}
+EmailSecurityGetMessageDetectionsResponseResult copyWith({String? action, List<EmailSecurityAttachment>? attachments, Omittable<EmailSecurityDispositionLabel?>? finalDisposition, List<EmailSecurityMessageHeader>? headers, List<EmailSecurityLink>? links, EmailSecurityGetMessageDetectionsResponseResultSenderInfo? senderInfo, List<EmailSecurityThreatCategory>? threatCategories, EmailSecurityGetMessageDetectionsResponseResultValidation? validation, }) {return EmailSecurityGetMessageDetectionsResponseResult(
   action: action ?? this.action,
   attachments: attachments ?? this.attachments,
   finalDisposition: finalDisposition ?? this.finalDisposition,
@@ -55,8 +55,8 @@ EmailSecurityGetMessageDetectionsResponseResult copyWith({String? action, List<E
   senderInfo: senderInfo ?? this.senderInfo,
   threatCategories: threatCategories ?? this.threatCategories,
   validation: validation ?? this.validation,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSecurityGetMessageDetectionsResponseResult &&
           action == other.action &&
           listEquals(attachments, other.attachments) &&
@@ -65,7 +65,7 @@ EmailSecurityGetMessageDetectionsResponseResult copyWith({String? action, List<E
           listEquals(links, other.links) &&
           senderInfo == other.senderInfo &&
           listEquals(threatCategories, other.threatCategories) &&
-          validation == other.validation; } 
-@override int get hashCode { return Object.hash(action, Object.hashAll(attachments), finalDisposition, Object.hashAll(headers), Object.hashAll(links), senderInfo, Object.hashAll(threatCategories), validation); } 
-@override String toString() { return 'EmailSecurityGetMessageDetectionsResponseResult(action: $action, attachments: $attachments, finalDisposition: $finalDisposition, headers: $headers, links: $links, senderInfo: $senderInfo, threatCategories: $threatCategories, validation: $validation)'; } 
- }
+          validation == other.validation;}
+@override int get hashCode {return Object.hash(action, Object.hashAll(attachments), finalDisposition, Object.hashAll(headers), Object.hashAll(links), senderInfo, Object.hashAll(threatCategories), validation);}
+@override String toString() {return 'EmailSecurityGetMessageDetectionsResponseResult(action: $action, attachments: $attachments, finalDisposition: $finalDisposition, headers: $headers, links: $links, senderInfo: $senderInfo, threatCategories: $threatCategories, validation: $validation)';}
+}

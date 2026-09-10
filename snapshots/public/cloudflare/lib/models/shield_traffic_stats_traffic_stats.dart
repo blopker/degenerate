@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_timestamp.dart';@immutable final class ShieldTrafficStatsTrafficStats {const ShieldTrafficStatsTrafficStats({required this.lastUpdated, required this.periodSeconds, required this.requests, });
 
-factory ShieldTrafficStatsTrafficStats.fromJson(Map<String, dynamic> json) { return ShieldTrafficStatsTrafficStats(
+factory ShieldTrafficStatsTrafficStats.fromJson(Map<String, dynamic> json) {return ShieldTrafficStatsTrafficStats(
   lastUpdated: ShieldTimestamp.fromJson(json['last_updated'] as String),
   periodSeconds: (json['period_seconds'] as num).toInt(),
   requests: (json['requests'] as num).toDouble(),
-); }
+);}
 
 final ShieldTimestamp lastUpdated;
 
@@ -16,24 +16,24 @@ final int periodSeconds;
 /// The average number of requests seen during this period
 final double requests;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'last_updated': lastUpdated.toJson(),
   'period_seconds': periodSeconds,
   'requests': requests,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('last_updated') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('last_updated') &&
       json.containsKey('period_seconds') && json['period_seconds'] is num &&
-      json.containsKey('requests') && json['requests'] is num; } 
-ShieldTrafficStatsTrafficStats copyWith({ShieldTimestamp? lastUpdated, int? periodSeconds, double? requests, }) { return ShieldTrafficStatsTrafficStats(
+      json.containsKey('requests') && json['requests'] is num;}
+ShieldTrafficStatsTrafficStats copyWith({ShieldTimestamp? lastUpdated, int? periodSeconds, double? requests, }) {return ShieldTrafficStatsTrafficStats(
   lastUpdated: lastUpdated ?? this.lastUpdated,
   periodSeconds: periodSeconds ?? this.periodSeconds,
   requests: requests ?? this.requests,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShieldTrafficStatsTrafficStats &&
           lastUpdated == other.lastUpdated &&
           periodSeconds == other.periodSeconds &&
-          requests == other.requests; } 
-@override int get hashCode { return Object.hash(lastUpdated, periodSeconds, requests); } 
-@override String toString() { return 'ShieldTrafficStatsTrafficStats(lastUpdated: $lastUpdated, periodSeconds: $periodSeconds, requests: $requests)'; } 
- }
+          requests == other.requests;}
+@override int get hashCode {return Object.hash(lastUpdated, periodSeconds, requests);}
+@override String toString() {return 'ShieldTrafficStatsTrafficStats(lastUpdated: $lastUpdated, periodSeconds: $periodSeconds, requests: $requests)';}
+}

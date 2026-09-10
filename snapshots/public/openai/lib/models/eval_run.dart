@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_completions_run_data_source.dart';import 'create_eval_jsonl_run_data_source.dart';import 'create_eval_responses_run_data_source.dart';import 'error_model2.dart';import 'eval_run_data_source.dart';import 'eval_run_per_model_usage.dart';import 'eval_run_per_testing_criteria_results.dart';import 'eval_run_result_counts.dart';/// The type of the object. Always "eval.run".
 @immutable final class EvalRunObject {const EvalRunObject._(this.value);
 
-factory EvalRunObject.fromJson(String json) { return switch (json) {
+factory EvalRunObject.fromJson(String json) {return switch (json) {
   'eval.run' => evalRun,
   _ => EvalRunObject._(json),
-}; }
+};}
 
 static const EvalRunObject evalRun = EvalRunObject._('eval.run');
 
@@ -14,19 +14,19 @@ static const List<EvalRunObject> values = [evalRun];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalRunObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalRunObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EvalRunObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EvalRunObject($value)';}
+}
 /// A schema representing an evaluation run.
 /// 
 @immutable final class EvalRun {const EvalRun({required this.object, required this.id, required this.evalId, required this.status, required this.model, required this.name, required this.createdAt, required this.reportUrl, required this.resultCounts, required this.perModelUsage, required this.perTestingCriteriaResults, required this.dataSource, required this.metadata, required this.error, });
 
-factory EvalRun.fromJson(Map<String, dynamic> json) { return EvalRun(
+factory EvalRun.fromJson(Map<String, dynamic> json) {return EvalRun(
   object: EvalRunObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   evalId: json['eval_id'] as String,
@@ -41,7 +41,7 @@ factory EvalRun.fromJson(Map<String, dynamic> json) { return EvalRun(
   dataSource: OneOf3.parse(json['data_source'], fromA: (v) => CreateEvalJsonlRunDataSource.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateEvalCompletionsRunDataSource.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateEvalResponsesRunDataSource.fromJson(v as Map<String, dynamic>),),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   error: ErrorModel2.fromJson(json['error'] as Map<String, dynamic>),
-); }
+);}
 
 /// The type of the object. Always "eval.run".
 final EvalRunObject object;
@@ -83,7 +83,7 @@ final Map<String,String>? metadata;
 
 final ErrorModel2 error;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'id': id,
   'eval_id': evalId,
@@ -98,8 +98,8 @@ Map<String, dynamic> toJson() { return {
   'data_source': dataSource.toJson(),
   'metadata': metadata,
   'error': error.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('eval_id') && json['eval_id'] is String &&
       json.containsKey('status') && json['status'] is String &&
@@ -112,8 +112,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('per_testing_criteria_results') &&
       json.containsKey('data_source') &&
       json.containsKey('metadata') &&
-      json.containsKey('error'); } 
-EvalRun copyWith({EvalRunObject? object, String? id, String? evalId, String? status, String? model, String? name, int? createdAt, String? reportUrl, EvalRunResultCounts? resultCounts, List<EvalRunPerModelUsage>? perModelUsage, List<EvalRunPerTestingCriteriaResults>? perTestingCriteriaResults, EvalRunDataSource? dataSource, Map<String, String>? Function()? metadata, ErrorModel2? error, }) { return EvalRun(
+      json.containsKey('error');}
+EvalRun copyWith({EvalRunObject? object, String? id, String? evalId, String? status, String? model, String? name, int? createdAt, String? reportUrl, EvalRunResultCounts? resultCounts, List<EvalRunPerModelUsage>? perModelUsage, List<EvalRunPerTestingCriteriaResults>? perTestingCriteriaResults, EvalRunDataSource? dataSource, Map<String, String>? Function()? metadata, ErrorModel2? error, }) {return EvalRun(
   object: object ?? this.object,
   id: id ?? this.id,
   evalId: evalId ?? this.evalId,
@@ -128,8 +128,8 @@ EvalRun copyWith({EvalRunObject? object, String? id, String? evalId, String? sta
   dataSource: dataSource ?? this.dataSource,
   metadata: metadata != null ? metadata() : this.metadata,
   error: error ?? this.error,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EvalRun &&
           object == other.object &&
           id == other.id &&
@@ -144,7 +144,7 @@ EvalRun copyWith({EvalRunObject? object, String? id, String? evalId, String? sta
           listEquals(perTestingCriteriaResults, other.perTestingCriteriaResults) &&
           dataSource == other.dataSource &&
           metadata == other.metadata &&
-          error == other.error; } 
-@override int get hashCode { return Object.hash(object, id, evalId, status, model, name, createdAt, reportUrl, resultCounts, Object.hashAll(perModelUsage), Object.hashAll(perTestingCriteriaResults), dataSource, metadata, error); } 
-@override String toString() { return 'EvalRun(object: $object, id: $id, evalId: $evalId, status: $status, model: $model, name: $name, createdAt: $createdAt, reportUrl: $reportUrl, resultCounts: $resultCounts, perModelUsage: $perModelUsage, perTestingCriteriaResults: $perTestingCriteriaResults, dataSource: $dataSource, metadata: $metadata, error: $error)'; } 
- }
+          error == other.error;}
+@override int get hashCode {return Object.hash(object, id, evalId, status, model, name, createdAt, reportUrl, resultCounts, Object.hashAll(perModelUsage), Object.hashAll(perTestingCriteriaResults), dataSource, metadata, error);}
+@override String toString() {return 'EvalRun(object: $object, id: $id, evalId: $evalId, status: $status, model: $model, name: $name, createdAt: $createdAt, reportUrl: $reportUrl, resultCounts: $resultCounts, perModelUsage: $perModelUsage, perTestingCriteriaResults: $perTestingCriteriaResults, dataSource: $dataSource, metadata: $metadata, error: $error)';}
+}

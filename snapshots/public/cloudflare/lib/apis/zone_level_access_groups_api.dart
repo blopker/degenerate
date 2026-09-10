@@ -13,7 +13,7 @@ final class ZoneLevelAccessGroupsApi with ApiExecutor {const ZoneLevelAccessGrou
 /// Lists all Access groups.
 ///
 /// `GET /zones/{zone_id}/access/groups`
-Future<ApiResult<List<AccessComponentsSchemasGroups>?, ResponseCommonFailure4>> zoneLevelAccessGroupsListAccessGroups({required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessComponentsSchemasGroups>?, ResponseCommonFailure4>> zoneLevelAccessGroupsListAccessGroups({required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create an Access group
 ///
 /// Creates a new Access group.
 ///
 /// `POST /zones/{zone_id}/access/groups`
-Future<ApiResult<AccessComponentsSchemasGroups?, ResponseCommonFailure4>> zoneLevelAccessGroupsCreateAnAccessGroup({required AccessIdentifier zoneId, required ZoneLevelAccessGroupsCreateAnAccessGroupRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessComponentsSchemasGroups?, ResponseCommonFailure4>> zoneLevelAccessGroupsCreateAnAccessGroup({required AccessIdentifier zoneId, required ZoneLevelAccessGroupsCreateAnAccessGroupRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get an Access group
 ///
 /// Fetches a single Access group.
 ///
 /// `GET /zones/{zone_id}/access/groups/{group_id}`
-Future<ApiResult<AccessComponentsSchemasGroups?, ResponseCommonFailure4>> zoneLevelAccessGroupsGetAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessComponentsSchemasGroups?, ResponseCommonFailure4>> zoneLevelAccessGroupsGetAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -105,13 +105,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update an Access group
 ///
 /// Updates a configured Access group.
 ///
 /// `PUT /zones/{zone_id}/access/groups/{group_id}`
-Future<ApiResult<AccessComponentsSchemasGroups?, ResponseCommonFailure4>> zoneLevelAccessGroupsUpdateAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, required ZoneLevelAccessGroupsUpdateAnAccessGroupRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessComponentsSchemasGroups?, ResponseCommonFailure4>> zoneLevelAccessGroupsUpdateAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, required ZoneLevelAccessGroupsUpdateAnAccessGroupRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,13 +139,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete an Access group
 ///
 /// Deletes an Access group.
 ///
 /// `DELETE /zones/{zone_id}/access/groups/{group_id}`
-Future<ApiResult<AccessIdResponseResult?, ResponseCommonFailure4>> zoneLevelAccessGroupsDeleteAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessIdResponseResult?, ResponseCommonFailure4>> zoneLevelAccessGroupsDeleteAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -171,5 +171,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

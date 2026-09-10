@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param31_mandate_options_reference_prefix.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam31MandateOptions {const PaymentIntentPaymentMethodOptionsParam31MandateOptions({this.referencePrefix});
 
-factory PaymentIntentPaymentMethodOptionsParam31MandateOptions.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam31MandateOptions(
+factory PaymentIntentPaymentMethodOptionsParam31MandateOptions.fromJson(Map<String, dynamic> json) {return PaymentIntentPaymentMethodOptionsParam31MandateOptions(
   referencePrefix: json['reference_prefix'] != null ? PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferencePrefix.fromJson(json['reference_prefix']) : null,
-); }
+);}
 
 final PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferencePrefix? referencePrefix;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (referencePrefix != null) 'reference_prefix': referencePrefix?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference_prefix'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam31MandateOptions copyWith({PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferencePrefix? Function()? referencePrefix}) { return PaymentIntentPaymentMethodOptionsParam31MandateOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'reference_prefix'}.contains(key));}
+PaymentIntentPaymentMethodOptionsParam31MandateOptions copyWith({PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferencePrefix? Function()? referencePrefix}) {return PaymentIntentPaymentMethodOptionsParam31MandateOptions(
   referencePrefix: referencePrefix != null ? referencePrefix() : this.referencePrefix,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParam31MandateOptions &&
-          referencePrefix == other.referencePrefix; } 
-@override int get hashCode { return referencePrefix.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam31MandateOptions(referencePrefix: $referencePrefix)'; } 
- }
+          referencePrefix == other.referencePrefix;}
+@override int get hashCode {return referencePrefix.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam31MandateOptions(referencePrefix: $referencePrefix)';}
+}

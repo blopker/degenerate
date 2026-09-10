@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'eval_run_output_item_result.dart';import 'eval_run_output_item_sample.dart';/// The type of the object. Always "eval.run.output_item".
 @immutable final class EvalRunOutputItemObject {const EvalRunOutputItemObject._(this.value);
 
-factory EvalRunOutputItemObject.fromJson(String json) { return switch (json) {
+factory EvalRunOutputItemObject.fromJson(String json) {return switch (json) {
   'eval.run.output_item' => evalRunOutputItem,
   _ => EvalRunOutputItemObject._(json),
-}; }
+};}
 
 static const EvalRunOutputItemObject evalRunOutputItem = EvalRunOutputItemObject._('eval.run.output_item');
 
@@ -14,19 +14,19 @@ static const List<EvalRunOutputItemObject> values = [evalRunOutputItem];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalRunOutputItemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalRunOutputItemObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EvalRunOutputItemObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EvalRunOutputItemObject($value)';}
+}
 /// A schema representing an evaluation run output item.
 /// 
 @immutable final class EvalRunOutputItem {const EvalRunOutputItem({required this.object, required this.id, required this.runId, required this.evalId, required this.createdAt, required this.status, required this.datasourceItemId, required this.datasourceItem, required this.results, required this.sample, });
 
-factory EvalRunOutputItem.fromJson(Map<String, dynamic> json) { return EvalRunOutputItem(
+factory EvalRunOutputItem.fromJson(Map<String, dynamic> json) {return EvalRunOutputItem(
   object: EvalRunOutputItemObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   runId: json['run_id'] as String,
@@ -37,7 +37,7 @@ factory EvalRunOutputItem.fromJson(Map<String, dynamic> json) { return EvalRunOu
   datasourceItem: json['datasource_item'] as Map<String, dynamic>,
   results: (json['results'] as List<dynamic>).map((e) => EvalRunOutputItemResult.fromJson(e as Map<String, dynamic>)).toList(),
   sample: EvalRunOutputItemSample.fromJson(json['sample'] as Map<String, dynamic>),
-); }
+);}
 
 /// The type of the object. Always "eval.run.output_item".
 final EvalRunOutputItemObject object;
@@ -69,7 +69,7 @@ final List<EvalRunOutputItemResult> results;
 /// A sample containing the input and output of the evaluation run.
 final EvalRunOutputItemSample sample;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'id': id,
   'run_id': runId,
@@ -80,8 +80,8 @@ Map<String, dynamic> toJson() { return {
   'datasource_item': datasourceItem,
   'results': results.map((e) => e.toJson()).toList(),
   'sample': sample.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('run_id') && json['run_id'] is String &&
       json.containsKey('eval_id') && json['eval_id'] is String &&
@@ -90,8 +90,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('datasource_item_id') && json['datasource_item_id'] is num &&
       json.containsKey('datasource_item') &&
       json.containsKey('results') &&
-      json.containsKey('sample'); } 
-EvalRunOutputItem copyWith({EvalRunOutputItemObject? object, String? id, String? runId, String? evalId, int? createdAt, String? status, int? datasourceItemId, Map<String,dynamic>? datasourceItem, List<EvalRunOutputItemResult>? results, EvalRunOutputItemSample? sample, }) { return EvalRunOutputItem(
+      json.containsKey('sample');}
+EvalRunOutputItem copyWith({EvalRunOutputItemObject? object, String? id, String? runId, String? evalId, int? createdAt, String? status, int? datasourceItemId, Map<String,dynamic>? datasourceItem, List<EvalRunOutputItemResult>? results, EvalRunOutputItemSample? sample, }) {return EvalRunOutputItem(
   object: object ?? this.object,
   id: id ?? this.id,
   runId: runId ?? this.runId,
@@ -102,8 +102,8 @@ EvalRunOutputItem copyWith({EvalRunOutputItemObject? object, String? id, String?
   datasourceItem: datasourceItem ?? this.datasourceItem,
   results: results ?? this.results,
   sample: sample ?? this.sample,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EvalRunOutputItem &&
           object == other.object &&
           id == other.id &&
@@ -114,7 +114,7 @@ EvalRunOutputItem copyWith({EvalRunOutputItemObject? object, String? id, String?
           datasourceItemId == other.datasourceItemId &&
           datasourceItem == other.datasourceItem &&
           listEquals(results, other.results) &&
-          sample == other.sample; } 
-@override int get hashCode { return Object.hash(object, id, runId, evalId, createdAt, status, datasourceItemId, datasourceItem, Object.hashAll(results), sample); } 
-@override String toString() { return 'EvalRunOutputItem(object: $object, id: $id, runId: $runId, evalId: $evalId, createdAt: $createdAt, status: $status, datasourceItemId: $datasourceItemId, datasourceItem: $datasourceItem, results: $results, sample: $sample)'; } 
- }
+          sample == other.sample;}
+@override int get hashCode {return Object.hash(object, id, runId, evalId, createdAt, status, datasourceItemId, datasourceItem, Object.hashAll(results), sample);}
+@override String toString() {return 'EvalRunOutputItem(object: $object, id: $id, runId: $runId, evalId: $evalId, createdAt: $createdAt, status: $status, datasourceItemId: $datasourceItemId, datasourceItem: $datasourceItem, results: $results, sample: $sample)';}
+}

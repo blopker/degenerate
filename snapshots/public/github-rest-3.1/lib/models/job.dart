@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'job_steps.dart';/// The phase of the lifecycle that the job is currently in.
 @immutable final class JobStatus {const JobStatus._(this.value);
 
-factory JobStatus.fromJson(String json) { return switch (json) {
+factory JobStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'in_progress' => inProgress,
   'completed' => completed,
@@ -11,7 +11,7 @@ factory JobStatus.fromJson(String json) { return switch (json) {
   'requested' => requested,
   'pending' => pending,
   _ => JobStatus._(json),
-}; }
+};}
 
 static const JobStatus queued = JobStatus._('queued');
 
@@ -29,18 +29,18 @@ static const List<JobStatus> values = [queued, inProgress, completed, waiting, r
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is JobStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'JobStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is JobStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'JobStatus($value)';}
+}
 /// The outcome of the job.
 @immutable final class JobConclusion {const JobConclusion._(this.value);
 
-factory JobConclusion.fromJson(String json) { return switch (json) {
+factory JobConclusion.fromJson(String json) {return switch (json) {
   'success' => success,
   'failure' => failure,
   'neutral' => neutral,
@@ -50,7 +50,7 @@ factory JobConclusion.fromJson(String json) { return switch (json) {
   'action_required' => actionRequired,
   'null' => $null,
   _ => JobConclusion._(json),
-}; }
+};}
 
 static const JobConclusion success = JobConclusion._('success');
 
@@ -72,18 +72,18 @@ static const List<JobConclusion> values = [success, failure, neutral, cancelled,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is JobConclusion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'JobConclusion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is JobConclusion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'JobConclusion($value)';}
+}
 /// Information of a job execution in a workflow run
 @immutable final class Job {const Job({required this.id, required this.runId, required this.runUrl, required this.nodeId, required this.headSha, required this.url, required this.htmlUrl, required this.status, required this.conclusion, required this.createdAt, required this.startedAt, required this.completedAt, required this.name, required this.checkRunUrl, required this.labels, required this.runnerId, required this.runnerName, required this.runnerGroupId, required this.runnerGroupName, required this.workflowName, required this.headBranch, this.runAttempt, this.steps, });
 
-factory Job.fromJson(Map<String, dynamic> json) { return Job(
+factory Job.fromJson(Map<String, dynamic> json) {return Job(
   id: (json['id'] as num).toInt(),
   runId: (json['run_id'] as num).toInt(),
   runUrl: json['run_url'] as String,
@@ -107,7 +107,7 @@ factory Job.fromJson(Map<String, dynamic> json) { return Job(
   runnerGroupName: json['runner_group_name'] as String?,
   workflowName: json['workflow_name'] as String?,
   headBranch: json['head_branch'] as String?,
-); }
+);}
 
 /// The id of the job.
 final int id;
@@ -173,7 +173,7 @@ final String? workflowName;
 /// The name of the current branch.
 final String? headBranch;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'run_id': runId,
   'run_url': runUrl,
@@ -197,8 +197,8 @@ Map<String, dynamic> toJson() { return {
   'runner_group_name': runnerGroupName,
   'workflow_name': workflowName,
   'head_branch': headBranch,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('run_id') && json['run_id'] is num &&
       json.containsKey('run_url') && json['run_url'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
@@ -218,8 +218,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('runner_group_id') && (json['runner_group_id'] == null || json['runner_group_id'] is num) &&
       json.containsKey('runner_group_name') && (json['runner_group_name'] == null || json['runner_group_name'] is String) &&
       json.containsKey('workflow_name') && (json['workflow_name'] == null || json['workflow_name'] is String) &&
-      json.containsKey('head_branch') && (json['head_branch'] == null || json['head_branch'] is String); } 
-Job copyWith({int? id, int? runId, String? runUrl, int? Function()? runAttempt, String? nodeId, String? headSha, String? url, String? Function()? htmlUrl, JobStatus? status, JobConclusion? Function()? conclusion, DateTime? createdAt, DateTime? startedAt, DateTime? Function()? completedAt, String? name, List<JobSteps>? Function()? steps, String? checkRunUrl, List<String>? labels, int? Function()? runnerId, String? Function()? runnerName, int? Function()? runnerGroupId, String? Function()? runnerGroupName, String? Function()? workflowName, String? Function()? headBranch, }) { return Job(
+      json.containsKey('head_branch') && (json['head_branch'] == null || json['head_branch'] is String);}
+Job copyWith({int? id, int? runId, String? runUrl, int? Function()? runAttempt, String? nodeId, String? headSha, String? url, String? Function()? htmlUrl, JobStatus? status, JobConclusion? Function()? conclusion, DateTime? createdAt, DateTime? startedAt, DateTime? Function()? completedAt, String? name, List<JobSteps>? Function()? steps, String? checkRunUrl, List<String>? labels, int? Function()? runnerId, String? Function()? runnerName, int? Function()? runnerGroupId, String? Function()? runnerGroupName, String? Function()? workflowName, String? Function()? headBranch, }) {return Job(
   id: id ?? this.id,
   runId: runId ?? this.runId,
   runUrl: runUrl ?? this.runUrl,
@@ -243,8 +243,8 @@ Job copyWith({int? id, int? runId, String? runUrl, int? Function()? runAttempt, 
   runnerGroupName: runnerGroupName != null ? runnerGroupName() : this.runnerGroupName,
   workflowName: workflowName != null ? workflowName() : this.workflowName,
   headBranch: headBranch != null ? headBranch() : this.headBranch,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Job &&
           id == other.id &&
           runId == other.runId &&
@@ -268,7 +268,7 @@ Job copyWith({int? id, int? runId, String? runUrl, int? Function()? runAttempt, 
           runnerGroupId == other.runnerGroupId &&
           runnerGroupName == other.runnerGroupName &&
           workflowName == other.workflowName &&
-          headBranch == other.headBranch; } 
-@override int get hashCode { return Object.hashAll([id, runId, runUrl, runAttempt, nodeId, headSha, url, htmlUrl, status, conclusion, createdAt, startedAt, completedAt, name, Object.hashAll(steps ?? const []), checkRunUrl, Object.hashAll(labels), runnerId, runnerName, runnerGroupId, runnerGroupName, workflowName, headBranch]); } 
-@override String toString() { return 'Job(id: $id, runId: $runId, runUrl: $runUrl, runAttempt: $runAttempt, nodeId: $nodeId, headSha: $headSha, url: $url, htmlUrl: $htmlUrl, status: $status, conclusion: $conclusion, createdAt: $createdAt, startedAt: $startedAt, completedAt: $completedAt, name: $name, steps: $steps, checkRunUrl: $checkRunUrl, labels: $labels, runnerId: $runnerId, runnerName: $runnerName, runnerGroupId: $runnerGroupId, runnerGroupName: $runnerGroupName, workflowName: $workflowName, headBranch: $headBranch)'; } 
- }
+          headBranch == other.headBranch;}
+@override int get hashCode {return Object.hashAll([id, runId, runUrl, runAttempt, nodeId, headSha, url, htmlUrl, status, conclusion, createdAt, startedAt, completedAt, name, Object.hashAll(steps ?? const []), checkRunUrl, Object.hashAll(labels), runnerId, runnerName, runnerGroupId, runnerGroupName, workflowName, headBranch]);}
+@override String toString() {return 'Job(id: $id, runId: $runId, runUrl: $runUrl, runAttempt: $runAttempt, nodeId: $nodeId, headSha: $headSha, url: $url, htmlUrl: $htmlUrl, status: $status, conclusion: $conclusion, createdAt: $createdAt, startedAt: $startedAt, completedAt: $completedAt, name: $name, steps: $steps, checkRunUrl: $checkRunUrl, labels: $labels, runnerId: $runnerId, runnerName: $runnerName, runnerGroupId: $runnerGroupId, runnerGroupName: $runnerGroupName, workflowName: $workflowName, headBranch: $headBranch)';}
+}

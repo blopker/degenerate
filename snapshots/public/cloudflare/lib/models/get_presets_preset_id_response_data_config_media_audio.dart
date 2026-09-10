@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Control options for Audio quality.
 @immutable final class GetPresetsPresetIdResponseDataConfigMediaAudio {const GetPresetsPresetIdResponseDataConfigMediaAudio({this.enableHighBitrate, this.enableStereo, });
 
-factory GetPresetsPresetIdResponseDataConfigMediaAudio.fromJson(Map<String, dynamic> json) { return GetPresetsPresetIdResponseDataConfigMediaAudio(
+factory GetPresetsPresetIdResponseDataConfigMediaAudio.fromJson(Map<String, dynamic> json) {return GetPresetsPresetIdResponseDataConfigMediaAudio(
   enableHighBitrate: json['enable_high_bitrate'] as bool?,
   enableStereo: json['enable_stereo'] as bool?,
-); }
+);}
 
 /// Enable High Quality Audio for your meetings
 final bool? enableHighBitrate;
@@ -15,22 +15,22 @@ final bool? enableHighBitrate;
 final bool? enableStereo;
 
 /// The value with the schema default applied when absent.
-bool get enableHighBitrateOrDefault { return enableHighBitrate ?? false; } 
+bool get enableHighBitrateOrDefault {return enableHighBitrate ?? false;}
 /// The value with the schema default applied when absent.
-bool get enableStereoOrDefault { return enableStereo ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get enableStereoOrDefault {return enableStereo ?? false;}
+Map<String, dynamic> toJson() {return {
   'enable_high_bitrate': ?enableHighBitrate,
   'enable_stereo': ?enableStereo,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enable_high_bitrate', 'enable_stereo'}.contains(key)); } 
-GetPresetsPresetIdResponseDataConfigMediaAudio copyWith({bool? Function()? enableHighBitrate, bool? Function()? enableStereo, }) { return GetPresetsPresetIdResponseDataConfigMediaAudio(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enable_high_bitrate', 'enable_stereo'}.contains(key));}
+GetPresetsPresetIdResponseDataConfigMediaAudio copyWith({bool? Function()? enableHighBitrate, bool? Function()? enableStereo, }) {return GetPresetsPresetIdResponseDataConfigMediaAudio(
   enableHighBitrate: enableHighBitrate != null ? enableHighBitrate() : this.enableHighBitrate,
   enableStereo: enableStereo != null ? enableStereo() : this.enableStereo,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetPresetsPresetIdResponseDataConfigMediaAudio &&
           enableHighBitrate == other.enableHighBitrate &&
-          enableStereo == other.enableStereo; } 
-@override int get hashCode { return Object.hash(enableHighBitrate, enableStereo); } 
-@override String toString() { return 'GetPresetsPresetIdResponseDataConfigMediaAudio(enableHighBitrate: $enableHighBitrate, enableStereo: $enableStereo)'; } 
- }
+          enableStereo == other.enableStereo;}
+@override int get hashCode {return Object.hash(enableHighBitrate, enableStereo);}
+@override String toString() {return 'GetPresetsPresetIdResponseDataConfigMediaAudio(enableHighBitrate: $enableHighBitrate, enableStereo: $enableStereo)';}
+}

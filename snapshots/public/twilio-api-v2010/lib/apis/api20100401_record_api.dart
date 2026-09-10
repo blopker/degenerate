@@ -11,7 +11,7 @@ final class Api20100401RecordApi with ApiExecutor {const Api20100401RecordApi(th
 /// Retrieve a list of usage-records belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Usage/Records.json`
-Future<ApiResult<ListUsageRecordResponse, Never>> listUsageRecord({required String accountSid, String? category, String? startDate, String? endDate, bool? includeSubaccounts, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListUsageRecordResponse, Never>> listUsageRecord({required String accountSid, String? category, String? startDate, String? endDate, bool? includeSubaccounts, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (category != null) {
   queryParameters['Category'] = category;
@@ -53,5 +53,5 @@ final json = jsonDecode(response.body);
 return ListUsageRecordResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The hosted compute service to use for the network configuration.
 @immutable final class HostedComputeCreateNetworkConfigurationForOrgRequestComputeService {const HostedComputeCreateNetworkConfigurationForOrgRequestComputeService._(this.value);
 
-factory HostedComputeCreateNetworkConfigurationForOrgRequestComputeService.fromJson(String json) { return switch (json) {
+factory HostedComputeCreateNetworkConfigurationForOrgRequestComputeService.fromJson(String json) {return switch (json) {
   'none' => none,
   'actions' => actions,
   _ => HostedComputeCreateNetworkConfigurationForOrgRequestComputeService._(json),
-}; }
+};}
 
 static const HostedComputeCreateNetworkConfigurationForOrgRequestComputeService none = HostedComputeCreateNetworkConfigurationForOrgRequestComputeService._('none');
 
@@ -17,21 +17,21 @@ static const List<HostedComputeCreateNetworkConfigurationForOrgRequestComputeSer
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HostedComputeCreateNetworkConfigurationForOrgRequestComputeService && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'HostedComputeCreateNetworkConfigurationForOrgRequestComputeService($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is HostedComputeCreateNetworkConfigurationForOrgRequestComputeService && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'HostedComputeCreateNetworkConfigurationForOrgRequestComputeService($value)';}
+}
 @immutable final class HostedComputeCreateNetworkConfigurationForOrgRequest {const HostedComputeCreateNetworkConfigurationForOrgRequest({required this.name, required this.networkSettingsIds, this.computeService, });
 
-factory HostedComputeCreateNetworkConfigurationForOrgRequest.fromJson(Map<String, dynamic> json) { return HostedComputeCreateNetworkConfigurationForOrgRequest(
+factory HostedComputeCreateNetworkConfigurationForOrgRequest.fromJson(Map<String, dynamic> json) {return HostedComputeCreateNetworkConfigurationForOrgRequest(
   name: json['name'] as String,
   computeService: json['compute_service'] != null ? HostedComputeCreateNetworkConfigurationForOrgRequestComputeService.fromJson(json['compute_service'] as String) : null,
   networkSettingsIds: (json['network_settings_ids'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// Name of the network configuration. Must be between 1 and 100 characters and may only contain upper and lowercase letters a-z, numbers 0-9, '.', '-', and '_'.
 final String name;
@@ -42,23 +42,23 @@ final HostedComputeCreateNetworkConfigurationForOrgRequestComputeService? comput
 /// A list of identifiers of the network settings resources to use for the network configuration. Exactly one resource identifier must be specified in the list.
 final List<String> networkSettingsIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   if (computeService != null) 'compute_service': computeService?.toJson(),
   'network_settings_ids': networkSettingsIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('network_settings_ids'); } 
-HostedComputeCreateNetworkConfigurationForOrgRequest copyWith({String? name, HostedComputeCreateNetworkConfigurationForOrgRequestComputeService? Function()? computeService, List<String>? networkSettingsIds, }) { return HostedComputeCreateNetworkConfigurationForOrgRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('network_settings_ids');}
+HostedComputeCreateNetworkConfigurationForOrgRequest copyWith({String? name, HostedComputeCreateNetworkConfigurationForOrgRequestComputeService? Function()? computeService, List<String>? networkSettingsIds, }) {return HostedComputeCreateNetworkConfigurationForOrgRequest(
   name: name ?? this.name,
   computeService: computeService != null ? computeService() : this.computeService,
   networkSettingsIds: networkSettingsIds ?? this.networkSettingsIds,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is HostedComputeCreateNetworkConfigurationForOrgRequest &&
           name == other.name &&
           computeService == other.computeService &&
-          listEquals(networkSettingsIds, other.networkSettingsIds); } 
-@override int get hashCode { return Object.hash(name, computeService, Object.hashAll(networkSettingsIds)); } 
-@override String toString() { return 'HostedComputeCreateNetworkConfigurationForOrgRequest(name: $name, computeService: $computeService, networkSettingsIds: $networkSettingsIds)'; } 
- }
+          listEquals(networkSettingsIds, other.networkSettingsIds);}
+@override int get hashCode {return Object.hash(name, computeService, Object.hashAll(networkSettingsIds));}
+@override String toString() {return 'HostedComputeCreateNetworkConfigurationForOrgRequest(name: $name, computeService: $computeService, networkSettingsIds: $networkSettingsIds)';}
+}

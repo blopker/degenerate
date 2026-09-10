@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTerminalConfigurationsRequestStripeS710SplashscreenVariant2 {const PostTerminalConfigurationsRequestStripeS710SplashscreenVariant2._(this.value);
 
-factory PostTerminalConfigurationsRequestStripeS710SplashscreenVariant2.fromJson(String json) { return switch (json) {
+factory PostTerminalConfigurationsRequestStripeS710SplashscreenVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostTerminalConfigurationsRequestStripeS710SplashscreenVariant2._(json),
-}; }
+};}
 
 static const PostTerminalConfigurationsRequestStripeS710SplashscreenVariant2 $empty = PostTerminalConfigurationsRequestStripeS710SplashscreenVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostTerminalConfigurationsRequestStripeS710SplashscreenVariant
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTerminalConfigurationsRequestStripeS710SplashscreenVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTerminalConfigurationsRequestStripeS710SplashscreenVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTerminalConfigurationsRequestStripeS710SplashscreenVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTerminalConfigurationsRequestStripeS710SplashscreenVariant2($value)';}
+}
 
 @immutable
 final class PostTerminalConfigurationsRequestStripeS710Splashscreen {

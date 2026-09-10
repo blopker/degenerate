@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Validation Method selected for the order.
 @immutable final class TlsCertificatesAndHostnamesValidationMethod {const TlsCertificatesAndHostnamesValidationMethod._(this.value);
 
-factory TlsCertificatesAndHostnamesValidationMethod.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesValidationMethod.fromJson(String json) {return switch (json) {
   'txt' => txt,
   'http' => http,
   'email' => email,
   _ => TlsCertificatesAndHostnamesValidationMethod._(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesValidationMethod txt = TlsCertificatesAndHostnamesValidationMethod._('txt');
 
@@ -20,11 +20,11 @@ static const List<TlsCertificatesAndHostnamesValidationMethod> values = [txt, ht
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesValidationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesValidationMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesValidationMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesValidationMethod($value)';}
+}

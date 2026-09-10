@@ -8,7 +8,7 @@ String toJson() => value;
 }
 @immutable final class McnCatalogSync {const McnCatalogSync({required this.description, required this.destinationId, required this.destinationType, required this.id, required this.lastUserUpdateAt, required this.name, required this.policy, required this.updateMode, this.errors, this.includesDiscoveriesUntil, this.lastAttemptedUpdateAt, this.lastSuccessfulUpdateAt, });
 
-factory McnCatalogSync.fromJson(Map<String, dynamic> json) { return McnCatalogSync(
+factory McnCatalogSync.fromJson(Map<String, dynamic> json) {return McnCatalogSync(
   description: json['description'] as String,
   destinationId: McnCatalogSyncDestinationId.fromJson(json['destination_id'] as String),
   destinationType: McnCatalogSyncDestinationType.fromJson(json['destination_type'] as String),
@@ -21,7 +21,7 @@ factory McnCatalogSync.fromJson(Map<String, dynamic> json) { return McnCatalogSy
   name: json['name'] as String,
   policy: json['policy'] as String,
   updateMode: McnCatalogSyncUpdateMode.fromJson(json['update_mode'] as String),
-); }
+);}
 
 final String description;
 
@@ -47,7 +47,7 @@ final String policy;
 
 final McnCatalogSyncUpdateMode updateMode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'destination_id': destinationId.toJson(),
   'destination_type': destinationType.toJson(),
@@ -60,16 +60,16 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'policy': policy,
   'update_mode': updateMode.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && json['description'] is String &&
       json.containsKey('destination_id') &&
       json.containsKey('destination_type') &&
       json.containsKey('id') &&
       json.containsKey('last_user_update_at') && json['last_user_update_at'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('policy') && json['policy'] is String &&
-      json.containsKey('update_mode'); } 
-McnCatalogSync copyWith({String? description, McnCatalogSyncDestinationId? destinationId, McnCatalogSyncDestinationType? destinationType, Map<String, McnError>? Function()? errors, McnCatalogSyncId? id, String? Function()? includesDiscoveriesUntil, String? Function()? lastAttemptedUpdateAt, String? Function()? lastSuccessfulUpdateAt, String? lastUserUpdateAt, String? name, String? policy, McnCatalogSyncUpdateMode? updateMode, }) { return McnCatalogSync(
+      json.containsKey('update_mode');}
+McnCatalogSync copyWith({String? description, McnCatalogSyncDestinationId? destinationId, McnCatalogSyncDestinationType? destinationType, Map<String, McnError>? Function()? errors, McnCatalogSyncId? id, String? Function()? includesDiscoveriesUntil, String? Function()? lastAttemptedUpdateAt, String? Function()? lastSuccessfulUpdateAt, String? lastUserUpdateAt, String? name, String? policy, McnCatalogSyncUpdateMode? updateMode, }) {return McnCatalogSync(
   description: description ?? this.description,
   destinationId: destinationId ?? this.destinationId,
   destinationType: destinationType ?? this.destinationType,
@@ -82,8 +82,8 @@ McnCatalogSync copyWith({String? description, McnCatalogSyncDestinationId? desti
   name: name ?? this.name,
   policy: policy ?? this.policy,
   updateMode: updateMode ?? this.updateMode,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is McnCatalogSync &&
           description == other.description &&
           destinationId == other.destinationId &&
@@ -96,7 +96,7 @@ McnCatalogSync copyWith({String? description, McnCatalogSyncDestinationId? desti
           lastUserUpdateAt == other.lastUserUpdateAt &&
           name == other.name &&
           policy == other.policy &&
-          updateMode == other.updateMode; } 
-@override int get hashCode { return Object.hash(description, destinationId, destinationType, errors, id, includesDiscoveriesUntil, lastAttemptedUpdateAt, lastSuccessfulUpdateAt, lastUserUpdateAt, name, policy, updateMode); } 
-@override String toString() { return 'McnCatalogSync(description: $description, destinationId: $destinationId, destinationType: $destinationType, errors: $errors, id: $id, includesDiscoveriesUntil: $includesDiscoveriesUntil, lastAttemptedUpdateAt: $lastAttemptedUpdateAt, lastSuccessfulUpdateAt: $lastSuccessfulUpdateAt, lastUserUpdateAt: $lastUserUpdateAt, name: $name, policy: $policy, updateMode: $updateMode)'; } 
- }
+          updateMode == other.updateMode;}
+@override int get hashCode {return Object.hash(description, destinationId, destinationType, errors, id, includesDiscoveriesUntil, lastAttemptedUpdateAt, lastSuccessfulUpdateAt, lastUserUpdateAt, name, policy, updateMode);}
+@override String toString() {return 'McnCatalogSync(description: $description, destinationId: $destinationId, destinationType: $destinationType, errors: $errors, id: $id, includesDiscoveriesUntil: $includesDiscoveriesUntil, lastAttemptedUpdateAt: $lastAttemptedUpdateAt, lastSuccessfulUpdateAt: $lastSuccessfulUpdateAt, lastUserUpdateAt: $lastUserUpdateAt, name: $name, policy: $policy, updateMode: $updateMode)';}
+}

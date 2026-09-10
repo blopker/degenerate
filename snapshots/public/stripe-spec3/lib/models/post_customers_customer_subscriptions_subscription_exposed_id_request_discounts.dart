@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_discounts_variant1.dart';@immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2 {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2._(this.value);
 
-factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2 $empty = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2($value)';}
+}
 /// The coupons to redeem into discounts for the subscription. If not specified or empty, inherits the discount from the subscription's customer.
 @immutable
 final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscounts {

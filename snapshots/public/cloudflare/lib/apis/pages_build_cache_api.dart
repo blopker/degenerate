@@ -13,7 +13,7 @@ final class PagesBuildCacheApi with ApiExecutor {const PagesBuildCacheApi(this.a
 /// Purge all cached build artifacts for a Pages project
 ///
 /// `POST /accounts/{account_id}/pages/projects/{project_name}/purge_build_cache`
-Future<ApiResult<Map<String, dynamic>?, ResponseCommonFailure53>> pagesPurgeBuildCache({required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, ResponseCommonFailure53>> pagesPurgeBuildCache({required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -39,5 +39,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

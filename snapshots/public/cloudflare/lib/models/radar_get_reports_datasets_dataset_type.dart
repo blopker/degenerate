@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by dataset type.
 @immutable final class RadarGetReportsDatasetsDatasetType {const RadarGetReportsDatasetsDatasetType._(this.value);
 
-factory RadarGetReportsDatasetsDatasetType.fromJson(String json) { return switch (json) {
+factory RadarGetReportsDatasetsDatasetType.fromJson(String json) {return switch (json) {
   'RANKING_BUCKET' => rankingBucket,
   'REPORT' => report,
   _ => RadarGetReportsDatasetsDatasetType._(json),
-}; }
+};}
 
 static const RadarGetReportsDatasetsDatasetType rankingBucket = RadarGetReportsDatasetsDatasetType._('RANKING_BUCKET');
 
@@ -17,11 +17,11 @@ static const List<RadarGetReportsDatasetsDatasetType> values = [rankingBucket, r
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetReportsDatasetsDatasetType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetReportsDatasetsDatasetType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetReportsDatasetsDatasetType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetReportsDatasetsDatasetType($value)';}
+}

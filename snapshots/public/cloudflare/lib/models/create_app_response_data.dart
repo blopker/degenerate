@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_app_response_data_app.dart';@immutable final class CreateAppResponseData {const CreateAppResponseData({this.app});
 
-factory CreateAppResponseData.fromJson(Map<String, dynamic> json) { return CreateAppResponseData(
+factory CreateAppResponseData.fromJson(Map<String, dynamic> json) {return CreateAppResponseData(
   app: json['app'] != null ? CreateAppResponseDataApp.fromJson(json['app'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final CreateAppResponseDataApp? app;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (app != null) 'app': app?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'app'}.contains(key)); } 
-CreateAppResponseData copyWith({CreateAppResponseDataApp? Function()? app}) { return CreateAppResponseData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'app'}.contains(key));}
+CreateAppResponseData copyWith({CreateAppResponseDataApp? Function()? app}) {return CreateAppResponseData(
   app: app != null ? app() : this.app,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateAppResponseData &&
-          app == other.app; } 
-@override int get hashCode { return app.hashCode; } 
-@override String toString() { return 'CreateAppResponseData(app: $app)'; } 
- }
+          app == other.app;}
+@override int get hashCode {return app.hashCode;}
+@override String toString() {return 'CreateAppResponseData(app: $app)';}
+}

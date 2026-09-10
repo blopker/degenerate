@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
 @immutable final class RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
-factory RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+factory RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) {return switch (json) {
   'ALL' => all,
   'AI_BOTS' => aiBots,
   'AI_GATEWAY' => aiGateway,
@@ -30,7 +30,7 @@ factory RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoA
   'SPEED' => speed,
   'WORKERS_AI' => workersAi,
   _ => RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
-}; }
+};}
 
 static const RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
 
@@ -86,18 +86,18 @@ static const List<RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsDataSource($value)';}
+}
 /// Event type for annotations.
 @immutable final class RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
-factory RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+factory RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) {return switch (json) {
   'EVENT' => event,
   'GENERAL' => general,
   'OUTAGE' => outage,
@@ -105,7 +105,7 @@ factory RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoA
   'PIPELINE' => pipeline,
   'TRAFFIC_ANOMALY' => trafficAnomaly,
   _ => RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
-}; }
+};}
 
 static const RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
 
@@ -123,18 +123,18 @@ static const List<RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsEventType($value)';}
+}
 /// Annotation associated with the result (e.g. outage or other type of event).
 @immutable final class RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotations {const RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
-factory RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotations(
+factory RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) {return RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
   description: json['description'] as String,
   endDate: DateTime.parse(json['endDate'] as String),
@@ -142,7 +142,7 @@ factory RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoA
   isInstantaneous: json['isInstantaneous'] as bool,
   linkedUrl: Uri.parse(json['linkedUrl'] as String),
   startDate: DateTime.parse(json['startDate'] as String),
-); }
+);}
 
 /// Data source for annotations.
 final RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
@@ -161,7 +161,7 @@ final Uri linkedUrl;
 
 final DateTime startDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'dataSource': dataSource.toJson(),
   'description': description,
   'endDate': endDate.toIso8601String(),
@@ -169,15 +169,15 @@ Map<String, dynamic> toJson() { return {
   'isInstantaneous': isInstantaneous,
   'linkedUrl': linkedUrl.toString(),
   'startDate': startDate.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dataSource') &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('endDate') && json['endDate'] is String &&
       json.containsKey('eventType') &&
       json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
       json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
-      json.containsKey('startDate') && json['startDate'] is String; } 
-RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotations(
+      json.containsKey('startDate') && json['startDate'] is String;}
+RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) {return RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotations(
   dataSource: dataSource ?? this.dataSource,
   description: description ?? this.description,
   endDate: endDate ?? this.endDate,
@@ -185,8 +185,8 @@ RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotatio
   isInstantaneous: isInstantaneous ?? this.isInstantaneous,
   linkedUrl: linkedUrl ?? this.linkedUrl,
   startDate: startDate ?? this.startDate,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotations &&
           dataSource == other.dataSource &&
           description == other.description &&
@@ -194,7 +194,7 @@ RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotatio
           eventType == other.eventType &&
           isInstantaneous == other.isInstantaneous &&
           linkedUrl == other.linkedUrl &&
-          startDate == other.startDate; } 
-@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
-@override String toString() { return 'RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
- }
+          startDate == other.startDate;}
+@override int get hashCode {return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate);}
+@override String toString() {return 'RadarGetDnsTimeseriesGroupByResponseTtlResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)';}
+}

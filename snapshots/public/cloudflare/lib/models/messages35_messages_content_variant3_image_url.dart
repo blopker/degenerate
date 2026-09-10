@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages35MessagesContentVariant3ImageUrl {const Messages35MessagesContentVariant3ImageUrl({this.url});
 
-factory Messages35MessagesContentVariant3ImageUrl.fromJson(Map<String, dynamic> json) { return Messages35MessagesContentVariant3ImageUrl(
+factory Messages35MessagesContentVariant3ImageUrl.fromJson(Map<String, dynamic> json) {return Messages35MessagesContentVariant3ImageUrl(
   url: json['url'] as String?,
-); }
+);}
 
 /// image uri with data (e.g. data:image/jpeg;base64,/9j/...). HTTP URL will not be accepted
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url'}.contains(key)); } 
-Messages35MessagesContentVariant3ImageUrl copyWith({String? Function()? url}) { return Messages35MessagesContentVariant3ImageUrl(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'url'}.contains(key));}
+Messages35MessagesContentVariant3ImageUrl copyWith({String? Function()? url}) {return Messages35MessagesContentVariant3ImageUrl(
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Messages35MessagesContentVariant3ImageUrl &&
-          url == other.url; } 
-@override int get hashCode { return url.hashCode; } 
-@override String toString() { return 'Messages35MessagesContentVariant3ImageUrl(url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return url.hashCode;}
+@override String toString() {return 'Messages35MessagesContentVariant3ImageUrl(url: $url)';}
+}

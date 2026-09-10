@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessRequestMethod2 {const AccessRequestMethod2._(this.value);
 
-factory AccessRequestMethod2.fromJson(String json) { return switch (json) {
+factory AccessRequestMethod2.fromJson(String json) {return switch (json) {
   'DELETE' => delete,
   'PATCH' => patch,
   'POST' => post,
   'PUT' => put,
   _ => AccessRequestMethod2._(json),
-}; }
+};}
 
 static const AccessRequestMethod2 delete = AccessRequestMethod2._('DELETE');
 
@@ -22,11 +22,11 @@ static const List<AccessRequestMethod2> values = [delete, patch, post, put];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessRequestMethod2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessRequestMethod2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessRequestMethod2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessRequestMethod2($value)';}
+}

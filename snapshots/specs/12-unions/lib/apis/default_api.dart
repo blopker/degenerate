@@ -11,7 +11,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 /// List all shapes
 ///
 /// `GET /shapes`
-Future<ApiResult<List<Shape>, Never>> listShapes({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Shape>, Never>> listShapes({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,11 +27,11 @@ final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => Shape.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Create a shape
 ///
 /// `POST /shapes`
-Future<ApiResult<Shape, ErrorModel>> createShape({required Shape body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Shape, ErrorModel>> createShape({required Shape body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -59,11 +59,11 @@ return null;
 
   },
 );
- } 
+}
 /// Create an order with nested items
 ///
 /// `POST /orders`
-Future<ApiResult<Order, ErrorModel>> createOrder({required Order body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Order, ErrorModel>> createOrder({required Order body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -91,11 +91,11 @@ return null;
 
   },
 );
- } 
+}
 /// Set payment method for an order (untagged oneOf)
 ///
 /// `PUT /orders/{orderId}/payment`
-Future<ApiResult<PaymentMethod, Never>> setPaymentMethod({required String orderId, required PaymentMethod body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethod, Never>> setPaymentMethod({required String orderId, required PaymentMethod body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -113,11 +113,11 @@ final json = jsonDecode(response.body);
 return OneOf2.parse(json, fromA: (v) => CreditCard.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>),);
   },
 );
- } 
+}
 /// Send a notification via email and/or SMS (anyOf)
 ///
 /// `POST /notifications`
-Future<ApiResult<SendNotificationResponse, Never>> sendNotification({required Notification body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SendNotificationResponse, Never>> sendNotification({required Notification body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -135,11 +135,11 @@ final json = jsonDecode(response.body);
 return SendNotificationResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// List pets with extended info
 ///
 /// `GET /pets`
-Future<ApiResult<List<ExtendedPet>, Never>> listPets({PetStatus? status, StringOrInt? identifier, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ExtendedPet>, Never>> listPets({PetStatus? status, StringOrInt? identifier, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toJson();
@@ -166,11 +166,11 @@ final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => ExtendedPet.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Get key-value metadata for a pet
 ///
 /// `GET /pets/{petId}/metadata`
-Future<ApiResult<Map<String, String>, Never>> getPetMetadata({required String petId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, String>, Never>> getPetMetadata({required String petId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -186,5 +186,5 @@ final json = jsonDecode(response.body);
 return (json as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
   },
 );
- } 
- }
+}
+}

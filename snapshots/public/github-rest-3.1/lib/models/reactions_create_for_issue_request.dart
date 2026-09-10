@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue.
 @immutable final class ReactionsCreateForIssueRequestContent {const ReactionsCreateForIssueRequestContent._(this.value);
 
-factory ReactionsCreateForIssueRequestContent.fromJson(String json) { return switch (json) {
+factory ReactionsCreateForIssueRequestContent.fromJson(String json) {return switch (json) {
   '+1' => plus1,
   '-1' => minus1,
   'laugh' => laugh,
@@ -13,7 +13,7 @@ factory ReactionsCreateForIssueRequestContent.fromJson(String json) { return swi
   'rocket' => rocket,
   'eyes' => eyes,
   _ => ReactionsCreateForIssueRequestContent._(json),
-}; }
+};}
 
 static const ReactionsCreateForIssueRequestContent plus1 = ReactionsCreateForIssueRequestContent._('+1');
 
@@ -35,33 +35,33 @@ static const List<ReactionsCreateForIssueRequestContent> values = [plus1, minus1
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReactionsCreateForIssueRequestContent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReactionsCreateForIssueRequestContent($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReactionsCreateForIssueRequestContent && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReactionsCreateForIssueRequestContent($value)';}
+}
 @immutable final class ReactionsCreateForIssueRequest {const ReactionsCreateForIssueRequest({required this.content});
 
-factory ReactionsCreateForIssueRequest.fromJson(Map<String, dynamic> json) { return ReactionsCreateForIssueRequest(
+factory ReactionsCreateForIssueRequest.fromJson(Map<String, dynamic> json) {return ReactionsCreateForIssueRequest(
   content: ReactionsCreateForIssueRequestContent.fromJson(json['content'] as String),
-); }
+);}
 
 /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue.
 final ReactionsCreateForIssueRequestContent content;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content'); } 
-ReactionsCreateForIssueRequest copyWith({ReactionsCreateForIssueRequestContent? content}) { return ReactionsCreateForIssueRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content');}
+ReactionsCreateForIssueRequest copyWith({ReactionsCreateForIssueRequestContent? content}) {return ReactionsCreateForIssueRequest(
   content: content ?? this.content,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReactionsCreateForIssueRequest &&
-          content == other.content; } 
-@override int get hashCode { return content.hashCode; } 
-@override String toString() { return 'ReactionsCreateForIssueRequest(content: $content)'; } 
- }
+          content == other.content;}
+@override int get hashCode {return content.hashCode;}
+@override String toString() {return 'ReactionsCreateForIssueRequest(content: $content)';}
+}

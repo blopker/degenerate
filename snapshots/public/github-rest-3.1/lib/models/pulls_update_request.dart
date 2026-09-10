@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// State of this Pull Request. Either `open` or `closed`.
 @immutable final class PullsUpdateRequestState {const PullsUpdateRequestState._(this.value);
 
-factory PullsUpdateRequestState.fromJson(String json) { return switch (json) {
+factory PullsUpdateRequestState.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   _ => PullsUpdateRequestState._(json),
-}; }
+};}
 
 static const PullsUpdateRequestState open = PullsUpdateRequestState._('open');
 
@@ -17,23 +17,23 @@ static const List<PullsUpdateRequestState> values = [open, closed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullsUpdateRequestState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullsUpdateRequestState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PullsUpdateRequestState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PullsUpdateRequestState($value)';}
+}
 @immutable final class PullsUpdateRequest {const PullsUpdateRequest({this.title, this.body, this.state, this.base, this.maintainerCanModify, });
 
-factory PullsUpdateRequest.fromJson(Map<String, dynamic> json) { return PullsUpdateRequest(
+factory PullsUpdateRequest.fromJson(Map<String, dynamic> json) {return PullsUpdateRequest(
   title: json['title'] as String?,
   body: json['body'] as String?,
   state: json['state'] != null ? PullsUpdateRequestState.fromJson(json['state'] as String) : null,
   base: json['base'] as String?,
   maintainerCanModify: json['maintainer_can_modify'] as bool?,
-); }
+);}
 
 /// The title of the pull request.
 final String? title;
@@ -50,28 +50,28 @@ final String? base;
 /// Indicates whether [maintainers can modify](https://docs.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
 final bool? maintainerCanModify;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'title': ?title,
   'body': ?body,
   if (state != null) 'state': state?.toJson(),
   'base': ?base,
   'maintainer_can_modify': ?maintainerCanModify,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'title', 'body', 'state', 'base', 'maintainer_can_modify'}.contains(key)); } 
-PullsUpdateRequest copyWith({String? Function()? title, String? Function()? body, PullsUpdateRequestState? Function()? state, String? Function()? base, bool? Function()? maintainerCanModify, }) { return PullsUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'title', 'body', 'state', 'base', 'maintainer_can_modify'}.contains(key));}
+PullsUpdateRequest copyWith({String? Function()? title, String? Function()? body, PullsUpdateRequestState? Function()? state, String? Function()? base, bool? Function()? maintainerCanModify, }) {return PullsUpdateRequest(
   title: title != null ? title() : this.title,
   body: body != null ? body() : this.body,
   state: state != null ? state() : this.state,
   base: base != null ? base() : this.base,
   maintainerCanModify: maintainerCanModify != null ? maintainerCanModify() : this.maintainerCanModify,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PullsUpdateRequest &&
           title == other.title &&
           body == other.body &&
           state == other.state &&
           base == other.base &&
-          maintainerCanModify == other.maintainerCanModify; } 
-@override int get hashCode { return Object.hash(title, body, state, base, maintainerCanModify); } 
-@override String toString() { return 'PullsUpdateRequest(title: $title, body: $body, state: $state, base: $base, maintainerCanModify: $maintainerCanModify)'; } 
- }
+          maintainerCanModify == other.maintainerCanModify;}
+@override int get hashCode {return Object.hash(title, body, state, base, maintainerCanModify);}
+@override String toString() {return 'PullsUpdateRequest(title: $title, body: $body, state: $state, base: $base, maintainerCanModify: $maintainerCanModify)';}
+}

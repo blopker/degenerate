@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_incoming_phone_number_incoming_phone_number_mobile_capabilities.dart';import 'incoming_phone_number_mobile_enum_emergency_status.dart';import 'incoming_phone_number_mobile_enum_voice_receive_mode.dart';/// Whether the phone number requires an [Address](https://www.twilio.com/docs/usage/api/address) registered with Twilio. Can be: `none`, `any`, `local`, or `foreign`.
 @immutable final class IncomingPhoneNumberMobileEnumAddressRequirement {const IncomingPhoneNumberMobileEnumAddressRequirement._(this.value);
 
-factory IncomingPhoneNumberMobileEnumAddressRequirement.fromJson(String json) { return switch (json) {
+factory IncomingPhoneNumberMobileEnumAddressRequirement.fromJson(String json) {return switch (json) {
   'none' => none,
   'any' => any,
   'local' => local,
   'foreign' => foreign,
   _ => IncomingPhoneNumberMobileEnumAddressRequirement._(json),
-}; }
+};}
 
 static const IncomingPhoneNumberMobileEnumAddressRequirement none = IncomingPhoneNumberMobileEnumAddressRequirement._('none');
 
@@ -23,18 +23,18 @@ static const List<IncomingPhoneNumberMobileEnumAddressRequirement> values = [non
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IncomingPhoneNumberMobileEnumAddressRequirement && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IncomingPhoneNumberMobileEnumAddressRequirement($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IncomingPhoneNumberMobileEnumAddressRequirement && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IncomingPhoneNumberMobileEnumAddressRequirement($value)';}
+}
 /// The status of address registration with emergency services. A registered emergency address will be used during handling of emergency calls from this number.
 @immutable final class IncomingPhoneNumberMobileEnumEmergencyAddressStatus {const IncomingPhoneNumberMobileEnumEmergencyAddressStatus._(this.value);
 
-factory IncomingPhoneNumberMobileEnumEmergencyAddressStatus.fromJson(String json) { return switch (json) {
+factory IncomingPhoneNumberMobileEnumEmergencyAddressStatus.fromJson(String json) {return switch (json) {
   'registered' => registered,
   'unregistered' => unregistered,
   'pending-registration' => pendingRegistration,
@@ -42,7 +42,7 @@ factory IncomingPhoneNumberMobileEnumEmergencyAddressStatus.fromJson(String json
   'pending-unregistration' => pendingUnregistration,
   'unregistration-failure' => unregistrationFailure,
   _ => IncomingPhoneNumberMobileEnumEmergencyAddressStatus._(json),
-}; }
+};}
 
 static const IncomingPhoneNumberMobileEnumEmergencyAddressStatus registered = IncomingPhoneNumberMobileEnumEmergencyAddressStatus._('registered');
 
@@ -60,22 +60,22 @@ static const List<IncomingPhoneNumberMobileEnumEmergencyAddressStatus> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IncomingPhoneNumberMobileEnumEmergencyAddressStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IncomingPhoneNumberMobileEnumEmergencyAddressStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IncomingPhoneNumberMobileEnumEmergencyAddressStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IncomingPhoneNumberMobileEnumEmergencyAddressStatus($value)';}
+}
 /// The HTTP method we use to call `sms_fallback_url`. Can be: `GET` or `POST`.
 @immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod {const AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod._(this.value);
 
-factory AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod.fromJson(String json) { return switch (json) {
+factory AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod._(json),
-}; }
+};}
 
 static const AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod $get = AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod._('GET');
 
@@ -85,22 +85,22 @@ static const List<AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallback
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod($value)';}
+}
 /// The HTTP method we use to call `sms_url`. Can be: `GET` or `POST`.
 @immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod {const AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod._(this.value);
 
-factory AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod.fromJson(String json) { return switch (json) {
+factory AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod._(json),
-}; }
+};}
 
 static const AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod $get = AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod._('GET');
 
@@ -110,22 +110,22 @@ static const List<AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod($value)';}
+}
 /// The HTTP method we use to call `status_callback`. Can be: `GET` or `POST`.
 @immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod {const AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod._(this.value);
 
-factory AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod._(json),
-}; }
+};}
 
 static const AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod $get = AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod._('GET');
 
@@ -135,22 +135,22 @@ static const List<AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallb
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod($value)';}
+}
 /// The HTTP method we use to call `voice_fallback_url`. Can be: `GET` or `POST`.
 @immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceFallbackMethod {const AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceFallbackMethod._(this.value);
 
-factory AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceFallbackMethod.fromJson(String json) { return switch (json) {
+factory AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceFallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceFallbackMethod._(json),
-}; }
+};}
 
 static const AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceFallbackMethod $get = AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceFallbackMethod._('GET');
 
@@ -160,22 +160,22 @@ static const List<AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceFallba
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceFallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceFallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceFallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceFallbackMethod($value)';}
+}
 /// The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.
 @immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceMethod {const AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceMethod._(this.value);
 
-factory AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceMethod.fromJson(String json) { return switch (json) {
+factory AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceMethod._(json),
-}; }
+};}
 
 static const AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceMethod $get = AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceMethod._('GET');
 
@@ -185,17 +185,17 @@ static const List<AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceMethod
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceMethod($value)';}
+}
 @immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberMobile {const AccountIncomingPhoneNumberIncomingPhoneNumberMobile({this.origin = const Omittable.absent(), this.addressSid = const Omittable.absent(), this.addressRequirements, this.apiVersion = const Omittable.absent(), this.beta = const Omittable.absent(), this.capabilities = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.identitySid = const Omittable.absent(), this.phoneNumber = const Omittable.absent(), this.accountSid = const Omittable.absent(), this.sid = const Omittable.absent(), this.smsApplicationSid = const Omittable.absent(), this.smsFallbackMethod = const Omittable.absent(), this.smsFallbackUrl = const Omittable.absent(), this.smsMethod = const Omittable.absent(), this.smsUrl = const Omittable.absent(), this.statusCallback = const Omittable.absent(), this.statusCallbackMethod = const Omittable.absent(), this.trunkSid = const Omittable.absent(), this.status = const Omittable.absent(), this.voiceReceiveMode, this.voiceApplicationSid = const Omittable.absent(), this.voiceCallerIdLookup = const Omittable.absent(), this.voiceFallbackMethod = const Omittable.absent(), this.voiceFallbackUrl = const Omittable.absent(), this.voiceMethod = const Omittable.absent(), this.voiceUrl = const Omittable.absent(), this.emergencyStatus, this.emergencyAddressSid = const Omittable.absent(), this.emergencyAddressStatus, this.bundleSid = const Omittable.absent(), this.uri = const Omittable.absent(), });
 
-factory AccountIncomingPhoneNumberIncomingPhoneNumberMobile.fromJson(Map<String, dynamic> json) { return AccountIncomingPhoneNumberIncomingPhoneNumberMobile(
+factory AccountIncomingPhoneNumberIncomingPhoneNumberMobile.fromJson(Map<String, dynamic> json) {return AccountIncomingPhoneNumberIncomingPhoneNumberMobile(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   addressSid: json.containsKey('address_sid') ? Omittable(json['address_sid'] as String?) : const Omittable.absent(),
   addressRequirements: json['address_requirements'] != null ? IncomingPhoneNumberMobileEnumAddressRequirement.fromJson(json['address_requirements'] as String) : null,
@@ -230,7 +230,7 @@ factory AccountIncomingPhoneNumberIncomingPhoneNumberMobile.fromJson(Map<String,
   emergencyAddressStatus: json['emergency_address_status'] != null ? IncomingPhoneNumberMobileEnumEmergencyAddressStatus.fromJson(json['emergency_address_status'] as String) : null,
   bundleSid: json.containsKey('bundle_sid') ? Omittable(json['bundle_sid'] as String?) : const Omittable.absent(),
   status: json.containsKey('status') ? Omittable(json['status'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the resource.
 final Omittable<String?> accountSid;
@@ -329,7 +329,7 @@ final Omittable<String?> bundleSid;
 
 final Omittable<String?> status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (addressSid.isPresent) 'address_sid': addressSid.value,
   if (addressRequirements != null) 'address_requirements': addressRequirements?.toJson(),
@@ -364,9 +364,9 @@ Map<String, dynamic> toJson() { return {
   if (emergencyAddressStatus != null) 'emergency_address_status': emergencyAddressStatus?.toJson(),
   if (bundleSid.isPresent) 'bundle_sid': bundleSid.value,
   if (status.isPresent) 'status': status.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'address_sid', 'address_requirements', 'api_version', 'beta', 'capabilities', 'date_created', 'date_updated', 'friendly_name', 'identity_sid', 'phone_number', 'origin', 'sid', 'sms_application_sid', 'sms_fallback_method', 'sms_fallback_url', 'sms_method', 'sms_url', 'status_callback', 'status_callback_method', 'trunk_sid', 'uri', 'voice_receive_mode', 'voice_application_sid', 'voice_caller_id_lookup', 'voice_fallback_method', 'voice_fallback_url', 'voice_method', 'voice_url', 'emergency_status', 'emergency_address_sid', 'emergency_address_status', 'bundle_sid', 'status'}.contains(key)); } 
-AccountIncomingPhoneNumberIncomingPhoneNumberMobile copyWith({Omittable<String?>? accountSid, Omittable<String?>? addressSid, IncomingPhoneNumberMobileEnumAddressRequirement? Function()? addressRequirements, Omittable<String?>? apiVersion, Omittable<bool?>? beta, Omittable<AccountIncomingPhoneNumberIncomingPhoneNumberMobileCapabilities?>? capabilities, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? friendlyName, Omittable<String?>? identitySid, Omittable<String?>? phoneNumber, Omittable<String?>? origin, Omittable<String?>? sid, Omittable<String?>? smsApplicationSid, Omittable<AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod?>? smsFallbackMethod, Omittable<Uri?>? smsFallbackUrl, Omittable<AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod?>? smsMethod, Omittable<Uri?>? smsUrl, Omittable<Uri?>? statusCallback, Omittable<AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod?>? statusCallbackMethod, Omittable<String?>? trunkSid, Omittable<String?>? uri, IncomingPhoneNumberMobileEnumVoiceReceiveMode? Function()? voiceReceiveMode, Omittable<String?>? voiceApplicationSid, Omittable<bool?>? voiceCallerIdLookup, Omittable<AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceFallbackMethod?>? voiceFallbackMethod, Omittable<Uri?>? voiceFallbackUrl, Omittable<AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceMethod?>? voiceMethod, Omittable<Uri?>? voiceUrl, IncomingPhoneNumberMobileEnumEmergencyStatus? Function()? emergencyStatus, Omittable<String?>? emergencyAddressSid, IncomingPhoneNumberMobileEnumEmergencyAddressStatus? Function()? emergencyAddressStatus, Omittable<String?>? bundleSid, Omittable<String?>? status, }) { return AccountIncomingPhoneNumberIncomingPhoneNumberMobile(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'address_sid', 'address_requirements', 'api_version', 'beta', 'capabilities', 'date_created', 'date_updated', 'friendly_name', 'identity_sid', 'phone_number', 'origin', 'sid', 'sms_application_sid', 'sms_fallback_method', 'sms_fallback_url', 'sms_method', 'sms_url', 'status_callback', 'status_callback_method', 'trunk_sid', 'uri', 'voice_receive_mode', 'voice_application_sid', 'voice_caller_id_lookup', 'voice_fallback_method', 'voice_fallback_url', 'voice_method', 'voice_url', 'emergency_status', 'emergency_address_sid', 'emergency_address_status', 'bundle_sid', 'status'}.contains(key));}
+AccountIncomingPhoneNumberIncomingPhoneNumberMobile copyWith({Omittable<String?>? accountSid, Omittable<String?>? addressSid, IncomingPhoneNumberMobileEnumAddressRequirement? Function()? addressRequirements, Omittable<String?>? apiVersion, Omittable<bool?>? beta, Omittable<AccountIncomingPhoneNumberIncomingPhoneNumberMobileCapabilities?>? capabilities, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? friendlyName, Omittable<String?>? identitySid, Omittable<String?>? phoneNumber, Omittable<String?>? origin, Omittable<String?>? sid, Omittable<String?>? smsApplicationSid, Omittable<AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod?>? smsFallbackMethod, Omittable<Uri?>? smsFallbackUrl, Omittable<AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod?>? smsMethod, Omittable<Uri?>? smsUrl, Omittable<Uri?>? statusCallback, Omittable<AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod?>? statusCallbackMethod, Omittable<String?>? trunkSid, Omittable<String?>? uri, IncomingPhoneNumberMobileEnumVoiceReceiveMode? Function()? voiceReceiveMode, Omittable<String?>? voiceApplicationSid, Omittable<bool?>? voiceCallerIdLookup, Omittable<AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceFallbackMethod?>? voiceFallbackMethod, Omittable<Uri?>? voiceFallbackUrl, Omittable<AccountIncomingPhoneNumberIncomingPhoneNumberMobileVoiceMethod?>? voiceMethod, Omittable<Uri?>? voiceUrl, IncomingPhoneNumberMobileEnumEmergencyStatus? Function()? emergencyStatus, Omittable<String?>? emergencyAddressSid, IncomingPhoneNumberMobileEnumEmergencyAddressStatus? Function()? emergencyAddressStatus, Omittable<String?>? bundleSid, Omittable<String?>? status, }) {return AccountIncomingPhoneNumberIncomingPhoneNumberMobile(
   accountSid: accountSid ?? this.accountSid,
   addressSid: addressSid ?? this.addressSid,
   addressRequirements: addressRequirements != null ? addressRequirements() : this.addressRequirements,
@@ -401,8 +401,8 @@ AccountIncomingPhoneNumberIncomingPhoneNumberMobile copyWith({Omittable<String?>
   emergencyAddressStatus: emergencyAddressStatus != null ? emergencyAddressStatus() : this.emergencyAddressStatus,
   bundleSid: bundleSid ?? this.bundleSid,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountIncomingPhoneNumberIncomingPhoneNumberMobile &&
           accountSid == other.accountSid &&
           addressSid == other.addressSid &&
@@ -437,7 +437,7 @@ AccountIncomingPhoneNumberIncomingPhoneNumberMobile copyWith({Omittable<String?>
           emergencyAddressSid == other.emergencyAddressSid &&
           emergencyAddressStatus == other.emergencyAddressStatus &&
           bundleSid == other.bundleSid &&
-          status == other.status; } 
-@override int get hashCode { return Object.hashAll([accountSid, addressSid, addressRequirements, apiVersion, beta, capabilities, dateCreated, dateUpdated, friendlyName, identitySid, phoneNumber, origin, sid, smsApplicationSid, smsFallbackMethod, smsFallbackUrl, smsMethod, smsUrl, statusCallback, statusCallbackMethod, trunkSid, uri, voiceReceiveMode, voiceApplicationSid, voiceCallerIdLookup, voiceFallbackMethod, voiceFallbackUrl, voiceMethod, voiceUrl, emergencyStatus, emergencyAddressSid, emergencyAddressStatus, bundleSid, status]); } 
-@override String toString() { return 'AccountIncomingPhoneNumberIncomingPhoneNumberMobile(accountSid: $accountSid, addressSid: $addressSid, addressRequirements: $addressRequirements, apiVersion: $apiVersion, beta: $beta, capabilities: $capabilities, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, identitySid: $identitySid, phoneNumber: $phoneNumber, origin: $origin, sid: $sid, smsApplicationSid: $smsApplicationSid, smsFallbackMethod: $smsFallbackMethod, smsFallbackUrl: $smsFallbackUrl, smsMethod: $smsMethod, smsUrl: $smsUrl, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, trunkSid: $trunkSid, uri: $uri, voiceReceiveMode: $voiceReceiveMode, voiceApplicationSid: $voiceApplicationSid, voiceCallerIdLookup: $voiceCallerIdLookup, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceMethod: $voiceMethod, voiceUrl: $voiceUrl, emergencyStatus: $emergencyStatus, emergencyAddressSid: $emergencyAddressSid, emergencyAddressStatus: $emergencyAddressStatus, bundleSid: $bundleSid, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hashAll([accountSid, addressSid, addressRequirements, apiVersion, beta, capabilities, dateCreated, dateUpdated, friendlyName, identitySid, phoneNumber, origin, sid, smsApplicationSid, smsFallbackMethod, smsFallbackUrl, smsMethod, smsUrl, statusCallback, statusCallbackMethod, trunkSid, uri, voiceReceiveMode, voiceApplicationSid, voiceCallerIdLookup, voiceFallbackMethod, voiceFallbackUrl, voiceMethod, voiceUrl, emergencyStatus, emergencyAddressSid, emergencyAddressStatus, bundleSid, status]);}
+@override String toString() {return 'AccountIncomingPhoneNumberIncomingPhoneNumberMobile(accountSid: $accountSid, addressSid: $addressSid, addressRequirements: $addressRequirements, apiVersion: $apiVersion, beta: $beta, capabilities: $capabilities, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, identitySid: $identitySid, phoneNumber: $phoneNumber, origin: $origin, sid: $sid, smsApplicationSid: $smsApplicationSid, smsFallbackMethod: $smsFallbackMethod, smsFallbackUrl: $smsFallbackUrl, smsMethod: $smsMethod, smsUrl: $smsUrl, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, trunkSid: $trunkSid, uri: $uri, voiceReceiveMode: $voiceReceiveMode, voiceApplicationSid: $voiceApplicationSid, voiceCallerIdLookup: $voiceCallerIdLookup, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceMethod: $voiceMethod, voiceUrl: $voiceUrl, emergencyStatus: $emergencyStatus, emergencyAddressSid: $emergencyAddressSid, emergencyAddressStatus: $emergencyAddressStatus, bundleSid: $bundleSid, status: $status)';}
+}

@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_mnm_mnm_rule_automatic_advertisement.dart';import 'magic_visibility_mnm_mnm_rule_bandwidth_threshold.dart';import 'magic_visibility_mnm_mnm_rule_duration.dart';import 'magic_visibility_mnm_mnm_rule_ip_prefix.dart';import 'magic_visibility_mnm_mnm_rule_name.dart';import 'magic_visibility_mnm_mnm_rule_packet_threshold.dart';import 'magic_visibility_mnm_rule_identifier.dart';/// Prefix match type to be applied for a prefix auto advertisement when using an advanced_ddos rule.
 @immutable final class MagicVisibilityMnmMnmRulePrefixMatch {const MagicVisibilityMnmMnmRulePrefixMatch._(this.value);
 
-factory MagicVisibilityMnmMnmRulePrefixMatch.fromJson(String json) { return switch (json) {
+factory MagicVisibilityMnmMnmRulePrefixMatch.fromJson(String json) {return switch (json) {
   'exact' => exact,
   'subnet' => subnet,
   'supernet' => supernet,
   _ => MagicVisibilityMnmMnmRulePrefixMatch._(json),
-}; }
+};}
 
 static const MagicVisibilityMnmMnmRulePrefixMatch exact = MagicVisibilityMnmMnmRulePrefixMatch._('exact');
 
@@ -20,23 +20,23 @@ static const List<MagicVisibilityMnmMnmRulePrefixMatch> values = [exact, subnet,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicVisibilityMnmMnmRulePrefixMatch && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicVisibilityMnmMnmRulePrefixMatch($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MagicVisibilityMnmMnmRulePrefixMatch && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MagicVisibilityMnmMnmRulePrefixMatch($value)';}
+}
 /// MNM rule type.
 @immutable final class MagicVisibilityMnmMnmRuleType {const MagicVisibilityMnmMnmRuleType._(this.value);
 
-factory MagicVisibilityMnmMnmRuleType.fromJson(String json) { return switch (json) {
+factory MagicVisibilityMnmMnmRuleType.fromJson(String json) {return switch (json) {
   'threshold' => threshold,
   'zscore' => zscore,
   'advanced_ddos' => advancedDdos,
   _ => MagicVisibilityMnmMnmRuleType._(json),
-}; }
+};}
 
 static const MagicVisibilityMnmMnmRuleType threshold = MagicVisibilityMnmMnmRuleType._('threshold');
 
@@ -48,23 +48,23 @@ static const List<MagicVisibilityMnmMnmRuleType> values = [threshold, zscore, ad
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicVisibilityMnmMnmRuleType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicVisibilityMnmMnmRuleType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MagicVisibilityMnmMnmRuleType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MagicVisibilityMnmMnmRuleType($value)';}
+}
 /// Level of sensitivity set for zscore rules.
 @immutable final class MagicVisibilityMnmMnmRuleZscoreSensitivity {const MagicVisibilityMnmMnmRuleZscoreSensitivity._(this.value);
 
-factory MagicVisibilityMnmMnmRuleZscoreSensitivity.fromJson(String json) { return switch (json) {
+factory MagicVisibilityMnmMnmRuleZscoreSensitivity.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   _ => MagicVisibilityMnmMnmRuleZscoreSensitivity._(json),
-}; }
+};}
 
 static const MagicVisibilityMnmMnmRuleZscoreSensitivity low = MagicVisibilityMnmMnmRuleZscoreSensitivity._('low');
 
@@ -76,22 +76,22 @@ static const List<MagicVisibilityMnmMnmRuleZscoreSensitivity> values = [low, med
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicVisibilityMnmMnmRuleZscoreSensitivity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicVisibilityMnmMnmRuleZscoreSensitivity($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MagicVisibilityMnmMnmRuleZscoreSensitivity && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MagicVisibilityMnmMnmRuleZscoreSensitivity($value)';}
+}
 /// Target of the zscore rule analysis.
 @immutable final class MagicVisibilityMnmMnmRuleZscoreTarget {const MagicVisibilityMnmMnmRuleZscoreTarget._(this.value);
 
-factory MagicVisibilityMnmMnmRuleZscoreTarget.fromJson(String json) { return switch (json) {
+factory MagicVisibilityMnmMnmRuleZscoreTarget.fromJson(String json) {return switch (json) {
   'bits' => bits,
   'packets' => packets,
   _ => MagicVisibilityMnmMnmRuleZscoreTarget._(json),
-}; }
+};}
 
 static const MagicVisibilityMnmMnmRuleZscoreTarget bits = MagicVisibilityMnmMnmRuleZscoreTarget._('bits');
 
@@ -101,17 +101,17 @@ static const List<MagicVisibilityMnmMnmRuleZscoreTarget> values = [bits, packets
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicVisibilityMnmMnmRuleZscoreTarget && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicVisibilityMnmMnmRuleZscoreTarget($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MagicVisibilityMnmMnmRuleZscoreTarget && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MagicVisibilityMnmMnmRuleZscoreTarget($value)';}
+}
 @immutable final class MagicVisibilityMnmMnmRule {const MagicVisibilityMnmMnmRule({required this.automaticAdvertisement, required this.name, required this.prefixes, required this.type, this.bandwidthThreshold, this.duration, this.id, this.packetThreshold, this.prefixMatch = const Omittable.absent(), this.zscoreSensitivity = const Omittable.absent(), this.zscoreTarget = const Omittable.absent(), });
 
-factory MagicVisibilityMnmMnmRule.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmRule(
+factory MagicVisibilityMnmMnmRule.fromJson(Map<String, dynamic> json) {return MagicVisibilityMnmMnmRule(
   automaticAdvertisement: json['automatic_advertisement'] != null ? MagicVisibilityMnmMnmRuleAutomaticAdvertisement.fromJson(json['automatic_advertisement'] as bool) : null,
   bandwidthThreshold: json['bandwidth_threshold'] != null ? MagicVisibilityMnmMnmRuleBandwidthThreshold.fromJson(json['bandwidth_threshold'] as num) : null,
   duration: json['duration'] != null ? MagicVisibilityMnmMnmRuleDuration.fromJson(json['duration'] as String) : null,
@@ -123,7 +123,7 @@ factory MagicVisibilityMnmMnmRule.fromJson(Map<String, dynamic> json) { return M
   type: MagicVisibilityMnmMnmRuleType.fromJson(json['type'] as String),
   zscoreSensitivity: json.containsKey('zscore_sensitivity') ? Omittable(json['zscore_sensitivity'] != null ? MagicVisibilityMnmMnmRuleZscoreSensitivity.fromJson(json['zscore_sensitivity'] as String) : null) : const Omittable.absent(),
   zscoreTarget: json.containsKey('zscore_target') ? Omittable(json['zscore_target'] != null ? MagicVisibilityMnmMnmRuleZscoreTarget.fromJson(json['zscore_target'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 final MagicVisibilityMnmMnmRuleAutomaticAdvertisement? automaticAdvertisement;
 
@@ -147,7 +147,7 @@ final Omittable<MagicVisibilityMnmMnmRuleZscoreSensitivity?> zscoreSensitivity;
 
 final Omittable<MagicVisibilityMnmMnmRuleZscoreTarget?> zscoreTarget;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'automatic_advertisement': automaticAdvertisement?.toJson(),
   if (bandwidthThreshold != null) 'bandwidth_threshold': bandwidthThreshold?.toJson(),
   if (duration != null) 'duration': duration?.toJson(),
@@ -159,12 +159,12 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (zscoreSensitivity.isPresent) 'zscore_sensitivity': zscoreSensitivity.value?.toJson(),
   if (zscoreTarget.isPresent) 'zscore_target': zscoreTarget.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('automatic_advertisement') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('automatic_advertisement') &&
       json.containsKey('name') &&
       json.containsKey('prefixes') &&
-      json.containsKey('type'); } 
-MagicVisibilityMnmMnmRule copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisement? Function()? automaticAdvertisement, MagicVisibilityMnmMnmRuleBandwidthThreshold? Function()? bandwidthThreshold, MagicVisibilityMnmMnmRuleDuration? Function()? duration, MagicVisibilityMnmRuleIdentifier? Function()? id, MagicVisibilityMnmMnmRuleName? name, MagicVisibilityMnmMnmRulePacketThreshold? Function()? packetThreshold, Omittable<MagicVisibilityMnmMnmRulePrefixMatch?>? prefixMatch, List<MagicVisibilityMnmMnmRuleIpPrefix>? prefixes, MagicVisibilityMnmMnmRuleType? type, Omittable<MagicVisibilityMnmMnmRuleZscoreSensitivity?>? zscoreSensitivity, Omittable<MagicVisibilityMnmMnmRuleZscoreTarget?>? zscoreTarget, }) { return MagicVisibilityMnmMnmRule(
+      json.containsKey('type');}
+MagicVisibilityMnmMnmRule copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisement? Function()? automaticAdvertisement, MagicVisibilityMnmMnmRuleBandwidthThreshold? Function()? bandwidthThreshold, MagicVisibilityMnmMnmRuleDuration? Function()? duration, MagicVisibilityMnmRuleIdentifier? Function()? id, MagicVisibilityMnmMnmRuleName? name, MagicVisibilityMnmMnmRulePacketThreshold? Function()? packetThreshold, Omittable<MagicVisibilityMnmMnmRulePrefixMatch?>? prefixMatch, List<MagicVisibilityMnmMnmRuleIpPrefix>? prefixes, MagicVisibilityMnmMnmRuleType? type, Omittable<MagicVisibilityMnmMnmRuleZscoreSensitivity?>? zscoreSensitivity, Omittable<MagicVisibilityMnmMnmRuleZscoreTarget?>? zscoreTarget, }) {return MagicVisibilityMnmMnmRule(
   automaticAdvertisement: automaticAdvertisement != null ? automaticAdvertisement() : this.automaticAdvertisement,
   bandwidthThreshold: bandwidthThreshold != null ? bandwidthThreshold() : this.bandwidthThreshold,
   duration: duration != null ? duration() : this.duration,
@@ -176,8 +176,8 @@ MagicVisibilityMnmMnmRule copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisem
   type: type ?? this.type,
   zscoreSensitivity: zscoreSensitivity ?? this.zscoreSensitivity,
   zscoreTarget: zscoreTarget ?? this.zscoreTarget,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MagicVisibilityMnmMnmRule &&
           automaticAdvertisement == other.automaticAdvertisement &&
           bandwidthThreshold == other.bandwidthThreshold &&
@@ -189,7 +189,7 @@ MagicVisibilityMnmMnmRule copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisem
           listEquals(prefixes, other.prefixes) &&
           type == other.type &&
           zscoreSensitivity == other.zscoreSensitivity &&
-          zscoreTarget == other.zscoreTarget; } 
-@override int get hashCode { return Object.hash(automaticAdvertisement, bandwidthThreshold, duration, id, name, packetThreshold, prefixMatch, Object.hashAll(prefixes), type, zscoreSensitivity, zscoreTarget); } 
-@override String toString() { return 'MagicVisibilityMnmMnmRule(automaticAdvertisement: $automaticAdvertisement, bandwidthThreshold: $bandwidthThreshold, duration: $duration, id: $id, name: $name, packetThreshold: $packetThreshold, prefixMatch: $prefixMatch, prefixes: $prefixes, type: $type, zscoreSensitivity: $zscoreSensitivity, zscoreTarget: $zscoreTarget)'; } 
- }
+          zscoreTarget == other.zscoreTarget;}
+@override int get hashCode {return Object.hash(automaticAdvertisement, bandwidthThreshold, duration, id, name, packetThreshold, prefixMatch, Object.hashAll(prefixes), type, zscoreSensitivity, zscoreTarget);}
+@override String toString() {return 'MagicVisibilityMnmMnmRule(automaticAdvertisement: $automaticAdvertisement, bandwidthThreshold: $bandwidthThreshold, duration: $duration, id: $id, name: $name, packetThreshold: $packetThreshold, prefixMatch: $prefixMatch, prefixes: $prefixes, type: $type, zscoreSensitivity: $zscoreSensitivity, zscoreTarget: $zscoreTarget)';}
+}

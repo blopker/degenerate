@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_configuration_configuration_resource_cellular_config.dart';import 'terminal_configuration_configuration_resource_device_type_specific_config.dart';import 'terminal_configuration_configuration_resource_offline_config.dart';import 'terminal_configuration_configuration_resource_reboot_window.dart';import 'terminal_configuration_configuration_resource_tipping.dart';import 'terminal_configuration_configuration_resource_wifi_config.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TerminalConfigurationObject {const TerminalConfigurationObject._(this.value);
 
-factory TerminalConfigurationObject.fromJson(String json) { return switch (json) {
+factory TerminalConfigurationObject.fromJson(String json) {return switch (json) {
   'terminal.configuration' => terminalConfiguration,
   _ => TerminalConfigurationObject._(json),
-}; }
+};}
 
 static const TerminalConfigurationObject terminalConfiguration = TerminalConfigurationObject._('terminal.configuration');
 
@@ -14,19 +14,19 @@ static const List<TerminalConfigurationObject> values = [terminalConfiguration];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalConfigurationObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalConfigurationObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TerminalConfigurationObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TerminalConfigurationObject($value)';}
+}
 /// A Configurations object represents how features should be configured for terminal readers.
 /// For information about how to use it, see the [Terminal configurations documentation](https://docs.stripe.com/terminal/fleet/configurations-overview).
 @immutable final class TerminalConfiguration {const TerminalConfiguration({required this.id, required this.livemode, required this.object, this.bbposWisepad3, this.bbposWiseposE, this.cellular, this.isAccountDefault = const Omittable.absent(), this.name = const Omittable.absent(), this.offline, this.rebootWindow, this.stripeS700, this.stripeS710, this.tipping, this.verifoneP400, this.wifi, });
 
-factory TerminalConfiguration.fromJson(Map<String, dynamic> json) { return TerminalConfiguration(
+factory TerminalConfiguration.fromJson(Map<String, dynamic> json) {return TerminalConfiguration(
   bbposWisepad3: json['bbpos_wisepad3'] != null ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(json['bbpos_wisepad3'] as Map<String, dynamic>) : null,
   bbposWiseposE: json['bbpos_wisepos_e'] != null ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(json['bbpos_wisepos_e'] as Map<String, dynamic>) : null,
   cellular: json['cellular'] != null ? TerminalConfigurationConfigurationResourceCellularConfig.fromJson(json['cellular'] as Map<String, dynamic>) : null,
@@ -42,7 +42,7 @@ factory TerminalConfiguration.fromJson(Map<String, dynamic> json) { return Termi
   tipping: json['tipping'] != null ? TerminalConfigurationConfigurationResourceTipping.fromJson(json['tipping'] as Map<String, dynamic>) : null,
   verifoneP400: json['verifone_p400'] != null ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(json['verifone_p400'] as Map<String, dynamic>) : null,
   wifi: json['wifi'] != null ? TerminalConfigurationConfigurationResourceWifiConfig.fromJson(json['wifi'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? bbposWisepad3;
 
@@ -79,7 +79,7 @@ final TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? verifo
 
 final TerminalConfigurationConfigurationResourceWifiConfig? wifi;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bbposWisepad3 != null) 'bbpos_wisepad3': bbposWisepad3?.toJson(),
   if (bbposWiseposE != null) 'bbpos_wisepos_e': bbposWiseposE?.toJson(),
   if (cellular != null) 'cellular': cellular?.toJson(),
@@ -95,11 +95,11 @@ Map<String, dynamic> toJson() { return {
   if (tipping != null) 'tipping': tipping?.toJson(),
   if (verifoneP400 != null) 'verifone_p400': verifoneP400?.toJson(),
   if (wifi != null) 'wifi': wifi?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object'); } 
-TerminalConfiguration copyWith({TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? bbposWisepad3, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? bbposWiseposE, TerminalConfigurationConfigurationResourceCellularConfig? Function()? cellular, String? id, Omittable<bool?>? isAccountDefault, bool? livemode, Omittable<String?>? name, TerminalConfigurationObject? object, TerminalConfigurationConfigurationResourceOfflineConfig? Function()? offline, TerminalConfigurationConfigurationResourceRebootWindow? Function()? rebootWindow, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? stripeS700, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? stripeS710, TerminalConfigurationConfigurationResourceTipping? Function()? tipping, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? verifoneP400, TerminalConfigurationConfigurationResourceWifiConfig? Function()? wifi, }) { return TerminalConfiguration(
+      json.containsKey('object');}
+TerminalConfiguration copyWith({TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? bbposWisepad3, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? bbposWiseposE, TerminalConfigurationConfigurationResourceCellularConfig? Function()? cellular, String? id, Omittable<bool?>? isAccountDefault, bool? livemode, Omittable<String?>? name, TerminalConfigurationObject? object, TerminalConfigurationConfigurationResourceOfflineConfig? Function()? offline, TerminalConfigurationConfigurationResourceRebootWindow? Function()? rebootWindow, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? stripeS700, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? stripeS710, TerminalConfigurationConfigurationResourceTipping? Function()? tipping, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? verifoneP400, TerminalConfigurationConfigurationResourceWifiConfig? Function()? wifi, }) {return TerminalConfiguration(
   bbposWisepad3: bbposWisepad3 != null ? bbposWisepad3() : this.bbposWisepad3,
   bbposWiseposE: bbposWiseposE != null ? bbposWiseposE() : this.bbposWiseposE,
   cellular: cellular != null ? cellular() : this.cellular,
@@ -115,8 +115,8 @@ TerminalConfiguration copyWith({TerminalConfigurationConfigurationResourceDevice
   tipping: tipping != null ? tipping() : this.tipping,
   verifoneP400: verifoneP400 != null ? verifoneP400() : this.verifoneP400,
   wifi: wifi != null ? wifi() : this.wifi,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TerminalConfiguration &&
           bbposWisepad3 == other.bbposWisepad3 &&
           bbposWiseposE == other.bbposWiseposE &&
@@ -132,7 +132,7 @@ TerminalConfiguration copyWith({TerminalConfigurationConfigurationResourceDevice
           stripeS710 == other.stripeS710 &&
           tipping == other.tipping &&
           verifoneP400 == other.verifoneP400 &&
-          wifi == other.wifi; } 
-@override int get hashCode { return Object.hash(bbposWisepad3, bbposWiseposE, cellular, id, isAccountDefault, livemode, name, object, offline, rebootWindow, stripeS700, stripeS710, tipping, verifoneP400, wifi); } 
-@override String toString() { return 'TerminalConfiguration(bbposWisepad3: $bbposWisepad3, bbposWiseposE: $bbposWiseposE, cellular: $cellular, id: $id, isAccountDefault: $isAccountDefault, livemode: $livemode, name: $name, object: $object, offline: $offline, rebootWindow: $rebootWindow, stripeS700: $stripeS700, stripeS710: $stripeS710, tipping: $tipping, verifoneP400: $verifoneP400, wifi: $wifi)'; } 
- }
+          wifi == other.wifi;}
+@override int get hashCode {return Object.hash(bbposWisepad3, bbposWiseposE, cellular, id, isAccountDefault, livemode, name, object, offline, rebootWindow, stripeS700, stripeS710, tipping, verifoneP400, wifi);}
+@override String toString() {return 'TerminalConfiguration(bbposWisepad3: $bbposWisepad3, bbposWiseposE: $bbposWiseposE, cellular: $cellular, id: $id, isAccountDefault: $isAccountDefault, livemode: $livemode, name: $name, object: $object, offline: $offline, rebootWindow: $rebootWindow, stripeS700: $stripeS700, stripeS710: $stripeS710, tipping: $tipping, verifoneP400: $verifoneP400, wifi: $wifi)';}
+}

@@ -2,30 +2,30 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_text_to_text_variant2_messages_content.dart';@immutable final class ImageTextToTextVariant2Messages {const ImageTextToTextVariant2Messages({required this.content, required this.role, });
 
-factory ImageTextToTextVariant2Messages.fromJson(Map<String, dynamic> json) { return ImageTextToTextVariant2Messages(
+factory ImageTextToTextVariant2Messages.fromJson(Map<String, dynamic> json) {return ImageTextToTextVariant2Messages(
   content: ImageTextToTextVariant2MessagesContent.fromJson(json['content']),
   role: json['role'] as String,
-); }
+);}
 
 final ImageTextToTextVariant2MessagesContent content;
 
 /// The role of the message sender (e.g., 'user', 'assistant', 'system', 'tool').
 final String role;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content.toJson(),
   'role': role,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
-      json.containsKey('role') && json['role'] is String; } 
-ImageTextToTextVariant2Messages copyWith({ImageTextToTextVariant2MessagesContent? content, String? role, }) { return ImageTextToTextVariant2Messages(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') &&
+      json.containsKey('role') && json['role'] is String;}
+ImageTextToTextVariant2Messages copyWith({ImageTextToTextVariant2MessagesContent? content, String? role, }) {return ImageTextToTextVariant2Messages(
   content: content ?? this.content,
   role: role ?? this.role,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ImageTextToTextVariant2Messages &&
           content == other.content &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(content, role); } 
-@override String toString() { return 'ImageTextToTextVariant2Messages(content: $content, role: $role)'; } 
- }
+          role == other.role;}
+@override int get hashCode {return Object.hash(content, role);}
+@override String toString() {return 'ImageTextToTextVariant2Messages(content: $content, role: $role)';}
+}

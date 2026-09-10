@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigUpdateGatewayRequestStripeUsageEvents {const AigConfigUpdateGatewayRequestStripeUsageEvents({required this.payload});
 
-factory AigConfigUpdateGatewayRequestStripeUsageEvents.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayRequestStripeUsageEvents(
+factory AigConfigUpdateGatewayRequestStripeUsageEvents.fromJson(Map<String, dynamic> json) {return AigConfigUpdateGatewayRequestStripeUsageEvents(
   payload: json['payload'] as String,
-); }
+);}
 
 final String payload;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'payload': payload,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('payload') && json['payload'] is String; } 
-AigConfigUpdateGatewayRequestStripeUsageEvents copyWith({String? payload}) { return AigConfigUpdateGatewayRequestStripeUsageEvents(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('payload') && json['payload'] is String;}
+AigConfigUpdateGatewayRequestStripeUsageEvents copyWith({String? payload}) {return AigConfigUpdateGatewayRequestStripeUsageEvents(
   payload: payload ?? this.payload,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigUpdateGatewayRequestStripeUsageEvents &&
-          payload == other.payload; } 
-@override int get hashCode { return payload.hashCode; } 
-@override String toString() { return 'AigConfigUpdateGatewayRequestStripeUsageEvents(payload: $payload)'; } 
- }
+          payload == other.payload;}
+@override int get hashCode {return payload.hashCode;}
+@override String toString() {return 'AigConfigUpdateGatewayRequestStripeUsageEvents(payload: $payload)';}
+}

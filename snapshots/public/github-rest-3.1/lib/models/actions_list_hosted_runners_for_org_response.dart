@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_hosted_runner.dart';@immutable final class ActionsListHostedRunnersForOrgResponse {const ActionsListHostedRunnersForOrgResponse({required this.totalCount, required this.runners, });
 
-factory ActionsListHostedRunnersForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsListHostedRunnersForOrgResponse(
+factory ActionsListHostedRunnersForOrgResponse.fromJson(Map<String, dynamic> json) {return ActionsListHostedRunnersForOrgResponse(
   totalCount: (json['total_count'] as num).toInt(),
   runners: (json['runners'] as List<dynamic>).map((e) => ActionsHostedRunner.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<ActionsHostedRunner> runners;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'runners': runners.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('runners'); } 
-ActionsListHostedRunnersForOrgResponse copyWith({int? totalCount, List<ActionsHostedRunner>? runners, }) { return ActionsListHostedRunnersForOrgResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('runners');}
+ActionsListHostedRunnersForOrgResponse copyWith({int? totalCount, List<ActionsHostedRunner>? runners, }) {return ActionsListHostedRunnersForOrgResponse(
   totalCount: totalCount ?? this.totalCount,
   runners: runners ?? this.runners,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ActionsListHostedRunnersForOrgResponse &&
           totalCount == other.totalCount &&
-          listEquals(runners, other.runners); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(runners)); } 
-@override String toString() { return 'ActionsListHostedRunnersForOrgResponse(totalCount: $totalCount, runners: $runners)'; } 
- }
+          listEquals(runners, other.runners);}
+@override int get hashCode {return Object.hash(totalCount, Object.hashAll(runners));}
+@override String toString() {return 'ActionsListHostedRunnersForOrgResponse(totalCount: $totalCount, runners: $runners)';}
+}

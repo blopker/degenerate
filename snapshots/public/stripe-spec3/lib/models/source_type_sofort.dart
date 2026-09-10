@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeSofort {const SourceTypeSofort({this.bankCode = const Omittable.absent(), this.bankName = const Omittable.absent(), this.bic = const Omittable.absent(), this.country = const Omittable.absent(), this.ibanLast4 = const Omittable.absent(), this.preferredLanguage = const Omittable.absent(), this.statementDescriptor = const Omittable.absent(), });
 
-factory SourceTypeSofort.fromJson(Map<String, dynamic> json) { return SourceTypeSofort(
+factory SourceTypeSofort.fromJson(Map<String, dynamic> json) {return SourceTypeSofort(
   bankCode: json.containsKey('bank_code') ? Omittable(json['bank_code'] as String?) : const Omittable.absent(),
   bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
   bic: json.containsKey('bic') ? Omittable(json['bic'] as String?) : const Omittable.absent(),
@@ -10,7 +10,7 @@ factory SourceTypeSofort.fromJson(Map<String, dynamic> json) { return SourceType
   ibanLast4: json.containsKey('iban_last4') ? Omittable(json['iban_last4'] as String?) : const Omittable.absent(),
   preferredLanguage: json.containsKey('preferred_language') ? Omittable(json['preferred_language'] as String?) : const Omittable.absent(),
   statementDescriptor: json.containsKey('statement_descriptor') ? Omittable(json['statement_descriptor'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final Omittable<String?> bankCode;
 
@@ -26,7 +26,7 @@ final Omittable<String?> preferredLanguage;
 
 final Omittable<String?> statementDescriptor;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bankCode.isPresent) 'bank_code': bankCode.value,
   if (bankName.isPresent) 'bank_name': bankName.value,
   if (bic.isPresent) 'bic': bic.value,
@@ -34,9 +34,9 @@ Map<String, dynamic> toJson() { return {
   if (ibanLast4.isPresent) 'iban_last4': ibanLast4.value,
   if (preferredLanguage.isPresent) 'preferred_language': preferredLanguage.value,
   if (statementDescriptor.isPresent) 'statement_descriptor': statementDescriptor.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_code', 'bank_name', 'bic', 'country', 'iban_last4', 'preferred_language', 'statement_descriptor'}.contains(key)); } 
-SourceTypeSofort copyWith({Omittable<String?>? bankCode, Omittable<String?>? bankName, Omittable<String?>? bic, Omittable<String?>? country, Omittable<String?>? ibanLast4, Omittable<String?>? preferredLanguage, Omittable<String?>? statementDescriptor, }) { return SourceTypeSofort(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank_code', 'bank_name', 'bic', 'country', 'iban_last4', 'preferred_language', 'statement_descriptor'}.contains(key));}
+SourceTypeSofort copyWith({Omittable<String?>? bankCode, Omittable<String?>? bankName, Omittable<String?>? bic, Omittable<String?>? country, Omittable<String?>? ibanLast4, Omittable<String?>? preferredLanguage, Omittable<String?>? statementDescriptor, }) {return SourceTypeSofort(
   bankCode: bankCode ?? this.bankCode,
   bankName: bankName ?? this.bankName,
   bic: bic ?? this.bic,
@@ -44,8 +44,8 @@ SourceTypeSofort copyWith({Omittable<String?>? bankCode, Omittable<String?>? ban
   ibanLast4: ibanLast4 ?? this.ibanLast4,
   preferredLanguage: preferredLanguage ?? this.preferredLanguage,
   statementDescriptor: statementDescriptor ?? this.statementDescriptor,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SourceTypeSofort &&
           bankCode == other.bankCode &&
           bankName == other.bankName &&
@@ -53,7 +53,7 @@ SourceTypeSofort copyWith({Omittable<String?>? bankCode, Omittable<String?>? ban
           country == other.country &&
           ibanLast4 == other.ibanLast4 &&
           preferredLanguage == other.preferredLanguage &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(bankCode, bankName, bic, country, ibanLast4, preferredLanguage, statementDescriptor); } 
-@override String toString() { return 'SourceTypeSofort(bankCode: $bankCode, bankName: $bankName, bic: $bic, country: $country, ibanLast4: $ibanLast4, preferredLanguage: $preferredLanguage, statementDescriptor: $statementDescriptor)'; } 
- }
+          statementDescriptor == other.statementDescriptor;}
+@override int get hashCode {return Object.hash(bankCode, bankName, bic, country, ibanLast4, preferredLanguage, statementDescriptor);}
+@override String toString() {return 'SourceTypeSofort(bankCode: $bankCode, bankName: $bankName, bic: $bic, country: $country, ibanLast4: $ibanLast4, preferredLanguage: $preferredLanguage, statementDescriptor: $statementDescriptor)';}
+}

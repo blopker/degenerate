@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A summary of the mitigations related to this report.
 @immutable final class AbuseReportsMitigationSummary {const AbuseReportsMitigationSummary({required this.acceptedUrlCount, required this.activeCount, required this.externalHostNotified, required this.inReviewCount, required this.pendingCount, });
 
-factory AbuseReportsMitigationSummary.fromJson(Map<String, dynamic> json) { return AbuseReportsMitigationSummary(
+factory AbuseReportsMitigationSummary.fromJson(Map<String, dynamic> json) {return AbuseReportsMitigationSummary(
   acceptedUrlCount: (json['accepted_url_count'] as num).toInt(),
   activeCount: (json['active_count'] as num).toInt(),
   externalHostNotified: json['external_host_notified'] as bool,
   inReviewCount: (json['in_review_count'] as num).toInt(),
   pendingCount: (json['pending_count'] as num).toInt(),
-); }
+);}
 
 /// How many of the reported URLs were confirmed as abusive.
 final int acceptedUrlCount;
@@ -26,32 +26,32 @@ final int inReviewCount;
 /// How many mitigations are pending their effective date.
 final int pendingCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accepted_url_count': acceptedUrlCount,
   'active_count': activeCount,
   'external_host_notified': externalHostNotified,
   'in_review_count': inReviewCount,
   'pending_count': pendingCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('accepted_url_count') && json['accepted_url_count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('accepted_url_count') && json['accepted_url_count'] is num &&
       json.containsKey('active_count') && json['active_count'] is num &&
       json.containsKey('external_host_notified') && json['external_host_notified'] is bool &&
       json.containsKey('in_review_count') && json['in_review_count'] is num &&
-      json.containsKey('pending_count') && json['pending_count'] is num; } 
-AbuseReportsMitigationSummary copyWith({int? acceptedUrlCount, int? activeCount, bool? externalHostNotified, int? inReviewCount, int? pendingCount, }) { return AbuseReportsMitigationSummary(
+      json.containsKey('pending_count') && json['pending_count'] is num;}
+AbuseReportsMitigationSummary copyWith({int? acceptedUrlCount, int? activeCount, bool? externalHostNotified, int? inReviewCount, int? pendingCount, }) {return AbuseReportsMitigationSummary(
   acceptedUrlCount: acceptedUrlCount ?? this.acceptedUrlCount,
   activeCount: activeCount ?? this.activeCount,
   externalHostNotified: externalHostNotified ?? this.externalHostNotified,
   inReviewCount: inReviewCount ?? this.inReviewCount,
   pendingCount: pendingCount ?? this.pendingCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AbuseReportsMitigationSummary &&
           acceptedUrlCount == other.acceptedUrlCount &&
           activeCount == other.activeCount &&
           externalHostNotified == other.externalHostNotified &&
           inReviewCount == other.inReviewCount &&
-          pendingCount == other.pendingCount; } 
-@override int get hashCode { return Object.hash(acceptedUrlCount, activeCount, externalHostNotified, inReviewCount, pendingCount); } 
-@override String toString() { return 'AbuseReportsMitigationSummary(acceptedUrlCount: $acceptedUrlCount, activeCount: $activeCount, externalHostNotified: $externalHostNotified, inReviewCount: $inReviewCount, pendingCount: $pendingCount)'; } 
- }
+          pendingCount == other.pendingCount;}
+@override int get hashCode {return Object.hash(acceptedUrlCount, activeCount, externalHostNotified, inReviewCount, pendingCount);}
+@override String toString() {return 'AbuseReportsMitigationSummary(acceptedUrlCount: $acceptedUrlCount, activeCount: $activeCount, externalHostNotified: $externalHostNotified, inReviewCount: $inReviewCount, pendingCount: $pendingCount)';}
+}

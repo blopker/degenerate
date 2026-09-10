@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_branch_protection_rule_edited_changes_admin_enforced.dart';import 'webhook_branch_protection_rule_edited_changes_authorized_actor_names.dart';import 'webhook_branch_protection_rule_edited_changes_authorized_actors_only.dart';import 'webhook_branch_protection_rule_edited_changes_authorized_dismissal_actors_only.dart';import 'webhook_branch_protection_rule_edited_changes_linear_history_requirement_enforcement_level.dart';import 'webhook_branch_protection_rule_edited_changes_lock_allows_fork_sync.dart';import 'webhook_branch_protection_rule_edited_changes_lock_branch_enforcement_level.dart';import 'webhook_branch_protection_rule_edited_changes_pull_request_reviews_enforcement_level.dart';import 'webhook_branch_protection_rule_edited_changes_require_last_push_approval.dart';import 'webhook_branch_protection_rule_edited_changes_required_status_checks.dart';import 'webhook_branch_protection_rule_edited_changes_required_status_checks_enforcement_level.dart';/// If the action was `edited`, the changes to the rule.
 @immutable final class WebhookBranchProtectionRuleEditedChanges {const WebhookBranchProtectionRuleEditedChanges({this.adminEnforced, this.authorizedActorNames, this.authorizedActorsOnly, this.authorizedDismissalActorsOnly, this.linearHistoryRequirementEnforcementLevel, this.lockBranchEnforcementLevel, this.lockAllowsForkSync, this.pullRequestReviewsEnforcementLevel, this.requireLastPushApproval, this.requiredStatusChecks, this.requiredStatusChecksEnforcementLevel, });
 
-factory WebhookBranchProtectionRuleEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChanges(
+factory WebhookBranchProtectionRuleEditedChanges.fromJson(Map<String, dynamic> json) {return WebhookBranchProtectionRuleEditedChanges(
   adminEnforced: json['admin_enforced'] != null ? WebhookBranchProtectionRuleEditedChangesAdminEnforced.fromJson(json['admin_enforced'] as Map<String, dynamic>) : null,
   authorizedActorNames: json['authorized_actor_names'] != null ? WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames.fromJson(json['authorized_actor_names'] as Map<String, dynamic>) : null,
   authorizedActorsOnly: json['authorized_actors_only'] != null ? WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly.fromJson(json['authorized_actors_only'] as Map<String, dynamic>) : null,
@@ -15,7 +15,7 @@ factory WebhookBranchProtectionRuleEditedChanges.fromJson(Map<String, dynamic> j
   requireLastPushApproval: json['require_last_push_approval'] != null ? WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval.fromJson(json['require_last_push_approval'] as Map<String, dynamic>) : null,
   requiredStatusChecks: json['required_status_checks'] != null ? WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks.fromJson(json['required_status_checks'] as Map<String, dynamic>) : null,
   requiredStatusChecksEnforcementLevel: json['required_status_checks_enforcement_level'] != null ? WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel.fromJson(json['required_status_checks_enforcement_level'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookBranchProtectionRuleEditedChangesAdminEnforced? adminEnforced;
 
@@ -39,7 +39,7 @@ final WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks? requiredStat
 
 final WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel? requiredStatusChecksEnforcementLevel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (adminEnforced != null) 'admin_enforced': adminEnforced?.toJson(),
   if (authorizedActorNames != null) 'authorized_actor_names': authorizedActorNames?.toJson(),
   if (authorizedActorsOnly != null) 'authorized_actors_only': authorizedActorsOnly?.toJson(),
@@ -51,9 +51,9 @@ Map<String, dynamic> toJson() { return {
   if (requireLastPushApproval != null) 'require_last_push_approval': requireLastPushApproval?.toJson(),
   if (requiredStatusChecks != null) 'required_status_checks': requiredStatusChecks?.toJson(),
   if (requiredStatusChecksEnforcementLevel != null) 'required_status_checks_enforcement_level': requiredStatusChecksEnforcementLevel?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'admin_enforced', 'authorized_actor_names', 'authorized_actors_only', 'authorized_dismissal_actors_only', 'linear_history_requirement_enforcement_level', 'lock_branch_enforcement_level', 'lock_allows_fork_sync', 'pull_request_reviews_enforcement_level', 'require_last_push_approval', 'required_status_checks', 'required_status_checks_enforcement_level'}.contains(key)); } 
-WebhookBranchProtectionRuleEditedChanges copyWith({WebhookBranchProtectionRuleEditedChangesAdminEnforced? Function()? adminEnforced, WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames? Function()? authorizedActorNames, WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly? Function()? authorizedActorsOnly, WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly? Function()? authorizedDismissalActorsOnly, WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel? Function()? linearHistoryRequirementEnforcementLevel, WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel? Function()? lockBranchEnforcementLevel, WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync? Function()? lockAllowsForkSync, WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel? Function()? pullRequestReviewsEnforcementLevel, WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval? Function()? requireLastPushApproval, WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks? Function()? requiredStatusChecks, WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel? Function()? requiredStatusChecksEnforcementLevel, }) { return WebhookBranchProtectionRuleEditedChanges(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'admin_enforced', 'authorized_actor_names', 'authorized_actors_only', 'authorized_dismissal_actors_only', 'linear_history_requirement_enforcement_level', 'lock_branch_enforcement_level', 'lock_allows_fork_sync', 'pull_request_reviews_enforcement_level', 'require_last_push_approval', 'required_status_checks', 'required_status_checks_enforcement_level'}.contains(key));}
+WebhookBranchProtectionRuleEditedChanges copyWith({WebhookBranchProtectionRuleEditedChangesAdminEnforced? Function()? adminEnforced, WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames? Function()? authorizedActorNames, WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly? Function()? authorizedActorsOnly, WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly? Function()? authorizedDismissalActorsOnly, WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel? Function()? linearHistoryRequirementEnforcementLevel, WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel? Function()? lockBranchEnforcementLevel, WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync? Function()? lockAllowsForkSync, WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel? Function()? pullRequestReviewsEnforcementLevel, WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval? Function()? requireLastPushApproval, WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks? Function()? requiredStatusChecks, WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel? Function()? requiredStatusChecksEnforcementLevel, }) {return WebhookBranchProtectionRuleEditedChanges(
   adminEnforced: adminEnforced != null ? adminEnforced() : this.adminEnforced,
   authorizedActorNames: authorizedActorNames != null ? authorizedActorNames() : this.authorizedActorNames,
   authorizedActorsOnly: authorizedActorsOnly != null ? authorizedActorsOnly() : this.authorizedActorsOnly,
@@ -65,8 +65,8 @@ WebhookBranchProtectionRuleEditedChanges copyWith({WebhookBranchProtectionRuleEd
   requireLastPushApproval: requireLastPushApproval != null ? requireLastPushApproval() : this.requireLastPushApproval,
   requiredStatusChecks: requiredStatusChecks != null ? requiredStatusChecks() : this.requiredStatusChecks,
   requiredStatusChecksEnforcementLevel: requiredStatusChecksEnforcementLevel != null ? requiredStatusChecksEnforcementLevel() : this.requiredStatusChecksEnforcementLevel,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookBranchProtectionRuleEditedChanges &&
           adminEnforced == other.adminEnforced &&
           authorizedActorNames == other.authorizedActorNames &&
@@ -78,7 +78,7 @@ WebhookBranchProtectionRuleEditedChanges copyWith({WebhookBranchProtectionRuleEd
           pullRequestReviewsEnforcementLevel == other.pullRequestReviewsEnforcementLevel &&
           requireLastPushApproval == other.requireLastPushApproval &&
           requiredStatusChecks == other.requiredStatusChecks &&
-          requiredStatusChecksEnforcementLevel == other.requiredStatusChecksEnforcementLevel; } 
-@override int get hashCode { return Object.hash(adminEnforced, authorizedActorNames, authorizedActorsOnly, authorizedDismissalActorsOnly, linearHistoryRequirementEnforcementLevel, lockBranchEnforcementLevel, lockAllowsForkSync, pullRequestReviewsEnforcementLevel, requireLastPushApproval, requiredStatusChecks, requiredStatusChecksEnforcementLevel); } 
-@override String toString() { return 'WebhookBranchProtectionRuleEditedChanges(adminEnforced: $adminEnforced, authorizedActorNames: $authorizedActorNames, authorizedActorsOnly: $authorizedActorsOnly, authorizedDismissalActorsOnly: $authorizedDismissalActorsOnly, linearHistoryRequirementEnforcementLevel: $linearHistoryRequirementEnforcementLevel, lockBranchEnforcementLevel: $lockBranchEnforcementLevel, lockAllowsForkSync: $lockAllowsForkSync, pullRequestReviewsEnforcementLevel: $pullRequestReviewsEnforcementLevel, requireLastPushApproval: $requireLastPushApproval, requiredStatusChecks: $requiredStatusChecks, requiredStatusChecksEnforcementLevel: $requiredStatusChecksEnforcementLevel)'; } 
- }
+          requiredStatusChecksEnforcementLevel == other.requiredStatusChecksEnforcementLevel;}
+@override int get hashCode {return Object.hash(adminEnforced, authorizedActorNames, authorizedActorsOnly, authorizedDismissalActorsOnly, linearHistoryRequirementEnforcementLevel, lockBranchEnforcementLevel, lockAllowsForkSync, pullRequestReviewsEnforcementLevel, requireLastPushApproval, requiredStatusChecks, requiredStatusChecksEnforcementLevel);}
+@override String toString() {return 'WebhookBranchProtectionRuleEditedChanges(adminEnforced: $adminEnforced, authorizedActorNames: $authorizedActorNames, authorizedActorsOnly: $authorizedActorsOnly, authorizedDismissalActorsOnly: $authorizedDismissalActorsOnly, linearHistoryRequirementEnforcementLevel: $linearHistoryRequirementEnforcementLevel, lockBranchEnforcementLevel: $lockBranchEnforcementLevel, lockAllowsForkSync: $lockAllowsForkSync, pullRequestReviewsEnforcementLevel: $pullRequestReviewsEnforcementLevel, requireLastPushApproval: $requireLastPushApproval, requiredStatusChecks: $requiredStatusChecks, requiredStatusChecksEnforcementLevel: $requiredStatusChecksEnforcementLevel)';}
+}

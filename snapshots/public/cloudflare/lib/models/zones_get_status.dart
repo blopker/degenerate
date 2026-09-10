@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify a zone status to filter by.
 @immutable final class ZonesGetStatus {const ZonesGetStatus._(this.value);
 
-factory ZonesGetStatus.fromJson(String json) { return switch (json) {
+factory ZonesGetStatus.fromJson(String json) {return switch (json) {
   'initializing' => initializing,
   'pending' => pending,
   'active' => active,
   'moved' => moved,
   _ => ZonesGetStatus._(json),
-}; }
+};}
 
 static const ZonesGetStatus initializing = ZonesGetStatus._('initializing');
 
@@ -23,11 +23,11 @@ static const List<ZonesGetStatus> values = [initializing, pending, active, moved
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesGetStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesGetStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesGetStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesGetStatus($value)';}
+}

@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_programmatic_access_grant_permissions.dart';import 'simple_user.dart';/// Type of repository selection requested.
 @immutable final class OrganizationProgrammaticAccessGrantRepositorySelection {const OrganizationProgrammaticAccessGrantRepositorySelection._(this.value);
 
-factory OrganizationProgrammaticAccessGrantRepositorySelection.fromJson(String json) { return switch (json) {
+factory OrganizationProgrammaticAccessGrantRepositorySelection.fromJson(String json) {return switch (json) {
   'none' => none,
   'all' => all,
   'subset' => subset,
   _ => OrganizationProgrammaticAccessGrantRepositorySelection._(json),
-}; }
+};}
 
 static const OrganizationProgrammaticAccessGrantRepositorySelection none = OrganizationProgrammaticAccessGrantRepositorySelection._('none');
 
@@ -20,18 +20,18 @@ static const List<OrganizationProgrammaticAccessGrantRepositorySelection> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationProgrammaticAccessGrantRepositorySelection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationProgrammaticAccessGrantRepositorySelection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrganizationProgrammaticAccessGrantRepositorySelection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrganizationProgrammaticAccessGrantRepositorySelection($value)';}
+}
 /// Minimal representation of an organization programmatic access grant for enumerations
 @immutable final class OrganizationProgrammaticAccessGrant {const OrganizationProgrammaticAccessGrant({required this.id, required this.owner, required this.repositorySelection, required this.repositoriesUrl, required this.permissions, required this.accessGrantedAt, required this.tokenId, required this.tokenName, required this.tokenExpired, required this.tokenExpiresAt, required this.tokenLastUsedAt, });
 
-factory OrganizationProgrammaticAccessGrant.fromJson(Map<String, dynamic> json) { return OrganizationProgrammaticAccessGrant(
+factory OrganizationProgrammaticAccessGrant.fromJson(Map<String, dynamic> json) {return OrganizationProgrammaticAccessGrant(
   id: (json['id'] as num).toInt(),
   owner: SimpleUser.fromJson(json['owner'] as Map<String, dynamic>),
   repositorySelection: OrganizationProgrammaticAccessGrantRepositorySelection.fromJson(json['repository_selection'] as String),
@@ -43,7 +43,7 @@ factory OrganizationProgrammaticAccessGrant.fromJson(Map<String, dynamic> json) 
   tokenExpired: json['token_expired'] as bool,
   tokenExpiresAt: json['token_expires_at'] as String?,
   tokenLastUsedAt: json['token_last_used_at'] as String?,
-); }
+);}
 
 /// Unique identifier of the fine-grained personal access token grant. The `pat_id` used to get details about an approved fine-grained personal access token.
 final int id;
@@ -77,7 +77,7 @@ final String? tokenExpiresAt;
 /// Date and time when the associated fine-grained personal access token was last used for authentication.
 final String? tokenLastUsedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'owner': owner.toJson(),
   'repository_selection': repositorySelection.toJson(),
@@ -89,8 +89,8 @@ Map<String, dynamic> toJson() { return {
   'token_expired': tokenExpired,
   'token_expires_at': tokenExpiresAt,
   'token_last_used_at': tokenLastUsedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('owner') &&
       json.containsKey('repository_selection') &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
@@ -100,8 +100,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('token_name') && json['token_name'] is String &&
       json.containsKey('token_expired') && json['token_expired'] is bool &&
       json.containsKey('token_expires_at') && (json['token_expires_at'] == null || json['token_expires_at'] is String) &&
-      json.containsKey('token_last_used_at') && (json['token_last_used_at'] == null || json['token_last_used_at'] is String); } 
-OrganizationProgrammaticAccessGrant copyWith({int? id, SimpleUser? owner, OrganizationProgrammaticAccessGrantRepositorySelection? repositorySelection, String? repositoriesUrl, OrganizationProgrammaticAccessGrantPermissions? permissions, String? accessGrantedAt, int? tokenId, String? tokenName, bool? tokenExpired, String? Function()? tokenExpiresAt, String? Function()? tokenLastUsedAt, }) { return OrganizationProgrammaticAccessGrant(
+      json.containsKey('token_last_used_at') && (json['token_last_used_at'] == null || json['token_last_used_at'] is String);}
+OrganizationProgrammaticAccessGrant copyWith({int? id, SimpleUser? owner, OrganizationProgrammaticAccessGrantRepositorySelection? repositorySelection, String? repositoriesUrl, OrganizationProgrammaticAccessGrantPermissions? permissions, String? accessGrantedAt, int? tokenId, String? tokenName, bool? tokenExpired, String? Function()? tokenExpiresAt, String? Function()? tokenLastUsedAt, }) {return OrganizationProgrammaticAccessGrant(
   id: id ?? this.id,
   owner: owner ?? this.owner,
   repositorySelection: repositorySelection ?? this.repositorySelection,
@@ -113,8 +113,8 @@ OrganizationProgrammaticAccessGrant copyWith({int? id, SimpleUser? owner, Organi
   tokenExpired: tokenExpired ?? this.tokenExpired,
   tokenExpiresAt: tokenExpiresAt != null ? tokenExpiresAt() : this.tokenExpiresAt,
   tokenLastUsedAt: tokenLastUsedAt != null ? tokenLastUsedAt() : this.tokenLastUsedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrganizationProgrammaticAccessGrant &&
           id == other.id &&
           owner == other.owner &&
@@ -126,7 +126,7 @@ OrganizationProgrammaticAccessGrant copyWith({int? id, SimpleUser? owner, Organi
           tokenName == other.tokenName &&
           tokenExpired == other.tokenExpired &&
           tokenExpiresAt == other.tokenExpiresAt &&
-          tokenLastUsedAt == other.tokenLastUsedAt; } 
-@override int get hashCode { return Object.hash(id, owner, repositorySelection, repositoriesUrl, permissions, accessGrantedAt, tokenId, tokenName, tokenExpired, tokenExpiresAt, tokenLastUsedAt); } 
-@override String toString() { return 'OrganizationProgrammaticAccessGrant(id: $id, owner: $owner, repositorySelection: $repositorySelection, repositoriesUrl: $repositoriesUrl, permissions: $permissions, accessGrantedAt: $accessGrantedAt, tokenId: $tokenId, tokenName: $tokenName, tokenExpired: $tokenExpired, tokenExpiresAt: $tokenExpiresAt, tokenLastUsedAt: $tokenLastUsedAt)'; } 
- }
+          tokenLastUsedAt == other.tokenLastUsedAt;}
+@override int get hashCode {return Object.hash(id, owner, repositorySelection, repositoriesUrl, permissions, accessGrantedAt, tokenId, tokenName, tokenExpired, tokenExpiresAt, tokenLastUsedAt);}
+@override String toString() {return 'OrganizationProgrammaticAccessGrant(id: $id, owner: $owner, repositorySelection: $repositorySelection, repositoriesUrl: $repositoriesUrl, permissions: $permissions, accessGrantedAt: $accessGrantedAt, tokenId: $tokenId, tokenName: $tokenName, tokenExpired: $tokenExpired, tokenExpiresAt: $tokenExpiresAt, tokenLastUsedAt: $tokenLastUsedAt)';}
+}

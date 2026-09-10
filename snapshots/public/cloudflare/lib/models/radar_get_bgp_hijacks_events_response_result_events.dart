@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_hijacks_events_response_result_events_tags.dart';@immutable final class RadarGetBgpHijacksEventsResponseResultEvents {const RadarGetBgpHijacksEventsResponseResultEvents({required this.confidenceScore, required this.duration, required this.eventType, required this.hijackMsgsCount, required this.hijackerAsn, required this.hijackerCountry, required this.id, required this.isStale, required this.maxHijackTs, required this.maxMsgTs, required this.minHijackTs, required this.onGoingCount, required this.peerAsns, required this.peerIpCount, required this.prefixes, required this.tags, required this.victimAsns, required this.victimCountries, });
 
-factory RadarGetBgpHijacksEventsResponseResultEvents.fromJson(Map<String, dynamic> json) { return RadarGetBgpHijacksEventsResponseResultEvents(
+factory RadarGetBgpHijacksEventsResponseResultEvents.fromJson(Map<String, dynamic> json) {return RadarGetBgpHijacksEventsResponseResultEvents(
   confidenceScore: (json['confidence_score'] as num).toInt(),
   duration: (json['duration'] as num).toInt(),
   eventType: (json['event_type'] as num).toInt(),
@@ -21,7 +21,7 @@ factory RadarGetBgpHijacksEventsResponseResultEvents.fromJson(Map<String, dynami
   tags: (json['tags'] as List<dynamic>).map((e) => RadarGetBgpHijacksEventsResponseResultEventsTags.fromJson(e as Map<String, dynamic>)).toList(),
   victimAsns: (json['victim_asns'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
   victimCountries: (json['victim_countries'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final int confidenceScore;
 
@@ -59,7 +59,7 @@ final List<int> victimAsns;
 
 final List<String> victimCountries;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'confidence_score': confidenceScore,
   'duration': duration,
   'event_type': eventType,
@@ -78,8 +78,8 @@ Map<String, dynamic> toJson() { return {
   'tags': tags.map((e) => e.toJson()).toList(),
   'victim_asns': victimAsns,
   'victim_countries': victimCountries,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('confidence_score') && json['confidence_score'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('confidence_score') && json['confidence_score'] is num &&
       json.containsKey('duration') && json['duration'] is num &&
       json.containsKey('event_type') && json['event_type'] is num &&
       json.containsKey('hijack_msgs_count') && json['hijack_msgs_count'] is num &&
@@ -96,8 +96,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('confi
       json.containsKey('prefixes') &&
       json.containsKey('tags') &&
       json.containsKey('victim_asns') &&
-      json.containsKey('victim_countries'); } 
-RadarGetBgpHijacksEventsResponseResultEvents copyWith({int? confidenceScore, int? duration, int? eventType, int? hijackMsgsCount, int? hijackerAsn, String? hijackerCountry, int? id, bool? isStale, String? maxHijackTs, String? maxMsgTs, String? minHijackTs, int? onGoingCount, List<int>? peerAsns, int? peerIpCount, List<String>? prefixes, List<RadarGetBgpHijacksEventsResponseResultEventsTags>? tags, List<int>? victimAsns, List<String>? victimCountries, }) { return RadarGetBgpHijacksEventsResponseResultEvents(
+      json.containsKey('victim_countries');}
+RadarGetBgpHijacksEventsResponseResultEvents copyWith({int? confidenceScore, int? duration, int? eventType, int? hijackMsgsCount, int? hijackerAsn, String? hijackerCountry, int? id, bool? isStale, String? maxHijackTs, String? maxMsgTs, String? minHijackTs, int? onGoingCount, List<int>? peerAsns, int? peerIpCount, List<String>? prefixes, List<RadarGetBgpHijacksEventsResponseResultEventsTags>? tags, List<int>? victimAsns, List<String>? victimCountries, }) {return RadarGetBgpHijacksEventsResponseResultEvents(
   confidenceScore: confidenceScore ?? this.confidenceScore,
   duration: duration ?? this.duration,
   eventType: eventType ?? this.eventType,
@@ -116,8 +116,8 @@ RadarGetBgpHijacksEventsResponseResultEvents copyWith({int? confidenceScore, int
   tags: tags ?? this.tags,
   victimAsns: victimAsns ?? this.victimAsns,
   victimCountries: victimCountries ?? this.victimCountries,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetBgpHijacksEventsResponseResultEvents &&
           confidenceScore == other.confidenceScore &&
           duration == other.duration &&
@@ -136,7 +136,7 @@ RadarGetBgpHijacksEventsResponseResultEvents copyWith({int? confidenceScore, int
           listEquals(prefixes, other.prefixes) &&
           listEquals(tags, other.tags) &&
           listEquals(victimAsns, other.victimAsns) &&
-          listEquals(victimCountries, other.victimCountries); } 
-@override int get hashCode { return Object.hash(confidenceScore, duration, eventType, hijackMsgsCount, hijackerAsn, hijackerCountry, id, isStale, maxHijackTs, maxMsgTs, minHijackTs, onGoingCount, Object.hashAll(peerAsns), peerIpCount, Object.hashAll(prefixes), Object.hashAll(tags), Object.hashAll(victimAsns), Object.hashAll(victimCountries)); } 
-@override String toString() { return 'RadarGetBgpHijacksEventsResponseResultEvents(confidenceScore: $confidenceScore, duration: $duration, eventType: $eventType, hijackMsgsCount: $hijackMsgsCount, hijackerAsn: $hijackerAsn, hijackerCountry: $hijackerCountry, id: $id, isStale: $isStale, maxHijackTs: $maxHijackTs, maxMsgTs: $maxMsgTs, minHijackTs: $minHijackTs, onGoingCount: $onGoingCount, peerAsns: $peerAsns, peerIpCount: $peerIpCount, prefixes: $prefixes, tags: $tags, victimAsns: $victimAsns, victimCountries: $victimCountries)'; } 
- }
+          listEquals(victimCountries, other.victimCountries);}
+@override int get hashCode {return Object.hash(confidenceScore, duration, eventType, hijackMsgsCount, hijackerAsn, hijackerCountry, id, isStale, maxHijackTs, maxMsgTs, minHijackTs, onGoingCount, Object.hashAll(peerAsns), peerIpCount, Object.hashAll(prefixes), Object.hashAll(tags), Object.hashAll(victimAsns), Object.hashAll(victimCountries));}
+@override String toString() {return 'RadarGetBgpHijacksEventsResponseResultEvents(confidenceScore: $confidenceScore, duration: $duration, eventType: $eventType, hijackMsgsCount: $hijackMsgsCount, hijackerAsn: $hijackerAsn, hijackerCountry: $hijackerCountry, id: $id, isStale: $isStale, maxHijackTs: $maxHijackTs, maxMsgTs: $maxMsgTs, minHijackTs: $minHijackTs, onGoingCount: $onGoingCount, peerAsns: $peerAsns, peerIpCount: $peerIpCount, prefixes: $prefixes, tags: $tags, victimAsns: $victimAsns, victimCountries: $victimCountries)';}
+}

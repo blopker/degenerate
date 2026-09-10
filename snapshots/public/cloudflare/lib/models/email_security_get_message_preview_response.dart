@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_get_message_preview_response_result.dart';import 'email_security_message.dart';@immutable final class EmailSecurityGetMessagePreviewResponse {const EmailSecurityGetMessagePreviewResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
-factory EmailSecurityGetMessagePreviewResponse.fromJson(Map<String, dynamic> json) { return EmailSecurityGetMessagePreviewResponse(
+factory EmailSecurityGetMessagePreviewResponse.fromJson(Map<String, dynamic> json) {return EmailSecurityGetMessagePreviewResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: EmailSecurityGetMessagePreviewResponseResult.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 final List<EmailSecurityMessage> errors;
 
@@ -17,28 +17,28 @@ final bool success;
 
 final EmailSecurityGetMessagePreviewResponseResult result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('result'); } 
-EmailSecurityGetMessagePreviewResponse copyWith({List<EmailSecurityMessage>? errors, List<EmailSecurityMessage>? messages, bool? success, EmailSecurityGetMessagePreviewResponseResult? result, }) { return EmailSecurityGetMessagePreviewResponse(
+      json.containsKey('result');}
+EmailSecurityGetMessagePreviewResponse copyWith({List<EmailSecurityMessage>? errors, List<EmailSecurityMessage>? messages, bool? success, EmailSecurityGetMessagePreviewResponseResult? result, }) {return EmailSecurityGetMessagePreviewResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSecurityGetMessagePreviewResponse &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           success == other.success &&
-          result == other.result; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, result); } 
-@override String toString() { return 'EmailSecurityGetMessagePreviewResponse(errors: $errors, messages: $messages, success: $success, result: $result)'; } 
- }
+          result == other.result;}
+@override int get hashCode {return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, result);}
+@override String toString() {return 'EmailSecurityGetMessagePreviewResponse(errors: $errors, messages: $messages, success: $success, result: $result)';}
+}

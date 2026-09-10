@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodDetailsPaymentRecordWechatPay {const PaymentMethodDetailsPaymentRecordWechatPay({this.fingerprint = const Omittable.absent(), this.location, this.reader, this.transactionId = const Omittable.absent(), });
 
-factory PaymentMethodDetailsPaymentRecordWechatPay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordWechatPay(
+factory PaymentMethodDetailsPaymentRecordWechatPay.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsPaymentRecordWechatPay(
   fingerprint: json.containsKey('fingerprint') ? Omittable(json['fingerprint'] as String?) : const Omittable.absent(),
   location: json['location'] as String?,
   reader: json['reader'] as String?,
   transactionId: json.containsKey('transaction_id') ? Omittable(json['transaction_id'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Uniquely identifies this particular WeChat Pay account. You can use this attribute to check whether two WeChat accounts are the same.
 final Omittable<String?> fingerprint;
@@ -22,25 +22,25 @@ final String? reader;
 /// Transaction ID of this particular WeChat Pay transaction.
 final Omittable<String?> transactionId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (fingerprint.isPresent) 'fingerprint': fingerprint.value,
   'location': ?location,
   'reader': ?reader,
   if (transactionId.isPresent) 'transaction_id': transactionId.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fingerprint', 'location', 'reader', 'transaction_id'}.contains(key)); } 
-PaymentMethodDetailsPaymentRecordWechatPay copyWith({Omittable<String?>? fingerprint, String? Function()? location, String? Function()? reader, Omittable<String?>? transactionId, }) { return PaymentMethodDetailsPaymentRecordWechatPay(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'fingerprint', 'location', 'reader', 'transaction_id'}.contains(key));}
+PaymentMethodDetailsPaymentRecordWechatPay copyWith({Omittable<String?>? fingerprint, String? Function()? location, String? Function()? reader, Omittable<String?>? transactionId, }) {return PaymentMethodDetailsPaymentRecordWechatPay(
   fingerprint: fingerprint ?? this.fingerprint,
   location: location != null ? location() : this.location,
   reader: reader != null ? reader() : this.reader,
   transactionId: transactionId ?? this.transactionId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodDetailsPaymentRecordWechatPay &&
           fingerprint == other.fingerprint &&
           location == other.location &&
           reader == other.reader &&
-          transactionId == other.transactionId; } 
-@override int get hashCode { return Object.hash(fingerprint, location, reader, transactionId); } 
-@override String toString() { return 'PaymentMethodDetailsPaymentRecordWechatPay(fingerprint: $fingerprint, location: $location, reader: $reader, transactionId: $transactionId)'; } 
- }
+          transactionId == other.transactionId;}
+@override int get hashCode {return Object.hash(fingerprint, location, reader, transactionId);}
+@override String toString() {return 'PaymentMethodDetailsPaymentRecordWechatPay(fingerprint: $fingerprint, location: $location, reader: $reader, transactionId: $transactionId)';}
+}

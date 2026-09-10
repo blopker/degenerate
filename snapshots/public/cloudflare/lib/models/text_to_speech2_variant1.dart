@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TextToSpeech2Variant1 {const TextToSpeech2Variant1({this.audio});
 
-factory TextToSpeech2Variant1.fromJson(Map<String, dynamic> json) { return TextToSpeech2Variant1(
+factory TextToSpeech2Variant1.fromJson(Map<String, dynamic> json) {return TextToSpeech2Variant1(
   audio: json['audio'] as String?,
-); }
+);}
 
 /// The generated audio in MP3 format, base64-encoded
 final String? audio;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'audio': ?audio,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'audio'}.contains(key)); } 
-TextToSpeech2Variant1 copyWith({String? Function()? audio}) { return TextToSpeech2Variant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'audio'}.contains(key));}
+TextToSpeech2Variant1 copyWith({String? Function()? audio}) {return TextToSpeech2Variant1(
   audio: audio != null ? audio() : this.audio,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TextToSpeech2Variant1 &&
-          audio == other.audio; } 
-@override int get hashCode { return audio.hashCode; } 
-@override String toString() { return 'TextToSpeech2Variant1(audio: $audio)'; } 
- }
+          audio == other.audio;}
+@override int get hashCode {return audio.hashCode;}
+@override String toString() {return 'TextToSpeech2Variant1(audio: $audio)';}
+}

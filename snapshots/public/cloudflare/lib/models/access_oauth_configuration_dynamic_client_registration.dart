@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Settings for OAuth dynamic client registration.
 @immutable final class AccessOauthConfigurationDynamicClientRegistration {const AccessOauthConfigurationDynamicClientRegistration({this.allowAnyOnLocalhost, this.allowAnyOnLoopback, this.allowedUris, this.enabled, });
 
-factory AccessOauthConfigurationDynamicClientRegistration.fromJson(Map<String, dynamic> json) { return AccessOauthConfigurationDynamicClientRegistration(
+factory AccessOauthConfigurationDynamicClientRegistration.fromJson(Map<String, dynamic> json) {return AccessOauthConfigurationDynamicClientRegistration(
   allowAnyOnLocalhost: json['allow_any_on_localhost'] as bool?,
   allowAnyOnLoopback: json['allow_any_on_loopback'] as bool?,
   allowedUris: (json['allowed_uris'] as List<dynamic>?)?.map((e) => e as String).toList(),
   enabled: json['enabled'] as bool?,
-); }
+);}
 
 /// Allows any client with redirect URIs on localhost.
 final bool? allowAnyOnLocalhost;
@@ -23,25 +23,25 @@ final List<String>? allowedUris;
 /// Whether dynamic client registration is enabled.
 final bool? enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allow_any_on_localhost': ?allowAnyOnLocalhost,
   'allow_any_on_loopback': ?allowAnyOnLoopback,
   'allowed_uris': ?allowedUris,
   'enabled': ?enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_any_on_localhost', 'allow_any_on_loopback', 'allowed_uris', 'enabled'}.contains(key)); } 
-AccessOauthConfigurationDynamicClientRegistration copyWith({bool? Function()? allowAnyOnLocalhost, bool? Function()? allowAnyOnLoopback, List<String>? Function()? allowedUris, bool? Function()? enabled, }) { return AccessOauthConfigurationDynamicClientRegistration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allow_any_on_localhost', 'allow_any_on_loopback', 'allowed_uris', 'enabled'}.contains(key));}
+AccessOauthConfigurationDynamicClientRegistration copyWith({bool? Function()? allowAnyOnLocalhost, bool? Function()? allowAnyOnLoopback, List<String>? Function()? allowedUris, bool? Function()? enabled, }) {return AccessOauthConfigurationDynamicClientRegistration(
   allowAnyOnLocalhost: allowAnyOnLocalhost != null ? allowAnyOnLocalhost() : this.allowAnyOnLocalhost,
   allowAnyOnLoopback: allowAnyOnLoopback != null ? allowAnyOnLoopback() : this.allowAnyOnLoopback,
   allowedUris: allowedUris != null ? allowedUris() : this.allowedUris,
   enabled: enabled != null ? enabled() : this.enabled,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessOauthConfigurationDynamicClientRegistration &&
           allowAnyOnLocalhost == other.allowAnyOnLocalhost &&
           allowAnyOnLoopback == other.allowAnyOnLoopback &&
           listEquals(allowedUris, other.allowedUris) &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(allowAnyOnLocalhost, allowAnyOnLoopback, Object.hashAll(allowedUris ?? const []), enabled); } 
-@override String toString() { return 'AccessOauthConfigurationDynamicClientRegistration(allowAnyOnLocalhost: $allowAnyOnLocalhost, allowAnyOnLoopback: $allowAnyOnLoopback, allowedUris: $allowedUris, enabled: $enabled)'; } 
- }
+          enabled == other.enabled;}
+@override int get hashCode {return Object.hash(allowAnyOnLocalhost, allowAnyOnLoopback, Object.hashAll(allowedUris ?? const []), enabled);}
+@override String toString() {return 'AccessOauthConfigurationDynamicClientRegistration(allowAnyOnLocalhost: $allowAnyOnLocalhost, allowAnyOnLoopback: $allowAnyOnLoopback, allowedUris: $allowedUris, enabled: $enabled)';}
+}

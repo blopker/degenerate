@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_post_gateway_dynamic_route_version_response_result_elements_conditional_outputs.dart';import 'aig_config_post_gateway_dynamic_route_version_response_result_elements_conditional_properties.dart';@immutable final class AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType {const AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType._(this.value);
 
-factory AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType.fromJson(String json) { return switch (json) {
+factory AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType.fromJson(String json) {return switch (json) {
   'conditional' => conditional,
   _ => AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType._(json),
-}; }
+};}
 
 static const AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType conditional = AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType._('conditional');
 
@@ -13,22 +13,22 @@ static const List<AigConfigPostGatewayDynamicRouteVersionResponseResultElementsC
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType($value)';}
+}
 @immutable final class AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional {const AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional({required this.id, required this.outputs, required this.properties, required this.type, });
 
-factory AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional(
+factory AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional.fromJson(Map<String, dynamic> json) {return AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional(
   id: json['id'] as String,
   outputs: AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalOutputs.fromJson(json['outputs'] as Map<String, dynamic>),
   properties: AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalProperties.fromJson(json['properties'] as Map<String, dynamic>),
   type: AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType.fromJson(json['type'] as String),
-); }
+);}
 
 final String id;
 
@@ -38,28 +38,28 @@ final AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalPr
 
 final AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'outputs': outputs.toJson(),
   'properties': properties.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('outputs') &&
       json.containsKey('properties') &&
-      json.containsKey('type'); } 
-AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional copyWith({String? id, AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalOutputs? outputs, AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalProperties? properties, AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType? type, }) { return AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional(
+      json.containsKey('type');}
+AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional copyWith({String? id, AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalOutputs? outputs, AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalProperties? properties, AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalType? type, }) {return AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional(
   id: id ?? this.id,
   outputs: outputs ?? this.outputs,
   properties: properties ?? this.properties,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional &&
           id == other.id &&
           outputs == other.outputs &&
           properties == other.properties &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(id, outputs, properties, type); } 
-@override String toString() { return 'AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional(id: $id, outputs: $outputs, properties: $properties, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(id, outputs, properties, type);}
+@override String toString() {return 'AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditional(id: $id, outputs: $outputs, properties: $properties, type: $type)';}
+}

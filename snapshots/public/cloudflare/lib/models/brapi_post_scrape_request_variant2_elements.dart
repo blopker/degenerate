@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostScrapeRequestVariant2Elements {const BrapiPostScrapeRequestVariant2Elements({required this.selector});
 
-factory BrapiPostScrapeRequestVariant2Elements.fromJson(Map<String, dynamic> json) { return BrapiPostScrapeRequestVariant2Elements(
+factory BrapiPostScrapeRequestVariant2Elements.fromJson(Map<String, dynamic> json) {return BrapiPostScrapeRequestVariant2Elements(
   selector: json['selector'] as String,
-); }
+);}
 
 final String selector;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'selector': selector,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('selector') && json['selector'] is String; } 
-BrapiPostScrapeRequestVariant2Elements copyWith({String? selector}) { return BrapiPostScrapeRequestVariant2Elements(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('selector') && json['selector'] is String;}
+BrapiPostScrapeRequestVariant2Elements copyWith({String? selector}) {return BrapiPostScrapeRequestVariant2Elements(
   selector: selector ?? this.selector,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BrapiPostScrapeRequestVariant2Elements &&
-          selector == other.selector; } 
-@override int get hashCode { return selector.hashCode; } 
-@override String toString() { return 'BrapiPostScrapeRequestVariant2Elements(selector: $selector)'; } 
- }
+          selector == other.selector;}
+@override int get hashCode {return selector.hashCode;}
+@override String toString() {return 'BrapiPostScrapeRequestVariant2Elements(selector: $selector)';}
+}

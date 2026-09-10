@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure copy behavior. If set to remote_only, users cannot copy isolated content from the remote browser to the local clipboard. If this field is absent, copying remains enabled. Applies only when version == "v2".
 @immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy {const ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy._(this.value);
 
-factory ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'remote_only' => remoteOnly,
   _ => ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy._(json),
-}; }
+};}
 
 static const ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy enabled = ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy._('enabled');
 
@@ -20,23 +20,23 @@ static const List<ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy> values = [e
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy($value)';}
+}
 /// Configure download behavior. When set to remote_only, users can view downloads but cannot save them. Applies only when version == "v2".
 @immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload {const ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload._(this.value);
 
-factory ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'remote_only' => remoteOnly,
   _ => ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload._(json),
-}; }
+};}
 
 static const ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload enabled = ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload._('enabled');
 
@@ -48,22 +48,22 @@ static const List<ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload($value)';}
+}
 /// Configure keyboard usage behavior. If this field is absent, keyboard usage remains enabled. Applies only when version == "v2".
 @immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard {const ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard._(this.value);
 
-factory ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   _ => ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard._(json),
-}; }
+};}
 
 static const ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard enabled = ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard._('enabled');
 
@@ -73,23 +73,23 @@ static const List<ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard($value)';}
+}
 /// Configure paste behavior. If set to remote_only, users cannot paste content from the local clipboard into isolated pages. If this field is absent, pasting remains enabled. Applies only when version == "v2".
 @immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste {const ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste._(this.value);
 
-factory ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'remote_only' => remoteOnly,
   _ => ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste._(json),
-}; }
+};}
 
 static const ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste enabled = ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste._('enabled');
 
@@ -101,22 +101,22 @@ static const List<ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste($value)';}
+}
 /// Configure print behavior. Default, Printing is enabled. Applies only when version == "v2".
 @immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting {const ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting._(this.value);
 
-factory ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   _ => ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting._(json),
-}; }
+};}
 
 static const ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting enabled = ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting._('enabled');
 
@@ -126,22 +126,22 @@ static const List<ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting($value)';}
+}
 /// Configure upload behavior. If this field is absent, uploading remains enabled. Applies only when version == "v2".
 @immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload {const ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload._(this.value);
 
-factory ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   _ => ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload._(json),
-}; }
+};}
 
 static const ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload enabled = ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload._('enabled');
 
@@ -151,22 +151,22 @@ static const List<ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload($value)';}
+}
 /// Indicate which version of the browser isolation controls should apply.
 @immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion {const ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion._(this.value);
 
-factory ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion.fromJson(String json) {return switch (json) {
   'v1' => v1,
   'v2' => v2,
   _ => ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion._(json),
-}; }
+};}
 
 static const ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion v1 = ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion._('v1');
 
@@ -176,18 +176,18 @@ static const List<ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion($value)';}
+}
 /// Configure browser isolation behavior. Settable only for `http` rules with the action set to `isolate`.
 @immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControls {const ZeroTrustGatewayRuleSettingsBisoAdminControls({this.copy, this.dcp, this.dd, this.dk, this.download, this.dp, this.du, this.keyboard, this.paste, this.printing, this.upload, this.version, });
 
-factory ZeroTrustGatewayRuleSettingsBisoAdminControls.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsBisoAdminControls(
+factory ZeroTrustGatewayRuleSettingsBisoAdminControls.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayRuleSettingsBisoAdminControls(
   copy: json['copy'] != null ? ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy.fromJson(json['copy'] as String) : null,
   dcp: json['dcp'] as bool?,
   dd: json['dd'] as bool?,
@@ -200,7 +200,7 @@ factory ZeroTrustGatewayRuleSettingsBisoAdminControls.fromJson(Map<String, dynam
   printing: json['printing'] != null ? ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting.fromJson(json['printing'] as String) : null,
   upload: json['upload'] != null ? ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload.fromJson(json['upload'] as String) : null,
   version: json['version'] != null ? ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion.fromJson(json['version'] as String) : null,
-); }
+);}
 
 /// Configure copy behavior. If set to remote_only, users cannot copy isolated content from the remote browser to the local clipboard. If this field is absent, copying remains enabled. Applies only when version == "v2".
 final ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy? copy;
@@ -239,8 +239,8 @@ final ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload? upload;
 final ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion? version;
 
 /// The value with the schema default applied when absent.
-ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion get versionOrDefault { return version ?? ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion.fromJson('v1'); } 
-Map<String, dynamic> toJson() { return {
+ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion get versionOrDefault {return version ?? ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion.fromJson('v1');}
+Map<String, dynamic> toJson() {return {
   if (copy != null) 'copy': copy?.toJson(),
   'dcp': ?dcp,
   'dd': ?dd,
@@ -253,9 +253,9 @@ Map<String, dynamic> toJson() { return {
   if (printing != null) 'printing': printing?.toJson(),
   if (upload != null) 'upload': upload?.toJson(),
   if (version != null) 'version': version?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'copy', 'dcp', 'dd', 'dk', 'download', 'dp', 'du', 'keyboard', 'paste', 'printing', 'upload', 'version'}.contains(key)); } 
-ZeroTrustGatewayRuleSettingsBisoAdminControls copyWith({ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy? Function()? copy, bool? Function()? dcp, bool? Function()? dd, bool? Function()? dk, ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload? Function()? download, bool? Function()? dp, bool? Function()? du, ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard? Function()? keyboard, ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste? Function()? paste, ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting? Function()? printing, ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload? Function()? upload, ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion? Function()? version, }) { return ZeroTrustGatewayRuleSettingsBisoAdminControls(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'copy', 'dcp', 'dd', 'dk', 'download', 'dp', 'du', 'keyboard', 'paste', 'printing', 'upload', 'version'}.contains(key));}
+ZeroTrustGatewayRuleSettingsBisoAdminControls copyWith({ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy? Function()? copy, bool? Function()? dcp, bool? Function()? dd, bool? Function()? dk, ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload? Function()? download, bool? Function()? dp, bool? Function()? du, ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard? Function()? keyboard, ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste? Function()? paste, ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting? Function()? printing, ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload? Function()? upload, ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion? Function()? version, }) {return ZeroTrustGatewayRuleSettingsBisoAdminControls(
   copy: copy != null ? copy() : this.copy,
   dcp: dcp != null ? dcp() : this.dcp,
   dd: dd != null ? dd() : this.dd,
@@ -268,8 +268,8 @@ ZeroTrustGatewayRuleSettingsBisoAdminControls copyWith({ZeroTrustGatewayRuleSett
   printing: printing != null ? printing() : this.printing,
   upload: upload != null ? upload() : this.upload,
   version: version != null ? version() : this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewayRuleSettingsBisoAdminControls &&
           copy == other.copy &&
           dcp == other.dcp &&
@@ -282,7 +282,7 @@ ZeroTrustGatewayRuleSettingsBisoAdminControls copyWith({ZeroTrustGatewayRuleSett
           paste == other.paste &&
           printing == other.printing &&
           upload == other.upload &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(copy, dcp, dd, dk, download, dp, du, keyboard, paste, printing, upload, version); } 
-@override String toString() { return 'ZeroTrustGatewayRuleSettingsBisoAdminControls(copy: $copy, dcp: $dcp, dd: $dd, dk: $dk, download: $download, dp: $dp, du: $du, keyboard: $keyboard, paste: $paste, printing: $printing, upload: $upload, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(copy, dcp, dd, dk, download, dp, du, keyboard, paste, printing, upload, version);}
+@override String toString() {return 'ZeroTrustGatewayRuleSettingsBisoAdminControls(copy: $copy, dcp: $dcp, dd: $dd, dk: $dk, download: $download, dp: $dp, du: $du, keyboard: $keyboard, paste: $paste, printing: $printing, upload: $upload, version: $version)';}
+}

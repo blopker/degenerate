@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_label.dart';@immutable final class WebhookDiscussionLabeledAction {const WebhookDiscussionLabeledAction._(this.value);
 
-factory WebhookDiscussionLabeledAction.fromJson(String json) { return switch (json) {
+factory WebhookDiscussionLabeledAction.fromJson(String json) {return switch (json) {
   'labeled' => labeled,
   _ => WebhookDiscussionLabeledAction._(json),
-}; }
+};}
 
 static const WebhookDiscussionLabeledAction labeled = WebhookDiscussionLabeledAction._('labeled');
 
@@ -13,17 +13,17 @@ static const List<WebhookDiscussionLabeledAction> values = [labeled];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDiscussionLabeledAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDiscussionLabeledAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookDiscussionLabeledAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookDiscussionLabeledAction($value)';}
+}
 @immutable final class WebhookDiscussionLabeled {const WebhookDiscussionLabeled({required this.action, required this.discussion, required this.label, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookDiscussionLabeled.fromJson(Map<String, dynamic> json) { return WebhookDiscussionLabeled(
+factory WebhookDiscussionLabeled.fromJson(Map<String, dynamic> json) {return WebhookDiscussionLabeled(
   action: WebhookDiscussionLabeledAction.fromJson(json['action'] as String),
   discussion: Discussion.fromJson(json['discussion'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -32,7 +32,7 @@ factory WebhookDiscussionLabeled.fromJson(Map<String, dynamic> json) { return We
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookDiscussionLabeledAction action;
 
@@ -50,7 +50,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'discussion': discussion.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -59,13 +59,13 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('discussion') &&
       json.containsKey('label') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookDiscussionLabeled copyWith({WebhookDiscussionLabeledAction? action, Discussion? discussion, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksLabel? label, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDiscussionLabeled(
+      json.containsKey('sender');}
+WebhookDiscussionLabeled copyWith({WebhookDiscussionLabeledAction? action, Discussion? discussion, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksLabel? label, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookDiscussionLabeled(
   action: action ?? this.action,
   discussion: discussion ?? this.discussion,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -74,8 +74,8 @@ WebhookDiscussionLabeled copyWith({WebhookDiscussionLabeledAction? action, Discu
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDiscussionLabeled &&
           action == other.action &&
           discussion == other.discussion &&
@@ -84,7 +84,7 @@ WebhookDiscussionLabeled copyWith({WebhookDiscussionLabeledAction? action, Discu
           label == other.label &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, discussion, enterprise, installation, label, organization, repository, sender); } 
-@override String toString() { return 'WebhookDiscussionLabeled(action: $action, discussion: $discussion, enterprise: $enterprise, installation: $installation, label: $label, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, discussion, enterprise, installation, label, organization, repository, sender);}
+@override String toString() {return 'WebhookDiscussionLabeled(action: $action, discussion: $discussion, enterprise: $enterprise, installation: $installation, label: $label, organization: $organization, repository: $repository, sender: $sender)';}
+}

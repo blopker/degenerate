@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InvoicePaymentMethodOptionsParam30FinancialConnectionsFiltersAccountSubcategories {const InvoicePaymentMethodOptionsParam30FinancialConnectionsFiltersAccountSubcategories._(this.value);
 
-factory InvoicePaymentMethodOptionsParam30FinancialConnectionsFiltersAccountSubcategories.fromJson(String json) { return switch (json) {
+factory InvoicePaymentMethodOptionsParam30FinancialConnectionsFiltersAccountSubcategories.fromJson(String json) {return switch (json) {
   'checking' => checking,
   'savings' => savings,
   _ => InvoicePaymentMethodOptionsParam30FinancialConnectionsFiltersAccountSubcategories._(json),
-}; }
+};}
 
 static const InvoicePaymentMethodOptionsParam30FinancialConnectionsFiltersAccountSubcategories checking = InvoicePaymentMethodOptionsParam30FinancialConnectionsFiltersAccountSubcategories._('checking');
 
@@ -16,32 +16,32 @@ static const List<InvoicePaymentMethodOptionsParam30FinancialConnectionsFiltersA
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoicePaymentMethodOptionsParam30FinancialConnectionsFiltersAccountSubcategories && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam30FinancialConnectionsFiltersAccountSubcategories($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoicePaymentMethodOptionsParam30FinancialConnectionsFiltersAccountSubcategories && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoicePaymentMethodOptionsParam30FinancialConnectionsFiltersAccountSubcategories($value)';}
+}
 @immutable final class InvoicePaymentMethodOptionsParam30FinancialConnectionsFilters {const InvoicePaymentMethodOptionsParam30FinancialConnectionsFilters({this.accountSubcategories});
 
-factory InvoicePaymentMethodOptionsParam30FinancialConnectionsFilters.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam30FinancialConnectionsFilters(
+factory InvoicePaymentMethodOptionsParam30FinancialConnectionsFilters.fromJson(Map<String, dynamic> json) {return InvoicePaymentMethodOptionsParam30FinancialConnectionsFilters(
   accountSubcategories: (json['account_subcategories'] as List<dynamic>?)?.map((e) => InvoicePaymentMethodOptionsParam30FinancialConnectionsFiltersAccountSubcategories.fromJson(e as String)).toList(),
-); }
+);}
 
 final List<InvoicePaymentMethodOptionsParam30FinancialConnectionsFiltersAccountSubcategories>? accountSubcategories;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSubcategories != null) 'account_subcategories': accountSubcategories?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_subcategories'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam30FinancialConnectionsFilters copyWith({List<InvoicePaymentMethodOptionsParam30FinancialConnectionsFiltersAccountSubcategories>? Function()? accountSubcategories}) { return InvoicePaymentMethodOptionsParam30FinancialConnectionsFilters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_subcategories'}.contains(key));}
+InvoicePaymentMethodOptionsParam30FinancialConnectionsFilters copyWith({List<InvoicePaymentMethodOptionsParam30FinancialConnectionsFiltersAccountSubcategories>? Function()? accountSubcategories}) {return InvoicePaymentMethodOptionsParam30FinancialConnectionsFilters(
   accountSubcategories: accountSubcategories != null ? accountSubcategories() : this.accountSubcategories,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InvoicePaymentMethodOptionsParam30FinancialConnectionsFilters &&
-          listEquals(accountSubcategories, other.accountSubcategories); } 
-@override int get hashCode { return Object.hashAll(accountSubcategories ?? const []).hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam30FinancialConnectionsFilters(accountSubcategories: $accountSubcategories)'; } 
- }
+          listEquals(accountSubcategories, other.accountSubcategories);}
+@override int get hashCode {return Object.hashAll(accountSubcategories ?? const []).hashCode;}
+@override String toString() {return 'InvoicePaymentMethodOptionsParam30FinancialConnectionsFilters(accountSubcategories: $accountSubcategories)';}
+}

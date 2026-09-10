@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType {const PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType._(this.value);
 
-factory PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType.fromJson(String json) { return switch (json) {
+factory PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType.fromJson(String json) {return switch (json) {
   'local_use_tax' => localUseTax,
   'simplified_sellers_use_tax' => simplifiedSellersUseTax,
   'single_local_use_tax' => singleLocalUseTax,
   _ => PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType._(json),
-}; }
+};}
 
 static const PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType localUseTax = PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType._('local_use_tax');
 
@@ -19,38 +19,38 @@ static const List<PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElecti
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType($value)';}
+}
 @immutable final class PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections {const PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections({required this.type, this.jurisdiction, });
 
-factory PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections(
+factory PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections.fromJson(Map<String, dynamic> json) {return PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections(
   jurisdiction: json['jurisdiction'] as String?,
   type: PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType.fromJson(json['type'] as String),
-); }
+);}
 
 final String? jurisdiction;
 
 final PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'jurisdiction': ?jurisdiction,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections copyWith({String? Function()? jurisdiction, PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType? type, }) { return PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections copyWith({String? Function()? jurisdiction, PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType? type, }) {return PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections(
   jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections &&
           jurisdiction == other.jurisdiction &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(jurisdiction, type); } 
-@override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections(jurisdiction: $jurisdiction, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(jurisdiction, type);}
+@override String toString() {return 'PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections(jurisdiction: $jurisdiction, type: $type)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_components_schemas_type.dart';import 'teams_devices_device_managed_networks_components_schemas_name.dart';import 'teams_devices_schemas_config_request.dart';@immutable final class DeviceManagedNetworksUpdateDeviceManagedNetworkRequest {const DeviceManagedNetworksUpdateDeviceManagedNetworkRequest({this.config, this.name, this.type, });
 
-factory DeviceManagedNetworksUpdateDeviceManagedNetworkRequest.fromJson(Map<String, dynamic> json) { return DeviceManagedNetworksUpdateDeviceManagedNetworkRequest(
+factory DeviceManagedNetworksUpdateDeviceManagedNetworkRequest.fromJson(Map<String, dynamic> json) {return DeviceManagedNetworksUpdateDeviceManagedNetworkRequest(
   config: json['config'] != null ? TeamsDevicesSchemasConfigRequest.fromJson(json['config'] as Map<String, dynamic>) : null,
   name: json['name'] != null ? TeamsDevicesDeviceManagedNetworksComponentsSchemasName.fromJson(json['name'] as String) : null,
   type: json['type'] != null ? TeamsDevicesComponentsSchemasType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final TeamsDevicesSchemasConfigRequest? config;
 
@@ -16,22 +16,22 @@ final TeamsDevicesDeviceManagedNetworksComponentsSchemasName? name;
 /// The type of device managed network.
 final TeamsDevicesComponentsSchemasType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (config != null) 'config': config?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config', 'name', 'type'}.contains(key)); } 
-DeviceManagedNetworksUpdateDeviceManagedNetworkRequest copyWith({TeamsDevicesSchemasConfigRequest? Function()? config, TeamsDevicesDeviceManagedNetworksComponentsSchemasName? Function()? name, TeamsDevicesComponentsSchemasType? Function()? type, }) { return DeviceManagedNetworksUpdateDeviceManagedNetworkRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'config', 'name', 'type'}.contains(key));}
+DeviceManagedNetworksUpdateDeviceManagedNetworkRequest copyWith({TeamsDevicesSchemasConfigRequest? Function()? config, TeamsDevicesDeviceManagedNetworksComponentsSchemasName? Function()? name, TeamsDevicesComponentsSchemasType? Function()? type, }) {return DeviceManagedNetworksUpdateDeviceManagedNetworkRequest(
   config: config != null ? config() : this.config,
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DeviceManagedNetworksUpdateDeviceManagedNetworkRequest &&
           config == other.config &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(config, name, type); } 
-@override String toString() { return 'DeviceManagedNetworksUpdateDeviceManagedNetworkRequest(config: $config, name: $name, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(config, name, type);}
+@override String toString() {return 'DeviceManagedNetworksUpdateDeviceManagedNetworkRequest(config: $config, name: $name, type: $type)';}
+}

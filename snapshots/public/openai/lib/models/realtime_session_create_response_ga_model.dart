@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimeSessionCreateResponseGaModelVariant2 {const RealtimeSessionCreateResponseGaModelVariant2._(this.value);
 
-factory RealtimeSessionCreateResponseGaModelVariant2.fromJson(String json) { return switch (json) {
+factory RealtimeSessionCreateResponseGaModelVariant2.fromJson(String json) {return switch (json) {
   'gpt-realtime' => gptRealtime,
   'gpt-realtime-1.5' => gptRealtime15,
   'gpt-realtime-2025-08-28' => gptRealtime20250828,
@@ -20,7 +20,7 @@ factory RealtimeSessionCreateResponseGaModelVariant2.fromJson(String json) { ret
   'gpt-audio-mini-2025-10-06' => gptAudioMini20251006,
   'gpt-audio-mini-2025-12-15' => gptAudioMini20251215,
   _ => RealtimeSessionCreateResponseGaModelVariant2._(json),
-}; }
+};}
 
 static const RealtimeSessionCreateResponseGaModelVariant2 gptRealtime = RealtimeSessionCreateResponseGaModelVariant2._('gpt-realtime');
 
@@ -58,14 +58,14 @@ static const List<RealtimeSessionCreateResponseGaModelVariant2> values = [gptRea
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeSessionCreateResponseGaModelVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeSessionCreateResponseGaModelVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeSessionCreateResponseGaModelVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeSessionCreateResponseGaModelVariant2($value)';}
+}
 /// The Realtime model used for this session.
 /// 
 @immutable

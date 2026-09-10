@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TreasuryOutboundTransfersResourceAchTrackingDetails {const TreasuryOutboundTransfersResourceAchTrackingDetails({required this.traceId});
 
-factory TreasuryOutboundTransfersResourceAchTrackingDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundTransfersResourceAchTrackingDetails(
+factory TreasuryOutboundTransfersResourceAchTrackingDetails.fromJson(Map<String, dynamic> json) {return TreasuryOutboundTransfersResourceAchTrackingDetails(
   traceId: json['trace_id'] as String,
-); }
+);}
 
 /// ACH trace ID of the OutboundTransfer for transfers sent over the `ach` network.
 final String traceId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'trace_id': traceId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('trace_id') && json['trace_id'] is String; } 
-TreasuryOutboundTransfersResourceAchTrackingDetails copyWith({String? traceId}) { return TreasuryOutboundTransfersResourceAchTrackingDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('trace_id') && json['trace_id'] is String;}
+TreasuryOutboundTransfersResourceAchTrackingDetails copyWith({String? traceId}) {return TreasuryOutboundTransfersResourceAchTrackingDetails(
   traceId: traceId ?? this.traceId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TreasuryOutboundTransfersResourceAchTrackingDetails &&
-          traceId == other.traceId; } 
-@override int get hashCode { return traceId.hashCode; } 
-@override String toString() { return 'TreasuryOutboundTransfersResourceAchTrackingDetails(traceId: $traceId)'; } 
- }
+          traceId == other.traceId;}
+@override int get hashCode {return traceId.hashCode;}
+@override String toString() {return 'TreasuryOutboundTransfersResourceAchTrackingDetails(traceId: $traceId)';}
+}

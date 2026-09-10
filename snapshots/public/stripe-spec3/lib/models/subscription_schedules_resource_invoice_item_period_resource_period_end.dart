@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Select how to calculate the end of the invoice item period.
 @immutable final class SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType {const SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType._(this.value);
 
-factory SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType.fromJson(String json) { return switch (json) {
+factory SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType.fromJson(String json) {return switch (json) {
   'min_item_period_end' => minItemPeriodEnd,
   'phase_end' => phaseEnd,
   'timestamp' => timestamp,
   _ => SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType._(json),
-}; }
+};}
 
 static const SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType minItemPeriodEnd = SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType._('min_item_period_end');
 
@@ -20,21 +20,21 @@ static const List<SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEn
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType($value)';}
+}
 /// 
 @immutable final class SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd {const SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd({required this.type, this.timestamp, });
 
-factory SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd.fromJson(Map<String, dynamic> json) { return SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd(
+factory SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd.fromJson(Map<String, dynamic> json) {return SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd(
   timestamp: json['timestamp'] != null ? (json['timestamp'] as num).toInt() : null,
   type: SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType.fromJson(json['type'] as String),
-); }
+);}
 
 /// A precise Unix timestamp for the end of the invoice item period. Must be greater than or equal to `period.start`.
 final int? timestamp;
@@ -42,19 +42,19 @@ final int? timestamp;
 /// Select how to calculate the end of the invoice item period.
 final SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'timestamp': ?timestamp,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd copyWith({int? Function()? timestamp, SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType? type, }) { return SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd copyWith({int? Function()? timestamp, SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType? type, }) {return SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd(
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd &&
           timestamp == other.timestamp &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(timestamp, type); } 
-@override String toString() { return 'SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd(timestamp: $timestamp, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(timestamp, type);}
+@override String toString() {return 'SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd(timestamp: $timestamp, type: $type)';}
+}

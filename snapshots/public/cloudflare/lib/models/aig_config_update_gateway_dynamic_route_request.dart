@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigUpdateGatewayDynamicRouteRequest {const AigConfigUpdateGatewayDynamicRouteRequest({required this.name});
 
-factory AigConfigUpdateGatewayDynamicRouteRequest.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayDynamicRouteRequest(
+factory AigConfigUpdateGatewayDynamicRouteRequest.fromJson(Map<String, dynamic> json) {return AigConfigUpdateGatewayDynamicRouteRequest(
   name: json['name'] as String,
-); }
+);}
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-AigConfigUpdateGatewayDynamicRouteRequest copyWith({String? name}) { return AigConfigUpdateGatewayDynamicRouteRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+AigConfigUpdateGatewayDynamicRouteRequest copyWith({String? name}) {return AigConfigUpdateGatewayDynamicRouteRequest(
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigUpdateGatewayDynamicRouteRequest &&
-          name == other.name; } 
-@override int get hashCode { return name.hashCode; } 
-@override String toString() { return 'AigConfigUpdateGatewayDynamicRouteRequest(name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return name.hashCode;}
+@override String toString() {return 'AigConfigUpdateGatewayDynamicRouteRequest(name: $name)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update_request_security_and_analysis.dart';/// The visibility of the repository.
 @immutable final class ReposUpdateRequestVisibility {const ReposUpdateRequestVisibility._(this.value);
 
-factory ReposUpdateRequestVisibility.fromJson(String json) { return switch (json) {
+factory ReposUpdateRequestVisibility.fromJson(String json) {return switch (json) {
   'public' => public,
   'private' => private,
   _ => ReposUpdateRequestVisibility._(json),
-}; }
+};}
 
 static const ReposUpdateRequestVisibility public = ReposUpdateRequestVisibility._('public');
 
@@ -17,14 +17,14 @@ static const List<ReposUpdateRequestVisibility> values = [public, private];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposUpdateRequestVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposUpdateRequestVisibility($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposUpdateRequestVisibility && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposUpdateRequestVisibility($value)';}
+}
 /// Required when using `squash_merge_commit_message`.
 /// 
 /// The default value for a squash merge commit title:
@@ -33,11 +33,11 @@ bool get isUnknown { return !values.contains(this); }
 /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
 @immutable final class ReposUpdateRequestSquashMergeCommitTitle {const ReposUpdateRequestSquashMergeCommitTitle._(this.value);
 
-factory ReposUpdateRequestSquashMergeCommitTitle.fromJson(String json) { return switch (json) {
+factory ReposUpdateRequestSquashMergeCommitTitle.fromJson(String json) {return switch (json) {
   'PR_TITLE' => prTitle,
   'COMMIT_OR_PR_TITLE' => commitOrPrTitle,
   _ => ReposUpdateRequestSquashMergeCommitTitle._(json),
-}; }
+};}
 
 static const ReposUpdateRequestSquashMergeCommitTitle prTitle = ReposUpdateRequestSquashMergeCommitTitle._('PR_TITLE');
 
@@ -47,14 +47,14 @@ static const List<ReposUpdateRequestSquashMergeCommitTitle> values = [prTitle, c
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposUpdateRequestSquashMergeCommitTitle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposUpdateRequestSquashMergeCommitTitle($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposUpdateRequestSquashMergeCommitTitle && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposUpdateRequestSquashMergeCommitTitle($value)';}
+}
 /// The default value for a squash merge commit message:
 /// 
 /// - `PR_BODY` - default to the pull request's body.
@@ -62,12 +62,12 @@ bool get isUnknown { return !values.contains(this); }
 /// - `BLANK` - default to a blank commit message.
 @immutable final class ReposUpdateRequestSquashMergeCommitMessage {const ReposUpdateRequestSquashMergeCommitMessage._(this.value);
 
-factory ReposUpdateRequestSquashMergeCommitMessage.fromJson(String json) { return switch (json) {
+factory ReposUpdateRequestSquashMergeCommitMessage.fromJson(String json) {return switch (json) {
   'PR_BODY' => prBody,
   'COMMIT_MESSAGES' => commitMessages,
   'BLANK' => blank,
   _ => ReposUpdateRequestSquashMergeCommitMessage._(json),
-}; }
+};}
 
 static const ReposUpdateRequestSquashMergeCommitMessage prBody = ReposUpdateRequestSquashMergeCommitMessage._('PR_BODY');
 
@@ -79,14 +79,14 @@ static const List<ReposUpdateRequestSquashMergeCommitMessage> values = [prBody, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposUpdateRequestSquashMergeCommitMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposUpdateRequestSquashMergeCommitMessage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposUpdateRequestSquashMergeCommitMessage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposUpdateRequestSquashMergeCommitMessage($value)';}
+}
 /// Required when using `merge_commit_message`.
 /// 
 /// The default value for a merge commit title.
@@ -95,11 +95,11 @@ bool get isUnknown { return !values.contains(this); }
 /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
 @immutable final class ReposUpdateRequestMergeCommitTitle {const ReposUpdateRequestMergeCommitTitle._(this.value);
 
-factory ReposUpdateRequestMergeCommitTitle.fromJson(String json) { return switch (json) {
+factory ReposUpdateRequestMergeCommitTitle.fromJson(String json) {return switch (json) {
   'PR_TITLE' => prTitle,
   'MERGE_MESSAGE' => mergeMessage,
   _ => ReposUpdateRequestMergeCommitTitle._(json),
-}; }
+};}
 
 static const ReposUpdateRequestMergeCommitTitle prTitle = ReposUpdateRequestMergeCommitTitle._('PR_TITLE');
 
@@ -109,14 +109,14 @@ static const List<ReposUpdateRequestMergeCommitTitle> values = [prTitle, mergeMe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposUpdateRequestMergeCommitTitle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposUpdateRequestMergeCommitTitle($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposUpdateRequestMergeCommitTitle && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposUpdateRequestMergeCommitTitle($value)';}
+}
 /// The default value for a merge commit message.
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
@@ -124,12 +124,12 @@ bool get isUnknown { return !values.contains(this); }
 /// - `BLANK` - default to a blank commit message.
 @immutable final class ReposUpdateRequestMergeCommitMessage {const ReposUpdateRequestMergeCommitMessage._(this.value);
 
-factory ReposUpdateRequestMergeCommitMessage.fromJson(String json) { return switch (json) {
+factory ReposUpdateRequestMergeCommitMessage.fromJson(String json) {return switch (json) {
   'PR_BODY' => prBody,
   'PR_TITLE' => prTitle,
   'BLANK' => blank,
   _ => ReposUpdateRequestMergeCommitMessage._(json),
-}; }
+};}
 
 static const ReposUpdateRequestMergeCommitMessage prBody = ReposUpdateRequestMergeCommitMessage._('PR_BODY');
 
@@ -141,17 +141,17 @@ static const List<ReposUpdateRequestMergeCommitMessage> values = [prBody, prTitl
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposUpdateRequestMergeCommitMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposUpdateRequestMergeCommitMessage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposUpdateRequestMergeCommitMessage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposUpdateRequestMergeCommitMessage($value)';}
+}
 @immutable final class ReposUpdateRequest {const ReposUpdateRequest({this.name, this.description, this.homepage, this.private, this.visibility, this.securityAndAnalysis = const Omittable.absent(), this.hasIssues, this.hasProjects, this.hasWiki, this.isTemplate, this.defaultBranch, this.allowSquashMerge, this.allowMergeCommit, this.allowRebaseMerge, this.allowAutoMerge, this.deleteBranchOnMerge, this.allowUpdateBranch, this.useSquashPrTitleAsDefault, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.archived, this.allowForking, this.webCommitSignoffRequired, });
 
-factory ReposUpdateRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateRequest(
+factory ReposUpdateRequest.fromJson(Map<String, dynamic> json) {return ReposUpdateRequest(
   name: json['name'] as String?,
   description: json['description'] as String?,
   homepage: json['homepage'] as String?,
@@ -177,7 +177,7 @@ factory ReposUpdateRequest.fromJson(Map<String, dynamic> json) { return ReposUpd
   archived: json['archived'] as bool?,
   allowForking: json['allow_forking'] as bool?,
   webCommitSignoffRequired: json['web_commit_signoff_required'] as bool?,
-); }
+);}
 
 /// The name of the repository.
 final String? name;
@@ -281,36 +281,36 @@ final bool? allowForking;
 final bool? webCommitSignoffRequired;
 
 /// The value with the schema default applied when absent.
-bool get privateOrDefault { return private ?? false; } 
+bool get privateOrDefault {return private ?? false;}
 /// The value with the schema default applied when absent.
-bool get hasIssuesOrDefault { return hasIssues ?? true; } 
+bool get hasIssuesOrDefault {return hasIssues ?? true;}
 /// The value with the schema default applied when absent.
-bool get hasProjectsOrDefault { return hasProjects ?? true; } 
+bool get hasProjectsOrDefault {return hasProjects ?? true;}
 /// The value with the schema default applied when absent.
-bool get hasWikiOrDefault { return hasWiki ?? true; } 
+bool get hasWikiOrDefault {return hasWiki ?? true;}
 /// The value with the schema default applied when absent.
-bool get isTemplateOrDefault { return isTemplate ?? false; } 
+bool get isTemplateOrDefault {return isTemplate ?? false;}
 /// The value with the schema default applied when absent.
-bool get allowSquashMergeOrDefault { return allowSquashMerge ?? true; } 
+bool get allowSquashMergeOrDefault {return allowSquashMerge ?? true;}
 /// The value with the schema default applied when absent.
-bool get allowMergeCommitOrDefault { return allowMergeCommit ?? true; } 
+bool get allowMergeCommitOrDefault {return allowMergeCommit ?? true;}
 /// The value with the schema default applied when absent.
-bool get allowRebaseMergeOrDefault { return allowRebaseMerge ?? true; } 
+bool get allowRebaseMergeOrDefault {return allowRebaseMerge ?? true;}
 /// The value with the schema default applied when absent.
-bool get allowAutoMergeOrDefault { return allowAutoMerge ?? false; } 
+bool get allowAutoMergeOrDefault {return allowAutoMerge ?? false;}
 /// The value with the schema default applied when absent.
-bool get deleteBranchOnMergeOrDefault { return deleteBranchOnMerge ?? false; } 
+bool get deleteBranchOnMergeOrDefault {return deleteBranchOnMerge ?? false;}
 /// The value with the schema default applied when absent.
-bool get allowUpdateBranchOrDefault { return allowUpdateBranch ?? false; } 
+bool get allowUpdateBranchOrDefault {return allowUpdateBranch ?? false;}
 /// The value with the schema default applied when absent.
-bool get useSquashPrTitleAsDefaultOrDefault { return useSquashPrTitleAsDefault ?? false; } 
+bool get useSquashPrTitleAsDefaultOrDefault {return useSquashPrTitleAsDefault ?? false;}
 /// The value with the schema default applied when absent.
-bool get archivedOrDefault { return archived ?? false; } 
+bool get archivedOrDefault {return archived ?? false;}
 /// The value with the schema default applied when absent.
-bool get allowForkingOrDefault { return allowForking ?? false; } 
+bool get allowForkingOrDefault {return allowForking ?? false;}
 /// The value with the schema default applied when absent.
-bool get webCommitSignoffRequiredOrDefault { return webCommitSignoffRequired ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get webCommitSignoffRequiredOrDefault {return webCommitSignoffRequired ?? false;}
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'description': ?description,
   'homepage': ?homepage,
@@ -336,9 +336,9 @@ Map<String, dynamic> toJson() { return {
   'archived': ?archived,
   'allow_forking': ?allowForking,
   'web_commit_signoff_required': ?webCommitSignoffRequired,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'homepage', 'private', 'visibility', 'security_and_analysis', 'has_issues', 'has_projects', 'has_wiki', 'is_template', 'default_branch', 'allow_squash_merge', 'allow_merge_commit', 'allow_rebase_merge', 'allow_auto_merge', 'delete_branch_on_merge', 'allow_update_branch', 'use_squash_pr_title_as_default', 'squash_merge_commit_title', 'squash_merge_commit_message', 'merge_commit_title', 'merge_commit_message', 'archived', 'allow_forking', 'web_commit_signoff_required'}.contains(key)); } 
-ReposUpdateRequest copyWith({String? Function()? name, String? Function()? description, String? Function()? homepage, bool? Function()? private, ReposUpdateRequestVisibility? Function()? visibility, Omittable<ReposUpdateRequestSecurityAndAnalysis?>? securityAndAnalysis, bool? Function()? hasIssues, bool? Function()? hasProjects, bool? Function()? hasWiki, bool? Function()? isTemplate, String? Function()? defaultBranch, bool? Function()? allowSquashMerge, bool? Function()? allowMergeCommit, bool? Function()? allowRebaseMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? allowUpdateBranch, bool? Function()? useSquashPrTitleAsDefault, ReposUpdateRequestSquashMergeCommitTitle? Function()? squashMergeCommitTitle, ReposUpdateRequestSquashMergeCommitMessage? Function()? squashMergeCommitMessage, ReposUpdateRequestMergeCommitTitle? Function()? mergeCommitTitle, ReposUpdateRequestMergeCommitMessage? Function()? mergeCommitMessage, bool? Function()? archived, bool? Function()? allowForking, bool? Function()? webCommitSignoffRequired, }) { return ReposUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'description', 'homepage', 'private', 'visibility', 'security_and_analysis', 'has_issues', 'has_projects', 'has_wiki', 'is_template', 'default_branch', 'allow_squash_merge', 'allow_merge_commit', 'allow_rebase_merge', 'allow_auto_merge', 'delete_branch_on_merge', 'allow_update_branch', 'use_squash_pr_title_as_default', 'squash_merge_commit_title', 'squash_merge_commit_message', 'merge_commit_title', 'merge_commit_message', 'archived', 'allow_forking', 'web_commit_signoff_required'}.contains(key));}
+ReposUpdateRequest copyWith({String? Function()? name, String? Function()? description, String? Function()? homepage, bool? Function()? private, ReposUpdateRequestVisibility? Function()? visibility, Omittable<ReposUpdateRequestSecurityAndAnalysis?>? securityAndAnalysis, bool? Function()? hasIssues, bool? Function()? hasProjects, bool? Function()? hasWiki, bool? Function()? isTemplate, String? Function()? defaultBranch, bool? Function()? allowSquashMerge, bool? Function()? allowMergeCommit, bool? Function()? allowRebaseMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? allowUpdateBranch, bool? Function()? useSquashPrTitleAsDefault, ReposUpdateRequestSquashMergeCommitTitle? Function()? squashMergeCommitTitle, ReposUpdateRequestSquashMergeCommitMessage? Function()? squashMergeCommitMessage, ReposUpdateRequestMergeCommitTitle? Function()? mergeCommitTitle, ReposUpdateRequestMergeCommitMessage? Function()? mergeCommitMessage, bool? Function()? archived, bool? Function()? allowForking, bool? Function()? webCommitSignoffRequired, }) {return ReposUpdateRequest(
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,
   homepage: homepage != null ? homepage() : this.homepage,
@@ -364,8 +364,8 @@ ReposUpdateRequest copyWith({String? Function()? name, String? Function()? descr
   archived: archived != null ? archived() : this.archived,
   allowForking: allowForking != null ? allowForking() : this.allowForking,
   webCommitSignoffRequired: webCommitSignoffRequired != null ? webCommitSignoffRequired() : this.webCommitSignoffRequired,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReposUpdateRequest &&
           name == other.name &&
           description == other.description &&
@@ -391,7 +391,7 @@ ReposUpdateRequest copyWith({String? Function()? name, String? Function()? descr
           mergeCommitMessage == other.mergeCommitMessage &&
           archived == other.archived &&
           allowForking == other.allowForking &&
-          webCommitSignoffRequired == other.webCommitSignoffRequired; } 
-@override int get hashCode { return Object.hashAll([name, description, homepage, private, visibility, securityAndAnalysis, hasIssues, hasProjects, hasWiki, isTemplate, defaultBranch, allowSquashMerge, allowMergeCommit, allowRebaseMerge, allowAutoMerge, deleteBranchOnMerge, allowUpdateBranch, useSquashPrTitleAsDefault, squashMergeCommitTitle, squashMergeCommitMessage, mergeCommitTitle, mergeCommitMessage, archived, allowForking, webCommitSignoffRequired]); } 
-@override String toString() { return 'ReposUpdateRequest(name: $name, description: $description, homepage: $homepage, private: $private, visibility: $visibility, securityAndAnalysis: $securityAndAnalysis, hasIssues: $hasIssues, hasProjects: $hasProjects, hasWiki: $hasWiki, isTemplate: $isTemplate, defaultBranch: $defaultBranch, allowSquashMerge: $allowSquashMerge, allowMergeCommit: $allowMergeCommit, allowRebaseMerge: $allowRebaseMerge, allowAutoMerge: $allowAutoMerge, deleteBranchOnMerge: $deleteBranchOnMerge, allowUpdateBranch: $allowUpdateBranch, useSquashPrTitleAsDefault: $useSquashPrTitleAsDefault, squashMergeCommitTitle: $squashMergeCommitTitle, squashMergeCommitMessage: $squashMergeCommitMessage, mergeCommitTitle: $mergeCommitTitle, mergeCommitMessage: $mergeCommitMessage, archived: $archived, allowForking: $allowForking, webCommitSignoffRequired: $webCommitSignoffRequired)'; } 
- }
+          webCommitSignoffRequired == other.webCommitSignoffRequired;}
+@override int get hashCode {return Object.hashAll([name, description, homepage, private, visibility, securityAndAnalysis, hasIssues, hasProjects, hasWiki, isTemplate, defaultBranch, allowSquashMerge, allowMergeCommit, allowRebaseMerge, allowAutoMerge, deleteBranchOnMerge, allowUpdateBranch, useSquashPrTitleAsDefault, squashMergeCommitTitle, squashMergeCommitMessage, mergeCommitTitle, mergeCommitMessage, archived, allowForking, webCommitSignoffRequired]);}
+@override String toString() {return 'ReposUpdateRequest(name: $name, description: $description, homepage: $homepage, private: $private, visibility: $visibility, securityAndAnalysis: $securityAndAnalysis, hasIssues: $hasIssues, hasProjects: $hasProjects, hasWiki: $hasWiki, isTemplate: $isTemplate, defaultBranch: $defaultBranch, allowSquashMerge: $allowSquashMerge, allowMergeCommit: $allowMergeCommit, allowRebaseMerge: $allowRebaseMerge, allowAutoMerge: $allowAutoMerge, deleteBranchOnMerge: $deleteBranchOnMerge, allowUpdateBranch: $allowUpdateBranch, useSquashPrTitleAsDefault: $useSquashPrTitleAsDefault, squashMergeCommitTitle: $squashMergeCommitTitle, squashMergeCommitMessage: $squashMergeCommitMessage, mergeCommitTitle: $mergeCommitTitle, mergeCommitMessage: $mergeCommitMessage, archived: $archived, allowForking: $allowForking, webCommitSignoffRequired: $webCommitSignoffRequired)';}
+}

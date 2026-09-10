@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_asns_asn.dart';/// Dictionary of Autonomous System Numbers where ASN's are the keys
 @immutable final class UrlscannerGetScanResponseResultScanAsns {const UrlscannerGetScanResponseResultScanAsns({this.asn});
 
-factory UrlscannerGetScanResponseResultScanAsns.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanAsns(
+factory UrlscannerGetScanResponseResultScanAsns.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponseResultScanAsns(
   asn: json['asn'] != null ? UrlscannerGetScanResponseResultScanAsnsAsn.fromJson(json['asn'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// ASN's contacted
 final UrlscannerGetScanResponseResultScanAsnsAsn? asn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (asn != null) 'asn': asn?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'asn'}.contains(key)); } 
-UrlscannerGetScanResponseResultScanAsns copyWith({UrlscannerGetScanResponseResultScanAsnsAsn? Function()? asn}) { return UrlscannerGetScanResponseResultScanAsns(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'asn'}.contains(key));}
+UrlscannerGetScanResponseResultScanAsns copyWith({UrlscannerGetScanResponseResultScanAsnsAsn? Function()? asn}) {return UrlscannerGetScanResponseResultScanAsns(
   asn: asn != null ? asn() : this.asn,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponseResultScanAsns &&
-          asn == other.asn; } 
-@override int get hashCode { return asn.hashCode; } 
-@override String toString() { return 'UrlscannerGetScanResponseResultScanAsns(asn: $asn)'; } 
- }
+          asn == other.asn;}
+@override int get hashCode {return asn.hashCode;}
+@override String toString() {return 'UrlscannerGetScanResponseResultScanAsns(asn: $asn)';}
+}

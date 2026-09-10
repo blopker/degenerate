@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_submit_report_response_request.dart';@immutable final class AbuseReportsSubmitReportResponse {const AbuseReportsSubmitReportResponse({required this.abuseRand, required this.request, required this.result, });
 
-factory AbuseReportsSubmitReportResponse.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportResponse(
+factory AbuseReportsSubmitReportResponse.fromJson(Map<String, dynamic> json) {return AbuseReportsSubmitReportResponse(
   abuseRand: json['abuse_rand'] as String,
   request: AbuseReportsSubmitReportResponseRequest.fromJson(json['request'] as Map<String, dynamic>),
   result: json['result'] as String,
-); }
+);}
 
 /// The identifier for the submitted abuse report.
 final String abuseRand;
@@ -16,24 +16,24 @@ final AbuseReportsSubmitReportResponseRequest request;
 /// The result should be 'success' for successful response
 final String result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'abuse_rand': abuseRand,
   'request': request.toJson(),
   'result': result,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('abuse_rand') && json['abuse_rand'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('abuse_rand') && json['abuse_rand'] is String &&
       json.containsKey('request') &&
-      json.containsKey('result') && json['result'] is String; } 
-AbuseReportsSubmitReportResponse copyWith({String? abuseRand, AbuseReportsSubmitReportResponseRequest? request, String? result, }) { return AbuseReportsSubmitReportResponse(
+      json.containsKey('result') && json['result'] is String;}
+AbuseReportsSubmitReportResponse copyWith({String? abuseRand, AbuseReportsSubmitReportResponseRequest? request, String? result, }) {return AbuseReportsSubmitReportResponse(
   abuseRand: abuseRand ?? this.abuseRand,
   request: request ?? this.request,
   result: result ?? this.result,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AbuseReportsSubmitReportResponse &&
           abuseRand == other.abuseRand &&
           request == other.request &&
-          result == other.result; } 
-@override int get hashCode { return Object.hash(abuseRand, request, result); } 
-@override String toString() { return 'AbuseReportsSubmitReportResponse(abuseRand: $abuseRand, request: $request, result: $result)'; } 
- }
+          result == other.result;}
+@override int get hashCode {return Object.hash(abuseRand, request, result);}
+@override String toString() {return 'AbuseReportsSubmitReportResponse(abuseRand: $abuseRand, request: $request, result: $result)';}
+}

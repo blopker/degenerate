@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionSchedulesRequestPhasesDurationInterval {const PostSubscriptionSchedulesRequestPhasesDurationInterval._(this.value);
 
-factory PostSubscriptionSchedulesRequestPhasesDurationInterval.fromJson(String json) { return switch (json) {
+factory PostSubscriptionSchedulesRequestPhasesDurationInterval.fromJson(String json) {return switch (json) {
   'day' => day,
   'month' => month,
   'week' => week,
   'year' => year,
   _ => PostSubscriptionSchedulesRequestPhasesDurationInterval._(json),
-}; }
+};}
 
 static const PostSubscriptionSchedulesRequestPhasesDurationInterval day = PostSubscriptionSchedulesRequestPhasesDurationInterval._('day');
 
@@ -22,38 +22,38 @@ static const List<PostSubscriptionSchedulesRequestPhasesDurationInterval> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesRequestPhasesDurationInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestPhasesDurationInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionSchedulesRequestPhasesDurationInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionSchedulesRequestPhasesDurationInterval($value)';}
+}
 @immutable final class PostSubscriptionSchedulesRequestPhasesDuration {const PostSubscriptionSchedulesRequestPhasesDuration({required this.interval, this.intervalCount, });
 
-factory PostSubscriptionSchedulesRequestPhasesDuration.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestPhasesDuration(
+factory PostSubscriptionSchedulesRequestPhasesDuration.fromJson(Map<String, dynamic> json) {return PostSubscriptionSchedulesRequestPhasesDuration(
   interval: PostSubscriptionSchedulesRequestPhasesDurationInterval.fromJson(json['interval'] as String),
   intervalCount: json['interval_count'] != null ? (json['interval_count'] as num).toInt() : null,
-); }
+);}
 
 final PostSubscriptionSchedulesRequestPhasesDurationInterval interval;
 
 final int? intervalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'interval': interval.toJson(),
   'interval_count': ?intervalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval'); } 
-PostSubscriptionSchedulesRequestPhasesDuration copyWith({PostSubscriptionSchedulesRequestPhasesDurationInterval? interval, int? Function()? intervalCount, }) { return PostSubscriptionSchedulesRequestPhasesDuration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('interval');}
+PostSubscriptionSchedulesRequestPhasesDuration copyWith({PostSubscriptionSchedulesRequestPhasesDurationInterval? interval, int? Function()? intervalCount, }) {return PostSubscriptionSchedulesRequestPhasesDuration(
   interval: interval ?? this.interval,
   intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionSchedulesRequestPhasesDuration &&
           interval == other.interval &&
-          intervalCount == other.intervalCount; } 
-@override int get hashCode { return Object.hash(interval, intervalCount); } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestPhasesDuration(interval: $interval, intervalCount: $intervalCount)'; } 
- }
+          intervalCount == other.intervalCount;}
+@override int get hashCode {return Object.hash(interval, intervalCount);}
+@override String toString() {return 'PostSubscriptionSchedulesRequestPhasesDuration(interval: $interval, intervalCount: $intervalCount)';}
+}

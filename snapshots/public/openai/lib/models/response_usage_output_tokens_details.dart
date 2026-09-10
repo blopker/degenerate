@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A detailed breakdown of the output tokens.
 @immutable final class ResponseUsageOutputTokensDetails {const ResponseUsageOutputTokensDetails({required this.reasoningTokens});
 
-factory ResponseUsageOutputTokensDetails.fromJson(Map<String, dynamic> json) { return ResponseUsageOutputTokensDetails(
+factory ResponseUsageOutputTokensDetails.fromJson(Map<String, dynamic> json) {return ResponseUsageOutputTokensDetails(
   reasoningTokens: (json['reasoning_tokens'] as num).toInt(),
-); }
+);}
 
 /// The number of reasoning tokens.
 final int reasoningTokens;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'reasoning_tokens': reasoningTokens,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('reasoning_tokens') && json['reasoning_tokens'] is num; } 
-ResponseUsageOutputTokensDetails copyWith({int? reasoningTokens}) { return ResponseUsageOutputTokensDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('reasoning_tokens') && json['reasoning_tokens'] is num;}
+ResponseUsageOutputTokensDetails copyWith({int? reasoningTokens}) {return ResponseUsageOutputTokensDetails(
   reasoningTokens: reasoningTokens ?? this.reasoningTokens,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseUsageOutputTokensDetails &&
-          reasoningTokens == other.reasoningTokens; } 
-@override int get hashCode { return reasoningTokens.hashCode; } 
-@override String toString() { return 'ResponseUsageOutputTokensDetails(reasoningTokens: $reasoningTokens)'; } 
- }
+          reasoningTokens == other.reasoningTokens;}
+@override int get hashCode {return reasoningTokens.hashCode;}
+@override String toString() {return 'ResponseUsageOutputTokensDetails(reasoningTokens: $reasoningTokens)';}
+}

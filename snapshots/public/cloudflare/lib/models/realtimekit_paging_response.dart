@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_paging_response_paging.dart';@immutable final class RealtimekitPagingResponse {const RealtimekitPagingResponse({required this.data, required this.paging, required this.success, });
 
-factory RealtimekitPagingResponse.fromJson(Map<String, dynamic> json) { return RealtimekitPagingResponse(
+factory RealtimekitPagingResponse.fromJson(Map<String, dynamic> json) {return RealtimekitPagingResponse(
   data: (json['data'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   paging: RealtimekitPagingResponsePaging.fromJson(json['paging'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<Map<String,dynamic>> data;
 
@@ -14,24 +14,24 @@ final RealtimekitPagingResponsePaging paging;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e).toList(),
   'paging': paging.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('paging') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RealtimekitPagingResponse copyWith({List<Map<String,dynamic>>? data, RealtimekitPagingResponsePaging? paging, bool? success, }) { return RealtimekitPagingResponse(
+      json.containsKey('success') && json['success'] is bool;}
+RealtimekitPagingResponse copyWith({List<Map<String,dynamic>>? data, RealtimekitPagingResponsePaging? paging, bool? success, }) {return RealtimekitPagingResponse(
   data: data ?? this.data,
   paging: paging ?? this.paging,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitPagingResponse &&
           listEquals(data, other.data) &&
           paging == other.paging &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), paging, success); } 
-@override String toString() { return 'RealtimekitPagingResponse(data: $data, paging: $paging, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(Object.hashAll(data), paging, success);}
+@override String toString() {return 'RealtimekitPagingResponse(data: $data, paging: $paging, success: $success)';}
+}

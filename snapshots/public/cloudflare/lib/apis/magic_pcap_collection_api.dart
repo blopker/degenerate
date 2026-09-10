@@ -13,7 +13,7 @@ final class MagicPcapCollectionApi with ApiExecutor {const MagicPcapCollectionAp
 /// Lists all packet capture requests for an account.
 ///
 /// `GET /accounts/{account_id}/pcaps`
-Future<ApiResult<List<MagicVisibilityPcapsPcapsCollectionResponseResult>, MagicPcapCollectionListPacketCaptureRequestsResponseDefault>> magicPcapCollectionListPacketCaptureRequests({required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<MagicVisibilityPcapsPcapsCollectionResponseResult>, MagicPcapCollectionListPacketCaptureRequestsResponseDefault>> magicPcapCollectionListPacketCaptureRequests({required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -37,13 +37,13 @@ return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsCollectionRespo
 
   },
 );
- } 
+}
 /// Create PCAP request
 ///
 /// Create new PCAP request for account.
 ///
 /// `POST /accounts/{account_id}/pcaps`
-Future<ApiResult<MagicVisibilityPcapsPcapsSingleResponseResult, MagicPcapCollectionCreatePcapRequestResponseDefault>> magicPcapCollectionCreatePcapRequest({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsRequestPcap body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityPcapsPcapsSingleResponseResult, MagicPcapCollectionCreatePcapRequestResponseDefault>> magicPcapCollectionCreatePcapRequest({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsRequestPcap body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -69,13 +69,13 @@ return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsSingleResponse.
 
   },
 );
- } 
+}
 /// Get PCAP request
 ///
 /// Get information for a PCAP request by id.
 ///
 /// `GET /accounts/{account_id}/pcaps/{pcap_id}`
-Future<ApiResult<MagicVisibilityPcapsPcapsSingleResponseResult, MagicPcapCollectionGetPcapRequestResponseDefault>> magicPcapCollectionGetPcapRequest({required MagicVisibilityPcapsIdentifier pcapId, required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityPcapsPcapsSingleResponseResult, MagicPcapCollectionGetPcapRequestResponseDefault>> magicPcapCollectionGetPcapRequest({required MagicVisibilityPcapsIdentifier pcapId, required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -99,13 +99,13 @@ return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsSingleResponse.
 
   },
 );
- } 
+}
 /// Download Simple PCAP
 ///
 /// Download PCAP information into a file. Response is a binary PCAP file.
 ///
 /// `GET /accounts/{account_id}/pcaps/{pcap_id}/download`
-Future<ApiResult<void, Never>> magicPcapCollectionDownloadSimplePcap({required MagicVisibilityPcapsIdentifier pcapId, required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> magicPcapCollectionDownloadSimplePcap({required MagicVisibilityPcapsIdentifier pcapId, required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -118,13 +118,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Stop full PCAP
 ///
 /// Stop full PCAP.
 ///
 /// `PUT /accounts/{account_id}/pcaps/{pcap_id}/stop`
-Future<ApiResult<void, ResponseCommonFailure49>> magicPcapCollectionStopFullPcap({required MagicVisibilityPcapsIdentifier pcapId, required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ResponseCommonFailure49>> magicPcapCollectionStopFullPcap({required MagicVisibilityPcapsIdentifier pcapId, required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -145,13 +145,13 @@ return ResponseCommonFailure49.fromJson(json as Map<String, dynamic>);
 
   },
 );
- } 
+}
 /// List PCAPs Bucket Ownership
 ///
 /// List all buckets configured for use with PCAPs API.
 ///
 /// `GET /accounts/{account_id}/pcaps/ownership`
-Future<ApiResult<List<MagicVisibilityPcapsPcapsOwnershipResponse>?, MagicPcapCollectionListPcaPsBucketOwnershipResponseDefault>> magicPcapCollectionListPcaPsBucketOwnership({required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<MagicVisibilityPcapsPcapsOwnershipResponse>?, MagicPcapCollectionListPcaPsBucketOwnershipResponseDefault>> magicPcapCollectionListPcaPsBucketOwnership({required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -175,13 +175,13 @@ return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsOwnershipCollec
 
   },
 );
- } 
+}
 /// Add buckets for full packet captures
 ///
 /// Adds an AWS or GCP bucket to use with full packet captures.
 ///
 /// `POST /accounts/{account_id}/pcaps/ownership`
-Future<ApiResult<MagicVisibilityPcapsPcapsOwnershipResponse, MagicPcapCollectionAddBucketsForFullPacketCapturesResponseDefault>> magicPcapCollectionAddBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsOwnershipRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityPcapsPcapsOwnershipResponse, MagicPcapCollectionAddBucketsForFullPacketCapturesResponseDefault>> magicPcapCollectionAddBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsOwnershipRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -207,13 +207,13 @@ return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsOwnershipSingle
 
   },
 );
- } 
+}
 /// Delete buckets for full packet captures
 ///
 /// Deletes buckets added to the packet captures API.
 ///
 /// `DELETE /accounts/{account_id}/pcaps/ownership/{ownership_id}`
-Future<ApiResult<void, Never>> magicPcapCollectionDeleteBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier ownershipId, required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> magicPcapCollectionDeleteBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier ownershipId, required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -226,13 +226,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Validate buckets for full packet captures
 ///
 /// Validates buckets added to the packet captures API.
 ///
 /// `POST /accounts/{account_id}/pcaps/ownership/validate`
-Future<ApiResult<MagicVisibilityPcapsPcapsOwnershipResponse, MagicPcapCollectionValidateBucketsForFullPacketCapturesResponseDefault>> magicPcapCollectionValidateBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsOwnershipValidateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityPcapsPcapsOwnershipResponse, MagicPcapCollectionValidateBucketsForFullPacketCapturesResponseDefault>> magicPcapCollectionValidateBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsOwnershipValidateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -258,5 +258,5 @@ return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsOwnershipSingle
 
   },
 );
- } 
- }
+}
+}

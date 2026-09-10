@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Counters summarizing the outcomes of the evaluation run.
 @immutable final class EvalRunResultCounts {const EvalRunResultCounts({required this.total, required this.errored, required this.failed, required this.passed, });
 
-factory EvalRunResultCounts.fromJson(Map<String, dynamic> json) { return EvalRunResultCounts(
+factory EvalRunResultCounts.fromJson(Map<String, dynamic> json) {return EvalRunResultCounts(
   total: (json['total'] as num).toInt(),
   errored: (json['errored'] as num).toInt(),
   failed: (json['failed'] as num).toInt(),
   passed: (json['passed'] as num).toInt(),
-); }
+);}
 
 /// Total number of executed output items.
 final int total;
@@ -22,28 +22,28 @@ final int failed;
 /// Number of output items that passed the evaluation.
 final int passed;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total': total,
   'errored': errored,
   'failed': failed,
   'passed': passed,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total') && json['total'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total') && json['total'] is num &&
       json.containsKey('errored') && json['errored'] is num &&
       json.containsKey('failed') && json['failed'] is num &&
-      json.containsKey('passed') && json['passed'] is num; } 
-EvalRunResultCounts copyWith({int? total, int? errored, int? failed, int? passed, }) { return EvalRunResultCounts(
+      json.containsKey('passed') && json['passed'] is num;}
+EvalRunResultCounts copyWith({int? total, int? errored, int? failed, int? passed, }) {return EvalRunResultCounts(
   total: total ?? this.total,
   errored: errored ?? this.errored,
   failed: failed ?? this.failed,
   passed: passed ?? this.passed,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EvalRunResultCounts &&
           total == other.total &&
           errored == other.errored &&
           failed == other.failed &&
-          passed == other.passed; } 
-@override int get hashCode { return Object.hash(total, errored, failed, passed); } 
-@override String toString() { return 'EvalRunResultCounts(total: $total, errored: $errored, failed: $failed, passed: $passed)'; } 
- }
+          passed == other.passed;}
+@override int get hashCode {return Object.hash(total, errored, failed, passed);}
+@override String toString() {return 'EvalRunResultCounts(total: $total, errored: $errored, failed: $failed, passed: $passed)';}
+}

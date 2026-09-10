@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pull_request_review_comment_event_comment_links.dart';import 'pull_request_review_comment_event_comment_reactions.dart';import 'pull_request_review_comment_event_comment_user.dart';@immutable final class PullRequestReviewCommentEventComment {const PullRequestReviewCommentEventComment({required this.id, required this.nodeId, required this.url, required this.pullRequestReviewId, required this.diffHunk, required this.path, required this.position, required this.originalPosition, required this.commitId, required this.user, required this.body, required this.createdAt, required this.updatedAt, required this.htmlUrl, required this.pullRequestUrl, required this.links, required this.originalCommitId, required this.reactions, this.subjectType = const Omittable.absent(), this.inReplyToId, });
 
-factory PullRequestReviewCommentEventComment.fromJson(Map<String, dynamic> json) { return PullRequestReviewCommentEventComment(
+factory PullRequestReviewCommentEventComment.fromJson(Map<String, dynamic> json) {return PullRequestReviewCommentEventComment(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: Uri.parse(json['url'] as String),
@@ -23,7 +23,7 @@ factory PullRequestReviewCommentEventComment.fromJson(Map<String, dynamic> json)
   originalCommitId: json['original_commit_id'] as String,
   reactions: PullRequestReviewCommentEventCommentReactions.fromJson(json['reactions'] as Map<String, dynamic>),
   inReplyToId: json['in_reply_to_id'] != null ? (json['in_reply_to_id'] as num).toInt() : null,
-); }
+);}
 
 final int id;
 
@@ -65,7 +65,7 @@ final PullRequestReviewCommentEventCommentReactions reactions;
 
 final int? inReplyToId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url.toString(),
@@ -86,8 +86,8 @@ Map<String, dynamic> toJson() { return {
   'original_commit_id': originalCommitId,
   'reactions': reactions.toJson(),
   'in_reply_to_id': ?inReplyToId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('pull_request_review_id') && (json['pull_request_review_id'] == null || json['pull_request_review_id'] is num) &&
@@ -104,8 +104,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('pull_request_url') && json['pull_request_url'] is String &&
       json.containsKey('_links') &&
       json.containsKey('original_commit_id') && json['original_commit_id'] is String &&
-      json.containsKey('reactions'); } 
-PullRequestReviewCommentEventComment copyWith({int? id, String? nodeId, Uri? url, int? Function()? pullRequestReviewId, String? diffHunk, String? path, int? Function()? position, int? originalPosition, Omittable<String?>? subjectType, String? commitId, PullRequestReviewCommentEventCommentUser? Function()? user, String? body, DateTime? createdAt, DateTime? updatedAt, Uri? htmlUrl, Uri? pullRequestUrl, PullRequestReviewCommentEventCommentLinks? links, String? originalCommitId, PullRequestReviewCommentEventCommentReactions? reactions, int? Function()? inReplyToId, }) { return PullRequestReviewCommentEventComment(
+      json.containsKey('reactions');}
+PullRequestReviewCommentEventComment copyWith({int? id, String? nodeId, Uri? url, int? Function()? pullRequestReviewId, String? diffHunk, String? path, int? Function()? position, int? originalPosition, Omittable<String?>? subjectType, String? commitId, PullRequestReviewCommentEventCommentUser? Function()? user, String? body, DateTime? createdAt, DateTime? updatedAt, Uri? htmlUrl, Uri? pullRequestUrl, PullRequestReviewCommentEventCommentLinks? links, String? originalCommitId, PullRequestReviewCommentEventCommentReactions? reactions, int? Function()? inReplyToId, }) {return PullRequestReviewCommentEventComment(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -126,8 +126,8 @@ PullRequestReviewCommentEventComment copyWith({int? id, String? nodeId, Uri? url
   originalCommitId: originalCommitId ?? this.originalCommitId,
   reactions: reactions ?? this.reactions,
   inReplyToId: inReplyToId != null ? inReplyToId() : this.inReplyToId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PullRequestReviewCommentEventComment &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -148,7 +148,7 @@ PullRequestReviewCommentEventComment copyWith({int? id, String? nodeId, Uri? url
           links == other.links &&
           originalCommitId == other.originalCommitId &&
           reactions == other.reactions &&
-          inReplyToId == other.inReplyToId; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, pullRequestReviewId, diffHunk, path, position, originalPosition, subjectType, commitId, user, body, createdAt, updatedAt, htmlUrl, pullRequestUrl, links, originalCommitId, reactions, inReplyToId); } 
-@override String toString() { return 'PullRequestReviewCommentEventComment(id: $id, nodeId: $nodeId, url: $url, pullRequestReviewId: $pullRequestReviewId, diffHunk: $diffHunk, path: $path, position: $position, originalPosition: $originalPosition, subjectType: $subjectType, commitId: $commitId, user: $user, body: $body, createdAt: $createdAt, updatedAt: $updatedAt, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, links: $links, originalCommitId: $originalCommitId, reactions: $reactions, inReplyToId: $inReplyToId)'; } 
- }
+          inReplyToId == other.inReplyToId;}
+@override int get hashCode {return Object.hash(id, nodeId, url, pullRequestReviewId, diffHunk, path, position, originalPosition, subjectType, commitId, user, body, createdAt, updatedAt, htmlUrl, pullRequestUrl, links, originalCommitId, reactions, inReplyToId);}
+@override String toString() {return 'PullRequestReviewCommentEventComment(id: $id, nodeId: $nodeId, url: $url, pullRequestReviewId: $pullRequestReviewId, diffHunk: $diffHunk, path: $path, position: $position, originalPosition: $originalPosition, subjectType: $subjectType, commitId: $commitId, user: $user, body: $body, createdAt: $createdAt, updatedAt: $updatedAt, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, links: $links, originalCommitId: $originalCommitId, reactions: $reactions, inReplyToId: $inReplyToId)';}
+}

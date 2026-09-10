@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ToolSearchExecutionType {const ToolSearchExecutionType._(this.value);
 
-factory ToolSearchExecutionType.fromJson(String json) { return switch (json) {
+factory ToolSearchExecutionType.fromJson(String json) {return switch (json) {
   'server' => server,
   'client' => client,
   _ => ToolSearchExecutionType._(json),
-}; }
+};}
 
 static const ToolSearchExecutionType server = ToolSearchExecutionType._('server');
 
@@ -16,11 +16,11 @@ static const List<ToolSearchExecutionType> values = [server, client];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolSearchExecutionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ToolSearchExecutionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ToolSearchExecutionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ToolSearchExecutionType($value)';}
+}

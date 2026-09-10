@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_configuration_configuration_resource_device_type_specific_config_splashscreen.dart';/// 
 @immutable final class TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig {const TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig({this.splashscreen});
 
-factory TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig(
+factory TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(Map<String, dynamic> json) {return TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig(
   splashscreen: json['splashscreen'] != null ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfigSplashscreen.fromJson(json['splashscreen']) : null,
-); }
+);}
 
 /// A File ID representing an image to display on the reader
 final TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfigSplashscreen? splashscreen;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (splashscreen != null) 'splashscreen': splashscreen?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'splashscreen'}.contains(key)); } 
-TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig copyWith({TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfigSplashscreen? Function()? splashscreen}) { return TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'splashscreen'}.contains(key));}
+TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig copyWith({TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfigSplashscreen? Function()? splashscreen}) {return TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig(
   splashscreen: splashscreen != null ? splashscreen() : this.splashscreen,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig &&
-          splashscreen == other.splashscreen; } 
-@override int get hashCode { return splashscreen.hashCode; } 
-@override String toString() { return 'TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig(splashscreen: $splashscreen)'; } 
- }
+          splashscreen == other.splashscreen;}
+@override int get hashCode {return splashscreen.hashCode;}
+@override String toString() {return 'TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig(splashscreen: $splashscreen)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The desired country code of the bank account information. Permitted values include: `DE`, `FR`, `IE`, or `NL`.
 @immutable final class PaymentMethodOptionsCustomerBalanceEuBankAccountCountry {const PaymentMethodOptionsCustomerBalanceEuBankAccountCountry._(this.value);
 
-factory PaymentMethodOptionsCustomerBalanceEuBankAccountCountry.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsCustomerBalanceEuBankAccountCountry.fromJson(String json) {return switch (json) {
   'BE' => be,
   'DE' => de,
   'ES' => es,
@@ -11,7 +11,7 @@ factory PaymentMethodOptionsCustomerBalanceEuBankAccountCountry.fromJson(String 
   'IE' => ie,
   'NL' => nl,
   _ => PaymentMethodOptionsCustomerBalanceEuBankAccountCountry._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsCustomerBalanceEuBankAccountCountry be = PaymentMethodOptionsCustomerBalanceEuBankAccountCountry._('BE');
 
@@ -29,34 +29,34 @@ static const List<PaymentMethodOptionsCustomerBalanceEuBankAccountCountry> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsCustomerBalanceEuBankAccountCountry && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsCustomerBalanceEuBankAccountCountry($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsCustomerBalanceEuBankAccountCountry && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsCustomerBalanceEuBankAccountCountry($value)';}
+}
 /// 
 @immutable final class PaymentMethodOptionsCustomerBalanceEuBankAccount {const PaymentMethodOptionsCustomerBalanceEuBankAccount({required this.country});
 
-factory PaymentMethodOptionsCustomerBalanceEuBankAccount.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsCustomerBalanceEuBankAccount(
+factory PaymentMethodOptionsCustomerBalanceEuBankAccount.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsCustomerBalanceEuBankAccount(
   country: PaymentMethodOptionsCustomerBalanceEuBankAccountCountry.fromJson(json['country'] as String),
-); }
+);}
 
 /// The desired country code of the bank account information. Permitted values include: `DE`, `FR`, `IE`, or `NL`.
 final PaymentMethodOptionsCustomerBalanceEuBankAccountCountry country;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'country': country.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('country'); } 
-PaymentMethodOptionsCustomerBalanceEuBankAccount copyWith({PaymentMethodOptionsCustomerBalanceEuBankAccountCountry? country}) { return PaymentMethodOptionsCustomerBalanceEuBankAccount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('country');}
+PaymentMethodOptionsCustomerBalanceEuBankAccount copyWith({PaymentMethodOptionsCustomerBalanceEuBankAccountCountry? country}) {return PaymentMethodOptionsCustomerBalanceEuBankAccount(
   country: country ?? this.country,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodOptionsCustomerBalanceEuBankAccount &&
-          country == other.country; } 
-@override int get hashCode { return country.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsCustomerBalanceEuBankAccount(country: $country)'; } 
- }
+          country == other.country;}
+@override int get hashCode {return country.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsCustomerBalanceEuBankAccount(country: $country)';}
+}

@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_session_request_collected_information_shipping_details.dart';/// Information about the customer collected within the Checkout Session. Can only be set when updating `embedded` or `custom` sessions.
 @immutable final class PostCheckoutSessionsSessionRequestCollectedInformation {const PostCheckoutSessionsSessionRequestCollectedInformation({this.shippingDetails});
 
-factory PostCheckoutSessionsSessionRequestCollectedInformation.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsSessionRequestCollectedInformation(
+factory PostCheckoutSessionsSessionRequestCollectedInformation.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsSessionRequestCollectedInformation(
   shippingDetails: json['shipping_details'] != null ? PostCheckoutSessionsSessionRequestCollectedInformationShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostCheckoutSessionsSessionRequestCollectedInformationShippingDetails? shippingDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (shippingDetails != null) 'shipping_details': shippingDetails?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'shipping_details'}.contains(key)); } 
-PostCheckoutSessionsSessionRequestCollectedInformation copyWith({PostCheckoutSessionsSessionRequestCollectedInformationShippingDetails? Function()? shippingDetails}) { return PostCheckoutSessionsSessionRequestCollectedInformation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'shipping_details'}.contains(key));}
+PostCheckoutSessionsSessionRequestCollectedInformation copyWith({PostCheckoutSessionsSessionRequestCollectedInformationShippingDetails? Function()? shippingDetails}) {return PostCheckoutSessionsSessionRequestCollectedInformation(
   shippingDetails: shippingDetails != null ? shippingDetails() : this.shippingDetails,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsSessionRequestCollectedInformation &&
-          shippingDetails == other.shippingDetails; } 
-@override int get hashCode { return shippingDetails.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsSessionRequestCollectedInformation(shippingDetails: $shippingDetails)'; } 
- }
+          shippingDetails == other.shippingDetails;}
+@override int get hashCode {return shippingDetails.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsSessionRequestCollectedInformation(shippingDetails: $shippingDetails)';}
+}

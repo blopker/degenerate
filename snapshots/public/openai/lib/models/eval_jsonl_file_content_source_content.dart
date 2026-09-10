@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EvalJsonlFileContentSourceContent {const EvalJsonlFileContentSourceContent({required this.item, this.sample, });
 
-factory EvalJsonlFileContentSourceContent.fromJson(Map<String, dynamic> json) { return EvalJsonlFileContentSourceContent(
+factory EvalJsonlFileContentSourceContent.fromJson(Map<String, dynamic> json) {return EvalJsonlFileContentSourceContent(
   item: json['item'] as Map<String, dynamic>,
   sample: json['sample'] as Map<String, dynamic>?,
-); }
+);}
 
 final Map<String,dynamic> item;
 
 final Map<String,dynamic>? sample;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'item': item,
   'sample': ?sample,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('item'); } 
-EvalJsonlFileContentSourceContent copyWith({Map<String,dynamic>? item, Map<String, dynamic>? Function()? sample, }) { return EvalJsonlFileContentSourceContent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('item');}
+EvalJsonlFileContentSourceContent copyWith({Map<String,dynamic>? item, Map<String, dynamic>? Function()? sample, }) {return EvalJsonlFileContentSourceContent(
   item: item ?? this.item,
   sample: sample != null ? sample() : this.sample,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EvalJsonlFileContentSourceContent &&
           item == other.item &&
-          sample == other.sample; } 
-@override int get hashCode { return Object.hash(item, sample); } 
-@override String toString() { return 'EvalJsonlFileContentSourceContent(item: $item, sample: $sample)'; } 
- }
+          sample == other.sample;}
+@override int get hashCode {return Object.hash(item, sample);}
+@override String toString() {return 'EvalJsonlFileContentSourceContent(item: $item, sample: $sample)';}
+}

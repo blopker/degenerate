@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_pull_request5_requested_teams_parent.dart';@immutable final class WebhooksPullRequest5RequestedTeamsPrivacy {const WebhooksPullRequest5RequestedTeamsPrivacy._(this.value);
 
-factory WebhooksPullRequest5RequestedTeamsPrivacy.fromJson(String json) { return switch (json) {
+factory WebhooksPullRequest5RequestedTeamsPrivacy.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   'secret' => secret,
   _ => WebhooksPullRequest5RequestedTeamsPrivacy._(json),
-}; }
+};}
 
 static const WebhooksPullRequest5RequestedTeamsPrivacy open = WebhooksPullRequest5RequestedTeamsPrivacy._('open');
 
@@ -19,18 +19,18 @@ static const List<WebhooksPullRequest5RequestedTeamsPrivacy> values = [open, clo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksPullRequest5RequestedTeamsPrivacy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksPullRequest5RequestedTeamsPrivacy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhooksPullRequest5RequestedTeamsPrivacy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhooksPullRequest5RequestedTeamsPrivacy($value)';}
+}
 /// Groups of organization members that gives permissions on specified repositories.
 @immutable final class WebhooksPullRequest5RequestedTeams {const WebhooksPullRequest5RequestedTeams({required this.id, required this.name, this.deleted, this.description = const Omittable.absent(), this.htmlUrl, this.membersUrl, this.nodeId, this.parent = const Omittable.absent(), this.permission, this.privacy, this.repositoriesUrl, this.slug, this.url, });
 
-factory WebhooksPullRequest5RequestedTeams.fromJson(Map<String, dynamic> json) { return WebhooksPullRequest5RequestedTeams(
+factory WebhooksPullRequest5RequestedTeams.fromJson(Map<String, dynamic> json) {return WebhooksPullRequest5RequestedTeams(
   deleted: json['deleted'] as bool?,
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
@@ -44,7 +44,7 @@ factory WebhooksPullRequest5RequestedTeams.fromJson(Map<String, dynamic> json) {
   repositoriesUrl: json['repositories_url'] != null ? Uri.parse(json['repositories_url'] as String) : null,
   slug: json['slug'] as String?,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-); }
+);}
 
 final bool? deleted;
 
@@ -77,7 +77,7 @@ final String? slug;
 /// URL for the team
 final Uri? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deleted': ?deleted,
   if (description.isPresent) 'description': description.value,
   if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
@@ -91,10 +91,10 @@ Map<String, dynamic> toJson() { return {
   if (repositoriesUrl != null) 'repositories_url': repositoriesUrl?.toString(),
   'slug': ?slug,
   if (url != null) 'url': url?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('name') && json['name'] is String; } 
-WebhooksPullRequest5RequestedTeams copyWith({bool? Function()? deleted, Omittable<String?>? description, Uri? Function()? htmlUrl, int? id, String? Function()? membersUrl, String? name, String? Function()? nodeId, Omittable<WebhooksPullRequest5RequestedTeamsParent?>? parent, String? Function()? permission, WebhooksPullRequest5RequestedTeamsPrivacy? Function()? privacy, Uri? Function()? repositoriesUrl, String? Function()? slug, Uri? Function()? url, }) { return WebhooksPullRequest5RequestedTeams(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('name') && json['name'] is String;}
+WebhooksPullRequest5RequestedTeams copyWith({bool? Function()? deleted, Omittable<String?>? description, Uri? Function()? htmlUrl, int? id, String? Function()? membersUrl, String? name, String? Function()? nodeId, Omittable<WebhooksPullRequest5RequestedTeamsParent?>? parent, String? Function()? permission, WebhooksPullRequest5RequestedTeamsPrivacy? Function()? privacy, Uri? Function()? repositoriesUrl, String? Function()? slug, Uri? Function()? url, }) {return WebhooksPullRequest5RequestedTeams(
   deleted: deleted != null ? deleted() : this.deleted,
   description: description ?? this.description,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
@@ -108,8 +108,8 @@ WebhooksPullRequest5RequestedTeams copyWith({bool? Function()? deleted, Omittabl
   repositoriesUrl: repositoriesUrl != null ? repositoriesUrl() : this.repositoriesUrl,
   slug: slug != null ? slug() : this.slug,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhooksPullRequest5RequestedTeams &&
           deleted == other.deleted &&
           description == other.description &&
@@ -123,7 +123,7 @@ WebhooksPullRequest5RequestedTeams copyWith({bool? Function()? deleted, Omittabl
           privacy == other.privacy &&
           repositoriesUrl == other.repositoriesUrl &&
           slug == other.slug &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(deleted, description, htmlUrl, id, membersUrl, name, nodeId, parent, permission, privacy, repositoriesUrl, slug, url); } 
-@override String toString() { return 'WebhooksPullRequest5RequestedTeams(deleted: $deleted, description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, parent: $parent, permission: $permission, privacy: $privacy, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(deleted, description, htmlUrl, id, membersUrl, name, nodeId, parent, permission, privacy, repositoriesUrl, slug, url);}
+@override String toString() {return 'WebhooksPullRequest5RequestedTeams(deleted: $deleted, description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, parent: $parent, permission: $permission, privacy: $privacy, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url)';}
+}

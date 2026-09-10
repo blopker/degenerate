@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SubIssuesSummary {const SubIssuesSummary({required this.total, required this.completed, required this.percentCompleted, });
 
-factory SubIssuesSummary.fromJson(Map<String, dynamic> json) { return SubIssuesSummary(
+factory SubIssuesSummary.fromJson(Map<String, dynamic> json) {return SubIssuesSummary(
   total: (json['total'] as num).toInt(),
   completed: (json['completed'] as num).toInt(),
   percentCompleted: (json['percent_completed'] as num).toInt(),
-); }
+);}
 
 final int total;
 
@@ -14,24 +14,24 @@ final int completed;
 
 final int percentCompleted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total': total,
   'completed': completed,
   'percent_completed': percentCompleted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total') && json['total'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total') && json['total'] is num &&
       json.containsKey('completed') && json['completed'] is num &&
-      json.containsKey('percent_completed') && json['percent_completed'] is num; } 
-SubIssuesSummary copyWith({int? total, int? completed, int? percentCompleted, }) { return SubIssuesSummary(
+      json.containsKey('percent_completed') && json['percent_completed'] is num;}
+SubIssuesSummary copyWith({int? total, int? completed, int? percentCompleted, }) {return SubIssuesSummary(
   total: total ?? this.total,
   completed: completed ?? this.completed,
   percentCompleted: percentCompleted ?? this.percentCompleted,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SubIssuesSummary &&
           total == other.total &&
           completed == other.completed &&
-          percentCompleted == other.percentCompleted; } 
-@override int get hashCode { return Object.hash(total, completed, percentCompleted); } 
-@override String toString() { return 'SubIssuesSummary(total: $total, completed: $completed, percentCompleted: $percentCompleted)'; } 
- }
+          percentCompleted == other.percentCompleted;}
+@override int get hashCode {return Object.hash(total, completed, percentCompleted);}
+@override String toString() {return 'SubIssuesSummary(total: $total, completed: $completed, percentCompleted: $percentCompleted)';}
+}

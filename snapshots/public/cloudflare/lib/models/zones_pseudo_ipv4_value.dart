@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the Pseudo IPv4 setting.
 @immutable final class ZonesPseudoIpv4Value {const ZonesPseudoIpv4Value._(this.value);
 
-factory ZonesPseudoIpv4Value.fromJson(String json) { return switch (json) {
+factory ZonesPseudoIpv4Value.fromJson(String json) {return switch (json) {
   'off' => off,
   'add_header' => addHeader,
   'overwrite_header' => overwriteHeader,
   _ => ZonesPseudoIpv4Value._(json),
-}; }
+};}
 
 static const ZonesPseudoIpv4Value off = ZonesPseudoIpv4Value._('off');
 
@@ -20,11 +20,11 @@ static const List<ZonesPseudoIpv4Value> values = [off, addHeader, overwriteHeade
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesPseudoIpv4Value && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesPseudoIpv4Value($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesPseudoIpv4Value && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesPseudoIpv4Value($value)';}
+}

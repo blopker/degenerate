@@ -30,7 +30,7 @@ String toJson() => value;
 }
 @immutable final class TeamsDevicesIpProfile {const TeamsDevicesIpProfile({required this.createdAt, required this.description, required this.enabled, required this.id, required this.match, required this.name, required this.precedence, required this.subnetId, required this.updatedAt, });
 
-factory TeamsDevicesIpProfile.fromJson(Map<String, dynamic> json) { return TeamsDevicesIpProfile(
+factory TeamsDevicesIpProfile.fromJson(Map<String, dynamic> json) {return TeamsDevicesIpProfile(
   createdAt: TeamsDevicesIpProfileCreatedAt.fromJson(json['created_at'] as String),
   description: json['description'] != null ? TeamsDevicesIpProfileDescription.fromJson(json['description'] as String) : null,
   enabled: TeamsDevicesIpProfileEnabled.fromJson(json['enabled'] as bool),
@@ -40,7 +40,7 @@ factory TeamsDevicesIpProfile.fromJson(Map<String, dynamic> json) { return Teams
   precedence: TeamsDevicesIpProfilePrecedence.fromJson(json['precedence'] as num),
   subnetId: TeamsDevicesIpProfileSubnetId.fromJson(json['subnet_id'] as String),
   updatedAt: TeamsDevicesIpProfileUpdatedAt.fromJson(json['updated_at'] as String),
-); }
+);}
 
 final TeamsDevicesIpProfileCreatedAt createdAt;
 
@@ -60,7 +60,7 @@ final TeamsDevicesIpProfileSubnetId subnetId;
 
 final TeamsDevicesIpProfileUpdatedAt updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toJson(),
   'description': description?.toJson(),
   'enabled': enabled.toJson(),
@@ -70,8 +70,8 @@ Map<String, dynamic> toJson() { return {
   'precedence': precedence.toJson(),
   'subnet_id': subnetId.toJson(),
   'updated_at': updatedAt.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') &&
       json.containsKey('description') &&
       json.containsKey('enabled') &&
       json.containsKey('id') &&
@@ -79,8 +79,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') &&
       json.containsKey('precedence') &&
       json.containsKey('subnet_id') &&
-      json.containsKey('updated_at'); } 
-TeamsDevicesIpProfile copyWith({TeamsDevicesIpProfileCreatedAt? createdAt, TeamsDevicesIpProfileDescription? Function()? description, TeamsDevicesIpProfileEnabled? enabled, TeamsDevicesIpProfileId? id, TeamsDevicesIpProfileMatch? match, TeamsDevicesIpProfileName? name, TeamsDevicesIpProfilePrecedence? precedence, TeamsDevicesIpProfileSubnetId? subnetId, TeamsDevicesIpProfileUpdatedAt? updatedAt, }) { return TeamsDevicesIpProfile(
+      json.containsKey('updated_at');}
+TeamsDevicesIpProfile copyWith({TeamsDevicesIpProfileCreatedAt? createdAt, TeamsDevicesIpProfileDescription? Function()? description, TeamsDevicesIpProfileEnabled? enabled, TeamsDevicesIpProfileId? id, TeamsDevicesIpProfileMatch? match, TeamsDevicesIpProfileName? name, TeamsDevicesIpProfilePrecedence? precedence, TeamsDevicesIpProfileSubnetId? subnetId, TeamsDevicesIpProfileUpdatedAt? updatedAt, }) {return TeamsDevicesIpProfile(
   createdAt: createdAt ?? this.createdAt,
   description: description != null ? description() : this.description,
   enabled: enabled ?? this.enabled,
@@ -90,8 +90,8 @@ TeamsDevicesIpProfile copyWith({TeamsDevicesIpProfileCreatedAt? createdAt, Teams
   precedence: precedence ?? this.precedence,
   subnetId: subnetId ?? this.subnetId,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamsDevicesIpProfile &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -101,7 +101,7 @@ TeamsDevicesIpProfile copyWith({TeamsDevicesIpProfileCreatedAt? createdAt, Teams
           name == other.name &&
           precedence == other.precedence &&
           subnetId == other.subnetId &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, description, enabled, id, match, name, precedence, subnetId, updatedAt); } 
-@override String toString() { return 'TeamsDevicesIpProfile(createdAt: $createdAt, description: $description, enabled: $enabled, id: $id, match: $match, name: $name, precedence: $precedence, subnetId: $subnetId, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(createdAt, description, enabled, id, match, name, precedence, subnetId, updatedAt);}
+@override String toString() {return 'TeamsDevicesIpProfile(createdAt: $createdAt, description: $description, enabled: $enabled, id: $id, match: $match, name: $name, precedence: $precedence, subnetId: $subnetId, updatedAt: $updatedAt)';}
+}

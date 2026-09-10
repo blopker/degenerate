@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class OrgsListWebhookDeliveriesError {const OrgsListWebhookDeliveriesError();
 
 /// Decodes the payload for its declared status and content type.
-static OrgsListWebhookDeliveriesError parse(ApiResponse response) { switch (response.statusCode) {
+static OrgsListWebhookDeliveriesError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -24,33 +24,33 @@ return OrgsListWebhookDeliveriesError422(ValidationError.fromJson(json as Map<St
 default:
 return OrgsListWebhookDeliveriesErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class OrgsListWebhookDeliveriesError400ApplicationJson extends OrgsListWebhookDeliveriesError {const OrgsListWebhookDeliveriesError400ApplicationJson(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 400 (application/scim+json).
 final class OrgsListWebhookDeliveriesError400ApplicationScimJson extends OrgsListWebhookDeliveriesError {const OrgsListWebhookDeliveriesError400ApplicationScimJson(this.data);
 
 /// The decoded response payload.
 final ScimError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class OrgsListWebhookDeliveriesError422 extends OrgsListWebhookDeliveriesError {const OrgsListWebhookDeliveriesError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class OrgsListWebhookDeliveriesErrorUnknown extends OrgsListWebhookDeliveriesError {const OrgsListWebhookDeliveriesErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

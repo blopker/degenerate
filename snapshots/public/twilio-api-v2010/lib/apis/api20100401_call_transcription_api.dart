@@ -11,7 +11,7 @@ final class Api20100401CallTranscriptionApi with ApiExecutor {const Api20100401C
 /// Create a Transcription
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Transcriptions.json`
-Future<ApiResult<AccountCallRealtimeTranscription, Never>> createRealtimeTranscription({required String accountSid, required String callSid, CreateRealtimeTranscriptionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountCallRealtimeTranscription, Never>> createRealtimeTranscription({required String accountSid, required String callSid, CreateRealtimeTranscriptionRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -60,11 +60,11 @@ final json = jsonDecode(response.body);
 return AccountCallRealtimeTranscription.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stop a Transcription using either the SID of the Transcription resource or the `name` used when creating the resource
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Transcriptions/{Sid}.json`
-Future<ApiResult<AccountCallRealtimeTranscription, Never>> updateRealtimeTranscription({required String accountSid, required String callSid, required String sid, UpdateRealtimeTranscriptionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountCallRealtimeTranscription, Never>> updateRealtimeTranscription({required String accountSid, required String callSid, required String sid, UpdateRealtimeTranscriptionRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -84,5 +84,5 @@ final json = jsonDecode(response.body);
 return AccountCallRealtimeTranscription.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesListMilestonesState {const IssuesListMilestonesState._(this.value);
 
-factory IssuesListMilestonesState.fromJson(String json) { return switch (json) {
+factory IssuesListMilestonesState.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   'all' => all,
   _ => IssuesListMilestonesState._(json),
-}; }
+};}
 
 static const IssuesListMilestonesState open = IssuesListMilestonesState._('open');
 
@@ -19,11 +19,11 @@ static const List<IssuesListMilestonesState> values = [open, closed, all];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuesListMilestonesState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuesListMilestonesState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuesListMilestonesState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuesListMilestonesState($value)';}
+}

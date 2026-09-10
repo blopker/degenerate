@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant1 {const PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant1._(this.value);
 
-factory PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant1.fromJson(String json) { return switch (json) {
+factory PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant1.fromJson(String json) {return switch (json) {
   'current_period_end' => currentPeriodEnd,
   _ => PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant1._(json),
-}; }
+};}
 
 static const PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant1 currentPeriodEnd = PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant1._('current_period_end');
 
@@ -13,20 +13,20 @@ static const List<PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant1> v
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant1($value)';}
+}
 @immutable final class PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant3 {const PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant3._(this.value);
 
-factory PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant3.fromJson(String json) { return switch (json) {
+factory PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant3.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant3._(json),
-}; }
+};}
 
 static const PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant3 $empty = PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant3._('');
 
@@ -34,14 +34,14 @@ static const List<PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant3> v
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant3 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant3($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant3 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant3($value)';}
+}
 
 @immutable
 final class PostQuotesQuoteRequestSubscriptionDataEffectiveDate {

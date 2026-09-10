@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_allow_insecure.dart';import 'load_balancing_consecutive_down.dart';import 'load_balancing_consecutive_up.dart';import 'load_balancing_description.dart';import 'load_balancing_expected_body.dart';import 'load_balancing_expected_codes.dart';import 'load_balancing_follow_redirects.dart';import 'load_balancing_identifier.dart';import 'load_balancing_interval.dart';import 'load_balancing_method.dart';import 'load_balancing_path.dart';import 'load_balancing_port.dart';import 'load_balancing_probe_zone.dart';import 'load_balancing_retries.dart';import 'load_balancing_timeout.dart';import 'load_balancing_timestamp.dart';import 'load_balancing_type.dart';@immutable final class LoadBalancingMonitor {const LoadBalancingMonitor({this.allowInsecure, this.consecutiveDown, this.consecutiveUp, this.description, this.expectedBody, this.expectedCodes, this.followRedirects, this.header, this.interval, this.method, this.path, this.port = const Omittable.absent(), this.probeZone, this.retries, this.timeout, this.type, this.createdOn, this.id, this.modifiedOn, });
 
-factory LoadBalancingMonitor.fromJson(Map<String, dynamic> json) { return LoadBalancingMonitor(
+factory LoadBalancingMonitor.fromJson(Map<String, dynamic> json) {return LoadBalancingMonitor(
   allowInsecure: json['allow_insecure'] != null ? LoadBalancingAllowInsecure.fromJson(json['allow_insecure'] as bool) : null,
   consecutiveDown: json['consecutive_down'] != null ? LoadBalancingConsecutiveDown.fromJson(json['consecutive_down'] as num) : null,
   consecutiveUp: json['consecutive_up'] != null ? LoadBalancingConsecutiveUp.fromJson(json['consecutive_up'] as num) : null,
@@ -22,7 +22,7 @@ factory LoadBalancingMonitor.fromJson(Map<String, dynamic> json) { return LoadBa
   createdOn: json['created_on'] != null ? LoadBalancingTimestamp.fromJson(json['created_on'] as String) : null,
   id: json['id'] != null ? LoadBalancingIdentifier.fromJson(json['id'] as String) : null,
   modifiedOn: json['modified_on'] != null ? LoadBalancingTimestamp.fromJson(json['modified_on'] as String) : null,
-); }
+);}
 
 /// Do not validate the certificate when monitor use HTTPS. This parameter is currently only valid for HTTP and HTTPS monitors.
 final LoadBalancingAllowInsecure? allowInsecure;
@@ -72,7 +72,7 @@ final LoadBalancingIdentifier? id;
 
 final LoadBalancingTimestamp? modifiedOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowInsecure != null) 'allow_insecure': allowInsecure?.toJson(),
   if (consecutiveDown != null) 'consecutive_down': consecutiveDown?.toJson(),
   if (consecutiveUp != null) 'consecutive_up': consecutiveUp?.toJson(),
@@ -92,9 +92,9 @@ Map<String, dynamic> toJson() { return {
   if (createdOn != null) 'created_on': createdOn?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (modifiedOn != null) 'modified_on': modifiedOn?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_insecure', 'consecutive_down', 'consecutive_up', 'description', 'expected_body', 'expected_codes', 'follow_redirects', 'header', 'interval', 'method', 'path', 'port', 'probe_zone', 'retries', 'timeout', 'type', 'created_on', 'id', 'modified_on'}.contains(key)); } 
-LoadBalancingMonitor copyWith({LoadBalancingAllowInsecure? Function()? allowInsecure, LoadBalancingConsecutiveDown? Function()? consecutiveDown, LoadBalancingConsecutiveUp? Function()? consecutiveUp, LoadBalancingDescription? Function()? description, LoadBalancingExpectedBody? Function()? expectedBody, LoadBalancingExpectedCodes? Function()? expectedCodes, LoadBalancingFollowRedirects? Function()? followRedirects, Map<String, List<String>>? Function()? header, LoadBalancingInterval? Function()? interval, LoadBalancingMethod? Function()? method, LoadBalancingPath? Function()? path, Omittable<LoadBalancingPort?>? port, LoadBalancingProbeZone? Function()? probeZone, LoadBalancingRetries? Function()? retries, LoadBalancingTimeout? Function()? timeout, LoadBalancingType? Function()? type, LoadBalancingTimestamp? Function()? createdOn, LoadBalancingIdentifier? Function()? id, LoadBalancingTimestamp? Function()? modifiedOn, }) { return LoadBalancingMonitor(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allow_insecure', 'consecutive_down', 'consecutive_up', 'description', 'expected_body', 'expected_codes', 'follow_redirects', 'header', 'interval', 'method', 'path', 'port', 'probe_zone', 'retries', 'timeout', 'type', 'created_on', 'id', 'modified_on'}.contains(key));}
+LoadBalancingMonitor copyWith({LoadBalancingAllowInsecure? Function()? allowInsecure, LoadBalancingConsecutiveDown? Function()? consecutiveDown, LoadBalancingConsecutiveUp? Function()? consecutiveUp, LoadBalancingDescription? Function()? description, LoadBalancingExpectedBody? Function()? expectedBody, LoadBalancingExpectedCodes? Function()? expectedCodes, LoadBalancingFollowRedirects? Function()? followRedirects, Map<String, List<String>>? Function()? header, LoadBalancingInterval? Function()? interval, LoadBalancingMethod? Function()? method, LoadBalancingPath? Function()? path, Omittable<LoadBalancingPort?>? port, LoadBalancingProbeZone? Function()? probeZone, LoadBalancingRetries? Function()? retries, LoadBalancingTimeout? Function()? timeout, LoadBalancingType? Function()? type, LoadBalancingTimestamp? Function()? createdOn, LoadBalancingIdentifier? Function()? id, LoadBalancingTimestamp? Function()? modifiedOn, }) {return LoadBalancingMonitor(
   allowInsecure: allowInsecure != null ? allowInsecure() : this.allowInsecure,
   consecutiveDown: consecutiveDown != null ? consecutiveDown() : this.consecutiveDown,
   consecutiveUp: consecutiveUp != null ? consecutiveUp() : this.consecutiveUp,
@@ -114,8 +114,8 @@ LoadBalancingMonitor copyWith({LoadBalancingAllowInsecure? Function()? allowInse
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LoadBalancingMonitor &&
           allowInsecure == other.allowInsecure &&
           consecutiveDown == other.consecutiveDown &&
@@ -135,7 +135,7 @@ LoadBalancingMonitor copyWith({LoadBalancingAllowInsecure? Function()? allowInse
           type == other.type &&
           createdOn == other.createdOn &&
           id == other.id &&
-          modifiedOn == other.modifiedOn; } 
-@override int get hashCode { return Object.hash(allowInsecure, consecutiveDown, consecutiveUp, description, expectedBody, expectedCodes, followRedirects, header, interval, method, path, port, probeZone, retries, timeout, type, createdOn, id, modifiedOn); } 
-@override String toString() { return 'LoadBalancingMonitor(allowInsecure: $allowInsecure, consecutiveDown: $consecutiveDown, consecutiveUp: $consecutiveUp, description: $description, expectedBody: $expectedBody, expectedCodes: $expectedCodes, followRedirects: $followRedirects, header: $header, interval: $interval, method: $method, path: $path, port: $port, probeZone: $probeZone, retries: $retries, timeout: $timeout, type: $type, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn)'; } 
- }
+          modifiedOn == other.modifiedOn;}
+@override int get hashCode {return Object.hash(allowInsecure, consecutiveDown, consecutiveUp, description, expectedBody, expectedCodes, followRedirects, header, interval, method, path, port, probeZone, retries, timeout, type, createdOn, id, modifiedOn);}
+@override String toString() {return 'LoadBalancingMonitor(allowInsecure: $allowInsecure, consecutiveDown: $consecutiveDown, consecutiveUp: $consecutiveUp, description: $description, expectedBody: $expectedBody, expectedCodes: $expectedCodes, followRedirects: $followRedirects, header: $header, interval: $interval, method: $method, path: $path, port: $port, probeZone: $probeZone, retries: $retries, timeout: $timeout, type: $type, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn)';}
+}

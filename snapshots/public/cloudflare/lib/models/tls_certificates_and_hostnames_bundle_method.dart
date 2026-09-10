@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
 @immutable final class TlsCertificatesAndHostnamesBundleMethod {const TlsCertificatesAndHostnamesBundleMethod._(this.value);
 
-factory TlsCertificatesAndHostnamesBundleMethod.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesBundleMethod.fromJson(String json) {return switch (json) {
   'ubiquitous' => ubiquitous,
   'optimal' => optimal,
   'force' => force,
   _ => TlsCertificatesAndHostnamesBundleMethod._(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesBundleMethod ubiquitous = TlsCertificatesAndHostnamesBundleMethod._('ubiquitous');
 
@@ -20,11 +20,11 @@ static const List<TlsCertificatesAndHostnamesBundleMethod> values = [ubiquitous,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesBundleMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesBundleMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesBundleMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesBundleMethod($value)';}
+}

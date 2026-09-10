@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging({this.checkInAt, this.nights, });
 
-factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging(
+factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging(
   checkInAt: json['check_in_at'] != null ? (json['check_in_at'] as num).toInt() : null,
   nights: json['nights'] != null ? (json['nights'] as num).toInt() : null,
-); }
+);}
 
 final int? checkInAt;
 
 final int? nights;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'check_in_at': ?checkInAt,
   'nights': ?nights,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'check_in_at', 'nights'}.contains(key)); } 
-PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging copyWith({int? Function()? checkInAt, int? Function()? nights, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'check_in_at', 'nights'}.contains(key));}
+PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging copyWith({int? Function()? checkInAt, int? Function()? nights, }) {return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging(
   checkInAt: checkInAt != null ? checkInAt() : this.checkInAt,
   nights: nights != null ? nights() : this.nights,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging &&
           checkInAt == other.checkInAt &&
-          nights == other.nights; } 
-@override int get hashCode { return Object.hash(checkInAt, nights); } 
-@override String toString() { return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging(checkInAt: $checkInAt, nights: $nights)'; } 
- }
+          nights == other.nights;}
+@override int get hashCode {return Object.hash(checkInAt, nights);}
+@override String toString() {return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging(checkInAt: $checkInAt, nights: $nights)';}
+}

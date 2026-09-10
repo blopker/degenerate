@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a vol
 /// DEPRECATED: GitRepo is deprecated. To provision a container with a git repo, mount an EmptyDir into an InitContainer that clones the repo using git, then mount the EmptyDir into the Pod's container.
 @immutable final class GitRepoVolumeSource {const GitRepoVolumeSource({required this.repository, this.directory, this.revision, });
 
-factory GitRepoVolumeSource.fromJson(Map<String, dynamic> json) { return GitRepoVolumeSource(
+factory GitRepoVolumeSource.fromJson(Map<String, dynamic> json) {return GitRepoVolumeSource(
   directory: json['directory'] as String?,
   repository: json['repository'] as String,
   revision: json['revision'] as String?,
-); }
+);}
 
 /// directory is the target directory name. Must not contain or start with '..'.  If '.' is supplied, the volume directory will be the git repository.  Otherwise, if specified, the volume will contain the git repository in the subdirectory with the given name.
 final String? directory;
@@ -20,22 +20,22 @@ final String repository;
 /// revision is the commit hash for the specified revision.
 final String? revision;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'directory': ?directory,
   'repository': repository,
   'revision': ?revision,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('repository') && json['repository'] is String; } 
-GitRepoVolumeSource copyWith({String? Function()? directory, String? repository, String? Function()? revision, }) { return GitRepoVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('repository') && json['repository'] is String;}
+GitRepoVolumeSource copyWith({String? Function()? directory, String? repository, String? Function()? revision, }) {return GitRepoVolumeSource(
   directory: directory != null ? directory() : this.directory,
   repository: repository ?? this.repository,
   revision: revision != null ? revision() : this.revision,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GitRepoVolumeSource &&
           directory == other.directory &&
           repository == other.repository &&
-          revision == other.revision; } 
-@override int get hashCode { return Object.hash(directory, repository, revision); } 
-@override String toString() { return 'GitRepoVolumeSource(directory: $directory, repository: $repository, revision: $revision)'; } 
- }
+          revision == other.revision;}
+@override int get hashCode {return Object.hash(directory, repository, revision);}
+@override String toString() {return 'GitRepoVolumeSource(directory: $directory, repository: $repository, revision: $revision)';}
+}

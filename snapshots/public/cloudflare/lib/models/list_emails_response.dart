@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_message.dart';import 'list_emails_response_result.dart';import 'list_emails_response_result_info.dart';@immutable final class ListEmailsResponse {const ListEmailsResponse({required this.success, this.errors, this.messages, this.result, this.resultInfo, });
 
-factory ListEmailsResponse.fromJson(Map<String, dynamic> json) { return ListEmailsResponse(
+factory ListEmailsResponse.fromJson(Map<String, dynamic> json) {return ListEmailsResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => AbuseReportsMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => AbuseReportsMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] != null ? ListEmailsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
   resultInfo: json['result_info'] != null ? ListEmailsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
-); }
+);}
 
 final List<AbuseReportsMessage>? errors;
 
@@ -20,28 +20,28 @@ final ListEmailsResponseResultInfo? resultInfo;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
   if (messages != null) 'messages': messages?.map((e) => e.toJson()).toList(),
   if (result != null) 'result': result?.toJson(),
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
-ListEmailsResponse copyWith({List<AbuseReportsMessage>? Function()? errors, List<AbuseReportsMessage>? Function()? messages, ListEmailsResponseResult? Function()? result, ListEmailsResponseResultInfo? Function()? resultInfo, bool? success, }) { return ListEmailsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('success') && json['success'] is bool;}
+ListEmailsResponse copyWith({List<AbuseReportsMessage>? Function()? errors, List<AbuseReportsMessage>? Function()? messages, ListEmailsResponseResult? Function()? result, ListEmailsResponseResultInfo? Function()? resultInfo, bool? success, }) {return ListEmailsResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   result: result != null ? result() : this.result,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ListEmailsResponse &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           result == other.result &&
           resultInfo == other.resultInfo &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors ?? const []), Object.hashAll(messages ?? const []), result, resultInfo, success); } 
-@override String toString() { return 'ListEmailsResponse(errors: $errors, messages: $messages, result: $result, resultInfo: $resultInfo, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(Object.hashAll(errors ?? const []), Object.hashAll(messages ?? const []), result, resultInfo, success);}
+@override String toString() {return 'ListEmailsResponse(errors: $errors, messages: $messages, result: $result, resultInfo: $resultInfo, success: $success)';}
+}

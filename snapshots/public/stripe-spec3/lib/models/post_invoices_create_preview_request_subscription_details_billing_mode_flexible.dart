@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexibleProrationDiscounts {const PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexibleProrationDiscounts._(this.value);
 
-factory PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexibleProrationDiscounts.fromJson(String json) { return switch (json) {
+factory PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexibleProrationDiscounts.fromJson(String json) {return switch (json) {
   'included' => included,
   'itemized' => itemized,
   _ => PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexibleProrationDiscounts._(json),
-}; }
+};}
 
 static const PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexibleProrationDiscounts included = PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexibleProrationDiscounts._('included');
 
@@ -16,32 +16,32 @@ static const List<PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingMode
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexibleProrationDiscounts && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexibleProrationDiscounts($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexibleProrationDiscounts && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexibleProrationDiscounts($value)';}
+}
 @immutable final class PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexible {const PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexible({this.prorationDiscounts});
 
-factory PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexible.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexible(
+factory PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexible.fromJson(Map<String, dynamic> json) {return PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexible(
   prorationDiscounts: json['proration_discounts'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexibleProrationDiscounts.fromJson(json['proration_discounts'] as String) : null,
-); }
+);}
 
 final PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexibleProrationDiscounts? prorationDiscounts;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (prorationDiscounts != null) 'proration_discounts': prorationDiscounts?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'proration_discounts'}.contains(key)); } 
-PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexible copyWith({PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexibleProrationDiscounts? Function()? prorationDiscounts}) { return PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexible(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'proration_discounts'}.contains(key));}
+PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexible copyWith({PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexibleProrationDiscounts? Function()? prorationDiscounts}) {return PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexible(
   prorationDiscounts: prorationDiscounts != null ? prorationDiscounts() : this.prorationDiscounts,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexible &&
-          prorationDiscounts == other.prorationDiscounts; } 
-@override int get hashCode { return prorationDiscounts.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexible(prorationDiscounts: $prorationDiscounts)'; } 
- }
+          prorationDiscounts == other.prorationDiscounts;}
+@override int get hashCode {return prorationDiscounts.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingModeFlexible(prorationDiscounts: $prorationDiscounts)';}
+}

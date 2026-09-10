@@ -3,29 +3,29 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Gitignore Template
 @immutable final class GitignoreTemplate {const GitignoreTemplate({required this.name, required this.source, });
 
-factory GitignoreTemplate.fromJson(Map<String, dynamic> json) { return GitignoreTemplate(
+factory GitignoreTemplate.fromJson(Map<String, dynamic> json) {return GitignoreTemplate(
   name: json['name'] as String,
   source: json['source'] as String,
-); }
+);}
 
 final String name;
 
 final String source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'source': source,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('source') && json['source'] is String; } 
-GitignoreTemplate copyWith({String? name, String? source, }) { return GitignoreTemplate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('source') && json['source'] is String;}
+GitignoreTemplate copyWith({String? name, String? source, }) {return GitignoreTemplate(
   name: name ?? this.name,
   source: source ?? this.source,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GitignoreTemplate &&
           name == other.name &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(name, source); } 
-@override String toString() { return 'GitignoreTemplate(name: $name, source: $source)'; } 
- }
+          source == other.source;}
+@override int get hashCode {return Object.hash(name, source);}
+@override String toString() {return 'GitignoreTemplate(name: $name, source: $source)';}
+}

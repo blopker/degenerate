@@ -13,7 +13,7 @@ final class MagicSiteAcLsApi with ApiExecutor {const MagicSiteAcLsApi(this.apiCo
 /// Lists Site ACLs associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/acls`
-Future<ApiResult<List<MagicAcl>, ResponseCommonFailure50>> magicSiteAclsListAcls({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<MagicAcl>, ResponseCommonFailure50>> magicSiteAclsListAcls({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create a new Site ACL
 ///
 /// Creates a new Site ACL.
 ///
 /// `POST /accounts/{account_id}/magic/sites/{site_id}/acls`
-Future<ApiResult<MagicAcl, ResponseCommonFailure50>> magicSiteAclsCreateAcl({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicAclsAddSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAcl, ResponseCommonFailure50>> magicSiteAclsCreateAcl({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicAclsAddSingleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Site ACL Details
 ///
 /// Get a specific Site ACL.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/acls/{acl_id}`
-Future<ApiResult<MagicAcl, ResponseCommonFailure50>> magicSiteAclsAclDetails({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier aclId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAcl, ResponseCommonFailure50>> magicSiteAclsAclDetails({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier aclId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -105,13 +105,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update Site ACL
 ///
 /// Update a specific Site ACL.
 ///
 /// `PUT /accounts/{account_id}/magic/sites/{site_id}/acls/{acl_id}`
-Future<ApiResult<MagicAcl, ResponseCommonFailure50>> magicSiteAclsUpdateAcl({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier aclId, required MagicAclUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAcl, ResponseCommonFailure50>> magicSiteAclsUpdateAcl({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier aclId, required MagicAclUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,13 +139,13 @@ return null;
 
   },
 );
- } 
+}
 /// Patch Site ACL
 ///
 /// Patch a specific Site ACL.
 ///
 /// `PATCH /accounts/{account_id}/magic/sites/{site_id}/acls/{acl_id}`
-Future<ApiResult<MagicAcl, ResponseCommonFailure50>> magicSiteAclsPatchAcl({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier aclId, required MagicAclUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAcl, ResponseCommonFailure50>> magicSiteAclsPatchAcl({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier aclId, required MagicAclUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -173,13 +173,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Site ACL
 ///
 /// Remove a specific Site ACL.
 ///
 /// `DELETE /accounts/{account_id}/magic/sites/{site_id}/acls/{acl_id}`
-Future<ApiResult<MagicAcl, ResponseCommonFailure50>> magicSiteAclsDeleteAcl({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier aclId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAcl, ResponseCommonFailure50>> magicSiteAclsDeleteAcl({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicIdentifier aclId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -205,5 +205,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

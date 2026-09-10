@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestReviewDismissedPullRequestLinksReviewComments {const WebhookPullRequestReviewDismissedPullRequestLinksReviewComments({required this.href});
 
-factory WebhookPullRequestReviewDismissedPullRequestLinksReviewComments.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewDismissedPullRequestLinksReviewComments(
+factory WebhookPullRequestReviewDismissedPullRequestLinksReviewComments.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewDismissedPullRequestLinksReviewComments(
   href: json['href'] as String,
-); }
+);}
 
 final String href;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'href': href,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String; } 
-WebhookPullRequestReviewDismissedPullRequestLinksReviewComments copyWith({String? href}) { return WebhookPullRequestReviewDismissedPullRequestLinksReviewComments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('href') && json['href'] is String;}
+WebhookPullRequestReviewDismissedPullRequestLinksReviewComments copyWith({String? href}) {return WebhookPullRequestReviewDismissedPullRequestLinksReviewComments(
   href: href ?? this.href,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestReviewDismissedPullRequestLinksReviewComments &&
-          href == other.href; } 
-@override int get hashCode { return href.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewDismissedPullRequestLinksReviewComments(href: $href)'; } 
- }
+          href == other.href;}
+@override int get hashCode {return href.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewDismissedPullRequestLinksReviewComments(href: $href)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the metric to order the results by.
 @immutable final class RadarGetQualitySpeedTopLocationsOrderBy {const RadarGetQualitySpeedTopLocationsOrderBy._(this.value);
 
-factory RadarGetQualitySpeedTopLocationsOrderBy.fromJson(String json) { return switch (json) {
+factory RadarGetQualitySpeedTopLocationsOrderBy.fromJson(String json) {return switch (json) {
   'BANDWIDTH_DOWNLOAD' => bandwidthDownload,
   'BANDWIDTH_UPLOAD' => bandwidthUpload,
   'LATENCY_IDLE' => latencyIdle,
@@ -11,7 +11,7 @@ factory RadarGetQualitySpeedTopLocationsOrderBy.fromJson(String json) { return s
   'JITTER_IDLE' => jitterIdle,
   'JITTER_LOADED' => jitterLoaded,
   _ => RadarGetQualitySpeedTopLocationsOrderBy._(json),
-}; }
+};}
 
 static const RadarGetQualitySpeedTopLocationsOrderBy bandwidthDownload = RadarGetQualitySpeedTopLocationsOrderBy._('BANDWIDTH_DOWNLOAD');
 
@@ -29,11 +29,11 @@ static const List<RadarGetQualitySpeedTopLocationsOrderBy> values = [bandwidthDo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetQualitySpeedTopLocationsOrderBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetQualitySpeedTopLocationsOrderBy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetQualitySpeedTopLocationsOrderBy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetQualitySpeedTopLocationsOrderBy($value)';}
+}

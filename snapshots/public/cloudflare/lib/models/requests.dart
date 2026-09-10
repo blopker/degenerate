@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'requests_ssl.dart';import 'requests_ssl_protocols.dart';/// Breakdown of totals for requests.
 @immutable final class Requests {const Requests({this.all, this.cached, this.contentType, this.country, this.httpStatus, this.ssl, this.sslProtocols, this.uncached, });
 
-factory Requests.fromJson(Map<String, dynamic> json) { return Requests(
+factory Requests.fromJson(Map<String, dynamic> json) {return Requests(
   all: json['all'] != null ? (json['all'] as num).toInt() : null,
   cached: json['cached'] != null ? (json['cached'] as num).toInt() : null,
   contentType: json['content_type'] as Map<String, dynamic>?,
@@ -12,7 +12,7 @@ factory Requests.fromJson(Map<String, dynamic> json) { return Requests(
   ssl: json['ssl'] != null ? RequestsSsl.fromJson(json['ssl'] as Map<String, dynamic>) : null,
   sslProtocols: json['ssl_protocols'] != null ? RequestsSslProtocols.fromJson(json['ssl_protocols'] as Map<String, dynamic>) : null,
   uncached: json['uncached'] != null ? (json['uncached'] as num).toInt() : null,
-); }
+);}
 
 /// Total number of requests served.
 final int? all;
@@ -38,7 +38,7 @@ final RequestsSslProtocols? sslProtocols;
 /// Total number of requests served from the origin.
 final int? uncached;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'all': ?all,
   'cached': ?cached,
   'content_type': ?contentType,
@@ -47,9 +47,9 @@ Map<String, dynamic> toJson() { return {
   if (ssl != null) 'ssl': ssl?.toJson(),
   if (sslProtocols != null) 'ssl_protocols': sslProtocols?.toJson(),
   'uncached': ?uncached,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'all', 'cached', 'content_type', 'country', 'http_status', 'ssl', 'ssl_protocols', 'uncached'}.contains(key)); } 
-Requests copyWith({int? Function()? all, int? Function()? cached, Map<String, dynamic>? Function()? contentType, Map<String, dynamic>? Function()? country, Map<String, dynamic>? Function()? httpStatus, RequestsSsl? Function()? ssl, RequestsSslProtocols? Function()? sslProtocols, int? Function()? uncached, }) { return Requests(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'all', 'cached', 'content_type', 'country', 'http_status', 'ssl', 'ssl_protocols', 'uncached'}.contains(key));}
+Requests copyWith({int? Function()? all, int? Function()? cached, Map<String, dynamic>? Function()? contentType, Map<String, dynamic>? Function()? country, Map<String, dynamic>? Function()? httpStatus, RequestsSsl? Function()? ssl, RequestsSslProtocols? Function()? sslProtocols, int? Function()? uncached, }) {return Requests(
   all: all != null ? all() : this.all,
   cached: cached != null ? cached() : this.cached,
   contentType: contentType != null ? contentType() : this.contentType,
@@ -58,8 +58,8 @@ Requests copyWith({int? Function()? all, int? Function()? cached, Map<String, dy
   ssl: ssl != null ? ssl() : this.ssl,
   sslProtocols: sslProtocols != null ? sslProtocols() : this.sslProtocols,
   uncached: uncached != null ? uncached() : this.uncached,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Requests &&
           all == other.all &&
           cached == other.cached &&
@@ -68,7 +68,7 @@ Requests copyWith({int? Function()? all, int? Function()? cached, Map<String, dy
           httpStatus == other.httpStatus &&
           ssl == other.ssl &&
           sslProtocols == other.sslProtocols &&
-          uncached == other.uncached; } 
-@override int get hashCode { return Object.hash(all, cached, contentType, country, httpStatus, ssl, sslProtocols, uncached); } 
-@override String toString() { return 'Requests(all: $all, cached: $cached, contentType: $contentType, country: $country, httpStatus: $httpStatus, ssl: $ssl, sslProtocols: $sslProtocols, uncached: $uncached)'; } 
- }
+          uncached == other.uncached;}
+@override int get hashCode {return Object.hash(all, cached, contentType, country, httpStatus, ssl, sslProtocols, uncached);}
+@override String toString() {return 'Requests(all: $all, cached: $cached, contentType: $contentType, country: $country, httpStatus: $httpStatus, ssl: $ssl, sslProtocols: $sslProtocols, uncached: $uncached)';}
+}

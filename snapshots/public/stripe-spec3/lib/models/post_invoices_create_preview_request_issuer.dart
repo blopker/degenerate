@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesCreatePreviewRequestIssuerType {const PostInvoicesCreatePreviewRequestIssuerType._(this.value);
 
-factory PostInvoicesCreatePreviewRequestIssuerType.fromJson(String json) { return switch (json) {
+factory PostInvoicesCreatePreviewRequestIssuerType.fromJson(String json) {return switch (json) {
   'account' => account,
   'self' => self,
   _ => PostInvoicesCreatePreviewRequestIssuerType._(json),
-}; }
+};}
 
 static const PostInvoicesCreatePreviewRequestIssuerType account = PostInvoicesCreatePreviewRequestIssuerType._('account');
 
@@ -16,39 +16,39 @@ static const List<PostInvoicesCreatePreviewRequestIssuerType> values = [account,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestIssuerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestIssuerType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestIssuerType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestIssuerType($value)';}
+}
 /// The connected account that issues the invoice. The invoice is presented with the branding and support information of the specified account.
 @immutable final class PostInvoicesCreatePreviewRequestIssuer {const PostInvoicesCreatePreviewRequestIssuer({required this.type, this.account, });
 
-factory PostInvoicesCreatePreviewRequestIssuer.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestIssuer(
+factory PostInvoicesCreatePreviewRequestIssuer.fromJson(Map<String, dynamic> json) {return PostInvoicesCreatePreviewRequestIssuer(
   account: json['account'] as String?,
   type: PostInvoicesCreatePreviewRequestIssuerType.fromJson(json['type'] as String),
-); }
+);}
 
 final String? account;
 
 final PostInvoicesCreatePreviewRequestIssuerType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': ?account,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostInvoicesCreatePreviewRequestIssuer copyWith({String? Function()? account, PostInvoicesCreatePreviewRequestIssuerType? type, }) { return PostInvoicesCreatePreviewRequestIssuer(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostInvoicesCreatePreviewRequestIssuer copyWith({String? Function()? account, PostInvoicesCreatePreviewRequestIssuerType? type, }) {return PostInvoicesCreatePreviewRequestIssuer(
   account: account != null ? account() : this.account,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesCreatePreviewRequestIssuer &&
           account == other.account &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, type); } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestIssuer(account: $account, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(account, type);}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestIssuer(account: $account, type: $type)';}
+}

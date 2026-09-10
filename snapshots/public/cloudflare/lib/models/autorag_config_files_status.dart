@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigFilesStatus {const AutoragConfigFilesStatus._(this.value);
 
-factory AutoragConfigFilesStatus.fromJson(String json) { return switch (json) {
+factory AutoragConfigFilesStatus.fromJson(String json) {return switch (json) {
   'completed' => completed,
   'queued' => queued,
   'running' => running,
   'error' => error,
   _ => AutoragConfigFilesStatus._(json),
-}; }
+};}
 
 static const AutoragConfigFilesStatus completed = AutoragConfigFilesStatus._('completed');
 
@@ -22,11 +22,11 @@ static const List<AutoragConfigFilesStatus> values = [completed, queued, running
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AutoragConfigFilesStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AutoragConfigFilesStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AutoragConfigFilesStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AutoragConfigFilesStatus($value)';}
+}

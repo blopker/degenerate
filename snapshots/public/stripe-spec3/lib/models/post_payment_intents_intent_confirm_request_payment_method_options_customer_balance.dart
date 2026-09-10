@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param34.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsCustomerBalanceVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsCustomerBalanceVariant2._(this.value);
 
-factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsCustomerBalanceVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsCustomerBalanceVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsCustomerBalanceVariant2._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsCustomerBalanceVariant2 $empty = PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsCustomerBalanceVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsCust
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsCustomerBalanceVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsCustomerBalanceVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsCustomerBalanceVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsCustomerBalanceVariant2($value)';}
+}
 
 @immutable
 final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsCustomerBalance {

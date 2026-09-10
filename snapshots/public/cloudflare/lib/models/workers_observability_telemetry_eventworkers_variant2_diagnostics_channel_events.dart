@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents {const WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents({required this.channel, required this.message, required this.timestamp, });
 
-factory WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents.fromJson(Map<String, dynamic> json) { return WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents(
+factory WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents.fromJson(Map<String, dynamic> json) {return WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents(
   channel: json['channel'] as String,
   message: json['message'] as String,
   timestamp: (json['timestamp'] as num).toDouble(),
-); }
+);}
 
 final String channel;
 
@@ -14,24 +14,24 @@ final String message;
 
 final double timestamp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'channel': channel,
   'message': message,
   'timestamp': timestamp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('channel') && json['channel'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('channel') && json['channel'] is String &&
       json.containsKey('message') && json['message'] is String &&
-      json.containsKey('timestamp') && json['timestamp'] is num; } 
-WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents copyWith({String? channel, String? message, double? timestamp, }) { return WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents(
+      json.containsKey('timestamp') && json['timestamp'] is num;}
+WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents copyWith({String? channel, String? message, double? timestamp, }) {return WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents(
   channel: channel ?? this.channel,
   message: message ?? this.message,
   timestamp: timestamp ?? this.timestamp,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents &&
           channel == other.channel &&
           message == other.message &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(channel, message, timestamp); } 
-@override String toString() { return 'WorkersObservabilityTelemetryEvent\$workersVariant2DiagnosticsChannelEvents(channel: $channel, message: $message, timestamp: $timestamp)'; } 
- }
+          timestamp == other.timestamp;}
+@override int get hashCode {return Object.hash(channel, message, timestamp);}
+@override String toString() {return 'WorkersObservabilityTelemetryEvent\$workersVariant2DiagnosticsChannelEvents(channel: $channel, message: $message, timestamp: $timestamp)';}
+}

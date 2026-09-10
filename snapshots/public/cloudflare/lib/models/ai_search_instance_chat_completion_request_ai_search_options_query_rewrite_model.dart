@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1 {const AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1._(this.value);
 
-factory AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1.fromJson(String json) { return switch (json) {
+factory AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1.fromJson(String json) {return switch (json) {
   '@cf/meta/llama-3.3-70b-instruct-fp8-fast' => cfMetaLlama3370bInstructFp8Fast,
   '@cf/zai-org/glm-4.7-flash' => cfZaiOrgGlm47Flash,
   '@cf/meta/llama-3.1-8b-instruct-fast' => cfMetaLlama318bInstructFast,
@@ -31,7 +31,7 @@ factory AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVar
   'openai/gpt-5-mini' => openaiGpt5Mini,
   'openai/gpt-5-nano' => openaiGpt5Nano,
   _ => AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1._(json),
-}; }
+};}
 
 static const AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1 cfMetaLlama3370bInstructFp8Fast = AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1._('@cf/meta/llama-3.3-70b-instruct-fp8-fast');
 
@@ -91,20 +91,20 @@ static const List<AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewri
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1($value)';}
+}
 @immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2 {const AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2._(this.value);
 
-factory AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2.fromJson(String json) { return switch (json) {
+factory AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2._(json),
-}; }
+};}
 
 static const AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2 $empty = AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2._('');
 
@@ -112,14 +112,14 @@ static const List<AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewri
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2($value)';}
+}
 
 @immutable
 final class AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModel {

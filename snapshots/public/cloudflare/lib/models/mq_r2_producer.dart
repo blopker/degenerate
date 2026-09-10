@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MqR2ProducerType {const MqR2ProducerType._(this.value);
 
-factory MqR2ProducerType.fromJson(String json) { return switch (json) {
+factory MqR2ProducerType.fromJson(String json) {return switch (json) {
   'r2_bucket' => r2Bucket,
   _ => MqR2ProducerType._(json),
-}; }
+};}
 
 static const MqR2ProducerType r2Bucket = MqR2ProducerType._('r2_bucket');
 
@@ -13,38 +13,38 @@ static const List<MqR2ProducerType> values = [r2Bucket];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MqR2ProducerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MqR2ProducerType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MqR2ProducerType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MqR2ProducerType($value)';}
+}
 @immutable final class MqR2Producer {const MqR2Producer({this.bucketName, this.type, });
 
-factory MqR2Producer.fromJson(Map<String, dynamic> json) { return MqR2Producer(
+factory MqR2Producer.fromJson(Map<String, dynamic> json) {return MqR2Producer(
   bucketName: json['bucket_name'] as String?,
   type: json['type'] != null ? MqR2ProducerType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final String? bucketName;
 
 final MqR2ProducerType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bucket_name': ?bucketName,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bucket_name', 'type'}.contains(key)); } 
-MqR2Producer copyWith({String? Function()? bucketName, MqR2ProducerType? Function()? type, }) { return MqR2Producer(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bucket_name', 'type'}.contains(key));}
+MqR2Producer copyWith({String? Function()? bucketName, MqR2ProducerType? Function()? type, }) {return MqR2Producer(
   bucketName: bucketName != null ? bucketName() : this.bucketName,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MqR2Producer &&
           bucketName == other.bucketName &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(bucketName, type); } 
-@override String toString() { return 'MqR2Producer(bucketName: $bucketName, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(bucketName, type);}
+@override String toString() {return 'MqR2Producer(bucketName: $bucketName, type: $type)';}
+}

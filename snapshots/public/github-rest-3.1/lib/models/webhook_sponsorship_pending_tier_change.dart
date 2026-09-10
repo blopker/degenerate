@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_changes8.dart';import 'webhooks_effective_date.dart';import 'webhooks_sponsorship.dart';@immutable final class WebhookSponsorshipPendingTierChangeAction {const WebhookSponsorshipPendingTierChangeAction._(this.value);
 
-factory WebhookSponsorshipPendingTierChangeAction.fromJson(String json) { return switch (json) {
+factory WebhookSponsorshipPendingTierChangeAction.fromJson(String json) {return switch (json) {
   'pending_tier_change' => pendingTierChange,
   _ => WebhookSponsorshipPendingTierChangeAction._(json),
-}; }
+};}
 
 static const WebhookSponsorshipPendingTierChangeAction pendingTierChange = WebhookSponsorshipPendingTierChangeAction._('pending_tier_change');
 
@@ -13,17 +13,17 @@ static const List<WebhookSponsorshipPendingTierChangeAction> values = [pendingTi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSponsorshipPendingTierChangeAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSponsorshipPendingTierChangeAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookSponsorshipPendingTierChangeAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookSponsorshipPendingTierChangeAction($value)';}
+}
 @immutable final class WebhookSponsorshipPendingTierChange {const WebhookSponsorshipPendingTierChange({required this.action, required this.changes, required this.sender, required this.sponsorship, this.effectiveDate, this.enterprise, this.installation, this.organization, this.repository, });
 
-factory WebhookSponsorshipPendingTierChange.fromJson(Map<String, dynamic> json) { return WebhookSponsorshipPendingTierChange(
+factory WebhookSponsorshipPendingTierChange.fromJson(Map<String, dynamic> json) {return WebhookSponsorshipPendingTierChange(
   action: WebhookSponsorshipPendingTierChangeAction.fromJson(json['action'] as String),
   changes: WebhooksChanges8.fromJson(json['changes'] as Map<String, dynamic>),
   effectiveDate: json['effective_date'] != null ? WebhooksEffectiveDate.fromJson(json['effective_date'] as String) : null,
@@ -33,7 +33,7 @@ factory WebhookSponsorshipPendingTierChange.fromJson(Map<String, dynamic> json) 
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   sponsorship: WebhooksSponsorship.fromJson(json['sponsorship'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookSponsorshipPendingTierChangeAction action;
 
@@ -54,7 +54,7 @@ final SimpleUser sender;
 
 final WebhooksSponsorship sponsorship;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'changes': changes.toJson(),
   if (effectiveDate != null) 'effective_date': effectiveDate?.toJson(),
@@ -64,12 +64,12 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
   'sponsorship': sponsorship.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('changes') &&
       json.containsKey('sender') &&
-      json.containsKey('sponsorship'); } 
-WebhookSponsorshipPendingTierChange copyWith({WebhookSponsorshipPendingTierChangeAction? action, WebhooksChanges8? changes, WebhooksEffectiveDate? Function()? effectiveDate, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) { return WebhookSponsorshipPendingTierChange(
+      json.containsKey('sponsorship');}
+WebhookSponsorshipPendingTierChange copyWith({WebhookSponsorshipPendingTierChangeAction? action, WebhooksChanges8? changes, WebhooksEffectiveDate? Function()? effectiveDate, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) {return WebhookSponsorshipPendingTierChange(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   effectiveDate: effectiveDate != null ? effectiveDate() : this.effectiveDate,
@@ -79,8 +79,8 @@ WebhookSponsorshipPendingTierChange copyWith({WebhookSponsorshipPendingTierChang
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
   sponsorship: sponsorship ?? this.sponsorship,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookSponsorshipPendingTierChange &&
           action == other.action &&
           changes == other.changes &&
@@ -90,7 +90,7 @@ WebhookSponsorshipPendingTierChange copyWith({WebhookSponsorshipPendingTierChang
           organization == other.organization &&
           repository == other.repository &&
           sender == other.sender &&
-          sponsorship == other.sponsorship; } 
-@override int get hashCode { return Object.hash(action, changes, effectiveDate, enterprise, installation, organization, repository, sender, sponsorship); } 
-@override String toString() { return 'WebhookSponsorshipPendingTierChange(action: $action, changes: $changes, effectiveDate: $effectiveDate, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, sponsorship: $sponsorship)'; } 
- }
+          sponsorship == other.sponsorship;}
+@override int get hashCode {return Object.hash(action, changes, effectiveDate, enterprise, installation, organization, repository, sender, sponsorship);}
+@override String toString() {return 'WebhookSponsorshipPendingTierChange(action: $action, changes: $changes, effectiveDate: $effectiveDate, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, sponsorship: $sponsorship)';}
+}

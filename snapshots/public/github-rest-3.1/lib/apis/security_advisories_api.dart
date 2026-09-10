@@ -15,7 +15,7 @@ final class SecurityAdvisoriesApi with ApiExecutor {const SecurityAdvisoriesApi(
 /// By default, all responses will exclude advisories for malware, because malware are not standard vulnerabilities. To list advisories for malware, you must include the `type` parameter in your request, with the value `malware`. For more information about the different types of security advisories, see "[About the GitHub Advisory database](https://docs.github.com/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database#about-types-of-security-advisories)."
 ///
 /// `GET /advisories`
-Future<ApiResult<List<GlobalAdvisory>, SecurityAdvisoriesListGlobalAdvisoriesError>> securityAdvisoriesListGlobalAdvisories({String? ghsaId, SecurityAdvisoriesListGlobalAdvisoriesType? type, String? cveId, SecurityAdvisoryEcosystems? ecosystem, SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity, SecurityAdvisoriesListGlobalAdvisoriesCwes? cwes, bool? isWithdrawn, SecurityAdvisoriesListGlobalAdvisoriesAffects? affects, String? published, String? updated, String? modified, String? epssPercentage, String? epssPercentile, String? before, String? after, SecurityAdvisoriesListGlobalAdvisoriesDirection? direction, int? perPage, SecurityAdvisoriesListGlobalAdvisoriesSort? sort, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<GlobalAdvisory>, SecurityAdvisoriesListGlobalAdvisoriesError>> securityAdvisoriesListGlobalAdvisories({String? ghsaId, SecurityAdvisoriesListGlobalAdvisoriesType? type, String? cveId, SecurityAdvisoryEcosystems? ecosystem, SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity, SecurityAdvisoriesListGlobalAdvisoriesCwes? cwes, bool? isWithdrawn, SecurityAdvisoriesListGlobalAdvisoriesAffects? affects, String? published, String? updated, String? modified, String? epssPercentage, String? epssPercentile, String? before, String? after, SecurityAdvisoriesListGlobalAdvisoriesDirection? direction, int? perPage, SecurityAdvisoriesListGlobalAdvisoriesSort? sort, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ghsaId != null) {
   queryParameters['ghsa_id'] = ghsaId;
@@ -91,13 +91,13 @@ return (json as List<dynamic>).map((e) => GlobalAdvisory.fromJson(e as Map<Strin
   },
   onError: SecurityAdvisoriesListGlobalAdvisoriesError.parse,
 );
- } 
+}
 /// Get a global security advisory
 ///
 /// Gets a global security advisory using its GitHub Security Advisory (GHSA) identifier.
 ///
 /// `GET /advisories/{ghsa_id}`
-Future<ApiResult<GlobalAdvisory, BasicError>> securityAdvisoriesGetGlobalAdvisory({required String ghsaId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GlobalAdvisory, BasicError>> securityAdvisoriesGetGlobalAdvisory({required String ghsaId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -123,7 +123,7 @@ return null;
 
   },
 );
- } 
+}
 /// List repository security advisories for an organization
 ///
 /// Lists repository security advisories for an organization.
@@ -133,7 +133,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/security-advisories`
-Future<ApiResult<List<RepositoryAdvisory>, SecurityAdvisoriesListOrgRepositoryAdvisoriesError>> securityAdvisoriesListOrgRepositoryAdvisories({required String org, SecurityAdvisoriesListOrgRepositoryAdvisoriesDirection? direction, SecurityAdvisoriesListOrgRepositoryAdvisoriesSort? sort, String? before, String? after, int? perPage, SecurityAdvisoriesListOrgRepositoryAdvisoriesState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<RepositoryAdvisory>, SecurityAdvisoriesListOrgRepositoryAdvisoriesError>> securityAdvisoriesListOrgRepositoryAdvisories({required String org, SecurityAdvisoriesListOrgRepositoryAdvisoriesDirection? direction, SecurityAdvisoriesListOrgRepositoryAdvisoriesSort? sort, String? before, String? after, int? perPage, SecurityAdvisoriesListOrgRepositoryAdvisoriesState? state, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (direction != null) {
   queryParameters['direction'] = direction.toJson();
@@ -173,7 +173,7 @@ return (json as List<dynamic>).map((e) => RepositoryAdvisory.fromJson(e as Map<S
   },
   onError: SecurityAdvisoriesListOrgRepositoryAdvisoriesError.parse,
 );
- } 
+}
 /// List repository security advisories
 ///
 /// Lists security advisories in a repository.
@@ -183,7 +183,7 @@ return (json as List<dynamic>).map((e) => RepositoryAdvisory.fromJson(e as Map<S
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:read` scope to to get a published security advisory in a private repository, or any unpublished security advisory that the authenticated user has access to.
 ///
 /// `GET /repos/{owner}/{repo}/security-advisories`
-Future<ApiResult<List<RepositoryAdvisory>, SecurityAdvisoriesListRepositoryAdvisoriesError>> securityAdvisoriesListRepositoryAdvisories({required String owner, required String repo, SecurityAdvisoriesListRepositoryAdvisoriesDirection? direction, SecurityAdvisoriesListRepositoryAdvisoriesSort? sort, String? before, String? after, int? perPage, SecurityAdvisoriesListRepositoryAdvisoriesState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<RepositoryAdvisory>, SecurityAdvisoriesListRepositoryAdvisoriesError>> securityAdvisoriesListRepositoryAdvisories({required String owner, required String repo, SecurityAdvisoriesListRepositoryAdvisoriesDirection? direction, SecurityAdvisoriesListRepositoryAdvisoriesSort? sort, String? before, String? after, int? perPage, SecurityAdvisoriesListRepositoryAdvisoriesState? state, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (direction != null) {
   queryParameters['direction'] = direction.toJson();
@@ -223,7 +223,7 @@ return (json as List<dynamic>).map((e) => RepositoryAdvisory.fromJson(e as Map<S
   },
   onError: SecurityAdvisoriesListRepositoryAdvisoriesError.parse,
 );
- } 
+}
 /// Create a repository security advisory
 ///
 /// Creates a new repository security advisory.
@@ -233,7 +233,7 @@ return (json as List<dynamic>).map((e) => RepositoryAdvisory.fromJson(e as Map<S
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/security-advisories`
-Future<ApiResult<RepositoryAdvisory, SecurityAdvisoriesCreateRepositoryAdvisoryError>> securityAdvisoriesCreateRepositoryAdvisory({required String owner, required String repo, required RepositoryAdvisoryCreate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RepositoryAdvisory, SecurityAdvisoriesCreateRepositoryAdvisoryError>> securityAdvisoriesCreateRepositoryAdvisory({required String owner, required String repo, required RepositoryAdvisoryCreate body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -252,14 +252,14 @@ return RepositoryAdvisory.fromJson(json as Map<String, dynamic>);
   },
   onError: SecurityAdvisoriesCreateRepositoryAdvisoryError.parse,
 );
- } 
+}
 /// Privately report a security vulnerability
 ///
 /// Report a security vulnerability to the maintainers of the repository.
 /// See "[Privately reporting a security vulnerability](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)" for more information about private vulnerability reporting.
 ///
 /// `POST /repos/{owner}/{repo}/security-advisories/reports`
-Future<ApiResult<RepositoryAdvisory, SecurityAdvisoriesCreatePrivateVulnerabilityReportError>> securityAdvisoriesCreatePrivateVulnerabilityReport({required String owner, required String repo, required PrivateVulnerabilityReportCreate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RepositoryAdvisory, SecurityAdvisoriesCreatePrivateVulnerabilityReportError>> securityAdvisoriesCreatePrivateVulnerabilityReport({required String owner, required String repo, required PrivateVulnerabilityReportCreate body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -278,7 +278,7 @@ return RepositoryAdvisory.fromJson(json as Map<String, dynamic>);
   },
   onError: SecurityAdvisoriesCreatePrivateVulnerabilityReportError.parse,
 );
- } 
+}
 /// Get a repository security advisory
 ///
 /// Get a repository security advisory using its GitHub Security Advisory (GHSA) identifier.
@@ -291,7 +291,7 @@ return RepositoryAdvisory.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:read` scope to to get a published security advisory in a private repository, or any unpublished security advisory that the authenticated user has access to.
 ///
 /// `GET /repos/{owner}/{repo}/security-advisories/{ghsa_id}`
-Future<ApiResult<RepositoryAdvisory, BasicError>> securityAdvisoriesGetRepositoryAdvisory({required String owner, required String repo, required String ghsaId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RepositoryAdvisory, BasicError>> securityAdvisoriesGetRepositoryAdvisory({required String owner, required String repo, required String ghsaId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -317,7 +317,7 @@ return null;
 
   },
 );
- } 
+}
 /// Update a repository security advisory
 ///
 /// Update a repository security advisory using its GitHub Security Advisory (GHSA) identifier.
@@ -328,7 +328,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 ///
 /// `PATCH /repos/{owner}/{repo}/security-advisories/{ghsa_id}`
-Future<ApiResult<RepositoryAdvisory, SecurityAdvisoriesUpdateRepositoryAdvisoryError>> securityAdvisoriesUpdateRepositoryAdvisory({required String owner, required String repo, required String ghsaId, required RepositoryAdvisoryUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RepositoryAdvisory, SecurityAdvisoriesUpdateRepositoryAdvisoryError>> securityAdvisoriesUpdateRepositoryAdvisory({required String owner, required String repo, required String ghsaId, required RepositoryAdvisoryUpdate body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -347,7 +347,7 @@ return RepositoryAdvisory.fromJson(json as Map<String, dynamic>);
   },
   onError: SecurityAdvisoriesUpdateRepositoryAdvisoryError.parse,
 );
- } 
+}
 /// Request a CVE for a repository security advisory
 ///
 /// If you want a CVE identification number for the security vulnerability in your project, and don't already have one, you can request a CVE identification number from GitHub. For more information see "[Requesting a CVE identification number](https://docs.github.com/code-security/security-advisories/repository-security-advisories/publishing-a-repository-security-advisory#requesting-a-cve-identification-number-optional)."
@@ -359,7 +359,7 @@ return RepositoryAdvisory.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/cve`
-Future<ApiResult<Map<String, dynamic>, SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError>> securityAdvisoriesCreateRepositoryAdvisoryCveRequest({required String owner, required String repo, required String ghsaId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError>> securityAdvisoriesCreateRepositoryAdvisoryCveRequest({required String owner, required String repo, required String ghsaId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -376,7 +376,7 @@ return json as Map<String, dynamic>;
   },
   onError: SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError.parse,
 );
- } 
+}
 /// Create a temporary private fork
 ///
 /// Create a temporary private fork to collaborate on fixing a security vulnerability in your repository.
@@ -385,7 +385,7 @@ return json as Map<String, dynamic>;
 /// > Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.
 ///
 /// `POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/forks`
-Future<ApiResult<FullRepository, SecurityAdvisoriesCreateForkError>> securityAdvisoriesCreateFork({required String owner, required String repo, required String ghsaId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FullRepository, SecurityAdvisoriesCreateForkError>> securityAdvisoriesCreateFork({required String owner, required String repo, required String ghsaId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -402,5 +402,5 @@ return FullRepository.fromJson(json as Map<String, dynamic>);
   },
   onError: SecurityAdvisoriesCreateForkError.parse,
 );
- } 
- }
+}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsEndDateVariant2 {const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsEndDateVariant2._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsEndDateVariant2.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsEndDateVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsEndDateVariant2._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsEndDateVariant2 $empty = PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsEndDateVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOpt
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsEndDateVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsEndDateVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsEndDateVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsEndDateVariant2($value)';}
+}
 
 @immutable
 final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsEndDate {

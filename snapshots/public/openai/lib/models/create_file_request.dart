@@ -10,7 +10,7 @@ import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtim
 /// 
 @immutable final class CreateFileRequestPurpose {const CreateFileRequestPurpose._(this.value);
 
-factory CreateFileRequestPurpose.fromJson(String json) { return switch (json) {
+factory CreateFileRequestPurpose.fromJson(String json) {return switch (json) {
   'assistants' => assistants,
   'batch' => batch,
   'fine-tune' => fineTune,
@@ -18,7 +18,7 @@ factory CreateFileRequestPurpose.fromJson(String json) { return switch (json) {
   'user_data' => userData,
   'evals' => evals,
   _ => CreateFileRequestPurpose._(json),
-}; }
+};}
 
 static const CreateFileRequestPurpose assistants = CreateFileRequestPurpose._('assistants');
 
@@ -36,21 +36,21 @@ static const List<CreateFileRequestPurpose> values = [assistants, batch, fineTun
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateFileRequestPurpose && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateFileRequestPurpose($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateFileRequestPurpose && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateFileRequestPurpose($value)';}
+}
 @immutable final class CreateFileRequest {const CreateFileRequest({required this.file, required this.purpose, this.expiresAfter, });
 
-factory CreateFileRequest.fromJson(Map<String, dynamic> json) { return CreateFileRequest(
+factory CreateFileRequest.fromJson(Map<String, dynamic> json) {return CreateFileRequest(
   file: base64Decode(json['file'] as String),
   purpose: CreateFileRequestPurpose.fromJson(json['purpose'] as String),
   expiresAfter: json['expires_after'] != null ? FileExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The File object (not file name) to be uploaded.
 /// 
@@ -68,23 +68,23 @@ final CreateFileRequestPurpose purpose;
 
 final FileExpirationAfter? expiresAfter;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'file': base64Encode(file),
   'purpose': purpose.toJson(),
   if (expiresAfter != null) 'expires_after': expiresAfter?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
-      json.containsKey('purpose'); } 
-CreateFileRequest copyWith({Uint8List? file, CreateFileRequestPurpose? purpose, FileExpirationAfter? Function()? expiresAfter, }) { return CreateFileRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file') &&
+      json.containsKey('purpose');}
+CreateFileRequest copyWith({Uint8List? file, CreateFileRequestPurpose? purpose, FileExpirationAfter? Function()? expiresAfter, }) {return CreateFileRequest(
   file: file ?? this.file,
   purpose: purpose ?? this.purpose,
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateFileRequest &&
           listEquals(file, other.file) &&
           purpose == other.purpose &&
-          expiresAfter == other.expiresAfter; } 
-@override int get hashCode { return Object.hash(Object.hashAll(file), purpose, expiresAfter); } 
-@override String toString() { return 'CreateFileRequest(file: $file, purpose: $purpose, expiresAfter: $expiresAfter)'; } 
- }
+          expiresAfter == other.expiresAfter;}
+@override int get hashCode {return Object.hash(Object.hashAll(file), purpose, expiresAfter);}
+@override String toString() {return 'CreateFileRequest(file: $file, purpose: $purpose, expiresAfter: $expiresAfter)';}
+}

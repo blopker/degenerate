@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'client_key_param.dart';import 'secret_key_param2.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestMandateDataVariant2 {const PostPaymentIntentsIntentConfirmRequestMandateDataVariant2._(this.value);
 
-factory PostPaymentIntentsIntentConfirmRequestMandateDataVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentConfirmRequestMandateDataVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentIntentsIntentConfirmRequestMandateDataVariant2._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentConfirmRequestMandateDataVariant2 $empty = PostPaymentIntentsIntentConfirmRequestMandateDataVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentIntentsIntentConfirmRequestMandateDataVariant2> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentConfirmRequestMandateDataVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestMandateDataVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentConfirmRequestMandateDataVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentConfirmRequestMandateDataVariant2($value)';}
+}
 
 @immutable
 final class PostPaymentIntentsIntentConfirmRequestMandateData {

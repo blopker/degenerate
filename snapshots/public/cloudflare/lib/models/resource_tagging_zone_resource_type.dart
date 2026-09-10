@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifies the type of zone-level resource.
 @immutable final class ResourceTaggingZoneResourceType {const ResourceTaggingZoneResourceType._(this.value);
 
-factory ResourceTaggingZoneResourceType.fromJson(String json) { return switch (json) {
+factory ResourceTaggingZoneResourceType.fromJson(String json) {return switch (json) {
   'access_application_policy' => accessApplicationPolicy,
   'api_gateway_operation' => apiGatewayOperation,
   'custom_certificate' => customCertificate,
@@ -12,7 +12,7 @@ factory ResourceTaggingZoneResourceType.fromJson(String json) { return switch (j
   'managed_client_certificate' => managedClientCertificate,
   'zone' => zone,
   _ => ResourceTaggingZoneResourceType._(json),
-}; }
+};}
 
 static const ResourceTaggingZoneResourceType accessApplicationPolicy = ResourceTaggingZoneResourceType._('access_application_policy');
 
@@ -32,11 +32,11 @@ static const List<ResourceTaggingZoneResourceType> values = [accessApplicationPo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingZoneResourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResourceTaggingZoneResourceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingZoneResourceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ResourceTaggingZoneResourceType($value)';}
+}

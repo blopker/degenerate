@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryOutboundTransfersStatus {const GetTreasuryOutboundTransfersStatus._(this.value);
 
-factory GetTreasuryOutboundTransfersStatus.fromJson(String json) { return switch (json) {
+factory GetTreasuryOutboundTransfersStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'failed' => failed,
   'posted' => posted,
   'processing' => processing,
   'returned' => returned,
   _ => GetTreasuryOutboundTransfersStatus._(json),
-}; }
+};}
 
 static const GetTreasuryOutboundTransfersStatus canceled = GetTreasuryOutboundTransfersStatus._('canceled');
 
@@ -25,11 +25,11 @@ static const List<GetTreasuryOutboundTransfersStatus> values = [canceled, failed
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetTreasuryOutboundTransfersStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetTreasuryOutboundTransfersStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetTreasuryOutboundTransfersStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetTreasuryOutboundTransfersStatus($value)';}
+}

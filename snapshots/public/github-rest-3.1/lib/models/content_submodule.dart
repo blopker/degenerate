@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_submodule_links.dart';@immutable final class ContentSubmoduleType {const ContentSubmoduleType._(this.value);
 
-factory ContentSubmoduleType.fromJson(String json) { return switch (json) {
+factory ContentSubmoduleType.fromJson(String json) {return switch (json) {
   'submodule' => submodule,
   _ => ContentSubmoduleType._(json),
-}; }
+};}
 
 static const ContentSubmoduleType submodule = ContentSubmoduleType._('submodule');
 
@@ -13,18 +13,18 @@ static const List<ContentSubmoduleType> values = [submodule];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContentSubmoduleType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContentSubmoduleType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ContentSubmoduleType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ContentSubmoduleType($value)';}
+}
 /// An object describing a submodule
 @immutable final class ContentSubmodule {const ContentSubmodule({required this.type, required this.submoduleGitUrl, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, });
 
-factory ContentSubmodule.fromJson(Map<String, dynamic> json) { return ContentSubmodule(
+factory ContentSubmodule.fromJson(Map<String, dynamic> json) {return ContentSubmodule(
   type: ContentSubmoduleType.fromJson(json['type'] as String),
   submoduleGitUrl: Uri.parse(json['submodule_git_url'] as String),
   size: (json['size'] as num).toInt(),
@@ -36,7 +36,7 @@ factory ContentSubmodule.fromJson(Map<String, dynamic> json) { return ContentSub
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
   downloadUrl: json['download_url'] != null ? Uri.parse(json['download_url'] as String) : null,
   links: ContentSubmoduleLinks.fromJson(json['_links'] as Map<String, dynamic>),
-); }
+);}
 
 final ContentSubmoduleType type;
 
@@ -60,7 +60,7 @@ final Uri? downloadUrl;
 
 final ContentSubmoduleLinks links;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'submodule_git_url': submoduleGitUrl.toString(),
   'size': size,
@@ -72,8 +72,8 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl?.toString(),
   'download_url': downloadUrl?.toString(),
   '_links': links.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('submodule_git_url') && json['submodule_git_url'] is String &&
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('name') && json['name'] is String &&
@@ -83,8 +83,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('git_url') && (json['git_url'] == null || json['git_url'] is String) &&
       json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String) &&
       json.containsKey('download_url') && (json['download_url'] == null || json['download_url'] is String) &&
-      json.containsKey('_links'); } 
-ContentSubmodule copyWith({ContentSubmoduleType? type, Uri? submoduleGitUrl, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentSubmoduleLinks? links, }) { return ContentSubmodule(
+      json.containsKey('_links');}
+ContentSubmodule copyWith({ContentSubmoduleType? type, Uri? submoduleGitUrl, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentSubmoduleLinks? links, }) {return ContentSubmodule(
   type: type ?? this.type,
   submoduleGitUrl: submoduleGitUrl ?? this.submoduleGitUrl,
   size: size ?? this.size,
@@ -96,8 +96,8 @@ ContentSubmodule copyWith({ContentSubmoduleType? type, Uri? submoduleGitUrl, int
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   downloadUrl: downloadUrl != null ? downloadUrl() : this.downloadUrl,
   links: links ?? this.links,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ContentSubmodule &&
           type == other.type &&
           submoduleGitUrl == other.submoduleGitUrl &&
@@ -109,7 +109,7 @@ ContentSubmodule copyWith({ContentSubmoduleType? type, Uri? submoduleGitUrl, int
           gitUrl == other.gitUrl &&
           htmlUrl == other.htmlUrl &&
           downloadUrl == other.downloadUrl &&
-          links == other.links; } 
-@override int get hashCode { return Object.hash(type, submoduleGitUrl, size, name, path, sha, url, gitUrl, htmlUrl, downloadUrl, links); } 
-@override String toString() { return 'ContentSubmodule(type: $type, submoduleGitUrl: $submoduleGitUrl, size: $size, name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links)'; } 
- }
+          links == other.links;}
+@override int get hashCode {return Object.hash(type, submoduleGitUrl, size, name, path, sha, url, gitUrl, htmlUrl, downloadUrl, links);}
+@override String toString() {return 'ContentSubmodule(type: $type, submoduleGitUrl: $submoduleGitUrl, size: $size, name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links)';}
+}

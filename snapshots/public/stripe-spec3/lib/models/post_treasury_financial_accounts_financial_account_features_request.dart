@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_financial_accounts_financial_account_features_request_card_issuing.dart';import 'post_treasury_financial_accounts_financial_account_features_request_deposit_insurance.dart';import 'post_treasury_financial_accounts_financial_account_features_request_financial_addresses.dart';import 'post_treasury_financial_accounts_financial_account_features_request_inbound_transfers.dart';import 'post_treasury_financial_accounts_financial_account_features_request_intra_stripe_flows.dart';import 'post_treasury_financial_accounts_financial_account_features_request_outbound_payments.dart';import 'post_treasury_financial_accounts_financial_account_features_request_outbound_transfers.dart';@immutable final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest({this.cardIssuing, this.depositInsurance, this.expand, this.financialAddresses, this.inboundTransfers, this.intraStripeFlows, this.outboundPayments, this.outboundTransfers, });
 
-factory PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest(
+factory PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest.fromJson(Map<String, dynamic> json) {return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest(
   cardIssuing: json['card_issuing'] != null ? PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>) : null,
   depositInsurance: json['deposit_insurance'] != null ? PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestDepositInsurance.fromJson(json['deposit_insurance'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -11,7 +11,7 @@ factory PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest.fromJson(Ma
   intraStripeFlows: json['intra_stripe_flows'] != null ? PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows.fromJson(json['intra_stripe_flows'] as Map<String, dynamic>) : null,
   outboundPayments: json['outbound_payments'] != null ? PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundPayments.fromJson(json['outbound_payments'] as Map<String, dynamic>) : null,
   outboundTransfers: json['outbound_transfers'] != null ? PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundTransfers.fromJson(json['outbound_transfers'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Encodes the FinancialAccount's ability to be used with the Issuing product, including attaching cards to and drawing funds from the FinancialAccount.
 final PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestCardIssuing? cardIssuing;
@@ -37,7 +37,7 @@ final PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundPaymen
 /// Contains a Feature and settings related to moving money out of the FinancialAccount into another Account with the same owner.
 final PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundTransfers? outboundTransfers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cardIssuing != null) 'card_issuing': cardIssuing?.toJson(),
   if (depositInsurance != null) 'deposit_insurance': depositInsurance?.toJson(),
   'expand': ?expand,
@@ -46,9 +46,9 @@ Map<String, dynamic> toJson() { return {
   if (intraStripeFlows != null) 'intra_stripe_flows': intraStripeFlows?.toJson(),
   if (outboundPayments != null) 'outbound_payments': outboundPayments?.toJson(),
   if (outboundTransfers != null) 'outbound_transfers': outboundTransfers?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card_issuing', 'deposit_insurance', 'expand', 'financial_addresses', 'inbound_transfers', 'intra_stripe_flows', 'outbound_payments', 'outbound_transfers'}.contains(key)); } 
-PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest copyWith({PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestCardIssuing? Function()? cardIssuing, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestDepositInsurance? Function()? depositInsurance, List<String>? Function()? expand, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestFinancialAddresses? Function()? financialAddresses, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers? Function()? inboundTransfers, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows? Function()? intraStripeFlows, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundPayments? Function()? outboundPayments, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundTransfers? Function()? outboundTransfers, }) { return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'card_issuing', 'deposit_insurance', 'expand', 'financial_addresses', 'inbound_transfers', 'intra_stripe_flows', 'outbound_payments', 'outbound_transfers'}.contains(key));}
+PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest copyWith({PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestCardIssuing? Function()? cardIssuing, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestDepositInsurance? Function()? depositInsurance, List<String>? Function()? expand, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestFinancialAddresses? Function()? financialAddresses, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers? Function()? inboundTransfers, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows? Function()? intraStripeFlows, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundPayments? Function()? outboundPayments, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestOutboundTransfers? Function()? outboundTransfers, }) {return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest(
   cardIssuing: cardIssuing != null ? cardIssuing() : this.cardIssuing,
   depositInsurance: depositInsurance != null ? depositInsurance() : this.depositInsurance,
   expand: expand != null ? expand() : this.expand,
@@ -57,8 +57,8 @@ PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest copyWith({PostTreas
   intraStripeFlows: intraStripeFlows != null ? intraStripeFlows() : this.intraStripeFlows,
   outboundPayments: outboundPayments != null ? outboundPayments() : this.outboundPayments,
   outboundTransfers: outboundTransfers != null ? outboundTransfers() : this.outboundTransfers,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest &&
           cardIssuing == other.cardIssuing &&
           depositInsurance == other.depositInsurance &&
@@ -67,7 +67,7 @@ PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest copyWith({PostTreas
           inboundTransfers == other.inboundTransfers &&
           intraStripeFlows == other.intraStripeFlows &&
           outboundPayments == other.outboundPayments &&
-          outboundTransfers == other.outboundTransfers; } 
-@override int get hashCode { return Object.hash(cardIssuing, depositInsurance, Object.hashAll(expand ?? const []), financialAddresses, inboundTransfers, intraStripeFlows, outboundPayments, outboundTransfers); } 
-@override String toString() { return 'PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest(cardIssuing: $cardIssuing, depositInsurance: $depositInsurance, expand: $expand, financialAddresses: $financialAddresses, inboundTransfers: $inboundTransfers, intraStripeFlows: $intraStripeFlows, outboundPayments: $outboundPayments, outboundTransfers: $outboundTransfers)'; } 
- }
+          outboundTransfers == other.outboundTransfers;}
+@override int get hashCode {return Object.hash(cardIssuing, depositInsurance, Object.hashAll(expand ?? const []), financialAddresses, inboundTransfers, intraStripeFlows, outboundPayments, outboundTransfers);}
+@override String toString() {return 'PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest(cardIssuing: $cardIssuing, depositInsurance: $depositInsurance, expand: $expand, financialAddresses: $financialAddresses, inboundTransfers: $inboundTransfers, intraStripeFlows: $intraStripeFlows, outboundPayments: $outboundPayments, outboundTransfers: $outboundTransfers)';}
+}

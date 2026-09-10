@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_messages2.dart';/// Specify custom certificate settings for BYO-PKI. This field is deprecated; use `certificate` instead.
 @immutable final class ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4xx {const ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4xx({required this.enabled, required this.errors, required this.messages, required this.result, required this.success, this.bindingStatus, this.id, this.updatedAt, });
 
-factory ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4xx.fromJson(Map<String, dynamic> json) { return ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4xx(
+factory ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4xx.fromJson(Map<String, dynamic> json) {return ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4xx(
   bindingStatus: json['binding_status'] as String?,
   enabled: json['enabled'] as bool?,
   id: json['id'] as String?,
@@ -12,7 +12,7 @@ factory ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4xx.fromJso
   messages: (json['messages'] as List<dynamic>).map((e) => ZeroTrustGatewayMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
-); }
+);}
 
 /// Indicate the internal certificate status.
 final String? bindingStatus;
@@ -34,7 +34,7 @@ final Map<String,dynamic>? result;
 /// Indicate whether the API call was successful.
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'binding_status': ?bindingStatus,
   'enabled': enabled,
   'id': ?id,
@@ -43,13 +43,13 @@ Map<String, dynamic> toJson() { return {
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result,
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && (json['enabled'] == null || json['enabled'] is bool) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && (json['enabled'] == null || json['enabled'] is bool) &&
       json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4xx copyWith({String? Function()? bindingStatus, bool? Function()? enabled, String? Function()? id, DateTime? Function()? updatedAt, List<ZeroTrustGatewayMessages2>? errors, List<ZeroTrustGatewayMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4xx(
+      json.containsKey('success') && json['success'] is bool;}
+ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4xx copyWith({String? Function()? bindingStatus, bool? Function()? enabled, String? Function()? id, DateTime? Function()? updatedAt, List<ZeroTrustGatewayMessages2>? errors, List<ZeroTrustGatewayMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, }) {return ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4xx(
   bindingStatus: bindingStatus != null ? bindingStatus() : this.bindingStatus,
   enabled: enabled != null ? enabled() : this.enabled,
   id: id != null ? id() : this.id,
@@ -58,8 +58,8 @@ ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4xx copyWith({Strin
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4xx &&
           bindingStatus == other.bindingStatus &&
           enabled == other.enabled &&
@@ -68,7 +68,7 @@ ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4xx copyWith({Strin
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(bindingStatus, enabled, id, updatedAt, Object.hashAll(errors), Object.hashAll(messages), result, success); } 
-@override String toString() { return 'ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4xx(bindingStatus: $bindingStatus, enabled: $enabled, id: $id, updatedAt: $updatedAt, errors: $errors, messages: $messages, result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(bindingStatus, enabled, id, updatedAt, Object.hashAll(errors), Object.hashAll(messages), result, success);}
+@override String toString() {return 'ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4xx(bindingStatus: $bindingStatus, enabled: $enabled, id: $id, updatedAt: $updatedAt, errors: $errors, messages: $messages, result: $result, success: $success)';}
+}

@@ -13,7 +13,7 @@ final class ZoneLockdownApi with ApiExecutor {const ZoneLockdownApi(this.apiConf
 /// Fetches Zone Lockdown rules. You can filter the results using several optional parameters.
 ///
 /// `GET /zones/{zone_id}/firewall/lockdowns`
-Future<ApiResult<List<FirewallZonelockdown>, ZoneLockdownListZoneLockdownRulesResponse4xx>> zoneLockdownListZoneLockdownRules({required FirewallIdentifier zoneId, double? page, FirewallSchemasDescriptionSearch? description, FirewallModifiedOn? modifiedOn, FirewallIpSearch? ip, FirewallSchemasPriority? priority, FirewallUriSearch? uriSearch, FirewallIpRangeSearch? ipRangeSearch, double? perPage, DateTime? createdOn, String? descriptionSearch, String? ipSearch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<FirewallZonelockdown>, ZoneLockdownListZoneLockdownRulesResponse4xx>> zoneLockdownListZoneLockdownRules({required FirewallIdentifier zoneId, double? page, FirewallSchemasDescriptionSearch? description, FirewallModifiedOn? modifiedOn, FirewallIpSearch? ip, FirewallSchemasPriority? priority, FirewallUriSearch? uriSearch, FirewallIpRangeSearch? ipRangeSearch, double? perPage, DateTime? createdOn, String? descriptionSearch, String? ipSearch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -77,13 +77,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create a Zone Lockdown rule
 ///
 /// Creates a new Zone Lockdown rule.
 ///
 /// `POST /zones/{zone_id}/firewall/lockdowns`
-Future<ApiResult<FirewallZonelockdown, ZoneLockdownCreateAZoneLockdownRuleResponse4xx>> zoneLockdownCreateAZoneLockdownRule({required FirewallIdentifier zoneId, required ZoneLockdownCreateAZoneLockdownRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallZonelockdown, ZoneLockdownCreateAZoneLockdownRuleResponse4xx>> zoneLockdownCreateAZoneLockdownRule({required FirewallIdentifier zoneId, required ZoneLockdownCreateAZoneLockdownRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -111,13 +111,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get a Zone Lockdown rule
 ///
 /// Fetches the details of a Zone Lockdown rule.
 ///
 /// `GET /zones/{zone_id}/firewall/lockdowns/{lock_downs_id}`
-Future<ApiResult<FirewallZonelockdown, ZoneLockdownGetAZoneLockdownRuleResponse4xx>> zoneLockdownGetAZoneLockdownRule({required FirewallLockdownsComponentsSchemasId lockDownsId, required FirewallIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallZonelockdown, ZoneLockdownGetAZoneLockdownRuleResponse4xx>> zoneLockdownGetAZoneLockdownRule({required FirewallLockdownsComponentsSchemasId lockDownsId, required FirewallIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -143,13 +143,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update a Zone Lockdown rule
 ///
 /// Updates an existing Zone Lockdown rule.
 ///
 /// `PUT /zones/{zone_id}/firewall/lockdowns/{lock_downs_id}`
-Future<ApiResult<FirewallZonelockdown, ZoneLockdownUpdateAZoneLockdownRuleResponse4xx>> zoneLockdownUpdateAZoneLockdownRule({required FirewallLockdownsComponentsSchemasId lockDownsId, required FirewallIdentifier zoneId, required ZoneLockdownUpdateAZoneLockdownRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallZonelockdown, ZoneLockdownUpdateAZoneLockdownRuleResponse4xx>> zoneLockdownUpdateAZoneLockdownRule({required FirewallLockdownsComponentsSchemasId lockDownsId, required FirewallIdentifier zoneId, required ZoneLockdownUpdateAZoneLockdownRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -177,13 +177,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a Zone Lockdown rule
 ///
 /// Deletes an existing Zone Lockdown rule.
 ///
 /// `DELETE /zones/{zone_id}/firewall/lockdowns/{lock_downs_id}`
-Future<ApiResult<ZoneLockdownDeleteAZoneLockdownRuleResponseResult?, ZoneLockdownDeleteAZoneLockdownRuleResponse4xx>> zoneLockdownDeleteAZoneLockdownRule({required FirewallLockdownsComponentsSchemasId lockDownsId, required FirewallIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZoneLockdownDeleteAZoneLockdownRuleResponseResult?, ZoneLockdownDeleteAZoneLockdownRuleResponse4xx>> zoneLockdownDeleteAZoneLockdownRule({required FirewallLockdownsComponentsSchemasId lockDownsId, required FirewallIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -209,5 +209,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

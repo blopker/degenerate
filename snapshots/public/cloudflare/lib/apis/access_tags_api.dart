@@ -11,7 +11,7 @@ final class AccessTagsApi with ApiExecutor {const AccessTagsApi(this.apiConfig);
 /// List tags
 ///
 /// `GET /accounts/{account_id}/access/tags`
-Future<ApiResult<List<AccessTag>?, ResponseCommonFailure4>> accessTagsListTags({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessTag>?, ResponseCommonFailure4>> accessTagsListTags({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -48,11 +48,11 @@ return null;
 
   },
 );
- } 
+}
 /// Create a tag
 ///
 /// `POST /accounts/{account_id}/access/tags`
-Future<ApiResult<AccessTag?, ResponseCommonFailure4>> accessTagsCreateTag({required AccessIdentifier accountId, AccessTagsCreateTagRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessTag?, ResponseCommonFailure4>> accessTagsCreateTag({required AccessIdentifier accountId, AccessTagsCreateTagRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -80,11 +80,11 @@ return null;
 
   },
 );
- } 
+}
 /// Get a tag
 ///
 /// `GET /accounts/{account_id}/access/tags/{tag_name}`
-Future<ApiResult<AccessTag?, ResponseCommonFailure4>> accessTagsGetATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessTag?, ResponseCommonFailure4>> accessTagsGetATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -110,11 +110,11 @@ return null;
 
   },
 );
- } 
+}
 /// Update a tag
 ///
 /// `PUT /accounts/{account_id}/access/tags/{tag_name}`
-Future<ApiResult<AccessTag?, ResponseCommonFailure4>> accessTagsUpdateATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, AccessTagWithoutAppCount? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessTag?, ResponseCommonFailure4>> accessTagsUpdateATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, AccessTagWithoutAppCount? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -142,11 +142,11 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a tag
 ///
 /// `DELETE /accounts/{account_id}/access/tags/{tag_name}`
-Future<ApiResult<AccessNameResponseResult?, ResponseCommonFailure4>> accessTagsDeleteATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessNameResponseResult?, ResponseCommonFailure4>> accessTagsDeleteATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -172,5 +172,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

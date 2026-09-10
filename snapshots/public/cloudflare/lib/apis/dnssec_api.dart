@@ -13,7 +13,7 @@ final class DnssecApi with ApiExecutor {const DnssecApi(this.apiConfig);
 /// Details about DNSSEC status and configuration.
 ///
 /// `GET /zones/{zone_id}/dnssec`
-Future<ApiResult<DnssecDnssec?, DnssecDnssecDetailsResponse4xx>> dnssecDetails({required DnssecIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnssecDnssec?, DnssecDnssecDetailsResponse4xx>> dnssecDetails({required DnssecIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Edit DNSSEC Status
 ///
 /// Enable or disable DNSSEC.
 ///
 /// `PATCH /zones/{zone_id}/dnssec`
-Future<ApiResult<DnssecDnssec?, DnssecEditDnssecStatusResponse4xx>> dnssecEditDnssecStatus({required DnssecIdentifier zoneId, required DnssecEditDnssecStatusRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnssecDnssec?, DnssecEditDnssecStatusResponse4xx>> dnssecEditDnssecStatus({required DnssecIdentifier zoneId, required DnssecEditDnssecStatusRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete DNSSEC records
 ///
 /// Delete DNSSEC.
 ///
 /// `DELETE /zones/{zone_id}/dnssec`
-Future<ApiResult<String?, DnssecDeleteDnssecRecordsResponse4xx>> dnssecDeleteDnssecRecords({required DnssecIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String?, DnssecDeleteDnssecRecordsResponse4xx>> dnssecDeleteDnssecRecords({required DnssecIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -105,5 +105,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

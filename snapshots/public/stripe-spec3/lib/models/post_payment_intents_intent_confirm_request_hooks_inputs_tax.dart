@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_confirm_request_hooks_inputs_tax_calculation.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestHooksInputsTax {const PostPaymentIntentsIntentConfirmRequestHooksInputsTax({required this.calculation});
 
-factory PostPaymentIntentsIntentConfirmRequestHooksInputsTax.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestHooksInputsTax(
+factory PostPaymentIntentsIntentConfirmRequestHooksInputsTax.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentConfirmRequestHooksInputsTax(
   calculation: PostPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculation.fromJson(json['calculation']),
-); }
+);}
 
 final PostPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculation calculation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'calculation': calculation.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('calculation'); } 
-PostPaymentIntentsIntentConfirmRequestHooksInputsTax copyWith({PostPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculation? calculation}) { return PostPaymentIntentsIntentConfirmRequestHooksInputsTax(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('calculation');}
+PostPaymentIntentsIntentConfirmRequestHooksInputsTax copyWith({PostPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculation? calculation}) {return PostPaymentIntentsIntentConfirmRequestHooksInputsTax(
   calculation: calculation ?? this.calculation,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsIntentConfirmRequestHooksInputsTax &&
-          calculation == other.calculation; } 
-@override int get hashCode { return calculation.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestHooksInputsTax(calculation: $calculation)'; } 
- }
+          calculation == other.calculation;}
+@override int get hashCode {return calculation.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentConfirmRequestHooksInputsTax(calculation: $calculation)';}
+}

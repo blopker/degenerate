@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetLinkedAccountsAccountOwnersRequest {const GetLinkedAccountsAccountOwnersRequest();
 
-factory GetLinkedAccountsAccountOwnersRequest.fromJson(Map<String, dynamic> _) { return const GetLinkedAccountsAccountOwnersRequest(); }
+factory GetLinkedAccountsAccountOwnersRequest.fromJson(Map<String, dynamic> _) {return const GetLinkedAccountsAccountOwnersRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-GetLinkedAccountsAccountOwnersRequest copyWith() { return const GetLinkedAccountsAccountOwnersRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+GetLinkedAccountsAccountOwnersRequest copyWith() {return const GetLinkedAccountsAccountOwnersRequest(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is GetLinkedAccountsAccountOwnersRequest; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'GetLinkedAccountsAccountOwnersRequest()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is GetLinkedAccountsAccountOwnersRequest;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'GetLinkedAccountsAccountOwnersRequest()';}
+}

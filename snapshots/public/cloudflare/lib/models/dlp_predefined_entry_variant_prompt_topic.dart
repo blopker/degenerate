@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpPromptTopicType {const DlpPromptTopicType._(this.value);
 
-factory DlpPromptTopicType.fromJson(String json) { return switch (json) {
+factory DlpPromptTopicType.fromJson(String json) {return switch (json) {
   'Intent' => intent,
   'Content' => content,
   _ => DlpPromptTopicType._(json),
-}; }
+};}
 
 static const DlpPromptTopicType intent = DlpPromptTopicType._('Intent');
 
@@ -16,20 +16,20 @@ static const List<DlpPromptTopicType> values = [intent, content];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DlpPromptTopicType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DlpPromptTopicType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DlpPromptTopicType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DlpPromptTopicType($value)';}
+}
 @immutable final class DlpPredefinedEntryVariantPromptTopicType {const DlpPredefinedEntryVariantPromptTopicType._(this.value);
 
-factory DlpPredefinedEntryVariantPromptTopicType.fromJson(String json) { return switch (json) {
+factory DlpPredefinedEntryVariantPromptTopicType.fromJson(String json) {return switch (json) {
   'PromptTopic' => promptTopic,
   _ => DlpPredefinedEntryVariantPromptTopicType._(json),
-}; }
+};}
 
 static const DlpPredefinedEntryVariantPromptTopicType promptTopic = DlpPredefinedEntryVariantPromptTopicType._('PromptTopic');
 
@@ -37,21 +37,21 @@ static const List<DlpPredefinedEntryVariantPromptTopicType> values = [promptTopi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DlpPredefinedEntryVariantPromptTopicType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DlpPredefinedEntryVariantPromptTopicType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DlpPredefinedEntryVariantPromptTopicType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DlpPredefinedEntryVariantPromptTopicType($value)';}
+}
 @immutable final class DlpPredefinedEntryVariantPromptTopic {const DlpPredefinedEntryVariantPromptTopic({required this.topicType, required this.type, this.description = const Omittable.absent(), });
 
-factory DlpPredefinedEntryVariantPromptTopic.fromJson(Map<String, dynamic> json) { return DlpPredefinedEntryVariantPromptTopic(
+factory DlpPredefinedEntryVariantPromptTopic.fromJson(Map<String, dynamic> json) {return DlpPredefinedEntryVariantPromptTopic(
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   topicType: DlpPromptTopicType.fromJson(json['topic_type'] as String),
   type: DlpPredefinedEntryVariantPromptTopicType.fromJson(json['type'] as String),
-); }
+);}
 
 final Omittable<String?> description;
 
@@ -59,23 +59,23 @@ final DlpPromptTopicType topicType;
 
 final DlpPredefinedEntryVariantPromptTopicType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description.isPresent) 'description': description.value,
   'topic_type': topicType.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('topic_type') &&
-      json.containsKey('type'); } 
-DlpPredefinedEntryVariantPromptTopic copyWith({Omittable<String?>? description, DlpPromptTopicType? topicType, DlpPredefinedEntryVariantPromptTopicType? type, }) { return DlpPredefinedEntryVariantPromptTopic(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('topic_type') &&
+      json.containsKey('type');}
+DlpPredefinedEntryVariantPromptTopic copyWith({Omittable<String?>? description, DlpPromptTopicType? topicType, DlpPredefinedEntryVariantPromptTopicType? type, }) {return DlpPredefinedEntryVariantPromptTopic(
   description: description ?? this.description,
   topicType: topicType ?? this.topicType,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpPredefinedEntryVariantPromptTopic &&
           description == other.description &&
           topicType == other.topicType &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(description, topicType, type); } 
-@override String toString() { return 'DlpPredefinedEntryVariantPromptTopic(description: $description, topicType: $topicType, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(description, topicType, type);}
+@override String toString() {return 'DlpPredefinedEntryVariantPromptTopic(description: $description, topicType: $topicType, type: $type)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ModelIdsSharedVariant2 {const ModelIdsSharedVariant2._(this.value);
 
-factory ModelIdsSharedVariant2.fromJson(String json) { return switch (json) {
+factory ModelIdsSharedVariant2.fromJson(String json) {return switch (json) {
   'gpt-5.4' => gpt54,
   'gpt-5.3-chat-latest' => gpt53ChatLatest,
   'gpt-5.2' => gpt52,
@@ -78,7 +78,7 @@ factory ModelIdsSharedVariant2.fromJson(String json) { return switch (json) {
   'gpt-3.5-turbo-0125' => gpt35Turbo0125,
   'gpt-3.5-turbo-16k-0613' => gpt35Turbo16k0613,
   _ => ModelIdsSharedVariant2._(json),
-}; }
+};}
 
 static const ModelIdsSharedVariant2 gpt54 = ModelIdsSharedVariant2._('gpt-5.4');
 
@@ -232,14 +232,14 @@ static const List<ModelIdsSharedVariant2> values = [gpt54, gpt53ChatLatest, gpt5
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ModelIdsSharedVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ModelIdsSharedVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ModelIdsSharedVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ModelIdsSharedVariant2($value)';}
+}
 
 @immutable
 final class ModelIdsShared {

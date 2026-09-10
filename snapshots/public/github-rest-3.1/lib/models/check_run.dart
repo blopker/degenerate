@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_run_check_suite.dart';import 'check_run_output.dart';import 'deployment_simple.dart';import 'integration.dart';import 'pull_request_minimal.dart';/// The phase of the lifecycle that the check is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check runs.
 @immutable final class CheckRunStatus {const CheckRunStatus._(this.value);
 
-factory CheckRunStatus.fromJson(String json) { return switch (json) {
+factory CheckRunStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'in_progress' => inProgress,
   'completed' => completed,
@@ -11,7 +11,7 @@ factory CheckRunStatus.fromJson(String json) { return switch (json) {
   'requested' => requested,
   'pending' => pending,
   _ => CheckRunStatus._(json),
-}; }
+};}
 
 static const CheckRunStatus queued = CheckRunStatus._('queued');
 
@@ -29,17 +29,17 @@ static const List<CheckRunStatus> values = [queued, inProgress, completed, waiti
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckRunStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckRunStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckRunStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckRunStatus($value)';}
+}
 @immutable final class CheckRunConclusion {const CheckRunConclusion._(this.value);
 
-factory CheckRunConclusion.fromJson(String json) { return switch (json) {
+factory CheckRunConclusion.fromJson(String json) {return switch (json) {
   'success' => success,
   'failure' => failure,
   'neutral' => neutral,
@@ -49,7 +49,7 @@ factory CheckRunConclusion.fromJson(String json) { return switch (json) {
   'action_required' => actionRequired,
   'null' => $null,
   _ => CheckRunConclusion._(json),
-}; }
+};}
 
 static const CheckRunConclusion success = CheckRunConclusion._('success');
 
@@ -71,18 +71,18 @@ static const List<CheckRunConclusion> values = [success, failure, neutral, cance
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckRunConclusion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckRunConclusion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckRunConclusion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckRunConclusion($value)';}
+}
 /// A check performed on the code of a given code change
 @immutable final class CheckRun {const CheckRun({required this.id, required this.headSha, required this.nodeId, required this.externalId, required this.url, required this.htmlUrl, required this.detailsUrl, required this.status, required this.conclusion, required this.startedAt, required this.completedAt, required this.output, required this.name, required this.checkSuite, required this.app, required this.pullRequests, this.deployment, });
 
-factory CheckRun.fromJson(Map<String, dynamic> json) { return CheckRun(
+factory CheckRun.fromJson(Map<String, dynamic> json) {return CheckRun(
   id: (json['id'] as num).toInt(),
   headSha: json['head_sha'] as String,
   nodeId: json['node_id'] as String,
@@ -100,7 +100,7 @@ factory CheckRun.fromJson(Map<String, dynamic> json) { return CheckRun(
   app: json['app'] != null ? Integration.fromJson(json['app'] as Map<String, dynamic>) : null,
   pullRequests: (json['pull_requests'] as List<dynamic>).map((e) => PullRequestMinimal.fromJson(e as Map<String, dynamic>)).toList(),
   deployment: json['deployment'] != null ? DeploymentSimple.fromJson(json['deployment'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The id of the check.
 final int id;
@@ -141,7 +141,7 @@ final List<PullRequestMinimal> pullRequests;
 
 final DeploymentSimple? deployment;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'head_sha': headSha,
   'node_id': nodeId,
@@ -159,8 +159,8 @@ Map<String, dynamic> toJson() { return {
   'app': app?.toJson(),
   'pull_requests': pullRequests.map((e) => e.toJson()).toList(),
   if (deployment != null) 'deployment': deployment?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('head_sha') && json['head_sha'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('external_id') && (json['external_id'] == null || json['external_id'] is String) &&
@@ -175,8 +175,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('check_suite') &&
       json.containsKey('app') &&
-      json.containsKey('pull_requests'); } 
-CheckRun copyWith({int? id, String? headSha, String? nodeId, String? Function()? externalId, String? url, String? Function()? htmlUrl, String? Function()? detailsUrl, CheckRunStatus? status, CheckRunConclusion? Function()? conclusion, DateTime? Function()? startedAt, DateTime? Function()? completedAt, CheckRunOutput? output, String? name, CheckRunCheckSuite? Function()? checkSuite, Integration? Function()? app, List<PullRequestMinimal>? pullRequests, DeploymentSimple? Function()? deployment, }) { return CheckRun(
+      json.containsKey('pull_requests');}
+CheckRun copyWith({int? id, String? headSha, String? nodeId, String? Function()? externalId, String? url, String? Function()? htmlUrl, String? Function()? detailsUrl, CheckRunStatus? status, CheckRunConclusion? Function()? conclusion, DateTime? Function()? startedAt, DateTime? Function()? completedAt, CheckRunOutput? output, String? name, CheckRunCheckSuite? Function()? checkSuite, Integration? Function()? app, List<PullRequestMinimal>? pullRequests, DeploymentSimple? Function()? deployment, }) {return CheckRun(
   id: id ?? this.id,
   headSha: headSha ?? this.headSha,
   nodeId: nodeId ?? this.nodeId,
@@ -194,8 +194,8 @@ CheckRun copyWith({int? id, String? headSha, String? nodeId, String? Function()?
   app: app != null ? app() : this.app,
   pullRequests: pullRequests ?? this.pullRequests,
   deployment: deployment != null ? deployment() : this.deployment,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CheckRun &&
           id == other.id &&
           headSha == other.headSha &&
@@ -213,7 +213,7 @@ CheckRun copyWith({int? id, String? headSha, String? nodeId, String? Function()?
           checkSuite == other.checkSuite &&
           app == other.app &&
           listEquals(pullRequests, other.pullRequests) &&
-          deployment == other.deployment; } 
-@override int get hashCode { return Object.hash(id, headSha, nodeId, externalId, url, htmlUrl, detailsUrl, status, conclusion, startedAt, completedAt, output, name, checkSuite, app, Object.hashAll(pullRequests), deployment); } 
-@override String toString() { return 'CheckRun(id: $id, headSha: $headSha, nodeId: $nodeId, externalId: $externalId, url: $url, htmlUrl: $htmlUrl, detailsUrl: $detailsUrl, status: $status, conclusion: $conclusion, startedAt: $startedAt, completedAt: $completedAt, output: $output, name: $name, checkSuite: $checkSuite, app: $app, pullRequests: $pullRequests, deployment: $deployment)'; } 
- }
+          deployment == other.deployment;}
+@override int get hashCode {return Object.hash(id, headSha, nodeId, externalId, url, htmlUrl, detailsUrl, status, conclusion, startedAt, completedAt, output, name, checkSuite, app, Object.hashAll(pullRequests), deployment);}
+@override String toString() {return 'CheckRun(id: $id, headSha: $headSha, nodeId: $nodeId, externalId: $externalId, url: $url, htmlUrl: $htmlUrl, detailsUrl: $detailsUrl, status: $status, conclusion: $conclusion, startedAt: $startedAt, completedAt: $completedAt, output: $output, name: $name, checkSuite: $checkSuite, app: $app, pullRequests: $pullRequests, deployment: $deployment)';}
+}

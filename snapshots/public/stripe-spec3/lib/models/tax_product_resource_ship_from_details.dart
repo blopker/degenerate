@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_postal_address.dart';/// 
 @immutable final class TaxProductResourceShipFromDetails {const TaxProductResourceShipFromDetails({required this.address});
 
-factory TaxProductResourceShipFromDetails.fromJson(Map<String, dynamic> json) { return TaxProductResourceShipFromDetails(
+factory TaxProductResourceShipFromDetails.fromJson(Map<String, dynamic> json) {return TaxProductResourceShipFromDetails(
   address: TaxProductResourcePostalAddress.fromJson(json['address'] as Map<String, dynamic>),
-); }
+);}
 
 final TaxProductResourcePostalAddress address;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address'); } 
-TaxProductResourceShipFromDetails copyWith({TaxProductResourcePostalAddress? address}) { return TaxProductResourceShipFromDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address');}
+TaxProductResourceShipFromDetails copyWith({TaxProductResourcePostalAddress? address}) {return TaxProductResourceShipFromDetails(
   address: address ?? this.address,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TaxProductResourceShipFromDetails &&
-          address == other.address; } 
-@override int get hashCode { return address.hashCode; } 
-@override String toString() { return 'TaxProductResourceShipFromDetails(address: $address)'; } 
- }
+          address == other.address;}
+@override int get hashCode {return address.hashCode;}
+@override String toString() {return 'TaxProductResourceShipFromDetails(address: $address)';}
+}

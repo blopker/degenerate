@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `file`.
 @immutable final class OpenAiFileObject {const OpenAiFileObject._(this.value);
 
-factory OpenAiFileObject.fromJson(String json) { return switch (json) {
+factory OpenAiFileObject.fromJson(String json) {return switch (json) {
   'file' => file,
   _ => OpenAiFileObject._(json),
-}; }
+};}
 
 static const OpenAiFileObject file = OpenAiFileObject._('file');
 
@@ -14,18 +14,18 @@ static const List<OpenAiFileObject> values = [file];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OpenAiFileObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OpenAiFileObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OpenAiFileObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OpenAiFileObject($value)';}
+}
 /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results`, `vision`, and `user_data`.
 @immutable final class OpenAiFilePurpose {const OpenAiFilePurpose._(this.value);
 
-factory OpenAiFilePurpose.fromJson(String json) { return switch (json) {
+factory OpenAiFilePurpose.fromJson(String json) {return switch (json) {
   'assistants' => assistants,
   'assistants_output' => assistantsOutput,
   'batch' => batch,
@@ -35,7 +35,7 @@ factory OpenAiFilePurpose.fromJson(String json) { return switch (json) {
   'vision' => vision,
   'user_data' => userData,
   _ => OpenAiFilePurpose._(json),
-}; }
+};}
 
 static const OpenAiFilePurpose assistants = OpenAiFilePurpose._('assistants');
 
@@ -57,23 +57,23 @@ static const List<OpenAiFilePurpose> values = [assistants, assistantsOutput, bat
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OpenAiFilePurpose && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OpenAiFilePurpose($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OpenAiFilePurpose && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OpenAiFilePurpose($value)';}
+}
 /// Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.
 @immutable final class OpenAiFileStatus {const OpenAiFileStatus._(this.value);
 
-factory OpenAiFileStatus.fromJson(String json) { return switch (json) {
+factory OpenAiFileStatus.fromJson(String json) {return switch (json) {
   'uploaded' => uploaded,
   'processed' => processed,
   'error' => error,
   _ => OpenAiFileStatus._(json),
-}; }
+};}
 
 static const OpenAiFileStatus uploaded = OpenAiFileStatus._('uploaded');
 
@@ -85,18 +85,18 @@ static const List<OpenAiFileStatus> values = [uploaded, processed, error];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OpenAiFileStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OpenAiFileStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OpenAiFileStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OpenAiFileStatus($value)';}
+}
 /// The `File` object represents a document that has been uploaded to OpenAI.
 @immutable final class OpenAiFile {const OpenAiFile({required this.id, required this.bytes, required this.createdAt, required this.filename, required this.object, required this.purpose, required this.status, this.expiresAt, this.statusDetails, });
 
-factory OpenAiFile.fromJson(Map<String, dynamic> json) { return OpenAiFile(
+factory OpenAiFile.fromJson(Map<String, dynamic> json) {return OpenAiFile(
   id: json['id'] as String,
   bytes: (json['bytes'] as num).toInt(),
   createdAt: (json['created_at'] as num).toInt(),
@@ -106,7 +106,7 @@ factory OpenAiFile.fromJson(Map<String, dynamic> json) { return OpenAiFile(
   purpose: OpenAiFilePurpose.fromJson(json['purpose'] as String),
   status: OpenAiFileStatus.fromJson(json['status'] as String),
   statusDetails: json['status_details'] as String?,
-); }
+);}
 
 /// The file identifier, which can be referenced in the API endpoints.
 final String id;
@@ -135,7 +135,7 @@ final OpenAiFileStatus status;
 /// Deprecated. For details on why a fine-tuning training file failed validation, see the `error` field on `fine_tuning.job`.
 final String? statusDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'bytes': bytes,
   'created_at': createdAt,
@@ -145,15 +145,15 @@ Map<String, dynamic> toJson() { return {
   'purpose': purpose.toJson(),
   'status': status.toJson(),
   'status_details': ?statusDetails,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('bytes') && json['bytes'] is num &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('filename') && json['filename'] is String &&
       json.containsKey('object') &&
       json.containsKey('purpose') &&
-      json.containsKey('status'); } 
-OpenAiFile copyWith({String? id, int? bytes, int? createdAt, int? Function()? expiresAt, String? filename, OpenAiFileObject? object, OpenAiFilePurpose? purpose, OpenAiFileStatus? status, String? Function()? statusDetails, }) { return OpenAiFile(
+      json.containsKey('status');}
+OpenAiFile copyWith({String? id, int? bytes, int? createdAt, int? Function()? expiresAt, String? filename, OpenAiFileObject? object, OpenAiFilePurpose? purpose, OpenAiFileStatus? status, String? Function()? statusDetails, }) {return OpenAiFile(
   id: id ?? this.id,
   bytes: bytes ?? this.bytes,
   createdAt: createdAt ?? this.createdAt,
@@ -163,8 +163,8 @@ OpenAiFile copyWith({String? id, int? bytes, int? createdAt, int? Function()? ex
   purpose: purpose ?? this.purpose,
   status: status ?? this.status,
   statusDetails: statusDetails != null ? statusDetails() : this.statusDetails,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OpenAiFile &&
           id == other.id &&
           bytes == other.bytes &&
@@ -174,7 +174,7 @@ OpenAiFile copyWith({String? id, int? bytes, int? createdAt, int? Function()? ex
           object == other.object &&
           purpose == other.purpose &&
           status == other.status &&
-          statusDetails == other.statusDetails; } 
-@override int get hashCode { return Object.hash(id, bytes, createdAt, expiresAt, filename, object, purpose, status, statusDetails); } 
-@override String toString() { return 'OpenAiFile(id: $id, bytes: $bytes, createdAt: $createdAt, expiresAt: $expiresAt, filename: $filename, object: $object, purpose: $purpose, status: $status, statusDetails: $statusDetails)'; } 
- }
+          statusDetails == other.statusDetails;}
+@override int get hashCode {return Object.hash(id, bytes, createdAt, expiresAt, filename, object, purpose, status, statusDetails);}
+@override String toString() {return 'OpenAiFile(id: $id, bytes: $bytes, createdAt: $createdAt, expiresAt: $expiresAt, filename: $filename, object: $object, purpose: $purpose, status: $status, statusDetails: $statusDetails)';}
+}

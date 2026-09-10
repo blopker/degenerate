@@ -9,12 +9,12 @@ String toJson() => value;
 }
 @immutable final class CacheRulesResultObject {const CacheRulesResultObject({required this.editable, required this.id, required this.value, this.modifiedOn, });
 
-factory CacheRulesResultObject.fromJson(Map<String, dynamic> json) { return CacheRulesResultObject(
+factory CacheRulesResultObject.fromJson(Map<String, dynamic> json) {return CacheRulesResultObject(
   editable: CacheRulesEditable.fromJson(json['editable'] as bool),
   id: CacheRulesSettingId.fromJson(json['id'] as String),
   modifiedOn: json['modified_on'] != null ? CacheRulesModifiedOn.fromJson(json['modified_on'] as String) : null,
   value: CacheRulesSettingValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// Whether the setting is editable.
 final CacheRulesEditable editable;
@@ -26,27 +26,27 @@ final CacheRulesModifiedOn? modifiedOn;
 
 final CacheRulesSettingValue value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'editable': editable.toJson(),
   'id': id.toJson(),
   if (modifiedOn != null) 'modified_on': modifiedOn?.toJson(),
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('editable') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('editable') &&
       json.containsKey('id') &&
-      json.containsKey('value'); } 
-CacheRulesResultObject copyWith({CacheRulesEditable? editable, CacheRulesSettingId? id, CacheRulesModifiedOn? Function()? modifiedOn, CacheRulesSettingValue? value, }) { return CacheRulesResultObject(
+      json.containsKey('value');}
+CacheRulesResultObject copyWith({CacheRulesEditable? editable, CacheRulesSettingId? id, CacheRulesModifiedOn? Function()? modifiedOn, CacheRulesSettingValue? value, }) {return CacheRulesResultObject(
   editable: editable ?? this.editable,
   id: id ?? this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CacheRulesResultObject &&
           editable == other.editable &&
           id == other.id &&
           modifiedOn == other.modifiedOn &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(editable, id, modifiedOn, value); } 
-@override String toString() { return 'CacheRulesResultObject(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(editable, id, modifiedOn, value);}
+@override String toString() {return 'CacheRulesResultObject(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)';}
+}

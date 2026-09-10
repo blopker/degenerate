@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Various durations for the query.
 @immutable final class D1QueryMetaTimings {const D1QueryMetaTimings({this.sqlDurationMs});
 
-factory D1QueryMetaTimings.fromJson(Map<String, dynamic> json) { return D1QueryMetaTimings(
+factory D1QueryMetaTimings.fromJson(Map<String, dynamic> json) {return D1QueryMetaTimings(
   sqlDurationMs: json['sql_duration_ms'] != null ? (json['sql_duration_ms'] as num).toDouble() : null,
-); }
+);}
 
 /// The duration of the SQL query execution inside the database. Does not include any network communication.
 final double? sqlDurationMs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'sql_duration_ms': ?sqlDurationMs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sql_duration_ms'}.contains(key)); } 
-D1QueryMetaTimings copyWith({double? Function()? sqlDurationMs}) { return D1QueryMetaTimings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'sql_duration_ms'}.contains(key));}
+D1QueryMetaTimings copyWith({double? Function()? sqlDurationMs}) {return D1QueryMetaTimings(
   sqlDurationMs: sqlDurationMs != null ? sqlDurationMs() : this.sqlDurationMs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is D1QueryMetaTimings &&
-          sqlDurationMs == other.sqlDurationMs; } 
-@override int get hashCode { return sqlDurationMs.hashCode; } 
-@override String toString() { return 'D1QueryMetaTimings(sqlDurationMs: $sqlDurationMs)'; } 
- }
+          sqlDurationMs == other.sqlDurationMs;}
+@override int get hashCode {return sqlDurationMs.hashCode;}
+@override String toString() {return 'D1QueryMetaTimings(sqlDurationMs: $sqlDurationMs)';}
+}

@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamRoleAssignmentPermissions {const TeamRoleAssignmentPermissions({required this.pull, required this.triage, required this.push, required this.maintain, required this.admin, });
 
-factory TeamRoleAssignmentPermissions.fromJson(Map<String, dynamic> json) { return TeamRoleAssignmentPermissions(
+factory TeamRoleAssignmentPermissions.fromJson(Map<String, dynamic> json) {return TeamRoleAssignmentPermissions(
   pull: json['pull'] as bool,
   triage: json['triage'] as bool,
   push: json['push'] as bool,
   maintain: json['maintain'] as bool,
   admin: json['admin'] as bool,
-); }
+);}
 
 final bool pull;
 
@@ -20,32 +20,32 @@ final bool maintain;
 
 final bool admin;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'pull': pull,
   'triage': triage,
   'push': push,
   'maintain': maintain,
   'admin': admin,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('pull') && json['pull'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('pull') && json['pull'] is bool &&
       json.containsKey('triage') && json['triage'] is bool &&
       json.containsKey('push') && json['push'] is bool &&
       json.containsKey('maintain') && json['maintain'] is bool &&
-      json.containsKey('admin') && json['admin'] is bool; } 
-TeamRoleAssignmentPermissions copyWith({bool? pull, bool? triage, bool? push, bool? maintain, bool? admin, }) { return TeamRoleAssignmentPermissions(
+      json.containsKey('admin') && json['admin'] is bool;}
+TeamRoleAssignmentPermissions copyWith({bool? pull, bool? triage, bool? push, bool? maintain, bool? admin, }) {return TeamRoleAssignmentPermissions(
   pull: pull ?? this.pull,
   triage: triage ?? this.triage,
   push: push ?? this.push,
   maintain: maintain ?? this.maintain,
   admin: admin ?? this.admin,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamRoleAssignmentPermissions &&
           pull == other.pull &&
           triage == other.triage &&
           push == other.push &&
           maintain == other.maintain &&
-          admin == other.admin; } 
-@override int get hashCode { return Object.hash(pull, triage, push, maintain, admin); } 
-@override String toString() { return 'TeamRoleAssignmentPermissions(pull: $pull, triage: $triage, push: $push, maintain: $maintain, admin: $admin)'; } 
- }
+          admin == other.admin;}
+@override int get hashCode {return Object.hash(pull, triage, push, maintain, admin);}
+@override String toString() {return 'TeamRoleAssignmentPermissions(pull: $pull, triage: $triage, push: $push, maintain: $maintain, admin: $admin)';}
+}

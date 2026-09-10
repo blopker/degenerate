@@ -4,14 +4,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a d
 /// 
 @immutable final class TranscriptTextSegmentEvent {const TranscriptTextSegmentEvent({required this.type, required this.id, required this.start, required this.end, required this.text, required this.speaker, });
 
-factory TranscriptTextSegmentEvent.fromJson(Map<String, dynamic> json) { return TranscriptTextSegmentEvent(
+factory TranscriptTextSegmentEvent.fromJson(Map<String, dynamic> json) {return TranscriptTextSegmentEvent(
   type: json['type'] as String,
   id: json['id'] as String,
   start: (json['start'] as num).toDouble(),
   end: (json['end'] as num).toDouble(),
   text: json['text'] as String,
   speaker: json['speaker'] as String,
-); }
+);}
 
 /// The type of the event. Always `transcript.text.segment`.
 final String type;
@@ -31,36 +31,36 @@ final String text;
 /// Speaker label for this segment.
 final String speaker;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'start': start,
   'end': end,
   'text': text,
   'speaker': speaker,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('start') && json['start'] is num &&
       json.containsKey('end') && json['end'] is num &&
       json.containsKey('text') && json['text'] is String &&
-      json.containsKey('speaker') && json['speaker'] is String; } 
-TranscriptTextSegmentEvent copyWith({String? type, String? id, double? start, double? end, String? text, String? speaker, }) { return TranscriptTextSegmentEvent(
+      json.containsKey('speaker') && json['speaker'] is String;}
+TranscriptTextSegmentEvent copyWith({String? type, String? id, double? start, double? end, String? text, String? speaker, }) {return TranscriptTextSegmentEvent(
   type: type ?? this.type,
   id: id ?? this.id,
   start: start ?? this.start,
   end: end ?? this.end,
   text: text ?? this.text,
   speaker: speaker ?? this.speaker,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TranscriptTextSegmentEvent &&
           type == other.type &&
           id == other.id &&
           start == other.start &&
           end == other.end &&
           text == other.text &&
-          speaker == other.speaker; } 
-@override int get hashCode { return Object.hash(type, id, start, end, text, speaker); } 
-@override String toString() { return 'TranscriptTextSegmentEvent(type: $type, id: $id, start: $start, end: $end, text: $text, speaker: $speaker)'; } 
- }
+          speaker == other.speaker;}
+@override int get hashCode {return Object.hash(type, id, start, end, text, speaker);}
+@override String toString() {return 'TranscriptTextSegmentEvent(type: $type, id: $id, start: $start, end: $end, text: $text, speaker: $speaker)';}
+}

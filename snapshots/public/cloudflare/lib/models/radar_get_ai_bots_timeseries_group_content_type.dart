@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAiBotsTimeseriesGroupContentType {const RadarGetAiBotsTimeseriesGroupContentType._(this.value);
 
-factory RadarGetAiBotsTimeseriesGroupContentType.fromJson(String json) { return switch (json) {
+factory RadarGetAiBotsTimeseriesGroupContentType.fromJson(String json) {return switch (json) {
   'HTML' => html,
   'IMAGES' => images,
   'JSON' => $json,
@@ -20,7 +20,7 @@ factory RadarGetAiBotsTimeseriesGroupContentType.fromJson(String json) { return 
   'SERIALIZATION' => serialization,
   'OTHER' => $other,
   _ => RadarGetAiBotsTimeseriesGroupContentType._(json),
-}; }
+};}
 
 static const RadarGetAiBotsTimeseriesGroupContentType html = RadarGetAiBotsTimeseriesGroupContentType._('HTML');
 
@@ -58,11 +58,11 @@ static const List<RadarGetAiBotsTimeseriesGroupContentType> values = [html, imag
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAiBotsTimeseriesGroupContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAiBotsTimeseriesGroupContentType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAiBotsTimeseriesGroupContentType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAiBotsTimeseriesGroupContentType($value)';}
+}

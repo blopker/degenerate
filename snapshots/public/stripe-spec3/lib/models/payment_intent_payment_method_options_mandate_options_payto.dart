@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of amount that will be collected. The amount charged must be exact or up to the value of `amount` param for `fixed` or `maximum` type respectively. Defaults to `maximum`.
 @immutable final class PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType {const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType.fromJson(String json) {return switch (json) {
   'fixed' => fixed,
   'maximum' => maximum,
   _ => PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType fixed = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType._('fixed');
 
@@ -17,18 +17,18 @@ static const List<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType($value)';}
+}
 /// The periodicity at which payments will be collected. Defaults to `adhoc`.
 @immutable final class PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule {const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule.fromJson(String json) {return switch (json) {
   'adhoc' => adhoc,
   'annual' => annual,
   'daily' => daily,
@@ -38,7 +38,7 @@ factory PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule.from
   'semi_annual' => semiAnnual,
   'weekly' => weekly,
   _ => PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule adhoc = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule._('adhoc');
 
@@ -60,18 +60,18 @@ static const List<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSch
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule($value)';}
+}
 /// The purpose for which payments are made. Has a default value based on your merchant category code.
 @immutable final class PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose {const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose.fromJson(String json) {return switch (json) {
   'dependant_support' => dependantSupport,
   'government' => government,
   'loan' => loan,
@@ -84,7 +84,7 @@ factory PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose.fromJson(Str
   'tax' => tax,
   'utility' => utility,
   _ => PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose dependantSupport = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._('dependant_support');
 
@@ -112,25 +112,25 @@ static const List<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose> v
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose($value)';}
+}
 /// 
 @immutable final class PaymentIntentPaymentMethodOptionsMandateOptionsPayto {const PaymentIntentPaymentMethodOptionsMandateOptionsPayto({this.amount = const Omittable.absent(), this.amountType = const Omittable.absent(), this.endDate = const Omittable.absent(), this.paymentSchedule = const Omittable.absent(), this.paymentsPerPeriod = const Omittable.absent(), this.purpose = const Omittable.absent(), });
 
-factory PaymentIntentPaymentMethodOptionsMandateOptionsPayto.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsMandateOptionsPayto(
+factory PaymentIntentPaymentMethodOptionsMandateOptionsPayto.fromJson(Map<String, dynamic> json) {return PaymentIntentPaymentMethodOptionsMandateOptionsPayto(
   amount: json.containsKey('amount') ? Omittable(json['amount'] != null ? (json['amount'] as num).toInt() : null) : const Omittable.absent(),
   amountType: json.containsKey('amount_type') ? Omittable(json['amount_type'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType.fromJson(json['amount_type'] as String) : null) : const Omittable.absent(),
   endDate: json.containsKey('end_date') ? Omittable(json['end_date'] as String?) : const Omittable.absent(),
   paymentSchedule: json.containsKey('payment_schedule') ? Omittable(json['payment_schedule'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule.fromJson(json['payment_schedule'] as String) : null) : const Omittable.absent(),
   paymentsPerPeriod: json.containsKey('payments_per_period') ? Omittable(json['payments_per_period'] != null ? (json['payments_per_period'] as num).toInt() : null) : const Omittable.absent(),
   purpose: json.containsKey('purpose') ? Omittable(json['purpose'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose.fromJson(json['purpose'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Amount that will be collected. It is required when `amount_type` is `fixed`.
 final Omittable<int?> amount;
@@ -150,31 +150,31 @@ final Omittable<int?> paymentsPerPeriod;
 /// The purpose for which payments are made. Has a default value based on your merchant category code.
 final Omittable<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose?> purpose;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amount.isPresent) 'amount': amount.value,
   if (amountType.isPresent) 'amount_type': amountType.value?.toJson(),
   if (endDate.isPresent) 'end_date': endDate.value,
   if (paymentSchedule.isPresent) 'payment_schedule': paymentSchedule.value?.toJson(),
   if (paymentsPerPeriod.isPresent) 'payments_per_period': paymentsPerPeriod.value,
   if (purpose.isPresent) 'purpose': purpose.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_type', 'end_date', 'payment_schedule', 'payments_per_period', 'purpose'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsMandateOptionsPayto copyWith({Omittable<int?>? amount, Omittable<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType?>? amountType, Omittable<String?>? endDate, Omittable<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule?>? paymentSchedule, Omittable<int?>? paymentsPerPeriod, Omittable<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose?>? purpose, }) { return PaymentIntentPaymentMethodOptionsMandateOptionsPayto(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'amount_type', 'end_date', 'payment_schedule', 'payments_per_period', 'purpose'}.contains(key));}
+PaymentIntentPaymentMethodOptionsMandateOptionsPayto copyWith({Omittable<int?>? amount, Omittable<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType?>? amountType, Omittable<String?>? endDate, Omittable<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule?>? paymentSchedule, Omittable<int?>? paymentsPerPeriod, Omittable<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose?>? purpose, }) {return PaymentIntentPaymentMethodOptionsMandateOptionsPayto(
   amount: amount ?? this.amount,
   amountType: amountType ?? this.amountType,
   endDate: endDate ?? this.endDate,
   paymentSchedule: paymentSchedule ?? this.paymentSchedule,
   paymentsPerPeriod: paymentsPerPeriod ?? this.paymentsPerPeriod,
   purpose: purpose ?? this.purpose,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsMandateOptionsPayto &&
           amount == other.amount &&
           amountType == other.amountType &&
           endDate == other.endDate &&
           paymentSchedule == other.paymentSchedule &&
           paymentsPerPeriod == other.paymentsPerPeriod &&
-          purpose == other.purpose; } 
-@override int get hashCode { return Object.hash(amount, amountType, endDate, paymentSchedule, paymentsPerPeriod, purpose); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsMandateOptionsPayto(amount: $amount, amountType: $amountType, endDate: $endDate, paymentSchedule: $paymentSchedule, paymentsPerPeriod: $paymentsPerPeriod, purpose: $purpose)'; } 
- }
+          purpose == other.purpose;}
+@override int get hashCode {return Object.hash(amount, amountType, endDate, paymentSchedule, paymentsPerPeriod, purpose);}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsMandateOptionsPayto(amount: $amount, amountType: $amountType, endDate: $endDate, paymentSchedule: $paymentSchedule, paymentsPerPeriod: $paymentsPerPeriod, purpose: $purpose)';}
+}

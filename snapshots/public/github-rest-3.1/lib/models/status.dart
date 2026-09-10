@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The status of a commit.
 @immutable final class Status {const Status({required this.url, required this.avatarUrl, required this.id, required this.nodeId, required this.state, required this.description, required this.targetUrl, required this.context, required this.createdAt, required this.updatedAt, required this.creator, });
 
-factory Status.fromJson(Map<String, dynamic> json) { return Status(
+factory Status.fromJson(Map<String, dynamic> json) {return Status(
   url: json['url'] as String,
   avatarUrl: json['avatar_url'] as String?,
   id: (json['id'] as num).toInt(),
@@ -15,7 +15,7 @@ factory Status.fromJson(Map<String, dynamic> json) { return Status(
   createdAt: json['created_at'] as String,
   updatedAt: json['updated_at'] as String,
   creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String url;
 
@@ -39,7 +39,7 @@ final String updatedAt;
 
 final SimpleUser? creator;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url,
   'avatar_url': avatarUrl,
   'id': id,
@@ -51,8 +51,8 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'updated_at': updatedAt,
   'creator': creator?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('avatar_url') && (json['avatar_url'] == null || json['avatar_url'] is String) &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
@@ -62,8 +62,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('context') && json['context'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('creator'); } 
-Status copyWith({String? url, String? Function()? avatarUrl, int? id, String? nodeId, String? state, String? Function()? description, String? Function()? targetUrl, String? context, String? createdAt, String? updatedAt, SimpleUser? Function()? creator, }) { return Status(
+      json.containsKey('creator');}
+Status copyWith({String? url, String? Function()? avatarUrl, int? id, String? nodeId, String? state, String? Function()? description, String? Function()? targetUrl, String? context, String? createdAt, String? updatedAt, SimpleUser? Function()? creator, }) {return Status(
   url: url ?? this.url,
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   id: id ?? this.id,
@@ -75,8 +75,8 @@ Status copyWith({String? url, String? Function()? avatarUrl, int? id, String? no
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
   creator: creator != null ? creator() : this.creator,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Status &&
           url == other.url &&
           avatarUrl == other.avatarUrl &&
@@ -88,7 +88,7 @@ Status copyWith({String? url, String? Function()? avatarUrl, int? id, String? no
           context == other.context &&
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
-          creator == other.creator; } 
-@override int get hashCode { return Object.hash(url, avatarUrl, id, nodeId, state, description, targetUrl, context, createdAt, updatedAt, creator); } 
-@override String toString() { return 'Status(url: $url, avatarUrl: $avatarUrl, id: $id, nodeId: $nodeId, state: $state, description: $description, targetUrl: $targetUrl, context: $context, createdAt: $createdAt, updatedAt: $updatedAt, creator: $creator)'; } 
- }
+          creator == other.creator;}
+@override int get hashCode {return Object.hash(url, avatarUrl, id, nodeId, state, description, targetUrl, context, createdAt, updatedAt, creator);}
+@override String toString() {return 'Status(url: $url, avatarUrl: $avatarUrl, id: $id, nodeId: $nodeId, state: $state, description: $description, targetUrl: $targetUrl, context: $context, createdAt: $createdAt, updatedAt: $updatedAt, creator: $creator)';}
+}

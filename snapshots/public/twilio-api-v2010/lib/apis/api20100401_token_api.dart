@@ -11,7 +11,7 @@ final class Api20100401TokenApi with ApiExecutor {const Api20100401TokenApi(this
 /// Create a new token for ICE servers
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Tokens.json`
-Future<ApiResult<AccountToken, Never>> createToken({required String accountSid, CreateTokenRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountToken, Never>> createToken({required String accountSid, CreateTokenRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -32,5 +32,5 @@ final json = jsonDecode(response.body);
 return AccountToken.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

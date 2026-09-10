@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_prices_request_currency_options_value_tiers_up_to.dart';@immutable final class PostPricesRequestCurrencyOptionsValueTiers {const PostPricesRequestCurrencyOptionsValueTiers({required this.upTo, this.flatAmount, this.flatAmountDecimal, this.unitAmount, this.unitAmountDecimal, });
 
-factory PostPricesRequestCurrencyOptionsValueTiers.fromJson(Map<String, dynamic> json) { return PostPricesRequestCurrencyOptionsValueTiers(
+factory PostPricesRequestCurrencyOptionsValueTiers.fromJson(Map<String, dynamic> json) {return PostPricesRequestCurrencyOptionsValueTiers(
   flatAmount: json['flat_amount'] != null ? (json['flat_amount'] as num).toInt() : null,
   flatAmountDecimal: json['flat_amount_decimal'] as String?,
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
   upTo: PostPricesRequestCurrencyOptionsValueTiersUpTo.fromJson(json['up_to']),
-); }
+);}
 
 final int? flatAmount;
 
@@ -20,28 +20,28 @@ final String? unitAmountDecimal;
 
 final PostPricesRequestCurrencyOptionsValueTiersUpTo upTo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'flat_amount': ?flatAmount,
   'flat_amount_decimal': ?flatAmountDecimal,
   'unit_amount': ?unitAmount,
   'unit_amount_decimal': ?unitAmountDecimal,
   'up_to': upTo.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('up_to'); } 
-PostPricesRequestCurrencyOptionsValueTiers copyWith({int? Function()? flatAmount, String? Function()? flatAmountDecimal, int? Function()? unitAmount, String? Function()? unitAmountDecimal, PostPricesRequestCurrencyOptionsValueTiersUpTo? upTo, }) { return PostPricesRequestCurrencyOptionsValueTiers(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('up_to');}
+PostPricesRequestCurrencyOptionsValueTiers copyWith({int? Function()? flatAmount, String? Function()? flatAmountDecimal, int? Function()? unitAmount, String? Function()? unitAmountDecimal, PostPricesRequestCurrencyOptionsValueTiersUpTo? upTo, }) {return PostPricesRequestCurrencyOptionsValueTiers(
   flatAmount: flatAmount != null ? flatAmount() : this.flatAmount,
   flatAmountDecimal: flatAmountDecimal != null ? flatAmountDecimal() : this.flatAmountDecimal,
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
   upTo: upTo ?? this.upTo,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPricesRequestCurrencyOptionsValueTiers &&
           flatAmount == other.flatAmount &&
           flatAmountDecimal == other.flatAmountDecimal &&
           unitAmount == other.unitAmount &&
           unitAmountDecimal == other.unitAmountDecimal &&
-          upTo == other.upTo; } 
-@override int get hashCode { return Object.hash(flatAmount, flatAmountDecimal, unitAmount, unitAmountDecimal, upTo); } 
-@override String toString() { return 'PostPricesRequestCurrencyOptionsValueTiers(flatAmount: $flatAmount, flatAmountDecimal: $flatAmountDecimal, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal, upTo: $upTo)'; } 
- }
+          upTo == other.upTo;}
+@override int get hashCode {return Object.hash(flatAmount, flatAmountDecimal, unitAmount, unitAmountDecimal, upTo);}
+@override String toString() {return 'PostPricesRequestCurrencyOptionsValueTiers(flatAmount: $flatAmount, flatAmountDecimal: $flatAmountDecimal, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal, upTo: $upTo)';}
+}

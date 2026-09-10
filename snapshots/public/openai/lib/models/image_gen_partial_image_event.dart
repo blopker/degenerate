@@ -4,13 +4,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The size of the 
 /// 
 @immutable final class ImageGenPartialImageEventSize {const ImageGenPartialImageEventSize._(this.value);
 
-factory ImageGenPartialImageEventSize.fromJson(String json) { return switch (json) {
+factory ImageGenPartialImageEventSize.fromJson(String json) {return switch (json) {
   '1024x1024' => $1024x1024,
   '1024x1536' => $1024x1536,
   '1536x1024' => $1536x1024,
   'auto' => auto,
   _ => ImageGenPartialImageEventSize._(json),
-}; }
+};}
 
 static const ImageGenPartialImageEventSize $1024x1024 = ImageGenPartialImageEventSize._('1024x1024');
 
@@ -24,25 +24,25 @@ static const List<ImageGenPartialImageEventSize> values = [$1024x1024, $1024x153
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenPartialImageEventSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenPartialImageEventSize($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ImageGenPartialImageEventSize && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ImageGenPartialImageEventSize($value)';}
+}
 /// The quality setting for the requested image.
 /// 
 @immutable final class ImageGenPartialImageEventQuality {const ImageGenPartialImageEventQuality._(this.value);
 
-factory ImageGenPartialImageEventQuality.fromJson(String json) { return switch (json) {
+factory ImageGenPartialImageEventQuality.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   'auto' => auto,
   _ => ImageGenPartialImageEventQuality._(json),
-}; }
+};}
 
 static const ImageGenPartialImageEventQuality low = ImageGenPartialImageEventQuality._('low');
 
@@ -56,24 +56,24 @@ static const List<ImageGenPartialImageEventQuality> values = [low, medium, high,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenPartialImageEventQuality && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenPartialImageEventQuality($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ImageGenPartialImageEventQuality && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ImageGenPartialImageEventQuality($value)';}
+}
 /// The background setting for the requested image.
 /// 
 @immutable final class ImageGenPartialImageEventBackground {const ImageGenPartialImageEventBackground._(this.value);
 
-factory ImageGenPartialImageEventBackground.fromJson(String json) { return switch (json) {
+factory ImageGenPartialImageEventBackground.fromJson(String json) {return switch (json) {
   'transparent' => transparent,
   'opaque' => opaque,
   'auto' => auto,
   _ => ImageGenPartialImageEventBackground._(json),
-}; }
+};}
 
 static const ImageGenPartialImageEventBackground transparent = ImageGenPartialImageEventBackground._('transparent');
 
@@ -85,24 +85,24 @@ static const List<ImageGenPartialImageEventBackground> values = [transparent, op
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenPartialImageEventBackground && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenPartialImageEventBackground($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ImageGenPartialImageEventBackground && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ImageGenPartialImageEventBackground($value)';}
+}
 /// The output format for the requested image.
 /// 
 @immutable final class ImageGenPartialImageEventOutputFormat {const ImageGenPartialImageEventOutputFormat._(this.value);
 
-factory ImageGenPartialImageEventOutputFormat.fromJson(String json) { return switch (json) {
+factory ImageGenPartialImageEventOutputFormat.fromJson(String json) {return switch (json) {
   'png' => png,
   'webp' => webp,
   'jpeg' => jpeg,
   _ => ImageGenPartialImageEventOutputFormat._(json),
-}; }
+};}
 
 static const ImageGenPartialImageEventOutputFormat png = ImageGenPartialImageEventOutputFormat._('png');
 
@@ -114,19 +114,19 @@ static const List<ImageGenPartialImageEventOutputFormat> values = [png, webp, jp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenPartialImageEventOutputFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenPartialImageEventOutputFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ImageGenPartialImageEventOutputFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ImageGenPartialImageEventOutputFormat($value)';}
+}
 /// Emitted when a partial image is available during image generation streaming.
 /// 
 @immutable final class ImageGenPartialImageEvent {const ImageGenPartialImageEvent({required this.type, required this.b64Json, required this.createdAt, required this.size, required this.quality, required this.background, required this.outputFormat, required this.partialImageIndex, });
 
-factory ImageGenPartialImageEvent.fromJson(Map<String, dynamic> json) { return ImageGenPartialImageEvent(
+factory ImageGenPartialImageEvent.fromJson(Map<String, dynamic> json) {return ImageGenPartialImageEvent(
   type: json['type'] as String,
   b64Json: json['b64_json'] as String,
   createdAt: (json['created_at'] as num).toInt(),
@@ -135,7 +135,7 @@ factory ImageGenPartialImageEvent.fromJson(Map<String, dynamic> json) { return I
   background: ImageGenPartialImageEventBackground.fromJson(json['background'] as String),
   outputFormat: ImageGenPartialImageEventOutputFormat.fromJson(json['output_format'] as String),
   partialImageIndex: (json['partial_image_index'] as num).toInt(),
-); }
+);}
 
 /// The type of the event. Always `image_generation.partial_image`.
 /// 
@@ -169,7 +169,7 @@ final ImageGenPartialImageEventOutputFormat outputFormat;
 /// 
 final int partialImageIndex;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'b64_json': b64Json,
   'created_at': createdAt,
@@ -178,16 +178,16 @@ Map<String, dynamic> toJson() { return {
   'background': background.toJson(),
   'output_format': outputFormat.toJson(),
   'partial_image_index': partialImageIndex,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('b64_json') && json['b64_json'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('size') &&
       json.containsKey('quality') &&
       json.containsKey('background') &&
       json.containsKey('output_format') &&
-      json.containsKey('partial_image_index') && json['partial_image_index'] is num; } 
-ImageGenPartialImageEvent copyWith({String? type, String? b64Json, int? createdAt, ImageGenPartialImageEventSize? size, ImageGenPartialImageEventQuality? quality, ImageGenPartialImageEventBackground? background, ImageGenPartialImageEventOutputFormat? outputFormat, int? partialImageIndex, }) { return ImageGenPartialImageEvent(
+      json.containsKey('partial_image_index') && json['partial_image_index'] is num;}
+ImageGenPartialImageEvent copyWith({String? type, String? b64Json, int? createdAt, ImageGenPartialImageEventSize? size, ImageGenPartialImageEventQuality? quality, ImageGenPartialImageEventBackground? background, ImageGenPartialImageEventOutputFormat? outputFormat, int? partialImageIndex, }) {return ImageGenPartialImageEvent(
   type: type ?? this.type,
   b64Json: b64Json ?? this.b64Json,
   createdAt: createdAt ?? this.createdAt,
@@ -196,8 +196,8 @@ ImageGenPartialImageEvent copyWith({String? type, String? b64Json, int? createdA
   background: background ?? this.background,
   outputFormat: outputFormat ?? this.outputFormat,
   partialImageIndex: partialImageIndex ?? this.partialImageIndex,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ImageGenPartialImageEvent &&
           type == other.type &&
           b64Json == other.b64Json &&
@@ -206,7 +206,7 @@ ImageGenPartialImageEvent copyWith({String? type, String? b64Json, int? createdA
           quality == other.quality &&
           background == other.background &&
           outputFormat == other.outputFormat &&
-          partialImageIndex == other.partialImageIndex; } 
-@override int get hashCode { return Object.hash(type, b64Json, createdAt, size, quality, background, outputFormat, partialImageIndex); } 
-@override String toString() { return 'ImageGenPartialImageEvent(type: $type, b64Json: $b64Json, createdAt: $createdAt, size: $size, quality: $quality, background: $background, outputFormat: $outputFormat, partialImageIndex: $partialImageIndex)'; } 
- }
+          partialImageIndex == other.partialImageIndex;}
+@override int get hashCode {return Object.hash(type, b64Json, createdAt, size, quality, background, outputFormat, partialImageIndex);}
+@override String toString() {return 'ImageGenPartialImageEvent(type: $type, b64Json: $b64Json, createdAt: $createdAt, size: $size, quality: $quality, background: $background, outputFormat: $outputFormat, partialImageIndex: $partialImageIndex)';}
+}

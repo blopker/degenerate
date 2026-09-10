@@ -10,12 +10,12 @@ num toJson() => value;
 /// The status of a generated download.
 @immutable final class StreamDownloadStatus {const StreamDownloadStatus._(this.value);
 
-factory StreamDownloadStatus.fromJson(String json) { return switch (json) {
+factory StreamDownloadStatus.fromJson(String json) {return switch (json) {
   'ready' => ready,
   'inprogress' => inprogress,
   'error' => error,
   _ => StreamDownloadStatus._(json),
-}; }
+};}
 
 static const StreamDownloadStatus ready = StreamDownloadStatus._('ready');
 
@@ -27,14 +27,14 @@ static const List<StreamDownloadStatus> values = [ready, inprogress, error];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StreamDownloadStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StreamDownloadStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is StreamDownloadStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'StreamDownloadStatus($value)';}
+}
 /// The URL to access the generated download.
 extension type StreamDownloadUrl(Uri value) {
 factory StreamDownloadUrl.fromJson(String json) => StreamDownloadUrl(Uri.parse(json));
@@ -44,11 +44,11 @@ String toJson() => value.toString();
 }
 @immutable final class StreamDownloads {const StreamDownloads({this.percentComplete, this.status, this.url, });
 
-factory StreamDownloads.fromJson(Map<String, dynamic> json) { return StreamDownloads(
+factory StreamDownloads.fromJson(Map<String, dynamic> json) {return StreamDownloads(
   percentComplete: json['percentComplete'] != null ? StreamDownloadPercentComplete.fromJson(json['percentComplete'] as num) : null,
   status: json['status'] != null ? StreamDownloadStatus.fromJson(json['status'] as String) : null,
   url: json['url'] != null ? StreamDownloadUrl.fromJson(json['url'] as String) : null,
-); }
+);}
 
 /// Indicates the progress as a percentage between 0 and 100.
 final StreamDownloadPercentComplete? percentComplete;
@@ -59,22 +59,22 @@ final StreamDownloadStatus? status;
 /// The URL to access the generated download.
 final StreamDownloadUrl? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (percentComplete != null) 'percentComplete': percentComplete?.toJson(),
   if (status != null) 'status': status?.toJson(),
   if (url != null) 'url': url?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'percentComplete', 'status', 'url'}.contains(key)); } 
-StreamDownloads copyWith({StreamDownloadPercentComplete? Function()? percentComplete, StreamDownloadStatus? Function()? status, StreamDownloadUrl? Function()? url, }) { return StreamDownloads(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'percentComplete', 'status', 'url'}.contains(key));}
+StreamDownloads copyWith({StreamDownloadPercentComplete? Function()? percentComplete, StreamDownloadStatus? Function()? status, StreamDownloadUrl? Function()? url, }) {return StreamDownloads(
   percentComplete: percentComplete != null ? percentComplete() : this.percentComplete,
   status: status != null ? status() : this.status,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is StreamDownloads &&
           percentComplete == other.percentComplete &&
           status == other.status &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(percentComplete, status, url); } 
-@override String toString() { return 'StreamDownloads(percentComplete: $percentComplete, status: $status, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(percentComplete, status, url);}
+@override String toString() {return 'StreamDownloads(percentComplete: $percentComplete, status: $status, url: $url)';}
+}

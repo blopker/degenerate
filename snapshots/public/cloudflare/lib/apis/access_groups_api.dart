@@ -13,7 +13,7 @@ final class AccessGroupsApi with ApiExecutor {const AccessGroupsApi(this.apiConf
 /// Lists all Access groups.
 ///
 /// `GET /accounts/{account_id}/access/groups`
-Future<ApiResult<List<AccessSchemasGroups>?, ResponseCommonFailure4>> accessGroupsListAccessGroups({required AccessIdentifier accountId, String? name, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessSchemasGroups>?, ResponseCommonFailure4>> accessGroupsListAccessGroups({required AccessIdentifier accountId, String? name, String? search, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -56,13 +56,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create an Access group
 ///
 /// Creates a new Access group.
 ///
 /// `POST /accounts/{account_id}/access/groups`
-Future<ApiResult<AccessSchemasGroups?, ResponseCommonFailure4>> accessGroupsCreateAnAccessGroup({required AccessIdentifier accountId, required AccessGroupsCreateAnAccessGroupRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasGroups?, ResponseCommonFailure4>> accessGroupsCreateAnAccessGroup({required AccessIdentifier accountId, required AccessGroupsCreateAnAccessGroupRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -90,13 +90,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get an Access group
 ///
 /// Fetches a single Access group.
 ///
 /// `GET /accounts/{account_id}/access/groups/{group_id}`
-Future<ApiResult<AccessSchemasGroups?, ResponseCommonFailure4>> accessGroupsGetAnAccessGroup({required AccessUuid groupId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasGroups?, ResponseCommonFailure4>> accessGroupsGetAnAccessGroup({required AccessUuid groupId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -122,13 +122,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update an Access group
 ///
 /// Updates a configured Access group.
 ///
 /// `PUT /accounts/{account_id}/access/groups/{group_id}`
-Future<ApiResult<AccessSchemasGroups?, ResponseCommonFailure4>> accessGroupsUpdateAnAccessGroup({required AccessUuid groupId, required AccessIdentifier accountId, required AccessGroupsUpdateAnAccessGroupRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasGroups?, ResponseCommonFailure4>> accessGroupsUpdateAnAccessGroup({required AccessUuid groupId, required AccessIdentifier accountId, required AccessGroupsUpdateAnAccessGroupRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -156,13 +156,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete an Access group
 ///
 /// Deletes an Access group.
 ///
 /// `DELETE /accounts/{account_id}/access/groups/{group_id}`
-Future<ApiResult<AccessIdResponseResult?, ResponseCommonFailure4>> accessGroupsDeleteAnAccessGroup({required AccessUuid groupId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessIdResponseResult?, ResponseCommonFailure4>> accessGroupsDeleteAnAccessGroup({required AccessUuid groupId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -188,5 +188,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

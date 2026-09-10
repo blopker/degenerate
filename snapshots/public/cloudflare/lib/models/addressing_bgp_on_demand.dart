@@ -23,12 +23,12 @@ bool toJson() => value;
 }
 @immutable final class AddressingBgpOnDemand {const AddressingBgpOnDemand({this.advertised = const Omittable.absent(), this.advertisedModifiedAt = const Omittable.absent(), this.onDemandEnabled, this.onDemandLocked, });
 
-factory AddressingBgpOnDemand.fromJson(Map<String, dynamic> json) { return AddressingBgpOnDemand(
+factory AddressingBgpOnDemand.fromJson(Map<String, dynamic> json) {return AddressingBgpOnDemand(
   advertised: json.containsKey('advertised') ? Omittable(json['advertised'] != null ? AddressingSchemasAdvertised.fromJson(json['advertised'] as bool) : null) : const Omittable.absent(),
   advertisedModifiedAt: json.containsKey('advertised_modified_at') ? Omittable(json['advertised_modified_at'] != null ? AddressingModifiedAtNullable.fromJson(json['advertised_modified_at'] as String) : null) : const Omittable.absent(),
   onDemandEnabled: json['on_demand_enabled'] != null ? AddressingSchemasOnDemandEnabled.fromJson(json['on_demand_enabled'] as bool) : null,
   onDemandLocked: json['on_demand_locked'] != null ? AddressingSchemasOnDemandLocked.fromJson(json['on_demand_locked'] as bool) : null,
-); }
+);}
 
 final Omittable<AddressingSchemasAdvertised?> advertised;
 
@@ -38,25 +38,25 @@ final AddressingSchemasOnDemandEnabled? onDemandEnabled;
 
 final AddressingSchemasOnDemandLocked? onDemandLocked;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (advertised.isPresent) 'advertised': advertised.value?.toJson(),
   if (advertisedModifiedAt.isPresent) 'advertised_modified_at': advertisedModifiedAt.value?.toJson(),
   if (onDemandEnabled != null) 'on_demand_enabled': onDemandEnabled?.toJson(),
   if (onDemandLocked != null) 'on_demand_locked': onDemandLocked?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'advertised', 'advertised_modified_at', 'on_demand_enabled', 'on_demand_locked'}.contains(key)); } 
-AddressingBgpOnDemand copyWith({Omittable<AddressingSchemasAdvertised?>? advertised, Omittable<AddressingModifiedAtNullable?>? advertisedModifiedAt, AddressingSchemasOnDemandEnabled? Function()? onDemandEnabled, AddressingSchemasOnDemandLocked? Function()? onDemandLocked, }) { return AddressingBgpOnDemand(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'advertised', 'advertised_modified_at', 'on_demand_enabled', 'on_demand_locked'}.contains(key));}
+AddressingBgpOnDemand copyWith({Omittable<AddressingSchemasAdvertised?>? advertised, Omittable<AddressingModifiedAtNullable?>? advertisedModifiedAt, AddressingSchemasOnDemandEnabled? Function()? onDemandEnabled, AddressingSchemasOnDemandLocked? Function()? onDemandLocked, }) {return AddressingBgpOnDemand(
   advertised: advertised ?? this.advertised,
   advertisedModifiedAt: advertisedModifiedAt ?? this.advertisedModifiedAt,
   onDemandEnabled: onDemandEnabled != null ? onDemandEnabled() : this.onDemandEnabled,
   onDemandLocked: onDemandLocked != null ? onDemandLocked() : this.onDemandLocked,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AddressingBgpOnDemand &&
           advertised == other.advertised &&
           advertisedModifiedAt == other.advertisedModifiedAt &&
           onDemandEnabled == other.onDemandEnabled &&
-          onDemandLocked == other.onDemandLocked; } 
-@override int get hashCode { return Object.hash(advertised, advertisedModifiedAt, onDemandEnabled, onDemandLocked); } 
-@override String toString() { return 'AddressingBgpOnDemand(advertised: $advertised, advertisedModifiedAt: $advertisedModifiedAt, onDemandEnabled: $onDemandEnabled, onDemandLocked: $onDemandLocked)'; } 
- }
+          onDemandLocked == other.onDemandLocked;}
+@override int get hashCode {return Object.hash(advertised, advertisedModifiedAt, onDemandEnabled, onDemandLocked);}
+@override String toString() {return 'AddressingBgpOnDemand(advertised: $advertised, advertisedModifiedAt: $advertisedModifiedAt, onDemandEnabled: $onDemandEnabled, onDemandLocked: $onDemandLocked)';}
+}

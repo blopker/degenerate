@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIndicatorListResponsePropertiesPaginationPropertiesCount {const GetIndicatorListResponsePropertiesPaginationPropertiesCount({required this.type});
 
-factory GetIndicatorListResponsePropertiesPaginationPropertiesCount.fromJson(Map<String, dynamic> json) { return GetIndicatorListResponsePropertiesPaginationPropertiesCount(
+factory GetIndicatorListResponsePropertiesPaginationPropertiesCount.fromJson(Map<String, dynamic> json) {return GetIndicatorListResponsePropertiesPaginationPropertiesCount(
   type: json['type'] as String,
-); }
+);}
 
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-GetIndicatorListResponsePropertiesPaginationPropertiesCount copyWith({String? type}) { return GetIndicatorListResponsePropertiesPaginationPropertiesCount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+GetIndicatorListResponsePropertiesPaginationPropertiesCount copyWith({String? type}) {return GetIndicatorListResponsePropertiesPaginationPropertiesCount(
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetIndicatorListResponsePropertiesPaginationPropertiesCount &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'GetIndicatorListResponsePropertiesPaginationPropertiesCount(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'GetIndicatorListResponsePropertiesPaginationPropertiesCount(type: $type)';}
+}

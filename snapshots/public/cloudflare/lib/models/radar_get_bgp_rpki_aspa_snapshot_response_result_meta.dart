@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRpkiAspaSnapshotResponseResultMeta {const RadarGetBgpRpkiAspaSnapshotResponseResultMeta({required this.dataTime, required this.queryTime, required this.totalCount, });
 
-factory RadarGetBgpRpkiAspaSnapshotResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaSnapshotResponseResultMeta(
+factory RadarGetBgpRpkiAspaSnapshotResponseResultMeta.fromJson(Map<String, dynamic> json) {return RadarGetBgpRpkiAspaSnapshotResponseResultMeta(
   dataTime: DateTime.parse(json['dataTime'] as String),
   queryTime: DateTime.parse(json['queryTime'] as String),
   totalCount: (json['totalCount'] as num).toInt(),
-); }
+);}
 
 /// Timestamp of the underlying data.
 final DateTime dataTime;
@@ -17,24 +17,24 @@ final DateTime queryTime;
 /// Total number of ASPA objects.
 final int totalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'dataTime': dataTime.toIso8601String(),
   'queryTime': queryTime.toIso8601String(),
   'totalCount': totalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataTime') && json['dataTime'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dataTime') && json['dataTime'] is String &&
       json.containsKey('queryTime') && json['queryTime'] is String &&
-      json.containsKey('totalCount') && json['totalCount'] is num; } 
-RadarGetBgpRpkiAspaSnapshotResponseResultMeta copyWith({DateTime? dataTime, DateTime? queryTime, int? totalCount, }) { return RadarGetBgpRpkiAspaSnapshotResponseResultMeta(
+      json.containsKey('totalCount') && json['totalCount'] is num;}
+RadarGetBgpRpkiAspaSnapshotResponseResultMeta copyWith({DateTime? dataTime, DateTime? queryTime, int? totalCount, }) {return RadarGetBgpRpkiAspaSnapshotResponseResultMeta(
   dataTime: dataTime ?? this.dataTime,
   queryTime: queryTime ?? this.queryTime,
   totalCount: totalCount ?? this.totalCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetBgpRpkiAspaSnapshotResponseResultMeta &&
           dataTime == other.dataTime &&
           queryTime == other.queryTime &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(dataTime, queryTime, totalCount); } 
-@override String toString() { return 'RadarGetBgpRpkiAspaSnapshotResponseResultMeta(dataTime: $dataTime, queryTime: $queryTime, totalCount: $totalCount)'; } 
- }
+          totalCount == other.totalCount;}
+@override int get hashCode {return Object.hash(dataTime, queryTime, totalCount);}
+@override String toString() {return 'RadarGetBgpRpkiAspaSnapshotResponseResultMeta(dataTime: $dataTime, queryTime: $queryTime, totalCount: $totalCount)';}
+}

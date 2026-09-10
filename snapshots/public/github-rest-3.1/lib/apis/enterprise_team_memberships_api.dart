@@ -13,7 +13,7 @@ final class EnterpriseTeamMembershipsApi with ApiExecutor {const EnterpriseTeamM
 /// Lists all team members in an enterprise team.
 ///
 /// `GET /enterprises/{enterprise}/teams/{enterprise-team}/memberships`
-Future<ApiResult<List<SimpleUser>, Never>> enterpriseTeamMembershipsList({required String enterprise, required String enterpriseTeam, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, Never>> enterpriseTeamMembershipsList({required String enterprise, required String enterpriseTeam, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -40,13 +40,13 @@ final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Bulk add team members
 ///
 /// Add multiple team members to an enterprise team.
 ///
 /// `POST /enterprises/{enterprise}/teams/{enterprise-team}/memberships/add`
-Future<ApiResult<List<SimpleUser>, Never>> enterpriseTeamMembershipsBulkAdd({required String enterprise, required String enterpriseTeam, required EnterpriseTeamMembershipsBulkAddRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SimpleUser>, Never>> enterpriseTeamMembershipsBulkAdd({required String enterprise, required String enterpriseTeam, required EnterpriseTeamMembershipsBulkAddRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -64,13 +64,13 @@ final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Bulk remove team members
 ///
 /// Remove multiple team members from an enterprise team.
 ///
 /// `POST /enterprises/{enterprise}/teams/{enterprise-team}/memberships/remove`
-Future<ApiResult<List<SimpleUser>, Never>> enterpriseTeamMembershipsBulkRemove({required String enterprise, required String enterpriseTeam, required EnterpriseTeamMembershipsBulkRemoveRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SimpleUser>, Never>> enterpriseTeamMembershipsBulkRemove({required String enterprise, required String enterpriseTeam, required EnterpriseTeamMembershipsBulkRemoveRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -88,13 +88,13 @@ final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Get enterprise team membership
 ///
 /// Returns whether the user is a member of the enterprise team.
 ///
 /// `GET /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}`
-Future<ApiResult<SimpleUser, Never>> enterpriseTeamMembershipsGet({required String enterprise, required String enterpriseTeam, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SimpleUser, Never>> enterpriseTeamMembershipsGet({required String enterprise, required String enterpriseTeam, required String username, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -110,13 +110,13 @@ final json = jsonDecode(response.body);
 return SimpleUser.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Add team member
 ///
 /// Add a team member to an enterprise team.
 ///
 /// `PUT /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}`
-Future<ApiResult<SimpleUser, Never>> enterpriseTeamMembershipsAdd({required String enterprise, required String enterpriseTeam, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SimpleUser, Never>> enterpriseTeamMembershipsAdd({required String enterprise, required String enterpriseTeam, required String username, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -132,13 +132,13 @@ final json = jsonDecode(response.body);
 return SimpleUser.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Remove team membership
 ///
 /// Remove membership of a specific user from a particular team in an enterprise.
 ///
 /// `DELETE /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}`
-Future<ApiResult<void, BasicError>> enterpriseTeamMembershipsRemove({required String enterprise, required String enterpriseTeam, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, BasicError>> enterpriseTeamMembershipsRemove({required String enterprise, required String enterpriseTeam, required String username, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -161,5 +161,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

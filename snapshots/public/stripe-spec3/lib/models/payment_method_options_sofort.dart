@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Preferred language of the SOFORT authorization page that the customer is redirected to.
 @immutable final class PaymentMethodOptionsSofortPreferredLanguage {const PaymentMethodOptionsSofortPreferredLanguage._(this.value);
 
-factory PaymentMethodOptionsSofortPreferredLanguage.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsSofortPreferredLanguage.fromJson(String json) {return switch (json) {
   'de' => de,
   'en' => en,
   'es' => es,
@@ -12,7 +12,7 @@ factory PaymentMethodOptionsSofortPreferredLanguage.fromJson(String json) { retu
   'nl' => nl,
   'pl' => pl,
   _ => PaymentMethodOptionsSofortPreferredLanguage._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsSofortPreferredLanguage de = PaymentMethodOptionsSofortPreferredLanguage._('de');
 
@@ -32,14 +32,14 @@ static const List<PaymentMethodOptionsSofortPreferredLanguage> values = [de, en,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsSofortPreferredLanguage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsSofortPreferredLanguage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsSofortPreferredLanguage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsSofortPreferredLanguage($value)';}
+}
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
 /// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
@@ -49,11 +49,11 @@ bool get isUnknown { return !values.contains(this); }
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class PaymentMethodOptionsSofortSetupFutureUsage {const PaymentMethodOptionsSofortSetupFutureUsage._(this.value);
 
-factory PaymentMethodOptionsSofortSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsSofortSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   'off_session' => offSession,
   _ => PaymentMethodOptionsSofortSetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsSofortSetupFutureUsage none = PaymentMethodOptionsSofortSetupFutureUsage._('none');
 
@@ -63,21 +63,21 @@ static const List<PaymentMethodOptionsSofortSetupFutureUsage> values = [none, of
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsSofortSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsSofortSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsSofortSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsSofortSetupFutureUsage($value)';}
+}
 /// 
 @immutable final class PaymentMethodOptionsSofort {const PaymentMethodOptionsSofort({this.preferredLanguage = const Omittable.absent(), this.setupFutureUsage, });
 
-factory PaymentMethodOptionsSofort.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsSofort(
+factory PaymentMethodOptionsSofort.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsSofort(
   preferredLanguage: json.containsKey('preferred_language') ? Omittable(json['preferred_language'] != null ? PaymentMethodOptionsSofortPreferredLanguage.fromJson(json['preferred_language'] as String) : null) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsSofortSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// Preferred language of the SOFORT authorization page that the customer is redirected to.
 final Omittable<PaymentMethodOptionsSofortPreferredLanguage?> preferredLanguage;
@@ -91,19 +91,19 @@ final Omittable<PaymentMethodOptionsSofortPreferredLanguage?> preferredLanguage;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final PaymentMethodOptionsSofortSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (preferredLanguage.isPresent) 'preferred_language': preferredLanguage.value?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preferred_language', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsSofort copyWith({Omittable<PaymentMethodOptionsSofortPreferredLanguage?>? preferredLanguage, PaymentMethodOptionsSofortSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsSofort(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'preferred_language', 'setup_future_usage'}.contains(key));}
+PaymentMethodOptionsSofort copyWith({Omittable<PaymentMethodOptionsSofortPreferredLanguage?>? preferredLanguage, PaymentMethodOptionsSofortSetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsSofort(
   preferredLanguage: preferredLanguage ?? this.preferredLanguage,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodOptionsSofort &&
           preferredLanguage == other.preferredLanguage &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(preferredLanguage, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsSofort(preferredLanguage: $preferredLanguage, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(preferredLanguage, setupFutureUsage);}
+@override String toString() {return 'PaymentMethodOptionsSofort(preferredLanguage: $preferredLanguage, setupFutureUsage: $setupFutureUsage)';}
+}

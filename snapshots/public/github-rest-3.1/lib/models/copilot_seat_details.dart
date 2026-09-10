@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_seat_details_assigning_team.dart';import 'enterprise_team.dart';import 'organization_simple.dart';import 'simple_user.dart';import 'team.dart';/// The Copilot plan of the organization, or the parent enterprise, when applicable.
 @immutable final class CopilotSeatDetailsPlanType {const CopilotSeatDetailsPlanType._(this.value);
 
-factory CopilotSeatDetailsPlanType.fromJson(String json) { return switch (json) {
+factory CopilotSeatDetailsPlanType.fromJson(String json) {return switch (json) {
   'business' => business,
   'enterprise' => enterprise,
   'unknown' => unknown,
   _ => CopilotSeatDetailsPlanType._(json),
-}; }
+};}
 
 static const CopilotSeatDetailsPlanType business = CopilotSeatDetailsPlanType._('business');
 
@@ -20,18 +20,18 @@ static const List<CopilotSeatDetailsPlanType> values = [business, enterprise, un
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CopilotSeatDetailsPlanType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CopilotSeatDetailsPlanType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CopilotSeatDetailsPlanType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CopilotSeatDetailsPlanType($value)';}
+}
 /// Information about a Copilot Business seat assignment for a user, team, or organization.
 @immutable final class CopilotSeatDetails {const CopilotSeatDetails({required this.createdAt, this.assignee = const Omittable.absent(), this.organization = const Omittable.absent(), this.assigningTeam = const Omittable.absent(), this.pendingCancellationDate = const Omittable.absent(), this.lastActivityAt = const Omittable.absent(), this.lastActivityEditor = const Omittable.absent(), this.lastAuthenticatedAt = const Omittable.absent(), this.updatedAt, this.planType, });
 
-factory CopilotSeatDetails.fromJson(Map<String, dynamic> json) { return CopilotSeatDetails(
+factory CopilotSeatDetails.fromJson(Map<String, dynamic> json) {return CopilotSeatDetails(
   assignee: json.containsKey('assignee') ? Omittable(json['assignee'] != null ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   organization: json.containsKey('organization') ? Omittable(json['organization'] != null ? OrganizationSimple.fromJson(json['organization'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   assigningTeam: json.containsKey('assigning_team') ? Omittable(json['assigning_team'] != null ? OneOf2.parse(json['assigning_team'], fromA: (v) => Team.fromJson(v as Map<String, dynamic>), fromB: (v) => EnterpriseTeam.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
@@ -42,7 +42,7 @@ factory CopilotSeatDetails.fromJson(Map<String, dynamic> json) { return CopilotS
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   planType: json['plan_type'] != null ? CopilotSeatDetailsPlanType.fromJson(json['plan_type'] as String) : null,
-); }
+);}
 
 final Omittable<SimpleUser?> assignee;
 
@@ -72,7 +72,7 @@ final DateTime? updatedAt;
 /// The Copilot plan of the organization, or the parent enterprise, when applicable.
 final CopilotSeatDetailsPlanType? planType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (assignee.isPresent) 'assignee': assignee.value?.toJson(),
   if (organization.isPresent) 'organization': organization.value?.toJson(),
   if (assigningTeam.isPresent) 'assigning_team': assigningTeam.value?.toJson(),
@@ -83,9 +83,9 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
   if (planType != null) 'plan_type': planType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String; } 
-CopilotSeatDetails copyWith({Omittable<SimpleUser?>? assignee, Omittable<OrganizationSimple?>? organization, Omittable<CopilotSeatDetailsAssigningTeam?>? assigningTeam, Omittable<String?>? pendingCancellationDate, Omittable<DateTime?>? lastActivityAt, Omittable<String?>? lastActivityEditor, Omittable<DateTime?>? lastAuthenticatedAt, DateTime? createdAt, DateTime? Function()? updatedAt, CopilotSeatDetailsPlanType? Function()? planType, }) { return CopilotSeatDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String;}
+CopilotSeatDetails copyWith({Omittable<SimpleUser?>? assignee, Omittable<OrganizationSimple?>? organization, Omittable<CopilotSeatDetailsAssigningTeam?>? assigningTeam, Omittable<String?>? pendingCancellationDate, Omittable<DateTime?>? lastActivityAt, Omittable<String?>? lastActivityEditor, Omittable<DateTime?>? lastAuthenticatedAt, DateTime? createdAt, DateTime? Function()? updatedAt, CopilotSeatDetailsPlanType? Function()? planType, }) {return CopilotSeatDetails(
   assignee: assignee ?? this.assignee,
   organization: organization ?? this.organization,
   assigningTeam: assigningTeam ?? this.assigningTeam,
@@ -96,8 +96,8 @@ CopilotSeatDetails copyWith({Omittable<SimpleUser?>? assignee, Omittable<Organiz
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   planType: planType != null ? planType() : this.planType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CopilotSeatDetails &&
           assignee == other.assignee &&
           organization == other.organization &&
@@ -108,7 +108,7 @@ CopilotSeatDetails copyWith({Omittable<SimpleUser?>? assignee, Omittable<Organiz
           lastAuthenticatedAt == other.lastAuthenticatedAt &&
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
-          planType == other.planType; } 
-@override int get hashCode { return Object.hash(assignee, organization, assigningTeam, pendingCancellationDate, lastActivityAt, lastActivityEditor, lastAuthenticatedAt, createdAt, updatedAt, planType); } 
-@override String toString() { return 'CopilotSeatDetails(assignee: $assignee, organization: $organization, assigningTeam: $assigningTeam, pendingCancellationDate: $pendingCancellationDate, lastActivityAt: $lastActivityAt, lastActivityEditor: $lastActivityEditor, lastAuthenticatedAt: $lastAuthenticatedAt, createdAt: $createdAt, updatedAt: $updatedAt, planType: $planType)'; } 
- }
+          planType == other.planType;}
+@override int get hashCode {return Object.hash(assignee, organization, assigningTeam, pendingCancellationDate, lastActivityAt, lastActivityEditor, lastAuthenticatedAt, createdAt, updatedAt, planType);}
+@override String toString() {return 'CopilotSeatDetails(assignee: $assignee, organization: $organization, assigningTeam: $assigningTeam, pendingCancellationDate: $pendingCancellationDate, lastActivityAt: $lastActivityAt, lastActivityEditor: $lastActivityEditor, lastAuthenticatedAt: $lastAuthenticatedAt, createdAt: $createdAt, updatedAt: $updatedAt, planType: $planType)';}
+}

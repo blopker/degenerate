@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments({this.arrivalAirportCode, this.carrier, this.departureAirportCode, this.flightNumber, this.serviceClass, this.stopoverAllowed, });
 
-factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments(
+factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments(
   arrivalAirportCode: json['arrival_airport_code'] as String?,
   carrier: json['carrier'] as String?,
   departureAirportCode: json['departure_airport_code'] as String?,
   flightNumber: json['flight_number'] as String?,
   serviceClass: json['service_class'] as String?,
   stopoverAllowed: json['stopover_allowed'] as bool?,
-); }
+);}
 
 final String? arrivalAirportCode;
 
@@ -23,31 +23,31 @@ final String? serviceClass;
 
 final bool? stopoverAllowed;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'arrival_airport_code': ?arrivalAirportCode,
   'carrier': ?carrier,
   'departure_airport_code': ?departureAirportCode,
   'flight_number': ?flightNumber,
   'service_class': ?serviceClass,
   'stopover_allowed': ?stopoverAllowed,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'arrival_airport_code', 'carrier', 'departure_airport_code', 'flight_number', 'service_class', 'stopover_allowed'}.contains(key)); } 
-PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments copyWith({String? Function()? arrivalAirportCode, String? Function()? carrier, String? Function()? departureAirportCode, String? Function()? flightNumber, String? Function()? serviceClass, bool? Function()? stopoverAllowed, }) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'arrival_airport_code', 'carrier', 'departure_airport_code', 'flight_number', 'service_class', 'stopover_allowed'}.contains(key));}
+PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments copyWith({String? Function()? arrivalAirportCode, String? Function()? carrier, String? Function()? departureAirportCode, String? Function()? flightNumber, String? Function()? serviceClass, bool? Function()? stopoverAllowed, }) {return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments(
   arrivalAirportCode: arrivalAirportCode != null ? arrivalAirportCode() : this.arrivalAirportCode,
   carrier: carrier != null ? carrier() : this.carrier,
   departureAirportCode: departureAirportCode != null ? departureAirportCode() : this.departureAirportCode,
   flightNumber: flightNumber != null ? flightNumber() : this.flightNumber,
   serviceClass: serviceClass != null ? serviceClass() : this.serviceClass,
   stopoverAllowed: stopoverAllowed != null ? stopoverAllowed() : this.stopoverAllowed,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments &&
           arrivalAirportCode == other.arrivalAirportCode &&
           carrier == other.carrier &&
           departureAirportCode == other.departureAirportCode &&
           flightNumber == other.flightNumber &&
           serviceClass == other.serviceClass &&
-          stopoverAllowed == other.stopoverAllowed; } 
-@override int get hashCode { return Object.hash(arrivalAirportCode, carrier, departureAirportCode, flightNumber, serviceClass, stopoverAllowed); } 
-@override String toString() { return 'PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments(arrivalAirportCode: $arrivalAirportCode, carrier: $carrier, departureAirportCode: $departureAirportCode, flightNumber: $flightNumber, serviceClass: $serviceClass, stopoverAllowed: $stopoverAllowed)'; } 
- }
+          stopoverAllowed == other.stopoverAllowed;}
+@override int get hashCode {return Object.hash(arrivalAirportCode, carrier, departureAirportCode, flightNumber, serviceClass, stopoverAllowed);}
+@override String toString() {return 'PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments(arrivalAirportCode: $arrivalAirportCode, carrier: $carrier, departureAirportCode: $departureAirportCode, flightNumber: $flightNumber, serviceClass: $serviceClass, stopoverAllowed: $stopoverAllowed)';}
+}

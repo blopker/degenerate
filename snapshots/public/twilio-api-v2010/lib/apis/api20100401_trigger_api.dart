@@ -11,7 +11,7 @@ final class Api20100401TriggerApi with ApiExecutor {const Api20100401TriggerApi(
 /// Fetch and instance of a usage-trigger
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json`
-Future<ApiResult<AccountUsageUsageTrigger, Never>> fetchUsageTrigger({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountUsageUsageTrigger, Never>> fetchUsageTrigger({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,11 +27,11 @@ final json = jsonDecode(response.body);
 return AccountUsageUsageTrigger.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Update an instance of a usage trigger
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json`
-Future<ApiResult<AccountUsageUsageTrigger, Never>> updateUsageTrigger({required String accountSid, required String sid, UpdateUsageTriggerRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountUsageUsageTrigger, Never>> updateUsageTrigger({required String accountSid, required String sid, UpdateUsageTriggerRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -56,11 +56,11 @@ final json = jsonDecode(response.body);
 return AccountUsageUsageTrigger.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// 
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json`
-Future<ApiResult<void, Never>> deleteUsageTrigger({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteUsageTrigger({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -73,11 +73,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a list of usage-triggers belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Usage/Triggers.json`
-Future<ApiResult<ListUsageTriggerResponse, Never>> listUsageTrigger({required String accountSid, UsageTriggerEnumRecurring? recurring, UsageTriggerEnumTriggerField? triggerBy, String? usageCategory, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListUsageTriggerResponse, Never>> listUsageTrigger({required String accountSid, UsageTriggerEnumRecurring? recurring, UsageTriggerEnumTriggerField? triggerBy, String? usageCategory, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (recurring != null) {
   queryParameters['Recurring'] = recurring.toJson();
@@ -116,11 +116,11 @@ final json = jsonDecode(response.body);
 return ListUsageTriggerResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create a new UsageTrigger
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Usage/Triggers.json`
-Future<ApiResult<AccountUsageUsageTrigger, Never>> createUsageTrigger({required String accountSid, CreateUsageTriggerRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountUsageUsageTrigger, Never>> createUsageTrigger({required String accountSid, CreateUsageTriggerRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -150,5 +150,5 @@ final json = jsonDecode(response.body);
 return AccountUsageUsageTrigger.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides information about the result of the request, including count and cursor.
 @immutable final class AaaResultInfo {const AaaResultInfo({this.count, this.cursor, });
 
-factory AaaResultInfo.fromJson(Map<String, dynamic> json) { return AaaResultInfo(
+factory AaaResultInfo.fromJson(Map<String, dynamic> json) {return AaaResultInfo(
   count: json['count'] as String?,
   cursor: json['cursor'] as String?,
-); }
+);}
 
 /// The number of records returned in the response.
 final String? count;
@@ -14,19 +14,19 @@ final String? count;
 /// The cursor token used for pagination.
 final String? cursor;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': ?count,
   'cursor': ?cursor,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'cursor'}.contains(key)); } 
-AaaResultInfo copyWith({String? Function()? count, String? Function()? cursor, }) { return AaaResultInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'count', 'cursor'}.contains(key));}
+AaaResultInfo copyWith({String? Function()? count, String? Function()? cursor, }) {return AaaResultInfo(
   count: count != null ? count() : this.count,
   cursor: cursor != null ? cursor() : this.cursor,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AaaResultInfo &&
           count == other.count &&
-          cursor == other.cursor; } 
-@override int get hashCode { return Object.hash(count, cursor); } 
-@override String toString() { return 'AaaResultInfo(count: $count, cursor: $cursor)'; } 
- }
+          cursor == other.cursor;}
+@override int get hashCode {return Object.hash(count, cursor);}
+@override String toString() {return 'AaaResultInfo(count: $count, cursor: $cursor)';}
+}

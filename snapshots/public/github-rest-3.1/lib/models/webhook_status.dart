@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_status_branches.dart';import 'webhook_status_commit.dart';/// The new state. Can be `pending`, `success`, `failure`, or `error`.
 @immutable final class WebhookStatusState {const WebhookStatusState._(this.value);
 
-factory WebhookStatusState.fromJson(String json) { return switch (json) {
+factory WebhookStatusState.fromJson(String json) {return switch (json) {
   'pending' => pending,
   'success' => success,
   'failure' => failure,
   'error' => error,
   _ => WebhookStatusState._(json),
-}; }
+};}
 
 static const WebhookStatusState pending = WebhookStatusState._('pending');
 
@@ -23,17 +23,17 @@ static const List<WebhookStatusState> values = [pending, success, failure, error
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookStatusState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookStatusState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookStatusState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookStatusState($value)';}
+}
 @immutable final class WebhookStatus {const WebhookStatus({required this.branches, required this.commit, required this.context, required this.createdAt, required this.description, required this.id, required this.name, required this.repository, required this.sender, required this.sha, required this.state, required this.targetUrl, required this.updatedAt, this.avatarUrl = const Omittable.absent(), this.enterprise, this.installation, this.organization, });
 
-factory WebhookStatus.fromJson(Map<String, dynamic> json) { return WebhookStatus(
+factory WebhookStatus.fromJson(Map<String, dynamic> json) {return WebhookStatus(
   avatarUrl: json.containsKey('avatar_url') ? Omittable(json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null) : const Omittable.absent(),
   branches: (json['branches'] as List<dynamic>).map((e) => WebhookStatusBranches.fromJson(e as Map<String, dynamic>)).toList(),
   commit: WebhookStatusCommit.fromJson(json['commit'] as Map<String, dynamic>),
@@ -51,7 +51,7 @@ factory WebhookStatus.fromJson(Map<String, dynamic> json) { return WebhookStatus
   state: WebhookStatusState.fromJson(json['state'] as String),
   targetUrl: json['target_url'] as String?,
   updatedAt: json['updated_at'] as String,
-); }
+);}
 
 final Omittable<Uri?> avatarUrl;
 
@@ -93,7 +93,7 @@ final String? targetUrl;
 
 final String updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (avatarUrl.isPresent) 'avatar_url': avatarUrl.value?.toString(),
   'branches': branches.map((e) => e.toJson()).toList(),
   'commit': commit.toJson(),
@@ -111,8 +111,8 @@ Map<String, dynamic> toJson() { return {
   'state': state.toJson(),
   'target_url': targetUrl,
   'updated_at': updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('branches') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('branches') &&
       json.containsKey('commit') &&
       json.containsKey('context') && json['context'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -124,8 +124,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('branc
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('state') &&
       json.containsKey('target_url') && (json['target_url'] == null || json['target_url'] is String) &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookStatus copyWith({Omittable<Uri?>? avatarUrl, List<WebhookStatusBranches>? branches, WebhookStatusCommit? commit, String? context, String? createdAt, String? Function()? description, EnterpriseWebhooks? Function()? enterprise, int? id, SimpleInstallation? Function()? installation, String? name, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, String? sha, WebhookStatusState? state, String? Function()? targetUrl, String? updatedAt, }) { return WebhookStatus(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+WebhookStatus copyWith({Omittable<Uri?>? avatarUrl, List<WebhookStatusBranches>? branches, WebhookStatusCommit? commit, String? context, String? createdAt, String? Function()? description, EnterpriseWebhooks? Function()? enterprise, int? id, SimpleInstallation? Function()? installation, String? name, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, String? sha, WebhookStatusState? state, String? Function()? targetUrl, String? updatedAt, }) {return WebhookStatus(
   avatarUrl: avatarUrl ?? this.avatarUrl,
   branches: branches ?? this.branches,
   commit: commit ?? this.commit,
@@ -143,8 +143,8 @@ WebhookStatus copyWith({Omittable<Uri?>? avatarUrl, List<WebhookStatusBranches>?
   state: state ?? this.state,
   targetUrl: targetUrl != null ? targetUrl() : this.targetUrl,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookStatus &&
           avatarUrl == other.avatarUrl &&
           listEquals(branches, other.branches) &&
@@ -162,7 +162,7 @@ WebhookStatus copyWith({Omittable<Uri?>? avatarUrl, List<WebhookStatusBranches>?
           sha == other.sha &&
           state == other.state &&
           targetUrl == other.targetUrl &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(avatarUrl, Object.hashAll(branches), commit, context, createdAt, description, enterprise, id, installation, name, organization, repository, sender, sha, state, targetUrl, updatedAt); } 
-@override String toString() { return 'WebhookStatus(avatarUrl: $avatarUrl, branches: $branches, commit: $commit, context: $context, createdAt: $createdAt, description: $description, enterprise: $enterprise, id: $id, installation: $installation, name: $name, organization: $organization, repository: $repository, sender: $sender, sha: $sha, state: $state, targetUrl: $targetUrl, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(avatarUrl, Object.hashAll(branches), commit, context, createdAt, description, enterprise, id, installation, name, organization, repository, sender, sha, state, targetUrl, updatedAt);}
+@override String toString() {return 'WebhookStatus(avatarUrl: $avatarUrl, branches: $branches, commit: $commit, context: $context, createdAt: $createdAt, description: $description, enterprise: $enterprise, id: $id, installation: $installation, name: $name, organization: $organization, repository: $repository, sender: $sender, sha: $sha, state: $state, targetUrl: $targetUrl, updatedAt: $updatedAt)';}
+}

@@ -51,7 +51,7 @@ String toJson() => value;
 }
 @immutable final class AlexandriaApplication {const AlexandriaApplication({required this.applicationSource, required this.applicationType, required this.applicationTypeDescription, required this.createdAt, required this.hostnames, required this.humanId, required this.id, required this.ipSubnets, required this.name, required this.portProtocols, required this.supportDomains, required this.updatedAt, required this.version, });
 
-factory AlexandriaApplication.fromJson(Map<String, dynamic> json) { return AlexandriaApplication(
+factory AlexandriaApplication.fromJson(Map<String, dynamic> json) {return AlexandriaApplication(
   applicationSource: AlexandriaApplicationSource.fromJson(json['application_source'] as String),
   applicationType: AlexandriaApplicationType.fromJson(json['application_type'] as String),
   applicationTypeDescription: AlexandriaApplicationTypeDescription.fromJson(json['application_type_description'] as String),
@@ -65,7 +65,7 @@ factory AlexandriaApplication.fromJson(Map<String, dynamic> json) { return Alexa
   supportDomains: (json['support_domains'] as List<dynamic>).map((e) => e as String).toList(),
   updatedAt: AlexandriaApplicationUpdatedAt.fromJson(json['updated_at'] as String),
   version: AlexandriaApplicationVersion.fromJson(json['version'] as String),
-); }
+);}
 
 final AlexandriaApplicationSource applicationSource;
 
@@ -93,7 +93,7 @@ final AlexandriaApplicationUpdatedAt updatedAt;
 
 final AlexandriaApplicationVersion version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'application_source': applicationSource.toJson(),
   'application_type': applicationType.toJson(),
   'application_type_description': applicationTypeDescription.toJson(),
@@ -107,8 +107,8 @@ Map<String, dynamic> toJson() { return {
   'support_domains': supportDomains,
   'updated_at': updatedAt.toJson(),
   'version': version.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('application_source') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('application_source') &&
       json.containsKey('application_type') &&
       json.containsKey('application_type_description') &&
       json.containsKey('created_at') &&
@@ -120,8 +120,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('appli
       json.containsKey('port_protocols') &&
       json.containsKey('support_domains') &&
       json.containsKey('updated_at') &&
-      json.containsKey('version'); } 
-AlexandriaApplication copyWith({AlexandriaApplicationSource? applicationSource, AlexandriaApplicationType? applicationType, AlexandriaApplicationTypeDescription? applicationTypeDescription, AlexandriaApplicationCreatedAt? createdAt, List<String>? hostnames, AlexandriaApplicationHumanId? humanId, AlexandriaApplicationId? id, List<String>? ipSubnets, AlexandriaApplicationName? name, List<String>? portProtocols, List<String>? supportDomains, AlexandriaApplicationUpdatedAt? updatedAt, AlexandriaApplicationVersion? version, }) { return AlexandriaApplication(
+      json.containsKey('version');}
+AlexandriaApplication copyWith({AlexandriaApplicationSource? applicationSource, AlexandriaApplicationType? applicationType, AlexandriaApplicationTypeDescription? applicationTypeDescription, AlexandriaApplicationCreatedAt? createdAt, List<String>? hostnames, AlexandriaApplicationHumanId? humanId, AlexandriaApplicationId? id, List<String>? ipSubnets, AlexandriaApplicationName? name, List<String>? portProtocols, List<String>? supportDomains, AlexandriaApplicationUpdatedAt? updatedAt, AlexandriaApplicationVersion? version, }) {return AlexandriaApplication(
   applicationSource: applicationSource ?? this.applicationSource,
   applicationType: applicationType ?? this.applicationType,
   applicationTypeDescription: applicationTypeDescription ?? this.applicationTypeDescription,
@@ -135,8 +135,8 @@ AlexandriaApplication copyWith({AlexandriaApplicationSource? applicationSource, 
   supportDomains: supportDomains ?? this.supportDomains,
   updatedAt: updatedAt ?? this.updatedAt,
   version: version ?? this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AlexandriaApplication &&
           applicationSource == other.applicationSource &&
           applicationType == other.applicationType &&
@@ -150,7 +150,7 @@ AlexandriaApplication copyWith({AlexandriaApplicationSource? applicationSource, 
           listEquals(portProtocols, other.portProtocols) &&
           listEquals(supportDomains, other.supportDomains) &&
           updatedAt == other.updatedAt &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(applicationSource, applicationType, applicationTypeDescription, createdAt, Object.hashAll(hostnames), humanId, id, Object.hashAll(ipSubnets), name, Object.hashAll(portProtocols), Object.hashAll(supportDomains), updatedAt, version); } 
-@override String toString() { return 'AlexandriaApplication(applicationSource: $applicationSource, applicationType: $applicationType, applicationTypeDescription: $applicationTypeDescription, createdAt: $createdAt, hostnames: $hostnames, humanId: $humanId, id: $id, ipSubnets: $ipSubnets, name: $name, portProtocols: $portProtocols, supportDomains: $supportDomains, updatedAt: $updatedAt, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(applicationSource, applicationType, applicationTypeDescription, createdAt, Object.hashAll(hostnames), humanId, id, Object.hashAll(ipSubnets), name, Object.hashAll(portProtocols), Object.hashAll(supportDomains), updatedAt, version);}
+@override String toString() {return 'AlexandriaApplication(applicationSource: $applicationSource, applicationType: $applicationType, applicationTypeDescription: $applicationTypeDescription, createdAt: $createdAt, hostnames: $hostnames, humanId: $humanId, id: $id, ipSubnets: $ipSubnets, name: $name, portProtocols: $portProtocols, supportDomains: $supportDomains, updatedAt: $updatedAt, version: $version)';}
+}

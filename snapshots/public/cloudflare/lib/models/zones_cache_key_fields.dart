@@ -6,10 +6,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_cache_
 /// 
 @immutable final class ZonesCacheKeyFieldsId {const ZonesCacheKeyFieldsId._(this.value);
 
-factory ZonesCacheKeyFieldsId.fromJson(String json) { return switch (json) {
+factory ZonesCacheKeyFieldsId.fromJson(String json) {return switch (json) {
   'cache_key_fields' => cacheKeyFields,
   _ => ZonesCacheKeyFieldsId._(json),
-}; }
+};}
 
 static const ZonesCacheKeyFieldsId cacheKeyFields = ZonesCacheKeyFieldsId._('cache_key_fields');
 
@@ -17,20 +17,20 @@ static const List<ZonesCacheKeyFieldsId> values = [cacheKeyFields];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesCacheKeyFieldsId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesCacheKeyFieldsId($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesCacheKeyFieldsId && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesCacheKeyFieldsId($value)';}
+}
 @immutable final class ZonesCacheKeyFields {const ZonesCacheKeyFields({this.id, this.value, });
 
-factory ZonesCacheKeyFields.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFields(
+factory ZonesCacheKeyFields.fromJson(Map<String, dynamic> json) {return ZonesCacheKeyFields(
   id: json['id'] != null ? ZonesCacheKeyFieldsId.fromJson(json['id'] as String) : null,
   value: json['value'] != null ? ZonesCacheKeyFieldsValue.fromJson(json['value'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Control specifically what variables to include when deciding which
 /// resources to cache. This allows customers to determine what to cache
@@ -40,19 +40,19 @@ final ZonesCacheKeyFieldsId? id;
 
 final ZonesCacheKeyFieldsValue? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesCacheKeyFields copyWith({ZonesCacheKeyFieldsId? Function()? id, ZonesCacheKeyFieldsValue? Function()? value, }) { return ZonesCacheKeyFields(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'value'}.contains(key));}
+ZonesCacheKeyFields copyWith({ZonesCacheKeyFieldsId? Function()? id, ZonesCacheKeyFieldsValue? Function()? value, }) {return ZonesCacheKeyFields(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZonesCacheKeyFields &&
           id == other.id &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, value); } 
-@override String toString() { return 'ZonesCacheKeyFields(id: $id, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(id, value);}
+@override String toString() {return 'ZonesCacheKeyFields(id: $id, value: $value)';}
+}

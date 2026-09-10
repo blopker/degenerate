@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tune_dpo_hyperparameters.dart';/// Configuration for the DPO fine-tuning method.
 @immutable final class FineTuneDpoMethod {const FineTuneDpoMethod({this.hyperparameters});
 
-factory FineTuneDpoMethod.fromJson(Map<String, dynamic> json) { return FineTuneDpoMethod(
+factory FineTuneDpoMethod.fromJson(Map<String, dynamic> json) {return FineTuneDpoMethod(
   hyperparameters: json['hyperparameters'] != null ? FineTuneDpoHyperparameters.fromJson(json['hyperparameters'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final FineTuneDpoHyperparameters? hyperparameters;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (hyperparameters != null) 'hyperparameters': hyperparameters?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hyperparameters'}.contains(key)); } 
-FineTuneDpoMethod copyWith({FineTuneDpoHyperparameters? Function()? hyperparameters}) { return FineTuneDpoMethod(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'hyperparameters'}.contains(key));}
+FineTuneDpoMethod copyWith({FineTuneDpoHyperparameters? Function()? hyperparameters}) {return FineTuneDpoMethod(
   hyperparameters: hyperparameters != null ? hyperparameters() : this.hyperparameters,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FineTuneDpoMethod &&
-          hyperparameters == other.hyperparameters; } 
-@override int get hashCode { return hyperparameters.hashCode; } 
-@override String toString() { return 'FineTuneDpoMethod(hyperparameters: $hyperparameters)'; } 
- }
+          hyperparameters == other.hyperparameters;}
+@override int get hashCode {return hyperparameters.hashCode;}
+@override String toString() {return 'FineTuneDpoMethod(hyperparameters: $hyperparameters)';}
+}

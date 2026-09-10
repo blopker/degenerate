@@ -9,11 +9,11 @@ String toJson() => value;
 }
 @immutable final class AccessCa {const AccessCa({this.aud, this.id, this.publicKey, });
 
-factory AccessCa.fromJson(Map<String, dynamic> json) { return AccessCa(
+factory AccessCa.fromJson(Map<String, dynamic> json) {return AccessCa(
   aud: json['aud'] != null ? AccessAud.fromJson(json['aud'] as String) : null,
   id: json['id'] != null ? AccessSchemasId.fromJson(json['id'] as String) : null,
   publicKey: json['public_key'] != null ? AccessPublicKey.fromJson(json['public_key'] as String) : null,
-); }
+);}
 
 /// The Application Audience (AUD) tag. Identifies the application associated with the CA.
 final AccessAud? aud;
@@ -22,22 +22,22 @@ final AccessSchemasId? id;
 
 final AccessPublicKey? publicKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aud != null) 'aud': aud?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (publicKey != null) 'public_key': publicKey?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'aud', 'id', 'public_key'}.contains(key)); } 
-AccessCa copyWith({AccessAud? Function()? aud, AccessSchemasId? Function()? id, AccessPublicKey? Function()? publicKey, }) { return AccessCa(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'aud', 'id', 'public_key'}.contains(key));}
+AccessCa copyWith({AccessAud? Function()? aud, AccessSchemasId? Function()? id, AccessPublicKey? Function()? publicKey, }) {return AccessCa(
   aud: aud != null ? aud() : this.aud,
   id: id != null ? id() : this.id,
   publicKey: publicKey != null ? publicKey() : this.publicKey,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessCa &&
           aud == other.aud &&
           id == other.id &&
-          publicKey == other.publicKey; } 
-@override int get hashCode { return Object.hash(aud, id, publicKey); } 
-@override String toString() { return 'AccessCa(aud: $aud, id: $id, publicKey: $publicKey)'; } 
- }
+          publicKey == other.publicKey;}
+@override int get hashCode {return Object.hash(aud, id, publicKey);}
+@override String toString() {return 'AccessCa(aud: $aud, id: $id, publicKey: $publicKey)';}
+}

@@ -16,13 +16,13 @@ String toJson() => value;
 }
 @immutable final class FirewallFirewalluablock {const FirewallFirewalluablock({this.configuration, this.description, this.id, this.mode = const Omittable.absent(), this.paused, });
 
-factory FirewallFirewalluablock.fromJson(Map<String, dynamic> json) { return FirewallFirewalluablock(
+factory FirewallFirewalluablock.fromJson(Map<String, dynamic> json) {return FirewallFirewalluablock(
   configuration: json['configuration'] != null ? FirewallSchemasConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null,
   description: json['description'] != null ? FirewallFirewalluablockComponentsSchemasDescription.fromJson(json['description'] as String) : null,
   id: json['id'] != null ? FirewallComponentsUaRuleId.fromJson(json['id'] as String) : null,
   mode: json.containsKey('mode') ? Omittable(json['mode'] != null ? FirewallComponentsSchemasMode.fromJson(json['mode'] as dynamic) : null) : const Omittable.absent(),
   paused: json['paused'] != null ? FirewallSchemasPaused.fromJson(json['paused'] as bool) : null,
-); }
+);}
 
 final FirewallSchemasConfiguration? configuration;
 
@@ -36,28 +36,28 @@ final Omittable<FirewallComponentsSchemasMode?> mode;
 
 final FirewallSchemasPaused? paused;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (configuration != null) 'configuration': configuration?.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (mode.isPresent) 'mode': mode.value?.toJson(),
   if (paused != null) 'paused': paused?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configuration', 'description', 'id', 'mode', 'paused'}.contains(key)); } 
-FirewallFirewalluablock copyWith({FirewallSchemasConfiguration? Function()? configuration, FirewallFirewalluablockComponentsSchemasDescription? Function()? description, FirewallComponentsUaRuleId? Function()? id, Omittable<FirewallComponentsSchemasMode?>? mode, FirewallSchemasPaused? Function()? paused, }) { return FirewallFirewalluablock(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'configuration', 'description', 'id', 'mode', 'paused'}.contains(key));}
+FirewallFirewalluablock copyWith({FirewallSchemasConfiguration? Function()? configuration, FirewallFirewalluablockComponentsSchemasDescription? Function()? description, FirewallComponentsUaRuleId? Function()? id, Omittable<FirewallComponentsSchemasMode?>? mode, FirewallSchemasPaused? Function()? paused, }) {return FirewallFirewalluablock(
   configuration: configuration != null ? configuration() : this.configuration,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,
   mode: mode ?? this.mode,
   paused: paused != null ? paused() : this.paused,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FirewallFirewalluablock &&
           configuration == other.configuration &&
           description == other.description &&
           id == other.id &&
           mode == other.mode &&
-          paused == other.paused; } 
-@override int get hashCode { return Object.hash(configuration, description, id, mode, paused); } 
-@override String toString() { return 'FirewallFirewalluablock(configuration: $configuration, description: $description, id: $id, mode: $mode, paused: $paused)'; } 
- }
+          paused == other.paused;}
+@override int get hashCode {return Object.hash(configuration, description, id, mode, paused);}
+@override String toString() {return 'FirewallFirewalluablock(configuration: $configuration, description: $description, id: $id, mode: $mode, paused: $paused)';}
+}

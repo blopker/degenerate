@@ -6,11 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Mark state of op
 /// 
 @immutable final class DiscoveryStatePatch {const DiscoveryStatePatch._(this.value);
 
-factory DiscoveryStatePatch.fromJson(String json) { return switch (json) {
+factory DiscoveryStatePatch.fromJson(String json) {return switch (json) {
   'review' => review,
   'ignored' => ignored,
   _ => DiscoveryStatePatch._(json),
-}; }
+};}
 
 static const DiscoveryStatePatch review = DiscoveryStatePatch._('review');
 
@@ -20,11 +20,11 @@ static const List<DiscoveryStatePatch> values = [review, ignored];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DiscoveryStatePatch && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DiscoveryStatePatch($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DiscoveryStatePatch && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DiscoveryStatePatch($value)';}
+}

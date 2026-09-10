@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the field used to sort returned rules.
 @immutable final class WafRulesListWafRulesOrder {const WafRulesListWafRulesOrder._(this.value);
 
-factory WafRulesListWafRulesOrder.fromJson(String json) { return switch (json) {
+factory WafRulesListWafRulesOrder.fromJson(String json) {return switch (json) {
   'priority' => priority,
   'group_id' => groupId,
   'description' => description,
   _ => WafRulesListWafRulesOrder._(json),
-}; }
+};}
 
 static const WafRulesListWafRulesOrder priority = WafRulesListWafRulesOrder._('priority');
 
@@ -20,11 +20,11 @@ static const List<WafRulesListWafRulesOrder> values = [priority, groupId, descri
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WafRulesListWafRulesOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WafRulesListWafRulesOrder($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WafRulesListWafRulesOrder && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WafRulesListWafRulesOrder($value)';}
+}

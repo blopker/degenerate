@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessSchemasLoginDesign {const AccessSchemasLoginDesign({this.backgroundColor, this.footerText, this.headerText, this.logoPath, this.textColor, });
 
-factory AccessSchemasLoginDesign.fromJson(Map<String, dynamic> json) { return AccessSchemasLoginDesign(
+factory AccessSchemasLoginDesign.fromJson(Map<String, dynamic> json) {return AccessSchemasLoginDesign(
   backgroundColor: json['background_color'] as String?,
   footerText: json['footer_text'] as String?,
   headerText: json['header_text'] as String?,
   logoPath: json['logo_path'] as String?,
   textColor: json['text_color'] as String?,
-); }
+);}
 
 /// The background color on your login page.
 final String? backgroundColor;
@@ -25,28 +25,28 @@ final String? logoPath;
 /// The text color on your login page.
 final String? textColor;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'background_color': ?backgroundColor,
   'footer_text': ?footerText,
   'header_text': ?headerText,
   'logo_path': ?logoPath,
   'text_color': ?textColor,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'background_color', 'footer_text', 'header_text', 'logo_path', 'text_color'}.contains(key)); } 
-AccessSchemasLoginDesign copyWith({String? Function()? backgroundColor, String? Function()? footerText, String? Function()? headerText, String? Function()? logoPath, String? Function()? textColor, }) { return AccessSchemasLoginDesign(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'background_color', 'footer_text', 'header_text', 'logo_path', 'text_color'}.contains(key));}
+AccessSchemasLoginDesign copyWith({String? Function()? backgroundColor, String? Function()? footerText, String? Function()? headerText, String? Function()? logoPath, String? Function()? textColor, }) {return AccessSchemasLoginDesign(
   backgroundColor: backgroundColor != null ? backgroundColor() : this.backgroundColor,
   footerText: footerText != null ? footerText() : this.footerText,
   headerText: headerText != null ? headerText() : this.headerText,
   logoPath: logoPath != null ? logoPath() : this.logoPath,
   textColor: textColor != null ? textColor() : this.textColor,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessSchemasLoginDesign &&
           backgroundColor == other.backgroundColor &&
           footerText == other.footerText &&
           headerText == other.headerText &&
           logoPath == other.logoPath &&
-          textColor == other.textColor; } 
-@override int get hashCode { return Object.hash(backgroundColor, footerText, headerText, logoPath, textColor); } 
-@override String toString() { return 'AccessSchemasLoginDesign(backgroundColor: $backgroundColor, footerText: $footerText, headerText: $headerText, logoPath: $logoPath, textColor: $textColor)'; } 
- }
+          textColor == other.textColor;}
+@override int get hashCode {return Object.hash(backgroundColor, footerText, headerText, logoPath, textColor);}
+@override String toString() {return 'AccessSchemasLoginDesign(backgroundColor: $backgroundColor, footerText: $footerText, headerText: $headerText, logoPath: $logoPath, textColor: $textColor)';}
+}

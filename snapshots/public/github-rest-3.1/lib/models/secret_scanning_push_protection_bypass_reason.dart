@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason for bypassing push protection.
 @immutable final class SecretScanningPushProtectionBypassReason {const SecretScanningPushProtectionBypassReason._(this.value);
 
-factory SecretScanningPushProtectionBypassReason.fromJson(String json) { return switch (json) {
+factory SecretScanningPushProtectionBypassReason.fromJson(String json) {return switch (json) {
   'false_positive' => falsePositive,
   'used_in_tests' => usedInTests,
   'will_fix_later' => willFixLater,
   _ => SecretScanningPushProtectionBypassReason._(json),
-}; }
+};}
 
 static const SecretScanningPushProtectionBypassReason falsePositive = SecretScanningPushProtectionBypassReason._('false_positive');
 
@@ -20,11 +20,11 @@ static const List<SecretScanningPushProtectionBypassReason> values = [falsePosit
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecretScanningPushProtectionBypassReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecretScanningPushProtectionBypassReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SecretScanningPushProtectionBypassReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SecretScanningPushProtectionBypassReason($value)';}
+}

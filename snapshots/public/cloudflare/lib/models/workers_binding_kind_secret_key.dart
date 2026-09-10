@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';/// Data format of the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#format).
 @immutable final class WorkersBindingKindSecretKeyFormat {const WorkersBindingKindSecretKeyFormat._(this.value);
 
-factory WorkersBindingKindSecretKeyFormat.fromJson(String json) { return switch (json) {
+factory WorkersBindingKindSecretKeyFormat.fromJson(String json) {return switch (json) {
   'raw' => raw,
   'pkcs8' => pkcs8,
   'spki' => spki,
   'jwk' => jwk,
   _ => WorkersBindingKindSecretKeyFormat._(json),
-}; }
+};}
 
 static const WorkersBindingKindSecretKeyFormat raw = WorkersBindingKindSecretKeyFormat._('raw');
 
@@ -23,17 +23,17 @@ static const List<WorkersBindingKindSecretKeyFormat> values = [raw, pkcs8, spki,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingKindSecretKeyFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersBindingKindSecretKeyFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingKindSecretKeyFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersBindingKindSecretKeyFormat($value)';}
+}
 @immutable final class WorkersBindingKindSecretKeyUsages {const WorkersBindingKindSecretKeyUsages._(this.value);
 
-factory WorkersBindingKindSecretKeyUsages.fromJson(String json) { return switch (json) {
+factory WorkersBindingKindSecretKeyUsages.fromJson(String json) {return switch (json) {
   'encrypt' => encrypt,
   'decrypt' => decrypt,
   'sign' => sign,
@@ -43,7 +43,7 @@ factory WorkersBindingKindSecretKeyUsages.fromJson(String json) { return switch 
   'wrapKey' => wrapKey,
   'unwrapKey' => unwrapKey,
   _ => WorkersBindingKindSecretKeyUsages._(json),
-}; }
+};}
 
 static const WorkersBindingKindSecretKeyUsages encrypt = WorkersBindingKindSecretKeyUsages._('encrypt');
 
@@ -65,17 +65,17 @@ static const List<WorkersBindingKindSecretKeyUsages> values = [encrypt, decrypt,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingKindSecretKeyUsages && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersBindingKindSecretKeyUsages($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingKindSecretKeyUsages && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersBindingKindSecretKeyUsages($value)';}
+}
 @immutable final class WorkersBindingKindSecretKey {const WorkersBindingKindSecretKey({required this.algorithm, required this.format, required this.name, required this.type, required this.usages, this.keyBase64, this.keyJwk, });
 
-factory WorkersBindingKindSecretKey.fromJson(Map<String, dynamic> json) { return WorkersBindingKindSecretKey(
+factory WorkersBindingKindSecretKey.fromJson(Map<String, dynamic> json) {return WorkersBindingKindSecretKey(
   algorithm: json['algorithm'] as Map<String, dynamic>,
   format: WorkersBindingKindSecretKeyFormat.fromJson(json['format'] as String),
   keyBase64: json['key_base64'] as String?,
@@ -83,7 +83,7 @@ factory WorkersBindingKindSecretKey.fromJson(Map<String, dynamic> json) { return
   name: WorkersBindingName.fromJson(json['name'] as String),
   type: json['type'] as String,
   usages: (json['usages'] as List<dynamic>).map((e) => WorkersBindingKindSecretKeyUsages.fromJson(e as String)).toList(),
-); }
+);}
 
 /// Algorithm-specific key parameters. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#algorithm).
 final Map<String,dynamic> algorithm;
@@ -105,7 +105,7 @@ final String type;
 /// Allowed operations with the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#keyUsages).
 final List<WorkersBindingKindSecretKeyUsages> usages;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'algorithm': algorithm,
   'format': format.toJson(),
   'key_base64': ?keyBase64,
@@ -113,13 +113,13 @@ Map<String, dynamic> toJson() { return {
   'name': name.toJson(),
   'type': type,
   'usages': usages.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('algorithm') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('algorithm') &&
       json.containsKey('format') &&
       json.containsKey('name') &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('usages'); } 
-WorkersBindingKindSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingKindSecretKeyFormat? format, String? Function()? keyBase64, Map<String, dynamic>? Function()? keyJwk, WorkersBindingName? name, String? type, List<WorkersBindingKindSecretKeyUsages>? usages, }) { return WorkersBindingKindSecretKey(
+      json.containsKey('usages');}
+WorkersBindingKindSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingKindSecretKeyFormat? format, String? Function()? keyBase64, Map<String, dynamic>? Function()? keyJwk, WorkersBindingName? name, String? type, List<WorkersBindingKindSecretKeyUsages>? usages, }) {return WorkersBindingKindSecretKey(
   algorithm: algorithm ?? this.algorithm,
   format: format ?? this.format,
   keyBase64: keyBase64 != null ? keyBase64() : this.keyBase64,
@@ -127,8 +127,8 @@ WorkersBindingKindSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBin
   name: name ?? this.name,
   type: type ?? this.type,
   usages: usages ?? this.usages,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersBindingKindSecretKey &&
           algorithm == other.algorithm &&
           format == other.format &&
@@ -136,7 +136,7 @@ WorkersBindingKindSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBin
           keyJwk == other.keyJwk &&
           name == other.name &&
           type == other.type &&
-          listEquals(usages, other.usages); } 
-@override int get hashCode { return Object.hash(algorithm, format, keyBase64, keyJwk, name, type, Object.hashAll(usages)); } 
-@override String toString() { return 'WorkersBindingKindSecretKey(algorithm: $algorithm, format: $format, keyBase64: $keyBase64, keyJwk: $keyJwk, name: $name, type: $type, usages: $usages)'; } 
- }
+          listEquals(usages, other.usages);}
+@override int get hashCode {return Object.hash(algorithm, format, keyBase64, keyJwk, name, type, Object.hashAll(usages));}
+@override String toString() {return 'WorkersBindingKindSecretKey(algorithm: $algorithm, format: $format, keyBase64: $keyBase64, keyJwk: $keyJwk, name: $name, type: $type, usages: $usages)';}
+}

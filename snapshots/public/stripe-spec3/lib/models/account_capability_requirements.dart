@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_requirements_alternative.dart';import 'account_requirements_error.dart';/// Description of why the capability is disabled. [Learn more about handling verification issues](https://docs.stripe.com/connect/handling-api-verification).
 @immutable final class AccountCapabilityRequirementsDisabledReason {const AccountCapabilityRequirementsDisabledReason._(this.value);
 
-factory AccountCapabilityRequirementsDisabledReason.fromJson(String json) { return switch (json) {
+factory AccountCapabilityRequirementsDisabledReason.fromJson(String json) {return switch (json) {
   'other' => $other,
   'paused.inactivity' => pausedInactivity,
   'pending.onboarding' => pendingOnboarding,
@@ -15,7 +15,7 @@ factory AccountCapabilityRequirementsDisabledReason.fromJson(String json) { retu
   'rejected.unsupported_business' => rejectedUnsupportedBusiness,
   'requirements.fields_needed' => requirementsFieldsNeeded,
   _ => AccountCapabilityRequirementsDisabledReason._(json),
-}; }
+};}
 
 static const AccountCapabilityRequirementsDisabledReason $other = AccountCapabilityRequirementsDisabledReason._('other');
 
@@ -41,18 +41,18 @@ static const List<AccountCapabilityRequirementsDisabledReason> values = [$other,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilityRequirementsDisabledReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilityRequirementsDisabledReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilityRequirementsDisabledReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilityRequirementsDisabledReason($value)';}
+}
 /// 
 @immutable final class AccountCapabilityRequirements {const AccountCapabilityRequirements({required this.currentlyDue, required this.errors, required this.eventuallyDue, required this.pastDue, required this.pendingVerification, this.alternatives = const Omittable.absent(), this.currentDeadline = const Omittable.absent(), this.disabledReason = const Omittable.absent(), });
 
-factory AccountCapabilityRequirements.fromJson(Map<String, dynamic> json) { return AccountCapabilityRequirements(
+factory AccountCapabilityRequirements.fromJson(Map<String, dynamic> json) {return AccountCapabilityRequirements(
   alternatives: json.containsKey('alternatives') ? Omittable((json['alternatives'] as List<dynamic>?)?.map((e) => AccountRequirementsAlternative.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   currentDeadline: json.containsKey('current_deadline') ? Omittable(json['current_deadline'] != null ? (json['current_deadline'] as num).toInt() : null) : const Omittable.absent(),
   currentlyDue: (json['currently_due'] as List<dynamic>).map((e) => e as String).toList(),
@@ -61,7 +61,7 @@ factory AccountCapabilityRequirements.fromJson(Map<String, dynamic> json) { retu
   eventuallyDue: (json['eventually_due'] as List<dynamic>).map((e) => e as String).toList(),
   pastDue: (json['past_due'] as List<dynamic>).map((e) => e as String).toList(),
   pendingVerification: (json['pending_verification'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// Fields that are due and can be resolved by providing the corresponding alternative fields instead. Multiple alternatives can reference the same `original_fields_due`. When this happens, any of these alternatives can serve as a pathway for attempting to resolve the fields. Additionally, providing `original_fields_due` again also serves as a pathway for attempting to resolve the fields.
 final Omittable<List<AccountRequirementsAlternative>?> alternatives;
@@ -87,7 +87,7 @@ final List<String> pastDue;
 /// Fields that are being reviewed, or might become required depending on the results of a review. If the review fails, these fields can move to `eventually_due`, `currently_due`, `past_due` or `alternatives`. Fields might appear in `eventually_due`, `currently_due`, `past_due` or `alternatives` and in `pending_verification` if one verification fails but another is still pending.
 final List<String> pendingVerification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (alternatives.isPresent) 'alternatives': alternatives.value?.map((e) => e.toJson()).toList(),
   if (currentDeadline.isPresent) 'current_deadline': currentDeadline.value,
   'currently_due': currentlyDue,
@@ -96,13 +96,13 @@ Map<String, dynamic> toJson() { return {
   'eventually_due': eventuallyDue,
   'past_due': pastDue,
   'pending_verification': pendingVerification,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('currently_due') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('currently_due') &&
       json.containsKey('errors') &&
       json.containsKey('eventually_due') &&
       json.containsKey('past_due') &&
-      json.containsKey('pending_verification'); } 
-AccountCapabilityRequirements copyWith({Omittable<List<AccountRequirementsAlternative>?>? alternatives, Omittable<int?>? currentDeadline, List<String>? currentlyDue, Omittable<AccountCapabilityRequirementsDisabledReason?>? disabledReason, List<AccountRequirementsError>? errors, List<String>? eventuallyDue, List<String>? pastDue, List<String>? pendingVerification, }) { return AccountCapabilityRequirements(
+      json.containsKey('pending_verification');}
+AccountCapabilityRequirements copyWith({Omittable<List<AccountRequirementsAlternative>?>? alternatives, Omittable<int?>? currentDeadline, List<String>? currentlyDue, Omittable<AccountCapabilityRequirementsDisabledReason?>? disabledReason, List<AccountRequirementsError>? errors, List<String>? eventuallyDue, List<String>? pastDue, List<String>? pendingVerification, }) {return AccountCapabilityRequirements(
   alternatives: alternatives ?? this.alternatives,
   currentDeadline: currentDeadline ?? this.currentDeadline,
   currentlyDue: currentlyDue ?? this.currentlyDue,
@@ -111,8 +111,8 @@ AccountCapabilityRequirements copyWith({Omittable<List<AccountRequirementsAltern
   eventuallyDue: eventuallyDue ?? this.eventuallyDue,
   pastDue: pastDue ?? this.pastDue,
   pendingVerification: pendingVerification ?? this.pendingVerification,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountCapabilityRequirements &&
           alternatives.isPresent == other.alternatives.isPresent &&
           listEquals(alternatives.value, other.alternatives.value) &&
@@ -122,7 +122,7 @@ AccountCapabilityRequirements copyWith({Omittable<List<AccountRequirementsAltern
           listEquals(errors, other.errors) &&
           listEquals(eventuallyDue, other.eventuallyDue) &&
           listEquals(pastDue, other.pastDue) &&
-          listEquals(pendingVerification, other.pendingVerification); } 
-@override int get hashCode { return Object.hash(Object.hashAll(alternatives.value ?? const []), currentDeadline, Object.hashAll(currentlyDue), disabledReason, Object.hashAll(errors), Object.hashAll(eventuallyDue), Object.hashAll(pastDue), Object.hashAll(pendingVerification)); } 
-@override String toString() { return 'AccountCapabilityRequirements(alternatives: $alternatives, currentDeadline: $currentDeadline, currentlyDue: $currentlyDue, disabledReason: $disabledReason, errors: $errors, eventuallyDue: $eventuallyDue, pastDue: $pastDue, pendingVerification: $pendingVerification)'; } 
- }
+          listEquals(pendingVerification, other.pendingVerification);}
+@override int get hashCode {return Object.hash(Object.hashAll(alternatives.value ?? const []), currentDeadline, Object.hashAll(currentlyDue), disabledReason, Object.hashAll(errors), Object.hashAll(eventuallyDue), Object.hashAll(pastDue), Object.hashAll(pendingVerification));}
+@override String toString() {return 'AccountCapabilityRequirements(alternatives: $alternatives, currentDeadline: $currentDeadline, currentlyDue: $currentlyDue, disabledReason: $disabledReason, errors: $errors, eventuallyDue: $eventuallyDue, pastDue: $pastDue, pendingVerification: $pendingVerification)';}
+}

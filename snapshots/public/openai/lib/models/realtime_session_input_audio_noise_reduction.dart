@@ -6,24 +6,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'noise_reduct
 /// 
 @immutable final class RealtimeSessionInputAudioNoiseReduction {const RealtimeSessionInputAudioNoiseReduction({this.type});
 
-factory RealtimeSessionInputAudioNoiseReduction.fromJson(Map<String, dynamic> json) { return RealtimeSessionInputAudioNoiseReduction(
+factory RealtimeSessionInputAudioNoiseReduction.fromJson(Map<String, dynamic> json) {return RealtimeSessionInputAudioNoiseReduction(
   type: json['type'] != null ? NoiseReductionType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// Type of noise reduction. `near_field` is for close-talking microphones such as headphones, `far_field` is for far-field microphones such as laptop or conference room microphones.
 /// 
 final NoiseReductionType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type'}.contains(key)); } 
-RealtimeSessionInputAudioNoiseReduction copyWith({NoiseReductionType? Function()? type}) { return RealtimeSessionInputAudioNoiseReduction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type'}.contains(key));}
+RealtimeSessionInputAudioNoiseReduction copyWith({NoiseReductionType? Function()? type}) {return RealtimeSessionInputAudioNoiseReduction(
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeSessionInputAudioNoiseReduction &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'RealtimeSessionInputAudioNoiseReduction(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'RealtimeSessionInputAudioNoiseReduction(type: $type)';}
+}

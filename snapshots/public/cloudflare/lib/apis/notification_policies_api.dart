@@ -13,7 +13,7 @@ final class NotificationPoliciesApi with ApiExecutor {const NotificationPolicies
 /// Get a list of all Notification policies.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/policies`
-Future<ApiResult<List<AaaPolicies>?, ResponseCommonFailure2>> notificationPoliciesListNotificationPolicies({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AaaPolicies>?, ResponseCommonFailure2>> notificationPoliciesListNotificationPolicies({required AaaAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create a Notification policy
 ///
 /// Creates a new Notification policy.
 ///
 /// `POST /accounts/{account_id}/alerting/v3/policies`
-Future<ApiResult<AaaIdResponseResult?, NotificationPoliciesCreateANotificationPolicyResponse4xx>> notificationPoliciesCreateANotificationPolicy({required AaaAccountId accountId, required NotificationPoliciesCreateANotificationPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, NotificationPoliciesCreateANotificationPolicyResponse4xx>> notificationPoliciesCreateANotificationPolicy({required AaaAccountId accountId, required NotificationPoliciesCreateANotificationPolicyRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get a Notification policy
 ///
 /// Get details for a single policy.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/policies/{policy_id}`
-Future<ApiResult<AaaPolicies?, NotificationPoliciesGetANotificationPolicyResponse4xx>> notificationPoliciesGetANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaPolicies?, NotificationPoliciesGetANotificationPolicyResponse4xx>> notificationPoliciesGetANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -105,13 +105,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update a Notification policy
 ///
 /// Update a Notification policy.
 ///
 /// `PUT /accounts/{account_id}/alerting/v3/policies/{policy_id}`
-Future<ApiResult<AaaIdResponseResult?, NotificationPoliciesUpdateANotificationPolicyResponse4xx>> notificationPoliciesUpdateANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, required NotificationPoliciesUpdateANotificationPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, NotificationPoliciesUpdateANotificationPolicyResponse4xx>> notificationPoliciesUpdateANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, required NotificationPoliciesUpdateANotificationPolicyRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,13 +139,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a Notification policy
 ///
 /// Delete a Notification policy.
 ///
 /// `DELETE /accounts/{account_id}/alerting/v3/policies/{policy_id}`
-Future<ApiResult<ResponseCollection, NotificationPoliciesDeleteANotificationPolicyResponse4xx>> notificationPoliciesDeleteANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCollection, NotificationPoliciesDeleteANotificationPolicyResponse4xx>> notificationPoliciesDeleteANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -171,5 +171,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

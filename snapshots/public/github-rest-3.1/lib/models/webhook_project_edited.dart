@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_project_edited_changes.dart';import 'webhooks_project.dart';@immutable final class WebhookProjectEditedAction {const WebhookProjectEditedAction._(this.value);
 
-factory WebhookProjectEditedAction.fromJson(String json) { return switch (json) {
+factory WebhookProjectEditedAction.fromJson(String json) {return switch (json) {
   'edited' => edited,
   _ => WebhookProjectEditedAction._(json),
-}; }
+};}
 
 static const WebhookProjectEditedAction edited = WebhookProjectEditedAction._('edited');
 
@@ -13,17 +13,17 @@ static const List<WebhookProjectEditedAction> values = [edited];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookProjectEditedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookProjectEditedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookProjectEditedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookProjectEditedAction($value)';}
+}
 @immutable final class WebhookProjectEdited {const WebhookProjectEdited({required this.action, required this.project, this.changes, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
 
-factory WebhookProjectEdited.fromJson(Map<String, dynamic> json) { return WebhookProjectEdited(
+factory WebhookProjectEdited.fromJson(Map<String, dynamic> json) {return WebhookProjectEdited(
   action: WebhookProjectEditedAction.fromJson(json['action'] as String),
   changes: json['changes'] != null ? WebhookProjectEditedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -32,7 +32,7 @@ factory WebhookProjectEdited.fromJson(Map<String, dynamic> json) { return Webhoo
   project: WebhooksProject.fromJson(json['project'] as Map<String, dynamic>),
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookProjectEditedAction action;
 
@@ -51,7 +51,7 @@ final RepositoryWebhooks? repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (changes != null) 'changes': changes?.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -60,10 +60,10 @@ Map<String, dynamic> toJson() { return {
   'project': project.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
-      json.containsKey('project'); } 
-WebhookProjectEdited copyWith({WebhookProjectEditedAction? action, WebhookProjectEditedChanges? Function()? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksProject? project, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, }) { return WebhookProjectEdited(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
+      json.containsKey('project');}
+WebhookProjectEdited copyWith({WebhookProjectEditedAction? action, WebhookProjectEditedChanges? Function()? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksProject? project, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, }) {return WebhookProjectEdited(
   action: action ?? this.action,
   changes: changes != null ? changes() : this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -72,8 +72,8 @@ WebhookProjectEdited copyWith({WebhookProjectEditedAction? action, WebhookProjec
   project: project ?? this.project,
   repository: repository != null ? repository() : this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookProjectEdited &&
           action == other.action &&
           changes == other.changes &&
@@ -82,7 +82,7 @@ WebhookProjectEdited copyWith({WebhookProjectEditedAction? action, WebhookProjec
           organization == other.organization &&
           project == other.project &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, changes, enterprise, installation, organization, project, repository, sender); } 
-@override String toString() { return 'WebhookProjectEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, project: $project, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, changes, enterprise, installation, organization, project, repository, sender);}
+@override String toString() {return 'WebhookProjectEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, project: $project, repository: $repository, sender: $sender)';}
+}

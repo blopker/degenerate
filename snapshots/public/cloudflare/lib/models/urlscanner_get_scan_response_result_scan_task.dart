@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_task_errors.dart';import 'urlscanner_get_scan_response_result_scan_task_scanned_from.dart';@immutable final class UrlscannerGetScanResponseResultScanTaskClientType {const UrlscannerGetScanResponseResultScanTaskClientType._(this.value);
 
-factory UrlscannerGetScanResponseResultScanTaskClientType.fromJson(String json) { return switch (json) {
+factory UrlscannerGetScanResponseResultScanTaskClientType.fromJson(String json) {return switch (json) {
   'Site' => site,
   'Automatic' => automatic,
   'Api' => api,
   _ => UrlscannerGetScanResponseResultScanTaskClientType._(json),
-}; }
+};}
 
 static const UrlscannerGetScanResponseResultScanTaskClientType site = UrlscannerGetScanResponseResultScanTaskClientType._('Site');
 
@@ -19,23 +19,23 @@ static const List<UrlscannerGetScanResponseResultScanTaskClientType> values = [s
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UrlscannerGetScanResponseResultScanTaskClientType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UrlscannerGetScanResponseResultScanTaskClientType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UrlscannerGetScanResponseResultScanTaskClientType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UrlscannerGetScanResponseResultScanTaskClientType($value)';}
+}
 @immutable final class UrlscannerGetScanResponseResultScanTaskStatus {const UrlscannerGetScanResponseResultScanTaskStatus._(this.value);
 
-factory UrlscannerGetScanResponseResultScanTaskStatus.fromJson(String json) { return switch (json) {
+factory UrlscannerGetScanResponseResultScanTaskStatus.fromJson(String json) {return switch (json) {
   'Queued' => queued,
   'InProgress' => inProgress,
   'InPostProcessing' => inPostProcessing,
   'Finished' => finished,
   _ => UrlscannerGetScanResponseResultScanTaskStatus._(json),
-}; }
+};}
 
 static const UrlscannerGetScanResponseResultScanTaskStatus queued = UrlscannerGetScanResponseResultScanTaskStatus._('Queued');
 
@@ -49,21 +49,21 @@ static const List<UrlscannerGetScanResponseResultScanTaskStatus> values = [queue
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UrlscannerGetScanResponseResultScanTaskStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UrlscannerGetScanResponseResultScanTaskStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UrlscannerGetScanResponseResultScanTaskStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UrlscannerGetScanResponseResultScanTaskStatus($value)';}
+}
 @immutable final class UrlscannerGetScanResponseResultScanTaskVisibility {const UrlscannerGetScanResponseResultScanTaskVisibility._(this.value);
 
-factory UrlscannerGetScanResponseResultScanTaskVisibility.fromJson(String json) { return switch (json) {
+factory UrlscannerGetScanResponseResultScanTaskVisibility.fromJson(String json) {return switch (json) {
   'Public' => public,
   'Unlisted' => unlisted,
   _ => UrlscannerGetScanResponseResultScanTaskVisibility._(json),
-}; }
+};}
 
 static const UrlscannerGetScanResponseResultScanTaskVisibility public = UrlscannerGetScanResponseResultScanTaskVisibility._('Public');
 
@@ -73,17 +73,17 @@ static const List<UrlscannerGetScanResponseResultScanTaskVisibility> values = [p
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UrlscannerGetScanResponseResultScanTaskVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UrlscannerGetScanResponseResultScanTaskVisibility($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UrlscannerGetScanResponseResultScanTaskVisibility && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UrlscannerGetScanResponseResultScanTaskVisibility($value)';}
+}
 @immutable final class UrlscannerGetScanResponseResultScanTask {const UrlscannerGetScanResponseResultScanTask({required this.clientLocation, required this.clientType, required this.effectiveUrl, required this.errors, required this.scannedFrom, required this.status, required this.success, required this.time, required this.timeEnd, required this.url, required this.uuid, required this.visibility, });
 
-factory UrlscannerGetScanResponseResultScanTask.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanTask(
+factory UrlscannerGetScanResponseResultScanTask.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponseResultScanTask(
   clientLocation: json['clientLocation'] as String,
   clientType: UrlscannerGetScanResponseResultScanTaskClientType.fromJson(json['clientType'] as String),
   effectiveUrl: json['effectiveUrl'] as String,
@@ -96,7 +96,7 @@ factory UrlscannerGetScanResponseResultScanTask.fromJson(Map<String, dynamic> js
   url: json['url'] as String,
   uuid: json['uuid'] as String,
   visibility: UrlscannerGetScanResponseResultScanTaskVisibility.fromJson(json['visibility'] as String),
-); }
+);}
 
 /// Submitter location
 final String clientLocation;
@@ -126,7 +126,7 @@ final String uuid;
 
 final UrlscannerGetScanResponseResultScanTaskVisibility visibility;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'clientLocation': clientLocation,
   'clientType': clientType.toJson(),
   'effectiveUrl': effectiveUrl,
@@ -139,8 +139,8 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'uuid': uuid,
   'visibility': visibility.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('clientLocation') && json['clientLocation'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('clientLocation') && json['clientLocation'] is String &&
       json.containsKey('clientType') &&
       json.containsKey('effectiveUrl') && json['effectiveUrl'] is String &&
       json.containsKey('errors') &&
@@ -151,8 +151,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('clien
       json.containsKey('timeEnd') && json['timeEnd'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('uuid') && json['uuid'] is String &&
-      json.containsKey('visibility'); } 
-UrlscannerGetScanResponseResultScanTask copyWith({String? clientLocation, UrlscannerGetScanResponseResultScanTaskClientType? clientType, String? effectiveUrl, List<UrlscannerGetScanResponseResultScanTaskErrors>? errors, UrlscannerGetScanResponseResultScanTaskScannedFrom? scannedFrom, UrlscannerGetScanResponseResultScanTaskStatus? status, bool? success, String? time, String? timeEnd, String? url, String? uuid, UrlscannerGetScanResponseResultScanTaskVisibility? visibility, }) { return UrlscannerGetScanResponseResultScanTask(
+      json.containsKey('visibility');}
+UrlscannerGetScanResponseResultScanTask copyWith({String? clientLocation, UrlscannerGetScanResponseResultScanTaskClientType? clientType, String? effectiveUrl, List<UrlscannerGetScanResponseResultScanTaskErrors>? errors, UrlscannerGetScanResponseResultScanTaskScannedFrom? scannedFrom, UrlscannerGetScanResponseResultScanTaskStatus? status, bool? success, String? time, String? timeEnd, String? url, String? uuid, UrlscannerGetScanResponseResultScanTaskVisibility? visibility, }) {return UrlscannerGetScanResponseResultScanTask(
   clientLocation: clientLocation ?? this.clientLocation,
   clientType: clientType ?? this.clientType,
   effectiveUrl: effectiveUrl ?? this.effectiveUrl,
@@ -165,8 +165,8 @@ UrlscannerGetScanResponseResultScanTask copyWith({String? clientLocation, Urlsca
   url: url ?? this.url,
   uuid: uuid ?? this.uuid,
   visibility: visibility ?? this.visibility,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponseResultScanTask &&
           clientLocation == other.clientLocation &&
           clientType == other.clientType &&
@@ -179,7 +179,7 @@ UrlscannerGetScanResponseResultScanTask copyWith({String? clientLocation, Urlsca
           timeEnd == other.timeEnd &&
           url == other.url &&
           uuid == other.uuid &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(clientLocation, clientType, effectiveUrl, Object.hashAll(errors), scannedFrom, status, success, time, timeEnd, url, uuid, visibility); } 
-@override String toString() { return 'UrlscannerGetScanResponseResultScanTask(clientLocation: $clientLocation, clientType: $clientType, effectiveUrl: $effectiveUrl, errors: $errors, scannedFrom: $scannedFrom, status: $status, success: $success, time: $time, timeEnd: $timeEnd, url: $url, uuid: $uuid, visibility: $visibility)'; } 
- }
+          visibility == other.visibility;}
+@override int get hashCode {return Object.hash(clientLocation, clientType, effectiveUrl, Object.hashAll(errors), scannedFrom, status, success, time, timeEnd, url, uuid, visibility);}
+@override String toString() {return 'UrlscannerGetScanResponseResultScanTask(clientLocation: $clientLocation, clientType: $clientType, effectiveUrl: $effectiveUrl, errors: $errors, scannedFrom: $scannedFrom, status: $status, success: $success, time: $time, timeEnd: $timeEnd, url: $url, uuid: $uuid, visibility: $visibility)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LivestreamSessionDetailsResponseDataSessions {const LivestreamSessionDetailsResponseDataSessions({this.createdAt, this.errMessage, this.id, this.ingestSeconds, this.invokedTime, this.livestreamId, this.startedTime, this.stoppedTime, this.updatedAt, });
 
-factory LivestreamSessionDetailsResponseDataSessions.fromJson(Map<String, dynamic> json) { return LivestreamSessionDetailsResponseDataSessions(
+factory LivestreamSessionDetailsResponseDataSessions.fromJson(Map<String, dynamic> json) {return LivestreamSessionDetailsResponseDataSessions(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   errMessage: json['err_message'] as String?,
   id: json['id'] as String?,
@@ -12,7 +12,7 @@ factory LivestreamSessionDetailsResponseDataSessions.fromJson(Map<String, dynami
   startedTime: json['started_time'] != null ? DateTime.parse(json['started_time'] as String) : null,
   stoppedTime: json['stopped_time'] != null ? DateTime.parse(json['stopped_time'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+);}
 
 /// The timestamp at which the livestream was created. The time is returned in ISO format.
 final DateTime? createdAt;
@@ -40,7 +40,7 @@ final DateTime? stoppedTime;
 /// The timestamp at which the livestream was updated. The time is returned in ISO format.
 final DateTime? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'err_message': ?errMessage,
   'id': ?id,
@@ -50,9 +50,9 @@ Map<String, dynamic> toJson() { return {
   if (startedTime != null) 'started_time': startedTime?.toIso8601String(),
   if (stoppedTime != null) 'stopped_time': stoppedTime?.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'err_message', 'id', 'ingest_seconds', 'invoked_time', 'livestream_id', 'started_time', 'stopped_time', 'updated_at'}.contains(key)); } 
-LivestreamSessionDetailsResponseDataSessions copyWith({DateTime? Function()? createdAt, String? Function()? errMessage, String? Function()? id, String? Function()? ingestSeconds, DateTime? Function()? invokedTime, String? Function()? livestreamId, DateTime? Function()? startedTime, DateTime? Function()? stoppedTime, DateTime? Function()? updatedAt, }) { return LivestreamSessionDetailsResponseDataSessions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'err_message', 'id', 'ingest_seconds', 'invoked_time', 'livestream_id', 'started_time', 'stopped_time', 'updated_at'}.contains(key));}
+LivestreamSessionDetailsResponseDataSessions copyWith({DateTime? Function()? createdAt, String? Function()? errMessage, String? Function()? id, String? Function()? ingestSeconds, DateTime? Function()? invokedTime, String? Function()? livestreamId, DateTime? Function()? startedTime, DateTime? Function()? stoppedTime, DateTime? Function()? updatedAt, }) {return LivestreamSessionDetailsResponseDataSessions(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   errMessage: errMessage != null ? errMessage() : this.errMessage,
   id: id != null ? id() : this.id,
@@ -62,8 +62,8 @@ LivestreamSessionDetailsResponseDataSessions copyWith({DateTime? Function()? cre
   startedTime: startedTime != null ? startedTime() : this.startedTime,
   stoppedTime: stoppedTime != null ? stoppedTime() : this.stoppedTime,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LivestreamSessionDetailsResponseDataSessions &&
           createdAt == other.createdAt &&
           errMessage == other.errMessage &&
@@ -73,7 +73,7 @@ LivestreamSessionDetailsResponseDataSessions copyWith({DateTime? Function()? cre
           livestreamId == other.livestreamId &&
           startedTime == other.startedTime &&
           stoppedTime == other.stoppedTime &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, errMessage, id, ingestSeconds, invokedTime, livestreamId, startedTime, stoppedTime, updatedAt); } 
-@override String toString() { return 'LivestreamSessionDetailsResponseDataSessions(createdAt: $createdAt, errMessage: $errMessage, id: $id, ingestSeconds: $ingestSeconds, invokedTime: $invokedTime, livestreamId: $livestreamId, startedTime: $startedTime, stoppedTime: $stoppedTime, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(createdAt, errMessage, id, ingestSeconds, invokedTime, livestreamId, startedTime, stoppedTime, updatedAt);}
+@override String toString() {return 'LivestreamSessionDetailsResponseDataSessions(createdAt: $createdAt, errMessage: $errMessage, id: $id, ingestSeconds: $ingestSeconds, invokedTime: $invokedTime, livestreamId: $livestreamId, startedTime: $startedTime, stoppedTime: $stoppedTime, updatedAt: $updatedAt)';}
+}

@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Feature {const Feature({required this.key});
 
-factory Feature.fromJson(Map<String, dynamic> json) { return Feature(
+factory Feature.fromJson(Map<String, dynamic> json) {return Feature(
   key: json['key'] as String,
-); }
+);}
 
 final String key;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
-Feature copyWith({String? key}) { return Feature(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String;}
+Feature copyWith({String? key}) {return Feature(
   key: key ?? this.key,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Feature &&
-          key == other.key; } 
-@override int get hashCode { return key.hashCode; } 
-@override String toString() { return 'Feature(key: $key)'; } 
- }
+          key == other.key;}
+@override int get hashCode {return key.hashCode;}
+@override String toString() {return 'Feature(key: $key)';}
+}

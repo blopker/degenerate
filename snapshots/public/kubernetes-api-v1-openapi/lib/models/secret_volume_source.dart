@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key_to_path.
 /// The contents of the target Secret's Data field will be presented in a volume as files using the keys in the Data field as the file names. Secret volumes support ownership management and SELinux relabeling.
 @immutable final class SecretVolumeSource {const SecretVolumeSource({this.defaultMode, this.items, this.optional, this.secretName, });
 
-factory SecretVolumeSource.fromJson(Map<String, dynamic> json) { return SecretVolumeSource(
+factory SecretVolumeSource.fromJson(Map<String, dynamic> json) {return SecretVolumeSource(
   defaultMode: json['defaultMode'] != null ? (json['defaultMode'] as num).toInt() : null,
   items: (json['items'] as List<dynamic>?)?.map((e) => KeyToPath.fromJson(e as Map<String, dynamic>)).toList(),
   optional: json['optional'] as bool?,
   secretName: json['secretName'] as String?,
-); }
+);}
 
 /// defaultMode is Optional: mode bits used to set permissions on created files by default. Must be an octal value between 0000 and 0777 or a decimal value between 0 and 511. YAML accepts both octal and decimal values, JSON requires decimal values for mode bits. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
 final int? defaultMode;
@@ -24,25 +24,25 @@ final bool? optional;
 /// secretName is the name of the secret in the pod's namespace to use. More info: https://kubernetes.io/docs/concepts/storage/volumes#secret
 final String? secretName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'defaultMode': ?defaultMode,
   if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
   'optional': ?optional,
   'secretName': ?secretName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'defaultMode', 'items', 'optional', 'secretName'}.contains(key)); } 
-SecretVolumeSource copyWith({int? Function()? defaultMode, List<KeyToPath>? Function()? items, bool? Function()? optional, String? Function()? secretName, }) { return SecretVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'defaultMode', 'items', 'optional', 'secretName'}.contains(key));}
+SecretVolumeSource copyWith({int? Function()? defaultMode, List<KeyToPath>? Function()? items, bool? Function()? optional, String? Function()? secretName, }) {return SecretVolumeSource(
   defaultMode: defaultMode != null ? defaultMode() : this.defaultMode,
   items: items != null ? items() : this.items,
   optional: optional != null ? optional() : this.optional,
   secretName: secretName != null ? secretName() : this.secretName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecretVolumeSource &&
           defaultMode == other.defaultMode &&
           listEquals(items, other.items) &&
           optional == other.optional &&
-          secretName == other.secretName; } 
-@override int get hashCode { return Object.hash(defaultMode, Object.hashAll(items ?? const []), optional, secretName); } 
-@override String toString() { return 'SecretVolumeSource(defaultMode: $defaultMode, items: $items, optional: $optional, secretName: $secretName)'; } 
- }
+          secretName == other.secretName;}
+@override int get hashCode {return Object.hash(defaultMode, Object.hashAll(items ?? const []), optional, secretName);}
+@override String toString() {return 'SecretVolumeSource(defaultMode: $defaultMode, items: $items, optional: $optional, secretName: $secretName)';}
+}

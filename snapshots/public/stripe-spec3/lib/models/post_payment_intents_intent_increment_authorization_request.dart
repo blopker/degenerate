@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_increment_authorization_request_amount_details.dart';import 'post_payment_intents_intent_increment_authorization_request_hooks.dart';import 'post_payment_intents_intent_increment_authorization_request_payment_details.dart';import 'post_payment_intents_intent_increment_authorization_request_transfer_data.dart';@immutable final class PostPaymentIntentsIntentIncrementAuthorizationRequest {const PostPaymentIntentsIntentIncrementAuthorizationRequest({required this.amount, this.amountDetails, this.applicationFeeAmount, this.description, this.expand, this.hooks, this.metadata, this.paymentDetails, this.statementDescriptor, this.transferData, });
 
-factory PostPaymentIntentsIntentIncrementAuthorizationRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentIncrementAuthorizationRequest(
+factory PostPaymentIntentsIntentIncrementAuthorizationRequest.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentIncrementAuthorizationRequest(
   amount: (json['amount'] as num).toInt(),
   amountDetails: json['amount_details'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
@@ -13,7 +13,7 @@ factory PostPaymentIntentsIntentIncrementAuthorizationRequest.fromJson(Map<Strin
   paymentDetails: json['payment_details'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   transferData: json['transfer_data'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The updated total amount that you intend to collect from the cardholder. This amount must be greater than the currently authorized amount.
 final int amount;
@@ -46,7 +46,7 @@ final String? statementDescriptor;
 /// Learn more about the [use case for connected accounts](https://docs.stripe.com/payments/connected-accounts).
 final PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData? transferData;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   if (amountDetails != null) 'amount_details': amountDetails?.toJson(),
   'application_fee_amount': ?applicationFeeAmount,
@@ -57,9 +57,9 @@ Map<String, dynamic> toJson() { return {
   if (paymentDetails != null) 'payment_details': paymentDetails?.toJson(),
   'statement_descriptor': ?statementDescriptor,
   if (transferData != null) 'transfer_data': transferData?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num; } 
-PostPaymentIntentsIntentIncrementAuthorizationRequest copyWith({int? amount, PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetails? Function()? amountDetails, int? Function()? applicationFeeAmount, String? Function()? description, List<String>? Function()? expand, PostPaymentIntentsIntentIncrementAuthorizationRequestHooks? Function()? hooks, Map<String, String>? Function()? metadata, PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails? Function()? paymentDetails, String? Function()? statementDescriptor, PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData? Function()? transferData, }) { return PostPaymentIntentsIntentIncrementAuthorizationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num;}
+PostPaymentIntentsIntentIncrementAuthorizationRequest copyWith({int? amount, PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetails? Function()? amountDetails, int? Function()? applicationFeeAmount, String? Function()? description, List<String>? Function()? expand, PostPaymentIntentsIntentIncrementAuthorizationRequestHooks? Function()? hooks, Map<String, String>? Function()? metadata, PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails? Function()? paymentDetails, String? Function()? statementDescriptor, PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData? Function()? transferData, }) {return PostPaymentIntentsIntentIncrementAuthorizationRequest(
   amount: amount ?? this.amount,
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
@@ -70,8 +70,8 @@ PostPaymentIntentsIntentIncrementAuthorizationRequest copyWith({int? amount, Pos
   paymentDetails: paymentDetails != null ? paymentDetails() : this.paymentDetails,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
   transferData: transferData != null ? transferData() : this.transferData,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsIntentIncrementAuthorizationRequest &&
           amount == other.amount &&
           amountDetails == other.amountDetails &&
@@ -82,7 +82,7 @@ PostPaymentIntentsIntentIncrementAuthorizationRequest copyWith({int? amount, Pos
           metadata == other.metadata &&
           paymentDetails == other.paymentDetails &&
           statementDescriptor == other.statementDescriptor &&
-          transferData == other.transferData; } 
-@override int get hashCode { return Object.hash(amount, amountDetails, applicationFeeAmount, description, Object.hashAll(expand ?? const []), hooks, metadata, paymentDetails, statementDescriptor, transferData); } 
-@override String toString() { return 'PostPaymentIntentsIntentIncrementAuthorizationRequest(amount: $amount, amountDetails: $amountDetails, applicationFeeAmount: $applicationFeeAmount, description: $description, expand: $expand, hooks: $hooks, metadata: $metadata, paymentDetails: $paymentDetails, statementDescriptor: $statementDescriptor, transferData: $transferData)'; } 
- }
+          transferData == other.transferData;}
+@override int get hashCode {return Object.hash(amount, amountDetails, applicationFeeAmount, description, Object.hashAll(expand ?? const []), hooks, metadata, paymentDetails, statementDescriptor, transferData);}
+@override String toString() {return 'PostPaymentIntentsIntentIncrementAuthorizationRequest(amount: $amount, amountDetails: $amountDetails, applicationFeeAmount: $applicationFeeAmount, description: $description, expand: $expand, hooks: $hooks, metadata: $metadata, paymentDetails: $paymentDetails, statementDescriptor: $statementDescriptor, transferData: $transferData)';}
+}

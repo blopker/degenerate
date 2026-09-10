@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackagesListPackagesForAuthenticatedUserPackageType {const PackagesListPackagesForAuthenticatedUserPackageType._(this.value);
 
-factory PackagesListPackagesForAuthenticatedUserPackageType.fromJson(String json) { return switch (json) {
+factory PackagesListPackagesForAuthenticatedUserPackageType.fromJson(String json) {return switch (json) {
   'npm' => npm,
   'maven' => maven,
   'rubygems' => rubygems,
@@ -10,7 +10,7 @@ factory PackagesListPackagesForAuthenticatedUserPackageType.fromJson(String json
   'nuget' => nuget,
   'container' => container,
   _ => PackagesListPackagesForAuthenticatedUserPackageType._(json),
-}; }
+};}
 
 static const PackagesListPackagesForAuthenticatedUserPackageType npm = PackagesListPackagesForAuthenticatedUserPackageType._('npm');
 
@@ -28,11 +28,11 @@ static const List<PackagesListPackagesForAuthenticatedUserPackageType> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PackagesListPackagesForAuthenticatedUserPackageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PackagesListPackagesForAuthenticatedUserPackageType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PackagesListPackagesForAuthenticatedUserPackageType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PackagesListPackagesForAuthenticatedUserPackageType($value)';}
+}

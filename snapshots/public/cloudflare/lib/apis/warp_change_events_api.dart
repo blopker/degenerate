@@ -13,7 +13,7 @@ final class WarpChangeEventsApi with ApiExecutor {const WarpChangeEventsApi(this
 /// List WARP configuration and enablement toggle change events by device.
 ///
 /// `GET /accounts/{account_id}/dex/warp-change-events`
-Future<ApiResult<List<DigitalExperienceMonitoringWarpEventsResponse2>?, ResponseCommonFailure24>> listWarpChangeEvents({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, required String from, required String to, ListWarpChangeEventsType? type, ListWarpChangeEventsToggle? toggle, String? configName, String? accountName, ListWarpChangeEventsSortOrder? sortOrder, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DigitalExperienceMonitoringWarpEventsResponse2>?, ResponseCommonFailure24>> listWarpChangeEvents({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, required String from, required String to, ListWarpChangeEventsType? type, ListWarpChangeEventsToggle? toggle, String? configName, String? accountName, ListWarpChangeEventsSortOrder? sortOrder, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['page'] = page.toString();
 queryParameters['per_page'] = perPage.toString();
@@ -63,5 +63,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

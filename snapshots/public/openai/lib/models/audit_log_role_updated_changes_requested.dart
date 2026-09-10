@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to update the role.
 @immutable final class AuditLogRoleUpdatedChangesRequested {const AuditLogRoleUpdatedChangesRequested({this.roleName, this.resourceId, this.resourceType, this.permissionsAdded, this.permissionsRemoved, this.description, this.metadata, });
 
-factory AuditLogRoleUpdatedChangesRequested.fromJson(Map<String, dynamic> json) { return AuditLogRoleUpdatedChangesRequested(
+factory AuditLogRoleUpdatedChangesRequested.fromJson(Map<String, dynamic> json) {return AuditLogRoleUpdatedChangesRequested(
   roleName: json['role_name'] as String?,
   resourceId: json['resource_id'] as String?,
   resourceType: json['resource_type'] as String?,
@@ -11,7 +11,7 @@ factory AuditLogRoleUpdatedChangesRequested.fromJson(Map<String, dynamic> json) 
   permissionsRemoved: (json['permissions_removed'] as List<dynamic>?)?.map((e) => e as String).toList(),
   description: json['description'] as String?,
   metadata: json['metadata'] as Map<String, dynamic>?,
-); }
+);}
 
 /// The updated role name, when provided.
 final String? roleName;
@@ -34,7 +34,7 @@ final String? description;
 /// Additional metadata stored on the role.
 final Map<String,dynamic>? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'role_name': ?roleName,
   'resource_id': ?resourceId,
   'resource_type': ?resourceType,
@@ -42,9 +42,9 @@ Map<String, dynamic> toJson() { return {
   'permissions_removed': ?permissionsRemoved,
   'description': ?description,
   'metadata': ?metadata,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'role_name', 'resource_id', 'resource_type', 'permissions_added', 'permissions_removed', 'description', 'metadata'}.contains(key)); } 
-AuditLogRoleUpdatedChangesRequested copyWith({String? Function()? roleName, String? Function()? resourceId, String? Function()? resourceType, List<String>? Function()? permissionsAdded, List<String>? Function()? permissionsRemoved, String? Function()? description, Map<String, dynamic>? Function()? metadata, }) { return AuditLogRoleUpdatedChangesRequested(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'role_name', 'resource_id', 'resource_type', 'permissions_added', 'permissions_removed', 'description', 'metadata'}.contains(key));}
+AuditLogRoleUpdatedChangesRequested copyWith({String? Function()? roleName, String? Function()? resourceId, String? Function()? resourceType, List<String>? Function()? permissionsAdded, List<String>? Function()? permissionsRemoved, String? Function()? description, Map<String, dynamic>? Function()? metadata, }) {return AuditLogRoleUpdatedChangesRequested(
   roleName: roleName != null ? roleName() : this.roleName,
   resourceId: resourceId != null ? resourceId() : this.resourceId,
   resourceType: resourceType != null ? resourceType() : this.resourceType,
@@ -52,8 +52,8 @@ AuditLogRoleUpdatedChangesRequested copyWith({String? Function()? roleName, Stri
   permissionsRemoved: permissionsRemoved != null ? permissionsRemoved() : this.permissionsRemoved,
   description: description != null ? description() : this.description,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AuditLogRoleUpdatedChangesRequested &&
           roleName == other.roleName &&
           resourceId == other.resourceId &&
@@ -61,7 +61,7 @@ AuditLogRoleUpdatedChangesRequested copyWith({String? Function()? roleName, Stri
           listEquals(permissionsAdded, other.permissionsAdded) &&
           listEquals(permissionsRemoved, other.permissionsRemoved) &&
           description == other.description &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(roleName, resourceId, resourceType, Object.hashAll(permissionsAdded ?? const []), Object.hashAll(permissionsRemoved ?? const []), description, metadata); } 
-@override String toString() { return 'AuditLogRoleUpdatedChangesRequested(roleName: $roleName, resourceId: $resourceId, resourceType: $resourceType, permissionsAdded: $permissionsAdded, permissionsRemoved: $permissionsRemoved, description: $description, metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return Object.hash(roleName, resourceId, resourceType, Object.hashAll(permissionsAdded ?? const []), Object.hashAll(permissionsRemoved ?? const []), description, metadata);}
+@override String toString() {return 'AuditLogRoleUpdatedChangesRequested(roleName: $roleName, resourceId: $resourceId, resourceType: $resourceType, permissionsAdded: $permissionsAdded, permissionsRemoved: $permissionsRemoved, description: $description, metadata: $metadata)';}
+}

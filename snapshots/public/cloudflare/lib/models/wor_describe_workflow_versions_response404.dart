@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_describe_workflow_versions_response404_errors.dart';@immutable final class WorDescribeWorkflowVersionsResponse404 {const WorDescribeWorkflowVersionsResponse404({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory WorDescribeWorkflowVersionsResponse404.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowVersionsResponse404(
+factory WorDescribeWorkflowVersionsResponse404.fromJson(Map<String, dynamic> json) {return WorDescribeWorkflowVersionsResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => WorDescribeWorkflowVersionsResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
   result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
-); }
+);}
 
 final List<WorDescribeWorkflowVersionsResponse404Errors> errors;
 
@@ -17,28 +17,28 @@ final Map<String,dynamic>? result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages,
   'result': result,
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-WorDescribeWorkflowVersionsResponse404 copyWith({List<WorDescribeWorkflowVersionsResponse404Errors>? errors, List<String>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return WorDescribeWorkflowVersionsResponse404(
+      json.containsKey('success') && json['success'] is bool;}
+WorDescribeWorkflowVersionsResponse404 copyWith({List<WorDescribeWorkflowVersionsResponse404Errors>? errors, List<String>? messages, Map<String, dynamic>? Function()? result, bool? success, }) {return WorDescribeWorkflowVersionsResponse404(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorDescribeWorkflowVersionsResponse404 &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success); } 
-@override String toString() { return 'WorDescribeWorkflowVersionsResponse404(errors: $errors, messages: $messages, result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);}
+@override String toString() {return 'WorDescribeWorkflowVersionsResponse404(errors: $errors, messages: $messages, result: $result, success: $success)';}
+}

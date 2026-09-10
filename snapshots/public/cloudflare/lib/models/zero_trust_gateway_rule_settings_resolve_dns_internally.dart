@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the fallback behavior to apply when the internal DNS response code differs from 'NOERROR' or when the response data contains only CNAME records for 'A' or 'AAAA' queries.
 @immutable final class ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback {const ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback._(this.value);
 
-factory ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback.fromJson(String json) {return switch (json) {
   'none' => none,
   'public_dns' => publicDns,
   _ => ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback._(json),
-}; }
+};}
 
 static const ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback none = ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback._('none');
 
@@ -17,21 +17,21 @@ static const List<ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback($value)';}
+}
 /// Configure to forward the query to the internal DNS service, passing the specified 'view_id' as input. Not used when 'dns_resolvers' is specified or 'resolve_dns_through_cloudflare' is set. Only valid when a rule's action set to 'resolve'. Settable only for `dns_resolver` rules.
 @immutable final class ZeroTrustGatewayRuleSettingsResolveDnsInternally {const ZeroTrustGatewayRuleSettingsResolveDnsInternally({this.fallback, this.viewId, });
 
-factory ZeroTrustGatewayRuleSettingsResolveDnsInternally.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsResolveDnsInternally(
+factory ZeroTrustGatewayRuleSettingsResolveDnsInternally.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayRuleSettingsResolveDnsInternally(
   fallback: json['fallback'] != null ? ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback.fromJson(json['fallback'] as String) : null,
   viewId: json['view_id'] as String?,
-); }
+);}
 
 /// Specify the fallback behavior to apply when the internal DNS response code differs from 'NOERROR' or when the response data contains only CNAME records for 'A' or 'AAAA' queries.
 final ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback? fallback;
@@ -39,19 +39,19 @@ final ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback? fallback;
 /// Specify the internal DNS view identifier to pass to the internal DNS service.
 final String? viewId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (fallback != null) 'fallback': fallback?.toJson(),
   'view_id': ?viewId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fallback', 'view_id'}.contains(key)); } 
-ZeroTrustGatewayRuleSettingsResolveDnsInternally copyWith({ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback? Function()? fallback, String? Function()? viewId, }) { return ZeroTrustGatewayRuleSettingsResolveDnsInternally(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'fallback', 'view_id'}.contains(key));}
+ZeroTrustGatewayRuleSettingsResolveDnsInternally copyWith({ZeroTrustGatewayRuleSettingsResolveDnsInternallyFallback? Function()? fallback, String? Function()? viewId, }) {return ZeroTrustGatewayRuleSettingsResolveDnsInternally(
   fallback: fallback != null ? fallback() : this.fallback,
   viewId: viewId != null ? viewId() : this.viewId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewayRuleSettingsResolveDnsInternally &&
           fallback == other.fallback &&
-          viewId == other.viewId; } 
-@override int get hashCode { return Object.hash(fallback, viewId); } 
-@override String toString() { return 'ZeroTrustGatewayRuleSettingsResolveDnsInternally(fallback: $fallback, viewId: $viewId)'; } 
- }
+          viewId == other.viewId;}
+@override int get hashCode {return Object.hash(fallback, viewId);}
+@override String toString() {return 'ZeroTrustGatewayRuleSettingsResolveDnsInternally(fallback: $fallback, viewId: $viewId)';}
+}

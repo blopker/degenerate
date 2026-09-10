@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcp_tool.dart';import 'prompt.dart';import 'realtime_conversation_item.dart';import 'realtime_function_tool.dart';import 'realtime_response_create_params_audio.dart';import 'realtime_response_create_params_conversation.dart';import 'realtime_response_create_params_max_output_tokens.dart';import 'realtime_response_create_params_tool_choice.dart';import 'realtime_response_create_params_tools.dart';import 'tool_choice_function.dart';import 'tool_choice_mcp.dart';import 'tool_choice_mode.dart';@immutable final class RealtimeResponseCreateParamsOutputModalities {const RealtimeResponseCreateParamsOutputModalities._(this.value);
 
-factory RealtimeResponseCreateParamsOutputModalities.fromJson(String json) { return switch (json) {
+factory RealtimeResponseCreateParamsOutputModalities.fromJson(String json) {return switch (json) {
   'text' => text,
   'audio' => audio,
   _ => RealtimeResponseCreateParamsOutputModalities._(json),
-}; }
+};}
 
 static const RealtimeResponseCreateParamsOutputModalities text = RealtimeResponseCreateParamsOutputModalities._('text');
 
@@ -16,18 +16,18 @@ static const List<RealtimeResponseCreateParamsOutputModalities> values = [text, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeResponseCreateParamsOutputModalities && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeResponseCreateParamsOutputModalities($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeResponseCreateParamsOutputModalities && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeResponseCreateParamsOutputModalities($value)';}
+}
 /// Create a new Realtime response with these parameters
 @immutable final class RealtimeResponseCreateParams {const RealtimeResponseCreateParams({this.outputModalities, this.instructions, this.audio, this.tools, this.toolChoice, this.maxOutputTokens, this.conversation, this.metadata = const Omittable.absent(), this.prompt = const Omittable.absent(), this.input, });
 
-factory RealtimeResponseCreateParams.fromJson(Map<String, dynamic> json) { return RealtimeResponseCreateParams(
+factory RealtimeResponseCreateParams.fromJson(Map<String, dynamic> json) {return RealtimeResponseCreateParams(
   outputModalities: (json['output_modalities'] as List<dynamic>?)?.map((e) => RealtimeResponseCreateParamsOutputModalities.fromJson(e as String)).toList(),
   instructions: json['instructions'] as String?,
   audio: json['audio'] != null ? RealtimeResponseCreateParamsAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
@@ -38,7 +38,7 @@ factory RealtimeResponseCreateParams.fromJson(Map<String, dynamic> json) { retur
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   prompt: json.containsKey('prompt') ? Omittable(json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   input: (json['input'] as List<dynamic>?)?.map((e) => RealtimeConversationItem.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The set of modalities the model used to respond, currently the only possible values are
 /// `[\"audio\"]`, `[\"text\"]`. Audio output always include a text transcript. Setting the
@@ -96,7 +96,7 @@ final Omittable<Prompt?> prompt;
 /// 
 final List<RealtimeConversationItem>? input;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (outputModalities != null) 'output_modalities': outputModalities?.map((e) => e.toJson()).toList(),
   'instructions': ?instructions,
   if (audio != null) 'audio': audio?.toJson(),
@@ -107,9 +107,9 @@ Map<String, dynamic> toJson() { return {
   if (metadata.isPresent) 'metadata': metadata.value,
   if (prompt.isPresent) 'prompt': prompt.value?.toJson(),
   if (input != null) 'input': input?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'output_modalities', 'instructions', 'audio', 'tools', 'tool_choice', 'max_output_tokens', 'conversation', 'metadata', 'prompt', 'input'}.contains(key)); } 
-RealtimeResponseCreateParams copyWith({List<RealtimeResponseCreateParamsOutputModalities>? Function()? outputModalities, String? Function()? instructions, RealtimeResponseCreateParamsAudio? Function()? audio, List<RealtimeResponseCreateParamsTools>? Function()? tools, RealtimeResponseCreateParamsToolChoice? Function()? toolChoice, RealtimeResponseCreateParamsMaxOutputTokens? Function()? maxOutputTokens, RealtimeResponseCreateParamsConversation? Function()? conversation, Omittable<Map<String,String>?>? metadata, Omittable<Prompt?>? prompt, List<RealtimeConversationItem>? Function()? input, }) { return RealtimeResponseCreateParams(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'output_modalities', 'instructions', 'audio', 'tools', 'tool_choice', 'max_output_tokens', 'conversation', 'metadata', 'prompt', 'input'}.contains(key));}
+RealtimeResponseCreateParams copyWith({List<RealtimeResponseCreateParamsOutputModalities>? Function()? outputModalities, String? Function()? instructions, RealtimeResponseCreateParamsAudio? Function()? audio, List<RealtimeResponseCreateParamsTools>? Function()? tools, RealtimeResponseCreateParamsToolChoice? Function()? toolChoice, RealtimeResponseCreateParamsMaxOutputTokens? Function()? maxOutputTokens, RealtimeResponseCreateParamsConversation? Function()? conversation, Omittable<Map<String,String>?>? metadata, Omittable<Prompt?>? prompt, List<RealtimeConversationItem>? Function()? input, }) {return RealtimeResponseCreateParams(
   outputModalities: outputModalities != null ? outputModalities() : this.outputModalities,
   instructions: instructions != null ? instructions() : this.instructions,
   audio: audio != null ? audio() : this.audio,
@@ -120,8 +120,8 @@ RealtimeResponseCreateParams copyWith({List<RealtimeResponseCreateParamsOutputMo
   metadata: metadata ?? this.metadata,
   prompt: prompt ?? this.prompt,
   input: input != null ? input() : this.input,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeResponseCreateParams &&
           listEquals(outputModalities, other.outputModalities) &&
           instructions == other.instructions &&
@@ -132,7 +132,7 @@ RealtimeResponseCreateParams copyWith({List<RealtimeResponseCreateParamsOutputMo
           conversation == other.conversation &&
           metadata == other.metadata &&
           prompt == other.prompt &&
-          listEquals(input, other.input); } 
-@override int get hashCode { return Object.hash(Object.hashAll(outputModalities ?? const []), instructions, audio, Object.hashAll(tools ?? const []), toolChoice, maxOutputTokens, conversation, metadata, prompt, Object.hashAll(input ?? const [])); } 
-@override String toString() { return 'RealtimeResponseCreateParams(outputModalities: $outputModalities, instructions: $instructions, audio: $audio, tools: $tools, toolChoice: $toolChoice, maxOutputTokens: $maxOutputTokens, conversation: $conversation, metadata: $metadata, prompt: $prompt, input: $input)'; } 
- }
+          listEquals(input, other.input);}
+@override int get hashCode {return Object.hash(Object.hashAll(outputModalities ?? const []), instructions, audio, Object.hashAll(tools ?? const []), toolChoice, maxOutputTokens, conversation, metadata, prompt, Object.hashAll(input ?? const []));}
+@override String toString() {return 'RealtimeResponseCreateParams(outputModalities: $outputModalities, instructions: $instructions, audio: $audio, tools: $tools, toolChoice: $toolChoice, maxOutputTokens: $maxOutputTokens, conversation: $conversation, metadata: $metadata, prompt: $prompt, input: $input)';}
+}

@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'auto.dart';i
 /// 
 @immutable final class RealtimeSessionCreateResponseGaType {const RealtimeSessionCreateResponseGaType._(this.value);
 
-factory RealtimeSessionCreateResponseGaType.fromJson(String json) { return switch (json) {
+factory RealtimeSessionCreateResponseGaType.fromJson(String json) {return switch (json) {
   'realtime' => realtime,
   _ => RealtimeSessionCreateResponseGaType._(json),
-}; }
+};}
 
 static const RealtimeSessionCreateResponseGaType realtime = RealtimeSessionCreateResponseGaType._('realtime');
 
@@ -15,21 +15,21 @@ static const List<RealtimeSessionCreateResponseGaType> values = [realtime];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeSessionCreateResponseGaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeSessionCreateResponseGaType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeSessionCreateResponseGaType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeSessionCreateResponseGaType($value)';}
+}
 @immutable final class RealtimeSessionCreateResponseGaOutputModalities {const RealtimeSessionCreateResponseGaOutputModalities._(this.value);
 
-factory RealtimeSessionCreateResponseGaOutputModalities.fromJson(String json) { return switch (json) {
+factory RealtimeSessionCreateResponseGaOutputModalities.fromJson(String json) {return switch (json) {
   'text' => text,
   'audio' => audio,
   _ => RealtimeSessionCreateResponseGaOutputModalities._(json),
-}; }
+};}
 
 static const RealtimeSessionCreateResponseGaOutputModalities text = RealtimeSessionCreateResponseGaOutputModalities._('text');
 
@@ -39,20 +39,20 @@ static const List<RealtimeSessionCreateResponseGaOutputModalities> values = [tex
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeSessionCreateResponseGaOutputModalities && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeSessionCreateResponseGaOutputModalities($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeSessionCreateResponseGaOutputModalities && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeSessionCreateResponseGaOutputModalities($value)';}
+}
 @immutable final class RealtimeSessionCreateResponseGaInclude {const RealtimeSessionCreateResponseGaInclude._(this.value);
 
-factory RealtimeSessionCreateResponseGaInclude.fromJson(String json) { return switch (json) {
+factory RealtimeSessionCreateResponseGaInclude.fromJson(String json) {return switch (json) {
   'item.input_audio_transcription.logprobs' => itemInputAudioTranscriptionLogprobs,
   _ => RealtimeSessionCreateResponseGaInclude._(json),
-}; }
+};}
 
 static const RealtimeSessionCreateResponseGaInclude itemInputAudioTranscriptionLogprobs = RealtimeSessionCreateResponseGaInclude._('item.input_audio_transcription.logprobs');
 
@@ -60,20 +60,20 @@ static const List<RealtimeSessionCreateResponseGaInclude> values = [itemInputAud
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeSessionCreateResponseGaInclude && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeSessionCreateResponseGaInclude($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeSessionCreateResponseGaInclude && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeSessionCreateResponseGaInclude($value)';}
+}
 /// A new Realtime session configuration, with an ephemeral key. Default TTL
 /// for keys is one minute.
 /// 
 @immutable final class RealtimeSessionCreateResponseGa {const RealtimeSessionCreateResponseGa({required this.clientSecret, required this.type, this.outputModalities, this.model, this.instructions, this.audio, this.include, this.tracing = const Omittable.absent(), this.tools, this.toolChoice, this.maxOutputTokens, this.truncation, this.prompt = const Omittable.absent(), });
 
-factory RealtimeSessionCreateResponseGa.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateResponseGa(
+factory RealtimeSessionCreateResponseGa.fromJson(Map<String, dynamic> json) {return RealtimeSessionCreateResponseGa(
   clientSecret: RealtimeSessionCreateResponseGaClientSecret.fromJson(json['client_secret'] as Map<String, dynamic>),
   type: RealtimeSessionCreateResponseGaType.fromJson(json['type'] as String),
   outputModalities: (json['output_modalities'] as List<dynamic>?)?.map((e) => RealtimeSessionCreateResponseGaOutputModalities.fromJson(e as String)).toList(),
@@ -87,7 +87,7 @@ factory RealtimeSessionCreateResponseGa.fromJson(Map<String, dynamic> json) { re
   maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => RealtimeSessionCreateResponseGaMaxOutputTokensVariant2.fromJson(v as String),) : null,
   truncation: json['truncation'] != null ? OneOf2.parse(json['truncation'], fromA: (v) => RealtimeTruncationVariant1.fromJson(v as String), fromB: (v) => RetentionRatioTruncation.fromJson(v as Map<String, dynamic>),) : null,
   prompt: json.containsKey('prompt') ? Omittable(json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Ephemeral key returned by the API.
 final RealtimeSessionCreateResponseGaClientSecret clientSecret;
@@ -149,7 +149,7 @@ final RealtimeTruncation? truncation;
 
 final Omittable<Prompt?> prompt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_secret': clientSecret.toJson(),
   'type': type.toJson(),
   if (outputModalities != null) 'output_modalities': outputModalities?.map((e) => e.toJson()).toList(),
@@ -163,10 +163,10 @@ Map<String, dynamic> toJson() { return {
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
   if (truncation != null) 'truncation': truncation?.toJson(),
   if (prompt.isPresent) 'prompt': prompt.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_secret') &&
-      json.containsKey('type'); } 
-RealtimeSessionCreateResponseGa copyWith({RealtimeSessionCreateResponseGaClientSecret? clientSecret, RealtimeSessionCreateResponseGaType? type, List<RealtimeSessionCreateResponseGaOutputModalities>? Function()? outputModalities, RealtimeSessionCreateResponseGaModel? Function()? model, String? Function()? instructions, RealtimeSessionCreateResponseGaAudio? Function()? audio, List<RealtimeSessionCreateResponseGaInclude>? Function()? include, Omittable<RealtimeSessionCreateResponseGaTracing?>? tracing, List<RealtimeSessionCreateResponseGaTools>? Function()? tools, RealtimeSessionCreateResponseGaToolChoice? Function()? toolChoice, RealtimeSessionCreateResponseGaMaxOutputTokens? Function()? maxOutputTokens, RealtimeTruncation? Function()? truncation, Omittable<Prompt?>? prompt, }) { return RealtimeSessionCreateResponseGa(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('client_secret') &&
+      json.containsKey('type');}
+RealtimeSessionCreateResponseGa copyWith({RealtimeSessionCreateResponseGaClientSecret? clientSecret, RealtimeSessionCreateResponseGaType? type, List<RealtimeSessionCreateResponseGaOutputModalities>? Function()? outputModalities, RealtimeSessionCreateResponseGaModel? Function()? model, String? Function()? instructions, RealtimeSessionCreateResponseGaAudio? Function()? audio, List<RealtimeSessionCreateResponseGaInclude>? Function()? include, Omittable<RealtimeSessionCreateResponseGaTracing?>? tracing, List<RealtimeSessionCreateResponseGaTools>? Function()? tools, RealtimeSessionCreateResponseGaToolChoice? Function()? toolChoice, RealtimeSessionCreateResponseGaMaxOutputTokens? Function()? maxOutputTokens, RealtimeTruncation? Function()? truncation, Omittable<Prompt?>? prompt, }) {return RealtimeSessionCreateResponseGa(
   clientSecret: clientSecret ?? this.clientSecret,
   type: type ?? this.type,
   outputModalities: outputModalities != null ? outputModalities() : this.outputModalities,
@@ -180,8 +180,8 @@ RealtimeSessionCreateResponseGa copyWith({RealtimeSessionCreateResponseGaClientS
   maxOutputTokens: maxOutputTokens != null ? maxOutputTokens() : this.maxOutputTokens,
   truncation: truncation != null ? truncation() : this.truncation,
   prompt: prompt ?? this.prompt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeSessionCreateResponseGa &&
           clientSecret == other.clientSecret &&
           type == other.type &&
@@ -195,7 +195,7 @@ RealtimeSessionCreateResponseGa copyWith({RealtimeSessionCreateResponseGaClientS
           toolChoice == other.toolChoice &&
           maxOutputTokens == other.maxOutputTokens &&
           truncation == other.truncation &&
-          prompt == other.prompt; } 
-@override int get hashCode { return Object.hash(clientSecret, type, Object.hashAll(outputModalities ?? const []), model, instructions, audio, Object.hashAll(include ?? const []), tracing, Object.hashAll(tools ?? const []), toolChoice, maxOutputTokens, truncation, prompt); } 
-@override String toString() { return 'RealtimeSessionCreateResponseGa(clientSecret: $clientSecret, type: $type, outputModalities: $outputModalities, model: $model, instructions: $instructions, audio: $audio, include: $include, tracing: $tracing, tools: $tools, toolChoice: $toolChoice, maxOutputTokens: $maxOutputTokens, truncation: $truncation, prompt: $prompt)'; } 
- }
+          prompt == other.prompt;}
+@override int get hashCode {return Object.hash(clientSecret, type, Object.hashAll(outputModalities ?? const []), model, instructions, audio, Object.hashAll(include ?? const []), tracing, Object.hashAll(tools ?? const []), toolChoice, maxOutputTokens, truncation, prompt);}
+@override String toString() {return 'RealtimeSessionCreateResponseGa(clientSecret: $clientSecret, type: $type, outputModalities: $outputModalities, model: $model, instructions: $instructions, audio: $audio, include: $include, tracing: $tracing, tools: $tools, toolChoice: $toolChoice, maxOutputTokens: $maxOutputTokens, truncation: $truncation, prompt: $prompt)';}
+}

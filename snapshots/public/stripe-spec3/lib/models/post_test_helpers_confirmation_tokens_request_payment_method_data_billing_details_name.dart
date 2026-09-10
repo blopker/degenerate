@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsNameVariant2 {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsNameVariant2._(this.value);
 
-factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsNameVariant2.fromJson(String json) { return switch (json) {
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsNameVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsNameVariant2._(json),
-}; }
+};}
 
 static const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsNameVariant2 $empty = PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsNameVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostTestHelpersConfirmationTokensRequestPaymentMethodDataBilli
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsNameVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsNameVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsNameVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsNameVariant2($value)';}
+}
 
 @immutable
 final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsName {

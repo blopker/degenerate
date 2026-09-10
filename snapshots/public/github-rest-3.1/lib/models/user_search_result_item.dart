@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'search_result_text_matches2.dart';/// User Search Result Item
 @immutable final class UserSearchResultItem {const UserSearchResultItem({required this.type, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.receivedEventsUrl, required this.login, required this.score, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.eventsUrl, required this.siteAdmin, this.publicGists, this.followers, this.following, this.userViewType, this.updatedAt, this.name = const Omittable.absent(), this.bio = const Omittable.absent(), this.email = const Omittable.absent(), this.location = const Omittable.absent(), this.publicRepos, this.hireable = const Omittable.absent(), this.textMatches, this.blog = const Omittable.absent(), this.company = const Omittable.absent(), this.suspendedAt = const Omittable.absent(), this.createdAt, });
 
-factory UserSearchResultItem.fromJson(Map<String, dynamic> json) { return UserSearchResultItem(
+factory UserSearchResultItem.fromJson(Map<String, dynamic> json) {return UserSearchResultItem(
   login: json['login'] as String,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -39,7 +39,7 @@ factory UserSearchResultItem.fromJson(Map<String, dynamic> json) { return UserSe
   company: json.containsKey('company') ? Omittable(json['company'] as String?) : const Omittable.absent(),
   suspendedAt: json.containsKey('suspended_at') ? Omittable(json['suspended_at'] != null ? DateTime.parse(json['suspended_at'] as String) : null) : const Omittable.absent(),
   userViewType: json['user_view_type'] as String?,
-); }
+);}
 
 final String login;
 
@@ -111,7 +111,7 @@ final Omittable<DateTime?> suspendedAt;
 
 final String? userViewType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'login': login,
   'id': id,
   'node_id': nodeId,
@@ -147,8 +147,8 @@ Map<String, dynamic> toJson() { return {
   if (company.isPresent) 'company': company.value,
   if (suspendedAt.isPresent) 'suspended_at': suspendedAt.value?.toIso8601String(),
   'user_view_type': ?userViewType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('login') && json['login'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String &&
@@ -166,8 +166,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('gists_url') && json['gists_url'] is String &&
       json.containsKey('starred_url') && json['starred_url'] is String &&
       json.containsKey('events_url') && json['events_url'] is String &&
-      json.containsKey('site_admin') && json['site_admin'] is bool; } 
-UserSearchResultItem copyWith({String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, Uri? receivedEventsUrl, String? type, double? score, String? followingUrl, String? gistsUrl, String? starredUrl, String? eventsUrl, int? Function()? publicRepos, int? Function()? publicGists, int? Function()? followers, int? Function()? following, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Omittable<String?>? name, Omittable<String?>? bio, Omittable<String?>? email, Omittable<String?>? location, bool? siteAdmin, Omittable<bool?>? hireable, List<SearchResultTextMatches2>? Function()? textMatches, Omittable<String?>? blog, Omittable<String?>? company, Omittable<DateTime?>? suspendedAt, String? Function()? userViewType, }) { return UserSearchResultItem(
+      json.containsKey('site_admin') && json['site_admin'] is bool;}
+UserSearchResultItem copyWith({String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, Uri? receivedEventsUrl, String? type, double? score, String? followingUrl, String? gistsUrl, String? starredUrl, String? eventsUrl, int? Function()? publicRepos, int? Function()? publicGists, int? Function()? followers, int? Function()? following, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Omittable<String?>? name, Omittable<String?>? bio, Omittable<String?>? email, Omittable<String?>? location, bool? siteAdmin, Omittable<bool?>? hireable, List<SearchResultTextMatches2>? Function()? textMatches, Omittable<String?>? blog, Omittable<String?>? company, Omittable<DateTime?>? suspendedAt, String? Function()? userViewType, }) {return UserSearchResultItem(
   login: login ?? this.login,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -203,8 +203,8 @@ UserSearchResultItem copyWith({String? login, int? id, String? nodeId, Uri? avat
   company: company ?? this.company,
   suspendedAt: suspendedAt ?? this.suspendedAt,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UserSearchResultItem &&
           login == other.login &&
           id == other.id &&
@@ -240,7 +240,7 @@ UserSearchResultItem copyWith({String? login, int? id, String? nodeId, Uri? avat
           blog == other.blog &&
           company == other.company &&
           suspendedAt == other.suspendedAt &&
-          userViewType == other.userViewType; } 
-@override int get hashCode { return Object.hashAll([login, id, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, subscriptionsUrl, organizationsUrl, reposUrl, receivedEventsUrl, type, score, followingUrl, gistsUrl, starredUrl, eventsUrl, publicRepos, publicGists, followers, following, createdAt, updatedAt, name, bio, email, location, siteAdmin, hireable, Object.hashAll(textMatches ?? const []), blog, company, suspendedAt, userViewType]); } 
-@override String toString() { return 'UserSearchResultItem(login: $login, id: $id, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, score: $score, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, eventsUrl: $eventsUrl, publicRepos: $publicRepos, publicGists: $publicGists, followers: $followers, following: $following, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, bio: $bio, email: $email, location: $location, siteAdmin: $siteAdmin, hireable: $hireable, textMatches: $textMatches, blog: $blog, company: $company, suspendedAt: $suspendedAt, userViewType: $userViewType)'; } 
- }
+          userViewType == other.userViewType;}
+@override int get hashCode {return Object.hashAll([login, id, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, subscriptionsUrl, organizationsUrl, reposUrl, receivedEventsUrl, type, score, followingUrl, gistsUrl, starredUrl, eventsUrl, publicRepos, publicGists, followers, following, createdAt, updatedAt, name, bio, email, location, siteAdmin, hireable, Object.hashAll(textMatches ?? const []), blog, company, suspendedAt, userViewType]);}
+@override String toString() {return 'UserSearchResultItem(login: $login, id: $id, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, score: $score, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, eventsUrl: $eventsUrl, publicRepos: $publicRepos, publicGists: $publicGists, followers: $followers, following: $following, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, bio: $bio, email: $email, location: $location, siteAdmin: $siteAdmin, hireable: $hireable, textMatches: $textMatches, blog: $blog, company: $company, suspendedAt: $suspendedAt, userViewType: $userViewType)';}
+}

@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpDatasetsCreateRequest {const DlpDatasetsCreateRequest({required this.name, this.caseSensitive, this.description = const Omittable.absent(), this.encodingVersion, this.secret, });
 
-factory DlpDatasetsCreateRequest.fromJson(Map<String, dynamic> json) { return DlpDatasetsCreateRequest(
+factory DlpDatasetsCreateRequest.fromJson(Map<String, dynamic> json) {return DlpDatasetsCreateRequest(
   caseSensitive: json['case_sensitive'] as bool?,
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   encodingVersion: json['encoding_version'] != null ? (json['encoding_version'] as num).toInt() : null,
   name: json['name'] as String,
   secret: json['secret'] as bool?,
-); }
+);}
 
 /// Only applies to custom word lists.
 /// Determines if the words should be matched in a case-sensitive manner
@@ -35,28 +35,28 @@ final String name;
 /// If false, the response has no secret and the dataset is uploaded in plaintext.
 final bool? secret;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'case_sensitive': ?caseSensitive,
   if (description.isPresent) 'description': description.value,
   'encoding_version': ?encodingVersion,
   'name': name,
   'secret': ?secret,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-DlpDatasetsCreateRequest copyWith({bool? Function()? caseSensitive, Omittable<String?>? description, int? Function()? encodingVersion, String? name, bool? Function()? secret, }) { return DlpDatasetsCreateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+DlpDatasetsCreateRequest copyWith({bool? Function()? caseSensitive, Omittable<String?>? description, int? Function()? encodingVersion, String? name, bool? Function()? secret, }) {return DlpDatasetsCreateRequest(
   caseSensitive: caseSensitive != null ? caseSensitive() : this.caseSensitive,
   description: description ?? this.description,
   encodingVersion: encodingVersion != null ? encodingVersion() : this.encodingVersion,
   name: name ?? this.name,
   secret: secret != null ? secret() : this.secret,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpDatasetsCreateRequest &&
           caseSensitive == other.caseSensitive &&
           description == other.description &&
           encodingVersion == other.encodingVersion &&
           name == other.name &&
-          secret == other.secret; } 
-@override int get hashCode { return Object.hash(caseSensitive, description, encodingVersion, name, secret); } 
-@override String toString() { return 'DlpDatasetsCreateRequest(caseSensitive: $caseSensitive, description: $description, encodingVersion: $encodingVersion, name: $name, secret: $secret)'; } 
- }
+          secret == other.secret;}
+@override int get hashCode {return Object.hash(caseSensitive, description, encodingVersion, name, secret);}
+@override String toString() {return 'DlpDatasetsCreateRequest(caseSensitive: $caseSensitive, description: $description, encodingVersion: $encodingVersion, name: $name, secret: $secret)';}
+}

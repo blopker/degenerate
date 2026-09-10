@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_edited_changes_base_ref.dart';import 'webhook_pull_request_edited_changes_base_sha.dart';@immutable final class WebhookPullRequestEditedChangesBase {const WebhookPullRequestEditedChangesBase({required this.ref, required this.sha, });
 
-factory WebhookPullRequestEditedChangesBase.fromJson(Map<String, dynamic> json) { return WebhookPullRequestEditedChangesBase(
+factory WebhookPullRequestEditedChangesBase.fromJson(Map<String, dynamic> json) {return WebhookPullRequestEditedChangesBase(
   ref: WebhookPullRequestEditedChangesBaseRef.fromJson(json['ref'] as Map<String, dynamic>),
   sha: WebhookPullRequestEditedChangesBaseSha.fromJson(json['sha'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookPullRequestEditedChangesBaseRef ref;
 
 final WebhookPullRequestEditedChangesBaseSha sha;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ref': ref.toJson(),
   'sha': sha.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref') &&
-      json.containsKey('sha'); } 
-WebhookPullRequestEditedChangesBase copyWith({WebhookPullRequestEditedChangesBaseRef? ref, WebhookPullRequestEditedChangesBaseSha? sha, }) { return WebhookPullRequestEditedChangesBase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ref') &&
+      json.containsKey('sha');}
+WebhookPullRequestEditedChangesBase copyWith({WebhookPullRequestEditedChangesBaseRef? ref, WebhookPullRequestEditedChangesBaseSha? sha, }) {return WebhookPullRequestEditedChangesBase(
   ref: ref ?? this.ref,
   sha: sha ?? this.sha,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestEditedChangesBase &&
           ref == other.ref &&
-          sha == other.sha; } 
-@override int get hashCode { return Object.hash(ref, sha); } 
-@override String toString() { return 'WebhookPullRequestEditedChangesBase(ref: $ref, sha: $sha)'; } 
- }
+          sha == other.sha;}
+@override int get hashCode {return Object.hash(ref, sha);}
+@override String toString() {return 'WebhookPullRequestEditedChangesBase(ref: $ref, sha: $sha)';}
+}

@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryWebhooksTemplateRepositoryPermissions {const RepositoryWebhooksTemplateRepositoryPermissions({this.admin, this.maintain, this.push, this.triage, this.pull, });
 
-factory RepositoryWebhooksTemplateRepositoryPermissions.fromJson(Map<String, dynamic> json) { return RepositoryWebhooksTemplateRepositoryPermissions(
+factory RepositoryWebhooksTemplateRepositoryPermissions.fromJson(Map<String, dynamic> json) {return RepositoryWebhooksTemplateRepositoryPermissions(
   admin: json['admin'] as bool?,
   maintain: json['maintain'] as bool?,
   push: json['push'] as bool?,
   triage: json['triage'] as bool?,
   pull: json['pull'] as bool?,
-); }
+);}
 
 final bool? admin;
 
@@ -20,28 +20,28 @@ final bool? triage;
 
 final bool? pull;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'admin': ?admin,
   'maintain': ?maintain,
   'push': ?push,
   'triage': ?triage,
   'pull': ?pull,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'admin', 'maintain', 'push', 'triage', 'pull'}.contains(key)); } 
-RepositoryWebhooksTemplateRepositoryPermissions copyWith({bool? Function()? admin, bool? Function()? maintain, bool? Function()? push, bool? Function()? triage, bool? Function()? pull, }) { return RepositoryWebhooksTemplateRepositoryPermissions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'admin', 'maintain', 'push', 'triage', 'pull'}.contains(key));}
+RepositoryWebhooksTemplateRepositoryPermissions copyWith({bool? Function()? admin, bool? Function()? maintain, bool? Function()? push, bool? Function()? triage, bool? Function()? pull, }) {return RepositoryWebhooksTemplateRepositoryPermissions(
   admin: admin != null ? admin() : this.admin,
   maintain: maintain != null ? maintain() : this.maintain,
   push: push != null ? push() : this.push,
   triage: triage != null ? triage() : this.triage,
   pull: pull != null ? pull() : this.pull,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepositoryWebhooksTemplateRepositoryPermissions &&
           admin == other.admin &&
           maintain == other.maintain &&
           push == other.push &&
           triage == other.triage &&
-          pull == other.pull; } 
-@override int get hashCode { return Object.hash(admin, maintain, push, triage, pull); } 
-@override String toString() { return 'RepositoryWebhooksTemplateRepositoryPermissions(admin: $admin, maintain: $maintain, push: $push, triage: $triage, pull: $pull)'; } 
- }
+          pull == other.pull;}
+@override int get hashCode {return Object.hash(admin, maintain, push, triage, pull);}
+@override String toString() {return 'RepositoryWebhooksTemplateRepositoryPermissions(admin: $admin, maintain: $maintain, push: $push, triage: $triage, pull: $pull)';}
+}

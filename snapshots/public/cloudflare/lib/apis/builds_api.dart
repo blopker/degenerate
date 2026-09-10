@@ -13,7 +13,7 @@ final class BuildsApi with ApiExecutor {const BuildsApi(this.apiConfig);
 /// Retrieve builds for specific version IDs
 ///
 /// `GET /accounts/{account_id}/builds/builds`
-Future<ApiResult<BuildsBuildsByVersionResponse, Never>> getBuildsByVersionIds({required BuildsAccountId accountId, required BuildsVersionIds versionIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BuildsBuildsByVersionResponse, Never>> getBuildsByVersionIds({required BuildsAccountId accountId, required BuildsVersionIds versionIds, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['version_ids'] = versionIds.toString();
 
@@ -35,13 +35,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return BuildsBuildsByVersionResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Get build by UUID
 ///
 /// Retrieve detailed information about a specific build
 ///
 /// `GET /accounts/{account_id}/builds/builds/{build_uuid}`
-Future<ApiResult<BuildsBuildResponse, BuildsErrorResponse>> getBuildByUuid({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BuildsBuildResponse, BuildsErrorResponse>> getBuildByUuid({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -67,13 +67,13 @@ return null;
 
   },
 );
- } 
+}
 /// Cancel build
 ///
 /// Cancel a running or queued build
 ///
 /// `PUT /accounts/{account_id}/builds/builds/{build_uuid}/cancel`
-Future<ApiResult<BuildsCanceledBuildResponse, BuildsErrorResponse>> cancelBuildByUuid({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BuildsCanceledBuildResponse, BuildsErrorResponse>> cancelBuildByUuid({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -99,13 +99,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get build logs
 ///
 /// Retrieve logs for a specific build with cursor-based pagination
 ///
 /// `GET /accounts/{account_id}/builds/builds/{build_uuid}/logs`
-Future<ApiResult<BuildsBuildLogsResponse, BuildsErrorResponse>> getBuildLogs({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, BuildsCursor? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BuildsBuildLogsResponse, BuildsErrorResponse>> getBuildLogs({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, BuildsCursor? cursor, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cursor != null) {
   queryParameters['cursor'] = cursor.toString();
@@ -139,13 +139,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get latest builds by script IDs
 ///
 /// Retrieve the most recent builds for multiple worker scripts
 ///
 /// `GET /accounts/{account_id}/builds/builds/latest`
-Future<ApiResult<BuildsLatestBuildsResponse, Never>> getLatestBuildsByScripts({required BuildsAccountId accountId, required BuildsExternalScriptIds externalScriptIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BuildsLatestBuildsResponse, Never>> getLatestBuildsByScripts({required BuildsAccountId accountId, required BuildsExternalScriptIds externalScriptIds, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['external_script_ids'] = externalScriptIds.toString();
 
@@ -167,5 +167,5 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return BuildsLatestBuildsResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

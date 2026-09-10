@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimeMcpToolExecutionErrorType {const RealtimeMcpToolExecutionErrorType._(this.value);
 
-factory RealtimeMcpToolExecutionErrorType.fromJson(String json) { return switch (json) {
+factory RealtimeMcpToolExecutionErrorType.fromJson(String json) {return switch (json) {
   'tool_execution_error' => toolExecutionError,
   _ => RealtimeMcpToolExecutionErrorType._(json),
-}; }
+};}
 
 static const RealtimeMcpToolExecutionErrorType toolExecutionError = RealtimeMcpToolExecutionErrorType._('tool_execution_error');
 
@@ -13,39 +13,39 @@ static const List<RealtimeMcpToolExecutionErrorType> values = [toolExecutionErro
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeMcpToolExecutionErrorType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeMcpToolExecutionErrorType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeMcpToolExecutionErrorType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeMcpToolExecutionErrorType($value)';}
+}
 @immutable final class RealtimeMcpToolExecutionError {const RealtimeMcpToolExecutionError({required this.type, required this.message, });
 
-factory RealtimeMcpToolExecutionError.fromJson(Map<String, dynamic> json) { return RealtimeMcpToolExecutionError(
+factory RealtimeMcpToolExecutionError.fromJson(Map<String, dynamic> json) {return RealtimeMcpToolExecutionError(
   type: RealtimeMcpToolExecutionErrorType.fromJson(json['type'] as String),
   message: json['message'] as String,
-); }
+);}
 
 final RealtimeMcpToolExecutionErrorType type;
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('message') && json['message'] is String; } 
-RealtimeMcpToolExecutionError copyWith({RealtimeMcpToolExecutionErrorType? type, String? message, }) { return RealtimeMcpToolExecutionError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('message') && json['message'] is String;}
+RealtimeMcpToolExecutionError copyWith({RealtimeMcpToolExecutionErrorType? type, String? message, }) {return RealtimeMcpToolExecutionError(
   type: type ?? this.type,
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeMcpToolExecutionError &&
           type == other.type &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(type, message); } 
-@override String toString() { return 'RealtimeMcpToolExecutionError(type: $type, message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return Object.hash(type, message);}
+@override String toString() {return 'RealtimeMcpToolExecutionError(type: $type, message: $message)';}
+}

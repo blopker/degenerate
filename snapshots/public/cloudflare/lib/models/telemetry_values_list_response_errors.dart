@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TelemetryValuesListResponseErrors {const TelemetryValuesListResponseErrors({required this.message});
 
-factory TelemetryValuesListResponseErrors.fromJson(Map<String, dynamic> json) { return TelemetryValuesListResponseErrors(
+factory TelemetryValuesListResponseErrors.fromJson(Map<String, dynamic> json) {return TelemetryValuesListResponseErrors(
   message: json['message'] as String,
-); }
+);}
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-TelemetryValuesListResponseErrors copyWith({String? message}) { return TelemetryValuesListResponseErrors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+TelemetryValuesListResponseErrors copyWith({String? message}) {return TelemetryValuesListResponseErrors(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TelemetryValuesListResponseErrors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'TelemetryValuesListResponseErrors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'TelemetryValuesListResponseErrors(message: $message)';}
+}

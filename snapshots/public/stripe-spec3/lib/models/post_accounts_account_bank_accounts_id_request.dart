@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_bank_accounts_id_request_documents.dart';import 'post_accounts_account_bank_accounts_id_request_metadata.dart';/// The type of entity that holds the account. This can be either `individual` or `company`.
 @immutable final class PostAccountsAccountBankAccountsIdRequestAccountHolderType {const PostAccountsAccountBankAccountsIdRequestAccountHolderType._(this.value);
 
-factory PostAccountsAccountBankAccountsIdRequestAccountHolderType.fromJson(String json) { return switch (json) {
+factory PostAccountsAccountBankAccountsIdRequestAccountHolderType.fromJson(String json) {return switch (json) {
   '' => $empty,
   'company' => company,
   'individual' => individual,
   _ => PostAccountsAccountBankAccountsIdRequestAccountHolderType._(json),
-}; }
+};}
 
 static const PostAccountsAccountBankAccountsIdRequestAccountHolderType $empty = PostAccountsAccountBankAccountsIdRequestAccountHolderType._('');
 
@@ -20,24 +20,24 @@ static const List<PostAccountsAccountBankAccountsIdRequestAccountHolderType> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsAccountBankAccountsIdRequestAccountHolderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsAccountBankAccountsIdRequestAccountHolderType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountsAccountBankAccountsIdRequestAccountHolderType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountsAccountBankAccountsIdRequestAccountHolderType($value)';}
+}
 /// The bank account type. This can only be `checking` or `savings` in most countries. In Japan, this can only be `futsu` or `toza`.
 @immutable final class PostAccountsAccountBankAccountsIdRequestAccountType {const PostAccountsAccountBankAccountsIdRequestAccountType._(this.value);
 
-factory PostAccountsAccountBankAccountsIdRequestAccountType.fromJson(String json) { return switch (json) {
+factory PostAccountsAccountBankAccountsIdRequestAccountType.fromJson(String json) {return switch (json) {
   'checking' => checking,
   'futsu' => futsu,
   'savings' => savings,
   'toza' => toza,
   _ => PostAccountsAccountBankAccountsIdRequestAccountType._(json),
-}; }
+};}
 
 static const PostAccountsAccountBankAccountsIdRequestAccountType checking = PostAccountsAccountBankAccountsIdRequestAccountType._('checking');
 
@@ -51,17 +51,17 @@ static const List<PostAccountsAccountBankAccountsIdRequestAccountType> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsAccountBankAccountsIdRequestAccountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsAccountBankAccountsIdRequestAccountType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountsAccountBankAccountsIdRequestAccountType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountsAccountBankAccountsIdRequestAccountType($value)';}
+}
 @immutable final class PostAccountsAccountBankAccountsIdRequest {const PostAccountsAccountBankAccountsIdRequest({this.accountHolderName, this.accountHolderType, this.accountType, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.defaultForCurrency, this.documents, this.expMonth, this.expYear, this.expand, this.metadata, this.name, });
 
-factory PostAccountsAccountBankAccountsIdRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountBankAccountsIdRequest(
+factory PostAccountsAccountBankAccountsIdRequest.fromJson(Map<String, dynamic> json) {return PostAccountsAccountBankAccountsIdRequest(
   accountHolderName: json['account_holder_name'] as String?,
   accountHolderType: json['account_holder_type'] != null ? PostAccountsAccountBankAccountsIdRequestAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
   accountType: json['account_type'] != null ? PostAccountsAccountBankAccountsIdRequestAccountType.fromJson(json['account_type'] as String) : null,
@@ -78,7 +78,7 @@ factory PostAccountsAccountBankAccountsIdRequest.fromJson(Map<String, dynamic> j
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: json['metadata'] != null ? PostAccountsAccountBankAccountsIdRequestMetadata.fromJson(json['metadata']) : null,
   name: json['name'] as String?,
-); }
+);}
 
 /// The name of the person or business that owns the bank account.
 final String? accountHolderName;
@@ -128,7 +128,7 @@ final PostAccountsAccountBankAccountsIdRequestMetadata? metadata;
 /// Cardholder name.
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_holder_name': ?accountHolderName,
   if (accountHolderType != null) 'account_holder_type': accountHolderType?.toJson(),
   if (accountType != null) 'account_type': accountType?.toJson(),
@@ -145,9 +145,9 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
   if (metadata != null) 'metadata': metadata?.toJson(),
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_name', 'account_holder_type', 'account_type', 'address_city', 'address_country', 'address_line1', 'address_line2', 'address_state', 'address_zip', 'default_for_currency', 'documents', 'exp_month', 'exp_year', 'expand', 'metadata', 'name'}.contains(key)); } 
-PostAccountsAccountBankAccountsIdRequest copyWith({String? Function()? accountHolderName, PostAccountsAccountBankAccountsIdRequestAccountHolderType? Function()? accountHolderType, PostAccountsAccountBankAccountsIdRequestAccountType? Function()? accountType, String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, bool? Function()? defaultForCurrency, PostAccountsAccountBankAccountsIdRequestDocuments? Function()? documents, String? Function()? expMonth, String? Function()? expYear, List<String>? Function()? expand, PostAccountsAccountBankAccountsIdRequestMetadata? Function()? metadata, String? Function()? name, }) { return PostAccountsAccountBankAccountsIdRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_holder_name', 'account_holder_type', 'account_type', 'address_city', 'address_country', 'address_line1', 'address_line2', 'address_state', 'address_zip', 'default_for_currency', 'documents', 'exp_month', 'exp_year', 'expand', 'metadata', 'name'}.contains(key));}
+PostAccountsAccountBankAccountsIdRequest copyWith({String? Function()? accountHolderName, PostAccountsAccountBankAccountsIdRequestAccountHolderType? Function()? accountHolderType, PostAccountsAccountBankAccountsIdRequestAccountType? Function()? accountType, String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, bool? Function()? defaultForCurrency, PostAccountsAccountBankAccountsIdRequestDocuments? Function()? documents, String? Function()? expMonth, String? Function()? expYear, List<String>? Function()? expand, PostAccountsAccountBankAccountsIdRequestMetadata? Function()? metadata, String? Function()? name, }) {return PostAccountsAccountBankAccountsIdRequest(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountType: accountType != null ? accountType() : this.accountType,
@@ -164,8 +164,8 @@ PostAccountsAccountBankAccountsIdRequest copyWith({String? Function()? accountHo
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   name: name != null ? name() : this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountBankAccountsIdRequest &&
           accountHolderName == other.accountHolderName &&
           accountHolderType == other.accountHolderType &&
@@ -182,7 +182,7 @@ PostAccountsAccountBankAccountsIdRequest copyWith({String? Function()? accountHo
           expYear == other.expYear &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(accountHolderName, accountHolderType, accountType, addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, defaultForCurrency, documents, expMonth, expYear, Object.hashAll(expand ?? const []), metadata, name); } 
-@override String toString() { return 'PostAccountsAccountBankAccountsIdRequest(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountType: $accountType, addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, defaultForCurrency: $defaultForCurrency, documents: $documents, expMonth: $expMonth, expYear: $expYear, expand: $expand, metadata: $metadata, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(accountHolderName, accountHolderType, accountType, addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, defaultForCurrency, documents, expMonth, expYear, Object.hashAll(expand ?? const []), metadata, name);}
+@override String toString() {return 'PostAccountsAccountBankAccountsIdRequest(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountType: $accountType, addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, defaultForCurrency: $defaultForCurrency, documents: $documents, expMonth: $expMonth, expYear: $expYear, expand: $expand, metadata: $metadata, name: $name)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_payment_link_request_after_completion.dart';import 'post_payment_links_payment_link_request_automatic_tax.dart';import 'post_payment_links_payment_link_request_custom_fields.dart';import 'post_payment_links_payment_link_request_custom_text.dart';import 'post_payment_links_payment_link_request_inactive_message.dart';import 'post_payment_links_payment_link_request_invoice_creation.dart';import 'post_payment_links_payment_link_request_line_items.dart';import 'post_payment_links_payment_link_request_name_collection.dart';import 'post_payment_links_payment_link_request_optional_items.dart';import 'post_payment_links_payment_link_request_payment_intent_data.dart';import 'post_payment_links_payment_link_request_payment_method_types.dart';import 'post_payment_links_payment_link_request_phone_number_collection.dart';import 'post_payment_links_payment_link_request_restrictions.dart';import 'post_payment_links_payment_link_request_shipping_address_collection.dart';import 'post_payment_links_payment_link_request_subscription_data.dart';import 'post_payment_links_payment_link_request_tax_id_collection.dart';/// Configuration for collecting the customer's billing address. Defaults to `auto`.
 @immutable final class PostPaymentLinksPaymentLinkRequestBillingAddressCollection {const PostPaymentLinksPaymentLinkRequestBillingAddressCollection._(this.value);
 
-factory PostPaymentLinksPaymentLinkRequestBillingAddressCollection.fromJson(String json) { return switch (json) {
+factory PostPaymentLinksPaymentLinkRequestBillingAddressCollection.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'required' => $required,
   _ => PostPaymentLinksPaymentLinkRequestBillingAddressCollection._(json),
-}; }
+};}
 
 static const PostPaymentLinksPaymentLinkRequestBillingAddressCollection auto = PostPaymentLinksPaymentLinkRequestBillingAddressCollection._('auto');
 
@@ -17,22 +17,22 @@ static const List<PostPaymentLinksPaymentLinkRequestBillingAddressCollection> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentLinksPaymentLinkRequestBillingAddressCollection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequestBillingAddressCollection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentLinksPaymentLinkRequestBillingAddressCollection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentLinksPaymentLinkRequestBillingAddressCollection($value)';}
+}
 /// Configures whether [checkout sessions](https://docs.stripe.com/api/checkout/sessions) created by this payment link create a [Customer](https://docs.stripe.com/api/customers).
 @immutable final class PostPaymentLinksPaymentLinkRequestCustomerCreation {const PostPaymentLinksPaymentLinkRequestCustomerCreation._(this.value);
 
-factory PostPaymentLinksPaymentLinkRequestCustomerCreation.fromJson(String json) { return switch (json) {
+factory PostPaymentLinksPaymentLinkRequestCustomerCreation.fromJson(String json) {return switch (json) {
   'always' => always,
   'if_required' => ifRequired,
   _ => PostPaymentLinksPaymentLinkRequestCustomerCreation._(json),
-}; }
+};}
 
 static const PostPaymentLinksPaymentLinkRequestCustomerCreation always = PostPaymentLinksPaymentLinkRequestCustomerCreation._('always');
 
@@ -42,14 +42,14 @@ static const List<PostPaymentLinksPaymentLinkRequestCustomerCreation> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentLinksPaymentLinkRequestCustomerCreation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequestCustomerCreation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentLinksPaymentLinkRequestCustomerCreation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentLinksPaymentLinkRequestCustomerCreation($value)';}
+}
 /// Specify whether Checkout should collect a payment method. When set to `if_required`, Checkout will not collect a payment method when the total due for the session is 0.This may occur if the Checkout Session includes a free trial or a discount.
 /// 
 /// Can only be set in `subscription` mode. Defaults to `always`.
@@ -57,11 +57,11 @@ bool get isUnknown { return !values.contains(this); }
 /// If you'd like information on how to collect a payment method outside of Checkout, read the guide on [configuring subscriptions with a free trial](https://docs.stripe.com/payments/checkout/free-trials).
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodCollection {const PostPaymentLinksPaymentLinkRequestPaymentMethodCollection._(this.value);
 
-factory PostPaymentLinksPaymentLinkRequestPaymentMethodCollection.fromJson(String json) { return switch (json) {
+factory PostPaymentLinksPaymentLinkRequestPaymentMethodCollection.fromJson(String json) {return switch (json) {
   'always' => always,
   'if_required' => ifRequired,
   _ => PostPaymentLinksPaymentLinkRequestPaymentMethodCollection._(json),
-}; }
+};}
 
 static const PostPaymentLinksPaymentLinkRequestPaymentMethodCollection always = PostPaymentLinksPaymentLinkRequestPaymentMethodCollection._('always');
 
@@ -71,25 +71,25 @@ static const List<PostPaymentLinksPaymentLinkRequestPaymentMethodCollection> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentLinksPaymentLinkRequestPaymentMethodCollection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequestPaymentMethodCollection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentLinksPaymentLinkRequestPaymentMethodCollection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentLinksPaymentLinkRequestPaymentMethodCollection($value)';}
+}
 /// Describes the type of transaction being performed in order to customize relevant text on the page, such as the submit button. Changing this value will also affect the hostname in the [url](https://docs.stripe.com/api/payment_links/payment_links/object#url) property (example: `donate.stripe.com`).
 @immutable final class PostPaymentLinksPaymentLinkRequestSubmitType {const PostPaymentLinksPaymentLinkRequestSubmitType._(this.value);
 
-factory PostPaymentLinksPaymentLinkRequestSubmitType.fromJson(String json) { return switch (json) {
+factory PostPaymentLinksPaymentLinkRequestSubmitType.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'book' => book,
   'donate' => donate,
   'pay' => pay,
   'subscribe' => subscribe,
   _ => PostPaymentLinksPaymentLinkRequestSubmitType._(json),
-}; }
+};}
 
 static const PostPaymentLinksPaymentLinkRequestSubmitType auto = PostPaymentLinksPaymentLinkRequestSubmitType._('auto');
 
@@ -105,17 +105,17 @@ static const List<PostPaymentLinksPaymentLinkRequestSubmitType> values = [auto, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentLinksPaymentLinkRequestSubmitType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequestSubmitType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentLinksPaymentLinkRequestSubmitType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentLinksPaymentLinkRequestSubmitType($value)';}
+}
 @immutable final class PostPaymentLinksPaymentLinkRequest {const PostPaymentLinksPaymentLinkRequest({this.active, this.afterCompletion, this.allowPromotionCodes, this.automaticTax, this.billingAddressCollection, this.customFields, this.customText, this.customerCreation, this.expand, this.inactiveMessage, this.invoiceCreation, this.lineItems, this.metadata, this.nameCollection, this.optionalItems, this.paymentIntentData, this.paymentMethodCollection, this.paymentMethodTypes, this.phoneNumberCollection, this.restrictions, this.shippingAddressCollection, this.submitType, this.subscriptionData, this.taxIdCollection, });
 
-factory PostPaymentLinksPaymentLinkRequest.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequest(
+factory PostPaymentLinksPaymentLinkRequest.fromJson(Map<String, dynamic> json) {return PostPaymentLinksPaymentLinkRequest(
   active: json['active'] as bool?,
   afterCompletion: json['after_completion'] != null ? PostPaymentLinksPaymentLinkRequestAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>) : null,
   allowPromotionCodes: json['allow_promotion_codes'] as bool?,
@@ -140,7 +140,7 @@ factory PostPaymentLinksPaymentLinkRequest.fromJson(Map<String, dynamic> json) {
   submitType: json['submit_type'] != null ? PostPaymentLinksPaymentLinkRequestSubmitType.fromJson(json['submit_type'] as String) : null,
   subscriptionData: json['subscription_data'] != null ? PostPaymentLinksPaymentLinkRequestSubscriptionData.fromJson(json['subscription_data'] as Map<String, dynamic>) : null,
   taxIdCollection: json['tax_id_collection'] != null ? PostPaymentLinksPaymentLinkRequestTaxIdCollection.fromJson(json['tax_id_collection'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Whether the payment link's `url` is active. If `false`, customers visiting the URL will be shown a page saying that the link has been deactivated.
 final bool? active;
@@ -222,7 +222,7 @@ final PostPaymentLinksPaymentLinkRequestSubscriptionData? subscriptionData;
 /// Controls tax ID collection during checkout.
 final PostPaymentLinksPaymentLinkRequestTaxIdCollection? taxIdCollection;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   if (afterCompletion != null) 'after_completion': afterCompletion?.toJson(),
   'allow_promotion_codes': ?allowPromotionCodes,
@@ -247,9 +247,9 @@ Map<String, dynamic> toJson() { return {
   if (submitType != null) 'submit_type': submitType?.toJson(),
   if (subscriptionData != null) 'subscription_data': subscriptionData?.toJson(),
   if (taxIdCollection != null) 'tax_id_collection': taxIdCollection?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'after_completion', 'allow_promotion_codes', 'automatic_tax', 'billing_address_collection', 'custom_fields', 'custom_text', 'customer_creation', 'expand', 'inactive_message', 'invoice_creation', 'line_items', 'metadata', 'name_collection', 'optional_items', 'payment_intent_data', 'payment_method_collection', 'payment_method_types', 'phone_number_collection', 'restrictions', 'shipping_address_collection', 'submit_type', 'subscription_data', 'tax_id_collection'}.contains(key)); } 
-PostPaymentLinksPaymentLinkRequest copyWith({bool? Function()? active, PostPaymentLinksPaymentLinkRequestAfterCompletion? Function()? afterCompletion, bool? Function()? allowPromotionCodes, PostPaymentLinksPaymentLinkRequestAutomaticTax? Function()? automaticTax, PostPaymentLinksPaymentLinkRequestBillingAddressCollection? Function()? billingAddressCollection, PostPaymentLinksPaymentLinkRequestCustomFields? Function()? customFields, PostPaymentLinksPaymentLinkRequestCustomText? Function()? customText, PostPaymentLinksPaymentLinkRequestCustomerCreation? Function()? customerCreation, List<String>? Function()? expand, PostPaymentLinksPaymentLinkRequestInactiveMessage? Function()? inactiveMessage, PostPaymentLinksPaymentLinkRequestInvoiceCreation? Function()? invoiceCreation, List<PostPaymentLinksPaymentLinkRequestLineItems>? Function()? lineItems, Map<String, String>? Function()? metadata, PostPaymentLinksPaymentLinkRequestNameCollection? Function()? nameCollection, PostPaymentLinksPaymentLinkRequestOptionalItems? Function()? optionalItems, PostPaymentLinksPaymentLinkRequestPaymentIntentData? Function()? paymentIntentData, PostPaymentLinksPaymentLinkRequestPaymentMethodCollection? Function()? paymentMethodCollection, PostPaymentLinksPaymentLinkRequestPaymentMethodTypes? Function()? paymentMethodTypes, PostPaymentLinksPaymentLinkRequestPhoneNumberCollection? Function()? phoneNumberCollection, PostPaymentLinksPaymentLinkRequestRestrictions? Function()? restrictions, PostPaymentLinksPaymentLinkRequestShippingAddressCollection? Function()? shippingAddressCollection, PostPaymentLinksPaymentLinkRequestSubmitType? Function()? submitType, PostPaymentLinksPaymentLinkRequestSubscriptionData? Function()? subscriptionData, PostPaymentLinksPaymentLinkRequestTaxIdCollection? Function()? taxIdCollection, }) { return PostPaymentLinksPaymentLinkRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'after_completion', 'allow_promotion_codes', 'automatic_tax', 'billing_address_collection', 'custom_fields', 'custom_text', 'customer_creation', 'expand', 'inactive_message', 'invoice_creation', 'line_items', 'metadata', 'name_collection', 'optional_items', 'payment_intent_data', 'payment_method_collection', 'payment_method_types', 'phone_number_collection', 'restrictions', 'shipping_address_collection', 'submit_type', 'subscription_data', 'tax_id_collection'}.contains(key));}
+PostPaymentLinksPaymentLinkRequest copyWith({bool? Function()? active, PostPaymentLinksPaymentLinkRequestAfterCompletion? Function()? afterCompletion, bool? Function()? allowPromotionCodes, PostPaymentLinksPaymentLinkRequestAutomaticTax? Function()? automaticTax, PostPaymentLinksPaymentLinkRequestBillingAddressCollection? Function()? billingAddressCollection, PostPaymentLinksPaymentLinkRequestCustomFields? Function()? customFields, PostPaymentLinksPaymentLinkRequestCustomText? Function()? customText, PostPaymentLinksPaymentLinkRequestCustomerCreation? Function()? customerCreation, List<String>? Function()? expand, PostPaymentLinksPaymentLinkRequestInactiveMessage? Function()? inactiveMessage, PostPaymentLinksPaymentLinkRequestInvoiceCreation? Function()? invoiceCreation, List<PostPaymentLinksPaymentLinkRequestLineItems>? Function()? lineItems, Map<String, String>? Function()? metadata, PostPaymentLinksPaymentLinkRequestNameCollection? Function()? nameCollection, PostPaymentLinksPaymentLinkRequestOptionalItems? Function()? optionalItems, PostPaymentLinksPaymentLinkRequestPaymentIntentData? Function()? paymentIntentData, PostPaymentLinksPaymentLinkRequestPaymentMethodCollection? Function()? paymentMethodCollection, PostPaymentLinksPaymentLinkRequestPaymentMethodTypes? Function()? paymentMethodTypes, PostPaymentLinksPaymentLinkRequestPhoneNumberCollection? Function()? phoneNumberCollection, PostPaymentLinksPaymentLinkRequestRestrictions? Function()? restrictions, PostPaymentLinksPaymentLinkRequestShippingAddressCollection? Function()? shippingAddressCollection, PostPaymentLinksPaymentLinkRequestSubmitType? Function()? submitType, PostPaymentLinksPaymentLinkRequestSubscriptionData? Function()? subscriptionData, PostPaymentLinksPaymentLinkRequestTaxIdCollection? Function()? taxIdCollection, }) {return PostPaymentLinksPaymentLinkRequest(
   active: active != null ? active() : this.active,
   afterCompletion: afterCompletion != null ? afterCompletion() : this.afterCompletion,
   allowPromotionCodes: allowPromotionCodes != null ? allowPromotionCodes() : this.allowPromotionCodes,
@@ -274,8 +274,8 @@ PostPaymentLinksPaymentLinkRequest copyWith({bool? Function()? active, PostPayme
   submitType: submitType != null ? submitType() : this.submitType,
   subscriptionData: subscriptionData != null ? subscriptionData() : this.subscriptionData,
   taxIdCollection: taxIdCollection != null ? taxIdCollection() : this.taxIdCollection,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentLinksPaymentLinkRequest &&
           active == other.active &&
           afterCompletion == other.afterCompletion &&
@@ -300,7 +300,7 @@ PostPaymentLinksPaymentLinkRequest copyWith({bool? Function()? active, PostPayme
           shippingAddressCollection == other.shippingAddressCollection &&
           submitType == other.submitType &&
           subscriptionData == other.subscriptionData &&
-          taxIdCollection == other.taxIdCollection; } 
-@override int get hashCode { return Object.hashAll([active, afterCompletion, allowPromotionCodes, automaticTax, billingAddressCollection, customFields, customText, customerCreation, Object.hashAll(expand ?? const []), inactiveMessage, invoiceCreation, Object.hashAll(lineItems ?? const []), metadata, nameCollection, optionalItems, paymentIntentData, paymentMethodCollection, paymentMethodTypes, phoneNumberCollection, restrictions, shippingAddressCollection, submitType, subscriptionData, taxIdCollection]); } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequest(active: $active, afterCompletion: $afterCompletion, allowPromotionCodes: $allowPromotionCodes, automaticTax: $automaticTax, billingAddressCollection: $billingAddressCollection, customFields: $customFields, customText: $customText, customerCreation: $customerCreation, expand: $expand, inactiveMessage: $inactiveMessage, invoiceCreation: $invoiceCreation, lineItems: $lineItems, metadata: $metadata, nameCollection: $nameCollection, optionalItems: $optionalItems, paymentIntentData: $paymentIntentData, paymentMethodCollection: $paymentMethodCollection, paymentMethodTypes: $paymentMethodTypes, phoneNumberCollection: $phoneNumberCollection, restrictions: $restrictions, shippingAddressCollection: $shippingAddressCollection, submitType: $submitType, subscriptionData: $subscriptionData, taxIdCollection: $taxIdCollection)'; } 
- }
+          taxIdCollection == other.taxIdCollection;}
+@override int get hashCode {return Object.hashAll([active, afterCompletion, allowPromotionCodes, automaticTax, billingAddressCollection, customFields, customText, customerCreation, Object.hashAll(expand ?? const []), inactiveMessage, invoiceCreation, Object.hashAll(lineItems ?? const []), metadata, nameCollection, optionalItems, paymentIntentData, paymentMethodCollection, paymentMethodTypes, phoneNumberCollection, restrictions, shippingAddressCollection, submitType, subscriptionData, taxIdCollection]);}
+@override String toString() {return 'PostPaymentLinksPaymentLinkRequest(active: $active, afterCompletion: $afterCompletion, allowPromotionCodes: $allowPromotionCodes, automaticTax: $automaticTax, billingAddressCollection: $billingAddressCollection, customFields: $customFields, customText: $customText, customerCreation: $customerCreation, expand: $expand, inactiveMessage: $inactiveMessage, invoiceCreation: $invoiceCreation, lineItems: $lineItems, metadata: $metadata, nameCollection: $nameCollection, optionalItems: $optionalItems, paymentIntentData: $paymentIntentData, paymentMethodCollection: $paymentMethodCollection, paymentMethodTypes: $paymentMethodTypes, phoneNumberCollection: $phoneNumberCollection, restrictions: $restrictions, shippingAddressCollection: $shippingAddressCollection, submitType: $submitType, subscriptionData: $subscriptionData, taxIdCollection: $taxIdCollection)';}
+}

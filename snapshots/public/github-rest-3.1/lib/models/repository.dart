@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'license_simple.dart';import 'repository_code_search_index_status.dart';import 'repository_permissions.dart';import 'simple_user.dart';/// The policy controlling who can create pull requests: all or collaborators_only.
 @immutable final class RepositoryPullRequestCreationPolicy {const RepositoryPullRequestCreationPolicy._(this.value);
 
-factory RepositoryPullRequestCreationPolicy.fromJson(String json) { return switch (json) {
+factory RepositoryPullRequestCreationPolicy.fromJson(String json) {return switch (json) {
   'all' => all,
   'collaborators_only' => collaboratorsOnly,
   _ => RepositoryPullRequestCreationPolicy._(json),
-}; }
+};}
 
 static const RepositoryPullRequestCreationPolicy all = RepositoryPullRequestCreationPolicy._('all');
 
@@ -17,25 +17,25 @@ static const List<RepositoryPullRequestCreationPolicy> values = [all, collaborat
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryPullRequestCreationPolicy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryPullRequestCreationPolicy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryPullRequestCreationPolicy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryPullRequestCreationPolicy($value)';}
+}
 /// The default value for a squash merge commit title:
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
 @immutable final class RepositorySquashMergeCommitTitle {const RepositorySquashMergeCommitTitle._(this.value);
 
-factory RepositorySquashMergeCommitTitle.fromJson(String json) { return switch (json) {
+factory RepositorySquashMergeCommitTitle.fromJson(String json) {return switch (json) {
   'PR_TITLE' => prTitle,
   'COMMIT_OR_PR_TITLE' => commitOrPrTitle,
   _ => RepositorySquashMergeCommitTitle._(json),
-}; }
+};}
 
 static const RepositorySquashMergeCommitTitle prTitle = RepositorySquashMergeCommitTitle._('PR_TITLE');
 
@@ -45,14 +45,14 @@ static const List<RepositorySquashMergeCommitTitle> values = [prTitle, commitOrP
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositorySquashMergeCommitTitle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositorySquashMergeCommitTitle($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositorySquashMergeCommitTitle && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositorySquashMergeCommitTitle($value)';}
+}
 /// The default value for a squash merge commit message:
 /// 
 /// - `PR_BODY` - default to the pull request's body.
@@ -60,12 +60,12 @@ bool get isUnknown { return !values.contains(this); }
 /// - `BLANK` - default to a blank commit message.
 @immutable final class RepositorySquashMergeCommitMessage {const RepositorySquashMergeCommitMessage._(this.value);
 
-factory RepositorySquashMergeCommitMessage.fromJson(String json) { return switch (json) {
+factory RepositorySquashMergeCommitMessage.fromJson(String json) {return switch (json) {
   'PR_BODY' => prBody,
   'COMMIT_MESSAGES' => commitMessages,
   'BLANK' => blank,
   _ => RepositorySquashMergeCommitMessage._(json),
-}; }
+};}
 
 static const RepositorySquashMergeCommitMessage prBody = RepositorySquashMergeCommitMessage._('PR_BODY');
 
@@ -77,25 +77,25 @@ static const List<RepositorySquashMergeCommitMessage> values = [prBody, commitMe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositorySquashMergeCommitMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositorySquashMergeCommitMessage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositorySquashMergeCommitMessage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositorySquashMergeCommitMessage($value)';}
+}
 /// The default value for a merge commit title.
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
 @immutable final class RepositoryMergeCommitTitle {const RepositoryMergeCommitTitle._(this.value);
 
-factory RepositoryMergeCommitTitle.fromJson(String json) { return switch (json) {
+factory RepositoryMergeCommitTitle.fromJson(String json) {return switch (json) {
   'PR_TITLE' => prTitle,
   'MERGE_MESSAGE' => mergeMessage,
   _ => RepositoryMergeCommitTitle._(json),
-}; }
+};}
 
 static const RepositoryMergeCommitTitle prTitle = RepositoryMergeCommitTitle._('PR_TITLE');
 
@@ -105,14 +105,14 @@ static const List<RepositoryMergeCommitTitle> values = [prTitle, mergeMessage];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryMergeCommitTitle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryMergeCommitTitle($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryMergeCommitTitle && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryMergeCommitTitle($value)';}
+}
 /// The default value for a merge commit message.
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
@@ -120,12 +120,12 @@ bool get isUnknown { return !values.contains(this); }
 /// - `BLANK` - default to a blank commit message.
 @immutable final class RepositoryMergeCommitMessage {const RepositoryMergeCommitMessage._(this.value);
 
-factory RepositoryMergeCommitMessage.fromJson(String json) { return switch (json) {
+factory RepositoryMergeCommitMessage.fromJson(String json) {return switch (json) {
   'PR_BODY' => prBody,
   'PR_TITLE' => prTitle,
   'BLANK' => blank,
   _ => RepositoryMergeCommitMessage._(json),
-}; }
+};}
 
 static const RepositoryMergeCommitMessage prBody = RepositoryMergeCommitMessage._('PR_BODY');
 
@@ -137,18 +137,18 @@ static const List<RepositoryMergeCommitMessage> values = [prBody, prTitle, blank
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryMergeCommitMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryMergeCommitMessage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryMergeCommitMessage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryMergeCommitMessage($value)';}
+}
 /// A repository on GitHub.
 @immutable final class Repository {const Repository({required this.issueEventsUrl, required this.nodeId, required this.name, required this.fullName, required this.license, required this.forks, required this.watchers, required this.owner, required this.private, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.archiveUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.downloadsUrl, required this.eventsUrl, required this.forksUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.gitUrl, required this.issueCommentUrl, required this.id, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.mergesUrl, required this.milestonesUrl, required this.notificationsUrl, required this.pullsUrl, required this.releasesUrl, required this.sshUrl, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.treesUrl, required this.cloneUrl, required this.mirrorUrl, required this.hooksUrl, required this.svnUrl, required this.homepage, required this.language, required this.forksCount, required this.stargazersCount, required this.watchersCount, required this.size, required this.defaultBranch, required this.openIssuesCount, required this.openIssues, required this.updatedAt, required this.createdAt, required this.hasProjects, required this.hasWiki, required this.hasPages, required this.hasDownloads, required this.pushedAt, required this.disabled, required this.archived, required this.hasIssues, this.hasPullRequests, this.visibility, this.hasDiscussions, this.codeSearchIndexStatus, this.topics, this.allowRebaseMerge, this.tempCloneToken, this.allowSquashMerge, this.allowAutoMerge, this.deleteBranchOnMerge, this.allowUpdateBranch, this.useSquashPrTitleAsDefault, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.allowMergeCommit, this.allowForking, this.webCommitSignoffRequired, this.isTemplate, this.permissions, this.masterBranch, this.starredAt, this.anonymousAccessEnabled, this.pullRequestCreationPolicy, });
 
-factory Repository.fromJson(Map<String, dynamic> json) { return Repository(
+factory Repository.fromJson(Map<String, dynamic> json) {return Repository(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   name: json['name'] as String,
@@ -247,7 +247,7 @@ factory Repository.fromJson(Map<String, dynamic> json) { return Repository(
   starredAt: json['starred_at'] as String?,
   anonymousAccessEnabled: json['anonymous_access_enabled'] as bool?,
   codeSearchIndexStatus: json['code_search_index_status'] != null ? RepositoryCodeSearchIndexStatus.fromJson(json['code_search_index_status'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Unique identifier of the repository
 final int id;
@@ -491,30 +491,30 @@ final bool? anonymousAccessEnabled;
 final RepositoryCodeSearchIndexStatus? codeSearchIndexStatus;
 
 /// The value with the schema default applied when absent.
-bool get isTemplateOrDefault { return isTemplate ?? false; } 
+bool get isTemplateOrDefault {return isTemplate ?? false;}
 /// The value with the schema default applied when absent.
-bool get hasDiscussionsOrDefault { return hasDiscussions ?? false; } 
+bool get hasDiscussionsOrDefault {return hasDiscussions ?? false;}
 /// The value with the schema default applied when absent.
-bool get hasPullRequestsOrDefault { return hasPullRequests ?? true; } 
+bool get hasPullRequestsOrDefault {return hasPullRequests ?? true;}
 /// The value with the schema default applied when absent.
-String get visibilityOrDefault { return visibility ?? 'public'; } 
+String get visibilityOrDefault {return visibility ?? 'public';}
 /// The value with the schema default applied when absent.
-bool get allowRebaseMergeOrDefault { return allowRebaseMerge ?? true; } 
+bool get allowRebaseMergeOrDefault {return allowRebaseMerge ?? true;}
 /// The value with the schema default applied when absent.
-bool get allowSquashMergeOrDefault { return allowSquashMerge ?? true; } 
+bool get allowSquashMergeOrDefault {return allowSquashMerge ?? true;}
 /// The value with the schema default applied when absent.
-bool get allowAutoMergeOrDefault { return allowAutoMerge ?? false; } 
+bool get allowAutoMergeOrDefault {return allowAutoMerge ?? false;}
 /// The value with the schema default applied when absent.
-bool get deleteBranchOnMergeOrDefault { return deleteBranchOnMerge ?? false; } 
+bool get deleteBranchOnMergeOrDefault {return deleteBranchOnMerge ?? false;}
 /// The value with the schema default applied when absent.
-bool get allowUpdateBranchOrDefault { return allowUpdateBranch ?? false; } 
+bool get allowUpdateBranchOrDefault {return allowUpdateBranch ?? false;}
 /// The value with the schema default applied when absent.
-bool get useSquashPrTitleAsDefaultOrDefault { return useSquashPrTitleAsDefault ?? false; } 
+bool get useSquashPrTitleAsDefaultOrDefault {return useSquashPrTitleAsDefault ?? false;}
 /// The value with the schema default applied when absent.
-bool get allowMergeCommitOrDefault { return allowMergeCommit ?? true; } 
+bool get allowMergeCommitOrDefault {return allowMergeCommit ?? true;}
 /// The value with the schema default applied when absent.
-bool get webCommitSignoffRequiredOrDefault { return webCommitSignoffRequired ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get webCommitSignoffRequiredOrDefault {return webCommitSignoffRequired ?? false;}
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'name': name,
@@ -613,8 +613,8 @@ Map<String, dynamic> toJson() { return {
   'starred_at': ?starredAt,
   'anonymous_access_enabled': ?anonymousAccessEnabled,
   if (codeSearchIndexStatus != null) 'code_search_index_status': codeSearchIndexStatus?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('full_name') && json['full_name'] is String &&
@@ -686,8 +686,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
       json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String) &&
       json.containsKey('open_issues') && json['open_issues'] is num &&
-      json.containsKey('watchers') && json['watchers'] is num; } 
-Repository copyWith({int? id, String? nodeId, String? name, String? fullName, LicenseSimple? Function()? license, int? forks, RepositoryPermissions? Function()? permissions, SimpleUser? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String? cloneUrl, Uri? Function()? mirrorUrl, Uri? hooksUrl, Uri? svnUrl, Uri? Function()? homepage, String? Function()? language, int? forksCount, int? stargazersCount, int? watchersCount, int? size, String? defaultBranch, int? openIssuesCount, bool? Function()? isTemplate, List<String>? Function()? topics, bool? hasIssues, bool? hasProjects, bool? hasWiki, bool? hasPages, bool? hasDownloads, bool? Function()? hasDiscussions, bool? Function()? hasPullRequests, RepositoryPullRequestCreationPolicy? Function()? pullRequestCreationPolicy, bool? archived, bool? disabled, String? Function()? visibility, DateTime? Function()? pushedAt, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, bool? Function()? allowRebaseMerge, String? Function()? tempCloneToken, bool? Function()? allowSquashMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? allowUpdateBranch, bool? Function()? useSquashPrTitleAsDefault, RepositorySquashMergeCommitTitle? Function()? squashMergeCommitTitle, RepositorySquashMergeCommitMessage? Function()? squashMergeCommitMessage, RepositoryMergeCommitTitle? Function()? mergeCommitTitle, RepositoryMergeCommitMessage? Function()? mergeCommitMessage, bool? Function()? allowMergeCommit, bool? Function()? allowForking, bool? Function()? webCommitSignoffRequired, int? openIssues, int? watchers, String? Function()? masterBranch, String? Function()? starredAt, bool? Function()? anonymousAccessEnabled, RepositoryCodeSearchIndexStatus? Function()? codeSearchIndexStatus, }) { return Repository(
+      json.containsKey('watchers') && json['watchers'] is num;}
+Repository copyWith({int? id, String? nodeId, String? name, String? fullName, LicenseSimple? Function()? license, int? forks, RepositoryPermissions? Function()? permissions, SimpleUser? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String? cloneUrl, Uri? Function()? mirrorUrl, Uri? hooksUrl, Uri? svnUrl, Uri? Function()? homepage, String? Function()? language, int? forksCount, int? stargazersCount, int? watchersCount, int? size, String? defaultBranch, int? openIssuesCount, bool? Function()? isTemplate, List<String>? Function()? topics, bool? hasIssues, bool? hasProjects, bool? hasWiki, bool? hasPages, bool? hasDownloads, bool? Function()? hasDiscussions, bool? Function()? hasPullRequests, RepositoryPullRequestCreationPolicy? Function()? pullRequestCreationPolicy, bool? archived, bool? disabled, String? Function()? visibility, DateTime? Function()? pushedAt, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, bool? Function()? allowRebaseMerge, String? Function()? tempCloneToken, bool? Function()? allowSquashMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? allowUpdateBranch, bool? Function()? useSquashPrTitleAsDefault, RepositorySquashMergeCommitTitle? Function()? squashMergeCommitTitle, RepositorySquashMergeCommitMessage? Function()? squashMergeCommitMessage, RepositoryMergeCommitTitle? Function()? mergeCommitTitle, RepositoryMergeCommitMessage? Function()? mergeCommitMessage, bool? Function()? allowMergeCommit, bool? Function()? allowForking, bool? Function()? webCommitSignoffRequired, int? openIssues, int? watchers, String? Function()? masterBranch, String? Function()? starredAt, bool? Function()? anonymousAccessEnabled, RepositoryCodeSearchIndexStatus? Function()? codeSearchIndexStatus, }) {return Repository(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,
@@ -786,8 +786,8 @@ Repository copyWith({int? id, String? nodeId, String? name, String? fullName, Li
   starredAt: starredAt != null ? starredAt() : this.starredAt,
   anonymousAccessEnabled: anonymousAccessEnabled != null ? anonymousAccessEnabled() : this.anonymousAccessEnabled,
   codeSearchIndexStatus: codeSearchIndexStatus != null ? codeSearchIndexStatus() : this.codeSearchIndexStatus,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Repository &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -886,7 +886,7 @@ Repository copyWith({int? id, String? nodeId, String? name, String? fullName, Li
           masterBranch == other.masterBranch &&
           starredAt == other.starredAt &&
           anonymousAccessEnabled == other.anonymousAccessEnabled &&
-          codeSearchIndexStatus == other.codeSearchIndexStatus; } 
-@override int get hashCode { return Object.hashAll([id, nodeId, name, fullName, license, forks, permissions, owner, private, htmlUrl, description, fork, url, archiveUrl, assigneesUrl, blobsUrl, branchesUrl, collaboratorsUrl, commentsUrl, commitsUrl, compareUrl, contentsUrl, contributorsUrl, deploymentsUrl, downloadsUrl, eventsUrl, forksUrl, gitCommitsUrl, gitRefsUrl, gitTagsUrl, gitUrl, issueCommentUrl, issueEventsUrl, issuesUrl, keysUrl, labelsUrl, languagesUrl, mergesUrl, milestonesUrl, notificationsUrl, pullsUrl, releasesUrl, sshUrl, stargazersUrl, statusesUrl, subscribersUrl, subscriptionUrl, tagsUrl, teamsUrl, treesUrl, cloneUrl, mirrorUrl, hooksUrl, svnUrl, homepage, language, forksCount, stargazersCount, watchersCount, size, defaultBranch, openIssuesCount, isTemplate, Object.hashAll(topics ?? const []), hasIssues, hasProjects, hasWiki, hasPages, hasDownloads, hasDiscussions, hasPullRequests, pullRequestCreationPolicy, archived, disabled, visibility, pushedAt, createdAt, updatedAt, allowRebaseMerge, tempCloneToken, allowSquashMerge, allowAutoMerge, deleteBranchOnMerge, allowUpdateBranch, useSquashPrTitleAsDefault, squashMergeCommitTitle, squashMergeCommitMessage, mergeCommitTitle, mergeCommitMessage, allowMergeCommit, allowForking, webCommitSignoffRequired, openIssues, watchers, masterBranch, starredAt, anonymousAccessEnabled, codeSearchIndexStatus]); } 
-@override String toString() { return 'Repository(id: $id, nodeId: $nodeId, name: $name, fullName: $fullName, license: $license, forks: $forks, permissions: $permissions, owner: $owner, private: $private, htmlUrl: $htmlUrl, description: $description, fork: $fork, url: $url, archiveUrl: $archiveUrl, assigneesUrl: $assigneesUrl, blobsUrl: $blobsUrl, branchesUrl: $branchesUrl, collaboratorsUrl: $collaboratorsUrl, commentsUrl: $commentsUrl, commitsUrl: $commitsUrl, compareUrl: $compareUrl, contentsUrl: $contentsUrl, contributorsUrl: $contributorsUrl, deploymentsUrl: $deploymentsUrl, downloadsUrl: $downloadsUrl, eventsUrl: $eventsUrl, forksUrl: $forksUrl, gitCommitsUrl: $gitCommitsUrl, gitRefsUrl: $gitRefsUrl, gitTagsUrl: $gitTagsUrl, gitUrl: $gitUrl, issueCommentUrl: $issueCommentUrl, issueEventsUrl: $issueEventsUrl, issuesUrl: $issuesUrl, keysUrl: $keysUrl, labelsUrl: $labelsUrl, languagesUrl: $languagesUrl, mergesUrl: $mergesUrl, milestonesUrl: $milestonesUrl, notificationsUrl: $notificationsUrl, pullsUrl: $pullsUrl, releasesUrl: $releasesUrl, sshUrl: $sshUrl, stargazersUrl: $stargazersUrl, statusesUrl: $statusesUrl, subscribersUrl: $subscribersUrl, subscriptionUrl: $subscriptionUrl, tagsUrl: $tagsUrl, teamsUrl: $teamsUrl, treesUrl: $treesUrl, cloneUrl: $cloneUrl, mirrorUrl: $mirrorUrl, hooksUrl: $hooksUrl, svnUrl: $svnUrl, homepage: $homepage, language: $language, forksCount: $forksCount, stargazersCount: $stargazersCount, watchersCount: $watchersCount, size: $size, defaultBranch: $defaultBranch, openIssuesCount: $openIssuesCount, isTemplate: $isTemplate, topics: $topics, hasIssues: $hasIssues, hasProjects: $hasProjects, hasWiki: $hasWiki, hasPages: $hasPages, hasDownloads: $hasDownloads, hasDiscussions: $hasDiscussions, hasPullRequests: $hasPullRequests, pullRequestCreationPolicy: $pullRequestCreationPolicy, archived: $archived, disabled: $disabled, visibility: $visibility, pushedAt: $pushedAt, createdAt: $createdAt, updatedAt: $updatedAt, allowRebaseMerge: $allowRebaseMerge, tempCloneToken: $tempCloneToken, allowSquashMerge: $allowSquashMerge, allowAutoMerge: $allowAutoMerge, deleteBranchOnMerge: $deleteBranchOnMerge, allowUpdateBranch: $allowUpdateBranch, useSquashPrTitleAsDefault: $useSquashPrTitleAsDefault, squashMergeCommitTitle: $squashMergeCommitTitle, squashMergeCommitMessage: $squashMergeCommitMessage, mergeCommitTitle: $mergeCommitTitle, mergeCommitMessage: $mergeCommitMessage, allowMergeCommit: $allowMergeCommit, allowForking: $allowForking, webCommitSignoffRequired: $webCommitSignoffRequired, openIssues: $openIssues, watchers: $watchers, masterBranch: $masterBranch, starredAt: $starredAt, anonymousAccessEnabled: $anonymousAccessEnabled, codeSearchIndexStatus: $codeSearchIndexStatus)'; } 
- }
+          codeSearchIndexStatus == other.codeSearchIndexStatus;}
+@override int get hashCode {return Object.hashAll([id, nodeId, name, fullName, license, forks, permissions, owner, private, htmlUrl, description, fork, url, archiveUrl, assigneesUrl, blobsUrl, branchesUrl, collaboratorsUrl, commentsUrl, commitsUrl, compareUrl, contentsUrl, contributorsUrl, deploymentsUrl, downloadsUrl, eventsUrl, forksUrl, gitCommitsUrl, gitRefsUrl, gitTagsUrl, gitUrl, issueCommentUrl, issueEventsUrl, issuesUrl, keysUrl, labelsUrl, languagesUrl, mergesUrl, milestonesUrl, notificationsUrl, pullsUrl, releasesUrl, sshUrl, stargazersUrl, statusesUrl, subscribersUrl, subscriptionUrl, tagsUrl, teamsUrl, treesUrl, cloneUrl, mirrorUrl, hooksUrl, svnUrl, homepage, language, forksCount, stargazersCount, watchersCount, size, defaultBranch, openIssuesCount, isTemplate, Object.hashAll(topics ?? const []), hasIssues, hasProjects, hasWiki, hasPages, hasDownloads, hasDiscussions, hasPullRequests, pullRequestCreationPolicy, archived, disabled, visibility, pushedAt, createdAt, updatedAt, allowRebaseMerge, tempCloneToken, allowSquashMerge, allowAutoMerge, deleteBranchOnMerge, allowUpdateBranch, useSquashPrTitleAsDefault, squashMergeCommitTitle, squashMergeCommitMessage, mergeCommitTitle, mergeCommitMessage, allowMergeCommit, allowForking, webCommitSignoffRequired, openIssues, watchers, masterBranch, starredAt, anonymousAccessEnabled, codeSearchIndexStatus]);}
+@override String toString() {return 'Repository(id: $id, nodeId: $nodeId, name: $name, fullName: $fullName, license: $license, forks: $forks, permissions: $permissions, owner: $owner, private: $private, htmlUrl: $htmlUrl, description: $description, fork: $fork, url: $url, archiveUrl: $archiveUrl, assigneesUrl: $assigneesUrl, blobsUrl: $blobsUrl, branchesUrl: $branchesUrl, collaboratorsUrl: $collaboratorsUrl, commentsUrl: $commentsUrl, commitsUrl: $commitsUrl, compareUrl: $compareUrl, contentsUrl: $contentsUrl, contributorsUrl: $contributorsUrl, deploymentsUrl: $deploymentsUrl, downloadsUrl: $downloadsUrl, eventsUrl: $eventsUrl, forksUrl: $forksUrl, gitCommitsUrl: $gitCommitsUrl, gitRefsUrl: $gitRefsUrl, gitTagsUrl: $gitTagsUrl, gitUrl: $gitUrl, issueCommentUrl: $issueCommentUrl, issueEventsUrl: $issueEventsUrl, issuesUrl: $issuesUrl, keysUrl: $keysUrl, labelsUrl: $labelsUrl, languagesUrl: $languagesUrl, mergesUrl: $mergesUrl, milestonesUrl: $milestonesUrl, notificationsUrl: $notificationsUrl, pullsUrl: $pullsUrl, releasesUrl: $releasesUrl, sshUrl: $sshUrl, stargazersUrl: $stargazersUrl, statusesUrl: $statusesUrl, subscribersUrl: $subscribersUrl, subscriptionUrl: $subscriptionUrl, tagsUrl: $tagsUrl, teamsUrl: $teamsUrl, treesUrl: $treesUrl, cloneUrl: $cloneUrl, mirrorUrl: $mirrorUrl, hooksUrl: $hooksUrl, svnUrl: $svnUrl, homepage: $homepage, language: $language, forksCount: $forksCount, stargazersCount: $stargazersCount, watchersCount: $watchersCount, size: $size, defaultBranch: $defaultBranch, openIssuesCount: $openIssuesCount, isTemplate: $isTemplate, topics: $topics, hasIssues: $hasIssues, hasProjects: $hasProjects, hasWiki: $hasWiki, hasPages: $hasPages, hasDownloads: $hasDownloads, hasDiscussions: $hasDiscussions, hasPullRequests: $hasPullRequests, pullRequestCreationPolicy: $pullRequestCreationPolicy, archived: $archived, disabled: $disabled, visibility: $visibility, pushedAt: $pushedAt, createdAt: $createdAt, updatedAt: $updatedAt, allowRebaseMerge: $allowRebaseMerge, tempCloneToken: $tempCloneToken, allowSquashMerge: $allowSquashMerge, allowAutoMerge: $allowAutoMerge, deleteBranchOnMerge: $deleteBranchOnMerge, allowUpdateBranch: $allowUpdateBranch, useSquashPrTitleAsDefault: $useSquashPrTitleAsDefault, squashMergeCommitTitle: $squashMergeCommitTitle, squashMergeCommitMessage: $squashMergeCommitMessage, mergeCommitTitle: $mergeCommitTitle, mergeCommitMessage: $mergeCommitMessage, allowMergeCommit: $allowMergeCommit, allowForking: $allowForking, webCommitSignoffRequired: $webCommitSignoffRequired, openIssues: $openIssues, watchers: $watchers, masterBranch: $masterBranch, starredAt: $starredAt, anonymousAccessEnabled: $anonymousAccessEnabled, codeSearchIndexStatus: $codeSearchIndexStatus)';}
+}

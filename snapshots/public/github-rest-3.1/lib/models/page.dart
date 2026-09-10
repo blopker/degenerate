@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_https_certificate.dart';import 'pages_source_hash.dart';/// The status of the most recent build of the Page.
 @immutable final class PageStatus {const PageStatus._(this.value);
 
-factory PageStatus.fromJson(String json) { return switch (json) {
+factory PageStatus.fromJson(String json) {return switch (json) {
   'built' => built,
   'building' => building,
   'errored' => errored,
   'null' => $null,
   _ => PageStatus._(json),
-}; }
+};}
 
 static const PageStatus built = PageStatus._('built');
 
@@ -23,24 +23,24 @@ static const List<PageStatus> values = [built, building, errored, $null];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PageStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PageStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PageStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PageStatus($value)';}
+}
 /// The state if the domain is verified
 @immutable final class PageProtectedDomainState {const PageProtectedDomainState._(this.value);
 
-factory PageProtectedDomainState.fromJson(String json) { return switch (json) {
+factory PageProtectedDomainState.fromJson(String json) {return switch (json) {
   'pending' => pending,
   'verified' => verified,
   'unverified' => unverified,
   'null' => $null,
   _ => PageProtectedDomainState._(json),
-}; }
+};}
 
 static const PageProtectedDomainState pending = PageProtectedDomainState._('pending');
 
@@ -54,23 +54,23 @@ static const List<PageProtectedDomainState> values = [pending, verified, unverif
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PageProtectedDomainState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PageProtectedDomainState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PageProtectedDomainState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PageProtectedDomainState($value)';}
+}
 /// The process in which the Page will be built.
 @immutable final class PageBuildType {const PageBuildType._(this.value);
 
-factory PageBuildType.fromJson(String json) { return switch (json) {
+factory PageBuildType.fromJson(String json) {return switch (json) {
   'legacy' => legacy,
   'workflow' => workflow,
   'null' => $null,
   _ => PageBuildType._(json),
-}; }
+};}
 
 static const PageBuildType legacy = PageBuildType._('legacy');
 
@@ -82,18 +82,18 @@ static const List<PageBuildType> values = [legacy, workflow, $null];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PageBuildType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PageBuildType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PageBuildType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PageBuildType($value)';}
+}
 /// The configuration for GitHub Pages for a repository.
 @immutable final class Page {const Page({required this.url, required this.status, required this.cname, required this.custom404, required this.public, this.protectedDomainState = const Omittable.absent(), this.pendingDomainUnverifiedAt = const Omittable.absent(), this.htmlUrl, this.buildType = const Omittable.absent(), this.source, this.httpsCertificate, this.httpsEnforced, });
 
-factory Page.fromJson(Map<String, dynamic> json) { return Page(
+factory Page.fromJson(Map<String, dynamic> json) {return Page(
   url: Uri.parse(json['url'] as String),
   status: json['status'] != null ? PageStatus.fromJson(json['status'] as String) : null,
   cname: json['cname'] as String?,
@@ -106,7 +106,7 @@ factory Page.fromJson(Map<String, dynamic> json) { return Page(
   public: json['public'] as bool,
   httpsCertificate: json['https_certificate'] != null ? PagesHttpsCertificate.fromJson(json['https_certificate'] as Map<String, dynamic>) : null,
   httpsEnforced: json['https_enforced'] as bool?,
-); }
+);}
 
 /// The API address for accessing this Page resource.
 final Uri url;
@@ -142,7 +142,7 @@ final PagesHttpsCertificate? httpsCertificate;
 /// Whether https is enabled on the domain
 final bool? httpsEnforced;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'status': status?.toJson(),
   'cname': cname,
@@ -155,13 +155,13 @@ Map<String, dynamic> toJson() { return {
   'public': public,
   if (httpsCertificate != null) 'https_certificate': httpsCertificate?.toJson(),
   'https_enforced': ?httpsEnforced,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('status') &&
       json.containsKey('cname') && (json['cname'] == null || json['cname'] is String) &&
       json.containsKey('custom_404') && json['custom_404'] is bool &&
-      json.containsKey('public') && json['public'] is bool; } 
-Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cname, Omittable<PageProtectedDomainState?>? protectedDomainState, Omittable<DateTime?>? pendingDomainUnverifiedAt, bool? custom404, Uri? Function()? htmlUrl, Omittable<PageBuildType?>? buildType, PagesSourceHash? Function()? source, bool? public, PagesHttpsCertificate? Function()? httpsCertificate, bool? Function()? httpsEnforced, }) { return Page(
+      json.containsKey('public') && json['public'] is bool;}
+Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cname, Omittable<PageProtectedDomainState?>? protectedDomainState, Omittable<DateTime?>? pendingDomainUnverifiedAt, bool? custom404, Uri? Function()? htmlUrl, Omittable<PageBuildType?>? buildType, PagesSourceHash? Function()? source, bool? public, PagesHttpsCertificate? Function()? httpsCertificate, bool? Function()? httpsEnforced, }) {return Page(
   url: url ?? this.url,
   status: status != null ? status() : this.status,
   cname: cname != null ? cname() : this.cname,
@@ -174,8 +174,8 @@ Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cna
   public: public ?? this.public,
   httpsCertificate: httpsCertificate != null ? httpsCertificate() : this.httpsCertificate,
   httpsEnforced: httpsEnforced != null ? httpsEnforced() : this.httpsEnforced,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Page &&
           url == other.url &&
           status == other.status &&
@@ -188,7 +188,7 @@ Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cna
           source == other.source &&
           public == other.public &&
           httpsCertificate == other.httpsCertificate &&
-          httpsEnforced == other.httpsEnforced; } 
-@override int get hashCode { return Object.hash(url, status, cname, protectedDomainState, pendingDomainUnverifiedAt, custom404, htmlUrl, buildType, source, public, httpsCertificate, httpsEnforced); } 
-@override String toString() { return 'Page(url: $url, status: $status, cname: $cname, protectedDomainState: $protectedDomainState, pendingDomainUnverifiedAt: $pendingDomainUnverifiedAt, custom404: $custom404, htmlUrl: $htmlUrl, buildType: $buildType, source: $source, public: $public, httpsCertificate: $httpsCertificate, httpsEnforced: $httpsEnforced)'; } 
- }
+          httpsEnforced == other.httpsEnforced;}
+@override int get hashCode {return Object.hash(url, status, cname, protectedDomainState, pendingDomainUnverifiedAt, custom404, htmlUrl, buildType, source, public, httpsCertificate, httpsEnforced);}
+@override String toString() {return 'Page(url: $url, status: $status, cname: $cname, protectedDomainState: $protectedDomainState, pendingDomainUnverifiedAt: $pendingDomainUnverifiedAt, custom404: $custom404, htmlUrl: $htmlUrl, buildType: $buildType, source: $source, public: $public, httpsCertificate: $httpsCertificate, httpsEnforced: $httpsEnforced)';}
+}

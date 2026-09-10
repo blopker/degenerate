@@ -3,28 +3,28 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_data_catalog_catalog_compaction_config.dart';import 'r2_data_catalog_snapshot_expiration_config.dart';/// Configures maintenance for the catalog.
 @immutable final class R2DataCatalogCatalogMaintenanceConfig {const R2DataCatalogCatalogMaintenanceConfig({this.compaction, this.snapshotExpiration, });
 
-factory R2DataCatalogCatalogMaintenanceConfig.fromJson(Map<String, dynamic> json) { return R2DataCatalogCatalogMaintenanceConfig(
+factory R2DataCatalogCatalogMaintenanceConfig.fromJson(Map<String, dynamic> json) {return R2DataCatalogCatalogMaintenanceConfig(
   compaction: json['compaction'] != null ? R2DataCatalogCatalogCompactionConfig.fromJson(json['compaction'] as Map<String, dynamic>) : null,
   snapshotExpiration: json['snapshot_expiration'] != null ? R2DataCatalogSnapshotExpirationConfig.fromJson(json['snapshot_expiration'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final R2DataCatalogCatalogCompactionConfig? compaction;
 
 final R2DataCatalogSnapshotExpirationConfig? snapshotExpiration;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (compaction != null) 'compaction': compaction?.toJson(),
   if (snapshotExpiration != null) 'snapshot_expiration': snapshotExpiration?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'compaction', 'snapshot_expiration'}.contains(key)); } 
-R2DataCatalogCatalogMaintenanceConfig copyWith({R2DataCatalogCatalogCompactionConfig? Function()? compaction, R2DataCatalogSnapshotExpirationConfig? Function()? snapshotExpiration, }) { return R2DataCatalogCatalogMaintenanceConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'compaction', 'snapshot_expiration'}.contains(key));}
+R2DataCatalogCatalogMaintenanceConfig copyWith({R2DataCatalogCatalogCompactionConfig? Function()? compaction, R2DataCatalogSnapshotExpirationConfig? Function()? snapshotExpiration, }) {return R2DataCatalogCatalogMaintenanceConfig(
   compaction: compaction != null ? compaction() : this.compaction,
   snapshotExpiration: snapshotExpiration != null ? snapshotExpiration() : this.snapshotExpiration,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is R2DataCatalogCatalogMaintenanceConfig &&
           compaction == other.compaction &&
-          snapshotExpiration == other.snapshotExpiration; } 
-@override int get hashCode { return Object.hash(compaction, snapshotExpiration); } 
-@override String toString() { return 'R2DataCatalogCatalogMaintenanceConfig(compaction: $compaction, snapshotExpiration: $snapshotExpiration)'; } 
- }
+          snapshotExpiration == other.snapshotExpiration;}
+@override int get hashCode {return Object.hash(compaction, snapshotExpiration);}
+@override String toString() {return 'R2DataCatalogCatalogMaintenanceConfig(compaction: $compaction, snapshotExpiration: $snapshotExpiration)';}
+}

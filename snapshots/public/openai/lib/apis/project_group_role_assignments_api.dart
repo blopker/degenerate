@@ -11,7 +11,7 @@ final class ProjectGroupRoleAssignmentsApi with ApiExecutor {const ProjectGroupR
 /// Lists the project roles assigned to a group within a project.
 ///
 /// `GET /projects/{project_id}/groups/{group_id}/roles`
-Future<ApiResult<RoleListResource, Never>> listProjectGroupRoleAssignments({required String projectId, required String groupId, int? limit, String? after, ListProjectGroupRoleAssignmentsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RoleListResource, Never>> listProjectGroupRoleAssignments({required String projectId, required String groupId, int? limit, String? after, ListProjectGroupRoleAssignmentsOrder? order, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -41,11 +41,11 @@ final json = jsonDecode(response.body);
 return RoleListResource.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Assigns a project role to a group within a project.
 ///
 /// `POST /projects/{project_id}/groups/{group_id}/roles`
-Future<ApiResult<GroupRoleAssignment, Never>> assignProjectGroupRole({required String projectId, required String groupId, required PublicAssignOrganizationGroupRoleBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GroupRoleAssignment, Never>> assignProjectGroupRole({required String projectId, required String groupId, required PublicAssignOrganizationGroupRoleBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -63,11 +63,11 @@ final json = jsonDecode(response.body);
 return GroupRoleAssignment.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Unassigns a project role from a group within a project.
 ///
 /// `DELETE /projects/{project_id}/groups/{group_id}/roles/{role_id}`
-Future<ApiResult<DeletedRoleAssignmentResource, Never>> unassignProjectGroupRole({required String projectId, required String groupId, required String roleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedRoleAssignmentResource, Never>> unassignProjectGroupRole({required String projectId, required String groupId, required String roleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -83,5 +83,5 @@ final json = jsonDecode(response.body);
 return DeletedRoleAssignmentResource.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreatePollRequest {const CreatePollRequest({required this.options, required this.question, this.anonymous, this.hideVotes, });
 
-factory CreatePollRequest.fromJson(Map<String, dynamic> json) { return CreatePollRequest(
+factory CreatePollRequest.fromJson(Map<String, dynamic> json) {return CreatePollRequest(
   anonymous: json['anonymous'] as bool?,
   hideVotes: json['hide_votes'] as bool?,
   options: (json['options'] as List<dynamic>).map((e) => e as String).toList(),
   question: json['question'] as String,
-); }
+);}
 
 /// if voters on a poll are anonymous
 final bool? anonymous;
@@ -21,26 +21,26 @@ final List<String> options;
 /// Question of the poll
 final String question;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'anonymous': ?anonymous,
   'hide_votes': ?hideVotes,
   'options': options,
   'question': question,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('options') &&
-      json.containsKey('question') && json['question'] is String; } 
-CreatePollRequest copyWith({bool? Function()? anonymous, bool? Function()? hideVotes, List<String>? options, String? question, }) { return CreatePollRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('options') &&
+      json.containsKey('question') && json['question'] is String;}
+CreatePollRequest copyWith({bool? Function()? anonymous, bool? Function()? hideVotes, List<String>? options, String? question, }) {return CreatePollRequest(
   anonymous: anonymous != null ? anonymous() : this.anonymous,
   hideVotes: hideVotes != null ? hideVotes() : this.hideVotes,
   options: options ?? this.options,
   question: question ?? this.question,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreatePollRequest &&
           anonymous == other.anonymous &&
           hideVotes == other.hideVotes &&
           listEquals(options, other.options) &&
-          question == other.question; } 
-@override int get hashCode { return Object.hash(anonymous, hideVotes, Object.hashAll(options), question); } 
-@override String toString() { return 'CreatePollRequest(anonymous: $anonymous, hideVotes: $hideVotes, options: $options, question: $question)'; } 
- }
+          question == other.question;}
+@override int get hashCode {return Object.hash(anonymous, hideVotes, Object.hashAll(options), question);}
+@override String toString() {return 'CreatePollRequest(anonymous: $anonymous, hideVotes: $hideVotes, options: $options, question: $question)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceRequestEffectiveAtVariant2 {const PostInvoicesInvoiceRequestEffectiveAtVariant2._(this.value);
 
-factory PostInvoicesInvoiceRequestEffectiveAtVariant2.fromJson(String json) { return switch (json) {
+factory PostInvoicesInvoiceRequestEffectiveAtVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostInvoicesInvoiceRequestEffectiveAtVariant2._(json),
-}; }
+};}
 
 static const PostInvoicesInvoiceRequestEffectiveAtVariant2 $empty = PostInvoicesInvoiceRequestEffectiveAtVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostInvoicesInvoiceRequestEffectiveAtVariant2> values = [$empt
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesInvoiceRequestEffectiveAtVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesInvoiceRequestEffectiveAtVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesInvoiceRequestEffectiveAtVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesInvoiceRequestEffectiveAtVariant2($value)';}
+}
 /// The date when this invoice is in effect. Same as `finalized_at` unless overwritten. When defined, this value replaces the system-generated 'Date of issue' printed on the invoice PDF and receipt.
 @immutable
 final class PostInvoicesInvoiceRequestEffectiveAt {

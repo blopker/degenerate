@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpExactDataEntry {const DlpExactDataEntry({required this.caseSensitive, required this.createdAt, required this.enabled, required this.id, required this.name, required this.secret, required this.updatedAt, });
 
-factory DlpExactDataEntry.fromJson(Map<String, dynamic> json) { return DlpExactDataEntry(
+factory DlpExactDataEntry.fromJson(Map<String, dynamic> json) {return DlpExactDataEntry(
   caseSensitive: json['case_sensitive'] as bool,
   createdAt: DateTime.parse(json['created_at'] as String),
   enabled: json['enabled'] as bool,
@@ -10,7 +10,7 @@ factory DlpExactDataEntry.fromJson(Map<String, dynamic> json) { return DlpExactD
   name: json['name'] as String,
   secret: json['secret'] as bool,
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 /// Only applies to custom word lists.
 /// Determines if the words should be matched in a case-sensitive manner
@@ -29,7 +29,7 @@ final bool secret;
 
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'case_sensitive': caseSensitive,
   'created_at': createdAt.toIso8601String(),
   'enabled': enabled,
@@ -37,15 +37,15 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'secret': secret,
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('case_sensitive') && json['case_sensitive'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('case_sensitive') && json['case_sensitive'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('secret') && json['secret'] is bool &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-DlpExactDataEntry copyWith({bool? caseSensitive, DateTime? createdAt, bool? enabled, String? id, String? name, bool? secret, DateTime? updatedAt, }) { return DlpExactDataEntry(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+DlpExactDataEntry copyWith({bool? caseSensitive, DateTime? createdAt, bool? enabled, String? id, String? name, bool? secret, DateTime? updatedAt, }) {return DlpExactDataEntry(
   caseSensitive: caseSensitive ?? this.caseSensitive,
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,
@@ -53,8 +53,8 @@ DlpExactDataEntry copyWith({bool? caseSensitive, DateTime? createdAt, bool? enab
   name: name ?? this.name,
   secret: secret ?? this.secret,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpExactDataEntry &&
           caseSensitive == other.caseSensitive &&
           createdAt == other.createdAt &&
@@ -62,7 +62,7 @@ DlpExactDataEntry copyWith({bool? caseSensitive, DateTime? createdAt, bool? enab
           id == other.id &&
           name == other.name &&
           secret == other.secret &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(caseSensitive, createdAt, enabled, id, name, secret, updatedAt); } 
-@override String toString() { return 'DlpExactDataEntry(caseSensitive: $caseSensitive, createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, secret: $secret, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(caseSensitive, createdAt, enabled, id, name, secret, updatedAt);}
+@override String toString() {return 'DlpExactDataEntry(caseSensitive: $caseSensitive, createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, secret: $secret, updatedAt: $updatedAt)';}
+}

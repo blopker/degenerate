@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookInstallationRepositoriesRemovedRepositoriesRemoved {const WebhookInstallationRepositoriesRemovedRepositoriesRemoved({required this.fullName, required this.id, required this.name, required this.nodeId, required this.private, });
 
-factory WebhookInstallationRepositoriesRemovedRepositoriesRemoved.fromJson(Map<String, dynamic> json) { return WebhookInstallationRepositoriesRemovedRepositoriesRemoved(
+factory WebhookInstallationRepositoriesRemovedRepositoriesRemoved.fromJson(Map<String, dynamic> json) {return WebhookInstallationRepositoriesRemovedRepositoriesRemoved(
   fullName: json['full_name'] as String,
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
   private: json['private'] as bool,
-); }
+);}
 
 final String fullName;
 
@@ -23,32 +23,32 @@ final String nodeId;
 /// Whether the repository is private or public.
 final bool private;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'full_name': fullName,
   'id': id,
   'name': name,
   'node_id': nodeId,
   'private': private,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('full_name') && json['full_name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('full_name') && json['full_name'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
-      json.containsKey('private') && json['private'] is bool; } 
-WebhookInstallationRepositoriesRemovedRepositoriesRemoved copyWith({String? fullName, int? id, String? name, String? nodeId, bool? private, }) { return WebhookInstallationRepositoriesRemovedRepositoriesRemoved(
+      json.containsKey('private') && json['private'] is bool;}
+WebhookInstallationRepositoriesRemovedRepositoriesRemoved copyWith({String? fullName, int? id, String? name, String? nodeId, bool? private, }) {return WebhookInstallationRepositoriesRemovedRepositoriesRemoved(
   fullName: fullName ?? this.fullName,
   id: id ?? this.id,
   name: name ?? this.name,
   nodeId: nodeId ?? this.nodeId,
   private: private ?? this.private,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookInstallationRepositoriesRemovedRepositoriesRemoved &&
           fullName == other.fullName &&
           id == other.id &&
           name == other.name &&
           nodeId == other.nodeId &&
-          private == other.private; } 
-@override int get hashCode { return Object.hash(fullName, id, name, nodeId, private); } 
-@override String toString() { return 'WebhookInstallationRepositoriesRemovedRepositoriesRemoved(fullName: $fullName, id: $id, name: $name, nodeId: $nodeId, private: $private)'; } 
- }
+          private == other.private;}
+@override int get hashCode {return Object.hash(fullName, id, name, nodeId, private);}
+@override String toString() {return 'WebhookInstallationRepositoriesRemovedRepositoriesRemoved(fullName: $fullName, id: $id, name: $name, nodeId: $nodeId, private: $private)';}
+}

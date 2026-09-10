@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomIndicatorFeedsUpdateFeed {const CustomIndicatorFeedsUpdateFeed({this.fileId, this.filename, this.status, });
 
-factory CustomIndicatorFeedsUpdateFeed.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsUpdateFeed(
+factory CustomIndicatorFeedsUpdateFeed.fromJson(Map<String, dynamic> json) {return CustomIndicatorFeedsUpdateFeed(
   fileId: json['file_id'] != null ? (json['file_id'] as num).toInt() : null,
   filename: json['filename'] as String?,
   status: json['status'] as String?,
-); }
+);}
 
 /// Feed id
 final int? fileId;
@@ -17,22 +17,22 @@ final String? filename;
 /// Current status of upload, should be unified
 final String? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'file_id': ?fileId,
   'filename': ?filename,
   'status': ?status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_id', 'filename', 'status'}.contains(key)); } 
-CustomIndicatorFeedsUpdateFeed copyWith({int? Function()? fileId, String? Function()? filename, String? Function()? status, }) { return CustomIndicatorFeedsUpdateFeed(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'file_id', 'filename', 'status'}.contains(key));}
+CustomIndicatorFeedsUpdateFeed copyWith({int? Function()? fileId, String? Function()? filename, String? Function()? status, }) {return CustomIndicatorFeedsUpdateFeed(
   fileId: fileId != null ? fileId() : this.fileId,
   filename: filename != null ? filename() : this.filename,
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomIndicatorFeedsUpdateFeed &&
           fileId == other.fileId &&
           filename == other.filename &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(fileId, filename, status); } 
-@override String toString() { return 'CustomIndicatorFeedsUpdateFeed(fileId: $fileId, filename: $filename, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(fileId, filename, status);}
+@override String toString() {return 'CustomIndicatorFeedsUpdateFeed(fileId: $fileId, filename: $filename, status: $status)';}
+}

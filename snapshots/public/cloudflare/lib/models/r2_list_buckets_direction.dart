@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order buckets.
 @immutable final class R2ListBucketsDirection {const R2ListBucketsDirection._(this.value);
 
-factory R2ListBucketsDirection.fromJson(String json) { return switch (json) {
+factory R2ListBucketsDirection.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   _ => R2ListBucketsDirection._(json),
-}; }
+};}
 
 static const R2ListBucketsDirection asc = R2ListBucketsDirection._('asc');
 
@@ -17,11 +17,11 @@ static const List<R2ListBucketsDirection> values = [asc, desc];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2ListBucketsDirection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2ListBucketsDirection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is R2ListBucketsDirection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'R2ListBucketsDirection($value)';}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.truncate`.
 @immutable final class RealtimeBetaClientEventConversationItemTruncateType {const RealtimeBetaClientEventConversationItemTruncateType._(this.value);
 
-factory RealtimeBetaClientEventConversationItemTruncateType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaClientEventConversationItemTruncateType.fromJson(String json) {return switch (json) {
   'conversation.item.truncate' => conversationItemTruncate,
   _ => RealtimeBetaClientEventConversationItemTruncateType._(json),
-}; }
+};}
 
 static const RealtimeBetaClientEventConversationItemTruncateType conversationItemTruncate = RealtimeBetaClientEventConversationItemTruncateType._('conversation.item.truncate');
 
@@ -14,14 +14,14 @@ static const List<RealtimeBetaClientEventConversationItemTruncateType> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaClientEventConversationItemTruncateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaClientEventConversationItemTruncateType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeBetaClientEventConversationItemTruncateType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeBetaClientEventConversationItemTruncateType($value)';}
+}
 /// Send this event to truncate a previous assistant message’s audio. The server
 /// will produce audio faster than realtime, so this event is useful when the user
 /// interrupts to truncate audio that has already been sent to the client but not
@@ -36,13 +36,13 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class RealtimeBetaClientEventConversationItemTruncate {const RealtimeBetaClientEventConversationItemTruncate({required this.type, required this.itemId, required this.contentIndex, required this.audioEndMs, this.eventId, });
 
-factory RealtimeBetaClientEventConversationItemTruncate.fromJson(Map<String, dynamic> json) { return RealtimeBetaClientEventConversationItemTruncate(
+factory RealtimeBetaClientEventConversationItemTruncate.fromJson(Map<String, dynamic> json) {return RealtimeBetaClientEventConversationItemTruncate(
   eventId: json['event_id'] as String?,
   type: RealtimeBetaClientEventConversationItemTruncateType.fromJson(json['type'] as String),
   itemId: json['item_id'] as String,
   contentIndex: (json['content_index'] as num).toInt(),
   audioEndMs: (json['audio_end_ms'] as num).toInt(),
-); }
+);}
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
@@ -64,31 +64,31 @@ final int contentIndex;
 /// 
 final int audioEndMs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type.toJson(),
   'item_id': itemId,
   'content_index': contentIndex,
   'audio_end_ms': audioEndMs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('content_index') && json['content_index'] is num &&
-      json.containsKey('audio_end_ms') && json['audio_end_ms'] is num; } 
-RealtimeBetaClientEventConversationItemTruncate copyWith({String? Function()? eventId, RealtimeBetaClientEventConversationItemTruncateType? type, String? itemId, int? contentIndex, int? audioEndMs, }) { return RealtimeBetaClientEventConversationItemTruncate(
+      json.containsKey('audio_end_ms') && json['audio_end_ms'] is num;}
+RealtimeBetaClientEventConversationItemTruncate copyWith({String? Function()? eventId, RealtimeBetaClientEventConversationItemTruncateType? type, String? itemId, int? contentIndex, int? audioEndMs, }) {return RealtimeBetaClientEventConversationItemTruncate(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   contentIndex: contentIndex ?? this.contentIndex,
   audioEndMs: audioEndMs ?? this.audioEndMs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeBetaClientEventConversationItemTruncate &&
           eventId == other.eventId &&
           type == other.type &&
           itemId == other.itemId &&
           contentIndex == other.contentIndex &&
-          audioEndMs == other.audioEndMs; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, audioEndMs); } 
-@override String toString() { return 'RealtimeBetaClientEventConversationItemTruncate(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, audioEndMs: $audioEndMs)'; } 
- }
+          audioEndMs == other.audioEndMs;}
+@override int get hashCode {return Object.hash(eventId, type, itemId, contentIndex, audioEndMs);}
+@override String toString() {return 'RealtimeBetaClientEventConversationItemTruncate(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, audioEndMs: $audioEndMs)';}
+}

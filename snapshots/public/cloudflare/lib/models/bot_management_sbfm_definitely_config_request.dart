@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_ai_bots_protection.dart';import 'bot_management_cf_robots_variant.dart';import 'bot_management_crawler_protection.dart';import 'bot_management_enable_js.dart';import 'bot_management_is_robots_txt_managed.dart';import 'bot_management_optimize_wordpress.dart';import 'bot_management_sbfm_definitely_automated.dart';import 'bot_management_sbfm_static_resource_protection.dart';import 'bot_management_sbfm_verified_bots.dart';@immutable final class BotManagementSbfmDefinitelyConfigRequest {const BotManagementSbfmDefinitelyConfigRequest({this.aiBotsProtection, this.cfRobotsVariant, this.crawlerProtection, this.enableJs, this.isRobotsTxtManaged, this.optimizeWordpress, this.sbfmDefinitelyAutomated, this.sbfmStaticResourceProtection, this.sbfmVerifiedBots, });
 
-factory BotManagementSbfmDefinitelyConfigRequest.fromJson(Map<String, dynamic> json) { return BotManagementSbfmDefinitelyConfigRequest(
+factory BotManagementSbfmDefinitelyConfigRequest.fromJson(Map<String, dynamic> json) {return BotManagementSbfmDefinitelyConfigRequest(
   aiBotsProtection: json['ai_bots_protection'] != null ? BotManagementAiBotsProtection.fromJson(json['ai_bots_protection'] as String) : null,
   cfRobotsVariant: json['cf_robots_variant'] != null ? BotManagementCfRobotsVariant.fromJson(json['cf_robots_variant'] as String) : null,
   crawlerProtection: json['crawler_protection'] != null ? BotManagementCrawlerProtection.fromJson(json['crawler_protection'] as String) : null,
@@ -12,7 +12,7 @@ factory BotManagementSbfmDefinitelyConfigRequest.fromJson(Map<String, dynamic> j
   sbfmDefinitelyAutomated: json['sbfm_definitely_automated'] != null ? BotManagementSbfmDefinitelyAutomated.fromJson(json['sbfm_definitely_automated'] as String) : null,
   sbfmStaticResourceProtection: json['sbfm_static_resource_protection'] != null ? BotManagementSbfmStaticResourceProtection.fromJson(json['sbfm_static_resource_protection'] as bool) : null,
   sbfmVerifiedBots: json['sbfm_verified_bots'] != null ? BotManagementSbfmVerifiedBots.fromJson(json['sbfm_verified_bots'] as String) : null,
-); }
+);}
 
 /// Enable rule to block AI Scrapers and Crawlers. Please note the value `only_on_ad_pages` is currently not available for Enterprise customers.
 final BotManagementAiBotsProtection? aiBotsProtection;
@@ -44,7 +44,7 @@ final BotManagementSbfmStaticResourceProtection? sbfmStaticResourceProtection;
 /// Super Bot Fight Mode (SBFM) action to take on verified bots requests.
 final BotManagementSbfmVerifiedBots? sbfmVerifiedBots;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aiBotsProtection != null) 'ai_bots_protection': aiBotsProtection?.toJson(),
   if (cfRobotsVariant != null) 'cf_robots_variant': cfRobotsVariant?.toJson(),
   if (crawlerProtection != null) 'crawler_protection': crawlerProtection?.toJson(),
@@ -54,9 +54,9 @@ Map<String, dynamic> toJson() { return {
   if (sbfmDefinitelyAutomated != null) 'sbfm_definitely_automated': sbfmDefinitelyAutomated?.toJson(),
   if (sbfmStaticResourceProtection != null) 'sbfm_static_resource_protection': sbfmStaticResourceProtection?.toJson(),
   if (sbfmVerifiedBots != null) 'sbfm_verified_bots': sbfmVerifiedBots?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ai_bots_protection', 'cf_robots_variant', 'crawler_protection', 'enable_js', 'is_robots_txt_managed', 'optimize_wordpress', 'sbfm_definitely_automated', 'sbfm_static_resource_protection', 'sbfm_verified_bots'}.contains(key)); } 
-BotManagementSbfmDefinitelyConfigRequest copyWith({BotManagementAiBotsProtection? Function()? aiBotsProtection, BotManagementCfRobotsVariant? Function()? cfRobotsVariant, BotManagementCrawlerProtection? Function()? crawlerProtection, BotManagementEnableJs? Function()? enableJs, BotManagementIsRobotsTxtManaged? Function()? isRobotsTxtManaged, BotManagementOptimizeWordpress? Function()? optimizeWordpress, BotManagementSbfmDefinitelyAutomated? Function()? sbfmDefinitelyAutomated, BotManagementSbfmStaticResourceProtection? Function()? sbfmStaticResourceProtection, BotManagementSbfmVerifiedBots? Function()? sbfmVerifiedBots, }) { return BotManagementSbfmDefinitelyConfigRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ai_bots_protection', 'cf_robots_variant', 'crawler_protection', 'enable_js', 'is_robots_txt_managed', 'optimize_wordpress', 'sbfm_definitely_automated', 'sbfm_static_resource_protection', 'sbfm_verified_bots'}.contains(key));}
+BotManagementSbfmDefinitelyConfigRequest copyWith({BotManagementAiBotsProtection? Function()? aiBotsProtection, BotManagementCfRobotsVariant? Function()? cfRobotsVariant, BotManagementCrawlerProtection? Function()? crawlerProtection, BotManagementEnableJs? Function()? enableJs, BotManagementIsRobotsTxtManaged? Function()? isRobotsTxtManaged, BotManagementOptimizeWordpress? Function()? optimizeWordpress, BotManagementSbfmDefinitelyAutomated? Function()? sbfmDefinitelyAutomated, BotManagementSbfmStaticResourceProtection? Function()? sbfmStaticResourceProtection, BotManagementSbfmVerifiedBots? Function()? sbfmVerifiedBots, }) {return BotManagementSbfmDefinitelyConfigRequest(
   aiBotsProtection: aiBotsProtection != null ? aiBotsProtection() : this.aiBotsProtection,
   cfRobotsVariant: cfRobotsVariant != null ? cfRobotsVariant() : this.cfRobotsVariant,
   crawlerProtection: crawlerProtection != null ? crawlerProtection() : this.crawlerProtection,
@@ -66,8 +66,8 @@ BotManagementSbfmDefinitelyConfigRequest copyWith({BotManagementAiBotsProtection
   sbfmDefinitelyAutomated: sbfmDefinitelyAutomated != null ? sbfmDefinitelyAutomated() : this.sbfmDefinitelyAutomated,
   sbfmStaticResourceProtection: sbfmStaticResourceProtection != null ? sbfmStaticResourceProtection() : this.sbfmStaticResourceProtection,
   sbfmVerifiedBots: sbfmVerifiedBots != null ? sbfmVerifiedBots() : this.sbfmVerifiedBots,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BotManagementSbfmDefinitelyConfigRequest &&
           aiBotsProtection == other.aiBotsProtection &&
           cfRobotsVariant == other.cfRobotsVariant &&
@@ -77,7 +77,7 @@ BotManagementSbfmDefinitelyConfigRequest copyWith({BotManagementAiBotsProtection
           optimizeWordpress == other.optimizeWordpress &&
           sbfmDefinitelyAutomated == other.sbfmDefinitelyAutomated &&
           sbfmStaticResourceProtection == other.sbfmStaticResourceProtection &&
-          sbfmVerifiedBots == other.sbfmVerifiedBots; } 
-@override int get hashCode { return Object.hash(aiBotsProtection, cfRobotsVariant, crawlerProtection, enableJs, isRobotsTxtManaged, optimizeWordpress, sbfmDefinitelyAutomated, sbfmStaticResourceProtection, sbfmVerifiedBots); } 
-@override String toString() { return 'BotManagementSbfmDefinitelyConfigRequest(aiBotsProtection: $aiBotsProtection, cfRobotsVariant: $cfRobotsVariant, crawlerProtection: $crawlerProtection, enableJs: $enableJs, isRobotsTxtManaged: $isRobotsTxtManaged, optimizeWordpress: $optimizeWordpress, sbfmDefinitelyAutomated: $sbfmDefinitelyAutomated, sbfmStaticResourceProtection: $sbfmStaticResourceProtection, sbfmVerifiedBots: $sbfmVerifiedBots)'; } 
- }
+          sbfmVerifiedBots == other.sbfmVerifiedBots;}
+@override int get hashCode {return Object.hash(aiBotsProtection, cfRobotsVariant, crawlerProtection, enableJs, isRobotsTxtManaged, optimizeWordpress, sbfmDefinitelyAutomated, sbfmStaticResourceProtection, sbfmVerifiedBots);}
+@override String toString() {return 'BotManagementSbfmDefinitelyConfigRequest(aiBotsProtection: $aiBotsProtection, cfRobotsVariant: $cfRobotsVariant, crawlerProtection: $crawlerProtection, enableJs: $enableJs, isRobotsTxtManaged: $isRobotsTxtManaged, optimizeWordpress: $optimizeWordpress, sbfmDefinitelyAutomated: $sbfmDefinitelyAutomated, sbfmStaticResourceProtection: $sbfmStaticResourceProtection, sbfmVerifiedBots: $sbfmVerifiedBots)';}
+}

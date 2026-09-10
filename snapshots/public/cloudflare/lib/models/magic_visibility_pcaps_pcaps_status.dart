@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the packet capture request.
 @immutable final class MagicVisibilityPcapsPcapsStatus {const MagicVisibilityPcapsPcapsStatus._(this.value);
 
-factory MagicVisibilityPcapsPcapsStatus.fromJson(String json) { return switch (json) {
+factory MagicVisibilityPcapsPcapsStatus.fromJson(String json) {return switch (json) {
   'unknown' => unknown,
   'success' => success,
   'pending' => pending,
@@ -13,7 +13,7 @@ factory MagicVisibilityPcapsPcapsStatus.fromJson(String json) { return switch (j
   'complete' => complete,
   'failed' => failed,
   _ => MagicVisibilityPcapsPcapsStatus._(json),
-}; }
+};}
 
 static const MagicVisibilityPcapsPcapsStatus unknown = MagicVisibilityPcapsPcapsStatus._('unknown');
 
@@ -35,11 +35,11 @@ static const List<MagicVisibilityPcapsPcapsStatus> values = [unknown, success, p
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicVisibilityPcapsPcapsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicVisibilityPcapsPcapsStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MagicVisibilityPcapsPcapsStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MagicVisibilityPcapsPcapsStatus($value)';}
+}

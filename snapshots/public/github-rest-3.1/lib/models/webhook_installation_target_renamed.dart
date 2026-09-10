@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_installation_target_renamed_account.dart';import 'webhook_installation_target_renamed_changes.dart';@immutable final class WebhookInstallationTargetRenamedAction {const WebhookInstallationTargetRenamedAction._(this.value);
 
-factory WebhookInstallationTargetRenamedAction.fromJson(String json) { return switch (json) {
+factory WebhookInstallationTargetRenamedAction.fromJson(String json) {return switch (json) {
   'renamed' => renamed,
   _ => WebhookInstallationTargetRenamedAction._(json),
-}; }
+};}
 
 static const WebhookInstallationTargetRenamedAction renamed = WebhookInstallationTargetRenamedAction._('renamed');
 
@@ -13,17 +13,17 @@ static const List<WebhookInstallationTargetRenamedAction> values = [renamed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookInstallationTargetRenamedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookInstallationTargetRenamedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookInstallationTargetRenamedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookInstallationTargetRenamedAction($value)';}
+}
 @immutable final class WebhookInstallationTargetRenamed {const WebhookInstallationTargetRenamed({required this.account, required this.action, required this.changes, required this.installation, required this.targetType, this.enterprise, this.organization, this.repository, this.sender, });
 
-factory WebhookInstallationTargetRenamed.fromJson(Map<String, dynamic> json) { return WebhookInstallationTargetRenamed(
+factory WebhookInstallationTargetRenamed.fromJson(Map<String, dynamic> json) {return WebhookInstallationTargetRenamed(
   account: WebhookInstallationTargetRenamedAccount.fromJson(json['account'] as Map<String, dynamic>),
   action: WebhookInstallationTargetRenamedAction.fromJson(json['action'] as String),
   changes: WebhookInstallationTargetRenamedChanges.fromJson(json['changes'] as Map<String, dynamic>),
@@ -33,7 +33,7 @@ factory WebhookInstallationTargetRenamed.fromJson(Map<String, dynamic> json) { r
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
   targetType: json['target_type'] as String,
-); }
+);}
 
 final WebhookInstallationTargetRenamedAccount account;
 
@@ -53,7 +53,7 @@ final SimpleUser? sender;
 
 final String targetType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account.toJson(),
   'action': action.toJson(),
   'changes': changes.toJson(),
@@ -63,13 +63,13 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
   'target_type': targetType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') &&
       json.containsKey('action') &&
       json.containsKey('changes') &&
       json.containsKey('installation') &&
-      json.containsKey('target_type') && json['target_type'] is String; } 
-WebhookInstallationTargetRenamed copyWith({WebhookInstallationTargetRenamedAccount? account, WebhookInstallationTargetRenamedAction? action, WebhookInstallationTargetRenamedChanges? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, String? targetType, }) { return WebhookInstallationTargetRenamed(
+      json.containsKey('target_type') && json['target_type'] is String;}
+WebhookInstallationTargetRenamed copyWith({WebhookInstallationTargetRenamedAccount? account, WebhookInstallationTargetRenamedAction? action, WebhookInstallationTargetRenamedChanges? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, String? targetType, }) {return WebhookInstallationTargetRenamed(
   account: account ?? this.account,
   action: action ?? this.action,
   changes: changes ?? this.changes,
@@ -79,8 +79,8 @@ WebhookInstallationTargetRenamed copyWith({WebhookInstallationTargetRenamedAccou
   repository: repository != null ? repository() : this.repository,
   sender: sender != null ? sender() : this.sender,
   targetType: targetType ?? this.targetType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookInstallationTargetRenamed &&
           account == other.account &&
           action == other.action &&
@@ -90,7 +90,7 @@ WebhookInstallationTargetRenamed copyWith({WebhookInstallationTargetRenamedAccou
           organization == other.organization &&
           repository == other.repository &&
           sender == other.sender &&
-          targetType == other.targetType; } 
-@override int get hashCode { return Object.hash(account, action, changes, enterprise, installation, organization, repository, sender, targetType); } 
-@override String toString() { return 'WebhookInstallationTargetRenamed(account: $account, action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, targetType: $targetType)'; } 
- }
+          targetType == other.targetType;}
+@override int get hashCode {return Object.hash(account, action, changes, enterprise, installation, organization, repository, sender, targetType);}
+@override String toString() {return 'WebhookInstallationTargetRenamed(account: $account, action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, targetType: $targetType)';}
+}

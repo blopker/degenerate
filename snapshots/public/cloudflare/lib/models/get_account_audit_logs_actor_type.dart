@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAccountAuditLogsActorType {const GetAccountAuditLogsActorType._(this.value);
 
-factory GetAccountAuditLogsActorType.fromJson(String json) { return switch (json) {
+factory GetAccountAuditLogsActorType.fromJson(String json) {return switch (json) {
   'account' => account,
   'cloudflare_admin' => cloudflareAdmin,
   'system' => system,
   'user' => user,
   _ => GetAccountAuditLogsActorType._(json),
-}; }
+};}
 
 static const GetAccountAuditLogsActorType account = GetAccountAuditLogsActorType._('account');
 
@@ -22,11 +22,11 @@ static const List<GetAccountAuditLogsActorType> values = [account, cloudflareAdm
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetAccountAuditLogsActorType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetAccountAuditLogsActorType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetAccountAuditLogsActorType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetAccountAuditLogsActorType($value)';}
+}

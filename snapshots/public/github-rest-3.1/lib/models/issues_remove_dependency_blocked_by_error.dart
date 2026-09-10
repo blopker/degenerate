@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByError();
 
 /// Decodes the payload for its declared status and content type.
-static IssuesRemoveDependencyBlockedByError parse(ApiResponse response) { switch (response.statusCode) {
+static IssuesRemoveDependencyBlockedByError parse(ApiResponse response) {switch (response.statusCode) {
 case 301:
 final json = jsonDecode(response.body);
 return IssuesRemoveDependencyBlockedByError301(BasicError.fromJson(json as Map<String, dynamic>));
@@ -36,61 +36,61 @@ return IssuesRemoveDependencyBlockedByError410(BasicError.fromJson(json as Map<S
 default:
 return IssuesRemoveDependencyBlockedByErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 301 (application/json).
 final class IssuesRemoveDependencyBlockedByError301 extends IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByError301(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 400 (application/json).
 final class IssuesRemoveDependencyBlockedByError400ApplicationJson extends IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByError400ApplicationJson(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 400 (application/scim+json).
 final class IssuesRemoveDependencyBlockedByError400ApplicationScimJson extends IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByError400ApplicationScimJson(this.data);
 
 /// The decoded response payload.
 final ScimError data;
 
- }
+}
 /// Response for 401 (application/json).
 final class IssuesRemoveDependencyBlockedByError401 extends IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class IssuesRemoveDependencyBlockedByError403 extends IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class IssuesRemoveDependencyBlockedByError404 extends IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 410 (application/json).
 final class IssuesRemoveDependencyBlockedByError410 extends IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByError410(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class IssuesRemoveDependencyBlockedByErrorUnknown extends IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

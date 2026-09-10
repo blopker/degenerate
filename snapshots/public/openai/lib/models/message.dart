@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content.dart';@immutable final class MessageStatus {const MessageStatus._(this.value);
 
-factory MessageStatus.fromJson(String json) { return switch (json) {
+factory MessageStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
   _ => MessageStatus._(json),
-}; }
+};}
 
 static const MessageStatus inProgress = MessageStatus._('in_progress');
 
@@ -19,17 +19,17 @@ static const List<MessageStatus> values = [inProgress, completed, incomplete];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageStatus($value)';}
+}
 @immutable final class MessageRole {const MessageRole._(this.value);
 
-factory MessageRole.fromJson(String json) { return switch (json) {
+factory MessageRole.fromJson(String json) {return switch (json) {
   'unknown' => unknown,
   'user' => user,
   'assistant' => assistant,
@@ -39,7 +39,7 @@ factory MessageRole.fromJson(String json) { return switch (json) {
   'developer' => developer,
   'tool' => tool,
   _ => MessageRole._(json),
-}; }
+};}
 
 static const MessageRole unknown = MessageRole._('unknown');
 
@@ -61,24 +61,24 @@ static const List<MessageRole> values = [unknown, user, assistant, system, criti
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageRole($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageRole && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageRole($value)';}
+}
 /// A message to or from the model.
 @immutable final class Message {const Message({required this.type, required this.id, required this.status, required this.role, required this.content, });
 
-factory Message.fromJson(Map<String, dynamic> json) { return Message(
+factory Message.fromJson(Map<String, dynamic> json) {return Message(
   type: json['type'] as String,
   id: json['id'] as String,
   status: MessageStatus.fromJson(json['status'] as String),
   role: MessageRole.fromJson(json['role'] as String),
   content: (json['content'] as List<dynamic>).map((e) => MessageContent.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The type of the message. Always set to `message`.
 final String type;
@@ -95,32 +95,32 @@ final MessageRole role;
 /// The content of the message
 final List<MessageContent> content;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'status': status.toJson(),
   'role': role.toJson(),
   'content': content.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('status') &&
       json.containsKey('role') &&
-      json.containsKey('content'); } 
-Message copyWith({String? type, String? id, MessageStatus? status, MessageRole? role, List<MessageContent>? content, }) { return Message(
+      json.containsKey('content');}
+Message copyWith({String? type, String? id, MessageStatus? status, MessageRole? role, List<MessageContent>? content, }) {return Message(
   type: type ?? this.type,
   id: id ?? this.id,
   status: status ?? this.status,
   role: role ?? this.role,
   content: content ?? this.content,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Message &&
           type == other.type &&
           id == other.id &&
           status == other.status &&
           role == other.role &&
-          listEquals(content, other.content); } 
-@override int get hashCode { return Object.hash(type, id, status, role, Object.hashAll(content)); } 
-@override String toString() { return 'Message(type: $type, id: $id, status: $status, role: $role, content: $content)'; } 
- }
+          listEquals(content, other.content);}
+@override int get hashCode {return Object.hash(type, id, status, role, Object.hashAll(content));}
+@override String toString() {return 'Message(type: $type, id: $id, status: $status, role: $role, content: $content)';}
+}

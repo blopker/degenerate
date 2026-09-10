@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_details_address2.dart';@immutable final class PostPaymentIntentsRequestPaymentMethodDataBillingDetailsAddressVariant2 {const PostPaymentIntentsRequestPaymentMethodDataBillingDetailsAddressVariant2._(this.value);
 
-factory PostPaymentIntentsRequestPaymentMethodDataBillingDetailsAddressVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsRequestPaymentMethodDataBillingDetailsAddressVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentIntentsRequestPaymentMethodDataBillingDetailsAddressVariant2._(json),
-}; }
+};}
 
 static const PostPaymentIntentsRequestPaymentMethodDataBillingDetailsAddressVariant2 $empty = PostPaymentIntentsRequestPaymentMethodDataBillingDetailsAddressVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentIntentsRequestPaymentMethodDataBillingDetailsAddres
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsRequestPaymentMethodDataBillingDetailsAddressVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsRequestPaymentMethodDataBillingDetailsAddressVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsRequestPaymentMethodDataBillingDetailsAddressVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsRequestPaymentMethodDataBillingDetailsAddressVariant2($value)';}
+}
 
 @immutable
 final class PostPaymentIntentsRequestPaymentMethodDataBillingDetailsAddress {

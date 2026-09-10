@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpRegexValidationQuery {const DlpRegexValidationQuery({required this.regex, this.maxMatchBytes = const Omittable.absent(), });
 
-factory DlpRegexValidationQuery.fromJson(Map<String, dynamic> json) { return DlpRegexValidationQuery(
+factory DlpRegexValidationQuery.fromJson(Map<String, dynamic> json) {return DlpRegexValidationQuery(
   maxMatchBytes: json.containsKey('max_match_bytes') ? Omittable(json['max_match_bytes'] != null ? (json['max_match_bytes'] as num).toInt() : null) : const Omittable.absent(),
   regex: json['regex'] as String,
-); }
+);}
 
 /// Maximum number of bytes that the regular expression can match.
 /// 
@@ -21,19 +21,19 @@ final Omittable<int?> maxMatchBytes;
 
 final String regex;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (maxMatchBytes.isPresent) 'max_match_bytes': maxMatchBytes.value,
   'regex': regex,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('regex') && json['regex'] is String; } 
-DlpRegexValidationQuery copyWith({Omittable<int?>? maxMatchBytes, String? regex, }) { return DlpRegexValidationQuery(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('regex') && json['regex'] is String;}
+DlpRegexValidationQuery copyWith({Omittable<int?>? maxMatchBytes, String? regex, }) {return DlpRegexValidationQuery(
   maxMatchBytes: maxMatchBytes ?? this.maxMatchBytes,
   regex: regex ?? this.regex,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpRegexValidationQuery &&
           maxMatchBytes == other.maxMatchBytes &&
-          regex == other.regex; } 
-@override int get hashCode { return Object.hash(maxMatchBytes, regex); } 
-@override String toString() { return 'DlpRegexValidationQuery(maxMatchBytes: $maxMatchBytes, regex: $regex)'; } 
- }
+          regex == other.regex;}
+@override int get hashCode {return Object.hash(maxMatchBytes, regex);}
+@override String toString() {return 'DlpRegexValidationQuery(maxMatchBytes: $maxMatchBytes, regex: $regex)';}
+}

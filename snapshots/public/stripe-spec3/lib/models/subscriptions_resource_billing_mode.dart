@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscriptions_resource_billing_mode_flexible.dart';/// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
 @immutable final class SubscriptionsResourceBillingModeType {const SubscriptionsResourceBillingModeType._(this.value);
 
-factory SubscriptionsResourceBillingModeType.fromJson(String json) { return switch (json) {
+factory SubscriptionsResourceBillingModeType.fromJson(String json) {return switch (json) {
   'classic' => classic,
   'flexible' => flexible,
   _ => SubscriptionsResourceBillingModeType._(json),
-}; }
+};}
 
 static const SubscriptionsResourceBillingModeType classic = SubscriptionsResourceBillingModeType._('classic');
 
@@ -17,22 +17,22 @@ static const List<SubscriptionsResourceBillingModeType> values = [classic, flexi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionsResourceBillingModeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionsResourceBillingModeType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionsResourceBillingModeType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionsResourceBillingModeType($value)';}
+}
 /// The billing mode of the subscription.
 @immutable final class SubscriptionsResourceBillingMode {const SubscriptionsResourceBillingMode({required this.type, this.flexible = const Omittable.absent(), this.updatedAt, });
 
-factory SubscriptionsResourceBillingMode.fromJson(Map<String, dynamic> json) { return SubscriptionsResourceBillingMode(
+factory SubscriptionsResourceBillingMode.fromJson(Map<String, dynamic> json) {return SubscriptionsResourceBillingMode(
   flexible: json.containsKey('flexible') ? Omittable(json['flexible'] != null ? SubscriptionsResourceBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: SubscriptionsResourceBillingModeType.fromJson(json['type'] as String),
   updatedAt: json['updated_at'] != null ? (json['updated_at'] as num).toInt() : null,
-); }
+);}
 
 /// Configure behavior for flexible billing mode
 final Omittable<SubscriptionsResourceBillingModeFlexible?> flexible;
@@ -43,22 +43,22 @@ final SubscriptionsResourceBillingModeType type;
 /// Details on when the current billing_mode was adopted.
 final int? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (flexible.isPresent) 'flexible': flexible.value?.toJson(),
   'type': type.toJson(),
   'updated_at': ?updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-SubscriptionsResourceBillingMode copyWith({Omittable<SubscriptionsResourceBillingModeFlexible?>? flexible, SubscriptionsResourceBillingModeType? type, int? Function()? updatedAt, }) { return SubscriptionsResourceBillingMode(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+SubscriptionsResourceBillingMode copyWith({Omittable<SubscriptionsResourceBillingModeFlexible?>? flexible, SubscriptionsResourceBillingModeType? type, int? Function()? updatedAt, }) {return SubscriptionsResourceBillingMode(
   flexible: flexible ?? this.flexible,
   type: type ?? this.type,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SubscriptionsResourceBillingMode &&
           flexible == other.flexible &&
           type == other.type &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(flexible, type, updatedAt); } 
-@override String toString() { return 'SubscriptionsResourceBillingMode(flexible: $flexible, type: $type, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(flexible, type, updatedAt);}
+@override String toString() {return 'SubscriptionsResourceBillingMode(flexible: $flexible, type: $type, updatedAt: $updatedAt)';}
+}

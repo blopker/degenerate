@@ -13,7 +13,7 @@ final class UrlNormalizationApi with ApiExecutor {const UrlNormalizationApi(this
 /// Fetches the current URL Normalization settings.
 ///
 /// `GET /zones/{zone_id}/url_normalization`
-Future<ApiResult<RulesetsUrlNormalization, GetUrlNormalizationResponse4xx>> getUrlNormalization({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RulesetsUrlNormalization, GetUrlNormalizationResponse4xx>> getUrlNormalization({required RulesetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update URL Normalization settings
 ///
 /// Updates the URL Normalization settings.
 ///
 /// `PUT /zones/{zone_id}/url_normalization`
-Future<ApiResult<RulesetsUrlNormalization, UpdateUrlNormalizationResponse4xx>> updateUrlNormalization({required RulesetsZoneId zoneId, required RulesetsUrlNormalization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RulesetsUrlNormalization, UpdateUrlNormalizationResponse4xx>> updateUrlNormalization({required RulesetsZoneId zoneId, required RulesetsUrlNormalization body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete URL Normalization settings
 ///
 /// Deletes the URL Normalization settings.
 ///
 /// `DELETE /zones/{zone_id}/url_normalization`
-Future<ApiResult<void, DeleteUrlNormalizationResponse4xx>> deleteUrlNormalization({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DeleteUrlNormalizationResponse4xx>> deleteUrlNormalization({required RulesetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -102,5 +102,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

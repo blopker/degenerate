@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account_sessions_request_components_payouts_list_features.dart';@immutable final class PostAccountSessionsRequestComponentsPayoutsList {const PostAccountSessionsRequestComponentsPayoutsList({required this.enabled, this.features, });
 
-factory PostAccountSessionsRequestComponentsPayoutsList.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsPayoutsList(
+factory PostAccountSessionsRequestComponentsPayoutsList.fromJson(Map<String, dynamic> json) {return PostAccountSessionsRequestComponentsPayoutsList(
   enabled: json['enabled'] as bool,
   features: json['features'] != null ? PostAccountSessionsRequestComponentsPayoutsListFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final bool enabled;
 
 final PostAccountSessionsRequestComponentsPayoutsListFeatures? features;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   if (features != null) 'features': features?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostAccountSessionsRequestComponentsPayoutsList copyWith({bool? enabled, PostAccountSessionsRequestComponentsPayoutsListFeatures? Function()? features, }) { return PostAccountSessionsRequestComponentsPayoutsList(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+PostAccountSessionsRequestComponentsPayoutsList copyWith({bool? enabled, PostAccountSessionsRequestComponentsPayoutsListFeatures? Function()? features, }) {return PostAccountSessionsRequestComponentsPayoutsList(
   enabled: enabled ?? this.enabled,
   features: features != null ? features() : this.features,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountSessionsRequestComponentsPayoutsList &&
           enabled == other.enabled &&
-          features == other.features; } 
-@override int get hashCode { return Object.hash(enabled, features); } 
-@override String toString() { return 'PostAccountSessionsRequestComponentsPayoutsList(enabled: $enabled, features: $features)'; } 
- }
+          features == other.features;}
+@override int get hashCode {return Object.hash(enabled, features);}
+@override String toString() {return 'PostAccountSessionsRequestComponentsPayoutsList(enabled: $enabled, features: $features)';}
+}

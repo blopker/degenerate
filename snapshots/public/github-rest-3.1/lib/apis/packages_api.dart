@@ -15,7 +15,7 @@ final class PackagesApi with ApiExecutor {const PackagesApi(this.apiConfig);
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/docker/conflicts`
-Future<ApiResult<List<Package>, BasicError>> packagesListDockerMigrationConflictingPackagesForOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Package>, BasicError>> packagesListDockerMigrationConflictingPackagesForOrganization({required String org, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -41,7 +41,7 @@ return null;
 
   },
 );
- } 
+}
 /// List packages for an organization
 ///
 /// Lists packages in an organization readable by the user.
@@ -49,7 +49,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /orgs/{org}/packages`
-Future<ApiResult<List<Package>, PackagesListPackagesForOrganizationError>> packagesListPackagesForOrganization({required String org, required PackagesListPackagesForOrganizationPackageType packageType, PackagesListPackagesForOrganizationVisibility? visibility, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Package>, PackagesListPackagesForOrganizationError>> packagesListPackagesForOrganization({required String org, required PackagesListPackagesForOrganizationPackageType packageType, PackagesListPackagesForOrganizationVisibility? visibility, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['package_type'] = packageType.toJson();
 if (visibility != null) {
@@ -81,7 +81,7 @@ return (json as List<dynamic>).map((e) => Package.fromJson(e as Map<String, dyna
   },
   onError: PackagesListPackagesForOrganizationError.parse,
 );
- } 
+}
 /// Get a package for an organization
 ///
 /// Gets a specific package in an organization.
@@ -89,7 +89,7 @@ return (json as List<dynamic>).map((e) => Package.fromJson(e as Map<String, dyna
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /orgs/{org}/packages/{package_type}/{package_name}`
-Future<ApiResult<Package, Never>> packagesGetPackageForOrganization({required PackagesGetPackageForOrganizationPackageType packageType, required String packageName, required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Package, Never>> packagesGetPackageForOrganization({required PackagesGetPackageForOrganizationPackageType packageType, required String packageName, required String org, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -105,7 +105,7 @@ final json = jsonDecode(response.body);
 return Package.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete a package for an organization
 ///
 /// Deletes an entire package in an organization. You cannot delete a public package if any version of the package has more than 5,000 downloads. In this scenario, contact GitHub support for further assistance.
@@ -115,7 +115,7 @@ return Package.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `DELETE /orgs/{org}/packages/{package_type}/{package_name}`
-Future<ApiResult<void, BasicError>> packagesDeletePackageForOrg({required PackagesDeletePackageForOrgPackageType packageType, required String packageName, required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesDeletePackageForOrg({required PackagesDeletePackageForOrgPackageType packageType, required String packageName, required String org, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -138,7 +138,7 @@ return null;
 
   },
 );
- } 
+}
 /// Restore a package for an organization
 ///
 /// Restores an entire package in an organization.
@@ -152,7 +152,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `POST /orgs/{org}/packages/{package_type}/{package_name}/restore`
-Future<ApiResult<void, BasicError>> packagesRestorePackageForOrg({required PackagesRestorePackageForOrgPackageType packageType, required String packageName, required String org, String? token, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, BasicError>> packagesRestorePackageForOrg({required PackagesRestorePackageForOrgPackageType packageType, required String packageName, required String org, String? token, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (token != null) {
   queryParameters['token'] = token;
@@ -183,7 +183,7 @@ return null;
 
   },
 );
- } 
+}
 /// List package versions for a package owned by an organization
 ///
 /// Lists package versions for a package owned by an organization.
@@ -191,7 +191,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /orgs/{org}/packages/{package_type}/{package_name}/versions`
-Future<ApiResult<List<PackageVersion>, BasicError>> packagesGetAllPackageVersionsForPackageOwnedByOrg({required PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType packageType, required String packageName, required String org, int? page, int? perPage, PackagesGetAllPackageVersionsForPackageOwnedByOrgState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<PackageVersion>, BasicError>> packagesGetAllPackageVersionsForPackageOwnedByOrg({required PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType packageType, required String packageName, required String org, int? page, int? perPage, PackagesGetAllPackageVersionsForPackageOwnedByOrgState? state, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -231,7 +231,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get a package version for an organization
 ///
 /// Gets a specific package version in an organization.
@@ -239,7 +239,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}`
-Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForOrganization({required PackagesGetPackageVersionForOrganizationPackageType packageType, required String packageName, required String org, required int packageVersionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForOrganization({required PackagesGetPackageVersionForOrganizationPackageType packageType, required String packageName, required String org, required int packageVersionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -255,7 +255,7 @@ final json = jsonDecode(response.body);
 return PackageVersion.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete package version for an organization
 ///
 /// Deletes a specific package version in an organization. If the package is public and the package version has more than 5,000 downloads, you cannot delete the package version. In this scenario, contact GitHub support for further assistance.
@@ -265,7 +265,7 @@ return PackageVersion.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `DELETE /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}`
-Future<ApiResult<void, BasicError>> packagesDeletePackageVersionForOrg({required PackagesDeletePackageVersionForOrgPackageType packageType, required String packageName, required String org, required int packageVersionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesDeletePackageVersionForOrg({required PackagesDeletePackageVersionForOrgPackageType packageType, required String packageName, required String org, required int packageVersionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -288,7 +288,7 @@ return null;
 
   },
 );
- } 
+}
 /// Restore package version for an organization
 ///
 /// Restores a specific package version in an organization.
@@ -302,7 +302,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `POST /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore`
-Future<ApiResult<void, BasicError>> packagesRestorePackageVersionForOrg({required PackagesRestorePackageVersionForOrgPackageType packageType, required String packageName, required String org, required int packageVersionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesRestorePackageVersionForOrg({required PackagesRestorePackageVersionForOrgPackageType packageType, required String packageName, required String org, required int packageVersionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -325,7 +325,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get list of conflicting packages during Docker migration for authenticated-user
 ///
 /// Lists all packages that are owned by the authenticated user within the user's namespace, and that encountered a conflict during a Docker migration.
@@ -333,7 +333,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint.
 ///
 /// `GET /user/docker/conflicts`
-Future<ApiResult<List<Package>, Never>> packagesListDockerMigrationConflictingPackagesForAuthenticatedUser({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Package>, Never>> packagesListDockerMigrationConflictingPackagesForAuthenticatedUser({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -349,7 +349,7 @@ final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => Package.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// List packages for the authenticated user's namespace
 ///
 /// Lists packages owned by the authenticated user within the user's namespace.
@@ -357,7 +357,7 @@ return (json as List<dynamic>).map((e) => Package.fromJson(e as Map<String, dyna
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /user/packages`
-Future<ApiResult<List<Package>, Never>> packagesListPackagesForAuthenticatedUser({required PackagesListPackagesForAuthenticatedUserPackageType packageType, PackagesListPackagesForAuthenticatedUserVisibility? visibility, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Package>, Never>> packagesListPackagesForAuthenticatedUser({required PackagesListPackagesForAuthenticatedUserPackageType packageType, PackagesListPackagesForAuthenticatedUserVisibility? visibility, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['package_type'] = packageType.toJson();
 if (visibility != null) {
@@ -388,7 +388,7 @@ final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => Package.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Get a package for the authenticated user
 ///
 /// Gets a specific package for a package owned by the authenticated user.
@@ -396,7 +396,7 @@ return (json as List<dynamic>).map((e) => Package.fromJson(e as Map<String, dyna
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /user/packages/{package_type}/{package_name}`
-Future<ApiResult<Package, Never>> packagesGetPackageForAuthenticatedUser({required PackagesGetPackageForAuthenticatedUserPackageType packageType, required String packageName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Package, Never>> packagesGetPackageForAuthenticatedUser({required PackagesGetPackageForAuthenticatedUserPackageType packageType, required String packageName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -412,7 +412,7 @@ final json = jsonDecode(response.body);
 return Package.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete a package for the authenticated user
 ///
 /// Deletes a package owned by the authenticated user. You cannot delete a public package if any version of the package has more than 5,000 downloads. In this scenario, contact GitHub support for further assistance.
@@ -420,7 +420,7 @@ return Package.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `DELETE /user/packages/{package_type}/{package_name}`
-Future<ApiResult<void, BasicError>> packagesDeletePackageForAuthenticatedUser({required PackagesDeletePackageForAuthenticatedUserPackageType packageType, required String packageName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesDeletePackageForAuthenticatedUser({required PackagesDeletePackageForAuthenticatedUserPackageType packageType, required String packageName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -443,7 +443,7 @@ return null;
 
   },
 );
- } 
+}
 /// Restore a package for the authenticated user
 ///
 /// Restores a package owned by the authenticated user.
@@ -455,7 +455,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `POST /user/packages/{package_type}/{package_name}/restore`
-Future<ApiResult<void, BasicError>> packagesRestorePackageForAuthenticatedUser({required PackagesRestorePackageForAuthenticatedUserPackageType packageType, required String packageName, String? token, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, BasicError>> packagesRestorePackageForAuthenticatedUser({required PackagesRestorePackageForAuthenticatedUserPackageType packageType, required String packageName, String? token, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (token != null) {
   queryParameters['token'] = token;
@@ -486,7 +486,7 @@ return null;
 
   },
 );
- } 
+}
 /// List package versions for a package owned by the authenticated user
 ///
 /// Lists package versions for a package owned by the authenticated user.
@@ -494,7 +494,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /user/packages/{package_type}/{package_name}/versions`
-Future<ApiResult<List<PackageVersion>, BasicError>> packagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUser({required PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType packageType, required String packageName, int? page, int? perPage, PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<PackageVersion>, BasicError>> packagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUser({required PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType packageType, required String packageName, int? page, int? perPage, PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState? state, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -534,7 +534,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get a package version for the authenticated user
 ///
 /// Gets a specific package version for a package owned by the authenticated user.
@@ -542,7 +542,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /user/packages/{package_type}/{package_name}/versions/{package_version_id}`
-Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForAuthenticatedUser({required PackagesGetPackageVersionForAuthenticatedUserPackageType packageType, required String packageName, required int packageVersionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForAuthenticatedUser({required PackagesGetPackageVersionForAuthenticatedUserPackageType packageType, required String packageName, required int packageVersionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -558,7 +558,7 @@ final json = jsonDecode(response.body);
 return PackageVersion.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete a package version for the authenticated user
 ///
 /// Deletes a specific package version for a package owned by the authenticated user.  If the package is public and the package version has more than 5,000 downloads, you cannot delete the package version. In this scenario, contact GitHub support for further assistance.
@@ -568,7 +568,7 @@ return PackageVersion.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `DELETE /user/packages/{package_type}/{package_name}/versions/{package_version_id}`
-Future<ApiResult<void, BasicError>> packagesDeletePackageVersionForAuthenticatedUser({required PackagesDeletePackageVersionForAuthenticatedUserPackageType packageType, required String packageName, required int packageVersionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesDeletePackageVersionForAuthenticatedUser({required PackagesDeletePackageVersionForAuthenticatedUserPackageType packageType, required String packageName, required int packageVersionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -591,7 +591,7 @@ return null;
 
   },
 );
- } 
+}
 /// Restore a package version for the authenticated user
 ///
 /// Restores a package version owned by the authenticated user.
@@ -603,7 +603,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `POST /user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore`
-Future<ApiResult<void, BasicError>> packagesRestorePackageVersionForAuthenticatedUser({required PackagesRestorePackageVersionForAuthenticatedUserPackageType packageType, required String packageName, required int packageVersionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesRestorePackageVersionForAuthenticatedUser({required PackagesRestorePackageVersionForAuthenticatedUserPackageType packageType, required String packageName, required int packageVersionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -626,7 +626,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get list of conflicting packages during Docker migration for user
 ///
 /// Lists all packages that are in a specific user's namespace, that the requesting user has access to, and that encountered a conflict during Docker migration.
@@ -634,7 +634,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint.
 ///
 /// `GET /users/{username}/docker/conflicts`
-Future<ApiResult<List<Package>, BasicError>> packagesListDockerMigrationConflictingPackagesForUser({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Package>, BasicError>> packagesListDockerMigrationConflictingPackagesForUser({required String username, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -660,7 +660,7 @@ return null;
 
   },
 );
- } 
+}
 /// List packages for a user
 ///
 /// Lists all packages in a user's namespace for which the requesting user has access.
@@ -668,7 +668,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /users/{username}/packages`
-Future<ApiResult<List<Package>, PackagesListPackagesForUserError>> packagesListPackagesForUser({required String username, required PackagesListPackagesForUserPackageType packageType, PackagesListPackagesForUserVisibility? visibility, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Package>, PackagesListPackagesForUserError>> packagesListPackagesForUser({required String username, required PackagesListPackagesForUserPackageType packageType, PackagesListPackagesForUserVisibility? visibility, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['package_type'] = packageType.toJson();
 if (visibility != null) {
@@ -700,7 +700,7 @@ return (json as List<dynamic>).map((e) => Package.fromJson(e as Map<String, dyna
   },
   onError: PackagesListPackagesForUserError.parse,
 );
- } 
+}
 /// Get a package for a user
 ///
 /// Gets a specific package metadata for a public package owned by a user.
@@ -708,7 +708,7 @@ return (json as List<dynamic>).map((e) => Package.fromJson(e as Map<String, dyna
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /users/{username}/packages/{package_type}/{package_name}`
-Future<ApiResult<Package, Never>> packagesGetPackageForUser({required PackagesGetPackageForUserPackageType packageType, required String packageName, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Package, Never>> packagesGetPackageForUser({required PackagesGetPackageForUserPackageType packageType, required String packageName, required String username, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -724,7 +724,7 @@ final json = jsonDecode(response.body);
 return Package.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete a package for a user
 ///
 /// Deletes an entire package for a user. You cannot delete a public package if any version of the package has more than 5,000 downloads. In this scenario, contact GitHub support for further assistance.
@@ -734,7 +734,7 @@ return Package.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `DELETE /users/{username}/packages/{package_type}/{package_name}`
-Future<ApiResult<void, BasicError>> packagesDeletePackageForUser({required PackagesDeletePackageForUserPackageType packageType, required String packageName, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesDeletePackageForUser({required PackagesDeletePackageForUserPackageType packageType, required String packageName, required String username, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -757,7 +757,7 @@ return null;
 
   },
 );
- } 
+}
 /// Restore a package for a user
 ///
 /// Restores an entire package for a user.
@@ -771,7 +771,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `POST /users/{username}/packages/{package_type}/{package_name}/restore`
-Future<ApiResult<void, BasicError>> packagesRestorePackageForUser({required PackagesRestorePackageForUserPackageType packageType, required String packageName, required String username, String? token, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, BasicError>> packagesRestorePackageForUser({required PackagesRestorePackageForUserPackageType packageType, required String packageName, required String username, String? token, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (token != null) {
   queryParameters['token'] = token;
@@ -802,7 +802,7 @@ return null;
 
   },
 );
- } 
+}
 /// List package versions for a package owned by a user
 ///
 /// Lists package versions for a public package owned by a specified user.
@@ -810,7 +810,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /users/{username}/packages/{package_type}/{package_name}/versions`
-Future<ApiResult<List<PackageVersion>, BasicError>> packagesGetAllPackageVersionsForPackageOwnedByUser({required PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType packageType, required String packageName, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<PackageVersion>, BasicError>> packagesGetAllPackageVersionsForPackageOwnedByUser({required PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType packageType, required String packageName, required String username, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -836,7 +836,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get a package version for a user
 ///
 /// Gets a specific package version for a public package owned by a specified user.
@@ -844,7 +844,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}`
-Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForUser({required PackagesGetPackageVersionForUserPackageType packageType, required String packageName, required int packageVersionId, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForUser({required PackagesGetPackageVersionForUserPackageType packageType, required String packageName, required int packageVersionId, required String username, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -860,7 +860,7 @@ final json = jsonDecode(response.body);
 return PackageVersion.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete package version for a user
 ///
 /// Deletes a specific package version for a user. If the package is public and the package version has more than 5,000 downloads, you cannot delete the package version. In this scenario, contact GitHub support for further assistance.
@@ -870,7 +870,7 @@ return PackageVersion.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `DELETE /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}`
-Future<ApiResult<void, BasicError>> packagesDeletePackageVersionForUser({required PackagesDeletePackageVersionForUserPackageType packageType, required String packageName, required String username, required int packageVersionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesDeletePackageVersionForUser({required PackagesDeletePackageVersionForUserPackageType packageType, required String packageName, required String username, required int packageVersionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -893,7 +893,7 @@ return null;
 
   },
 );
- } 
+}
 /// Restore package version for a user
 ///
 /// Restores a specific package version for a user.
@@ -907,7 +907,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `POST /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore`
-Future<ApiResult<void, BasicError>> packagesRestorePackageVersionForUser({required PackagesRestorePackageVersionForUserPackageType packageType, required String packageName, required String username, required int packageVersionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, BasicError>> packagesRestorePackageVersionForUser({required PackagesRestorePackageVersionForUserPackageType packageType, required String packageName, required String username, required int packageVersionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -930,5 +930,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

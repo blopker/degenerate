@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order by. When requesting a feature, the feature keys are available for ordering as well, e.g., `thresholds.suggested_threshold`.
 @immutable final class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder._(this.value);
 
-factory ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder.fromJson(String json) { return switch (json) {
+factory ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder.fromJson(String json) {return switch (json) {
   'method' => method,
   'host' => host,
   'endpoint' => endpoint,
   r'thresholds.$key' => thresholdsKey,
   _ => ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder._(json),
-}; }
+};}
 
 static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder method = ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder._('method');
 
@@ -23,11 +23,11 @@ static const List<ShieldEndpointManagementRetrieveInformationAboutAllOperationsO
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder($value)';}
+}

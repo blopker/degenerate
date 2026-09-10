@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTagListResponseTags {const GetTagListResponseTags({required this.uuid, required this.value, this.activeDuration, this.actorCategory, this.aliasGroupNames, this.aliasGroupNamesInternal, this.analyticPriority, this.attributionConfidence, this.attributionOrganization, this.categoryName, this.categoryUuid, this.externalReferenceLinks, this.internalDescription, this.motive, this.opsecLevel, this.originCountryIso, this.priority, this.sophisticationLevel, });
 
-factory GetTagListResponseTags.fromJson(Map<String, dynamic> json) { return GetTagListResponseTags(
+factory GetTagListResponseTags.fromJson(Map<String, dynamic> json) {return GetTagListResponseTags(
   activeDuration: json['activeDuration'] as String?,
   actorCategory: json['actorCategory'] as String?,
   aliasGroupNames: (json['aliasGroupNames'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -21,7 +21,7 @@ factory GetTagListResponseTags.fromJson(Map<String, dynamic> json) { return GetT
   sophisticationLevel: json['sophisticationLevel'] as String?,
   uuid: json['uuid'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String? activeDuration;
 
@@ -59,7 +59,7 @@ final String uuid;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'activeDuration': ?activeDuration,
   'actorCategory': ?actorCategory,
   'aliasGroupNames': ?aliasGroupNames,
@@ -78,10 +78,10 @@ Map<String, dynamic> toJson() { return {
   'sophisticationLevel': ?sophisticationLevel,
   'uuid': uuid,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('uuid') && json['uuid'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-GetTagListResponseTags copyWith({String? Function()? activeDuration, String? Function()? actorCategory, List<String>? Function()? aliasGroupNames, List<String>? Function()? aliasGroupNamesInternal, double? Function()? analyticPriority, String? Function()? attributionConfidence, String? Function()? attributionOrganization, String? Function()? categoryName, String? Function()? categoryUuid, List<String>? Function()? externalReferenceLinks, String? Function()? internalDescription, String? Function()? motive, String? Function()? opsecLevel, String? Function()? originCountryIso, double? Function()? priority, String? Function()? sophisticationLevel, String? uuid, String? value, }) { return GetTagListResponseTags(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('uuid') && json['uuid'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+GetTagListResponseTags copyWith({String? Function()? activeDuration, String? Function()? actorCategory, List<String>? Function()? aliasGroupNames, List<String>? Function()? aliasGroupNamesInternal, double? Function()? analyticPriority, String? Function()? attributionConfidence, String? Function()? attributionOrganization, String? Function()? categoryName, String? Function()? categoryUuid, List<String>? Function()? externalReferenceLinks, String? Function()? internalDescription, String? Function()? motive, String? Function()? opsecLevel, String? Function()? originCountryIso, double? Function()? priority, String? Function()? sophisticationLevel, String? uuid, String? value, }) {return GetTagListResponseTags(
   activeDuration: activeDuration != null ? activeDuration() : this.activeDuration,
   actorCategory: actorCategory != null ? actorCategory() : this.actorCategory,
   aliasGroupNames: aliasGroupNames != null ? aliasGroupNames() : this.aliasGroupNames,
@@ -100,8 +100,8 @@ GetTagListResponseTags copyWith({String? Function()? activeDuration, String? Fun
   sophisticationLevel: sophisticationLevel != null ? sophisticationLevel() : this.sophisticationLevel,
   uuid: uuid ?? this.uuid,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetTagListResponseTags &&
           activeDuration == other.activeDuration &&
           actorCategory == other.actorCategory &&
@@ -120,7 +120,7 @@ GetTagListResponseTags copyWith({String? Function()? activeDuration, String? Fun
           priority == other.priority &&
           sophisticationLevel == other.sophisticationLevel &&
           uuid == other.uuid &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(activeDuration, actorCategory, Object.hashAll(aliasGroupNames ?? const []), Object.hashAll(aliasGroupNamesInternal ?? const []), analyticPriority, attributionConfidence, attributionOrganization, categoryName, categoryUuid, Object.hashAll(externalReferenceLinks ?? const []), internalDescription, motive, opsecLevel, originCountryIso, priority, sophisticationLevel, uuid, value); } 
-@override String toString() { return 'GetTagListResponseTags(activeDuration: $activeDuration, actorCategory: $actorCategory, aliasGroupNames: $aliasGroupNames, aliasGroupNamesInternal: $aliasGroupNamesInternal, analyticPriority: $analyticPriority, attributionConfidence: $attributionConfidence, attributionOrganization: $attributionOrganization, categoryName: $categoryName, categoryUuid: $categoryUuid, externalReferenceLinks: $externalReferenceLinks, internalDescription: $internalDescription, motive: $motive, opsecLevel: $opsecLevel, originCountryIso: $originCountryIso, priority: $priority, sophisticationLevel: $sophisticationLevel, uuid: $uuid, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(activeDuration, actorCategory, Object.hashAll(aliasGroupNames ?? const []), Object.hashAll(aliasGroupNamesInternal ?? const []), analyticPriority, attributionConfidence, attributionOrganization, categoryName, categoryUuid, Object.hashAll(externalReferenceLinks ?? const []), internalDescription, motive, opsecLevel, originCountryIso, priority, sophisticationLevel, uuid, value);}
+@override String toString() {return 'GetTagListResponseTags(activeDuration: $activeDuration, actorCategory: $actorCategory, aliasGroupNames: $aliasGroupNames, aliasGroupNamesInternal: $aliasGroupNamesInternal, analyticPriority: $analyticPriority, attributionConfidence: $attributionConfidence, attributionOrganization: $attributionOrganization, categoryName: $categoryName, categoryUuid: $categoryUuid, externalReferenceLinks: $externalReferenceLinks, internalDescription: $internalDescription, motive: $motive, opsecLevel: $opsecLevel, originCountryIso: $originCountryIso, priority: $priority, sophisticationLevel: $sophisticationLevel, uuid: $uuid, value: $value)';}
+}

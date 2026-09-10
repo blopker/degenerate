@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_request_documents_bank_account_ownership_verification.dart';import 'post_accounts_request_documents_company_license.dart';import 'post_accounts_request_documents_company_memorandum_of_association.dart';import 'post_accounts_request_documents_company_ministerial_decree.dart';import 'post_accounts_request_documents_company_registration_verification.dart';import 'post_accounts_request_documents_company_tax_id_verification.dart';import 'post_accounts_request_documents_proof_of_address.dart';import 'post_accounts_request_documents_proof_of_registration.dart';import 'post_accounts_request_documents_proof_of_ultimate_beneficial_ownership.dart';/// Documents that may be submitted to satisfy various informational requests.
 @immutable final class PostAccountsRequestDocuments {const PostAccountsRequestDocuments({this.bankAccountOwnershipVerification, this.companyLicense, this.companyMemorandumOfAssociation, this.companyMinisterialDecree, this.companyRegistrationVerification, this.companyTaxIdVerification, this.proofOfAddress, this.proofOfRegistration, this.proofOfUltimateBeneficialOwnership, });
 
-factory PostAccountsRequestDocuments.fromJson(Map<String, dynamic> json) { return PostAccountsRequestDocuments(
+factory PostAccountsRequestDocuments.fromJson(Map<String, dynamic> json) {return PostAccountsRequestDocuments(
   bankAccountOwnershipVerification: json['bank_account_ownership_verification'] != null ? PostAccountsRequestDocumentsBankAccountOwnershipVerification.fromJson(json['bank_account_ownership_verification'] as Map<String, dynamic>) : null,
   companyLicense: json['company_license'] != null ? PostAccountsRequestDocumentsCompanyLicense.fromJson(json['company_license'] as Map<String, dynamic>) : null,
   companyMemorandumOfAssociation: json['company_memorandum_of_association'] != null ? PostAccountsRequestDocumentsCompanyMemorandumOfAssociation.fromJson(json['company_memorandum_of_association'] as Map<String, dynamic>) : null,
@@ -13,7 +13,7 @@ factory PostAccountsRequestDocuments.fromJson(Map<String, dynamic> json) { retur
   proofOfAddress: json['proof_of_address'] != null ? PostAccountsRequestDocumentsProofOfAddress.fromJson(json['proof_of_address'] as Map<String, dynamic>) : null,
   proofOfRegistration: json['proof_of_registration'] != null ? PostAccountsRequestDocumentsProofOfRegistration.fromJson(json['proof_of_registration'] as Map<String, dynamic>) : null,
   proofOfUltimateBeneficialOwnership: json['proof_of_ultimate_beneficial_ownership'] != null ? PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnership.fromJson(json['proof_of_ultimate_beneficial_ownership'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostAccountsRequestDocumentsBankAccountOwnershipVerification? bankAccountOwnershipVerification;
 
@@ -33,7 +33,7 @@ final PostAccountsRequestDocumentsProofOfRegistration? proofOfRegistration;
 
 final PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnership? proofOfUltimateBeneficialOwnership;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bankAccountOwnershipVerification != null) 'bank_account_ownership_verification': bankAccountOwnershipVerification?.toJson(),
   if (companyLicense != null) 'company_license': companyLicense?.toJson(),
   if (companyMemorandumOfAssociation != null) 'company_memorandum_of_association': companyMemorandumOfAssociation?.toJson(),
@@ -43,9 +43,9 @@ Map<String, dynamic> toJson() { return {
   if (proofOfAddress != null) 'proof_of_address': proofOfAddress?.toJson(),
   if (proofOfRegistration != null) 'proof_of_registration': proofOfRegistration?.toJson(),
   if (proofOfUltimateBeneficialOwnership != null) 'proof_of_ultimate_beneficial_ownership': proofOfUltimateBeneficialOwnership?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_account_ownership_verification', 'company_license', 'company_memorandum_of_association', 'company_ministerial_decree', 'company_registration_verification', 'company_tax_id_verification', 'proof_of_address', 'proof_of_registration', 'proof_of_ultimate_beneficial_ownership'}.contains(key)); } 
-PostAccountsRequestDocuments copyWith({PostAccountsRequestDocumentsBankAccountOwnershipVerification? Function()? bankAccountOwnershipVerification, PostAccountsRequestDocumentsCompanyLicense? Function()? companyLicense, PostAccountsRequestDocumentsCompanyMemorandumOfAssociation? Function()? companyMemorandumOfAssociation, PostAccountsRequestDocumentsCompanyMinisterialDecree? Function()? companyMinisterialDecree, PostAccountsRequestDocumentsCompanyRegistrationVerification? Function()? companyRegistrationVerification, PostAccountsRequestDocumentsCompanyTaxIdVerification? Function()? companyTaxIdVerification, PostAccountsRequestDocumentsProofOfAddress? Function()? proofOfAddress, PostAccountsRequestDocumentsProofOfRegistration? Function()? proofOfRegistration, PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnership? Function()? proofOfUltimateBeneficialOwnership, }) { return PostAccountsRequestDocuments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank_account_ownership_verification', 'company_license', 'company_memorandum_of_association', 'company_ministerial_decree', 'company_registration_verification', 'company_tax_id_verification', 'proof_of_address', 'proof_of_registration', 'proof_of_ultimate_beneficial_ownership'}.contains(key));}
+PostAccountsRequestDocuments copyWith({PostAccountsRequestDocumentsBankAccountOwnershipVerification? Function()? bankAccountOwnershipVerification, PostAccountsRequestDocumentsCompanyLicense? Function()? companyLicense, PostAccountsRequestDocumentsCompanyMemorandumOfAssociation? Function()? companyMemorandumOfAssociation, PostAccountsRequestDocumentsCompanyMinisterialDecree? Function()? companyMinisterialDecree, PostAccountsRequestDocumentsCompanyRegistrationVerification? Function()? companyRegistrationVerification, PostAccountsRequestDocumentsCompanyTaxIdVerification? Function()? companyTaxIdVerification, PostAccountsRequestDocumentsProofOfAddress? Function()? proofOfAddress, PostAccountsRequestDocumentsProofOfRegistration? Function()? proofOfRegistration, PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnership? Function()? proofOfUltimateBeneficialOwnership, }) {return PostAccountsRequestDocuments(
   bankAccountOwnershipVerification: bankAccountOwnershipVerification != null ? bankAccountOwnershipVerification() : this.bankAccountOwnershipVerification,
   companyLicense: companyLicense != null ? companyLicense() : this.companyLicense,
   companyMemorandumOfAssociation: companyMemorandumOfAssociation != null ? companyMemorandumOfAssociation() : this.companyMemorandumOfAssociation,
@@ -55,8 +55,8 @@ PostAccountsRequestDocuments copyWith({PostAccountsRequestDocumentsBankAccountOw
   proofOfAddress: proofOfAddress != null ? proofOfAddress() : this.proofOfAddress,
   proofOfRegistration: proofOfRegistration != null ? proofOfRegistration() : this.proofOfRegistration,
   proofOfUltimateBeneficialOwnership: proofOfUltimateBeneficialOwnership != null ? proofOfUltimateBeneficialOwnership() : this.proofOfUltimateBeneficialOwnership,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsRequestDocuments &&
           bankAccountOwnershipVerification == other.bankAccountOwnershipVerification &&
           companyLicense == other.companyLicense &&
@@ -66,7 +66,7 @@ PostAccountsRequestDocuments copyWith({PostAccountsRequestDocumentsBankAccountOw
           companyTaxIdVerification == other.companyTaxIdVerification &&
           proofOfAddress == other.proofOfAddress &&
           proofOfRegistration == other.proofOfRegistration &&
-          proofOfUltimateBeneficialOwnership == other.proofOfUltimateBeneficialOwnership; } 
-@override int get hashCode { return Object.hash(bankAccountOwnershipVerification, companyLicense, companyMemorandumOfAssociation, companyMinisterialDecree, companyRegistrationVerification, companyTaxIdVerification, proofOfAddress, proofOfRegistration, proofOfUltimateBeneficialOwnership); } 
-@override String toString() { return 'PostAccountsRequestDocuments(bankAccountOwnershipVerification: $bankAccountOwnershipVerification, companyLicense: $companyLicense, companyMemorandumOfAssociation: $companyMemorandumOfAssociation, companyMinisterialDecree: $companyMinisterialDecree, companyRegistrationVerification: $companyRegistrationVerification, companyTaxIdVerification: $companyTaxIdVerification, proofOfAddress: $proofOfAddress, proofOfRegistration: $proofOfRegistration, proofOfUltimateBeneficialOwnership: $proofOfUltimateBeneficialOwnership)'; } 
- }
+          proofOfUltimateBeneficialOwnership == other.proofOfUltimateBeneficialOwnership;}
+@override int get hashCode {return Object.hash(bankAccountOwnershipVerification, companyLicense, companyMemorandumOfAssociation, companyMinisterialDecree, companyRegistrationVerification, companyTaxIdVerification, proofOfAddress, proofOfRegistration, proofOfUltimateBeneficialOwnership);}
+@override String toString() {return 'PostAccountsRequestDocuments(bankAccountOwnershipVerification: $bankAccountOwnershipVerification, companyLicense: $companyLicense, companyMemorandumOfAssociation: $companyMemorandumOfAssociation, companyMinisterialDecree: $companyMinisterialDecree, companyRegistrationVerification: $companyRegistrationVerification, companyTaxIdVerification: $companyTaxIdVerification, proofOfAddress: $proofOfAddress, proofOfRegistration: $proofOfRegistration, proofOfUltimateBeneficialOwnership: $proofOfUltimateBeneficialOwnership)';}
+}

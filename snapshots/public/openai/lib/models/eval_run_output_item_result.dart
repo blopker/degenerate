@@ -4,14 +4,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// A single grader 
 /// 
 @immutable final class EvalRunOutputItemResult {const EvalRunOutputItemResult({required this.name, required this.score, required this.passed, this.type, this.sample = const Omittable.absent(), this.additionalProperties = const {}, });
 
-factory EvalRunOutputItemResult.fromJson(Map<String, dynamic> json) { return EvalRunOutputItemResult(
+factory EvalRunOutputItemResult.fromJson(Map<String, dynamic> json) {return EvalRunOutputItemResult(
   name: json['name'] as String,
   type: json['type'] as String?,
   score: (json['score'] as num).toDouble(),
   passed: json['passed'] as bool,
   sample: json.containsKey('sample') ? Omittable(json['sample'] as Map<String, dynamic>?) : const Omittable.absent(),
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'name', 'type', 'score', 'passed', 'sample'}.contains(e.key))),
-); }
+);}
 
 /// The name of the grader.
 final String name;
@@ -30,33 +30,33 @@ final Omittable<Map<String,dynamic>?> sample;
 
 final Map<String,dynamic> additionalProperties;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'type': ?type,
   'score': score,
   'passed': passed,
   if (sample.isPresent) 'sample': sample.value,
   ...additionalProperties,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('score') && json['score'] is num &&
-      json.containsKey('passed') && json['passed'] is bool; } 
-EvalRunOutputItemResult copyWith({String? name, String? Function()? type, double? score, bool? passed, Omittable<Map<String,dynamic>?>? sample, Map<String, dynamic>? additionalProperties, }) { return EvalRunOutputItemResult(
+      json.containsKey('passed') && json['passed'] is bool;}
+EvalRunOutputItemResult copyWith({String? name, String? Function()? type, double? score, bool? passed, Omittable<Map<String,dynamic>?>? sample, Map<String, dynamic>? additionalProperties, }) {return EvalRunOutputItemResult(
   name: name ?? this.name,
   type: type != null ? type() : this.type,
   score: score ?? this.score,
   passed: passed ?? this.passed,
   sample: sample ?? this.sample,
   additionalProperties: additionalProperties ?? this.additionalProperties,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EvalRunOutputItemResult &&
           name == other.name &&
           type == other.type &&
           score == other.score &&
           passed == other.passed &&
           sample == other.sample &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(name, type, score, passed, sample, mapHash(additionalProperties)); } 
-@override String toString() { return 'EvalRunOutputItemResult(name: $name, type: $type, score: $score, passed: $passed, sample: $sample, additionalProperties: $additionalProperties)'; } 
- }
+          mapEquals(additionalProperties, other.additionalProperties);}
+@override int get hashCode {return Object.hash(name, type, score, passed, sample, mapHash(additionalProperties));}
+@override String toString() {return 'EvalRunOutputItemResult(name: $name, type: $type, score: $score, passed: $passed, sample: $sample, additionalProperties: $additionalProperties)';}
+}

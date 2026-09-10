@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a HTTPS record.
 @immutable final class DnsRecordsHttpsRecordRequestData {const DnsRecordsHttpsRecordRequestData({this.priority, this.target, this.value, });
 
-factory DnsRecordsHttpsRecordRequestData.fromJson(Map<String, dynamic> json) { return DnsRecordsHttpsRecordRequestData(
+factory DnsRecordsHttpsRecordRequestData.fromJson(Map<String, dynamic> json) {return DnsRecordsHttpsRecordRequestData(
   priority: json['priority'] != null ? (json['priority'] as num).toDouble() : null,
   target: json['target'] as String?,
   value: json['value'] as String?,
-); }
+);}
 
 /// Priority.
 final double? priority;
@@ -18,22 +18,22 @@ final String? target;
 /// Value.
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'priority': ?priority,
   'target': ?target,
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'priority', 'target', 'value'}.contains(key)); } 
-DnsRecordsHttpsRecordRequestData copyWith({double? Function()? priority, String? Function()? target, String? Function()? value, }) { return DnsRecordsHttpsRecordRequestData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'priority', 'target', 'value'}.contains(key));}
+DnsRecordsHttpsRecordRequestData copyWith({double? Function()? priority, String? Function()? target, String? Function()? value, }) {return DnsRecordsHttpsRecordRequestData(
   priority: priority != null ? priority() : this.priority,
   target: target != null ? target() : this.target,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnsRecordsHttpsRecordRequestData &&
           priority == other.priority &&
           target == other.target &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(priority, target, value); } 
-@override String toString() { return 'DnsRecordsHttpsRecordRequestData(priority: $priority, target: $target, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(priority, target, value);}
+@override String toString() {return 'DnsRecordsHttpsRecordRequestData(priority: $priority, target: $target, value: $value)';}
+}

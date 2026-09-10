@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_funding_instructions_request_bank_transfer_eu_bank_transfer.dart';@immutable final class PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes {const PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes._(this.value);
 
-factory PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes.fromJson(String json) {return switch (json) {
   'iban' => iban,
   'sort_code' => sortCode,
   'spei' => spei,
   'zengin' => zengin,
   _ => PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes._(json),
-}; }
+};}
 
 static const PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes iban = PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes._('iban');
 
@@ -22,24 +22,24 @@ static const List<PostCustomersCustomerFundingInstructionsRequestBankTransferReq
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes($value)';}
+}
 @immutable final class PostCustomersCustomerFundingInstructionsRequestBankTransferType {const PostCustomersCustomerFundingInstructionsRequestBankTransferType._(this.value);
 
-factory PostCustomersCustomerFundingInstructionsRequestBankTransferType.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerFundingInstructionsRequestBankTransferType.fromJson(String json) {return switch (json) {
   'eu_bank_transfer' => euBankTransfer,
   'gb_bank_transfer' => gbBankTransfer,
   'jp_bank_transfer' => jpBankTransfer,
   'mx_bank_transfer' => mxBankTransfer,
   'us_bank_transfer' => usBankTransfer,
   _ => PostCustomersCustomerFundingInstructionsRequestBankTransferType._(json),
-}; }
+};}
 
 static const PostCustomersCustomerFundingInstructionsRequestBankTransferType euBankTransfer = PostCustomersCustomerFundingInstructionsRequestBankTransferType._('eu_bank_transfer');
 
@@ -55,22 +55,22 @@ static const List<PostCustomersCustomerFundingInstructionsRequestBankTransferTyp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerFundingInstructionsRequestBankTransferType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerFundingInstructionsRequestBankTransferType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerFundingInstructionsRequestBankTransferType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerFundingInstructionsRequestBankTransferType($value)';}
+}
 /// Additional parameters for `bank_transfer` funding types
 @immutable final class PostCustomersCustomerFundingInstructionsRequestBankTransfer {const PostCustomersCustomerFundingInstructionsRequestBankTransfer({required this.type, this.euBankTransfer, this.requestedAddressTypes, });
 
-factory PostCustomersCustomerFundingInstructionsRequestBankTransfer.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerFundingInstructionsRequestBankTransfer(
+factory PostCustomersCustomerFundingInstructionsRequestBankTransfer.fromJson(Map<String, dynamic> json) {return PostCustomersCustomerFundingInstructionsRequestBankTransfer(
   euBankTransfer: json['eu_bank_transfer'] != null ? PostCustomersCustomerFundingInstructionsRequestBankTransferEuBankTransfer.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>) : null,
   requestedAddressTypes: (json['requested_address_types'] as List<dynamic>?)?.map((e) => PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes.fromJson(e as String)).toList(),
   type: PostCustomersCustomerFundingInstructionsRequestBankTransferType.fromJson(json['type'] as String),
-); }
+);}
 
 final PostCustomersCustomerFundingInstructionsRequestBankTransferEuBankTransfer? euBankTransfer;
 
@@ -78,22 +78,22 @@ final List<PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedA
 
 final PostCustomersCustomerFundingInstructionsRequestBankTransferType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (euBankTransfer != null) 'eu_bank_transfer': euBankTransfer?.toJson(),
   if (requestedAddressTypes != null) 'requested_address_types': requestedAddressTypes?.map((e) => e.toJson()).toList(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostCustomersCustomerFundingInstructionsRequestBankTransfer copyWith({PostCustomersCustomerFundingInstructionsRequestBankTransferEuBankTransfer? Function()? euBankTransfer, List<PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes>? Function()? requestedAddressTypes, PostCustomersCustomerFundingInstructionsRequestBankTransferType? type, }) { return PostCustomersCustomerFundingInstructionsRequestBankTransfer(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostCustomersCustomerFundingInstructionsRequestBankTransfer copyWith({PostCustomersCustomerFundingInstructionsRequestBankTransferEuBankTransfer? Function()? euBankTransfer, List<PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes>? Function()? requestedAddressTypes, PostCustomersCustomerFundingInstructionsRequestBankTransferType? type, }) {return PostCustomersCustomerFundingInstructionsRequestBankTransfer(
   euBankTransfer: euBankTransfer != null ? euBankTransfer() : this.euBankTransfer,
   requestedAddressTypes: requestedAddressTypes != null ? requestedAddressTypes() : this.requestedAddressTypes,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCustomersCustomerFundingInstructionsRequestBankTransfer &&
           euBankTransfer == other.euBankTransfer &&
           listEquals(requestedAddressTypes, other.requestedAddressTypes) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(euBankTransfer, Object.hashAll(requestedAddressTypes ?? const []), type); } 
-@override String toString() { return 'PostCustomersCustomerFundingInstructionsRequestBankTransfer(euBankTransfer: $euBankTransfer, requestedAddressTypes: $requestedAddressTypes, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(euBankTransfer, Object.hashAll(requestedAddressTypes ?? const []), type);}
+@override String toString() {return 'PostCustomersCustomerFundingInstructionsRequestBankTransfer(euBankTransfer: $euBankTransfer, requestedAddressTypes: $requestedAddressTypes, type: $type)';}
+}

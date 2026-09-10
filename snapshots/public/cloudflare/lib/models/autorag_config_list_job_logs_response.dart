@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_list_job_logs_response_result.dart';import 'autorag_config_list_job_logs_response_result_info.dart';@immutable final class AutoragConfigListJobLogsResponse {const AutoragConfigListJobLogsResponse({required this.result, required this.resultInfo, required this.success, });
 
-factory AutoragConfigListJobLogsResponse.fromJson(Map<String, dynamic> json) { return AutoragConfigListJobLogsResponse(
+factory AutoragConfigListJobLogsResponse.fromJson(Map<String, dynamic> json) {return AutoragConfigListJobLogsResponse(
   result: (json['result'] as List<dynamic>).map((e) => AutoragConfigListJobLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
   resultInfo: AutoragConfigListJobLogsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<AutoragConfigListJobLogsResponseResult> result;
 
@@ -14,24 +14,24 @@ final AutoragConfigListJobLogsResponseResultInfo resultInfo;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.map((e) => e.toJson()).toList(),
   'result_info': resultInfo.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
       json.containsKey('result_info') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AutoragConfigListJobLogsResponse copyWith({List<AutoragConfigListJobLogsResponseResult>? result, AutoragConfigListJobLogsResponseResultInfo? resultInfo, bool? success, }) { return AutoragConfigListJobLogsResponse(
+      json.containsKey('success') && json['success'] is bool;}
+AutoragConfigListJobLogsResponse copyWith({List<AutoragConfigListJobLogsResponseResult>? result, AutoragConfigListJobLogsResponseResultInfo? resultInfo, bool? success, }) {return AutoragConfigListJobLogsResponse(
   result: result ?? this.result,
   resultInfo: resultInfo ?? this.resultInfo,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AutoragConfigListJobLogsResponse &&
           listEquals(result, other.result) &&
           resultInfo == other.resultInfo &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(result), resultInfo, success); } 
-@override String toString() { return 'AutoragConfigListJobLogsResponse(result: $result, resultInfo: $resultInfo, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(Object.hashAll(result), resultInfo, success);}
+@override String toString() {return 'AutoragConfigListJobLogsResponse(result: $result, resultInfo: $resultInfo, success: $success)';}
+}

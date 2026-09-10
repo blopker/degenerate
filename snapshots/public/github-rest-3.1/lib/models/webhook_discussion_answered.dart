@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_answer.dart';@immutable final class WebhookDiscussionAnsweredAction {const WebhookDiscussionAnsweredAction._(this.value);
 
-factory WebhookDiscussionAnsweredAction.fromJson(String json) { return switch (json) {
+factory WebhookDiscussionAnsweredAction.fromJson(String json) {return switch (json) {
   'answered' => answered,
   _ => WebhookDiscussionAnsweredAction._(json),
-}; }
+};}
 
 static const WebhookDiscussionAnsweredAction answered = WebhookDiscussionAnsweredAction._('answered');
 
@@ -13,17 +13,17 @@ static const List<WebhookDiscussionAnsweredAction> values = [answered];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDiscussionAnsweredAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDiscussionAnsweredAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookDiscussionAnsweredAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookDiscussionAnsweredAction($value)';}
+}
 @immutable final class WebhookDiscussionAnswered {const WebhookDiscussionAnswered({required this.action, required this.answer, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookDiscussionAnswered.fromJson(Map<String, dynamic> json) { return WebhookDiscussionAnswered(
+factory WebhookDiscussionAnswered.fromJson(Map<String, dynamic> json) {return WebhookDiscussionAnswered(
   action: WebhookDiscussionAnsweredAction.fromJson(json['action'] as String),
   answer: WebhooksAnswer.fromJson(json['answer'] as Map<String, dynamic>),
   discussion: Discussion.fromJson(json['discussion'] as Map<String, dynamic>),
@@ -32,7 +32,7 @@ factory WebhookDiscussionAnswered.fromJson(Map<String, dynamic> json) { return W
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookDiscussionAnsweredAction action;
 
@@ -50,7 +50,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'answer': answer.toJson(),
   'discussion': discussion.toJson(),
@@ -59,13 +59,13 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('answer') &&
       json.containsKey('discussion') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookDiscussionAnswered copyWith({WebhookDiscussionAnsweredAction? action, WebhooksAnswer? answer, Discussion? discussion, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDiscussionAnswered(
+      json.containsKey('sender');}
+WebhookDiscussionAnswered copyWith({WebhookDiscussionAnsweredAction? action, WebhooksAnswer? answer, Discussion? discussion, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookDiscussionAnswered(
   action: action ?? this.action,
   answer: answer ?? this.answer,
   discussion: discussion ?? this.discussion,
@@ -74,8 +74,8 @@ WebhookDiscussionAnswered copyWith({WebhookDiscussionAnsweredAction? action, Web
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDiscussionAnswered &&
           action == other.action &&
           answer == other.answer &&
@@ -84,7 +84,7 @@ WebhookDiscussionAnswered copyWith({WebhookDiscussionAnsweredAction? action, Web
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, answer, discussion, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookDiscussionAnswered(action: $action, answer: $answer, discussion: $discussion, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, answer, discussion, enterprise, installation, organization, repository, sender);}
+@override String toString() {return 'WebhookDiscussionAnswered(action: $action, answer: $answer, discussion: $discussion, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ReserveTransactionObject {const ReserveTransactionObject._(this.value);
 
-factory ReserveTransactionObject.fromJson(String json) { return switch (json) {
+factory ReserveTransactionObject.fromJson(String json) {return switch (json) {
   'reserve_transaction' => reserveTransaction,
   _ => ReserveTransactionObject._(json),
-}; }
+};}
 
 static const ReserveTransactionObject reserveTransaction = ReserveTransactionObject._('reserve_transaction');
 
@@ -14,24 +14,24 @@ static const List<ReserveTransactionObject> values = [reserveTransaction];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReserveTransactionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReserveTransactionObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReserveTransactionObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReserveTransactionObject($value)';}
+}
 /// 
 @immutable final class ReserveTransaction {const ReserveTransaction({required this.amount, required this.currency, required this.id, required this.object, this.description = const Omittable.absent(), });
 
-factory ReserveTransaction.fromJson(Map<String, dynamic> json) { return ReserveTransaction(
+factory ReserveTransaction.fromJson(Map<String, dynamic> json) {return ReserveTransaction(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   object: ReserveTransactionObject.fromJson(json['object'] as String),
-); }
+);}
 
 final int amount;
 
@@ -47,31 +47,31 @@ final String id;
 /// String representing the object's type. Objects of the same type share the same value.
 final ReserveTransactionObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   if (description.isPresent) 'description': description.value,
   'id': id,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object'); } 
-ReserveTransaction copyWith({int? amount, String? currency, Omittable<String?>? description, String? id, ReserveTransactionObject? object, }) { return ReserveTransaction(
+      json.containsKey('object');}
+ReserveTransaction copyWith({int? amount, String? currency, Omittable<String?>? description, String? id, ReserveTransactionObject? object, }) {return ReserveTransaction(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description ?? this.description,
   id: id ?? this.id,
   object: object ?? this.object,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReserveTransaction &&
           amount == other.amount &&
           currency == other.currency &&
           description == other.description &&
           id == other.id &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(amount, currency, description, id, object); } 
-@override String toString() { return 'ReserveTransaction(amount: $amount, currency: $currency, description: $description, id: $id, object: $object)'; } 
- }
+          object == other.object;}
+@override int get hashCode {return Object.hash(amount, currency, description, id, object);}
+@override String toString() {return 'ReserveTransaction(amount: $amount, currency: $currency, description: $description, id: $id, object: $object)';}
+}

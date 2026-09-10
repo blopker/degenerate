@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Thread Subscription
 @immutable final class ThreadSubscription {const ThreadSubscription({required this.subscribed, required this.ignored, required this.reason, required this.createdAt, required this.url, this.threadUrl, this.repositoryUrl, });
 
-factory ThreadSubscription.fromJson(Map<String, dynamic> json) { return ThreadSubscription(
+factory ThreadSubscription.fromJson(Map<String, dynamic> json) {return ThreadSubscription(
   subscribed: json['subscribed'] as bool,
   ignored: json['ignored'] as bool,
   reason: json['reason'] as String?,
@@ -11,7 +11,7 @@ factory ThreadSubscription.fromJson(Map<String, dynamic> json) { return ThreadSu
   url: Uri.parse(json['url'] as String),
   threadUrl: json['thread_url'] != null ? Uri.parse(json['thread_url'] as String) : null,
   repositoryUrl: json['repository_url'] != null ? Uri.parse(json['repository_url'] as String) : null,
-); }
+);}
 
 final bool subscribed;
 
@@ -27,7 +27,7 @@ final Uri? threadUrl;
 
 final Uri? repositoryUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'subscribed': subscribed,
   'ignored': ignored,
   'reason': reason,
@@ -35,13 +35,13 @@ Map<String, dynamic> toJson() { return {
   'url': url.toString(),
   if (threadUrl != null) 'thread_url': threadUrl?.toString(),
   if (repositoryUrl != null) 'repository_url': repositoryUrl?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('subscribed') && json['subscribed'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('subscribed') && json['subscribed'] is bool &&
       json.containsKey('ignored') && json['ignored'] is bool &&
       json.containsKey('reason') && (json['reason'] == null || json['reason'] is String) &&
       json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
-      json.containsKey('url') && json['url'] is String; } 
-ThreadSubscription copyWith({bool? subscribed, bool? ignored, String? Function()? reason, DateTime? Function()? createdAt, Uri? url, Uri? Function()? threadUrl, Uri? Function()? repositoryUrl, }) { return ThreadSubscription(
+      json.containsKey('url') && json['url'] is String;}
+ThreadSubscription copyWith({bool? subscribed, bool? ignored, String? Function()? reason, DateTime? Function()? createdAt, Uri? url, Uri? Function()? threadUrl, Uri? Function()? repositoryUrl, }) {return ThreadSubscription(
   subscribed: subscribed ?? this.subscribed,
   ignored: ignored ?? this.ignored,
   reason: reason != null ? reason() : this.reason,
@@ -49,8 +49,8 @@ ThreadSubscription copyWith({bool? subscribed, bool? ignored, String? Function()
   url: url ?? this.url,
   threadUrl: threadUrl != null ? threadUrl() : this.threadUrl,
   repositoryUrl: repositoryUrl != null ? repositoryUrl() : this.repositoryUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ThreadSubscription &&
           subscribed == other.subscribed &&
           ignored == other.ignored &&
@@ -58,7 +58,7 @@ ThreadSubscription copyWith({bool? subscribed, bool? ignored, String? Function()
           createdAt == other.createdAt &&
           url == other.url &&
           threadUrl == other.threadUrl &&
-          repositoryUrl == other.repositoryUrl; } 
-@override int get hashCode { return Object.hash(subscribed, ignored, reason, createdAt, url, threadUrl, repositoryUrl); } 
-@override String toString() { return 'ThreadSubscription(subscribed: $subscribed, ignored: $ignored, reason: $reason, createdAt: $createdAt, url: $url, threadUrl: $threadUrl, repositoryUrl: $repositoryUrl)'; } 
- }
+          repositoryUrl == other.repositoryUrl;}
+@override int get hashCode {return Object.hash(subscribed, ignored, reason, createdAt, url, threadUrl, repositoryUrl);}
+@override String toString() {return 'ThreadSubscription(subscribed: $subscribed, ignored: $ignored, reason: $reason, createdAt: $createdAt, url: $url, threadUrl: $threadUrl, repositoryUrl: $repositoryUrl)';}
+}

@@ -11,7 +11,7 @@ final class ZoneCloudConnectorRulesPutApi with ApiExecutor {const ZoneCloudConne
 /// Put Rules
 ///
 /// `PUT /zones/{zone_id}/cloud_connector/rules`
-Future<ApiResult<List<CloudConnectorRule>?, ResponseCommonFailure17>> zoneCloudConenctorRulesPut({required CloudConnectorIdentifier zoneId, List<CloudConnectorRule>? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CloudConnectorRule>?, ResponseCommonFailure17>> zoneCloudConenctorRulesPut({required CloudConnectorIdentifier zoneId, List<CloudConnectorRule>? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -39,5 +39,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

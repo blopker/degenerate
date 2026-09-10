@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class OrgsGetOrgRoleError {const OrgsGetOrgRoleError();
 
 /// Decodes the payload for its declared status and content type.
-static OrgsGetOrgRoleError parse(ApiResponse response) { switch (response.statusCode) {
+static OrgsGetOrgRoleError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
 return OrgsGetOrgRoleError404(BasicError.fromJson(json as Map<String, dynamic>));
@@ -14,26 +14,26 @@ return OrgsGetOrgRoleError422(ValidationError.fromJson(json as Map<String, dynam
 default:
 return OrgsGetOrgRoleErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 404 (application/json).
 final class OrgsGetOrgRoleError404 extends OrgsGetOrgRoleError {const OrgsGetOrgRoleError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class OrgsGetOrgRoleError422 extends OrgsGetOrgRoleError {const OrgsGetOrgRoleError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class OrgsGetOrgRoleErrorUnknown extends OrgsGetOrgRoleError {const OrgsGetOrgRoleErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

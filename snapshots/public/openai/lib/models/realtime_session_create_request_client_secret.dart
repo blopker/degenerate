@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Ephemeral key returned by the API.
 @immutable final class RealtimeSessionCreateRequestClientSecret {const RealtimeSessionCreateRequestClientSecret({required this.value, required this.expiresAt, });
 
-factory RealtimeSessionCreateRequestClientSecret.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequestClientSecret(
+factory RealtimeSessionCreateRequestClientSecret.fromJson(Map<String, dynamic> json) {return RealtimeSessionCreateRequestClientSecret(
   value: json['value'] as String,
   expiresAt: (json['expires_at'] as num).toInt(),
-); }
+);}
 
 /// Ephemeral key usable in client environments to authenticate connections
 /// to the Realtime API. Use this in client-side environments rather than
@@ -19,20 +19,20 @@ final String value;
 /// 
 final int expiresAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'value': value,
   'expires_at': expiresAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('value') && json['value'] is String &&
-      json.containsKey('expires_at') && json['expires_at'] is num; } 
-RealtimeSessionCreateRequestClientSecret copyWith({String? value, int? expiresAt, }) { return RealtimeSessionCreateRequestClientSecret(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('value') && json['value'] is String &&
+      json.containsKey('expires_at') && json['expires_at'] is num;}
+RealtimeSessionCreateRequestClientSecret copyWith({String? value, int? expiresAt, }) {return RealtimeSessionCreateRequestClientSecret(
   value: value ?? this.value,
   expiresAt: expiresAt ?? this.expiresAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeSessionCreateRequestClientSecret &&
           value == other.value &&
-          expiresAt == other.expiresAt; } 
-@override int get hashCode { return Object.hash(value, expiresAt); } 
-@override String toString() { return 'RealtimeSessionCreateRequestClientSecret(value: $value, expiresAt: $expiresAt)'; } 
- }
+          expiresAt == other.expiresAt;}
+@override int get hashCode {return Object.hash(value, expiresAt);}
+@override String toString() {return 'RealtimeSessionCreateRequestClientSecret(value: $value, expiresAt: $expiresAt)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PrivateRegistriesGetOrgPublicKeyResponse {const PrivateRegistriesGetOrgPublicKeyResponse({required this.keyId, required this.key, });
 
-factory PrivateRegistriesGetOrgPublicKeyResponse.fromJson(Map<String, dynamic> json) { return PrivateRegistriesGetOrgPublicKeyResponse(
+factory PrivateRegistriesGetOrgPublicKeyResponse.fromJson(Map<String, dynamic> json) {return PrivateRegistriesGetOrgPublicKeyResponse(
   keyId: json['key_id'] as String,
   key: json['key'] as String,
-); }
+);}
 
 /// The identifier for the key.
 final String keyId;
@@ -13,20 +13,20 @@ final String keyId;
 /// The Base64 encoded public key.
 final String key;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key_id': keyId,
   'key': key,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key_id') && json['key_id'] is String &&
-      json.containsKey('key') && json['key'] is String; } 
-PrivateRegistriesGetOrgPublicKeyResponse copyWith({String? keyId, String? key, }) { return PrivateRegistriesGetOrgPublicKeyResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key_id') && json['key_id'] is String &&
+      json.containsKey('key') && json['key'] is String;}
+PrivateRegistriesGetOrgPublicKeyResponse copyWith({String? keyId, String? key, }) {return PrivateRegistriesGetOrgPublicKeyResponse(
   keyId: keyId ?? this.keyId,
   key: key ?? this.key,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PrivateRegistriesGetOrgPublicKeyResponse &&
           keyId == other.keyId &&
-          key == other.key; } 
-@override int get hashCode { return Object.hash(keyId, key); } 
-@override String toString() { return 'PrivateRegistriesGetOrgPublicKeyResponse(keyId: $keyId, key: $key)'; } 
- }
+          key == other.key;}
+@override int get hashCode {return Object.hash(keyId, key);}
+@override String toString() {return 'PrivateRegistriesGetOrgPublicKeyResponse(keyId: $keyId, key: $key)';}
+}

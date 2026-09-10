@@ -9,12 +9,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_v
 /// 
 @immutable final class ShieldOldValidationOverrideMitigationActionWrite {const ShieldOldValidationOverrideMitigationActionWrite._(this.value);
 
-factory ShieldOldValidationOverrideMitigationActionWrite.fromJson(String json) { return switch (json) {
+factory ShieldOldValidationOverrideMitigationActionWrite.fromJson(String json) {return switch (json) {
   'none' => none,
   'disable_override' => disableOverride,
   'null' => $null,
   _ => ShieldOldValidationOverrideMitigationActionWrite._(json),
-}; }
+};}
 
 static const ShieldOldValidationOverrideMitigationActionWrite none = ShieldOldValidationOverrideMitigationActionWrite._('none');
 
@@ -26,20 +26,20 @@ static const List<ShieldOldValidationOverrideMitigationActionWrite> values = [no
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldOldValidationOverrideMitigationActionWrite && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldOldValidationOverrideMitigationActionWrite($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ShieldOldValidationOverrideMitigationActionWrite && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ShieldOldValidationOverrideMitigationActionWrite($value)';}
+}
 @immutable final class ShieldOldZoneSchemaValidationSettingsPut {const ShieldOldZoneSchemaValidationSettingsPut({required this.validationDefaultMitigationAction, this.validationOverrideMitigationAction = const Omittable.absent(), });
 
-factory ShieldOldZoneSchemaValidationSettingsPut.fromJson(Map<String, dynamic> json) { return ShieldOldZoneSchemaValidationSettingsPut(
+factory ShieldOldZoneSchemaValidationSettingsPut.fromJson(Map<String, dynamic> json) {return ShieldOldZoneSchemaValidationSettingsPut(
   validationDefaultMitigationAction: ShieldOldValidationDefaultMitigationAction.fromJson(json['validation_default_mitigation_action'] as String),
   validationOverrideMitigationAction: json.containsKey('validation_override_mitigation_action') ? Omittable(json['validation_override_mitigation_action'] != null ? ShieldOldValidationOverrideMitigationActionWrite.fromJson(json['validation_override_mitigation_action'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The default mitigation action used when there is no mitigation action defined on the operation
 /// 
@@ -61,19 +61,19 @@ final ShieldOldValidationDefaultMitigationAction validationDefaultMitigationActi
 /// 
 final Omittable<ShieldOldValidationOverrideMitigationActionWrite?> validationOverrideMitigationAction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'validation_default_mitigation_action': validationDefaultMitigationAction.toJson(),
   if (validationOverrideMitigationAction.isPresent) 'validation_override_mitigation_action': validationOverrideMitigationAction.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('validation_default_mitigation_action'); } 
-ShieldOldZoneSchemaValidationSettingsPut copyWith({ShieldOldValidationDefaultMitigationAction? validationDefaultMitigationAction, Omittable<ShieldOldValidationOverrideMitigationActionWrite?>? validationOverrideMitigationAction, }) { return ShieldOldZoneSchemaValidationSettingsPut(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('validation_default_mitigation_action');}
+ShieldOldZoneSchemaValidationSettingsPut copyWith({ShieldOldValidationDefaultMitigationAction? validationDefaultMitigationAction, Omittable<ShieldOldValidationOverrideMitigationActionWrite?>? validationOverrideMitigationAction, }) {return ShieldOldZoneSchemaValidationSettingsPut(
   validationDefaultMitigationAction: validationDefaultMitigationAction ?? this.validationDefaultMitigationAction,
   validationOverrideMitigationAction: validationOverrideMitigationAction ?? this.validationOverrideMitigationAction,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShieldOldZoneSchemaValidationSettingsPut &&
           validationDefaultMitigationAction == other.validationDefaultMitigationAction &&
-          validationOverrideMitigationAction == other.validationOverrideMitigationAction; } 
-@override int get hashCode { return Object.hash(validationDefaultMitigationAction, validationOverrideMitigationAction); } 
-@override String toString() { return 'ShieldOldZoneSchemaValidationSettingsPut(validationDefaultMitigationAction: $validationDefaultMitigationAction, validationOverrideMitigationAction: $validationOverrideMitigationAction)'; } 
- }
+          validationOverrideMitigationAction == other.validationOverrideMitigationAction;}
+@override int get hashCode {return Object.hash(validationDefaultMitigationAction, validationOverrideMitigationAction);}
+@override String toString() {return 'ShieldOldZoneSchemaValidationSettingsPut(validationDefaultMitigationAction: $validationDefaultMitigationAction, validationOverrideMitigationAction: $validationOverrideMitigationAction)';}
+}

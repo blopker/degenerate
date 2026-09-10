@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingCardsCardShippingReturnRequest {const PostTestHelpersIssuingCardsCardShippingReturnRequest({this.expand});
 
-factory PostTestHelpersIssuingCardsCardShippingReturnRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingCardsCardShippingReturnRequest(
+factory PostTestHelpersIssuingCardsCardShippingReturnRequest.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingCardsCardShippingReturnRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand'}.contains(key)); } 
-PostTestHelpersIssuingCardsCardShippingReturnRequest copyWith({List<String>? Function()? expand}) { return PostTestHelpersIssuingCardsCardShippingReturnRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand'}.contains(key));}
+PostTestHelpersIssuingCardsCardShippingReturnRequest copyWith({List<String>? Function()? expand}) {return PostTestHelpersIssuingCardsCardShippingReturnRequest(
   expand: expand != null ? expand() : this.expand,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersIssuingCardsCardShippingReturnRequest &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hashAll(expand ?? const []).hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingCardsCardShippingReturnRequest(expand: $expand)'; } 
- }
+          listEquals(expand, other.expand);}
+@override int get hashCode {return Object.hashAll(expand ?? const []).hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingCardsCardShippingReturnRequest(expand: $expand)';}
+}

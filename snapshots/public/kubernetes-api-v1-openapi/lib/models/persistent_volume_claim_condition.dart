@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// PersistentVolumeClaimCondition contains details about state of pvc
 @immutable final class PersistentVolumeClaimCondition {const PersistentVolumeClaimCondition({required this.status, required this.type, this.lastProbeTime, this.lastTransitionTime, this.message, this.reason, });
 
-factory PersistentVolumeClaimCondition.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaimCondition(
+factory PersistentVolumeClaimCondition.fromJson(Map<String, dynamic> json) {return PersistentVolumeClaimCondition(
   lastProbeTime: json['lastProbeTime'] != null ? Time.fromJson(json['lastProbeTime'] as String) : null,
   lastTransitionTime: json['lastTransitionTime'] != null ? Time.fromJson(json['lastTransitionTime'] as String) : null,
   message: json['message'] as String?,
   reason: json['reason'] as String?,
   status: json['status'] as String,
   type: json['type'] as String,
-); }
+);}
 
 /// lastProbeTime is the time we probed the condition.
 final Time? lastProbeTime;
@@ -30,32 +30,32 @@ final String status;
 /// Type is the type of the condition. More info: https://kubernetes.io/docs/reference/kubernetes-api/config-and-storage-resources/persistent-volume-claim-v1/#:~:text=set%20to%20%27ResizeStarted%27.-,PersistentVolumeClaimCondition,-contains%20details%20about
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (lastProbeTime != null) 'lastProbeTime': lastProbeTime?.toJson(),
   if (lastTransitionTime != null) 'lastTransitionTime': lastTransitionTime?.toJson(),
   'message': ?message,
   'reason': ?reason,
   'status': status,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-PersistentVolumeClaimCondition copyWith({Time? Function()? lastProbeTime, Time? Function()? lastTransitionTime, String? Function()? message, String? Function()? reason, String? status, String? type, }) { return PersistentVolumeClaimCondition(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status') && json['status'] is String &&
+      json.containsKey('type') && json['type'] is String;}
+PersistentVolumeClaimCondition copyWith({Time? Function()? lastProbeTime, Time? Function()? lastTransitionTime, String? Function()? message, String? Function()? reason, String? status, String? type, }) {return PersistentVolumeClaimCondition(
   lastProbeTime: lastProbeTime != null ? lastProbeTime() : this.lastProbeTime,
   lastTransitionTime: lastTransitionTime != null ? lastTransitionTime() : this.lastTransitionTime,
   message: message != null ? message() : this.message,
   reason: reason != null ? reason() : this.reason,
   status: status ?? this.status,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PersistentVolumeClaimCondition &&
           lastProbeTime == other.lastProbeTime &&
           lastTransitionTime == other.lastTransitionTime &&
           message == other.message &&
           reason == other.reason &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(lastProbeTime, lastTransitionTime, message, reason, status, type); } 
-@override String toString() { return 'PersistentVolumeClaimCondition(lastProbeTime: $lastProbeTime, lastTransitionTime: $lastTransitionTime, message: $message, reason: $reason, status: $status, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(lastProbeTime, lastTransitionTime, message, reason, status, type);}
+@override String toString() {return 'PersistentVolumeClaimCondition(lastProbeTime: $lastProbeTime, lastTransitionTime: $lastTransitionTime, message: $message, reason: $reason, status: $status, type: $type)';}
+}

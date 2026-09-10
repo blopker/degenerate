@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// References a container created with the /v1/containers endpoint
 @immutable final class ContainerReferenceParamType {const ContainerReferenceParamType._(this.value);
 
-factory ContainerReferenceParamType.fromJson(String json) { return switch (json) {
+factory ContainerReferenceParamType.fromJson(String json) {return switch (json) {
   'container_reference' => containerReference,
   _ => ContainerReferenceParamType._(json),
-}; }
+};}
 
 static const ContainerReferenceParamType containerReference = ContainerReferenceParamType._('container_reference');
 
@@ -14,20 +14,20 @@ static const List<ContainerReferenceParamType> values = [containerReference];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContainerReferenceParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContainerReferenceParamType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ContainerReferenceParamType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ContainerReferenceParamType($value)';}
+}
 @immutable final class ContainerReferenceParam {const ContainerReferenceParam({required this.type, required this.containerId, });
 
-factory ContainerReferenceParam.fromJson(Map<String, dynamic> json) { return ContainerReferenceParam(
+factory ContainerReferenceParam.fromJson(Map<String, dynamic> json) {return ContainerReferenceParam(
   type: ContainerReferenceParamType.fromJson(json['type'] as String),
   containerId: json['container_id'] as String,
-); }
+);}
 
 /// References a container created with the /v1/containers endpoint
 final ContainerReferenceParamType type;
@@ -35,20 +35,20 @@ final ContainerReferenceParamType type;
 /// The ID of the referenced container.
 final String containerId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'container_id': containerId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('container_id') && json['container_id'] is String; } 
-ContainerReferenceParam copyWith({ContainerReferenceParamType? type, String? containerId, }) { return ContainerReferenceParam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('container_id') && json['container_id'] is String;}
+ContainerReferenceParam copyWith({ContainerReferenceParamType? type, String? containerId, }) {return ContainerReferenceParam(
   type: type ?? this.type,
   containerId: containerId ?? this.containerId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ContainerReferenceParam &&
           type == other.type &&
-          containerId == other.containerId; } 
-@override int get hashCode { return Object.hash(type, containerId); } 
-@override String toString() { return 'ContainerReferenceParam(type: $type, containerId: $containerId)'; } 
- }
+          containerId == other.containerId;}
+@override int get hashCode {return Object.hash(type, containerId);}
+@override String toString() {return 'ContainerReferenceParam(type: $type, containerId: $containerId)';}
+}

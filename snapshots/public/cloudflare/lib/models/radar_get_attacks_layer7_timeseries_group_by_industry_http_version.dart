@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TimeseriesGroupByIndustryHttpVersion {const RadarGetAttacksLayer7TimeseriesGroupByIndustryHttpVersion._(this.value);
 
-factory RadarGetAttacksLayer7TimeseriesGroupByIndustryHttpVersion.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer7TimeseriesGroupByIndustryHttpVersion.fromJson(String json) {return switch (json) {
   'HTTPv1' => httPv1,
   'HTTPv2' => httPv2,
   'HTTPv3' => httPv3,
   _ => RadarGetAttacksLayer7TimeseriesGroupByIndustryHttpVersion._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer7TimeseriesGroupByIndustryHttpVersion httPv1 = RadarGetAttacksLayer7TimeseriesGroupByIndustryHttpVersion._('HTTPv1');
 
@@ -19,11 +19,11 @@ static const List<RadarGetAttacksLayer7TimeseriesGroupByIndustryHttpVersion> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer7TimeseriesGroupByIndustryHttpVersion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer7TimeseriesGroupByIndustryHttpVersion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer7TimeseriesGroupByIndustryHttpVersion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer7TimeseriesGroupByIndustryHttpVersion($value)';}
+}

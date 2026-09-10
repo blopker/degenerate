@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsRequestEpsBank {const PostPaymentMethodsRequestEpsBank._(this.value);
 
-factory PostPaymentMethodsRequestEpsBank.fromJson(String json) { return switch (json) {
+factory PostPaymentMethodsRequestEpsBank.fromJson(String json) {return switch (json) {
   'arzte_und_apotheker_bank' => arzteUndApothekerBank,
   'austrian_anadi_bank_ag' => austrianAnadiBankAg,
   'bank_austria' => bankAustria,
@@ -32,7 +32,7 @@ factory PostPaymentMethodsRequestEpsBank.fromJson(String json) { return switch (
   'volkskreditbank_ag' => volkskreditbankAg,
   'vr_bank_braunau' => vrBankBraunau,
   _ => PostPaymentMethodsRequestEpsBank._(json),
-}; }
+};}
 
 static const PostPaymentMethodsRequestEpsBank arzteUndApothekerBank = PostPaymentMethodsRequestEpsBank._('arzte_und_apotheker_bank');
 
@@ -94,33 +94,33 @@ static const List<PostPaymentMethodsRequestEpsBank> values = [arzteUndApothekerB
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentMethodsRequestEpsBank && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentMethodsRequestEpsBank($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentMethodsRequestEpsBank && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentMethodsRequestEpsBank($value)';}
+}
 /// If this is an `eps` PaymentMethod, this hash contains details about the EPS payment method.
 @immutable final class PostPaymentMethodsRequestEps {const PostPaymentMethodsRequestEps({this.bank});
 
-factory PostPaymentMethodsRequestEps.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestEps(
+factory PostPaymentMethodsRequestEps.fromJson(Map<String, dynamic> json) {return PostPaymentMethodsRequestEps(
   bank: json['bank'] != null ? PostPaymentMethodsRequestEpsBank.fromJson(json['bank'] as String) : null,
-); }
+);}
 
 final PostPaymentMethodsRequestEpsBank? bank;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bank != null) 'bank': bank?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank'}.contains(key)); } 
-PostPaymentMethodsRequestEps copyWith({PostPaymentMethodsRequestEpsBank? Function()? bank}) { return PostPaymentMethodsRequestEps(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank'}.contains(key));}
+PostPaymentMethodsRequestEps copyWith({PostPaymentMethodsRequestEpsBank? Function()? bank}) {return PostPaymentMethodsRequestEps(
   bank: bank != null ? bank() : this.bank,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodsRequestEps &&
-          bank == other.bank; } 
-@override int get hashCode { return bank.hashCode; } 
-@override String toString() { return 'PostPaymentMethodsRequestEps(bank: $bank)'; } 
- }
+          bank == other.bank;}
+@override int get hashCode {return bank.hashCode;}
+@override String toString() {return 'PostPaymentMethodsRequestEps(bank: $bank)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionsRequestAddInvoiceItemsPeriodStartType {const PostSubscriptionsRequestAddInvoiceItemsPeriodStartType._(this.value);
 
-factory PostSubscriptionsRequestAddInvoiceItemsPeriodStartType.fromJson(String json) { return switch (json) {
+factory PostSubscriptionsRequestAddInvoiceItemsPeriodStartType.fromJson(String json) {return switch (json) {
   'max_item_period_start' => maxItemPeriodStart,
   'now' => now,
   'timestamp' => timestamp,
   _ => PostSubscriptionsRequestAddInvoiceItemsPeriodStartType._(json),
-}; }
+};}
 
 static const PostSubscriptionsRequestAddInvoiceItemsPeriodStartType maxItemPeriodStart = PostSubscriptionsRequestAddInvoiceItemsPeriodStartType._('max_item_period_start');
 
@@ -19,38 +19,38 @@ static const List<PostSubscriptionsRequestAddInvoiceItemsPeriodStartType> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionsRequestAddInvoiceItemsPeriodStartType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionsRequestAddInvoiceItemsPeriodStartType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionsRequestAddInvoiceItemsPeriodStartType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionsRequestAddInvoiceItemsPeriodStartType($value)';}
+}
 @immutable final class PostSubscriptionsRequestAddInvoiceItemsPeriodStart {const PostSubscriptionsRequestAddInvoiceItemsPeriodStart({required this.type, this.timestamp, });
 
-factory PostSubscriptionsRequestAddInvoiceItemsPeriodStart.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequestAddInvoiceItemsPeriodStart(
+factory PostSubscriptionsRequestAddInvoiceItemsPeriodStart.fromJson(Map<String, dynamic> json) {return PostSubscriptionsRequestAddInvoiceItemsPeriodStart(
   timestamp: json['timestamp'] != null ? (json['timestamp'] as num).toInt() : null,
   type: PostSubscriptionsRequestAddInvoiceItemsPeriodStartType.fromJson(json['type'] as String),
-); }
+);}
 
 final int? timestamp;
 
 final PostSubscriptionsRequestAddInvoiceItemsPeriodStartType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'timestamp': ?timestamp,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostSubscriptionsRequestAddInvoiceItemsPeriodStart copyWith({int? Function()? timestamp, PostSubscriptionsRequestAddInvoiceItemsPeriodStartType? type, }) { return PostSubscriptionsRequestAddInvoiceItemsPeriodStart(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostSubscriptionsRequestAddInvoiceItemsPeriodStart copyWith({int? Function()? timestamp, PostSubscriptionsRequestAddInvoiceItemsPeriodStartType? type, }) {return PostSubscriptionsRequestAddInvoiceItemsPeriodStart(
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionsRequestAddInvoiceItemsPeriodStart &&
           timestamp == other.timestamp &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(timestamp, type); } 
-@override String toString() { return 'PostSubscriptionsRequestAddInvoiceItemsPeriodStart(timestamp: $timestamp, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(timestamp, type);}
+@override String toString() {return 'PostSubscriptionsRequestAddInvoiceItemsPeriodStart(timestamp: $timestamp, type: $type)';}
+}

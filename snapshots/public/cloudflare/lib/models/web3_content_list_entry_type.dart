@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the type of content list entry to block.
 @immutable final class Web3ContentListEntryType {const Web3ContentListEntryType._(this.value);
 
-factory Web3ContentListEntryType.fromJson(String json) { return switch (json) {
+factory Web3ContentListEntryType.fromJson(String json) {return switch (json) {
   'cid' => cid,
   'content_path' => contentPath,
   _ => Web3ContentListEntryType._(json),
-}; }
+};}
 
 static const Web3ContentListEntryType cid = Web3ContentListEntryType._('cid');
 
@@ -17,11 +17,11 @@ static const List<Web3ContentListEntryType> values = [cid, contentPath];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Web3ContentListEntryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Web3ContentListEntryType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Web3ContentListEntryType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Web3ContentListEntryType($value)';}
+}

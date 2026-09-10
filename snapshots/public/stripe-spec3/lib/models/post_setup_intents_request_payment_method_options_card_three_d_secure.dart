@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_request_payment_method_options_card_three_d_secure_network_options.dart';@immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus {const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus._(this.value);
 
-factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus.fromJson(String json) {return switch (json) {
   'A' => a,
   'C' => c,
   'I' => i,
@@ -11,7 +11,7 @@ factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStat
   'U' => u,
   'Y' => y,
   _ => PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus._(json),
-}; }
+};}
 
 static const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus a = PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus._('A');
 
@@ -31,24 +31,24 @@ static const List<PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAre
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus($value)';}
+}
 @immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator {const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator._(this.value);
 
-factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator.fromJson(String json) {return switch (json) {
   '01' => $01,
   '02' => $02,
   '05' => $05,
   '06' => $06,
   '07' => $07,
   _ => PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator._(json),
-}; }
+};}
 
 static const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator $01 = PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator._('01');
 
@@ -64,24 +64,24 @@ static const List<PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureEle
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator($value)';}
+}
 @immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion {const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion._(this.value);
 
-factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion.fromJson(String json) {return switch (json) {
   '1.0.2' => $102,
   '2.1.0' => $210,
   '2.2.0' => $220,
   '2.3.0' => $230,
   '2.3.1' => $231,
   _ => PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion._(json),
-}; }
+};}
 
 static const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion $102 = PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion._('1.0.2');
 
@@ -97,17 +97,17 @@ static const List<PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVer
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion($value)';}
+}
 @immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure {const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure({this.aresTransStatus, this.cryptogram, this.electronicCommerceIndicator, this.networkOptions, this.requestorChallengeIndicator, this.transactionId, this.version, });
 
-factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure(
+factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure.fromJson(Map<String, dynamic> json) {return PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure(
   aresTransStatus: json['ares_trans_status'] != null ? PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus.fromJson(json['ares_trans_status'] as String) : null,
   cryptogram: json['cryptogram'] as String?,
   electronicCommerceIndicator: json['electronic_commerce_indicator'] != null ? PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator.fromJson(json['electronic_commerce_indicator'] as String) : null,
@@ -115,7 +115,7 @@ factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure.fromJson(Map
   requestorChallengeIndicator: json['requestor_challenge_indicator'] as String?,
   transactionId: json['transaction_id'] as String?,
   version: json['version'] != null ? PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion.fromJson(json['version'] as String) : null,
-); }
+);}
 
 final PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus? aresTransStatus;
 
@@ -131,7 +131,7 @@ final String? transactionId;
 
 final PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion? version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aresTransStatus != null) 'ares_trans_status': aresTransStatus?.toJson(),
   'cryptogram': ?cryptogram,
   if (electronicCommerceIndicator != null) 'electronic_commerce_indicator': electronicCommerceIndicator?.toJson(),
@@ -139,9 +139,9 @@ Map<String, dynamic> toJson() { return {
   'requestor_challenge_indicator': ?requestorChallengeIndicator,
   'transaction_id': ?transactionId,
   if (version != null) 'version': version?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ares_trans_status', 'cryptogram', 'electronic_commerce_indicator', 'network_options', 'requestor_challenge_indicator', 'transaction_id', 'version'}.contains(key)); } 
-PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure copyWith({PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus? Function()? aresTransStatus, String? Function()? cryptogram, PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator? Function()? electronicCommerceIndicator, PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions? Function()? networkOptions, String? Function()? requestorChallengeIndicator, String? Function()? transactionId, PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion? Function()? version, }) { return PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ares_trans_status', 'cryptogram', 'electronic_commerce_indicator', 'network_options', 'requestor_challenge_indicator', 'transaction_id', 'version'}.contains(key));}
+PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure copyWith({PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus? Function()? aresTransStatus, String? Function()? cryptogram, PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator? Function()? electronicCommerceIndicator, PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions? Function()? networkOptions, String? Function()? requestorChallengeIndicator, String? Function()? transactionId, PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion? Function()? version, }) {return PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure(
   aresTransStatus: aresTransStatus != null ? aresTransStatus() : this.aresTransStatus,
   cryptogram: cryptogram != null ? cryptogram() : this.cryptogram,
   electronicCommerceIndicator: electronicCommerceIndicator != null ? electronicCommerceIndicator() : this.electronicCommerceIndicator,
@@ -149,8 +149,8 @@ PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure copyWith({PostSetupI
   requestorChallengeIndicator: requestorChallengeIndicator != null ? requestorChallengeIndicator() : this.requestorChallengeIndicator,
   transactionId: transactionId != null ? transactionId() : this.transactionId,
   version: version != null ? version() : this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure &&
           aresTransStatus == other.aresTransStatus &&
           cryptogram == other.cryptogram &&
@@ -158,7 +158,7 @@ PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure copyWith({PostSetupI
           networkOptions == other.networkOptions &&
           requestorChallengeIndicator == other.requestorChallengeIndicator &&
           transactionId == other.transactionId &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(aresTransStatus, cryptogram, electronicCommerceIndicator, networkOptions, requestorChallengeIndicator, transactionId, version); } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure(aresTransStatus: $aresTransStatus, cryptogram: $cryptogram, electronicCommerceIndicator: $electronicCommerceIndicator, networkOptions: $networkOptions, requestorChallengeIndicator: $requestorChallengeIndicator, transactionId: $transactionId, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(aresTransStatus, cryptogram, electronicCommerceIndicator, networkOptions, requestorChallengeIndicator, transactionId, version);}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure(aresTransStatus: $aresTransStatus, cryptogram: $cryptogram, electronicCommerceIndicator: $electronicCommerceIndicator, networkOptions: $networkOptions, requestorChallengeIndicator: $requestorChallengeIndicator, transactionId: $transactionId, version: $version)';}
+}

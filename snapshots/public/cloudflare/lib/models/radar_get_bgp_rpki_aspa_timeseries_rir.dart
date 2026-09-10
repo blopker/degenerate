@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRpkiAspaTimeseriesRir {const RadarGetBgpRpkiAspaTimeseriesRir._(this.value);
 
-factory RadarGetBgpRpkiAspaTimeseriesRir.fromJson(String json) { return switch (json) {
+factory RadarGetBgpRpkiAspaTimeseriesRir.fromJson(String json) {return switch (json) {
   'RIPE_NCC' => ripeNcc,
   'ARIN' => arin,
   'APNIC' => apnic,
   'LACNIC' => lacnic,
   'AFRINIC' => afrinic,
   _ => RadarGetBgpRpkiAspaTimeseriesRir._(json),
-}; }
+};}
 
 static const RadarGetBgpRpkiAspaTimeseriesRir ripeNcc = RadarGetBgpRpkiAspaTimeseriesRir._('RIPE_NCC');
 
@@ -25,11 +25,11 @@ static const List<RadarGetBgpRpkiAspaTimeseriesRir> values = [ripeNcc, arin, apn
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetBgpRpkiAspaTimeseriesRir && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetBgpRpkiAspaTimeseriesRir($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetBgpRpkiAspaTimeseriesRir && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetBgpRpkiAspaTimeseriesRir($value)';}
+}

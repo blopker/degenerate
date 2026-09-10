@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether a prebuild is currently available when creating a codespace for this machine and repository. If a branch was not specified as a ref, the default branch will be assumed. Value will be "null" if prebuilds are not supported or prebuild availability could not be determined. Value will be "none" if no prebuild is available. Latest values "ready" and "in_progress" indicate the prebuild availability status.
 @immutable final class CodespaceMachinePrebuildAvailability {const CodespaceMachinePrebuildAvailability._(this.value);
 
-factory CodespaceMachinePrebuildAvailability.fromJson(String json) { return switch (json) {
+factory CodespaceMachinePrebuildAvailability.fromJson(String json) {return switch (json) {
   'none' => none,
   'ready' => ready,
   'in_progress' => inProgress,
   'null' => $null,
   _ => CodespaceMachinePrebuildAvailability._(json),
-}; }
+};}
 
 static const CodespaceMachinePrebuildAvailability none = CodespaceMachinePrebuildAvailability._('none');
 
@@ -23,18 +23,18 @@ static const List<CodespaceMachinePrebuildAvailability> values = [none, ready, i
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodespaceMachinePrebuildAvailability && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodespaceMachinePrebuildAvailability($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodespaceMachinePrebuildAvailability && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodespaceMachinePrebuildAvailability($value)';}
+}
 /// A description of the machine powering a codespace.
 @immutable final class CodespaceMachine {const CodespaceMachine({required this.name, required this.displayName, required this.operatingSystem, required this.storageInBytes, required this.memoryInBytes, required this.cpus, required this.prebuildAvailability, });
 
-factory CodespaceMachine.fromJson(Map<String, dynamic> json) { return CodespaceMachine(
+factory CodespaceMachine.fromJson(Map<String, dynamic> json) {return CodespaceMachine(
   name: json['name'] as String,
   displayName: json['display_name'] as String,
   operatingSystem: json['operating_system'] as String,
@@ -42,7 +42,7 @@ factory CodespaceMachine.fromJson(Map<String, dynamic> json) { return CodespaceM
   memoryInBytes: (json['memory_in_bytes'] as num).toInt(),
   cpus: (json['cpus'] as num).toInt(),
   prebuildAvailability: json['prebuild_availability'] != null ? CodespaceMachinePrebuildAvailability.fromJson(json['prebuild_availability'] as String) : null,
-); }
+);}
 
 /// The name of the machine.
 final String name;
@@ -65,7 +65,7 @@ final int cpus;
 /// Whether a prebuild is currently available when creating a codespace for this machine and repository. If a branch was not specified as a ref, the default branch will be assumed. Value will be "null" if prebuilds are not supported or prebuild availability could not be determined. Value will be "none" if no prebuild is available. Latest values "ready" and "in_progress" indicate the prebuild availability status.
 final CodespaceMachinePrebuildAvailability? prebuildAvailability;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'display_name': displayName,
   'operating_system': operatingSystem,
@@ -73,15 +73,15 @@ Map<String, dynamic> toJson() { return {
   'memory_in_bytes': memoryInBytes,
   'cpus': cpus,
   'prebuild_availability': prebuildAvailability?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('display_name') && json['display_name'] is String &&
       json.containsKey('operating_system') && json['operating_system'] is String &&
       json.containsKey('storage_in_bytes') && json['storage_in_bytes'] is num &&
       json.containsKey('memory_in_bytes') && json['memory_in_bytes'] is num &&
       json.containsKey('cpus') && json['cpus'] is num &&
-      json.containsKey('prebuild_availability'); } 
-CodespaceMachine copyWith({String? name, String? displayName, String? operatingSystem, int? storageInBytes, int? memoryInBytes, int? cpus, CodespaceMachinePrebuildAvailability? Function()? prebuildAvailability, }) { return CodespaceMachine(
+      json.containsKey('prebuild_availability');}
+CodespaceMachine copyWith({String? name, String? displayName, String? operatingSystem, int? storageInBytes, int? memoryInBytes, int? cpus, CodespaceMachinePrebuildAvailability? Function()? prebuildAvailability, }) {return CodespaceMachine(
   name: name ?? this.name,
   displayName: displayName ?? this.displayName,
   operatingSystem: operatingSystem ?? this.operatingSystem,
@@ -89,8 +89,8 @@ CodespaceMachine copyWith({String? name, String? displayName, String? operatingS
   memoryInBytes: memoryInBytes ?? this.memoryInBytes,
   cpus: cpus ?? this.cpus,
   prebuildAvailability: prebuildAvailability != null ? prebuildAvailability() : this.prebuildAvailability,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodespaceMachine &&
           name == other.name &&
           displayName == other.displayName &&
@@ -98,7 +98,7 @@ CodespaceMachine copyWith({String? name, String? displayName, String? operatingS
           storageInBytes == other.storageInBytes &&
           memoryInBytes == other.memoryInBytes &&
           cpus == other.cpus &&
-          prebuildAvailability == other.prebuildAvailability; } 
-@override int get hashCode { return Object.hash(name, displayName, operatingSystem, storageInBytes, memoryInBytes, cpus, prebuildAvailability); } 
-@override String toString() { return 'CodespaceMachine(name: $name, displayName: $displayName, operatingSystem: $operatingSystem, storageInBytes: $storageInBytes, memoryInBytes: $memoryInBytes, cpus: $cpus, prebuildAvailability: $prebuildAvailability)'; } 
- }
+          prebuildAvailability == other.prebuildAvailability;}
+@override int get hashCode {return Object.hash(name, displayName, operatingSystem, storageInBytes, memoryInBytes, cpus, prebuildAvailability);}
+@override String toString() {return 'CodespaceMachine(name: $name, displayName: $displayName, operatingSystem: $operatingSystem, storageInBytes: $storageInBytes, memoryInBytes: $memoryInBytes, cpus: $cpus, prebuildAvailability: $prebuildAvailability)';}
+}

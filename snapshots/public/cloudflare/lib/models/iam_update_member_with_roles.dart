@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_membership_components_schemas_identifier.dart';import 'iam_role.dart';import 'iam_update_member_with_roles_user.dart';@immutable final class IamUpdateMemberWithRoles {const IamUpdateMemberWithRoles({this.id, this.roles, this.status = const Omittable.absent(), this.user, });
 
-factory IamUpdateMemberWithRoles.fromJson(Map<String, dynamic> json) { return IamUpdateMemberWithRoles(
+factory IamUpdateMemberWithRoles.fromJson(Map<String, dynamic> json) {return IamUpdateMemberWithRoles(
   id: json['id'] != null ? IamMembershipComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,
   roles: (json['roles'] as List<dynamic>?)?.map((e) => IamRole.fromJson(e as Map<String, dynamic>)).toList(),
   status: json.containsKey('status') ? Omittable(json['status']) : const Omittable.absent(),
   user: json['user'] != null ? IamUpdateMemberWithRolesUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Membership identifier tag.
 final IamMembershipComponentsSchemasIdentifier? id;
@@ -21,25 +21,25 @@ final Omittable<dynamic> status;
 /// Details of the user associated to the membership.
 final IamUpdateMemberWithRolesUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   if (roles != null) 'roles': roles?.map((e) => e.toJson()).toList(),
   if (status.isPresent) 'status': status.value,
   if (user != null) 'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'roles', 'status', 'user'}.contains(key)); } 
-IamUpdateMemberWithRoles copyWith({IamMembershipComponentsSchemasIdentifier? Function()? id, List<IamRole>? Function()? roles, Omittable<dynamic>? status, IamUpdateMemberWithRolesUser? Function()? user, }) { return IamUpdateMemberWithRoles(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'roles', 'status', 'user'}.contains(key));}
+IamUpdateMemberWithRoles copyWith({IamMembershipComponentsSchemasIdentifier? Function()? id, List<IamRole>? Function()? roles, Omittable<dynamic>? status, IamUpdateMemberWithRolesUser? Function()? user, }) {return IamUpdateMemberWithRoles(
   id: id != null ? id() : this.id,
   roles: roles != null ? roles() : this.roles,
   status: status ?? this.status,
   user: user != null ? user() : this.user,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IamUpdateMemberWithRoles &&
           id == other.id &&
           listEquals(roles, other.roles) &&
           status == other.status &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(id, Object.hashAll(roles ?? const []), status, user); } 
-@override String toString() { return 'IamUpdateMemberWithRoles(id: $id, roles: $roles, status: $status, user: $user)'; } 
- }
+          user == other.user;}
+@override int get hashCode {return Object.hash(id, Object.hashAll(roles ?? const []), status, user);}
+@override String toString() {return 'IamUpdateMemberWithRoles(id: $id, roles: $roles, status: $status, user: $user)';}
+}

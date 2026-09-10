@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent {const PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent();
 
-factory PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent.fromJson(Map<String, dynamic> _) { return const PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent(); }
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent.fromJson(Map<String, dynamic> _) {return const PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent copyWith() { return const PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent copyWith() {return const PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent()';}
+}

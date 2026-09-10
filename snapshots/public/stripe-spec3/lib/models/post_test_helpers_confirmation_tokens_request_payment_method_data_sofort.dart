@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry._(this.value);
 
-factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry.fromJson(String json) { return switch (json) {
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry.fromJson(String json) {return switch (json) {
   'AT' => at,
   'BE' => be,
   'DE' => de,
@@ -10,7 +10,7 @@ factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry.f
   'IT' => it,
   'NL' => nl,
   _ => PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry._(json),
-}; }
+};}
 
 static const PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry at = PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry._('AT');
 
@@ -28,32 +28,32 @@ static const List<PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofor
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry($value)';}
+}
 @immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort({required this.country});
 
-factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort(
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort.fromJson(Map<String, dynamic> json) {return PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort(
   country: PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry.fromJson(json['country'] as String),
-); }
+);}
 
 final PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry country;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'country': country.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('country'); } 
-PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort copyWith({PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry? country}) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('country');}
+PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort copyWith({PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry? country}) {return PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort(
   country: country ?? this.country,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort &&
-          country == other.country; } 
-@override int get hashCode { return country.hashCode; } 
-@override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort(country: $country)'; } 
- }
+          country == other.country;}
+@override int get hashCode {return country.hashCode;}
+@override String toString() {return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort(country: $country)';}
+}

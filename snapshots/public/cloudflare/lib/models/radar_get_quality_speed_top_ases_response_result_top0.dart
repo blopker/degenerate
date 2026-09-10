@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetQualitySpeedTopAsesResponseResultTop0 {const RadarGetQualitySpeedTopAsesResponseResultTop0({required this.bandwidthDownload, required this.bandwidthUpload, required this.clientAsn, required this.clientAsName, required this.jitterIdle, required this.jitterLoaded, required this.latencyIdle, required this.latencyLoaded, required this.numTests, required this.rankPower, });
 
-factory RadarGetQualitySpeedTopAsesResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetQualitySpeedTopAsesResponseResultTop0(
+factory RadarGetQualitySpeedTopAsesResponseResultTop0.fromJson(Map<String, dynamic> json) {return RadarGetQualitySpeedTopAsesResponseResultTop0(
   bandwidthDownload: json['bandwidthDownload'] as String,
   bandwidthUpload: json['bandwidthUpload'] as String,
   clientAsn: (json['clientASN'] as num).toDouble(),
@@ -13,7 +13,7 @@ factory RadarGetQualitySpeedTopAsesResponseResultTop0.fromJson(Map<String, dynam
   latencyLoaded: json['latencyLoaded'] as String,
   numTests: (json['numTests'] as num).toDouble(),
   rankPower: (json['rankPower'] as num).toDouble(),
-); }
+);}
 
 final String bandwidthDownload;
 
@@ -35,7 +35,7 @@ final double numTests;
 
 final double rankPower;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bandwidthDownload': bandwidthDownload,
   'bandwidthUpload': bandwidthUpload,
   'clientASN': clientAsn,
@@ -46,8 +46,8 @@ Map<String, dynamic> toJson() { return {
   'latencyLoaded': latencyLoaded,
   'numTests': numTests,
   'rankPower': rankPower,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bandwidthDownload') && json['bandwidthDownload'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bandwidthDownload') && json['bandwidthDownload'] is String &&
       json.containsKey('bandwidthUpload') && json['bandwidthUpload'] is String &&
       json.containsKey('clientASN') && json['clientASN'] is num &&
       json.containsKey('clientASName') && json['clientASName'] is String &&
@@ -56,8 +56,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bandw
       json.containsKey('latencyIdle') && json['latencyIdle'] is String &&
       json.containsKey('latencyLoaded') && json['latencyLoaded'] is String &&
       json.containsKey('numTests') && json['numTests'] is num &&
-      json.containsKey('rankPower') && json['rankPower'] is num; } 
-RadarGetQualitySpeedTopAsesResponseResultTop0 copyWith({String? bandwidthDownload, String? bandwidthUpload, double? clientAsn, String? clientAsName, String? jitterIdle, String? jitterLoaded, String? latencyIdle, String? latencyLoaded, double? numTests, double? rankPower, }) { return RadarGetQualitySpeedTopAsesResponseResultTop0(
+      json.containsKey('rankPower') && json['rankPower'] is num;}
+RadarGetQualitySpeedTopAsesResponseResultTop0 copyWith({String? bandwidthDownload, String? bandwidthUpload, double? clientAsn, String? clientAsName, String? jitterIdle, String? jitterLoaded, String? latencyIdle, String? latencyLoaded, double? numTests, double? rankPower, }) {return RadarGetQualitySpeedTopAsesResponseResultTop0(
   bandwidthDownload: bandwidthDownload ?? this.bandwidthDownload,
   bandwidthUpload: bandwidthUpload ?? this.bandwidthUpload,
   clientAsn: clientAsn ?? this.clientAsn,
@@ -68,8 +68,8 @@ RadarGetQualitySpeedTopAsesResponseResultTop0 copyWith({String? bandwidthDownloa
   latencyLoaded: latencyLoaded ?? this.latencyLoaded,
   numTests: numTests ?? this.numTests,
   rankPower: rankPower ?? this.rankPower,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetQualitySpeedTopAsesResponseResultTop0 &&
           bandwidthDownload == other.bandwidthDownload &&
           bandwidthUpload == other.bandwidthUpload &&
@@ -80,7 +80,7 @@ RadarGetQualitySpeedTopAsesResponseResultTop0 copyWith({String? bandwidthDownloa
           latencyIdle == other.latencyIdle &&
           latencyLoaded == other.latencyLoaded &&
           numTests == other.numTests &&
-          rankPower == other.rankPower; } 
-@override int get hashCode { return Object.hash(bandwidthDownload, bandwidthUpload, clientAsn, clientAsName, jitterIdle, jitterLoaded, latencyIdle, latencyLoaded, numTests, rankPower); } 
-@override String toString() { return 'RadarGetQualitySpeedTopAsesResponseResultTop0(bandwidthDownload: $bandwidthDownload, bandwidthUpload: $bandwidthUpload, clientAsn: $clientAsn, clientAsName: $clientAsName, jitterIdle: $jitterIdle, jitterLoaded: $jitterLoaded, latencyIdle: $latencyIdle, latencyLoaded: $latencyLoaded, numTests: $numTests, rankPower: $rankPower)'; } 
- }
+          rankPower == other.rankPower;}
+@override int get hashCode {return Object.hash(bandwidthDownload, bandwidthUpload, clientAsn, clientAsName, jitterIdle, jitterLoaded, latencyIdle, latencyLoaded, numTests, rankPower);}
+@override String toString() {return 'RadarGetQualitySpeedTopAsesResponseResultTop0(bandwidthDownload: $bandwidthDownload, bandwidthUpload: $bandwidthUpload, clientAsn: $clientAsn, clientAsName: $clientAsName, jitterIdle: $jitterIdle, jitterLoaded: $jitterLoaded, latencyIdle: $latencyIdle, latencyLoaded: $latencyLoaded, numTests: $numTests, rankPower: $rankPower)';}
+}

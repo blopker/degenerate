@@ -13,7 +13,7 @@ final class AccountSubscriptionsApi with ApiExecutor {const AccountSubscriptions
 /// Lists all of an account's subscriptions.
 ///
 /// `GET /accounts/{account_id}/subscriptions`
-Future<ApiResult<List<Subscription2>, AccountSubscriptionsListSubscriptionsResponse4xx>> accountSubscriptionsListSubscriptions({required Identifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Subscription2>, AccountSubscriptionsListSubscriptionsResponse4xx>> accountSubscriptionsListSubscriptions({required Identifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create Subscription
 ///
 /// Creates an account subscription.
 ///
 /// `POST /accounts/{account_id}/subscriptions`
-Future<ApiResult<Subscription2, AccountSubscriptionsCreateSubscriptionResponse4xx>> accountSubscriptionsCreateSubscription({required Identifier accountId, required Request2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription2, AccountSubscriptionsCreateSubscriptionResponse4xx>> accountSubscriptionsCreateSubscription({required Identifier accountId, required Request2 body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update Subscription
 ///
 /// Updates an account subscription.
 ///
 /// `PUT /accounts/{account_id}/subscriptions/{subscription_identifier}`
-Future<ApiResult<Subscription2, AccountSubscriptionsUpdateSubscriptionResponse4xx>> accountSubscriptionsUpdateSubscription({required SchemasIdentifier subscriptionIdentifier, required Identifier accountId, required Request2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription2, AccountSubscriptionsUpdateSubscriptionResponse4xx>> accountSubscriptionsUpdateSubscription({required SchemasIdentifier subscriptionIdentifier, required Identifier accountId, required Request2 body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,13 +107,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Subscription
 ///
 /// Deletes an account's subscription.
 ///
 /// `DELETE /accounts/{account_id}/subscriptions/{subscription_identifier}`
-Future<ApiResult<AccountSubscriptionsDeleteSubscriptionResponseResult, ResponseCommonFailure10>> accountSubscriptionsDeleteSubscription({required SchemasIdentifier subscriptionIdentifier, required Identifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSubscriptionsDeleteSubscriptionResponseResult, ResponseCommonFailure10>> accountSubscriptionsDeleteSubscription({required SchemasIdentifier subscriptionIdentifier, required Identifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -139,5 +139,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

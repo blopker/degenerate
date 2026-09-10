@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_check_suite_rerequested_check_suite_pull_requests_base_repo.dart';@immutable final class WebhookCheckSuiteRerequestedCheckSuitePullRequestsBase {const WebhookCheckSuiteRerequestedCheckSuitePullRequestsBase({required this.ref, required this.repo, required this.sha, });
 
-factory WebhookCheckSuiteRerequestedCheckSuitePullRequestsBase.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteRerequestedCheckSuitePullRequestsBase(
+factory WebhookCheckSuiteRerequestedCheckSuitePullRequestsBase.fromJson(Map<String, dynamic> json) {return WebhookCheckSuiteRerequestedCheckSuitePullRequestsBase(
   ref: json['ref'] as String,
   repo: WebhookCheckSuiteRerequestedCheckSuitePullRequestsBaseRepo.fromJson(json['repo'] as Map<String, dynamic>),
   sha: json['sha'] as String,
-); }
+);}
 
 final String ref;
 
@@ -14,24 +14,24 @@ final WebhookCheckSuiteRerequestedCheckSuitePullRequestsBaseRepo repo;
 
 final String sha;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ref': ref,
   'repo': repo.toJson(),
   'sha': sha,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref') && json['ref'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('repo') &&
-      json.containsKey('sha') && json['sha'] is String; } 
-WebhookCheckSuiteRerequestedCheckSuitePullRequestsBase copyWith({String? ref, WebhookCheckSuiteRerequestedCheckSuitePullRequestsBaseRepo? repo, String? sha, }) { return WebhookCheckSuiteRerequestedCheckSuitePullRequestsBase(
+      json.containsKey('sha') && json['sha'] is String;}
+WebhookCheckSuiteRerequestedCheckSuitePullRequestsBase copyWith({String? ref, WebhookCheckSuiteRerequestedCheckSuitePullRequestsBaseRepo? repo, String? sha, }) {return WebhookCheckSuiteRerequestedCheckSuitePullRequestsBase(
   ref: ref ?? this.ref,
   repo: repo ?? this.repo,
   sha: sha ?? this.sha,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookCheckSuiteRerequestedCheckSuitePullRequestsBase &&
           ref == other.ref &&
           repo == other.repo &&
-          sha == other.sha; } 
-@override int get hashCode { return Object.hash(ref, repo, sha); } 
-@override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuitePullRequestsBase(ref: $ref, repo: $repo, sha: $sha)'; } 
- }
+          sha == other.sha;}
+@override int get hashCode {return Object.hash(ref, repo, sha);}
+@override String toString() {return 'WebhookCheckSuiteRerequestedCheckSuitePullRequestsBase(ref: $ref, repo: $repo, sha: $sha)';}
+}

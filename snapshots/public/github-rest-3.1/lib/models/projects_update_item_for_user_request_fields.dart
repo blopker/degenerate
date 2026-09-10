@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProjectsUpdateItemForUserRequestFields {const ProjectsUpdateItemForUserRequestFields({required this.id, required this.value, });
 
-factory ProjectsUpdateItemForUserRequestFields.fromJson(Map<String, dynamic> json) { return ProjectsUpdateItemForUserRequestFields(
+factory ProjectsUpdateItemForUserRequestFields.fromJson(Map<String, dynamic> json) {return ProjectsUpdateItemForUserRequestFields(
   id: (json['id'] as num).toInt(),
   value: json['value'],
-); }
+);}
 
 /// The ID of the project field to update.
 final int id;
@@ -23,20 +23,20 @@ final int id;
 /// One of: String, double
 final dynamic value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('value'); } 
-ProjectsUpdateItemForUserRequestFields copyWith({int? id, dynamic Function()? value, }) { return ProjectsUpdateItemForUserRequestFields(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('value');}
+ProjectsUpdateItemForUserRequestFields copyWith({int? id, dynamic Function()? value, }) {return ProjectsUpdateItemForUserRequestFields(
   id: id ?? this.id,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ProjectsUpdateItemForUserRequestFields &&
           id == other.id &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, value); } 
-@override String toString() { return 'ProjectsUpdateItemForUserRequestFields(id: $id, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(id, value);}
+@override String toString() {return 'ProjectsUpdateItemForUserRequestFields(id: $id, value: $value)';}
+}

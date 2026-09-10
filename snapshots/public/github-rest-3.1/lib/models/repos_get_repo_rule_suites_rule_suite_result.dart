@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposGetRepoRuleSuitesRuleSuiteResult {const ReposGetRepoRuleSuitesRuleSuiteResult._(this.value);
 
-factory ReposGetRepoRuleSuitesRuleSuiteResult.fromJson(String json) { return switch (json) {
+factory ReposGetRepoRuleSuitesRuleSuiteResult.fromJson(String json) {return switch (json) {
   'pass' => pass,
   'fail' => fail,
   'bypass' => bypass,
   'all' => all,
   _ => ReposGetRepoRuleSuitesRuleSuiteResult._(json),
-}; }
+};}
 
 static const ReposGetRepoRuleSuitesRuleSuiteResult pass = ReposGetRepoRuleSuitesRuleSuiteResult._('pass');
 
@@ -22,11 +22,11 @@ static const List<ReposGetRepoRuleSuitesRuleSuiteResult> values = [pass, fail, b
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposGetRepoRuleSuitesRuleSuiteResult && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposGetRepoRuleSuitesRuleSuiteResult($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposGetRepoRuleSuitesRuleSuiteResult && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposGetRepoRuleSuitesRuleSuiteResult($value)';}
+}

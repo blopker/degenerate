@@ -13,7 +13,7 @@ final class TunnelRoutingApi with ApiExecutor {const TunnelRoutingApi(this.apiCo
 /// Lists and filters private network routes in an account.
 ///
 /// `GET /accounts/{account_id}/teamnet/routes`
-Future<ApiResult<List<TunnelTeamnet>, TunnelRouteListTunnelRoutesResponse4xx>> tunnelRouteListTunnelRoutes({required TunnelAccountId accountId, TunnelRouteComment? comment, bool? isDeleted, TunnelIpNetwork? networkSubset, TunnelIpNetwork? networkSuperset, TunnelExistedAt? existedAt, TunnelTunnelId? tunnelId, TunnelRouteId? routeId, List<TunnelTunnelType>? tunTypes, TunnelVirtualNetworkId? virtualNetworkId, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TunnelTeamnet>, TunnelRouteListTunnelRoutesResponse4xx>> tunnelRouteListTunnelRoutes({required TunnelAccountId accountId, TunnelRouteComment? comment, bool? isDeleted, TunnelIpNetwork? networkSubset, TunnelIpNetwork? networkSuperset, TunnelExistedAt? existedAt, TunnelTunnelId? tunnelId, TunnelRouteId? routeId, List<TunnelTunnelType>? tunTypes, TunnelVirtualNetworkId? virtualNetworkId, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (comment != null) {
   queryParameters['comment'] = comment.toString();
@@ -79,13 +79,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create a tunnel route
 ///
 /// Routes a private network through a Cloudflare Tunnel.
 ///
 /// `POST /accounts/{account_id}/teamnet/routes`
-Future<ApiResult<TunnelRoute, TunnelRouteCreateATunnelRouteResponse4xx>> tunnelRouteCreateATunnelRoute({required TunnelAccountId accountId, required TunnelRouteCreateATunnelRouteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelRoute, TunnelRouteCreateATunnelRouteResponse4xx>> tunnelRouteCreateATunnelRoute({required TunnelAccountId accountId, required TunnelRouteCreateATunnelRouteRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -113,13 +113,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get tunnel route
 ///
 /// Get a private network route in an account.
 ///
 /// `GET /accounts/{account_id}/teamnet/routes/{route_id}`
-Future<ApiResult<TunnelRoute, TunnelRouteGetTunnelRouteResponse4xx>> tunnelRouteGetTunnelRoute({required TunnelAccountId accountId, required TunnelRouteId routeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelRoute, TunnelRouteGetTunnelRouteResponse4xx>> tunnelRouteGetTunnelRoute({required TunnelAccountId accountId, required TunnelRouteId routeId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -145,13 +145,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update a tunnel route
 ///
 /// Updates an existing private network route in an account. The fields that are meant to be updated should be provided in the body of the request.
 ///
 /// `PATCH /accounts/{account_id}/teamnet/routes/{route_id}`
-Future<ApiResult<TunnelRoute, TunnelRouteUpdateATunnelRouteResponse4xx>> tunnelRouteUpdateATunnelRoute({required TunnelRouteId routeId, required TunnelAccountId accountId, required TunnelRouteUpdateATunnelRouteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelRoute, TunnelRouteUpdateATunnelRouteResponse4xx>> tunnelRouteUpdateATunnelRoute({required TunnelRouteId routeId, required TunnelAccountId accountId, required TunnelRouteUpdateATunnelRouteRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -179,14 +179,14 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a tunnel route
 ///
 /// Deletes a private network route from an account.
 /// 
 ///
 /// `DELETE /accounts/{account_id}/teamnet/routes/{route_id}`
-Future<ApiResult<TunnelRoute, TunnelRouteDeleteATunnelRouteResponse4xx>> tunnelRouteDeleteATunnelRoute({required TunnelRouteId routeId, required TunnelAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelRoute, TunnelRouteDeleteATunnelRouteResponse4xx>> tunnelRouteDeleteATunnelRoute({required TunnelRouteId routeId, required TunnelAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -212,13 +212,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get tunnel route by IP
 ///
 /// Fetches routes that contain the given IP address.
 ///
 /// `GET /accounts/{account_id}/teamnet/routes/ip/{ip}`
-Future<ApiResult<TunnelTeamnet, TunnelRouteGetTunnelRouteByIpResponse4xx>> tunnelRouteGetTunnelRouteByIp({required TunnelIp ip, required TunnelAccountId accountId, TunnelVirtualNetworkId? virtualNetworkId, bool? defaultVirtualNetworkFallback, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TunnelTeamnet, TunnelRouteGetTunnelRouteByIpResponse4xx>> tunnelRouteGetTunnelRouteByIp({required TunnelIp ip, required TunnelAccountId accountId, TunnelVirtualNetworkId? virtualNetworkId, bool? defaultVirtualNetworkFallback, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (virtualNetworkId != null) {
   queryParameters['virtual_network_id'] = virtualNetworkId.toString();
@@ -255,5 +255,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

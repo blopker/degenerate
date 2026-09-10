@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param59.dart';@immutable final class PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibancoVariant2 {const PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibancoVariant2._(this.value);
 
-factory PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibancoVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibancoVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibancoVariant2._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibancoVariant2 $empty = PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibancoVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibancoV
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibancoVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibancoVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibancoVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibancoVariant2($value)';}
+}
 
 @immutable
 final class PostPaymentIntentsIntentRequestPaymentMethodOptionsMultibanco {

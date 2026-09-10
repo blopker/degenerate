@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metrics to be returned.
 @immutable final class RadarGetQualitySpeedHistogramMetricGroup {const RadarGetQualitySpeedHistogramMetricGroup._(this.value);
 
-factory RadarGetQualitySpeedHistogramMetricGroup.fromJson(String json) { return switch (json) {
+factory RadarGetQualitySpeedHistogramMetricGroup.fromJson(String json) {return switch (json) {
   'BANDWIDTH' => bandwidth,
   'LATENCY' => latency,
   'JITTER' => jitter,
   _ => RadarGetQualitySpeedHistogramMetricGroup._(json),
-}; }
+};}
 
 static const RadarGetQualitySpeedHistogramMetricGroup bandwidth = RadarGetQualitySpeedHistogramMetricGroup._('BANDWIDTH');
 
@@ -20,11 +20,11 @@ static const List<RadarGetQualitySpeedHistogramMetricGroup> values = [bandwidth,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetQualitySpeedHistogramMetricGroup && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetQualitySpeedHistogramMetricGroup($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetQualitySpeedHistogramMetricGroup && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetQualitySpeedHistogramMetricGroup($value)';}
+}

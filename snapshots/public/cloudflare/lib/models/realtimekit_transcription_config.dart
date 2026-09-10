@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the language code for transcription to ensure accurate results.
 @immutable final class RealtimekitTranscriptionConfigLanguage {const RealtimekitTranscriptionConfigLanguage._(this.value);
 
-factory RealtimekitTranscriptionConfigLanguage.fromJson(String json) { return switch (json) {
+factory RealtimekitTranscriptionConfigLanguage.fromJson(String json) {return switch (json) {
   'en-US' => enUs,
   'en-IN' => enIn,
   'de' => de,
@@ -15,7 +15,7 @@ factory RealtimekitTranscriptionConfigLanguage.fromJson(String json) { return sw
   'fr' => fr,
   'nl' => nl,
   _ => RealtimekitTranscriptionConfigLanguage._(json),
-}; }
+};}
 
 static const RealtimekitTranscriptionConfigLanguage enUs = RealtimekitTranscriptionConfigLanguage._('en-US');
 
@@ -41,22 +41,22 @@ static const List<RealtimekitTranscriptionConfigLanguage> values = [enUs, enIn, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitTranscriptionConfigLanguage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitTranscriptionConfigLanguage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitTranscriptionConfigLanguage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitTranscriptionConfigLanguage($value)';}
+}
 /// Transcription Configurations
 @immutable final class RealtimekitTranscriptionConfig {const RealtimekitTranscriptionConfig({this.keywords, this.language, this.profanityFilter, });
 
-factory RealtimekitTranscriptionConfig.fromJson(Map<String, dynamic> json) { return RealtimekitTranscriptionConfig(
+factory RealtimekitTranscriptionConfig.fromJson(Map<String, dynamic> json) {return RealtimekitTranscriptionConfig(
   keywords: (json['keywords'] as List<dynamic>?)?.map((e) => e as String).toList(),
   language: json['language'] != null ? RealtimekitTranscriptionConfigLanguage.fromJson(json['language'] as String) : null,
   profanityFilter: json['profanity_filter'] as bool?,
-); }
+);}
 
 /// Adds specific terms to improve accurate detection during transcription.
 final List<String>? keywords;
@@ -68,25 +68,25 @@ final RealtimekitTranscriptionConfigLanguage? language;
 final bool? profanityFilter;
 
 /// The value with the schema default applied when absent.
-RealtimekitTranscriptionConfigLanguage get languageOrDefault { return language ?? RealtimekitTranscriptionConfigLanguage.fromJson('en-US'); } 
+RealtimekitTranscriptionConfigLanguage get languageOrDefault {return language ?? RealtimekitTranscriptionConfigLanguage.fromJson('en-US');}
 /// The value with the schema default applied when absent.
-bool get profanityFilterOrDefault { return profanityFilter ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get profanityFilterOrDefault {return profanityFilter ?? false;}
+Map<String, dynamic> toJson() {return {
   'keywords': ?keywords,
   if (language != null) 'language': language?.toJson(),
   'profanity_filter': ?profanityFilter,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'keywords', 'language', 'profanity_filter'}.contains(key)); } 
-RealtimekitTranscriptionConfig copyWith({List<String>? Function()? keywords, RealtimekitTranscriptionConfigLanguage? Function()? language, bool? Function()? profanityFilter, }) { return RealtimekitTranscriptionConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'keywords', 'language', 'profanity_filter'}.contains(key));}
+RealtimekitTranscriptionConfig copyWith({List<String>? Function()? keywords, RealtimekitTranscriptionConfigLanguage? Function()? language, bool? Function()? profanityFilter, }) {return RealtimekitTranscriptionConfig(
   keywords: keywords != null ? keywords() : this.keywords,
   language: language != null ? language() : this.language,
   profanityFilter: profanityFilter != null ? profanityFilter() : this.profanityFilter,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitTranscriptionConfig &&
           listEquals(keywords, other.keywords) &&
           language == other.language &&
-          profanityFilter == other.profanityFilter; } 
-@override int get hashCode { return Object.hash(Object.hashAll(keywords ?? const []), language, profanityFilter); } 
-@override String toString() { return 'RealtimekitTranscriptionConfig(keywords: $keywords, language: $language, profanityFilter: $profanityFilter)'; } 
- }
+          profanityFilter == other.profanityFilter;}
+@override int get hashCode {return Object.hash(Object.hashAll(keywords ?? const []), language, profanityFilter);}
+@override String toString() {return 'RealtimekitTranscriptionConfig(keywords: $keywords, language: $language, profanityFilter: $profanityFilter)';}
+}

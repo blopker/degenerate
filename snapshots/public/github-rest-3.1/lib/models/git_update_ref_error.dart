@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class GitUpdateRefError {const GitUpdateRefError();
 
 /// Decodes the payload for its declared status and content type.
-static GitUpdateRefError parse(ApiResponse response) { switch (response.statusCode) {
+static GitUpdateRefError parse(ApiResponse response) {switch (response.statusCode) {
 case 409:
 final json = jsonDecode(response.body);
 return GitUpdateRefError409(BasicError.fromJson(json as Map<String, dynamic>));
@@ -14,26 +14,26 @@ return GitUpdateRefError422(ValidationError.fromJson(json as Map<String, dynamic
 default:
 return GitUpdateRefErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 409 (application/json).
 final class GitUpdateRefError409 extends GitUpdateRefError {const GitUpdateRefError409(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class GitUpdateRefError422 extends GitUpdateRefError {const GitUpdateRefError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class GitUpdateRefErrorUnknown extends GitUpdateRefError {const GitUpdateRefErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

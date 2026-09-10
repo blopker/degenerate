@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIndicatorTypeCreateResponse {const PostIndicatorTypeCreateResponse({required this.durableObjectId, required this.indicatorType, required this.message, });
 
-factory PostIndicatorTypeCreateResponse.fromJson(Map<String, dynamic> json) { return PostIndicatorTypeCreateResponse(
+factory PostIndicatorTypeCreateResponse.fromJson(Map<String, dynamic> json) {return PostIndicatorTypeCreateResponse(
   durableObjectId: json['durableObjectId'] as String,
   indicatorType: json['indicatorType'] as String,
   message: json['message'] as String,
-); }
+);}
 
 final String durableObjectId;
 
@@ -14,24 +14,24 @@ final String indicatorType;
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'durableObjectId': durableObjectId,
   'indicatorType': indicatorType,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('durableObjectId') && json['durableObjectId'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('durableObjectId') && json['durableObjectId'] is String &&
       json.containsKey('indicatorType') && json['indicatorType'] is String &&
-      json.containsKey('message') && json['message'] is String; } 
-PostIndicatorTypeCreateResponse copyWith({String? durableObjectId, String? indicatorType, String? message, }) { return PostIndicatorTypeCreateResponse(
+      json.containsKey('message') && json['message'] is String;}
+PostIndicatorTypeCreateResponse copyWith({String? durableObjectId, String? indicatorType, String? message, }) {return PostIndicatorTypeCreateResponse(
   durableObjectId: durableObjectId ?? this.durableObjectId,
   indicatorType: indicatorType ?? this.indicatorType,
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostIndicatorTypeCreateResponse &&
           durableObjectId == other.durableObjectId &&
           indicatorType == other.indicatorType &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(durableObjectId, indicatorType, message); } 
-@override String toString() { return 'PostIndicatorTypeCreateResponse(durableObjectId: $durableObjectId, indicatorType: $indicatorType, message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return Object.hash(durableObjectId, indicatorType, message);}
+@override String toString() {return 'PostIndicatorTypeCreateResponse(durableObjectId: $durableObjectId, indicatorType: $indicatorType, message: $message)';}
+}

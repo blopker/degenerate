@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_chat_completion_request_ai_search_options_query_rewrite_model.dart';@immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewrite {const AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewrite({this.enabled, this.model, this.rewritePrompt, });
 
-factory AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewrite.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewrite(
+factory AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewrite.fromJson(Map<String, dynamic> json) {return AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewrite(
   enabled: json['enabled'] as bool?,
   model: json['model'] != null ? AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModel.fromJson(json['model']) : null,
   rewritePrompt: json['rewrite_prompt'] as String?,
-); }
+);}
 
 final bool? enabled;
 
@@ -14,22 +14,22 @@ final AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModel? mod
 
 final String? rewritePrompt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   if (model != null) 'model': model?.toJson(),
   'rewrite_prompt': ?rewritePrompt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'model', 'rewrite_prompt'}.contains(key)); } 
-AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewrite copyWith({bool? Function()? enabled, AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModel? Function()? model, String? Function()? rewritePrompt, }) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewrite(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'model', 'rewrite_prompt'}.contains(key));}
+AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewrite copyWith({bool? Function()? enabled, AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModel? Function()? model, String? Function()? rewritePrompt, }) {return AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewrite(
   enabled: enabled != null ? enabled() : this.enabled,
   model: model != null ? model() : this.model,
   rewritePrompt: rewritePrompt != null ? rewritePrompt() : this.rewritePrompt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewrite &&
           enabled == other.enabled &&
           model == other.model &&
-          rewritePrompt == other.rewritePrompt; } 
-@override int get hashCode { return Object.hash(enabled, model, rewritePrompt); } 
-@override String toString() { return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewrite(enabled: $enabled, model: $model, rewritePrompt: $rewritePrompt)'; } 
- }
+          rewritePrompt == other.rewritePrompt;}
+@override int get hashCode {return Object.hash(enabled, model, rewritePrompt);}
+@override String toString() {return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewrite(enabled: $enabled, model: $model, rewritePrompt: $rewritePrompt)';}
+}

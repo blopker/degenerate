@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod.fromJson(String json) {return switch (json) {
   'manual' => manual,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod manual = PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod._('manual');
 
@@ -13,21 +13,21 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCapture
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   'off_session' => offSession,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage none = PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage._('none');
 
@@ -37,38 +37,38 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay {const PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay({this.captureMethod, this.setupFutureUsage, });
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay(
+factory PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod.fromJson(json['capture_method'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod? captureMethod;
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod? Function()? captureMethod, PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage? Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key));}
+PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPayCaptureMethod? Function()? captureMethod, PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPaySetupFutureUsage? Function()? setupFutureUsage, }) {return PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay &&
           captureMethod == other.captureMethod &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(captureMethod, setupFutureUsage); } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(captureMethod, setupFutureUsage);}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsKakaoPay(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)';}
+}

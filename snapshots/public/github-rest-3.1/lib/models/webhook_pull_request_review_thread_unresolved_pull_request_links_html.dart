@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestReviewThreadUnresolvedPullRequestLinksHtml {const WebhookPullRequestReviewThreadUnresolvedPullRequestLinksHtml({required this.href});
 
-factory WebhookPullRequestReviewThreadUnresolvedPullRequestLinksHtml.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadUnresolvedPullRequestLinksHtml(
+factory WebhookPullRequestReviewThreadUnresolvedPullRequestLinksHtml.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewThreadUnresolvedPullRequestLinksHtml(
   href: json['href'] as String,
-); }
+);}
 
 final String href;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'href': href,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String; } 
-WebhookPullRequestReviewThreadUnresolvedPullRequestLinksHtml copyWith({String? href}) { return WebhookPullRequestReviewThreadUnresolvedPullRequestLinksHtml(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('href') && json['href'] is String;}
+WebhookPullRequestReviewThreadUnresolvedPullRequestLinksHtml copyWith({String? href}) {return WebhookPullRequestReviewThreadUnresolvedPullRequestLinksHtml(
   href: href ?? this.href,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestReviewThreadUnresolvedPullRequestLinksHtml &&
-          href == other.href; } 
-@override int get hashCode { return href.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewThreadUnresolvedPullRequestLinksHtml(href: $href)'; } 
- }
+          href == other.href;}
+@override int get hashCode {return href.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewThreadUnresolvedPullRequestLinksHtml(href: $href)';}
+}

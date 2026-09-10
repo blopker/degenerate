@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'remove_directive.dart';import 'remove_directive2.dart';import 'remove_directive3.dart';import 'rulesets_set_cache_control_directive.dart';import 'rulesets_set_cache_control_directive_with_qualifiers.dart';import 'rulesets_set_cache_control_directive_with_value.dart';import 'set_directive.dart';import 'set_directive2.dart';import 'set_directive3.dart';@immutable final class RulesetsSetCacheControlRuleRequestActionParameters {const RulesetsSetCacheControlRuleRequestActionParameters({this.immutable, this.maxAge, this.mustRevalidate, this.mustUnderstand, this.noCache, this.noStore, this.noTransform, this.private, this.proxyRevalidate, this.public, this.sMaxage, this.staleIfError, this.staleWhileRevalidate, });
 
-factory RulesetsSetCacheControlRuleRequestActionParameters.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheControlRuleRequestActionParameters(
+factory RulesetsSetCacheControlRuleRequestActionParameters.fromJson(Map<String, dynamic> json) {return RulesetsSetCacheControlRuleRequestActionParameters(
   immutable: json['immutable'] != null ? OneOf2.parse(json['immutable'], fromA: (v) => SetDirective.fromJson(v as Map<String, dynamic>), fromB: (v) => RemoveDirective.fromJson(v as Map<String, dynamic>),) : null,
   maxAge: json['max-age'] != null ? OneOf2.parse(json['max-age'], fromA: (v) => SetDirective3.fromJson(v as Map<String, dynamic>), fromB: (v) => RemoveDirective3.fromJson(v as Map<String, dynamic>),) : null,
   mustRevalidate: json['must-revalidate'] != null ? OneOf2.parse(json['must-revalidate'], fromA: (v) => SetDirective.fromJson(v as Map<String, dynamic>), fromB: (v) => RemoveDirective.fromJson(v as Map<String, dynamic>),) : null,
@@ -16,7 +16,7 @@ factory RulesetsSetCacheControlRuleRequestActionParameters.fromJson(Map<String, 
   sMaxage: json['s-maxage'] != null ? OneOf2.parse(json['s-maxage'], fromA: (v) => SetDirective3.fromJson(v as Map<String, dynamic>), fromB: (v) => RemoveDirective3.fromJson(v as Map<String, dynamic>),) : null,
   staleIfError: json['stale-if-error'] != null ? OneOf2.parse(json['stale-if-error'], fromA: (v) => SetDirective3.fromJson(v as Map<String, dynamic>), fromB: (v) => RemoveDirective3.fromJson(v as Map<String, dynamic>),) : null,
   staleWhileRevalidate: json['stale-while-revalidate'] != null ? OneOf2.parse(json['stale-while-revalidate'], fromA: (v) => SetDirective3.fromJson(v as Map<String, dynamic>), fromB: (v) => RemoveDirective3.fromJson(v as Map<String, dynamic>),) : null,
-); }
+);}
 
 final RulesetsSetCacheControlDirective? immutable;
 
@@ -44,7 +44,7 @@ final RulesetsSetCacheControlDirectiveWithValue? staleIfError;
 
 final RulesetsSetCacheControlDirectiveWithValue? staleWhileRevalidate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (immutable != null) 'immutable': immutable?.toJson(),
   if (maxAge != null) 'max-age': maxAge?.toJson(),
   if (mustRevalidate != null) 'must-revalidate': mustRevalidate?.toJson(),
@@ -58,9 +58,9 @@ Map<String, dynamic> toJson() { return {
   if (sMaxage != null) 's-maxage': sMaxage?.toJson(),
   if (staleIfError != null) 'stale-if-error': staleIfError?.toJson(),
   if (staleWhileRevalidate != null) 'stale-while-revalidate': staleWhileRevalidate?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'immutable', 'max-age', 'must-revalidate', 'must-understand', 'no-cache', 'no-store', 'no-transform', 'private', 'proxy-revalidate', 'public', 's-maxage', 'stale-if-error', 'stale-while-revalidate'}.contains(key)); } 
-RulesetsSetCacheControlRuleRequestActionParameters copyWith({RulesetsSetCacheControlDirective? Function()? immutable, RulesetsSetCacheControlDirectiveWithValue? Function()? maxAge, RulesetsSetCacheControlDirective? Function()? mustRevalidate, RulesetsSetCacheControlDirective? Function()? mustUnderstand, RulesetsSetCacheControlDirectiveWithQualifiers? Function()? noCache, RulesetsSetCacheControlDirective? Function()? noStore, RulesetsSetCacheControlDirective? Function()? noTransform, RulesetsSetCacheControlDirectiveWithQualifiers? Function()? private, RulesetsSetCacheControlDirective? Function()? proxyRevalidate, RulesetsSetCacheControlDirective? Function()? public, RulesetsSetCacheControlDirectiveWithValue? Function()? sMaxage, RulesetsSetCacheControlDirectiveWithValue? Function()? staleIfError, RulesetsSetCacheControlDirectiveWithValue? Function()? staleWhileRevalidate, }) { return RulesetsSetCacheControlRuleRequestActionParameters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'immutable', 'max-age', 'must-revalidate', 'must-understand', 'no-cache', 'no-store', 'no-transform', 'private', 'proxy-revalidate', 'public', 's-maxage', 'stale-if-error', 'stale-while-revalidate'}.contains(key));}
+RulesetsSetCacheControlRuleRequestActionParameters copyWith({RulesetsSetCacheControlDirective? Function()? immutable, RulesetsSetCacheControlDirectiveWithValue? Function()? maxAge, RulesetsSetCacheControlDirective? Function()? mustRevalidate, RulesetsSetCacheControlDirective? Function()? mustUnderstand, RulesetsSetCacheControlDirectiveWithQualifiers? Function()? noCache, RulesetsSetCacheControlDirective? Function()? noStore, RulesetsSetCacheControlDirective? Function()? noTransform, RulesetsSetCacheControlDirectiveWithQualifiers? Function()? private, RulesetsSetCacheControlDirective? Function()? proxyRevalidate, RulesetsSetCacheControlDirective? Function()? public, RulesetsSetCacheControlDirectiveWithValue? Function()? sMaxage, RulesetsSetCacheControlDirectiveWithValue? Function()? staleIfError, RulesetsSetCacheControlDirectiveWithValue? Function()? staleWhileRevalidate, }) {return RulesetsSetCacheControlRuleRequestActionParameters(
   immutable: immutable != null ? immutable() : this.immutable,
   maxAge: maxAge != null ? maxAge() : this.maxAge,
   mustRevalidate: mustRevalidate != null ? mustRevalidate() : this.mustRevalidate,
@@ -74,8 +74,8 @@ RulesetsSetCacheControlRuleRequestActionParameters copyWith({RulesetsSetCacheCon
   sMaxage: sMaxage != null ? sMaxage() : this.sMaxage,
   staleIfError: staleIfError != null ? staleIfError() : this.staleIfError,
   staleWhileRevalidate: staleWhileRevalidate != null ? staleWhileRevalidate() : this.staleWhileRevalidate,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsSetCacheControlRuleRequestActionParameters &&
           immutable == other.immutable &&
           maxAge == other.maxAge &&
@@ -89,7 +89,7 @@ RulesetsSetCacheControlRuleRequestActionParameters copyWith({RulesetsSetCacheCon
           public == other.public &&
           sMaxage == other.sMaxage &&
           staleIfError == other.staleIfError &&
-          staleWhileRevalidate == other.staleWhileRevalidate; } 
-@override int get hashCode { return Object.hash(immutable, maxAge, mustRevalidate, mustUnderstand, noCache, noStore, noTransform, private, proxyRevalidate, public, sMaxage, staleIfError, staleWhileRevalidate); } 
-@override String toString() { return 'RulesetsSetCacheControlRuleRequestActionParameters(immutable: $immutable, maxAge: $maxAge, mustRevalidate: $mustRevalidate, mustUnderstand: $mustUnderstand, noCache: $noCache, noStore: $noStore, noTransform: $noTransform, private: $private, proxyRevalidate: $proxyRevalidate, public: $public, sMaxage: $sMaxage, staleIfError: $staleIfError, staleWhileRevalidate: $staleWhileRevalidate)'; } 
- }
+          staleWhileRevalidate == other.staleWhileRevalidate;}
+@override int get hashCode {return Object.hash(immutable, maxAge, mustRevalidate, mustUnderstand, noCache, noStore, noTransform, private, proxyRevalidate, public, sMaxage, staleIfError, staleWhileRevalidate);}
+@override String toString() {return 'RulesetsSetCacheControlRuleRequestActionParameters(immutable: $immutable, maxAge: $maxAge, mustRevalidate: $mustRevalidate, mustUnderstand: $mustUnderstand, noCache: $noCache, noStore: $noStore, noTransform: $noTransform, private: $private, proxyRevalidate: $proxyRevalidate, public: $public, sMaxage: $sMaxage, staleIfError: $staleIfError, staleWhileRevalidate: $staleWhileRevalidate)';}
+}

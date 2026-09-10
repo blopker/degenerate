@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_subscription_data_invoice_settings_issuer.dart';@immutable final class PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings {const PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings({this.issuer});
 
-factory PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings(
+factory PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings(
   issuer: json['issuer'] != null ? PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer? issuer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (issuer != null) 'issuer': issuer?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'issuer'}.contains(key)); } 
-PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings copyWith({PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer? Function()? issuer}) { return PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'issuer'}.contains(key));}
+PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings copyWith({PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer? Function()? issuer}) {return PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings(
   issuer: issuer != null ? issuer() : this.issuer,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings &&
-          issuer == other.issuer; } 
-@override int get hashCode { return issuer.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings(issuer: $issuer)'; } 
- }
+          issuer == other.issuer;}
+@override int get hashCode {return issuer.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings(issuer: $issuer)';}
+}

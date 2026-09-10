@@ -11,7 +11,7 @@ final class Api20100401ParticipantApi with ApiExecutor {const Api20100401Partici
 /// Fetch an instance of a participant
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.json`
-Future<ApiResult<AccountConferenceParticipant, Never>> fetchParticipant({required String accountSid, required String conferenceSid, required String callSid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountConferenceParticipant, Never>> fetchParticipant({required String accountSid, required String conferenceSid, required String callSid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,11 +27,11 @@ final json = jsonDecode(response.body);
 return AccountConferenceParticipant.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Update the properties of the participant
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.json`
-Future<ApiResult<AccountConferenceParticipant, Never>> updateParticipant({required String accountSid, required String conferenceSid, required String callSid, UpdateParticipantRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountConferenceParticipant, Never>> updateParticipant({required String accountSid, required String conferenceSid, required String callSid, UpdateParticipantRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -74,11 +74,11 @@ final json = jsonDecode(response.body);
 return AccountConferenceParticipant.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Kick a participant from a given conference
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.json`
-Future<ApiResult<void, Never>> deleteParticipant({required String accountSid, required String conferenceSid, required String callSid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteParticipant({required String accountSid, required String conferenceSid, required String callSid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -91,11 +91,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a list of participants belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants.json`
-Future<ApiResult<ListParticipantResponse, Never>> listParticipant({required String accountSid, required String conferenceSid, bool? muted, bool? hold, bool? coaching, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListParticipantResponse, Never>> listParticipant({required String accountSid, required String conferenceSid, bool? muted, bool? hold, bool? coaching, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (muted != null) {
   queryParameters['Muted'] = muted.toString();
@@ -134,11 +134,11 @@ final json = jsonDecode(response.body);
 return ListParticipantResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants.json`
-Future<ApiResult<AccountConferenceParticipant, Never>> createParticipant({required String accountSid, required String conferenceSid, CreateParticipantRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountConferenceParticipant, Never>> createParticipant({required String accountSid, required String conferenceSid, CreateParticipantRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -255,5 +255,5 @@ final json = jsonDecode(response.body);
 return AccountConferenceParticipant.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

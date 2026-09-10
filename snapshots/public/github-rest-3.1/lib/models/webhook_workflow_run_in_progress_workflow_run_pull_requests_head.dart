@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_workflow_run_in_progress_workflow_run_pull_requests_head_repo.dart';@immutable final class WebhookWorkflowRunInProgressWorkflowRunPullRequestsHead {const WebhookWorkflowRunInProgressWorkflowRunPullRequestsHead({required this.ref, required this.repo, required this.sha, });
 
-factory WebhookWorkflowRunInProgressWorkflowRunPullRequestsHead.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunInProgressWorkflowRunPullRequestsHead(
+factory WebhookWorkflowRunInProgressWorkflowRunPullRequestsHead.fromJson(Map<String, dynamic> json) {return WebhookWorkflowRunInProgressWorkflowRunPullRequestsHead(
   ref: json['ref'] as String,
   repo: WebhookWorkflowRunInProgressWorkflowRunPullRequestsHeadRepo.fromJson(json['repo'] as Map<String, dynamic>),
   sha: json['sha'] as String,
-); }
+);}
 
 final String ref;
 
@@ -14,24 +14,24 @@ final WebhookWorkflowRunInProgressWorkflowRunPullRequestsHeadRepo repo;
 
 final String sha;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ref': ref,
   'repo': repo.toJson(),
   'sha': sha,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref') && json['ref'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('repo') &&
-      json.containsKey('sha') && json['sha'] is String; } 
-WebhookWorkflowRunInProgressWorkflowRunPullRequestsHead copyWith({String? ref, WebhookWorkflowRunInProgressWorkflowRunPullRequestsHeadRepo? repo, String? sha, }) { return WebhookWorkflowRunInProgressWorkflowRunPullRequestsHead(
+      json.containsKey('sha') && json['sha'] is String;}
+WebhookWorkflowRunInProgressWorkflowRunPullRequestsHead copyWith({String? ref, WebhookWorkflowRunInProgressWorkflowRunPullRequestsHeadRepo? repo, String? sha, }) {return WebhookWorkflowRunInProgressWorkflowRunPullRequestsHead(
   ref: ref ?? this.ref,
   repo: repo ?? this.repo,
   sha: sha ?? this.sha,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookWorkflowRunInProgressWorkflowRunPullRequestsHead &&
           ref == other.ref &&
           repo == other.repo &&
-          sha == other.sha; } 
-@override int get hashCode { return Object.hash(ref, repo, sha); } 
-@override String toString() { return 'WebhookWorkflowRunInProgressWorkflowRunPullRequestsHead(ref: $ref, repo: $repo, sha: $sha)'; } 
- }
+          sha == other.sha;}
+@override int get hashCode {return Object.hash(ref, repo, sha);}
+@override String toString() {return 'WebhookWorkflowRunInProgressWorkflowRunPullRequestsHead(ref: $ref, repo: $repo, sha: $sha)';}
+}

@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The breakdown of Copilot Business seats for the organization.
 @immutable final class CopilotOrganizationSeatBreakdown {const CopilotOrganizationSeatBreakdown({this.total, this.addedThisCycle, this.pendingCancellation, this.pendingInvitation, this.activeThisCycle, this.inactiveThisCycle, });
 
-factory CopilotOrganizationSeatBreakdown.fromJson(Map<String, dynamic> json) { return CopilotOrganizationSeatBreakdown(
+factory CopilotOrganizationSeatBreakdown.fromJson(Map<String, dynamic> json) {return CopilotOrganizationSeatBreakdown(
   total: json['total'] != null ? (json['total'] as num).toInt() : null,
   addedThisCycle: json['added_this_cycle'] != null ? (json['added_this_cycle'] as num).toInt() : null,
   pendingCancellation: json['pending_cancellation'] != null ? (json['pending_cancellation'] as num).toInt() : null,
   pendingInvitation: json['pending_invitation'] != null ? (json['pending_invitation'] as num).toInt() : null,
   activeThisCycle: json['active_this_cycle'] != null ? (json['active_this_cycle'] as num).toInt() : null,
   inactiveThisCycle: json['inactive_this_cycle'] != null ? (json['inactive_this_cycle'] as num).toInt() : null,
-); }
+);}
 
 /// The total number of seats being billed for the organization as of the current billing cycle.
 final int? total;
@@ -30,31 +30,31 @@ final int? activeThisCycle;
 /// The number of seats that have not used Copilot during the current billing cycle.
 final int? inactiveThisCycle;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total': ?total,
   'added_this_cycle': ?addedThisCycle,
   'pending_cancellation': ?pendingCancellation,
   'pending_invitation': ?pendingInvitation,
   'active_this_cycle': ?activeThisCycle,
   'inactive_this_cycle': ?inactiveThisCycle,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total', 'added_this_cycle', 'pending_cancellation', 'pending_invitation', 'active_this_cycle', 'inactive_this_cycle'}.contains(key)); } 
-CopilotOrganizationSeatBreakdown copyWith({int? Function()? total, int? Function()? addedThisCycle, int? Function()? pendingCancellation, int? Function()? pendingInvitation, int? Function()? activeThisCycle, int? Function()? inactiveThisCycle, }) { return CopilotOrganizationSeatBreakdown(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'total', 'added_this_cycle', 'pending_cancellation', 'pending_invitation', 'active_this_cycle', 'inactive_this_cycle'}.contains(key));}
+CopilotOrganizationSeatBreakdown copyWith({int? Function()? total, int? Function()? addedThisCycle, int? Function()? pendingCancellation, int? Function()? pendingInvitation, int? Function()? activeThisCycle, int? Function()? inactiveThisCycle, }) {return CopilotOrganizationSeatBreakdown(
   total: total != null ? total() : this.total,
   addedThisCycle: addedThisCycle != null ? addedThisCycle() : this.addedThisCycle,
   pendingCancellation: pendingCancellation != null ? pendingCancellation() : this.pendingCancellation,
   pendingInvitation: pendingInvitation != null ? pendingInvitation() : this.pendingInvitation,
   activeThisCycle: activeThisCycle != null ? activeThisCycle() : this.activeThisCycle,
   inactiveThisCycle: inactiveThisCycle != null ? inactiveThisCycle() : this.inactiveThisCycle,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CopilotOrganizationSeatBreakdown &&
           total == other.total &&
           addedThisCycle == other.addedThisCycle &&
           pendingCancellation == other.pendingCancellation &&
           pendingInvitation == other.pendingInvitation &&
           activeThisCycle == other.activeThisCycle &&
-          inactiveThisCycle == other.inactiveThisCycle; } 
-@override int get hashCode { return Object.hash(total, addedThisCycle, pendingCancellation, pendingInvitation, activeThisCycle, inactiveThisCycle); } 
-@override String toString() { return 'CopilotOrganizationSeatBreakdown(total: $total, addedThisCycle: $addedThisCycle, pendingCancellation: $pendingCancellation, pendingInvitation: $pendingInvitation, activeThisCycle: $activeThisCycle, inactiveThisCycle: $inactiveThisCycle)'; } 
- }
+          inactiveThisCycle == other.inactiveThisCycle;}
+@override int get hashCode {return Object.hash(total, addedThisCycle, pendingCancellation, pendingInvitation, activeThisCycle, inactiveThisCycle);}
+@override String toString() {return 'CopilotOrganizationSeatBreakdown(total: $total, addedThisCycle: $addedThisCycle, pendingCancellation: $pendingCancellation, pendingInvitation: $pendingInvitation, activeThisCycle: $activeThisCycle, inactiveThisCycle: $inactiveThisCycle)';}
+}

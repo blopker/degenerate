@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1._(this.value);
 
-factory PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1.fromJson(String json) { return switch (json) {
+factory PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1.fromJson(String json) {return switch (json) {
   'affirm' => affirm,
   'afterpay_clearpay' => afterpayClearpay,
   'alipay' => alipay,
@@ -43,7 +43,7 @@ factory PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1.fromJson(St
   'wechat_pay' => wechatPay,
   'zip' => zip,
   _ => PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1._(json),
-}; }
+};}
 
 static const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 affirm = PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1._('affirm');
 
@@ -127,20 +127,20 @@ static const List<PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1($value)';}
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant2 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant2._(this.value);
 
-factory PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant2._(json),
-}; }
+};}
 
 static const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant2 $empty = PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant2._('');
 
@@ -148,14 +148,14 @@ static const List<PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant2> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant2($value)';}
+}
 /// The list of payment method types that customers can use. Pass an empty string to enable dynamic payment methods that use your [payment method settings](https://dashboard.stripe.com/settings/payment_methods).
 @immutable
 final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypes {

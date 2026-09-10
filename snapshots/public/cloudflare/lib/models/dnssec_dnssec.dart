@@ -79,7 +79,7 @@ dynamic toJson() => value;
 }
 @immutable final class DnssecDnssec {const DnssecDnssec({this.algorithm = const Omittable.absent(), this.digest = const Omittable.absent(), this.digestAlgorithm = const Omittable.absent(), this.digestType = const Omittable.absent(), this.dnssecMultiSigner, this.dnssecPresigned, this.dnssecUseNsec3, this.ds = const Omittable.absent(), this.flags = const Omittable.absent(), this.keyTag = const Omittable.absent(), this.keyType = const Omittable.absent(), this.modifiedOn = const Omittable.absent(), this.publicKey = const Omittable.absent(), this.status = const Omittable.absent(), });
 
-factory DnssecDnssec.fromJson(Map<String, dynamic> json) { return DnssecDnssec(
+factory DnssecDnssec.fromJson(Map<String, dynamic> json) {return DnssecDnssec(
   algorithm: json.containsKey('algorithm') ? Omittable(json['algorithm'] != null ? DnssecAlgorithm.fromJson(json['algorithm'] as String) : null) : const Omittable.absent(),
   digest: json.containsKey('digest') ? Omittable(json['digest'] != null ? DnssecDigest.fromJson(json['digest'] as String) : null) : const Omittable.absent(),
   digestAlgorithm: json.containsKey('digest_algorithm') ? Omittable(json['digest_algorithm'] != null ? DnssecDigestAlgorithm.fromJson(json['digest_algorithm'] as String) : null) : const Omittable.absent(),
@@ -94,7 +94,7 @@ factory DnssecDnssec.fromJson(Map<String, dynamic> json) { return DnssecDnssec(
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DnssecModifiedOn.fromJson(json['modified_on'] as String) : null) : const Omittable.absent(),
   publicKey: json.containsKey('public_key') ? Omittable(json['public_key'] != null ? DnssecPublicKey.fromJson(json['public_key'] as String) : null) : const Omittable.absent(),
   status: json.containsKey('status') ? Omittable(json['status'] != null ? DnssecStatus.fromJson(json['status'] as dynamic) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Algorithm key code.
 final Omittable<DnssecAlgorithm?> algorithm;
@@ -128,7 +128,7 @@ final Omittable<DnssecPublicKey?> publicKey;
 
 final Omittable<DnssecStatus?> status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (algorithm.isPresent) 'algorithm': algorithm.value?.toJson(),
   if (digest.isPresent) 'digest': digest.value?.toJson(),
   if (digestAlgorithm.isPresent) 'digest_algorithm': digestAlgorithm.value?.toJson(),
@@ -143,9 +143,9 @@ Map<String, dynamic> toJson() { return {
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toJson(),
   if (publicKey.isPresent) 'public_key': publicKey.value?.toJson(),
   if (status.isPresent) 'status': status.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'algorithm', 'digest', 'digest_algorithm', 'digest_type', 'dnssec_multi_signer', 'dnssec_presigned', 'dnssec_use_nsec3', 'ds', 'flags', 'key_tag', 'key_type', 'modified_on', 'public_key', 'status'}.contains(key)); } 
-DnssecDnssec copyWith({Omittable<DnssecAlgorithm?>? algorithm, Omittable<DnssecDigest?>? digest, Omittable<DnssecDigestAlgorithm?>? digestAlgorithm, Omittable<DnssecDigestType?>? digestType, DnssecDnssecMultiSigner? Function()? dnssecMultiSigner, DnssecDnssecPresigned? Function()? dnssecPresigned, DnssecDnssecUseNsec3? Function()? dnssecUseNsec3, Omittable<DnssecDs?>? ds, Omittable<DnssecFlags?>? flags, Omittable<DnssecKeyTag?>? keyTag, Omittable<DnssecKeyType?>? keyType, Omittable<DnssecModifiedOn?>? modifiedOn, Omittable<DnssecPublicKey?>? publicKey, Omittable<DnssecStatus?>? status, }) { return DnssecDnssec(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'algorithm', 'digest', 'digest_algorithm', 'digest_type', 'dnssec_multi_signer', 'dnssec_presigned', 'dnssec_use_nsec3', 'ds', 'flags', 'key_tag', 'key_type', 'modified_on', 'public_key', 'status'}.contains(key));}
+DnssecDnssec copyWith({Omittable<DnssecAlgorithm?>? algorithm, Omittable<DnssecDigest?>? digest, Omittable<DnssecDigestAlgorithm?>? digestAlgorithm, Omittable<DnssecDigestType?>? digestType, DnssecDnssecMultiSigner? Function()? dnssecMultiSigner, DnssecDnssecPresigned? Function()? dnssecPresigned, DnssecDnssecUseNsec3? Function()? dnssecUseNsec3, Omittable<DnssecDs?>? ds, Omittable<DnssecFlags?>? flags, Omittable<DnssecKeyTag?>? keyTag, Omittable<DnssecKeyType?>? keyType, Omittable<DnssecModifiedOn?>? modifiedOn, Omittable<DnssecPublicKey?>? publicKey, Omittable<DnssecStatus?>? status, }) {return DnssecDnssec(
   algorithm: algorithm ?? this.algorithm,
   digest: digest ?? this.digest,
   digestAlgorithm: digestAlgorithm ?? this.digestAlgorithm,
@@ -160,8 +160,8 @@ DnssecDnssec copyWith({Omittable<DnssecAlgorithm?>? algorithm, Omittable<DnssecD
   modifiedOn: modifiedOn ?? this.modifiedOn,
   publicKey: publicKey ?? this.publicKey,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnssecDnssec &&
           algorithm == other.algorithm &&
           digest == other.digest &&
@@ -176,7 +176,7 @@ DnssecDnssec copyWith({Omittable<DnssecAlgorithm?>? algorithm, Omittable<DnssecD
           keyType == other.keyType &&
           modifiedOn == other.modifiedOn &&
           publicKey == other.publicKey &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(algorithm, digest, digestAlgorithm, digestType, dnssecMultiSigner, dnssecPresigned, dnssecUseNsec3, ds, flags, keyTag, keyType, modifiedOn, publicKey, status); } 
-@override String toString() { return 'DnssecDnssec(algorithm: $algorithm, digest: $digest, digestAlgorithm: $digestAlgorithm, digestType: $digestType, dnssecMultiSigner: $dnssecMultiSigner, dnssecPresigned: $dnssecPresigned, dnssecUseNsec3: $dnssecUseNsec3, ds: $ds, flags: $flags, keyTag: $keyTag, keyType: $keyType, modifiedOn: $modifiedOn, publicKey: $publicKey, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(algorithm, digest, digestAlgorithm, digestType, dnssecMultiSigner, dnssecPresigned, dnssecUseNsec3, ds, flags, keyTag, keyType, modifiedOn, publicKey, status);}
+@override String toString() {return 'DnssecDnssec(algorithm: $algorithm, digest: $digest, digestAlgorithm: $digestAlgorithm, digestType: $digestType, dnssecMultiSigner: $dnssecMultiSigner, dnssecPresigned: $dnssecPresigned, dnssecUseNsec3: $dnssecUseNsec3, ds: $ds, flags: $flags, keyTag: $keyTag, keyType: $keyType, modifiedOn: $modifiedOn, publicKey: $publicKey, status: $status)';}
+}

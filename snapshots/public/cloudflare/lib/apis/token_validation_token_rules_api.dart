@@ -11,7 +11,7 @@ final class TokenValidationTokenRulesApi with ApiExecutor {const TokenValidation
 /// List token validation rules
 ///
 /// `GET /zones/{zone_id}/token_validation/rules`
-Future<ApiResult<List<ShieldRule>, ResponseCommonFailure7>> tokenValidationRulesList({required ShieldIdentifier zoneId, int? perPage, int? page, List<ShieldUuid>? tokenConfiguration, ShieldAction? action, ShieldEnabled? enabled, ShieldUuid? id, ShieldUuid? ruleId, ShieldHost? host, ShieldHost? hostname, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ShieldRule>, ResponseCommonFailure7>> tokenValidationRulesList({required ShieldIdentifier zoneId, int? perPage, int? page, List<ShieldUuid>? tokenConfiguration, ShieldAction? action, ShieldEnabled? enabled, ShieldUuid? id, ShieldUuid? ruleId, ShieldHost? host, ShieldHost? hostname, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -71,13 +71,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create a token validation rule
 ///
 /// Create a token validation rule.
 ///
 /// `POST /zones/{zone_id}/token_validation/rules`
-Future<ApiResult<ShieldRule, ResponseCommonFailure7>> tokenValidationRulesCreate({required ShieldIdentifier zoneId, required ShieldRuleProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldRule, ResponseCommonFailure7>> tokenValidationRulesCreate({required ShieldIdentifier zoneId, required ShieldRuleProperties body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -105,13 +105,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get a zone token validation rule
 ///
 /// Get a zone token validation rule.
 ///
 /// `GET /zones/{zone_id}/token_validation/rules/{rule_id}`
-Future<ApiResult<ShieldRule, ResponseCommonFailure7>> tokenValidationRulesGet({required ShieldIdentifier zoneId, required ShieldUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldRule, ResponseCommonFailure7>> tokenValidationRulesGet({required ShieldIdentifier zoneId, required ShieldUuid ruleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -137,13 +137,13 @@ return null;
 
   },
 );
- } 
+}
 /// Edit a zone token validation rule
 ///
 /// Edit a zone token validation rule.
 ///
 /// `PATCH /zones/{zone_id}/token_validation/rules/{rule_id}`
-Future<ApiResult<ShieldRule, ResponseCommonFailure7>> tokenValidationRulesEdit({required ShieldIdentifier zoneId, required ShieldUuid ruleId, required ShieldEditSingleRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldRule, ResponseCommonFailure7>> tokenValidationRulesEdit({required ShieldIdentifier zoneId, required ShieldUuid ruleId, required ShieldEditSingleRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -171,13 +171,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a zone token validation rule
 ///
 /// Delete a zone token validation rule.
 ///
 /// `DELETE /zones/{zone_id}/token_validation/rules/{rule_id}`
-Future<ApiResult<Map<String, dynamic>?, ResponseCommonFailure7>> tokenValidationRulesDelete({required ShieldIdentifier zoneId, required ShieldUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, ResponseCommonFailure7>> tokenValidationRulesDelete({required ShieldIdentifier zoneId, required ShieldUuid ruleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -203,7 +203,7 @@ return null;
 
   },
 );
- } 
+}
 /// Bulk create token validation rules
 ///
 /// Create zone token validation rules.
@@ -212,7 +212,7 @@ return null;
 /// 
 ///
 /// `POST /zones/{zone_id}/token_validation/rules/bulk`
-Future<ApiResult<List<ShieldRule>, ResponseCommonFailure7>> tokenValidationRulesBulkCreate({required ShieldIdentifier zoneId, required List<ShieldRuleProperties> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ShieldRule>, ResponseCommonFailure7>> tokenValidationRulesBulkCreate({required ShieldIdentifier zoneId, required List<ShieldRuleProperties> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -240,7 +240,7 @@ return null;
 
   },
 );
- } 
+}
 /// Bulk edit token validation rules
 ///
 /// Edit token validation rules.
@@ -253,7 +253,7 @@ return null;
 /// 
 ///
 /// `PATCH /zones/{zone_id}/token_validation/rules/bulk`
-Future<ApiResult<List<ShieldRule>, ResponseCommonFailure7>> tokenValidationRulesBulkEdit({required ShieldIdentifier zoneId, required List<TokenValidationRulesBulkEditRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ShieldRule>, ResponseCommonFailure7>> tokenValidationRulesBulkEdit({required ShieldIdentifier zoneId, required List<TokenValidationRulesBulkEditRequest> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -281,7 +281,7 @@ return null;
 
   },
 );
- } 
+}
 /// Preview operations covered by a Token Validation rule
 ///
 /// Preview operations covered by a Token Validation rule.
@@ -291,7 +291,7 @@ return null;
 /// 
 ///
 /// `POST /zones/{zone_id}/token_validation/rules/preview`
-Future<ApiResult<TokenValidationRulesPreviewResponseResult, ResponseCommonFailure7>> tokenValidationRulesPreview({required ShieldIdentifier zoneId, required ShieldSelector body, int? perPage, int? page, List<ShieldSelectorOperationState>? state, List<ShieldHost>? host, List<ShieldHost>? hostname, List<ShieldMethod>? method, List<ShieldEndpoint>? endpoint, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TokenValidationRulesPreviewResponseResult, ResponseCommonFailure7>> tokenValidationRulesPreview({required ShieldIdentifier zoneId, required ShieldSelector body, int? perPage, int? page, List<ShieldSelectorOperationState>? state, List<ShieldHost>? host, List<ShieldHost>? hostname, List<ShieldMethod>? method, List<ShieldEndpoint>? endpoint, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -355,5 +355,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the Message. Possible values: `accepted`, `scheduled`, `canceled`, `queued`, `sending`, `sent`, `failed`, `delivered`, `undelivered`, `receiving`, `received`, or `read` (WhatsApp only). For more information, See [detailed descriptions](https://www.twilio.com/docs/sms/api/message-resource#message-status-values).
 @immutable final class MessageEnumStatus {const MessageEnumStatus._(this.value);
 
-factory MessageEnumStatus.fromJson(String json) { return switch (json) {
+factory MessageEnumStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'sending' => sending,
   'sent' => sent,
@@ -18,7 +18,7 @@ factory MessageEnumStatus.fromJson(String json) { return switch (json) {
   'partially_delivered' => partiallyDelivered,
   'canceled' => canceled,
   _ => MessageEnumStatus._(json),
-}; }
+};}
 
 static const MessageEnumStatus queued = MessageEnumStatus._('queued');
 
@@ -50,24 +50,24 @@ static const List<MessageEnumStatus> values = [queued, sending, sent, failed, de
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageEnumStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageEnumStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageEnumStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageEnumStatus($value)';}
+}
 /// The direction of the message. Can be: `inbound` for incoming messages, `outbound-api` for messages created by the REST API, `outbound-call` for messages created during a call, or `outbound-reply` for messages created in response to an incoming message.
 @immutable final class MessageEnumDirection {const MessageEnumDirection._(this.value);
 
-factory MessageEnumDirection.fromJson(String json) { return switch (json) {
+factory MessageEnumDirection.fromJson(String json) {return switch (json) {
   'inbound' => inbound,
   'outbound-api' => outboundApi,
   'outbound-call' => outboundCall,
   'outbound-reply' => outboundReply,
   _ => MessageEnumDirection._(json),
-}; }
+};}
 
 static const MessageEnumDirection inbound = MessageEnumDirection._('inbound');
 
@@ -81,17 +81,17 @@ static const List<MessageEnumDirection> values = [inbound, outboundApi, outbound
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageEnumDirection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageEnumDirection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageEnumDirection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageEnumDirection($value)';}
+}
 @immutable final class AccountMessage {const AccountMessage({this.body = const Omittable.absent(), this.numSegments = const Omittable.absent(), this.direction, this.from = const Omittable.absent(), this.to = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.price = const Omittable.absent(), this.errorMessage = const Omittable.absent(), this.uri = const Omittable.absent(), this.accountSid = const Omittable.absent(), this.numMedia = const Omittable.absent(), this.status, this.messagingServiceSid = const Omittable.absent(), this.sid = const Omittable.absent(), this.dateSent = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.errorCode = const Omittable.absent(), this.priceUnit = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.subresourceUris = const Omittable.absent(), });
 
-factory AccountMessage.fromJson(Map<String, dynamic> json) { return AccountMessage(
+factory AccountMessage.fromJson(Map<String, dynamic> json) {return AccountMessage(
   body: json.containsKey('body') ? Omittable(json['body'] as String?) : const Omittable.absent(),
   numSegments: json.containsKey('num_segments') ? Omittable(json['num_segments'] as String?) : const Omittable.absent(),
   direction: json['direction'] != null ? MessageEnumDirection.fromJson(json['direction'] as String) : null,
@@ -112,7 +112,7 @@ factory AccountMessage.fromJson(Map<String, dynamic> json) { return AccountMessa
   priceUnit: json.containsKey('price_unit') ? Omittable(json['price_unit'] as String?) : const Omittable.absent(),
   apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
   subresourceUris: json.containsKey('subresource_uris') ? Omittable(json['subresource_uris'] as Map<String, dynamic>?) : const Omittable.absent(),
-); }
+);}
 
 /// The text content of the message
 final Omittable<String?> body;
@@ -172,7 +172,7 @@ final Omittable<String?> apiVersion;
 /// A list of related resources identified by their URIs relative to `https://api.twilio.com`
 final Omittable<Map<String,dynamic>?> subresourceUris;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (body.isPresent) 'body': body.value,
   if (numSegments.isPresent) 'num_segments': numSegments.value,
   if (direction != null) 'direction': direction?.toJson(),
@@ -193,9 +193,9 @@ Map<String, dynamic> toJson() { return {
   if (priceUnit.isPresent) 'price_unit': priceUnit.value,
   if (apiVersion.isPresent) 'api_version': apiVersion.value,
   if (subresourceUris.isPresent) 'subresource_uris': subresourceUris.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body', 'num_segments', 'direction', 'from', 'to', 'date_updated', 'price', 'error_message', 'uri', 'account_sid', 'num_media', 'status', 'messaging_service_sid', 'sid', 'date_sent', 'date_created', 'error_code', 'price_unit', 'api_version', 'subresource_uris'}.contains(key)); } 
-AccountMessage copyWith({Omittable<String?>? body, Omittable<String?>? numSegments, MessageEnumDirection? Function()? direction, Omittable<String?>? from, Omittable<String?>? to, Omittable<String?>? dateUpdated, Omittable<String?>? price, Omittable<String?>? errorMessage, Omittable<String?>? uri, Omittable<String?>? accountSid, Omittable<String?>? numMedia, MessageEnumStatus? Function()? status, Omittable<String?>? messagingServiceSid, Omittable<String?>? sid, Omittable<String?>? dateSent, Omittable<String?>? dateCreated, Omittable<int?>? errorCode, Omittable<String?>? priceUnit, Omittable<String?>? apiVersion, Omittable<Map<String,dynamic>?>? subresourceUris, }) { return AccountMessage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'body', 'num_segments', 'direction', 'from', 'to', 'date_updated', 'price', 'error_message', 'uri', 'account_sid', 'num_media', 'status', 'messaging_service_sid', 'sid', 'date_sent', 'date_created', 'error_code', 'price_unit', 'api_version', 'subresource_uris'}.contains(key));}
+AccountMessage copyWith({Omittable<String?>? body, Omittable<String?>? numSegments, MessageEnumDirection? Function()? direction, Omittable<String?>? from, Omittable<String?>? to, Omittable<String?>? dateUpdated, Omittable<String?>? price, Omittable<String?>? errorMessage, Omittable<String?>? uri, Omittable<String?>? accountSid, Omittable<String?>? numMedia, MessageEnumStatus? Function()? status, Omittable<String?>? messagingServiceSid, Omittable<String?>? sid, Omittable<String?>? dateSent, Omittable<String?>? dateCreated, Omittable<int?>? errorCode, Omittable<String?>? priceUnit, Omittable<String?>? apiVersion, Omittable<Map<String,dynamic>?>? subresourceUris, }) {return AccountMessage(
   body: body ?? this.body,
   numSegments: numSegments ?? this.numSegments,
   direction: direction != null ? direction() : this.direction,
@@ -216,8 +216,8 @@ AccountMessage copyWith({Omittable<String?>? body, Omittable<String?>? numSegmen
   priceUnit: priceUnit ?? this.priceUnit,
   apiVersion: apiVersion ?? this.apiVersion,
   subresourceUris: subresourceUris ?? this.subresourceUris,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountMessage &&
           body == other.body &&
           numSegments == other.numSegments &&
@@ -238,7 +238,7 @@ AccountMessage copyWith({Omittable<String?>? body, Omittable<String?>? numSegmen
           errorCode == other.errorCode &&
           priceUnit == other.priceUnit &&
           apiVersion == other.apiVersion &&
-          subresourceUris == other.subresourceUris; } 
-@override int get hashCode { return Object.hash(body, numSegments, direction, from, to, dateUpdated, price, errorMessage, uri, accountSid, numMedia, status, messagingServiceSid, sid, dateSent, dateCreated, errorCode, priceUnit, apiVersion, subresourceUris); } 
-@override String toString() { return 'AccountMessage(body: $body, numSegments: $numSegments, direction: $direction, from: $from, to: $to, dateUpdated: $dateUpdated, price: $price, errorMessage: $errorMessage, uri: $uri, accountSid: $accountSid, numMedia: $numMedia, status: $status, messagingServiceSid: $messagingServiceSid, sid: $sid, dateSent: $dateSent, dateCreated: $dateCreated, errorCode: $errorCode, priceUnit: $priceUnit, apiVersion: $apiVersion, subresourceUris: $subresourceUris)'; } 
- }
+          subresourceUris == other.subresourceUris;}
+@override int get hashCode {return Object.hash(body, numSegments, direction, from, to, dateUpdated, price, errorMessage, uri, accountSid, numMedia, status, messagingServiceSid, sid, dateSent, dateCreated, errorCode, priceUnit, apiVersion, subresourceUris);}
+@override String toString() {return 'AccountMessage(body: $body, numSegments: $numSegments, direction: $direction, from: $from, to: $to, dateUpdated: $dateUpdated, price: $price, errorMessage: $errorMessage, uri: $uri, accountSid: $accountSid, numMedia: $numMedia, status: $status, messagingServiceSid: $messagingServiceSid, sid: $sid, dateSent: $dateSent, dateCreated: $dateCreated, errorCode: $errorCode, priceUnit: $priceUnit, apiVersion: $apiVersion, subresourceUris: $subresourceUris)';}
+}

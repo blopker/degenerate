@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingCreditGrantsIdRequestExpiresAtVariant2 {const PostBillingCreditGrantsIdRequestExpiresAtVariant2._(this.value);
 
-factory PostBillingCreditGrantsIdRequestExpiresAtVariant2.fromJson(String json) { return switch (json) {
+factory PostBillingCreditGrantsIdRequestExpiresAtVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostBillingCreditGrantsIdRequestExpiresAtVariant2._(json),
-}; }
+};}
 
 static const PostBillingCreditGrantsIdRequestExpiresAtVariant2 $empty = PostBillingCreditGrantsIdRequestExpiresAtVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostBillingCreditGrantsIdRequestExpiresAtVariant2> values = [$
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingCreditGrantsIdRequestExpiresAtVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingCreditGrantsIdRequestExpiresAtVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostBillingCreditGrantsIdRequestExpiresAtVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostBillingCreditGrantsIdRequestExpiresAtVariant2($value)';}
+}
 /// The time when the billing credits created by this credit grant expire. If set to empty, the billing credits never expire.
 @immutable
 final class PostBillingCreditGrantsIdRequestExpiresAt {

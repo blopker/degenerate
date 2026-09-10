@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Infrastructure type of this ASN.
 @immutable final class IntelSchemasIpBelongsToRefType {const IntelSchemasIpBelongsToRefType._(this.value);
 
-factory IntelSchemasIpBelongsToRefType.fromJson(String json) { return switch (json) {
+factory IntelSchemasIpBelongsToRefType.fromJson(String json) {return switch (json) {
   'hosting_provider' => hostingProvider,
   'isp' => isp,
   'organization' => organization,
   _ => IntelSchemasIpBelongsToRefType._(json),
-}; }
+};}
 
 static const IntelSchemasIpBelongsToRefType hostingProvider = IntelSchemasIpBelongsToRefType._('hosting_provider');
 
@@ -20,24 +20,24 @@ static const List<IntelSchemasIpBelongsToRefType> values = [hostingProvider, isp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IntelSchemasIpBelongsToRefType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IntelSchemasIpBelongsToRefType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IntelSchemasIpBelongsToRefType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IntelSchemasIpBelongsToRefType($value)';}
+}
 /// Specifies a reference to the autonomous systems (AS) that the IP address belongs to.
 @immutable final class IntelSchemasIpBelongsToRef {const IntelSchemasIpBelongsToRef({this.country, this.description, this.id, this.type, this.value, });
 
-factory IntelSchemasIpBelongsToRef.fromJson(Map<String, dynamic> json) { return IntelSchemasIpBelongsToRef(
+factory IntelSchemasIpBelongsToRef.fromJson(Map<String, dynamic> json) {return IntelSchemasIpBelongsToRef(
   country: json['country'] as String?,
   description: json['description'] as String?,
   id: json['id'] as String?,
   type: json['type'] != null ? IntelSchemasIpBelongsToRefType.fromJson(json['type'] as String) : null,
   value: json['value'] as String?,
-); }
+);}
 
 final String? country;
 
@@ -50,28 +50,28 @@ final IntelSchemasIpBelongsToRefType? type;
 
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'country': ?country,
   'description': ?description,
   'id': ?id,
   if (type != null) 'type': type?.toJson(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'country', 'description', 'id', 'type', 'value'}.contains(key)); } 
-IntelSchemasIpBelongsToRef copyWith({String? Function()? country, String? Function()? description, String? Function()? id, IntelSchemasIpBelongsToRefType? Function()? type, String? Function()? value, }) { return IntelSchemasIpBelongsToRef(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'country', 'description', 'id', 'type', 'value'}.contains(key));}
+IntelSchemasIpBelongsToRef copyWith({String? Function()? country, String? Function()? description, String? Function()? id, IntelSchemasIpBelongsToRefType? Function()? type, String? Function()? value, }) {return IntelSchemasIpBelongsToRef(
   country: country != null ? country() : this.country,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IntelSchemasIpBelongsToRef &&
           country == other.country &&
           description == other.description &&
           id == other.id &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(country, description, id, type, value); } 
-@override String toString() { return 'IntelSchemasIpBelongsToRef(country: $country, description: $description, id: $id, type: $type, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(country, description, id, type, value);}
+@override String toString() {return 'IntelSchemasIpBelongsToRef(country: $country, description: $description, id: $id, type: $type, value: $value)';}
+}

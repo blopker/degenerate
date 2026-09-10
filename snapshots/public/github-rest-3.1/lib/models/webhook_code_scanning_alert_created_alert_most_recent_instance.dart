@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_code_scanning_alert_created_alert_most_recent_instance_location.dart';import 'webhook_code_scanning_alert_created_alert_most_recent_instance_message.dart';/// State of a code scanning alert.
 @immutable final class WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState {const WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState._(this.value);
 
-factory WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState.fromJson(String json) { return switch (json) {
+factory WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState.fromJson(String json) {return switch (json) {
   'open' => open,
   'dismissed' => dismissed,
   'fixed' => fixed,
   _ => WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState._(json),
-}; }
+};}
 
 static const WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState open = WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState._('open');
 
@@ -20,17 +20,17 @@ static const List<WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState> v
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState($value)';}
+}
 @immutable final class WebhookCodeScanningAlertCreatedAlertMostRecentInstance {const WebhookCodeScanningAlertCreatedAlertMostRecentInstance({required this.analysisKey, required this.environment, required this.ref, required this.state, this.category, this.classifications, this.commitSha, this.location, this.message, });
 
-factory WebhookCodeScanningAlertCreatedAlertMostRecentInstance.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertCreatedAlertMostRecentInstance(
+factory WebhookCodeScanningAlertCreatedAlertMostRecentInstance.fromJson(Map<String, dynamic> json) {return WebhookCodeScanningAlertCreatedAlertMostRecentInstance(
   analysisKey: json['analysis_key'] as String,
   category: json['category'] as String?,
   classifications: (json['classifications'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -40,7 +40,7 @@ factory WebhookCodeScanningAlertCreatedAlertMostRecentInstance.fromJson(Map<Stri
   message: json['message'] != null ? WebhookCodeScanningAlertCreatedAlertMostRecentInstanceMessage.fromJson(json['message'] as Map<String, dynamic>) : null,
   ref: json['ref'] as String,
   state: WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState.fromJson(json['state'] as String),
-); }
+);}
 
 /// Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
 final String analysisKey;
@@ -65,7 +65,7 @@ final String ref;
 /// State of a code scanning alert.
 final WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'analysis_key': analysisKey,
   'category': ?category,
   'classifications': ?classifications,
@@ -75,12 +75,12 @@ Map<String, dynamic> toJson() { return {
   if (message != null) 'message': message?.toJson(),
   'ref': ref,
   'state': state.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('analysis_key') && json['analysis_key'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('analysis_key') && json['analysis_key'] is String &&
       json.containsKey('environment') && json['environment'] is String &&
       json.containsKey('ref') && json['ref'] is String &&
-      json.containsKey('state'); } 
-WebhookCodeScanningAlertCreatedAlertMostRecentInstance copyWith({String? analysisKey, String? Function()? category, List<String>? Function()? classifications, String? Function()? commitSha, String? environment, WebhookCodeScanningAlertCreatedAlertMostRecentInstanceLocation? Function()? location, WebhookCodeScanningAlertCreatedAlertMostRecentInstanceMessage? Function()? message, String? ref, WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState? state, }) { return WebhookCodeScanningAlertCreatedAlertMostRecentInstance(
+      json.containsKey('state');}
+WebhookCodeScanningAlertCreatedAlertMostRecentInstance copyWith({String? analysisKey, String? Function()? category, List<String>? Function()? classifications, String? Function()? commitSha, String? environment, WebhookCodeScanningAlertCreatedAlertMostRecentInstanceLocation? Function()? location, WebhookCodeScanningAlertCreatedAlertMostRecentInstanceMessage? Function()? message, String? ref, WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState? state, }) {return WebhookCodeScanningAlertCreatedAlertMostRecentInstance(
   analysisKey: analysisKey ?? this.analysisKey,
   category: category != null ? category() : this.category,
   classifications: classifications != null ? classifications() : this.classifications,
@@ -90,8 +90,8 @@ WebhookCodeScanningAlertCreatedAlertMostRecentInstance copyWith({String? analysi
   message: message != null ? message() : this.message,
   ref: ref ?? this.ref,
   state: state ?? this.state,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookCodeScanningAlertCreatedAlertMostRecentInstance &&
           analysisKey == other.analysisKey &&
           category == other.category &&
@@ -101,7 +101,7 @@ WebhookCodeScanningAlertCreatedAlertMostRecentInstance copyWith({String? analysi
           location == other.location &&
           message == other.message &&
           ref == other.ref &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(analysisKey, category, Object.hashAll(classifications ?? const []), commitSha, environment, location, message, ref, state); } 
-@override String toString() { return 'WebhookCodeScanningAlertCreatedAlertMostRecentInstance(analysisKey: $analysisKey, category: $category, classifications: $classifications, commitSha: $commitSha, environment: $environment, location: $location, message: $message, ref: $ref, state: $state)'; } 
- }
+          state == other.state;}
+@override int get hashCode {return Object.hash(analysisKey, category, Object.hashAll(classifications ?? const []), commitSha, environment, location, message, ref, state);}
+@override String toString() {return 'WebhookCodeScanningAlertCreatedAlertMostRecentInstance(analysisKey: $analysisKey, category: $category, classifications: $classifications, commitSha: $commitSha, environment: $environment, location: $location, message: $message, ref: $ref, state: $state)';}
+}

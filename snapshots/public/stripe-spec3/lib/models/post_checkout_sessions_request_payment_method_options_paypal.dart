@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod.fromJson(String json) {return switch (json) {
   '' => $empty,
   'manual' => manual,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod $empty = PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod._('');
 
@@ -16,17 +16,17 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale {const PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale.fromJson(String json) {return switch (json) {
   'cs-CZ' => csCz,
   'da-DK' => daDk,
   'de-AT' => deAt,
@@ -49,7 +49,7 @@ factory PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale.fro
   'sk-SK' => skSk,
   'sv-SE' => svSe,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale csCz = PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale._('cs-CZ');
 
@@ -97,22 +97,22 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferred
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage.fromJson(String json) {return switch (json) {
   '' => $empty,
   'none' => none,
   'off_session' => offSession,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage $empty = PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage._('');
 
@@ -124,23 +124,23 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaypal {const PostCheckoutSessionsRequestPaymentMethodOptionsPaypal({this.captureMethod, this.preferredLocale, this.reference, this.riskCorrelationId, this.setupFutureUsage, });
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsPaypal.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsPaypal(
+factory PostCheckoutSessionsRequestPaymentMethodOptionsPaypal.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestPaymentMethodOptionsPaypal(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod.fromJson(json['capture_method'] as String) : null,
   preferredLocale: json['preferred_locale'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale.fromJson(json['preferred_locale'] as String) : null,
   reference: json['reference'] as String?,
   riskCorrelationId: json['risk_correlation_id'] as String?,
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod? captureMethod;
 
@@ -152,28 +152,28 @@ final String? riskCorrelationId;
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   if (preferredLocale != null) 'preferred_locale': preferredLocale?.toJson(),
   'reference': ?reference,
   'risk_correlation_id': ?riskCorrelationId,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'preferred_locale', 'reference', 'risk_correlation_id', 'setup_future_usage'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsPaypal copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod? Function()? captureMethod, PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale? Function()? preferredLocale, String? Function()? reference, String? Function()? riskCorrelationId, PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage? Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsPaypal(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method', 'preferred_locale', 'reference', 'risk_correlation_id', 'setup_future_usage'}.contains(key));}
+PostCheckoutSessionsRequestPaymentMethodOptionsPaypal copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod? Function()? captureMethod, PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale? Function()? preferredLocale, String? Function()? reference, String? Function()? riskCorrelationId, PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage? Function()? setupFutureUsage, }) {return PostCheckoutSessionsRequestPaymentMethodOptionsPaypal(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
   reference: reference != null ? reference() : this.reference,
   riskCorrelationId: riskCorrelationId != null ? riskCorrelationId() : this.riskCorrelationId,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsPaypal &&
           captureMethod == other.captureMethod &&
           preferredLocale == other.preferredLocale &&
           reference == other.reference &&
           riskCorrelationId == other.riskCorrelationId &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(captureMethod, preferredLocale, reference, riskCorrelationId, setupFutureUsage); } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaypal(captureMethod: $captureMethod, preferredLocale: $preferredLocale, reference: $reference, riskCorrelationId: $riskCorrelationId, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(captureMethod, preferredLocale, reference, riskCorrelationId, setupFutureUsage);}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaypal(captureMethod: $captureMethod, preferredLocale: $preferredLocale, reference: $reference, riskCorrelationId: $riskCorrelationId, setupFutureUsage: $setupFutureUsage)';}
+}

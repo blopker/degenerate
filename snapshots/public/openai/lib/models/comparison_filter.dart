@@ -12,7 +12,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'comparison_f
 /// 
 @immutable final class ComparisonFilterType {const ComparisonFilterType._(this.value);
 
-factory ComparisonFilterType.fromJson(String json) { return switch (json) {
+factory ComparisonFilterType.fromJson(String json) {return switch (json) {
   'eq' => eq,
   'ne' => ne,
   'gt' => gt,
@@ -20,7 +20,7 @@ factory ComparisonFilterType.fromJson(String json) { return switch (json) {
   'lt' => lt,
   'lte' => lte,
   _ => ComparisonFilterType._(json),
-}; }
+};}
 
 static const ComparisonFilterType eq = ComparisonFilterType._('eq');
 
@@ -38,23 +38,23 @@ static const List<ComparisonFilterType> values = [eq, ne, gt, gte, lt, lte];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComparisonFilterType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ComparisonFilterType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ComparisonFilterType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ComparisonFilterType($value)';}
+}
 /// A filter used to compare a specified attribute key to a given value using a defined comparison operation.
 /// 
 @immutable final class ComparisonFilter {const ComparisonFilter({required this.type, required this.key, required this.value, });
 
-factory ComparisonFilter.fromJson(Map<String, dynamic> json) { return ComparisonFilter(
+factory ComparisonFilter.fromJson(Map<String, dynamic> json) {return ComparisonFilter(
   type: ComparisonFilterType.fromJson(json['type'] as String),
   key: json['key'] as String,
   value: OneOf4.parse(json['value'], fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => v as bool, fromD: (v) => (v as List<dynamic>).map((e) => e).toList(),),
-); }
+);}
 
 /// Specifies the comparison operator: `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.
 /// - `eq`: equals
@@ -74,24 +74,24 @@ final String key;
 /// The value to compare against the attribute key; supports string, number, or boolean types.
 final ComparisonFilterValue value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'key': key,
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('key') && json['key'] is String &&
-      json.containsKey('value'); } 
-ComparisonFilter copyWith({ComparisonFilterType? type, String? key, ComparisonFilterValue? value, }) { return ComparisonFilter(
+      json.containsKey('value');}
+ComparisonFilter copyWith({ComparisonFilterType? type, String? key, ComparisonFilterValue? value, }) {return ComparisonFilter(
   type: type ?? this.type,
   key: key ?? this.key,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ComparisonFilter &&
           type == other.type &&
           key == other.key &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(type, key, value); } 
-@override String toString() { return 'ComparisonFilter(type: $type, key: $key, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(type, key, value);}
+@override String toString() {return 'ComparisonFilter(type: $type, key: $key, value: $value)';}
+}

@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Application field by which results are ordered.
 @immutable final class SpectrumApplicationsListSpectrumApplicationsOrder {const SpectrumApplicationsListSpectrumApplicationsOrder._(this.value);
 
-factory SpectrumApplicationsListSpectrumApplicationsOrder.fromJson(String json) { return switch (json) {
+factory SpectrumApplicationsListSpectrumApplicationsOrder.fromJson(String json) {return switch (json) {
   'protocol' => protocol,
   'app_id' => appId,
   'created_on' => createdOn,
   'modified_on' => modifiedOn,
   'dns' => dns,
   _ => SpectrumApplicationsListSpectrumApplicationsOrder._(json),
-}; }
+};}
 
 static const SpectrumApplicationsListSpectrumApplicationsOrder protocol = SpectrumApplicationsListSpectrumApplicationsOrder._('protocol');
 
@@ -26,11 +26,11 @@ static const List<SpectrumApplicationsListSpectrumApplicationsOrder> values = [p
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpectrumApplicationsListSpectrumApplicationsOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpectrumApplicationsListSpectrumApplicationsOrder($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SpectrumApplicationsListSpectrumApplicationsOrder && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SpectrumApplicationsListSpectrumApplicationsOrder($value)';}
+}

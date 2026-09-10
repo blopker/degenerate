@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPricesPriceRequestCurrencyOptionsVariant1ValueTiersUpToVariant1 {const PostPricesPriceRequestCurrencyOptionsVariant1ValueTiersUpToVariant1._(this.value);
 
-factory PostPricesPriceRequestCurrencyOptionsVariant1ValueTiersUpToVariant1.fromJson(String json) { return switch (json) {
+factory PostPricesPriceRequestCurrencyOptionsVariant1ValueTiersUpToVariant1.fromJson(String json) {return switch (json) {
   'inf' => inf,
   _ => PostPricesPriceRequestCurrencyOptionsVariant1ValueTiersUpToVariant1._(json),
-}; }
+};}
 
 static const PostPricesPriceRequestCurrencyOptionsVariant1ValueTiersUpToVariant1 inf = PostPricesPriceRequestCurrencyOptionsVariant1ValueTiersUpToVariant1._('inf');
 
@@ -13,14 +13,14 @@ static const List<PostPricesPriceRequestCurrencyOptionsVariant1ValueTiersUpToVar
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPricesPriceRequestCurrencyOptionsVariant1ValueTiersUpToVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPricesPriceRequestCurrencyOptionsVariant1ValueTiersUpToVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPricesPriceRequestCurrencyOptionsVariant1ValueTiersUpToVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPricesPriceRequestCurrencyOptionsVariant1ValueTiersUpToVariant1($value)';}
+}
 
 @immutable
 final class PostPricesPriceRequestCurrencyOptionsVariant1ValueTiersUpTo {

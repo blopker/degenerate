@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BuildsErrorResponseErrors {const BuildsErrorResponseErrors({required this.message, this.code, });
 
-factory BuildsErrorResponseErrors.fromJson(Map<String, dynamic> json) { return BuildsErrorResponseErrors(
+factory BuildsErrorResponseErrors.fromJson(Map<String, dynamic> json) {return BuildsErrorResponseErrors(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,
   message: json['message'] as String,
-); }
+);}
 
 final int? code;
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': ?code,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-BuildsErrorResponseErrors copyWith({int? Function()? code, String? message, }) { return BuildsErrorResponseErrors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+BuildsErrorResponseErrors copyWith({int? Function()? code, String? message, }) {return BuildsErrorResponseErrors(
   code: code != null ? code() : this.code,
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BuildsErrorResponseErrors &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'BuildsErrorResponseErrors(code: $code, message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return Object.hash(code, message);}
+@override String toString() {return 'BuildsErrorResponseErrors(code: $code, message: $message)';}
+}

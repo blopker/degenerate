@@ -17,7 +17,7 @@ final class CodeSecurityApi with ApiExecutor {const CodeSecurityApi(this.apiConf
 /// OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.
 ///
 /// `GET /enterprises/{enterprise}/code-security/configurations`
-Future<ApiResult<List<CodeSecurityConfiguration>, BasicError>> codeSecurityGetConfigurationsForEnterprise({required String enterprise, int? perPage, String? before, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CodeSecurityConfiguration>, BasicError>> codeSecurityGetConfigurationsForEnterprise({required String enterprise, int? perPage, String? before, String? after, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -57,7 +57,7 @@ return null;
 
   },
 );
- } 
+}
 /// Create a code security configuration for an enterprise
 ///
 /// Creates a code security configuration in an enterprise.
@@ -67,7 +67,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
 /// `POST /enterprises/{enterprise}/code-security/configurations`
-Future<ApiResult<CodeSecurityConfiguration, CodeSecurityCreateConfigurationForEnterpriseError>> codeSecurityCreateConfigurationForEnterprise({required String enterprise, required CodeSecurityCreateConfigurationForEnterpriseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeSecurityConfiguration, CodeSecurityCreateConfigurationForEnterpriseError>> codeSecurityCreateConfigurationForEnterprise({required String enterprise, required CodeSecurityCreateConfigurationForEnterpriseRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -86,7 +86,7 @@ return CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>);
   },
   onError: CodeSecurityCreateConfigurationForEnterpriseError.parse,
 );
- } 
+}
 /// Get default code security configurations for an enterprise
 ///
 /// Lists the default code security configurations for an enterprise.
@@ -96,7 +96,7 @@ return CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.
 ///
 /// `GET /enterprises/{enterprise}/code-security/configurations/defaults`
-Future<ApiResult<List<CodeSecurityDefaultConfigurations2>, Never>> codeSecurityGetDefaultConfigurationsForEnterprise({required String enterprise, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CodeSecurityDefaultConfigurations2>, Never>> codeSecurityGetDefaultConfigurationsForEnterprise({required String enterprise, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -112,7 +112,7 @@ final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => CodeSecurityDefaultConfigurations2.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Retrieve a code security configuration of an enterprise
 ///
 /// Gets a code security configuration available in an enterprise.
@@ -122,7 +122,7 @@ return (json as List<dynamic>).map((e) => CodeSecurityDefaultConfigurations2.fro
 /// OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.
 ///
 /// `GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}`
-Future<ApiResult<CodeSecurityConfiguration, CodeSecurityGetSingleConfigurationForEnterpriseError>> codeSecurityGetSingleConfigurationForEnterprise({required String enterprise, required int configurationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeSecurityConfiguration, CodeSecurityGetSingleConfigurationForEnterpriseError>> codeSecurityGetSingleConfigurationForEnterprise({required String enterprise, required int configurationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -139,7 +139,7 @@ return CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>);
   },
   onError: CodeSecurityGetSingleConfigurationForEnterpriseError.parse,
 );
- } 
+}
 /// Update a custom code security configuration for an enterprise
 ///
 /// Updates a code security configuration in an enterprise.
@@ -149,7 +149,7 @@ return CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
 /// `PATCH /enterprises/{enterprise}/code-security/configurations/{configuration_id}`
-Future<ApiResult<CodeSecurityConfiguration, CodeSecurityUpdateEnterpriseConfigurationError>> codeSecurityUpdateEnterpriseConfiguration({required String enterprise, required int configurationId, required CodeSecurityUpdateEnterpriseConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeSecurityConfiguration, CodeSecurityUpdateEnterpriseConfigurationError>> codeSecurityUpdateEnterpriseConfiguration({required String enterprise, required int configurationId, required CodeSecurityUpdateEnterpriseConfigurationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -168,7 +168,7 @@ return CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>);
   },
   onError: CodeSecurityUpdateEnterpriseConfigurationError.parse,
 );
- } 
+}
 /// Delete a code security configuration for an enterprise
 ///
 /// Deletes a code security configuration from an enterprise.
@@ -180,7 +180,7 @@ return CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
 /// `DELETE /enterprises/{enterprise}/code-security/configurations/{configuration_id}`
-Future<ApiResult<void, CodeSecurityDeleteConfigurationForEnterpriseError>> codeSecurityDeleteConfigurationForEnterprise({required String enterprise, required int configurationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, CodeSecurityDeleteConfigurationForEnterpriseError>> codeSecurityDeleteConfigurationForEnterprise({required String enterprise, required int configurationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -194,7 +194,7 @@ return await execute(
   onSuccess: (_) {},
   onError: CodeSecurityDeleteConfigurationForEnterpriseError.parse,
 );
- } 
+}
 /// Attach an enterprise configuration to repositories
 ///
 /// Attaches an enterprise code security configuration to repositories. If the repositories specified are already attached to a configuration, they will be re-attached to the provided configuration.
@@ -206,7 +206,7 @@ return await execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
 /// `POST /enterprises/{enterprise}/code-security/configurations/{configuration_id}/attach`
-Future<ApiResult<Map<String, dynamic>, BasicError>> codeSecurityAttachEnterpriseConfiguration({required String enterprise, required int configurationId, required CodeSecurityAttachEnterpriseConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, BasicError>> codeSecurityAttachEnterpriseConfiguration({required String enterprise, required int configurationId, required CodeSecurityAttachEnterpriseConfigurationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -234,7 +234,7 @@ return null;
 
   },
 );
- } 
+}
 /// Set a code security configuration as a default for an enterprise
 ///
 /// Sets a code security configuration as a default to be applied to new repositories in your enterprise.
@@ -246,7 +246,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
 /// `PUT /enterprises/{enterprise}/code-security/configurations/{configuration_id}/defaults`
-Future<ApiResult<CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse, BasicError>> codeSecuritySetConfigurationAsDefaultForEnterprise({required String enterprise, required int configurationId, required CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse, BasicError>> codeSecuritySetConfigurationAsDefaultForEnterprise({required String enterprise, required int configurationId, required CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -274,7 +274,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get repositories associated with an enterprise code security configuration
 ///
 /// Lists the repositories associated with an enterprise code security configuration in an organization.
@@ -284,7 +284,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.
 ///
 /// `GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}/repositories`
-Future<ApiResult<List<CodeSecurityConfigurationRepositories>, BasicError>> codeSecurityGetRepositoriesForEnterpriseConfiguration({required String enterprise, required int configurationId, int? perPage, String? before, String? after, String? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CodeSecurityConfigurationRepositories>, BasicError>> codeSecurityGetRepositoriesForEnterpriseConfiguration({required String enterprise, required int configurationId, int? perPage, String? before, String? after, String? status, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -327,7 +327,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get code security configurations for an organization
 ///
 /// Lists all code security configurations available in an organization.
@@ -337,7 +337,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/code-security/configurations`
-Future<ApiResult<List<CodeSecurityConfiguration>, BasicError>> codeSecurityGetConfigurationsForOrg({required String org, CodeSecurityGetConfigurationsForOrgTargetType? targetType, int? perPage, String? before, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CodeSecurityConfiguration>, BasicError>> codeSecurityGetConfigurationsForOrg({required String org, CodeSecurityGetConfigurationsForOrgTargetType? targetType, int? perPage, String? before, String? after, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (targetType != null) {
   queryParameters['target_type'] = targetType.toJson();
@@ -380,7 +380,7 @@ return null;
 
   },
 );
- } 
+}
 /// Create a code security configuration
 ///
 /// Creates a code security configuration in an organization.
@@ -390,7 +390,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/code-security/configurations`
-Future<ApiResult<CodeSecurityConfiguration, Never>> codeSecurityCreateConfiguration({required String org, required CodeSecurityCreateConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeSecurityConfiguration, Never>> codeSecurityCreateConfiguration({required String org, required CodeSecurityCreateConfigurationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -408,7 +408,7 @@ final json = jsonDecode(response.body);
 return CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Get default code security configurations
 ///
 /// Lists the default code security configurations for an organization.
@@ -418,7 +418,7 @@ return CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/code-security/configurations/defaults`
-Future<ApiResult<List<CodeSecurityDefaultConfigurations2>, CodeSecurityGetDefaultConfigurationsError>> codeSecurityGetDefaultConfigurations({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CodeSecurityDefaultConfigurations2>, CodeSecurityGetDefaultConfigurationsError>> codeSecurityGetDefaultConfigurations({required String org, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -435,7 +435,7 @@ return (json as List<dynamic>).map((e) => CodeSecurityDefaultConfigurations2.fro
   },
   onError: CodeSecurityGetDefaultConfigurationsError.parse,
 );
- } 
+}
 /// Detach configurations from repositories
 ///
 /// Detach code security configuration(s) from a set of repositories.
@@ -446,7 +446,7 @@ return (json as List<dynamic>).map((e) => CodeSecurityDefaultConfigurations2.fro
 /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/code-security/configurations/detach`
-Future<ApiResult<void, CodeSecurityDetachConfigurationError>> codeSecurityDetachConfiguration({required String org, required CodeSecurityDetachConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, CodeSecurityDetachConfigurationError>> codeSecurityDetachConfiguration({required String org, required CodeSecurityDetachConfigurationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -462,7 +462,7 @@ return await execute(
   onSuccess: (_) {},
   onError: CodeSecurityDetachConfigurationError.parse,
 );
- } 
+}
 /// Get a code security configuration
 ///
 /// Gets a code security configuration available in an organization.
@@ -472,7 +472,7 @@ return await execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/code-security/configurations/{configuration_id}`
-Future<ApiResult<CodeSecurityConfiguration, CodeSecurityGetConfigurationError>> codeSecurityGetConfiguration({required String org, required int configurationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeSecurityConfiguration, CodeSecurityGetConfigurationError>> codeSecurityGetConfiguration({required String org, required int configurationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -489,7 +489,7 @@ return CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>);
   },
   onError: CodeSecurityGetConfigurationError.parse,
 );
- } 
+}
 /// Update a code security configuration
 ///
 /// Updates a code security configuration in an organization.
@@ -499,7 +499,7 @@ return CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/code-security/configurations/{configuration_id}`
-Future<ApiResult<CodeSecurityUpdateConfigurationSuccess, Never>> codeSecurityUpdateConfiguration({required String org, required int configurationId, required CodeSecurityUpdateConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeSecurityUpdateConfigurationSuccess, Never>> codeSecurityUpdateConfiguration({required String org, required int configurationId, required CodeSecurityUpdateConfigurationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -514,7 +514,7 @@ return await execute(
   request,
   onSuccess: CodeSecurityUpdateConfigurationSuccess.parse,
 );
- } 
+}
 /// Delete a code security configuration
 ///
 /// Deletes the desired code security configuration from an organization.
@@ -526,7 +526,7 @@ return await execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/code-security/configurations/{configuration_id}`
-Future<ApiResult<void, CodeSecurityDeleteConfigurationError>> codeSecurityDeleteConfiguration({required String org, required int configurationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, CodeSecurityDeleteConfigurationError>> codeSecurityDeleteConfiguration({required String org, required int configurationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -540,7 +540,7 @@ return await execute(
   onSuccess: (_) {},
   onError: CodeSecurityDeleteConfigurationError.parse,
 );
- } 
+}
 /// Attach a configuration to repositories
 ///
 /// Attach a code security configuration to a set of repositories. If the repositories specified are already attached to a configuration, they will be re-attached to the provided configuration.
@@ -552,7 +552,7 @@ return await execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/code-security/configurations/{configuration_id}/attach`
-Future<ApiResult<Map<String, dynamic>, Never>> codeSecurityAttachConfiguration({required String org, required int configurationId, required CodeSecurityAttachConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, Never>> codeSecurityAttachConfiguration({required String org, required int configurationId, required CodeSecurityAttachConfigurationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -570,7 +570,7 @@ final json = jsonDecode(response.body);
 return json as Map<String, dynamic>;
   },
 );
- } 
+}
 /// Set a code security configuration as a default for an organization
 ///
 /// Sets a code security configuration as a default to be applied to new repositories in your organization.
@@ -582,7 +582,7 @@ return json as Map<String, dynamic>;
 /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/code-security/configurations/{configuration_id}/defaults`
-Future<ApiResult<CodeSecuritySetConfigurationAsDefaultResponse, BasicError>> codeSecuritySetConfigurationAsDefault({required String org, required int configurationId, required CodeSecuritySetConfigurationAsDefaultRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeSecuritySetConfigurationAsDefaultResponse, BasicError>> codeSecuritySetConfigurationAsDefault({required String org, required int configurationId, required CodeSecuritySetConfigurationAsDefaultRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -610,7 +610,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get repositories associated with a code security configuration
 ///
 /// Lists the repositories associated with a code security configuration in an organization.
@@ -620,7 +620,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/code-security/configurations/{configuration_id}/repositories`
-Future<ApiResult<List<CodeSecurityConfigurationRepositories>, BasicError>> codeSecurityGetRepositoriesForConfiguration({required String org, required int configurationId, int? perPage, String? before, String? after, String? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CodeSecurityConfigurationRepositories>, BasicError>> codeSecurityGetRepositoriesForConfiguration({required String org, required int configurationId, int? perPage, String? before, String? after, String? status, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -663,7 +663,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get the code security configuration associated with a repository
 ///
 /// Get the code security configuration that manages a repository's code security settings.
@@ -673,7 +673,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/code-security-configuration`
-Future<ApiResult<CodeSecurityGetConfigurationForRepositorySuccess, CodeSecurityGetConfigurationForRepositoryError>> codeSecurityGetConfigurationForRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeSecurityGetConfigurationForRepositorySuccess, CodeSecurityGetConfigurationForRepositoryError>> codeSecurityGetConfigurationForRepository({required String owner, required String repo, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -687,5 +687,5 @@ return await execute(
   onSuccess: CodeSecurityGetConfigurationForRepositorySuccess.parse,
   onError: CodeSecurityGetConfigurationForRepositoryError.parse,
 );
- } 
- }
+}
+}

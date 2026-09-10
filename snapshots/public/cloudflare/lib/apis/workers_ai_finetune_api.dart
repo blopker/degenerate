@@ -11,7 +11,7 @@ final class WorkersAiFinetuneApi with ApiExecutor {const WorkersAiFinetuneApi(th
 /// List Finetunes
 ///
 /// `GET /accounts/{account_id}/ai/finetunes`
-Future<ApiResult<WorkersAiListFinetunesResponseResult, WorkersAiListFinetunesResponse400>> workersAiListFinetunes({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersAiListFinetunesResponseResult, WorkersAiListFinetunesResponse400>> workersAiListFinetunes({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -37,11 +37,11 @@ return null;
 
   },
 );
- } 
+}
 /// Create a new Finetune
 ///
 /// `POST /accounts/{account_id}/ai/finetunes`
-Future<ApiResult<WorkersAiCreateFinetuneResponseResult, WorkersAiCreateFinetuneResponse400>> workersAiCreateFinetune({required String accountId, WorkersAiCreateFinetuneRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersAiCreateFinetuneResponseResult, WorkersAiCreateFinetuneResponse400>> workersAiCreateFinetune({required String accountId, WorkersAiCreateFinetuneRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -69,11 +69,11 @@ return null;
 
   },
 );
- } 
+}
 /// Upload a Finetune Asset
 ///
 /// `POST /accounts/{account_id}/ai/finetunes/{finetune_id}/finetune-assets`
-Future<ApiResult<WorkersAiUploadFinetuneAssetResponse, WorkersAiUploadFinetuneAssetResponse400>> workersAiUploadFinetuneAsset({required String accountId, required String finetuneId, WorkersAiUploadFinetuneAssetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersAiUploadFinetuneAssetResponse, WorkersAiUploadFinetuneAssetResponse400>> workersAiUploadFinetuneAsset({required String accountId, required String finetuneId, WorkersAiUploadFinetuneAssetRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -106,11 +106,11 @@ return null;
 
   },
 );
- } 
+}
 /// List Public Finetunes
 ///
 /// `GET /accounts/{account_id}/ai/finetunes/public`
-Future<ApiResult<List<WorkersAiListPublicFinetunesResponseResult>, WorkersAiListPublicFinetunesResponse400>> workersAiListPublicFinetunes({required String accountId, double? limit, double? offset, String? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorkersAiListPublicFinetunesResponseResult>, WorkersAiListPublicFinetunesResponse400>> workersAiListPublicFinetunes({required String accountId, double? limit, double? offset, String? orderBy, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -150,5 +150,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Apply custom cac
 /// 
 @immutable final class ZonesCacheLevelId {const ZonesCacheLevelId._(this.value);
 
-factory ZonesCacheLevelId.fromJson(String json) { return switch (json) {
+factory ZonesCacheLevelId.fromJson(String json) {return switch (json) {
   'cache_level' => cacheLevel,
   _ => ZonesCacheLevelId._(json),
-}; }
+};}
 
 static const ZonesCacheLevelId cacheLevel = ZonesCacheLevelId._('cache_level');
 
@@ -15,14 +15,14 @@ static const List<ZonesCacheLevelId> values = [cacheLevel];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesCacheLevelId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesCacheLevelId($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesCacheLevelId && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesCacheLevelId($value)';}
+}
 /// * `bypass`: Cloudflare does not cache.
 /// * `basic`: Delivers resources from cache when there is no query
 ///   string.
@@ -35,14 +35,14 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class ZonesCacheLevelValue2 {const ZonesCacheLevelValue2._(this.value);
 
-factory ZonesCacheLevelValue2.fromJson(String json) { return switch (json) {
+factory ZonesCacheLevelValue2.fromJson(String json) {return switch (json) {
   'bypass' => bypass,
   'basic' => basic,
   'simplified' => simplified,
   'aggressive' => aggressive,
   'cache_everything' => cacheEverything,
   _ => ZonesCacheLevelValue2._(json),
-}; }
+};}
 
 static const ZonesCacheLevelValue2 bypass = ZonesCacheLevelValue2._('bypass');
 
@@ -58,20 +58,20 @@ static const List<ZonesCacheLevelValue2> values = [bypass, basic, simplified, ag
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesCacheLevelValue2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesCacheLevelValue2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesCacheLevelValue2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesCacheLevelValue2($value)';}
+}
 @immutable final class ZonesCacheLevel {const ZonesCacheLevel({this.id, this.value, });
 
-factory ZonesCacheLevel.fromJson(Map<String, dynamic> json) { return ZonesCacheLevel(
+factory ZonesCacheLevel.fromJson(Map<String, dynamic> json) {return ZonesCacheLevel(
   id: json['id'] != null ? ZonesCacheLevelId.fromJson(json['id'] as String) : null,
   value: json['value'] != null ? ZonesCacheLevelValue2.fromJson(json['value'] as String) : null,
-); }
+);}
 
 /// Apply custom caching based on the option selected.
 /// 
@@ -89,19 +89,19 @@ final ZonesCacheLevelId? id;
 /// 
 final ZonesCacheLevelValue2? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesCacheLevel copyWith({ZonesCacheLevelId? Function()? id, ZonesCacheLevelValue2? Function()? value, }) { return ZonesCacheLevel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'value'}.contains(key));}
+ZonesCacheLevel copyWith({ZonesCacheLevelId? Function()? id, ZonesCacheLevelValue2? Function()? value, }) {return ZonesCacheLevel(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZonesCacheLevel &&
           id == other.id &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, value); } 
-@override String toString() { return 'ZonesCacheLevel(id: $id, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(id, value);}
+@override String toString() {return 'ZonesCacheLevel(id: $id, value: $value)';}
+}

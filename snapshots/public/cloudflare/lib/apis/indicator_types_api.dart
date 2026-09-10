@@ -11,7 +11,7 @@ final class IndicatorTypesApi with ApiExecutor {const IndicatorTypesApi(this.api
 /// Lists indicator types across multiple datasets
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/indicator-types`
-Future<ApiResult<GetIndicatorTypesListResponse, GetIndicatorTypesListResponse400>> getIndicatorTypesList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIndicatorTypesListResponse, GetIndicatorTypesListResponse400>> getIndicatorTypesList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
@@ -47,5 +47,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

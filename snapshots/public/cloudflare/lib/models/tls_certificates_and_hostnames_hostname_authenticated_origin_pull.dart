@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_components_schemas_created_at.dart';import 'tls_certificates_and_hostnames_components_schemas_updated_at.dart';import 'tls_certificates_and_hostnames_components_schemas_uploaded_on.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_certificate.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_enabled.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_expires_on.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_status.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_issuer.dart';import 'tls_certificates_and_hostnames_schemas_hostname.dart';import 'tls_certificates_and_hostnames_schemas_private_key.dart';import 'tls_certificates_and_hostnames_serial_number.dart';import 'tls_certificates_and_hostnames_signature.dart';@immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull({this.certId, this.certStatus, this.certUpdatedAt, this.certUploadedOn, this.certificate, this.createdAt, this.enabled = const Omittable.absent(), this.expiresOn, this.hostname, this.issuer, this.serialNumber, this.signature, this.status, this.updatedAt, this.id, this.privateKey, });
 
-factory TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull(
+factory TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull(
   certId: json['cert_id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['cert_id'] as String) : null,
   certStatus: json['cert_status'] != null ? TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus.fromJson(json['cert_status'] as String) : null,
   certUpdatedAt: json['cert_updated_at'] != null ? TlsCertificatesAndHostnamesComponentsSchemasUpdatedAt.fromJson(json['cert_updated_at'] as String) : null,
@@ -19,7 +19,7 @@ factory TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull.fromJson(Map<
   updatedAt: json['updated_at'] != null ? TlsCertificatesAndHostnamesComponentsSchemasUpdatedAt.fromJson(json['updated_at'] as String) : null,
   id: json['id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['id'] as String) : null,
   privateKey: json['private_key'] != null ? TlsCertificatesAndHostnamesSchemasPrivateKey.fromJson(json['private_key'] as String) : null,
-); }
+);}
 
 final TlsCertificatesAndHostnamesIdentifier? certId;
 
@@ -57,7 +57,7 @@ final TlsCertificatesAndHostnamesIdentifier? id;
 
 final TlsCertificatesAndHostnamesSchemasPrivateKey? privateKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (certId != null) 'cert_id': certId?.toJson(),
   if (certStatus != null) 'cert_status': certStatus?.toJson(),
   if (certUpdatedAt != null) 'cert_updated_at': certUpdatedAt?.toJson(),
@@ -74,9 +74,9 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (privateKey != null) 'private_key': privateKey?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cert_id', 'cert_status', 'cert_updated_at', 'cert_uploaded_on', 'certificate', 'created_at', 'enabled', 'expires_on', 'hostname', 'issuer', 'serial_number', 'signature', 'status', 'updated_at', 'id', 'private_key'}.contains(key)); } 
-TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull copyWith({TlsCertificatesAndHostnamesIdentifier? Function()? certId, TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus? Function()? certStatus, TlsCertificatesAndHostnamesComponentsSchemasUpdatedAt? Function()? certUpdatedAt, TlsCertificatesAndHostnamesComponentsSchemasUploadedOn? Function()? certUploadedOn, TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificate? Function()? certificate, TlsCertificatesAndHostnamesComponentsSchemasCreatedAt? Function()? createdAt, Omittable<TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasEnabled?>? enabled, TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasExpiresOn? Function()? expiresOn, TlsCertificatesAndHostnamesSchemasHostname? Function()? hostname, TlsCertificatesAndHostnamesIssuer? Function()? issuer, TlsCertificatesAndHostnamesSerialNumber? Function()? serialNumber, TlsCertificatesAndHostnamesSignature? Function()? signature, TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus? Function()? status, TlsCertificatesAndHostnamesComponentsSchemasUpdatedAt? Function()? updatedAt, TlsCertificatesAndHostnamesIdentifier? Function()? id, TlsCertificatesAndHostnamesSchemasPrivateKey? Function()? privateKey, }) { return TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cert_id', 'cert_status', 'cert_updated_at', 'cert_uploaded_on', 'certificate', 'created_at', 'enabled', 'expires_on', 'hostname', 'issuer', 'serial_number', 'signature', 'status', 'updated_at', 'id', 'private_key'}.contains(key));}
+TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull copyWith({TlsCertificatesAndHostnamesIdentifier? Function()? certId, TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus? Function()? certStatus, TlsCertificatesAndHostnamesComponentsSchemasUpdatedAt? Function()? certUpdatedAt, TlsCertificatesAndHostnamesComponentsSchemasUploadedOn? Function()? certUploadedOn, TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificate? Function()? certificate, TlsCertificatesAndHostnamesComponentsSchemasCreatedAt? Function()? createdAt, Omittable<TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasEnabled?>? enabled, TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasExpiresOn? Function()? expiresOn, TlsCertificatesAndHostnamesSchemasHostname? Function()? hostname, TlsCertificatesAndHostnamesIssuer? Function()? issuer, TlsCertificatesAndHostnamesSerialNumber? Function()? serialNumber, TlsCertificatesAndHostnamesSignature? Function()? signature, TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus? Function()? status, TlsCertificatesAndHostnamesComponentsSchemasUpdatedAt? Function()? updatedAt, TlsCertificatesAndHostnamesIdentifier? Function()? id, TlsCertificatesAndHostnamesSchemasPrivateKey? Function()? privateKey, }) {return TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull(
   certId: certId != null ? certId() : this.certId,
   certStatus: certStatus != null ? certStatus() : this.certStatus,
   certUpdatedAt: certUpdatedAt != null ? certUpdatedAt() : this.certUpdatedAt,
@@ -93,8 +93,8 @@ TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull copyWith({TlsCertific
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   id: id != null ? id() : this.id,
   privateKey: privateKey != null ? privateKey() : this.privateKey,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull &&
           certId == other.certId &&
           certStatus == other.certStatus &&
@@ -111,7 +111,7 @@ TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull copyWith({TlsCertific
           status == other.status &&
           updatedAt == other.updatedAt &&
           id == other.id &&
-          privateKey == other.privateKey; } 
-@override int get hashCode { return Object.hash(certId, certStatus, certUpdatedAt, certUploadedOn, certificate, createdAt, enabled, expiresOn, hostname, issuer, serialNumber, signature, status, updatedAt, id, privateKey); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull(certId: $certId, certStatus: $certStatus, certUpdatedAt: $certUpdatedAt, certUploadedOn: $certUploadedOn, certificate: $certificate, createdAt: $createdAt, enabled: $enabled, expiresOn: $expiresOn, hostname: $hostname, issuer: $issuer, serialNumber: $serialNumber, signature: $signature, status: $status, updatedAt: $updatedAt, id: $id, privateKey: $privateKey)'; } 
- }
+          privateKey == other.privateKey;}
+@override int get hashCode {return Object.hash(certId, certStatus, certUpdatedAt, certUploadedOn, certificate, createdAt, enabled, expiresOn, hostname, issuer, serialNumber, signature, status, updatedAt, id, privateKey);}
+@override String toString() {return 'TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull(certId: $certId, certStatus: $certStatus, certUpdatedAt: $certUpdatedAt, certUploadedOn: $certUploadedOn, certificate: $certificate, createdAt: $createdAt, enabled: $enabled, expiresOn: $expiresOn, hostname: $hostname, issuer: $issuer, serialNumber: $serialNumber, signature: $signature, status: $status, updatedAt: $updatedAt, id: $id, privateKey: $privateKey)';}
+}

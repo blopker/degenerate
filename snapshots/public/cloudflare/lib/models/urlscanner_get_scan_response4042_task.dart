@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse4042Task {const UrlscannerGetScanResponse4042Task({required this.status, required this.time, required this.url, required this.uuid, required this.visibility, });
 
-factory UrlscannerGetScanResponse4042Task.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse4042Task(
+factory UrlscannerGetScanResponse4042Task.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse4042Task(
   status: json['status'] as String,
   time: json['time'] as String,
   url: json['url'] as String,
   uuid: json['uuid'] as String,
   visibility: json['visibility'] as String,
-); }
+);}
 
 final String status;
 
@@ -20,32 +20,32 @@ final String uuid;
 
 final String visibility;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'status': status,
   'time': time,
   'url': url,
   'uuid': uuid,
   'visibility': visibility,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status') && json['status'] is String &&
       json.containsKey('time') && json['time'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('uuid') && json['uuid'] is String &&
-      json.containsKey('visibility') && json['visibility'] is String; } 
-UrlscannerGetScanResponse4042Task copyWith({String? status, String? time, String? url, String? uuid, String? visibility, }) { return UrlscannerGetScanResponse4042Task(
+      json.containsKey('visibility') && json['visibility'] is String;}
+UrlscannerGetScanResponse4042Task copyWith({String? status, String? time, String? url, String? uuid, String? visibility, }) {return UrlscannerGetScanResponse4042Task(
   status: status ?? this.status,
   time: time ?? this.time,
   url: url ?? this.url,
   uuid: uuid ?? this.uuid,
   visibility: visibility ?? this.visibility,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponse4042Task &&
           status == other.status &&
           time == other.time &&
           url == other.url &&
           uuid == other.uuid &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(status, time, url, uuid, visibility); } 
-@override String toString() { return 'UrlscannerGetScanResponse4042Task(status: $status, time: $time, url: $url, uuid: $uuid, visibility: $visibility)'; } 
- }
+          visibility == other.visibility;}
+@override int get hashCode {return Object.hash(status, time, url, uuid, visibility);}
+@override String toString() {return 'UrlscannerGetScanResponse4042Task(status: $status, time: $time, url: $url, uuid: $uuid, visibility: $visibility)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_file_links.dart';@immutable final class ContentFileType {const ContentFileType._(this.value);
 
-factory ContentFileType.fromJson(String json) { return switch (json) {
+factory ContentFileType.fromJson(String json) {return switch (json) {
   'file' => file,
   _ => ContentFileType._(json),
-}; }
+};}
 
 static const ContentFileType file = ContentFileType._('file');
 
@@ -13,18 +13,18 @@ static const List<ContentFileType> values = [file];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContentFileType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContentFileType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ContentFileType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ContentFileType($value)';}
+}
 /// Content File
 @immutable final class ContentFile {const ContentFile({required this.type, required this.encoding, required this.size, required this.name, required this.path, required this.content, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, this.target, this.submoduleGitUrl, });
 
-factory ContentFile.fromJson(Map<String, dynamic> json) { return ContentFile(
+factory ContentFile.fromJson(Map<String, dynamic> json) {return ContentFile(
   type: ContentFileType.fromJson(json['type'] as String),
   encoding: json['encoding'] as String,
   size: (json['size'] as num).toInt(),
@@ -39,7 +39,7 @@ factory ContentFile.fromJson(Map<String, dynamic> json) { return ContentFile(
   links: ContentFileLinks.fromJson(json['_links'] as Map<String, dynamic>),
   target: json['target'] as String?,
   submoduleGitUrl: json['submodule_git_url'] as String?,
-); }
+);}
 
 final ContentFileType type;
 
@@ -69,7 +69,7 @@ final String? target;
 
 final String? submoduleGitUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'encoding': encoding,
   'size': size,
@@ -84,8 +84,8 @@ Map<String, dynamic> toJson() { return {
   '_links': links.toJson(),
   'target': ?target,
   'submodule_git_url': ?submoduleGitUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('encoding') && json['encoding'] is String &&
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('name') && json['name'] is String &&
@@ -96,8 +96,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('git_url') && (json['git_url'] == null || json['git_url'] is String) &&
       json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String) &&
       json.containsKey('download_url') && (json['download_url'] == null || json['download_url'] is String) &&
-      json.containsKey('_links'); } 
-ContentFile copyWith({ContentFileType? type, String? encoding, int? size, String? name, String? path, String? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentFileLinks? links, String? Function()? target, String? Function()? submoduleGitUrl, }) { return ContentFile(
+      json.containsKey('_links');}
+ContentFile copyWith({ContentFileType? type, String? encoding, int? size, String? name, String? path, String? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentFileLinks? links, String? Function()? target, String? Function()? submoduleGitUrl, }) {return ContentFile(
   type: type ?? this.type,
   encoding: encoding ?? this.encoding,
   size: size ?? this.size,
@@ -112,8 +112,8 @@ ContentFile copyWith({ContentFileType? type, String? encoding, int? size, String
   links: links ?? this.links,
   target: target != null ? target() : this.target,
   submoduleGitUrl: submoduleGitUrl != null ? submoduleGitUrl() : this.submoduleGitUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ContentFile &&
           type == other.type &&
           encoding == other.encoding &&
@@ -128,7 +128,7 @@ ContentFile copyWith({ContentFileType? type, String? encoding, int? size, String
           downloadUrl == other.downloadUrl &&
           links == other.links &&
           target == other.target &&
-          submoduleGitUrl == other.submoduleGitUrl; } 
-@override int get hashCode { return Object.hash(type, encoding, size, name, path, content, sha, url, gitUrl, htmlUrl, downloadUrl, links, target, submoduleGitUrl); } 
-@override String toString() { return 'ContentFile(type: $type, encoding: $encoding, size: $size, name: $name, path: $path, content: $content, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links, target: $target, submoduleGitUrl: $submoduleGitUrl)'; } 
- }
+          submoduleGitUrl == other.submoduleGitUrl;}
+@override int get hashCode {return Object.hash(type, encoding, size, name, path, content, sha, url, gitUrl, htmlUrl, downloadUrl, links, target, submoduleGitUrl);}
+@override String toString() {return 'ContentFile(type: $type, encoding: $encoding, size: $size, name: $name, path: $path, content: $content, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links, target: $target, submoduleGitUrl: $submoduleGitUrl)';}
+}

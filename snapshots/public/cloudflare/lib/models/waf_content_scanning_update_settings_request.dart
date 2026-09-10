@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status value for Content Scanning.
 @immutable final class WafContentScanningUpdateSettingsRequestValue {const WafContentScanningUpdateSettingsRequestValue._(this.value);
 
-factory WafContentScanningUpdateSettingsRequestValue.fromJson(String json) { return switch (json) {
+factory WafContentScanningUpdateSettingsRequestValue.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   _ => WafContentScanningUpdateSettingsRequestValue._(json),
-}; }
+};}
 
 static const WafContentScanningUpdateSettingsRequestValue enabled = WafContentScanningUpdateSettingsRequestValue._('enabled');
 
@@ -17,33 +17,33 @@ static const List<WafContentScanningUpdateSettingsRequestValue> values = [enable
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WafContentScanningUpdateSettingsRequestValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WafContentScanningUpdateSettingsRequestValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WafContentScanningUpdateSettingsRequestValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WafContentScanningUpdateSettingsRequestValue($value)';}
+}
 @immutable final class WafContentScanningUpdateSettingsRequest {const WafContentScanningUpdateSettingsRequest({required this.value});
 
-factory WafContentScanningUpdateSettingsRequest.fromJson(Map<String, dynamic> json) { return WafContentScanningUpdateSettingsRequest(
+factory WafContentScanningUpdateSettingsRequest.fromJson(Map<String, dynamic> json) {return WafContentScanningUpdateSettingsRequest(
   value: WafContentScanningUpdateSettingsRequestValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// The status value for Content Scanning.
 final WafContentScanningUpdateSettingsRequestValue value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('value'); } 
-WafContentScanningUpdateSettingsRequest copyWith({WafContentScanningUpdateSettingsRequestValue? value}) { return WafContentScanningUpdateSettingsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('value');}
+WafContentScanningUpdateSettingsRequest copyWith({WafContentScanningUpdateSettingsRequestValue? value}) {return WafContentScanningUpdateSettingsRequest(
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WafContentScanningUpdateSettingsRequest &&
-          value == other.value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WafContentScanningUpdateSettingsRequest(value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WafContentScanningUpdateSettingsRequest(value: $value)';}
+}

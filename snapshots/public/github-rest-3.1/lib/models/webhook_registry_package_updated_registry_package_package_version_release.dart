@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_registry_package_updated_registry_package_package_version_release_author.dart';@immutable final class WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease {const WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease({required this.author, required this.createdAt, required this.draft, required this.htmlUrl, required this.id, required this.name, required this.prerelease, required this.publishedAt, required this.tagName, required this.targetCommitish, required this.url, });
 
-factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease(
+factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease.fromJson(Map<String, dynamic> json) {return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease(
   author: WebhookRegistryPackageUpdatedRegistryPackagePackageVersionReleaseAuthor.fromJson(json['author'] as Map<String, dynamic>),
   createdAt: json['created_at'] as String,
   draft: json['draft'] as bool,
@@ -14,7 +14,7 @@ factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease.fromJs
   tagName: json['tag_name'] as String,
   targetCommitish: json['target_commitish'] as String,
   url: json['url'] as String,
-); }
+);}
 
 final WebhookRegistryPackageUpdatedRegistryPackagePackageVersionReleaseAuthor author;
 
@@ -38,7 +38,7 @@ final String targetCommitish;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author': author.toJson(),
   'created_at': createdAt,
   'draft': draft,
@@ -50,8 +50,8 @@ Map<String, dynamic> toJson() { return {
   'tag_name': tagName,
   'target_commitish': targetCommitish,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('author') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('author') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('draft') && json['draft'] is bool &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -61,8 +61,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('published_at') && json['published_at'] is String &&
       json.containsKey('tag_name') && json['tag_name'] is String &&
       json.containsKey('target_commitish') && json['target_commitish'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease copyWith({WebhookRegistryPackageUpdatedRegistryPackagePackageVersionReleaseAuthor? author, String? createdAt, bool? draft, String? htmlUrl, int? id, String? name, bool? prerelease, String? publishedAt, String? tagName, String? targetCommitish, String? url, }) { return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease(
+      json.containsKey('url') && json['url'] is String;}
+WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease copyWith({WebhookRegistryPackageUpdatedRegistryPackagePackageVersionReleaseAuthor? author, String? createdAt, bool? draft, String? htmlUrl, int? id, String? name, bool? prerelease, String? publishedAt, String? tagName, String? targetCommitish, String? url, }) {return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease(
   author: author ?? this.author,
   createdAt: createdAt ?? this.createdAt,
   draft: draft ?? this.draft,
@@ -74,8 +74,8 @@ WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease copyWith({Webh
   tagName: tagName ?? this.tagName,
   targetCommitish: targetCommitish ?? this.targetCommitish,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease &&
           author == other.author &&
           createdAt == other.createdAt &&
@@ -87,7 +87,7 @@ WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease copyWith({Webh
           publishedAt == other.publishedAt &&
           tagName == other.tagName &&
           targetCommitish == other.targetCommitish &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(author, createdAt, draft, htmlUrl, id, name, prerelease, publishedAt, tagName, targetCommitish, url); } 
-@override String toString() { return 'WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease(author: $author, createdAt: $createdAt, draft: $draft, htmlUrl: $htmlUrl, id: $id, name: $name, prerelease: $prerelease, publishedAt: $publishedAt, tagName: $tagName, targetCommitish: $targetCommitish, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(author, createdAt, draft, htmlUrl, id, name, prerelease, publishedAt, tagName, targetCommitish, url);}
+@override String toString() {return 'WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease(author: $author, createdAt: $createdAt, draft: $draft, htmlUrl: $htmlUrl, id: $id, name: $name, prerelease: $prerelease, publishedAt: $publishedAt, tagName: $tagName, targetCommitish: $targetCommitish, url: $url)';}
+}

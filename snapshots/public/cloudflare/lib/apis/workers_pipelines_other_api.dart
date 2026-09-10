@@ -13,7 +13,7 @@ final class WorkersPipelinesOtherApi with ApiExecutor {const WorkersPipelinesOth
 /// List/Filter Pipelines in Account.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/pipelines`
-Future<ApiResult<List<PipelinesResponseResult>, Never>> getV4AccountsByAccountIdPipelinesV1Pipelines({required CloudflarePipelinesWorkersPipelinesAccountId accountId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<PipelinesResponseResult>, Never>> getV4AccountsByAccountIdPipelinesV1Pipelines({required CloudflarePipelinesWorkersPipelinesAccountId accountId, double? page, double? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -40,13 +40,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return (json['result'] as List<dynamic>).map((e) => PipelinesResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Create Pipeline
 ///
 /// Create a new Pipeline.
 ///
 /// `POST /accounts/{account_id}/pipelines/v1/pipelines`
-Future<ApiResult<PipelinesResponse2Result, Never>> postV4AccountsByAccountIdPipelinesV1Pipelines({required CloudflarePipelinesWorkersPipelinesAccountId accountId, PipelinesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PipelinesResponse2Result, Never>> postV4AccountsByAccountIdPipelinesV1Pipelines({required CloudflarePipelinesWorkersPipelinesAccountId accountId, PipelinesRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -64,13 +64,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return PipelinesResponse2Result.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Get Pipeline Details
 ///
 /// Get Pipelines Details.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/pipelines/{pipeline_id}`
-Future<ApiResult<PipelinesByPipelineIdResponseResult, Never>> getV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesPipelineId pipelineId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PipelinesByPipelineIdResponseResult, Never>> getV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesPipelineId pipelineId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -86,13 +86,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return PipelinesByPipelineIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete Pipelines
 ///
 /// Delete Pipeline in Account.
 ///
 /// `DELETE /accounts/{account_id}/pipelines/v1/pipelines/{pipeline_id}`
-Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesPipelineId pipelineId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesPipelineId pipelineId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -105,13 +105,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// List Sinks
 ///
 /// List/Filter Sinks in Account.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/sinks`
-Future<ApiResult<List<SinksResponseResult>, Never>> getV4AccountsByAccountIdPipelinesV1Sinks({required CloudflarePipelinesWorkersPipelinesAccountId accountId, String? pipelineId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SinksResponseResult>, Never>> getV4AccountsByAccountIdPipelinesV1Sinks({required CloudflarePipelinesWorkersPipelinesAccountId accountId, String? pipelineId, double? page, double? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pipelineId != null) {
   queryParameters['pipeline_id'] = pipelineId;
@@ -141,13 +141,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return (json['result'] as List<dynamic>).map((e) => SinksResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Create Sink
 ///
 /// Create a new Sink.
 ///
 /// `POST /accounts/{account_id}/pipelines/v1/sinks`
-Future<ApiResult<SinksResponse2Result, Never>> postV4AccountsByAccountIdPipelinesV1Sinks({required CloudflarePipelinesWorkersPipelinesAccountId accountId, SinksRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SinksResponse2Result, Never>> postV4AccountsByAccountIdPipelinesV1Sinks({required CloudflarePipelinesWorkersPipelinesAccountId accountId, SinksRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -165,13 +165,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return SinksResponse2Result.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Get Sink Details
 ///
 /// Get Sink Details.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/sinks/{sink_id}`
-Future<ApiResult<SinksBySinkIdResponseResult, Never>> getV4AccountsByAccountIdPipelinesV1SinksBySinkId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesSinkId sinkId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SinksBySinkIdResponseResult, Never>> getV4AccountsByAccountIdPipelinesV1SinksBySinkId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesSinkId sinkId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -187,13 +187,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return SinksBySinkIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete Sink
 ///
 /// Delete Pipeline in Account.
 ///
 /// `DELETE /accounts/{account_id}/pipelines/v1/sinks/{sink_id}`
-Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1SinksBySinkId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesSinkId sinkId, String? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1SinksBySinkId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesSinkId sinkId, String? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (force != null) {
   queryParameters['force'] = force;
@@ -214,13 +214,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// List Streams
 ///
 /// List/Filter Streams in Account.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/streams`
-Future<ApiResult<List<StreamsResponseResult>, Never>> getV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, CloudflarePipelinesWorkersPipelinesPipelineId? pipelineId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<StreamsResponseResult>, Never>> getV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, CloudflarePipelinesWorkersPipelinesPipelineId? pipelineId, double? page, double? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pipelineId != null) {
   queryParameters['pipeline_id'] = pipelineId.toString();
@@ -250,13 +250,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return (json['result'] as List<dynamic>).map((e) => StreamsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Create Stream
 ///
 /// Create a new Stream.
 ///
 /// `POST /accounts/{account_id}/pipelines/v1/streams`
-Future<ApiResult<StreamsResponse2Result, Never>> postV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, StreamsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamsResponse2Result, Never>> postV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, StreamsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -274,13 +274,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return StreamsResponse2Result.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Get Stream Details
 ///
 /// Get Stream Details.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/streams/{stream_id}`
-Future<ApiResult<StreamsByStreamIdResponseResult, Never>> getV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesStreamId streamId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamsByStreamIdResponseResult, Never>> getV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesStreamId streamId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -296,13 +296,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return StreamsByStreamIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Update Stream
 ///
 /// Update a Stream.
 ///
 /// `PATCH /accounts/{account_id}/pipelines/v1/streams/{stream_id}`
-Future<ApiResult<StreamsByStreamIdResponse2Result, Never>> patchV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesStreamId streamId, StreamsByStreamIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamsByStreamIdResponse2Result, Never>> patchV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesStreamId streamId, StreamsByStreamIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -320,13 +320,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return StreamsByStreamIdResponse2Result.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete Stream
 ///
 /// Delete Stream in Account.
 ///
 /// `DELETE /accounts/{account_id}/pipelines/v1/streams/{stream_id}`
-Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesStreamId streamId, String? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesStreamId streamId, String? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (force != null) {
   queryParameters['force'] = force;
@@ -347,13 +347,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Validate SQL
 ///
 /// Validate Arroyo SQL.
 ///
 /// `POST /accounts/{account_id}/pipelines/v1/validate_sql`
-Future<ApiResult<ValidateSqlResponseResult, Never>> postV4AccountsByAccountIdPipelinesV1ValidateSql({required CloudflarePipelinesWorkersPipelinesAccountId accountId, ValidateSqlRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ValidateSqlResponseResult, Never>> postV4AccountsByAccountIdPipelinesV1ValidateSql({required CloudflarePipelinesWorkersPipelinesAccountId accountId, ValidateSqlRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -371,5 +371,5 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return ValidateSqlResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

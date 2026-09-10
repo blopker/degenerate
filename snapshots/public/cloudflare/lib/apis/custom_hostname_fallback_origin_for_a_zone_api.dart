@@ -13,7 +13,7 @@ final class CustomHostnameFallbackOriginForAZoneApi with ApiExecutor {const Cust
 /// Retrieves the current fallback origin configuration for custom hostnames on a zone. The fallback origin handles traffic when specific custom hostname origins are unavailable.
 ///
 /// `GET /zones/{zone_id}/custom_hostnames/fallback_origin`
-Future<ApiResult<TlsCertificatesAndHostnamesFallbackorigin?, CustomHostnameFallbackOriginForAZoneGetFallbackOriginForCustomHostnamesResponse4xx>> customHostnameFallbackOriginForAZoneGetFallbackOriginForCustomHostnames({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesFallbackorigin?, CustomHostnameFallbackOriginForAZoneGetFallbackOriginForCustomHostnamesResponse4xx>> customHostnameFallbackOriginForAZoneGetFallbackOriginForCustomHostnames({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update Fallback Origin for Custom Hostnames
 ///
 /// Updates the fallback origin configuration for custom hostnames on a zone. Sets the default origin server for custom hostname traffic.
 ///
 /// `PUT /zones/{zone_id}/custom_hostnames/fallback_origin`
-Future<ApiResult<TlsCertificatesAndHostnamesFallbackorigin?, CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesResponse4xx>> customHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnames({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesFallbackorigin?, CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesResponse4xx>> customHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnames({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Fallback Origin for Custom Hostnames
 ///
 /// Removes the fallback origin configuration for custom hostnames on a zone. Custom hostnames without specific origins will no longer have a fallback.
 ///
 /// `DELETE /zones/{zone_id}/custom_hostnames/fallback_origin`
-Future<ApiResult<TlsCertificatesAndHostnamesFallbackorigin?, CustomHostnameFallbackOriginForAZoneDeleteFallbackOriginForCustomHostnamesResponse4xx>> customHostnameFallbackOriginForAZoneDeleteFallbackOriginForCustomHostnames({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesFallbackorigin?, CustomHostnameFallbackOriginForAZoneDeleteFallbackOriginForCustomHostnamesResponse4xx>> customHostnameFallbackOriginForAZoneDeleteFallbackOriginForCustomHostnames({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -105,5 +105,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

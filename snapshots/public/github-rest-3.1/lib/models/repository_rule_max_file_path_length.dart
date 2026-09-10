@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_max_file_path_length_parameters.dart';@immutable final class RepositoryRuleMaxFilePathLengthType {const RepositoryRuleMaxFilePathLengthType._(this.value);
 
-factory RepositoryRuleMaxFilePathLengthType.fromJson(String json) { return switch (json) {
+factory RepositoryRuleMaxFilePathLengthType.fromJson(String json) {return switch (json) {
   'max_file_path_length' => maxFilePathLength,
   _ => RepositoryRuleMaxFilePathLengthType._(json),
-}; }
+};}
 
 static const RepositoryRuleMaxFilePathLengthType maxFilePathLength = RepositoryRuleMaxFilePathLengthType._('max_file_path_length');
 
@@ -13,39 +13,39 @@ static const List<RepositoryRuleMaxFilePathLengthType> values = [maxFilePathLeng
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleMaxFilePathLengthType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRuleMaxFilePathLengthType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryRuleMaxFilePathLengthType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryRuleMaxFilePathLengthType($value)';}
+}
 /// Prevent commits that include file paths that exceed the specified character limit from being pushed to the commit graph.
 @immutable final class RepositoryRuleMaxFilePathLength {const RepositoryRuleMaxFilePathLength({required this.type, this.parameters, });
 
-factory RepositoryRuleMaxFilePathLength.fromJson(Map<String, dynamic> json) { return RepositoryRuleMaxFilePathLength(
+factory RepositoryRuleMaxFilePathLength.fromJson(Map<String, dynamic> json) {return RepositoryRuleMaxFilePathLength(
   type: RepositoryRuleMaxFilePathLengthType.fromJson(json['type'] as String),
   parameters: json['parameters'] != null ? RepositoryRuleMaxFilePathLengthParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final RepositoryRuleMaxFilePathLengthType type;
 
 final RepositoryRuleMaxFilePathLengthParameters? parameters;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (parameters != null) 'parameters': parameters?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RepositoryRuleMaxFilePathLength copyWith({RepositoryRuleMaxFilePathLengthType? type, RepositoryRuleMaxFilePathLengthParameters? Function()? parameters, }) { return RepositoryRuleMaxFilePathLength(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+RepositoryRuleMaxFilePathLength copyWith({RepositoryRuleMaxFilePathLengthType? type, RepositoryRuleMaxFilePathLengthParameters? Function()? parameters, }) {return RepositoryRuleMaxFilePathLength(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepositoryRuleMaxFilePathLength &&
           type == other.type &&
-          parameters == other.parameters; } 
-@override int get hashCode { return Object.hash(type, parameters); } 
-@override String toString() { return 'RepositoryRuleMaxFilePathLength(type: $type, parameters: $parameters)'; } 
- }
+          parameters == other.parameters;}
+@override int get hashCode {return Object.hash(type, parameters);}
+@override String toString() {return 'RepositoryRuleMaxFilePathLength(type: $type, parameters: $parameters)';}
+}

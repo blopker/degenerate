@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_prediction_content_content.dart';@immutable final class Messages51PredictionContentType {const Messages51PredictionContentType._(this.value);
 
-factory Messages51PredictionContentType.fromJson(String json) { return switch (json) {
+factory Messages51PredictionContentType.fromJson(String json) {return switch (json) {
   'content' => content,
   _ => Messages51PredictionContentType._(json),
-}; }
+};}
 
 static const Messages51PredictionContentType content = Messages51PredictionContentType._('content');
 
@@ -13,39 +13,39 @@ static const List<Messages51PredictionContentType> values = [content];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Messages51PredictionContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Messages51PredictionContentType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Messages51PredictionContentType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Messages51PredictionContentType($value)';}
+}
 @immutable final class Messages51PredictionContent {const Messages51PredictionContent({required this.content, required this.type, });
 
-factory Messages51PredictionContent.fromJson(Map<String, dynamic> json) { return Messages51PredictionContent(
+factory Messages51PredictionContent.fromJson(Map<String, dynamic> json) {return Messages51PredictionContent(
   content: Messages51PredictionContentContent.fromJson(json['content']),
   type: Messages51PredictionContentType.fromJson(json['type'] as String),
-); }
+);}
 
 final Messages51PredictionContentContent content;
 
 final Messages51PredictionContentType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
-      json.containsKey('type'); } 
-Messages51PredictionContent copyWith({Messages51PredictionContentContent? content, Messages51PredictionContentType? type, }) { return Messages51PredictionContent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') &&
+      json.containsKey('type');}
+Messages51PredictionContent copyWith({Messages51PredictionContentContent? content, Messages51PredictionContentType? type, }) {return Messages51PredictionContent(
   content: content ?? this.content,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Messages51PredictionContent &&
           content == other.content &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(content, type); } 
-@override String toString() { return 'Messages51PredictionContent(content: $content, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(content, type);}
+@override String toString() {return 'Messages51PredictionContent(content: $content, type: $type)';}
+}

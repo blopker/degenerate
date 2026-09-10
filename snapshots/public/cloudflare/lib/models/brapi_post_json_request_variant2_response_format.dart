@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_json_request_variant2_response_format_json_schema_value.dart';@immutable final class BrapiPostJsonRequestVariant2ResponseFormat {const BrapiPostJsonRequestVariant2ResponseFormat({required this.type, this.jsonSchema = const Omittable.absent(), });
 
-factory BrapiPostJsonRequestVariant2ResponseFormat.fromJson(Map<String, dynamic> json) { return BrapiPostJsonRequestVariant2ResponseFormat(
+factory BrapiPostJsonRequestVariant2ResponseFormat.fromJson(Map<String, dynamic> json) {return BrapiPostJsonRequestVariant2ResponseFormat(
   jsonSchema: json.containsKey('json_schema') ? Omittable((json['json_schema'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, BrapiPostJsonRequestVariant2ResponseFormatJsonSchemaValue.fromJson(v)))) : const Omittable.absent(),
   type: json['type'] as String,
-); }
+);}
 
 /// Schema for the response format. More information here: https://developers.cloudflare.com/workers-ai/json-mode/
 final Omittable<Map<String,BrapiPostJsonRequestVariant2ResponseFormatJsonSchemaValue>?> jsonSchema;
 
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (jsonSchema.isPresent) 'json_schema': jsonSchema.value?.map((k, v) => MapEntry(k, v.toJson())),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-BrapiPostJsonRequestVariant2ResponseFormat copyWith({Omittable<Map<String,BrapiPostJsonRequestVariant2ResponseFormatJsonSchemaValue>?>? jsonSchema, String? type, }) { return BrapiPostJsonRequestVariant2ResponseFormat(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+BrapiPostJsonRequestVariant2ResponseFormat copyWith({Omittable<Map<String,BrapiPostJsonRequestVariant2ResponseFormatJsonSchemaValue>?>? jsonSchema, String? type, }) {return BrapiPostJsonRequestVariant2ResponseFormat(
   jsonSchema: jsonSchema ?? this.jsonSchema,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BrapiPostJsonRequestVariant2ResponseFormat &&
           jsonSchema == other.jsonSchema &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(jsonSchema, type); } 
-@override String toString() { return 'BrapiPostJsonRequestVariant2ResponseFormat(jsonSchema: $jsonSchema, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(jsonSchema, type);}
+@override String toString() {return 'BrapiPostJsonRequestVariant2ResponseFormat(jsonSchema: $jsonSchema, type: $type)';}
+}

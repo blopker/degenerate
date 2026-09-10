@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration for how funds that land in the customer cash balance are reconciled.
 @immutable final class CustomerBalanceCustomerBalanceSettingsReconciliationMode {const CustomerBalanceCustomerBalanceSettingsReconciliationMode._(this.value);
 
-factory CustomerBalanceCustomerBalanceSettingsReconciliationMode.fromJson(String json) { return switch (json) {
+factory CustomerBalanceCustomerBalanceSettingsReconciliationMode.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'manual' => manual,
   _ => CustomerBalanceCustomerBalanceSettingsReconciliationMode._(json),
-}; }
+};}
 
 static const CustomerBalanceCustomerBalanceSettingsReconciliationMode automatic = CustomerBalanceCustomerBalanceSettingsReconciliationMode._('automatic');
 
@@ -17,21 +17,21 @@ static const List<CustomerBalanceCustomerBalanceSettingsReconciliationMode> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerBalanceCustomerBalanceSettingsReconciliationMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerBalanceCustomerBalanceSettingsReconciliationMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CustomerBalanceCustomerBalanceSettingsReconciliationMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CustomerBalanceCustomerBalanceSettingsReconciliationMode($value)';}
+}
 /// 
 @immutable final class CustomerBalanceCustomerBalanceSettings {const CustomerBalanceCustomerBalanceSettings({required this.reconciliationMode, required this.usingMerchantDefault, });
 
-factory CustomerBalanceCustomerBalanceSettings.fromJson(Map<String, dynamic> json) { return CustomerBalanceCustomerBalanceSettings(
+factory CustomerBalanceCustomerBalanceSettings.fromJson(Map<String, dynamic> json) {return CustomerBalanceCustomerBalanceSettings(
   reconciliationMode: CustomerBalanceCustomerBalanceSettingsReconciliationMode.fromJson(json['reconciliation_mode'] as String),
   usingMerchantDefault: json['using_merchant_default'] as bool,
-); }
+);}
 
 /// The configuration for how funds that land in the customer cash balance are reconciled.
 final CustomerBalanceCustomerBalanceSettingsReconciliationMode reconciliationMode;
@@ -39,20 +39,20 @@ final CustomerBalanceCustomerBalanceSettingsReconciliationMode reconciliationMod
 /// A flag to indicate if reconciliation mode returned is the user's default or is specific to this customer cash balance
 final bool usingMerchantDefault;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'reconciliation_mode': reconciliationMode.toJson(),
   'using_merchant_default': usingMerchantDefault,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('reconciliation_mode') &&
-      json.containsKey('using_merchant_default') && json['using_merchant_default'] is bool; } 
-CustomerBalanceCustomerBalanceSettings copyWith({CustomerBalanceCustomerBalanceSettingsReconciliationMode? reconciliationMode, bool? usingMerchantDefault, }) { return CustomerBalanceCustomerBalanceSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('reconciliation_mode') &&
+      json.containsKey('using_merchant_default') && json['using_merchant_default'] is bool;}
+CustomerBalanceCustomerBalanceSettings copyWith({CustomerBalanceCustomerBalanceSettingsReconciliationMode? reconciliationMode, bool? usingMerchantDefault, }) {return CustomerBalanceCustomerBalanceSettings(
   reconciliationMode: reconciliationMode ?? this.reconciliationMode,
   usingMerchantDefault: usingMerchantDefault ?? this.usingMerchantDefault,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomerBalanceCustomerBalanceSettings &&
           reconciliationMode == other.reconciliationMode &&
-          usingMerchantDefault == other.usingMerchantDefault; } 
-@override int get hashCode { return Object.hash(reconciliationMode, usingMerchantDefault); } 
-@override String toString() { return 'CustomerBalanceCustomerBalanceSettings(reconciliationMode: $reconciliationMode, usingMerchantDefault: $usingMerchantDefault)'; } 
- }
+          usingMerchantDefault == other.usingMerchantDefault;}
+@override int get hashCode {return Object.hash(reconciliationMode, usingMerchantDefault);}
+@override String toString() {return 'CustomerBalanceCustomerBalanceSettings(reconciliationMode: $reconciliationMode, usingMerchantDefault: $usingMerchantDefault)';}
+}

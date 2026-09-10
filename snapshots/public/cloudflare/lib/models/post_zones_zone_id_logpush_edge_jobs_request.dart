@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_fields.dart';import 'logpush_sample.dart';import 'logpush_schemas_filter.dart';@immutable final class PostZonesZoneIdLogpushEdgeJobsRequest {const PostZonesZoneIdLogpushEdgeJobsRequest({this.fields, this.filter, this.sample, });
 
-factory PostZonesZoneIdLogpushEdgeJobsRequest.fromJson(Map<String, dynamic> json) { return PostZonesZoneIdLogpushEdgeJobsRequest(
+factory PostZonesZoneIdLogpushEdgeJobsRequest.fromJson(Map<String, dynamic> json) {return PostZonesZoneIdLogpushEdgeJobsRequest(
   fields: json['fields'] != null ? LogpushFields.fromJson(json['fields'] as String) : null,
   filter: json['filter'] != null ? LogpushSchemasFilter.fromJson(json['filter'] as String) : null,
   sample: json['sample'] != null ? LogpushSample.fromJson(json['sample'] as num) : null,
-); }
+);}
 
 /// Comma-separated list of fields.
 final LogpushFields? fields;
@@ -17,22 +17,22 @@ final LogpushSchemasFilter? filter;
 /// The sample parameter is the sample rate of the records set by the client: "sample": 1 is 100% of records "sample": 10 is 10% and so on.
 final LogpushSample? sample;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (fields != null) 'fields': fields?.toJson(),
   if (filter != null) 'filter': filter?.toJson(),
   if (sample != null) 'sample': sample?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fields', 'filter', 'sample'}.contains(key)); } 
-PostZonesZoneIdLogpushEdgeJobsRequest copyWith({LogpushFields? Function()? fields, LogpushSchemasFilter? Function()? filter, LogpushSample? Function()? sample, }) { return PostZonesZoneIdLogpushEdgeJobsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'fields', 'filter', 'sample'}.contains(key));}
+PostZonesZoneIdLogpushEdgeJobsRequest copyWith({LogpushFields? Function()? fields, LogpushSchemasFilter? Function()? filter, LogpushSample? Function()? sample, }) {return PostZonesZoneIdLogpushEdgeJobsRequest(
   fields: fields != null ? fields() : this.fields,
   filter: filter != null ? filter() : this.filter,
   sample: sample != null ? sample() : this.sample,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostZonesZoneIdLogpushEdgeJobsRequest &&
           fields == other.fields &&
           filter == other.filter &&
-          sample == other.sample; } 
-@override int get hashCode { return Object.hash(fields, filter, sample); } 
-@override String toString() { return 'PostZonesZoneIdLogpushEdgeJobsRequest(fields: $fields, filter: $filter, sample: $sample)'; } 
- }
+          sample == other.sample;}
+@override int get hashCode {return Object.hash(fields, filter, sample);}
+@override String toString() {return 'PostZonesZoneIdLogpushEdgeJobsRequest(fields: $fields, filter: $filter, sample: $sample)';}
+}

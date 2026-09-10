@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_outbound_payments_request_destination_payment_method_data.dart';import 'post_treasury_outbound_payments_request_destination_payment_method_options.dart';import 'post_treasury_outbound_payments_request_end_user_details.dart';@immutable final class PostTreasuryOutboundPaymentsRequest {const PostTreasuryOutboundPaymentsRequest({required this.amount, required this.currency, required this.financialAccount, this.customer, this.description, this.destinationPaymentMethod, this.destinationPaymentMethodData, this.destinationPaymentMethodOptions, this.endUserDetails, this.expand, this.metadata, this.statementDescriptor, });
 
-factory PostTreasuryOutboundPaymentsRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundPaymentsRequest(
+factory PostTreasuryOutboundPaymentsRequest.fromJson(Map<String, dynamic> json) {return PostTreasuryOutboundPaymentsRequest(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   customer: json['customer'] as String?,
@@ -15,7 +15,7 @@ factory PostTreasuryOutboundPaymentsRequest.fromJson(Map<String, dynamic> json) 
   financialAccount: json['financial_account'] as String,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   statementDescriptor: json['statement_descriptor'] as String?,
-); }
+);}
 
 /// Amount (in cents) to be transferred.
 final int amount;
@@ -53,7 +53,7 @@ final Map<String,String>? metadata;
 /// The description that appears on the receiving end for this OutboundPayment (for example, bank statement for external bank transfer). Maximum 10 characters for `ach` payments, 140 characters for `us_domestic_wire` payments, or 500 characters for `stripe` network transfers. Can only include -#.$&*, spaces, and alphanumeric characters. The default value is "payment".
 final String? statementDescriptor;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   'customer': ?customer,
@@ -66,11 +66,11 @@ Map<String, dynamic> toJson() { return {
   'financial_account': financialAccount,
   'metadata': ?metadata,
   'statement_descriptor': ?statementDescriptor,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
-      json.containsKey('financial_account') && json['financial_account'] is String; } 
-PostTreasuryOutboundPaymentsRequest copyWith({int? amount, String? currency, String? Function()? customer, String? Function()? description, String? Function()? destinationPaymentMethod, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData? Function()? destinationPaymentMethodData, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodOptions? Function()? destinationPaymentMethodOptions, PostTreasuryOutboundPaymentsRequestEndUserDetails? Function()? endUserDetails, List<String>? Function()? expand, String? financialAccount, Map<String, String>? Function()? metadata, String? Function()? statementDescriptor, }) { return PostTreasuryOutboundPaymentsRequest(
+      json.containsKey('financial_account') && json['financial_account'] is String;}
+PostTreasuryOutboundPaymentsRequest copyWith({int? amount, String? currency, String? Function()? customer, String? Function()? description, String? Function()? destinationPaymentMethod, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData? Function()? destinationPaymentMethodData, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodOptions? Function()? destinationPaymentMethodOptions, PostTreasuryOutboundPaymentsRequestEndUserDetails? Function()? endUserDetails, List<String>? Function()? expand, String? financialAccount, Map<String, String>? Function()? metadata, String? Function()? statementDescriptor, }) {return PostTreasuryOutboundPaymentsRequest(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   customer: customer != null ? customer() : this.customer,
@@ -83,8 +83,8 @@ PostTreasuryOutboundPaymentsRequest copyWith({int? amount, String? currency, Str
   financialAccount: financialAccount ?? this.financialAccount,
   metadata: metadata != null ? metadata() : this.metadata,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTreasuryOutboundPaymentsRequest &&
           amount == other.amount &&
           currency == other.currency &&
@@ -97,7 +97,7 @@ PostTreasuryOutboundPaymentsRequest copyWith({int? amount, String? currency, Str
           listEquals(expand, other.expand) &&
           financialAccount == other.financialAccount &&
           metadata == other.metadata &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(amount, currency, customer, description, destinationPaymentMethod, destinationPaymentMethodData, destinationPaymentMethodOptions, endUserDetails, Object.hashAll(expand ?? const []), financialAccount, metadata, statementDescriptor); } 
-@override String toString() { return 'PostTreasuryOutboundPaymentsRequest(amount: $amount, currency: $currency, customer: $customer, description: $description, destinationPaymentMethod: $destinationPaymentMethod, destinationPaymentMethodData: $destinationPaymentMethodData, destinationPaymentMethodOptions: $destinationPaymentMethodOptions, endUserDetails: $endUserDetails, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, statementDescriptor: $statementDescriptor)'; } 
- }
+          statementDescriptor == other.statementDescriptor;}
+@override int get hashCode {return Object.hash(amount, currency, customer, description, destinationPaymentMethod, destinationPaymentMethodData, destinationPaymentMethodOptions, endUserDetails, Object.hashAll(expand ?? const []), financialAccount, metadata, statementDescriptor);}
+@override String toString() {return 'PostTreasuryOutboundPaymentsRequest(amount: $amount, currency: $currency, customer: $customer, description: $description, destinationPaymentMethod: $destinationPaymentMethod, destinationPaymentMethodData: $destinationPaymentMethodData, destinationPaymentMethodOptions: $destinationPaymentMethodOptions, endUserDetails: $endUserDetails, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, statementDescriptor: $statementDescriptor)';}
+}

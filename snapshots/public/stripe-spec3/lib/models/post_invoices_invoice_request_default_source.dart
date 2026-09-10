@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceRequestDefaultSourceVariant2 {const PostInvoicesInvoiceRequestDefaultSourceVariant2._(this.value);
 
-factory PostInvoicesInvoiceRequestDefaultSourceVariant2.fromJson(String json) { return switch (json) {
+factory PostInvoicesInvoiceRequestDefaultSourceVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostInvoicesInvoiceRequestDefaultSourceVariant2._(json),
-}; }
+};}
 
 static const PostInvoicesInvoiceRequestDefaultSourceVariant2 $empty = PostInvoicesInvoiceRequestDefaultSourceVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostInvoicesInvoiceRequestDefaultSourceVariant2> values = [$em
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesInvoiceRequestDefaultSourceVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesInvoiceRequestDefaultSourceVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesInvoiceRequestDefaultSourceVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesInvoiceRequestDefaultSourceVariant2($value)';}
+}
 /// ID of the default payment source for the invoice. It must belong to the customer associated with the invoice and be in a chargeable state. If not set, defaults to the subscription's default source, if any, or to the customer's default source.
 @immutable
 final class PostInvoicesInvoiceRequestDefaultSource {

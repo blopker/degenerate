@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for events with this `type`.
 @immutable final class AuditLogScimEnabled {const AuditLogScimEnabled({this.id});
 
-factory AuditLogScimEnabled.fromJson(Map<String, dynamic> json) { return AuditLogScimEnabled(
+factory AuditLogScimEnabled.fromJson(Map<String, dynamic> json) {return AuditLogScimEnabled(
   id: json['id'] as String?,
-); }
+);}
 
 /// The ID of the SCIM was enabled for.
 final String? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-AuditLogScimEnabled copyWith({String? Function()? id}) { return AuditLogScimEnabled(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id'}.contains(key));}
+AuditLogScimEnabled copyWith({String? Function()? id}) {return AuditLogScimEnabled(
   id: id != null ? id() : this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AuditLogScimEnabled &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'AuditLogScimEnabled(id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return id.hashCode;}
+@override String toString() {return 'AuditLogScimEnabled(id: $id)';}
+}

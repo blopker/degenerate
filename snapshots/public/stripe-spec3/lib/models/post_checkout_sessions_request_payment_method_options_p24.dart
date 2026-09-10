@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage none = PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage._('none');
 
@@ -13,38 +13,38 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureU
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsP24 {const PostCheckoutSessionsRequestPaymentMethodOptionsP24({this.setupFutureUsage, this.tosShownAndAccepted, });
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsP24.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsP24(
+factory PostCheckoutSessionsRequestPaymentMethodOptionsP24.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestPaymentMethodOptionsP24(
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   tosShownAndAccepted: json['tos_shown_and_accepted'] as bool?,
-); }
+);}
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage? setupFutureUsage;
 
 final bool? tosShownAndAccepted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
   'tos_shown_and_accepted': ?tosShownAndAccepted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage', 'tos_shown_and_accepted'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsP24 copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage? Function()? setupFutureUsage, bool? Function()? tosShownAndAccepted, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsP24(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'setup_future_usage', 'tos_shown_and_accepted'}.contains(key));}
+PostCheckoutSessionsRequestPaymentMethodOptionsP24 copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsP24SetupFutureUsage? Function()? setupFutureUsage, bool? Function()? tosShownAndAccepted, }) {return PostCheckoutSessionsRequestPaymentMethodOptionsP24(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   tosShownAndAccepted: tosShownAndAccepted != null ? tosShownAndAccepted() : this.tosShownAndAccepted,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsP24 &&
           setupFutureUsage == other.setupFutureUsage &&
-          tosShownAndAccepted == other.tosShownAndAccepted; } 
-@override int get hashCode { return Object.hash(setupFutureUsage, tosShownAndAccepted); } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsP24(setupFutureUsage: $setupFutureUsage, tosShownAndAccepted: $tosShownAndAccepted)'; } 
- }
+          tosShownAndAccepted == other.tosShownAndAccepted;}
+@override int get hashCode {return Object.hash(setupFutureUsage, tosShownAndAccepted);}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsP24(setupFutureUsage: $setupFutureUsage, tosShownAndAccepted: $tosShownAndAccepted)';}
+}

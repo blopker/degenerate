@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'card_mandate_payment_method_details.dart';import 'mandate_acss_debit.dart';import 'mandate_amazon_pay.dart';import 'mandate_au_becs_debit.dart';import 'mandate_bacs_debit.dart';import 'mandate_cashapp.dart';import 'mandate_kakao_pay.dart';import 'mandate_klarna.dart';import 'mandate_kr_card.dart';import 'mandate_link.dart';import 'mandate_naver_pay.dart';import 'mandate_nz_bank_account.dart';import 'mandate_paypal.dart';import 'mandate_payto.dart';import 'mandate_revolut_pay.dart';import 'mandate_sepa_debit.dart';import 'mandate_us_bank_account.dart';/// 
 @immutable final class MandatePaymentMethodDetails {const MandatePaymentMethodDetails({required this.type, this.acssDebit, this.amazonPay, this.auBecsDebit, this.bacsDebit, this.card, this.cashapp, this.kakaoPay, this.klarna, this.krCard, this.link, this.naverPay, this.nzBankAccount, this.paypal, this.payto, this.revolutPay, this.sepaDebit, this.usBankAccount, });
 
-factory MandatePaymentMethodDetails.fromJson(Map<String, dynamic> json) { return MandatePaymentMethodDetails(
+factory MandatePaymentMethodDetails.fromJson(Map<String, dynamic> json) {return MandatePaymentMethodDetails(
   acssDebit: json['acss_debit'] != null ? MandateAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
   amazonPay: json['amazon_pay'] != null ? MandateAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,
   auBecsDebit: json['au_becs_debit'] != null ? MandateAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>) : null,
@@ -22,7 +22,7 @@ factory MandatePaymentMethodDetails.fromJson(Map<String, dynamic> json) { return
   sepaDebit: json['sepa_debit'] != null ? MandateSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
   usBankAccount: json['us_bank_account'] != null ? MandateUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final MandateAcssDebit? acssDebit;
 
@@ -61,7 +61,7 @@ final String type;
 
 final MandateUsBankAccount? usBankAccount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (acssDebit != null) 'acss_debit': acssDebit?.toJson(),
   if (amazonPay != null) 'amazon_pay': amazonPay?.toJson(),
   if (auBecsDebit != null) 'au_becs_debit': auBecsDebit?.toJson(),
@@ -80,9 +80,9 @@ Map<String, dynamic> toJson() { return {
   if (sepaDebit != null) 'sepa_debit': sepaDebit?.toJson(),
   'type': type,
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-MandatePaymentMethodDetails copyWith({MandateAcssDebit? Function()? acssDebit, MandateAmazonPay? Function()? amazonPay, MandateAuBecsDebit? Function()? auBecsDebit, MandateBacsDebit? Function()? bacsDebit, CardMandatePaymentMethodDetails? Function()? card, MandateCashapp? Function()? cashapp, MandateKakaoPay? Function()? kakaoPay, MandateKlarna? Function()? klarna, MandateKrCard? Function()? krCard, MandateLink? Function()? link, MandateNaverPay? Function()? naverPay, MandateNzBankAccount? Function()? nzBankAccount, MandatePaypal? Function()? paypal, MandatePayto? Function()? payto, MandateRevolutPay? Function()? revolutPay, MandateSepaDebit? Function()? sepaDebit, String? type, MandateUsBankAccount? Function()? usBankAccount, }) { return MandatePaymentMethodDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+MandatePaymentMethodDetails copyWith({MandateAcssDebit? Function()? acssDebit, MandateAmazonPay? Function()? amazonPay, MandateAuBecsDebit? Function()? auBecsDebit, MandateBacsDebit? Function()? bacsDebit, CardMandatePaymentMethodDetails? Function()? card, MandateCashapp? Function()? cashapp, MandateKakaoPay? Function()? kakaoPay, MandateKlarna? Function()? klarna, MandateKrCard? Function()? krCard, MandateLink? Function()? link, MandateNaverPay? Function()? naverPay, MandateNzBankAccount? Function()? nzBankAccount, MandatePaypal? Function()? paypal, MandatePayto? Function()? payto, MandateRevolutPay? Function()? revolutPay, MandateSepaDebit? Function()? sepaDebit, String? type, MandateUsBankAccount? Function()? usBankAccount, }) {return MandatePaymentMethodDetails(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   amazonPay: amazonPay != null ? amazonPay() : this.amazonPay,
   auBecsDebit: auBecsDebit != null ? auBecsDebit() : this.auBecsDebit,
@@ -101,8 +101,8 @@ MandatePaymentMethodDetails copyWith({MandateAcssDebit? Function()? acssDebit, M
   sepaDebit: sepaDebit != null ? sepaDebit() : this.sepaDebit,
   type: type ?? this.type,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MandatePaymentMethodDetails &&
           acssDebit == other.acssDebit &&
           amazonPay == other.amazonPay &&
@@ -121,7 +121,7 @@ MandatePaymentMethodDetails copyWith({MandateAcssDebit? Function()? acssDebit, M
           revolutPay == other.revolutPay &&
           sepaDebit == other.sepaDebit &&
           type == other.type &&
-          usBankAccount == other.usBankAccount; } 
-@override int get hashCode { return Object.hash(acssDebit, amazonPay, auBecsDebit, bacsDebit, card, cashapp, kakaoPay, klarna, krCard, link, naverPay, nzBankAccount, paypal, payto, revolutPay, sepaDebit, type, usBankAccount); } 
-@override String toString() { return 'MandatePaymentMethodDetails(acssDebit: $acssDebit, amazonPay: $amazonPay, auBecsDebit: $auBecsDebit, bacsDebit: $bacsDebit, card: $card, cashapp: $cashapp, kakaoPay: $kakaoPay, klarna: $klarna, krCard: $krCard, link: $link, naverPay: $naverPay, nzBankAccount: $nzBankAccount, paypal: $paypal, payto: $payto, revolutPay: $revolutPay, sepaDebit: $sepaDebit, type: $type, usBankAccount: $usBankAccount)'; } 
- }
+          usBankAccount == other.usBankAccount;}
+@override int get hashCode {return Object.hash(acssDebit, amazonPay, auBecsDebit, bacsDebit, card, cashapp, kakaoPay, klarna, krCard, link, naverPay, nzBankAccount, paypal, payto, revolutPay, sepaDebit, type, usBankAccount);}
+@override String toString() {return 'MandatePaymentMethodDetails(acssDebit: $acssDebit, amazonPay: $amazonPay, auBecsDebit: $auBecsDebit, bacsDebit: $bacsDebit, card: $card, cashapp: $cashapp, kakaoPay: $kakaoPay, klarna: $klarna, krCard: $krCard, link: $link, naverPay: $naverPay, nzBankAccount: $nzBankAccount, paypal: $paypal, payto: $payto, revolutPay: $revolutPay, sepaDebit: $sepaDebit, type: $type, usBankAccount: $usBankAccount)';}
+}

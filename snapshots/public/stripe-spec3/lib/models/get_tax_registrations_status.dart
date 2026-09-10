@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTaxRegistrationsStatus {const GetTaxRegistrationsStatus._(this.value);
 
-factory GetTaxRegistrationsStatus.fromJson(String json) { return switch (json) {
+factory GetTaxRegistrationsStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'all' => all,
   'expired' => expired,
   'scheduled' => scheduled,
   _ => GetTaxRegistrationsStatus._(json),
-}; }
+};}
 
 static const GetTaxRegistrationsStatus active = GetTaxRegistrationsStatus._('active');
 
@@ -22,11 +22,11 @@ static const List<GetTaxRegistrationsStatus> values = [active, all, expired, sch
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetTaxRegistrationsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetTaxRegistrationsStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetTaxRegistrationsStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetTaxRegistrationsStatus($value)';}
+}

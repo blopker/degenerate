@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_cloudflare_branding.dart';import 'tls_certificates_and_hostnames_schemas_certificate_authority.dart';import 'tls_certificates_and_hostnames_validation_method.dart';import 'tls_certificates_and_hostnames_validity_days.dart';/// Type of certificate pack.
 @immutable final class TlsCertificatesAndHostnamesAdvancedType {const TlsCertificatesAndHostnamesAdvancedType._(this.value);
 
-factory TlsCertificatesAndHostnamesAdvancedType.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesAdvancedType.fromJson(String json) {return switch (json) {
   'advanced' => advanced,
   _ => TlsCertificatesAndHostnamesAdvancedType._(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesAdvancedType advanced = TlsCertificatesAndHostnamesAdvancedType._('advanced');
 
@@ -14,24 +14,24 @@ static const List<TlsCertificatesAndHostnamesAdvancedType> values = [advanced];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesAdvancedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesAdvancedType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesAdvancedType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesAdvancedType($value)';}
+}
 @immutable final class CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest {const CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest({required this.certificateAuthority, required this.hosts, required this.type, required this.validationMethod, required this.validityDays, this.cloudflareBranding, });
 
-factory CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest.fromJson(Map<String, dynamic> json) { return CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest(
+factory CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest.fromJson(Map<String, dynamic> json) {return CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest(
   certificateAuthority: TlsCertificatesAndHostnamesSchemasCertificateAuthority.fromJson(json['certificate_authority'] as String),
   cloudflareBranding: json['cloudflare_branding'] != null ? TlsCertificatesAndHostnamesCloudflareBranding.fromJson(json['cloudflare_branding'] as bool) : null,
   hosts: (json['hosts'] as List<dynamic>).map((e) => e as String).toList(),
   type: TlsCertificatesAndHostnamesAdvancedType.fromJson(json['type'] as String),
   validationMethod: TlsCertificatesAndHostnamesValidationMethod.fromJson(json['validation_method'] as String),
   validityDays: TlsCertificatesAndHostnamesValidityDays.fromJson((json['validity_days'] as num).toInt()),
-); }
+);}
 
 /// Certificate Authority selected for the order.  For information on any certificate authority specific details or restrictions [see this page for more details.](https://developers.cloudflare.com/ssl/reference/certificate-authorities)
 final TlsCertificatesAndHostnamesSchemasCertificateAuthority certificateAuthority;
@@ -51,35 +51,35 @@ final TlsCertificatesAndHostnamesValidationMethod validationMethod;
 /// Validity Days selected for the order.
 final TlsCertificatesAndHostnamesValidityDays validityDays;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'certificate_authority': certificateAuthority.toJson(),
   if (cloudflareBranding != null) 'cloudflare_branding': cloudflareBranding?.toJson(),
   'hosts': hosts,
   'type': type.toJson(),
   'validation_method': validationMethod.toJson(),
   'validity_days': validityDays.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate_authority') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificate_authority') &&
       json.containsKey('hosts') &&
       json.containsKey('type') &&
       json.containsKey('validation_method') &&
-      json.containsKey('validity_days'); } 
-CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest copyWith({TlsCertificatesAndHostnamesSchemasCertificateAuthority? certificateAuthority, TlsCertificatesAndHostnamesCloudflareBranding? Function()? cloudflareBranding, List<String>? hosts, TlsCertificatesAndHostnamesAdvancedType? type, TlsCertificatesAndHostnamesValidationMethod? validationMethod, TlsCertificatesAndHostnamesValidityDays? validityDays, }) { return CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest(
+      json.containsKey('validity_days');}
+CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest copyWith({TlsCertificatesAndHostnamesSchemasCertificateAuthority? certificateAuthority, TlsCertificatesAndHostnamesCloudflareBranding? Function()? cloudflareBranding, List<String>? hosts, TlsCertificatesAndHostnamesAdvancedType? type, TlsCertificatesAndHostnamesValidationMethod? validationMethod, TlsCertificatesAndHostnamesValidityDays? validityDays, }) {return CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest(
   certificateAuthority: certificateAuthority ?? this.certificateAuthority,
   cloudflareBranding: cloudflareBranding != null ? cloudflareBranding() : this.cloudflareBranding,
   hosts: hosts ?? this.hosts,
   type: type ?? this.type,
   validationMethod: validationMethod ?? this.validationMethod,
   validityDays: validityDays ?? this.validityDays,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest &&
           certificateAuthority == other.certificateAuthority &&
           cloudflareBranding == other.cloudflareBranding &&
           listEquals(hosts, other.hosts) &&
           type == other.type &&
           validationMethod == other.validationMethod &&
-          validityDays == other.validityDays; } 
-@override int get hashCode { return Object.hash(certificateAuthority, cloudflareBranding, Object.hashAll(hosts), type, validationMethod, validityDays); } 
-@override String toString() { return 'CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest(certificateAuthority: $certificateAuthority, cloudflareBranding: $cloudflareBranding, hosts: $hosts, type: $type, validationMethod: $validationMethod, validityDays: $validityDays)'; } 
- }
+          validityDays == other.validityDays;}
+@override int get hashCode {return Object.hash(certificateAuthority, cloudflareBranding, Object.hashAll(hosts), type, validationMethod, validityDays);}
+@override String toString() {return 'CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest(certificateAuthority: $certificateAuthority, cloudflareBranding: $cloudflareBranding, hosts: $hosts, type: $type, validationMethod: $validationMethod, validityDays: $validityDays)';}
+}

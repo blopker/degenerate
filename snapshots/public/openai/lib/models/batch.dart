@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'batch_errors.dart';import 'batch_request_counts.dart';import 'batch_usage.dart';/// The object type, which is always `batch`.
 @immutable final class BatchObject {const BatchObject._(this.value);
 
-factory BatchObject.fromJson(String json) { return switch (json) {
+factory BatchObject.fromJson(String json) {return switch (json) {
   'batch' => batch,
   _ => BatchObject._(json),
-}; }
+};}
 
 static const BatchObject batch = BatchObject._('batch');
 
@@ -14,18 +14,18 @@ static const List<BatchObject> values = [batch];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BatchObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BatchObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BatchObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BatchObject($value)';}
+}
 /// The current status of the batch.
 @immutable final class BatchStatus {const BatchStatus._(this.value);
 
-factory BatchStatus.fromJson(String json) { return switch (json) {
+factory BatchStatus.fromJson(String json) {return switch (json) {
   'validating' => validating,
   'failed' => failed,
   'in_progress' => inProgress,
@@ -35,7 +35,7 @@ factory BatchStatus.fromJson(String json) { return switch (json) {
   'cancelling' => cancelling,
   'cancelled' => cancelled,
   _ => BatchStatus._(json),
-}; }
+};}
 
 static const BatchStatus validating = BatchStatus._('validating');
 
@@ -57,17 +57,17 @@ static const List<BatchStatus> values = [validating, failed, inProgress, finaliz
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BatchStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BatchStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BatchStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BatchStatus($value)';}
+}
 @immutable final class Batch {const Batch({required this.id, required this.object, required this.endpoint, required this.inputFileId, required this.completionWindow, required this.status, required this.createdAt, this.model, this.errors, this.outputFileId, this.errorFileId, this.inProgressAt, this.expiresAt, this.finalizingAt, this.completedAt, this.failedAt, this.expiredAt, this.cancellingAt, this.cancelledAt, this.requestCounts, this.usage, this.metadata = const Omittable.absent(), });
 
-factory Batch.fromJson(Map<String, dynamic> json) { return Batch(
+factory Batch.fromJson(Map<String, dynamic> json) {return Batch(
   id: json['id'] as String,
   object: BatchObject.fromJson(json['object'] as String),
   endpoint: json['endpoint'] as String,
@@ -90,7 +90,7 @@ factory Batch.fromJson(Map<String, dynamic> json) { return Batch(
   requestCounts: json['request_counts'] != null ? BatchRequestCounts.fromJson(json['request_counts'] as Map<String, dynamic>) : null,
   usage: json['usage'] != null ? BatchUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
-); }
+);}
 
 final String id;
 
@@ -162,7 +162,7 @@ final BatchUsage? usage;
 
 final Omittable<Map<String,String>?> metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'endpoint': endpoint,
@@ -185,15 +185,15 @@ Map<String, dynamic> toJson() { return {
   if (requestCounts != null) 'request_counts': requestCounts?.toJson(),
   if (usage != null) 'usage': usage?.toJson(),
   if (metadata.isPresent) 'metadata': metadata.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('endpoint') && json['endpoint'] is String &&
       json.containsKey('input_file_id') && json['input_file_id'] is String &&
       json.containsKey('completion_window') && json['completion_window'] is String &&
       json.containsKey('status') &&
-      json.containsKey('created_at') && json['created_at'] is num; } 
-Batch copyWith({String? id, BatchObject? object, String? endpoint, String? Function()? model, BatchErrors? Function()? errors, String? inputFileId, String? completionWindow, BatchStatus? status, String? Function()? outputFileId, String? Function()? errorFileId, int? createdAt, int? Function()? inProgressAt, int? Function()? expiresAt, int? Function()? finalizingAt, int? Function()? completedAt, int? Function()? failedAt, int? Function()? expiredAt, int? Function()? cancellingAt, int? Function()? cancelledAt, BatchRequestCounts? Function()? requestCounts, BatchUsage? Function()? usage, Omittable<Map<String,String>?>? metadata, }) { return Batch(
+      json.containsKey('created_at') && json['created_at'] is num;}
+Batch copyWith({String? id, BatchObject? object, String? endpoint, String? Function()? model, BatchErrors? Function()? errors, String? inputFileId, String? completionWindow, BatchStatus? status, String? Function()? outputFileId, String? Function()? errorFileId, int? createdAt, int? Function()? inProgressAt, int? Function()? expiresAt, int? Function()? finalizingAt, int? Function()? completedAt, int? Function()? failedAt, int? Function()? expiredAt, int? Function()? cancellingAt, int? Function()? cancelledAt, BatchRequestCounts? Function()? requestCounts, BatchUsage? Function()? usage, Omittable<Map<String,String>?>? metadata, }) {return Batch(
   id: id ?? this.id,
   object: object ?? this.object,
   endpoint: endpoint ?? this.endpoint,
@@ -216,8 +216,8 @@ Batch copyWith({String? id, BatchObject? object, String? endpoint, String? Funct
   requestCounts: requestCounts != null ? requestCounts() : this.requestCounts,
   usage: usage != null ? usage() : this.usage,
   metadata: metadata ?? this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Batch &&
           id == other.id &&
           object == other.object &&
@@ -240,7 +240,7 @@ Batch copyWith({String? id, BatchObject? object, String? endpoint, String? Funct
           cancelledAt == other.cancelledAt &&
           requestCounts == other.requestCounts &&
           usage == other.usage &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hashAll([id, object, endpoint, model, errors, inputFileId, completionWindow, status, outputFileId, errorFileId, createdAt, inProgressAt, expiresAt, finalizingAt, completedAt, failedAt, expiredAt, cancellingAt, cancelledAt, requestCounts, usage, metadata]); } 
-@override String toString() { return 'Batch(id: $id, object: $object, endpoint: $endpoint, model: $model, errors: $errors, inputFileId: $inputFileId, completionWindow: $completionWindow, status: $status, outputFileId: $outputFileId, errorFileId: $errorFileId, createdAt: $createdAt, inProgressAt: $inProgressAt, expiresAt: $expiresAt, finalizingAt: $finalizingAt, completedAt: $completedAt, failedAt: $failedAt, expiredAt: $expiredAt, cancellingAt: $cancellingAt, cancelledAt: $cancelledAt, requestCounts: $requestCounts, usage: $usage, metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return Object.hashAll([id, object, endpoint, model, errors, inputFileId, completionWindow, status, outputFileId, errorFileId, createdAt, inProgressAt, expiresAt, finalizingAt, completedAt, failedAt, expiredAt, cancellingAt, cancelledAt, requestCounts, usage, metadata]);}
+@override String toString() {return 'Batch(id: $id, object: $object, endpoint: $endpoint, model: $model, errors: $errors, inputFileId: $inputFileId, completionWindow: $completionWindow, status: $status, outputFileId: $outputFileId, errorFileId: $errorFileId, createdAt: $createdAt, inProgressAt: $inProgressAt, expiresAt: $expiresAt, finalizingAt: $finalizingAt, completedAt: $completedAt, failedAt: $failedAt, expiredAt: $expiredAt, cancellingAt: $cancellingAt, cancelledAt: $cancelledAt, requestCounts: $requestCounts, usage: $usage, metadata: $metadata)';}
+}

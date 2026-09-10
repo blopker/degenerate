@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscStatusInfoVariant2State {const NscStatusInfoVariant2State._(this.value);
 
-factory NscStatusInfoVariant2State.fromJson(String json) { return switch (json) {
+factory NscStatusInfoVariant2State.fromJson(String json) {return switch (json) {
   'Down' => down,
   _ => NscStatusInfoVariant2State._(json),
-}; }
+};}
 
 static const NscStatusInfoVariant2State down = NscStatusInfoVariant2State._('Down');
 
@@ -13,39 +13,39 @@ static const List<NscStatusInfoVariant2State> values = [down];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NscStatusInfoVariant2State && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'NscStatusInfoVariant2State($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is NscStatusInfoVariant2State && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'NscStatusInfoVariant2State($value)';}
+}
 @immutable final class NscStatusInfoVariant2 {const NscStatusInfoVariant2({required this.state, this.reason = const Omittable.absent(), });
 
-factory NscStatusInfoVariant2.fromJson(Map<String, dynamic> json) { return NscStatusInfoVariant2(
+factory NscStatusInfoVariant2.fromJson(Map<String, dynamic> json) {return NscStatusInfoVariant2(
   reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
   state: NscStatusInfoVariant2State.fromJson(json['state'] as String),
-); }
+);}
 
 /// Diagnostic information, if available
 final Omittable<String?> reason;
 
 final NscStatusInfoVariant2State state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (reason.isPresent) 'reason': reason.value,
   'state': state.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('state'); } 
-NscStatusInfoVariant2 copyWith({Omittable<String?>? reason, NscStatusInfoVariant2State? state, }) { return NscStatusInfoVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('state');}
+NscStatusInfoVariant2 copyWith({Omittable<String?>? reason, NscStatusInfoVariant2State? state, }) {return NscStatusInfoVariant2(
   reason: reason ?? this.reason,
   state: state ?? this.state,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is NscStatusInfoVariant2 &&
           reason == other.reason &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(reason, state); } 
-@override String toString() { return 'NscStatusInfoVariant2(reason: $reason, state: $state)'; } 
- }
+          state == other.state;}
+@override int get hashCode {return Object.hash(reason, state);}
+@override String toString() {return 'NscStatusInfoVariant2(reason: $reason, state: $state)';}
+}

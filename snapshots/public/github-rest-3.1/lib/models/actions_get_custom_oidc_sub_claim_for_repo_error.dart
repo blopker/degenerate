@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class ActionsGetCustomOidcSubClaimForRepoError {const ActionsGetCustomOidcSubClaimForRepoError();
 
 /// Decodes the payload for its declared status and content type.
-static ActionsGetCustomOidcSubClaimForRepoError parse(ApiResponse response) { switch (response.statusCode) {
+static ActionsGetCustomOidcSubClaimForRepoError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -24,33 +24,33 @@ return ActionsGetCustomOidcSubClaimForRepoError404(BasicError.fromJson(json as M
 default:
 return ActionsGetCustomOidcSubClaimForRepoErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class ActionsGetCustomOidcSubClaimForRepoError400ApplicationJson extends ActionsGetCustomOidcSubClaimForRepoError {const ActionsGetCustomOidcSubClaimForRepoError400ApplicationJson(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 400 (application/scim+json).
 final class ActionsGetCustomOidcSubClaimForRepoError400ApplicationScimJson extends ActionsGetCustomOidcSubClaimForRepoError {const ActionsGetCustomOidcSubClaimForRepoError400ApplicationScimJson(this.data);
 
 /// The decoded response payload.
 final ScimError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class ActionsGetCustomOidcSubClaimForRepoError404 extends ActionsGetCustomOidcSubClaimForRepoError {const ActionsGetCustomOidcSubClaimForRepoError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class ActionsGetCustomOidcSubClaimForRepoErrorUnknown extends ActionsGetCustomOidcSubClaimForRepoError {const ActionsGetCustomOidcSubClaimForRepoErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'project_edited_changes_description.dart';import 'project_edited_changes_public.dart';import 'project_edited_changes_short_description.dart';import 'project_edited_changes_title.dart';@immutable final class ProjectEditedChanges {const ProjectEditedChanges({this.description, this.public, this.shortDescription, this.title, });
 
-factory ProjectEditedChanges.fromJson(Map<String, dynamic> json) { return ProjectEditedChanges(
+factory ProjectEditedChanges.fromJson(Map<String, dynamic> json) {return ProjectEditedChanges(
   description: json['description'] != null ? ProjectEditedChangesDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
   public: json['public'] != null ? ProjectEditedChangesPublic.fromJson(json['public'] as Map<String, dynamic>) : null,
   shortDescription: json['short_description'] != null ? ProjectEditedChangesShortDescription.fromJson(json['short_description'] as Map<String, dynamic>) : null,
   title: json['title'] != null ? ProjectEditedChangesTitle.fromJson(json['title'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final ProjectEditedChangesDescription? description;
 
@@ -17,25 +17,25 @@ final ProjectEditedChangesShortDescription? shortDescription;
 
 final ProjectEditedChangesTitle? title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description != null) 'description': description?.toJson(),
   if (public != null) 'public': public?.toJson(),
   if (shortDescription != null) 'short_description': shortDescription?.toJson(),
   if (title != null) 'title': title?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'public', 'short_description', 'title'}.contains(key)); } 
-ProjectEditedChanges copyWith({ProjectEditedChangesDescription? Function()? description, ProjectEditedChangesPublic? Function()? public, ProjectEditedChangesShortDescription? Function()? shortDescription, ProjectEditedChangesTitle? Function()? title, }) { return ProjectEditedChanges(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'public', 'short_description', 'title'}.contains(key));}
+ProjectEditedChanges copyWith({ProjectEditedChangesDescription? Function()? description, ProjectEditedChangesPublic? Function()? public, ProjectEditedChangesShortDescription? Function()? shortDescription, ProjectEditedChangesTitle? Function()? title, }) {return ProjectEditedChanges(
   description: description != null ? description() : this.description,
   public: public != null ? public() : this.public,
   shortDescription: shortDescription != null ? shortDescription() : this.shortDescription,
   title: title != null ? title() : this.title,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ProjectEditedChanges &&
           description == other.description &&
           public == other.public &&
           shortDescription == other.shortDescription &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(description, public, shortDescription, title); } 
-@override String toString() { return 'ProjectEditedChanges(description: $description, public: $public, shortDescription: $shortDescription, title: $title)'; } 
- }
+          title == other.title;}
+@override int get hashCode {return Object.hash(description, public, shortDescription, title);}
+@override String toString() {return 'ProjectEditedChanges(description: $description, public: $public, shortDescription: $shortDescription, title: $title)';}
+}

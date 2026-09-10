@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor {const SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor._(this.value);
 
-factory SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor.fromJson(String json) { return switch (json) {
+factory SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor.fromJson(String json) {return switch (json) {
   'invoice' => invoice,
   'subscription' => subscription,
   _ => SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor._(json),
-}; }
+};}
 
 static const SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor invoice = SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor._('invoice');
 
@@ -16,23 +16,23 @@ static const List<SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultF
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor($value)';}
+}
 /// Payment schedule for the mandate.
 @immutable final class SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule {const SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule._(this.value);
 
-factory SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule.fromJson(String json) { return switch (json) {
+factory SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule.fromJson(String json) {return switch (json) {
   'combined' => combined,
   'interval' => interval,
   'sporadic' => sporadic,
   _ => SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule._(json),
-}; }
+};}
 
 static const SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule combined = SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule._('combined');
 
@@ -44,22 +44,22 @@ static const List<SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentS
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule($value)';}
+}
 /// Transaction type of the mandate.
 @immutable final class SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType {const SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType._(this.value);
 
-factory SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType.fromJson(String json) { return switch (json) {
+factory SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType.fromJson(String json) {return switch (json) {
   'business' => business,
   'personal' => personal,
   _ => SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType._(json),
-}; }
+};}
 
 static const SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType business = SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType._('business');
 
@@ -69,24 +69,24 @@ static const List<SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransact
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType($value)';}
+}
 /// 
 @immutable final class SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit {const SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit({this.customMandateUrl, this.defaultFor, this.intervalDescription = const Omittable.absent(), this.paymentSchedule = const Omittable.absent(), this.transactionType = const Omittable.absent(), });
 
-factory SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit(
+factory SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit.fromJson(Map<String, dynamic> json) {return SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit(
   customMandateUrl: json['custom_mandate_url'] as String?,
   defaultFor: (json['default_for'] as List<dynamic>?)?.map((e) => SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor.fromJson(e as String)).toList(),
   intervalDescription: json.containsKey('interval_description') ? Omittable(json['interval_description'] as String?) : const Omittable.absent(),
   paymentSchedule: json.containsKey('payment_schedule') ? Omittable(json['payment_schedule'] != null ? SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule.fromJson(json['payment_schedule'] as String) : null) : const Omittable.absent(),
   transactionType: json.containsKey('transaction_type') ? Omittable(json['transaction_type'] != null ? SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType.fromJson(json['transaction_type'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// A URL for custom mandate text
 final String? customMandateUrl;
@@ -103,28 +103,28 @@ final Omittable<SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSch
 /// Transaction type of the mandate.
 final Omittable<SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType?> transactionType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'custom_mandate_url': ?customMandateUrl,
   if (defaultFor != null) 'default_for': defaultFor?.map((e) => e.toJson()).toList(),
   if (intervalDescription.isPresent) 'interval_description': intervalDescription.value,
   if (paymentSchedule.isPresent) 'payment_schedule': paymentSchedule.value?.toJson(),
   if (transactionType.isPresent) 'transaction_type': transactionType.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_mandate_url', 'default_for', 'interval_description', 'payment_schedule', 'transaction_type'}.contains(key)); } 
-SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit copyWith({String? Function()? customMandateUrl, List<SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor>? Function()? defaultFor, Omittable<String?>? intervalDescription, Omittable<SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule?>? paymentSchedule, Omittable<SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType?>? transactionType, }) { return SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'custom_mandate_url', 'default_for', 'interval_description', 'payment_schedule', 'transaction_type'}.contains(key));}
+SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit copyWith({String? Function()? customMandateUrl, List<SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor>? Function()? defaultFor, Omittable<String?>? intervalDescription, Omittable<SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule?>? paymentSchedule, Omittable<SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType?>? transactionType, }) {return SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit(
   customMandateUrl: customMandateUrl != null ? customMandateUrl() : this.customMandateUrl,
   defaultFor: defaultFor != null ? defaultFor() : this.defaultFor,
   intervalDescription: intervalDescription ?? this.intervalDescription,
   paymentSchedule: paymentSchedule ?? this.paymentSchedule,
   transactionType: transactionType ?? this.transactionType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit &&
           customMandateUrl == other.customMandateUrl &&
           listEquals(defaultFor, other.defaultFor) &&
           intervalDescription == other.intervalDescription &&
           paymentSchedule == other.paymentSchedule &&
-          transactionType == other.transactionType; } 
-@override int get hashCode { return Object.hash(customMandateUrl, Object.hashAll(defaultFor ?? const []), intervalDescription, paymentSchedule, transactionType); } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit(customMandateUrl: $customMandateUrl, defaultFor: $defaultFor, intervalDescription: $intervalDescription, paymentSchedule: $paymentSchedule, transactionType: $transactionType)'; } 
- }
+          transactionType == other.transactionType;}
+@override int get hashCode {return Object.hash(customMandateUrl, Object.hashAll(defaultFor ?? const []), intervalDescription, paymentSchedule, transactionType);}
+@override String toString() {return 'SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit(customMandateUrl: $customMandateUrl, defaultFor: $defaultFor, intervalDescription: $intervalDescription, paymentSchedule: $paymentSchedule, transactionType: $transactionType)';}
+}

@@ -10,7 +10,7 @@ final class PetsApi with ApiExecutor {const PetsApi(this.apiConfig);
 
 ///
 /// `GET /pets`
-Future<ApiResult<List<Pet>, ErrorModel>> listPets({int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Pet>, ErrorModel>> listPets({int? limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -42,10 +42,10 @@ return ErrorModel.fromJson(json as Map<String, dynamic>);
 
   },
 );
- } 
+}
 ///
 /// `POST /pets`
-Future<ApiResult<void, ErrorModel>> createPet({required Pet body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> createPet({required Pet body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -68,10 +68,10 @@ return ErrorModel.fromJson(json as Map<String, dynamic>);
 
   },
 );
- } 
+}
 ///
 /// `GET /pets/{petId}`
-Future<ApiResult<Pet, ErrorModel>> getPet({required String petId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Pet, ErrorModel>> getPet({required String petId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -95,5 +95,5 @@ return ErrorModel.fromJson(json as Map<String, dynamic>);
 
   },
 );
- } 
- }
+}
+}

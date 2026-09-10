@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_destination_conf.dart';import 'logpush_ownership_challenge.dart';@immutable final class PostZonesZoneIdLogpushOwnershipValidateRequest {const PostZonesZoneIdLogpushOwnershipValidateRequest({required this.destinationConf, required this.ownershipChallenge, });
 
-factory PostZonesZoneIdLogpushOwnershipValidateRequest.fromJson(Map<String, dynamic> json) { return PostZonesZoneIdLogpushOwnershipValidateRequest(
+factory PostZonesZoneIdLogpushOwnershipValidateRequest.fromJson(Map<String, dynamic> json) {return PostZonesZoneIdLogpushOwnershipValidateRequest(
   destinationConf: LogpushDestinationConf.fromJson(json['destination_conf'] as String),
   ownershipChallenge: LogpushOwnershipChallenge.fromJson(json['ownership_challenge'] as String),
-); }
+);}
 
 /// Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.
 final LogpushDestinationConf destinationConf;
@@ -13,20 +13,20 @@ final LogpushDestinationConf destinationConf;
 /// Ownership challenge token to prove destination ownership.
 final LogpushOwnershipChallenge ownershipChallenge;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'destination_conf': destinationConf.toJson(),
   'ownership_challenge': ownershipChallenge.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination_conf') &&
-      json.containsKey('ownership_challenge'); } 
-PostZonesZoneIdLogpushOwnershipValidateRequest copyWith({LogpushDestinationConf? destinationConf, LogpushOwnershipChallenge? ownershipChallenge, }) { return PostZonesZoneIdLogpushOwnershipValidateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('destination_conf') &&
+      json.containsKey('ownership_challenge');}
+PostZonesZoneIdLogpushOwnershipValidateRequest copyWith({LogpushDestinationConf? destinationConf, LogpushOwnershipChallenge? ownershipChallenge, }) {return PostZonesZoneIdLogpushOwnershipValidateRequest(
   destinationConf: destinationConf ?? this.destinationConf,
   ownershipChallenge: ownershipChallenge ?? this.ownershipChallenge,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostZonesZoneIdLogpushOwnershipValidateRequest &&
           destinationConf == other.destinationConf &&
-          ownershipChallenge == other.ownershipChallenge; } 
-@override int get hashCode { return Object.hash(destinationConf, ownershipChallenge); } 
-@override String toString() { return 'PostZonesZoneIdLogpushOwnershipValidateRequest(destinationConf: $destinationConf, ownershipChallenge: $ownershipChallenge)'; } 
- }
+          ownershipChallenge == other.ownershipChallenge;}
+@override int get hashCode {return Object.hash(destinationConf, ownershipChallenge);}
+@override String toString() {return 'PostZonesZoneIdLogpushOwnershipValidateRequest(destinationConf: $destinationConf, ownershipChallenge: $ownershipChallenge)';}
+}

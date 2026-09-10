@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'meeting_provider_enum.dart';import 'session_space_schema.dart';@immutable final class SessionDetailSchema {const SessionDetailSchema({required this.slug, required this.title, required this.space, required this.spaceTitle, required this.description, required this.price, required this.seatsLeft, required this.duration, required this.recurring, required this.subscribers, required this.start, required this.attending, required this.open, required this.started, required this.cancelled, required this.joinable, required this.ended, required this.rsvpUrl, required this.joinUrl, required this.subscribeUrl, required this.calLink, required this.subscribed, required this.userTimezone, required this.meetingProvider, });
 
-factory SessionDetailSchema.fromJson(Map<String, dynamic> json) { return SessionDetailSchema(
+factory SessionDetailSchema.fromJson(Map<String, dynamic> json) {return SessionDetailSchema(
   slug: json['slug'] as String,
   title: json['title'] as String,
   space: SessionSpaceSchema.fromJson(json['space'] as Map<String, dynamic>),
@@ -27,7 +27,7 @@ factory SessionDetailSchema.fromJson(Map<String, dynamic> json) { return Session
   subscribed: json['subscribed'] as bool?,
   userTimezone: json['user_timezone'] as String?,
   meetingProvider: MeetingProviderEnum.fromJson(json['meeting_provider'] as String),
-); }
+);}
 
 final String slug;
 
@@ -77,7 +77,7 @@ final String? userTimezone;
 
 final MeetingProviderEnum meetingProvider;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'slug': slug,
   'title': title,
   'space': space.toJson(),
@@ -102,8 +102,8 @@ Map<String, dynamic> toJson() { return {
   'subscribed': subscribed,
   'user_timezone': userTimezone,
   'meeting_provider': meetingProvider.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('slug') && json['slug'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('space') &&
       json.containsKey('space_title') && json['space_title'] is String &&
@@ -126,8 +126,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('slug'
       json.containsKey('cal_link') && json['cal_link'] is String &&
       json.containsKey('subscribed') && (json['subscribed'] == null || json['subscribed'] is bool) &&
       json.containsKey('user_timezone') && (json['user_timezone'] == null || json['user_timezone'] is String) &&
-      json.containsKey('meeting_provider'); } 
-SessionDetailSchema copyWith({String? slug, String? title, SessionSpaceSchema? space, String? spaceTitle, String? description, int? price, int? seatsLeft, int? duration, String? recurring, int? subscribers, DateTime? start, bool? attending, bool? open, bool? started, bool? cancelled, bool? joinable, bool? ended, String? rsvpUrl, String? Function()? joinUrl, String? subscribeUrl, String? calLink, bool? Function()? subscribed, String? Function()? userTimezone, MeetingProviderEnum? meetingProvider, }) { return SessionDetailSchema(
+      json.containsKey('meeting_provider');}
+SessionDetailSchema copyWith({String? slug, String? title, SessionSpaceSchema? space, String? spaceTitle, String? description, int? price, int? seatsLeft, int? duration, String? recurring, int? subscribers, DateTime? start, bool? attending, bool? open, bool? started, bool? cancelled, bool? joinable, bool? ended, String? rsvpUrl, String? Function()? joinUrl, String? subscribeUrl, String? calLink, bool? Function()? subscribed, String? Function()? userTimezone, MeetingProviderEnum? meetingProvider, }) {return SessionDetailSchema(
   slug: slug ?? this.slug,
   title: title ?? this.title,
   space: space ?? this.space,
@@ -152,8 +152,8 @@ SessionDetailSchema copyWith({String? slug, String? title, SessionSpaceSchema? s
   subscribed: subscribed != null ? subscribed() : this.subscribed,
   userTimezone: userTimezone != null ? userTimezone() : this.userTimezone,
   meetingProvider: meetingProvider ?? this.meetingProvider,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SessionDetailSchema &&
           slug == other.slug &&
           title == other.title &&
@@ -178,7 +178,7 @@ SessionDetailSchema copyWith({String? slug, String? title, SessionSpaceSchema? s
           calLink == other.calLink &&
           subscribed == other.subscribed &&
           userTimezone == other.userTimezone &&
-          meetingProvider == other.meetingProvider; } 
-@override int get hashCode { return Object.hashAll([slug, title, space, spaceTitle, description, price, seatsLeft, duration, recurring, subscribers, start, attending, open, started, cancelled, joinable, ended, rsvpUrl, joinUrl, subscribeUrl, calLink, subscribed, userTimezone, meetingProvider]); } 
-@override String toString() { return 'SessionDetailSchema(slug: $slug, title: $title, space: $space, spaceTitle: $spaceTitle, description: $description, price: $price, seatsLeft: $seatsLeft, duration: $duration, recurring: $recurring, subscribers: $subscribers, start: $start, attending: $attending, open: $open, started: $started, cancelled: $cancelled, joinable: $joinable, ended: $ended, rsvpUrl: $rsvpUrl, joinUrl: $joinUrl, subscribeUrl: $subscribeUrl, calLink: $calLink, subscribed: $subscribed, userTimezone: $userTimezone, meetingProvider: $meetingProvider)'; } 
- }
+          meetingProvider == other.meetingProvider;}
+@override int get hashCode {return Object.hashAll([slug, title, space, spaceTitle, description, price, seatsLeft, duration, recurring, subscribers, start, attending, open, started, cancelled, joinable, ended, rsvpUrl, joinUrl, subscribeUrl, calLink, subscribed, userTimezone, meetingProvider]);}
+@override String toString() {return 'SessionDetailSchema(slug: $slug, title: $title, space: $space, spaceTitle: $spaceTitle, description: $description, price: $price, seatsLeft: $seatsLeft, duration: $duration, recurring: $recurring, subscribers: $subscribers, start: $start, attending: $attending, open: $open, started: $started, cancelled: $cancelled, joinable: $joinable, ended: $ended, rsvpUrl: $rsvpUrl, joinUrl: $joinUrl, subscribeUrl: $subscribeUrl, calLink: $calLink, subscribed: $subscribed, userTimezone: $userTimezone, meetingProvider: $meetingProvider)';}
+}

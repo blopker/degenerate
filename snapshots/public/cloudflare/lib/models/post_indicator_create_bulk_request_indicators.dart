@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_create_bulk_request_indicators_related_events.dart';import 'post_indicator_create_bulk_request_indicators_tags.dart';@immutable final class PostIndicatorCreateBulkRequestIndicators {const PostIndicatorCreateBulkRequestIndicators({required this.indicatorType, required this.value, this.autoCreateType, this.relatedEvents, this.tags, });
 
-factory PostIndicatorCreateBulkRequestIndicators.fromJson(Map<String, dynamic> json) { return PostIndicatorCreateBulkRequestIndicators(
+factory PostIndicatorCreateBulkRequestIndicators.fromJson(Map<String, dynamic> json) {return PostIndicatorCreateBulkRequestIndicators(
   autoCreateType: json['autoCreateType'] as bool?,
   indicatorType: json['indicatorType'] as String,
   relatedEvents: (json['relatedEvents'] as List<dynamic>?)?.map((e) => PostIndicatorCreateBulkRequestIndicatorsRelatedEvents.fromJson(e as Map<String, dynamic>)).toList(),
   tags: (json['tags'] as List<dynamic>?)?.map(PostIndicatorCreateBulkRequestIndicatorsTags.fromJson).toList(),
   value: json['value'] as String,
-); }
+);}
 
 /// If true, automatically create the indicator type if it doesn't exist. If false (default), throw an error when the indicator type doesn't exist.
 final bool? autoCreateType;
@@ -21,29 +21,29 @@ final List<PostIndicatorCreateBulkRequestIndicatorsTags>? tags;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'autoCreateType': ?autoCreateType,
   'indicatorType': indicatorType,
   if (relatedEvents != null) 'relatedEvents': relatedEvents?.map((e) => e.toJson()).toList(),
   if (tags != null) 'tags': tags?.map((e) => e.toJson()).toList(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('indicatorType') && json['indicatorType'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-PostIndicatorCreateBulkRequestIndicators copyWith({bool? Function()? autoCreateType, String? indicatorType, List<PostIndicatorCreateBulkRequestIndicatorsRelatedEvents>? Function()? relatedEvents, List<PostIndicatorCreateBulkRequestIndicatorsTags>? Function()? tags, String? value, }) { return PostIndicatorCreateBulkRequestIndicators(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('indicatorType') && json['indicatorType'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+PostIndicatorCreateBulkRequestIndicators copyWith({bool? Function()? autoCreateType, String? indicatorType, List<PostIndicatorCreateBulkRequestIndicatorsRelatedEvents>? Function()? relatedEvents, List<PostIndicatorCreateBulkRequestIndicatorsTags>? Function()? tags, String? value, }) {return PostIndicatorCreateBulkRequestIndicators(
   autoCreateType: autoCreateType != null ? autoCreateType() : this.autoCreateType,
   indicatorType: indicatorType ?? this.indicatorType,
   relatedEvents: relatedEvents != null ? relatedEvents() : this.relatedEvents,
   tags: tags != null ? tags() : this.tags,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostIndicatorCreateBulkRequestIndicators &&
           autoCreateType == other.autoCreateType &&
           indicatorType == other.indicatorType &&
           listEquals(relatedEvents, other.relatedEvents) &&
           listEquals(tags, other.tags) &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(autoCreateType, indicatorType, Object.hashAll(relatedEvents ?? const []), Object.hashAll(tags ?? const []), value); } 
-@override String toString() { return 'PostIndicatorCreateBulkRequestIndicators(autoCreateType: $autoCreateType, indicatorType: $indicatorType, relatedEvents: $relatedEvents, tags: $tags, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(autoCreateType, indicatorType, Object.hashAll(relatedEvents ?? const []), Object.hashAll(tags ?? const []), value);}
+@override String toString() {return 'PostIndicatorCreateBulkRequestIndicators(autoCreateType: $autoCreateType, indicatorType: $indicatorType, relatedEvents: $relatedEvents, tags: $tags, value: $value)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property_value.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookCustomPropertyValuesUpdatedAction {const WebhookCustomPropertyValuesUpdatedAction._(this.value);
 
-factory WebhookCustomPropertyValuesUpdatedAction.fromJson(String json) { return switch (json) {
+factory WebhookCustomPropertyValuesUpdatedAction.fromJson(String json) {return switch (json) {
   'updated' => updated,
   _ => WebhookCustomPropertyValuesUpdatedAction._(json),
-}; }
+};}
 
 static const WebhookCustomPropertyValuesUpdatedAction updated = WebhookCustomPropertyValuesUpdatedAction._('updated');
 
@@ -13,17 +13,17 @@ static const List<WebhookCustomPropertyValuesUpdatedAction> values = [updated];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCustomPropertyValuesUpdatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCustomPropertyValuesUpdatedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCustomPropertyValuesUpdatedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCustomPropertyValuesUpdatedAction($value)';}
+}
 @immutable final class WebhookCustomPropertyValuesUpdated {const WebhookCustomPropertyValuesUpdated({required this.action, required this.repository, required this.organization, required this.newPropertyValues, required this.oldPropertyValues, this.enterprise, this.installation, this.sender, });
 
-factory WebhookCustomPropertyValuesUpdated.fromJson(Map<String, dynamic> json) { return WebhookCustomPropertyValuesUpdated(
+factory WebhookCustomPropertyValuesUpdated.fromJson(Map<String, dynamic> json) {return WebhookCustomPropertyValuesUpdated(
   action: WebhookCustomPropertyValuesUpdatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -32,7 +32,7 @@ factory WebhookCustomPropertyValuesUpdated.fromJson(Map<String, dynamic> json) {
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
   newPropertyValues: (json['new_property_values'] as List<dynamic>).map((e) => CustomPropertyValue.fromJson(e as Map<String, dynamic>)).toList(),
   oldPropertyValues: (json['old_property_values'] as List<dynamic>).map((e) => CustomPropertyValue.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final WebhookCustomPropertyValuesUpdatedAction action;
 
@@ -52,7 +52,7 @@ final List<CustomPropertyValue> newPropertyValues;
 /// The old custom property values for the repository.
 final List<CustomPropertyValue> oldPropertyValues;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -61,13 +61,13 @@ Map<String, dynamic> toJson() { return {
   if (sender != null) 'sender': sender?.toJson(),
   'new_property_values': newPropertyValues.map((e) => e.toJson()).toList(),
   'old_property_values': oldPropertyValues.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('repository') &&
       json.containsKey('organization') &&
       json.containsKey('new_property_values') &&
-      json.containsKey('old_property_values'); } 
-WebhookCustomPropertyValuesUpdated copyWith({WebhookCustomPropertyValuesUpdatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, RepositoryWebhooks? repository, OrganizationSimpleWebhooks? organization, SimpleUser? Function()? sender, List<CustomPropertyValue>? newPropertyValues, List<CustomPropertyValue>? oldPropertyValues, }) { return WebhookCustomPropertyValuesUpdated(
+      json.containsKey('old_property_values');}
+WebhookCustomPropertyValuesUpdated copyWith({WebhookCustomPropertyValuesUpdatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, RepositoryWebhooks? repository, OrganizationSimpleWebhooks? organization, SimpleUser? Function()? sender, List<CustomPropertyValue>? newPropertyValues, List<CustomPropertyValue>? oldPropertyValues, }) {return WebhookCustomPropertyValuesUpdated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -76,8 +76,8 @@ WebhookCustomPropertyValuesUpdated copyWith({WebhookCustomPropertyValuesUpdatedA
   sender: sender != null ? sender() : this.sender,
   newPropertyValues: newPropertyValues ?? this.newPropertyValues,
   oldPropertyValues: oldPropertyValues ?? this.oldPropertyValues,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookCustomPropertyValuesUpdated &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -86,7 +86,7 @@ WebhookCustomPropertyValuesUpdated copyWith({WebhookCustomPropertyValuesUpdatedA
           organization == other.organization &&
           sender == other.sender &&
           listEquals(newPropertyValues, other.newPropertyValues) &&
-          listEquals(oldPropertyValues, other.oldPropertyValues); } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, repository, organization, sender, Object.hashAll(newPropertyValues), Object.hashAll(oldPropertyValues)); } 
-@override String toString() { return 'WebhookCustomPropertyValuesUpdated(action: $action, enterprise: $enterprise, installation: $installation, repository: $repository, organization: $organization, sender: $sender, newPropertyValues: $newPropertyValues, oldPropertyValues: $oldPropertyValues)'; } 
- }
+          listEquals(oldPropertyValues, other.oldPropertyValues);}
+@override int get hashCode {return Object.hash(action, enterprise, installation, repository, organization, sender, Object.hashAll(newPropertyValues), Object.hashAll(oldPropertyValues));}
+@override String toString() {return 'WebhookCustomPropertyValuesUpdated(action: $action, enterprise: $enterprise, installation: $installation, repository: $repository, organization: $organization, sender: $sender, newPropertyValues: $newPropertyValues, oldPropertyValues: $oldPropertyValues)';}
+}

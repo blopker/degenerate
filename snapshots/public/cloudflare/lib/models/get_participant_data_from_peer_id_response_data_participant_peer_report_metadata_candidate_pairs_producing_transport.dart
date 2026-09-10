@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport({this.availableOutgoingBitrate, this.bytesDiscardedOnSend, this.bytesReceived, this.bytesSent, this.currentRoundTripTime, this.lastPacketReceivedTimestamp, this.lastPacketSentTimestamp, this.localCandidateAddress, this.localCandidateId, this.localCandidateNetworkType, this.localCandidatePort, this.localCandidateProtocol, this.localCandidateRelatedAddress, this.localCandidateRelatedPort, this.localCandidateType, this.nominated, this.packetsDiscardedOnSend, this.packetsReceived, this.packetsSent, this.remoteCandidateAddress, this.remoteCandidateId, this.remoteCandidatePort, this.remoteCandidateProtocol, this.remoteCandidateType, this.totalRoundTripTime, });
 
-factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport(
+factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport.fromJson(Map<String, dynamic> json) {return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport(
   availableOutgoingBitrate: json['available_outgoing_bitrate'] != null ? (json['available_outgoing_bitrate'] as num).toInt() : null,
   bytesDiscardedOnSend: json['bytes_discarded_on_send'] != null ? (json['bytes_discarded_on_send'] as num).toInt() : null,
   bytesReceived: json['bytes_received'] != null ? (json['bytes_received'] as num).toInt() : null,
@@ -28,7 +28,7 @@ factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCan
   remoteCandidateProtocol: json['remote_candidate_protocol'] as String?,
   remoteCandidateType: json['remote_candidate_type'] as String?,
   totalRoundTripTime: json['total_round_trip_time'] != null ? (json['total_round_trip_time'] as num).toDouble() : null,
-); }
+);}
 
 final int? availableOutgoingBitrate;
 
@@ -80,7 +80,7 @@ final String? remoteCandidateType;
 
 final double? totalRoundTripTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'available_outgoing_bitrate': ?availableOutgoingBitrate,
   'bytes_discarded_on_send': ?bytesDiscardedOnSend,
   'bytes_received': ?bytesReceived,
@@ -106,9 +106,9 @@ Map<String, dynamic> toJson() { return {
   'remote_candidate_protocol': ?remoteCandidateProtocol,
   'remote_candidate_type': ?remoteCandidateType,
   'total_round_trip_time': ?totalRoundTripTime,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'available_outgoing_bitrate', 'bytes_discarded_on_send', 'bytes_received', 'bytes_sent', 'current_round_trip_time', 'last_packet_received_timestamp', 'last_packet_sent_timestamp', 'local_candidate_address', 'local_candidate_id', 'local_candidate_network_type', 'local_candidate_port', 'local_candidate_protocol', 'local_candidate_related_address', 'local_candidate_related_port', 'local_candidate_type', 'nominated', 'packets_discarded_on_send', 'packets_received', 'packets_sent', 'remote_candidate_address', 'remote_candidate_id', 'remote_candidate_port', 'remote_candidate_protocol', 'remote_candidate_type', 'total_round_trip_time'}.contains(key)); } 
-GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport copyWith({int? Function()? availableOutgoingBitrate, int? Function()? bytesDiscardedOnSend, int? Function()? bytesReceived, int? Function()? bytesSent, double? Function()? currentRoundTripTime, int? Function()? lastPacketReceivedTimestamp, int? Function()? lastPacketSentTimestamp, String? Function()? localCandidateAddress, String? Function()? localCandidateId, String? Function()? localCandidateNetworkType, int? Function()? localCandidatePort, String? Function()? localCandidateProtocol, String? Function()? localCandidateRelatedAddress, int? Function()? localCandidateRelatedPort, String? Function()? localCandidateType, bool? Function()? nominated, int? Function()? packetsDiscardedOnSend, int? Function()? packetsReceived, int? Function()? packetsSent, String? Function()? remoteCandidateAddress, String? Function()? remoteCandidateId, int? Function()? remoteCandidatePort, String? Function()? remoteCandidateProtocol, String? Function()? remoteCandidateType, double? Function()? totalRoundTripTime, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'available_outgoing_bitrate', 'bytes_discarded_on_send', 'bytes_received', 'bytes_sent', 'current_round_trip_time', 'last_packet_received_timestamp', 'last_packet_sent_timestamp', 'local_candidate_address', 'local_candidate_id', 'local_candidate_network_type', 'local_candidate_port', 'local_candidate_protocol', 'local_candidate_related_address', 'local_candidate_related_port', 'local_candidate_type', 'nominated', 'packets_discarded_on_send', 'packets_received', 'packets_sent', 'remote_candidate_address', 'remote_candidate_id', 'remote_candidate_port', 'remote_candidate_protocol', 'remote_candidate_type', 'total_round_trip_time'}.contains(key));}
+GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport copyWith({int? Function()? availableOutgoingBitrate, int? Function()? bytesDiscardedOnSend, int? Function()? bytesReceived, int? Function()? bytesSent, double? Function()? currentRoundTripTime, int? Function()? lastPacketReceivedTimestamp, int? Function()? lastPacketSentTimestamp, String? Function()? localCandidateAddress, String? Function()? localCandidateId, String? Function()? localCandidateNetworkType, int? Function()? localCandidatePort, String? Function()? localCandidateProtocol, String? Function()? localCandidateRelatedAddress, int? Function()? localCandidateRelatedPort, String? Function()? localCandidateType, bool? Function()? nominated, int? Function()? packetsDiscardedOnSend, int? Function()? packetsReceived, int? Function()? packetsSent, String? Function()? remoteCandidateAddress, String? Function()? remoteCandidateId, int? Function()? remoteCandidatePort, String? Function()? remoteCandidateProtocol, String? Function()? remoteCandidateType, double? Function()? totalRoundTripTime, }) {return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport(
   availableOutgoingBitrate: availableOutgoingBitrate != null ? availableOutgoingBitrate() : this.availableOutgoingBitrate,
   bytesDiscardedOnSend: bytesDiscardedOnSend != null ? bytesDiscardedOnSend() : this.bytesDiscardedOnSend,
   bytesReceived: bytesReceived != null ? bytesReceived() : this.bytesReceived,
@@ -134,8 +134,8 @@ GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePa
   remoteCandidateProtocol: remoteCandidateProtocol != null ? remoteCandidateProtocol() : this.remoteCandidateProtocol,
   remoteCandidateType: remoteCandidateType != null ? remoteCandidateType() : this.remoteCandidateType,
   totalRoundTripTime: totalRoundTripTime != null ? totalRoundTripTime() : this.totalRoundTripTime,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport &&
           availableOutgoingBitrate == other.availableOutgoingBitrate &&
           bytesDiscardedOnSend == other.bytesDiscardedOnSend &&
@@ -161,7 +161,7 @@ GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePa
           remoteCandidatePort == other.remoteCandidatePort &&
           remoteCandidateProtocol == other.remoteCandidateProtocol &&
           remoteCandidateType == other.remoteCandidateType &&
-          totalRoundTripTime == other.totalRoundTripTime; } 
-@override int get hashCode { return Object.hashAll([availableOutgoingBitrate, bytesDiscardedOnSend, bytesReceived, bytesSent, currentRoundTripTime, lastPacketReceivedTimestamp, lastPacketSentTimestamp, localCandidateAddress, localCandidateId, localCandidateNetworkType, localCandidatePort, localCandidateProtocol, localCandidateRelatedAddress, localCandidateRelatedPort, localCandidateType, nominated, packetsDiscardedOnSend, packetsReceived, packetsSent, remoteCandidateAddress, remoteCandidateId, remoteCandidatePort, remoteCandidateProtocol, remoteCandidateType, totalRoundTripTime]); } 
-@override String toString() { return 'GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport(availableOutgoingBitrate: $availableOutgoingBitrate, bytesDiscardedOnSend: $bytesDiscardedOnSend, bytesReceived: $bytesReceived, bytesSent: $bytesSent, currentRoundTripTime: $currentRoundTripTime, lastPacketReceivedTimestamp: $lastPacketReceivedTimestamp, lastPacketSentTimestamp: $lastPacketSentTimestamp, localCandidateAddress: $localCandidateAddress, localCandidateId: $localCandidateId, localCandidateNetworkType: $localCandidateNetworkType, localCandidatePort: $localCandidatePort, localCandidateProtocol: $localCandidateProtocol, localCandidateRelatedAddress: $localCandidateRelatedAddress, localCandidateRelatedPort: $localCandidateRelatedPort, localCandidateType: $localCandidateType, nominated: $nominated, packetsDiscardedOnSend: $packetsDiscardedOnSend, packetsReceived: $packetsReceived, packetsSent: $packetsSent, remoteCandidateAddress: $remoteCandidateAddress, remoteCandidateId: $remoteCandidateId, remoteCandidatePort: $remoteCandidatePort, remoteCandidateProtocol: $remoteCandidateProtocol, remoteCandidateType: $remoteCandidateType, totalRoundTripTime: $totalRoundTripTime)'; } 
- }
+          totalRoundTripTime == other.totalRoundTripTime;}
+@override int get hashCode {return Object.hashAll([availableOutgoingBitrate, bytesDiscardedOnSend, bytesReceived, bytesSent, currentRoundTripTime, lastPacketReceivedTimestamp, lastPacketSentTimestamp, localCandidateAddress, localCandidateId, localCandidateNetworkType, localCandidatePort, localCandidateProtocol, localCandidateRelatedAddress, localCandidateRelatedPort, localCandidateType, nominated, packetsDiscardedOnSend, packetsReceived, packetsSent, remoteCandidateAddress, remoteCandidateId, remoteCandidatePort, remoteCandidateProtocol, remoteCandidateType, totalRoundTripTime]);}
+@override String toString() {return 'GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport(availableOutgoingBitrate: $availableOutgoingBitrate, bytesDiscardedOnSend: $bytesDiscardedOnSend, bytesReceived: $bytesReceived, bytesSent: $bytesSent, currentRoundTripTime: $currentRoundTripTime, lastPacketReceivedTimestamp: $lastPacketReceivedTimestamp, lastPacketSentTimestamp: $lastPacketSentTimestamp, localCandidateAddress: $localCandidateAddress, localCandidateId: $localCandidateId, localCandidateNetworkType: $localCandidateNetworkType, localCandidatePort: $localCandidatePort, localCandidateProtocol: $localCandidateProtocol, localCandidateRelatedAddress: $localCandidateRelatedAddress, localCandidateRelatedPort: $localCandidateRelatedPort, localCandidateType: $localCandidateType, nominated: $nominated, packetsDiscardedOnSend: $packetsDiscardedOnSend, packetsReceived: $packetsReceived, packetsSent: $packetsSent, remoteCandidateAddress: $remoteCandidateAddress, remoteCandidateId: $remoteCandidateId, remoteCandidatePort: $remoteCandidatePort, remoteCandidateProtocol: $remoteCandidateProtocol, remoteCandidateType: $remoteCandidateType, totalRoundTripTime: $totalRoundTripTime)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActivityListReposStarredByUserSort {const ActivityListReposStarredByUserSort._(this.value);
 
-factory ActivityListReposStarredByUserSort.fromJson(String json) { return switch (json) {
+factory ActivityListReposStarredByUserSort.fromJson(String json) {return switch (json) {
   'created' => created,
   'updated' => updated,
   _ => ActivityListReposStarredByUserSort._(json),
-}; }
+};}
 
 static const ActivityListReposStarredByUserSort created = ActivityListReposStarredByUserSort._('created');
 
@@ -16,11 +16,11 @@ static const List<ActivityListReposStarredByUserSort> values = [created, updated
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ActivityListReposStarredByUserSort && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ActivityListReposStarredByUserSort($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ActivityListReposStarredByUserSort && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ActivityListReposStarredByUserSort($value)';}
+}

@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `server_error`, `unsupported_file`, or `invalid_file`.
 @immutable final class VectorStoreFileObjectLastErrorCode {const VectorStoreFileObjectLastErrorCode._(this.value);
 
-factory VectorStoreFileObjectLastErrorCode.fromJson(String json) { return switch (json) {
+factory VectorStoreFileObjectLastErrorCode.fromJson(String json) {return switch (json) {
   'server_error' => serverError,
   'unsupported_file' => unsupportedFile,
   'invalid_file' => invalidFile,
   _ => VectorStoreFileObjectLastErrorCode._(json),
-}; }
+};}
 
 static const VectorStoreFileObjectLastErrorCode serverError = VectorStoreFileObjectLastErrorCode._('server_error');
 
@@ -20,21 +20,21 @@ static const List<VectorStoreFileObjectLastErrorCode> values = [serverError, uns
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorStoreFileObjectLastErrorCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorStoreFileObjectLastErrorCode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is VectorStoreFileObjectLastErrorCode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'VectorStoreFileObjectLastErrorCode($value)';}
+}
 /// The last error associated with this vector store file. Will be `null` if there are no errors.
 @immutable final class VectorStoreFileObjectLastError {const VectorStoreFileObjectLastError({required this.code, required this.message, });
 
-factory VectorStoreFileObjectLastError.fromJson(Map<String, dynamic> json) { return VectorStoreFileObjectLastError(
+factory VectorStoreFileObjectLastError.fromJson(Map<String, dynamic> json) {return VectorStoreFileObjectLastError(
   code: VectorStoreFileObjectLastErrorCode.fromJson(json['code'] as String),
   message: json['message'] as String,
-); }
+);}
 
 /// One of `server_error`, `unsupported_file`, or `invalid_file`.
 final VectorStoreFileObjectLastErrorCode code;
@@ -42,20 +42,20 @@ final VectorStoreFileObjectLastErrorCode code;
 /// A human-readable description of the error.
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code.toJson(),
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
-      json.containsKey('message') && json['message'] is String; } 
-VectorStoreFileObjectLastError copyWith({VectorStoreFileObjectLastErrorCode? code, String? message, }) { return VectorStoreFileObjectLastError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') &&
+      json.containsKey('message') && json['message'] is String;}
+VectorStoreFileObjectLastError copyWith({VectorStoreFileObjectLastErrorCode? code, String? message, }) {return VectorStoreFileObjectLastError(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is VectorStoreFileObjectLastError &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'VectorStoreFileObjectLastError(code: $code, message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return Object.hash(code, message);}
+@override String toString() {return 'VectorStoreFileObjectLastError(code: $code, message: $message)';}
+}

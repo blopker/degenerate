@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_complet
 /// 
 @immutable final class CreateChatCompletionRequestFunctionCallVariant1 {const CreateChatCompletionRequestFunctionCallVariant1._(this.value);
 
-factory CreateChatCompletionRequestFunctionCallVariant1.fromJson(String json) { return switch (json) {
+factory CreateChatCompletionRequestFunctionCallVariant1.fromJson(String json) {return switch (json) {
   'none' => none,
   'auto' => auto,
   _ => CreateChatCompletionRequestFunctionCallVariant1._(json),
-}; }
+};}
 
 static const CreateChatCompletionRequestFunctionCallVariant1 none = CreateChatCompletionRequestFunctionCallVariant1._('none');
 
@@ -18,12 +18,12 @@ static const List<CreateChatCompletionRequestFunctionCallVariant1> values = [non
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateChatCompletionRequestFunctionCallVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateChatCompletionRequestFunctionCallVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateChatCompletionRequestFunctionCallVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateChatCompletionRequestFunctionCallVariant1($value)';}
+}
 typedef CreateChatCompletionRequestFunctionCall = OneOf2<CreateChatCompletionRequestFunctionCallVariant1,ChatCompletionFunctionCallOption>;

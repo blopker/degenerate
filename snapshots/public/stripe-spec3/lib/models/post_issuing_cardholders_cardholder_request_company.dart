@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Additional information about a `company` cardholder.
 @immutable final class PostIssuingCardholdersCardholderRequestCompany {const PostIssuingCardholdersCardholderRequestCompany({this.taxId});
 
-factory PostIssuingCardholdersCardholderRequestCompany.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersCardholderRequestCompany(
+factory PostIssuingCardholdersCardholderRequestCompany.fromJson(Map<String, dynamic> json) {return PostIssuingCardholdersCardholderRequestCompany(
   taxId: json['tax_id'] as String?,
-); }
+);}
 
 final String? taxId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tax_id': ?taxId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tax_id'}.contains(key)); } 
-PostIssuingCardholdersCardholderRequestCompany copyWith({String? Function()? taxId}) { return PostIssuingCardholdersCardholderRequestCompany(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'tax_id'}.contains(key));}
+PostIssuingCardholdersCardholderRequestCompany copyWith({String? Function()? taxId}) {return PostIssuingCardholdersCardholderRequestCompany(
   taxId: taxId != null ? taxId() : this.taxId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostIssuingCardholdersCardholderRequestCompany &&
-          taxId == other.taxId; } 
-@override int get hashCode { return taxId.hashCode; } 
-@override String toString() { return 'PostIssuingCardholdersCardholderRequestCompany(taxId: $taxId)'; } 
- }
+          taxId == other.taxId;}
+@override int get hashCode {return taxId.hashCode;}
+@override String toString() {return 'PostIssuingCardholdersCardholderRequestCompany(taxId: $taxId)';}
+}

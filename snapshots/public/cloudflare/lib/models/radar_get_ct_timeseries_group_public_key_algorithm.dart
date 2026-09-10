@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesGroupPublicKeyAlgorithm {const RadarGetCtTimeseriesGroupPublicKeyAlgorithm._(this.value);
 
-factory RadarGetCtTimeseriesGroupPublicKeyAlgorithm.fromJson(String json) { return switch (json) {
+factory RadarGetCtTimeseriesGroupPublicKeyAlgorithm.fromJson(String json) {return switch (json) {
   'DSA' => dsa,
   'ECDSA' => ecdsa,
   'RSA' => rsa,
   _ => RadarGetCtTimeseriesGroupPublicKeyAlgorithm._(json),
-}; }
+};}
 
 static const RadarGetCtTimeseriesGroupPublicKeyAlgorithm dsa = RadarGetCtTimeseriesGroupPublicKeyAlgorithm._('DSA');
 
@@ -19,11 +19,11 @@ static const List<RadarGetCtTimeseriesGroupPublicKeyAlgorithm> values = [dsa, ec
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCtTimeseriesGroupPublicKeyAlgorithm && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCtTimeseriesGroupPublicKeyAlgorithm($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCtTimeseriesGroupPublicKeyAlgorithm && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCtTimeseriesGroupPublicKeyAlgorithm($value)';}
+}

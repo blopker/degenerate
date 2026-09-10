@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposListActivitiesActivityType {const ReposListActivitiesActivityType._(this.value);
 
-factory ReposListActivitiesActivityType.fromJson(String json) { return switch (json) {
+factory ReposListActivitiesActivityType.fromJson(String json) {return switch (json) {
   'push' => push,
   'force_push' => forcePush,
   'branch_creation' => branchCreation,
@@ -10,7 +10,7 @@ factory ReposListActivitiesActivityType.fromJson(String json) { return switch (j
   'pr_merge' => prMerge,
   'merge_queue_merge' => mergeQueueMerge,
   _ => ReposListActivitiesActivityType._(json),
-}; }
+};}
 
 static const ReposListActivitiesActivityType push = ReposListActivitiesActivityType._('push');
 
@@ -28,11 +28,11 @@ static const List<ReposListActivitiesActivityType> values = [push, forcePush, br
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposListActivitiesActivityType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposListActivitiesActivityType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposListActivitiesActivityType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposListActivitiesActivityType($value)';}
+}

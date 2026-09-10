@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class CampaignsListOrgCampaignsError {const CampaignsListOrgCampaignsError();
 
 /// Decodes the payload for its declared status and content type.
-static CampaignsListOrgCampaignsError parse(ApiResponse response) { switch (response.statusCode) {
+static CampaignsListOrgCampaignsError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
 return CampaignsListOrgCampaignsError404(BasicError.fromJson(json as Map<String, dynamic>));
@@ -14,26 +14,26 @@ return CampaignsListOrgCampaignsError503(CampaignsListOrgCampaignsResponse503.fr
 default:
 return CampaignsListOrgCampaignsErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 404 (application/json).
 final class CampaignsListOrgCampaignsError404 extends CampaignsListOrgCampaignsError {const CampaignsListOrgCampaignsError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 503 (application/json).
 final class CampaignsListOrgCampaignsError503 extends CampaignsListOrgCampaignsError {const CampaignsListOrgCampaignsError503(this.data);
 
 /// The decoded response payload.
 final CampaignsListOrgCampaignsResponse503 data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class CampaignsListOrgCampaignsErrorUnknown extends CampaignsListOrgCampaignsError {const CampaignsListOrgCampaignsErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

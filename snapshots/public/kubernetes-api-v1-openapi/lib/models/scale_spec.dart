@@ -3,25 +3,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ScaleSpec describes the attributes of a scale subresource.
 @immutable final class ScaleSpec {const ScaleSpec({this.replicas});
 
-factory ScaleSpec.fromJson(Map<String, dynamic> json) { return ScaleSpec(
+factory ScaleSpec.fromJson(Map<String, dynamic> json) {return ScaleSpec(
   replicas: json['replicas'] != null ? (json['replicas'] as num).toInt() : null,
-); }
+);}
 
 /// replicas is the desired number of instances for the scaled object.
 final int? replicas;
 
 /// The value with the schema default applied when absent.
-int get replicasOrDefault { return replicas ?? 0; } 
-Map<String, dynamic> toJson() { return {
+int get replicasOrDefault {return replicas ?? 0;}
+Map<String, dynamic> toJson() {return {
   'replicas': ?replicas,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'replicas'}.contains(key)); } 
-ScaleSpec copyWith({int? Function()? replicas}) { return ScaleSpec(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'replicas'}.contains(key));}
+ScaleSpec copyWith({int? Function()? replicas}) {return ScaleSpec(
   replicas: replicas != null ? replicas() : this.replicas,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ScaleSpec &&
-          replicas == other.replicas; } 
-@override int get hashCode { return replicas.hashCode; } 
-@override String toString() { return 'ScaleSpec(replicas: $replicas)'; } 
- }
+          replicas == other.replicas;}
+@override int get hashCode {return replicas.hashCode;}
+@override String toString() {return 'ScaleSpec(replicas: $replicas)';}
+}

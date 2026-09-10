@@ -4,28 +4,28 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'modify_assis
 /// 
 @immutable final class ModifyAssistantRequestToolResources {const ModifyAssistantRequestToolResources({this.codeInterpreter, this.fileSearch, });
 
-factory ModifyAssistantRequestToolResources.fromJson(Map<String, dynamic> json) { return ModifyAssistantRequestToolResources(
+factory ModifyAssistantRequestToolResources.fromJson(Map<String, dynamic> json) {return ModifyAssistantRequestToolResources(
   codeInterpreter: json['code_interpreter'] != null ? ModifyAssistantRequestToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>) : null,
   fileSearch: json['file_search'] != null ? ModifyAssistantRequestToolResourcesFileSearch.fromJson(json['file_search'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final ModifyAssistantRequestToolResourcesCodeInterpreter? codeInterpreter;
 
 final ModifyAssistantRequestToolResourcesFileSearch? fileSearch;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (codeInterpreter != null) 'code_interpreter': codeInterpreter?.toJson(),
   if (fileSearch != null) 'file_search': fileSearch?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code_interpreter', 'file_search'}.contains(key)); } 
-ModifyAssistantRequestToolResources copyWith({ModifyAssistantRequestToolResourcesCodeInterpreter? Function()? codeInterpreter, ModifyAssistantRequestToolResourcesFileSearch? Function()? fileSearch, }) { return ModifyAssistantRequestToolResources(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code_interpreter', 'file_search'}.contains(key));}
+ModifyAssistantRequestToolResources copyWith({ModifyAssistantRequestToolResourcesCodeInterpreter? Function()? codeInterpreter, ModifyAssistantRequestToolResourcesFileSearch? Function()? fileSearch, }) {return ModifyAssistantRequestToolResources(
   codeInterpreter: codeInterpreter != null ? codeInterpreter() : this.codeInterpreter,
   fileSearch: fileSearch != null ? fileSearch() : this.fileSearch,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ModifyAssistantRequestToolResources &&
           codeInterpreter == other.codeInterpreter &&
-          fileSearch == other.fileSearch; } 
-@override int get hashCode { return Object.hash(codeInterpreter, fileSearch); } 
-@override String toString() { return 'ModifyAssistantRequestToolResources(codeInterpreter: $codeInterpreter, fileSearch: $fileSearch)'; } 
- }
+          fileSearch == other.fileSearch;}
+@override int get hashCode {return Object.hash(codeInterpreter, fileSearch);}
+@override String toString() {return 'ModifyAssistantRequestToolResources(codeInterpreter: $codeInterpreter, fileSearch: $fileSearch)';}
+}

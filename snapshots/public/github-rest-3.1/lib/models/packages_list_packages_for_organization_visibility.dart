@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackagesListPackagesForOrganizationVisibility {const PackagesListPackagesForOrganizationVisibility._(this.value);
 
-factory PackagesListPackagesForOrganizationVisibility.fromJson(String json) { return switch (json) {
+factory PackagesListPackagesForOrganizationVisibility.fromJson(String json) {return switch (json) {
   'public' => public,
   'private' => private,
   'internal' => internal,
   _ => PackagesListPackagesForOrganizationVisibility._(json),
-}; }
+};}
 
 static const PackagesListPackagesForOrganizationVisibility public = PackagesListPackagesForOrganizationVisibility._('public');
 
@@ -19,11 +19,11 @@ static const List<PackagesListPackagesForOrganizationVisibility> values = [publi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PackagesListPackagesForOrganizationVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PackagesListPackagesForOrganizationVisibility($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PackagesListPackagesForOrganizationVisibility && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PackagesListPackagesForOrganizationVisibility($value)';}
+}

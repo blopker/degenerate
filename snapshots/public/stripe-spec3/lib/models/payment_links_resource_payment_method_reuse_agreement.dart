@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines the p
 /// When set to `hidden`, the payment method reuse agreement text will always be hidden in the UI.
 @immutable final class PaymentLinksResourcePaymentMethodReuseAgreementPosition {const PaymentLinksResourcePaymentMethodReuseAgreementPosition._(this.value);
 
-factory PaymentLinksResourcePaymentMethodReuseAgreementPosition.fromJson(String json) { return switch (json) {
+factory PaymentLinksResourcePaymentMethodReuseAgreementPosition.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'hidden' => hidden,
   _ => PaymentLinksResourcePaymentMethodReuseAgreementPosition._(json),
-}; }
+};}
 
 static const PaymentLinksResourcePaymentMethodReuseAgreementPosition auto = PaymentLinksResourcePaymentMethodReuseAgreementPosition._('auto');
 
@@ -19,36 +19,36 @@ static const List<PaymentLinksResourcePaymentMethodReuseAgreementPosition> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentLinksResourcePaymentMethodReuseAgreementPosition && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentLinksResourcePaymentMethodReuseAgreementPosition($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentLinksResourcePaymentMethodReuseAgreementPosition && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentLinksResourcePaymentMethodReuseAgreementPosition($value)';}
+}
 /// 
 @immutable final class PaymentLinksResourcePaymentMethodReuseAgreement {const PaymentLinksResourcePaymentMethodReuseAgreement({required this.position});
 
-factory PaymentLinksResourcePaymentMethodReuseAgreement.fromJson(Map<String, dynamic> json) { return PaymentLinksResourcePaymentMethodReuseAgreement(
+factory PaymentLinksResourcePaymentMethodReuseAgreement.fromJson(Map<String, dynamic> json) {return PaymentLinksResourcePaymentMethodReuseAgreement(
   position: PaymentLinksResourcePaymentMethodReuseAgreementPosition.fromJson(json['position'] as String),
-); }
+);}
 
 /// Determines the position and visibility of the payment method reuse agreement in the UI. When set to `auto`, Stripe's defaults will be used.
 /// 
 /// When set to `hidden`, the payment method reuse agreement text will always be hidden in the UI.
 final PaymentLinksResourcePaymentMethodReuseAgreementPosition position;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'position': position.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('position'); } 
-PaymentLinksResourcePaymentMethodReuseAgreement copyWith({PaymentLinksResourcePaymentMethodReuseAgreementPosition? position}) { return PaymentLinksResourcePaymentMethodReuseAgreement(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('position');}
+PaymentLinksResourcePaymentMethodReuseAgreement copyWith({PaymentLinksResourcePaymentMethodReuseAgreementPosition? position}) {return PaymentLinksResourcePaymentMethodReuseAgreement(
   position: position ?? this.position,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentLinksResourcePaymentMethodReuseAgreement &&
-          position == other.position; } 
-@override int get hashCode { return position.hashCode; } 
-@override String toString() { return 'PaymentLinksResourcePaymentMethodReuseAgreement(position: $position)'; } 
- }
+          position == other.position;}
+@override int get hashCode {return position.hashCode;}
+@override String toString() {return 'PaymentLinksResourcePaymentMethodReuseAgreement(position: $position)';}
+}

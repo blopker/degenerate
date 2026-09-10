@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetNetflowsTimeseriesGroupProduct {const RadarGetNetflowsTimeseriesGroupProduct._(this.value);
 
-factory RadarGetNetflowsTimeseriesGroupProduct.fromJson(String json) { return switch (json) {
+factory RadarGetNetflowsTimeseriesGroupProduct.fromJson(String json) {return switch (json) {
   'HTTP' => http,
   'ALL' => all,
   _ => RadarGetNetflowsTimeseriesGroupProduct._(json),
-}; }
+};}
 
 static const RadarGetNetflowsTimeseriesGroupProduct http = RadarGetNetflowsTimeseriesGroupProduct._('HTTP');
 
@@ -16,11 +16,11 @@ static const List<RadarGetNetflowsTimeseriesGroupProduct> values = [http, all];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetNetflowsTimeseriesGroupProduct && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetNetflowsTimeseriesGroupProduct($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetNetflowsTimeseriesGroupProduct && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetNetflowsTimeseriesGroupProduct($value)';}
+}

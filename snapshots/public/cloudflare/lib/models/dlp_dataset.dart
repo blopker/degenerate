@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dataset_column.dart';import 'dlp_dataset_upload.dart';import 'dlp_dataset_upload_status.dart';@immutable final class DlpDataset {const DlpDataset({required this.columns, required this.createdAt, required this.encodingVersion, required this.id, required this.name, required this.numCells, required this.secret, required this.status, required this.updatedAt, required this.uploads, this.caseSensitive, this.description = const Omittable.absent(), });
 
-factory DlpDataset.fromJson(Map<String, dynamic> json) { return DlpDataset(
+factory DlpDataset.fromJson(Map<String, dynamic> json) {return DlpDataset(
   caseSensitive: json['case_sensitive'] as bool?,
   columns: (json['columns'] as List<dynamic>).map((e) => DlpDatasetColumn.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -15,7 +15,7 @@ factory DlpDataset.fromJson(Map<String, dynamic> json) { return DlpDataset(
   status: DlpDatasetUploadStatus.fromJson(json['status'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   uploads: (json['uploads'] as List<dynamic>).map((e) => DlpDatasetUpload.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final bool? caseSensitive;
 
@@ -45,7 +45,7 @@ final DateTime updatedAt;
 
 final List<DlpDatasetUpload> uploads;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'case_sensitive': ?caseSensitive,
   'columns': columns.map((e) => e.toJson()).toList(),
   'created_at': createdAt.toIso8601String(),
@@ -58,8 +58,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'updated_at': updatedAt.toIso8601String(),
   'uploads': uploads.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('columns') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('columns') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('encoding_version') && json['encoding_version'] is num &&
       json.containsKey('id') && json['id'] is String &&
@@ -68,8 +68,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('colum
       json.containsKey('secret') && json['secret'] is bool &&
       json.containsKey('status') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('uploads'); } 
-DlpDataset copyWith({bool? Function()? caseSensitive, List<DlpDatasetColumn>? columns, DateTime? createdAt, Omittable<String?>? description, int? encodingVersion, String? id, String? name, int? numCells, bool? secret, DlpDatasetUploadStatus? status, DateTime? updatedAt, List<DlpDatasetUpload>? uploads, }) { return DlpDataset(
+      json.containsKey('uploads');}
+DlpDataset copyWith({bool? Function()? caseSensitive, List<DlpDatasetColumn>? columns, DateTime? createdAt, Omittable<String?>? description, int? encodingVersion, String? id, String? name, int? numCells, bool? secret, DlpDatasetUploadStatus? status, DateTime? updatedAt, List<DlpDatasetUpload>? uploads, }) {return DlpDataset(
   caseSensitive: caseSensitive != null ? caseSensitive() : this.caseSensitive,
   columns: columns ?? this.columns,
   createdAt: createdAt ?? this.createdAt,
@@ -82,8 +82,8 @@ DlpDataset copyWith({bool? Function()? caseSensitive, List<DlpDatasetColumn>? co
   status: status ?? this.status,
   updatedAt: updatedAt ?? this.updatedAt,
   uploads: uploads ?? this.uploads,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpDataset &&
           caseSensitive == other.caseSensitive &&
           listEquals(columns, other.columns) &&
@@ -96,7 +96,7 @@ DlpDataset copyWith({bool? Function()? caseSensitive, List<DlpDatasetColumn>? co
           secret == other.secret &&
           status == other.status &&
           updatedAt == other.updatedAt &&
-          listEquals(uploads, other.uploads); } 
-@override int get hashCode { return Object.hash(caseSensitive, Object.hashAll(columns), createdAt, description, encodingVersion, id, name, numCells, secret, status, updatedAt, Object.hashAll(uploads)); } 
-@override String toString() { return 'DlpDataset(caseSensitive: $caseSensitive, columns: $columns, createdAt: $createdAt, description: $description, encodingVersion: $encodingVersion, id: $id, name: $name, numCells: $numCells, secret: $secret, status: $status, updatedAt: $updatedAt, uploads: $uploads)'; } 
- }
+          listEquals(uploads, other.uploads);}
+@override int get hashCode {return Object.hash(caseSensitive, Object.hashAll(columns), createdAt, description, encodingVersion, id, name, numCells, secret, status, updatedAt, Object.hashAll(uploads));}
+@override String toString() {return 'DlpDataset(caseSensitive: $caseSensitive, columns: $columns, createdAt: $createdAt, description: $description, encodingVersion: $encodingVersion, id: $id, name: $name, numCells: $numCells, secret: $secret, status: $status, updatedAt: $updatedAt, uploads: $uploads)';}
+}

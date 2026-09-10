@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByHttpProtocolResponseResultSummary0 {const RadarGetHttpSummaryByHttpProtocolResponseResultSummary0({required this.http, required this.https, });
 
-factory RadarGetHttpSummaryByHttpProtocolResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByHttpProtocolResponseResultSummary0(
+factory RadarGetHttpSummaryByHttpProtocolResponseResultSummary0.fromJson(Map<String, dynamic> json) {return RadarGetHttpSummaryByHttpProtocolResponseResultSummary0(
   http: json['http'] as String,
   https: json['https'] as String,
-); }
+);}
 
 /// A numeric string.
 final String http;
@@ -13,20 +13,20 @@ final String http;
 /// A numeric string.
 final String https;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'http': http,
   'https': https,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('http') && json['http'] is String &&
-      json.containsKey('https') && json['https'] is String; } 
-RadarGetHttpSummaryByHttpProtocolResponseResultSummary0 copyWith({String? http, String? https, }) { return RadarGetHttpSummaryByHttpProtocolResponseResultSummary0(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('http') && json['http'] is String &&
+      json.containsKey('https') && json['https'] is String;}
+RadarGetHttpSummaryByHttpProtocolResponseResultSummary0 copyWith({String? http, String? https, }) {return RadarGetHttpSummaryByHttpProtocolResponseResultSummary0(
   http: http ?? this.http,
   https: https ?? this.https,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetHttpSummaryByHttpProtocolResponseResultSummary0 &&
           http == other.http &&
-          https == other.https; } 
-@override int get hashCode { return Object.hash(http, https); } 
-@override String toString() { return 'RadarGetHttpSummaryByHttpProtocolResponseResultSummary0(http: $http, https: $https)'; } 
- }
+          https == other.https;}
+@override int get hashCode {return Object.hash(http, https);}
+@override String toString() {return 'RadarGetHttpSummaryByHttpProtocolResponseResultSummary0(http: $http, https: $https)';}
+}

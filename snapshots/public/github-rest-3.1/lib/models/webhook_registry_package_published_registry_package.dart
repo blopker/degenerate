@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_registry_package_published_registry_package_owner.dart';import 'webhook_registry_package_published_registry_package_package_version.dart';import 'webhook_registry_package_published_registry_package_registry.dart';@immutable final class WebhookRegistryPackagePublishedRegistryPackage {const WebhookRegistryPackagePublishedRegistryPackage({required this.createdAt, required this.description, required this.ecosystem, required this.htmlUrl, required this.id, required this.name, required this.namespace, required this.owner, required this.packageType, required this.packageVersion, required this.registry, required this.updatedAt, });
 
-factory WebhookRegistryPackagePublishedRegistryPackage.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackage(
+factory WebhookRegistryPackagePublishedRegistryPackage.fromJson(Map<String, dynamic> json) {return WebhookRegistryPackagePublishedRegistryPackage(
   createdAt: json['created_at'] as String?,
   description: json['description'] as String?,
   ecosystem: json['ecosystem'] as String,
@@ -15,7 +15,7 @@ factory WebhookRegistryPackagePublishedRegistryPackage.fromJson(Map<String, dyna
   packageVersion: json['package_version'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersion.fromJson(json['package_version'] as Map<String, dynamic>) : null,
   registry: json['registry'] != null ? WebhookRegistryPackagePublishedRegistryPackageRegistry.fromJson(json['registry'] as Map<String, dynamic>) : null,
   updatedAt: json['updated_at'] as String?,
-); }
+);}
 
 final String? createdAt;
 
@@ -41,7 +41,7 @@ final WebhookRegistryPackagePublishedRegistryPackageRegistry? registry;
 
 final String? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt,
   'description': description,
   'ecosystem': ecosystem,
@@ -54,8 +54,8 @@ Map<String, dynamic> toJson() { return {
   'package_version': packageVersion?.toJson(),
   'registry': registry?.toJson(),
   'updated_at': updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
       json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('ecosystem') && json['ecosystem'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -66,8 +66,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('package_type') && json['package_type'] is String &&
       json.containsKey('package_version') &&
       json.containsKey('registry') &&
-      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String); } 
-WebhookRegistryPackagePublishedRegistryPackage copyWith({String? Function()? createdAt, String? Function()? description, String? ecosystem, String? htmlUrl, int? id, String? name, String? namespace, WebhookRegistryPackagePublishedRegistryPackageOwner? owner, String? packageType, WebhookRegistryPackagePublishedRegistryPackagePackageVersion? Function()? packageVersion, WebhookRegistryPackagePublishedRegistryPackageRegistry? Function()? registry, String? Function()? updatedAt, }) { return WebhookRegistryPackagePublishedRegistryPackage(
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String);}
+WebhookRegistryPackagePublishedRegistryPackage copyWith({String? Function()? createdAt, String? Function()? description, String? ecosystem, String? htmlUrl, int? id, String? name, String? namespace, WebhookRegistryPackagePublishedRegistryPackageOwner? owner, String? packageType, WebhookRegistryPackagePublishedRegistryPackagePackageVersion? Function()? packageVersion, WebhookRegistryPackagePublishedRegistryPackageRegistry? Function()? registry, String? Function()? updatedAt, }) {return WebhookRegistryPackagePublishedRegistryPackage(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description != null ? description() : this.description,
   ecosystem: ecosystem ?? this.ecosystem,
@@ -80,8 +80,8 @@ WebhookRegistryPackagePublishedRegistryPackage copyWith({String? Function()? cre
   packageVersion: packageVersion != null ? packageVersion() : this.packageVersion,
   registry: registry != null ? registry() : this.registry,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRegistryPackagePublishedRegistryPackage &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -94,7 +94,7 @@ WebhookRegistryPackagePublishedRegistryPackage copyWith({String? Function()? cre
           packageType == other.packageType &&
           packageVersion == other.packageVersion &&
           registry == other.registry &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, description, ecosystem, htmlUrl, id, name, namespace, owner, packageType, packageVersion, registry, updatedAt); } 
-@override String toString() { return 'WebhookRegistryPackagePublishedRegistryPackage(createdAt: $createdAt, description: $description, ecosystem: $ecosystem, htmlUrl: $htmlUrl, id: $id, name: $name, namespace: $namespace, owner: $owner, packageType: $packageType, packageVersion: $packageVersion, registry: $registry, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(createdAt, description, ecosystem, htmlUrl, id, name, namespace, owner, packageType, packageVersion, registry, updatedAt);}
+@override String toString() {return 'WebhookRegistryPackagePublishedRegistryPackage(createdAt: $createdAt, description: $description, ecosystem: $ecosystem, htmlUrl: $htmlUrl, id: $id, name: $name, namespace: $namespace, owner: $owner, packageType: $packageType, packageVersion: $packageVersion, registry: $registry, updatedAt: $updatedAt)';}
+}

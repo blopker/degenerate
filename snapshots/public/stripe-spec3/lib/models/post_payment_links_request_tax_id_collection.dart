@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksRequestTaxIdCollectionRequired {const PostPaymentLinksRequestTaxIdCollectionRequired._(this.value);
 
-factory PostPaymentLinksRequestTaxIdCollectionRequired.fromJson(String json) { return switch (json) {
+factory PostPaymentLinksRequestTaxIdCollectionRequired.fromJson(String json) {return switch (json) {
   'if_supported' => ifSupported,
   'never' => never,
   _ => PostPaymentLinksRequestTaxIdCollectionRequired._(json),
-}; }
+};}
 
 static const PostPaymentLinksRequestTaxIdCollectionRequired ifSupported = PostPaymentLinksRequestTaxIdCollectionRequired._('if_supported');
 
@@ -16,39 +16,39 @@ static const List<PostPaymentLinksRequestTaxIdCollectionRequired> values = [ifSu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentLinksRequestTaxIdCollectionRequired && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentLinksRequestTaxIdCollectionRequired($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentLinksRequestTaxIdCollectionRequired && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentLinksRequestTaxIdCollectionRequired($value)';}
+}
 /// Controls tax ID collection during checkout.
 @immutable final class PostPaymentLinksRequestTaxIdCollection {const PostPaymentLinksRequestTaxIdCollection({required this.enabled, this.$required, });
 
-factory PostPaymentLinksRequestTaxIdCollection.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestTaxIdCollection(
+factory PostPaymentLinksRequestTaxIdCollection.fromJson(Map<String, dynamic> json) {return PostPaymentLinksRequestTaxIdCollection(
   enabled: json['enabled'] as bool,
   $required: json['required'] != null ? PostPaymentLinksRequestTaxIdCollectionRequired.fromJson(json['required'] as String) : null,
-); }
+);}
 
 final bool enabled;
 
 final PostPaymentLinksRequestTaxIdCollectionRequired? $required;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   if ($required != null) 'required': $required?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostPaymentLinksRequestTaxIdCollection copyWith({bool? enabled, PostPaymentLinksRequestTaxIdCollectionRequired? Function()? $required, }) { return PostPaymentLinksRequestTaxIdCollection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+PostPaymentLinksRequestTaxIdCollection copyWith({bool? enabled, PostPaymentLinksRequestTaxIdCollectionRequired? Function()? $required, }) {return PostPaymentLinksRequestTaxIdCollection(
   enabled: enabled ?? this.enabled,
   $required: $required != null ? $required() : this.$required,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentLinksRequestTaxIdCollection &&
           enabled == other.enabled &&
-          $required == other.$required; } 
-@override int get hashCode { return Object.hash(enabled, $required); } 
-@override String toString() { return 'PostPaymentLinksRequestTaxIdCollection(enabled: $enabled, \$required: ${$required})'; } 
- }
+          $required == other.$required;}
+@override int get hashCode {return Object.hash(enabled, $required);}
+@override String toString() {return 'PostPaymentLinksRequestTaxIdCollection(enabled: $enabled, \$required: ${$required})';}
+}

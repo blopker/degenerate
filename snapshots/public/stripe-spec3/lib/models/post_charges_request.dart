@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_charges_request_card.dart';import 'post_charges_request_destination.dart';import 'post_charges_request_metadata.dart';import 'post_charges_request_radar_options.dart';import 'post_charges_request_shipping.dart';import 'post_charges_request_transfer_data.dart';@immutable final class PostChargesRequest {const PostChargesRequest({this.amount, this.applicationFee, this.applicationFeeAmount, this.capture, this.card, this.currency, this.customer, this.description, this.destination, this.expand, this.metadata, this.onBehalfOf, this.radarOptions, this.receiptEmail, this.shipping, this.source, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
 
-factory PostChargesRequest.fromJson(Map<String, dynamic> json) { return PostChargesRequest(
+factory PostChargesRequest.fromJson(Map<String, dynamic> json) {return PostChargesRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   applicationFee: json['application_fee'] != null ? (json['application_fee'] as num).toInt() : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
@@ -23,7 +23,7 @@ factory PostChargesRequest.fromJson(Map<String, dynamic> json) { return PostChar
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
   transferData: json['transfer_data'] != null ? PostChargesRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
-); }
+);}
 
 /// Amount intended to be collected by this payment. A positive integer representing how much to charge in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal) (e.g., 100 cents to charge $1.00 or 100 to charge ¥100, a zero-decimal currency). The minimum amount is $0.50 US or [equivalent in charge currency](https://docs.stripe.com/currencies#minimum-and-maximum-charge-amounts). The amount value supports up to eight digits (e.g., a value of 99999999 for a USD charge of $999,999.99).
 final int? amount;
@@ -85,7 +85,7 @@ final PostChargesRequestTransferData? transferData;
 /// A string that identifies this transaction as part of a group. For details, see [Grouping transactions](https://docs.stripe.com/connect/separate-charges-and-transfers#transfer-options).
 final String? transferGroup;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'application_fee': ?applicationFee,
   'application_fee_amount': ?applicationFeeAmount,
@@ -106,9 +106,9 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor_suffix': ?statementDescriptorSuffix,
   if (transferData != null) 'transfer_data': transferData?.toJson(),
   'transfer_group': ?transferGroup,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'application_fee', 'application_fee_amount', 'capture', 'card', 'currency', 'customer', 'description', 'destination', 'expand', 'metadata', 'on_behalf_of', 'radar_options', 'receipt_email', 'shipping', 'source', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data', 'transfer_group'}.contains(key)); } 
-PostChargesRequest copyWith({int? Function()? amount, int? Function()? applicationFee, int? Function()? applicationFeeAmount, bool? Function()? capture, PostChargesRequestCard? Function()? card, String? Function()? currency, String? Function()? customer, String? Function()? description, PostChargesRequestDestination? Function()? destination, List<String>? Function()? expand, PostChargesRequestMetadata? Function()? metadata, String? Function()? onBehalfOf, PostChargesRequestRadarOptions? Function()? radarOptions, String? Function()? receiptEmail, PostChargesRequestShipping? Function()? shipping, String? Function()? source, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostChargesRequestTransferData? Function()? transferData, String? Function()? transferGroup, }) { return PostChargesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'application_fee', 'application_fee_amount', 'capture', 'card', 'currency', 'customer', 'description', 'destination', 'expand', 'metadata', 'on_behalf_of', 'radar_options', 'receipt_email', 'shipping', 'source', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data', 'transfer_group'}.contains(key));}
+PostChargesRequest copyWith({int? Function()? amount, int? Function()? applicationFee, int? Function()? applicationFeeAmount, bool? Function()? capture, PostChargesRequestCard? Function()? card, String? Function()? currency, String? Function()? customer, String? Function()? description, PostChargesRequestDestination? Function()? destination, List<String>? Function()? expand, PostChargesRequestMetadata? Function()? metadata, String? Function()? onBehalfOf, PostChargesRequestRadarOptions? Function()? radarOptions, String? Function()? receiptEmail, PostChargesRequestShipping? Function()? shipping, String? Function()? source, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostChargesRequestTransferData? Function()? transferData, String? Function()? transferGroup, }) {return PostChargesRequest(
   amount: amount != null ? amount() : this.amount,
   applicationFee: applicationFee != null ? applicationFee() : this.applicationFee,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
@@ -129,8 +129,8 @@ PostChargesRequest copyWith({int? Function()? amount, int? Function()? applicati
   statementDescriptorSuffix: statementDescriptorSuffix != null ? statementDescriptorSuffix() : this.statementDescriptorSuffix,
   transferData: transferData != null ? transferData() : this.transferData,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostChargesRequest &&
           amount == other.amount &&
           applicationFee == other.applicationFee &&
@@ -151,7 +151,7 @@ PostChargesRequest copyWith({int? Function()? amount, int? Function()? applicati
           statementDescriptor == other.statementDescriptor &&
           statementDescriptorSuffix == other.statementDescriptorSuffix &&
           transferData == other.transferData &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(amount, applicationFee, applicationFeeAmount, capture, card, currency, customer, description, destination, Object.hashAll(expand ?? const []), metadata, onBehalfOf, radarOptions, receiptEmail, shipping, source, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup); } 
-@override String toString() { return 'PostChargesRequest(amount: $amount, applicationFee: $applicationFee, applicationFeeAmount: $applicationFeeAmount, capture: $capture, card: $card, currency: $currency, customer: $customer, description: $description, destination: $destination, expand: $expand, metadata: $metadata, onBehalfOf: $onBehalfOf, radarOptions: $radarOptions, receiptEmail: $receiptEmail, shipping: $shipping, source: $source, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup)'; } 
- }
+          transferGroup == other.transferGroup;}
+@override int get hashCode {return Object.hash(amount, applicationFee, applicationFeeAmount, capture, card, currency, customer, description, destination, Object.hashAll(expand ?? const []), metadata, onBehalfOf, radarOptions, receiptEmail, shipping, source, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup);}
+@override String toString() {return 'PostChargesRequest(amount: $amount, applicationFee: $applicationFee, applicationFeeAmount: $applicationFeeAmount, capture: $capture, card: $card, currency: $currency, customer: $customer, description: $description, destination: $destination, expand: $expand, metadata: $metadata, onBehalfOf: $onBehalfOf, radarOptions: $radarOptions, receiptEmail: $receiptEmail, shipping: $shipping, source: $source, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup)';}
+}

@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class DependabotListAlertsForOrgError {const DependabotListAlertsForOrgError();
 
 /// Decodes the payload for its declared status and content type.
-static DependabotListAlertsForOrgError parse(ApiResponse response) { switch (response.statusCode) {
+static DependabotListAlertsForOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const DependabotListAlertsForOrgError304();
 case 400:
@@ -32,51 +32,51 @@ return DependabotListAlertsForOrgError422(ValidationErrorSimple.fromJson(json as
 default:
 return DependabotListAlertsForOrgErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class DependabotListAlertsForOrgError304 extends DependabotListAlertsForOrgError {const DependabotListAlertsForOrgError304();
 
- }
+}
 /// Response for 400 (application/json).
 final class DependabotListAlertsForOrgError400ApplicationJson extends DependabotListAlertsForOrgError {const DependabotListAlertsForOrgError400ApplicationJson(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 400 (application/scim+json).
 final class DependabotListAlertsForOrgError400ApplicationScimJson extends DependabotListAlertsForOrgError {const DependabotListAlertsForOrgError400ApplicationScimJson(this.data);
 
 /// The decoded response payload.
 final ScimError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class DependabotListAlertsForOrgError403 extends DependabotListAlertsForOrgError {const DependabotListAlertsForOrgError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class DependabotListAlertsForOrgError404 extends DependabotListAlertsForOrgError {const DependabotListAlertsForOrgError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class DependabotListAlertsForOrgError422 extends DependabotListAlertsForOrgError {const DependabotListAlertsForOrgError422(this.data);
 
 /// The decoded response payload.
 final ValidationErrorSimple data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class DependabotListAlertsForOrgErrorUnknown extends DependabotListAlertsForOrgError {const DependabotListAlertsForOrgErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

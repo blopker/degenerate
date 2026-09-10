@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enhanced_evidence2_visa_compelling_evidence3_prior_undisputed_transactions_customer_account_id.dart';import 'enhanced_evidence2_visa_compelling_evidence3_prior_undisputed_transactions_customer_device_fingerprint.dart';import 'enhanced_evidence2_visa_compelling_evidence3_prior_undisputed_transactions_customer_device_id.dart';import 'enhanced_evidence2_visa_compelling_evidence3_prior_undisputed_transactions_customer_email_address.dart';import 'enhanced_evidence2_visa_compelling_evidence3_prior_undisputed_transactions_customer_purchase_ip.dart';import 'enhanced_evidence2_visa_compelling_evidence3_prior_undisputed_transactions_product_description.dart';import 'enhanced_evidence2_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address.dart';@immutable final class EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions {const EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions({required this.charge, this.customerAccountId, this.customerDeviceFingerprint, this.customerDeviceId, this.customerEmailAddress, this.customerPurchaseIp, this.productDescription, this.shippingAddress, });
 
-factory EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions.fromJson(Map<String, dynamic> json) { return EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions(
+factory EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions.fromJson(Map<String, dynamic> json) {return EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions(
   charge: json['charge'] as String,
   customerAccountId: json['customer_account_id'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerAccountId.fromJson(json['customer_account_id']) : null,
   customerDeviceFingerprint: json['customer_device_fingerprint'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceFingerprint.fromJson(json['customer_device_fingerprint']) : null,
@@ -11,7 +11,7 @@ factory EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions.from
   customerPurchaseIp: json['customer_purchase_ip'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerPurchaseIp.fromJson(json['customer_purchase_ip']) : null,
   productDescription: json['product_description'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsProductDescription.fromJson(json['product_description']) : null,
   shippingAddress: json['shipping_address'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String charge;
 
@@ -29,7 +29,7 @@ final EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsProduct
 
 final EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress? shippingAddress;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'charge': charge,
   if (customerAccountId != null) 'customer_account_id': customerAccountId?.toJson(),
   if (customerDeviceFingerprint != null) 'customer_device_fingerprint': customerDeviceFingerprint?.toJson(),
@@ -38,9 +38,9 @@ Map<String, dynamic> toJson() { return {
   if (customerPurchaseIp != null) 'customer_purchase_ip': customerPurchaseIp?.toJson(),
   if (productDescription != null) 'product_description': productDescription?.toJson(),
   if (shippingAddress != null) 'shipping_address': shippingAddress?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('charge') && json['charge'] is String; } 
-EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions copyWith({String? charge, EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerAccountId? Function()? customerAccountId, EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceFingerprint? Function()? customerDeviceFingerprint, EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceId? Function()? customerDeviceId, EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerEmailAddress? Function()? customerEmailAddress, EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerPurchaseIp? Function()? customerPurchaseIp, EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsProductDescription? Function()? productDescription, EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress? Function()? shippingAddress, }) { return EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('charge') && json['charge'] is String;}
+EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions copyWith({String? charge, EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerAccountId? Function()? customerAccountId, EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceFingerprint? Function()? customerDeviceFingerprint, EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceId? Function()? customerDeviceId, EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerEmailAddress? Function()? customerEmailAddress, EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerPurchaseIp? Function()? customerPurchaseIp, EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsProductDescription? Function()? productDescription, EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress? Function()? shippingAddress, }) {return EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions(
   charge: charge ?? this.charge,
   customerAccountId: customerAccountId != null ? customerAccountId() : this.customerAccountId,
   customerDeviceFingerprint: customerDeviceFingerprint != null ? customerDeviceFingerprint() : this.customerDeviceFingerprint,
@@ -49,8 +49,8 @@ EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions copyWith({St
   customerPurchaseIp: customerPurchaseIp != null ? customerPurchaseIp() : this.customerPurchaseIp,
   productDescription: productDescription != null ? productDescription() : this.productDescription,
   shippingAddress: shippingAddress != null ? shippingAddress() : this.shippingAddress,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions &&
           charge == other.charge &&
           customerAccountId == other.customerAccountId &&
@@ -59,7 +59,7 @@ EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions copyWith({St
           customerEmailAddress == other.customerEmailAddress &&
           customerPurchaseIp == other.customerPurchaseIp &&
           productDescription == other.productDescription &&
-          shippingAddress == other.shippingAddress; } 
-@override int get hashCode { return Object.hash(charge, customerAccountId, customerDeviceFingerprint, customerDeviceId, customerEmailAddress, customerPurchaseIp, productDescription, shippingAddress); } 
-@override String toString() { return 'EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions(charge: $charge, customerAccountId: $customerAccountId, customerDeviceFingerprint: $customerDeviceFingerprint, customerDeviceId: $customerDeviceId, customerEmailAddress: $customerEmailAddress, customerPurchaseIp: $customerPurchaseIp, productDescription: $productDescription, shippingAddress: $shippingAddress)'; } 
- }
+          shippingAddress == other.shippingAddress;}
+@override int get hashCode {return Object.hash(charge, customerAccountId, customerDeviceFingerprint, customerDeviceId, customerEmailAddress, customerPurchaseIp, productDescription, shippingAddress);}
+@override String toString() {return 'EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions(charge: $charge, customerAccountId: $customerAccountId, customerDeviceFingerprint: $customerDeviceFingerprint, customerDeviceId: $customerDeviceId, customerEmailAddress: $customerEmailAddress, customerPurchaseIp: $customerPurchaseIp, productDescription: $productDescription, shippingAddress: $shippingAddress)';}
+}

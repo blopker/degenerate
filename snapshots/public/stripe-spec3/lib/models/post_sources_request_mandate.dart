@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_sources_request_mandate_acceptance.dart';import 'post_sources_request_mandate_amount.dart';@immutable final class PostSourcesRequestMandateInterval {const PostSourcesRequestMandateInterval._(this.value);
 
-factory PostSourcesRequestMandateInterval.fromJson(String json) { return switch (json) {
+factory PostSourcesRequestMandateInterval.fromJson(String json) {return switch (json) {
   'one_time' => oneTime,
   'scheduled' => scheduled,
   'variable' => variable,
   _ => PostSourcesRequestMandateInterval._(json),
-}; }
+};}
 
 static const PostSourcesRequestMandateInterval oneTime = PostSourcesRequestMandateInterval._('one_time');
 
@@ -19,24 +19,24 @@ static const List<PostSourcesRequestMandateInterval> values = [oneTime, schedule
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSourcesRequestMandateInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSourcesRequestMandateInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSourcesRequestMandateInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSourcesRequestMandateInterval($value)';}
+}
 @immutable final class PostSourcesRequestMandateNotificationMethod {const PostSourcesRequestMandateNotificationMethod._(this.value);
 
-factory PostSourcesRequestMandateNotificationMethod.fromJson(String json) { return switch (json) {
+factory PostSourcesRequestMandateNotificationMethod.fromJson(String json) {return switch (json) {
   'deprecated_none' => deprecatedNone,
   'email' => email,
   'manual' => manual,
   'none' => none,
   'stripe_email' => stripeEmail,
   _ => PostSourcesRequestMandateNotificationMethod._(json),
-}; }
+};}
 
 static const PostSourcesRequestMandateNotificationMethod deprecatedNone = PostSourcesRequestMandateNotificationMethod._('deprecated_none');
 
@@ -52,24 +52,24 @@ static const List<PostSourcesRequestMandateNotificationMethod> values = [depreca
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSourcesRequestMandateNotificationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSourcesRequestMandateNotificationMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSourcesRequestMandateNotificationMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSourcesRequestMandateNotificationMethod($value)';}
+}
 /// Information about a mandate possibility attached to a source object (generally for bank debits) as well as its acceptance status.
 @immutable final class PostSourcesRequestMandate {const PostSourcesRequestMandate({this.acceptance, this.amount, this.currency, this.interval, this.notificationMethod, });
 
-factory PostSourcesRequestMandate.fromJson(Map<String, dynamic> json) { return PostSourcesRequestMandate(
+factory PostSourcesRequestMandate.fromJson(Map<String, dynamic> json) {return PostSourcesRequestMandate(
   acceptance: json['acceptance'] != null ? PostSourcesRequestMandateAcceptance.fromJson(json['acceptance'] as Map<String, dynamic>) : null,
   amount: json['amount'] != null ? PostSourcesRequestMandateAmount.fromJson(json['amount']) : null,
   currency: json['currency'] as String?,
   interval: json['interval'] != null ? PostSourcesRequestMandateInterval.fromJson(json['interval'] as String) : null,
   notificationMethod: json['notification_method'] != null ? PostSourcesRequestMandateNotificationMethod.fromJson(json['notification_method'] as String) : null,
-); }
+);}
 
 final PostSourcesRequestMandateAcceptance? acceptance;
 
@@ -81,28 +81,28 @@ final PostSourcesRequestMandateInterval? interval;
 
 final PostSourcesRequestMandateNotificationMethod? notificationMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (acceptance != null) 'acceptance': acceptance?.toJson(),
   if (amount != null) 'amount': amount?.toJson(),
   'currency': ?currency,
   if (interval != null) 'interval': interval?.toJson(),
   if (notificationMethod != null) 'notification_method': notificationMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acceptance', 'amount', 'currency', 'interval', 'notification_method'}.contains(key)); } 
-PostSourcesRequestMandate copyWith({PostSourcesRequestMandateAcceptance? Function()? acceptance, PostSourcesRequestMandateAmount? Function()? amount, String? Function()? currency, PostSourcesRequestMandateInterval? Function()? interval, PostSourcesRequestMandateNotificationMethod? Function()? notificationMethod, }) { return PostSourcesRequestMandate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'acceptance', 'amount', 'currency', 'interval', 'notification_method'}.contains(key));}
+PostSourcesRequestMandate copyWith({PostSourcesRequestMandateAcceptance? Function()? acceptance, PostSourcesRequestMandateAmount? Function()? amount, String? Function()? currency, PostSourcesRequestMandateInterval? Function()? interval, PostSourcesRequestMandateNotificationMethod? Function()? notificationMethod, }) {return PostSourcesRequestMandate(
   acceptance: acceptance != null ? acceptance() : this.acceptance,
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,
   interval: interval != null ? interval() : this.interval,
   notificationMethod: notificationMethod != null ? notificationMethod() : this.notificationMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSourcesRequestMandate &&
           acceptance == other.acceptance &&
           amount == other.amount &&
           currency == other.currency &&
           interval == other.interval &&
-          notificationMethod == other.notificationMethod; } 
-@override int get hashCode { return Object.hash(acceptance, amount, currency, interval, notificationMethod); } 
-@override String toString() { return 'PostSourcesRequestMandate(acceptance: $acceptance, amount: $amount, currency: $currency, interval: $interval, notificationMethod: $notificationMethod)'; } 
- }
+          notificationMethod == other.notificationMethod;}
+@override int get hashCode {return Object.hash(acceptance, amount, currency, interval, notificationMethod);}
+@override String toString() {return 'PostSourcesRequestMandate(acceptance: $acceptance, amount: $amount, currency: $currency, interval: $interval, notificationMethod: $notificationMethod)';}
+}

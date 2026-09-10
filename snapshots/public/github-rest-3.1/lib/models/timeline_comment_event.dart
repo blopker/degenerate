@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'integration.dart';import 'pinned_issue_comment.dart';import 'reaction_rollup.dart';import 'simple_user.dart';/// Timeline Comment Event
 @immutable final class TimelineCommentEvent {const TimelineCommentEvent({required this.event, required this.actor, required this.id, required this.nodeId, required this.url, required this.htmlUrl, required this.user, required this.createdAt, required this.updatedAt, required this.issueUrl, required this.authorAssociation, this.body, this.bodyText, this.bodyHtml, this.performedViaGithubApp = const Omittable.absent(), this.reactions, this.pin = const Omittable.absent(), });
 
-factory TimelineCommentEvent.fromJson(Map<String, dynamic> json) { return TimelineCommentEvent(
+factory TimelineCommentEvent.fromJson(Map<String, dynamic> json) {return TimelineCommentEvent(
   event: json['event'] as String,
   actor: SimpleUser.fromJson(json['actor'] as Map<String, dynamic>),
   id: (json['id'] as num).toInt(),
@@ -21,7 +21,7 @@ factory TimelineCommentEvent.fromJson(Map<String, dynamic> json) { return Timeli
   performedViaGithubApp: json.containsKey('performed_via_github_app') ? Omittable(json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
   pin: json.containsKey('pin') ? Omittable(json['pin'] != null ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 final String event;
 
@@ -61,7 +61,7 @@ final ReactionRollup? reactions;
 
 final Omittable<PinnedIssueComment?> pin;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event': event,
   'actor': actor.toJson(),
   'id': id,
@@ -79,8 +79,8 @@ Map<String, dynamic> toJson() { return {
   if (performedViaGithubApp.isPresent) 'performed_via_github_app': performedViaGithubApp.value?.toJson(),
   if (reactions != null) 'reactions': reactions?.toJson(),
   if (pin.isPresent) 'pin': pin.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') && json['event'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event') && json['event'] is String &&
       json.containsKey('actor') &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
@@ -90,8 +90,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('issue_url') && json['issue_url'] is String &&
-      json.containsKey('author_association'); } 
-TimelineCommentEvent copyWith({String? event, SimpleUser? actor, int? id, String? nodeId, Uri? url, String? Function()? body, String? Function()? bodyText, String? Function()? bodyHtml, Uri? htmlUrl, SimpleUser? user, DateTime? createdAt, DateTime? updatedAt, Uri? issueUrl, AuthorAssociation? authorAssociation, Omittable<Integration?>? performedViaGithubApp, ReactionRollup? Function()? reactions, Omittable<PinnedIssueComment?>? pin, }) { return TimelineCommentEvent(
+      json.containsKey('author_association');}
+TimelineCommentEvent copyWith({String? event, SimpleUser? actor, int? id, String? nodeId, Uri? url, String? Function()? body, String? Function()? bodyText, String? Function()? bodyHtml, Uri? htmlUrl, SimpleUser? user, DateTime? createdAt, DateTime? updatedAt, Uri? issueUrl, AuthorAssociation? authorAssociation, Omittable<Integration?>? performedViaGithubApp, ReactionRollup? Function()? reactions, Omittable<PinnedIssueComment?>? pin, }) {return TimelineCommentEvent(
   event: event ?? this.event,
   actor: actor ?? this.actor,
   id: id ?? this.id,
@@ -109,8 +109,8 @@ TimelineCommentEvent copyWith({String? event, SimpleUser? actor, int? id, String
   performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
   reactions: reactions != null ? reactions() : this.reactions,
   pin: pin ?? this.pin,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TimelineCommentEvent &&
           event == other.event &&
           actor == other.actor &&
@@ -128,7 +128,7 @@ TimelineCommentEvent copyWith({String? event, SimpleUser? actor, int? id, String
           authorAssociation == other.authorAssociation &&
           performedViaGithubApp == other.performedViaGithubApp &&
           reactions == other.reactions &&
-          pin == other.pin; } 
-@override int get hashCode { return Object.hash(event, actor, id, nodeId, url, body, bodyText, bodyHtml, htmlUrl, user, createdAt, updatedAt, issueUrl, authorAssociation, performedViaGithubApp, reactions, pin); } 
-@override String toString() { return 'TimelineCommentEvent(event: $event, actor: $actor, id: $id, nodeId: $nodeId, url: $url, body: $body, bodyText: $bodyText, bodyHtml: $bodyHtml, htmlUrl: $htmlUrl, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, issueUrl: $issueUrl, authorAssociation: $authorAssociation, performedViaGithubApp: $performedViaGithubApp, reactions: $reactions, pin: $pin)'; } 
- }
+          pin == other.pin;}
+@override int get hashCode {return Object.hash(event, actor, id, nodeId, url, body, bodyText, bodyHtml, htmlUrl, user, createdAt, updatedAt, issueUrl, authorAssociation, performedViaGithubApp, reactions, pin);}
+@override String toString() {return 'TimelineCommentEvent(event: $event, actor: $actor, id: $id, nodeId: $nodeId, url: $url, body: $body, bodyText: $bodyText, bodyHtml: $bodyHtml, htmlUrl: $htmlUrl, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, issueUrl: $issueUrl, authorAssociation: $authorAssociation, performedViaGithubApp: $performedViaGithubApp, reactions: $reactions, pin: $pin)';}
+}

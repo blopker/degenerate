@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RangeQuerySpecs26 {const RangeQuerySpecs26({this.gt, this.gte, this.lt, this.lte, });
 
-factory RangeQuerySpecs26.fromJson(Map<String, dynamic> json) { return RangeQuerySpecs26(
+factory RangeQuerySpecs26.fromJson(Map<String, dynamic> json) {return RangeQuerySpecs26(
   gt: json['gt'] != null ? (json['gt'] as num).toInt() : null,
   gte: json['gte'] != null ? (json['gte'] as num).toInt() : null,
   lt: json['lt'] != null ? (json['lt'] as num).toInt() : null,
   lte: json['lte'] != null ? (json['lte'] as num).toInt() : null,
-); }
+);}
 
 final int? gt;
 
@@ -17,25 +17,25 @@ final int? lt;
 
 final int? lte;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'gt': ?gt,
   'gte': ?gte,
   'lt': ?lt,
   'lte': ?lte,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'gt', 'gte', 'lt', 'lte'}.contains(key)); } 
-RangeQuerySpecs26 copyWith({int? Function()? gt, int? Function()? gte, int? Function()? lt, int? Function()? lte, }) { return RangeQuerySpecs26(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'gt', 'gte', 'lt', 'lte'}.contains(key));}
+RangeQuerySpecs26 copyWith({int? Function()? gt, int? Function()? gte, int? Function()? lt, int? Function()? lte, }) {return RangeQuerySpecs26(
   gt: gt != null ? gt() : this.gt,
   gte: gte != null ? gte() : this.gte,
   lt: lt != null ? lt() : this.lt,
   lte: lte != null ? lte() : this.lte,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RangeQuerySpecs26 &&
           gt == other.gt &&
           gte == other.gte &&
           lt == other.lt &&
-          lte == other.lte; } 
-@override int get hashCode { return Object.hash(gt, gte, lt, lte); } 
-@override String toString() { return 'RangeQuerySpecs26(gt: $gt, gte: $gte, lt: $lt, lte: $lte)'; } 
- }
+          lte == other.lte;}
+@override int get hashCode {return Object.hash(gt, gte, lt, lte);}
+@override String toString() {return 'RangeQuerySpecs26(gt: $gt, gte: $gte, lt: $lt, lte: $lte)';}
+}

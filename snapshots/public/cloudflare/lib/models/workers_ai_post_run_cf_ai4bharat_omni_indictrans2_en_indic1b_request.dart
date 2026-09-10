@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_ai4bharat_omni_indictrans2_en_indic1b_request_text.dart';/// Target langauge to translate to
 @immutable final class WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage {const WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage._(this.value);
 
-factory WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage.fromJson(String json) { return switch (json) {
+factory WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage.fromJson(String json) {return switch (json) {
   'asm_Beng' => asmBeng,
   'awa_Deva' => awaDeva,
   'ben_Beng' => benBeng,
@@ -39,7 +39,7 @@ factory WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage
   'urd_Arab' => urdArab,
   'unr_Deva' => unrDeva,
   _ => WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage._(json),
-}; }
+};}
 
 static const WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage asmBeng = WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage._('asm_Beng');
 
@@ -113,20 +113,20 @@ static const List<WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTarg
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage($value)';}
+}
 @immutable final class WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest {const WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest({required this.targetLanguage, required this.text, });
 
-factory WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest(
+factory WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest(
   targetLanguage: WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage.fromJson(json['target_language'] as String),
   text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
-); }
+);}
 
 /// Target langauge to translate to
 final WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage targetLanguage;
@@ -134,20 +134,20 @@ final WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage t
 /// Input text to translate. Can be a single string or a list of strings.
 final WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestText text;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'target_language': targetLanguage.toJson(),
   'text': text.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_language') &&
-      json.containsKey('text'); } 
-WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest copyWith({WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage? targetLanguage, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestText? text, }) { return WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('target_language') &&
+      json.containsKey('text');}
+WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest copyWith({WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage? targetLanguage, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestText? text, }) {return WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest(
   targetLanguage: targetLanguage ?? this.targetLanguage,
   text: text ?? this.text,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest &&
           targetLanguage == other.targetLanguage &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(targetLanguage, text); } 
-@override String toString() { return 'WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest(targetLanguage: $targetLanguage, text: $text)'; } 
- }
+          text == other.text;}
+@override int get hashCode {return Object.hash(targetLanguage, text);}
+@override String toString() {return 'WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest(targetLanguage: $targetLanguage, text: $text)';}
+}

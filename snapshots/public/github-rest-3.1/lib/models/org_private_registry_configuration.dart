@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The registry type.
 @immutable final class OrgPrivateRegistryConfigurationRegistryType {const OrgPrivateRegistryConfigurationRegistryType._(this.value);
 
-factory OrgPrivateRegistryConfigurationRegistryType.fromJson(String json) { return switch (json) {
+factory OrgPrivateRegistryConfigurationRegistryType.fromJson(String json) {return switch (json) {
   'maven_repository' => mavenRepository,
   'nuget_feed' => nugetFeed,
   'goproxy_server' => goproxyServer,
@@ -20,7 +20,7 @@ factory OrgPrivateRegistryConfigurationRegistryType.fromJson(String json) { retu
   'python_index' => pythonIndex,
   'terraform_registry' => terraformRegistry,
   _ => OrgPrivateRegistryConfigurationRegistryType._(json),
-}; }
+};}
 
 static const OrgPrivateRegistryConfigurationRegistryType mavenRepository = OrgPrivateRegistryConfigurationRegistryType._('maven_repository');
 
@@ -56,23 +56,23 @@ static const List<OrgPrivateRegistryConfigurationRegistryType> values = [mavenRe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgPrivateRegistryConfigurationRegistryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgPrivateRegistryConfigurationRegistryType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgPrivateRegistryConfigurationRegistryType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrgPrivateRegistryConfigurationRegistryType($value)';}
+}
 /// Which type of organization repositories have access to the private registry.
 @immutable final class OrgPrivateRegistryConfigurationVisibility {const OrgPrivateRegistryConfigurationVisibility._(this.value);
 
-factory OrgPrivateRegistryConfigurationVisibility.fromJson(String json) { return switch (json) {
+factory OrgPrivateRegistryConfigurationVisibility.fromJson(String json) {return switch (json) {
   'all' => all,
   'private' => private,
   'selected' => selected,
   _ => OrgPrivateRegistryConfigurationVisibility._(json),
-}; }
+};}
 
 static const OrgPrivateRegistryConfigurationVisibility all = OrgPrivateRegistryConfigurationVisibility._('all');
 
@@ -84,18 +84,18 @@ static const List<OrgPrivateRegistryConfigurationVisibility> values = [all, priv
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgPrivateRegistryConfigurationVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgPrivateRegistryConfigurationVisibility($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgPrivateRegistryConfigurationVisibility && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrgPrivateRegistryConfigurationVisibility($value)';}
+}
 /// Private registry configuration for an organization
 @immutable final class OrgPrivateRegistryConfiguration {const OrgPrivateRegistryConfiguration({required this.name, required this.registryType, required this.visibility, required this.createdAt, required this.updatedAt, this.url, this.username = const Omittable.absent(), this.replacesBase, });
 
-factory OrgPrivateRegistryConfiguration.fromJson(Map<String, dynamic> json) { return OrgPrivateRegistryConfiguration(
+factory OrgPrivateRegistryConfiguration.fromJson(Map<String, dynamic> json) {return OrgPrivateRegistryConfiguration(
   name: json['name'] as String,
   registryType: OrgPrivateRegistryConfigurationRegistryType.fromJson(json['registry_type'] as String),
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
@@ -104,7 +104,7 @@ factory OrgPrivateRegistryConfiguration.fromJson(Map<String, dynamic> json) { re
   visibility: OrgPrivateRegistryConfigurationVisibility.fromJson(json['visibility'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 /// The name of the private registry configuration.
 final String name;
@@ -129,8 +129,8 @@ final DateTime createdAt;
 final DateTime updatedAt;
 
 /// The value with the schema default applied when absent.
-bool get replacesBaseOrDefault { return replacesBase ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get replacesBaseOrDefault {return replacesBase ?? false;}
+Map<String, dynamic> toJson() {return {
   'name': name,
   'registry_type': registryType.toJson(),
   if (url != null) 'url': url?.toString(),
@@ -139,13 +139,13 @@ Map<String, dynamic> toJson() { return {
   'visibility': visibility.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('registry_type') &&
       json.containsKey('visibility') &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-OrgPrivateRegistryConfiguration copyWith({String? name, OrgPrivateRegistryConfigurationRegistryType? registryType, Uri? Function()? url, Omittable<String?>? username, bool? Function()? replacesBase, OrgPrivateRegistryConfigurationVisibility? visibility, DateTime? createdAt, DateTime? updatedAt, }) { return OrgPrivateRegistryConfiguration(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+OrgPrivateRegistryConfiguration copyWith({String? name, OrgPrivateRegistryConfigurationRegistryType? registryType, Uri? Function()? url, Omittable<String?>? username, bool? Function()? replacesBase, OrgPrivateRegistryConfigurationVisibility? visibility, DateTime? createdAt, DateTime? updatedAt, }) {return OrgPrivateRegistryConfiguration(
   name: name ?? this.name,
   registryType: registryType ?? this.registryType,
   url: url != null ? url() : this.url,
@@ -154,8 +154,8 @@ OrgPrivateRegistryConfiguration copyWith({String? name, OrgPrivateRegistryConfig
   visibility: visibility ?? this.visibility,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrgPrivateRegistryConfiguration &&
           name == other.name &&
           registryType == other.registryType &&
@@ -164,7 +164,7 @@ OrgPrivateRegistryConfiguration copyWith({String? name, OrgPrivateRegistryConfig
           replacesBase == other.replacesBase &&
           visibility == other.visibility &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(name, registryType, url, username, replacesBase, visibility, createdAt, updatedAt); } 
-@override String toString() { return 'OrgPrivateRegistryConfiguration(name: $name, registryType: $registryType, url: $url, username: $username, replacesBase: $replacesBase, visibility: $visibility, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(name, registryType, url, username, replacesBase, visibility, createdAt, updatedAt);}
+@override String toString() {return 'OrgPrivateRegistryConfiguration(name: $name, registryType: $registryType, url: $url, username: $username, replacesBase: $replacesBase, visibility: $visibility, createdAt: $createdAt, updatedAt: $updatedAt)';}
+}

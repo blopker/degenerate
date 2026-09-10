@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'app_armor_profile.dart';import 'se_linux_options.dart';import 'seccomp_profile.dart';import 'sysctl.dart';import 'windows_security_context_options.dart';/// PodSecurityContext holds pod-level security attributes and common container settings. Some fields are also present in container.securityContext.  Field values of container.securityContext take precedence over field values of PodSecurityContext.
 @immutable final class PodSecurityContext {const PodSecurityContext({this.appArmorProfile, this.fsGroup, this.fsGroupChangePolicy, this.runAsGroup, this.runAsNonRoot, this.runAsUser, this.seLinuxChangePolicy, this.seLinuxOptions, this.seccompProfile, this.supplementalGroups, this.supplementalGroupsPolicy, this.sysctls, this.windowsOptions, });
 
-factory PodSecurityContext.fromJson(Map<String, dynamic> json) { return PodSecurityContext(
+factory PodSecurityContext.fromJson(Map<String, dynamic> json) {return PodSecurityContext(
   appArmorProfile: json['appArmorProfile'] != null ? AppArmorProfile.fromJson(json['appArmorProfile'] as Map<String, dynamic>) : null,
   fsGroup: json['fsGroup'] != null ? (json['fsGroup'] as num).toInt() : null,
   fsGroupChangePolicy: json['fsGroupChangePolicy'] as String?,
@@ -17,7 +17,7 @@ factory PodSecurityContext.fromJson(Map<String, dynamic> json) { return PodSecur
   supplementalGroupsPolicy: json['supplementalGroupsPolicy'] as String?,
   sysctls: (json['sysctls'] as List<dynamic>?)?.map((e) => Sysctl.fromJson(e as Map<String, dynamic>)).toList(),
   windowsOptions: json['windowsOptions'] != null ? WindowsSecurityContextOptions.fromJson(json['windowsOptions'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// appArmorProfile is the AppArmor options to use by the containers in this pod. Note that this field cannot be set when spec.os.name is windows.
 final AppArmorProfile? appArmorProfile;
@@ -72,7 +72,7 @@ final List<Sysctl>? sysctls;
 /// The Windows specific settings applied to all containers. If unspecified, the options within a container's SecurityContext will be used. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. Note that this field cannot be set when spec.os.name is linux.
 final WindowsSecurityContextOptions? windowsOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (appArmorProfile != null) 'appArmorProfile': appArmorProfile?.toJson(),
   'fsGroup': ?fsGroup,
   'fsGroupChangePolicy': ?fsGroupChangePolicy,
@@ -86,9 +86,9 @@ Map<String, dynamic> toJson() { return {
   'supplementalGroupsPolicy': ?supplementalGroupsPolicy,
   if (sysctls != null) 'sysctls': sysctls?.map((e) => e.toJson()).toList(),
   if (windowsOptions != null) 'windowsOptions': windowsOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'appArmorProfile', 'fsGroup', 'fsGroupChangePolicy', 'runAsGroup', 'runAsNonRoot', 'runAsUser', 'seLinuxChangePolicy', 'seLinuxOptions', 'seccompProfile', 'supplementalGroups', 'supplementalGroupsPolicy', 'sysctls', 'windowsOptions'}.contains(key)); } 
-PodSecurityContext copyWith({AppArmorProfile? Function()? appArmorProfile, int? Function()? fsGroup, String? Function()? fsGroupChangePolicy, int? Function()? runAsGroup, bool? Function()? runAsNonRoot, int? Function()? runAsUser, String? Function()? seLinuxChangePolicy, SeLinuxOptions? Function()? seLinuxOptions, SeccompProfile? Function()? seccompProfile, List<int>? Function()? supplementalGroups, String? Function()? supplementalGroupsPolicy, List<Sysctl>? Function()? sysctls, WindowsSecurityContextOptions? Function()? windowsOptions, }) { return PodSecurityContext(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'appArmorProfile', 'fsGroup', 'fsGroupChangePolicy', 'runAsGroup', 'runAsNonRoot', 'runAsUser', 'seLinuxChangePolicy', 'seLinuxOptions', 'seccompProfile', 'supplementalGroups', 'supplementalGroupsPolicy', 'sysctls', 'windowsOptions'}.contains(key));}
+PodSecurityContext copyWith({AppArmorProfile? Function()? appArmorProfile, int? Function()? fsGroup, String? Function()? fsGroupChangePolicy, int? Function()? runAsGroup, bool? Function()? runAsNonRoot, int? Function()? runAsUser, String? Function()? seLinuxChangePolicy, SeLinuxOptions? Function()? seLinuxOptions, SeccompProfile? Function()? seccompProfile, List<int>? Function()? supplementalGroups, String? Function()? supplementalGroupsPolicy, List<Sysctl>? Function()? sysctls, WindowsSecurityContextOptions? Function()? windowsOptions, }) {return PodSecurityContext(
   appArmorProfile: appArmorProfile != null ? appArmorProfile() : this.appArmorProfile,
   fsGroup: fsGroup != null ? fsGroup() : this.fsGroup,
   fsGroupChangePolicy: fsGroupChangePolicy != null ? fsGroupChangePolicy() : this.fsGroupChangePolicy,
@@ -102,8 +102,8 @@ PodSecurityContext copyWith({AppArmorProfile? Function()? appArmorProfile, int? 
   supplementalGroupsPolicy: supplementalGroupsPolicy != null ? supplementalGroupsPolicy() : this.supplementalGroupsPolicy,
   sysctls: sysctls != null ? sysctls() : this.sysctls,
   windowsOptions: windowsOptions != null ? windowsOptions() : this.windowsOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PodSecurityContext &&
           appArmorProfile == other.appArmorProfile &&
           fsGroup == other.fsGroup &&
@@ -117,7 +117,7 @@ PodSecurityContext copyWith({AppArmorProfile? Function()? appArmorProfile, int? 
           listEquals(supplementalGroups, other.supplementalGroups) &&
           supplementalGroupsPolicy == other.supplementalGroupsPolicy &&
           listEquals(sysctls, other.sysctls) &&
-          windowsOptions == other.windowsOptions; } 
-@override int get hashCode { return Object.hash(appArmorProfile, fsGroup, fsGroupChangePolicy, runAsGroup, runAsNonRoot, runAsUser, seLinuxChangePolicy, seLinuxOptions, seccompProfile, Object.hashAll(supplementalGroups ?? const []), supplementalGroupsPolicy, Object.hashAll(sysctls ?? const []), windowsOptions); } 
-@override String toString() { return 'PodSecurityContext(appArmorProfile: $appArmorProfile, fsGroup: $fsGroup, fsGroupChangePolicy: $fsGroupChangePolicy, runAsGroup: $runAsGroup, runAsNonRoot: $runAsNonRoot, runAsUser: $runAsUser, seLinuxChangePolicy: $seLinuxChangePolicy, seLinuxOptions: $seLinuxOptions, seccompProfile: $seccompProfile, supplementalGroups: $supplementalGroups, supplementalGroupsPolicy: $supplementalGroupsPolicy, sysctls: $sysctls, windowsOptions: $windowsOptions)'; } 
- }
+          windowsOptions == other.windowsOptions;}
+@override int get hashCode {return Object.hash(appArmorProfile, fsGroup, fsGroupChangePolicy, runAsGroup, runAsNonRoot, runAsUser, seLinuxChangePolicy, seLinuxOptions, seccompProfile, Object.hashAll(supplementalGroups ?? const []), supplementalGroupsPolicy, Object.hashAll(sysctls ?? const []), windowsOptions);}
+@override String toString() {return 'PodSecurityContext(appArmorProfile: $appArmorProfile, fsGroup: $fsGroup, fsGroupChangePolicy: $fsGroupChangePolicy, runAsGroup: $runAsGroup, runAsNonRoot: $runAsNonRoot, runAsUser: $runAsUser, seLinuxChangePolicy: $seLinuxChangePolicy, seLinuxOptions: $seLinuxOptions, seccompProfile: $seccompProfile, supplementalGroups: $supplementalGroups, supplementalGroupsPolicy: $supplementalGroupsPolicy, sysctls: $sysctls, windowsOptions: $windowsOptions)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookStatusCommitParents {const WebhookStatusCommitParents({required this.htmlUrl, required this.sha, required this.url, });
 
-factory WebhookStatusCommitParents.fromJson(Map<String, dynamic> json) { return WebhookStatusCommitParents(
+factory WebhookStatusCommitParents.fromJson(Map<String, dynamic> json) {return WebhookStatusCommitParents(
   htmlUrl: Uri.parse(json['html_url'] as String),
   sha: json['sha'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final Uri htmlUrl;
 
@@ -14,24 +14,24 @@ final String sha;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'html_url': htmlUrl.toString(),
   'sha': sha,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('html_url') && json['html_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookStatusCommitParents copyWith({Uri? htmlUrl, String? sha, Uri? url, }) { return WebhookStatusCommitParents(
+      json.containsKey('url') && json['url'] is String;}
+WebhookStatusCommitParents copyWith({Uri? htmlUrl, String? sha, Uri? url, }) {return WebhookStatusCommitParents(
   htmlUrl: htmlUrl ?? this.htmlUrl,
   sha: sha ?? this.sha,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookStatusCommitParents &&
           htmlUrl == other.htmlUrl &&
           sha == other.sha &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(htmlUrl, sha, url); } 
-@override String toString() { return 'WebhookStatusCommitParents(htmlUrl: $htmlUrl, sha: $sha, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(htmlUrl, sha, url);}
+@override String toString() {return 'WebhookStatusCommitParents(htmlUrl: $htmlUrl, sha: $sha, url: $url)';}
+}

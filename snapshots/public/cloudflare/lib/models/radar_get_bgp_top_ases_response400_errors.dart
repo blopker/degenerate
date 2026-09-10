@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpTopAsesResponse400Errors {const RadarGetBgpTopAsesResponse400Errors({required this.message});
 
-factory RadarGetBgpTopAsesResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetBgpTopAsesResponse400Errors(
+factory RadarGetBgpTopAsesResponse400Errors.fromJson(Map<String, dynamic> json) {return RadarGetBgpTopAsesResponse400Errors(
   message: json['message'] as String,
-); }
+);}
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-RadarGetBgpTopAsesResponse400Errors copyWith({String? message}) { return RadarGetBgpTopAsesResponse400Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+RadarGetBgpTopAsesResponse400Errors copyWith({String? message}) {return RadarGetBgpTopAsesResponse400Errors(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetBgpTopAsesResponse400Errors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'RadarGetBgpTopAsesResponse400Errors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'RadarGetBgpTopAsesResponse400Errors(message: $message)';}
+}

@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class IssuesListForRepoError {const IssuesListForRepoError();
 
 /// Decodes the payload for its declared status and content type.
-static IssuesListForRepoError parse(ApiResponse response) { switch (response.statusCode) {
+static IssuesListForRepoError parse(ApiResponse response) {switch (response.statusCode) {
 case 301:
 final json = jsonDecode(response.body);
 return IssuesListForRepoError301(BasicError.fromJson(json as Map<String, dynamic>));
@@ -17,33 +17,33 @@ return IssuesListForRepoError422(ValidationError.fromJson(json as Map<String, dy
 default:
 return IssuesListForRepoErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 301 (application/json).
 final class IssuesListForRepoError301 extends IssuesListForRepoError {const IssuesListForRepoError301(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class IssuesListForRepoError404 extends IssuesListForRepoError {const IssuesListForRepoError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class IssuesListForRepoError422 extends IssuesListForRepoError {const IssuesListForRepoError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class IssuesListForRepoErrorUnknown extends IssuesListForRepoError {const IssuesListForRepoErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

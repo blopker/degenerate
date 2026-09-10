@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_customer_balance_bank_transfer.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType.fromJson(String json) {return switch (json) {
   'bank_transfer' => bankTransfer,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType bankTransfer = PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType._('bank_transfer');
 
@@ -13,20 +13,20 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage none = PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage._('none');
 
@@ -34,21 +34,21 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance({this.bankTransfer, this.fundingType, this.setupFutureUsage, });
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance(
+factory PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance(
   bankTransfer: json['bank_transfer'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>) : null,
   fundingType: json['funding_type'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType.fromJson(json['funding_type'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransfer? bankTransfer;
 
@@ -56,22 +56,22 @@ final PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType?
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bankTransfer != null) 'bank_transfer': bankTransfer?.toJson(),
   if (fundingType != null) 'funding_type': fundingType?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_transfer', 'funding_type', 'setup_future_usage'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransfer? Function()? bankTransfer, PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType? Function()? fundingType, PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage? Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank_transfer', 'funding_type', 'setup_future_usage'}.contains(key));}
+PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransfer? Function()? bankTransfer, PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType? Function()? fundingType, PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage? Function()? setupFutureUsage, }) {return PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance(
   bankTransfer: bankTransfer != null ? bankTransfer() : this.bankTransfer,
   fundingType: fundingType != null ? fundingType() : this.fundingType,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance &&
           bankTransfer == other.bankTransfer &&
           fundingType == other.fundingType &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(bankTransfer, fundingType, setupFutureUsage); } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance(bankTransfer: $bankTransfer, fundingType: $fundingType, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(bankTransfer, fundingType, setupFutureUsage);}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance(bankTransfer: $bankTransfer, fundingType: $fundingType, setupFutureUsage: $setupFutureUsage)';}
+}

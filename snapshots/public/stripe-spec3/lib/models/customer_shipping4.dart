@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_shipping4_address.dart';@immutable final class CustomerShipping4 {const CustomerShipping4({required this.address, required this.name, this.phone, });
 
-factory CustomerShipping4.fromJson(Map<String, dynamic> json) { return CustomerShipping4(
+factory CustomerShipping4.fromJson(Map<String, dynamic> json) {return CustomerShipping4(
   address: CustomerShipping4Address.fromJson(json['address'] as Map<String, dynamic>),
   name: json['name'] as String,
   phone: json['phone'] as String?,
-); }
+);}
 
 final CustomerShipping4Address address;
 
@@ -14,23 +14,23 @@ final String name;
 
 final String? phone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
   'name': name,
   'phone': ?phone,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
-      json.containsKey('name') && json['name'] is String; } 
-CustomerShipping4 copyWith({CustomerShipping4Address? address, String? name, String? Function()? phone, }) { return CustomerShipping4(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address') &&
+      json.containsKey('name') && json['name'] is String;}
+CustomerShipping4 copyWith({CustomerShipping4Address? address, String? name, String? Function()? phone, }) {return CustomerShipping4(
   address: address ?? this.address,
   name: name ?? this.name,
   phone: phone != null ? phone() : this.phone,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomerShipping4 &&
           address == other.address &&
           name == other.name &&
-          phone == other.phone; } 
-@override int get hashCode { return Object.hash(address, name, phone); } 
-@override String toString() { return 'CustomerShipping4(address: $address, name: $name, phone: $phone)'; } 
- }
+          phone == other.phone;}
+@override int get hashCode {return Object.hash(address, name, phone);}
+@override String toString() {return 'CustomerShipping4(address: $address, name: $name, phone: $phone)';}
+}

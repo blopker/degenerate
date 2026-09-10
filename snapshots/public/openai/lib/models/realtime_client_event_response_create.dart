@@ -28,11 +28,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_res
 /// 
 @immutable final class RealtimeClientEventResponseCreate {const RealtimeClientEventResponseCreate({required this.type, this.eventId, this.response, });
 
-factory RealtimeClientEventResponseCreate.fromJson(Map<String, dynamic> json) { return RealtimeClientEventResponseCreate(
+factory RealtimeClientEventResponseCreate.fromJson(Map<String, dynamic> json) {return RealtimeClientEventResponseCreate(
   eventId: json['event_id'] as String?,
   type: json['type'] as String,
   response: json['response'] != null ? RealtimeResponseCreateParams.fromJson(json['response'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
@@ -42,22 +42,22 @@ final String type;
 
 final RealtimeResponseCreateParams? response;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type,
   if (response != null) 'response': response?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-RealtimeClientEventResponseCreate copyWith({String? Function()? eventId, String? type, RealtimeResponseCreateParams? Function()? response, }) { return RealtimeClientEventResponseCreate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+RealtimeClientEventResponseCreate copyWith({String? Function()? eventId, String? type, RealtimeResponseCreateParams? Function()? response, }) {return RealtimeClientEventResponseCreate(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   response: response != null ? response() : this.response,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeClientEventResponseCreate &&
           eventId == other.eventId &&
           type == other.type &&
-          response == other.response; } 
-@override int get hashCode { return Object.hash(eventId, type, response); } 
-@override String toString() { return 'RealtimeClientEventResponseCreate(eventId: $eventId, type: $type, response: $response)'; } 
- }
+          response == other.response;}
+@override int get hashCode {return Object.hash(eventId, type, response);}
+@override String toString() {return 'RealtimeClientEventResponseCreate(eventId: $eventId, type: $type, response: $response)';}
+}

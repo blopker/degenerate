@@ -2,12 +2,12 @@
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_ref_param2.dart';import 'video_model.dart';import 'video_size.dart';@immutable final class VideoSeconds {const VideoSeconds._(this.value);
 
-factory VideoSeconds.fromJson(String json) { return switch (json) {
+factory VideoSeconds.fromJson(String json) {return switch (json) {
   '4' => $4,
   '8' => $8,
   '12' => $12,
   _ => VideoSeconds._(json),
-}; }
+};}
 
 static const VideoSeconds $4 = VideoSeconds._('4');
 
@@ -19,25 +19,25 @@ static const List<VideoSeconds> values = [$4, $8, $12];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VideoSeconds && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VideoSeconds($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is VideoSeconds && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'VideoSeconds($value)';}
+}
 /// Parameters for creating a new video generation job.
 @immutable final class CreateVideoBody {const CreateVideoBody({required this.prompt, this.model, this.inputReference, this.imageReference, this.seconds, this.size, });
 
-factory CreateVideoBody.fromJson(Map<String, dynamic> json) { return CreateVideoBody(
+factory CreateVideoBody.fromJson(Map<String, dynamic> json) {return CreateVideoBody(
   model: json['model'] != null ? VideoModel.fromJson(json['model']) : null,
   prompt: json['prompt'] as String,
   inputReference: json['input_reference'] != null ? base64Decode(json['input_reference'] as String) : null,
   imageReference: json['image_reference'] != null ? ImageRefParam2.fromJson(json['image_reference'] as Map<String, dynamic>) : null,
   seconds: json['seconds'] != null ? VideoSeconds.fromJson(json['seconds'] as String) : null,
   size: json['size'] != null ? VideoSize.fromJson(json['size'] as String) : null,
-); }
+);}
 
 /// The video generation model to use (allowed values: sora-2, sora-2-pro). Defaults to `sora-2`.
 final VideoModel? model;
@@ -57,31 +57,31 @@ final VideoSeconds? seconds;
 /// Output resolution formatted as width x height (allowed values: 720x1280, 1280x720, 1024x1792, 1792x1024). Defaults to 720x1280.
 final VideoSize? size;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (model != null) 'model': model?.toJson(),
   'prompt': prompt,
   if (inputReference != null) 'input_reference': switch (inputReference) { final bytes? => base64Encode(bytes), _ => null },
   if (imageReference != null) 'image_reference': imageReference?.toJson(),
   if (seconds != null) 'seconds': seconds?.toJson(),
   if (size != null) 'size': size?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-CreateVideoBody copyWith({VideoModel? Function()? model, String? prompt, Uint8List? Function()? inputReference, ImageRefParam2? Function()? imageReference, VideoSeconds? Function()? seconds, VideoSize? Function()? size, }) { return CreateVideoBody(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
+CreateVideoBody copyWith({VideoModel? Function()? model, String? prompt, Uint8List? Function()? inputReference, ImageRefParam2? Function()? imageReference, VideoSeconds? Function()? seconds, VideoSize? Function()? size, }) {return CreateVideoBody(
   model: model != null ? model() : this.model,
   prompt: prompt ?? this.prompt,
   inputReference: inputReference != null ? inputReference() : this.inputReference,
   imageReference: imageReference != null ? imageReference() : this.imageReference,
   seconds: seconds != null ? seconds() : this.seconds,
   size: size != null ? size() : this.size,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateVideoBody &&
           model == other.model &&
           prompt == other.prompt &&
           listEquals(inputReference, other.inputReference) &&
           imageReference == other.imageReference &&
           seconds == other.seconds &&
-          size == other.size; } 
-@override int get hashCode { return Object.hash(model, prompt, Object.hashAll(inputReference ?? const []), imageReference, seconds, size); } 
-@override String toString() { return 'CreateVideoBody(model: $model, prompt: $prompt, inputReference: $inputReference, imageReference: $imageReference, seconds: $seconds, size: $size)'; } 
- }
+          size == other.size;}
+@override int get hashCode {return Object.hash(model, prompt, Object.hashAll(inputReference ?? const []), imageReference, seconds, size);}
+@override String toString() {return 'CreateVideoBody(model: $model, prompt: $prompt, inputReference: $inputReference, imageReference: $imageReference, seconds: $seconds, size: $size)';}
+}

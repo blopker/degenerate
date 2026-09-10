@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsCreateReviewRequestComments {const PullsCreateReviewRequestComments({required this.path, required this.body, this.position, this.line, this.side, this.startLine, this.startSide, });
 
-factory PullsCreateReviewRequestComments.fromJson(Map<String, dynamic> json) { return PullsCreateReviewRequestComments(
+factory PullsCreateReviewRequestComments.fromJson(Map<String, dynamic> json) {return PullsCreateReviewRequestComments(
   path: json['path'] as String,
   position: json['position'] != null ? (json['position'] as num).toInt() : null,
   body: json['body'] as String,
@@ -10,7 +10,7 @@ factory PullsCreateReviewRequestComments.fromJson(Map<String, dynamic> json) { r
   side: json['side'] as String?,
   startLine: json['start_line'] != null ? (json['start_line'] as num).toInt() : null,
   startSide: json['start_side'] as String?,
-); }
+);}
 
 /// The relative path to the file that necessitates a review comment.
 final String path;
@@ -29,7 +29,7 @@ final int? startLine;
 
 final String? startSide;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'path': path,
   'position': ?position,
   'body': body,
@@ -37,10 +37,10 @@ Map<String, dynamic> toJson() { return {
   'side': ?side,
   'start_line': ?startLine,
   'start_side': ?startSide,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String &&
-      json.containsKey('body') && json['body'] is String; } 
-PullsCreateReviewRequestComments copyWith({String? path, int? Function()? position, String? body, int? Function()? line, String? Function()? side, int? Function()? startLine, String? Function()? startSide, }) { return PullsCreateReviewRequestComments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('path') && json['path'] is String &&
+      json.containsKey('body') && json['body'] is String;}
+PullsCreateReviewRequestComments copyWith({String? path, int? Function()? position, String? body, int? Function()? line, String? Function()? side, int? Function()? startLine, String? Function()? startSide, }) {return PullsCreateReviewRequestComments(
   path: path ?? this.path,
   position: position != null ? position() : this.position,
   body: body ?? this.body,
@@ -48,8 +48,8 @@ PullsCreateReviewRequestComments copyWith({String? path, int? Function()? positi
   side: side != null ? side() : this.side,
   startLine: startLine != null ? startLine() : this.startLine,
   startSide: startSide != null ? startSide() : this.startSide,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PullsCreateReviewRequestComments &&
           path == other.path &&
           position == other.position &&
@@ -57,7 +57,7 @@ PullsCreateReviewRequestComments copyWith({String? path, int? Function()? positi
           line == other.line &&
           side == other.side &&
           startLine == other.startLine &&
-          startSide == other.startSide; } 
-@override int get hashCode { return Object.hash(path, position, body, line, side, startLine, startSide); } 
-@override String toString() { return 'PullsCreateReviewRequestComments(path: $path, position: $position, body: $body, line: $line, side: $side, startLine: $startLine, startSide: $startSide)'; } 
- }
+          startSide == other.startSide;}
+@override int get hashCode {return Object.hash(path, position, body, line, side, startLine, startSide);}
+@override String toString() {return 'PullsCreateReviewRequestComments(path: $path, position: $position, body: $body, line: $line, side: $side, startLine: $startLine, startSide: $startSide)';}
+}

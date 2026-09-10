@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountPeopleRequestFullNameAliasesVariant2 {const PostAccountsAccountPeopleRequestFullNameAliasesVariant2._(this.value);
 
-factory PostAccountsAccountPeopleRequestFullNameAliasesVariant2.fromJson(String json) { return switch (json) {
+factory PostAccountsAccountPeopleRequestFullNameAliasesVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostAccountsAccountPeopleRequestFullNameAliasesVariant2._(json),
-}; }
+};}
 
 static const PostAccountsAccountPeopleRequestFullNameAliasesVariant2 $empty = PostAccountsAccountPeopleRequestFullNameAliasesVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostAccountsAccountPeopleRequestFullNameAliasesVariant2> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsAccountPeopleRequestFullNameAliasesVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsAccountPeopleRequestFullNameAliasesVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountsAccountPeopleRequestFullNameAliasesVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountsAccountPeopleRequestFullNameAliasesVariant2($value)';}
+}
 /// A list of alternate names or aliases that the person is known by.
 @immutable
 final class PostAccountsAccountPeopleRequestFullNameAliases {

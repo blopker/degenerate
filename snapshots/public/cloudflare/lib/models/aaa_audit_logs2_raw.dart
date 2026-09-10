@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides raw information about the request and response.
 @immutable final class AaaAuditLogs2Raw {const AaaAuditLogs2Raw({this.cfRayId, this.method, this.statusCode, this.uri, this.userAgent, });
 
-factory AaaAuditLogs2Raw.fromJson(Map<String, dynamic> json) { return AaaAuditLogs2Raw(
+factory AaaAuditLogs2Raw.fromJson(Map<String, dynamic> json) {return AaaAuditLogs2Raw(
   cfRayId: json['cf_ray_id'] as String?,
   method: json['method'] as String?,
   statusCode: json['status_code'] != null ? (json['status_code'] as num).toInt() : null,
   uri: json['uri'] as String?,
   userAgent: json['user_agent'] as String?,
-); }
+);}
 
 /// The Cloudflare Ray ID for the request.
 final String? cfRayId;
@@ -26,28 +26,28 @@ final String? uri;
 /// The client's user agent string sent with the request.
 final String? userAgent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cf_ray_id': ?cfRayId,
   'method': ?method,
   'status_code': ?statusCode,
   'uri': ?uri,
   'user_agent': ?userAgent,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cf_ray_id', 'method', 'status_code', 'uri', 'user_agent'}.contains(key)); } 
-AaaAuditLogs2Raw copyWith({String? Function()? cfRayId, String? Function()? method, int? Function()? statusCode, String? Function()? uri, String? Function()? userAgent, }) { return AaaAuditLogs2Raw(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cf_ray_id', 'method', 'status_code', 'uri', 'user_agent'}.contains(key));}
+AaaAuditLogs2Raw copyWith({String? Function()? cfRayId, String? Function()? method, int? Function()? statusCode, String? Function()? uri, String? Function()? userAgent, }) {return AaaAuditLogs2Raw(
   cfRayId: cfRayId != null ? cfRayId() : this.cfRayId,
   method: method != null ? method() : this.method,
   statusCode: statusCode != null ? statusCode() : this.statusCode,
   uri: uri != null ? uri() : this.uri,
   userAgent: userAgent != null ? userAgent() : this.userAgent,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AaaAuditLogs2Raw &&
           cfRayId == other.cfRayId &&
           method == other.method &&
           statusCode == other.statusCode &&
           uri == other.uri &&
-          userAgent == other.userAgent; } 
-@override int get hashCode { return Object.hash(cfRayId, method, statusCode, uri, userAgent); } 
-@override String toString() { return 'AaaAuditLogs2Raw(cfRayId: $cfRayId, method: $method, statusCode: $statusCode, uri: $uri, userAgent: $userAgent)'; } 
- }
+          userAgent == other.userAgent;}
+@override int get hashCode {return Object.hash(cfRayId, method, statusCode, uri, userAgent);}
+@override String toString() {return 'AaaAuditLogs2Raw(cfRayId: $cfRayId, method: $method, statusCode: $statusCode, uri: $uri, userAgent: $userAgent)';}
+}

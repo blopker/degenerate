@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'converted_note_to_issue_issue_event_project_card.dart';import 'integration.dart';import 'simple_user.dart';/// Converted Note to Issue Issue Event
 @immutable final class ConvertedNoteToIssueIssueEvent {const ConvertedNoteToIssueIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, this.projectCard, });
 
-factory ConvertedNoteToIssueIssueEvent.fromJson(Map<String, dynamic> json) { return ConvertedNoteToIssueIssueEvent(
+factory ConvertedNoteToIssueIssueEvent.fromJson(Map<String, dynamic> json) {return ConvertedNoteToIssueIssueEvent(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: json['url'] as String,
@@ -14,7 +14,7 @@ factory ConvertedNoteToIssueIssueEvent.fromJson(Map<String, dynamic> json) { ret
   createdAt: json['created_at'] as String,
   performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   projectCard: json['project_card'] != null ? ConvertedNoteToIssueIssueEventProjectCard.fromJson(json['project_card'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final int id;
 
@@ -36,7 +36,7 @@ final Integration? performedViaGithubApp;
 
 final ConvertedNoteToIssueIssueEventProjectCard? projectCard;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url,
@@ -47,8 +47,8 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'performed_via_github_app': performedViaGithubApp?.toJson(),
   if (projectCard != null) 'project_card': projectCard?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('actor') &&
@@ -56,8 +56,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('commit_id') && (json['commit_id'] == null || json['commit_id'] is String) &&
       json.containsKey('commit_url') && (json['commit_url'] == null || json['commit_url'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('performed_via_github_app'); } 
-ConvertedNoteToIssueIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, ConvertedNoteToIssueIssueEventProjectCard? Function()? projectCard, }) { return ConvertedNoteToIssueIssueEvent(
+      json.containsKey('performed_via_github_app');}
+ConvertedNoteToIssueIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, ConvertedNoteToIssueIssueEventProjectCard? Function()? projectCard, }) {return ConvertedNoteToIssueIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -68,8 +68,8 @@ ConvertedNoteToIssueIssueEvent copyWith({int? id, String? nodeId, String? url, S
   createdAt: createdAt ?? this.createdAt,
   performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
   projectCard: projectCard != null ? projectCard() : this.projectCard,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ConvertedNoteToIssueIssueEvent &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -80,7 +80,7 @@ ConvertedNoteToIssueIssueEvent copyWith({int? id, String? nodeId, String? url, S
           commitUrl == other.commitUrl &&
           createdAt == other.createdAt &&
           performedViaGithubApp == other.performedViaGithubApp &&
-          projectCard == other.projectCard; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, projectCard); } 
-@override String toString() { return 'ConvertedNoteToIssueIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, projectCard: $projectCard)'; } 
- }
+          projectCard == other.projectCard;}
+@override int get hashCode {return Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, projectCard);}
+@override String toString() {return 'ConvertedNoteToIssueIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, projectCard: $projectCard)';}
+}

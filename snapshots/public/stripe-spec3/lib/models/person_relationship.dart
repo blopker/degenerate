@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PersonRelationship {const PersonRelationship({this.authorizer = const Omittable.absent(), this.director = const Omittable.absent(), this.executive = const Omittable.absent(), this.legalGuardian = const Omittable.absent(), this.owner = const Omittable.absent(), this.percentOwnership = const Omittable.absent(), this.representative = const Omittable.absent(), this.title = const Omittable.absent(), });
 
-factory PersonRelationship.fromJson(Map<String, dynamic> json) { return PersonRelationship(
+factory PersonRelationship.fromJson(Map<String, dynamic> json) {return PersonRelationship(
   authorizer: json.containsKey('authorizer') ? Omittable(json['authorizer'] as bool?) : const Omittable.absent(),
   director: json.containsKey('director') ? Omittable(json['director'] as bool?) : const Omittable.absent(),
   executive: json.containsKey('executive') ? Omittable(json['executive'] as bool?) : const Omittable.absent(),
@@ -12,7 +12,7 @@ factory PersonRelationship.fromJson(Map<String, dynamic> json) { return PersonRe
   percentOwnership: json.containsKey('percent_ownership') ? Omittable(json['percent_ownership'] != null ? (json['percent_ownership'] as num).toDouble() : null) : const Omittable.absent(),
   representative: json.containsKey('representative') ? Omittable(json['representative'] as bool?) : const Omittable.absent(),
   title: json.containsKey('title') ? Omittable(json['title'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Whether the person is the authorizer of the account's representative.
 final Omittable<bool?> authorizer;
@@ -38,7 +38,7 @@ final Omittable<bool?> representative;
 /// The person's title (e.g., CEO, Support Engineer).
 final Omittable<String?> title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (authorizer.isPresent) 'authorizer': authorizer.value,
   if (director.isPresent) 'director': director.value,
   if (executive.isPresent) 'executive': executive.value,
@@ -47,9 +47,9 @@ Map<String, dynamic> toJson() { return {
   if (percentOwnership.isPresent) 'percent_ownership': percentOwnership.value,
   if (representative.isPresent) 'representative': representative.value,
   if (title.isPresent) 'title': title.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authorizer', 'director', 'executive', 'legal_guardian', 'owner', 'percent_ownership', 'representative', 'title'}.contains(key)); } 
-PersonRelationship copyWith({Omittable<bool?>? authorizer, Omittable<bool?>? director, Omittable<bool?>? executive, Omittable<bool?>? legalGuardian, Omittable<bool?>? owner, Omittable<double?>? percentOwnership, Omittable<bool?>? representative, Omittable<String?>? title, }) { return PersonRelationship(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'authorizer', 'director', 'executive', 'legal_guardian', 'owner', 'percent_ownership', 'representative', 'title'}.contains(key));}
+PersonRelationship copyWith({Omittable<bool?>? authorizer, Omittable<bool?>? director, Omittable<bool?>? executive, Omittable<bool?>? legalGuardian, Omittable<bool?>? owner, Omittable<double?>? percentOwnership, Omittable<bool?>? representative, Omittable<String?>? title, }) {return PersonRelationship(
   authorizer: authorizer ?? this.authorizer,
   director: director ?? this.director,
   executive: executive ?? this.executive,
@@ -58,8 +58,8 @@ PersonRelationship copyWith({Omittable<bool?>? authorizer, Omittable<bool?>? dir
   percentOwnership: percentOwnership ?? this.percentOwnership,
   representative: representative ?? this.representative,
   title: title ?? this.title,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PersonRelationship &&
           authorizer == other.authorizer &&
           director == other.director &&
@@ -68,7 +68,7 @@ PersonRelationship copyWith({Omittable<bool?>? authorizer, Omittable<bool?>? dir
           owner == other.owner &&
           percentOwnership == other.percentOwnership &&
           representative == other.representative &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(authorizer, director, executive, legalGuardian, owner, percentOwnership, representative, title); } 
-@override String toString() { return 'PersonRelationship(authorizer: $authorizer, director: $director, executive: $executive, legalGuardian: $legalGuardian, owner: $owner, percentOwnership: $percentOwnership, representative: $representative, title: $title)'; } 
- }
+          title == other.title;}
+@override int get hashCode {return Object.hash(authorizer, director, executive, legalGuardian, owner, percentOwnership, representative, title);}
+@override String toString() {return 'PersonRelationship(authorizer: $authorizer, director: $director, executive: $executive, legalGuardian: $legalGuardian, owner: $owner, percentOwnership: $percentOwnership, representative: $representative, title: $title)';}
+}

@@ -13,7 +13,7 @@ final class WorkersApi with ApiExecutor {const WorkersApi(this.apiConfig);
 /// Get all builds for a specific worker script with pagination
 ///
 /// `GET /accounts/{account_id}/builds/workers/{external_script_id}/builds`
-Future<ApiResult<List<BuildsBuildResponse>, Never>> listBuildsByScript({required BuildsAccountId accountId, required BuildsExternalScriptId externalScriptId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<BuildsBuildResponse>, Never>> listBuildsByScript({required BuildsAccountId accountId, required BuildsExternalScriptId externalScriptId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -40,13 +40,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return (json['result'] as List<dynamic>).map((e) => BuildsBuildResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// List triggers by script
 ///
 /// Get all triggers for a specific worker script
 ///
 /// `GET /accounts/{account_id}/builds/workers/{external_script_id}/triggers`
-Future<ApiResult<List<BuildsTriggerResponse>, Never>> listTriggersByScript({required BuildsAccountId accountId, required BuildsExternalScriptId externalScriptId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BuildsTriggerResponse>, Never>> listTriggersByScript({required BuildsAccountId accountId, required BuildsExternalScriptId externalScriptId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -62,13 +62,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return (json['result'] as List<dynamic>).map((e) => BuildsTriggerResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// List Workers
 ///
 /// List all Workers for an account.
 ///
 /// `GET /accounts/{account_id}/workers/workers`
-Future<ApiResult<List<WorkersWorker>, ListWorkersError>> listWorkers({required WorkersIdentifier accountId, int? page, int? perPage, ListWorkersOrderBy? orderBy, ListWorkersOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorkersWorker>, ListWorkersError>> listWorkers({required WorkersIdentifier accountId, int? page, int? perPage, ListWorkersOrderBy? orderBy, ListWorkersOrder? order, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -102,13 +102,13 @@ return (json['result'] as List<dynamic>).map((e) => WorkersWorker.fromJson(e as 
   },
   onError: ListWorkersError.parse,
 );
- } 
+}
 /// Create Worker
 ///
 /// Create a new Worker.
 ///
 /// `POST /accounts/{account_id}/workers/workers`
-Future<ApiResult<WorkersWorker, CreateWorkerError>> createWorker({required WorkersIdentifier accountId, required WorkersWorkerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersWorker, CreateWorkerError>> createWorker({required WorkersIdentifier accountId, required WorkersWorkerRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -127,13 +127,13 @@ return WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CreateWorkerError.parse,
 );
- } 
+}
 /// Get Worker
 ///
 /// Get details about a specific Worker.
 ///
 /// `GET /accounts/{account_id}/workers/workers/{worker_id}`
-Future<ApiResult<WorkersWorker, GetWorkerError>> getWorker({required WorkersIdentifier accountId, required String workerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersWorker, GetWorkerError>> getWorker({required WorkersIdentifier accountId, required String workerId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -150,13 +150,13 @@ return WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: GetWorkerError.parse,
 );
- } 
+}
 /// Update Worker
 ///
 /// Perform a complete replacement of a Worker, where omitted properties are set to their default values. This is the exact same as the Create Worker endpoint, but operates on an existing Worker. To perform a partial update instead, use the Edit Worker endpoint.
 ///
 /// `PUT /accounts/{account_id}/workers/workers/{worker_id}`
-Future<ApiResult<WorkersWorker, UpdateWorkerError>> updateWorker({required WorkersIdentifier accountId, required String workerId, required WorkersWorkerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersWorker, UpdateWorkerError>> updateWorker({required WorkersIdentifier accountId, required String workerId, required WorkersWorkerRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -175,13 +175,13 @@ return WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: UpdateWorkerError.parse,
 );
- } 
+}
 /// Edit Worker
 ///
 /// Perform a partial update on a Worker, where omitted properties are left unchanged from their current values.
 ///
 /// `PATCH /accounts/{account_id}/workers/workers/{worker_id}`
-Future<ApiResult<WorkersWorker, EditWorkerError>> editWorker({required WorkersIdentifier accountId, required String workerId, required WorkersWorkerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersWorker, EditWorkerError>> editWorker({required WorkersIdentifier accountId, required String workerId, required WorkersWorkerRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -200,13 +200,13 @@ return WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: EditWorkerError.parse,
 );
- } 
+}
 /// Delete Worker
 ///
 /// Delete a Worker and all its associated resources (versions, deployments, etc.).
 ///
 /// `DELETE /accounts/{account_id}/workers/workers/{worker_id}`
-Future<ApiResult<ResponseCommon80, DeleteWorkerError>> deleteWorker({required WorkersIdentifier accountId, required String workerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon80, DeleteWorkerError>> deleteWorker({required WorkersIdentifier accountId, required String workerId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -223,5 +223,5 @@ return ResponseCommon80.fromJson(json as Map<String, dynamic>);
   },
   onError: DeleteWorkerError.parse,
 );
- } 
- }
+}
+}

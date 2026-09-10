@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'portal_customer_update.dart';import 'portal_invoice_list.dart';import 'portal_payment_method_update.dart';import 'portal_subscription_cancel.dart';import 'portal_subscription_update.dart';/// 
 @immutable final class PortalFeatures {const PortalFeatures({required this.customerUpdate, required this.invoiceHistory, required this.paymentMethodUpdate, required this.subscriptionCancel, required this.subscriptionUpdate, });
 
-factory PortalFeatures.fromJson(Map<String, dynamic> json) { return PortalFeatures(
+factory PortalFeatures.fromJson(Map<String, dynamic> json) {return PortalFeatures(
   customerUpdate: PortalCustomerUpdate.fromJson(json['customer_update'] as Map<String, dynamic>),
   invoiceHistory: PortalInvoiceList.fromJson(json['invoice_history'] as Map<String, dynamic>),
   paymentMethodUpdate: PortalPaymentMethodUpdate.fromJson(json['payment_method_update'] as Map<String, dynamic>),
   subscriptionCancel: PortalSubscriptionCancel.fromJson(json['subscription_cancel'] as Map<String, dynamic>),
   subscriptionUpdate: PortalSubscriptionUpdate.fromJson(json['subscription_update'] as Map<String, dynamic>),
-); }
+);}
 
 final PortalCustomerUpdate customerUpdate;
 
@@ -21,32 +21,32 @@ final PortalSubscriptionCancel subscriptionCancel;
 
 final PortalSubscriptionUpdate subscriptionUpdate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'customer_update': customerUpdate.toJson(),
   'invoice_history': invoiceHistory.toJson(),
   'payment_method_update': paymentMethodUpdate.toJson(),
   'subscription_cancel': subscriptionCancel.toJson(),
   'subscription_update': subscriptionUpdate.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('customer_update') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('customer_update') &&
       json.containsKey('invoice_history') &&
       json.containsKey('payment_method_update') &&
       json.containsKey('subscription_cancel') &&
-      json.containsKey('subscription_update'); } 
-PortalFeatures copyWith({PortalCustomerUpdate? customerUpdate, PortalInvoiceList? invoiceHistory, PortalPaymentMethodUpdate? paymentMethodUpdate, PortalSubscriptionCancel? subscriptionCancel, PortalSubscriptionUpdate? subscriptionUpdate, }) { return PortalFeatures(
+      json.containsKey('subscription_update');}
+PortalFeatures copyWith({PortalCustomerUpdate? customerUpdate, PortalInvoiceList? invoiceHistory, PortalPaymentMethodUpdate? paymentMethodUpdate, PortalSubscriptionCancel? subscriptionCancel, PortalSubscriptionUpdate? subscriptionUpdate, }) {return PortalFeatures(
   customerUpdate: customerUpdate ?? this.customerUpdate,
   invoiceHistory: invoiceHistory ?? this.invoiceHistory,
   paymentMethodUpdate: paymentMethodUpdate ?? this.paymentMethodUpdate,
   subscriptionCancel: subscriptionCancel ?? this.subscriptionCancel,
   subscriptionUpdate: subscriptionUpdate ?? this.subscriptionUpdate,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PortalFeatures &&
           customerUpdate == other.customerUpdate &&
           invoiceHistory == other.invoiceHistory &&
           paymentMethodUpdate == other.paymentMethodUpdate &&
           subscriptionCancel == other.subscriptionCancel &&
-          subscriptionUpdate == other.subscriptionUpdate; } 
-@override int get hashCode { return Object.hash(customerUpdate, invoiceHistory, paymentMethodUpdate, subscriptionCancel, subscriptionUpdate); } 
-@override String toString() { return 'PortalFeatures(customerUpdate: $customerUpdate, invoiceHistory: $invoiceHistory, paymentMethodUpdate: $paymentMethodUpdate, subscriptionCancel: $subscriptionCancel, subscriptionUpdate: $subscriptionUpdate)'; } 
- }
+          subscriptionUpdate == other.subscriptionUpdate;}
+@override int get hashCode {return Object.hash(customerUpdate, invoiceHistory, paymentMethodUpdate, subscriptionCancel, subscriptionUpdate);}
+@override String toString() {return 'PortalFeatures(customerUpdate: $customerUpdate, invoiceHistory: $invoiceHistory, paymentMethodUpdate: $paymentMethodUpdate, subscriptionCancel: $subscriptionCancel, subscriptionUpdate: $subscriptionUpdate)';}
+}

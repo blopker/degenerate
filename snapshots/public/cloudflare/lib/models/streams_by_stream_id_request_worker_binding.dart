@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamsByStreamIdRequestWorkerBinding {const StreamsByStreamIdRequestWorkerBinding({required this.enabled});
 
-factory StreamsByStreamIdRequestWorkerBinding.fromJson(Map<String, dynamic> json) { return StreamsByStreamIdRequestWorkerBinding(
+factory StreamsByStreamIdRequestWorkerBinding.fromJson(Map<String, dynamic> json) {return StreamsByStreamIdRequestWorkerBinding(
   enabled: json['enabled'] as bool,
-); }
+);}
 
 /// Indicates that the worker binding is enabled.
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-StreamsByStreamIdRequestWorkerBinding copyWith({bool? enabled}) { return StreamsByStreamIdRequestWorkerBinding(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+StreamsByStreamIdRequestWorkerBinding copyWith({bool? enabled}) {return StreamsByStreamIdRequestWorkerBinding(
   enabled: enabled ?? this.enabled,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is StreamsByStreamIdRequestWorkerBinding &&
-          enabled == other.enabled; } 
-@override int get hashCode { return enabled.hashCode; } 
-@override String toString() { return 'StreamsByStreamIdRequestWorkerBinding(enabled: $enabled)'; } 
- }
+          enabled == other.enabled;}
+@override int get hashCode {return enabled.hashCode;}
+@override String toString() {return 'StreamsByStreamIdRequestWorkerBinding(enabled: $enabled)';}
+}

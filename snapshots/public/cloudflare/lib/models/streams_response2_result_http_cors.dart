@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the CORS options for the HTTP endpoint.
 @immutable final class StreamsResponse2ResultHttpCors {const StreamsResponse2ResultHttpCors({this.origins});
 
-factory StreamsResponse2ResultHttpCors.fromJson(Map<String, dynamic> json) { return StreamsResponse2ResultHttpCors(
+factory StreamsResponse2ResultHttpCors.fromJson(Map<String, dynamic> json) {return StreamsResponse2ResultHttpCors(
   origins: (json['origins'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final List<String>? origins;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'origins': ?origins,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'origins'}.contains(key)); } 
-StreamsResponse2ResultHttpCors copyWith({List<String>? Function()? origins}) { return StreamsResponse2ResultHttpCors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'origins'}.contains(key));}
+StreamsResponse2ResultHttpCors copyWith({List<String>? Function()? origins}) {return StreamsResponse2ResultHttpCors(
   origins: origins != null ? origins() : this.origins,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is StreamsResponse2ResultHttpCors &&
-          listEquals(origins, other.origins); } 
-@override int get hashCode { return Object.hashAll(origins ?? const []).hashCode; } 
-@override String toString() { return 'StreamsResponse2ResultHttpCors(origins: $origins)'; } 
- }
+          listEquals(origins, other.origins);}
+@override int get hashCode {return Object.hashAll(origins ?? const []).hashCode;}
+@override String toString() {return 'StreamsResponse2ResultHttpCors(origins: $origins)';}
+}

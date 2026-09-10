@@ -13,7 +13,7 @@ final class RepositoryConnectionsApi with ApiExecutor {const RepositoryConnectio
 /// Upsert a repository connection for CI/CD integration
 ///
 /// `PUT /accounts/{account_id}/builds/repos/connections`
-Future<ApiResult<BuildsUpsertRepoConnectionResponse, Never>> upsertRepoConnection({required BuildsAccountId accountId, required BuildsUpsertRepoConnectionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BuildsUpsertRepoConnectionResponse, Never>> upsertRepoConnection({required BuildsAccountId accountId, required BuildsUpsertRepoConnectionRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -31,13 +31,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return BuildsUpsertRepoConnectionResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete repository connection
 ///
 /// Remove a repository connection
 ///
 /// `DELETE /accounts/{account_id}/builds/repos/connections/{repo_connection_uuid}`
-Future<ApiResult<Map<String, dynamic>?, BuildsErrorResponse>> deleteRepoConnection({required BuildsAccountId accountId, required BuildsRepoConnectionUuid repoConnectionUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, BuildsErrorResponse>> deleteRepoConnection({required BuildsAccountId accountId, required BuildsRepoConnectionUuid repoConnectionUuid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -63,5 +63,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

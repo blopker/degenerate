@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_sepa_debit_display_preference.dart';/// The [Single Euro Payments Area (SEPA)](https://en.wikipedia.org/wiki/Single_Euro_Payments_Area) is an initiative of the European Union to simplify payments within and across member countries. SEPA established and enforced banking standards to allow for the direct debiting of every EUR-denominated bank account within the SEPA region, check this [page](https://docs.stripe.com/payments/sepa-debit) for more details.
 @immutable final class PostPaymentMethodConfigurationsRequestSepaDebit {const PostPaymentMethodConfigurationsRequestSepaDebit({this.displayPreference});
 
-factory PostPaymentMethodConfigurationsRequestSepaDebit.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestSepaDebit(
+factory PostPaymentMethodConfigurationsRequestSepaDebit.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsRequestSepaDebit(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreference? displayPreference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsRequestSepaDebit copyWith({PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsRequestSepaDebit(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_preference'}.contains(key));}
+PostPaymentMethodConfigurationsRequestSepaDebit copyWith({PostPaymentMethodConfigurationsRequestSepaDebitDisplayPreference? Function()? displayPreference}) {return PostPaymentMethodConfigurationsRequestSepaDebit(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsRequestSepaDebit &&
-          displayPreference == other.displayPreference; } 
-@override int get hashCode { return displayPreference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestSepaDebit(displayPreference: $displayPreference)'; } 
- }
+          displayPreference == other.displayPreference;}
+@override int get hashCode {return displayPreference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestSepaDebit(displayPreference: $displayPreference)';}
+}

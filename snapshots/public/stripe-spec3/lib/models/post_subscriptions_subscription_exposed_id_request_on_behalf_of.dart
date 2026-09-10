@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionsSubscriptionExposedIdRequestOnBehalfOfVariant2 {const PostSubscriptionsSubscriptionExposedIdRequestOnBehalfOfVariant2._(this.value);
 
-factory PostSubscriptionsSubscriptionExposedIdRequestOnBehalfOfVariant2.fromJson(String json) { return switch (json) {
+factory PostSubscriptionsSubscriptionExposedIdRequestOnBehalfOfVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSubscriptionsSubscriptionExposedIdRequestOnBehalfOfVariant2._(json),
-}; }
+};}
 
 static const PostSubscriptionsSubscriptionExposedIdRequestOnBehalfOfVariant2 $empty = PostSubscriptionsSubscriptionExposedIdRequestOnBehalfOfVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSubscriptionsSubscriptionExposedIdRequestOnBehalfOfVariant
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionsSubscriptionExposedIdRequestOnBehalfOfVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestOnBehalfOfVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionsSubscriptionExposedIdRequestOnBehalfOfVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionsSubscriptionExposedIdRequestOnBehalfOfVariant2($value)';}
+}
 /// The account on behalf of which to charge, for each of the subscription's invoices.
 @immutable
 final class PostSubscriptionsSubscriptionExposedIdRequestOnBehalfOf {

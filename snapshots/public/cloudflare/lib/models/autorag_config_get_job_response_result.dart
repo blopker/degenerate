@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigGetJobResponseResultSource {const AutoragConfigGetJobResponseResultSource._(this.value);
 
-factory AutoragConfigGetJobResponseResultSource.fromJson(String json) { return switch (json) {
+factory AutoragConfigGetJobResponseResultSource.fromJson(String json) {return switch (json) {
   'user' => user,
   'schedule' => schedule,
   _ => AutoragConfigGetJobResponseResultSource._(json),
-}; }
+};}
 
 static const AutoragConfigGetJobResponseResultSource user = AutoragConfigGetJobResponseResultSource._('user');
 
@@ -16,24 +16,24 @@ static const List<AutoragConfigGetJobResponseResultSource> values = [user, sched
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AutoragConfigGetJobResponseResultSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AutoragConfigGetJobResponseResultSource($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AutoragConfigGetJobResponseResultSource && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AutoragConfigGetJobResponseResultSource($value)';}
+}
 @immutable final class AutoragConfigGetJobResponseResult {const AutoragConfigGetJobResponseResult({required this.id, required this.source, this.endReason, this.endedAt, this.lastSeenAt, this.startedAt, });
 
-factory AutoragConfigGetJobResponseResult.fromJson(Map<String, dynamic> json) { return AutoragConfigGetJobResponseResult(
+factory AutoragConfigGetJobResponseResult.fromJson(Map<String, dynamic> json) {return AutoragConfigGetJobResponseResult(
   endReason: json['end_reason'] as String?,
   endedAt: json['ended_at'] as String?,
   id: json['id'] as String,
   lastSeenAt: json['last_seen_at'] as String?,
   source: AutoragConfigGetJobResponseResultSource.fromJson(json['source'] as String),
   startedAt: json['started_at'] as String?,
-); }
+);}
 
 final String? endReason;
 
@@ -47,32 +47,32 @@ final AutoragConfigGetJobResponseResultSource source;
 
 final String? startedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end_reason': ?endReason,
   'ended_at': ?endedAt,
   'id': id,
   'last_seen_at': ?lastSeenAt,
   'source': source.toJson(),
   'started_at': ?startedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('source'); } 
-AutoragConfigGetJobResponseResult copyWith({String? Function()? endReason, String? Function()? endedAt, String? id, String? Function()? lastSeenAt, AutoragConfigGetJobResponseResultSource? source, String? Function()? startedAt, }) { return AutoragConfigGetJobResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('source');}
+AutoragConfigGetJobResponseResult copyWith({String? Function()? endReason, String? Function()? endedAt, String? id, String? Function()? lastSeenAt, AutoragConfigGetJobResponseResultSource? source, String? Function()? startedAt, }) {return AutoragConfigGetJobResponseResult(
   endReason: endReason != null ? endReason() : this.endReason,
   endedAt: endedAt != null ? endedAt() : this.endedAt,
   id: id ?? this.id,
   lastSeenAt: lastSeenAt != null ? lastSeenAt() : this.lastSeenAt,
   source: source ?? this.source,
   startedAt: startedAt != null ? startedAt() : this.startedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AutoragConfigGetJobResponseResult &&
           endReason == other.endReason &&
           endedAt == other.endedAt &&
           id == other.id &&
           lastSeenAt == other.lastSeenAt &&
           source == other.source &&
-          startedAt == other.startedAt; } 
-@override int get hashCode { return Object.hash(endReason, endedAt, id, lastSeenAt, source, startedAt); } 
-@override String toString() { return 'AutoragConfigGetJobResponseResult(endReason: $endReason, endedAt: $endedAt, id: $id, lastSeenAt: $lastSeenAt, source: $source, startedAt: $startedAt)'; } 
- }
+          startedAt == other.startedAt;}
+@override int get hashCode {return Object.hash(endReason, endedAt, id, lastSeenAt, source, startedAt);}
+@override String toString() {return 'AutoragConfigGetJobResponseResult(endReason: $endReason, endedAt: $endedAt, id: $id, lastSeenAt: $lastSeenAt, source: $source, startedAt: $startedAt)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MoveAccountResponse {const MoveAccountResponse({required this.accountId, required this.destinationOrganizationId, required this.sourceOrganizationId, });
 
-factory MoveAccountResponse.fromJson(Map<String, dynamic> json) { return MoveAccountResponse(
+factory MoveAccountResponse.fromJson(Map<String, dynamic> json) {return MoveAccountResponse(
   accountId: json['account_id'] as String,
   destinationOrganizationId: json['destination_organization_id'] as String,
   sourceOrganizationId: json['source_organization_id'] as String,
-); }
+);}
 
 final String accountId;
 
@@ -14,24 +14,24 @@ final String destinationOrganizationId;
 
 final String sourceOrganizationId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_id': accountId,
   'destination_organization_id': destinationOrganizationId,
   'source_organization_id': sourceOrganizationId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') && json['account_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_id') && json['account_id'] is String &&
       json.containsKey('destination_organization_id') && json['destination_organization_id'] is String &&
-      json.containsKey('source_organization_id') && json['source_organization_id'] is String; } 
-MoveAccountResponse copyWith({String? accountId, String? destinationOrganizationId, String? sourceOrganizationId, }) { return MoveAccountResponse(
+      json.containsKey('source_organization_id') && json['source_organization_id'] is String;}
+MoveAccountResponse copyWith({String? accountId, String? destinationOrganizationId, String? sourceOrganizationId, }) {return MoveAccountResponse(
   accountId: accountId ?? this.accountId,
   destinationOrganizationId: destinationOrganizationId ?? this.destinationOrganizationId,
   sourceOrganizationId: sourceOrganizationId ?? this.sourceOrganizationId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MoveAccountResponse &&
           accountId == other.accountId &&
           destinationOrganizationId == other.destinationOrganizationId &&
-          sourceOrganizationId == other.sourceOrganizationId; } 
-@override int get hashCode { return Object.hash(accountId, destinationOrganizationId, sourceOrganizationId); } 
-@override String toString() { return 'MoveAccountResponse(accountId: $accountId, destinationOrganizationId: $destinationOrganizationId, sourceOrganizationId: $sourceOrganizationId)'; } 
- }
+          sourceOrganizationId == other.sourceOrganizationId;}
+@override int get hashCode {return Object.hash(accountId, destinationOrganizationId, sourceOrganizationId);}
+@override String toString() {return 'MoveAccountResponse(accountId: $accountId, destinationOrganizationId: $destinationOrganizationId, sourceOrganizationId: $sourceOrganizationId)';}
+}

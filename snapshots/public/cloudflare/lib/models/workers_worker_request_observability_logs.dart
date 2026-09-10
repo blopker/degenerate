@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Log settings for the Worker.
 @immutable final class WorkersWorkerRequestObservabilityLogs {const WorkersWorkerRequestObservabilityLogs({this.enabled, this.headSamplingRate, this.invocationLogs, });
 
-factory WorkersWorkerRequestObservabilityLogs.fromJson(Map<String, dynamic> json) { return WorkersWorkerRequestObservabilityLogs(
+factory WorkersWorkerRequestObservabilityLogs.fromJson(Map<String, dynamic> json) {return WorkersWorkerRequestObservabilityLogs(
   enabled: json['enabled'] as bool?,
   headSamplingRate: json['head_sampling_rate'] != null ? (json['head_sampling_rate'] as num).toDouble() : null,
   invocationLogs: json['invocation_logs'] as bool?,
-); }
+);}
 
 /// Whether logs are enabled for the Worker.
 final bool? enabled;
@@ -19,27 +19,27 @@ final double? headSamplingRate;
 final bool? invocationLogs;
 
 /// The value with the schema default applied when absent.
-bool get enabledOrDefault { return enabled ?? false; } 
+bool get enabledOrDefault {return enabled ?? false;}
 /// The value with the schema default applied when absent.
-double get headSamplingRateOrDefault { return headSamplingRate ?? 1.0; } 
+double get headSamplingRateOrDefault {return headSamplingRate ?? 1.0;}
 /// The value with the schema default applied when absent.
-bool get invocationLogsOrDefault { return invocationLogs ?? true; } 
-Map<String, dynamic> toJson() { return {
+bool get invocationLogsOrDefault {return invocationLogs ?? true;}
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   'head_sampling_rate': ?headSamplingRate,
   'invocation_logs': ?invocationLogs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'head_sampling_rate', 'invocation_logs'}.contains(key)); } 
-WorkersWorkerRequestObservabilityLogs copyWith({bool? Function()? enabled, double? Function()? headSamplingRate, bool? Function()? invocationLogs, }) { return WorkersWorkerRequestObservabilityLogs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'head_sampling_rate', 'invocation_logs'}.contains(key));}
+WorkersWorkerRequestObservabilityLogs copyWith({bool? Function()? enabled, double? Function()? headSamplingRate, bool? Function()? invocationLogs, }) {return WorkersWorkerRequestObservabilityLogs(
   enabled: enabled != null ? enabled() : this.enabled,
   headSamplingRate: headSamplingRate != null ? headSamplingRate() : this.headSamplingRate,
   invocationLogs: invocationLogs != null ? invocationLogs() : this.invocationLogs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersWorkerRequestObservabilityLogs &&
           enabled == other.enabled &&
           headSamplingRate == other.headSamplingRate &&
-          invocationLogs == other.invocationLogs; } 
-@override int get hashCode { return Object.hash(enabled, headSamplingRate, invocationLogs); } 
-@override String toString() { return 'WorkersWorkerRequestObservabilityLogs(enabled: $enabled, headSamplingRate: $headSamplingRate, invocationLogs: $invocationLogs)'; } 
- }
+          invocationLogs == other.invocationLogs;}
+@override int get hashCode {return Object.hash(enabled, headSamplingRate, invocationLogs);}
+@override String toString() {return 'WorkersWorkerRequestObservabilityLogs(enabled: $enabled, headSamplingRate: $headSamplingRate, invocationLogs: $invocationLogs)';}
+}

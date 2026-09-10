@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_id_report_refund_request_amount.dart';import 'post_payment_records_id_report_refund_request_metadata.dart';import 'post_payment_records_id_report_refund_request_processor_details.dart';import 'post_payment_records_id_report_refund_request_refunded.dart';/// The outcome of the reported refund.
 @immutable final class PostPaymentRecordsIdReportRefundRequestOutcome {const PostPaymentRecordsIdReportRefundRequestOutcome._(this.value);
 
-factory PostPaymentRecordsIdReportRefundRequestOutcome.fromJson(String json) { return switch (json) {
+factory PostPaymentRecordsIdReportRefundRequestOutcome.fromJson(String json) {return switch (json) {
   'refunded' => refunded,
   _ => PostPaymentRecordsIdReportRefundRequestOutcome._(json),
-}; }
+};}
 
 static const PostPaymentRecordsIdReportRefundRequestOutcome refunded = PostPaymentRecordsIdReportRefundRequestOutcome._('refunded');
 
@@ -14,17 +14,17 @@ static const List<PostPaymentRecordsIdReportRefundRequestOutcome> values = [refu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentRecordsIdReportRefundRequestOutcome && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentRecordsIdReportRefundRequestOutcome($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentRecordsIdReportRefundRequestOutcome && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentRecordsIdReportRefundRequestOutcome($value)';}
+}
 @immutable final class PostPaymentRecordsIdReportRefundRequest {const PostPaymentRecordsIdReportRefundRequest({required this.outcome, required this.processorDetails, required this.refunded, this.amount, this.expand, this.initiatedAt, this.metadata, });
 
-factory PostPaymentRecordsIdReportRefundRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportRefundRequest(
+factory PostPaymentRecordsIdReportRefundRequest.fromJson(Map<String, dynamic> json) {return PostPaymentRecordsIdReportRefundRequest(
   amount: json['amount'] != null ? PostPaymentRecordsIdReportRefundRequestAmount.fromJson(json['amount'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   initiatedAt: json['initiated_at'] != null ? (json['initiated_at'] as num).toInt() : null,
@@ -32,7 +32,7 @@ factory PostPaymentRecordsIdReportRefundRequest.fromJson(Map<String, dynamic> js
   outcome: PostPaymentRecordsIdReportRefundRequestOutcome.fromJson(json['outcome'] as String),
   processorDetails: PostPaymentRecordsIdReportRefundRequestProcessorDetails.fromJson(json['processor_details'] as Map<String, dynamic>),
   refunded: PostPaymentRecordsIdReportRefundRequestRefunded.fromJson(json['refunded'] as Map<String, dynamic>),
-); }
+);}
 
 /// A positive integer in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal) representing how much of this payment to refund. Can refund only up to the remaining, unrefunded amount of the payment.
 final PostPaymentRecordsIdReportRefundRequestAmount? amount;
@@ -55,7 +55,7 @@ final PostPaymentRecordsIdReportRefundRequestProcessorDetails processorDetails;
 /// Information about the payment attempt refund.
 final PostPaymentRecordsIdReportRefundRequestRefunded refunded;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amount != null) 'amount': amount?.toJson(),
   'expand': ?expand,
   'initiated_at': ?initiatedAt,
@@ -63,11 +63,11 @@ Map<String, dynamic> toJson() { return {
   'outcome': outcome.toJson(),
   'processor_details': processorDetails.toJson(),
   'refunded': refunded.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('outcome') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('outcome') &&
       json.containsKey('processor_details') &&
-      json.containsKey('refunded'); } 
-PostPaymentRecordsIdReportRefundRequest copyWith({PostPaymentRecordsIdReportRefundRequestAmount? Function()? amount, List<String>? Function()? expand, int? Function()? initiatedAt, PostPaymentRecordsIdReportRefundRequestMetadata? Function()? metadata, PostPaymentRecordsIdReportRefundRequestOutcome? outcome, PostPaymentRecordsIdReportRefundRequestProcessorDetails? processorDetails, PostPaymentRecordsIdReportRefundRequestRefunded? refunded, }) { return PostPaymentRecordsIdReportRefundRequest(
+      json.containsKey('refunded');}
+PostPaymentRecordsIdReportRefundRequest copyWith({PostPaymentRecordsIdReportRefundRequestAmount? Function()? amount, List<String>? Function()? expand, int? Function()? initiatedAt, PostPaymentRecordsIdReportRefundRequestMetadata? Function()? metadata, PostPaymentRecordsIdReportRefundRequestOutcome? outcome, PostPaymentRecordsIdReportRefundRequestProcessorDetails? processorDetails, PostPaymentRecordsIdReportRefundRequestRefunded? refunded, }) {return PostPaymentRecordsIdReportRefundRequest(
   amount: amount != null ? amount() : this.amount,
   expand: expand != null ? expand() : this.expand,
   initiatedAt: initiatedAt != null ? initiatedAt() : this.initiatedAt,
@@ -75,8 +75,8 @@ PostPaymentRecordsIdReportRefundRequest copyWith({PostPaymentRecordsIdReportRefu
   outcome: outcome ?? this.outcome,
   processorDetails: processorDetails ?? this.processorDetails,
   refunded: refunded ?? this.refunded,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentRecordsIdReportRefundRequest &&
           amount == other.amount &&
           listEquals(expand, other.expand) &&
@@ -84,7 +84,7 @@ PostPaymentRecordsIdReportRefundRequest copyWith({PostPaymentRecordsIdReportRefu
           metadata == other.metadata &&
           outcome == other.outcome &&
           processorDetails == other.processorDetails &&
-          refunded == other.refunded; } 
-@override int get hashCode { return Object.hash(amount, Object.hashAll(expand ?? const []), initiatedAt, metadata, outcome, processorDetails, refunded); } 
-@override String toString() { return 'PostPaymentRecordsIdReportRefundRequest(amount: $amount, expand: $expand, initiatedAt: $initiatedAt, metadata: $metadata, outcome: $outcome, processorDetails: $processorDetails, refunded: $refunded)'; } 
- }
+          refunded == other.refunded;}
+@override int get hashCode {return Object.hash(amount, Object.hashAll(expand ?? const []), initiatedAt, metadata, outcome, processorDetails, refunded);}
+@override String toString() {return 'PostPaymentRecordsIdReportRefundRequest(amount: $amount, expand: $expand, initiatedAt: $initiatedAt, metadata: $metadata, outcome: $outcome, processorDetails: $processorDetails, refunded: $refunded)';}
+}

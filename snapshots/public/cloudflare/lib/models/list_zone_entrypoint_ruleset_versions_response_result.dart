@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_ruleset_id.dart';import 'rulesets_ruleset_kind.dart';import 'rulesets_ruleset_phase.dart';import 'rulesets_ruleset_version.dart';@immutable final class ListZoneEntrypointRulesetVersionsResponseResult {const ListZoneEntrypointRulesetVersionsResponseResult({required this.id, required this.lastUpdated, required this.name, required this.version, required this.kind, required this.phase, this.description, });
 
-factory ListZoneEntrypointRulesetVersionsResponseResult.fromJson(Map<String, dynamic> json) { return ListZoneEntrypointRulesetVersionsResponseResult(
+factory ListZoneEntrypointRulesetVersionsResponseResult.fromJson(Map<String, dynamic> json) {return ListZoneEntrypointRulesetVersionsResponseResult(
   description: json['description'] as String?,
   id: RulesetsRulesetId.fromJson(json['id'] as String),
   lastUpdated: DateTime.parse(json['last_updated'] as String),
@@ -10,7 +10,7 @@ factory ListZoneEntrypointRulesetVersionsResponseResult.fromJson(Map<String, dyn
   version: RulesetsRulesetVersion.fromJson(json['version'] as String),
   kind: RulesetsRulesetKind.fromJson(json['kind'] as String),
   phase: RulesetsRulesetPhase.fromJson(json['phase'] as String),
-); }
+);}
 
 /// An informative description of the ruleset.
 final String? description;
@@ -34,8 +34,8 @@ final RulesetsRulesetKind kind;
 final RulesetsRulesetPhase phase;
 
 /// The value with the schema default applied when absent.
-String get descriptionOrDefault { return description ?? ''; } 
-Map<String, dynamic> toJson() { return {
+String get descriptionOrDefault {return description ?? '';}
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'id': id.toJson(),
   'last_updated': lastUpdated.toIso8601String(),
@@ -43,14 +43,14 @@ Map<String, dynamic> toJson() { return {
   'version': version.toJson(),
   'kind': kind.toJson(),
   'phase': phase.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
       json.containsKey('last_updated') && json['last_updated'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('version') &&
       json.containsKey('kind') &&
-      json.containsKey('phase'); } 
-ListZoneEntrypointRulesetVersionsResponseResult copyWith({String? Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? name, RulesetsRulesetVersion? version, RulesetsRulesetKind? kind, RulesetsRulesetPhase? phase, }) { return ListZoneEntrypointRulesetVersionsResponseResult(
+      json.containsKey('phase');}
+ListZoneEntrypointRulesetVersionsResponseResult copyWith({String? Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? name, RulesetsRulesetVersion? version, RulesetsRulesetKind? kind, RulesetsRulesetPhase? phase, }) {return ListZoneEntrypointRulesetVersionsResponseResult(
   description: description != null ? description() : this.description,
   id: id ?? this.id,
   lastUpdated: lastUpdated ?? this.lastUpdated,
@@ -58,8 +58,8 @@ ListZoneEntrypointRulesetVersionsResponseResult copyWith({String? Function()? de
   version: version ?? this.version,
   kind: kind ?? this.kind,
   phase: phase ?? this.phase,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ListZoneEntrypointRulesetVersionsResponseResult &&
           description == other.description &&
           id == other.id &&
@@ -67,7 +67,7 @@ ListZoneEntrypointRulesetVersionsResponseResult copyWith({String? Function()? de
           name == other.name &&
           version == other.version &&
           kind == other.kind &&
-          phase == other.phase; } 
-@override int get hashCode { return Object.hash(description, id, lastUpdated, name, version, kind, phase); } 
-@override String toString() { return 'ListZoneEntrypointRulesetVersionsResponseResult(description: $description, id: $id, lastUpdated: $lastUpdated, name: $name, version: $version, kind: $kind, phase: $phase)'; } 
- }
+          phase == other.phase;}
+@override int get hashCode {return Object.hash(description, id, lastUpdated, name, version, kind, phase);}
+@override String toString() {return 'ListZoneEntrypointRulesetVersionsResponseResult(description: $description, id: $id, lastUpdated: $lastUpdated, name: $name, version: $version, kind: $kind, phase: $phase)';}
+}

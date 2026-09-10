@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAiInferenceTimeseriesGroupResponseResultMetaUnits {const RadarGetAiInferenceTimeseriesGroupResponseResultMetaUnits({required this.name, required this.value, });
 
-factory RadarGetAiInferenceTimeseriesGroupResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetAiInferenceTimeseriesGroupResponseResultMetaUnits(
+factory RadarGetAiInferenceTimeseriesGroupResponseResultMetaUnits.fromJson(Map<String, dynamic> json) {return RadarGetAiInferenceTimeseriesGroupResponseResultMetaUnits(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String name;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetAiInferenceTimeseriesGroupResponseResultMetaUnits copyWith({String? name, String? value, }) { return RadarGetAiInferenceTimeseriesGroupResponseResultMetaUnits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+RadarGetAiInferenceTimeseriesGroupResponseResultMetaUnits copyWith({String? name, String? value, }) {return RadarGetAiInferenceTimeseriesGroupResponseResultMetaUnits(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetAiInferenceTimeseriesGroupResponseResultMetaUnits &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'RadarGetAiInferenceTimeseriesGroupResponseResultMetaUnits(name: $name, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(name, value);}
+@override String toString() {return 'RadarGetAiInferenceTimeseriesGroupResponseResultMetaUnits(name: $name, value: $value)';}
+}

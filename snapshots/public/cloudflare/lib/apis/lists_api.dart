@@ -13,7 +13,7 @@ final class ListsApi with ApiExecutor {const ListsApi(this.apiConfig);
 /// Fetches all lists in the account.
 ///
 /// `GET /accounts/{account_id}/rules/lists`
-Future<ApiResult<List<ListsList>, ListsGetListsResponse4xx>> listsGetLists({required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ListsList>, ListsGetListsResponse4xx>> listsGetLists({required ListsAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create a list
 ///
 /// Creates a new list of the specified kind.
 ///
 /// `POST /accounts/{account_id}/rules/lists`
-Future<ApiResult<ListsList, ListsCreateAListResponse4xx>> listsCreateAList({required ListsAccountId accountId, required ListsCreateAListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsList, ListsCreateAListResponse4xx>> listsCreateAList({required ListsAccountId accountId, required ListsCreateAListRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get a list
 ///
 /// Fetches the details of a list.
 ///
 /// `GET /accounts/{account_id}/rules/lists/{list_id}`
-Future<ApiResult<ListsList, ListsGetAListResponse4xx>> listsGetAList({required ListsListId listId, required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsList, ListsGetAListResponse4xx>> listsGetAList({required ListsListId listId, required ListsAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -105,13 +105,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update a list
 ///
 /// Updates the description of a list.
 ///
 /// `PUT /accounts/{account_id}/rules/lists/{list_id}`
-Future<ApiResult<ListsList, ListsUpdateAListResponse4xx>> listsUpdateAList({required ListsListId listId, required ListsAccountId accountId, required ListsUpdateAListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsList, ListsUpdateAListResponse4xx>> listsUpdateAList({required ListsListId listId, required ListsAccountId accountId, required ListsUpdateAListRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,13 +139,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a list
 ///
 /// Deletes a specific list and all its items.
 ///
 /// `DELETE /accounts/{account_id}/rules/lists/{list_id}`
-Future<ApiResult<ListsListDeleteResponseCollectionResult, ListsDeleteAListResponse4xx>> listsDeleteAList({required ListsListId listId, required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsListDeleteResponseCollectionResult, ListsDeleteAListResponse4xx>> listsDeleteAList({required ListsListId listId, required ListsAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -171,13 +171,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get list items
 ///
 /// Fetches all the items in the list.
 ///
 /// `GET /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<List<ListsItem>, ListsGetListItemsResponse4xx>> listsGetListItems({required ListsListId listId, required ListsAccountId accountId, String? cursor, int? perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ListsItem>, ListsGetListItemsResponse4xx>> listsGetListItems({required ListsListId listId, required ListsAccountId accountId, String? cursor, int? perPage, String? search, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cursor != null) {
   queryParameters['cursor'] = cursor;
@@ -217,7 +217,7 @@ return null;
 
   },
 );
- } 
+}
 /// Create list items
 ///
 /// Appends new items to the list.
@@ -227,7 +227,7 @@ return null;
 /// There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
 ///
 /// `POST /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<ListsListsAsyncResponseResult, ListsCreateListItemsResponse4xx>> listsCreateListItems({required ListsListId listId, required ListsAccountId accountId, required List<ListsItemsUpdateRequestCollection2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsListsAsyncResponseResult, ListsCreateListItemsResponse4xx>> listsCreateListItems({required ListsListId listId, required ListsAccountId accountId, required List<ListsItemsUpdateRequestCollection2> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -255,7 +255,7 @@ return null;
 
   },
 );
- } 
+}
 /// Update all list items
 ///
 /// Removes all existing items from the list and adds the provided items to the list.
@@ -265,7 +265,7 @@ return null;
 /// There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
 ///
 /// `PUT /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<ListsListsAsyncResponseResult, ListsUpdateAllListItemsResponse4xx>> listsUpdateAllListItems({required ListsListId listId, required ListsAccountId accountId, required List<ListsItemsUpdateRequestCollection2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsListsAsyncResponseResult, ListsUpdateAllListItemsResponse4xx>> listsUpdateAllListItems({required ListsListId listId, required ListsAccountId accountId, required List<ListsItemsUpdateRequestCollection2> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -293,7 +293,7 @@ return null;
 
   },
 );
- } 
+}
 /// Delete list items
 ///
 /// Removes one or more items from a list.
@@ -303,7 +303,7 @@ return null;
 /// There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
 ///
 /// `DELETE /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<ListsListsAsyncResponseResult, ListsDeleteListItemsResponse4xx>> listsDeleteListItems({required ListsListId listId, required ListsAccountId accountId, required ListsDeleteListItemsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsListsAsyncResponseResult, ListsDeleteListItemsResponse4xx>> listsDeleteListItems({required ListsListId listId, required ListsAccountId accountId, required ListsDeleteListItemsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -331,13 +331,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get a list item
 ///
 /// Fetches a list item in the list.
 ///
 /// `GET /accounts/{account_id}/rules/lists/{list_id}/items/{item_id}`
-Future<ApiResult<ListsItem, ListsGetAListItemResponse4xx>> listsGetAListItem({required ListsItemId itemId, required ListsListId listId, required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsItem, ListsGetAListItemResponse4xx>> listsGetAListItem({required ListsItemId itemId, required ListsListId listId, required ListsAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -363,7 +363,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get bulk operation status
 ///
 /// Gets the current status of an asynchronous operation on a list.
@@ -371,7 +371,7 @@ return null;
 /// The `status` property can have one of the following values: `pending`, `running`, `completed`, or `failed`. If the status is `failed`, the `error` property will contain a message describing the error.
 ///
 /// `GET /accounts/{account_id}/rules/lists/bulk_operations/{operation_id}`
-Future<ApiResult<ListsOperation, ListsGetBulkOperationStatusResponse4xx>> listsGetBulkOperationStatus({required ListsOperationId operationId, required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsOperation, ListsGetBulkOperationStatusResponse4xx>> listsGetBulkOperationStatus({required ListsOperationId operationId, required ListsAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -397,5 +397,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

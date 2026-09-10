@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCommandsRequestCommandsCommandArgsInterfaces {const PostCommandsRequestCommandsCommandArgsInterfaces._(this.value);
 
-factory PostCommandsRequestCommandsCommandArgsInterfaces.fromJson(String json) { return switch (json) {
+factory PostCommandsRequestCommandsCommandArgsInterfaces.fromJson(String json) {return switch (json) {
   'default' => $default,
   'tunnel' => tunnel,
   _ => PostCommandsRequestCommandsCommandArgsInterfaces._(json),
-}; }
+};}
 
 static const PostCommandsRequestCommandsCommandArgsInterfaces $default = PostCommandsRequestCommandsCommandArgsInterfaces._('default');
 
@@ -16,23 +16,23 @@ static const List<PostCommandsRequestCommandsCommandArgsInterfaces> values = [$d
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCommandsRequestCommandsCommandArgsInterfaces && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCommandsRequestCommandsCommandArgsInterfaces($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCommandsRequestCommandsCommandArgsInterfaces && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCommandsRequestCommandsCommandArgsInterfaces($value)';}
+}
 @immutable final class PostCommandsRequestCommandsCommandArgs {const PostCommandsRequestCommandsCommandArgs({this.interfaces, this.maxFileSizeMb, this.packetSizeBytes, this.testAllRoutes, this.timeLimitMin, });
 
-factory PostCommandsRequestCommandsCommandArgs.fromJson(Map<String, dynamic> json) { return PostCommandsRequestCommandsCommandArgs(
+factory PostCommandsRequestCommandsCommandArgs.fromJson(Map<String, dynamic> json) {return PostCommandsRequestCommandsCommandArgs(
   interfaces: (json['interfaces'] as List<dynamic>?)?.map((e) => PostCommandsRequestCommandsCommandArgsInterfaces.fromJson(e as String)).toList(),
   maxFileSizeMb: json['max-file-size-mb'] != null ? (json['max-file-size-mb'] as num).toDouble() : null,
   packetSizeBytes: json['packet-size-bytes'] != null ? (json['packet-size-bytes'] as num).toDouble() : null,
   testAllRoutes: json['test-all-routes'] as bool?,
   timeLimitMin: json['time-limit-min'] != null ? (json['time-limit-min'] as num).toDouble() : null,
-); }
+);}
 
 /// List of interfaces to capture packets on
 final List<PostCommandsRequestCommandsCommandArgsInterfaces>? interfaces;
@@ -50,35 +50,35 @@ final bool? testAllRoutes;
 final double? timeLimitMin;
 
 /// The value with the schema default applied when absent.
-double get maxFileSizeMbOrDefault { return maxFileSizeMb ?? 5.0; } 
+double get maxFileSizeMbOrDefault {return maxFileSizeMb ?? 5.0;}
 /// The value with the schema default applied when absent.
-double get packetSizeBytesOrDefault { return packetSizeBytes ?? 160.0; } 
+double get packetSizeBytesOrDefault {return packetSizeBytes ?? 160.0;}
 /// The value with the schema default applied when absent.
-bool get testAllRoutesOrDefault { return testAllRoutes ?? true; } 
+bool get testAllRoutesOrDefault {return testAllRoutes ?? true;}
 /// The value with the schema default applied when absent.
-double get timeLimitMinOrDefault { return timeLimitMin ?? 5.0; } 
-Map<String, dynamic> toJson() { return {
+double get timeLimitMinOrDefault {return timeLimitMin ?? 5.0;}
+Map<String, dynamic> toJson() {return {
   if (interfaces != null) 'interfaces': interfaces?.map((e) => e.toJson()).toList(),
   'max-file-size-mb': ?maxFileSizeMb,
   'packet-size-bytes': ?packetSizeBytes,
   'test-all-routes': ?testAllRoutes,
   'time-limit-min': ?timeLimitMin,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'interfaces', 'max-file-size-mb', 'packet-size-bytes', 'test-all-routes', 'time-limit-min'}.contains(key)); } 
-PostCommandsRequestCommandsCommandArgs copyWith({List<PostCommandsRequestCommandsCommandArgsInterfaces>? Function()? interfaces, double? Function()? maxFileSizeMb, double? Function()? packetSizeBytes, bool? Function()? testAllRoutes, double? Function()? timeLimitMin, }) { return PostCommandsRequestCommandsCommandArgs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'interfaces', 'max-file-size-mb', 'packet-size-bytes', 'test-all-routes', 'time-limit-min'}.contains(key));}
+PostCommandsRequestCommandsCommandArgs copyWith({List<PostCommandsRequestCommandsCommandArgsInterfaces>? Function()? interfaces, double? Function()? maxFileSizeMb, double? Function()? packetSizeBytes, bool? Function()? testAllRoutes, double? Function()? timeLimitMin, }) {return PostCommandsRequestCommandsCommandArgs(
   interfaces: interfaces != null ? interfaces() : this.interfaces,
   maxFileSizeMb: maxFileSizeMb != null ? maxFileSizeMb() : this.maxFileSizeMb,
   packetSizeBytes: packetSizeBytes != null ? packetSizeBytes() : this.packetSizeBytes,
   testAllRoutes: testAllRoutes != null ? testAllRoutes() : this.testAllRoutes,
   timeLimitMin: timeLimitMin != null ? timeLimitMin() : this.timeLimitMin,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCommandsRequestCommandsCommandArgs &&
           listEquals(interfaces, other.interfaces) &&
           maxFileSizeMb == other.maxFileSizeMb &&
           packetSizeBytes == other.packetSizeBytes &&
           testAllRoutes == other.testAllRoutes &&
-          timeLimitMin == other.timeLimitMin; } 
-@override int get hashCode { return Object.hash(Object.hashAll(interfaces ?? const []), maxFileSizeMb, packetSizeBytes, testAllRoutes, timeLimitMin); } 
-@override String toString() { return 'PostCommandsRequestCommandsCommandArgs(interfaces: $interfaces, maxFileSizeMb: $maxFileSizeMb, packetSizeBytes: $packetSizeBytes, testAllRoutes: $testAllRoutes, timeLimitMin: $timeLimitMin)'; } 
- }
+          timeLimitMin == other.timeLimitMin;}
+@override int get hashCode {return Object.hash(Object.hashAll(interfaces ?? const []), maxFileSizeMb, packetSizeBytes, testAllRoutes, timeLimitMin);}
+@override String toString() {return 'PostCommandsRequestCommandsCommandArgs(interfaces: $interfaces, maxFileSizeMb: $maxFileSizeMb, packetSizeBytes: $packetSizeBytes, testAllRoutes: $testAllRoutes, timeLimitMin: $timeLimitMin)';}
+}

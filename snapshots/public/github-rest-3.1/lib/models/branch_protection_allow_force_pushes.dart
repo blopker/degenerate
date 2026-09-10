@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BranchProtectionAllowForcePushes {const BranchProtectionAllowForcePushes({this.enabled});
 
-factory BranchProtectionAllowForcePushes.fromJson(Map<String, dynamic> json) { return BranchProtectionAllowForcePushes(
+factory BranchProtectionAllowForcePushes.fromJson(Map<String, dynamic> json) {return BranchProtectionAllowForcePushes(
   enabled: json['enabled'] as bool?,
-); }
+);}
 
 final bool? enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled'}.contains(key)); } 
-BranchProtectionAllowForcePushes copyWith({bool? Function()? enabled}) { return BranchProtectionAllowForcePushes(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled'}.contains(key));}
+BranchProtectionAllowForcePushes copyWith({bool? Function()? enabled}) {return BranchProtectionAllowForcePushes(
   enabled: enabled != null ? enabled() : this.enabled,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BranchProtectionAllowForcePushes &&
-          enabled == other.enabled; } 
-@override int get hashCode { return enabled.hashCode; } 
-@override String toString() { return 'BranchProtectionAllowForcePushes(enabled: $enabled)'; } 
- }
+          enabled == other.enabled;}
+@override int get hashCode {return enabled.hashCode;}
+@override String toString() {return 'BranchProtectionAllowForcePushes(enabled: $enabled)';}
+}

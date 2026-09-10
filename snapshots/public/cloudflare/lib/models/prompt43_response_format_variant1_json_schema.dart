@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_response_format_variant1_json_schema_json_schema.dart';@immutable final class Prompt43ResponseFormatVariant1JsonSchemaType {const Prompt43ResponseFormatVariant1JsonSchemaType._(this.value);
 
-factory Prompt43ResponseFormatVariant1JsonSchemaType.fromJson(String json) { return switch (json) {
+factory Prompt43ResponseFormatVariant1JsonSchemaType.fromJson(String json) {return switch (json) {
   'json_schema' => jsonSchema,
   _ => Prompt43ResponseFormatVariant1JsonSchemaType._(json),
-}; }
+};}
 
 static const Prompt43ResponseFormatVariant1JsonSchemaType jsonSchema = Prompt43ResponseFormatVariant1JsonSchemaType._('json_schema');
 
@@ -13,39 +13,39 @@ static const List<Prompt43ResponseFormatVariant1JsonSchemaType> values = [jsonSc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Prompt43ResponseFormatVariant1JsonSchemaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Prompt43ResponseFormatVariant1JsonSchemaType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Prompt43ResponseFormatVariant1JsonSchemaType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Prompt43ResponseFormatVariant1JsonSchemaType($value)';}
+}
 @immutable final class Prompt43ResponseFormatVariant1JsonSchema {const Prompt43ResponseFormatVariant1JsonSchema({required this.jsonSchema, required this.type, });
 
-factory Prompt43ResponseFormatVariant1JsonSchema.fromJson(Map<String, dynamic> json) { return Prompt43ResponseFormatVariant1JsonSchema(
+factory Prompt43ResponseFormatVariant1JsonSchema.fromJson(Map<String, dynamic> json) {return Prompt43ResponseFormatVariant1JsonSchema(
   jsonSchema: Prompt43ResponseFormatVariant1JsonSchemaJsonSchema.fromJson(json['json_schema'] as Map<String, dynamic>),
   type: Prompt43ResponseFormatVariant1JsonSchemaType.fromJson(json['type'] as String),
-); }
+);}
 
 final Prompt43ResponseFormatVariant1JsonSchemaJsonSchema jsonSchema;
 
 final Prompt43ResponseFormatVariant1JsonSchemaType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'json_schema': jsonSchema.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('json_schema') &&
-      json.containsKey('type'); } 
-Prompt43ResponseFormatVariant1JsonSchema copyWith({Prompt43ResponseFormatVariant1JsonSchemaJsonSchema? jsonSchema, Prompt43ResponseFormatVariant1JsonSchemaType? type, }) { return Prompt43ResponseFormatVariant1JsonSchema(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('json_schema') &&
+      json.containsKey('type');}
+Prompt43ResponseFormatVariant1JsonSchema copyWith({Prompt43ResponseFormatVariant1JsonSchemaJsonSchema? jsonSchema, Prompt43ResponseFormatVariant1JsonSchemaType? type, }) {return Prompt43ResponseFormatVariant1JsonSchema(
   jsonSchema: jsonSchema ?? this.jsonSchema,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Prompt43ResponseFormatVariant1JsonSchema &&
           jsonSchema == other.jsonSchema &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(jsonSchema, type); } 
-@override String toString() { return 'Prompt43ResponseFormatVariant1JsonSchema(jsonSchema: $jsonSchema, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(jsonSchema, type);}
+@override String toString() {return 'Prompt43ResponseFormatVariant1JsonSchema(jsonSchema: $jsonSchema, type: $type)';}
+}

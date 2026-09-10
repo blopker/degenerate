@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ClientToolCallStatus {const ClientToolCallStatus._(this.value);
 
-factory ClientToolCallStatus.fromJson(String json) { return switch (json) {
+factory ClientToolCallStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   _ => ClientToolCallStatus._(json),
-}; }
+};}
 
 static const ClientToolCallStatus inProgress = ClientToolCallStatus._('in_progress');
 
@@ -16,21 +16,21 @@ static const List<ClientToolCallStatus> values = [inProgress, completed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClientToolCallStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClientToolCallStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ClientToolCallStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ClientToolCallStatus($value)';}
+}
 /// Type discriminator that is always `chatkit.thread_item`.
 @immutable final class ClientToolCallItemObject {const ClientToolCallItemObject._(this.value);
 
-factory ClientToolCallItemObject.fromJson(String json) { return switch (json) {
+factory ClientToolCallItemObject.fromJson(String json) {return switch (json) {
   'chatkit.thread_item' => chatkitThreadItem,
   _ => ClientToolCallItemObject._(json),
-}; }
+};}
 
 static const ClientToolCallItemObject chatkitThreadItem = ClientToolCallItemObject._('chatkit.thread_item');
 
@@ -38,18 +38,18 @@ static const List<ClientToolCallItemObject> values = [chatkitThreadItem];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClientToolCallItemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClientToolCallItemObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ClientToolCallItemObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ClientToolCallItemObject($value)';}
+}
 /// Record of a client side tool invocation initiated by the assistant.
 @immutable final class ClientToolCallItem {const ClientToolCallItem({required this.id, required this.object, required this.createdAt, required this.threadId, required this.type, required this.status, required this.callId, required this.name, required this.arguments, required this.output, });
 
-factory ClientToolCallItem.fromJson(Map<String, dynamic> json) { return ClientToolCallItem(
+factory ClientToolCallItem.fromJson(Map<String, dynamic> json) {return ClientToolCallItem(
   id: json['id'] as String,
   object: ClientToolCallItemObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
@@ -60,7 +60,7 @@ factory ClientToolCallItem.fromJson(Map<String, dynamic> json) { return ClientTo
   name: json['name'] as String,
   arguments: json['arguments'] as String,
   output: json['output'] as String?,
-); }
+);}
 
 /// Identifier of the thread item.
 final String id;
@@ -92,7 +92,7 @@ final String arguments;
 /// JSON-encoded output captured from the tool. Defaults to null while execution is in progress.
 final String? output;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'created_at': createdAt,
@@ -103,8 +103,8 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'arguments': arguments,
   'output': output,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('thread_id') && json['thread_id'] is String &&
@@ -113,8 +113,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('arguments') && json['arguments'] is String &&
-      json.containsKey('output') && (json['output'] == null || json['output'] is String); } 
-ClientToolCallItem copyWith({String? id, ClientToolCallItemObject? object, int? createdAt, String? threadId, String? type, ClientToolCallStatus? status, String? callId, String? name, String? arguments, String? Function()? output, }) { return ClientToolCallItem(
+      json.containsKey('output') && (json['output'] == null || json['output'] is String);}
+ClientToolCallItem copyWith({String? id, ClientToolCallItemObject? object, int? createdAt, String? threadId, String? type, ClientToolCallStatus? status, String? callId, String? name, String? arguments, String? Function()? output, }) {return ClientToolCallItem(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
@@ -125,8 +125,8 @@ ClientToolCallItem copyWith({String? id, ClientToolCallItemObject? object, int? 
   name: name ?? this.name,
   arguments: arguments ?? this.arguments,
   output: output != null ? output() : this.output,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ClientToolCallItem &&
           id == other.id &&
           object == other.object &&
@@ -137,7 +137,7 @@ ClientToolCallItem copyWith({String? id, ClientToolCallItemObject? object, int? 
           callId == other.callId &&
           name == other.name &&
           arguments == other.arguments &&
-          output == other.output; } 
-@override int get hashCode { return Object.hash(id, object, createdAt, threadId, type, status, callId, name, arguments, output); } 
-@override String toString() { return 'ClientToolCallItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, status: $status, callId: $callId, name: $name, arguments: $arguments, output: $output)'; } 
- }
+          output == other.output;}
+@override int get hashCode {return Object.hash(id, object, createdAt, threadId, type, status, callId, name, arguments, output);}
+@override String toString() {return 'ClientToolCallItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, status: $status, callId: $callId, name: $name, arguments: $arguments, output: $output)';}
+}

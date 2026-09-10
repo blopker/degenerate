@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_request_line_items_adjustable_quantity.dart';import 'post_payment_links_request_line_items_price_data.dart';@immutable final class PostPaymentLinksRequestLineItems {const PostPaymentLinksRequestLineItems({required this.quantity, this.adjustableQuantity, this.price, this.priceData, });
 
-factory PostPaymentLinksRequestLineItems.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestLineItems(
+factory PostPaymentLinksRequestLineItems.fromJson(Map<String, dynamic> json) {return PostPaymentLinksRequestLineItems(
   adjustableQuantity: json['adjustable_quantity'] != null ? PostPaymentLinksRequestLineItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
   price: json['price'] as String?,
   priceData: json['price_data'] != null ? PostPaymentLinksRequestLineItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: (json['quantity'] as num).toInt(),
-); }
+);}
 
 final PostPaymentLinksRequestLineItemsAdjustableQuantity? adjustableQuantity;
 
@@ -17,25 +17,25 @@ final PostPaymentLinksRequestLineItemsPriceData? priceData;
 
 final int quantity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (adjustableQuantity != null) 'adjustable_quantity': adjustableQuantity?.toJson(),
   'price': ?price,
   if (priceData != null) 'price_data': priceData?.toJson(),
   'quantity': quantity,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('quantity') && json['quantity'] is num; } 
-PostPaymentLinksRequestLineItems copyWith({PostPaymentLinksRequestLineItemsAdjustableQuantity? Function()? adjustableQuantity, String? Function()? price, PostPaymentLinksRequestLineItemsPriceData? Function()? priceData, int? quantity, }) { return PostPaymentLinksRequestLineItems(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('quantity') && json['quantity'] is num;}
+PostPaymentLinksRequestLineItems copyWith({PostPaymentLinksRequestLineItemsAdjustableQuantity? Function()? adjustableQuantity, String? Function()? price, PostPaymentLinksRequestLineItemsPriceData? Function()? priceData, int? quantity, }) {return PostPaymentLinksRequestLineItems(
   adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,
   price: price != null ? price() : this.price,
   priceData: priceData != null ? priceData() : this.priceData,
   quantity: quantity ?? this.quantity,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentLinksRequestLineItems &&
           adjustableQuantity == other.adjustableQuantity &&
           price == other.price &&
           priceData == other.priceData &&
-          quantity == other.quantity; } 
-@override int get hashCode { return Object.hash(adjustableQuantity, price, priceData, quantity); } 
-@override String toString() { return 'PostPaymentLinksRequestLineItems(adjustableQuantity: $adjustableQuantity, price: $price, priceData: $priceData, quantity: $quantity)'; } 
- }
+          quantity == other.quantity;}
+@override int get hashCode {return Object.hash(adjustableQuantity, price, priceData, quantity);}
+@override String toString() {return 'PostPaymentLinksRequestLineItems(adjustableQuantity: $adjustableQuantity, price: $price, priceData: $priceData, quantity: $quantity)';}
+}

@@ -94,150 +94,150 @@ String toJson() => value;
 /// A value that is one of: `AbuseReportsBadActError`, `AbuseReportsMaxIPsError`, `AbuseReportsPortsProtocolError`, `AbuseReportsInternalError`, `AbuseReportsInvalidNotifyError`, `AbuseReportsMustNotifyError`, `AbuseReportsNoAgreeError`, `AbuseReportsNoOriginalWorkError`, `AbuseReportsNoSigError`, `AbuseReportsUnexpectedActError`, `AbuseReportsUnknownError`, `AbuseReportsUrlNotOrangeError`, `AbuseReportsUrlNotvalidError`.
 sealed class AbuseReportsErrorCode {const AbuseReportsErrorCode();
 
-factory AbuseReportsErrorCode.fromJson(Map<String, dynamic> json) {   return AbuseReportsErrorCode$Unknown(json); }
+factory AbuseReportsErrorCode.fromJson(Map<String, dynamic> json) {  return AbuseReportsErrorCode$Unknown(json);}
 
 /// The underlying raw value.
 dynamic get value;
-dynamic toJson() { return value; } 
- }
+dynamic toJson() {return value;}
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsBadActError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsBadActError(this._value);
 
 final AbuseReportsBadActError _value;
 
-@override AbuseReportsBadActError get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsErrorCodeAbuseReportsBadActError && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'AbuseReportsErrorCode.abuseReportsBadActError($_value)'; } 
- }
+@override AbuseReportsBadActError get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsBadActError && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'AbuseReportsErrorCode.abuseReportsBadActError($_value)';}
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsMaxIPsError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsMaxIPsError(this._value);
 
 final AbuseReportsMaxIPsError _value;
 
-@override AbuseReportsMaxIPsError get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsErrorCodeAbuseReportsMaxIPsError && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'AbuseReportsErrorCode.abuseReportsMaxIPsError($_value)'; } 
- }
+@override AbuseReportsMaxIPsError get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsMaxIPsError && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'AbuseReportsErrorCode.abuseReportsMaxIPsError($_value)';}
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsPortsProtocolError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsPortsProtocolError(this._value);
 
 final AbuseReportsPortsProtocolError _value;
 
-@override AbuseReportsPortsProtocolError get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsErrorCodeAbuseReportsPortsProtocolError && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'AbuseReportsErrorCode.abuseReportsPortsProtocolError($_value)'; } 
- }
+@override AbuseReportsPortsProtocolError get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsPortsProtocolError && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'AbuseReportsErrorCode.abuseReportsPortsProtocolError($_value)';}
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsInternalError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsInternalError(this._value);
 
 final AbuseReportsInternalError _value;
 
-@override AbuseReportsInternalError get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsErrorCodeAbuseReportsInternalError && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'AbuseReportsErrorCode.abuseReportsInternalError($_value)'; } 
- }
+@override AbuseReportsInternalError get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsInternalError && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'AbuseReportsErrorCode.abuseReportsInternalError($_value)';}
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsInvalidNotifyError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsInvalidNotifyError(this._value);
 
 final AbuseReportsInvalidNotifyError _value;
 
-@override AbuseReportsInvalidNotifyError get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsErrorCodeAbuseReportsInvalidNotifyError && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'AbuseReportsErrorCode.abuseReportsInvalidNotifyError($_value)'; } 
- }
+@override AbuseReportsInvalidNotifyError get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsInvalidNotifyError && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'AbuseReportsErrorCode.abuseReportsInvalidNotifyError($_value)';}
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsMustNotifyError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsMustNotifyError(this._value);
 
 final AbuseReportsMustNotifyError _value;
 
-@override AbuseReportsMustNotifyError get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsErrorCodeAbuseReportsMustNotifyError && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'AbuseReportsErrorCode.abuseReportsMustNotifyError($_value)'; } 
- }
+@override AbuseReportsMustNotifyError get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsMustNotifyError && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'AbuseReportsErrorCode.abuseReportsMustNotifyError($_value)';}
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsNoAgreeError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsNoAgreeError(this._value);
 
 final AbuseReportsNoAgreeError _value;
 
-@override AbuseReportsNoAgreeError get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsErrorCodeAbuseReportsNoAgreeError && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'AbuseReportsErrorCode.abuseReportsNoAgreeError($_value)'; } 
- }
+@override AbuseReportsNoAgreeError get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsNoAgreeError && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'AbuseReportsErrorCode.abuseReportsNoAgreeError($_value)';}
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsNoOriginalWorkError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsNoOriginalWorkError(this._value);
 
 final AbuseReportsNoOriginalWorkError _value;
 
-@override AbuseReportsNoOriginalWorkError get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsErrorCodeAbuseReportsNoOriginalWorkError && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'AbuseReportsErrorCode.abuseReportsNoOriginalWorkError($_value)'; } 
- }
+@override AbuseReportsNoOriginalWorkError get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsNoOriginalWorkError && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'AbuseReportsErrorCode.abuseReportsNoOriginalWorkError($_value)';}
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsNoSigError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsNoSigError(this._value);
 
 final AbuseReportsNoSigError _value;
 
-@override AbuseReportsNoSigError get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsErrorCodeAbuseReportsNoSigError && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'AbuseReportsErrorCode.abuseReportsNoSigError($_value)'; } 
- }
+@override AbuseReportsNoSigError get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsNoSigError && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'AbuseReportsErrorCode.abuseReportsNoSigError($_value)';}
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsUnexpectedActError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUnexpectedActError(this._value);
 
 final AbuseReportsUnexpectedActError _value;
 
-@override AbuseReportsUnexpectedActError get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsErrorCodeAbuseReportsUnexpectedActError && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'AbuseReportsErrorCode.abuseReportsUnexpectedActError($_value)'; } 
- }
+@override AbuseReportsUnexpectedActError get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsUnexpectedActError && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'AbuseReportsErrorCode.abuseReportsUnexpectedActError($_value)';}
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsUnknownError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUnknownError(this._value);
 
 final AbuseReportsUnknownError _value;
 
-@override AbuseReportsUnknownError get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsErrorCodeAbuseReportsUnknownError && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'AbuseReportsErrorCode.abuseReportsUnknownError($_value)'; } 
- }
+@override AbuseReportsUnknownError get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsUnknownError && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'AbuseReportsErrorCode.abuseReportsUnknownError($_value)';}
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsUrlNotOrangeError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUrlNotOrangeError(this._value);
 
 final AbuseReportsUrlNotOrangeError _value;
 
-@override AbuseReportsUrlNotOrangeError get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsErrorCodeAbuseReportsUrlNotOrangeError && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'AbuseReportsErrorCode.abuseReportsUrlNotOrangeError($_value)'; } 
- }
+@override AbuseReportsUrlNotOrangeError get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsUrlNotOrangeError && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'AbuseReportsErrorCode.abuseReportsUrlNotOrangeError($_value)';}
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsUrlNotvalidError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUrlNotvalidError(this._value);
 
 final AbuseReportsUrlNotvalidError _value;
 
-@override AbuseReportsUrlNotvalidError get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsErrorCodeAbuseReportsUrlNotvalidError && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'AbuseReportsErrorCode.abuseReportsUrlNotvalidError($_value)'; } 
- }
+@override AbuseReportsUrlNotvalidError get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsUrlNotvalidError && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'AbuseReportsErrorCode.abuseReportsUrlNotvalidError($_value)';}
+}
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class AbuseReportsErrorCode$Unknown extends AbuseReportsErrorCode {const AbuseReportsErrorCode$Unknown(this._value);
 
 final dynamic _value;
 
-@override dynamic get value { return _value ?? ''; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsErrorCode$Unknown && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'AbuseReportsErrorCode.unknown($_value)'; } 
- }
+@override dynamic get value {return _value ?? '';}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsErrorCode$Unknown && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'AbuseReportsErrorCode.unknown($_value)';}
+}

@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryByDmarcResponseResultMetaUnits {const RadarGetEmailSecuritySummaryByDmarcResponseResultMetaUnits({required this.name, required this.value, });
 
-factory RadarGetEmailSecuritySummaryByDmarcResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryByDmarcResponseResultMetaUnits(
+factory RadarGetEmailSecuritySummaryByDmarcResponseResultMetaUnits.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecuritySummaryByDmarcResponseResultMetaUnits(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String name;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetEmailSecuritySummaryByDmarcResponseResultMetaUnits copyWith({String? name, String? value, }) { return RadarGetEmailSecuritySummaryByDmarcResponseResultMetaUnits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+RadarGetEmailSecuritySummaryByDmarcResponseResultMetaUnits copyWith({String? name, String? value, }) {return RadarGetEmailSecuritySummaryByDmarcResponseResultMetaUnits(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetEmailSecuritySummaryByDmarcResponseResultMetaUnits &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'RadarGetEmailSecuritySummaryByDmarcResponseResultMetaUnits(name: $name, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(name, value);}
+@override String toString() {return 'RadarGetEmailSecuritySummaryByDmarcResponseResultMetaUnits(name: $name, value: $value)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam46RoutingRequestedPriority {const PaymentMethodOptionsParam46RoutingRequestedPriority._(this.value);
 
-factory PaymentMethodOptionsParam46RoutingRequestedPriority.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsParam46RoutingRequestedPriority.fromJson(String json) {return switch (json) {
   'domestic' => domestic,
   'international' => international,
   _ => PaymentMethodOptionsParam46RoutingRequestedPriority._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsParam46RoutingRequestedPriority domestic = PaymentMethodOptionsParam46RoutingRequestedPriority._('domestic');
 
@@ -16,32 +16,32 @@ static const List<PaymentMethodOptionsParam46RoutingRequestedPriority> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsParam46RoutingRequestedPriority && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam46RoutingRequestedPriority($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsParam46RoutingRequestedPriority && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsParam46RoutingRequestedPriority($value)';}
+}
 @immutable final class PaymentMethodOptionsParam46Routing {const PaymentMethodOptionsParam46Routing({this.requestedPriority});
 
-factory PaymentMethodOptionsParam46Routing.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam46Routing(
+factory PaymentMethodOptionsParam46Routing.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsParam46Routing(
   requestedPriority: json['requested_priority'] != null ? PaymentMethodOptionsParam46RoutingRequestedPriority.fromJson(json['requested_priority'] as String) : null,
-); }
+);}
 
 final PaymentMethodOptionsParam46RoutingRequestedPriority? requestedPriority;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (requestedPriority != null) 'requested_priority': requestedPriority?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested_priority'}.contains(key)); } 
-PaymentMethodOptionsParam46Routing copyWith({PaymentMethodOptionsParam46RoutingRequestedPriority? Function()? requestedPriority}) { return PaymentMethodOptionsParam46Routing(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'requested_priority'}.contains(key));}
+PaymentMethodOptionsParam46Routing copyWith({PaymentMethodOptionsParam46RoutingRequestedPriority? Function()? requestedPriority}) {return PaymentMethodOptionsParam46Routing(
   requestedPriority: requestedPriority != null ? requestedPriority() : this.requestedPriority,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodOptionsParam46Routing &&
-          requestedPriority == other.requestedPriority; } 
-@override int get hashCode { return requestedPriority.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam46Routing(requestedPriority: $requestedPriority)'; } 
- }
+          requestedPriority == other.requestedPriority;}
+@override int get hashCode {return requestedPriority.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsParam46Routing(requestedPriority: $requestedPriority)';}
+}

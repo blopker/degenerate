@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_item.dart';import 'workers_compatibility_date.dart';import 'workers_compatibility_flag.dart';import 'workers_multiple_step_migrations.dart';import 'workers_placement_info_no_status.dart';import 'workers_placement_info_no_status_smart.dart';import 'workers_placement_info_no_status_targeted.dart';import 'workers_placement_info_no_status_targeted2.dart';import 'workers_placement_info_no_status_targeted3.dart';import 'workers_placement_info_no_status_targeted4.dart';import 'workers_placement_info_no_status_variant2.dart';import 'workers_placement_info_no_status_variant3.dart';import 'workers_placement_info_no_status_variant4.dart';import 'workers_single_step_migrations.dart';import 'workers_version_request_annotations.dart';import 'workers_version_request_assets.dart';import 'workers_version_request_limits.dart';import 'workers_version_request_migrations.dart';import 'workers_version_request_modules.dart';/// Usage model for the version.
 @immutable final class WorkersVersionRequestUsageModel {const WorkersVersionRequestUsageModel._(this.value);
 
-factory WorkersVersionRequestUsageModel.fromJson(String json) { return switch (json) {
+factory WorkersVersionRequestUsageModel.fromJson(String json) {return switch (json) {
   'standard' => standard,
   'bundled' => bundled,
   'unbound' => unbound,
   _ => WorkersVersionRequestUsageModel._(json),
-}; }
+};}
 
 static const WorkersVersionRequestUsageModel standard = WorkersVersionRequestUsageModel._('standard');
 
@@ -20,17 +20,17 @@ static const List<WorkersVersionRequestUsageModel> values = [standard, bundled, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersVersionRequestUsageModel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersVersionRequestUsageModel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersVersionRequestUsageModel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersVersionRequestUsageModel($value)';}
+}
 @immutable final class WorkersVersionRequest {const WorkersVersionRequest({this.annotations, this.assets, this.bindings, this.compatibilityDate, this.compatibilityFlags, this.limits, this.mainModule, this.migrations, this.modules, this.placement, this.usageModel, });
 
-factory WorkersVersionRequest.fromJson(Map<String, dynamic> json) { return WorkersVersionRequest(
+factory WorkersVersionRequest.fromJson(Map<String, dynamic> json) {return WorkersVersionRequest(
   annotations: json['annotations'] != null ? WorkersVersionRequestAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,
   assets: json['assets'] != null ? WorkersVersionRequestAssets.fromJson(json['assets'] as Map<String, dynamic>) : null,
   bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList(),
@@ -42,7 +42,7 @@ factory WorkersVersionRequest.fromJson(Map<String, dynamic> json) { return Worke
   modules: (json['modules'] as List<dynamic>?)?.map((e) => WorkersVersionRequestModules.fromJson(e as Map<String, dynamic>)).toList(),
   placement: json['placement'] != null ? OneOf8.parse(json['placement'], fromA: (v) => WorkersPlacementInfoNoStatusSmart.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersPlacementInfoNoStatusVariant2.fromJson(v as Map<String, dynamic>), fromC: (v) => WorkersPlacementInfoNoStatusVariant3.fromJson(v as Map<String, dynamic>), fromD: (v) => WorkersPlacementInfoNoStatusVariant4.fromJson(v as Map<String, dynamic>), fromE: (v) => WorkersPlacementInfoNoStatusTargeted.fromJson(v as Map<String, dynamic>), fromF: (v) => WorkersPlacementInfoNoStatusTargeted2.fromJson(v as Map<String, dynamic>), fromG: (v) => WorkersPlacementInfoNoStatusTargeted3.fromJson(v as Map<String, dynamic>), fromH: (v) => WorkersPlacementInfoNoStatusTargeted4.fromJson(v as Map<String, dynamic>),) : null,
   usageModel: json['usage_model'] != null ? WorkersVersionRequestUsageModel.fromJson(json['usage_model'] as String) : null,
-); }
+);}
 
 /// Metadata about the version.
 final WorkersVersionRequestAnnotations? annotations;
@@ -88,8 +88,8 @@ final WorkersPlacementInfoNoStatus? placement;
 final WorkersVersionRequestUsageModel? usageModel;
 
 /// The value with the schema default applied when absent.
-WorkersVersionRequestUsageModel get usageModelOrDefault { return usageModel ?? WorkersVersionRequestUsageModel.fromJson('standard'); } 
-Map<String, dynamic> toJson() { return {
+WorkersVersionRequestUsageModel get usageModelOrDefault {return usageModel ?? WorkersVersionRequestUsageModel.fromJson('standard');}
+Map<String, dynamic> toJson() {return {
   if (annotations != null) 'annotations': annotations?.toJson(),
   if (assets != null) 'assets': assets?.toJson(),
   if (bindings != null) 'bindings': bindings?.map((e) => e.toJson()).toList(),
@@ -101,9 +101,9 @@ Map<String, dynamic> toJson() { return {
   if (modules != null) 'modules': modules?.map((e) => e.toJson()).toList(),
   if (placement != null) 'placement': placement?.toJson(),
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'annotations', 'assets', 'bindings', 'compatibility_date', 'compatibility_flags', 'limits', 'main_module', 'migrations', 'modules', 'placement', 'usage_model'}.contains(key)); } 
-WorkersVersionRequest copyWith({WorkersVersionRequestAnnotations? Function()? annotations, WorkersVersionRequestAssets? Function()? assets, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersVersionRequestLimits? Function()? limits, String? Function()? mainModule, WorkersVersionRequestMigrations? Function()? migrations, List<WorkersVersionRequestModules>? Function()? modules, WorkersPlacementInfoNoStatus? Function()? placement, WorkersVersionRequestUsageModel? Function()? usageModel, }) { return WorkersVersionRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'annotations', 'assets', 'bindings', 'compatibility_date', 'compatibility_flags', 'limits', 'main_module', 'migrations', 'modules', 'placement', 'usage_model'}.contains(key));}
+WorkersVersionRequest copyWith({WorkersVersionRequestAnnotations? Function()? annotations, WorkersVersionRequestAssets? Function()? assets, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersVersionRequestLimits? Function()? limits, String? Function()? mainModule, WorkersVersionRequestMigrations? Function()? migrations, List<WorkersVersionRequestModules>? Function()? modules, WorkersPlacementInfoNoStatus? Function()? placement, WorkersVersionRequestUsageModel? Function()? usageModel, }) {return WorkersVersionRequest(
   annotations: annotations != null ? annotations() : this.annotations,
   assets: assets != null ? assets() : this.assets,
   bindings: bindings != null ? bindings() : this.bindings,
@@ -115,8 +115,8 @@ WorkersVersionRequest copyWith({WorkersVersionRequestAnnotations? Function()? an
   modules: modules != null ? modules() : this.modules,
   placement: placement != null ? placement() : this.placement,
   usageModel: usageModel != null ? usageModel() : this.usageModel,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersVersionRequest &&
           annotations == other.annotations &&
           assets == other.assets &&
@@ -128,7 +128,7 @@ WorkersVersionRequest copyWith({WorkersVersionRequestAnnotations? Function()? an
           migrations == other.migrations &&
           listEquals(modules, other.modules) &&
           placement == other.placement &&
-          usageModel == other.usageModel; } 
-@override int get hashCode { return Object.hash(annotations, assets, Object.hashAll(bindings ?? const []), compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), limits, mainModule, migrations, Object.hashAll(modules ?? const []), placement, usageModel); } 
-@override String toString() { return 'WorkersVersionRequest(annotations: $annotations, assets: $assets, bindings: $bindings, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, limits: $limits, mainModule: $mainModule, migrations: $migrations, modules: $modules, placement: $placement, usageModel: $usageModel)'; } 
- }
+          usageModel == other.usageModel;}
+@override int get hashCode {return Object.hash(annotations, assets, Object.hashAll(bindings ?? const []), compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), limits, mainModule, migrations, Object.hashAll(modules ?? const []), placement, usageModel);}
+@override String toString() {return 'WorkersVersionRequest(annotations: $annotations, assets: $assets, bindings: $bindings, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, limits: $limits, mainModule: $mainModule, migrations: $migrations, modules: $modules, placement: $placement, usageModel: $usageModel)';}
+}

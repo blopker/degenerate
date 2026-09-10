@@ -11,7 +11,7 @@ final class BatchApi with ApiExecutor {const BatchApi(this.apiConfig);
 /// List your organization's batches.
 ///
 /// `GET /batches`
-Future<ApiResult<ListBatchesResponse, Never>> listBatches({String? after, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListBatchesResponse, Never>> listBatches({String? after, int? limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (after != null) {
   queryParameters['after'] = after;
@@ -38,11 +38,11 @@ final json = jsonDecode(response.body);
 return ListBatchesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Creates and executes a batch from an uploaded file of requests
 ///
 /// `POST /batches`
-Future<ApiResult<Batch, Never>> createBatch({required CreateBatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Batch, Never>> createBatch({required CreateBatchRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -60,11 +60,11 @@ final json = jsonDecode(response.body);
 return Batch.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Retrieves a batch.
 ///
 /// `GET /batches/{batch_id}`
-Future<ApiResult<Batch, Never>> retrieveBatch({required String batchId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Batch, Never>> retrieveBatch({required String batchId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -80,11 +80,11 @@ final json = jsonDecode(response.body);
 return Batch.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Cancels an in-progress batch. The batch will be in status `cancelling` for up to 10 minutes, before changing to `cancelled`, where it will have partial results (if any) available in the output file.
 ///
 /// `POST /batches/{batch_id}/cancel`
-Future<ApiResult<Batch, Never>> cancelBatch({required String batchId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Batch, Never>> cancelBatch({required String batchId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -100,5 +100,5 @@ final json = jsonDecode(response.body);
 return Batch.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

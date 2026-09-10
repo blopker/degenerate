@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTagIndicatorsListResponsePagination {const GetTagIndicatorsListResponsePagination({required this.page, required this.pageSize, required this.totalCount, required this.totalPages, });
 
-factory GetTagIndicatorsListResponsePagination.fromJson(Map<String, dynamic> json) { return GetTagIndicatorsListResponsePagination(
+factory GetTagIndicatorsListResponsePagination.fromJson(Map<String, dynamic> json) {return GetTagIndicatorsListResponsePagination(
   page: (json['page'] as num).toDouble(),
   pageSize: (json['pageSize'] as num).toDouble(),
   totalCount: (json['totalCount'] as num).toDouble(),
   totalPages: (json['totalPages'] as num).toDouble(),
-); }
+);}
 
 final double page;
 
@@ -17,28 +17,28 @@ final double totalCount;
 
 final double totalPages;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'page': page,
   'pageSize': pageSize,
   'totalCount': totalCount,
   'totalPages': totalPages,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('page') && json['page'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('page') && json['page'] is num &&
       json.containsKey('pageSize') && json['pageSize'] is num &&
       json.containsKey('totalCount') && json['totalCount'] is num &&
-      json.containsKey('totalPages') && json['totalPages'] is num; } 
-GetTagIndicatorsListResponsePagination copyWith({double? page, double? pageSize, double? totalCount, double? totalPages, }) { return GetTagIndicatorsListResponsePagination(
+      json.containsKey('totalPages') && json['totalPages'] is num;}
+GetTagIndicatorsListResponsePagination copyWith({double? page, double? pageSize, double? totalCount, double? totalPages, }) {return GetTagIndicatorsListResponsePagination(
   page: page ?? this.page,
   pageSize: pageSize ?? this.pageSize,
   totalCount: totalCount ?? this.totalCount,
   totalPages: totalPages ?? this.totalPages,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetTagIndicatorsListResponsePagination &&
           page == other.page &&
           pageSize == other.pageSize &&
           totalCount == other.totalCount &&
-          totalPages == other.totalPages; } 
-@override int get hashCode { return Object.hash(page, pageSize, totalCount, totalPages); } 
-@override String toString() { return 'GetTagIndicatorsListResponsePagination(page: $page, pageSize: $pageSize, totalCount: $totalCount, totalPages: $totalPages)'; } 
- }
+          totalPages == other.totalPages;}
+@override int get hashCode {return Object.hash(page, pageSize, totalCount, totalPages);}
+@override String toString() {return 'GetTagIndicatorsListResponsePagination(page: $page, pageSize: $pageSize, totalCount: $totalCount, totalPages: $totalPages)';}
+}

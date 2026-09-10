@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpIntegrationEntry {const DlpIntegrationEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, this.profileId = const Omittable.absent(), });
 
-factory DlpIntegrationEntry.fromJson(Map<String, dynamic> json) { return DlpIntegrationEntry(
+factory DlpIntegrationEntry.fromJson(Map<String, dynamic> json) {return DlpIntegrationEntry(
   createdAt: DateTime.parse(json['created_at'] as String),
   enabled: json['enabled'] as bool,
   id: json['id'] as String,
   name: json['name'] as String,
   profileId: json.containsKey('profile_id') ? Omittable(json['profile_id'] as String?) : const Omittable.absent(),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 final DateTime createdAt;
 
@@ -23,35 +23,35 @@ final Omittable<String?> profileId;
 
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'enabled': enabled,
   'id': id,
   'name': name,
   if (profileId.isPresent) 'profile_id': profileId.value,
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-DlpIntegrationEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, Omittable<String?>? profileId, DateTime? updatedAt, }) { return DlpIntegrationEntry(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+DlpIntegrationEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, Omittable<String?>? profileId, DateTime? updatedAt, }) {return DlpIntegrationEntry(
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
   name: name ?? this.name,
   profileId: profileId ?? this.profileId,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpIntegrationEntry &&
           createdAt == other.createdAt &&
           enabled == other.enabled &&
           id == other.id &&
           name == other.name &&
           profileId == other.profileId &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, enabled, id, name, profileId, updatedAt); } 
-@override String toString() { return 'DlpIntegrationEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, profileId: $profileId, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(createdAt, enabled, id, name, profileId, updatedAt);}
+@override String toString() {return 'DlpIntegrationEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, profileId: $profileId, updatedAt: $updatedAt)';}
+}

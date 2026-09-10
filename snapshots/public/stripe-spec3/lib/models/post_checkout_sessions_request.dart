@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_adaptive_pricing.dart';import 'post_checkout_sessions_request_after_expiration.dart';import 'post_checkout_sessions_request_automatic_tax.dart';import 'post_checkout_sessions_request_branding_settings.dart';import 'post_checkout_sessions_request_consent_collection.dart';import 'post_checkout_sessions_request_custom_fields.dart';import 'post_checkout_sessions_request_custom_text.dart';import 'post_checkout_sessions_request_customer_update.dart';import 'post_checkout_sessions_request_discounts.dart';import 'post_checkout_sessions_request_invoice_creation.dart';import 'post_checkout_sessions_request_line_items.dart';import 'post_checkout_sessions_request_name_collection.dart';import 'post_checkout_sessions_request_optional_items.dart';import 'post_checkout_sessions_request_payment_intent_data.dart';import 'post_checkout_sessions_request_payment_method_data.dart';import 'post_checkout_sessions_request_payment_method_options.dart';import 'post_checkout_sessions_request_permissions.dart';import 'post_checkout_sessions_request_phone_number_collection.dart';import 'post_checkout_sessions_request_saved_payment_method_options.dart';import 'post_checkout_sessions_request_setup_intent_data.dart';import 'post_checkout_sessions_request_shipping_address_collection.dart';import 'post_checkout_sessions_request_shipping_options.dart';import 'post_checkout_sessions_request_subscription_data.dart';import 'post_checkout_sessions_request_tax_id_collection.dart';import 'post_checkout_sessions_request_wallet_options.dart';@immutable final class PostCheckoutSessionsRequestExcludedPaymentMethodTypes {const PostCheckoutSessionsRequestExcludedPaymentMethodTypes._(this.value);
 
-factory PostCheckoutSessionsRequestExcludedPaymentMethodTypes.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestExcludedPaymentMethodTypes.fromJson(String json) {return switch (json) {
   'acss_debit' => acssDebit,
   'affirm' => affirm,
   'afterpay_clearpay' => afterpayClearpay,
@@ -53,7 +53,7 @@ factory PostCheckoutSessionsRequestExcludedPaymentMethodTypes.fromJson(String js
   'wechat_pay' => wechatPay,
   'zip' => zip,
   _ => PostCheckoutSessionsRequestExcludedPaymentMethodTypes._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes acssDebit = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('acss_debit');
 
@@ -157,17 +157,17 @@ static const List<PostCheckoutSessionsRequestExcludedPaymentMethodTypes> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestExcludedPaymentMethodTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestExcludedPaymentMethodTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestExcludedPaymentMethodTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestExcludedPaymentMethodTypes($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodTypes.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodTypes.fromJson(String json) {return switch (json) {
   'acss_debit' => acssDebit,
   'affirm' => affirm,
   'afterpay_clearpay' => afterpayClearpay,
@@ -219,7 +219,7 @@ factory PostCheckoutSessionsRequestPaymentMethodTypes.fromJson(String json) { re
   'wechat_pay' => wechatPay,
   'zip' => zip,
   _ => PostCheckoutSessionsRequestPaymentMethodTypes._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodTypes acssDebit = PostCheckoutSessionsRequestPaymentMethodTypes._('acss_debit');
 
@@ -325,22 +325,22 @@ static const List<PostCheckoutSessionsRequestPaymentMethodTypes> values = [acssD
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodTypes($value)';}
+}
 /// Specify whether Checkout should collect the customer's billing address. Defaults to `auto`.
 @immutable final class PostCheckoutSessionsRequestBillingAddressCollection {const PostCheckoutSessionsRequestBillingAddressCollection._(this.value);
 
-factory PostCheckoutSessionsRequestBillingAddressCollection.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestBillingAddressCollection.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'required' => $required,
   _ => PostCheckoutSessionsRequestBillingAddressCollection._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestBillingAddressCollection auto = PostCheckoutSessionsRequestBillingAddressCollection._('auto');
 
@@ -350,14 +350,14 @@ static const List<PostCheckoutSessionsRequestBillingAddressCollection> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestBillingAddressCollection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestBillingAddressCollection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestBillingAddressCollection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestBillingAddressCollection($value)';}
+}
 /// Configure whether a Checkout Session creates a [Customer](https://docs.stripe.com/api/customers) during Session confirmation.
 /// 
 /// When a Customer is not created, you can still retrieve email, address, and other customer data entered in Checkout
@@ -369,11 +369,11 @@ bool get isUnknown { return !values.contains(this); }
 /// Can only be set in `payment` and `setup` mode.
 @immutable final class PostCheckoutSessionsRequestCustomerCreation {const PostCheckoutSessionsRequestCustomerCreation._(this.value);
 
-factory PostCheckoutSessionsRequestCustomerCreation.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestCustomerCreation.fromJson(String json) {return switch (json) {
   'always' => always,
   'if_required' => ifRequired,
   _ => PostCheckoutSessionsRequestCustomerCreation._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestCustomerCreation always = PostCheckoutSessionsRequestCustomerCreation._('always');
 
@@ -383,18 +383,18 @@ static const List<PostCheckoutSessionsRequestCustomerCreation> values = [always,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestCustomerCreation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestCustomerCreation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestCustomerCreation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestCustomerCreation($value)';}
+}
 /// The IETF language tag of the locale Checkout is displayed in. If blank or `auto`, the browser's locale is used.
 @immutable final class PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale._(this.value);
 
-factory PostCheckoutSessionsRequestLocale.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestLocale.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'bg' => bg,
   'cs' => cs,
@@ -437,7 +437,7 @@ factory PostCheckoutSessionsRequestLocale.fromJson(String json) { return switch 
   'zh-HK' => zhHk,
   'zh-TW' => zhTw,
   _ => PostCheckoutSessionsRequestLocale._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestLocale auto = PostCheckoutSessionsRequestLocale._('auto');
 
@@ -525,23 +525,23 @@ static const List<PostCheckoutSessionsRequestLocale> values = [auto, bg, cs, da,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestLocale && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestLocale($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestLocale && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestLocale($value)';}
+}
 /// The mode of the Checkout Session. Pass `subscription` if the Checkout Session includes at least one recurring item.
 @immutable final class PostCheckoutSessionsRequestMode {const PostCheckoutSessionsRequestMode._(this.value);
 
-factory PostCheckoutSessionsRequestMode.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestMode.fromJson(String json) {return switch (json) {
   'payment' => payment,
   'setup' => setup,
   'subscription' => subscription,
   _ => PostCheckoutSessionsRequestMode._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestMode payment = PostCheckoutSessionsRequestMode._('payment');
 
@@ -553,22 +553,22 @@ static const List<PostCheckoutSessionsRequestMode> values = [payment, setup, sub
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestMode($value)';}
+}
 /// Where the user is coming from. This informs the optimizations that are applied to the session. You can't set this parameter if `ui_mode` is `custom`.
 @immutable final class PostCheckoutSessionsRequestOriginContext {const PostCheckoutSessionsRequestOriginContext._(this.value);
 
-factory PostCheckoutSessionsRequestOriginContext.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestOriginContext.fromJson(String json) {return switch (json) {
   'mobile_app' => mobileApp,
   'web' => web,
   _ => PostCheckoutSessionsRequestOriginContext._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestOriginContext mobileApp = PostCheckoutSessionsRequestOriginContext._('mobile_app');
 
@@ -578,14 +578,14 @@ static const List<PostCheckoutSessionsRequestOriginContext> values = [mobileApp,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestOriginContext && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestOriginContext($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestOriginContext && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestOriginContext($value)';}
+}
 /// Specify whether Checkout should collect a payment method. When set to `if_required`, Checkout will not collect a payment method when the total due for the session is 0.
 /// This may occur if the Checkout Session includes a free trial or a discount.
 /// 
@@ -594,11 +594,11 @@ bool get isUnknown { return !values.contains(this); }
 /// If you'd like information on how to collect a payment method outside of Checkout, read the guide on configuring [subscriptions with a free trial](https://docs.stripe.com/payments/checkout/free-trials).
 @immutable final class PostCheckoutSessionsRequestPaymentMethodCollection {const PostCheckoutSessionsRequestPaymentMethodCollection._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodCollection.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodCollection.fromJson(String json) {return switch (json) {
   'always' => always,
   'if_required' => ifRequired,
   _ => PostCheckoutSessionsRequestPaymentMethodCollection._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodCollection always = PostCheckoutSessionsRequestPaymentMethodCollection._('always');
 
@@ -608,23 +608,23 @@ static const List<PostCheckoutSessionsRequestPaymentMethodCollection> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodCollection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodCollection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodCollection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodCollection($value)';}
+}
 /// This parameter applies to `ui_mode: embedded`. Learn more about the [redirect behavior](https://docs.stripe.com/payments/checkout/custom-success-page?payment-ui=embedded-form) of embedded sessions. Defaults to `always`.
 @immutable final class PostCheckoutSessionsRequestRedirectOnCompletion {const PostCheckoutSessionsRequestRedirectOnCompletion._(this.value);
 
-factory PostCheckoutSessionsRequestRedirectOnCompletion.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestRedirectOnCompletion.fromJson(String json) {return switch (json) {
   'always' => always,
   'if_required' => ifRequired,
   'never' => never,
   _ => PostCheckoutSessionsRequestRedirectOnCompletion._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestRedirectOnCompletion always = PostCheckoutSessionsRequestRedirectOnCompletion._('always');
 
@@ -636,14 +636,14 @@ static const List<PostCheckoutSessionsRequestRedirectOnCompletion> values = [alw
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestRedirectOnCompletion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestRedirectOnCompletion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestRedirectOnCompletion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestRedirectOnCompletion($value)';}
+}
 /// Describes the type of transaction being performed by Checkout in order
 /// to customize relevant text on the page, such as the submit button.
 ///  `submit_type` can only be specified on Checkout Sessions in
@@ -651,14 +651,14 @@ bool get isUnknown { return !values.contains(this); }
 /// You can't set this parameter if `ui_mode` is `custom`.
 @immutable final class PostCheckoutSessionsRequestSubmitType {const PostCheckoutSessionsRequestSubmitType._(this.value);
 
-factory PostCheckoutSessionsRequestSubmitType.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestSubmitType.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'book' => book,
   'donate' => donate,
   'pay' => pay,
   'subscribe' => subscribe,
   _ => PostCheckoutSessionsRequestSubmitType._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestSubmitType auto = PostCheckoutSessionsRequestSubmitType._('auto');
 
@@ -674,23 +674,23 @@ static const List<PostCheckoutSessionsRequestSubmitType> values = [auto, book, d
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestSubmitType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestSubmitType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestSubmitType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestSubmitType($value)';}
+}
 /// The UI mode of the Session. Defaults to `hosted`.
 @immutable final class PostCheckoutSessionsRequestUiMode {const PostCheckoutSessionsRequestUiMode._(this.value);
 
-factory PostCheckoutSessionsRequestUiMode.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestUiMode.fromJson(String json) {return switch (json) {
   'custom' => custom,
   'embedded' => embedded,
   'hosted' => hosted,
   _ => PostCheckoutSessionsRequestUiMode._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestUiMode custom = PostCheckoutSessionsRequestUiMode._('custom');
 
@@ -702,17 +702,17 @@ static const List<PostCheckoutSessionsRequestUiMode> values = [custom, embedded,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestUiMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestUiMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestUiMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestUiMode($value)';}
+}
 @immutable final class PostCheckoutSessionsRequest {const PostCheckoutSessionsRequest({this.customerUpdate, this.afterExpiration, this.allowPromotionCodes, this.automaticTax, this.billingAddressCollection, this.brandingSettings, this.cancelUrl, this.clientReferenceId, this.consentCollection, this.currency, this.customFields, this.customText, this.customer, this.customerAccount, this.customerCreation, this.customerEmail, this.adaptivePricing, this.discounts, this.excludedPaymentMethodTypes, this.expand, this.expiresAt, this.invoiceCreation, this.lineItems, this.locale, this.metadata, this.mode, this.nameCollection, this.optionalItems, this.originContext, this.paymentIntentData, this.paymentMethodCollection, this.paymentMethodConfiguration, this.walletOptions, this.paymentMethodOptions, this.paymentMethodTypes, this.permissions, this.phoneNumberCollection, this.redirectOnCompletion, this.returnUrl, this.savedPaymentMethodOptions, this.setupIntentData, this.shippingAddressCollection, this.shippingOptions, this.submitType, this.subscriptionData, this.successUrl, this.taxIdCollection, this.uiMode, this.paymentMethodData, });
 
-factory PostCheckoutSessionsRequest.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequest(
+factory PostCheckoutSessionsRequest.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequest(
   adaptivePricing: json['adaptive_pricing'] != null ? PostCheckoutSessionsRequestAdaptivePricing.fromJson(json['adaptive_pricing'] as Map<String, dynamic>) : null,
   afterExpiration: json['after_expiration'] != null ? PostCheckoutSessionsRequestAfterExpiration.fromJson(json['after_expiration'] as Map<String, dynamic>) : null,
   allowPromotionCodes: json['allow_promotion_codes'] as bool?,
@@ -762,7 +762,7 @@ factory PostCheckoutSessionsRequest.fromJson(Map<String, dynamic> json) { return
   taxIdCollection: json['tax_id_collection'] != null ? PostCheckoutSessionsRequestTaxIdCollection.fromJson(json['tax_id_collection'] as Map<String, dynamic>) : null,
   uiMode: json['ui_mode'] != null ? PostCheckoutSessionsRequestUiMode.fromJson(json['ui_mode'] as String) : null,
   walletOptions: json['wallet_options'] != null ? PostCheckoutSessionsRequestWalletOptions.fromJson(json['wallet_options'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Settings for price localization with [Adaptive Pricing](https://docs.stripe.com/payments/checkout/adaptive-pricing).
 final PostCheckoutSessionsRequestAdaptivePricing? adaptivePricing;
@@ -983,7 +983,7 @@ final PostCheckoutSessionsRequestUiMode? uiMode;
 /// Wallet-specific configuration.
 final PostCheckoutSessionsRequestWalletOptions? walletOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (adaptivePricing != null) 'adaptive_pricing': adaptivePricing?.toJson(),
   if (afterExpiration != null) 'after_expiration': afterExpiration?.toJson(),
   'allow_promotion_codes': ?allowPromotionCodes,
@@ -1033,9 +1033,9 @@ Map<String, dynamic> toJson() { return {
   if (taxIdCollection != null) 'tax_id_collection': taxIdCollection?.toJson(),
   if (uiMode != null) 'ui_mode': uiMode?.toJson(),
   if (walletOptions != null) 'wallet_options': walletOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'adaptive_pricing', 'after_expiration', 'allow_promotion_codes', 'automatic_tax', 'billing_address_collection', 'branding_settings', 'cancel_url', 'client_reference_id', 'consent_collection', 'currency', 'custom_fields', 'custom_text', 'customer', 'customer_account', 'customer_creation', 'customer_email', 'customer_update', 'discounts', 'excluded_payment_method_types', 'expand', 'expires_at', 'invoice_creation', 'line_items', 'locale', 'metadata', 'mode', 'name_collection', 'optional_items', 'origin_context', 'payment_intent_data', 'payment_method_collection', 'payment_method_configuration', 'payment_method_data', 'payment_method_options', 'payment_method_types', 'permissions', 'phone_number_collection', 'redirect_on_completion', 'return_url', 'saved_payment_method_options', 'setup_intent_data', 'shipping_address_collection', 'shipping_options', 'submit_type', 'subscription_data', 'success_url', 'tax_id_collection', 'ui_mode', 'wallet_options'}.contains(key)); } 
-PostCheckoutSessionsRequest copyWith({PostCheckoutSessionsRequestAdaptivePricing? Function()? adaptivePricing, PostCheckoutSessionsRequestAfterExpiration? Function()? afterExpiration, bool? Function()? allowPromotionCodes, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, PostCheckoutSessionsRequestBillingAddressCollection? Function()? billingAddressCollection, PostCheckoutSessionsRequestBrandingSettings? Function()? brandingSettings, String? Function()? cancelUrl, String? Function()? clientReferenceId, PostCheckoutSessionsRequestConsentCollection? Function()? consentCollection, String? Function()? currency, List<PostCheckoutSessionsRequestCustomFields>? Function()? customFields, PostCheckoutSessionsRequestCustomText? Function()? customText, String? Function()? customer, String? Function()? customerAccount, PostCheckoutSessionsRequestCustomerCreation? Function()? customerCreation, String? Function()? customerEmail, PostCheckoutSessionsRequestCustomerUpdate? Function()? customerUpdate, List<PostCheckoutSessionsRequestDiscounts>? Function()? discounts, List<PostCheckoutSessionsRequestExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, int? Function()? expiresAt, PostCheckoutSessionsRequestInvoiceCreation? Function()? invoiceCreation, List<PostCheckoutSessionsRequestLineItems>? Function()? lineItems, PostCheckoutSessionsRequestLocale? Function()? locale, Map<String, String>? Function()? metadata, PostCheckoutSessionsRequestMode? Function()? mode, PostCheckoutSessionsRequestNameCollection? Function()? nameCollection, List<PostCheckoutSessionsRequestOptionalItems>? Function()? optionalItems, PostCheckoutSessionsRequestOriginContext? Function()? originContext, PostCheckoutSessionsRequestPaymentIntentData? Function()? paymentIntentData, PostCheckoutSessionsRequestPaymentMethodCollection? Function()? paymentMethodCollection, String? Function()? paymentMethodConfiguration, PostCheckoutSessionsRequestPaymentMethodData? Function()? paymentMethodData, PostCheckoutSessionsRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<PostCheckoutSessionsRequestPaymentMethodTypes>? Function()? paymentMethodTypes, PostCheckoutSessionsRequestPermissions? Function()? permissions, PostCheckoutSessionsRequestPhoneNumberCollection? Function()? phoneNumberCollection, PostCheckoutSessionsRequestRedirectOnCompletion? Function()? redirectOnCompletion, String? Function()? returnUrl, PostCheckoutSessionsRequestSavedPaymentMethodOptions? Function()? savedPaymentMethodOptions, PostCheckoutSessionsRequestSetupIntentData? Function()? setupIntentData, PostCheckoutSessionsRequestShippingAddressCollection? Function()? shippingAddressCollection, List<PostCheckoutSessionsRequestShippingOptions>? Function()? shippingOptions, PostCheckoutSessionsRequestSubmitType? Function()? submitType, PostCheckoutSessionsRequestSubscriptionData? Function()? subscriptionData, String? Function()? successUrl, PostCheckoutSessionsRequestTaxIdCollection? Function()? taxIdCollection, PostCheckoutSessionsRequestUiMode? Function()? uiMode, PostCheckoutSessionsRequestWalletOptions? Function()? walletOptions, }) { return PostCheckoutSessionsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'adaptive_pricing', 'after_expiration', 'allow_promotion_codes', 'automatic_tax', 'billing_address_collection', 'branding_settings', 'cancel_url', 'client_reference_id', 'consent_collection', 'currency', 'custom_fields', 'custom_text', 'customer', 'customer_account', 'customer_creation', 'customer_email', 'customer_update', 'discounts', 'excluded_payment_method_types', 'expand', 'expires_at', 'invoice_creation', 'line_items', 'locale', 'metadata', 'mode', 'name_collection', 'optional_items', 'origin_context', 'payment_intent_data', 'payment_method_collection', 'payment_method_configuration', 'payment_method_data', 'payment_method_options', 'payment_method_types', 'permissions', 'phone_number_collection', 'redirect_on_completion', 'return_url', 'saved_payment_method_options', 'setup_intent_data', 'shipping_address_collection', 'shipping_options', 'submit_type', 'subscription_data', 'success_url', 'tax_id_collection', 'ui_mode', 'wallet_options'}.contains(key));}
+PostCheckoutSessionsRequest copyWith({PostCheckoutSessionsRequestAdaptivePricing? Function()? adaptivePricing, PostCheckoutSessionsRequestAfterExpiration? Function()? afterExpiration, bool? Function()? allowPromotionCodes, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, PostCheckoutSessionsRequestBillingAddressCollection? Function()? billingAddressCollection, PostCheckoutSessionsRequestBrandingSettings? Function()? brandingSettings, String? Function()? cancelUrl, String? Function()? clientReferenceId, PostCheckoutSessionsRequestConsentCollection? Function()? consentCollection, String? Function()? currency, List<PostCheckoutSessionsRequestCustomFields>? Function()? customFields, PostCheckoutSessionsRequestCustomText? Function()? customText, String? Function()? customer, String? Function()? customerAccount, PostCheckoutSessionsRequestCustomerCreation? Function()? customerCreation, String? Function()? customerEmail, PostCheckoutSessionsRequestCustomerUpdate? Function()? customerUpdate, List<PostCheckoutSessionsRequestDiscounts>? Function()? discounts, List<PostCheckoutSessionsRequestExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, int? Function()? expiresAt, PostCheckoutSessionsRequestInvoiceCreation? Function()? invoiceCreation, List<PostCheckoutSessionsRequestLineItems>? Function()? lineItems, PostCheckoutSessionsRequestLocale? Function()? locale, Map<String, String>? Function()? metadata, PostCheckoutSessionsRequestMode? Function()? mode, PostCheckoutSessionsRequestNameCollection? Function()? nameCollection, List<PostCheckoutSessionsRequestOptionalItems>? Function()? optionalItems, PostCheckoutSessionsRequestOriginContext? Function()? originContext, PostCheckoutSessionsRequestPaymentIntentData? Function()? paymentIntentData, PostCheckoutSessionsRequestPaymentMethodCollection? Function()? paymentMethodCollection, String? Function()? paymentMethodConfiguration, PostCheckoutSessionsRequestPaymentMethodData? Function()? paymentMethodData, PostCheckoutSessionsRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<PostCheckoutSessionsRequestPaymentMethodTypes>? Function()? paymentMethodTypes, PostCheckoutSessionsRequestPermissions? Function()? permissions, PostCheckoutSessionsRequestPhoneNumberCollection? Function()? phoneNumberCollection, PostCheckoutSessionsRequestRedirectOnCompletion? Function()? redirectOnCompletion, String? Function()? returnUrl, PostCheckoutSessionsRequestSavedPaymentMethodOptions? Function()? savedPaymentMethodOptions, PostCheckoutSessionsRequestSetupIntentData? Function()? setupIntentData, PostCheckoutSessionsRequestShippingAddressCollection? Function()? shippingAddressCollection, List<PostCheckoutSessionsRequestShippingOptions>? Function()? shippingOptions, PostCheckoutSessionsRequestSubmitType? Function()? submitType, PostCheckoutSessionsRequestSubscriptionData? Function()? subscriptionData, String? Function()? successUrl, PostCheckoutSessionsRequestTaxIdCollection? Function()? taxIdCollection, PostCheckoutSessionsRequestUiMode? Function()? uiMode, PostCheckoutSessionsRequestWalletOptions? Function()? walletOptions, }) {return PostCheckoutSessionsRequest(
   adaptivePricing: adaptivePricing != null ? adaptivePricing() : this.adaptivePricing,
   afterExpiration: afterExpiration != null ? afterExpiration() : this.afterExpiration,
   allowPromotionCodes: allowPromotionCodes != null ? allowPromotionCodes() : this.allowPromotionCodes,
@@ -1085,8 +1085,8 @@ PostCheckoutSessionsRequest copyWith({PostCheckoutSessionsRequestAdaptivePricing
   taxIdCollection: taxIdCollection != null ? taxIdCollection() : this.taxIdCollection,
   uiMode: uiMode != null ? uiMode() : this.uiMode,
   walletOptions: walletOptions != null ? walletOptions() : this.walletOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequest &&
           adaptivePricing == other.adaptivePricing &&
           afterExpiration == other.afterExpiration &&
@@ -1136,7 +1136,7 @@ PostCheckoutSessionsRequest copyWith({PostCheckoutSessionsRequestAdaptivePricing
           successUrl == other.successUrl &&
           taxIdCollection == other.taxIdCollection &&
           uiMode == other.uiMode &&
-          walletOptions == other.walletOptions; } 
-@override int get hashCode { return Object.hashAll([adaptivePricing, afterExpiration, allowPromotionCodes, automaticTax, billingAddressCollection, brandingSettings, cancelUrl, clientReferenceId, consentCollection, currency, Object.hashAll(customFields ?? const []), customText, customer, customerAccount, customerCreation, customerEmail, customerUpdate, Object.hashAll(discounts ?? const []), Object.hashAll(excludedPaymentMethodTypes ?? const []), Object.hashAll(expand ?? const []), expiresAt, invoiceCreation, Object.hashAll(lineItems ?? const []), locale, metadata, mode, nameCollection, Object.hashAll(optionalItems ?? const []), originContext, paymentIntentData, paymentMethodCollection, paymentMethodConfiguration, paymentMethodData, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), permissions, phoneNumberCollection, redirectOnCompletion, returnUrl, savedPaymentMethodOptions, setupIntentData, shippingAddressCollection, Object.hashAll(shippingOptions ?? const []), submitType, subscriptionData, successUrl, taxIdCollection, uiMode, walletOptions]); } 
-@override String toString() { return 'PostCheckoutSessionsRequest(adaptivePricing: $adaptivePricing, afterExpiration: $afterExpiration, allowPromotionCodes: $allowPromotionCodes, automaticTax: $automaticTax, billingAddressCollection: $billingAddressCollection, brandingSettings: $brandingSettings, cancelUrl: $cancelUrl, clientReferenceId: $clientReferenceId, consentCollection: $consentCollection, currency: $currency, customFields: $customFields, customText: $customText, customer: $customer, customerAccount: $customerAccount, customerCreation: $customerCreation, customerEmail: $customerEmail, customerUpdate: $customerUpdate, discounts: $discounts, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, expand: $expand, expiresAt: $expiresAt, invoiceCreation: $invoiceCreation, lineItems: $lineItems, locale: $locale, metadata: $metadata, mode: $mode, nameCollection: $nameCollection, optionalItems: $optionalItems, originContext: $originContext, paymentIntentData: $paymentIntentData, paymentMethodCollection: $paymentMethodCollection, paymentMethodConfiguration: $paymentMethodConfiguration, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, permissions: $permissions, phoneNumberCollection: $phoneNumberCollection, redirectOnCompletion: $redirectOnCompletion, returnUrl: $returnUrl, savedPaymentMethodOptions: $savedPaymentMethodOptions, setupIntentData: $setupIntentData, shippingAddressCollection: $shippingAddressCollection, shippingOptions: $shippingOptions, submitType: $submitType, subscriptionData: $subscriptionData, successUrl: $successUrl, taxIdCollection: $taxIdCollection, uiMode: $uiMode, walletOptions: $walletOptions)'; } 
- }
+          walletOptions == other.walletOptions;}
+@override int get hashCode {return Object.hashAll([adaptivePricing, afterExpiration, allowPromotionCodes, automaticTax, billingAddressCollection, brandingSettings, cancelUrl, clientReferenceId, consentCollection, currency, Object.hashAll(customFields ?? const []), customText, customer, customerAccount, customerCreation, customerEmail, customerUpdate, Object.hashAll(discounts ?? const []), Object.hashAll(excludedPaymentMethodTypes ?? const []), Object.hashAll(expand ?? const []), expiresAt, invoiceCreation, Object.hashAll(lineItems ?? const []), locale, metadata, mode, nameCollection, Object.hashAll(optionalItems ?? const []), originContext, paymentIntentData, paymentMethodCollection, paymentMethodConfiguration, paymentMethodData, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), permissions, phoneNumberCollection, redirectOnCompletion, returnUrl, savedPaymentMethodOptions, setupIntentData, shippingAddressCollection, Object.hashAll(shippingOptions ?? const []), submitType, subscriptionData, successUrl, taxIdCollection, uiMode, walletOptions]);}
+@override String toString() {return 'PostCheckoutSessionsRequest(adaptivePricing: $adaptivePricing, afterExpiration: $afterExpiration, allowPromotionCodes: $allowPromotionCodes, automaticTax: $automaticTax, billingAddressCollection: $billingAddressCollection, brandingSettings: $brandingSettings, cancelUrl: $cancelUrl, clientReferenceId: $clientReferenceId, consentCollection: $consentCollection, currency: $currency, customFields: $customFields, customText: $customText, customer: $customer, customerAccount: $customerAccount, customerCreation: $customerCreation, customerEmail: $customerEmail, customerUpdate: $customerUpdate, discounts: $discounts, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, expand: $expand, expiresAt: $expiresAt, invoiceCreation: $invoiceCreation, lineItems: $lineItems, locale: $locale, metadata: $metadata, mode: $mode, nameCollection: $nameCollection, optionalItems: $optionalItems, originContext: $originContext, paymentIntentData: $paymentIntentData, paymentMethodCollection: $paymentMethodCollection, paymentMethodConfiguration: $paymentMethodConfiguration, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, permissions: $permissions, phoneNumberCollection: $phoneNumberCollection, redirectOnCompletion: $redirectOnCompletion, returnUrl: $returnUrl, savedPaymentMethodOptions: $savedPaymentMethodOptions, setupIntentData: $setupIntentData, shippingAddressCollection: $shippingAddressCollection, shippingOptions: $shippingOptions, submitType: $submitType, subscriptionData: $subscriptionData, successUrl: $successUrl, taxIdCollection: $taxIdCollection, uiMode: $uiMode, walletOptions: $walletOptions)';}
+}

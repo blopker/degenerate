@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependabot_alert.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookDependabotAlertFixedAction {const WebhookDependabotAlertFixedAction._(this.value);
 
-factory WebhookDependabotAlertFixedAction.fromJson(String json) { return switch (json) {
+factory WebhookDependabotAlertFixedAction.fromJson(String json) {return switch (json) {
   'fixed' => fixed,
   _ => WebhookDependabotAlertFixedAction._(json),
-}; }
+};}
 
 static const WebhookDependabotAlertFixedAction fixed = WebhookDependabotAlertFixedAction._('fixed');
 
@@ -13,17 +13,17 @@ static const List<WebhookDependabotAlertFixedAction> values = [fixed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDependabotAlertFixedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDependabotAlertFixedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookDependabotAlertFixedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookDependabotAlertFixedAction($value)';}
+}
 @immutable final class WebhookDependabotAlertFixed {const WebhookDependabotAlertFixed({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });
 
-factory WebhookDependabotAlertFixed.fromJson(Map<String, dynamic> json) { return WebhookDependabotAlertFixed(
+factory WebhookDependabotAlertFixed.fromJson(Map<String, dynamic> json) {return WebhookDependabotAlertFixed(
   action: WebhookDependabotAlertFixedAction.fromJson(json['action'] as String),
   alert: DependabotAlert.fromJson(json['alert'] as Map<String, dynamic>),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookDependabotAlertFixed.fromJson(Map<String, dynamic> json) { return
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookDependabotAlertFixedAction action;
 
@@ -47,7 +47,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'alert': alert.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -55,12 +55,12 @@ Map<String, dynamic> toJson() { return {
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('alert') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookDependabotAlertFixed copyWith({WebhookDependabotAlertFixedAction? action, DependabotAlert? alert, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, EnterpriseWebhooks? Function()? enterprise, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDependabotAlertFixed(
+      json.containsKey('sender');}
+WebhookDependabotAlertFixed copyWith({WebhookDependabotAlertFixedAction? action, DependabotAlert? alert, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, EnterpriseWebhooks? Function()? enterprise, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookDependabotAlertFixed(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   installation: installation != null ? installation() : this.installation,
@@ -68,8 +68,8 @@ WebhookDependabotAlertFixed copyWith({WebhookDependabotAlertFixedAction? action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDependabotAlertFixed &&
           action == other.action &&
           alert == other.alert &&
@@ -77,7 +77,7 @@ WebhookDependabotAlertFixed copyWith({WebhookDependabotAlertFixedAction? action,
           organization == other.organization &&
           enterprise == other.enterprise &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, alert, installation, organization, enterprise, repository, sender); } 
-@override String toString() { return 'WebhookDependabotAlertFixed(action: $action, alert: $alert, installation: $installation, organization: $organization, enterprise: $enterprise, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, alert, installation, organization, enterprise, repository, sender);}
+@override String toString() {return 'WebhookDependabotAlertFixed(action: $action, alert: $alert, installation: $installation, organization: $organization, enterprise: $enterprise, repository: $repository, sender: $sender)';}
+}

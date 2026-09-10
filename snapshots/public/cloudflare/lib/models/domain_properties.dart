@@ -65,7 +65,7 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class DomainProperties {const DomainProperties({this.available, this.canRegister, this.createdAt, this.currentRegistrar, this.expiresAt, this.id, this.locked, this.registrantContact, this.registryStatuses, this.supportedTld, this.transferIn, this.updatedAt, });
 
-factory DomainProperties.fromJson(Map<String, dynamic> json) { return DomainProperties(
+factory DomainProperties.fromJson(Map<String, dynamic> json) {return DomainProperties(
   available: json['available'] != null ? Available.fromJson(json['available'] as bool) : null,
   canRegister: json['can_register'] != null ? CanRegister.fromJson(json['can_register'] as bool) : null,
   createdAt: json['created_at'] != null ? CreatedAt.fromJson(json['created_at'] as String) : null,
@@ -78,7 +78,7 @@ factory DomainProperties.fromJson(Map<String, dynamic> json) { return DomainProp
   supportedTld: json['supported_tld'] != null ? SupportedTld.fromJson(json['supported_tld'] as bool) : null,
   transferIn: json['transfer_in'] != null ? TransferIn.fromJson(json['transfer_in'] as Map<String, dynamic>) : null,
   updatedAt: json['updated_at'] != null ? UpdatedAt.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 /// Shows if a domain is available for transferring into Cloudflare Registrar.
 final Available? available;
@@ -109,7 +109,7 @@ final TransferIn? transferIn;
 
 final UpdatedAt? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (available != null) 'available': available?.toJson(),
   if (canRegister != null) 'can_register': canRegister?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
@@ -122,9 +122,9 @@ Map<String, dynamic> toJson() { return {
   if (supportedTld != null) 'supported_tld': supportedTld?.toJson(),
   if (transferIn != null) 'transfer_in': transferIn?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'available', 'can_register', 'created_at', 'current_registrar', 'expires_at', 'id', 'locked', 'registrant_contact', 'registry_statuses', 'supported_tld', 'transfer_in', 'updated_at'}.contains(key)); } 
-DomainProperties copyWith({Available? Function()? available, CanRegister? Function()? canRegister, CreatedAt? Function()? createdAt, CurrentRegistrar? Function()? currentRegistrar, ExpiresAt? Function()? expiresAt, DomainIdentifier? Function()? id, Locked? Function()? locked, ContactProperties? Function()? registrantContact, RegistryStatuses? Function()? registryStatuses, SupportedTld? Function()? supportedTld, TransferIn? Function()? transferIn, UpdatedAt? Function()? updatedAt, }) { return DomainProperties(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'available', 'can_register', 'created_at', 'current_registrar', 'expires_at', 'id', 'locked', 'registrant_contact', 'registry_statuses', 'supported_tld', 'transfer_in', 'updated_at'}.contains(key));}
+DomainProperties copyWith({Available? Function()? available, CanRegister? Function()? canRegister, CreatedAt? Function()? createdAt, CurrentRegistrar? Function()? currentRegistrar, ExpiresAt? Function()? expiresAt, DomainIdentifier? Function()? id, Locked? Function()? locked, ContactProperties? Function()? registrantContact, RegistryStatuses? Function()? registryStatuses, SupportedTld? Function()? supportedTld, TransferIn? Function()? transferIn, UpdatedAt? Function()? updatedAt, }) {return DomainProperties(
   available: available != null ? available() : this.available,
   canRegister: canRegister != null ? canRegister() : this.canRegister,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
@@ -137,8 +137,8 @@ DomainProperties copyWith({Available? Function()? available, CanRegister? Functi
   supportedTld: supportedTld != null ? supportedTld() : this.supportedTld,
   transferIn: transferIn != null ? transferIn() : this.transferIn,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DomainProperties &&
           available == other.available &&
           canRegister == other.canRegister &&
@@ -151,7 +151,7 @@ DomainProperties copyWith({Available? Function()? available, CanRegister? Functi
           registryStatuses == other.registryStatuses &&
           supportedTld == other.supportedTld &&
           transferIn == other.transferIn &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(available, canRegister, createdAt, currentRegistrar, expiresAt, id, locked, registrantContact, registryStatuses, supportedTld, transferIn, updatedAt); } 
-@override String toString() { return 'DomainProperties(available: $available, canRegister: $canRegister, createdAt: $createdAt, currentRegistrar: $currentRegistrar, expiresAt: $expiresAt, id: $id, locked: $locked, registrantContact: $registrantContact, registryStatuses: $registryStatuses, supportedTld: $supportedTld, transferIn: $transferIn, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(available, canRegister, createdAt, currentRegistrar, expiresAt, id, locked, registrantContact, registryStatuses, supportedTld, transferIn, updatedAt);}
+@override String toString() {return 'DomainProperties(available: $available, canRegister: $canRegister, createdAt: $createdAt, currentRegistrar: $currentRegistrar, expiresAt: $expiresAt, id: $id, locked: $locked, registrantContact: $registrantContact, registryStatuses: $registryStatuses, supportedTld: $supportedTld, transferIn: $transferIn, updatedAt: $updatedAt)';}
+}

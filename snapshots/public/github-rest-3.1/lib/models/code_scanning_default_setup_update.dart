@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The desired state of code scanning default setup.
 @immutable final class CodeScanningDefaultSetupUpdateState {const CodeScanningDefaultSetupUpdateState._(this.value);
 
-factory CodeScanningDefaultSetupUpdateState.fromJson(String json) { return switch (json) {
+factory CodeScanningDefaultSetupUpdateState.fromJson(String json) {return switch (json) {
   'configured' => configured,
   'not-configured' => notConfigured,
   _ => CodeScanningDefaultSetupUpdateState._(json),
-}; }
+};}
 
 static const CodeScanningDefaultSetupUpdateState configured = CodeScanningDefaultSetupUpdateState._('configured');
 
@@ -17,22 +17,22 @@ static const List<CodeScanningDefaultSetupUpdateState> values = [configured, not
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningDefaultSetupUpdateState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningDefaultSetupUpdateState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeScanningDefaultSetupUpdateState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeScanningDefaultSetupUpdateState($value)';}
+}
 /// Runner type to be used.
 @immutable final class CodeScanningDefaultSetupUpdateRunnerType {const CodeScanningDefaultSetupUpdateRunnerType._(this.value);
 
-factory CodeScanningDefaultSetupUpdateRunnerType.fromJson(String json) { return switch (json) {
+factory CodeScanningDefaultSetupUpdateRunnerType.fromJson(String json) {return switch (json) {
   'standard' => standard,
   'labeled' => labeled,
   _ => CodeScanningDefaultSetupUpdateRunnerType._(json),
-}; }
+};}
 
 static const CodeScanningDefaultSetupUpdateRunnerType standard = CodeScanningDefaultSetupUpdateRunnerType._('standard');
 
@@ -42,22 +42,22 @@ static const List<CodeScanningDefaultSetupUpdateRunnerType> values = [standard, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningDefaultSetupUpdateRunnerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningDefaultSetupUpdateRunnerType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeScanningDefaultSetupUpdateRunnerType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeScanningDefaultSetupUpdateRunnerType($value)';}
+}
 /// CodeQL query suite to be used.
 @immutable final class CodeScanningDefaultSetupUpdateQuerySuite {const CodeScanningDefaultSetupUpdateQuerySuite._(this.value);
 
-factory CodeScanningDefaultSetupUpdateQuerySuite.fromJson(String json) { return switch (json) {
+factory CodeScanningDefaultSetupUpdateQuerySuite.fromJson(String json) {return switch (json) {
   'default' => $default,
   'extended' => extended,
   _ => CodeScanningDefaultSetupUpdateQuerySuite._(json),
-}; }
+};}
 
 static const CodeScanningDefaultSetupUpdateQuerySuite $default = CodeScanningDefaultSetupUpdateQuerySuite._('default');
 
@@ -67,22 +67,22 @@ static const List<CodeScanningDefaultSetupUpdateQuerySuite> values = [$default, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningDefaultSetupUpdateQuerySuite && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningDefaultSetupUpdateQuerySuite($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeScanningDefaultSetupUpdateQuerySuite && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeScanningDefaultSetupUpdateQuerySuite($value)';}
+}
 /// Threat model to be used for code scanning analysis. Use `remote` to analyze only network sources and `remote_and_local` to include local sources like filesystem access, command-line arguments, database reads, environment variable and standard input.
 @immutable final class CodeScanningDefaultSetupUpdateThreatModel {const CodeScanningDefaultSetupUpdateThreatModel._(this.value);
 
-factory CodeScanningDefaultSetupUpdateThreatModel.fromJson(String json) { return switch (json) {
+factory CodeScanningDefaultSetupUpdateThreatModel.fromJson(String json) {return switch (json) {
   'remote' => remote,
   'remote_and_local' => remoteAndLocal,
   _ => CodeScanningDefaultSetupUpdateThreatModel._(json),
-}; }
+};}
 
 static const CodeScanningDefaultSetupUpdateThreatModel remote = CodeScanningDefaultSetupUpdateThreatModel._('remote');
 
@@ -92,17 +92,17 @@ static const List<CodeScanningDefaultSetupUpdateThreatModel> values = [remote, r
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningDefaultSetupUpdateThreatModel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningDefaultSetupUpdateThreatModel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeScanningDefaultSetupUpdateThreatModel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeScanningDefaultSetupUpdateThreatModel($value)';}
+}
 @immutable final class CodeScanningDefaultSetupUpdateLanguages {const CodeScanningDefaultSetupUpdateLanguages._(this.value);
 
-factory CodeScanningDefaultSetupUpdateLanguages.fromJson(String json) { return switch (json) {
+factory CodeScanningDefaultSetupUpdateLanguages.fromJson(String json) {return switch (json) {
   'actions' => actions,
   'c-cpp' => cCpp,
   'csharp' => csharp,
@@ -113,7 +113,7 @@ factory CodeScanningDefaultSetupUpdateLanguages.fromJson(String json) { return s
   'ruby' => ruby,
   'swift' => swift,
   _ => CodeScanningDefaultSetupUpdateLanguages._(json),
-}; }
+};}
 
 static const CodeScanningDefaultSetupUpdateLanguages actions = CodeScanningDefaultSetupUpdateLanguages._('actions');
 
@@ -137,25 +137,25 @@ static const List<CodeScanningDefaultSetupUpdateLanguages> values = [actions, cC
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningDefaultSetupUpdateLanguages && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningDefaultSetupUpdateLanguages($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeScanningDefaultSetupUpdateLanguages && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeScanningDefaultSetupUpdateLanguages($value)';}
+}
 /// Configuration for code scanning default setup.
 @immutable final class CodeScanningDefaultSetupUpdate {const CodeScanningDefaultSetupUpdate({this.state, this.runnerType, this.runnerLabel = const Omittable.absent(), this.querySuite, this.threatModel, this.languages, });
 
-factory CodeScanningDefaultSetupUpdate.fromJson(Map<String, dynamic> json) { return CodeScanningDefaultSetupUpdate(
+factory CodeScanningDefaultSetupUpdate.fromJson(Map<String, dynamic> json) {return CodeScanningDefaultSetupUpdate(
   state: json['state'] != null ? CodeScanningDefaultSetupUpdateState.fromJson(json['state'] as String) : null,
   runnerType: json['runner_type'] != null ? CodeScanningDefaultSetupUpdateRunnerType.fromJson(json['runner_type'] as String) : null,
   runnerLabel: json.containsKey('runner_label') ? Omittable(json['runner_label'] as String?) : const Omittable.absent(),
   querySuite: json['query_suite'] != null ? CodeScanningDefaultSetupUpdateQuerySuite.fromJson(json['query_suite'] as String) : null,
   threatModel: json['threat_model'] != null ? CodeScanningDefaultSetupUpdateThreatModel.fromJson(json['threat_model'] as String) : null,
   languages: (json['languages'] as List<dynamic>?)?.map((e) => CodeScanningDefaultSetupUpdateLanguages.fromJson(e as String)).toList(),
-); }
+);}
 
 /// The desired state of code scanning default setup.
 final CodeScanningDefaultSetupUpdateState? state;
@@ -175,31 +175,31 @@ final CodeScanningDefaultSetupUpdateThreatModel? threatModel;
 /// CodeQL languages to be analyzed.
 final List<CodeScanningDefaultSetupUpdateLanguages>? languages;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (state != null) 'state': state?.toJson(),
   if (runnerType != null) 'runner_type': runnerType?.toJson(),
   if (runnerLabel.isPresent) 'runner_label': runnerLabel.value,
   if (querySuite != null) 'query_suite': querySuite?.toJson(),
   if (threatModel != null) 'threat_model': threatModel?.toJson(),
   if (languages != null) 'languages': languages?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'state', 'runner_type', 'runner_label', 'query_suite', 'threat_model', 'languages'}.contains(key)); } 
-CodeScanningDefaultSetupUpdate copyWith({CodeScanningDefaultSetupUpdateState? Function()? state, CodeScanningDefaultSetupUpdateRunnerType? Function()? runnerType, Omittable<String?>? runnerLabel, CodeScanningDefaultSetupUpdateQuerySuite? Function()? querySuite, CodeScanningDefaultSetupUpdateThreatModel? Function()? threatModel, List<CodeScanningDefaultSetupUpdateLanguages>? Function()? languages, }) { return CodeScanningDefaultSetupUpdate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'state', 'runner_type', 'runner_label', 'query_suite', 'threat_model', 'languages'}.contains(key));}
+CodeScanningDefaultSetupUpdate copyWith({CodeScanningDefaultSetupUpdateState? Function()? state, CodeScanningDefaultSetupUpdateRunnerType? Function()? runnerType, Omittable<String?>? runnerLabel, CodeScanningDefaultSetupUpdateQuerySuite? Function()? querySuite, CodeScanningDefaultSetupUpdateThreatModel? Function()? threatModel, List<CodeScanningDefaultSetupUpdateLanguages>? Function()? languages, }) {return CodeScanningDefaultSetupUpdate(
   state: state != null ? state() : this.state,
   runnerType: runnerType != null ? runnerType() : this.runnerType,
   runnerLabel: runnerLabel ?? this.runnerLabel,
   querySuite: querySuite != null ? querySuite() : this.querySuite,
   threatModel: threatModel != null ? threatModel() : this.threatModel,
   languages: languages != null ? languages() : this.languages,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeScanningDefaultSetupUpdate &&
           state == other.state &&
           runnerType == other.runnerType &&
           runnerLabel == other.runnerLabel &&
           querySuite == other.querySuite &&
           threatModel == other.threatModel &&
-          listEquals(languages, other.languages); } 
-@override int get hashCode { return Object.hash(state, runnerType, runnerLabel, querySuite, threatModel, Object.hashAll(languages ?? const [])); } 
-@override String toString() { return 'CodeScanningDefaultSetupUpdate(state: $state, runnerType: $runnerType, runnerLabel: $runnerLabel, querySuite: $querySuite, threatModel: $threatModel, languages: $languages)'; } 
- }
+          listEquals(languages, other.languages);}
+@override int get hashCode {return Object.hash(state, runnerType, runnerLabel, querySuite, threatModel, Object.hashAll(languages ?? const []));}
+@override String toString() {return 'CodeScanningDefaultSetupUpdate(state: $state, runnerType: $runnerType, runnerLabel: $runnerLabel, querySuite: $querySuite, threatModel: $threatModel, languages: $languages)';}
+}

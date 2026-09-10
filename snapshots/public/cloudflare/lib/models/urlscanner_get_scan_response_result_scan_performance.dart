@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanPerformance {const UrlscannerGetScanResponseResultScanPerformance({required this.connectEnd, required this.connectStart, required this.decodedBodySize, required this.domComplete, required this.domContentLoadedEventEnd, required this.domContentLoadedEventStart, required this.domInteractive, required this.domainLookupEnd, required this.domainLookupStart, required this.duration, required this.encodedBodySize, required this.entryType, required this.fetchStart, required this.initiatorType, required this.loadEventEnd, required this.loadEventStart, required this.name, required this.nextHopProtocol, required this.redirectCount, required this.redirectEnd, required this.redirectStart, required this.requestStart, required this.responseEnd, required this.responseStart, required this.secureConnectionStart, required this.startTime, required this.transferSize, required this.type, required this.unloadEventEnd, required this.unloadEventStart, required this.workerStart, });
 
-factory UrlscannerGetScanResponseResultScanPerformance.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanPerformance(
+factory UrlscannerGetScanResponseResultScanPerformance.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponseResultScanPerformance(
   connectEnd: (json['connectEnd'] as num).toDouble(),
   connectStart: (json['connectStart'] as num).toDouble(),
   decodedBodySize: (json['decodedBodySize'] as num).toDouble(),
@@ -34,7 +34,7 @@ factory UrlscannerGetScanResponseResultScanPerformance.fromJson(Map<String, dyna
   unloadEventEnd: (json['unloadEventEnd'] as num).toDouble(),
   unloadEventStart: (json['unloadEventStart'] as num).toDouble(),
   workerStart: (json['workerStart'] as num).toDouble(),
-); }
+);}
 
 final double connectEnd;
 
@@ -98,7 +98,7 @@ final double unloadEventStart;
 
 final double workerStart;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'connectEnd': connectEnd,
   'connectStart': connectStart,
   'decodedBodySize': decodedBodySize,
@@ -130,8 +130,8 @@ Map<String, dynamic> toJson() { return {
   'unloadEventEnd': unloadEventEnd,
   'unloadEventStart': unloadEventStart,
   'workerStart': workerStart,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('connectEnd') && json['connectEnd'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('connectEnd') && json['connectEnd'] is num &&
       json.containsKey('connectStart') && json['connectStart'] is num &&
       json.containsKey('decodedBodySize') && json['decodedBodySize'] is num &&
       json.containsKey('domComplete') && json['domComplete'] is num &&
@@ -161,8 +161,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('conne
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('unloadEventEnd') && json['unloadEventEnd'] is num &&
       json.containsKey('unloadEventStart') && json['unloadEventStart'] is num &&
-      json.containsKey('workerStart') && json['workerStart'] is num; } 
-UrlscannerGetScanResponseResultScanPerformance copyWith({double? connectEnd, double? connectStart, double? decodedBodySize, double? domComplete, double? domContentLoadedEventEnd, double? domContentLoadedEventStart, double? domInteractive, double? domainLookupEnd, double? domainLookupStart, double? duration, double? encodedBodySize, String? entryType, double? fetchStart, String? initiatorType, double? loadEventEnd, double? loadEventStart, String? name, String? nextHopProtocol, double? redirectCount, double? redirectEnd, double? redirectStart, double? requestStart, double? responseEnd, double? responseStart, double? secureConnectionStart, double? startTime, double? transferSize, String? type, double? unloadEventEnd, double? unloadEventStart, double? workerStart, }) { return UrlscannerGetScanResponseResultScanPerformance(
+      json.containsKey('workerStart') && json['workerStart'] is num;}
+UrlscannerGetScanResponseResultScanPerformance copyWith({double? connectEnd, double? connectStart, double? decodedBodySize, double? domComplete, double? domContentLoadedEventEnd, double? domContentLoadedEventStart, double? domInteractive, double? domainLookupEnd, double? domainLookupStart, double? duration, double? encodedBodySize, String? entryType, double? fetchStart, String? initiatorType, double? loadEventEnd, double? loadEventStart, String? name, String? nextHopProtocol, double? redirectCount, double? redirectEnd, double? redirectStart, double? requestStart, double? responseEnd, double? responseStart, double? secureConnectionStart, double? startTime, double? transferSize, String? type, double? unloadEventEnd, double? unloadEventStart, double? workerStart, }) {return UrlscannerGetScanResponseResultScanPerformance(
   connectEnd: connectEnd ?? this.connectEnd,
   connectStart: connectStart ?? this.connectStart,
   decodedBodySize: decodedBodySize ?? this.decodedBodySize,
@@ -194,8 +194,8 @@ UrlscannerGetScanResponseResultScanPerformance copyWith({double? connectEnd, dou
   unloadEventEnd: unloadEventEnd ?? this.unloadEventEnd,
   unloadEventStart: unloadEventStart ?? this.unloadEventStart,
   workerStart: workerStart ?? this.workerStart,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponseResultScanPerformance &&
           connectEnd == other.connectEnd &&
           connectStart == other.connectStart &&
@@ -227,7 +227,7 @@ UrlscannerGetScanResponseResultScanPerformance copyWith({double? connectEnd, dou
           type == other.type &&
           unloadEventEnd == other.unloadEventEnd &&
           unloadEventStart == other.unloadEventStart &&
-          workerStart == other.workerStart; } 
-@override int get hashCode { return Object.hashAll([connectEnd, connectStart, decodedBodySize, domComplete, domContentLoadedEventEnd, domContentLoadedEventStart, domInteractive, domainLookupEnd, domainLookupStart, duration, encodedBodySize, entryType, fetchStart, initiatorType, loadEventEnd, loadEventStart, name, nextHopProtocol, redirectCount, redirectEnd, redirectStart, requestStart, responseEnd, responseStart, secureConnectionStart, startTime, transferSize, type, unloadEventEnd, unloadEventStart, workerStart]); } 
-@override String toString() { return 'UrlscannerGetScanResponseResultScanPerformance(connectEnd: $connectEnd, connectStart: $connectStart, decodedBodySize: $decodedBodySize, domComplete: $domComplete, domContentLoadedEventEnd: $domContentLoadedEventEnd, domContentLoadedEventStart: $domContentLoadedEventStart, domInteractive: $domInteractive, domainLookupEnd: $domainLookupEnd, domainLookupStart: $domainLookupStart, duration: $duration, encodedBodySize: $encodedBodySize, entryType: $entryType, fetchStart: $fetchStart, initiatorType: $initiatorType, loadEventEnd: $loadEventEnd, loadEventStart: $loadEventStart, name: $name, nextHopProtocol: $nextHopProtocol, redirectCount: $redirectCount, redirectEnd: $redirectEnd, redirectStart: $redirectStart, requestStart: $requestStart, responseEnd: $responseEnd, responseStart: $responseStart, secureConnectionStart: $secureConnectionStart, startTime: $startTime, transferSize: $transferSize, type: $type, unloadEventEnd: $unloadEventEnd, unloadEventStart: $unloadEventStart, workerStart: $workerStart)'; } 
- }
+          workerStart == other.workerStart;}
+@override int get hashCode {return Object.hashAll([connectEnd, connectStart, decodedBodySize, domComplete, domContentLoadedEventEnd, domContentLoadedEventStart, domInteractive, domainLookupEnd, domainLookupStart, duration, encodedBodySize, entryType, fetchStart, initiatorType, loadEventEnd, loadEventStart, name, nextHopProtocol, redirectCount, redirectEnd, redirectStart, requestStart, responseEnd, responseStart, secureConnectionStart, startTime, transferSize, type, unloadEventEnd, unloadEventStart, workerStart]);}
+@override String toString() {return 'UrlscannerGetScanResponseResultScanPerformance(connectEnd: $connectEnd, connectStart: $connectStart, decodedBodySize: $decodedBodySize, domComplete: $domComplete, domContentLoadedEventEnd: $domContentLoadedEventEnd, domContentLoadedEventStart: $domContentLoadedEventStart, domInteractive: $domInteractive, domainLookupEnd: $domainLookupEnd, domainLookupStart: $domainLookupStart, duration: $duration, encodedBodySize: $encodedBodySize, entryType: $entryType, fetchStart: $fetchStart, initiatorType: $initiatorType, loadEventEnd: $loadEventEnd, loadEventStart: $loadEventStart, name: $name, nextHopProtocol: $nextHopProtocol, redirectCount: $redirectCount, redirectEnd: $redirectEnd, redirectStart: $redirectStart, requestStart: $requestStart, responseEnd: $responseEnd, responseStart: $responseStart, secureConnectionStart: $secureConnectionStart, startTime: $startTime, transferSize: $transferSize, type: $type, unloadEventEnd: $unloadEventEnd, unloadEventStart: $unloadEventStart, workerStart: $workerStart)';}
+}

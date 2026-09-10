@@ -13,7 +13,7 @@ final class SecretsStoreApi with ApiExecutor {const SecretsStoreApi(this.apiConf
 /// Lists the number of secrets used in the account.
 ///
 /// `GET /accounts/{account_id}/secrets_store/quota`
-Future<ApiResult<SecretsStoreSecretsUsageObject?, ResponseCommonFailure62>> secretsStoreQuota({required SecretsStoreAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretsUsageObject?, ResponseCommonFailure62>> secretsStoreQuota({required SecretsStoreAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// List account stores
 ///
 /// Lists all the stores in an account
 ///
 /// `GET /accounts/{account_id}/secrets_store/stores`
-Future<ApiResult<List<SecretsStoreStoreObject>?, ResponseCommonFailure62>> secretsStoreList({required SecretsStoreAccountIdentifier accountId, SecretsStoreListDirection? direction, int? page, int? perPage, SecretsStoreListOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SecretsStoreStoreObject>?, ResponseCommonFailure62>> secretsStoreList({required SecretsStoreAccountIdentifier accountId, SecretsStoreListDirection? direction, int? page, int? perPage, SecretsStoreListOrder? order, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (direction != null) {
   queryParameters['direction'] = direction.toJson();
@@ -88,13 +88,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create a store
 ///
 /// Creates a store in the account
 ///
 /// `POST /accounts/{account_id}/secrets_store/stores`
-Future<ApiResult<List<SecretsStoreStoreObject>?, ResponseCommonFailure62>> secretsStoreCreate({required SecretsStoreAccountIdentifier accountId, required List<SecretsStoreCreateStoreObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecretsStoreStoreObject>?, ResponseCommonFailure62>> secretsStoreCreate({required SecretsStoreAccountIdentifier accountId, required List<SecretsStoreCreateStoreObject> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -122,13 +122,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get a store by ID
 ///
 /// Returns details of a single store
 ///
 /// `GET /accounts/{account_id}/secrets_store/stores/{store_id}`
-Future<ApiResult<SecretsStoreStoreObject?, ResponseCommonFailure62>> secretsStoreGetStoreById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreStoreObject?, ResponseCommonFailure62>> secretsStoreGetStoreById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -154,13 +154,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a store
 ///
 /// Deletes a single store
 ///
 /// `DELETE /accounts/{account_id}/secrets_store/stores/{store_id}`
-Future<ApiResult<SecretsStoreStoreObject?, ResponseCommonFailure62>> secretsStoreDeleteById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreStoreObject?, ResponseCommonFailure62>> secretsStoreDeleteById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -186,13 +186,13 @@ return null;
 
   },
 );
- } 
+}
 /// List store secrets
 ///
 /// Lists all store secrets
 ///
 /// `GET /accounts/{account_id}/secrets_store/stores/{store_id}/secrets`
-Future<ApiResult<List<SecretsStoreSecretObject>?, ResponseCommonFailure62>> secretsStoreSecretsList({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, SecretsStoreSecretsListDirection? direction, int? page, int? perPage, String? search, SecretsStoreSecretsListOrder? order, List<List<String>>? scopes, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SecretsStoreSecretObject>?, ResponseCommonFailure62>> secretsStoreSecretsList({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, SecretsStoreSecretsListDirection? direction, int? page, int? perPage, String? search, SecretsStoreSecretsListOrder? order, List<List<String>>? scopes, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (direction != null) {
   queryParameters['direction'] = direction.toJson();
@@ -241,13 +241,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create a secret
 ///
 /// Creates a secret in the account
 ///
 /// `POST /accounts/{account_id}/secrets_store/stores/{store_id}/secrets`
-Future<ApiResult<List<SecretsStoreSecretObject>?, ResponseCommonFailure62>> secretsStoreSecretCreate({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreCreateSecretObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecretsStoreSecretObject>?, ResponseCommonFailure62>> secretsStoreSecretCreate({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreCreateSecretObject> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -275,13 +275,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete secrets
 ///
 /// Deletes one or more secrets
 ///
 /// `DELETE /accounts/{account_id}/secrets_store/stores/{store_id}/secrets`
-Future<ApiResult<List<SecretsStoreSecretObject>?, ResponseCommonFailure62>> secretsStoreDeleteBulk({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreDeleteSecretObjectRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecretsStoreSecretObject>?, ResponseCommonFailure62>> secretsStoreDeleteBulk({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreDeleteSecretObjectRequest> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -309,13 +309,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get a secret by ID
 ///
 /// Returns details of a single secret
 ///
 /// `GET /accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<SecretsStoreSecretObject?, ResponseCommonFailure62>> secretsStoreGetById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretObject?, ResponseCommonFailure62>> secretsStoreGetById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -341,13 +341,13 @@ return null;
 
   },
 );
- } 
+}
 /// Patch a secret
 ///
 /// Updates a single secret
 ///
 /// `PATCH /accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<SecretsStoreSecretObject?, ResponseCommonFailure62>> secretsStorePatchById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, required SecretsStorePatchSecretObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretObject?, ResponseCommonFailure62>> secretsStorePatchById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, required SecretsStorePatchSecretObject body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -375,13 +375,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a secret
 ///
 /// Deletes a single secret
 ///
 /// `DELETE /accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<SecretsStoreSecretObject?, ResponseCommonFailure62>> secretsStoreSecretDeleteById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretObject?, ResponseCommonFailure62>> secretsStoreSecretDeleteById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -407,13 +407,13 @@ return null;
 
   },
 );
- } 
+}
 /// Duplicate Secret
 ///
 /// Duplicates the secret, keeping the value
 ///
 /// `POST /accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}/duplicate`
-Future<ApiResult<SecretsStoreSecretObject?, ResponseCommonFailure62>> secretsStoreDuplicateById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, required SecretsStoreDuplicateSecretObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretObject?, ResponseCommonFailure62>> secretsStoreDuplicateById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, required SecretsStoreDuplicateSecretObject body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -441,7 +441,7 @@ return null;
 
   },
 );
- } 
+}
 /// List account stores (System)
 ///
 /// Lists all stores in an account that are managed by the calling service.
@@ -449,7 +449,7 @@ return null;
 /// 
 ///
 /// `GET /system/accounts/{account_tag}/stores`
-Future<ApiResult<List<SecretsStoreStoreObject>?, ResponseCommonFailure62>> secretsStoreSystemList({required SecretsStoreAccountTag accountTag, SecretsStoreSystemListDirection? direction, int? page, int? perPage, SecretsStoreSystemListOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SecretsStoreStoreObject>?, ResponseCommonFailure62>> secretsStoreSystemList({required SecretsStoreAccountTag accountTag, SecretsStoreSystemListDirection? direction, int? page, int? perPage, SecretsStoreSystemListOrder? order, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (direction != null) {
   queryParameters['direction'] = direction.toJson();
@@ -492,7 +492,7 @@ return null;
 
   },
 );
- } 
+}
 /// Create a store (System)
 ///
 /// Creates a store in the account on behalf of the calling service.
@@ -501,7 +501,7 @@ return null;
 /// 
 ///
 /// `POST /system/accounts/{account_tag}/stores`
-Future<ApiResult<SecretsStoreStoreObject?, ResponseCommonFailure62>> secretsStoreSystemCreate({required SecretsStoreAccountTag accountTag, required SecretsStoreCreateStoreObjectSystem body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreStoreObject?, ResponseCommonFailure62>> secretsStoreSystemCreate({required SecretsStoreAccountTag accountTag, required SecretsStoreCreateStoreObjectSystem body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -529,7 +529,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get a store by ID (System)
 ///
 /// Returns details of a single store managed by the calling service.
@@ -537,7 +537,7 @@ return null;
 /// 
 ///
 /// `GET /system/accounts/{account_tag}/stores/{store_id}`
-Future<ApiResult<SecretsStoreStoreObject?, ResponseCommonFailure62>> secretsStoreSystemGetStoreById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreStoreObject?, ResponseCommonFailure62>> secretsStoreSystemGetStoreById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -563,7 +563,7 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a store (System)
 ///
 /// Deletes a store managed by the calling service.
@@ -571,7 +571,7 @@ return null;
 /// 
 ///
 /// `DELETE /system/accounts/{account_tag}/stores/{store_id}`
-Future<ApiResult<SecretsStoreStoreObject?, ResponseCommonFailure62>> secretsStoreSystemDeleteById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreStoreObject?, ResponseCommonFailure62>> secretsStoreSystemDeleteById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -597,7 +597,7 @@ return null;
 
   },
 );
- } 
+}
 /// List store secrets (System)
 ///
 /// Lists all secrets in a store managed by the calling service.
@@ -605,7 +605,7 @@ return null;
 /// 
 ///
 /// `GET /system/accounts/{account_tag}/stores/{store_id}/secrets`
-Future<ApiResult<List<SecretsStoreSecretObject>?, ResponseCommonFailure62>> secretsStoreSystemSecretsList({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, SecretsStoreSystemSecretsListDirection? direction, int? page, int? perPage, String? search, SecretsStoreSystemSecretsListOrder? order, List<List<String>>? scopes, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SecretsStoreSecretObject>?, ResponseCommonFailure62>> secretsStoreSystemSecretsList({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, SecretsStoreSystemSecretsListDirection? direction, int? page, int? perPage, String? search, SecretsStoreSystemSecretsListOrder? order, List<List<String>>? scopes, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (direction != null) {
   queryParameters['direction'] = direction.toJson();
@@ -654,7 +654,7 @@ return null;
 
   },
 );
- } 
+}
 /// Create secrets (System)
 ///
 /// Creates one or more secrets in a store managed by the calling service.
@@ -662,7 +662,7 @@ return null;
 /// 
 ///
 /// `POST /system/accounts/{account_tag}/stores/{store_id}/secrets`
-Future<ApiResult<List<SecretsStoreSecretObject>?, ResponseCommonFailure62>> secretsStoreSystemSecretCreate({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreCreateSecretObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecretsStoreSecretObject>?, ResponseCommonFailure62>> secretsStoreSystemSecretCreate({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreCreateSecretObject> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -690,7 +690,7 @@ return null;
 
   },
 );
- } 
+}
 /// Delete secrets (System)
 ///
 /// Deletes one or more secrets from a store managed by the calling service.
@@ -698,7 +698,7 @@ return null;
 /// 
 ///
 /// `DELETE /system/accounts/{account_tag}/stores/{store_id}/secrets`
-Future<ApiResult<List<SecretsStoreSecretObject>?, ResponseCommonFailure62>> secretsStoreSystemDeleteBulk({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreDeleteSecretObjectRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecretsStoreSecretObject>?, ResponseCommonFailure62>> secretsStoreSystemDeleteBulk({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreDeleteSecretObjectRequest> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -726,7 +726,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get a secret by ID (System)
 ///
 /// Returns details of a single secret from a store managed by the calling service.
@@ -734,7 +734,7 @@ return null;
 /// 
 ///
 /// `GET /system/accounts/{account_tag}/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<SecretsStoreSecretObject?, ResponseCommonFailure62>> secretsStoreSystemGetById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretObject?, ResponseCommonFailure62>> secretsStoreSystemGetById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -760,7 +760,7 @@ return null;
 
   },
 );
- } 
+}
 /// Patch a secret (System)
 ///
 /// Updates a single secret in a store managed by the calling service.
@@ -768,7 +768,7 @@ return null;
 /// 
 ///
 /// `PATCH /system/accounts/{account_tag}/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<SecretsStoreSecretObject?, ResponseCommonFailure62>> secretsStoreSystemPatchById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, required SecretsStorePatchSecretObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretObject?, ResponseCommonFailure62>> secretsStoreSystemPatchById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, required SecretsStorePatchSecretObject body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -796,7 +796,7 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a secret (System)
 ///
 /// Deletes a single secret from a store managed by the calling service.
@@ -804,7 +804,7 @@ return null;
 /// 
 ///
 /// `DELETE /system/accounts/{account_tag}/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<SecretsStoreSecretObject?, ResponseCommonFailure62>> secretsStoreSystemSecretDeleteById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretObject?, ResponseCommonFailure62>> secretsStoreSystemSecretDeleteById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -830,7 +830,7 @@ return null;
 
   },
 );
- } 
+}
 /// Duplicate secret (System)
 ///
 /// Duplicates a secret in a store managed by the calling service, keeping the value.
@@ -838,7 +838,7 @@ return null;
 /// 
 ///
 /// `POST /system/accounts/{account_tag}/stores/{store_id}/secrets/{secret_id}/duplicate`
-Future<ApiResult<SecretsStoreSecretObject?, ResponseCommonFailure62>> secretsStoreSystemDuplicateById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, required SecretsStoreDuplicateSecretObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretObject?, ResponseCommonFailure62>> secretsStoreSystemDuplicateById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, required SecretsStoreDuplicateSecretObject body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -866,5 +866,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancer_ingress.dart';/// LoadBalancerStatus represents the status of a load-balancer.
 @immutable final class LoadBalancerStatus {const LoadBalancerStatus({this.ingress});
 
-factory LoadBalancerStatus.fromJson(Map<String, dynamic> json) { return LoadBalancerStatus(
+factory LoadBalancerStatus.fromJson(Map<String, dynamic> json) {return LoadBalancerStatus(
   ingress: (json['ingress'] as List<dynamic>?)?.map((e) => LoadBalancerIngress.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Ingress is a list containing ingress points for the load-balancer. Traffic intended for the service should be sent to these ingress points.
 final List<LoadBalancerIngress>? ingress;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (ingress != null) 'ingress': ingress?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ingress'}.contains(key)); } 
-LoadBalancerStatus copyWith({List<LoadBalancerIngress>? Function()? ingress}) { return LoadBalancerStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ingress'}.contains(key));}
+LoadBalancerStatus copyWith({List<LoadBalancerIngress>? Function()? ingress}) {return LoadBalancerStatus(
   ingress: ingress != null ? ingress() : this.ingress,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LoadBalancerStatus &&
-          listEquals(ingress, other.ingress); } 
-@override int get hashCode { return Object.hashAll(ingress ?? const []).hashCode; } 
-@override String toString() { return 'LoadBalancerStatus(ingress: $ingress)'; } 
- }
+          listEquals(ingress, other.ingress);}
+@override int get hashCode {return Object.hashAll(ingress ?? const []).hashCode;}
+@override String toString() {return 'LoadBalancerStatus(ingress: $ingress)';}
+}

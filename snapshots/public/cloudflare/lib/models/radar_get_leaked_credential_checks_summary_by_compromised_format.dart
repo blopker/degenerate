@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetLeakedCredentialChecksSummaryByCompromisedFormat {const RadarGetLeakedCredentialChecksSummaryByCompromisedFormat._(this.value);
 
-factory RadarGetLeakedCredentialChecksSummaryByCompromisedFormat.fromJson(String json) { return switch (json) {
+factory RadarGetLeakedCredentialChecksSummaryByCompromisedFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetLeakedCredentialChecksSummaryByCompromisedFormat._(json),
-}; }
+};}
 
 static const RadarGetLeakedCredentialChecksSummaryByCompromisedFormat $json = RadarGetLeakedCredentialChecksSummaryByCompromisedFormat._('JSON');
 
@@ -17,11 +17,11 @@ static const List<RadarGetLeakedCredentialChecksSummaryByCompromisedFormat> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetLeakedCredentialChecksSummaryByCompromisedFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetLeakedCredentialChecksSummaryByCompromisedFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetLeakedCredentialChecksSummaryByCompromisedFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetLeakedCredentialChecksSummaryByCompromisedFormat($value)';}
+}

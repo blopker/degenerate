@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Error Page Types
 @immutable final class CustomPagesErrorPageType {const CustomPagesErrorPageType._(this.value);
 
-factory CustomPagesErrorPageType.fromJson(String json) { return switch (json) {
+factory CustomPagesErrorPageType.fromJson(String json) {return switch (json) {
   '1000_errors' => $1000Errors,
   '500_errors' => $500Errors,
   'basic_challenge' => basicChallenge,
@@ -15,7 +15,7 @@ factory CustomPagesErrorPageType.fromJson(String json) { return switch (json) {
   'waf_block' => wafBlock,
   'waf_challenge' => wafChallenge,
   _ => CustomPagesErrorPageType._(json),
-}; }
+};}
 
 static const CustomPagesErrorPageType $1000Errors = CustomPagesErrorPageType._('1000_errors');
 
@@ -41,11 +41,11 @@ static const List<CustomPagesErrorPageType> values = [$1000Errors, $500Errors, b
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomPagesErrorPageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomPagesErrorPageType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CustomPagesErrorPageType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CustomPagesErrorPageType($value)';}
+}

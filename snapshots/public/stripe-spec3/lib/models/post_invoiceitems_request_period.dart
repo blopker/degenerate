@@ -3,29 +3,29 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The period associated with this invoice item. When set to different values, the period will be rendered on the invoice. If you have [Stripe Revenue Recognition](https://docs.stripe.com/revenue-recognition) enabled, the period will be used to recognize and defer revenue. See the [Revenue Recognition documentation](https://docs.stripe.com/revenue-recognition/methodology/subscriptions-and-invoicing) for details.
 @immutable final class PostInvoiceitemsRequestPeriod {const PostInvoiceitemsRequestPeriod({required this.end, required this.start, });
 
-factory PostInvoiceitemsRequestPeriod.fromJson(Map<String, dynamic> json) { return PostInvoiceitemsRequestPeriod(
+factory PostInvoiceitemsRequestPeriod.fromJson(Map<String, dynamic> json) {return PostInvoiceitemsRequestPeriod(
   end: (json['end'] as num).toInt(),
   start: (json['start'] as num).toInt(),
-); }
+);}
 
 final int end;
 
 final int start;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end': end,
   'start': start,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('end') && json['end'] is num &&
-      json.containsKey('start') && json['start'] is num; } 
-PostInvoiceitemsRequestPeriod copyWith({int? end, int? start, }) { return PostInvoiceitemsRequestPeriod(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('end') && json['end'] is num &&
+      json.containsKey('start') && json['start'] is num;}
+PostInvoiceitemsRequestPeriod copyWith({int? end, int? start, }) {return PostInvoiceitemsRequestPeriod(
   end: end ?? this.end,
   start: start ?? this.start,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoiceitemsRequestPeriod &&
           end == other.end &&
-          start == other.start; } 
-@override int get hashCode { return Object.hash(end, start); } 
-@override String toString() { return 'PostInvoiceitemsRequestPeriod(end: $end, start: $start)'; } 
- }
+          start == other.start;}
+@override int get hashCode {return Object.hash(end, start);}
+@override String toString() {return 'PostInvoiceitemsRequestPeriod(end: $end, start: $start)';}
+}

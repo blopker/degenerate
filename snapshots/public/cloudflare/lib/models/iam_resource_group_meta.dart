@@ -3,28 +3,28 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Attributes associated to the resource group.
 @immutable final class IamResourceGroupMeta {const IamResourceGroupMeta({this.key, this.value, });
 
-factory IamResourceGroupMeta.fromJson(Map<String, dynamic> json) { return IamResourceGroupMeta(
+factory IamResourceGroupMeta.fromJson(Map<String, dynamic> json) {return IamResourceGroupMeta(
   key: json['key'] as String?,
   value: json['value'] as String?,
-); }
+);}
 
 final String? key;
 
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': ?key,
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'key', 'value'}.contains(key)); } 
-IamResourceGroupMeta copyWith({String? Function()? key, String? Function()? value, }) { return IamResourceGroupMeta(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'key', 'value'}.contains(key));}
+IamResourceGroupMeta copyWith({String? Function()? key, String? Function()? value, }) {return IamResourceGroupMeta(
   key: key != null ? key() : this.key,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IamResourceGroupMeta &&
           key == other.key &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(key, value); } 
-@override String toString() { return 'IamResourceGroupMeta(key: $key, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(key, value);}
+@override String toString() {return 'IamResourceGroupMeta(key: $key, value: $value)';}
+}

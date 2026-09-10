@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates how a SCIM event updates a user identity used for policy evaluation. Use "automatic" to automatically update a user's identity and augment it with fields from the SCIM user resource. Use "reauth" to force re-authentication on group membership updates, user identity update will only occur after successful re-authentication. With "reauth" identities will not contain fields from the SCIM user resource. With "no_action" identities will not be changed by SCIM updates in any way and users will not be prompted to reauthenticate.
 @immutable final class AccessCentrifyScimConfigIdentityUpdateBehavior {const AccessCentrifyScimConfigIdentityUpdateBehavior._(this.value);
 
-factory AccessCentrifyScimConfigIdentityUpdateBehavior.fromJson(String json) { return switch (json) {
+factory AccessCentrifyScimConfigIdentityUpdateBehavior.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'reauth' => reauth,
   'no_action' => noAction,
   _ => AccessCentrifyScimConfigIdentityUpdateBehavior._(json),
-}; }
+};}
 
 static const AccessCentrifyScimConfigIdentityUpdateBehavior automatic = AccessCentrifyScimConfigIdentityUpdateBehavior._('automatic');
 
@@ -20,25 +20,25 @@ static const List<AccessCentrifyScimConfigIdentityUpdateBehavior> values = [auto
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessCentrifyScimConfigIdentityUpdateBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessCentrifyScimConfigIdentityUpdateBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessCentrifyScimConfigIdentityUpdateBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessCentrifyScimConfigIdentityUpdateBehavior($value)';}
+}
 /// The configuration settings for enabling a System for Cross-Domain Identity Management (SCIM) with the identity provider.
 @immutable final class AccessCentrifyScimConfig {const AccessCentrifyScimConfig({this.enabled, this.identityUpdateBehavior, this.scimBaseUrl, this.seatDeprovision, this.secret, this.userDeprovision, });
 
-factory AccessCentrifyScimConfig.fromJson(Map<String, dynamic> json) { return AccessCentrifyScimConfig(
+factory AccessCentrifyScimConfig.fromJson(Map<String, dynamic> json) {return AccessCentrifyScimConfig(
   enabled: json['enabled'] as bool?,
   identityUpdateBehavior: json['identity_update_behavior'] != null ? AccessCentrifyScimConfigIdentityUpdateBehavior.fromJson(json['identity_update_behavior'] as String) : null,
   scimBaseUrl: json['scim_base_url'] as String?,
   seatDeprovision: json['seat_deprovision'] as bool?,
   secret: json['secret'] as String?,
   userDeprovision: json['user_deprovision'] as bool?,
-); }
+);}
 
 /// A flag to enable or disable SCIM for the identity provider.
 final bool? enabled;
@@ -59,38 +59,38 @@ final String? secret;
 final bool? userDeprovision;
 
 /// The value with the schema default applied when absent.
-bool get enabledOrDefault { return enabled ?? false; } 
+bool get enabledOrDefault {return enabled ?? false;}
 /// The value with the schema default applied when absent.
-AccessCentrifyScimConfigIdentityUpdateBehavior get identityUpdateBehaviorOrDefault { return identityUpdateBehavior ?? AccessCentrifyScimConfigIdentityUpdateBehavior.fromJson('no_action'); } 
+AccessCentrifyScimConfigIdentityUpdateBehavior get identityUpdateBehaviorOrDefault {return identityUpdateBehavior ?? AccessCentrifyScimConfigIdentityUpdateBehavior.fromJson('no_action');}
 /// The value with the schema default applied when absent.
-bool get seatDeprovisionOrDefault { return seatDeprovision ?? false; } 
+bool get seatDeprovisionOrDefault {return seatDeprovision ?? false;}
 /// The value with the schema default applied when absent.
-bool get userDeprovisionOrDefault { return userDeprovision ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get userDeprovisionOrDefault {return userDeprovision ?? false;}
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   if (identityUpdateBehavior != null) 'identity_update_behavior': identityUpdateBehavior?.toJson(),
   'scim_base_url': ?scimBaseUrl,
   'seat_deprovision': ?seatDeprovision,
   'secret': ?secret,
   'user_deprovision': ?userDeprovision,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'identity_update_behavior', 'scim_base_url', 'seat_deprovision', 'secret', 'user_deprovision'}.contains(key)); } 
-AccessCentrifyScimConfig copyWith({bool? Function()? enabled, AccessCentrifyScimConfigIdentityUpdateBehavior? Function()? identityUpdateBehavior, String? Function()? scimBaseUrl, bool? Function()? seatDeprovision, String? Function()? secret, bool? Function()? userDeprovision, }) { return AccessCentrifyScimConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'identity_update_behavior', 'scim_base_url', 'seat_deprovision', 'secret', 'user_deprovision'}.contains(key));}
+AccessCentrifyScimConfig copyWith({bool? Function()? enabled, AccessCentrifyScimConfigIdentityUpdateBehavior? Function()? identityUpdateBehavior, String? Function()? scimBaseUrl, bool? Function()? seatDeprovision, String? Function()? secret, bool? Function()? userDeprovision, }) {return AccessCentrifyScimConfig(
   enabled: enabled != null ? enabled() : this.enabled,
   identityUpdateBehavior: identityUpdateBehavior != null ? identityUpdateBehavior() : this.identityUpdateBehavior,
   scimBaseUrl: scimBaseUrl != null ? scimBaseUrl() : this.scimBaseUrl,
   seatDeprovision: seatDeprovision != null ? seatDeprovision() : this.seatDeprovision,
   secret: secret != null ? secret() : this.secret,
   userDeprovision: userDeprovision != null ? userDeprovision() : this.userDeprovision,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessCentrifyScimConfig &&
           enabled == other.enabled &&
           identityUpdateBehavior == other.identityUpdateBehavior &&
           scimBaseUrl == other.scimBaseUrl &&
           seatDeprovision == other.seatDeprovision &&
           secret == other.secret &&
-          userDeprovision == other.userDeprovision; } 
-@override int get hashCode { return Object.hash(enabled, identityUpdateBehavior, scimBaseUrl, seatDeprovision, secret, userDeprovision); } 
-@override String toString() { return 'AccessCentrifyScimConfig(enabled: $enabled, identityUpdateBehavior: $identityUpdateBehavior, scimBaseUrl: $scimBaseUrl, seatDeprovision: $seatDeprovision, secret: $secret, userDeprovision: $userDeprovision)'; } 
- }
+          userDeprovision == other.userDeprovision;}
+@override int get hashCode {return Object.hash(enabled, identityUpdateBehavior, scimBaseUrl, seatDeprovision, secret, userDeprovision);}
+@override String toString() {return 'AccessCentrifyScimConfig(enabled: $enabled, identityUpdateBehavior: $identityUpdateBehavior, scimBaseUrl: $scimBaseUrl, seatDeprovision: $seatDeprovision, secret: $secret, userDeprovision: $userDeprovision)';}
+}

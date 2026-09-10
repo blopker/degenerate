@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customer_sessions_request_components_customer_sheet_features.dart';@immutable final class PostCustomerSessionsRequestComponentsCustomerSheet {const PostCustomerSessionsRequestComponentsCustomerSheet({required this.enabled, this.features, });
 
-factory PostCustomerSessionsRequestComponentsCustomerSheet.fromJson(Map<String, dynamic> json) { return PostCustomerSessionsRequestComponentsCustomerSheet(
+factory PostCustomerSessionsRequestComponentsCustomerSheet.fromJson(Map<String, dynamic> json) {return PostCustomerSessionsRequestComponentsCustomerSheet(
   enabled: json['enabled'] as bool,
   features: json['features'] != null ? PostCustomerSessionsRequestComponentsCustomerSheetFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final bool enabled;
 
 final PostCustomerSessionsRequestComponentsCustomerSheetFeatures? features;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   if (features != null) 'features': features?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostCustomerSessionsRequestComponentsCustomerSheet copyWith({bool? enabled, PostCustomerSessionsRequestComponentsCustomerSheetFeatures? Function()? features, }) { return PostCustomerSessionsRequestComponentsCustomerSheet(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+PostCustomerSessionsRequestComponentsCustomerSheet copyWith({bool? enabled, PostCustomerSessionsRequestComponentsCustomerSheetFeatures? Function()? features, }) {return PostCustomerSessionsRequestComponentsCustomerSheet(
   enabled: enabled ?? this.enabled,
   features: features != null ? features() : this.features,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCustomerSessionsRequestComponentsCustomerSheet &&
           enabled == other.enabled &&
-          features == other.features; } 
-@override int get hashCode { return Object.hash(enabled, features); } 
-@override String toString() { return 'PostCustomerSessionsRequestComponentsCustomerSheet(enabled: $enabled, features: $features)'; } 
- }
+          features == other.features;}
+@override int get hashCode {return Object.hash(enabled, features);}
+@override String toString() {return 'PostCustomerSessionsRequestComponentsCustomerSheet(enabled: $enabled, features: $features)';}
+}

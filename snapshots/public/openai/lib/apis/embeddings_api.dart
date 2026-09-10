@@ -11,7 +11,7 @@ final class EmbeddingsApi with ApiExecutor {const EmbeddingsApi(this.apiConfig);
 /// Creates an embedding vector representing the input text.
 ///
 /// `POST /embeddings`
-Future<ApiResult<CreateEmbeddingResponse, Never>> createEmbedding({required CreateEmbeddingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateEmbeddingResponse, Never>> createEmbedding({required CreateEmbeddingRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -29,5 +29,5 @@ final json = jsonDecode(response.body);
 return CreateEmbeddingResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZonesCacheRulesBase {const ZonesCacheRulesBase({required this.id, this.modifiedOn = const Omittable.absent(), });
 
-factory ZonesCacheRulesBase.fromJson(Map<String, dynamic> json) { return ZonesCacheRulesBase(
+factory ZonesCacheRulesBase.fromJson(Map<String, dynamic> json) {return ZonesCacheRulesBase(
   id: json['id'] as String,
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Identifier of the zone setting.
 final String id;
@@ -13,19 +13,19 @@ final String id;
 /// Last time this setting was modified.
 final Omittable<DateTime?> modifiedOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-ZonesCacheRulesBase copyWith({String? id, Omittable<DateTime?>? modifiedOn, }) { return ZonesCacheRulesBase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
+ZonesCacheRulesBase copyWith({String? id, Omittable<DateTime?>? modifiedOn, }) {return ZonesCacheRulesBase(
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZonesCacheRulesBase &&
           id == other.id &&
-          modifiedOn == other.modifiedOn; } 
-@override int get hashCode { return Object.hash(id, modifiedOn); } 
-@override String toString() { return 'ZonesCacheRulesBase(id: $id, modifiedOn: $modifiedOn)'; } 
- }
+          modifiedOn == other.modifiedOn;}
+@override int get hashCode {return Object.hash(id, modifiedOn);}
+@override String toString() {return 'ZonesCacheRulesBase(id: $id, modifiedOn: $modifiedOn)';}
+}

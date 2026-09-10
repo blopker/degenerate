@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpxBank {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpxBank._(this.value);
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpxBank.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpxBank.fromJson(String json) {return switch (json) {
   'affin_bank' => affinBank,
   'agrobank' => agrobank,
   'alliance_bank' => allianceBank,
@@ -26,7 +26,7 @@ factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpxBank.fromJson(St
   'standard_chartered' => standardChartered,
   'uob' => uob,
   _ => PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpxBank._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpxBank affinBank = PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpxBank._('affin_bank');
 
@@ -76,32 +76,32 @@ static const List<PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpxBank> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpxBank && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpxBank($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpxBank && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpxBank($value)';}
+}
 @immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpx {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpx({required this.bank});
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpx.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpx(
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpx.fromJson(Map<String, dynamic> json) {return PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpx(
   bank: PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpxBank.fromJson(json['bank'] as String),
-); }
+);}
 
 final PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpxBank bank;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bank': bank.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bank'); } 
-PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpx copyWith({PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpxBank? bank}) { return PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpx(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bank');}
+PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpx copyWith({PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpxBank? bank}) {return PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpx(
   bank: bank ?? this.bank,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpx &&
-          bank == other.bank; } 
-@override int get hashCode { return bank.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpx(bank: $bank)'; } 
- }
+          bank == other.bank;}
+@override int get hashCode {return bank.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodDataFpx(bank: $bank)';}
+}

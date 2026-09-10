@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SinksResponseResultInfo {const SinksResponseResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, });
 
-factory SinksResponseResultInfo.fromJson(Map<String, dynamic> json) { return SinksResponseResultInfo(
+factory SinksResponseResultInfo.fromJson(Map<String, dynamic> json) {return SinksResponseResultInfo(
   count: (json['count'] as num).toDouble(),
   page: (json['page'] as num).toDouble(),
   perPage: (json['per_page'] as num).toDouble(),
   totalCount: (json['total_count'] as num).toDouble(),
-); }
+);}
 
 /// Indicates the number of items on current page.
 final double count;
@@ -21,28 +21,28 @@ final double perPage;
 /// Indicates the total number of items.
 final double totalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': count,
   'page': page,
   'per_page': perPage,
   'total_count': totalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('count') && json['count'] is num &&
       json.containsKey('page') && json['page'] is num &&
       json.containsKey('per_page') && json['per_page'] is num &&
-      json.containsKey('total_count') && json['total_count'] is num; } 
-SinksResponseResultInfo copyWith({double? count, double? page, double? perPage, double? totalCount, }) { return SinksResponseResultInfo(
+      json.containsKey('total_count') && json['total_count'] is num;}
+SinksResponseResultInfo copyWith({double? count, double? page, double? perPage, double? totalCount, }) {return SinksResponseResultInfo(
   count: count ?? this.count,
   page: page ?? this.page,
   perPage: perPage ?? this.perPage,
   totalCount: totalCount ?? this.totalCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SinksResponseResultInfo &&
           count == other.count &&
           page == other.page &&
           perPage == other.perPage &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(count, page, perPage, totalCount); } 
-@override String toString() { return 'SinksResponseResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount)'; } 
- }
+          totalCount == other.totalCount;}
+@override int get hashCode {return Object.hash(count, page, perPage, totalCount);}
+@override String toString() {return 'SinksResponseResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount)';}
+}

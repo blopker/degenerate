@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification {const ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification({this.files});
 
-factory ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification.fromJson(Map<String, dynamic> json) { return ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification(
+factory ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification.fromJson(Map<String, dynamic> json) {return ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification(
   files: (json['files'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final List<String>? files;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'files': ?files,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'files'}.contains(key)); } 
-ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification copyWith({List<String>? Function()? files}) { return ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'files'}.contains(key));}
+ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification copyWith({List<String>? Function()? files}) {return ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification(
   files: files != null ? files() : this.files,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification &&
-          listEquals(files, other.files); } 
-@override int get hashCode { return Object.hashAll(files ?? const []).hashCode; } 
-@override String toString() { return 'ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification(files: $files)'; } 
- }
+          listEquals(files, other.files);}
+@override int get hashCode {return Object.hashAll(files ?? const []).hashCode;}
+@override String toString() {return 'ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification(files: $files)';}
+}

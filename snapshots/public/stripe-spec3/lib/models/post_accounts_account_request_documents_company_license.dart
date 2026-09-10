@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountRequestDocumentsCompanyLicense {const PostAccountsAccountRequestDocumentsCompanyLicense({this.files});
 
-factory PostAccountsAccountRequestDocumentsCompanyLicense.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestDocumentsCompanyLicense(
+factory PostAccountsAccountRequestDocumentsCompanyLicense.fromJson(Map<String, dynamic> json) {return PostAccountsAccountRequestDocumentsCompanyLicense(
   files: (json['files'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final List<String>? files;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'files': ?files,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'files'}.contains(key)); } 
-PostAccountsAccountRequestDocumentsCompanyLicense copyWith({List<String>? Function()? files}) { return PostAccountsAccountRequestDocumentsCompanyLicense(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'files'}.contains(key));}
+PostAccountsAccountRequestDocumentsCompanyLicense copyWith({List<String>? Function()? files}) {return PostAccountsAccountRequestDocumentsCompanyLicense(
   files: files != null ? files() : this.files,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountRequestDocumentsCompanyLicense &&
-          listEquals(files, other.files); } 
-@override int get hashCode { return Object.hashAll(files ?? const []).hashCode; } 
-@override String toString() { return 'PostAccountsAccountRequestDocumentsCompanyLicense(files: $files)'; } 
- }
+          listEquals(files, other.files);}
+@override int get hashCode {return Object.hashAll(files ?? const []).hashCode;}
+@override String toString() {return 'PostAccountsAccountRequestDocumentsCompanyLicense(files: $files)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_allow_authenticate_via_warp.dart';import 'access_auth_domain.dart';import 'access_auto_redirect_to_identity.dart';import 'access_custom_pages.dart';import 'access_deny_unmatched_requests.dart';import 'access_is_ui_read_only.dart';import 'access_login_design.dart';import 'access_mfa_required_for_all_apps.dart';import 'access_name.dart';import 'access_org_mfa_config.dart';import 'access_session_duration.dart';import 'access_timestamp.dart';import 'access_ui_read_only_toggle_reason.dart';import 'access_user_seat_expiration_inactive_time.dart';import 'access_warp_auth_session_duration.dart';@immutable final class AccessOrganizations {const AccessOrganizations({this.allowAuthenticateViaWarp, this.authDomain, this.autoRedirectToIdentity, this.createdAt, this.customPages, this.denyUnmatchedRequests, this.denyUnmatchedRequestsExemptedZoneNames, this.isUiReadOnly, this.loginDesign, this.mfaConfig, this.mfaRequiredForAllApps, this.name, this.sessionDuration, this.uiReadOnlyToggleReason, this.updatedAt, this.userSeatExpirationInactiveTime, this.warpAuthSessionDuration, });
 
-factory AccessOrganizations.fromJson(Map<String, dynamic> json) { return AccessOrganizations(
+factory AccessOrganizations.fromJson(Map<String, dynamic> json) {return AccessOrganizations(
   allowAuthenticateViaWarp: json['allow_authenticate_via_warp'] != null ? AccessAllowAuthenticateViaWarp.fromJson(json['allow_authenticate_via_warp'] as bool) : null,
   authDomain: json['auth_domain'] != null ? AccessAuthDomain.fromJson(json['auth_domain'] as String) : null,
   autoRedirectToIdentity: json['auto_redirect_to_identity'] != null ? AccessAutoRedirectToIdentity.fromJson(json['auto_redirect_to_identity'] as bool) : null,
@@ -20,7 +20,7 @@ factory AccessOrganizations.fromJson(Map<String, dynamic> json) { return AccessO
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
   userSeatExpirationInactiveTime: json['user_seat_expiration_inactive_time'] != null ? AccessUserSeatExpirationInactiveTime.fromJson(json['user_seat_expiration_inactive_time'] as String) : null,
   warpAuthSessionDuration: json['warp_auth_session_duration'] != null ? AccessWarpAuthSessionDuration.fromJson(json['warp_auth_session_duration'] as String) : null,
-); }
+);}
 
 /// When set to true, users can authenticate via WARP for any application in your organization. Application settings will take precedence over this value.
 final AccessAllowAuthenticateViaWarp? allowAuthenticateViaWarp;
@@ -64,7 +64,7 @@ final AccessUserSeatExpirationInactiveTime? userSeatExpirationInactiveTime;
 
 final AccessWarpAuthSessionDuration? warpAuthSessionDuration;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowAuthenticateViaWarp != null) 'allow_authenticate_via_warp': allowAuthenticateViaWarp?.toJson(),
   if (authDomain != null) 'auth_domain': authDomain?.toJson(),
   if (autoRedirectToIdentity != null) 'auto_redirect_to_identity': autoRedirectToIdentity?.toJson(),
@@ -82,9 +82,9 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
   if (userSeatExpirationInactiveTime != null) 'user_seat_expiration_inactive_time': userSeatExpirationInactiveTime?.toJson(),
   if (warpAuthSessionDuration != null) 'warp_auth_session_duration': warpAuthSessionDuration?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_authenticate_via_warp', 'auth_domain', 'auto_redirect_to_identity', 'created_at', 'custom_pages', 'deny_unmatched_requests', 'deny_unmatched_requests_exempted_zone_names', 'is_ui_read_only', 'login_design', 'mfa_config', 'mfa_required_for_all_apps', 'name', 'session_duration', 'ui_read_only_toggle_reason', 'updated_at', 'user_seat_expiration_inactive_time', 'warp_auth_session_duration'}.contains(key)); } 
-AccessOrganizations copyWith({AccessAllowAuthenticateViaWarp? Function()? allowAuthenticateViaWarp, AccessAuthDomain? Function()? authDomain, AccessAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessTimestamp? Function()? createdAt, AccessCustomPages? Function()? customPages, AccessDenyUnmatchedRequests? Function()? denyUnmatchedRequests, List<String>? Function()? denyUnmatchedRequestsExemptedZoneNames, AccessIsUiReadOnly? Function()? isUiReadOnly, AccessLoginDesign? Function()? loginDesign, AccessOrgMfaConfig? Function()? mfaConfig, AccessMfaRequiredForAllApps? Function()? mfaRequiredForAllApps, AccessName? Function()? name, AccessSessionDuration? Function()? sessionDuration, AccessUiReadOnlyToggleReason? Function()? uiReadOnlyToggleReason, AccessTimestamp? Function()? updatedAt, AccessUserSeatExpirationInactiveTime? Function()? userSeatExpirationInactiveTime, AccessWarpAuthSessionDuration? Function()? warpAuthSessionDuration, }) { return AccessOrganizations(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allow_authenticate_via_warp', 'auth_domain', 'auto_redirect_to_identity', 'created_at', 'custom_pages', 'deny_unmatched_requests', 'deny_unmatched_requests_exempted_zone_names', 'is_ui_read_only', 'login_design', 'mfa_config', 'mfa_required_for_all_apps', 'name', 'session_duration', 'ui_read_only_toggle_reason', 'updated_at', 'user_seat_expiration_inactive_time', 'warp_auth_session_duration'}.contains(key));}
+AccessOrganizations copyWith({AccessAllowAuthenticateViaWarp? Function()? allowAuthenticateViaWarp, AccessAuthDomain? Function()? authDomain, AccessAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessTimestamp? Function()? createdAt, AccessCustomPages? Function()? customPages, AccessDenyUnmatchedRequests? Function()? denyUnmatchedRequests, List<String>? Function()? denyUnmatchedRequestsExemptedZoneNames, AccessIsUiReadOnly? Function()? isUiReadOnly, AccessLoginDesign? Function()? loginDesign, AccessOrgMfaConfig? Function()? mfaConfig, AccessMfaRequiredForAllApps? Function()? mfaRequiredForAllApps, AccessName? Function()? name, AccessSessionDuration? Function()? sessionDuration, AccessUiReadOnlyToggleReason? Function()? uiReadOnlyToggleReason, AccessTimestamp? Function()? updatedAt, AccessUserSeatExpirationInactiveTime? Function()? userSeatExpirationInactiveTime, AccessWarpAuthSessionDuration? Function()? warpAuthSessionDuration, }) {return AccessOrganizations(
   allowAuthenticateViaWarp: allowAuthenticateViaWarp != null ? allowAuthenticateViaWarp() : this.allowAuthenticateViaWarp,
   authDomain: authDomain != null ? authDomain() : this.authDomain,
   autoRedirectToIdentity: autoRedirectToIdentity != null ? autoRedirectToIdentity() : this.autoRedirectToIdentity,
@@ -102,8 +102,8 @@ AccessOrganizations copyWith({AccessAllowAuthenticateViaWarp? Function()? allowA
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   userSeatExpirationInactiveTime: userSeatExpirationInactiveTime != null ? userSeatExpirationInactiveTime() : this.userSeatExpirationInactiveTime,
   warpAuthSessionDuration: warpAuthSessionDuration != null ? warpAuthSessionDuration() : this.warpAuthSessionDuration,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessOrganizations &&
           allowAuthenticateViaWarp == other.allowAuthenticateViaWarp &&
           authDomain == other.authDomain &&
@@ -121,7 +121,7 @@ AccessOrganizations copyWith({AccessAllowAuthenticateViaWarp? Function()? allowA
           uiReadOnlyToggleReason == other.uiReadOnlyToggleReason &&
           updatedAt == other.updatedAt &&
           userSeatExpirationInactiveTime == other.userSeatExpirationInactiveTime &&
-          warpAuthSessionDuration == other.warpAuthSessionDuration; } 
-@override int get hashCode { return Object.hash(allowAuthenticateViaWarp, authDomain, autoRedirectToIdentity, createdAt, customPages, denyUnmatchedRequests, Object.hashAll(denyUnmatchedRequestsExemptedZoneNames ?? const []), isUiReadOnly, loginDesign, mfaConfig, mfaRequiredForAllApps, name, sessionDuration, uiReadOnlyToggleReason, updatedAt, userSeatExpirationInactiveTime, warpAuthSessionDuration); } 
-@override String toString() { return 'AccessOrganizations(allowAuthenticateViaWarp: $allowAuthenticateViaWarp, authDomain: $authDomain, autoRedirectToIdentity: $autoRedirectToIdentity, createdAt: $createdAt, customPages: $customPages, denyUnmatchedRequests: $denyUnmatchedRequests, denyUnmatchedRequestsExemptedZoneNames: $denyUnmatchedRequestsExemptedZoneNames, isUiReadOnly: $isUiReadOnly, loginDesign: $loginDesign, mfaConfig: $mfaConfig, mfaRequiredForAllApps: $mfaRequiredForAllApps, name: $name, sessionDuration: $sessionDuration, uiReadOnlyToggleReason: $uiReadOnlyToggleReason, updatedAt: $updatedAt, userSeatExpirationInactiveTime: $userSeatExpirationInactiveTime, warpAuthSessionDuration: $warpAuthSessionDuration)'; } 
- }
+          warpAuthSessionDuration == other.warpAuthSessionDuration;}
+@override int get hashCode {return Object.hash(allowAuthenticateViaWarp, authDomain, autoRedirectToIdentity, createdAt, customPages, denyUnmatchedRequests, Object.hashAll(denyUnmatchedRequestsExemptedZoneNames ?? const []), isUiReadOnly, loginDesign, mfaConfig, mfaRequiredForAllApps, name, sessionDuration, uiReadOnlyToggleReason, updatedAt, userSeatExpirationInactiveTime, warpAuthSessionDuration);}
+@override String toString() {return 'AccessOrganizations(allowAuthenticateViaWarp: $allowAuthenticateViaWarp, authDomain: $authDomain, autoRedirectToIdentity: $autoRedirectToIdentity, createdAt: $createdAt, customPages: $customPages, denyUnmatchedRequests: $denyUnmatchedRequests, denyUnmatchedRequestsExemptedZoneNames: $denyUnmatchedRequestsExemptedZoneNames, isUiReadOnly: $isUiReadOnly, loginDesign: $loginDesign, mfaConfig: $mfaConfig, mfaRequiredForAllApps: $mfaRequiredForAllApps, name: $name, sessionDuration: $sessionDuration, uiReadOnlyToggleReason: $uiReadOnlyToggleReason, updatedAt: $updatedAt, userSeatExpirationInactiveTime: $userSeatExpirationInactiveTime, warpAuthSessionDuration: $warpAuthSessionDuration)';}
+}

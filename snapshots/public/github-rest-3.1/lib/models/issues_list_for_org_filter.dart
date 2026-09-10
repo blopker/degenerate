@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesListForOrgFilter {const IssuesListForOrgFilter._(this.value);
 
-factory IssuesListForOrgFilter.fromJson(String json) { return switch (json) {
+factory IssuesListForOrgFilter.fromJson(String json) {return switch (json) {
   'assigned' => assigned,
   'created' => created,
   'mentioned' => mentioned,
@@ -10,7 +10,7 @@ factory IssuesListForOrgFilter.fromJson(String json) { return switch (json) {
   'repos' => repos,
   'all' => all,
   _ => IssuesListForOrgFilter._(json),
-}; }
+};}
 
 static const IssuesListForOrgFilter assigned = IssuesListForOrgFilter._('assigned');
 
@@ -28,11 +28,11 @@ static const List<IssuesListForOrgFilter> values = [assigned, created, mentioned
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuesListForOrgFilter && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuesListForOrgFilter($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuesListForOrgFilter && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuesListForOrgFilter($value)';}
+}

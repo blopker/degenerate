@@ -10,14 +10,14 @@ dynamic toJson() => value;
 /// Defines the action that the current WAF rule will perform when triggered. Applies to traditional (deny) WAF rules.
 @immutable final class WafManagedRulesModeDenyTraditional {const WafManagedRulesModeDenyTraditional._(this.value);
 
-factory WafManagedRulesModeDenyTraditional.fromJson(String json) { return switch (json) {
+factory WafManagedRulesModeDenyTraditional.fromJson(String json) {return switch (json) {
   'default' => $default,
   'disable' => disable,
   'simulate' => simulate,
   'block' => block,
   'challenge' => challenge,
   _ => WafManagedRulesModeDenyTraditional._(json),
-}; }
+};}
 
 static const WafManagedRulesModeDenyTraditional $default = WafManagedRulesModeDenyTraditional._('default');
 
@@ -33,18 +33,18 @@ static const List<WafManagedRulesModeDenyTraditional> values = [$default, disabl
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WafManagedRulesModeDenyTraditional && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WafManagedRulesModeDenyTraditional($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WafManagedRulesModeDenyTraditional && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WafManagedRulesModeDenyTraditional($value)';}
+}
 /// When triggered, traditional WAF rules cause the firewall to immediately act upon the request based on the configuration of the rule. A 'deny' rule will immediately respond to the request based on the configured rule action/mode (for example, 'block') and no other rules will be processed.
 @immutable final class WafManagedRulesTraditionalDenyRule {const WafManagedRulesTraditionalDenyRule({required this.description, required this.group, required this.id, required this.packageId, required this.priority, required this.allowedModes, required this.defaultMode, required this.mode, });
 
-factory WafManagedRulesTraditionalDenyRule.fromJson(Map<String, dynamic> json) { return WafManagedRulesTraditionalDenyRule(
+factory WafManagedRulesTraditionalDenyRule.fromJson(Map<String, dynamic> json) {return WafManagedRulesTraditionalDenyRule(
   description: WafManagedRulesSchemasDescription.fromJson(json['description'] as String),
   group: WafManagedRulesTraditionalDenyRuleGroup.fromJson(json['group'] as Map<String, dynamic>),
   id: WafManagedRulesRuleComponentsSchemasIdentifier.fromJson(json['id'] as String),
@@ -53,7 +53,7 @@ factory WafManagedRulesTraditionalDenyRule.fromJson(Map<String, dynamic> json) {
   allowedModes: (json['allowed_modes'] as List<dynamic>).map((e) => WafManagedRulesModeDenyTraditional.fromJson(e as String)).toList(),
   defaultMode: json['default_mode'] != null ? WafManagedRulesDefaultMode.fromJson(json['default_mode'] as dynamic) : null,
   mode: WafManagedRulesModeDenyTraditional.fromJson(json['mode'] as String),
-); }
+);}
 
 /// Defines the public description of the WAF rule.
 final WafManagedRulesSchemasDescription description;
@@ -79,7 +79,7 @@ final WafManagedRulesDefaultMode? defaultMode;
 /// Defines the action that the current WAF rule will perform when triggered. Applies to traditional (deny) WAF rules.
 final WafManagedRulesModeDenyTraditional mode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description.toJson(),
   'group': group.toJson(),
   'id': id.toJson(),
@@ -88,16 +88,16 @@ Map<String, dynamic> toJson() { return {
   'allowed_modes': allowedModes.map((e) => e.toJson()).toList(),
   'default_mode': defaultMode?.toJson(),
   'mode': mode.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') &&
       json.containsKey('group') &&
       json.containsKey('id') &&
       json.containsKey('package_id') &&
       json.containsKey('priority') &&
       json.containsKey('allowed_modes') &&
       json.containsKey('default_mode') &&
-      json.containsKey('mode'); } 
-WafManagedRulesTraditionalDenyRule copyWith({WafManagedRulesSchemasDescription? description, WafManagedRulesTraditionalDenyRuleGroup? group, WafManagedRulesRuleComponentsSchemasIdentifier? id, WafManagedRulesIdentifier? packageId, WafManagedRulesPriority? priority, List<WafManagedRulesModeDenyTraditional>? allowedModes, WafManagedRulesDefaultMode? Function()? defaultMode, WafManagedRulesModeDenyTraditional? mode, }) { return WafManagedRulesTraditionalDenyRule(
+      json.containsKey('mode');}
+WafManagedRulesTraditionalDenyRule copyWith({WafManagedRulesSchemasDescription? description, WafManagedRulesTraditionalDenyRuleGroup? group, WafManagedRulesRuleComponentsSchemasIdentifier? id, WafManagedRulesIdentifier? packageId, WafManagedRulesPriority? priority, List<WafManagedRulesModeDenyTraditional>? allowedModes, WafManagedRulesDefaultMode? Function()? defaultMode, WafManagedRulesModeDenyTraditional? mode, }) {return WafManagedRulesTraditionalDenyRule(
   description: description ?? this.description,
   group: group ?? this.group,
   id: id ?? this.id,
@@ -106,8 +106,8 @@ WafManagedRulesTraditionalDenyRule copyWith({WafManagedRulesSchemasDescription? 
   allowedModes: allowedModes ?? this.allowedModes,
   defaultMode: defaultMode != null ? defaultMode() : this.defaultMode,
   mode: mode ?? this.mode,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WafManagedRulesTraditionalDenyRule &&
           description == other.description &&
           group == other.group &&
@@ -116,7 +116,7 @@ WafManagedRulesTraditionalDenyRule copyWith({WafManagedRulesSchemasDescription? 
           priority == other.priority &&
           listEquals(allowedModes, other.allowedModes) &&
           defaultMode == other.defaultMode &&
-          mode == other.mode; } 
-@override int get hashCode { return Object.hash(description, group, id, packageId, priority, Object.hashAll(allowedModes), defaultMode, mode); } 
-@override String toString() { return 'WafManagedRulesTraditionalDenyRule(description: $description, group: $group, id: $id, packageId: $packageId, priority: $priority, allowedModes: $allowedModes, defaultMode: $defaultMode, mode: $mode)'; } 
- }
+          mode == other.mode;}
+@override int get hashCode {return Object.hash(description, group, id, packageId, priority, Object.hashAll(allowedModes), defaultMode, mode);}
+@override String toString() {return 'WafManagedRulesTraditionalDenyRule(description: $description, group: $group, id: $id, packageId: $packageId, priority: $priority, allowedModes: $allowedModes, defaultMode: $defaultMode, mode: $mode)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'label_selector.dart';import 'typed_local_object_reference.dart';import 'typed_object_reference.dart';import 'volume_resource_requirements.dart';/// PersistentVolumeClaimSpec describes the common attributes of storage devices and allows a Source for provider-specific attributes
 @immutable final class PersistentVolumeClaimSpec {const PersistentVolumeClaimSpec({this.accessModes, this.dataSource, this.dataSourceRef, this.resources, this.selector, this.storageClassName, this.volumeAttributesClassName, this.volumeMode, this.volumeName, });
 
-factory PersistentVolumeClaimSpec.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaimSpec(
+factory PersistentVolumeClaimSpec.fromJson(Map<String, dynamic> json) {return PersistentVolumeClaimSpec(
   accessModes: (json['accessModes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   dataSource: json['dataSource'] != null ? TypedLocalObjectReference.fromJson(json['dataSource'] as Map<String, dynamic>) : null,
   dataSourceRef: json['dataSourceRef'] != null ? TypedObjectReference.fromJson(json['dataSourceRef'] as Map<String, dynamic>) : null,
@@ -13,7 +13,7 @@ factory PersistentVolumeClaimSpec.fromJson(Map<String, dynamic> json) { return P
   volumeAttributesClassName: json['volumeAttributesClassName'] as String?,
   volumeMode: json['volumeMode'] as String?,
   volumeName: json['volumeName'] as String?,
-); }
+);}
 
 /// accessModes contains the desired access modes the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1
 final List<String>? accessModes;
@@ -49,7 +49,7 @@ final String? volumeMode;
 /// volumeName is the binding reference to the PersistentVolume backing this claim.
 final String? volumeName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accessModes': ?accessModes,
   if (dataSource != null) 'dataSource': dataSource?.toJson(),
   if (dataSourceRef != null) 'dataSourceRef': dataSourceRef?.toJson(),
@@ -59,9 +59,9 @@ Map<String, dynamic> toJson() { return {
   'volumeAttributesClassName': ?volumeAttributesClassName,
   'volumeMode': ?volumeMode,
   'volumeName': ?volumeName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessModes', 'dataSource', 'dataSourceRef', 'resources', 'selector', 'storageClassName', 'volumeAttributesClassName', 'volumeMode', 'volumeName'}.contains(key)); } 
-PersistentVolumeClaimSpec copyWith({List<String>? Function()? accessModes, TypedLocalObjectReference? Function()? dataSource, TypedObjectReference? Function()? dataSourceRef, VolumeResourceRequirements? Function()? resources, LabelSelector? Function()? selector, String? Function()? storageClassName, String? Function()? volumeAttributesClassName, String? Function()? volumeMode, String? Function()? volumeName, }) { return PersistentVolumeClaimSpec(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'accessModes', 'dataSource', 'dataSourceRef', 'resources', 'selector', 'storageClassName', 'volumeAttributesClassName', 'volumeMode', 'volumeName'}.contains(key));}
+PersistentVolumeClaimSpec copyWith({List<String>? Function()? accessModes, TypedLocalObjectReference? Function()? dataSource, TypedObjectReference? Function()? dataSourceRef, VolumeResourceRequirements? Function()? resources, LabelSelector? Function()? selector, String? Function()? storageClassName, String? Function()? volumeAttributesClassName, String? Function()? volumeMode, String? Function()? volumeName, }) {return PersistentVolumeClaimSpec(
   accessModes: accessModes != null ? accessModes() : this.accessModes,
   dataSource: dataSource != null ? dataSource() : this.dataSource,
   dataSourceRef: dataSourceRef != null ? dataSourceRef() : this.dataSourceRef,
@@ -71,8 +71,8 @@ PersistentVolumeClaimSpec copyWith({List<String>? Function()? accessModes, Typed
   volumeAttributesClassName: volumeAttributesClassName != null ? volumeAttributesClassName() : this.volumeAttributesClassName,
   volumeMode: volumeMode != null ? volumeMode() : this.volumeMode,
   volumeName: volumeName != null ? volumeName() : this.volumeName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PersistentVolumeClaimSpec &&
           listEquals(accessModes, other.accessModes) &&
           dataSource == other.dataSource &&
@@ -82,7 +82,7 @@ PersistentVolumeClaimSpec copyWith({List<String>? Function()? accessModes, Typed
           storageClassName == other.storageClassName &&
           volumeAttributesClassName == other.volumeAttributesClassName &&
           volumeMode == other.volumeMode &&
-          volumeName == other.volumeName; } 
-@override int get hashCode { return Object.hash(Object.hashAll(accessModes ?? const []), dataSource, dataSourceRef, resources, selector, storageClassName, volumeAttributesClassName, volumeMode, volumeName); } 
-@override String toString() { return 'PersistentVolumeClaimSpec(accessModes: $accessModes, dataSource: $dataSource, dataSourceRef: $dataSourceRef, resources: $resources, selector: $selector, storageClassName: $storageClassName, volumeAttributesClassName: $volumeAttributesClassName, volumeMode: $volumeMode, volumeName: $volumeName)'; } 
- }
+          volumeName == other.volumeName;}
+@override int get hashCode {return Object.hash(Object.hashAll(accessModes ?? const []), dataSource, dataSourceRef, resources, selector, storageClassName, volumeAttributesClassName, volumeMode, volumeName);}
+@override String toString() {return 'PersistentVolumeClaimSpec(accessModes: $accessModes, dataSource: $dataSource, dataSourceRef: $dataSourceRef, resources: $resources, selector: $selector, storageClassName: $storageClassName, volumeAttributesClassName: $volumeAttributesClassName, volumeMode: $volumeMode, volumeName: $volumeName)';}
+}

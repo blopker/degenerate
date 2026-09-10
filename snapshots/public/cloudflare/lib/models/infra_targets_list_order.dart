@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InfraTargetsListOrder {const InfraTargetsListOrder._(this.value);
 
-factory InfraTargetsListOrder.fromJson(String json) { return switch (json) {
+factory InfraTargetsListOrder.fromJson(String json) {return switch (json) {
   'hostname' => hostname,
   'created_at' => createdAt,
   _ => InfraTargetsListOrder._(json),
-}; }
+};}
 
 static const InfraTargetsListOrder hostname = InfraTargetsListOrder._('hostname');
 
@@ -16,11 +16,11 @@ static const List<InfraTargetsListOrder> values = [hostname, createdAt];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InfraTargetsListOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InfraTargetsListOrder($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InfraTargetsListOrder && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InfraTargetsListOrder($value)';}
+}

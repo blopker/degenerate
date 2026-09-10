@@ -4,13 +4,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Used only for `s
 /// 
 @immutable final class SemanticVadEagerness {const SemanticVadEagerness._(this.value);
 
-factory SemanticVadEagerness.fromJson(String json) { return switch (json) {
+factory SemanticVadEagerness.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   'auto' => auto,
   _ => SemanticVadEagerness._(json),
-}; }
+};}
 
 static const SemanticVadEagerness low = SemanticVadEagerness._('low');
 
@@ -24,23 +24,23 @@ static const List<SemanticVadEagerness> values = [low, medium, high, auto];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SemanticVadEagerness && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SemanticVadEagerness($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SemanticVadEagerness && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SemanticVadEagerness($value)';}
+}
 /// Server-side semantic turn detection which uses a model to determine when the user has finished speaking.
 @immutable final class SemanticVad {const SemanticVad({required this.type, this.eagerness, this.createResponse, this.interruptResponse, });
 
-factory SemanticVad.fromJson(Map<String, dynamic> json) { return SemanticVad(
+factory SemanticVad.fromJson(Map<String, dynamic> json) {return SemanticVad(
   type: json['type'] as String,
   eagerness: json['eagerness'] != null ? SemanticVadEagerness.fromJson(json['eagerness'] as String) : null,
   createResponse: json['create_response'] as bool?,
   interruptResponse: json['interrupt_response'] as bool?,
-); }
+);}
 
 /// Type of turn detection, `semantic_vad` to turn on Semantic VAD.
 /// 
@@ -60,30 +60,30 @@ final bool? createResponse;
 final bool? interruptResponse;
 
 /// The value with the schema default applied when absent.
-SemanticVadEagerness get eagernessOrDefault { return eagerness ?? SemanticVadEagerness.fromJson('auto'); } 
+SemanticVadEagerness get eagernessOrDefault {return eagerness ?? SemanticVadEagerness.fromJson('auto');}
 /// The value with the schema default applied when absent.
-bool get createResponseOrDefault { return createResponse ?? true; } 
+bool get createResponseOrDefault {return createResponse ?? true;}
 /// The value with the schema default applied when absent.
-bool get interruptResponseOrDefault { return interruptResponse ?? true; } 
-Map<String, dynamic> toJson() { return {
+bool get interruptResponseOrDefault {return interruptResponse ?? true;}
+Map<String, dynamic> toJson() {return {
   'type': type,
   if (eagerness != null) 'eagerness': eagerness?.toJson(),
   'create_response': ?createResponse,
   'interrupt_response': ?interruptResponse,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-SemanticVad copyWith({String? type, SemanticVadEagerness? Function()? eagerness, bool? Function()? createResponse, bool? Function()? interruptResponse, }) { return SemanticVad(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+SemanticVad copyWith({String? type, SemanticVadEagerness? Function()? eagerness, bool? Function()? createResponse, bool? Function()? interruptResponse, }) {return SemanticVad(
   type: type ?? this.type,
   eagerness: eagerness != null ? eagerness() : this.eagerness,
   createResponse: createResponse != null ? createResponse() : this.createResponse,
   interruptResponse: interruptResponse != null ? interruptResponse() : this.interruptResponse,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SemanticVad &&
           type == other.type &&
           eagerness == other.eagerness &&
           createResponse == other.createResponse &&
-          interruptResponse == other.interruptResponse; } 
-@override int get hashCode { return Object.hash(type, eagerness, createResponse, interruptResponse); } 
-@override String toString() { return 'SemanticVad(type: $type, eagerness: $eagerness, createResponse: $createResponse, interruptResponse: $interruptResponse)'; } 
- }
+          interruptResponse == other.interruptResponse;}
+@override int get hashCode {return Object.hash(type, eagerness, createResponse, interruptResponse);}
+@override String toString() {return 'SemanticVad(type: $type, eagerness: $eagerness, createResponse: $createResponse, interruptResponse: $interruptResponse)';}
+}

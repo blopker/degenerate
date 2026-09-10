@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_request_settings_bacs_debit_payments.dart';import 'post_accounts_request_settings_branding.dart';import 'post_accounts_request_settings_card_issuing.dart';import 'post_accounts_request_settings_card_payments.dart';import 'post_accounts_request_settings_invoices.dart';import 'post_accounts_request_settings_payments.dart';import 'post_accounts_request_settings_payouts.dart';import 'post_accounts_request_settings_treasury.dart';/// Options for customizing how the account functions within Stripe.
 @immutable final class PostAccountsRequestSettings {const PostAccountsRequestSettings({this.bacsDebitPayments, this.branding, this.cardIssuing, this.cardPayments, this.invoices, this.payments, this.payouts, this.treasury, });
 
-factory PostAccountsRequestSettings.fromJson(Map<String, dynamic> json) { return PostAccountsRequestSettings(
+factory PostAccountsRequestSettings.fromJson(Map<String, dynamic> json) {return PostAccountsRequestSettings(
   bacsDebitPayments: json['bacs_debit_payments'] != null ? PostAccountsRequestSettingsBacsDebitPayments.fromJson(json['bacs_debit_payments'] as Map<String, dynamic>) : null,
   branding: json['branding'] != null ? PostAccountsRequestSettingsBranding.fromJson(json['branding'] as Map<String, dynamic>) : null,
   cardIssuing: json['card_issuing'] != null ? PostAccountsRequestSettingsCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory PostAccountsRequestSettings.fromJson(Map<String, dynamic> json) { return
   payments: json['payments'] != null ? PostAccountsRequestSettingsPayments.fromJson(json['payments'] as Map<String, dynamic>) : null,
   payouts: json['payouts'] != null ? PostAccountsRequestSettingsPayouts.fromJson(json['payouts'] as Map<String, dynamic>) : null,
   treasury: json['treasury'] != null ? PostAccountsRequestSettingsTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostAccountsRequestSettingsBacsDebitPayments? bacsDebitPayments;
 
@@ -30,7 +30,7 @@ final PostAccountsRequestSettingsPayouts? payouts;
 
 final PostAccountsRequestSettingsTreasury? treasury;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bacsDebitPayments != null) 'bacs_debit_payments': bacsDebitPayments?.toJson(),
   if (branding != null) 'branding': branding?.toJson(),
   if (cardIssuing != null) 'card_issuing': cardIssuing?.toJson(),
@@ -39,9 +39,9 @@ Map<String, dynamic> toJson() { return {
   if (payments != null) 'payments': payments?.toJson(),
   if (payouts != null) 'payouts': payouts?.toJson(),
   if (treasury != null) 'treasury': treasury?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bacs_debit_payments', 'branding', 'card_issuing', 'card_payments', 'invoices', 'payments', 'payouts', 'treasury'}.contains(key)); } 
-PostAccountsRequestSettings copyWith({PostAccountsRequestSettingsBacsDebitPayments? Function()? bacsDebitPayments, PostAccountsRequestSettingsBranding? Function()? branding, PostAccountsRequestSettingsCardIssuing? Function()? cardIssuing, PostAccountsRequestSettingsCardPayments? Function()? cardPayments, PostAccountsRequestSettingsInvoices? Function()? invoices, PostAccountsRequestSettingsPayments? Function()? payments, PostAccountsRequestSettingsPayouts? Function()? payouts, PostAccountsRequestSettingsTreasury? Function()? treasury, }) { return PostAccountsRequestSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bacs_debit_payments', 'branding', 'card_issuing', 'card_payments', 'invoices', 'payments', 'payouts', 'treasury'}.contains(key));}
+PostAccountsRequestSettings copyWith({PostAccountsRequestSettingsBacsDebitPayments? Function()? bacsDebitPayments, PostAccountsRequestSettingsBranding? Function()? branding, PostAccountsRequestSettingsCardIssuing? Function()? cardIssuing, PostAccountsRequestSettingsCardPayments? Function()? cardPayments, PostAccountsRequestSettingsInvoices? Function()? invoices, PostAccountsRequestSettingsPayments? Function()? payments, PostAccountsRequestSettingsPayouts? Function()? payouts, PostAccountsRequestSettingsTreasury? Function()? treasury, }) {return PostAccountsRequestSettings(
   bacsDebitPayments: bacsDebitPayments != null ? bacsDebitPayments() : this.bacsDebitPayments,
   branding: branding != null ? branding() : this.branding,
   cardIssuing: cardIssuing != null ? cardIssuing() : this.cardIssuing,
@@ -50,8 +50,8 @@ PostAccountsRequestSettings copyWith({PostAccountsRequestSettingsBacsDebitPaymen
   payments: payments != null ? payments() : this.payments,
   payouts: payouts != null ? payouts() : this.payouts,
   treasury: treasury != null ? treasury() : this.treasury,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsRequestSettings &&
           bacsDebitPayments == other.bacsDebitPayments &&
           branding == other.branding &&
@@ -60,7 +60,7 @@ PostAccountsRequestSettings copyWith({PostAccountsRequestSettingsBacsDebitPaymen
           invoices == other.invoices &&
           payments == other.payments &&
           payouts == other.payouts &&
-          treasury == other.treasury; } 
-@override int get hashCode { return Object.hash(bacsDebitPayments, branding, cardIssuing, cardPayments, invoices, payments, payouts, treasury); } 
-@override String toString() { return 'PostAccountsRequestSettings(bacsDebitPayments: $bacsDebitPayments, branding: $branding, cardIssuing: $cardIssuing, cardPayments: $cardPayments, invoices: $invoices, payments: $payments, payouts: $payouts, treasury: $treasury)'; } 
- }
+          treasury == other.treasury;}
+@override int get hashCode {return Object.hash(bacsDebitPayments, branding, cardIssuing, cardPayments, invoices, payments, payouts, treasury);}
+@override String toString() {return 'PostAccountsRequestSettings(bacsDebitPayments: $bacsDebitPayments, branding: $branding, cardIssuing: $cardIssuing, cardPayments: $cardPayments, invoices: $invoices, payments: $payments, payouts: $payouts, treasury: $treasury)';}
+}

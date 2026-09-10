@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEvalRunOutputItemsStatus {const GetEvalRunOutputItemsStatus._(this.value);
 
-factory GetEvalRunOutputItemsStatus.fromJson(String json) { return switch (json) {
+factory GetEvalRunOutputItemsStatus.fromJson(String json) {return switch (json) {
   'fail' => fail,
   'pass' => pass,
   _ => GetEvalRunOutputItemsStatus._(json),
-}; }
+};}
 
 static const GetEvalRunOutputItemsStatus fail = GetEvalRunOutputItemsStatus._('fail');
 
@@ -16,11 +16,11 @@ static const List<GetEvalRunOutputItemsStatus> values = [fail, pass];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetEvalRunOutputItemsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetEvalRunOutputItemsStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetEvalRunOutputItemsStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetEvalRunOutputItemsStatus($value)';}
+}

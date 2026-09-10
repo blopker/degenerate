@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_oidc_saas_app_custom_claims_source.dart';/// The scope of the claim.
 @immutable final class AccessOidcSaasAppCustomClaimsScope {const AccessOidcSaasAppCustomClaimsScope._(this.value);
 
-factory AccessOidcSaasAppCustomClaimsScope.fromJson(String json) { return switch (json) {
+factory AccessOidcSaasAppCustomClaimsScope.fromJson(String json) {return switch (json) {
   'groups' => groups,
   'profile' => profile,
   'email' => email,
   'openid' => openid,
   _ => AccessOidcSaasAppCustomClaimsScope._(json),
-}; }
+};}
 
 static const AccessOidcSaasAppCustomClaimsScope groups = AccessOidcSaasAppCustomClaimsScope._('groups');
 
@@ -23,22 +23,22 @@ static const List<AccessOidcSaasAppCustomClaimsScope> values = [groups, profile,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessOidcSaasAppCustomClaimsScope && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessOidcSaasAppCustomClaimsScope($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessOidcSaasAppCustomClaimsScope && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessOidcSaasAppCustomClaimsScope($value)';}
+}
 @immutable final class AccessOidcSaasAppCustomClaims {const AccessOidcSaasAppCustomClaims({this.name, this.$required, this.scope, this.source, });
 
-factory AccessOidcSaasAppCustomClaims.fromJson(Map<String, dynamic> json) { return AccessOidcSaasAppCustomClaims(
+factory AccessOidcSaasAppCustomClaims.fromJson(Map<String, dynamic> json) {return AccessOidcSaasAppCustomClaims(
   name: json['name'] as String?,
   $required: json['required'] as bool?,
   scope: json['scope'] != null ? AccessOidcSaasAppCustomClaimsScope.fromJson(json['scope'] as String) : null,
   source: json['source'] != null ? AccessOidcSaasAppCustomClaimsSource.fromJson(json['source'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The name of the claim.
 final String? name;
@@ -51,25 +51,25 @@ final AccessOidcSaasAppCustomClaimsScope? scope;
 
 final AccessOidcSaasAppCustomClaimsSource? source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'required': ?$required,
   if (scope != null) 'scope': scope?.toJson(),
   if (source != null) 'source': source?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'required', 'scope', 'source'}.contains(key)); } 
-AccessOidcSaasAppCustomClaims copyWith({String? Function()? name, bool? Function()? $required, AccessOidcSaasAppCustomClaimsScope? Function()? scope, AccessOidcSaasAppCustomClaimsSource? Function()? source, }) { return AccessOidcSaasAppCustomClaims(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'required', 'scope', 'source'}.contains(key));}
+AccessOidcSaasAppCustomClaims copyWith({String? Function()? name, bool? Function()? $required, AccessOidcSaasAppCustomClaimsScope? Function()? scope, AccessOidcSaasAppCustomClaimsSource? Function()? source, }) {return AccessOidcSaasAppCustomClaims(
   name: name != null ? name() : this.name,
   $required: $required != null ? $required() : this.$required,
   scope: scope != null ? scope() : this.scope,
   source: source != null ? source() : this.source,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessOidcSaasAppCustomClaims &&
           name == other.name &&
           $required == other.$required &&
           scope == other.scope &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(name, $required, scope, source); } 
-@override String toString() { return 'AccessOidcSaasAppCustomClaims(name: $name, \$required: ${$required}, scope: $scope, source: $source)'; } 
- }
+          source == other.source;}
+@override int get hashCode {return Object.hash(name, $required, scope, source);}
+@override String toString() {return 'AccessOidcSaasAppCustomClaims(name: $name, \$required: ${$required}, scope: $scope, source: $source)';}
+}

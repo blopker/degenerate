@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateFineTuningJobRequestModelVariant2 {const CreateFineTuningJobRequestModelVariant2._(this.value);
 
-factory CreateFineTuningJobRequestModelVariant2.fromJson(String json) { return switch (json) {
+factory CreateFineTuningJobRequestModelVariant2.fromJson(String json) {return switch (json) {
   'babbage-002' => babbage002,
   'davinci-002' => davinci002,
   'gpt-3.5-turbo' => gpt35Turbo,
   'gpt-4o-mini' => gpt4oMini,
   _ => CreateFineTuningJobRequestModelVariant2._(json),
-}; }
+};}
 
 static const CreateFineTuningJobRequestModelVariant2 babbage002 = CreateFineTuningJobRequestModelVariant2._('babbage-002');
 
@@ -22,14 +22,14 @@ static const List<CreateFineTuningJobRequestModelVariant2> values = [babbage002,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateFineTuningJobRequestModelVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateFineTuningJobRequestModelVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateFineTuningJobRequestModelVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateFineTuningJobRequestModelVariant2($value)';}
+}
 /// The name of the model to fine-tune. You can select one of the
 /// [supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).
 /// 

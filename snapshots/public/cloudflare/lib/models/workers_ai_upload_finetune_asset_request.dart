@@ -2,28 +2,28 @@
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiUploadFinetuneAssetRequest {const WorkersAiUploadFinetuneAssetRequest({this.file, this.fileName, });
 
-factory WorkersAiUploadFinetuneAssetRequest.fromJson(Map<String, dynamic> json) { return WorkersAiUploadFinetuneAssetRequest(
+factory WorkersAiUploadFinetuneAssetRequest.fromJson(Map<String, dynamic> json) {return WorkersAiUploadFinetuneAssetRequest(
   file: json['file'] != null ? base64Decode(json['file'] as String) : null,
   fileName: json['file_name'] as String?,
-); }
+);}
 
 final Uint8List? file;
 
 final String? fileName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (file != null) 'file': switch (file) { final bytes? => base64Encode(bytes), _ => null },
   'file_name': ?fileName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file', 'file_name'}.contains(key)); } 
-WorkersAiUploadFinetuneAssetRequest copyWith({Uint8List? Function()? file, String? Function()? fileName, }) { return WorkersAiUploadFinetuneAssetRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'file', 'file_name'}.contains(key));}
+WorkersAiUploadFinetuneAssetRequest copyWith({Uint8List? Function()? file, String? Function()? fileName, }) {return WorkersAiUploadFinetuneAssetRequest(
   file: file != null ? file() : this.file,
   fileName: fileName != null ? fileName() : this.fileName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersAiUploadFinetuneAssetRequest &&
           listEquals(file, other.file) &&
-          fileName == other.fileName; } 
-@override int get hashCode { return Object.hash(Object.hashAll(file ?? const []), fileName); } 
-@override String toString() { return 'WorkersAiUploadFinetuneAssetRequest(file: $file, fileName: $fileName)'; } 
- }
+          fileName == other.fileName;}
+@override int get hashCode {return Object.hash(Object.hashAll(file ?? const []), fileName);}
+@override String toString() {return 'WorkersAiUploadFinetuneAssetRequest(file: $file, fileName: $fileName)';}
+}

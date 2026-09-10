@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullRequestReviewCommentLinksSelf {const PullRequestReviewCommentLinksSelf({required this.href});
 
-factory PullRequestReviewCommentLinksSelf.fromJson(Map<String, dynamic> json) { return PullRequestReviewCommentLinksSelf(
+factory PullRequestReviewCommentLinksSelf.fromJson(Map<String, dynamic> json) {return PullRequestReviewCommentLinksSelf(
   href: Uri.parse(json['href'] as String),
-); }
+);}
 
 final Uri href;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'href': href.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String; } 
-PullRequestReviewCommentLinksSelf copyWith({Uri? href}) { return PullRequestReviewCommentLinksSelf(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('href') && json['href'] is String;}
+PullRequestReviewCommentLinksSelf copyWith({Uri? href}) {return PullRequestReviewCommentLinksSelf(
   href: href ?? this.href,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PullRequestReviewCommentLinksSelf &&
-          href == other.href; } 
-@override int get hashCode { return href.hashCode; } 
-@override String toString() { return 'PullRequestReviewCommentLinksSelf(href: $href)'; } 
- }
+          href == other.href;}
+@override int get hashCode {return href.hashCode;}
+@override String toString() {return 'PullRequestReviewCommentLinksSelf(href: $href)';}
+}

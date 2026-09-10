@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_commit_comment_created_comment_reactions.dart';import 'webhook_commit_comment_created_comment_user.dart';/// How the author is associated with the repository.
 @immutable final class WebhookCommitCommentCreatedCommentAuthorAssociation {const WebhookCommitCommentCreatedCommentAuthorAssociation._(this.value);
 
-factory WebhookCommitCommentCreatedCommentAuthorAssociation.fromJson(String json) { return switch (json) {
+factory WebhookCommitCommentCreatedCommentAuthorAssociation.fromJson(String json) {return switch (json) {
   'COLLABORATOR' => collaborator,
   'CONTRIBUTOR' => contributor,
   'FIRST_TIMER' => firstTimer,
@@ -13,7 +13,7 @@ factory WebhookCommitCommentCreatedCommentAuthorAssociation.fromJson(String json
   'NONE' => none,
   'OWNER' => owner,
   _ => WebhookCommitCommentCreatedCommentAuthorAssociation._(json),
-}; }
+};}
 
 static const WebhookCommitCommentCreatedCommentAuthorAssociation collaborator = WebhookCommitCommentCreatedCommentAuthorAssociation._('COLLABORATOR');
 
@@ -35,18 +35,18 @@ static const List<WebhookCommitCommentCreatedCommentAuthorAssociation> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCommitCommentCreatedCommentAuthorAssociation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCommitCommentCreatedCommentAuthorAssociation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCommitCommentCreatedCommentAuthorAssociation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCommitCommentCreatedCommentAuthorAssociation($value)';}
+}
 /// The [commit comment](${externalDocsUpapp/api/description/components/schemas/webhooks/issue-comment-created.yamlrl}/rest/commits/comments#get-a-commit-comment) resource.
 @immutable final class WebhookCommitCommentCreatedComment {const WebhookCommitCommentCreatedComment({required this.authorAssociation, required this.body, required this.commitId, required this.createdAt, required this.htmlUrl, required this.id, required this.line, required this.nodeId, required this.path, required this.position, required this.updatedAt, required this.url, required this.user, this.reactions, });
 
-factory WebhookCommitCommentCreatedComment.fromJson(Map<String, dynamic> json) { return WebhookCommitCommentCreatedComment(
+factory WebhookCommitCommentCreatedComment.fromJson(Map<String, dynamic> json) {return WebhookCommitCommentCreatedComment(
   authorAssociation: WebhookCommitCommentCreatedCommentAuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String,
   commitId: json['commit_id'] as String,
@@ -61,7 +61,7 @@ factory WebhookCommitCommentCreatedComment.fromJson(Map<String, dynamic> json) {
   updatedAt: json['updated_at'] as String,
   url: Uri.parse(json['url'] as String),
   user: json['user'] != null ? WebhookCommitCommentCreatedCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// How the author is associated with the repository.
 final WebhookCommitCommentCreatedCommentAuthorAssociation authorAssociation;
@@ -99,7 +99,7 @@ final Uri url;
 
 final WebhookCommitCommentCreatedCommentUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author_association': authorAssociation.toJson(),
   'body': body,
   'commit_id': commitId,
@@ -114,8 +114,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt,
   'url': url.toString(),
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('author_association') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('author_association') &&
       json.containsKey('body') && json['body'] is String &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -127,8 +127,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('position') && (json['position'] == null || json['position'] is num) &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('user'); } 
-WebhookCommitCommentCreatedComment copyWith({WebhookCommitCommentCreatedCommentAuthorAssociation? authorAssociation, String? body, String? commitId, String? createdAt, Uri? htmlUrl, int? id, int? Function()? line, String? nodeId, String? Function()? path, int? Function()? position, WebhookCommitCommentCreatedCommentReactions? Function()? reactions, String? updatedAt, Uri? url, WebhookCommitCommentCreatedCommentUser? Function()? user, }) { return WebhookCommitCommentCreatedComment(
+      json.containsKey('user');}
+WebhookCommitCommentCreatedComment copyWith({WebhookCommitCommentCreatedCommentAuthorAssociation? authorAssociation, String? body, String? commitId, String? createdAt, Uri? htmlUrl, int? id, int? Function()? line, String? nodeId, String? Function()? path, int? Function()? position, WebhookCommitCommentCreatedCommentReactions? Function()? reactions, String? updatedAt, Uri? url, WebhookCommitCommentCreatedCommentUser? Function()? user, }) {return WebhookCommitCommentCreatedComment(
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
   commitId: commitId ?? this.commitId,
@@ -143,8 +143,8 @@ WebhookCommitCommentCreatedComment copyWith({WebhookCommitCommentCreatedCommentA
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
   user: user != null ? user() : this.user,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookCommitCommentCreatedComment &&
           authorAssociation == other.authorAssociation &&
           body == other.body &&
@@ -159,7 +159,7 @@ WebhookCommitCommentCreatedComment copyWith({WebhookCommitCommentCreatedCommentA
           reactions == other.reactions &&
           updatedAt == other.updatedAt &&
           url == other.url &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(authorAssociation, body, commitId, createdAt, htmlUrl, id, line, nodeId, path, position, reactions, updatedAt, url, user); } 
-@override String toString() { return 'WebhookCommitCommentCreatedComment(authorAssociation: $authorAssociation, body: $body, commitId: $commitId, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, line: $line, nodeId: $nodeId, path: $path, position: $position, reactions: $reactions, updatedAt: $updatedAt, url: $url, user: $user)'; } 
- }
+          user == other.user;}
+@override int get hashCode {return Object.hash(authorAssociation, body, commitId, createdAt, htmlUrl, id, line, nodeId, path, position, reactions, updatedAt, url, user);}
+@override String toString() {return 'WebhookCommitCommentCreatedComment(authorAssociation: $authorAssociation, body: $body, commitId: $commitId, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, line: $line, nodeId: $nodeId, path: $path, position: $position, reactions: $reactions, updatedAt: $updatedAt, url: $url, user: $user)';}
+}

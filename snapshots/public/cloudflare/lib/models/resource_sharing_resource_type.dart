@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Resource Type.
 @immutable final class ResourceSharingResourceType {const ResourceSharingResourceType._(this.value);
 
-factory ResourceSharingResourceType.fromJson(String json) { return switch (json) {
+factory ResourceSharingResourceType.fromJson(String json) {return switch (json) {
   'custom-ruleset' => customRuleset,
   'widget' => widget,
   'gateway-policy' => gatewayPolicy,
@@ -11,7 +11,7 @@ factory ResourceSharingResourceType.fromJson(String json) { return switch (json)
   'gateway-block-page-settings' => gatewayBlockPageSettings,
   'gateway-extended-email-matching' => gatewayExtendedEmailMatching,
   _ => ResourceSharingResourceType._(json),
-}; }
+};}
 
 static const ResourceSharingResourceType customRuleset = ResourceSharingResourceType._('custom-ruleset');
 
@@ -29,11 +29,11 @@ static const List<ResourceSharingResourceType> values = [customRuleset, widget, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceSharingResourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResourceSharingResourceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceSharingResourceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ResourceSharingResourceType($value)';}
+}

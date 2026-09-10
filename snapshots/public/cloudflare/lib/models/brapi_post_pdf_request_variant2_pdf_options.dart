@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_pdf_request_variant2_pdf_options_margin.dart';/// Paper format. Takes priority over width and height if set.
 @immutable final class BrapiPostPdfRequestVariant2PdfOptionsFormat {const BrapiPostPdfRequestVariant2PdfOptionsFormat._(this.value);
 
-factory BrapiPostPdfRequestVariant2PdfOptionsFormat.fromJson(String json) { return switch (json) {
+factory BrapiPostPdfRequestVariant2PdfOptionsFormat.fromJson(String json) {return switch (json) {
   'letter' => letter,
   'legal' => legal,
   'tabloid' => tabloid,
@@ -16,7 +16,7 @@ factory BrapiPostPdfRequestVariant2PdfOptionsFormat.fromJson(String json) { retu
   'a5' => a5,
   'a6' => a6,
   _ => BrapiPostPdfRequestVariant2PdfOptionsFormat._(json),
-}; }
+};}
 
 static const BrapiPostPdfRequestVariant2PdfOptionsFormat letter = BrapiPostPdfRequestVariant2PdfOptionsFormat._('letter');
 
@@ -44,18 +44,18 @@ static const List<BrapiPostPdfRequestVariant2PdfOptionsFormat> values = [letter,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostPdfRequestVariant2PdfOptionsFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostPdfRequestVariant2PdfOptionsFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostPdfRequestVariant2PdfOptionsFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostPdfRequestVariant2PdfOptionsFormat($value)';}
+}
 /// Check [options](https://pptr.dev/api/puppeteer.pdfoptions).
 @immutable final class BrapiPostPdfRequestVariant2PdfOptions {const BrapiPostPdfRequestVariant2PdfOptions({this.displayHeaderFooter, this.footerTemplate, this.format, this.headerTemplate, this.height, this.landscape, this.margin, this.omitBackground, this.outline, this.pageRanges, this.preferCssPageSize, this.printBackground, this.scale, this.tagged, this.timeout, this.width, });
 
-factory BrapiPostPdfRequestVariant2PdfOptions.fromJson(Map<String, dynamic> json) { return BrapiPostPdfRequestVariant2PdfOptions(
+factory BrapiPostPdfRequestVariant2PdfOptions.fromJson(Map<String, dynamic> json) {return BrapiPostPdfRequestVariant2PdfOptions(
   displayHeaderFooter: json['displayHeaderFooter'] as bool?,
   footerTemplate: json['footerTemplate'] as String?,
   format: json['format'] != null ? BrapiPostPdfRequestVariant2PdfOptionsFormat.fromJson(json['format'] as String) : null,
@@ -72,7 +72,7 @@ factory BrapiPostPdfRequestVariant2PdfOptions.fromJson(Map<String, dynamic> json
   tagged: json['tagged'] as bool?,
   timeout: json['timeout'] != null ? (json['timeout'] as num).toDouble() : null,
   width: json['width'],
-); }
+);}
 
 /// Whether to show the header and footer.
 final bool? displayHeaderFooter;
@@ -131,26 +131,26 @@ final double? timeout;
 final dynamic width;
 
 /// The value with the schema default applied when absent.
-bool get displayHeaderFooterOrDefault { return displayHeaderFooter ?? false; } 
+bool get displayHeaderFooterOrDefault {return displayHeaderFooter ?? false;}
 /// The value with the schema default applied when absent.
-BrapiPostPdfRequestVariant2PdfOptionsFormat get formatOrDefault { return format ?? BrapiPostPdfRequestVariant2PdfOptionsFormat.fromJson('letter'); } 
+BrapiPostPdfRequestVariant2PdfOptionsFormat get formatOrDefault {return format ?? BrapiPostPdfRequestVariant2PdfOptionsFormat.fromJson('letter');}
 /// The value with the schema default applied when absent.
-bool get landscapeOrDefault { return landscape ?? false; } 
+bool get landscapeOrDefault {return landscape ?? false;}
 /// The value with the schema default applied when absent.
-bool get omitBackgroundOrDefault { return omitBackground ?? false; } 
+bool get omitBackgroundOrDefault {return omitBackground ?? false;}
 /// The value with the schema default applied when absent.
-bool get outlineOrDefault { return outline ?? false; } 
+bool get outlineOrDefault {return outline ?? false;}
 /// The value with the schema default applied when absent.
-bool get preferCssPageSizeOrDefault { return preferCssPageSize ?? false; } 
+bool get preferCssPageSizeOrDefault {return preferCssPageSize ?? false;}
 /// The value with the schema default applied when absent.
-bool get printBackgroundOrDefault { return printBackground ?? false; } 
+bool get printBackgroundOrDefault {return printBackground ?? false;}
 /// The value with the schema default applied when absent.
-double get scaleOrDefault { return scale ?? 1.0; } 
+double get scaleOrDefault {return scale ?? 1.0;}
 /// The value with the schema default applied when absent.
-bool get taggedOrDefault { return tagged ?? true; } 
+bool get taggedOrDefault {return tagged ?? true;}
 /// The value with the schema default applied when absent.
-double get timeoutOrDefault { return timeout ?? 30000.0; } 
-Map<String, dynamic> toJson() { return {
+double get timeoutOrDefault {return timeout ?? 30000.0;}
+Map<String, dynamic> toJson() {return {
   'displayHeaderFooter': ?displayHeaderFooter,
   'footerTemplate': ?footerTemplate,
   if (format != null) 'format': format?.toJson(),
@@ -167,9 +167,9 @@ Map<String, dynamic> toJson() { return {
   'tagged': ?tagged,
   'timeout': ?timeout,
   'width': ?width,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'displayHeaderFooter', 'footerTemplate', 'format', 'headerTemplate', 'height', 'landscape', 'margin', 'omitBackground', 'outline', 'pageRanges', 'preferCSSPageSize', 'printBackground', 'scale', 'tagged', 'timeout', 'width'}.contains(key)); } 
-BrapiPostPdfRequestVariant2PdfOptions copyWith({bool? Function()? displayHeaderFooter, String? Function()? footerTemplate, BrapiPostPdfRequestVariant2PdfOptionsFormat? Function()? format, String? Function()? headerTemplate, dynamic Function()? height, bool? Function()? landscape, BrapiPostPdfRequestVariant2PdfOptionsMargin? Function()? margin, bool? Function()? omitBackground, bool? Function()? outline, String? Function()? pageRanges, bool? Function()? preferCssPageSize, bool? Function()? printBackground, double? Function()? scale, bool? Function()? tagged, double? Function()? timeout, dynamic Function()? width, }) { return BrapiPostPdfRequestVariant2PdfOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'displayHeaderFooter', 'footerTemplate', 'format', 'headerTemplate', 'height', 'landscape', 'margin', 'omitBackground', 'outline', 'pageRanges', 'preferCSSPageSize', 'printBackground', 'scale', 'tagged', 'timeout', 'width'}.contains(key));}
+BrapiPostPdfRequestVariant2PdfOptions copyWith({bool? Function()? displayHeaderFooter, String? Function()? footerTemplate, BrapiPostPdfRequestVariant2PdfOptionsFormat? Function()? format, String? Function()? headerTemplate, dynamic Function()? height, bool? Function()? landscape, BrapiPostPdfRequestVariant2PdfOptionsMargin? Function()? margin, bool? Function()? omitBackground, bool? Function()? outline, String? Function()? pageRanges, bool? Function()? preferCssPageSize, bool? Function()? printBackground, double? Function()? scale, bool? Function()? tagged, double? Function()? timeout, dynamic Function()? width, }) {return BrapiPostPdfRequestVariant2PdfOptions(
   displayHeaderFooter: displayHeaderFooter != null ? displayHeaderFooter() : this.displayHeaderFooter,
   footerTemplate: footerTemplate != null ? footerTemplate() : this.footerTemplate,
   format: format != null ? format() : this.format,
@@ -186,8 +186,8 @@ BrapiPostPdfRequestVariant2PdfOptions copyWith({bool? Function()? displayHeaderF
   tagged: tagged != null ? tagged() : this.tagged,
   timeout: timeout != null ? timeout() : this.timeout,
   width: width != null ? width() : this.width,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BrapiPostPdfRequestVariant2PdfOptions &&
           displayHeaderFooter == other.displayHeaderFooter &&
           footerTemplate == other.footerTemplate &&
@@ -204,7 +204,7 @@ BrapiPostPdfRequestVariant2PdfOptions copyWith({bool? Function()? displayHeaderF
           scale == other.scale &&
           tagged == other.tagged &&
           timeout == other.timeout &&
-          width == other.width; } 
-@override int get hashCode { return Object.hash(displayHeaderFooter, footerTemplate, format, headerTemplate, height, landscape, margin, omitBackground, outline, pageRanges, preferCssPageSize, printBackground, scale, tagged, timeout, width); } 
-@override String toString() { return 'BrapiPostPdfRequestVariant2PdfOptions(displayHeaderFooter: $displayHeaderFooter, footerTemplate: $footerTemplate, format: $format, headerTemplate: $headerTemplate, height: $height, landscape: $landscape, margin: $margin, omitBackground: $omitBackground, outline: $outline, pageRanges: $pageRanges, preferCssPageSize: $preferCssPageSize, printBackground: $printBackground, scale: $scale, tagged: $tagged, timeout: $timeout, width: $width)'; } 
- }
+          width == other.width;}
+@override int get hashCode {return Object.hash(displayHeaderFooter, footerTemplate, format, headerTemplate, height, landscape, margin, omitBackground, outline, pageRanges, preferCssPageSize, printBackground, scale, tagged, timeout, width);}
+@override String toString() {return 'BrapiPostPdfRequestVariant2PdfOptions(displayHeaderFooter: $displayHeaderFooter, footerTemplate: $footerTemplate, format: $format, headerTemplate: $headerTemplate, height: $height, landscape: $landscape, margin: $margin, omitBackground: $omitBackground, outline: $outline, pageRanges: $pageRanges, preferCssPageSize: $preferCssPageSize, printBackground: $printBackground, scale: $scale, tagged: $tagged, timeout: $timeout, width: $width)';}
+}

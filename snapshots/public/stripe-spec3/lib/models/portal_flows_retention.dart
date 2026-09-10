@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'portal_flows_coupon_offer.dart';/// Type of retention strategy that will be used.
 @immutable final class PortalFlowsRetentionType {const PortalFlowsRetentionType._(this.value);
 
-factory PortalFlowsRetentionType.fromJson(String json) { return switch (json) {
+factory PortalFlowsRetentionType.fromJson(String json) {return switch (json) {
   'coupon_offer' => couponOffer,
   _ => PortalFlowsRetentionType._(json),
-}; }
+};}
 
 static const PortalFlowsRetentionType couponOffer = PortalFlowsRetentionType._('coupon_offer');
 
@@ -14,21 +14,21 @@ static const List<PortalFlowsRetentionType> values = [couponOffer];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PortalFlowsRetentionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PortalFlowsRetentionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PortalFlowsRetentionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PortalFlowsRetentionType($value)';}
+}
 /// 
 @immutable final class PortalFlowsRetention {const PortalFlowsRetention({required this.type, this.couponOffer = const Omittable.absent(), });
 
-factory PortalFlowsRetention.fromJson(Map<String, dynamic> json) { return PortalFlowsRetention(
+factory PortalFlowsRetention.fromJson(Map<String, dynamic> json) {return PortalFlowsRetention(
   couponOffer: json.containsKey('coupon_offer') ? Omittable(json['coupon_offer'] != null ? PortalFlowsCouponOffer.fromJson(json['coupon_offer'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: PortalFlowsRetentionType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Configuration when `retention.type=coupon_offer`.
 final Omittable<PortalFlowsCouponOffer?> couponOffer;
@@ -36,19 +36,19 @@ final Omittable<PortalFlowsCouponOffer?> couponOffer;
 /// Type of retention strategy that will be used.
 final PortalFlowsRetentionType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (couponOffer.isPresent) 'coupon_offer': couponOffer.value?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PortalFlowsRetention copyWith({Omittable<PortalFlowsCouponOffer?>? couponOffer, PortalFlowsRetentionType? type, }) { return PortalFlowsRetention(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PortalFlowsRetention copyWith({Omittable<PortalFlowsCouponOffer?>? couponOffer, PortalFlowsRetentionType? type, }) {return PortalFlowsRetention(
   couponOffer: couponOffer ?? this.couponOffer,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PortalFlowsRetention &&
           couponOffer == other.couponOffer &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(couponOffer, type); } 
-@override String toString() { return 'PortalFlowsRetention(couponOffer: $couponOffer, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(couponOffer, type);}
+@override String toString() {return 'PortalFlowsRetention(couponOffer: $couponOffer, type: $type)';}
+}

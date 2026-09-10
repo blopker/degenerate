@@ -13,7 +13,7 @@ final class D1Api with ApiExecutor {const D1Api(this.apiConfig);
 /// Returns a list of D1 databases.
 ///
 /// `GET /accounts/{account_id}/d1/database`
-Future<ApiResult<List<D1DatabaseResponse>, ResponseCommonFailure23>> d1ListDatabases({required D1AccountIdentifier accountId, String? name, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<D1DatabaseResponse>, ResponseCommonFailure23>> d1ListDatabases({required D1AccountIdentifier accountId, String? name, double? page, double? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -53,13 +53,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create D1 Database
 ///
 /// Returns the created D1 database.
 ///
 /// `POST /accounts/{account_id}/d1/database`
-Future<ApiResult<D1DatabaseDetailsResponse, ResponseCommonFailure23>> d1CreateDatabase({required D1AccountIdentifier accountId, required D1CreateDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<D1DatabaseDetailsResponse, ResponseCommonFailure23>> d1CreateDatabase({required D1AccountIdentifier accountId, required D1CreateDatabaseRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,13 +87,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get D1 Database
 ///
 /// Returns the specified D1 database.
 ///
 /// `GET /accounts/{account_id}/d1/database/{database_id}`
-Future<ApiResult<D1DatabaseDetailsResponse, ResponseCommonFailure23>> d1GetDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<D1DatabaseDetailsResponse, ResponseCommonFailure23>> d1GetDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -119,13 +119,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update D1 Database
 ///
 /// Updates the specified D1 database.
 ///
 /// `PUT /accounts/{account_id}/d1/database/{database_id}`
-Future<ApiResult<D1DatabaseDetailsResponse, ResponseCommonFailure23>> d1UpdateDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1DatabaseUpdateRequestBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<D1DatabaseDetailsResponse, ResponseCommonFailure23>> d1UpdateDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1DatabaseUpdateRequestBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -153,13 +153,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update D1 Database partially
 ///
 /// Updates partially the specified D1 database.
 ///
 /// `PATCH /accounts/{account_id}/d1/database/{database_id}`
-Future<ApiResult<D1DatabaseDetailsResponse, ResponseCommonFailure23>> d1UpdatePartialDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1DatabaseUpdatePartialRequestBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<D1DatabaseDetailsResponse, ResponseCommonFailure23>> d1UpdatePartialDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1DatabaseUpdatePartialRequestBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -187,13 +187,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete D1 Database
 ///
 /// Deletes the specified D1 database.
 ///
 /// `DELETE /accounts/{account_id}/d1/database/{database_id}`
-Future<ApiResult<Map<String, dynamic>?, ResponseCommonFailure23>> d1DeleteDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, ResponseCommonFailure23>> d1DeleteDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -219,7 +219,7 @@ return null;
 
   },
 );
- } 
+}
 /// Export D1 Database as SQL
 ///
 /// Returns a URL where the SQL contents of your D1 can be downloaded. Note: this process may take
@@ -228,7 +228,7 @@ return null;
 /// 
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/export`
-Future<ApiResult<D1ExportDatabaseSuccess, ResponseCommonFailure23>> d1ExportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ExportDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<D1ExportDatabaseSuccess, ResponseCommonFailure23>> d1ExportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ExportDatabaseRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -253,7 +253,7 @@ return null;
 
   },
 );
- } 
+}
 /// Import SQL into your D1 Database
 ///
 /// Generates a temporary URL for uploading an SQL file to, then instructing the D1 to import it
@@ -261,7 +261,7 @@ return null;
 /// 
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/import`
-Future<ApiResult<D1ImportDatabaseSuccess, ResponseCommonFailure23>> d1ImportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ImportDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<D1ImportDatabaseSuccess, ResponseCommonFailure23>> d1ImportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ImportDatabaseRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -286,13 +286,13 @@ return null;
 
   },
 );
- } 
+}
 /// Query D1 Database
 ///
 /// Returns the query result as an object.
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/query`
-Future<ApiResult<List<D1QueryResultResponse>, ResponseCommonFailure23>> d1QueryDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1BatchQuery body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<D1QueryResultResponse>, ResponseCommonFailure23>> d1QueryDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1BatchQuery body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -320,13 +320,13 @@ return null;
 
   },
 );
- } 
+}
 /// Raw D1 Database query
 ///
 /// Returns the query result rows as arrays rather than objects. This is a performance-optimized version of the /query endpoint.
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/raw`
-Future<ApiResult<List<D1RawResultResponse>, ResponseCommonFailure23>> d1RawDatabaseQuery({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1BatchQuery body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<D1RawResultResponse>, ResponseCommonFailure23>> d1RawDatabaseQuery({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1BatchQuery body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -354,7 +354,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get D1 database bookmark
 ///
 /// Retrieves the current bookmark, or the nearest bookmark at or before a provided timestamp.
@@ -362,7 +362,7 @@ return null;
 /// 
 ///
 /// `GET /accounts/{account_id}/d1/database/{database_id}/time_travel/bookmark`
-Future<ApiResult<D1TimeTravelGetBookmarkResponseResult, ResponseCommonFailure23>> d1TimeTravelGetBookmark({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<D1TimeTravelGetBookmarkResponseResult, ResponseCommonFailure23>> d1TimeTravelGetBookmark({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (timestamp != null) {
   queryParameters['timestamp'] = timestamp.toString();
@@ -396,14 +396,14 @@ return null;
 
   },
 );
- } 
+}
 /// Restore D1 Database to a bookmark or point in time
 ///
 /// Restores a D1 database to a previous point in time either via a bookmark or a timestamp.
 /// 
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/time_travel/restore`
-Future<ApiResult<D1TimeTravelRestoreResponse, ResponseCommonFailure23>> d1TimeTravelRestore({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelBookmark? bookmark, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<D1TimeTravelRestoreResponse, ResponseCommonFailure23>> d1TimeTravelRestore({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelBookmark? bookmark, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (bookmark != null) {
   queryParameters['bookmark'] = bookmark.toString();
@@ -440,5 +440,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

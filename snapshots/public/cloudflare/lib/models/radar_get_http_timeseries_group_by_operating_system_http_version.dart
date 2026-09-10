@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByOperatingSystemHttpVersion {const RadarGetHttpTimeseriesGroupByOperatingSystemHttpVersion._(this.value);
 
-factory RadarGetHttpTimeseriesGroupByOperatingSystemHttpVersion.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTimeseriesGroupByOperatingSystemHttpVersion.fromJson(String json) {return switch (json) {
   'HTTPv1' => httPv1,
   'HTTPv2' => httPv2,
   'HTTPv3' => httPv3,
   _ => RadarGetHttpTimeseriesGroupByOperatingSystemHttpVersion._(json),
-}; }
+};}
 
 static const RadarGetHttpTimeseriesGroupByOperatingSystemHttpVersion httPv1 = RadarGetHttpTimeseriesGroupByOperatingSystemHttpVersion._('HTTPv1');
 
@@ -19,11 +19,11 @@ static const List<RadarGetHttpTimeseriesGroupByOperatingSystemHttpVersion> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTimeseriesGroupByOperatingSystemHttpVersion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTimeseriesGroupByOperatingSystemHttpVersion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupByOperatingSystemHttpVersion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTimeseriesGroupByOperatingSystemHttpVersion($value)';}
+}

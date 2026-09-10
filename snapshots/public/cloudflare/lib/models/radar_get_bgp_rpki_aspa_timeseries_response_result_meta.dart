@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRpkiAspaTimeseriesResponseResultMeta {const RadarGetBgpRpkiAspaTimeseriesResponseResultMeta({required this.dataTime, required this.queryTime, });
 
-factory RadarGetBgpRpkiAspaTimeseriesResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaTimeseriesResponseResultMeta(
+factory RadarGetBgpRpkiAspaTimeseriesResponseResultMeta.fromJson(Map<String, dynamic> json) {return RadarGetBgpRpkiAspaTimeseriesResponseResultMeta(
   dataTime: DateTime.parse(json['dataTime'] as String),
   queryTime: DateTime.parse(json['queryTime'] as String),
-); }
+);}
 
 /// Timestamp of the underlying data.
 final DateTime dataTime;
@@ -13,20 +13,20 @@ final DateTime dataTime;
 /// Timestamp when the query was executed.
 final DateTime queryTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'dataTime': dataTime.toIso8601String(),
   'queryTime': queryTime.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataTime') && json['dataTime'] is String &&
-      json.containsKey('queryTime') && json['queryTime'] is String; } 
-RadarGetBgpRpkiAspaTimeseriesResponseResultMeta copyWith({DateTime? dataTime, DateTime? queryTime, }) { return RadarGetBgpRpkiAspaTimeseriesResponseResultMeta(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dataTime') && json['dataTime'] is String &&
+      json.containsKey('queryTime') && json['queryTime'] is String;}
+RadarGetBgpRpkiAspaTimeseriesResponseResultMeta copyWith({DateTime? dataTime, DateTime? queryTime, }) {return RadarGetBgpRpkiAspaTimeseriesResponseResultMeta(
   dataTime: dataTime ?? this.dataTime,
   queryTime: queryTime ?? this.queryTime,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetBgpRpkiAspaTimeseriesResponseResultMeta &&
           dataTime == other.dataTime &&
-          queryTime == other.queryTime; } 
-@override int get hashCode { return Object.hash(dataTime, queryTime); } 
-@override String toString() { return 'RadarGetBgpRpkiAspaTimeseriesResponseResultMeta(dataTime: $dataTime, queryTime: $queryTime)'; } 
- }
+          queryTime == other.queryTime;}
+@override int get hashCode {return Object.hash(dataTime, queryTime);}
+@override String toString() {return 'RadarGetBgpRpkiAspaTimeseriesResponseResultMeta(dataTime: $dataTime, queryTime: $queryTime)';}
+}

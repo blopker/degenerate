@@ -13,7 +13,7 @@ final class OriginCaApi with ApiExecutor {const OriginCaApi(this.apiConfig);
 /// List all existing Origin CA certificates for a given zone. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).
 ///
 /// `GET /certificates`
-Future<ApiResult<List<TlsCertificatesAndHostnamesCertificates>?, OriginCaListCertificatesResponse4xx>> originCaListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TlsCertificatesAndHostnamesCertificates>?, OriginCaListCertificatesResponse4xx>> originCaListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, int? limit, int? offset, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['zone_id'] = zoneId.toString();
 if (page != null) {
@@ -57,13 +57,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create Certificate
 ///
 /// Create an Origin CA certificate. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).
 ///
 /// `POST /certificates`
-Future<ApiResult<TlsCertificatesAndHostnamesCertificates?, OriginCaCreateCertificateResponse4xx>> originCaCreateCertificate({required OriginCaCreateCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificates?, OriginCaCreateCertificateResponse4xx>> originCaCreateCertificate({required OriginCaCreateCertificateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -91,13 +91,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get Certificate
 ///
 /// Get an existing Origin CA certificate by its serial number. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).
 ///
 /// `GET /certificates/{certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesCertificates?, OriginCaGetCertificateResponse4xx>> originCaGetCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificates?, OriginCaGetCertificateResponse4xx>> originCaGetCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -123,13 +123,13 @@ return null;
 
   },
 );
- } 
+}
 /// Revoke Certificate
 ///
 /// Revoke an existing Origin CA certificate by its serial number. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).
 ///
 /// `DELETE /certificates/{certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesCertificateRevokeResponseResult?, OriginCaRevokeCertificateResponse4xx>> originCaRevokeCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificateRevokeResponseResult?, OriginCaRevokeCertificateResponse4xx>> originCaRevokeCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -155,5 +155,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

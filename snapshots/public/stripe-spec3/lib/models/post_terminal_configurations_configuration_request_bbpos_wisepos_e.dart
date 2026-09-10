@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bbpos_wise_pose.dart';@immutable final class PostTerminalConfigurationsConfigurationRequestBbposWiseposEVariant2 {const PostTerminalConfigurationsConfigurationRequestBbposWiseposEVariant2._(this.value);
 
-factory PostTerminalConfigurationsConfigurationRequestBbposWiseposEVariant2.fromJson(String json) { return switch (json) {
+factory PostTerminalConfigurationsConfigurationRequestBbposWiseposEVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostTerminalConfigurationsConfigurationRequestBbposWiseposEVariant2._(json),
-}; }
+};}
 
 static const PostTerminalConfigurationsConfigurationRequestBbposWiseposEVariant2 $empty = PostTerminalConfigurationsConfigurationRequestBbposWiseposEVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostTerminalConfigurationsConfigurationRequestBbposWiseposEVar
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTerminalConfigurationsConfigurationRequestBbposWiseposEVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTerminalConfigurationsConfigurationRequestBbposWiseposEVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTerminalConfigurationsConfigurationRequestBbposWiseposEVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTerminalConfigurationsConfigurationRequestBbposWiseposEVariant2($value)';}
+}
 /// An object containing device type specific settings for BBPOS WisePOS E readers.
 @immutable
 final class PostTerminalConfigurationsConfigurationRequestBbposWiseposE {

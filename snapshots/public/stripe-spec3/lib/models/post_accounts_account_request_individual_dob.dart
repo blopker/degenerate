@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'date_of_birth_specs2.dart';@immutable final class PostAccountsAccountRequestIndividualDobVariant2 {const PostAccountsAccountRequestIndividualDobVariant2._(this.value);
 
-factory PostAccountsAccountRequestIndividualDobVariant2.fromJson(String json) { return switch (json) {
+factory PostAccountsAccountRequestIndividualDobVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostAccountsAccountRequestIndividualDobVariant2._(json),
-}; }
+};}
 
 static const PostAccountsAccountRequestIndividualDobVariant2 $empty = PostAccountsAccountRequestIndividualDobVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostAccountsAccountRequestIndividualDobVariant2> values = [$em
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsAccountRequestIndividualDobVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsAccountRequestIndividualDobVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountsAccountRequestIndividualDobVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountsAccountRequestIndividualDobVariant2($value)';}
+}
 
 @immutable
 final class PostAccountsAccountRequestIndividualDob {

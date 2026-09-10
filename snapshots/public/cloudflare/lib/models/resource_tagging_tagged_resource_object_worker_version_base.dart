@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_etag.dart';import 'resource_tagging_resource_id.dart';import 'resource_tagging_resource_name.dart';import 'resource_tagging_worker_id.dart';/// Base schema for worker_version resources (without type discriminator)
 @immutable final class ResourceTaggingTaggedResourceObjectWorkerVersionBase {const ResourceTaggingTaggedResourceObjectWorkerVersionBase({required this.etag, required this.id, required this.name, required this.tags, required this.workerId, });
 
-factory ResourceTaggingTaggedResourceObjectWorkerVersionBase.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectWorkerVersionBase(
+factory ResourceTaggingTaggedResourceObjectWorkerVersionBase.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectWorkerVersionBase(
   etag: ResourceTaggingEtag.fromJson(json['etag'] as String),
   id: ResourceTaggingResourceId.fromJson(json['id'] as String),
   name: ResourceTaggingResourceName.fromJson(json['name'] as String),
   tags: (json['tags'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   workerId: ResourceTaggingWorkerId.fromJson(json['worker_id'] as String),
-); }
+);}
 
 /// ETag identifier for optimistic concurrency control. Formatted as "v1:`<hash>`" where
 /// the hash is the base64url-encoded SHA-256 (truncated to 128 bits) of the tags map
@@ -28,32 +28,32 @@ final Map<String,String> tags;
 
 final ResourceTaggingWorkerId workerId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'etag': etag.toJson(),
   'id': id.toJson(),
   'name': name.toJson(),
   'tags': tags,
   'worker_id': workerId.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('etag') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('etag') &&
       json.containsKey('id') &&
       json.containsKey('name') &&
       json.containsKey('tags') &&
-      json.containsKey('worker_id'); } 
-ResourceTaggingTaggedResourceObjectWorkerVersionBase copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, ResourceTaggingWorkerId? workerId, }) { return ResourceTaggingTaggedResourceObjectWorkerVersionBase(
+      json.containsKey('worker_id');}
+ResourceTaggingTaggedResourceObjectWorkerVersionBase copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, ResourceTaggingWorkerId? workerId, }) {return ResourceTaggingTaggedResourceObjectWorkerVersionBase(
   etag: etag ?? this.etag,
   id: id ?? this.id,
   name: name ?? this.name,
   tags: tags ?? this.tags,
   workerId: workerId ?? this.workerId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResourceTaggingTaggedResourceObjectWorkerVersionBase &&
           etag == other.etag &&
           id == other.id &&
           name == other.name &&
           tags == other.tags &&
-          workerId == other.workerId; } 
-@override int get hashCode { return Object.hash(etag, id, name, tags, workerId); } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectWorkerVersionBase(etag: $etag, id: $id, name: $name, tags: $tags, workerId: $workerId)'; } 
- }
+          workerId == other.workerId;}
+@override int get hashCode {return Object.hash(etag, id, name, tags, workerId);}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectWorkerVersionBase(etag: $etag, id: $id, name: $name, tags: $tags, workerId: $workerId)';}
+}

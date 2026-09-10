@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_reference.dart';/// Represents a cinder volume resource in Openstack. A Cinder volume must exist before mounting to a container. The volume must also be in the same region as the kubelet. Cinder volumes support ownership management and SELinux relabeling.
 @immutable final class CinderPersistentVolumeSource {const CinderPersistentVolumeSource({required this.volumeId, this.fsType, this.readOnly, this.secretRef, });
 
-factory CinderPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return CinderPersistentVolumeSource(
+factory CinderPersistentVolumeSource.fromJson(Map<String, dynamic> json) {return CinderPersistentVolumeSource(
   fsType: json['fsType'] as String?,
   readOnly: json['readOnly'] as bool?,
   secretRef: json['secretRef'] != null ? SecretReference.fromJson(json['secretRef'] as Map<String, dynamic>) : null,
   volumeId: json['volumeID'] as String,
-); }
+);}
 
 /// fsType Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://examples.k8s.io/mysql-cinder-pd/README.md
 final String? fsType;
@@ -22,25 +22,25 @@ final SecretReference? secretRef;
 /// volumeID used to identify the volume in cinder. More info: https://examples.k8s.io/mysql-cinder-pd/README.md
 final String volumeId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fsType': ?fsType,
   'readOnly': ?readOnly,
   if (secretRef != null) 'secretRef': secretRef?.toJson(),
   'volumeID': volumeId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('volumeID') && json['volumeID'] is String; } 
-CinderPersistentVolumeSource copyWith({String? Function()? fsType, bool? Function()? readOnly, SecretReference? Function()? secretRef, String? volumeId, }) { return CinderPersistentVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('volumeID') && json['volumeID'] is String;}
+CinderPersistentVolumeSource copyWith({String? Function()? fsType, bool? Function()? readOnly, SecretReference? Function()? secretRef, String? volumeId, }) {return CinderPersistentVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   secretRef: secretRef != null ? secretRef() : this.secretRef,
   volumeId: volumeId ?? this.volumeId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CinderPersistentVolumeSource &&
           fsType == other.fsType &&
           readOnly == other.readOnly &&
           secretRef == other.secretRef &&
-          volumeId == other.volumeId; } 
-@override int get hashCode { return Object.hash(fsType, readOnly, secretRef, volumeId); } 
-@override String toString() { return 'CinderPersistentVolumeSource(fsType: $fsType, readOnly: $readOnly, secretRef: $secretRef, volumeId: $volumeId)'; } 
- }
+          volumeId == other.volumeId;}
+@override int get hashCode {return Object.hash(fsType, readOnly, secretRef, volumeId);}
+@override String toString() {return 'CinderPersistentVolumeSource(fsType: $fsType, readOnly: $readOnly, secretRef: $secretRef, volumeId: $volumeId)';}
+}

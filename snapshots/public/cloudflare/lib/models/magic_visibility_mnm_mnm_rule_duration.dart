@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The amount of time that the rule threshold must be exceeded to send an alert notification. The final value must be equivalent to one of the following 8 values `["1m","5m","10m","15m","20m","30m","45m","60m"]`.
 @immutable final class MagicVisibilityMnmMnmRuleDuration {const MagicVisibilityMnmMnmRuleDuration._(this.value);
 
-factory MagicVisibilityMnmMnmRuleDuration.fromJson(String json) { return switch (json) {
+factory MagicVisibilityMnmMnmRuleDuration.fromJson(String json) {return switch (json) {
   '1m' => $1m,
   '5m' => $5m,
   '10m' => $10m,
@@ -13,7 +13,7 @@ factory MagicVisibilityMnmMnmRuleDuration.fromJson(String json) { return switch 
   '45m' => $45m,
   '60m' => $60m,
   _ => MagicVisibilityMnmMnmRuleDuration._(json),
-}; }
+};}
 
 static const MagicVisibilityMnmMnmRuleDuration $1m = MagicVisibilityMnmMnmRuleDuration._('1m');
 
@@ -35,11 +35,11 @@ static const List<MagicVisibilityMnmMnmRuleDuration> values = [$1m, $5m, $10m, $
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicVisibilityMnmMnmRuleDuration && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicVisibilityMnmMnmRuleDuration($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MagicVisibilityMnmMnmRuleDuration && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MagicVisibilityMnmMnmRuleDuration($value)';}
+}

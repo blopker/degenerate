@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
 @immutable final class ShippingRateCurrencyOptionTaxBehavior {const ShippingRateCurrencyOptionTaxBehavior._(this.value);
 
-factory ShippingRateCurrencyOptionTaxBehavior.fromJson(String json) { return switch (json) {
+factory ShippingRateCurrencyOptionTaxBehavior.fromJson(String json) {return switch (json) {
   'exclusive' => exclusive,
   'inclusive' => inclusive,
   'unspecified' => unspecified,
   _ => ShippingRateCurrencyOptionTaxBehavior._(json),
-}; }
+};}
 
 static const ShippingRateCurrencyOptionTaxBehavior exclusive = ShippingRateCurrencyOptionTaxBehavior._('exclusive');
 
@@ -20,21 +20,21 @@ static const List<ShippingRateCurrencyOptionTaxBehavior> values = [exclusive, in
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShippingRateCurrencyOptionTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShippingRateCurrencyOptionTaxBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ShippingRateCurrencyOptionTaxBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ShippingRateCurrencyOptionTaxBehavior($value)';}
+}
 /// 
 @immutable final class ShippingRateCurrencyOption {const ShippingRateCurrencyOption({required this.amount, required this.taxBehavior, });
 
-factory ShippingRateCurrencyOption.fromJson(Map<String, dynamic> json) { return ShippingRateCurrencyOption(
+factory ShippingRateCurrencyOption.fromJson(Map<String, dynamic> json) {return ShippingRateCurrencyOption(
   amount: (json['amount'] as num).toInt(),
   taxBehavior: ShippingRateCurrencyOptionTaxBehavior.fromJson(json['tax_behavior'] as String),
-); }
+);}
 
 /// A non-negative integer in cents representing how much to charge.
 final int amount;
@@ -42,20 +42,20 @@ final int amount;
 /// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
 final ShippingRateCurrencyOptionTaxBehavior taxBehavior;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'tax_behavior': taxBehavior.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
-      json.containsKey('tax_behavior'); } 
-ShippingRateCurrencyOption copyWith({int? amount, ShippingRateCurrencyOptionTaxBehavior? taxBehavior, }) { return ShippingRateCurrencyOption(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('tax_behavior');}
+ShippingRateCurrencyOption copyWith({int? amount, ShippingRateCurrencyOptionTaxBehavior? taxBehavior, }) {return ShippingRateCurrencyOption(
   amount: amount ?? this.amount,
   taxBehavior: taxBehavior ?? this.taxBehavior,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShippingRateCurrencyOption &&
           amount == other.amount &&
-          taxBehavior == other.taxBehavior; } 
-@override int get hashCode { return Object.hash(amount, taxBehavior); } 
-@override String toString() { return 'ShippingRateCurrencyOption(amount: $amount, taxBehavior: $taxBehavior)'; } 
- }
+          taxBehavior == other.taxBehavior;}
+@override int get hashCode {return Object.hash(amount, taxBehavior);}
+@override String toString() {return 'ShippingRateCurrencyOption(amount: $amount, taxBehavior: $taxBehavior)';}
+}

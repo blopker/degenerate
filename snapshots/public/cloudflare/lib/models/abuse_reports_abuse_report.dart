@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_mitigation_summary.dart';import 'abuse_reports_report_status.dart';import 'abuse_reports_report_type.dart';import 'abuse_reports_submitter_details.dart';@immutable final class AbuseReportsAbuseReport {const AbuseReportsAbuseReport({required this.cdate, required this.domain, required this.id, required this.mitigationSummary, required this.status, required this.type, this.justification, this.originalWork, this.submitter, this.urls, });
 
-factory AbuseReportsAbuseReport.fromJson(Map<String, dynamic> json) { return AbuseReportsAbuseReport(
+factory AbuseReportsAbuseReport.fromJson(Map<String, dynamic> json) {return AbuseReportsAbuseReport(
   cdate: json['cdate'] as String,
   domain: json['domain'] as String,
   id: json['id'] as String,
@@ -13,7 +13,7 @@ factory AbuseReportsAbuseReport.fromJson(Map<String, dynamic> json) { return Abu
   submitter: json['submitter'] != null ? AbuseReportsSubmitterDetails.fromJson(json['submitter'] as Map<String, dynamic>) : null,
   type: AbuseReportsReportType.fromJson(json['type'] as String),
   urls: (json['urls'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Creation date of report. Time in RFC 3339 format (https://www.rfc-editor.org/rfc/rfc3339.html)
 final String cdate;
@@ -40,7 +40,7 @@ final AbuseReportsReportType type;
 
 final List<String>? urls;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cdate': cdate,
   'domain': domain,
   'id': id,
@@ -51,14 +51,14 @@ Map<String, dynamic> toJson() { return {
   if (submitter != null) 'submitter': submitter?.toJson(),
   'type': type.toJson(),
   'urls': ?urls,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cdate') && json['cdate'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cdate') && json['cdate'] is String &&
       json.containsKey('domain') && json['domain'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('mitigation_summary') &&
       json.containsKey('status') &&
-      json.containsKey('type'); } 
-AbuseReportsAbuseReport copyWith({String? cdate, String? domain, String? id, String? Function()? justification, AbuseReportsMitigationSummary? mitigationSummary, String? Function()? originalWork, AbuseReportsReportStatus? status, AbuseReportsSubmitterDetails? Function()? submitter, AbuseReportsReportType? type, List<String>? Function()? urls, }) { return AbuseReportsAbuseReport(
+      json.containsKey('type');}
+AbuseReportsAbuseReport copyWith({String? cdate, String? domain, String? id, String? Function()? justification, AbuseReportsMitigationSummary? mitigationSummary, String? Function()? originalWork, AbuseReportsReportStatus? status, AbuseReportsSubmitterDetails? Function()? submitter, AbuseReportsReportType? type, List<String>? Function()? urls, }) {return AbuseReportsAbuseReport(
   cdate: cdate ?? this.cdate,
   domain: domain ?? this.domain,
   id: id ?? this.id,
@@ -69,8 +69,8 @@ AbuseReportsAbuseReport copyWith({String? cdate, String? domain, String? id, Str
   submitter: submitter != null ? submitter() : this.submitter,
   type: type ?? this.type,
   urls: urls != null ? urls() : this.urls,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AbuseReportsAbuseReport &&
           cdate == other.cdate &&
           domain == other.domain &&
@@ -81,7 +81,7 @@ AbuseReportsAbuseReport copyWith({String? cdate, String? domain, String? id, Str
           status == other.status &&
           submitter == other.submitter &&
           type == other.type &&
-          listEquals(urls, other.urls); } 
-@override int get hashCode { return Object.hash(cdate, domain, id, justification, mitigationSummary, originalWork, status, submitter, type, Object.hashAll(urls ?? const [])); } 
-@override String toString() { return 'AbuseReportsAbuseReport(cdate: $cdate, domain: $domain, id: $id, justification: $justification, mitigationSummary: $mitigationSummary, originalWork: $originalWork, status: $status, submitter: $submitter, type: $type, urls: $urls)'; } 
- }
+          listEquals(urls, other.urls);}
+@override int get hashCode {return Object.hash(cdate, domain, id, justification, mitigationSummary, originalWork, status, submitter, type, Object.hashAll(urls ?? const []));}
+@override String toString() {return 'AbuseReportsAbuseReport(cdate: $cdate, domain: $domain, id: $id, justification: $justification, mitigationSummary: $mitigationSummary, originalWork: $originalWork, status: $status, submitter: $submitter, type: $type, urls: $urls)';}
+}

@@ -15,7 +15,7 @@ final class IpAddressManagementServiceBindingsApi with ApiExecutor {const IpAddr
 /// 
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings`
-Future<ApiResult<List<AddressingServiceBinding>?, ResponseCommonFailure5>> ipAddressManagementServiceBindingsListServiceBindings({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AddressingServiceBinding>?, ResponseCommonFailure5>> ipAddressManagementServiceBindingsListServiceBindings({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -41,7 +41,7 @@ return null;
 
   },
 );
- } 
+}
 /// Create Service Binding
 ///
 /// Creates a new Service Binding, routing traffic to IPs within the given CIDR to a service running on Cloudflare's network.
@@ -49,7 +49,7 @@ return null;
 /// 
 ///
 /// `POST /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings`
-Future<ApiResult<AddressingServiceBinding?, ResponseCommonFailure5>> ipAddressManagementServiceBindingsCreateServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, AddressingCreateBindingRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingServiceBinding?, ResponseCommonFailure5>> ipAddressManagementServiceBindingsCreateServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, AddressingCreateBindingRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -77,13 +77,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get Service Binding
 ///
 /// Fetch a single Service Binding
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings/{binding_id}`
-Future<ApiResult<AddressingServiceBinding?, ResponseCommonFailure5>> ipAddressManagementServiceBindingsGetServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingServiceBindingIdentifier bindingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingServiceBinding?, ResponseCommonFailure5>> ipAddressManagementServiceBindingsGetServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingServiceBindingIdentifier bindingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -109,13 +109,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Service Binding
 ///
 /// Delete a Service Binding
 ///
 /// `DELETE /accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings/{binding_id}`
-Future<ApiResult<ResponseCommon4, ResponseCommonFailure5>> ipAddressManagementServiceBindingsDeleteServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingServiceBindingIdentifier bindingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon4, ResponseCommonFailure5>> ipAddressManagementServiceBindingsDeleteServiceBinding({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingServiceBindingIdentifier bindingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -141,14 +141,14 @@ return null;
 
   },
 );
- } 
+}
 /// List Services
 ///
 /// Bring-Your-Own IP (BYOIP) prefixes onboarded to Cloudflare must be bound to a service running on the Cloudflare network to enable a Cloudflare product on the IP addresses. This endpoint can be used as a reference of available services on the Cloudflare network, and their service IDs.
 /// 
 ///
 /// `GET /accounts/{account_id}/addressing/services`
-Future<ApiResult<List<IpAddressManagementServiceBindingsListServicesResponseResult>?, ResponseCommonFailure5>> ipAddressManagementServiceBindingsListServices({required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<IpAddressManagementServiceBindingsListServicesResponseResult>?, ResponseCommonFailure5>> ipAddressManagementServiceBindingsListServices({required AddressingAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -174,5 +174,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

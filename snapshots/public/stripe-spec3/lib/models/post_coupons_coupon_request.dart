@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_coupons_coupon_request_currency_options_value.dart';import 'post_coupons_coupon_request_metadata.dart';@immutable final class PostCouponsCouponRequest {const PostCouponsCouponRequest({this.currencyOptions, this.expand, this.metadata, this.name, });
 
-factory PostCouponsCouponRequest.fromJson(Map<String, dynamic> json) { return PostCouponsCouponRequest(
+factory PostCouponsCouponRequest.fromJson(Map<String, dynamic> json) {return PostCouponsCouponRequest(
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PostCouponsCouponRequestCurrencyOptionsValue.fromJson(v as Map<String, dynamic>))),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: json['metadata'] != null ? PostCouponsCouponRequestMetadata.fromJson(json['metadata']) : null,
   name: json['name'] as String?,
-); }
+);}
 
 /// Coupons defined in each available currency option (only supported if the coupon is amount-based). Each key must be a three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html) and a [supported currency](https://stripe.com/docs/currencies).
 final Map<String,PostCouponsCouponRequestCurrencyOptionsValue>? currencyOptions;
@@ -21,25 +21,25 @@ final PostCouponsCouponRequestMetadata? metadata;
 /// Name of the coupon displayed to customers on, for instance invoices, or receipts. By default the `id` is shown if `name` is not set.
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (currencyOptions != null) 'currency_options': currencyOptions?.map((k, v) => MapEntry(k, v.toJson())),
   'expand': ?expand,
   if (metadata != null) 'metadata': metadata?.toJson(),
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency_options', 'expand', 'metadata', 'name'}.contains(key)); } 
-PostCouponsCouponRequest copyWith({Map<String, PostCouponsCouponRequestCurrencyOptionsValue>? Function()? currencyOptions, List<String>? Function()? expand, PostCouponsCouponRequestMetadata? Function()? metadata, String? Function()? name, }) { return PostCouponsCouponRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'currency_options', 'expand', 'metadata', 'name'}.contains(key));}
+PostCouponsCouponRequest copyWith({Map<String, PostCouponsCouponRequestCurrencyOptionsValue>? Function()? currencyOptions, List<String>? Function()? expand, PostCouponsCouponRequestMetadata? Function()? metadata, String? Function()? name, }) {return PostCouponsCouponRequest(
   currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   name: name != null ? name() : this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCouponsCouponRequest &&
           currencyOptions == other.currencyOptions &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(currencyOptions, Object.hashAll(expand ?? const []), metadata, name); } 
-@override String toString() { return 'PostCouponsCouponRequest(currencyOptions: $currencyOptions, expand: $expand, metadata: $metadata, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(currencyOptions, Object.hashAll(expand ?? const []), metadata, name);}
+@override String toString() {return 'PostCouponsCouponRequest(currencyOptions: $currencyOptions, expand: $expand, metadata: $metadata, name: $name)';}
+}

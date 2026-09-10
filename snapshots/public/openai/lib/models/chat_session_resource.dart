@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_session_chatkit_configuration.dart';import 'chat_session_rate_limits.dart';import 'chatkit_workflow.dart';@immutable final class ChatSessionStatus {const ChatSessionStatus._(this.value);
 
-factory ChatSessionStatus.fromJson(String json) { return switch (json) {
+factory ChatSessionStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'expired' => expired,
   'cancelled' => cancelled,
   _ => ChatSessionStatus._(json),
-}; }
+};}
 
 static const ChatSessionStatus active = ChatSessionStatus._('active');
 
@@ -19,21 +19,21 @@ static const List<ChatSessionStatus> values = [active, expired, cancelled];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatSessionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChatSessionStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ChatSessionStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ChatSessionStatus($value)';}
+}
 /// Type discriminator that is always `chatkit.session`.
 @immutable final class ChatSessionResourceObject {const ChatSessionResourceObject._(this.value);
 
-factory ChatSessionResourceObject.fromJson(String json) { return switch (json) {
+factory ChatSessionResourceObject.fromJson(String json) {return switch (json) {
   'chatkit.session' => chatkitSession,
   _ => ChatSessionResourceObject._(json),
-}; }
+};}
 
 static const ChatSessionResourceObject chatkitSession = ChatSessionResourceObject._('chatkit.session');
 
@@ -41,18 +41,18 @@ static const List<ChatSessionResourceObject> values = [chatkitSession];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatSessionResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChatSessionResourceObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ChatSessionResourceObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ChatSessionResourceObject($value)';}
+}
 /// Represents a ChatKit session and its resolved configuration.
 @immutable final class ChatSessionResource {const ChatSessionResource({required this.id, required this.object, required this.expiresAt, required this.clientSecret, required this.workflow, required this.user, required this.rateLimits, required this.maxRequestsPer1Minute, required this.status, required this.chatkitConfiguration, });
 
-factory ChatSessionResource.fromJson(Map<String, dynamic> json) { return ChatSessionResource(
+factory ChatSessionResource.fromJson(Map<String, dynamic> json) {return ChatSessionResource(
   id: json['id'] as String,
   object: ChatSessionResourceObject.fromJson(json['object'] as String),
   expiresAt: (json['expires_at'] as num).toInt(),
@@ -63,7 +63,7 @@ factory ChatSessionResource.fromJson(Map<String, dynamic> json) { return ChatSes
   maxRequestsPer1Minute: (json['max_requests_per_1_minute'] as num).toInt(),
   status: ChatSessionStatus.fromJson(json['status'] as String),
   chatkitConfiguration: ChatSessionChatkitConfiguration.fromJson(json['chatkit_configuration'] as Map<String, dynamic>),
-); }
+);}
 
 /// Identifier for the ChatKit session.
 final String id;
@@ -95,7 +95,7 @@ final ChatSessionStatus status;
 /// Resolved ChatKit feature configuration for the session.
 final ChatSessionChatkitConfiguration chatkitConfiguration;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'expires_at': expiresAt,
@@ -106,8 +106,8 @@ Map<String, dynamic> toJson() { return {
   'max_requests_per_1_minute': maxRequestsPer1Minute,
   'status': status.toJson(),
   'chatkit_configuration': chatkitConfiguration.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('expires_at') && json['expires_at'] is num &&
       json.containsKey('client_secret') && json['client_secret'] is String &&
@@ -116,8 +116,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('rate_limits') &&
       json.containsKey('max_requests_per_1_minute') && json['max_requests_per_1_minute'] is num &&
       json.containsKey('status') &&
-      json.containsKey('chatkit_configuration'); } 
-ChatSessionResource copyWith({String? id, ChatSessionResourceObject? object, int? expiresAt, String? clientSecret, ChatkitWorkflow? workflow, String? user, ChatSessionRateLimits? rateLimits, int? maxRequestsPer1Minute, ChatSessionStatus? status, ChatSessionChatkitConfiguration? chatkitConfiguration, }) { return ChatSessionResource(
+      json.containsKey('chatkit_configuration');}
+ChatSessionResource copyWith({String? id, ChatSessionResourceObject? object, int? expiresAt, String? clientSecret, ChatkitWorkflow? workflow, String? user, ChatSessionRateLimits? rateLimits, int? maxRequestsPer1Minute, ChatSessionStatus? status, ChatSessionChatkitConfiguration? chatkitConfiguration, }) {return ChatSessionResource(
   id: id ?? this.id,
   object: object ?? this.object,
   expiresAt: expiresAt ?? this.expiresAt,
@@ -128,8 +128,8 @@ ChatSessionResource copyWith({String? id, ChatSessionResourceObject? object, int
   maxRequestsPer1Minute: maxRequestsPer1Minute ?? this.maxRequestsPer1Minute,
   status: status ?? this.status,
   chatkitConfiguration: chatkitConfiguration ?? this.chatkitConfiguration,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ChatSessionResource &&
           id == other.id &&
           object == other.object &&
@@ -140,7 +140,7 @@ ChatSessionResource copyWith({String? id, ChatSessionResourceObject? object, int
           rateLimits == other.rateLimits &&
           maxRequestsPer1Minute == other.maxRequestsPer1Minute &&
           status == other.status &&
-          chatkitConfiguration == other.chatkitConfiguration; } 
-@override int get hashCode { return Object.hash(id, object, expiresAt, clientSecret, workflow, user, rateLimits, maxRequestsPer1Minute, status, chatkitConfiguration); } 
-@override String toString() { return 'ChatSessionResource(id: $id, object: $object, expiresAt: $expiresAt, clientSecret: $clientSecret, workflow: $workflow, user: $user, rateLimits: $rateLimits, maxRequestsPer1Minute: $maxRequestsPer1Minute, status: $status, chatkitConfiguration: $chatkitConfiguration)'; } 
- }
+          chatkitConfiguration == other.chatkitConfiguration;}
+@override int get hashCode {return Object.hash(id, object, expiresAt, clientSecret, workflow, user, rateLimits, maxRequestsPer1Minute, status, chatkitConfiguration);}
+@override String toString() {return 'ChatSessionResource(id: $id, object: $object, expiresAt: $expiresAt, clientSecret: $clientSecret, workflow: $workflow, user: $user, rateLimits: $rateLimits, maxRequestsPer1Minute: $maxRequestsPer1Minute, status: $status, chatkitConfiguration: $chatkitConfiguration)';}
+}

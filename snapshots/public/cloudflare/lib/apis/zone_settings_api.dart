@@ -13,7 +13,7 @@ final class ZoneSettingsApi with ApiExecutor {const ZoneSettingsApi(this.apiConf
 /// Fetch a single zone setting by name
 ///
 /// `GET /zones/{zone_id}/settings/{setting_id}`
-Future<ApiResult<ZonesSetting?, ResponseCommonFailure88>> zoneSettingsGetSingleSetting({required ZonesIdentifier zoneId, required ZonesSettingName settingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZonesSetting?, ResponseCommonFailure88>> zoneSettingsGetSingleSetting({required ZonesIdentifier zoneId, required ZonesSettingName settingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Edit zone setting
 ///
 /// Updates a single zone setting by the identifier
 ///
 /// `PATCH /zones/{zone_id}/settings/{setting_id}`
-Future<ApiResult<ZonesSetting?, ResponseCommonFailure88>> zoneSettingsEditSingleSetting({required ZonesIdentifier zoneId, required ZonesSettingName settingId, required ZonesZoneSettingsSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZonesSetting?, ResponseCommonFailure88>> zoneSettingsEditSingleSetting({required ZonesIdentifier zoneId, required ZonesSettingName settingId, required ZonesZoneSettingsSingleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get aegis setting
 ///
 /// Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
 ///
 /// `GET /zones/{zone_id}/settings/aegis`
-Future<ApiResult<CacheRulesAegis?, ResponseCommonFailure14>> zoneCacheSettingsGetAegisSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesAegis?, ResponseCommonFailure14>> zoneCacheSettingsGetAegisSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -105,13 +105,13 @@ return null;
 
   },
 );
- } 
+}
 /// Change aegis setting
 ///
 /// Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
 ///
 /// `PATCH /zones/{zone_id}/settings/aegis`
-Future<ApiResult<CacheRulesAegis?, ResponseCommonFailure14>> zoneCacheSettingsChangeAegisSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeAegisSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesAegis?, ResponseCommonFailure14>> zoneCacheSettingsChangeAegisSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeAegisSettingRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,7 +139,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get Cloudflare Fonts setting
 ///
 /// Enhance your website's font delivery with Cloudflare Fonts. Deliver Google Hosted fonts from your own domain,
@@ -147,7 +147,7 @@ return null;
 /// 
 ///
 /// `GET /zones/{zone_id}/settings/fonts`
-Future<ApiResult<SpeedCloudflareFonts?, ResponseCommonFailure68>> zoneSettingsGetFontsSetting({required SpeedIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpeedCloudflareFonts?, ResponseCommonFailure68>> zoneSettingsGetFontsSetting({required SpeedIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -173,7 +173,7 @@ return null;
 
   },
 );
- } 
+}
 /// Change Cloudflare Fonts setting
 ///
 /// Enhance your website's font delivery with Cloudflare Fonts. Deliver Google Hosted fonts from your own domain,
@@ -181,7 +181,7 @@ return null;
 /// 
 ///
 /// `PATCH /zones/{zone_id}/settings/fonts`
-Future<ApiResult<SpeedCloudflareFonts?, ResponseCommonFailure68>> zoneSettingsChangeFontsSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeFontsSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpeedCloudflareFonts?, ResponseCommonFailure68>> zoneSettingsChangeFontsSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeFontsSettingRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -209,13 +209,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get Origin H2 Max Streams Setting
 ///
 /// Origin H2 Max Streams configures the max number of concurrent requests that Cloudflare will send within the same connection when communicating with the origin server, if the origin supports it. Note that if your origin does not support H2 multiplexing, 5xx errors may be observed, particularly 520s. Also note that the default value is `100` for all plan types except Enterprise where it is `1`. `1` means that H2 multiplexing is disabled.
 ///
 /// `GET /zones/{zone_id}/settings/origin_h2_max_streams`
-Future<ApiResult<CacheRulesOriginH2MaxStreams?, ResponseCommonFailure14>> zoneCacheSettingsGetOriginH2MaxStreamsSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesOriginH2MaxStreams?, ResponseCommonFailure14>> zoneCacheSettingsGetOriginH2MaxStreamsSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -241,13 +241,13 @@ return null;
 
   },
 );
- } 
+}
 /// Change Origin H2 Max Streams Setting
 ///
 /// Origin H2 Max Streams configures the max number of concurrent requests that Cloudflare will send within the same connection when communicating with the origin server, if the origin supports it. Note that if your origin does not support H2 multiplexing, 5xx errors may be observed, particularly 520s. Also note that the default value is `100` for all plan types except Enterprise where it is `1`. `1` means that H2 multiplexing is disabled.
 ///
 /// `PATCH /zones/{zone_id}/settings/origin_h2_max_streams`
-Future<ApiResult<CacheRulesOriginH2MaxStreams?, ResponseCommonFailure14>> zoneCacheSettingsChangeOriginH2MaxStreamsSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesOriginH2MaxStreams?, ResponseCommonFailure14>> zoneCacheSettingsChangeOriginH2MaxStreamsSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -275,13 +275,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get Origin Max HTTP Version Setting
 ///
 /// Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is "2" for all plan types except Enterprise where it is "1".
 ///
 /// `GET /zones/{zone_id}/settings/origin_max_http_version`
-Future<ApiResult<CacheRulesOriginMaxHttpVersion?, ResponseCommonFailure14>> zoneCacheSettingsGetOriginMaxHttpVersionSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesOriginMaxHttpVersion?, ResponseCommonFailure14>> zoneCacheSettingsGetOriginMaxHttpVersionSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -307,13 +307,13 @@ return null;
 
   },
 );
- } 
+}
 /// Change Origin Max HTTP Version Setting
 ///
 /// Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is "2" for all plan types except Enterprise where it is "1".
 ///
 /// `PATCH /zones/{zone_id}/settings/origin_max_http_version`
-Future<ApiResult<CacheRulesOriginMaxHttpVersion?, ResponseCommonFailure14>> zoneCacheSettingsChangeOriginMaxHttpVersionSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginMaxHttpVersionSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesOriginMaxHttpVersion?, ResponseCommonFailure14>> zoneCacheSettingsChangeOriginMaxHttpVersionSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginMaxHttpVersionSettingRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -341,7 +341,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get Cloudflare Speed Brain setting
 ///
 /// Speed Brain lets compatible browsers speculate on content which can be prefetched or preloaded, making website
@@ -349,7 +349,7 @@ return null;
 /// 
 ///
 /// `GET /zones/{zone_id}/settings/speed_brain`
-Future<ApiResult<SpeedCloudflareSpeedBrainResponse?, ResponseCommonFailure68>> zoneSettingsGetSpeedBrainSetting({required SpeedIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpeedCloudflareSpeedBrainResponse?, ResponseCommonFailure68>> zoneSettingsGetSpeedBrainSetting({required SpeedIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -375,7 +375,7 @@ return null;
 
   },
 );
- } 
+}
 /// Change Cloudflare Speed Brain setting
 ///
 /// Speed Brain lets compatible browsers speculate on content which can be prefetched or preloaded, making website
@@ -383,7 +383,7 @@ return null;
 /// 
 ///
 /// `PATCH /zones/{zone_id}/settings/speed_brain`
-Future<ApiResult<SpeedCloudflareSpeedBrainResponse?, ResponseCommonFailure68>> zoneSettingsChangeSpeedBrainSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeSpeedBrainSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpeedCloudflareSpeedBrainResponse?, ResponseCommonFailure68>> zoneSettingsChangeSpeedBrainSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeSpeedBrainSettingRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -411,5 +411,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

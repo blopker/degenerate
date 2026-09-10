@@ -6,11 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcp_tool_app
 /// 
 @immutable final class McpToolApprovalSetting {const McpToolApprovalSetting._(this.value);
 
-factory McpToolApprovalSetting.fromJson(String json) { return switch (json) {
+factory McpToolApprovalSetting.fromJson(String json) {return switch (json) {
   'always' => always,
   'never' => never,
   _ => McpToolApprovalSetting._(json),
-}; }
+};}
 
 static const McpToolApprovalSetting always = McpToolApprovalSetting._('always');
 
@@ -20,12 +20,12 @@ static const List<McpToolApprovalSetting> values = [always, never];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McpToolApprovalSetting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'McpToolApprovalSetting($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is McpToolApprovalSetting && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'McpToolApprovalSetting($value)';}
+}
 typedef McpToolRequireApproval = OneOf2<McpToolApprovalFilter,McpToolApprovalSetting>;

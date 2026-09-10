@@ -13,7 +13,7 @@ final class NotificationHistoryApi with ApiExecutor {const NotificationHistoryAp
 /// Gets a list of history records for notifications sent to an account. The records are displayed for last `x` number of days based on the zone plan (free = 30, pro = 30, biz = 30, ent = 90).
 ///
 /// `GET /accounts/{account_id}/alerting/v3/history`
-Future<ApiResult<List<AaaHistory>?, NotificationHistoryListHistoryResponse4xx>> notificationHistoryListHistory({required AaaAccountId accountId, AaaPerPage? perPage, AaaBefore? before, double? page, DateTime? since, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AaaHistory>?, NotificationHistoryListHistoryResponse4xx>> notificationHistoryListHistory({required AaaAccountId accountId, AaaPerPage? perPage, AaaBefore? before, double? page, DateTime? since, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -56,5 +56,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

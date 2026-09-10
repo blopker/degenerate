@@ -13,7 +13,7 @@ final class WorkerRoutesApi with ApiExecutor {const WorkerRoutesApi(this.apiConf
 /// Returns routes for a zone.
 ///
 /// `GET /zones/{zone_id}/workers/routes`
-Future<ApiResult<List<WorkersRoute>, ResponseCommonFailure82>> workerRoutesListRoutes({required WorkersIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<WorkersRoute>, ResponseCommonFailure82>> workerRoutesListRoutes({required WorkersIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create Route
 ///
 /// Creates a route that maps a URL pattern to a Worker.
 ///
 /// `POST /zones/{zone_id}/workers/routes`
-Future<ApiResult<WorkersRoute, ResponseCommonFailure82>> workerRoutesCreateRoute({required WorkersIdentifier zoneId, required WorkersRouteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersRoute, ResponseCommonFailure82>> workerRoutesCreateRoute({required WorkersIdentifier zoneId, required WorkersRouteRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get Route
 ///
 /// Returns information about a route, including URL pattern and Worker.
 ///
 /// `GET /zones/{zone_id}/workers/routes/{route_id}`
-Future<ApiResult<WorkersRoute, ResponseCommonFailure82>> workerRoutesGetRoute({required WorkersIdentifier routeId, required WorkersIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersRoute, ResponseCommonFailure82>> workerRoutesGetRoute({required WorkersIdentifier routeId, required WorkersIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -105,13 +105,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update Route
 ///
 /// Updates the URL pattern or Worker associated with a route.
 ///
 /// `PUT /zones/{zone_id}/workers/routes/{route_id}`
-Future<ApiResult<WorkersRoute, ResponseCommonFailure82>> workerRoutesUpdateRoute({required WorkersIdentifier routeId, required WorkersIdentifier zoneId, required WorkersRouteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersRoute, ResponseCommonFailure82>> workerRoutesUpdateRoute({required WorkersIdentifier routeId, required WorkersIdentifier zoneId, required WorkersRouteRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,13 +139,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Route
 ///
 /// Deletes a route.
 ///
 /// `DELETE /zones/{zone_id}/workers/routes/{route_id}`
-Future<ApiResult<WorkerRoutesDeleteRouteResponseResult, ResponseCommonFailure82>> workerRoutesDeleteRoute({required WorkersIdentifier routeId, required WorkersIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkerRoutesDeleteRouteResponseResult, ResponseCommonFailure82>> workerRoutesDeleteRoute({required WorkersIdentifier routeId, required WorkersIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -171,5 +171,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

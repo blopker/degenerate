@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomerRenderingOptionsParamAmountTaxDisplay {const CustomerRenderingOptionsParamAmountTaxDisplay._(this.value);
 
-factory CustomerRenderingOptionsParamAmountTaxDisplay.fromJson(String json) { return switch (json) {
+factory CustomerRenderingOptionsParamAmountTaxDisplay.fromJson(String json) {return switch (json) {
   '' => $empty,
   'exclude_tax' => excludeTax,
   'include_inclusive_tax' => includeInclusiveTax,
   _ => CustomerRenderingOptionsParamAmountTaxDisplay._(json),
-}; }
+};}
 
 static const CustomerRenderingOptionsParamAmountTaxDisplay $empty = CustomerRenderingOptionsParamAmountTaxDisplay._('');
 
@@ -19,38 +19,38 @@ static const List<CustomerRenderingOptionsParamAmountTaxDisplay> values = [$empt
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerRenderingOptionsParamAmountTaxDisplay && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerRenderingOptionsParamAmountTaxDisplay($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CustomerRenderingOptionsParamAmountTaxDisplay && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CustomerRenderingOptionsParamAmountTaxDisplay($value)';}
+}
 @immutable final class CustomerRenderingOptionsParam {const CustomerRenderingOptionsParam({this.amountTaxDisplay, this.template, });
 
-factory CustomerRenderingOptionsParam.fromJson(Map<String, dynamic> json) { return CustomerRenderingOptionsParam(
+factory CustomerRenderingOptionsParam.fromJson(Map<String, dynamic> json) {return CustomerRenderingOptionsParam(
   amountTaxDisplay: json['amount_tax_display'] != null ? CustomerRenderingOptionsParamAmountTaxDisplay.fromJson(json['amount_tax_display'] as String) : null,
   template: json['template'] as String?,
-); }
+);}
 
 final CustomerRenderingOptionsParamAmountTaxDisplay? amountTaxDisplay;
 
 final String? template;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amountTaxDisplay != null) 'amount_tax_display': amountTaxDisplay?.toJson(),
   'template': ?template,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_tax_display', 'template'}.contains(key)); } 
-CustomerRenderingOptionsParam copyWith({CustomerRenderingOptionsParamAmountTaxDisplay? Function()? amountTaxDisplay, String? Function()? template, }) { return CustomerRenderingOptionsParam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount_tax_display', 'template'}.contains(key));}
+CustomerRenderingOptionsParam copyWith({CustomerRenderingOptionsParamAmountTaxDisplay? Function()? amountTaxDisplay, String? Function()? template, }) {return CustomerRenderingOptionsParam(
   amountTaxDisplay: amountTaxDisplay != null ? amountTaxDisplay() : this.amountTaxDisplay,
   template: template != null ? template() : this.template,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomerRenderingOptionsParam &&
           amountTaxDisplay == other.amountTaxDisplay &&
-          template == other.template; } 
-@override int get hashCode { return Object.hash(amountTaxDisplay, template); } 
-@override String toString() { return 'CustomerRenderingOptionsParam(amountTaxDisplay: $amountTaxDisplay, template: $template)'; } 
- }
+          template == other.template;}
+@override int get hashCode {return Object.hash(amountTaxDisplay, template);}
+@override String toString() {return 'CustomerRenderingOptionsParam(amountTaxDisplay: $amountTaxDisplay, template: $template)';}
+}

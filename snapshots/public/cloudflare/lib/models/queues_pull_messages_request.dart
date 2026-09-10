@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_batch_size.dart';import 'mq_visibility_timeout.dart';@immutable final class QueuesPullMessagesRequest {const QueuesPullMessagesRequest({this.batchSize, this.visibilityTimeoutMs, });
 
-factory QueuesPullMessagesRequest.fromJson(Map<String, dynamic> json) { return QueuesPullMessagesRequest(
+factory QueuesPullMessagesRequest.fromJson(Map<String, dynamic> json) {return QueuesPullMessagesRequest(
   batchSize: json['batch_size'] != null ? MqBatchSize.fromJson(json['batch_size'] as num) : null,
   visibilityTimeoutMs: json['visibility_timeout_ms'] != null ? MqVisibilityTimeout.fromJson(json['visibility_timeout_ms'] as num) : null,
-); }
+);}
 
 /// The maximum number of messages to include in a batch.
 final MqBatchSize? batchSize;
@@ -13,19 +13,19 @@ final MqBatchSize? batchSize;
 /// The number of milliseconds that a message is exclusively leased. After the timeout, the message becomes available for another attempt.
 final MqVisibilityTimeout? visibilityTimeoutMs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (batchSize != null) 'batch_size': batchSize?.toJson(),
   if (visibilityTimeoutMs != null) 'visibility_timeout_ms': visibilityTimeoutMs?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'batch_size', 'visibility_timeout_ms'}.contains(key)); } 
-QueuesPullMessagesRequest copyWith({MqBatchSize? Function()? batchSize, MqVisibilityTimeout? Function()? visibilityTimeoutMs, }) { return QueuesPullMessagesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'batch_size', 'visibility_timeout_ms'}.contains(key));}
+QueuesPullMessagesRequest copyWith({MqBatchSize? Function()? batchSize, MqVisibilityTimeout? Function()? visibilityTimeoutMs, }) {return QueuesPullMessagesRequest(
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   visibilityTimeoutMs: visibilityTimeoutMs != null ? visibilityTimeoutMs() : this.visibilityTimeoutMs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is QueuesPullMessagesRequest &&
           batchSize == other.batchSize &&
-          visibilityTimeoutMs == other.visibilityTimeoutMs; } 
-@override int get hashCode { return Object.hash(batchSize, visibilityTimeoutMs); } 
-@override String toString() { return 'QueuesPullMessagesRequest(batchSize: $batchSize, visibilityTimeoutMs: $visibilityTimeoutMs)'; } 
- }
+          visibilityTimeoutMs == other.visibilityTimeoutMs;}
+@override int get hashCode {return Object.hash(batchSize, visibilityTimeoutMs);}
+@override String toString() {return 'QueuesPullMessagesRequest(batchSize: $batchSize, visibilityTimeoutMs: $visibilityTimeoutMs)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupHttpProtocol {const RadarGetHttpTimeseriesGroupHttpProtocol._(this.value);
 
-factory RadarGetHttpTimeseriesGroupHttpProtocol.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTimeseriesGroupHttpProtocol.fromJson(String json) {return switch (json) {
   'HTTP' => http,
   'HTTPS' => https,
   _ => RadarGetHttpTimeseriesGroupHttpProtocol._(json),
-}; }
+};}
 
 static const RadarGetHttpTimeseriesGroupHttpProtocol http = RadarGetHttpTimeseriesGroupHttpProtocol._('HTTP');
 
@@ -16,11 +16,11 @@ static const List<RadarGetHttpTimeseriesGroupHttpProtocol> values = [http, https
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTimeseriesGroupHttpProtocol && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTimeseriesGroupHttpProtocol($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupHttpProtocol && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTimeseriesGroupHttpProtocol($value)';}
+}

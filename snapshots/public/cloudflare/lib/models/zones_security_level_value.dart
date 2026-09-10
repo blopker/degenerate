@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 @immutable final class ZonesSecurityLevelValue {const ZonesSecurityLevelValue._(this.value);
 
-factory ZonesSecurityLevelValue.fromJson(String json) { return switch (json) {
+factory ZonesSecurityLevelValue.fromJson(String json) {return switch (json) {
   'off' => off,
   'essentially_off' => essentiallyOff,
   'low' => low,
@@ -11,7 +11,7 @@ factory ZonesSecurityLevelValue.fromJson(String json) { return switch (json) {
   'high' => high,
   'under_attack' => underAttack,
   _ => ZonesSecurityLevelValue._(json),
-}; }
+};}
 
 static const ZonesSecurityLevelValue off = ZonesSecurityLevelValue._('off');
 
@@ -29,11 +29,11 @@ static const List<ZonesSecurityLevelValue> values = [off, essentiallyOff, low, m
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSecurityLevelValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesSecurityLevelValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesSecurityLevelValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesSecurityLevelValue($value)';}
+}

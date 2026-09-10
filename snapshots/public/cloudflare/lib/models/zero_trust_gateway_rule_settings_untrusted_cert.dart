@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the action performed when an untrusted certificate seen. The default action an error with HTTP code 526.
 @immutable final class ZeroTrustGatewayRuleSettingsUntrustedCertAction {const ZeroTrustGatewayRuleSettingsUntrustedCertAction._(this.value);
 
-factory ZeroTrustGatewayRuleSettingsUntrustedCertAction.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayRuleSettingsUntrustedCertAction.fromJson(String json) {return switch (json) {
   'pass_through' => passThrough,
   'block' => block,
   'error' => error,
   _ => ZeroTrustGatewayRuleSettingsUntrustedCertAction._(json),
-}; }
+};}
 
 static const ZeroTrustGatewayRuleSettingsUntrustedCertAction passThrough = ZeroTrustGatewayRuleSettingsUntrustedCertAction._('pass_through');
 
@@ -20,34 +20,34 @@ static const List<ZeroTrustGatewayRuleSettingsUntrustedCertAction> values = [pas
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayRuleSettingsUntrustedCertAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayRuleSettingsUntrustedCertAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZeroTrustGatewayRuleSettingsUntrustedCertAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayRuleSettingsUntrustedCertAction($value)';}
+}
 /// Configure behavior when an upstream certificate is invalid or an SSL error occurs. Settable only for `http` rules with the action set to `allow`.
 @immutable final class ZeroTrustGatewayRuleSettingsUntrustedCert {const ZeroTrustGatewayRuleSettingsUntrustedCert({this.action});
 
-factory ZeroTrustGatewayRuleSettingsUntrustedCert.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsUntrustedCert(
+factory ZeroTrustGatewayRuleSettingsUntrustedCert.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayRuleSettingsUntrustedCert(
   action: json['action'] != null ? ZeroTrustGatewayRuleSettingsUntrustedCertAction.fromJson(json['action'] as String) : null,
-); }
+);}
 
 /// Defines the action performed when an untrusted certificate seen. The default action an error with HTTP code 526.
 final ZeroTrustGatewayRuleSettingsUntrustedCertAction? action;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action'}.contains(key)); } 
-ZeroTrustGatewayRuleSettingsUntrustedCert copyWith({ZeroTrustGatewayRuleSettingsUntrustedCertAction? Function()? action}) { return ZeroTrustGatewayRuleSettingsUntrustedCert(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'action'}.contains(key));}
+ZeroTrustGatewayRuleSettingsUntrustedCert copyWith({ZeroTrustGatewayRuleSettingsUntrustedCertAction? Function()? action}) {return ZeroTrustGatewayRuleSettingsUntrustedCert(
   action: action != null ? action() : this.action,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewayRuleSettingsUntrustedCert &&
-          action == other.action; } 
-@override int get hashCode { return action.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayRuleSettingsUntrustedCert(action: $action)'; } 
- }
+          action == other.action;}
+@override int get hashCode {return action.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayRuleSettingsUntrustedCert(action: $action)';}
+}

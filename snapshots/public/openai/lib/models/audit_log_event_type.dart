@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type.
 @immutable final class AuditLogEventType {const AuditLogEventType._(this.value);
 
-factory AuditLogEventType.fromJson(String json) { return switch (json) {
+factory AuditLogEventType.fromJson(String json) {return switch (json) {
   'api_key.created' => apiKeyCreated,
   'api_key.updated' => apiKeyUpdated,
   'api_key.deleted' => apiKeyDeleted,
@@ -56,7 +56,7 @@ factory AuditLogEventType.fromJson(String json) { return switch (json) {
   'user.updated' => userUpdated,
   'user.deleted' => userDeleted,
   _ => AuditLogEventType._(json),
-}; }
+};}
 
 static const AuditLogEventType apiKeyCreated = AuditLogEventType._('api_key.created');
 
@@ -164,11 +164,11 @@ static const List<AuditLogEventType> values = [apiKeyCreated, apiKeyUpdated, api
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AuditLogEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AuditLogEventType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AuditLogEventType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AuditLogEventType($value)';}
+}

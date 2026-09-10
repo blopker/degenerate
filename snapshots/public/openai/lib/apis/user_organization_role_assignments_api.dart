@@ -11,7 +11,7 @@ final class UserOrganizationRoleAssignmentsApi with ApiExecutor {const UserOrgan
 /// Lists the organization roles assigned to a user within the organization.
 ///
 /// `GET /organization/users/{user_id}/roles`
-Future<ApiResult<RoleListResource, Never>> listUserRoleAssignments({required String userId, int? limit, String? after, ListUserRoleAssignmentsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RoleListResource, Never>> listUserRoleAssignments({required String userId, int? limit, String? after, ListUserRoleAssignmentsOrder? order, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -41,11 +41,11 @@ final json = jsonDecode(response.body);
 return RoleListResource.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Assigns an organization role to a user within the organization.
 ///
 /// `POST /organization/users/{user_id}/roles`
-Future<ApiResult<UserRoleAssignment, Never>> assignUserRole({required String userId, required PublicAssignOrganizationGroupRoleBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UserRoleAssignment, Never>> assignUserRole({required String userId, required PublicAssignOrganizationGroupRoleBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -63,11 +63,11 @@ final json = jsonDecode(response.body);
 return UserRoleAssignment.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Unassigns an organization role from a user within the organization.
 ///
 /// `DELETE /organization/users/{user_id}/roles/{role_id}`
-Future<ApiResult<DeletedRoleAssignmentResource, Never>> unassignUserRole({required String userId, required String roleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedRoleAssignmentResource, Never>> unassignUserRole({required String userId, required String roleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -83,5 +83,5 @@ final json = jsonDecode(response.body);
 return DeletedRoleAssignmentResource.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

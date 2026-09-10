@@ -13,7 +13,7 @@ final class IpListApi with ApiExecutor {const IpListApi(this.apiConfig);
 /// Returns a list of available IP list categories (e.g., anonymizer, botnetcc, malware, tor, vpn, open_proxies). This endpoint provides metadata about which IP lists are available in the system.
 ///
 /// `GET /accounts/{account_id}/intel/ip-lists`
-Future<ApiResult<List<IntelIpList>, IpListGetIpListsResponse4xx>> ipListGetIpLists({required IntelIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<IntelIpList>, IpListGetIpListsResponse4xx>> ipListGetIpLists({required IntelIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,5 +39,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

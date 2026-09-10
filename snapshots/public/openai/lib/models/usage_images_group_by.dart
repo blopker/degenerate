@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageImagesGroupBy {const UsageImagesGroupBy._(this.value);
 
-factory UsageImagesGroupBy.fromJson(String json) { return switch (json) {
+factory UsageImagesGroupBy.fromJson(String json) {return switch (json) {
   'project_id' => projectId,
   'user_id' => userId,
   'api_key_id' => apiKeyId,
@@ -10,7 +10,7 @@ factory UsageImagesGroupBy.fromJson(String json) { return switch (json) {
   'size' => size,
   'source' => source,
   _ => UsageImagesGroupBy._(json),
-}; }
+};}
 
 static const UsageImagesGroupBy projectId = UsageImagesGroupBy._('project_id');
 
@@ -28,11 +28,11 @@ static const List<UsageImagesGroupBy> values = [projectId, userId, apiKeyId, mod
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageImagesGroupBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageImagesGroupBy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UsageImagesGroupBy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UsageImagesGroupBy($value)';}
+}

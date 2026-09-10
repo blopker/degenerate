@@ -9,12 +9,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_pay
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class CheckoutSepaDebitPaymentMethodOptionsSetupFutureUsage {const CheckoutSepaDebitPaymentMethodOptionsSetupFutureUsage._(this.value);
 
-factory CheckoutSepaDebitPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory CheckoutSepaDebitPaymentMethodOptionsSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   'off_session' => offSession,
   'on_session' => onSession,
   _ => CheckoutSepaDebitPaymentMethodOptionsSetupFutureUsage._(json),
-}; }
+};}
 
 static const CheckoutSepaDebitPaymentMethodOptionsSetupFutureUsage none = CheckoutSepaDebitPaymentMethodOptionsSetupFutureUsage._('none');
 
@@ -26,22 +26,22 @@ static const List<CheckoutSepaDebitPaymentMethodOptionsSetupFutureUsage> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutSepaDebitPaymentMethodOptionsSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutSepaDebitPaymentMethodOptionsSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckoutSepaDebitPaymentMethodOptionsSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckoutSepaDebitPaymentMethodOptionsSetupFutureUsage($value)';}
+}
 /// 
 @immutable final class CheckoutSepaDebitPaymentMethodOptions {const CheckoutSepaDebitPaymentMethodOptions({this.mandateOptions, this.setupFutureUsage, this.targetDate, });
 
-factory CheckoutSepaDebitPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutSepaDebitPaymentMethodOptions(
+factory CheckoutSepaDebitPaymentMethodOptions.fromJson(Map<String, dynamic> json) {return CheckoutSepaDebitPaymentMethodOptions(
   mandateOptions: json['mandate_options'] != null ? CheckoutPaymentMethodOptionsMandateOptionsSepaDebit.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutSepaDebitPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
-); }
+);}
 
 final CheckoutPaymentMethodOptionsMandateOptionsSepaDebit? mandateOptions;
 
@@ -57,22 +57,22 @@ final CheckoutSepaDebitPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 /// Controls when Stripe will attempt to debit the funds from the customer's account. The date must be a string in YYYY-MM-DD format. The date must be in the future and between 3 and 15 calendar days from now.
 final String? targetDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
   'target_date': ?targetDate,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'setup_future_usage', 'target_date'}.contains(key)); } 
-CheckoutSepaDebitPaymentMethodOptions copyWith({CheckoutPaymentMethodOptionsMandateOptionsSepaDebit? Function()? mandateOptions, CheckoutSepaDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, }) { return CheckoutSepaDebitPaymentMethodOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mandate_options', 'setup_future_usage', 'target_date'}.contains(key));}
+CheckoutSepaDebitPaymentMethodOptions copyWith({CheckoutPaymentMethodOptionsMandateOptionsSepaDebit? Function()? mandateOptions, CheckoutSepaDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, }) {return CheckoutSepaDebitPaymentMethodOptions(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CheckoutSepaDebitPaymentMethodOptions &&
           mandateOptions == other.mandateOptions &&
           setupFutureUsage == other.setupFutureUsage &&
-          targetDate == other.targetDate; } 
-@override int get hashCode { return Object.hash(mandateOptions, setupFutureUsage, targetDate); } 
-@override String toString() { return 'CheckoutSepaDebitPaymentMethodOptions(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate)'; } 
- }
+          targetDate == other.targetDate;}
+@override int get hashCode {return Object.hash(mandateOptions, setupFutureUsage, targetDate);}
+@override String toString() {return 'CheckoutSepaDebitPaymentMethodOptions(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate)';}
+}

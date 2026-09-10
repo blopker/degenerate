@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pay_per_crawl_error_source.dart';@immutable final class PayPerCrawlRestError {const PayPerCrawlRestError({this.code, this.documentationUrl, this.error, this.source, });
 
-factory PayPerCrawlRestError.fromJson(Map<String, dynamic> json) { return PayPerCrawlRestError(
+factory PayPerCrawlRestError.fromJson(Map<String, dynamic> json) {return PayPerCrawlRestError(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,
   documentationUrl: json['documentation_url'] as String?,
   error: json['error'] as String?,
   source: json['source'] != null ? PayPerCrawlErrorSource.fromJson(json['source'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final int? code;
 
@@ -17,25 +17,25 @@ final String? error;
 
 final PayPerCrawlErrorSource? source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': ?code,
   'documentation_url': ?documentationUrl,
   'error': ?error,
   if (source != null) 'source': source?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'documentation_url', 'error', 'source'}.contains(key)); } 
-PayPerCrawlRestError copyWith({int? Function()? code, String? Function()? documentationUrl, String? Function()? error, PayPerCrawlErrorSource? Function()? source, }) { return PayPerCrawlRestError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'documentation_url', 'error', 'source'}.contains(key));}
+PayPerCrawlRestError copyWith({int? Function()? code, String? Function()? documentationUrl, String? Function()? error, PayPerCrawlErrorSource? Function()? source, }) {return PayPerCrawlRestError(
   code: code != null ? code() : this.code,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
   error: error != null ? error() : this.error,
   source: source != null ? source() : this.source,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PayPerCrawlRestError &&
           code == other.code &&
           documentationUrl == other.documentationUrl &&
           error == other.error &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(code, documentationUrl, error, source); } 
-@override String toString() { return 'PayPerCrawlRestError(code: $code, documentationUrl: $documentationUrl, error: $error, source: $source)'; } 
- }
+          source == other.source;}
+@override int get hashCode {return Object.hash(code, documentationUrl, error, source);}
+@override String toString() {return 'PayPerCrawlRestError(code: $code, documentationUrl: $documentationUrl, error: $error, source: $source)';}
+}

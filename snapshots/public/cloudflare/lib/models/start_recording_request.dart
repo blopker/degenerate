@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_audio_config.dart';import 'realtimekit_interactive_config.dart';import 'realtimekit_livestreaming_config.dart';import 'realtimekit_realtimekit_bucket_config.dart';import 'realtimekit_storage_config.dart';import 'realtimekit_video_config.dart';@immutable final class StartRecordingRequest {const StartRecordingRequest({this.allowMultipleRecordings, this.audioConfig, this.fileNamePrefix, this.interactiveConfig, this.maxSeconds, this.meetingId, this.realtimekitBucketConfig, this.rtmpOutConfig, this.storageConfig = const Omittable.absent(), this.url, this.videoConfig, });
 
-factory StartRecordingRequest.fromJson(Map<String, dynamic> json) { return StartRecordingRequest(
+factory StartRecordingRequest.fromJson(Map<String, dynamic> json) {return StartRecordingRequest(
   allowMultipleRecordings: json['allow_multiple_recordings'] as bool?,
   audioConfig: json['audio_config'] != null ? RealtimekitAudioConfig.fromJson(json['audio_config'] as Map<String, dynamic>) : null,
   fileNamePrefix: json['file_name_prefix'] as String?,
@@ -14,7 +14,7 @@ factory StartRecordingRequest.fromJson(Map<String, dynamic> json) { return Start
   storageConfig: json.containsKey('storage_config') ? Omittable(json['storage_config'] != null ? RealtimekitStorageConfig.fromJson(json['storage_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
   videoConfig: json['video_config'] != null ? RealtimekitVideoConfig.fromJson(json['video_config'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// By default, a meeting allows only one recording to run at a time. Enabling the `allow_multiple_recordings` parameter to true allows you to initiate multiple recordings concurrently in the same meeting. This allows you to record separate videos of the same meeting with different configurations, such as portrait mode or landscape mode.
 final bool? allowMultipleRecordings;
@@ -44,8 +44,8 @@ final Uri? url;
 final RealtimekitVideoConfig? videoConfig;
 
 /// The value with the schema default applied when absent.
-bool get allowMultipleRecordingsOrDefault { return allowMultipleRecordings ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get allowMultipleRecordingsOrDefault {return allowMultipleRecordings ?? false;}
+Map<String, dynamic> toJson() {return {
   'allow_multiple_recordings': ?allowMultipleRecordings,
   if (audioConfig != null) 'audio_config': audioConfig?.toJson(),
   'file_name_prefix': ?fileNamePrefix,
@@ -57,9 +57,9 @@ Map<String, dynamic> toJson() { return {
   if (storageConfig.isPresent) 'storage_config': storageConfig.value?.toJson(),
   if (url != null) 'url': url?.toString(),
   if (videoConfig != null) 'video_config': videoConfig?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_multiple_recordings', 'audio_config', 'file_name_prefix', 'interactive_config', 'max_seconds', 'meeting_id', 'realtimekit_bucket_config', 'rtmp_out_config', 'storage_config', 'url', 'video_config'}.contains(key)); } 
-StartRecordingRequest copyWith({bool? Function()? allowMultipleRecordings, RealtimekitAudioConfig? Function()? audioConfig, String? Function()? fileNamePrefix, RealtimekitInteractiveConfig? Function()? interactiveConfig, int? Function()? maxSeconds, String? Function()? meetingId, RealtimekitRealtimekitBucketConfig? Function()? realtimekitBucketConfig, RealtimekitLivestreamingConfig? Function()? rtmpOutConfig, Omittable<RealtimekitStorageConfig?>? storageConfig, Uri? Function()? url, RealtimekitVideoConfig? Function()? videoConfig, }) { return StartRecordingRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allow_multiple_recordings', 'audio_config', 'file_name_prefix', 'interactive_config', 'max_seconds', 'meeting_id', 'realtimekit_bucket_config', 'rtmp_out_config', 'storage_config', 'url', 'video_config'}.contains(key));}
+StartRecordingRequest copyWith({bool? Function()? allowMultipleRecordings, RealtimekitAudioConfig? Function()? audioConfig, String? Function()? fileNamePrefix, RealtimekitInteractiveConfig? Function()? interactiveConfig, int? Function()? maxSeconds, String? Function()? meetingId, RealtimekitRealtimekitBucketConfig? Function()? realtimekitBucketConfig, RealtimekitLivestreamingConfig? Function()? rtmpOutConfig, Omittable<RealtimekitStorageConfig?>? storageConfig, Uri? Function()? url, RealtimekitVideoConfig? Function()? videoConfig, }) {return StartRecordingRequest(
   allowMultipleRecordings: allowMultipleRecordings != null ? allowMultipleRecordings() : this.allowMultipleRecordings,
   audioConfig: audioConfig != null ? audioConfig() : this.audioConfig,
   fileNamePrefix: fileNamePrefix != null ? fileNamePrefix() : this.fileNamePrefix,
@@ -71,8 +71,8 @@ StartRecordingRequest copyWith({bool? Function()? allowMultipleRecordings, Realt
   storageConfig: storageConfig ?? this.storageConfig,
   url: url != null ? url() : this.url,
   videoConfig: videoConfig != null ? videoConfig() : this.videoConfig,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is StartRecordingRequest &&
           allowMultipleRecordings == other.allowMultipleRecordings &&
           audioConfig == other.audioConfig &&
@@ -84,7 +84,7 @@ StartRecordingRequest copyWith({bool? Function()? allowMultipleRecordings, Realt
           rtmpOutConfig == other.rtmpOutConfig &&
           storageConfig == other.storageConfig &&
           url == other.url &&
-          videoConfig == other.videoConfig; } 
-@override int get hashCode { return Object.hash(allowMultipleRecordings, audioConfig, fileNamePrefix, interactiveConfig, maxSeconds, meetingId, realtimekitBucketConfig, rtmpOutConfig, storageConfig, url, videoConfig); } 
-@override String toString() { return 'StartRecordingRequest(allowMultipleRecordings: $allowMultipleRecordings, audioConfig: $audioConfig, fileNamePrefix: $fileNamePrefix, interactiveConfig: $interactiveConfig, maxSeconds: $maxSeconds, meetingId: $meetingId, realtimekitBucketConfig: $realtimekitBucketConfig, rtmpOutConfig: $rtmpOutConfig, storageConfig: $storageConfig, url: $url, videoConfig: $videoConfig)'; } 
- }
+          videoConfig == other.videoConfig;}
+@override int get hashCode {return Object.hash(allowMultipleRecordings, audioConfig, fileNamePrefix, interactiveConfig, maxSeconds, meetingId, realtimekitBucketConfig, rtmpOutConfig, storageConfig, url, videoConfig);}
+@override String toString() {return 'StartRecordingRequest(allowMultipleRecordings: $allowMultipleRecordings, audioConfig: $audioConfig, fileNamePrefix: $fileNamePrefix, interactiveConfig: $interactiveConfig, maxSeconds: $maxSeconds, meetingId: $meetingId, realtimekitBucketConfig: $realtimekitBucketConfig, rtmpOutConfig: $rtmpOutConfig, storageConfig: $storageConfig, url: $url, videoConfig: $videoConfig)';}
+}

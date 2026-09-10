@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class CodespacesDeleteForAuthenticatedUserError {const CodespacesDeleteForAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static CodespacesDeleteForAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static CodespacesDeleteForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const CodespacesDeleteForAuthenticatedUserError304();
 case 401:
@@ -22,44 +22,44 @@ return CodespacesDeleteForAuthenticatedUserError500(BasicError.fromJson(json as 
 default:
 return CodespacesDeleteForAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class CodespacesDeleteForAuthenticatedUserError304 extends CodespacesDeleteForAuthenticatedUserError {const CodespacesDeleteForAuthenticatedUserError304();
 
- }
+}
 /// Response for 401 (application/json).
 final class CodespacesDeleteForAuthenticatedUserError401 extends CodespacesDeleteForAuthenticatedUserError {const CodespacesDeleteForAuthenticatedUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class CodespacesDeleteForAuthenticatedUserError403 extends CodespacesDeleteForAuthenticatedUserError {const CodespacesDeleteForAuthenticatedUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class CodespacesDeleteForAuthenticatedUserError404 extends CodespacesDeleteForAuthenticatedUserError {const CodespacesDeleteForAuthenticatedUserError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 500 (application/json).
 final class CodespacesDeleteForAuthenticatedUserError500 extends CodespacesDeleteForAuthenticatedUserError {const CodespacesDeleteForAuthenticatedUserError500(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class CodespacesDeleteForAuthenticatedUserErrorUnknown extends CodespacesDeleteForAuthenticatedUserError {const CodespacesDeleteForAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

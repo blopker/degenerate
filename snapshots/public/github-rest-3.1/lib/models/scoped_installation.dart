@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'app_permissions.dart';import 'simple_user.dart';/// Describe whether all repositories have been selected or there's a selection involved
 @immutable final class ScopedInstallationRepositorySelection {const ScopedInstallationRepositorySelection._(this.value);
 
-factory ScopedInstallationRepositorySelection.fromJson(String json) { return switch (json) {
+factory ScopedInstallationRepositorySelection.fromJson(String json) {return switch (json) {
   'all' => all,
   'selected' => selected,
   _ => ScopedInstallationRepositorySelection._(json),
-}; }
+};}
 
 static const ScopedInstallationRepositorySelection all = ScopedInstallationRepositorySelection._('all');
 
@@ -17,17 +17,17 @@ static const List<ScopedInstallationRepositorySelection> values = [all, selected
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ScopedInstallationRepositorySelection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ScopedInstallationRepositorySelection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ScopedInstallationRepositorySelection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ScopedInstallationRepositorySelection($value)';}
+}
 @immutable final class ScopedInstallation {const ScopedInstallation({required this.permissions, required this.repositorySelection, required this.singleFileName, required this.repositoriesUrl, required this.account, this.hasMultipleSingleFiles, this.singleFilePaths, });
 
-factory ScopedInstallation.fromJson(Map<String, dynamic> json) { return ScopedInstallation(
+factory ScopedInstallation.fromJson(Map<String, dynamic> json) {return ScopedInstallation(
   permissions: AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>),
   repositorySelection: ScopedInstallationRepositorySelection.fromJson(json['repository_selection'] as String),
   singleFileName: json['single_file_name'] as String?,
@@ -35,7 +35,7 @@ factory ScopedInstallation.fromJson(Map<String, dynamic> json) { return ScopedIn
   singleFilePaths: (json['single_file_paths'] as List<dynamic>?)?.map((e) => e as String).toList(),
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),
   account: SimpleUser.fromJson(json['account'] as Map<String, dynamic>),
-); }
+);}
 
 final AppPermissions permissions;
 
@@ -52,7 +52,7 @@ final Uri repositoriesUrl;
 
 final SimpleUser account;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'permissions': permissions.toJson(),
   'repository_selection': repositorySelection.toJson(),
   'single_file_name': singleFileName,
@@ -60,13 +60,13 @@ Map<String, dynamic> toJson() { return {
   'single_file_paths': ?singleFilePaths,
   'repositories_url': repositoriesUrl.toString(),
   'account': account.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('permissions') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('permissions') &&
       json.containsKey('repository_selection') &&
       json.containsKey('single_file_name') && (json['single_file_name'] == null || json['single_file_name'] is String) &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
-      json.containsKey('account'); } 
-ScopedInstallation copyWith({AppPermissions? permissions, ScopedInstallationRepositorySelection? repositorySelection, String? Function()? singleFileName, bool? Function()? hasMultipleSingleFiles, List<String>? Function()? singleFilePaths, Uri? repositoriesUrl, SimpleUser? account, }) { return ScopedInstallation(
+      json.containsKey('account');}
+ScopedInstallation copyWith({AppPermissions? permissions, ScopedInstallationRepositorySelection? repositorySelection, String? Function()? singleFileName, bool? Function()? hasMultipleSingleFiles, List<String>? Function()? singleFilePaths, Uri? repositoriesUrl, SimpleUser? account, }) {return ScopedInstallation(
   permissions: permissions ?? this.permissions,
   repositorySelection: repositorySelection ?? this.repositorySelection,
   singleFileName: singleFileName != null ? singleFileName() : this.singleFileName,
@@ -74,8 +74,8 @@ ScopedInstallation copyWith({AppPermissions? permissions, ScopedInstallationRepo
   singleFilePaths: singleFilePaths != null ? singleFilePaths() : this.singleFilePaths,
   repositoriesUrl: repositoriesUrl ?? this.repositoriesUrl,
   account: account ?? this.account,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ScopedInstallation &&
           permissions == other.permissions &&
           repositorySelection == other.repositorySelection &&
@@ -83,7 +83,7 @@ ScopedInstallation copyWith({AppPermissions? permissions, ScopedInstallationRepo
           hasMultipleSingleFiles == other.hasMultipleSingleFiles &&
           listEquals(singleFilePaths, other.singleFilePaths) &&
           repositoriesUrl == other.repositoriesUrl &&
-          account == other.account; } 
-@override int get hashCode { return Object.hash(permissions, repositorySelection, singleFileName, hasMultipleSingleFiles, Object.hashAll(singleFilePaths ?? const []), repositoriesUrl, account); } 
-@override String toString() { return 'ScopedInstallation(permissions: $permissions, repositorySelection: $repositorySelection, singleFileName: $singleFileName, hasMultipleSingleFiles: $hasMultipleSingleFiles, singleFilePaths: $singleFilePaths, repositoriesUrl: $repositoriesUrl, account: $account)'; } 
- }
+          account == other.account;}
+@override int get hashCode {return Object.hash(permissions, repositorySelection, singleFileName, hasMultipleSingleFiles, Object.hashAll(singleFilePaths ?? const []), repositoriesUrl, account);}
+@override String toString() {return 'ScopedInstallation(permissions: $permissions, repositorySelection: $repositorySelection, singleFileName: $singleFileName, hasMultipleSingleFiles: $hasMultipleSingleFiles, singleFilePaths: $singleFilePaths, repositoriesUrl: $repositoriesUrl, account: $account)';}
+}

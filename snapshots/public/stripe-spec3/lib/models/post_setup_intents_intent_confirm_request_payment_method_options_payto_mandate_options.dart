@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_payto_mandate_options_amount.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_payto_mandate_options_end_date.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_payto_mandate_options_payments_per_period.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_payto_mandate_options_start_date.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmountType {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmountType._(this.value);
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmountType.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmountType.fromJson(String json) {return switch (json) {
   '' => $empty,
   'fixed' => fixed,
   'maximum' => maximum,
   _ => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmountType._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmountType $empty = PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmountType._('');
 
@@ -19,17 +19,17 @@ static const List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoM
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmountType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmountType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmountType($value)';}
+}
 @immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule._(this.value);
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule.fromJson(String json) {return switch (json) {
   '' => $empty,
   'adhoc' => adhoc,
   'annual' => annual,
@@ -40,7 +40,7 @@ factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOpti
   'semi_annual' => semiAnnual,
   'weekly' => weekly,
   _ => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule $empty = PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule._('');
 
@@ -64,17 +64,17 @@ static const List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoM
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule($value)';}
+}
 @immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPurpose {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._(this.value);
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPurpose.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPurpose.fromJson(String json) {return switch (json) {
   '' => $empty,
   'dependant_support' => dependantSupport,
   'government' => government,
@@ -88,7 +88,7 @@ factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOpti
   'tax' => tax,
   'utility' => utility,
   _ => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPurpose $empty = PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._('');
 
@@ -118,17 +118,17 @@ static const List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoM
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPurpose && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPurpose($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPurpose && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPurpose($value)';}
+}
 @immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, this.startDate, });
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions(
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions.fromJson(Map<String, dynamic> json) {return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions(
   amount: json['amount'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmount.fromJson(json['amount']) : null,
   amountType: json['amount_type'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmountType.fromJson(json['amount_type'] as String) : null,
   endDate: json['end_date'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsEndDate.fromJson(json['end_date']) : null,
@@ -136,7 +136,7 @@ factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOpti
   paymentsPerPeriod: json['payments_per_period'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentsPerPeriod.fromJson(json['payments_per_period']) : null,
   purpose: json['purpose'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPurpose.fromJson(json['purpose'] as String) : null,
   startDate: json['start_date'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsStartDate.fromJson(json['start_date']) : null,
-); }
+);}
 
 final PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmount? amount;
 
@@ -152,7 +152,7 @@ final PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOption
 
 final PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsStartDate? startDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amount != null) 'amount': amount?.toJson(),
   if (amountType != null) 'amount_type': amountType?.toJson(),
   if (endDate != null) 'end_date': endDate?.toJson(),
@@ -160,9 +160,9 @@ Map<String, dynamic> toJson() { return {
   if (paymentsPerPeriod != null) 'payments_per_period': paymentsPerPeriod?.toJson(),
   if (purpose != null) 'purpose': purpose?.toJson(),
   if (startDate != null) 'start_date': startDate?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_type', 'end_date', 'payment_schedule', 'payments_per_period', 'purpose', 'start_date'}.contains(key)); } 
-PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions copyWith({PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmount? Function()? amount, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmountType? Function()? amountType, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsEndDate? Function()? endDate, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule? Function()? paymentSchedule, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentsPerPeriod? Function()? paymentsPerPeriod, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPurpose? Function()? purpose, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsStartDate? Function()? startDate, }) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'amount_type', 'end_date', 'payment_schedule', 'payments_per_period', 'purpose', 'start_date'}.contains(key));}
+PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions copyWith({PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmount? Function()? amount, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsAmountType? Function()? amountType, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsEndDate? Function()? endDate, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule? Function()? paymentSchedule, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPaymentsPerPeriod? Function()? paymentsPerPeriod, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsPurpose? Function()? purpose, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsStartDate? Function()? startDate, }) {return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions(
   amount: amount != null ? amount() : this.amount,
   amountType: amountType != null ? amountType() : this.amountType,
   endDate: endDate != null ? endDate() : this.endDate,
@@ -170,8 +170,8 @@ PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions copy
   paymentsPerPeriod: paymentsPerPeriod != null ? paymentsPerPeriod() : this.paymentsPerPeriod,
   purpose: purpose != null ? purpose() : this.purpose,
   startDate: startDate != null ? startDate() : this.startDate,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions &&
           amount == other.amount &&
           amountType == other.amountType &&
@@ -179,7 +179,7 @@ PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions copy
           paymentSchedule == other.paymentSchedule &&
           paymentsPerPeriod == other.paymentsPerPeriod &&
           purpose == other.purpose &&
-          startDate == other.startDate; } 
-@override int get hashCode { return Object.hash(amount, amountType, endDate, paymentSchedule, paymentsPerPeriod, purpose, startDate); } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions(amount: $amount, amountType: $amountType, endDate: $endDate, paymentSchedule: $paymentSchedule, paymentsPerPeriod: $paymentsPerPeriod, purpose: $purpose, startDate: $startDate)'; } 
- }
+          startDate == other.startDate;}
+@override int get hashCode {return Object.hash(amount, amountType, endDate, paymentSchedule, paymentsPerPeriod, purpose, startDate);}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptions(amount: $amount, amountType: $amountType, endDate: $endDate, paymentSchedule: $paymentSchedule, paymentsPerPeriod: $paymentsPerPeriod, purpose: $purpose, startDate: $startDate)';}
+}

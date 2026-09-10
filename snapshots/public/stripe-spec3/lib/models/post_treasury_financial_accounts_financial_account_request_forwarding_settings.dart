@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettingsType {const PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettingsType._(this.value);
 
-factory PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettingsType.fromJson(String json) { return switch (json) {
+factory PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettingsType.fromJson(String json) {return switch (json) {
   'financial_account' => financialAccount,
   'payment_method' => paymentMethod,
   _ => PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettingsType._(json),
-}; }
+};}
 
 static const PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettingsType financialAccount = PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettingsType._('financial_account');
 
@@ -16,22 +16,22 @@ static const List<PostTreasuryFinancialAccountsFinancialAccountRequestForwarding
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettingsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettingsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettingsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettingsType($value)';}
+}
 /// A different bank account where funds can be deposited/debited in order to get the closing FA's balance to $0
 @immutable final class PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings {const PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings({required this.type, this.financialAccount, this.paymentMethod, });
 
-factory PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings(
+factory PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings.fromJson(Map<String, dynamic> json) {return PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings(
   financialAccount: json['financial_account'] as String?,
   paymentMethod: json['payment_method'] as String?,
   type: PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettingsType.fromJson(json['type'] as String),
-); }
+);}
 
 final String? financialAccount;
 
@@ -39,22 +39,22 @@ final String? paymentMethod;
 
 final PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettingsType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'financial_account': ?financialAccount,
   'payment_method': ?paymentMethod,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings copyWith({String? Function()? financialAccount, String? Function()? paymentMethod, PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettingsType? type, }) { return PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings copyWith({String? Function()? financialAccount, String? Function()? paymentMethod, PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettingsType? type, }) {return PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings(
   financialAccount: financialAccount != null ? financialAccount() : this.financialAccount,
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings &&
           financialAccount == other.financialAccount &&
           paymentMethod == other.paymentMethod &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(financialAccount, paymentMethod, type); } 
-@override String toString() { return 'PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings(financialAccount: $financialAccount, paymentMethod: $paymentMethod, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(financialAccount, paymentMethod, type);}
+@override String toString() {return 'PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings(financialAccount: $financialAccount, paymentMethod: $paymentMethod, type: $type)';}
+}

@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Verification {const Verification({required this.verified, required this.reason, required this.payload, required this.signature, required this.verifiedAt, });
 
-factory Verification.fromJson(Map<String, dynamic> json) { return Verification(
+factory Verification.fromJson(Map<String, dynamic> json) {return Verification(
   verified: json['verified'] as bool,
   reason: json['reason'] as String,
   payload: json['payload'] as String?,
   signature: json['signature'] as String?,
   verifiedAt: json['verified_at'] as String?,
-); }
+);}
 
 final bool verified;
 
@@ -20,32 +20,32 @@ final String? signature;
 
 final String? verifiedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'verified': verified,
   'reason': reason,
   'payload': payload,
   'signature': signature,
   'verified_at': verifiedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('verified') && json['verified'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('verified') && json['verified'] is bool &&
       json.containsKey('reason') && json['reason'] is String &&
       json.containsKey('payload') && (json['payload'] == null || json['payload'] is String) &&
       json.containsKey('signature') && (json['signature'] == null || json['signature'] is String) &&
-      json.containsKey('verified_at') && (json['verified_at'] == null || json['verified_at'] is String); } 
-Verification copyWith({bool? verified, String? reason, String? Function()? payload, String? Function()? signature, String? Function()? verifiedAt, }) { return Verification(
+      json.containsKey('verified_at') && (json['verified_at'] == null || json['verified_at'] is String);}
+Verification copyWith({bool? verified, String? reason, String? Function()? payload, String? Function()? signature, String? Function()? verifiedAt, }) {return Verification(
   verified: verified ?? this.verified,
   reason: reason ?? this.reason,
   payload: payload != null ? payload() : this.payload,
   signature: signature != null ? signature() : this.signature,
   verifiedAt: verifiedAt != null ? verifiedAt() : this.verifiedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Verification &&
           verified == other.verified &&
           reason == other.reason &&
           payload == other.payload &&
           signature == other.signature &&
-          verifiedAt == other.verifiedAt; } 
-@override int get hashCode { return Object.hash(verified, reason, payload, signature, verifiedAt); } 
-@override String toString() { return 'Verification(verified: $verified, reason: $reason, payload: $payload, signature: $signature, verifiedAt: $verifiedAt)'; } 
- }
+          verifiedAt == other.verifiedAt;}
+@override int get hashCode {return Object.hash(verified, reason, payload, signature, verifiedAt);}
+@override String toString() {return 'Verification(verified: $verified, reason: $reason, payload: $payload, signature: $signature, verifiedAt: $verifiedAt)';}
+}

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_sources_request_mandate.dart';import 'post_sources_request_owner.dart';import 'post_sources_request_receiver.dart';import 'post_sources_request_redirect.dart';import 'post_sources_request_source_order.dart';/// The authentication `flow` of the source to create. `flow` is one of `redirect`, `receiver`, `code_verification`, `none`. It is generally inferred unless a type supports multiple flows.
 @immutable final class PostSourcesRequestFlow {const PostSourcesRequestFlow._(this.value);
 
-factory PostSourcesRequestFlow.fromJson(String json) { return switch (json) {
+factory PostSourcesRequestFlow.fromJson(String json) {return switch (json) {
   'code_verification' => codeVerification,
   'none' => none,
   'receiver' => receiver,
   'redirect' => redirect,
   _ => PostSourcesRequestFlow._(json),
-}; }
+};}
 
 static const PostSourcesRequestFlow codeVerification = PostSourcesRequestFlow._('code_verification');
 
@@ -23,21 +23,21 @@ static const List<PostSourcesRequestFlow> values = [codeVerification, none, rece
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSourcesRequestFlow && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSourcesRequestFlow($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSourcesRequestFlow && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSourcesRequestFlow($value)';}
+}
 @immutable final class PostSourcesRequestUsage {const PostSourcesRequestUsage._(this.value);
 
-factory PostSourcesRequestUsage.fromJson(String json) { return switch (json) {
+factory PostSourcesRequestUsage.fromJson(String json) {return switch (json) {
   'reusable' => reusable,
   'single_use' => singleUse,
   _ => PostSourcesRequestUsage._(json),
-}; }
+};}
 
 static const PostSourcesRequestUsage reusable = PostSourcesRequestUsage._('reusable');
 
@@ -47,17 +47,17 @@ static const List<PostSourcesRequestUsage> values = [reusable, singleUse];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSourcesRequestUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSourcesRequestUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSourcesRequestUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSourcesRequestUsage($value)';}
+}
 @immutable final class PostSourcesRequest {const PostSourcesRequest({this.amount, this.currency, this.customer, this.expand, this.flow, this.mandate, this.metadata, this.originalSource, this.owner, this.receiver, this.redirect, this.sourceOrder, this.statementDescriptor, this.token, this.type, this.usage, });
 
-factory PostSourcesRequest.fromJson(Map<String, dynamic> json) { return PostSourcesRequest(
+factory PostSourcesRequest.fromJson(Map<String, dynamic> json) {return PostSourcesRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   currency: json['currency'] as String?,
   customer: json['customer'] as String?,
@@ -74,7 +74,7 @@ factory PostSourcesRequest.fromJson(Map<String, dynamic> json) { return PostSour
   token: json['token'] as String?,
   type: json['type'] as String?,
   usage: json['usage'] != null ? PostSourcesRequestUsage.fromJson(json['usage'] as String) : null,
-); }
+);}
 
 /// Amount associated with the source. This is the amount for which the source will be chargeable once ready. Required for `single_use` sources. Not supported for `receiver` type sources, where charge amount may not be specified until funds land.
 final int? amount;
@@ -122,7 +122,7 @@ final String? type;
 
 final PostSourcesRequestUsage? usage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'currency': ?currency,
   'customer': ?customer,
@@ -139,9 +139,9 @@ Map<String, dynamic> toJson() { return {
   'token': ?token,
   'type': ?type,
   if (usage != null) 'usage': usage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'customer', 'expand', 'flow', 'mandate', 'metadata', 'original_source', 'owner', 'receiver', 'redirect', 'source_order', 'statement_descriptor', 'token', 'type', 'usage'}.contains(key)); } 
-PostSourcesRequest copyWith({int? Function()? amount, String? Function()? currency, String? Function()? customer, List<String>? Function()? expand, PostSourcesRequestFlow? Function()? flow, PostSourcesRequestMandate? Function()? mandate, Map<String, String>? Function()? metadata, String? Function()? originalSource, PostSourcesRequestOwner? Function()? owner, PostSourcesRequestReceiver? Function()? receiver, PostSourcesRequestRedirect? Function()? redirect, PostSourcesRequestSourceOrder? Function()? sourceOrder, String? Function()? statementDescriptor, String? Function()? token, String? Function()? type, PostSourcesRequestUsage? Function()? usage, }) { return PostSourcesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'currency', 'customer', 'expand', 'flow', 'mandate', 'metadata', 'original_source', 'owner', 'receiver', 'redirect', 'source_order', 'statement_descriptor', 'token', 'type', 'usage'}.contains(key));}
+PostSourcesRequest copyWith({int? Function()? amount, String? Function()? currency, String? Function()? customer, List<String>? Function()? expand, PostSourcesRequestFlow? Function()? flow, PostSourcesRequestMandate? Function()? mandate, Map<String, String>? Function()? metadata, String? Function()? originalSource, PostSourcesRequestOwner? Function()? owner, PostSourcesRequestReceiver? Function()? receiver, PostSourcesRequestRedirect? Function()? redirect, PostSourcesRequestSourceOrder? Function()? sourceOrder, String? Function()? statementDescriptor, String? Function()? token, String? Function()? type, PostSourcesRequestUsage? Function()? usage, }) {return PostSourcesRequest(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,
   customer: customer != null ? customer() : this.customer,
@@ -158,8 +158,8 @@ PostSourcesRequest copyWith({int? Function()? amount, String? Function()? curren
   token: token != null ? token() : this.token,
   type: type != null ? type() : this.type,
   usage: usage != null ? usage() : this.usage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSourcesRequest &&
           amount == other.amount &&
           currency == other.currency &&
@@ -176,7 +176,7 @@ PostSourcesRequest copyWith({int? Function()? amount, String? Function()? curren
           statementDescriptor == other.statementDescriptor &&
           token == other.token &&
           type == other.type &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(amount, currency, customer, Object.hashAll(expand ?? const []), flow, mandate, metadata, originalSource, owner, receiver, redirect, sourceOrder, statementDescriptor, token, type, usage); } 
-@override String toString() { return 'PostSourcesRequest(amount: $amount, currency: $currency, customer: $customer, expand: $expand, flow: $flow, mandate: $mandate, metadata: $metadata, originalSource: $originalSource, owner: $owner, receiver: $receiver, redirect: $redirect, sourceOrder: $sourceOrder, statementDescriptor: $statementDescriptor, token: $token, type: $type, usage: $usage)'; } 
- }
+          usage == other.usage;}
+@override int get hashCode {return Object.hash(amount, currency, customer, Object.hashAll(expand ?? const []), flow, mandate, metadata, originalSource, owner, receiver, redirect, sourceOrder, statementDescriptor, token, type, usage);}
+@override String toString() {return 'PostSourcesRequest(amount: $amount, currency: $currency, customer: $customer, expand: $expand, flow: $flow, mandate: $mandate, metadata: $metadata, originalSource: $originalSource, owner: $owner, receiver: $receiver, redirect: $redirect, sourceOrder: $sourceOrder, statementDescriptor: $statementDescriptor, token: $token, type: $type, usage: $usage)';}
+}

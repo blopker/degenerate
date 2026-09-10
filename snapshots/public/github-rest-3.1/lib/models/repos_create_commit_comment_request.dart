@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateCommitCommentRequest {const ReposCreateCommitCommentRequest({required this.body, this.path, this.position, this.line, });
 
-factory ReposCreateCommitCommentRequest.fromJson(Map<String, dynamic> json) { return ReposCreateCommitCommentRequest(
+factory ReposCreateCommitCommentRequest.fromJson(Map<String, dynamic> json) {return ReposCreateCommitCommentRequest(
   body: json['body'] as String,
   path: json['path'] as String?,
   position: json['position'] != null ? (json['position'] as num).toInt() : null,
   line: json['line'] != null ? (json['line'] as num).toInt() : null,
-); }
+);}
 
 /// The contents of the comment.
 final String body;
@@ -21,25 +21,25 @@ final int? position;
 /// **Closing down notice**. Use **position** parameter instead. Line number in the file to comment on.
 final int? line;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'body': body,
   'path': ?path,
   'position': ?position,
   'line': ?line,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('body') && json['body'] is String; } 
-ReposCreateCommitCommentRequest copyWith({String? body, String? Function()? path, int? Function()? position, int? Function()? line, }) { return ReposCreateCommitCommentRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('body') && json['body'] is String;}
+ReposCreateCommitCommentRequest copyWith({String? body, String? Function()? path, int? Function()? position, int? Function()? line, }) {return ReposCreateCommitCommentRequest(
   body: body ?? this.body,
   path: path != null ? path() : this.path,
   position: position != null ? position() : this.position,
   line: line != null ? line() : this.line,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReposCreateCommitCommentRequest &&
           body == other.body &&
           path == other.path &&
           position == other.position &&
-          line == other.line; } 
-@override int get hashCode { return Object.hash(body, path, position, line); } 
-@override String toString() { return 'ReposCreateCommitCommentRequest(body: $body, path: $path, position: $position, line: $line)'; } 
- }
+          line == other.line;}
+@override int get hashCode {return Object.hash(body, path, position, line);}
+@override String toString() {return 'ReposCreateCommitCommentRequest(body: $body, path: $path, position: $position, line: $line)';}
+}

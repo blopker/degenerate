@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetSearchGlobalResponseResultSearch {const RadarGetSearchGlobalResponseResultSearch({required this.code, required this.name, required this.type, });
 
-factory RadarGetSearchGlobalResponseResultSearch.fromJson(Map<String, dynamic> json) { return RadarGetSearchGlobalResponseResultSearch(
+factory RadarGetSearchGlobalResponseResultSearch.fromJson(Map<String, dynamic> json) {return RadarGetSearchGlobalResponseResultSearch(
   code: json['code'] as String,
   name: json['name'] as String,
   type: json['type'] as String,
-); }
+);}
 
 final String code;
 
@@ -14,24 +14,24 @@ final String name;
 
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'name': name,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-RadarGetSearchGlobalResponseResultSearch copyWith({String? code, String? name, String? type, }) { return RadarGetSearchGlobalResponseResultSearch(
+      json.containsKey('type') && json['type'] is String;}
+RadarGetSearchGlobalResponseResultSearch copyWith({String? code, String? name, String? type, }) {return RadarGetSearchGlobalResponseResultSearch(
   code: code ?? this.code,
   name: name ?? this.name,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetSearchGlobalResponseResultSearch &&
           code == other.code &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(code, name, type); } 
-@override String toString() { return 'RadarGetSearchGlobalResponseResultSearch(code: $code, name: $name, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(code, name, type);}
+@override String toString() {return 'RadarGetSearchGlobalResponseResultSearch(code: $code, name: $name, type: $type)';}
+}

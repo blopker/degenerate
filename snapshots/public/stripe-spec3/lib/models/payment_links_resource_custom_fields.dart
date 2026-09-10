@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_custom_fields_dropdown.dart';import 'payment_links_resource_custom_fields_label.dart';import 'payment_links_resource_custom_fields_numeric.dart';import 'payment_links_resource_custom_fields_text.dart';/// The type of the field.
 @immutable final class PaymentLinksResourceCustomFieldsType {const PaymentLinksResourceCustomFieldsType._(this.value);
 
-factory PaymentLinksResourceCustomFieldsType.fromJson(String json) { return switch (json) {
+factory PaymentLinksResourceCustomFieldsType.fromJson(String json) {return switch (json) {
   'dropdown' => dropdown,
   'numeric' => numeric,
   'text' => text,
   _ => PaymentLinksResourceCustomFieldsType._(json),
-}; }
+};}
 
 static const PaymentLinksResourceCustomFieldsType dropdown = PaymentLinksResourceCustomFieldsType._('dropdown');
 
@@ -20,18 +20,18 @@ static const List<PaymentLinksResourceCustomFieldsType> values = [dropdown, nume
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentLinksResourceCustomFieldsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentLinksResourceCustomFieldsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentLinksResourceCustomFieldsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentLinksResourceCustomFieldsType($value)';}
+}
 /// 
 @immutable final class PaymentLinksResourceCustomFields {const PaymentLinksResourceCustomFields({required this.key, required this.label, required this.optional, required this.type, this.dropdown, this.numeric, this.text, });
 
-factory PaymentLinksResourceCustomFields.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCustomFields(
+factory PaymentLinksResourceCustomFields.fromJson(Map<String, dynamic> json) {return PaymentLinksResourceCustomFields(
   dropdown: json['dropdown'] != null ? PaymentLinksResourceCustomFieldsDropdown.fromJson(json['dropdown'] as Map<String, dynamic>) : null,
   key: json['key'] as String,
   label: PaymentLinksResourceCustomFieldsLabel.fromJson(json['label'] as Map<String, dynamic>),
@@ -39,7 +39,7 @@ factory PaymentLinksResourceCustomFields.fromJson(Map<String, dynamic> json) { r
   optional: json['optional'] as bool,
   text: json['text'] != null ? PaymentLinksResourceCustomFieldsText.fromJson(json['text'] as Map<String, dynamic>) : null,
   type: PaymentLinksResourceCustomFieldsType.fromJson(json['type'] as String),
-); }
+);}
 
 final PaymentLinksResourceCustomFieldsDropdown? dropdown;
 
@@ -58,7 +58,7 @@ final PaymentLinksResourceCustomFieldsText? text;
 /// The type of the field.
 final PaymentLinksResourceCustomFieldsType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (dropdown != null) 'dropdown': dropdown?.toJson(),
   'key': key,
   'label': label.toJson(),
@@ -66,12 +66,12 @@ Map<String, dynamic> toJson() { return {
   'optional': optional,
   if (text != null) 'text': text?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
       json.containsKey('label') &&
       json.containsKey('optional') && json['optional'] is bool &&
-      json.containsKey('type'); } 
-PaymentLinksResourceCustomFields copyWith({PaymentLinksResourceCustomFieldsDropdown? Function()? dropdown, String? key, PaymentLinksResourceCustomFieldsLabel? label, PaymentLinksResourceCustomFieldsNumeric? Function()? numeric, bool? optional, PaymentLinksResourceCustomFieldsText? Function()? text, PaymentLinksResourceCustomFieldsType? type, }) { return PaymentLinksResourceCustomFields(
+      json.containsKey('type');}
+PaymentLinksResourceCustomFields copyWith({PaymentLinksResourceCustomFieldsDropdown? Function()? dropdown, String? key, PaymentLinksResourceCustomFieldsLabel? label, PaymentLinksResourceCustomFieldsNumeric? Function()? numeric, bool? optional, PaymentLinksResourceCustomFieldsText? Function()? text, PaymentLinksResourceCustomFieldsType? type, }) {return PaymentLinksResourceCustomFields(
   dropdown: dropdown != null ? dropdown() : this.dropdown,
   key: key ?? this.key,
   label: label ?? this.label,
@@ -79,8 +79,8 @@ PaymentLinksResourceCustomFields copyWith({PaymentLinksResourceCustomFieldsDropd
   optional: optional ?? this.optional,
   text: text != null ? text() : this.text,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentLinksResourceCustomFields &&
           dropdown == other.dropdown &&
           key == other.key &&
@@ -88,7 +88,7 @@ PaymentLinksResourceCustomFields copyWith({PaymentLinksResourceCustomFieldsDropd
           numeric == other.numeric &&
           optional == other.optional &&
           text == other.text &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(dropdown, key, label, numeric, optional, text, type); } 
-@override String toString() { return 'PaymentLinksResourceCustomFields(dropdown: $dropdown, key: $key, label: $label, numeric: $numeric, optional: $optional, text: $text, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(dropdown, key, label, numeric, optional, text, type);}
+@override String toString() {return 'PaymentLinksResourceCustomFields(dropdown: $dropdown, key: $key, label: $label, numeric: $numeric, optional: $optional, text: $text, type: $type)';}
+}

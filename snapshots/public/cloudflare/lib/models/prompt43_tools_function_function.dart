@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt43ToolsFunctionFunction {const Prompt43ToolsFunctionFunction({required this.name, this.description, this.parameters, this.strict = const Omittable.absent(), });
 
-factory Prompt43ToolsFunctionFunction.fromJson(Map<String, dynamic> json) { return Prompt43ToolsFunctionFunction(
+factory Prompt43ToolsFunctionFunction.fromJson(Map<String, dynamic> json) {return Prompt43ToolsFunctionFunction(
   description: json['description'] as String?,
   name: json['name'] as String,
   parameters: json['parameters'] as Map<String, dynamic>?,
   strict: json.containsKey('strict') ? Omittable(json['strict'] as bool?) : const Omittable.absent(),
-); }
+);}
 
 /// A description of what the function does.
 final String? description;
@@ -20,25 +20,25 @@ final Map<String,dynamic>? parameters;
 
 final Omittable<bool?> strict;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'name': name,
   'parameters': ?parameters,
   if (strict.isPresent) 'strict': strict.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-Prompt43ToolsFunctionFunction copyWith({String? Function()? description, String? name, Map<String, dynamic>? Function()? parameters, Omittable<bool?>? strict, }) { return Prompt43ToolsFunctionFunction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+Prompt43ToolsFunctionFunction copyWith({String? Function()? description, String? name, Map<String, dynamic>? Function()? parameters, Omittable<bool?>? strict, }) {return Prompt43ToolsFunctionFunction(
   description: description != null ? description() : this.description,
   name: name ?? this.name,
   parameters: parameters != null ? parameters() : this.parameters,
   strict: strict ?? this.strict,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Prompt43ToolsFunctionFunction &&
           description == other.description &&
           name == other.name &&
           parameters == other.parameters &&
-          strict == other.strict; } 
-@override int get hashCode { return Object.hash(description, name, parameters, strict); } 
-@override String toString() { return 'Prompt43ToolsFunctionFunction(description: $description, name: $name, parameters: $parameters, strict: $strict)'; } 
- }
+          strict == other.strict;}
+@override int get hashCode {return Object.hash(description, name, parameters, strict);}
+@override String toString() {return 'Prompt43ToolsFunctionFunction(description: $description, name: $name, parameters: $parameters, strict: $strict)';}
+}

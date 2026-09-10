@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_scrape_response_errors.dart';import 'brapi_post_scrape_response_result.dart';@immutable final class BrapiPostScrapeResponse {const BrapiPostScrapeResponse({required this.result, required this.success, this.errors, });
 
-factory BrapiPostScrapeResponse.fromJson(Map<String, dynamic> json) { return BrapiPostScrapeResponse(
+factory BrapiPostScrapeResponse.fromJson(Map<String, dynamic> json) {return BrapiPostScrapeResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => BrapiPostScrapeResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => BrapiPostScrapeResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<BrapiPostScrapeResponseErrors>? errors;
 
@@ -15,23 +15,23 @@ final List<BrapiPostScrapeResponseResult> result;
 /// Response status
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
   'result': result.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-BrapiPostScrapeResponse copyWith({List<BrapiPostScrapeResponseErrors>? Function()? errors, List<BrapiPostScrapeResponseResult>? result, bool? success, }) { return BrapiPostScrapeResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+BrapiPostScrapeResponse copyWith({List<BrapiPostScrapeResponseErrors>? Function()? errors, List<BrapiPostScrapeResponseResult>? result, bool? success, }) {return BrapiPostScrapeResponse(
   errors: errors != null ? errors() : this.errors,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BrapiPostScrapeResponse &&
           listEquals(errors, other.errors) &&
           listEquals(result, other.result) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors ?? const []), Object.hashAll(result), success); } 
-@override String toString() { return 'BrapiPostScrapeResponse(errors: $errors, result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(Object.hashAll(errors ?? const []), Object.hashAll(result), success);}
+@override String toString() {return 'BrapiPostScrapeResponse(errors: $errors, result: $result, success: $success)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MarketplaceListingPlanPriceModel {const MarketplaceListingPlanPriceModel._(this.value);
 
-factory MarketplaceListingPlanPriceModel.fromJson(String json) { return switch (json) {
+factory MarketplaceListingPlanPriceModel.fromJson(String json) {return switch (json) {
   'FREE' => free,
   'FLAT_RATE' => flatRate,
   'PER_UNIT' => perUnit,
   _ => MarketplaceListingPlanPriceModel._(json),
-}; }
+};}
 
 static const MarketplaceListingPlanPriceModel free = MarketplaceListingPlanPriceModel._('FREE');
 
@@ -19,18 +19,18 @@ static const List<MarketplaceListingPlanPriceModel> values = [free, flatRate, pe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MarketplaceListingPlanPriceModel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MarketplaceListingPlanPriceModel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MarketplaceListingPlanPriceModel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MarketplaceListingPlanPriceModel($value)';}
+}
 /// Marketplace Listing Plan
 @immutable final class MarketplaceListingPlan {const MarketplaceListingPlan({required this.url, required this.accountsUrl, required this.id, required this.number, required this.name, required this.description, required this.monthlyPriceInCents, required this.yearlyPriceInCents, required this.priceModel, required this.hasFreeTrial, required this.unitName, required this.state, required this.bullets, });
 
-factory MarketplaceListingPlan.fromJson(Map<String, dynamic> json) { return MarketplaceListingPlan(
+factory MarketplaceListingPlan.fromJson(Map<String, dynamic> json) {return MarketplaceListingPlan(
   url: Uri.parse(json['url'] as String),
   accountsUrl: Uri.parse(json['accounts_url'] as String),
   id: (json['id'] as num).toInt(),
@@ -44,7 +44,7 @@ factory MarketplaceListingPlan.fromJson(Map<String, dynamic> json) { return Mark
   unitName: json['unit_name'] as String?,
   state: json['state'] as String,
   bullets: (json['bullets'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final Uri url;
 
@@ -72,7 +72,7 @@ final String state;
 
 final List<String> bullets;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'accounts_url': accountsUrl.toString(),
   'id': id,
@@ -86,8 +86,8 @@ Map<String, dynamic> toJson() { return {
   'unit_name': unitName,
   'state': state,
   'bullets': bullets,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('accounts_url') && json['accounts_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('number') && json['number'] is num &&
@@ -99,8 +99,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('has_free_trial') && json['has_free_trial'] is bool &&
       json.containsKey('unit_name') && (json['unit_name'] == null || json['unit_name'] is String) &&
       json.containsKey('state') && json['state'] is String &&
-      json.containsKey('bullets'); } 
-MarketplaceListingPlan copyWith({Uri? url, Uri? accountsUrl, int? id, int? number, String? name, String? description, int? monthlyPriceInCents, int? yearlyPriceInCents, MarketplaceListingPlanPriceModel? priceModel, bool? hasFreeTrial, String? Function()? unitName, String? state, List<String>? bullets, }) { return MarketplaceListingPlan(
+      json.containsKey('bullets');}
+MarketplaceListingPlan copyWith({Uri? url, Uri? accountsUrl, int? id, int? number, String? name, String? description, int? monthlyPriceInCents, int? yearlyPriceInCents, MarketplaceListingPlanPriceModel? priceModel, bool? hasFreeTrial, String? Function()? unitName, String? state, List<String>? bullets, }) {return MarketplaceListingPlan(
   url: url ?? this.url,
   accountsUrl: accountsUrl ?? this.accountsUrl,
   id: id ?? this.id,
@@ -114,8 +114,8 @@ MarketplaceListingPlan copyWith({Uri? url, Uri? accountsUrl, int? id, int? numbe
   unitName: unitName != null ? unitName() : this.unitName,
   state: state ?? this.state,
   bullets: bullets ?? this.bullets,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MarketplaceListingPlan &&
           url == other.url &&
           accountsUrl == other.accountsUrl &&
@@ -129,7 +129,7 @@ MarketplaceListingPlan copyWith({Uri? url, Uri? accountsUrl, int? id, int? numbe
           hasFreeTrial == other.hasFreeTrial &&
           unitName == other.unitName &&
           state == other.state &&
-          listEquals(bullets, other.bullets); } 
-@override int get hashCode { return Object.hash(url, accountsUrl, id, number, name, description, monthlyPriceInCents, yearlyPriceInCents, priceModel, hasFreeTrial, unitName, state, Object.hashAll(bullets)); } 
-@override String toString() { return 'MarketplaceListingPlan(url: $url, accountsUrl: $accountsUrl, id: $id, number: $number, name: $name, description: $description, monthlyPriceInCents: $monthlyPriceInCents, yearlyPriceInCents: $yearlyPriceInCents, priceModel: $priceModel, hasFreeTrial: $hasFreeTrial, unitName: $unitName, state: $state, bullets: $bullets)'; } 
- }
+          listEquals(bullets, other.bullets);}
+@override int get hashCode {return Object.hash(url, accountsUrl, id, number, name, description, monthlyPriceInCents, yearlyPriceInCents, priceModel, hasFreeTrial, unitName, state, Object.hashAll(bullets));}
+@override String toString() {return 'MarketplaceListingPlan(url: $url, accountsUrl: $accountsUrl, id: $id, number: $number, name: $name, description: $description, monthlyPriceInCents: $monthlyPriceInCents, yearlyPriceInCents: $yearlyPriceInCents, priceModel: $priceModel, hasFreeTrial: $hasFreeTrial, unitName: $unitName, state: $state, bullets: $bullets)';}
+}

@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ClickButtonType {const ClickButtonType._(this.value);
 
-factory ClickButtonType.fromJson(String json) { return switch (json) {
+factory ClickButtonType.fromJson(String json) {return switch (json) {
   'left' => left,
   'right' => right,
   'wheel' => wheel,
   'back' => back,
   'forward' => forward,
   _ => ClickButtonType._(json),
-}; }
+};}
 
 static const ClickButtonType left = ClickButtonType._('left');
 
@@ -25,23 +25,23 @@ static const List<ClickButtonType> values = [left, right, wheel, back, forward];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClickButtonType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClickButtonType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ClickButtonType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ClickButtonType($value)';}
+}
 /// A click action.
 @immutable final class ClickParam {const ClickParam({required this.type, required this.button, required this.x, required this.y, });
 
-factory ClickParam.fromJson(Map<String, dynamic> json) { return ClickParam(
+factory ClickParam.fromJson(Map<String, dynamic> json) {return ClickParam(
   type: json['type'] as String,
   button: ClickButtonType.fromJson(json['button'] as String),
   x: (json['x'] as num).toInt(),
   y: (json['y'] as num).toInt(),
-); }
+);}
 
 /// Specifies the event type. For a click action, this property is always `click`.
 final String type;
@@ -55,28 +55,28 @@ final int x;
 /// The y-coordinate where the click occurred.
 final int y;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'button': button.toJson(),
   'x': x,
   'y': y,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('button') &&
       json.containsKey('x') && json['x'] is num &&
-      json.containsKey('y') && json['y'] is num; } 
-ClickParam copyWith({String? type, ClickButtonType? button, int? x, int? y, }) { return ClickParam(
+      json.containsKey('y') && json['y'] is num;}
+ClickParam copyWith({String? type, ClickButtonType? button, int? x, int? y, }) {return ClickParam(
   type: type ?? this.type,
   button: button ?? this.button,
   x: x ?? this.x,
   y: y ?? this.y,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ClickParam &&
           type == other.type &&
           button == other.button &&
           x == other.x &&
-          y == other.y; } 
-@override int get hashCode { return Object.hash(type, button, x, y); } 
-@override String toString() { return 'ClickParam(type: $type, button: $button, x: $x, y: $y)'; } 
- }
+          y == other.y;}
+@override int get hashCode {return Object.hash(type, button, x, y);}
+@override String toString() {return 'ClickParam(type: $type, button: $button, x: $x, y: $y)';}
+}

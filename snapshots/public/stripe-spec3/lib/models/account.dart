@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_business_profile.dart';import 'account_capabilities.dart';import 'account_external_accounts.dart';import 'account_future_requirements.dart';import 'account_group_membership.dart';import 'account_requirements.dart';import 'account_settings.dart';import 'account_tos_acceptance.dart';import 'account_unification_account_controller.dart';import 'legal_entity_company.dart';import 'person.dart';/// The business type.
 @immutable final class AccountBusinessType {const AccountBusinessType._(this.value);
 
-factory AccountBusinessType.fromJson(String json) { return switch (json) {
+factory AccountBusinessType.fromJson(String json) {return switch (json) {
   'company' => company,
   'government_entity' => governmentEntity,
   'individual' => individual,
   'non_profit' => nonProfit,
   _ => AccountBusinessType._(json),
-}; }
+};}
 
 static const AccountBusinessType company = AccountBusinessType._('company');
 
@@ -23,21 +23,21 @@ static const List<AccountBusinessType> values = [company, governmentEntity, indi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountBusinessType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountBusinessType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountBusinessType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountBusinessType($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class AccountObject {const AccountObject._(this.value);
 
-factory AccountObject.fromJson(String json) { return switch (json) {
+factory AccountObject.fromJson(String json) {return switch (json) {
   'account' => account,
   _ => AccountObject._(json),
-}; }
+};}
 
 static const AccountObject account = AccountObject._('account');
 
@@ -45,24 +45,24 @@ static const List<AccountObject> values = [account];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountObject($value)';}
+}
 /// The Stripe account type. Can be `standard`, `express`, `custom`, or `none`.
 @immutable final class AccountType {const AccountType._(this.value);
 
-factory AccountType.fromJson(String json) { return switch (json) {
+factory AccountType.fromJson(String json) {return switch (json) {
   'custom' => custom,
   'express' => express,
   'none' => none,
   'standard' => standard,
   _ => AccountType._(json),
-}; }
+};}
 
 static const AccountType custom = AccountType._('custom');
 
@@ -76,14 +76,14 @@ static const List<AccountType> values = [custom, express, none, standard];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountType($value)';}
+}
 /// This is an object representing a Stripe account. You can retrieve it to see
 /// properties on the account like its current requirements or if the account is
 /// enabled to make live charges or receive payouts.
@@ -98,7 +98,7 @@ bool get isUnknown { return !values.contains(this); }
 /// to start Connect Onboarding. Learn about the [differences between accounts](/connect/accounts).
 @immutable final class Account {const Account({required this.id, required this.object, this.businessProfile = const Omittable.absent(), this.businessType = const Omittable.absent(), this.capabilities, this.chargesEnabled, this.company, this.controller, this.country, this.created, this.defaultCurrency, this.detailsSubmitted, this.email = const Omittable.absent(), this.externalAccounts, this.futureRequirements, this.groups = const Omittable.absent(), this.individual, this.metadata, this.payoutsEnabled, this.requirements, this.settings = const Omittable.absent(), this.tosAcceptance, this.type, });
 
-factory Account.fromJson(Map<String, dynamic> json) { return Account(
+factory Account.fromJson(Map<String, dynamic> json) {return Account(
   businessProfile: json.containsKey('business_profile') ? Omittable(json['business_profile'] != null ? AccountBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   businessType: json.containsKey('business_type') ? Omittable(json['business_type'] != null ? AccountBusinessType.fromJson(json['business_type'] as String) : null) : const Omittable.absent(),
   capabilities: json['capabilities'] != null ? AccountCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,
@@ -122,7 +122,7 @@ factory Account.fromJson(Map<String, dynamic> json) { return Account(
   settings: json.containsKey('settings') ? Omittable(json['settings'] != null ? AccountSettings.fromJson(json['settings'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   tosAcceptance: json['tos_acceptance'] != null ? AccountTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? AccountType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// Business information about the account.
 final Omittable<AccountBusinessProfile?> businessProfile;
@@ -186,7 +186,7 @@ final AccountTosAcceptance? tosAcceptance;
 /// The Stripe account type. Can be `standard`, `express`, `custom`, or `none`.
 final AccountType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (businessProfile.isPresent) 'business_profile': businessProfile.value?.toJson(),
   if (businessType.isPresent) 'business_type': businessType.value?.toJson(),
   if (capabilities != null) 'capabilities': capabilities?.toJson(),
@@ -210,10 +210,10 @@ Map<String, dynamic> toJson() { return {
   if (settings.isPresent) 'settings': settings.value?.toJson(),
   if (tosAcceptance != null) 'tos_acceptance': tosAcceptance?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object'); } 
-Account copyWith({Omittable<AccountBusinessProfile?>? businessProfile, Omittable<AccountBusinessType?>? businessType, AccountCapabilities? Function()? capabilities, bool? Function()? chargesEnabled, LegalEntityCompany? Function()? company, AccountUnificationAccountController? Function()? controller, String? Function()? country, int? Function()? created, String? Function()? defaultCurrency, bool? Function()? detailsSubmitted, Omittable<String?>? email, AccountExternalAccounts? Function()? externalAccounts, AccountFutureRequirements? Function()? futureRequirements, Omittable<AccountGroupMembership?>? groups, String? id, Person? Function()? individual, Map<String, String>? Function()? metadata, AccountObject? object, bool? Function()? payoutsEnabled, AccountRequirements? Function()? requirements, Omittable<AccountSettings?>? settings, AccountTosAcceptance? Function()? tosAcceptance, AccountType? Function()? type, }) { return Account(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('object');}
+Account copyWith({Omittable<AccountBusinessProfile?>? businessProfile, Omittable<AccountBusinessType?>? businessType, AccountCapabilities? Function()? capabilities, bool? Function()? chargesEnabled, LegalEntityCompany? Function()? company, AccountUnificationAccountController? Function()? controller, String? Function()? country, int? Function()? created, String? Function()? defaultCurrency, bool? Function()? detailsSubmitted, Omittable<String?>? email, AccountExternalAccounts? Function()? externalAccounts, AccountFutureRequirements? Function()? futureRequirements, Omittable<AccountGroupMembership?>? groups, String? id, Person? Function()? individual, Map<String, String>? Function()? metadata, AccountObject? object, bool? Function()? payoutsEnabled, AccountRequirements? Function()? requirements, Omittable<AccountSettings?>? settings, AccountTosAcceptance? Function()? tosAcceptance, AccountType? Function()? type, }) {return Account(
   businessProfile: businessProfile ?? this.businessProfile,
   businessType: businessType ?? this.businessType,
   capabilities: capabilities != null ? capabilities() : this.capabilities,
@@ -237,8 +237,8 @@ Account copyWith({Omittable<AccountBusinessProfile?>? businessProfile, Omittable
   settings: settings ?? this.settings,
   tosAcceptance: tosAcceptance != null ? tosAcceptance() : this.tosAcceptance,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Account &&
           businessProfile == other.businessProfile &&
           businessType == other.businessType &&
@@ -262,7 +262,7 @@ Account copyWith({Omittable<AccountBusinessProfile?>? businessProfile, Omittable
           requirements == other.requirements &&
           settings == other.settings &&
           tosAcceptance == other.tosAcceptance &&
-          type == other.type; } 
-@override int get hashCode { return Object.hashAll([businessProfile, businessType, capabilities, chargesEnabled, company, controller, country, created, defaultCurrency, detailsSubmitted, email, externalAccounts, futureRequirements, groups, id, individual, metadata, object, payoutsEnabled, requirements, settings, tosAcceptance, type]); } 
-@override String toString() { return 'Account(businessProfile: $businessProfile, businessType: $businessType, capabilities: $capabilities, chargesEnabled: $chargesEnabled, company: $company, controller: $controller, country: $country, created: $created, defaultCurrency: $defaultCurrency, detailsSubmitted: $detailsSubmitted, email: $email, externalAccounts: $externalAccounts, futureRequirements: $futureRequirements, groups: $groups, id: $id, individual: $individual, metadata: $metadata, object: $object, payoutsEnabled: $payoutsEnabled, requirements: $requirements, settings: $settings, tosAcceptance: $tosAcceptance, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hashAll([businessProfile, businessType, capabilities, chargesEnabled, company, controller, country, created, defaultCurrency, detailsSubmitted, email, externalAccounts, futureRequirements, groups, id, individual, metadata, object, payoutsEnabled, requirements, settings, tosAcceptance, type]);}
+@override String toString() {return 'Account(businessProfile: $businessProfile, businessType: $businessType, capabilities: $capabilities, chargesEnabled: $chargesEnabled, company: $company, controller: $controller, country: $country, created: $created, defaultCurrency: $defaultCurrency, detailsSubmitted: $detailsSubmitted, email: $email, externalAccounts: $externalAccounts, futureRequirements: $futureRequirements, groups: $groups, id: $id, individual: $individual, metadata: $metadata, object: $object, payoutsEnabled: $payoutsEnabled, requirements: $requirements, settings: $settings, tosAcceptance: $tosAcceptance, type: $type)';}
+}

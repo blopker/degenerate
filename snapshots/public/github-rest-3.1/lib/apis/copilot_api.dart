@@ -22,7 +22,7 @@ final class CopilotApi with ApiExecutor {const CopilotApi(this.apiConfig);
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
 ///
 /// `GET /orgs/{org}/copilot/billing`
-Future<ApiResult<CopilotOrganizationDetails, CopilotGetCopilotOrganizationDetailsError>> copilotGetCopilotOrganizationDetails({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CopilotOrganizationDetails, CopilotGetCopilotOrganizationDetailsError>> copilotGetCopilotOrganizationDetails({required String org, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,7 +39,7 @@ return CopilotOrganizationDetails.fromJson(json as Map<String, dynamic>);
   },
   onError: CopilotGetCopilotOrganizationDetailsError.parse,
 );
- } 
+}
 /// List all Copilot seat assignments for an organization
 ///
 /// > `[!NOTE]`
@@ -54,7 +54,7 @@ return CopilotOrganizationDetails.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
 ///
 /// `GET /orgs/{org}/copilot/billing/seats`
-Future<ApiResult<CopilotListCopilotSeatsResponse, BasicError>> copilotListCopilotSeats({required String org, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CopilotListCopilotSeatsResponse, BasicError>> copilotListCopilotSeats({required String org, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -91,7 +91,7 @@ return null;
 
   },
 );
- } 
+}
 /// Add teams to the Copilot subscription for an organization
 ///
 /// > `[!NOTE]`
@@ -109,7 +109,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `admin:org` scopes to use this endpoint.
 ///
 /// `POST /orgs/{org}/copilot/billing/selected_teams`
-Future<ApiResult<CopilotAddCopilotSeatsForTeamsResponse, CopilotAddCopilotSeatsForTeamsError>> copilotAddCopilotSeatsForTeams({required String org, required CopilotAddCopilotSeatsForTeamsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CopilotAddCopilotSeatsForTeamsResponse, CopilotAddCopilotSeatsForTeamsError>> copilotAddCopilotSeatsForTeams({required String org, required CopilotAddCopilotSeatsForTeamsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -128,7 +128,7 @@ return CopilotAddCopilotSeatsForTeamsResponse.fromJson(json as Map<String, dynam
   },
   onError: CopilotAddCopilotSeatsForTeamsError.parse,
 );
- } 
+}
 /// Remove teams from the Copilot subscription for an organization
 ///
 /// > `[!NOTE]`
@@ -145,7 +145,7 @@ return CopilotAddCopilotSeatsForTeamsResponse.fromJson(json as Map<String, dynam
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `admin:org` scopes to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/copilot/billing/selected_teams`
-Future<ApiResult<CopilotCancelCopilotSeatAssignmentForTeamsResponse, CopilotCancelCopilotSeatAssignmentForTeamsError>> copilotCancelCopilotSeatAssignmentForTeams({required String org, required CopilotCancelCopilotSeatAssignmentForTeamsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CopilotCancelCopilotSeatAssignmentForTeamsResponse, CopilotCancelCopilotSeatAssignmentForTeamsError>> copilotCancelCopilotSeatAssignmentForTeams({required String org, required CopilotCancelCopilotSeatAssignmentForTeamsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -164,7 +164,7 @@ return CopilotCancelCopilotSeatAssignmentForTeamsResponse.fromJson(json as Map<S
   },
   onError: CopilotCancelCopilotSeatAssignmentForTeamsError.parse,
 );
- } 
+}
 /// Add users to the Copilot subscription for an organization
 ///
 /// > `[!NOTE]`
@@ -182,7 +182,7 @@ return CopilotCancelCopilotSeatAssignmentForTeamsResponse.fromJson(json as Map<S
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `admin:org` scopes to use this endpoint.
 ///
 /// `POST /orgs/{org}/copilot/billing/selected_users`
-Future<ApiResult<CopilotAddCopilotSeatsForUsersResponse, CopilotAddCopilotSeatsForUsersError>> copilotAddCopilotSeatsForUsers({required String org, required CopilotAddCopilotSeatsForUsersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CopilotAddCopilotSeatsForUsersResponse, CopilotAddCopilotSeatsForUsersError>> copilotAddCopilotSeatsForUsers({required String org, required CopilotAddCopilotSeatsForUsersRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -201,7 +201,7 @@ return CopilotAddCopilotSeatsForUsersResponse.fromJson(json as Map<String, dynam
   },
   onError: CopilotAddCopilotSeatsForUsersError.parse,
 );
- } 
+}
 /// Remove users from the Copilot subscription for an organization
 ///
 /// > `[!NOTE]`
@@ -218,7 +218,7 @@ return CopilotAddCopilotSeatsForUsersResponse.fromJson(json as Map<String, dynam
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `admin:org` scopes to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/copilot/billing/selected_users`
-Future<ApiResult<CopilotCancelCopilotSeatAssignmentForUsersResponse, CopilotCancelCopilotSeatAssignmentForUsersError>> copilotCancelCopilotSeatAssignmentForUsers({required String org, required CopilotCancelCopilotSeatAssignmentForUsersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CopilotCancelCopilotSeatAssignmentForUsersResponse, CopilotCancelCopilotSeatAssignmentForUsersError>> copilotCancelCopilotSeatAssignmentForUsers({required String org, required CopilotCancelCopilotSeatAssignmentForUsersRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -237,7 +237,7 @@ return CopilotCancelCopilotSeatAssignmentForUsersResponse.fromJson(json as Map<S
   },
   onError: CopilotCancelCopilotSeatAssignmentForUsersError.parse,
 );
- } 
+}
 /// Get Copilot content exclusion rules for an organization
 ///
 /// > `[!NOTE]`
@@ -256,7 +256,7 @@ return CopilotCancelCopilotSeatAssignmentForUsersResponse.fromJson(json as Map<S
 /// > * At this time, the API does not support duplicate keys. If your content exclusion configuration contains duplicate keys, the API will return only the last occurrence of that key. For example, if duplicate entries are present, only the final value will be included in the response.
 ///
 /// `GET /orgs/{org}/copilot/content_exclusion`
-Future<ApiResult<Map<String, List<String>>, BasicError>> copilotContentExclusionForOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, List<String>>, BasicError>> copilotContentExclusionForOrganization({required String org, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -282,7 +282,7 @@ return null;
 
   },
 );
- } 
+}
 /// Set Copilot content exclusion rules for an organization
 ///
 /// > `[!NOTE]`
@@ -301,7 +301,7 @@ return null;
 /// > * At this time, the API does not support duplicate keys. If you submit content exclusions through the API with duplicate keys, only the last occurrence will be saved. Earlier entries with the same key will be overwritten.
 ///
 /// `PUT /orgs/{org}/copilot/content_exclusion`
-Future<ApiResult<CopilotSetCopilotContentExclusionForOrganizationResponse, CopilotSetCopilotContentExclusionForOrganizationError>> copilotSetCopilotContentExclusionForOrganization({required String org, required Map<String,List<CopilotSetCopilotContentExclusionForOrganizationRequestValue>> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CopilotSetCopilotContentExclusionForOrganizationResponse, CopilotSetCopilotContentExclusionForOrganizationError>> copilotSetCopilotContentExclusionForOrganization({required String org, required Map<String,List<CopilotSetCopilotContentExclusionForOrganizationRequestValue>> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -320,7 +320,7 @@ return CopilotSetCopilotContentExclusionForOrganizationResponse.fromJson(json as
   },
   onError: CopilotSetCopilotContentExclusionForOrganizationError.parse,
 );
- } 
+}
 /// Get Copilot metrics for an organization
 ///
 /// Use this endpoint to see a breakdown of aggregated metrics for various GitHub Copilot features. See the response schema tab for detailed metrics definitions.
@@ -338,7 +338,7 @@ return CopilotSetCopilotContentExclusionForOrganizationResponse.fromJson(json as
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot`, `read:org`, or `read:enterprise` scopes to use this endpoint.
 ///
 /// `GET /orgs/{org}/copilot/metrics`
-Future<ApiResult<List<CopilotUsageMetricsDay>, BasicError>> copilotMetricsForOrganization({required String org, String? since, String? until, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CopilotUsageMetricsDay>, BasicError>> copilotMetricsForOrganization({required String org, String? since, String? until, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) {
   queryParameters['since'] = since;
@@ -381,7 +381,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get Copilot seat assignment details for a user
 ///
 /// > `[!NOTE]`
@@ -397,7 +397,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
 ///
 /// `GET /orgs/{org}/members/{username}/copilot`
-Future<ApiResult<CopilotSeatDetails, CopilotGetCopilotSeatDetailsForUserError>> copilotGetCopilotSeatDetailsForUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CopilotSeatDetails, CopilotGetCopilotSeatDetailsForUserError>> copilotGetCopilotSeatDetailsForUser({required String org, required String username, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -414,7 +414,7 @@ return CopilotSeatDetails.fromJson(json as Map<String, dynamic>);
   },
   onError: CopilotGetCopilotSeatDetailsForUserError.parse,
 );
- } 
+}
 /// Get Copilot metrics for a team
 ///
 /// Use this endpoint to see a breakdown of aggregated metrics for various GitHub Copilot features. See the response schema tab for detailed metrics definitions.
@@ -432,7 +432,7 @@ return CopilotSeatDetails.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot`, `read:org`, or `read:enterprise` scopes to use this endpoint.
 ///
 /// `GET /orgs/{org}/team/{team_slug}/copilot/metrics`
-Future<ApiResult<List<CopilotUsageMetricsDay>, BasicError>> copilotMetricsForTeam({required String org, required String teamSlug, String? since, String? until, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CopilotUsageMetricsDay>, BasicError>> copilotMetricsForTeam({required String org, required String teamSlug, String? since, String? until, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) {
   queryParameters['since'] = since;
@@ -475,5 +475,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

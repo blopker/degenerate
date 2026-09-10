@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_quotes_quote_request_application_fee_amount.dart';import 'post_quotes_quote_request_application_fee_percent.dart';import 'post_quotes_quote_request_automatic_tax.dart';import 'post_quotes_quote_request_default_tax_rates.dart';import 'post_quotes_quote_request_description.dart';import 'post_quotes_quote_request_discounts.dart';import 'post_quotes_quote_request_footer.dart';import 'post_quotes_quote_request_header.dart';import 'post_quotes_quote_request_invoice_settings.dart';import 'post_quotes_quote_request_line_items.dart';import 'post_quotes_quote_request_on_behalf_of.dart';import 'post_quotes_quote_request_subscription_data.dart';import 'post_quotes_quote_request_transfer_data.dart';/// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay invoices at the end of the subscription cycle or at invoice finalization using the default payment method attached to the subscription or customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`. Defaults to `charge_automatically`.
 @immutable final class PostQuotesQuoteRequestCollectionMethod {const PostQuotesQuoteRequestCollectionMethod._(this.value);
 
-factory PostQuotesQuoteRequestCollectionMethod.fromJson(String json) { return switch (json) {
+factory PostQuotesQuoteRequestCollectionMethod.fromJson(String json) {return switch (json) {
   'charge_automatically' => chargeAutomatically,
   'send_invoice' => sendInvoice,
   _ => PostQuotesQuoteRequestCollectionMethod._(json),
-}; }
+};}
 
 static const PostQuotesQuoteRequestCollectionMethod chargeAutomatically = PostQuotesQuoteRequestCollectionMethod._('charge_automatically');
 
@@ -17,17 +17,17 @@ static const List<PostQuotesQuoteRequestCollectionMethod> values = [chargeAutoma
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostQuotesQuoteRequestCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostQuotesQuoteRequestCollectionMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostQuotesQuoteRequestCollectionMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostQuotesQuoteRequestCollectionMethod($value)';}
+}
 @immutable final class PostQuotesQuoteRequest {const PostQuotesQuoteRequest({this.applicationFeeAmount, this.applicationFeePercent, this.automaticTax, this.collectionMethod, this.customer, this.customerAccount, this.defaultTaxRates, this.description, this.discounts, this.expand, this.expiresAt, this.footer, this.header, this.invoiceSettings, this.lineItems, this.metadata, this.onBehalfOf, this.subscriptionData, this.transferData, });
 
-factory PostQuotesQuoteRequest.fromJson(Map<String, dynamic> json) { return PostQuotesQuoteRequest(
+factory PostQuotesQuoteRequest.fromJson(Map<String, dynamic> json) {return PostQuotesQuoteRequest(
   applicationFeeAmount: json['application_fee_amount'] != null ? PostQuotesQuoteRequestApplicationFeeAmount.fromJson(json['application_fee_amount']) : null,
   applicationFeePercent: json['application_fee_percent'] != null ? PostQuotesQuoteRequestApplicationFeePercent.fromJson(json['application_fee_percent']) : null,
   automaticTax: json['automatic_tax'] != null ? PostQuotesQuoteRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
@@ -47,7 +47,7 @@ factory PostQuotesQuoteRequest.fromJson(Map<String, dynamic> json) { return Post
   onBehalfOf: json['on_behalf_of'] != null ? PostQuotesQuoteRequestOnBehalfOf.fromJson(json['on_behalf_of']) : null,
   subscriptionData: json['subscription_data'] != null ? PostQuotesQuoteRequestSubscriptionData.fromJson(json['subscription_data'] as Map<String, dynamic>) : null,
   transferData: json['transfer_data'] != null ? PostQuotesQuoteRequestTransferData.fromJson(json['transfer_data']) : null,
-); }
+);}
 
 /// The amount of the application fee (if any) that will be requested to be applied to the payment and transferred to the application owner's Stripe account. There cannot be any line items with recurring prices when using this field.
 final PostQuotesQuoteRequestApplicationFeeAmount? applicationFeeAmount;
@@ -106,7 +106,7 @@ final PostQuotesQuoteRequestSubscriptionData? subscriptionData;
 /// The data with which to automatically create a Transfer for each of the invoices.
 final PostQuotesQuoteRequestTransferData? transferData;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (applicationFeeAmount != null) 'application_fee_amount': applicationFeeAmount?.toJson(),
   if (applicationFeePercent != null) 'application_fee_percent': applicationFeePercent?.toJson(),
   if (automaticTax != null) 'automatic_tax': automaticTax?.toJson(),
@@ -126,9 +126,9 @@ Map<String, dynamic> toJson() { return {
   if (onBehalfOf != null) 'on_behalf_of': onBehalfOf?.toJson(),
   if (subscriptionData != null) 'subscription_data': subscriptionData?.toJson(),
   if (transferData != null) 'transfer_data': transferData?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'application_fee_amount', 'application_fee_percent', 'automatic_tax', 'collection_method', 'customer', 'customer_account', 'default_tax_rates', 'description', 'discounts', 'expand', 'expires_at', 'footer', 'header', 'invoice_settings', 'line_items', 'metadata', 'on_behalf_of', 'subscription_data', 'transfer_data'}.contains(key)); } 
-PostQuotesQuoteRequest copyWith({PostQuotesQuoteRequestApplicationFeeAmount? Function()? applicationFeeAmount, PostQuotesQuoteRequestApplicationFeePercent? Function()? applicationFeePercent, PostQuotesQuoteRequestAutomaticTax? Function()? automaticTax, PostQuotesQuoteRequestCollectionMethod? Function()? collectionMethod, String? Function()? customer, String? Function()? customerAccount, PostQuotesQuoteRequestDefaultTaxRates? Function()? defaultTaxRates, PostQuotesQuoteRequestDescription? Function()? description, PostQuotesQuoteRequestDiscounts? Function()? discounts, List<String>? Function()? expand, int? Function()? expiresAt, PostQuotesQuoteRequestFooter? Function()? footer, PostQuotesQuoteRequestHeader? Function()? header, PostQuotesQuoteRequestInvoiceSettings? Function()? invoiceSettings, List<PostQuotesQuoteRequestLineItems>? Function()? lineItems, Map<String, String>? Function()? metadata, PostQuotesQuoteRequestOnBehalfOf? Function()? onBehalfOf, PostQuotesQuoteRequestSubscriptionData? Function()? subscriptionData, PostQuotesQuoteRequestTransferData? Function()? transferData, }) { return PostQuotesQuoteRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'application_fee_amount', 'application_fee_percent', 'automatic_tax', 'collection_method', 'customer', 'customer_account', 'default_tax_rates', 'description', 'discounts', 'expand', 'expires_at', 'footer', 'header', 'invoice_settings', 'line_items', 'metadata', 'on_behalf_of', 'subscription_data', 'transfer_data'}.contains(key));}
+PostQuotesQuoteRequest copyWith({PostQuotesQuoteRequestApplicationFeeAmount? Function()? applicationFeeAmount, PostQuotesQuoteRequestApplicationFeePercent? Function()? applicationFeePercent, PostQuotesQuoteRequestAutomaticTax? Function()? automaticTax, PostQuotesQuoteRequestCollectionMethod? Function()? collectionMethod, String? Function()? customer, String? Function()? customerAccount, PostQuotesQuoteRequestDefaultTaxRates? Function()? defaultTaxRates, PostQuotesQuoteRequestDescription? Function()? description, PostQuotesQuoteRequestDiscounts? Function()? discounts, List<String>? Function()? expand, int? Function()? expiresAt, PostQuotesQuoteRequestFooter? Function()? footer, PostQuotesQuoteRequestHeader? Function()? header, PostQuotesQuoteRequestInvoiceSettings? Function()? invoiceSettings, List<PostQuotesQuoteRequestLineItems>? Function()? lineItems, Map<String, String>? Function()? metadata, PostQuotesQuoteRequestOnBehalfOf? Function()? onBehalfOf, PostQuotesQuoteRequestSubscriptionData? Function()? subscriptionData, PostQuotesQuoteRequestTransferData? Function()? transferData, }) {return PostQuotesQuoteRequest(
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
@@ -148,8 +148,8 @@ PostQuotesQuoteRequest copyWith({PostQuotesQuoteRequestApplicationFeeAmount? Fun
   onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
   subscriptionData: subscriptionData != null ? subscriptionData() : this.subscriptionData,
   transferData: transferData != null ? transferData() : this.transferData,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostQuotesQuoteRequest &&
           applicationFeeAmount == other.applicationFeeAmount &&
           applicationFeePercent == other.applicationFeePercent &&
@@ -169,7 +169,7 @@ PostQuotesQuoteRequest copyWith({PostQuotesQuoteRequestApplicationFeeAmount? Fun
           metadata == other.metadata &&
           onBehalfOf == other.onBehalfOf &&
           subscriptionData == other.subscriptionData &&
-          transferData == other.transferData; } 
-@override int get hashCode { return Object.hash(applicationFeeAmount, applicationFeePercent, automaticTax, collectionMethod, customer, customerAccount, defaultTaxRates, description, discounts, Object.hashAll(expand ?? const []), expiresAt, footer, header, invoiceSettings, Object.hashAll(lineItems ?? const []), metadata, onBehalfOf, subscriptionData, transferData); } 
-@override String toString() { return 'PostQuotesQuoteRequest(applicationFeeAmount: $applicationFeeAmount, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, collectionMethod: $collectionMethod, customer: $customer, customerAccount: $customerAccount, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, expand: $expand, expiresAt: $expiresAt, footer: $footer, header: $header, invoiceSettings: $invoiceSettings, lineItems: $lineItems, metadata: $metadata, onBehalfOf: $onBehalfOf, subscriptionData: $subscriptionData, transferData: $transferData)'; } 
- }
+          transferData == other.transferData;}
+@override int get hashCode {return Object.hash(applicationFeeAmount, applicationFeePercent, automaticTax, collectionMethod, customer, customerAccount, defaultTaxRates, description, discounts, Object.hashAll(expand ?? const []), expiresAt, footer, header, invoiceSettings, Object.hashAll(lineItems ?? const []), metadata, onBehalfOf, subscriptionData, transferData);}
+@override String toString() {return 'PostQuotesQuoteRequest(applicationFeeAmount: $applicationFeeAmount, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, collectionMethod: $collectionMethod, customer: $customer, customerAccount: $customerAccount, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, expand: $expand, expiresAt: $expiresAt, footer: $footer, header: $header, invoiceSettings: $invoiceSettings, lineItems: $lineItems, metadata: $metadata, onBehalfOf: $onBehalfOf, subscriptionData: $subscriptionData, transferData: $transferData)';}
+}

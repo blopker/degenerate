@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class CodeScanningListAlertsForOrgError {const CodeScanningListAlertsForOrgError();
 
 /// Decodes the payload for its declared status and content type.
-static CodeScanningListAlertsForOrgError parse(ApiResponse response) { switch (response.statusCode) {
+static CodeScanningListAlertsForOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
 return CodeScanningListAlertsForOrgError404(BasicError.fromJson(json as Map<String, dynamic>));
@@ -14,26 +14,26 @@ return CodeScanningListAlertsForOrgError503(CodeScanningListAlertsForOrgResponse
 default:
 return CodeScanningListAlertsForOrgErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 404 (application/json).
 final class CodeScanningListAlertsForOrgError404 extends CodeScanningListAlertsForOrgError {const CodeScanningListAlertsForOrgError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 503 (application/json).
 final class CodeScanningListAlertsForOrgError503 extends CodeScanningListAlertsForOrgError {const CodeScanningListAlertsForOrgError503(this.data);
 
 /// The decoded response payload.
 final CodeScanningListAlertsForOrgResponse503 data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class CodeScanningListAlertsForOrgErrorUnknown extends CodeScanningListAlertsForOrgError {const CodeScanningListAlertsForOrgErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

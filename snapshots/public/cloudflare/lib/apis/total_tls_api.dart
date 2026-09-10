@@ -13,7 +13,7 @@ final class TotalTlsApi with ApiExecutor {const TotalTlsApi(this.apiConfig);
 /// Get Total TLS Settings for a Zone.
 ///
 /// `GET /zones/{zone_id}/acm/total_tls`
-Future<ApiResult<TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult?, TotalTlsTotalTlsSettingsDetailsResponse4xx>> totalTlsSettingsDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult?, TotalTlsTotalTlsSettingsDetailsResponse4xx>> totalTlsSettingsDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Enable or Disable Total TLS
 ///
 /// Set Total TLS Settings or disable the feature for a Zone.
 ///
 /// `POST /zones/{zone_id}/acm/total_tls`
-Future<ApiResult<TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult?, TotalTlsEnableOrDisableTotalTlsResponse4xx>> totalTlsEnableOrDisableTotalTls({required TlsCertificatesAndHostnamesIdentifier zoneId, required TotalTlsEnableOrDisableTotalTlsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult?, TotalTlsEnableOrDisableTotalTlsResponse4xx>> totalTlsEnableOrDisableTotalTls({required TlsCertificatesAndHostnamesIdentifier zoneId, required TotalTlsEnableOrDisableTotalTlsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,5 +73,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

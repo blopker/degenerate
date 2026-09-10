@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosDnsProtectionRuleUpdate {const DosDnsProtectionRuleUpdate({this.burstSensitivity, this.mode, this.profileSensitivity, this.rateSensitivity, });
 
-factory DosDnsProtectionRuleUpdate.fromJson(Map<String, dynamic> json) { return DosDnsProtectionRuleUpdate(
+factory DosDnsProtectionRuleUpdate.fromJson(Map<String, dynamic> json) {return DosDnsProtectionRuleUpdate(
   burstSensitivity: json['burst_sensitivity'] as String?,
   mode: json['mode'] as String?,
   profileSensitivity: json['profile_sensitivity'] as String?,
   rateSensitivity: json['rate_sensitivity'] as String?,
-); }
+);}
 
 /// The new burst sensitivity. Optional. Must be one of 'low', 'medium', 'high'.
 final String? burstSensitivity;
@@ -21,25 +21,25 @@ final String? profileSensitivity;
 /// The new rate sensitivity. Optional. Must be one of 'low', 'medium', 'high'.
 final String? rateSensitivity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'burst_sensitivity': ?burstSensitivity,
   'mode': ?mode,
   'profile_sensitivity': ?profileSensitivity,
   'rate_sensitivity': ?rateSensitivity,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'burst_sensitivity', 'mode', 'profile_sensitivity', 'rate_sensitivity'}.contains(key)); } 
-DosDnsProtectionRuleUpdate copyWith({String? Function()? burstSensitivity, String? Function()? mode, String? Function()? profileSensitivity, String? Function()? rateSensitivity, }) { return DosDnsProtectionRuleUpdate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'burst_sensitivity', 'mode', 'profile_sensitivity', 'rate_sensitivity'}.contains(key));}
+DosDnsProtectionRuleUpdate copyWith({String? Function()? burstSensitivity, String? Function()? mode, String? Function()? profileSensitivity, String? Function()? rateSensitivity, }) {return DosDnsProtectionRuleUpdate(
   burstSensitivity: burstSensitivity != null ? burstSensitivity() : this.burstSensitivity,
   mode: mode != null ? mode() : this.mode,
   profileSensitivity: profileSensitivity != null ? profileSensitivity() : this.profileSensitivity,
   rateSensitivity: rateSensitivity != null ? rateSensitivity() : this.rateSensitivity,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DosDnsProtectionRuleUpdate &&
           burstSensitivity == other.burstSensitivity &&
           mode == other.mode &&
           profileSensitivity == other.profileSensitivity &&
-          rateSensitivity == other.rateSensitivity; } 
-@override int get hashCode { return Object.hash(burstSensitivity, mode, profileSensitivity, rateSensitivity); } 
-@override String toString() { return 'DosDnsProtectionRuleUpdate(burstSensitivity: $burstSensitivity, mode: $mode, profileSensitivity: $profileSensitivity, rateSensitivity: $rateSensitivity)'; } 
- }
+          rateSensitivity == other.rateSensitivity;}
+@override int get hashCode {return Object.hash(burstSensitivity, mode, profileSensitivity, rateSensitivity);}
+@override String toString() {return 'DosDnsProtectionRuleUpdate(burstSensitivity: $burstSensitivity, mode: $mode, profileSensitivity: $profileSensitivity, rateSensitivity: $rateSensitivity)';}
+}

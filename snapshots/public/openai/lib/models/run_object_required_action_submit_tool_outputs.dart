@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_tool_call_object.dart';/// Details on the tool outputs needed for this run to continue.
 @immutable final class RunObjectRequiredActionSubmitToolOutputs {const RunObjectRequiredActionSubmitToolOutputs({required this.toolCalls});
 
-factory RunObjectRequiredActionSubmitToolOutputs.fromJson(Map<String, dynamic> json) { return RunObjectRequiredActionSubmitToolOutputs(
+factory RunObjectRequiredActionSubmitToolOutputs.fromJson(Map<String, dynamic> json) {return RunObjectRequiredActionSubmitToolOutputs(
   toolCalls: (json['tool_calls'] as List<dynamic>).map((e) => RunToolCallObject.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// A list of the relevant tool calls.
 final List<RunToolCallObject> toolCalls;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tool_calls': toolCalls.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('tool_calls'); } 
-RunObjectRequiredActionSubmitToolOutputs copyWith({List<RunToolCallObject>? toolCalls}) { return RunObjectRequiredActionSubmitToolOutputs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('tool_calls');}
+RunObjectRequiredActionSubmitToolOutputs copyWith({List<RunToolCallObject>? toolCalls}) {return RunObjectRequiredActionSubmitToolOutputs(
   toolCalls: toolCalls ?? this.toolCalls,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RunObjectRequiredActionSubmitToolOutputs &&
-          listEquals(toolCalls, other.toolCalls); } 
-@override int get hashCode { return Object.hashAll(toolCalls).hashCode; } 
-@override String toString() { return 'RunObjectRequiredActionSubmitToolOutputs(toolCalls: $toolCalls)'; } 
- }
+          listEquals(toolCalls, other.toolCalls);}
+@override int get hashCode {return Object.hashAll(toolCalls).hashCode;}
+@override String toString() {return 'RunObjectRequiredActionSubmitToolOutputs(toolCalls: $toolCalls)';}
+}

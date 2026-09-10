@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_budget_budget_alerting.dart';/// The type of scope for the budget
 @immutable final class GetBudgetBudgetScope {const GetBudgetBudgetScope._(this.value);
 
-factory GetBudgetBudgetScope.fromJson(String json) { return switch (json) {
+factory GetBudgetBudgetScope.fromJson(String json) {return switch (json) {
   'enterprise' => enterprise,
   'organization' => organization,
   'repository' => repository,
   'cost_center' => costCenter,
   _ => GetBudgetBudgetScope._(json),
-}; }
+};}
 
 static const GetBudgetBudgetScope enterprise = GetBudgetBudgetScope._('enterprise');
 
@@ -23,22 +23,22 @@ static const List<GetBudgetBudgetScope> values = [enterprise, organization, repo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetBudgetBudgetScope && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetBudgetBudgetScope($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetBudgetBudgetScope && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetBudgetBudgetScope($value)';}
+}
 /// The type of pricing for the budget
 @immutable final class GetBudgetBudgetType {const GetBudgetBudgetType._(this.value);
 
-factory GetBudgetBudgetType.fromJson(String json) { return switch (json) {
+factory GetBudgetBudgetType.fromJson(String json) {return switch (json) {
   'ProductPricing' => productPricing,
   'SkuPricing' => skuPricing,
   _ => GetBudgetBudgetType._(json),
-}; }
+};}
 
 static const GetBudgetBudgetType productPricing = GetBudgetBudgetType._('ProductPricing');
 
@@ -48,17 +48,17 @@ static const List<GetBudgetBudgetType> values = [productPricing, skuPricing];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetBudgetBudgetType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetBudgetBudgetType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetBudgetBudgetType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetBudgetBudgetType($value)';}
+}
 @immutable final class GetBudget {const GetBudget({required this.id, required this.budgetScope, required this.budgetEntityName, required this.budgetAmount, required this.preventFurtherUsage, required this.budgetProductSku, required this.budgetType, required this.budgetAlerting, });
 
-factory GetBudget.fromJson(Map<String, dynamic> json) { return GetBudget(
+factory GetBudget.fromJson(Map<String, dynamic> json) {return GetBudget(
   id: json['id'] as String,
   budgetScope: GetBudgetBudgetScope.fromJson(json['budget_scope'] as String),
   budgetEntityName: json['budget_entity_name'] as String,
@@ -67,7 +67,7 @@ factory GetBudget.fromJson(Map<String, dynamic> json) { return GetBudget(
   budgetProductSku: json['budget_product_sku'] as String,
   budgetType: GetBudgetBudgetType.fromJson(json['budget_type'] as String),
   budgetAlerting: GetBudgetBudgetAlerting.fromJson(json['budget_alerting'] as Map<String, dynamic>),
-); }
+);}
 
 /// ID of the budget.
 final String id;
@@ -92,7 +92,7 @@ final GetBudgetBudgetType budgetType;
 
 final GetBudgetBudgetAlerting budgetAlerting;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'budget_scope': budgetScope.toJson(),
   'budget_entity_name': budgetEntityName,
@@ -101,16 +101,16 @@ Map<String, dynamic> toJson() { return {
   'budget_product_sku': budgetProductSku,
   'budget_type': budgetType.toJson(),
   'budget_alerting': budgetAlerting.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('budget_scope') &&
       json.containsKey('budget_entity_name') && json['budget_entity_name'] is String &&
       json.containsKey('budget_amount') && json['budget_amount'] is num &&
       json.containsKey('prevent_further_usage') && json['prevent_further_usage'] is bool &&
       json.containsKey('budget_product_sku') && json['budget_product_sku'] is String &&
       json.containsKey('budget_type') &&
-      json.containsKey('budget_alerting'); } 
-GetBudget copyWith({String? id, GetBudgetBudgetScope? budgetScope, String? budgetEntityName, int? budgetAmount, bool? preventFurtherUsage, String? budgetProductSku, GetBudgetBudgetType? budgetType, GetBudgetBudgetAlerting? budgetAlerting, }) { return GetBudget(
+      json.containsKey('budget_alerting');}
+GetBudget copyWith({String? id, GetBudgetBudgetScope? budgetScope, String? budgetEntityName, int? budgetAmount, bool? preventFurtherUsage, String? budgetProductSku, GetBudgetBudgetType? budgetType, GetBudgetBudgetAlerting? budgetAlerting, }) {return GetBudget(
   id: id ?? this.id,
   budgetScope: budgetScope ?? this.budgetScope,
   budgetEntityName: budgetEntityName ?? this.budgetEntityName,
@@ -119,8 +119,8 @@ GetBudget copyWith({String? id, GetBudgetBudgetScope? budgetScope, String? budge
   budgetProductSku: budgetProductSku ?? this.budgetProductSku,
   budgetType: budgetType ?? this.budgetType,
   budgetAlerting: budgetAlerting ?? this.budgetAlerting,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetBudget &&
           id == other.id &&
           budgetScope == other.budgetScope &&
@@ -129,7 +129,7 @@ GetBudget copyWith({String? id, GetBudgetBudgetScope? budgetScope, String? budge
           preventFurtherUsage == other.preventFurtherUsage &&
           budgetProductSku == other.budgetProductSku &&
           budgetType == other.budgetType &&
-          budgetAlerting == other.budgetAlerting; } 
-@override int get hashCode { return Object.hash(id, budgetScope, budgetEntityName, budgetAmount, preventFurtherUsage, budgetProductSku, budgetType, budgetAlerting); } 
-@override String toString() { return 'GetBudget(id: $id, budgetScope: $budgetScope, budgetEntityName: $budgetEntityName, budgetAmount: $budgetAmount, preventFurtherUsage: $preventFurtherUsage, budgetProductSku: $budgetProductSku, budgetType: $budgetType, budgetAlerting: $budgetAlerting)'; } 
- }
+          budgetAlerting == other.budgetAlerting;}
+@override int get hashCode {return Object.hash(id, budgetScope, budgetEntityName, budgetAmount, preventFurtherUsage, budgetProductSku, budgetType, budgetAlerting);}
+@override String toString() {return 'GetBudget(id: $id, budgetScope: $budgetScope, budgetEntityName: $budgetEntityName, budgetAmount: $budgetAmount, preventFurtherUsage: $preventFurtherUsage, budgetProductSku: $budgetProductSku, budgetType: $budgetType, budgetAlerting: $budgetAlerting)';}
+}

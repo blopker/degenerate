@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_schedule_details_phases_items_billing_thresholds.dart';import 'post_invoices_create_preview_request_schedule_details_phases_items_discounts.dart';import 'post_invoices_create_preview_request_schedule_details_phases_items_price_data.dart';import 'post_invoices_create_preview_request_schedule_details_phases_items_tax_rates.dart';@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems({this.billingThresholds, this.discounts, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
 
-factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems(
+factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems.fromJson(Map<String, dynamic> json) {return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems(
   billingThresholds: json['billing_thresholds'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsBillingThresholds.fromJson(json['billing_thresholds']) : null,
   discounts: json['discounts'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsDiscounts.fromJson(json['discounts']) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -10,7 +10,7 @@ factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems.fromJson(Map<
   priceData: json['price_data'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   taxRates: json['tax_rates'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRates.fromJson(json['tax_rates']) : null,
-); }
+);}
 
 final PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsBillingThresholds? billingThresholds;
 
@@ -26,7 +26,7 @@ final int? quantity;
 
 final PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRates? taxRates;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingThresholds != null) 'billing_thresholds': billingThresholds?.toJson(),
   if (discounts != null) 'discounts': discounts?.toJson(),
   'metadata': ?metadata,
@@ -34,9 +34,9 @@ Map<String, dynamic> toJson() { return {
   if (priceData != null) 'price_data': priceData?.toJson(),
   'quantity': ?quantity,
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_thresholds', 'discounts', 'metadata', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key)); } 
-PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems copyWith({PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsBillingThresholds? Function()? billingThresholds, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsDiscounts? Function()? discounts, Map<String, String>? Function()? metadata, String? Function()? price, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData? Function()? priceData, int? Function()? quantity, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRates? Function()? taxRates, }) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'billing_thresholds', 'discounts', 'metadata', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key));}
+PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems copyWith({PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsBillingThresholds? Function()? billingThresholds, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsDiscounts? Function()? discounts, Map<String, String>? Function()? metadata, String? Function()? price, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData? Function()? priceData, int? Function()? quantity, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRates? Function()? taxRates, }) {return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems(
   billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
   discounts: discounts != null ? discounts() : this.discounts,
   metadata: metadata != null ? metadata() : this.metadata,
@@ -44,8 +44,8 @@ PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems copyWith({PostInvoice
   priceData: priceData != null ? priceData() : this.priceData,
   quantity: quantity != null ? quantity() : this.quantity,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems &&
           billingThresholds == other.billingThresholds &&
           discounts == other.discounts &&
@@ -53,7 +53,7 @@ PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems copyWith({PostInvoice
           price == other.price &&
           priceData == other.priceData &&
           quantity == other.quantity &&
-          taxRates == other.taxRates; } 
-@override int get hashCode { return Object.hash(billingThresholds, discounts, metadata, price, priceData, quantity, taxRates); } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems(billingThresholds: $billingThresholds, discounts: $discounts, metadata: $metadata, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)'; } 
- }
+          taxRates == other.taxRates;}
+@override int get hashCode {return Object.hash(billingThresholds, discounts, metadata, price, priceData, quantity, taxRates);}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems(billingThresholds: $billingThresholds, discounts: $discounts, metadata: $metadata, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)';}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content_image_file_object_image_file.dart';/// Always `image_file`.
 @immutable final class MessageContentImageFileObjectType {const MessageContentImageFileObjectType._(this.value);
 
-factory MessageContentImageFileObjectType.fromJson(String json) { return switch (json) {
+factory MessageContentImageFileObjectType.fromJson(String json) {return switch (json) {
   'image_file' => imageFile,
   _ => MessageContentImageFileObjectType._(json),
-}; }
+};}
 
 static const MessageContentImageFileObjectType imageFile = MessageContentImageFileObjectType._('image_file');
 
@@ -14,41 +14,41 @@ static const List<MessageContentImageFileObjectType> values = [imageFile];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageContentImageFileObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageContentImageFileObjectType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageContentImageFileObjectType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageContentImageFileObjectType($value)';}
+}
 /// References an image [File](/docs/api-reference/files) in the content of a message.
 @immutable final class MessageContentImageFileObject {const MessageContentImageFileObject({required this.type, required this.imageFile, });
 
-factory MessageContentImageFileObject.fromJson(Map<String, dynamic> json) { return MessageContentImageFileObject(
+factory MessageContentImageFileObject.fromJson(Map<String, dynamic> json) {return MessageContentImageFileObject(
   type: MessageContentImageFileObjectType.fromJson(json['type'] as String),
   imageFile: MessageContentImageFileObjectImageFile.fromJson(json['image_file'] as Map<String, dynamic>),
-); }
+);}
 
 /// Always `image_file`.
 final MessageContentImageFileObjectType type;
 
 final MessageContentImageFileObjectImageFile imageFile;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'image_file': imageFile.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('image_file'); } 
-MessageContentImageFileObject copyWith({MessageContentImageFileObjectType? type, MessageContentImageFileObjectImageFile? imageFile, }) { return MessageContentImageFileObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('image_file');}
+MessageContentImageFileObject copyWith({MessageContentImageFileObjectType? type, MessageContentImageFileObjectImageFile? imageFile, }) {return MessageContentImageFileObject(
   type: type ?? this.type,
   imageFile: imageFile ?? this.imageFile,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MessageContentImageFileObject &&
           type == other.type &&
-          imageFile == other.imageFile; } 
-@override int get hashCode { return Object.hash(type, imageFile); } 
-@override String toString() { return 'MessageContentImageFileObject(type: $type, imageFile: $imageFile)'; } 
- }
+          imageFile == other.imageFile;}
+@override int get hashCode {return Object.hash(type, imageFile);}
+@override String toString() {return 'MessageContentImageFileObject(type: $type, imageFile: $imageFile)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
-factory RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) {return switch (json) {
   'ALL' => all,
   'AI_BOTS' => aiBots,
   'AI_GATEWAY' => aiGateway,
@@ -30,7 +30,7 @@ factory RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenc
   'SPEED' => speed,
   'WORKERS_AI' => workersAi,
   _ => RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
 
@@ -86,18 +86,18 @@ static const List<RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMet
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsDataSource($value)';}
+}
 /// Event type for annotations.
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
-factory RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) {return switch (json) {
   'EVENT' => event,
   'GENERAL' => general,
   'OUTAGE' => outage,
@@ -105,7 +105,7 @@ factory RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenc
   'PIPELINE' => pipeline,
   'TRAFFIC_ANOMALY' => trafficAnomaly,
   _ => RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
 
@@ -123,18 +123,18 @@ static const List<RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMet
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsEventType($value)';}
+}
 /// Annotation associated with the result (e.g. outage or other type of event).
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotations {const RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
-factory RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotations(
+factory RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
   description: json['description'] as String,
   endDate: DateTime.parse(json['endDate'] as String),
@@ -142,7 +142,7 @@ factory RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenc
   isInstantaneous: json['isInstantaneous'] as bool,
   linkedUrl: Uri.parse(json['linkedUrl'] as String),
   startDate: DateTime.parse(json['startDate'] as String),
-); }
+);}
 
 /// Data source for annotations.
 final RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
@@ -161,7 +161,7 @@ final Uri linkedUrl;
 
 final DateTime startDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'dataSource': dataSource.toJson(),
   'description': description,
   'endDate': endDate.toIso8601String(),
@@ -169,15 +169,15 @@ Map<String, dynamic> toJson() { return {
   'isInstantaneous': isInstantaneous,
   'linkedUrl': linkedUrl.toString(),
   'startDate': startDate.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dataSource') &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('endDate') && json['endDate'] is String &&
       json.containsKey('eventType') &&
       json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
       json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
-      json.containsKey('startDate') && json['startDate'] is String; } 
-RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotations(
+      json.containsKey('startDate') && json['startDate'] is String;}
+RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) {return RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotations(
   dataSource: dataSource ?? this.dataSource,
   description: description ?? this.description,
   endDate: endDate ?? this.endDate,
@@ -185,8 +185,8 @@ RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnn
   isInstantaneous: isInstantaneous ?? this.isInstantaneous,
   linkedUrl: linkedUrl ?? this.linkedUrl,
   startDate: startDate ?? this.startDate,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotations &&
           dataSource == other.dataSource &&
           description == other.description &&
@@ -194,7 +194,7 @@ RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnn
           eventType == other.eventType &&
           isInstantaneous == other.isInstantaneous &&
           linkedUrl == other.linkedUrl &&
-          startDate == other.startDate; } 
-@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
-@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
- }
+          startDate == other.startDate;}
+@override int get hashCode {return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate);}
+@override String toString() {return 'RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)';}
+}

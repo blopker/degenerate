@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fee_refund.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
 @immutable final class ApplicationFeeRefundsObject {const ApplicationFeeRefundsObject._(this.value);
 
-factory ApplicationFeeRefundsObject.fromJson(String json) { return switch (json) {
+factory ApplicationFeeRefundsObject.fromJson(String json) {return switch (json) {
   'list' => list,
   _ => ApplicationFeeRefundsObject._(json),
-}; }
+};}
 
 static const ApplicationFeeRefundsObject list = ApplicationFeeRefundsObject._('list');
 
@@ -14,23 +14,23 @@ static const List<ApplicationFeeRefundsObject> values = [list];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ApplicationFeeRefundsObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ApplicationFeeRefundsObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ApplicationFeeRefundsObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ApplicationFeeRefundsObject($value)';}
+}
 /// A list of refunds that have been applied to the fee.
 @immutable final class ApplicationFeeRefunds {const ApplicationFeeRefunds({required this.data, required this.hasMore, required this.object, required this.url, });
 
-factory ApplicationFeeRefunds.fromJson(Map<String, dynamic> json) { return ApplicationFeeRefunds(
+factory ApplicationFeeRefunds.fromJson(Map<String, dynamic> json) {return ApplicationFeeRefunds(
   data: (json['data'] as List<dynamic>).map((e) => FeeRefund.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   object: ApplicationFeeRefundsObject.fromJson(json['object'] as String),
   url: json['url'] as String,
-); }
+);}
 
 /// Details about each object.
 final List<FeeRefund> data;
@@ -44,28 +44,28 @@ final ApplicationFeeRefundsObject object;
 /// The URL where this list can be accessed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'object': object.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
-ApplicationFeeRefunds copyWith({List<FeeRefund>? data, bool? hasMore, ApplicationFeeRefundsObject? object, String? url, }) { return ApplicationFeeRefunds(
+      json.containsKey('url') && json['url'] is String;}
+ApplicationFeeRefunds copyWith({List<FeeRefund>? data, bool? hasMore, ApplicationFeeRefundsObject? object, String? url, }) {return ApplicationFeeRefunds(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ApplicationFeeRefunds &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, object, url); } 
-@override String toString() { return 'ApplicationFeeRefunds(data: $data, hasMore: $hasMore, object: $object, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(data), hasMore, object, url);}
+@override String toString() {return 'ApplicationFeeRefunds(data: $data, hasMore: $hasMore, object: $object, url: $url)';}
+}

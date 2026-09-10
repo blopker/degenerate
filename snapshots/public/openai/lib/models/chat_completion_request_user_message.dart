@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_complet
 /// 
 @immutable final class ChatCompletionRequestUserMessage {const ChatCompletionRequestUserMessage({required this.content, required this.role, this.name, });
 
-factory ChatCompletionRequestUserMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestUserMessage(
+factory ChatCompletionRequestUserMessage.fromJson(Map<String, dynamic> json) {return ChatCompletionRequestUserMessage(
   content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => OneOf4.parse(e, fromA: (v) => ChatCompletionRequestMessageContentPartText.fromJson(v as Map<String, dynamic>), fromB: (v) => ChatCompletionRequestMessageContentPartImage.fromJson(v as Map<String, dynamic>), fromC: (v) => ChatCompletionRequestMessageContentPartAudio.fromJson(v as Map<String, dynamic>), fromD: (v) => ChatCompletionRequestMessageContentPartFile.fromJson(v as Map<String, dynamic>),)).toList(),),
   role: json['role'] as String,
   name: json['name'] as String?,
-); }
+);}
 
 /// The contents of the user message.
 /// 
@@ -21,23 +21,23 @@ final String role;
 /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content.toJson(),
   'role': role,
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
-      json.containsKey('role') && json['role'] is String; } 
-ChatCompletionRequestUserMessage copyWith({ChatCompletionRequestUserMessageContent? content, String? role, String? Function()? name, }) { return ChatCompletionRequestUserMessage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') &&
+      json.containsKey('role') && json['role'] is String;}
+ChatCompletionRequestUserMessage copyWith({ChatCompletionRequestUserMessageContent? content, String? role, String? Function()? name, }) {return ChatCompletionRequestUserMessage(
   content: content ?? this.content,
   role: role ?? this.role,
   name: name != null ? name() : this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ChatCompletionRequestUserMessage &&
           content == other.content &&
           role == other.role &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(content, role, name); } 
-@override String toString() { return 'ChatCompletionRequestUserMessage(content: $content, role: $role, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(content, role, name);}
+@override String toString() {return 'ChatCompletionRequestUserMessage(content: $content, role: $role, name: $name)';}
+}

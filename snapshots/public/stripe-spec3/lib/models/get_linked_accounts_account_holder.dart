@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetLinkedAccountsAccountHolder {const GetLinkedAccountsAccountHolder({this.account, this.customer, this.customerAccount, });
 
-factory GetLinkedAccountsAccountHolder.fromJson(Map<String, dynamic> json) { return GetLinkedAccountsAccountHolder(
+factory GetLinkedAccountsAccountHolder.fromJson(Map<String, dynamic> json) {return GetLinkedAccountsAccountHolder(
   account: json['account'] as String?,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
-); }
+);}
 
 final String? account;
 
@@ -14,22 +14,22 @@ final String? customer;
 
 final String? customerAccount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': ?account,
   'customer': ?customer,
   'customer_account': ?customerAccount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account', 'customer', 'customer_account'}.contains(key)); } 
-GetLinkedAccountsAccountHolder copyWith({String? Function()? account, String? Function()? customer, String? Function()? customerAccount, }) { return GetLinkedAccountsAccountHolder(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account', 'customer', 'customer_account'}.contains(key));}
+GetLinkedAccountsAccountHolder copyWith({String? Function()? account, String? Function()? customer, String? Function()? customerAccount, }) {return GetLinkedAccountsAccountHolder(
   account: account != null ? account() : this.account,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetLinkedAccountsAccountHolder &&
           account == other.account &&
           customer == other.customer &&
-          customerAccount == other.customerAccount; } 
-@override int get hashCode { return Object.hash(account, customer, customerAccount); } 
-@override String toString() { return 'GetLinkedAccountsAccountHolder(account: $account, customer: $customer, customerAccount: $customerAccount)'; } 
- }
+          customerAccount == other.customerAccount;}
+@override int get hashCode {return Object.hash(account, customer, customerAccount);}
+@override String toString() {return 'GetLinkedAccountsAccountHolder(account: $account, customer: $customer, customerAccount: $customerAccount)';}
+}

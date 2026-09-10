@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The severity of the alert.
 @immutable final class WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity {const WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity._(this.value);
 
-factory WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity.fromJson(String json) { return switch (json) {
+factory WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity.fromJson(String json) {return switch (json) {
   'none' => none,
   'note' => note,
   'warning' => warning,
   'error' => error,
   'null' => $null,
   _ => WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity._(json),
-}; }
+};}
 
 static const WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity none = WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity._('none');
 
@@ -26,21 +26,21 @@ static const List<WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity($value)';}
+}
 @immutable final class WebhookCodeScanningAlertAppearedInBranchAlertRule {const WebhookCodeScanningAlertAppearedInBranchAlertRule({required this.description, required this.id, required this.severity, });
 
-factory WebhookCodeScanningAlertAppearedInBranchAlertRule.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertAppearedInBranchAlertRule(
+factory WebhookCodeScanningAlertAppearedInBranchAlertRule.fromJson(Map<String, dynamic> json) {return WebhookCodeScanningAlertAppearedInBranchAlertRule(
   description: json['description'] as String,
   id: json['id'] as String,
   severity: json['severity'] != null ? WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity.fromJson(json['severity'] as String) : null,
-); }
+);}
 
 /// A short description of the rule used to detect the alert.
 final String description;
@@ -51,24 +51,24 @@ final String id;
 /// The severity of the alert.
 final WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity? severity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'id': id,
   'severity': severity?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && json['description'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('severity'); } 
-WebhookCodeScanningAlertAppearedInBranchAlertRule copyWith({String? description, String? id, WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity? Function()? severity, }) { return WebhookCodeScanningAlertAppearedInBranchAlertRule(
+      json.containsKey('severity');}
+WebhookCodeScanningAlertAppearedInBranchAlertRule copyWith({String? description, String? id, WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity? Function()? severity, }) {return WebhookCodeScanningAlertAppearedInBranchAlertRule(
   description: description ?? this.description,
   id: id ?? this.id,
   severity: severity != null ? severity() : this.severity,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookCodeScanningAlertAppearedInBranchAlertRule &&
           description == other.description &&
           id == other.id &&
-          severity == other.severity; } 
-@override int get hashCode { return Object.hash(description, id, severity); } 
-@override String toString() { return 'WebhookCodeScanningAlertAppearedInBranchAlertRule(description: $description, id: $id, severity: $severity)'; } 
- }
+          severity == other.severity;}
+@override int get hashCode {return Object.hash(description, id, severity);}
+@override String toString() {return 'WebhookCodeScanningAlertAppearedInBranchAlertRule(description: $description, id: $id, severity: $severity)';}
+}

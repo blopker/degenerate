@@ -13,7 +13,7 @@ final class DomainSearchApi with ApiExecutor {const DomainSearchApi(this.apiConf
 /// Return matches for string queries based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/matches`
-Future<ApiResult<QueryMatch, ErrorModel>> getAccountsBrandProtectionMatches({required String accountId, String? id, int? offset, int? limit, bool? includeDomainId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<QueryMatch, ErrorModel>> getAccountsBrandProtectionMatches({required String accountId, String? id, int? offset, int? limit, bool? includeDomainId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id;
@@ -57,13 +57,13 @@ return ErrorModel.fromJson(json as Map<String, dynamic>);
 
   },
 );
- } 
+}
 /// Download matches for string queries by ID
 ///
 /// Return matches as CSV for string queries based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/matches/download`
-Future<ApiResult<QueryMatch, ErrorModel>> getAccountsBrandProtectionMatchesDownload({required String accountId, String? id, int? offset, int? limit, bool? includeDomainId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<QueryMatch, ErrorModel>> getAccountsBrandProtectionMatchesDownload({required String accountId, String? id, int? offset, int? limit, bool? includeDomainId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id;
@@ -107,13 +107,13 @@ return ErrorModel.fromJson(json as Map<String, dynamic>);
 
   },
 );
- } 
+}
 /// Read string queries by ID
 ///
 /// Return string queries based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/queries`
-Future<ApiResult<ErrorModel, ErrorModel>> getAccountsBrandProtectionQueries({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> getAccountsBrandProtectionQueries({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -137,13 +137,13 @@ return ErrorModel.fromJson(json as Map<String, dynamic>);
 
   },
 );
- } 
+}
 /// Create new saved string queries
 ///
 /// Return a success message after creating new saved string queries
 ///
 /// `POST /accounts/{account_id}/brand-protection/queries`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionQueries({required String accountId, required Query body, String? id, String? tag, bool? scan, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionQueries({required String accountId, required Query body, String? id, String? tag, bool? scan, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id;
@@ -183,13 +183,13 @@ return ErrorModel.fromJson(json as Map<String, dynamic>);
 
   },
 );
- } 
+}
 /// Update saved string queries by ID
 ///
 /// Return a success message after updating saved string queries by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/queries`
-Future<ApiResult<ErrorModel, ErrorModel>> patchAccountsBrandProtectionQueries({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> patchAccountsBrandProtectionQueries({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -213,13 +213,13 @@ return ErrorModel.fromJson(json as Map<String, dynamic>);
 
   },
 );
- } 
+}
 /// Delete saved string queries by ID
 ///
 /// Return a success message after deleting saved string queries by ID
 ///
 /// `DELETE /accounts/{account_id}/brand-protection/queries`
-Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionQueries({required String accountId, String? id, String? tag, bool? scan, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionQueries({required String accountId, String? id, String? tag, bool? scan, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id;
@@ -257,13 +257,13 @@ return ErrorModel.fromJson(json as Map<String, dynamic>);
 
   },
 );
- } 
+}
 /// Create new saved string queries in bulk
 ///
 /// Return a success message after creating new saved string queries in bulk
 ///
 /// `POST /accounts/{account_id}/brand-protection/queries/bulk`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionQueriesBulk({required String accountId, required QueryBulk body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionQueriesBulk({required String accountId, required QueryBulk body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -289,13 +289,13 @@ return ErrorModel.fromJson(json as Map<String, dynamic>);
 
   },
 );
- } 
+}
 /// Create new string queries
 ///
 /// Return new string queries
 ///
 /// `POST /accounts/{account_id}/brand-protection/search`
-Future<ApiResult<ErrorModel, ErrorModel>> postAccountsBrandProtectionSearch({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> postAccountsBrandProtectionSearch({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -319,13 +319,13 @@ return ErrorModel.fromJson(json as Map<String, dynamic>);
 
   },
 );
- } 
+}
 /// Read the total number of saved string queries
 ///
 /// Return the total number of saved string queries
 ///
 /// `GET /accounts/{account_id}/brand-protection/total-queries`
-Future<ApiResult<ErrorModel, ErrorModel>> getAccountsBrandProtectionTotalQueries({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> getAccountsBrandProtectionTotalQueries({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -349,5 +349,5 @@ return ErrorModel.fromJson(json as Map<String, dynamic>);
 
   },
 );
- } 
- }
+}
+}

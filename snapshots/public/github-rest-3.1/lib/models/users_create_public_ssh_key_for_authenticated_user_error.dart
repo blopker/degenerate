@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class UsersCreatePublicSshKeyForAuthenticatedUserError {const UsersCreatePublicSshKeyForAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static UsersCreatePublicSshKeyForAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static UsersCreatePublicSshKeyForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const UsersCreatePublicSshKeyForAuthenticatedUserError304();
 case 401:
@@ -22,44 +22,44 @@ return UsersCreatePublicSshKeyForAuthenticatedUserError422(ValidationError.fromJ
 default:
 return UsersCreatePublicSshKeyForAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class UsersCreatePublicSshKeyForAuthenticatedUserError304 extends UsersCreatePublicSshKeyForAuthenticatedUserError {const UsersCreatePublicSshKeyForAuthenticatedUserError304();
 
- }
+}
 /// Response for 401 (application/json).
 final class UsersCreatePublicSshKeyForAuthenticatedUserError401 extends UsersCreatePublicSshKeyForAuthenticatedUserError {const UsersCreatePublicSshKeyForAuthenticatedUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class UsersCreatePublicSshKeyForAuthenticatedUserError403 extends UsersCreatePublicSshKeyForAuthenticatedUserError {const UsersCreatePublicSshKeyForAuthenticatedUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class UsersCreatePublicSshKeyForAuthenticatedUserError404 extends UsersCreatePublicSshKeyForAuthenticatedUserError {const UsersCreatePublicSshKeyForAuthenticatedUserError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class UsersCreatePublicSshKeyForAuthenticatedUserError422 extends UsersCreatePublicSshKeyForAuthenticatedUserError {const UsersCreatePublicSshKeyForAuthenticatedUserError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class UsersCreatePublicSshKeyForAuthenticatedUserErrorUnknown extends UsersCreatePublicSshKeyForAuthenticatedUserError {const UsersCreatePublicSshKeyForAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

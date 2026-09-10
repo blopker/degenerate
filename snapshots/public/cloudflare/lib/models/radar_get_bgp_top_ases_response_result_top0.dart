@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpTopAsesResponseResultTop0 {const RadarGetBgpTopAsesResponseResultTop0({required this.asName, required this.asn, required this.value, });
 
-factory RadarGetBgpTopAsesResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetBgpTopAsesResponseResultTop0(
+factory RadarGetBgpTopAsesResponseResultTop0.fromJson(Map<String, dynamic> json) {return RadarGetBgpTopAsesResponseResultTop0(
   asName: json['ASName'] as String,
   asn: (json['asn'] as num).toInt(),
   value: json['value'] as String,
-); }
+);}
 
 final String asName;
 
@@ -15,24 +15,24 @@ final int asn;
 /// Percentage of updates by this AS out of the total updates by all autonomous systems.
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ASName': asName,
   'asn': asn,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ASName') && json['ASName'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ASName') && json['ASName'] is String &&
       json.containsKey('asn') && json['asn'] is num &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetBgpTopAsesResponseResultTop0 copyWith({String? asName, int? asn, String? value, }) { return RadarGetBgpTopAsesResponseResultTop0(
+      json.containsKey('value') && json['value'] is String;}
+RadarGetBgpTopAsesResponseResultTop0 copyWith({String? asName, int? asn, String? value, }) {return RadarGetBgpTopAsesResponseResultTop0(
   asName: asName ?? this.asName,
   asn: asn ?? this.asn,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetBgpTopAsesResponseResultTop0 &&
           asName == other.asName &&
           asn == other.asn &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(asName, asn, value); } 
-@override String toString() { return 'RadarGetBgpTopAsesResponseResultTop0(asName: $asName, asn: $asn, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(asName, asn, value);}
+@override String toString() {return 'RadarGetBgpTopAsesResponseResultTop0(asName: $asName, asn: $asn, value: $value)';}
+}

@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostDatasetPopulateResponsePropertiesSummaryPropertiesSuccessfulDatasets {const PostDatasetPopulateResponsePropertiesSummaryPropertiesSuccessfulDatasets({required this.type});
 
-factory PostDatasetPopulateResponsePropertiesSummaryPropertiesSuccessfulDatasets.fromJson(Map<String, dynamic> json) { return PostDatasetPopulateResponsePropertiesSummaryPropertiesSuccessfulDatasets(
+factory PostDatasetPopulateResponsePropertiesSummaryPropertiesSuccessfulDatasets.fromJson(Map<String, dynamic> json) {return PostDatasetPopulateResponsePropertiesSummaryPropertiesSuccessfulDatasets(
   type: json['type'] as String,
-); }
+);}
 
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-PostDatasetPopulateResponsePropertiesSummaryPropertiesSuccessfulDatasets copyWith({String? type}) { return PostDatasetPopulateResponsePropertiesSummaryPropertiesSuccessfulDatasets(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+PostDatasetPopulateResponsePropertiesSummaryPropertiesSuccessfulDatasets copyWith({String? type}) {return PostDatasetPopulateResponsePropertiesSummaryPropertiesSuccessfulDatasets(
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostDatasetPopulateResponsePropertiesSummaryPropertiesSuccessfulDatasets &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'PostDatasetPopulateResponsePropertiesSummaryPropertiesSuccessfulDatasets(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'PostDatasetPopulateResponsePropertiesSummaryPropertiesSuccessfulDatasets(type: $type)';}
+}

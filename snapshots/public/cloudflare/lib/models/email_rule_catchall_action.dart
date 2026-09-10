@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of action for catch-all rule.
 @immutable final class EmailRuleCatchallActionType {const EmailRuleCatchallActionType._(this.value);
 
-factory EmailRuleCatchallActionType.fromJson(String json) { return switch (json) {
+factory EmailRuleCatchallActionType.fromJson(String json) {return switch (json) {
   'drop' => drop,
   'forward' => forward,
   'worker' => worker,
   _ => EmailRuleCatchallActionType._(json),
-}; }
+};}
 
 static const EmailRuleCatchallActionType drop = EmailRuleCatchallActionType._('drop');
 
@@ -20,40 +20,40 @@ static const List<EmailRuleCatchallActionType> values = [drop, forward, worker];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailRuleCatchallActionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailRuleCatchallActionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailRuleCatchallActionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailRuleCatchallActionType($value)';}
+}
 /// Action for the catch-all routing rule.
 @immutable final class EmailRuleCatchallAction {const EmailRuleCatchallAction({required this.type, this.value, });
 
-factory EmailRuleCatchallAction.fromJson(Map<String, dynamic> json) { return EmailRuleCatchallAction(
+factory EmailRuleCatchallAction.fromJson(Map<String, dynamic> json) {return EmailRuleCatchallAction(
   type: EmailRuleCatchallActionType.fromJson(json['type'] as String),
   value: (json['value'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Type of action for catch-all rule.
 final EmailRuleCatchallActionType type;
 
 final List<String>? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-EmailRuleCatchallAction copyWith({EmailRuleCatchallActionType? type, List<String>? Function()? value, }) { return EmailRuleCatchallAction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+EmailRuleCatchallAction copyWith({EmailRuleCatchallActionType? type, List<String>? Function()? value, }) {return EmailRuleCatchallAction(
   type: type ?? this.type,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailRuleCatchallAction &&
           type == other.type &&
-          listEquals(value, other.value); } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(value ?? const [])); } 
-@override String toString() { return 'EmailRuleCatchallAction(type: $type, value: $value)'; } 
- }
+          listEquals(value, other.value);}
+@override int get hashCode {return Object.hash(type, Object.hashAll(value ?? const []));}
+@override String toString() {return 'EmailRuleCatchallAction(type: $type, value: $value)';}
+}

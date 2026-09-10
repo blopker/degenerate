@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_schedule_details_phases_add_invoice_items.dart';import 'post_invoices_create_preview_request_schedule_details_phases_automatic_tax.dart';import 'post_invoices_create_preview_request_schedule_details_phases_billing_thresholds.dart';import 'post_invoices_create_preview_request_schedule_details_phases_default_tax_rates.dart';import 'post_invoices_create_preview_request_schedule_details_phases_description.dart';import 'post_invoices_create_preview_request_schedule_details_phases_discounts.dart';import 'post_invoices_create_preview_request_schedule_details_phases_duration.dart';import 'post_invoices_create_preview_request_schedule_details_phases_end_date.dart';import 'post_invoices_create_preview_request_schedule_details_phases_invoice_settings.dart';import 'post_invoices_create_preview_request_schedule_details_phases_items.dart';import 'post_invoices_create_preview_request_schedule_details_phases_start_date.dart';import 'post_invoices_create_preview_request_schedule_details_phases_transfer_data.dart';import 'post_invoices_create_preview_request_schedule_details_phases_trial_end.dart';@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor._(this.value);
 
-factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor.fromJson(String json) { return switch (json) {
+factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'phase_start' => phaseStart,
   _ => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor._(json),
-}; }
+};}
 
 static const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor automatic = PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor._('automatic');
 
@@ -16,21 +16,21 @@ static const List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCy
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor($value)';}
+}
 @immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod._(this.value);
 
-factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod.fromJson(String json) { return switch (json) {
+factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod.fromJson(String json) {return switch (json) {
   'charge_automatically' => chargeAutomatically,
   'send_invoice' => sendInvoice,
   _ => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod._(json),
-}; }
+};}
 
 static const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod chargeAutomatically = PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod._('charge_automatically');
 
@@ -40,22 +40,22 @@ static const List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectio
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod($value)';}
+}
 @immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior._(this.value);
 
-factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior.fromJson(String json) { return switch (json) {
+factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior.fromJson(String json) {return switch (json) {
   'always_invoice' => alwaysInvoice,
   'create_prorations' => createProrations,
   'none' => none,
   _ => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior._(json),
-}; }
+};}
 
 static const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior alwaysInvoice = PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior._('always_invoice');
 
@@ -67,17 +67,17 @@ static const List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProration
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior($value)';}
+}
 @immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhases {const PostInvoicesCreatePreviewRequestScheduleDetailsPhases({required this.items, this.addInvoiceItems, this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, this.defaultPaymentMethod, this.defaultTaxRates, this.description, this.discounts, this.duration, this.endDate, this.invoiceSettings, this.metadata, this.onBehalfOf, this.prorationBehavior, this.startDate, this.transferData, this.trial, this.trialEnd, });
 
-factory PostInvoicesCreatePreviewRequestScheduleDetailsPhases.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhases(
+factory PostInvoicesCreatePreviewRequestScheduleDetailsPhases.fromJson(Map<String, dynamic> json) {return PostInvoicesCreatePreviewRequestScheduleDetailsPhases(
   addInvoiceItems: (json['add_invoice_items'] as List<dynamic>?)?.map((e) => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItems.fromJson(e as Map<String, dynamic>)).toList(),
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   automaticTax: json['automatic_tax'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
@@ -99,7 +99,7 @@ factory PostInvoicesCreatePreviewRequestScheduleDetailsPhases.fromJson(Map<Strin
   transferData: json['transfer_data'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   trial: json['trial'] as bool?,
   trialEnd: json['trial_end'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesTrialEnd.fromJson(json['trial_end']) : null,
-); }
+);}
 
 final List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItems>? addInvoiceItems;
 
@@ -143,7 +143,7 @@ final bool? trial;
 
 final PostInvoicesCreatePreviewRequestScheduleDetailsPhasesTrialEnd? trialEnd;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (addInvoiceItems != null) 'add_invoice_items': addInvoiceItems?.map((e) => e.toJson()).toList(),
   'application_fee_percent': ?applicationFeePercent,
   if (automaticTax != null) 'automatic_tax': automaticTax?.toJson(),
@@ -165,9 +165,9 @@ Map<String, dynamic> toJson() { return {
   if (transferData != null) 'transfer_data': transferData?.toJson(),
   'trial': ?trial,
   if (trialEnd != null) 'trial_end': trialEnd?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('items'); } 
-PostInvoicesCreatePreviewRequestScheduleDetailsPhases copyWith({List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItems>? Function()? addInvoiceItems, double? Function()? applicationFeePercent, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTax? Function()? automaticTax, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor? Function()? billingCycleAnchor, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingThresholds? Function()? billingThresholds, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod? Function()? collectionMethod, String? Function()? defaultPaymentMethod, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDefaultTaxRates? Function()? defaultTaxRates, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDescription? Function()? description, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscounts? Function()? discounts, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDuration? Function()? duration, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesEndDate? Function()? endDate, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettings? Function()? invoiceSettings, List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems>? items, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior? Function()? prorationBehavior, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesStartDate? Function()? startDate, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesTransferData? Function()? transferData, bool? Function()? trial, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesTrialEnd? Function()? trialEnd, }) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhases(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('items');}
+PostInvoicesCreatePreviewRequestScheduleDetailsPhases copyWith({List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItems>? Function()? addInvoiceItems, double? Function()? applicationFeePercent, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTax? Function()? automaticTax, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingCycleAnchor? Function()? billingCycleAnchor, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesBillingThresholds? Function()? billingThresholds, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesCollectionMethod? Function()? collectionMethod, String? Function()? defaultPaymentMethod, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDefaultTaxRates? Function()? defaultTaxRates, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDescription? Function()? description, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscounts? Function()? discounts, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDuration? Function()? duration, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesEndDate? Function()? endDate, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettings? Function()? invoiceSettings, List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems>? items, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesProrationBehavior? Function()? prorationBehavior, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesStartDate? Function()? startDate, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesTransferData? Function()? transferData, bool? Function()? trial, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesTrialEnd? Function()? trialEnd, }) {return PostInvoicesCreatePreviewRequestScheduleDetailsPhases(
   addInvoiceItems: addInvoiceItems != null ? addInvoiceItems() : this.addInvoiceItems,
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
@@ -189,8 +189,8 @@ PostInvoicesCreatePreviewRequestScheduleDetailsPhases copyWith({List<PostInvoice
   transferData: transferData != null ? transferData() : this.transferData,
   trial: trial != null ? trial() : this.trial,
   trialEnd: trialEnd != null ? trialEnd() : this.trialEnd,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesCreatePreviewRequestScheduleDetailsPhases &&
           listEquals(addInvoiceItems, other.addInvoiceItems) &&
           applicationFeePercent == other.applicationFeePercent &&
@@ -212,7 +212,7 @@ PostInvoicesCreatePreviewRequestScheduleDetailsPhases copyWith({List<PostInvoice
           startDate == other.startDate &&
           transferData == other.transferData &&
           trial == other.trial &&
-          trialEnd == other.trialEnd; } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(addInvoiceItems ?? const []), applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, collectionMethod, defaultPaymentMethod, defaultTaxRates, description, discounts, duration, endDate, invoiceSettings, Object.hashAll(items), metadata, onBehalfOf, prorationBehavior, startDate, transferData, trial, trialEnd]); } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhases(addInvoiceItems: $addInvoiceItems, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, collectionMethod: $collectionMethod, defaultPaymentMethod: $defaultPaymentMethod, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, duration: $duration, endDate: $endDate, invoiceSettings: $invoiceSettings, items: $items, metadata: $metadata, onBehalfOf: $onBehalfOf, prorationBehavior: $prorationBehavior, startDate: $startDate, transferData: $transferData, trial: $trial, trialEnd: $trialEnd)'; } 
- }
+          trialEnd == other.trialEnd;}
+@override int get hashCode {return Object.hashAll([Object.hashAll(addInvoiceItems ?? const []), applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, collectionMethod, defaultPaymentMethod, defaultTaxRates, description, discounts, duration, endDate, invoiceSettings, Object.hashAll(items), metadata, onBehalfOf, prorationBehavior, startDate, transferData, trial, trialEnd]);}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhases(addInvoiceItems: $addInvoiceItems, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, collectionMethod: $collectionMethod, defaultPaymentMethod: $defaultPaymentMethod, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, duration: $duration, endDate: $endDate, invoiceSettings: $invoiceSettings, items: $items, metadata: $metadata, onBehalfOf: $onBehalfOf, prorationBehavior: $prorationBehavior, startDate: $startDate, transferData: $transferData, trial: $trial, trialEnd: $trialEnd)';}
+}

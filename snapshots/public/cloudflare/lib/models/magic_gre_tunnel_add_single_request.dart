@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_automatic_return_routing.dart';import 'magic_cloudflare_gre_endpoint.dart';import 'magic_customer_gre_endpoint.dart';import 'magic_gre_tunnel_name.dart';import 'magic_interface_address.dart';import 'magic_interface_address6.dart';import 'magic_mtu.dart';import 'magic_schemas_description.dart';import 'magic_ttl.dart';import 'magic_tunnel_health_check.dart';@immutable final class MagicGreTunnelAddSingleRequest {const MagicGreTunnelAddSingleRequest({required this.cloudflareGreEndpoint, required this.customerGreEndpoint, required this.interfaceAddress, required this.name, this.automaticReturnRouting, this.description, this.healthCheck, this.interfaceAddress6, this.mtu, this.ttl, });
 
-factory MagicGreTunnelAddSingleRequest.fromJson(Map<String, dynamic> json) { return MagicGreTunnelAddSingleRequest(
+factory MagicGreTunnelAddSingleRequest.fromJson(Map<String, dynamic> json) {return MagicGreTunnelAddSingleRequest(
   automaticReturnRouting: json['automatic_return_routing'] != null ? MagicAutomaticReturnRouting.fromJson(json['automatic_return_routing'] as bool) : null,
   cloudflareGreEndpoint: MagicCloudflareGreEndpoint.fromJson(json['cloudflare_gre_endpoint'] as String),
   customerGreEndpoint: MagicCustomerGreEndpoint.fromJson(json['customer_gre_endpoint'] as String),
@@ -13,7 +13,7 @@ factory MagicGreTunnelAddSingleRequest.fromJson(Map<String, dynamic> json) { ret
   mtu: json['mtu'] != null ? MagicMtu.fromJson(json['mtu'] as num) : null,
   name: MagicGreTunnelName.fromJson(json['name'] as String),
   ttl: json['ttl'] != null ? MagicTtl.fromJson(json['ttl'] as num) : null,
-); }
+);}
 
 /// True if automatic stateful return routing should be enabled for a tunnel, false otherwise.
 final MagicAutomaticReturnRouting? automaticReturnRouting;
@@ -38,7 +38,7 @@ final MagicGreTunnelName name;
 
 final MagicTtl? ttl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (automaticReturnRouting != null) 'automatic_return_routing': automaticReturnRouting?.toJson(),
   'cloudflare_gre_endpoint': cloudflareGreEndpoint.toJson(),
   'customer_gre_endpoint': customerGreEndpoint.toJson(),
@@ -49,12 +49,12 @@ Map<String, dynamic> toJson() { return {
   if (mtu != null) 'mtu': mtu?.toJson(),
   'name': name.toJson(),
   if (ttl != null) 'ttl': ttl?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cloudflare_gre_endpoint') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cloudflare_gre_endpoint') &&
       json.containsKey('customer_gre_endpoint') &&
       json.containsKey('interface_address') &&
-      json.containsKey('name'); } 
-MagicGreTunnelAddSingleRequest copyWith({MagicAutomaticReturnRouting? Function()? automaticReturnRouting, MagicCloudflareGreEndpoint? cloudflareGreEndpoint, MagicCustomerGreEndpoint? customerGreEndpoint, MagicSchemasDescription? Function()? description, MagicTunnelHealthCheck? Function()? healthCheck, MagicInterfaceAddress? interfaceAddress, MagicInterfaceAddress6? Function()? interfaceAddress6, MagicMtu? Function()? mtu, MagicGreTunnelName? name, MagicTtl? Function()? ttl, }) { return MagicGreTunnelAddSingleRequest(
+      json.containsKey('name');}
+MagicGreTunnelAddSingleRequest copyWith({MagicAutomaticReturnRouting? Function()? automaticReturnRouting, MagicCloudflareGreEndpoint? cloudflareGreEndpoint, MagicCustomerGreEndpoint? customerGreEndpoint, MagicSchemasDescription? Function()? description, MagicTunnelHealthCheck? Function()? healthCheck, MagicInterfaceAddress? interfaceAddress, MagicInterfaceAddress6? Function()? interfaceAddress6, MagicMtu? Function()? mtu, MagicGreTunnelName? name, MagicTtl? Function()? ttl, }) {return MagicGreTunnelAddSingleRequest(
   automaticReturnRouting: automaticReturnRouting != null ? automaticReturnRouting() : this.automaticReturnRouting,
   cloudflareGreEndpoint: cloudflareGreEndpoint ?? this.cloudflareGreEndpoint,
   customerGreEndpoint: customerGreEndpoint ?? this.customerGreEndpoint,
@@ -65,8 +65,8 @@ MagicGreTunnelAddSingleRequest copyWith({MagicAutomaticReturnRouting? Function()
   mtu: mtu != null ? mtu() : this.mtu,
   name: name ?? this.name,
   ttl: ttl != null ? ttl() : this.ttl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MagicGreTunnelAddSingleRequest &&
           automaticReturnRouting == other.automaticReturnRouting &&
           cloudflareGreEndpoint == other.cloudflareGreEndpoint &&
@@ -77,7 +77,7 @@ MagicGreTunnelAddSingleRequest copyWith({MagicAutomaticReturnRouting? Function()
           interfaceAddress6 == other.interfaceAddress6 &&
           mtu == other.mtu &&
           name == other.name &&
-          ttl == other.ttl; } 
-@override int get hashCode { return Object.hash(automaticReturnRouting, cloudflareGreEndpoint, customerGreEndpoint, description, healthCheck, interfaceAddress, interfaceAddress6, mtu, name, ttl); } 
-@override String toString() { return 'MagicGreTunnelAddSingleRequest(automaticReturnRouting: $automaticReturnRouting, cloudflareGreEndpoint: $cloudflareGreEndpoint, customerGreEndpoint: $customerGreEndpoint, description: $description, healthCheck: $healthCheck, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, mtu: $mtu, name: $name, ttl: $ttl)'; } 
- }
+          ttl == other.ttl;}
+@override int get hashCode {return Object.hash(automaticReturnRouting, cloudflareGreEndpoint, customerGreEndpoint, description, healthCheck, interfaceAddress, interfaceAddress6, mtu, name, ttl);}
+@override String toString() {return 'MagicGreTunnelAddSingleRequest(automaticReturnRouting: $automaticReturnRouting, cloudflareGreEndpoint: $cloudflareGreEndpoint, customerGreEndpoint: $customerGreEndpoint, description: $description, healthCheck: $healthCheck, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, mtu: $mtu, name: $name, ttl: $ttl)';}
+}

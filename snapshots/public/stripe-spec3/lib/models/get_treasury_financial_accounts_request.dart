@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryFinancialAccountsRequest {const GetTreasuryFinancialAccountsRequest();
 
-factory GetTreasuryFinancialAccountsRequest.fromJson(Map<String, dynamic> _) { return const GetTreasuryFinancialAccountsRequest(); }
+factory GetTreasuryFinancialAccountsRequest.fromJson(Map<String, dynamic> _) {return const GetTreasuryFinancialAccountsRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-GetTreasuryFinancialAccountsRequest copyWith() { return const GetTreasuryFinancialAccountsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+GetTreasuryFinancialAccountsRequest copyWith() {return const GetTreasuryFinancialAccountsRequest(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is GetTreasuryFinancialAccountsRequest; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'GetTreasuryFinancialAccountsRequest()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is GetTreasuryFinancialAccountsRequest;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'GetTreasuryFinancialAccountsRequest()';}
+}

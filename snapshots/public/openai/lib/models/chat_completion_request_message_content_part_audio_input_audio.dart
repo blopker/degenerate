@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The format of th
 /// 
 @immutable final class ChatCompletionRequestMessageContentPartAudioInputAudioFormat {const ChatCompletionRequestMessageContentPartAudioInputAudioFormat._(this.value);
 
-factory ChatCompletionRequestMessageContentPartAudioInputAudioFormat.fromJson(String json) { return switch (json) {
+factory ChatCompletionRequestMessageContentPartAudioInputAudioFormat.fromJson(String json) {return switch (json) {
   'wav' => wav,
   'mp3' => mp3,
   _ => ChatCompletionRequestMessageContentPartAudioInputAudioFormat._(json),
-}; }
+};}
 
 static const ChatCompletionRequestMessageContentPartAudioInputAudioFormat wav = ChatCompletionRequestMessageContentPartAudioInputAudioFormat._('wav');
 
@@ -18,20 +18,20 @@ static const List<ChatCompletionRequestMessageContentPartAudioInputAudioFormat> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionRequestMessageContentPartAudioInputAudioFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestMessageContentPartAudioInputAudioFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ChatCompletionRequestMessageContentPartAudioInputAudioFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ChatCompletionRequestMessageContentPartAudioInputAudioFormat($value)';}
+}
 @immutable final class ChatCompletionRequestMessageContentPartAudioInputAudio {const ChatCompletionRequestMessageContentPartAudioInputAudio({required this.data, required this.format, });
 
-factory ChatCompletionRequestMessageContentPartAudioInputAudio.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageContentPartAudioInputAudio(
+factory ChatCompletionRequestMessageContentPartAudioInputAudio.fromJson(Map<String, dynamic> json) {return ChatCompletionRequestMessageContentPartAudioInputAudio(
   data: json['data'] as String,
   format: ChatCompletionRequestMessageContentPartAudioInputAudioFormat.fromJson(json['format'] as String),
-); }
+);}
 
 /// Base64 encoded audio data.
 final String data;
@@ -40,20 +40,20 @@ final String data;
 /// 
 final ChatCompletionRequestMessageContentPartAudioInputAudioFormat format;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data,
   'format': format.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') && json['data'] is String &&
-      json.containsKey('format'); } 
-ChatCompletionRequestMessageContentPartAudioInputAudio copyWith({String? data, ChatCompletionRequestMessageContentPartAudioInputAudioFormat? format, }) { return ChatCompletionRequestMessageContentPartAudioInputAudio(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') && json['data'] is String &&
+      json.containsKey('format');}
+ChatCompletionRequestMessageContentPartAudioInputAudio copyWith({String? data, ChatCompletionRequestMessageContentPartAudioInputAudioFormat? format, }) {return ChatCompletionRequestMessageContentPartAudioInputAudio(
   data: data ?? this.data,
   format: format ?? this.format,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ChatCompletionRequestMessageContentPartAudioInputAudio &&
           data == other.data &&
-          format == other.format; } 
-@override int get hashCode { return Object.hash(data, format); } 
-@override String toString() { return 'ChatCompletionRequestMessageContentPartAudioInputAudio(data: $data, format: $format)'; } 
- }
+          format == other.format;}
+@override int get hashCode {return Object.hash(data, format);}
+@override String toString() {return 'ChatCompletionRequestMessageContentPartAudioInputAudio(data: $data, format: $format)';}
+}

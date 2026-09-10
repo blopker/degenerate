@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enum for base zone-level resource types (those with no extra required fields).
 @immutable final class ResourceTaggingZoneResourceTypeBaseEnum {const ResourceTaggingZoneResourceTypeBaseEnum._(this.value);
 
-factory ResourceTaggingZoneResourceTypeBaseEnum.fromJson(String json) { return switch (json) {
+factory ResourceTaggingZoneResourceTypeBaseEnum.fromJson(String json) {return switch (json) {
   'api_gateway_operation' => apiGatewayOperation,
   'custom_certificate' => customCertificate,
   'custom_hostname' => customHostname,
@@ -11,7 +11,7 @@ factory ResourceTaggingZoneResourceTypeBaseEnum.fromJson(String json) { return s
   'managed_client_certificate' => managedClientCertificate,
   'zone' => zone,
   _ => ResourceTaggingZoneResourceTypeBaseEnum._(json),
-}; }
+};}
 
 static const ResourceTaggingZoneResourceTypeBaseEnum apiGatewayOperation = ResourceTaggingZoneResourceTypeBaseEnum._('api_gateway_operation');
 
@@ -29,11 +29,11 @@ static const List<ResourceTaggingZoneResourceTypeBaseEnum> values = [apiGatewayO
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingZoneResourceTypeBaseEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResourceTaggingZoneResourceTypeBaseEnum($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingZoneResourceTypeBaseEnum && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ResourceTaggingZoneResourceTypeBaseEnum($value)';}
+}

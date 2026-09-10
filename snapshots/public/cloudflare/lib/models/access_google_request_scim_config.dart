@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates how a SCIM event updates a user identity used for policy evaluation. Use "automatic" to automatically update a user's identity and augment it with fields from the SCIM user resource. Use "reauth" to force re-authentication on group membership updates, user identity update will only occur after successful re-authentication. With "reauth" identities will not contain fields from the SCIM user resource. With "no_action" identities will not be changed by SCIM updates in any way and users will not be prompted to reauthenticate.
 @immutable final class AccessGoogleRequestScimConfigIdentityUpdateBehavior {const AccessGoogleRequestScimConfigIdentityUpdateBehavior._(this.value);
 
-factory AccessGoogleRequestScimConfigIdentityUpdateBehavior.fromJson(String json) { return switch (json) {
+factory AccessGoogleRequestScimConfigIdentityUpdateBehavior.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'reauth' => reauth,
   'no_action' => noAction,
   _ => AccessGoogleRequestScimConfigIdentityUpdateBehavior._(json),
-}; }
+};}
 
 static const AccessGoogleRequestScimConfigIdentityUpdateBehavior automatic = AccessGoogleRequestScimConfigIdentityUpdateBehavior._('automatic');
 
@@ -20,23 +20,23 @@ static const List<AccessGoogleRequestScimConfigIdentityUpdateBehavior> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessGoogleRequestScimConfigIdentityUpdateBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessGoogleRequestScimConfigIdentityUpdateBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessGoogleRequestScimConfigIdentityUpdateBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessGoogleRequestScimConfigIdentityUpdateBehavior($value)';}
+}
 /// The configuration settings for enabling a System for Cross-Domain Identity Management (SCIM) with the identity provider.
 @immutable final class AccessGoogleRequestScimConfig {const AccessGoogleRequestScimConfig({this.enabled, this.identityUpdateBehavior, this.seatDeprovision, this.userDeprovision, });
 
-factory AccessGoogleRequestScimConfig.fromJson(Map<String, dynamic> json) { return AccessGoogleRequestScimConfig(
+factory AccessGoogleRequestScimConfig.fromJson(Map<String, dynamic> json) {return AccessGoogleRequestScimConfig(
   enabled: json['enabled'] as bool?,
   identityUpdateBehavior: json['identity_update_behavior'] != null ? AccessGoogleRequestScimConfigIdentityUpdateBehavior.fromJson(json['identity_update_behavior'] as String) : null,
   seatDeprovision: json['seat_deprovision'] as bool?,
   userDeprovision: json['user_deprovision'] as bool?,
-); }
+);}
 
 /// A flag to enable or disable SCIM for the identity provider.
 final bool? enabled;
@@ -51,32 +51,32 @@ final bool? seatDeprovision;
 final bool? userDeprovision;
 
 /// The value with the schema default applied when absent.
-bool get enabledOrDefault { return enabled ?? false; } 
+bool get enabledOrDefault {return enabled ?? false;}
 /// The value with the schema default applied when absent.
-AccessGoogleRequestScimConfigIdentityUpdateBehavior get identityUpdateBehaviorOrDefault { return identityUpdateBehavior ?? AccessGoogleRequestScimConfigIdentityUpdateBehavior.fromJson('no_action'); } 
+AccessGoogleRequestScimConfigIdentityUpdateBehavior get identityUpdateBehaviorOrDefault {return identityUpdateBehavior ?? AccessGoogleRequestScimConfigIdentityUpdateBehavior.fromJson('no_action');}
 /// The value with the schema default applied when absent.
-bool get seatDeprovisionOrDefault { return seatDeprovision ?? false; } 
+bool get seatDeprovisionOrDefault {return seatDeprovision ?? false;}
 /// The value with the schema default applied when absent.
-bool get userDeprovisionOrDefault { return userDeprovision ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get userDeprovisionOrDefault {return userDeprovision ?? false;}
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   if (identityUpdateBehavior != null) 'identity_update_behavior': identityUpdateBehavior?.toJson(),
   'seat_deprovision': ?seatDeprovision,
   'user_deprovision': ?userDeprovision,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'identity_update_behavior', 'seat_deprovision', 'user_deprovision'}.contains(key)); } 
-AccessGoogleRequestScimConfig copyWith({bool? Function()? enabled, AccessGoogleRequestScimConfigIdentityUpdateBehavior? Function()? identityUpdateBehavior, bool? Function()? seatDeprovision, bool? Function()? userDeprovision, }) { return AccessGoogleRequestScimConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'identity_update_behavior', 'seat_deprovision', 'user_deprovision'}.contains(key));}
+AccessGoogleRequestScimConfig copyWith({bool? Function()? enabled, AccessGoogleRequestScimConfigIdentityUpdateBehavior? Function()? identityUpdateBehavior, bool? Function()? seatDeprovision, bool? Function()? userDeprovision, }) {return AccessGoogleRequestScimConfig(
   enabled: enabled != null ? enabled() : this.enabled,
   identityUpdateBehavior: identityUpdateBehavior != null ? identityUpdateBehavior() : this.identityUpdateBehavior,
   seatDeprovision: seatDeprovision != null ? seatDeprovision() : this.seatDeprovision,
   userDeprovision: userDeprovision != null ? userDeprovision() : this.userDeprovision,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessGoogleRequestScimConfig &&
           enabled == other.enabled &&
           identityUpdateBehavior == other.identityUpdateBehavior &&
           seatDeprovision == other.seatDeprovision &&
-          userDeprovision == other.userDeprovision; } 
-@override int get hashCode { return Object.hash(enabled, identityUpdateBehavior, seatDeprovision, userDeprovision); } 
-@override String toString() { return 'AccessGoogleRequestScimConfig(enabled: $enabled, identityUpdateBehavior: $identityUpdateBehavior, seatDeprovision: $seatDeprovision, userDeprovision: $userDeprovision)'; } 
- }
+          userDeprovision == other.userDeprovision;}
+@override int get hashCode {return Object.hash(enabled, identityUpdateBehavior, seatDeprovision, userDeprovision);}
+@override String toString() {return 'AccessGoogleRequestScimConfig(enabled: $enabled, identityUpdateBehavior: $identityUpdateBehavior, seatDeprovision: $seatDeprovision, userDeprovision: $userDeprovision)';}
+}

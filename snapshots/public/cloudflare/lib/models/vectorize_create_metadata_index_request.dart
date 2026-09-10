@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the type of metadata property to index.
 @immutable final class VectorizeCreateMetadataIndexRequestIndexType {const VectorizeCreateMetadataIndexRequestIndexType._(this.value);
 
-factory VectorizeCreateMetadataIndexRequestIndexType.fromJson(String json) { return switch (json) {
+factory VectorizeCreateMetadataIndexRequestIndexType.fromJson(String json) {return switch (json) {
   'string' => string,
   'number' => number,
   'boolean' => boolean,
   _ => VectorizeCreateMetadataIndexRequestIndexType._(json),
-}; }
+};}
 
 static const VectorizeCreateMetadataIndexRequestIndexType string = VectorizeCreateMetadataIndexRequestIndexType._('string');
 
@@ -20,20 +20,20 @@ static const List<VectorizeCreateMetadataIndexRequestIndexType> values = [string
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorizeCreateMetadataIndexRequestIndexType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorizeCreateMetadataIndexRequestIndexType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is VectorizeCreateMetadataIndexRequestIndexType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'VectorizeCreateMetadataIndexRequestIndexType($value)';}
+}
 @immutable final class VectorizeCreateMetadataIndexRequest {const VectorizeCreateMetadataIndexRequest({required this.indexType, required this.propertyName, });
 
-factory VectorizeCreateMetadataIndexRequest.fromJson(Map<String, dynamic> json) { return VectorizeCreateMetadataIndexRequest(
+factory VectorizeCreateMetadataIndexRequest.fromJson(Map<String, dynamic> json) {return VectorizeCreateMetadataIndexRequest(
   indexType: VectorizeCreateMetadataIndexRequestIndexType.fromJson(json['indexType'] as String),
   propertyName: json['propertyName'] as String,
-); }
+);}
 
 /// Specifies the type of metadata property to index.
 final VectorizeCreateMetadataIndexRequestIndexType indexType;
@@ -41,20 +41,20 @@ final VectorizeCreateMetadataIndexRequestIndexType indexType;
 /// Specifies the metadata property to index.
 final String propertyName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'indexType': indexType.toJson(),
   'propertyName': propertyName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('indexType') &&
-      json.containsKey('propertyName') && json['propertyName'] is String; } 
-VectorizeCreateMetadataIndexRequest copyWith({VectorizeCreateMetadataIndexRequestIndexType? indexType, String? propertyName, }) { return VectorizeCreateMetadataIndexRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('indexType') &&
+      json.containsKey('propertyName') && json['propertyName'] is String;}
+VectorizeCreateMetadataIndexRequest copyWith({VectorizeCreateMetadataIndexRequestIndexType? indexType, String? propertyName, }) {return VectorizeCreateMetadataIndexRequest(
   indexType: indexType ?? this.indexType,
   propertyName: propertyName ?? this.propertyName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is VectorizeCreateMetadataIndexRequest &&
           indexType == other.indexType &&
-          propertyName == other.propertyName; } 
-@override int get hashCode { return Object.hash(indexType, propertyName); } 
-@override String toString() { return 'VectorizeCreateMetadataIndexRequest(indexType: $indexType, propertyName: $propertyName)'; } 
- }
+          propertyName == other.propertyName;}
+@override int get hashCode {return Object.hash(indexType, propertyName);}
+@override String toString() {return 'VectorizeCreateMetadataIndexRequest(indexType: $indexType, propertyName: $propertyName)';}
+}

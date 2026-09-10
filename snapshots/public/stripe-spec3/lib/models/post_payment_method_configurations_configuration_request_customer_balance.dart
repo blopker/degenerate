@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_customer_balance_display_preference.dart';/// Uses a customer’s [cash balance](https://docs.stripe.com/payments/customer-balance) for the payment. The cash balance can be funded via a bank transfer. Check this [page](https://docs.stripe.com/payments/bank-transfers) for more details.
 @immutable final class PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance {const PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance({this.displayPreference});
 
-factory PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance(
+factory PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestCustomerBalanceDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsConfigurationRequestCustomerBalanceDisplayPreference? displayPreference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance copyWith({PostPaymentMethodConfigurationsConfigurationRequestCustomerBalanceDisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_preference'}.contains(key));}
+PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance copyWith({PostPaymentMethodConfigurationsConfigurationRequestCustomerBalanceDisplayPreference? Function()? displayPreference}) {return PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance &&
-          displayPreference == other.displayPreference; } 
-@override int get hashCode { return displayPreference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance(displayPreference: $displayPreference)'; } 
- }
+          displayPreference == other.displayPreference;}
+@override int get hashCode {return displayPreference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance(displayPreference: $displayPreference)';}
+}

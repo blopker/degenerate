@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wifi_enterprise_eap_peap.dart';import 'wifi_enterprise_eap_tls.dart';import 'wifi_personal_psk.dart';@immutable final class WifiType {const WifiType._(this.value);
 
-factory WifiType.fromJson(String json) { return switch (json) {
+factory WifiType.fromJson(String json) {return switch (json) {
   'enterprise_eap_peap' => enterpriseEapPeap,
   'enterprise_eap_tls' => enterpriseEapTls,
   'personal_psk' => personalPsk,
   _ => WifiType._(json),
-}; }
+};}
 
 static const WifiType enterpriseEapPeap = WifiType._('enterprise_eap_peap');
 
@@ -19,22 +19,22 @@ static const List<WifiType> values = [enterpriseEapPeap, enterpriseEapTls, perso
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WifiType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WifiType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WifiType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WifiType($value)';}
+}
 @immutable final class Wifi {const Wifi({required this.type, this.enterpriseEapPeap, this.enterpriseEapTls, this.personalPsk, });
 
-factory Wifi.fromJson(Map<String, dynamic> json) { return Wifi(
+factory Wifi.fromJson(Map<String, dynamic> json) {return Wifi(
   enterpriseEapPeap: json['enterprise_eap_peap'] != null ? WifiEnterpriseEapPeap.fromJson(json['enterprise_eap_peap'] as Map<String, dynamic>) : null,
   enterpriseEapTls: json['enterprise_eap_tls'] != null ? WifiEnterpriseEapTls.fromJson(json['enterprise_eap_tls'] as Map<String, dynamic>) : null,
   personalPsk: json['personal_psk'] != null ? WifiPersonalPsk.fromJson(json['personal_psk'] as Map<String, dynamic>) : null,
   type: WifiType.fromJson(json['type'] as String),
-); }
+);}
 
 final WifiEnterpriseEapPeap? enterpriseEapPeap;
 
@@ -44,25 +44,25 @@ final WifiPersonalPsk? personalPsk;
 
 final WifiType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (enterpriseEapPeap != null) 'enterprise_eap_peap': enterpriseEapPeap?.toJson(),
   if (enterpriseEapTls != null) 'enterprise_eap_tls': enterpriseEapTls?.toJson(),
   if (personalPsk != null) 'personal_psk': personalPsk?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-Wifi copyWith({WifiEnterpriseEapPeap? Function()? enterpriseEapPeap, WifiEnterpriseEapTls? Function()? enterpriseEapTls, WifiPersonalPsk? Function()? personalPsk, WifiType? type, }) { return Wifi(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+Wifi copyWith({WifiEnterpriseEapPeap? Function()? enterpriseEapPeap, WifiEnterpriseEapTls? Function()? enterpriseEapTls, WifiPersonalPsk? Function()? personalPsk, WifiType? type, }) {return Wifi(
   enterpriseEapPeap: enterpriseEapPeap != null ? enterpriseEapPeap() : this.enterpriseEapPeap,
   enterpriseEapTls: enterpriseEapTls != null ? enterpriseEapTls() : this.enterpriseEapTls,
   personalPsk: personalPsk != null ? personalPsk() : this.personalPsk,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Wifi &&
           enterpriseEapPeap == other.enterpriseEapPeap &&
           enterpriseEapTls == other.enterpriseEapTls &&
           personalPsk == other.personalPsk &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(enterpriseEapPeap, enterpriseEapTls, personalPsk, type); } 
-@override String toString() { return 'Wifi(enterpriseEapPeap: $enterpriseEapPeap, enterpriseEapTls: $enterpriseEapTls, personalPsk: $personalPsk, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(enterpriseEapPeap, enterpriseEapTls, personalPsk, type);}
+@override String toString() {return 'Wifi(enterpriseEapPeap: $enterpriseEapPeap, enterpriseEapTls: $enterpriseEapTls, personalPsk: $personalPsk, type: $type)';}
+}

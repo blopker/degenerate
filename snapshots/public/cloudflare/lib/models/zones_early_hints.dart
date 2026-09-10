@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_early_hints_value.dart';/// When enabled, Cloudflare will attempt to speed up overall page loads by serving `103` responses with `Link` headers from the final response. Refer to [Early Hints](https://developers.cloudflare.com/cache/about/early-hints) for more information.
 @immutable final class ZonesEarlyHints {const ZonesEarlyHints({required this.id, required this.value, this.editable, this.modifiedOn = const Omittable.absent(), });
 
-factory ZonesEarlyHints.fromJson(Map<String, dynamic> json) { return ZonesEarlyHints(
+factory ZonesEarlyHints.fromJson(Map<String, dynamic> json) {return ZonesEarlyHints(
   editable: json['editable'] as bool?,
   id: json['id'],
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: ZonesEarlyHintsValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 final bool? editable;
@@ -22,27 +22,27 @@ final Omittable<DateTime?> modifiedOn;
 final ZonesEarlyHintsValue value;
 
 /// The value with the schema default applied when absent.
-bool get editableOrDefault { return editable ?? true; } 
-Map<String, dynamic> toJson() { return {
+bool get editableOrDefault {return editable ?? true;}
+Map<String, dynamic> toJson() {return {
   'editable': ?editable,
   'id': id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('value'); } 
-ZonesEarlyHints copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesEarlyHintsValue? value, }) { return ZonesEarlyHints(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('value');}
+ZonesEarlyHints copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesEarlyHintsValue? value, }) {return ZonesEarlyHints(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZonesEarlyHints &&
           editable == other.editable &&
           id == other.id &&
           modifiedOn == other.modifiedOn &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(editable, id, modifiedOn, value); } 
-@override String toString() { return 'ZonesEarlyHints(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(editable, id, modifiedOn, value);}
+@override String toString() {return 'ZonesEarlyHints(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)';}
+}

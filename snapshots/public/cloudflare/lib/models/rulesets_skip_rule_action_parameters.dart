@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rule_id.dart';import 'rulesets_ruleset_id.dart';import 'rulesets_ruleset_phase.dart';import 'rulesets_skip_phase.dart';import 'rulesets_skip_products2.dart';import 'rulesets_skip_ruleset.dart';@immutable final class RulesetsSkipRuleActionParameters {const RulesetsSkipRuleActionParameters({this.phase, this.phases, this.products, this.rules, this.ruleset, this.rulesets, });
 
-factory RulesetsSkipRuleActionParameters.fromJson(Map<String, dynamic> json) { return RulesetsSkipRuleActionParameters(
+factory RulesetsSkipRuleActionParameters.fromJson(Map<String, dynamic> json) {return RulesetsSkipRuleActionParameters(
   phase: json['phase'] != null ? RulesetsSkipPhase.fromJson(json['phase'] as String) : null,
   phases: (json['phases'] as List<dynamic>?)?.map((e) => RulesetsRulesetPhase.fromJson(e as String)).toList(),
   products: (json['products'] as List<dynamic>?)?.map((e) => RulesetsSkipProducts2.fromJson(e as String)).toList(),
   rules: (json['rules'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => RulesetsRuleId.fromJson(e as String)).toList())),
   ruleset: json['ruleset'] != null ? RulesetsSkipRuleset.fromJson(json['ruleset'] as String) : null,
   rulesets: (json['rulesets'] as List<dynamic>?)?.map((e) => RulesetsRulesetId.fromJson(e as String)).toList(),
-); }
+);}
 
 /// A phase to skip the execution of. This option is only compatible with the products option.
 final RulesetsSkipPhase? phase;
@@ -26,31 +26,31 @@ final RulesetsSkipRuleset? ruleset;
 
 final List<RulesetsRulesetId>? rulesets;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (phase != null) 'phase': phase?.toJson(),
   if (phases != null) 'phases': phases?.map((e) => e.toJson()).toList(),
   if (products != null) 'products': products?.map((e) => e.toJson()).toList(),
   if (rules != null) 'rules': rules?.map((k, v) => MapEntry(k, v.map((e) => e.toJson()).toList())),
   if (ruleset != null) 'ruleset': ruleset?.toJson(),
   if (rulesets != null) 'rulesets': rulesets?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'phase', 'phases', 'products', 'rules', 'ruleset', 'rulesets'}.contains(key)); } 
-RulesetsSkipRuleActionParameters copyWith({RulesetsSkipPhase? Function()? phase, List<RulesetsRulesetPhase>? Function()? phases, List<RulesetsSkipProducts2>? Function()? products, Map<String, List<RulesetsRuleId>>? Function()? rules, RulesetsSkipRuleset? Function()? ruleset, List<RulesetsRulesetId>? Function()? rulesets, }) { return RulesetsSkipRuleActionParameters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'phase', 'phases', 'products', 'rules', 'ruleset', 'rulesets'}.contains(key));}
+RulesetsSkipRuleActionParameters copyWith({RulesetsSkipPhase? Function()? phase, List<RulesetsRulesetPhase>? Function()? phases, List<RulesetsSkipProducts2>? Function()? products, Map<String, List<RulesetsRuleId>>? Function()? rules, RulesetsSkipRuleset? Function()? ruleset, List<RulesetsRulesetId>? Function()? rulesets, }) {return RulesetsSkipRuleActionParameters(
   phase: phase != null ? phase() : this.phase,
   phases: phases != null ? phases() : this.phases,
   products: products != null ? products() : this.products,
   rules: rules != null ? rules() : this.rules,
   ruleset: ruleset != null ? ruleset() : this.ruleset,
   rulesets: rulesets != null ? rulesets() : this.rulesets,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsSkipRuleActionParameters &&
           phase == other.phase &&
           listEquals(phases, other.phases) &&
           listEquals(products, other.products) &&
           rules == other.rules &&
           ruleset == other.ruleset &&
-          listEquals(rulesets, other.rulesets); } 
-@override int get hashCode { return Object.hash(phase, Object.hashAll(phases ?? const []), Object.hashAll(products ?? const []), rules, ruleset, Object.hashAll(rulesets ?? const [])); } 
-@override String toString() { return 'RulesetsSkipRuleActionParameters(phase: $phase, phases: $phases, products: $products, rules: $rules, ruleset: $ruleset, rulesets: $rulesets)'; } 
- }
+          listEquals(rulesets, other.rulesets);}
+@override int get hashCode {return Object.hash(phase, Object.hashAll(phases ?? const []), Object.hashAll(products ?? const []), rules, ruleset, Object.hashAll(rulesets ?? const []));}
+@override String toString() {return 'RulesetsSkipRuleActionParameters(phase: $phase, phases: $phases, products: $products, rules: $rules, ruleset: $ruleset, rulesets: $rulesets)';}
+}

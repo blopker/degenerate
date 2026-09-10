@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The result of the completed check run. This value will be `null` until the check run has completed.
 @immutable final class WebhookDeploymentStatusCreatedCheckRunConclusion {const WebhookDeploymentStatusCreatedCheckRunConclusion._(this.value);
 
-factory WebhookDeploymentStatusCreatedCheckRunConclusion.fromJson(String json) { return switch (json) {
+factory WebhookDeploymentStatusCreatedCheckRunConclusion.fromJson(String json) {return switch (json) {
   'success' => success,
   'failure' => failure,
   'neutral' => neutral,
@@ -14,7 +14,7 @@ factory WebhookDeploymentStatusCreatedCheckRunConclusion.fromJson(String json) {
   'skipped' => skipped,
   'null' => $null,
   _ => WebhookDeploymentStatusCreatedCheckRunConclusion._(json),
-}; }
+};}
 
 static const WebhookDeploymentStatusCreatedCheckRunConclusion success = WebhookDeploymentStatusCreatedCheckRunConclusion._('success');
 
@@ -38,25 +38,25 @@ static const List<WebhookDeploymentStatusCreatedCheckRunConclusion> values = [su
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDeploymentStatusCreatedCheckRunConclusion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDeploymentStatusCreatedCheckRunConclusion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookDeploymentStatusCreatedCheckRunConclusion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookDeploymentStatusCreatedCheckRunConclusion($value)';}
+}
 /// The current status of the check run. Can be `queued`, `in_progress`, or `completed`.
 @immutable final class WebhookDeploymentStatusCreatedCheckRunStatus {const WebhookDeploymentStatusCreatedCheckRunStatus._(this.value);
 
-factory WebhookDeploymentStatusCreatedCheckRunStatus.fromJson(String json) { return switch (json) {
+factory WebhookDeploymentStatusCreatedCheckRunStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'in_progress' => inProgress,
   'completed' => completed,
   'waiting' => waiting,
   'pending' => pending,
   _ => WebhookDeploymentStatusCreatedCheckRunStatus._(json),
-}; }
+};}
 
 static const WebhookDeploymentStatusCreatedCheckRunStatus queued = WebhookDeploymentStatusCreatedCheckRunStatus._('queued');
 
@@ -72,17 +72,17 @@ static const List<WebhookDeploymentStatusCreatedCheckRunStatus> values = [queued
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDeploymentStatusCreatedCheckRunStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDeploymentStatusCreatedCheckRunStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookDeploymentStatusCreatedCheckRunStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookDeploymentStatusCreatedCheckRunStatus($value)';}
+}
 @immutable final class WebhookDeploymentStatusCreatedCheckRun {const WebhookDeploymentStatusCreatedCheckRun({required this.completedAt, required this.conclusion, required this.detailsUrl, required this.externalId, required this.headSha, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.startedAt, required this.status, required this.url, });
 
-factory WebhookDeploymentStatusCreatedCheckRun.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreatedCheckRun(
+factory WebhookDeploymentStatusCreatedCheckRun.fromJson(Map<String, dynamic> json) {return WebhookDeploymentStatusCreatedCheckRun(
   completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,
   conclusion: json['conclusion'] != null ? WebhookDeploymentStatusCreatedCheckRunConclusion.fromJson(json['conclusion'] as String) : null,
   detailsUrl: Uri.parse(json['details_url'] as String),
@@ -95,7 +95,7 @@ factory WebhookDeploymentStatusCreatedCheckRun.fromJson(Map<String, dynamic> jso
   startedAt: DateTime.parse(json['started_at'] as String),
   status: WebhookDeploymentStatusCreatedCheckRunStatus.fromJson(json['status'] as String),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final DateTime? completedAt;
 
@@ -126,7 +126,7 @@ final WebhookDeploymentStatusCreatedCheckRunStatus status;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'completed_at': completedAt?.toIso8601String(),
   'conclusion': conclusion?.toJson(),
   'details_url': detailsUrl.toString(),
@@ -139,8 +139,8 @@ Map<String, dynamic> toJson() { return {
   'started_at': startedAt.toIso8601String(),
   'status': status.toJson(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is String) &&
       json.containsKey('conclusion') &&
       json.containsKey('details_url') && json['details_url'] is String &&
       json.containsKey('external_id') && json['external_id'] is String &&
@@ -151,8 +151,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('compl
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('started_at') && json['started_at'] is String &&
       json.containsKey('status') &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookDeploymentStatusCreatedCheckRun copyWith({DateTime? Function()? completedAt, WebhookDeploymentStatusCreatedCheckRunConclusion? Function()? conclusion, Uri? detailsUrl, String? externalId, String? headSha, Uri? htmlUrl, int? id, String? name, String? nodeId, DateTime? startedAt, WebhookDeploymentStatusCreatedCheckRunStatus? status, Uri? url, }) { return WebhookDeploymentStatusCreatedCheckRun(
+      json.containsKey('url') && json['url'] is String;}
+WebhookDeploymentStatusCreatedCheckRun copyWith({DateTime? Function()? completedAt, WebhookDeploymentStatusCreatedCheckRunConclusion? Function()? conclusion, Uri? detailsUrl, String? externalId, String? headSha, Uri? htmlUrl, int? id, String? name, String? nodeId, DateTime? startedAt, WebhookDeploymentStatusCreatedCheckRunStatus? status, Uri? url, }) {return WebhookDeploymentStatusCreatedCheckRun(
   completedAt: completedAt != null ? completedAt() : this.completedAt,
   conclusion: conclusion != null ? conclusion() : this.conclusion,
   detailsUrl: detailsUrl ?? this.detailsUrl,
@@ -165,8 +165,8 @@ WebhookDeploymentStatusCreatedCheckRun copyWith({DateTime? Function()? completed
   startedAt: startedAt ?? this.startedAt,
   status: status ?? this.status,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDeploymentStatusCreatedCheckRun &&
           completedAt == other.completedAt &&
           conclusion == other.conclusion &&
@@ -179,7 +179,7 @@ WebhookDeploymentStatusCreatedCheckRun copyWith({DateTime? Function()? completed
           nodeId == other.nodeId &&
           startedAt == other.startedAt &&
           status == other.status &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(completedAt, conclusion, detailsUrl, externalId, headSha, htmlUrl, id, name, nodeId, startedAt, status, url); } 
-@override String toString() { return 'WebhookDeploymentStatusCreatedCheckRun(completedAt: $completedAt, conclusion: $conclusion, detailsUrl: $detailsUrl, externalId: $externalId, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, startedAt: $startedAt, status: $status, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(completedAt, conclusion, detailsUrl, externalId, headSha, htmlUrl, id, name, nodeId, startedAt, status, url);}
+@override String toString() {return 'WebhookDeploymentStatusCreatedCheckRun(completedAt: $completedAt, conclusion: $conclusion, detailsUrl: $detailsUrl, externalId: $externalId, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, startedAt: $startedAt, status: $status, url: $url)';}
+}

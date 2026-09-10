@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostApplicationFeesIdRefundsRequest {const PostApplicationFeesIdRefundsRequest({this.amount, this.expand, this.metadata, });
 
-factory PostApplicationFeesIdRefundsRequest.fromJson(Map<String, dynamic> json) { return PostApplicationFeesIdRefundsRequest(
+factory PostApplicationFeesIdRefundsRequest.fromJson(Map<String, dynamic> json) {return PostApplicationFeesIdRefundsRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// A positive integer, in _cents (or local equivalent)_, representing how much of this fee to refund. Can refund only up to the remaining unrefunded amount of the fee.
 final int? amount;
@@ -17,22 +17,22 @@ final List<String>? expand;
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
 final Map<String,String>? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'expand': ?expand,
   'metadata': ?metadata,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'expand', 'metadata'}.contains(key)); } 
-PostApplicationFeesIdRefundsRequest copyWith({int? Function()? amount, List<String>? Function()? expand, Map<String, String>? Function()? metadata, }) { return PostApplicationFeesIdRefundsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'expand', 'metadata'}.contains(key));}
+PostApplicationFeesIdRefundsRequest copyWith({int? Function()? amount, List<String>? Function()? expand, Map<String, String>? Function()? metadata, }) {return PostApplicationFeesIdRefundsRequest(
   amount: amount != null ? amount() : this.amount,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostApplicationFeesIdRefundsRequest &&
           amount == other.amount &&
           listEquals(expand, other.expand) &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(amount, Object.hashAll(expand ?? const []), metadata); } 
-@override String toString() { return 'PostApplicationFeesIdRefundsRequest(amount: $amount, expand: $expand, metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return Object.hash(amount, Object.hashAll(expand ?? const []), metadata);}
+@override String toString() {return 'PostApplicationFeesIdRefundsRequest(amount: $amount, expand: $expand, metadata: $metadata)';}
+}

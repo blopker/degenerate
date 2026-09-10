@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pod_template_spec.dart';/// ReplicationControllerSpec is the specification of a replication controller.
 @immutable final class ReplicationControllerSpec {const ReplicationControllerSpec({this.minReadySeconds, this.replicas, this.selector, this.template, });
 
-factory ReplicationControllerSpec.fromJson(Map<String, dynamic> json) { return ReplicationControllerSpec(
+factory ReplicationControllerSpec.fromJson(Map<String, dynamic> json) {return ReplicationControllerSpec(
   minReadySeconds: json['minReadySeconds'] != null ? (json['minReadySeconds'] as num).toInt() : null,
   replicas: json['replicas'] != null ? (json['replicas'] as num).toInt() : null,
   selector: (json['selector'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   template: json['template'] != null ? PodTemplateSpec.fromJson(json['template'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready)
 final int? minReadySeconds;
@@ -23,28 +23,28 @@ final Map<String,String>? selector;
 final PodTemplateSpec? template;
 
 /// The value with the schema default applied when absent.
-int get minReadySecondsOrDefault { return minReadySeconds ?? 0; } 
+int get minReadySecondsOrDefault {return minReadySeconds ?? 0;}
 /// The value with the schema default applied when absent.
-int get replicasOrDefault { return replicas ?? 1; } 
-Map<String, dynamic> toJson() { return {
+int get replicasOrDefault {return replicas ?? 1;}
+Map<String, dynamic> toJson() {return {
   'minReadySeconds': ?minReadySeconds,
   'replicas': ?replicas,
   'selector': ?selector,
   if (template != null) 'template': template?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'minReadySeconds', 'replicas', 'selector', 'template'}.contains(key)); } 
-ReplicationControllerSpec copyWith({int? Function()? minReadySeconds, int? Function()? replicas, Map<String, String>? Function()? selector, PodTemplateSpec? Function()? template, }) { return ReplicationControllerSpec(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'minReadySeconds', 'replicas', 'selector', 'template'}.contains(key));}
+ReplicationControllerSpec copyWith({int? Function()? minReadySeconds, int? Function()? replicas, Map<String, String>? Function()? selector, PodTemplateSpec? Function()? template, }) {return ReplicationControllerSpec(
   minReadySeconds: minReadySeconds != null ? minReadySeconds() : this.minReadySeconds,
   replicas: replicas != null ? replicas() : this.replicas,
   selector: selector != null ? selector() : this.selector,
   template: template != null ? template() : this.template,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReplicationControllerSpec &&
           minReadySeconds == other.minReadySeconds &&
           replicas == other.replicas &&
           selector == other.selector &&
-          template == other.template; } 
-@override int get hashCode { return Object.hash(minReadySeconds, replicas, selector, template); } 
-@override String toString() { return 'ReplicationControllerSpec(minReadySeconds: $minReadySeconds, replicas: $replicas, selector: $selector, template: $template)'; } 
- }
+          template == other.template;}
+@override int get hashCode {return Object.hash(minReadySeconds, replicas, selector, template);}
+@override String toString() {return 'ReplicationControllerSpec(minReadySeconds: $minReadySeconds, replicas: $replicas, selector: $selector, template: $template)';}
+}

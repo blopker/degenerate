@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'duplicate_additional_documentation.dart';import 'duplicate_card_statement.dart';import 'duplicate_cash_receipt.dart';import 'duplicate_check_image.dart';import 'duplicate_explanation.dart';@immutable final class Duplicate {const Duplicate({this.additionalDocumentation, this.cardStatement, this.cashReceipt, this.checkImage, this.explanation, this.originalTransaction, });
 
-factory Duplicate.fromJson(Map<String, dynamic> json) { return Duplicate(
+factory Duplicate.fromJson(Map<String, dynamic> json) {return Duplicate(
   additionalDocumentation: json['additional_documentation'] != null ? DuplicateAdditionalDocumentation.fromJson(json['additional_documentation']) : null,
   cardStatement: json['card_statement'] != null ? DuplicateCardStatement.fromJson(json['card_statement']) : null,
   cashReceipt: json['cash_receipt'] != null ? DuplicateCashReceipt.fromJson(json['cash_receipt']) : null,
   checkImage: json['check_image'] != null ? DuplicateCheckImage.fromJson(json['check_image']) : null,
   explanation: json['explanation'] != null ? DuplicateExplanation.fromJson(json['explanation']) : null,
   originalTransaction: json['original_transaction'] as String?,
-); }
+);}
 
 final DuplicateAdditionalDocumentation? additionalDocumentation;
 
@@ -23,31 +23,31 @@ final DuplicateExplanation? explanation;
 
 final String? originalTransaction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (additionalDocumentation != null) 'additional_documentation': additionalDocumentation?.toJson(),
   if (cardStatement != null) 'card_statement': cardStatement?.toJson(),
   if (cashReceipt != null) 'cash_receipt': cashReceipt?.toJson(),
   if (checkImage != null) 'check_image': checkImage?.toJson(),
   if (explanation != null) 'explanation': explanation?.toJson(),
   'original_transaction': ?originalTransaction,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'card_statement', 'cash_receipt', 'check_image', 'explanation', 'original_transaction'}.contains(key)); } 
-Duplicate copyWith({DuplicateAdditionalDocumentation? Function()? additionalDocumentation, DuplicateCardStatement? Function()? cardStatement, DuplicateCashReceipt? Function()? cashReceipt, DuplicateCheckImage? Function()? checkImage, DuplicateExplanation? Function()? explanation, String? Function()? originalTransaction, }) { return Duplicate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'additional_documentation', 'card_statement', 'cash_receipt', 'check_image', 'explanation', 'original_transaction'}.contains(key));}
+Duplicate copyWith({DuplicateAdditionalDocumentation? Function()? additionalDocumentation, DuplicateCardStatement? Function()? cardStatement, DuplicateCashReceipt? Function()? cashReceipt, DuplicateCheckImage? Function()? checkImage, DuplicateExplanation? Function()? explanation, String? Function()? originalTransaction, }) {return Duplicate(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   cardStatement: cardStatement != null ? cardStatement() : this.cardStatement,
   cashReceipt: cashReceipt != null ? cashReceipt() : this.cashReceipt,
   checkImage: checkImage != null ? checkImage() : this.checkImage,
   explanation: explanation != null ? explanation() : this.explanation,
   originalTransaction: originalTransaction != null ? originalTransaction() : this.originalTransaction,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Duplicate &&
           additionalDocumentation == other.additionalDocumentation &&
           cardStatement == other.cardStatement &&
           cashReceipt == other.cashReceipt &&
           checkImage == other.checkImage &&
           explanation == other.explanation &&
-          originalTransaction == other.originalTransaction; } 
-@override int get hashCode { return Object.hash(additionalDocumentation, cardStatement, cashReceipt, checkImage, explanation, originalTransaction); } 
-@override String toString() { return 'Duplicate(additionalDocumentation: $additionalDocumentation, cardStatement: $cardStatement, cashReceipt: $cashReceipt, checkImage: $checkImage, explanation: $explanation, originalTransaction: $originalTransaction)'; } 
- }
+          originalTransaction == other.originalTransaction;}
+@override int get hashCode {return Object.hash(additionalDocumentation, cardStatement, cashReceipt, checkImage, explanation, originalTransaction);}
+@override String toString() {return 'Duplicate(additionalDocumentation: $additionalDocumentation, cardStatement: $cardStatement, cashReceipt: $cashReceipt, checkImage: $checkImage, explanation: $explanation, originalTransaction: $originalTransaction)';}
+}

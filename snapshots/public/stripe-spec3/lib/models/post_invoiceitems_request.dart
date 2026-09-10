@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoiceitems_request_discounts.dart';import 'post_invoiceitems_request_metadata.dart';import 'post_invoiceitems_request_period.dart';import 'post_invoiceitems_request_price_data.dart';import 'post_invoiceitems_request_pricing.dart';import 'post_invoiceitems_request_tax_code.dart';/// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
 @immutable final class PostInvoiceitemsRequestTaxBehavior {const PostInvoiceitemsRequestTaxBehavior._(this.value);
 
-factory PostInvoiceitemsRequestTaxBehavior.fromJson(String json) { return switch (json) {
+factory PostInvoiceitemsRequestTaxBehavior.fromJson(String json) {return switch (json) {
   'exclusive' => exclusive,
   'inclusive' => inclusive,
   'unspecified' => unspecified,
   _ => PostInvoiceitemsRequestTaxBehavior._(json),
-}; }
+};}
 
 static const PostInvoiceitemsRequestTaxBehavior exclusive = PostInvoiceitemsRequestTaxBehavior._('exclusive');
 
@@ -20,17 +20,17 @@ static const List<PostInvoiceitemsRequestTaxBehavior> values = [exclusive, inclu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoiceitemsRequestTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoiceitemsRequestTaxBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoiceitemsRequestTaxBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoiceitemsRequestTaxBehavior($value)';}
+}
 @immutable final class PostInvoiceitemsRequest {const PostInvoiceitemsRequest({this.amount, this.currency, this.customer, this.customerAccount, this.description, this.discountable, this.discounts, this.expand, this.invoice, this.metadata, this.period, this.priceData, this.pricing, this.quantity, this.subscription, this.taxBehavior, this.taxCode, this.taxRates, this.unitAmountDecimal, });
 
-factory PostInvoiceitemsRequest.fromJson(Map<String, dynamic> json) { return PostInvoiceitemsRequest(
+factory PostInvoiceitemsRequest.fromJson(Map<String, dynamic> json) {return PostInvoiceitemsRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   currency: json['currency'] as String?,
   customer: json['customer'] as String?,
@@ -50,7 +50,7 @@ factory PostInvoiceitemsRequest.fromJson(Map<String, dynamic> json) { return Pos
   taxCode: json['tax_code'] != null ? PostInvoiceitemsRequestTaxCode.fromJson(json['tax_code']) : null,
   taxRates: (json['tax_rates'] as List<dynamic>?)?.map((e) => e as String).toList(),
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
-); }
+);}
 
 /// The integer amount in cents (or local equivalent) of the charge to be applied to the upcoming invoice. Passing in a negative `amount` will reduce the `amount_due` on the invoice.
 final int? amount;
@@ -109,7 +109,7 @@ final List<String>? taxRates;
 /// The decimal unit amount in cents (or local equivalent) of the charge to be applied to the upcoming invoice. This `unit_amount_decimal` will be multiplied by the quantity to get the full amount. Passing in a negative `unit_amount_decimal` will reduce the `amount_due` on the invoice. Accepts at most 12 decimal places.
 final String? unitAmountDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'currency': ?currency,
   'customer': ?customer,
@@ -129,9 +129,9 @@ Map<String, dynamic> toJson() { return {
   if (taxCode != null) 'tax_code': taxCode?.toJson(),
   'tax_rates': ?taxRates,
   'unit_amount_decimal': ?unitAmountDecimal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'customer', 'customer_account', 'description', 'discountable', 'discounts', 'expand', 'invoice', 'metadata', 'period', 'price_data', 'pricing', 'quantity', 'subscription', 'tax_behavior', 'tax_code', 'tax_rates', 'unit_amount_decimal'}.contains(key)); } 
-PostInvoiceitemsRequest copyWith({int? Function()? amount, String? Function()? currency, String? Function()? customer, String? Function()? customerAccount, String? Function()? description, bool? Function()? discountable, PostInvoiceitemsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, String? Function()? invoice, PostInvoiceitemsRequestMetadata? Function()? metadata, PostInvoiceitemsRequestPeriod? Function()? period, PostInvoiceitemsRequestPriceData? Function()? priceData, PostInvoiceitemsRequestPricing? Function()? pricing, int? Function()? quantity, String? Function()? subscription, PostInvoiceitemsRequestTaxBehavior? Function()? taxBehavior, PostInvoiceitemsRequestTaxCode? Function()? taxCode, List<String>? Function()? taxRates, String? Function()? unitAmountDecimal, }) { return PostInvoiceitemsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'currency', 'customer', 'customer_account', 'description', 'discountable', 'discounts', 'expand', 'invoice', 'metadata', 'period', 'price_data', 'pricing', 'quantity', 'subscription', 'tax_behavior', 'tax_code', 'tax_rates', 'unit_amount_decimal'}.contains(key));}
+PostInvoiceitemsRequest copyWith({int? Function()? amount, String? Function()? currency, String? Function()? customer, String? Function()? customerAccount, String? Function()? description, bool? Function()? discountable, PostInvoiceitemsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, String? Function()? invoice, PostInvoiceitemsRequestMetadata? Function()? metadata, PostInvoiceitemsRequestPeriod? Function()? period, PostInvoiceitemsRequestPriceData? Function()? priceData, PostInvoiceitemsRequestPricing? Function()? pricing, int? Function()? quantity, String? Function()? subscription, PostInvoiceitemsRequestTaxBehavior? Function()? taxBehavior, PostInvoiceitemsRequestTaxCode? Function()? taxCode, List<String>? Function()? taxRates, String? Function()? unitAmountDecimal, }) {return PostInvoiceitemsRequest(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,
   customer: customer != null ? customer() : this.customer,
@@ -151,8 +151,8 @@ PostInvoiceitemsRequest copyWith({int? Function()? amount, String? Function()? c
   taxCode: taxCode != null ? taxCode() : this.taxCode,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoiceitemsRequest &&
           amount == other.amount &&
           currency == other.currency &&
@@ -172,7 +172,7 @@ PostInvoiceitemsRequest copyWith({int? Function()? amount, String? Function()? c
           taxBehavior == other.taxBehavior &&
           taxCode == other.taxCode &&
           listEquals(taxRates, other.taxRates) &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(amount, currency, customer, customerAccount, description, discountable, discounts, Object.hashAll(expand ?? const []), invoice, metadata, period, priceData, pricing, quantity, subscription, taxBehavior, taxCode, Object.hashAll(taxRates ?? const []), unitAmountDecimal); } 
-@override String toString() { return 'PostInvoiceitemsRequest(amount: $amount, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, discountable: $discountable, discounts: $discounts, expand: $expand, invoice: $invoice, metadata: $metadata, period: $period, priceData: $priceData, pricing: $pricing, quantity: $quantity, subscription: $subscription, taxBehavior: $taxBehavior, taxCode: $taxCode, taxRates: $taxRates, unitAmountDecimal: $unitAmountDecimal)'; } 
- }
+          unitAmountDecimal == other.unitAmountDecimal;}
+@override int get hashCode {return Object.hash(amount, currency, customer, customerAccount, description, discountable, discounts, Object.hashAll(expand ?? const []), invoice, metadata, period, priceData, pricing, quantity, subscription, taxBehavior, taxCode, Object.hashAll(taxRates ?? const []), unitAmountDecimal);}
+@override String toString() {return 'PostInvoiceitemsRequest(amount: $amount, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, discountable: $discountable, discounts: $discounts, expand: $expand, invoice: $invoice, metadata: $metadata, period: $period, priceData: $priceData, pricing: $pricing, quantity: $quantity, subscription: $subscription, taxBehavior: $taxBehavior, taxCode: $taxCode, taxRates: $taxRates, unitAmountDecimal: $unitAmountDecimal)';}
+}

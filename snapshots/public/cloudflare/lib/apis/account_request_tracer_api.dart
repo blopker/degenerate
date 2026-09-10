@@ -11,7 +11,7 @@ final class AccountRequestTracerApi with ApiExecutor {const AccountRequestTracer
 /// Request Trace
 ///
 /// `POST /accounts/{account_id}/request-tracer/trace`
-Future<ApiResult<AccountRequestTracerRequestTraceResponseResult?, ResponseCommonFailure57>> accountRequestTracerRequestTrace({required RequestTracerIdentifier accountId, required AccountRequestTracerRequestTraceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountRequestTracerRequestTraceResponseResult?, ResponseCommonFailure57>> accountRequestTracerRequestTrace({required RequestTracerIdentifier accountId, required AccountRequestTracerRequestTraceRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -39,5 +39,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

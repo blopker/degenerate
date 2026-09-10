@@ -2,30 +2,30 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_create_scope.dart';@immutable final class IamRequestCreateResourceGroup {const IamRequestCreateResourceGroup({required this.name, required this.scope, });
 
-factory IamRequestCreateResourceGroup.fromJson(Map<String, dynamic> json) { return IamRequestCreateResourceGroup(
+factory IamRequestCreateResourceGroup.fromJson(Map<String, dynamic> json) {return IamRequestCreateResourceGroup(
   name: json['name'] as String,
   scope: IamCreateScope.fromJson(json['scope'] as Map<String, dynamic>),
-); }
+);}
 
 /// Name of the resource group
 final String name;
 
 final IamCreateScope scope;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'scope': scope.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('scope'); } 
-IamRequestCreateResourceGroup copyWith({String? name, IamCreateScope? scope, }) { return IamRequestCreateResourceGroup(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('scope');}
+IamRequestCreateResourceGroup copyWith({String? name, IamCreateScope? scope, }) {return IamRequestCreateResourceGroup(
   name: name ?? this.name,
   scope: scope ?? this.scope,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IamRequestCreateResourceGroup &&
           name == other.name &&
-          scope == other.scope; } 
-@override int get hashCode { return Object.hash(name, scope); } 
-@override String toString() { return 'IamRequestCreateResourceGroup(name: $name, scope: $scope)'; } 
- }
+          scope == other.scope;}
+@override int get hashCode {return Object.hash(name, scope);}
+@override String toString() {return 'IamRequestCreateResourceGroup(name: $name, scope: $scope)';}
+}

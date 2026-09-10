@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Repository invitations let you manage who you collaborate with.
 @immutable final class RepositorySubscription {const RepositorySubscription({required this.subscribed, required this.ignored, required this.reason, required this.createdAt, required this.url, required this.repositoryUrl, });
 
-factory RepositorySubscription.fromJson(Map<String, dynamic> json) { return RepositorySubscription(
+factory RepositorySubscription.fromJson(Map<String, dynamic> json) {return RepositorySubscription(
   subscribed: json['subscribed'] as bool,
   ignored: json['ignored'] as bool,
   reason: json['reason'] as String?,
   createdAt: DateTime.parse(json['created_at'] as String),
   url: Uri.parse(json['url'] as String),
   repositoryUrl: Uri.parse(json['repository_url'] as String),
-); }
+);}
 
 /// Determines if notifications should be received from this repository.
 final bool subscribed;
@@ -26,36 +26,36 @@ final Uri url;
 
 final Uri repositoryUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'subscribed': subscribed,
   'ignored': ignored,
   'reason': reason,
   'created_at': createdAt.toIso8601String(),
   'url': url.toString(),
   'repository_url': repositoryUrl.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('subscribed') && json['subscribed'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('subscribed') && json['subscribed'] is bool &&
       json.containsKey('ignored') && json['ignored'] is bool &&
       json.containsKey('reason') && (json['reason'] == null || json['reason'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('repository_url') && json['repository_url'] is String; } 
-RepositorySubscription copyWith({bool? subscribed, bool? ignored, String? Function()? reason, DateTime? createdAt, Uri? url, Uri? repositoryUrl, }) { return RepositorySubscription(
+      json.containsKey('repository_url') && json['repository_url'] is String;}
+RepositorySubscription copyWith({bool? subscribed, bool? ignored, String? Function()? reason, DateTime? createdAt, Uri? url, Uri? repositoryUrl, }) {return RepositorySubscription(
   subscribed: subscribed ?? this.subscribed,
   ignored: ignored ?? this.ignored,
   reason: reason != null ? reason() : this.reason,
   createdAt: createdAt ?? this.createdAt,
   url: url ?? this.url,
   repositoryUrl: repositoryUrl ?? this.repositoryUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepositorySubscription &&
           subscribed == other.subscribed &&
           ignored == other.ignored &&
           reason == other.reason &&
           createdAt == other.createdAt &&
           url == other.url &&
-          repositoryUrl == other.repositoryUrl; } 
-@override int get hashCode { return Object.hash(subscribed, ignored, reason, createdAt, url, repositoryUrl); } 
-@override String toString() { return 'RepositorySubscription(subscribed: $subscribed, ignored: $ignored, reason: $reason, createdAt: $createdAt, url: $url, repositoryUrl: $repositoryUrl)'; } 
- }
+          repositoryUrl == other.repositoryUrl;}
+@override int get hashCode {return Object.hash(subscribed, ignored, reason, createdAt, url, repositoryUrl);}
+@override String toString() {return 'RepositorySubscription(subscribed: $subscribed, ignored: $ignored, reason: $reason, createdAt: $createdAt, url: $url, repositoryUrl: $repositoryUrl)';}
+}

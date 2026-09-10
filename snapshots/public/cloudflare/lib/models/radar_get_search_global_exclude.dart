@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetSearchGlobalExclude {const RadarGetSearchGlobalExclude._(this.value);
 
-factory RadarGetSearchGlobalExclude.fromJson(String json) { return switch (json) {
+factory RadarGetSearchGlobalExclude.fromJson(String json) {return switch (json) {
   'ADM1S' => adm1S,
   'ASNS' => asns,
   'BOTS' => bots,
@@ -16,7 +16,7 @@ factory RadarGetSearchGlobalExclude.fromJson(String json) { return switch (json)
   'TLDS' => tlds,
   'VERTICALS' => verticals,
   _ => RadarGetSearchGlobalExclude._(json),
-}; }
+};}
 
 static const RadarGetSearchGlobalExclude adm1S = RadarGetSearchGlobalExclude._('ADM1S');
 
@@ -46,11 +46,11 @@ static const List<RadarGetSearchGlobalExclude> values = [adm1S, asns, bots, cert
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetSearchGlobalExclude && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetSearchGlobalExclude($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetSearchGlobalExclude && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetSearchGlobalExclude($value)';}
+}

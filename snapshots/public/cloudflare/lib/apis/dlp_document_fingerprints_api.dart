@@ -11,7 +11,7 @@ final class DlpDocumentFingerprintsApi with ApiExecutor {const DlpDocumentFinger
 /// Retrieve data about all document fingerprints.
 ///
 /// `GET /accounts/{account_id}/dlp/document_fingerprints`
-Future<ApiResult<List<DlpDocumentFingerprint>?, ResponseCommonFailure25>> dlpDocumentFingerprintsReadAll({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<DlpDocumentFingerprint>?, ResponseCommonFailure25>> dlpDocumentFingerprintsReadAll({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -37,11 +37,11 @@ return null;
 
   },
 );
- } 
+}
 /// Creates a new document fingerprint.
 ///
 /// `POST /accounts/{account_id}/dlp/document_fingerprints`
-Future<ApiResult<DlpDocumentFingerprint?, ResponseCommonFailure25>> dlpDocumentFingerprintsCreate({required String accountId, required DlpDocumentFingerprintsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDocumentFingerprint?, ResponseCommonFailure25>> dlpDocumentFingerprintsCreate({required String accountId, required DlpDocumentFingerprintsCreateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -69,11 +69,11 @@ return null;
 
   },
 );
- } 
+}
 /// Retrieve data about a specific document fingerprint.
 ///
 /// `GET /accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}`
-Future<ApiResult<DlpDocumentFingerprint?, ResponseCommonFailure25>> dlpDocumentFingerprintsRead({required String accountId, required String documentFingerprintId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDocumentFingerprint?, ResponseCommonFailure25>> dlpDocumentFingerprintsRead({required String accountId, required String documentFingerprintId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -99,11 +99,11 @@ return null;
 
   },
 );
- } 
+}
 /// Update the attributes of a single document fingerprint.
 ///
 /// `POST /accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}`
-Future<ApiResult<DlpDocumentFingerprint?, ResponseCommonFailure25>> dlpDocumentFingerprintsUpdate({required String accountId, required String documentFingerprintId, required DlpUpdateDocumentFingerprint body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDocumentFingerprint?, ResponseCommonFailure25>> dlpDocumentFingerprintsUpdate({required String accountId, required String documentFingerprintId, required DlpUpdateDocumentFingerprint body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -131,11 +131,11 @@ return null;
 
   },
 );
- } 
+}
 /// Uploads a new version for a document fingerprint.
 ///
 /// `PUT /accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}`
-Future<ApiResult<DlpDocumentFingerprintUpload?, ResponseCommonFailure25>> dlpDocumentFingerprintsUpload({required String accountId, required String documentFingerprintId, required DlpDocumentFingerprintsUploadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDocumentFingerprintUpload?, ResponseCommonFailure25>> dlpDocumentFingerprintsUpload({required String accountId, required String documentFingerprintId, required DlpDocumentFingerprintsUploadRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -165,11 +165,11 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a single document fingerprint.
 ///
 /// `DELETE /accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}`
-Future<ApiResult<void, ResponseCommonFailure25>> dlpDocumentFingerprintsDelete({required String accountId, required String documentFingerprintId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ResponseCommonFailure25>> dlpDocumentFingerprintsDelete({required String accountId, required String documentFingerprintId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -192,5 +192,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

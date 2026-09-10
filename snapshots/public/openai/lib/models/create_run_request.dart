@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_tools_code.dart';import 'assistant_tools_file_search.dart';import 'assistant_tools_function.dart';import 'assistants_named_tool_choice.dart';import 'create_message_request.dart';import 'create_run_request_model.dart';import 'create_run_request_tools.dart';import 'parallel_tool_calls.dart';import 'reasoning_effort.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_option.dart';import 'response_format_text.dart';import 'tool_choice_option.dart';import 'truncation_object.dart';@immutable final class CreateRunRequest {const CreateRunRequest({required this.assistantId, this.model = const Omittable.absent(), this.reasoningEffort = const Omittable.absent(), this.instructions = const Omittable.absent(), this.additionalInstructions = const Omittable.absent(), this.additionalMessages = const Omittable.absent(), this.tools = const Omittable.absent(), this.metadata = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.stream = const Omittable.absent(), this.maxPromptTokens = const Omittable.absent(), this.maxCompletionTokens = const Omittable.absent(), this.truncationStrategy = const Omittable.absent(), this.toolChoice = const Omittable.absent(), this.parallelToolCalls, this.responseFormat = const Omittable.absent(), });
 
-factory CreateRunRequest.fromJson(Map<String, dynamic> json) { return CreateRunRequest(
+factory CreateRunRequest.fromJson(Map<String, dynamic> json) {return CreateRunRequest(
   assistantId: json['assistant_id'] as String,
   model: json.containsKey('model') ? Omittable(json['model'] != null ? CreateRunRequestModel.fromJson(json['model']) : null) : const Omittable.absent(),
   reasoningEffort: json.containsKey('reasoning_effort') ? Omittable(json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null) : const Omittable.absent(),
@@ -20,7 +20,7 @@ factory CreateRunRequest.fromJson(Map<String, dynamic> json) { return CreateRunR
   toolChoice: json.containsKey('tool_choice') ? Omittable(json['tool_choice'] != null ? OneOf2.parse(json['tool_choice'], fromA: (v) => ToolChoiceOptionVariant1.fromJson(v as String), fromB: (v) => AssistantsNamedToolChoice.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   parallelToolCalls: json['parallel_tool_calls'] != null ? ParallelToolCalls.fromJson(json['parallel_tool_calls'] as bool) : null,
   responseFormat: json.containsKey('response_format') ? Omittable(json['response_format'] != null ? OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The ID of the [assistant](/docs/api-reference/assistants) to use to execute this run.
 final String assistantId;
@@ -75,10 +75,10 @@ final ParallelToolCalls? parallelToolCalls;
 final Omittable<ResponseFormatOption?> responseFormat;
 
 /// The value with the schema default applied when absent.
-double? get temperatureOrDefault { return temperature.valueOr(1.0); } 
+double? get temperatureOrDefault {return temperature.valueOr(1.0);}
 /// The value with the schema default applied when absent.
-double? get topPOrDefault { return topP.valueOr(1.0); } 
-Map<String, dynamic> toJson() { return {
+double? get topPOrDefault {return topP.valueOr(1.0);}
+Map<String, dynamic> toJson() {return {
   'assistant_id': assistantId,
   if (model.isPresent) 'model': model.value?.toJson(),
   if (reasoningEffort.isPresent) 'reasoning_effort': reasoningEffort.value?.toJson(),
@@ -96,9 +96,9 @@ Map<String, dynamic> toJson() { return {
   if (toolChoice.isPresent) 'tool_choice': toolChoice.value?.toJson(),
   if (parallelToolCalls != null) 'parallel_tool_calls': parallelToolCalls?.toJson(),
   if (responseFormat.isPresent) 'response_format': responseFormat.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('assistant_id') && json['assistant_id'] is String; } 
-CreateRunRequest copyWith({String? assistantId, Omittable<CreateRunRequestModel?>? model, Omittable<ReasoningEffort?>? reasoningEffort, Omittable<String?>? instructions, Omittable<String?>? additionalInstructions, Omittable<List<CreateMessageRequest>?>? additionalMessages, Omittable<List<CreateRunRequestTools>?>? tools, Omittable<Map<String,String>?>? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<bool?>? stream, Omittable<int?>? maxPromptTokens, Omittable<int?>? maxCompletionTokens, Omittable<TruncationObject?>? truncationStrategy, Omittable<ToolChoiceOption?>? toolChoice, ParallelToolCalls? Function()? parallelToolCalls, Omittable<ResponseFormatOption?>? responseFormat, }) { return CreateRunRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('assistant_id') && json['assistant_id'] is String;}
+CreateRunRequest copyWith({String? assistantId, Omittable<CreateRunRequestModel?>? model, Omittable<ReasoningEffort?>? reasoningEffort, Omittable<String?>? instructions, Omittable<String?>? additionalInstructions, Omittable<List<CreateMessageRequest>?>? additionalMessages, Omittable<List<CreateRunRequestTools>?>? tools, Omittable<Map<String,String>?>? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<bool?>? stream, Omittable<int?>? maxPromptTokens, Omittable<int?>? maxCompletionTokens, Omittable<TruncationObject?>? truncationStrategy, Omittable<ToolChoiceOption?>? toolChoice, ParallelToolCalls? Function()? parallelToolCalls, Omittable<ResponseFormatOption?>? responseFormat, }) {return CreateRunRequest(
   assistantId: assistantId ?? this.assistantId,
   model: model ?? this.model,
   reasoningEffort: reasoningEffort ?? this.reasoningEffort,
@@ -116,8 +116,8 @@ CreateRunRequest copyWith({String? assistantId, Omittable<CreateRunRequestModel?
   toolChoice: toolChoice ?? this.toolChoice,
   parallelToolCalls: parallelToolCalls != null ? parallelToolCalls() : this.parallelToolCalls,
   responseFormat: responseFormat ?? this.responseFormat,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateRunRequest &&
           assistantId == other.assistantId &&
           model == other.model &&
@@ -137,7 +137,7 @@ CreateRunRequest copyWith({String? assistantId, Omittable<CreateRunRequestModel?
           truncationStrategy == other.truncationStrategy &&
           toolChoice == other.toolChoice &&
           parallelToolCalls == other.parallelToolCalls &&
-          responseFormat == other.responseFormat; } 
-@override int get hashCode { return Object.hash(assistantId, model, reasoningEffort, instructions, additionalInstructions, Object.hashAll(additionalMessages.value ?? const []), Object.hashAll(tools.value ?? const []), metadata, temperature, topP, stream, maxPromptTokens, maxCompletionTokens, truncationStrategy, toolChoice, parallelToolCalls, responseFormat); } 
-@override String toString() { return 'CreateRunRequest(assistantId: $assistantId, model: $model, reasoningEffort: $reasoningEffort, instructions: $instructions, additionalInstructions: $additionalInstructions, additionalMessages: $additionalMessages, tools: $tools, metadata: $metadata, temperature: $temperature, topP: $topP, stream: $stream, maxPromptTokens: $maxPromptTokens, maxCompletionTokens: $maxCompletionTokens, truncationStrategy: $truncationStrategy, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, responseFormat: $responseFormat)'; } 
- }
+          responseFormat == other.responseFormat;}
+@override int get hashCode {return Object.hash(assistantId, model, reasoningEffort, instructions, additionalInstructions, Object.hashAll(additionalMessages.value ?? const []), Object.hashAll(tools.value ?? const []), metadata, temperature, topP, stream, maxPromptTokens, maxCompletionTokens, truncationStrategy, toolChoice, parallelToolCalls, responseFormat);}
+@override String toString() {return 'CreateRunRequest(assistantId: $assistantId, model: $model, reasoningEffort: $reasoningEffort, instructions: $instructions, additionalInstructions: $additionalInstructions, additionalMessages: $additionalMessages, tools: $tools, metadata: $metadata, temperature: $temperature, topP: $topP, stream: $stream, maxPromptTokens: $maxPromptTokens, maxCompletionTokens: $maxCompletionTokens, truncationStrategy: $truncationStrategy, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, responseFormat: $responseFormat)';}
+}

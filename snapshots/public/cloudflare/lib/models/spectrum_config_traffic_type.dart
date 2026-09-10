@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines how data travels from the edge to your origin. When set to "direct", Spectrum will send traffic directly to your origin, and the application's type is derived from the `protocol`. When set to "http" or "https", Spectrum will apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and the application type matches this property exactly.
 @immutable final class SpectrumConfigTrafficType {const SpectrumConfigTrafficType._(this.value);
 
-factory SpectrumConfigTrafficType.fromJson(String json) { return switch (json) {
+factory SpectrumConfigTrafficType.fromJson(String json) {return switch (json) {
   'direct' => direct,
   'http' => http,
   'https' => https,
   _ => SpectrumConfigTrafficType._(json),
-}; }
+};}
 
 static const SpectrumConfigTrafficType direct = SpectrumConfigTrafficType._('direct');
 
@@ -20,11 +20,11 @@ static const List<SpectrumConfigTrafficType> values = [direct, http, https];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpectrumConfigTrafficType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpectrumConfigTrafficType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SpectrumConfigTrafficType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SpectrumConfigTrafficType($value)';}
+}

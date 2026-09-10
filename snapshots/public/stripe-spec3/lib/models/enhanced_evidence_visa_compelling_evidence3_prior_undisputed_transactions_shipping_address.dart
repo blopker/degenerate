@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enhanced_evidence_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_city.dart';import 'enhanced_evidence_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_country.dart';import 'enhanced_evidence_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_line1.dart';import 'enhanced_evidence_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_line2.dart';import 'enhanced_evidence_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_postal_code.dart';import 'enhanced_evidence_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_state.dart';@immutable final class EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress {const EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
 
-factory EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress.fromJson(Map<String, dynamic> json) { return EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress(
+factory EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress.fromJson(Map<String, dynamic> json) {return EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress(
   city: json['city'] != null ? EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressCity.fromJson(json['city']) : null,
   country: json['country'] != null ? EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressCountry.fromJson(json['country']) : null,
   line1: json['line1'] != null ? EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1.fromJson(json['line1']) : null,
   line2: json['line2'] != null ? EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine2.fromJson(json['line2']) : null,
   postalCode: json['postal_code'] != null ? EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressPostalCode.fromJson(json['postal_code']) : null,
   state: json['state'] != null ? EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressState.fromJson(json['state']) : null,
-); }
+);}
 
 final EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressCity? city;
 
@@ -23,31 +23,31 @@ final EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShipping
 
 final EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressState? state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (city != null) 'city': city?.toJson(),
   if (country != null) 'country': country?.toJson(),
   if (line1 != null) 'line1': line1?.toJson(),
   if (line2 != null) 'line2': line2?.toJson(),
   if (postalCode != null) 'postal_code': postalCode?.toJson(),
   if (state != null) 'state': state?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'country', 'line1', 'line2', 'postal_code', 'state'}.contains(key)); } 
-EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress copyWith({EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressCity? Function()? city, EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressCountry? Function()? country, EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1? Function()? line1, EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine2? Function()? line2, EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressPostalCode? Function()? postalCode, EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressState? Function()? state, }) { return EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'city', 'country', 'line1', 'line2', 'postal_code', 'state'}.contains(key));}
+EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress copyWith({EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressCity? Function()? city, EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressCountry? Function()? country, EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1? Function()? line1, EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine2? Function()? line2, EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressPostalCode? Function()? postalCode, EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressState? Function()? state, }) {return EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress(
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,
   line1: line1 != null ? line1() : this.line1,
   line2: line2 != null ? line2() : this.line2,
   postalCode: postalCode != null ? postalCode() : this.postalCode,
   state: state != null ? state() : this.state,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress &&
           city == other.city &&
           country == other.country &&
           line1 == other.line1 &&
           line2 == other.line2 &&
           postalCode == other.postalCode &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(city, country, line1, line2, postalCode, state); } 
-@override String toString() { return 'EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress(city: $city, country: $country, line1: $line1, line2: $line2, postalCode: $postalCode, state: $state)'; } 
- }
+          state == other.state;}
+@override int get hashCode {return Object.hash(city, country, line1, line2, postalCode, state);}
+@override String toString() {return 'EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress(city: $city, country: $country, line1: $line1, line2: $line2, postalCode: $postalCode, state: $state)';}
+}

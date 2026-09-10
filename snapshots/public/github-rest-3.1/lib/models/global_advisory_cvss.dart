@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GlobalAdvisoryCvss {const GlobalAdvisoryCvss({required this.vectorString, required this.score, });
 
-factory GlobalAdvisoryCvss.fromJson(Map<String, dynamic> json) { return GlobalAdvisoryCvss(
+factory GlobalAdvisoryCvss.fromJson(Map<String, dynamic> json) {return GlobalAdvisoryCvss(
   vectorString: json['vector_string'] as String?,
   score: json['score'] != null ? (json['score'] as num).toDouble() : null,
-); }
+);}
 
 /// The CVSS vector.
 final String? vectorString;
@@ -13,20 +13,20 @@ final String? vectorString;
 /// The CVSS score.
 final double? score;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'vector_string': vectorString,
   'score': score,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('vector_string') && (json['vector_string'] == null || json['vector_string'] is String) &&
-      json.containsKey('score') && (json['score'] == null || json['score'] is num); } 
-GlobalAdvisoryCvss copyWith({String? Function()? vectorString, double? Function()? score, }) { return GlobalAdvisoryCvss(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('vector_string') && (json['vector_string'] == null || json['vector_string'] is String) &&
+      json.containsKey('score') && (json['score'] == null || json['score'] is num);}
+GlobalAdvisoryCvss copyWith({String? Function()? vectorString, double? Function()? score, }) {return GlobalAdvisoryCvss(
   vectorString: vectorString != null ? vectorString() : this.vectorString,
   score: score != null ? score() : this.score,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GlobalAdvisoryCvss &&
           vectorString == other.vectorString &&
-          score == other.score; } 
-@override int get hashCode { return Object.hash(vectorString, score); } 
-@override String toString() { return 'GlobalAdvisoryCvss(vectorString: $vectorString, score: $score)'; } 
- }
+          score == other.score;}
+@override int get hashCode {return Object.hash(vectorString, score);}
+@override String toString() {return 'GlobalAdvisoryCvss(vectorString: $vectorString, score: $score)';}
+}

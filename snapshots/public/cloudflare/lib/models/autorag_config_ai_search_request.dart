@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_ai_search_request_filters.dart';import 'autorag_config_ai_search_request_model.dart';import 'autorag_config_ai_search_request_ranking_options.dart';import 'autorag_config_ai_search_request_reranking.dart';@immutable final class AutoragConfigAiSearchRequest {const AutoragConfigAiSearchRequest({required this.query, this.filters, this.maxNumResults, this.model, this.rankingOptions, this.reranking, this.rewriteQuery, this.stream, this.systemPrompt, });
 
-factory AutoragConfigAiSearchRequest.fromJson(Map<String, dynamic> json) { return AutoragConfigAiSearchRequest(
+factory AutoragConfigAiSearchRequest.fromJson(Map<String, dynamic> json) {return AutoragConfigAiSearchRequest(
   filters: json['filters'] != null ? AutoragConfigAiSearchRequestFilters.fromJson(json['filters']) : null,
   maxNumResults: json['max_num_results'] != null ? (json['max_num_results'] as num).toInt() : null,
   model: json['model'] != null ? AutoragConfigAiSearchRequestModel.fromJson(json['model']) : null,
@@ -12,7 +12,7 @@ factory AutoragConfigAiSearchRequest.fromJson(Map<String, dynamic> json) { retur
   rewriteQuery: json['rewrite_query'] as bool?,
   stream: json['stream'] as bool?,
   systemPrompt: json['system_prompt'] as String?,
-); }
+);}
 
 final AutoragConfigAiSearchRequestFilters? filters;
 
@@ -33,12 +33,12 @@ final bool? stream;
 final String? systemPrompt;
 
 /// The value with the schema default applied when absent.
-int get maxNumResultsOrDefault { return maxNumResults ?? 10; } 
+int get maxNumResultsOrDefault {return maxNumResults ?? 10;}
 /// The value with the schema default applied when absent.
-bool get rewriteQueryOrDefault { return rewriteQuery ?? false; } 
+bool get rewriteQueryOrDefault {return rewriteQuery ?? false;}
 /// The value with the schema default applied when absent.
-bool get streamOrDefault { return stream ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get streamOrDefault {return stream ?? false;}
+Map<String, dynamic> toJson() {return {
   if (filters != null) 'filters': filters?.toJson(),
   'max_num_results': ?maxNumResults,
   if (model != null) 'model': model?.toJson(),
@@ -48,9 +48,9 @@ Map<String, dynamic> toJson() { return {
   'rewrite_query': ?rewriteQuery,
   'stream': ?stream,
   'system_prompt': ?systemPrompt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('query') && json['query'] is String; } 
-AutoragConfigAiSearchRequest copyWith({AutoragConfigAiSearchRequestFilters? Function()? filters, int? Function()? maxNumResults, AutoragConfigAiSearchRequestModel? Function()? model, String? query, AutoragConfigAiSearchRequestRankingOptions? Function()? rankingOptions, AutoragConfigAiSearchRequestReranking? Function()? reranking, bool? Function()? rewriteQuery, bool? Function()? stream, String? Function()? systemPrompt, }) { return AutoragConfigAiSearchRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('query') && json['query'] is String;}
+AutoragConfigAiSearchRequest copyWith({AutoragConfigAiSearchRequestFilters? Function()? filters, int? Function()? maxNumResults, AutoragConfigAiSearchRequestModel? Function()? model, String? query, AutoragConfigAiSearchRequestRankingOptions? Function()? rankingOptions, AutoragConfigAiSearchRequestReranking? Function()? reranking, bool? Function()? rewriteQuery, bool? Function()? stream, String? Function()? systemPrompt, }) {return AutoragConfigAiSearchRequest(
   filters: filters != null ? filters() : this.filters,
   maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,
   model: model != null ? model() : this.model,
@@ -60,8 +60,8 @@ AutoragConfigAiSearchRequest copyWith({AutoragConfigAiSearchRequestFilters? Func
   rewriteQuery: rewriteQuery != null ? rewriteQuery() : this.rewriteQuery,
   stream: stream != null ? stream() : this.stream,
   systemPrompt: systemPrompt != null ? systemPrompt() : this.systemPrompt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AutoragConfigAiSearchRequest &&
           filters == other.filters &&
           maxNumResults == other.maxNumResults &&
@@ -71,7 +71,7 @@ AutoragConfigAiSearchRequest copyWith({AutoragConfigAiSearchRequestFilters? Func
           reranking == other.reranking &&
           rewriteQuery == other.rewriteQuery &&
           stream == other.stream &&
-          systemPrompt == other.systemPrompt; } 
-@override int get hashCode { return Object.hash(filters, maxNumResults, model, query, rankingOptions, reranking, rewriteQuery, stream, systemPrompt); } 
-@override String toString() { return 'AutoragConfigAiSearchRequest(filters: $filters, maxNumResults: $maxNumResults, model: $model, query: $query, rankingOptions: $rankingOptions, reranking: $reranking, rewriteQuery: $rewriteQuery, stream: $stream, systemPrompt: $systemPrompt)'; } 
- }
+          systemPrompt == other.systemPrompt;}
+@override int get hashCode {return Object.hash(filters, maxNumResults, model, query, rankingOptions, reranking, rewriteQuery, stream, systemPrompt);}
+@override String toString() {return 'AutoragConfigAiSearchRequest(filters: $filters, maxNumResults: $maxNumResults, model: $model, query: $query, rankingOptions: $rankingOptions, reranking: $reranking, rewriteQuery: $rewriteQuery, stream: $stream, systemPrompt: $systemPrompt)';}
+}

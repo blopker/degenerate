@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksReviewComments {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksReviewComments({required this.href});
 
-factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksReviewComments.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksReviewComments(
+factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksReviewComments.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksReviewComments(
   href: json['href'] as String,
-); }
+);}
 
 final String href;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'href': href,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String; } 
-WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksReviewComments copyWith({String? href}) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksReviewComments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('href') && json['href'] is String;}
+WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksReviewComments copyWith({String? href}) {return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksReviewComments(
   href: href ?? this.href,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksReviewComments &&
-          href == other.href; } 
-@override int get hashCode { return href.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksReviewComments(href: $href)'; } 
- }
+          href == other.href;}
+@override int get hashCode {return href.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksReviewComments(href: $href)';}
+}

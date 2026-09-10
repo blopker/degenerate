@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gist_simple_fork_of_files_value.dart';import 'simple_user.dart';/// Gist
 @immutable final class GistSimpleForkOf {const GistSimpleForkOf({required this.url, required this.forksUrl, required this.commitsUrl, required this.id, required this.nodeId, required this.gitPullUrl, required this.gitPushUrl, required this.htmlUrl, required this.files, required this.public, required this.createdAt, required this.updatedAt, required this.description, required this.comments, required this.user, required this.commentsUrl, this.commentsEnabled, this.owner = const Omittable.absent(), this.truncated, this.forks, this.history, });
 
-factory GistSimpleForkOf.fromJson(Map<String, dynamic> json) { return GistSimpleForkOf(
+factory GistSimpleForkOf.fromJson(Map<String, dynamic> json) {return GistSimpleForkOf(
   url: Uri.parse(json['url'] as String),
   forksUrl: Uri.parse(json['forks_url'] as String),
   commitsUrl: Uri.parse(json['commits_url'] as String),
@@ -25,7 +25,7 @@ factory GistSimpleForkOf.fromJson(Map<String, dynamic> json) { return GistSimple
   truncated: json['truncated'] as bool?,
   forks: (json['forks'] as List<dynamic>?)?.map((e) => e).toList(),
   history: (json['history'] as List<dynamic>?)?.map((e) => e).toList(),
-); }
+);}
 
 final Uri url;
 
@@ -69,7 +69,7 @@ final List<dynamic>? forks;
 
 final List<dynamic>? history;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'forks_url': forksUrl.toString(),
   'commits_url': commitsUrl.toString(),
@@ -91,8 +91,8 @@ Map<String, dynamic> toJson() { return {
   'truncated': ?truncated,
   'forks': ?forks,
   'history': ?history,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('forks_url') && json['forks_url'] is String &&
       json.containsKey('commits_url') && json['commits_url'] is String &&
       json.containsKey('id') && json['id'] is String &&
@@ -107,8 +107,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('comments') && json['comments'] is num &&
       json.containsKey('user') &&
-      json.containsKey('comments_url') && json['comments_url'] is String; } 
-GistSimpleForkOf copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id, String? nodeId, Uri? gitPullUrl, Uri? gitPushUrl, Uri? htmlUrl, Map<String,GistSimpleForkOfFilesValue>? files, bool? public, DateTime? createdAt, DateTime? updatedAt, String? Function()? description, int? comments, bool? Function()? commentsEnabled, SimpleUser? Function()? user, Uri? commentsUrl, Omittable<SimpleUser?>? owner, bool? Function()? truncated, List<dynamic>? Function()? forks, List<dynamic>? Function()? history, }) { return GistSimpleForkOf(
+      json.containsKey('comments_url') && json['comments_url'] is String;}
+GistSimpleForkOf copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id, String? nodeId, Uri? gitPullUrl, Uri? gitPushUrl, Uri? htmlUrl, Map<String,GistSimpleForkOfFilesValue>? files, bool? public, DateTime? createdAt, DateTime? updatedAt, String? Function()? description, int? comments, bool? Function()? commentsEnabled, SimpleUser? Function()? user, Uri? commentsUrl, Omittable<SimpleUser?>? owner, bool? Function()? truncated, List<dynamic>? Function()? forks, List<dynamic>? Function()? history, }) {return GistSimpleForkOf(
   url: url ?? this.url,
   forksUrl: forksUrl ?? this.forksUrl,
   commitsUrl: commitsUrl ?? this.commitsUrl,
@@ -130,8 +130,8 @@ GistSimpleForkOf copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id,
   truncated: truncated != null ? truncated() : this.truncated,
   forks: forks != null ? forks() : this.forks,
   history: history != null ? history() : this.history,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GistSimpleForkOf &&
           url == other.url &&
           forksUrl == other.forksUrl &&
@@ -153,7 +153,7 @@ GistSimpleForkOf copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id,
           owner == other.owner &&
           truncated == other.truncated &&
           listEquals(forks, other.forks) &&
-          listEquals(history, other.history); } 
-@override int get hashCode { return Object.hashAll([url, forksUrl, commitsUrl, id, nodeId, gitPullUrl, gitPushUrl, htmlUrl, files, public, createdAt, updatedAt, description, comments, commentsEnabled, user, commentsUrl, owner, truncated, Object.hashAll(forks ?? const []), Object.hashAll(history ?? const [])]); } 
-@override String toString() { return 'GistSimpleForkOf(url: $url, forksUrl: $forksUrl, commitsUrl: $commitsUrl, id: $id, nodeId: $nodeId, gitPullUrl: $gitPullUrl, gitPushUrl: $gitPushUrl, htmlUrl: $htmlUrl, files: $files, public: $public, createdAt: $createdAt, updatedAt: $updatedAt, description: $description, comments: $comments, commentsEnabled: $commentsEnabled, user: $user, commentsUrl: $commentsUrl, owner: $owner, truncated: $truncated, forks: $forks, history: $history)'; } 
- }
+          listEquals(history, other.history);}
+@override int get hashCode {return Object.hashAll([url, forksUrl, commitsUrl, id, nodeId, gitPullUrl, gitPushUrl, htmlUrl, files, public, createdAt, updatedAt, description, comments, commentsEnabled, user, commentsUrl, owner, truncated, Object.hashAll(forks ?? const []), Object.hashAll(history ?? const [])]);}
+@override String toString() {return 'GistSimpleForkOf(url: $url, forksUrl: $forksUrl, commitsUrl: $commitsUrl, id: $id, nodeId: $nodeId, gitPullUrl: $gitPullUrl, gitPushUrl: $gitPushUrl, htmlUrl: $htmlUrl, files: $files, public: $public, createdAt: $createdAt, updatedAt: $updatedAt, description: $description, comments: $comments, commentsEnabled: $commentsEnabled, user: $user, commentsUrl: $commentsUrl, owner: $owner, truncated: $truncated, forks: $forks, history: $history)';}
+}

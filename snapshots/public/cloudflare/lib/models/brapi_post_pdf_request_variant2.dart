@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_pdf_request_variant2_add_script_tag.dart';import 'brapi_post_pdf_request_variant2_add_style_tag.dart';import 'brapi_post_pdf_request_variant2_authenticate.dart';import 'brapi_post_pdf_request_variant2_cookies.dart';import 'brapi_post_pdf_request_variant2_goto_options.dart';import 'brapi_post_pdf_request_variant2_pdf_options.dart';import 'brapi_post_pdf_request_variant2_viewport.dart';import 'brapi_post_pdf_request_variant2_wait_for_selector.dart';@immutable final class BrapiPostPdfRequestVariant2AllowResourceTypes {const BrapiPostPdfRequestVariant2AllowResourceTypes._(this.value);
 
-factory BrapiPostPdfRequestVariant2AllowResourceTypes.fromJson(String json) { return switch (json) {
+factory BrapiPostPdfRequestVariant2AllowResourceTypes.fromJson(String json) {return switch (json) {
   'document' => document,
   'stylesheet' => stylesheet,
   'image' => image,
@@ -22,7 +22,7 @@ factory BrapiPostPdfRequestVariant2AllowResourceTypes.fromJson(String json) { re
   'preflight' => preflight,
   'other' => $other,
   _ => BrapiPostPdfRequestVariant2AllowResourceTypes._(json),
-}; }
+};}
 
 static const BrapiPostPdfRequestVariant2AllowResourceTypes document = BrapiPostPdfRequestVariant2AllowResourceTypes._('document');
 
@@ -64,17 +64,17 @@ static const List<BrapiPostPdfRequestVariant2AllowResourceTypes> values = [docum
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostPdfRequestVariant2AllowResourceTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostPdfRequestVariant2AllowResourceTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostPdfRequestVariant2AllowResourceTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostPdfRequestVariant2AllowResourceTypes($value)';}
+}
 @immutable final class BrapiPostPdfRequestVariant2RejectResourceTypes {const BrapiPostPdfRequestVariant2RejectResourceTypes._(this.value);
 
-factory BrapiPostPdfRequestVariant2RejectResourceTypes.fromJson(String json) { return switch (json) {
+factory BrapiPostPdfRequestVariant2RejectResourceTypes.fromJson(String json) {return switch (json) {
   'document' => document,
   'stylesheet' => stylesheet,
   'image' => image,
@@ -94,7 +94,7 @@ factory BrapiPostPdfRequestVariant2RejectResourceTypes.fromJson(String json) { r
   'preflight' => preflight,
   'other' => $other,
   _ => BrapiPostPdfRequestVariant2RejectResourceTypes._(json),
-}; }
+};}
 
 static const BrapiPostPdfRequestVariant2RejectResourceTypes document = BrapiPostPdfRequestVariant2RejectResourceTypes._('document');
 
@@ -136,17 +136,17 @@ static const List<BrapiPostPdfRequestVariant2RejectResourceTypes> values = [docu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostPdfRequestVariant2RejectResourceTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostPdfRequestVariant2RejectResourceTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostPdfRequestVariant2RejectResourceTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostPdfRequestVariant2RejectResourceTypes($value)';}
+}
 @immutable final class BrapiPostPdfRequestVariant2 {const BrapiPostPdfRequestVariant2({required this.url, this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.emulateMediaType, this.gotoOptions, this.pdfOptions, this.rejectRequestPattern, this.rejectResourceTypes, this.setExtraHttpHeaders, this.setJavaScriptEnabled, this.userAgent, this.viewport, this.waitForSelector, this.waitForTimeout, });
 
-factory BrapiPostPdfRequestVariant2.fromJson(Map<String, dynamic> json) { return BrapiPostPdfRequestVariant2(
+factory BrapiPostPdfRequestVariant2.fromJson(Map<String, dynamic> json) {return BrapiPostPdfRequestVariant2(
   actionTimeout: json['actionTimeout'] != null ? (json['actionTimeout'] as num).toDouble() : null,
   addScriptTag: (json['addScriptTag'] as List<dynamic>?)?.map((e) => BrapiPostPdfRequestVariant2AddScriptTag.fromJson(e as Map<String, dynamic>)).toList(),
   addStyleTag: (json['addStyleTag'] as List<dynamic>?)?.map((e) => BrapiPostPdfRequestVariant2AddStyleTag.fromJson(e as Map<String, dynamic>)).toList(),
@@ -167,7 +167,7 @@ factory BrapiPostPdfRequestVariant2.fromJson(Map<String, dynamic> json) { return
   viewport: json['viewport'] != null ? BrapiPostPdfRequestVariant2Viewport.fromJson(json['viewport'] as Map<String, dynamic>) : null,
   waitForSelector: json['waitForSelector'] != null ? BrapiPostPdfRequestVariant2WaitForSelector.fromJson(json['waitForSelector'] as Map<String, dynamic>) : null,
   waitForTimeout: json['waitForTimeout'] != null ? (json['waitForTimeout'] as num).toDouble() : null,
-); }
+);}
 
 /// The maximum duration allowed for the browser action to complete after the page has loaded (such as taking screenshots, extracting content, or generating PDFs). If this time limit is exceeded, the action stops and returns a timeout error.
 final double? actionTimeout;
@@ -226,8 +226,8 @@ final BrapiPostPdfRequestVariant2WaitForSelector? waitForSelector;
 final double? waitForTimeout;
 
 /// The value with the schema default applied when absent.
-String get userAgentOrDefault { return userAgent ?? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'; } 
-Map<String, dynamic> toJson() { return {
+String get userAgentOrDefault {return userAgent ?? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36';}
+Map<String, dynamic> toJson() {return {
   'actionTimeout': ?actionTimeout,
   if (addScriptTag != null) 'addScriptTag': addScriptTag?.map((e) => e.toJson()).toList(),
   if (addStyleTag != null) 'addStyleTag': addStyleTag?.map((e) => e.toJson()).toList(),
@@ -248,9 +248,9 @@ Map<String, dynamic> toJson() { return {
   if (viewport != null) 'viewport': viewport?.toJson(),
   if (waitForSelector != null) 'waitForSelector': waitForSelector?.toJson(),
   'waitForTimeout': ?waitForTimeout,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-BrapiPostPdfRequestVariant2 copyWith({double? Function()? actionTimeout, List<BrapiPostPdfRequestVariant2AddScriptTag>? Function()? addScriptTag, List<BrapiPostPdfRequestVariant2AddStyleTag>? Function()? addStyleTag, List<String>? Function()? allowRequestPattern, List<BrapiPostPdfRequestVariant2AllowResourceTypes>? Function()? allowResourceTypes, BrapiPostPdfRequestVariant2Authenticate? Function()? authenticate, bool? Function()? bestAttempt, List<BrapiPostPdfRequestVariant2Cookies>? Function()? cookies, String? Function()? emulateMediaType, BrapiPostPdfRequestVariant2GotoOptions? Function()? gotoOptions, BrapiPostPdfRequestVariant2PdfOptions? Function()? pdfOptions, List<String>? Function()? rejectRequestPattern, List<BrapiPostPdfRequestVariant2RejectResourceTypes>? Function()? rejectResourceTypes, Map<String, String>? Function()? setExtraHttpHeaders, bool? Function()? setJavaScriptEnabled, Uri? url, String? Function()? userAgent, BrapiPostPdfRequestVariant2Viewport? Function()? viewport, BrapiPostPdfRequestVariant2WaitForSelector? Function()? waitForSelector, double? Function()? waitForTimeout, }) { return BrapiPostPdfRequestVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String;}
+BrapiPostPdfRequestVariant2 copyWith({double? Function()? actionTimeout, List<BrapiPostPdfRequestVariant2AddScriptTag>? Function()? addScriptTag, List<BrapiPostPdfRequestVariant2AddStyleTag>? Function()? addStyleTag, List<String>? Function()? allowRequestPattern, List<BrapiPostPdfRequestVariant2AllowResourceTypes>? Function()? allowResourceTypes, BrapiPostPdfRequestVariant2Authenticate? Function()? authenticate, bool? Function()? bestAttempt, List<BrapiPostPdfRequestVariant2Cookies>? Function()? cookies, String? Function()? emulateMediaType, BrapiPostPdfRequestVariant2GotoOptions? Function()? gotoOptions, BrapiPostPdfRequestVariant2PdfOptions? Function()? pdfOptions, List<String>? Function()? rejectRequestPattern, List<BrapiPostPdfRequestVariant2RejectResourceTypes>? Function()? rejectResourceTypes, Map<String, String>? Function()? setExtraHttpHeaders, bool? Function()? setJavaScriptEnabled, Uri? url, String? Function()? userAgent, BrapiPostPdfRequestVariant2Viewport? Function()? viewport, BrapiPostPdfRequestVariant2WaitForSelector? Function()? waitForSelector, double? Function()? waitForTimeout, }) {return BrapiPostPdfRequestVariant2(
   actionTimeout: actionTimeout != null ? actionTimeout() : this.actionTimeout,
   addScriptTag: addScriptTag != null ? addScriptTag() : this.addScriptTag,
   addStyleTag: addStyleTag != null ? addStyleTag() : this.addStyleTag,
@@ -271,8 +271,8 @@ BrapiPostPdfRequestVariant2 copyWith({double? Function()? actionTimeout, List<Br
   viewport: viewport != null ? viewport() : this.viewport,
   waitForSelector: waitForSelector != null ? waitForSelector() : this.waitForSelector,
   waitForTimeout: waitForTimeout != null ? waitForTimeout() : this.waitForTimeout,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BrapiPostPdfRequestVariant2 &&
           actionTimeout == other.actionTimeout &&
           listEquals(addScriptTag, other.addScriptTag) &&
@@ -293,7 +293,7 @@ BrapiPostPdfRequestVariant2 copyWith({double? Function()? actionTimeout, List<Br
           userAgent == other.userAgent &&
           viewport == other.viewport &&
           waitForSelector == other.waitForSelector &&
-          waitForTimeout == other.waitForTimeout; } 
-@override int get hashCode { return Object.hash(actionTimeout, Object.hashAll(addScriptTag ?? const []), Object.hashAll(addStyleTag ?? const []), Object.hashAll(allowRequestPattern ?? const []), Object.hashAll(allowResourceTypes ?? const []), authenticate, bestAttempt, Object.hashAll(cookies ?? const []), emulateMediaType, gotoOptions, pdfOptions, Object.hashAll(rejectRequestPattern ?? const []), Object.hashAll(rejectResourceTypes ?? const []), setExtraHttpHeaders, setJavaScriptEnabled, url, userAgent, viewport, waitForSelector, waitForTimeout); } 
-@override String toString() { return 'BrapiPostPdfRequestVariant2(actionTimeout: $actionTimeout, addScriptTag: $addScriptTag, addStyleTag: $addStyleTag, allowRequestPattern: $allowRequestPattern, allowResourceTypes: $allowResourceTypes, authenticate: $authenticate, bestAttempt: $bestAttempt, cookies: $cookies, emulateMediaType: $emulateMediaType, gotoOptions: $gotoOptions, pdfOptions: $pdfOptions, rejectRequestPattern: $rejectRequestPattern, rejectResourceTypes: $rejectResourceTypes, setExtraHttpHeaders: $setExtraHttpHeaders, setJavaScriptEnabled: $setJavaScriptEnabled, url: $url, userAgent: $userAgent, viewport: $viewport, waitForSelector: $waitForSelector, waitForTimeout: $waitForTimeout)'; } 
- }
+          waitForTimeout == other.waitForTimeout;}
+@override int get hashCode {return Object.hash(actionTimeout, Object.hashAll(addScriptTag ?? const []), Object.hashAll(addStyleTag ?? const []), Object.hashAll(allowRequestPattern ?? const []), Object.hashAll(allowResourceTypes ?? const []), authenticate, bestAttempt, Object.hashAll(cookies ?? const []), emulateMediaType, gotoOptions, pdfOptions, Object.hashAll(rejectRequestPattern ?? const []), Object.hashAll(rejectResourceTypes ?? const []), setExtraHttpHeaders, setJavaScriptEnabled, url, userAgent, viewport, waitForSelector, waitForTimeout);}
+@override String toString() {return 'BrapiPostPdfRequestVariant2(actionTimeout: $actionTimeout, addScriptTag: $addScriptTag, addStyleTag: $addStyleTag, allowRequestPattern: $allowRequestPattern, allowResourceTypes: $allowResourceTypes, authenticate: $authenticate, bestAttempt: $bestAttempt, cookies: $cookies, emulateMediaType: $emulateMediaType, gotoOptions: $gotoOptions, pdfOptions: $pdfOptions, rejectRequestPattern: $rejectRequestPattern, rejectResourceTypes: $rejectResourceTypes, setExtraHttpHeaders: $setExtraHttpHeaders, setJavaScriptEnabled: $setJavaScriptEnabled, url: $url, userAgent: $userAgent, viewport: $viewport, waitForSelector: $waitForSelector, waitForTimeout: $waitForTimeout)';}
+}

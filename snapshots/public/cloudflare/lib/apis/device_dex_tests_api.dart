@@ -13,7 +13,7 @@ final class DeviceDexTestsApi with ApiExecutor {const DeviceDexTestsApi(this.api
 /// Fetch all DEX tests
 ///
 /// `GET /accounts/{account_id}/dex/devices/dex_tests`
-Future<ApiResult<List<DigitalExperienceMonitoringDeviceDexTestSchemasHttp>?, DeviceDexTestDetailsResponse4xx>> deviceDexTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, double? page, double? perPage, String? testName, DeviceDexTestDetailsKind? kind, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DigitalExperienceMonitoringDeviceDexTestSchemasHttp>?, DeviceDexTestDetailsResponse4xx>> deviceDexTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, double? page, double? perPage, String? testName, DeviceDexTestDetailsKind? kind, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -56,13 +56,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create Device DEX test
 ///
 /// Create a DEX test.
 ///
 /// `POST /accounts/{account_id}/dex/devices/dex_tests`
-Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestCreateDeviceDexTestResponse4xx>> deviceDexTestCreateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestCreateDeviceDexTestResponse4xx>> deviceDexTestCreateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -90,13 +90,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get Device DEX test
 ///
 /// Fetch a single DEX test.
 ///
 /// `GET /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestGetDeviceDexTestResponse4xx>> deviceDexTestGetDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringSchemasTestId dexTestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestGetDeviceDexTestResponse4xx>> deviceDexTestGetDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringSchemasTestId dexTestId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -122,13 +122,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update Device DEX test
 ///
 /// Update a DEX test.
 ///
 /// `PUT /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestUpdateDeviceDexTestResponse4xx>> deviceDexTestUpdateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestUpdateDeviceDexTestResponse4xx>> deviceDexTestUpdateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -156,13 +156,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Device DEX test
 ///
 /// Delete a Device DEX test. Returns the remaining device dex tests for the account.
 ///
 /// `DELETE /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<DigitalExperienceMonitoringDexDeleteResponseCollectionResult?, DeviceDexTestDeleteDeviceDexTestResponse4xx>> deviceDexTestDeleteDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDexDeleteResponseCollectionResult?, DeviceDexTestDeleteDeviceDexTestResponse4xx>> deviceDexTestDeleteDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -188,5 +188,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// SeccompProfile defines a pod/container's seccomp profile settings. Only one profile source may be set.
 @immutable final class SeccompProfile {const SeccompProfile({required this.type, this.localhostProfile, });
 
-factory SeccompProfile.fromJson(Map<String, dynamic> json) { return SeccompProfile(
+factory SeccompProfile.fromJson(Map<String, dynamic> json) {return SeccompProfile(
   localhostProfile: json['localhostProfile'] as String?,
   type: json['type'] as String,
-); }
+);}
 
 /// localhostProfile indicates a profile defined in a file on the node should be used. The profile must be preconfigured on the node to work. Must be a descending path, relative to the kubelet's configured seccomp profile location. Must be set if type is "Localhost". Must NOT be set for any other type.
 final String? localhostProfile;
@@ -16,19 +16,19 @@ final String? localhostProfile;
 /// Localhost - a profile defined in a file on the node should be used. RuntimeDefault - the container runtime default profile should be used. Unconfined - no profile should be applied.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'localhostProfile': ?localhostProfile,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-SeccompProfile copyWith({String? Function()? localhostProfile, String? type, }) { return SeccompProfile(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+SeccompProfile copyWith({String? Function()? localhostProfile, String? type, }) {return SeccompProfile(
   localhostProfile: localhostProfile != null ? localhostProfile() : this.localhostProfile,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SeccompProfile &&
           localhostProfile == other.localhostProfile &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(localhostProfile, type); } 
-@override String toString() { return 'SeccompProfile(localhostProfile: $localhostProfile, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(localhostProfile, type);}
+@override String toString() {return 'SeccompProfile(localhostProfile: $localhostProfile, type: $type)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The registry type.
 @immutable final class PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType {const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._(this.value);
 
-factory PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType.fromJson(String json) { return switch (json) {
+factory PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType.fromJson(String json) {return switch (json) {
   'maven_repository' => mavenRepository,
   'nuget_feed' => nugetFeed,
   'goproxy_server' => goproxyServer,
@@ -20,7 +20,7 @@ factory PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType.fromJson(St
   'python_index' => pythonIndex,
   'terraform_registry' => terraformRegistry,
   _ => PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._(json),
-}; }
+};}
 
 static const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType mavenRepository = PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._('maven_repository');
 
@@ -56,23 +56,23 @@ static const List<PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType($value)';}
+}
 /// Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
 @immutable final class PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility {const PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility._(this.value);
 
-factory PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility.fromJson(String json) { return switch (json) {
+factory PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility.fromJson(String json) {return switch (json) {
   'all' => all,
   'private' => private,
   'selected' => selected,
   _ => PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility._(json),
-}; }
+};}
 
 static const PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility all = PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility._('all');
 
@@ -84,17 +84,17 @@ static const List<PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility($value)';}
+}
 @immutable final class PrivateRegistriesUpdateOrgPrivateRegistryRequest {const PrivateRegistriesUpdateOrgPrivateRegistryRequest({this.registryType, this.url, this.username = const Omittable.absent(), this.replacesBase, this.encryptedValue, this.keyId, this.visibility, this.selectedRepositoryIds, });
 
-factory PrivateRegistriesUpdateOrgPrivateRegistryRequest.fromJson(Map<String, dynamic> json) { return PrivateRegistriesUpdateOrgPrivateRegistryRequest(
+factory PrivateRegistriesUpdateOrgPrivateRegistryRequest.fromJson(Map<String, dynamic> json) {return PrivateRegistriesUpdateOrgPrivateRegistryRequest(
   registryType: json['registry_type'] != null ? PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType.fromJson(json['registry_type'] as String) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
   username: json.containsKey('username') ? Omittable(json['username'] as String?) : const Omittable.absent(),
@@ -103,7 +103,7 @@ factory PrivateRegistriesUpdateOrgPrivateRegistryRequest.fromJson(Map<String, dy
   keyId: json['key_id'] as String?,
   visibility: json['visibility'] != null ? PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility.fromJson(json['visibility'] as String) : null,
   selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// The registry type.
 final PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType? registryType;
@@ -130,8 +130,8 @@ final PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility? visibility;
 final List<int>? selectedRepositoryIds;
 
 /// The value with the schema default applied when absent.
-bool get replacesBaseOrDefault { return replacesBase ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get replacesBaseOrDefault {return replacesBase ?? false;}
+Map<String, dynamic> toJson() {return {
   if (registryType != null) 'registry_type': registryType?.toJson(),
   if (url != null) 'url': url?.toString(),
   if (username.isPresent) 'username': username.value,
@@ -140,9 +140,9 @@ Map<String, dynamic> toJson() { return {
   'key_id': ?keyId,
   if (visibility != null) 'visibility': visibility?.toJson(),
   'selected_repository_ids': ?selectedRepositoryIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'registry_type', 'url', 'username', 'replaces_base', 'encrypted_value', 'key_id', 'visibility', 'selected_repository_ids'}.contains(key)); } 
-PrivateRegistriesUpdateOrgPrivateRegistryRequest copyWith({PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType? Function()? registryType, Uri? Function()? url, Omittable<String?>? username, bool? Function()? replacesBase, String? Function()? encryptedValue, String? Function()? keyId, PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility? Function()? visibility, List<int>? Function()? selectedRepositoryIds, }) { return PrivateRegistriesUpdateOrgPrivateRegistryRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'registry_type', 'url', 'username', 'replaces_base', 'encrypted_value', 'key_id', 'visibility', 'selected_repository_ids'}.contains(key));}
+PrivateRegistriesUpdateOrgPrivateRegistryRequest copyWith({PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType? Function()? registryType, Uri? Function()? url, Omittable<String?>? username, bool? Function()? replacesBase, String? Function()? encryptedValue, String? Function()? keyId, PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility? Function()? visibility, List<int>? Function()? selectedRepositoryIds, }) {return PrivateRegistriesUpdateOrgPrivateRegistryRequest(
   registryType: registryType != null ? registryType() : this.registryType,
   url: url != null ? url() : this.url,
   username: username ?? this.username,
@@ -151,8 +151,8 @@ PrivateRegistriesUpdateOrgPrivateRegistryRequest copyWith({PrivateRegistriesUpda
   keyId: keyId != null ? keyId() : this.keyId,
   visibility: visibility != null ? visibility() : this.visibility,
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PrivateRegistriesUpdateOrgPrivateRegistryRequest &&
           registryType == other.registryType &&
           url == other.url &&
@@ -161,7 +161,7 @@ PrivateRegistriesUpdateOrgPrivateRegistryRequest copyWith({PrivateRegistriesUpda
           encryptedValue == other.encryptedValue &&
           keyId == other.keyId &&
           visibility == other.visibility &&
-          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hash(registryType, url, username, replacesBase, encryptedValue, keyId, visibility, Object.hashAll(selectedRepositoryIds ?? const [])); } 
-@override String toString() { return 'PrivateRegistriesUpdateOrgPrivateRegistryRequest(registryType: $registryType, url: $url, username: $username, replacesBase: $replacesBase, encryptedValue: $encryptedValue, keyId: $keyId, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds)'; } 
- }
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds);}
+@override int get hashCode {return Object.hash(registryType, url, username, replacesBase, encryptedValue, keyId, visibility, Object.hashAll(selectedRepositoryIds ?? const []));}
+@override String toString() {return 'PrivateRegistriesUpdateOrgPrivateRegistryRequest(registryType: $registryType, url: $url, username: $username, replacesBase: $replacesBase, encryptedValue: $encryptedValue, keyId: $keyId, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds)';}
+}

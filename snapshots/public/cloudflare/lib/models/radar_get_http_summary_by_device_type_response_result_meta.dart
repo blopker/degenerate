@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_summary_by_device_type_response_result_meta_confidence_info.dart';import 'radar_get_http_summary_by_device_type_response_result_meta_date_range.dart';import 'radar_get_http_summary_by_device_type_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 @immutable final class RadarGetHttpSummaryByDeviceTypeResponseResultMetaNormalization {const RadarGetHttpSummaryByDeviceTypeResponseResultMetaNormalization._(this.value);
 
-factory RadarGetHttpSummaryByDeviceTypeResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+factory RadarGetHttpSummaryByDeviceTypeResponseResultMetaNormalization.fromJson(String json) {return switch (json) {
   'PERCENTAGE' => percentage,
   'MIN0_MAX' => min0Max,
   'MIN_MAX' => minMax,
@@ -13,7 +13,7 @@ factory RadarGetHttpSummaryByDeviceTypeResponseResultMetaNormalization.fromJson(
   'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
   'RATIO' => ratio,
   _ => RadarGetHttpSummaryByDeviceTypeResponseResultMetaNormalization._(json),
-}; }
+};}
 
 static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaNormalization percentage = RadarGetHttpSummaryByDeviceTypeResponseResultMetaNormalization._('PERCENTAGE');
 
@@ -35,24 +35,24 @@ static const List<RadarGetHttpSummaryByDeviceTypeResponseResultMetaNormalization
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpSummaryByDeviceTypeResponseResultMetaNormalization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpSummaryByDeviceTypeResponseResultMetaNormalization($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpSummaryByDeviceTypeResponseResultMetaNormalization && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpSummaryByDeviceTypeResponseResultMetaNormalization($value)';}
+}
 /// Metadata for the results.
 @immutable final class RadarGetHttpSummaryByDeviceTypeResponseResultMeta {const RadarGetHttpSummaryByDeviceTypeResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
-factory RadarGetHttpSummaryByDeviceTypeResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByDeviceTypeResponseResultMeta(
+factory RadarGetHttpSummaryByDeviceTypeResponseResultMeta.fromJson(Map<String, dynamic> json) {return RadarGetHttpSummaryByDeviceTypeResponseResultMeta(
   confidenceInfo: RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetHttpSummaryByDeviceTypeResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
   lastUpdated: DateTime.parse(json['lastUpdated'] as String),
   normalization: RadarGetHttpSummaryByDeviceTypeResponseResultMetaNormalization.fromJson(json['normalization'] as String),
   units: (json['units'] as List<dynamic>).map((e) => RadarGetHttpSummaryByDeviceTypeResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfo confidenceInfo;
 
@@ -67,32 +67,32 @@ final RadarGetHttpSummaryByDeviceTypeResponseResultMetaNormalization normalizati
 /// Measurement units for the results.
 final List<RadarGetHttpSummaryByDeviceTypeResponseResultMetaUnits> units;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'confidenceInfo': confidenceInfo.toJson(),
   'dateRange': dateRange.map((e) => e.toJson()).toList(),
   'lastUpdated': lastUpdated.toIso8601String(),
   'normalization': normalization.toJson(),
   'units': units.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('confidenceInfo') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('confidenceInfo') &&
       json.containsKey('dateRange') &&
       json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
       json.containsKey('normalization') &&
-      json.containsKey('units'); } 
-RadarGetHttpSummaryByDeviceTypeResponseResultMeta copyWith({RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetHttpSummaryByDeviceTypeResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetHttpSummaryByDeviceTypeResponseResultMetaNormalization? normalization, List<RadarGetHttpSummaryByDeviceTypeResponseResultMetaUnits>? units, }) { return RadarGetHttpSummaryByDeviceTypeResponseResultMeta(
+      json.containsKey('units');}
+RadarGetHttpSummaryByDeviceTypeResponseResultMeta copyWith({RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetHttpSummaryByDeviceTypeResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetHttpSummaryByDeviceTypeResponseResultMetaNormalization? normalization, List<RadarGetHttpSummaryByDeviceTypeResponseResultMetaUnits>? units, }) {return RadarGetHttpSummaryByDeviceTypeResponseResultMeta(
   confidenceInfo: confidenceInfo ?? this.confidenceInfo,
   dateRange: dateRange ?? this.dateRange,
   lastUpdated: lastUpdated ?? this.lastUpdated,
   normalization: normalization ?? this.normalization,
   units: units ?? this.units,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetHttpSummaryByDeviceTypeResponseResultMeta &&
           confidenceInfo == other.confidenceInfo &&
           listEquals(dateRange, other.dateRange) &&
           lastUpdated == other.lastUpdated &&
           normalization == other.normalization &&
-          listEquals(units, other.units); } 
-@override int get hashCode { return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
-@override String toString() { return 'RadarGetHttpSummaryByDeviceTypeResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
- }
+          listEquals(units, other.units);}
+@override int get hashCode {return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units));}
+@override String toString() {return 'RadarGetHttpSummaryByDeviceTypeResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)';}
+}

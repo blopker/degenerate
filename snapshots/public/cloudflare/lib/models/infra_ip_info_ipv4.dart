@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The target's IPv4 address
 @immutable final class InfraIpInfoIpv4 {const InfraIpInfoIpv4({this.ipAddr, this.virtualNetworkId, });
 
-factory InfraIpInfoIpv4.fromJson(Map<String, dynamic> json) { return InfraIpInfoIpv4(
+factory InfraIpInfoIpv4.fromJson(Map<String, dynamic> json) {return InfraIpInfoIpv4(
   ipAddr: json['ip_addr'] as String?,
   virtualNetworkId: json['virtual_network_id'] as String?,
-); }
+);}
 
 /// IP address of the target
 final String? ipAddr;
@@ -14,19 +14,19 @@ final String? ipAddr;
 /// (optional) Private virtual network identifier for the target. If omitted, the default virtual network ID will be used.
 final String? virtualNetworkId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ip_addr': ?ipAddr,
   'virtual_network_id': ?virtualNetworkId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ip_addr', 'virtual_network_id'}.contains(key)); } 
-InfraIpInfoIpv4 copyWith({String? Function()? ipAddr, String? Function()? virtualNetworkId, }) { return InfraIpInfoIpv4(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ip_addr', 'virtual_network_id'}.contains(key));}
+InfraIpInfoIpv4 copyWith({String? Function()? ipAddr, String? Function()? virtualNetworkId, }) {return InfraIpInfoIpv4(
   ipAddr: ipAddr != null ? ipAddr() : this.ipAddr,
   virtualNetworkId: virtualNetworkId != null ? virtualNetworkId() : this.virtualNetworkId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InfraIpInfoIpv4 &&
           ipAddr == other.ipAddr &&
-          virtualNetworkId == other.virtualNetworkId; } 
-@override int get hashCode { return Object.hash(ipAddr, virtualNetworkId); } 
-@override String toString() { return 'InfraIpInfoIpv4(ipAddr: $ipAddr, virtualNetworkId: $virtualNetworkId)'; } 
- }
+          virtualNetworkId == other.virtualNetworkId;}
+@override int get hashCode {return Object.hash(ipAddr, virtualNetworkId);}
+@override String toString() {return 'InfraIpInfoIpv4(ipAddr: $ipAddr, virtualNetworkId: $virtualNetworkId)';}
+}

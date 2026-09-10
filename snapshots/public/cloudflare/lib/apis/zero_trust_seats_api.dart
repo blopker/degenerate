@@ -13,7 +13,7 @@ final class ZeroTrustSeatsApi with ApiExecutor {const ZeroTrustSeatsApi(this.api
 /// Removes a user from a Zero Trust seat when both `access_seat` and `gateway_seat` are set to false.
 ///
 /// `PATCH /accounts/{account_id}/access/seats`
-Future<ApiResult<List<AccessSeats>?, ResponseCommonFailure4>> zeroTrustSeatsUpdateAUserSeat({required AccessIdentifier accountId, required List<AccessSeat> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessSeats>?, ResponseCommonFailure4>> zeroTrustSeatsUpdateAUserSeat({required AccessIdentifier accountId, required List<AccessSeat> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -41,5 +41,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

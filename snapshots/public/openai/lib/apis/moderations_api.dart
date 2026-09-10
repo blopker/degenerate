@@ -13,7 +13,7 @@ final class ModerationsApi with ApiExecutor {const ModerationsApi(this.apiConfig
 /// 
 ///
 /// `POST /moderations`
-Future<ApiResult<CreateModerationResponse, Never>> createModeration({required CreateModerationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateModerationResponse, Never>> createModeration({required CreateModerationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -31,5 +31,5 @@ final json = jsonDecode(response.body);
 return CreateModerationResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PayPerCrawlDaricZoneCanBeEnabled {const PayPerCrawlDaricZoneCanBeEnabled({this.canBeEnabled, this.id, });
 
-factory PayPerCrawlDaricZoneCanBeEnabled.fromJson(Map<String, dynamic> json) { return PayPerCrawlDaricZoneCanBeEnabled(
+factory PayPerCrawlDaricZoneCanBeEnabled.fromJson(Map<String, dynamic> json) {return PayPerCrawlDaricZoneCanBeEnabled(
   canBeEnabled: json['can_be_enabled'] as bool?,
   id: json['id'] as String?,
-); }
+);}
 
 final bool? canBeEnabled;
 
 final String? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'can_be_enabled': ?canBeEnabled,
   'id': ?id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_be_enabled', 'id'}.contains(key)); } 
-PayPerCrawlDaricZoneCanBeEnabled copyWith({bool? Function()? canBeEnabled, String? Function()? id, }) { return PayPerCrawlDaricZoneCanBeEnabled(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'can_be_enabled', 'id'}.contains(key));}
+PayPerCrawlDaricZoneCanBeEnabled copyWith({bool? Function()? canBeEnabled, String? Function()? id, }) {return PayPerCrawlDaricZoneCanBeEnabled(
   canBeEnabled: canBeEnabled != null ? canBeEnabled() : this.canBeEnabled,
   id: id != null ? id() : this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PayPerCrawlDaricZoneCanBeEnabled &&
           canBeEnabled == other.canBeEnabled &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(canBeEnabled, id); } 
-@override String toString() { return 'PayPerCrawlDaricZoneCanBeEnabled(canBeEnabled: $canBeEnabled, id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return Object.hash(canBeEnabled, id);}
+@override String toString() {return 'PayPerCrawlDaricZoneCanBeEnabled(canBeEnabled: $canBeEnabled, id: $id)';}
+}

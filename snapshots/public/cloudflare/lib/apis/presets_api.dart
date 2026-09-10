@@ -13,7 +13,7 @@ final class PresetsApi with ApiExecutor {const PresetsApi(this.apiConfig);
 /// Fetches all the presets belonging to an App.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/presets`
-Future<ApiResult<GetPresetsResponse, Never>> getPresets({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, double? perPage, double? pageNo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPresetsResponse, Never>> getPresets({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, double? perPage, double? pageNo, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -40,13 +40,13 @@ final json = jsonDecode(response.body);
 return GetPresetsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create a preset
 ///
 /// Creates a preset belonging to the current App
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/presets`
-Future<ApiResult<PostPresetsResponse, Never>> postPresets({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required RealtimekitPreset body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostPresetsResponse, Never>> postPresets({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required RealtimekitPreset body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -64,13 +64,13 @@ final json = jsonDecode(response.body);
 return PostPresetsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Fetch details of a preset
 ///
 /// Fetches details of a preset using the provided preset ID
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}`
-Future<ApiResult<GetPresetsPresetIdResponse, Never>> getPresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetPresetsPresetIdResponse, Never>> getPresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -86,13 +86,13 @@ final json = jsonDecode(response.body);
 return GetPresetsPresetIdResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Update a preset
 ///
 /// Update a preset by the provided preset ID
 ///
 /// `PATCH /accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}`
-Future<ApiResult<PatchPresetsPresetIdResponse, Never>> patchPresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, required RealtimekitUpdatePreset body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PatchPresetsPresetIdResponse, Never>> patchPresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, required RealtimekitUpdatePreset body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -110,13 +110,13 @@ final json = jsonDecode(response.body);
 return PatchPresetsPresetIdResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete a preset
 ///
 /// Deletes a preset using the provided preset ID
 ///
 /// `DELETE /accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}`
-Future<ApiResult<DeletePresetsPresetIdResponse, Never>> deletePresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletePresetsPresetIdResponse, Never>> deletePresetsPresetId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String presetId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -132,5 +132,5 @@ final json = jsonDecode(response.body);
 return DeletePresetsPresetIdResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigCreateProvidersRequest {const AigConfigCreateProvidersRequest({required this.alias, required this.defaultConfig, required this.providerSlug, required this.secret, required this.secretId, this.rateLimit, this.rateLimitPeriod, });
 
-factory AigConfigCreateProvidersRequest.fromJson(Map<String, dynamic> json) { return AigConfigCreateProvidersRequest(
+factory AigConfigCreateProvidersRequest.fromJson(Map<String, dynamic> json) {return AigConfigCreateProvidersRequest(
   alias: json['alias'] as String,
   defaultConfig: json['default_config'] as bool,
   providerSlug: json['provider_slug'] as String,
@@ -10,7 +10,7 @@ factory AigConfigCreateProvidersRequest.fromJson(Map<String, dynamic> json) { re
   rateLimitPeriod: json['rate_limit_period'] != null ? (json['rate_limit_period'] as num).toDouble() : null,
   secret: json['secret'] as String,
   secretId: json['secret_id'] as String,
-); }
+);}
 
 final String alias;
 
@@ -27,8 +27,8 @@ final String secret;
 final String secretId;
 
 /// The value with the schema default applied when absent.
-double get rateLimitPeriodOrDefault { return rateLimitPeriod ?? 60.0; } 
-Map<String, dynamic> toJson() { return {
+double get rateLimitPeriodOrDefault {return rateLimitPeriod ?? 60.0;}
+Map<String, dynamic> toJson() {return {
   'alias': alias,
   'default_config': defaultConfig,
   'provider_slug': providerSlug,
@@ -36,13 +36,13 @@ Map<String, dynamic> toJson() { return {
   'rate_limit_period': ?rateLimitPeriod,
   'secret': secret,
   'secret_id': secretId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias') && json['alias'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('alias') && json['alias'] is String &&
       json.containsKey('default_config') && json['default_config'] is bool &&
       json.containsKey('provider_slug') && json['provider_slug'] is String &&
       json.containsKey('secret') && json['secret'] is String &&
-      json.containsKey('secret_id') && json['secret_id'] is String; } 
-AigConfigCreateProvidersRequest copyWith({String? alias, bool? defaultConfig, String? providerSlug, double? Function()? rateLimit, double? Function()? rateLimitPeriod, String? secret, String? secretId, }) { return AigConfigCreateProvidersRequest(
+      json.containsKey('secret_id') && json['secret_id'] is String;}
+AigConfigCreateProvidersRequest copyWith({String? alias, bool? defaultConfig, String? providerSlug, double? Function()? rateLimit, double? Function()? rateLimitPeriod, String? secret, String? secretId, }) {return AigConfigCreateProvidersRequest(
   alias: alias ?? this.alias,
   defaultConfig: defaultConfig ?? this.defaultConfig,
   providerSlug: providerSlug ?? this.providerSlug,
@@ -50,8 +50,8 @@ AigConfigCreateProvidersRequest copyWith({String? alias, bool? defaultConfig, St
   rateLimitPeriod: rateLimitPeriod != null ? rateLimitPeriod() : this.rateLimitPeriod,
   secret: secret ?? this.secret,
   secretId: secretId ?? this.secretId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigCreateProvidersRequest &&
           alias == other.alias &&
           defaultConfig == other.defaultConfig &&
@@ -59,7 +59,7 @@ AigConfigCreateProvidersRequest copyWith({String? alias, bool? defaultConfig, St
           rateLimit == other.rateLimit &&
           rateLimitPeriod == other.rateLimitPeriod &&
           secret == other.secret &&
-          secretId == other.secretId; } 
-@override int get hashCode { return Object.hash(alias, defaultConfig, providerSlug, rateLimit, rateLimitPeriod, secret, secretId); } 
-@override String toString() { return 'AigConfigCreateProvidersRequest(alias: $alias, defaultConfig: $defaultConfig, providerSlug: $providerSlug, rateLimit: $rateLimit, rateLimitPeriod: $rateLimitPeriod, secret: $secret, secretId: $secretId)'; } 
- }
+          secretId == other.secretId;}
+@override int get hashCode {return Object.hash(alias, defaultConfig, providerSlug, rateLimit, rateLimitPeriod, secret, secretId);}
+@override String toString() {return 'AigConfigCreateProvidersRequest(alias: $alias, defaultConfig: $defaultConfig, providerSlug: $providerSlug, rateLimit: $rateLimit, rateLimitPeriod: $rateLimitPeriod, secret: $secret, secretId: $secretId)';}
+}

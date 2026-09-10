@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_connection_schema.dart';import 'cloudflare_pipelines_format.dart';import 'cloudflare_pipelines_r2_data_catalog_table_public.dart';import 'cloudflare_pipelines_r2_table_public.dart';import 'sinks_by_sink_id_response_result_config.dart';/// Specifies the type of sink.
 @immutable final class SinksBySinkIdResponseResultType {const SinksBySinkIdResponseResultType._(this.value);
 
-factory SinksBySinkIdResponseResultType.fromJson(String json) { return switch (json) {
+factory SinksBySinkIdResponseResultType.fromJson(String json) {return switch (json) {
   'r2' => r2,
   'r2_data_catalog' => r2DataCatalog,
   _ => SinksBySinkIdResponseResultType._(json),
-}; }
+};}
 
 static const SinksBySinkIdResponseResultType r2 = SinksBySinkIdResponseResultType._('r2');
 
@@ -17,17 +17,17 @@ static const List<SinksBySinkIdResponseResultType> values = [r2, r2DataCatalog];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SinksBySinkIdResponseResultType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SinksBySinkIdResponseResultType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SinksBySinkIdResponseResultType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SinksBySinkIdResponseResultType($value)';}
+}
 @immutable final class SinksBySinkIdResponseResult {const SinksBySinkIdResponseResult({required this.createdAt, required this.id, required this.modifiedAt, required this.name, required this.type, this.config, this.format, this.schema, });
 
-factory SinksBySinkIdResponseResult.fromJson(Map<String, dynamic> json) { return SinksBySinkIdResponseResult(
+factory SinksBySinkIdResponseResult.fromJson(Map<String, dynamic> json) {return SinksBySinkIdResponseResult(
   config: json['config'] != null ? OneOf2.parse(json['config'], fromA: (v) => CloudflarePipelinesR2TablePublic.fromJson(v as Map<String, dynamic>), fromB: (v) => CloudflarePipelinesR2DataCatalogTablePublic.fromJson(v as Map<String, dynamic>),) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
@@ -36,7 +36,7 @@ factory SinksBySinkIdResponseResult.fromJson(Map<String, dynamic> json) { return
   name: json['name'] as String,
   schema: json['schema'] != null ? CloudflarePipelinesConnectionSchema.fromJson(json['schema'] as Map<String, dynamic>) : null,
   type: SinksBySinkIdResponseResultType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Defines the configuration of the R2 Sink.
 final SinksBySinkIdResponseResultConfig? config;
@@ -58,7 +58,7 @@ final CloudflarePipelinesConnectionSchema? schema;
 /// Specifies the type of sink.
 final SinksBySinkIdResponseResultType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (config != null) 'config': config?.toJson(),
   'created_at': createdAt.toIso8601String(),
   if (format != null) 'format': format?.toJson(),
@@ -67,13 +67,13 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   if (schema != null) 'schema': schema?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('type'); } 
-SinksBySinkIdResponseResult copyWith({SinksBySinkIdResponseResultConfig? Function()? config, DateTime? createdAt, CloudflarePipelinesFormat? Function()? format, String? id, DateTime? modifiedAt, String? name, CloudflarePipelinesConnectionSchema? Function()? schema, SinksBySinkIdResponseResultType? type, }) { return SinksBySinkIdResponseResult(
+      json.containsKey('type');}
+SinksBySinkIdResponseResult copyWith({SinksBySinkIdResponseResultConfig? Function()? config, DateTime? createdAt, CloudflarePipelinesFormat? Function()? format, String? id, DateTime? modifiedAt, String? name, CloudflarePipelinesConnectionSchema? Function()? schema, SinksBySinkIdResponseResultType? type, }) {return SinksBySinkIdResponseResult(
   config: config != null ? config() : this.config,
   createdAt: createdAt ?? this.createdAt,
   format: format != null ? format() : this.format,
@@ -82,8 +82,8 @@ SinksBySinkIdResponseResult copyWith({SinksBySinkIdResponseResultConfig? Functio
   name: name ?? this.name,
   schema: schema != null ? schema() : this.schema,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SinksBySinkIdResponseResult &&
           config == other.config &&
           createdAt == other.createdAt &&
@@ -92,7 +92,7 @@ SinksBySinkIdResponseResult copyWith({SinksBySinkIdResponseResultConfig? Functio
           modifiedAt == other.modifiedAt &&
           name == other.name &&
           schema == other.schema &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(config, createdAt, format, id, modifiedAt, name, schema, type); } 
-@override String toString() { return 'SinksBySinkIdResponseResult(config: $config, createdAt: $createdAt, format: $format, id: $id, modifiedAt: $modifiedAt, name: $name, schema: $schema, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(config, createdAt, format, id, modifiedAt, name, schema, type);}
+@override String toString() {return 'SinksBySinkIdResponseResult(config: $config, createdAt: $createdAt, format: $format, id: $id, modifiedAt: $modifiedAt, name: $name, schema: $schema, type: $type)';}
+}

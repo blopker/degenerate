@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';import 'pull_request_minimal.dart';import 'referenced_workflow.dart';import 'simple_commit.dart';import 'simple_user.dart';/// An invocation of a workflow
 @immutable final class WorkflowRun {const WorkflowRun({required this.event, required this.headRepository, required this.nodeId, required this.repository, required this.headCommit, required this.headBranch, required this.headSha, required this.path, required this.runNumber, required this.workflowUrl, required this.rerunUrl, required this.id, required this.status, required this.conclusion, required this.workflowId, required this.url, required this.htmlUrl, required this.pullRequests, required this.createdAt, required this.updatedAt, required this.cancelUrl, required this.artifactsUrl, required this.checkSuiteUrl, required this.displayTitle, required this.logsUrl, required this.jobsUrl, this.triggeringActor, this.actor, this.referencedWorkflows = const Omittable.absent(), this.previousAttemptUrl = const Omittable.absent(), this.runAttempt, this.checkSuiteNodeId, this.checkSuiteId, this.name = const Omittable.absent(), this.headRepositoryId, this.runStartedAt, });
 
-factory WorkflowRun.fromJson(Map<String, dynamic> json) { return WorkflowRun(
+factory WorkflowRun.fromJson(Map<String, dynamic> json) {return WorkflowRun(
   id: (json['id'] as num).toInt(),
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   nodeId: json['node_id'] as String,
@@ -40,7 +40,7 @@ factory WorkflowRun.fromJson(Map<String, dynamic> json) { return WorkflowRun(
   headRepository: MinimalRepository.fromJson(json['head_repository'] as Map<String, dynamic>),
   headRepositoryId: json['head_repository_id'] != null ? (json['head_repository_id'] as num).toInt() : null,
   displayTitle: json['display_title'] as String,
-); }
+);}
 
 /// The ID of the workflow run.
 final int id;
@@ -135,7 +135,7 @@ final int? headRepositoryId;
 /// The event-specific title associated with the run or the run-name if set, or the value of `run-name` if it is set in the workflow.
 final String displayTitle;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   if (name.isPresent) 'name': name.value,
   'node_id': nodeId,
@@ -172,8 +172,8 @@ Map<String, dynamic> toJson() { return {
   'head_repository': headRepository.toJson(),
   'head_repository_id': ?headRepositoryId,
   'display_title': displayTitle,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('head_branch') && (json['head_branch'] == null || json['head_branch'] is String) &&
       json.containsKey('head_sha') && json['head_sha'] is String &&
@@ -198,8 +198,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('head_commit') &&
       json.containsKey('repository') &&
       json.containsKey('head_repository') &&
-      json.containsKey('display_title') && json['display_title'] is String; } 
-WorkflowRun copyWith({int? id, Omittable<String?>? name, String? nodeId, int? Function()? checkSuiteId, String? Function()? checkSuiteNodeId, String? Function()? headBranch, String? headSha, String? path, int? runNumber, int? Function()? runAttempt, Omittable<List<ReferencedWorkflow>?>? referencedWorkflows, String? event, String? Function()? status, String? Function()? conclusion, int? workflowId, String? url, String? htmlUrl, List<PullRequestMinimal>? Function()? pullRequests, DateTime? createdAt, DateTime? updatedAt, SimpleUser? Function()? actor, SimpleUser? Function()? triggeringActor, DateTime? Function()? runStartedAt, String? jobsUrl, String? logsUrl, String? checkSuiteUrl, String? artifactsUrl, String? cancelUrl, String? rerunUrl, Omittable<String?>? previousAttemptUrl, String? workflowUrl, SimpleCommit? Function()? headCommit, MinimalRepository? repository, MinimalRepository? headRepository, int? Function()? headRepositoryId, String? displayTitle, }) { return WorkflowRun(
+      json.containsKey('display_title') && json['display_title'] is String;}
+WorkflowRun copyWith({int? id, Omittable<String?>? name, String? nodeId, int? Function()? checkSuiteId, String? Function()? checkSuiteNodeId, String? Function()? headBranch, String? headSha, String? path, int? runNumber, int? Function()? runAttempt, Omittable<List<ReferencedWorkflow>?>? referencedWorkflows, String? event, String? Function()? status, String? Function()? conclusion, int? workflowId, String? url, String? htmlUrl, List<PullRequestMinimal>? Function()? pullRequests, DateTime? createdAt, DateTime? updatedAt, SimpleUser? Function()? actor, SimpleUser? Function()? triggeringActor, DateTime? Function()? runStartedAt, String? jobsUrl, String? logsUrl, String? checkSuiteUrl, String? artifactsUrl, String? cancelUrl, String? rerunUrl, Omittable<String?>? previousAttemptUrl, String? workflowUrl, SimpleCommit? Function()? headCommit, MinimalRepository? repository, MinimalRepository? headRepository, int? Function()? headRepositoryId, String? displayTitle, }) {return WorkflowRun(
   id: id ?? this.id,
   name: name ?? this.name,
   nodeId: nodeId ?? this.nodeId,
@@ -236,8 +236,8 @@ WorkflowRun copyWith({int? id, Omittable<String?>? name, String? nodeId, int? Fu
   headRepository: headRepository ?? this.headRepository,
   headRepositoryId: headRepositoryId != null ? headRepositoryId() : this.headRepositoryId,
   displayTitle: displayTitle ?? this.displayTitle,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkflowRun &&
           id == other.id &&
           name == other.name &&
@@ -275,7 +275,7 @@ WorkflowRun copyWith({int? id, Omittable<String?>? name, String? nodeId, int? Fu
           repository == other.repository &&
           headRepository == other.headRepository &&
           headRepositoryId == other.headRepositoryId &&
-          displayTitle == other.displayTitle; } 
-@override int get hashCode { return Object.hashAll([id, name, nodeId, checkSuiteId, checkSuiteNodeId, headBranch, headSha, path, runNumber, runAttempt, Object.hashAll(referencedWorkflows.value ?? const []), event, status, conclusion, workflowId, url, htmlUrl, Object.hashAll(pullRequests ?? const []), createdAt, updatedAt, actor, triggeringActor, runStartedAt, jobsUrl, logsUrl, checkSuiteUrl, artifactsUrl, cancelUrl, rerunUrl, previousAttemptUrl, workflowUrl, headCommit, repository, headRepository, headRepositoryId, displayTitle]); } 
-@override String toString() { return 'WorkflowRun(id: $id, name: $name, nodeId: $nodeId, checkSuiteId: $checkSuiteId, checkSuiteNodeId: $checkSuiteNodeId, headBranch: $headBranch, headSha: $headSha, path: $path, runNumber: $runNumber, runAttempt: $runAttempt, referencedWorkflows: $referencedWorkflows, event: $event, status: $status, conclusion: $conclusion, workflowId: $workflowId, url: $url, htmlUrl: $htmlUrl, pullRequests: $pullRequests, createdAt: $createdAt, updatedAt: $updatedAt, actor: $actor, triggeringActor: $triggeringActor, runStartedAt: $runStartedAt, jobsUrl: $jobsUrl, logsUrl: $logsUrl, checkSuiteUrl: $checkSuiteUrl, artifactsUrl: $artifactsUrl, cancelUrl: $cancelUrl, rerunUrl: $rerunUrl, previousAttemptUrl: $previousAttemptUrl, workflowUrl: $workflowUrl, headCommit: $headCommit, repository: $repository, headRepository: $headRepository, headRepositoryId: $headRepositoryId, displayTitle: $displayTitle)'; } 
- }
+          displayTitle == other.displayTitle;}
+@override int get hashCode {return Object.hashAll([id, name, nodeId, checkSuiteId, checkSuiteNodeId, headBranch, headSha, path, runNumber, runAttempt, Object.hashAll(referencedWorkflows.value ?? const []), event, status, conclusion, workflowId, url, htmlUrl, Object.hashAll(pullRequests ?? const []), createdAt, updatedAt, actor, triggeringActor, runStartedAt, jobsUrl, logsUrl, checkSuiteUrl, artifactsUrl, cancelUrl, rerunUrl, previousAttemptUrl, workflowUrl, headCommit, repository, headRepository, headRepositoryId, displayTitle]);}
+@override String toString() {return 'WorkflowRun(id: $id, name: $name, nodeId: $nodeId, checkSuiteId: $checkSuiteId, checkSuiteNodeId: $checkSuiteNodeId, headBranch: $headBranch, headSha: $headSha, path: $path, runNumber: $runNumber, runAttempt: $runAttempt, referencedWorkflows: $referencedWorkflows, event: $event, status: $status, conclusion: $conclusion, workflowId: $workflowId, url: $url, htmlUrl: $htmlUrl, pullRequests: $pullRequests, createdAt: $createdAt, updatedAt: $updatedAt, actor: $actor, triggeringActor: $triggeringActor, runStartedAt: $runStartedAt, jobsUrl: $jobsUrl, logsUrl: $logsUrl, checkSuiteUrl: $checkSuiteUrl, artifactsUrl: $artifactsUrl, cancelUrl: $cancelUrl, rerunUrl: $rerunUrl, previousAttemptUrl: $previousAttemptUrl, workflowUrl: $workflowUrl, headCommit: $headCommit, repository: $repository, headRepository: $headRepository, headRepositoryId: $headRepositoryId, displayTitle: $displayTitle)';}
+}

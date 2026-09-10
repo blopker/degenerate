@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsRequestNaverPayDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestNaverPayDisplayPreferencePreference._(this.value);
 
-factory PostPaymentMethodConfigurationsRequestNaverPayDisplayPreferencePreference.fromJson(String json) { return switch (json) {
+factory PostPaymentMethodConfigurationsRequestNaverPayDisplayPreferencePreference.fromJson(String json) {return switch (json) {
   'none' => none,
   'off' => off,
   'on' => $on,
   _ => PostPaymentMethodConfigurationsRequestNaverPayDisplayPreferencePreference._(json),
-}; }
+};}
 
 static const PostPaymentMethodConfigurationsRequestNaverPayDisplayPreferencePreference none = PostPaymentMethodConfigurationsRequestNaverPayDisplayPreferencePreference._('none');
 
@@ -19,32 +19,32 @@ static const List<PostPaymentMethodConfigurationsRequestNaverPayDisplayPreferenc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentMethodConfigurationsRequestNaverPayDisplayPreferencePreference && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestNaverPayDisplayPreferencePreference($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentMethodConfigurationsRequestNaverPayDisplayPreferencePreference && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestNaverPayDisplayPreferencePreference($value)';}
+}
 @immutable final class PostPaymentMethodConfigurationsRequestNaverPayDisplayPreference {const PostPaymentMethodConfigurationsRequestNaverPayDisplayPreference({this.preference});
 
-factory PostPaymentMethodConfigurationsRequestNaverPayDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestNaverPayDisplayPreference(
+factory PostPaymentMethodConfigurationsRequestNaverPayDisplayPreference.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsRequestNaverPayDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsRequestNaverPayDisplayPreferencePreference.fromJson(json['preference'] as String) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsRequestNaverPayDisplayPreferencePreference? preference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (preference != null) 'preference': preference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsRequestNaverPayDisplayPreference copyWith({PostPaymentMethodConfigurationsRequestNaverPayDisplayPreferencePreference? Function()? preference}) { return PostPaymentMethodConfigurationsRequestNaverPayDisplayPreference(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'preference'}.contains(key));}
+PostPaymentMethodConfigurationsRequestNaverPayDisplayPreference copyWith({PostPaymentMethodConfigurationsRequestNaverPayDisplayPreferencePreference? Function()? preference}) {return PostPaymentMethodConfigurationsRequestNaverPayDisplayPreference(
   preference: preference != null ? preference() : this.preference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsRequestNaverPayDisplayPreference &&
-          preference == other.preference; } 
-@override int get hashCode { return preference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestNaverPayDisplayPreference(preference: $preference)'; } 
- }
+          preference == other.preference;}
+@override int get hashCode {return preference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestNaverPayDisplayPreference(preference: $preference)';}
+}

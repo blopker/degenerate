@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MinimalRepositoryLicense {const MinimalRepositoryLicense({this.key, this.name, this.spdxId, this.url = const Omittable.absent(), this.nodeId, });
 
-factory MinimalRepositoryLicense.fromJson(Map<String, dynamic> json) { return MinimalRepositoryLicense(
+factory MinimalRepositoryLicense.fromJson(Map<String, dynamic> json) {return MinimalRepositoryLicense(
   key: json['key'] as String?,
   name: json['name'] as String?,
   spdxId: json['spdx_id'] as String?,
   url: json.containsKey('url') ? Omittable(json['url'] as String?) : const Omittable.absent(),
   nodeId: json['node_id'] as String?,
-); }
+);}
 
 final String? key;
 
@@ -20,28 +20,28 @@ final Omittable<String?> url;
 
 final String? nodeId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': ?key,
   'name': ?name,
   'spdx_id': ?spdxId,
   if (url.isPresent) 'url': url.value,
   'node_id': ?nodeId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'key', 'name', 'spdx_id', 'url', 'node_id'}.contains(key)); } 
-MinimalRepositoryLicense copyWith({String? Function()? key, String? Function()? name, String? Function()? spdxId, Omittable<String?>? url, String? Function()? nodeId, }) { return MinimalRepositoryLicense(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'key', 'name', 'spdx_id', 'url', 'node_id'}.contains(key));}
+MinimalRepositoryLicense copyWith({String? Function()? key, String? Function()? name, String? Function()? spdxId, Omittable<String?>? url, String? Function()? nodeId, }) {return MinimalRepositoryLicense(
   key: key != null ? key() : this.key,
   name: name != null ? name() : this.name,
   spdxId: spdxId != null ? spdxId() : this.spdxId,
   url: url ?? this.url,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MinimalRepositoryLicense &&
           key == other.key &&
           name == other.name &&
           spdxId == other.spdxId &&
           url == other.url &&
-          nodeId == other.nodeId; } 
-@override int get hashCode { return Object.hash(key, name, spdxId, url, nodeId); } 
-@override String toString() { return 'MinimalRepositoryLicense(key: $key, name: $name, spdxId: $spdxId, url: $url, nodeId: $nodeId)'; } 
- }
+          nodeId == other.nodeId;}
+@override int get hashCode {return Object.hash(key, name, spdxId, url, nodeId);}
+@override String toString() {return 'MinimalRepositoryLicense(key: $key, name: $name, spdxId: $spdxId, url: $url, nodeId: $nodeId)';}
+}

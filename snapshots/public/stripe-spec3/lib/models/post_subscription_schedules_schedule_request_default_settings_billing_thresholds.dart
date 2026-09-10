@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_thresholds_param6.dart';@immutable final class PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingThresholdsVariant2 {const PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingThresholdsVariant2._(this.value);
 
-factory PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingThresholdsVariant2.fromJson(String json) { return switch (json) {
+factory PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingThresholdsVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingThresholdsVariant2._(json),
-}; }
+};}
 
 static const PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingThresholdsVariant2 $empty = PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingThresholdsVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSubscriptionSchedulesScheduleRequestDefaultSettingsBilling
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingThresholdsVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingThresholdsVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingThresholdsVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingThresholdsVariant2($value)';}
+}
 
 @immutable
 final class PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingThresholds {

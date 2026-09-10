@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_certificate_authority.dart';import 'tls_certificates_and_hostnames_ssl_dv_validation_errors.dart';import 'tls_certificates_and_hostnames_sslsettings.dart';import 'tls_certificates_and_hostnames_validation_record.dart';/// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
 @immutable final class TlsCertificatesAndHostnamesSslDvBundleMethod {const TlsCertificatesAndHostnamesSslDvBundleMethod._(this.value);
 
-factory TlsCertificatesAndHostnamesSslDvBundleMethod.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesSslDvBundleMethod.fromJson(String json) {return switch (json) {
   'ubiquitous' => ubiquitous,
   'optimal' => optimal,
   'force' => force,
   _ => TlsCertificatesAndHostnamesSslDvBundleMethod._(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesSslDvBundleMethod ubiquitous = TlsCertificatesAndHostnamesSslDvBundleMethod._('ubiquitous');
 
@@ -20,23 +20,23 @@ static const List<TlsCertificatesAndHostnamesSslDvBundleMethod> values = [ubiqui
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSslDvBundleMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSslDvBundleMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesSslDvBundleMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesSslDvBundleMethod($value)';}
+}
 /// Domain control validation (DCV) method used for this hostname.
 @immutable final class TlsCertificatesAndHostnamesSslDvMethod {const TlsCertificatesAndHostnamesSslDvMethod._(this.value);
 
-factory TlsCertificatesAndHostnamesSslDvMethod.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesSslDvMethod.fromJson(String json) {return switch (json) {
   'http' => http,
   'txt' => txt,
   'email' => email,
   _ => TlsCertificatesAndHostnamesSslDvMethod._(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesSslDvMethod http = TlsCertificatesAndHostnamesSslDvMethod._('http');
 
@@ -48,18 +48,18 @@ static const List<TlsCertificatesAndHostnamesSslDvMethod> values = [http, txt, e
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSslDvMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSslDvMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesSslDvMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesSslDvMethod($value)';}
+}
 /// Status of the hostname's SSL certificates.
 @immutable final class TlsCertificatesAndHostnamesSslDvStatus {const TlsCertificatesAndHostnamesSslDvStatus._(this.value);
 
-factory TlsCertificatesAndHostnamesSslDvStatus.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesSslDvStatus.fromJson(String json) {return switch (json) {
   'initializing' => initializing,
   'pending_validation' => pendingValidation,
   'deleted' => deleted,
@@ -82,7 +82,7 @@ factory TlsCertificatesAndHostnamesSslDvStatus.fromJson(String json) { return sw
   'backup_issued' => backupIssued,
   'holding_deployment' => holdingDeployment,
   _ => TlsCertificatesAndHostnamesSslDvStatus._(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesSslDvStatus initializing = TlsCertificatesAndHostnamesSslDvStatus._('initializing');
 
@@ -130,21 +130,21 @@ static const List<TlsCertificatesAndHostnamesSslDvStatus> values = [initializing
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSslDvStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSslDvStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesSslDvStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesSslDvStatus($value)';}
+}
 /// Level of validation to be used for this hostname. Domain validation (dv) must be used.
 @immutable final class TlsCertificatesAndHostnamesSslDvType {const TlsCertificatesAndHostnamesSslDvType._(this.value);
 
-factory TlsCertificatesAndHostnamesSslDvType.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesSslDvType.fromJson(String json) {return switch (json) {
   'dv' => dv,
   _ => TlsCertificatesAndHostnamesSslDvType._(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesSslDvType dv = TlsCertificatesAndHostnamesSslDvType._('dv');
 
@@ -152,17 +152,17 @@ static const List<TlsCertificatesAndHostnamesSslDvType> values = [dv];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSslDvType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSslDvType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesSslDvType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesSslDvType($value)';}
+}
 @immutable final class TlsCertificatesAndHostnamesSslDv {const TlsCertificatesAndHostnamesSslDv({this.bundleMethod, this.certificateAuthority, this.customCertificate, this.customCsrId, this.customKey, this.dcvDelegationRecords, this.expiresOn, this.hosts, this.id, this.issuer, this.method, this.serialNumber, this.settings, this.signature, this.status, this.type, this.uploadedOn, this.validationErrors, this.validationRecords, this.wildcard, });
 
-factory TlsCertificatesAndHostnamesSslDv.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslDv(
+factory TlsCertificatesAndHostnamesSslDv.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesSslDv(
   bundleMethod: json['bundle_method'] != null ? TlsCertificatesAndHostnamesSslDvBundleMethod.fromJson(json['bundle_method'] as String) : null,
   certificateAuthority: json['certificate_authority'] != null ? TlsCertificatesAndHostnamesCertificateAuthority.fromJson(json['certificate_authority'] as String) : null,
   customCertificate: json['custom_certificate'] as String?,
@@ -183,7 +183,7 @@ factory TlsCertificatesAndHostnamesSslDv.fromJson(Map<String, dynamic> json) { r
   validationErrors: (json['validation_errors'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesSslDvValidationErrors.fromJson(e as Map<String, dynamic>)).toList(),
   validationRecords: (json['validation_records'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesValidationRecord.fromJson(e as Map<String, dynamic>)).toList(),
   wildcard: json['wildcard'] as bool?,
-); }
+);}
 
 /// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
 final TlsCertificatesAndHostnamesSslDvBundleMethod? bundleMethod;
@@ -244,8 +244,8 @@ final List<TlsCertificatesAndHostnamesValidationRecord>? validationRecords;
 final bool? wildcard;
 
 /// The value with the schema default applied when absent.
-TlsCertificatesAndHostnamesSslDvBundleMethod get bundleMethodOrDefault { return bundleMethod ?? TlsCertificatesAndHostnamesSslDvBundleMethod.fromJson('ubiquitous'); } 
-Map<String, dynamic> toJson() { return {
+TlsCertificatesAndHostnamesSslDvBundleMethod get bundleMethodOrDefault {return bundleMethod ?? TlsCertificatesAndHostnamesSslDvBundleMethod.fromJson('ubiquitous');}
+Map<String, dynamic> toJson() {return {
   if (bundleMethod != null) 'bundle_method': bundleMethod?.toJson(),
   if (certificateAuthority != null) 'certificate_authority': certificateAuthority?.toJson(),
   'custom_certificate': ?customCertificate,
@@ -266,9 +266,9 @@ Map<String, dynamic> toJson() { return {
   if (validationErrors != null) 'validation_errors': validationErrors?.map((e) => e.toJson()).toList(),
   if (validationRecords != null) 'validation_records': validationRecords?.map((e) => e.toJson()).toList(),
   'wildcard': ?wildcard,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bundle_method', 'certificate_authority', 'custom_certificate', 'custom_csr_id', 'custom_key', 'dcv_delegation_records', 'expires_on', 'hosts', 'id', 'issuer', 'method', 'serial_number', 'settings', 'signature', 'status', 'type', 'uploaded_on', 'validation_errors', 'validation_records', 'wildcard'}.contains(key)); } 
-TlsCertificatesAndHostnamesSslDv copyWith({TlsCertificatesAndHostnamesSslDvBundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesCertificateAuthority? Function()? certificateAuthority, String? Function()? customCertificate, String? Function()? customCsrId, String? Function()? customKey, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? dcvDelegationRecords, DateTime? Function()? expiresOn, List<String>? Function()? hosts, String? Function()? id, String? Function()? issuer, TlsCertificatesAndHostnamesSslDvMethod? Function()? method, String? Function()? serialNumber, TlsCertificatesAndHostnamesSslsettings? Function()? settings, String? Function()? signature, TlsCertificatesAndHostnamesSslDvStatus? Function()? status, TlsCertificatesAndHostnamesSslDvType? Function()? type, DateTime? Function()? uploadedOn, List<TlsCertificatesAndHostnamesSslDvValidationErrors>? Function()? validationErrors, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? validationRecords, bool? Function()? wildcard, }) { return TlsCertificatesAndHostnamesSslDv(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bundle_method', 'certificate_authority', 'custom_certificate', 'custom_csr_id', 'custom_key', 'dcv_delegation_records', 'expires_on', 'hosts', 'id', 'issuer', 'method', 'serial_number', 'settings', 'signature', 'status', 'type', 'uploaded_on', 'validation_errors', 'validation_records', 'wildcard'}.contains(key));}
+TlsCertificatesAndHostnamesSslDv copyWith({TlsCertificatesAndHostnamesSslDvBundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesCertificateAuthority? Function()? certificateAuthority, String? Function()? customCertificate, String? Function()? customCsrId, String? Function()? customKey, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? dcvDelegationRecords, DateTime? Function()? expiresOn, List<String>? Function()? hosts, String? Function()? id, String? Function()? issuer, TlsCertificatesAndHostnamesSslDvMethod? Function()? method, String? Function()? serialNumber, TlsCertificatesAndHostnamesSslsettings? Function()? settings, String? Function()? signature, TlsCertificatesAndHostnamesSslDvStatus? Function()? status, TlsCertificatesAndHostnamesSslDvType? Function()? type, DateTime? Function()? uploadedOn, List<TlsCertificatesAndHostnamesSslDvValidationErrors>? Function()? validationErrors, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? validationRecords, bool? Function()? wildcard, }) {return TlsCertificatesAndHostnamesSslDv(
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   certificateAuthority: certificateAuthority != null ? certificateAuthority() : this.certificateAuthority,
   customCertificate: customCertificate != null ? customCertificate() : this.customCertificate,
@@ -289,8 +289,8 @@ TlsCertificatesAndHostnamesSslDv copyWith({TlsCertificatesAndHostnamesSslDvBundl
   validationErrors: validationErrors != null ? validationErrors() : this.validationErrors,
   validationRecords: validationRecords != null ? validationRecords() : this.validationRecords,
   wildcard: wildcard != null ? wildcard() : this.wildcard,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TlsCertificatesAndHostnamesSslDv &&
           bundleMethod == other.bundleMethod &&
           certificateAuthority == other.certificateAuthority &&
@@ -311,7 +311,7 @@ TlsCertificatesAndHostnamesSslDv copyWith({TlsCertificatesAndHostnamesSslDvBundl
           uploadedOn == other.uploadedOn &&
           listEquals(validationErrors, other.validationErrors) &&
           listEquals(validationRecords, other.validationRecords) &&
-          wildcard == other.wildcard; } 
-@override int get hashCode { return Object.hash(bundleMethod, certificateAuthority, customCertificate, customCsrId, customKey, Object.hashAll(dcvDelegationRecords ?? const []), expiresOn, Object.hashAll(hosts ?? const []), id, issuer, method, serialNumber, settings, signature, status, type, uploadedOn, Object.hashAll(validationErrors ?? const []), Object.hashAll(validationRecords ?? const []), wildcard); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSslDv(bundleMethod: $bundleMethod, certificateAuthority: $certificateAuthority, customCertificate: $customCertificate, customCsrId: $customCsrId, customKey: $customKey, dcvDelegationRecords: $dcvDelegationRecords, expiresOn: $expiresOn, hosts: $hosts, id: $id, issuer: $issuer, method: $method, serialNumber: $serialNumber, settings: $settings, signature: $signature, status: $status, type: $type, uploadedOn: $uploadedOn, validationErrors: $validationErrors, validationRecords: $validationRecords, wildcard: $wildcard)'; } 
- }
+          wildcard == other.wildcard;}
+@override int get hashCode {return Object.hash(bundleMethod, certificateAuthority, customCertificate, customCsrId, customKey, Object.hashAll(dcvDelegationRecords ?? const []), expiresOn, Object.hashAll(hosts ?? const []), id, issuer, method, serialNumber, settings, signature, status, type, uploadedOn, Object.hashAll(validationErrors ?? const []), Object.hashAll(validationRecords ?? const []), wildcard);}
+@override String toString() {return 'TlsCertificatesAndHostnamesSslDv(bundleMethod: $bundleMethod, certificateAuthority: $certificateAuthority, customCertificate: $customCertificate, customCsrId: $customCsrId, customKey: $customKey, dcvDelegationRecords: $dcvDelegationRecords, expiresOn: $expiresOn, hosts: $hosts, id: $id, issuer: $issuer, method: $method, serialNumber: $serialNumber, settings: $settings, signature: $signature, status: $status, type: $type, uploadedOn: $uploadedOn, validationErrors: $validationErrors, validationRecords: $validationRecords, wildcard: $wildcard)';}
+}

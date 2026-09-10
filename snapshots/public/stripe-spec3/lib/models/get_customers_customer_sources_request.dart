@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCustomersCustomerSourcesRequest {const GetCustomersCustomerSourcesRequest();
 
-factory GetCustomersCustomerSourcesRequest.fromJson(Map<String, dynamic> _) { return const GetCustomersCustomerSourcesRequest(); }
+factory GetCustomersCustomerSourcesRequest.fromJson(Map<String, dynamic> _) {return const GetCustomersCustomerSourcesRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-GetCustomersCustomerSourcesRequest copyWith() { return const GetCustomersCustomerSourcesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+GetCustomersCustomerSourcesRequest copyWith() {return const GetCustomersCustomerSourcesRequest(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is GetCustomersCustomerSourcesRequest; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'GetCustomersCustomerSourcesRequest()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is GetCustomersCustomerSourcesRequest;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'GetCustomersCustomerSourcesRequest()';}
+}

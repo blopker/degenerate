@@ -13,7 +13,7 @@ final class GistsApi with ApiExecutor {const GistsApi(this.apiConfig);
 /// Lists the authenticated user's gists or if called anonymously, this endpoint returns all public gists:
 ///
 /// `GET /gists`
-Future<ApiResult<List<BaseGist>, GistsListError>> gistsList({DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<BaseGist>, GistsListError>> gistsList({DateTime? since, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) {
   queryParameters['since'] = since.toIso8601String();
@@ -44,7 +44,7 @@ return (json as List<dynamic>).map((e) => BaseGist.fromJson(e as Map<String, dyn
   },
   onError: GistsListError.parse,
 );
- } 
+}
 /// Create a gist
 ///
 /// Allows you to add a new gist with one or more files.
@@ -53,7 +53,7 @@ return (json as List<dynamic>).map((e) => BaseGist.fromJson(e as Map<String, dyn
 /// > Don't name your files "gistfile" with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
 ///
 /// `POST /gists`
-Future<ApiResult<GistSimple, GistsCreateError>> gistsCreate({required GistsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GistSimple, GistsCreateError>> gistsCreate({required GistsCreateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -72,7 +72,7 @@ return GistSimple.fromJson(json as Map<String, dynamic>);
   },
   onError: GistsCreateError.parse,
 );
- } 
+}
 /// List public gists
 ///
 /// List public gists sorted by most recently updated to least recently updated.
@@ -80,7 +80,7 @@ return GistSimple.fromJson(json as Map<String, dynamic>);
 /// Note: With [pagination](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.
 ///
 /// `GET /gists/public`
-Future<ApiResult<List<BaseGist>, GistsListPublicError>> gistsListPublic({DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<BaseGist>, GistsListPublicError>> gistsListPublic({DateTime? since, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) {
   queryParameters['since'] = since.toIso8601String();
@@ -111,13 +111,13 @@ return (json as List<dynamic>).map((e) => BaseGist.fromJson(e as Map<String, dyn
   },
   onError: GistsListPublicError.parse,
 );
- } 
+}
 /// List starred gists
 ///
 /// List the authenticated user's starred gists:
 ///
 /// `GET /gists/starred`
-Future<ApiResult<List<BaseGist>, GistsListStarredError>> gistsListStarred({DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<BaseGist>, GistsListStarredError>> gistsListStarred({DateTime? since, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) {
   queryParameters['since'] = since.toIso8601String();
@@ -148,7 +148,7 @@ return (json as List<dynamic>).map((e) => BaseGist.fromJson(e as Map<String, dyn
   },
   onError: GistsListStarredError.parse,
 );
- } 
+}
 /// Get a gist
 ///
 /// Gets a specified gist.
@@ -159,7 +159,7 @@ return (json as List<dynamic>).map((e) => BaseGist.fromJson(e as Map<String, dyn
 /// - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
 ///
 /// `GET /gists/{gist_id}`
-Future<ApiResult<GistSimple, GistsGetError>> gistsGet({required String gistId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GistSimple, GistsGetError>> gistsGet({required String gistId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -176,7 +176,7 @@ return GistSimple.fromJson(json as Map<String, dynamic>);
   },
   onError: GistsGetError.parse,
 );
- } 
+}
 /// Update a gist
 ///
 /// Allows you to update a gist's description and to update, delete, or rename gist files. Files
@@ -191,7 +191,7 @@ return GistSimple.fromJson(json as Map<String, dynamic>);
 /// - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
 ///
 /// `PATCH /gists/{gist_id}`
-Future<ApiResult<GistSimple, GistsUpdateError>> gistsUpdate({required String gistId, required GistsUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GistSimple, GistsUpdateError>> gistsUpdate({required String gistId, required GistsUpdateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -210,13 +210,13 @@ return GistSimple.fromJson(json as Map<String, dynamic>);
   },
   onError: GistsUpdateError.parse,
 );
- } 
+}
 /// Delete a gist
 ///
 /// 
 ///
 /// `DELETE /gists/{gist_id}`
-Future<ApiResult<void, GistsDeleteError>> gistsDelete({required String gistId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, GistsDeleteError>> gistsDelete({required String gistId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -230,7 +230,7 @@ return await execute(
   onSuccess: (_) {},
   onError: GistsDeleteError.parse,
 );
- } 
+}
 /// List gist comments
 ///
 /// Lists the comments on a gist.
@@ -241,7 +241,7 @@ return await execute(
 /// - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
 ///
 /// `GET /gists/{gist_id}/comments`
-Future<ApiResult<List<GistComment>, GistsListCommentsError>> gistsListComments({required String gistId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<GistComment>, GistsListCommentsError>> gistsListComments({required String gistId, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -269,7 +269,7 @@ return (json as List<dynamic>).map((e) => GistComment.fromJson(e as Map<String, 
   },
   onError: GistsListCommentsError.parse,
 );
- } 
+}
 /// Create a gist comment
 ///
 /// Creates a comment on a gist.
@@ -280,7 +280,7 @@ return (json as List<dynamic>).map((e) => GistComment.fromJson(e as Map<String, 
 /// - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
 ///
 /// `POST /gists/{gist_id}/comments`
-Future<ApiResult<GistComment, GistsCreateCommentError>> gistsCreateComment({required String gistId, required GistsCreateCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GistComment, GistsCreateCommentError>> gistsCreateComment({required String gistId, required GistsCreateCommentRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -299,7 +299,7 @@ return GistComment.fromJson(json as Map<String, dynamic>);
   },
   onError: GistsCreateCommentError.parse,
 );
- } 
+}
 /// Get a gist comment
 ///
 /// Gets a comment on a gist.
@@ -310,7 +310,7 @@ return GistComment.fromJson(json as Map<String, dynamic>);
 /// - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
 ///
 /// `GET /gists/{gist_id}/comments/{comment_id}`
-Future<ApiResult<GistComment, GistsGetCommentError>> gistsGetComment({required String gistId, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GistComment, GistsGetCommentError>> gistsGetComment({required String gistId, required int commentId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -327,7 +327,7 @@ return GistComment.fromJson(json as Map<String, dynamic>);
   },
   onError: GistsGetCommentError.parse,
 );
- } 
+}
 /// Update a gist comment
 ///
 /// Updates a comment on a gist.
@@ -338,7 +338,7 @@ return GistComment.fromJson(json as Map<String, dynamic>);
 /// - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
 ///
 /// `PATCH /gists/{gist_id}/comments/{comment_id}`
-Future<ApiResult<GistComment, BasicError>> gistsUpdateComment({required String gistId, required int commentId, required GistsUpdateCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GistComment, BasicError>> gistsUpdateComment({required String gistId, required int commentId, required GistsUpdateCommentRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -366,13 +366,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a gist comment
 ///
 /// 
 ///
 /// `DELETE /gists/{gist_id}/comments/{comment_id}`
-Future<ApiResult<void, GistsDeleteCommentError>> gistsDeleteComment({required String gistId, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, GistsDeleteCommentError>> gistsDeleteComment({required String gistId, required int commentId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -386,13 +386,13 @@ return await execute(
   onSuccess: (_) {},
   onError: GistsDeleteCommentError.parse,
 );
- } 
+}
 /// List gist commits
 ///
 /// 
 ///
 /// `GET /gists/{gist_id}/commits`
-Future<ApiResult<List<GistCommit>, GistsListCommitsError>> gistsListCommits({required String gistId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<GistCommit>, GistsListCommitsError>> gistsListCommits({required String gistId, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -420,13 +420,13 @@ return (json as List<dynamic>).map((e) => GistCommit.fromJson(e as Map<String, d
   },
   onError: GistsListCommitsError.parse,
 );
- } 
+}
 /// List gist forks
 ///
 /// 
 ///
 /// `GET /gists/{gist_id}/forks`
-Future<ApiResult<List<GistSimple>, GistsListForksError>> gistsListForks({required String gistId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<GistSimple>, GistsListForksError>> gistsListForks({required String gistId, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -454,13 +454,13 @@ return (json as List<dynamic>).map((e) => GistSimple.fromJson(e as Map<String, d
   },
   onError: GistsListForksError.parse,
 );
- } 
+}
 /// Fork a gist
 ///
 /// 
 ///
 /// `POST /gists/{gist_id}/forks`
-Future<ApiResult<BaseGist, GistsForkError>> gistsFork({required String gistId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BaseGist, GistsForkError>> gistsFork({required String gistId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -477,13 +477,13 @@ return BaseGist.fromJson(json as Map<String, dynamic>);
   },
   onError: GistsForkError.parse,
 );
- } 
+}
 /// Check if a gist is starred
 ///
 /// 
 ///
 /// `GET /gists/{gist_id}/star`
-Future<ApiResult<void, GistsCheckIsStarredError>> gistsCheckIsStarred({required String gistId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, GistsCheckIsStarredError>> gistsCheckIsStarred({required String gistId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -497,13 +497,13 @@ return await execute(
   onSuccess: (_) {},
   onError: GistsCheckIsStarredError.parse,
 );
- } 
+}
 /// Star a gist
 ///
 /// Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 ///
 /// `PUT /gists/{gist_id}/star`
-Future<ApiResult<void, GistsStarError>> gistsStar({required String gistId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, GistsStarError>> gistsStar({required String gistId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -517,13 +517,13 @@ return await execute(
   onSuccess: (_) {},
   onError: GistsStarError.parse,
 );
- } 
+}
 /// Unstar a gist
 ///
 /// 
 ///
 /// `DELETE /gists/{gist_id}/star`
-Future<ApiResult<void, GistsUnstarError>> gistsUnstar({required String gistId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, GistsUnstarError>> gistsUnstar({required String gistId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -537,7 +537,7 @@ return await execute(
   onSuccess: (_) {},
   onError: GistsUnstarError.parse,
 );
- } 
+}
 /// Get a gist revision
 ///
 /// Gets a specified gist revision.
@@ -548,7 +548,7 @@ return await execute(
 /// - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
 ///
 /// `GET /gists/{gist_id}/{sha}`
-Future<ApiResult<GistSimple, GistsGetRevisionError>> gistsGetRevision({required String gistId, required String sha, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GistSimple, GistsGetRevisionError>> gistsGetRevision({required String gistId, required String sha, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -565,13 +565,13 @@ return GistSimple.fromJson(json as Map<String, dynamic>);
   },
   onError: GistsGetRevisionError.parse,
 );
- } 
+}
 /// List gists for a user
 ///
 /// Lists public gists for the specified user:
 ///
 /// `GET /users/{username}/gists`
-Future<ApiResult<List<BaseGist>, ValidationError>> gistsListForUser({required String username, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<BaseGist>, ValidationError>> gistsListForUser({required String username, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) {
   queryParameters['since'] = since.toIso8601String();
@@ -611,5 +611,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

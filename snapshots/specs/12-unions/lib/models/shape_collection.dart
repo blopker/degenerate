@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shape.dart';@immutable final class ShapeCollection {const ShapeCollection({required this.name, required this.shapes, this.tags, });
 
-factory ShapeCollection.fromJson(Map<String, dynamic> json) { return ShapeCollection(
+factory ShapeCollection.fromJson(Map<String, dynamic> json) {return ShapeCollection(
   name: json['name'] as String,
   shapes: (json['shapes'] as List<dynamic>).map((e) => Shape.fromJson(e as Map<String, dynamic>)).toList(),
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final String name;
 
@@ -14,23 +14,23 @@ final List<Shape> shapes;
 
 final List<String>? tags;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'shapes': shapes.map((e) => e.toJson()).toList(),
   'tags': ?tags,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('shapes'); } 
-ShapeCollection copyWith({String? name, List<Shape>? shapes, List<String>? Function()? tags, }) { return ShapeCollection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('shapes');}
+ShapeCollection copyWith({String? name, List<Shape>? shapes, List<String>? Function()? tags, }) {return ShapeCollection(
   name: name ?? this.name,
   shapes: shapes ?? this.shapes,
   tags: tags != null ? tags() : this.tags,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShapeCollection &&
           name == other.name &&
           listEquals(shapes, other.shapes) &&
-          listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hash(name, Object.hashAll(shapes), Object.hashAll(tags ?? const [])); } 
-@override String toString() { return 'ShapeCollection(name: $name, shapes: $shapes, tags: $tags)'; } 
- }
+          listEquals(tags, other.tags);}
+@override int get hashCode {return Object.hash(name, Object.hashAll(shapes), Object.hashAll(tags ?? const []));}
+@override String toString() {return 'ShapeCollection(name: $name, shapes: $shapes, tags: $tags)';}
+}

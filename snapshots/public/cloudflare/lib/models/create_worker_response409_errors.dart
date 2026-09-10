@@ -3,54 +3,54 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_error_worker_name_conflict.dart';sealed class CreateWorkerResponse409Errors {const CreateWorkerResponse409Errors();
 
 /// Deserialize from JSON, dispatching on the `code` discriminator.
-factory CreateWorkerResponse409Errors.fromJson(Map<String, dynamic> json) { return switch (json['code']) {
+factory CreateWorkerResponse409Errors.fromJson(Map<String, dynamic> json) {return switch (json['code']) {
   'workers_ErrorWorkerNameConflict' => CreateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict.fromJson(json),
   '10040' => CreateWorkerResponse409Errors10040.fromJson(json),
   _ => CreateWorkerResponse409Errors$Unknown(json),
-}; }
+};}
 
 /// The discriminator value identifying this variant.
 String get code;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateWorkerResponse409Errors$Unknown; } 
- }
+bool get isUnknown {return this is CreateWorkerResponse409Errors$Unknown;}
+}
 @immutable final class CreateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict extends CreateWorkerResponse409Errors {const CreateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict(this.workersErrorWorkerNameConflict);
 
-factory CreateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict.fromJson(Map<String, dynamic> json) { return CreateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict(WorkersErrorWorkerNameConflict.fromJson(json)); }
+factory CreateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict.fromJson(Map<String, dynamic> json) {return CreateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict(WorkersErrorWorkerNameConflict.fromJson(json));}
 
 final WorkersErrorWorkerNameConflict workersErrorWorkerNameConflict;
 
-@override String get code { return 'workers_ErrorWorkerNameConflict'; } 
-@override Map<String, dynamic> toJson() { return {...workersErrorWorkerNameConflict.toJson(), 'code': code}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict && workersErrorWorkerNameConflict == other.workersErrorWorkerNameConflict; } 
-@override int get hashCode { return workersErrorWorkerNameConflict.hashCode; } 
-@override String toString() { return 'CreateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict(workersErrorWorkerNameConflict: $workersErrorWorkerNameConflict)'; } 
- }
+@override String get code {return 'workers_ErrorWorkerNameConflict';}
+@override Map<String, dynamic> toJson() {return {...workersErrorWorkerNameConflict.toJson(), 'code': code};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict && workersErrorWorkerNameConflict == other.workersErrorWorkerNameConflict;}
+@override int get hashCode {return workersErrorWorkerNameConflict.hashCode;}
+@override String toString() {return 'CreateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict(workersErrorWorkerNameConflict: $workersErrorWorkerNameConflict)';}
+}
 @immutable final class CreateWorkerResponse409Errors10040 extends CreateWorkerResponse409Errors {const CreateWorkerResponse409Errors10040(this.workersErrorWorkerNameConflict);
 
-factory CreateWorkerResponse409Errors10040.fromJson(Map<String, dynamic> json) { return CreateWorkerResponse409Errors10040(WorkersErrorWorkerNameConflict.fromJson(json)); }
+factory CreateWorkerResponse409Errors10040.fromJson(Map<String, dynamic> json) {return CreateWorkerResponse409Errors10040(WorkersErrorWorkerNameConflict.fromJson(json));}
 
 final WorkersErrorWorkerNameConflict workersErrorWorkerNameConflict;
 
-@override String get code { return '10040'; } 
-@override Map<String, dynamic> toJson() { return {...workersErrorWorkerNameConflict.toJson(), 'code': code}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateWorkerResponse409Errors10040 && workersErrorWorkerNameConflict == other.workersErrorWorkerNameConflict; } 
-@override int get hashCode { return workersErrorWorkerNameConflict.hashCode; } 
-@override String toString() { return 'CreateWorkerResponse409Errors10040(workersErrorWorkerNameConflict: $workersErrorWorkerNameConflict)'; } 
- }
+@override String get code {return '10040';}
+@override Map<String, dynamic> toJson() {return {...workersErrorWorkerNameConflict.toJson(), 'code': code};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateWorkerResponse409Errors10040 && workersErrorWorkerNameConflict == other.workersErrorWorkerNameConflict;}
+@override int get hashCode {return workersErrorWorkerNameConflict.hashCode;}
+@override String toString() {return 'CreateWorkerResponse409Errors10040(workersErrorWorkerNameConflict: $workersErrorWorkerNameConflict)';}
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class CreateWorkerResponse409Errors$Unknown extends CreateWorkerResponse409Errors {const CreateWorkerResponse409Errors$Unknown(this.json);
 
 final Map<String, dynamic> json;
 
-@override String get code { return json['code'] as String? ?? ''; } 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateWorkerResponse409Errors$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'CreateWorkerResponse409Errors.unknown($json)'; } 
- }
+@override String get code {return json['code'] as String? ?? '';}
+@override Map<String, dynamic> toJson() {return json;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateWorkerResponse409Errors$Unknown && json == other.json;}
+@override int get hashCode {return json.hashCode;}
+@override String toString() {return 'CreateWorkerResponse409Errors.unknown($json)';}
+}

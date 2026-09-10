@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAiBotsSummaryResponse400Errors {const RadarGetAiBotsSummaryResponse400Errors({required this.message});
 
-factory RadarGetAiBotsSummaryResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetAiBotsSummaryResponse400Errors(
+factory RadarGetAiBotsSummaryResponse400Errors.fromJson(Map<String, dynamic> json) {return RadarGetAiBotsSummaryResponse400Errors(
   message: json['message'] as String,
-); }
+);}
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-RadarGetAiBotsSummaryResponse400Errors copyWith({String? message}) { return RadarGetAiBotsSummaryResponse400Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+RadarGetAiBotsSummaryResponse400Errors copyWith({String? message}) {return RadarGetAiBotsSummaryResponse400Errors(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetAiBotsSummaryResponse400Errors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'RadarGetAiBotsSummaryResponse400Errors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'RadarGetAiBotsSummaryResponse400Errors(message: $message)';}
+}

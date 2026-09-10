@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_forwarding_requests_request_request.dart';@immutable final class PostForwardingRequestsRequestReplacements {const PostForwardingRequestsRequestReplacements._(this.value);
 
-factory PostForwardingRequestsRequestReplacements.fromJson(String json) { return switch (json) {
+factory PostForwardingRequestsRequestReplacements.fromJson(String json) {return switch (json) {
   'card_cvc' => cardCvc,
   'card_expiry' => cardExpiry,
   'card_number' => cardNumber,
   'cardholder_name' => cardholderName,
   'request_signature' => requestSignature,
   _ => PostForwardingRequestsRequestReplacements._(json),
-}; }
+};}
 
 static const PostForwardingRequestsRequestReplacements cardCvc = PostForwardingRequestsRequestReplacements._('card_cvc');
 
@@ -25,24 +25,24 @@ static const List<PostForwardingRequestsRequestReplacements> values = [cardCvc, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostForwardingRequestsRequestReplacements && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostForwardingRequestsRequestReplacements($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostForwardingRequestsRequestReplacements && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostForwardingRequestsRequestReplacements($value)';}
+}
 @immutable final class PostForwardingRequestsRequest {const PostForwardingRequestsRequest({required this.paymentMethod, required this.replacements, required this.url, this.expand, this.metadata, this.request, });
 
-factory PostForwardingRequestsRequest.fromJson(Map<String, dynamic> json) { return PostForwardingRequestsRequest(
+factory PostForwardingRequestsRequest.fromJson(Map<String, dynamic> json) {return PostForwardingRequestsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   paymentMethod: json['payment_method'] as String,
   replacements: (json['replacements'] as List<dynamic>).map((e) => PostForwardingRequestsRequestReplacements.fromJson(e as String)).toList(),
   request: json['request'] != null ? PostForwardingRequestsRequestRequest.fromJson(json['request'] as Map<String, dynamic>) : null,
   url: json['url'] as String,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -62,33 +62,33 @@ final PostForwardingRequestsRequestRequest? request;
 /// The destination URL for the forwarded request. Must be supported by the config.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'metadata': ?metadata,
   'payment_method': paymentMethod,
   'replacements': replacements.map((e) => e.toJson()).toList(),
   if (request != null) 'request': request?.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_method') && json['payment_method'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('payment_method') && json['payment_method'] is String &&
       json.containsKey('replacements') &&
-      json.containsKey('url') && json['url'] is String; } 
-PostForwardingRequestsRequest copyWith({List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? paymentMethod, List<PostForwardingRequestsRequestReplacements>? replacements, PostForwardingRequestsRequestRequest? Function()? request, String? url, }) { return PostForwardingRequestsRequest(
+      json.containsKey('url') && json['url'] is String;}
+PostForwardingRequestsRequest copyWith({List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? paymentMethod, List<PostForwardingRequestsRequestReplacements>? replacements, PostForwardingRequestsRequestRequest? Function()? request, String? url, }) {return PostForwardingRequestsRequest(
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   paymentMethod: paymentMethod ?? this.paymentMethod,
   replacements: replacements ?? this.replacements,
   request: request != null ? request() : this.request,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostForwardingRequestsRequest &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
           paymentMethod == other.paymentMethod &&
           listEquals(replacements, other.replacements) &&
           request == other.request &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), metadata, paymentMethod, Object.hashAll(replacements), request, url); } 
-@override String toString() { return 'PostForwardingRequestsRequest(expand: $expand, metadata: $metadata, paymentMethod: $paymentMethod, replacements: $replacements, request: $request, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(expand ?? const []), metadata, paymentMethod, Object.hashAll(replacements), request, url);}
+@override String toString() {return 'PostForwardingRequestsRequest(expand: $expand, metadata: $metadata, paymentMethod: $paymentMethod, replacements: $replacements, request: $request, url: $url)';}
+}

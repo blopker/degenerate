@@ -11,7 +11,7 @@ final class Api20100401AuthCallsIpAccessControlListMappingApi with ApiExecutor {
 /// Retrieve a list of IP Access Control List mappings belonging to the domain used in the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings.json`
-Future<ApiResult<ListSipAuthCallsIpAccessControlListMappingResponse, Never>> listSipAuthCallsIpAccessControlListMapping({required String accountSid, required String domainSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListSipAuthCallsIpAccessControlListMappingResponse, Never>> listSipAuthCallsIpAccessControlListMapping({required String accountSid, required String domainSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -41,11 +41,11 @@ final json = jsonDecode(response.body);
 return ListSipAuthCallsIpAccessControlListMappingResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create a new IP Access Control List mapping
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings.json`
-Future<ApiResult<AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping, Never>> createSipAuthCallsIpAccessControlListMapping({required String accountSid, required String domainSid, CreateSipAuthCallsIpAccessControlListMappingRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping, Never>> createSipAuthCallsIpAccessControlListMapping({required String accountSid, required String domainSid, CreateSipAuthCallsIpAccessControlListMappingRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -65,11 +65,11 @@ final json = jsonDecode(response.body);
 return AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Fetch a specific instance of an IP Access Control List mapping
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings/{Sid}.json`
-Future<ApiResult<AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping, Never>> fetchSipAuthCallsIpAccessControlListMapping({required String accountSid, required String domainSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping, Never>> fetchSipAuthCallsIpAccessControlListMapping({required String accountSid, required String domainSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -85,11 +85,11 @@ final json = jsonDecode(response.body);
 return AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete an IP Access Control List mapping from the requested domain
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings/{Sid}.json`
-Future<ApiResult<void, Never>> deleteSipAuthCallsIpAccessControlListMapping({required String accountSid, required String domainSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteSipAuthCallsIpAccessControlListMapping({required String accountSid, required String domainSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -102,5 +102,5 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

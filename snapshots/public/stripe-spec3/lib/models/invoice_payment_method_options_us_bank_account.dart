@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_us_bank_account_linked_account_options.dart';/// Bank account verification method.
 @immutable final class InvoicePaymentMethodOptionsUsBankAccountVerificationMethod {const InvoicePaymentMethodOptionsUsBankAccountVerificationMethod._(this.value);
 
-factory InvoicePaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(String json) { return switch (json) {
+factory InvoicePaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'instant' => instant,
   'microdeposits' => microdeposits,
   _ => InvoicePaymentMethodOptionsUsBankAccountVerificationMethod._(json),
-}; }
+};}
 
 static const InvoicePaymentMethodOptionsUsBankAccountVerificationMethod automatic = InvoicePaymentMethodOptionsUsBankAccountVerificationMethod._('automatic');
 
@@ -20,40 +20,40 @@ static const List<InvoicePaymentMethodOptionsUsBankAccountVerificationMethod> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoicePaymentMethodOptionsUsBankAccountVerificationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsUsBankAccountVerificationMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoicePaymentMethodOptionsUsBankAccountVerificationMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoicePaymentMethodOptionsUsBankAccountVerificationMethod($value)';}
+}
 /// 
 @immutable final class InvoicePaymentMethodOptionsUsBankAccount {const InvoicePaymentMethodOptionsUsBankAccount({this.financialConnections, this.verificationMethod, });
 
-factory InvoicePaymentMethodOptionsUsBankAccount.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsUsBankAccount(
+factory InvoicePaymentMethodOptionsUsBankAccount.fromJson(Map<String, dynamic> json) {return InvoicePaymentMethodOptionsUsBankAccount(
   financialConnections: json['financial_connections'] != null ? InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
   verificationMethod: json['verification_method'] != null ? InvoicePaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(json['verification_method'] as String) : null,
-); }
+);}
 
 final InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions? financialConnections;
 
 /// Bank account verification method.
 final InvoicePaymentMethodOptionsUsBankAccountVerificationMethod? verificationMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (financialConnections != null) 'financial_connections': financialConnections?.toJson(),
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'verification_method'}.contains(key)); } 
-InvoicePaymentMethodOptionsUsBankAccount copyWith({InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions? Function()? financialConnections, InvoicePaymentMethodOptionsUsBankAccountVerificationMethod? Function()? verificationMethod, }) { return InvoicePaymentMethodOptionsUsBankAccount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'financial_connections', 'verification_method'}.contains(key));}
+InvoicePaymentMethodOptionsUsBankAccount copyWith({InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions? Function()? financialConnections, InvoicePaymentMethodOptionsUsBankAccountVerificationMethod? Function()? verificationMethod, }) {return InvoicePaymentMethodOptionsUsBankAccount(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InvoicePaymentMethodOptionsUsBankAccount &&
           financialConnections == other.financialConnections &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(financialConnections, verificationMethod); } 
-@override String toString() { return 'InvoicePaymentMethodOptionsUsBankAccount(financialConnections: $financialConnections, verificationMethod: $verificationMethod)'; } 
- }
+          verificationMethod == other.verificationMethod;}
+@override int get hashCode {return Object.hash(financialConnections, verificationMethod);}
+@override String toString() {return 'InvoicePaymentMethodOptionsUsBankAccount(financialConnections: $financialConnections, verificationMethod: $verificationMethod)';}
+}

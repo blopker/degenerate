@@ -13,7 +13,7 @@ final class WaitingRoomApi with ApiExecutor {const WaitingRoomApi(this.apiConfig
 /// Lists waiting rooms for account.
 ///
 /// `GET /accounts/{account_id}/waiting_rooms`
-Future<ApiResult<List<WaitingroomWaitingroom>?, WaitingRoomListWaitingRoomsAccountResponse4xx>> waitingRoomListWaitingRoomsAccount({required WaitingroomIdentifier accountId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WaitingroomWaitingroom>?, WaitingRoomListWaitingRoomsAccountResponse4xx>> waitingRoomListWaitingRoomsAccount({required WaitingroomIdentifier accountId, double? page, double? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -50,13 +50,13 @@ return null;
 
   },
 );
- } 
+}
 /// List waiting rooms for zone
 ///
 /// Lists waiting rooms for zone.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms`
-Future<ApiResult<List<WaitingroomWaitingroom>?, WaitingRoomListWaitingRoomsResponse4xx>> waitingRoomListWaitingRooms({required WaitingroomIdentifier zoneId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WaitingroomWaitingroom>?, WaitingRoomListWaitingRoomsResponse4xx>> waitingRoomListWaitingRooms({required WaitingroomIdentifier zoneId, double? page, double? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -93,13 +93,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create waiting room
 ///
 /// Creates a new waiting room.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms`
-Future<ApiResult<WaitingroomWaitingroom, WaitingRoomCreateWaitingRoomResponse4xx>> waitingRoomCreateWaitingRoom({required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomWaitingroom, WaitingRoomCreateWaitingRoomResponse4xx>> waitingRoomCreateWaitingRoom({required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -127,13 +127,13 @@ return null;
 
   },
 );
- } 
+}
 /// Waiting room details
 ///
 /// Fetches a single configured waiting room.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<WaitingroomWaitingroom, WaitingRoomWaitingRoomDetailsResponse4xx>> waitingRoomDetails({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomWaitingroom, WaitingRoomWaitingRoomDetailsResponse4xx>> waitingRoomDetails({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -159,13 +159,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update waiting room
 ///
 /// Updates a configured waiting room.
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<WaitingroomWaitingroom, WaitingRoomUpdateWaitingRoomResponse4xx>> waitingRoomUpdateWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomWaitingroom, WaitingRoomUpdateWaitingRoomResponse4xx>> waitingRoomUpdateWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -193,13 +193,13 @@ return null;
 
   },
 );
- } 
+}
 /// Patch waiting room
 ///
 /// Patches a configured waiting room.
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<WaitingroomWaitingroom, WaitingRoomPatchWaitingRoomResponse4xx>> waitingRoomPatchWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomWaitingroom, WaitingRoomPatchWaitingRoomResponse4xx>> waitingRoomPatchWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -227,13 +227,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete waiting room
 ///
 /// Deletes a waiting room.
 ///
 /// `DELETE /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<WaitingroomWaitingRoomIdResponseResult, WaitingRoomDeleteWaitingRoomResponse4xx>> waitingRoomDeleteWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomWaitingRoomIdResponseResult, WaitingRoomDeleteWaitingRoomResponse4xx>> waitingRoomDeleteWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -259,13 +259,13 @@ return null;
 
   },
 );
- } 
+}
 /// List events
 ///
 /// Lists events for a waiting room.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events`
-Future<ApiResult<List<WaitingroomEventResult>?, WaitingRoomListEventsResponse4xx>> waitingRoomListEvents({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WaitingroomEventResult>?, WaitingRoomListEventsResponse4xx>> waitingRoomListEvents({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, double? page, double? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -302,13 +302,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create event
 ///
 /// Only available for the Waiting Room Advanced subscription. Creates an event for a waiting room. An event takes place during a specified period of time, temporarily changing the behavior of a waiting room. While the event is active, some of the properties in the event's configuration may either override or inherit from the waiting room's configuration. Note that events cannot overlap with each other, so only one event can be active at a time.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events`
-Future<ApiResult<WaitingroomEventResult, WaitingRoomCreateEventResponse4xx>> waitingRoomCreateEvent({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomEventResult, WaitingRoomCreateEventResponse4xx>> waitingRoomCreateEvent({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -336,13 +336,13 @@ return null;
 
   },
 );
- } 
+}
 /// Event details
 ///
 /// Fetches a single configured event for a waiting room.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<WaitingroomEventResult, WaitingRoomEventDetailsResponse4xx>> waitingRoomEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomEventResult, WaitingRoomEventDetailsResponse4xx>> waitingRoomEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -368,13 +368,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update event
 ///
 /// Updates a configured event for a waiting room.
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<WaitingroomEventResult, WaitingRoomUpdateEventResponse4xx>> waitingRoomUpdateEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomEventResult, WaitingRoomUpdateEventResponse4xx>> waitingRoomUpdateEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -402,13 +402,13 @@ return null;
 
   },
 );
- } 
+}
 /// Patch event
 ///
 /// Patches a configured event for a waiting room.
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<WaitingroomEventResult, WaitingRoomPatchEventResponse4xx>> waitingRoomPatchEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomEventResult, WaitingRoomPatchEventResponse4xx>> waitingRoomPatchEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -436,13 +436,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete event
 ///
 /// Deletes an event for a waiting room.
 ///
 /// `DELETE /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<WaitingroomEventIdResponseResult, WaitingRoomDeleteEventResponse4xx>> waitingRoomDeleteEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomEventIdResponseResult, WaitingRoomDeleteEventResponse4xx>> waitingRoomDeleteEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -468,13 +468,13 @@ return null;
 
   },
 );
- } 
+}
 /// Preview active event details
 ///
 /// Previews an event's configuration as if it was active. Inherited fields from the waiting room will be displayed with their current values.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}/details`
-Future<ApiResult<WaitingroomEventDetailsResult, WaitingRoomPreviewActiveEventDetailsResponse4xx>> waitingRoomPreviewActiveEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomEventDetailsResult, WaitingRoomPreviewActiveEventDetailsResponse4xx>> waitingRoomPreviewActiveEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -500,13 +500,13 @@ return null;
 
   },
 );
- } 
+}
 /// List Waiting Room Rules
 ///
 /// Lists rules for a waiting room.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules`
-Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomListWaitingRoomRulesResponse4xx>> waitingRoomListWaitingRoomRules({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomListWaitingRoomRulesResponse4xx>> waitingRoomListWaitingRoomRules({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -532,13 +532,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create Waiting Room Rule
 ///
 /// Only available for the Waiting Room Advanced subscription. Creates a rule for a waiting room.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules`
-Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomCreateWaitingRoomRuleResponse4xx>> waitingRoomCreateWaitingRoomRule({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomCreateRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomCreateWaitingRoomRuleResponse4xx>> waitingRoomCreateWaitingRoomRule({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomCreateRule body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -566,13 +566,13 @@ return null;
 
   },
 );
- } 
+}
 /// Replace Waiting Room Rules
 ///
 /// Only available for the Waiting Room Advanced subscription. Replaces all rules for a waiting room.
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules`
-Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomReplaceWaitingRoomRulesResponse4xx>> waitingRoomReplaceWaitingRoomRules({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required List<WaitingroomCreateRule> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomReplaceWaitingRoomRulesResponse4xx>> waitingRoomReplaceWaitingRoomRules({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required List<WaitingroomCreateRule> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -600,13 +600,13 @@ return null;
 
   },
 );
- } 
+}
 /// Patch Waiting Room Rule
 ///
 /// Patches a rule for a waiting room.
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules/{rule_id}`
-Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomPatchWaitingRoomRuleResponse4xx>> waitingRoomPatchWaitingRoomRule({required WaitingroomRuleId ruleId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomPatchRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomPatchWaitingRoomRuleResponse4xx>> waitingRoomPatchWaitingRoomRule({required WaitingroomRuleId ruleId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomPatchRule body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -634,13 +634,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Waiting Room Rule
 ///
 /// Deletes a rule for a waiting room.
 ///
 /// `DELETE /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules/{rule_id}`
-Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomDeleteWaitingRoomRuleResponse4xx>> waitingRoomDeleteWaitingRoomRule({required WaitingroomRuleId ruleId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomDeleteWaitingRoomRuleResponse4xx>> waitingRoomDeleteWaitingRoomRule({required WaitingroomRuleId ruleId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -666,7 +666,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get waiting room status
 ///
 /// Fetches the status of a configured waiting room. Response fields include:
@@ -681,7 +681,7 @@ return null;
 /// 5. `max_estimated_time_minutes`: Integer of the maximum estimated time currently presented to the users.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/status`
-Future<ApiResult<WaitingroomStatusResponseResult, WaitingRoomGetWaitingRoomStatusResponse4xx>> waitingRoomGetWaitingRoomStatus({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomStatusResponseResult, WaitingRoomGetWaitingRoomStatusResponse4xx>> waitingRoomGetWaitingRoomStatus({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -707,7 +707,7 @@ return null;
 
   },
 );
- } 
+}
 /// Create a custom waiting room page preview
 ///
 /// Creates a waiting room page preview. Upload a custom waiting room page for preview. You will receive a preview URL in the form `http://waitingrooms.dev/preview/<uuid>`. You can use the following query parameters to change the state of the preview:
@@ -730,7 +730,7 @@ return null;
 /// For example, you can make a request to `http://waitingrooms.dev/preview/<uuid>?waitTime=50` to configure the estimated wait time as 50 minutes.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms/preview`
-Future<ApiResult<WaitingroomPreviewResponseResult, WaitingRoomCreateACustomWaitingRoomPagePreviewResponse4xx>> waitingRoomCreateACustomWaitingRoomPagePreview({required WaitingroomIdentifier zoneId, required WaitingroomQueryPreview body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomPreviewResponseResult, WaitingRoomCreateACustomWaitingRoomPagePreviewResponse4xx>> waitingRoomCreateACustomWaitingRoomPagePreview({required WaitingroomIdentifier zoneId, required WaitingroomQueryPreview body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -758,11 +758,11 @@ return null;
 
   },
 );
- } 
+}
 /// Get zone-level Waiting Room settings
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/settings`
-Future<ApiResult<WaitingroomZoneSettingsResponseResult, WaitingRoomGetZoneSettingsResponse4xx>> waitingRoomGetZoneSettings({required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomZoneSettingsResponseResult, WaitingRoomGetZoneSettingsResponse4xx>> waitingRoomGetZoneSettings({required WaitingroomIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -788,11 +788,11 @@ return null;
 
   },
 );
- } 
+}
 /// Update zone-level Waiting Room settings
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/settings`
-Future<ApiResult<WaitingroomZoneSettingsResponseResult, WaitingRoomUpdateZoneSettingsResponse4xx>> waitingRoomUpdateZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomZoneSettingsResponseResult, WaitingRoomUpdateZoneSettingsResponse4xx>> waitingRoomUpdateZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -820,11 +820,11 @@ return null;
 
   },
 );
- } 
+}
 /// Patch zone-level Waiting Room settings
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/settings`
-Future<ApiResult<WaitingroomZoneSettingsResponseResult, WaitingRoomPatchZoneSettingsResponse4xx>> waitingRoomPatchZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomZoneSettingsResponseResult, WaitingRoomPatchZoneSettingsResponse4xx>> waitingRoomPatchZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -852,5 +852,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

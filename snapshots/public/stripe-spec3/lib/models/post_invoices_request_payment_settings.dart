@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_request_payment_settings_default_mandate.dart';import 'post_invoices_request_payment_settings_payment_method_options.dart';import 'post_invoices_request_payment_settings_payment_method_types.dart';/// Configuration settings for the PaymentIntent that is generated when the invoice is finalized.
 @immutable final class PostInvoicesRequestPaymentSettings {const PostInvoicesRequestPaymentSettings({this.defaultMandate, this.paymentMethodOptions, this.paymentMethodTypes, });
 
-factory PostInvoicesRequestPaymentSettings.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestPaymentSettings(
+factory PostInvoicesRequestPaymentSettings.fromJson(Map<String, dynamic> json) {return PostInvoicesRequestPaymentSettings(
   defaultMandate: json['default_mandate'] != null ? PostInvoicesRequestPaymentSettingsDefaultMandate.fromJson(json['default_mandate']) : null,
   paymentMethodOptions: json['payment_method_options'] != null ? PostInvoicesRequestPaymentSettingsPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: json['payment_method_types'] != null ? PostInvoicesRequestPaymentSettingsPaymentMethodTypes.fromJson(json['payment_method_types']) : null,
-); }
+);}
 
 final PostInvoicesRequestPaymentSettingsDefaultMandate? defaultMandate;
 
@@ -15,22 +15,22 @@ final PostInvoicesRequestPaymentSettingsPaymentMethodOptions? paymentMethodOptio
 
 final PostInvoicesRequestPaymentSettingsPaymentMethodTypes? paymentMethodTypes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (defaultMandate != null) 'default_mandate': defaultMandate?.toJson(),
   if (paymentMethodOptions != null) 'payment_method_options': paymentMethodOptions?.toJson(),
   if (paymentMethodTypes != null) 'payment_method_types': paymentMethodTypes?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_mandate', 'payment_method_options', 'payment_method_types'}.contains(key)); } 
-PostInvoicesRequestPaymentSettings copyWith({PostInvoicesRequestPaymentSettingsDefaultMandate? Function()? defaultMandate, PostInvoicesRequestPaymentSettingsPaymentMethodOptions? Function()? paymentMethodOptions, PostInvoicesRequestPaymentSettingsPaymentMethodTypes? Function()? paymentMethodTypes, }) { return PostInvoicesRequestPaymentSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'default_mandate', 'payment_method_options', 'payment_method_types'}.contains(key));}
+PostInvoicesRequestPaymentSettings copyWith({PostInvoicesRequestPaymentSettingsDefaultMandate? Function()? defaultMandate, PostInvoicesRequestPaymentSettingsPaymentMethodOptions? Function()? paymentMethodOptions, PostInvoicesRequestPaymentSettingsPaymentMethodTypes? Function()? paymentMethodTypes, }) {return PostInvoicesRequestPaymentSettings(
   defaultMandate: defaultMandate != null ? defaultMandate() : this.defaultMandate,
   paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,
   paymentMethodTypes: paymentMethodTypes != null ? paymentMethodTypes() : this.paymentMethodTypes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesRequestPaymentSettings &&
           defaultMandate == other.defaultMandate &&
           paymentMethodOptions == other.paymentMethodOptions &&
-          paymentMethodTypes == other.paymentMethodTypes; } 
-@override int get hashCode { return Object.hash(defaultMandate, paymentMethodOptions, paymentMethodTypes); } 
-@override String toString() { return 'PostInvoicesRequestPaymentSettings(defaultMandate: $defaultMandate, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes)'; } 
- }
+          paymentMethodTypes == other.paymentMethodTypes;}
+@override int get hashCode {return Object.hash(defaultMandate, paymentMethodOptions, paymentMethodTypes);}
+@override String toString() {return 'PostInvoicesRequestPaymentSettings(defaultMandate: $defaultMandate, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes)';}
+}

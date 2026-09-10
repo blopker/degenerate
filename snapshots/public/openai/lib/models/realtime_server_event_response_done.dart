@@ -12,11 +12,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_res
 /// 
 @immutable final class RealtimeServerEventResponseDone {const RealtimeServerEventResponseDone({required this.eventId, required this.type, required this.response, });
 
-factory RealtimeServerEventResponseDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseDone(
+factory RealtimeServerEventResponseDone.fromJson(Map<String, dynamic> json) {return RealtimeServerEventResponseDone(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   response: RealtimeResponse.fromJson(json['response'] as Map<String, dynamic>),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -26,24 +26,24 @@ final String type;
 
 final RealtimeResponse response;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'response': response.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('response'); } 
-RealtimeServerEventResponseDone copyWith({String? eventId, String? type, RealtimeResponse? response, }) { return RealtimeServerEventResponseDone(
+      json.containsKey('response');}
+RealtimeServerEventResponseDone copyWith({String? eventId, String? type, RealtimeResponse? response, }) {return RealtimeServerEventResponseDone(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   response: response ?? this.response,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventResponseDone &&
           eventId == other.eventId &&
           type == other.type &&
-          response == other.response; } 
-@override int get hashCode { return Object.hash(eventId, type, response); } 
-@override String toString() { return 'RealtimeServerEventResponseDone(eventId: $eventId, type: $type, response: $response)'; } 
- }
+          response == other.response;}
+@override int get hashCode {return Object.hash(eventId, type, response);}
+@override String toString() {return 'RealtimeServerEventResponseDone(eventId: $eventId, type: $type, response: $response)';}
+}

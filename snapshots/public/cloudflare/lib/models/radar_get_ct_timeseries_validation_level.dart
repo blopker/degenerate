@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesValidationLevel {const RadarGetCtTimeseriesValidationLevel._(this.value);
 
-factory RadarGetCtTimeseriesValidationLevel.fromJson(String json) { return switch (json) {
+factory RadarGetCtTimeseriesValidationLevel.fromJson(String json) {return switch (json) {
   'DOMAIN' => domain,
   'ORGANIZATION' => organization,
   'EXTENDED' => extended,
   _ => RadarGetCtTimeseriesValidationLevel._(json),
-}; }
+};}
 
 static const RadarGetCtTimeseriesValidationLevel domain = RadarGetCtTimeseriesValidationLevel._('DOMAIN');
 
@@ -19,11 +19,11 @@ static const List<RadarGetCtTimeseriesValidationLevel> values = [domain, organiz
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCtTimeseriesValidationLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCtTimeseriesValidationLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCtTimeseriesValidationLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCtTimeseriesValidationLevel($value)';}
+}

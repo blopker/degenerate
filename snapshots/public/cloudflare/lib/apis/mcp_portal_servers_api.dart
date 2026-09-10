@@ -11,7 +11,7 @@ final class McpPortalServersApi with ApiExecutor {const McpPortalServersApi(this
 /// List MCP Servers
 ///
 /// `GET /accounts/{account_id}/access/ai-controls/mcp/servers`
-Future<ApiResult<List<ListServersResponseResult>, ListServersResponse400>> mcpPortalsApiListServers({required String accountId, int? page, int? perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ListServersResponseResult>, ListServersResponse400>> mcpPortalsApiListServers({required String accountId, int? page, int? perPage, String? search, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -51,11 +51,11 @@ return null;
 
   },
 );
- } 
+}
 /// Create a new MCP Server
 ///
 /// `POST /accounts/{account_id}/access/ai-controls/mcp/servers`
-Future<ApiResult<CreateServersResponseResult, CreateServersResponse400>> mcpPortalsApiCreateServers({required String accountId, CreateServersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateServersResponseResult, CreateServersResponse400>> mcpPortalsApiCreateServers({required String accountId, CreateServersRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -83,11 +83,11 @@ return null;
 
   },
 );
- } 
+}
 /// Read the details of a MCP Server
 ///
 /// `GET /accounts/{account_id}/access/ai-controls/mcp/servers/{id}`
-Future<ApiResult<FetchServersResponseResult, FetchServersResponse404>> mcpPortalsApiFetchServers({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FetchServersResponseResult, FetchServersResponse404>> mcpPortalsApiFetchServers({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -113,11 +113,11 @@ return null;
 
   },
 );
- } 
+}
 /// Update a MCP Server
 ///
 /// `PUT /accounts/{account_id}/access/ai-controls/mcp/servers/{id}`
-Future<ApiResult<UpdateServersResponseResult, UpdateServersError>> mcpPortalsApiUpdateServers({required String id, required String accountId, UpdateServersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UpdateServersResponseResult, UpdateServersError>> mcpPortalsApiUpdateServers({required String id, required String accountId, UpdateServersRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -136,11 +136,11 @@ return UpdateServersResponseResult.fromJson(json['result'] as Map<String, dynami
   },
   onError: UpdateServersError.parse,
 );
- } 
+}
 /// Delete a MCP Server
 ///
 /// `DELETE /accounts/{account_id}/access/ai-controls/mcp/servers/{id}`
-Future<ApiResult<DeleteServersResponseResult, DeleteServersResponse404>> mcpPortalsApiDeleteServers({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteServersResponseResult, DeleteServersResponse404>> mcpPortalsApiDeleteServers({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -166,11 +166,11 @@ return null;
 
   },
 );
- } 
+}
 /// Sync MCP Server Capabilities
 ///
 /// `POST /accounts/{account_id}/access/ai-controls/mcp/servers/{id}/sync`
-Future<ApiResult<Map<String, dynamic>, SyncServerResponse404>> mcpPortalsApiSyncServer({required String id, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, SyncServerResponse404>> mcpPortalsApiSyncServer({required String id, required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -196,5 +196,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

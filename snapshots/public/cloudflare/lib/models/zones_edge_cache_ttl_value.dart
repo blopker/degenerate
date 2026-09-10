@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zon
 /// Notes: The minimum TTL available depends on the plan level of the zone. (Enterprise = 30, Business = 1800, Pro = 3600, Free = 7200)
 @immutable final class ZonesEdgeCacheTtlValue {const ZonesEdgeCacheTtlValue._(this.value);
 
-factory ZonesEdgeCacheTtlValue.fromJson(double json) { return switch (json) {
+factory ZonesEdgeCacheTtlValue.fromJson(double json) {return switch (json) {
   30 => $30,
   60 => $60,
   300 => $300,
@@ -27,7 +27,7 @@ factory ZonesEdgeCacheTtlValue.fromJson(double json) { return switch (json) {
   518400 => $518400,
   604800 => $604800,
   _ => ZonesEdgeCacheTtlValue._(json),
-}; }
+};}
 
 static const ZonesEdgeCacheTtlValue $30 = ZonesEdgeCacheTtlValue._(30);
 
@@ -75,11 +75,11 @@ static const List<ZonesEdgeCacheTtlValue> values = [$30, $60, $300, $1200, $1800
 
 final double value;
 
-double toJson() { return value; } 
+double toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesEdgeCacheTtlValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesEdgeCacheTtlValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesEdgeCacheTtlValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesEdgeCacheTtlValue($value)';}
+}

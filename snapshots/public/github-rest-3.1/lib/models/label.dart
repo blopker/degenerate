@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Color-coded labels help you categorize and filter your issues (just like labels in Gmail).
 @immutable final class Label {const Label({required this.id, required this.nodeId, required this.url, required this.name, required this.description, required this.color, required this.$default, });
 
-factory Label.fromJson(Map<String, dynamic> json) { return Label(
+factory Label.fromJson(Map<String, dynamic> json) {return Label(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: Uri.parse(json['url'] as String),
@@ -11,7 +11,7 @@ factory Label.fromJson(Map<String, dynamic> json) { return Label(
   description: json['description'] as String?,
   color: json['color'] as String,
   $default: json['default'] as bool,
-); }
+);}
 
 /// Unique identifier for the label.
 final int id;
@@ -33,7 +33,7 @@ final String color;
 /// Whether this label comes by default in a new repository.
 final bool $default;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url.toString(),
@@ -41,15 +41,15 @@ Map<String, dynamic> toJson() { return {
   'description': description,
   'color': color,
   'default': $default,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('color') && json['color'] is String &&
-      json.containsKey('default') && json['default'] is bool; } 
-Label copyWith({int? id, String? nodeId, Uri? url, String? name, String? Function()? description, String? color, bool? $default, }) { return Label(
+      json.containsKey('default') && json['default'] is bool;}
+Label copyWith({int? id, String? nodeId, Uri? url, String? name, String? Function()? description, String? color, bool? $default, }) {return Label(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -57,8 +57,8 @@ Label copyWith({int? id, String? nodeId, Uri? url, String? name, String? Functio
   description: description != null ? description() : this.description,
   color: color ?? this.color,
   $default: $default ?? this.$default,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Label &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -66,7 +66,7 @@ Label copyWith({int? id, String? nodeId, Uri? url, String? name, String? Functio
           name == other.name &&
           description == other.description &&
           color == other.color &&
-          $default == other.$default; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, name, description, color, $default); } 
-@override String toString() { return 'Label(id: $id, nodeId: $nodeId, url: $url, name: $name, description: $description, color: $color, \$default: ${$default})'; } 
- }
+          $default == other.$default;}
+@override int get hashCode {return Object.hash(id, nodeId, url, name, description, color, $default);}
+@override String toString() {return 'Label(id: $id, nodeId: $nodeId, url: $url, name: $name, description: $description, color: $color, \$default: ${$default})';}
+}

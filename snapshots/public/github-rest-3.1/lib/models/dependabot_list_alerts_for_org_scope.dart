@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependabotListAlertsForOrgScope {const DependabotListAlertsForOrgScope._(this.value);
 
-factory DependabotListAlertsForOrgScope.fromJson(String json) { return switch (json) {
+factory DependabotListAlertsForOrgScope.fromJson(String json) {return switch (json) {
   'development' => development,
   'runtime' => runtime,
   _ => DependabotListAlertsForOrgScope._(json),
-}; }
+};}
 
 static const DependabotListAlertsForOrgScope development = DependabotListAlertsForOrgScope._('development');
 
@@ -16,11 +16,11 @@ static const List<DependabotListAlertsForOrgScope> values = [development, runtim
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependabotListAlertsForOrgScope && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependabotListAlertsForOrgScope($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DependabotListAlertsForOrgScope && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DependabotListAlertsForOrgScope($value)';}
+}

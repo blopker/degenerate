@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_request_payment_method_options_bacs_debit_mandate_options_reference_prefix.dart';@immutable final class PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptions {const PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptions({this.referencePrefix});
 
-factory PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptions(
+factory PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptions.fromJson(Map<String, dynamic> json) {return PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptions(
   referencePrefix: json['reference_prefix'] != null ? PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix.fromJson(json['reference_prefix']) : null,
-); }
+);}
 
 final PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix? referencePrefix;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (referencePrefix != null) 'reference_prefix': referencePrefix?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference_prefix'}.contains(key)); } 
-PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptions copyWith({PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix? Function()? referencePrefix}) { return PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'reference_prefix'}.contains(key));}
+PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptions copyWith({PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix? Function()? referencePrefix}) {return PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptions(
   referencePrefix: referencePrefix != null ? referencePrefix() : this.referencePrefix,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptions &&
-          referencePrefix == other.referencePrefix; } 
-@override int get hashCode { return referencePrefix.hashCode; } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptions(referencePrefix: $referencePrefix)'; } 
- }
+          referencePrefix == other.referencePrefix;}
+@override int get hashCode {return referencePrefix.hashCode;}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptions(referencePrefix: $referencePrefix)';}
+}

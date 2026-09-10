@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateSpeechRequestModelVariant2 {const CreateSpeechRequestModelVariant2._(this.value);
 
-factory CreateSpeechRequestModelVariant2.fromJson(String json) { return switch (json) {
+factory CreateSpeechRequestModelVariant2.fromJson(String json) {return switch (json) {
   'tts-1' => tts1,
   'tts-1-hd' => tts1Hd,
   'gpt-4o-mini-tts' => gpt4oMiniTts,
   'gpt-4o-mini-tts-2025-12-15' => gpt4oMiniTts20251215,
   _ => CreateSpeechRequestModelVariant2._(json),
-}; }
+};}
 
 static const CreateSpeechRequestModelVariant2 tts1 = CreateSpeechRequestModelVariant2._('tts-1');
 
@@ -22,14 +22,14 @@ static const List<CreateSpeechRequestModelVariant2> values = [tts1, tts1Hd, gpt4
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateSpeechRequestModelVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateSpeechRequestModelVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateSpeechRequestModelVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateSpeechRequestModelVariant2($value)';}
+}
 /// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`, or `gpt-4o-mini-tts-2025-12-15`.
 /// 
 @immutable

@@ -13,7 +13,7 @@ final class ZeroTrustHostnameRouteApi with ApiExecutor {const ZeroTrustHostnameR
 /// Lists and filters hostname routes in an account.
 ///
 /// `GET /accounts/{account_id}/zerotrust/routes/hostname`
-Future<ApiResult<List<TunnelHostnameRoute>, ZeroTrustNetworksRouteHostnameListResponse4xx>> zeroTrustNetworksRouteHostnameList({required TunnelAccountId accountId, TunnelHostnameRouteId? id, TunnelHostname? hostname, TunnelComponentsSchemasTunnelId? tunnelId, TunnelHostnameQueryComment? comment, TunnelExistedAt? existedAt, bool? isDeleted, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TunnelHostnameRoute>, ZeroTrustNetworksRouteHostnameListResponse4xx>> zeroTrustNetworksRouteHostnameList({required TunnelAccountId accountId, TunnelHostnameRouteId? id, TunnelHostname? hostname, TunnelComponentsSchemasTunnelId? tunnelId, TunnelHostnameQueryComment? comment, TunnelExistedAt? existedAt, bool? isDeleted, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id.toString();
@@ -68,13 +68,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create hostname route
 ///
 /// Create a hostname route.
 ///
 /// `POST /accounts/{account_id}/zerotrust/routes/hostname`
-Future<ApiResult<TunnelHostnameRoute, ZeroTrustNetworksRouteHostnameCreateResponse4xx>> zeroTrustNetworksRouteHostnameCreate({required TunnelAccountId accountId, required ZeroTrustNetworksRouteHostnameCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelHostnameRoute, ZeroTrustNetworksRouteHostnameCreateResponse4xx>> zeroTrustNetworksRouteHostnameCreate({required TunnelAccountId accountId, required ZeroTrustNetworksRouteHostnameCreateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -102,13 +102,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get hostname route
 ///
 /// Get a hostname route.
 ///
 /// `GET /accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}`
-Future<ApiResult<TunnelHostnameRoute, ZeroTrustNetworksRouteHostnameGetResponse4xx>> zeroTrustNetworksRouteHostnameGet({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelHostnameRoute, ZeroTrustNetworksRouteHostnameGetResponse4xx>> zeroTrustNetworksRouteHostnameGet({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -134,13 +134,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update hostname route
 ///
 /// Updates a hostname route.
 ///
 /// `PATCH /accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}`
-Future<ApiResult<TunnelHostnameRoute, ZeroTrustNetworksRouteHostnameUpdateResponse4xx>> zeroTrustNetworksRouteHostnameUpdate({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, required ZeroTrustNetworksRouteHostnameUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelHostnameRoute, ZeroTrustNetworksRouteHostnameUpdateResponse4xx>> zeroTrustNetworksRouteHostnameUpdate({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, required ZeroTrustNetworksRouteHostnameUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -168,13 +168,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete hostname route
 ///
 /// Delete a hostname route.
 ///
 /// `DELETE /accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}`
-Future<ApiResult<TunnelHostnameRoute, ZeroTrustNetworksRouteHostnameDeleteResponse4xx>> zeroTrustNetworksRouteHostnameDelete({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelHostnameRoute, ZeroTrustNetworksRouteHostnameDeleteResponse4xx>> zeroTrustNetworksRouteHostnameDelete({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -200,5 +200,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

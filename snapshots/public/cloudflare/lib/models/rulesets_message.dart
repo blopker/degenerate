@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_message_source.dart';/// A message.
 @immutable final class RulesetsMessage {const RulesetsMessage({required this.message, this.code, this.source, });
 
-factory RulesetsMessage.fromJson(Map<String, dynamic> json) { return RulesetsMessage(
+factory RulesetsMessage.fromJson(Map<String, dynamic> json) {return RulesetsMessage(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,
   message: json['message'] as String,
   source: json['source'] != null ? RulesetsMessageSource.fromJson(json['source'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// A unique code for this message.
 final int? code;
@@ -18,22 +18,22 @@ final String message;
 /// The source of this message.
 final RulesetsMessageSource? source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': ?code,
   'message': message,
   if (source != null) 'source': source?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-RulesetsMessage copyWith({int? Function()? code, String? message, RulesetsMessageSource? Function()? source, }) { return RulesetsMessage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+RulesetsMessage copyWith({int? Function()? code, String? message, RulesetsMessageSource? Function()? source, }) {return RulesetsMessage(
   code: code != null ? code() : this.code,
   message: message ?? this.message,
   source: source != null ? source() : this.source,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsMessage &&
           code == other.code &&
           message == other.message &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(code, message, source); } 
-@override String toString() { return 'RulesetsMessage(code: $code, message: $message, source: $source)'; } 
- }
+          source == other.source;}
+@override int get hashCode {return Object.hash(code, message, source);}
+@override String toString() {return 'RulesetsMessage(code: $code, message: $message, source: $source)';}
+}

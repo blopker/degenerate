@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_event_reference_delete_response400_errors.dart';@immutable final class DeleteEventReferenceDeleteResponse400 {const DeleteEventReferenceDeleteResponse400({required this.errors, required this.result, required this.success, });
 
-factory DeleteEventReferenceDeleteResponse400.fromJson(Map<String, dynamic> json) { return DeleteEventReferenceDeleteResponse400(
+factory DeleteEventReferenceDeleteResponse400.fromJson(Map<String, dynamic> json) {return DeleteEventReferenceDeleteResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => DeleteEventReferenceDeleteResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
-); }
+);}
 
 final List<DeleteEventReferenceDeleteResponse400Errors> errors;
 
@@ -14,24 +14,24 @@ final Map<String,dynamic> result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'result': result,
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-DeleteEventReferenceDeleteResponse400 copyWith({List<DeleteEventReferenceDeleteResponse400Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return DeleteEventReferenceDeleteResponse400(
+      json.containsKey('success') && json['success'] is bool;}
+DeleteEventReferenceDeleteResponse400 copyWith({List<DeleteEventReferenceDeleteResponse400Errors>? errors, Map<String,dynamic>? result, bool? success, }) {return DeleteEventReferenceDeleteResponse400(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DeleteEventReferenceDeleteResponse400 &&
           listEquals(errors, other.errors) &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), result, success); } 
-@override String toString() { return 'DeleteEventReferenceDeleteResponse400(errors: $errors, result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(Object.hashAll(errors), result, success);}
+@override String toString() {return 'DeleteEventReferenceDeleteResponse400(errors: $errors, result: $result, success: $success)';}
+}

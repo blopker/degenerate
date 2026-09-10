@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityCenterIssuePayload {const SecurityCenterIssuePayload({this.detectionMethod, this.zoneTag, });
 
-factory SecurityCenterIssuePayload.fromJson(Map<String, dynamic> json) { return SecurityCenterIssuePayload(
+factory SecurityCenterIssuePayload.fromJson(Map<String, dynamic> json) {return SecurityCenterIssuePayload(
   detectionMethod: json['detection_method'] as String?,
   zoneTag: json['zone_tag'] as String?,
-); }
+);}
 
 /// Describes the method used to detect insight.
 final String? detectionMethod;
 
 final String? zoneTag;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'detection_method': ?detectionMethod,
   'zone_tag': ?zoneTag,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'detection_method', 'zone_tag'}.contains(key)); } 
-SecurityCenterIssuePayload copyWith({String? Function()? detectionMethod, String? Function()? zoneTag, }) { return SecurityCenterIssuePayload(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'detection_method', 'zone_tag'}.contains(key));}
+SecurityCenterIssuePayload copyWith({String? Function()? detectionMethod, String? Function()? zoneTag, }) {return SecurityCenterIssuePayload(
   detectionMethod: detectionMethod != null ? detectionMethod() : this.detectionMethod,
   zoneTag: zoneTag != null ? zoneTag() : this.zoneTag,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecurityCenterIssuePayload &&
           detectionMethod == other.detectionMethod &&
-          zoneTag == other.zoneTag; } 
-@override int get hashCode { return Object.hash(detectionMethod, zoneTag); } 
-@override String toString() { return 'SecurityCenterIssuePayload(detectionMethod: $detectionMethod, zoneTag: $zoneTag)'; } 
- }
+          zoneTag == other.zoneTag;}
+@override int get hashCode {return Object.hash(detectionMethod, zoneTag);}
+@override String toString() {return 'SecurityCenterIssuePayload(detectionMethod: $detectionMethod, zoneTag: $zoneTag)';}
+}

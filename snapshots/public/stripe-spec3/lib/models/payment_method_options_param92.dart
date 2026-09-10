@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param92_confirmation_number.dart';import 'payment_method_options_param92_expires_after_days.dart';import 'payment_method_options_param92_expires_at.dart';import 'payment_method_options_param92_product_description.dart';@immutable final class PaymentMethodOptionsParam92SetupFutureUsage {const PaymentMethodOptionsParam92SetupFutureUsage._(this.value);
 
-factory PaymentMethodOptionsParam92SetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsParam92SetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   _ => PaymentMethodOptionsParam92SetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsParam92SetupFutureUsage none = PaymentMethodOptionsParam92SetupFutureUsage._('none');
 
@@ -13,23 +13,23 @@ static const List<PaymentMethodOptionsParam92SetupFutureUsage> values = [none];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsParam92SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam92SetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsParam92SetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsParam92SetupFutureUsage($value)';}
+}
 @immutable final class PaymentMethodOptionsParam92 {const PaymentMethodOptionsParam92({this.confirmationNumber, this.expiresAfterDays, this.expiresAt, this.productDescription, this.setupFutureUsage, });
 
-factory PaymentMethodOptionsParam92.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam92(
+factory PaymentMethodOptionsParam92.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsParam92(
   confirmationNumber: json['confirmation_number'] != null ? PaymentMethodOptionsParam92ConfirmationNumber.fromJson(json['confirmation_number']) : null,
   expiresAfterDays: json['expires_after_days'] != null ? PaymentMethodOptionsParam92ExpiresAfterDays.fromJson(json['expires_after_days']) : null,
   expiresAt: json['expires_at'] != null ? PaymentMethodOptionsParam92ExpiresAt.fromJson(json['expires_at']) : null,
   productDescription: json['product_description'] != null ? PaymentMethodOptionsParam92ProductDescription.fromJson(json['product_description']) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsParam92SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final PaymentMethodOptionsParam92ConfirmationNumber? confirmationNumber;
 
@@ -41,28 +41,28 @@ final PaymentMethodOptionsParam92ProductDescription? productDescription;
 
 final PaymentMethodOptionsParam92SetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (confirmationNumber != null) 'confirmation_number': confirmationNumber?.toJson(),
   if (expiresAfterDays != null) 'expires_after_days': expiresAfterDays?.toJson(),
   if (expiresAt != null) 'expires_at': expiresAt?.toJson(),
   if (productDescription != null) 'product_description': productDescription?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'confirmation_number', 'expires_after_days', 'expires_at', 'product_description', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsParam92 copyWith({PaymentMethodOptionsParam92ConfirmationNumber? Function()? confirmationNumber, PaymentMethodOptionsParam92ExpiresAfterDays? Function()? expiresAfterDays, PaymentMethodOptionsParam92ExpiresAt? Function()? expiresAt, PaymentMethodOptionsParam92ProductDescription? Function()? productDescription, PaymentMethodOptionsParam92SetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam92(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'confirmation_number', 'expires_after_days', 'expires_at', 'product_description', 'setup_future_usage'}.contains(key));}
+PaymentMethodOptionsParam92 copyWith({PaymentMethodOptionsParam92ConfirmationNumber? Function()? confirmationNumber, PaymentMethodOptionsParam92ExpiresAfterDays? Function()? expiresAfterDays, PaymentMethodOptionsParam92ExpiresAt? Function()? expiresAt, PaymentMethodOptionsParam92ProductDescription? Function()? productDescription, PaymentMethodOptionsParam92SetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsParam92(
   confirmationNumber: confirmationNumber != null ? confirmationNumber() : this.confirmationNumber,
   expiresAfterDays: expiresAfterDays != null ? expiresAfterDays() : this.expiresAfterDays,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   productDescription: productDescription != null ? productDescription() : this.productDescription,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodOptionsParam92 &&
           confirmationNumber == other.confirmationNumber &&
           expiresAfterDays == other.expiresAfterDays &&
           expiresAt == other.expiresAt &&
           productDescription == other.productDescription &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(confirmationNumber, expiresAfterDays, expiresAt, productDescription, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsParam92(confirmationNumber: $confirmationNumber, expiresAfterDays: $expiresAfterDays, expiresAt: $expiresAt, productDescription: $productDescription, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(confirmationNumber, expiresAfterDays, expiresAt, productDescription, setupFutureUsage);}
+@override String toString() {return 'PaymentMethodOptionsParam92(confirmationNumber: $confirmationNumber, expiresAfterDays: $expiresAfterDays, expiresAt: $expiresAt, productDescription: $productDescription, setupFutureUsage: $setupFutureUsage)';}
+}

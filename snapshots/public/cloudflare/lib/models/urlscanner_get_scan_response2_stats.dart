@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_stats_domain_stats.dart';import 'urlscanner_get_scan_response2_stats_ip_stats.dart';import 'urlscanner_get_scan_response2_stats_protocol_stats.dart';import 'urlscanner_get_scan_response2_stats_resource_stats.dart';import 'urlscanner_get_scan_response2_stats_server_stats.dart';import 'urlscanner_get_scan_response2_stats_tls_stats.dart';@immutable final class UrlscannerGetScanResponse2Stats {const UrlscannerGetScanResponse2Stats({required this.iPv6Percentage, required this.domainStats, required this.ipStats, required this.malicious, required this.protocolStats, required this.resourceStats, required this.securePercentage, required this.secureRequests, required this.serverStats, required this.tlsStats, required this.totalLinks, required this.uniqAsNs, required this.uniqCountries, });
 
-factory UrlscannerGetScanResponse2Stats.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2Stats(
+factory UrlscannerGetScanResponse2Stats.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2Stats(
   iPv6Percentage: (json['IPv6Percentage'] as num).toDouble(),
   domainStats: (json['domainStats'] as List<dynamic>).map((e) => UrlscannerGetScanResponse2StatsDomainStats.fromJson(e as Map<String, dynamic>)).toList(),
   ipStats: (json['ipStats'] as List<dynamic>).map((e) => UrlscannerGetScanResponse2StatsIpStats.fromJson(e as Map<String, dynamic>)).toList(),
@@ -16,7 +16,7 @@ factory UrlscannerGetScanResponse2Stats.fromJson(Map<String, dynamic> json) { re
   totalLinks: (json['totalLinks'] as num).toDouble(),
   uniqAsNs: (json['uniqASNs'] as num).toDouble(),
   uniqCountries: (json['uniqCountries'] as num).toDouble(),
-); }
+);}
 
 final double iPv6Percentage;
 
@@ -44,7 +44,7 @@ final double uniqAsNs;
 
 final double uniqCountries;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'IPv6Percentage': iPv6Percentage,
   'domainStats': domainStats.map((e) => e.toJson()).toList(),
   'ipStats': ipStats.map((e) => e.toJson()).toList(),
@@ -58,8 +58,8 @@ Map<String, dynamic> toJson() { return {
   'totalLinks': totalLinks,
   'uniqASNs': uniqAsNs,
   'uniqCountries': uniqCountries,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('IPv6Percentage') && json['IPv6Percentage'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('IPv6Percentage') && json['IPv6Percentage'] is num &&
       json.containsKey('domainStats') &&
       json.containsKey('ipStats') &&
       json.containsKey('malicious') && json['malicious'] is num &&
@@ -71,8 +71,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('IPv6P
       json.containsKey('tlsStats') &&
       json.containsKey('totalLinks') && json['totalLinks'] is num &&
       json.containsKey('uniqASNs') && json['uniqASNs'] is num &&
-      json.containsKey('uniqCountries') && json['uniqCountries'] is num; } 
-UrlscannerGetScanResponse2Stats copyWith({double? iPv6Percentage, List<UrlscannerGetScanResponse2StatsDomainStats>? domainStats, List<UrlscannerGetScanResponse2StatsIpStats>? ipStats, double? malicious, List<UrlscannerGetScanResponse2StatsProtocolStats>? protocolStats, List<UrlscannerGetScanResponse2StatsResourceStats>? resourceStats, double? securePercentage, double? secureRequests, List<UrlscannerGetScanResponse2StatsServerStats>? serverStats, List<UrlscannerGetScanResponse2StatsTlsStats>? tlsStats, double? totalLinks, double? uniqAsNs, double? uniqCountries, }) { return UrlscannerGetScanResponse2Stats(
+      json.containsKey('uniqCountries') && json['uniqCountries'] is num;}
+UrlscannerGetScanResponse2Stats copyWith({double? iPv6Percentage, List<UrlscannerGetScanResponse2StatsDomainStats>? domainStats, List<UrlscannerGetScanResponse2StatsIpStats>? ipStats, double? malicious, List<UrlscannerGetScanResponse2StatsProtocolStats>? protocolStats, List<UrlscannerGetScanResponse2StatsResourceStats>? resourceStats, double? securePercentage, double? secureRequests, List<UrlscannerGetScanResponse2StatsServerStats>? serverStats, List<UrlscannerGetScanResponse2StatsTlsStats>? tlsStats, double? totalLinks, double? uniqAsNs, double? uniqCountries, }) {return UrlscannerGetScanResponse2Stats(
   iPv6Percentage: iPv6Percentage ?? this.iPv6Percentage,
   domainStats: domainStats ?? this.domainStats,
   ipStats: ipStats ?? this.ipStats,
@@ -86,8 +86,8 @@ UrlscannerGetScanResponse2Stats copyWith({double? iPv6Percentage, List<Urlscanne
   totalLinks: totalLinks ?? this.totalLinks,
   uniqAsNs: uniqAsNs ?? this.uniqAsNs,
   uniqCountries: uniqCountries ?? this.uniqCountries,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponse2Stats &&
           iPv6Percentage == other.iPv6Percentage &&
           listEquals(domainStats, other.domainStats) &&
@@ -101,7 +101,7 @@ UrlscannerGetScanResponse2Stats copyWith({double? iPv6Percentage, List<Urlscanne
           listEquals(tlsStats, other.tlsStats) &&
           totalLinks == other.totalLinks &&
           uniqAsNs == other.uniqAsNs &&
-          uniqCountries == other.uniqCountries; } 
-@override int get hashCode { return Object.hash(iPv6Percentage, Object.hashAll(domainStats), Object.hashAll(ipStats), malicious, Object.hashAll(protocolStats), Object.hashAll(resourceStats), securePercentage, secureRequests, Object.hashAll(serverStats), Object.hashAll(tlsStats), totalLinks, uniqAsNs, uniqCountries); } 
-@override String toString() { return 'UrlscannerGetScanResponse2Stats(iPv6Percentage: $iPv6Percentage, domainStats: $domainStats, ipStats: $ipStats, malicious: $malicious, protocolStats: $protocolStats, resourceStats: $resourceStats, securePercentage: $securePercentage, secureRequests: $secureRequests, serverStats: $serverStats, tlsStats: $tlsStats, totalLinks: $totalLinks, uniqAsNs: $uniqAsNs, uniqCountries: $uniqCountries)'; } 
- }
+          uniqCountries == other.uniqCountries;}
+@override int get hashCode {return Object.hash(iPv6Percentage, Object.hashAll(domainStats), Object.hashAll(ipStats), malicious, Object.hashAll(protocolStats), Object.hashAll(resourceStats), securePercentage, secureRequests, Object.hashAll(serverStats), Object.hashAll(tlsStats), totalLinks, uniqAsNs, uniqCountries);}
+@override String toString() {return 'UrlscannerGetScanResponse2Stats(iPv6Percentage: $iPv6Percentage, domainStats: $domainStats, ipStats: $ipStats, malicious: $malicious, protocolStats: $protocolStats, resourceStats: $resourceStats, securePercentage: $securePercentage, secureRequests: $secureRequests, serverStats: $serverStats, tlsStats: $tlsStats, totalLinks: $totalLinks, uniqAsNs: $uniqAsNs, uniqCountries: $uniqCountries)';}
+}

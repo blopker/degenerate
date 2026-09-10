@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of mitigation
 @immutable final class AbuseReportsMitigationType {const AbuseReportsMitigationType._(this.value);
 
-factory AbuseReportsMitigationType.fromJson(String json) { return switch (json) {
+factory AbuseReportsMitigationType.fromJson(String json) {return switch (json) {
   'legal_block' => legalBlock,
   'phishing_interstitial' => phishingInterstitial,
   'network_block' => networkBlock,
@@ -11,7 +11,7 @@ factory AbuseReportsMitigationType.fromJson(String json) { return switch (json) 
   'account_suspend' => accountSuspend,
   'redirect_video_stream' => redirectVideoStream,
   _ => AbuseReportsMitigationType._(json),
-}; }
+};}
 
 static const AbuseReportsMitigationType legalBlock = AbuseReportsMitigationType._('legal_block');
 
@@ -29,11 +29,11 @@ static const List<AbuseReportsMitigationType> values = [legalBlock, phishingInte
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsMitigationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AbuseReportsMitigationType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsMitigationType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AbuseReportsMitigationType($value)';}
+}

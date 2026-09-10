@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The TCP connection method to use for the health check.
 @immutable final class HealthchecksTcpConfigMethod {const HealthchecksTcpConfigMethod._(this.value);
 
-factory HealthchecksTcpConfigMethod.fromJson(String json) { return switch (json) {
+factory HealthchecksTcpConfigMethod.fromJson(String json) {return switch (json) {
   'connection_established' => connectionEstablished,
   _ => HealthchecksTcpConfigMethod._(json),
-}; }
+};}
 
 static const HealthchecksTcpConfigMethod connectionEstablished = HealthchecksTcpConfigMethod._('connection_established');
 
@@ -14,21 +14,21 @@ static const List<HealthchecksTcpConfigMethod> values = [connectionEstablished];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HealthchecksTcpConfigMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'HealthchecksTcpConfigMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is HealthchecksTcpConfigMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'HealthchecksTcpConfigMethod($value)';}
+}
 /// Parameters specific to TCP health check.
 @immutable final class HealthchecksTcpConfig {const HealthchecksTcpConfig({this.method, this.port, });
 
-factory HealthchecksTcpConfig.fromJson(Map<String, dynamic> json) { return HealthchecksTcpConfig(
+factory HealthchecksTcpConfig.fromJson(Map<String, dynamic> json) {return HealthchecksTcpConfig(
   method: json['method'] != null ? HealthchecksTcpConfigMethod.fromJson(json['method'] as String) : null,
   port: json['port'] != null ? (json['port'] as num).toInt() : null,
-); }
+);}
 
 /// The TCP connection method to use for the health check.
 final HealthchecksTcpConfigMethod? method;
@@ -37,22 +37,22 @@ final HealthchecksTcpConfigMethod? method;
 final int? port;
 
 /// The value with the schema default applied when absent.
-HealthchecksTcpConfigMethod get methodOrDefault { return method ?? HealthchecksTcpConfigMethod.fromJson('connection_established'); } 
+HealthchecksTcpConfigMethod get methodOrDefault {return method ?? HealthchecksTcpConfigMethod.fromJson('connection_established');}
 /// The value with the schema default applied when absent.
-int get portOrDefault { return port ?? 80; } 
-Map<String, dynamic> toJson() { return {
+int get portOrDefault {return port ?? 80;}
+Map<String, dynamic> toJson() {return {
   if (method != null) 'method': method?.toJson(),
   'port': ?port,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'method', 'port'}.contains(key)); } 
-HealthchecksTcpConfig copyWith({HealthchecksTcpConfigMethod? Function()? method, int? Function()? port, }) { return HealthchecksTcpConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'method', 'port'}.contains(key));}
+HealthchecksTcpConfig copyWith({HealthchecksTcpConfigMethod? Function()? method, int? Function()? port, }) {return HealthchecksTcpConfig(
   method: method != null ? method() : this.method,
   port: port != null ? port() : this.port,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is HealthchecksTcpConfig &&
           method == other.method &&
-          port == other.port; } 
-@override int get hashCode { return Object.hash(method, port); } 
-@override String toString() { return 'HealthchecksTcpConfig(method: $method, port: $port)'; } 
- }
+          port == other.port;}
+@override int get hashCode {return Object.hash(method, port);}
+@override String toString() {return 'HealthchecksTcpConfig(method: $method, port: $port)';}
+}

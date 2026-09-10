@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A list of Cloudflare regions. WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, SAS: Southern Asia, SEAS: South East Asia, NEAS: North East Asia).
 @immutable final class LoadBalancingRegionCode {const LoadBalancingRegionCode._(this.value);
 
-factory LoadBalancingRegionCode.fromJson(String json) { return switch (json) {
+factory LoadBalancingRegionCode.fromJson(String json) {return switch (json) {
   'WNAM' => wnam,
   'ENAM' => enam,
   'WEU' => weu,
@@ -18,7 +18,7 @@ factory LoadBalancingRegionCode.fromJson(String json) { return switch (json) {
   'SEAS' => seas,
   'NEAS' => neas,
   _ => LoadBalancingRegionCode._(json),
-}; }
+};}
 
 static const LoadBalancingRegionCode wnam = LoadBalancingRegionCode._('WNAM');
 
@@ -50,11 +50,11 @@ static const List<LoadBalancingRegionCode> values = [wnam, enam, weu, eeu, nsam,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LoadBalancingRegionCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LoadBalancingRegionCode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LoadBalancingRegionCode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LoadBalancingRegionCode($value)';}
+}

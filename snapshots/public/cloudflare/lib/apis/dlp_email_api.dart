@@ -11,7 +11,7 @@ final class DlpEmailApi with ApiExecutor {const DlpEmailApi(this.apiConfig);
 /// Get mapping
 ///
 /// `GET /accounts/{account_id}/dlp/email/account_mapping`
-Future<ApiResult<DlpAddinAccountMapping?, ResponseCommonFailure25>> dlpEmailScannerGetAccountMapping({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpAddinAccountMapping?, ResponseCommonFailure25>> dlpEmailScannerGetAccountMapping({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -37,11 +37,11 @@ return null;
 
   },
 );
- } 
+}
 /// Create mapping
 ///
 /// `POST /accounts/{account_id}/dlp/email/account_mapping`
-Future<ApiResult<DlpAddinAccountMapping?, ResponseCommonFailure25>> dlpEmailScannerCreateAccountMapping({required String accountId, required DlpUpdateAddinAccountMapping body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpAddinAccountMapping?, ResponseCommonFailure25>> dlpEmailScannerCreateAccountMapping({required String accountId, required DlpUpdateAddinAccountMapping body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -69,13 +69,13 @@ return null;
 
   },
 );
- } 
+}
 /// List all email scanner rules
 ///
 /// Lists all email scanner rules for an account.
 ///
 /// `GET /accounts/{account_id}/dlp/email/rules`
-Future<ApiResult<List<DlpEmailRule>?, ResponseCommonFailure25>> dlpEmailScannerListAllRules({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<DlpEmailRule>?, ResponseCommonFailure25>> dlpEmailScannerListAllRules({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -101,11 +101,11 @@ return null;
 
   },
 );
- } 
+}
 /// Create email scanner rule
 ///
 /// `POST /accounts/{account_id}/dlp/email/rules`
-Future<ApiResult<DlpEmailRule?, ResponseCommonFailure25>> dlpEmailScannerCreateRule({required String accountId, required DlpCreateEmailRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpEmailRule?, ResponseCommonFailure25>> dlpEmailScannerCreateRule({required String accountId, required DlpCreateEmailRule body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -133,11 +133,11 @@ return null;
 
   },
 );
- } 
+}
 /// Update email scanner rule priorities
 ///
 /// `PATCH /accounts/{account_id}/dlp/email/rules`
-Future<ApiResult<DlpEmailRule?, ResponseCommonFailure25>> dlpEmailScannerUpdateRulePriorities({required String accountId, required DlpUpdateEmailRulePriorities body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpEmailRule?, ResponseCommonFailure25>> dlpEmailScannerUpdateRulePriorities({required String accountId, required DlpUpdateEmailRulePriorities body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -165,11 +165,11 @@ return null;
 
   },
 );
- } 
+}
 /// Get an email scanner rule
 ///
 /// `GET /accounts/{account_id}/dlp/email/rules/{rule_id}`
-Future<ApiResult<DlpEmailRule?, ResponseCommonFailure25>> dlpEmailScannerGetRule({required String accountId, required String ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpEmailRule?, ResponseCommonFailure25>> dlpEmailScannerGetRule({required String accountId, required String ruleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -195,11 +195,11 @@ return null;
 
   },
 );
- } 
+}
 /// Update email scanner rule
 ///
 /// `PUT /accounts/{account_id}/dlp/email/rules/{rule_id}`
-Future<ApiResult<DlpEmailRule?, ResponseCommonFailure25>> dlpEmailScannerUpdateRule({required String accountId, required String ruleId, required DlpCreateEmailRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpEmailRule?, ResponseCommonFailure25>> dlpEmailScannerUpdateRule({required String accountId, required String ruleId, required DlpCreateEmailRule body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -227,11 +227,11 @@ return null;
 
   },
 );
- } 
+}
 /// Delete email scanner rule
 ///
 /// `DELETE /accounts/{account_id}/dlp/email/rules/{rule_id}`
-Future<ApiResult<DlpEmailRule?, ResponseCommonFailure25>> dlpEmailScannerDeleteRule({required String accountId, required String ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpEmailRule?, ResponseCommonFailure25>> dlpEmailScannerDeleteRule({required String accountId, required String ruleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -257,5 +257,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

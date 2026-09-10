@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod._(this.value);
 
-factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod.fromJson(String json) {return switch (json) {
   '' => $empty,
   'paper' => paper,
   _ => PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod $empty = PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod._('');
 
@@ -16,32 +16,32 @@ static const List<PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccount
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod($value)';}
+}
 @immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptions {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptions({this.collectionMethod});
 
-factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptions(
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptions.fromJson(Map<String, dynamic> json) {return PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptions(
   collectionMethod: json['collection_method'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod.fromJson(json['collection_method'] as String) : null,
-); }
+);}
 
 final PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod? collectionMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (collectionMethod != null) 'collection_method': collectionMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'collection_method'}.contains(key)); } 
-PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptions copyWith({PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod? Function()? collectionMethod}) { return PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'collection_method'}.contains(key));}
+PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptions copyWith({PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod? Function()? collectionMethod}) {return PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptions(
   collectionMethod: collectionMethod != null ? collectionMethod() : this.collectionMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptions &&
-          collectionMethod == other.collectionMethod; } 
-@override int get hashCode { return collectionMethod.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptions(collectionMethod: $collectionMethod)'; } 
- }
+          collectionMethod == other.collectionMethod;}
+@override int get hashCode {return collectionMethod.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountMandateOptions(collectionMethod: $collectionMethod)';}
+}

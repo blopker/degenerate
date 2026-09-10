@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'limit_range_spec.dart';import 'object_meta.dart';/// LimitRange sets resource usage limits for each kind of resource in a Namespace.
 @immutable final class LimitRange {const LimitRange({this.apiVersion, this.kind, this.metadata, this.spec, });
 
-factory LimitRange.fromJson(Map<String, dynamic> json) { return LimitRange(
+factory LimitRange.fromJson(Map<String, dynamic> json) {return LimitRange(
   apiVersion: json['apiVersion'] as String?,
   kind: json['kind'] as String?,
   metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   spec: json['spec'] != null ? LimitRangeSpec.fromJson(json['spec'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 final String? apiVersion;
@@ -22,25 +22,25 @@ final ObjectMeta? metadata;
 /// Spec defines the limits enforced. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
 final LimitRangeSpec? spec;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   'kind': ?kind,
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (spec != null) 'spec': spec?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'spec'}.contains(key)); } 
-LimitRange copyWith({String? Function()? apiVersion, String? Function()? kind, ObjectMeta? Function()? metadata, LimitRangeSpec? Function()? spec, }) { return LimitRange(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'spec'}.contains(key));}
+LimitRange copyWith({String? Function()? apiVersion, String? Function()? kind, ObjectMeta? Function()? metadata, LimitRangeSpec? Function()? spec, }) {return LimitRange(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,
   spec: spec != null ? spec() : this.spec,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LimitRange &&
           apiVersion == other.apiVersion &&
           kind == other.kind &&
           metadata == other.metadata &&
-          spec == other.spec; } 
-@override int get hashCode { return Object.hash(apiVersion, kind, metadata, spec); } 
-@override String toString() { return 'LimitRange(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, spec: $spec)'; } 
- }
+          spec == other.spec;}
+@override int get hashCode {return Object.hash(apiVersion, kind, metadata, spec);}
+@override String toString() {return 'LimitRange(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, spec: $spec)';}
+}

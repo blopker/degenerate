@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_auto_merge_enabled_pull_request.dart';@immutable final class WebhookPullRequestAutoMergeEnabledAction {const WebhookPullRequestAutoMergeEnabledAction._(this.value);
 
-factory WebhookPullRequestAutoMergeEnabledAction.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestAutoMergeEnabledAction.fromJson(String json) {return switch (json) {
   'auto_merge_enabled' => autoMergeEnabled,
   _ => WebhookPullRequestAutoMergeEnabledAction._(json),
-}; }
+};}
 
 static const WebhookPullRequestAutoMergeEnabledAction autoMergeEnabled = WebhookPullRequestAutoMergeEnabledAction._('auto_merge_enabled');
 
@@ -13,17 +13,17 @@ static const List<WebhookPullRequestAutoMergeEnabledAction> values = [autoMergeE
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestAutoMergeEnabledAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestAutoMergeEnabledAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestAutoMergeEnabledAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestAutoMergeEnabledAction($value)';}
+}
 @immutable final class WebhookPullRequestAutoMergeEnabled {const WebhookPullRequestAutoMergeEnabled({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, this.reason, });
 
-factory WebhookPullRequestAutoMergeEnabled.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAutoMergeEnabled(
+factory WebhookPullRequestAutoMergeEnabled.fromJson(Map<String, dynamic> json) {return WebhookPullRequestAutoMergeEnabled(
   action: WebhookPullRequestAutoMergeEnabledAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -33,7 +33,7 @@ factory WebhookPullRequestAutoMergeEnabled.fromJson(Map<String, dynamic> json) {
   reason: json['reason'] as String?,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookPullRequestAutoMergeEnabledAction action;
 
@@ -53,7 +53,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -63,13 +63,13 @@ Map<String, dynamic> toJson() { return {
   'reason': ?reason,
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookPullRequestAutoMergeEnabled copyWith({WebhookPullRequestAutoMergeEnabledAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, int? number, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestAutoMergeEnabledPullRequest? pullRequest, String? Function()? reason, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestAutoMergeEnabled(
+      json.containsKey('sender');}
+WebhookPullRequestAutoMergeEnabled copyWith({WebhookPullRequestAutoMergeEnabledAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, int? number, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestAutoMergeEnabledPullRequest? pullRequest, String? Function()? reason, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookPullRequestAutoMergeEnabled(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -79,8 +79,8 @@ WebhookPullRequestAutoMergeEnabled copyWith({WebhookPullRequestAutoMergeEnabledA
   reason: reason != null ? reason() : this.reason,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestAutoMergeEnabled &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -90,7 +90,7 @@ WebhookPullRequestAutoMergeEnabled copyWith({WebhookPullRequestAutoMergeEnabledA
           pullRequest == other.pullRequest &&
           reason == other.reason &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, number, organization, pullRequest, reason, repository, sender); } 
-@override String toString() { return 'WebhookPullRequestAutoMergeEnabled(action: $action, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, reason: $reason, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, number, organization, pullRequest, reason, repository, sender);}
+@override String toString() {return 'WebhookPullRequestAutoMergeEnabled(action: $action, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, reason: $reason, repository: $repository, sender: $sender)';}
+}

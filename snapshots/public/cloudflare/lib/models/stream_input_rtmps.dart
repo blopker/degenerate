@@ -17,28 +17,28 @@ String toJson() => value;
 /// Details for streaming to an live input using RTMPS.
 @immutable final class StreamInputRtmps {const StreamInputRtmps({this.streamKey, this.url, });
 
-factory StreamInputRtmps.fromJson(Map<String, dynamic> json) { return StreamInputRtmps(
+factory StreamInputRtmps.fromJson(Map<String, dynamic> json) {return StreamInputRtmps(
   streamKey: json['streamKey'] != null ? StreamInputRtmpsStreamKey.fromJson(json['streamKey'] as String) : null,
   url: json['url'] != null ? StreamInputRtmpsUrl.fromJson(json['url'] as String) : null,
-); }
+);}
 
 final StreamInputRtmpsStreamKey? streamKey;
 
 final StreamInputRtmpsUrl? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (streamKey != null) 'streamKey': streamKey?.toJson(),
   if (url != null) 'url': url?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'streamKey', 'url'}.contains(key)); } 
-StreamInputRtmps copyWith({StreamInputRtmpsStreamKey? Function()? streamKey, StreamInputRtmpsUrl? Function()? url, }) { return StreamInputRtmps(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'streamKey', 'url'}.contains(key));}
+StreamInputRtmps copyWith({StreamInputRtmpsStreamKey? Function()? streamKey, StreamInputRtmpsUrl? Function()? url, }) {return StreamInputRtmps(
   streamKey: streamKey != null ? streamKey() : this.streamKey,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is StreamInputRtmps &&
           streamKey == other.streamKey &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(streamKey, url); } 
-@override String toString() { return 'StreamInputRtmps(streamKey: $streamKey, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(streamKey, url);}
+@override String toString() {return 'StreamInputRtmps(streamKey: $streamKey, url: $url)';}
+}

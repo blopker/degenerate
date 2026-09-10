@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_audio_transcript.done`.
 @immutable final class RealtimeBetaServerEventResponseAudioTranscriptDoneType {const RealtimeBetaServerEventResponseAudioTranscriptDoneType._(this.value);
 
-factory RealtimeBetaServerEventResponseAudioTranscriptDoneType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventResponseAudioTranscriptDoneType.fromJson(String json) {return switch (json) {
   'response.output_audio_transcript.done' => responseOutputAudioTranscriptDone,
   _ => RealtimeBetaServerEventResponseAudioTranscriptDoneType._(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventResponseAudioTranscriptDoneType responseOutputAudioTranscriptDone = RealtimeBetaServerEventResponseAudioTranscriptDoneType._('response.output_audio_transcript.done');
 
@@ -14,21 +14,21 @@ static const List<RealtimeBetaServerEventResponseAudioTranscriptDoneType> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseAudioTranscriptDoneType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseAudioTranscriptDoneType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeBetaServerEventResponseAudioTranscriptDoneType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeBetaServerEventResponseAudioTranscriptDoneType($value)';}
+}
 /// Returned when the model-generated transcription of audio output is done
 /// streaming. Also emitted when a Response is interrupted, incomplete, or
 /// cancelled.
 /// 
 @immutable final class RealtimeBetaServerEventResponseAudioTranscriptDone {const RealtimeBetaServerEventResponseAudioTranscriptDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.transcript, });
 
-factory RealtimeBetaServerEventResponseAudioTranscriptDone.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseAudioTranscriptDone(
+factory RealtimeBetaServerEventResponseAudioTranscriptDone.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventResponseAudioTranscriptDone(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventResponseAudioTranscriptDoneType.fromJson(json['type'] as String),
   responseId: json['response_id'] as String,
@@ -36,7 +36,7 @@ factory RealtimeBetaServerEventResponseAudioTranscriptDone.fromJson(Map<String, 
   outputIndex: (json['output_index'] as num).toInt(),
   contentIndex: (json['content_index'] as num).toInt(),
   transcript: json['transcript'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -59,7 +59,7 @@ final int contentIndex;
 /// The final transcript of the audio.
 final String transcript;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'response_id': responseId,
@@ -67,15 +67,15 @@ Map<String, dynamic> toJson() { return {
   'output_index': outputIndex,
   'content_index': contentIndex,
   'transcript': transcript,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
-      json.containsKey('transcript') && json['transcript'] is String; } 
-RealtimeBetaServerEventResponseAudioTranscriptDone copyWith({String? eventId, RealtimeBetaServerEventResponseAudioTranscriptDoneType? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? transcript, }) { return RealtimeBetaServerEventResponseAudioTranscriptDone(
+      json.containsKey('transcript') && json['transcript'] is String;}
+RealtimeBetaServerEventResponseAudioTranscriptDone copyWith({String? eventId, RealtimeBetaServerEventResponseAudioTranscriptDoneType? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? transcript, }) {return RealtimeBetaServerEventResponseAudioTranscriptDone(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,
@@ -83,8 +83,8 @@ RealtimeBetaServerEventResponseAudioTranscriptDone copyWith({String? eventId, Re
   outputIndex: outputIndex ?? this.outputIndex,
   contentIndex: contentIndex ?? this.contentIndex,
   transcript: transcript ?? this.transcript,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeBetaServerEventResponseAudioTranscriptDone &&
           eventId == other.eventId &&
           type == other.type &&
@@ -92,7 +92,7 @@ RealtimeBetaServerEventResponseAudioTranscriptDone copyWith({String? eventId, Re
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           contentIndex == other.contentIndex &&
-          transcript == other.transcript; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, transcript); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseAudioTranscriptDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, transcript: $transcript)'; } 
- }
+          transcript == other.transcript;}
+@override int get hashCode {return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, transcript);}
+@override String toString() {return 'RealtimeBetaServerEventResponseAudioTranscriptDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, transcript: $transcript)';}
+}

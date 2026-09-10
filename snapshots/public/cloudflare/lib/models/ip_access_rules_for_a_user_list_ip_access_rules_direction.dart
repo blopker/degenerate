@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the direction used to sort returned rules.
 @immutable final class IpAccessRulesForAUserListIpAccessRulesDirection {const IpAccessRulesForAUserListIpAccessRulesDirection._(this.value);
 
-factory IpAccessRulesForAUserListIpAccessRulesDirection.fromJson(String json) { return switch (json) {
+factory IpAccessRulesForAUserListIpAccessRulesDirection.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   _ => IpAccessRulesForAUserListIpAccessRulesDirection._(json),
-}; }
+};}
 
 static const IpAccessRulesForAUserListIpAccessRulesDirection asc = IpAccessRulesForAUserListIpAccessRulesDirection._('asc');
 
@@ -17,11 +17,11 @@ static const List<IpAccessRulesForAUserListIpAccessRulesDirection> values = [asc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IpAccessRulesForAUserListIpAccessRulesDirection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IpAccessRulesForAUserListIpAccessRulesDirection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IpAccessRulesForAUserListIpAccessRulesDirection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IpAccessRulesForAUserListIpAccessRulesDirection($value)';}
+}

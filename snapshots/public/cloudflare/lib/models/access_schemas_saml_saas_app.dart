@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_saml_saas_app_custom_attributes.dart';import 'access_timestamp.dart';/// Optional identifier indicating the authentication protocol used for the saas app. Required for OIDC. Default if unset is "saml"
 @immutable final class AccessSchemasSamlSaasAppAuthType {const AccessSchemasSamlSaasAppAuthType._(this.value);
 
-factory AccessSchemasSamlSaasAppAuthType.fromJson(String json) { return switch (json) {
+factory AccessSchemasSamlSaasAppAuthType.fromJson(String json) {return switch (json) {
   'saml' => saml,
   'oidc' => oidc,
   _ => AccessSchemasSamlSaasAppAuthType._(json),
-}; }
+};}
 
 static const AccessSchemasSamlSaasAppAuthType saml = AccessSchemasSamlSaasAppAuthType._('saml');
 
@@ -17,22 +17,22 @@ static const List<AccessSchemasSamlSaasAppAuthType> values = [saml, oidc];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessSchemasSamlSaasAppAuthType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessSchemasSamlSaasAppAuthType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessSchemasSamlSaasAppAuthType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessSchemasSamlSaasAppAuthType($value)';}
+}
 /// The format of the name identifier sent to the SaaS application.
 @immutable final class AccessSchemasSamlSaasAppNameIdFormat {const AccessSchemasSamlSaasAppNameIdFormat._(this.value);
 
-factory AccessSchemasSamlSaasAppNameIdFormat.fromJson(String json) { return switch (json) {
+factory AccessSchemasSamlSaasAppNameIdFormat.fromJson(String json) {return switch (json) {
   'id' => id,
   'email' => email,
   _ => AccessSchemasSamlSaasAppNameIdFormat._(json),
-}; }
+};}
 
 static const AccessSchemasSamlSaasAppNameIdFormat id = AccessSchemasSamlSaasAppNameIdFormat._('id');
 
@@ -42,17 +42,17 @@ static const List<AccessSchemasSamlSaasAppNameIdFormat> values = [id, email];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessSchemasSamlSaasAppNameIdFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessSchemasSamlSaasAppNameIdFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessSchemasSamlSaasAppNameIdFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessSchemasSamlSaasAppNameIdFormat($value)';}
+}
 @immutable final class AccessSchemasSamlSaasApp {const AccessSchemasSamlSaasApp({this.authType, this.consumerServiceUrl, this.createdAt, this.customAttributes, this.idpEntityId, this.nameIdFormat, this.nameIdTransformJsonata, this.publicKey, this.spEntityId, this.ssoEndpoint, this.updatedAt, });
 
-factory AccessSchemasSamlSaasApp.fromJson(Map<String, dynamic> json) { return AccessSchemasSamlSaasApp(
+factory AccessSchemasSamlSaasApp.fromJson(Map<String, dynamic> json) {return AccessSchemasSamlSaasApp(
   authType: json['auth_type'] != null ? AccessSchemasSamlSaasAppAuthType.fromJson(json['auth_type'] as String) : null,
   consumerServiceUrl: json['consumer_service_url'] as String?,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
@@ -64,7 +64,7 @@ factory AccessSchemasSamlSaasApp.fromJson(Map<String, dynamic> json) { return Ac
   spEntityId: json['sp_entity_id'] as String?,
   ssoEndpoint: json['sso_endpoint'] as String?,
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 /// Optional identifier indicating the authentication protocol used for the saas app. Required for OIDC. Default if unset is "saml"
 final AccessSchemasSamlSaasAppAuthType? authType;
@@ -97,7 +97,7 @@ final String? ssoEndpoint;
 
 final AccessTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (authType != null) 'auth_type': authType?.toJson(),
   'consumer_service_url': ?consumerServiceUrl,
   if (createdAt != null) 'created_at': createdAt?.toJson(),
@@ -109,9 +109,9 @@ Map<String, dynamic> toJson() { return {
   'sp_entity_id': ?spEntityId,
   'sso_endpoint': ?ssoEndpoint,
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auth_type', 'consumer_service_url', 'created_at', 'custom_attributes', 'idp_entity_id', 'name_id_format', 'name_id_transform_jsonata', 'public_key', 'sp_entity_id', 'sso_endpoint', 'updated_at'}.contains(key)); } 
-AccessSchemasSamlSaasApp copyWith({AccessSchemasSamlSaasAppAuthType? Function()? authType, String? Function()? consumerServiceUrl, AccessTimestamp? Function()? createdAt, List<AccessSchemasSamlSaasAppCustomAttributes>? Function()? customAttributes, String? Function()? idpEntityId, AccessSchemasSamlSaasAppNameIdFormat? Function()? nameIdFormat, String? Function()? nameIdTransformJsonata, String? Function()? publicKey, String? Function()? spEntityId, String? Function()? ssoEndpoint, AccessTimestamp? Function()? updatedAt, }) { return AccessSchemasSamlSaasApp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'auth_type', 'consumer_service_url', 'created_at', 'custom_attributes', 'idp_entity_id', 'name_id_format', 'name_id_transform_jsonata', 'public_key', 'sp_entity_id', 'sso_endpoint', 'updated_at'}.contains(key));}
+AccessSchemasSamlSaasApp copyWith({AccessSchemasSamlSaasAppAuthType? Function()? authType, String? Function()? consumerServiceUrl, AccessTimestamp? Function()? createdAt, List<AccessSchemasSamlSaasAppCustomAttributes>? Function()? customAttributes, String? Function()? idpEntityId, AccessSchemasSamlSaasAppNameIdFormat? Function()? nameIdFormat, String? Function()? nameIdTransformJsonata, String? Function()? publicKey, String? Function()? spEntityId, String? Function()? ssoEndpoint, AccessTimestamp? Function()? updatedAt, }) {return AccessSchemasSamlSaasApp(
   authType: authType != null ? authType() : this.authType,
   consumerServiceUrl: consumerServiceUrl != null ? consumerServiceUrl() : this.consumerServiceUrl,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
@@ -123,8 +123,8 @@ AccessSchemasSamlSaasApp copyWith({AccessSchemasSamlSaasAppAuthType? Function()?
   spEntityId: spEntityId != null ? spEntityId() : this.spEntityId,
   ssoEndpoint: ssoEndpoint != null ? ssoEndpoint() : this.ssoEndpoint,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessSchemasSamlSaasApp &&
           authType == other.authType &&
           consumerServiceUrl == other.consumerServiceUrl &&
@@ -136,7 +136,7 @@ AccessSchemasSamlSaasApp copyWith({AccessSchemasSamlSaasAppAuthType? Function()?
           publicKey == other.publicKey &&
           spEntityId == other.spEntityId &&
           ssoEndpoint == other.ssoEndpoint &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(authType, consumerServiceUrl, createdAt, Object.hashAll(customAttributes ?? const []), idpEntityId, nameIdFormat, nameIdTransformJsonata, publicKey, spEntityId, ssoEndpoint, updatedAt); } 
-@override String toString() { return 'AccessSchemasSamlSaasApp(authType: $authType, consumerServiceUrl: $consumerServiceUrl, createdAt: $createdAt, customAttributes: $customAttributes, idpEntityId: $idpEntityId, nameIdFormat: $nameIdFormat, nameIdTransformJsonata: $nameIdTransformJsonata, publicKey: $publicKey, spEntityId: $spEntityId, ssoEndpoint: $ssoEndpoint, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(authType, consumerServiceUrl, createdAt, Object.hashAll(customAttributes ?? const []), idpEntityId, nameIdFormat, nameIdTransformJsonata, publicKey, spEntityId, ssoEndpoint, updatedAt);}
+@override String toString() {return 'AccessSchemasSamlSaasApp(authType: $authType, consumerServiceUrl: $consumerServiceUrl, createdAt: $createdAt, customAttributes: $customAttributes, idpEntityId: $idpEntityId, nameIdFormat: $nameIdFormat, nameIdTransformJsonata: $nameIdTransformJsonata, publicKey: $publicKey, spEntityId: $spEntityId, ssoEndpoint: $ssoEndpoint, updatedAt: $updatedAt)';}
+}

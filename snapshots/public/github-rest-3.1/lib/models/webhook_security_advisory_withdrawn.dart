@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_security_advisory_withdrawn_security_advisory.dart';@immutable final class WebhookSecurityAdvisoryWithdrawnAction {const WebhookSecurityAdvisoryWithdrawnAction._(this.value);
 
-factory WebhookSecurityAdvisoryWithdrawnAction.fromJson(String json) { return switch (json) {
+factory WebhookSecurityAdvisoryWithdrawnAction.fromJson(String json) {return switch (json) {
   'withdrawn' => withdrawn,
   _ => WebhookSecurityAdvisoryWithdrawnAction._(json),
-}; }
+};}
 
 static const WebhookSecurityAdvisoryWithdrawnAction withdrawn = WebhookSecurityAdvisoryWithdrawnAction._('withdrawn');
 
@@ -13,17 +13,17 @@ static const List<WebhookSecurityAdvisoryWithdrawnAction> values = [withdrawn];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSecurityAdvisoryWithdrawnAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSecurityAdvisoryWithdrawnAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookSecurityAdvisoryWithdrawnAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookSecurityAdvisoryWithdrawnAction($value)';}
+}
 @immutable final class WebhookSecurityAdvisoryWithdrawn {const WebhookSecurityAdvisoryWithdrawn({required this.action, required this.securityAdvisory, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
 
-factory WebhookSecurityAdvisoryWithdrawn.fromJson(Map<String, dynamic> json) { return WebhookSecurityAdvisoryWithdrawn(
+factory WebhookSecurityAdvisoryWithdrawn.fromJson(Map<String, dynamic> json) {return WebhookSecurityAdvisoryWithdrawn(
   action: WebhookSecurityAdvisoryWithdrawnAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookSecurityAdvisoryWithdrawn.fromJson(Map<String, dynamic> json) { r
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   securityAdvisory: WebhookSecurityAdvisoryWithdrawnSecurityAdvisory.fromJson(json['security_advisory'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookSecurityAdvisoryWithdrawnAction action;
 
@@ -48,7 +48,7 @@ final WebhookSecurityAdvisoryWithdrawnSecurityAdvisory securityAdvisory;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -56,10 +56,10 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   'security_advisory': securityAdvisory.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
-      json.containsKey('security_advisory'); } 
-WebhookSecurityAdvisoryWithdrawn copyWith({WebhookSecurityAdvisoryWithdrawnAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, WebhookSecurityAdvisoryWithdrawnSecurityAdvisory? securityAdvisory, SimpleUser? Function()? sender, }) { return WebhookSecurityAdvisoryWithdrawn(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
+      json.containsKey('security_advisory');}
+WebhookSecurityAdvisoryWithdrawn copyWith({WebhookSecurityAdvisoryWithdrawnAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, WebhookSecurityAdvisoryWithdrawnSecurityAdvisory? securityAdvisory, SimpleUser? Function()? sender, }) {return WebhookSecurityAdvisoryWithdrawn(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -67,8 +67,8 @@ WebhookSecurityAdvisoryWithdrawn copyWith({WebhookSecurityAdvisoryWithdrawnActio
   repository: repository != null ? repository() : this.repository,
   securityAdvisory: securityAdvisory ?? this.securityAdvisory,
   sender: sender != null ? sender() : this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookSecurityAdvisoryWithdrawn &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -76,7 +76,7 @@ WebhookSecurityAdvisoryWithdrawn copyWith({WebhookSecurityAdvisoryWithdrawnActio
           organization == other.organization &&
           repository == other.repository &&
           securityAdvisory == other.securityAdvisory &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, securityAdvisory, sender); } 
-@override String toString() { return 'WebhookSecurityAdvisoryWithdrawn(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, securityAdvisory: $securityAdvisory, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, organization, repository, securityAdvisory, sender);}
+@override String toString() {return 'WebhookSecurityAdvisoryWithdrawn(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, securityAdvisory: $securityAdvisory, sender: $sender)';}
+}

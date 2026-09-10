@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageAudioSpeechesBucketWidth {const UsageAudioSpeechesBucketWidth._(this.value);
 
-factory UsageAudioSpeechesBucketWidth.fromJson(String json) { return switch (json) {
+factory UsageAudioSpeechesBucketWidth.fromJson(String json) {return switch (json) {
   '1m' => $1m,
   '1h' => $1h,
   '1d' => $1d,
   _ => UsageAudioSpeechesBucketWidth._(json),
-}; }
+};}
 
 static const UsageAudioSpeechesBucketWidth $1m = UsageAudioSpeechesBucketWidth._('1m');
 
@@ -19,11 +19,11 @@ static const List<UsageAudioSpeechesBucketWidth> values = [$1m, $1h, $1d];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageAudioSpeechesBucketWidth && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageAudioSpeechesBucketWidth($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UsageAudioSpeechesBucketWidth && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UsageAudioSpeechesBucketWidth($value)';}
+}

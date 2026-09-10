@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEpsBank {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEpsBank._(this.value);
 
-factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEpsBank.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEpsBank.fromJson(String json) {return switch (json) {
   'arzte_und_apotheker_bank' => arzteUndApothekerBank,
   'austrian_anadi_bank_ag' => austrianAnadiBankAg,
   'bank_austria' => bankAustria,
@@ -32,7 +32,7 @@ factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEpsBank.fromJson(
   'volkskreditbank_ag' => volkskreditbankAg,
   'vr_bank_braunau' => vrBankBraunau,
   _ => PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEpsBank._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEpsBank arzteUndApothekerBank = PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEpsBank._('arzte_und_apotheker_bank');
 
@@ -94,32 +94,32 @@ static const List<PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEpsBank
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEpsBank && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEpsBank($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEpsBank && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEpsBank($value)';}
+}
 @immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEps {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEps({this.bank});
 
-factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEps.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEps(
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEps.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEps(
   bank: json['bank'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEpsBank.fromJson(json['bank'] as String) : null,
-); }
+);}
 
 final PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEpsBank? bank;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bank != null) 'bank': bank?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank'}.contains(key)); } 
-PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEps copyWith({PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEpsBank? Function()? bank}) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEps(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank'}.contains(key));}
+PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEps copyWith({PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEpsBank? Function()? bank}) {return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEps(
   bank: bank != null ? bank() : this.bank,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEps &&
-          bank == other.bank; } 
-@override int get hashCode { return bank.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEps(bank: $bank)'; } 
- }
+          bank == other.bank;}
+@override int get hashCode {return bank.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodDataEps(bank: $bank)';}
+}

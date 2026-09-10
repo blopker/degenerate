@@ -9,12 +9,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates that y
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class PaymentMethodOptionsBoletoSetupFutureUsage {const PaymentMethodOptionsBoletoSetupFutureUsage._(this.value);
 
-factory PaymentMethodOptionsBoletoSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsBoletoSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PaymentMethodOptionsBoletoSetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsBoletoSetupFutureUsage none = PaymentMethodOptionsBoletoSetupFutureUsage._('none');
 
@@ -26,21 +26,21 @@ static const List<PaymentMethodOptionsBoletoSetupFutureUsage> values = [none, of
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsBoletoSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsBoletoSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsBoletoSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsBoletoSetupFutureUsage($value)';}
+}
 /// 
 @immutable final class PaymentMethodOptionsBoleto {const PaymentMethodOptionsBoleto({required this.expiresAfterDays, this.setupFutureUsage, });
 
-factory PaymentMethodOptionsBoleto.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsBoleto(
+factory PaymentMethodOptionsBoleto.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsBoleto(
   expiresAfterDays: (json['expires_after_days'] as num).toInt(),
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsBoletoSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// The number of calendar days before a Boleto voucher expires. For example, if you create a Boleto voucher on Monday and you set expires_after_days to 2, the Boleto voucher will expire on Wednesday at 23:59 America/Sao_Paulo time.
 final int expiresAfterDays;
@@ -54,19 +54,19 @@ final int expiresAfterDays;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final PaymentMethodOptionsBoletoSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expires_after_days': expiresAfterDays,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('expires_after_days') && json['expires_after_days'] is num; } 
-PaymentMethodOptionsBoleto copyWith({int? expiresAfterDays, PaymentMethodOptionsBoletoSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsBoleto(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('expires_after_days') && json['expires_after_days'] is num;}
+PaymentMethodOptionsBoleto copyWith({int? expiresAfterDays, PaymentMethodOptionsBoletoSetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsBoleto(
   expiresAfterDays: expiresAfterDays ?? this.expiresAfterDays,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodOptionsBoleto &&
           expiresAfterDays == other.expiresAfterDays &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(expiresAfterDays, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsBoleto(expiresAfterDays: $expiresAfterDays, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(expiresAfterDays, setupFutureUsage);}
+@override String toString() {return 'PaymentMethodOptionsBoleto(expiresAfterDays: $expiresAfterDays, setupFutureUsage: $setupFutureUsage)';}
+}

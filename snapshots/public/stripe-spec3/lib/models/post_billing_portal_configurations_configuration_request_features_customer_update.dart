@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_configuration_request_features_customer_update_allowed_updates.dart';@immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate {const PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate({this.allowedUpdates, this.enabled, });
 
-factory PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate(
+factory PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate.fromJson(Map<String, dynamic> json) {return PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate(
   allowedUpdates: json['allowed_updates'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdates.fromJson(json['allowed_updates']) : null,
   enabled: json['enabled'] as bool?,
-); }
+);}
 
 final PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdates? allowedUpdates;
 
 final bool? enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowedUpdates != null) 'allowed_updates': allowedUpdates?.toJson(),
   'enabled': ?enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_updates', 'enabled'}.contains(key)); } 
-PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate copyWith({PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdates? Function()? allowedUpdates, bool? Function()? enabled, }) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allowed_updates', 'enabled'}.contains(key));}
+PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate copyWith({PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdates? Function()? allowedUpdates, bool? Function()? enabled, }) {return PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate(
   allowedUpdates: allowedUpdates != null ? allowedUpdates() : this.allowedUpdates,
   enabled: enabled != null ? enabled() : this.enabled,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate &&
           allowedUpdates == other.allowedUpdates &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(allowedUpdates, enabled); } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate(allowedUpdates: $allowedUpdates, enabled: $enabled)'; } 
- }
+          enabled == other.enabled;}
+@override int get hashCode {return Object.hash(allowedUpdates, enabled);}
+@override String toString() {return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate(allowedUpdates: $allowedUpdates, enabled: $enabled)';}
+}

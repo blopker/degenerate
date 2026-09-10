@@ -37,7 +37,7 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class TeamsDevicesDevices {const TeamsDevicesDevices({this.created, this.deleted, this.deviceType, this.id, this.ip, this.key, this.lastSeen, this.macAddress, this.manufacturer, this.model, this.name, this.osDistroName, this.osDistroRevision, this.osVersion, this.osVersionExtra, this.revokedAt, this.serialNumber, this.updated, this.user, this.version, });
 
-factory TeamsDevicesDevices.fromJson(Map<String, dynamic> json) { return TeamsDevicesDevices(
+factory TeamsDevicesDevices.fromJson(Map<String, dynamic> json) {return TeamsDevicesDevices(
   created: json['created'] != null ? TeamsDevicesCreated.fromJson(json['created'] as String) : null,
   deleted: json['deleted'] != null ? TeamsDevicesDeleted.fromJson(json['deleted'] as bool) : null,
   deviceType: json['device_type'] != null ? TeamsDevicesPlatform.fromJson(json['device_type'] as String) : null,
@@ -58,7 +58,7 @@ factory TeamsDevicesDevices.fromJson(Map<String, dynamic> json) { return TeamsDe
   updated: json['updated'] != null ? TeamsDevicesUpdated.fromJson(json['updated'] as String) : null,
   user: json['user'] != null ? TeamsDevicesUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   version: json['version'] != null ? TeamsDevicesVersion.fromJson(json['version'] as String) : null,
-); }
+);}
 
 /// When the device was created.
 final TeamsDevicesCreated? created;
@@ -102,7 +102,7 @@ final TeamsDevicesUser? user;
 
 final TeamsDevicesVersion? version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (created != null) 'created': created?.toJson(),
   if (deleted != null) 'deleted': deleted?.toJson(),
   if (deviceType != null) 'device_type': deviceType?.toJson(),
@@ -123,9 +123,9 @@ Map<String, dynamic> toJson() { return {
   if (updated != null) 'updated': updated?.toJson(),
   if (user != null) 'user': user?.toJson(),
   if (version != null) 'version': version?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'deleted', 'device_type', 'id', 'ip', 'key', 'last_seen', 'mac_address', 'manufacturer', 'model', 'name', 'os_distro_name', 'os_distro_revision', 'os_version', 'os_version_extra', 'revoked_at', 'serial_number', 'updated', 'user', 'version'}.contains(key)); } 
-TeamsDevicesDevices copyWith({TeamsDevicesCreated? Function()? created, TeamsDevicesDeleted? Function()? deleted, TeamsDevicesPlatform? Function()? deviceType, TeamsDevicesRegistrationId? Function()? id, TeamsDevicesIp? Function()? ip, TeamsDevicesKey? Function()? key, TeamsDevicesLastSeen? Function()? lastSeen, TeamsDevicesMacAddress? Function()? macAddress, TeamsDevicesManufacturer? Function()? manufacturer, TeamsDevicesModel? Function()? model, TeamsDevicesSchemasName? Function()? name, TeamsDevicesOsDistroName? Function()? osDistroName, TeamsDevicesOsDistroRevision? Function()? osDistroRevision, TeamsDevicesOsVersion? Function()? osVersion, TeamsDevicesOsVersionExtra? Function()? osVersionExtra, TeamsDevicesRevokedAt? Function()? revokedAt, TeamsDevicesSerialNumber? Function()? serialNumber, TeamsDevicesUpdated? Function()? updated, TeamsDevicesUser? Function()? user, TeamsDevicesVersion? Function()? version, }) { return TeamsDevicesDevices(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created', 'deleted', 'device_type', 'id', 'ip', 'key', 'last_seen', 'mac_address', 'manufacturer', 'model', 'name', 'os_distro_name', 'os_distro_revision', 'os_version', 'os_version_extra', 'revoked_at', 'serial_number', 'updated', 'user', 'version'}.contains(key));}
+TeamsDevicesDevices copyWith({TeamsDevicesCreated? Function()? created, TeamsDevicesDeleted? Function()? deleted, TeamsDevicesPlatform? Function()? deviceType, TeamsDevicesRegistrationId? Function()? id, TeamsDevicesIp? Function()? ip, TeamsDevicesKey? Function()? key, TeamsDevicesLastSeen? Function()? lastSeen, TeamsDevicesMacAddress? Function()? macAddress, TeamsDevicesManufacturer? Function()? manufacturer, TeamsDevicesModel? Function()? model, TeamsDevicesSchemasName? Function()? name, TeamsDevicesOsDistroName? Function()? osDistroName, TeamsDevicesOsDistroRevision? Function()? osDistroRevision, TeamsDevicesOsVersion? Function()? osVersion, TeamsDevicesOsVersionExtra? Function()? osVersionExtra, TeamsDevicesRevokedAt? Function()? revokedAt, TeamsDevicesSerialNumber? Function()? serialNumber, TeamsDevicesUpdated? Function()? updated, TeamsDevicesUser? Function()? user, TeamsDevicesVersion? Function()? version, }) {return TeamsDevicesDevices(
   created: created != null ? created() : this.created,
   deleted: deleted != null ? deleted() : this.deleted,
   deviceType: deviceType != null ? deviceType() : this.deviceType,
@@ -146,8 +146,8 @@ TeamsDevicesDevices copyWith({TeamsDevicesCreated? Function()? created, TeamsDev
   updated: updated != null ? updated() : this.updated,
   user: user != null ? user() : this.user,
   version: version != null ? version() : this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamsDevicesDevices &&
           created == other.created &&
           deleted == other.deleted &&
@@ -168,7 +168,7 @@ TeamsDevicesDevices copyWith({TeamsDevicesCreated? Function()? created, TeamsDev
           serialNumber == other.serialNumber &&
           updated == other.updated &&
           user == other.user &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(created, deleted, deviceType, id, ip, key, lastSeen, macAddress, manufacturer, model, name, osDistroName, osDistroRevision, osVersion, osVersionExtra, revokedAt, serialNumber, updated, user, version); } 
-@override String toString() { return 'TeamsDevicesDevices(created: $created, deleted: $deleted, deviceType: $deviceType, id: $id, ip: $ip, key: $key, lastSeen: $lastSeen, macAddress: $macAddress, manufacturer: $manufacturer, model: $model, name: $name, osDistroName: $osDistroName, osDistroRevision: $osDistroRevision, osVersion: $osVersion, osVersionExtra: $osVersionExtra, revokedAt: $revokedAt, serialNumber: $serialNumber, updated: $updated, user: $user, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(created, deleted, deviceType, id, ip, key, lastSeen, macAddress, manufacturer, model, name, osDistroName, osDistroRevision, osVersion, osVersionExtra, revokedAt, serialNumber, updated, user, version);}
+@override String toString() {return 'TeamsDevicesDevices(created: $created, deleted: $deleted, deviceType: $deviceType, id: $id, ip: $ip, key: $key, lastSeen: $lastSeen, macAddress: $macAddress, manufacturer: $manufacturer, model: $model, name: $name, osDistroName: $osDistroName, osDistroRevision: $osDistroRevision, osVersion: $osVersion, osVersionExtra: $osVersionExtra, revokedAt: $revokedAt, serialNumber: $serialNumber, updated: $updated, user: $user, version: $version)';}
+}

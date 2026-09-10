@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1 {const PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1._(this.value);
 
-factory PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1.fromJson(String json) { return switch (json) {
+factory PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1.fromJson(String json) {return switch (json) {
   'address' => address,
   'email' => email,
   'name' => $name,
@@ -10,7 +10,7 @@ factory PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdat
   'shipping' => shipping,
   'tax_id' => taxId,
   _ => PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1._(json),
-}; }
+};}
 
 static const PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1 address = PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1._('address');
 
@@ -28,20 +28,20 @@ static const List<PostBillingPortalConfigurationsConfigurationRequestFeaturesCus
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1($value)';}
+}
 @immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2 {const PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2._(this.value);
 
-factory PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2.fromJson(String json) { return switch (json) {
+factory PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2._(json),
-}; }
+};}
 
 static const PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2 $empty = PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2._('');
 
@@ -49,14 +49,14 @@ static const List<PostBillingPortalConfigurationsConfigurationRequestFeaturesCus
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2($value)';}
+}
 
 @immutable
 final class PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdates {

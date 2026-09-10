@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationUpdateResponse400ErrorsMessage {const DestinationUpdateResponse400ErrorsMessage._(this.value);
 
-factory DestinationUpdateResponse400ErrorsMessage.fromJson(String json) { return switch (json) {
+factory DestinationUpdateResponse400ErrorsMessage.fromJson(String json) {return switch (json) {
   'Bad Request' => badRequest,
   _ => DestinationUpdateResponse400ErrorsMessage._(json),
-}; }
+};}
 
 static const DestinationUpdateResponse400ErrorsMessage badRequest = DestinationUpdateResponse400ErrorsMessage._('Bad Request');
 
@@ -13,38 +13,38 @@ static const List<DestinationUpdateResponse400ErrorsMessage> values = [badReques
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DestinationUpdateResponse400ErrorsMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DestinationUpdateResponse400ErrorsMessage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DestinationUpdateResponse400ErrorsMessage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DestinationUpdateResponse400ErrorsMessage($value)';}
+}
 @immutable final class DestinationUpdateResponse400Errors {const DestinationUpdateResponse400Errors({required this.message, this.detail, });
 
-factory DestinationUpdateResponse400Errors.fromJson(Map<String, dynamic> json) { return DestinationUpdateResponse400Errors(
+factory DestinationUpdateResponse400Errors.fromJson(Map<String, dynamic> json) {return DestinationUpdateResponse400Errors(
   detail: json['detail'] as String?,
   message: DestinationUpdateResponse400ErrorsMessage.fromJson(json['message'] as String),
-); }
+);}
 
 final String? detail;
 
 final DestinationUpdateResponse400ErrorsMessage message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'detail': ?detail,
   'message': message.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message'); } 
-DestinationUpdateResponse400Errors copyWith({String? Function()? detail, DestinationUpdateResponse400ErrorsMessage? message, }) { return DestinationUpdateResponse400Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message');}
+DestinationUpdateResponse400Errors copyWith({String? Function()? detail, DestinationUpdateResponse400ErrorsMessage? message, }) {return DestinationUpdateResponse400Errors(
   detail: detail != null ? detail() : this.detail,
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DestinationUpdateResponse400Errors &&
           detail == other.detail &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(detail, message); } 
-@override String toString() { return 'DestinationUpdateResponse400Errors(detail: $detail, message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return Object.hash(detail, message);}
+@override String toString() {return 'DestinationUpdateResponse400Errors(detail: $detail, message: $message)';}
+}

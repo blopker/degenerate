@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Page size of invoice pdf. Options include a4, letter, and auto. If set to auto, page size will be switched to a4 or letter based on customer locale.
 @immutable final class InvoiceRenderingPdfPageSize {const InvoiceRenderingPdfPageSize._(this.value);
 
-factory InvoiceRenderingPdfPageSize.fromJson(String json) { return switch (json) {
+factory InvoiceRenderingPdfPageSize.fromJson(String json) {return switch (json) {
   'a4' => a4,
   'auto' => auto,
   'letter' => letter,
   _ => InvoiceRenderingPdfPageSize._(json),
-}; }
+};}
 
 static const InvoiceRenderingPdfPageSize a4 = InvoiceRenderingPdfPageSize._('a4');
 
@@ -20,34 +20,34 @@ static const List<InvoiceRenderingPdfPageSize> values = [a4, auto, letter];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceRenderingPdfPageSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceRenderingPdfPageSize($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoiceRenderingPdfPageSize && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoiceRenderingPdfPageSize($value)';}
+}
 /// 
 @immutable final class InvoiceRenderingPdf {const InvoiceRenderingPdf({this.pageSize = const Omittable.absent()});
 
-factory InvoiceRenderingPdf.fromJson(Map<String, dynamic> json) { return InvoiceRenderingPdf(
+factory InvoiceRenderingPdf.fromJson(Map<String, dynamic> json) {return InvoiceRenderingPdf(
   pageSize: json.containsKey('page_size') ? Omittable(json['page_size'] != null ? InvoiceRenderingPdfPageSize.fromJson(json['page_size'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Page size of invoice pdf. Options include a4, letter, and auto. If set to auto, page size will be switched to a4 or letter based on customer locale.
 final Omittable<InvoiceRenderingPdfPageSize?> pageSize;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (pageSize.isPresent) 'page_size': pageSize.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'page_size'}.contains(key)); } 
-InvoiceRenderingPdf copyWith({Omittable<InvoiceRenderingPdfPageSize?>? pageSize}) { return InvoiceRenderingPdf(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'page_size'}.contains(key));}
+InvoiceRenderingPdf copyWith({Omittable<InvoiceRenderingPdfPageSize?>? pageSize}) {return InvoiceRenderingPdf(
   pageSize: pageSize ?? this.pageSize,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InvoiceRenderingPdf &&
-          pageSize == other.pageSize; } 
-@override int get hashCode { return pageSize.hashCode; } 
-@override String toString() { return 'InvoiceRenderingPdf(pageSize: $pageSize)'; } 
- }
+          pageSize == other.pageSize;}
+@override int get hashCode {return pageSize.hashCode;}
+@override String toString() {return 'InvoiceRenderingPdf(pageSize: $pageSize)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_components_schemas_name.dart';import 'access_schemas_okta_config.dart';import 'access_schemas_okta_scim_config.dart';import 'access_uuid.dart';/// The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
 @immutable final class AccessSchemasOktaType {const AccessSchemasOktaType._(this.value);
 
-factory AccessSchemasOktaType.fromJson(String json) { return switch (json) {
+factory AccessSchemasOktaType.fromJson(String json) {return switch (json) {
   'onetimepin' => onetimepin,
   'azureAD' => azureAd,
   'saml' => saml,
@@ -19,7 +19,7 @@ factory AccessSchemasOktaType.fromJson(String json) { return switch (json) {
   'pingone' => pingone,
   'yandex' => yandex,
   _ => AccessSchemasOktaType._(json),
-}; }
+};}
 
 static const AccessSchemasOktaType onetimepin = AccessSchemasOktaType._('onetimepin');
 
@@ -53,23 +53,23 @@ static const List<AccessSchemasOktaType> values = [onetimepin, azureAd, saml, ce
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessSchemasOktaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessSchemasOktaType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessSchemasOktaType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessSchemasOktaType($value)';}
+}
 @immutable final class AccessSchemasOkta {const AccessSchemasOkta({required this.config, required this.name, required this.type, this.id, this.scimConfig, });
 
-factory AccessSchemasOkta.fromJson(Map<String, dynamic> json) { return AccessSchemasOkta(
+factory AccessSchemasOkta.fromJson(Map<String, dynamic> json) {return AccessSchemasOkta(
   config: AccessSchemasOktaConfig.fromJson(json['config'] as Map<String, dynamic>),
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
   name: AccessComponentsSchemasName.fromJson(json['name'] as String),
   scimConfig: json['scim_config'] != null ? AccessSchemasOktaScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
   type: AccessSchemasOktaType.fromJson(json['type'] as String),
-); }
+);}
 
 final AccessSchemasOktaConfig config;
 
@@ -84,30 +84,30 @@ final AccessSchemasOktaScimConfig? scimConfig;
 /// The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
 final AccessSchemasOktaType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'config': config.toJson(),
   if (id != null) 'id': id?.toJson(),
   'name': name.toJson(),
   if (scimConfig != null) 'scim_config': scimConfig?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('config') &&
       json.containsKey('name') &&
-      json.containsKey('type'); } 
-AccessSchemasOkta copyWith({AccessSchemasOktaConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessSchemasOktaScimConfig? Function()? scimConfig, AccessSchemasOktaType? type, }) { return AccessSchemasOkta(
+      json.containsKey('type');}
+AccessSchemasOkta copyWith({AccessSchemasOktaConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessSchemasOktaScimConfig? Function()? scimConfig, AccessSchemasOktaType? type, }) {return AccessSchemasOkta(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,
   scimConfig: scimConfig != null ? scimConfig() : this.scimConfig,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessSchemasOkta &&
           config == other.config &&
           id == other.id &&
           name == other.name &&
           scimConfig == other.scimConfig &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(config, id, name, scimConfig, type); } 
-@override String toString() { return 'AccessSchemasOkta(config: $config, id: $id, name: $name, scimConfig: $scimConfig, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(config, id, name, scimConfig, type);}
+@override String toString() {return 'AccessSchemasOkta(config: $config, id: $id, name: $name, scimConfig: $scimConfig, type: $type)';}
+}

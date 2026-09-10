@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestReviewRequestedReviewRequested2PullRequestLinksSelf {const WebhookPullRequestReviewRequestedReviewRequested2PullRequestLinksSelf({required this.href});
 
-factory WebhookPullRequestReviewRequestedReviewRequested2PullRequestLinksSelf.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestedReviewRequested2PullRequestLinksSelf(
+factory WebhookPullRequestReviewRequestedReviewRequested2PullRequestLinksSelf.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewRequestedReviewRequested2PullRequestLinksSelf(
   href: json['href'] as String,
-); }
+);}
 
 final String href;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'href': href,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String; } 
-WebhookPullRequestReviewRequestedReviewRequested2PullRequestLinksSelf copyWith({String? href}) { return WebhookPullRequestReviewRequestedReviewRequested2PullRequestLinksSelf(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('href') && json['href'] is String;}
+WebhookPullRequestReviewRequestedReviewRequested2PullRequestLinksSelf copyWith({String? href}) {return WebhookPullRequestReviewRequestedReviewRequested2PullRequestLinksSelf(
   href: href ?? this.href,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestReviewRequestedReviewRequested2PullRequestLinksSelf &&
-          href == other.href; } 
-@override int get hashCode { return href.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewRequestedReviewRequested2PullRequestLinksSelf(href: $href)'; } 
- }
+          href == other.href;}
+@override int get hashCode {return href.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewRequestedReviewRequested2PullRequestLinksSelf(href: $href)';}
+}

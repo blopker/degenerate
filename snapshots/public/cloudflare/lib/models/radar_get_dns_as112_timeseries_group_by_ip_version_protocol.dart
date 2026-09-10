@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsAs112TimeseriesGroupByIpVersionProtocol {const RadarGetDnsAs112TimeseriesGroupByIpVersionProtocol._(this.value);
 
-factory RadarGetDnsAs112TimeseriesGroupByIpVersionProtocol.fromJson(String json) { return switch (json) {
+factory RadarGetDnsAs112TimeseriesGroupByIpVersionProtocol.fromJson(String json) {return switch (json) {
   'UDP' => udp,
   'TCP' => tcp,
   'HTTPS' => https,
   'TLS' => tls,
   _ => RadarGetDnsAs112TimeseriesGroupByIpVersionProtocol._(json),
-}; }
+};}
 
 static const RadarGetDnsAs112TimeseriesGroupByIpVersionProtocol udp = RadarGetDnsAs112TimeseriesGroupByIpVersionProtocol._('UDP');
 
@@ -22,11 +22,11 @@ static const List<RadarGetDnsAs112TimeseriesGroupByIpVersionProtocol> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsAs112TimeseriesGroupByIpVersionProtocol && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByIpVersionProtocol($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsAs112TimeseriesGroupByIpVersionProtocol && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsAs112TimeseriesGroupByIpVersionProtocol($value)';}
+}

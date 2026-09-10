@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxRegistrationsRequestCountryOptionsAwStandardPlaceOfSupplyScheme {const PostTaxRegistrationsRequestCountryOptionsAwStandardPlaceOfSupplyScheme._(this.value);
 
-factory PostTaxRegistrationsRequestCountryOptionsAwStandardPlaceOfSupplyScheme.fromJson(String json) { return switch (json) {
+factory PostTaxRegistrationsRequestCountryOptionsAwStandardPlaceOfSupplyScheme.fromJson(String json) {return switch (json) {
   'inbound_goods' => inboundGoods,
   'standard' => standard,
   _ => PostTaxRegistrationsRequestCountryOptionsAwStandardPlaceOfSupplyScheme._(json),
-}; }
+};}
 
 static const PostTaxRegistrationsRequestCountryOptionsAwStandardPlaceOfSupplyScheme inboundGoods = PostTaxRegistrationsRequestCountryOptionsAwStandardPlaceOfSupplyScheme._('inbound_goods');
 
@@ -16,32 +16,32 @@ static const List<PostTaxRegistrationsRequestCountryOptionsAwStandardPlaceOfSupp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTaxRegistrationsRequestCountryOptionsAwStandardPlaceOfSupplyScheme && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsAwStandardPlaceOfSupplyScheme($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTaxRegistrationsRequestCountryOptionsAwStandardPlaceOfSupplyScheme && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTaxRegistrationsRequestCountryOptionsAwStandardPlaceOfSupplyScheme($value)';}
+}
 @immutable final class PostTaxRegistrationsRequestCountryOptionsAwStandard {const PostTaxRegistrationsRequestCountryOptionsAwStandard({this.placeOfSupplyScheme});
 
-factory PostTaxRegistrationsRequestCountryOptionsAwStandard.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptionsAwStandard(
+factory PostTaxRegistrationsRequestCountryOptionsAwStandard.fromJson(Map<String, dynamic> json) {return PostTaxRegistrationsRequestCountryOptionsAwStandard(
   placeOfSupplyScheme: json['place_of_supply_scheme'] != null ? PostTaxRegistrationsRequestCountryOptionsAwStandardPlaceOfSupplyScheme.fromJson(json['place_of_supply_scheme'] as String) : null,
-); }
+);}
 
 final PostTaxRegistrationsRequestCountryOptionsAwStandardPlaceOfSupplyScheme? placeOfSupplyScheme;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (placeOfSupplyScheme != null) 'place_of_supply_scheme': placeOfSupplyScheme?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'place_of_supply_scheme'}.contains(key)); } 
-PostTaxRegistrationsRequestCountryOptionsAwStandard copyWith({PostTaxRegistrationsRequestCountryOptionsAwStandardPlaceOfSupplyScheme? Function()? placeOfSupplyScheme}) { return PostTaxRegistrationsRequestCountryOptionsAwStandard(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'place_of_supply_scheme'}.contains(key));}
+PostTaxRegistrationsRequestCountryOptionsAwStandard copyWith({PostTaxRegistrationsRequestCountryOptionsAwStandardPlaceOfSupplyScheme? Function()? placeOfSupplyScheme}) {return PostTaxRegistrationsRequestCountryOptionsAwStandard(
   placeOfSupplyScheme: placeOfSupplyScheme != null ? placeOfSupplyScheme() : this.placeOfSupplyScheme,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTaxRegistrationsRequestCountryOptionsAwStandard &&
-          placeOfSupplyScheme == other.placeOfSupplyScheme; } 
-@override int get hashCode { return placeOfSupplyScheme.hashCode; } 
-@override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsAwStandard(placeOfSupplyScheme: $placeOfSupplyScheme)'; } 
- }
+          placeOfSupplyScheme == other.placeOfSupplyScheme;}
+@override int get hashCode {return placeOfSupplyScheme.hashCode;}
+@override String toString() {return 'PostTaxRegistrationsRequestCountryOptionsAwStandard(placeOfSupplyScheme: $placeOfSupplyScheme)';}
+}

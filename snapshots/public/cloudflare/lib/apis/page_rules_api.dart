@@ -13,7 +13,7 @@ final class PageRulesApi with ApiExecutor {const PageRulesApi(this.apiConfig);
 /// Fetches Page Rules in a zone.
 ///
 /// `GET /zones/{zone_id}/pagerules`
-Future<ApiResult<List<ZonesPageRule>?, ResponseCommonFailure89>> pageRulesListPageRules({required ZonesSchemasIdentifier zoneId, PageRulesListPageRulesOrder? order, PageRulesListPageRulesDirection? direction, PageRulesListPageRulesMatch? match, PageRulesListPageRulesStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ZonesPageRule>?, ResponseCommonFailure89>> pageRulesListPageRules({required ZonesSchemasIdentifier zoneId, PageRulesListPageRulesOrder? order, PageRulesListPageRulesDirection? direction, PageRulesListPageRulesMatch? match, PageRulesListPageRulesStatus? status, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) {
   queryParameters['order'] = order.toJson();
@@ -56,13 +56,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create a Page Rule
 ///
 /// Creates a new Page Rule.
 ///
 /// `POST /zones/{zone_id}/pagerules`
-Future<ApiResult<ZonesPageRule?, ResponseCommonFailure89>> pageRulesCreateAPageRule({required ZonesSchemasIdentifier zoneId, required PageRulesCreateAPageRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZonesPageRule?, ResponseCommonFailure89>> pageRulesCreateAPageRule({required ZonesSchemasIdentifier zoneId, required PageRulesCreateAPageRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -90,13 +90,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get a Page Rule
 ///
 /// Fetches the details of a Page Rule.
 ///
 /// `GET /zones/{zone_id}/pagerules/{pagerule_id}`
-Future<ApiResult<ZonesPageRule?, ResponseCommonFailure89>> pageRulesGetAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZonesPageRule?, ResponseCommonFailure89>> pageRulesGetAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -122,13 +122,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update a Page Rule
 ///
 /// Replaces the configuration of an existing Page Rule. The configuration of the updated Page Rule will exactly match the data passed in the API request.
 ///
 /// `PUT /zones/{zone_id}/pagerules/{pagerule_id}`
-Future<ApiResult<ZonesPageRule?, ResponseCommonFailure89>> pageRulesUpdateAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, required PageRulesUpdateAPageRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZonesPageRule?, ResponseCommonFailure89>> pageRulesUpdateAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, required PageRulesUpdateAPageRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -156,13 +156,13 @@ return null;
 
   },
 );
- } 
+}
 /// Edit a Page Rule
 ///
 /// Updates one or more fields of an existing Page Rule.
 ///
 /// `PATCH /zones/{zone_id}/pagerules/{pagerule_id}`
-Future<ApiResult<ZonesPageRule?, ResponseCommonFailure89>> pageRulesEditAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, required PageRulesEditAPageRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZonesPageRule?, ResponseCommonFailure89>> pageRulesEditAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, required PageRulesEditAPageRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -190,13 +190,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a Page Rule
 ///
 /// Deletes an existing Page Rule.
 ///
 /// `DELETE /zones/{zone_id}/pagerules/{pagerule_id}`
-Future<ApiResult<ResponseSingleId9Result?, ResponseCommonFailure89>> pageRulesDeleteAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId9Result?, ResponseCommonFailure89>> pageRulesDeleteAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -222,5 +222,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

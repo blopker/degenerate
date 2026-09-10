@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByOperatingSystemHttpProtocol {const RadarGetHttpTopAsesByOperatingSystemHttpProtocol._(this.value);
 
-factory RadarGetHttpTopAsesByOperatingSystemHttpProtocol.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopAsesByOperatingSystemHttpProtocol.fromJson(String json) {return switch (json) {
   'HTTP' => http,
   'HTTPS' => https,
   _ => RadarGetHttpTopAsesByOperatingSystemHttpProtocol._(json),
-}; }
+};}
 
 static const RadarGetHttpTopAsesByOperatingSystemHttpProtocol http = RadarGetHttpTopAsesByOperatingSystemHttpProtocol._('HTTP');
 
@@ -16,11 +16,11 @@ static const List<RadarGetHttpTopAsesByOperatingSystemHttpProtocol> values = [ht
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTopAsesByOperatingSystemHttpProtocol && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTopAsesByOperatingSystemHttpProtocol($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTopAsesByOperatingSystemHttpProtocol && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTopAsesByOperatingSystemHttpProtocol($value)';}
+}

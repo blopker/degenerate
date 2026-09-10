@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_intent_payment_method_options_mandate_options_bacs_debit.dart';/// 
 @immutable final class SetupIntentPaymentMethodOptionsBacsDebit {const SetupIntentPaymentMethodOptionsBacsDebit({this.mandateOptions});
 
-factory SetupIntentPaymentMethodOptionsBacsDebit.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsBacsDebit(
+factory SetupIntentPaymentMethodOptionsBacsDebit.fromJson(Map<String, dynamic> json) {return SetupIntentPaymentMethodOptionsBacsDebit(
   mandateOptions: json['mandate_options'] != null ? SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit? mandateOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options'}.contains(key)); } 
-SetupIntentPaymentMethodOptionsBacsDebit copyWith({SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit? Function()? mandateOptions}) { return SetupIntentPaymentMethodOptionsBacsDebit(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mandate_options'}.contains(key));}
+SetupIntentPaymentMethodOptionsBacsDebit copyWith({SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit? Function()? mandateOptions}) {return SetupIntentPaymentMethodOptionsBacsDebit(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SetupIntentPaymentMethodOptionsBacsDebit &&
-          mandateOptions == other.mandateOptions; } 
-@override int get hashCode { return mandateOptions.hashCode; } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsBacsDebit(mandateOptions: $mandateOptions)'; } 
- }
+          mandateOptions == other.mandateOptions;}
+@override int get hashCode {return mandateOptions.hashCode;}
+@override String toString() {return 'SetupIntentPaymentMethodOptionsBacsDebit(mandateOptions: $mandateOptions)';}
+}

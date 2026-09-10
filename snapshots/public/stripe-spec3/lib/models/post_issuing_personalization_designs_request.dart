@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_personalization_designs_request_carrier_text.dart';import 'post_issuing_personalization_designs_request_preferences.dart';@immutable final class PostIssuingPersonalizationDesignsRequest {const PostIssuingPersonalizationDesignsRequest({required this.physicalBundle, this.cardLogo, this.carrierText, this.expand, this.lookupKey, this.metadata, this.name, this.preferences, this.transferLookupKey, });
 
-factory PostIssuingPersonalizationDesignsRequest.fromJson(Map<String, dynamic> json) { return PostIssuingPersonalizationDesignsRequest(
+factory PostIssuingPersonalizationDesignsRequest.fromJson(Map<String, dynamic> json) {return PostIssuingPersonalizationDesignsRequest(
   cardLogo: json['card_logo'] as String?,
   carrierText: json['carrier_text'] != null ? PostIssuingPersonalizationDesignsRequestCarrierText.fromJson(json['carrier_text'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -12,7 +12,7 @@ factory PostIssuingPersonalizationDesignsRequest.fromJson(Map<String, dynamic> j
   physicalBundle: json['physical_bundle'] as String,
   preferences: json['preferences'] != null ? PostIssuingPersonalizationDesignsRequestPreferences.fromJson(json['preferences'] as Map<String, dynamic>) : null,
   transferLookupKey: json['transfer_lookup_key'] as bool?,
-); }
+);}
 
 /// The file for the card logo, for use with physical bundles that support card logos. Must have a `purpose` value of `issuing_logo`.
 final String? cardLogo;
@@ -41,7 +41,7 @@ final PostIssuingPersonalizationDesignsRequestPreferences? preferences;
 /// If set to true, will atomically remove the lookup key from the existing personalization design, and assign it to this personalization design.
 final bool? transferLookupKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'card_logo': ?cardLogo,
   if (carrierText != null) 'carrier_text': carrierText?.toJson(),
   'expand': ?expand,
@@ -51,9 +51,9 @@ Map<String, dynamic> toJson() { return {
   'physical_bundle': physicalBundle,
   if (preferences != null) 'preferences': preferences?.toJson(),
   'transfer_lookup_key': ?transferLookupKey,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('physical_bundle') && json['physical_bundle'] is String; } 
-PostIssuingPersonalizationDesignsRequest copyWith({String? Function()? cardLogo, PostIssuingPersonalizationDesignsRequestCarrierText? Function()? carrierText, List<String>? Function()? expand, String? Function()? lookupKey, Map<String, String>? Function()? metadata, String? Function()? name, String? physicalBundle, PostIssuingPersonalizationDesignsRequestPreferences? Function()? preferences, bool? Function()? transferLookupKey, }) { return PostIssuingPersonalizationDesignsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('physical_bundle') && json['physical_bundle'] is String;}
+PostIssuingPersonalizationDesignsRequest copyWith({String? Function()? cardLogo, PostIssuingPersonalizationDesignsRequestCarrierText? Function()? carrierText, List<String>? Function()? expand, String? Function()? lookupKey, Map<String, String>? Function()? metadata, String? Function()? name, String? physicalBundle, PostIssuingPersonalizationDesignsRequestPreferences? Function()? preferences, bool? Function()? transferLookupKey, }) {return PostIssuingPersonalizationDesignsRequest(
   cardLogo: cardLogo != null ? cardLogo() : this.cardLogo,
   carrierText: carrierText != null ? carrierText() : this.carrierText,
   expand: expand != null ? expand() : this.expand,
@@ -63,8 +63,8 @@ PostIssuingPersonalizationDesignsRequest copyWith({String? Function()? cardLogo,
   physicalBundle: physicalBundle ?? this.physicalBundle,
   preferences: preferences != null ? preferences() : this.preferences,
   transferLookupKey: transferLookupKey != null ? transferLookupKey() : this.transferLookupKey,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostIssuingPersonalizationDesignsRequest &&
           cardLogo == other.cardLogo &&
           carrierText == other.carrierText &&
@@ -74,7 +74,7 @@ PostIssuingPersonalizationDesignsRequest copyWith({String? Function()? cardLogo,
           name == other.name &&
           physicalBundle == other.physicalBundle &&
           preferences == other.preferences &&
-          transferLookupKey == other.transferLookupKey; } 
-@override int get hashCode { return Object.hash(cardLogo, carrierText, Object.hashAll(expand ?? const []), lookupKey, metadata, name, physicalBundle, preferences, transferLookupKey); } 
-@override String toString() { return 'PostIssuingPersonalizationDesignsRequest(cardLogo: $cardLogo, carrierText: $carrierText, expand: $expand, lookupKey: $lookupKey, metadata: $metadata, name: $name, physicalBundle: $physicalBundle, preferences: $preferences, transferLookupKey: $transferLookupKey)'; } 
- }
+          transferLookupKey == other.transferLookupKey;}
+@override int get hashCode {return Object.hash(cardLogo, carrierText, Object.hashAll(expand ?? const []), lookupKey, metadata, name, physicalBundle, preferences, transferLookupKey);}
+@override String toString() {return 'PostIssuingPersonalizationDesignsRequest(cardLogo: $cardLogo, carrierText: $carrierText, expand: $expand, lookupKey: $lookupKey, metadata: $metadata, name: $name, physicalBundle: $physicalBundle, preferences: $preferences, transferLookupKey: $transferLookupKey)';}
+}

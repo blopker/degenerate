@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Hyperdrive binding.
 @immutable final class PagesDeploymentConfigValuesHyperdriveBindingsValue {const PagesDeploymentConfigValuesHyperdriveBindingsValue({required this.id});
 
-factory PagesDeploymentConfigValuesHyperdriveBindingsValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesHyperdriveBindingsValue(
+factory PagesDeploymentConfigValuesHyperdriveBindingsValue.fromJson(Map<String, dynamic> json) {return PagesDeploymentConfigValuesHyperdriveBindingsValue(
   id: json['id'] as String,
-); }
+);}
 
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-PagesDeploymentConfigValuesHyperdriveBindingsValue copyWith({String? id}) { return PagesDeploymentConfigValuesHyperdriveBindingsValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
+PagesDeploymentConfigValuesHyperdriveBindingsValue copyWith({String? id}) {return PagesDeploymentConfigValuesHyperdriveBindingsValue(
   id: id ?? this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PagesDeploymentConfigValuesHyperdriveBindingsValue &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'PagesDeploymentConfigValuesHyperdriveBindingsValue(id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return id.hashCode;}
+@override String toString() {return 'PagesDeploymentConfigValuesHyperdriveBindingsValue(id: $id)';}
+}

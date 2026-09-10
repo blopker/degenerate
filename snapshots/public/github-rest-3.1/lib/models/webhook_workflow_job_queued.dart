@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_workflow_job_queued_workflow_job.dart';@immutable final class WebhookWorkflowJobQueuedAction {const WebhookWorkflowJobQueuedAction._(this.value);
 
-factory WebhookWorkflowJobQueuedAction.fromJson(String json) { return switch (json) {
+factory WebhookWorkflowJobQueuedAction.fromJson(String json) {return switch (json) {
   'queued' => queued,
   _ => WebhookWorkflowJobQueuedAction._(json),
-}; }
+};}
 
 static const WebhookWorkflowJobQueuedAction queued = WebhookWorkflowJobQueuedAction._('queued');
 
@@ -13,17 +13,17 @@ static const List<WebhookWorkflowJobQueuedAction> values = [queued];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookWorkflowJobQueuedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookWorkflowJobQueuedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookWorkflowJobQueuedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookWorkflowJobQueuedAction($value)';}
+}
 @immutable final class WebhookWorkflowJobQueued {const WebhookWorkflowJobQueued({required this.action, required this.repository, required this.sender, required this.workflowJob, this.enterprise, this.installation, this.organization, this.deployment, });
 
-factory WebhookWorkflowJobQueued.fromJson(Map<String, dynamic> json) { return WebhookWorkflowJobQueued(
+factory WebhookWorkflowJobQueued.fromJson(Map<String, dynamic> json) {return WebhookWorkflowJobQueued(
   action: WebhookWorkflowJobQueuedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -32,7 +32,7 @@ factory WebhookWorkflowJobQueued.fromJson(Map<String, dynamic> json) { return We
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   workflowJob: WebhookWorkflowJobQueuedWorkflowJob.fromJson(json['workflow_job'] as Map<String, dynamic>),
   deployment: json['deployment'] != null ? Deployment.fromJson(json['deployment'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookWorkflowJobQueuedAction action;
 
@@ -50,7 +50,7 @@ final WebhookWorkflowJobQueuedWorkflowJob workflowJob;
 
 final Deployment? deployment;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -59,12 +59,12 @@ Map<String, dynamic> toJson() { return {
   'sender': sender.toJson(),
   'workflow_job': workflowJob.toJson(),
   if (deployment != null) 'deployment': deployment?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('repository') &&
       json.containsKey('sender') &&
-      json.containsKey('workflow_job'); } 
-WebhookWorkflowJobQueued copyWith({WebhookWorkflowJobQueuedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhookWorkflowJobQueuedWorkflowJob? workflowJob, Deployment? Function()? deployment, }) { return WebhookWorkflowJobQueued(
+      json.containsKey('workflow_job');}
+WebhookWorkflowJobQueued copyWith({WebhookWorkflowJobQueuedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhookWorkflowJobQueuedWorkflowJob? workflowJob, Deployment? Function()? deployment, }) {return WebhookWorkflowJobQueued(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -73,8 +73,8 @@ WebhookWorkflowJobQueued copyWith({WebhookWorkflowJobQueuedAction? action, Enter
   sender: sender ?? this.sender,
   workflowJob: workflowJob ?? this.workflowJob,
   deployment: deployment != null ? deployment() : this.deployment,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookWorkflowJobQueued &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -83,7 +83,7 @@ WebhookWorkflowJobQueued copyWith({WebhookWorkflowJobQueuedAction? action, Enter
           repository == other.repository &&
           sender == other.sender &&
           workflowJob == other.workflowJob &&
-          deployment == other.deployment; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, sender, workflowJob, deployment); } 
-@override String toString() { return 'WebhookWorkflowJobQueued(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, workflowJob: $workflowJob, deployment: $deployment)'; } 
- }
+          deployment == other.deployment;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, organization, repository, sender, workflowJob, deployment);}
+@override String toString() {return 'WebhookWorkflowJobQueued(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, workflowJob: $workflowJob, deployment: $deployment)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The local credit or debit card brand.
 @immutable final class PaymentMethodDetailsKrCardBrand {const PaymentMethodDetailsKrCardBrand._(this.value);
 
-factory PaymentMethodDetailsKrCardBrand.fromJson(String json) { return switch (json) {
+factory PaymentMethodDetailsKrCardBrand.fromJson(String json) {return switch (json) {
   'bc' => bc,
   'citi' => citi,
   'hana' => hana,
@@ -27,7 +27,7 @@ factory PaymentMethodDetailsKrCardBrand.fromJson(String json) { return switch (j
   'tossbank' => tossbank,
   'woori' => woori,
   _ => PaymentMethodDetailsKrCardBrand._(json),
-}; }
+};}
 
 static const PaymentMethodDetailsKrCardBrand bc = PaymentMethodDetailsKrCardBrand._('bc');
 
@@ -77,23 +77,23 @@ static const List<PaymentMethodDetailsKrCardBrand> values = [bc, citi, hana, hyu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsKrCardBrand && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsKrCardBrand($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodDetailsKrCardBrand && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodDetailsKrCardBrand($value)';}
+}
 /// 
 @immutable final class PaymentMethodDetailsKrCard {const PaymentMethodDetailsKrCard({this.brand = const Omittable.absent(), this.buyerId = const Omittable.absent(), this.last4 = const Omittable.absent(), this.transactionId = const Omittable.absent(), });
 
-factory PaymentMethodDetailsKrCard.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsKrCard(
+factory PaymentMethodDetailsKrCard.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsKrCard(
   brand: json.containsKey('brand') ? Omittable(json['brand'] != null ? PaymentMethodDetailsKrCardBrand.fromJson(json['brand'] as String) : null) : const Omittable.absent(),
   buyerId: json.containsKey('buyer_id') ? Omittable(json['buyer_id'] as String?) : const Omittable.absent(),
   last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
   transactionId: json.containsKey('transaction_id') ? Omittable(json['transaction_id'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The local credit or debit card brand.
 final Omittable<PaymentMethodDetailsKrCardBrand?> brand;
@@ -107,25 +107,25 @@ final Omittable<String?> last4;
 /// The Korean Card transaction ID associated with this payment.
 final Omittable<String?> transactionId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (brand.isPresent) 'brand': brand.value?.toJson(),
   if (buyerId.isPresent) 'buyer_id': buyerId.value,
   if (last4.isPresent) 'last4': last4.value,
   if (transactionId.isPresent) 'transaction_id': transactionId.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'brand', 'buyer_id', 'last4', 'transaction_id'}.contains(key)); } 
-PaymentMethodDetailsKrCard copyWith({Omittable<PaymentMethodDetailsKrCardBrand?>? brand, Omittable<String?>? buyerId, Omittable<String?>? last4, Omittable<String?>? transactionId, }) { return PaymentMethodDetailsKrCard(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'brand', 'buyer_id', 'last4', 'transaction_id'}.contains(key));}
+PaymentMethodDetailsKrCard copyWith({Omittable<PaymentMethodDetailsKrCardBrand?>? brand, Omittable<String?>? buyerId, Omittable<String?>? last4, Omittable<String?>? transactionId, }) {return PaymentMethodDetailsKrCard(
   brand: brand ?? this.brand,
   buyerId: buyerId ?? this.buyerId,
   last4: last4 ?? this.last4,
   transactionId: transactionId ?? this.transactionId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodDetailsKrCard &&
           brand == other.brand &&
           buyerId == other.buyerId &&
           last4 == other.last4 &&
-          transactionId == other.transactionId; } 
-@override int get hashCode { return Object.hash(brand, buyerId, last4, transactionId); } 
-@override String toString() { return 'PaymentMethodDetailsKrCard(brand: $brand, buyerId: $buyerId, last4: $last4, transactionId: $transactionId)'; } 
- }
+          transactionId == other.transactionId;}
+@override int get hashCode {return Object.hash(brand, buyerId, last4, transactionId);}
+@override String toString() {return 'PaymentMethodDetailsKrCard(brand: $brand, buyerId: $buyerId, last4: $last4, transactionId: $transactionId)';}
+}

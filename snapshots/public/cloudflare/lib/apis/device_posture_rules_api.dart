@@ -13,7 +13,7 @@ final class DevicePostureRulesApi with ApiExecutor {const DevicePostureRulesApi(
 /// Fetches device posture rules for a Zero Trust account.
 ///
 /// `GET /accounts/{account_id}/devices/posture`
-Future<ApiResult<List<TeamsDevicesDevicePostureRules>, DevicePostureRulesListDevicePostureRulesResponse4xx>> devicePostureRulesListDevicePostureRules({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesDevicePostureRules>, DevicePostureRulesListDevicePostureRulesResponse4xx>> devicePostureRulesListDevicePostureRules({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create a device posture rule
 ///
 /// Creates a new device posture rule.
 ///
 /// `POST /accounts/{account_id}/devices/posture`
-Future<ApiResult<TeamsDevicesDevicePostureRules, DevicePostureRulesCreateDevicePostureRuleResponse4xx>> devicePostureRulesCreateDevicePostureRule({required TeamsDevicesIdentifier accountId, required DevicePostureRulesCreateDevicePostureRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDevicePostureRules, DevicePostureRulesCreateDevicePostureRuleResponse4xx>> devicePostureRulesCreateDevicePostureRule({required TeamsDevicesIdentifier accountId, required DevicePostureRulesCreateDevicePostureRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get device posture rule details
 ///
 /// Fetches a single device posture rule.
 ///
 /// `GET /accounts/{account_id}/devices/posture/{rule_id}`
-Future<ApiResult<TeamsDevicesDevicePostureRules, DevicePostureRulesDevicePostureRulesDetailsResponse4xx>> devicePostureRulesDetails({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDevicePostureRules, DevicePostureRulesDevicePostureRulesDetailsResponse4xx>> devicePostureRulesDetails({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -105,13 +105,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update a device posture rule
 ///
 /// Updates a device posture rule.
 ///
 /// `PUT /accounts/{account_id}/devices/posture/{rule_id}`
-Future<ApiResult<TeamsDevicesDevicePostureRules, DevicePostureRulesUpdateDevicePostureRuleResponse4xx>> devicePostureRulesUpdateDevicePostureRule({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, required DevicePostureRulesUpdateDevicePostureRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDevicePostureRules, DevicePostureRulesUpdateDevicePostureRuleResponse4xx>> devicePostureRulesUpdateDevicePostureRule({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, required DevicePostureRulesUpdateDevicePostureRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,13 +139,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a device posture rule
 ///
 /// Deletes a device posture rule.
 ///
 /// `DELETE /accounts/{account_id}/devices/posture/{rule_id}`
-Future<ApiResult<TeamsDevicesIdResponseResult, DevicePostureRulesDeleteDevicePostureRuleResponse4xx>> devicePostureRulesDeleteDevicePostureRule({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesIdResponseResult, DevicePostureRulesDeleteDevicePostureRuleResponse4xx>> devicePostureRulesDeleteDevicePostureRule({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -171,5 +171,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

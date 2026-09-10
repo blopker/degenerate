@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_delta_step_details_message_creation_object_message_creation.dart';/// Always `message_creation`.
 @immutable final class RunStepDeltaStepDetailsMessageCreationObjectType {const RunStepDeltaStepDetailsMessageCreationObjectType._(this.value);
 
-factory RunStepDeltaStepDetailsMessageCreationObjectType.fromJson(String json) { return switch (json) {
+factory RunStepDeltaStepDetailsMessageCreationObjectType.fromJson(String json) {return switch (json) {
   'message_creation' => messageCreation,
   _ => RunStepDeltaStepDetailsMessageCreationObjectType._(json),
-}; }
+};}
 
 static const RunStepDeltaStepDetailsMessageCreationObjectType messageCreation = RunStepDeltaStepDetailsMessageCreationObjectType._('message_creation');
 
@@ -14,40 +14,40 @@ static const List<RunStepDeltaStepDetailsMessageCreationObjectType> values = [me
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepDeltaStepDetailsMessageCreationObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepDeltaStepDetailsMessageCreationObjectType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RunStepDeltaStepDetailsMessageCreationObjectType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RunStepDeltaStepDetailsMessageCreationObjectType($value)';}
+}
 /// Details of the message creation by the run step.
 @immutable final class RunStepDeltaStepDetailsMessageCreationObject {const RunStepDeltaStepDetailsMessageCreationObject({required this.type, this.messageCreation, });
 
-factory RunStepDeltaStepDetailsMessageCreationObject.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsMessageCreationObject(
+factory RunStepDeltaStepDetailsMessageCreationObject.fromJson(Map<String, dynamic> json) {return RunStepDeltaStepDetailsMessageCreationObject(
   type: RunStepDeltaStepDetailsMessageCreationObjectType.fromJson(json['type'] as String),
   messageCreation: json['message_creation'] != null ? RunStepDeltaStepDetailsMessageCreationObjectMessageCreation.fromJson(json['message_creation'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Always `message_creation`.
 final RunStepDeltaStepDetailsMessageCreationObjectType type;
 
 final RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? messageCreation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (messageCreation != null) 'message_creation': messageCreation?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RunStepDeltaStepDetailsMessageCreationObject copyWith({RunStepDeltaStepDetailsMessageCreationObjectType? type, RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? Function()? messageCreation, }) { return RunStepDeltaStepDetailsMessageCreationObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+RunStepDeltaStepDetailsMessageCreationObject copyWith({RunStepDeltaStepDetailsMessageCreationObjectType? type, RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? Function()? messageCreation, }) {return RunStepDeltaStepDetailsMessageCreationObject(
   type: type ?? this.type,
   messageCreation: messageCreation != null ? messageCreation() : this.messageCreation,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RunStepDeltaStepDetailsMessageCreationObject &&
           type == other.type &&
-          messageCreation == other.messageCreation; } 
-@override int get hashCode { return Object.hash(type, messageCreation); } 
-@override String toString() { return 'RunStepDeltaStepDetailsMessageCreationObject(type: $type, messageCreation: $messageCreation)'; } 
- }
+          messageCreation == other.messageCreation;}
+@override int get hashCode {return Object.hash(type, messageCreation);}
+@override String toString() {return 'RunStepDeltaStepDetailsMessageCreationObject(type: $type, messageCreation: $messageCreation)';}
+}

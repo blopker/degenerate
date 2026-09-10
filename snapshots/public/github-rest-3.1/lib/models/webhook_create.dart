@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_deploy_pusher_type.dart';import 'webhooks_ref0.dart';/// The type of Git ref object created in the repository.
 @immutable final class WebhookCreateRefType {const WebhookCreateRefType._(this.value);
 
-factory WebhookCreateRefType.fromJson(String json) { return switch (json) {
+factory WebhookCreateRefType.fromJson(String json) {return switch (json) {
   'tag' => tag,
   'branch' => branch,
   _ => WebhookCreateRefType._(json),
-}; }
+};}
 
 static const WebhookCreateRefType tag = WebhookCreateRefType._('tag');
 
@@ -17,17 +17,17 @@ static const List<WebhookCreateRefType> values = [tag, branch];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCreateRefType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCreateRefType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCreateRefType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCreateRefType($value)';}
+}
 @immutable final class WebhookCreate {const WebhookCreate({required this.description, required this.masterBranch, required this.pusherType, required this.ref, required this.refType, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookCreate.fromJson(Map<String, dynamic> json) { return WebhookCreate(
+factory WebhookCreate.fromJson(Map<String, dynamic> json) {return WebhookCreate(
   description: json['description'] as String?,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -38,7 +38,7 @@ factory WebhookCreate.fromJson(Map<String, dynamic> json) { return WebhookCreate
   refType: WebhookCreateRefType.fromJson(json['ref_type'] as String),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 /// The repository's current description.
 final String? description;
@@ -65,7 +65,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -76,15 +76,15 @@ Map<String, dynamic> toJson() { return {
   'ref_type': refType.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('master_branch') && json['master_branch'] is String &&
       json.containsKey('pusher_type') &&
       json.containsKey('ref') &&
       json.containsKey('ref_type') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookCreate copyWith({String? Function()? description, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, String? masterBranch, OrganizationSimpleWebhooks? Function()? organization, WebhooksDeployPusherType? pusherType, WebhooksRef0? ref, WebhookCreateRefType? refType, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCreate(
+      json.containsKey('sender');}
+WebhookCreate copyWith({String? Function()? description, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, String? masterBranch, OrganizationSimpleWebhooks? Function()? organization, WebhooksDeployPusherType? pusherType, WebhooksRef0? ref, WebhookCreateRefType? refType, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookCreate(
   description: description != null ? description() : this.description,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -95,8 +95,8 @@ WebhookCreate copyWith({String? Function()? description, EnterpriseWebhooks? Fun
   refType: refType ?? this.refType,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookCreate &&
           description == other.description &&
           enterprise == other.enterprise &&
@@ -107,7 +107,7 @@ WebhookCreate copyWith({String? Function()? description, EnterpriseWebhooks? Fun
           ref == other.ref &&
           refType == other.refType &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(description, enterprise, installation, masterBranch, organization, pusherType, ref, refType, repository, sender); } 
-@override String toString() { return 'WebhookCreate(description: $description, enterprise: $enterprise, installation: $installation, masterBranch: $masterBranch, organization: $organization, pusherType: $pusherType, ref: $ref, refType: $refType, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(description, enterprise, installation, masterBranch, organization, pusherType, ref, refType, repository, sender);}
+@override String toString() {return 'WebhookCreate(description: $description, enterprise: $enterprise, installation: $installation, masterBranch: $masterBranch, organization: $organization, pusherType: $pusherType, ref: $ref, refType: $refType, repository: $repository, sender: $sender)';}
+}

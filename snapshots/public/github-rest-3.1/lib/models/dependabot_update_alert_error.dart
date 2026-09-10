@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class DependabotUpdateAlertError {const DependabotUpdateAlertError();
 
 /// Decodes the payload for its declared status and content type.
-static DependabotUpdateAlertError parse(ApiResponse response) { switch (response.statusCode) {
+static DependabotUpdateAlertError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -33,54 +33,54 @@ return DependabotUpdateAlertError422(ValidationErrorSimple.fromJson(json as Map<
 default:
 return DependabotUpdateAlertErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class DependabotUpdateAlertError400ApplicationJson extends DependabotUpdateAlertError {const DependabotUpdateAlertError400ApplicationJson(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 400 (application/scim+json).
 final class DependabotUpdateAlertError400ApplicationScimJson extends DependabotUpdateAlertError {const DependabotUpdateAlertError400ApplicationScimJson(this.data);
 
 /// The decoded response payload.
 final ScimError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class DependabotUpdateAlertError403 extends DependabotUpdateAlertError {const DependabotUpdateAlertError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class DependabotUpdateAlertError404 extends DependabotUpdateAlertError {const DependabotUpdateAlertError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 409 (application/json).
 final class DependabotUpdateAlertError409 extends DependabotUpdateAlertError {const DependabotUpdateAlertError409(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class DependabotUpdateAlertError422 extends DependabotUpdateAlertError {const DependabotUpdateAlertError422(this.data);
 
 /// The decoded response payload.
 final ValidationErrorSimple data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class DependabotUpdateAlertErrorUnknown extends DependabotUpdateAlertError {const DependabotUpdateAlertErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

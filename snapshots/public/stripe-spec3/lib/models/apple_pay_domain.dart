@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ApplePayDomainObject {const ApplePayDomainObject._(this.value);
 
-factory ApplePayDomainObject.fromJson(String json) { return switch (json) {
+factory ApplePayDomainObject.fromJson(String json) {return switch (json) {
   'apple_pay_domain' => applePayDomain,
   _ => ApplePayDomainObject._(json),
-}; }
+};}
 
 static const ApplePayDomainObject applePayDomain = ApplePayDomainObject._('apple_pay_domain');
 
@@ -14,24 +14,24 @@ static const List<ApplePayDomainObject> values = [applePayDomain];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ApplePayDomainObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ApplePayDomainObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ApplePayDomainObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ApplePayDomainObject($value)';}
+}
 /// 
 @immutable final class ApplePayDomain {const ApplePayDomain({required this.created, required this.domainName, required this.id, required this.livemode, required this.object, });
 
-factory ApplePayDomain.fromJson(Map<String, dynamic> json) { return ApplePayDomain(
+factory ApplePayDomain.fromJson(Map<String, dynamic> json) {return ApplePayDomain(
   created: (json['created'] as num).toInt(),
   domainName: json['domain_name'] as String,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: ApplePayDomainObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -47,32 +47,32 @@ final bool livemode;
 /// String representing the object's type. Objects of the same type share the same value.
 final ApplePayDomainObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'domain_name': domainName,
   'id': id,
   'livemode': livemode,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('domain_name') && json['domain_name'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object'); } 
-ApplePayDomain copyWith({int? created, String? domainName, String? id, bool? livemode, ApplePayDomainObject? object, }) { return ApplePayDomain(
+      json.containsKey('object');}
+ApplePayDomain copyWith({int? created, String? domainName, String? id, bool? livemode, ApplePayDomainObject? object, }) {return ApplePayDomain(
   created: created ?? this.created,
   domainName: domainName ?? this.domainName,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ApplePayDomain &&
           created == other.created &&
           domainName == other.domainName &&
           id == other.id &&
           livemode == other.livemode &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(created, domainName, id, livemode, object); } 
-@override String toString() { return 'ApplePayDomain(created: $created, domainName: $domainName, id: $id, livemode: $livemode, object: $object)'; } 
- }
+          object == other.object;}
+@override int get hashCode {return Object.hash(created, domainName, id, livemode, object);}
+@override String toString() {return 'ApplePayDomain(created: $created, domainName: $domainName, id: $id, livemode: $livemode, object: $object)';}
+}

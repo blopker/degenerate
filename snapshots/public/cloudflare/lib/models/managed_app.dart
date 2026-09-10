@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_managed_app_id.dart';@immutable final class ManagedApp {const ManagedApp({required this.managedAppId});
 
-factory ManagedApp.fromJson(Map<String, dynamic> json) { return ManagedApp(
+factory ManagedApp.fromJson(Map<String, dynamic> json) {return ManagedApp(
   managedAppId: MagicManagedAppId.fromJson(json['managed_app_id'] as String),
-); }
+);}
 
 final MagicManagedAppId managedAppId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'managed_app_id': managedAppId.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('managed_app_id'); } 
-ManagedApp copyWith({MagicManagedAppId? managedAppId}) { return ManagedApp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('managed_app_id');}
+ManagedApp copyWith({MagicManagedAppId? managedAppId}) {return ManagedApp(
   managedAppId: managedAppId ?? this.managedAppId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ManagedApp &&
-          managedAppId == other.managedAppId; } 
-@override int get hashCode { return managedAppId.hashCode; } 
-@override String toString() { return 'ManagedApp(managedAppId: $managedAppId)'; } 
- }
+          managedAppId == other.managedAppId;}
+@override int get hashCode {return managedAppId.hashCode;}
+@override String toString() {return 'ManagedApp(managedAppId: $managedAppId)';}
+}

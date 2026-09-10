@@ -4,28 +4,28 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_threa
 /// 
 @immutable final class CreateThreadAndRunRequestToolResources {const CreateThreadAndRunRequestToolResources({this.codeInterpreter, this.fileSearch, });
 
-factory CreateThreadAndRunRequestToolResources.fromJson(Map<String, dynamic> json) { return CreateThreadAndRunRequestToolResources(
+factory CreateThreadAndRunRequestToolResources.fromJson(Map<String, dynamic> json) {return CreateThreadAndRunRequestToolResources(
   codeInterpreter: json['code_interpreter'] != null ? CreateThreadAndRunRequestToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>) : null,
   fileSearch: json['file_search'] != null ? CreateThreadAndRunRequestToolResourcesFileSearch.fromJson(json['file_search'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final CreateThreadAndRunRequestToolResourcesCodeInterpreter? codeInterpreter;
 
 final CreateThreadAndRunRequestToolResourcesFileSearch? fileSearch;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (codeInterpreter != null) 'code_interpreter': codeInterpreter?.toJson(),
   if (fileSearch != null) 'file_search': fileSearch?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code_interpreter', 'file_search'}.contains(key)); } 
-CreateThreadAndRunRequestToolResources copyWith({CreateThreadAndRunRequestToolResourcesCodeInterpreter? Function()? codeInterpreter, CreateThreadAndRunRequestToolResourcesFileSearch? Function()? fileSearch, }) { return CreateThreadAndRunRequestToolResources(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code_interpreter', 'file_search'}.contains(key));}
+CreateThreadAndRunRequestToolResources copyWith({CreateThreadAndRunRequestToolResourcesCodeInterpreter? Function()? codeInterpreter, CreateThreadAndRunRequestToolResourcesFileSearch? Function()? fileSearch, }) {return CreateThreadAndRunRequestToolResources(
   codeInterpreter: codeInterpreter != null ? codeInterpreter() : this.codeInterpreter,
   fileSearch: fileSearch != null ? fileSearch() : this.fileSearch,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateThreadAndRunRequestToolResources &&
           codeInterpreter == other.codeInterpreter &&
-          fileSearch == other.fileSearch; } 
-@override int get hashCode { return Object.hash(codeInterpreter, fileSearch); } 
-@override String toString() { return 'CreateThreadAndRunRequestToolResources(codeInterpreter: $codeInterpreter, fileSearch: $fileSearch)'; } 
- }
+          fileSearch == other.fileSearch;}
+@override int get hashCode {return Object.hash(codeInterpreter, fileSearch);}
+@override String toString() {return 'CreateThreadAndRunRequestToolResources(codeInterpreter: $codeInterpreter, fileSearch: $fileSearch)';}
+}

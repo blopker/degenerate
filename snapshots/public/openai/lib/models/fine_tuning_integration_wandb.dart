@@ -6,12 +6,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The settings for
 /// 
 @immutable final class FineTuningIntegrationWandb {const FineTuningIntegrationWandb({required this.project, this.name = const Omittable.absent(), this.entity = const Omittable.absent(), this.tags, });
 
-factory FineTuningIntegrationWandb.fromJson(Map<String, dynamic> json) { return FineTuningIntegrationWandb(
+factory FineTuningIntegrationWandb.fromJson(Map<String, dynamic> json) {return FineTuningIntegrationWandb(
   project: json['project'] as String,
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   entity: json.containsKey('entity') ? Omittable(json['entity'] as String?) : const Omittable.absent(),
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// The name of the project that the new run will be created under.
 /// 
@@ -31,25 +31,25 @@ final Omittable<String?> entity;
 /// 
 final List<String>? tags;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'project': project,
   if (name.isPresent) 'name': name.value,
   if (entity.isPresent) 'entity': entity.value,
   'tags': ?tags,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('project') && json['project'] is String; } 
-FineTuningIntegrationWandb copyWith({String? project, Omittable<String?>? name, Omittable<String?>? entity, List<String>? Function()? tags, }) { return FineTuningIntegrationWandb(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('project') && json['project'] is String;}
+FineTuningIntegrationWandb copyWith({String? project, Omittable<String?>? name, Omittable<String?>? entity, List<String>? Function()? tags, }) {return FineTuningIntegrationWandb(
   project: project ?? this.project,
   name: name ?? this.name,
   entity: entity ?? this.entity,
   tags: tags != null ? tags() : this.tags,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FineTuningIntegrationWandb &&
           project == other.project &&
           name == other.name &&
           entity == other.entity &&
-          listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hash(project, name, entity, Object.hashAll(tags ?? const [])); } 
-@override String toString() { return 'FineTuningIntegrationWandb(project: $project, name: $name, entity: $entity, tags: $tags)'; } 
- }
+          listEquals(tags, other.tags);}
+@override int get hashCode {return Object.hash(project, name, entity, Object.hashAll(tags ?? const []));}
+@override String toString() {return 'FineTuningIntegrationWandb(project: $project, name: $name, entity: $entity, tags: $tags)';}
+}

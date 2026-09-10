@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_details_tool_calls_file_search_object_file_search.dart';/// The type of tool call. This is always going to be `file_search` for this type of tool call.
 @immutable final class RunStepDetailsToolCallsFileSearchObjectType {const RunStepDetailsToolCallsFileSearchObjectType._(this.value);
 
-factory RunStepDetailsToolCallsFileSearchObjectType.fromJson(String json) { return switch (json) {
+factory RunStepDetailsToolCallsFileSearchObjectType.fromJson(String json) {return switch (json) {
   'file_search' => fileSearch,
   _ => RunStepDetailsToolCallsFileSearchObjectType._(json),
-}; }
+};}
 
 static const RunStepDetailsToolCallsFileSearchObjectType fileSearch = RunStepDetailsToolCallsFileSearchObjectType._('file_search');
 
@@ -14,21 +14,21 @@ static const List<RunStepDetailsToolCallsFileSearchObjectType> values = [fileSea
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepDetailsToolCallsFileSearchObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepDetailsToolCallsFileSearchObjectType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RunStepDetailsToolCallsFileSearchObjectType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RunStepDetailsToolCallsFileSearchObjectType($value)';}
+}
 @immutable final class RunStepDetailsToolCallsFileSearchObject {const RunStepDetailsToolCallsFileSearchObject({required this.id, required this.type, required this.fileSearch, });
 
-factory RunStepDetailsToolCallsFileSearchObject.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsFileSearchObject(
+factory RunStepDetailsToolCallsFileSearchObject.fromJson(Map<String, dynamic> json) {return RunStepDetailsToolCallsFileSearchObject(
   id: json['id'] as String,
   type: RunStepDetailsToolCallsFileSearchObjectType.fromJson(json['type'] as String),
   fileSearch: RunStepDetailsToolCallsFileSearchObjectFileSearch.fromJson(json['file_search'] as Map<String, dynamic>),
-); }
+);}
 
 /// The ID of the tool call object.
 final String id;
@@ -39,24 +39,24 @@ final RunStepDetailsToolCallsFileSearchObjectType type;
 /// For now, this is always going to be an empty object.
 final RunStepDetailsToolCallsFileSearchObjectFileSearch fileSearch;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'type': type.toJson(),
   'file_search': fileSearch.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('type') &&
-      json.containsKey('file_search'); } 
-RunStepDetailsToolCallsFileSearchObject copyWith({String? id, RunStepDetailsToolCallsFileSearchObjectType? type, RunStepDetailsToolCallsFileSearchObjectFileSearch? fileSearch, }) { return RunStepDetailsToolCallsFileSearchObject(
+      json.containsKey('file_search');}
+RunStepDetailsToolCallsFileSearchObject copyWith({String? id, RunStepDetailsToolCallsFileSearchObjectType? type, RunStepDetailsToolCallsFileSearchObjectFileSearch? fileSearch, }) {return RunStepDetailsToolCallsFileSearchObject(
   id: id ?? this.id,
   type: type ?? this.type,
   fileSearch: fileSearch ?? this.fileSearch,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RunStepDetailsToolCallsFileSearchObject &&
           id == other.id &&
           type == other.type &&
-          fileSearch == other.fileSearch; } 
-@override int get hashCode { return Object.hash(id, type, fileSearch); } 
-@override String toString() { return 'RunStepDetailsToolCallsFileSearchObject(id: $id, type: $type, fileSearch: $fileSearch)'; } 
- }
+          fileSearch == other.fileSearch;}
+@override int get hashCode {return Object.hash(id, type, fileSearch);}
+@override String toString() {return 'RunStepDetailsToolCallsFileSearchObject(id: $id, type: $type, fileSearch: $fileSearch)';}
+}

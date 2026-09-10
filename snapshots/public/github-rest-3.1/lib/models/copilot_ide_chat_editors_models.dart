@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CopilotIdeChatEditorsModels {const CopilotIdeChatEditorsModels({this.name, this.isCustomModel, this.customModelTrainingDate = const Omittable.absent(), this.totalEngagedUsers, this.totalChats, this.totalChatInsertionEvents, this.totalChatCopyEvents, });
 
-factory CopilotIdeChatEditorsModels.fromJson(Map<String, dynamic> json) { return CopilotIdeChatEditorsModels(
+factory CopilotIdeChatEditorsModels.fromJson(Map<String, dynamic> json) {return CopilotIdeChatEditorsModels(
   name: json['name'] as String?,
   isCustomModel: json['is_custom_model'] as bool?,
   customModelTrainingDate: json.containsKey('custom_model_training_date') ? Omittable(json['custom_model_training_date'] as String?) : const Omittable.absent(),
@@ -10,7 +10,7 @@ factory CopilotIdeChatEditorsModels.fromJson(Map<String, dynamic> json) { return
   totalChats: json['total_chats'] != null ? (json['total_chats'] as num).toInt() : null,
   totalChatInsertionEvents: json['total_chat_insertion_events'] != null ? (json['total_chat_insertion_events'] as num).toInt() : null,
   totalChatCopyEvents: json['total_chat_copy_events'] != null ? (json['total_chat_copy_events'] as num).toInt() : null,
-); }
+);}
 
 /// Name of the model used for Copilot Chat. If the default model is used will appear as 'default'.
 final String? name;
@@ -33,7 +33,7 @@ final int? totalChatInsertionEvents;
 /// The number of times users copied a code suggestion from Copilot Chat using the keyboard, or the 'Copy' UI element, for the given editor.
 final int? totalChatCopyEvents;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'is_custom_model': ?isCustomModel,
   if (customModelTrainingDate.isPresent) 'custom_model_training_date': customModelTrainingDate.value,
@@ -41,9 +41,9 @@ Map<String, dynamic> toJson() { return {
   'total_chats': ?totalChats,
   'total_chat_insertion_events': ?totalChatInsertionEvents,
   'total_chat_copy_events': ?totalChatCopyEvents,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'is_custom_model', 'custom_model_training_date', 'total_engaged_users', 'total_chats', 'total_chat_insertion_events', 'total_chat_copy_events'}.contains(key)); } 
-CopilotIdeChatEditorsModels copyWith({String? Function()? name, bool? Function()? isCustomModel, Omittable<String?>? customModelTrainingDate, int? Function()? totalEngagedUsers, int? Function()? totalChats, int? Function()? totalChatInsertionEvents, int? Function()? totalChatCopyEvents, }) { return CopilotIdeChatEditorsModels(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'is_custom_model', 'custom_model_training_date', 'total_engaged_users', 'total_chats', 'total_chat_insertion_events', 'total_chat_copy_events'}.contains(key));}
+CopilotIdeChatEditorsModels copyWith({String? Function()? name, bool? Function()? isCustomModel, Omittable<String?>? customModelTrainingDate, int? Function()? totalEngagedUsers, int? Function()? totalChats, int? Function()? totalChatInsertionEvents, int? Function()? totalChatCopyEvents, }) {return CopilotIdeChatEditorsModels(
   name: name != null ? name() : this.name,
   isCustomModel: isCustomModel != null ? isCustomModel() : this.isCustomModel,
   customModelTrainingDate: customModelTrainingDate ?? this.customModelTrainingDate,
@@ -51,8 +51,8 @@ CopilotIdeChatEditorsModels copyWith({String? Function()? name, bool? Function()
   totalChats: totalChats != null ? totalChats() : this.totalChats,
   totalChatInsertionEvents: totalChatInsertionEvents != null ? totalChatInsertionEvents() : this.totalChatInsertionEvents,
   totalChatCopyEvents: totalChatCopyEvents != null ? totalChatCopyEvents() : this.totalChatCopyEvents,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CopilotIdeChatEditorsModels &&
           name == other.name &&
           isCustomModel == other.isCustomModel &&
@@ -60,7 +60,7 @@ CopilotIdeChatEditorsModels copyWith({String? Function()? name, bool? Function()
           totalEngagedUsers == other.totalEngagedUsers &&
           totalChats == other.totalChats &&
           totalChatInsertionEvents == other.totalChatInsertionEvents &&
-          totalChatCopyEvents == other.totalChatCopyEvents; } 
-@override int get hashCode { return Object.hash(name, isCustomModel, customModelTrainingDate, totalEngagedUsers, totalChats, totalChatInsertionEvents, totalChatCopyEvents); } 
-@override String toString() { return 'CopilotIdeChatEditorsModels(name: $name, isCustomModel: $isCustomModel, customModelTrainingDate: $customModelTrainingDate, totalEngagedUsers: $totalEngagedUsers, totalChats: $totalChats, totalChatInsertionEvents: $totalChatInsertionEvents, totalChatCopyEvents: $totalChatCopyEvents)'; } 
- }
+          totalChatCopyEvents == other.totalChatCopyEvents;}
+@override int get hashCode {return Object.hash(name, isCustomModel, customModelTrainingDate, totalEngagedUsers, totalChats, totalChatInsertionEvents, totalChatCopyEvents);}
+@override String toString() {return 'CopilotIdeChatEditorsModels(name: $name, isCustomModel: $isCustomModel, customModelTrainingDate: $customModelTrainingDate, totalEngagedUsers: $totalEngagedUsers, totalChats: $totalChats, totalChatInsertionEvents: $totalChatInsertionEvents, totalChatCopyEvents: $totalChatCopyEvents)';}
+}

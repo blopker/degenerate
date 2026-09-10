@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingUsageSummaryReportOrgUsageItems {const BillingUsageSummaryReportOrgUsageItems({required this.product, required this.sku, required this.unitType, required this.pricePerUnit, required this.grossQuantity, required this.grossAmount, required this.discountQuantity, required this.discountAmount, required this.netQuantity, required this.netAmount, });
 
-factory BillingUsageSummaryReportOrgUsageItems.fromJson(Map<String, dynamic> json) { return BillingUsageSummaryReportOrgUsageItems(
+factory BillingUsageSummaryReportOrgUsageItems.fromJson(Map<String, dynamic> json) {return BillingUsageSummaryReportOrgUsageItems(
   product: json['product'] as String,
   sku: json['sku'] as String,
   unitType: json['unitType'] as String,
@@ -13,7 +13,7 @@ factory BillingUsageSummaryReportOrgUsageItems.fromJson(Map<String, dynamic> jso
   discountAmount: (json['discountAmount'] as num).toDouble(),
   netQuantity: (json['netQuantity'] as num).toDouble(),
   netAmount: (json['netAmount'] as num).toDouble(),
-); }
+);}
 
 /// Product name.
 final String product;
@@ -45,7 +45,7 @@ final double netQuantity;
 /// Net amount of the usage line item.
 final double netAmount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'product': product,
   'sku': sku,
   'unitType': unitType,
@@ -56,8 +56,8 @@ Map<String, dynamic> toJson() { return {
   'discountAmount': discountAmount,
   'netQuantity': netQuantity,
   'netAmount': netAmount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('product') && json['product'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('product') && json['product'] is String &&
       json.containsKey('sku') && json['sku'] is String &&
       json.containsKey('unitType') && json['unitType'] is String &&
       json.containsKey('pricePerUnit') && json['pricePerUnit'] is num &&
@@ -66,8 +66,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('produ
       json.containsKey('discountQuantity') && json['discountQuantity'] is num &&
       json.containsKey('discountAmount') && json['discountAmount'] is num &&
       json.containsKey('netQuantity') && json['netQuantity'] is num &&
-      json.containsKey('netAmount') && json['netAmount'] is num; } 
-BillingUsageSummaryReportOrgUsageItems copyWith({String? product, String? sku, String? unitType, double? pricePerUnit, double? grossQuantity, double? grossAmount, double? discountQuantity, double? discountAmount, double? netQuantity, double? netAmount, }) { return BillingUsageSummaryReportOrgUsageItems(
+      json.containsKey('netAmount') && json['netAmount'] is num;}
+BillingUsageSummaryReportOrgUsageItems copyWith({String? product, String? sku, String? unitType, double? pricePerUnit, double? grossQuantity, double? grossAmount, double? discountQuantity, double? discountAmount, double? netQuantity, double? netAmount, }) {return BillingUsageSummaryReportOrgUsageItems(
   product: product ?? this.product,
   sku: sku ?? this.sku,
   unitType: unitType ?? this.unitType,
@@ -78,8 +78,8 @@ BillingUsageSummaryReportOrgUsageItems copyWith({String? product, String? sku, S
   discountAmount: discountAmount ?? this.discountAmount,
   netQuantity: netQuantity ?? this.netQuantity,
   netAmount: netAmount ?? this.netAmount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BillingUsageSummaryReportOrgUsageItems &&
           product == other.product &&
           sku == other.sku &&
@@ -90,7 +90,7 @@ BillingUsageSummaryReportOrgUsageItems copyWith({String? product, String? sku, S
           discountQuantity == other.discountQuantity &&
           discountAmount == other.discountAmount &&
           netQuantity == other.netQuantity &&
-          netAmount == other.netAmount; } 
-@override int get hashCode { return Object.hash(product, sku, unitType, pricePerUnit, grossQuantity, grossAmount, discountQuantity, discountAmount, netQuantity, netAmount); } 
-@override String toString() { return 'BillingUsageSummaryReportOrgUsageItems(product: $product, sku: $sku, unitType: $unitType, pricePerUnit: $pricePerUnit, grossQuantity: $grossQuantity, grossAmount: $grossAmount, discountQuantity: $discountQuantity, discountAmount: $discountAmount, netQuantity: $netQuantity, netAmount: $netAmount)'; } 
- }
+          netAmount == other.netAmount;}
+@override int get hashCode {return Object.hash(product, sku, unitType, pricePerUnit, grossQuantity, grossAmount, discountQuantity, discountAmount, netQuantity, netAmount);}
+@override String toString() {return 'BillingUsageSummaryReportOrgUsageItems(product: $product, sku: $sku, unitType: $unitType, pricePerUnit: $pricePerUnit, grossQuantity: $grossQuantity, grossAmount: $grossAmount, discountQuantity: $discountQuantity, discountAmount: $discountAmount, netQuantity: $netQuantity, netAmount: $netAmount)';}
+}

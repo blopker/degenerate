@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class IssuesUpdateError {const IssuesUpdateError();
 
 /// Decodes the payload for its declared status and content type.
-static IssuesUpdateError parse(ApiResponse response) { switch (response.statusCode) {
+static IssuesUpdateError parse(ApiResponse response) {switch (response.statusCode) {
 case 301:
 final json = jsonDecode(response.body);
 return IssuesUpdateError301(BasicError.fromJson(json as Map<String, dynamic>));
@@ -26,54 +26,54 @@ return IssuesUpdateError503(IssuesUpdateResponse503.fromJson(json as Map<String,
 default:
 return IssuesUpdateErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 301 (application/json).
 final class IssuesUpdateError301 extends IssuesUpdateError {const IssuesUpdateError301(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class IssuesUpdateError403 extends IssuesUpdateError {const IssuesUpdateError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class IssuesUpdateError404 extends IssuesUpdateError {const IssuesUpdateError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 410 (application/json).
 final class IssuesUpdateError410 extends IssuesUpdateError {const IssuesUpdateError410(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class IssuesUpdateError422 extends IssuesUpdateError {const IssuesUpdateError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// Response for 503 (application/json).
 final class IssuesUpdateError503 extends IssuesUpdateError {const IssuesUpdateError503(this.data);
 
 /// The decoded response payload.
 final IssuesUpdateResponse503 data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class IssuesUpdateErrorUnknown extends IssuesUpdateError {const IssuesUpdateErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

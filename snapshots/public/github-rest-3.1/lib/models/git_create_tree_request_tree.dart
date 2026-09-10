@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.
 @immutable final class GitCreateTreeRequestTreeMode {const GitCreateTreeRequestTreeMode._(this.value);
 
-factory GitCreateTreeRequestTreeMode.fromJson(String json) { return switch (json) {
+factory GitCreateTreeRequestTreeMode.fromJson(String json) {return switch (json) {
   '100644' => $100644,
   '100755' => $100755,
   '040000' => $040000,
   '160000' => $160000,
   '120000' => $120000,
   _ => GitCreateTreeRequestTreeMode._(json),
-}; }
+};}
 
 static const GitCreateTreeRequestTreeMode $100644 = GitCreateTreeRequestTreeMode._('100644');
 
@@ -26,23 +26,23 @@ static const List<GitCreateTreeRequestTreeMode> values = [$100644, $100755, $040
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GitCreateTreeRequestTreeMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GitCreateTreeRequestTreeMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GitCreateTreeRequestTreeMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GitCreateTreeRequestTreeMode($value)';}
+}
 /// Either `blob`, `tree`, or `commit`.
 @immutable final class GitCreateTreeRequestTreeType {const GitCreateTreeRequestTreeType._(this.value);
 
-factory GitCreateTreeRequestTreeType.fromJson(String json) { return switch (json) {
+factory GitCreateTreeRequestTreeType.fromJson(String json) {return switch (json) {
   'blob' => blob,
   'tree' => tree,
   'commit' => commit,
   _ => GitCreateTreeRequestTreeType._(json),
-}; }
+};}
 
 static const GitCreateTreeRequestTreeType blob = GitCreateTreeRequestTreeType._('blob');
 
@@ -54,23 +54,23 @@ static const List<GitCreateTreeRequestTreeType> values = [blob, tree, commit];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GitCreateTreeRequestTreeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GitCreateTreeRequestTreeType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GitCreateTreeRequestTreeType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GitCreateTreeRequestTreeType($value)';}
+}
 @immutable final class GitCreateTreeRequestTree {const GitCreateTreeRequestTree({this.path, this.mode, this.type, this.sha = const Omittable.absent(), this.content, });
 
-factory GitCreateTreeRequestTree.fromJson(Map<String, dynamic> json) { return GitCreateTreeRequestTree(
+factory GitCreateTreeRequestTree.fromJson(Map<String, dynamic> json) {return GitCreateTreeRequestTree(
   path: json['path'] as String?,
   mode: json['mode'] != null ? GitCreateTreeRequestTreeMode.fromJson(json['mode'] as String) : null,
   type: json['type'] != null ? GitCreateTreeRequestTreeType.fromJson(json['type'] as String) : null,
   sha: json.containsKey('sha') ? Omittable(json['sha'] as String?) : const Omittable.absent(),
   content: json['content'] as String?,
-); }
+);}
 
 /// The file referenced in the tree.
 final String? path;
@@ -91,28 +91,28 @@ final Omittable<String?> sha;
 /// **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
 final String? content;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'path': ?path,
   if (mode != null) 'mode': mode?.toJson(),
   if (type != null) 'type': type?.toJson(),
   if (sha.isPresent) 'sha': sha.value,
   'content': ?content,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'path', 'mode', 'type', 'sha', 'content'}.contains(key)); } 
-GitCreateTreeRequestTree copyWith({String? Function()? path, GitCreateTreeRequestTreeMode? Function()? mode, GitCreateTreeRequestTreeType? Function()? type, Omittable<String?>? sha, String? Function()? content, }) { return GitCreateTreeRequestTree(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'path', 'mode', 'type', 'sha', 'content'}.contains(key));}
+GitCreateTreeRequestTree copyWith({String? Function()? path, GitCreateTreeRequestTreeMode? Function()? mode, GitCreateTreeRequestTreeType? Function()? type, Omittable<String?>? sha, String? Function()? content, }) {return GitCreateTreeRequestTree(
   path: path != null ? path() : this.path,
   mode: mode != null ? mode() : this.mode,
   type: type != null ? type() : this.type,
   sha: sha ?? this.sha,
   content: content != null ? content() : this.content,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GitCreateTreeRequestTree &&
           path == other.path &&
           mode == other.mode &&
           type == other.type &&
           sha == other.sha &&
-          content == other.content; } 
-@override int get hashCode { return Object.hash(path, mode, type, sha, content); } 
-@override String toString() { return 'GitCreateTreeRequestTree(path: $path, mode: $mode, type: $type, sha: $sha, content: $content)'; } 
- }
+          content == other.content;}
+@override int get hashCode {return Object.hash(path, mode, type, sha, content);}
+@override String toString() {return 'GitCreateTreeRequestTree(path: $path, mode: $mode, type: $type, sha: $sha, content: $content)';}
+}

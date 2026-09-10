@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role of the user in the team.
 @immutable final class TeamMembershipRole {const TeamMembershipRole._(this.value);
 
-factory TeamMembershipRole.fromJson(String json) { return switch (json) {
+factory TeamMembershipRole.fromJson(String json) {return switch (json) {
   'member' => member,
   'maintainer' => maintainer,
   _ => TeamMembershipRole._(json),
-}; }
+};}
 
 static const TeamMembershipRole member = TeamMembershipRole._('member');
 
@@ -17,22 +17,22 @@ static const List<TeamMembershipRole> values = [member, maintainer];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamMembershipRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamMembershipRole($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamMembershipRole && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamMembershipRole($value)';}
+}
 /// The state of the user's membership in the team.
 @immutable final class TeamMembershipState {const TeamMembershipState._(this.value);
 
-factory TeamMembershipState.fromJson(String json) { return switch (json) {
+factory TeamMembershipState.fromJson(String json) {return switch (json) {
   'active' => active,
   'pending' => pending,
   _ => TeamMembershipState._(json),
-}; }
+};}
 
 static const TeamMembershipState active = TeamMembershipState._('active');
 
@@ -42,22 +42,22 @@ static const List<TeamMembershipState> values = [active, pending];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamMembershipState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamMembershipState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamMembershipState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamMembershipState($value)';}
+}
 /// Team Membership
 @immutable final class TeamMembership {const TeamMembership({required this.url, required this.role, required this.state, });
 
-factory TeamMembership.fromJson(Map<String, dynamic> json) { return TeamMembership(
+factory TeamMembership.fromJson(Map<String, dynamic> json) {return TeamMembership(
   url: Uri.parse(json['url'] as String),
   role: TeamMembershipRole.fromJson(json['role'] as String),
   state: TeamMembershipState.fromJson(json['state'] as String),
-); }
+);}
 
 final Uri url;
 
@@ -67,24 +67,24 @@ final TeamMembershipRole role;
 /// The state of the user's membership in the team.
 final TeamMembershipState state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'role': role.toJson(),
   'state': state.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('role') &&
-      json.containsKey('state'); } 
-TeamMembership copyWith({Uri? url, TeamMembershipRole? role, TeamMembershipState? state, }) { return TeamMembership(
+      json.containsKey('state');}
+TeamMembership copyWith({Uri? url, TeamMembershipRole? role, TeamMembershipState? state, }) {return TeamMembership(
   url: url ?? this.url,
   role: role ?? this.role,
   state: state ?? this.state,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamMembership &&
           url == other.url &&
           role == other.role &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(url, role, state); } 
-@override String toString() { return 'TeamMembership(url: $url, role: $role, state: $state)'; } 
- }
+          state == other.state;}
+@override int get hashCode {return Object.hash(url, role, state);}
+@override String toString() {return 'TeamMembership(url: $url, role: $role, state: $state)';}
+}

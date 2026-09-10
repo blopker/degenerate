@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchIndicatorUpdateRequestRelatedEvents {const PatchIndicatorUpdateRequestRelatedEvents({required this.datasetId, required this.eventId, });
 
-factory PatchIndicatorUpdateRequestRelatedEvents.fromJson(Map<String, dynamic> json) { return PatchIndicatorUpdateRequestRelatedEvents(
+factory PatchIndicatorUpdateRequestRelatedEvents.fromJson(Map<String, dynamic> json) {return PatchIndicatorUpdateRequestRelatedEvents(
   datasetId: json['datasetId'] as String,
   eventId: json['eventId'] as String,
-); }
+);}
 
 final String datasetId;
 
 final String eventId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'datasetId': datasetId,
   'eventId': eventId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('datasetId') && json['datasetId'] is String &&
-      json.containsKey('eventId') && json['eventId'] is String; } 
-PatchIndicatorUpdateRequestRelatedEvents copyWith({String? datasetId, String? eventId, }) { return PatchIndicatorUpdateRequestRelatedEvents(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('datasetId') && json['datasetId'] is String &&
+      json.containsKey('eventId') && json['eventId'] is String;}
+PatchIndicatorUpdateRequestRelatedEvents copyWith({String? datasetId, String? eventId, }) {return PatchIndicatorUpdateRequestRelatedEvents(
   datasetId: datasetId ?? this.datasetId,
   eventId: eventId ?? this.eventId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PatchIndicatorUpdateRequestRelatedEvents &&
           datasetId == other.datasetId &&
-          eventId == other.eventId; } 
-@override int get hashCode { return Object.hash(datasetId, eventId); } 
-@override String toString() { return 'PatchIndicatorUpdateRequestRelatedEvents(datasetId: $datasetId, eventId: $eventId)'; } 
- }
+          eventId == other.eventId;}
+@override int get hashCode {return Object.hash(datasetId, eventId);}
+@override String toString() {return 'PatchIndicatorUpdateRequestRelatedEvents(datasetId: $datasetId, eventId: $eventId)';}
+}

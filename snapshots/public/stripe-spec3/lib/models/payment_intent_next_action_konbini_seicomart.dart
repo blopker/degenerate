@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentIntentNextActionKonbiniSeicomart {const PaymentIntentNextActionKonbiniSeicomart({required this.paymentCode, this.confirmationNumber, });
 
-factory PaymentIntentNextActionKonbiniSeicomart.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionKonbiniSeicomart(
+factory PaymentIntentNextActionKonbiniSeicomart.fromJson(Map<String, dynamic> json) {return PaymentIntentNextActionKonbiniSeicomart(
   confirmationNumber: json['confirmation_number'] as String?,
   paymentCode: json['payment_code'] as String,
-); }
+);}
 
 /// The confirmation number.
 final String? confirmationNumber;
@@ -14,19 +14,19 @@ final String? confirmationNumber;
 /// The payment code.
 final String paymentCode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'confirmation_number': ?confirmationNumber,
   'payment_code': paymentCode,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_code') && json['payment_code'] is String; } 
-PaymentIntentNextActionKonbiniSeicomart copyWith({String? Function()? confirmationNumber, String? paymentCode, }) { return PaymentIntentNextActionKonbiniSeicomart(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('payment_code') && json['payment_code'] is String;}
+PaymentIntentNextActionKonbiniSeicomart copyWith({String? Function()? confirmationNumber, String? paymentCode, }) {return PaymentIntentNextActionKonbiniSeicomart(
   confirmationNumber: confirmationNumber != null ? confirmationNumber() : this.confirmationNumber,
   paymentCode: paymentCode ?? this.paymentCode,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentNextActionKonbiniSeicomart &&
           confirmationNumber == other.confirmationNumber &&
-          paymentCode == other.paymentCode; } 
-@override int get hashCode { return Object.hash(confirmationNumber, paymentCode); } 
-@override String toString() { return 'PaymentIntentNextActionKonbiniSeicomart(confirmationNumber: $confirmationNumber, paymentCode: $paymentCode)'; } 
- }
+          paymentCode == other.paymentCode;}
+@override int get hashCode {return Object.hash(confirmationNumber, paymentCode);}
+@override String toString() {return 'PaymentIntentNextActionKonbiniSeicomart(confirmationNumber: $confirmationNumber, paymentCode: $paymentCode)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_cors_rule_allowed.dart';@immutable final class R2CorsRule {const R2CorsRule({required this.allowed, this.exposeHeaders, this.id, this.maxAgeSeconds, });
 
-factory R2CorsRule.fromJson(Map<String, dynamic> json) { return R2CorsRule(
+factory R2CorsRule.fromJson(Map<String, dynamic> json) {return R2CorsRule(
   allowed: R2CorsRuleAllowed.fromJson(json['allowed'] as Map<String, dynamic>),
   exposeHeaders: (json['exposeHeaders'] as List<dynamic>?)?.map((e) => e as String).toList(),
   id: json['id'] as String?,
   maxAgeSeconds: json['maxAgeSeconds'] != null ? (json['maxAgeSeconds'] as num).toDouble() : null,
-); }
+);}
 
 /// Object specifying allowed origins, methods and headers for this CORS rule.
 final R2CorsRuleAllowed allowed;
@@ -21,25 +21,25 @@ final String? id;
 /// Specifies the amount of time (in seconds) browsers are allowed to cache CORS preflight responses. Browsers may limit this to 2 hours or less, even if the maximum value (86400) is specified.
 final double? maxAgeSeconds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowed': allowed.toJson(),
   'exposeHeaders': ?exposeHeaders,
   'id': ?id,
   'maxAgeSeconds': ?maxAgeSeconds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed'); } 
-R2CorsRule copyWith({R2CorsRuleAllowed? allowed, List<String>? Function()? exposeHeaders, String? Function()? id, double? Function()? maxAgeSeconds, }) { return R2CorsRule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('allowed');}
+R2CorsRule copyWith({R2CorsRuleAllowed? allowed, List<String>? Function()? exposeHeaders, String? Function()? id, double? Function()? maxAgeSeconds, }) {return R2CorsRule(
   allowed: allowed ?? this.allowed,
   exposeHeaders: exposeHeaders != null ? exposeHeaders() : this.exposeHeaders,
   id: id != null ? id() : this.id,
   maxAgeSeconds: maxAgeSeconds != null ? maxAgeSeconds() : this.maxAgeSeconds,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is R2CorsRule &&
           allowed == other.allowed &&
           listEquals(exposeHeaders, other.exposeHeaders) &&
           id == other.id &&
-          maxAgeSeconds == other.maxAgeSeconds; } 
-@override int get hashCode { return Object.hash(allowed, Object.hashAll(exposeHeaders ?? const []), id, maxAgeSeconds); } 
-@override String toString() { return 'R2CorsRule(allowed: $allowed, exposeHeaders: $exposeHeaders, id: $id, maxAgeSeconds: $maxAgeSeconds)'; } 
- }
+          maxAgeSeconds == other.maxAgeSeconds;}
+@override int get hashCode {return Object.hash(allowed, Object.hashAll(exposeHeaders ?? const []), id, maxAgeSeconds);}
+@override String toString() {return 'R2CorsRule(allowed: $allowed, exposeHeaders: $exposeHeaders, id: $id, maxAgeSeconds: $maxAgeSeconds)';}
+}

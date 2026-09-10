@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class WorDescribeWorkflowInstanceError {const WorDescribeWorkflowInstanceError();
 
 /// Decodes the payload for its declared status and content type.
-static WorDescribeWorkflowInstanceError parse(ApiResponse response) { switch (response.statusCode) {
+static WorDescribeWorkflowInstanceError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
 return WorDescribeWorkflowInstanceError400(WorDescribeWorkflowInstanceResponse400.fromJson(json as Map<String, dynamic>));
@@ -14,26 +14,26 @@ return WorDescribeWorkflowInstanceError404(WorDescribeWorkflowInstanceResponse40
 default:
 return WorDescribeWorkflowInstanceErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class WorDescribeWorkflowInstanceError400 extends WorDescribeWorkflowInstanceError {const WorDescribeWorkflowInstanceError400(this.data);
 
 /// The decoded response payload.
 final WorDescribeWorkflowInstanceResponse400 data;
 
- }
+}
 /// Response for 404 (application/json).
 final class WorDescribeWorkflowInstanceError404 extends WorDescribeWorkflowInstanceError {const WorDescribeWorkflowInstanceError404(this.data);
 
 /// The decoded response payload.
 final WorDescribeWorkflowInstanceResponse404 data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class WorDescribeWorkflowInstanceErrorUnknown extends WorDescribeWorkflowInstanceError {const WorDescribeWorkflowInstanceErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

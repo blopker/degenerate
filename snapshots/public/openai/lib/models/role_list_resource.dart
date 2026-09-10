@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assigned_role_details.dart';/// Always `list`.
 @immutable final class RoleListResourceObject {const RoleListResourceObject._(this.value);
 
-factory RoleListResourceObject.fromJson(String json) { return switch (json) {
+factory RoleListResourceObject.fromJson(String json) {return switch (json) {
   'list' => list,
   _ => RoleListResourceObject._(json),
-}; }
+};}
 
 static const RoleListResourceObject list = RoleListResourceObject._('list');
 
@@ -14,23 +14,23 @@ static const List<RoleListResourceObject> values = [list];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RoleListResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RoleListResourceObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RoleListResourceObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RoleListResourceObject($value)';}
+}
 /// Paginated list of roles assigned to a principal.
 @immutable final class RoleListResource {const RoleListResource({required this.object, required this.data, required this.hasMore, required this.next, });
 
-factory RoleListResource.fromJson(Map<String, dynamic> json) { return RoleListResource(
+factory RoleListResource.fromJson(Map<String, dynamic> json) {return RoleListResource(
   object: RoleListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => AssignedRoleDetails.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   next: json['next'] as String?,
-); }
+);}
 
 /// Always `list`.
 final RoleListResourceObject object;
@@ -44,28 +44,28 @@ final bool hasMore;
 /// Cursor to fetch the next page of results, or `null` when there are no more assignments.
 final String? next;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'next': next,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
-      json.containsKey('next') && (json['next'] == null || json['next'] is String); } 
-RoleListResource copyWith({RoleListResourceObject? object, List<AssignedRoleDetails>? data, bool? hasMore, String? Function()? next, }) { return RoleListResource(
+      json.containsKey('next') && (json['next'] == null || json['next'] is String);}
+RoleListResource copyWith({RoleListResourceObject? object, List<AssignedRoleDetails>? data, bool? hasMore, String? Function()? next, }) {return RoleListResource(
   object: object ?? this.object,
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   next: next != null ? next() : this.next,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RoleListResource &&
           object == other.object &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
-          next == other.next; } 
-@override int get hashCode { return Object.hash(object, Object.hashAll(data), hasMore, next); } 
-@override String toString() { return 'RoleListResource(object: $object, data: $data, hasMore: $hasMore, next: $next)'; } 
- }
+          next == other.next;}
+@override int get hashCode {return Object.hash(object, Object.hashAll(data), hasMore, next);}
+@override String toString() {return 'RoleListResource(object: $object, data: $data, hasMore: $hasMore, next: $next)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTopLocationsResponseResultTop0 {const RadarGetDnsTopLocationsResponseResultTop0({required this.clientCountryAlpha2, required this.clientCountryName, required this.value, });
 
-factory RadarGetDnsTopLocationsResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetDnsTopLocationsResponseResultTop0(
+factory RadarGetDnsTopLocationsResponseResultTop0.fromJson(Map<String, dynamic> json) {return RadarGetDnsTopLocationsResponseResultTop0(
   clientCountryAlpha2: json['clientCountryAlpha2'] as String,
   clientCountryName: json['clientCountryName'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String clientCountryAlpha2;
 
@@ -15,24 +15,24 @@ final String clientCountryName;
 /// A numeric string.
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'clientCountryAlpha2': clientCountryAlpha2,
   'clientCountryName': clientCountryName,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('clientCountryAlpha2') && json['clientCountryAlpha2'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('clientCountryAlpha2') && json['clientCountryAlpha2'] is String &&
       json.containsKey('clientCountryName') && json['clientCountryName'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetDnsTopLocationsResponseResultTop0 copyWith({String? clientCountryAlpha2, String? clientCountryName, String? value, }) { return RadarGetDnsTopLocationsResponseResultTop0(
+      json.containsKey('value') && json['value'] is String;}
+RadarGetDnsTopLocationsResponseResultTop0 copyWith({String? clientCountryAlpha2, String? clientCountryName, String? value, }) {return RadarGetDnsTopLocationsResponseResultTop0(
   clientCountryAlpha2: clientCountryAlpha2 ?? this.clientCountryAlpha2,
   clientCountryName: clientCountryName ?? this.clientCountryName,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetDnsTopLocationsResponseResultTop0 &&
           clientCountryAlpha2 == other.clientCountryAlpha2 &&
           clientCountryName == other.clientCountryName &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(clientCountryAlpha2, clientCountryName, value); } 
-@override String toString() { return 'RadarGetDnsTopLocationsResponseResultTop0(clientCountryAlpha2: $clientCountryAlpha2, clientCountryName: $clientCountryName, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(clientCountryAlpha2, clientCountryName, value);}
+@override String toString() {return 'RadarGetDnsTopLocationsResponseResultTop0(clientCountryAlpha2: $clientCountryAlpha2, clientCountryName: $clientCountryName, value: $value)';}
+}

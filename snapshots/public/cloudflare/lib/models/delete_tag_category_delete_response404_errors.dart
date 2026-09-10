@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteTagCategoryDeleteResponse404Errors {const DeleteTagCategoryDeleteResponse404Errors({required this.message});
 
-factory DeleteTagCategoryDeleteResponse404Errors.fromJson(Map<String, dynamic> json) { return DeleteTagCategoryDeleteResponse404Errors(
+factory DeleteTagCategoryDeleteResponse404Errors.fromJson(Map<String, dynamic> json) {return DeleteTagCategoryDeleteResponse404Errors(
   message: json['message'] as String,
-); }
+);}
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-DeleteTagCategoryDeleteResponse404Errors copyWith({String? message}) { return DeleteTagCategoryDeleteResponse404Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+DeleteTagCategoryDeleteResponse404Errors copyWith({String? message}) {return DeleteTagCategoryDeleteResponse404Errors(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DeleteTagCategoryDeleteResponse404Errors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'DeleteTagCategoryDeleteResponse404Errors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'DeleteTagCategoryDeleteResponse404Errors(message: $message)';}
+}

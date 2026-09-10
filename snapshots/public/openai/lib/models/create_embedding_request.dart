@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_embedding_request_input.dart';import 'create_embedding_request_model.dart';/// The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).
 @immutable final class CreateEmbeddingRequestEncodingFormat {const CreateEmbeddingRequestEncodingFormat._(this.value);
 
-factory CreateEmbeddingRequestEncodingFormat.fromJson(String json) { return switch (json) {
+factory CreateEmbeddingRequestEncodingFormat.fromJson(String json) {return switch (json) {
   'float' => float,
   'base64' => base64,
   _ => CreateEmbeddingRequestEncodingFormat._(json),
-}; }
+};}
 
 static const CreateEmbeddingRequestEncodingFormat float = CreateEmbeddingRequestEncodingFormat._('float');
 
@@ -17,23 +17,23 @@ static const List<CreateEmbeddingRequestEncodingFormat> values = [float, base64]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateEmbeddingRequestEncodingFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateEmbeddingRequestEncodingFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateEmbeddingRequestEncodingFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateEmbeddingRequestEncodingFormat($value)';}
+}
 @immutable final class CreateEmbeddingRequest {const CreateEmbeddingRequest({required this.input, required this.model, this.encodingFormat, this.dimensions, this.user, });
 
-factory CreateEmbeddingRequest.fromJson(Map<String, dynamic> json) { return CreateEmbeddingRequest(
+factory CreateEmbeddingRequest.fromJson(Map<String, dynamic> json) {return CreateEmbeddingRequest(
   input: OneOf4.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromC: (v) => (v as List<dynamic>).map((e) => (e as num).toInt()).toList(), fromD: (v) => (v as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => (e as num).toInt()).toList()).toList(),),
   model: CreateEmbeddingRequestModel.fromJson(json['model']),
   encodingFormat: json['encoding_format'] != null ? CreateEmbeddingRequestEncodingFormat.fromJson(json['encoding_format'] as String) : null,
   dimensions: json['dimensions'] != null ? (json['dimensions'] as num).toInt() : null,
   user: json['user'] as String?,
-); }
+);}
 
 /// Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. The input must not exceed the max input tokens for the model (8192 tokens for all embedding models), cannot be an empty string, and any array must be 2048 dimensions or less. [Example Python code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) for counting tokens. In addition to the per-input token limit, all embedding  models enforce a maximum of 300,000 tokens summed across all inputs in a  single request.
 /// 
@@ -55,30 +55,30 @@ final int? dimensions;
 final String? user;
 
 /// The value with the schema default applied when absent.
-CreateEmbeddingRequestEncodingFormat get encodingFormatOrDefault { return encodingFormat ?? CreateEmbeddingRequestEncodingFormat.fromJson('float'); } 
-Map<String, dynamic> toJson() { return {
+CreateEmbeddingRequestEncodingFormat get encodingFormatOrDefault {return encodingFormat ?? CreateEmbeddingRequestEncodingFormat.fromJson('float');}
+Map<String, dynamic> toJson() {return {
   'input': input.toJson(),
   'model': model.toJson(),
   if (encodingFormat != null) 'encoding_format': encodingFormat?.toJson(),
   'dimensions': ?dimensions,
   'user': ?user,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('input') &&
-      json.containsKey('model'); } 
-CreateEmbeddingRequest copyWith({CreateEmbeddingRequestInput? input, CreateEmbeddingRequestModel? model, CreateEmbeddingRequestEncodingFormat? Function()? encodingFormat, int? Function()? dimensions, String? Function()? user, }) { return CreateEmbeddingRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('input') &&
+      json.containsKey('model');}
+CreateEmbeddingRequest copyWith({CreateEmbeddingRequestInput? input, CreateEmbeddingRequestModel? model, CreateEmbeddingRequestEncodingFormat? Function()? encodingFormat, int? Function()? dimensions, String? Function()? user, }) {return CreateEmbeddingRequest(
   input: input ?? this.input,
   model: model ?? this.model,
   encodingFormat: encodingFormat != null ? encodingFormat() : this.encodingFormat,
   dimensions: dimensions != null ? dimensions() : this.dimensions,
   user: user != null ? user() : this.user,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateEmbeddingRequest &&
           input == other.input &&
           model == other.model &&
           encodingFormat == other.encodingFormat &&
           dimensions == other.dimensions &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(input, model, encodingFormat, dimensions, user); } 
-@override String toString() { return 'CreateEmbeddingRequest(input: $input, model: $model, encodingFormat: $encodingFormat, dimensions: $dimensions, user: $user)'; } 
- }
+          user == other.user;}
+@override int get hashCode {return Object.hash(input, model, encodingFormat, dimensions, user);}
+@override String toString() {return 'CreateEmbeddingRequest(input: $input, model: $model, encodingFormat: $encodingFormat, dimensions: $dimensions, user: $user)';}
+}

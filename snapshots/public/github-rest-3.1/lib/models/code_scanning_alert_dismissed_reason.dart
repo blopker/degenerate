@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// **Required when the state is dismissed.** The reason for dismissing or closing the alert.
 @immutable final class CodeScanningAlertDismissedReason {const CodeScanningAlertDismissedReason._(this.value);
 
-factory CodeScanningAlertDismissedReason.fromJson(String json) { return switch (json) {
+factory CodeScanningAlertDismissedReason.fromJson(String json) {return switch (json) {
   'false positive' => falsePositive,
   "won't fix" => wontFix,
   'used in tests' => usedInTests,
   'null' => $null,
   _ => CodeScanningAlertDismissedReason._(json),
-}; }
+};}
 
 static const CodeScanningAlertDismissedReason falsePositive = CodeScanningAlertDismissedReason._('false positive');
 
@@ -23,11 +23,11 @@ static const List<CodeScanningAlertDismissedReason> values = [falsePositive, won
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningAlertDismissedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningAlertDismissedReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeScanningAlertDismissedReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeScanningAlertDismissedReason($value)';}
+}

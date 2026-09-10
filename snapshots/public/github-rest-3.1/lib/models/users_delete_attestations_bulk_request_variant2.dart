@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsersDeleteAttestationsBulkRequestVariant2 {const UsersDeleteAttestationsBulkRequestVariant2({required this.attestationIds});
 
-factory UsersDeleteAttestationsBulkRequestVariant2.fromJson(Map<String, dynamic> json) { return UsersDeleteAttestationsBulkRequestVariant2(
+factory UsersDeleteAttestationsBulkRequestVariant2.fromJson(Map<String, dynamic> json) {return UsersDeleteAttestationsBulkRequestVariant2(
   attestationIds: (json['attestation_ids'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// List of unique IDs associated with the artifact attestations to delete.
 final List<int> attestationIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'attestation_ids': attestationIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('attestation_ids'); } 
-UsersDeleteAttestationsBulkRequestVariant2 copyWith({List<int>? attestationIds}) { return UsersDeleteAttestationsBulkRequestVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('attestation_ids');}
+UsersDeleteAttestationsBulkRequestVariant2 copyWith({List<int>? attestationIds}) {return UsersDeleteAttestationsBulkRequestVariant2(
   attestationIds: attestationIds ?? this.attestationIds,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UsersDeleteAttestationsBulkRequestVariant2 &&
-          listEquals(attestationIds, other.attestationIds); } 
-@override int get hashCode { return Object.hashAll(attestationIds).hashCode; } 
-@override String toString() { return 'UsersDeleteAttestationsBulkRequestVariant2(attestationIds: $attestationIds)'; } 
- }
+          listEquals(attestationIds, other.attestationIds);}
+@override int get hashCode {return Object.hashAll(attestationIds).hashCode;}
+@override String toString() {return 'UsersDeleteAttestationsBulkRequestVariant2(attestationIds: $attestationIds)';}
+}

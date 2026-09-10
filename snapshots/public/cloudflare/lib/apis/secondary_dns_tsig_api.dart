@@ -13,7 +13,7 @@ final class SecondaryDnsTsigApi with ApiExecutor {const SecondaryDnsTsigApi(this
 /// List TSIGs.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/tsigs`
-Future<ApiResult<List<SecondaryDnsTsig>?, SecondaryDnsTsigListTsiGsResponse4xx>> secondaryDnsTsigListTsiGs({required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecondaryDnsTsig>?, SecondaryDnsTsigListTsiGsResponse4xx>> secondaryDnsTsigListTsiGs({required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create TSIG
 ///
 /// Create TSIG.
 ///
 /// `POST /accounts/{account_id}/secondary_dns/tsigs`
-Future<ApiResult<SecondaryDnsTsig?, SecondaryDnsTsigCreateTsigResponse4xx>> secondaryDnsTsigCreateTsig({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsTsigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsTsig?, SecondaryDnsTsigCreateTsigResponse4xx>> secondaryDnsTsigCreateTsig({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsTsigRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// TSIG Details
 ///
 /// Get TSIG.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/tsigs/{tsig_id}`
-Future<ApiResult<SecondaryDnsTsig?, SecondaryDnsTsigTsigDetailsResponse4xx>> secondaryDnsTsigTsigDetails({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsTsig?, SecondaryDnsTsigTsigDetailsResponse4xx>> secondaryDnsTsigTsigDetails({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -105,13 +105,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update TSIG
 ///
 /// Modify TSIG.
 ///
 /// `PUT /accounts/{account_id}/secondary_dns/tsigs/{tsig_id}`
-Future<ApiResult<SecondaryDnsTsig?, SecondaryDnsTsigUpdateTsigResponse4xx>> secondaryDnsTsigUpdateTsig({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsTsigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsTsig?, SecondaryDnsTsigUpdateTsigResponse4xx>> secondaryDnsTsigUpdateTsig({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsTsigRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,13 +139,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete TSIG
 ///
 /// Delete TSIG.
 ///
 /// `DELETE /accounts/{account_id}/secondary_dns/tsigs/{tsig_id}`
-Future<ApiResult<SecondaryDnsSchemasIdResponseResult?, SecondaryDnsTsigDeleteTsigResponse4xx>> secondaryDnsTsigDeleteTsig({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsSchemasIdResponseResult?, SecondaryDnsTsigDeleteTsigResponse4xx>> secondaryDnsTsigDeleteTsig({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -171,5 +171,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

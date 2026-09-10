@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_zaraz_config_return_settings_context_enricher.dart';/// General Zaraz settings.
 @immutable final class ZarazZarazConfigReturnSettings {const ZarazZarazConfigReturnSettings({required this.autoInjectScript, this.contextEnricher, this.cookieDomain, this.ecommerce, this.eventsApiPath, this.hideExternalReferer, this.hideIpAddress, this.hideQueryParams, this.hideUserAgent, this.initPath, this.injectIframes, this.mcRootPath, this.scriptPath, this.trackPath, });
 
-factory ZarazZarazConfigReturnSettings.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigReturnSettings(
+factory ZarazZarazConfigReturnSettings.fromJson(Map<String, dynamic> json) {return ZarazZarazConfigReturnSettings(
   autoInjectScript: json['autoInjectScript'] as bool,
   contextEnricher: json['contextEnricher'] != null ? ZarazZarazConfigReturnSettingsContextEnricher.fromJson(json['contextEnricher'] as Map<String, dynamic>) : null,
   cookieDomain: json['cookieDomain'] as String?,
@@ -18,7 +18,7 @@ factory ZarazZarazConfigReturnSettings.fromJson(Map<String, dynamic> json) { ret
   mcRootPath: json['mcRootPath'] as String?,
   scriptPath: json['scriptPath'] as String?,
   trackPath: json['trackPath'] as String?,
-); }
+);}
 
 /// Automatic injection of Zaraz scripts enabled.
 final bool autoInjectScript;
@@ -62,7 +62,7 @@ final String? scriptPath;
 /// Custom endpoint for Zaraz tracking requests.
 final String? trackPath;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'autoInjectScript': autoInjectScript,
   if (contextEnricher != null) 'contextEnricher': contextEnricher?.toJson(),
   'cookieDomain': ?cookieDomain,
@@ -77,9 +77,9 @@ Map<String, dynamic> toJson() { return {
   'mcRootPath': ?mcRootPath,
   'scriptPath': ?scriptPath,
   'trackPath': ?trackPath,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('autoInjectScript') && json['autoInjectScript'] is bool; } 
-ZarazZarazConfigReturnSettings copyWith({bool? autoInjectScript, ZarazZarazConfigReturnSettingsContextEnricher? Function()? contextEnricher, String? Function()? cookieDomain, bool? Function()? ecommerce, String? Function()? eventsApiPath, bool? Function()? hideExternalReferer, bool? Function()? hideIpAddress, bool? Function()? hideQueryParams, bool? Function()? hideUserAgent, String? Function()? initPath, bool? Function()? injectIframes, String? Function()? mcRootPath, String? Function()? scriptPath, String? Function()? trackPath, }) { return ZarazZarazConfigReturnSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('autoInjectScript') && json['autoInjectScript'] is bool;}
+ZarazZarazConfigReturnSettings copyWith({bool? autoInjectScript, ZarazZarazConfigReturnSettingsContextEnricher? Function()? contextEnricher, String? Function()? cookieDomain, bool? Function()? ecommerce, String? Function()? eventsApiPath, bool? Function()? hideExternalReferer, bool? Function()? hideIpAddress, bool? Function()? hideQueryParams, bool? Function()? hideUserAgent, String? Function()? initPath, bool? Function()? injectIframes, String? Function()? mcRootPath, String? Function()? scriptPath, String? Function()? trackPath, }) {return ZarazZarazConfigReturnSettings(
   autoInjectScript: autoInjectScript ?? this.autoInjectScript,
   contextEnricher: contextEnricher != null ? contextEnricher() : this.contextEnricher,
   cookieDomain: cookieDomain != null ? cookieDomain() : this.cookieDomain,
@@ -94,8 +94,8 @@ ZarazZarazConfigReturnSettings copyWith({bool? autoInjectScript, ZarazZarazConfi
   mcRootPath: mcRootPath != null ? mcRootPath() : this.mcRootPath,
   scriptPath: scriptPath != null ? scriptPath() : this.scriptPath,
   trackPath: trackPath != null ? trackPath() : this.trackPath,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZarazZarazConfigReturnSettings &&
           autoInjectScript == other.autoInjectScript &&
           contextEnricher == other.contextEnricher &&
@@ -110,7 +110,7 @@ ZarazZarazConfigReturnSettings copyWith({bool? autoInjectScript, ZarazZarazConfi
           injectIframes == other.injectIframes &&
           mcRootPath == other.mcRootPath &&
           scriptPath == other.scriptPath &&
-          trackPath == other.trackPath; } 
-@override int get hashCode { return Object.hash(autoInjectScript, contextEnricher, cookieDomain, ecommerce, eventsApiPath, hideExternalReferer, hideIpAddress, hideQueryParams, hideUserAgent, initPath, injectIframes, mcRootPath, scriptPath, trackPath); } 
-@override String toString() { return 'ZarazZarazConfigReturnSettings(autoInjectScript: $autoInjectScript, contextEnricher: $contextEnricher, cookieDomain: $cookieDomain, ecommerce: $ecommerce, eventsApiPath: $eventsApiPath, hideExternalReferer: $hideExternalReferer, hideIpAddress: $hideIpAddress, hideQueryParams: $hideQueryParams, hideUserAgent: $hideUserAgent, initPath: $initPath, injectIframes: $injectIframes, mcRootPath: $mcRootPath, scriptPath: $scriptPath, trackPath: $trackPath)'; } 
- }
+          trackPath == other.trackPath;}
+@override int get hashCode {return Object.hash(autoInjectScript, contextEnricher, cookieDomain, ecommerce, eventsApiPath, hideExternalReferer, hideIpAddress, hideQueryParams, hideUserAgent, initPath, injectIframes, mcRootPath, scriptPath, trackPath);}
+@override String toString() {return 'ZarazZarazConfigReturnSettings(autoInjectScript: $autoInjectScript, contextEnricher: $contextEnricher, cookieDomain: $cookieDomain, ecommerce: $ecommerce, eventsApiPath: $eventsApiPath, hideExternalReferer: $hideExternalReferer, hideIpAddress: $hideIpAddress, hideQueryParams: $hideQueryParams, hideUserAgent: $hideUserAgent, initPath: $initPath, injectIframes: $injectIframes, mcRootPath: $mcRootPath, scriptPath: $scriptPath, trackPath: $trackPath)';}
+}

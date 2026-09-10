@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';import 'search_result_text_matches2.dart';/// Code Search Result Item
 @immutable final class CodeSearchResultItem {const CodeSearchResultItem({required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.repository, required this.score, this.fileSize, this.language = const Omittable.absent(), this.lastModifiedAt, this.lineNumbers, this.textMatches, });
 
-factory CodeSearchResultItem.fromJson(Map<String, dynamic> json) { return CodeSearchResultItem(
+factory CodeSearchResultItem.fromJson(Map<String, dynamic> json) {return CodeSearchResultItem(
   name: json['name'] as String,
   path: json['path'] as String,
   sha: json['sha'] as String,
@@ -17,7 +17,7 @@ factory CodeSearchResultItem.fromJson(Map<String, dynamic> json) { return CodeSe
   lastModifiedAt: json['last_modified_at'] != null ? DateTime.parse(json['last_modified_at'] as String) : null,
   lineNumbers: (json['line_numbers'] as List<dynamic>?)?.map((e) => e as String).toList(),
   textMatches: (json['text_matches'] as List<dynamic>?)?.map((e) => SearchResultTextMatches2.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final String name;
 
@@ -45,7 +45,7 @@ final List<String>? lineNumbers;
 
 final List<SearchResultTextMatches2>? textMatches;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'path': path,
   'sha': sha,
@@ -59,16 +59,16 @@ Map<String, dynamic> toJson() { return {
   if (lastModifiedAt != null) 'last_modified_at': lastModifiedAt?.toIso8601String(),
   'line_numbers': ?lineNumbers,
   if (textMatches != null) 'text_matches': textMatches?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('git_url') && json['git_url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('repository') &&
-      json.containsKey('score') && json['score'] is num; } 
-CodeSearchResultItem copyWith({String? name, String? path, String? sha, Uri? url, Uri? gitUrl, Uri? htmlUrl, MinimalRepository? repository, double? score, int? Function()? fileSize, Omittable<String?>? language, DateTime? Function()? lastModifiedAt, List<String>? Function()? lineNumbers, List<SearchResultTextMatches2>? Function()? textMatches, }) { return CodeSearchResultItem(
+      json.containsKey('score') && json['score'] is num;}
+CodeSearchResultItem copyWith({String? name, String? path, String? sha, Uri? url, Uri? gitUrl, Uri? htmlUrl, MinimalRepository? repository, double? score, int? Function()? fileSize, Omittable<String?>? language, DateTime? Function()? lastModifiedAt, List<String>? Function()? lineNumbers, List<SearchResultTextMatches2>? Function()? textMatches, }) {return CodeSearchResultItem(
   name: name ?? this.name,
   path: path ?? this.path,
   sha: sha ?? this.sha,
@@ -82,8 +82,8 @@ CodeSearchResultItem copyWith({String? name, String? path, String? sha, Uri? url
   lastModifiedAt: lastModifiedAt != null ? lastModifiedAt() : this.lastModifiedAt,
   lineNumbers: lineNumbers != null ? lineNumbers() : this.lineNumbers,
   textMatches: textMatches != null ? textMatches() : this.textMatches,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeSearchResultItem &&
           name == other.name &&
           path == other.path &&
@@ -97,7 +97,7 @@ CodeSearchResultItem copyWith({String? name, String? path, String? sha, Uri? url
           language == other.language &&
           lastModifiedAt == other.lastModifiedAt &&
           listEquals(lineNumbers, other.lineNumbers) &&
-          listEquals(textMatches, other.textMatches); } 
-@override int get hashCode { return Object.hash(name, path, sha, url, gitUrl, htmlUrl, repository, score, fileSize, language, lastModifiedAt, Object.hashAll(lineNumbers ?? const []), Object.hashAll(textMatches ?? const [])); } 
-@override String toString() { return 'CodeSearchResultItem(name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, repository: $repository, score: $score, fileSize: $fileSize, language: $language, lastModifiedAt: $lastModifiedAt, lineNumbers: $lineNumbers, textMatches: $textMatches)'; } 
- }
+          listEquals(textMatches, other.textMatches);}
+@override int get hashCode {return Object.hash(name, path, sha, url, gitUrl, htmlUrl, repository, score, fileSize, language, lastModifiedAt, Object.hashAll(lineNumbers ?? const []), Object.hashAll(textMatches ?? const []));}
+@override String toString() {return 'CodeSearchResultItem(name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, repository: $repository, score: $score, fileSize: $fileSize, language: $language, lastModifiedAt: $lastModifiedAt, lineNumbers: $lineNumbers, textMatches: $textMatches)';}
+}

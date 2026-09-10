@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksPaymentLinkRequestAfterCompletionRedirect {const PostPaymentLinksPaymentLinkRequestAfterCompletionRedirect({required this.url});
 
-factory PostPaymentLinksPaymentLinkRequestAfterCompletionRedirect.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestAfterCompletionRedirect(
+factory PostPaymentLinksPaymentLinkRequestAfterCompletionRedirect.fromJson(Map<String, dynamic> json) {return PostPaymentLinksPaymentLinkRequestAfterCompletionRedirect(
   url: json['url'] as String,
-); }
+);}
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-PostPaymentLinksPaymentLinkRequestAfterCompletionRedirect copyWith({String? url}) { return PostPaymentLinksPaymentLinkRequestAfterCompletionRedirect(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String;}
+PostPaymentLinksPaymentLinkRequestAfterCompletionRedirect copyWith({String? url}) {return PostPaymentLinksPaymentLinkRequestAfterCompletionRedirect(
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentLinksPaymentLinkRequestAfterCompletionRedirect &&
-          url == other.url; } 
-@override int get hashCode { return url.hashCode; } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequestAfterCompletionRedirect(url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return url.hashCode;}
+@override String toString() {return 'PostPaymentLinksPaymentLinkRequestAfterCompletionRedirect(url: $url)';}
+}

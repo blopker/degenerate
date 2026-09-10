@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `mcp_list_tools.failed`.
 @immutable final class RealtimeBetaServerEventMcpListToolsFailedType {const RealtimeBetaServerEventMcpListToolsFailedType._(this.value);
 
-factory RealtimeBetaServerEventMcpListToolsFailedType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventMcpListToolsFailedType.fromJson(String json) {return switch (json) {
   'mcp_list_tools.failed' => mcpListToolsFailed,
   _ => RealtimeBetaServerEventMcpListToolsFailedType._(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventMcpListToolsFailedType mcpListToolsFailed = RealtimeBetaServerEventMcpListToolsFailedType._('mcp_list_tools.failed');
 
@@ -14,22 +14,22 @@ static const List<RealtimeBetaServerEventMcpListToolsFailedType> values = [mcpLi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventMcpListToolsFailedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventMcpListToolsFailedType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeBetaServerEventMcpListToolsFailedType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeBetaServerEventMcpListToolsFailedType($value)';}
+}
 /// Returned when listing MCP tools has failed for an item.
 @immutable final class RealtimeBetaServerEventMcpListToolsFailed {const RealtimeBetaServerEventMcpListToolsFailed({required this.eventId, required this.type, required this.itemId, });
 
-factory RealtimeBetaServerEventMcpListToolsFailed.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventMcpListToolsFailed(
+factory RealtimeBetaServerEventMcpListToolsFailed.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventMcpListToolsFailed(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventMcpListToolsFailedType.fromJson(json['type'] as String),
   itemId: json['item_id'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -40,24 +40,24 @@ final RealtimeBetaServerEventMcpListToolsFailedType type;
 /// The ID of the MCP list tools item.
 final String itemId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'item_id': itemId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
-      json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeBetaServerEventMcpListToolsFailed copyWith({String? eventId, RealtimeBetaServerEventMcpListToolsFailedType? type, String? itemId, }) { return RealtimeBetaServerEventMcpListToolsFailed(
+      json.containsKey('item_id') && json['item_id'] is String;}
+RealtimeBetaServerEventMcpListToolsFailed copyWith({String? eventId, RealtimeBetaServerEventMcpListToolsFailedType? type, String? itemId, }) {return RealtimeBetaServerEventMcpListToolsFailed(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeBetaServerEventMcpListToolsFailed &&
           eventId == other.eventId &&
           type == other.type &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId); } 
-@override String toString() { return 'RealtimeBetaServerEventMcpListToolsFailed(eventId: $eventId, type: $type, itemId: $itemId)'; } 
- }
+          itemId == other.itemId;}
+@override int get hashCode {return Object.hash(eventId, type, itemId);}
+@override String toString() {return 'RealtimeBetaServerEventMcpListToolsFailed(eventId: $eventId, type: $type, itemId: $itemId)';}
+}

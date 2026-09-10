@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'branch_protection.dart';import 'branch_with_protection_links.dart';import 'commit.dart';/// Branch With Protection
 @immutable final class BranchWithProtection {const BranchWithProtection({required this.name, required this.commit, required this.links, required this.protected, required this.protection, required this.protectionUrl, this.pattern, this.requiredApprovingReviewCount, });
 
-factory BranchWithProtection.fromJson(Map<String, dynamic> json) { return BranchWithProtection(
+factory BranchWithProtection.fromJson(Map<String, dynamic> json) {return BranchWithProtection(
   name: json['name'] as String,
   commit: Commit.fromJson(json['commit'] as Map<String, dynamic>),
   links: BranchWithProtectionLinks.fromJson(json['_links'] as Map<String, dynamic>),
@@ -12,7 +12,7 @@ factory BranchWithProtection.fromJson(Map<String, dynamic> json) { return Branch
   protectionUrl: Uri.parse(json['protection_url'] as String),
   pattern: json['pattern'] as String?,
   requiredApprovingReviewCount: json['required_approving_review_count'] != null ? (json['required_approving_review_count'] as num).toInt() : null,
-); }
+);}
 
 final String name;
 
@@ -30,7 +30,7 @@ final String? pattern;
 
 final int? requiredApprovingReviewCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'commit': commit.toJson(),
   '_links': links.toJson(),
@@ -39,14 +39,14 @@ Map<String, dynamic> toJson() { return {
   'protection_url': protectionUrl.toString(),
   'pattern': ?pattern,
   'required_approving_review_count': ?requiredApprovingReviewCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('commit') &&
       json.containsKey('_links') &&
       json.containsKey('protected') && json['protected'] is bool &&
       json.containsKey('protection') &&
-      json.containsKey('protection_url') && json['protection_url'] is String; } 
-BranchWithProtection copyWith({String? name, Commit? commit, BranchWithProtectionLinks? links, bool? protected, BranchProtection? protection, Uri? protectionUrl, String? Function()? pattern, int? Function()? requiredApprovingReviewCount, }) { return BranchWithProtection(
+      json.containsKey('protection_url') && json['protection_url'] is String;}
+BranchWithProtection copyWith({String? name, Commit? commit, BranchWithProtectionLinks? links, bool? protected, BranchProtection? protection, Uri? protectionUrl, String? Function()? pattern, int? Function()? requiredApprovingReviewCount, }) {return BranchWithProtection(
   name: name ?? this.name,
   commit: commit ?? this.commit,
   links: links ?? this.links,
@@ -55,8 +55,8 @@ BranchWithProtection copyWith({String? name, Commit? commit, BranchWithProtectio
   protectionUrl: protectionUrl ?? this.protectionUrl,
   pattern: pattern != null ? pattern() : this.pattern,
   requiredApprovingReviewCount: requiredApprovingReviewCount != null ? requiredApprovingReviewCount() : this.requiredApprovingReviewCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BranchWithProtection &&
           name == other.name &&
           commit == other.commit &&
@@ -65,7 +65,7 @@ BranchWithProtection copyWith({String? name, Commit? commit, BranchWithProtectio
           protection == other.protection &&
           protectionUrl == other.protectionUrl &&
           pattern == other.pattern &&
-          requiredApprovingReviewCount == other.requiredApprovingReviewCount; } 
-@override int get hashCode { return Object.hash(name, commit, links, protected, protection, protectionUrl, pattern, requiredApprovingReviewCount); } 
-@override String toString() { return 'BranchWithProtection(name: $name, commit: $commit, links: $links, protected: $protected, protection: $protection, protectionUrl: $protectionUrl, pattern: $pattern, requiredApprovingReviewCount: $requiredApprovingReviewCount)'; } 
- }
+          requiredApprovingReviewCount == other.requiredApprovingReviewCount;}
+@override int get hashCode {return Object.hash(name, commit, links, protected, protection, protectionUrl, pattern, requiredApprovingReviewCount);}
+@override String toString() {return 'BranchWithProtection(name: $name, commit: $commit, links: $links, protected: $protected, protection: $protection, protectionUrl: $protectionUrl, pattern: $pattern, requiredApprovingReviewCount: $requiredApprovingReviewCount)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A workflow referenced/reused by the initial caller workflow
 @immutable final class ReferencedWorkflow {const ReferencedWorkflow({required this.path, required this.sha, this.ref, });
 
-factory ReferencedWorkflow.fromJson(Map<String, dynamic> json) { return ReferencedWorkflow(
+factory ReferencedWorkflow.fromJson(Map<String, dynamic> json) {return ReferencedWorkflow(
   path: json['path'] as String,
   sha: json['sha'] as String,
   ref: json['ref'] as String?,
-); }
+);}
 
 final String path;
 
@@ -15,23 +15,23 @@ final String sha;
 
 final String? ref;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'path': path,
   'sha': sha,
   'ref': ?ref,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String &&
-      json.containsKey('sha') && json['sha'] is String; } 
-ReferencedWorkflow copyWith({String? path, String? sha, String? Function()? ref, }) { return ReferencedWorkflow(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('path') && json['path'] is String &&
+      json.containsKey('sha') && json['sha'] is String;}
+ReferencedWorkflow copyWith({String? path, String? sha, String? Function()? ref, }) {return ReferencedWorkflow(
   path: path ?? this.path,
   sha: sha ?? this.sha,
   ref: ref != null ? ref() : this.ref,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReferencedWorkflow &&
           path == other.path &&
           sha == other.sha &&
-          ref == other.ref; } 
-@override int get hashCode { return Object.hash(path, sha, ref); } 
-@override String toString() { return 'ReferencedWorkflow(path: $path, sha: $sha, ref: $ref)'; } 
- }
+          ref == other.ref;}
+@override int get hashCode {return Object.hash(path, sha, ref);}
+@override String toString() {return 'ReferencedWorkflow(path: $path, sha: $sha, ref: $ref)';}
+}

@@ -13,7 +13,7 @@ final class EnterpriseTeamsApi with ApiExecutor {const EnterpriseTeamsApi(this.a
 /// List all teams in the enterprise for the authenticated user
 ///
 /// `GET /enterprises/{enterprise}/teams`
-Future<ApiResult<List<EnterpriseTeam>, BasicError>> enterpriseTeamsList({required String enterprise, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<EnterpriseTeam>, BasicError>> enterpriseTeamsList({required String enterprise, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -50,13 +50,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create an enterprise team
 ///
 /// To create an enterprise team, the authenticated user must be an owner of the enterprise.
 ///
 /// `POST /enterprises/{enterprise}/teams`
-Future<ApiResult<EnterpriseTeam, Never>> enterpriseTeamsCreate({required String enterprise, required EnterpriseTeamsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EnterpriseTeam, Never>> enterpriseTeamsCreate({required String enterprise, required EnterpriseTeamsCreateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -74,13 +74,13 @@ final json = jsonDecode(response.body);
 return EnterpriseTeam.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Get an enterprise team
 ///
 /// Gets a team using the team's slug. To create the slug, GitHub replaces special characters in the name string, changes all words to lowercase, and replaces spaces with a `-` separator and adds the "ent:" prefix. For example, "My TEam Näme" would become `ent:my-team-name`.
 ///
 /// `GET /enterprises/{enterprise}/teams/{team_slug}`
-Future<ApiResult<EnterpriseTeam, BasicError>> enterpriseTeamsGet({required String enterprise, required String teamSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EnterpriseTeam, BasicError>> enterpriseTeamsGet({required String enterprise, required String teamSlug, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -106,13 +106,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update an enterprise team
 ///
 /// To edit a team, the authenticated user must be an enterprise owner.
 ///
 /// `PATCH /enterprises/{enterprise}/teams/{team_slug}`
-Future<ApiResult<EnterpriseTeam, BasicError>> enterpriseTeamsUpdate({required String enterprise, required String teamSlug, required EnterpriseTeamsUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EnterpriseTeam, BasicError>> enterpriseTeamsUpdate({required String enterprise, required String teamSlug, required EnterpriseTeamsUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -140,7 +140,7 @@ return null;
 
   },
 );
- } 
+}
 /// Delete an enterprise team
 ///
 /// To delete an enterprise team, the authenticated user must be an enterprise owner.
@@ -148,7 +148,7 @@ return null;
 /// If you are an enterprise owner, deleting an enterprise team will delete all of its IdP mappings as well.
 ///
 /// `DELETE /enterprises/{enterprise}/teams/{team_slug}`
-Future<ApiResult<void, BasicError>> enterpriseTeamsDelete({required String enterprise, required String teamSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, BasicError>> enterpriseTeamsDelete({required String enterprise, required String teamSlug, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -171,5 +171,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

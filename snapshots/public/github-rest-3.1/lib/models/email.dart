@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Email
 @immutable final class Email {const Email({required this.email, required this.primary, required this.verified, required this.visibility, });
 
-factory Email.fromJson(Map<String, dynamic> json) { return Email(
+factory Email.fromJson(Map<String, dynamic> json) {return Email(
   email: json['email'] as String,
   primary: json['primary'] as bool,
   verified: json['verified'] as bool,
   visibility: json['visibility'] as String?,
-); }
+);}
 
 final String email;
 
@@ -18,28 +18,28 @@ final bool verified;
 
 final String? visibility;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'email': email,
   'primary': primary,
   'verified': verified,
   'visibility': visibility,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') && json['email'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('email') && json['email'] is String &&
       json.containsKey('primary') && json['primary'] is bool &&
       json.containsKey('verified') && json['verified'] is bool &&
-      json.containsKey('visibility') && (json['visibility'] == null || json['visibility'] is String); } 
-Email copyWith({String? email, bool? primary, bool? verified, String? Function()? visibility, }) { return Email(
+      json.containsKey('visibility') && (json['visibility'] == null || json['visibility'] is String);}
+Email copyWith({String? email, bool? primary, bool? verified, String? Function()? visibility, }) {return Email(
   email: email ?? this.email,
   primary: primary ?? this.primary,
   verified: verified ?? this.verified,
   visibility: visibility != null ? visibility() : this.visibility,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Email &&
           email == other.email &&
           primary == other.primary &&
           verified == other.verified &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(email, primary, verified, visibility); } 
-@override String toString() { return 'Email(email: $email, primary: $primary, verified: $verified, visibility: $visibility)'; } 
- }
+          visibility == other.visibility;}
+@override int get hashCode {return Object.hash(email, primary, verified, visibility);}
+@override String toString() {return 'Email(email: $email, primary: $primary, verified: $verified, visibility: $visibility)';}
+}

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_call_output_status.dart';/// The streamed output emitted by an apply patch tool call.
 @immutable final class ApplyPatchToolCallOutputItemParam {const ApplyPatchToolCallOutputItemParam({required this.type, required this.callId, required this.status, this.id = const Omittable.absent(), this.output = const Omittable.absent(), });
 
-factory ApplyPatchToolCallOutputItemParam.fromJson(Map<String, dynamic> json) { return ApplyPatchToolCallOutputItemParam(
+factory ApplyPatchToolCallOutputItemParam.fromJson(Map<String, dynamic> json) {return ApplyPatchToolCallOutputItemParam(
   type: json['type'] as String,
   id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),
   callId: json['call_id'] as String,
   status: ApplyPatchCallOutputStatus.fromJson(json['status'] as String),
   output: json.containsKey('output') ? Omittable(json['output'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The type of the item. Always `apply_patch_call_output`.
 final String type;
@@ -26,30 +26,30 @@ final ApplyPatchCallOutputStatus status;
 /// Optional human-readable log text from the apply patch tool (e.g., patch results or errors).
 final Omittable<String?> output;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   if (id.isPresent) 'id': id.value,
   'call_id': callId,
   'status': status.toJson(),
   if (output.isPresent) 'output': output.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
-      json.containsKey('status'); } 
-ApplyPatchToolCallOutputItemParam copyWith({String? type, Omittable<String?>? id, String? callId, ApplyPatchCallOutputStatus? status, Omittable<String?>? output, }) { return ApplyPatchToolCallOutputItemParam(
+      json.containsKey('status');}
+ApplyPatchToolCallOutputItemParam copyWith({String? type, Omittable<String?>? id, String? callId, ApplyPatchCallOutputStatus? status, Omittable<String?>? output, }) {return ApplyPatchToolCallOutputItemParam(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,
   status: status ?? this.status,
   output: output ?? this.output,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ApplyPatchToolCallOutputItemParam &&
           type == other.type &&
           id == other.id &&
           callId == other.callId &&
           status == other.status &&
-          output == other.output; } 
-@override int get hashCode { return Object.hash(type, id, callId, status, output); } 
-@override String toString() { return 'ApplyPatchToolCallOutputItemParam(type: $type, id: $id, callId: $callId, status: $status, output: $output)'; } 
- }
+          output == other.output;}
+@override int get hashCode {return Object.hash(type, id, callId, status, output);}
+@override String toString() {return 'ApplyPatchToolCallOutputItemParam(type: $type, id: $id, callId: $callId, status: $status, output: $output)';}
+}

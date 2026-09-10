@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpEntryConfidence {const DlpEntryConfidence({required this.aiContextAvailable, required this.available, });
 
-factory DlpEntryConfidence.fromJson(Map<String, dynamic> json) { return DlpEntryConfidence(
+factory DlpEntryConfidence.fromJson(Map<String, dynamic> json) {return DlpEntryConfidence(
   aiContextAvailable: json['ai_context_available'] as bool,
   available: json['available'] as bool,
-); }
+);}
 
 /// Indicates whether this entry has AI remote service validation.
 final bool aiContextAvailable;
@@ -13,20 +13,20 @@ final bool aiContextAvailable;
 /// Indicates whether this entry has any form of validation that is not an AI remote service.
 final bool available;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ai_context_available': aiContextAvailable,
   'available': available,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ai_context_available') && json['ai_context_available'] is bool &&
-      json.containsKey('available') && json['available'] is bool; } 
-DlpEntryConfidence copyWith({bool? aiContextAvailable, bool? available, }) { return DlpEntryConfidence(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ai_context_available') && json['ai_context_available'] is bool &&
+      json.containsKey('available') && json['available'] is bool;}
+DlpEntryConfidence copyWith({bool? aiContextAvailable, bool? available, }) {return DlpEntryConfidence(
   aiContextAvailable: aiContextAvailable ?? this.aiContextAvailable,
   available: available ?? this.available,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpEntryConfidence &&
           aiContextAvailable == other.aiContextAvailable &&
-          available == other.available; } 
-@override int get hashCode { return Object.hash(aiContextAvailable, available); } 
-@override String toString() { return 'DlpEntryConfidence(aiContextAvailable: $aiContextAvailable, available: $available)'; } 
- }
+          available == other.available;}
+@override int get hashCode {return Object.hash(aiContextAvailable, available);}
+@override String toString() {return 'DlpEntryConfidence(aiContextAvailable: $aiContextAvailable, available: $available)';}
+}

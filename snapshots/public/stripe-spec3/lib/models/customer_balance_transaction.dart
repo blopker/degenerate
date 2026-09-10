@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_balance_transaction_checkout_session.dart';import 'customer_balance_transaction_credit_note.dart';import 'customer_balance_transaction_customer.dart';import 'customer_balance_transaction_invoice.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CustomerBalanceTransactionObject {const CustomerBalanceTransactionObject._(this.value);
 
-factory CustomerBalanceTransactionObject.fromJson(String json) { return switch (json) {
+factory CustomerBalanceTransactionObject.fromJson(String json) {return switch (json) {
   'customer_balance_transaction' => customerBalanceTransaction,
   _ => CustomerBalanceTransactionObject._(json),
-}; }
+};}
 
 static const CustomerBalanceTransactionObject customerBalanceTransaction = CustomerBalanceTransactionObject._('customer_balance_transaction');
 
@@ -14,18 +14,18 @@ static const List<CustomerBalanceTransactionObject> values = [customerBalanceTra
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerBalanceTransactionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerBalanceTransactionObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CustomerBalanceTransactionObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CustomerBalanceTransactionObject($value)';}
+}
 /// Transaction type: `adjustment`, `applied_to_invoice`, `credit_note`, `initial`, `invoice_overpaid`, `invoice_too_large`, `invoice_too_small`, `unspent_receiver_credit`, `unapplied_from_invoice`, `checkout_session_subscription_payment`, or `checkout_session_subscription_payment_canceled`. See the [Customer Balance page](https://docs.stripe.com/billing/customer/balance#types) to learn more about transaction types.
 @immutable final class CustomerBalanceTransactionType {const CustomerBalanceTransactionType._(this.value);
 
-factory CustomerBalanceTransactionType.fromJson(String json) { return switch (json) {
+factory CustomerBalanceTransactionType.fromJson(String json) {return switch (json) {
   'adjustment' => adjustment,
   'applied_to_invoice' => appliedToInvoice,
   'checkout_session_subscription_payment' => checkoutSessionSubscriptionPayment,
@@ -39,7 +39,7 @@ factory CustomerBalanceTransactionType.fromJson(String json) { return switch (js
   'unapplied_from_invoice' => unappliedFromInvoice,
   'unspent_receiver_credit' => unspentReceiverCredit,
   _ => CustomerBalanceTransactionType._(json),
-}; }
+};}
 
 static const CustomerBalanceTransactionType adjustment = CustomerBalanceTransactionType._('adjustment');
 
@@ -69,14 +69,14 @@ static const List<CustomerBalanceTransactionType> values = [adjustment, appliedT
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerBalanceTransactionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerBalanceTransactionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CustomerBalanceTransactionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CustomerBalanceTransactionType($value)';}
+}
 /// Each customer has a [Balance](https://docs.stripe.com/api/customers/object#customer_object-balance) value,
 /// which denotes a debit or credit that's automatically applied to their next invoice upon finalization.
 /// You may modify the value directly by using the [update customer API](https://docs.stripe.com/api/customers/update),
@@ -85,7 +85,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guide: [Customer balance](https://docs.stripe.com/billing/customer/balance)
 @immutable final class CustomerBalanceTransaction {const CustomerBalanceTransaction({required this.amount, required this.created, required this.currency, required this.customer, required this.endingBalance, required this.id, required this.livemode, required this.object, required this.type, this.checkoutSession = const Omittable.absent(), this.creditNote = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.description = const Omittable.absent(), this.invoice = const Omittable.absent(), this.metadata = const Omittable.absent(), });
 
-factory CustomerBalanceTransaction.fromJson(Map<String, dynamic> json) { return CustomerBalanceTransaction(
+factory CustomerBalanceTransaction.fromJson(Map<String, dynamic> json) {return CustomerBalanceTransaction(
   amount: (json['amount'] as num).toInt(),
   checkoutSession: json.containsKey('checkout_session') ? Omittable(json['checkout_session'] != null ? CustomerBalanceTransactionCheckoutSession.fromJson(json['checkout_session']) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
@@ -101,7 +101,7 @@ factory CustomerBalanceTransaction.fromJson(Map<String, dynamic> json) { return 
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   object: CustomerBalanceTransactionObject.fromJson(json['object'] as String),
   type: CustomerBalanceTransactionType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The amount of the transaction. A negative value is a credit for the customer's balance, and a positive value is a debit to the customer's `balance`.
 final int amount;
@@ -148,7 +148,7 @@ final CustomerBalanceTransactionObject object;
 /// Transaction type: `adjustment`, `applied_to_invoice`, `credit_note`, `initial`, `invoice_overpaid`, `invoice_too_large`, `invoice_too_small`, `unspent_receiver_credit`, `unapplied_from_invoice`, `checkout_session_subscription_payment`, or `checkout_session_subscription_payment_canceled`. See the [Customer Balance page](https://docs.stripe.com/billing/customer/balance#types) to learn more about transaction types.
 final CustomerBalanceTransactionType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   if (checkoutSession.isPresent) 'checkout_session': checkoutSession.value?.toJson(),
   'created': created,
@@ -164,8 +164,8 @@ Map<String, dynamic> toJson() { return {
   if (metadata.isPresent) 'metadata': metadata.value,
   'object': object.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('customer') &&
@@ -173,8 +173,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('type'); } 
-CustomerBalanceTransaction copyWith({int? amount, Omittable<CustomerBalanceTransactionCheckoutSession?>? checkoutSession, int? created, Omittable<CustomerBalanceTransactionCreditNote?>? creditNote, String? currency, CustomerBalanceTransactionCustomer? customer, Omittable<String?>? customerAccount, Omittable<String?>? description, int? endingBalance, String? id, Omittable<CustomerBalanceTransactionInvoice?>? invoice, bool? livemode, Omittable<Map<String,String>?>? metadata, CustomerBalanceTransactionObject? object, CustomerBalanceTransactionType? type, }) { return CustomerBalanceTransaction(
+      json.containsKey('type');}
+CustomerBalanceTransaction copyWith({int? amount, Omittable<CustomerBalanceTransactionCheckoutSession?>? checkoutSession, int? created, Omittable<CustomerBalanceTransactionCreditNote?>? creditNote, String? currency, CustomerBalanceTransactionCustomer? customer, Omittable<String?>? customerAccount, Omittable<String?>? description, int? endingBalance, String? id, Omittable<CustomerBalanceTransactionInvoice?>? invoice, bool? livemode, Omittable<Map<String,String>?>? metadata, CustomerBalanceTransactionObject? object, CustomerBalanceTransactionType? type, }) {return CustomerBalanceTransaction(
   amount: amount ?? this.amount,
   checkoutSession: checkoutSession ?? this.checkoutSession,
   created: created ?? this.created,
@@ -190,8 +190,8 @@ CustomerBalanceTransaction copyWith({int? amount, Omittable<CustomerBalanceTrans
   metadata: metadata ?? this.metadata,
   object: object ?? this.object,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomerBalanceTransaction &&
           amount == other.amount &&
           checkoutSession == other.checkoutSession &&
@@ -207,7 +207,7 @@ CustomerBalanceTransaction copyWith({int? amount, Omittable<CustomerBalanceTrans
           livemode == other.livemode &&
           metadata == other.metadata &&
           object == other.object &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amount, checkoutSession, created, creditNote, currency, customer, customerAccount, description, endingBalance, id, invoice, livemode, metadata, object, type); } 
-@override String toString() { return 'CustomerBalanceTransaction(amount: $amount, checkoutSession: $checkoutSession, created: $created, creditNote: $creditNote, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, endingBalance: $endingBalance, id: $id, invoice: $invoice, livemode: $livemode, metadata: $metadata, object: $object, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(amount, checkoutSession, created, creditNote, currency, customer, customerAccount, description, endingBalance, id, invoice, livemode, metadata, object, type);}
+@override String toString() {return 'CustomerBalanceTransaction(amount: $amount, checkoutSession: $checkoutSession, created: $created, creditNote: $creditNote, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, endingBalance: $endingBalance, id: $id, invoice: $invoice, livemode: $livemode, metadata: $metadata, object: $object, type: $type)';}
+}

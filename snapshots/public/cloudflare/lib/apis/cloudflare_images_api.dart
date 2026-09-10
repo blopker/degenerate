@@ -15,7 +15,7 @@ final class CloudflareImagesApi with ApiExecutor {const CloudflareImagesApi(this
 /// 
 ///
 /// `POST /accounts/{account_id}/images/v1`
-Future<ApiResult<ImagesImage, CloudflareImagesUploadAnImageViaUrlResponse4xx>> cloudflareImagesUploadAnImageViaUrl({required ImagesAccountIdentifier accountId, required ImagesImageBasicUpload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ImagesImage, CloudflareImagesUploadAnImageViaUrlResponse4xx>> cloudflareImagesUploadAnImageViaUrl({required ImagesAccountIdentifier accountId, required ImagesImageBasicUpload body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -56,13 +56,13 @@ return null;
 
   },
 );
- } 
+}
 /// Image details
 ///
 /// Fetch details for a single image.
 ///
 /// `GET /accounts/{account_id}/images/v1/{image_id}`
-Future<ApiResult<ImagesImage, CloudflareImagesImageDetailsResponse4xx>> cloudflareImagesImageDetails({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ImagesImage, CloudflareImagesImageDetailsResponse4xx>> cloudflareImagesImageDetails({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -88,13 +88,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update image
 ///
 /// Update image access control. On access control change, all copies of the image are purged from cache.
 ///
 /// `PATCH /accounts/{account_id}/images/v1/{image_id}`
-Future<ApiResult<ImagesImage, CloudflareImagesUpdateImageResponse4xx>> cloudflareImagesUpdateImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, required ImagesImagePatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ImagesImage, CloudflareImagesUpdateImageResponse4xx>> cloudflareImagesUpdateImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, required ImagesImagePatchRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -122,13 +122,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete image
 ///
 /// Delete an image on Cloudflare Images. On success, all copies of the image are deleted and purged from cache.
 ///
 /// `DELETE /accounts/{account_id}/images/v1/{image_id}`
-Future<ApiResult<Map<String, dynamic>, CloudflareImagesDeleteImageResponse4xx>> cloudflareImagesDeleteImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, CloudflareImagesDeleteImageResponse4xx>> cloudflareImagesDeleteImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -154,13 +154,13 @@ return null;
 
   },
 );
- } 
+}
 /// Base image
 ///
 /// Fetch base image. For most images this will be the originally uploaded file. For larger images it can be a near-lossless version of the original.
 ///
 /// `GET /accounts/{account_id}/images/v1/{image_id}/blob`
-Future<ApiResult<Uint8List, CloudflareImagesBaseImageResponse4xx>> cloudflareImagesBaseImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Uint8List, CloudflareImagesBaseImageResponse4xx>> cloudflareImagesBaseImage({required ImagesImageIdentifier imageId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -185,13 +185,13 @@ return null;
 
   },
 );
- } 
+}
 /// Images usage statistics
 ///
 /// Fetch image statistics details for Cloudflare Images. The returned statistics detail storage usage, including the current image count vs this account's allowance.
 ///
 /// `GET /accounts/{account_id}/images/v1/stats`
-Future<ApiResult<ImagesImagesStats, CloudflareImagesImagesUsageStatisticsResponse4xx>> cloudflareImagesUsageStatistics({required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ImagesImagesStats, CloudflareImagesImagesUsageStatisticsResponse4xx>> cloudflareImagesUsageStatistics({required ImagesAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -217,7 +217,7 @@ return null;
 
   },
 );
- } 
+}
 /// List images V2
 ///
 /// List up to 10000 images with up to 1000 results per page. Use the optional parameters below to get a specific range of images.
@@ -263,7 +263,7 @@ return null;
 /// 
 ///
 /// `GET /accounts/{account_id}/images/v2`
-Future<ApiResult<ImagesImagesListResponse2Result, CloudflareImagesListImagesError>> cloudflareImagesListImagesV2({required ImagesAccountIdentifier accountId, ImagesImagesListContinuationToken? continuationToken, double? perPage, CloudflareImagesListImagesSortOrder? sortOrder, String? creator, String? metafieldoperator, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ImagesImagesListResponse2Result, CloudflareImagesListImagesError>> cloudflareImagesListImagesV2({required ImagesAccountIdentifier accountId, ImagesImagesListContinuationToken? continuationToken, double? perPage, CloudflareImagesListImagesSortOrder? sortOrder, String? creator, String? metafieldoperator, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (continuationToken != null) {
   queryParameters['continuation_token'] = continuationToken.toString();
@@ -300,13 +300,13 @@ return ImagesImagesListResponse2Result.fromJson(json['result'] as Map<String, dy
   },
   onError: CloudflareImagesListImagesError.parse,
 );
- } 
+}
 /// Create authenticated direct upload URL V2
 ///
 /// Direct uploads allow users to upload images without API keys. A common use case are web apps, client-side applications, or mobile devices where users upload content directly to Cloudflare Images. This method creates a draft record for a future image. It returns an upload URL and an image identifier. To verify if the image itself has been uploaded, send an image details request (accounts/:account_identifier/images/v1/:identifier), and check that the `draft: true` property is not present.
 ///
 /// `POST /accounts/{account_id}/images/v2/direct_upload`
-Future<ApiResult<ImagesImageDirectUploadResponseResult, Response4xx>> cloudflareImagesCreateAuthenticatedDirectUploadUrlV2({required ImagesAccountIdentifier accountId, required ImagesImageDirectUploadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ImagesImageDirectUploadResponseResult, Response4xx>> cloudflareImagesCreateAuthenticatedDirectUploadUrlV2({required ImagesAccountIdentifier accountId, required ImagesImageDirectUploadRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -345,5 +345,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

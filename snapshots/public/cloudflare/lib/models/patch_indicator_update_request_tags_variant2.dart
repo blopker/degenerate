@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchIndicatorUpdateRequestTagsVariant2 {const PatchIndicatorUpdateRequestTagsVariant2({required this.value, this.categoryName, });
 
-factory PatchIndicatorUpdateRequestTagsVariant2.fromJson(Map<String, dynamic> json) { return PatchIndicatorUpdateRequestTagsVariant2(
+factory PatchIndicatorUpdateRequestTagsVariant2.fromJson(Map<String, dynamic> json) {return PatchIndicatorUpdateRequestTagsVariant2(
   categoryName: json['categoryName'] as String?,
   value: json['value'] as String,
-); }
+);}
 
 final String? categoryName;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'categoryName': ?categoryName,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('value') && json['value'] is String; } 
-PatchIndicatorUpdateRequestTagsVariant2 copyWith({String? Function()? categoryName, String? value, }) { return PatchIndicatorUpdateRequestTagsVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('value') && json['value'] is String;}
+PatchIndicatorUpdateRequestTagsVariant2 copyWith({String? Function()? categoryName, String? value, }) {return PatchIndicatorUpdateRequestTagsVariant2(
   categoryName: categoryName != null ? categoryName() : this.categoryName,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PatchIndicatorUpdateRequestTagsVariant2 &&
           categoryName == other.categoryName &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(categoryName, value); } 
-@override String toString() { return 'PatchIndicatorUpdateRequestTagsVariant2(categoryName: $categoryName, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(categoryName, value);}
+@override String toString() {return 'PatchIndicatorUpdateRequestTagsVariant2(categoryName: $categoryName, value: $value)';}
+}

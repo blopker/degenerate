@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'added_to_project_issue_event_project_card.dart';import 'integration.dart';import 'simple_user.dart';/// Added to Project Issue Event
 @immutable final class AddedToProjectIssueEvent {const AddedToProjectIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, this.projectCard, });
 
-factory AddedToProjectIssueEvent.fromJson(Map<String, dynamic> json) { return AddedToProjectIssueEvent(
+factory AddedToProjectIssueEvent.fromJson(Map<String, dynamic> json) {return AddedToProjectIssueEvent(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: json['url'] as String,
@@ -14,7 +14,7 @@ factory AddedToProjectIssueEvent.fromJson(Map<String, dynamic> json) { return Ad
   createdAt: json['created_at'] as String,
   performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   projectCard: json['project_card'] != null ? AddedToProjectIssueEventProjectCard.fromJson(json['project_card'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final int id;
 
@@ -36,7 +36,7 @@ final Integration? performedViaGithubApp;
 
 final AddedToProjectIssueEventProjectCard? projectCard;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url,
@@ -47,8 +47,8 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'performed_via_github_app': performedViaGithubApp?.toJson(),
   if (projectCard != null) 'project_card': projectCard?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('actor') &&
@@ -56,8 +56,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('commit_id') && (json['commit_id'] == null || json['commit_id'] is String) &&
       json.containsKey('commit_url') && (json['commit_url'] == null || json['commit_url'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('performed_via_github_app'); } 
-AddedToProjectIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, AddedToProjectIssueEventProjectCard? Function()? projectCard, }) { return AddedToProjectIssueEvent(
+      json.containsKey('performed_via_github_app');}
+AddedToProjectIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, AddedToProjectIssueEventProjectCard? Function()? projectCard, }) {return AddedToProjectIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -68,8 +68,8 @@ AddedToProjectIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleU
   createdAt: createdAt ?? this.createdAt,
   performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
   projectCard: projectCard != null ? projectCard() : this.projectCard,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AddedToProjectIssueEvent &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -80,7 +80,7 @@ AddedToProjectIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleU
           commitUrl == other.commitUrl &&
           createdAt == other.createdAt &&
           performedViaGithubApp == other.performedViaGithubApp &&
-          projectCard == other.projectCard; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, projectCard); } 
-@override String toString() { return 'AddedToProjectIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, projectCard: $projectCard)'; } 
- }
+          projectCard == other.projectCard;}
+@override int get hashCode {return Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, projectCard);}
+@override String toString() {return 'AddedToProjectIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, projectCard: $projectCard)';}
+}

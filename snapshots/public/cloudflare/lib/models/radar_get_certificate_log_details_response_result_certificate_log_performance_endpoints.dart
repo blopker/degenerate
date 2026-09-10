@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The certificate log endpoint names used in performance metrics.
 @immutable final class RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint {const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._(this.value);
 
-factory RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint.fromJson(String json) { return switch (json) {
+factory RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint.fromJson(String json) {return switch (json) {
   'add-chain (new)' => addChainNew,
   'add-chain (old)' => addChainOld,
   'add-pre-chain (new)' => addPreChainNew,
@@ -12,7 +12,7 @@ factory RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndp
   'get-roots' => getRoots,
   'get-sth' => getSth,
   _ => RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._(json),
-}; }
+};}
 
 static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint addChainNew = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('add-chain (new)');
 
@@ -32,21 +32,21 @@ static const List<RadarGetCertificateLogDetailsResponseResultCertificateLogPerfo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint($value)';}
+}
 @immutable final class RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints {const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints({required this.endpoint, required this.responseTime, required this.uptime, });
 
-factory RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints.fromJson(Map<String, dynamic> json) { return RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints(
+factory RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints.fromJson(Map<String, dynamic> json) {return RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints(
   endpoint: RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint.fromJson(json['endpoint'] as String),
   responseTime: (json['responseTime'] as num).toDouble(),
   uptime: (json['uptime'] as num).toDouble(),
-); }
+);}
 
 /// The certificate log endpoint names used in performance metrics.
 final RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint endpoint;
@@ -55,24 +55,24 @@ final double responseTime;
 
 final double uptime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'endpoint': endpoint.toJson(),
   'responseTime': responseTime,
   'uptime': uptime,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('endpoint') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('endpoint') &&
       json.containsKey('responseTime') && json['responseTime'] is num &&
-      json.containsKey('uptime') && json['uptime'] is num; } 
-RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints copyWith({RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint? endpoint, double? responseTime, double? uptime, }) { return RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints(
+      json.containsKey('uptime') && json['uptime'] is num;}
+RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints copyWith({RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint? endpoint, double? responseTime, double? uptime, }) {return RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints(
   endpoint: endpoint ?? this.endpoint,
   responseTime: responseTime ?? this.responseTime,
   uptime: uptime ?? this.uptime,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints &&
           endpoint == other.endpoint &&
           responseTime == other.responseTime &&
-          uptime == other.uptime; } 
-@override int get hashCode { return Object.hash(endpoint, responseTime, uptime); } 
-@override String toString() { return 'RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints(endpoint: $endpoint, responseTime: $responseTime, uptime: $uptime)'; } 
- }
+          uptime == other.uptime;}
+@override int get hashCode {return Object.hash(endpoint, responseTime, uptime);}
+@override String toString() {return 'RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints(endpoint: $endpoint, responseTime: $responseTime, uptime: $uptime)';}
+}

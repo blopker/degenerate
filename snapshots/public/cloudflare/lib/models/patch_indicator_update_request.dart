@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'patch_indicator_update_request_related_events.dart';import 'patch_indicator_update_request_tags.dart';@immutable final class PatchIndicatorUpdateRequest {const PatchIndicatorUpdateRequest({this.indicatorType, this.relatedEvents, this.tags, this.value, });
 
-factory PatchIndicatorUpdateRequest.fromJson(Map<String, dynamic> json) { return PatchIndicatorUpdateRequest(
+factory PatchIndicatorUpdateRequest.fromJson(Map<String, dynamic> json) {return PatchIndicatorUpdateRequest(
   indicatorType: json['indicatorType'] as String?,
   relatedEvents: (json['relatedEvents'] as List<dynamic>?)?.map((e) => PatchIndicatorUpdateRequestRelatedEvents.fromJson(e as Map<String, dynamic>)).toList(),
   tags: (json['tags'] as List<dynamic>?)?.map(PatchIndicatorUpdateRequestTags.fromJson).toList(),
   value: json['value'] as String?,
-); }
+);}
 
 final String? indicatorType;
 
@@ -17,25 +17,25 @@ final List<PatchIndicatorUpdateRequestTags>? tags;
 
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'indicatorType': ?indicatorType,
   if (relatedEvents != null) 'relatedEvents': relatedEvents?.map((e) => e.toJson()).toList(),
   if (tags != null) 'tags': tags?.map((e) => e.toJson()).toList(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'indicatorType', 'relatedEvents', 'tags', 'value'}.contains(key)); } 
-PatchIndicatorUpdateRequest copyWith({String? Function()? indicatorType, List<PatchIndicatorUpdateRequestRelatedEvents>? Function()? relatedEvents, List<PatchIndicatorUpdateRequestTags>? Function()? tags, String? Function()? value, }) { return PatchIndicatorUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'indicatorType', 'relatedEvents', 'tags', 'value'}.contains(key));}
+PatchIndicatorUpdateRequest copyWith({String? Function()? indicatorType, List<PatchIndicatorUpdateRequestRelatedEvents>? Function()? relatedEvents, List<PatchIndicatorUpdateRequestTags>? Function()? tags, String? Function()? value, }) {return PatchIndicatorUpdateRequest(
   indicatorType: indicatorType != null ? indicatorType() : this.indicatorType,
   relatedEvents: relatedEvents != null ? relatedEvents() : this.relatedEvents,
   tags: tags != null ? tags() : this.tags,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PatchIndicatorUpdateRequest &&
           indicatorType == other.indicatorType &&
           listEquals(relatedEvents, other.relatedEvents) &&
           listEquals(tags, other.tags) &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(indicatorType, Object.hashAll(relatedEvents ?? const []), Object.hashAll(tags ?? const []), value); } 
-@override String toString() { return 'PatchIndicatorUpdateRequest(indicatorType: $indicatorType, relatedEvents: $relatedEvents, tags: $tags, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(indicatorType, Object.hashAll(relatedEvents ?? const []), Object.hashAll(tags ?? const []), value);}
+@override String toString() {return 'PatchIndicatorUpdateRequest(indicatorType: $indicatorType, relatedEvents: $relatedEvents, tags: $tags, value: $value)';}
+}

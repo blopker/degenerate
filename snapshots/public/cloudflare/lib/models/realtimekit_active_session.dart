@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// current status of session
 @immutable final class RealtimekitActiveSessionStatus {const RealtimekitActiveSessionStatus._(this.value);
 
-factory RealtimekitActiveSessionStatus.fromJson(String json) { return switch (json) {
+factory RealtimekitActiveSessionStatus.fromJson(String json) {return switch (json) {
   'LIVE' => live,
   'ENDED' => ended,
   _ => RealtimekitActiveSessionStatus._(json),
-}; }
+};}
 
 static const RealtimekitActiveSessionStatus live = RealtimekitActiveSessionStatus._('LIVE');
 
@@ -17,23 +17,23 @@ static const List<RealtimekitActiveSessionStatus> values = [live, ended];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitActiveSessionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitActiveSessionStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitActiveSessionStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitActiveSessionStatus($value)';}
+}
 /// type of session
 @immutable final class RealtimekitActiveSessionType {const RealtimekitActiveSessionType._(this.value);
 
-factory RealtimekitActiveSessionType.fromJson(String json) { return switch (json) {
+factory RealtimekitActiveSessionType.fromJson(String json) {return switch (json) {
   'meeting' => meeting,
   'livestream' => livestream,
   'participant' => participant,
   _ => RealtimekitActiveSessionType._(json),
-}; }
+};}
 
 static const RealtimekitActiveSessionType meeting = RealtimekitActiveSessionType._('meeting');
 
@@ -45,17 +45,17 @@ static const List<RealtimekitActiveSessionType> values = [meeting, livestream, p
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitActiveSessionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitActiveSessionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitActiveSessionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitActiveSessionType($value)';}
+}
 @immutable final class RealtimekitActiveSession {const RealtimekitActiveSession({required this.associatedId, required this.createdAt, required this.id, required this.liveParticipants, required this.maxConcurrentParticipants, required this.meetingDisplayName, required this.minutesConsumed, required this.organizationId, required this.startedAt, required this.status, required this.type, required this.updatedAt, this.breakoutRooms, this.endedAt, this.meta, });
 
-factory RealtimekitActiveSession.fromJson(Map<String, dynamic> json) { return RealtimekitActiveSession(
+factory RealtimekitActiveSession.fromJson(Map<String, dynamic> json) {return RealtimekitActiveSession(
   associatedId: json['associated_id'] as String,
   breakoutRooms: (json['breakout_rooms'] as List<dynamic>?)?.map((e) => RealtimekitActiveSession.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: json['created_at'] as String,
@@ -71,7 +71,7 @@ factory RealtimekitActiveSession.fromJson(Map<String, dynamic> json) { return Re
   status: RealtimekitActiveSessionStatus.fromJson(json['status'] as String),
   type: RealtimekitActiveSessionType.fromJson(json['type'] as String),
   updatedAt: json['updated_at'] as String,
-); }
+);}
 
 /// ID of the meeting this session is associated with. In the case of V2 meetings, it is always a UUID. In V1 meetings, it is a room name of the form `abcdef-ghijkl`
 final String associatedId;
@@ -117,7 +117,7 @@ final RealtimekitActiveSessionType type;
 /// timestamp when session was last updated
 final String updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'associated_id': associatedId,
   if (breakoutRooms != null) 'breakout_rooms': breakoutRooms?.map((e) => e.toJson()).toList(),
   'created_at': createdAt,
@@ -133,8 +133,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'type': type.toJson(),
   'updated_at': updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('associated_id') && json['associated_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('associated_id') && json['associated_id'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('live_participants') && json['live_participants'] is num &&
@@ -145,8 +145,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('assoc
       json.containsKey('started_at') && json['started_at'] is String &&
       json.containsKey('status') &&
       json.containsKey('type') &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-RealtimekitActiveSession copyWith({String? associatedId, List<RealtimekitActiveSession>? Function()? breakoutRooms, String? createdAt, String? Function()? endedAt, String? id, double? liveParticipants, double? maxConcurrentParticipants, String? meetingDisplayName, Map<String, dynamic>? Function()? meta, double? minutesConsumed, String? organizationId, String? startedAt, RealtimekitActiveSessionStatus? status, RealtimekitActiveSessionType? type, String? updatedAt, }) { return RealtimekitActiveSession(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+RealtimekitActiveSession copyWith({String? associatedId, List<RealtimekitActiveSession>? Function()? breakoutRooms, String? createdAt, String? Function()? endedAt, String? id, double? liveParticipants, double? maxConcurrentParticipants, String? meetingDisplayName, Map<String, dynamic>? Function()? meta, double? minutesConsumed, String? organizationId, String? startedAt, RealtimekitActiveSessionStatus? status, RealtimekitActiveSessionType? type, String? updatedAt, }) {return RealtimekitActiveSession(
   associatedId: associatedId ?? this.associatedId,
   breakoutRooms: breakoutRooms != null ? breakoutRooms() : this.breakoutRooms,
   createdAt: createdAt ?? this.createdAt,
@@ -162,8 +162,8 @@ RealtimekitActiveSession copyWith({String? associatedId, List<RealtimekitActiveS
   status: status ?? this.status,
   type: type ?? this.type,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitActiveSession &&
           associatedId == other.associatedId &&
           listEquals(breakoutRooms, other.breakoutRooms) &&
@@ -179,7 +179,7 @@ RealtimekitActiveSession copyWith({String? associatedId, List<RealtimekitActiveS
           startedAt == other.startedAt &&
           status == other.status &&
           type == other.type &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(associatedId, Object.hashAll(breakoutRooms ?? const []), createdAt, endedAt, id, liveParticipants, maxConcurrentParticipants, meetingDisplayName, meta, minutesConsumed, organizationId, startedAt, status, type, updatedAt); } 
-@override String toString() { return 'RealtimekitActiveSession(associatedId: $associatedId, breakoutRooms: $breakoutRooms, createdAt: $createdAt, endedAt: $endedAt, id: $id, liveParticipants: $liveParticipants, maxConcurrentParticipants: $maxConcurrentParticipants, meetingDisplayName: $meetingDisplayName, meta: $meta, minutesConsumed: $minutesConsumed, organizationId: $organizationId, startedAt: $startedAt, status: $status, type: $type, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(associatedId, Object.hashAll(breakoutRooms ?? const []), createdAt, endedAt, id, liveParticipants, maxConcurrentParticipants, meetingDisplayName, meta, minutesConsumed, organizationId, startedAt, status, type, updatedAt);}
+@override String toString() {return 'RealtimekitActiveSession(associatedId: $associatedId, breakoutRooms: $breakoutRooms, createdAt: $createdAt, endedAt: $endedAt, id: $id, liveParticipants: $liveParticipants, maxConcurrentParticipants: $maxConcurrentParticipants, meetingDisplayName: $meetingDisplayName, meta: $meta, minutesConsumed: $minutesConsumed, organizationId: $organizationId, startedAt: $startedAt, status: $status, type: $type, updatedAt: $updatedAt)';}
+}

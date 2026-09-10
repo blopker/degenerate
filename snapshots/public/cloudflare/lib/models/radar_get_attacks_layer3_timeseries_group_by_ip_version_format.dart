@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat {const RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat._(this.value);
 
-factory RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat $json = RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat._('JSON');
 
@@ -17,11 +17,11 @@ static const List<RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat($value)';}
+}

@@ -11,7 +11,7 @@ final class AiSearchTokensApi with ApiExecutor {const AiSearchTokensApi(this.api
 /// List tokens.
 ///
 /// `GET /accounts/{account_id}/ai-search/tokens`
-Future<ApiResult<List<AiSearchListTokensResponseResult>, AiSearchListTokensResponse400>> aiSearchListTokens({required String accountId, int? page, int? perPage, AiSearchListTokensOrderBy? orderBy, AiSearchListTokensOrderByDirection? orderByDirection, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AiSearchListTokensResponseResult>, AiSearchListTokensResponse400>> aiSearchListTokens({required String accountId, int? page, int? perPage, AiSearchListTokensOrderBy? orderBy, AiSearchListTokensOrderByDirection? orderByDirection, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -54,13 +54,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create new tokens.
 ///
 /// Create a new tokens.
 ///
 /// `POST /accounts/{account_id}/ai-search/tokens`
-Future<ApiResult<AiSearchCreateTokensResponseResult, AiSearchCreateTokensResponse400>> aiSearchCreateTokens({required String accountId, AiSearchCreateTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchCreateTokensResponseResult, AiSearchCreateTokensResponse400>> aiSearchCreateTokens({required String accountId, AiSearchCreateTokensRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -88,11 +88,11 @@ return null;
 
   },
 );
- } 
+}
 /// Read tokens.
 ///
 /// `GET /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchFetchTokensResponseResult, AiSearchFetchTokensError>> aiSearchFetchTokens({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchFetchTokensResponseResult, AiSearchFetchTokensError>> aiSearchFetchTokens({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -109,11 +109,11 @@ return AiSearchFetchTokensResponseResult.fromJson(json['result'] as Map<String, 
   },
   onError: AiSearchFetchTokensError.parse,
 );
- } 
+}
 /// Update tokens.
 ///
 /// `PUT /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchUpdateTokensResponseResult, AiSearchUpdateTokensError>> aiSearchUpdateTokens({required String accountId, required String id, AiSearchUpdateTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchUpdateTokensResponseResult, AiSearchUpdateTokensError>> aiSearchUpdateTokens({required String accountId, required String id, AiSearchUpdateTokensRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -132,11 +132,11 @@ return AiSearchUpdateTokensResponseResult.fromJson(json['result'] as Map<String,
   },
   onError: AiSearchUpdateTokensError.parse,
 );
- } 
+}
 /// Delete tokens.
 ///
 /// `DELETE /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchDeleteTokensResponseResult, AiSearchDeleteTokensResponse404>> aiSearchDeleteTokens({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchDeleteTokensResponseResult, AiSearchDeleteTokensResponse404>> aiSearchDeleteTokens({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -162,5 +162,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

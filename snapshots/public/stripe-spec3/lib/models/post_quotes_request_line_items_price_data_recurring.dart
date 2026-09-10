@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostQuotesRequestLineItemsPriceDataRecurringInterval {const PostQuotesRequestLineItemsPriceDataRecurringInterval._(this.value);
 
-factory PostQuotesRequestLineItemsPriceDataRecurringInterval.fromJson(String json) { return switch (json) {
+factory PostQuotesRequestLineItemsPriceDataRecurringInterval.fromJson(String json) {return switch (json) {
   'day' => day,
   'month' => month,
   'week' => week,
   'year' => year,
   _ => PostQuotesRequestLineItemsPriceDataRecurringInterval._(json),
-}; }
+};}
 
 static const PostQuotesRequestLineItemsPriceDataRecurringInterval day = PostQuotesRequestLineItemsPriceDataRecurringInterval._('day');
 
@@ -22,38 +22,38 @@ static const List<PostQuotesRequestLineItemsPriceDataRecurringInterval> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostQuotesRequestLineItemsPriceDataRecurringInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostQuotesRequestLineItemsPriceDataRecurringInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostQuotesRequestLineItemsPriceDataRecurringInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostQuotesRequestLineItemsPriceDataRecurringInterval($value)';}
+}
 @immutable final class PostQuotesRequestLineItemsPriceDataRecurring {const PostQuotesRequestLineItemsPriceDataRecurring({required this.interval, this.intervalCount, });
 
-factory PostQuotesRequestLineItemsPriceDataRecurring.fromJson(Map<String, dynamic> json) { return PostQuotesRequestLineItemsPriceDataRecurring(
+factory PostQuotesRequestLineItemsPriceDataRecurring.fromJson(Map<String, dynamic> json) {return PostQuotesRequestLineItemsPriceDataRecurring(
   interval: PostQuotesRequestLineItemsPriceDataRecurringInterval.fromJson(json['interval'] as String),
   intervalCount: json['interval_count'] != null ? (json['interval_count'] as num).toInt() : null,
-); }
+);}
 
 final PostQuotesRequestLineItemsPriceDataRecurringInterval interval;
 
 final int? intervalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'interval': interval.toJson(),
   'interval_count': ?intervalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval'); } 
-PostQuotesRequestLineItemsPriceDataRecurring copyWith({PostQuotesRequestLineItemsPriceDataRecurringInterval? interval, int? Function()? intervalCount, }) { return PostQuotesRequestLineItemsPriceDataRecurring(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('interval');}
+PostQuotesRequestLineItemsPriceDataRecurring copyWith({PostQuotesRequestLineItemsPriceDataRecurringInterval? interval, int? Function()? intervalCount, }) {return PostQuotesRequestLineItemsPriceDataRecurring(
   interval: interval ?? this.interval,
   intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostQuotesRequestLineItemsPriceDataRecurring &&
           interval == other.interval &&
-          intervalCount == other.intervalCount; } 
-@override int get hashCode { return Object.hash(interval, intervalCount); } 
-@override String toString() { return 'PostQuotesRequestLineItemsPriceDataRecurring(interval: $interval, intervalCount: $intervalCount)'; } 
- }
+          intervalCount == other.intervalCount;}
+@override int get hashCode {return Object.hash(interval, intervalCount);}
+@override String toString() {return 'PostQuotesRequestLineItemsPriceDataRecurring(interval: $interval, intervalCount: $intervalCount)';}
+}

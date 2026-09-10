@@ -2,30 +2,30 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanLinksLink {const UrlscannerGetScanResponseResultScanLinksLink({required this.href, required this.text, });
 
-factory UrlscannerGetScanResponseResultScanLinksLink.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanLinksLink(
+factory UrlscannerGetScanResponseResultScanLinksLink.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponseResultScanLinksLink(
   href: json['href'] as String,
   text: json['text'] as String,
-); }
+);}
 
 /// Outgoing link detected in the DOM
 final String href;
 
 final String text;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'href': href,
   'text': text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String &&
-      json.containsKey('text') && json['text'] is String; } 
-UrlscannerGetScanResponseResultScanLinksLink copyWith({String? href, String? text, }) { return UrlscannerGetScanResponseResultScanLinksLink(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('href') && json['href'] is String &&
+      json.containsKey('text') && json['text'] is String;}
+UrlscannerGetScanResponseResultScanLinksLink copyWith({String? href, String? text, }) {return UrlscannerGetScanResponseResultScanLinksLink(
   href: href ?? this.href,
   text: text ?? this.text,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponseResultScanLinksLink &&
           href == other.href &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(href, text); } 
-@override String toString() { return 'UrlscannerGetScanResponseResultScanLinksLink(href: $href, text: $text)'; } 
- }
+          text == other.text;}
+@override int get hashCode {return Object.hash(href, text);}
+@override String toString() {return 'UrlscannerGetScanResponseResultScanLinksLink(href: $href, text: $text)';}
+}

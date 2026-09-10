@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VoiceIdsSharedVariant2 {const VoiceIdsSharedVariant2._(this.value);
 
-factory VoiceIdsSharedVariant2.fromJson(String json) { return switch (json) {
+factory VoiceIdsSharedVariant2.fromJson(String json) {return switch (json) {
   'alloy' => alloy,
   'ash' => ash,
   'ballad' => ballad,
@@ -14,7 +14,7 @@ factory VoiceIdsSharedVariant2.fromJson(String json) { return switch (json) {
   'marin' => marin,
   'cedar' => cedar,
   _ => VoiceIdsSharedVariant2._(json),
-}; }
+};}
 
 static const VoiceIdsSharedVariant2 alloy = VoiceIdsSharedVariant2._('alloy');
 
@@ -40,14 +40,14 @@ static const List<VoiceIdsSharedVariant2> values = [alloy, ash, ballad, coral, e
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VoiceIdsSharedVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VoiceIdsSharedVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is VoiceIdsSharedVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'VoiceIdsSharedVariant2($value)';}
+}
 
 @immutable
 final class VoiceIdsShared {

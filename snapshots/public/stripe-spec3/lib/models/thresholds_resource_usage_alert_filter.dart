@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'thresholds_resource_usage_alert_filter_customer.dart';@immutable final class ThresholdsResourceUsageAlertFilterType {const ThresholdsResourceUsageAlertFilterType._(this.value);
 
-factory ThresholdsResourceUsageAlertFilterType.fromJson(String json) { return switch (json) {
+factory ThresholdsResourceUsageAlertFilterType.fromJson(String json) {return switch (json) {
   'customer' => customer,
   _ => ThresholdsResourceUsageAlertFilterType._(json),
-}; }
+};}
 
 static const ThresholdsResourceUsageAlertFilterType customer = ThresholdsResourceUsageAlertFilterType._('customer');
 
@@ -13,40 +13,40 @@ static const List<ThresholdsResourceUsageAlertFilterType> values = [customer];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThresholdsResourceUsageAlertFilterType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThresholdsResourceUsageAlertFilterType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ThresholdsResourceUsageAlertFilterType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ThresholdsResourceUsageAlertFilterType($value)';}
+}
 /// 
 @immutable final class ThresholdsResourceUsageAlertFilter {const ThresholdsResourceUsageAlertFilter({required this.type, this.customer = const Omittable.absent(), });
 
-factory ThresholdsResourceUsageAlertFilter.fromJson(Map<String, dynamic> json) { return ThresholdsResourceUsageAlertFilter(
+factory ThresholdsResourceUsageAlertFilter.fromJson(Map<String, dynamic> json) {return ThresholdsResourceUsageAlertFilter(
   customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? ThresholdsResourceUsageAlertFilterCustomer.fromJson(json['customer']) : null) : const Omittable.absent(),
   type: ThresholdsResourceUsageAlertFilterType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Limit the scope of the alert to this customer ID
 final Omittable<ThresholdsResourceUsageAlertFilterCustomer?> customer;
 
 final ThresholdsResourceUsageAlertFilterType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (customer.isPresent) 'customer': customer.value?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-ThresholdsResourceUsageAlertFilter copyWith({Omittable<ThresholdsResourceUsageAlertFilterCustomer?>? customer, ThresholdsResourceUsageAlertFilterType? type, }) { return ThresholdsResourceUsageAlertFilter(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+ThresholdsResourceUsageAlertFilter copyWith({Omittable<ThresholdsResourceUsageAlertFilterCustomer?>? customer, ThresholdsResourceUsageAlertFilterType? type, }) {return ThresholdsResourceUsageAlertFilter(
   customer: customer ?? this.customer,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ThresholdsResourceUsageAlertFilter &&
           customer == other.customer &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(customer, type); } 
-@override String toString() { return 'ThresholdsResourceUsageAlertFilter(customer: $customer, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(customer, type);}
+@override String toString() {return 'ThresholdsResourceUsageAlertFilter(customer: $customer, type: $type)';}
+}

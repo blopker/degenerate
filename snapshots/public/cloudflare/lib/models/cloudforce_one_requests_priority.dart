@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudforceOneRequestsPriority {const CloudforceOneRequestsPriority._(this.value);
 
-factory CloudforceOneRequestsPriority.fromJson(String json) { return switch (json) {
+factory CloudforceOneRequestsPriority.fromJson(String json) {return switch (json) {
   'routine' => routine,
   'high' => high,
   'urgent' => urgent,
   _ => CloudforceOneRequestsPriority._(json),
-}; }
+};}
 
 static const CloudforceOneRequestsPriority routine = CloudforceOneRequestsPriority._('routine');
 
@@ -19,11 +19,11 @@ static const List<CloudforceOneRequestsPriority> values = [routine, high, urgent
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudforceOneRequestsPriority && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CloudforceOneRequestsPriority($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CloudforceOneRequestsPriority && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CloudforceOneRequestsPriority($value)';}
+}

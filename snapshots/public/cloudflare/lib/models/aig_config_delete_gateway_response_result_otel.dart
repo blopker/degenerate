@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigDeleteGatewayResponseResultOtelContentType {const AigConfigDeleteGatewayResponseResultOtelContentType._(this.value);
 
-factory AigConfigDeleteGatewayResponseResultOtelContentType.fromJson(String json) { return switch (json) {
+factory AigConfigDeleteGatewayResponseResultOtelContentType.fromJson(String json) {return switch (json) {
   'json' => $json,
   'protobuf' => protobuf,
   _ => AigConfigDeleteGatewayResponseResultOtelContentType._(json),
-}; }
+};}
 
 static const AigConfigDeleteGatewayResponseResultOtelContentType $json = AigConfigDeleteGatewayResponseResultOtelContentType._('json');
 
@@ -16,22 +16,22 @@ static const List<AigConfigDeleteGatewayResponseResultOtelContentType> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigDeleteGatewayResponseResultOtelContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigDeleteGatewayResponseResultOtelContentType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigDeleteGatewayResponseResultOtelContentType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigDeleteGatewayResponseResultOtelContentType($value)';}
+}
 @immutable final class AigConfigDeleteGatewayResponseResultOtel {const AigConfigDeleteGatewayResponseResultOtel({required this.authorization, required this.headers, required this.url, this.contentType, });
 
-factory AigConfigDeleteGatewayResponseResultOtel.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayResponseResultOtel(
+factory AigConfigDeleteGatewayResponseResultOtel.fromJson(Map<String, dynamic> json) {return AigConfigDeleteGatewayResponseResultOtel(
   authorization: json['authorization'] as String,
   contentType: json['content_type'] != null ? AigConfigDeleteGatewayResponseResultOtelContentType.fromJson(json['content_type'] as String) : null,
   headers: (json['headers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   url: json['url'] as String,
-); }
+);}
 
 final String authorization;
 
@@ -42,28 +42,28 @@ final Map<String,String> headers;
 final String url;
 
 /// The value with the schema default applied when absent.
-AigConfigDeleteGatewayResponseResultOtelContentType get contentTypeOrDefault { return contentType ?? AigConfigDeleteGatewayResponseResultOtelContentType.fromJson('json'); } 
-Map<String, dynamic> toJson() { return {
+AigConfigDeleteGatewayResponseResultOtelContentType get contentTypeOrDefault {return contentType ?? AigConfigDeleteGatewayResponseResultOtelContentType.fromJson('json');}
+Map<String, dynamic> toJson() {return {
   'authorization': authorization,
   if (contentType != null) 'content_type': contentType?.toJson(),
   'headers': headers,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('authorization') && json['authorization'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('authorization') && json['authorization'] is String &&
       json.containsKey('headers') &&
-      json.containsKey('url') && json['url'] is String; } 
-AigConfigDeleteGatewayResponseResultOtel copyWith({String? authorization, AigConfigDeleteGatewayResponseResultOtelContentType? Function()? contentType, Map<String,String>? headers, String? url, }) { return AigConfigDeleteGatewayResponseResultOtel(
+      json.containsKey('url') && json['url'] is String;}
+AigConfigDeleteGatewayResponseResultOtel copyWith({String? authorization, AigConfigDeleteGatewayResponseResultOtelContentType? Function()? contentType, Map<String,String>? headers, String? url, }) {return AigConfigDeleteGatewayResponseResultOtel(
   authorization: authorization ?? this.authorization,
   contentType: contentType != null ? contentType() : this.contentType,
   headers: headers ?? this.headers,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigDeleteGatewayResponseResultOtel &&
           authorization == other.authorization &&
           contentType == other.contentType &&
           headers == other.headers &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(authorization, contentType, headers, url); } 
-@override String toString() { return 'AigConfigDeleteGatewayResponseResultOtel(authorization: $authorization, contentType: $contentType, headers: $headers, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(authorization, contentType, headers, url);}
+@override String toString() {return 'AigConfigDeleteGatewayResponseResultOtel(authorization: $authorization, contentType: $contentType, headers: $headers, url: $url)';}
+}

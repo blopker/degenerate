@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'source.dart';import 'source_mandate_notification_acss_debit_data.dart';import 'source_mandate_notification_bacs_debit_data.dart';import 'source_mandate_notification_sepa_debit_data.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class SourceMandateNotificationObject {const SourceMandateNotificationObject._(this.value);
 
-factory SourceMandateNotificationObject.fromJson(String json) { return switch (json) {
+factory SourceMandateNotificationObject.fromJson(String json) {return switch (json) {
   'source_mandate_notification' => sourceMandateNotification,
   _ => SourceMandateNotificationObject._(json),
-}; }
+};}
 
 static const SourceMandateNotificationObject sourceMandateNotification = SourceMandateNotificationObject._('source_mandate_notification');
 
@@ -14,20 +14,20 @@ static const List<SourceMandateNotificationObject> values = [sourceMandateNotifi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SourceMandateNotificationObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SourceMandateNotificationObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SourceMandateNotificationObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SourceMandateNotificationObject($value)';}
+}
 /// Source mandate notifications should be created when a notification related to
 /// a source mandate must be sent to the payer. They will trigger a webhook or
 /// deliver an email to the customer.
 @immutable final class SourceMandateNotification {const SourceMandateNotification({required this.created, required this.id, required this.livemode, required this.object, required this.reason, required this.source, required this.status, required this.type, this.acssDebit, this.amount = const Omittable.absent(), this.bacsDebit, this.sepaDebit, });
 
-factory SourceMandateNotification.fromJson(Map<String, dynamic> json) { return SourceMandateNotification(
+factory SourceMandateNotification.fromJson(Map<String, dynamic> json) {return SourceMandateNotification(
   acssDebit: json['acss_debit'] != null ? SourceMandateNotificationAcssDebitData.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
   amount: json.containsKey('amount') ? Omittable(json['amount'] != null ? (json['amount'] as num).toInt() : null) : const Omittable.absent(),
   bacsDebit: json['bacs_debit'] != null ? SourceMandateNotificationBacsDebitData.fromJson(json['bacs_debit'] as Map<String, dynamic>) : null,
@@ -40,7 +40,7 @@ factory SourceMandateNotification.fromJson(Map<String, dynamic> json) { return S
   source: Source.fromJson(json['source'] as Map<String, dynamic>),
   status: json['status'] as String,
   type: json['type'] as String,
-); }
+);}
 
 final SourceMandateNotificationAcssDebitData? acssDebit;
 
@@ -74,7 +74,7 @@ final String status;
 /// The type of source this mandate notification is attached to. Should be the source type identifier code for the payment method, such as `three_d_secure`.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (acssDebit != null) 'acss_debit': acssDebit?.toJson(),
   if (amount.isPresent) 'amount': amount.value,
   if (bacsDebit != null) 'bacs_debit': bacsDebit?.toJson(),
@@ -87,16 +87,16 @@ Map<String, dynamic> toJson() { return {
   'source': source.toJson(),
   'status': status,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('reason') && json['reason'] is String &&
       json.containsKey('source') &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-SourceMandateNotification copyWith({SourceMandateNotificationAcssDebitData? Function()? acssDebit, Omittable<int?>? amount, SourceMandateNotificationBacsDebitData? Function()? bacsDebit, int? created, String? id, bool? livemode, SourceMandateNotificationObject? object, String? reason, SourceMandateNotificationSepaDebitData? Function()? sepaDebit, Source? source, String? status, String? type, }) { return SourceMandateNotification(
+      json.containsKey('type') && json['type'] is String;}
+SourceMandateNotification copyWith({SourceMandateNotificationAcssDebitData? Function()? acssDebit, Omittable<int?>? amount, SourceMandateNotificationBacsDebitData? Function()? bacsDebit, int? created, String? id, bool? livemode, SourceMandateNotificationObject? object, String? reason, SourceMandateNotificationSepaDebitData? Function()? sepaDebit, Source? source, String? status, String? type, }) {return SourceMandateNotification(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   amount: amount ?? this.amount,
   bacsDebit: bacsDebit != null ? bacsDebit() : this.bacsDebit,
@@ -109,8 +109,8 @@ SourceMandateNotification copyWith({SourceMandateNotificationAcssDebitData? Func
   source: source ?? this.source,
   status: status ?? this.status,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SourceMandateNotification &&
           acssDebit == other.acssDebit &&
           amount == other.amount &&
@@ -123,7 +123,7 @@ SourceMandateNotification copyWith({SourceMandateNotificationAcssDebitData? Func
           sepaDebit == other.sepaDebit &&
           source == other.source &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(acssDebit, amount, bacsDebit, created, id, livemode, object, reason, sepaDebit, source, status, type); } 
-@override String toString() { return 'SourceMandateNotification(acssDebit: $acssDebit, amount: $amount, bacsDebit: $bacsDebit, created: $created, id: $id, livemode: $livemode, object: $object, reason: $reason, sepaDebit: $sepaDebit, source: $source, status: $status, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(acssDebit, amount, bacsDebit, created, id, livemode, object, reason, sepaDebit, source, status, type);}
+@override String toString() {return 'SourceMandateNotification(acssDebit: $acssDebit, amount: $amount, bacsDebit: $bacsDebit, created: $created, id: $id, livemode: $livemode, object: $object, reason: $reason, sepaDebit: $sepaDebit, source: $source, status: $status, type: $type)';}
+}

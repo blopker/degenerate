@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_common_failure55_errors.dart';@immutable final class ResponseCommonFailure55 {const ResponseCommonFailure55({this.errors, this.messages, this.success, });
 
-factory ResponseCommonFailure55.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure55(
+factory ResponseCommonFailure55.fromJson(Map<String, dynamic> json) {return ResponseCommonFailure55(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => ResponseCommonFailure55Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   success: json['success'] as bool?,
-); }
+);}
 
 final List<ResponseCommonFailure55Errors>? errors;
 
@@ -14,22 +14,22 @@ final List<Map<String,dynamic>>? messages;
 
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
   if (messages != null) 'messages': messages?.map((e) => e).toList(),
   'success': ?success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'success'}.contains(key)); } 
-ResponseCommonFailure55 copyWith({List<ResponseCommonFailure55Errors>? Function()? errors, List<Map<String, dynamic>>? Function()? messages, bool? Function()? success, }) { return ResponseCommonFailure55(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'errors', 'messages', 'success'}.contains(key));}
+ResponseCommonFailure55 copyWith({List<ResponseCommonFailure55Errors>? Function()? errors, List<Map<String, dynamic>>? Function()? messages, bool? Function()? success, }) {return ResponseCommonFailure55(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success != null ? success() : this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseCommonFailure55 &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors ?? const []), Object.hashAll(messages ?? const []), success); } 
-@override String toString() { return 'ResponseCommonFailure55(errors: $errors, messages: $messages, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(Object.hashAll(errors ?? const []), Object.hashAll(messages ?? const []), success);}
+@override String toString() {return 'ResponseCommonFailure55(errors: $errors, messages: $messages, success: $success)';}
+}

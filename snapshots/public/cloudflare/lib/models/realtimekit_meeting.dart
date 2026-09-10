@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the meeting is `ACTIVE` or `INACTIVE`. Users will not be able to join an `INACTIVE` meeting.
 @immutable final class RealtimekitMeetingStatus {const RealtimekitMeetingStatus._(this.value);
 
-factory RealtimekitMeetingStatus.fromJson(String json) { return switch (json) {
+factory RealtimekitMeetingStatus.fromJson(String json) {return switch (json) {
   'ACTIVE' => active,
   'INACTIVE' => inactive,
   _ => RealtimekitMeetingStatus._(json),
-}; }
+};}
 
 static const RealtimekitMeetingStatus active = RealtimekitMeetingStatus._('ACTIVE');
 
@@ -17,17 +17,17 @@ static const List<RealtimekitMeetingStatus> values = [active, inactive];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitMeetingStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitMeetingStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitMeetingStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitMeetingStatus($value)';}
+}
 @immutable final class RealtimekitMeeting {const RealtimekitMeeting({required this.createdAt, required this.id, required this.updatedAt, this.liveStreamOnStart, this.persistChat, this.recordOnStart, this.sessionKeepAliveTimeInSecs, this.status, this.summarizeOnEnd, this.title, });
 
-factory RealtimekitMeeting.fromJson(Map<String, dynamic> json) { return RealtimekitMeeting(
+factory RealtimekitMeeting.fromJson(Map<String, dynamic> json) {return RealtimekitMeeting(
   createdAt: DateTime.parse(json['created_at'] as String),
   id: json['id'] as String,
   liveStreamOnStart: json['live_stream_on_start'] as bool?,
@@ -38,7 +38,7 @@ factory RealtimekitMeeting.fromJson(Map<String, dynamic> json) { return Realtime
   summarizeOnEnd: json['summarize_on_end'] as bool?,
   title: json['title'] as String?,
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 /// Timestamp the object was created at. The time is returned in ISO format.
 final DateTime createdAt;
@@ -71,8 +71,8 @@ final String? title;
 final DateTime updatedAt;
 
 /// The value with the schema default applied when absent.
-double get sessionKeepAliveTimeInSecsOrDefault { return sessionKeepAliveTimeInSecs ?? 60.0; } 
-Map<String, dynamic> toJson() { return {
+double get sessionKeepAliveTimeInSecsOrDefault {return sessionKeepAliveTimeInSecs ?? 60.0;}
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'id': id,
   'live_stream_on_start': ?liveStreamOnStart,
@@ -83,11 +83,11 @@ Map<String, dynamic> toJson() { return {
   'summarize_on_end': ?summarizeOnEnd,
   'title': ?title,
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-RealtimekitMeeting copyWith({DateTime? createdAt, String? id, bool? Function()? liveStreamOnStart, bool? Function()? persistChat, bool? Function()? recordOnStart, double? Function()? sessionKeepAliveTimeInSecs, RealtimekitMeetingStatus? Function()? status, bool? Function()? summarizeOnEnd, String? Function()? title, DateTime? updatedAt, }) { return RealtimekitMeeting(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+RealtimekitMeeting copyWith({DateTime? createdAt, String? id, bool? Function()? liveStreamOnStart, bool? Function()? persistChat, bool? Function()? recordOnStart, double? Function()? sessionKeepAliveTimeInSecs, RealtimekitMeetingStatus? Function()? status, bool? Function()? summarizeOnEnd, String? Function()? title, DateTime? updatedAt, }) {return RealtimekitMeeting(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   liveStreamOnStart: liveStreamOnStart != null ? liveStreamOnStart() : this.liveStreamOnStart,
@@ -98,8 +98,8 @@ RealtimekitMeeting copyWith({DateTime? createdAt, String? id, bool? Function()? 
   summarizeOnEnd: summarizeOnEnd != null ? summarizeOnEnd() : this.summarizeOnEnd,
   title: title != null ? title() : this.title,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitMeeting &&
           createdAt == other.createdAt &&
           id == other.id &&
@@ -110,7 +110,7 @@ RealtimekitMeeting copyWith({DateTime? createdAt, String? id, bool? Function()? 
           status == other.status &&
           summarizeOnEnd == other.summarizeOnEnd &&
           title == other.title &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, id, liveStreamOnStart, persistChat, recordOnStart, sessionKeepAliveTimeInSecs, status, summarizeOnEnd, title, updatedAt); } 
-@override String toString() { return 'RealtimekitMeeting(createdAt: $createdAt, id: $id, liveStreamOnStart: $liveStreamOnStart, persistChat: $persistChat, recordOnStart: $recordOnStart, sessionKeepAliveTimeInSecs: $sessionKeepAliveTimeInSecs, status: $status, summarizeOnEnd: $summarizeOnEnd, title: $title, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(createdAt, id, liveStreamOnStart, persistChat, recordOnStart, sessionKeepAliveTimeInSecs, status, summarizeOnEnd, title, updatedAt);}
+@override String toString() {return 'RealtimekitMeeting(createdAt: $createdAt, id: $id, liveStreamOnStart: $liveStreamOnStart, persistChat: $persistChat, recordOnStart: $recordOnStart, sessionKeepAliveTimeInSecs: $sessionKeepAliveTimeInSecs, status: $status, summarizeOnEnd: $summarizeOnEnd, title: $title, updatedAt: $updatedAt)';}
+}

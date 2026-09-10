@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a reasoning summary text is completed.
 @immutable final class ResponseReasoningSummaryTextDoneEvent {const ResponseReasoningSummaryTextDoneEvent({required this.type, required this.itemId, required this.outputIndex, required this.summaryIndex, required this.text, required this.sequenceNumber, });
 
-factory ResponseReasoningSummaryTextDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseReasoningSummaryTextDoneEvent(
+factory ResponseReasoningSummaryTextDoneEvent.fromJson(Map<String, dynamic> json) {return ResponseReasoningSummaryTextDoneEvent(
   type: json['type'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   summaryIndex: (json['summary_index'] as num).toInt(),
   text: json['text'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
-); }
+);}
 
 /// The type of the event. Always `response.reasoning_summary_text.done`.
 /// 
@@ -36,36 +36,36 @@ final String text;
 /// 
 final int sequenceNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'item_id': itemId,
   'output_index': outputIndex,
   'summary_index': summaryIndex,
   'text': text,
   'sequence_number': sequenceNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('summary_index') && json['summary_index'] is num &&
       json.containsKey('text') && json['text'] is String &&
-      json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseReasoningSummaryTextDoneEvent copyWith({String? type, String? itemId, int? outputIndex, int? summaryIndex, String? text, int? sequenceNumber, }) { return ResponseReasoningSummaryTextDoneEvent(
+      json.containsKey('sequence_number') && json['sequence_number'] is num;}
+ResponseReasoningSummaryTextDoneEvent copyWith({String? type, String? itemId, int? outputIndex, int? summaryIndex, String? text, int? sequenceNumber, }) {return ResponseReasoningSummaryTextDoneEvent(
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   outputIndex: outputIndex ?? this.outputIndex,
   summaryIndex: summaryIndex ?? this.summaryIndex,
   text: text ?? this.text,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseReasoningSummaryTextDoneEvent &&
           type == other.type &&
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           summaryIndex == other.summaryIndex &&
           text == other.text &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, itemId, outputIndex, summaryIndex, text, sequenceNumber); } 
-@override String toString() { return 'ResponseReasoningSummaryTextDoneEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, summaryIndex: $summaryIndex, text: $text, sequenceNumber: $sequenceNumber)'; } 
- }
+          sequenceNumber == other.sequenceNumber;}
+@override int get hashCode {return Object.hash(type, itemId, outputIndex, summaryIndex, text, sequenceNumber);}
+@override String toString() {return 'ResponseReasoningSummaryTextDoneEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, summaryIndex: $summaryIndex, text: $text, sequenceNumber: $sequenceNumber)';}
+}

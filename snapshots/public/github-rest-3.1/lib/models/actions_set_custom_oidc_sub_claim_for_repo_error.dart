@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class ActionsSetCustomOidcSubClaimForRepoError {const ActionsSetCustomOidcSubClaimForRepoError();
 
 /// Decodes the payload for its declared status and content type.
-static ActionsSetCustomOidcSubClaimForRepoError parse(ApiResponse response) { switch (response.statusCode) {
+static ActionsSetCustomOidcSubClaimForRepoError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -27,40 +27,40 @@ return ActionsSetCustomOidcSubClaimForRepoError422(ValidationErrorSimple.fromJso
 default:
 return ActionsSetCustomOidcSubClaimForRepoErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class ActionsSetCustomOidcSubClaimForRepoError400ApplicationJson extends ActionsSetCustomOidcSubClaimForRepoError {const ActionsSetCustomOidcSubClaimForRepoError400ApplicationJson(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 400 (application/scim+json).
 final class ActionsSetCustomOidcSubClaimForRepoError400ApplicationScimJson extends ActionsSetCustomOidcSubClaimForRepoError {const ActionsSetCustomOidcSubClaimForRepoError400ApplicationScimJson(this.data);
 
 /// The decoded response payload.
 final ScimError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class ActionsSetCustomOidcSubClaimForRepoError404 extends ActionsSetCustomOidcSubClaimForRepoError {const ActionsSetCustomOidcSubClaimForRepoError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class ActionsSetCustomOidcSubClaimForRepoError422 extends ActionsSetCustomOidcSubClaimForRepoError {const ActionsSetCustomOidcSubClaimForRepoError422(this.data);
 
 /// The decoded response payload.
 final ValidationErrorSimple data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class ActionsSetCustomOidcSubClaimForRepoErrorUnknown extends ActionsSetCustomOidcSubClaimForRepoError {const ActionsSetCustomOidcSubClaimForRepoErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

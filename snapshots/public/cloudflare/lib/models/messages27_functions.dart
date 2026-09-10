@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages27Functions {const Messages27Functions({required this.code, required this.name, });
 
-factory Messages27Functions.fromJson(Map<String, dynamic> json) { return Messages27Functions(
+factory Messages27Functions.fromJson(Map<String, dynamic> json) {return Messages27Functions(
   code: json['code'] as String,
   name: json['name'] as String,
-); }
+);}
 
 final String code;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-Messages27Functions copyWith({String? code, String? name, }) { return Messages27Functions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+Messages27Functions copyWith({String? code, String? name, }) {return Messages27Functions(
   code: code ?? this.code,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Messages27Functions &&
           code == other.code &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(code, name); } 
-@override String toString() { return 'Messages27Functions(code: $code, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(code, name);}
+@override String toString() {return 'Messages27Functions(code: $code, name: $name)';}
+}

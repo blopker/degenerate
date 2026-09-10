@@ -12,7 +12,7 @@ final class RealtimeApi with ApiExecutor {const RealtimeApi(this.apiConfig);
 /// to complete the peer connection.
 ///
 /// `POST /realtime/calls`
-Future<ApiResult<String, Never>> createRealtimeCall({required RealtimeCallCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> createRealtimeCall({required RealtimeCallCreateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -33,12 +33,12 @@ return await execute(
 return response.body;
   },
 );
- } 
+}
 /// Accept an incoming SIP call and configure the realtime session that will
 /// handle it.
 ///
 /// `POST /realtime/calls/{call_id}/accept`
-Future<ApiResult<void, Never>> acceptRealtimeCall({required String callId, required RealtimeSessionCreateRequestGa body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> acceptRealtimeCall({required String callId, required RealtimeSessionCreateRequestGa body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,12 +53,12 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// End an active Realtime API call, whether it was initiated over SIP or
 /// WebRTC.
 ///
 /// `POST /realtime/calls/{call_id}/hangup`
-Future<ApiResult<void, Never>> hangupRealtimeCall({required String callId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> hangupRealtimeCall({required String callId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -71,11 +71,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Transfer an active SIP call to a new destination using the SIP REFER verb.
 ///
 /// `POST /realtime/calls/{call_id}/refer`
-Future<ApiResult<void, Never>> referRealtimeCall({required String callId, required RealtimeCallReferRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> referRealtimeCall({required String callId, required RealtimeCallReferRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -90,11 +90,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Decline an incoming SIP call by returning a SIP status code to the caller.
 ///
 /// `POST /realtime/calls/{call_id}/reject`
-Future<ApiResult<void, Never>> rejectRealtimeCall({required String callId, RealtimeCallRejectRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> rejectRealtimeCall({required String callId, RealtimeCallRejectRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -109,7 +109,7 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Create a Realtime client secret with an associated session configuration.
 /// 
 /// Client secrets are short-lived tokens that can be passed to a client app,
@@ -126,7 +126,7 @@ return await execute(
 /// 
 ///
 /// `POST /realtime/client_secrets`
-Future<ApiResult<RealtimeCreateClientSecretResponse, Never>> createRealtimeClientSecret({required RealtimeCreateClientSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RealtimeCreateClientSecretResponse, Never>> createRealtimeClientSecret({required RealtimeCreateClientSecretRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -144,7 +144,7 @@ final json = jsonDecode(response.body);
 return RealtimeCreateClientSecretResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create an ephemeral API token for use in client-side applications with the
 /// Realtime API. Can be configured with the same session parameters as the
 /// `session.update` client event.
@@ -157,7 +157,7 @@ return RealtimeCreateClientSecretResponse.fromJson(json as Map<String, dynamic>)
 /// 
 ///
 /// `POST /realtime/sessions`
-Future<ApiResult<RealtimeSessionCreateResponse, Never>> createRealtimeSession({required RealtimeSessionCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RealtimeSessionCreateResponse, Never>> createRealtimeSession({required RealtimeSessionCreateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -175,7 +175,7 @@ final json = jsonDecode(response.body);
 return RealtimeSessionCreateResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create an ephemeral API token for use in client-side applications with the
 /// Realtime API specifically for realtime transcriptions.
 /// Can be configured with the same session parameters as the `transcription_session.update` client event.
@@ -188,7 +188,7 @@ return RealtimeSessionCreateResponse.fromJson(json as Map<String, dynamic>);
 /// 
 ///
 /// `POST /realtime/transcription_sessions`
-Future<ApiResult<RealtimeTranscriptionSessionCreateResponse, Never>> createRealtimeTranscriptionSession({required RealtimeTranscriptionSessionCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RealtimeTranscriptionSessionCreateResponse, Never>> createRealtimeTranscriptionSession({required RealtimeTranscriptionSessionCreateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -206,5 +206,5 @@ final json = jsonDecode(response.body);
 return RealtimeTranscriptionSessionCreateResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations {const RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations({required this.locationAlpha2, required this.locationName, this.estimatedUsers, });
 
-factory RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations(
+factory RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations.fromJson(Map<String, dynamic> json) {return RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations(
   estimatedUsers: json['estimatedUsers'] != null ? (json['estimatedUsers'] as num).toInt() : null,
   locationAlpha2: json['locationAlpha2'] as String,
   locationName: json['locationName'] as String,
-); }
+);}
 
 /// Estimated users per location.
 final int? estimatedUsers;
@@ -15,23 +15,23 @@ final String locationAlpha2;
 
 final String locationName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'estimatedUsers': ?estimatedUsers,
   'locationAlpha2': locationAlpha2,
   'locationName': locationName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('locationAlpha2') && json['locationAlpha2'] is String &&
-      json.containsKey('locationName') && json['locationName'] is String; } 
-RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations copyWith({int? Function()? estimatedUsers, String? locationAlpha2, String? locationName, }) { return RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('locationAlpha2') && json['locationAlpha2'] is String &&
+      json.containsKey('locationName') && json['locationName'] is String;}
+RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations copyWith({int? Function()? estimatedUsers, String? locationAlpha2, String? locationName, }) {return RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations(
   estimatedUsers: estimatedUsers != null ? estimatedUsers() : this.estimatedUsers,
   locationAlpha2: locationAlpha2 ?? this.locationAlpha2,
   locationName: locationName ?? this.locationName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations &&
           estimatedUsers == other.estimatedUsers &&
           locationAlpha2 == other.locationAlpha2 &&
-          locationName == other.locationName; } 
-@override int get hashCode { return Object.hash(estimatedUsers, locationAlpha2, locationName); } 
-@override String toString() { return 'RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations(estimatedUsers: $estimatedUsers, locationAlpha2: $locationAlpha2, locationName: $locationName)'; } 
- }
+          locationName == other.locationName;}
+@override int get hashCode {return Object.hash(estimatedUsers, locationAlpha2, locationName);}
+@override String toString() {return 'RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations(estimatedUsers: $estimatedUsers, locationAlpha2: $locationAlpha2, locationName: $locationName)';}
+}

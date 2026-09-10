@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestUnlabeledPullRequestHeadUserType {const WebhookPullRequestUnlabeledPullRequestHeadUserType._(this.value);
 
-factory WebhookPullRequestUnlabeledPullRequestHeadUserType.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestUnlabeledPullRequestHeadUserType.fromJson(String json) {return switch (json) {
   'Bot' => bot,
   'User' => user,
   'Organization' => organization,
   _ => WebhookPullRequestUnlabeledPullRequestHeadUserType._(json),
-}; }
+};}
 
 static const WebhookPullRequestUnlabeledPullRequestHeadUserType bot = WebhookPullRequestUnlabeledPullRequestHeadUserType._('Bot');
 
@@ -19,17 +19,17 @@ static const List<WebhookPullRequestUnlabeledPullRequestHeadUserType> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestUnlabeledPullRequestHeadUserType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestUnlabeledPullRequestHeadUserType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestUnlabeledPullRequestHeadUserType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestUnlabeledPullRequestHeadUserType($value)';}
+}
 @immutable final class WebhookPullRequestUnlabeledPullRequestHeadUser {const WebhookPullRequestUnlabeledPullRequestHeadUser({required this.id, required this.login, this.avatarUrl, this.deleted, this.email = const Omittable.absent(), this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
 
-factory WebhookPullRequestUnlabeledPullRequestHeadUser.fromJson(Map<String, dynamic> json) { return WebhookPullRequestUnlabeledPullRequestHeadUser(
+factory WebhookPullRequestUnlabeledPullRequestHeadUser.fromJson(Map<String, dynamic> json) {return WebhookPullRequestUnlabeledPullRequestHeadUser(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,
   deleted: json['deleted'] as bool?,
   email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
@@ -52,7 +52,7 @@ factory WebhookPullRequestUnlabeledPullRequestHeadUser.fromJson(Map<String, dyna
   type: json['type'] != null ? WebhookPullRequestUnlabeledPullRequestHeadUserType.fromJson(json['type'] as String) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
   userViewType: json['user_view_type'] as String?,
-); }
+);}
 
 final Uri? avatarUrl;
 
@@ -98,7 +98,7 @@ final Uri? url;
 
 final String? userViewType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (avatarUrl != null) 'avatar_url': avatarUrl?.toString(),
   'deleted': ?deleted,
   if (email.isPresent) 'email': email.value,
@@ -121,10 +121,10 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   if (url != null) 'url': url?.toString(),
   'user_view_type': ?userViewType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('login') && json['login'] is String; } 
-WebhookPullRequestUnlabeledPullRequestHeadUser copyWith({Uri? Function()? avatarUrl, bool? Function()? deleted, Omittable<String?>? email, String? Function()? eventsUrl, Uri? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, Uri? Function()? htmlUrl, int? id, String? login, String? Function()? name, String? Function()? nodeId, Uri? Function()? organizationsUrl, Uri? Function()? receivedEventsUrl, Uri? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, Uri? Function()? subscriptionsUrl, WebhookPullRequestUnlabeledPullRequestHeadUserType? Function()? type, Uri? Function()? url, String? Function()? userViewType, }) { return WebhookPullRequestUnlabeledPullRequestHeadUser(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('login') && json['login'] is String;}
+WebhookPullRequestUnlabeledPullRequestHeadUser copyWith({Uri? Function()? avatarUrl, bool? Function()? deleted, Omittable<String?>? email, String? Function()? eventsUrl, Uri? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, Uri? Function()? htmlUrl, int? id, String? login, String? Function()? name, String? Function()? nodeId, Uri? Function()? organizationsUrl, Uri? Function()? receivedEventsUrl, Uri? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, Uri? Function()? subscriptionsUrl, WebhookPullRequestUnlabeledPullRequestHeadUserType? Function()? type, Uri? Function()? url, String? Function()? userViewType, }) {return WebhookPullRequestUnlabeledPullRequestHeadUser(
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   deleted: deleted != null ? deleted() : this.deleted,
   email: email ?? this.email,
@@ -147,8 +147,8 @@ WebhookPullRequestUnlabeledPullRequestHeadUser copyWith({Uri? Function()? avatar
   type: type != null ? type() : this.type,
   url: url != null ? url() : this.url,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestUnlabeledPullRequestHeadUser &&
           avatarUrl == other.avatarUrl &&
           deleted == other.deleted &&
@@ -171,7 +171,7 @@ WebhookPullRequestUnlabeledPullRequestHeadUser copyWith({Uri? Function()? avatar
           subscriptionsUrl == other.subscriptionsUrl &&
           type == other.type &&
           url == other.url &&
-          userViewType == other.userViewType; } 
-@override int get hashCode { return Object.hashAll([avatarUrl, deleted, email, eventsUrl, followersUrl, followingUrl, gistsUrl, gravatarId, htmlUrl, id, login, name, nodeId, organizationsUrl, receivedEventsUrl, reposUrl, siteAdmin, starredUrl, subscriptionsUrl, type, url, userViewType]); } 
-@override String toString() { return 'WebhookPullRequestUnlabeledPullRequestHeadUser(avatarUrl: $avatarUrl, deleted: $deleted, email: $email, eventsUrl: $eventsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, htmlUrl: $htmlUrl, id: $id, login: $login, name: $name, nodeId: $nodeId, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, url: $url, userViewType: $userViewType)'; } 
- }
+          userViewType == other.userViewType;}
+@override int get hashCode {return Object.hashAll([avatarUrl, deleted, email, eventsUrl, followersUrl, followingUrl, gistsUrl, gravatarId, htmlUrl, id, login, name, nodeId, organizationsUrl, receivedEventsUrl, reposUrl, siteAdmin, starredUrl, subscriptionsUrl, type, url, userViewType]);}
+@override String toString() {return 'WebhookPullRequestUnlabeledPullRequestHeadUser(avatarUrl: $avatarUrl, deleted: $deleted, email: $email, eventsUrl: $eventsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, htmlUrl: $htmlUrl, id: $id, login: $login, name: $name, nodeId: $nodeId, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, url: $url, userViewType: $userViewType)';}
+}

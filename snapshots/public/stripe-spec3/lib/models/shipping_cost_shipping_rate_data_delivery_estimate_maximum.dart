@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShippingCostShippingRateDataDeliveryEstimateMaximumUnit {const ShippingCostShippingRateDataDeliveryEstimateMaximumUnit._(this.value);
 
-factory ShippingCostShippingRateDataDeliveryEstimateMaximumUnit.fromJson(String json) { return switch (json) {
+factory ShippingCostShippingRateDataDeliveryEstimateMaximumUnit.fromJson(String json) {return switch (json) {
   'business_day' => businessDay,
   'day' => day,
   'hour' => hour,
   'month' => month,
   'week' => week,
   _ => ShippingCostShippingRateDataDeliveryEstimateMaximumUnit._(json),
-}; }
+};}
 
 static const ShippingCostShippingRateDataDeliveryEstimateMaximumUnit businessDay = ShippingCostShippingRateDataDeliveryEstimateMaximumUnit._('business_day');
 
@@ -25,39 +25,39 @@ static const List<ShippingCostShippingRateDataDeliveryEstimateMaximumUnit> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShippingCostShippingRateDataDeliveryEstimateMaximumUnit && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShippingCostShippingRateDataDeliveryEstimateMaximumUnit($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ShippingCostShippingRateDataDeliveryEstimateMaximumUnit && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ShippingCostShippingRateDataDeliveryEstimateMaximumUnit($value)';}
+}
 @immutable final class ShippingCostShippingRateDataDeliveryEstimateMaximum {const ShippingCostShippingRateDataDeliveryEstimateMaximum({required this.unit, required this.value, });
 
-factory ShippingCostShippingRateDataDeliveryEstimateMaximum.fromJson(Map<String, dynamic> json) { return ShippingCostShippingRateDataDeliveryEstimateMaximum(
+factory ShippingCostShippingRateDataDeliveryEstimateMaximum.fromJson(Map<String, dynamic> json) {return ShippingCostShippingRateDataDeliveryEstimateMaximum(
   unit: ShippingCostShippingRateDataDeliveryEstimateMaximumUnit.fromJson(json['unit'] as String),
   value: (json['value'] as num).toInt(),
-); }
+);}
 
 final ShippingCostShippingRateDataDeliveryEstimateMaximumUnit unit;
 
 final int value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'unit': unit.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('unit') &&
-      json.containsKey('value') && json['value'] is num; } 
-ShippingCostShippingRateDataDeliveryEstimateMaximum copyWith({ShippingCostShippingRateDataDeliveryEstimateMaximumUnit? unit, int? value, }) { return ShippingCostShippingRateDataDeliveryEstimateMaximum(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('unit') &&
+      json.containsKey('value') && json['value'] is num;}
+ShippingCostShippingRateDataDeliveryEstimateMaximum copyWith({ShippingCostShippingRateDataDeliveryEstimateMaximumUnit? unit, int? value, }) {return ShippingCostShippingRateDataDeliveryEstimateMaximum(
   unit: unit ?? this.unit,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShippingCostShippingRateDataDeliveryEstimateMaximum &&
           unit == other.unit &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(unit, value); } 
-@override String toString() { return 'ShippingCostShippingRateDataDeliveryEstimateMaximum(unit: $unit, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(unit, value);}
+@override String toString() {return 'ShippingCostShippingRateDataDeliveryEstimateMaximum(unit: $unit, value: $value)';}
+}

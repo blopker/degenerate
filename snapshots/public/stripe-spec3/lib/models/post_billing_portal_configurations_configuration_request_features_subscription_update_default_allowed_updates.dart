@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1 {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1._(this.value);
 
-factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1.fromJson(String json) { return switch (json) {
+factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1.fromJson(String json) {return switch (json) {
   'price' => price,
   'promotion_code' => promotionCode,
   'quantity' => quantity,
   _ => PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1._(json),
-}; }
+};}
 
 static const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1 price = PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1._('price');
 
@@ -19,20 +19,20 @@ static const List<PostBillingPortalConfigurationsConfigurationRequestFeaturesSub
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1($value)';}
+}
 @immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2 {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2._(this.value);
 
-factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2.fromJson(String json) { return switch (json) {
+factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2._(json),
-}; }
+};}
 
 static const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2 $empty = PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2._('');
 
@@ -40,14 +40,14 @@ static const List<PostBillingPortalConfigurationsConfigurationRequestFeaturesSub
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2($value)';}
+}
 
 @immutable
 final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdates {

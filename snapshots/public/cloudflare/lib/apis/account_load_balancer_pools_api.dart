@@ -13,7 +13,7 @@ final class AccountLoadBalancerPoolsApi with ApiExecutor {const AccountLoadBalan
 /// List configured pools.
 ///
 /// `GET /accounts/{account_id}/load_balancers/pools`
-Future<ApiResult<List<LoadBalancingPool>, AccountLoadBalancerPoolsListPoolsResponse4xx>> accountLoadBalancerPoolsListPools({required LoadBalancingComponentsSchemasIdentifier accountId, String? monitor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<LoadBalancingPool>, AccountLoadBalancerPoolsListPoolsResponse4xx>> accountLoadBalancerPoolsListPools({required LoadBalancingComponentsSchemasIdentifier accountId, String? monitor, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (monitor != null) {
   queryParameters['monitor'] = monitor;
@@ -47,13 +47,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create Pool
 ///
 /// Create a new pool.
 ///
 /// `POST /accounts/{account_id}/load_balancers/pools`
-Future<ApiResult<LoadBalancingPool, AccountLoadBalancerPoolsCreatePoolResponse4xx>> accountLoadBalancerPoolsCreatePool({required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsCreatePoolRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPool, AccountLoadBalancerPoolsCreatePoolResponse4xx>> accountLoadBalancerPoolsCreatePool({required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsCreatePoolRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -81,13 +81,13 @@ return null;
 
   },
 );
- } 
+}
 /// Patch Pools
 ///
 /// Apply changes to a number of existing pools, overwriting the supplied properties. Pools are ordered by ascending `name`. Returns the list of affected pools. Supports the standard pagination query parameters, either `limit`/`offset` or `per_page`/`page`.
 ///
 /// `PATCH /accounts/{account_id}/load_balancers/pools`
-Future<ApiResult<List<LoadBalancingPool>, AccountLoadBalancerPoolsPatchPoolsResponse4xx>> accountLoadBalancerPoolsPatchPools({required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsPatchPoolsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<LoadBalancingPool>, AccountLoadBalancerPoolsPatchPoolsResponse4xx>> accountLoadBalancerPoolsPatchPools({required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsPatchPoolsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,13 +115,13 @@ return null;
 
   },
 );
- } 
+}
 /// Pool Details
 ///
 /// Fetch a single configured pool.
 ///
 /// `GET /accounts/{account_id}/load_balancers/pools/{pool_id}`
-Future<ApiResult<LoadBalancingPool, AccountLoadBalancerPoolsPoolDetailsResponse4xx>> accountLoadBalancerPoolsPoolDetails({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPool, AccountLoadBalancerPoolsPoolDetailsResponse4xx>> accountLoadBalancerPoolsPoolDetails({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -147,13 +147,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update Pool
 ///
 /// Modify a configured pool.
 ///
 /// `PUT /accounts/{account_id}/load_balancers/pools/{pool_id}`
-Future<ApiResult<LoadBalancingPool, AccountLoadBalancerPoolsUpdatePoolResponse4xx>> accountLoadBalancerPoolsUpdatePool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsUpdatePoolRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPool, AccountLoadBalancerPoolsUpdatePoolResponse4xx>> accountLoadBalancerPoolsUpdatePool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsUpdatePoolRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -181,13 +181,13 @@ return null;
 
   },
 );
- } 
+}
 /// Patch Pool
 ///
 /// Apply changes to an existing pool, overwriting the supplied properties.
 ///
 /// `PATCH /accounts/{account_id}/load_balancers/pools/{pool_id}`
-Future<ApiResult<LoadBalancingPool, AccountLoadBalancerPoolsPatchPoolResponse4xx>> accountLoadBalancerPoolsPatchPool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsPatchPoolRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPool, AccountLoadBalancerPoolsPatchPoolResponse4xx>> accountLoadBalancerPoolsPatchPool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsPatchPoolRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -215,13 +215,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Pool
 ///
 /// Delete a configured pool.
 ///
 /// `DELETE /accounts/{account_id}/load_balancers/pools/{pool_id}`
-Future<ApiResult<LoadBalancingSchemasIdResponseResult, AccountLoadBalancerPoolsDeletePoolResponse4xx>> accountLoadBalancerPoolsDeletePool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingSchemasIdResponseResult, AccountLoadBalancerPoolsDeletePoolResponse4xx>> accountLoadBalancerPoolsDeletePool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -247,13 +247,13 @@ return null;
 
   },
 );
- } 
+}
 /// Pool Health Details
 ///
 /// Fetch the latest pool health status for a single pool.
 ///
 /// `GET /accounts/{account_id}/load_balancers/pools/{pool_id}/health`
-Future<ApiResult<LoadBalancingHealthDetailsResult, AccountLoadBalancerPoolsPoolHealthDetailsResponse4xx>> accountLoadBalancerPoolsPoolHealthDetails({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingHealthDetailsResult, AccountLoadBalancerPoolsPoolHealthDetailsResponse4xx>> accountLoadBalancerPoolsPoolHealthDetails({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -279,13 +279,13 @@ return null;
 
   },
 );
- } 
+}
 /// Preview Pool
 ///
 /// Preview pool health using provided monitor details. The returned preview_id can be used in the preview endpoint to retrieve the results.
 ///
 /// `POST /accounts/{account_id}/load_balancers/pools/{pool_id}/preview`
-Future<ApiResult<LoadBalancingPreviewResponseResult, AccountLoadBalancerPoolsPreviewPoolResponse4xx>> accountLoadBalancerPoolsPreviewPool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPreviewResponseResult, AccountLoadBalancerPoolsPreviewPoolResponse4xx>> accountLoadBalancerPoolsPreviewPool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -313,13 +313,13 @@ return null;
 
   },
 );
- } 
+}
 /// List Pool References
 ///
 /// Get the list of resources that reference the provided pool.
 ///
 /// `GET /accounts/{account_id}/load_balancers/pools/{pool_id}/references`
-Future<ApiResult<List<LoadBalancingPoolsReferencesResponseResult>, AccountLoadBalancerPoolsListPoolReferencesResponse4xx>> accountLoadBalancerPoolsListPoolReferences({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<LoadBalancingPoolsReferencesResponseResult>, AccountLoadBalancerPoolsListPoolReferencesResponse4xx>> accountLoadBalancerPoolsListPoolReferences({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -345,5 +345,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

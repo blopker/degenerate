@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which users can access codespaces in the organization. `disabled` means that no users can access codespaces in the organization.
 @immutable final class CodespacesSetCodespacesAccessRequestVisibility {const CodespacesSetCodespacesAccessRequestVisibility._(this.value);
 
-factory CodespacesSetCodespacesAccessRequestVisibility.fromJson(String json) { return switch (json) {
+factory CodespacesSetCodespacesAccessRequestVisibility.fromJson(String json) {return switch (json) {
   'disabled' => disabled,
   'selected_members' => selectedMembers,
   'all_members' => allMembers,
   'all_members_and_outside_collaborators' => allMembersAndOutsideCollaborators,
   _ => CodespacesSetCodespacesAccessRequestVisibility._(json),
-}; }
+};}
 
 static const CodespacesSetCodespacesAccessRequestVisibility disabled = CodespacesSetCodespacesAccessRequestVisibility._('disabled');
 
@@ -23,20 +23,20 @@ static const List<CodespacesSetCodespacesAccessRequestVisibility> values = [disa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodespacesSetCodespacesAccessRequestVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodespacesSetCodespacesAccessRequestVisibility($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodespacesSetCodespacesAccessRequestVisibility && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodespacesSetCodespacesAccessRequestVisibility($value)';}
+}
 @immutable final class CodespacesSetCodespacesAccessRequest {const CodespacesSetCodespacesAccessRequest({required this.visibility, this.selectedUsernames, });
 
-factory CodespacesSetCodespacesAccessRequest.fromJson(Map<String, dynamic> json) { return CodespacesSetCodespacesAccessRequest(
+factory CodespacesSetCodespacesAccessRequest.fromJson(Map<String, dynamic> json) {return CodespacesSetCodespacesAccessRequest(
   visibility: CodespacesSetCodespacesAccessRequestVisibility.fromJson(json['visibility'] as String),
   selectedUsernames: (json['selected_usernames'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Which users can access codespaces in the organization. `disabled` means that no users can access codespaces in the organization.
 final CodespacesSetCodespacesAccessRequestVisibility visibility;
@@ -44,19 +44,19 @@ final CodespacesSetCodespacesAccessRequestVisibility visibility;
 /// The usernames of the organization members who should have access to codespaces in the organization. Required when `visibility` is `selected_members`. The provided list of usernames will replace any existing value.
 final List<String>? selectedUsernames;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'visibility': visibility.toJson(),
   'selected_usernames': ?selectedUsernames,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('visibility'); } 
-CodespacesSetCodespacesAccessRequest copyWith({CodespacesSetCodespacesAccessRequestVisibility? visibility, List<String>? Function()? selectedUsernames, }) { return CodespacesSetCodespacesAccessRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('visibility');}
+CodespacesSetCodespacesAccessRequest copyWith({CodespacesSetCodespacesAccessRequestVisibility? visibility, List<String>? Function()? selectedUsernames, }) {return CodespacesSetCodespacesAccessRequest(
   visibility: visibility ?? this.visibility,
   selectedUsernames: selectedUsernames != null ? selectedUsernames() : this.selectedUsernames,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodespacesSetCodespacesAccessRequest &&
           visibility == other.visibility &&
-          listEquals(selectedUsernames, other.selectedUsernames); } 
-@override int get hashCode { return Object.hash(visibility, Object.hashAll(selectedUsernames ?? const [])); } 
-@override String toString() { return 'CodespacesSetCodespacesAccessRequest(visibility: $visibility, selectedUsernames: $selectedUsernames)'; } 
- }
+          listEquals(selectedUsernames, other.selectedUsernames);}
+@override int get hashCode {return Object.hash(visibility, Object.hashAll(selectedUsernames ?? const []));}
+@override String toString() {return 'CodespacesSetCodespacesAccessRequest(visibility: $visibility, selectedUsernames: $selectedUsernames)';}
+}

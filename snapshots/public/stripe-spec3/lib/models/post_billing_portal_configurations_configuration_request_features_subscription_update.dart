@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_configuration_request_features_subscription_update_default_allowed_updates.dart';import 'post_billing_portal_configurations_configuration_request_features_subscription_update_products.dart';import 'post_billing_portal_configurations_configuration_request_features_subscription_update_schedule_at_period_end.dart';@immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor._(this.value);
 
-factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor.fromJson(String json) { return switch (json) {
+factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor.fromJson(String json) {return switch (json) {
   'now' => now,
   'unchanged' => unchanged,
   _ => PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor._(json),
-}; }
+};}
 
 static const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor now = PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor._('now');
 
@@ -16,22 +16,22 @@ static const List<PostBillingPortalConfigurationsConfigurationRequestFeaturesSub
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor($value)';}
+}
 @immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior._(this.value);
 
-factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior.fromJson(String json) { return switch (json) {
+factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior.fromJson(String json) {return switch (json) {
   'always_invoice' => alwaysInvoice,
   'create_prorations' => createProrations,
   'none' => none,
   _ => PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior._(json),
-}; }
+};}
 
 static const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior alwaysInvoice = PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior._('always_invoice');
 
@@ -43,21 +43,21 @@ static const List<PostBillingPortalConfigurationsConfigurationRequestFeaturesSub
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior($value)';}
+}
 @immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior._(this.value);
 
-factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior.fromJson(String json) { return switch (json) {
+factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior.fromJson(String json) {return switch (json) {
   'continue_trial' => continueTrial,
   'end_trial' => endTrial,
   _ => PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior._(json),
-}; }
+};}
 
 static const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior continueTrial = PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior._('continue_trial');
 
@@ -67,17 +67,17 @@ static const List<PostBillingPortalConfigurationsConfigurationRequestFeaturesSub
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior($value)';}
+}
 @immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate({this.billingCycleAnchor, this.defaultAllowedUpdates, this.enabled, this.products, this.prorationBehavior, this.scheduleAtPeriodEnd, this.trialUpdateBehavior, });
 
-factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate(
+factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate.fromJson(Map<String, dynamic> json) {return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate(
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,
   defaultAllowedUpdates: json['default_allowed_updates'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdates.fromJson(json['default_allowed_updates']) : null,
   enabled: json['enabled'] as bool?,
@@ -85,7 +85,7 @@ factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionU
   prorationBehavior: json['proration_behavior'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
   scheduleAtPeriodEnd: json['schedule_at_period_end'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd.fromJson(json['schedule_at_period_end'] as Map<String, dynamic>) : null,
   trialUpdateBehavior: json['trial_update_behavior'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior.fromJson(json['trial_update_behavior'] as String) : null,
-); }
+);}
 
 final PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor? billingCycleAnchor;
 
@@ -101,7 +101,7 @@ final PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpd
 
 final PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior? trialUpdateBehavior;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingCycleAnchor != null) 'billing_cycle_anchor': billingCycleAnchor?.toJson(),
   if (defaultAllowedUpdates != null) 'default_allowed_updates': defaultAllowedUpdates?.toJson(),
   'enabled': ?enabled,
@@ -109,9 +109,9 @@ Map<String, dynamic> toJson() { return {
   if (prorationBehavior != null) 'proration_behavior': prorationBehavior?.toJson(),
   if (scheduleAtPeriodEnd != null) 'schedule_at_period_end': scheduleAtPeriodEnd?.toJson(),
   if (trialUpdateBehavior != null) 'trial_update_behavior': trialUpdateBehavior?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_cycle_anchor', 'default_allowed_updates', 'enabled', 'products', 'proration_behavior', 'schedule_at_period_end', 'trial_update_behavior'}.contains(key)); } 
-PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate copyWith({PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor? Function()? billingCycleAnchor, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdates? Function()? defaultAllowedUpdates, bool? Function()? enabled, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProducts? Function()? products, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior? Function()? prorationBehavior, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd? Function()? scheduleAtPeriodEnd, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior? Function()? trialUpdateBehavior, }) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'billing_cycle_anchor', 'default_allowed_updates', 'enabled', 'products', 'proration_behavior', 'schedule_at_period_end', 'trial_update_behavior'}.contains(key));}
+PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate copyWith({PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateBillingCycleAnchor? Function()? billingCycleAnchor, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateDefaultAllowedUpdates? Function()? defaultAllowedUpdates, bool? Function()? enabled, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProducts? Function()? products, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProrationBehavior? Function()? prorationBehavior, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd? Function()? scheduleAtPeriodEnd, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateTrialUpdateBehavior? Function()? trialUpdateBehavior, }) {return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate(
   billingCycleAnchor: billingCycleAnchor != null ? billingCycleAnchor() : this.billingCycleAnchor,
   defaultAllowedUpdates: defaultAllowedUpdates != null ? defaultAllowedUpdates() : this.defaultAllowedUpdates,
   enabled: enabled != null ? enabled() : this.enabled,
@@ -119,8 +119,8 @@ PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate co
   prorationBehavior: prorationBehavior != null ? prorationBehavior() : this.prorationBehavior,
   scheduleAtPeriodEnd: scheduleAtPeriodEnd != null ? scheduleAtPeriodEnd() : this.scheduleAtPeriodEnd,
   trialUpdateBehavior: trialUpdateBehavior != null ? trialUpdateBehavior() : this.trialUpdateBehavior,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate &&
           billingCycleAnchor == other.billingCycleAnchor &&
           defaultAllowedUpdates == other.defaultAllowedUpdates &&
@@ -128,7 +128,7 @@ PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate co
           products == other.products &&
           prorationBehavior == other.prorationBehavior &&
           scheduleAtPeriodEnd == other.scheduleAtPeriodEnd &&
-          trialUpdateBehavior == other.trialUpdateBehavior; } 
-@override int get hashCode { return Object.hash(billingCycleAnchor, defaultAllowedUpdates, enabled, products, prorationBehavior, scheduleAtPeriodEnd, trialUpdateBehavior); } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate(billingCycleAnchor: $billingCycleAnchor, defaultAllowedUpdates: $defaultAllowedUpdates, enabled: $enabled, products: $products, prorationBehavior: $prorationBehavior, scheduleAtPeriodEnd: $scheduleAtPeriodEnd, trialUpdateBehavior: $trialUpdateBehavior)'; } 
- }
+          trialUpdateBehavior == other.trialUpdateBehavior;}
+@override int get hashCode {return Object.hash(billingCycleAnchor, defaultAllowedUpdates, enabled, products, prorationBehavior, scheduleAtPeriodEnd, trialUpdateBehavior);}
+@override String toString() {return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate(billingCycleAnchor: $billingCycleAnchor, defaultAllowedUpdates: $defaultAllowedUpdates, enabled: $enabled, products: $products, prorationBehavior: $prorationBehavior, scheduleAtPeriodEnd: $scheduleAtPeriodEnd, trialUpdateBehavior: $trialUpdateBehavior)';}
+}

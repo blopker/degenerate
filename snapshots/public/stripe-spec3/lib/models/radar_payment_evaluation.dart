@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_client_device_metadata.dart';import 'insights_resources_payment_evaluation_customer_details.dart';import 'insights_resources_payment_evaluation_event.dart';import 'insights_resources_payment_evaluation_insights.dart';import 'insights_resources_payment_evaluation_outcome.dart';import 'insights_resources_payment_evaluation_payment_details.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class RadarPaymentEvaluationObject {const RadarPaymentEvaluationObject._(this.value);
 
-factory RadarPaymentEvaluationObject.fromJson(String json) { return switch (json) {
+factory RadarPaymentEvaluationObject.fromJson(String json) {return switch (json) {
   'radar.payment_evaluation' => radarPaymentEvaluation,
   _ => RadarPaymentEvaluationObject._(json),
-}; }
+};}
 
 static const RadarPaymentEvaluationObject radarPaymentEvaluation = RadarPaymentEvaluationObject._('radar.payment_evaluation');
 
@@ -14,18 +14,18 @@ static const List<RadarPaymentEvaluationObject> values = [radarPaymentEvaluation
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarPaymentEvaluationObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarPaymentEvaluationObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarPaymentEvaluationObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarPaymentEvaluationObject($value)';}
+}
 /// Payment Evaluations represent the risk lifecycle of an externally processed payment. It includes the Radar risk score from Stripe, payment outcome taken by the merchant or processor, and any post transaction events, such as refunds or disputes. See the [Radar API guide](/radar/multiprocessor) for integration steps.
 @immutable final class RadarPaymentEvaluation {const RadarPaymentEvaluation({required this.createdAt, required this.events, required this.id, required this.insights, required this.livemode, required this.object, this.clientDeviceMetadataDetails, this.customerDetails, this.metadata = const Omittable.absent(), this.outcome = const Omittable.absent(), this.paymentDetails, });
 
-factory RadarPaymentEvaluation.fromJson(Map<String, dynamic> json) { return RadarPaymentEvaluation(
+factory RadarPaymentEvaluation.fromJson(Map<String, dynamic> json) {return RadarPaymentEvaluation(
   clientDeviceMetadataDetails: json['client_device_metadata_details'] != null ? InsightsResourcesPaymentEvaluationClientDeviceMetadata.fromJson(json['client_device_metadata_details'] as Map<String, dynamic>) : null,
   createdAt: (json['created_at'] as num).toInt(),
   customerDetails: json['customer_details'] != null ? InsightsResourcesPaymentEvaluationCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
@@ -37,7 +37,7 @@ factory RadarPaymentEvaluation.fromJson(Map<String, dynamic> json) { return Rada
   object: RadarPaymentEvaluationObject.fromJson(json['object'] as String),
   outcome: json.containsKey('outcome') ? Omittable(json['outcome'] != null ? InsightsResourcesPaymentEvaluationOutcome.fromJson(json['outcome'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   paymentDetails: json['payment_details'] != null ? InsightsResourcesPaymentEvaluationPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final InsightsResourcesPaymentEvaluationClientDeviceMetadata? clientDeviceMetadataDetails;
 
@@ -68,7 +68,7 @@ final Omittable<InsightsResourcesPaymentEvaluationOutcome?> outcome;
 
 final InsightsResourcesPaymentEvaluationPaymentDetails? paymentDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (clientDeviceMetadataDetails != null) 'client_device_metadata_details': clientDeviceMetadataDetails?.toJson(),
   'created_at': createdAt,
   if (customerDetails != null) 'customer_details': customerDetails?.toJson(),
@@ -80,14 +80,14 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   if (outcome.isPresent) 'outcome': outcome.value?.toJson(),
   if (paymentDetails != null) 'payment_details': paymentDetails?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('events') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('insights') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object'); } 
-RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceMetadata? Function()? clientDeviceMetadataDetails, int? createdAt, InsightsResourcesPaymentEvaluationCustomerDetails? Function()? customerDetails, List<InsightsResourcesPaymentEvaluationEvent>? events, String? id, InsightsResourcesPaymentEvaluationInsights? insights, bool? livemode, Omittable<Map<String,String>?>? metadata, RadarPaymentEvaluationObject? object, Omittable<InsightsResourcesPaymentEvaluationOutcome?>? outcome, InsightsResourcesPaymentEvaluationPaymentDetails? Function()? paymentDetails, }) { return RadarPaymentEvaluation(
+      json.containsKey('object');}
+RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceMetadata? Function()? clientDeviceMetadataDetails, int? createdAt, InsightsResourcesPaymentEvaluationCustomerDetails? Function()? customerDetails, List<InsightsResourcesPaymentEvaluationEvent>? events, String? id, InsightsResourcesPaymentEvaluationInsights? insights, bool? livemode, Omittable<Map<String,String>?>? metadata, RadarPaymentEvaluationObject? object, Omittable<InsightsResourcesPaymentEvaluationOutcome?>? outcome, InsightsResourcesPaymentEvaluationPaymentDetails? Function()? paymentDetails, }) {return RadarPaymentEvaluation(
   clientDeviceMetadataDetails: clientDeviceMetadataDetails != null ? clientDeviceMetadataDetails() : this.clientDeviceMetadataDetails,
   createdAt: createdAt ?? this.createdAt,
   customerDetails: customerDetails != null ? customerDetails() : this.customerDetails,
@@ -99,8 +99,8 @@ RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceM
   object: object ?? this.object,
   outcome: outcome ?? this.outcome,
   paymentDetails: paymentDetails != null ? paymentDetails() : this.paymentDetails,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarPaymentEvaluation &&
           clientDeviceMetadataDetails == other.clientDeviceMetadataDetails &&
           createdAt == other.createdAt &&
@@ -112,7 +112,7 @@ RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceM
           metadata == other.metadata &&
           object == other.object &&
           outcome == other.outcome &&
-          paymentDetails == other.paymentDetails; } 
-@override int get hashCode { return Object.hash(clientDeviceMetadataDetails, createdAt, customerDetails, Object.hashAll(events), id, insights, livemode, metadata, object, outcome, paymentDetails); } 
-@override String toString() { return 'RadarPaymentEvaluation(clientDeviceMetadataDetails: $clientDeviceMetadataDetails, createdAt: $createdAt, customerDetails: $customerDetails, events: $events, id: $id, insights: $insights, livemode: $livemode, metadata: $metadata, object: $object, outcome: $outcome, paymentDetails: $paymentDetails)'; } 
- }
+          paymentDetails == other.paymentDetails;}
+@override int get hashCode {return Object.hash(clientDeviceMetadataDetails, createdAt, customerDetails, Object.hashAll(events), id, insights, livemode, metadata, object, outcome, paymentDetails);}
+@override String toString() {return 'RadarPaymentEvaluation(clientDeviceMetadataDetails: $clientDeviceMetadataDetails, createdAt: $createdAt, customerDetails: $customerDetails, events: $events, id: $id, insights: $insights, livemode: $livemode, metadata: $metadata, object: $object, outcome: $outcome, paymentDetails: $paymentDetails)';}
+}

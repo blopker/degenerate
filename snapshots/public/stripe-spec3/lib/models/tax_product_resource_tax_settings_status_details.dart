@@ -3,28 +3,28 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_tax_settings_status_details_resource_active.dart';import 'tax_product_resource_tax_settings_status_details_resource_pending.dart';/// 
 @immutable final class TaxProductResourceTaxSettingsStatusDetails {const TaxProductResourceTaxSettingsStatusDetails({this.active, this.pending, });
 
-factory TaxProductResourceTaxSettingsStatusDetails.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxSettingsStatusDetails(
+factory TaxProductResourceTaxSettingsStatusDetails.fromJson(Map<String, dynamic> json) {return TaxProductResourceTaxSettingsStatusDetails(
   active: json['active'] != null ? TaxProductResourceTaxSettingsStatusDetailsResourceActive.fromJson(json['active'] as Map<String, dynamic>) : null,
   pending: json['pending'] != null ? TaxProductResourceTaxSettingsStatusDetailsResourcePending.fromJson(json['pending'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final TaxProductResourceTaxSettingsStatusDetailsResourceActive? active;
 
 final TaxProductResourceTaxSettingsStatusDetailsResourcePending? pending;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (active != null) 'active': active?.toJson(),
   if (pending != null) 'pending': pending?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'pending'}.contains(key)); } 
-TaxProductResourceTaxSettingsStatusDetails copyWith({TaxProductResourceTaxSettingsStatusDetailsResourceActive? Function()? active, TaxProductResourceTaxSettingsStatusDetailsResourcePending? Function()? pending, }) { return TaxProductResourceTaxSettingsStatusDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'pending'}.contains(key));}
+TaxProductResourceTaxSettingsStatusDetails copyWith({TaxProductResourceTaxSettingsStatusDetailsResourceActive? Function()? active, TaxProductResourceTaxSettingsStatusDetailsResourcePending? Function()? pending, }) {return TaxProductResourceTaxSettingsStatusDetails(
   active: active != null ? active() : this.active,
   pending: pending != null ? pending() : this.pending,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TaxProductResourceTaxSettingsStatusDetails &&
           active == other.active &&
-          pending == other.pending; } 
-@override int get hashCode { return Object.hash(active, pending); } 
-@override String toString() { return 'TaxProductResourceTaxSettingsStatusDetails(active: $active, pending: $pending)'; } 
- }
+          pending == other.pending;}
+@override int get hashCode {return Object.hash(active, pending);}
+@override String toString() {return 'TaxProductResourceTaxSettingsStatusDetails(active: $active, pending: $pending)';}
+}

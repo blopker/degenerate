@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_request_phases_invoice_settings_account_tax_ids.dart';import 'post_subscription_schedules_request_phases_invoice_settings_issuer.dart';@immutable final class PostSubscriptionSchedulesRequestPhasesInvoiceSettings {const PostSubscriptionSchedulesRequestPhasesInvoiceSettings({this.accountTaxIds, this.daysUntilDue, this.issuer, });
 
-factory PostSubscriptionSchedulesRequestPhasesInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestPhasesInvoiceSettings(
+factory PostSubscriptionSchedulesRequestPhasesInvoiceSettings.fromJson(Map<String, dynamic> json) {return PostSubscriptionSchedulesRequestPhasesInvoiceSettings(
   accountTaxIds: json['account_tax_ids'] != null ? PostSubscriptionSchedulesRequestPhasesInvoiceSettingsAccountTaxIds.fromJson(json['account_tax_ids']) : null,
   daysUntilDue: json['days_until_due'] != null ? (json['days_until_due'] as num).toInt() : null,
   issuer: json['issuer'] != null ? PostSubscriptionSchedulesRequestPhasesInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostSubscriptionSchedulesRequestPhasesInvoiceSettingsAccountTaxIds? accountTaxIds;
 
@@ -14,22 +14,22 @@ final int? daysUntilDue;
 
 final PostSubscriptionSchedulesRequestPhasesInvoiceSettingsIssuer? issuer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountTaxIds != null) 'account_tax_ids': accountTaxIds?.toJson(),
   'days_until_due': ?daysUntilDue,
   if (issuer != null) 'issuer': issuer?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tax_ids', 'days_until_due', 'issuer'}.contains(key)); } 
-PostSubscriptionSchedulesRequestPhasesInvoiceSettings copyWith({PostSubscriptionSchedulesRequestPhasesInvoiceSettingsAccountTaxIds? Function()? accountTaxIds, int? Function()? daysUntilDue, PostSubscriptionSchedulesRequestPhasesInvoiceSettingsIssuer? Function()? issuer, }) { return PostSubscriptionSchedulesRequestPhasesInvoiceSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_tax_ids', 'days_until_due', 'issuer'}.contains(key));}
+PostSubscriptionSchedulesRequestPhasesInvoiceSettings copyWith({PostSubscriptionSchedulesRequestPhasesInvoiceSettingsAccountTaxIds? Function()? accountTaxIds, int? Function()? daysUntilDue, PostSubscriptionSchedulesRequestPhasesInvoiceSettingsIssuer? Function()? issuer, }) {return PostSubscriptionSchedulesRequestPhasesInvoiceSettings(
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   daysUntilDue: daysUntilDue != null ? daysUntilDue() : this.daysUntilDue,
   issuer: issuer != null ? issuer() : this.issuer,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionSchedulesRequestPhasesInvoiceSettings &&
           accountTaxIds == other.accountTaxIds &&
           daysUntilDue == other.daysUntilDue &&
-          issuer == other.issuer; } 
-@override int get hashCode { return Object.hash(accountTaxIds, daysUntilDue, issuer); } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestPhasesInvoiceSettings(accountTaxIds: $accountTaxIds, daysUntilDue: $daysUntilDue, issuer: $issuer)'; } 
- }
+          issuer == other.issuer;}
+@override int get hashCode {return Object.hash(accountTaxIds, daysUntilDue, issuer);}
+@override String toString() {return 'PostSubscriptionSchedulesRequestPhasesInvoiceSettings(accountTaxIds: $accountTaxIds, daysUntilDue: $daysUntilDue, issuer: $issuer)';}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_list_data_annotations.dart';import 'chat_completion_message_list_data_audio.dart';import 'chat_completion_message_list_data_content_parts2.dart';import 'chat_completion_message_list_data_function_call.dart';import 'chat_completion_message_tool_calls2.dart';import 'chat_completion_request_message_content_part_image.dart';import 'chat_completion_request_message_content_part_text.dart';/// The role of the author of this message.
 @immutable final class ChatCompletionMessageListDataRole {const ChatCompletionMessageListDataRole._(this.value);
 
-factory ChatCompletionMessageListDataRole.fromJson(String json) { return switch (json) {
+factory ChatCompletionMessageListDataRole.fromJson(String json) {return switch (json) {
   'assistant' => assistant,
   _ => ChatCompletionMessageListDataRole._(json),
-}; }
+};}
 
 static const ChatCompletionMessageListDataRole assistant = ChatCompletionMessageListDataRole._('assistant');
 
@@ -14,17 +14,17 @@ static const List<ChatCompletionMessageListDataRole> values = [assistant];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionMessageListDataRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChatCompletionMessageListDataRole($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ChatCompletionMessageListDataRole && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ChatCompletionMessageListDataRole($value)';}
+}
 @immutable final class ChatCompletionMessageListData {const ChatCompletionMessageListData({required this.content, required this.refusal, required this.role, required this.id, this.toolCalls, this.annotations, this.functionCall, this.audio = const Omittable.absent(), this.contentParts = const Omittable.absent(), });
 
-factory ChatCompletionMessageListData.fromJson(Map<String, dynamic> json) { return ChatCompletionMessageListData(
+factory ChatCompletionMessageListData.fromJson(Map<String, dynamic> json) {return ChatCompletionMessageListData(
   content: json['content'] as String?,
   refusal: json['refusal'] as String?,
   toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => ChatCompletionMessageToolCalls2.fromJson(e as Map<String, dynamic>)).toList(),
@@ -34,7 +34,7 @@ factory ChatCompletionMessageListData.fromJson(Map<String, dynamic> json) { retu
   audio: json.containsKey('audio') ? Omittable(json['audio'] != null ? ChatCompletionMessageListDataAudio.fromJson(json['audio'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   id: json['id'] as String,
   contentParts: json.containsKey('content_parts') ? Omittable((json['content_parts'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => ChatCompletionRequestMessageContentPartText.fromJson(v as Map<String, dynamic>), fromB: (v) => ChatCompletionRequestMessageContentPartImage.fromJson(v as Map<String, dynamic>),)).toList()) : const Omittable.absent(),
-); }
+);}
 
 /// The contents of the message.
 final String? content;
@@ -68,7 +68,7 @@ final String id;
 /// 
 final Omittable<List<ChatCompletionMessageListDataContentParts2>?> contentParts;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content,
   'refusal': refusal,
   if (toolCalls != null) 'tool_calls': toolCalls?.map((e) => e.toJson()).toList(),
@@ -78,12 +78,12 @@ Map<String, dynamic> toJson() { return {
   if (audio.isPresent) 'audio': audio.value?.toJson(),
   'id': id,
   if (contentParts.isPresent) 'content_parts': contentParts.value?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && (json['content'] == null || json['content'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') && (json['content'] == null || json['content'] is String) &&
       json.containsKey('refusal') && (json['refusal'] == null || json['refusal'] is String) &&
       json.containsKey('role') &&
-      json.containsKey('id') && json['id'] is String; } 
-ChatCompletionMessageListData copyWith({String? Function()? content, String? Function()? refusal, List<ChatCompletionMessageToolCalls2>? Function()? toolCalls, List<ChatCompletionMessageListDataAnnotations>? Function()? annotations, ChatCompletionMessageListDataRole? role, ChatCompletionMessageListDataFunctionCall? Function()? functionCall, Omittable<ChatCompletionMessageListDataAudio?>? audio, String? id, Omittable<List<ChatCompletionMessageListDataContentParts2>?>? contentParts, }) { return ChatCompletionMessageListData(
+      json.containsKey('id') && json['id'] is String;}
+ChatCompletionMessageListData copyWith({String? Function()? content, String? Function()? refusal, List<ChatCompletionMessageToolCalls2>? Function()? toolCalls, List<ChatCompletionMessageListDataAnnotations>? Function()? annotations, ChatCompletionMessageListDataRole? role, ChatCompletionMessageListDataFunctionCall? Function()? functionCall, Omittable<ChatCompletionMessageListDataAudio?>? audio, String? id, Omittable<List<ChatCompletionMessageListDataContentParts2>?>? contentParts, }) {return ChatCompletionMessageListData(
   content: content != null ? content() : this.content,
   refusal: refusal != null ? refusal() : this.refusal,
   toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,
@@ -93,8 +93,8 @@ ChatCompletionMessageListData copyWith({String? Function()? content, String? Fun
   audio: audio ?? this.audio,
   id: id ?? this.id,
   contentParts: contentParts ?? this.contentParts,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ChatCompletionMessageListData &&
           content == other.content &&
           refusal == other.refusal &&
@@ -105,7 +105,7 @@ ChatCompletionMessageListData copyWith({String? Function()? content, String? Fun
           audio == other.audio &&
           id == other.id &&
           contentParts.isPresent == other.contentParts.isPresent &&
-          listEquals(contentParts.value, other.contentParts.value); } 
-@override int get hashCode { return Object.hash(content, refusal, Object.hashAll(toolCalls ?? const []), Object.hashAll(annotations ?? const []), role, functionCall, audio, id, Object.hashAll(contentParts.value ?? const [])); } 
-@override String toString() { return 'ChatCompletionMessageListData(content: $content, refusal: $refusal, toolCalls: $toolCalls, annotations: $annotations, role: $role, functionCall: $functionCall, audio: $audio, id: $id, contentParts: $contentParts)'; } 
- }
+          listEquals(contentParts.value, other.contentParts.value);}
+@override int get hashCode {return Object.hash(content, refusal, Object.hashAll(toolCalls ?? const []), Object.hashAll(annotations ?? const []), role, functionCall, audio, id, Object.hashAll(contentParts.value ?? const []));}
+@override String toString() {return 'ChatCompletionMessageListData(content: $content, refusal: $refusal, toolCalls: $toolCalls, annotations: $annotations, role: $role, functionCall: $functionCall, audio: $audio, id: $id, contentParts: $contentParts)';}
+}

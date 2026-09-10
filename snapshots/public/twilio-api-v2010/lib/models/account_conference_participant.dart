@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the participant's call in a session. Can be: `queued`, `connecting`, `ringing`, `connected`, `complete`, or `failed`.
 @immutable final class ParticipantEnumStatus {const ParticipantEnumStatus._(this.value);
 
-factory ParticipantEnumStatus.fromJson(String json) { return switch (json) {
+factory ParticipantEnumStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'connecting' => connecting,
   'ringing' => ringing,
@@ -11,7 +11,7 @@ factory ParticipantEnumStatus.fromJson(String json) { return switch (json) {
   'complete' => complete,
   'failed' => failed,
   _ => ParticipantEnumStatus._(json),
-}; }
+};}
 
 static const ParticipantEnumStatus queued = ParticipantEnumStatus._('queued');
 
@@ -29,17 +29,17 @@ static const List<ParticipantEnumStatus> values = [queued, connecting, ringing, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ParticipantEnumStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ParticipantEnumStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ParticipantEnumStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ParticipantEnumStatus($value)';}
+}
 @immutable final class AccountConferenceParticipant {const AccountConferenceParticipant({this.accountSid = const Omittable.absent(), this.callSid = const Omittable.absent(), this.label = const Omittable.absent(), this.callSidToCoach = const Omittable.absent(), this.coaching = const Omittable.absent(), this.conferenceSid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.endConferenceOnExit = const Omittable.absent(), this.muted = const Omittable.absent(), this.hold = const Omittable.absent(), this.startConferenceOnEnter = const Omittable.absent(), this.status, this.queueTime = const Omittable.absent(), this.uri = const Omittable.absent(), });
 
-factory AccountConferenceParticipant.fromJson(Map<String, dynamic> json) { return AccountConferenceParticipant(
+factory AccountConferenceParticipant.fromJson(Map<String, dynamic> json) {return AccountConferenceParticipant(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   callSid: json.containsKey('call_sid') ? Omittable(json['call_sid'] as String?) : const Omittable.absent(),
   label: json.containsKey('label') ? Omittable(json['label'] as String?) : const Omittable.absent(),
@@ -55,7 +55,7 @@ factory AccountConferenceParticipant.fromJson(Map<String, dynamic> json) { retur
   status: json['status'] != null ? ParticipantEnumStatus.fromJson(json['status'] as String) : null,
   queueTime: json.containsKey('queue_time') ? Omittable(json['queue_time'] as String?) : const Omittable.absent(),
   uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Participant resource.
 final Omittable<String?> accountSid;
@@ -101,7 +101,7 @@ final Omittable<String?> queueTime;
 /// The URI of the resource, relative to `https://api.twilio.com`.
 final Omittable<String?> uri;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (callSid.isPresent) 'call_sid': callSid.value,
   if (label.isPresent) 'label': label.value,
@@ -117,9 +117,9 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (queueTime.isPresent) 'queue_time': queueTime.value,
   if (uri.isPresent) 'uri': uri.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'call_sid', 'label', 'call_sid_to_coach', 'coaching', 'conference_sid', 'date_created', 'date_updated', 'end_conference_on_exit', 'muted', 'hold', 'start_conference_on_enter', 'status', 'queue_time', 'uri'}.contains(key)); } 
-AccountConferenceParticipant copyWith({Omittable<String?>? accountSid, Omittable<String?>? callSid, Omittable<String?>? label, Omittable<String?>? callSidToCoach, Omittable<bool?>? coaching, Omittable<String?>? conferenceSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<bool?>? endConferenceOnExit, Omittable<bool?>? muted, Omittable<bool?>? hold, Omittable<bool?>? startConferenceOnEnter, ParticipantEnumStatus? Function()? status, Omittable<String?>? queueTime, Omittable<String?>? uri, }) { return AccountConferenceParticipant(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'call_sid', 'label', 'call_sid_to_coach', 'coaching', 'conference_sid', 'date_created', 'date_updated', 'end_conference_on_exit', 'muted', 'hold', 'start_conference_on_enter', 'status', 'queue_time', 'uri'}.contains(key));}
+AccountConferenceParticipant copyWith({Omittable<String?>? accountSid, Omittable<String?>? callSid, Omittable<String?>? label, Omittable<String?>? callSidToCoach, Omittable<bool?>? coaching, Omittable<String?>? conferenceSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<bool?>? endConferenceOnExit, Omittable<bool?>? muted, Omittable<bool?>? hold, Omittable<bool?>? startConferenceOnEnter, ParticipantEnumStatus? Function()? status, Omittable<String?>? queueTime, Omittable<String?>? uri, }) {return AccountConferenceParticipant(
   accountSid: accountSid ?? this.accountSid,
   callSid: callSid ?? this.callSid,
   label: label ?? this.label,
@@ -135,8 +135,8 @@ AccountConferenceParticipant copyWith({Omittable<String?>? accountSid, Omittable
   status: status != null ? status() : this.status,
   queueTime: queueTime ?? this.queueTime,
   uri: uri ?? this.uri,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountConferenceParticipant &&
           accountSid == other.accountSid &&
           callSid == other.callSid &&
@@ -152,7 +152,7 @@ AccountConferenceParticipant copyWith({Omittable<String?>? accountSid, Omittable
           startConferenceOnEnter == other.startConferenceOnEnter &&
           status == other.status &&
           queueTime == other.queueTime &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(accountSid, callSid, label, callSidToCoach, coaching, conferenceSid, dateCreated, dateUpdated, endConferenceOnExit, muted, hold, startConferenceOnEnter, status, queueTime, uri); } 
-@override String toString() { return 'AccountConferenceParticipant(accountSid: $accountSid, callSid: $callSid, label: $label, callSidToCoach: $callSidToCoach, coaching: $coaching, conferenceSid: $conferenceSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, endConferenceOnExit: $endConferenceOnExit, muted: $muted, hold: $hold, startConferenceOnEnter: $startConferenceOnEnter, status: $status, queueTime: $queueTime, uri: $uri)'; } 
- }
+          uri == other.uri;}
+@override int get hashCode {return Object.hash(accountSid, callSid, label, callSidToCoach, coaching, conferenceSid, dateCreated, dateUpdated, endConferenceOnExit, muted, hold, startConferenceOnEnter, status, queueTime, uri);}
+@override String toString() {return 'AccountConferenceParticipant(accountSid: $accountSid, callSid: $callSid, label: $label, callSidToCoach: $callSidToCoach, coaching: $coaching, conferenceSid: $conferenceSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, endConferenceOnExit: $endConferenceOnExit, muted: $muted, hold: $hold, startConferenceOnEnter: $startConferenceOnEnter, status: $status, queueTime: $queueTime, uri: $uri)';}
+}

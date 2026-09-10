@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateDeployKeyRequest {const ReposCreateDeployKeyRequest({required this.key, this.title, this.readOnly, });
 
-factory ReposCreateDeployKeyRequest.fromJson(Map<String, dynamic> json) { return ReposCreateDeployKeyRequest(
+factory ReposCreateDeployKeyRequest.fromJson(Map<String, dynamic> json) {return ReposCreateDeployKeyRequest(
   title: json['title'] as String?,
   key: json['key'] as String,
   readOnly: json['read_only'] as bool?,
-); }
+);}
 
 /// A name for the key.
 final String? title;
@@ -19,22 +19,22 @@ final String key;
 /// Deploy keys with write access can perform the same actions as an organization member with admin access, or a collaborator on a personal repository. For more information, see "[Repository permission levels for an organization](https://docs.github.com/articles/repository-permission-levels-for-an-organization/)" and "[Permission levels for a user account repository](https://docs.github.com/articles/permission-levels-for-a-user-account-repository/)."
 final bool? readOnly;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'title': ?title,
   'key': key,
   'read_only': ?readOnly,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
-ReposCreateDeployKeyRequest copyWith({String? Function()? title, String? key, bool? Function()? readOnly, }) { return ReposCreateDeployKeyRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String;}
+ReposCreateDeployKeyRequest copyWith({String? Function()? title, String? key, bool? Function()? readOnly, }) {return ReposCreateDeployKeyRequest(
   title: title != null ? title() : this.title,
   key: key ?? this.key,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReposCreateDeployKeyRequest &&
           title == other.title &&
           key == other.key &&
-          readOnly == other.readOnly; } 
-@override int get hashCode { return Object.hash(title, key, readOnly); } 
-@override String toString() { return 'ReposCreateDeployKeyRequest(title: $title, key: $key, readOnly: $readOnly)'; } 
- }
+          readOnly == other.readOnly;}
+@override int get hashCode {return Object.hash(title, key, readOnly);}
+@override String toString() {return 'ReposCreateDeployKeyRequest(title: $title, key: $key, readOnly: $readOnly)';}
+}

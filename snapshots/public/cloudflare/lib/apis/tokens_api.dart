@@ -13,7 +13,7 @@ final class TokensApi with ApiExecutor {const TokensApi(this.apiConfig);
 /// List all access tokens you created.
 ///
 /// `GET /user/tokens`
-Future<ApiResult<List<IamTokenBase>?, ResponseCommonFailure38>> userApiTokensListTokens({double? page, double? perPage, TokensListTokensDirection2? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IamTokenBase>?, ResponseCommonFailure38>> userApiTokensListTokens({double? page, double? perPage, TokensListTokensDirection2? direction, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -53,13 +53,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create Token
 ///
 /// Create a new access token.
 ///
 /// `POST /user/tokens`
-Future<ApiResult<IamTokenWithValue?, ResponseCommonFailure38>> userApiTokensCreateToken({required IamCreatePayloadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamTokenWithValue?, ResponseCommonFailure38>> userApiTokensCreateToken({required IamCreatePayloadRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,13 +87,13 @@ return null;
 
   },
 );
- } 
+}
 /// Token Details
 ///
 /// Get information about a specific token.
 ///
 /// `GET /user/tokens/{token_id}`
-Future<ApiResult<IamTokenBase?, ResponseCommonFailure38>> userApiTokensTokenDetails({required IamTokenIdentifier tokenId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamTokenBase?, ResponseCommonFailure38>> userApiTokensTokenDetails({required IamTokenIdentifier tokenId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -119,13 +119,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update Token
 ///
 /// Update an existing token.
 ///
 /// `PUT /user/tokens/{token_id}`
-Future<ApiResult<IamTokenBase?, ResponseCommonFailure38>> userApiTokensUpdateToken({required IamTokenIdentifier tokenId, required IamTokenBaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamTokenBase?, ResponseCommonFailure38>> userApiTokensUpdateToken({required IamTokenIdentifier tokenId, required IamTokenBaseRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -153,13 +153,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Token
 ///
 /// Destroy a token.
 ///
 /// `DELETE /user/tokens/{token_id}`
-Future<ApiResult<ResponseSingleId4Result?, ResponseCommonFailure38>> userApiTokensDeleteToken({required IamTokenIdentifier tokenId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId4Result?, ResponseCommonFailure38>> userApiTokensDeleteToken({required IamTokenIdentifier tokenId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -185,13 +185,13 @@ return null;
 
   },
 );
- } 
+}
 /// Roll Token
 ///
 /// Roll the token secret.
 ///
 /// `PUT /user/tokens/{token_id}/value`
-Future<ApiResult<IamValue?, ResponseCommonFailure38>> userApiTokensRollToken({required IamTokenIdentifier tokenId, required Map<String,dynamic> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamValue?, ResponseCommonFailure38>> userApiTokensRollToken({required IamTokenIdentifier tokenId, required Map<String,dynamic> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -219,13 +219,13 @@ return null;
 
   },
 );
- } 
+}
 /// List Token Permission Groups
 ///
 /// Find all available permission groups for API Tokens
 ///
 /// `GET /user/tokens/permission_groups`
-Future<ApiResult<List<IamPermissionsGroupResponseCollectionResult>?, ResponseCommonFailure38>> permissionGroupsListPermissionGroups({String? name, String? scope, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IamPermissionsGroupResponseCollectionResult>?, ResponseCommonFailure38>> permissionGroupsListPermissionGroups({String? name, String? scope, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -262,13 +262,13 @@ return null;
 
   },
 );
- } 
+}
 /// Verify Token
 ///
 /// Test whether a token works.
 ///
 /// `GET /user/tokens/verify`
-Future<ApiResult<IamTokenVerifyResponseSingleSegmentResult?, ResponseCommonFailure38>> userApiTokensVerifyToken({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamTokenVerifyResponseSingleSegmentResult?, ResponseCommonFailure38>> userApiTokensVerifyToken({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -294,5 +294,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

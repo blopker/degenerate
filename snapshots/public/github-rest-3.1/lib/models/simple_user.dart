@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A GitHub user.
 @immutable final class SimpleUser {const SimpleUser({required this.login, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, this.name = const Omittable.absent(), this.email = const Omittable.absent(), this.starredAt, this.userViewType, });
 
-factory SimpleUser.fromJson(Map<String, dynamic> json) { return SimpleUser(
+factory SimpleUser.fromJson(Map<String, dynamic> json) {return SimpleUser(
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
   login: json['login'] as String,
@@ -26,7 +26,7 @@ factory SimpleUser.fromJson(Map<String, dynamic> json) { return SimpleUser(
   siteAdmin: json['site_admin'] as bool,
   starredAt: json['starred_at'] as String?,
   userViewType: json['user_view_type'] as String?,
-); }
+);}
 
 final Omittable<String?> name;
 
@@ -72,7 +72,7 @@ final String? starredAt;
 
 final String? userViewType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (name.isPresent) 'name': name.value,
   if (email.isPresent) 'email': email.value,
   'login': login,
@@ -95,8 +95,8 @@ Map<String, dynamic> toJson() { return {
   'site_admin': siteAdmin,
   'starred_at': ?starredAt,
   'user_view_type': ?userViewType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('login') && json['login'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String &&
@@ -113,8 +113,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('events_url') && json['events_url'] is String &&
       json.containsKey('received_events_url') && json['received_events_url'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('site_admin') && json['site_admin'] is bool; } 
-SimpleUser copyWith({Omittable<String?>? name, Omittable<String?>? email, String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? starredAt, String? Function()? userViewType, }) { return SimpleUser(
+      json.containsKey('site_admin') && json['site_admin'] is bool;}
+SimpleUser copyWith({Omittable<String?>? name, Omittable<String?>? email, String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? starredAt, String? Function()? userViewType, }) {return SimpleUser(
   name: name ?? this.name,
   email: email ?? this.email,
   login: login ?? this.login,
@@ -137,8 +137,8 @@ SimpleUser copyWith({Omittable<String?>? name, Omittable<String?>? email, String
   siteAdmin: siteAdmin ?? this.siteAdmin,
   starredAt: starredAt != null ? starredAt() : this.starredAt,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SimpleUser &&
           name == other.name &&
           email == other.email &&
@@ -161,7 +161,7 @@ SimpleUser copyWith({Omittable<String?>? name, Omittable<String?>? email, String
           type == other.type &&
           siteAdmin == other.siteAdmin &&
           starredAt == other.starredAt &&
-          userViewType == other.userViewType; } 
-@override int get hashCode { return Object.hashAll([name, email, login, id, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, reposUrl, eventsUrl, receivedEventsUrl, type, siteAdmin, starredAt, userViewType]); } 
-@override String toString() { return 'SimpleUser(name: $name, email: $email, login: $login, id: $id, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, starredAt: $starredAt, userViewType: $userViewType)'; } 
- }
+          userViewType == other.userViewType;}
+@override int get hashCode {return Object.hashAll([name, email, login, id, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, reposUrl, eventsUrl, receivedEventsUrl, type, siteAdmin, starredAt, userViewType]);}
+@override String toString() {return 'SimpleUser(name: $name, email: $email, login: $login, id: $id, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, starredAt: $starredAt, userViewType: $userViewType)';}
+}

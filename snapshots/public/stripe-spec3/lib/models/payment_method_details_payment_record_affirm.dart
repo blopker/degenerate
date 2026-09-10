@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodDetailsPaymentRecordAffirm {const PaymentMethodDetailsPaymentRecordAffirm({this.location, this.reader, this.transactionId = const Omittable.absent(), });
 
-factory PaymentMethodDetailsPaymentRecordAffirm.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordAffirm(
+factory PaymentMethodDetailsPaymentRecordAffirm.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsPaymentRecordAffirm(
   location: json['location'] as String?,
   reader: json['reader'] as String?,
   transactionId: json.containsKey('transaction_id') ? Omittable(json['transaction_id'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// ID of the location that this reader is assigned to.
 final String? location;
@@ -18,22 +18,22 @@ final String? reader;
 /// The Affirm transaction ID associated with this payment.
 final Omittable<String?> transactionId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'location': ?location,
   'reader': ?reader,
   if (transactionId.isPresent) 'transaction_id': transactionId.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'location', 'reader', 'transaction_id'}.contains(key)); } 
-PaymentMethodDetailsPaymentRecordAffirm copyWith({String? Function()? location, String? Function()? reader, Omittable<String?>? transactionId, }) { return PaymentMethodDetailsPaymentRecordAffirm(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'location', 'reader', 'transaction_id'}.contains(key));}
+PaymentMethodDetailsPaymentRecordAffirm copyWith({String? Function()? location, String? Function()? reader, Omittable<String?>? transactionId, }) {return PaymentMethodDetailsPaymentRecordAffirm(
   location: location != null ? location() : this.location,
   reader: reader != null ? reader() : this.reader,
   transactionId: transactionId ?? this.transactionId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodDetailsPaymentRecordAffirm &&
           location == other.location &&
           reader == other.reader &&
-          transactionId == other.transactionId; } 
-@override int get hashCode { return Object.hash(location, reader, transactionId); } 
-@override String toString() { return 'PaymentMethodDetailsPaymentRecordAffirm(location: $location, reader: $reader, transactionId: $transactionId)'; } 
- }
+          transactionId == other.transactionId;}
+@override int get hashCode {return Object.hash(location, reader, transactionId);}
+@override String toString() {return 'PaymentMethodDetailsPaymentRecordAffirm(location: $location, reader: $reader, transactionId: $transactionId)';}
+}

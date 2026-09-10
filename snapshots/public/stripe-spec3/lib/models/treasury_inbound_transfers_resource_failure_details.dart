@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason for the failure.
 @immutable final class TreasuryInboundTransfersResourceFailureDetailsCode {const TreasuryInboundTransfersResourceFailureDetailsCode._(this.value);
 
-factory TreasuryInboundTransfersResourceFailureDetailsCode.fromJson(String json) { return switch (json) {
+factory TreasuryInboundTransfersResourceFailureDetailsCode.fromJson(String json) {return switch (json) {
   'account_closed' => accountClosed,
   'account_frozen' => accountFrozen,
   'bank_account_restricted' => bankAccountRestricted,
@@ -18,7 +18,7 @@ factory TreasuryInboundTransfersResourceFailureDetailsCode.fromJson(String json)
   'no_account' => noAccount,
   'other' => $other,
   _ => TreasuryInboundTransfersResourceFailureDetailsCode._(json),
-}; }
+};}
 
 static const TreasuryInboundTransfersResourceFailureDetailsCode accountClosed = TreasuryInboundTransfersResourceFailureDetailsCode._('account_closed');
 
@@ -50,34 +50,34 @@ static const List<TreasuryInboundTransfersResourceFailureDetailsCode> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryInboundTransfersResourceFailureDetailsCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryInboundTransfersResourceFailureDetailsCode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryInboundTransfersResourceFailureDetailsCode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryInboundTransfersResourceFailureDetailsCode($value)';}
+}
 /// 
 @immutable final class TreasuryInboundTransfersResourceFailureDetails {const TreasuryInboundTransfersResourceFailureDetails({required this.code});
 
-factory TreasuryInboundTransfersResourceFailureDetails.fromJson(Map<String, dynamic> json) { return TreasuryInboundTransfersResourceFailureDetails(
+factory TreasuryInboundTransfersResourceFailureDetails.fromJson(Map<String, dynamic> json) {return TreasuryInboundTransfersResourceFailureDetails(
   code: TreasuryInboundTransfersResourceFailureDetailsCode.fromJson(json['code'] as String),
-); }
+);}
 
 /// Reason for the failure.
 final TreasuryInboundTransfersResourceFailureDetailsCode code;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code'); } 
-TreasuryInboundTransfersResourceFailureDetails copyWith({TreasuryInboundTransfersResourceFailureDetailsCode? code}) { return TreasuryInboundTransfersResourceFailureDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code');}
+TreasuryInboundTransfersResourceFailureDetails copyWith({TreasuryInboundTransfersResourceFailureDetailsCode? code}) {return TreasuryInboundTransfersResourceFailureDetails(
   code: code ?? this.code,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TreasuryInboundTransfersResourceFailureDetails &&
-          code == other.code; } 
-@override int get hashCode { return code.hashCode; } 
-@override String toString() { return 'TreasuryInboundTransfersResourceFailureDetails(code: $code)'; } 
- }
+          code == other.code;}
+@override int get hashCode {return code.hashCode;}
+@override String toString() {return 'TreasuryInboundTransfersResourceFailureDetails(code: $code)';}
+}

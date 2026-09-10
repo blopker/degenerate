@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByBrowsersOs {const RadarGetHttpTimeseriesGroupByBrowsersOs._(this.value);
 
-factory RadarGetHttpTimeseriesGroupByBrowsersOs.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTimeseriesGroupByBrowsersOs.fromJson(String json) {return switch (json) {
   'WINDOWS' => windows,
   'MACOSX' => macosx,
   'IOS' => ios,
@@ -11,7 +11,7 @@ factory RadarGetHttpTimeseriesGroupByBrowsersOs.fromJson(String json) { return s
   'LINUX' => linux,
   'SMART_TV' => smartTv,
   _ => RadarGetHttpTimeseriesGroupByBrowsersOs._(json),
-}; }
+};}
 
 static const RadarGetHttpTimeseriesGroupByBrowsersOs windows = RadarGetHttpTimeseriesGroupByBrowsersOs._('WINDOWS');
 
@@ -31,11 +31,11 @@ static const List<RadarGetHttpTimeseriesGroupByBrowsersOs> values = [windows, ma
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTimeseriesGroupByBrowsersOs && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTimeseriesGroupByBrowsersOs($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupByBrowsersOs && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTimeseriesGroupByBrowsersOs($value)';}
+}

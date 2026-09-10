@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The frequency at which you will be billed for this plan.
 @immutable final class SchemasFrequency {const SchemasFrequency._(this.value);
 
-factory SchemasFrequency.fromJson(String json) { return switch (json) {
+factory SchemasFrequency.fromJson(String json) {return switch (json) {
   'weekly' => weekly,
   'monthly' => monthly,
   'quarterly' => quarterly,
   'yearly' => yearly,
   _ => SchemasFrequency._(json),
-}; }
+};}
 
 static const SchemasFrequency weekly = SchemasFrequency._('weekly');
 
@@ -23,11 +23,11 @@ static const List<SchemasFrequency> values = [weekly, monthly, quarterly, yearly
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SchemasFrequency && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SchemasFrequency($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SchemasFrequency && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SchemasFrequency($value)';}
+}

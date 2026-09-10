@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRpkiAspaSnapshotResponseResultAsnInfo13335 {const RadarGetBgpRpkiAspaSnapshotResponseResultAsnInfo13335({required this.asn, required this.country, required this.name, });
 
-factory RadarGetBgpRpkiAspaSnapshotResponseResultAsnInfo13335.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaSnapshotResponseResultAsnInfo13335(
+factory RadarGetBgpRpkiAspaSnapshotResponseResultAsnInfo13335.fromJson(Map<String, dynamic> json) {return RadarGetBgpRpkiAspaSnapshotResponseResultAsnInfo13335(
   asn: (json['asn'] as num).toInt(),
   country: json['country'] as String,
   name: json['name'] as String,
-); }
+);}
 
 /// ASN number.
 final int asn;
@@ -17,24 +17,24 @@ final String country;
 /// AS name.
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn,
   'country': country,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') && json['asn'] is num &&
       json.containsKey('country') && json['country'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-RadarGetBgpRpkiAspaSnapshotResponseResultAsnInfo13335 copyWith({int? asn, String? country, String? name, }) { return RadarGetBgpRpkiAspaSnapshotResponseResultAsnInfo13335(
+      json.containsKey('name') && json['name'] is String;}
+RadarGetBgpRpkiAspaSnapshotResponseResultAsnInfo13335 copyWith({int? asn, String? country, String? name, }) {return RadarGetBgpRpkiAspaSnapshotResponseResultAsnInfo13335(
   asn: asn ?? this.asn,
   country: country ?? this.country,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetBgpRpkiAspaSnapshotResponseResultAsnInfo13335 &&
           asn == other.asn &&
           country == other.country &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(asn, country, name); } 
-@override String toString() { return 'RadarGetBgpRpkiAspaSnapshotResponseResultAsnInfo13335(asn: $asn, country: $country, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(asn, country, name);}
+@override String toString() {return 'RadarGetBgpRpkiAspaSnapshotResponseResultAsnInfo13335(asn: $asn, country: $country, name: $name)';}
+}

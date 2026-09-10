@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class ActionsGenerateRunnerJitconfigForOrgError {const ActionsGenerateRunnerJitconfigForOrgError();
 
 /// Decodes the payload for its declared status and content type.
-static ActionsGenerateRunnerJitconfigForOrgError parse(ApiResponse response) { switch (response.statusCode) {
+static ActionsGenerateRunnerJitconfigForOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
 return ActionsGenerateRunnerJitconfigForOrgError404(BasicError.fromJson(json as Map<String, dynamic>));
@@ -17,33 +17,33 @@ return ActionsGenerateRunnerJitconfigForOrgError422(ValidationErrorSimple.fromJs
 default:
 return ActionsGenerateRunnerJitconfigForOrgErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 404 (application/json).
 final class ActionsGenerateRunnerJitconfigForOrgError404 extends ActionsGenerateRunnerJitconfigForOrgError {const ActionsGenerateRunnerJitconfigForOrgError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 409 (application/json).
 final class ActionsGenerateRunnerJitconfigForOrgError409 extends ActionsGenerateRunnerJitconfigForOrgError {const ActionsGenerateRunnerJitconfigForOrgError409(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class ActionsGenerateRunnerJitconfigForOrgError422 extends ActionsGenerateRunnerJitconfigForOrgError {const ActionsGenerateRunnerJitconfigForOrgError422(this.data);
 
 /// The decoded response payload.
 final ValidationErrorSimple data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class ActionsGenerateRunnerJitconfigForOrgErrorUnknown extends ActionsGenerateRunnerJitconfigForOrgError {const ActionsGenerateRunnerJitconfigForOrgErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

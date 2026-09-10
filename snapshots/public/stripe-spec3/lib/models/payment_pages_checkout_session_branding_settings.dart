@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_branding_settings_icon.dart';import 'payment_pages_checkout_session_branding_settings_logo.dart';/// The border style for the Checkout Session. Must be one of `rounded`, `rectangular`, or `pill`.
 @immutable final class PaymentPagesCheckoutSessionBrandingSettingsBorderStyle {const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle._(this.value);
 
-factory PaymentPagesCheckoutSessionBrandingSettingsBorderStyle.fromJson(String json) { return switch (json) {
+factory PaymentPagesCheckoutSessionBrandingSettingsBorderStyle.fromJson(String json) {return switch (json) {
   'pill' => pill,
   'rectangular' => rectangular,
   'rounded' => rounded,
   _ => PaymentPagesCheckoutSessionBrandingSettingsBorderStyle._(json),
-}; }
+};}
 
 static const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle pill = PaymentPagesCheckoutSessionBrandingSettingsBorderStyle._('pill');
 
@@ -20,18 +20,18 @@ static const List<PaymentPagesCheckoutSessionBrandingSettingsBorderStyle> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentPagesCheckoutSessionBrandingSettingsBorderStyle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentPagesCheckoutSessionBrandingSettingsBorderStyle($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentPagesCheckoutSessionBrandingSettingsBorderStyle && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentPagesCheckoutSessionBrandingSettingsBorderStyle($value)';}
+}
 /// 
 @immutable final class PaymentPagesCheckoutSessionBrandingSettings {const PaymentPagesCheckoutSessionBrandingSettings({required this.backgroundColor, required this.borderStyle, required this.buttonColor, required this.displayName, required this.fontFamily, this.icon = const Omittable.absent(), this.logo = const Omittable.absent(), });
 
-factory PaymentPagesCheckoutSessionBrandingSettings.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionBrandingSettings(
+factory PaymentPagesCheckoutSessionBrandingSettings.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionBrandingSettings(
   backgroundColor: json['background_color'] as String,
   borderStyle: PaymentPagesCheckoutSessionBrandingSettingsBorderStyle.fromJson(json['border_style'] as String),
   buttonColor: json['button_color'] as String,
@@ -39,7 +39,7 @@ factory PaymentPagesCheckoutSessionBrandingSettings.fromJson(Map<String, dynamic
   fontFamily: json['font_family'] as String,
   icon: json.containsKey('icon') ? Omittable(json['icon'] != null ? PaymentPagesCheckoutSessionBrandingSettingsIcon.fromJson(json['icon'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   logo: json.containsKey('logo') ? Omittable(json['logo'] != null ? PaymentPagesCheckoutSessionBrandingSettingsLogo.fromJson(json['logo'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// A hex color value starting with `#` representing the background color for the Checkout Session.
 final String backgroundColor;
@@ -62,7 +62,7 @@ final Omittable<PaymentPagesCheckoutSessionBrandingSettingsIcon?> icon;
 /// The logo for the Checkout Session. You cannot set both `logo` and `icon`.
 final Omittable<PaymentPagesCheckoutSessionBrandingSettingsLogo?> logo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'background_color': backgroundColor,
   'border_style': borderStyle.toJson(),
   'button_color': buttonColor,
@@ -70,13 +70,13 @@ Map<String, dynamic> toJson() { return {
   'font_family': fontFamily,
   if (icon.isPresent) 'icon': icon.value?.toJson(),
   if (logo.isPresent) 'logo': logo.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('background_color') && json['background_color'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('background_color') && json['background_color'] is String &&
       json.containsKey('border_style') &&
       json.containsKey('button_color') && json['button_color'] is String &&
       json.containsKey('display_name') && json['display_name'] is String &&
-      json.containsKey('font_family') && json['font_family'] is String; } 
-PaymentPagesCheckoutSessionBrandingSettings copyWith({String? backgroundColor, PaymentPagesCheckoutSessionBrandingSettingsBorderStyle? borderStyle, String? buttonColor, String? displayName, String? fontFamily, Omittable<PaymentPagesCheckoutSessionBrandingSettingsIcon?>? icon, Omittable<PaymentPagesCheckoutSessionBrandingSettingsLogo?>? logo, }) { return PaymentPagesCheckoutSessionBrandingSettings(
+      json.containsKey('font_family') && json['font_family'] is String;}
+PaymentPagesCheckoutSessionBrandingSettings copyWith({String? backgroundColor, PaymentPagesCheckoutSessionBrandingSettingsBorderStyle? borderStyle, String? buttonColor, String? displayName, String? fontFamily, Omittable<PaymentPagesCheckoutSessionBrandingSettingsIcon?>? icon, Omittable<PaymentPagesCheckoutSessionBrandingSettingsLogo?>? logo, }) {return PaymentPagesCheckoutSessionBrandingSettings(
   backgroundColor: backgroundColor ?? this.backgroundColor,
   borderStyle: borderStyle ?? this.borderStyle,
   buttonColor: buttonColor ?? this.buttonColor,
@@ -84,8 +84,8 @@ PaymentPagesCheckoutSessionBrandingSettings copyWith({String? backgroundColor, P
   fontFamily: fontFamily ?? this.fontFamily,
   icon: icon ?? this.icon,
   logo: logo ?? this.logo,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentPagesCheckoutSessionBrandingSettings &&
           backgroundColor == other.backgroundColor &&
           borderStyle == other.borderStyle &&
@@ -93,7 +93,7 @@ PaymentPagesCheckoutSessionBrandingSettings copyWith({String? backgroundColor, P
           displayName == other.displayName &&
           fontFamily == other.fontFamily &&
           icon == other.icon &&
-          logo == other.logo; } 
-@override int get hashCode { return Object.hash(backgroundColor, borderStyle, buttonColor, displayName, fontFamily, icon, logo); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionBrandingSettings(backgroundColor: $backgroundColor, borderStyle: $borderStyle, buttonColor: $buttonColor, displayName: $displayName, fontFamily: $fontFamily, icon: $icon, logo: $logo)'; } 
- }
+          logo == other.logo;}
+@override int get hashCode {return Object.hash(backgroundColor, borderStyle, buttonColor, displayName, fontFamily, icon, logo);}
+@override String toString() {return 'PaymentPagesCheckoutSessionBrandingSettings(backgroundColor: $backgroundColor, borderStyle: $borderStyle, buttonColor: $buttonColor, displayName: $displayName, fontFamily: $fontFamily, icon: $icon, logo: $logo)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Audio signal pathway within an audio file that carries a specific sound source.
 @immutable final class RealtimekitAudioConfigChannel {const RealtimekitAudioConfigChannel._(this.value);
 
-factory RealtimekitAudioConfigChannel.fromJson(String json) { return switch (json) {
+factory RealtimekitAudioConfigChannel.fromJson(String json) {return switch (json) {
   'mono' => mono,
   'stereo' => stereo,
   _ => RealtimekitAudioConfigChannel._(json),
-}; }
+};}
 
 static const RealtimekitAudioConfigChannel mono = RealtimekitAudioConfigChannel._('mono');
 
@@ -17,22 +17,22 @@ static const List<RealtimekitAudioConfigChannel> values = [mono, stereo];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitAudioConfigChannel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitAudioConfigChannel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitAudioConfigChannel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitAudioConfigChannel($value)';}
+}
 /// Codec using which the recording will be encoded. If VP8/VP9 is selected for videoConfig, changing audioConfig is not allowed. In this case, the codec in the audioConfig is automatically set to vorbis.
 @immutable final class RealtimekitAudioConfigCodec {const RealtimekitAudioConfigCodec._(this.value);
 
-factory RealtimekitAudioConfigCodec.fromJson(String json) { return switch (json) {
+factory RealtimekitAudioConfigCodec.fromJson(String json) {return switch (json) {
   'MP3' => mp3,
   'AAC' => aac,
   _ => RealtimekitAudioConfigCodec._(json),
-}; }
+};}
 
 static const RealtimekitAudioConfigCodec mp3 = RealtimekitAudioConfigCodec._('MP3');
 
@@ -42,22 +42,22 @@ static const List<RealtimekitAudioConfigCodec> values = [mp3, aac];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitAudioConfigCodec && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitAudioConfigCodec($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitAudioConfigCodec && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitAudioConfigCodec($value)';}
+}
 /// Object containing configuration regarding the audio that is being recorded.
 @immutable final class RealtimekitAudioConfig {const RealtimekitAudioConfig({this.channel, this.codec, this.exportFile, });
 
-factory RealtimekitAudioConfig.fromJson(Map<String, dynamic> json) { return RealtimekitAudioConfig(
+factory RealtimekitAudioConfig.fromJson(Map<String, dynamic> json) {return RealtimekitAudioConfig(
   channel: json['channel'] != null ? RealtimekitAudioConfigChannel.fromJson(json['channel'] as String) : null,
   codec: json['codec'] != null ? RealtimekitAudioConfigCodec.fromJson(json['codec'] as String) : null,
   exportFile: json['export_file'] as bool?,
-); }
+);}
 
 /// Audio signal pathway within an audio file that carries a specific sound source.
 final RealtimekitAudioConfigChannel? channel;
@@ -69,27 +69,27 @@ final RealtimekitAudioConfigCodec? codec;
 final bool? exportFile;
 
 /// The value with the schema default applied when absent.
-RealtimekitAudioConfigChannel get channelOrDefault { return channel ?? RealtimekitAudioConfigChannel.fromJson('stereo'); } 
+RealtimekitAudioConfigChannel get channelOrDefault {return channel ?? RealtimekitAudioConfigChannel.fromJson('stereo');}
 /// The value with the schema default applied when absent.
-RealtimekitAudioConfigCodec get codecOrDefault { return codec ?? RealtimekitAudioConfigCodec.fromJson('AAC'); } 
+RealtimekitAudioConfigCodec get codecOrDefault {return codec ?? RealtimekitAudioConfigCodec.fromJson('AAC');}
 /// The value with the schema default applied when absent.
-bool get exportFileOrDefault { return exportFile ?? true; } 
-Map<String, dynamic> toJson() { return {
+bool get exportFileOrDefault {return exportFile ?? true;}
+Map<String, dynamic> toJson() {return {
   if (channel != null) 'channel': channel?.toJson(),
   if (codec != null) 'codec': codec?.toJson(),
   'export_file': ?exportFile,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'channel', 'codec', 'export_file'}.contains(key)); } 
-RealtimekitAudioConfig copyWith({RealtimekitAudioConfigChannel? Function()? channel, RealtimekitAudioConfigCodec? Function()? codec, bool? Function()? exportFile, }) { return RealtimekitAudioConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'channel', 'codec', 'export_file'}.contains(key));}
+RealtimekitAudioConfig copyWith({RealtimekitAudioConfigChannel? Function()? channel, RealtimekitAudioConfigCodec? Function()? codec, bool? Function()? exportFile, }) {return RealtimekitAudioConfig(
   channel: channel != null ? channel() : this.channel,
   codec: codec != null ? codec() : this.codec,
   exportFile: exportFile != null ? exportFile() : this.exportFile,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitAudioConfig &&
           channel == other.channel &&
           codec == other.codec &&
-          exportFile == other.exportFile; } 
-@override int get hashCode { return Object.hash(channel, codec, exportFile); } 
-@override String toString() { return 'RealtimekitAudioConfig(channel: $channel, codec: $codec, exportFile: $exportFile)'; } 
- }
+          exportFile == other.exportFile;}
+@override int get hashCode {return Object.hash(channel, codec, exportFile);}
+@override String toString() {return 'RealtimekitAudioConfig(channel: $channel, codec: $codec, exportFile: $exportFile)';}
+}

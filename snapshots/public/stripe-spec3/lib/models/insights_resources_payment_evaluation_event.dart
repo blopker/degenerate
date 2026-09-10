@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_dispute_opened.dart';import 'insights_resources_payment_evaluation_early_fraud_warning_received.dart';import 'insights_resources_payment_evaluation_refunded.dart';import 'insights_resources_payment_evaluation_user_intervention_raised.dart';import 'insights_resources_payment_evaluation_user_intervention_resolved.dart';/// Indicates the type of event attached to the payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationEventType {const InsightsResourcesPaymentEvaluationEventType._(this.value);
 
-factory InsightsResourcesPaymentEvaluationEventType.fromJson(String json) { return switch (json) {
+factory InsightsResourcesPaymentEvaluationEventType.fromJson(String json) {return switch (json) {
   'dispute_opened' => disputeOpened,
   'early_fraud_warning_received' => earlyFraudWarningReceived,
   'refunded' => refunded,
   'user_intervention_raised' => userInterventionRaised,
   'user_intervention_resolved' => userInterventionResolved,
   _ => InsightsResourcesPaymentEvaluationEventType._(json),
-}; }
+};}
 
 static const InsightsResourcesPaymentEvaluationEventType disputeOpened = InsightsResourcesPaymentEvaluationEventType._('dispute_opened');
 
@@ -26,18 +26,18 @@ static const List<InsightsResourcesPaymentEvaluationEventType> values = [dispute
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationEventType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationEventType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationEventType($value)';}
+}
 /// Event reported for this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationEvent {const InsightsResourcesPaymentEvaluationEvent({required this.occurredAt, required this.type, this.disputeOpened, this.earlyFraudWarningReceived, this.refunded, this.userInterventionRaised, this.userInterventionResolved, });
 
-factory InsightsResourcesPaymentEvaluationEvent.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationEvent(
+factory InsightsResourcesPaymentEvaluationEvent.fromJson(Map<String, dynamic> json) {return InsightsResourcesPaymentEvaluationEvent(
   disputeOpened: json['dispute_opened'] != null ? InsightsResourcesPaymentEvaluationDisputeOpened.fromJson(json['dispute_opened'] as Map<String, dynamic>) : null,
   earlyFraudWarningReceived: json['early_fraud_warning_received'] != null ? InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived.fromJson(json['early_fraud_warning_received'] as Map<String, dynamic>) : null,
   occurredAt: (json['occurred_at'] as num).toInt(),
@@ -45,7 +45,7 @@ factory InsightsResourcesPaymentEvaluationEvent.fromJson(Map<String, dynamic> js
   type: InsightsResourcesPaymentEvaluationEventType.fromJson(json['type'] as String),
   userInterventionRaised: json['user_intervention_raised'] != null ? InsightsResourcesPaymentEvaluationUserInterventionRaised.fromJson(json['user_intervention_raised'] as Map<String, dynamic>) : null,
   userInterventionResolved: json['user_intervention_resolved'] != null ? InsightsResourcesPaymentEvaluationUserInterventionResolved.fromJson(json['user_intervention_resolved'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final InsightsResourcesPaymentEvaluationDisputeOpened? disputeOpened;
 
@@ -63,7 +63,7 @@ final InsightsResourcesPaymentEvaluationUserInterventionRaised? userIntervention
 
 final InsightsResourcesPaymentEvaluationUserInterventionResolved? userInterventionResolved;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (disputeOpened != null) 'dispute_opened': disputeOpened?.toJson(),
   if (earlyFraudWarningReceived != null) 'early_fraud_warning_received': earlyFraudWarningReceived?.toJson(),
   'occurred_at': occurredAt,
@@ -71,10 +71,10 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (userInterventionRaised != null) 'user_intervention_raised': userInterventionRaised?.toJson(),
   if (userInterventionResolved != null) 'user_intervention_resolved': userInterventionResolved?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('occurred_at') && json['occurred_at'] is num &&
-      json.containsKey('type'); } 
-InsightsResourcesPaymentEvaluationEvent copyWith({InsightsResourcesPaymentEvaluationDisputeOpened? Function()? disputeOpened, InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived? Function()? earlyFraudWarningReceived, int? occurredAt, InsightsResourcesPaymentEvaluationRefunded? Function()? refunded, InsightsResourcesPaymentEvaluationEventType? type, InsightsResourcesPaymentEvaluationUserInterventionRaised? Function()? userInterventionRaised, InsightsResourcesPaymentEvaluationUserInterventionResolved? Function()? userInterventionResolved, }) { return InsightsResourcesPaymentEvaluationEvent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('occurred_at') && json['occurred_at'] is num &&
+      json.containsKey('type');}
+InsightsResourcesPaymentEvaluationEvent copyWith({InsightsResourcesPaymentEvaluationDisputeOpened? Function()? disputeOpened, InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived? Function()? earlyFraudWarningReceived, int? occurredAt, InsightsResourcesPaymentEvaluationRefunded? Function()? refunded, InsightsResourcesPaymentEvaluationEventType? type, InsightsResourcesPaymentEvaluationUserInterventionRaised? Function()? userInterventionRaised, InsightsResourcesPaymentEvaluationUserInterventionResolved? Function()? userInterventionResolved, }) {return InsightsResourcesPaymentEvaluationEvent(
   disputeOpened: disputeOpened != null ? disputeOpened() : this.disputeOpened,
   earlyFraudWarningReceived: earlyFraudWarningReceived != null ? earlyFraudWarningReceived() : this.earlyFraudWarningReceived,
   occurredAt: occurredAt ?? this.occurredAt,
@@ -82,8 +82,8 @@ InsightsResourcesPaymentEvaluationEvent copyWith({InsightsResourcesPaymentEvalua
   type: type ?? this.type,
   userInterventionRaised: userInterventionRaised != null ? userInterventionRaised() : this.userInterventionRaised,
   userInterventionResolved: userInterventionResolved != null ? userInterventionResolved() : this.userInterventionResolved,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationEvent &&
           disputeOpened == other.disputeOpened &&
           earlyFraudWarningReceived == other.earlyFraudWarningReceived &&
@@ -91,7 +91,7 @@ InsightsResourcesPaymentEvaluationEvent copyWith({InsightsResourcesPaymentEvalua
           refunded == other.refunded &&
           type == other.type &&
           userInterventionRaised == other.userInterventionRaised &&
-          userInterventionResolved == other.userInterventionResolved; } 
-@override int get hashCode { return Object.hash(disputeOpened, earlyFraudWarningReceived, occurredAt, refunded, type, userInterventionRaised, userInterventionResolved); } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationEvent(disputeOpened: $disputeOpened, earlyFraudWarningReceived: $earlyFraudWarningReceived, occurredAt: $occurredAt, refunded: $refunded, type: $type, userInterventionRaised: $userInterventionRaised, userInterventionResolved: $userInterventionResolved)'; } 
- }
+          userInterventionResolved == other.userInterventionResolved;}
+@override int get hashCode {return Object.hash(disputeOpened, earlyFraudWarningReceived, occurredAt, refunded, type, userInterventionRaised, userInterventionResolved);}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationEvent(disputeOpened: $disputeOpened, earlyFraudWarningReceived: $earlyFraudWarningReceived, occurredAt: $occurredAt, refunded: $refunded, type: $type, userInterventionRaised: $userInterventionRaised, userInterventionResolved: $userInterventionResolved)';}
+}

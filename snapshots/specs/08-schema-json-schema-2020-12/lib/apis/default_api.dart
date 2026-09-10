@@ -10,7 +10,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 
 ///
 /// `POST /shapes`
-Future<ApiResult<ShapeResponse?, Never>> createShape({required ShapeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShapeResponse?, Never>> createShape({required ShapeRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -28,5 +28,5 @@ final json = jsonDecode(response.body);
 return json != null ? ShapeResponse.fromJson(json as dynamic) : null;
   },
 );
- } 
- }
+}
+}

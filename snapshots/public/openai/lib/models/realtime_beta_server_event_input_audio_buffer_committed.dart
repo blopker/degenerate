@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.committed`.
 @immutable final class RealtimeBetaServerEventInputAudioBufferCommittedType {const RealtimeBetaServerEventInputAudioBufferCommittedType._(this.value);
 
-factory RealtimeBetaServerEventInputAudioBufferCommittedType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventInputAudioBufferCommittedType.fromJson(String json) {return switch (json) {
   'input_audio_buffer.committed' => inputAudioBufferCommitted,
   _ => RealtimeBetaServerEventInputAudioBufferCommittedType._(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventInputAudioBufferCommittedType inputAudioBufferCommitted = RealtimeBetaServerEventInputAudioBufferCommittedType._('input_audio_buffer.committed');
 
@@ -14,14 +14,14 @@ static const List<RealtimeBetaServerEventInputAudioBufferCommittedType> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventInputAudioBufferCommittedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventInputAudioBufferCommittedType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeBetaServerEventInputAudioBufferCommittedType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeBetaServerEventInputAudioBufferCommittedType($value)';}
+}
 /// Returned when an input audio buffer is committed, either by the client or
 /// automatically in server VAD mode. The `item_id` property is the ID of the user
 /// message item that will be created, thus a `conversation.item.created` event
@@ -29,12 +29,12 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class RealtimeBetaServerEventInputAudioBufferCommitted {const RealtimeBetaServerEventInputAudioBufferCommitted({required this.eventId, required this.type, required this.itemId, this.previousItemId = const Omittable.absent(), });
 
-factory RealtimeBetaServerEventInputAudioBufferCommitted.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventInputAudioBufferCommitted(
+factory RealtimeBetaServerEventInputAudioBufferCommitted.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventInputAudioBufferCommitted(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventInputAudioBufferCommittedType.fromJson(json['type'] as String),
   previousItemId: json.containsKey('previous_item_id') ? Omittable(json['previous_item_id'] as String?) : const Omittable.absent(),
   itemId: json['item_id'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -50,27 +50,27 @@ final Omittable<String?> previousItemId;
 /// The ID of the user message item that will be created.
 final String itemId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   if (previousItemId.isPresent) 'previous_item_id': previousItemId.value,
   'item_id': itemId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
-      json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeBetaServerEventInputAudioBufferCommitted copyWith({String? eventId, RealtimeBetaServerEventInputAudioBufferCommittedType? type, Omittable<String?>? previousItemId, String? itemId, }) { return RealtimeBetaServerEventInputAudioBufferCommitted(
+      json.containsKey('item_id') && json['item_id'] is String;}
+RealtimeBetaServerEventInputAudioBufferCommitted copyWith({String? eventId, RealtimeBetaServerEventInputAudioBufferCommittedType? type, Omittable<String?>? previousItemId, String? itemId, }) {return RealtimeBetaServerEventInputAudioBufferCommitted(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   previousItemId: previousItemId ?? this.previousItemId,
   itemId: itemId ?? this.itemId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeBetaServerEventInputAudioBufferCommitted &&
           eventId == other.eventId &&
           type == other.type &&
           previousItemId == other.previousItemId &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, previousItemId, itemId); } 
-@override String toString() { return 'RealtimeBetaServerEventInputAudioBufferCommitted(eventId: $eventId, type: $type, previousItemId: $previousItemId, itemId: $itemId)'; } 
- }
+          itemId == other.itemId;}
+@override int get hashCode {return Object.hash(eventId, type, previousItemId, itemId);}
+@override String toString() {return 'RealtimeBetaServerEventInputAudioBufferCommitted(eventId: $eventId, type: $type, previousItemId: $previousItemId, itemId: $itemId)';}
+}

@@ -3,30 +3,30 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_account_resource_type_base_enum.dart';import 'resource_tagging_resource_id.dart';/// Request body schema for deleting tags from account-level resources.
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelBase {const ResourceTaggingDeleteTagsRequestAccountLevelBase({required this.resourceId, required this.resourceType, });
 
-factory ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelBase(
+factory ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(Map<String, dynamic> json) {return ResourceTaggingDeleteTagsRequestAccountLevelBase(
   resourceId: ResourceTaggingResourceId.fromJson(json['resource_id'] as String),
   resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson(json['resource_type'] as String),
-); }
+);}
 
 final ResourceTaggingResourceId resourceId;
 
 /// Enum for base account-level resource types (those with no extra required fields).
 final ResourceTaggingAccountResourceTypeBaseEnum resourceType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'resource_id': resourceId.toJson(),
   'resource_type': resourceType.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('resource_id') &&
-      json.containsKey('resource_type'); } 
-ResourceTaggingDeleteTagsRequestAccountLevelBase copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingAccountResourceTypeBaseEnum? resourceType, }) { return ResourceTaggingDeleteTagsRequestAccountLevelBase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('resource_id') &&
+      json.containsKey('resource_type');}
+ResourceTaggingDeleteTagsRequestAccountLevelBase copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingAccountResourceTypeBaseEnum? resourceType, }) {return ResourceTaggingDeleteTagsRequestAccountLevelBase(
   resourceId: resourceId ?? this.resourceId,
   resourceType: resourceType ?? this.resourceType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResourceTaggingDeleteTagsRequestAccountLevelBase &&
           resourceId == other.resourceId &&
-          resourceType == other.resourceType; } 
-@override int get hashCode { return Object.hash(resourceId, resourceType); } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceId: $resourceId, resourceType: $resourceType)'; } 
- }
+          resourceType == other.resourceType;}
+@override int get hashCode {return Object.hash(resourceId, resourceType);}
+@override String toString() {return 'ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceId: $resourceId, resourceType: $resourceType)';}
+}

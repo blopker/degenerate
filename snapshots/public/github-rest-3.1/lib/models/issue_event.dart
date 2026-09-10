@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'integration.dart';import 'issue.dart';import 'issue_event_dismissed_review.dart';import 'issue_event_label.dart';import 'issue_event_milestone.dart';import 'issue_event_project_card.dart';import 'issue_event_rename.dart';import 'simple_user.dart';import 'team.dart';/// Issue Event
 @immutable final class IssueEvent {const IssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, this.issue = const Omittable.absent(), this.label, this.assignee = const Omittable.absent(), this.assigner = const Omittable.absent(), this.reviewRequester = const Omittable.absent(), this.requestedReviewer = const Omittable.absent(), this.requestedTeam, this.dismissedReview, this.milestone, this.projectCard, this.rename, this.authorAssociation, this.lockReason = const Omittable.absent(), this.performedViaGithubApp = const Omittable.absent(), });
 
-factory IssueEvent.fromJson(Map<String, dynamic> json) { return IssueEvent(
+factory IssueEvent.fromJson(Map<String, dynamic> json) {return IssueEvent(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: Uri.parse(json['url'] as String),
@@ -26,7 +26,7 @@ factory IssueEvent.fromJson(Map<String, dynamic> json) { return IssueEvent(
   authorAssociation: json['author_association'] != null ? AuthorAssociation.fromJson(json['author_association'] as String) : null,
   lockReason: json.containsKey('lock_reason') ? Omittable(json['lock_reason'] as String?) : const Omittable.absent(),
   performedViaGithubApp: json.containsKey('performed_via_github_app') ? Omittable(json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 final int id;
 
@@ -73,7 +73,7 @@ final Omittable<String?> lockReason;
 
 final Omittable<Integration?> performedViaGithubApp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url.toString(),
@@ -96,16 +96,16 @@ Map<String, dynamic> toJson() { return {
   if (authorAssociation != null) 'author_association': authorAssociation?.toJson(),
   if (lockReason.isPresent) 'lock_reason': lockReason.value,
   if (performedViaGithubApp.isPresent) 'performed_via_github_app': performedViaGithubApp.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('actor') &&
       json.containsKey('event') && json['event'] is String &&
       json.containsKey('commit_id') && (json['commit_id'] == null || json['commit_id'] is String) &&
       json.containsKey('commit_url') && (json['commit_url'] == null || json['commit_url'] is String) &&
-      json.containsKey('created_at') && json['created_at'] is String; } 
-IssueEvent copyWith({int? id, String? nodeId, Uri? url, SimpleUser? Function()? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, DateTime? createdAt, Omittable<Issue?>? issue, IssueEventLabel? Function()? label, Omittable<SimpleUser?>? assignee, Omittable<SimpleUser?>? assigner, Omittable<SimpleUser?>? reviewRequester, Omittable<SimpleUser?>? requestedReviewer, Team? Function()? requestedTeam, IssueEventDismissedReview? Function()? dismissedReview, IssueEventMilestone? Function()? milestone, IssueEventProjectCard? Function()? projectCard, IssueEventRename? Function()? rename, AuthorAssociation? Function()? authorAssociation, Omittable<String?>? lockReason, Omittable<Integration?>? performedViaGithubApp, }) { return IssueEvent(
+      json.containsKey('created_at') && json['created_at'] is String;}
+IssueEvent copyWith({int? id, String? nodeId, Uri? url, SimpleUser? Function()? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, DateTime? createdAt, Omittable<Issue?>? issue, IssueEventLabel? Function()? label, Omittable<SimpleUser?>? assignee, Omittable<SimpleUser?>? assigner, Omittable<SimpleUser?>? reviewRequester, Omittable<SimpleUser?>? requestedReviewer, Team? Function()? requestedTeam, IssueEventDismissedReview? Function()? dismissedReview, IssueEventMilestone? Function()? milestone, IssueEventProjectCard? Function()? projectCard, IssueEventRename? Function()? rename, AuthorAssociation? Function()? authorAssociation, Omittable<String?>? lockReason, Omittable<Integration?>? performedViaGithubApp, }) {return IssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -128,8 +128,8 @@ IssueEvent copyWith({int? id, String? nodeId, Uri? url, SimpleUser? Function()? 
   authorAssociation: authorAssociation != null ? authorAssociation() : this.authorAssociation,
   lockReason: lockReason ?? this.lockReason,
   performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssueEvent &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -152,7 +152,7 @@ IssueEvent copyWith({int? id, String? nodeId, Uri? url, SimpleUser? Function()? 
           rename == other.rename &&
           authorAssociation == other.authorAssociation &&
           lockReason == other.lockReason &&
-          performedViaGithubApp == other.performedViaGithubApp; } 
-@override int get hashCode { return Object.hashAll([id, nodeId, url, actor, event, commitId, commitUrl, createdAt, issue, label, assignee, assigner, reviewRequester, requestedReviewer, requestedTeam, dismissedReview, milestone, projectCard, rename, authorAssociation, lockReason, performedViaGithubApp]); } 
-@override String toString() { return 'IssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, issue: $issue, label: $label, assignee: $assignee, assigner: $assigner, reviewRequester: $reviewRequester, requestedReviewer: $requestedReviewer, requestedTeam: $requestedTeam, dismissedReview: $dismissedReview, milestone: $milestone, projectCard: $projectCard, rename: $rename, authorAssociation: $authorAssociation, lockReason: $lockReason, performedViaGithubApp: $performedViaGithubApp)'; } 
- }
+          performedViaGithubApp == other.performedViaGithubApp;}
+@override int get hashCode {return Object.hashAll([id, nodeId, url, actor, event, commitId, commitUrl, createdAt, issue, label, assignee, assigner, reviewRequester, requestedReviewer, requestedTeam, dismissedReview, milestone, projectCard, rename, authorAssociation, lockReason, performedViaGithubApp]);}
+@override String toString() {return 'IssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, issue: $issue, label: $label, assignee: $assignee, assigner: $assigner, reviewRequester: $reviewRequester, requestedReviewer: $requestedReviewer, requestedTeam: $requestedTeam, dismissedReview: $dismissedReview, milestone: $milestone, projectCard: $projectCard, rename: $rename, authorAssociation: $authorAssociation, lockReason: $lockReason, performedViaGithubApp: $performedViaGithubApp)';}
+}

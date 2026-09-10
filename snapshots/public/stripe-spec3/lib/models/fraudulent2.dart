@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fraudulent2_additional_documentation.dart';import 'fraudulent2_explanation.dart';@immutable final class Fraudulent2 {const Fraudulent2({this.additionalDocumentation, this.explanation, });
 
-factory Fraudulent2.fromJson(Map<String, dynamic> json) { return Fraudulent2(
+factory Fraudulent2.fromJson(Map<String, dynamic> json) {return Fraudulent2(
   additionalDocumentation: json['additional_documentation'] != null ? Fraudulent2AdditionalDocumentation.fromJson(json['additional_documentation']) : null,
   explanation: json['explanation'] != null ? Fraudulent2Explanation.fromJson(json['explanation']) : null,
-); }
+);}
 
 final Fraudulent2AdditionalDocumentation? additionalDocumentation;
 
 final Fraudulent2Explanation? explanation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (additionalDocumentation != null) 'additional_documentation': additionalDocumentation?.toJson(),
   if (explanation != null) 'explanation': explanation?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'explanation'}.contains(key)); } 
-Fraudulent2 copyWith({Fraudulent2AdditionalDocumentation? Function()? additionalDocumentation, Fraudulent2Explanation? Function()? explanation, }) { return Fraudulent2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'additional_documentation', 'explanation'}.contains(key));}
+Fraudulent2 copyWith({Fraudulent2AdditionalDocumentation? Function()? additionalDocumentation, Fraudulent2Explanation? Function()? explanation, }) {return Fraudulent2(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   explanation: explanation != null ? explanation() : this.explanation,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Fraudulent2 &&
           additionalDocumentation == other.additionalDocumentation &&
-          explanation == other.explanation; } 
-@override int get hashCode { return Object.hash(additionalDocumentation, explanation); } 
-@override String toString() { return 'Fraudulent2(additionalDocumentation: $additionalDocumentation, explanation: $explanation)'; } 
- }
+          explanation == other.explanation;}
+@override int get hashCode {return Object.hash(additionalDocumentation, explanation);}
+@override String toString() {return 'Fraudulent2(additionalDocumentation: $additionalDocumentation, explanation: $explanation)';}
+}

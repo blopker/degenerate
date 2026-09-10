@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_ai_search_response_result_data_content.dart';@immutable final class AutoragConfigAiSearchResponseResultData {const AutoragConfigAiSearchResponseResultData({required this.score, this.attributes, this.content, this.fileId, this.filename, });
 
-factory AutoragConfigAiSearchResponseResultData.fromJson(Map<String, dynamic> json) { return AutoragConfigAiSearchResponseResultData(
+factory AutoragConfigAiSearchResponseResultData.fromJson(Map<String, dynamic> json) {return AutoragConfigAiSearchResponseResultData(
   attributes: json['attributes'] as Map<String, dynamic>?,
   content: (json['content'] as List<dynamic>?)?.map((e) => AutoragConfigAiSearchResponseResultDataContent.fromJson(e as Map<String, dynamic>)).toList(),
   fileId: json['file_id'] as String?,
   filename: json['filename'] as String?,
   score: (json['score'] as num).toDouble(),
-); }
+);}
 
 final Map<String,dynamic>? attributes;
 
@@ -20,28 +20,28 @@ final String? filename;
 
 final double score;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'attributes': ?attributes,
   if (content != null) 'content': content?.map((e) => e.toJson()).toList(),
   'file_id': ?fileId,
   'filename': ?filename,
   'score': score,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('score') && json['score'] is num; } 
-AutoragConfigAiSearchResponseResultData copyWith({Map<String, dynamic>? Function()? attributes, List<AutoragConfigAiSearchResponseResultDataContent>? Function()? content, String? Function()? fileId, String? Function()? filename, double? score, }) { return AutoragConfigAiSearchResponseResultData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('score') && json['score'] is num;}
+AutoragConfigAiSearchResponseResultData copyWith({Map<String, dynamic>? Function()? attributes, List<AutoragConfigAiSearchResponseResultDataContent>? Function()? content, String? Function()? fileId, String? Function()? filename, double? score, }) {return AutoragConfigAiSearchResponseResultData(
   attributes: attributes != null ? attributes() : this.attributes,
   content: content != null ? content() : this.content,
   fileId: fileId != null ? fileId() : this.fileId,
   filename: filename != null ? filename() : this.filename,
   score: score ?? this.score,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AutoragConfigAiSearchResponseResultData &&
           attributes == other.attributes &&
           listEquals(content, other.content) &&
           fileId == other.fileId &&
           filename == other.filename &&
-          score == other.score; } 
-@override int get hashCode { return Object.hash(attributes, Object.hashAll(content ?? const []), fileId, filename, score); } 
-@override String toString() { return 'AutoragConfigAiSearchResponseResultData(attributes: $attributes, content: $content, fileId: $fileId, filename: $filename, score: $score)'; } 
- }
+          score == other.score;}
+@override int get hashCode {return Object.hash(attributes, Object.hashAll(content ?? const []), fileId, filename, score);}
+@override String toString() {return 'AutoragConfigAiSearchResponseResultData(attributes: $attributes, content: $content, fileId: $fileId, filename: $filename, score: $score)';}
+}

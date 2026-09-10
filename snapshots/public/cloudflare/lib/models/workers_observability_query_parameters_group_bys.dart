@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityQueryParametersGroupBysType {const WorkersObservabilityQueryParametersGroupBysType._(this.value);
 
-factory WorkersObservabilityQueryParametersGroupBysType.fromJson(String json) { return switch (json) {
+factory WorkersObservabilityQueryParametersGroupBysType.fromJson(String json) {return switch (json) {
   'string' => string,
   'number' => number,
   'boolean' => boolean,
   _ => WorkersObservabilityQueryParametersGroupBysType._(json),
-}; }
+};}
 
 static const WorkersObservabilityQueryParametersGroupBysType string = WorkersObservabilityQueryParametersGroupBysType._('string');
 
@@ -19,39 +19,39 @@ static const List<WorkersObservabilityQueryParametersGroupBysType> values = [str
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersObservabilityQueryParametersGroupBysType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersObservabilityQueryParametersGroupBysType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersObservabilityQueryParametersGroupBysType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersObservabilityQueryParametersGroupBysType($value)';}
+}
 @immutable final class WorkersObservabilityQueryParametersGroupBys {const WorkersObservabilityQueryParametersGroupBys({required this.type, required this.value, });
 
-factory WorkersObservabilityQueryParametersGroupBys.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryParametersGroupBys(
+factory WorkersObservabilityQueryParametersGroupBys.fromJson(Map<String, dynamic> json) {return WorkersObservabilityQueryParametersGroupBys(
   type: WorkersObservabilityQueryParametersGroupBysType.fromJson(json['type'] as String),
   value: json['value'] as String,
-); }
+);}
 
 final WorkersObservabilityQueryParametersGroupBysType type;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('value') && json['value'] is String; } 
-WorkersObservabilityQueryParametersGroupBys copyWith({WorkersObservabilityQueryParametersGroupBysType? type, String? value, }) { return WorkersObservabilityQueryParametersGroupBys(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('value') && json['value'] is String;}
+WorkersObservabilityQueryParametersGroupBys copyWith({WorkersObservabilityQueryParametersGroupBysType? type, String? value, }) {return WorkersObservabilityQueryParametersGroupBys(
   type: type ?? this.type,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersObservabilityQueryParametersGroupBys &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(type, value); } 
-@override String toString() { return 'WorkersObservabilityQueryParametersGroupBys(type: $type, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(type, value);}
+@override String toString() {return 'WorkersObservabilityQueryParametersGroupBys(type: $type, value: $value)';}
+}

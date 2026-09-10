@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal {const UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal({this.aiInput, this.aiTrain, this.search, });
 
-factory UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal(
+factory UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal(
   aiInput: json['ai-input'] as String?,
   aiTrain: json['ai-train'] as String?,
   search: json['search'] as String?,
-); }
+);}
 
 final String? aiInput;
 
@@ -14,22 +14,22 @@ final String? aiTrain;
 
 final String? search;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ai-input': ?aiInput,
   'ai-train': ?aiTrain,
   'search': ?search,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ai-input', 'ai-train', 'search'}.contains(key)); } 
-UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal copyWith({String? Function()? aiInput, String? Function()? aiTrain, String? Function()? search, }) { return UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ai-input', 'ai-train', 'search'}.contains(key));}
+UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal copyWith({String? Function()? aiInput, String? Function()? aiTrain, String? Function()? search, }) {return UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal(
   aiInput: aiInput != null ? aiInput() : this.aiInput,
   aiTrain: aiTrain != null ? aiTrain() : this.aiTrain,
   search: search != null ? search() : this.search,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal &&
           aiInput == other.aiInput &&
           aiTrain == other.aiTrain &&
-          search == other.search; } 
-@override int get hashCode { return Object.hash(aiInput, aiTrain, search); } 
-@override String toString() { return 'UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal(aiInput: $aiInput, aiTrain: $aiTrain, search: $search)'; } 
- }
+          search == other.search;}
+@override int get hashCode {return Object.hash(aiInput, aiTrain, search);}
+@override String toString() {return 'UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal(aiInput: $aiInput, aiTrain: $aiTrain, search: $search)';}
+}

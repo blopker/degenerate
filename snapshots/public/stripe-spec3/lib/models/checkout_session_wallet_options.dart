@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_link_wallet_options.dart';/// 
 @immutable final class CheckoutSessionWalletOptions {const CheckoutSessionWalletOptions({this.link});
 
-factory CheckoutSessionWalletOptions.fromJson(Map<String, dynamic> json) { return CheckoutSessionWalletOptions(
+factory CheckoutSessionWalletOptions.fromJson(Map<String, dynamic> json) {return CheckoutSessionWalletOptions(
   link: json['link'] != null ? CheckoutLinkWalletOptions.fromJson(json['link'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final CheckoutLinkWalletOptions? link;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (link != null) 'link': link?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'link'}.contains(key)); } 
-CheckoutSessionWalletOptions copyWith({CheckoutLinkWalletOptions? Function()? link}) { return CheckoutSessionWalletOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'link'}.contains(key));}
+CheckoutSessionWalletOptions copyWith({CheckoutLinkWalletOptions? Function()? link}) {return CheckoutSessionWalletOptions(
   link: link != null ? link() : this.link,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CheckoutSessionWalletOptions &&
-          link == other.link; } 
-@override int get hashCode { return link.hashCode; } 
-@override String toString() { return 'CheckoutSessionWalletOptions(link: $link)'; } 
- }
+          link == other.link;}
+@override int get hashCode {return link.hashCode;}
+@override String toString() {return 'CheckoutSessionWalletOptions(link: $link)';}
+}

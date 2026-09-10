@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_thread_unresolved_pull_request.dart';import 'webhook_pull_request_review_thread_unresolved_thread.dart';@immutable final class WebhookPullRequestReviewThreadUnresolvedAction {const WebhookPullRequestReviewThreadUnresolvedAction._(this.value);
 
-factory WebhookPullRequestReviewThreadUnresolvedAction.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewThreadUnresolvedAction.fromJson(String json) {return switch (json) {
   'unresolved' => unresolved,
   _ => WebhookPullRequestReviewThreadUnresolvedAction._(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewThreadUnresolvedAction unresolved = WebhookPullRequestReviewThreadUnresolvedAction._('unresolved');
 
@@ -13,17 +13,17 @@ static const List<WebhookPullRequestReviewThreadUnresolvedAction> values = [unre
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewThreadUnresolvedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewThreadUnresolvedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestReviewThreadUnresolvedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewThreadUnresolvedAction($value)';}
+}
 @immutable final class WebhookPullRequestReviewThreadUnresolved {const WebhookPullRequestReviewThreadUnresolved({required this.action, required this.pullRequest, required this.repository, required this.thread, this.enterprise, this.installation, this.organization, this.sender, this.updatedAt = const Omittable.absent(), });
 
-factory WebhookPullRequestReviewThreadUnresolved.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadUnresolved(
+factory WebhookPullRequestReviewThreadUnresolved.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewThreadUnresolved(
   action: WebhookPullRequestReviewThreadUnresolvedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -33,7 +33,7 @@ factory WebhookPullRequestReviewThreadUnresolved.fromJson(Map<String, dynamic> j
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
   thread: WebhookPullRequestReviewThreadUnresolvedThread.fromJson(json['thread'] as Map<String, dynamic>),
   updatedAt: json.containsKey('updated_at') ? Omittable(json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 final WebhookPullRequestReviewThreadUnresolvedAction action;
 
@@ -53,7 +53,7 @@ final WebhookPullRequestReviewThreadUnresolvedThread thread;
 
 final Omittable<DateTime?> updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -63,12 +63,12 @@ Map<String, dynamic> toJson() { return {
   if (sender != null) 'sender': sender?.toJson(),
   'thread': thread.toJson(),
   if (updatedAt.isPresent) 'updated_at': updatedAt.value?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
-      json.containsKey('thread'); } 
-WebhookPullRequestReviewThreadUnresolved copyWith({WebhookPullRequestReviewThreadUnresolvedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestReviewThreadUnresolvedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? Function()? sender, WebhookPullRequestReviewThreadUnresolvedThread? thread, Omittable<DateTime?>? updatedAt, }) { return WebhookPullRequestReviewThreadUnresolved(
+      json.containsKey('thread');}
+WebhookPullRequestReviewThreadUnresolved copyWith({WebhookPullRequestReviewThreadUnresolvedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestReviewThreadUnresolvedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? Function()? sender, WebhookPullRequestReviewThreadUnresolvedThread? thread, Omittable<DateTime?>? updatedAt, }) {return WebhookPullRequestReviewThreadUnresolved(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -78,8 +78,8 @@ WebhookPullRequestReviewThreadUnresolved copyWith({WebhookPullRequestReviewThrea
   sender: sender != null ? sender() : this.sender,
   thread: thread ?? this.thread,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestReviewThreadUnresolved &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -89,7 +89,7 @@ WebhookPullRequestReviewThreadUnresolved copyWith({WebhookPullRequestReviewThrea
           repository == other.repository &&
           sender == other.sender &&
           thread == other.thread &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, pullRequest, repository, sender, thread, updatedAt); } 
-@override String toString() { return 'WebhookPullRequestReviewThreadUnresolved(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender, thread: $thread, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, organization, pullRequest, repository, sender, thread, updatedAt);}
+@override String toString() {return 'WebhookPullRequestReviewThreadUnresolved(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender, thread: $thread, updatedAt: $updatedAt)';}
+}

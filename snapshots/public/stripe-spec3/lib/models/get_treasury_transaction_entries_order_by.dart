@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryTransactionEntriesOrderBy {const GetTreasuryTransactionEntriesOrderBy._(this.value);
 
-factory GetTreasuryTransactionEntriesOrderBy.fromJson(String json) { return switch (json) {
+factory GetTreasuryTransactionEntriesOrderBy.fromJson(String json) {return switch (json) {
   'created' => created,
   'effective_at' => effectiveAt,
   _ => GetTreasuryTransactionEntriesOrderBy._(json),
-}; }
+};}
 
 static const GetTreasuryTransactionEntriesOrderBy created = GetTreasuryTransactionEntriesOrderBy._('created');
 
@@ -16,11 +16,11 @@ static const List<GetTreasuryTransactionEntriesOrderBy> values = [created, effec
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetTreasuryTransactionEntriesOrderBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetTreasuryTransactionEntriesOrderBy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetTreasuryTransactionEntriesOrderBy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetTreasuryTransactionEntriesOrderBy($value)';}
+}

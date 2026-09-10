@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions {const DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions._(this.value);
 
-factory DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions.fromJson(String json) { return switch (json) {
+factory DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions.fromJson(String json) {return switch (json) {
   'missing_customer_identifiers' => missingCustomerIdentifiers,
   'missing_disputed_transaction_description' => missingDisputedTransactionDescription,
   'missing_merchandise_or_services' => missingMerchandiseOrServices,
   'missing_prior_undisputed_transaction_description' => missingPriorUndisputedTransactionDescription,
   'missing_prior_undisputed_transactions' => missingPriorUndisputedTransactions,
   _ => DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions._(json),
-}; }
+};}
 
 static const DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions missingCustomerIdentifiers = DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions._('missing_customer_identifiers');
 
@@ -25,23 +25,23 @@ static const List<DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActio
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions($value)';}
+}
 /// Visa Compelling Evidence 3.0 eligibility status.
 @immutable final class DisputeEnhancedEligibilityVisaCompellingEvidence3Status {const DisputeEnhancedEligibilityVisaCompellingEvidence3Status._(this.value);
 
-factory DisputeEnhancedEligibilityVisaCompellingEvidence3Status.fromJson(String json) { return switch (json) {
+factory DisputeEnhancedEligibilityVisaCompellingEvidence3Status.fromJson(String json) {return switch (json) {
   'not_qualified' => notQualified,
   'qualified' => qualified,
   'requires_action' => requiresAction,
   _ => DisputeEnhancedEligibilityVisaCompellingEvidence3Status._(json),
-}; }
+};}
 
 static const DisputeEnhancedEligibilityVisaCompellingEvidence3Status notQualified = DisputeEnhancedEligibilityVisaCompellingEvidence3Status._('not_qualified');
 
@@ -53,21 +53,21 @@ static const List<DisputeEnhancedEligibilityVisaCompellingEvidence3Status> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DisputeEnhancedEligibilityVisaCompellingEvidence3Status && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DisputeEnhancedEligibilityVisaCompellingEvidence3Status($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DisputeEnhancedEligibilityVisaCompellingEvidence3Status && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DisputeEnhancedEligibilityVisaCompellingEvidence3Status($value)';}
+}
 /// 
 @immutable final class DisputeEnhancedEligibilityVisaCompellingEvidence3 {const DisputeEnhancedEligibilityVisaCompellingEvidence3({required this.requiredActions, required this.status, });
 
-factory DisputeEnhancedEligibilityVisaCompellingEvidence3.fromJson(Map<String, dynamic> json) { return DisputeEnhancedEligibilityVisaCompellingEvidence3(
+factory DisputeEnhancedEligibilityVisaCompellingEvidence3.fromJson(Map<String, dynamic> json) {return DisputeEnhancedEligibilityVisaCompellingEvidence3(
   requiredActions: (json['required_actions'] as List<dynamic>).map((e) => DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions.fromJson(e as String)).toList(),
   status: DisputeEnhancedEligibilityVisaCompellingEvidence3Status.fromJson(json['status'] as String),
-); }
+);}
 
 /// List of actions required to qualify dispute for Visa Compelling Evidence 3.0 evidence submission.
 final List<DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions> requiredActions;
@@ -75,20 +75,20 @@ final List<DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions> req
 /// Visa Compelling Evidence 3.0 eligibility status.
 final DisputeEnhancedEligibilityVisaCompellingEvidence3Status status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'required_actions': requiredActions.map((e) => e.toJson()).toList(),
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('required_actions') &&
-      json.containsKey('status'); } 
-DisputeEnhancedEligibilityVisaCompellingEvidence3 copyWith({List<DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions>? requiredActions, DisputeEnhancedEligibilityVisaCompellingEvidence3Status? status, }) { return DisputeEnhancedEligibilityVisaCompellingEvidence3(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('required_actions') &&
+      json.containsKey('status');}
+DisputeEnhancedEligibilityVisaCompellingEvidence3 copyWith({List<DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions>? requiredActions, DisputeEnhancedEligibilityVisaCompellingEvidence3Status? status, }) {return DisputeEnhancedEligibilityVisaCompellingEvidence3(
   requiredActions: requiredActions ?? this.requiredActions,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DisputeEnhancedEligibilityVisaCompellingEvidence3 &&
           listEquals(requiredActions, other.requiredActions) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(Object.hashAll(requiredActions), status); } 
-@override String toString() { return 'DisputeEnhancedEligibilityVisaCompellingEvidence3(requiredActions: $requiredActions, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(Object.hashAll(requiredActions), status);}
+@override String toString() {return 'DisputeEnhancedEligibilityVisaCompellingEvidence3(requiredActions: $requiredActions, status: $status)';}
+}

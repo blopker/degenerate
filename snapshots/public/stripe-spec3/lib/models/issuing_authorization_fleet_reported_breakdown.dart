@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization_fleet_fuel_price_data.dart';import 'issuing_authorization_fleet_non_fuel_price_data.dart';import 'issuing_authorization_fleet_tax_data.dart';/// 
 @immutable final class IssuingAuthorizationFleetReportedBreakdown {const IssuingAuthorizationFleetReportedBreakdown({this.fuel = const Omittable.absent(), this.nonFuel = const Omittable.absent(), this.tax = const Omittable.absent(), });
 
-factory IssuingAuthorizationFleetReportedBreakdown.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFleetReportedBreakdown(
+factory IssuingAuthorizationFleetReportedBreakdown.fromJson(Map<String, dynamic> json) {return IssuingAuthorizationFleetReportedBreakdown(
   fuel: json.containsKey('fuel') ? Omittable(json['fuel'] != null ? IssuingAuthorizationFleetFuelPriceData.fromJson(json['fuel'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   nonFuel: json.containsKey('non_fuel') ? Omittable(json['non_fuel'] != null ? IssuingAuthorizationFleetNonFuelPriceData.fromJson(json['non_fuel'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   tax: json.containsKey('tax') ? Omittable(json['tax'] != null ? IssuingAuthorizationFleetTaxData.fromJson(json['tax'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Breakdown of fuel portion of the purchase.
 final Omittable<IssuingAuthorizationFleetFuelPriceData?> fuel;
@@ -18,22 +18,22 @@ final Omittable<IssuingAuthorizationFleetNonFuelPriceData?> nonFuel;
 /// Information about tax included in this transaction.
 final Omittable<IssuingAuthorizationFleetTaxData?> tax;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (fuel.isPresent) 'fuel': fuel.value?.toJson(),
   if (nonFuel.isPresent) 'non_fuel': nonFuel.value?.toJson(),
   if (tax.isPresent) 'tax': tax.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fuel', 'non_fuel', 'tax'}.contains(key)); } 
-IssuingAuthorizationFleetReportedBreakdown copyWith({Omittable<IssuingAuthorizationFleetFuelPriceData?>? fuel, Omittable<IssuingAuthorizationFleetNonFuelPriceData?>? nonFuel, Omittable<IssuingAuthorizationFleetTaxData?>? tax, }) { return IssuingAuthorizationFleetReportedBreakdown(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'fuel', 'non_fuel', 'tax'}.contains(key));}
+IssuingAuthorizationFleetReportedBreakdown copyWith({Omittable<IssuingAuthorizationFleetFuelPriceData?>? fuel, Omittable<IssuingAuthorizationFleetNonFuelPriceData?>? nonFuel, Omittable<IssuingAuthorizationFleetTaxData?>? tax, }) {return IssuingAuthorizationFleetReportedBreakdown(
   fuel: fuel ?? this.fuel,
   nonFuel: nonFuel ?? this.nonFuel,
   tax: tax ?? this.tax,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingAuthorizationFleetReportedBreakdown &&
           fuel == other.fuel &&
           nonFuel == other.nonFuel &&
-          tax == other.tax; } 
-@override int get hashCode { return Object.hash(fuel, nonFuel, tax); } 
-@override String toString() { return 'IssuingAuthorizationFleetReportedBreakdown(fuel: $fuel, nonFuel: $nonFuel, tax: $tax)'; } 
- }
+          tax == other.tax;}
+@override int get hashCode {return Object.hash(fuel, nonFuel, tax);}
+@override String toString() {return 'IssuingAuthorizationFleetReportedBreakdown(fuel: $fuel, nonFuel: $nonFuel, tax: $tax)';}
+}

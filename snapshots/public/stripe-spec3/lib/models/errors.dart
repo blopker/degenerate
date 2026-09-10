@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'errors_source.dart';import 'payment_intent.dart';import 'payment_method.dart';import 'setup_intent.dart';/// The type of error returned. One of `api_error`, `card_error`, `idempotency_error`, or `invalid_request_error`
 @immutable final class ErrorsType {const ErrorsType._(this.value);
 
-factory ErrorsType.fromJson(String json) { return switch (json) {
+factory ErrorsType.fromJson(String json) {return switch (json) {
   'api_error' => apiError,
   'card_error' => cardError,
   'idempotency_error' => idempotencyError,
   'invalid_request_error' => invalidRequestError,
   _ => ErrorsType._(json),
-}; }
+};}
 
 static const ErrorsType apiError = ErrorsType._('api_error');
 
@@ -23,18 +23,18 @@ static const List<ErrorsType> values = [apiError, cardError, idempotencyError, i
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ErrorsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ErrorsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ErrorsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ErrorsType($value)';}
+}
 /// 
 @immutable final class Errors {const Errors({required this.type, this.adviceCode, this.charge, this.code, this.declineCode, this.docUrl, this.message, this.networkAdviceCode, this.networkDeclineCode, this.param, this.paymentIntent, this.paymentMethod, this.paymentMethodType, this.requestLogUrl, this.setupIntent, this.source, });
 
-factory Errors.fromJson(Map<String, dynamic> json) { return Errors(
+factory Errors.fromJson(Map<String, dynamic> json) {return Errors(
   adviceCode: json['advice_code'] as String?,
   charge: json['charge'] as String?,
   code: json['code'] as String?,
@@ -51,7 +51,7 @@ factory Errors.fromJson(Map<String, dynamic> json) { return Errors(
   setupIntent: json['setup_intent'] != null ? SetupIntent.fromJson(json['setup_intent'] as Map<String, dynamic>) : null,
   source: json['source'] != null ? ErrorsSource.fromJson(json['source']) : null,
   type: ErrorsType.fromJson(json['type'] as String),
-); }
+);}
 
 /// For card errors resulting from a card issuer decline, a short string indicating [how to proceed with an error](https://docs.stripe.com/declines#retrying-issuer-declines) if they provide one.
 final String? adviceCode;
@@ -98,7 +98,7 @@ final ErrorsSource? source;
 /// The type of error returned. One of `api_error`, `card_error`, `idempotency_error`, or `invalid_request_error`
 final ErrorsType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'advice_code': ?adviceCode,
   'charge': ?charge,
   'code': ?code,
@@ -115,9 +115,9 @@ Map<String, dynamic> toJson() { return {
   if (setupIntent != null) 'setup_intent': setupIntent?.toJson(),
   if (source != null) 'source': source?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-Errors copyWith({String? Function()? adviceCode, String? Function()? charge, String? Function()? code, String? Function()? declineCode, String? Function()? docUrl, String? Function()? message, String? Function()? networkAdviceCode, String? Function()? networkDeclineCode, String? Function()? param, PaymentIntent? Function()? paymentIntent, PaymentMethod? Function()? paymentMethod, String? Function()? paymentMethodType, String? Function()? requestLogUrl, SetupIntent? Function()? setupIntent, ErrorsSource? Function()? source, ErrorsType? type, }) { return Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+Errors copyWith({String? Function()? adviceCode, String? Function()? charge, String? Function()? code, String? Function()? declineCode, String? Function()? docUrl, String? Function()? message, String? Function()? networkAdviceCode, String? Function()? networkDeclineCode, String? Function()? param, PaymentIntent? Function()? paymentIntent, PaymentMethod? Function()? paymentMethod, String? Function()? paymentMethodType, String? Function()? requestLogUrl, SetupIntent? Function()? setupIntent, ErrorsSource? Function()? source, ErrorsType? type, }) {return Errors(
   adviceCode: adviceCode != null ? adviceCode() : this.adviceCode,
   charge: charge != null ? charge() : this.charge,
   code: code != null ? code() : this.code,
@@ -134,8 +134,8 @@ Errors copyWith({String? Function()? adviceCode, String? Function()? charge, Str
   setupIntent: setupIntent != null ? setupIntent() : this.setupIntent,
   source: source != null ? source() : this.source,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Errors &&
           adviceCode == other.adviceCode &&
           charge == other.charge &&
@@ -152,7 +152,7 @@ Errors copyWith({String? Function()? adviceCode, String? Function()? charge, Str
           requestLogUrl == other.requestLogUrl &&
           setupIntent == other.setupIntent &&
           source == other.source &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(adviceCode, charge, code, declineCode, docUrl, message, networkAdviceCode, networkDeclineCode, param, paymentIntent, paymentMethod, paymentMethodType, requestLogUrl, setupIntent, source, type); } 
-@override String toString() { return 'Errors(adviceCode: $adviceCode, charge: $charge, code: $code, declineCode: $declineCode, docUrl: $docUrl, message: $message, networkAdviceCode: $networkAdviceCode, networkDeclineCode: $networkDeclineCode, param: $param, paymentIntent: $paymentIntent, paymentMethod: $paymentMethod, paymentMethodType: $paymentMethodType, requestLogUrl: $requestLogUrl, setupIntent: $setupIntent, source: $source, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(adviceCode, charge, code, declineCode, docUrl, message, networkAdviceCode, networkDeclineCode, param, paymentIntent, paymentMethod, paymentMethodType, requestLogUrl, setupIntent, source, type);}
+@override String toString() {return 'Errors(adviceCode: $adviceCode, charge: $charge, code: $code, declineCode: $declineCode, docUrl: $docUrl, message: $message, networkAdviceCode: $networkAdviceCode, networkDeclineCode: $networkDeclineCode, param: $param, paymentIntent: $paymentIntent, paymentMethod: $paymentMethod, paymentMethodType: $paymentMethodType, requestLogUrl: $requestLogUrl, setupIntent: $setupIntent, source: $source, type: $type)';}
+}

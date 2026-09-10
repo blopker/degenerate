@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringGetCommandsResponseCommands {const DigitalExperienceMonitoringGetCommandsResponseCommands({this.completedDate = const Omittable.absent(), this.createdDate, this.deviceId, this.filename = const Omittable.absent(), this.id, this.registrationId, this.status, this.type, this.userEmail, });
 
-factory DigitalExperienceMonitoringGetCommandsResponseCommands.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringGetCommandsResponseCommands(
+factory DigitalExperienceMonitoringGetCommandsResponseCommands.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringGetCommandsResponseCommands(
   completedDate: json.containsKey('completed_date') ? Omittable(json['completed_date'] != null ? DateTime.parse(json['completed_date'] as String) : null) : const Omittable.absent(),
   createdDate: json['created_date'] != null ? DateTime.parse(json['created_date'] as String) : null,
   deviceId: json['device_id'] as String?,
@@ -12,7 +12,7 @@ factory DigitalExperienceMonitoringGetCommandsResponseCommands.fromJson(Map<Stri
   status: json['status'] as String?,
   type: json['type'] as String?,
   userEmail: json['user_email'] as String?,
-); }
+);}
 
 final Omittable<DateTime?> completedDate;
 
@@ -33,7 +33,7 @@ final String? type;
 
 final String? userEmail;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (completedDate.isPresent) 'completed_date': completedDate.value?.toIso8601String(),
   if (createdDate != null) 'created_date': createdDate?.toIso8601String(),
   'device_id': ?deviceId,
@@ -43,9 +43,9 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
   'type': ?type,
   'user_email': ?userEmail,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'completed_date', 'created_date', 'device_id', 'filename', 'id', 'registration_id', 'status', 'type', 'user_email'}.contains(key)); } 
-DigitalExperienceMonitoringGetCommandsResponseCommands copyWith({Omittable<DateTime?>? completedDate, DateTime? Function()? createdDate, String? Function()? deviceId, Omittable<String?>? filename, String? Function()? id, String? Function()? registrationId, String? Function()? status, String? Function()? type, String? Function()? userEmail, }) { return DigitalExperienceMonitoringGetCommandsResponseCommands(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'completed_date', 'created_date', 'device_id', 'filename', 'id', 'registration_id', 'status', 'type', 'user_email'}.contains(key));}
+DigitalExperienceMonitoringGetCommandsResponseCommands copyWith({Omittable<DateTime?>? completedDate, DateTime? Function()? createdDate, String? Function()? deviceId, Omittable<String?>? filename, String? Function()? id, String? Function()? registrationId, String? Function()? status, String? Function()? type, String? Function()? userEmail, }) {return DigitalExperienceMonitoringGetCommandsResponseCommands(
   completedDate: completedDate ?? this.completedDate,
   createdDate: createdDate != null ? createdDate() : this.createdDate,
   deviceId: deviceId != null ? deviceId() : this.deviceId,
@@ -55,8 +55,8 @@ DigitalExperienceMonitoringGetCommandsResponseCommands copyWith({Omittable<DateT
   status: status != null ? status() : this.status,
   type: type != null ? type() : this.type,
   userEmail: userEmail != null ? userEmail() : this.userEmail,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DigitalExperienceMonitoringGetCommandsResponseCommands &&
           completedDate == other.completedDate &&
           createdDate == other.createdDate &&
@@ -66,7 +66,7 @@ DigitalExperienceMonitoringGetCommandsResponseCommands copyWith({Omittable<DateT
           registrationId == other.registrationId &&
           status == other.status &&
           type == other.type &&
-          userEmail == other.userEmail; } 
-@override int get hashCode { return Object.hash(completedDate, createdDate, deviceId, filename, id, registrationId, status, type, userEmail); } 
-@override String toString() { return 'DigitalExperienceMonitoringGetCommandsResponseCommands(completedDate: $completedDate, createdDate: $createdDate, deviceId: $deviceId, filename: $filename, id: $id, registrationId: $registrationId, status: $status, type: $type, userEmail: $userEmail)'; } 
- }
+          userEmail == other.userEmail;}
+@override int get hashCode {return Object.hash(completedDate, createdDate, deviceId, filename, id, registrationId, status, type, userEmail);}
+@override String toString() {return 'DigitalExperienceMonitoringGetCommandsResponseCommands(completedDate: $completedDate, createdDate: $createdDate, deviceId: $deviceId, filename: $filename, id: $id, registrationId: $registrationId, status: $status, type: $type, userEmail: $userEmail)';}
+}

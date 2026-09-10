@@ -4,14 +4,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a p
 /// 
 @immutable final class ResponseImageGenCallPartialImageEvent {const ResponseImageGenCallPartialImageEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, required this.partialImageIndex, required this.partialImageB64, });
 
-factory ResponseImageGenCallPartialImageEvent.fromJson(Map<String, dynamic> json) { return ResponseImageGenCallPartialImageEvent(
+factory ResponseImageGenCallPartialImageEvent.fromJson(Map<String, dynamic> json) {return ResponseImageGenCallPartialImageEvent(
   type: json['type'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   itemId: json['item_id'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
   partialImageIndex: (json['partial_image_index'] as num).toInt(),
   partialImageB64: json['partial_image_b64'] as String,
-); }
+);}
 
 /// The type of the event. Always 'response.image_generation_call.partial_image'.
 final String type;
@@ -31,36 +31,36 @@ final int partialImageIndex;
 /// Base64-encoded partial image data, suitable for rendering as an image.
 final String partialImageB64;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'output_index': outputIndex,
   'item_id': itemId,
   'sequence_number': sequenceNumber,
   'partial_image_index': partialImageIndex,
   'partial_image_b64': partialImageB64,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
       json.containsKey('partial_image_index') && json['partial_image_index'] is num &&
-      json.containsKey('partial_image_b64') && json['partial_image_b64'] is String; } 
-ResponseImageGenCallPartialImageEvent copyWith({String? type, int? outputIndex, String? itemId, int? sequenceNumber, int? partialImageIndex, String? partialImageB64, }) { return ResponseImageGenCallPartialImageEvent(
+      json.containsKey('partial_image_b64') && json['partial_image_b64'] is String;}
+ResponseImageGenCallPartialImageEvent copyWith({String? type, int? outputIndex, String? itemId, int? sequenceNumber, int? partialImageIndex, String? partialImageB64, }) {return ResponseImageGenCallPartialImageEvent(
   type: type ?? this.type,
   outputIndex: outputIndex ?? this.outputIndex,
   itemId: itemId ?? this.itemId,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   partialImageIndex: partialImageIndex ?? this.partialImageIndex,
   partialImageB64: partialImageB64 ?? this.partialImageB64,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseImageGenCallPartialImageEvent &&
           type == other.type &&
           outputIndex == other.outputIndex &&
           itemId == other.itemId &&
           sequenceNumber == other.sequenceNumber &&
           partialImageIndex == other.partialImageIndex &&
-          partialImageB64 == other.partialImageB64; } 
-@override int get hashCode { return Object.hash(type, outputIndex, itemId, sequenceNumber, partialImageIndex, partialImageB64); } 
-@override String toString() { return 'ResponseImageGenCallPartialImageEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, sequenceNumber: $sequenceNumber, partialImageIndex: $partialImageIndex, partialImageB64: $partialImageB64)'; } 
- }
+          partialImageB64 == other.partialImageB64;}
+@override int get hashCode {return Object.hash(type, outputIndex, itemId, sequenceNumber, partialImageIndex, partialImageB64);}
+@override String toString() {return 'ResponseImageGenCallPartialImageEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, sequenceNumber: $sequenceNumber, partialImageIndex: $partialImageIndex, partialImageB64: $partialImageB64)';}
+}

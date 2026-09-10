@@ -13,7 +13,7 @@ final class ApplicationsApi with ApiExecutor {const ApplicationsApi(this.apiConf
 /// Get applications with different filters.
 ///
 /// `GET /accounts/{accountId}/resource-library/applications`
-Future<ApiResult<List<AlexandriaApplication>?, GetApplicationsResponse4xx>> getApplications({required String accountId, String? filter, int? limit, int? offset, String? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AlexandriaApplication>?, GetApplicationsResponse4xx>> getApplications({required String accountId, String? filter, int? limit, int? offset, String? orderBy, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (filter != null) {
   queryParameters['filter'] = filter;
@@ -56,13 +56,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create application
 ///
 /// Create application.
 ///
 /// `POST /accounts/{accountId}/resource-library/applications`
-Future<ApiResult<AlexandriaApplication?, CreateApplicationResponse4xx>> createApplication({required String accountId, required AlexandriaCreateApplicationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AlexandriaApplication?, CreateApplicationResponse4xx>> createApplication({required String accountId, required AlexandriaCreateApplicationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -90,13 +90,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get application By Id
 ///
 /// Get application by ID.
 ///
 /// `GET /accounts/{accountId}/resource-library/applications/{id}`
-Future<ApiResult<AlexandriaApplication?, GetApplicationByIdResponse4xx>> getApplicationById({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AlexandriaApplication?, GetApplicationByIdResponse4xx>> getApplicationById({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -122,13 +122,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update application version
 ///
 /// Update application version.
 ///
 /// `PATCH /accounts/{accountId}/resource-library/applications/{id}`
-Future<ApiResult<AlexandriaApplication?, UpdateApplicationVersionResponse4xx>> updateApplicationVersion({required String accountId, required String id, required AlexandriaUpdateApplicationVersionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AlexandriaApplication?, UpdateApplicationVersionResponse4xx>> updateApplicationVersion({required String accountId, required String id, required AlexandriaUpdateApplicationVersionRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -156,5 +156,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

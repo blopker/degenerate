@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscriptions_resource_payment_method_options.dart';@immutable final class SubscriptionsResourcePaymentSettingsPaymentMethodTypes {const SubscriptionsResourcePaymentSettingsPaymentMethodTypes._(this.value);
 
-factory SubscriptionsResourcePaymentSettingsPaymentMethodTypes.fromJson(String json) { return switch (json) {
+factory SubscriptionsResourcePaymentSettingsPaymentMethodTypes.fromJson(String json) {return switch (json) {
   'ach_credit_transfer' => achCreditTransfer,
   'ach_debit' => achDebit,
   'acss_debit' => acssDebit,
@@ -46,7 +46,7 @@ factory SubscriptionsResourcePaymentSettingsPaymentMethodTypes.fromJson(String j
   'us_bank_account' => usBankAccount,
   'wechat_pay' => wechatPay,
   _ => SubscriptionsResourcePaymentSettingsPaymentMethodTypes._(json),
-}; }
+};}
 
 static const SubscriptionsResourcePaymentSettingsPaymentMethodTypes achCreditTransfer = SubscriptionsResourcePaymentSettingsPaymentMethodTypes._('ach_credit_transfer');
 
@@ -136,22 +136,22 @@ static const List<SubscriptionsResourcePaymentSettingsPaymentMethodTypes> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionsResourcePaymentSettingsPaymentMethodTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionsResourcePaymentSettingsPaymentMethodTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionsResourcePaymentSettingsPaymentMethodTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionsResourcePaymentSettingsPaymentMethodTypes($value)';}
+}
 /// Configure whether Stripe updates `subscription.default_payment_method` when payment succeeds. Defaults to `off`.
 @immutable final class SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod {const SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod._(this.value);
 
-factory SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod.fromJson(String json) { return switch (json) {
+factory SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod.fromJson(String json) {return switch (json) {
   'off' => off,
   'on_subscription' => onSubscription,
   _ => SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod._(json),
-}; }
+};}
 
 static const SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod off = SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod._('off');
 
@@ -161,22 +161,22 @@ static const List<SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod($value)';}
+}
 /// 
 @immutable final class SubscriptionsResourcePaymentSettings {const SubscriptionsResourcePaymentSettings({this.paymentMethodOptions = const Omittable.absent(), this.paymentMethodTypes = const Omittable.absent(), this.saveDefaultPaymentMethod = const Omittable.absent(), });
 
-factory SubscriptionsResourcePaymentSettings.fromJson(Map<String, dynamic> json) { return SubscriptionsResourcePaymentSettings(
+factory SubscriptionsResourcePaymentSettings.fromJson(Map<String, dynamic> json) {return SubscriptionsResourcePaymentSettings(
   paymentMethodOptions: json.containsKey('payment_method_options') ? Omittable(json['payment_method_options'] != null ? SubscriptionsResourcePaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   paymentMethodTypes: json.containsKey('payment_method_types') ? Omittable((json['payment_method_types'] as List<dynamic>?)?.map((e) => SubscriptionsResourcePaymentSettingsPaymentMethodTypes.fromJson(e as String)).toList()) : const Omittable.absent(),
   saveDefaultPaymentMethod: json.containsKey('save_default_payment_method') ? Omittable(json['save_default_payment_method'] != null ? SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod.fromJson(json['save_default_payment_method'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Payment-method-specific configuration to provide to invoices created by the subscription.
 final Omittable<SubscriptionsResourcePaymentMethodOptions?> paymentMethodOptions;
@@ -187,23 +187,23 @@ final Omittable<List<SubscriptionsResourcePaymentSettingsPaymentMethodTypes>?> p
 /// Configure whether Stripe updates `subscription.default_payment_method` when payment succeeds. Defaults to `off`.
 final Omittable<SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod?> saveDefaultPaymentMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (paymentMethodOptions.isPresent) 'payment_method_options': paymentMethodOptions.value?.toJson(),
   if (paymentMethodTypes.isPresent) 'payment_method_types': paymentMethodTypes.value?.map((e) => e.toJson()).toList(),
   if (saveDefaultPaymentMethod.isPresent) 'save_default_payment_method': saveDefaultPaymentMethod.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payment_method_options', 'payment_method_types', 'save_default_payment_method'}.contains(key)); } 
-SubscriptionsResourcePaymentSettings copyWith({Omittable<SubscriptionsResourcePaymentMethodOptions?>? paymentMethodOptions, Omittable<List<SubscriptionsResourcePaymentSettingsPaymentMethodTypes>?>? paymentMethodTypes, Omittable<SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod?>? saveDefaultPaymentMethod, }) { return SubscriptionsResourcePaymentSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'payment_method_options', 'payment_method_types', 'save_default_payment_method'}.contains(key));}
+SubscriptionsResourcePaymentSettings copyWith({Omittable<SubscriptionsResourcePaymentMethodOptions?>? paymentMethodOptions, Omittable<List<SubscriptionsResourcePaymentSettingsPaymentMethodTypes>?>? paymentMethodTypes, Omittable<SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod?>? saveDefaultPaymentMethod, }) {return SubscriptionsResourcePaymentSettings(
   paymentMethodOptions: paymentMethodOptions ?? this.paymentMethodOptions,
   paymentMethodTypes: paymentMethodTypes ?? this.paymentMethodTypes,
   saveDefaultPaymentMethod: saveDefaultPaymentMethod ?? this.saveDefaultPaymentMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SubscriptionsResourcePaymentSettings &&
           paymentMethodOptions == other.paymentMethodOptions &&
           paymentMethodTypes.isPresent == other.paymentMethodTypes.isPresent &&
           listEquals(paymentMethodTypes.value, other.paymentMethodTypes.value) &&
-          saveDefaultPaymentMethod == other.saveDefaultPaymentMethod; } 
-@override int get hashCode { return Object.hash(paymentMethodOptions, Object.hashAll(paymentMethodTypes.value ?? const []), saveDefaultPaymentMethod); } 
-@override String toString() { return 'SubscriptionsResourcePaymentSettings(paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, saveDefaultPaymentMethod: $saveDefaultPaymentMethod)'; } 
- }
+          saveDefaultPaymentMethod == other.saveDefaultPaymentMethod;}
+@override int get hashCode {return Object.hash(paymentMethodOptions, Object.hashAll(paymentMethodTypes.value ?? const []), saveDefaultPaymentMethod);}
+@override String toString() {return 'SubscriptionsResourcePaymentSettings(paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, saveDefaultPaymentMethod: $saveDefaultPaymentMethod)';}
+}

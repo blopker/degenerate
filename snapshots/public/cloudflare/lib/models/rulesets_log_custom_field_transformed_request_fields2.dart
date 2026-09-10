@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The transformed request field to log.
 @immutable final class RulesetsLogCustomFieldTransformedRequestFields2 {const RulesetsLogCustomFieldTransformedRequestFields2({required this.name});
 
-factory RulesetsLogCustomFieldTransformedRequestFields2.fromJson(Map<String, dynamic> json) { return RulesetsLogCustomFieldTransformedRequestFields2(
+factory RulesetsLogCustomFieldTransformedRequestFields2.fromJson(Map<String, dynamic> json) {return RulesetsLogCustomFieldTransformedRequestFields2(
   name: json['name'] as String,
-); }
+);}
 
 /// The name of the header.
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-RulesetsLogCustomFieldTransformedRequestFields2 copyWith({String? name}) { return RulesetsLogCustomFieldTransformedRequestFields2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+RulesetsLogCustomFieldTransformedRequestFields2 copyWith({String? name}) {return RulesetsLogCustomFieldTransformedRequestFields2(
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsLogCustomFieldTransformedRequestFields2 &&
-          name == other.name; } 
-@override int get hashCode { return name.hashCode; } 
-@override String toString() { return 'RulesetsLogCustomFieldTransformedRequestFields2(name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return name.hashCode;}
+@override String toString() {return 'RulesetsLogCustomFieldTransformedRequestFields2(name: $name)';}
+}

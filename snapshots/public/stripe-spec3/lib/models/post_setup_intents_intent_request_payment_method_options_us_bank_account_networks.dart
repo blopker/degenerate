@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworksRequested {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworksRequested._(this.value);
 
-factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworksRequested.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworksRequested.fromJson(String json) {return switch (json) {
   'ach' => ach,
   'us_domestic_wire' => usDomesticWire,
   _ => PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworksRequested._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworksRequested ach = PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworksRequested._('ach');
 
@@ -16,32 +16,32 @@ static const List<PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccount
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworksRequested && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworksRequested($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworksRequested && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworksRequested($value)';}
+}
 @immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworks {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworks({this.requested});
 
-factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworks.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworks(
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworks.fromJson(Map<String, dynamic> json) {return PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworks(
   requested: (json['requested'] as List<dynamic>?)?.map((e) => PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworksRequested.fromJson(e as String)).toList(),
-); }
+);}
 
 final List<PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworksRequested>? requested;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (requested != null) 'requested': requested?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested'}.contains(key)); } 
-PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworks copyWith({List<PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworksRequested>? Function()? requested}) { return PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'requested'}.contains(key));}
+PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworks copyWith({List<PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworksRequested>? Function()? requested}) {return PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworks(
   requested: requested != null ? requested() : this.requested,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworks &&
-          listEquals(requested, other.requested); } 
-@override int get hashCode { return Object.hashAll(requested ?? const []).hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworks(requested: $requested)'; } 
- }
+          listEquals(requested, other.requested);}
+@override int get hashCode {return Object.hashAll(requested ?? const []).hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountNetworks(requested: $requested)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param54_subscriptions_variant1.dart';@immutable final class PaymentMethodOptionsParam54SubscriptionsVariant2 {const PaymentMethodOptionsParam54SubscriptionsVariant2._(this.value);
 
-factory PaymentMethodOptionsParam54SubscriptionsVariant2.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsParam54SubscriptionsVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PaymentMethodOptionsParam54SubscriptionsVariant2._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsParam54SubscriptionsVariant2 $empty = PaymentMethodOptionsParam54SubscriptionsVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PaymentMethodOptionsParam54SubscriptionsVariant2> values = [$e
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsParam54SubscriptionsVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam54SubscriptionsVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsParam54SubscriptionsVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsParam54SubscriptionsVariant2($value)';}
+}
 
 @immutable
 final class PaymentMethodOptionsParam54Subscriptions {

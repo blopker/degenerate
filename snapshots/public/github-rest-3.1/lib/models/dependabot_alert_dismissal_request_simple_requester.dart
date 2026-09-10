@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The user who requested the dismissal.
 @immutable final class DependabotAlertDismissalRequestSimpleRequester {const DependabotAlertDismissalRequestSimpleRequester({this.id, this.login, });
 
-factory DependabotAlertDismissalRequestSimpleRequester.fromJson(Map<String, dynamic> json) { return DependabotAlertDismissalRequestSimpleRequester(
+factory DependabotAlertDismissalRequestSimpleRequester.fromJson(Map<String, dynamic> json) {return DependabotAlertDismissalRequestSimpleRequester(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   login: json['login'] as String?,
-); }
+);}
 
 /// The unique identifier of the user.
 final int? id;
@@ -14,19 +14,19 @@ final int? id;
 /// The login name of the user.
 final String? login;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'login': ?login,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'login'}.contains(key)); } 
-DependabotAlertDismissalRequestSimpleRequester copyWith({int? Function()? id, String? Function()? login, }) { return DependabotAlertDismissalRequestSimpleRequester(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'login'}.contains(key));}
+DependabotAlertDismissalRequestSimpleRequester copyWith({int? Function()? id, String? Function()? login, }) {return DependabotAlertDismissalRequestSimpleRequester(
   id: id != null ? id() : this.id,
   login: login != null ? login() : this.login,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DependabotAlertDismissalRequestSimpleRequester &&
           id == other.id &&
-          login == other.login; } 
-@override int get hashCode { return Object.hash(id, login); } 
-@override String toString() { return 'DependabotAlertDismissalRequestSimpleRequester(id: $id, login: $login)'; } 
- }
+          login == other.login;}
+@override int get hashCode {return Object.hash(id, login);}
+@override String toString() {return 'DependabotAlertDismissalRequestSimpleRequester(id: $id, login: $login)';}
+}

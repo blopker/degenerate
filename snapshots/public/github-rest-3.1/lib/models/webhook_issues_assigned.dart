@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_issue.dart';import 'webhooks_user.dart';/// The action that was performed.
 @immutable final class WebhookIssuesAssignedAction {const WebhookIssuesAssignedAction._(this.value);
 
-factory WebhookIssuesAssignedAction.fromJson(String json) { return switch (json) {
+factory WebhookIssuesAssignedAction.fromJson(String json) {return switch (json) {
   'assigned' => assigned,
   _ => WebhookIssuesAssignedAction._(json),
-}; }
+};}
 
 static const WebhookIssuesAssignedAction assigned = WebhookIssuesAssignedAction._('assigned');
 
@@ -14,17 +14,17 @@ static const List<WebhookIssuesAssignedAction> values = [assigned];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesAssignedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesAssignedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesAssignedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesAssignedAction($value)';}
+}
 @immutable final class WebhookIssuesAssigned {const WebhookIssuesAssigned({required this.action, required this.issue, required this.repository, required this.sender, this.assignee = const Omittable.absent(), this.enterprise, this.installation, this.organization, });
 
-factory WebhookIssuesAssigned.fromJson(Map<String, dynamic> json) { return WebhookIssuesAssigned(
+factory WebhookIssuesAssigned.fromJson(Map<String, dynamic> json) {return WebhookIssuesAssigned(
   action: WebhookIssuesAssignedAction.fromJson(json['action'] as String),
   assignee: json.containsKey('assignee') ? Omittable(json['assignee'] != null ? WebhooksUser.fromJson(json['assignee'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -33,7 +33,7 @@ factory WebhookIssuesAssigned.fromJson(Map<String, dynamic> json) { return Webho
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 /// The action that was performed.
 final WebhookIssuesAssignedAction action;
@@ -52,7 +52,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (assignee.isPresent) 'assignee': assignee.value?.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -61,12 +61,12 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('issue') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookIssuesAssigned copyWith({WebhookIssuesAssignedAction? action, Omittable<WebhooksUser?>? assignee, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksIssue? issue, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesAssigned(
+      json.containsKey('sender');}
+WebhookIssuesAssigned copyWith({WebhookIssuesAssignedAction? action, Omittable<WebhooksUser?>? assignee, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksIssue? issue, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookIssuesAssigned(
   action: action ?? this.action,
   assignee: assignee ?? this.assignee,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -75,8 +75,8 @@ WebhookIssuesAssigned copyWith({WebhookIssuesAssignedAction? action, Omittable<W
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookIssuesAssigned &&
           action == other.action &&
           assignee == other.assignee &&
@@ -85,7 +85,7 @@ WebhookIssuesAssigned copyWith({WebhookIssuesAssignedAction? action, Omittable<W
           issue == other.issue &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, assignee, enterprise, installation, issue, organization, repository, sender); } 
-@override String toString() { return 'WebhookIssuesAssigned(action: $action, assignee: $assignee, enterprise: $enterprise, installation: $installation, issue: $issue, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, assignee, enterprise, installation, issue, organization, repository, sender);}
+@override String toString() {return 'WebhookIssuesAssigned(action: $action, assignee: $assignee, enterprise: $enterprise, installation: $installation, issue: $issue, organization: $organization, repository: $repository, sender: $sender)';}
+}

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify which types of repository this security configuration should be applied to by default.
 @immutable final class CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefaultForNewRepos {const CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefaultForNewRepos._(this.value);
 
-factory CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefaultForNewRepos.fromJson(String json) { return switch (json) {
+factory CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefaultForNewRepos.fromJson(String json) {return switch (json) {
   'all' => all,
   'none' => none,
   'private_and_internal' => privateAndInternal,
   'public' => public,
   _ => CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefaultForNewRepos._(json),
-}; }
+};}
 
 static const CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefaultForNewRepos all = CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefaultForNewRepos._('all');
 
@@ -23,33 +23,33 @@ static const List<CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefau
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefaultForNewRepos && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefaultForNewRepos($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefaultForNewRepos && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefaultForNewRepos($value)';}
+}
 @immutable final class CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest {const CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest({this.defaultForNewRepos});
 
-factory CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest.fromJson(Map<String, dynamic> json) { return CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest(
+factory CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest.fromJson(Map<String, dynamic> json) {return CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest(
   defaultForNewRepos: json['default_for_new_repos'] != null ? CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefaultForNewRepos.fromJson(json['default_for_new_repos'] as String) : null,
-); }
+);}
 
 /// Specify which types of repository this security configuration should be applied to by default.
 final CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefaultForNewRepos? defaultForNewRepos;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (defaultForNewRepos != null) 'default_for_new_repos': defaultForNewRepos?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_for_new_repos'}.contains(key)); } 
-CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest copyWith({CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefaultForNewRepos? Function()? defaultForNewRepos}) { return CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'default_for_new_repos'}.contains(key));}
+CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest copyWith({CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestDefaultForNewRepos? Function()? defaultForNewRepos}) {return CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest(
   defaultForNewRepos: defaultForNewRepos != null ? defaultForNewRepos() : this.defaultForNewRepos,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest &&
-          defaultForNewRepos == other.defaultForNewRepos; } 
-@override int get hashCode { return defaultForNewRepos.hashCode; } 
-@override String toString() { return 'CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest(defaultForNewRepos: $defaultForNewRepos)'; } 
- }
+          defaultForNewRepos == other.defaultForNewRepos;}
+@override int get hashCode {return defaultForNewRepos.hashCode;}
+@override String toString() {return 'CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest(defaultForNewRepos: $defaultForNewRepos)';}
+}

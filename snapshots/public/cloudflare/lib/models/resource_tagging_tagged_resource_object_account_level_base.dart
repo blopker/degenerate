@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_etag.dart';import 'resource_tagging_resource_id.dart';import 'resource_tagging_resource_name.dart';/// Base schema for account-level resources (without type discriminator)
 @immutable final class ResourceTaggingTaggedResourceObjectAccountLevelBase {const ResourceTaggingTaggedResourceObjectAccountLevelBase({required this.etag, required this.id, required this.name, required this.tags, });
 
-factory ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAccountLevelBase(
+factory ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectAccountLevelBase(
   etag: ResourceTaggingEtag.fromJson(json['etag'] as String),
   id: ResourceTaggingResourceId.fromJson(json['id'] as String),
   name: ResourceTaggingResourceName.fromJson(json['name'] as String),
   tags: (json['tags'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// ETag identifier for optimistic concurrency control. Formatted as "v1:`<hash>`" where
 /// the hash is the base64url-encoded SHA-256 (truncated to 128 bits) of the tags map
@@ -25,28 +25,28 @@ final ResourceTaggingResourceName name;
 
 final Map<String,String> tags;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'etag': etag.toJson(),
   'id': id.toJson(),
   'name': name.toJson(),
   'tags': tags,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('etag') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('etag') &&
       json.containsKey('id') &&
       json.containsKey('name') &&
-      json.containsKey('tags'); } 
-ResourceTaggingTaggedResourceObjectAccountLevelBase copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectAccountLevelBase(
+      json.containsKey('tags');}
+ResourceTaggingTaggedResourceObjectAccountLevelBase copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) {return ResourceTaggingTaggedResourceObjectAccountLevelBase(
   etag: etag ?? this.etag,
   id: id ?? this.id,
   name: name ?? this.name,
   tags: tags ?? this.tags,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResourceTaggingTaggedResourceObjectAccountLevelBase &&
           etag == other.etag &&
           id == other.id &&
           name == other.name &&
-          tags == other.tags; } 
-@override int get hashCode { return Object.hash(etag, id, name, tags); } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectAccountLevelBase(etag: $etag, id: $id, name: $name, tags: $tags)'; } 
- }
+          tags == other.tags;}
+@override int get hashCode {return Object.hash(etag, id, name, tags);}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectAccountLevelBase(etag: $etag, id: $id, name: $name, tags: $tags)';}
+}

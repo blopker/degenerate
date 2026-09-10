@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'integration.dart';import 'issue_comment.dart';import 'issue_dependencies_summary.dart';import 'issue_field_value.dart';import 'issue_search_result_item_labels.dart';import 'issue_search_result_item_pull_request.dart';import 'issue_type.dart';import 'milestone.dart';import 'reaction_rollup.dart';import 'repository.dart';import 'search_result_text_matches2.dart';import 'simple_user.dart';import 'sub_issues_summary.dart';/// Issue Search Result Item
 @immutable final class IssueSearchResultItem {const IssueSearchResultItem({required this.user, required this.repositoryUrl, required this.labelsUrl, required this.commentsUrl, required this.eventsUrl, required this.htmlUrl, required this.id, required this.nodeId, required this.number, required this.title, required this.locked, required this.url, required this.labels, required this.state, required this.closedAt, required this.assignee, required this.milestone, required this.comments, required this.authorAssociation, required this.score, required this.updatedAt, required this.createdAt, this.issueFieldValues, this.issueDependenciesSummary, this.subIssuesSummary, this.reactions, this.textMatches, this.pullRequest, this.body, this.assignees = const Omittable.absent(), this.activeLockReason = const Omittable.absent(), this.draft, this.repository, this.bodyHtml, this.bodyText, this.timelineUrl, this.type = const Omittable.absent(), this.performedViaGithubApp = const Omittable.absent(), this.pinnedComment = const Omittable.absent(), this.stateReason = const Omittable.absent(), });
 
-factory IssueSearchResultItem.fromJson(Map<String, dynamic> json) { return IssueSearchResultItem(
+factory IssueSearchResultItem.fromJson(Map<String, dynamic> json) {return IssueSearchResultItem(
   url: Uri.parse(json['url'] as String),
   repositoryUrl: Uri.parse(json['repository_url'] as String),
   labelsUrl: json['labels_url'] as String,
@@ -44,7 +44,7 @@ factory IssueSearchResultItem.fromJson(Map<String, dynamic> json) { return Issue
   performedViaGithubApp: json.containsKey('performed_via_github_app') ? Omittable(json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   pinnedComment: json.containsKey('pinned_comment') ? Omittable(json['pinned_comment'] != null ? IssueComment.fromJson(json['pinned_comment'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final Uri url;
 
@@ -127,7 +127,7 @@ final Omittable<IssueComment?> pinnedComment;
 
 final ReactionRollup? reactions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'repository_url': repositoryUrl.toString(),
   'labels_url': labelsUrl,
@@ -168,8 +168,8 @@ Map<String, dynamic> toJson() { return {
   if (performedViaGithubApp.isPresent) 'performed_via_github_app': performedViaGithubApp.value?.toJson(),
   if (pinnedComment.isPresent) 'pinned_comment': pinnedComment.value?.toJson(),
   if (reactions != null) 'reactions': reactions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('repository_url') && json['repository_url'] is String &&
       json.containsKey('labels_url') && json['labels_url'] is String &&
       json.containsKey('comments_url') && json['comments_url'] is String &&
@@ -190,8 +190,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
       json.containsKey('score') && json['score'] is num &&
-      json.containsKey('author_association'); } 
-IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl, Uri? commentsUrl, Uri? eventsUrl, Uri? htmlUrl, int? id, String? nodeId, int? number, String? title, bool? locked, Omittable<String?>? activeLockReason, Omittable<List<SimpleUser>?>? assignees, SimpleUser? Function()? user, List<IssueSearchResultItemLabels>? labels, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, String? state, Omittable<String?>? stateReason, SimpleUser? Function()? assignee, Milestone? Function()? milestone, int? comments, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, List<SearchResultTextMatches2>? Function()? textMatches, IssueSearchResultItemPullRequest? Function()? pullRequest, String? Function()? body, double? score, AuthorAssociation? authorAssociation, bool? Function()? draft, Repository? Function()? repository, String? Function()? bodyHtml, String? Function()? bodyText, Uri? Function()? timelineUrl, Omittable<IssueType?>? type, Omittable<Integration?>? performedViaGithubApp, Omittable<IssueComment?>? pinnedComment, ReactionRollup? Function()? reactions, }) { return IssueSearchResultItem(
+      json.containsKey('author_association');}
+IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl, Uri? commentsUrl, Uri? eventsUrl, Uri? htmlUrl, int? id, String? nodeId, int? number, String? title, bool? locked, Omittable<String?>? activeLockReason, Omittable<List<SimpleUser>?>? assignees, SimpleUser? Function()? user, List<IssueSearchResultItemLabels>? labels, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, String? state, Omittable<String?>? stateReason, SimpleUser? Function()? assignee, Milestone? Function()? milestone, int? comments, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, List<SearchResultTextMatches2>? Function()? textMatches, IssueSearchResultItemPullRequest? Function()? pullRequest, String? Function()? body, double? score, AuthorAssociation? authorAssociation, bool? Function()? draft, Repository? Function()? repository, String? Function()? bodyHtml, String? Function()? bodyText, Uri? Function()? timelineUrl, Omittable<IssueType?>? type, Omittable<Integration?>? performedViaGithubApp, Omittable<IssueComment?>? pinnedComment, ReactionRollup? Function()? reactions, }) {return IssueSearchResultItem(
   url: url ?? this.url,
   repositoryUrl: repositoryUrl ?? this.repositoryUrl,
   labelsUrl: labelsUrl ?? this.labelsUrl,
@@ -232,8 +232,8 @@ IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl,
   performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
   pinnedComment: pinnedComment ?? this.pinnedComment,
   reactions: reactions != null ? reactions() : this.reactions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssueSearchResultItem &&
           url == other.url &&
           repositoryUrl == other.repositoryUrl &&
@@ -275,7 +275,7 @@ IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl,
           type == other.type &&
           performedViaGithubApp == other.performedViaGithubApp &&
           pinnedComment == other.pinnedComment &&
-          reactions == other.reactions; } 
-@override int get hashCode { return Object.hashAll([url, repositoryUrl, labelsUrl, commentsUrl, eventsUrl, htmlUrl, id, nodeId, number, title, locked, activeLockReason, Object.hashAll(assignees.value ?? const []), user, Object.hashAll(labels), subIssuesSummary, issueDependenciesSummary, Object.hashAll(issueFieldValues ?? const []), state, stateReason, assignee, milestone, comments, createdAt, updatedAt, closedAt, Object.hashAll(textMatches ?? const []), pullRequest, body, score, authorAssociation, draft, repository, bodyHtml, bodyText, timelineUrl, type, performedViaGithubApp, pinnedComment, reactions]); } 
-@override String toString() { return 'IssueSearchResultItem(url: $url, repositoryUrl: $repositoryUrl, labelsUrl: $labelsUrl, commentsUrl: $commentsUrl, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, id: $id, nodeId: $nodeId, number: $number, title: $title, locked: $locked, activeLockReason: $activeLockReason, assignees: $assignees, user: $user, labels: $labels, subIssuesSummary: $subIssuesSummary, issueDependenciesSummary: $issueDependenciesSummary, issueFieldValues: $issueFieldValues, state: $state, stateReason: $stateReason, assignee: $assignee, milestone: $milestone, comments: $comments, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, textMatches: $textMatches, pullRequest: $pullRequest, body: $body, score: $score, authorAssociation: $authorAssociation, draft: $draft, repository: $repository, bodyHtml: $bodyHtml, bodyText: $bodyText, timelineUrl: $timelineUrl, type: $type, performedViaGithubApp: $performedViaGithubApp, pinnedComment: $pinnedComment, reactions: $reactions)'; } 
- }
+          reactions == other.reactions;}
+@override int get hashCode {return Object.hashAll([url, repositoryUrl, labelsUrl, commentsUrl, eventsUrl, htmlUrl, id, nodeId, number, title, locked, activeLockReason, Object.hashAll(assignees.value ?? const []), user, Object.hashAll(labels), subIssuesSummary, issueDependenciesSummary, Object.hashAll(issueFieldValues ?? const []), state, stateReason, assignee, milestone, comments, createdAt, updatedAt, closedAt, Object.hashAll(textMatches ?? const []), pullRequest, body, score, authorAssociation, draft, repository, bodyHtml, bodyText, timelineUrl, type, performedViaGithubApp, pinnedComment, reactions]);}
+@override String toString() {return 'IssueSearchResultItem(url: $url, repositoryUrl: $repositoryUrl, labelsUrl: $labelsUrl, commentsUrl: $commentsUrl, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, id: $id, nodeId: $nodeId, number: $number, title: $title, locked: $locked, activeLockReason: $activeLockReason, assignees: $assignees, user: $user, labels: $labels, subIssuesSummary: $subIssuesSummary, issueDependenciesSummary: $issueDependenciesSummary, issueFieldValues: $issueFieldValues, state: $state, stateReason: $stateReason, assignee: $assignee, milestone: $milestone, comments: $comments, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, textMatches: $textMatches, pullRequest: $pullRequest, body: $body, score: $score, authorAssociation: $authorAssociation, draft: $draft, repository: $repository, bodyHtml: $bodyHtml, bodyText: $bodyText, timelineUrl: $timelineUrl, type: $type, performedViaGithubApp: $performedViaGithubApp, pinnedComment: $pinnedComment, reactions: $reactions)';}
+}

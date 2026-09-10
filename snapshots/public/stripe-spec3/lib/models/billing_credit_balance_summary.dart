@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_balance_summary_customer.dart';import 'credit_balance.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingCreditBalanceSummaryObject {const BillingCreditBalanceSummaryObject._(this.value);
 
-factory BillingCreditBalanceSummaryObject.fromJson(String json) { return switch (json) {
+factory BillingCreditBalanceSummaryObject.fromJson(String json) {return switch (json) {
   'billing.credit_balance_summary' => billingCreditBalanceSummary,
   _ => BillingCreditBalanceSummaryObject._(json),
-}; }
+};}
 
 static const BillingCreditBalanceSummaryObject billingCreditBalanceSummary = BillingCreditBalanceSummaryObject._('billing.credit_balance_summary');
 
@@ -14,24 +14,24 @@ static const List<BillingCreditBalanceSummaryObject> values = [billingCreditBala
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingCreditBalanceSummaryObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingCreditBalanceSummaryObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BillingCreditBalanceSummaryObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BillingCreditBalanceSummaryObject($value)';}
+}
 /// Indicates the billing credit balance for billing credits granted to a customer.
 @immutable final class BillingCreditBalanceSummary {const BillingCreditBalanceSummary({required this.balances, required this.customer, required this.livemode, required this.object, this.customerAccount = const Omittable.absent(), });
 
-factory BillingCreditBalanceSummary.fromJson(Map<String, dynamic> json) { return BillingCreditBalanceSummary(
+factory BillingCreditBalanceSummary.fromJson(Map<String, dynamic> json) {return BillingCreditBalanceSummary(
   balances: (json['balances'] as List<dynamic>).map((e) => CreditBalance.fromJson(e as Map<String, dynamic>)).toList(),
   customer: BillingCreditBalanceSummaryCustomer.fromJson(json['customer']),
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   object: BillingCreditBalanceSummaryObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// The billing credit balances. One entry per credit grant currency. If a customer only has credit grants in a single currency, then this will have a single balance entry.
 final List<CreditBalance> balances;
@@ -48,31 +48,31 @@ final bool livemode;
 /// String representing the object's type. Objects of the same type share the same value.
 final BillingCreditBalanceSummaryObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'balances': balances.map((e) => e.toJson()).toList(),
   'customer': customer.toJson(),
   if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   'livemode': livemode,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('balances') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('balances') &&
       json.containsKey('customer') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object'); } 
-BillingCreditBalanceSummary copyWith({List<CreditBalance>? balances, BillingCreditBalanceSummaryCustomer? customer, Omittable<String?>? customerAccount, bool? livemode, BillingCreditBalanceSummaryObject? object, }) { return BillingCreditBalanceSummary(
+      json.containsKey('object');}
+BillingCreditBalanceSummary copyWith({List<CreditBalance>? balances, BillingCreditBalanceSummaryCustomer? customer, Omittable<String?>? customerAccount, bool? livemode, BillingCreditBalanceSummaryObject? object, }) {return BillingCreditBalanceSummary(
   balances: balances ?? this.balances,
   customer: customer ?? this.customer,
   customerAccount: customerAccount ?? this.customerAccount,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BillingCreditBalanceSummary &&
           listEquals(balances, other.balances) &&
           customer == other.customer &&
           customerAccount == other.customerAccount &&
           livemode == other.livemode &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(Object.hashAll(balances), customer, customerAccount, livemode, object); } 
-@override String toString() { return 'BillingCreditBalanceSummary(balances: $balances, customer: $customer, customerAccount: $customerAccount, livemode: $livemode, object: $object)'; } 
- }
+          object == other.object;}
+@override int get hashCode {return Object.hash(Object.hashAll(balances), customer, customerAccount, livemode, object);}
+@override String toString() {return 'BillingCreditBalanceSummary(balances: $balances, customer: $customer, customerAccount: $customerAccount, livemode: $livemode, object: $object)';}
+}

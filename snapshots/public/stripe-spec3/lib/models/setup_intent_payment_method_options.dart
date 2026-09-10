@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_intent_payment_method_options_acss_debit2.dart';import 'setup_intent_payment_method_options_amazon_pay2.dart';import 'setup_intent_payment_method_options_bacs_debit2.dart';import 'setup_intent_payment_method_options_card2.dart';import 'setup_intent_payment_method_options_card_present2.dart';import 'setup_intent_payment_method_options_klarna2.dart';import 'setup_intent_payment_method_options_link2.dart';import 'setup_intent_payment_method_options_paypal2.dart';import 'setup_intent_payment_method_options_payto2.dart';import 'setup_intent_payment_method_options_sepa_debit2.dart';import 'setup_intent_payment_method_options_us_bank_account2.dart';/// 
 @immutable final class SetupIntentPaymentMethodOptions {const SetupIntentPaymentMethodOptions({this.acssDebit, this.amazonPay, this.bacsDebit, this.card, this.cardPresent, this.klarna, this.link, this.paypal, this.payto, this.sepaDebit, this.usBankAccount, });
 
-factory SetupIntentPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptions(
+factory SetupIntentPaymentMethodOptions.fromJson(Map<String, dynamic> json) {return SetupIntentPaymentMethodOptions(
   acssDebit: json['acss_debit'] != null ? SetupIntentPaymentMethodOptionsAcssDebit2.fromJson(json['acss_debit']) : null,
   amazonPay: json['amazon_pay'] != null ? SetupIntentPaymentMethodOptionsAmazonPay2.fromJson(json['amazon_pay']) : null,
   bacsDebit: json['bacs_debit'] != null ? SetupIntentPaymentMethodOptionsBacsDebit2.fromJson(json['bacs_debit']) : null,
@@ -15,7 +15,7 @@ factory SetupIntentPaymentMethodOptions.fromJson(Map<String, dynamic> json) { re
   payto: json['payto'] != null ? SetupIntentPaymentMethodOptionsPayto2.fromJson(json['payto']) : null,
   sepaDebit: json['sepa_debit'] != null ? SetupIntentPaymentMethodOptionsSepaDebit2.fromJson(json['sepa_debit']) : null,
   usBankAccount: json['us_bank_account'] != null ? SetupIntentPaymentMethodOptionsUsBankAccount2.fromJson(json['us_bank_account']) : null,
-); }
+);}
 
 final SetupIntentPaymentMethodOptionsAcssDebit2? acssDebit;
 
@@ -39,7 +39,7 @@ final SetupIntentPaymentMethodOptionsSepaDebit2? sepaDebit;
 
 final SetupIntentPaymentMethodOptionsUsBankAccount2? usBankAccount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (acssDebit != null) 'acss_debit': acssDebit?.toJson(),
   if (amazonPay != null) 'amazon_pay': amazonPay?.toJson(),
   if (bacsDebit != null) 'bacs_debit': bacsDebit?.toJson(),
@@ -51,9 +51,9 @@ Map<String, dynamic> toJson() { return {
   if (payto != null) 'payto': payto?.toJson(),
   if (sepaDebit != null) 'sepa_debit': sepaDebit?.toJson(),
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acss_debit', 'amazon_pay', 'bacs_debit', 'card', 'card_present', 'klarna', 'link', 'paypal', 'payto', 'sepa_debit', 'us_bank_account'}.contains(key)); } 
-SetupIntentPaymentMethodOptions copyWith({SetupIntentPaymentMethodOptionsAcssDebit2? Function()? acssDebit, SetupIntentPaymentMethodOptionsAmazonPay2? Function()? amazonPay, SetupIntentPaymentMethodOptionsBacsDebit2? Function()? bacsDebit, SetupIntentPaymentMethodOptionsCard2? Function()? card, SetupIntentPaymentMethodOptionsCardPresent2? Function()? cardPresent, SetupIntentPaymentMethodOptionsKlarna2? Function()? klarna, SetupIntentPaymentMethodOptionsLink2? Function()? link, SetupIntentPaymentMethodOptionsPaypal2? Function()? paypal, SetupIntentPaymentMethodOptionsPayto2? Function()? payto, SetupIntentPaymentMethodOptionsSepaDebit2? Function()? sepaDebit, SetupIntentPaymentMethodOptionsUsBankAccount2? Function()? usBankAccount, }) { return SetupIntentPaymentMethodOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'acss_debit', 'amazon_pay', 'bacs_debit', 'card', 'card_present', 'klarna', 'link', 'paypal', 'payto', 'sepa_debit', 'us_bank_account'}.contains(key));}
+SetupIntentPaymentMethodOptions copyWith({SetupIntentPaymentMethodOptionsAcssDebit2? Function()? acssDebit, SetupIntentPaymentMethodOptionsAmazonPay2? Function()? amazonPay, SetupIntentPaymentMethodOptionsBacsDebit2? Function()? bacsDebit, SetupIntentPaymentMethodOptionsCard2? Function()? card, SetupIntentPaymentMethodOptionsCardPresent2? Function()? cardPresent, SetupIntentPaymentMethodOptionsKlarna2? Function()? klarna, SetupIntentPaymentMethodOptionsLink2? Function()? link, SetupIntentPaymentMethodOptionsPaypal2? Function()? paypal, SetupIntentPaymentMethodOptionsPayto2? Function()? payto, SetupIntentPaymentMethodOptionsSepaDebit2? Function()? sepaDebit, SetupIntentPaymentMethodOptionsUsBankAccount2? Function()? usBankAccount, }) {return SetupIntentPaymentMethodOptions(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   amazonPay: amazonPay != null ? amazonPay() : this.amazonPay,
   bacsDebit: bacsDebit != null ? bacsDebit() : this.bacsDebit,
@@ -65,8 +65,8 @@ SetupIntentPaymentMethodOptions copyWith({SetupIntentPaymentMethodOptionsAcssDeb
   payto: payto != null ? payto() : this.payto,
   sepaDebit: sepaDebit != null ? sepaDebit() : this.sepaDebit,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SetupIntentPaymentMethodOptions &&
           acssDebit == other.acssDebit &&
           amazonPay == other.amazonPay &&
@@ -78,7 +78,7 @@ SetupIntentPaymentMethodOptions copyWith({SetupIntentPaymentMethodOptionsAcssDeb
           paypal == other.paypal &&
           payto == other.payto &&
           sepaDebit == other.sepaDebit &&
-          usBankAccount == other.usBankAccount; } 
-@override int get hashCode { return Object.hash(acssDebit, amazonPay, bacsDebit, card, cardPresent, klarna, link, paypal, payto, sepaDebit, usBankAccount); } 
-@override String toString() { return 'SetupIntentPaymentMethodOptions(acssDebit: $acssDebit, amazonPay: $amazonPay, bacsDebit: $bacsDebit, card: $card, cardPresent: $cardPresent, klarna: $klarna, link: $link, paypal: $paypal, payto: $payto, sepaDebit: $sepaDebit, usBankAccount: $usBankAccount)'; } 
- }
+          usBankAccount == other.usBankAccount;}
+@override int get hashCode {return Object.hash(acssDebit, amazonPay, bacsDebit, card, cardPresent, klarna, link, paypal, payto, sepaDebit, usBankAccount);}
+@override String toString() {return 'SetupIntentPaymentMethodOptions(acssDebit: $acssDebit, amazonPay: $amazonPay, bacsDebit: $bacsDebit, card: $card, cardPresent: $cardPresent, klarna: $klarna, link: $link, paypal: $paypal, payto: $payto, sepaDebit: $sepaDebit, usBankAccount: $usBankAccount)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentDetails2CustomerReferenceVariant2 {const PaymentDetails2CustomerReferenceVariant2._(this.value);
 
-factory PaymentDetails2CustomerReferenceVariant2.fromJson(String json) { return switch (json) {
+factory PaymentDetails2CustomerReferenceVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PaymentDetails2CustomerReferenceVariant2._(json),
-}; }
+};}
 
 static const PaymentDetails2CustomerReferenceVariant2 $empty = PaymentDetails2CustomerReferenceVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PaymentDetails2CustomerReferenceVariant2> values = [$empty];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentDetails2CustomerReferenceVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentDetails2CustomerReferenceVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentDetails2CustomerReferenceVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentDetails2CustomerReferenceVariant2($value)';}
+}
 
 @immutable
 final class PaymentDetails2CustomerReference {

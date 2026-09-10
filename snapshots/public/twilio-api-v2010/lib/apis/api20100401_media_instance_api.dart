@@ -11,7 +11,7 @@ final class Api20100401MediaInstanceApi with ApiExecutor {const Api20100401Media
 /// Fetch a single Media resource associated with a specific Message resource
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Media/{Sid}.json`
-Future<ApiResult<AccountMessageMedia, Never>> fetchMedia({required String accountSid, required String messageSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountMessageMedia, Never>> fetchMedia({required String accountSid, required String messageSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,11 +27,11 @@ final json = jsonDecode(response.body);
 return AccountMessageMedia.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete the Media resource.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Media/{Sid}.json`
-Future<ApiResult<void, Never>> deleteMedia({required String accountSid, required String messageSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteMedia({required String accountSid, required String messageSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -44,5 +44,5 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

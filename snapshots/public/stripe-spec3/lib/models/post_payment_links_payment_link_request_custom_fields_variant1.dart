@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_payment_link_request_custom_fields_variant1_dropdown.dart';import 'post_payment_links_payment_link_request_custom_fields_variant1_label.dart';import 'post_payment_links_payment_link_request_custom_fields_variant1_numeric.dart';import 'post_payment_links_payment_link_request_custom_fields_variant1_text.dart';@immutable final class PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type {const PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type._(this.value);
 
-factory PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type.fromJson(String json) { return switch (json) {
+factory PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type.fromJson(String json) {return switch (json) {
   'dropdown' => dropdown,
   'numeric' => numeric,
   'text' => text,
   _ => PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type._(json),
-}; }
+};}
 
 static const PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type dropdown = PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type._('dropdown');
 
@@ -19,17 +19,17 @@ static const List<PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type($value)';}
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1 {const PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1({required this.key, required this.label, required this.type, this.dropdown, this.numeric, this.optional, this.text, });
 
-factory PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1(
+factory PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1.fromJson(Map<String, dynamic> json) {return PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1(
   dropdown: json['dropdown'] != null ? PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Dropdown.fromJson(json['dropdown'] as Map<String, dynamic>) : null,
   key: json['key'] as String,
   label: PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Label.fromJson(json['label'] as Map<String, dynamic>),
@@ -37,7 +37,7 @@ factory PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1.fromJson(Map<Stri
   optional: json['optional'] as bool?,
   text: json['text'] != null ? PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Text.fromJson(json['text'] as Map<String, dynamic>) : null,
   type: PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type.fromJson(json['type'] as String),
-); }
+);}
 
 final PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Dropdown? dropdown;
 
@@ -53,7 +53,7 @@ final PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Text? text;
 
 final PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (dropdown != null) 'dropdown': dropdown?.toJson(),
   'key': key,
   'label': label.toJson(),
@@ -61,11 +61,11 @@ Map<String, dynamic> toJson() { return {
   'optional': ?optional,
   if (text != null) 'text': text?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
       json.containsKey('label') &&
-      json.containsKey('type'); } 
-PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1 copyWith({PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Dropdown? Function()? dropdown, String? key, PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Label? label, PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Numeric? Function()? numeric, bool? Function()? optional, PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Text? Function()? text, PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type? type, }) { return PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1(
+      json.containsKey('type');}
+PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1 copyWith({PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Dropdown? Function()? dropdown, String? key, PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Label? label, PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Numeric? Function()? numeric, bool? Function()? optional, PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Text? Function()? text, PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1Type? type, }) {return PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1(
   dropdown: dropdown != null ? dropdown() : this.dropdown,
   key: key ?? this.key,
   label: label ?? this.label,
@@ -73,8 +73,8 @@ PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1 copyWith({PostPaymentLink
   optional: optional != null ? optional() : this.optional,
   text: text != null ? text() : this.text,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1 &&
           dropdown == other.dropdown &&
           key == other.key &&
@@ -82,7 +82,7 @@ PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1 copyWith({PostPaymentLink
           numeric == other.numeric &&
           optional == other.optional &&
           text == other.text &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(dropdown, key, label, numeric, optional, text, type); } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1(dropdown: $dropdown, key: $key, label: $label, numeric: $numeric, optional: $optional, text: $text, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(dropdown, key, label, numeric, optional, text, type);}
+@override String toString() {return 'PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1(dropdown: $dropdown, key: $key, label: $label, numeric: $numeric, optional: $optional, text: $text, type: $type)';}
+}

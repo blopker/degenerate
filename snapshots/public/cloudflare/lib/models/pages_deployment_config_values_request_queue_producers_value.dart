@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Queue Producer binding.
 @immutable final class PagesDeploymentConfigValuesRequestQueueProducersValue {const PagesDeploymentConfigValuesRequestQueueProducersValue({required this.name});
 
-factory PagesDeploymentConfigValuesRequestQueueProducersValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestQueueProducersValue(
+factory PagesDeploymentConfigValuesRequestQueueProducersValue.fromJson(Map<String, dynamic> json) {return PagesDeploymentConfigValuesRequestQueueProducersValue(
   name: json['name'] as String,
-); }
+);}
 
 /// Name of the Queue.
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-PagesDeploymentConfigValuesRequestQueueProducersValue copyWith({String? name}) { return PagesDeploymentConfigValuesRequestQueueProducersValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+PagesDeploymentConfigValuesRequestQueueProducersValue copyWith({String? name}) {return PagesDeploymentConfigValuesRequestQueueProducersValue(
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PagesDeploymentConfigValuesRequestQueueProducersValue &&
-          name == other.name; } 
-@override int get hashCode { return name.hashCode; } 
-@override String toString() { return 'PagesDeploymentConfigValuesRequestQueueProducersValue(name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return name.hashCode;}
+@override String toString() {return 'PagesDeploymentConfigValuesRequestQueueProducersValue(name: $name)';}
+}

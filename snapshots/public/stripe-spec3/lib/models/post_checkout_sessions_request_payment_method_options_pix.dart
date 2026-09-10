@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof {const PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof.fromJson(String json) {return switch (json) {
   'always' => always,
   'never' => never,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof always = PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof._('always');
 
@@ -16,20 +16,20 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountInclud
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage none = PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage._('none');
 
@@ -37,21 +37,21 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureU
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPix {const PostCheckoutSessionsRequestPaymentMethodOptionsPix({this.amountIncludesIof, this.expiresAfterSeconds, this.setupFutureUsage, });
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsPix.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsPix(
+factory PostCheckoutSessionsRequestPaymentMethodOptionsPix.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestPaymentMethodOptionsPix(
   amountIncludesIof: json['amount_includes_iof'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof.fromJson(json['amount_includes_iof'] as String) : null,
   expiresAfterSeconds: json['expires_after_seconds'] != null ? (json['expires_after_seconds'] as num).toInt() : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof? amountIncludesIof;
 
@@ -59,22 +59,22 @@ final int? expiresAfterSeconds;
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amountIncludesIof != null) 'amount_includes_iof': amountIncludesIof?.toJson(),
   'expires_after_seconds': ?expiresAfterSeconds,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_includes_iof', 'expires_after_seconds', 'setup_future_usage'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsPix copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof? Function()? amountIncludesIof, int? Function()? expiresAfterSeconds, PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage? Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsPix(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount_includes_iof', 'expires_after_seconds', 'setup_future_usage'}.contains(key));}
+PostCheckoutSessionsRequestPaymentMethodOptionsPix copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsPixAmountIncludesIof? Function()? amountIncludesIof, int? Function()? expiresAfterSeconds, PostCheckoutSessionsRequestPaymentMethodOptionsPixSetupFutureUsage? Function()? setupFutureUsage, }) {return PostCheckoutSessionsRequestPaymentMethodOptionsPix(
   amountIncludesIof: amountIncludesIof != null ? amountIncludesIof() : this.amountIncludesIof,
   expiresAfterSeconds: expiresAfterSeconds != null ? expiresAfterSeconds() : this.expiresAfterSeconds,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsPix &&
           amountIncludesIof == other.amountIncludesIof &&
           expiresAfterSeconds == other.expiresAfterSeconds &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(amountIncludesIof, expiresAfterSeconds, setupFutureUsage); } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPix(amountIncludesIof: $amountIncludesIof, expiresAfterSeconds: $expiresAfterSeconds, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(amountIncludesIof, expiresAfterSeconds, setupFutureUsage);}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsPix(amountIncludesIof: $amountIncludesIof, expiresAfterSeconds: $expiresAfterSeconds, setupFutureUsage: $setupFutureUsage)';}
+}

@@ -11,7 +11,7 @@ final class SecurityTxtApi with ApiExecutor {const SecurityTxtApi(this.apiConfig
 /// Retrieves security.txt
 ///
 /// `GET /zones/{zone_id}/security-center/securitytxt`
-Future<ApiResult<SecurityCenterSecurityTxt?, ResponseCommonFailure64>> getSecurityTxt({required SecurityCenterIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecurityCenterSecurityTxt?, ResponseCommonFailure64>> getSecurityTxt({required SecurityCenterIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -37,11 +37,11 @@ return null;
 
   },
 );
- } 
+}
 /// Updates security.txt
 ///
 /// `PUT /zones/{zone_id}/security-center/securitytxt`
-Future<ApiResult<ResponseCommon61, ResponseCommonFailure64>> updateSecurityTxt({required SecurityCenterIdentifier zoneId, required SecurityCenterSecurityTxt body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon61, ResponseCommonFailure64>> updateSecurityTxt({required SecurityCenterIdentifier zoneId, required SecurityCenterSecurityTxt body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -69,11 +69,11 @@ return null;
 
   },
 );
- } 
+}
 /// Deletes security.txt
 ///
 /// `DELETE /zones/{zone_id}/security-center/securitytxt`
-Future<ApiResult<ResponseCommon61, ResponseCommonFailure64>> deleteSecurityTxt({required SecurityCenterIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon61, ResponseCommonFailure64>> deleteSecurityTxt({required SecurityCenterIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -99,5 +99,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

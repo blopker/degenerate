@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesCreatePreviewRequestOnBehalfOfVariant2 {const PostInvoicesCreatePreviewRequestOnBehalfOfVariant2._(this.value);
 
-factory PostInvoicesCreatePreviewRequestOnBehalfOfVariant2.fromJson(String json) { return switch (json) {
+factory PostInvoicesCreatePreviewRequestOnBehalfOfVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostInvoicesCreatePreviewRequestOnBehalfOfVariant2._(json),
-}; }
+};}
 
 static const PostInvoicesCreatePreviewRequestOnBehalfOfVariant2 $empty = PostInvoicesCreatePreviewRequestOnBehalfOfVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostInvoicesCreatePreviewRequestOnBehalfOfVariant2> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestOnBehalfOfVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestOnBehalfOfVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestOnBehalfOfVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestOnBehalfOfVariant2($value)';}
+}
 /// The account (if any) for which the funds of the invoice payment are intended. If set, the invoice will be presented with the branding and support information of the specified account. See the [Invoices with Connect](https://docs.stripe.com/billing/invoices/connect) documentation for details.
 @immutable
 final class PostInvoicesCreatePreviewRequestOnBehalfOf {

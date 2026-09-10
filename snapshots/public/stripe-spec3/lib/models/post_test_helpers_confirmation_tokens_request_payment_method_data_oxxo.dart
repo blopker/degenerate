@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo();
 
-factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo.fromJson(Map<String, dynamic> _) { return const PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo(); }
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo.fromJson(Map<String, dynamic> _) {return const PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo copyWith() { return const PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo copyWith() {return const PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo()';}
+}

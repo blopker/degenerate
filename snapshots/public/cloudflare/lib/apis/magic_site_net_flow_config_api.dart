@@ -13,7 +13,7 @@ final class MagicSiteNetFlowConfigApi with ApiExecutor {const MagicSiteNetFlowCo
 /// Get NetFlow configuration for a site.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/netflow_config`
-Future<ApiResult<MagicNetflowConfig, ResponseCommonFailure50>> magicSiteNetflowConfigDetails({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicNetflowConfig, ResponseCommonFailure50>> magicSiteNetflowConfigDetails({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create NetFlow Configuration
 ///
 /// Creates a NetFlow configuration for a site.
 ///
 /// `POST /accounts/{account_id}/magic/sites/{site_id}/netflow_config`
-Future<ApiResult<MagicNetflowConfig, ResponseCommonFailure50>> magicSiteNetflowConfigCreateNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicNetflowConfig, ResponseCommonFailure50>> magicSiteNetflowConfigCreateNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update NetFlow Configuration
 ///
 /// Updates NetFlow configuration for a site (partial update).
 ///
 /// `PUT /accounts/{account_id}/magic/sites/{site_id}/netflow_config`
-Future<ApiResult<MagicNetflowConfig, ResponseCommonFailure50>> magicSiteNetflowConfigUpdateNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicNetflowConfig, ResponseCommonFailure50>> magicSiteNetflowConfigUpdateNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,13 +107,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update NetFlow Configuration
 ///
 /// Updates NetFlow configuration for a site.
 ///
 /// `PATCH /accounts/{account_id}/magic/sites/{site_id}/netflow_config`
-Future<ApiResult<MagicNetflowConfig, ResponseCommonFailure50>> magicSiteNetflowConfigPatchNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicNetflowConfig, ResponseCommonFailure50>> magicSiteNetflowConfigPatchNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -141,13 +141,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete NetFlow Configuration
 ///
 /// Remove NetFlow configuration for a site.
 ///
 /// `DELETE /accounts/{account_id}/magic/sites/{site_id}/netflow_config`
-Future<ApiResult<MagicNetflowConfig, ResponseCommonFailure50>> magicSiteNetflowConfigDeleteNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicNetflowConfig, ResponseCommonFailure50>> magicSiteNetflowConfigDeleteNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -173,5 +173,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

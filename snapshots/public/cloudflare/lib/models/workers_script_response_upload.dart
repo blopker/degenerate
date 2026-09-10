@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_compatibility_date.dart';import 'workers_compatibility_flag.dart';import 'workers_created_on.dart';import 'workers_etag.dart';import 'workers_has_assets.dart';import 'workers_has_modules.dart';import 'workers_logpush.dart';import 'workers_modified_on.dart';import 'workers_observability.dart';import 'workers_placement_info.dart';import 'workers_placement_info_smart.dart';import 'workers_placement_info_targeted.dart';import 'workers_placement_info_targeted2.dart';import 'workers_placement_info_targeted3.dart';import 'workers_placement_info_targeted4.dart';import 'workers_placement_info_variant2.dart';import 'workers_placement_info_variant3.dart';import 'workers_placement_info_variant4.dart';import 'workers_placement_mode.dart';import 'workers_placement_status.dart';import 'workers_script_response_upload_named_handlers.dart';import 'workers_tag.dart';import 'workers_tail_consumers_script.dart';import 'workers_usage_model.dart';@immutable final class WorkersScriptResponseUpload {const WorkersScriptResponseUpload({required this.startupTimeMs, this.compatibilityDate, this.compatibilityFlags, this.createdOn, this.etag, this.handlers, this.hasAssets, this.hasModules, this.id, this.lastDeployedFrom, this.logpush, this.migrationTag, this.modifiedOn, this.namedHandlers, this.observability, this.placement, this.placementMode, this.placementStatus, this.tag, this.tags = const Omittable.absent(), this.tailConsumers = const Omittable.absent(), this.usageModel, this.entryPoint, });
 
-factory WorkersScriptResponseUpload.fromJson(Map<String, dynamic> json) { return WorkersScriptResponseUpload(
+factory WorkersScriptResponseUpload.fromJson(Map<String, dynamic> json) {return WorkersScriptResponseUpload(
   compatibilityDate: json['compatibility_date'] != null ? WorkersCompatibilityDate.fromJson(json['compatibility_date'] as String) : null,
   compatibilityFlags: (json['compatibility_flags'] as List<dynamic>?)?.map((e) => WorkersCompatibilityFlag.fromJson(e as String)).toList(),
   createdOn: json['created_on'] != null ? WorkersCreatedOn.fromJson(json['created_on'] as String) : null,
@@ -26,7 +26,7 @@ factory WorkersScriptResponseUpload.fromJson(Map<String, dynamic> json) { return
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,
   entryPoint: json['entry_point'] as String?,
   startupTimeMs: (json['startup_time_ms'] as num).toInt(),
-); }
+);}
 
 /// Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
 final WorkersCompatibilityDate? compatibilityDate;
@@ -91,7 +91,7 @@ final String? entryPoint;
 
 final int startupTimeMs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (compatibilityDate != null) 'compatibility_date': compatibilityDate?.toJson(),
   if (compatibilityFlags != null) 'compatibility_flags': compatibilityFlags?.map((e) => e.toJson()).toList(),
   if (createdOn != null) 'created_on': createdOn?.toJson(),
@@ -115,9 +115,9 @@ Map<String, dynamic> toJson() { return {
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
   'entry_point': ?entryPoint,
   'startup_time_ms': startupTimeMs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('startup_time_ms') && json['startup_time_ms'] is num; } 
-WorkersScriptResponseUpload copyWith({WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersCreatedOn? Function()? createdOn, WorkersEtag? Function()? etag, List<String>? Function()? handlers, WorkersHasAssets? Function()? hasAssets, WorkersHasModules? Function()? hasModules, String? Function()? id, String? Function()? lastDeployedFrom, WorkersLogpush? Function()? logpush, String? Function()? migrationTag, WorkersModifiedOn? Function()? modifiedOn, List<WorkersScriptResponseUploadNamedHandlers>? Function()? namedHandlers, WorkersObservability? Function()? observability, WorkersPlacementInfo? Function()? placement, WorkersPlacementMode? Function()? placementMode, WorkersPlacementStatus? Function()? placementStatus, String? Function()? tag, Omittable<List<WorkersTag>?>? tags, Omittable<List<WorkersTailConsumersScript>?>? tailConsumers, WorkersUsageModel? Function()? usageModel, String? Function()? entryPoint, int? startupTimeMs, }) { return WorkersScriptResponseUpload(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('startup_time_ms') && json['startup_time_ms'] is num;}
+WorkersScriptResponseUpload copyWith({WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersCreatedOn? Function()? createdOn, WorkersEtag? Function()? etag, List<String>? Function()? handlers, WorkersHasAssets? Function()? hasAssets, WorkersHasModules? Function()? hasModules, String? Function()? id, String? Function()? lastDeployedFrom, WorkersLogpush? Function()? logpush, String? Function()? migrationTag, WorkersModifiedOn? Function()? modifiedOn, List<WorkersScriptResponseUploadNamedHandlers>? Function()? namedHandlers, WorkersObservability? Function()? observability, WorkersPlacementInfo? Function()? placement, WorkersPlacementMode? Function()? placementMode, WorkersPlacementStatus? Function()? placementStatus, String? Function()? tag, Omittable<List<WorkersTag>?>? tags, Omittable<List<WorkersTailConsumersScript>?>? tailConsumers, WorkersUsageModel? Function()? usageModel, String? Function()? entryPoint, int? startupTimeMs, }) {return WorkersScriptResponseUpload(
   compatibilityDate: compatibilityDate != null ? compatibilityDate() : this.compatibilityDate,
   compatibilityFlags: compatibilityFlags != null ? compatibilityFlags() : this.compatibilityFlags,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
@@ -141,8 +141,8 @@ WorkersScriptResponseUpload copyWith({WorkersCompatibilityDate? Function()? comp
   usageModel: usageModel != null ? usageModel() : this.usageModel,
   entryPoint: entryPoint != null ? entryPoint() : this.entryPoint,
   startupTimeMs: startupTimeMs ?? this.startupTimeMs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersScriptResponseUpload &&
           compatibilityDate == other.compatibilityDate &&
           listEquals(compatibilityFlags, other.compatibilityFlags) &&
@@ -168,7 +168,7 @@ WorkersScriptResponseUpload copyWith({WorkersCompatibilityDate? Function()? comp
           listEquals(tailConsumers.value, other.tailConsumers.value) &&
           usageModel == other.usageModel &&
           entryPoint == other.entryPoint &&
-          startupTimeMs == other.startupTimeMs; } 
-@override int get hashCode { return Object.hashAll([compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), createdOn, etag, Object.hashAll(handlers ?? const []), hasAssets, hasModules, id, lastDeployedFrom, logpush, migrationTag, modifiedOn, Object.hashAll(namedHandlers ?? const []), observability, placement, placementMode, placementStatus, tag, Object.hashAll(tags.value ?? const []), Object.hashAll(tailConsumers.value ?? const []), usageModel, entryPoint, startupTimeMs]); } 
-@override String toString() { return 'WorkersScriptResponseUpload(compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, createdOn: $createdOn, etag: $etag, handlers: $handlers, hasAssets: $hasAssets, hasModules: $hasModules, id: $id, lastDeployedFrom: $lastDeployedFrom, logpush: $logpush, migrationTag: $migrationTag, modifiedOn: $modifiedOn, namedHandlers: $namedHandlers, observability: $observability, placement: $placement, placementMode: $placementMode, placementStatus: $placementStatus, tag: $tag, tags: $tags, tailConsumers: $tailConsumers, usageModel: $usageModel, entryPoint: $entryPoint, startupTimeMs: $startupTimeMs)'; } 
- }
+          startupTimeMs == other.startupTimeMs;}
+@override int get hashCode {return Object.hashAll([compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), createdOn, etag, Object.hashAll(handlers ?? const []), hasAssets, hasModules, id, lastDeployedFrom, logpush, migrationTag, modifiedOn, Object.hashAll(namedHandlers ?? const []), observability, placement, placementMode, placementStatus, tag, Object.hashAll(tags.value ?? const []), Object.hashAll(tailConsumers.value ?? const []), usageModel, entryPoint, startupTimeMs]);}
+@override String toString() {return 'WorkersScriptResponseUpload(compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, createdOn: $createdOn, etag: $etag, handlers: $handlers, hasAssets: $hasAssets, hasModules: $hasModules, id: $id, lastDeployedFrom: $lastDeployedFrom, logpush: $logpush, migrationTag: $migrationTag, modifiedOn: $modifiedOn, namedHandlers: $namedHandlers, observability: $observability, placement: $placement, placementMode: $placementMode, placementStatus: $placementStatus, tag: $tag, tags: $tags, tailConsumers: $tailConsumers, usageModel: $usageModel, entryPoint: $entryPoint, startupTimeMs: $startupTimeMs)';}
+}

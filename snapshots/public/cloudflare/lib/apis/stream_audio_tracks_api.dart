@@ -13,7 +13,7 @@ final class StreamAudioTracksApi with ApiExecutor {const StreamAudioTracksApi(th
 /// Lists additional audio tracks on a video. Note this API will not return information for audio attached to the video upload.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/audio`
-Future<ApiResult<List<StreamAdditionalAudio>?, ResponseCommonFailure69>> listAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<StreamAdditionalAudio>?, ResponseCommonFailure69>> listAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Edit additional audio tracks on a video
 ///
 /// Edits additional audio tracks on a video. Editing the default status of an audio track to `true` will mark all other audio tracks on the video default status to `false`.
 ///
 /// `PATCH /accounts/{account_id}/stream/{identifier}/audio/{audio_identifier}`
-Future<ApiResult<StreamAdditionalAudio?, ResponseCommonFailure69>> editAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamAudioIdentifier audioIdentifier, required StreamEditAudioTrack body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamAdditionalAudio?, ResponseCommonFailure69>> editAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamAudioIdentifier audioIdentifier, required StreamEditAudioTrack body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete additional audio tracks on a video
 ///
 /// Deletes additional audio tracks on a video. Deleting a default audio track is not allowed. You must assign another audio track as default prior to deletion.
 ///
 /// `DELETE /accounts/{account_id}/stream/{identifier}/audio/{audio_identifier}`
-Future<ApiResult<String?, StreamDeletedResponse>> deleteAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamAudioIdentifier audioIdentifier, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String?, StreamDeletedResponse>> deleteAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamAudioIdentifier audioIdentifier, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -105,13 +105,13 @@ return null;
 
   },
 );
- } 
+}
 /// Add audio tracks to a video
 ///
 /// Adds an additional audio track to a video using the provided audio track URL.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/audio/copy`
-Future<ApiResult<StreamAdditionalAudio?, ResponseCommonFailure69>> addAudioTrack({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamCopyAudioTrack body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamAdditionalAudio?, ResponseCommonFailure69>> addAudioTrack({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamCopyAudioTrack body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,5 +139,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

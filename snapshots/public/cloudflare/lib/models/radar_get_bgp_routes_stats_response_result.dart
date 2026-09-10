@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_routes_stats_response_result_meta.dart';import 'radar_get_bgp_routes_stats_response_result_stats.dart';@immutable final class RadarGetBgpRoutesStatsResponseResult {const RadarGetBgpRoutesStatsResponseResult({required this.meta, required this.stats, });
 
-factory RadarGetBgpRoutesStatsResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetBgpRoutesStatsResponseResult(
+factory RadarGetBgpRoutesStatsResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetBgpRoutesStatsResponseResult(
   meta: RadarGetBgpRoutesStatsResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
   stats: RadarGetBgpRoutesStatsResponseResultStats.fromJson(json['stats'] as Map<String, dynamic>),
-); }
+);}
 
 final RadarGetBgpRoutesStatsResponseResultMeta meta;
 
 final RadarGetBgpRoutesStatsResponseResultStats stats;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'meta': meta.toJson(),
   'stats': stats.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
-      json.containsKey('stats'); } 
-RadarGetBgpRoutesStatsResponseResult copyWith({RadarGetBgpRoutesStatsResponseResultMeta? meta, RadarGetBgpRoutesStatsResponseResultStats? stats, }) { return RadarGetBgpRoutesStatsResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('meta') &&
+      json.containsKey('stats');}
+RadarGetBgpRoutesStatsResponseResult copyWith({RadarGetBgpRoutesStatsResponseResultMeta? meta, RadarGetBgpRoutesStatsResponseResultStats? stats, }) {return RadarGetBgpRoutesStatsResponseResult(
   meta: meta ?? this.meta,
   stats: stats ?? this.stats,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetBgpRoutesStatsResponseResult &&
           meta == other.meta &&
-          stats == other.stats; } 
-@override int get hashCode { return Object.hash(meta, stats); } 
-@override String toString() { return 'RadarGetBgpRoutesStatsResponseResult(meta: $meta, stats: $stats)'; } 
- }
+          stats == other.stats;}
+@override int get hashCode {return Object.hash(meta, stats);}
+@override String toString() {return 'RadarGetBgpRoutesStatsResponseResult(meta: $meta, stats: $stats)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitWebhookRequestEvents {const RealtimekitWebhookRequestEvents._(this.value);
 
-factory RealtimekitWebhookRequestEvents.fromJson(String json) { return switch (json) {
+factory RealtimekitWebhookRequestEvents.fromJson(String json) {return switch (json) {
   'meeting.started' => meetingStarted,
   'meeting.ended' => meetingEnded,
   'meeting.participantJoined' => meetingParticipantJoined,
@@ -13,7 +13,7 @@ factory RealtimekitWebhookRequestEvents.fromJson(String json) { return switch (j
   'meeting.transcript' => meetingTranscript,
   'meeting.summary' => meetingSummary,
   _ => RealtimekitWebhookRequestEvents._(json),
-}; }
+};}
 
 static const RealtimekitWebhookRequestEvents meetingStarted = RealtimekitWebhookRequestEvents._('meeting.started');
 
@@ -37,22 +37,22 @@ static const List<RealtimekitWebhookRequestEvents> values = [meetingStarted, mee
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitWebhookRequestEvents && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitWebhookRequestEvents($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitWebhookRequestEvents && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitWebhookRequestEvents($value)';}
+}
 @immutable final class RealtimekitWebhookRequest {const RealtimekitWebhookRequest({required this.events, required this.name, required this.url, this.enabled, });
 
-factory RealtimekitWebhookRequest.fromJson(Map<String, dynamic> json) { return RealtimekitWebhookRequest(
+factory RealtimekitWebhookRequest.fromJson(Map<String, dynamic> json) {return RealtimekitWebhookRequest(
   enabled: json['enabled'] as bool?,
   events: (json['events'] as List<dynamic>).map((e) => RealtimekitWebhookRequestEvents.fromJson(e as String)).toList(),
   name: json['name'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 /// Set whether or not the webhook should be active when created
 final bool? enabled;
@@ -67,28 +67,28 @@ final String name;
 final Uri url;
 
 /// The value with the schema default applied when absent.
-bool get enabledOrDefault { return enabled ?? true; } 
-Map<String, dynamic> toJson() { return {
+bool get enabledOrDefault {return enabled ?? true;}
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   'events': events.map((e) => e.toJson()).toList(),
   'name': name,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('events') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('events') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-RealtimekitWebhookRequest copyWith({bool? Function()? enabled, List<RealtimekitWebhookRequestEvents>? events, String? name, Uri? url, }) { return RealtimekitWebhookRequest(
+      json.containsKey('url') && json['url'] is String;}
+RealtimekitWebhookRequest copyWith({bool? Function()? enabled, List<RealtimekitWebhookRequestEvents>? events, String? name, Uri? url, }) {return RealtimekitWebhookRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   events: events ?? this.events,
   name: name ?? this.name,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitWebhookRequest &&
           enabled == other.enabled &&
           listEquals(events, other.events) &&
           name == other.name &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(enabled, Object.hashAll(events), name, url); } 
-@override String toString() { return 'RealtimekitWebhookRequest(enabled: $enabled, events: $events, name: $name, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(enabled, Object.hashAll(events), name, url);}
+@override String toString() {return 'RealtimekitWebhookRequest(enabled: $enabled, events: $events, name: $name, url: $url)';}
+}

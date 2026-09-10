@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateEvalRequest {const UpdateEvalRequest({this.name, this.metadata = const Omittable.absent(), });
 
-factory UpdateEvalRequest.fromJson(Map<String, dynamic> json) { return UpdateEvalRequest(
+factory UpdateEvalRequest.fromJson(Map<String, dynamic> json) {return UpdateEvalRequest(
   name: json['name'] as String?,
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
-); }
+);}
 
 /// Rename the evaluation.
 final String? name;
@@ -19,19 +19,19 @@ final String? name;
 /// 
 final Omittable<Map<String,String>?> metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   if (metadata.isPresent) 'metadata': metadata.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'metadata'}.contains(key)); } 
-UpdateEvalRequest copyWith({String? Function()? name, Omittable<Map<String,String>?>? metadata, }) { return UpdateEvalRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'metadata'}.contains(key));}
+UpdateEvalRequest copyWith({String? Function()? name, Omittable<Map<String,String>?>? metadata, }) {return UpdateEvalRequest(
   name: name != null ? name() : this.name,
   metadata: metadata ?? this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UpdateEvalRequest &&
           name == other.name &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(name, metadata); } 
-@override String toString() { return 'UpdateEvalRequest(name: $name, metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return Object.hash(name, metadata);}
+@override String toString() {return 'UpdateEvalRequest(name: $name, metadata: $metadata)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_organization_member_invited_invitation_inviter.dart';/// The invitation for the user or email if the action is `member_invited`.
 @immutable final class WebhookOrganizationMemberInvitedInvitation {const WebhookOrganizationMemberInvitedInvitation({required this.createdAt, required this.email, required this.failedAt, required this.failedReason, required this.id, required this.invitationTeamsUrl, required this.inviter, required this.login, required this.nodeId, required this.role, required this.teamCount, this.invitationSource, });
 
-factory WebhookOrganizationMemberInvitedInvitation.fromJson(Map<String, dynamic> json) { return WebhookOrganizationMemberInvitedInvitation(
+factory WebhookOrganizationMemberInvitedInvitation.fromJson(Map<String, dynamic> json) {return WebhookOrganizationMemberInvitedInvitation(
   createdAt: DateTime.parse(json['created_at'] as String),
   email: json['email'] as String?,
   failedAt: json['failed_at'] != null ? DateTime.parse(json['failed_at'] as String) : null,
@@ -16,7 +16,7 @@ factory WebhookOrganizationMemberInvitedInvitation.fromJson(Map<String, dynamic>
   role: json['role'] as String,
   teamCount: (json['team_count'] as num).toDouble(),
   invitationSource: json['invitation_source'] as String?,
-); }
+);}
 
 final DateTime createdAt;
 
@@ -42,7 +42,7 @@ final double teamCount;
 
 final String? invitationSource;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'email': email,
   'failed_at': failedAt?.toIso8601String(),
@@ -55,8 +55,8 @@ Map<String, dynamic> toJson() { return {
   'role': role,
   'team_count': teamCount,
   'invitation_source': ?invitationSource,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('email') && (json['email'] == null || json['email'] is String) &&
       json.containsKey('failed_at') && (json['failed_at'] == null || json['failed_at'] is String) &&
       json.containsKey('failed_reason') && (json['failed_reason'] == null || json['failed_reason'] is String) &&
@@ -66,8 +66,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('login') && (json['login'] == null || json['login'] is String) &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('role') && json['role'] is String &&
-      json.containsKey('team_count') && json['team_count'] is num; } 
-WebhookOrganizationMemberInvitedInvitation copyWith({DateTime? createdAt, String? Function()? email, DateTime? Function()? failedAt, String? Function()? failedReason, double? id, Uri? invitationTeamsUrl, WebhookOrganizationMemberInvitedInvitationInviter? Function()? inviter, String? Function()? login, String? nodeId, String? role, double? teamCount, String? Function()? invitationSource, }) { return WebhookOrganizationMemberInvitedInvitation(
+      json.containsKey('team_count') && json['team_count'] is num;}
+WebhookOrganizationMemberInvitedInvitation copyWith({DateTime? createdAt, String? Function()? email, DateTime? Function()? failedAt, String? Function()? failedReason, double? id, Uri? invitationTeamsUrl, WebhookOrganizationMemberInvitedInvitationInviter? Function()? inviter, String? Function()? login, String? nodeId, String? role, double? teamCount, String? Function()? invitationSource, }) {return WebhookOrganizationMemberInvitedInvitation(
   createdAt: createdAt ?? this.createdAt,
   email: email != null ? email() : this.email,
   failedAt: failedAt != null ? failedAt() : this.failedAt,
@@ -80,8 +80,8 @@ WebhookOrganizationMemberInvitedInvitation copyWith({DateTime? createdAt, String
   role: role ?? this.role,
   teamCount: teamCount ?? this.teamCount,
   invitationSource: invitationSource != null ? invitationSource() : this.invitationSource,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookOrganizationMemberInvitedInvitation &&
           createdAt == other.createdAt &&
           email == other.email &&
@@ -94,7 +94,7 @@ WebhookOrganizationMemberInvitedInvitation copyWith({DateTime? createdAt, String
           nodeId == other.nodeId &&
           role == other.role &&
           teamCount == other.teamCount &&
-          invitationSource == other.invitationSource; } 
-@override int get hashCode { return Object.hash(createdAt, email, failedAt, failedReason, id, invitationTeamsUrl, inviter, login, nodeId, role, teamCount, invitationSource); } 
-@override String toString() { return 'WebhookOrganizationMemberInvitedInvitation(createdAt: $createdAt, email: $email, failedAt: $failedAt, failedReason: $failedReason, id: $id, invitationTeamsUrl: $invitationTeamsUrl, inviter: $inviter, login: $login, nodeId: $nodeId, role: $role, teamCount: $teamCount, invitationSource: $invitationSource)'; } 
- }
+          invitationSource == other.invitationSource;}
+@override int get hashCode {return Object.hash(createdAt, email, failedAt, failedReason, id, invitationTeamsUrl, inviter, login, nodeId, role, teamCount, invitationSource);}
+@override String toString() {return 'WebhookOrganizationMemberInvitedInvitation(createdAt: $createdAt, email: $email, failedAt: $failedAt, failedReason: $failedReason, id: $id, invitationTeamsUrl: $invitationTeamsUrl, inviter: $inviter, login: $login, nodeId: $nodeId, role: $role, teamCount: $teamCount, invitationSource: $invitationSource)';}
+}

@@ -7,14 +7,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_complet
 /// 
 @immutable final class CreateChatCompletionStreamResponseChoicesFinishReason {const CreateChatCompletionStreamResponseChoicesFinishReason._(this.value);
 
-factory CreateChatCompletionStreamResponseChoicesFinishReason.fromJson(String json) { return switch (json) {
+factory CreateChatCompletionStreamResponseChoicesFinishReason.fromJson(String json) {return switch (json) {
   'stop' => stop,
   'length' => length,
   'tool_calls' => toolCalls,
   'content_filter' => contentFilter,
   'function_call' => functionCall,
   _ => CreateChatCompletionStreamResponseChoicesFinishReason._(json),
-}; }
+};}
 
 static const CreateChatCompletionStreamResponseChoicesFinishReason stop = CreateChatCompletionStreamResponseChoicesFinishReason._('stop');
 
@@ -30,22 +30,22 @@ static const List<CreateChatCompletionStreamResponseChoicesFinishReason> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateChatCompletionStreamResponseChoicesFinishReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateChatCompletionStreamResponseChoicesFinishReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateChatCompletionStreamResponseChoicesFinishReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateChatCompletionStreamResponseChoicesFinishReason($value)';}
+}
 @immutable final class CreateChatCompletionStreamResponseChoices {const CreateChatCompletionStreamResponseChoices({required this.delta, required this.finishReason, required this.index, this.logprobs = const Omittable.absent(), });
 
-factory CreateChatCompletionStreamResponseChoices.fromJson(Map<String, dynamic> json) { return CreateChatCompletionStreamResponseChoices(
+factory CreateChatCompletionStreamResponseChoices.fromJson(Map<String, dynamic> json) {return CreateChatCompletionStreamResponseChoices(
   delta: ChatCompletionStreamResponseDelta.fromJson(json['delta'] as Map<String, dynamic>),
   logprobs: json.containsKey('logprobs') ? Omittable(json['logprobs'] != null ? CreateChatCompletionStreamResponseChoicesLogprobs.fromJson(json['logprobs'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   finishReason: json['finish_reason'] != null ? CreateChatCompletionStreamResponseChoicesFinishReason.fromJson(json['finish_reason'] as String) : null,
   index: (json['index'] as num).toInt(),
-); }
+);}
 
 final ChatCompletionStreamResponseDelta delta;
 
@@ -62,27 +62,27 @@ final CreateChatCompletionStreamResponseChoicesFinishReason? finishReason;
 /// The index of the choice in the list of choices.
 final int index;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'delta': delta.toJson(),
   if (logprobs.isPresent) 'logprobs': logprobs.value?.toJson(),
   'finish_reason': finishReason?.toJson(),
   'index': index,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('delta') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('delta') &&
       json.containsKey('finish_reason') &&
-      json.containsKey('index') && json['index'] is num; } 
-CreateChatCompletionStreamResponseChoices copyWith({ChatCompletionStreamResponseDelta? delta, Omittable<CreateChatCompletionStreamResponseChoicesLogprobs?>? logprobs, CreateChatCompletionStreamResponseChoicesFinishReason? Function()? finishReason, int? index, }) { return CreateChatCompletionStreamResponseChoices(
+      json.containsKey('index') && json['index'] is num;}
+CreateChatCompletionStreamResponseChoices copyWith({ChatCompletionStreamResponseDelta? delta, Omittable<CreateChatCompletionStreamResponseChoicesLogprobs?>? logprobs, CreateChatCompletionStreamResponseChoicesFinishReason? Function()? finishReason, int? index, }) {return CreateChatCompletionStreamResponseChoices(
   delta: delta ?? this.delta,
   logprobs: logprobs ?? this.logprobs,
   finishReason: finishReason != null ? finishReason() : this.finishReason,
   index: index ?? this.index,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateChatCompletionStreamResponseChoices &&
           delta == other.delta &&
           logprobs == other.logprobs &&
           finishReason == other.finishReason &&
-          index == other.index; } 
-@override int get hashCode { return Object.hash(delta, logprobs, finishReason, index); } 
-@override String toString() { return 'CreateChatCompletionStreamResponseChoices(delta: $delta, logprobs: $logprobs, finishReason: $finishReason, index: $index)'; } 
- }
+          index == other.index;}
+@override int get hashCode {return Object.hash(delta, logprobs, finishReason, index);}
+@override String toString() {return 'CreateChatCompletionStreamResponseChoices(delta: $delta, logprobs: $logprobs, finishReason: $finishReason, index: $index)';}
+}

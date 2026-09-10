@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_quantity.dart';/// VolumeResourceRequirements describes the storage resource requirements for a volume.
 @immutable final class VolumeResourceRequirements {const VolumeResourceRequirements({this.limits, this.requests, });
 
-factory VolumeResourceRequirements.fromJson(Map<String, dynamic> json) { return VolumeResourceRequirements(
+factory VolumeResourceRequirements.fromJson(Map<String, dynamic> json) {return VolumeResourceRequirements(
   limits: (json['limits'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),
   requests: (json['requests'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),
-); }
+);}
 
 /// Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
 final Map<String,ResourceQuantity>? limits;
@@ -14,19 +14,19 @@ final Map<String,ResourceQuantity>? limits;
 /// Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. Requests cannot exceed Limits. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
 final Map<String,ResourceQuantity>? requests;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (limits != null) 'limits': limits?.map((k, v) => MapEntry(k, v.toJson())),
   if (requests != null) 'requests': requests?.map((k, v) => MapEntry(k, v.toJson())),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'limits', 'requests'}.contains(key)); } 
-VolumeResourceRequirements copyWith({Map<String, ResourceQuantity>? Function()? limits, Map<String, ResourceQuantity>? Function()? requests, }) { return VolumeResourceRequirements(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'limits', 'requests'}.contains(key));}
+VolumeResourceRequirements copyWith({Map<String, ResourceQuantity>? Function()? limits, Map<String, ResourceQuantity>? Function()? requests, }) {return VolumeResourceRequirements(
   limits: limits != null ? limits() : this.limits,
   requests: requests != null ? requests() : this.requests,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is VolumeResourceRequirements &&
           limits == other.limits &&
-          requests == other.requests; } 
-@override int get hashCode { return Object.hash(limits, requests); } 
-@override String toString() { return 'VolumeResourceRequirements(limits: $limits, requests: $requests)'; } 
- }
+          requests == other.requests;}
+@override int get hashCode {return Object.hash(limits, requests);}
+@override String toString() {return 'VolumeResourceRequirements(limits: $limits, requests: $requests)';}
+}

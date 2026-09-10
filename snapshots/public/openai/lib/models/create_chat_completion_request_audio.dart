@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'voice_ids_or
 /// 
 @immutable final class CreateChatCompletionRequestAudioFormat {const CreateChatCompletionRequestAudioFormat._(this.value);
 
-factory CreateChatCompletionRequestAudioFormat.fromJson(String json) { return switch (json) {
+factory CreateChatCompletionRequestAudioFormat.fromJson(String json) {return switch (json) {
   'wav' => wav,
   'aac' => aac,
   'mp3' => mp3,
@@ -13,7 +13,7 @@ factory CreateChatCompletionRequestAudioFormat.fromJson(String json) { return sw
   'opus' => opus,
   'pcm16' => pcm16,
   _ => CreateChatCompletionRequestAudioFormat._(json),
-}; }
+};}
 
 static const CreateChatCompletionRequestAudioFormat wav = CreateChatCompletionRequestAudioFormat._('wav');
 
@@ -31,23 +31,23 @@ static const List<CreateChatCompletionRequestAudioFormat> values = [wav, aac, mp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateChatCompletionRequestAudioFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateChatCompletionRequestAudioFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateChatCompletionRequestAudioFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateChatCompletionRequestAudioFormat($value)';}
+}
 /// Parameters for audio output. Required when audio output is requested with
 /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
 /// 
 @immutable final class CreateChatCompletionRequestAudio {const CreateChatCompletionRequestAudio({required this.voice, required this.format, });
 
-factory CreateChatCompletionRequestAudio.fromJson(Map<String, dynamic> json) { return CreateChatCompletionRequestAudio(
+factory CreateChatCompletionRequestAudio.fromJson(Map<String, dynamic> json) {return CreateChatCompletionRequestAudio(
   voice: VoiceIdsOrCustomVoice.fromJson(json['voice']),
   format: CreateChatCompletionRequestAudioFormat.fromJson(json['format'] as String),
-); }
+);}
 
 /// The voice the model uses to respond. Supported built-in voices are
 /// `alloy`, `ash`, `ballad`, `coral`, `echo`, `fable`, `nova`, `onyx`,
@@ -61,20 +61,20 @@ final VoiceIdsOrCustomVoice voice;
 /// 
 final CreateChatCompletionRequestAudioFormat format;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'voice': voice.toJson(),
   'format': format.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('voice') &&
-      json.containsKey('format'); } 
-CreateChatCompletionRequestAudio copyWith({VoiceIdsOrCustomVoice? voice, CreateChatCompletionRequestAudioFormat? format, }) { return CreateChatCompletionRequestAudio(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('voice') &&
+      json.containsKey('format');}
+CreateChatCompletionRequestAudio copyWith({VoiceIdsOrCustomVoice? voice, CreateChatCompletionRequestAudioFormat? format, }) {return CreateChatCompletionRequestAudio(
   voice: voice ?? this.voice,
   format: format ?? this.format,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateChatCompletionRequestAudio &&
           voice == other.voice &&
-          format == other.format; } 
-@override int get hashCode { return Object.hash(voice, format); } 
-@override String toString() { return 'CreateChatCompletionRequestAudio(voice: $voice, format: $format)'; } 
- }
+          format == other.format;}
+@override int get hashCode {return Object.hash(voice, format);}
+@override String toString() {return 'CreateChatCompletionRequestAudio(voice: $voice, format: $format)';}
+}

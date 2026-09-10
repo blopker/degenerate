@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_ases_by_http_protocol_response_result_meta_confidence_info.dart';import 'radar_get_http_top_ases_by_http_protocol_response_result_meta_date_range.dart';import 'radar_get_http_top_ases_by_http_protocol_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 @immutable final class RadarGetHttpTopAsesByHttpProtocolResponseResultMetaNormalization {const RadarGetHttpTopAsesByHttpProtocolResponseResultMetaNormalization._(this.value);
 
-factory RadarGetHttpTopAsesByHttpProtocolResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopAsesByHttpProtocolResponseResultMetaNormalization.fromJson(String json) {return switch (json) {
   'PERCENTAGE' => percentage,
   'MIN0_MAX' => min0Max,
   'MIN_MAX' => minMax,
@@ -13,7 +13,7 @@ factory RadarGetHttpTopAsesByHttpProtocolResponseResultMetaNormalization.fromJso
   'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
   'RATIO' => ratio,
   _ => RadarGetHttpTopAsesByHttpProtocolResponseResultMetaNormalization._(json),
-}; }
+};}
 
 static const RadarGetHttpTopAsesByHttpProtocolResponseResultMetaNormalization percentage = RadarGetHttpTopAsesByHttpProtocolResponseResultMetaNormalization._('PERCENTAGE');
 
@@ -35,24 +35,24 @@ static const List<RadarGetHttpTopAsesByHttpProtocolResponseResultMetaNormalizati
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTopAsesByHttpProtocolResponseResultMetaNormalization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTopAsesByHttpProtocolResponseResultMetaNormalization($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTopAsesByHttpProtocolResponseResultMetaNormalization && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTopAsesByHttpProtocolResponseResultMetaNormalization($value)';}
+}
 /// Metadata for the results.
 @immutable final class RadarGetHttpTopAsesByHttpProtocolResponseResultMeta {const RadarGetHttpTopAsesByHttpProtocolResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
-factory RadarGetHttpTopAsesByHttpProtocolResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopAsesByHttpProtocolResponseResultMeta(
+factory RadarGetHttpTopAsesByHttpProtocolResponseResultMeta.fromJson(Map<String, dynamic> json) {return RadarGetHttpTopAsesByHttpProtocolResponseResultMeta(
   confidenceInfo: json['confidenceInfo'] != null ? RadarGetHttpTopAsesByHttpProtocolResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetHttpTopAsesByHttpProtocolResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
   lastUpdated: DateTime.parse(json['lastUpdated'] as String),
   normalization: RadarGetHttpTopAsesByHttpProtocolResponseResultMetaNormalization.fromJson(json['normalization'] as String),
   units: (json['units'] as List<dynamic>).map((e) => RadarGetHttpTopAsesByHttpProtocolResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final RadarGetHttpTopAsesByHttpProtocolResponseResultMetaConfidenceInfo? confidenceInfo;
 
@@ -67,32 +67,32 @@ final RadarGetHttpTopAsesByHttpProtocolResponseResultMetaNormalization normaliza
 /// Measurement units for the results.
 final List<RadarGetHttpTopAsesByHttpProtocolResponseResultMetaUnits> units;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'confidenceInfo': confidenceInfo?.toJson(),
   'dateRange': dateRange.map((e) => e.toJson()).toList(),
   'lastUpdated': lastUpdated.toIso8601String(),
   'normalization': normalization.toJson(),
   'units': units.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('confidenceInfo') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('confidenceInfo') &&
       json.containsKey('dateRange') &&
       json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
       json.containsKey('normalization') &&
-      json.containsKey('units'); } 
-RadarGetHttpTopAsesByHttpProtocolResponseResultMeta copyWith({RadarGetHttpTopAsesByHttpProtocolResponseResultMetaConfidenceInfo? Function()? confidenceInfo, List<RadarGetHttpTopAsesByHttpProtocolResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetHttpTopAsesByHttpProtocolResponseResultMetaNormalization? normalization, List<RadarGetHttpTopAsesByHttpProtocolResponseResultMetaUnits>? units, }) { return RadarGetHttpTopAsesByHttpProtocolResponseResultMeta(
+      json.containsKey('units');}
+RadarGetHttpTopAsesByHttpProtocolResponseResultMeta copyWith({RadarGetHttpTopAsesByHttpProtocolResponseResultMetaConfidenceInfo? Function()? confidenceInfo, List<RadarGetHttpTopAsesByHttpProtocolResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetHttpTopAsesByHttpProtocolResponseResultMetaNormalization? normalization, List<RadarGetHttpTopAsesByHttpProtocolResponseResultMetaUnits>? units, }) {return RadarGetHttpTopAsesByHttpProtocolResponseResultMeta(
   confidenceInfo: confidenceInfo != null ? confidenceInfo() : this.confidenceInfo,
   dateRange: dateRange ?? this.dateRange,
   lastUpdated: lastUpdated ?? this.lastUpdated,
   normalization: normalization ?? this.normalization,
   units: units ?? this.units,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetHttpTopAsesByHttpProtocolResponseResultMeta &&
           confidenceInfo == other.confidenceInfo &&
           listEquals(dateRange, other.dateRange) &&
           lastUpdated == other.lastUpdated &&
           normalization == other.normalization &&
-          listEquals(units, other.units); } 
-@override int get hashCode { return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
-@override String toString() { return 'RadarGetHttpTopAsesByHttpProtocolResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
- }
+          listEquals(units, other.units);}
+@override int get hashCode {return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units));}
+@override String toString() {return 'RadarGetHttpTopAsesByHttpProtocolResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)';}
+}

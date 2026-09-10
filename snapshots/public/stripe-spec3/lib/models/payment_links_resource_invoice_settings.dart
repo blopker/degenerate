@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';import 'invoice_setting_checkout_rendering_options.dart';import 'invoice_setting_custom_field.dart';import 'payment_links_resource_invoice_settings_account_tax_ids.dart';/// 
 @immutable final class PaymentLinksResourceInvoiceSettings {const PaymentLinksResourceInvoiceSettings({this.accountTaxIds = const Omittable.absent(), this.customFields = const Omittable.absent(), this.description = const Omittable.absent(), this.footer = const Omittable.absent(), this.issuer = const Omittable.absent(), this.metadata = const Omittable.absent(), this.renderingOptions = const Omittable.absent(), });
 
-factory PaymentLinksResourceInvoiceSettings.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceInvoiceSettings(
+factory PaymentLinksResourceInvoiceSettings.fromJson(Map<String, dynamic> json) {return PaymentLinksResourceInvoiceSettings(
   accountTaxIds: json.containsKey('account_tax_ids') ? Omittable((json['account_tax_ids'] as List<dynamic>?)?.map(PaymentLinksResourceInvoiceSettingsAccountTaxIds.fromJson).toList()) : const Omittable.absent(),
   customFields: json.containsKey('custom_fields') ? Omittable((json['custom_fields'] as List<dynamic>?)?.map((e) => InvoiceSettingCustomField.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
@@ -11,7 +11,7 @@ factory PaymentLinksResourceInvoiceSettings.fromJson(Map<String, dynamic> json) 
   issuer: json.containsKey('issuer') ? Omittable(json['issuer'] != null ? ConnectAccountReference.fromJson(json['issuer'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   renderingOptions: json.containsKey('rendering_options') ? Omittable(json['rendering_options'] != null ? InvoiceSettingCheckoutRenderingOptions.fromJson(json['rendering_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The account tax IDs associated with the invoice.
 final Omittable<List<PaymentLinksResourceInvoiceSettingsAccountTaxIds>?> accountTaxIds;
@@ -34,7 +34,7 @@ final Omittable<Map<String,String>?> metadata;
 /// Options for invoice PDF rendering.
 final Omittable<InvoiceSettingCheckoutRenderingOptions?> renderingOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountTaxIds.isPresent) 'account_tax_ids': accountTaxIds.value?.map((e) => e.toJson()).toList(),
   if (customFields.isPresent) 'custom_fields': customFields.value?.map((e) => e.toJson()).toList(),
   if (description.isPresent) 'description': description.value,
@@ -42,9 +42,9 @@ Map<String, dynamic> toJson() { return {
   if (issuer.isPresent) 'issuer': issuer.value?.toJson(),
   if (metadata.isPresent) 'metadata': metadata.value,
   if (renderingOptions.isPresent) 'rendering_options': renderingOptions.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tax_ids', 'custom_fields', 'description', 'footer', 'issuer', 'metadata', 'rendering_options'}.contains(key)); } 
-PaymentLinksResourceInvoiceSettings copyWith({Omittable<List<PaymentLinksResourceInvoiceSettingsAccountTaxIds>?>? accountTaxIds, Omittable<List<InvoiceSettingCustomField>?>? customFields, Omittable<String?>? description, Omittable<String?>? footer, Omittable<ConnectAccountReference?>? issuer, Omittable<Map<String,String>?>? metadata, Omittable<InvoiceSettingCheckoutRenderingOptions?>? renderingOptions, }) { return PaymentLinksResourceInvoiceSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_tax_ids', 'custom_fields', 'description', 'footer', 'issuer', 'metadata', 'rendering_options'}.contains(key));}
+PaymentLinksResourceInvoiceSettings copyWith({Omittable<List<PaymentLinksResourceInvoiceSettingsAccountTaxIds>?>? accountTaxIds, Omittable<List<InvoiceSettingCustomField>?>? customFields, Omittable<String?>? description, Omittable<String?>? footer, Omittable<ConnectAccountReference?>? issuer, Omittable<Map<String,String>?>? metadata, Omittable<InvoiceSettingCheckoutRenderingOptions?>? renderingOptions, }) {return PaymentLinksResourceInvoiceSettings(
   accountTaxIds: accountTaxIds ?? this.accountTaxIds,
   customFields: customFields ?? this.customFields,
   description: description ?? this.description,
@@ -52,8 +52,8 @@ PaymentLinksResourceInvoiceSettings copyWith({Omittable<List<PaymentLinksResourc
   issuer: issuer ?? this.issuer,
   metadata: metadata ?? this.metadata,
   renderingOptions: renderingOptions ?? this.renderingOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentLinksResourceInvoiceSettings &&
           accountTaxIds.isPresent == other.accountTaxIds.isPresent &&
           listEquals(accountTaxIds.value, other.accountTaxIds.value) &&
@@ -63,7 +63,7 @@ PaymentLinksResourceInvoiceSettings copyWith({Omittable<List<PaymentLinksResourc
           footer == other.footer &&
           issuer == other.issuer &&
           metadata == other.metadata &&
-          renderingOptions == other.renderingOptions; } 
-@override int get hashCode { return Object.hash(Object.hashAll(accountTaxIds.value ?? const []), Object.hashAll(customFields.value ?? const []), description, footer, issuer, metadata, renderingOptions); } 
-@override String toString() { return 'PaymentLinksResourceInvoiceSettings(accountTaxIds: $accountTaxIds, customFields: $customFields, description: $description, footer: $footer, issuer: $issuer, metadata: $metadata, renderingOptions: $renderingOptions)'; } 
- }
+          renderingOptions == other.renderingOptions;}
+@override int get hashCode {return Object.hash(Object.hashAll(accountTaxIds.value ?? const []), Object.hashAll(customFields.value ?? const []), description, footer, issuer, metadata, renderingOptions);}
+@override String toString() {return 'PaymentLinksResourceInvoiceSettings(accountTaxIds: $accountTaxIds, customFields: $customFields, description: $description, footer: $footer, issuer: $issuer, metadata: $metadata, renderingOptions: $renderingOptions)';}
+}

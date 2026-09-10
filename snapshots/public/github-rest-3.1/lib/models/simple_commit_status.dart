@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SimpleCommitStatus {const SimpleCommitStatus({required this.description, required this.id, required this.nodeId, required this.state, required this.context, required this.targetUrl, required this.avatarUrl, required this.url, required this.createdAt, required this.updatedAt, this.$required = const Omittable.absent(), });
 
-factory SimpleCommitStatus.fromJson(Map<String, dynamic> json) { return SimpleCommitStatus(
+factory SimpleCommitStatus.fromJson(Map<String, dynamic> json) {return SimpleCommitStatus(
   description: json['description'] as String?,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -14,7 +14,7 @@ factory SimpleCommitStatus.fromJson(Map<String, dynamic> json) { return SimpleCo
   url: Uri.parse(json['url'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 final String? description;
 
@@ -38,7 +38,7 @@ final DateTime createdAt;
 
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'id': id,
   'node_id': nodeId,
@@ -50,8 +50,8 @@ Map<String, dynamic> toJson() { return {
   'url': url.toString(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('state') && json['state'] is String &&
@@ -60,8 +60,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('avatar_url') && (json['avatar_url'] == null || json['avatar_url'] is String) &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-SimpleCommitStatus copyWith({String? Function()? description, int? id, String? nodeId, String? state, String? context, Uri? Function()? targetUrl, Omittable<bool?>? $required, Uri? Function()? avatarUrl, Uri? url, DateTime? createdAt, DateTime? updatedAt, }) { return SimpleCommitStatus(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+SimpleCommitStatus copyWith({String? Function()? description, int? id, String? nodeId, String? state, String? context, Uri? Function()? targetUrl, Omittable<bool?>? $required, Uri? Function()? avatarUrl, Uri? url, DateTime? createdAt, DateTime? updatedAt, }) {return SimpleCommitStatus(
   description: description != null ? description() : this.description,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -73,8 +73,8 @@ SimpleCommitStatus copyWith({String? Function()? description, int? id, String? n
   url: url ?? this.url,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SimpleCommitStatus &&
           description == other.description &&
           id == other.id &&
@@ -86,7 +86,7 @@ SimpleCommitStatus copyWith({String? Function()? description, int? id, String? n
           avatarUrl == other.avatarUrl &&
           url == other.url &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(description, id, nodeId, state, context, targetUrl, $required, avatarUrl, url, createdAt, updatedAt); } 
-@override String toString() { return 'SimpleCommitStatus(description: $description, id: $id, nodeId: $nodeId, state: $state, context: $context, targetUrl: $targetUrl, \$required: ${$required}, avatarUrl: $avatarUrl, url: $url, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(description, id, nodeId, state, context, targetUrl, $required, avatarUrl, url, createdAt, updatedAt);}
+@override String toString() {return 'SimpleCommitStatus(description: $description, id: $id, nodeId: $nodeId, state: $state, context: $context, targetUrl: $targetUrl, \$required: ${$required}, avatarUrl: $avatarUrl, url: $url, createdAt: $createdAt, updatedAt: $updatedAt)';}
+}

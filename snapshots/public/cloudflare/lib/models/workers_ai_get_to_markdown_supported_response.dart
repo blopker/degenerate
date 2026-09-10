@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_get_to_markdown_supported_response_result.dart';@immutable final class WorkersAiGetToMarkdownSupportedResponse {const WorkersAiGetToMarkdownSupportedResponse({required this.result, required this.success, });
 
-factory WorkersAiGetToMarkdownSupportedResponse.fromJson(Map<String, dynamic> json) { return WorkersAiGetToMarkdownSupportedResponse(
+factory WorkersAiGetToMarkdownSupportedResponse.fromJson(Map<String, dynamic> json) {return WorkersAiGetToMarkdownSupportedResponse(
   result: (json['result'] as List<dynamic>).map((e) => WorkersAiGetToMarkdownSupportedResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<WorkersAiGetToMarkdownSupportedResponseResult> result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-WorkersAiGetToMarkdownSupportedResponse copyWith({List<WorkersAiGetToMarkdownSupportedResponseResult>? result, bool? success, }) { return WorkersAiGetToMarkdownSupportedResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+WorkersAiGetToMarkdownSupportedResponse copyWith({List<WorkersAiGetToMarkdownSupportedResponseResult>? result, bool? success, }) {return WorkersAiGetToMarkdownSupportedResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersAiGetToMarkdownSupportedResponse &&
           listEquals(result, other.result) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(result), success); } 
-@override String toString() { return 'WorkersAiGetToMarkdownSupportedResponse(result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(Object.hashAll(result), success);}
+@override String toString() {return 'WorkersAiGetToMarkdownSupportedResponse(result: $result, success: $success)';}
+}

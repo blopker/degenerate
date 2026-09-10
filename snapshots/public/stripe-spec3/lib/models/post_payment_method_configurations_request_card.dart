@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_card_display_preference.dart';/// Cards are a popular way for consumers and businesses to pay online or in person. Stripe supports global and local card networks.
 @immutable final class PostPaymentMethodConfigurationsRequestCard {const PostPaymentMethodConfigurationsRequestCard({this.displayPreference});
 
-factory PostPaymentMethodConfigurationsRequestCard.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestCard(
+factory PostPaymentMethodConfigurationsRequestCard.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsRequestCard(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestCardDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsRequestCardDisplayPreference? displayPreference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsRequestCard copyWith({PostPaymentMethodConfigurationsRequestCardDisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsRequestCard(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_preference'}.contains(key));}
+PostPaymentMethodConfigurationsRequestCard copyWith({PostPaymentMethodConfigurationsRequestCardDisplayPreference? Function()? displayPreference}) {return PostPaymentMethodConfigurationsRequestCard(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsRequestCard &&
-          displayPreference == other.displayPreference; } 
-@override int get hashCode { return displayPreference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestCard(displayPreference: $displayPreference)'; } 
- }
+          displayPreference == other.displayPreference;}
+@override int get hashCode {return displayPreference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestCard(displayPreference: $displayPreference)';}
+}

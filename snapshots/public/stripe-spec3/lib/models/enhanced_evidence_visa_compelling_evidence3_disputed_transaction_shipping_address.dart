@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enhanced_evidence_visa_compelling_evidence3_disputed_transaction_shipping_address_city.dart';import 'enhanced_evidence_visa_compelling_evidence3_disputed_transaction_shipping_address_country.dart';import 'enhanced_evidence_visa_compelling_evidence3_disputed_transaction_shipping_address_line1.dart';import 'enhanced_evidence_visa_compelling_evidence3_disputed_transaction_shipping_address_line2.dart';import 'enhanced_evidence_visa_compelling_evidence3_disputed_transaction_shipping_address_postal_code.dart';import 'enhanced_evidence_visa_compelling_evidence3_disputed_transaction_shipping_address_state.dart';@immutable final class EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddress {const EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
 
-factory EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddress.fromJson(Map<String, dynamic> json) { return EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddress(
+factory EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddress.fromJson(Map<String, dynamic> json) {return EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddress(
   city: json['city'] != null ? EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressCity.fromJson(json['city']) : null,
   country: json['country'] != null ? EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressCountry.fromJson(json['country']) : null,
   line1: json['line1'] != null ? EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressLine1.fromJson(json['line1']) : null,
   line2: json['line2'] != null ? EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressLine2.fromJson(json['line2']) : null,
   postalCode: json['postal_code'] != null ? EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressPostalCode.fromJson(json['postal_code']) : null,
   state: json['state'] != null ? EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressState.fromJson(json['state']) : null,
-); }
+);}
 
 final EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressCity? city;
 
@@ -23,31 +23,31 @@ final EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressP
 
 final EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressState? state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (city != null) 'city': city?.toJson(),
   if (country != null) 'country': country?.toJson(),
   if (line1 != null) 'line1': line1?.toJson(),
   if (line2 != null) 'line2': line2?.toJson(),
   if (postalCode != null) 'postal_code': postalCode?.toJson(),
   if (state != null) 'state': state?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'country', 'line1', 'line2', 'postal_code', 'state'}.contains(key)); } 
-EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddress copyWith({EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressCity? Function()? city, EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressCountry? Function()? country, EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressLine1? Function()? line1, EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressLine2? Function()? line2, EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressPostalCode? Function()? postalCode, EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressState? Function()? state, }) { return EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddress(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'city', 'country', 'line1', 'line2', 'postal_code', 'state'}.contains(key));}
+EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddress copyWith({EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressCity? Function()? city, EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressCountry? Function()? country, EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressLine1? Function()? line1, EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressLine2? Function()? line2, EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressPostalCode? Function()? postalCode, EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddressState? Function()? state, }) {return EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddress(
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,
   line1: line1 != null ? line1() : this.line1,
   line2: line2 != null ? line2() : this.line2,
   postalCode: postalCode != null ? postalCode() : this.postalCode,
   state: state != null ? state() : this.state,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddress &&
           city == other.city &&
           country == other.country &&
           line1 == other.line1 &&
           line2 == other.line2 &&
           postalCode == other.postalCode &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(city, country, line1, line2, postalCode, state); } 
-@override String toString() { return 'EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddress(city: $city, country: $country, line1: $line1, line2: $line2, postalCode: $postalCode, state: $state)'; } 
- }
+          state == other.state;}
+@override int get hashCode {return Object.hash(city, country, line1, line2, postalCode, state);}
+@override String toString() {return 'EnhancedEvidenceVisaCompellingEvidence3DisputedTransactionShippingAddress(city: $city, country: $country, line1: $line1, line2: $line2, postalCode: $postalCode, state: $state)';}
+}

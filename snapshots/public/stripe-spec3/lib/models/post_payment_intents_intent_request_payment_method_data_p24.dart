@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank {const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._(this.value);
 
-factory PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank.fromJson(String json) {return switch (json) {
   'alior_bank' => aliorBank,
   'bank_millennium' => bankMillennium,
   'bank_nowy_bfg_sa' => bankNowyBfgSa,
@@ -30,7 +30,7 @@ factory PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank.fromJson(String 
   'velobank' => velobank,
   'volkswagen_bank' => volkswagenBank,
   _ => PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank aliorBank = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('alior_bank');
 
@@ -88,32 +88,32 @@ static const List<PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank($value)';}
+}
 @immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataP24 {const PostPaymentIntentsIntentRequestPaymentMethodDataP24({this.bank});
 
-factory PostPaymentIntentsIntentRequestPaymentMethodDataP24.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestPaymentMethodDataP24(
+factory PostPaymentIntentsIntentRequestPaymentMethodDataP24.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentRequestPaymentMethodDataP24(
   bank: json['bank'] != null ? PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank.fromJson(json['bank'] as String) : null,
-); }
+);}
 
 final PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank? bank;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bank != null) 'bank': bank?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank'}.contains(key)); } 
-PostPaymentIntentsIntentRequestPaymentMethodDataP24 copyWith({PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank? Function()? bank}) { return PostPaymentIntentsIntentRequestPaymentMethodDataP24(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank'}.contains(key));}
+PostPaymentIntentsIntentRequestPaymentMethodDataP24 copyWith({PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank? Function()? bank}) {return PostPaymentIntentsIntentRequestPaymentMethodDataP24(
   bank: bank != null ? bank() : this.bank,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsIntentRequestPaymentMethodDataP24 &&
-          bank == other.bank; } 
-@override int get hashCode { return bank.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentRequestPaymentMethodDataP24(bank: $bank)'; } 
- }
+          bank == other.bank;}
+@override int get hashCode {return bank.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentRequestPaymentMethodDataP24(bank: $bank)';}
+}

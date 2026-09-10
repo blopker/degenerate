@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListRunsOrder {const ListRunsOrder._(this.value);
 
-factory ListRunsOrder.fromJson(String json) { return switch (json) {
+factory ListRunsOrder.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   _ => ListRunsOrder._(json),
-}; }
+};}
 
 static const ListRunsOrder asc = ListRunsOrder._('asc');
 
@@ -16,11 +16,11 @@ static const List<ListRunsOrder> values = [asc, desc];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ListRunsOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ListRunsOrder($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ListRunsOrder && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ListRunsOrder($value)';}
+}

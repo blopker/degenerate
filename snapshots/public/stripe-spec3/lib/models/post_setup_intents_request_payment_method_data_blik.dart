@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodDataBlik {const PostSetupIntentsRequestPaymentMethodDataBlik();
 
-factory PostSetupIntentsRequestPaymentMethodDataBlik.fromJson(Map<String, dynamic> _) { return const PostSetupIntentsRequestPaymentMethodDataBlik(); }
+factory PostSetupIntentsRequestPaymentMethodDataBlik.fromJson(Map<String, dynamic> _) {return const PostSetupIntentsRequestPaymentMethodDataBlik();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PostSetupIntentsRequestPaymentMethodDataBlik copyWith() { return const PostSetupIntentsRequestPaymentMethodDataBlik(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PostSetupIntentsRequestPaymentMethodDataBlik copyWith() {return const PostSetupIntentsRequestPaymentMethodDataBlik(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is PostSetupIntentsRequestPaymentMethodDataBlik; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodDataBlik()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is PostSetupIntentsRequestPaymentMethodDataBlik;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodDataBlik()';}
+}

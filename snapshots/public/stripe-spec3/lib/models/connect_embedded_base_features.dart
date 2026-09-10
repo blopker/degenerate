@@ -3,16 +3,16 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class ConnectEmbeddedBaseFeatures {const ConnectEmbeddedBaseFeatures();
 
-factory ConnectEmbeddedBaseFeatures.fromJson(Map<String, dynamic> _) { return const ConnectEmbeddedBaseFeatures(); }
+factory ConnectEmbeddedBaseFeatures.fromJson(Map<String, dynamic> _) {return const ConnectEmbeddedBaseFeatures();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-ConnectEmbeddedBaseFeatures copyWith() { return const ConnectEmbeddedBaseFeatures(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+ConnectEmbeddedBaseFeatures copyWith() {return const ConnectEmbeddedBaseFeatures(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is ConnectEmbeddedBaseFeatures; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'ConnectEmbeddedBaseFeatures()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is ConnectEmbeddedBaseFeatures;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'ConnectEmbeddedBaseFeatures()';}
+}

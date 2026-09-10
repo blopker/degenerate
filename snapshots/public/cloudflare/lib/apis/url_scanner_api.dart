@@ -13,7 +13,7 @@ final class UrlScannerApi with ApiExecutor {const UrlScannerApi(this.apiConfig);
 /// Submit URLs to scan. Check limits at https://developers.cloudflare.com/security-center/investigate/scan-limits/ and take into account scans submitted in bulk have lower priority and may take longer to finish.
 ///
 /// `POST /accounts/{account_id}/urlscanner/v2/bulk`
-Future<ApiResult<List<UrlscannerCreateScanBulkResponse>, UrlscannerCreateScanBulkError>> urlscannerCreateScanBulkV2({required String accountId, List<UrlscannerCreateScanBulkRequest>? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<UrlscannerCreateScanBulkResponse>, UrlscannerCreateScanBulkError>> urlscannerCreateScanBulkV2({required String accountId, List<UrlscannerCreateScanBulkRequest>? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -32,13 +32,13 @@ return (json as List<dynamic>).map((e) => UrlscannerCreateScanBulkResponse.fromJ
   },
   onError: UrlscannerCreateScanBulkError.parse,
 );
- } 
+}
 /// Get URL scan's DOM
 ///
 /// Returns a plain text response, with the scan's DOM content as rendered by Chrome.
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/dom/{scan_id}`
-Future<ApiResult<String, UrlscannerGetScanDomError>> urlscannerGetScanDomV2({required String scanId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, UrlscannerGetScanDomError>> urlscannerGetScanDomV2({required String scanId, required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -54,13 +54,13 @@ return response.body;
   },
   onError: UrlscannerGetScanDomError.parse,
 );
- } 
+}
 /// Get URL scan's HAR
 ///
 /// Get a URL scan's HAR file. See HAR spec at http://www.softwareishard.com/blog/har-12-spec/.
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/har/{scan_id}`
-Future<ApiResult<UrlscannerGetScanHarResponse2, UrlscannerGetScanHarError>> urlscannerGetScanHarV2({required String scanId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UrlscannerGetScanHarResponse2, UrlscannerGetScanHarError>> urlscannerGetScanHarV2({required String scanId, required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -77,13 +77,13 @@ return UrlscannerGetScanHarResponse2.fromJson(json as Map<String, dynamic>);
   },
   onError: UrlscannerGetScanHarError.parse,
 );
- } 
+}
 /// Get raw response
 ///
 /// Returns the raw response of the network request. Find the `response_id` in the `data.requests.response.hash`.
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/responses/{response_id}`
-Future<ApiResult<String, UrlscannerGetResponseResponse400>> urlscannerGetResponseV2({required String responseId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, UrlscannerGetResponseResponse400>> urlscannerGetResponseV2({required String responseId, required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -108,13 +108,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get URL scan
 ///
 /// Get URL scan by uuid
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/result/{scan_id}`
-Future<ApiResult<UrlscannerGetScanResponse2, UrlscannerGetScanError>> urlscannerGetScanV2({required String scanId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UrlscannerGetScanResponse2, UrlscannerGetScanError>> urlscannerGetScanV2({required String scanId, required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -131,13 +131,13 @@ return UrlscannerGetScanResponse2.fromJson(json as Map<String, dynamic>);
   },
   onError: UrlscannerGetScanError.parse,
 );
- } 
+}
 /// Create URL Scan
 ///
 /// Submit a URL to scan. Check limits at https://developers.cloudflare.com/security-center/investigate/scan-limits/.
 ///
 /// `POST /accounts/{account_id}/urlscanner/v2/scan`
-Future<ApiResult<String, UrlscannerCreateScanError>> urlscannerCreateScanV2({required String accountId, UrlscannerCreateScanRequest2? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, UrlscannerCreateScanError>> urlscannerCreateScanV2({required String accountId, UrlscannerCreateScanRequest2? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -156,13 +156,13 @@ return json['result'] as String;
   },
   onError: UrlscannerCreateScanError.parse,
 );
- } 
+}
 /// Get screenshot
 ///
 /// Get scan's screenshot by resolution (desktop/mobile/tablet).
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/screenshots/{scan_id}.png`
-Future<ApiResult<String, UrlscannerGetScanScreenshotError>> urlscannerGetScanScreenshotV2({required String scanId, required String accountId, UrlscannerGetScanScreenshotResolution2? resolution, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, UrlscannerGetScanScreenshotError>> urlscannerGetScanScreenshotV2({required String scanId, required String accountId, UrlscannerGetScanScreenshotResolution2? resolution, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (resolution != null) {
   queryParameters['resolution'] = resolution.toJson();
@@ -186,13 +186,13 @@ return response.body;
   },
   onError: UrlscannerGetScanScreenshotError.parse,
 );
- } 
+}
 /// Search URL scans
 ///
 /// Use a subset of ElasticSearch Query syntax to filter scans. Some example queries:`<br/>` `<br/>`- 'path:"/bundles/jquery.js"': Searches for scans who requested resources with the given path.`<br/>`- 'page.asn:AS24940 AND hash:xxx': Websites hosted in AS24940 where a resource with the given hash was downloaded.`<br/>`- 'page.domain:microsoft* AND verdicts.malicious:true AND NOT page.domain:microsoft.com': malicious scans whose hostname starts with "microsoft".`<br/>`- 'apikey:me AND date:`[2025-01 TO 2025-02]`': my scans from 2025 January to 2025 February.
 ///
 /// `GET /accounts/{account_id}/urlscanner/v2/search`
-Future<ApiResult<UrlscannerSearchScansResponse2, UrlscannerSearchScansResponse4002>> urlscannerSearchScansV2({required String accountId, int? size, String? q, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<UrlscannerSearchScansResponse2, UrlscannerSearchScansResponse4002>> urlscannerSearchScansV2({required String accountId, int? size, String? q, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (size != null) {
   queryParameters['size'] = size.toString();
@@ -229,5 +229,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

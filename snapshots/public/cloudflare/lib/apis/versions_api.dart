@@ -13,7 +13,7 @@ final class VersionsApi with ApiExecutor {const VersionsApi(this.apiConfig);
 /// List all versions for a Worker.
 ///
 /// `GET /accounts/{account_id}/workers/workers/{worker_id}/versions`
-Future<ApiResult<List<WorkersVersionResponse>, ResponseCommonFailure82>> listWorkerVersions({required WorkersIdentifier accountId, required String workerId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorkersVersionResponse>, ResponseCommonFailure82>> listWorkerVersions({required WorkersIdentifier accountId, required String workerId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -50,13 +50,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create Version
 ///
 /// Create a new version.
 ///
 /// `POST /accounts/{account_id}/workers/workers/{worker_id}/versions`
-Future<ApiResult<WorkersVersionResponse, ResponseCommonFailure82>> createWorkerVersion({required WorkersIdentifier accountId, required String workerId, required WorkersVersionRequest body, bool? deploy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersVersionResponse, ResponseCommonFailure82>> createWorkerVersion({required WorkersIdentifier accountId, required String workerId, required WorkersVersionRequest body, bool? deploy, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deploy != null) {
   queryParameters['deploy'] = deploy.toString();
@@ -92,13 +92,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get Version
 ///
 /// Get details about a specific version.
 ///
 /// `GET /accounts/{account_id}/workers/workers/{worker_id}/versions/{version_id}`
-Future<ApiResult<WorkersVersionResponse, ResponseCommonFailure82>> getWorkerVersion({required WorkersIdentifier accountId, required String workerId, required String versionId, GetWorkerVersionInclude? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersVersionResponse, ResponseCommonFailure82>> getWorkerVersion({required WorkersIdentifier accountId, required String workerId, required String versionId, GetWorkerVersionInclude? include, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
   queryParameters['include'] = include.toJson();
@@ -132,13 +132,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Version
 ///
 /// Delete a version.
 ///
 /// `DELETE /accounts/{account_id}/workers/workers/{worker_id}/versions/{version_id}`
-Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> deleteWorkerVersion({required WorkersIdentifier accountId, required String workerId, required String versionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> deleteWorkerVersion({required WorkersIdentifier accountId, required String workerId, required String versionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -164,5 +164,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

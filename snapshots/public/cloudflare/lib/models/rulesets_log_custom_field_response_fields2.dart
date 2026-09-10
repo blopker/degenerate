@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The transformed response field to log.
 @immutable final class RulesetsLogCustomFieldResponseFields2 {const RulesetsLogCustomFieldResponseFields2({required this.name, this.preserveDuplicates, });
 
-factory RulesetsLogCustomFieldResponseFields2.fromJson(Map<String, dynamic> json) { return RulesetsLogCustomFieldResponseFields2(
+factory RulesetsLogCustomFieldResponseFields2.fromJson(Map<String, dynamic> json) {return RulesetsLogCustomFieldResponseFields2(
   name: json['name'] as String,
   preserveDuplicates: json['preserve_duplicates'] as bool?,
-); }
+);}
 
 /// The name of the response header.
 final String name;
@@ -15,20 +15,20 @@ final String name;
 final bool? preserveDuplicates;
 
 /// The value with the schema default applied when absent.
-bool get preserveDuplicatesOrDefault { return preserveDuplicates ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get preserveDuplicatesOrDefault {return preserveDuplicates ?? false;}
+Map<String, dynamic> toJson() {return {
   'name': name,
   'preserve_duplicates': ?preserveDuplicates,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-RulesetsLogCustomFieldResponseFields2 copyWith({String? name, bool? Function()? preserveDuplicates, }) { return RulesetsLogCustomFieldResponseFields2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+RulesetsLogCustomFieldResponseFields2 copyWith({String? name, bool? Function()? preserveDuplicates, }) {return RulesetsLogCustomFieldResponseFields2(
   name: name ?? this.name,
   preserveDuplicates: preserveDuplicates != null ? preserveDuplicates() : this.preserveDuplicates,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsLogCustomFieldResponseFields2 &&
           name == other.name &&
-          preserveDuplicates == other.preserveDuplicates; } 
-@override int get hashCode { return Object.hash(name, preserveDuplicates); } 
-@override String toString() { return 'RulesetsLogCustomFieldResponseFields2(name: $name, preserveDuplicates: $preserveDuplicates)'; } 
- }
+          preserveDuplicates == other.preserveDuplicates;}
+@override int get hashCode {return Object.hash(name, preserveDuplicates);}
+@override String toString() {return 'RulesetsLogCustomFieldResponseFields2(name: $name, preserveDuplicates: $preserveDuplicates)';}
+}

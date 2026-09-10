@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'since.dart';import 'until.dart';/// The exact parameters/timestamps the analytics service used to return data.
 @immutable final class QueryResponse {const QueryResponse({this.since, this.timeDelta, this.until, });
 
-factory QueryResponse.fromJson(Map<String, dynamic> json) { return QueryResponse(
+factory QueryResponse.fromJson(Map<String, dynamic> json) {return QueryResponse(
   since: json['since'] != null ? Since.fromJson(json['since']) : null,
   timeDelta: json['time_delta'] != null ? (json['time_delta'] as num).toInt() : null,
   until: json['until'] != null ? Until.fromJson(json['until']) : null,
-); }
+);}
 
 final Since? since;
 
@@ -16,22 +16,22 @@ final int? timeDelta;
 
 final Until? until;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (since != null) 'since': since?.toJson(),
   'time_delta': ?timeDelta,
   if (until != null) 'until': until?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'since', 'time_delta', 'until'}.contains(key)); } 
-QueryResponse copyWith({Since? Function()? since, int? Function()? timeDelta, Until? Function()? until, }) { return QueryResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'since', 'time_delta', 'until'}.contains(key));}
+QueryResponse copyWith({Since? Function()? since, int? Function()? timeDelta, Until? Function()? until, }) {return QueryResponse(
   since: since != null ? since() : this.since,
   timeDelta: timeDelta != null ? timeDelta() : this.timeDelta,
   until: until != null ? until() : this.until,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is QueryResponse &&
           since == other.since &&
           timeDelta == other.timeDelta &&
-          until == other.until; } 
-@override int get hashCode { return Object.hash(since, timeDelta, until); } 
-@override String toString() { return 'QueryResponse(since: $since, timeDelta: $timeDelta, until: $until)'; } 
- }
+          until == other.until;}
+@override int get hashCode {return Object.hash(since, timeDelta, until);}
+@override String toString() {return 'QueryResponse(since: $since, timeDelta: $timeDelta, until: $until)';}
+}

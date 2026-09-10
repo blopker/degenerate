@@ -9,12 +9,12 @@ bool toJson() => value;
 }
 @immutable final class AddressingAddressMapsMembership {const AddressingAddressMapsMembership({this.canDelete, this.createdAt, this.identifier, this.kind, });
 
-factory AddressingAddressMapsMembership.fromJson(Map<String, dynamic> json) { return AddressingAddressMapsMembership(
+factory AddressingAddressMapsMembership.fromJson(Map<String, dynamic> json) {return AddressingAddressMapsMembership(
   canDelete: json['can_delete'] != null ? AddressingSchemasCanDelete.fromJson(json['can_delete'] as bool) : null,
   createdAt: json['created_at'] != null ? AddressingTimestamp.fromJson(json['created_at'] as String) : null,
   identifier: json['identifier'] != null ? AddressingIdentifier.fromJson(json['identifier'] as String) : null,
   kind: json['kind'] != null ? AddressingKind.fromJson(json['kind'] as String) : null,
-); }
+);}
 
 final AddressingSchemasCanDelete? canDelete;
 
@@ -24,25 +24,25 @@ final AddressingIdentifier? identifier;
 
 final AddressingKind? kind;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (canDelete != null) 'can_delete': canDelete?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (identifier != null) 'identifier': identifier?.toJson(),
   if (kind != null) 'kind': kind?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_delete', 'created_at', 'identifier', 'kind'}.contains(key)); } 
-AddressingAddressMapsMembership copyWith({AddressingSchemasCanDelete? Function()? canDelete, AddressingTimestamp? Function()? createdAt, AddressingIdentifier? Function()? identifier, AddressingKind? Function()? kind, }) { return AddressingAddressMapsMembership(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'can_delete', 'created_at', 'identifier', 'kind'}.contains(key));}
+AddressingAddressMapsMembership copyWith({AddressingSchemasCanDelete? Function()? canDelete, AddressingTimestamp? Function()? createdAt, AddressingIdentifier? Function()? identifier, AddressingKind? Function()? kind, }) {return AddressingAddressMapsMembership(
   canDelete: canDelete != null ? canDelete() : this.canDelete,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   identifier: identifier != null ? identifier() : this.identifier,
   kind: kind != null ? kind() : this.kind,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AddressingAddressMapsMembership &&
           canDelete == other.canDelete &&
           createdAt == other.createdAt &&
           identifier == other.identifier &&
-          kind == other.kind; } 
-@override int get hashCode { return Object.hash(canDelete, createdAt, identifier, kind); } 
-@override String toString() { return 'AddressingAddressMapsMembership(canDelete: $canDelete, createdAt: $createdAt, identifier: $identifier, kind: $kind)'; } 
- }
+          kind == other.kind;}
+@override int get hashCode {return Object.hash(canDelete, createdAt, identifier, kind);}
+@override String toString() {return 'AddressingAddressMapsMembership(canDelete: $canDelete, createdAt: $createdAt, identifier: $identifier, kind: $kind)';}
+}

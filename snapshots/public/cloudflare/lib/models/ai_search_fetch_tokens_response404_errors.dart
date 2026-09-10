@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchFetchTokensResponse404Errors {const AiSearchFetchTokensResponse404Errors({required this.code, required this.message, });
 
-factory AiSearchFetchTokensResponse404Errors.fromJson(Map<String, dynamic> json) { return AiSearchFetchTokensResponse404Errors(
+factory AiSearchFetchTokensResponse404Errors.fromJson(Map<String, dynamic> json) {return AiSearchFetchTokensResponse404Errors(
   code: (json['code'] as num).toDouble(),
   message: json['message'] as String,
-); }
+);}
 
 final double code;
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
-      json.containsKey('message') && json['message'] is String; } 
-AiSearchFetchTokensResponse404Errors copyWith({double? code, String? message, }) { return AiSearchFetchTokensResponse404Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String;}
+AiSearchFetchTokensResponse404Errors copyWith({double? code, String? message, }) {return AiSearchFetchTokensResponse404Errors(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchFetchTokensResponse404Errors &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'AiSearchFetchTokensResponse404Errors(code: $code, message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return Object.hash(code, message);}
+@override String toString() {return 'AiSearchFetchTokensResponse404Errors(code: $code, message: $message)';}
+}

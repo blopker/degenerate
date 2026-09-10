@@ -13,7 +13,7 @@ final class RadarPostQuantumApi with ApiExecutor {const RadarPostQuantumApi(this
 /// Returns a summary of origin post-quantum data grouped by the specified dimension.
 ///
 /// `GET /radar/post_quantum/origin/summary/{dimension}`
-Future<ApiResult<RadarGetOriginPostQuantumSummaryResponseResult, RadarGetOriginPostQuantumSummaryResponse400>> radarGetOriginPostQuantumSummary({required RadarGetOriginPostQuantumSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetOriginPostQuantumSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetOriginPostQuantumSummaryResponseResult, RadarGetOriginPostQuantumSummaryResponse400>> radarGetOriginPostQuantumSummary({required RadarGetOriginPostQuantumSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetOriginPostQuantumSummaryFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -67,13 +67,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get Origin Post-Quantum Data Over Time
 ///
 /// Returns a timeseries of origin post-quantum data grouped by the specified dimension.
 ///
 /// `GET /radar/post_quantum/origin/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetOriginPostQuantumTimeseriesGroupsResponseResult, RadarGetOriginPostQuantumTimeseriesGroupsResponse400>> radarGetOriginPostQuantumTimeseriesGroups({required RadarGetOriginPostQuantumTimeseriesGroupsDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetOriginPostQuantumTimeseriesGroupsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetOriginPostQuantumTimeseriesGroupsResponseResult, RadarGetOriginPostQuantumTimeseriesGroupsResponse400>> radarGetOriginPostQuantumTimeseriesGroups({required RadarGetOriginPostQuantumTimeseriesGroupsDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetOriginPostQuantumTimeseriesGroupsFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -127,13 +127,13 @@ return null;
 
   },
 );
- } 
+}
 /// Check Post-Quantum TLS support
 ///
 /// Tests whether a hostname or IP address supports Post-Quantum (PQ) TLS key exchange. Returns information about the negotiated key exchange algorithm and whether it uses PQ cryptography.
 ///
 /// `GET /radar/post_quantum/tls/support`
-Future<ApiResult<RadarGetPostQuantumTlsSupportResponseResult, RadarGetPostQuantumTlsSupportResponse400>> radarGetPostQuantumTlsSupport({required String host, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetPostQuantumTlsSupportResponseResult, RadarGetPostQuantumTlsSupportResponse400>> radarGetPostQuantumTlsSupport({required String host, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['host'] = host;
 
@@ -165,5 +165,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

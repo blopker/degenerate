@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the inspection mode as either `deep` or `shallow`.
 @immutable final class ZeroTrustGatewayBodyScanningSettingsInspectionMode {const ZeroTrustGatewayBodyScanningSettingsInspectionMode._(this.value);
 
-factory ZeroTrustGatewayBodyScanningSettingsInspectionMode.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayBodyScanningSettingsInspectionMode.fromJson(String json) {return switch (json) {
   'deep' => deep,
   'shallow' => shallow,
   _ => ZeroTrustGatewayBodyScanningSettingsInspectionMode._(json),
-}; }
+};}
 
 static const ZeroTrustGatewayBodyScanningSettingsInspectionMode deep = ZeroTrustGatewayBodyScanningSettingsInspectionMode._('deep');
 
@@ -17,34 +17,34 @@ static const List<ZeroTrustGatewayBodyScanningSettingsInspectionMode> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayBodyScanningSettingsInspectionMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayBodyScanningSettingsInspectionMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZeroTrustGatewayBodyScanningSettingsInspectionMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayBodyScanningSettingsInspectionMode($value)';}
+}
 /// Specify the DLP inspection mode.
 @immutable final class ZeroTrustGatewayBodyScanningSettings {const ZeroTrustGatewayBodyScanningSettings({this.inspectionMode});
 
-factory ZeroTrustGatewayBodyScanningSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayBodyScanningSettings(
+factory ZeroTrustGatewayBodyScanningSettings.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayBodyScanningSettings(
   inspectionMode: json['inspection_mode'] != null ? ZeroTrustGatewayBodyScanningSettingsInspectionMode.fromJson(json['inspection_mode'] as String) : null,
-); }
+);}
 
 /// Specify the inspection mode as either `deep` or `shallow`.
 final ZeroTrustGatewayBodyScanningSettingsInspectionMode? inspectionMode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (inspectionMode != null) 'inspection_mode': inspectionMode?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'inspection_mode'}.contains(key)); } 
-ZeroTrustGatewayBodyScanningSettings copyWith({ZeroTrustGatewayBodyScanningSettingsInspectionMode? Function()? inspectionMode}) { return ZeroTrustGatewayBodyScanningSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'inspection_mode'}.contains(key));}
+ZeroTrustGatewayBodyScanningSettings copyWith({ZeroTrustGatewayBodyScanningSettingsInspectionMode? Function()? inspectionMode}) {return ZeroTrustGatewayBodyScanningSettings(
   inspectionMode: inspectionMode != null ? inspectionMode() : this.inspectionMode,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewayBodyScanningSettings &&
-          inspectionMode == other.inspectionMode; } 
-@override int get hashCode { return inspectionMode.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayBodyScanningSettings(inspectionMode: $inspectionMode)'; } 
- }
+          inspectionMode == other.inspectionMode;}
+@override int get hashCode {return inspectionMode.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayBodyScanningSettings(inspectionMode: $inspectionMode)';}
+}

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Origins.
 @immutable final class RadarGetOriginsTimeseriesOrigin {const RadarGetOriginsTimeseriesOrigin._(this.value);
 
-factory RadarGetOriginsTimeseriesOrigin.fromJson(String json) { return switch (json) {
+factory RadarGetOriginsTimeseriesOrigin.fromJson(String json) {return switch (json) {
   'AMAZON' => amazon,
   'GOOGLE' => google,
   'MICROSOFT' => microsoft,
   'ORACLE' => oracle,
   _ => RadarGetOriginsTimeseriesOrigin._(json),
-}; }
+};}
 
 static const RadarGetOriginsTimeseriesOrigin amazon = RadarGetOriginsTimeseriesOrigin._('AMAZON');
 
@@ -23,11 +23,11 @@ static const List<RadarGetOriginsTimeseriesOrigin> values = [amazon, google, mic
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetOriginsTimeseriesOrigin && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetOriginsTimeseriesOrigin($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetOriginsTimeseriesOrigin && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetOriginsTimeseriesOrigin($value)';}
+}

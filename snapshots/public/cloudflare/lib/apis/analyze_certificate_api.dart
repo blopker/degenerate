@@ -13,7 +13,7 @@ final class AnalyzeCertificateApi with ApiExecutor {const AnalyzeCertificateApi(
 /// Returns the set of hostnames, the signature algorithm, and the expiration date of the certificate.
 ///
 /// `POST /zones/{zone_id}/ssl/analyze`
-Future<ApiResult<Map<String, dynamic>?, AnalyzeCertificateAnalyzeCertificateResponse4xx>> analyzeCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required AnalyzeCertificateAnalyzeCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, AnalyzeCertificateAnalyzeCertificateResponse4xx>> analyzeCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required AnalyzeCertificateAnalyzeCertificateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -41,5 +41,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

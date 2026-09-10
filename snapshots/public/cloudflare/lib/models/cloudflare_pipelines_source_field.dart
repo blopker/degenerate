@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesSourceField {const CloudflarePipelinesSourceField({required this.name, this.metadataKey = const Omittable.absent(), this.$required, this.sqlName, });
 
-factory CloudflarePipelinesSourceField.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesSourceField(
+factory CloudflarePipelinesSourceField.fromJson(Map<String, dynamic> json) {return CloudflarePipelinesSourceField(
   metadataKey: json.containsKey('metadata_key') ? Omittable(json['metadata_key'] as String?) : const Omittable.absent(),
   name: json['name'] as String,
   $required: json['required'] as bool?,
   sqlName: json['sql_name'] as String?,
-); }
+);}
 
 final Omittable<String?> metadataKey;
 
@@ -17,25 +17,25 @@ final bool? $required;
 
 final String? sqlName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (metadataKey.isPresent) 'metadata_key': metadataKey.value,
   'name': name,
   'required': ?$required,
   'sql_name': ?sqlName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-CloudflarePipelinesSourceField copyWith({Omittable<String?>? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceField(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+CloudflarePipelinesSourceField copyWith({Omittable<String?>? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) {return CloudflarePipelinesSourceField(
   metadataKey: metadataKey ?? this.metadataKey,
   name: name ?? this.name,
   $required: $required != null ? $required() : this.$required,
   sqlName: sqlName != null ? sqlName() : this.sqlName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CloudflarePipelinesSourceField &&
           metadataKey == other.metadataKey &&
           name == other.name &&
           $required == other.$required &&
-          sqlName == other.sqlName; } 
-@override int get hashCode { return Object.hash(metadataKey, name, $required, sqlName); } 
-@override String toString() { return 'CloudflarePipelinesSourceField(metadataKey: $metadataKey, name: $name, \$required: ${$required}, sqlName: $sqlName)'; } 
- }
+          sqlName == other.sqlName;}
+@override int get hashCode {return Object.hash(metadataKey, name, $required, sqlName);}
+@override String toString() {return 'CloudflarePipelinesSourceField(metadataKey: $metadataKey, name: $name, \$required: ${$required}, sqlName: $sqlName)';}
+}

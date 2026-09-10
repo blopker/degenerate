@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Granular configu
 /// 
 @immutable final class TracingConfiguration2 {const TracingConfiguration2({this.workflowName, this.groupId, this.metadata, });
 
-factory TracingConfiguration2.fromJson(Map<String, dynamic> json) { return TracingConfiguration2(
+factory TracingConfiguration2.fromJson(Map<String, dynamic> json) {return TracingConfiguration2(
   workflowName: json['workflow_name'] as String?,
   groupId: json['group_id'] as String?,
   metadata: json['metadata'] as Map<String, dynamic>?,
-); }
+);}
 
 /// The name of the workflow to attach to this trace. This is used to
 /// name the trace in the traces dashboard.
@@ -25,22 +25,22 @@ final String? groupId;
 /// 
 final Map<String,dynamic>? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'workflow_name': ?workflowName,
   'group_id': ?groupId,
   'metadata': ?metadata,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'workflow_name', 'group_id', 'metadata'}.contains(key)); } 
-TracingConfiguration2 copyWith({String? Function()? workflowName, String? Function()? groupId, Map<String, dynamic>? Function()? metadata, }) { return TracingConfiguration2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'workflow_name', 'group_id', 'metadata'}.contains(key));}
+TracingConfiguration2 copyWith({String? Function()? workflowName, String? Function()? groupId, Map<String, dynamic>? Function()? metadata, }) {return TracingConfiguration2(
   workflowName: workflowName != null ? workflowName() : this.workflowName,
   groupId: groupId != null ? groupId() : this.groupId,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TracingConfiguration2 &&
           workflowName == other.workflowName &&
           groupId == other.groupId &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(workflowName, groupId, metadata); } 
-@override String toString() { return 'TracingConfiguration2(workflowName: $workflowName, groupId: $groupId, metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return Object.hash(workflowName, groupId, metadata);}
+@override String toString() {return 'TracingConfiguration2(workflowName: $workflowName, groupId: $groupId, metadata: $metadata)';}
+}

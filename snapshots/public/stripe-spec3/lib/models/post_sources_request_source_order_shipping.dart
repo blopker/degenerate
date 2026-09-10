@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_sources_request_source_order_shipping_address.dart';@immutable final class PostSourcesRequestSourceOrderShipping {const PostSourcesRequestSourceOrderShipping({required this.address, this.carrier, this.name, this.phone, this.trackingNumber, });
 
-factory PostSourcesRequestSourceOrderShipping.fromJson(Map<String, dynamic> json) { return PostSourcesRequestSourceOrderShipping(
+factory PostSourcesRequestSourceOrderShipping.fromJson(Map<String, dynamic> json) {return PostSourcesRequestSourceOrderShipping(
   address: PostSourcesRequestSourceOrderShippingAddress.fromJson(json['address'] as Map<String, dynamic>),
   carrier: json['carrier'] as String?,
   name: json['name'] as String?,
   phone: json['phone'] as String?,
   trackingNumber: json['tracking_number'] as String?,
-); }
+);}
 
 final PostSourcesRequestSourceOrderShippingAddress address;
 
@@ -20,28 +20,28 @@ final String? phone;
 
 final String? trackingNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
   'carrier': ?carrier,
   'name': ?name,
   'phone': ?phone,
   'tracking_number': ?trackingNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address'); } 
-PostSourcesRequestSourceOrderShipping copyWith({PostSourcesRequestSourceOrderShippingAddress? address, String? Function()? carrier, String? Function()? name, String? Function()? phone, String? Function()? trackingNumber, }) { return PostSourcesRequestSourceOrderShipping(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address');}
+PostSourcesRequestSourceOrderShipping copyWith({PostSourcesRequestSourceOrderShippingAddress? address, String? Function()? carrier, String? Function()? name, String? Function()? phone, String? Function()? trackingNumber, }) {return PostSourcesRequestSourceOrderShipping(
   address: address ?? this.address,
   carrier: carrier != null ? carrier() : this.carrier,
   name: name != null ? name() : this.name,
   phone: phone != null ? phone() : this.phone,
   trackingNumber: trackingNumber != null ? trackingNumber() : this.trackingNumber,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSourcesRequestSourceOrderShipping &&
           address == other.address &&
           carrier == other.carrier &&
           name == other.name &&
           phone == other.phone &&
-          trackingNumber == other.trackingNumber; } 
-@override int get hashCode { return Object.hash(address, carrier, name, phone, trackingNumber); } 
-@override String toString() { return 'PostSourcesRequestSourceOrderShipping(address: $address, carrier: $carrier, name: $name, phone: $phone, trackingNumber: $trackingNumber)'; } 
- }
+          trackingNumber == other.trackingNumber;}
+@override int get hashCode {return Object.hash(address, carrier, name, phone, trackingNumber);}
+@override String toString() {return 'PostSourcesRequestSourceOrderShipping(address: $address, carrier: $carrier, name: $name, phone: $phone, trackingNumber: $trackingNumber)';}
+}

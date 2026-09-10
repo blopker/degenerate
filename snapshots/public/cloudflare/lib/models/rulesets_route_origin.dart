@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An origin to route to.
 @immutable final class RulesetsRouteOrigin {const RulesetsRouteOrigin({this.host, this.port, });
 
-factory RulesetsRouteOrigin.fromJson(Map<String, dynamic> json) { return RulesetsRouteOrigin(
+factory RulesetsRouteOrigin.fromJson(Map<String, dynamic> json) {return RulesetsRouteOrigin(
   host: json['host'] as String?,
   port: json['port'] != null ? (json['port'] as num).toInt() : null,
-); }
+);}
 
 /// A resolved host to route to.
 final String? host;
@@ -14,19 +14,19 @@ final String? host;
 /// A destination port to route to.
 final int? port;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'host': ?host,
   'port': ?port,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'host', 'port'}.contains(key)); } 
-RulesetsRouteOrigin copyWith({String? Function()? host, int? Function()? port, }) { return RulesetsRouteOrigin(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'host', 'port'}.contains(key));}
+RulesetsRouteOrigin copyWith({String? Function()? host, int? Function()? port, }) {return RulesetsRouteOrigin(
   host: host != null ? host() : this.host,
   port: port != null ? port() : this.port,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsRouteOrigin &&
           host == other.host &&
-          port == other.port; } 
-@override int get hashCode { return Object.hash(host, port); } 
-@override String toString() { return 'RulesetsRouteOrigin(host: $host, port: $port)'; } 
- }
+          port == other.port;}
+@override int get hashCode {return Object.hash(host, port);}
+@override String toString() {return 'RulesetsRouteOrigin(host: $host, port: $port)';}
+}

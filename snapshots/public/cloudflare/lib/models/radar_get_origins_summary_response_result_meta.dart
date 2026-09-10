@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_origins_summary_response_result_meta_confidence_info.dart';import 'radar_get_origins_summary_response_result_meta_date_range.dart';import 'radar_get_origins_summary_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 @immutable final class RadarGetOriginsSummaryResponseResultMetaNormalization {const RadarGetOriginsSummaryResponseResultMetaNormalization._(this.value);
 
-factory RadarGetOriginsSummaryResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+factory RadarGetOriginsSummaryResponseResultMetaNormalization.fromJson(String json) {return switch (json) {
   'PERCENTAGE' => percentage,
   'MIN0_MAX' => min0Max,
   'MIN_MAX' => minMax,
@@ -13,7 +13,7 @@ factory RadarGetOriginsSummaryResponseResultMetaNormalization.fromJson(String js
   'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
   'RATIO' => ratio,
   _ => RadarGetOriginsSummaryResponseResultMetaNormalization._(json),
-}; }
+};}
 
 static const RadarGetOriginsSummaryResponseResultMetaNormalization percentage = RadarGetOriginsSummaryResponseResultMetaNormalization._('PERCENTAGE');
 
@@ -35,24 +35,24 @@ static const List<RadarGetOriginsSummaryResponseResultMetaNormalization> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetOriginsSummaryResponseResultMetaNormalization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetOriginsSummaryResponseResultMetaNormalization($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetOriginsSummaryResponseResultMetaNormalization && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetOriginsSummaryResponseResultMetaNormalization($value)';}
+}
 /// Metadata for the results.
 @immutable final class RadarGetOriginsSummaryResponseResultMeta {const RadarGetOriginsSummaryResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
-factory RadarGetOriginsSummaryResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetOriginsSummaryResponseResultMeta(
+factory RadarGetOriginsSummaryResponseResultMeta.fromJson(Map<String, dynamic> json) {return RadarGetOriginsSummaryResponseResultMeta(
   confidenceInfo: RadarGetOriginsSummaryResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetOriginsSummaryResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
   lastUpdated: DateTime.parse(json['lastUpdated'] as String),
   normalization: RadarGetOriginsSummaryResponseResultMetaNormalization.fromJson(json['normalization'] as String),
   units: (json['units'] as List<dynamic>).map((e) => RadarGetOriginsSummaryResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final RadarGetOriginsSummaryResponseResultMetaConfidenceInfo confidenceInfo;
 
@@ -67,32 +67,32 @@ final RadarGetOriginsSummaryResponseResultMetaNormalization normalization;
 /// Measurement units for the results.
 final List<RadarGetOriginsSummaryResponseResultMetaUnits> units;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'confidenceInfo': confidenceInfo.toJson(),
   'dateRange': dateRange.map((e) => e.toJson()).toList(),
   'lastUpdated': lastUpdated.toIso8601String(),
   'normalization': normalization.toJson(),
   'units': units.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('confidenceInfo') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('confidenceInfo') &&
       json.containsKey('dateRange') &&
       json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
       json.containsKey('normalization') &&
-      json.containsKey('units'); } 
-RadarGetOriginsSummaryResponseResultMeta copyWith({RadarGetOriginsSummaryResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetOriginsSummaryResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetOriginsSummaryResponseResultMetaNormalization? normalization, List<RadarGetOriginsSummaryResponseResultMetaUnits>? units, }) { return RadarGetOriginsSummaryResponseResultMeta(
+      json.containsKey('units');}
+RadarGetOriginsSummaryResponseResultMeta copyWith({RadarGetOriginsSummaryResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetOriginsSummaryResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetOriginsSummaryResponseResultMetaNormalization? normalization, List<RadarGetOriginsSummaryResponseResultMetaUnits>? units, }) {return RadarGetOriginsSummaryResponseResultMeta(
   confidenceInfo: confidenceInfo ?? this.confidenceInfo,
   dateRange: dateRange ?? this.dateRange,
   lastUpdated: lastUpdated ?? this.lastUpdated,
   normalization: normalization ?? this.normalization,
   units: units ?? this.units,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetOriginsSummaryResponseResultMeta &&
           confidenceInfo == other.confidenceInfo &&
           listEquals(dateRange, other.dateRange) &&
           lastUpdated == other.lastUpdated &&
           normalization == other.normalization &&
-          listEquals(units, other.units); } 
-@override int get hashCode { return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
-@override String toString() { return 'RadarGetOriginsSummaryResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
- }
+          listEquals(units, other.units);}
+@override int get hashCode {return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units));}
+@override String toString() {return 'RadarGetOriginsSummaryResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)';}
+}

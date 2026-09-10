@@ -11,7 +11,7 @@ final class McpPortalApi with ApiExecutor {const McpPortalApi(this.apiConfig);
 /// List MCP Portals
 ///
 /// `GET /accounts/{account_id}/access/ai-controls/mcp/portals`
-Future<ApiResult<List<ListPortalsResponseResult>, ListPortalsResponse400>> mcpPortalsApiListPortals({required String accountId, int? page, int? perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ListPortalsResponseResult>, ListPortalsResponse400>> mcpPortalsApiListPortals({required String accountId, int? page, int? perPage, String? search, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -51,11 +51,11 @@ return null;
 
   },
 );
- } 
+}
 /// Create a new MCP Portal
 ///
 /// `POST /accounts/{account_id}/access/ai-controls/mcp/portals`
-Future<ApiResult<CreatePortalsResponseResult, CreatePortalsResponse400>> mcpPortalsApiCreatePortals({required String accountId, CreatePortalsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreatePortalsResponseResult, CreatePortalsResponse400>> mcpPortalsApiCreatePortals({required String accountId, CreatePortalsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -83,11 +83,11 @@ return null;
 
   },
 );
- } 
+}
 /// Read details of an MCP Portal
 ///
 /// `GET /accounts/{account_id}/access/ai-controls/mcp/portals/{id}`
-Future<ApiResult<FetchGatewaysResponseResult, FetchGatewaysResponse404>> mcpPortalsApiFetchGateways({required String id, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FetchGatewaysResponseResult, FetchGatewaysResponse404>> mcpPortalsApiFetchGateways({required String id, required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -113,11 +113,11 @@ return null;
 
   },
 );
- } 
+}
 /// Update a MCP Portal
 ///
 /// `PUT /accounts/{account_id}/access/ai-controls/mcp/portals/{id}`
-Future<ApiResult<UpdatePortalsResponseResult, UpdatePortalsError>> mcpPortalsApiUpdatePortals({required String id, required String accountId, UpdatePortalsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UpdatePortalsResponseResult, UpdatePortalsError>> mcpPortalsApiUpdatePortals({required String id, required String accountId, UpdatePortalsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -136,11 +136,11 @@ return UpdatePortalsResponseResult.fromJson(json['result'] as Map<String, dynami
   },
   onError: UpdatePortalsError.parse,
 );
- } 
+}
 /// Delete a MCP Portal
 ///
 /// `DELETE /accounts/{account_id}/access/ai-controls/mcp/portals/{id}`
-Future<ApiResult<DeletePortalsResponseResult, DeletePortalsResponse404>> mcpPortalsApiDeletePortals({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletePortalsResponseResult, DeletePortalsResponse404>> mcpPortalsApiDeletePortals({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -166,5 +166,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'sepa_debit_generated_from_charge.dart';import 'sepa_debit_generated_from_setup_attempt.dart';/// 
 @immutable final class SepaDebitGeneratedFrom {const SepaDebitGeneratedFrom({this.charge = const Omittable.absent(), this.setupAttempt = const Omittable.absent(), });
 
-factory SepaDebitGeneratedFrom.fromJson(Map<String, dynamic> json) { return SepaDebitGeneratedFrom(
+factory SepaDebitGeneratedFrom.fromJson(Map<String, dynamic> json) {return SepaDebitGeneratedFrom(
   charge: json.containsKey('charge') ? Omittable(json['charge'] != null ? SepaDebitGeneratedFromCharge.fromJson(json['charge']) : null) : const Omittable.absent(),
   setupAttempt: json.containsKey('setup_attempt') ? Omittable(json['setup_attempt'] != null ? SepaDebitGeneratedFromSetupAttempt.fromJson(json['setup_attempt']) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The ID of the Charge that generated this PaymentMethod, if any.
 final Omittable<SepaDebitGeneratedFromCharge?> charge;
@@ -14,19 +14,19 @@ final Omittable<SepaDebitGeneratedFromCharge?> charge;
 /// The ID of the SetupAttempt that generated this PaymentMethod, if any.
 final Omittable<SepaDebitGeneratedFromSetupAttempt?> setupAttempt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (charge.isPresent) 'charge': charge.value?.toJson(),
   if (setupAttempt.isPresent) 'setup_attempt': setupAttempt.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'charge', 'setup_attempt'}.contains(key)); } 
-SepaDebitGeneratedFrom copyWith({Omittable<SepaDebitGeneratedFromCharge?>? charge, Omittable<SepaDebitGeneratedFromSetupAttempt?>? setupAttempt, }) { return SepaDebitGeneratedFrom(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'charge', 'setup_attempt'}.contains(key));}
+SepaDebitGeneratedFrom copyWith({Omittable<SepaDebitGeneratedFromCharge?>? charge, Omittable<SepaDebitGeneratedFromSetupAttempt?>? setupAttempt, }) {return SepaDebitGeneratedFrom(
   charge: charge ?? this.charge,
   setupAttempt: setupAttempt ?? this.setupAttempt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SepaDebitGeneratedFrom &&
           charge == other.charge &&
-          setupAttempt == other.setupAttempt; } 
-@override int get hashCode { return Object.hash(charge, setupAttempt); } 
-@override String toString() { return 'SepaDebitGeneratedFrom(charge: $charge, setupAttempt: $setupAttempt)'; } 
- }
+          setupAttempt == other.setupAttempt;}
+@override int get hashCode {return Object.hash(charge, setupAttempt);}
+@override String toString() {return 'SepaDebitGeneratedFrom(charge: $charge, setupAttempt: $setupAttempt)';}
+}

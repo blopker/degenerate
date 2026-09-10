@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentRequestReceiptEmailVariant2 {const PostPaymentIntentsIntentRequestReceiptEmailVariant2._(this.value);
 
-factory PostPaymentIntentsIntentRequestReceiptEmailVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentRequestReceiptEmailVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentIntentsIntentRequestReceiptEmailVariant2._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentRequestReceiptEmailVariant2 $empty = PostPaymentIntentsIntentRequestReceiptEmailVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentIntentsIntentRequestReceiptEmailVariant2> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentRequestReceiptEmailVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentRequestReceiptEmailVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentRequestReceiptEmailVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentRequestReceiptEmailVariant2($value)';}
+}
 /// Email address that the receipt for the resulting payment will be sent to. If `receipt_email` is specified for a payment in live mode, a receipt will be sent regardless of your [email settings](https://dashboard.stripe.com/account/emails).
 @immutable
 final class PostPaymentIntentsIntentRequestReceiptEmail {

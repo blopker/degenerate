@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Canceled2CancellationPolicyProvidedVariant2 {const Canceled2CancellationPolicyProvidedVariant2._(this.value);
 
-factory Canceled2CancellationPolicyProvidedVariant2.fromJson(String json) { return switch (json) {
+factory Canceled2CancellationPolicyProvidedVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => Canceled2CancellationPolicyProvidedVariant2._(json),
-}; }
+};}
 
 static const Canceled2CancellationPolicyProvidedVariant2 $empty = Canceled2CancellationPolicyProvidedVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<Canceled2CancellationPolicyProvidedVariant2> values = [$empty]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Canceled2CancellationPolicyProvidedVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Canceled2CancellationPolicyProvidedVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Canceled2CancellationPolicyProvidedVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Canceled2CancellationPolicyProvidedVariant2($value)';}
+}
 
 @immutable
 final class Canceled2CancellationPolicyProvided {

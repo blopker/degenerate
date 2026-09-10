@@ -3,54 +3,54 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_proxy_endpoint_identity_create.dart';import 'zero_trust_gateway_proxy_endpoint_ip_create.dart';sealed class ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest {const ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest();
 
 /// Deserialize from JSON, dispatching on the `kind` discriminator.
-factory ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.fromJson(Map<String, dynamic> json) { return switch (json['kind']) {
+factory ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.fromJson(Map<String, dynamic> json) {return switch (json['kind']) {
   'ip' => ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp.fromJson(json),
   'identity' => ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity.fromJson(json),
   _ => ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown(json),
-}; }
+};}
 
 /// The discriminator value identifying this variant.
 String get kind;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown; } 
- }
+bool get isUnknown {return this is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown;}
+}
 @immutable final class ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp extends ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest {const ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp(this.zeroTrustGatewayProxyEndpointIpCreate);
 
-factory ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp(ZeroTrustGatewayProxyEndpointIpCreate.fromJson(json)); }
+factory ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp(ZeroTrustGatewayProxyEndpointIpCreate.fromJson(json));}
 
 final ZeroTrustGatewayProxyEndpointIpCreate zeroTrustGatewayProxyEndpointIpCreate;
 
-@override String get kind { return 'ip'; } 
-@override Map<String, dynamic> toJson() { return {...zeroTrustGatewayProxyEndpointIpCreate.toJson(), 'kind': kind}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp && zeroTrustGatewayProxyEndpointIpCreate == other.zeroTrustGatewayProxyEndpointIpCreate; } 
-@override int get hashCode { return zeroTrustGatewayProxyEndpointIpCreate.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp(zeroTrustGatewayProxyEndpointIpCreate: $zeroTrustGatewayProxyEndpointIpCreate)'; } 
- }
+@override String get kind {return 'ip';}
+@override Map<String, dynamic> toJson() {return {...zeroTrustGatewayProxyEndpointIpCreate.toJson(), 'kind': kind};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp && zeroTrustGatewayProxyEndpointIpCreate == other.zeroTrustGatewayProxyEndpointIpCreate;}
+@override int get hashCode {return zeroTrustGatewayProxyEndpointIpCreate.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp(zeroTrustGatewayProxyEndpointIpCreate: $zeroTrustGatewayProxyEndpointIpCreate)';}
+}
 @immutable final class ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity extends ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest {const ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity(this.zeroTrustGatewayProxyEndpointIdentityCreate);
 
-factory ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity(ZeroTrustGatewayProxyEndpointIdentityCreate.fromJson(json)); }
+factory ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity(ZeroTrustGatewayProxyEndpointIdentityCreate.fromJson(json));}
 
 final ZeroTrustGatewayProxyEndpointIdentityCreate zeroTrustGatewayProxyEndpointIdentityCreate;
 
-@override String get kind { return 'identity'; } 
-@override Map<String, dynamic> toJson() { return {...zeroTrustGatewayProxyEndpointIdentityCreate.toJson(), 'kind': kind}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity && zeroTrustGatewayProxyEndpointIdentityCreate == other.zeroTrustGatewayProxyEndpointIdentityCreate; } 
-@override int get hashCode { return zeroTrustGatewayProxyEndpointIdentityCreate.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity(zeroTrustGatewayProxyEndpointIdentityCreate: $zeroTrustGatewayProxyEndpointIdentityCreate)'; } 
- }
+@override String get kind {return 'identity';}
+@override Map<String, dynamic> toJson() {return {...zeroTrustGatewayProxyEndpointIdentityCreate.toJson(), 'kind': kind};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity && zeroTrustGatewayProxyEndpointIdentityCreate == other.zeroTrustGatewayProxyEndpointIdentityCreate;}
+@override int get hashCode {return zeroTrustGatewayProxyEndpointIdentityCreate.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity(zeroTrustGatewayProxyEndpointIdentityCreate: $zeroTrustGatewayProxyEndpointIdentityCreate)';}
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown extends ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest {const ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown(this.json);
 
 final Map<String, dynamic> json;
 
-@override String get kind { return json['kind'] as String? ?? ''; } 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.unknown($json)'; } 
- }
+@override String get kind {return json['kind'] as String? ?? '';}
+@override Map<String, dynamic> toJson() {return json;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown && json == other.json;}
+@override int get hashCode {return json.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.unknown($json)';}
+}

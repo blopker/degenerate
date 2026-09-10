@@ -13,7 +13,7 @@ final class StreamSubtitlesCaptionsApi with ApiExecutor {const StreamSubtitlesCa
 /// Lists the available captions or subtitles for a specific video.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/captions`
-Future<ApiResult<List<StreamCaptions>?, ResponseCommonFailure69>> streamSubtitlesCaptionsListCaptionsOrSubtitles({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<StreamCaptions>?, ResponseCommonFailure69>> streamSubtitlesCaptionsListCaptionsOrSubtitles({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// List captions or subtitles for a provided language
 ///
 /// Lists the captions or subtitles for provided language.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/captions/{language}`
-Future<ApiResult<StreamCaptions?, ResponseCommonFailure69>> streamSubtitlesCaptionsGetCaptionOrSubtitleForLanguage({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamCaptions?, ResponseCommonFailure69>> streamSubtitlesCaptionsGetCaptionOrSubtitleForLanguage({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,13 +71,13 @@ return null;
 
   },
 );
- } 
+}
 /// Upload captions or subtitles
 ///
 /// Uploads the caption or subtitle file to the endpoint for a specific BCP47 language. One caption or subtitle file per language is allowed.
 ///
 /// `PUT /accounts/{account_id}/stream/{identifier}/captions/{language}`
-Future<ApiResult<StreamCaptions?, ResponseCommonFailure69>> streamSubtitlesCaptionsUploadCaptionsOrSubtitles({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, required StreamCaptionBasicUpload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamCaptions?, ResponseCommonFailure69>> streamSubtitlesCaptionsUploadCaptionsOrSubtitles({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, required StreamCaptionBasicUpload body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -107,13 +107,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete captions or subtitles
 ///
 /// Removes the captions or subtitles from a video.
 ///
 /// `DELETE /accounts/{account_id}/stream/{identifier}/captions/{language}`
-Future<ApiResult<String?, ResponseCommonFailure69>> streamSubtitlesCaptionsDeleteCaptionsOrSubtitles({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String?, ResponseCommonFailure69>> streamSubtitlesCaptionsDeleteCaptionsOrSubtitles({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -139,13 +139,13 @@ return null;
 
   },
 );
- } 
+}
 /// Generate captions or subtitles for a provided language via AI
 ///
 /// Generate captions or subtitles for provided language via AI.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/captions/{language}/generate`
-Future<ApiResult<StreamCaptions?, ResponseCommonFailure69>> streamSubtitlesCaptionsGenerateCaptionOrSubtitleForLanguage({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamCaptions?, ResponseCommonFailure69>> streamSubtitlesCaptionsGenerateCaptionOrSubtitleForLanguage({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -171,13 +171,13 @@ return null;
 
   },
 );
- } 
+}
 /// Return WebVTT captions for a provided language
 ///
 /// Return WebVTT captions for a provided language.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/captions/{language}/vtt`
-Future<ApiResult<String, ResponseCommonFailure69>> streamSubtitlesCaptionsGetVttCaptionOrSubtitle({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, ResponseCommonFailure69>> streamSubtitlesCaptionsGetVttCaptionOrSubtitle({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -202,5 +202,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

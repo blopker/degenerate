@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// VolumeMount describes a mounting of a Volume within a container.
 @immutable final class VolumeMount {const VolumeMount({required this.mountPath, required this.name, this.mountPropagation, this.readOnly, this.recursiveReadOnly, this.subPath, this.subPathExpr, });
 
-factory VolumeMount.fromJson(Map<String, dynamic> json) { return VolumeMount(
+factory VolumeMount.fromJson(Map<String, dynamic> json) {return VolumeMount(
   mountPath: json['mountPath'] as String,
   mountPropagation: json['mountPropagation'] as String?,
   name: json['name'] as String,
@@ -11,7 +11,7 @@ factory VolumeMount.fromJson(Map<String, dynamic> json) { return VolumeMount(
   recursiveReadOnly: json['recursiveReadOnly'] as String?,
   subPath: json['subPath'] as String?,
   subPathExpr: json['subPathExpr'] as String?,
-); }
+);}
 
 /// Path within the container at which the volume should be mounted.  Must not contain ':'.
 final String mountPath;
@@ -42,7 +42,7 @@ final String? subPath;
 /// Expanded path within the volume from which the container's volume should be mounted. Behaves similarly to SubPath but environment variable references $(VAR_NAME) are expanded using the container's environment. Defaults to "" (volume's root). SubPathExpr and SubPath are mutually exclusive.
 final String? subPathExpr;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'mountPath': mountPath,
   'mountPropagation': ?mountPropagation,
   'name': name,
@@ -50,10 +50,10 @@ Map<String, dynamic> toJson() { return {
   'recursiveReadOnly': ?recursiveReadOnly,
   'subPath': ?subPath,
   'subPathExpr': ?subPathExpr,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('mountPath') && json['mountPath'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-VolumeMount copyWith({String? mountPath, String? Function()? mountPropagation, String? name, bool? Function()? readOnly, String? Function()? recursiveReadOnly, String? Function()? subPath, String? Function()? subPathExpr, }) { return VolumeMount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('mountPath') && json['mountPath'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+VolumeMount copyWith({String? mountPath, String? Function()? mountPropagation, String? name, bool? Function()? readOnly, String? Function()? recursiveReadOnly, String? Function()? subPath, String? Function()? subPathExpr, }) {return VolumeMount(
   mountPath: mountPath ?? this.mountPath,
   mountPropagation: mountPropagation != null ? mountPropagation() : this.mountPropagation,
   name: name ?? this.name,
@@ -61,8 +61,8 @@ VolumeMount copyWith({String? mountPath, String? Function()? mountPropagation, S
   recursiveReadOnly: recursiveReadOnly != null ? recursiveReadOnly() : this.recursiveReadOnly,
   subPath: subPath != null ? subPath() : this.subPath,
   subPathExpr: subPathExpr != null ? subPathExpr() : this.subPathExpr,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is VolumeMount &&
           mountPath == other.mountPath &&
           mountPropagation == other.mountPropagation &&
@@ -70,7 +70,7 @@ VolumeMount copyWith({String? mountPath, String? Function()? mountPropagation, S
           readOnly == other.readOnly &&
           recursiveReadOnly == other.recursiveReadOnly &&
           subPath == other.subPath &&
-          subPathExpr == other.subPathExpr; } 
-@override int get hashCode { return Object.hash(mountPath, mountPropagation, name, readOnly, recursiveReadOnly, subPath, subPathExpr); } 
-@override String toString() { return 'VolumeMount(mountPath: $mountPath, mountPropagation: $mountPropagation, name: $name, readOnly: $readOnly, recursiveReadOnly: $recursiveReadOnly, subPath: $subPath, subPathExpr: $subPathExpr)'; } 
- }
+          subPathExpr == other.subPathExpr;}
+@override int get hashCode {return Object.hash(mountPath, mountPropagation, name, readOnly, recursiveReadOnly, subPath, subPathExpr);}
+@override String toString() {return 'VolumeMount(mountPath: $mountPath, mountPropagation: $mountPropagation, name: $name, readOnly: $readOnly, recursiveReadOnly: $recursiveReadOnly, subPath: $subPath, subPathExpr: $subPathExpr)';}
+}

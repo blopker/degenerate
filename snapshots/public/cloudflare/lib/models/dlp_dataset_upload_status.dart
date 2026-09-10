@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpDatasetUploadStatus {const DlpDatasetUploadStatus._(this.value);
 
-factory DlpDatasetUploadStatus.fromJson(String json) { return switch (json) {
+factory DlpDatasetUploadStatus.fromJson(String json) {return switch (json) {
   'empty' => empty,
   'uploading' => uploading,
   'pending' => pending,
@@ -10,7 +10,7 @@ factory DlpDatasetUploadStatus.fromJson(String json) { return switch (json) {
   'failed' => failed,
   'complete' => complete,
   _ => DlpDatasetUploadStatus._(json),
-}; }
+};}
 
 static const DlpDatasetUploadStatus empty = DlpDatasetUploadStatus._('empty');
 
@@ -28,11 +28,11 @@ static const List<DlpDatasetUploadStatus> values = [empty, uploading, pending, p
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DlpDatasetUploadStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DlpDatasetUploadStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DlpDatasetUploadStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DlpDatasetUploadStatus($value)';}
+}

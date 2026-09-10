@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBotDetailsResponseResultBot {const RadarGetBotDetailsResponseResultBot({required this.category, required this.description, required this.kind, required this.name, required this.$operator, required this.operatorUrl, required this.slug, required this.userAgentPatterns, required this.userAgents, });
 
-factory RadarGetBotDetailsResponseResultBot.fromJson(Map<String, dynamic> json) { return RadarGetBotDetailsResponseResultBot(
+factory RadarGetBotDetailsResponseResultBot.fromJson(Map<String, dynamic> json) {return RadarGetBotDetailsResponseResultBot(
   category: json['category'] as String,
   description: json['description'] as String,
   kind: json['kind'] as String,
@@ -12,7 +12,7 @@ factory RadarGetBotDetailsResponseResultBot.fromJson(Map<String, dynamic> json) 
   slug: json['slug'] as String,
   userAgentPatterns: (json['userAgentPatterns'] as List<dynamic>).map((e) => e as String).toList(),
   userAgents: (json['userAgents'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// The category of the bot.
 final String category;
@@ -39,7 +39,7 @@ final List<String> userAgentPatterns;
 
 final List<String> userAgents;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'category': category,
   'description': description,
   'kind': kind,
@@ -49,8 +49,8 @@ Map<String, dynamic> toJson() { return {
   'slug': slug,
   'userAgentPatterns': userAgentPatterns,
   'userAgents': userAgents,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('category') && json['category'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('category') && json['category'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('kind') && json['kind'] is String &&
       json.containsKey('name') && json['name'] is String &&
@@ -58,8 +58,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('categ
       json.containsKey('operatorUrl') && json['operatorUrl'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('userAgentPatterns') &&
-      json.containsKey('userAgents'); } 
-RadarGetBotDetailsResponseResultBot copyWith({String? category, String? description, String? kind, String? name, String? $operator, String? operatorUrl, String? slug, List<String>? userAgentPatterns, List<String>? userAgents, }) { return RadarGetBotDetailsResponseResultBot(
+      json.containsKey('userAgents');}
+RadarGetBotDetailsResponseResultBot copyWith({String? category, String? description, String? kind, String? name, String? $operator, String? operatorUrl, String? slug, List<String>? userAgentPatterns, List<String>? userAgents, }) {return RadarGetBotDetailsResponseResultBot(
   category: category ?? this.category,
   description: description ?? this.description,
   kind: kind ?? this.kind,
@@ -69,8 +69,8 @@ RadarGetBotDetailsResponseResultBot copyWith({String? category, String? descript
   slug: slug ?? this.slug,
   userAgentPatterns: userAgentPatterns ?? this.userAgentPatterns,
   userAgents: userAgents ?? this.userAgents,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetBotDetailsResponseResultBot &&
           category == other.category &&
           description == other.description &&
@@ -80,7 +80,7 @@ RadarGetBotDetailsResponseResultBot copyWith({String? category, String? descript
           operatorUrl == other.operatorUrl &&
           slug == other.slug &&
           listEquals(userAgentPatterns, other.userAgentPatterns) &&
-          listEquals(userAgents, other.userAgents); } 
-@override int get hashCode { return Object.hash(category, description, kind, name, $operator, operatorUrl, slug, Object.hashAll(userAgentPatterns), Object.hashAll(userAgents)); } 
-@override String toString() { return 'RadarGetBotDetailsResponseResultBot(category: $category, description: $description, kind: $kind, name: $name, \$operator: ${$operator}, operatorUrl: $operatorUrl, slug: $slug, userAgentPatterns: $userAgentPatterns, userAgents: $userAgents)'; } 
- }
+          listEquals(userAgents, other.userAgents);}
+@override int get hashCode {return Object.hash(category, description, kind, name, $operator, operatorUrl, slug, Object.hashAll(userAgentPatterns), Object.hashAll(userAgents));}
+@override String toString() {return 'RadarGetBotDetailsResponseResultBot(category: $category, description: $description, kind: $kind, name: $name, \$operator: ${$operator}, operatorUrl: $operatorUrl, slug: $slug, userAgentPatterns: $userAgentPatterns, userAgents: $userAgents)';}
+}

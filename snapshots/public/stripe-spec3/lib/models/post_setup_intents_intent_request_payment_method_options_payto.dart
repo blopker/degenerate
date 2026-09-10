@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_request_payment_method_options_payto_mandate_options.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsPayto {const PostSetupIntentsIntentRequestPaymentMethodOptionsPayto({this.mandateOptions});
 
-factory PostSetupIntentsIntentRequestPaymentMethodOptionsPayto.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsPayto(
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsPayto.fromJson(Map<String, dynamic> json) {return PostSetupIntentsIntentRequestPaymentMethodOptionsPayto(
   mandateOptions: json['mandate_options'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptions? mandateOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options'}.contains(key)); } 
-PostSetupIntentsIntentRequestPaymentMethodOptionsPayto copyWith({PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptions? Function()? mandateOptions}) { return PostSetupIntentsIntentRequestPaymentMethodOptionsPayto(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mandate_options'}.contains(key));}
+PostSetupIntentsIntentRequestPaymentMethodOptionsPayto copyWith({PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptions? Function()? mandateOptions}) {return PostSetupIntentsIntentRequestPaymentMethodOptionsPayto(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsIntentRequestPaymentMethodOptionsPayto &&
-          mandateOptions == other.mandateOptions; } 
-@override int get hashCode { return mandateOptions.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsPayto(mandateOptions: $mandateOptions)'; } 
- }
+          mandateOptions == other.mandateOptions;}
+@override int get hashCode {return mandateOptions.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestPaymentMethodOptionsPayto(mandateOptions: $mandateOptions)';}
+}

@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_groups_components_schemas_name.dart';import 'access_is_default.dart';import 'access_rule.dart';@immutable final class AccessGroupsCreateAnAccessGroupRequest {const AccessGroupsCreateAnAccessGroupRequest({required this.include, required this.name, this.exclude, this.isDefault, this.require, });
 
-factory AccessGroupsCreateAnAccessGroupRequest.fromJson(Map<String, dynamic> json) { return AccessGroupsCreateAnAccessGroupRequest(
+factory AccessGroupsCreateAnAccessGroupRequest.fromJson(Map<String, dynamic> json) {return AccessGroupsCreateAnAccessGroupRequest(
   exclude: (json['exclude'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
   include: (json['include'] as List<dynamic>).map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
   isDefault: json['is_default'] != null ? AccessIsDefault.fromJson(json['is_default'] as bool) : null,
   name: AccessGroupsComponentsSchemasName.fromJson(json['name'] as String),
   require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Rules evaluated with a NOT logical operator. To match a policy, a user cannot meet any of the Exclude rules.
 final List<AccessRule>? exclude;
@@ -25,29 +25,29 @@ final AccessGroupsComponentsSchemasName name;
 /// Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules.
 final List<AccessRule>? require;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
   'include': include.map((e) => e.toJson()).toList(),
   if (isDefault != null) 'is_default': isDefault?.toJson(),
   'name': name.toJson(),
   if (require != null) 'require': require?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('include') &&
-      json.containsKey('name'); } 
-AccessGroupsCreateAnAccessGroupRequest copyWith({List<AccessRule>? Function()? exclude, List<AccessRule>? include, AccessIsDefault? Function()? isDefault, AccessGroupsComponentsSchemasName? name, List<AccessRule>? Function()? require, }) { return AccessGroupsCreateAnAccessGroupRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('include') &&
+      json.containsKey('name');}
+AccessGroupsCreateAnAccessGroupRequest copyWith({List<AccessRule>? Function()? exclude, List<AccessRule>? include, AccessIsDefault? Function()? isDefault, AccessGroupsComponentsSchemasName? name, List<AccessRule>? Function()? require, }) {return AccessGroupsCreateAnAccessGroupRequest(
   exclude: exclude != null ? exclude() : this.exclude,
   include: include ?? this.include,
   isDefault: isDefault != null ? isDefault() : this.isDefault,
   name: name ?? this.name,
   require: require != null ? require() : this.require,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessGroupsCreateAnAccessGroupRequest &&
           listEquals(exclude, other.exclude) &&
           listEquals(include, other.include) &&
           isDefault == other.isDefault &&
           name == other.name &&
-          listEquals(require, other.require); } 
-@override int get hashCode { return Object.hash(Object.hashAll(exclude ?? const []), Object.hashAll(include), isDefault, name, Object.hashAll(require ?? const [])); } 
-@override String toString() { return 'AccessGroupsCreateAnAccessGroupRequest(exclude: $exclude, include: $include, isDefault: $isDefault, name: $name, require: $require)'; } 
- }
+          listEquals(require, other.require);}
+@override int get hashCode {return Object.hash(Object.hashAll(exclude ?? const []), Object.hashAll(include), isDefault, name, Object.hashAll(require ?? const []));}
+@override String toString() {return 'AccessGroupsCreateAnAccessGroupRequest(exclude: $exclude, include: $include, isDefault: $isDefault, name: $name, require: $require)';}
+}

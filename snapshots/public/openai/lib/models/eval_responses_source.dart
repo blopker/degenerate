@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reasoning_effort.dart';/// The type of run data source. Always `responses`.
 @immutable final class EvalResponsesSourceType {const EvalResponsesSourceType._(this.value);
 
-factory EvalResponsesSourceType.fromJson(String json) { return switch (json) {
+factory EvalResponsesSourceType.fromJson(String json) {return switch (json) {
   'responses' => responses,
   _ => EvalResponsesSourceType._(json),
-}; }
+};}
 
 static const EvalResponsesSourceType responses = EvalResponsesSourceType._('responses');
 
@@ -14,19 +14,19 @@ static const List<EvalResponsesSourceType> values = [responses];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalResponsesSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalResponsesSourceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EvalResponsesSourceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EvalResponsesSourceType($value)';}
+}
 /// A EvalResponsesSource object describing a run data source configuration.
 /// 
 @immutable final class EvalResponsesSource {const EvalResponsesSource({required this.type, this.metadata = const Omittable.absent(), this.model = const Omittable.absent(), this.instructionsSearch = const Omittable.absent(), this.createdAfter = const Omittable.absent(), this.createdBefore = const Omittable.absent(), this.reasoningEffort = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.users = const Omittable.absent(), this.tools = const Omittable.absent(), });
 
-factory EvalResponsesSource.fromJson(Map<String, dynamic> json) { return EvalResponsesSource(
+factory EvalResponsesSource.fromJson(Map<String, dynamic> json) {return EvalResponsesSource(
   type: EvalResponsesSourceType.fromJson(json['type'] as String),
   metadata: json.containsKey('metadata') ? Omittable(json['metadata'] as Map<String, dynamic>?) : const Omittable.absent(),
   model: json.containsKey('model') ? Omittable(json['model'] as String?) : const Omittable.absent(),
@@ -38,7 +38,7 @@ factory EvalResponsesSource.fromJson(Map<String, dynamic> json) { return EvalRes
   topP: json.containsKey('top_p') ? Omittable(json['top_p'] != null ? (json['top_p'] as num).toDouble() : null) : const Omittable.absent(),
   users: json.containsKey('users') ? Omittable((json['users'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
   tools: json.containsKey('tools') ? Omittable((json['tools'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
-); }
+);}
 
 /// The type of run data source. Always `responses`.
 final EvalResponsesSourceType type;
@@ -73,7 +73,7 @@ final Omittable<List<String>?> users;
 /// List of tool names. This is a query parameter used to select responses.
 final Omittable<List<String>?> tools;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (metadata.isPresent) 'metadata': metadata.value,
   if (model.isPresent) 'model': model.value,
@@ -85,9 +85,9 @@ Map<String, dynamic> toJson() { return {
   if (topP.isPresent) 'top_p': topP.value,
   if (users.isPresent) 'users': users.value,
   if (tools.isPresent) 'tools': tools.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-EvalResponsesSource copyWith({EvalResponsesSourceType? type, Omittable<Map<String,dynamic>?>? metadata, Omittable<String?>? model, Omittable<String?>? instructionsSearch, Omittable<int?>? createdAfter, Omittable<int?>? createdBefore, Omittable<ReasoningEffort?>? reasoningEffort, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<List<String>?>? users, Omittable<List<String>?>? tools, }) { return EvalResponsesSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+EvalResponsesSource copyWith({EvalResponsesSourceType? type, Omittable<Map<String,dynamic>?>? metadata, Omittable<String?>? model, Omittable<String?>? instructionsSearch, Omittable<int?>? createdAfter, Omittable<int?>? createdBefore, Omittable<ReasoningEffort?>? reasoningEffort, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<List<String>?>? users, Omittable<List<String>?>? tools, }) {return EvalResponsesSource(
   type: type ?? this.type,
   metadata: metadata ?? this.metadata,
   model: model ?? this.model,
@@ -99,8 +99,8 @@ EvalResponsesSource copyWith({EvalResponsesSourceType? type, Omittable<Map<Strin
   topP: topP ?? this.topP,
   users: users ?? this.users,
   tools: tools ?? this.tools,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EvalResponsesSource &&
           type == other.type &&
           metadata == other.metadata &&
@@ -114,7 +114,7 @@ EvalResponsesSource copyWith({EvalResponsesSourceType? type, Omittable<Map<Strin
           users.isPresent == other.users.isPresent &&
           listEquals(users.value, other.users.value) &&
           tools.isPresent == other.tools.isPresent &&
-          listEquals(tools.value, other.tools.value); } 
-@override int get hashCode { return Object.hash(type, metadata, model, instructionsSearch, createdAfter, createdBefore, reasoningEffort, temperature, topP, Object.hashAll(users.value ?? const []), Object.hashAll(tools.value ?? const [])); } 
-@override String toString() { return 'EvalResponsesSource(type: $type, metadata: $metadata, model: $model, instructionsSearch: $instructionsSearch, createdAfter: $createdAfter, createdBefore: $createdBefore, reasoningEffort: $reasoningEffort, temperature: $temperature, topP: $topP, users: $users, tools: $tools)'; } 
- }
+          listEquals(tools.value, other.tools.value);}
+@override int get hashCode {return Object.hash(type, metadata, model, instructionsSearch, createdAfter, createdBefore, reasoningEffort, temperature, topP, Object.hashAll(users.value ?? const []), Object.hashAll(tools.value ?? const []));}
+@override String toString() {return 'EvalResponsesSource(type: $type, metadata: $metadata, model: $model, instructionsSearch: $instructionsSearch, createdAfter: $createdAfter, createdBefore: $createdBefore, reasoningEffort: $reasoningEffort, temperature: $temperature, topP: $topP, users: $users, tools: $tools)';}
+}

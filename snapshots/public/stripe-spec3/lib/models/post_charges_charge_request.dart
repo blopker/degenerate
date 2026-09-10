@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_charges_charge_request_fraud_details.dart';import 'post_charges_charge_request_metadata.dart';import 'post_charges_charge_request_shipping.dart';@immutable final class PostChargesChargeRequest {const PostChargesChargeRequest({this.customer, this.description, this.expand, this.fraudDetails, this.metadata, this.receiptEmail, this.shipping, this.transferGroup, });
 
-factory PostChargesChargeRequest.fromJson(Map<String, dynamic> json) { return PostChargesChargeRequest(
+factory PostChargesChargeRequest.fromJson(Map<String, dynamic> json) {return PostChargesChargeRequest(
   customer: json['customer'] as String?,
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -11,7 +11,7 @@ factory PostChargesChargeRequest.fromJson(Map<String, dynamic> json) { return Po
   receiptEmail: json['receipt_email'] as String?,
   shipping: json['shipping'] != null ? PostChargesChargeRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
-); }
+);}
 
 /// The ID of an existing customer that will be associated with this request. This field may only be updated if there is no existing associated customer with this charge.
 final String? customer;
@@ -37,7 +37,7 @@ final PostChargesChargeRequestShipping? shipping;
 /// A string that identifies this transaction as part of a group. `transfer_group` may only be provided if it has not been set. See the [Connect documentation](https://docs.stripe.com/connect/separate-charges-and-transfers#transfer-options) for details.
 final String? transferGroup;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'customer': ?customer,
   'description': ?description,
   'expand': ?expand,
@@ -46,9 +46,9 @@ Map<String, dynamic> toJson() { return {
   'receipt_email': ?receiptEmail,
   if (shipping != null) 'shipping': shipping?.toJson(),
   'transfer_group': ?transferGroup,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer', 'description', 'expand', 'fraud_details', 'metadata', 'receipt_email', 'shipping', 'transfer_group'}.contains(key)); } 
-PostChargesChargeRequest copyWith({String? Function()? customer, String? Function()? description, List<String>? Function()? expand, PostChargesChargeRequestFraudDetails? Function()? fraudDetails, PostChargesChargeRequestMetadata? Function()? metadata, String? Function()? receiptEmail, PostChargesChargeRequestShipping? Function()? shipping, String? Function()? transferGroup, }) { return PostChargesChargeRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'customer', 'description', 'expand', 'fraud_details', 'metadata', 'receipt_email', 'shipping', 'transfer_group'}.contains(key));}
+PostChargesChargeRequest copyWith({String? Function()? customer, String? Function()? description, List<String>? Function()? expand, PostChargesChargeRequestFraudDetails? Function()? fraudDetails, PostChargesChargeRequestMetadata? Function()? metadata, String? Function()? receiptEmail, PostChargesChargeRequestShipping? Function()? shipping, String? Function()? transferGroup, }) {return PostChargesChargeRequest(
   customer: customer != null ? customer() : this.customer,
   description: description != null ? description() : this.description,
   expand: expand != null ? expand() : this.expand,
@@ -57,8 +57,8 @@ PostChargesChargeRequest copyWith({String? Function()? customer, String? Functio
   receiptEmail: receiptEmail != null ? receiptEmail() : this.receiptEmail,
   shipping: shipping != null ? shipping() : this.shipping,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostChargesChargeRequest &&
           customer == other.customer &&
           description == other.description &&
@@ -67,7 +67,7 @@ PostChargesChargeRequest copyWith({String? Function()? customer, String? Functio
           metadata == other.metadata &&
           receiptEmail == other.receiptEmail &&
           shipping == other.shipping &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(customer, description, Object.hashAll(expand ?? const []), fraudDetails, metadata, receiptEmail, shipping, transferGroup); } 
-@override String toString() { return 'PostChargesChargeRequest(customer: $customer, description: $description, expand: $expand, fraudDetails: $fraudDetails, metadata: $metadata, receiptEmail: $receiptEmail, shipping: $shipping, transferGroup: $transferGroup)'; } 
- }
+          transferGroup == other.transferGroup;}
+@override int get hashCode {return Object.hash(customer, description, Object.hashAll(expand ?? const []), fraudDetails, metadata, receiptEmail, shipping, transferGroup);}
+@override String toString() {return 'PostChargesChargeRequest(customer: $customer, description: $description, expand: $expand, fraudDetails: $fraudDetails, metadata: $metadata, receiptEmail: $receiptEmail, shipping: $shipping, transferGroup: $transferGroup)';}
+}

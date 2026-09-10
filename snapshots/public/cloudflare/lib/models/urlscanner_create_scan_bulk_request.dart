@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Device resolutions.
 @immutable final class UrlscannerCreateScanBulkRequestScreenshotsResolutions {const UrlscannerCreateScanBulkRequestScreenshotsResolutions._(this.value);
 
-factory UrlscannerCreateScanBulkRequestScreenshotsResolutions.fromJson(String json) { return switch (json) {
+factory UrlscannerCreateScanBulkRequestScreenshotsResolutions.fromJson(String json) {return switch (json) {
   'desktop' => desktop,
   'mobile' => mobile,
   'tablet' => tablet,
   _ => UrlscannerCreateScanBulkRequestScreenshotsResolutions._(json),
-}; }
+};}
 
 static const UrlscannerCreateScanBulkRequestScreenshotsResolutions desktop = UrlscannerCreateScanBulkRequestScreenshotsResolutions._('desktop');
 
@@ -20,22 +20,22 @@ static const List<UrlscannerCreateScanBulkRequestScreenshotsResolutions> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UrlscannerCreateScanBulkRequestScreenshotsResolutions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UrlscannerCreateScanBulkRequestScreenshotsResolutions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UrlscannerCreateScanBulkRequestScreenshotsResolutions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UrlscannerCreateScanBulkRequestScreenshotsResolutions($value)';}
+}
 /// The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
 @immutable final class UrlscannerCreateScanBulkRequestVisibility {const UrlscannerCreateScanBulkRequestVisibility._(this.value);
 
-factory UrlscannerCreateScanBulkRequestVisibility.fromJson(String json) { return switch (json) {
+factory UrlscannerCreateScanBulkRequestVisibility.fromJson(String json) {return switch (json) {
   'Public' => public,
   'Unlisted' => unlisted,
   _ => UrlscannerCreateScanBulkRequestVisibility._(json),
-}; }
+};}
 
 static const UrlscannerCreateScanBulkRequestVisibility public = UrlscannerCreateScanBulkRequestVisibility._('Public');
 
@@ -45,24 +45,24 @@ static const List<UrlscannerCreateScanBulkRequestVisibility> values = [public, u
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UrlscannerCreateScanBulkRequestVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UrlscannerCreateScanBulkRequestVisibility($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UrlscannerCreateScanBulkRequestVisibility && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UrlscannerCreateScanBulkRequestVisibility($value)';}
+}
 @immutable final class UrlscannerCreateScanBulkRequest {const UrlscannerCreateScanBulkRequest({required this.url, this.customHeaders, this.customagent, this.referer, this.screenshotsResolutions, this.visibility, });
 
-factory UrlscannerCreateScanBulkRequest.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanBulkRequest(
+factory UrlscannerCreateScanBulkRequest.fromJson(Map<String, dynamic> json) {return UrlscannerCreateScanBulkRequest(
   customHeaders: (json['customHeaders'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   customagent: json['customagent'] as String?,
   referer: json['referer'] as String?,
   screenshotsResolutions: (json['screenshotsResolutions'] as List<dynamic>?)?.map((e) => UrlscannerCreateScanBulkRequestScreenshotsResolutions.fromJson(e as String)).toList(),
   url: json['url'] as String,
   visibility: json['visibility'] != null ? UrlscannerCreateScanBulkRequestVisibility.fromJson(json['visibility'] as String) : null,
-); }
+);}
 
 /// Set custom headers.
 final Map<String,String>? customHeaders;
@@ -80,32 +80,32 @@ final String url;
 final UrlscannerCreateScanBulkRequestVisibility? visibility;
 
 /// The value with the schema default applied when absent.
-UrlscannerCreateScanBulkRequestVisibility get visibilityOrDefault { return visibility ?? UrlscannerCreateScanBulkRequestVisibility.fromJson('Public'); } 
-Map<String, dynamic> toJson() { return {
+UrlscannerCreateScanBulkRequestVisibility get visibilityOrDefault {return visibility ?? UrlscannerCreateScanBulkRequestVisibility.fromJson('Public');}
+Map<String, dynamic> toJson() {return {
   'customHeaders': ?customHeaders,
   'customagent': ?customagent,
   'referer': ?referer,
   if (screenshotsResolutions != null) 'screenshotsResolutions': screenshotsResolutions?.map((e) => e.toJson()).toList(),
   'url': url,
   if (visibility != null) 'visibility': visibility?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-UrlscannerCreateScanBulkRequest copyWith({Map<String, String>? Function()? customHeaders, String? Function()? customagent, String? Function()? referer, List<UrlscannerCreateScanBulkRequestScreenshotsResolutions>? Function()? screenshotsResolutions, String? url, UrlscannerCreateScanBulkRequestVisibility? Function()? visibility, }) { return UrlscannerCreateScanBulkRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String;}
+UrlscannerCreateScanBulkRequest copyWith({Map<String, String>? Function()? customHeaders, String? Function()? customagent, String? Function()? referer, List<UrlscannerCreateScanBulkRequestScreenshotsResolutions>? Function()? screenshotsResolutions, String? url, UrlscannerCreateScanBulkRequestVisibility? Function()? visibility, }) {return UrlscannerCreateScanBulkRequest(
   customHeaders: customHeaders != null ? customHeaders() : this.customHeaders,
   customagent: customagent != null ? customagent() : this.customagent,
   referer: referer != null ? referer() : this.referer,
   screenshotsResolutions: screenshotsResolutions != null ? screenshotsResolutions() : this.screenshotsResolutions,
   url: url ?? this.url,
   visibility: visibility != null ? visibility() : this.visibility,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerCreateScanBulkRequest &&
           customHeaders == other.customHeaders &&
           customagent == other.customagent &&
           referer == other.referer &&
           listEquals(screenshotsResolutions, other.screenshotsResolutions) &&
           url == other.url &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(customHeaders, customagent, referer, Object.hashAll(screenshotsResolutions ?? const []), url, visibility); } 
-@override String toString() { return 'UrlscannerCreateScanBulkRequest(customHeaders: $customHeaders, customagent: $customagent, referer: $referer, screenshotsResolutions: $screenshotsResolutions, url: $url, visibility: $visibility)'; } 
- }
+          visibility == other.visibility;}
+@override int get hashCode {return Object.hash(customHeaders, customagent, referer, Object.hashAll(screenshotsResolutions ?? const []), url, visibility);}
+@override String toString() {return 'UrlscannerCreateScanBulkRequest(customHeaders: $customHeaders, customagent: $customagent, referer: $referer, screenshotsResolutions: $screenshotsResolutions, url: $url, visibility: $visibility)';}
+}

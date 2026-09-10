@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifies the type of resource.
 @immutable final class ResourceTaggingResourceType {const ResourceTaggingResourceType._(this.value);
 
-factory ResourceTaggingResourceType.fromJson(String json) { return switch (json) {
+factory ResourceTaggingResourceType.fromJson(String json) {return switch (json) {
   'access_application' => accessApplication,
   'access_application_policy' => accessApplicationPolicy,
   'access_group' => accessGroup,
@@ -32,7 +32,7 @@ factory ResourceTaggingResourceType.fromJson(String json) { return switch (json)
   'worker_version' => workerVersion,
   'zone' => zone,
   _ => ResourceTaggingResourceType._(json),
-}; }
+};}
 
 static const ResourceTaggingResourceType accessApplication = ResourceTaggingResourceType._('access_application');
 
@@ -92,11 +92,11 @@ static const List<ResourceTaggingResourceType> values = [accessApplication, acce
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingResourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResourceTaggingResourceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingResourceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ResourceTaggingResourceType($value)';}
+}

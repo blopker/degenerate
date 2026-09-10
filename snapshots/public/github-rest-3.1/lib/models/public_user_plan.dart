@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PublicUserPlan {const PublicUserPlan({required this.collaborators, required this.name, required this.space, required this.privateRepos, });
 
-factory PublicUserPlan.fromJson(Map<String, dynamic> json) { return PublicUserPlan(
+factory PublicUserPlan.fromJson(Map<String, dynamic> json) {return PublicUserPlan(
   collaborators: (json['collaborators'] as num).toInt(),
   name: json['name'] as String,
   space: (json['space'] as num).toInt(),
   privateRepos: (json['private_repos'] as num).toInt(),
-); }
+);}
 
 final int collaborators;
 
@@ -17,28 +17,28 @@ final int space;
 
 final int privateRepos;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'collaborators': collaborators,
   'name': name,
   'space': space,
   'private_repos': privateRepos,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('collaborators') && json['collaborators'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('collaborators') && json['collaborators'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('space') && json['space'] is num &&
-      json.containsKey('private_repos') && json['private_repos'] is num; } 
-PublicUserPlan copyWith({int? collaborators, String? name, int? space, int? privateRepos, }) { return PublicUserPlan(
+      json.containsKey('private_repos') && json['private_repos'] is num;}
+PublicUserPlan copyWith({int? collaborators, String? name, int? space, int? privateRepos, }) {return PublicUserPlan(
   collaborators: collaborators ?? this.collaborators,
   name: name ?? this.name,
   space: space ?? this.space,
   privateRepos: privateRepos ?? this.privateRepos,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PublicUserPlan &&
           collaborators == other.collaborators &&
           name == other.name &&
           space == other.space &&
-          privateRepos == other.privateRepos; } 
-@override int get hashCode { return Object.hash(collaborators, name, space, privateRepos); } 
-@override String toString() { return 'PublicUserPlan(collaborators: $collaborators, name: $name, space: $space, privateRepos: $privateRepos)'; } 
- }
+          privateRepos == other.privateRepos;}
+@override int get hashCode {return Object.hash(collaborators, name, space, privateRepos);}
+@override String toString() {return 'PublicUserPlan(collaborators: $collaborators, name: $name, space: $space, privateRepos: $privateRepos)';}
+}

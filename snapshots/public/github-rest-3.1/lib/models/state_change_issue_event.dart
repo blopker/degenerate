@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';/// State Change Issue Event
 @immutable final class StateChangeIssueEvent {const StateChangeIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, this.stateReason = const Omittable.absent(), });
 
-factory StateChangeIssueEvent.fromJson(Map<String, dynamic> json) { return StateChangeIssueEvent(
+factory StateChangeIssueEvent.fromJson(Map<String, dynamic> json) {return StateChangeIssueEvent(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: json['url'] as String,
@@ -14,7 +14,7 @@ factory StateChangeIssueEvent.fromJson(Map<String, dynamic> json) { return State
   createdAt: json['created_at'] as String,
   performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   stateReason: json.containsKey('state_reason') ? Omittable(json['state_reason'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final int id;
 
@@ -36,7 +36,7 @@ final Integration? performedViaGithubApp;
 
 final Omittable<String?> stateReason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url,
@@ -47,8 +47,8 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'performed_via_github_app': performedViaGithubApp?.toJson(),
   if (stateReason.isPresent) 'state_reason': stateReason.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('actor') &&
@@ -56,8 +56,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('commit_id') && (json['commit_id'] == null || json['commit_id'] is String) &&
       json.containsKey('commit_url') && (json['commit_url'] == null || json['commit_url'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('performed_via_github_app'); } 
-StateChangeIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, Omittable<String?>? stateReason, }) { return StateChangeIssueEvent(
+      json.containsKey('performed_via_github_app');}
+StateChangeIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, Omittable<String?>? stateReason, }) {return StateChangeIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -68,8 +68,8 @@ StateChangeIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser
   createdAt: createdAt ?? this.createdAt,
   performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
   stateReason: stateReason ?? this.stateReason,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is StateChangeIssueEvent &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -80,7 +80,7 @@ StateChangeIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser
           commitUrl == other.commitUrl &&
           createdAt == other.createdAt &&
           performedViaGithubApp == other.performedViaGithubApp &&
-          stateReason == other.stateReason; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, stateReason); } 
-@override String toString() { return 'StateChangeIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, stateReason: $stateReason)'; } 
- }
+          stateReason == other.stateReason;}
+@override int get hashCode {return Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, stateReason);}
+@override String toString() {return 'StateChangeIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, stateReason: $stateReason)';}
+}

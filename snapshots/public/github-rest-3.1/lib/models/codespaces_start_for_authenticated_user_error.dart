@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static CodespacesStartForAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static CodespacesStartForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const CodespacesStartForAuthenticatedUserError304();
 case 400:
@@ -41,72 +41,72 @@ return CodespacesStartForAuthenticatedUserError500(BasicError.fromJson(json as M
 default:
 return CodespacesStartForAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class CodespacesStartForAuthenticatedUserError304 extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError304();
 
- }
+}
 /// Response for 400 (application/json).
 final class CodespacesStartForAuthenticatedUserError400ApplicationJson extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError400ApplicationJson(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 400 (application/scim+json).
 final class CodespacesStartForAuthenticatedUserError400ApplicationScimJson extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError400ApplicationScimJson(this.data);
 
 /// The decoded response payload.
 final ScimError data;
 
- }
+}
 /// Response for 401 (application/json).
 final class CodespacesStartForAuthenticatedUserError401 extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 402 (application/json).
 final class CodespacesStartForAuthenticatedUserError402 extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError402(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class CodespacesStartForAuthenticatedUserError403 extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class CodespacesStartForAuthenticatedUserError404 extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 409 (application/json).
 final class CodespacesStartForAuthenticatedUserError409 extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError409(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 500 (application/json).
 final class CodespacesStartForAuthenticatedUserError500 extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError500(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class CodespacesStartForAuthenticatedUserErrorUnknown extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

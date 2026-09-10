@@ -11,7 +11,7 @@ final class TargetIndustryApi with ApiExecutor {const TargetIndustryApi(this.api
 /// Lists all target industries for a specific dataset
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/targetIndustries`
-Future<ApiResult<GetTargetIndustryListByDatasetResponse, GetTargetIndustryListByDatasetResponse400>> getTargetIndustryListByDataset({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetTargetIndustryListByDatasetResponse, GetTargetIndustryListByDatasetResponse400>> getTargetIndustryListByDataset({required String accountId, required String datasetId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -37,11 +37,11 @@ return null;
 
   },
 );
- } 
+}
 /// Lists target industries across multiple datasets
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/targetIndustries`
-Future<ApiResult<GetTargetIndustryListResponse, GetTargetIndustryListResponse400>> getTargetIndustryList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTargetIndustryListResponse, GetTargetIndustryListResponse400>> getTargetIndustryList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
@@ -77,11 +77,11 @@ return null;
 
   },
 );
- } 
+}
 /// Lists all target industries from industry map catalog
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/targetIndustries/catalog`
-Future<ApiResult<GetTargetIndustryListCompleteResponse, GetTargetIndustryListCompleteResponse400>> getTargetIndustryListComplete({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetTargetIndustryListCompleteResponse, GetTargetIndustryListCompleteResponse400>> getTargetIndustryListComplete({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -107,5 +107,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class UsersGetAuthenticatedError {const UsersGetAuthenticatedError();
 
 /// Decodes the payload for its declared status and content type.
-static UsersGetAuthenticatedError parse(ApiResponse response) { switch (response.statusCode) {
+static UsersGetAuthenticatedError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const UsersGetAuthenticatedError304();
 case 401:
@@ -16,30 +16,30 @@ return UsersGetAuthenticatedError403(BasicError.fromJson(json as Map<String, dyn
 default:
 return UsersGetAuthenticatedErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class UsersGetAuthenticatedError304 extends UsersGetAuthenticatedError {const UsersGetAuthenticatedError304();
 
- }
+}
 /// Response for 401 (application/json).
 final class UsersGetAuthenticatedError401 extends UsersGetAuthenticatedError {const UsersGetAuthenticatedError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class UsersGetAuthenticatedError403 extends UsersGetAuthenticatedError {const UsersGetAuthenticatedError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class UsersGetAuthenticatedErrorUnknown extends UsersGetAuthenticatedError {const UsersGetAuthenticatedErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

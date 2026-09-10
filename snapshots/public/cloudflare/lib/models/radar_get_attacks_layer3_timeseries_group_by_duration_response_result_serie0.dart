@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0 {const RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0({required this.$1HourTo3Hours, required this.$10MinsTo20Mins, required this.$20MinsTo40Mins, required this.$40MinsTo1Hour, required this.over3Hours, required this.under10Mins, required this.timestamps, });
 
-factory RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0(
+factory RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0(
   $1HourTo3Hours: (json['_1_HOUR_TO_3_HOURS'] as List<dynamic>).map((e) => e as String).toList(),
   $10MinsTo20Mins: (json['_10_MINS_TO_20_MINS'] as List<dynamic>).map((e) => e as String).toList(),
   $20MinsTo40Mins: (json['_20_MINS_TO_40_MINS'] as List<dynamic>).map((e) => e as String).toList(),
@@ -10,7 +10,7 @@ factory RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0.fromJ
   over3Hours: (json['OVER_3_HOURS'] as List<dynamic>).map((e) => e as String).toList(),
   under10Mins: (json['UNDER_10_MINS'] as List<dynamic>).map((e) => e as String).toList(),
   timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),
-); }
+);}
 
 final List<String> $1HourTo3Hours;
 
@@ -26,7 +26,7 @@ final List<String> under10Mins;
 
 final List<DateTime> timestamps;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '_1_HOUR_TO_3_HOURS': $1HourTo3Hours,
   '_10_MINS_TO_20_MINS': $10MinsTo20Mins,
   '_20_MINS_TO_40_MINS': $20MinsTo40Mins,
@@ -34,15 +34,15 @@ Map<String, dynamic> toJson() { return {
   'OVER_3_HOURS': over3Hours,
   'UNDER_10_MINS': under10Mins,
   'timestamps': timestamps.map((e) => e.toIso8601String()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('_1_HOUR_TO_3_HOURS') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('_1_HOUR_TO_3_HOURS') &&
       json.containsKey('_10_MINS_TO_20_MINS') &&
       json.containsKey('_20_MINS_TO_40_MINS') &&
       json.containsKey('_40_MINS_TO_1_HOUR') &&
       json.containsKey('OVER_3_HOURS') &&
       json.containsKey('UNDER_10_MINS') &&
-      json.containsKey('timestamps'); } 
-RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0 copyWith({List<String>? $1HourTo3Hours, List<String>? $10MinsTo20Mins, List<String>? $20MinsTo40Mins, List<String>? $40MinsTo1Hour, List<String>? over3Hours, List<String>? under10Mins, List<DateTime>? timestamps, }) { return RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0(
+      json.containsKey('timestamps');}
+RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0 copyWith({List<String>? $1HourTo3Hours, List<String>? $10MinsTo20Mins, List<String>? $20MinsTo40Mins, List<String>? $40MinsTo1Hour, List<String>? over3Hours, List<String>? under10Mins, List<DateTime>? timestamps, }) {return RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0(
   $1HourTo3Hours: $1HourTo3Hours ?? this.$1HourTo3Hours,
   $10MinsTo20Mins: $10MinsTo20Mins ?? this.$10MinsTo20Mins,
   $20MinsTo40Mins: $20MinsTo40Mins ?? this.$20MinsTo40Mins,
@@ -50,8 +50,8 @@ RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0 copyWith({Lis
   over3Hours: over3Hours ?? this.over3Hours,
   under10Mins: under10Mins ?? this.under10Mins,
   timestamps: timestamps ?? this.timestamps,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0 &&
           listEquals($1HourTo3Hours, other.$1HourTo3Hours) &&
           listEquals($10MinsTo20Mins, other.$10MinsTo20Mins) &&
@@ -59,7 +59,7 @@ RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0 copyWith({Lis
           listEquals($40MinsTo1Hour, other.$40MinsTo1Hour) &&
           listEquals(over3Hours, other.over3Hours) &&
           listEquals(under10Mins, other.under10Mins) &&
-          listEquals(timestamps, other.timestamps); } 
-@override int get hashCode { return Object.hash(Object.hashAll($1HourTo3Hours), Object.hashAll($10MinsTo20Mins), Object.hashAll($20MinsTo40Mins), Object.hashAll($40MinsTo1Hour), Object.hashAll(over3Hours), Object.hashAll(under10Mins), Object.hashAll(timestamps)); } 
-@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0(\$1HourTo3Hours: ${$1HourTo3Hours}, \$10MinsTo20Mins: ${$10MinsTo20Mins}, \$20MinsTo40Mins: ${$20MinsTo40Mins}, \$40MinsTo1Hour: ${$40MinsTo1Hour}, over3Hours: $over3Hours, under10Mins: $under10Mins, timestamps: $timestamps)'; } 
- }
+          listEquals(timestamps, other.timestamps);}
+@override int get hashCode {return Object.hash(Object.hashAll($1HourTo3Hours), Object.hashAll($10MinsTo20Mins), Object.hashAll($20MinsTo40Mins), Object.hashAll($40MinsTo1Hour), Object.hashAll(over3Hours), Object.hashAll(under10Mins), Object.hashAll(timestamps));}
+@override String toString() {return 'RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0(\$1HourTo3Hours: ${$1HourTo3Hours}, \$10MinsTo20Mins: ${$10MinsTo20Mins}, \$20MinsTo40Mins: ${$20MinsTo40Mins}, \$40MinsTo1Hour: ${$40MinsTo1Hour}, over3Hours: $over3Hours, under10Mins: $under10Mins, timestamps: $timestamps)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxSettingsRequestDefaultsTaxBehavior {const PostTaxSettingsRequestDefaultsTaxBehavior._(this.value);
 
-factory PostTaxSettingsRequestDefaultsTaxBehavior.fromJson(String json) { return switch (json) {
+factory PostTaxSettingsRequestDefaultsTaxBehavior.fromJson(String json) {return switch (json) {
   'exclusive' => exclusive,
   'inclusive' => inclusive,
   'inferred_by_currency' => inferredByCurrency,
   _ => PostTaxSettingsRequestDefaultsTaxBehavior._(json),
-}; }
+};}
 
 static const PostTaxSettingsRequestDefaultsTaxBehavior exclusive = PostTaxSettingsRequestDefaultsTaxBehavior._('exclusive');
 
@@ -19,39 +19,39 @@ static const List<PostTaxSettingsRequestDefaultsTaxBehavior> values = [exclusive
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTaxSettingsRequestDefaultsTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTaxSettingsRequestDefaultsTaxBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTaxSettingsRequestDefaultsTaxBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTaxSettingsRequestDefaultsTaxBehavior($value)';}
+}
 /// Default configuration to be used on Stripe Tax calculations.
 @immutable final class PostTaxSettingsRequestDefaults {const PostTaxSettingsRequestDefaults({this.taxBehavior, this.taxCode, });
 
-factory PostTaxSettingsRequestDefaults.fromJson(Map<String, dynamic> json) { return PostTaxSettingsRequestDefaults(
+factory PostTaxSettingsRequestDefaults.fromJson(Map<String, dynamic> json) {return PostTaxSettingsRequestDefaults(
   taxBehavior: json['tax_behavior'] != null ? PostTaxSettingsRequestDefaultsTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   taxCode: json['tax_code'] as String?,
-); }
+);}
 
 final PostTaxSettingsRequestDefaultsTaxBehavior? taxBehavior;
 
 final String? taxCode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
   'tax_code': ?taxCode,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tax_behavior', 'tax_code'}.contains(key)); } 
-PostTaxSettingsRequestDefaults copyWith({PostTaxSettingsRequestDefaultsTaxBehavior? Function()? taxBehavior, String? Function()? taxCode, }) { return PostTaxSettingsRequestDefaults(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'tax_behavior', 'tax_code'}.contains(key));}
+PostTaxSettingsRequestDefaults copyWith({PostTaxSettingsRequestDefaultsTaxBehavior? Function()? taxBehavior, String? Function()? taxCode, }) {return PostTaxSettingsRequestDefaults(
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
   taxCode: taxCode != null ? taxCode() : this.taxCode,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTaxSettingsRequestDefaults &&
           taxBehavior == other.taxBehavior &&
-          taxCode == other.taxCode; } 
-@override int get hashCode { return Object.hash(taxBehavior, taxCode); } 
-@override String toString() { return 'PostTaxSettingsRequestDefaults(taxBehavior: $taxBehavior, taxCode: $taxCode)'; } 
- }
+          taxCode == other.taxCode;}
+@override int get hashCode {return Object.hash(taxBehavior, taxCode);}
+@override String toString() {return 'PostTaxSettingsRequestDefaults(taxBehavior: $taxBehavior, taxCode: $taxCode)';}
+}

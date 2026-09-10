@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a Glusterfs mount that lasts the lifetime of a pod. Glusterfs volumes do not support ownership management or SELinux relabeling.
 @immutable final class GlusterfsVolumeSource {const GlusterfsVolumeSource({required this.endpoints, required this.path, this.readOnly, });
 
-factory GlusterfsVolumeSource.fromJson(Map<String, dynamic> json) { return GlusterfsVolumeSource(
+factory GlusterfsVolumeSource.fromJson(Map<String, dynamic> json) {return GlusterfsVolumeSource(
   endpoints: json['endpoints'] as String,
   path: json['path'] as String,
   readOnly: json['readOnly'] as bool?,
-); }
+);}
 
 /// endpoints is the endpoint name that details Glusterfs topology.
 final String endpoints;
@@ -18,23 +18,23 @@ final String path;
 /// readOnly here will force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: https://examples.k8s.io/volumes/glusterfs/README.md#create-a-pod
 final bool? readOnly;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'endpoints': endpoints,
   'path': path,
   'readOnly': ?readOnly,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('endpoints') && json['endpoints'] is String &&
-      json.containsKey('path') && json['path'] is String; } 
-GlusterfsVolumeSource copyWith({String? endpoints, String? path, bool? Function()? readOnly, }) { return GlusterfsVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('endpoints') && json['endpoints'] is String &&
+      json.containsKey('path') && json['path'] is String;}
+GlusterfsVolumeSource copyWith({String? endpoints, String? path, bool? Function()? readOnly, }) {return GlusterfsVolumeSource(
   endpoints: endpoints ?? this.endpoints,
   path: path ?? this.path,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GlusterfsVolumeSource &&
           endpoints == other.endpoints &&
           path == other.path &&
-          readOnly == other.readOnly; } 
-@override int get hashCode { return Object.hash(endpoints, path, readOnly); } 
-@override String toString() { return 'GlusterfsVolumeSource(endpoints: $endpoints, path: $path, readOnly: $readOnly)'; } 
- }
+          readOnly == other.readOnly;}
+@override int get hashCode {return Object.hash(endpoints, path, readOnly);}
+@override String toString() {return 'GlusterfsVolumeSource(endpoints: $endpoints, path: $path, readOnly: $readOnly)';}
+}

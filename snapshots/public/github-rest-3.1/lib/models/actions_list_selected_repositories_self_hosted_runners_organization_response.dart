@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository.dart';@immutable final class ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse {const ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse({this.totalCount, this.repositories, });
 
-factory ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse.fromJson(Map<String, dynamic> json) { return ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse(
+factory ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse.fromJson(Map<String, dynamic> json) {return ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse(
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
   repositories: (json['repositories'] as List<dynamic>?)?.map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int? totalCount;
 
 final List<Repository>? repositories;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': ?totalCount,
   if (repositories != null) 'repositories': repositories?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_count', 'repositories'}.contains(key)); } 
-ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse copyWith({int? Function()? totalCount, List<Repository>? Function()? repositories, }) { return ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'total_count', 'repositories'}.contains(key));}
+ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse copyWith({int? Function()? totalCount, List<Repository>? Function()? repositories, }) {return ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse(
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   repositories: repositories != null ? repositories() : this.repositories,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse &&
           totalCount == other.totalCount &&
-          listEquals(repositories, other.repositories); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(repositories ?? const [])); } 
-@override String toString() { return 'ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse(totalCount: $totalCount, repositories: $repositories)'; } 
- }
+          listEquals(repositories, other.repositories);}
+@override int get hashCode {return Object.hash(totalCount, Object.hashAll(repositories ?? const []));}
+@override String toString() {return 'ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse(totalCount: $totalCount, repositories: $repositories)';}
+}

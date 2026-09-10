@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_us_bank_account_financial_connections_filters.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions._(this.value);
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions.fromJson(String json) {return switch (json) {
   'balances' => balances,
   'ownership' => ownership,
   'payment_method' => paymentMethod,
   'transactions' => transactions,
   _ => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions balances = PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions._('balances');
 
@@ -22,22 +22,22 @@ static const List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBank
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions($value)';}
+}
 @immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch._(this.value);
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch.fromJson(String json) {return switch (json) {
   'balances' => balances,
   'ownership' => ownership,
   'transactions' => transactions,
   _ => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch balances = PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch._('balances');
 
@@ -49,22 +49,22 @@ static const List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBank
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch($value)';}
+}
 @immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections({this.filters, this.permissions, this.prefetch, this.returnUrl, });
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections(
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections.fromJson(Map<String, dynamic> json) {return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections(
   filters: json['filters'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
   permissions: (json['permissions'] as List<dynamic>?)?.map((e) => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions.fromJson(e as String)).toList(),
   prefetch: (json['prefetch'] as List<dynamic>?)?.map((e) => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch.fromJson(e as String)).toList(),
   returnUrl: json['return_url'] as String?,
-); }
+);}
 
 final PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters? filters;
 
@@ -74,25 +74,25 @@ final List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccount
 
 final String? returnUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (filters != null) 'filters': filters?.toJson(),
   if (permissions != null) 'permissions': permissions?.map((e) => e.toJson()).toList(),
   if (prefetch != null) 'prefetch': prefetch?.map((e) => e.toJson()).toList(),
   'return_url': ?returnUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filters', 'permissions', 'prefetch', 'return_url'}.contains(key)); } 
-PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections copyWith({PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters? Function()? filters, List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions>? Function()? permissions, List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch>? Function()? prefetch, String? Function()? returnUrl, }) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'filters', 'permissions', 'prefetch', 'return_url'}.contains(key));}
+PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections copyWith({PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters? Function()? filters, List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions>? Function()? permissions, List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch>? Function()? prefetch, String? Function()? returnUrl, }) {return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections(
   filters: filters != null ? filters() : this.filters,
   permissions: permissions != null ? permissions() : this.permissions,
   prefetch: prefetch != null ? prefetch() : this.prefetch,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections &&
           filters == other.filters &&
           listEquals(permissions, other.permissions) &&
           listEquals(prefetch, other.prefetch) &&
-          returnUrl == other.returnUrl; } 
-@override int get hashCode { return Object.hash(filters, Object.hashAll(permissions ?? const []), Object.hashAll(prefetch ?? const []), returnUrl); } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections(filters: $filters, permissions: $permissions, prefetch: $prefetch, returnUrl: $returnUrl)'; } 
- }
+          returnUrl == other.returnUrl;}
+@override int get hashCode {return Object.hash(filters, Object.hashAll(permissions ?? const []), Object.hashAll(prefetch ?? const []), returnUrl);}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections(filters: $filters, permissions: $permissions, prefetch: $prefetch, returnUrl: $returnUrl)';}
+}

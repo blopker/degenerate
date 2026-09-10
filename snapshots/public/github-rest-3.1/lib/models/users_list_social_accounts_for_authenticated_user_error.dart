@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class UsersListSocialAccountsForAuthenticatedUserError {const UsersListSocialAccountsForAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static UsersListSocialAccountsForAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static UsersListSocialAccountsForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const UsersListSocialAccountsForAuthenticatedUserError304();
 case 401:
@@ -19,37 +19,37 @@ return UsersListSocialAccountsForAuthenticatedUserError404(BasicError.fromJson(j
 default:
 return UsersListSocialAccountsForAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class UsersListSocialAccountsForAuthenticatedUserError304 extends UsersListSocialAccountsForAuthenticatedUserError {const UsersListSocialAccountsForAuthenticatedUserError304();
 
- }
+}
 /// Response for 401 (application/json).
 final class UsersListSocialAccountsForAuthenticatedUserError401 extends UsersListSocialAccountsForAuthenticatedUserError {const UsersListSocialAccountsForAuthenticatedUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class UsersListSocialAccountsForAuthenticatedUserError403 extends UsersListSocialAccountsForAuthenticatedUserError {const UsersListSocialAccountsForAuthenticatedUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class UsersListSocialAccountsForAuthenticatedUserError404 extends UsersListSocialAccountsForAuthenticatedUserError {const UsersListSocialAccountsForAuthenticatedUserError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class UsersListSocialAccountsForAuthenticatedUserErrorUnknown extends UsersListSocialAccountsForAuthenticatedUserError {const UsersListSocialAccountsForAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

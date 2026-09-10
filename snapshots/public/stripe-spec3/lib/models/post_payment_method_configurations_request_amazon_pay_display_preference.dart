@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreferencePreference._(this.value);
 
-factory PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreferencePreference.fromJson(String json) { return switch (json) {
+factory PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreferencePreference.fromJson(String json) {return switch (json) {
   'none' => none,
   'off' => off,
   'on' => $on,
   _ => PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreferencePreference._(json),
-}; }
+};}
 
 static const PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreferencePreference none = PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreferencePreference._('none');
 
@@ -19,32 +19,32 @@ static const List<PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreferen
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreferencePreference && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreferencePreference($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreferencePreference && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreferencePreference($value)';}
+}
 @immutable final class PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreference {const PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreference({this.preference});
 
-factory PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreference(
+factory PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreference.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreferencePreference.fromJson(json['preference'] as String) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreferencePreference? preference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (preference != null) 'preference': preference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreference copyWith({PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreferencePreference? Function()? preference}) { return PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreference(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'preference'}.contains(key));}
+PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreference copyWith({PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreferencePreference? Function()? preference}) {return PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreference(
   preference: preference != null ? preference() : this.preference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreference &&
-          preference == other.preference; } 
-@override int get hashCode { return preference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreference(preference: $preference)'; } 
- }
+          preference == other.preference;}
+@override int get hashCode {return preference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestAmazonPayDisplayPreference(preference: $preference)';}
+}

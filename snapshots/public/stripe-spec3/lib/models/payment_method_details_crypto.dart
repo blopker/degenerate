@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The blockchain network that the transaction was sent on.
 @immutable final class PaymentMethodDetailsCryptoNetwork {const PaymentMethodDetailsCryptoNetwork._(this.value);
 
-factory PaymentMethodDetailsCryptoNetwork.fromJson(String json) { return switch (json) {
+factory PaymentMethodDetailsCryptoNetwork.fromJson(String json) {return switch (json) {
   'base' => base,
   'ethereum' => ethereum,
   'polygon' => polygon,
   'solana' => solana,
   _ => PaymentMethodDetailsCryptoNetwork._(json),
-}; }
+};}
 
 static const PaymentMethodDetailsCryptoNetwork base = PaymentMethodDetailsCryptoNetwork._('base');
 
@@ -23,23 +23,23 @@ static const List<PaymentMethodDetailsCryptoNetwork> values = [base, ethereum, p
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsCryptoNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsCryptoNetwork($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodDetailsCryptoNetwork && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodDetailsCryptoNetwork($value)';}
+}
 /// The token currency that the transaction was sent with.
 @immutable final class PaymentMethodDetailsCryptoTokenCurrency {const PaymentMethodDetailsCryptoTokenCurrency._(this.value);
 
-factory PaymentMethodDetailsCryptoTokenCurrency.fromJson(String json) { return switch (json) {
+factory PaymentMethodDetailsCryptoTokenCurrency.fromJson(String json) {return switch (json) {
   'usdc' => usdc,
   'usdg' => usdg,
   'usdp' => usdp,
   _ => PaymentMethodDetailsCryptoTokenCurrency._(json),
-}; }
+};}
 
 static const PaymentMethodDetailsCryptoTokenCurrency usdc = PaymentMethodDetailsCryptoTokenCurrency._('usdc');
 
@@ -51,23 +51,23 @@ static const List<PaymentMethodDetailsCryptoTokenCurrency> values = [usdc, usdg,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsCryptoTokenCurrency && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsCryptoTokenCurrency($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodDetailsCryptoTokenCurrency && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodDetailsCryptoTokenCurrency($value)';}
+}
 /// 
 @immutable final class PaymentMethodDetailsCrypto {const PaymentMethodDetailsCrypto({this.buyerAddress, this.network, this.tokenCurrency, this.transactionHash, });
 
-factory PaymentMethodDetailsCrypto.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCrypto(
+factory PaymentMethodDetailsCrypto.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsCrypto(
   buyerAddress: json['buyer_address'] as String?,
   network: json['network'] != null ? PaymentMethodDetailsCryptoNetwork.fromJson(json['network'] as String) : null,
   tokenCurrency: json['token_currency'] != null ? PaymentMethodDetailsCryptoTokenCurrency.fromJson(json['token_currency'] as String) : null,
   transactionHash: json['transaction_hash'] as String?,
-); }
+);}
 
 /// The wallet address of the customer.
 final String? buyerAddress;
@@ -81,25 +81,25 @@ final PaymentMethodDetailsCryptoTokenCurrency? tokenCurrency;
 /// The blockchain transaction hash of the crypto payment.
 final String? transactionHash;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'buyer_address': ?buyerAddress,
   if (network != null) 'network': network?.toJson(),
   if (tokenCurrency != null) 'token_currency': tokenCurrency?.toJson(),
   'transaction_hash': ?transactionHash,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'buyer_address', 'network', 'token_currency', 'transaction_hash'}.contains(key)); } 
-PaymentMethodDetailsCrypto copyWith({String? Function()? buyerAddress, PaymentMethodDetailsCryptoNetwork? Function()? network, PaymentMethodDetailsCryptoTokenCurrency? Function()? tokenCurrency, String? Function()? transactionHash, }) { return PaymentMethodDetailsCrypto(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'buyer_address', 'network', 'token_currency', 'transaction_hash'}.contains(key));}
+PaymentMethodDetailsCrypto copyWith({String? Function()? buyerAddress, PaymentMethodDetailsCryptoNetwork? Function()? network, PaymentMethodDetailsCryptoTokenCurrency? Function()? tokenCurrency, String? Function()? transactionHash, }) {return PaymentMethodDetailsCrypto(
   buyerAddress: buyerAddress != null ? buyerAddress() : this.buyerAddress,
   network: network != null ? network() : this.network,
   tokenCurrency: tokenCurrency != null ? tokenCurrency() : this.tokenCurrency,
   transactionHash: transactionHash != null ? transactionHash() : this.transactionHash,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodDetailsCrypto &&
           buyerAddress == other.buyerAddress &&
           network == other.network &&
           tokenCurrency == other.tokenCurrency &&
-          transactionHash == other.transactionHash; } 
-@override int get hashCode { return Object.hash(buyerAddress, network, tokenCurrency, transactionHash); } 
-@override String toString() { return 'PaymentMethodDetailsCrypto(buyerAddress: $buyerAddress, network: $network, tokenCurrency: $tokenCurrency, transactionHash: $transactionHash)'; } 
- }
+          transactionHash == other.transactionHash;}
+@override int get hashCode {return Object.hash(buyerAddress, network, tokenCurrency, transactionHash);}
+@override String toString() {return 'PaymentMethodDetailsCrypto(buyerAddress: $buyerAddress, network: $network, tokenCurrency: $tokenCurrency, transactionHash: $transactionHash)';}
+}

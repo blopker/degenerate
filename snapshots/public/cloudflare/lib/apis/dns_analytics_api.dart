@@ -15,7 +15,7 @@ final class DnsAnalyticsApi with ApiExecutor {const DnsAnalyticsApi(this.apiConf
 /// See [Analytics API properties](https://developers.cloudflare.com/dns/reference/analytics-api-properties/) for detailed information about the available query parameters.
 ///
 /// `GET /zones/{zone_id}/dns_analytics/report`
-Future<ApiResult<DnsAnalyticsReport?, DnsAnalyticsTableResponse4xx>> dnsAnalyticsTable({required DnsAnalyticsIdentifier zoneId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DnsAnalyticsReport?, DnsAnalyticsTableResponse4xx>> dnsAnalyticsTable({required DnsAnalyticsIdentifier zoneId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (metrics != null) {
   queryParameters['metrics'] = metrics.toString();
@@ -67,7 +67,7 @@ return null;
 
   },
 );
- } 
+}
 /// By Time
 ///
 /// Retrieves a list of aggregate metrics grouped by time interval.
@@ -75,7 +75,7 @@ return null;
 /// See [Analytics API properties](https://developers.cloudflare.com/dns/reference/analytics-api-properties/) for detailed information about the available query parameters.
 ///
 /// `GET /zones/{zone_id}/dns_analytics/report/bytime`
-Future<ApiResult<DnsAnalyticsReportBytime?, DnsAnalyticsByTimeResponse4xx>> dnsAnalyticsByTime({required DnsAnalyticsIdentifier zoneId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, DnsAnalyticsTimeDelta? timeDelta, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DnsAnalyticsReportBytime?, DnsAnalyticsByTimeResponse4xx>> dnsAnalyticsByTime({required DnsAnalyticsIdentifier zoneId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, DnsAnalyticsTimeDelta? timeDelta, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (metrics != null) {
   queryParameters['metrics'] = metrics.toString();
@@ -130,5 +130,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

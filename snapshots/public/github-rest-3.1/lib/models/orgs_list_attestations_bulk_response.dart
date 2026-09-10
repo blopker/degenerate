@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'orgs_list_attestations_bulk_response_attestations_subject_digests_value.dart';import 'orgs_list_attestations_bulk_response_page_info.dart';@immutable final class OrgsListAttestationsBulkResponse {const OrgsListAttestationsBulkResponse({this.attestationsSubjectDigests, this.pageInfo, });
 
-factory OrgsListAttestationsBulkResponse.fromJson(Map<String, dynamic> json) { return OrgsListAttestationsBulkResponse(
+factory OrgsListAttestationsBulkResponse.fromJson(Map<String, dynamic> json) {return OrgsListAttestationsBulkResponse(
   attestationsSubjectDigests: (json['attestations_subject_digests'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>?)?.map((e) => OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue.fromJson(e as Map<String, dynamic>)).toList())),
   pageInfo: json['page_info'] != null ? OrgsListAttestationsBulkResponsePageInfo.fromJson(json['page_info'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Mapping of subject digest to bundles.
 final Map<String,List<OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue>?>? attestationsSubjectDigests;
@@ -13,19 +13,19 @@ final Map<String,List<OrgsListAttestationsBulkResponseAttestationsSubjectDigests
 /// Information about the current page.
 final OrgsListAttestationsBulkResponsePageInfo? pageInfo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (attestationsSubjectDigests != null) 'attestations_subject_digests': attestationsSubjectDigests?.map((k, v) => MapEntry(k, v?.map((e) => e.toJson()).toList())),
   if (pageInfo != null) 'page_info': pageInfo?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attestations_subject_digests', 'page_info'}.contains(key)); } 
-OrgsListAttestationsBulkResponse copyWith({Map<String, List<OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue>?>? Function()? attestationsSubjectDigests, OrgsListAttestationsBulkResponsePageInfo? Function()? pageInfo, }) { return OrgsListAttestationsBulkResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'attestations_subject_digests', 'page_info'}.contains(key));}
+OrgsListAttestationsBulkResponse copyWith({Map<String, List<OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue>?>? Function()? attestationsSubjectDigests, OrgsListAttestationsBulkResponsePageInfo? Function()? pageInfo, }) {return OrgsListAttestationsBulkResponse(
   attestationsSubjectDigests: attestationsSubjectDigests != null ? attestationsSubjectDigests() : this.attestationsSubjectDigests,
   pageInfo: pageInfo != null ? pageInfo() : this.pageInfo,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrgsListAttestationsBulkResponse &&
           attestationsSubjectDigests == other.attestationsSubjectDigests &&
-          pageInfo == other.pageInfo; } 
-@override int get hashCode { return Object.hash(attestationsSubjectDigests, pageInfo); } 
-@override String toString() { return 'OrgsListAttestationsBulkResponse(attestationsSubjectDigests: $attestationsSubjectDigests, pageInfo: $pageInfo)'; } 
- }
+          pageInfo == other.pageInfo;}
+@override int get hashCode {return Object.hash(attestationsSubjectDigests, pageInfo);}
+@override String toString() {return 'OrgsListAttestationsBulkResponse(attestationsSubjectDigests: $attestationsSubjectDigests, pageInfo: $pageInfo)';}
+}

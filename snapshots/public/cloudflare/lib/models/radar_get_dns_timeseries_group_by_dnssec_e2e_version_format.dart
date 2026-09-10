@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat._(this.value);
 
-factory RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat.fromJson(String json) { return switch (json) {
+factory RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat._(json),
-}; }
+};}
 
 static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat $json = RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat._('JSON');
 
@@ -17,11 +17,11 @@ static const List<RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsTimeseriesGroupByDnssecE2eVersionFormat($value)';}
+}

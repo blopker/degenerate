@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_gateway_response_result.dart';@immutable final class AigConfigUpdateGatewayResponse {const AigConfigUpdateGatewayResponse({required this.result, required this.success, });
 
-factory AigConfigUpdateGatewayResponse.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayResponse(
+factory AigConfigUpdateGatewayResponse.fromJson(Map<String, dynamic> json) {return AigConfigUpdateGatewayResponse(
   result: AigConfigUpdateGatewayResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final AigConfigUpdateGatewayResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AigConfigUpdateGatewayResponse copyWith({AigConfigUpdateGatewayResponseResult? result, bool? success, }) { return AigConfigUpdateGatewayResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+AigConfigUpdateGatewayResponse copyWith({AigConfigUpdateGatewayResponseResult? result, bool? success, }) {return AigConfigUpdateGatewayResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigUpdateGatewayResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'AigConfigUpdateGatewayResponse(result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(result, success);}
+@override String toString() {return 'AigConfigUpdateGatewayResponse(result: $result, success: $success)';}
+}

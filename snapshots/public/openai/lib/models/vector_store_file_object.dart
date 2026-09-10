@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'other_chunking_strategy_response_param.dart';import 'static_chunking_strategy_response_param.dart';import 'vector_store_file_object_chunking_strategy.dart';import 'vector_store_file_object_last_error.dart';/// The object type, which is always `vector_store.file`.
 @immutable final class VectorStoreFileObjectObject {const VectorStoreFileObjectObject._(this.value);
 
-factory VectorStoreFileObjectObject.fromJson(String json) { return switch (json) {
+factory VectorStoreFileObjectObject.fromJson(String json) {return switch (json) {
   'vector_store.file' => vectorStoreFile,
   _ => VectorStoreFileObjectObject._(json),
-}; }
+};}
 
 static const VectorStoreFileObjectObject vectorStoreFile = VectorStoreFileObjectObject._('vector_store.file');
 
@@ -14,24 +14,24 @@ static const List<VectorStoreFileObjectObject> values = [vectorStoreFile];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorStoreFileObjectObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorStoreFileObjectObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is VectorStoreFileObjectObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'VectorStoreFileObjectObject($value)';}
+}
 /// The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.
 @immutable final class VectorStoreFileObjectStatus {const VectorStoreFileObjectStatus._(this.value);
 
-factory VectorStoreFileObjectStatus.fromJson(String json) { return switch (json) {
+factory VectorStoreFileObjectStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'cancelled' => cancelled,
   'failed' => failed,
   _ => VectorStoreFileObjectStatus._(json),
-}; }
+};}
 
 static const VectorStoreFileObjectStatus inProgress = VectorStoreFileObjectStatus._('in_progress');
 
@@ -45,18 +45,18 @@ static const List<VectorStoreFileObjectStatus> values = [inProgress, completed, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorStoreFileObjectStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorStoreFileObjectStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is VectorStoreFileObjectStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'VectorStoreFileObjectStatus($value)';}
+}
 /// A list of files attached to a vector store.
 @immutable final class VectorStoreFileObject {const VectorStoreFileObject({required this.id, required this.object, required this.usageBytes, required this.createdAt, required this.vectorStoreId, required this.status, required this.lastError, this.chunkingStrategy, this.attributes = const Omittable.absent(), });
 
-factory VectorStoreFileObject.fromJson(Map<String, dynamic> json) { return VectorStoreFileObject(
+factory VectorStoreFileObject.fromJson(Map<String, dynamic> json) {return VectorStoreFileObject(
   id: json['id'] as String,
   object: VectorStoreFileObjectObject.fromJson(json['object'] as String),
   usageBytes: (json['usage_bytes'] as num).toInt(),
@@ -66,7 +66,7 @@ factory VectorStoreFileObject.fromJson(Map<String, dynamic> json) { return Vecto
   lastError: json['last_error'] != null ? VectorStoreFileObjectLastError.fromJson(json['last_error'] as Map<String, dynamic>) : null,
   chunkingStrategy: json['chunking_strategy'] != null ? OneOf2.parse(json['chunking_strategy'], fromA: (v) => StaticChunkingStrategyResponseParam.fromJson(v as Map<String, dynamic>), fromB: (v) => OtherChunkingStrategyResponseParam.fromJson(v as Map<String, dynamic>),) : null,
   attributes: json.containsKey('attributes') ? Omittable(json['attributes'] as Map<String, dynamic>?) : const Omittable.absent(),
-); }
+);}
 
 /// The identifier, which can be referenced in API endpoints.
 final String id;
@@ -100,7 +100,7 @@ final VectorStoreFileObjectChunkingStrategy? chunkingStrategy;
 /// 
 final Omittable<Map<String,dynamic>?> attributes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'usage_bytes': usageBytes,
@@ -110,15 +110,15 @@ Map<String, dynamic> toJson() { return {
   'last_error': lastError?.toJson(),
   if (chunkingStrategy != null) 'chunking_strategy': chunkingStrategy?.toJson(),
   if (attributes.isPresent) 'attributes': attributes.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('usage_bytes') && json['usage_bytes'] is num &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('vector_store_id') && json['vector_store_id'] is String &&
       json.containsKey('status') &&
-      json.containsKey('last_error'); } 
-VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object, int? usageBytes, int? createdAt, String? vectorStoreId, VectorStoreFileObjectStatus? status, VectorStoreFileObjectLastError? Function()? lastError, VectorStoreFileObjectChunkingStrategy? Function()? chunkingStrategy, Omittable<Map<String,dynamic>?>? attributes, }) { return VectorStoreFileObject(
+      json.containsKey('last_error');}
+VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object, int? usageBytes, int? createdAt, String? vectorStoreId, VectorStoreFileObjectStatus? status, VectorStoreFileObjectLastError? Function()? lastError, VectorStoreFileObjectChunkingStrategy? Function()? chunkingStrategy, Omittable<Map<String,dynamic>?>? attributes, }) {return VectorStoreFileObject(
   id: id ?? this.id,
   object: object ?? this.object,
   usageBytes: usageBytes ?? this.usageBytes,
@@ -128,8 +128,8 @@ VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object,
   lastError: lastError != null ? lastError() : this.lastError,
   chunkingStrategy: chunkingStrategy != null ? chunkingStrategy() : this.chunkingStrategy,
   attributes: attributes ?? this.attributes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is VectorStoreFileObject &&
           id == other.id &&
           object == other.object &&
@@ -139,7 +139,7 @@ VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object,
           status == other.status &&
           lastError == other.lastError &&
           chunkingStrategy == other.chunkingStrategy &&
-          attributes == other.attributes; } 
-@override int get hashCode { return Object.hash(id, object, usageBytes, createdAt, vectorStoreId, status, lastError, chunkingStrategy, attributes); } 
-@override String toString() { return 'VectorStoreFileObject(id: $id, object: $object, usageBytes: $usageBytes, createdAt: $createdAt, vectorStoreId: $vectorStoreId, status: $status, lastError: $lastError, chunkingStrategy: $chunkingStrategy, attributes: $attributes)'; } 
- }
+          attributes == other.attributes;}
+@override int get hashCode {return Object.hash(id, object, usageBytes, createdAt, vectorStoreId, status, lastError, chunkingStrategy, attributes);}
+@override String toString() {return 'VectorStoreFileObject(id: $id, object: $object, usageBytes: $usageBytes, createdAt: $createdAt, vectorStoreId: $vectorStoreId, status: $status, lastError: $lastError, chunkingStrategy: $chunkingStrategy, attributes: $attributes)';}
+}

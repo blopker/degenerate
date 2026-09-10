@@ -9,10 +9,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates that y
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class PaymentMethodOptionsP24SetupFutureUsage {const PaymentMethodOptionsP24SetupFutureUsage._(this.value);
 
-factory PaymentMethodOptionsP24SetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsP24SetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   _ => PaymentMethodOptionsP24SetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsP24SetupFutureUsage none = PaymentMethodOptionsP24SetupFutureUsage._('none');
 
@@ -20,20 +20,20 @@ static const List<PaymentMethodOptionsP24SetupFutureUsage> values = [none];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsP24SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsP24SetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsP24SetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsP24SetupFutureUsage($value)';}
+}
 /// 
 @immutable final class PaymentMethodOptionsP24 {const PaymentMethodOptionsP24({this.setupFutureUsage});
 
-factory PaymentMethodOptionsP24.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsP24(
+factory PaymentMethodOptionsP24.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsP24(
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsP24SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -44,16 +44,16 @@ factory PaymentMethodOptionsP24.fromJson(Map<String, dynamic> json) { return Pay
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final PaymentMethodOptionsP24SetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsP24 copyWith({PaymentMethodOptionsP24SetupFutureUsage? Function()? setupFutureUsage}) { return PaymentMethodOptionsP24(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'setup_future_usage'}.contains(key));}
+PaymentMethodOptionsP24 copyWith({PaymentMethodOptionsP24SetupFutureUsage? Function()? setupFutureUsage}) {return PaymentMethodOptionsP24(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodOptionsP24 &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return setupFutureUsage.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsP24(setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return setupFutureUsage.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsP24(setupFutureUsage: $setupFutureUsage)';}
+}

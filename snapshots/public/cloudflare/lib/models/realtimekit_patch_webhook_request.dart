@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents._(this.value);
 
-factory RealtimekitPatchWebhookRequestEvents.fromJson(String json) { return switch (json) {
+factory RealtimekitPatchWebhookRequestEvents.fromJson(String json) {return switch (json) {
   'meeting.started' => meetingStarted,
   'meeting.ended' => meetingEnded,
   'meeting.participantJoined' => meetingParticipantJoined,
@@ -13,7 +13,7 @@ factory RealtimekitPatchWebhookRequestEvents.fromJson(String json) { return swit
   'meeting.transcript' => meetingTranscript,
   'meeting.summary' => meetingSummary,
   _ => RealtimekitPatchWebhookRequestEvents._(json),
-}; }
+};}
 
 static const RealtimekitPatchWebhookRequestEvents meetingStarted = RealtimekitPatchWebhookRequestEvents._('meeting.started');
 
@@ -37,22 +37,22 @@ static const List<RealtimekitPatchWebhookRequestEvents> values = [meetingStarted
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitPatchWebhookRequestEvents && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitPatchWebhookRequestEvents($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitPatchWebhookRequestEvents && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitPatchWebhookRequestEvents($value)';}
+}
 @immutable final class RealtimekitPatchWebhookRequest {const RealtimekitPatchWebhookRequest({this.enabled, this.events, this.name, this.url, });
 
-factory RealtimekitPatchWebhookRequest.fromJson(Map<String, dynamic> json) { return RealtimekitPatchWebhookRequest(
+factory RealtimekitPatchWebhookRequest.fromJson(Map<String, dynamic> json) {return RealtimekitPatchWebhookRequest(
   enabled: json['enabled'] as bool?,
   events: (json['events'] as List<dynamic>?)?.map((e) => RealtimekitPatchWebhookRequestEvents.fromJson(e as String)).toList(),
   name: json['name'] as String?,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-); }
+);}
 
 final bool? enabled;
 
@@ -66,26 +66,26 @@ final String? name;
 final Uri? url;
 
 /// The value with the schema default applied when absent.
-bool get enabledOrDefault { return enabled ?? true; } 
-Map<String, dynamic> toJson() { return {
+bool get enabledOrDefault {return enabled ?? true;}
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   if (events != null) 'events': events?.map((e) => e.toJson()).toList(),
   'name': ?name,
   if (url != null) 'url': url?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'events', 'name', 'url'}.contains(key)); } 
-RealtimekitPatchWebhookRequest copyWith({bool? Function()? enabled, List<RealtimekitPatchWebhookRequestEvents>? Function()? events, String? Function()? name, Uri? Function()? url, }) { return RealtimekitPatchWebhookRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'events', 'name', 'url'}.contains(key));}
+RealtimekitPatchWebhookRequest copyWith({bool? Function()? enabled, List<RealtimekitPatchWebhookRequestEvents>? Function()? events, String? Function()? name, Uri? Function()? url, }) {return RealtimekitPatchWebhookRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   events: events != null ? events() : this.events,
   name: name != null ? name() : this.name,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitPatchWebhookRequest &&
           enabled == other.enabled &&
           listEquals(events, other.events) &&
           name == other.name &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(enabled, Object.hashAll(events ?? const []), name, url); } 
-@override String toString() { return 'RealtimekitPatchWebhookRequest(enabled: $enabled, events: $events, name: $name, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(enabled, Object.hashAll(events ?? const []), name, url);}
+@override String toString() {return 'RealtimekitPatchWebhookRequest(enabled: $enabled, events: $events, name: $name, url: $url)';}
+}

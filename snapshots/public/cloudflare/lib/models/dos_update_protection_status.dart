@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosUpdateProtectionStatus {const DosUpdateProtectionStatus({required this.enabled});
 
-factory DosUpdateProtectionStatus.fromJson(Map<String, dynamic> json) { return DosUpdateProtectionStatus(
+factory DosUpdateProtectionStatus.fromJson(Map<String, dynamic> json) {return DosUpdateProtectionStatus(
   enabled: json['enabled'] as bool,
-); }
+);}
 
 /// Enables or disables protection.
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-DosUpdateProtectionStatus copyWith({bool? enabled}) { return DosUpdateProtectionStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+DosUpdateProtectionStatus copyWith({bool? enabled}) {return DosUpdateProtectionStatus(
   enabled: enabled ?? this.enabled,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DosUpdateProtectionStatus &&
-          enabled == other.enabled; } 
-@override int get hashCode { return enabled.hashCode; } 
-@override String toString() { return 'DosUpdateProtectionStatus(enabled: $enabled)'; } 
- }
+          enabled == other.enabled;}
+@override int get hashCode {return enabled.hashCode;}
+@override String toString() {return 'DosUpdateProtectionStatus(enabled: $enabled)';}
+}

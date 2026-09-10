@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_dns_record_patch.dart';import 'dns_records_dns_record_scan_batch_reject.dart';@immutable final class DnsRecordsDnsRequestReviewScanObject {const DnsRecordsDnsRequestReviewScanObject({this.accepts, this.rejects, });
 
-factory DnsRecordsDnsRequestReviewScanObject.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsRequestReviewScanObject(
+factory DnsRecordsDnsRequestReviewScanObject.fromJson(Map<String, dynamic> json) {return DnsRecordsDnsRequestReviewScanObject(
   accepts: (json['accepts'] as List<dynamic>?)?.map(DnsRecordsDnsRecordPatch.fromJson).toList(),
   rejects: (json['rejects'] as List<dynamic>?)?.map((e) => DnsRecordsDnsRecordScanBatchReject.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<DnsRecordsDnsRecordPatch>? accepts;
 
 final List<DnsRecordsDnsRecordScanBatchReject>? rejects;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accepts != null) 'accepts': accepts?.map((e) => e.toJson()).toList(),
   if (rejects != null) 'rejects': rejects?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accepts', 'rejects'}.contains(key)); } 
-DnsRecordsDnsRequestReviewScanObject copyWith({List<DnsRecordsDnsRecordPatch>? Function()? accepts, List<DnsRecordsDnsRecordScanBatchReject>? Function()? rejects, }) { return DnsRecordsDnsRequestReviewScanObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'accepts', 'rejects'}.contains(key));}
+DnsRecordsDnsRequestReviewScanObject copyWith({List<DnsRecordsDnsRecordPatch>? Function()? accepts, List<DnsRecordsDnsRecordScanBatchReject>? Function()? rejects, }) {return DnsRecordsDnsRequestReviewScanObject(
   accepts: accepts != null ? accepts() : this.accepts,
   rejects: rejects != null ? rejects() : this.rejects,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnsRecordsDnsRequestReviewScanObject &&
           listEquals(accepts, other.accepts) &&
-          listEquals(rejects, other.rejects); } 
-@override int get hashCode { return Object.hash(Object.hashAll(accepts ?? const []), Object.hashAll(rejects ?? const [])); } 
-@override String toString() { return 'DnsRecordsDnsRequestReviewScanObject(accepts: $accepts, rejects: $rejects)'; } 
- }
+          listEquals(rejects, other.rejects);}
+@override int get hashCode {return Object.hash(Object.hashAll(accepts ?? const []), Object.hashAll(rejects ?? const []));}
+@override String toString() {return 'DnsRecordsDnsRequestReviewScanObject(accepts: $accepts, rejects: $rejects)';}
+}

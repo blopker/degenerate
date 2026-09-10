@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation {const RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation({this.backendRtt, this.effectiveNetworktype, this.fractionalLoss, this.jitter, this.reflexiveConnectivity, this.relayConnectivity, this.rtt, this.throughtput, this.turnConnectivity, });
 
-factory RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation(
+factory RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation.fromJson(Map<String, dynamic> json) {return RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation(
   backendRtt: json['backend_rtt'] != null ? (json['backend_rtt'] as num).toDouble() : null,
   effectiveNetworktype: json['effective_networktype'] as String?,
   fractionalLoss: json['fractional_loss'] != null ? (json['fractional_loss'] as num).toDouble() : null,
@@ -12,7 +12,7 @@ factory RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation.fromJs
   rtt: json['rtt'] != null ? (json['rtt'] as num).toDouble() : null,
   throughtput: json['throughtput'] != null ? (json['throughtput'] as num).toDouble() : null,
   turnConnectivity: json['turn_connectivity'] as bool?,
-); }
+);}
 
 final double? backendRtt;
 
@@ -32,7 +32,7 @@ final double? throughtput;
 
 final bool? turnConnectivity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'backend_rtt': ?backendRtt,
   'effective_networktype': ?effectiveNetworktype,
   'fractional_loss': ?fractionalLoss,
@@ -42,9 +42,9 @@ Map<String, dynamic> toJson() { return {
   'rtt': ?rtt,
   'throughtput': ?throughtput,
   'turn_connectivity': ?turnConnectivity,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'backend_rtt', 'effective_networktype', 'fractional_loss', 'jitter', 'reflexive_connectivity', 'relay_connectivity', 'rtt', 'throughtput', 'turn_connectivity'}.contains(key)); } 
-RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation copyWith({double? Function()? backendRtt, String? Function()? effectiveNetworktype, double? Function()? fractionalLoss, double? Function()? jitter, bool? Function()? reflexiveConnectivity, bool? Function()? relayConnectivity, double? Function()? rtt, double? Function()? throughtput, bool? Function()? turnConnectivity, }) { return RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'backend_rtt', 'effective_networktype', 'fractional_loss', 'jitter', 'reflexive_connectivity', 'relay_connectivity', 'rtt', 'throughtput', 'turn_connectivity'}.contains(key));}
+RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation copyWith({double? Function()? backendRtt, String? Function()? effectiveNetworktype, double? Function()? fractionalLoss, double? Function()? jitter, bool? Function()? reflexiveConnectivity, bool? Function()? relayConnectivity, double? Function()? rtt, double? Function()? throughtput, bool? Function()? turnConnectivity, }) {return RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation(
   backendRtt: backendRtt != null ? backendRtt() : this.backendRtt,
   effectiveNetworktype: effectiveNetworktype != null ? effectiveNetworktype() : this.effectiveNetworktype,
   fractionalLoss: fractionalLoss != null ? fractionalLoss() : this.fractionalLoss,
@@ -54,8 +54,8 @@ RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation copyWith({doub
   rtt: rtt != null ? rtt() : this.rtt,
   throughtput: throughtput != null ? throughtput() : this.throughtput,
   turnConnectivity: turnConnectivity != null ? turnConnectivity() : this.turnConnectivity,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation &&
           backendRtt == other.backendRtt &&
           effectiveNetworktype == other.effectiveNetworktype &&
@@ -65,7 +65,7 @@ RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation copyWith({doub
           relayConnectivity == other.relayConnectivity &&
           rtt == other.rtt &&
           throughtput == other.throughtput &&
-          turnConnectivity == other.turnConnectivity; } 
-@override int get hashCode { return Object.hash(backendRtt, effectiveNetworktype, fractionalLoss, jitter, reflexiveConnectivity, relayConnectivity, rtt, throughtput, turnConnectivity); } 
-@override String toString() { return 'RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation(backendRtt: $backendRtt, effectiveNetworktype: $effectiveNetworktype, fractionalLoss: $fractionalLoss, jitter: $jitter, reflexiveConnectivity: $reflexiveConnectivity, relayConnectivity: $relayConnectivity, rtt: $rtt, throughtput: $throughtput, turnConnectivity: $turnConnectivity)'; } 
- }
+          turnConnectivity == other.turnConnectivity;}
+@override int get hashCode {return Object.hash(backendRtt, effectiveNetworktype, fractionalLoss, jitter, reflexiveConnectivity, relayConnectivity, rtt, throughtput, turnConnectivity);}
+@override String toString() {return 'RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation(backendRtt: $backendRtt, effectiveNetworktype: $effectiveNetworktype, fractionalLoss: $fractionalLoss, jitter: $jitter, reflexiveConnectivity: $reflexiveConnectivity, relayConnectivity: $relayConnectivity, rtt: $rtt, throughtput: $throughtput, turnConnectivity: $turnConnectivity)';}
+}

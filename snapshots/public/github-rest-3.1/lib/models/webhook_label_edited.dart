@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_label_edited_changes.dart';import 'webhooks_label.dart';@immutable final class WebhookLabelEditedAction {const WebhookLabelEditedAction._(this.value);
 
-factory WebhookLabelEditedAction.fromJson(String json) { return switch (json) {
+factory WebhookLabelEditedAction.fromJson(String json) {return switch (json) {
   'edited' => edited,
   _ => WebhookLabelEditedAction._(json),
-}; }
+};}
 
 static const WebhookLabelEditedAction edited = WebhookLabelEditedAction._('edited');
 
@@ -13,17 +13,17 @@ static const List<WebhookLabelEditedAction> values = [edited];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookLabelEditedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookLabelEditedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookLabelEditedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookLabelEditedAction($value)';}
+}
 @immutable final class WebhookLabelEdited {const WebhookLabelEdited({required this.action, required this.label, required this.repository, required this.sender, this.changes, this.enterprise, this.installation, this.organization, });
 
-factory WebhookLabelEdited.fromJson(Map<String, dynamic> json) { return WebhookLabelEdited(
+factory WebhookLabelEdited.fromJson(Map<String, dynamic> json) {return WebhookLabelEdited(
   action: WebhookLabelEditedAction.fromJson(json['action'] as String),
   changes: json['changes'] != null ? WebhookLabelEditedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -32,7 +32,7 @@ factory WebhookLabelEdited.fromJson(Map<String, dynamic> json) { return WebhookL
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookLabelEditedAction action;
 
@@ -51,7 +51,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (changes != null) 'changes': changes?.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -60,12 +60,12 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('label') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookLabelEdited copyWith({WebhookLabelEditedAction? action, WebhookLabelEditedChanges? Function()? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksLabel? label, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookLabelEdited(
+      json.containsKey('sender');}
+WebhookLabelEdited copyWith({WebhookLabelEditedAction? action, WebhookLabelEditedChanges? Function()? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksLabel? label, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookLabelEdited(
   action: action ?? this.action,
   changes: changes != null ? changes() : this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -74,8 +74,8 @@ WebhookLabelEdited copyWith({WebhookLabelEditedAction? action, WebhookLabelEdite
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookLabelEdited &&
           action == other.action &&
           changes == other.changes &&
@@ -84,7 +84,7 @@ WebhookLabelEdited copyWith({WebhookLabelEditedAction? action, WebhookLabelEdite
           label == other.label &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, changes, enterprise, installation, label, organization, repository, sender); } 
-@override String toString() { return 'WebhookLabelEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, label: $label, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, changes, enterprise, installation, label, organization, repository, sender);}
+@override String toString() {return 'WebhookLabelEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, label: $label, organization: $organization, repository: $repository, sender: $sender)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'streams_by_stream_id_request_http_cors.dart';@immutable final class StreamsByStreamIdRequestHttp {const StreamsByStreamIdRequestHttp({required this.authentication, required this.enabled, this.cors, });
 
-factory StreamsByStreamIdRequestHttp.fromJson(Map<String, dynamic> json) { return StreamsByStreamIdRequestHttp(
+factory StreamsByStreamIdRequestHttp.fromJson(Map<String, dynamic> json) {return StreamsByStreamIdRequestHttp(
   authentication: json['authentication'] as bool,
   cors: json['cors'] != null ? StreamsByStreamIdRequestHttpCors.fromJson(json['cors'] as Map<String, dynamic>) : null,
   enabled: json['enabled'] as bool,
-); }
+);}
 
 /// Indicates that authentication is required for the HTTP endpoint.
 final bool authentication;
@@ -17,23 +17,23 @@ final StreamsByStreamIdRequestHttpCors? cors;
 /// Indicates that the HTTP endpoint is enabled.
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'authentication': authentication,
   if (cors != null) 'cors': cors?.toJson(),
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('authentication') && json['authentication'] is bool &&
-      json.containsKey('enabled') && json['enabled'] is bool; } 
-StreamsByStreamIdRequestHttp copyWith({bool? authentication, StreamsByStreamIdRequestHttpCors? Function()? cors, bool? enabled, }) { return StreamsByStreamIdRequestHttp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('authentication') && json['authentication'] is bool &&
+      json.containsKey('enabled') && json['enabled'] is bool;}
+StreamsByStreamIdRequestHttp copyWith({bool? authentication, StreamsByStreamIdRequestHttpCors? Function()? cors, bool? enabled, }) {return StreamsByStreamIdRequestHttp(
   authentication: authentication ?? this.authentication,
   cors: cors != null ? cors() : this.cors,
   enabled: enabled ?? this.enabled,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is StreamsByStreamIdRequestHttp &&
           authentication == other.authentication &&
           cors == other.cors &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(authentication, cors, enabled); } 
-@override String toString() { return 'StreamsByStreamIdRequestHttp(authentication: $authentication, cors: $cors, enabled: $enabled)'; } 
- }
+          enabled == other.enabled;}
+@override int get hashCode {return Object.hash(authentication, cors, enabled);}
+@override String toString() {return 'StreamsByStreamIdRequestHttp(authentication: $authentication, cors: $cors, enabled: $enabled)';}
+}

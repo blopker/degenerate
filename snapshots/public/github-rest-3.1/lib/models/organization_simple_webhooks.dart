@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// A GitHub organiz
 /// organization, or when the event occurs from activity in a repository owned by an organization.
 @immutable final class OrganizationSimpleWebhooks {const OrganizationSimpleWebhooks({required this.login, required this.id, required this.nodeId, required this.url, required this.reposUrl, required this.eventsUrl, required this.hooksUrl, required this.issuesUrl, required this.membersUrl, required this.publicMembersUrl, required this.avatarUrl, required this.description, });
 
-factory OrganizationSimpleWebhooks.fromJson(Map<String, dynamic> json) { return OrganizationSimpleWebhooks(
+factory OrganizationSimpleWebhooks.fromJson(Map<String, dynamic> json) {return OrganizationSimpleWebhooks(
   login: json['login'] as String,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -17,7 +17,7 @@ factory OrganizationSimpleWebhooks.fromJson(Map<String, dynamic> json) { return 
   publicMembersUrl: json['public_members_url'] as String,
   avatarUrl: json['avatar_url'] as String,
   description: json['description'] as String?,
-); }
+);}
 
 final String login;
 
@@ -43,7 +43,7 @@ final String avatarUrl;
 
 final String? description;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'login': login,
   'id': id,
   'node_id': nodeId,
@@ -56,8 +56,8 @@ Map<String, dynamic> toJson() { return {
   'public_members_url': publicMembersUrl,
   'avatar_url': avatarUrl,
   'description': description,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('login') && json['login'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
@@ -68,8 +68,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('members_url') && json['members_url'] is String &&
       json.containsKey('public_members_url') && json['public_members_url'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String &&
-      json.containsKey('description') && (json['description'] == null || json['description'] is String); } 
-OrganizationSimpleWebhooks copyWith({String? login, int? id, String? nodeId, Uri? url, Uri? reposUrl, Uri? eventsUrl, String? hooksUrl, String? issuesUrl, String? membersUrl, String? publicMembersUrl, String? avatarUrl, String? Function()? description, }) { return OrganizationSimpleWebhooks(
+      json.containsKey('description') && (json['description'] == null || json['description'] is String);}
+OrganizationSimpleWebhooks copyWith({String? login, int? id, String? nodeId, Uri? url, Uri? reposUrl, Uri? eventsUrl, String? hooksUrl, String? issuesUrl, String? membersUrl, String? publicMembersUrl, String? avatarUrl, String? Function()? description, }) {return OrganizationSimpleWebhooks(
   login: login ?? this.login,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -82,8 +82,8 @@ OrganizationSimpleWebhooks copyWith({String? login, int? id, String? nodeId, Uri
   publicMembersUrl: publicMembersUrl ?? this.publicMembersUrl,
   avatarUrl: avatarUrl ?? this.avatarUrl,
   description: description != null ? description() : this.description,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrganizationSimpleWebhooks &&
           login == other.login &&
           id == other.id &&
@@ -96,7 +96,7 @@ OrganizationSimpleWebhooks copyWith({String? login, int? id, String? nodeId, Uri
           membersUrl == other.membersUrl &&
           publicMembersUrl == other.publicMembersUrl &&
           avatarUrl == other.avatarUrl &&
-          description == other.description; } 
-@override int get hashCode { return Object.hash(login, id, nodeId, url, reposUrl, eventsUrl, hooksUrl, issuesUrl, membersUrl, publicMembersUrl, avatarUrl, description); } 
-@override String toString() { return 'OrganizationSimpleWebhooks(login: $login, id: $id, nodeId: $nodeId, url: $url, reposUrl: $reposUrl, eventsUrl: $eventsUrl, hooksUrl: $hooksUrl, issuesUrl: $issuesUrl, membersUrl: $membersUrl, publicMembersUrl: $publicMembersUrl, avatarUrl: $avatarUrl, description: $description)'; } 
- }
+          description == other.description;}
+@override int get hashCode {return Object.hash(login, id, nodeId, url, reposUrl, eventsUrl, hooksUrl, issuesUrl, membersUrl, publicMembersUrl, avatarUrl, description);}
+@override String toString() {return 'OrganizationSimpleWebhooks(login: $login, id: $id, nodeId: $nodeId, url: $url, reposUrl: $reposUrl, eventsUrl: $eventsUrl, hooksUrl: $hooksUrl, issuesUrl: $issuesUrl, membersUrl: $membersUrl, publicMembersUrl: $publicMembersUrl, avatarUrl: $avatarUrl, description: $description)';}
+}

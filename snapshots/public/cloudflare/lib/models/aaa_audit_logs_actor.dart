@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of actor, whether a User, Cloudflare Admin, or an Automated System.
 @immutable final class AaaAuditLogsActorType {const AaaAuditLogsActorType._(this.value);
 
-factory AaaAuditLogsActorType.fromJson(String json) { return switch (json) {
+factory AaaAuditLogsActorType.fromJson(String json) {return switch (json) {
   'user' => user,
   'admin' => admin,
   'Cloudflare' => cloudflare,
   _ => AaaAuditLogsActorType._(json),
-}; }
+};}
 
 static const AaaAuditLogsActorType user = AaaAuditLogsActorType._('user');
 
@@ -20,22 +20,22 @@ static const List<AaaAuditLogsActorType> values = [user, admin, cloudflare];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AaaAuditLogsActorType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AaaAuditLogsActorType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AaaAuditLogsActorType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AaaAuditLogsActorType($value)';}
+}
 @immutable final class AaaAuditLogsActor {const AaaAuditLogsActor({this.email, this.id, this.ip, this.type, });
 
-factory AaaAuditLogsActor.fromJson(Map<String, dynamic> json) { return AaaAuditLogsActor(
+factory AaaAuditLogsActor.fromJson(Map<String, dynamic> json) {return AaaAuditLogsActor(
   email: json['email'] as String?,
   id: json['id'] as String?,
   ip: json['ip'] as String?,
   type: json['type'] != null ? AaaAuditLogsActorType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The email of the user that performed the action.
 final String? email;
@@ -49,25 +49,25 @@ final String? ip;
 /// The type of actor, whether a User, Cloudflare Admin, or an Automated System.
 final AaaAuditLogsActorType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'email': ?email,
   'id': ?id,
   'ip': ?ip,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'id', 'ip', 'type'}.contains(key)); } 
-AaaAuditLogsActor copyWith({String? Function()? email, String? Function()? id, String? Function()? ip, AaaAuditLogsActorType? Function()? type, }) { return AaaAuditLogsActor(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'email', 'id', 'ip', 'type'}.contains(key));}
+AaaAuditLogsActor copyWith({String? Function()? email, String? Function()? id, String? Function()? ip, AaaAuditLogsActorType? Function()? type, }) {return AaaAuditLogsActor(
   email: email != null ? email() : this.email,
   id: id != null ? id() : this.id,
   ip: ip != null ? ip() : this.ip,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AaaAuditLogsActor &&
           email == other.email &&
           id == other.id &&
           ip == other.ip &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(email, id, ip, type); } 
-@override String toString() { return 'AaaAuditLogsActor(email: $email, id: $id, ip: $ip, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(email, id, ip, type);}
+@override String toString() {return 'AaaAuditLogsActor(email: $email, id: $id, ip: $ip, type: $type)';}
+}

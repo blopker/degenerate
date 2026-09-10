@@ -13,7 +13,7 @@ final class WorkersAiImageClassificationApi with ApiExecutor {const WorkersAiIma
 /// Runs inference on the @cf/microsoft/nonomni-resnet-50 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/microsoft/nonomni-resnet-50`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMicrosoftNonomniResnet50Response400>> workersAiPostRunCfMicrosoftNonomniResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMicrosoftNonomniResnet50Response400>> workersAiPostRunCfMicrosoftNonomniResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -52,13 +52,13 @@ return null;
 
   },
 );
- } 
+}
 /// Execute @cf/microsoft/resnet-50 model.
 ///
 /// Runs inference on the @cf/microsoft/resnet-50 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/microsoft/resnet-50`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMicrosoftResnet50Response400>> workersAiPostRunCfMicrosoftResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMicrosoftResnet50Response400>> workersAiPostRunCfMicrosoftResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -97,5 +97,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'empty_model_param.dart';import 'function_call_item_status.dart';import 'tool_search_execution_type.dart';@immutable final class ToolSearchCallItemParam {const ToolSearchCallItemParam({required this.type, required this.arguments, this.id = const Omittable.absent(), this.callId = const Omittable.absent(), this.execution, this.status = const Omittable.absent(), });
 
-factory ToolSearchCallItemParam.fromJson(Map<String, dynamic> json) { return ToolSearchCallItemParam(
+factory ToolSearchCallItemParam.fromJson(Map<String, dynamic> json) {return ToolSearchCallItemParam(
   id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),
   callId: json.containsKey('call_id') ? Omittable(json['call_id'] as String?) : const Omittable.absent(),
   type: json['type'] as String,
   execution: json['execution'] != null ? ToolSearchExecutionType.fromJson(json['execution'] as String) : null,
   arguments: EmptyModelParam.fromJson(json['arguments'] as Map<String, dynamic>),
   status: json.containsKey('status') ? Omittable(json['status'] != null ? FunctionCallItemStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The unique ID of this tool search call.
 final Omittable<String?> id;
@@ -28,32 +28,32 @@ final EmptyModelParam arguments;
 
 final Omittable<FunctionCallItemStatus?> status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id.isPresent) 'id': id.value,
   if (callId.isPresent) 'call_id': callId.value,
   'type': type,
   if (execution != null) 'execution': execution?.toJson(),
   'arguments': arguments.toJson(),
   if (status.isPresent) 'status': status.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('arguments'); } 
-ToolSearchCallItemParam copyWith({Omittable<String?>? id, Omittable<String?>? callId, String? type, ToolSearchExecutionType? Function()? execution, EmptyModelParam? arguments, Omittable<FunctionCallItemStatus?>? status, }) { return ToolSearchCallItemParam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('arguments');}
+ToolSearchCallItemParam copyWith({Omittable<String?>? id, Omittable<String?>? callId, String? type, ToolSearchExecutionType? Function()? execution, EmptyModelParam? arguments, Omittable<FunctionCallItemStatus?>? status, }) {return ToolSearchCallItemParam(
   id: id ?? this.id,
   callId: callId ?? this.callId,
   type: type ?? this.type,
   execution: execution != null ? execution() : this.execution,
   arguments: arguments ?? this.arguments,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ToolSearchCallItemParam &&
           id == other.id &&
           callId == other.callId &&
           type == other.type &&
           execution == other.execution &&
           arguments == other.arguments &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(id, callId, type, execution, arguments, status); } 
-@override String toString() { return 'ToolSearchCallItemParam(id: $id, callId: $callId, type: $type, execution: $execution, arguments: $arguments, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(id, callId, type, execution, arguments, status);}
+@override String toString() {return 'ToolSearchCallItemParam(id: $id, callId: $callId, type: $type, execution: $execution, arguments: $arguments, status: $status)';}
+}

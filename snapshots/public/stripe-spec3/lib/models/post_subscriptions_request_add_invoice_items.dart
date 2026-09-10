@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_request_add_invoice_items_discounts.dart';import 'post_subscriptions_request_add_invoice_items_period.dart';import 'post_subscriptions_request_add_invoice_items_price_data.dart';import 'post_subscriptions_request_add_invoice_items_tax_rates.dart';@immutable final class PostSubscriptionsRequestAddInvoiceItems {const PostSubscriptionsRequestAddInvoiceItems({this.discounts, this.metadata, this.period, this.price, this.priceData, this.quantity, this.taxRates, });
 
-factory PostSubscriptionsRequestAddInvoiceItems.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequestAddInvoiceItems(
+factory PostSubscriptionsRequestAddInvoiceItems.fromJson(Map<String, dynamic> json) {return PostSubscriptionsRequestAddInvoiceItems(
   discounts: (json['discounts'] as List<dynamic>?)?.map((e) => PostSubscriptionsRequestAddInvoiceItemsDiscounts.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   period: json['period'] != null ? PostSubscriptionsRequestAddInvoiceItemsPeriod.fromJson(json['period'] as Map<String, dynamic>) : null,
@@ -10,7 +10,7 @@ factory PostSubscriptionsRequestAddInvoiceItems.fromJson(Map<String, dynamic> js
   priceData: json['price_data'] != null ? PostSubscriptionsRequestAddInvoiceItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   taxRates: json['tax_rates'] != null ? PostSubscriptionsRequestAddInvoiceItemsTaxRates.fromJson(json['tax_rates']) : null,
-); }
+);}
 
 final List<PostSubscriptionsRequestAddInvoiceItemsDiscounts>? discounts;
 
@@ -26,7 +26,7 @@ final int? quantity;
 
 final PostSubscriptionsRequestAddInvoiceItemsTaxRates? taxRates;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (discounts != null) 'discounts': discounts?.map((e) => e.toJson()).toList(),
   'metadata': ?metadata,
   if (period != null) 'period': period?.toJson(),
@@ -34,9 +34,9 @@ Map<String, dynamic> toJson() { return {
   if (priceData != null) 'price_data': priceData?.toJson(),
   'quantity': ?quantity,
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'discounts', 'metadata', 'period', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key)); } 
-PostSubscriptionsRequestAddInvoiceItems copyWith({List<PostSubscriptionsRequestAddInvoiceItemsDiscounts>? Function()? discounts, Map<String, String>? Function()? metadata, PostSubscriptionsRequestAddInvoiceItemsPeriod? Function()? period, String? Function()? price, PostSubscriptionsRequestAddInvoiceItemsPriceData? Function()? priceData, int? Function()? quantity, PostSubscriptionsRequestAddInvoiceItemsTaxRates? Function()? taxRates, }) { return PostSubscriptionsRequestAddInvoiceItems(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'discounts', 'metadata', 'period', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key));}
+PostSubscriptionsRequestAddInvoiceItems copyWith({List<PostSubscriptionsRequestAddInvoiceItemsDiscounts>? Function()? discounts, Map<String, String>? Function()? metadata, PostSubscriptionsRequestAddInvoiceItemsPeriod? Function()? period, String? Function()? price, PostSubscriptionsRequestAddInvoiceItemsPriceData? Function()? priceData, int? Function()? quantity, PostSubscriptionsRequestAddInvoiceItemsTaxRates? Function()? taxRates, }) {return PostSubscriptionsRequestAddInvoiceItems(
   discounts: discounts != null ? discounts() : this.discounts,
   metadata: metadata != null ? metadata() : this.metadata,
   period: period != null ? period() : this.period,
@@ -44,8 +44,8 @@ PostSubscriptionsRequestAddInvoiceItems copyWith({List<PostSubscriptionsRequestA
   priceData: priceData != null ? priceData() : this.priceData,
   quantity: quantity != null ? quantity() : this.quantity,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionsRequestAddInvoiceItems &&
           listEquals(discounts, other.discounts) &&
           metadata == other.metadata &&
@@ -53,7 +53,7 @@ PostSubscriptionsRequestAddInvoiceItems copyWith({List<PostSubscriptionsRequestA
           price == other.price &&
           priceData == other.priceData &&
           quantity == other.quantity &&
-          taxRates == other.taxRates; } 
-@override int get hashCode { return Object.hash(Object.hashAll(discounts ?? const []), metadata, period, price, priceData, quantity, taxRates); } 
-@override String toString() { return 'PostSubscriptionsRequestAddInvoiceItems(discounts: $discounts, metadata: $metadata, period: $period, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)'; } 
- }
+          taxRates == other.taxRates;}
+@override int get hashCode {return Object.hash(Object.hashAll(discounts ?? const []), metadata, period, price, priceData, quantity, taxRates);}
+@override String toString() {return 'PostSubscriptionsRequestAddInvoiceItems(discounts: $discounts, metadata: $metadata, period: $period, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)';}
+}

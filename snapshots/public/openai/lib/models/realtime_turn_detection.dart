@@ -9,54 +9,54 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'semantic_vad
 sealed class RealtimeTurnDetection {const RealtimeTurnDetection();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
-factory RealtimeTurnDetection.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+factory RealtimeTurnDetection.fromJson(Map<String, dynamic> json) {return switch (json['type']) {
   'ServerVad' => RealtimeTurnDetectionServerVad.fromJson(json),
   'SemanticVad' => RealtimeTurnDetectionSemanticVad.fromJson(json),
   _ => RealtimeTurnDetection$Unknown(json),
-}; }
+};}
 
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeTurnDetection$Unknown; } 
- }
+bool get isUnknown {return this is RealtimeTurnDetection$Unknown;}
+}
 @immutable final class RealtimeTurnDetectionServerVad extends RealtimeTurnDetection {const RealtimeTurnDetectionServerVad(this.serverVad);
 
-factory RealtimeTurnDetectionServerVad.fromJson(Map<String, dynamic> json) { return RealtimeTurnDetectionServerVad(ServerVad.fromJson(json)); }
+factory RealtimeTurnDetectionServerVad.fromJson(Map<String, dynamic> json) {return RealtimeTurnDetectionServerVad(ServerVad.fromJson(json));}
 
 final ServerVad serverVad;
 
-@override String get type { return 'ServerVad'; } 
-@override Map<String, dynamic> toJson() { return {...serverVad.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeTurnDetectionServerVad && serverVad == other.serverVad; } 
-@override int get hashCode { return serverVad.hashCode; } 
-@override String toString() { return 'RealtimeTurnDetectionServerVad(serverVad: $serverVad)'; } 
- }
+@override String get type {return 'ServerVad';}
+@override Map<String, dynamic> toJson() {return {...serverVad.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeTurnDetectionServerVad && serverVad == other.serverVad;}
+@override int get hashCode {return serverVad.hashCode;}
+@override String toString() {return 'RealtimeTurnDetectionServerVad(serverVad: $serverVad)';}
+}
 @immutable final class RealtimeTurnDetectionSemanticVad extends RealtimeTurnDetection {const RealtimeTurnDetectionSemanticVad(this.semanticVad);
 
-factory RealtimeTurnDetectionSemanticVad.fromJson(Map<String, dynamic> json) { return RealtimeTurnDetectionSemanticVad(SemanticVad.fromJson(json)); }
+factory RealtimeTurnDetectionSemanticVad.fromJson(Map<String, dynamic> json) {return RealtimeTurnDetectionSemanticVad(SemanticVad.fromJson(json));}
 
 final SemanticVad semanticVad;
 
-@override String get type { return 'SemanticVad'; } 
-@override Map<String, dynamic> toJson() { return {...semanticVad.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeTurnDetectionSemanticVad && semanticVad == other.semanticVad; } 
-@override int get hashCode { return semanticVad.hashCode; } 
-@override String toString() { return 'RealtimeTurnDetectionSemanticVad(semanticVad: $semanticVad)'; } 
- }
+@override String get type {return 'SemanticVad';}
+@override Map<String, dynamic> toJson() {return {...semanticVad.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeTurnDetectionSemanticVad && semanticVad == other.semanticVad;}
+@override int get hashCode {return semanticVad.hashCode;}
+@override String toString() {return 'RealtimeTurnDetectionSemanticVad(semanticVad: $semanticVad)';}
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class RealtimeTurnDetection$Unknown extends RealtimeTurnDetection {const RealtimeTurnDetection$Unknown(this.json);
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeTurnDetection$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'RealtimeTurnDetection.unknown($json)'; } 
- }
+@override String get type {return json['type'] as String? ?? '';}
+@override Map<String, dynamic> toJson() {return json;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeTurnDetection$Unknown && json == other.json;}
+@override int get hashCode {return json.hashCode;}
+@override String toString() {return 'RealtimeTurnDetection.unknown($json)';}
+}

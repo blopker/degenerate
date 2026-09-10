@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_status_branches_commit.dart';@immutable final class WebhookStatusBranches {const WebhookStatusBranches({required this.commit, required this.name, required this.protected, });
 
-factory WebhookStatusBranches.fromJson(Map<String, dynamic> json) { return WebhookStatusBranches(
+factory WebhookStatusBranches.fromJson(Map<String, dynamic> json) {return WebhookStatusBranches(
   commit: WebhookStatusBranchesCommit.fromJson(json['commit'] as Map<String, dynamic>),
   name: json['name'] as String,
   protected: json['protected'] as bool,
-); }
+);}
 
 final WebhookStatusBranchesCommit commit;
 
@@ -14,24 +14,24 @@ final String name;
 
 final bool protected;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'commit': commit.toJson(),
   'name': name,
   'protected': protected,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('commit') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('commit') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('protected') && json['protected'] is bool; } 
-WebhookStatusBranches copyWith({WebhookStatusBranchesCommit? commit, String? name, bool? protected, }) { return WebhookStatusBranches(
+      json.containsKey('protected') && json['protected'] is bool;}
+WebhookStatusBranches copyWith({WebhookStatusBranchesCommit? commit, String? name, bool? protected, }) {return WebhookStatusBranches(
   commit: commit ?? this.commit,
   name: name ?? this.name,
   protected: protected ?? this.protected,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookStatusBranches &&
           commit == other.commit &&
           name == other.name &&
-          protected == other.protected; } 
-@override int get hashCode { return Object.hash(commit, name, protected); } 
-@override String toString() { return 'WebhookStatusBranches(commit: $commit, name: $name, protected: $protected)'; } 
- }
+          protected == other.protected;}
+@override int get hashCode {return Object.hash(commit, name, protected);}
+@override String toString() {return 'WebhookStatusBranches(commit: $commit, name: $name, protected: $protected)';}
+}

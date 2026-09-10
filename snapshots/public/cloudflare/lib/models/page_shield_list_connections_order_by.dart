@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field used to sort returned connections.
 @immutable final class PageShieldListConnectionsOrderBy {const PageShieldListConnectionsOrderBy._(this.value);
 
-factory PageShieldListConnectionsOrderBy.fromJson(String json) { return switch (json) {
+factory PageShieldListConnectionsOrderBy.fromJson(String json) {return switch (json) {
   'first_seen_at' => firstSeenAt,
   'last_seen_at' => lastSeenAt,
   _ => PageShieldListConnectionsOrderBy._(json),
-}; }
+};}
 
 static const PageShieldListConnectionsOrderBy firstSeenAt = PageShieldListConnectionsOrderBy._('first_seen_at');
 
@@ -17,11 +17,11 @@ static const List<PageShieldListConnectionsOrderBy> values = [firstSeenAt, lastS
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PageShieldListConnectionsOrderBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PageShieldListConnectionsOrderBy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PageShieldListConnectionsOrderBy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PageShieldListConnectionsOrderBy($value)';}
+}

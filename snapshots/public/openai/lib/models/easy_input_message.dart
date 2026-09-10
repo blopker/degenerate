@@ -5,13 +5,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'easy_input_m
 /// 
 @immutable final class EasyInputMessageRole {const EasyInputMessageRole._(this.value);
 
-factory EasyInputMessageRole.fromJson(String json) { return switch (json) {
+factory EasyInputMessageRole.fromJson(String json) {return switch (json) {
   'user' => user,
   'assistant' => assistant,
   'system' => system,
   'developer' => developer,
   _ => EasyInputMessageRole._(json),
-}; }
+};}
 
 static const EasyInputMessageRole user = EasyInputMessageRole._('user');
 
@@ -25,14 +25,14 @@ static const List<EasyInputMessageRole> values = [user, assistant, system, devel
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EasyInputMessageRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EasyInputMessageRole($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EasyInputMessageRole && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EasyInputMessageRole($value)';}
+}
 /// A message input to the model with a role indicating instruction following
 /// hierarchy. Instructions given with the `developer` or `system` role take
 /// precedence over instructions given with the `user` role. Messages with the
@@ -41,12 +41,12 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class EasyInputMessage {const EasyInputMessage({required this.role, required this.content, this.phase = const Omittable.absent(), this.type, });
 
-factory EasyInputMessage.fromJson(Map<String, dynamic> json) { return EasyInputMessage(
+factory EasyInputMessage.fromJson(Map<String, dynamic> json) {return EasyInputMessage(
   role: EasyInputMessageRole.fromJson(json['role'] as String),
   content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => InputContent.fromJson(e as Map<String, dynamic>)).toList(),),
   phase: json.containsKey('phase') ? Omittable(json['phase'] != null ? MessagePhase.fromJson(json['phase'] as String) : null) : const Omittable.absent(),
   type: json['type'] as String?,
-); }
+);}
 
 /// The role of the message input. One of `user`, `assistant`, `system`, or
 /// `developer`.
@@ -64,26 +64,26 @@ final Omittable<MessagePhase?> phase;
 /// 
 final String? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'role': role.toJson(),
   'content': content.toJson(),
   if (phase.isPresent) 'phase': phase.value?.toJson(),
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') &&
-      json.containsKey('content'); } 
-EasyInputMessage copyWith({EasyInputMessageRole? role, EasyInputMessageContent? content, Omittable<MessagePhase?>? phase, String? Function()? type, }) { return EasyInputMessage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('role') &&
+      json.containsKey('content');}
+EasyInputMessage copyWith({EasyInputMessageRole? role, EasyInputMessageContent? content, Omittable<MessagePhase?>? phase, String? Function()? type, }) {return EasyInputMessage(
   role: role ?? this.role,
   content: content ?? this.content,
   phase: phase ?? this.phase,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EasyInputMessage &&
           role == other.role &&
           content == other.content &&
           phase == other.phase &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(role, content, phase, type); } 
-@override String toString() { return 'EasyInputMessage(role: $role, content: $content, phase: $phase, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(role, content, phase, type);}
+@override String toString() {return 'EasyInputMessage(role: $role, content: $content, phase: $phase, type: $type)';}
+}

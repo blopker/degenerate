@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentsPerPeriodVariant2 {const PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentsPerPeriodVariant2._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentsPerPeriodVariant2.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentsPerPeriodVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentsPerPeriodVariant2._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentsPerPeriodVariant2 $empty = PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentsPerPeriodVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PaymentIntentPaymentMethodOptionsParam25MandateOptionsPayments
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentsPerPeriodVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentsPerPeriodVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentsPerPeriodVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentsPerPeriodVariant2($value)';}
+}
 
 @immutable
 final class PaymentIntentPaymentMethodOptionsParam25MandateOptionsPaymentsPerPeriod {

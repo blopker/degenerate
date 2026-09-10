@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupDeviceType {const RadarGetHttpTimeseriesGroupDeviceType._(this.value);
 
-factory RadarGetHttpTimeseriesGroupDeviceType.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTimeseriesGroupDeviceType.fromJson(String json) {return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
   'OTHER' => $other,
   _ => RadarGetHttpTimeseriesGroupDeviceType._(json),
-}; }
+};}
 
 static const RadarGetHttpTimeseriesGroupDeviceType desktop = RadarGetHttpTimeseriesGroupDeviceType._('DESKTOP');
 
@@ -19,11 +19,11 @@ static const List<RadarGetHttpTimeseriesGroupDeviceType> values = [desktop, mobi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTimeseriesGroupDeviceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTimeseriesGroupDeviceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupDeviceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTimeseriesGroupDeviceType($value)';}
+}

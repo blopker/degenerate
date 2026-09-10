@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Instruction for creating a new file via the apply_patch tool.
 @immutable final class ApplyPatchCreateFileOperationParam {const ApplyPatchCreateFileOperationParam({required this.type, required this.path, required this.diff, });
 
-factory ApplyPatchCreateFileOperationParam.fromJson(Map<String, dynamic> json) { return ApplyPatchCreateFileOperationParam(
+factory ApplyPatchCreateFileOperationParam.fromJson(Map<String, dynamic> json) {return ApplyPatchCreateFileOperationParam(
   type: json['type'] as String,
   path: json['path'] as String,
   diff: json['diff'] as String,
-); }
+);}
 
 /// The operation type. Always `create_file`.
 final String type;
@@ -18,24 +18,24 @@ final String path;
 /// Unified diff content to apply when creating the file.
 final String diff;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'path': path,
   'diff': diff,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('path') && json['path'] is String &&
-      json.containsKey('diff') && json['diff'] is String; } 
-ApplyPatchCreateFileOperationParam copyWith({String? type, String? path, String? diff, }) { return ApplyPatchCreateFileOperationParam(
+      json.containsKey('diff') && json['diff'] is String;}
+ApplyPatchCreateFileOperationParam copyWith({String? type, String? path, String? diff, }) {return ApplyPatchCreateFileOperationParam(
   type: type ?? this.type,
   path: path ?? this.path,
   diff: diff ?? this.diff,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ApplyPatchCreateFileOperationParam &&
           type == other.type &&
           path == other.path &&
-          diff == other.diff; } 
-@override int get hashCode { return Object.hash(type, path, diff); } 
-@override String toString() { return 'ApplyPatchCreateFileOperationParam(type: $type, path: $path, diff: $diff)'; } 
- }
+          diff == other.diff;}
+@override int get hashCode {return Object.hash(type, path, diff);}
+@override String toString() {return 'ApplyPatchCreateFileOperationParam(type: $type, path: $path, diff: $diff)';}
+}

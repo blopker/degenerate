@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_shell_call_output_content.dart';@immutable final class LocalShellCallOutputStatusEnum {const LocalShellCallOutputStatusEnum._(this.value);
 
-factory LocalShellCallOutputStatusEnum.fromJson(String json) { return switch (json) {
+factory LocalShellCallOutputStatusEnum.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
   _ => LocalShellCallOutputStatusEnum._(json),
-}; }
+};}
 
 static const LocalShellCallOutputStatusEnum inProgress = LocalShellCallOutputStatusEnum._('in_progress');
 
@@ -19,18 +19,18 @@ static const List<LocalShellCallOutputStatusEnum> values = [inProgress, complete
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LocalShellCallOutputStatusEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LocalShellCallOutputStatusEnum($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LocalShellCallOutputStatusEnum && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LocalShellCallOutputStatusEnum($value)';}
+}
 /// The output of a shell tool call that was emitted.
 @immutable final class FunctionShellCallOutput {const FunctionShellCallOutput({required this.type, required this.id, required this.callId, required this.status, required this.output, required this.maxOutputLength, this.createdBy, });
 
-factory FunctionShellCallOutput.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutput(
+factory FunctionShellCallOutput.fromJson(Map<String, dynamic> json) {return FunctionShellCallOutput(
   type: json['type'] as String,
   id: json['id'] as String,
   callId: json['call_id'] as String,
@@ -38,7 +38,7 @@ factory FunctionShellCallOutput.fromJson(Map<String, dynamic> json) { return Fun
   output: (json['output'] as List<dynamic>).map((e) => FunctionShellCallOutputContent.fromJson(e as Map<String, dynamic>)).toList(),
   maxOutputLength: json['max_output_length'] != null ? (json['max_output_length'] as num).toInt() : null,
   createdBy: json['created_by'] as String?,
-); }
+);}
 
 /// The type of the shell call output. Always `shell_call_output`.
 final String type;
@@ -61,7 +61,7 @@ final int? maxOutputLength;
 /// The identifier of the actor that created the item.
 final String? createdBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'call_id': callId,
@@ -69,14 +69,14 @@ Map<String, dynamic> toJson() { return {
   'output': output.map((e) => e.toJson()).toList(),
   'max_output_length': maxOutputLength,
   'created_by': ?createdBy,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('status') &&
       json.containsKey('output') &&
-      json.containsKey('max_output_length') && (json['max_output_length'] == null || json['max_output_length'] is num); } 
-FunctionShellCallOutput copyWith({String? type, String? id, String? callId, LocalShellCallOutputStatusEnum? status, List<FunctionShellCallOutputContent>? output, int? Function()? maxOutputLength, String? Function()? createdBy, }) { return FunctionShellCallOutput(
+      json.containsKey('max_output_length') && (json['max_output_length'] == null || json['max_output_length'] is num);}
+FunctionShellCallOutput copyWith({String? type, String? id, String? callId, LocalShellCallOutputStatusEnum? status, List<FunctionShellCallOutputContent>? output, int? Function()? maxOutputLength, String? Function()? createdBy, }) {return FunctionShellCallOutput(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,
@@ -84,8 +84,8 @@ FunctionShellCallOutput copyWith({String? type, String? id, String? callId, Loca
   output: output ?? this.output,
   maxOutputLength: maxOutputLength != null ? maxOutputLength() : this.maxOutputLength,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FunctionShellCallOutput &&
           type == other.type &&
           id == other.id &&
@@ -93,7 +93,7 @@ FunctionShellCallOutput copyWith({String? type, String? id, String? callId, Loca
           status == other.status &&
           listEquals(output, other.output) &&
           maxOutputLength == other.maxOutputLength &&
-          createdBy == other.createdBy; } 
-@override int get hashCode { return Object.hash(type, id, callId, status, Object.hashAll(output), maxOutputLength, createdBy); } 
-@override String toString() { return 'FunctionShellCallOutput(type: $type, id: $id, callId: $callId, status: $status, output: $output, maxOutputLength: $maxOutputLength, createdBy: $createdBy)'; } 
- }
+          createdBy == other.createdBy;}
+@override int get hashCode {return Object.hash(type, id, callId, status, Object.hashAll(output), maxOutputLength, createdBy);}
+@override String toString() {return 'FunctionShellCallOutput(type: $type, id: $id, callId: $callId, status: $status, output: $output, maxOutputLength: $maxOutputLength, createdBy: $createdBy)';}
+}

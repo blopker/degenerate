@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class IssuingNetworkTokenMastercard {const IssuingNetworkTokenMastercard({required this.tokenReferenceId, required this.tokenRequestorId, this.cardReferenceId, this.tokenRequestorName, });
 
-factory IssuingNetworkTokenMastercard.fromJson(Map<String, dynamic> json) { return IssuingNetworkTokenMastercard(
+factory IssuingNetworkTokenMastercard.fromJson(Map<String, dynamic> json) {return IssuingNetworkTokenMastercard(
   cardReferenceId: json['card_reference_id'] as String?,
   tokenReferenceId: json['token_reference_id'] as String,
   tokenRequestorId: json['token_requestor_id'] as String,
   tokenRequestorName: json['token_requestor_name'] as String?,
-); }
+);}
 
 /// A unique reference ID from MasterCard to represent the card account number.
 final String? cardReferenceId;
@@ -22,26 +22,26 @@ final String tokenRequestorId;
 /// The name of the entity requesting tokenization, if known. This is directly provided from MasterCard.
 final String? tokenRequestorName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'card_reference_id': ?cardReferenceId,
   'token_reference_id': tokenReferenceId,
   'token_requestor_id': tokenRequestorId,
   'token_requestor_name': ?tokenRequestorName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('token_reference_id') && json['token_reference_id'] is String &&
-      json.containsKey('token_requestor_id') && json['token_requestor_id'] is String; } 
-IssuingNetworkTokenMastercard copyWith({String? Function()? cardReferenceId, String? tokenReferenceId, String? tokenRequestorId, String? Function()? tokenRequestorName, }) { return IssuingNetworkTokenMastercard(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('token_reference_id') && json['token_reference_id'] is String &&
+      json.containsKey('token_requestor_id') && json['token_requestor_id'] is String;}
+IssuingNetworkTokenMastercard copyWith({String? Function()? cardReferenceId, String? tokenReferenceId, String? tokenRequestorId, String? Function()? tokenRequestorName, }) {return IssuingNetworkTokenMastercard(
   cardReferenceId: cardReferenceId != null ? cardReferenceId() : this.cardReferenceId,
   tokenReferenceId: tokenReferenceId ?? this.tokenReferenceId,
   tokenRequestorId: tokenRequestorId ?? this.tokenRequestorId,
   tokenRequestorName: tokenRequestorName != null ? tokenRequestorName() : this.tokenRequestorName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingNetworkTokenMastercard &&
           cardReferenceId == other.cardReferenceId &&
           tokenReferenceId == other.tokenReferenceId &&
           tokenRequestorId == other.tokenRequestorId &&
-          tokenRequestorName == other.tokenRequestorName; } 
-@override int get hashCode { return Object.hash(cardReferenceId, tokenReferenceId, tokenRequestorId, tokenRequestorName); } 
-@override String toString() { return 'IssuingNetworkTokenMastercard(cardReferenceId: $cardReferenceId, tokenReferenceId: $tokenReferenceId, tokenRequestorId: $tokenRequestorId, tokenRequestorName: $tokenRequestorName)'; } 
- }
+          tokenRequestorName == other.tokenRequestorName;}
+@override int get hashCode {return Object.hash(cardReferenceId, tokenReferenceId, tokenRequestorId, tokenRequestorName);}
+@override String toString() {return 'IssuingNetworkTokenMastercard(cardReferenceId: $cardReferenceId, tokenReferenceId: $tokenReferenceId, tokenRequestorId: $tokenRequestorId, tokenRequestorName: $tokenRequestorName)';}
+}

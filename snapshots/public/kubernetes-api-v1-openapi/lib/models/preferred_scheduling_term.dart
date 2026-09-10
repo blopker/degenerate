@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_selector_term.dart';/// An empty preferred scheduling term matches all objects with implicit weight 0 (i.e. it's a no-op). A null preferred scheduling term matches no objects (i.e. is also a no-op).
 @immutable final class PreferredSchedulingTerm {const PreferredSchedulingTerm({required this.preference, required this.weight, });
 
-factory PreferredSchedulingTerm.fromJson(Map<String, dynamic> json) { return PreferredSchedulingTerm(
+factory PreferredSchedulingTerm.fromJson(Map<String, dynamic> json) {return PreferredSchedulingTerm(
   preference: NodeSelectorTerm.fromJson(json['preference'] as Map<String, dynamic>),
   weight: (json['weight'] as num).toInt(),
-); }
+);}
 
 /// A node selector term, associated with the corresponding weight.
 final NodeSelectorTerm preference;
@@ -14,20 +14,20 @@ final NodeSelectorTerm preference;
 /// Weight associated with matching the corresponding nodeSelectorTerm, in the range 1-100.
 final int weight;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'preference': preference.toJson(),
   'weight': weight,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('preference') &&
-      json.containsKey('weight') && json['weight'] is num; } 
-PreferredSchedulingTerm copyWith({NodeSelectorTerm? preference, int? weight, }) { return PreferredSchedulingTerm(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('preference') &&
+      json.containsKey('weight') && json['weight'] is num;}
+PreferredSchedulingTerm copyWith({NodeSelectorTerm? preference, int? weight, }) {return PreferredSchedulingTerm(
   preference: preference ?? this.preference,
   weight: weight ?? this.weight,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PreferredSchedulingTerm &&
           preference == other.preference &&
-          weight == other.weight; } 
-@override int get hashCode { return Object.hash(preference, weight); } 
-@override String toString() { return 'PreferredSchedulingTerm(preference: $preference, weight: $weight)'; } 
- }
+          weight == other.weight;}
+@override int get hashCode {return Object.hash(preference, weight);}
+@override String toString() {return 'PreferredSchedulingTerm(preference: $preference, weight: $weight)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookStarDeletedAction {const WebhookStarDeletedAction._(this.value);
 
-factory WebhookStarDeletedAction.fromJson(String json) { return switch (json) {
+factory WebhookStarDeletedAction.fromJson(String json) {return switch (json) {
   'deleted' => deleted,
   _ => WebhookStarDeletedAction._(json),
-}; }
+};}
 
 static const WebhookStarDeletedAction deleted = WebhookStarDeletedAction._('deleted');
 
@@ -13,17 +13,17 @@ static const List<WebhookStarDeletedAction> values = [deleted];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookStarDeletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookStarDeletedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookStarDeletedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookStarDeletedAction($value)';}
+}
 @immutable final class WebhookStarDeleted {const WebhookStarDeleted({required this.action, required this.repository, required this.sender, required this.starredAt, this.enterprise, this.installation, this.organization, });
 
-factory WebhookStarDeleted.fromJson(Map<String, dynamic> json) { return WebhookStarDeleted(
+factory WebhookStarDeleted.fromJson(Map<String, dynamic> json) {return WebhookStarDeleted(
   action: WebhookStarDeletedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookStarDeleted.fromJson(Map<String, dynamic> json) { return WebhookS
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   starredAt: json['starred_at'],
-); }
+);}
 
 final WebhookStarDeletedAction action;
 
@@ -48,7 +48,7 @@ final SimpleUser sender;
 /// The time the star was created. This is a timestamp in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`. Will be `null` for the `deleted` action.
 final dynamic starredAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -56,12 +56,12 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   'sender': sender.toJson(),
   'starred_at': starredAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('repository') &&
       json.containsKey('sender') &&
-      json.containsKey('starred_at'); } 
-WebhookStarDeleted copyWith({WebhookStarDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, dynamic Function()? starredAt, }) { return WebhookStarDeleted(
+      json.containsKey('starred_at');}
+WebhookStarDeleted copyWith({WebhookStarDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, dynamic Function()? starredAt, }) {return WebhookStarDeleted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -69,8 +69,8 @@ WebhookStarDeleted copyWith({WebhookStarDeletedAction? action, EnterpriseWebhook
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
   starredAt: starredAt != null ? starredAt() : this.starredAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookStarDeleted &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -78,7 +78,7 @@ WebhookStarDeleted copyWith({WebhookStarDeletedAction? action, EnterpriseWebhook
           organization == other.organization &&
           repository == other.repository &&
           sender == other.sender &&
-          starredAt == other.starredAt; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, sender, starredAt); } 
-@override String toString() { return 'WebhookStarDeleted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, starredAt: $starredAt)'; } 
- }
+          starredAt == other.starredAt;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, organization, repository, sender, starredAt);}
+@override String toString() {return 'WebhookStarDeleted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, starredAt: $starredAt)';}
+}

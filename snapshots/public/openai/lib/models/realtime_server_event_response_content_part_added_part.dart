@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type ("text", "audio").
 @immutable final class RealtimeServerEventResponseContentPartAddedPartType {const RealtimeServerEventResponseContentPartAddedPartType._(this.value);
 
-factory RealtimeServerEventResponseContentPartAddedPartType.fromJson(String json) { return switch (json) {
+factory RealtimeServerEventResponseContentPartAddedPartType.fromJson(String json) {return switch (json) {
   'audio' => audio,
   'text' => text,
   _ => RealtimeServerEventResponseContentPartAddedPartType._(json),
-}; }
+};}
 
 static const RealtimeServerEventResponseContentPartAddedPartType audio = RealtimeServerEventResponseContentPartAddedPartType._('audio');
 
@@ -17,23 +17,23 @@ static const List<RealtimeServerEventResponseContentPartAddedPartType> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventResponseContentPartAddedPartType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventResponseContentPartAddedPartType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeServerEventResponseContentPartAddedPartType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeServerEventResponseContentPartAddedPartType($value)';}
+}
 /// The content part that was added.
 @immutable final class RealtimeServerEventResponseContentPartAddedPart {const RealtimeServerEventResponseContentPartAddedPart({this.type, this.text, this.audio, this.transcript, });
 
-factory RealtimeServerEventResponseContentPartAddedPart.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseContentPartAddedPart(
+factory RealtimeServerEventResponseContentPartAddedPart.fromJson(Map<String, dynamic> json) {return RealtimeServerEventResponseContentPartAddedPart(
   type: json['type'] != null ? RealtimeServerEventResponseContentPartAddedPartType.fromJson(json['type'] as String) : null,
   text: json['text'] as String?,
   audio: json['audio'] as String?,
   transcript: json['transcript'] as String?,
-); }
+);}
 
 /// The content type ("text", "audio").
 final RealtimeServerEventResponseContentPartAddedPartType? type;
@@ -47,25 +47,25 @@ final String? audio;
 /// The transcript of the audio (if type is "audio").
 final String? transcript;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   'text': ?text,
   'audio': ?audio,
   'transcript': ?transcript,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'text', 'audio', 'transcript'}.contains(key)); } 
-RealtimeServerEventResponseContentPartAddedPart copyWith({RealtimeServerEventResponseContentPartAddedPartType? Function()? type, String? Function()? text, String? Function()? audio, String? Function()? transcript, }) { return RealtimeServerEventResponseContentPartAddedPart(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'text', 'audio', 'transcript'}.contains(key));}
+RealtimeServerEventResponseContentPartAddedPart copyWith({RealtimeServerEventResponseContentPartAddedPartType? Function()? type, String? Function()? text, String? Function()? audio, String? Function()? transcript, }) {return RealtimeServerEventResponseContentPartAddedPart(
   type: type != null ? type() : this.type,
   text: text != null ? text() : this.text,
   audio: audio != null ? audio() : this.audio,
   transcript: transcript != null ? transcript() : this.transcript,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventResponseContentPartAddedPart &&
           type == other.type &&
           text == other.text &&
           audio == other.audio &&
-          transcript == other.transcript; } 
-@override int get hashCode { return Object.hash(type, text, audio, transcript); } 
-@override String toString() { return 'RealtimeServerEventResponseContentPartAddedPart(type: $type, text: $text, audio: $audio, transcript: $transcript)'; } 
- }
+          transcript == other.transcript;}
+@override int get hashCode {return Object.hash(type, text, audio, transcript);}
+@override String toString() {return 'RealtimeServerEventResponseContentPartAddedPart(type: $type, text: $text, audio: $audio, transcript: $transcript)';}
+}

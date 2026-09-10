@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audio_transcription.dart';import 'realtime_audio_formats.dart';import 'realtime_transcription_session_create_response_ga_audio_input_noise_reduction.dart';import 'realtime_transcription_session_create_response_ga_audio_input_turn_detection.dart';@immutable final class RealtimeTranscriptionSessionCreateResponseGaAudioInput {const RealtimeTranscriptionSessionCreateResponseGaAudioInput({this.format, this.transcription, this.noiseReduction, this.turnDetection, });
 
-factory RealtimeTranscriptionSessionCreateResponseGaAudioInput.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateResponseGaAudioInput(
+factory RealtimeTranscriptionSessionCreateResponseGaAudioInput.fromJson(Map<String, dynamic> json) {return RealtimeTranscriptionSessionCreateResponseGaAudioInput(
   format: json['format'] != null ? RealtimeAudioFormats.fromJson(json['format']) : null,
   transcription: json['transcription'] != null ? AudioTranscription.fromJson(json['transcription'] as Map<String, dynamic>) : null,
   noiseReduction: json['noise_reduction'] != null ? RealtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction.fromJson(json['noise_reduction'] as Map<String, dynamic>) : null,
   turnDetection: json['turn_detection'] != null ? RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final RealtimeAudioFormats? format;
 
@@ -25,25 +25,25 @@ final RealtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction? nois
 /// 
 final RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection? turnDetection;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (format != null) 'format': format?.toJson(),
   if (transcription != null) 'transcription': transcription?.toJson(),
   if (noiseReduction != null) 'noise_reduction': noiseReduction?.toJson(),
   if (turnDetection != null) 'turn_detection': turnDetection?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format', 'transcription', 'noise_reduction', 'turn_detection'}.contains(key)); } 
-RealtimeTranscriptionSessionCreateResponseGaAudioInput copyWith({RealtimeAudioFormats? Function()? format, AudioTranscription? Function()? transcription, RealtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction? Function()? noiseReduction, RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection? Function()? turnDetection, }) { return RealtimeTranscriptionSessionCreateResponseGaAudioInput(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'format', 'transcription', 'noise_reduction', 'turn_detection'}.contains(key));}
+RealtimeTranscriptionSessionCreateResponseGaAudioInput copyWith({RealtimeAudioFormats? Function()? format, AudioTranscription? Function()? transcription, RealtimeTranscriptionSessionCreateResponseGaAudioInputNoiseReduction? Function()? noiseReduction, RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection? Function()? turnDetection, }) {return RealtimeTranscriptionSessionCreateResponseGaAudioInput(
   format: format != null ? format() : this.format,
   transcription: transcription != null ? transcription() : this.transcription,
   noiseReduction: noiseReduction != null ? noiseReduction() : this.noiseReduction,
   turnDetection: turnDetection != null ? turnDetection() : this.turnDetection,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeTranscriptionSessionCreateResponseGaAudioInput &&
           format == other.format &&
           transcription == other.transcription &&
           noiseReduction == other.noiseReduction &&
-          turnDetection == other.turnDetection; } 
-@override int get hashCode { return Object.hash(format, transcription, noiseReduction, turnDetection); } 
-@override String toString() { return 'RealtimeTranscriptionSessionCreateResponseGaAudioInput(format: $format, transcription: $transcription, noiseReduction: $noiseReduction, turnDetection: $turnDetection)'; } 
- }
+          turnDetection == other.turnDetection;}
+@override int get hashCode {return Object.hash(format, transcription, noiseReduction, turnDetection);}
+@override String toString() {return 'RealtimeTranscriptionSessionCreateResponseGaAudioInput(format: $format, transcription: $transcription, noiseReduction: $noiseReduction, turnDetection: $turnDetection)';}
+}

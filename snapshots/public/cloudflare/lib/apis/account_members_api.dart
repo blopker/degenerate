@@ -13,7 +13,7 @@ final class AccountMembersApi with ApiExecutor {const AccountMembersApi(this.api
 /// List all members of an account.
 ///
 /// `GET /accounts/{account_id}/members`
-Future<ApiResult<List<IamMemberWithPolicies>?, ResponseCommonFailure38>> accountMembersListMembers({required IamCommonComponentsSchemasIdentifier accountId, dynamic order, AccountMembersListMembersStatus? status, double? page, double? perPage, AccountMembersListMembersDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IamMemberWithPolicies>?, ResponseCommonFailure38>> accountMembersListMembers({required IamCommonComponentsSchemasIdentifier accountId, dynamic order, AccountMembersListMembersStatus? status, double? page, double? perPage, AccountMembersListMembersDirection? direction, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (order != null) {
   queryParameters['order'] = order.toString();
@@ -59,13 +59,13 @@ return null;
 
   },
 );
- } 
+}
 /// Add Member
 ///
 /// Add a user to the list of members for this account.
 ///
 /// `POST /accounts/{account_id}/members`
-Future<ApiResult<IamMemberWithPolicies?, ResponseCommonFailure38>> accountMembersAddMember({required IamCommonComponentsSchemasIdentifier accountId, required AccountMembersAddMemberRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamMemberWithPolicies?, ResponseCommonFailure38>> accountMembersAddMember({required IamCommonComponentsSchemasIdentifier accountId, required AccountMembersAddMemberRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -93,13 +93,13 @@ return null;
 
   },
 );
- } 
+}
 /// Member Details
 ///
 /// Get information about a specific member of an account.
 ///
 /// `GET /accounts/{account_id}/members/{member_id}`
-Future<ApiResult<IamMemberWithPolicies?, ResponseCommonFailure38>> accountMembersMemberDetails({required IamMembershipComponentsSchemasIdentifier memberId, required IamCommonComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamMemberWithPolicies?, ResponseCommonFailure38>> accountMembersMemberDetails({required IamMembershipComponentsSchemasIdentifier memberId, required IamCommonComponentsSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -125,13 +125,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update Member
 ///
 /// Modify an account member.
 ///
 /// `PUT /accounts/{account_id}/members/{member_id}`
-Future<ApiResult<IamMemberWithPolicies?, ResponseCommonFailure38>> accountMembersUpdateMember({required IamMembershipComponentsSchemasIdentifier memberId, required IamCommonComponentsSchemasIdentifier accountId, required AccountMembersUpdateMemberRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamMemberWithPolicies?, ResponseCommonFailure38>> accountMembersUpdateMember({required IamMembershipComponentsSchemasIdentifier memberId, required IamCommonComponentsSchemasIdentifier accountId, required AccountMembersUpdateMemberRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -159,13 +159,13 @@ return null;
 
   },
 );
- } 
+}
 /// Remove Member
 ///
 /// Remove a member from an account.
 ///
 /// `DELETE /accounts/{account_id}/members/{member_id}`
-Future<ApiResult<ResponseSingleId4Result?, ResponseCommonFailure38>> accountMembersRemoveMember({required IamMembershipComponentsSchemasIdentifier memberId, required IamCommonComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId4Result?, ResponseCommonFailure38>> accountMembersRemoveMember({required IamMembershipComponentsSchemasIdentifier memberId, required IamCommonComponentsSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -191,5 +191,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

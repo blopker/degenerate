@@ -13,7 +13,7 @@ final class DnsInternalViewsForAnAccountApi with ApiExecutor {const DnsInternalV
 /// List DNS Internal Views for an Account
 ///
 /// `GET /accounts/{account_id}/dns_settings/views`
-Future<ApiResult<List<DnsSettingsDnsViewResponse>?, DnsViewsForAnAccountListInternalDnsViewsResponse4xx>> dnsViewsForAnAccountListInternalDnsViews({required DnsSettingsIdentifier accountId, String? name, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, String? zoneId, String? zoneName, DnsSettingsMatch? match, DnsSettingsPage? page, DnsSettingsPerPage? perPage, DnsSettingsOrder? order, DnsSettingsDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DnsSettingsDnsViewResponse>?, DnsViewsForAnAccountListInternalDnsViewsResponse4xx>> dnsViewsForAnAccountListInternalDnsViews({required DnsSettingsIdentifier accountId, String? name, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, String? zoneId, String? zoneName, DnsSettingsMatch? match, DnsSettingsPage? page, DnsSettingsPerPage? perPage, DnsSettingsOrder? order, DnsSettingsDirection? direction, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -80,13 +80,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create Internal DNS View
 ///
 /// Create Internal DNS View for an account
 ///
 /// `POST /accounts/{account_id}/dns_settings/views`
-Future<ApiResult<DnsSettingsDnsViewResponse?, DnsViewsForAnAccountCreateInternalDnsViewsResponse4xx>> dnsViewsForAnAccountCreateInternalDnsViews({required DnsSettingsIdentifier accountId, required DnsSettingsDnsViewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsDnsViewResponse?, DnsViewsForAnAccountCreateInternalDnsViewsResponse4xx>> dnsViewsForAnAccountCreateInternalDnsViews({required DnsSettingsIdentifier accountId, required DnsSettingsDnsViewRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -114,13 +114,13 @@ return null;
 
   },
 );
- } 
+}
 /// DNS Internal View Details
 ///
 /// Get DNS Internal View
 ///
 /// `GET /accounts/{account_id}/dns_settings/views/{view_id}`
-Future<ApiResult<DnsSettingsDnsViewResponse?, DnsViewsForAnAccountGetInternalDnsViewResponse4xx>> dnsViewsForAnAccountGetInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsDnsViewResponse?, DnsViewsForAnAccountGetInternalDnsViewResponse4xx>> dnsViewsForAnAccountGetInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -146,13 +146,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update Internal DNS View
 ///
 /// Update an existing Internal DNS View
 ///
 /// `PATCH /accounts/{account_id}/dns_settings/views/{view_id}`
-Future<ApiResult<DnsSettingsDnsViewResponse?, DnsViewsForAnAccountUpdateInternalDnsViewResponse4xx>> dnsViewsForAnAccountUpdateInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, required DnsSettingsDnsViewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsDnsViewResponse?, DnsViewsForAnAccountUpdateInternalDnsViewResponse4xx>> dnsViewsForAnAccountUpdateInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, required DnsSettingsDnsViewRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -180,13 +180,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Internal DNS View
 ///
 /// Delete an existing Internal DNS View
 ///
 /// `DELETE /accounts/{account_id}/dns_settings/views/{view_id}`
-Future<ApiResult<DnsViewsForAnAccountDeleteInternalDnsViewResponseResult?, DnsViewsForAnAccountDeleteInternalDnsViewResponse4xx>> dnsViewsForAnAccountDeleteInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsViewsForAnAccountDeleteInternalDnsViewResponseResult?, DnsViewsForAnAccountDeleteInternalDnsViewResponse4xx>> dnsViewsForAnAccountDeleteInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -212,5 +212,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

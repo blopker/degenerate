@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryError {const Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryError();
 
 /// Decodes the payload for its declared status and content type.
-static Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryError parse(ApiResponse response) { switch (response.statusCode) {
+static Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryError parse(ApiResponse response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
 return Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryError4xx(Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryResponse4xx.fromJson(json as Map<String, dynamic>));
@@ -14,26 +14,26 @@ return Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryError5xx(Web3Ho
 default:
 return Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 4xx (application/json).
 final class Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryError4xx extends Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryError {const Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryError4xx(this.data);
 
 /// The decoded response payload.
 final Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryResponse4xx data;
 
- }
+}
 /// Response for 5xx (application/json).
 final class Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryError5xx extends Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryError {const Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryError5xx(this.data);
 
 /// The decoded response payload.
 final Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryResponse5xx data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryErrorUnknown extends Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryError {const Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

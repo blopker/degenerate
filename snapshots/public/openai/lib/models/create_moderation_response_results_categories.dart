@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A list of the categories, and whether they are flagged or not.
 @immutable final class CreateModerationResponseResultsCategories {const CreateModerationResponseResultsCategories({required this.hate, required this.hateThreatening, required this.harassment, required this.harassmentThreatening, required this.illicit, required this.illicitViolent, required this.selfHarm, required this.selfHarmIntent, required this.selfHarmInstructions, required this.sexual, required this.sexualMinors, required this.violence, required this.violenceGraphic, });
 
-factory CreateModerationResponseResultsCategories.fromJson(Map<String, dynamic> json) { return CreateModerationResponseResultsCategories(
+factory CreateModerationResponseResultsCategories.fromJson(Map<String, dynamic> json) {return CreateModerationResponseResultsCategories(
   hate: json['hate'] as bool,
   hateThreatening: json['hate/threatening'] as bool,
   harassment: json['harassment'] as bool,
@@ -17,7 +17,7 @@ factory CreateModerationResponseResultsCategories.fromJson(Map<String, dynamic> 
   sexualMinors: json['sexual/minors'] as bool,
   violence: json['violence'] as bool,
   violenceGraphic: json['violence/graphic'] as bool,
-); }
+);}
 
 /// Content that expresses, incites, or promotes hate based on race, gender, ethnicity, religion, nationality, sexual orientation, disability status, or caste. Hateful content aimed at non-protected groups (e.g., chess players) is harassment.
 final bool hate;
@@ -58,7 +58,7 @@ final bool violence;
 /// Content that depicts death, violence, or physical injury in graphic detail.
 final bool violenceGraphic;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'hate': hate,
   'hate/threatening': hateThreatening,
   'harassment': harassment,
@@ -72,8 +72,8 @@ Map<String, dynamic> toJson() { return {
   'sexual/minors': sexualMinors,
   'violence': violence,
   'violence/graphic': violenceGraphic,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hate') && json['hate'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hate') && json['hate'] is bool &&
       json.containsKey('hate/threatening') && json['hate/threatening'] is bool &&
       json.containsKey('harassment') && json['harassment'] is bool &&
       json.containsKey('harassment/threatening') && json['harassment/threatening'] is bool &&
@@ -85,8 +85,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('hate'
       json.containsKey('sexual') && json['sexual'] is bool &&
       json.containsKey('sexual/minors') && json['sexual/minors'] is bool &&
       json.containsKey('violence') && json['violence'] is bool &&
-      json.containsKey('violence/graphic') && json['violence/graphic'] is bool; } 
-CreateModerationResponseResultsCategories copyWith({bool? hate, bool? hateThreatening, bool? harassment, bool? harassmentThreatening, bool? Function()? illicit, bool? Function()? illicitViolent, bool? selfHarm, bool? selfHarmIntent, bool? selfHarmInstructions, bool? sexual, bool? sexualMinors, bool? violence, bool? violenceGraphic, }) { return CreateModerationResponseResultsCategories(
+      json.containsKey('violence/graphic') && json['violence/graphic'] is bool;}
+CreateModerationResponseResultsCategories copyWith({bool? hate, bool? hateThreatening, bool? harassment, bool? harassmentThreatening, bool? Function()? illicit, bool? Function()? illicitViolent, bool? selfHarm, bool? selfHarmIntent, bool? selfHarmInstructions, bool? sexual, bool? sexualMinors, bool? violence, bool? violenceGraphic, }) {return CreateModerationResponseResultsCategories(
   hate: hate ?? this.hate,
   hateThreatening: hateThreatening ?? this.hateThreatening,
   harassment: harassment ?? this.harassment,
@@ -100,8 +100,8 @@ CreateModerationResponseResultsCategories copyWith({bool? hate, bool? hateThreat
   sexualMinors: sexualMinors ?? this.sexualMinors,
   violence: violence ?? this.violence,
   violenceGraphic: violenceGraphic ?? this.violenceGraphic,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateModerationResponseResultsCategories &&
           hate == other.hate &&
           hateThreatening == other.hateThreatening &&
@@ -115,7 +115,7 @@ CreateModerationResponseResultsCategories copyWith({bool? hate, bool? hateThreat
           sexual == other.sexual &&
           sexualMinors == other.sexualMinors &&
           violence == other.violence &&
-          violenceGraphic == other.violenceGraphic; } 
-@override int get hashCode { return Object.hash(hate, hateThreatening, harassment, harassmentThreatening, illicit, illicitViolent, selfHarm, selfHarmIntent, selfHarmInstructions, sexual, sexualMinors, violence, violenceGraphic); } 
-@override String toString() { return 'CreateModerationResponseResultsCategories(hate: $hate, hateThreatening: $hateThreatening, harassment: $harassment, harassmentThreatening: $harassmentThreatening, illicit: $illicit, illicitViolent: $illicitViolent, selfHarm: $selfHarm, selfHarmIntent: $selfHarmIntent, selfHarmInstructions: $selfHarmInstructions, sexual: $sexual, sexualMinors: $sexualMinors, violence: $violence, violenceGraphic: $violenceGraphic)'; } 
- }
+          violenceGraphic == other.violenceGraphic;}
+@override int get hashCode {return Object.hash(hate, hateThreatening, harassment, harassmentThreatening, illicit, illicitViolent, selfHarm, selfHarmIntent, selfHarmInstructions, sexual, sexualMinors, violence, violenceGraphic);}
+@override String toString() {return 'CreateModerationResponseResultsCategories(hate: $hate, hateThreatening: $hateThreatening, harassment: $harassment, harassmentThreatening: $harassmentThreatening, illicit: $illicit, illicitViolent: $illicitViolent, selfHarm: $selfHarm, selfHarmIntent: $selfHarmIntent, selfHarmInstructions: $selfHarmInstructions, sexual: $sexual, sexualMinors: $sexualMinors, violence: $violence, violenceGraphic: $violenceGraphic)';}
+}

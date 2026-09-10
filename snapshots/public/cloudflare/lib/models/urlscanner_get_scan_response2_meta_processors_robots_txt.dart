@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_robots_txt_data.dart';@immutable final class UrlscannerGetScanResponse2MetaProcessorsRobotsTxt {const UrlscannerGetScanResponse2MetaProcessorsRobotsTxt({required this.data});
 
-factory UrlscannerGetScanResponse2MetaProcessorsRobotsTxt.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsRobotsTxt(
+factory UrlscannerGetScanResponse2MetaProcessorsRobotsTxt.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2MetaProcessorsRobotsTxt(
   data: (json['data'] as List<dynamic>).map((e) => UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData> data;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'); } 
-UrlscannerGetScanResponse2MetaProcessorsRobotsTxt copyWith({List<UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData>? data}) { return UrlscannerGetScanResponse2MetaProcessorsRobotsTxt(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data');}
+UrlscannerGetScanResponse2MetaProcessorsRobotsTxt copyWith({List<UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData>? data}) {return UrlscannerGetScanResponse2MetaProcessorsRobotsTxt(
   data: data ?? this.data,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponse2MetaProcessorsRobotsTxt &&
-          listEquals(data, other.data); } 
-@override int get hashCode { return Object.hashAll(data).hashCode; } 
-@override String toString() { return 'UrlscannerGetScanResponse2MetaProcessorsRobotsTxt(data: $data)'; } 
- }
+          listEquals(data, other.data);}
+@override int get hashCode {return Object.hashAll(data).hashCode;}
+@override String toString() {return 'UrlscannerGetScanResponse2MetaProcessorsRobotsTxt(data: $data)';}
+}

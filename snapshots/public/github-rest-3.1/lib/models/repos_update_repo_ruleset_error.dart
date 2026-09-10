@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class ReposUpdateRepoRulesetError {const ReposUpdateRepoRulesetError();
 
 /// Decodes the payload for its declared status and content type.
-static ReposUpdateRepoRulesetError parse(ApiResponse response) { switch (response.statusCode) {
+static ReposUpdateRepoRulesetError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
 return ReposUpdateRepoRulesetError404(BasicError.fromJson(json as Map<String, dynamic>));
@@ -17,33 +17,33 @@ return ReposUpdateRepoRulesetError500(BasicError.fromJson(json as Map<String, dy
 default:
 return ReposUpdateRepoRulesetErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 404 (application/json).
 final class ReposUpdateRepoRulesetError404 extends ReposUpdateRepoRulesetError {const ReposUpdateRepoRulesetError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class ReposUpdateRepoRulesetError422 extends ReposUpdateRepoRulesetError {const ReposUpdateRepoRulesetError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// Response for 500 (application/json).
 final class ReposUpdateRepoRulesetError500 extends ReposUpdateRepoRulesetError {const ReposUpdateRepoRulesetError500(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class ReposUpdateRepoRulesetErrorUnknown extends ReposUpdateRepoRulesetError {const ReposUpdateRepoRulesetErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

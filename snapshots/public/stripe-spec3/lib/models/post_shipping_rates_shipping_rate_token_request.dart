@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_shipping_rates_shipping_rate_token_request_fixed_amount.dart';import 'post_shipping_rates_shipping_rate_token_request_metadata.dart';/// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
 @immutable final class PostShippingRatesShippingRateTokenRequestTaxBehavior {const PostShippingRatesShippingRateTokenRequestTaxBehavior._(this.value);
 
-factory PostShippingRatesShippingRateTokenRequestTaxBehavior.fromJson(String json) { return switch (json) {
+factory PostShippingRatesShippingRateTokenRequestTaxBehavior.fromJson(String json) {return switch (json) {
   'exclusive' => exclusive,
   'inclusive' => inclusive,
   'unspecified' => unspecified,
   _ => PostShippingRatesShippingRateTokenRequestTaxBehavior._(json),
-}; }
+};}
 
 static const PostShippingRatesShippingRateTokenRequestTaxBehavior exclusive = PostShippingRatesShippingRateTokenRequestTaxBehavior._('exclusive');
 
@@ -20,23 +20,23 @@ static const List<PostShippingRatesShippingRateTokenRequestTaxBehavior> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostShippingRatesShippingRateTokenRequestTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostShippingRatesShippingRateTokenRequestTaxBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostShippingRatesShippingRateTokenRequestTaxBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostShippingRatesShippingRateTokenRequestTaxBehavior($value)';}
+}
 @immutable final class PostShippingRatesShippingRateTokenRequest {const PostShippingRatesShippingRateTokenRequest({this.active, this.expand, this.fixedAmount, this.metadata, this.taxBehavior, });
 
-factory PostShippingRatesShippingRateTokenRequest.fromJson(Map<String, dynamic> json) { return PostShippingRatesShippingRateTokenRequest(
+factory PostShippingRatesShippingRateTokenRequest.fromJson(Map<String, dynamic> json) {return PostShippingRatesShippingRateTokenRequest(
   active: json['active'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   fixedAmount: json['fixed_amount'] != null ? PostShippingRatesShippingRateTokenRequestFixedAmount.fromJson(json['fixed_amount'] as Map<String, dynamic>) : null,
   metadata: json['metadata'] != null ? PostShippingRatesShippingRateTokenRequestMetadata.fromJson(json['metadata']) : null,
   taxBehavior: json['tax_behavior'] != null ? PostShippingRatesShippingRateTokenRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
-); }
+);}
 
 /// Whether the shipping rate can be used for new purchases. Defaults to `true`.
 final bool? active;
@@ -53,28 +53,28 @@ final PostShippingRatesShippingRateTokenRequestMetadata? metadata;
 /// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
 final PostShippingRatesShippingRateTokenRequestTaxBehavior? taxBehavior;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'expand': ?expand,
   if (fixedAmount != null) 'fixed_amount': fixedAmount?.toJson(),
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'expand', 'fixed_amount', 'metadata', 'tax_behavior'}.contains(key)); } 
-PostShippingRatesShippingRateTokenRequest copyWith({bool? Function()? active, List<String>? Function()? expand, PostShippingRatesShippingRateTokenRequestFixedAmount? Function()? fixedAmount, PostShippingRatesShippingRateTokenRequestMetadata? Function()? metadata, PostShippingRatesShippingRateTokenRequestTaxBehavior? Function()? taxBehavior, }) { return PostShippingRatesShippingRateTokenRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'expand', 'fixed_amount', 'metadata', 'tax_behavior'}.contains(key));}
+PostShippingRatesShippingRateTokenRequest copyWith({bool? Function()? active, List<String>? Function()? expand, PostShippingRatesShippingRateTokenRequestFixedAmount? Function()? fixedAmount, PostShippingRatesShippingRateTokenRequestMetadata? Function()? metadata, PostShippingRatesShippingRateTokenRequestTaxBehavior? Function()? taxBehavior, }) {return PostShippingRatesShippingRateTokenRequest(
   active: active != null ? active() : this.active,
   expand: expand != null ? expand() : this.expand,
   fixedAmount: fixedAmount != null ? fixedAmount() : this.fixedAmount,
   metadata: metadata != null ? metadata() : this.metadata,
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostShippingRatesShippingRateTokenRequest &&
           active == other.active &&
           listEquals(expand, other.expand) &&
           fixedAmount == other.fixedAmount &&
           metadata == other.metadata &&
-          taxBehavior == other.taxBehavior; } 
-@override int get hashCode { return Object.hash(active, Object.hashAll(expand ?? const []), fixedAmount, metadata, taxBehavior); } 
-@override String toString() { return 'PostShippingRatesShippingRateTokenRequest(active: $active, expand: $expand, fixedAmount: $fixedAmount, metadata: $metadata, taxBehavior: $taxBehavior)'; } 
- }
+          taxBehavior == other.taxBehavior;}
+@override int get hashCode {return Object.hash(active, Object.hashAll(expand ?? const []), fixedAmount, metadata, taxBehavior);}
+@override String toString() {return 'PostShippingRatesShippingRateTokenRequest(active: $active, expand: $expand, fixedAmount: $fixedAmount, metadata: $metadata, taxBehavior: $taxBehavior)';}
+}

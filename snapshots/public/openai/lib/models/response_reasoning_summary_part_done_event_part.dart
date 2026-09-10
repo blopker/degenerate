@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the summary part. Always `summary_text`.
 @immutable final class ResponseReasoningSummaryPartDoneEventPartType {const ResponseReasoningSummaryPartDoneEventPartType._(this.value);
 
-factory ResponseReasoningSummaryPartDoneEventPartType.fromJson(String json) { return switch (json) {
+factory ResponseReasoningSummaryPartDoneEventPartType.fromJson(String json) {return switch (json) {
   'summary_text' => summaryText,
   _ => ResponseReasoningSummaryPartDoneEventPartType._(json),
-}; }
+};}
 
 static const ResponseReasoningSummaryPartDoneEventPartType summaryText = ResponseReasoningSummaryPartDoneEventPartType._('summary_text');
 
@@ -14,22 +14,22 @@ static const List<ResponseReasoningSummaryPartDoneEventPartType> values = [summa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseReasoningSummaryPartDoneEventPartType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseReasoningSummaryPartDoneEventPartType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResponseReasoningSummaryPartDoneEventPartType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ResponseReasoningSummaryPartDoneEventPartType($value)';}
+}
 /// The completed summary part.
 /// 
 @immutable final class ResponseReasoningSummaryPartDoneEventPart {const ResponseReasoningSummaryPartDoneEventPart({required this.type, required this.text, });
 
-factory ResponseReasoningSummaryPartDoneEventPart.fromJson(Map<String, dynamic> json) { return ResponseReasoningSummaryPartDoneEventPart(
+factory ResponseReasoningSummaryPartDoneEventPart.fromJson(Map<String, dynamic> json) {return ResponseReasoningSummaryPartDoneEventPart(
   type: ResponseReasoningSummaryPartDoneEventPartType.fromJson(json['type'] as String),
   text: json['text'] as String,
-); }
+);}
 
 /// The type of the summary part. Always `summary_text`.
 final ResponseReasoningSummaryPartDoneEventPartType type;
@@ -37,20 +37,20 @@ final ResponseReasoningSummaryPartDoneEventPartType type;
 /// The text of the summary part.
 final String text;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'text': text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('text') && json['text'] is String; } 
-ResponseReasoningSummaryPartDoneEventPart copyWith({ResponseReasoningSummaryPartDoneEventPartType? type, String? text, }) { return ResponseReasoningSummaryPartDoneEventPart(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('text') && json['text'] is String;}
+ResponseReasoningSummaryPartDoneEventPart copyWith({ResponseReasoningSummaryPartDoneEventPartType? type, String? text, }) {return ResponseReasoningSummaryPartDoneEventPart(
   type: type ?? this.type,
   text: text ?? this.text,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseReasoningSummaryPartDoneEventPart &&
           type == other.type &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(type, text); } 
-@override String toString() { return 'ResponseReasoningSummaryPartDoneEventPart(type: $type, text: $text)'; } 
- }
+          text == other.text;}
+@override int get hashCode {return Object.hash(type, text);}
+@override String toString() {return 'ResponseReasoningSummaryPartDoneEventPart(type: $type, text: $text)';}
+}

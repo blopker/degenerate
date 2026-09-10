@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of credit the user is receiving.
 @immutable final class SecurityAdvisoryCreditTypes {const SecurityAdvisoryCreditTypes._(this.value);
 
-factory SecurityAdvisoryCreditTypes.fromJson(String json) { return switch (json) {
+factory SecurityAdvisoryCreditTypes.fromJson(String json) {return switch (json) {
   'analyst' => analyst,
   'finder' => finder,
   'reporter' => reporter,
@@ -15,7 +15,7 @@ factory SecurityAdvisoryCreditTypes.fromJson(String json) { return switch (json)
   'sponsor' => sponsor,
   'other' => $other,
   _ => SecurityAdvisoryCreditTypes._(json),
-}; }
+};}
 
 static const SecurityAdvisoryCreditTypes analyst = SecurityAdvisoryCreditTypes._('analyst');
 
@@ -41,11 +41,11 @@ static const List<SecurityAdvisoryCreditTypes> values = [analyst, finder, report
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecurityAdvisoryCreditTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecurityAdvisoryCreditTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SecurityAdvisoryCreditTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SecurityAdvisoryCreditTypes($value)';}
+}

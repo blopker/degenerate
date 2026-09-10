@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'errors.dart';/// An error response from the Stripe API
 @immutable final class ErrorModel {const ErrorModel({required this.error});
 
-factory ErrorModel.fromJson(Map<String, dynamic> json) { return ErrorModel(
+factory ErrorModel.fromJson(Map<String, dynamic> json) {return ErrorModel(
   error: Errors.fromJson(json['error'] as Map<String, dynamic>),
-); }
+);}
 
 final Errors error;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error': error.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('error'); } 
-ErrorModel copyWith({Errors? error}) { return ErrorModel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('error');}
+ErrorModel copyWith({Errors? error}) {return ErrorModel(
   error: error ?? this.error,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ErrorModel &&
-          error == other.error; } 
-@override int get hashCode { return error.hashCode; } 
-@override String toString() { return 'ErrorModel(error: $error)'; } 
- }
+          error == other.error;}
+@override int get hashCode {return error.hashCode;}
+@override String toString() {return 'ErrorModel(error: $error)';}
+}

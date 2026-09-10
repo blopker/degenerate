@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'link.dart';@immutable final class PullRequestWebhookLinks {const PullRequestWebhookLinks({required this.comments, required this.commits, required this.statuses, required this.html, required this.issue, required this.reviewComments, required this.reviewComment, required this.self, });
 
-factory PullRequestWebhookLinks.fromJson(Map<String, dynamic> json) { return PullRequestWebhookLinks(
+factory PullRequestWebhookLinks.fromJson(Map<String, dynamic> json) {return PullRequestWebhookLinks(
   comments: Link.fromJson(json['comments'] as Map<String, dynamic>),
   commits: Link.fromJson(json['commits'] as Map<String, dynamic>),
   statuses: Link.fromJson(json['statuses'] as Map<String, dynamic>),
@@ -11,7 +11,7 @@ factory PullRequestWebhookLinks.fromJson(Map<String, dynamic> json) { return Pul
   reviewComments: Link.fromJson(json['review_comments'] as Map<String, dynamic>),
   reviewComment: Link.fromJson(json['review_comment'] as Map<String, dynamic>),
   self: Link.fromJson(json['self'] as Map<String, dynamic>),
-); }
+);}
 
 final Link comments;
 
@@ -29,7 +29,7 @@ final Link reviewComment;
 
 final Link self;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'comments': comments.toJson(),
   'commits': commits.toJson(),
   'statuses': statuses.toJson(),
@@ -38,16 +38,16 @@ Map<String, dynamic> toJson() { return {
   'review_comments': reviewComments.toJson(),
   'review_comment': reviewComment.toJson(),
   'self': self.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('comments') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('comments') &&
       json.containsKey('commits') &&
       json.containsKey('statuses') &&
       json.containsKey('html') &&
       json.containsKey('issue') &&
       json.containsKey('review_comments') &&
       json.containsKey('review_comment') &&
-      json.containsKey('self'); } 
-PullRequestWebhookLinks copyWith({Link? comments, Link? commits, Link? statuses, Link? html, Link? issue, Link? reviewComments, Link? reviewComment, Link? self, }) { return PullRequestWebhookLinks(
+      json.containsKey('self');}
+PullRequestWebhookLinks copyWith({Link? comments, Link? commits, Link? statuses, Link? html, Link? issue, Link? reviewComments, Link? reviewComment, Link? self, }) {return PullRequestWebhookLinks(
   comments: comments ?? this.comments,
   commits: commits ?? this.commits,
   statuses: statuses ?? this.statuses,
@@ -56,8 +56,8 @@ PullRequestWebhookLinks copyWith({Link? comments, Link? commits, Link? statuses,
   reviewComments: reviewComments ?? this.reviewComments,
   reviewComment: reviewComment ?? this.reviewComment,
   self: self ?? this.self,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PullRequestWebhookLinks &&
           comments == other.comments &&
           commits == other.commits &&
@@ -66,7 +66,7 @@ PullRequestWebhookLinks copyWith({Link? comments, Link? commits, Link? statuses,
           issue == other.issue &&
           reviewComments == other.reviewComments &&
           reviewComment == other.reviewComment &&
-          self == other.self; } 
-@override int get hashCode { return Object.hash(comments, commits, statuses, html, issue, reviewComments, reviewComment, self); } 
-@override String toString() { return 'PullRequestWebhookLinks(comments: $comments, commits: $commits, statuses: $statuses, html: $html, issue: $issue, reviewComments: $reviewComments, reviewComment: $reviewComment, self: $self)'; } 
- }
+          self == other.self;}
+@override int get hashCode {return Object.hash(comments, commits, statuses, html, issue, reviewComments, reviewComment, self);}
+@override String toString() {return 'PullRequestWebhookLinks(comments: $comments, commits: $commits, statuses: $statuses, html: $html, issue: $issue, reviewComments: $reviewComments, reviewComment: $reviewComment, self: $self)';}
+}

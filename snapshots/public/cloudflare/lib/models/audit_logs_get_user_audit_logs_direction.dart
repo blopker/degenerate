@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Changes the direction of the chronological sorting.
 @immutable final class AuditLogsGetUserAuditLogsDirection {const AuditLogsGetUserAuditLogsDirection._(this.value);
 
-factory AuditLogsGetUserAuditLogsDirection.fromJson(String json) { return switch (json) {
+factory AuditLogsGetUserAuditLogsDirection.fromJson(String json) {return switch (json) {
   'desc' => desc,
   'asc' => asc,
   _ => AuditLogsGetUserAuditLogsDirection._(json),
-}; }
+};}
 
 static const AuditLogsGetUserAuditLogsDirection desc = AuditLogsGetUserAuditLogsDirection._('desc');
 
@@ -17,11 +17,11 @@ static const List<AuditLogsGetUserAuditLogsDirection> values = [desc, asc];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AuditLogsGetUserAuditLogsDirection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AuditLogsGetUserAuditLogsDirection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AuditLogsGetUserAuditLogsDirection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AuditLogsGetUserAuditLogsDirection($value)';}
+}

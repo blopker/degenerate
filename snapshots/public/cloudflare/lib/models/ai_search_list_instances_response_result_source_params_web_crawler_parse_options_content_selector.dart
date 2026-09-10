@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector {const AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector({required this.path, required this.selector, });
 
-factory AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector.fromJson(Map<String, dynamic> json) { return AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector(
+factory AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector.fromJson(Map<String, dynamic> json) {return AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector(
   path: json['path'] as String,
   selector: json['selector'] as String,
-); }
+);}
 
 /// Glob pattern to match against the page URL path. Uses standard glob syntax: * matches within a segment, ** crosses directories.
 final String path;
@@ -13,20 +13,20 @@ final String path;
 /// CSS selector to extract content from pages matching the path pattern. Supports standard CSS selectors including class, ID, element, and attribute selectors.
 final String selector;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'path': path,
   'selector': selector,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String &&
-      json.containsKey('selector') && json['selector'] is String; } 
-AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector copyWith({String? path, String? selector, }) { return AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('path') && json['path'] is String &&
+      json.containsKey('selector') && json['selector'] is String;}
+AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector copyWith({String? path, String? selector, }) {return AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector(
   path: path ?? this.path,
   selector: selector ?? this.selector,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector &&
           path == other.path &&
-          selector == other.selector; } 
-@override int get hashCode { return Object.hash(path, selector); } 
-@override String toString() { return 'AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector(path: $path, selector: $selector)'; } 
- }
+          selector == other.selector;}
+@override int get hashCode {return Object.hash(path, selector);}
+@override String toString() {return 'AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector(path: $path, selector: $selector)';}
+}

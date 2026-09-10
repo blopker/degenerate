@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_query_results_compare_series_data_groups.dart';@immutable final class WorkersObservabilityQueryResultsCompareSeriesData {const WorkersObservabilityQueryResultsCompareSeriesData({required this.count, required this.firstSeen, required this.interval, required this.lastSeen, required this.sampleInterval, required this.value, this.groups, });
 
-factory WorkersObservabilityQueryResultsCompareSeriesData.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsCompareSeriesData(
+factory WorkersObservabilityQueryResultsCompareSeriesData.fromJson(Map<String, dynamic> json) {return WorkersObservabilityQueryResultsCompareSeriesData(
   count: (json['count'] as num).toDouble(),
   firstSeen: json['firstSeen'] as String,
   groups: (json['groups'] as List<dynamic>?)?.map((e) => WorkersObservabilityQueryResultsCompareSeriesDataGroups.fromJson(e as Map<String, dynamic>)).toList(),
@@ -10,7 +10,7 @@ factory WorkersObservabilityQueryResultsCompareSeriesData.fromJson(Map<String, d
   lastSeen: json['lastSeen'] as String,
   sampleInterval: (json['sampleInterval'] as num).toDouble(),
   value: (json['value'] as num).toDouble(),
-); }
+);}
 
 final double count;
 
@@ -26,7 +26,7 @@ final double sampleInterval;
 
 final double value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': count,
   'firstSeen': firstSeen,
   if (groups != null) 'groups': groups?.map((e) => e.toJson()).toList(),
@@ -34,14 +34,14 @@ Map<String, dynamic> toJson() { return {
   'lastSeen': lastSeen,
   'sampleInterval': sampleInterval,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('count') && json['count'] is num &&
       json.containsKey('firstSeen') && json['firstSeen'] is String &&
       json.containsKey('interval') && json['interval'] is num &&
       json.containsKey('lastSeen') && json['lastSeen'] is String &&
       json.containsKey('sampleInterval') && json['sampleInterval'] is num &&
-      json.containsKey('value') && json['value'] is num; } 
-WorkersObservabilityQueryResultsCompareSeriesData copyWith({double? count, String? firstSeen, List<WorkersObservabilityQueryResultsCompareSeriesDataGroups>? Function()? groups, double? interval, String? lastSeen, double? sampleInterval, double? value, }) { return WorkersObservabilityQueryResultsCompareSeriesData(
+      json.containsKey('value') && json['value'] is num;}
+WorkersObservabilityQueryResultsCompareSeriesData copyWith({double? count, String? firstSeen, List<WorkersObservabilityQueryResultsCompareSeriesDataGroups>? Function()? groups, double? interval, String? lastSeen, double? sampleInterval, double? value, }) {return WorkersObservabilityQueryResultsCompareSeriesData(
   count: count ?? this.count,
   firstSeen: firstSeen ?? this.firstSeen,
   groups: groups != null ? groups() : this.groups,
@@ -49,8 +49,8 @@ WorkersObservabilityQueryResultsCompareSeriesData copyWith({double? count, Strin
   lastSeen: lastSeen ?? this.lastSeen,
   sampleInterval: sampleInterval ?? this.sampleInterval,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersObservabilityQueryResultsCompareSeriesData &&
           count == other.count &&
           firstSeen == other.firstSeen &&
@@ -58,7 +58,7 @@ WorkersObservabilityQueryResultsCompareSeriesData copyWith({double? count, Strin
           interval == other.interval &&
           lastSeen == other.lastSeen &&
           sampleInterval == other.sampleInterval &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(count, firstSeen, Object.hashAll(groups ?? const []), interval, lastSeen, sampleInterval, value); } 
-@override String toString() { return 'WorkersObservabilityQueryResultsCompareSeriesData(count: $count, firstSeen: $firstSeen, groups: $groups, interval: $interval, lastSeen: $lastSeen, sampleInterval: $sampleInterval, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(count, firstSeen, Object.hashAll(groups ?? const []), interval, lastSeen, sampleInterval, value);}
+@override String toString() {return 'WorkersObservabilityQueryResultsCompareSeriesData(count: $count, firstSeen: $firstSeen, groups: $groups, interval: $interval, lastSeen: $lastSeen, sampleInterval: $sampleInterval, value: $value)';}
+}

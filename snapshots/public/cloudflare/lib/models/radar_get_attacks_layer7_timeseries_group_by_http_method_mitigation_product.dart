@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct {const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct._(this.value);
 
-factory RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct.fromJson(String json) {return switch (json) {
   'DDOS' => ddos,
   'WAF' => waf,
   'BOT_MANAGEMENT' => botManagement,
@@ -11,7 +11,7 @@ factory RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct.fromJs
   'API_SHIELD' => apiShield,
   'DATA_LOSS_PREVENTION' => dataLossPrevention,
   _ => RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct ddos = RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct._('DDOS');
 
@@ -31,11 +31,11 @@ static const List<RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProd
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct($value)';}
+}

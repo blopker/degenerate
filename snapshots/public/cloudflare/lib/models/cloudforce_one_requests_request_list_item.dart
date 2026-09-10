@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_priority.dart';import 'cloudforce_one_requests_request_readable_id.dart';import 'cloudforce_one_requests_request_status.dart';import 'cloudforce_one_requests_request_summary.dart';import 'cloudforce_one_requests_request_type.dart';import 'cloudforce_one_requests_time.dart';import 'cloudforce_one_requests_tlp.dart';import 'cloudforce_one_requests_uuid.dart';@immutable final class CloudforceOneRequestsRequestListItem {const CloudforceOneRequestsRequestListItem({required this.created, required this.id, required this.priority, required this.request, required this.summary, required this.tlp, required this.updated, this.completed, this.messageTokens, this.readableId, this.status, this.tokens, });
 
-factory CloudforceOneRequestsRequestListItem.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsRequestListItem(
+factory CloudforceOneRequestsRequestListItem.fromJson(Map<String, dynamic> json) {return CloudforceOneRequestsRequestListItem(
   completed: json['completed'] != null ? CloudforceOneRequestsTime.fromJson(json['completed'] as String) : null,
   created: CloudforceOneRequestsTime.fromJson(json['created'] as String),
   id: CloudforceOneRequestsUuid.fromJson(json['id'] as String),
@@ -15,7 +15,7 @@ factory CloudforceOneRequestsRequestListItem.fromJson(Map<String, dynamic> json)
   tlp: CloudforceOneRequestsTlp.fromJson(json['tlp'] as String),
   tokens: json['tokens'] != null ? (json['tokens'] as num).toInt() : null,
   updated: CloudforceOneRequestsTime.fromJson(json['updated'] as String),
-); }
+);}
 
 /// Request completion time.
 final CloudforceOneRequestsTime? completed;
@@ -46,7 +46,7 @@ final int? tokens;
 /// Request last updated time.
 final CloudforceOneRequestsTime updated;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (completed != null) 'completed': completed?.toJson(),
   'created': created.toJson(),
   'id': id.toJson(),
@@ -59,15 +59,15 @@ Map<String, dynamic> toJson() { return {
   'tlp': tlp.toJson(),
   'tokens': ?tokens,
   'updated': updated.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') &&
       json.containsKey('id') &&
       json.containsKey('priority') &&
       json.containsKey('request') &&
       json.containsKey('summary') &&
       json.containsKey('tlp') &&
-      json.containsKey('updated'); } 
-CloudforceOneRequestsRequestListItem copyWith({CloudforceOneRequestsTime? Function()? completed, CloudforceOneRequestsTime? created, CloudforceOneRequestsUuid? id, int? Function()? messageTokens, CloudforceOneRequestsPriority? priority, CloudforceOneRequestsRequestReadableId? Function()? readableId, CloudforceOneRequestsRequestType? request, CloudforceOneRequestsRequestStatus? Function()? status, CloudforceOneRequestsRequestSummary? summary, CloudforceOneRequestsTlp? tlp, int? Function()? tokens, CloudforceOneRequestsTime? updated, }) { return CloudforceOneRequestsRequestListItem(
+      json.containsKey('updated');}
+CloudforceOneRequestsRequestListItem copyWith({CloudforceOneRequestsTime? Function()? completed, CloudforceOneRequestsTime? created, CloudforceOneRequestsUuid? id, int? Function()? messageTokens, CloudforceOneRequestsPriority? priority, CloudforceOneRequestsRequestReadableId? Function()? readableId, CloudforceOneRequestsRequestType? request, CloudforceOneRequestsRequestStatus? Function()? status, CloudforceOneRequestsRequestSummary? summary, CloudforceOneRequestsTlp? tlp, int? Function()? tokens, CloudforceOneRequestsTime? updated, }) {return CloudforceOneRequestsRequestListItem(
   completed: completed != null ? completed() : this.completed,
   created: created ?? this.created,
   id: id ?? this.id,
@@ -80,8 +80,8 @@ CloudforceOneRequestsRequestListItem copyWith({CloudforceOneRequestsTime? Functi
   tlp: tlp ?? this.tlp,
   tokens: tokens != null ? tokens() : this.tokens,
   updated: updated ?? this.updated,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CloudforceOneRequestsRequestListItem &&
           completed == other.completed &&
           created == other.created &&
@@ -94,7 +94,7 @@ CloudforceOneRequestsRequestListItem copyWith({CloudforceOneRequestsTime? Functi
           summary == other.summary &&
           tlp == other.tlp &&
           tokens == other.tokens &&
-          updated == other.updated; } 
-@override int get hashCode { return Object.hash(completed, created, id, messageTokens, priority, readableId, request, status, summary, tlp, tokens, updated); } 
-@override String toString() { return 'CloudforceOneRequestsRequestListItem(completed: $completed, created: $created, id: $id, messageTokens: $messageTokens, priority: $priority, readableId: $readableId, request: $request, status: $status, summary: $summary, tlp: $tlp, tokens: $tokens, updated: $updated)'; } 
- }
+          updated == other.updated;}
+@override int get hashCode {return Object.hash(completed, created, id, messageTokens, priority, readableId, request, status, summary, tlp, tokens, updated);}
+@override String toString() {return 'CloudforceOneRequestsRequestListItem(completed: $completed, created: $created, id: $id, messageTokens: $messageTokens, priority: $priority, readableId: $readableId, request: $request, status: $status, summary: $summary, tlp: $tlp, tokens: $tokens, updated: $updated)';}
+}

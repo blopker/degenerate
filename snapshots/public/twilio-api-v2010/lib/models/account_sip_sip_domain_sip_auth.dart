@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountSipSipDomainSipAuth {const AccountSipSipDomainSipAuth();
 
-factory AccountSipSipDomainSipAuth.fromJson(Map<String, dynamic> _) { return const AccountSipSipDomainSipAuth(); }
+factory AccountSipSipDomainSipAuth.fromJson(Map<String, dynamic> _) {return const AccountSipSipDomainSipAuth();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountSipSipDomainSipAuth copyWith() { return const AccountSipSipDomainSipAuth(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+AccountSipSipDomainSipAuth copyWith() {return const AccountSipSipDomainSipAuth(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is AccountSipSipDomainSipAuth; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'AccountSipSipDomainSipAuth()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is AccountSipSipDomainSipAuth;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'AccountSipSipDomainSipAuth()';}
+}

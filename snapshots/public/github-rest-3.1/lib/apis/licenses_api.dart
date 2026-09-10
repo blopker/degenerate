@@ -13,7 +13,7 @@ final class LicensesApi with ApiExecutor {const LicensesApi(this.apiConfig);
 /// Lists the most commonly used licenses on GitHub. For more information, see "[Licensing a repository ](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)."
 ///
 /// `GET /licenses`
-Future<ApiResult<List<LicenseSimple>, Never>> licensesGetAllCommonlyUsed({bool? featured, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<LicenseSimple>, Never>> licensesGetAllCommonlyUsed({bool? featured, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (featured != null) {
   queryParameters['featured'] = featured.toString();
@@ -43,13 +43,13 @@ final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => LicenseSimple.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Get a license
 ///
 /// Gets information about a specific license. For more information, see "[Licensing a repository ](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)."
 ///
 /// `GET /licenses/{license}`
-Future<ApiResult<License, LicensesGetError>> licensesGet({required String license, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<License, LicensesGetError>> licensesGet({required String license, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -66,7 +66,7 @@ return License.fromJson(json as Map<String, dynamic>);
   },
   onError: LicensesGetError.parse,
 );
- } 
+}
 /// Get the license for a repository
 ///
 /// This method returns the contents of the repository's license file, if one is detected.
@@ -77,7 +77,7 @@ return License.fromJson(json as Map<String, dynamic>);
 /// - **`application/vnd.github.html+json`**: Returns the license contents in HTML. Markup languages are rendered to HTML using GitHub's open-source [Markup library](https://github.com/github/markup).
 ///
 /// `GET /repos/{owner}/{repo}/license`
-Future<ApiResult<LicenseContent, BasicError>> licensesGetForRepo({required String owner, required String repo, CodeScanningRef? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<LicenseContent, BasicError>> licensesGetForRepo({required String owner, required String repo, CodeScanningRef? ref, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ref != null) {
   queryParameters['ref'] = ref.toString();
@@ -111,5 +111,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

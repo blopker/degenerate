@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxIdsRequestOwnerType {const PostTaxIdsRequestOwnerType._(this.value);
 
-factory PostTaxIdsRequestOwnerType.fromJson(String json) { return switch (json) {
+factory PostTaxIdsRequestOwnerType.fromJson(String json) {return switch (json) {
   'account' => account,
   'application' => application,
   'customer' => customer,
   'self' => self,
   _ => PostTaxIdsRequestOwnerType._(json),
-}; }
+};}
 
 static const PostTaxIdsRequestOwnerType account = PostTaxIdsRequestOwnerType._('account');
 
@@ -22,23 +22,23 @@ static const List<PostTaxIdsRequestOwnerType> values = [account, application, cu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTaxIdsRequestOwnerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTaxIdsRequestOwnerType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTaxIdsRequestOwnerType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTaxIdsRequestOwnerType($value)';}
+}
 /// The account or customer the tax ID belongs to. Defaults to `owner[type]=self`.
 @immutable final class PostTaxIdsRequestOwner {const PostTaxIdsRequestOwner({required this.type, this.account, this.customer, this.customerAccount, });
 
-factory PostTaxIdsRequestOwner.fromJson(Map<String, dynamic> json) { return PostTaxIdsRequestOwner(
+factory PostTaxIdsRequestOwner.fromJson(Map<String, dynamic> json) {return PostTaxIdsRequestOwner(
   account: json['account'] as String?,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
   type: PostTaxIdsRequestOwnerType.fromJson(json['type'] as String),
-); }
+);}
 
 final String? account;
 
@@ -48,25 +48,25 @@ final String? customerAccount;
 
 final PostTaxIdsRequestOwnerType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': ?account,
   'customer': ?customer,
   'customer_account': ?customerAccount,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostTaxIdsRequestOwner copyWith({String? Function()? account, String? Function()? customer, String? Function()? customerAccount, PostTaxIdsRequestOwnerType? type, }) { return PostTaxIdsRequestOwner(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostTaxIdsRequestOwner copyWith({String? Function()? account, String? Function()? customer, String? Function()? customerAccount, PostTaxIdsRequestOwnerType? type, }) {return PostTaxIdsRequestOwner(
   account: account != null ? account() : this.account,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTaxIdsRequestOwner &&
           account == other.account &&
           customer == other.customer &&
           customerAccount == other.customerAccount &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, customer, customerAccount, type); } 
-@override String toString() { return 'PostTaxIdsRequestOwner(account: $account, customer: $customer, customerAccount: $customerAccount, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(account, customer, customerAccount, type);}
+@override String toString() {return 'PostTaxIdsRequestOwner(account: $account, customer: $customer, customerAccount: $customerAccount, type: $type)';}
+}

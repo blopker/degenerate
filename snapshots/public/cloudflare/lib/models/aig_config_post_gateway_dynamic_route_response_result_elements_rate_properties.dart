@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigPostGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType {const AigConfigPostGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType._(this.value);
 
-factory AigConfigPostGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType.fromJson(String json) { return switch (json) {
+factory AigConfigPostGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType.fromJson(String json) {return switch (json) {
   'count' => count,
   'cost' => cost,
   _ => AigConfigPostGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType._(json),
-}; }
+};}
 
 static const AigConfigPostGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType count = AigConfigPostGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType._('count');
 
@@ -16,22 +16,22 @@ static const List<AigConfigPostGatewayDynamicRouteResponseResultElementsRateProp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigPostGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigPostGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigPostGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigPostGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType($value)';}
+}
 @immutable final class AigConfigPostGatewayDynamicRouteResponseResultElementsRateProperties {const AigConfigPostGatewayDynamicRouteResponseResultElementsRateProperties({required this.key, required this.limit, required this.limitType, required this.window, });
 
-factory AigConfigPostGatewayDynamicRouteResponseResultElementsRateProperties.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteResponseResultElementsRateProperties(
+factory AigConfigPostGatewayDynamicRouteResponseResultElementsRateProperties.fromJson(Map<String, dynamic> json) {return AigConfigPostGatewayDynamicRouteResponseResultElementsRateProperties(
   key: json['key'] as String,
   limit: (json['limit'] as num).toDouble(),
   limitType: AigConfigPostGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType.fromJson(json['limitType'] as String),
   window: (json['window'] as num).toDouble(),
-); }
+);}
 
 final String key;
 
@@ -41,28 +41,28 @@ final AigConfigPostGatewayDynamicRouteResponseResultElementsRatePropertiesLimitT
 
 final double window;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
   'limit': limit,
   'limitType': limitType.toJson(),
   'window': window,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
       json.containsKey('limit') && json['limit'] is num &&
       json.containsKey('limitType') &&
-      json.containsKey('window') && json['window'] is num; } 
-AigConfigPostGatewayDynamicRouteResponseResultElementsRateProperties copyWith({String? key, double? limit, AigConfigPostGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType? limitType, double? window, }) { return AigConfigPostGatewayDynamicRouteResponseResultElementsRateProperties(
+      json.containsKey('window') && json['window'] is num;}
+AigConfigPostGatewayDynamicRouteResponseResultElementsRateProperties copyWith({String? key, double? limit, AigConfigPostGatewayDynamicRouteResponseResultElementsRatePropertiesLimitType? limitType, double? window, }) {return AigConfigPostGatewayDynamicRouteResponseResultElementsRateProperties(
   key: key ?? this.key,
   limit: limit ?? this.limit,
   limitType: limitType ?? this.limitType,
   window: window ?? this.window,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigPostGatewayDynamicRouteResponseResultElementsRateProperties &&
           key == other.key &&
           limit == other.limit &&
           limitType == other.limitType &&
-          window == other.window; } 
-@override int get hashCode { return Object.hash(key, limit, limitType, window); } 
-@override String toString() { return 'AigConfigPostGatewayDynamicRouteResponseResultElementsRateProperties(key: $key, limit: $limit, limitType: $limitType, window: $window)'; } 
- }
+          window == other.window;}
+@override int get hashCode {return Object.hash(key, limit, limitType, window);}
+@override String toString() {return 'AigConfigPostGatewayDynamicRouteResponseResultElementsRateProperties(key: $key, limit: $limit, limitType: $limitType, window: $window)';}
+}

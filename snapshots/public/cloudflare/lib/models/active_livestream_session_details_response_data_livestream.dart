@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActiveLivestreamSessionDetailsResponseDataLivestreamStatus {const ActiveLivestreamSessionDetailsResponseDataLivestreamStatus._(this.value);
 
-factory ActiveLivestreamSessionDetailsResponseDataLivestreamStatus.fromJson(String json) { return switch (json) {
+factory ActiveLivestreamSessionDetailsResponseDataLivestreamStatus.fromJson(String json) {return switch (json) {
   'LIVE' => live,
   'IDLE' => idle,
   'ERRORED' => errored,
   'INVOKED' => invoked,
   _ => ActiveLivestreamSessionDetailsResponseDataLivestreamStatus._(json),
-}; }
+};}
 
 static const ActiveLivestreamSessionDetailsResponseDataLivestreamStatus live = ActiveLivestreamSessionDetailsResponseDataLivestreamStatus._('LIVE');
 
@@ -22,17 +22,17 @@ static const List<ActiveLivestreamSessionDetailsResponseDataLivestreamStatus> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ActiveLivestreamSessionDetailsResponseDataLivestreamStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ActiveLivestreamSessionDetailsResponseDataLivestreamStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ActiveLivestreamSessionDetailsResponseDataLivestreamStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ActiveLivestreamSessionDetailsResponseDataLivestreamStatus($value)';}
+}
 @immutable final class ActiveLivestreamSessionDetailsResponseDataLivestream {const ActiveLivestreamSessionDetailsResponseDataLivestream({this.createdAt, this.disabled, this.id, this.ingestServer, this.meetingId, this.name, this.playbackUrl, this.status, this.streamKey, this.updatedAt, });
 
-factory ActiveLivestreamSessionDetailsResponseDataLivestream.fromJson(Map<String, dynamic> json) { return ActiveLivestreamSessionDetailsResponseDataLivestream(
+factory ActiveLivestreamSessionDetailsResponseDataLivestream.fromJson(Map<String, dynamic> json) {return ActiveLivestreamSessionDetailsResponseDataLivestream(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   disabled: json['disabled'] as String?,
   id: json['id'] as String?,
@@ -43,7 +43,7 @@ factory ActiveLivestreamSessionDetailsResponseDataLivestream.fromJson(Map<String
   status: json['status'] != null ? ActiveLivestreamSessionDetailsResponseDataLivestreamStatus.fromJson(json['status'] as String) : null,
   streamKey: json['stream_key'] as String?,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+);}
 
 /// Timestamp the object was created at. The time is returned in ISO format.
 final DateTime? createdAt;
@@ -73,7 +73,7 @@ final String? streamKey;
 /// Timestamp the object was updated at. The time is returned in ISO format.
 final DateTime? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'disabled': ?disabled,
   'id': ?id,
@@ -84,9 +84,9 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   'stream_key': ?streamKey,
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'disabled', 'id', 'ingest_server', 'meeting_id', 'name', 'playback_url', 'status', 'stream_key', 'updated_at'}.contains(key)); } 
-ActiveLivestreamSessionDetailsResponseDataLivestream copyWith({DateTime? Function()? createdAt, String? Function()? disabled, String? Function()? id, String? Function()? ingestServer, String? Function()? meetingId, String? Function()? name, String? Function()? playbackUrl, ActiveLivestreamSessionDetailsResponseDataLivestreamStatus? Function()? status, String? Function()? streamKey, DateTime? Function()? updatedAt, }) { return ActiveLivestreamSessionDetailsResponseDataLivestream(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'disabled', 'id', 'ingest_server', 'meeting_id', 'name', 'playback_url', 'status', 'stream_key', 'updated_at'}.contains(key));}
+ActiveLivestreamSessionDetailsResponseDataLivestream copyWith({DateTime? Function()? createdAt, String? Function()? disabled, String? Function()? id, String? Function()? ingestServer, String? Function()? meetingId, String? Function()? name, String? Function()? playbackUrl, ActiveLivestreamSessionDetailsResponseDataLivestreamStatus? Function()? status, String? Function()? streamKey, DateTime? Function()? updatedAt, }) {return ActiveLivestreamSessionDetailsResponseDataLivestream(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   disabled: disabled != null ? disabled() : this.disabled,
   id: id != null ? id() : this.id,
@@ -97,8 +97,8 @@ ActiveLivestreamSessionDetailsResponseDataLivestream copyWith({DateTime? Functio
   status: status != null ? status() : this.status,
   streamKey: streamKey != null ? streamKey() : this.streamKey,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ActiveLivestreamSessionDetailsResponseDataLivestream &&
           createdAt == other.createdAt &&
           disabled == other.disabled &&
@@ -109,7 +109,7 @@ ActiveLivestreamSessionDetailsResponseDataLivestream copyWith({DateTime? Functio
           playbackUrl == other.playbackUrl &&
           status == other.status &&
           streamKey == other.streamKey &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, disabled, id, ingestServer, meetingId, name, playbackUrl, status, streamKey, updatedAt); } 
-@override String toString() { return 'ActiveLivestreamSessionDetailsResponseDataLivestream(createdAt: $createdAt, disabled: $disabled, id: $id, ingestServer: $ingestServer, meetingId: $meetingId, name: $name, playbackUrl: $playbackUrl, status: $status, streamKey: $streamKey, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(createdAt, disabled, id, ingestServer, meetingId, name, playbackUrl, status, streamKey, updatedAt);}
+@override String toString() {return 'ActiveLivestreamSessionDetailsResponseDataLivestream(createdAt: $createdAt, disabled: $disabled, id: $id, ingestServer: $ingestServer, meetingId: $meetingId, name: $name, playbackUrl: $playbackUrl, status: $status, streamKey: $streamKey, updatedAt: $updatedAt)';}
+}

@@ -10,22 +10,22 @@ dynamic toJson() => value;
 /// A scope object represents any resource that can have actions applied against invite.
 @immutable final class IamScopeObject {const IamScopeObject({required this.key});
 
-factory IamScopeObject.fromJson(Map<String, dynamic> json) { return IamScopeObject(
+factory IamScopeObject.fromJson(Map<String, dynamic> json) {return IamScopeObject(
   key: json['key'] != null ? IamScopeObjectKey.fromJson(json['key'] as dynamic) : null,
-); }
+);}
 
 final IamScopeObjectKey? key;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key'); } 
-IamScopeObject copyWith({IamScopeObjectKey? Function()? key}) { return IamScopeObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key');}
+IamScopeObject copyWith({IamScopeObjectKey? Function()? key}) {return IamScopeObject(
   key: key != null ? key() : this.key,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IamScopeObject &&
-          key == other.key; } 
-@override int get hashCode { return key.hashCode; } 
-@override String toString() { return 'IamScopeObject(key: $key)'; } 
- }
+          key == other.key;}
+@override int get hashCode {return key.hashCode;}
+@override String toString() {return 'IamScopeObject(key: $key)';}
+}

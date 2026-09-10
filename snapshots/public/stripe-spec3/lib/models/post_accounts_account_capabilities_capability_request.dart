@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountCapabilitiesCapabilityRequest {const PostAccountsAccountCapabilitiesCapabilityRequest({this.expand, this.requested, });
 
-factory PostAccountsAccountCapabilitiesCapabilityRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountCapabilitiesCapabilityRequest(
+factory PostAccountsAccountCapabilitiesCapabilityRequest.fromJson(Map<String, dynamic> json) {return PostAccountsAccountCapabilitiesCapabilityRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   requested: json['requested'] as bool?,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -15,19 +15,19 @@ final List<String>? expand;
 /// If a capability isn't permanent, you can remove it from the account by passing false. Some capabilities are permanent after they've been requested. Attempting to remove a permanent capability returns an error.
 final bool? requested;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'requested': ?requested,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'requested'}.contains(key)); } 
-PostAccountsAccountCapabilitiesCapabilityRequest copyWith({List<String>? Function()? expand, bool? Function()? requested, }) { return PostAccountsAccountCapabilitiesCapabilityRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand', 'requested'}.contains(key));}
+PostAccountsAccountCapabilitiesCapabilityRequest copyWith({List<String>? Function()? expand, bool? Function()? requested, }) {return PostAccountsAccountCapabilitiesCapabilityRequest(
   expand: expand != null ? expand() : this.expand,
   requested: requested != null ? requested() : this.requested,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountCapabilitiesCapabilityRequest &&
           listEquals(expand, other.expand) &&
-          requested == other.requested; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), requested); } 
-@override String toString() { return 'PostAccountsAccountCapabilitiesCapabilityRequest(expand: $expand, requested: $requested)'; } 
- }
+          requested == other.requested;}
+@override int get hashCode {return Object.hash(Object.hashAll(expand ?? const []), requested);}
+@override String toString() {return 'PostAccountsAccountCapabilitiesCapabilityRequest(expand: $expand, requested: $requested)';}
+}

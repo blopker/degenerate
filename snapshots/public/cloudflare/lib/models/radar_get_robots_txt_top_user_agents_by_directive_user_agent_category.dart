@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by user agent category.
 @immutable final class RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory {const RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory._(this.value);
 
-factory RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory.fromJson(String json) { return switch (json) {
+factory RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory.fromJson(String json) {return switch (json) {
   'AI' => ai,
   _ => RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory._(json),
-}; }
+};}
 
 static const RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory ai = RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory._('AI');
 
@@ -14,11 +14,11 @@ static const List<RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory($value)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_package_published_package_package_version_nuget_metadata_value.dart';import 'webhook_package_published_package_package_version_nuget_metadata_value_variant4.dart';@immutable final class WebhookPackagePublishedPackagePackageVersionNugetMetadata {const WebhookPackagePublishedPackagePackageVersionNugetMetadata({this.id, this.name, this.value, });
 
-factory WebhookPackagePublishedPackagePackageVersionNugetMetadata.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackagePackageVersionNugetMetadata(
+factory WebhookPackagePublishedPackagePackageVersionNugetMetadata.fromJson(Map<String, dynamic> json) {return WebhookPackagePublishedPackagePackageVersionNugetMetadata(
   id: json['id'],
   name: json['name'] as String?,
   value: json['value'] != null ? OneOf4.parse(json['value'], fromA: (v) => v as bool, fromB: (v) => v as String, fromC: (v) => (v as num).toInt(), fromD: (v) => WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4.fromJson(v as Map<String, dynamic>),) : null,
-); }
+);}
 
 /// One of: int, String
 final dynamic id;
@@ -15,22 +15,22 @@ final String? name;
 
 final WebhookPackagePublishedPackagePackageVersionNugetMetadataValue? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'name': ?name,
   if (value != null) 'value': value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'value'}.contains(key)); } 
-WebhookPackagePublishedPackagePackageVersionNugetMetadata copyWith({dynamic Function()? id, String? Function()? name, WebhookPackagePublishedPackagePackageVersionNugetMetadataValue? Function()? value, }) { return WebhookPackagePublishedPackagePackageVersionNugetMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'name', 'value'}.contains(key));}
+WebhookPackagePublishedPackagePackageVersionNugetMetadata copyWith({dynamic Function()? id, String? Function()? name, WebhookPackagePublishedPackagePackageVersionNugetMetadataValue? Function()? value, }) {return WebhookPackagePublishedPackagePackageVersionNugetMetadata(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPackagePublishedPackagePackageVersionNugetMetadata &&
           id == other.id &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, name, value); } 
-@override String toString() { return 'WebhookPackagePublishedPackagePackageVersionNugetMetadata(id: $id, name: $name, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(id, name, value);}
+@override String toString() {return 'WebhookPackagePublishedPackagePackageVersionNugetMetadata(id: $id, name: $name, value: $value)';}
+}

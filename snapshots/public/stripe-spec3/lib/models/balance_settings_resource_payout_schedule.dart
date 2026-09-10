@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// How frequently funds will be paid out. One of `manual` (payouts only created via API call), `daily`, `weekly`, or `monthly`.
 @immutable final class BalanceSettingsResourcePayoutScheduleInterval {const BalanceSettingsResourcePayoutScheduleInterval._(this.value);
 
-factory BalanceSettingsResourcePayoutScheduleInterval.fromJson(String json) { return switch (json) {
+factory BalanceSettingsResourcePayoutScheduleInterval.fromJson(String json) {return switch (json) {
   'daily' => daily,
   'manual' => manual,
   'monthly' => monthly,
   'weekly' => weekly,
   _ => BalanceSettingsResourcePayoutScheduleInterval._(json),
-}; }
+};}
 
 static const BalanceSettingsResourcePayoutScheduleInterval daily = BalanceSettingsResourcePayoutScheduleInterval._('daily');
 
@@ -23,24 +23,24 @@ static const List<BalanceSettingsResourcePayoutScheduleInterval> values = [daily
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BalanceSettingsResourcePayoutScheduleInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BalanceSettingsResourcePayoutScheduleInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BalanceSettingsResourcePayoutScheduleInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BalanceSettingsResourcePayoutScheduleInterval($value)';}
+}
 @immutable final class BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays {const BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays._(this.value);
 
-factory BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays.fromJson(String json) { return switch (json) {
+factory BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays.fromJson(String json) {return switch (json) {
   'friday' => friday,
   'monday' => monday,
   'thursday' => thursday,
   'tuesday' => tuesday,
   'wednesday' => wednesday,
   _ => BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays._(json),
-}; }
+};}
 
 static const BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays friday = BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays._('friday');
 
@@ -56,22 +56,22 @@ static const List<BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays($value)';}
+}
 /// 
 @immutable final class BalanceSettingsResourcePayoutSchedule {const BalanceSettingsResourcePayoutSchedule({this.interval = const Omittable.absent(), this.monthlyPayoutDays, this.weeklyPayoutDays, });
 
-factory BalanceSettingsResourcePayoutSchedule.fromJson(Map<String, dynamic> json) { return BalanceSettingsResourcePayoutSchedule(
+factory BalanceSettingsResourcePayoutSchedule.fromJson(Map<String, dynamic> json) {return BalanceSettingsResourcePayoutSchedule(
   interval: json.containsKey('interval') ? Omittable(json['interval'] != null ? BalanceSettingsResourcePayoutScheduleInterval.fromJson(json['interval'] as String) : null) : const Omittable.absent(),
   monthlyPayoutDays: (json['monthly_payout_days'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   weeklyPayoutDays: (json['weekly_payout_days'] as List<dynamic>?)?.map((e) => BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays.fromJson(e as String)).toList(),
-); }
+);}
 
 /// How frequently funds will be paid out. One of `manual` (payouts only created via API call), `daily`, `weekly`, or `monthly`.
 final Omittable<BalanceSettingsResourcePayoutScheduleInterval?> interval;
@@ -82,22 +82,22 @@ final List<int>? monthlyPayoutDays;
 /// The days of the week when available funds are paid out, specified as an array, for example, [`monday`, `tuesday`]. Only shown if `interval` is weekly.
 final List<BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays>? weeklyPayoutDays;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (interval.isPresent) 'interval': interval.value?.toJson(),
   'monthly_payout_days': ?monthlyPayoutDays,
   if (weeklyPayoutDays != null) 'weekly_payout_days': weeklyPayoutDays?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'interval', 'monthly_payout_days', 'weekly_payout_days'}.contains(key)); } 
-BalanceSettingsResourcePayoutSchedule copyWith({Omittable<BalanceSettingsResourcePayoutScheduleInterval?>? interval, List<int>? Function()? monthlyPayoutDays, List<BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays>? Function()? weeklyPayoutDays, }) { return BalanceSettingsResourcePayoutSchedule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'interval', 'monthly_payout_days', 'weekly_payout_days'}.contains(key));}
+BalanceSettingsResourcePayoutSchedule copyWith({Omittable<BalanceSettingsResourcePayoutScheduleInterval?>? interval, List<int>? Function()? monthlyPayoutDays, List<BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays>? Function()? weeklyPayoutDays, }) {return BalanceSettingsResourcePayoutSchedule(
   interval: interval ?? this.interval,
   monthlyPayoutDays: monthlyPayoutDays != null ? monthlyPayoutDays() : this.monthlyPayoutDays,
   weeklyPayoutDays: weeklyPayoutDays != null ? weeklyPayoutDays() : this.weeklyPayoutDays,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BalanceSettingsResourcePayoutSchedule &&
           interval == other.interval &&
           listEquals(monthlyPayoutDays, other.monthlyPayoutDays) &&
-          listEquals(weeklyPayoutDays, other.weeklyPayoutDays); } 
-@override int get hashCode { return Object.hash(interval, Object.hashAll(monthlyPayoutDays ?? const []), Object.hashAll(weeklyPayoutDays ?? const [])); } 
-@override String toString() { return 'BalanceSettingsResourcePayoutSchedule(interval: $interval, monthlyPayoutDays: $monthlyPayoutDays, weeklyPayoutDays: $weeklyPayoutDays)'; } 
- }
+          listEquals(weeklyPayoutDays, other.weeklyPayoutDays);}
+@override int get hashCode {return Object.hash(interval, Object.hashAll(monthlyPayoutDays ?? const []), Object.hashAll(weeklyPayoutDays ?? const []));}
+@override String toString() {return 'BalanceSettingsResourcePayoutSchedule(interval: $interval, monthlyPayoutDays: $monthlyPayoutDays, weeklyPayoutDays: $weeklyPayoutDays)';}
+}

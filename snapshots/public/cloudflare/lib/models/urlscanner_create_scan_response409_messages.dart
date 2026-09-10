@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerCreateScanResponse409Messages {const UrlscannerCreateScanResponse409Messages({required this.message});
 
-factory UrlscannerCreateScanResponse409Messages.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanResponse409Messages(
+factory UrlscannerCreateScanResponse409Messages.fromJson(Map<String, dynamic> json) {return UrlscannerCreateScanResponse409Messages(
   message: json['message'] as String,
-); }
+);}
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-UrlscannerCreateScanResponse409Messages copyWith({String? message}) { return UrlscannerCreateScanResponse409Messages(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+UrlscannerCreateScanResponse409Messages copyWith({String? message}) {return UrlscannerCreateScanResponse409Messages(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerCreateScanResponse409Messages &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'UrlscannerCreateScanResponse409Messages(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'UrlscannerCreateScanResponse409Messages(message: $message)';}
+}

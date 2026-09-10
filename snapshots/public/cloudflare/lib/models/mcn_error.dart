@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_error_meta.dart';import 'mcn_error_source.dart';@immutable final class McnErrorCode {const McnErrorCode._(this.value);
 
-factory McnErrorCode.fromJson(int json) { return switch (json) {
+factory McnErrorCode.fromJson(int json) {return switch (json) {
   1001 => $1001,
   1002 => $1002,
   1003 => $1003,
@@ -159,7 +159,7 @@ factory McnErrorCode.fromJson(int json) { return switch (json) {
   103007 => $103007,
   103008 => $103008,
   _ => McnErrorCode._(json),
-}; }
+};}
 
 static const McnErrorCode $1001 = McnErrorCode._(1001);
 
@@ -475,23 +475,23 @@ static const List<McnErrorCode> values = [$1001, $1002, $1003, $1004, $1005, $10
 
 final int value;
 
-int toJson() { return value; } 
+int toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnErrorCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'McnErrorCode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is McnErrorCode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'McnErrorCode($value)';}
+}
 @immutable final class McnError {const McnError({required this.code, required this.message, this.documentationUrl, this.meta, this.source, });
 
-factory McnError.fromJson(Map<String, dynamic> json) { return McnError(
+factory McnError.fromJson(Map<String, dynamic> json) {return McnError(
   code: McnErrorCode.fromJson((json['code'] as num).toInt()),
   documentationUrl: json['documentation_url'] as String?,
   message: json['message'] as String,
   meta: json['meta'] != null ? McnErrorMeta.fromJson(json['meta'] as Map<String, dynamic>) : null,
   source: json['source'] != null ? McnErrorSource.fromJson(json['source'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final McnErrorCode code;
 
@@ -503,29 +503,29 @@ final McnErrorMeta? meta;
 
 final McnErrorSource? source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code.toJson(),
   'documentation_url': ?documentationUrl,
   'message': message,
   if (meta != null) 'meta': meta?.toJson(),
   if (source != null) 'source': source?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
-      json.containsKey('message') && json['message'] is String; } 
-McnError copyWith({McnErrorCode? code, String? Function()? documentationUrl, String? message, McnErrorMeta? Function()? meta, McnErrorSource? Function()? source, }) { return McnError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') &&
+      json.containsKey('message') && json['message'] is String;}
+McnError copyWith({McnErrorCode? code, String? Function()? documentationUrl, String? message, McnErrorMeta? Function()? meta, McnErrorSource? Function()? source, }) {return McnError(
   code: code ?? this.code,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
   message: message ?? this.message,
   meta: meta != null ? meta() : this.meta,
   source: source != null ? source() : this.source,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is McnError &&
           code == other.code &&
           documentationUrl == other.documentationUrl &&
           message == other.message &&
           meta == other.meta &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(code, documentationUrl, message, meta, source); } 
-@override String toString() { return 'McnError(code: $code, documentationUrl: $documentationUrl, message: $message, meta: $meta, source: $source)'; } 
- }
+          source == other.source;}
+@override int get hashCode {return Object.hash(code, documentationUrl, message, meta, source);}
+@override String toString() {return 'McnError(code: $code, documentationUrl: $documentationUrl, message: $message, meta: $meta, source: $source)';}
+}

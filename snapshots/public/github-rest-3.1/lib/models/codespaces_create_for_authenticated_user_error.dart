@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class CodespacesCreateForAuthenticatedUserError {const CodespacesCreateForAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static CodespacesCreateForAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static CodespacesCreateForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
 return CodespacesCreateForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
@@ -20,40 +20,40 @@ return CodespacesCreateForAuthenticatedUserError503(CodespacesCreateForAuthentic
 default:
 return CodespacesCreateForAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 401 (application/json).
 final class CodespacesCreateForAuthenticatedUserError401 extends CodespacesCreateForAuthenticatedUserError {const CodespacesCreateForAuthenticatedUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class CodespacesCreateForAuthenticatedUserError403 extends CodespacesCreateForAuthenticatedUserError {const CodespacesCreateForAuthenticatedUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class CodespacesCreateForAuthenticatedUserError404 extends CodespacesCreateForAuthenticatedUserError {const CodespacesCreateForAuthenticatedUserError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 503 (application/json).
 final class CodespacesCreateForAuthenticatedUserError503 extends CodespacesCreateForAuthenticatedUserError {const CodespacesCreateForAuthenticatedUserError503(this.data);
 
 /// The decoded response payload.
 final CodespacesCreateForAuthenticatedUserResponse503 data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class CodespacesCreateForAuthenticatedUserErrorUnknown extends CodespacesCreateForAuthenticatedUserError {const CodespacesCreateForAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

@@ -11,7 +11,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Steering Policy 
 /// - `""`: Will map to `"geo"` if you use `region_pools`/`country_pools`/`pop_pools` otherwise `"off"`.
 @immutable final class LoadBalancingSteeringPolicy {const LoadBalancingSteeringPolicy._(this.value);
 
-factory LoadBalancingSteeringPolicy.fromJson(String json) { return switch (json) {
+factory LoadBalancingSteeringPolicy.fromJson(String json) {return switch (json) {
   'off' => off,
   'geo' => geo,
   'random' => random,
@@ -21,7 +21,7 @@ factory LoadBalancingSteeringPolicy.fromJson(String json) { return switch (json)
   'least_connections' => leastConnections,
   '' => $empty,
   _ => LoadBalancingSteeringPolicy._(json),
-}; }
+};}
 
 static const LoadBalancingSteeringPolicy off = LoadBalancingSteeringPolicy._('off');
 
@@ -43,11 +43,11 @@ static const List<LoadBalancingSteeringPolicy> values = [off, geo, random, dynam
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LoadBalancingSteeringPolicy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LoadBalancingSteeringPolicy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LoadBalancingSteeringPolicy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LoadBalancingSteeringPolicy($value)';}
+}

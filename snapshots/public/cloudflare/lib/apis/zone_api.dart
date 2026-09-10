@@ -15,7 +15,7 @@ final class ZoneApi with ApiExecutor {const ZoneApi(this.apiConfig);
 /// 
 ///
 /// `GET /zones`
-Future<ApiResult<List<ZonesZone>?, ResponseCommonFailure87>> zonesGet({String? name, ZonesGetStatus? status, String? accountId, String? accountName, double? page, double? perPage, ZonesGetOrder? order, ZonesGetDirection? direction, ZonesGetMatch? match, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ZonesZone>?, ResponseCommonFailure87>> zonesGet({String? name, ZonesGetStatus? status, String? accountId, String? accountName, double? page, double? perPage, ZonesGetOrder? order, ZonesGetDirection? direction, ZonesGetMatch? match, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -73,11 +73,11 @@ return null;
 
   },
 );
- } 
+}
 /// Create Zone
 ///
 /// `POST /zones`
-Future<ApiResult<ZonesZone?, ResponseCommonFailure87>> zonesPost({required ZonesPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZonesZone?, ResponseCommonFailure87>> zonesPost({required ZonesPostRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -105,11 +105,11 @@ return null;
 
   },
 );
- } 
+}
 /// Zone Details
 ///
 /// `GET /zones/{zone_id}`
-Future<ApiResult<ZonesZone?, ResponseCommonFailure87>> zones0Get({required ZonesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZonesZone?, ResponseCommonFailure87>> zones0Get({required ZonesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -135,13 +135,13 @@ return null;
 
   },
 );
- } 
+}
 /// Edit Zone
 ///
 /// Edits a zone. Only one zone property can be changed at a time.
 ///
 /// `PATCH /zones/{zone_id}`
-Future<ApiResult<ZonesZone?, ResponseCommonFailure87>> zones0Patch({required ZonesIdentifier zoneId, required Zones0PatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZonesZone?, ResponseCommonFailure87>> zones0Patch({required ZonesIdentifier zoneId, required Zones0PatchRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -169,13 +169,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Zone
 ///
 /// Deletes an existing zone.
 ///
 /// `DELETE /zones/{zone_id}`
-Future<ApiResult<ResponseSingleId8Result?, ResponseCommonFailure87>> zones0Delete({required ZonesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId8Result?, ResponseCommonFailure87>> zones0Delete({required ZonesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -201,7 +201,7 @@ return null;
 
   },
 );
- } 
+}
 /// Rerun the Activation Check
 ///
 /// Triggeres a new activation check for a PENDING Zone. This can be
@@ -209,7 +209,7 @@ return null;
 /// Zones.
 ///
 /// `PUT /zones/{zone_id}/activation_check`
-Future<ApiResult<PutZonesZoneIdActivationCheckResponseResult?, ResponseCommonFailure85>> putZonesZoneIdActivationCheck({required ZoneActivationIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PutZonesZoneIdActivationCheckResponseResult?, ResponseCommonFailure85>> putZonesZoneIdActivationCheck({required ZoneActivationIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -235,7 +235,7 @@ return null;
 
   },
 );
- } 
+}
 /// Purge Cached Content
 ///
 /// ### Purge All Cached Content
@@ -281,7 +281,7 @@ return null;
 /// 
 ///
 /// `POST /zones/{zone_id}/purge_cache`
-Future<ApiResult<ResponseSingleIdResult?, ZonePurgeResponse4xx>> zonePurge({required CachePurgeIdentifier zoneId, required ZonePurgeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleIdResult?, ZonePurgeResponse4xx>> zonePurge({required CachePurgeIdentifier zoneId, required ZonePurgeRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -309,5 +309,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

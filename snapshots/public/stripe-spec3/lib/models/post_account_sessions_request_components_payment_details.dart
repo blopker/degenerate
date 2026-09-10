@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account_sessions_request_components_payment_details_features.dart';@immutable final class PostAccountSessionsRequestComponentsPaymentDetails {const PostAccountSessionsRequestComponentsPaymentDetails({required this.enabled, this.features, });
 
-factory PostAccountSessionsRequestComponentsPaymentDetails.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsPaymentDetails(
+factory PostAccountSessionsRequestComponentsPaymentDetails.fromJson(Map<String, dynamic> json) {return PostAccountSessionsRequestComponentsPaymentDetails(
   enabled: json['enabled'] as bool,
   features: json['features'] != null ? PostAccountSessionsRequestComponentsPaymentDetailsFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final bool enabled;
 
 final PostAccountSessionsRequestComponentsPaymentDetailsFeatures? features;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   if (features != null) 'features': features?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostAccountSessionsRequestComponentsPaymentDetails copyWith({bool? enabled, PostAccountSessionsRequestComponentsPaymentDetailsFeatures? Function()? features, }) { return PostAccountSessionsRequestComponentsPaymentDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+PostAccountSessionsRequestComponentsPaymentDetails copyWith({bool? enabled, PostAccountSessionsRequestComponentsPaymentDetailsFeatures? Function()? features, }) {return PostAccountSessionsRequestComponentsPaymentDetails(
   enabled: enabled ?? this.enabled,
   features: features != null ? features() : this.features,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountSessionsRequestComponentsPaymentDetails &&
           enabled == other.enabled &&
-          features == other.features; } 
-@override int get hashCode { return Object.hash(enabled, features); } 
-@override String toString() { return 'PostAccountSessionsRequestComponentsPaymentDetails(enabled: $enabled, features: $features)'; } 
- }
+          features == other.features;}
+@override int get hashCode {return Object.hash(enabled, features);}
+@override String toString() {return 'PostAccountSessionsRequestComponentsPaymentDetails(enabled: $enabled, features: $features)';}
+}

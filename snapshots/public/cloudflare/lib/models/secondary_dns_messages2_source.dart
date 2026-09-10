@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecondaryDnsMessages2Source {const SecondaryDnsMessages2Source({this.pointer});
 
-factory SecondaryDnsMessages2Source.fromJson(Map<String, dynamic> json) { return SecondaryDnsMessages2Source(
+factory SecondaryDnsMessages2Source.fromJson(Map<String, dynamic> json) {return SecondaryDnsMessages2Source(
   pointer: json['pointer'] as String?,
-); }
+);}
 
 final String? pointer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'pointer': ?pointer,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'pointer'}.contains(key)); } 
-SecondaryDnsMessages2Source copyWith({String? Function()? pointer}) { return SecondaryDnsMessages2Source(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'pointer'}.contains(key));}
+SecondaryDnsMessages2Source copyWith({String? Function()? pointer}) {return SecondaryDnsMessages2Source(
   pointer: pointer != null ? pointer() : this.pointer,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecondaryDnsMessages2Source &&
-          pointer == other.pointer; } 
-@override int get hashCode { return pointer.hashCode; } 
-@override String toString() { return 'SecondaryDnsMessages2Source(pointer: $pointer)'; } 
- }
+          pointer == other.pointer;}
+@override int get hashCode {return pointer.hashCode;}
+@override String toString() {return 'SecondaryDnsMessages2Source(pointer: $pointer)';}
+}

@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class AiSearchInstanceListJobLogsError {const AiSearchInstanceListJobLogsError();
 
 /// Decodes the payload for its declared status and content type.
-static AiSearchInstanceListJobLogsError parse(ApiResponse response) { switch (response.statusCode) {
+static AiSearchInstanceListJobLogsError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
 return AiSearchInstanceListJobLogsError400(AiSearchInstanceListJobLogsResponse400.fromJson(json as Map<String, dynamic>));
@@ -14,26 +14,26 @@ return AiSearchInstanceListJobLogsError500(AiSearchInstanceListJobLogsResponse50
 default:
 return AiSearchInstanceListJobLogsErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class AiSearchInstanceListJobLogsError400 extends AiSearchInstanceListJobLogsError {const AiSearchInstanceListJobLogsError400(this.data);
 
 /// The decoded response payload.
 final AiSearchInstanceListJobLogsResponse400 data;
 
- }
+}
 /// Response for 500 (application/json).
 final class AiSearchInstanceListJobLogsError500 extends AiSearchInstanceListJobLogsError {const AiSearchInstanceListJobLogsError500(this.data);
 
 /// The decoded response payload.
 final AiSearchInstanceListJobLogsResponse500 data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class AiSearchInstanceListJobLogsErrorUnknown extends AiSearchInstanceListJobLogsError {const AiSearchInstanceListJobLogsErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

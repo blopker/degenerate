@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_certificate_logs_response_result_certificate_logs.dart';@immutable final class RadarGetCertificateLogsResponseResult {const RadarGetCertificateLogsResponseResult({required this.certificateLogs});
 
-factory RadarGetCertificateLogsResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetCertificateLogsResponseResult(
+factory RadarGetCertificateLogsResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetCertificateLogsResponseResult(
   certificateLogs: (json['certificateLogs'] as List<dynamic>).map((e) => RadarGetCertificateLogsResponseResultCertificateLogs.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<RadarGetCertificateLogsResponseResultCertificateLogs> certificateLogs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'certificateLogs': certificateLogs.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificateLogs'); } 
-RadarGetCertificateLogsResponseResult copyWith({List<RadarGetCertificateLogsResponseResultCertificateLogs>? certificateLogs}) { return RadarGetCertificateLogsResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificateLogs');}
+RadarGetCertificateLogsResponseResult copyWith({List<RadarGetCertificateLogsResponseResultCertificateLogs>? certificateLogs}) {return RadarGetCertificateLogsResponseResult(
   certificateLogs: certificateLogs ?? this.certificateLogs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetCertificateLogsResponseResult &&
-          listEquals(certificateLogs, other.certificateLogs); } 
-@override int get hashCode { return Object.hashAll(certificateLogs).hashCode; } 
-@override String toString() { return 'RadarGetCertificateLogsResponseResult(certificateLogs: $certificateLogs)'; } 
- }
+          listEquals(certificateLogs, other.certificateLogs);}
+@override int get hashCode {return Object.hashAll(certificateLogs).hashCode;}
+@override String toString() {return 'RadarGetCertificateLogsResponseResult(certificateLogs: $certificateLogs)';}
+}

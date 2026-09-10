@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType._(this.value);
 
-factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType.fromJson(String json) {return switch (json) {
   'diesel' => diesel,
   'other' => $other,
   'unleaded_plus' => unleadedPlus,
   'unleaded_regular' => unleadedRegular,
   'unleaded_super' => unleadedSuper,
   _ => PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType diesel = PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType._('diesel');
 
@@ -25,17 +25,17 @@ static const List<PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestP
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType($value)';}
+}
 @immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit._(this.value);
 
-factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit.fromJson(String json) {return switch (json) {
   'charging_minute' => chargingMinute,
   'imperial_gallon' => imperialGallon,
   'kilogram' => kilogram,
@@ -45,7 +45,7 @@ factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDet
   'pound' => pound,
   'us_gallon' => usGallon,
   _ => PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit chargingMinute = PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit._('charging_minute');
 
@@ -67,23 +67,23 @@ static const List<PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestP
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit($value)';}
+}
 @immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel({this.industryProductCode, this.quantityDecimal, this.type, this.unit, this.unitCostDecimal, });
 
-factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel(
+factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel(
   industryProductCode: json['industry_product_code'] as String?,
   quantityDecimal: json['quantity_decimal'] as String?,
   type: json['type'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType.fromJson(json['type'] as String) : null,
   unit: json['unit'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit.fromJson(json['unit'] as String) : null,
   unitCostDecimal: json['unit_cost_decimal'] as String?,
-); }
+);}
 
 final String? industryProductCode;
 
@@ -95,28 +95,28 @@ final PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetai
 
 final String? unitCostDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'industry_product_code': ?industryProductCode,
   'quantity_decimal': ?quantityDecimal,
   if (type != null) 'type': type?.toJson(),
   if (unit != null) 'unit': unit?.toJson(),
   'unit_cost_decimal': ?unitCostDecimal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'industry_product_code', 'quantity_decimal', 'type', 'unit', 'unit_cost_decimal'}.contains(key)); } 
-PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel copyWith({String? Function()? industryProductCode, String? Function()? quantityDecimal, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType? Function()? type, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit? Function()? unit, String? Function()? unitCostDecimal, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'industry_product_code', 'quantity_decimal', 'type', 'unit', 'unit_cost_decimal'}.contains(key));}
+PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel copyWith({String? Function()? industryProductCode, String? Function()? quantityDecimal, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelType? Function()? type, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuelUnit? Function()? unit, String? Function()? unitCostDecimal, }) {return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel(
   industryProductCode: industryProductCode != null ? industryProductCode() : this.industryProductCode,
   quantityDecimal: quantityDecimal != null ? quantityDecimal() : this.quantityDecimal,
   type: type != null ? type() : this.type,
   unit: unit != null ? unit() : this.unit,
   unitCostDecimal: unitCostDecimal != null ? unitCostDecimal() : this.unitCostDecimal,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel &&
           industryProductCode == other.industryProductCode &&
           quantityDecimal == other.quantityDecimal &&
           type == other.type &&
           unit == other.unit &&
-          unitCostDecimal == other.unitCostDecimal; } 
-@override int get hashCode { return Object.hash(industryProductCode, quantityDecimal, type, unit, unitCostDecimal); } 
-@override String toString() { return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel(industryProductCode: $industryProductCode, quantityDecimal: $quantityDecimal, type: $type, unit: $unit, unitCostDecimal: $unitCostDecimal)'; } 
- }
+          unitCostDecimal == other.unitCostDecimal;}
+@override int get hashCode {return Object.hash(industryProductCode, quantityDecimal, type, unit, unitCostDecimal);}
+@override String toString() {return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFuel(industryProductCode: $industryProductCode, quantityDecimal: $quantityDecimal, type: $type, unit: $unit, unitCostDecimal: $unitCostDecimal)';}
+}

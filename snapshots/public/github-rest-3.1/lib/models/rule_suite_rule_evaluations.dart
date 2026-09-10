@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rule_suite_rule_evaluations_rule_source.dart';/// The enforcement level of this rule source.
 @immutable final class RuleSuiteRuleEvaluationsEnforcement {const RuleSuiteRuleEvaluationsEnforcement._(this.value);
 
-factory RuleSuiteRuleEvaluationsEnforcement.fromJson(String json) { return switch (json) {
+factory RuleSuiteRuleEvaluationsEnforcement.fromJson(String json) {return switch (json) {
   'active' => active,
   'evaluate' => evaluate,
   'deleted ruleset' => deletedRuleset,
   _ => RuleSuiteRuleEvaluationsEnforcement._(json),
-}; }
+};}
 
 static const RuleSuiteRuleEvaluationsEnforcement active = RuleSuiteRuleEvaluationsEnforcement._('active');
 
@@ -20,22 +20,22 @@ static const List<RuleSuiteRuleEvaluationsEnforcement> values = [active, evaluat
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RuleSuiteRuleEvaluationsEnforcement && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RuleSuiteRuleEvaluationsEnforcement($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RuleSuiteRuleEvaluationsEnforcement && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RuleSuiteRuleEvaluationsEnforcement($value)';}
+}
 /// The result of the evaluation of the individual rule.
 @immutable final class RuleSuiteRuleEvaluationsResult {const RuleSuiteRuleEvaluationsResult._(this.value);
 
-factory RuleSuiteRuleEvaluationsResult.fromJson(String json) { return switch (json) {
+factory RuleSuiteRuleEvaluationsResult.fromJson(String json) {return switch (json) {
   'pass' => pass,
   'fail' => fail,
   _ => RuleSuiteRuleEvaluationsResult._(json),
-}; }
+};}
 
 static const RuleSuiteRuleEvaluationsResult pass = RuleSuiteRuleEvaluationsResult._('pass');
 
@@ -45,23 +45,23 @@ static const List<RuleSuiteRuleEvaluationsResult> values = [pass, fail];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RuleSuiteRuleEvaluationsResult && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RuleSuiteRuleEvaluationsResult($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RuleSuiteRuleEvaluationsResult && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RuleSuiteRuleEvaluationsResult($value)';}
+}
 @immutable final class RuleSuiteRuleEvaluations {const RuleSuiteRuleEvaluations({this.ruleSource, this.enforcement, this.result, this.ruleType, this.details = const Omittable.absent(), });
 
-factory RuleSuiteRuleEvaluations.fromJson(Map<String, dynamic> json) { return RuleSuiteRuleEvaluations(
+factory RuleSuiteRuleEvaluations.fromJson(Map<String, dynamic> json) {return RuleSuiteRuleEvaluations(
   ruleSource: json['rule_source'] != null ? RuleSuiteRuleEvaluationsRuleSource.fromJson(json['rule_source'] as Map<String, dynamic>) : null,
   enforcement: json['enforcement'] != null ? RuleSuiteRuleEvaluationsEnforcement.fromJson(json['enforcement'] as String) : null,
   result: json['result'] != null ? RuleSuiteRuleEvaluationsResult.fromJson(json['result'] as String) : null,
   ruleType: json['rule_type'] as String?,
   details: json.containsKey('details') ? Omittable(json['details'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final RuleSuiteRuleEvaluationsRuleSource? ruleSource;
 
@@ -77,28 +77,28 @@ final String? ruleType;
 /// The detailed failure message for the rule. Null if the rule passed.
 final Omittable<String?> details;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (ruleSource != null) 'rule_source': ruleSource?.toJson(),
   if (enforcement != null) 'enforcement': enforcement?.toJson(),
   if (result != null) 'result': result?.toJson(),
   'rule_type': ?ruleType,
   if (details.isPresent) 'details': details.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'rule_source', 'enforcement', 'result', 'rule_type', 'details'}.contains(key)); } 
-RuleSuiteRuleEvaluations copyWith({RuleSuiteRuleEvaluationsRuleSource? Function()? ruleSource, RuleSuiteRuleEvaluationsEnforcement? Function()? enforcement, RuleSuiteRuleEvaluationsResult? Function()? result, String? Function()? ruleType, Omittable<String?>? details, }) { return RuleSuiteRuleEvaluations(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'rule_source', 'enforcement', 'result', 'rule_type', 'details'}.contains(key));}
+RuleSuiteRuleEvaluations copyWith({RuleSuiteRuleEvaluationsRuleSource? Function()? ruleSource, RuleSuiteRuleEvaluationsEnforcement? Function()? enforcement, RuleSuiteRuleEvaluationsResult? Function()? result, String? Function()? ruleType, Omittable<String?>? details, }) {return RuleSuiteRuleEvaluations(
   ruleSource: ruleSource != null ? ruleSource() : this.ruleSource,
   enforcement: enforcement != null ? enforcement() : this.enforcement,
   result: result != null ? result() : this.result,
   ruleType: ruleType != null ? ruleType() : this.ruleType,
   details: details ?? this.details,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RuleSuiteRuleEvaluations &&
           ruleSource == other.ruleSource &&
           enforcement == other.enforcement &&
           result == other.result &&
           ruleType == other.ruleType &&
-          details == other.details; } 
-@override int get hashCode { return Object.hash(ruleSource, enforcement, result, ruleType, details); } 
-@override String toString() { return 'RuleSuiteRuleEvaluations(ruleSource: $ruleSource, enforcement: $enforcement, result: $result, ruleType: $ruleType, details: $details)'; } 
- }
+          details == other.details;}
+@override int get hashCode {return Object.hash(ruleSource, enforcement, result, ruleType, details);}
+@override String toString() {return 'RuleSuiteRuleEvaluations(ruleSource: $ruleSource, enforcement: $enforcement, result: $result, ruleType: $ruleType, details: $details)';}
+}

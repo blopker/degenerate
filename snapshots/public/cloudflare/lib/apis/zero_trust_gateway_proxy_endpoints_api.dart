@@ -13,7 +13,7 @@ final class ZeroTrustGatewayProxyEndpointsApi with ApiExecutor {const ZeroTrustG
 /// List all Zero Trust Gateway proxy endpoints for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/proxy_endpoints`
-Future<ApiResult<List<ZeroTrustGatewayProxyEndpoints>?, ZeroTrustGatewayProxyEndpointsListProxyEndpointsResponse4xx>> zeroTrustGatewayProxyEndpointsListProxyEndpoints({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ZeroTrustGatewayProxyEndpoints>?, ZeroTrustGatewayProxyEndpointsListProxyEndpointsResponse4xx>> zeroTrustGatewayProxyEndpointsListProxyEndpoints({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create a proxy endpoint
 ///
 /// Create a new Zero Trust Gateway proxy endpoint.
 ///
 /// `POST /accounts/{account_id}/gateway/proxy_endpoints`
-Future<ApiResult<ZeroTrustGatewayProxyEndpoints?, ZeroTrustGatewayProxyEndpointsCreateProxyEndpointResponse4xx>> zeroTrustGatewayProxyEndpointsCreateProxyEndpoint({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayProxyEndpoints?, ZeroTrustGatewayProxyEndpointsCreateProxyEndpointResponse4xx>> zeroTrustGatewayProxyEndpointsCreateProxyEndpoint({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get a proxy endpoint
 ///
 /// Get a single Zero Trust Gateway proxy endpoint.
 ///
 /// `GET /accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}`
-Future<ApiResult<ZeroTrustGatewayProxyEndpoints?, ZeroTrustGatewayProxyEndpointsProxyEndpointDetailsResponse4xx>> zeroTrustGatewayProxyEndpointsProxyEndpointDetails({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayProxyEndpoints?, ZeroTrustGatewayProxyEndpointsProxyEndpointDetailsResponse4xx>> zeroTrustGatewayProxyEndpointsProxyEndpointDetails({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -105,13 +105,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update a proxy endpoint
 ///
 /// Update a configured Zero Trust Gateway proxy endpoint.
 ///
 /// `PATCH /accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}`
-Future<ApiResult<ZeroTrustGatewayProxyEndpoints?, ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointResponse4xx>> zeroTrustGatewayProxyEndpointsUpdateProxyEndpoint({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayProxyEndpoints?, ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointResponse4xx>> zeroTrustGatewayProxyEndpointsUpdateProxyEndpoint({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,13 +139,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a proxy endpoint
 ///
 /// Delete a configured Zero Trust Gateway proxy endpoint.
 ///
 /// `DELETE /accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}`
-Future<ApiResult<Map<String, dynamic>?, ZeroTrustGatewayProxyEndpointsDeleteProxyEndpointResponse4xx>> zeroTrustGatewayProxyEndpointsDeleteProxyEndpoint({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, ZeroTrustGatewayProxyEndpointsDeleteProxyEndpointResponse4xx>> zeroTrustGatewayProxyEndpointsDeleteProxyEndpoint({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -171,5 +171,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

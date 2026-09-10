@@ -13,7 +13,7 @@ final class ZoneRatePlanApi with ApiExecutor {const ZoneRatePlanApi(this.apiConf
 /// Lists available plans the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_plans`
-Future<ApiResult<List<AvailableRatePlan>, ResponseCommonFailure10>> zoneRatePlanListAvailablePlans({required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AvailableRatePlan>, ResponseCommonFailure10>> zoneRatePlanListAvailablePlans({required Identifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Available Plan Details
 ///
 /// Details of the available plan that the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_plans/{plan_identifier}`
-Future<ApiResult<AvailableRatePlan, ResponseCommonFailure10>> zoneRatePlanAvailablePlanDetails({required Identifier planIdentifier, required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AvailableRatePlan, ResponseCommonFailure10>> zoneRatePlanAvailablePlanDetails({required Identifier planIdentifier, required Identifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,13 +71,13 @@ return null;
 
   },
 );
- } 
+}
 /// List Available Rate Plans
 ///
 /// Lists all rate plans the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_rate_plans`
-Future<ApiResult<List<RatePlan>, ZoneRatePlanListAvailableRatePlansResponse4xx>> zoneRatePlanListAvailableRatePlans({required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<RatePlan>, ZoneRatePlanListAvailableRatePlansResponse4xx>> zoneRatePlanListAvailableRatePlans({required Identifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -103,5 +103,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

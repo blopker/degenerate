@@ -11,7 +11,7 @@ final class ArgoAnalyticsForZoneApi with ApiExecutor {const ArgoAnalyticsForZone
 /// Argo Analytics for a zone
 ///
 /// `GET /zones/{zone_id}/analytics/latency`
-Future<ApiResult<Map<String, dynamic>, ArgoAnalyticsForZoneArgoAnalyticsForAZoneResponse4xx>> argoAnalyticsForZoneArgoAnalyticsForAZone({required ArgoAnalyticsIdentifier zoneId, String? bins, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, ArgoAnalyticsForZoneArgoAnalyticsForAZoneResponse4xx>> argoAnalyticsForZoneArgoAnalyticsForAZone({required ArgoAnalyticsIdentifier zoneId, String? bins, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (bins != null) {
   queryParameters['bins'] = bins;
@@ -45,5 +45,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

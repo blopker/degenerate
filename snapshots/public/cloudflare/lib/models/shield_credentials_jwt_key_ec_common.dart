@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Key Type
 @immutable final class ShieldCredentialsJwtKeyEcCommonKty {const ShieldCredentialsJwtKeyEcCommonKty._(this.value);
 
-factory ShieldCredentialsJwtKeyEcCommonKty.fromJson(String json) { return switch (json) {
+factory ShieldCredentialsJwtKeyEcCommonKty.fromJson(String json) {return switch (json) {
   'EC' => ec,
   _ => ShieldCredentialsJwtKeyEcCommonKty._(json),
-}; }
+};}
 
 static const ShieldCredentialsJwtKeyEcCommonKty ec = ShieldCredentialsJwtKeyEcCommonKty._('EC');
 
@@ -14,21 +14,21 @@ static const List<ShieldCredentialsJwtKeyEcCommonKty> values = [ec];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldCredentialsJwtKeyEcCommonKty && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldCredentialsJwtKeyEcCommonKty($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ShieldCredentialsJwtKeyEcCommonKty && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ShieldCredentialsJwtKeyEcCommonKty($value)';}
+}
 @immutable final class ShieldCredentialsJwtKeyEcCommon {const ShieldCredentialsJwtKeyEcCommon({required this.kty, required this.x, required this.y, });
 
-factory ShieldCredentialsJwtKeyEcCommon.fromJson(Map<String, dynamic> json) { return ShieldCredentialsJwtKeyEcCommon(
+factory ShieldCredentialsJwtKeyEcCommon.fromJson(Map<String, dynamic> json) {return ShieldCredentialsJwtKeyEcCommon(
   kty: ShieldCredentialsJwtKeyEcCommonKty.fromJson(json['kty'] as String),
   x: json['x'] as String,
   y: json['y'] as String,
-); }
+);}
 
 /// Key Type
 final ShieldCredentialsJwtKeyEcCommonKty kty;
@@ -39,24 +39,24 @@ final String x;
 /// Y EC coordinate
 final String y;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'kty': kty.toJson(),
   'x': x,
   'y': y,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kty') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('kty') &&
       json.containsKey('x') && json['x'] is String &&
-      json.containsKey('y') && json['y'] is String; } 
-ShieldCredentialsJwtKeyEcCommon copyWith({ShieldCredentialsJwtKeyEcCommonKty? kty, String? x, String? y, }) { return ShieldCredentialsJwtKeyEcCommon(
+      json.containsKey('y') && json['y'] is String;}
+ShieldCredentialsJwtKeyEcCommon copyWith({ShieldCredentialsJwtKeyEcCommonKty? kty, String? x, String? y, }) {return ShieldCredentialsJwtKeyEcCommon(
   kty: kty ?? this.kty,
   x: x ?? this.x,
   y: y ?? this.y,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShieldCredentialsJwtKeyEcCommon &&
           kty == other.kty &&
           x == other.x &&
-          y == other.y; } 
-@override int get hashCode { return Object.hash(kty, x, y); } 
-@override String toString() { return 'ShieldCredentialsJwtKeyEcCommon(kty: $kty, x: $x, y: $y)'; } 
- }
+          y == other.y;}
+@override int get hashCode {return Object.hash(kty, x, y);}
+@override String toString() {return 'ShieldCredentialsJwtKeyEcCommon(kty: $kty, x: $x, y: $y)';}
+}

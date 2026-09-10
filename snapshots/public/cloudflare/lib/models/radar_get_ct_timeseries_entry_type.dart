@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesEntryType {const RadarGetCtTimeseriesEntryType._(this.value);
 
-factory RadarGetCtTimeseriesEntryType.fromJson(String json) { return switch (json) {
+factory RadarGetCtTimeseriesEntryType.fromJson(String json) {return switch (json) {
   'PRECERTIFICATE' => precertificate,
   'CERTIFICATE' => certificate,
   _ => RadarGetCtTimeseriesEntryType._(json),
-}; }
+};}
 
 static const RadarGetCtTimeseriesEntryType precertificate = RadarGetCtTimeseriesEntryType._('PRECERTIFICATE');
 
@@ -16,11 +16,11 @@ static const List<RadarGetCtTimeseriesEntryType> values = [precertificate, certi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCtTimeseriesEntryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCtTimeseriesEntryType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCtTimeseriesEntryType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCtTimeseriesEntryType($value)';}
+}

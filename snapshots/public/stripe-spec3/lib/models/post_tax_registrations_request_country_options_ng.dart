@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxRegistrationsRequestCountryOptionsNgType {const PostTaxRegistrationsRequestCountryOptionsNgType._(this.value);
 
-factory PostTaxRegistrationsRequestCountryOptionsNgType.fromJson(String json) { return switch (json) {
+factory PostTaxRegistrationsRequestCountryOptionsNgType.fromJson(String json) {return switch (json) {
   'simplified' => simplified,
   _ => PostTaxRegistrationsRequestCountryOptionsNgType._(json),
-}; }
+};}
 
 static const PostTaxRegistrationsRequestCountryOptionsNgType simplified = PostTaxRegistrationsRequestCountryOptionsNgType._('simplified');
 
@@ -13,32 +13,32 @@ static const List<PostTaxRegistrationsRequestCountryOptionsNgType> values = [sim
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTaxRegistrationsRequestCountryOptionsNgType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsNgType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTaxRegistrationsRequestCountryOptionsNgType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTaxRegistrationsRequestCountryOptionsNgType($value)';}
+}
 @immutable final class PostTaxRegistrationsRequestCountryOptionsNg {const PostTaxRegistrationsRequestCountryOptionsNg({required this.type});
 
-factory PostTaxRegistrationsRequestCountryOptionsNg.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptionsNg(
+factory PostTaxRegistrationsRequestCountryOptionsNg.fromJson(Map<String, dynamic> json) {return PostTaxRegistrationsRequestCountryOptionsNg(
   type: PostTaxRegistrationsRequestCountryOptionsNgType.fromJson(json['type'] as String),
-); }
+);}
 
 final PostTaxRegistrationsRequestCountryOptionsNgType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostTaxRegistrationsRequestCountryOptionsNg copyWith({PostTaxRegistrationsRequestCountryOptionsNgType? type}) { return PostTaxRegistrationsRequestCountryOptionsNg(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostTaxRegistrationsRequestCountryOptionsNg copyWith({PostTaxRegistrationsRequestCountryOptionsNgType? type}) {return PostTaxRegistrationsRequestCountryOptionsNg(
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTaxRegistrationsRequestCountryOptionsNg &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsNg(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'PostTaxRegistrationsRequestCountryOptionsNg(type: $type)';}
+}

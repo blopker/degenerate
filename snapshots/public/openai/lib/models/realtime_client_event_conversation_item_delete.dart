@@ -7,11 +7,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Send this event 
 /// 
 @immutable final class RealtimeClientEventConversationItemDelete {const RealtimeClientEventConversationItemDelete({required this.type, required this.itemId, this.eventId, });
 
-factory RealtimeClientEventConversationItemDelete.fromJson(Map<String, dynamic> json) { return RealtimeClientEventConversationItemDelete(
+factory RealtimeClientEventConversationItemDelete.fromJson(Map<String, dynamic> json) {return RealtimeClientEventConversationItemDelete(
   eventId: json['event_id'] as String?,
   type: json['type'] as String,
   itemId: json['item_id'] as String,
-); }
+);}
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
@@ -22,23 +22,23 @@ final String type;
 /// The ID of the item to delete.
 final String itemId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type,
   'item_id': itemId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeClientEventConversationItemDelete copyWith({String? Function()? eventId, String? type, String? itemId, }) { return RealtimeClientEventConversationItemDelete(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('item_id') && json['item_id'] is String;}
+RealtimeClientEventConversationItemDelete copyWith({String? Function()? eventId, String? type, String? itemId, }) {return RealtimeClientEventConversationItemDelete(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeClientEventConversationItemDelete &&
           eventId == other.eventId &&
           type == other.type &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId); } 
-@override String toString() { return 'RealtimeClientEventConversationItemDelete(eventId: $eventId, type: $type, itemId: $itemId)'; } 
- }
+          itemId == other.itemId;}
+@override int get hashCode {return Object.hash(eventId, type, itemId);}
+@override String toString() {return 'RealtimeClientEventConversationItemDelete(eventId: $eventId, type: $type, itemId: $itemId)';}
+}

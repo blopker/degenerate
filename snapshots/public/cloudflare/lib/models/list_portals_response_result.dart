@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListPortalsResponseResult {const ListPortalsResponseResult({required this.hostname, required this.id, required this.name, this.createdAt, this.createdBy, this.description, this.modifiedAt, this.modifiedBy, this.secureWebGateway, });
 
-factory ListPortalsResponseResult.fromJson(Map<String, dynamic> json) { return ListPortalsResponseResult(
+factory ListPortalsResponseResult.fromJson(Map<String, dynamic> json) {return ListPortalsResponseResult(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   createdBy: json['created_by'] as String?,
   description: json['description'] as String?,
@@ -12,7 +12,7 @@ factory ListPortalsResponseResult.fromJson(Map<String, dynamic> json) { return L
   modifiedBy: json['modified_by'] as String?,
   name: json['name'] as String,
   secureWebGateway: json['secure_web_gateway'] as bool?,
-); }
+);}
 
 final DateTime? createdAt;
 
@@ -34,7 +34,7 @@ final String name;
 /// Route outbound MCP traffic through Zero Trust Secure Web Gateway
 final bool? secureWebGateway;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'created_by': ?createdBy,
   'description': ?description,
@@ -44,11 +44,11 @@ Map<String, dynamic> toJson() { return {
   'modified_by': ?modifiedBy,
   'name': name,
   'secure_web_gateway': ?secureWebGateway,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') && json['hostname'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hostname') && json['hostname'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-ListPortalsResponseResult copyWith({DateTime? Function()? createdAt, String? Function()? createdBy, String? Function()? description, String? hostname, String? id, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, bool? Function()? secureWebGateway, }) { return ListPortalsResponseResult(
+      json.containsKey('name') && json['name'] is String;}
+ListPortalsResponseResult copyWith({DateTime? Function()? createdAt, String? Function()? createdBy, String? Function()? description, String? hostname, String? id, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, bool? Function()? secureWebGateway, }) {return ListPortalsResponseResult(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
   description: description != null ? description() : this.description,
@@ -58,8 +58,8 @@ ListPortalsResponseResult copyWith({DateTime? Function()? createdAt, String? Fun
   modifiedBy: modifiedBy != null ? modifiedBy() : this.modifiedBy,
   name: name ?? this.name,
   secureWebGateway: secureWebGateway != null ? secureWebGateway() : this.secureWebGateway,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ListPortalsResponseResult &&
           createdAt == other.createdAt &&
           createdBy == other.createdBy &&
@@ -69,7 +69,7 @@ ListPortalsResponseResult copyWith({DateTime? Function()? createdAt, String? Fun
           modifiedAt == other.modifiedAt &&
           modifiedBy == other.modifiedBy &&
           name == other.name &&
-          secureWebGateway == other.secureWebGateway; } 
-@override int get hashCode { return Object.hash(createdAt, createdBy, description, hostname, id, modifiedAt, modifiedBy, name, secureWebGateway); } 
-@override String toString() { return 'ListPortalsResponseResult(createdAt: $createdAt, createdBy: $createdBy, description: $description, hostname: $hostname, id: $id, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name, secureWebGateway: $secureWebGateway)'; } 
- }
+          secureWebGateway == other.secureWebGateway;}
+@override int get hashCode {return Object.hash(createdAt, createdBy, description, hostname, id, modifiedAt, modifiedBy, name, secureWebGateway);}
+@override String toString() {return 'ListPortalsResponseResult(createdAt: $createdAt, createdBy: $createdBy, description: $description, hostname: $hostname, id: $id, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name, secureWebGateway: $secureWebGateway)';}
+}

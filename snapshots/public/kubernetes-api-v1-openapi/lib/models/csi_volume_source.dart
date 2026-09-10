@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'local_object_reference.dart';/// Represents a source location of a volume to mount, managed by an external CSI driver
 @immutable final class CsiVolumeSource {const CsiVolumeSource({required this.driver, this.fsType, this.nodePublishSecretRef, this.readOnly, this.volumeAttributes, });
 
-factory CsiVolumeSource.fromJson(Map<String, dynamic> json) { return CsiVolumeSource(
+factory CsiVolumeSource.fromJson(Map<String, dynamic> json) {return CsiVolumeSource(
   driver: json['driver'] as String,
   fsType: json['fsType'] as String?,
   nodePublishSecretRef: json['nodePublishSecretRef'] != null ? LocalObjectReference.fromJson(json['nodePublishSecretRef'] as Map<String, dynamic>) : null,
   readOnly: json['readOnly'] as bool?,
   volumeAttributes: (json['volumeAttributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// driver is the name of the CSI driver that handles this volume. Consult with your admin for the correct name as registered in the cluster.
 final String driver;
@@ -26,28 +26,28 @@ final bool? readOnly;
 /// volumeAttributes stores driver-specific properties that are passed to the CSI driver. Consult your driver's documentation for supported values.
 final Map<String,String>? volumeAttributes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'driver': driver,
   'fsType': ?fsType,
   if (nodePublishSecretRef != null) 'nodePublishSecretRef': nodePublishSecretRef?.toJson(),
   'readOnly': ?readOnly,
   'volumeAttributes': ?volumeAttributes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('driver') && json['driver'] is String; } 
-CsiVolumeSource copyWith({String? driver, String? Function()? fsType, LocalObjectReference? Function()? nodePublishSecretRef, bool? Function()? readOnly, Map<String, String>? Function()? volumeAttributes, }) { return CsiVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('driver') && json['driver'] is String;}
+CsiVolumeSource copyWith({String? driver, String? Function()? fsType, LocalObjectReference? Function()? nodePublishSecretRef, bool? Function()? readOnly, Map<String, String>? Function()? volumeAttributes, }) {return CsiVolumeSource(
   driver: driver ?? this.driver,
   fsType: fsType != null ? fsType() : this.fsType,
   nodePublishSecretRef: nodePublishSecretRef != null ? nodePublishSecretRef() : this.nodePublishSecretRef,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   volumeAttributes: volumeAttributes != null ? volumeAttributes() : this.volumeAttributes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CsiVolumeSource &&
           driver == other.driver &&
           fsType == other.fsType &&
           nodePublishSecretRef == other.nodePublishSecretRef &&
           readOnly == other.readOnly &&
-          volumeAttributes == other.volumeAttributes; } 
-@override int get hashCode { return Object.hash(driver, fsType, nodePublishSecretRef, readOnly, volumeAttributes); } 
-@override String toString() { return 'CsiVolumeSource(driver: $driver, fsType: $fsType, nodePublishSecretRef: $nodePublishSecretRef, readOnly: $readOnly, volumeAttributes: $volumeAttributes)'; } 
- }
+          volumeAttributes == other.volumeAttributes;}
+@override int get hashCode {return Object.hash(driver, fsType, nodePublishSecretRef, readOnly, volumeAttributes);}
+@override String toString() {return 'CsiVolumeSource(driver: $driver, fsType: $fsType, nodePublishSecretRef: $nodePublishSecretRef, readOnly: $readOnly, volumeAttributes: $volumeAttributes)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanCertificates {const UrlscannerGetScanResponseResultScanCertificates({required this.issuer, required this.subjectName, required this.validFrom, required this.validTo, });
 
-factory UrlscannerGetScanResponseResultScanCertificates.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanCertificates(
+factory UrlscannerGetScanResponseResultScanCertificates.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponseResultScanCertificates(
   issuer: json['issuer'] as String,
   subjectName: json['subjectName'] as String,
   validFrom: (json['validFrom'] as num).toDouble(),
   validTo: (json['validTo'] as num).toDouble(),
-); }
+);}
 
 final String issuer;
 
@@ -17,28 +17,28 @@ final double validFrom;
 
 final double validTo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'issuer': issuer,
   'subjectName': subjectName,
   'validFrom': validFrom,
   'validTo': validTo,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('issuer') && json['issuer'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('issuer') && json['issuer'] is String &&
       json.containsKey('subjectName') && json['subjectName'] is String &&
       json.containsKey('validFrom') && json['validFrom'] is num &&
-      json.containsKey('validTo') && json['validTo'] is num; } 
-UrlscannerGetScanResponseResultScanCertificates copyWith({String? issuer, String? subjectName, double? validFrom, double? validTo, }) { return UrlscannerGetScanResponseResultScanCertificates(
+      json.containsKey('validTo') && json['validTo'] is num;}
+UrlscannerGetScanResponseResultScanCertificates copyWith({String? issuer, String? subjectName, double? validFrom, double? validTo, }) {return UrlscannerGetScanResponseResultScanCertificates(
   issuer: issuer ?? this.issuer,
   subjectName: subjectName ?? this.subjectName,
   validFrom: validFrom ?? this.validFrom,
   validTo: validTo ?? this.validTo,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponseResultScanCertificates &&
           issuer == other.issuer &&
           subjectName == other.subjectName &&
           validFrom == other.validFrom &&
-          validTo == other.validTo; } 
-@override int get hashCode { return Object.hash(issuer, subjectName, validFrom, validTo); } 
-@override String toString() { return 'UrlscannerGetScanResponseResultScanCertificates(issuer: $issuer, subjectName: $subjectName, validFrom: $validFrom, validTo: $validTo)'; } 
- }
+          validTo == other.validTo;}
+@override int get hashCode {return Object.hash(issuer, subjectName, validFrom, validTo);}
+@override String toString() {return 'UrlscannerGetScanResponseResultScanCertificates(issuer: $issuer, subjectName: $subjectName, validFrom: $validFrom, validTo: $validTo)';}
+}

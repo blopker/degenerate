@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An autolink reference.
 @immutable final class Autolink {const Autolink({required this.id, required this.keyPrefix, required this.urlTemplate, required this.isAlphanumeric, this.updatedAt = const Omittable.absent(), });
 
-factory Autolink.fromJson(Map<String, dynamic> json) { return Autolink(
+factory Autolink.fromJson(Map<String, dynamic> json) {return Autolink(
   id: (json['id'] as num).toInt(),
   keyPrefix: json['key_prefix'] as String,
   urlTemplate: json['url_template'] as String,
   isAlphanumeric: json['is_alphanumeric'] as bool,
   updatedAt: json.containsKey('updated_at') ? Omittable(json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 final int id;
 
@@ -24,31 +24,31 @@ final bool isAlphanumeric;
 
 final Omittable<DateTime?> updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'key_prefix': keyPrefix,
   'url_template': urlTemplate,
   'is_alphanumeric': isAlphanumeric,
   if (updatedAt.isPresent) 'updated_at': updatedAt.value?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('key_prefix') && json['key_prefix'] is String &&
       json.containsKey('url_template') && json['url_template'] is String &&
-      json.containsKey('is_alphanumeric') && json['is_alphanumeric'] is bool; } 
-Autolink copyWith({int? id, String? keyPrefix, String? urlTemplate, bool? isAlphanumeric, Omittable<DateTime?>? updatedAt, }) { return Autolink(
+      json.containsKey('is_alphanumeric') && json['is_alphanumeric'] is bool;}
+Autolink copyWith({int? id, String? keyPrefix, String? urlTemplate, bool? isAlphanumeric, Omittable<DateTime?>? updatedAt, }) {return Autolink(
   id: id ?? this.id,
   keyPrefix: keyPrefix ?? this.keyPrefix,
   urlTemplate: urlTemplate ?? this.urlTemplate,
   isAlphanumeric: isAlphanumeric ?? this.isAlphanumeric,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Autolink &&
           id == other.id &&
           keyPrefix == other.keyPrefix &&
           urlTemplate == other.urlTemplate &&
           isAlphanumeric == other.isAlphanumeric &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, keyPrefix, urlTemplate, isAlphanumeric, updatedAt); } 
-@override String toString() { return 'Autolink(id: $id, keyPrefix: $keyPrefix, urlTemplate: $urlTemplate, isAlphanumeric: $isAlphanumeric, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(id, keyPrefix, urlTemplate, isAlphanumeric, updatedAt);}
+@override String toString() {return 'Autolink(id: $id, keyPrefix: $keyPrefix, urlTemplate: $urlTemplate, isAlphanumeric: $isAlphanumeric, updatedAt: $updatedAt)';}
+}

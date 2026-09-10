@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_tests_response_tests_http_results.dart';import 'digital_experience_monitoring_tests_response_tests_http_results_by_colo.dart';import 'digital_experience_monitoring_tests_response_tests_target_policies.dart';import 'digital_experience_monitoring_tests_response_tests_traceroute_results.dart';import 'digital_experience_monitoring_tests_response_tests_traceroute_results_by_colo.dart';import 'digital_experience_monitoring_uuid.dart';/// test type, http or traceroute
 @immutable final class DigitalExperienceMonitoringTestsResponseTestsKind {const DigitalExperienceMonitoringTestsResponseTestsKind._(this.value);
 
-factory DigitalExperienceMonitoringTestsResponseTestsKind.fromJson(String json) { return switch (json) {
+factory DigitalExperienceMonitoringTestsResponseTestsKind.fromJson(String json) {return switch (json) {
   'http' => http,
   'traceroute' => traceroute,
   _ => DigitalExperienceMonitoringTestsResponseTestsKind._(json),
-}; }
+};}
 
 static const DigitalExperienceMonitoringTestsResponseTestsKind http = DigitalExperienceMonitoringTestsResponseTestsKind._('http');
 
@@ -17,17 +17,17 @@ static const List<DigitalExperienceMonitoringTestsResponseTestsKind> values = [h
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DigitalExperienceMonitoringTestsResponseTestsKind && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DigitalExperienceMonitoringTestsResponseTestsKind($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DigitalExperienceMonitoringTestsResponseTestsKind && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DigitalExperienceMonitoringTestsResponseTestsKind($value)';}
+}
 @immutable final class DigitalExperienceMonitoringTestsResponseTests {const DigitalExperienceMonitoringTestsResponseTests({required this.created, required this.description, required this.enabled, required this.host, required this.id, required this.interval, required this.kind, required this.name, required this.updated, this.httpResults = const Omittable.absent(), this.httpResultsByColo, this.method, this.targetPolicies = const Omittable.absent(), this.targeted, this.tracerouteResults = const Omittable.absent(), this.tracerouteResultsByColo, });
 
-factory DigitalExperienceMonitoringTestsResponseTests.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTestsResponseTests(
+factory DigitalExperienceMonitoringTestsResponseTests.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringTestsResponseTests(
   created: json['created'] as String,
   description: json['description'] as String,
   enabled: json['enabled'] as bool,
@@ -44,7 +44,7 @@ factory DigitalExperienceMonitoringTestsResponseTests.fromJson(Map<String, dynam
   tracerouteResults: json.containsKey('tracerouteResults') ? Omittable(json['tracerouteResults'] != null ? DigitalExperienceMonitoringTestsResponseTestsTracerouteResults.fromJson(json['tracerouteResults'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   tracerouteResultsByColo: (json['tracerouteResultsByColo'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo.fromJson(e as Map<String, dynamic>)).toList(),
   updated: json['updated'] as String,
-); }
+);}
 
 /// date the test was created.
 final String created;
@@ -85,7 +85,7 @@ final List<DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo>
 
 final String updated;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'description': description,
   'enabled': enabled,
@@ -102,8 +102,8 @@ Map<String, dynamic> toJson() { return {
   if (tracerouteResults.isPresent) 'tracerouteResults': tracerouteResults.value?.toJson(),
   if (tracerouteResultsByColo != null) 'tracerouteResultsByColo': tracerouteResultsByColo?.map((e) => e.toJson()).toList(),
   'updated': updated,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('host') && json['host'] is String &&
@@ -111,8 +111,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('interval') && json['interval'] is String &&
       json.containsKey('kind') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('updated') && json['updated'] is String; } 
-DigitalExperienceMonitoringTestsResponseTests copyWith({String? created, String? description, bool? enabled, String? host, Omittable<DigitalExperienceMonitoringTestsResponseTestsHttpResults?>? httpResults, List<DigitalExperienceMonitoringTestsResponseTestsHttpResultsByColo>? Function()? httpResultsByColo, DigitalExperienceMonitoringUuid? id, String? interval, DigitalExperienceMonitoringTestsResponseTestsKind? kind, String? Function()? method, String? name, Omittable<List<DigitalExperienceMonitoringTestsResponseTestsTargetPolicies>?>? targetPolicies, bool? Function()? targeted, Omittable<DigitalExperienceMonitoringTestsResponseTestsTracerouteResults?>? tracerouteResults, List<DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo>? Function()? tracerouteResultsByColo, String? updated, }) { return DigitalExperienceMonitoringTestsResponseTests(
+      json.containsKey('updated') && json['updated'] is String;}
+DigitalExperienceMonitoringTestsResponseTests copyWith({String? created, String? description, bool? enabled, String? host, Omittable<DigitalExperienceMonitoringTestsResponseTestsHttpResults?>? httpResults, List<DigitalExperienceMonitoringTestsResponseTestsHttpResultsByColo>? Function()? httpResultsByColo, DigitalExperienceMonitoringUuid? id, String? interval, DigitalExperienceMonitoringTestsResponseTestsKind? kind, String? Function()? method, String? name, Omittable<List<DigitalExperienceMonitoringTestsResponseTestsTargetPolicies>?>? targetPolicies, bool? Function()? targeted, Omittable<DigitalExperienceMonitoringTestsResponseTestsTracerouteResults?>? tracerouteResults, List<DigitalExperienceMonitoringTestsResponseTestsTracerouteResultsByColo>? Function()? tracerouteResultsByColo, String? updated, }) {return DigitalExperienceMonitoringTestsResponseTests(
   created: created ?? this.created,
   description: description ?? this.description,
   enabled: enabled ?? this.enabled,
@@ -129,8 +129,8 @@ DigitalExperienceMonitoringTestsResponseTests copyWith({String? created, String?
   tracerouteResults: tracerouteResults ?? this.tracerouteResults,
   tracerouteResultsByColo: tracerouteResultsByColo != null ? tracerouteResultsByColo() : this.tracerouteResultsByColo,
   updated: updated ?? this.updated,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DigitalExperienceMonitoringTestsResponseTests &&
           created == other.created &&
           description == other.description &&
@@ -148,7 +148,7 @@ DigitalExperienceMonitoringTestsResponseTests copyWith({String? created, String?
           targeted == other.targeted &&
           tracerouteResults == other.tracerouteResults &&
           listEquals(tracerouteResultsByColo, other.tracerouteResultsByColo) &&
-          updated == other.updated; } 
-@override int get hashCode { return Object.hash(created, description, enabled, host, httpResults, Object.hashAll(httpResultsByColo ?? const []), id, interval, kind, method, name, Object.hashAll(targetPolicies.value ?? const []), targeted, tracerouteResults, Object.hashAll(tracerouteResultsByColo ?? const []), updated); } 
-@override String toString() { return 'DigitalExperienceMonitoringTestsResponseTests(created: $created, description: $description, enabled: $enabled, host: $host, httpResults: $httpResults, httpResultsByColo: $httpResultsByColo, id: $id, interval: $interval, kind: $kind, method: $method, name: $name, targetPolicies: $targetPolicies, targeted: $targeted, tracerouteResults: $tracerouteResults, tracerouteResultsByColo: $tracerouteResultsByColo, updated: $updated)'; } 
- }
+          updated == other.updated;}
+@override int get hashCode {return Object.hash(created, description, enabled, host, httpResults, Object.hashAll(httpResultsByColo ?? const []), id, interval, kind, method, name, Object.hashAll(targetPolicies.value ?? const []), targeted, tracerouteResults, Object.hashAll(tracerouteResultsByColo ?? const []), updated);}
+@override String toString() {return 'DigitalExperienceMonitoringTestsResponseTests(created: $created, description: $description, enabled: $enabled, host: $host, httpResults: $httpResults, httpResultsByColo: $httpResultsByColo, id: $id, interval: $interval, kind: $kind, method: $method, name: $name, targetPolicies: $targetPolicies, targeted: $targeted, tracerouteResults: $tracerouteResults, tracerouteResultsByColo: $tracerouteResultsByColo, updated: $updated)';}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inbound_transfers_payment_method_details_us_bank_account.dart';import 'treasury_shared_resource_billing_details.dart';/// The type of the payment method used in the InboundTransfer.
 @immutable final class InboundTransfersType {const InboundTransfersType._(this.value);
 
-factory InboundTransfersType.fromJson(String json) { return switch (json) {
+factory InboundTransfersType.fromJson(String json) {return switch (json) {
   'us_bank_account' => usBankAccount,
   _ => InboundTransfersType._(json),
-}; }
+};}
 
 static const InboundTransfersType usBankAccount = InboundTransfersType._('us_bank_account');
 
@@ -14,22 +14,22 @@ static const List<InboundTransfersType> values = [usBankAccount];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InboundTransfersType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InboundTransfersType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InboundTransfersType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InboundTransfersType($value)';}
+}
 /// 
 @immutable final class InboundTransfers {const InboundTransfers({required this.billingDetails, required this.type, this.usBankAccount, });
 
-factory InboundTransfers.fromJson(Map<String, dynamic> json) { return InboundTransfers(
+factory InboundTransfers.fromJson(Map<String, dynamic> json) {return InboundTransfers(
   billingDetails: TreasurySharedResourceBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>),
   type: InboundTransfersType.fromJson(json['type'] as String),
   usBankAccount: json['us_bank_account'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final TreasurySharedResourceBillingDetails billingDetails;
 
@@ -38,23 +38,23 @@ final InboundTransfersType type;
 
 final InboundTransfersPaymentMethodDetailsUsBankAccount? usBankAccount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'billing_details': billingDetails.toJson(),
   'type': type.toJson(),
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_details') &&
-      json.containsKey('type'); } 
-InboundTransfers copyWith({TreasurySharedResourceBillingDetails? billingDetails, InboundTransfersType? type, InboundTransfersPaymentMethodDetailsUsBankAccount? Function()? usBankAccount, }) { return InboundTransfers(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('billing_details') &&
+      json.containsKey('type');}
+InboundTransfers copyWith({TreasurySharedResourceBillingDetails? billingDetails, InboundTransfersType? type, InboundTransfersPaymentMethodDetailsUsBankAccount? Function()? usBankAccount, }) {return InboundTransfers(
   billingDetails: billingDetails ?? this.billingDetails,
   type: type ?? this.type,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InboundTransfers &&
           billingDetails == other.billingDetails &&
           type == other.type &&
-          usBankAccount == other.usBankAccount; } 
-@override int get hashCode { return Object.hash(billingDetails, type, usBankAccount); } 
-@override String toString() { return 'InboundTransfers(billingDetails: $billingDetails, type: $type, usBankAccount: $usBankAccount)'; } 
- }
+          usBankAccount == other.usBankAccount;}
+@override int get hashCode {return Object.hash(billingDetails, type, usBankAccount);}
+@override String toString() {return 'InboundTransfers(billingDetails: $billingDetails, type: $type, usBankAccount: $usBankAccount)';}
+}

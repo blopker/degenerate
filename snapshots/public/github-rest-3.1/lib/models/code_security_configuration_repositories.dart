@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_repository.dart';/// The attachment status of the code security configuration on the repository.
 @immutable final class CodeSecurityConfigurationRepositoriesStatus {const CodeSecurityConfigurationRepositoriesStatus._(this.value);
 
-factory CodeSecurityConfigurationRepositoriesStatus.fromJson(String json) { return switch (json) {
+factory CodeSecurityConfigurationRepositoriesStatus.fromJson(String json) {return switch (json) {
   'attached' => attached,
   'attaching' => attaching,
   'detached' => detached,
@@ -13,7 +13,7 @@ factory CodeSecurityConfigurationRepositoriesStatus.fromJson(String json) { retu
   'updating' => updating,
   'removed_by_enterprise' => removedByEnterprise,
   _ => CodeSecurityConfigurationRepositoriesStatus._(json),
-}; }
+};}
 
 static const CodeSecurityConfigurationRepositoriesStatus attached = CodeSecurityConfigurationRepositoriesStatus._('attached');
 
@@ -35,40 +35,40 @@ static const List<CodeSecurityConfigurationRepositoriesStatus> values = [attache
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityConfigurationRepositoriesStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityConfigurationRepositoriesStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityConfigurationRepositoriesStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityConfigurationRepositoriesStatus($value)';}
+}
 /// Repositories associated with a code security configuration and attachment status
 @immutable final class CodeSecurityConfigurationRepositories {const CodeSecurityConfigurationRepositories({this.status, this.repository, });
 
-factory CodeSecurityConfigurationRepositories.fromJson(Map<String, dynamic> json) { return CodeSecurityConfigurationRepositories(
+factory CodeSecurityConfigurationRepositories.fromJson(Map<String, dynamic> json) {return CodeSecurityConfigurationRepositories(
   status: json['status'] != null ? CodeSecurityConfigurationRepositoriesStatus.fromJson(json['status'] as String) : null,
   repository: json['repository'] != null ? SimpleRepository.fromJson(json['repository'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The attachment status of the code security configuration on the repository.
 final CodeSecurityConfigurationRepositoriesStatus? status;
 
 final SimpleRepository? repository;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (status != null) 'status': status?.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status', 'repository'}.contains(key)); } 
-CodeSecurityConfigurationRepositories copyWith({CodeSecurityConfigurationRepositoriesStatus? Function()? status, SimpleRepository? Function()? repository, }) { return CodeSecurityConfigurationRepositories(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'status', 'repository'}.contains(key));}
+CodeSecurityConfigurationRepositories copyWith({CodeSecurityConfigurationRepositoriesStatus? Function()? status, SimpleRepository? Function()? repository, }) {return CodeSecurityConfigurationRepositories(
   status: status != null ? status() : this.status,
   repository: repository != null ? repository() : this.repository,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeSecurityConfigurationRepositories &&
           status == other.status &&
-          repository == other.repository; } 
-@override int get hashCode { return Object.hash(status, repository); } 
-@override String toString() { return 'CodeSecurityConfigurationRepositories(status: $status, repository: $repository)'; } 
- }
+          repository == other.repository;}
+@override int get hashCode {return Object.hash(status, repository);}
+@override String toString() {return 'CodeSecurityConfigurationRepositories(status: $status, repository: $repository)';}
+}

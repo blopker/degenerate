@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class OrgsUpdateError {const OrgsUpdateError();
 
 /// Decodes the payload for its declared status and content type.
-static OrgsUpdateError parse(ApiResponse response) { switch (response.statusCode) {
+static OrgsUpdateError parse(ApiResponse response) {switch (response.statusCode) {
 case 409:
 final json = jsonDecode(response.body);
 return OrgsUpdateError409(BasicError.fromJson(json as Map<String, dynamic>));
@@ -14,26 +14,26 @@ return OrgsUpdateError422(OneOf2.parse(json, fromA: (v) => ValidationError.fromJ
 default:
 return OrgsUpdateErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 409 (application/json).
 final class OrgsUpdateError409 extends OrgsUpdateError {const OrgsUpdateError409(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class OrgsUpdateError422 extends OrgsUpdateError {const OrgsUpdateError422(this.data);
 
 /// The decoded response payload.
 final OrgsUpdateResponse422 data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class OrgsUpdateErrorUnknown extends OrgsUpdateError {const OrgsUpdateErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

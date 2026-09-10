@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_workflow_run_in_progress_workflow_run_actor.dart';import 'webhook_workflow_run_in_progress_workflow_run_head_commit.dart';import 'webhook_workflow_run_in_progress_workflow_run_head_repository.dart';import 'webhook_workflow_run_in_progress_workflow_run_pull_requests.dart';import 'webhook_workflow_run_in_progress_workflow_run_referenced_workflows.dart';import 'webhook_workflow_run_in_progress_workflow_run_repository.dart';import 'webhook_workflow_run_in_progress_workflow_run_triggering_actor.dart';@immutable final class WebhookWorkflowRunInProgressWorkflowRunConclusion {const WebhookWorkflowRunInProgressWorkflowRunConclusion._(this.value);
 
-factory WebhookWorkflowRunInProgressWorkflowRunConclusion.fromJson(String json) { return switch (json) {
+factory WebhookWorkflowRunInProgressWorkflowRunConclusion.fromJson(String json) {return switch (json) {
   'action_required' => actionRequired,
   'cancelled' => cancelled,
   'failure' => failure,
@@ -13,7 +13,7 @@ factory WebhookWorkflowRunInProgressWorkflowRunConclusion.fromJson(String json) 
   'timed_out' => timedOut,
   'null' => $null,
   _ => WebhookWorkflowRunInProgressWorkflowRunConclusion._(json),
-}; }
+};}
 
 static const WebhookWorkflowRunInProgressWorkflowRunConclusion actionRequired = WebhookWorkflowRunInProgressWorkflowRunConclusion._('action_required');
 
@@ -37,24 +37,24 @@ static const List<WebhookWorkflowRunInProgressWorkflowRunConclusion> values = [a
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookWorkflowRunInProgressWorkflowRunConclusion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookWorkflowRunInProgressWorkflowRunConclusion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookWorkflowRunInProgressWorkflowRunConclusion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookWorkflowRunInProgressWorkflowRunConclusion($value)';}
+}
 @immutable final class WebhookWorkflowRunInProgressWorkflowRunStatus {const WebhookWorkflowRunInProgressWorkflowRunStatus._(this.value);
 
-factory WebhookWorkflowRunInProgressWorkflowRunStatus.fromJson(String json) { return switch (json) {
+factory WebhookWorkflowRunInProgressWorkflowRunStatus.fromJson(String json) {return switch (json) {
   'requested' => requested,
   'in_progress' => inProgress,
   'completed' => completed,
   'queued' => queued,
   'pending' => pending,
   _ => WebhookWorkflowRunInProgressWorkflowRunStatus._(json),
-}; }
+};}
 
 static const WebhookWorkflowRunInProgressWorkflowRunStatus requested = WebhookWorkflowRunInProgressWorkflowRunStatus._('requested');
 
@@ -70,17 +70,17 @@ static const List<WebhookWorkflowRunInProgressWorkflowRunStatus> values = [reque
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookWorkflowRunInProgressWorkflowRunStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookWorkflowRunInProgressWorkflowRunStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookWorkflowRunInProgressWorkflowRunStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookWorkflowRunInProgressWorkflowRunStatus($value)';}
+}
 @immutable final class WebhookWorkflowRunInProgressWorkflowRun {const WebhookWorkflowRunInProgressWorkflowRun({required this.headRepository, required this.artifactsUrl, required this.cancelUrl, required this.checkSuiteId, required this.checkSuiteNodeId, required this.checkSuiteUrl, required this.conclusion, required this.createdAt, required this.event, required this.headBranch, required this.headCommit, required this.actor, required this.headSha, required this.htmlUrl, required this.id, required this.jobsUrl, required this.logsUrl, required this.name, required this.nodeId, required this.path, required this.previousAttemptUrl, required this.workflowUrl, required this.workflowId, required this.repository, required this.rerunUrl, required this.runAttempt, required this.runNumber, required this.runStartedAt, required this.status, required this.triggeringActor, required this.updatedAt, required this.url, required this.pullRequests, this.referencedWorkflows = const Omittable.absent(), });
 
-factory WebhookWorkflowRunInProgressWorkflowRun.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunInProgressWorkflowRun(
+factory WebhookWorkflowRunInProgressWorkflowRun.fromJson(Map<String, dynamic> json) {return WebhookWorkflowRunInProgressWorkflowRun(
   actor: json['actor'] != null ? WebhookWorkflowRunInProgressWorkflowRunActor.fromJson(json['actor'] as Map<String, dynamic>) : null,
   artifactsUrl: Uri.parse(json['artifacts_url'] as String),
   cancelUrl: Uri.parse(json['cancel_url'] as String),
@@ -115,7 +115,7 @@ factory WebhookWorkflowRunInProgressWorkflowRun.fromJson(Map<String, dynamic> js
   url: Uri.parse(json['url'] as String),
   workflowId: (json['workflow_id'] as num).toInt(),
   workflowUrl: Uri.parse(json['workflow_url'] as String),
-); }
+);}
 
 final WebhookWorkflowRunInProgressWorkflowRunActor? actor;
 
@@ -185,7 +185,7 @@ final int workflowId;
 
 final Uri workflowUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'actor': actor?.toJson(),
   'artifacts_url': artifactsUrl.toString(),
   'cancel_url': cancelUrl.toString(),
@@ -220,8 +220,8 @@ Map<String, dynamic> toJson() { return {
   'url': url.toString(),
   'workflow_id': workflowId,
   'workflow_url': workflowUrl.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('actor') &&
       json.containsKey('artifacts_url') && json['artifacts_url'] is String &&
       json.containsKey('cancel_url') && json['cancel_url'] is String &&
       json.containsKey('check_suite_id') && json['check_suite_id'] is num &&
@@ -253,8 +253,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('workflow_id') && json['workflow_id'] is num &&
-      json.containsKey('workflow_url') && json['workflow_url'] is String; } 
-WebhookWorkflowRunInProgressWorkflowRun copyWith({WebhookWorkflowRunInProgressWorkflowRunActor? Function()? actor, Uri? artifactsUrl, Uri? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, Uri? checkSuiteUrl, WebhookWorkflowRunInProgressWorkflowRunConclusion? Function()? conclusion, DateTime? createdAt, String? event, String? Function()? headBranch, WebhookWorkflowRunInProgressWorkflowRunHeadCommit? headCommit, WebhookWorkflowRunInProgressWorkflowRunHeadRepository? headRepository, String? headSha, Uri? htmlUrl, int? id, Uri? jobsUrl, Uri? logsUrl, String? Function()? name, String? nodeId, String? path, Uri? Function()? previousAttemptUrl, List<WebhookWorkflowRunInProgressWorkflowRunPullRequests?>? pullRequests, Omittable<List<WebhookWorkflowRunInProgressWorkflowRunReferencedWorkflows>?>? referencedWorkflows, WebhookWorkflowRunInProgressWorkflowRunRepository? repository, Uri? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, WebhookWorkflowRunInProgressWorkflowRunStatus? status, WebhookWorkflowRunInProgressWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, Uri? workflowUrl, }) { return WebhookWorkflowRunInProgressWorkflowRun(
+      json.containsKey('workflow_url') && json['workflow_url'] is String;}
+WebhookWorkflowRunInProgressWorkflowRun copyWith({WebhookWorkflowRunInProgressWorkflowRunActor? Function()? actor, Uri? artifactsUrl, Uri? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, Uri? checkSuiteUrl, WebhookWorkflowRunInProgressWorkflowRunConclusion? Function()? conclusion, DateTime? createdAt, String? event, String? Function()? headBranch, WebhookWorkflowRunInProgressWorkflowRunHeadCommit? headCommit, WebhookWorkflowRunInProgressWorkflowRunHeadRepository? headRepository, String? headSha, Uri? htmlUrl, int? id, Uri? jobsUrl, Uri? logsUrl, String? Function()? name, String? nodeId, String? path, Uri? Function()? previousAttemptUrl, List<WebhookWorkflowRunInProgressWorkflowRunPullRequests?>? pullRequests, Omittable<List<WebhookWorkflowRunInProgressWorkflowRunReferencedWorkflows>?>? referencedWorkflows, WebhookWorkflowRunInProgressWorkflowRunRepository? repository, Uri? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, WebhookWorkflowRunInProgressWorkflowRunStatus? status, WebhookWorkflowRunInProgressWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, Uri? workflowUrl, }) {return WebhookWorkflowRunInProgressWorkflowRun(
   actor: actor != null ? actor() : this.actor,
   artifactsUrl: artifactsUrl ?? this.artifactsUrl,
   cancelUrl: cancelUrl ?? this.cancelUrl,
@@ -289,8 +289,8 @@ WebhookWorkflowRunInProgressWorkflowRun copyWith({WebhookWorkflowRunInProgressWo
   url: url ?? this.url,
   workflowId: workflowId ?? this.workflowId,
   workflowUrl: workflowUrl ?? this.workflowUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookWorkflowRunInProgressWorkflowRun &&
           actor == other.actor &&
           artifactsUrl == other.artifactsUrl &&
@@ -326,7 +326,7 @@ WebhookWorkflowRunInProgressWorkflowRun copyWith({WebhookWorkflowRunInProgressWo
           updatedAt == other.updatedAt &&
           url == other.url &&
           workflowId == other.workflowId &&
-          workflowUrl == other.workflowUrl; } 
-@override int get hashCode { return Object.hashAll([actor, artifactsUrl, cancelUrl, checkSuiteId, checkSuiteNodeId, checkSuiteUrl, conclusion, createdAt, event, headBranch, headCommit, headRepository, headSha, htmlUrl, id, jobsUrl, logsUrl, name, nodeId, path, previousAttemptUrl, Object.hashAll(pullRequests), Object.hashAll(referencedWorkflows.value ?? const []), repository, rerunUrl, runAttempt, runNumber, runStartedAt, status, triggeringActor, updatedAt, url, workflowId, workflowUrl]); } 
-@override String toString() { return 'WebhookWorkflowRunInProgressWorkflowRun(actor: $actor, artifactsUrl: $artifactsUrl, cancelUrl: $cancelUrl, checkSuiteId: $checkSuiteId, checkSuiteNodeId: $checkSuiteNodeId, checkSuiteUrl: $checkSuiteUrl, conclusion: $conclusion, createdAt: $createdAt, event: $event, headBranch: $headBranch, headCommit: $headCommit, headRepository: $headRepository, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, jobsUrl: $jobsUrl, logsUrl: $logsUrl, name: $name, nodeId: $nodeId, path: $path, previousAttemptUrl: $previousAttemptUrl, pullRequests: $pullRequests, referencedWorkflows: $referencedWorkflows, repository: $repository, rerunUrl: $rerunUrl, runAttempt: $runAttempt, runNumber: $runNumber, runStartedAt: $runStartedAt, status: $status, triggeringActor: $triggeringActor, updatedAt: $updatedAt, url: $url, workflowId: $workflowId, workflowUrl: $workflowUrl)'; } 
- }
+          workflowUrl == other.workflowUrl;}
+@override int get hashCode {return Object.hashAll([actor, artifactsUrl, cancelUrl, checkSuiteId, checkSuiteNodeId, checkSuiteUrl, conclusion, createdAt, event, headBranch, headCommit, headRepository, headSha, htmlUrl, id, jobsUrl, logsUrl, name, nodeId, path, previousAttemptUrl, Object.hashAll(pullRequests), Object.hashAll(referencedWorkflows.value ?? const []), repository, rerunUrl, runAttempt, runNumber, runStartedAt, status, triggeringActor, updatedAt, url, workflowId, workflowUrl]);}
+@override String toString() {return 'WebhookWorkflowRunInProgressWorkflowRun(actor: $actor, artifactsUrl: $artifactsUrl, cancelUrl: $cancelUrl, checkSuiteId: $checkSuiteId, checkSuiteNodeId: $checkSuiteNodeId, checkSuiteUrl: $checkSuiteUrl, conclusion: $conclusion, createdAt: $createdAt, event: $event, headBranch: $headBranch, headCommit: $headCommit, headRepository: $headRepository, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, jobsUrl: $jobsUrl, logsUrl: $logsUrl, name: $name, nodeId: $nodeId, path: $path, previousAttemptUrl: $previousAttemptUrl, pullRequests: $pullRequests, referencedWorkflows: $referencedWorkflows, repository: $repository, rerunUrl: $rerunUrl, runAttempt: $runAttempt, runNumber: $runNumber, runStartedAt: $runStartedAt, status: $status, triggeringActor: $triggeringActor, updatedAt: $updatedAt, url: $url, workflowId: $workflowId, workflowUrl: $workflowUrl)';}
+}

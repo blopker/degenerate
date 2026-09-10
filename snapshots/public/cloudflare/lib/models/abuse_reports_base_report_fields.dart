@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_submission_report_type.dart';@immutable final class AbuseReportsBaseReportFields {const AbuseReportsBaseReportFields({required this.act, required this.email, required this.email2, required this.name, required this.urls, this.comments, this.company, this.reportedCountry, this.reportedUserAgent, this.tele, this.title, });
 
-factory AbuseReportsBaseReportFields.fromJson(Map<String, dynamic> json) { return AbuseReportsBaseReportFields(
+factory AbuseReportsBaseReportFields.fromJson(Map<String, dynamic> json) {return AbuseReportsBaseReportFields(
   act: AbuseReportsSubmissionReportType.fromJson(json['act'] as String),
   comments: json['comments'] as String?,
   company: json['company'] as String?,
@@ -14,7 +14,7 @@ factory AbuseReportsBaseReportFields.fromJson(Map<String, dynamic> json) { retur
   tele: json['tele'] as String?,
   title: json['title'] as String?,
   urls: json['urls'] as String,
-); }
+);}
 
 final AbuseReportsSubmissionReportType act;
 
@@ -48,7 +48,7 @@ final String? title;
 /// A list of valid URLs separated by ‘\n’ (new line character). The list of the URLs should not exceed 250 URLs. All URLs should have the same hostname. Each URL should be unique. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).
 final String urls;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'act': act.toJson(),
   'comments': ?comments,
   'company': ?company,
@@ -60,13 +60,13 @@ Map<String, dynamic> toJson() { return {
   'tele': ?tele,
   'title': ?title,
   'urls': urls,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('act') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('act') &&
       json.containsKey('email') && json['email'] is String &&
       json.containsKey('email2') && json['email2'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('urls') && json['urls'] is String; } 
-AbuseReportsBaseReportFields copyWith({AbuseReportsSubmissionReportType? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsBaseReportFields(
+      json.containsKey('urls') && json['urls'] is String;}
+AbuseReportsBaseReportFields copyWith({AbuseReportsSubmissionReportType? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) {return AbuseReportsBaseReportFields(
   act: act ?? this.act,
   comments: comments != null ? comments() : this.comments,
   company: company != null ? company() : this.company,
@@ -78,8 +78,8 @@ AbuseReportsBaseReportFields copyWith({AbuseReportsSubmissionReportType? act, St
   tele: tele != null ? tele() : this.tele,
   title: title != null ? title() : this.title,
   urls: urls ?? this.urls,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AbuseReportsBaseReportFields &&
           act == other.act &&
           comments == other.comments &&
@@ -91,7 +91,7 @@ AbuseReportsBaseReportFields copyWith({AbuseReportsSubmissionReportType? act, St
           reportedUserAgent == other.reportedUserAgent &&
           tele == other.tele &&
           title == other.title &&
-          urls == other.urls; } 
-@override int get hashCode { return Object.hash(act, comments, company, email, email2, name, reportedCountry, reportedUserAgent, tele, title, urls); } 
-@override String toString() { return 'AbuseReportsBaseReportFields(act: $act, comments: $comments, company: $company, email: $email, email2: $email2, name: $name, reportedCountry: $reportedCountry, reportedUserAgent: $reportedUserAgent, tele: $tele, title: $title, urls: $urls)'; } 
- }
+          urls == other.urls;}
+@override int get hashCode {return Object.hash(act, comments, company, email, email2, name, reportedCountry, reportedUserAgent, tele, title, urls);}
+@override String toString() {return 'AbuseReportsBaseReportFields(act: $act, comments: $comments, company: $company, email: $email, email2: $email2, name: $name, reportedCountry: $reportedCountry, reportedUserAgent: $reportedUserAgent, tele: $tele, title: $title, urls: $urls)';}
+}

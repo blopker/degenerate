@@ -3,28 +3,28 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_business_name.dart';import 'payment_pages_checkout_session_individual_name.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionNameCollection {const PaymentPagesCheckoutSessionNameCollection({this.business, this.individual, });
 
-factory PaymentPagesCheckoutSessionNameCollection.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionNameCollection(
+factory PaymentPagesCheckoutSessionNameCollection.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionNameCollection(
   business: json['business'] != null ? PaymentPagesCheckoutSessionBusinessName.fromJson(json['business'] as Map<String, dynamic>) : null,
   individual: json['individual'] != null ? PaymentPagesCheckoutSessionIndividualName.fromJson(json['individual'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PaymentPagesCheckoutSessionBusinessName? business;
 
 final PaymentPagesCheckoutSessionIndividualName? individual;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (business != null) 'business': business?.toJson(),
   if (individual != null) 'individual': individual?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'business', 'individual'}.contains(key)); } 
-PaymentPagesCheckoutSessionNameCollection copyWith({PaymentPagesCheckoutSessionBusinessName? Function()? business, PaymentPagesCheckoutSessionIndividualName? Function()? individual, }) { return PaymentPagesCheckoutSessionNameCollection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'business', 'individual'}.contains(key));}
+PaymentPagesCheckoutSessionNameCollection copyWith({PaymentPagesCheckoutSessionBusinessName? Function()? business, PaymentPagesCheckoutSessionIndividualName? Function()? individual, }) {return PaymentPagesCheckoutSessionNameCollection(
   business: business != null ? business() : this.business,
   individual: individual != null ? individual() : this.individual,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentPagesCheckoutSessionNameCollection &&
           business == other.business &&
-          individual == other.individual; } 
-@override int get hashCode { return Object.hash(business, individual); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionNameCollection(business: $business, individual: $individual)'; } 
- }
+          individual == other.individual;}
+@override int get hashCode {return Object.hash(business, individual);}
+@override String toString() {return 'PaymentPagesCheckoutSessionNameCollection(business: $business, individual: $individual)';}
+}

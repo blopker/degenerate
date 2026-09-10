@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stripe_s700.dart';@immutable final class PostTerminalConfigurationsConfigurationRequestStripeS700Variant2 {const PostTerminalConfigurationsConfigurationRequestStripeS700Variant2._(this.value);
 
-factory PostTerminalConfigurationsConfigurationRequestStripeS700Variant2.fromJson(String json) { return switch (json) {
+factory PostTerminalConfigurationsConfigurationRequestStripeS700Variant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostTerminalConfigurationsConfigurationRequestStripeS700Variant2._(json),
-}; }
+};}
 
 static const PostTerminalConfigurationsConfigurationRequestStripeS700Variant2 $empty = PostTerminalConfigurationsConfigurationRequestStripeS700Variant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostTerminalConfigurationsConfigurationRequestStripeS700Varian
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTerminalConfigurationsConfigurationRequestStripeS700Variant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTerminalConfigurationsConfigurationRequestStripeS700Variant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTerminalConfigurationsConfigurationRequestStripeS700Variant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTerminalConfigurationsConfigurationRequestStripeS700Variant2($value)';}
+}
 /// An object containing device type specific settings for Stripe S700 readers.
 @immutable
 final class PostTerminalConfigurationsConfigurationRequestStripeS700 {

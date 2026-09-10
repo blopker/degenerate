@@ -11,7 +11,7 @@ final class DatasetsApi with ApiExecutor {const DatasetsApi(this.apiConfig);
 /// Populate dataset-specific lookup tables from existing Events data with batch processing
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/datasets/populate`
-Future<ApiResult<PostDatasetPopulateResponse, PostDatasetPopulateResponse400>> postDatasetPopulate({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostDatasetPopulateResponse, PostDatasetPopulateResponse400>> postDatasetPopulate({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -37,5 +37,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

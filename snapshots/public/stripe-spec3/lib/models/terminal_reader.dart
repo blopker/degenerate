@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_location.dart';import 'terminal_reader_reader_resource_reader_action.dart';/// Device type of the reader.
 @immutable final class TerminalReaderDeviceType {const TerminalReaderDeviceType._(this.value);
 
-factory TerminalReaderDeviceType.fromJson(String json) { return switch (json) {
+factory TerminalReaderDeviceType.fromJson(String json) {return switch (json) {
   'bbpos_chipper2x' => bbposChipper2x,
   'bbpos_wisepad3' => bbposWisepad3,
   'bbpos_wisepos_e' => bbposWiseposE,
@@ -16,7 +16,7 @@ factory TerminalReaderDeviceType.fromJson(String json) { return switch (json) {
   'stripe_s710' => stripeS710,
   'verifone_P400' => verifoneP400,
   _ => TerminalReaderDeviceType._(json),
-}; }
+};}
 
 static const TerminalReaderDeviceType bbposChipper2x = TerminalReaderDeviceType._('bbpos_chipper2x');
 
@@ -44,21 +44,21 @@ static const List<TerminalReaderDeviceType> values = [bbposChipper2x, bbposWisep
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalReaderDeviceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderDeviceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TerminalReaderDeviceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TerminalReaderDeviceType($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TerminalReaderObject {const TerminalReaderObject._(this.value);
 
-factory TerminalReaderObject.fromJson(String json) { return switch (json) {
+factory TerminalReaderObject.fromJson(String json) {return switch (json) {
   'terminal.reader' => terminalReader,
   _ => TerminalReaderObject._(json),
-}; }
+};}
 
 static const TerminalReaderObject terminalReader = TerminalReaderObject._('terminal.reader');
 
@@ -66,22 +66,22 @@ static const List<TerminalReaderObject> values = [terminalReader];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalReaderObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TerminalReaderObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TerminalReaderObject($value)';}
+}
 /// The networking status of the reader. We do not recommend using this field in flows that may block taking payments.
 @immutable final class TerminalReaderStatus {const TerminalReaderStatus._(this.value);
 
-factory TerminalReaderStatus.fromJson(String json) { return switch (json) {
+factory TerminalReaderStatus.fromJson(String json) {return switch (json) {
   'offline' => offline,
   'online' => online,
   _ => TerminalReaderStatus._(json),
-}; }
+};}
 
 static const TerminalReaderStatus offline = TerminalReaderStatus._('offline');
 
@@ -91,20 +91,20 @@ static const List<TerminalReaderStatus> values = [offline, online];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalReaderStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TerminalReaderStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TerminalReaderStatus($value)';}
+}
 /// A Reader represents a physical device for accepting payment details.
 /// 
 /// Related guide: [Connecting to a reader](https://docs.stripe.com/terminal/payments/connect-reader)
 @immutable final class TerminalReader {const TerminalReader({required this.deviceType, required this.id, required this.label, required this.livemode, required this.metadata, required this.object, required this.serialNumber, this.action = const Omittable.absent(), this.deviceSwVersion = const Omittable.absent(), this.ipAddress = const Omittable.absent(), this.lastSeenAt = const Omittable.absent(), this.location = const Omittable.absent(), this.status = const Omittable.absent(), });
 
-factory TerminalReader.fromJson(Map<String, dynamic> json) { return TerminalReader(
+factory TerminalReader.fromJson(Map<String, dynamic> json) {return TerminalReader(
   action: json.containsKey('action') ? Omittable(json['action'] != null ? TerminalReaderReaderResourceReaderAction.fromJson(json['action'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   deviceSwVersion: json.containsKey('device_sw_version') ? Omittable(json['device_sw_version'] as String?) : const Omittable.absent(),
   deviceType: TerminalReaderDeviceType.fromJson(json['device_type'] as String),
@@ -118,7 +118,7 @@ factory TerminalReader.fromJson(Map<String, dynamic> json) { return TerminalRead
   object: TerminalReaderObject.fromJson(json['object'] as String),
   serialNumber: json['serial_number'] as String,
   status: json.containsKey('status') ? Omittable(json['status'] != null ? TerminalReaderStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The most recent action performed by the reader.
 final Omittable<TerminalReaderReaderResourceReaderAction?> action;
@@ -159,7 +159,7 @@ final String serialNumber;
 /// The networking status of the reader. We do not recommend using this field in flows that may block taking payments.
 final Omittable<TerminalReaderStatus?> status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action.isPresent) 'action': action.value?.toJson(),
   if (deviceSwVersion.isPresent) 'device_sw_version': deviceSwVersion.value,
   'device_type': deviceType.toJson(),
@@ -173,15 +173,15 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'serial_number': serialNumber,
   if (status.isPresent) 'status': status.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('device_type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('device_type') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('label') && json['label'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
       json.containsKey('object') &&
-      json.containsKey('serial_number') && json['serial_number'] is String; } 
-TerminalReader copyWith({Omittable<TerminalReaderReaderResourceReaderAction?>? action, Omittable<String?>? deviceSwVersion, TerminalReaderDeviceType? deviceType, String? id, Omittable<String?>? ipAddress, String? label, Omittable<int?>? lastSeenAt, bool? livemode, Omittable<TerminalReaderLocation?>? location, Map<String,String>? metadata, TerminalReaderObject? object, String? serialNumber, Omittable<TerminalReaderStatus?>? status, }) { return TerminalReader(
+      json.containsKey('serial_number') && json['serial_number'] is String;}
+TerminalReader copyWith({Omittable<TerminalReaderReaderResourceReaderAction?>? action, Omittable<String?>? deviceSwVersion, TerminalReaderDeviceType? deviceType, String? id, Omittable<String?>? ipAddress, String? label, Omittable<int?>? lastSeenAt, bool? livemode, Omittable<TerminalReaderLocation?>? location, Map<String,String>? metadata, TerminalReaderObject? object, String? serialNumber, Omittable<TerminalReaderStatus?>? status, }) {return TerminalReader(
   action: action ?? this.action,
   deviceSwVersion: deviceSwVersion ?? this.deviceSwVersion,
   deviceType: deviceType ?? this.deviceType,
@@ -195,8 +195,8 @@ TerminalReader copyWith({Omittable<TerminalReaderReaderResourceReaderAction?>? a
   object: object ?? this.object,
   serialNumber: serialNumber ?? this.serialNumber,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TerminalReader &&
           action == other.action &&
           deviceSwVersion == other.deviceSwVersion &&
@@ -210,7 +210,7 @@ TerminalReader copyWith({Omittable<TerminalReaderReaderResourceReaderAction?>? a
           metadata == other.metadata &&
           object == other.object &&
           serialNumber == other.serialNumber &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(action, deviceSwVersion, deviceType, id, ipAddress, label, lastSeenAt, livemode, location, metadata, object, serialNumber, status); } 
-@override String toString() { return 'TerminalReader(action: $action, deviceSwVersion: $deviceSwVersion, deviceType: $deviceType, id: $id, ipAddress: $ipAddress, label: $label, lastSeenAt: $lastSeenAt, livemode: $livemode, location: $location, metadata: $metadata, object: $object, serialNumber: $serialNumber, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(action, deviceSwVersion, deviceType, id, ipAddress, label, lastSeenAt, livemode, location, metadata, object, serialNumber, status);}
+@override String toString() {return 'TerminalReader(action: $action, deviceSwVersion: $deviceSwVersion, deviceType: $deviceType, id: $id, ipAddress: $ipAddress, label: $label, lastSeenAt: $lastSeenAt, livemode: $livemode, location: $location, metadata: $metadata, object: $object, serialNumber: $serialNumber, status: $status)';}
+}

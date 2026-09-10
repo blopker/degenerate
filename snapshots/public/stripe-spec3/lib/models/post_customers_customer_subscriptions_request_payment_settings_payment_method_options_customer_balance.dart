@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param3.dart';@immutable final class PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2 {const PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2._(this.value);
 
-factory PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2 $empty = PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymen
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2($value)';}
+}
 
 @immutable
 final class PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalance {

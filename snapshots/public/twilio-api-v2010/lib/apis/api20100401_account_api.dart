@@ -11,7 +11,7 @@ final class Api20100401AccountApi with ApiExecutor {const Api20100401AccountApi(
 /// Retrieves a collection of Accounts belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts.json`
-Future<ApiResult<ListAccountResponse, Never>> listAccount({String? friendlyName, AccountEnumStatus? status, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListAccountResponse, Never>> listAccount({String? friendlyName, AccountEnumStatus? status, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (friendlyName != null) {
   queryParameters['FriendlyName'] = friendlyName;
@@ -47,11 +47,11 @@ final json = jsonDecode(response.body);
 return ListAccountResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create a new Twilio Subaccount from the account making the request
 ///
 /// `POST /2010-04-01/Accounts.json`
-Future<ApiResult<Account, Never>> createAccount({CreateAccountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Account, Never>> createAccount({CreateAccountRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -72,11 +72,11 @@ final json = jsonDecode(response.body);
 return Account.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Fetch the account specified by the provided Account Sid
 ///
 /// `GET /2010-04-01/Accounts/{Sid}.json`
-Future<ApiResult<Account, Never>> fetchAccount({required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Account, Never>> fetchAccount({required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -92,11 +92,11 @@ final json = jsonDecode(response.body);
 return Account.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Modify the properties of a given Account
 ///
 /// `POST /2010-04-01/Accounts/{Sid}.json`
-Future<ApiResult<Account, Never>> updateAccount({required String sid, UpdateAccountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Account, Never>> updateAccount({required String sid, UpdateAccountRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -119,5 +119,5 @@ final json = jsonDecode(response.body);
 return Account.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodespacesPublishForAuthenticatedUserRequest {const CodespacesPublishForAuthenticatedUserRequest({this.name, this.private, });
 
-factory CodespacesPublishForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return CodespacesPublishForAuthenticatedUserRequest(
+factory CodespacesPublishForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) {return CodespacesPublishForAuthenticatedUserRequest(
   name: json['name'] as String?,
   private: json['private'] as bool?,
-); }
+);}
 
 /// A name for the new repository.
 final String? name;
@@ -14,20 +14,20 @@ final String? name;
 final bool? private;
 
 /// The value with the schema default applied when absent.
-bool get privateOrDefault { return private ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get privateOrDefault {return private ?? false;}
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'private': ?private,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'private'}.contains(key)); } 
-CodespacesPublishForAuthenticatedUserRequest copyWith({String? Function()? name, bool? Function()? private, }) { return CodespacesPublishForAuthenticatedUserRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'private'}.contains(key));}
+CodespacesPublishForAuthenticatedUserRequest copyWith({String? Function()? name, bool? Function()? private, }) {return CodespacesPublishForAuthenticatedUserRequest(
   name: name != null ? name() : this.name,
   private: private != null ? private() : this.private,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodespacesPublishForAuthenticatedUserRequest &&
           name == other.name &&
-          private == other.private; } 
-@override int get hashCode { return Object.hash(name, private); } 
-@override String toString() { return 'CodespacesPublishForAuthenticatedUserRequest(name: $name, private: $private)'; } 
- }
+          private == other.private;}
+@override int get hashCode {return Object.hash(name, private);}
+@override String toString() {return 'CodespacesPublishForAuthenticatedUserRequest(name: $name, private: $private)';}
+}

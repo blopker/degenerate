@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom {const WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom._(this.value);
 
-factory WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.fromJson(String json) { return switch (json) {
+factory WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom._(json),
-}; }
+};}
 
 static const WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom off = WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom._('off');
 
@@ -19,32 +19,32 @@ static const List<WebhookBranchProtectionRuleEditedChangesLinearHistoryRequireme
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom($value)';}
+}
 @immutable final class WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel {const WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel({required this.from});
 
-factory WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel(
+factory WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel.fromJson(Map<String, dynamic> json) {return WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel(
   from: WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.fromJson(json['from'] as String),
-); }
+);}
 
 final WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom from;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'from': from.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('from'); } 
-WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel copyWith({WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom? from}) { return WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('from');}
+WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel copyWith({WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom? from}) {return WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel(
   from: from ?? this.from,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel &&
-          from == other.from; } 
-@override int get hashCode { return from.hashCode; } 
-@override String toString() { return 'WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel(from: $from)'; } 
- }
+          from == other.from;}
+@override int get hashCode {return from.hashCode;}
+@override String toString() {return 'WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel(from: $from)';}
+}

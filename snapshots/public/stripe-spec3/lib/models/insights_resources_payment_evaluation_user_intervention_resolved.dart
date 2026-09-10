@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Result of the intervention if it has been completed.
 @immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome {const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome._(this.value);
 
-factory InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome.fromJson(String json) { return switch (json) {
+factory InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome.fromJson(String json) {return switch (json) {
   'abandoned' => abandoned,
   'failed' => failed,
   'passed' => passed,
   _ => InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome._(json),
-}; }
+};}
 
 static const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome abandoned = InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome._('abandoned');
 
@@ -20,21 +20,21 @@ static const List<InsightsResourcesPaymentEvaluationUserInterventionResolvedOutc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome($value)';}
+}
 /// User Intervention Resolved Event details attached to this payment evaluation
 @immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolved {const InsightsResourcesPaymentEvaluationUserInterventionResolved({required this.key, this.outcome = const Omittable.absent(), });
 
-factory InsightsResourcesPaymentEvaluationUserInterventionResolved.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationUserInterventionResolved(
+factory InsightsResourcesPaymentEvaluationUserInterventionResolved.fromJson(Map<String, dynamic> json) {return InsightsResourcesPaymentEvaluationUserInterventionResolved(
   key: json['key'] as String,
   outcome: json.containsKey('outcome') ? Omittable(json['outcome'] != null ? InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome.fromJson(json['outcome'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Unique ID of this intervention. Use this to provide the result.
 final String key;
@@ -42,19 +42,19 @@ final String key;
 /// Result of the intervention if it has been completed.
 final Omittable<InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome?> outcome;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
   if (outcome.isPresent) 'outcome': outcome.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
-InsightsResourcesPaymentEvaluationUserInterventionResolved copyWith({String? key, Omittable<InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome?>? outcome, }) { return InsightsResourcesPaymentEvaluationUserInterventionResolved(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String;}
+InsightsResourcesPaymentEvaluationUserInterventionResolved copyWith({String? key, Omittable<InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome?>? outcome, }) {return InsightsResourcesPaymentEvaluationUserInterventionResolved(
   key: key ?? this.key,
   outcome: outcome ?? this.outcome,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationUserInterventionResolved &&
           key == other.key &&
-          outcome == other.outcome; } 
-@override int get hashCode { return Object.hash(key, outcome); } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationUserInterventionResolved(key: $key, outcome: $outcome)'; } 
- }
+          outcome == other.outcome;}
+@override int get hashCode {return Object.hash(key, outcome);}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationUserInterventionResolved(key: $key, outcome: $outcome)';}
+}

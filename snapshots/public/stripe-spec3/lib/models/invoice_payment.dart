@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_invoice.dart';import 'invoices_payments_invoice_payment_associated_payment.dart';import 'invoices_payments_invoice_payment_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class InvoicePaymentObject {const InvoicePaymentObject._(this.value);
 
-factory InvoicePaymentObject.fromJson(String json) { return switch (json) {
+factory InvoicePaymentObject.fromJson(String json) {return switch (json) {
   'invoice_payment' => invoicePayment,
   _ => InvoicePaymentObject._(json),
-}; }
+};}
 
 static const InvoicePaymentObject invoicePayment = InvoicePaymentObject._('invoice_payment');
 
@@ -14,14 +14,14 @@ static const List<InvoicePaymentObject> values = [invoicePayment];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoicePaymentObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoicePaymentObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoicePaymentObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoicePaymentObject($value)';}
+}
 /// Invoice Payments represent payments made against invoices. Invoice Payments can
 /// be accessed in two ways:
 /// 1. By expanding the `payments` field on the [Invoice](https://api.stripe.com#invoice) resource.
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 /// monitor the allocation details of the payments.
 @immutable final class InvoicePayment {const InvoicePayment({required this.amountRequested, required this.created, required this.currency, required this.id, required this.invoice, required this.isDefault, required this.livemode, required this.object, required this.payment, required this.status, required this.statusTransitions, this.amountPaid = const Omittable.absent(), });
 
-factory InvoicePayment.fromJson(Map<String, dynamic> json) { return InvoicePayment(
+factory InvoicePayment.fromJson(Map<String, dynamic> json) {return InvoicePayment(
   amountPaid: json.containsKey('amount_paid') ? Omittable(json['amount_paid'] != null ? (json['amount_paid'] as num).toInt() : null) : const Omittable.absent(),
   amountRequested: (json['amount_requested'] as num).toInt(),
   created: (json['created'] as num).toInt(),
@@ -45,7 +45,7 @@ factory InvoicePayment.fromJson(Map<String, dynamic> json) { return InvoicePayme
   payment: InvoicesPaymentsInvoicePaymentAssociatedPayment.fromJson(json['payment'] as Map<String, dynamic>),
   status: json['status'] as String,
   statusTransitions: InvoicesPaymentsInvoicePaymentStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
-); }
+);}
 
 /// Amount that was actually paid for this invoice, in cents (or local equivalent). This field is null until the payment is `paid`. This amount can be less than the `amount_requested` if the PaymentIntent’s `amount_received` is not sufficient to pay all of the invoices that it is attached to.
 final Omittable<int?> amountPaid;
@@ -81,7 +81,7 @@ final String status;
 
 final InvoicesPaymentsInvoicePaymentStatusTransitions statusTransitions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amountPaid.isPresent) 'amount_paid': amountPaid.value,
   'amount_requested': amountRequested,
   'created': created,
@@ -94,8 +94,8 @@ Map<String, dynamic> toJson() { return {
   'payment': payment.toJson(),
   'status': status,
   'status_transitions': statusTransitions.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_requested') && json['amount_requested'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_requested') && json['amount_requested'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
@@ -105,8 +105,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('payment') &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('status_transitions'); } 
-InvoicePayment copyWith({Omittable<int?>? amountPaid, int? amountRequested, int? created, String? currency, String? id, InvoicePaymentInvoice? invoice, bool? isDefault, bool? livemode, InvoicePaymentObject? object, InvoicesPaymentsInvoicePaymentAssociatedPayment? payment, String? status, InvoicesPaymentsInvoicePaymentStatusTransitions? statusTransitions, }) { return InvoicePayment(
+      json.containsKey('status_transitions');}
+InvoicePayment copyWith({Omittable<int?>? amountPaid, int? amountRequested, int? created, String? currency, String? id, InvoicePaymentInvoice? invoice, bool? isDefault, bool? livemode, InvoicePaymentObject? object, InvoicesPaymentsInvoicePaymentAssociatedPayment? payment, String? status, InvoicesPaymentsInvoicePaymentStatusTransitions? statusTransitions, }) {return InvoicePayment(
   amountPaid: amountPaid ?? this.amountPaid,
   amountRequested: amountRequested ?? this.amountRequested,
   created: created ?? this.created,
@@ -119,8 +119,8 @@ InvoicePayment copyWith({Omittable<int?>? amountPaid, int? amountRequested, int?
   payment: payment ?? this.payment,
   status: status ?? this.status,
   statusTransitions: statusTransitions ?? this.statusTransitions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InvoicePayment &&
           amountPaid == other.amountPaid &&
           amountRequested == other.amountRequested &&
@@ -133,7 +133,7 @@ InvoicePayment copyWith({Omittable<int?>? amountPaid, int? amountRequested, int?
           object == other.object &&
           payment == other.payment &&
           status == other.status &&
-          statusTransitions == other.statusTransitions; } 
-@override int get hashCode { return Object.hash(amountPaid, amountRequested, created, currency, id, invoice, isDefault, livemode, object, payment, status, statusTransitions); } 
-@override String toString() { return 'InvoicePayment(amountPaid: $amountPaid, amountRequested: $amountRequested, created: $created, currency: $currency, id: $id, invoice: $invoice, isDefault: $isDefault, livemode: $livemode, object: $object, payment: $payment, status: $status, statusTransitions: $statusTransitions)'; } 
- }
+          statusTransitions == other.statusTransitions;}
+@override int get hashCode {return Object.hash(amountPaid, amountRequested, created, currency, id, invoice, isDefault, livemode, object, payment, status, statusTransitions);}
+@override String toString() {return 'InvoicePayment(amountPaid: $amountPaid, amountRequested: $amountRequested, created: $created, currency: $currency, id: $id, invoice: $invoice, isDefault: $isDefault, livemode: $livemode, object: $object, payment: $payment, status: $status, statusTransitions: $statusTransitions)';}
+}

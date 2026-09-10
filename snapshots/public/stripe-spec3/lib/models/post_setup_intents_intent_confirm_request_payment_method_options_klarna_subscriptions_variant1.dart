@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_klarna_subscriptions_variant1_next_billing.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval._(this.value);
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval.fromJson(String json) {return switch (json) {
   'day' => day,
   'month' => month,
   'week' => week,
   'year' => year,
   _ => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval day = PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval._('day');
 
@@ -22,23 +22,23 @@ static const List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval($value)';}
+}
 @immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1 {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1({required this.interval, required this.nextBilling, required this.reference, this.intervalCount, this.name, });
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1(
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1.fromJson(Map<String, dynamic> json) {return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1(
   interval: PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval.fromJson(json['interval'] as String),
   intervalCount: json['interval_count'] != null ? (json['interval_count'] as num).toInt() : null,
   name: json['name'] as String?,
   nextBilling: PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling.fromJson(json['next_billing'] as Map<String, dynamic>),
   reference: json['reference'] as String,
-); }
+);}
 
 final PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval interval;
 
@@ -50,30 +50,30 @@ final PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscription
 
 final String reference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'interval': interval.toJson(),
   'interval_count': ?intervalCount,
   'name': ?name,
   'next_billing': nextBilling.toJson(),
   'reference': reference,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('interval') &&
       json.containsKey('next_billing') &&
-      json.containsKey('reference') && json['reference'] is String; } 
-PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1 copyWith({PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval? interval, int? Function()? intervalCount, String? Function()? name, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling? nextBilling, String? reference, }) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1(
+      json.containsKey('reference') && json['reference'] is String;}
+PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1 copyWith({PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval? interval, int? Function()? intervalCount, String? Function()? name, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling? nextBilling, String? reference, }) {return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1(
   interval: interval ?? this.interval,
   intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,
   name: name != null ? name() : this.name,
   nextBilling: nextBilling ?? this.nextBilling,
   reference: reference ?? this.reference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1 &&
           interval == other.interval &&
           intervalCount == other.intervalCount &&
           name == other.name &&
           nextBilling == other.nextBilling &&
-          reference == other.reference; } 
-@override int get hashCode { return Object.hash(interval, intervalCount, name, nextBilling, reference); } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1(interval: $interval, intervalCount: $intervalCount, name: $name, nextBilling: $nextBilling, reference: $reference)'; } 
- }
+          reference == other.reference;}
+@override int get hashCode {return Object.hash(interval, intervalCount, name, nextBilling, reference);}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1(interval: $interval, intervalCount: $intervalCount, name: $name, nextBilling: $nextBilling, reference: $reference)';}
+}

@@ -13,7 +13,7 @@ final class RadarWebCrawlersApi with ApiExecutor {const RadarWebCrawlersApi(this
 /// Retrieves an aggregated summary of HTTP requests from crawlers, grouped by the specified dimension.
 ///
 /// `GET /radar/bots/crawlers/summary/{dimension}`
-Future<ApiResult<RadarGetCrawlersSummaryResponseResult, RadarGetCrawlersSummaryResponse400>> radarGetCrawlersSummary({required RadarGetCrawlersSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? botOperator, List<String>? vertical, List<String>? industry, List<RadarGetCrawlersSummaryClientType>? clientType, RadarGetCrawlersSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetCrawlersSummaryResponseResult, RadarGetCrawlersSummaryResponse400>> radarGetCrawlersSummary({required RadarGetCrawlersSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? botOperator, List<String>? vertical, List<String>? industry, List<RadarGetCrawlersSummaryClientType>? clientType, RadarGetCrawlersSummaryFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -90,13 +90,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get time series of crawler HTTP request distribution by dimension
 ///
 /// Retrieves the distribution of HTTP requests from crawlers, grouped by the specified dimension over time.
 ///
 /// `GET /radar/bots/crawlers/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetCrawlersTimeseriesGroupResponseResult, RadarGetCrawlersTimeseriesGroupResponse400>> radarGetCrawlersTimeseriesGroup({required RadarGetCrawlersTimeseriesGroupDimension dimension, RadarGetCrawlersTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? botOperator, List<String>? vertical, List<String>? industry, List<RadarGetCrawlersTimeseriesGroupClientType>? clientType, RadarGetCrawlersTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetCrawlersTimeseriesGroupResponseResult, RadarGetCrawlersTimeseriesGroupResponse400>> radarGetCrawlersTimeseriesGroup({required RadarGetCrawlersTimeseriesGroupDimension dimension, RadarGetCrawlersTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? botOperator, List<String>? vertical, List<String>? industry, List<RadarGetCrawlersTimeseriesGroupClientType>? clientType, RadarGetCrawlersTimeseriesGroupFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -176,5 +176,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

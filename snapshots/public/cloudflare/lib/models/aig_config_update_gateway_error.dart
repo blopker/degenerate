@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class AigConfigUpdateGatewayError {const AigConfigUpdateGatewayError();
 
 /// Decodes the payload for its declared status and content type.
-static AigConfigUpdateGatewayError parse(ApiResponse response) { switch (response.statusCode) {
+static AigConfigUpdateGatewayError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
 return AigConfigUpdateGatewayError400(AigConfigUpdateGatewayResponse400.fromJson(json as Map<String, dynamic>));
@@ -14,26 +14,26 @@ return AigConfigUpdateGatewayError404(AigConfigUpdateGatewayResponse404.fromJson
 default:
 return AigConfigUpdateGatewayErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class AigConfigUpdateGatewayError400 extends AigConfigUpdateGatewayError {const AigConfigUpdateGatewayError400(this.data);
 
 /// The decoded response payload.
 final AigConfigUpdateGatewayResponse400 data;
 
- }
+}
 /// Response for 404 (application/json).
 final class AigConfigUpdateGatewayError404 extends AigConfigUpdateGatewayError {const AigConfigUpdateGatewayError404(this.data);
 
 /// The decoded response payload.
 final AigConfigUpdateGatewayResponse404 data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class AigConfigUpdateGatewayErrorUnknown extends AigConfigUpdateGatewayError {const AigConfigUpdateGatewayErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

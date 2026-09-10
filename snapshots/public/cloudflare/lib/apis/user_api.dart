@@ -11,7 +11,7 @@ final class UserApi with ApiExecutor {const UserApi(this.apiConfig);
 /// User Details
 ///
 /// `GET /user`
-Future<ApiResult<IamSingleUserResponseResult?, ResponseCommonFailure38>> userDetails({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSingleUserResponseResult?, ResponseCommonFailure38>> userDetails({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -37,13 +37,13 @@ return null;
 
   },
 );
- } 
+}
 /// Edit User
 ///
 /// Edit part of your user details.
 ///
 /// `PATCH /user`
-Future<ApiResult<IamSingleUserResponseResult?, ResponseCommonFailure38>> userEditUser({required UserEditUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSingleUserResponseResult?, ResponseCommonFailure38>> userEditUser({required UserEditUserRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -71,13 +71,13 @@ return null;
 
   },
 );
- } 
+}
 /// List user tenants
 ///
 /// Retrieves list of tenants the authenticated user / method has access to.
 ///
 /// `GET /users/tenants`
-Future<ApiResult<List<Organization>, ErrorResponse>> userListUserTenants({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Organization>, ErrorResponse>> userListUserTenants({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -103,5 +103,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

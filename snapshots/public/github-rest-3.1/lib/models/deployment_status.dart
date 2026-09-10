@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';/// The state of the status.
 @immutable final class DeploymentStatusState {const DeploymentStatusState._(this.value);
 
-factory DeploymentStatusState.fromJson(String json) { return switch (json) {
+factory DeploymentStatusState.fromJson(String json) {return switch (json) {
   'error' => error,
   'failure' => failure,
   'inactive' => inactive,
@@ -12,7 +12,7 @@ factory DeploymentStatusState.fromJson(String json) { return switch (json) {
   'queued' => queued,
   'in_progress' => inProgress,
   _ => DeploymentStatusState._(json),
-}; }
+};}
 
 static const DeploymentStatusState error = DeploymentStatusState._('error');
 
@@ -32,18 +32,18 @@ static const List<DeploymentStatusState> values = [error, failure, inactive, pen
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeploymentStatusState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeploymentStatusState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DeploymentStatusState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DeploymentStatusState($value)';}
+}
 /// The status of a deployment.
 @immutable final class DeploymentStatus {const DeploymentStatus({required this.url, required this.id, required this.nodeId, required this.state, required this.creator, required this.description, required this.targetUrl, required this.createdAt, required this.updatedAt, required this.deploymentUrl, required this.repositoryUrl, this.environment, this.environmentUrl, this.logUrl, this.performedViaGithubApp = const Omittable.absent(), });
 
-factory DeploymentStatus.fromJson(Map<String, dynamic> json) { return DeploymentStatus(
+factory DeploymentStatus.fromJson(Map<String, dynamic> json) {return DeploymentStatus(
   url: Uri.parse(json['url'] as String),
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -59,7 +59,7 @@ factory DeploymentStatus.fromJson(Map<String, dynamic> json) { return Deployment
   environmentUrl: json['environment_url'] != null ? Uri.parse(json['environment_url'] as String) : null,
   logUrl: json['log_url'] != null ? Uri.parse(json['log_url'] as String) : null,
   performedViaGithubApp: json.containsKey('performed_via_github_app') ? Omittable(json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 final Uri url;
 
@@ -98,8 +98,8 @@ final Uri? logUrl;
 final Omittable<Integration?> performedViaGithubApp;
 
 /// The value with the schema default applied when absent.
-String get environmentOrDefault { return environment ?? ''; } 
-Map<String, dynamic> toJson() { return {
+String get environmentOrDefault {return environment ?? '';}
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'id': id,
   'node_id': nodeId,
@@ -115,8 +115,8 @@ Map<String, dynamic> toJson() { return {
   if (environmentUrl != null) 'environment_url': environmentUrl?.toString(),
   if (logUrl != null) 'log_url': logUrl?.toString(),
   if (performedViaGithubApp.isPresent) 'performed_via_github_app': performedViaGithubApp.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('state') &&
@@ -126,8 +126,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('deployment_url') && json['deployment_url'] is String &&
-      json.containsKey('repository_url') && json['repository_url'] is String; } 
-DeploymentStatus copyWith({Uri? url, int? id, String? nodeId, DeploymentStatusState? state, SimpleUser? Function()? creator, String? description, String? Function()? environment, Uri? targetUrl, DateTime? createdAt, DateTime? updatedAt, Uri? deploymentUrl, Uri? repositoryUrl, Uri? Function()? environmentUrl, Uri? Function()? logUrl, Omittable<Integration?>? performedViaGithubApp, }) { return DeploymentStatus(
+      json.containsKey('repository_url') && json['repository_url'] is String;}
+DeploymentStatus copyWith({Uri? url, int? id, String? nodeId, DeploymentStatusState? state, SimpleUser? Function()? creator, String? description, String? Function()? environment, Uri? targetUrl, DateTime? createdAt, DateTime? updatedAt, Uri? deploymentUrl, Uri? repositoryUrl, Uri? Function()? environmentUrl, Uri? Function()? logUrl, Omittable<Integration?>? performedViaGithubApp, }) {return DeploymentStatus(
   url: url ?? this.url,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -143,8 +143,8 @@ DeploymentStatus copyWith({Uri? url, int? id, String? nodeId, DeploymentStatusSt
   environmentUrl: environmentUrl != null ? environmentUrl() : this.environmentUrl,
   logUrl: logUrl != null ? logUrl() : this.logUrl,
   performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DeploymentStatus &&
           url == other.url &&
           id == other.id &&
@@ -160,7 +160,7 @@ DeploymentStatus copyWith({Uri? url, int? id, String? nodeId, DeploymentStatusSt
           repositoryUrl == other.repositoryUrl &&
           environmentUrl == other.environmentUrl &&
           logUrl == other.logUrl &&
-          performedViaGithubApp == other.performedViaGithubApp; } 
-@override int get hashCode { return Object.hash(url, id, nodeId, state, creator, description, environment, targetUrl, createdAt, updatedAt, deploymentUrl, repositoryUrl, environmentUrl, logUrl, performedViaGithubApp); } 
-@override String toString() { return 'DeploymentStatus(url: $url, id: $id, nodeId: $nodeId, state: $state, creator: $creator, description: $description, environment: $environment, targetUrl: $targetUrl, createdAt: $createdAt, updatedAt: $updatedAt, deploymentUrl: $deploymentUrl, repositoryUrl: $repositoryUrl, environmentUrl: $environmentUrl, logUrl: $logUrl, performedViaGithubApp: $performedViaGithubApp)'; } 
- }
+          performedViaGithubApp == other.performedViaGithubApp;}
+@override int get hashCode {return Object.hash(url, id, nodeId, state, creator, description, environment, targetUrl, createdAt, updatedAt, deploymentUrl, repositoryUrl, environmentUrl, logUrl, performedViaGithubApp);}
+@override String toString() {return 'DeploymentStatus(url: $url, id: $id, nodeId: $nodeId, state: $state, creator: $creator, description: $description, environment: $environment, targetUrl: $targetUrl, createdAt: $createdAt, updatedAt: $updatedAt, deploymentUrl: $deploymentUrl, repositoryUrl: $repositoryUrl, environmentUrl: $environmentUrl, logUrl: $logUrl, performedViaGithubApp: $performedViaGithubApp)';}
+}

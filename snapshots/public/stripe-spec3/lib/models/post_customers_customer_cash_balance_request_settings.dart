@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerCashBalanceRequestSettingsReconciliationMode {const PostCustomersCustomerCashBalanceRequestSettingsReconciliationMode._(this.value);
 
-factory PostCustomersCustomerCashBalanceRequestSettingsReconciliationMode.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerCashBalanceRequestSettingsReconciliationMode.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'manual' => manual,
   'merchant_default' => merchantDefault,
   _ => PostCustomersCustomerCashBalanceRequestSettingsReconciliationMode._(json),
-}; }
+};}
 
 static const PostCustomersCustomerCashBalanceRequestSettingsReconciliationMode automatic = PostCustomersCustomerCashBalanceRequestSettingsReconciliationMode._('automatic');
 
@@ -19,33 +19,33 @@ static const List<PostCustomersCustomerCashBalanceRequestSettingsReconciliationM
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerCashBalanceRequestSettingsReconciliationMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerCashBalanceRequestSettingsReconciliationMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerCashBalanceRequestSettingsReconciliationMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerCashBalanceRequestSettingsReconciliationMode($value)';}
+}
 /// A hash of settings for this cash balance.
 @immutable final class PostCustomersCustomerCashBalanceRequestSettings {const PostCustomersCustomerCashBalanceRequestSettings({this.reconciliationMode});
 
-factory PostCustomersCustomerCashBalanceRequestSettings.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerCashBalanceRequestSettings(
+factory PostCustomersCustomerCashBalanceRequestSettings.fromJson(Map<String, dynamic> json) {return PostCustomersCustomerCashBalanceRequestSettings(
   reconciliationMode: json['reconciliation_mode'] != null ? PostCustomersCustomerCashBalanceRequestSettingsReconciliationMode.fromJson(json['reconciliation_mode'] as String) : null,
-); }
+);}
 
 final PostCustomersCustomerCashBalanceRequestSettingsReconciliationMode? reconciliationMode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (reconciliationMode != null) 'reconciliation_mode': reconciliationMode?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reconciliation_mode'}.contains(key)); } 
-PostCustomersCustomerCashBalanceRequestSettings copyWith({PostCustomersCustomerCashBalanceRequestSettingsReconciliationMode? Function()? reconciliationMode}) { return PostCustomersCustomerCashBalanceRequestSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'reconciliation_mode'}.contains(key));}
+PostCustomersCustomerCashBalanceRequestSettings copyWith({PostCustomersCustomerCashBalanceRequestSettingsReconciliationMode? Function()? reconciliationMode}) {return PostCustomersCustomerCashBalanceRequestSettings(
   reconciliationMode: reconciliationMode != null ? reconciliationMode() : this.reconciliationMode,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCustomersCustomerCashBalanceRequestSettings &&
-          reconciliationMode == other.reconciliationMode; } 
-@override int get hashCode { return reconciliationMode.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerCashBalanceRequestSettings(reconciliationMode: $reconciliationMode)'; } 
- }
+          reconciliationMode == other.reconciliationMode;}
+@override int get hashCode {return reconciliationMode.hashCode;}
+@override String toString() {return 'PostCustomersCustomerCashBalanceRequestSettings(reconciliationMode: $reconciliationMode)';}
+}

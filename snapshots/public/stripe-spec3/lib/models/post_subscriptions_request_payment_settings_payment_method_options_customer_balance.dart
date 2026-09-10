@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param33.dart';@immutable final class PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2 {const PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2._(this.value);
 
-factory PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2.fromJson(String json) { return switch (json) {
+factory PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2._(json),
-}; }
+};}
 
 static const PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2 $empty = PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCus
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2($value)';}
+}
 
 @immutable
 final class PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsCustomerBalance {

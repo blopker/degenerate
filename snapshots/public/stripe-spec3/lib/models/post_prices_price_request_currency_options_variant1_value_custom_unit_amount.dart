@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount {const PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount({required this.enabled, this.maximum, this.minimum, this.preset, });
 
-factory PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount.fromJson(Map<String, dynamic> json) { return PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount(
+factory PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount.fromJson(Map<String, dynamic> json) {return PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount(
   enabled: json['enabled'] as bool,
   maximum: json['maximum'] != null ? (json['maximum'] as num).toInt() : null,
   minimum: json['minimum'] != null ? (json['minimum'] as num).toInt() : null,
   preset: json['preset'] != null ? (json['preset'] as num).toInt() : null,
-); }
+);}
 
 final bool enabled;
 
@@ -17,25 +17,25 @@ final int? minimum;
 
 final int? preset;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   'maximum': ?maximum,
   'minimum': ?minimum,
   'preset': ?preset,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount copyWith({bool? enabled, int? Function()? maximum, int? Function()? minimum, int? Function()? preset, }) { return PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount copyWith({bool? enabled, int? Function()? maximum, int? Function()? minimum, int? Function()? preset, }) {return PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount(
   enabled: enabled ?? this.enabled,
   maximum: maximum != null ? maximum() : this.maximum,
   minimum: minimum != null ? minimum() : this.minimum,
   preset: preset != null ? preset() : this.preset,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount &&
           enabled == other.enabled &&
           maximum == other.maximum &&
           minimum == other.minimum &&
-          preset == other.preset; } 
-@override int get hashCode { return Object.hash(enabled, maximum, minimum, preset); } 
-@override String toString() { return 'PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount(enabled: $enabled, maximum: $maximum, minimum: $minimum, preset: $preset)'; } 
- }
+          preset == other.preset;}
+@override int get hashCode {return Object.hash(enabled, maximum, minimum, preset);}
+@override String toString() {return 'PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount(enabled: $enabled, maximum: $maximum, minimum: $minimum, preset: $preset)';}
+}

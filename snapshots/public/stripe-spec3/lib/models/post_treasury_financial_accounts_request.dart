@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_financial_accounts_request_features.dart';import 'post_treasury_financial_accounts_request_nickname.dart';import 'post_treasury_financial_accounts_request_platform_restrictions.dart';@immutable final class PostTreasuryFinancialAccountsRequest {const PostTreasuryFinancialAccountsRequest({required this.supportedCurrencies, this.expand, this.features, this.metadata, this.nickname, this.platformRestrictions, });
 
-factory PostTreasuryFinancialAccountsRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsRequest(
+factory PostTreasuryFinancialAccountsRequest.fromJson(Map<String, dynamic> json) {return PostTreasuryFinancialAccountsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   features: json['features'] != null ? PostTreasuryFinancialAccountsRequestFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   nickname: json['nickname'] != null ? PostTreasuryFinancialAccountsRequestNickname.fromJson(json['nickname']) : null,
   platformRestrictions: json['platform_restrictions'] != null ? PostTreasuryFinancialAccountsRequestPlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null,
   supportedCurrencies: (json['supported_currencies'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -29,31 +29,31 @@ final PostTreasuryFinancialAccountsRequestPlatformRestrictions? platformRestrict
 /// The currencies the FinancialAccount can hold a balance in.
 final List<String> supportedCurrencies;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   if (features != null) 'features': features?.toJson(),
   'metadata': ?metadata,
   if (nickname != null) 'nickname': nickname?.toJson(),
   if (platformRestrictions != null) 'platform_restrictions': platformRestrictions?.toJson(),
   'supported_currencies': supportedCurrencies,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('supported_currencies'); } 
-PostTreasuryFinancialAccountsRequest copyWith({List<String>? Function()? expand, PostTreasuryFinancialAccountsRequestFeatures? Function()? features, Map<String, String>? Function()? metadata, PostTreasuryFinancialAccountsRequestNickname? Function()? nickname, PostTreasuryFinancialAccountsRequestPlatformRestrictions? Function()? platformRestrictions, List<String>? supportedCurrencies, }) { return PostTreasuryFinancialAccountsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('supported_currencies');}
+PostTreasuryFinancialAccountsRequest copyWith({List<String>? Function()? expand, PostTreasuryFinancialAccountsRequestFeatures? Function()? features, Map<String, String>? Function()? metadata, PostTreasuryFinancialAccountsRequestNickname? Function()? nickname, PostTreasuryFinancialAccountsRequestPlatformRestrictions? Function()? platformRestrictions, List<String>? supportedCurrencies, }) {return PostTreasuryFinancialAccountsRequest(
   expand: expand != null ? expand() : this.expand,
   features: features != null ? features() : this.features,
   metadata: metadata != null ? metadata() : this.metadata,
   nickname: nickname != null ? nickname() : this.nickname,
   platformRestrictions: platformRestrictions != null ? platformRestrictions() : this.platformRestrictions,
   supportedCurrencies: supportedCurrencies ?? this.supportedCurrencies,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTreasuryFinancialAccountsRequest &&
           listEquals(expand, other.expand) &&
           features == other.features &&
           metadata == other.metadata &&
           nickname == other.nickname &&
           platformRestrictions == other.platformRestrictions &&
-          listEquals(supportedCurrencies, other.supportedCurrencies); } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), features, metadata, nickname, platformRestrictions, Object.hashAll(supportedCurrencies)); } 
-@override String toString() { return 'PostTreasuryFinancialAccountsRequest(expand: $expand, features: $features, metadata: $metadata, nickname: $nickname, platformRestrictions: $platformRestrictions, supportedCurrencies: $supportedCurrencies)'; } 
- }
+          listEquals(supportedCurrencies, other.supportedCurrencies);}
+@override int get hashCode {return Object.hash(Object.hashAll(expand ?? const []), features, metadata, nickname, platformRestrictions, Object.hashAll(supportedCurrencies));}
+@override String toString() {return 'PostTreasuryFinancialAccountsRequest(expand: $expand, features: $features, metadata: $metadata, nickname: $nickname, platformRestrictions: $platformRestrictions, supportedCurrencies: $supportedCurrencies)';}
+}

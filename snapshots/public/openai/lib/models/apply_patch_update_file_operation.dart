@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Update an existing file with the provided diff.
 @immutable final class ApplyPatchUpdateFileOperationType {const ApplyPatchUpdateFileOperationType._(this.value);
 
-factory ApplyPatchUpdateFileOperationType.fromJson(String json) { return switch (json) {
+factory ApplyPatchUpdateFileOperationType.fromJson(String json) {return switch (json) {
   'update_file' => updateFile,
   _ => ApplyPatchUpdateFileOperationType._(json),
-}; }
+};}
 
 static const ApplyPatchUpdateFileOperationType updateFile = ApplyPatchUpdateFileOperationType._('update_file');
 
@@ -14,22 +14,22 @@ static const List<ApplyPatchUpdateFileOperationType> values = [updateFile];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ApplyPatchUpdateFileOperationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ApplyPatchUpdateFileOperationType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ApplyPatchUpdateFileOperationType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ApplyPatchUpdateFileOperationType($value)';}
+}
 /// Instruction describing how to update a file via the apply_patch tool.
 @immutable final class ApplyPatchUpdateFileOperation {const ApplyPatchUpdateFileOperation({required this.type, required this.path, required this.diff, });
 
-factory ApplyPatchUpdateFileOperation.fromJson(Map<String, dynamic> json) { return ApplyPatchUpdateFileOperation(
+factory ApplyPatchUpdateFileOperation.fromJson(Map<String, dynamic> json) {return ApplyPatchUpdateFileOperation(
   type: ApplyPatchUpdateFileOperationType.fromJson(json['type'] as String),
   path: json['path'] as String,
   diff: json['diff'] as String,
-); }
+);}
 
 /// Update an existing file with the provided diff.
 final ApplyPatchUpdateFileOperationType type;
@@ -40,24 +40,24 @@ final String path;
 /// Diff to apply.
 final String diff;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'path': path,
   'diff': diff,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('path') && json['path'] is String &&
-      json.containsKey('diff') && json['diff'] is String; } 
-ApplyPatchUpdateFileOperation copyWith({ApplyPatchUpdateFileOperationType? type, String? path, String? diff, }) { return ApplyPatchUpdateFileOperation(
+      json.containsKey('diff') && json['diff'] is String;}
+ApplyPatchUpdateFileOperation copyWith({ApplyPatchUpdateFileOperationType? type, String? path, String? diff, }) {return ApplyPatchUpdateFileOperation(
   type: type ?? this.type,
   path: path ?? this.path,
   diff: diff ?? this.diff,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ApplyPatchUpdateFileOperation &&
           type == other.type &&
           path == other.path &&
-          diff == other.diff; } 
-@override int get hashCode { return Object.hash(type, path, diff); } 
-@override String toString() { return 'ApplyPatchUpdateFileOperation(type: $type, path: $path, diff: $diff)'; } 
- }
+          diff == other.diff;}
+@override int get hashCode {return Object.hash(type, path, diff);}
+@override String toString() {return 'ApplyPatchUpdateFileOperation(type: $type, path: $path, diff: $diff)';}
+}

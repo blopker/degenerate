@@ -13,7 +13,7 @@ final class RegistrarDomainsApi with ApiExecutor {const RegistrarDomainsApi(this
 /// List domains handled by Registrar.
 ///
 /// `GET /accounts/{account_id}/registrar/domains`
-Future<ApiResult<List<DomainProperties>, RegistrarDomainsListDomainsResponse4xx>> registrarDomainsListDomains({required Identifier3 accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<DomainProperties>, RegistrarDomainsListDomainsResponse4xx>> registrarDomainsListDomains({required Identifier3 accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get domain
 ///
 /// Show individual domain.
 ///
 /// `GET /accounts/{account_id}/registrar/domains/{domain_name}`
-Future<ApiResult<Map<String, dynamic>, RegistrarDomainsGetDomainResponse4xx>> registrarDomainsGetDomain({required DomainName domainName, required Identifier3 accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, RegistrarDomainsGetDomainResponse4xx>> registrarDomainsGetDomain({required DomainName domainName, required Identifier3 accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,13 +71,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update domain
 ///
 /// Update individual domain.
 ///
 /// `PUT /accounts/{account_id}/registrar/domains/{domain_name}`
-Future<ApiResult<Map<String, dynamic>, RegistrarDomainsUpdateDomainResponse4xx>> registrarDomainsUpdateDomain({required DomainName domainName, required Identifier3 accountId, required DomainUpdateProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, RegistrarDomainsUpdateDomainResponse4xx>> registrarDomainsUpdateDomain({required DomainName domainName, required Identifier3 accountId, required DomainUpdateProperties body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -105,5 +105,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

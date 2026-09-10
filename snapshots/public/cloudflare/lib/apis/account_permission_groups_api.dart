@@ -13,7 +13,7 @@ final class AccountPermissionGroupsApi with ApiExecutor {const AccountPermission
 /// List all the permissions groups for an account.
 ///
 /// `GET /accounts/{account_id}/iam/permission_groups`
-Future<ApiResult<List<IamPermissionGroup>?, ResponseCommonFailure38>> accountPermissionGroupList({required IamCommonComponentsSchemasIdentifier accountId, String? id, String? name, String? label, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IamPermissionGroup>?, ResponseCommonFailure38>> accountPermissionGroupList({required IamCommonComponentsSchemasIdentifier accountId, String? id, String? name, String? label, double? page, double? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id;
@@ -59,13 +59,13 @@ return null;
 
   },
 );
- } 
+}
 /// Permission Group Details
 ///
 /// Get information about a specific permission group in an account.
 ///
 /// `GET /accounts/{account_id}/iam/permission_groups/{permission_group_id}`
-Future<ApiResult<IamPermissionGroup?, ResponseCommonFailure38>> accountPermissionGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier permissionGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamPermissionGroup?, ResponseCommonFailure38>> accountPermissionGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier permissionGroupId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -91,5 +91,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

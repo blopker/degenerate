@@ -11,7 +11,7 @@ final class Api20100401NewKeyApi with ApiExecutor {const Api20100401NewKeyApi(th
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Keys.json`
-Future<ApiResult<AccountNewKey, Never>> createNewKey({required String accountSid, CreateNewKeyRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountNewKey, Never>> createNewKey({required String accountSid, CreateNewKeyRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -32,5 +32,5 @@ final json = jsonDecode(response.body);
 return AccountNewKey.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

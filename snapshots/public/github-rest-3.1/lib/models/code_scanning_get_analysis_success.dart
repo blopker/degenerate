@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class CodeScanningGetAnalysisSuccess {const CodeScanningGetAnalysisSuccess();
 
 /// Decodes the payload for its declared status and content type.
-static CodeScanningGetAnalysisSuccess parse(ApiResponse response) { switch (response.statusCode) {
+static CodeScanningGetAnalysisSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -21,26 +21,26 @@ return CodeScanningGetAnalysisSuccess200ApplicationJson(CodeScanningAnalysis.fro
 default:
 return CodeScanningGetAnalysisSuccessUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 200 (application/json).
 final class CodeScanningGetAnalysisSuccess200ApplicationJson extends CodeScanningGetAnalysisSuccess {const CodeScanningGetAnalysisSuccess200ApplicationJson(this.data);
 
 /// The decoded response payload.
 final CodeScanningAnalysis data;
 
- }
+}
 /// Response for 200 (application/sarif+json).
 final class CodeScanningGetAnalysisSuccess200ApplicationSarifJson extends CodeScanningGetAnalysisSuccess {const CodeScanningGetAnalysisSuccess200ApplicationSarifJson(this.data);
 
 /// The decoded response payload.
 final Map<String, dynamic> data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class CodeScanningGetAnalysisSuccessUnknown extends CodeScanningGetAnalysisSuccess {const CodeScanningGetAnalysisSuccessUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

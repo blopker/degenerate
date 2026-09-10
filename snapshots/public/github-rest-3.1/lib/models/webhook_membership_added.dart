@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'webhook_membership_added_sender.dart';import 'webhooks_team.dart';import 'webhooks_user.dart';@immutable final class WebhookMembershipAddedAction {const WebhookMembershipAddedAction._(this.value);
 
-factory WebhookMembershipAddedAction.fromJson(String json) { return switch (json) {
+factory WebhookMembershipAddedAction.fromJson(String json) {return switch (json) {
   'added' => added,
   _ => WebhookMembershipAddedAction._(json),
-}; }
+};}
 
 static const WebhookMembershipAddedAction added = WebhookMembershipAddedAction._('added');
 
@@ -13,21 +13,21 @@ static const List<WebhookMembershipAddedAction> values = [added];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMembershipAddedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMembershipAddedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookMembershipAddedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookMembershipAddedAction($value)';}
+}
 /// The scope of the membership. Currently, can only be `team`.
 @immutable final class WebhookMembershipAddedScope {const WebhookMembershipAddedScope._(this.value);
 
-factory WebhookMembershipAddedScope.fromJson(String json) { return switch (json) {
+factory WebhookMembershipAddedScope.fromJson(String json) {return switch (json) {
   'team' => team,
   _ => WebhookMembershipAddedScope._(json),
-}; }
+};}
 
 static const WebhookMembershipAddedScope team = WebhookMembershipAddedScope._('team');
 
@@ -35,17 +35,17 @@ static const List<WebhookMembershipAddedScope> values = [team];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMembershipAddedScope && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMembershipAddedScope($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookMembershipAddedScope && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookMembershipAddedScope($value)';}
+}
 @immutable final class WebhookMembershipAdded {const WebhookMembershipAdded({required this.action, required this.member, required this.organization, required this.scope, required this.sender, required this.team, this.enterprise, this.installation, this.repository, });
 
-factory WebhookMembershipAdded.fromJson(Map<String, dynamic> json) { return WebhookMembershipAdded(
+factory WebhookMembershipAdded.fromJson(Map<String, dynamic> json) {return WebhookMembershipAdded(
   action: WebhookMembershipAddedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -55,7 +55,7 @@ factory WebhookMembershipAdded.fromJson(Map<String, dynamic> json) { return Webh
   scope: WebhookMembershipAddedScope.fromJson(json['scope'] as String),
   sender: json['sender'] != null ? WebhookMembershipAddedSender.fromJson(json['sender'] as Map<String, dynamic>) : null,
   team: WebhooksTeam.fromJson(json['team'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookMembershipAddedAction action;
 
@@ -76,7 +76,7 @@ final WebhookMembershipAddedSender? sender;
 
 final WebhooksTeam team;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -86,14 +86,14 @@ Map<String, dynamic> toJson() { return {
   'scope': scope.toJson(),
   'sender': sender?.toJson(),
   'team': team.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('member') &&
       json.containsKey('organization') &&
       json.containsKey('scope') &&
       json.containsKey('sender') &&
-      json.containsKey('team'); } 
-WebhookMembershipAdded copyWith({WebhookMembershipAddedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksUser? Function()? member, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? Function()? repository, WebhookMembershipAddedScope? scope, WebhookMembershipAddedSender? Function()? sender, WebhooksTeam? team, }) { return WebhookMembershipAdded(
+      json.containsKey('team');}
+WebhookMembershipAdded copyWith({WebhookMembershipAddedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksUser? Function()? member, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? Function()? repository, WebhookMembershipAddedScope? scope, WebhookMembershipAddedSender? Function()? sender, WebhooksTeam? team, }) {return WebhookMembershipAdded(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -103,8 +103,8 @@ WebhookMembershipAdded copyWith({WebhookMembershipAddedAction? action, Enterpris
   scope: scope ?? this.scope,
   sender: sender != null ? sender() : this.sender,
   team: team ?? this.team,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookMembershipAdded &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -114,7 +114,7 @@ WebhookMembershipAdded copyWith({WebhookMembershipAddedAction? action, Enterpris
           repository == other.repository &&
           scope == other.scope &&
           sender == other.sender &&
-          team == other.team; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, member, organization, repository, scope, sender, team); } 
-@override String toString() { return 'WebhookMembershipAdded(action: $action, enterprise: $enterprise, installation: $installation, member: $member, organization: $organization, repository: $repository, scope: $scope, sender: $sender, team: $team)'; } 
- }
+          team == other.team;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, member, organization, repository, scope, sender, team);}
+@override String toString() {return 'WebhookMembershipAdded(action: $action, enterprise: $enterprise, installation: $installation, member: $member, organization: $organization, repository: $repository, scope: $scope, sender: $sender, team: $team)';}
+}

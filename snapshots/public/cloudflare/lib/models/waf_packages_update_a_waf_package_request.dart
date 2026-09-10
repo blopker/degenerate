@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_action_mode.dart';import 'firewall_sensitivity.dart';@immutable final class WafPackagesUpdateAWafPackageRequest {const WafPackagesUpdateAWafPackageRequest({this.actionMode, this.sensitivity, });
 
-factory WafPackagesUpdateAWafPackageRequest.fromJson(Map<String, dynamic> json) { return WafPackagesUpdateAWafPackageRequest(
+factory WafPackagesUpdateAWafPackageRequest.fromJson(Map<String, dynamic> json) {return WafPackagesUpdateAWafPackageRequest(
   actionMode: json['action_mode'] != null ? FirewallActionMode.fromJson(json['action_mode'] as String) : null,
   sensitivity: json['sensitivity'] != null ? FirewallSensitivity.fromJson(json['sensitivity'] as String) : null,
-); }
+);}
 
 /// The default action performed by the rules in the WAF package.
 final FirewallActionMode? actionMode;
@@ -13,19 +13,19 @@ final FirewallActionMode? actionMode;
 /// The sensitivity of the WAF package.
 final FirewallSensitivity? sensitivity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (actionMode != null) 'action_mode': actionMode?.toJson(),
   if (sensitivity != null) 'sensitivity': sensitivity?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action_mode', 'sensitivity'}.contains(key)); } 
-WafPackagesUpdateAWafPackageRequest copyWith({FirewallActionMode? Function()? actionMode, FirewallSensitivity? Function()? sensitivity, }) { return WafPackagesUpdateAWafPackageRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'action_mode', 'sensitivity'}.contains(key));}
+WafPackagesUpdateAWafPackageRequest copyWith({FirewallActionMode? Function()? actionMode, FirewallSensitivity? Function()? sensitivity, }) {return WafPackagesUpdateAWafPackageRequest(
   actionMode: actionMode != null ? actionMode() : this.actionMode,
   sensitivity: sensitivity != null ? sensitivity() : this.sensitivity,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WafPackagesUpdateAWafPackageRequest &&
           actionMode == other.actionMode &&
-          sensitivity == other.sensitivity; } 
-@override int get hashCode { return Object.hash(actionMode, sensitivity); } 
-@override String toString() { return 'WafPackagesUpdateAWafPackageRequest(actionMode: $actionMode, sensitivity: $sensitivity)'; } 
- }
+          sensitivity == other.sensitivity;}
+@override int get hashCode {return Object.hash(actionMode, sensitivity);}
+@override String toString() {return 'WafPackagesUpdateAWafPackageRequest(actionMode: $actionMode, sensitivity: $sensitivity)';}
+}

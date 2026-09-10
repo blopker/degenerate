@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.speech_started`.
 @immutable final class RealtimeBetaServerEventInputAudioBufferSpeechStartedType {const RealtimeBetaServerEventInputAudioBufferSpeechStartedType._(this.value);
 
-factory RealtimeBetaServerEventInputAudioBufferSpeechStartedType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventInputAudioBufferSpeechStartedType.fromJson(String json) {return switch (json) {
   'input_audio_buffer.speech_started' => inputAudioBufferSpeechStarted,
   _ => RealtimeBetaServerEventInputAudioBufferSpeechStartedType._(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventInputAudioBufferSpeechStartedType inputAudioBufferSpeechStarted = RealtimeBetaServerEventInputAudioBufferSpeechStartedType._('input_audio_buffer.speech_started');
 
@@ -14,14 +14,14 @@ static const List<RealtimeBetaServerEventInputAudioBufferSpeechStartedType> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventInputAudioBufferSpeechStartedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventInputAudioBufferSpeechStartedType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeBetaServerEventInputAudioBufferSpeechStartedType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeBetaServerEventInputAudioBufferSpeechStartedType($value)';}
+}
 /// Sent by the server when in `server_vad` mode to indicate that speech has been
 /// detected in the audio buffer. This can happen any time audio is added to the
 /// buffer (unless speech is already detected). The client may want to use this
@@ -35,12 +35,12 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class RealtimeBetaServerEventInputAudioBufferSpeechStarted {const RealtimeBetaServerEventInputAudioBufferSpeechStarted({required this.eventId, required this.type, required this.audioStartMs, required this.itemId, });
 
-factory RealtimeBetaServerEventInputAudioBufferSpeechStarted.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventInputAudioBufferSpeechStarted(
+factory RealtimeBetaServerEventInputAudioBufferSpeechStarted.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventInputAudioBufferSpeechStarted(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventInputAudioBufferSpeechStartedType.fromJson(json['type'] as String),
   audioStartMs: (json['audio_start_ms'] as num).toInt(),
   itemId: json['item_id'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -59,28 +59,28 @@ final int audioStartMs;
 /// 
 final String itemId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'audio_start_ms': audioStartMs,
   'item_id': itemId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
       json.containsKey('audio_start_ms') && json['audio_start_ms'] is num &&
-      json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeBetaServerEventInputAudioBufferSpeechStarted copyWith({String? eventId, RealtimeBetaServerEventInputAudioBufferSpeechStartedType? type, int? audioStartMs, String? itemId, }) { return RealtimeBetaServerEventInputAudioBufferSpeechStarted(
+      json.containsKey('item_id') && json['item_id'] is String;}
+RealtimeBetaServerEventInputAudioBufferSpeechStarted copyWith({String? eventId, RealtimeBetaServerEventInputAudioBufferSpeechStartedType? type, int? audioStartMs, String? itemId, }) {return RealtimeBetaServerEventInputAudioBufferSpeechStarted(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   audioStartMs: audioStartMs ?? this.audioStartMs,
   itemId: itemId ?? this.itemId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeBetaServerEventInputAudioBufferSpeechStarted &&
           eventId == other.eventId &&
           type == other.type &&
           audioStartMs == other.audioStartMs &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, audioStartMs, itemId); } 
-@override String toString() { return 'RealtimeBetaServerEventInputAudioBufferSpeechStarted(eventId: $eventId, type: $type, audioStartMs: $audioStartMs, itemId: $itemId)'; } 
- }
+          itemId == other.itemId;}
+@override int get hashCode {return Object.hash(eventId, type, audioStartMs, itemId);}
+@override String toString() {return 'RealtimeBetaServerEventInputAudioBufferSpeechStarted(eventId: $eventId, type: $type, audioStartMs: $audioStartMs, itemId: $itemId)';}
+}

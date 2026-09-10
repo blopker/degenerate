@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the livestream.
 @immutable final class RealtimekitLivestreamBaseStatus {const RealtimekitLivestreamBaseStatus._(this.value);
 
-factory RealtimekitLivestreamBaseStatus.fromJson(String json) { return switch (json) {
+factory RealtimekitLivestreamBaseStatus.fromJson(String json) {return switch (json) {
   'LIVE' => live,
   'IDLE' => idle,
   'ERRORED' => errored,
   'INVOKED' => invoked,
   _ => RealtimekitLivestreamBaseStatus._(json),
-}; }
+};}
 
 static const RealtimekitLivestreamBaseStatus live = RealtimekitLivestreamBaseStatus._('LIVE');
 
@@ -23,17 +23,17 @@ static const List<RealtimekitLivestreamBaseStatus> values = [live, idle, errored
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitLivestreamBaseStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitLivestreamBaseStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitLivestreamBaseStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitLivestreamBaseStatus($value)';}
+}
 @immutable final class RealtimekitLivestreamBase {const RealtimekitLivestreamBase({this.createdAt, this.disabled, this.id, this.ingestServer, this.meetingId = const Omittable.absent(), this.name = const Omittable.absent(), this.orgId, this.playbackUrl, this.status, this.streamKey, this.updatedAt, });
 
-factory RealtimekitLivestreamBase.fromJson(Map<String, dynamic> json) { return RealtimekitLivestreamBase(
+factory RealtimekitLivestreamBase.fromJson(Map<String, dynamic> json) {return RealtimekitLivestreamBase(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   disabled: json['disabled'] as bool?,
   id: json['id'] as String?,
@@ -45,7 +45,7 @@ factory RealtimekitLivestreamBase.fromJson(Map<String, dynamic> json) { return R
   status: json['status'] != null ? RealtimekitLivestreamBaseStatus.fromJson(json['status'] as String) : null,
   streamKey: json['stream_key'] as String?,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+);}
 
 /// The timestamp at which the livestream was created. The time is returned in ISO format.
 final DateTime? createdAt;
@@ -79,7 +79,7 @@ final String? streamKey;
 /// The timestamp at which the livestream was updated. The time is returned in ISO format.
 final DateTime? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'disabled': ?disabled,
   'id': ?id,
@@ -91,9 +91,9 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   'stream_key': ?streamKey,
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'disabled', 'id', 'ingest_server', 'meeting_id', 'name', 'org_id', 'playback_url', 'status', 'stream_key', 'updated_at'}.contains(key)); } 
-RealtimekitLivestreamBase copyWith({DateTime? Function()? createdAt, bool? Function()? disabled, String? Function()? id, String? Function()? ingestServer, Omittable<String?>? meetingId, Omittable<String?>? name, String? Function()? orgId, String? Function()? playbackUrl, RealtimekitLivestreamBaseStatus? Function()? status, String? Function()? streamKey, DateTime? Function()? updatedAt, }) { return RealtimekitLivestreamBase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'disabled', 'id', 'ingest_server', 'meeting_id', 'name', 'org_id', 'playback_url', 'status', 'stream_key', 'updated_at'}.contains(key));}
+RealtimekitLivestreamBase copyWith({DateTime? Function()? createdAt, bool? Function()? disabled, String? Function()? id, String? Function()? ingestServer, Omittable<String?>? meetingId, Omittable<String?>? name, String? Function()? orgId, String? Function()? playbackUrl, RealtimekitLivestreamBaseStatus? Function()? status, String? Function()? streamKey, DateTime? Function()? updatedAt, }) {return RealtimekitLivestreamBase(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   disabled: disabled != null ? disabled() : this.disabled,
   id: id != null ? id() : this.id,
@@ -105,8 +105,8 @@ RealtimekitLivestreamBase copyWith({DateTime? Function()? createdAt, bool? Funct
   status: status != null ? status() : this.status,
   streamKey: streamKey != null ? streamKey() : this.streamKey,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitLivestreamBase &&
           createdAt == other.createdAt &&
           disabled == other.disabled &&
@@ -118,7 +118,7 @@ RealtimekitLivestreamBase copyWith({DateTime? Function()? createdAt, bool? Funct
           playbackUrl == other.playbackUrl &&
           status == other.status &&
           streamKey == other.streamKey &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, disabled, id, ingestServer, meetingId, name, orgId, playbackUrl, status, streamKey, updatedAt); } 
-@override String toString() { return 'RealtimekitLivestreamBase(createdAt: $createdAt, disabled: $disabled, id: $id, ingestServer: $ingestServer, meetingId: $meetingId, name: $name, orgId: $orgId, playbackUrl: $playbackUrl, status: $status, streamKey: $streamKey, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(createdAt, disabled, id, ingestServer, meetingId, name, orgId, playbackUrl, status, streamKey, updatedAt);}
+@override String toString() {return 'RealtimekitLivestreamBase(createdAt: $createdAt, disabled: $disabled, id: $id, ingestServer: $ingestServer, meetingId: $meetingId, name: $name, orgId: $orgId, playbackUrl: $playbackUrl, status: $status, streamKey: $streamKey, updatedAt: $updatedAt)';}
+}

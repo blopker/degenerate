@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grants_resource_balance_credits_applied_invoice.dart';/// 
 @immutable final class BillingCreditGrantsResourceBalanceCreditsApplied {const BillingCreditGrantsResourceBalanceCreditsApplied({required this.invoice, required this.invoiceLineItem, });
 
-factory BillingCreditGrantsResourceBalanceCreditsApplied.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceBalanceCreditsApplied(
+factory BillingCreditGrantsResourceBalanceCreditsApplied.fromJson(Map<String, dynamic> json) {return BillingCreditGrantsResourceBalanceCreditsApplied(
   invoice: BillingCreditGrantsResourceBalanceCreditsAppliedInvoice.fromJson(json['invoice']),
   invoiceLineItem: json['invoice_line_item'] as String,
-); }
+);}
 
 /// The invoice to which the billing credits were applied.
 final BillingCreditGrantsResourceBalanceCreditsAppliedInvoice invoice;
@@ -14,20 +14,20 @@ final BillingCreditGrantsResourceBalanceCreditsAppliedInvoice invoice;
 /// The invoice line item to which the billing credits were applied.
 final String invoiceLineItem;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'invoice': invoice.toJson(),
   'invoice_line_item': invoiceLineItem,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('invoice') &&
-      json.containsKey('invoice_line_item') && json['invoice_line_item'] is String; } 
-BillingCreditGrantsResourceBalanceCreditsApplied copyWith({BillingCreditGrantsResourceBalanceCreditsAppliedInvoice? invoice, String? invoiceLineItem, }) { return BillingCreditGrantsResourceBalanceCreditsApplied(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('invoice') &&
+      json.containsKey('invoice_line_item') && json['invoice_line_item'] is String;}
+BillingCreditGrantsResourceBalanceCreditsApplied copyWith({BillingCreditGrantsResourceBalanceCreditsAppliedInvoice? invoice, String? invoiceLineItem, }) {return BillingCreditGrantsResourceBalanceCreditsApplied(
   invoice: invoice ?? this.invoice,
   invoiceLineItem: invoiceLineItem ?? this.invoiceLineItem,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BillingCreditGrantsResourceBalanceCreditsApplied &&
           invoice == other.invoice &&
-          invoiceLineItem == other.invoiceLineItem; } 
-@override int get hashCode { return Object.hash(invoice, invoiceLineItem); } 
-@override String toString() { return 'BillingCreditGrantsResourceBalanceCreditsApplied(invoice: $invoice, invoiceLineItem: $invoiceLineItem)'; } 
- }
+          invoiceLineItem == other.invoiceLineItem;}
+@override int get hashCode {return Object.hash(invoice, invoiceLineItem);}
+@override String toString() {return 'BillingCreditGrantsResourceBalanceCreditsApplied(invoice: $invoice, invoiceLineItem: $invoiceLineItem)';}
+}

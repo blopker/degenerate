@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_authorizations_request_amount_details.dart';import 'post_test_helpers_issuing_authorizations_request_fleet.dart';import 'post_test_helpers_issuing_authorizations_request_fuel.dart';import 'post_test_helpers_issuing_authorizations_request_merchant_data.dart';import 'post_test_helpers_issuing_authorizations_request_network_data.dart';import 'post_test_helpers_issuing_authorizations_request_risk_assessment.dart';import 'post_test_helpers_issuing_authorizations_request_verification_data.dart';/// How the card details were provided. Defaults to online.
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod {const PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod._(this.value);
 
-factory PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod.fromJson(String json) {return switch (json) {
   'chip' => chip,
   'contactless' => contactless,
   'keyed_in' => keyedIn,
   'online' => online,
   'swipe' => swipe,
   _ => PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod chip = PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod._('chip');
 
@@ -26,24 +26,24 @@ static const List<PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod($value)';}
+}
 /// Probability that this transaction can be disputed in the event of fraud. Assessed by comparing the characteristics of the authorization to card network rules.
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood {const PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood._(this.value);
 
-factory PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood.fromJson(String json) {return switch (json) {
   'neutral' => neutral,
   'unknown' => unknown,
   'very_likely' => veryLikely,
   'very_unlikely' => veryUnlikely,
   _ => PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood neutral = PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood._('neutral');
 
@@ -57,23 +57,23 @@ static const List<PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityL
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood($value)';}
+}
 /// The digital wallet used for this transaction. One of `apple_pay`, `google_pay`, or `samsung_pay`. Will populate as `null` when no digital wallet was utilized.
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestWallet {const PostTestHelpersIssuingAuthorizationsRequestWallet._(this.value);
 
-factory PostTestHelpersIssuingAuthorizationsRequestWallet.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingAuthorizationsRequestWallet.fromJson(String json) {return switch (json) {
   'apple_pay' => applePay,
   'google_pay' => googlePay,
   'samsung_pay' => samsungPay,
   _ => PostTestHelpersIssuingAuthorizationsRequestWallet._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingAuthorizationsRequestWallet applePay = PostTestHelpersIssuingAuthorizationsRequestWallet._('apple_pay');
 
@@ -85,17 +85,17 @@ static const List<PostTestHelpersIssuingAuthorizationsRequestWallet> values = [a
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsRequestWallet && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestWallet($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingAuthorizationsRequestWallet && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestWallet($value)';}
+}
 @immutable final class PostTestHelpersIssuingAuthorizationsRequest {const PostTestHelpersIssuingAuthorizationsRequest({required this.card, this.amount, this.amountDetails, this.authorizationMethod, this.currency, this.expand, this.fleet, this.fraudDisputabilityLikelihood, this.fuel, this.isAmountControllable, this.merchantAmount, this.merchantCurrency, this.merchantData, this.networkData, this.riskAssessment, this.verificationData, this.wallet, });
 
-factory PostTestHelpersIssuingAuthorizationsRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequest(
+factory PostTestHelpersIssuingAuthorizationsRequest.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingAuthorizationsRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   amountDetails: json['amount_details'] != null ? PostTestHelpersIssuingAuthorizationsRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
   authorizationMethod: json['authorization_method'] != null ? PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod.fromJson(json['authorization_method'] as String) : null,
@@ -113,7 +113,7 @@ factory PostTestHelpersIssuingAuthorizationsRequest.fromJson(Map<String, dynamic
   riskAssessment: json['risk_assessment'] != null ? PostTestHelpersIssuingAuthorizationsRequestRiskAssessment.fromJson(json['risk_assessment'] as Map<String, dynamic>) : null,
   verificationData: json['verification_data'] != null ? PostTestHelpersIssuingAuthorizationsRequestVerificationData.fromJson(json['verification_data'] as Map<String, dynamic>) : null,
   wallet: json['wallet'] != null ? PostTestHelpersIssuingAuthorizationsRequestWallet.fromJson(json['wallet'] as String) : null,
-); }
+);}
 
 /// The total amount to attempt to authorize. This amount is in the provided currency, or defaults to the card's currency, and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
 final int? amount;
@@ -166,7 +166,7 @@ final PostTestHelpersIssuingAuthorizationsRequestVerificationData? verificationD
 /// The digital wallet used for this transaction. One of `apple_pay`, `google_pay`, or `samsung_pay`. Will populate as `null` when no digital wallet was utilized.
 final PostTestHelpersIssuingAuthorizationsRequestWallet? wallet;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   if (amountDetails != null) 'amount_details': amountDetails?.toJson(),
   if (authorizationMethod != null) 'authorization_method': authorizationMethod?.toJson(),
@@ -184,9 +184,9 @@ Map<String, dynamic> toJson() { return {
   if (riskAssessment != null) 'risk_assessment': riskAssessment?.toJson(),
   if (verificationData != null) 'verification_data': verificationData?.toJson(),
   if (wallet != null) 'wallet': wallet?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('card') && json['card'] is String; } 
-PostTestHelpersIssuingAuthorizationsRequest copyWith({int? Function()? amount, PostTestHelpersIssuingAuthorizationsRequestAmountDetails? Function()? amountDetails, PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod? Function()? authorizationMethod, String? card, String? Function()? currency, List<String>? Function()? expand, PostTestHelpersIssuingAuthorizationsRequestFleet? Function()? fleet, PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood? Function()? fraudDisputabilityLikelihood, PostTestHelpersIssuingAuthorizationsRequestFuel? Function()? fuel, bool? Function()? isAmountControllable, int? Function()? merchantAmount, String? Function()? merchantCurrency, PostTestHelpersIssuingAuthorizationsRequestMerchantData? Function()? merchantData, PostTestHelpersIssuingAuthorizationsRequestNetworkData? Function()? networkData, PostTestHelpersIssuingAuthorizationsRequestRiskAssessment? Function()? riskAssessment, PostTestHelpersIssuingAuthorizationsRequestVerificationData? Function()? verificationData, PostTestHelpersIssuingAuthorizationsRequestWallet? Function()? wallet, }) { return PostTestHelpersIssuingAuthorizationsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('card') && json['card'] is String;}
+PostTestHelpersIssuingAuthorizationsRequest copyWith({int? Function()? amount, PostTestHelpersIssuingAuthorizationsRequestAmountDetails? Function()? amountDetails, PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod? Function()? authorizationMethod, String? card, String? Function()? currency, List<String>? Function()? expand, PostTestHelpersIssuingAuthorizationsRequestFleet? Function()? fleet, PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood? Function()? fraudDisputabilityLikelihood, PostTestHelpersIssuingAuthorizationsRequestFuel? Function()? fuel, bool? Function()? isAmountControllable, int? Function()? merchantAmount, String? Function()? merchantCurrency, PostTestHelpersIssuingAuthorizationsRequestMerchantData? Function()? merchantData, PostTestHelpersIssuingAuthorizationsRequestNetworkData? Function()? networkData, PostTestHelpersIssuingAuthorizationsRequestRiskAssessment? Function()? riskAssessment, PostTestHelpersIssuingAuthorizationsRequestVerificationData? Function()? verificationData, PostTestHelpersIssuingAuthorizationsRequestWallet? Function()? wallet, }) {return PostTestHelpersIssuingAuthorizationsRequest(
   amount: amount != null ? amount() : this.amount,
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   authorizationMethod: authorizationMethod != null ? authorizationMethod() : this.authorizationMethod,
@@ -204,8 +204,8 @@ PostTestHelpersIssuingAuthorizationsRequest copyWith({int? Function()? amount, P
   riskAssessment: riskAssessment != null ? riskAssessment() : this.riskAssessment,
   verificationData: verificationData != null ? verificationData() : this.verificationData,
   wallet: wallet != null ? wallet() : this.wallet,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersIssuingAuthorizationsRequest &&
           amount == other.amount &&
           amountDetails == other.amountDetails &&
@@ -223,7 +223,7 @@ PostTestHelpersIssuingAuthorizationsRequest copyWith({int? Function()? amount, P
           networkData == other.networkData &&
           riskAssessment == other.riskAssessment &&
           verificationData == other.verificationData &&
-          wallet == other.wallet; } 
-@override int get hashCode { return Object.hash(amount, amountDetails, authorizationMethod, card, currency, Object.hashAll(expand ?? const []), fleet, fraudDisputabilityLikelihood, fuel, isAmountControllable, merchantAmount, merchantCurrency, merchantData, networkData, riskAssessment, verificationData, wallet); } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequest(amount: $amount, amountDetails: $amountDetails, authorizationMethod: $authorizationMethod, card: $card, currency: $currency, expand: $expand, fleet: $fleet, fraudDisputabilityLikelihood: $fraudDisputabilityLikelihood, fuel: $fuel, isAmountControllable: $isAmountControllable, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, merchantData: $merchantData, networkData: $networkData, riskAssessment: $riskAssessment, verificationData: $verificationData, wallet: $wallet)'; } 
- }
+          wallet == other.wallet;}
+@override int get hashCode {return Object.hash(amount, amountDetails, authorizationMethod, card, currency, Object.hashAll(expand ?? const []), fleet, fraudDisputabilityLikelihood, fuel, isAmountControllable, merchantAmount, merchantCurrency, merchantData, networkData, riskAssessment, verificationData, wallet);}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequest(amount: $amount, amountDetails: $amountDetails, authorizationMethod: $authorizationMethod, card: $card, currency: $currency, expand: $expand, fleet: $fleet, fraudDisputabilityLikelihood: $fraudDisputabilityLikelihood, fuel: $fuel, isAmountControllable: $isAmountControllable, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, merchantData: $merchantData, networkData: $networkData, riskAssessment: $riskAssessment, verificationData: $verificationData, wallet: $wallet)';}
+}

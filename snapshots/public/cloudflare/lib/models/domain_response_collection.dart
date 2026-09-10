@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'domain_properties.dart';import 'messages32.dart';import 'result_info2.dart';@immutable final class DomainResponseCollection {const DomainResponseCollection({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
-factory DomainResponseCollection.fromJson(Map<String, dynamic> json) { return DomainResponseCollection(
+factory DomainResponseCollection.fromJson(Map<String, dynamic> json) {return DomainResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => Messages32.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Messages32.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => DomainProperties.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? ResultInfo2.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<Messages32> errors;
 
@@ -21,31 +21,31 @@ final bool success;
 
 final ResultInfo2? resultInfo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-DomainResponseCollection copyWith({List<Messages32>? errors, List<Messages32>? messages, List<DomainProperties>? result, bool? success, ResultInfo2? Function()? resultInfo, }) { return DomainResponseCollection(
+      json.containsKey('success') && json['success'] is bool;}
+DomainResponseCollection copyWith({List<Messages32>? errors, List<Messages32>? messages, List<DomainProperties>? result, bool? success, ResultInfo2? Function()? resultInfo, }) {return DomainResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DomainResponseCollection &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           listEquals(result, other.result) &&
           success == other.success &&
-          resultInfo == other.resultInfo; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), Object.hashAll(result), success, resultInfo); } 
-@override String toString() { return 'DomainResponseCollection(errors: $errors, messages: $messages, result: $result, success: $success, resultInfo: $resultInfo)'; } 
- }
+          resultInfo == other.resultInfo;}
+@override int get hashCode {return Object.hash(Object.hashAll(errors), Object.hashAll(messages), Object.hashAll(result), success, resultInfo);}
+@override String toString() {return 'DomainResponseCollection(errors: $errors, messages: $messages, result: $result, success: $success, resultInfo: $resultInfo)';}
+}

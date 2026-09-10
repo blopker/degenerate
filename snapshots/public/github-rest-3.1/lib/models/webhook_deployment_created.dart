@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_deployment_created_deployment.dart';import 'webhook_deployment_created_workflow_run.dart';import 'webhooks_workflow.dart';@immutable final class WebhookDeploymentCreatedAction {const WebhookDeploymentCreatedAction._(this.value);
 
-factory WebhookDeploymentCreatedAction.fromJson(String json) { return switch (json) {
+factory WebhookDeploymentCreatedAction.fromJson(String json) {return switch (json) {
   'created' => created,
   _ => WebhookDeploymentCreatedAction._(json),
-}; }
+};}
 
 static const WebhookDeploymentCreatedAction created = WebhookDeploymentCreatedAction._('created');
 
@@ -13,17 +13,17 @@ static const List<WebhookDeploymentCreatedAction> values = [created];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDeploymentCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDeploymentCreatedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookDeploymentCreatedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookDeploymentCreatedAction($value)';}
+}
 @immutable final class WebhookDeploymentCreated {const WebhookDeploymentCreated({required this.action, required this.deployment, required this.repository, required this.sender, required this.workflow, required this.workflowRun, this.enterprise, this.installation, this.organization, });
 
-factory WebhookDeploymentCreated.fromJson(Map<String, dynamic> json) { return WebhookDeploymentCreated(
+factory WebhookDeploymentCreated.fromJson(Map<String, dynamic> json) {return WebhookDeploymentCreated(
   action: WebhookDeploymentCreatedAction.fromJson(json['action'] as String),
   deployment: WebhookDeploymentCreatedDeployment.fromJson(json['deployment'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -33,7 +33,7 @@ factory WebhookDeploymentCreated.fromJson(Map<String, dynamic> json) { return We
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   workflow: json['workflow'] != null ? WebhooksWorkflow.fromJson(json['workflow'] as Map<String, dynamic>) : null,
   workflowRun: json['workflow_run'] != null ? WebhookDeploymentCreatedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookDeploymentCreatedAction action;
 
@@ -54,7 +54,7 @@ final WebhooksWorkflow? workflow;
 
 final WebhookDeploymentCreatedWorkflowRun? workflowRun;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'deployment': deployment.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -64,14 +64,14 @@ Map<String, dynamic> toJson() { return {
   'sender': sender.toJson(),
   'workflow': workflow?.toJson(),
   'workflow_run': workflowRun?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('deployment') &&
       json.containsKey('repository') &&
       json.containsKey('sender') &&
       json.containsKey('workflow') &&
-      json.containsKey('workflow_run'); } 
-WebhookDeploymentCreated copyWith({WebhookDeploymentCreatedAction? action, WebhookDeploymentCreatedDeployment? deployment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? Function()? workflow, WebhookDeploymentCreatedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentCreated(
+      json.containsKey('workflow_run');}
+WebhookDeploymentCreated copyWith({WebhookDeploymentCreatedAction? action, WebhookDeploymentCreatedDeployment? deployment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? Function()? workflow, WebhookDeploymentCreatedWorkflowRun? Function()? workflowRun, }) {return WebhookDeploymentCreated(
   action: action ?? this.action,
   deployment: deployment ?? this.deployment,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -81,8 +81,8 @@ WebhookDeploymentCreated copyWith({WebhookDeploymentCreatedAction? action, Webho
   sender: sender ?? this.sender,
   workflow: workflow != null ? workflow() : this.workflow,
   workflowRun: workflowRun != null ? workflowRun() : this.workflowRun,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDeploymentCreated &&
           action == other.action &&
           deployment == other.deployment &&
@@ -92,7 +92,7 @@ WebhookDeploymentCreated copyWith({WebhookDeploymentCreatedAction? action, Webho
           repository == other.repository &&
           sender == other.sender &&
           workflow == other.workflow &&
-          workflowRun == other.workflowRun; } 
-@override int get hashCode { return Object.hash(action, deployment, enterprise, installation, organization, repository, sender, workflow, workflowRun); } 
-@override String toString() { return 'WebhookDeploymentCreated(action: $action, deployment: $deployment, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, workflow: $workflow, workflowRun: $workflowRun)'; } 
- }
+          workflowRun == other.workflowRun;}
+@override int get hashCode {return Object.hash(action, deployment, enterprise, installation, organization, repository, sender, workflow, workflowRun);}
+@override String toString() {return 'WebhookDeploymentCreated(action: $action, deployment: $deployment, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, workflow: $workflow, workflowRun: $workflowRun)';}
+}

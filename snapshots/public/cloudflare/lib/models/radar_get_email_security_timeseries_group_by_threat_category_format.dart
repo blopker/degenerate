@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetEmailSecurityTimeseriesGroupByThreatCategoryFormat {const RadarGetEmailSecurityTimeseriesGroupByThreatCategoryFormat._(this.value);
 
-factory RadarGetEmailSecurityTimeseriesGroupByThreatCategoryFormat.fromJson(String json) { return switch (json) {
+factory RadarGetEmailSecurityTimeseriesGroupByThreatCategoryFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEmailSecurityTimeseriesGroupByThreatCategoryFormat._(json),
-}; }
+};}
 
 static const RadarGetEmailSecurityTimeseriesGroupByThreatCategoryFormat $json = RadarGetEmailSecurityTimeseriesGroupByThreatCategoryFormat._('JSON');
 
@@ -17,11 +17,11 @@ static const List<RadarGetEmailSecurityTimeseriesGroupByThreatCategoryFormat> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetEmailSecurityTimeseriesGroupByThreatCategoryFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByThreatCategoryFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetEmailSecurityTimeseriesGroupByThreatCategoryFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetEmailSecurityTimeseriesGroupByThreatCategoryFormat($value)';}
+}

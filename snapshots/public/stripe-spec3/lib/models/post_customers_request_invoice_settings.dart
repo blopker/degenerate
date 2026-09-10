@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_request_invoice_settings_custom_fields.dart';import 'post_customers_request_invoice_settings_rendering_options.dart';/// Default invoice settings for this customer.
 @immutable final class PostCustomersRequestInvoiceSettings {const PostCustomersRequestInvoiceSettings({this.customFields, this.defaultPaymentMethod, this.footer, this.renderingOptions, });
 
-factory PostCustomersRequestInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostCustomersRequestInvoiceSettings(
+factory PostCustomersRequestInvoiceSettings.fromJson(Map<String, dynamic> json) {return PostCustomersRequestInvoiceSettings(
   customFields: json['custom_fields'] != null ? PostCustomersRequestInvoiceSettingsCustomFields.fromJson(json['custom_fields']) : null,
   defaultPaymentMethod: json['default_payment_method'] as String?,
   footer: json['footer'] as String?,
   renderingOptions: json['rendering_options'] != null ? PostCustomersRequestInvoiceSettingsRenderingOptions.fromJson(json['rendering_options']) : null,
-); }
+);}
 
 final PostCustomersRequestInvoiceSettingsCustomFields? customFields;
 
@@ -18,25 +18,25 @@ final String? footer;
 
 final PostCustomersRequestInvoiceSettingsRenderingOptions? renderingOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (customFields != null) 'custom_fields': customFields?.toJson(),
   'default_payment_method': ?defaultPaymentMethod,
   'footer': ?footer,
   if (renderingOptions != null) 'rendering_options': renderingOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_fields', 'default_payment_method', 'footer', 'rendering_options'}.contains(key)); } 
-PostCustomersRequestInvoiceSettings copyWith({PostCustomersRequestInvoiceSettingsCustomFields? Function()? customFields, String? Function()? defaultPaymentMethod, String? Function()? footer, PostCustomersRequestInvoiceSettingsRenderingOptions? Function()? renderingOptions, }) { return PostCustomersRequestInvoiceSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'custom_fields', 'default_payment_method', 'footer', 'rendering_options'}.contains(key));}
+PostCustomersRequestInvoiceSettings copyWith({PostCustomersRequestInvoiceSettingsCustomFields? Function()? customFields, String? Function()? defaultPaymentMethod, String? Function()? footer, PostCustomersRequestInvoiceSettingsRenderingOptions? Function()? renderingOptions, }) {return PostCustomersRequestInvoiceSettings(
   customFields: customFields != null ? customFields() : this.customFields,
   defaultPaymentMethod: defaultPaymentMethod != null ? defaultPaymentMethod() : this.defaultPaymentMethod,
   footer: footer != null ? footer() : this.footer,
   renderingOptions: renderingOptions != null ? renderingOptions() : this.renderingOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCustomersRequestInvoiceSettings &&
           customFields == other.customFields &&
           defaultPaymentMethod == other.defaultPaymentMethod &&
           footer == other.footer &&
-          renderingOptions == other.renderingOptions; } 
-@override int get hashCode { return Object.hash(customFields, defaultPaymentMethod, footer, renderingOptions); } 
-@override String toString() { return 'PostCustomersRequestInvoiceSettings(customFields: $customFields, defaultPaymentMethod: $defaultPaymentMethod, footer: $footer, renderingOptions: $renderingOptions)'; } 
- }
+          renderingOptions == other.renderingOptions;}
+@override int get hashCode {return Object.hash(customFields, defaultPaymentMethod, footer, renderingOptions);}
+@override String toString() {return 'PostCustomersRequestInvoiceSettings(customFields: $customFields, defaultPaymentMethod: $defaultPaymentMethod, footer: $footer, renderingOptions: $renderingOptions)';}
+}

@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The anchor point
 /// 
 @immutable final class RealtimeCreateClientSecretRequestExpiresAfterAnchor {const RealtimeCreateClientSecretRequestExpiresAfterAnchor._(this.value);
 
-factory RealtimeCreateClientSecretRequestExpiresAfterAnchor.fromJson(String json) { return switch (json) {
+factory RealtimeCreateClientSecretRequestExpiresAfterAnchor.fromJson(String json) {return switch (json) {
   'created_at' => createdAt,
   _ => RealtimeCreateClientSecretRequestExpiresAfterAnchor._(json),
-}; }
+};}
 
 static const RealtimeCreateClientSecretRequestExpiresAfterAnchor createdAt = RealtimeCreateClientSecretRequestExpiresAfterAnchor._('created_at');
 
@@ -15,14 +15,14 @@ static const List<RealtimeCreateClientSecretRequestExpiresAfterAnchor> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeCreateClientSecretRequestExpiresAfterAnchor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeCreateClientSecretRequestExpiresAfterAnchor($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeCreateClientSecretRequestExpiresAfterAnchor && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeCreateClientSecretRequestExpiresAfterAnchor($value)';}
+}
 /// Configuration for the client secret expiration. Expiration refers to the time after which
 /// a client secret will no longer be valid for creating sessions. The session itself may
 /// continue after that time once started. A secret can be used to create multiple sessions
@@ -30,10 +30,10 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class RealtimeCreateClientSecretRequestExpiresAfter {const RealtimeCreateClientSecretRequestExpiresAfter({this.anchor, this.seconds, });
 
-factory RealtimeCreateClientSecretRequestExpiresAfter.fromJson(Map<String, dynamic> json) { return RealtimeCreateClientSecretRequestExpiresAfter(
+factory RealtimeCreateClientSecretRequestExpiresAfter.fromJson(Map<String, dynamic> json) {return RealtimeCreateClientSecretRequestExpiresAfter(
   anchor: json['anchor'] != null ? RealtimeCreateClientSecretRequestExpiresAfterAnchor.fromJson(json['anchor'] as String) : null,
   seconds: json['seconds'] != null ? (json['seconds'] as num).toInt() : null,
-); }
+);}
 
 /// The anchor point for the client secret expiration, meaning that `seconds` will be added to the `created_at` time of the client secret to produce an expiration timestamp. Only `created_at` is currently supported.
 /// 
@@ -44,22 +44,22 @@ final RealtimeCreateClientSecretRequestExpiresAfterAnchor? anchor;
 final int? seconds;
 
 /// The value with the schema default applied when absent.
-RealtimeCreateClientSecretRequestExpiresAfterAnchor get anchorOrDefault { return anchor ?? RealtimeCreateClientSecretRequestExpiresAfterAnchor.fromJson('created_at'); } 
+RealtimeCreateClientSecretRequestExpiresAfterAnchor get anchorOrDefault {return anchor ?? RealtimeCreateClientSecretRequestExpiresAfterAnchor.fromJson('created_at');}
 /// The value with the schema default applied when absent.
-int get secondsOrDefault { return seconds ?? 600; } 
-Map<String, dynamic> toJson() { return {
+int get secondsOrDefault {return seconds ?? 600;}
+Map<String, dynamic> toJson() {return {
   if (anchor != null) 'anchor': anchor?.toJson(),
   'seconds': ?seconds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'anchor', 'seconds'}.contains(key)); } 
-RealtimeCreateClientSecretRequestExpiresAfter copyWith({RealtimeCreateClientSecretRequestExpiresAfterAnchor? Function()? anchor, int? Function()? seconds, }) { return RealtimeCreateClientSecretRequestExpiresAfter(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'anchor', 'seconds'}.contains(key));}
+RealtimeCreateClientSecretRequestExpiresAfter copyWith({RealtimeCreateClientSecretRequestExpiresAfterAnchor? Function()? anchor, int? Function()? seconds, }) {return RealtimeCreateClientSecretRequestExpiresAfter(
   anchor: anchor != null ? anchor() : this.anchor,
   seconds: seconds != null ? seconds() : this.seconds,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeCreateClientSecretRequestExpiresAfter &&
           anchor == other.anchor &&
-          seconds == other.seconds; } 
-@override int get hashCode { return Object.hash(anchor, seconds); } 
-@override String toString() { return 'RealtimeCreateClientSecretRequestExpiresAfter(anchor: $anchor, seconds: $seconds)'; } 
- }
+          seconds == other.seconds;}
+@override int get hashCode {return Object.hash(anchor, seconds);}
+@override String toString() {return 'RealtimeCreateClientSecretRequestExpiresAfter(anchor: $anchor, seconds: $seconds)';}
+}

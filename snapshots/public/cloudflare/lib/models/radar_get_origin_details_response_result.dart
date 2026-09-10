@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_origin_details_response_result_origin.dart';@immutable final class RadarGetOriginDetailsResponseResult {const RadarGetOriginDetailsResponseResult({required this.origin});
 
-factory RadarGetOriginDetailsResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetOriginDetailsResponseResult(
+factory RadarGetOriginDetailsResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetOriginDetailsResponseResult(
   origin: RadarGetOriginDetailsResponseResultOrigin.fromJson(json['origin'] as Map<String, dynamic>),
-); }
+);}
 
 final RadarGetOriginDetailsResponseResultOrigin origin;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'origin': origin.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('origin'); } 
-RadarGetOriginDetailsResponseResult copyWith({RadarGetOriginDetailsResponseResultOrigin? origin}) { return RadarGetOriginDetailsResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('origin');}
+RadarGetOriginDetailsResponseResult copyWith({RadarGetOriginDetailsResponseResultOrigin? origin}) {return RadarGetOriginDetailsResponseResult(
   origin: origin ?? this.origin,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetOriginDetailsResponseResult &&
-          origin == other.origin; } 
-@override int get hashCode { return origin.hashCode; } 
-@override String toString() { return 'RadarGetOriginDetailsResponseResult(origin: $origin)'; } 
- }
+          origin == other.origin;}
+@override int get hashCode {return origin.hashCode;}
+@override String toString() {return 'RadarGetOriginDetailsResponseResult(origin: $origin)';}
+}

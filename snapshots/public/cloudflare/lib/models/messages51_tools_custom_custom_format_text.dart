@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51ToolsCustomCustomFormatTextType {const Messages51ToolsCustomCustomFormatTextType._(this.value);
 
-factory Messages51ToolsCustomCustomFormatTextType.fromJson(String json) { return switch (json) {
+factory Messages51ToolsCustomCustomFormatTextType.fromJson(String json) {return switch (json) {
   'text' => text,
   _ => Messages51ToolsCustomCustomFormatTextType._(json),
-}; }
+};}
 
 static const Messages51ToolsCustomCustomFormatTextType text = Messages51ToolsCustomCustomFormatTextType._('text');
 
@@ -13,32 +13,32 @@ static const List<Messages51ToolsCustomCustomFormatTextType> values = [text];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Messages51ToolsCustomCustomFormatTextType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Messages51ToolsCustomCustomFormatTextType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Messages51ToolsCustomCustomFormatTextType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Messages51ToolsCustomCustomFormatTextType($value)';}
+}
 @immutable final class Messages51ToolsCustomCustomFormatText {const Messages51ToolsCustomCustomFormatText({required this.type});
 
-factory Messages51ToolsCustomCustomFormatText.fromJson(Map<String, dynamic> json) { return Messages51ToolsCustomCustomFormatText(
+factory Messages51ToolsCustomCustomFormatText.fromJson(Map<String, dynamic> json) {return Messages51ToolsCustomCustomFormatText(
   type: Messages51ToolsCustomCustomFormatTextType.fromJson(json['type'] as String),
-); }
+);}
 
 final Messages51ToolsCustomCustomFormatTextType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-Messages51ToolsCustomCustomFormatText copyWith({Messages51ToolsCustomCustomFormatTextType? type}) { return Messages51ToolsCustomCustomFormatText(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+Messages51ToolsCustomCustomFormatText copyWith({Messages51ToolsCustomCustomFormatTextType? type}) {return Messages51ToolsCustomCustomFormatText(
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Messages51ToolsCustomCustomFormatText &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'Messages51ToolsCustomCustomFormatText(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'Messages51ToolsCustomCustomFormatText(type: $type)';}
+}

@@ -9,12 +9,12 @@ String toJson() => value;
 }
 @immutable final class MTlsCertificateManagementUploadMTlsCertificateRequest {const MTlsCertificateManagementUploadMTlsCertificateRequest({required this.ca, required this.certificates, this.name, this.privateKey, });
 
-factory MTlsCertificateManagementUploadMTlsCertificateRequest.fromJson(Map<String, dynamic> json) { return MTlsCertificateManagementUploadMTlsCertificateRequest(
+factory MTlsCertificateManagementUploadMTlsCertificateRequest.fromJson(Map<String, dynamic> json) {return MTlsCertificateManagementUploadMTlsCertificateRequest(
   ca: TlsCertificatesAndHostnamesCa.fromJson(json['ca'] as bool),
   certificates: TlsCertificatesAndHostnamesSchemasCertificates.fromJson(json['certificates'] as String),
   name: json['name'] != null ? TlsCertificatesAndHostnamesSchemasName.fromJson(json['name'] as String) : null,
   privateKey: json['private_key'] != null ? TlsCertificatesAndHostnamesComponentsSchemasPrivateKey.fromJson(json['private_key'] as String) : null,
-); }
+);}
 
 /// Indicates whether the certificate is a CA or leaf certificate.
 final TlsCertificatesAndHostnamesCa ca;
@@ -28,26 +28,26 @@ final TlsCertificatesAndHostnamesSchemasName? name;
 /// The private key for the certificate. This field is only needed for specific use cases such as using a custom certificate with Zero Trust's block page.
 final TlsCertificatesAndHostnamesComponentsSchemasPrivateKey? privateKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ca': ca.toJson(),
   'certificates': certificates.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (privateKey != null) 'private_key': privateKey?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ca') &&
-      json.containsKey('certificates'); } 
-MTlsCertificateManagementUploadMTlsCertificateRequest copyWith({TlsCertificatesAndHostnamesCa? ca, TlsCertificatesAndHostnamesSchemasCertificates? certificates, TlsCertificatesAndHostnamesSchemasName? Function()? name, TlsCertificatesAndHostnamesComponentsSchemasPrivateKey? Function()? privateKey, }) { return MTlsCertificateManagementUploadMTlsCertificateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ca') &&
+      json.containsKey('certificates');}
+MTlsCertificateManagementUploadMTlsCertificateRequest copyWith({TlsCertificatesAndHostnamesCa? ca, TlsCertificatesAndHostnamesSchemasCertificates? certificates, TlsCertificatesAndHostnamesSchemasName? Function()? name, TlsCertificatesAndHostnamesComponentsSchemasPrivateKey? Function()? privateKey, }) {return MTlsCertificateManagementUploadMTlsCertificateRequest(
   ca: ca ?? this.ca,
   certificates: certificates ?? this.certificates,
   name: name != null ? name() : this.name,
   privateKey: privateKey != null ? privateKey() : this.privateKey,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MTlsCertificateManagementUploadMTlsCertificateRequest &&
           ca == other.ca &&
           certificates == other.certificates &&
           name == other.name &&
-          privateKey == other.privateKey; } 
-@override int get hashCode { return Object.hash(ca, certificates, name, privateKey); } 
-@override String toString() { return 'MTlsCertificateManagementUploadMTlsCertificateRequest(ca: $ca, certificates: $certificates, name: $name, privateKey: $privateKey)'; } 
- }
+          privateKey == other.privateKey;}
+@override int get hashCode {return Object.hash(ca, certificates, name, privateKey);}
+@override String toString() {return 'MTlsCertificateManagementUploadMTlsCertificateRequest(ca: $ca, certificates: $certificates, name: $name, privateKey: $privateKey)';}
+}

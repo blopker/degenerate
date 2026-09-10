@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The GitHub App i
 /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
 @immutable final class SimpleInstallation {const SimpleInstallation({required this.id, required this.nodeId, });
 
-factory SimpleInstallation.fromJson(Map<String, dynamic> json) { return SimpleInstallation(
+factory SimpleInstallation.fromJson(Map<String, dynamic> json) {return SimpleInstallation(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
-); }
+);}
 
 /// The ID of the installation.
 final int id;
@@ -16,20 +16,20 @@ final int id;
 /// The global node ID of the installation.
 final String nodeId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('node_id') && json['node_id'] is String; } 
-SimpleInstallation copyWith({int? id, String? nodeId, }) { return SimpleInstallation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('node_id') && json['node_id'] is String;}
+SimpleInstallation copyWith({int? id, String? nodeId, }) {return SimpleInstallation(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SimpleInstallation &&
           id == other.id &&
-          nodeId == other.nodeId; } 
-@override int get hashCode { return Object.hash(id, nodeId); } 
-@override String toString() { return 'SimpleInstallation(id: $id, nodeId: $nodeId)'; } 
- }
+          nodeId == other.nodeId;}
+@override int get hashCode {return Object.hash(id, nodeId);}
+@override String toString() {return 'SimpleInstallation(id: $id, nodeId: $nodeId)';}
+}

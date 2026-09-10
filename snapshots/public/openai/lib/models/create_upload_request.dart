@@ -7,13 +7,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_expirat
 /// 
 @immutable final class CreateUploadRequestPurpose {const CreateUploadRequestPurpose._(this.value);
 
-factory CreateUploadRequestPurpose.fromJson(String json) { return switch (json) {
+factory CreateUploadRequestPurpose.fromJson(String json) {return switch (json) {
   'assistants' => assistants,
   'batch' => batch,
   'fine-tune' => fineTune,
   'vision' => vision,
   _ => CreateUploadRequestPurpose._(json),
-}; }
+};}
 
 static const CreateUploadRequestPurpose assistants = CreateUploadRequestPurpose._('assistants');
 
@@ -27,23 +27,23 @@ static const List<CreateUploadRequestPurpose> values = [assistants, batch, fineT
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateUploadRequestPurpose && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateUploadRequestPurpose($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateUploadRequestPurpose && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateUploadRequestPurpose($value)';}
+}
 @immutable final class CreateUploadRequest {const CreateUploadRequest({required this.filename, required this.purpose, required this.bytes, required this.mimeType, this.expiresAfter, });
 
-factory CreateUploadRequest.fromJson(Map<String, dynamic> json) { return CreateUploadRequest(
+factory CreateUploadRequest.fromJson(Map<String, dynamic> json) {return CreateUploadRequest(
   filename: json['filename'] as String,
   purpose: CreateUploadRequestPurpose.fromJson(json['purpose'] as String),
   bytes: (json['bytes'] as num).toInt(),
   mimeType: json['mime_type'] as String,
   expiresAfter: json['expires_after'] != null ? FileExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The name of the file to upload.
 /// 
@@ -70,31 +70,31 @@ final String mimeType;
 
 final FileExpirationAfter? expiresAfter;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'filename': filename,
   'purpose': purpose.toJson(),
   'bytes': bytes,
   'mime_type': mimeType,
   if (expiresAfter != null) 'expires_after': expiresAfter?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('filename') && json['filename'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('filename') && json['filename'] is String &&
       json.containsKey('purpose') &&
       json.containsKey('bytes') && json['bytes'] is num &&
-      json.containsKey('mime_type') && json['mime_type'] is String; } 
-CreateUploadRequest copyWith({String? filename, CreateUploadRequestPurpose? purpose, int? bytes, String? mimeType, FileExpirationAfter? Function()? expiresAfter, }) { return CreateUploadRequest(
+      json.containsKey('mime_type') && json['mime_type'] is String;}
+CreateUploadRequest copyWith({String? filename, CreateUploadRequestPurpose? purpose, int? bytes, String? mimeType, FileExpirationAfter? Function()? expiresAfter, }) {return CreateUploadRequest(
   filename: filename ?? this.filename,
   purpose: purpose ?? this.purpose,
   bytes: bytes ?? this.bytes,
   mimeType: mimeType ?? this.mimeType,
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateUploadRequest &&
           filename == other.filename &&
           purpose == other.purpose &&
           bytes == other.bytes &&
           mimeType == other.mimeType &&
-          expiresAfter == other.expiresAfter; } 
-@override int get hashCode { return Object.hash(filename, purpose, bytes, mimeType, expiresAfter); } 
-@override String toString() { return 'CreateUploadRequest(filename: $filename, purpose: $purpose, bytes: $bytes, mimeType: $mimeType, expiresAfter: $expiresAfter)'; } 
- }
+          expiresAfter == other.expiresAfter;}
+@override int get hashCode {return Object.hash(filename, purpose, bytes, mimeType, expiresAfter);}
+@override String toString() {return 'CreateUploadRequest(filename: $filename, purpose: $purpose, bytes: $bytes, mimeType: $mimeType, expiresAfter: $expiresAfter)';}
+}

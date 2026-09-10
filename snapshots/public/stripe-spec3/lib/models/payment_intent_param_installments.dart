@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_param_installments_plan.dart';@immutable final class PaymentIntentParamInstallments {const PaymentIntentParamInstallments({this.enabled, this.plan, });
 
-factory PaymentIntentParamInstallments.fromJson(Map<String, dynamic> json) { return PaymentIntentParamInstallments(
+factory PaymentIntentParamInstallments.fromJson(Map<String, dynamic> json) {return PaymentIntentParamInstallments(
   enabled: json['enabled'] as bool?,
   plan: json['plan'] != null ? PaymentIntentParamInstallmentsPlan.fromJson(json['plan']) : null,
-); }
+);}
 
 final bool? enabled;
 
 final PaymentIntentParamInstallmentsPlan? plan;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   if (plan != null) 'plan': plan?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'plan'}.contains(key)); } 
-PaymentIntentParamInstallments copyWith({bool? Function()? enabled, PaymentIntentParamInstallmentsPlan? Function()? plan, }) { return PaymentIntentParamInstallments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'plan'}.contains(key));}
+PaymentIntentParamInstallments copyWith({bool? Function()? enabled, PaymentIntentParamInstallmentsPlan? Function()? plan, }) {return PaymentIntentParamInstallments(
   enabled: enabled != null ? enabled() : this.enabled,
   plan: plan != null ? plan() : this.plan,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentParamInstallments &&
           enabled == other.enabled &&
-          plan == other.plan; } 
-@override int get hashCode { return Object.hash(enabled, plan); } 
-@override String toString() { return 'PaymentIntentParamInstallments(enabled: $enabled, plan: $plan)'; } 
- }
+          plan == other.plan;}
+@override int get hashCode {return Object.hash(enabled, plan);}
+@override String toString() {return 'PaymentIntentParamInstallments(enabled: $enabled, plan: $plan)';}
+}

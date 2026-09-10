@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A value indicating who is liable when this account can't pay back negative balances from payments.
 @immutable final class AccountUnificationAccountControllerLossesPayments {const AccountUnificationAccountControllerLossesPayments._(this.value);
 
-factory AccountUnificationAccountControllerLossesPayments.fromJson(String json) { return switch (json) {
+factory AccountUnificationAccountControllerLossesPayments.fromJson(String json) {return switch (json) {
   'application' => application,
   'stripe' => stripe,
   _ => AccountUnificationAccountControllerLossesPayments._(json),
-}; }
+};}
 
 static const AccountUnificationAccountControllerLossesPayments application = AccountUnificationAccountControllerLossesPayments._('application');
 
@@ -17,34 +17,34 @@ static const List<AccountUnificationAccountControllerLossesPayments> values = [a
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountUnificationAccountControllerLossesPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountUnificationAccountControllerLossesPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountUnificationAccountControllerLossesPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountUnificationAccountControllerLossesPayments($value)';}
+}
 /// 
 @immutable final class AccountUnificationAccountControllerLosses {const AccountUnificationAccountControllerLosses({required this.payments});
 
-factory AccountUnificationAccountControllerLosses.fromJson(Map<String, dynamic> json) { return AccountUnificationAccountControllerLosses(
+factory AccountUnificationAccountControllerLosses.fromJson(Map<String, dynamic> json) {return AccountUnificationAccountControllerLosses(
   payments: AccountUnificationAccountControllerLossesPayments.fromJson(json['payments'] as String),
-); }
+);}
 
 /// A value indicating who is liable when this account can't pay back negative balances from payments.
 final AccountUnificationAccountControllerLossesPayments payments;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'payments': payments.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('payments'); } 
-AccountUnificationAccountControllerLosses copyWith({AccountUnificationAccountControllerLossesPayments? payments}) { return AccountUnificationAccountControllerLosses(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('payments');}
+AccountUnificationAccountControllerLosses copyWith({AccountUnificationAccountControllerLossesPayments? payments}) {return AccountUnificationAccountControllerLosses(
   payments: payments ?? this.payments,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountUnificationAccountControllerLosses &&
-          payments == other.payments; } 
-@override int get hashCode { return payments.hashCode; } 
-@override String toString() { return 'AccountUnificationAccountControllerLosses(payments: $payments)'; } 
- }
+          payments == other.payments;}
+@override int get hashCode {return payments.hashCode;}
+@override String toString() {return 'AccountUnificationAccountControllerLosses(payments: $payments)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettingsAccountTaxIdsVariant2 {const PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettingsAccountTaxIdsVariant2._(this.value);
 
-factory PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettingsAccountTaxIdsVariant2.fromJson(String json) { return switch (json) {
+factory PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettingsAccountTaxIdsVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettingsAccountTaxIdsVariant2._(json),
-}; }
+};}
 
 static const PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettingsAccountTaxIdsVariant2 $empty = PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettingsAccountTaxIdsVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettings
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettingsAccountTaxIdsVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettingsAccountTaxIdsVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettingsAccountTaxIdsVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettingsAccountTaxIdsVariant2($value)';}
+}
 
 @immutable
 final class PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettingsAccountTaxIds {

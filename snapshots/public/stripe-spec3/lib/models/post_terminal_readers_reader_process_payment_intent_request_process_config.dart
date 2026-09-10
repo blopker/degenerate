@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_process_payment_intent_request_process_config_tipping.dart';@immutable final class PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay {const PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay._(this.value);
 
-factory PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay.fromJson(String json) { return switch (json) {
+factory PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay.fromJson(String json) {return switch (json) {
   'always' => always,
   'limited' => limited,
   'unspecified' => unspecified,
   _ => PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay._(json),
-}; }
+};}
 
 static const PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay always = PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay._('always');
 
@@ -19,24 +19,24 @@ static const List<PostTerminalReadersReaderProcessPaymentIntentRequestProcessCon
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay($value)';}
+}
 /// Configuration overrides for this transaction, such as tipping and customer cancellation settings.
 @immutable final class PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig {const PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig({this.allowRedisplay, this.enableCustomerCancellation, this.returnUrl, this.skipTipping, this.tipping, });
 
-factory PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig(
+factory PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig.fromJson(Map<String, dynamic> json) {return PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig(
   allowRedisplay: json['allow_redisplay'] != null ? PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,
   enableCustomerCancellation: json['enable_customer_cancellation'] as bool?,
   returnUrl: json['return_url'] as String?,
   skipTipping: json['skip_tipping'] as bool?,
   tipping: json['tipping'] != null ? PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigTipping.fromJson(json['tipping'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay? allowRedisplay;
 
@@ -48,28 +48,28 @@ final bool? skipTipping;
 
 final PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigTipping? tipping;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowRedisplay != null) 'allow_redisplay': allowRedisplay?.toJson(),
   'enable_customer_cancellation': ?enableCustomerCancellation,
   'return_url': ?returnUrl,
   'skip_tipping': ?skipTipping,
   if (tipping != null) 'tipping': tipping?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_redisplay', 'enable_customer_cancellation', 'return_url', 'skip_tipping', 'tipping'}.contains(key)); } 
-PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig copyWith({PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay? Function()? allowRedisplay, bool? Function()? enableCustomerCancellation, String? Function()? returnUrl, bool? Function()? skipTipping, PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigTipping? Function()? tipping, }) { return PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allow_redisplay', 'enable_customer_cancellation', 'return_url', 'skip_tipping', 'tipping'}.contains(key));}
+PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig copyWith({PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay? Function()? allowRedisplay, bool? Function()? enableCustomerCancellation, String? Function()? returnUrl, bool? Function()? skipTipping, PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigTipping? Function()? tipping, }) {return PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig(
   allowRedisplay: allowRedisplay != null ? allowRedisplay() : this.allowRedisplay,
   enableCustomerCancellation: enableCustomerCancellation != null ? enableCustomerCancellation() : this.enableCustomerCancellation,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
   skipTipping: skipTipping != null ? skipTipping() : this.skipTipping,
   tipping: tipping != null ? tipping() : this.tipping,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig &&
           allowRedisplay == other.allowRedisplay &&
           enableCustomerCancellation == other.enableCustomerCancellation &&
           returnUrl == other.returnUrl &&
           skipTipping == other.skipTipping &&
-          tipping == other.tipping; } 
-@override int get hashCode { return Object.hash(allowRedisplay, enableCustomerCancellation, returnUrl, skipTipping, tipping); } 
-@override String toString() { return 'PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig(allowRedisplay: $allowRedisplay, enableCustomerCancellation: $enableCustomerCancellation, returnUrl: $returnUrl, skipTipping: $skipTipping, tipping: $tipping)'; } 
- }
+          tipping == other.tipping;}
+@override int get hashCode {return Object.hash(allowRedisplay, enableCustomerCancellation, returnUrl, skipTipping, tipping);}
+@override String toString() {return 'PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig(allowRedisplay: $allowRedisplay, enableCustomerCancellation: $enableCustomerCancellation, returnUrl: $returnUrl, skipTipping: $skipTipping, tipping: $tipping)';}
+}

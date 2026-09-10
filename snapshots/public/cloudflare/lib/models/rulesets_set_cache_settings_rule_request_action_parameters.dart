@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_set_cache_settings_browser_ttl.dart';import 'rulesets_set_cache_settings_cache.dart';import 'rulesets_set_cache_settings_cache_key.dart';import 'rulesets_set_cache_settings_cache_reserve.dart';import 'rulesets_set_cache_settings_edge_ttl.dart';import 'rulesets_set_cache_settings_origin_cache_control.dart';import 'rulesets_set_cache_settings_origin_error_page_passthru.dart';import 'rulesets_set_cache_settings_read_timeout.dart';import 'rulesets_set_cache_settings_respect_strong_etags.dart';import 'rulesets_set_cache_settings_serve_stale.dart';import 'rulesets_set_cache_settings_strip_e_tags.dart';import 'rulesets_set_cache_settings_strip_last_modified.dart';import 'rulesets_set_cache_settings_strip_set_cookie.dart';@immutable final class RulesetsSetCacheSettingsRuleRequestActionParameters {const RulesetsSetCacheSettingsRuleRequestActionParameters({this.additionalCacheablePorts, this.browserTtl, this.cache, this.cacheKey, this.cacheReserve, this.edgeTtl, this.originCacheControl, this.originErrorPagePassthru, this.readTimeout, this.respectStrongEtags, this.serveStale, this.stripEtags, this.stripLastModified, this.stripSetCookie, });
 
-factory RulesetsSetCacheSettingsRuleRequestActionParameters.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsRuleRequestActionParameters(
+factory RulesetsSetCacheSettingsRuleRequestActionParameters.fromJson(Map<String, dynamic> json) {return RulesetsSetCacheSettingsRuleRequestActionParameters(
   additionalCacheablePorts: (json['additional_cacheable_ports'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   browserTtl: json['browser_ttl'] != null ? RulesetsSetCacheSettingsBrowserTtl.fromJson(json['browser_ttl'] as Map<String, dynamic>) : null,
   cache: json['cache'] != null ? RulesetsSetCacheSettingsCache.fromJson(json['cache'] as bool) : null,
@@ -17,7 +17,7 @@ factory RulesetsSetCacheSettingsRuleRequestActionParameters.fromJson(Map<String,
   stripEtags: json['strip_etags'] != null ? RulesetsSetCacheSettingsStripETags.fromJson(json['strip_etags'] as bool) : null,
   stripLastModified: json['strip_last_modified'] != null ? RulesetsSetCacheSettingsStripLastModified.fromJson(json['strip_last_modified'] as bool) : null,
   stripSetCookie: json['strip_set_cookie'] != null ? RulesetsSetCacheSettingsStripSetCookie.fromJson(json['strip_set_cookie'] as bool) : null,
-); }
+);}
 
 /// A list of additional ports that caching should be enabled on.
 final List<int>? additionalCacheablePorts;
@@ -56,7 +56,7 @@ final RulesetsSetCacheSettingsStripLastModified? stripLastModified;
 /// Whether to strip Set-Cookie headers from the origin response before caching.
 final RulesetsSetCacheSettingsStripSetCookie? stripSetCookie;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'additional_cacheable_ports': ?additionalCacheablePorts,
   if (browserTtl != null) 'browser_ttl': browserTtl?.toJson(),
   if (cache != null) 'cache': cache?.toJson(),
@@ -71,9 +71,9 @@ Map<String, dynamic> toJson() { return {
   if (stripEtags != null) 'strip_etags': stripEtags?.toJson(),
   if (stripLastModified != null) 'strip_last_modified': stripLastModified?.toJson(),
   if (stripSetCookie != null) 'strip_set_cookie': stripSetCookie?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_cacheable_ports', 'browser_ttl', 'cache', 'cache_key', 'cache_reserve', 'edge_ttl', 'origin_cache_control', 'origin_error_page_passthru', 'read_timeout', 'respect_strong_etags', 'serve_stale', 'strip_etags', 'strip_last_modified', 'strip_set_cookie'}.contains(key)); } 
-RulesetsSetCacheSettingsRuleRequestActionParameters copyWith({List<int>? Function()? additionalCacheablePorts, RulesetsSetCacheSettingsBrowserTtl? Function()? browserTtl, RulesetsSetCacheSettingsCache? Function()? cache, RulesetsSetCacheSettingsCacheKey? Function()? cacheKey, RulesetsSetCacheSettingsCacheReserve? Function()? cacheReserve, RulesetsSetCacheSettingsEdgeTtl? Function()? edgeTtl, RulesetsSetCacheSettingsOriginCacheControl? Function()? originCacheControl, RulesetsSetCacheSettingsOriginErrorPagePassthru? Function()? originErrorPagePassthru, RulesetsSetCacheSettingsReadTimeout? Function()? readTimeout, RulesetsSetCacheSettingsRespectStrongEtags? Function()? respectStrongEtags, RulesetsSetCacheSettingsServeStale? Function()? serveStale, RulesetsSetCacheSettingsStripETags? Function()? stripEtags, RulesetsSetCacheSettingsStripLastModified? Function()? stripLastModified, RulesetsSetCacheSettingsStripSetCookie? Function()? stripSetCookie, }) { return RulesetsSetCacheSettingsRuleRequestActionParameters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'additional_cacheable_ports', 'browser_ttl', 'cache', 'cache_key', 'cache_reserve', 'edge_ttl', 'origin_cache_control', 'origin_error_page_passthru', 'read_timeout', 'respect_strong_etags', 'serve_stale', 'strip_etags', 'strip_last_modified', 'strip_set_cookie'}.contains(key));}
+RulesetsSetCacheSettingsRuleRequestActionParameters copyWith({List<int>? Function()? additionalCacheablePorts, RulesetsSetCacheSettingsBrowserTtl? Function()? browserTtl, RulesetsSetCacheSettingsCache? Function()? cache, RulesetsSetCacheSettingsCacheKey? Function()? cacheKey, RulesetsSetCacheSettingsCacheReserve? Function()? cacheReserve, RulesetsSetCacheSettingsEdgeTtl? Function()? edgeTtl, RulesetsSetCacheSettingsOriginCacheControl? Function()? originCacheControl, RulesetsSetCacheSettingsOriginErrorPagePassthru? Function()? originErrorPagePassthru, RulesetsSetCacheSettingsReadTimeout? Function()? readTimeout, RulesetsSetCacheSettingsRespectStrongEtags? Function()? respectStrongEtags, RulesetsSetCacheSettingsServeStale? Function()? serveStale, RulesetsSetCacheSettingsStripETags? Function()? stripEtags, RulesetsSetCacheSettingsStripLastModified? Function()? stripLastModified, RulesetsSetCacheSettingsStripSetCookie? Function()? stripSetCookie, }) {return RulesetsSetCacheSettingsRuleRequestActionParameters(
   additionalCacheablePorts: additionalCacheablePorts != null ? additionalCacheablePorts() : this.additionalCacheablePorts,
   browserTtl: browserTtl != null ? browserTtl() : this.browserTtl,
   cache: cache != null ? cache() : this.cache,
@@ -88,8 +88,8 @@ RulesetsSetCacheSettingsRuleRequestActionParameters copyWith({List<int>? Functio
   stripEtags: stripEtags != null ? stripEtags() : this.stripEtags,
   stripLastModified: stripLastModified != null ? stripLastModified() : this.stripLastModified,
   stripSetCookie: stripSetCookie != null ? stripSetCookie() : this.stripSetCookie,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsSetCacheSettingsRuleRequestActionParameters &&
           listEquals(additionalCacheablePorts, other.additionalCacheablePorts) &&
           browserTtl == other.browserTtl &&
@@ -104,7 +104,7 @@ RulesetsSetCacheSettingsRuleRequestActionParameters copyWith({List<int>? Functio
           serveStale == other.serveStale &&
           stripEtags == other.stripEtags &&
           stripLastModified == other.stripLastModified &&
-          stripSetCookie == other.stripSetCookie; } 
-@override int get hashCode { return Object.hash(Object.hashAll(additionalCacheablePorts ?? const []), browserTtl, cache, cacheKey, cacheReserve, edgeTtl, originCacheControl, originErrorPagePassthru, readTimeout, respectStrongEtags, serveStale, stripEtags, stripLastModified, stripSetCookie); } 
-@override String toString() { return 'RulesetsSetCacheSettingsRuleRequestActionParameters(additionalCacheablePorts: $additionalCacheablePorts, browserTtl: $browserTtl, cache: $cache, cacheKey: $cacheKey, cacheReserve: $cacheReserve, edgeTtl: $edgeTtl, originCacheControl: $originCacheControl, originErrorPagePassthru: $originErrorPagePassthru, readTimeout: $readTimeout, respectStrongEtags: $respectStrongEtags, serveStale: $serveStale, stripEtags: $stripEtags, stripLastModified: $stripLastModified, stripSetCookie: $stripSetCookie)'; } 
- }
+          stripSetCookie == other.stripSetCookie;}
+@override int get hashCode {return Object.hash(Object.hashAll(additionalCacheablePorts ?? const []), browserTtl, cache, cacheKey, cacheReserve, edgeTtl, originCacheControl, originErrorPagePassthru, readTimeout, respectStrongEtags, serveStale, stripEtags, stripLastModified, stripSetCookie);}
+@override String toString() {return 'RulesetsSetCacheSettingsRuleRequestActionParameters(additionalCacheablePorts: $additionalCacheablePorts, browserTtl: $browserTtl, cache: $cache, cacheKey: $cacheKey, cacheReserve: $cacheReserve, edgeTtl: $edgeTtl, originCacheControl: $originCacheControl, originErrorPagePassthru: $originErrorPagePassthru, readTimeout: $readTimeout, respectStrongEtags: $respectStrongEtags, serveStale: $serveStale, stripEtags: $stripEtags, stripLastModified: $stripLastModified, stripSetCookie: $stripSetCookie)';}
+}

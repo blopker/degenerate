@@ -8,13 +8,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Masking level fo
 /// - `default`: DLP uses its default masking behavior.
 @immutable final class DlpPayloadLogMaskingLevel {const DlpPayloadLogMaskingLevel._(this.value);
 
-factory DlpPayloadLogMaskingLevel.fromJson(String json) { return switch (json) {
+factory DlpPayloadLogMaskingLevel.fromJson(String json) {return switch (json) {
   'full' => full,
   'partial' => partial,
   'clear' => clear,
   'default' => $default,
   _ => DlpPayloadLogMaskingLevel._(json),
-}; }
+};}
 
 static const DlpPayloadLogMaskingLevel full = DlpPayloadLogMaskingLevel._('full');
 
@@ -28,11 +28,11 @@ static const List<DlpPayloadLogMaskingLevel> values = [full, partial, clear, $de
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DlpPayloadLogMaskingLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DlpPayloadLogMaskingLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DlpPayloadLogMaskingLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DlpPayloadLogMaskingLevel($value)';}
+}

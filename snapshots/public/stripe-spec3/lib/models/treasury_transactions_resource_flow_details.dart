@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization.dart';import 'treasury_credit_reversal.dart';import 'treasury_debit_reversal.dart';import 'treasury_inbound_transfer.dart';import 'treasury_outbound_payment.dart';import 'treasury_outbound_transfer.dart';import 'treasury_received_credit.dart';import 'treasury_received_debit.dart';/// Type of the flow that created the Transaction. Set to the same value as `flow_type`.
 @immutable final class TreasuryTransactionsResourceFlowDetailsType {const TreasuryTransactionsResourceFlowDetailsType._(this.value);
 
-factory TreasuryTransactionsResourceFlowDetailsType.fromJson(String json) { return switch (json) {
+factory TreasuryTransactionsResourceFlowDetailsType.fromJson(String json) {return switch (json) {
   'credit_reversal' => creditReversal,
   'debit_reversal' => debitReversal,
   'inbound_transfer' => inboundTransfer,
@@ -14,7 +14,7 @@ factory TreasuryTransactionsResourceFlowDetailsType.fromJson(String json) { retu
   'received_credit' => receivedCredit,
   'received_debit' => receivedDebit,
   _ => TreasuryTransactionsResourceFlowDetailsType._(json),
-}; }
+};}
 
 static const TreasuryTransactionsResourceFlowDetailsType creditReversal = TreasuryTransactionsResourceFlowDetailsType._('credit_reversal');
 
@@ -38,18 +38,18 @@ static const List<TreasuryTransactionsResourceFlowDetailsType> values = [creditR
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryTransactionsResourceFlowDetailsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryTransactionsResourceFlowDetailsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryTransactionsResourceFlowDetailsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryTransactionsResourceFlowDetailsType($value)';}
+}
 /// 
 @immutable final class TreasuryTransactionsResourceFlowDetails {const TreasuryTransactionsResourceFlowDetails({required this.type, this.creditReversal, this.debitReversal, this.inboundTransfer, this.issuingAuthorization, this.outboundPayment, this.outboundTransfer, this.receivedCredit, this.receivedDebit, });
 
-factory TreasuryTransactionsResourceFlowDetails.fromJson(Map<String, dynamic> json) { return TreasuryTransactionsResourceFlowDetails(
+factory TreasuryTransactionsResourceFlowDetails.fromJson(Map<String, dynamic> json) {return TreasuryTransactionsResourceFlowDetails(
   creditReversal: json['credit_reversal'] != null ? TreasuryCreditReversal.fromJson(json['credit_reversal'] as Map<String, dynamic>) : null,
   debitReversal: json['debit_reversal'] != null ? TreasuryDebitReversal.fromJson(json['debit_reversal'] as Map<String, dynamic>) : null,
   inboundTransfer: json['inbound_transfer'] != null ? TreasuryInboundTransfer.fromJson(json['inbound_transfer'] as Map<String, dynamic>) : null,
@@ -59,7 +59,7 @@ factory TreasuryTransactionsResourceFlowDetails.fromJson(Map<String, dynamic> js
   receivedCredit: json['received_credit'] != null ? TreasuryReceivedCredit.fromJson(json['received_credit'] as Map<String, dynamic>) : null,
   receivedDebit: json['received_debit'] != null ? TreasuryReceivedDebit.fromJson(json['received_debit'] as Map<String, dynamic>) : null,
   type: TreasuryTransactionsResourceFlowDetailsType.fromJson(json['type'] as String),
-); }
+);}
 
 final TreasuryCreditReversal? creditReversal;
 
@@ -80,7 +80,7 @@ final TreasuryReceivedDebit? receivedDebit;
 /// Type of the flow that created the Transaction. Set to the same value as `flow_type`.
 final TreasuryTransactionsResourceFlowDetailsType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (creditReversal != null) 'credit_reversal': creditReversal?.toJson(),
   if (debitReversal != null) 'debit_reversal': debitReversal?.toJson(),
   if (inboundTransfer != null) 'inbound_transfer': inboundTransfer?.toJson(),
@@ -90,9 +90,9 @@ Map<String, dynamic> toJson() { return {
   if (receivedCredit != null) 'received_credit': receivedCredit?.toJson(),
   if (receivedDebit != null) 'received_debit': receivedDebit?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TreasuryTransactionsResourceFlowDetails copyWith({TreasuryCreditReversal? Function()? creditReversal, TreasuryDebitReversal? Function()? debitReversal, TreasuryInboundTransfer? Function()? inboundTransfer, IssuingAuthorization? Function()? issuingAuthorization, TreasuryOutboundPayment? Function()? outboundPayment, TreasuryOutboundTransfer? Function()? outboundTransfer, TreasuryReceivedCredit? Function()? receivedCredit, TreasuryReceivedDebit? Function()? receivedDebit, TreasuryTransactionsResourceFlowDetailsType? type, }) { return TreasuryTransactionsResourceFlowDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+TreasuryTransactionsResourceFlowDetails copyWith({TreasuryCreditReversal? Function()? creditReversal, TreasuryDebitReversal? Function()? debitReversal, TreasuryInboundTransfer? Function()? inboundTransfer, IssuingAuthorization? Function()? issuingAuthorization, TreasuryOutboundPayment? Function()? outboundPayment, TreasuryOutboundTransfer? Function()? outboundTransfer, TreasuryReceivedCredit? Function()? receivedCredit, TreasuryReceivedDebit? Function()? receivedDebit, TreasuryTransactionsResourceFlowDetailsType? type, }) {return TreasuryTransactionsResourceFlowDetails(
   creditReversal: creditReversal != null ? creditReversal() : this.creditReversal,
   debitReversal: debitReversal != null ? debitReversal() : this.debitReversal,
   inboundTransfer: inboundTransfer != null ? inboundTransfer() : this.inboundTransfer,
@@ -102,8 +102,8 @@ TreasuryTransactionsResourceFlowDetails copyWith({TreasuryCreditReversal? Functi
   receivedCredit: receivedCredit != null ? receivedCredit() : this.receivedCredit,
   receivedDebit: receivedDebit != null ? receivedDebit() : this.receivedDebit,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TreasuryTransactionsResourceFlowDetails &&
           creditReversal == other.creditReversal &&
           debitReversal == other.debitReversal &&
@@ -113,7 +113,7 @@ TreasuryTransactionsResourceFlowDetails copyWith({TreasuryCreditReversal? Functi
           outboundTransfer == other.outboundTransfer &&
           receivedCredit == other.receivedCredit &&
           receivedDebit == other.receivedDebit &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(creditReversal, debitReversal, inboundTransfer, issuingAuthorization, outboundPayment, outboundTransfer, receivedCredit, receivedDebit, type); } 
-@override String toString() { return 'TreasuryTransactionsResourceFlowDetails(creditReversal: $creditReversal, debitReversal: $debitReversal, inboundTransfer: $inboundTransfer, issuingAuthorization: $issuingAuthorization, outboundPayment: $outboundPayment, outboundTransfer: $outboundTransfer, receivedCredit: $receivedCredit, receivedDebit: $receivedDebit, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(creditReversal, debitReversal, inboundTransfer, issuingAuthorization, outboundPayment, outboundTransfer, receivedCredit, receivedDebit, type);}
+@override String toString() {return 'TreasuryTransactionsResourceFlowDetails(creditReversal: $creditReversal, debitReversal: $debitReversal, inboundTransfer: $inboundTransfer, issuingAuthorization: $issuingAuthorization, outboundPayment: $outboundPayment, outboundTransfer: $outboundTransfer, receivedCredit: $receivedCredit, receivedDebit: $receivedDebit, type: $type)';}
+}

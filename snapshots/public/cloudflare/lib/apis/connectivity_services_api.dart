@@ -11,7 +11,7 @@ final class ConnectivityServicesApi with ApiExecutor {const ConnectivityServices
 /// List connectivity services
 ///
 /// `GET /accounts/{account_id}/connectivity/directory/services`
-Future<ApiResult<List<InfraServiceConfig>?, ResponseCommonFailure40>> connectivityServicesList({required InfraAccountTag accountId, InfraServiceType? type, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<InfraServiceConfig>?, ResponseCommonFailure40>> connectivityServicesList({required InfraAccountTag accountId, InfraServiceType? type, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (type != null) {
   queryParameters['type'] = type.toJson();
@@ -51,11 +51,11 @@ return null;
 
   },
 );
- } 
+}
 /// Create connectivity service
 ///
 /// `POST /accounts/{account_id}/connectivity/directory/services`
-Future<ApiResult<InfraServiceConfig?, ResponseCommonFailure40>> connectivityServicesPost({required InfraAccountTag accountId, required InfraServiceConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InfraServiceConfig?, ResponseCommonFailure40>> connectivityServicesPost({required InfraAccountTag accountId, required InfraServiceConfigRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -83,11 +83,11 @@ return null;
 
   },
 );
- } 
+}
 /// Get connectivity service
 ///
 /// `GET /accounts/{account_id}/connectivity/directory/services/{service_id}`
-Future<ApiResult<InfraServiceConfig?, ResponseCommonFailure40>> connectivityServicesGet({required String accountId, required String serviceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InfraServiceConfig?, ResponseCommonFailure40>> connectivityServicesGet({required String accountId, required String serviceId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -113,11 +113,11 @@ return null;
 
   },
 );
- } 
+}
 /// Update connectivity service
 ///
 /// `PUT /accounts/{account_id}/connectivity/directory/services/{service_id}`
-Future<ApiResult<InfraServiceConfig?, ResponseCommonFailure40>> connectivityServicesPut({required String accountId, required String serviceId, required InfraServiceConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InfraServiceConfig?, ResponseCommonFailure40>> connectivityServicesPut({required String accountId, required String serviceId, required InfraServiceConfigRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -145,11 +145,11 @@ return null;
 
   },
 );
- } 
+}
 /// Delete connectivity service
 ///
 /// `DELETE /accounts/{account_id}/connectivity/directory/services/{service_id}`
-Future<ApiResult<void, ResponseCommonFailure40>> connectivityServicesDelete({required String accountId, required String serviceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ResponseCommonFailure40>> connectivityServicesDelete({required String accountId, required String serviceId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -172,5 +172,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

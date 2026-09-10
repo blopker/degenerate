@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy._(this.value);
 
-factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy.fromJson(String json) {return switch (json) {
   'acquirer' => acquirer,
   'issuer' => issuer,
   _ => PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy acquirer = PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy._('acquirer');
 
@@ -16,22 +16,22 @@ static const List<PostTestHelpersIssuingAuthorizationsRequestVerificationDataAut
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy($value)';}
+}
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType._(this.value);
 
-factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType.fromJson(String json) {return switch (json) {
   'low_value_transaction' => lowValueTransaction,
   'transaction_risk_analysis' => transactionRiskAnalysis,
   'unknown' => unknown,
   _ => PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType lowValueTransaction = PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType._('low_value_transaction');
 
@@ -43,39 +43,39 @@ static const List<PostTestHelpersIssuingAuthorizationsRequestVerificationDataAut
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType($value)';}
+}
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption({required this.claimedBy, required this.type, });
 
-factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption(
+factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption(
   claimedBy: PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy.fromJson(json['claimed_by'] as String),
   type: PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType.fromJson(json['type'] as String),
-); }
+);}
 
 final PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy claimedBy;
 
 final PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'claimed_by': claimedBy.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('claimed_by') &&
-      json.containsKey('type'); } 
-PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption copyWith({PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy? claimedBy, PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType? type, }) { return PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('claimed_by') &&
+      json.containsKey('type');}
+PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption copyWith({PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionClaimedBy? claimedBy, PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemptionType? type, }) {return PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption(
   claimedBy: claimedBy ?? this.claimedBy,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption &&
           claimedBy == other.claimedBy &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(claimedBy, type); } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption(claimedBy: $claimedBy, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(claimedBy, type);}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption(claimedBy: $claimedBy, type: $type)';}
+}

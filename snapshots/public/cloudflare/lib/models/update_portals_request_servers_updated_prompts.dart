@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdatePortalsRequestServersUpdatedPrompts {const UpdatePortalsRequestServersUpdatedPrompts({required this.name, this.description, this.enabled, });
 
-factory UpdatePortalsRequestServersUpdatedPrompts.fromJson(Map<String, dynamic> json) { return UpdatePortalsRequestServersUpdatedPrompts(
+factory UpdatePortalsRequestServersUpdatedPrompts.fromJson(Map<String, dynamic> json) {return UpdatePortalsRequestServersUpdatedPrompts(
   description: json['description'] as String?,
   enabled: json['enabled'] as bool?,
   name: json['name'] as String,
-); }
+);}
 
 final String? description;
 
@@ -14,22 +14,22 @@ final bool? enabled;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'enabled': ?enabled,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-UpdatePortalsRequestServersUpdatedPrompts copyWith({String? Function()? description, bool? Function()? enabled, String? name, }) { return UpdatePortalsRequestServersUpdatedPrompts(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+UpdatePortalsRequestServersUpdatedPrompts copyWith({String? Function()? description, bool? Function()? enabled, String? name, }) {return UpdatePortalsRequestServersUpdatedPrompts(
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UpdatePortalsRequestServersUpdatedPrompts &&
           description == other.description &&
           enabled == other.enabled &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(description, enabled, name); } 
-@override String toString() { return 'UpdatePortalsRequestServersUpdatedPrompts(description: $description, enabled: $enabled, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(description, enabled, name);}
+@override String toString() {return 'UpdatePortalsRequestServersUpdatedPrompts(description: $description, enabled: $enabled, name: $name)';}
+}

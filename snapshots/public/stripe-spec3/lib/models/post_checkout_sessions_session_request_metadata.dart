@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsSessionRequestMetadataVariant2 {const PostCheckoutSessionsSessionRequestMetadataVariant2._(this.value);
 
-factory PostCheckoutSessionsSessionRequestMetadataVariant2.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsSessionRequestMetadataVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostCheckoutSessionsSessionRequestMetadataVariant2._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsSessionRequestMetadataVariant2 $empty = PostCheckoutSessionsSessionRequestMetadataVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostCheckoutSessionsSessionRequestMetadataVariant2> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsSessionRequestMetadataVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsSessionRequestMetadataVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsSessionRequestMetadataVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsSessionRequestMetadataVariant2($value)';}
+}
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
 @immutable
 final class PostCheckoutSessionsSessionRequestMetadata {

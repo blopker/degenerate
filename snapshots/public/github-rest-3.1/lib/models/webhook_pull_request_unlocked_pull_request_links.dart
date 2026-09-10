@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_unlocked_pull_request_links_comments.dart';import 'webhook_pull_request_unlocked_pull_request_links_commits.dart';import 'webhook_pull_request_unlocked_pull_request_links_html.dart';import 'webhook_pull_request_unlocked_pull_request_links_issue.dart';import 'webhook_pull_request_unlocked_pull_request_links_review_comment.dart';import 'webhook_pull_request_unlocked_pull_request_links_review_comments.dart';import 'webhook_pull_request_unlocked_pull_request_links_self.dart';import 'webhook_pull_request_unlocked_pull_request_links_statuses.dart';@immutable final class WebhookPullRequestUnlockedPullRequestLinks {const WebhookPullRequestUnlockedPullRequestLinks({required this.comments, required this.commits, required this.html, required this.issue, required this.reviewComment, required this.reviewComments, required this.self, required this.statuses, });
 
-factory WebhookPullRequestUnlockedPullRequestLinks.fromJson(Map<String, dynamic> json) { return WebhookPullRequestUnlockedPullRequestLinks(
+factory WebhookPullRequestUnlockedPullRequestLinks.fromJson(Map<String, dynamic> json) {return WebhookPullRequestUnlockedPullRequestLinks(
   comments: WebhookPullRequestUnlockedPullRequestLinksComments.fromJson(json['comments'] as Map<String, dynamic>),
   commits: WebhookPullRequestUnlockedPullRequestLinksCommits.fromJson(json['commits'] as Map<String, dynamic>),
   html: WebhookPullRequestUnlockedPullRequestLinksHtml.fromJson(json['html'] as Map<String, dynamic>),
@@ -11,7 +11,7 @@ factory WebhookPullRequestUnlockedPullRequestLinks.fromJson(Map<String, dynamic>
   reviewComments: WebhookPullRequestUnlockedPullRequestLinksReviewComments.fromJson(json['review_comments'] as Map<String, dynamic>),
   self: WebhookPullRequestUnlockedPullRequestLinksSelf.fromJson(json['self'] as Map<String, dynamic>),
   statuses: WebhookPullRequestUnlockedPullRequestLinksStatuses.fromJson(json['statuses'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookPullRequestUnlockedPullRequestLinksComments comments;
 
@@ -29,7 +29,7 @@ final WebhookPullRequestUnlockedPullRequestLinksSelf self;
 
 final WebhookPullRequestUnlockedPullRequestLinksStatuses statuses;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'comments': comments.toJson(),
   'commits': commits.toJson(),
   'html': html.toJson(),
@@ -38,16 +38,16 @@ Map<String, dynamic> toJson() { return {
   'review_comments': reviewComments.toJson(),
   'self': self.toJson(),
   'statuses': statuses.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('comments') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('comments') &&
       json.containsKey('commits') &&
       json.containsKey('html') &&
       json.containsKey('issue') &&
       json.containsKey('review_comment') &&
       json.containsKey('review_comments') &&
       json.containsKey('self') &&
-      json.containsKey('statuses'); } 
-WebhookPullRequestUnlockedPullRequestLinks copyWith({WebhookPullRequestUnlockedPullRequestLinksComments? comments, WebhookPullRequestUnlockedPullRequestLinksCommits? commits, WebhookPullRequestUnlockedPullRequestLinksHtml? html, WebhookPullRequestUnlockedPullRequestLinksIssue? issue, WebhookPullRequestUnlockedPullRequestLinksReviewComment? reviewComment, WebhookPullRequestUnlockedPullRequestLinksReviewComments? reviewComments, WebhookPullRequestUnlockedPullRequestLinksSelf? self, WebhookPullRequestUnlockedPullRequestLinksStatuses? statuses, }) { return WebhookPullRequestUnlockedPullRequestLinks(
+      json.containsKey('statuses');}
+WebhookPullRequestUnlockedPullRequestLinks copyWith({WebhookPullRequestUnlockedPullRequestLinksComments? comments, WebhookPullRequestUnlockedPullRequestLinksCommits? commits, WebhookPullRequestUnlockedPullRequestLinksHtml? html, WebhookPullRequestUnlockedPullRequestLinksIssue? issue, WebhookPullRequestUnlockedPullRequestLinksReviewComment? reviewComment, WebhookPullRequestUnlockedPullRequestLinksReviewComments? reviewComments, WebhookPullRequestUnlockedPullRequestLinksSelf? self, WebhookPullRequestUnlockedPullRequestLinksStatuses? statuses, }) {return WebhookPullRequestUnlockedPullRequestLinks(
   comments: comments ?? this.comments,
   commits: commits ?? this.commits,
   html: html ?? this.html,
@@ -56,8 +56,8 @@ WebhookPullRequestUnlockedPullRequestLinks copyWith({WebhookPullRequestUnlockedP
   reviewComments: reviewComments ?? this.reviewComments,
   self: self ?? this.self,
   statuses: statuses ?? this.statuses,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestUnlockedPullRequestLinks &&
           comments == other.comments &&
           commits == other.commits &&
@@ -66,7 +66,7 @@ WebhookPullRequestUnlockedPullRequestLinks copyWith({WebhookPullRequestUnlockedP
           reviewComment == other.reviewComment &&
           reviewComments == other.reviewComments &&
           self == other.self &&
-          statuses == other.statuses; } 
-@override int get hashCode { return Object.hash(comments, commits, html, issue, reviewComment, reviewComments, self, statuses); } 
-@override String toString() { return 'WebhookPullRequestUnlockedPullRequestLinks(comments: $comments, commits: $commits, html: $html, issue: $issue, reviewComment: $reviewComment, reviewComments: $reviewComments, self: $self, statuses: $statuses)'; } 
- }
+          statuses == other.statuses;}
+@override int get hashCode {return Object.hash(comments, commits, html, issue, reviewComment, reviewComments, self, statuses);}
+@override String toString() {return 'WebhookPullRequestUnlockedPullRequestLinks(comments: $comments, commits: $commits, html: $html, issue: $issue, reviewComment: $reviewComment, reviewComments: $reviewComments, self: $self, statuses: $statuses)';}
+}

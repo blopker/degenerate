@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AaaAuditLogsResource {const AaaAuditLogsResource({this.id, this.type, });
 
-factory AaaAuditLogsResource.fromJson(Map<String, dynamic> json) { return AaaAuditLogsResource(
+factory AaaAuditLogsResource.fromJson(Map<String, dynamic> json) {return AaaAuditLogsResource(
   id: json['id'] as String?,
   type: json['type'] as String?,
-); }
+);}
 
 /// An identifier for the resource that was affected by the action.
 final String? id;
@@ -13,19 +13,19 @@ final String? id;
 /// A short string that describes the resource that was affected by the action.
 final String? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'type'}.contains(key)); } 
-AaaAuditLogsResource copyWith({String? Function()? id, String? Function()? type, }) { return AaaAuditLogsResource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'type'}.contains(key));}
+AaaAuditLogsResource copyWith({String? Function()? id, String? Function()? type, }) {return AaaAuditLogsResource(
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AaaAuditLogsResource &&
           id == other.id &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(id, type); } 
-@override String toString() { return 'AaaAuditLogsResource(id: $id, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(id, type);}
+@override String toString() {return 'AaaAuditLogsResource(id: $id, type: $type)';}
+}

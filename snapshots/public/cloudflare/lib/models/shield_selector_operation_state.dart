@@ -7,12 +7,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details how `sel
 /// 
 @immutable final class ShieldSelectorOperationState {const ShieldSelectorOperationState._(this.value);
 
-factory ShieldSelectorOperationState.fromJson(String json) { return switch (json) {
+factory ShieldSelectorOperationState.fromJson(String json) {return switch (json) {
   'included' => included,
   'excluded' => excluded,
   'ignored' => ignored,
   _ => ShieldSelectorOperationState._(json),
-}; }
+};}
 
 static const ShieldSelectorOperationState included = ShieldSelectorOperationState._('included');
 
@@ -24,11 +24,11 @@ static const List<ShieldSelectorOperationState> values = [included, excluded, ig
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldSelectorOperationState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldSelectorOperationState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ShieldSelectorOperationState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ShieldSelectorOperationState($value)';}
+}

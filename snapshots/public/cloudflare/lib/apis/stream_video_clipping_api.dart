@@ -13,7 +13,7 @@ final class StreamVideoClippingApi with ApiExecutor {const StreamVideoClippingAp
 /// Clips a video based on the specified start and end times provided in seconds.
 ///
 /// `POST /accounts/{account_id}/stream/clip`
-Future<ApiResult<StreamClipping?, ResponseCommonFailure69>> streamVideoClippingClipVideosGivenAStartAndEndTime({required StreamAccountIdentifier accountId, required StreamVideoClipStandard body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamClipping?, ResponseCommonFailure69>> streamVideoClippingClipVideosGivenAStartAndEndTime({required StreamAccountIdentifier accountId, required StreamVideoClipStandard body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -41,5 +41,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

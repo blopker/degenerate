@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by event type.
 @immutable final class RadarGetAnnotationsEventType {const RadarGetAnnotationsEventType._(this.value);
 
-factory RadarGetAnnotationsEventType.fromJson(String json) { return switch (json) {
+factory RadarGetAnnotationsEventType.fromJson(String json) {return switch (json) {
   'EVENT' => event,
   'GENERAL' => general,
   'OUTAGE' => outage,
@@ -11,7 +11,7 @@ factory RadarGetAnnotationsEventType.fromJson(String json) { return switch (json
   'PIPELINE' => pipeline,
   'TRAFFIC_ANOMALY' => trafficAnomaly,
   _ => RadarGetAnnotationsEventType._(json),
-}; }
+};}
 
 static const RadarGetAnnotationsEventType event = RadarGetAnnotationsEventType._('EVENT');
 
@@ -29,11 +29,11 @@ static const List<RadarGetAnnotationsEventType> values = [event, general, outage
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAnnotationsEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAnnotationsEventType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAnnotationsEventType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAnnotationsEventType($value)';}
+}

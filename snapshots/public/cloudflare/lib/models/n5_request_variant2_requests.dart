@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'n5_request_variant2_requests_text.dart';/// The pooling method used in the embedding process. `cls` pooling will generate more accurate embeddings on larger inputs - however, embeddings created with cls pooling are not compatible with embeddings generated with mean pooling. The default pooling method is `mean` in order for this to not be a breaking change, but we highly suggest using the new `cls` pooling for better accuracy.
 @immutable final class $5RequestVariant2RequestsPooling {const $5RequestVariant2RequestsPooling._(this.value);
 
-factory $5RequestVariant2RequestsPooling.fromJson(String json) { return switch (json) {
+factory $5RequestVariant2RequestsPooling.fromJson(String json) {return switch (json) {
   'mean' => mean,
   'cls' => cls,
   _ => $5RequestVariant2RequestsPooling._(json),
-}; }
+};}
 
 static const $5RequestVariant2RequestsPooling mean = $5RequestVariant2RequestsPooling._('mean');
 
@@ -17,20 +17,20 @@ static const List<$5RequestVariant2RequestsPooling> values = [mean, cls];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is $5RequestVariant2RequestsPooling && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return '\$5RequestVariant2RequestsPooling($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is $5RequestVariant2RequestsPooling && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return '\$5RequestVariant2RequestsPooling($value)';}
+}
 @immutable final class $5RequestVariant2Requests {const $5RequestVariant2Requests({required this.text, this.pooling, });
 
-factory $5RequestVariant2Requests.fromJson(Map<String, dynamic> json) { return $5RequestVariant2Requests(
+factory $5RequestVariant2Requests.fromJson(Map<String, dynamic> json) {return $5RequestVariant2Requests(
   pooling: json['pooling'] != null ? $5RequestVariant2RequestsPooling.fromJson(json['pooling'] as String) : null,
   text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
-); }
+);}
 
 /// The pooling method used in the embedding process. `cls` pooling will generate more accurate embeddings on larger inputs - however, embeddings created with cls pooling are not compatible with embeddings generated with mean pooling. The default pooling method is `mean` in order for this to not be a breaking change, but we highly suggest using the new `cls` pooling for better accuracy.
 final $5RequestVariant2RequestsPooling? pooling;
@@ -38,20 +38,20 @@ final $5RequestVariant2RequestsPooling? pooling;
 final $5RequestVariant2RequestsText text;
 
 /// The value with the schema default applied when absent.
-$5RequestVariant2RequestsPooling get poolingOrDefault { return pooling ?? $5RequestVariant2RequestsPooling.fromJson('mean'); } 
-Map<String, dynamic> toJson() { return {
+$5RequestVariant2RequestsPooling get poolingOrDefault {return pooling ?? $5RequestVariant2RequestsPooling.fromJson('mean');}
+Map<String, dynamic> toJson() {return {
   if (pooling != null) 'pooling': pooling?.toJson(),
   'text': text.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('text'); } 
-$5RequestVariant2Requests copyWith({$5RequestVariant2RequestsPooling? Function()? pooling, $5RequestVariant2RequestsText? text, }) { return $5RequestVariant2Requests(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('text');}
+$5RequestVariant2Requests copyWith({$5RequestVariant2RequestsPooling? Function()? pooling, $5RequestVariant2RequestsText? text, }) {return $5RequestVariant2Requests(
   pooling: pooling != null ? pooling() : this.pooling,
   text: text ?? this.text,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is $5RequestVariant2Requests &&
           pooling == other.pooling &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(pooling, text); } 
-@override String toString() { return '\$5RequestVariant2Requests(pooling: $pooling, text: $text)'; } 
- }
+          text == other.text;}
+@override int get hashCode {return Object.hash(pooling, text);}
+@override String toString() {return '\$5RequestVariant2Requests(pooling: $pooling, text: $text)';}
+}

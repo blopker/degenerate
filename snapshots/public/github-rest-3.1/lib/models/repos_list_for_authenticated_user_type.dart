@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposListForAuthenticatedUserType {const ReposListForAuthenticatedUserType._(this.value);
 
-factory ReposListForAuthenticatedUserType.fromJson(String json) { return switch (json) {
+factory ReposListForAuthenticatedUserType.fromJson(String json) {return switch (json) {
   'all' => all,
   'owner' => owner,
   'public' => public,
   'private' => private,
   'member' => member,
   _ => ReposListForAuthenticatedUserType._(json),
-}; }
+};}
 
 static const ReposListForAuthenticatedUserType all = ReposListForAuthenticatedUserType._('all');
 
@@ -25,11 +25,11 @@ static const List<ReposListForAuthenticatedUserType> values = [all, owner, publi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposListForAuthenticatedUserType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposListForAuthenticatedUserType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposListForAuthenticatedUserType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposListForAuthenticatedUserType($value)';}
+}

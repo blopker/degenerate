@@ -23,7 +23,7 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class MagicVisibilityPcapsPcapsResponseFull {const MagicVisibilityPcapsPcapsResponseFull({this.byteLimit, this.coloName, this.destinationConf, this.errorMessage, this.filterV1, this.id, this.packetsCaptured, this.status, this.stopRequested, this.submitted, this.system, this.timeLimit, this.type, });
 
-factory MagicVisibilityPcapsPcapsResponseFull.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsResponseFull(
+factory MagicVisibilityPcapsPcapsResponseFull.fromJson(Map<String, dynamic> json) {return MagicVisibilityPcapsPcapsResponseFull(
   byteLimit: json['byte_limit'] != null ? MagicVisibilityPcapsPcapsByteLimit.fromJson(json['byte_limit'] as num) : null,
   coloName: json['colo_name'] != null ? MagicVisibilityPcapsPcapsColoName.fromJson(json['colo_name'] as String) : null,
   destinationConf: json['destination_conf'] != null ? MagicVisibilityPcapsPcapsDestinationConf.fromJson(json['destination_conf'] as String) : null,
@@ -37,7 +37,7 @@ factory MagicVisibilityPcapsPcapsResponseFull.fromJson(Map<String, dynamic> json
   system: json['system'] != null ? MagicVisibilityPcapsPcapsSystem.fromJson(json['system'] as String) : null,
   timeLimit: json['time_limit'] != null ? MagicVisibilityPcapsPcapsTimeLimitFull.fromJson(json['time_limit'] as num) : null,
   type: json['type'] != null ? MagicVisibilityPcapsPcapsType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The maximum number of bytes to capture. This field only applies to `full` packet captures.
 final MagicVisibilityPcapsPcapsByteLimit? byteLimit;
@@ -71,7 +71,7 @@ final MagicVisibilityPcapsPcapsTimeLimitFull? timeLimit;
 
 final MagicVisibilityPcapsPcapsType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (byteLimit != null) 'byte_limit': byteLimit?.toJson(),
   if (coloName != null) 'colo_name': coloName?.toJson(),
   if (destinationConf != null) 'destination_conf': destinationConf?.toJson(),
@@ -85,9 +85,9 @@ Map<String, dynamic> toJson() { return {
   if (system != null) 'system': system?.toJson(),
   if (timeLimit != null) 'time_limit': timeLimit?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'byte_limit', 'colo_name', 'destination_conf', 'error_message', 'filter_v1', 'id', 'packets_captured', 'status', 'stop_requested', 'submitted', 'system', 'time_limit', 'type'}.contains(key)); } 
-MagicVisibilityPcapsPcapsResponseFull copyWith({MagicVisibilityPcapsPcapsByteLimit? Function()? byteLimit, MagicVisibilityPcapsPcapsColoName? Function()? coloName, MagicVisibilityPcapsPcapsDestinationConf? Function()? destinationConf, MagicVisibilityPcapsPcapsErrorMessage? Function()? errorMessage, MagicVisibilityPcapsPcapsFilter? Function()? filterV1, MagicVisibilityPcapsPcapsId? Function()? id, MagicVisibilityPcapsPcapsPacketsCaptured? Function()? packetsCaptured, MagicVisibilityPcapsPcapsStatus? Function()? status, MagicVisibilityPcapsPcapsStopRequested? Function()? stopRequested, MagicVisibilityPcapsPcapsSubmitted? Function()? submitted, MagicVisibilityPcapsPcapsSystem? Function()? system, MagicVisibilityPcapsPcapsTimeLimitFull? Function()? timeLimit, MagicVisibilityPcapsPcapsType? Function()? type, }) { return MagicVisibilityPcapsPcapsResponseFull(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'byte_limit', 'colo_name', 'destination_conf', 'error_message', 'filter_v1', 'id', 'packets_captured', 'status', 'stop_requested', 'submitted', 'system', 'time_limit', 'type'}.contains(key));}
+MagicVisibilityPcapsPcapsResponseFull copyWith({MagicVisibilityPcapsPcapsByteLimit? Function()? byteLimit, MagicVisibilityPcapsPcapsColoName? Function()? coloName, MagicVisibilityPcapsPcapsDestinationConf? Function()? destinationConf, MagicVisibilityPcapsPcapsErrorMessage? Function()? errorMessage, MagicVisibilityPcapsPcapsFilter? Function()? filterV1, MagicVisibilityPcapsPcapsId? Function()? id, MagicVisibilityPcapsPcapsPacketsCaptured? Function()? packetsCaptured, MagicVisibilityPcapsPcapsStatus? Function()? status, MagicVisibilityPcapsPcapsStopRequested? Function()? stopRequested, MagicVisibilityPcapsPcapsSubmitted? Function()? submitted, MagicVisibilityPcapsPcapsSystem? Function()? system, MagicVisibilityPcapsPcapsTimeLimitFull? Function()? timeLimit, MagicVisibilityPcapsPcapsType? Function()? type, }) {return MagicVisibilityPcapsPcapsResponseFull(
   byteLimit: byteLimit != null ? byteLimit() : this.byteLimit,
   coloName: coloName != null ? coloName() : this.coloName,
   destinationConf: destinationConf != null ? destinationConf() : this.destinationConf,
@@ -101,8 +101,8 @@ MagicVisibilityPcapsPcapsResponseFull copyWith({MagicVisibilityPcapsPcapsByteLim
   system: system != null ? system() : this.system,
   timeLimit: timeLimit != null ? timeLimit() : this.timeLimit,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MagicVisibilityPcapsPcapsResponseFull &&
           byteLimit == other.byteLimit &&
           coloName == other.coloName &&
@@ -116,7 +116,7 @@ MagicVisibilityPcapsPcapsResponseFull copyWith({MagicVisibilityPcapsPcapsByteLim
           submitted == other.submitted &&
           system == other.system &&
           timeLimit == other.timeLimit &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(byteLimit, coloName, destinationConf, errorMessage, filterV1, id, packetsCaptured, status, stopRequested, submitted, system, timeLimit, type); } 
-@override String toString() { return 'MagicVisibilityPcapsPcapsResponseFull(byteLimit: $byteLimit, coloName: $coloName, destinationConf: $destinationConf, errorMessage: $errorMessage, filterV1: $filterV1, id: $id, packetsCaptured: $packetsCaptured, status: $status, stopRequested: $stopRequested, submitted: $submitted, system: $system, timeLimit: $timeLimit, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(byteLimit, coloName, destinationConf, errorMessage, filterV1, id, packetsCaptured, status, stopRequested, submitted, system, timeLimit, type);}
+@override String toString() {return 'MagicVisibilityPcapsPcapsResponseFull(byteLimit: $byteLimit, coloName: $coloName, destinationConf: $destinationConf, errorMessage: $errorMessage, filterV1: $filterV1, id: $id, packetsCaptured: $packetsCaptured, status: $status, stopRequested: $stopRequested, submitted: $submitted, system: $system, timeLimit: $timeLimit, type: $type)';}
+}

@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_summary_by_matching_answer_status_response_result.dart';@immutable final class RadarGetDnsSummaryByMatchingAnswerStatusResponse {const RadarGetDnsSummaryByMatchingAnswerStatusResponse({required this.result, required this.success, });
 
-factory RadarGetDnsSummaryByMatchingAnswerStatusResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByMatchingAnswerStatusResponse(
+factory RadarGetDnsSummaryByMatchingAnswerStatusResponse.fromJson(Map<String, dynamic> json) {return RadarGetDnsSummaryByMatchingAnswerStatusResponse(
   result: RadarGetDnsSummaryByMatchingAnswerStatusResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetDnsSummaryByMatchingAnswerStatusResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetDnsSummaryByMatchingAnswerStatusResponse copyWith({RadarGetDnsSummaryByMatchingAnswerStatusResponseResult? result, bool? success, }) { return RadarGetDnsSummaryByMatchingAnswerStatusResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetDnsSummaryByMatchingAnswerStatusResponse copyWith({RadarGetDnsSummaryByMatchingAnswerStatusResponseResult? result, bool? success, }) {return RadarGetDnsSummaryByMatchingAnswerStatusResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetDnsSummaryByMatchingAnswerStatusResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'RadarGetDnsSummaryByMatchingAnswerStatusResponse(result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(result, success);}
+@override String toString() {return 'RadarGetDnsSummaryByMatchingAnswerStatusResponse(result: $result, success: $success)';}
+}

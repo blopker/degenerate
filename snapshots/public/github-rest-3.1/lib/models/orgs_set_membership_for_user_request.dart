@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role to give
 ///  * `member` - The user will become a non-owner member of the organization.
 @immutable final class OrgsSetMembershipForUserRequestRole {const OrgsSetMembershipForUserRequestRole._(this.value);
 
-factory OrgsSetMembershipForUserRequestRole.fromJson(String json) { return switch (json) {
+factory OrgsSetMembershipForUserRequestRole.fromJson(String json) {return switch (json) {
   'admin' => admin,
   'member' => member,
   _ => OrgsSetMembershipForUserRequestRole._(json),
-}; }
+};}
 
 static const OrgsSetMembershipForUserRequestRole admin = OrgsSetMembershipForUserRequestRole._('admin');
 
@@ -19,19 +19,19 @@ static const List<OrgsSetMembershipForUserRequestRole> values = [admin, member];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsSetMembershipForUserRequestRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsSetMembershipForUserRequestRole($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgsSetMembershipForUserRequestRole && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrgsSetMembershipForUserRequestRole($value)';}
+}
 @immutable final class OrgsSetMembershipForUserRequest {const OrgsSetMembershipForUserRequest({this.role});
 
-factory OrgsSetMembershipForUserRequest.fromJson(Map<String, dynamic> json) { return OrgsSetMembershipForUserRequest(
+factory OrgsSetMembershipForUserRequest.fromJson(Map<String, dynamic> json) {return OrgsSetMembershipForUserRequest(
   role: json['role'] != null ? OrgsSetMembershipForUserRequestRole.fromJson(json['role'] as String) : null,
-); }
+);}
 
 /// The role to give the user in the organization. Can be one of:
 ///  * `admin` - The user will become an owner of the organization.
@@ -39,17 +39,17 @@ factory OrgsSetMembershipForUserRequest.fromJson(Map<String, dynamic> json) { re
 final OrgsSetMembershipForUserRequestRole? role;
 
 /// The value with the schema default applied when absent.
-OrgsSetMembershipForUserRequestRole get roleOrDefault { return role ?? OrgsSetMembershipForUserRequestRole.fromJson('member'); } 
-Map<String, dynamic> toJson() { return {
+OrgsSetMembershipForUserRequestRole get roleOrDefault {return role ?? OrgsSetMembershipForUserRequestRole.fromJson('member');}
+Map<String, dynamic> toJson() {return {
   if (role != null) 'role': role?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'role'}.contains(key)); } 
-OrgsSetMembershipForUserRequest copyWith({OrgsSetMembershipForUserRequestRole? Function()? role}) { return OrgsSetMembershipForUserRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'role'}.contains(key));}
+OrgsSetMembershipForUserRequest copyWith({OrgsSetMembershipForUserRequestRole? Function()? role}) {return OrgsSetMembershipForUserRequest(
   role: role != null ? role() : this.role,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrgsSetMembershipForUserRequest &&
-          role == other.role; } 
-@override int get hashCode { return role.hashCode; } 
-@override String toString() { return 'OrgsSetMembershipForUserRequest(role: $role)'; } 
- }
+          role == other.role;}
+@override int get hashCode {return role.hashCode;}
+@override String toString() {return 'OrgsSetMembershipForUserRequest(role: $role)';}
+}

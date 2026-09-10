@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_persons_person_request_documents_company_authorization.dart';import 'post_accounts_account_persons_person_request_documents_passport.dart';import 'post_accounts_account_persons_person_request_documents_visa.dart';/// Documents that may be submitted to satisfy various informational requests.
 @immutable final class PostAccountsAccountPersonsPersonRequestDocuments {const PostAccountsAccountPersonsPersonRequestDocuments({this.companyAuthorization, this.passport, this.visa, });
 
-factory PostAccountsAccountPersonsPersonRequestDocuments.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPersonsPersonRequestDocuments(
+factory PostAccountsAccountPersonsPersonRequestDocuments.fromJson(Map<String, dynamic> json) {return PostAccountsAccountPersonsPersonRequestDocuments(
   companyAuthorization: json['company_authorization'] != null ? PostAccountsAccountPersonsPersonRequestDocumentsCompanyAuthorization.fromJson(json['company_authorization'] as Map<String, dynamic>) : null,
   passport: json['passport'] != null ? PostAccountsAccountPersonsPersonRequestDocumentsPassport.fromJson(json['passport'] as Map<String, dynamic>) : null,
   visa: json['visa'] != null ? PostAccountsAccountPersonsPersonRequestDocumentsVisa.fromJson(json['visa'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostAccountsAccountPersonsPersonRequestDocumentsCompanyAuthorization? companyAuthorization;
 
@@ -15,22 +15,22 @@ final PostAccountsAccountPersonsPersonRequestDocumentsPassport? passport;
 
 final PostAccountsAccountPersonsPersonRequestDocumentsVisa? visa;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (companyAuthorization != null) 'company_authorization': companyAuthorization?.toJson(),
   if (passport != null) 'passport': passport?.toJson(),
   if (visa != null) 'visa': visa?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'company_authorization', 'passport', 'visa'}.contains(key)); } 
-PostAccountsAccountPersonsPersonRequestDocuments copyWith({PostAccountsAccountPersonsPersonRequestDocumentsCompanyAuthorization? Function()? companyAuthorization, PostAccountsAccountPersonsPersonRequestDocumentsPassport? Function()? passport, PostAccountsAccountPersonsPersonRequestDocumentsVisa? Function()? visa, }) { return PostAccountsAccountPersonsPersonRequestDocuments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'company_authorization', 'passport', 'visa'}.contains(key));}
+PostAccountsAccountPersonsPersonRequestDocuments copyWith({PostAccountsAccountPersonsPersonRequestDocumentsCompanyAuthorization? Function()? companyAuthorization, PostAccountsAccountPersonsPersonRequestDocumentsPassport? Function()? passport, PostAccountsAccountPersonsPersonRequestDocumentsVisa? Function()? visa, }) {return PostAccountsAccountPersonsPersonRequestDocuments(
   companyAuthorization: companyAuthorization != null ? companyAuthorization() : this.companyAuthorization,
   passport: passport != null ? passport() : this.passport,
   visa: visa != null ? visa() : this.visa,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountPersonsPersonRequestDocuments &&
           companyAuthorization == other.companyAuthorization &&
           passport == other.passport &&
-          visa == other.visa; } 
-@override int get hashCode { return Object.hash(companyAuthorization, passport, visa); } 
-@override String toString() { return 'PostAccountsAccountPersonsPersonRequestDocuments(companyAuthorization: $companyAuthorization, passport: $passport, visa: $visa)'; } 
- }
+          visa == other.visa;}
+@override int get hashCode {return Object.hash(companyAuthorization, passport, visa);}
+@override String toString() {return 'PostAccountsAccountPersonsPersonRequestDocuments(companyAuthorization: $companyAuthorization, passport: $passport, visa: $visa)';}
+}

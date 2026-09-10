@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Feature fields t
 /// 
 @immutable final class ZonesCacheKeyFieldsValueUser {const ZonesCacheKeyFieldsValueUser({this.deviceType, this.geo, this.lang, });
 
-factory ZonesCacheKeyFieldsValueUser.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFieldsValueUser(
+factory ZonesCacheKeyFieldsValueUser.fromJson(Map<String, dynamic> json) {return ZonesCacheKeyFieldsValueUser(
   deviceType: json['device_type'] as bool?,
   geo: json['geo'] as bool?,
   lang: json['lang'] as bool?,
-); }
+);}
 
 /// Classifies a request as `mobile`, `desktop`, or `tablet`
 /// based on the User Agent.
@@ -25,22 +25,22 @@ final bool? geo;
 /// 
 final bool? lang;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'device_type': ?deviceType,
   'geo': ?geo,
   'lang': ?lang,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'device_type', 'geo', 'lang'}.contains(key)); } 
-ZonesCacheKeyFieldsValueUser copyWith({bool? Function()? deviceType, bool? Function()? geo, bool? Function()? lang, }) { return ZonesCacheKeyFieldsValueUser(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'device_type', 'geo', 'lang'}.contains(key));}
+ZonesCacheKeyFieldsValueUser copyWith({bool? Function()? deviceType, bool? Function()? geo, bool? Function()? lang, }) {return ZonesCacheKeyFieldsValueUser(
   deviceType: deviceType != null ? deviceType() : this.deviceType,
   geo: geo != null ? geo() : this.geo,
   lang: lang != null ? lang() : this.lang,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZonesCacheKeyFieldsValueUser &&
           deviceType == other.deviceType &&
           geo == other.geo &&
-          lang == other.lang; } 
-@override int get hashCode { return Object.hash(deviceType, geo, lang); } 
-@override String toString() { return 'ZonesCacheKeyFieldsValueUser(deviceType: $deviceType, geo: $geo, lang: $lang)'; } 
- }
+          lang == other.lang;}
+@override int get hashCode {return Object.hash(deviceType, geo, lang);}
+@override String toString() {return 'ZonesCacheKeyFieldsValueUser(deviceType: $deviceType, geo: $geo, lang: $lang)';}
+}

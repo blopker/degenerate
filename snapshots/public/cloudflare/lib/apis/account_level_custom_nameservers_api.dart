@@ -13,7 +13,7 @@ final class AccountLevelCustomNameserversApi with ApiExecutor {const AccountLeve
 /// List an account's custom nameservers.
 ///
 /// `GET /accounts/{account_id}/custom_ns`
-Future<ApiResult<List<DnsCustomNameserversCustomNs>?, AccountLevelCustomNameserversListAccountCustomNameserversResponse4xx>> accountLevelCustomNameserversListAccountCustomNameservers({required DnsCustomNameserversIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<DnsCustomNameserversCustomNs>?, AccountLevelCustomNameserversListAccountCustomNameserversResponse4xx>> accountLevelCustomNameserversListAccountCustomNameservers({required DnsCustomNameserversIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,11 +39,11 @@ return null;
 
   },
 );
- } 
+}
 /// Add Account Custom Nameserver
 ///
 /// `POST /accounts/{account_id}/custom_ns`
-Future<ApiResult<DnsCustomNameserversCustomNs?, AccountLevelCustomNameserversAddAccountCustomNameserverResponse4xx>> accountLevelCustomNameserversAddAccountCustomNameserver({required DnsCustomNameserversIdentifier accountId, required DnsCustomNameserversCustomNsInput body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsCustomNameserversCustomNs?, AccountLevelCustomNameserversAddAccountCustomNameserverResponse4xx>> accountLevelCustomNameserversAddAccountCustomNameserver({required DnsCustomNameserversIdentifier accountId, required DnsCustomNameserversCustomNsInput body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -71,11 +71,11 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Account Custom Nameserver
 ///
 /// `DELETE /accounts/{account_id}/custom_ns/{custom_ns_id}`
-Future<ApiResult<List<String>?, AccountLevelCustomNameserversDeleteAccountCustomNameserverResponse4xx>> accountLevelCustomNameserversDeleteAccountCustomNameserver({required DnsCustomNameserversNsName customNsId, required DnsCustomNameserversIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<String>?, AccountLevelCustomNameserversDeleteAccountCustomNameserverResponse4xx>> accountLevelCustomNameserversDeleteAccountCustomNameserver({required DnsCustomNameserversNsName customNsId, required DnsCustomNameserversIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -101,5 +101,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

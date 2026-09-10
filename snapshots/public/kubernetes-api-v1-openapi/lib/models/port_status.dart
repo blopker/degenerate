@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PortStatus represents the error condition of a service port
 @immutable final class PortStatus {const PortStatus({required this.port, required this.protocol, this.error, });
 
-factory PortStatus.fromJson(Map<String, dynamic> json) { return PortStatus(
+factory PortStatus.fromJson(Map<String, dynamic> json) {return PortStatus(
   error: json['error'] as String?,
   port: (json['port'] as num).toInt(),
   protocol: json['protocol'] as String,
-); }
+);}
 
 /// Error is to record the problem with the service port The format of the error shall comply with the following rules: - built-in error values shall be specified in this file and those shall use
 ///   CamelCase names
@@ -21,23 +21,23 @@ final int port;
 /// Protocol is the protocol of the service port of which status is recorded here The supported values are: "TCP", "UDP", "SCTP"
 final String protocol;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error': ?error,
   'port': port,
   'protocol': protocol,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('port') && json['port'] is num &&
-      json.containsKey('protocol') && json['protocol'] is String; } 
-PortStatus copyWith({String? Function()? error, int? port, String? protocol, }) { return PortStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('port') && json['port'] is num &&
+      json.containsKey('protocol') && json['protocol'] is String;}
+PortStatus copyWith({String? Function()? error, int? port, String? protocol, }) {return PortStatus(
   error: error != null ? error() : this.error,
   port: port ?? this.port,
   protocol: protocol ?? this.protocol,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PortStatus &&
           error == other.error &&
           port == other.port &&
-          protocol == other.protocol; } 
-@override int get hashCode { return Object.hash(error, port, protocol); } 
-@override String toString() { return 'PortStatus(error: $error, port: $port, protocol: $protocol)'; } 
- }
+          protocol == other.protocol;}
+@override int get hashCode {return Object.hash(error, port, protocol);}
+@override String toString() {return 'PortStatus(error: $error, port: $port, protocol: $protocol)';}
+}

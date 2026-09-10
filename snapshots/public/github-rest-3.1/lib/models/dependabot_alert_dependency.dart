@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependabot_alert_package.dart';/// The execution scope of the vulnerable dependency.
 @immutable final class DependabotAlertDependencyScope {const DependabotAlertDependencyScope._(this.value);
 
-factory DependabotAlertDependencyScope.fromJson(String json) { return switch (json) {
+factory DependabotAlertDependencyScope.fromJson(String json) {return switch (json) {
   'development' => development,
   'runtime' => runtime,
   'null' => $null,
   _ => DependabotAlertDependencyScope._(json),
-}; }
+};}
 
 static const DependabotAlertDependencyScope development = DependabotAlertDependencyScope._('development');
 
@@ -20,14 +20,14 @@ static const List<DependabotAlertDependencyScope> values = [development, runtime
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependabotAlertDependencyScope && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependabotAlertDependencyScope($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DependabotAlertDependencyScope && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DependabotAlertDependencyScope($value)';}
+}
 /// The vulnerable dependency's relationship to your project.
 /// 
 /// > `[!NOTE]`
@@ -35,13 +35,13 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class DependabotAlertDependencyRelationship {const DependabotAlertDependencyRelationship._(this.value);
 
-factory DependabotAlertDependencyRelationship.fromJson(String json) { return switch (json) {
+factory DependabotAlertDependencyRelationship.fromJson(String json) {return switch (json) {
   'unknown' => unknown,
   'direct' => direct,
   'transitive' => transitive,
   'null' => $null,
   _ => DependabotAlertDependencyRelationship._(json),
-}; }
+};}
 
 static const DependabotAlertDependencyRelationship unknown = DependabotAlertDependencyRelationship._('unknown');
 
@@ -55,23 +55,23 @@ static const List<DependabotAlertDependencyRelationship> values = [unknown, dire
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependabotAlertDependencyRelationship && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependabotAlertDependencyRelationship($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DependabotAlertDependencyRelationship && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DependabotAlertDependencyRelationship($value)';}
+}
 /// Details for the vulnerable dependency.
 @immutable final class DependabotAlertDependency {const DependabotAlertDependency({this.package, this.manifestPath, this.scope = const Omittable.absent(), this.relationship = const Omittable.absent(), });
 
-factory DependabotAlertDependency.fromJson(Map<String, dynamic> json) { return DependabotAlertDependency(
+factory DependabotAlertDependency.fromJson(Map<String, dynamic> json) {return DependabotAlertDependency(
   package: json['package'] != null ? DependabotAlertPackage.fromJson(json['package'] as Map<String, dynamic>) : null,
   manifestPath: json['manifest_path'] as String?,
   scope: json.containsKey('scope') ? Omittable(json['scope'] != null ? DependabotAlertDependencyScope.fromJson(json['scope'] as String) : null) : const Omittable.absent(),
   relationship: json.containsKey('relationship') ? Omittable(json['relationship'] != null ? DependabotAlertDependencyRelationship.fromJson(json['relationship'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 final DependabotAlertPackage? package;
 
@@ -88,25 +88,25 @@ final Omittable<DependabotAlertDependencyScope?> scope;
 /// 
 final Omittable<DependabotAlertDependencyRelationship?> relationship;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (package != null) 'package': package?.toJson(),
   'manifest_path': ?manifestPath,
   if (scope.isPresent) 'scope': scope.value?.toJson(),
   if (relationship.isPresent) 'relationship': relationship.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'package', 'manifest_path', 'scope', 'relationship'}.contains(key)); } 
-DependabotAlertDependency copyWith({DependabotAlertPackage? Function()? package, String? Function()? manifestPath, Omittable<DependabotAlertDependencyScope?>? scope, Omittable<DependabotAlertDependencyRelationship?>? relationship, }) { return DependabotAlertDependency(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'package', 'manifest_path', 'scope', 'relationship'}.contains(key));}
+DependabotAlertDependency copyWith({DependabotAlertPackage? Function()? package, String? Function()? manifestPath, Omittable<DependabotAlertDependencyScope?>? scope, Omittable<DependabotAlertDependencyRelationship?>? relationship, }) {return DependabotAlertDependency(
   package: package != null ? package() : this.package,
   manifestPath: manifestPath != null ? manifestPath() : this.manifestPath,
   scope: scope ?? this.scope,
   relationship: relationship ?? this.relationship,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DependabotAlertDependency &&
           package == other.package &&
           manifestPath == other.manifestPath &&
           scope == other.scope &&
-          relationship == other.relationship; } 
-@override int get hashCode { return Object.hash(package, manifestPath, scope, relationship); } 
-@override String toString() { return 'DependabotAlertDependency(package: $package, manifestPath: $manifestPath, scope: $scope, relationship: $relationship)'; } 
- }
+          relationship == other.relationship;}
+@override int get hashCode {return Object.hash(package, manifestPath, scope, relationship);}
+@override String toString() {return 'DependabotAlertDependency(package: $package, manifestPath: $manifestPath, scope: $scope, relationship: $relationship)';}
+}

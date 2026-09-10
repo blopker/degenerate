@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_identifier.dart';@immutable final class DnsRecordsDnsRecordScanBatchReject {const DnsRecordsDnsRecordScanBatchReject({required this.id});
 
-factory DnsRecordsDnsRecordScanBatchReject.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsRecordScanBatchReject(
+factory DnsRecordsDnsRecordScanBatchReject.fromJson(Map<String, dynamic> json) {return DnsRecordsDnsRecordScanBatchReject(
   id: DnsRecordsIdentifier.fromJson(json['id'] as String),
-); }
+);}
 
 final DnsRecordsIdentifier id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-DnsRecordsDnsRecordScanBatchReject copyWith({DnsRecordsIdentifier? id}) { return DnsRecordsDnsRecordScanBatchReject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id');}
+DnsRecordsDnsRecordScanBatchReject copyWith({DnsRecordsIdentifier? id}) {return DnsRecordsDnsRecordScanBatchReject(
   id: id ?? this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnsRecordsDnsRecordScanBatchReject &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'DnsRecordsDnsRecordScanBatchReject(id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return id.hashCode;}
+@override String toString() {return 'DnsRecordsDnsRecordScanBatchReject(id: $id)';}
+}

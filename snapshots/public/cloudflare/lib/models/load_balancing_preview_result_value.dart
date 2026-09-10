@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_origin_health_data.dart';@immutable final class LoadBalancingPreviewResultValue {const LoadBalancingPreviewResultValue({this.healthy, this.origins, });
 
-factory LoadBalancingPreviewResultValue.fromJson(Map<String, dynamic> json) { return LoadBalancingPreviewResultValue(
+factory LoadBalancingPreviewResultValue.fromJson(Map<String, dynamic> json) {return LoadBalancingPreviewResultValue(
   healthy: json['healthy'] as bool?,
   origins: (json['origins'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, LoadBalancingOriginHealthData.fromJson(v as Map<String, dynamic>)))).toList(),
-); }
+);}
 
 final bool? healthy;
 
 final List<Map<String,LoadBalancingOriginHealthData>>? origins;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'healthy': ?healthy,
   if (origins != null) 'origins': origins?.map((e) => e.map((k, v) => MapEntry(k, v.toJson()))).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'healthy', 'origins'}.contains(key)); } 
-LoadBalancingPreviewResultValue copyWith({bool? Function()? healthy, List<Map<String, LoadBalancingOriginHealthData>>? Function()? origins, }) { return LoadBalancingPreviewResultValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'healthy', 'origins'}.contains(key));}
+LoadBalancingPreviewResultValue copyWith({bool? Function()? healthy, List<Map<String, LoadBalancingOriginHealthData>>? Function()? origins, }) {return LoadBalancingPreviewResultValue(
   healthy: healthy != null ? healthy() : this.healthy,
   origins: origins != null ? origins() : this.origins,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LoadBalancingPreviewResultValue &&
           healthy == other.healthy &&
-          listEquals(origins, other.origins); } 
-@override int get hashCode { return Object.hash(healthy, Object.hashAll(origins ?? const [])); } 
-@override String toString() { return 'LoadBalancingPreviewResultValue(healthy: $healthy, origins: $origins)'; } 
- }
+          listEquals(origins, other.origins);}
+@override int get hashCode {return Object.hash(healthy, Object.hashAll(origins ?? const []));}
+@override String toString() {return 'LoadBalancingPreviewResultValue(healthy: $healthy, origins: $origins)';}
+}

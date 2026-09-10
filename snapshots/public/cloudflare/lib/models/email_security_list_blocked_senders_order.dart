@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityListBlockedSendersOrder {const EmailSecurityListBlockedSendersOrder._(this.value);
 
-factory EmailSecurityListBlockedSendersOrder.fromJson(String json) { return switch (json) {
+factory EmailSecurityListBlockedSendersOrder.fromJson(String json) {return switch (json) {
   'pattern' => pattern,
   'created_at' => createdAt,
   _ => EmailSecurityListBlockedSendersOrder._(json),
-}; }
+};}
 
 static const EmailSecurityListBlockedSendersOrder pattern = EmailSecurityListBlockedSendersOrder._('pattern');
 
@@ -16,11 +16,11 @@ static const List<EmailSecurityListBlockedSendersOrder> values = [pattern, creat
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityListBlockedSendersOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityListBlockedSendersOrder($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailSecurityListBlockedSendersOrder && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailSecurityListBlockedSendersOrder($value)';}
+}

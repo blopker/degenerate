@@ -10,7 +10,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 
 ///
 /// `GET /verbs`
-Future<ApiResult<void, Never>> verbsGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> verbsGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,10 +23,10 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 ///
 /// `POST /verbs`
-Future<ApiResult<void, Never>> verbsPost({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> verbsPost({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -39,10 +39,10 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 ///
 /// `PUT /verbs`
-Future<ApiResult<void, Never>> verbsPut({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> verbsPut({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -55,10 +55,10 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 ///
 /// `PATCH /verbs`
-Future<ApiResult<void, Never>> verbsPatch({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> verbsPatch({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -71,10 +71,10 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 ///
 /// `DELETE /verbs`
-Future<ApiResult<void, Never>> verbsDelete({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> verbsDelete({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -87,10 +87,10 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 ///
 /// `HEAD /verbs`
-Future<ApiResult<void, Never>> verbsHead({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> verbsHead({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'HEAD',
@@ -103,10 +103,10 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 ///
 /// `OPTIONS /verbs`
-Future<ApiResult<void, Never>> verbsOptions({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> verbsOptions({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'OPTIONS',
@@ -119,10 +119,10 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 ///
 /// `TRACE /verbs`
-Future<ApiResult<void, Never>> verbsTrace({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> verbsTrace({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'TRACE',
@@ -135,5 +135,5 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

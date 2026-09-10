@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class AutoragConfigSyncError {const AutoragConfigSyncError();
 
 /// Decodes the payload for its declared status and content type.
-static AutoragConfigSyncError parse(ApiResponse response) { switch (response.statusCode) {
+static AutoragConfigSyncError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
 return AutoragConfigSyncError400(AutoragConfigSyncResponse400.fromJson(json as Map<String, dynamic>));
@@ -20,40 +20,40 @@ return AutoragConfigSyncError503(AutoragConfigSyncResponse503.fromJson(json as M
 default:
 return AutoragConfigSyncErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class AutoragConfigSyncError400 extends AutoragConfigSyncError {const AutoragConfigSyncError400(this.data);
 
 /// The decoded response payload.
 final AutoragConfigSyncResponse400 data;
 
- }
+}
 /// Response for 404 (application/json).
 final class AutoragConfigSyncError404 extends AutoragConfigSyncError {const AutoragConfigSyncError404(this.data);
 
 /// The decoded response payload.
 final AutoragConfigSyncResponse404 data;
 
- }
+}
 /// Response for 429 (application/json).
 final class AutoragConfigSyncError429 extends AutoragConfigSyncError {const AutoragConfigSyncError429(this.data);
 
 /// The decoded response payload.
 final AutoragConfigSyncResponse429 data;
 
- }
+}
 /// Response for 503 (application/json).
 final class AutoragConfigSyncError503 extends AutoragConfigSyncError {const AutoragConfigSyncError503(this.data);
 
 /// The decoded response payload.
 final AutoragConfigSyncResponse503 data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class AutoragConfigSyncErrorUnknown extends AutoragConfigSyncError {const AutoragConfigSyncErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

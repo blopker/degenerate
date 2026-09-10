@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dataset_upload_status.dart';@immutable final class DlpDatasetColumn {const DlpDatasetColumn({required this.entryId, required this.headerName, required this.numCells, required this.uploadStatus, });
 
-factory DlpDatasetColumn.fromJson(Map<String, dynamic> json) { return DlpDatasetColumn(
+factory DlpDatasetColumn.fromJson(Map<String, dynamic> json) {return DlpDatasetColumn(
   entryId: json['entry_id'] as String,
   headerName: json['header_name'] as String,
   numCells: (json['num_cells'] as num).toInt(),
   uploadStatus: DlpDatasetUploadStatus.fromJson(json['upload_status'] as String),
-); }
+);}
 
 final String entryId;
 
@@ -17,28 +17,28 @@ final int numCells;
 
 final DlpDatasetUploadStatus uploadStatus;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'entry_id': entryId,
   'header_name': headerName,
   'num_cells': numCells,
   'upload_status': uploadStatus.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('entry_id') && json['entry_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('entry_id') && json['entry_id'] is String &&
       json.containsKey('header_name') && json['header_name'] is String &&
       json.containsKey('num_cells') && json['num_cells'] is num &&
-      json.containsKey('upload_status'); } 
-DlpDatasetColumn copyWith({String? entryId, String? headerName, int? numCells, DlpDatasetUploadStatus? uploadStatus, }) { return DlpDatasetColumn(
+      json.containsKey('upload_status');}
+DlpDatasetColumn copyWith({String? entryId, String? headerName, int? numCells, DlpDatasetUploadStatus? uploadStatus, }) {return DlpDatasetColumn(
   entryId: entryId ?? this.entryId,
   headerName: headerName ?? this.headerName,
   numCells: numCells ?? this.numCells,
   uploadStatus: uploadStatus ?? this.uploadStatus,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpDatasetColumn &&
           entryId == other.entryId &&
           headerName == other.headerName &&
           numCells == other.numCells &&
-          uploadStatus == other.uploadStatus; } 
-@override int get hashCode { return Object.hash(entryId, headerName, numCells, uploadStatus); } 
-@override String toString() { return 'DlpDatasetColumn(entryId: $entryId, headerName: $headerName, numCells: $numCells, uploadStatus: $uploadStatus)'; } 
- }
+          uploadStatus == other.uploadStatus;}
+@override int get hashCode {return Object.hash(entryId, headerName, numCells, uploadStatus);}
+@override String toString() {return 'DlpDatasetColumn(entryId: $entryId, headerName: $headerName, numCells: $numCells, uploadStatus: $uploadStatus)';}
+}

@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class ActionsSetActionsCacheRetentionLimitForRepositoryError {const ActionsSetActionsCacheRetentionLimitForRepositoryError();
 
 /// Decodes the payload for its declared status and content type.
-static ActionsSetActionsCacheRetentionLimitForRepositoryError parse(ApiResponse response) { switch (response.statusCode) {
+static ActionsSetActionsCacheRetentionLimitForRepositoryError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -27,40 +27,40 @@ return ActionsSetActionsCacheRetentionLimitForRepositoryError404(BasicError.from
 default:
 return ActionsSetActionsCacheRetentionLimitForRepositoryErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class ActionsSetActionsCacheRetentionLimitForRepositoryError400ApplicationJson extends ActionsSetActionsCacheRetentionLimitForRepositoryError {const ActionsSetActionsCacheRetentionLimitForRepositoryError400ApplicationJson(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 400 (application/scim+json).
 final class ActionsSetActionsCacheRetentionLimitForRepositoryError400ApplicationScimJson extends ActionsSetActionsCacheRetentionLimitForRepositoryError {const ActionsSetActionsCacheRetentionLimitForRepositoryError400ApplicationScimJson(this.data);
 
 /// The decoded response payload.
 final ScimError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class ActionsSetActionsCacheRetentionLimitForRepositoryError403 extends ActionsSetActionsCacheRetentionLimitForRepositoryError {const ActionsSetActionsCacheRetentionLimitForRepositoryError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class ActionsSetActionsCacheRetentionLimitForRepositoryError404 extends ActionsSetActionsCacheRetentionLimitForRepositoryError {const ActionsSetActionsCacheRetentionLimitForRepositoryError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class ActionsSetActionsCacheRetentionLimitForRepositoryErrorUnknown extends ActionsSetActionsCacheRetentionLimitForRepositoryError {const ActionsSetActionsCacheRetentionLimitForRepositoryErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

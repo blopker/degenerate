@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageAudioSpeechesGroupBy {const UsageAudioSpeechesGroupBy._(this.value);
 
-factory UsageAudioSpeechesGroupBy.fromJson(String json) { return switch (json) {
+factory UsageAudioSpeechesGroupBy.fromJson(String json) {return switch (json) {
   'project_id' => projectId,
   'user_id' => userId,
   'api_key_id' => apiKeyId,
   'model' => model,
   _ => UsageAudioSpeechesGroupBy._(json),
-}; }
+};}
 
 static const UsageAudioSpeechesGroupBy projectId = UsageAudioSpeechesGroupBy._('project_id');
 
@@ -22,11 +22,11 @@ static const List<UsageAudioSpeechesGroupBy> values = [projectId, userId, apiKey
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageAudioSpeechesGroupBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageAudioSpeechesGroupBy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UsageAudioSpeechesGroupBy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UsageAudioSpeechesGroupBy($value)';}
+}

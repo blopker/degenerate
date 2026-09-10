@@ -11,7 +11,7 @@ final class Api20100401LocalApi with ApiExecutor {const Api20100401LocalApi(this
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/Local.json`
-Future<ApiResult<ListAvailablePhoneNumberLocalResponse, Never>> listAvailablePhoneNumberLocal({required String accountSid, required String countryCode, int? areaCode, String? contains, bool? smsEnabled, bool? mmsEnabled, bool? voiceEnabled, bool? excludeAllAddressRequired, bool? excludeLocalAddressRequired, bool? excludeForeignAddressRequired, bool? beta, String? nearNumber, String? nearLatLong, int? distance, String? inPostalCode, String? inRegion, String? inRateCenter, String? inLata, String? inLocality, bool? faxEnabled, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListAvailablePhoneNumberLocalResponse, Never>> listAvailablePhoneNumberLocal({required String accountSid, required String countryCode, int? areaCode, String? contains, bool? smsEnabled, bool? mmsEnabled, bool? voiceEnabled, bool? excludeAllAddressRequired, bool? excludeLocalAddressRequired, bool? excludeForeignAddressRequired, bool? beta, String? nearNumber, String? nearLatLong, int? distance, String? inPostalCode, String? inRegion, String? inRateCenter, String? inLata, String? inLocality, bool? faxEnabled, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (areaCode != null) {
   queryParameters['AreaCode'] = areaCode.toString();
@@ -95,5 +95,5 @@ final json = jsonDecode(response.body);
 return ListAvailablePhoneNumberLocalResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

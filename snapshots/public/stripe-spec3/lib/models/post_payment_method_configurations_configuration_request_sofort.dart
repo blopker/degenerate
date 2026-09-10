@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_sofort_display_preference.dart';/// Stripe users in Europe and the United States can use the [Payment Intents API](https://stripe.com/docs/payments/payment-intents)—a single integration path for creating payments using any supported method—to accept [Sofort](https://www.sofort.com/) payments from customers. Check this [page](https://docs.stripe.com/payments/sofort) for more details.
 @immutable final class PostPaymentMethodConfigurationsConfigurationRequestSofort {const PostPaymentMethodConfigurationsConfigurationRequestSofort({this.displayPreference});
 
-factory PostPaymentMethodConfigurationsConfigurationRequestSofort.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestSofort(
+factory PostPaymentMethodConfigurationsConfigurationRequestSofort.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsConfigurationRequestSofort(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestSofortDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsConfigurationRequestSofortDisplayPreference? displayPreference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsConfigurationRequestSofort copyWith({PostPaymentMethodConfigurationsConfigurationRequestSofortDisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsConfigurationRequestSofort(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_preference'}.contains(key));}
+PostPaymentMethodConfigurationsConfigurationRequestSofort copyWith({PostPaymentMethodConfigurationsConfigurationRequestSofortDisplayPreference? Function()? displayPreference}) {return PostPaymentMethodConfigurationsConfigurationRequestSofort(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsConfigurationRequestSofort &&
-          displayPreference == other.displayPreference; } 
-@override int get hashCode { return displayPreference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestSofort(displayPreference: $displayPreference)'; } 
- }
+          displayPreference == other.displayPreference;}
+@override int get hashCode {return displayPreference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsConfigurationRequestSofort(displayPreference: $displayPreference)';}
+}

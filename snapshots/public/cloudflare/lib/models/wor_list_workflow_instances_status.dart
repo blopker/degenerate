@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorListWorkflowInstancesStatus {const WorListWorkflowInstancesStatus._(this.value);
 
-factory WorListWorkflowInstancesStatus.fromJson(String json) { return switch (json) {
+factory WorListWorkflowInstancesStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'running' => running,
   'paused' => paused,
@@ -12,7 +12,7 @@ factory WorListWorkflowInstancesStatus.fromJson(String json) { return switch (js
   'waitingForPause' => waitingForPause,
   'waiting' => waiting,
   _ => WorListWorkflowInstancesStatus._(json),
-}; }
+};}
 
 static const WorListWorkflowInstancesStatus queued = WorListWorkflowInstancesStatus._('queued');
 
@@ -34,11 +34,11 @@ static const List<WorListWorkflowInstancesStatus> values = [queued, running, pau
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorListWorkflowInstancesStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorListWorkflowInstancesStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorListWorkflowInstancesStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorListWorkflowInstancesStatus($value)';}
+}

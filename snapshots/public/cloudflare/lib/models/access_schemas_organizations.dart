@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_deny_unmatched_requests.dart';import 'access_organizations_components_schemas_name.dart';import 'access_schemas_auth_domain.dart';import 'access_schemas_is_ui_read_only.dart';import 'access_schemas_login_design.dart';import 'access_schemas_user_seat_expiration_inactive_time.dart';import 'access_timestamp.dart';import 'access_ui_read_only_toggle_reason.dart';@immutable final class AccessSchemasOrganizations {const AccessSchemasOrganizations({this.authDomain, this.createdAt, this.denyUnmatchedRequests, this.denyUnmatchedRequestsExemptedZoneNames, this.isUiReadOnly, this.loginDesign, this.name, this.uiReadOnlyToggleReason, this.updatedAt, this.userSeatExpirationInactiveTime, });
 
-factory AccessSchemasOrganizations.fromJson(Map<String, dynamic> json) { return AccessSchemasOrganizations(
+factory AccessSchemasOrganizations.fromJson(Map<String, dynamic> json) {return AccessSchemasOrganizations(
   authDomain: json['auth_domain'] != null ? AccessSchemasAuthDomain.fromJson(json['auth_domain'] as String) : null,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   denyUnmatchedRequests: json['deny_unmatched_requests'] != null ? AccessDenyUnmatchedRequests.fromJson(json['deny_unmatched_requests'] as bool) : null,
@@ -13,7 +13,7 @@ factory AccessSchemasOrganizations.fromJson(Map<String, dynamic> json) { return 
   uiReadOnlyToggleReason: json['ui_read_only_toggle_reason'] != null ? AccessUiReadOnlyToggleReason.fromJson(json['ui_read_only_toggle_reason'] as String) : null,
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
   userSeatExpirationInactiveTime: json['user_seat_expiration_inactive_time'] != null ? AccessSchemasUserSeatExpirationInactiveTime.fromJson(json['user_seat_expiration_inactive_time'] as String) : null,
-); }
+);}
 
 /// The unique subdomain assigned to your Zero Trust organization.
 final AccessSchemasAuthDomain? authDomain;
@@ -40,7 +40,7 @@ final AccessTimestamp? updatedAt;
 
 final AccessSchemasUserSeatExpirationInactiveTime? userSeatExpirationInactiveTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (authDomain != null) 'auth_domain': authDomain?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (denyUnmatchedRequests != null) 'deny_unmatched_requests': denyUnmatchedRequests?.toJson(),
@@ -51,9 +51,9 @@ Map<String, dynamic> toJson() { return {
   if (uiReadOnlyToggleReason != null) 'ui_read_only_toggle_reason': uiReadOnlyToggleReason?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
   if (userSeatExpirationInactiveTime != null) 'user_seat_expiration_inactive_time': userSeatExpirationInactiveTime?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auth_domain', 'created_at', 'deny_unmatched_requests', 'deny_unmatched_requests_exempted_zone_names', 'is_ui_read_only', 'login_design', 'name', 'ui_read_only_toggle_reason', 'updated_at', 'user_seat_expiration_inactive_time'}.contains(key)); } 
-AccessSchemasOrganizations copyWith({AccessSchemasAuthDomain? Function()? authDomain, AccessTimestamp? Function()? createdAt, AccessDenyUnmatchedRequests? Function()? denyUnmatchedRequests, List<String>? Function()? denyUnmatchedRequestsExemptedZoneNames, AccessSchemasIsUiReadOnly? Function()? isUiReadOnly, AccessSchemasLoginDesign? Function()? loginDesign, AccessOrganizationsComponentsSchemasName? Function()? name, AccessUiReadOnlyToggleReason? Function()? uiReadOnlyToggleReason, AccessTimestamp? Function()? updatedAt, AccessSchemasUserSeatExpirationInactiveTime? Function()? userSeatExpirationInactiveTime, }) { return AccessSchemasOrganizations(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'auth_domain', 'created_at', 'deny_unmatched_requests', 'deny_unmatched_requests_exempted_zone_names', 'is_ui_read_only', 'login_design', 'name', 'ui_read_only_toggle_reason', 'updated_at', 'user_seat_expiration_inactive_time'}.contains(key));}
+AccessSchemasOrganizations copyWith({AccessSchemasAuthDomain? Function()? authDomain, AccessTimestamp? Function()? createdAt, AccessDenyUnmatchedRequests? Function()? denyUnmatchedRequests, List<String>? Function()? denyUnmatchedRequestsExemptedZoneNames, AccessSchemasIsUiReadOnly? Function()? isUiReadOnly, AccessSchemasLoginDesign? Function()? loginDesign, AccessOrganizationsComponentsSchemasName? Function()? name, AccessUiReadOnlyToggleReason? Function()? uiReadOnlyToggleReason, AccessTimestamp? Function()? updatedAt, AccessSchemasUserSeatExpirationInactiveTime? Function()? userSeatExpirationInactiveTime, }) {return AccessSchemasOrganizations(
   authDomain: authDomain != null ? authDomain() : this.authDomain,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   denyUnmatchedRequests: denyUnmatchedRequests != null ? denyUnmatchedRequests() : this.denyUnmatchedRequests,
@@ -64,8 +64,8 @@ AccessSchemasOrganizations copyWith({AccessSchemasAuthDomain? Function()? authDo
   uiReadOnlyToggleReason: uiReadOnlyToggleReason != null ? uiReadOnlyToggleReason() : this.uiReadOnlyToggleReason,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   userSeatExpirationInactiveTime: userSeatExpirationInactiveTime != null ? userSeatExpirationInactiveTime() : this.userSeatExpirationInactiveTime,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessSchemasOrganizations &&
           authDomain == other.authDomain &&
           createdAt == other.createdAt &&
@@ -76,7 +76,7 @@ AccessSchemasOrganizations copyWith({AccessSchemasAuthDomain? Function()? authDo
           name == other.name &&
           uiReadOnlyToggleReason == other.uiReadOnlyToggleReason &&
           updatedAt == other.updatedAt &&
-          userSeatExpirationInactiveTime == other.userSeatExpirationInactiveTime; } 
-@override int get hashCode { return Object.hash(authDomain, createdAt, denyUnmatchedRequests, Object.hashAll(denyUnmatchedRequestsExemptedZoneNames ?? const []), isUiReadOnly, loginDesign, name, uiReadOnlyToggleReason, updatedAt, userSeatExpirationInactiveTime); } 
-@override String toString() { return 'AccessSchemasOrganizations(authDomain: $authDomain, createdAt: $createdAt, denyUnmatchedRequests: $denyUnmatchedRequests, denyUnmatchedRequestsExemptedZoneNames: $denyUnmatchedRequestsExemptedZoneNames, isUiReadOnly: $isUiReadOnly, loginDesign: $loginDesign, name: $name, uiReadOnlyToggleReason: $uiReadOnlyToggleReason, updatedAt: $updatedAt, userSeatExpirationInactiveTime: $userSeatExpirationInactiveTime)'; } 
- }
+          userSeatExpirationInactiveTime == other.userSeatExpirationInactiveTime;}
+@override int get hashCode {return Object.hash(authDomain, createdAt, denyUnmatchedRequests, Object.hashAll(denyUnmatchedRequestsExemptedZoneNames ?? const []), isUiReadOnly, loginDesign, name, uiReadOnlyToggleReason, updatedAt, userSeatExpirationInactiveTime);}
+@override String toString() {return 'AccessSchemasOrganizations(authDomain: $authDomain, createdAt: $createdAt, denyUnmatchedRequests: $denyUnmatchedRequests, denyUnmatchedRequestsExemptedZoneNames: $denyUnmatchedRequestsExemptedZoneNames, isUiReadOnly: $isUiReadOnly, loginDesign: $loginDesign, name: $name, uiReadOnlyToggleReason: $uiReadOnlyToggleReason, updatedAt: $updatedAt, userSeatExpirationInactiveTime: $userSeatExpirationInactiveTime)';}
+}

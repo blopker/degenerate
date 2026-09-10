@@ -11,7 +11,7 @@ final class MagicNetworkMonitoringVpcFlowLogsApi with ApiExecutor {const MagicNe
 /// Generate authentication token for VPC flow logs export.
 ///
 /// `POST /accounts/{account_id}/mnm/vpc-flows/token`
-Future<ApiResult<MagicVisibilityMnmMnmVpcFlowsToken, MagicNetworkMonitoringVpcFlowsGenerateAuthenticationTokenResponse4xx>> magicNetworkMonitoringVpcFlowsGenerateAuthenticationToken({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmVpcFlowsToken, MagicNetworkMonitoringVpcFlowsGenerateAuthenticationTokenResponse4xx>> magicNetworkMonitoringVpcFlowsGenerateAuthenticationToken({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -37,5 +37,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class AiSearchInstanceCreateJobError {const AiSearchInstanceCreateJobError();
 
 /// Decodes the payload for its declared status and content type.
-static AiSearchInstanceCreateJobError parse(ApiResponse response) { switch (response.statusCode) {
+static AiSearchInstanceCreateJobError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
 return AiSearchInstanceCreateJobError400(AiSearchInstanceCreateJobResponse400.fromJson(json as Map<String, dynamic>));
@@ -14,26 +14,26 @@ return AiSearchInstanceCreateJobError500(AiSearchInstanceCreateJobResponse500.fr
 default:
 return AiSearchInstanceCreateJobErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class AiSearchInstanceCreateJobError400 extends AiSearchInstanceCreateJobError {const AiSearchInstanceCreateJobError400(this.data);
 
 /// The decoded response payload.
 final AiSearchInstanceCreateJobResponse400 data;
 
- }
+}
 /// Response for 500 (application/json).
 final class AiSearchInstanceCreateJobError500 extends AiSearchInstanceCreateJobError {const AiSearchInstanceCreateJobError500(this.data);
 
 /// The decoded response payload.
 final AiSearchInstanceCreateJobResponse500 data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class AiSearchInstanceCreateJobErrorUnknown extends AiSearchInstanceCreateJobError {const AiSearchInstanceCreateJobErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

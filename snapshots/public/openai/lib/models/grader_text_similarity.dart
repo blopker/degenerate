@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of grader.
 @immutable final class GraderTextSimilarityType {const GraderTextSimilarityType._(this.value);
 
-factory GraderTextSimilarityType.fromJson(String json) { return switch (json) {
+factory GraderTextSimilarityType.fromJson(String json) {return switch (json) {
   'text_similarity' => textSimilarity,
   _ => GraderTextSimilarityType._(json),
-}; }
+};}
 
 static const GraderTextSimilarityType textSimilarity = GraderTextSimilarityType._('text_similarity');
 
@@ -14,21 +14,21 @@ static const List<GraderTextSimilarityType> values = [textSimilarity];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GraderTextSimilarityType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GraderTextSimilarityType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GraderTextSimilarityType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GraderTextSimilarityType($value)';}
+}
 /// The evaluation metric to use. One of `cosine`, `fuzzy_match`, `bleu`,
 /// `gleu`, `meteor`, `rouge_1`, `rouge_2`, `rouge_3`, `rouge_4`, `rouge_5`,
 /// or `rouge_l`.
 /// 
 @immutable final class GraderTextSimilarityEvaluationMetric {const GraderTextSimilarityEvaluationMetric._(this.value);
 
-factory GraderTextSimilarityEvaluationMetric.fromJson(String json) { return switch (json) {
+factory GraderTextSimilarityEvaluationMetric.fromJson(String json) {return switch (json) {
   'cosine' => cosine,
   'fuzzy_match' => fuzzyMatch,
   'bleu' => bleu,
@@ -41,7 +41,7 @@ factory GraderTextSimilarityEvaluationMetric.fromJson(String json) { return swit
   'rouge_5' => rouge5,
   'rouge_l' => rougeL,
   _ => GraderTextSimilarityEvaluationMetric._(json),
-}; }
+};}
 
 static const GraderTextSimilarityEvaluationMetric cosine = GraderTextSimilarityEvaluationMetric._('cosine');
 
@@ -69,25 +69,25 @@ static const List<GraderTextSimilarityEvaluationMetric> values = [cosine, fuzzyM
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GraderTextSimilarityEvaluationMetric && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GraderTextSimilarityEvaluationMetric($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GraderTextSimilarityEvaluationMetric && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GraderTextSimilarityEvaluationMetric($value)';}
+}
 /// A TextSimilarityGrader object which grades text based on similarity metrics.
 /// 
 @immutable final class GraderTextSimilarity {const GraderTextSimilarity({required this.type, required this.name, required this.input, required this.reference, required this.evaluationMetric, });
 
-factory GraderTextSimilarity.fromJson(Map<String, dynamic> json) { return GraderTextSimilarity(
+factory GraderTextSimilarity.fromJson(Map<String, dynamic> json) {return GraderTextSimilarity(
   type: GraderTextSimilarityType.fromJson(json['type'] as String),
   name: json['name'] as String,
   input: json['input'] as String,
   reference: json['reference'] as String,
   evaluationMetric: GraderTextSimilarityEvaluationMetric.fromJson(json['evaluation_metric'] as String),
-); }
+);}
 
 /// The type of grader.
 final GraderTextSimilarityType type;
@@ -107,32 +107,32 @@ final String reference;
 /// 
 final GraderTextSimilarityEvaluationMetric evaluationMetric;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'name': name,
   'input': input,
   'reference': reference,
   'evaluation_metric': evaluationMetric.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('input') && json['input'] is String &&
       json.containsKey('reference') && json['reference'] is String &&
-      json.containsKey('evaluation_metric'); } 
-GraderTextSimilarity copyWith({GraderTextSimilarityType? type, String? name, String? input, String? reference, GraderTextSimilarityEvaluationMetric? evaluationMetric, }) { return GraderTextSimilarity(
+      json.containsKey('evaluation_metric');}
+GraderTextSimilarity copyWith({GraderTextSimilarityType? type, String? name, String? input, String? reference, GraderTextSimilarityEvaluationMetric? evaluationMetric, }) {return GraderTextSimilarity(
   type: type ?? this.type,
   name: name ?? this.name,
   input: input ?? this.input,
   reference: reference ?? this.reference,
   evaluationMetric: evaluationMetric ?? this.evaluationMetric,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GraderTextSimilarity &&
           type == other.type &&
           name == other.name &&
           input == other.input &&
           reference == other.reference &&
-          evaluationMetric == other.evaluationMetric; } 
-@override int get hashCode { return Object.hash(type, name, input, reference, evaluationMetric); } 
-@override String toString() { return 'GraderTextSimilarity(type: $type, name: $name, input: $input, reference: $reference, evaluationMetric: $evaluationMetric)'; } 
- }
+          evaluationMetric == other.evaluationMetric;}
+@override int get hashCode {return Object.hash(type, name, input, reference, evaluationMetric);}
+@override String toString() {return 'GraderTextSimilarity(type: $type, name: $name, input: $input, reference: $reference, evaluationMetric: $evaluationMetric)';}
+}

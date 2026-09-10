@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_package_published_package_package_version_release_author.dart';@immutable final class WebhookPackagePublishedPackagePackageVersionRelease {const WebhookPackagePublishedPackagePackageVersionRelease({required this.author, required this.createdAt, required this.draft, required this.htmlUrl, required this.id, required this.name, required this.prerelease, required this.publishedAt, required this.tagName, required this.targetCommitish, required this.url, });
 
-factory WebhookPackagePublishedPackagePackageVersionRelease.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackagePackageVersionRelease(
+factory WebhookPackagePublishedPackagePackageVersionRelease.fromJson(Map<String, dynamic> json) {return WebhookPackagePublishedPackagePackageVersionRelease(
   author: json['author'] != null ? WebhookPackagePublishedPackagePackageVersionReleaseAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] as String,
   draft: json['draft'] as bool,
@@ -14,7 +14,7 @@ factory WebhookPackagePublishedPackagePackageVersionRelease.fromJson(Map<String,
   tagName: json['tag_name'] as String,
   targetCommitish: json['target_commitish'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final WebhookPackagePublishedPackagePackageVersionReleaseAuthor? author;
 
@@ -38,7 +38,7 @@ final String targetCommitish;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author': author?.toJson(),
   'created_at': createdAt,
   'draft': draft,
@@ -50,8 +50,8 @@ Map<String, dynamic> toJson() { return {
   'tag_name': tagName,
   'target_commitish': targetCommitish,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('author') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('author') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('draft') && json['draft'] is bool &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -61,8 +61,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('published_at') && json['published_at'] is String &&
       json.containsKey('tag_name') && json['tag_name'] is String &&
       json.containsKey('target_commitish') && json['target_commitish'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookPackagePublishedPackagePackageVersionRelease copyWith({WebhookPackagePublishedPackagePackageVersionReleaseAuthor? Function()? author, String? createdAt, bool? draft, Uri? htmlUrl, int? id, String? Function()? name, bool? prerelease, String? publishedAt, String? tagName, String? targetCommitish, Uri? url, }) { return WebhookPackagePublishedPackagePackageVersionRelease(
+      json.containsKey('url') && json['url'] is String;}
+WebhookPackagePublishedPackagePackageVersionRelease copyWith({WebhookPackagePublishedPackagePackageVersionReleaseAuthor? Function()? author, String? createdAt, bool? draft, Uri? htmlUrl, int? id, String? Function()? name, bool? prerelease, String? publishedAt, String? tagName, String? targetCommitish, Uri? url, }) {return WebhookPackagePublishedPackagePackageVersionRelease(
   author: author != null ? author() : this.author,
   createdAt: createdAt ?? this.createdAt,
   draft: draft ?? this.draft,
@@ -74,8 +74,8 @@ WebhookPackagePublishedPackagePackageVersionRelease copyWith({WebhookPackagePubl
   tagName: tagName ?? this.tagName,
   targetCommitish: targetCommitish ?? this.targetCommitish,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPackagePublishedPackagePackageVersionRelease &&
           author == other.author &&
           createdAt == other.createdAt &&
@@ -87,7 +87,7 @@ WebhookPackagePublishedPackagePackageVersionRelease copyWith({WebhookPackagePubl
           publishedAt == other.publishedAt &&
           tagName == other.tagName &&
           targetCommitish == other.targetCommitish &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(author, createdAt, draft, htmlUrl, id, name, prerelease, publishedAt, tagName, targetCommitish, url); } 
-@override String toString() { return 'WebhookPackagePublishedPackagePackageVersionRelease(author: $author, createdAt: $createdAt, draft: $draft, htmlUrl: $htmlUrl, id: $id, name: $name, prerelease: $prerelease, publishedAt: $publishedAt, tagName: $tagName, targetCommitish: $targetCommitish, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(author, createdAt, draft, htmlUrl, id, name, prerelease, publishedAt, tagName, targetCommitish, url);}
+@override String toString() {return 'WebhookPackagePublishedPackagePackageVersionRelease(author: $author, createdAt: $createdAt, draft: $draft, htmlUrl: $htmlUrl, id: $id, name: $name, prerelease: $prerelease, publishedAt: $publishedAt, tagName: $tagName, targetCommitish: $targetCommitish, url: $url)';}
+}

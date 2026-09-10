@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_details_address9.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsAddressVariant2 {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsAddressVariant2._(this.value);
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsAddressVariant2.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsAddressVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsAddressVariant2._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsAddressVariant2 $empty = PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsAddressVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsAddressVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsAddressVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsAddressVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsAddressVariant2($value)';}
+}
 
 @immutable
 final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataBillingDetailsAddress {

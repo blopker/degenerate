@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsMetadataVariant2 {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsMetadataVariant2._(this.value);
 
-factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsMetadataVariant2.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsMetadataVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsMetadataVariant2._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsMetadataVariant2 $empty = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsMetadataVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsMetadataVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsMetadataVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsMetadataVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsMetadataVariant2($value)';}
+}
 
 @immutable
 final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsMetadata {

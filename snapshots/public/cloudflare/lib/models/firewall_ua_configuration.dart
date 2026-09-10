@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `ua` when specifying a user agent in the rule.
 @immutable final class FirewallUaConfigurationTarget {const FirewallUaConfigurationTarget._(this.value);
 
-factory FirewallUaConfigurationTarget.fromJson(String json) { return switch (json) {
+factory FirewallUaConfigurationTarget.fromJson(String json) {return switch (json) {
   'ua' => ua,
   _ => FirewallUaConfigurationTarget._(json),
-}; }
+};}
 
 static const FirewallUaConfigurationTarget ua = FirewallUaConfigurationTarget._('ua');
 
@@ -14,20 +14,20 @@ static const List<FirewallUaConfigurationTarget> values = [ua];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallUaConfigurationTarget && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallUaConfigurationTarget($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FirewallUaConfigurationTarget && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FirewallUaConfigurationTarget($value)';}
+}
 @immutable final class FirewallUaConfiguration {const FirewallUaConfiguration({this.target, this.value, });
 
-factory FirewallUaConfiguration.fromJson(Map<String, dynamic> json) { return FirewallUaConfiguration(
+factory FirewallUaConfiguration.fromJson(Map<String, dynamic> json) {return FirewallUaConfiguration(
   target: json['target'] != null ? FirewallUaConfigurationTarget.fromJson(json['target'] as String) : null,
   value: json['value'] as String?,
-); }
+);}
 
 /// The configuration target. You must set the target to `ua` when specifying a user agent in the rule.
 final FirewallUaConfigurationTarget? target;
@@ -35,19 +35,19 @@ final FirewallUaConfigurationTarget? target;
 /// the user agent to exactly match
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (target != null) 'target': target?.toJson(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'target', 'value'}.contains(key)); } 
-FirewallUaConfiguration copyWith({FirewallUaConfigurationTarget? Function()? target, String? Function()? value, }) { return FirewallUaConfiguration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'target', 'value'}.contains(key));}
+FirewallUaConfiguration copyWith({FirewallUaConfigurationTarget? Function()? target, String? Function()? value, }) {return FirewallUaConfiguration(
   target: target != null ? target() : this.target,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FirewallUaConfiguration &&
           target == other.target &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(target, value); } 
-@override String toString() { return 'FirewallUaConfiguration(target: $target, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(target, value);}
+@override String toString() {return 'FirewallUaConfiguration(target: $target, value: $value)';}
+}

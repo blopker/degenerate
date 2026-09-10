@@ -51,7 +51,7 @@ String toJson() => value;
 }
 @immutable final class AddressingIpamPrefixes {const AddressingIpamPrefixes({this.accountId, this.advertised = const Omittable.absent(), this.advertisedModifiedAt = const Omittable.absent(), this.approved, this.asn, this.cidr, this.createdAt, this.delegateLoaCreation, this.description, this.id, this.irrValidationState, this.loaDocumentId = const Omittable.absent(), this.modifiedAt, this.onDemandEnabled, this.onDemandLocked, this.ownershipValidationState, this.ownershipValidationToken, this.rpkiValidationState, });
 
-factory AddressingIpamPrefixes.fromJson(Map<String, dynamic> json) { return AddressingIpamPrefixes(
+factory AddressingIpamPrefixes.fromJson(Map<String, dynamic> json) {return AddressingIpamPrefixes(
   accountId: json['account_id'] != null ? AddressingAccountIdentifier.fromJson(json['account_id'] as String) : null,
   advertised: json.containsKey('advertised') ? Omittable(json['advertised'] != null ? AddressingAdvertised.fromJson(json['advertised'] as bool) : null) : const Omittable.absent(),
   advertisedModifiedAt: json.containsKey('advertised_modified_at') ? Omittable(json['advertised_modified_at'] != null ? AddressingAdvertisedModifiedAtNullable.fromJson(json['advertised_modified_at'] as String) : null) : const Omittable.absent(),
@@ -70,7 +70,7 @@ factory AddressingIpamPrefixes.fromJson(Map<String, dynamic> json) { return Addr
   ownershipValidationState: json['ownership_validation_state'] != null ? AddressingValidationState.fromJson(json['ownership_validation_state'] as String) : null,
   ownershipValidationToken: json['ownership_validation_token'] != null ? AddressingOwnershipValidationToken.fromJson(json['ownership_validation_token'] as String) : null,
   rpkiValidationState: json['rpki_validation_state'] != null ? AddressingValidationState.fromJson(json['rpki_validation_state'] as String) : null,
-); }
+);}
 
 /// Identifier of a Cloudflare account.
 final AddressingAccountIdentifier? accountId;
@@ -116,7 +116,7 @@ final AddressingOwnershipValidationToken? ownershipValidationToken;
 
 final AddressingValidationState? rpkiValidationState;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountId != null) 'account_id': accountId?.toJson(),
   if (advertised.isPresent) 'advertised': advertised.value?.toJson(),
   if (advertisedModifiedAt.isPresent) 'advertised_modified_at': advertisedModifiedAt.value?.toJson(),
@@ -135,9 +135,9 @@ Map<String, dynamic> toJson() { return {
   if (ownershipValidationState != null) 'ownership_validation_state': ownershipValidationState?.toJson(),
   if (ownershipValidationToken != null) 'ownership_validation_token': ownershipValidationToken?.toJson(),
   if (rpkiValidationState != null) 'rpki_validation_state': rpkiValidationState?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_id', 'advertised', 'advertised_modified_at', 'approved', 'asn', 'cidr', 'created_at', 'delegate_loa_creation', 'description', 'id', 'irr_validation_state', 'loa_document_id', 'modified_at', 'on_demand_enabled', 'on_demand_locked', 'ownership_validation_state', 'ownership_validation_token', 'rpki_validation_state'}.contains(key)); } 
-AddressingIpamPrefixes copyWith({AddressingAccountIdentifier? Function()? accountId, Omittable<AddressingAdvertised?>? advertised, Omittable<AddressingAdvertisedModifiedAtNullable?>? advertisedModifiedAt, AddressingApproved? Function()? approved, AddressingAsn? Function()? asn, AddressingCidr? Function()? cidr, AddressingTimestamp? Function()? createdAt, AddressingDelegateLoaCreation? Function()? delegateLoaCreation, AddressingDescription? Function()? description, AddressingPrefixIdentifier? Function()? id, AddressingValidationState? Function()? irrValidationState, Omittable<AddressingLoaDocumentIdentifier?>? loaDocumentId, AddressingTimestamp? Function()? modifiedAt, AddressingOnDemandEnabled? Function()? onDemandEnabled, AddressingOnDemandLocked? Function()? onDemandLocked, AddressingValidationState? Function()? ownershipValidationState, AddressingOwnershipValidationToken? Function()? ownershipValidationToken, AddressingValidationState? Function()? rpkiValidationState, }) { return AddressingIpamPrefixes(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_id', 'advertised', 'advertised_modified_at', 'approved', 'asn', 'cidr', 'created_at', 'delegate_loa_creation', 'description', 'id', 'irr_validation_state', 'loa_document_id', 'modified_at', 'on_demand_enabled', 'on_demand_locked', 'ownership_validation_state', 'ownership_validation_token', 'rpki_validation_state'}.contains(key));}
+AddressingIpamPrefixes copyWith({AddressingAccountIdentifier? Function()? accountId, Omittable<AddressingAdvertised?>? advertised, Omittable<AddressingAdvertisedModifiedAtNullable?>? advertisedModifiedAt, AddressingApproved? Function()? approved, AddressingAsn? Function()? asn, AddressingCidr? Function()? cidr, AddressingTimestamp? Function()? createdAt, AddressingDelegateLoaCreation? Function()? delegateLoaCreation, AddressingDescription? Function()? description, AddressingPrefixIdentifier? Function()? id, AddressingValidationState? Function()? irrValidationState, Omittable<AddressingLoaDocumentIdentifier?>? loaDocumentId, AddressingTimestamp? Function()? modifiedAt, AddressingOnDemandEnabled? Function()? onDemandEnabled, AddressingOnDemandLocked? Function()? onDemandLocked, AddressingValidationState? Function()? ownershipValidationState, AddressingOwnershipValidationToken? Function()? ownershipValidationToken, AddressingValidationState? Function()? rpkiValidationState, }) {return AddressingIpamPrefixes(
   accountId: accountId != null ? accountId() : this.accountId,
   advertised: advertised ?? this.advertised,
   advertisedModifiedAt: advertisedModifiedAt ?? this.advertisedModifiedAt,
@@ -156,8 +156,8 @@ AddressingIpamPrefixes copyWith({AddressingAccountIdentifier? Function()? accoun
   ownershipValidationState: ownershipValidationState != null ? ownershipValidationState() : this.ownershipValidationState,
   ownershipValidationToken: ownershipValidationToken != null ? ownershipValidationToken() : this.ownershipValidationToken,
   rpkiValidationState: rpkiValidationState != null ? rpkiValidationState() : this.rpkiValidationState,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AddressingIpamPrefixes &&
           accountId == other.accountId &&
           advertised == other.advertised &&
@@ -176,7 +176,7 @@ AddressingIpamPrefixes copyWith({AddressingAccountIdentifier? Function()? accoun
           onDemandLocked == other.onDemandLocked &&
           ownershipValidationState == other.ownershipValidationState &&
           ownershipValidationToken == other.ownershipValidationToken &&
-          rpkiValidationState == other.rpkiValidationState; } 
-@override int get hashCode { return Object.hash(accountId, advertised, advertisedModifiedAt, approved, asn, cidr, createdAt, delegateLoaCreation, description, id, irrValidationState, loaDocumentId, modifiedAt, onDemandEnabled, onDemandLocked, ownershipValidationState, ownershipValidationToken, rpkiValidationState); } 
-@override String toString() { return 'AddressingIpamPrefixes(accountId: $accountId, advertised: $advertised, advertisedModifiedAt: $advertisedModifiedAt, approved: $approved, asn: $asn, cidr: $cidr, createdAt: $createdAt, delegateLoaCreation: $delegateLoaCreation, description: $description, id: $id, irrValidationState: $irrValidationState, loaDocumentId: $loaDocumentId, modifiedAt: $modifiedAt, onDemandEnabled: $onDemandEnabled, onDemandLocked: $onDemandLocked, ownershipValidationState: $ownershipValidationState, ownershipValidationToken: $ownershipValidationToken, rpkiValidationState: $rpkiValidationState)'; } 
- }
+          rpkiValidationState == other.rpkiValidationState;}
+@override int get hashCode {return Object.hash(accountId, advertised, advertisedModifiedAt, approved, asn, cidr, createdAt, delegateLoaCreation, description, id, irrValidationState, loaDocumentId, modifiedAt, onDemandEnabled, onDemandLocked, ownershipValidationState, ownershipValidationToken, rpkiValidationState);}
+@override String toString() {return 'AddressingIpamPrefixes(accountId: $accountId, advertised: $advertised, advertisedModifiedAt: $advertisedModifiedAt, approved: $approved, asn: $asn, cidr: $cidr, createdAt: $createdAt, delegateLoaCreation: $delegateLoaCreation, description: $description, id: $id, irrValidationState: $irrValidationState, loaDocumentId: $loaDocumentId, modifiedAt: $modifiedAt, onDemandEnabled: $onDemandEnabled, onDemandLocked: $onDemandLocked, ownershipValidationState: $ownershipValidationState, ownershipValidationToken: $ownershipValidationToken, rpkiValidationState: $rpkiValidationState)';}
+}

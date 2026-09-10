@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestReviewThreadResolvedPullRequestLinksReviewComments {const WebhookPullRequestReviewThreadResolvedPullRequestLinksReviewComments({required this.href});
 
-factory WebhookPullRequestReviewThreadResolvedPullRequestLinksReviewComments.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadResolvedPullRequestLinksReviewComments(
+factory WebhookPullRequestReviewThreadResolvedPullRequestLinksReviewComments.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewThreadResolvedPullRequestLinksReviewComments(
   href: json['href'] as String,
-); }
+);}
 
 final String href;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'href': href,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String; } 
-WebhookPullRequestReviewThreadResolvedPullRequestLinksReviewComments copyWith({String? href}) { return WebhookPullRequestReviewThreadResolvedPullRequestLinksReviewComments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('href') && json['href'] is String;}
+WebhookPullRequestReviewThreadResolvedPullRequestLinksReviewComments copyWith({String? href}) {return WebhookPullRequestReviewThreadResolvedPullRequestLinksReviewComments(
   href: href ?? this.href,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestReviewThreadResolvedPullRequestLinksReviewComments &&
-          href == other.href; } 
-@override int get hashCode { return href.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewThreadResolvedPullRequestLinksReviewComments(href: $href)'; } 
- }
+          href == other.href;}
+@override int get hashCode {return href.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewThreadResolvedPullRequestLinksReviewComments(href: $href)';}
+}

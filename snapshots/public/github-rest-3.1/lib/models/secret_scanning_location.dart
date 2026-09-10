@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_scanning_location_details.dart';/// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
 @immutable final class SecretScanningLocationType {const SecretScanningLocationType._(this.value);
 
-factory SecretScanningLocationType.fromJson(String json) { return switch (json) {
+factory SecretScanningLocationType.fromJson(String json) {return switch (json) {
   'commit' => commit,
   'wiki_commit' => wikiCommit,
   'issue_title' => issueTitle,
@@ -18,7 +18,7 @@ factory SecretScanningLocationType.fromJson(String json) { return switch (json) 
   'pull_request_review' => pullRequestReview,
   'pull_request_review_comment' => pullRequestReviewComment,
   _ => SecretScanningLocationType._(json),
-}; }
+};}
 
 static const SecretScanningLocationType commit = SecretScanningLocationType._('commit');
 
@@ -50,39 +50,39 @@ static const List<SecretScanningLocationType> values = [commit, wikiCommit, issu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecretScanningLocationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecretScanningLocationType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SecretScanningLocationType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SecretScanningLocationType($value)';}
+}
 @immutable final class SecretScanningLocation {const SecretScanningLocation({this.type, this.details, });
 
-factory SecretScanningLocation.fromJson(Map<String, dynamic> json) { return SecretScanningLocation(
+factory SecretScanningLocation.fromJson(Map<String, dynamic> json) {return SecretScanningLocation(
   type: json['type'] != null ? SecretScanningLocationType.fromJson(json['type'] as String) : null,
   details: json['details'] != null ? SecretScanningLocationDetails.fromJson(json['details'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
 final SecretScanningLocationType? type;
 
 final SecretScanningLocationDetails? details;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   if (details != null) 'details': details?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'details'}.contains(key)); } 
-SecretScanningLocation copyWith({SecretScanningLocationType? Function()? type, SecretScanningLocationDetails? Function()? details, }) { return SecretScanningLocation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'details'}.contains(key));}
+SecretScanningLocation copyWith({SecretScanningLocationType? Function()? type, SecretScanningLocationDetails? Function()? details, }) {return SecretScanningLocation(
   type: type != null ? type() : this.type,
   details: details != null ? details() : this.details,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecretScanningLocation &&
           type == other.type &&
-          details == other.details; } 
-@override int get hashCode { return Object.hash(type, details); } 
-@override String toString() { return 'SecretScanningLocation(type: $type, details: $details)'; } 
- }
+          details == other.details;}
+@override int get hashCode {return Object.hash(type, details);}
+@override String toString() {return 'SecretScanningLocation(type: $type, details: $details)';}
+}

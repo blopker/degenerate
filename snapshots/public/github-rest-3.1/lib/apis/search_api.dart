@@ -32,7 +32,7 @@ final class SearchApi with ApiExecutor {const SearchApi(this.apiConfig);
 /// This endpoint requires you to authenticate and limits you to 10 requests per minute.
 ///
 /// `GET /search/code`
-Future<ApiResult<SearchCodeResponse, SearchCodeError>> searchCode({required String q, SearchCodeSort? sort, SearchCodeOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SearchCodeResponse, SearchCodeError>> searchCode({required String q, SearchCodeSort? sort, SearchCodeOrder? order, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) {
@@ -67,7 +67,7 @@ return SearchCodeResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: SearchCodeError.parse,
 );
- } 
+}
 /// Search commits
 ///
 /// Find commits via various criteria on the default branch (usually `main`). This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).
@@ -80,7 +80,7 @@ return SearchCodeResponse.fromJson(json as Map<String, dynamic>);
 /// `q=repo:octocat/Spoon-Knife+css`
 ///
 /// `GET /search/commits`
-Future<ApiResult<SearchCommitsResponse, Never>> searchCommits({required String q, SearchCommitsSort? sort, SearchCommitsOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SearchCommitsResponse, Never>> searchCommits({required String q, SearchCommitsSort? sort, SearchCommitsOrder? order, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) {
@@ -114,7 +114,7 @@ final json = jsonDecode(response.body);
 return SearchCommitsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Search issues and pull requests
 ///
 /// Find issues by state and keyword. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).
@@ -132,7 +132,7 @@ return SearchCommitsResponse.fromJson(json as Map<String, dynamic>);
 /// > For requests made by GitHub Apps with a user access token, you can't retrieve a combination of issues and pull requests in a single query. Requests that don't include the `is:issue` or `is:pull-request` qualifier will receive an HTTP `422 Unprocessable Entity` response. To get results for both issues and pull requests, you must send separate queries for issues and pull requests. For more information about the `is` qualifier, see "[Searching only issues or pull requests](https://docs.github.com/github/searching-for-information-on-github/searching-issues-and-pull-requests#search-only-issues-or-pull-requests)."
 ///
 /// `GET /search/issues`
-Future<ApiResult<SearchIssuesAndPullRequestsResponse, SearchIssuesAndPullRequestsError>> searchIssuesAndPullRequests({required String q, SearchIssuesAndPullRequestsSort? sort, SearchIssuesAndPullRequestsOrder? order, int? perPage, int? page, String? advancedSearch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SearchIssuesAndPullRequestsResponse, SearchIssuesAndPullRequestsError>> searchIssuesAndPullRequests({required String q, SearchIssuesAndPullRequestsSort? sort, SearchIssuesAndPullRequestsOrder? order, int? perPage, int? page, String? advancedSearch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) {
@@ -170,7 +170,7 @@ return SearchIssuesAndPullRequestsResponse.fromJson(json as Map<String, dynamic>
   },
   onError: SearchIssuesAndPullRequestsError.parse,
 );
- } 
+}
 /// Search labels
 ///
 /// Find labels in a repository with names or descriptions that match search keywords. Returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).
@@ -184,7 +184,7 @@ return SearchIssuesAndPullRequestsResponse.fromJson(json as Map<String, dynamic>
 /// The labels that best match the query appear first in the search results.
 ///
 /// `GET /search/labels`
-Future<ApiResult<SearchLabelsResponse, SearchLabelsError>> searchLabels({required int repositoryId, required String q, SearchLabelsSort? sort, SearchLabelsOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SearchLabelsResponse, SearchLabelsError>> searchLabels({required int repositoryId, required String q, SearchLabelsSort? sort, SearchLabelsOrder? order, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['repository_id'] = repositoryId.toString();
 queryParameters['q'] = q;
@@ -220,7 +220,7 @@ return SearchLabelsResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: SearchLabelsError.parse,
 );
- } 
+}
 /// Search repositories
 ///
 /// Find repositories via various criteria. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).
@@ -234,7 +234,7 @@ return SearchLabelsResponse.fromJson(json as Map<String, dynamic>);
 /// This query searches for repositories with the word `tetris` in the name, the description, or the README. The results are limited to repositories where the primary language is assembly. The results are sorted by stars in descending order, so that the most popular repositories appear first in the search results.
 ///
 /// `GET /search/repositories`
-Future<ApiResult<SearchReposResponse, SearchReposError>> searchRepos({required String q, SearchReposSort? sort, SearchReposOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SearchReposResponse, SearchReposError>> searchRepos({required String q, SearchReposSort? sort, SearchReposOrder? order, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) {
@@ -269,7 +269,7 @@ return SearchReposResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: SearchReposError.parse,
 );
- } 
+}
 /// Search topics
 ///
 /// Find topics via various criteria. Results are sorted by best match. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api). See "[Searching topics](https://docs.github.com/articles/searching-topics/)" for a detailed list of qualifiers.
@@ -283,7 +283,7 @@ return SearchReposResponse.fromJson(json as Map<String, dynamic>);
 /// This query searches for topics with the keyword `ruby` and limits the results to find only topics that are featured. The topics that are the best match for the query appear first in the search results.
 ///
 /// `GET /search/topics`
-Future<ApiResult<SearchTopicsResponse, Never>> searchTopics({required String q, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SearchTopicsResponse, Never>> searchTopics({required String q, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (perPage != null) {
@@ -311,7 +311,7 @@ final json = jsonDecode(response.body);
 return SearchTopicsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Search users
 ///
 /// Find users via various criteria. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).
@@ -327,7 +327,7 @@ return SearchTopicsResponse.fromJson(json as Map<String, dynamic>);
 /// This endpoint does not accept authentication and will only include publicly visible users. As an alternative, you can use the GraphQL API. The GraphQL API requires authentication and will return private users, including Enterprise Managed Users (EMUs), that you are authorized to view. For more information, see "[GraphQL Queries](https://docs.github.com/graphql/reference/queries#search)."
 ///
 /// `GET /search/users`
-Future<ApiResult<SearchUsersResponse, SearchUsersError>> searchUsers({required String q, SearchUsersSort? sort, SearchUsersOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SearchUsersResponse, SearchUsersError>> searchUsers({required String q, SearchUsersSort? sort, SearchUsersOrder? order, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) {
@@ -362,5 +362,5 @@ return SearchUsersResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: SearchUsersError.parse,
 );
- } 
- }
+}
+}

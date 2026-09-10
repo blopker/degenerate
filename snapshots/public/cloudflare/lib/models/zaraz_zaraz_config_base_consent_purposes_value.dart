@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazZarazConfigBaseConsentPurposesValue {const ZarazZarazConfigBaseConsentPurposesValue({required this.description, required this.name, });
 
-factory ZarazZarazConfigBaseConsentPurposesValue.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigBaseConsentPurposesValue(
+factory ZarazZarazConfigBaseConsentPurposesValue.fromJson(Map<String, dynamic> json) {return ZarazZarazConfigBaseConsentPurposesValue(
   description: json['description'] as String,
   name: json['name'] as String,
-); }
+);}
 
 final String description;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-ZarazZarazConfigBaseConsentPurposesValue copyWith({String? description, String? name, }) { return ZarazZarazConfigBaseConsentPurposesValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && json['description'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+ZarazZarazConfigBaseConsentPurposesValue copyWith({String? description, String? name, }) {return ZarazZarazConfigBaseConsentPurposesValue(
   description: description ?? this.description,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZarazZarazConfigBaseConsentPurposesValue &&
           description == other.description &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(description, name); } 
-@override String toString() { return 'ZarazZarazConfigBaseConsentPurposesValue(description: $description, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(description, name);}
+@override String toString() {return 'ZarazZarazConfigBaseConsentPurposesValue(description: $description, name: $name)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The visibility of the repository.
 @immutable final class ReposCreateInOrgRequestVisibility {const ReposCreateInOrgRequestVisibility._(this.value);
 
-factory ReposCreateInOrgRequestVisibility.fromJson(String json) { return switch (json) {
+factory ReposCreateInOrgRequestVisibility.fromJson(String json) {return switch (json) {
   'public' => public,
   'private' => private,
   _ => ReposCreateInOrgRequestVisibility._(json),
-}; }
+};}
 
 static const ReposCreateInOrgRequestVisibility public = ReposCreateInOrgRequestVisibility._('public');
 
@@ -17,14 +17,14 @@ static const List<ReposCreateInOrgRequestVisibility> values = [public, private];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposCreateInOrgRequestVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposCreateInOrgRequestVisibility($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposCreateInOrgRequestVisibility && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposCreateInOrgRequestVisibility($value)';}
+}
 /// Required when using `squash_merge_commit_message`.
 /// 
 /// The default value for a squash merge commit title:
@@ -33,11 +33,11 @@ bool get isUnknown { return !values.contains(this); }
 /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
 @immutable final class ReposCreateInOrgRequestSquashMergeCommitTitle {const ReposCreateInOrgRequestSquashMergeCommitTitle._(this.value);
 
-factory ReposCreateInOrgRequestSquashMergeCommitTitle.fromJson(String json) { return switch (json) {
+factory ReposCreateInOrgRequestSquashMergeCommitTitle.fromJson(String json) {return switch (json) {
   'PR_TITLE' => prTitle,
   'COMMIT_OR_PR_TITLE' => commitOrPrTitle,
   _ => ReposCreateInOrgRequestSquashMergeCommitTitle._(json),
-}; }
+};}
 
 static const ReposCreateInOrgRequestSquashMergeCommitTitle prTitle = ReposCreateInOrgRequestSquashMergeCommitTitle._('PR_TITLE');
 
@@ -47,14 +47,14 @@ static const List<ReposCreateInOrgRequestSquashMergeCommitTitle> values = [prTit
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposCreateInOrgRequestSquashMergeCommitTitle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposCreateInOrgRequestSquashMergeCommitTitle($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposCreateInOrgRequestSquashMergeCommitTitle && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposCreateInOrgRequestSquashMergeCommitTitle($value)';}
+}
 /// The default value for a squash merge commit message:
 /// 
 /// - `PR_BODY` - default to the pull request's body.
@@ -62,12 +62,12 @@ bool get isUnknown { return !values.contains(this); }
 /// - `BLANK` - default to a blank commit message.
 @immutable final class ReposCreateInOrgRequestSquashMergeCommitMessage {const ReposCreateInOrgRequestSquashMergeCommitMessage._(this.value);
 
-factory ReposCreateInOrgRequestSquashMergeCommitMessage.fromJson(String json) { return switch (json) {
+factory ReposCreateInOrgRequestSquashMergeCommitMessage.fromJson(String json) {return switch (json) {
   'PR_BODY' => prBody,
   'COMMIT_MESSAGES' => commitMessages,
   'BLANK' => blank,
   _ => ReposCreateInOrgRequestSquashMergeCommitMessage._(json),
-}; }
+};}
 
 static const ReposCreateInOrgRequestSquashMergeCommitMessage prBody = ReposCreateInOrgRequestSquashMergeCommitMessage._('PR_BODY');
 
@@ -79,14 +79,14 @@ static const List<ReposCreateInOrgRequestSquashMergeCommitMessage> values = [prB
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposCreateInOrgRequestSquashMergeCommitMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposCreateInOrgRequestSquashMergeCommitMessage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposCreateInOrgRequestSquashMergeCommitMessage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposCreateInOrgRequestSquashMergeCommitMessage($value)';}
+}
 /// Required when using `merge_commit_message`.
 /// 
 /// The default value for a merge commit title.
@@ -95,11 +95,11 @@ bool get isUnknown { return !values.contains(this); }
 /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
 @immutable final class ReposCreateInOrgRequestMergeCommitTitle {const ReposCreateInOrgRequestMergeCommitTitle._(this.value);
 
-factory ReposCreateInOrgRequestMergeCommitTitle.fromJson(String json) { return switch (json) {
+factory ReposCreateInOrgRequestMergeCommitTitle.fromJson(String json) {return switch (json) {
   'PR_TITLE' => prTitle,
   'MERGE_MESSAGE' => mergeMessage,
   _ => ReposCreateInOrgRequestMergeCommitTitle._(json),
-}; }
+};}
 
 static const ReposCreateInOrgRequestMergeCommitTitle prTitle = ReposCreateInOrgRequestMergeCommitTitle._('PR_TITLE');
 
@@ -109,14 +109,14 @@ static const List<ReposCreateInOrgRequestMergeCommitTitle> values = [prTitle, me
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposCreateInOrgRequestMergeCommitTitle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposCreateInOrgRequestMergeCommitTitle($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposCreateInOrgRequestMergeCommitTitle && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposCreateInOrgRequestMergeCommitTitle($value)';}
+}
 /// The default value for a merge commit message.
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
@@ -124,12 +124,12 @@ bool get isUnknown { return !values.contains(this); }
 /// - `BLANK` - default to a blank commit message.
 @immutable final class ReposCreateInOrgRequestMergeCommitMessage {const ReposCreateInOrgRequestMergeCommitMessage._(this.value);
 
-factory ReposCreateInOrgRequestMergeCommitMessage.fromJson(String json) { return switch (json) {
+factory ReposCreateInOrgRequestMergeCommitMessage.fromJson(String json) {return switch (json) {
   'PR_BODY' => prBody,
   'PR_TITLE' => prTitle,
   'BLANK' => blank,
   _ => ReposCreateInOrgRequestMergeCommitMessage._(json),
-}; }
+};}
 
 static const ReposCreateInOrgRequestMergeCommitMessage prBody = ReposCreateInOrgRequestMergeCommitMessage._('PR_BODY');
 
@@ -141,17 +141,17 @@ static const List<ReposCreateInOrgRequestMergeCommitMessage> values = [prBody, p
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposCreateInOrgRequestMergeCommitMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposCreateInOrgRequestMergeCommitMessage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposCreateInOrgRequestMergeCommitMessage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposCreateInOrgRequestMergeCommitMessage($value)';}
+}
 @immutable final class ReposCreateInOrgRequest {const ReposCreateInOrgRequest({required this.name, this.description, this.homepage, this.private, this.visibility, this.hasIssues, this.hasProjects, this.hasWiki, this.hasDownloads, this.isTemplate, this.teamId, this.autoInit, this.gitignoreTemplate, this.licenseTemplate, this.allowSquashMerge, this.allowMergeCommit, this.allowRebaseMerge, this.allowAutoMerge, this.deleteBranchOnMerge, this.useSquashPrTitleAsDefault, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.customProperties, });
 
-factory ReposCreateInOrgRequest.fromJson(Map<String, dynamic> json) { return ReposCreateInOrgRequest(
+factory ReposCreateInOrgRequest.fromJson(Map<String, dynamic> json) {return ReposCreateInOrgRequest(
   name: json['name'] as String,
   description: json['description'] as String?,
   homepage: json['homepage'] as String?,
@@ -177,7 +177,7 @@ factory ReposCreateInOrgRequest.fromJson(Map<String, dynamic> json) { return Rep
   mergeCommitTitle: json['merge_commit_title'] != null ? ReposCreateInOrgRequestMergeCommitTitle.fromJson(json['merge_commit_title'] as String) : null,
   mergeCommitMessage: json['merge_commit_message'] != null ? ReposCreateInOrgRequestMergeCommitMessage.fromJson(json['merge_commit_message'] as String) : null,
   customProperties: json['custom_properties'] as Map<String, dynamic>?,
-); }
+);}
 
 /// The name of the repository.
 final String name;
@@ -273,32 +273,32 @@ final ReposCreateInOrgRequestMergeCommitMessage? mergeCommitMessage;
 final Map<String,dynamic>? customProperties;
 
 /// The value with the schema default applied when absent.
-bool get privateOrDefault { return private ?? false; } 
+bool get privateOrDefault {return private ?? false;}
 /// The value with the schema default applied when absent.
-bool get hasIssuesOrDefault { return hasIssues ?? true; } 
+bool get hasIssuesOrDefault {return hasIssues ?? true;}
 /// The value with the schema default applied when absent.
-bool get hasProjectsOrDefault { return hasProjects ?? true; } 
+bool get hasProjectsOrDefault {return hasProjects ?? true;}
 /// The value with the schema default applied when absent.
-bool get hasWikiOrDefault { return hasWiki ?? true; } 
+bool get hasWikiOrDefault {return hasWiki ?? true;}
 /// The value with the schema default applied when absent.
-bool get hasDownloadsOrDefault { return hasDownloads ?? true; } 
+bool get hasDownloadsOrDefault {return hasDownloads ?? true;}
 /// The value with the schema default applied when absent.
-bool get isTemplateOrDefault { return isTemplate ?? false; } 
+bool get isTemplateOrDefault {return isTemplate ?? false;}
 /// The value with the schema default applied when absent.
-bool get autoInitOrDefault { return autoInit ?? false; } 
+bool get autoInitOrDefault {return autoInit ?? false;}
 /// The value with the schema default applied when absent.
-bool get allowSquashMergeOrDefault { return allowSquashMerge ?? true; } 
+bool get allowSquashMergeOrDefault {return allowSquashMerge ?? true;}
 /// The value with the schema default applied when absent.
-bool get allowMergeCommitOrDefault { return allowMergeCommit ?? true; } 
+bool get allowMergeCommitOrDefault {return allowMergeCommit ?? true;}
 /// The value with the schema default applied when absent.
-bool get allowRebaseMergeOrDefault { return allowRebaseMerge ?? true; } 
+bool get allowRebaseMergeOrDefault {return allowRebaseMerge ?? true;}
 /// The value with the schema default applied when absent.
-bool get allowAutoMergeOrDefault { return allowAutoMerge ?? false; } 
+bool get allowAutoMergeOrDefault {return allowAutoMerge ?? false;}
 /// The value with the schema default applied when absent.
-bool get deleteBranchOnMergeOrDefault { return deleteBranchOnMerge ?? false; } 
+bool get deleteBranchOnMergeOrDefault {return deleteBranchOnMerge ?? false;}
 /// The value with the schema default applied when absent.
-bool get useSquashPrTitleAsDefaultOrDefault { return useSquashPrTitleAsDefault ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get useSquashPrTitleAsDefaultOrDefault {return useSquashPrTitleAsDefault ?? false;}
+Map<String, dynamic> toJson() {return {
   'name': name,
   'description': ?description,
   'homepage': ?homepage,
@@ -324,9 +324,9 @@ Map<String, dynamic> toJson() { return {
   if (mergeCommitTitle != null) 'merge_commit_title': mergeCommitTitle?.toJson(),
   if (mergeCommitMessage != null) 'merge_commit_message': mergeCommitMessage?.toJson(),
   'custom_properties': ?customProperties,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ReposCreateInOrgRequest copyWith({String? name, String? Function()? description, String? Function()? homepage, bool? Function()? private, ReposCreateInOrgRequestVisibility? Function()? visibility, bool? Function()? hasIssues, bool? Function()? hasProjects, bool? Function()? hasWiki, bool? Function()? hasDownloads, bool? Function()? isTemplate, int? Function()? teamId, bool? Function()? autoInit, String? Function()? gitignoreTemplate, String? Function()? licenseTemplate, bool? Function()? allowSquashMerge, bool? Function()? allowMergeCommit, bool? Function()? allowRebaseMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? useSquashPrTitleAsDefault, ReposCreateInOrgRequestSquashMergeCommitTitle? Function()? squashMergeCommitTitle, ReposCreateInOrgRequestSquashMergeCommitMessage? Function()? squashMergeCommitMessage, ReposCreateInOrgRequestMergeCommitTitle? Function()? mergeCommitTitle, ReposCreateInOrgRequestMergeCommitMessage? Function()? mergeCommitMessage, Map<String, dynamic>? Function()? customProperties, }) { return ReposCreateInOrgRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+ReposCreateInOrgRequest copyWith({String? name, String? Function()? description, String? Function()? homepage, bool? Function()? private, ReposCreateInOrgRequestVisibility? Function()? visibility, bool? Function()? hasIssues, bool? Function()? hasProjects, bool? Function()? hasWiki, bool? Function()? hasDownloads, bool? Function()? isTemplate, int? Function()? teamId, bool? Function()? autoInit, String? Function()? gitignoreTemplate, String? Function()? licenseTemplate, bool? Function()? allowSquashMerge, bool? Function()? allowMergeCommit, bool? Function()? allowRebaseMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? useSquashPrTitleAsDefault, ReposCreateInOrgRequestSquashMergeCommitTitle? Function()? squashMergeCommitTitle, ReposCreateInOrgRequestSquashMergeCommitMessage? Function()? squashMergeCommitMessage, ReposCreateInOrgRequestMergeCommitTitle? Function()? mergeCommitTitle, ReposCreateInOrgRequestMergeCommitMessage? Function()? mergeCommitMessage, Map<String, dynamic>? Function()? customProperties, }) {return ReposCreateInOrgRequest(
   name: name ?? this.name,
   description: description != null ? description() : this.description,
   homepage: homepage != null ? homepage() : this.homepage,
@@ -352,8 +352,8 @@ ReposCreateInOrgRequest copyWith({String? name, String? Function()? description,
   mergeCommitTitle: mergeCommitTitle != null ? mergeCommitTitle() : this.mergeCommitTitle,
   mergeCommitMessage: mergeCommitMessage != null ? mergeCommitMessage() : this.mergeCommitMessage,
   customProperties: customProperties != null ? customProperties() : this.customProperties,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReposCreateInOrgRequest &&
           name == other.name &&
           description == other.description &&
@@ -379,7 +379,7 @@ ReposCreateInOrgRequest copyWith({String? name, String? Function()? description,
           squashMergeCommitMessage == other.squashMergeCommitMessage &&
           mergeCommitTitle == other.mergeCommitTitle &&
           mergeCommitMessage == other.mergeCommitMessage &&
-          customProperties == other.customProperties; } 
-@override int get hashCode { return Object.hashAll([name, description, homepage, private, visibility, hasIssues, hasProjects, hasWiki, hasDownloads, isTemplate, teamId, autoInit, gitignoreTemplate, licenseTemplate, allowSquashMerge, allowMergeCommit, allowRebaseMerge, allowAutoMerge, deleteBranchOnMerge, useSquashPrTitleAsDefault, squashMergeCommitTitle, squashMergeCommitMessage, mergeCommitTitle, mergeCommitMessage, customProperties]); } 
-@override String toString() { return 'ReposCreateInOrgRequest(name: $name, description: $description, homepage: $homepage, private: $private, visibility: $visibility, hasIssues: $hasIssues, hasProjects: $hasProjects, hasWiki: $hasWiki, hasDownloads: $hasDownloads, isTemplate: $isTemplate, teamId: $teamId, autoInit: $autoInit, gitignoreTemplate: $gitignoreTemplate, licenseTemplate: $licenseTemplate, allowSquashMerge: $allowSquashMerge, allowMergeCommit: $allowMergeCommit, allowRebaseMerge: $allowRebaseMerge, allowAutoMerge: $allowAutoMerge, deleteBranchOnMerge: $deleteBranchOnMerge, useSquashPrTitleAsDefault: $useSquashPrTitleAsDefault, squashMergeCommitTitle: $squashMergeCommitTitle, squashMergeCommitMessage: $squashMergeCommitMessage, mergeCommitTitle: $mergeCommitTitle, mergeCommitMessage: $mergeCommitMessage, customProperties: $customProperties)'; } 
- }
+          customProperties == other.customProperties;}
+@override int get hashCode {return Object.hashAll([name, description, homepage, private, visibility, hasIssues, hasProjects, hasWiki, hasDownloads, isTemplate, teamId, autoInit, gitignoreTemplate, licenseTemplate, allowSquashMerge, allowMergeCommit, allowRebaseMerge, allowAutoMerge, deleteBranchOnMerge, useSquashPrTitleAsDefault, squashMergeCommitTitle, squashMergeCommitMessage, mergeCommitTitle, mergeCommitMessage, customProperties]);}
+@override String toString() {return 'ReposCreateInOrgRequest(name: $name, description: $description, homepage: $homepage, private: $private, visibility: $visibility, hasIssues: $hasIssues, hasProjects: $hasProjects, hasWiki: $hasWiki, hasDownloads: $hasDownloads, isTemplate: $isTemplate, teamId: $teamId, autoInit: $autoInit, gitignoreTemplate: $gitignoreTemplate, licenseTemplate: $licenseTemplate, allowSquashMerge: $allowSquashMerge, allowMergeCommit: $allowMergeCommit, allowRebaseMerge: $allowRebaseMerge, allowAutoMerge: $allowAutoMerge, deleteBranchOnMerge: $deleteBranchOnMerge, useSquashPrTitleAsDefault: $useSquashPrTitleAsDefault, squashMergeCommitTitle: $squashMergeCommitTitle, squashMergeCommitMessage: $squashMergeCommitMessage, mergeCommitTitle: $mergeCommitTitle, mergeCommitMessage: $mergeCommitMessage, customProperties: $customProperties)';}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for events with this `type`.
 @immutable final class AuditLogExternalKeyRegistered {const AuditLogExternalKeyRegistered({this.id, this.data, });
 
-factory AuditLogExternalKeyRegistered.fromJson(Map<String, dynamic> json) { return AuditLogExternalKeyRegistered(
+factory AuditLogExternalKeyRegistered.fromJson(Map<String, dynamic> json) {return AuditLogExternalKeyRegistered(
   id: json['id'] as String?,
   data: json['data'] as Map<String, dynamic>?,
-); }
+);}
 
 /// The ID of the external key configuration.
 final String? id;
@@ -14,19 +14,19 @@ final String? id;
 /// The configuration for the external key.
 final Map<String,dynamic>? data;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'data': ?data,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'data'}.contains(key)); } 
-AuditLogExternalKeyRegistered copyWith({String? Function()? id, Map<String, dynamic>? Function()? data, }) { return AuditLogExternalKeyRegistered(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'data'}.contains(key));}
+AuditLogExternalKeyRegistered copyWith({String? Function()? id, Map<String, dynamic>? Function()? data, }) {return AuditLogExternalKeyRegistered(
   id: id != null ? id() : this.id,
   data: data != null ? data() : this.data,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AuditLogExternalKeyRegistered &&
           id == other.id &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(id, data); } 
-@override String toString() { return 'AuditLogExternalKeyRegistered(id: $id, data: $data)'; } 
- }
+          data == other.data;}
+@override int get hashCode {return Object.hash(id, data);}
+@override String toString() {return 'AuditLogExternalKeyRegistered(id: $id, data: $data)';}
+}

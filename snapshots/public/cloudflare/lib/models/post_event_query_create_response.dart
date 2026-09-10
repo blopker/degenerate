@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventQueryCreateResponse {const PostEventQueryCreateResponse({required this.accountId, required this.alertEnabled, required this.alertRollupEnabled, required this.createdAt, required this.id, required this.name, required this.queryJson, required this.ruleEnabled, required this.updatedAt, required this.userEmail, this.ruleScope, });
 
-factory PostEventQueryCreateResponse.fromJson(Map<String, dynamic> json) { return PostEventQueryCreateResponse(
+factory PostEventQueryCreateResponse.fromJson(Map<String, dynamic> json) {return PostEventQueryCreateResponse(
   accountId: (json['account_id'] as num).toInt(),
   alertEnabled: json['alert_enabled'] as bool,
   alertRollupEnabled: json['alert_rollup_enabled'] as bool,
@@ -14,7 +14,7 @@ factory PostEventQueryCreateResponse.fromJson(Map<String, dynamic> json) { retur
   ruleScope: json['rule_scope'] as String?,
   updatedAt: json['updated_at'] as String,
   userEmail: json['user_email'] as String,
-); }
+);}
 
 /// Account ID
 final int accountId;
@@ -49,7 +49,7 @@ final String updatedAt;
 /// Email of the user who created the query
 final String userEmail;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_id': accountId,
   'alert_enabled': alertEnabled,
   'alert_rollup_enabled': alertRollupEnabled,
@@ -61,8 +61,8 @@ Map<String, dynamic> toJson() { return {
   'rule_scope': ?ruleScope,
   'updated_at': updatedAt,
   'user_email': userEmail,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') && json['account_id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_id') && json['account_id'] is num &&
       json.containsKey('alert_enabled') && json['alert_enabled'] is bool &&
       json.containsKey('alert_rollup_enabled') && json['alert_rollup_enabled'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -71,8 +71,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('query_json') && json['query_json'] is String &&
       json.containsKey('rule_enabled') && json['rule_enabled'] is bool &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('user_email') && json['user_email'] is String; } 
-PostEventQueryCreateResponse copyWith({int? accountId, bool? alertEnabled, bool? alertRollupEnabled, String? createdAt, int? id, String? name, String? queryJson, bool? ruleEnabled, String? Function()? ruleScope, String? updatedAt, String? userEmail, }) { return PostEventQueryCreateResponse(
+      json.containsKey('user_email') && json['user_email'] is String;}
+PostEventQueryCreateResponse copyWith({int? accountId, bool? alertEnabled, bool? alertRollupEnabled, String? createdAt, int? id, String? name, String? queryJson, bool? ruleEnabled, String? Function()? ruleScope, String? updatedAt, String? userEmail, }) {return PostEventQueryCreateResponse(
   accountId: accountId ?? this.accountId,
   alertEnabled: alertEnabled ?? this.alertEnabled,
   alertRollupEnabled: alertRollupEnabled ?? this.alertRollupEnabled,
@@ -84,8 +84,8 @@ PostEventQueryCreateResponse copyWith({int? accountId, bool? alertEnabled, bool?
   ruleScope: ruleScope != null ? ruleScope() : this.ruleScope,
   updatedAt: updatedAt ?? this.updatedAt,
   userEmail: userEmail ?? this.userEmail,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostEventQueryCreateResponse &&
           accountId == other.accountId &&
           alertEnabled == other.alertEnabled &&
@@ -97,7 +97,7 @@ PostEventQueryCreateResponse copyWith({int? accountId, bool? alertEnabled, bool?
           ruleEnabled == other.ruleEnabled &&
           ruleScope == other.ruleScope &&
           updatedAt == other.updatedAt &&
-          userEmail == other.userEmail; } 
-@override int get hashCode { return Object.hash(accountId, alertEnabled, alertRollupEnabled, createdAt, id, name, queryJson, ruleEnabled, ruleScope, updatedAt, userEmail); } 
-@override String toString() { return 'PostEventQueryCreateResponse(accountId: $accountId, alertEnabled: $alertEnabled, alertRollupEnabled: $alertRollupEnabled, createdAt: $createdAt, id: $id, name: $name, queryJson: $queryJson, ruleEnabled: $ruleEnabled, ruleScope: $ruleScope, updatedAt: $updatedAt, userEmail: $userEmail)'; } 
- }
+          userEmail == other.userEmail;}
+@override int get hashCode {return Object.hash(accountId, alertEnabled, alertRollupEnabled, createdAt, id, name, queryJson, ruleEnabled, ruleScope, updatedAt, userEmail);}
+@override String toString() {return 'PostEventQueryCreateResponse(accountId: $accountId, alertEnabled: $alertEnabled, alertRollupEnabled: $alertRollupEnabled, createdAt: $createdAt, id: $id, name: $name, queryJson: $queryJson, ruleEnabled: $ruleEnabled, ruleScope: $ruleScope, updatedAt: $updatedAt, userEmail: $userEmail)';}
+}

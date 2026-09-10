@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of an autofix.
 @immutable final class CodeScanningAutofixStatus {const CodeScanningAutofixStatus._(this.value);
 
-factory CodeScanningAutofixStatus.fromJson(String json) { return switch (json) {
+factory CodeScanningAutofixStatus.fromJson(String json) {return switch (json) {
   'pending' => pending,
   'error' => error,
   'success' => success,
   'outdated' => outdated,
   _ => CodeScanningAutofixStatus._(json),
-}; }
+};}
 
 static const CodeScanningAutofixStatus pending = CodeScanningAutofixStatus._('pending');
 
@@ -23,14 +23,14 @@ static const List<CodeScanningAutofixStatus> values = [pending, error, success, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningAutofixStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningAutofixStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeScanningAutofixStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeScanningAutofixStatus($value)';}
+}
 /// The description of an autofix.
 extension type const CodeScanningAutofixDescription(String value) {
 factory CodeScanningAutofixDescription.fromJson(String json) => CodeScanningAutofixDescription(json);
@@ -47,11 +47,11 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class CodeScanningAutofix {const CodeScanningAutofix({required this.status, required this.description, required this.startedAt, });
 
-factory CodeScanningAutofix.fromJson(Map<String, dynamic> json) { return CodeScanningAutofix(
+factory CodeScanningAutofix.fromJson(Map<String, dynamic> json) {return CodeScanningAutofix(
   status: CodeScanningAutofixStatus.fromJson(json['status'] as String),
   description: json['description'] != null ? CodeScanningAutofixDescription.fromJson(json['description'] as String) : null,
   startedAt: CodeScanningAutofixStartedAt.fromJson(json['started_at'] as String),
-); }
+);}
 
 /// The status of an autofix.
 final CodeScanningAutofixStatus status;
@@ -62,24 +62,24 @@ final CodeScanningAutofixDescription? description;
 /// The start time of an autofix in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final CodeScanningAutofixStartedAt startedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'status': status.toJson(),
   'description': description?.toJson(),
   'started_at': startedAt.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status') &&
       json.containsKey('description') &&
-      json.containsKey('started_at'); } 
-CodeScanningAutofix copyWith({CodeScanningAutofixStatus? status, CodeScanningAutofixDescription? Function()? description, CodeScanningAutofixStartedAt? startedAt, }) { return CodeScanningAutofix(
+      json.containsKey('started_at');}
+CodeScanningAutofix copyWith({CodeScanningAutofixStatus? status, CodeScanningAutofixDescription? Function()? description, CodeScanningAutofixStartedAt? startedAt, }) {return CodeScanningAutofix(
   status: status ?? this.status,
   description: description != null ? description() : this.description,
   startedAt: startedAt ?? this.startedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeScanningAutofix &&
           status == other.status &&
           description == other.description &&
-          startedAt == other.startedAt; } 
-@override int get hashCode { return Object.hash(status, description, startedAt); } 
-@override String toString() { return 'CodeScanningAutofix(status: $status, description: $description, startedAt: $startedAt)'; } 
- }
+          startedAt == other.startedAt;}
+@override int get hashCode {return Object.hash(status, description, startedAt);}
+@override String toString() {return 'CodeScanningAutofix(status: $status, description: $description, startedAt: $startedAt)';}
+}

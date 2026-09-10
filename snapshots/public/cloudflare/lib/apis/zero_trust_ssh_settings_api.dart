@@ -13,7 +13,7 @@ final class ZeroTrustSshSettingsApi with ApiExecutor {const ZeroTrustSshSettings
 /// Retrieve all Zero Trust Audit SSH and SSH with Access for Infrastructure settings for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/audit_ssh_settings`
-Future<ApiResult<ZeroTrustGatewaySettings?, ZeroTrustGetAuditSshSettingsResponse4xx>> zeroTrustGetAuditSshSettings({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewaySettings?, ZeroTrustGetAuditSshSettingsResponse4xx>> zeroTrustGetAuditSshSettings({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update Zero Trust SSH settings
 ///
 /// Update Zero Trust Audit SSH and SSH with Access for Infrastructure settings for an account.
 ///
 /// `PUT /accounts/{account_id}/gateway/audit_ssh_settings`
-Future<ApiResult<ZeroTrustGatewaySettings?, ZeroTrustUpdateAuditSshSettingsResponse4xx>> zeroTrustUpdateAuditSshSettings({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustUpdateAuditSshSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewaySettings?, ZeroTrustUpdateAuditSshSettingsResponse4xx>> zeroTrustUpdateAuditSshSettings({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustUpdateAuditSshSettingsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Rotate Zero Trust SSH account seed
 ///
 /// Rotate the SSH account seed that generates the host key identity when connecting through the Cloudflare SSH Proxy.
 ///
 /// `POST /accounts/{account_id}/gateway/audit_ssh_settings/rotate_seed`
-Future<ApiResult<ZeroTrustGatewaySettings?, ZeroTrustRotateSshAccountSeedResponse4xx>> zeroTrustRotateSshAccountSeed({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewaySettings?, ZeroTrustRotateSshAccountSeedResponse4xx>> zeroTrustRotateSshAccountSeed({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -105,5 +105,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

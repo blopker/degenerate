@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether this rule targets a branch or tag.
 @immutable final class DeploymentBranchPolicyType {const DeploymentBranchPolicyType._(this.value);
 
-factory DeploymentBranchPolicyType.fromJson(String json) { return switch (json) {
+factory DeploymentBranchPolicyType.fromJson(String json) {return switch (json) {
   'branch' => branch,
   'tag' => tag,
   _ => DeploymentBranchPolicyType._(json),
-}; }
+};}
 
 static const DeploymentBranchPolicyType branch = DeploymentBranchPolicyType._('branch');
 
@@ -17,23 +17,23 @@ static const List<DeploymentBranchPolicyType> values = [branch, tag];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeploymentBranchPolicyType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeploymentBranchPolicyType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DeploymentBranchPolicyType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DeploymentBranchPolicyType($value)';}
+}
 /// Details of a deployment branch or tag policy.
 @immutable final class DeploymentBranchPolicy {const DeploymentBranchPolicy({this.id, this.nodeId, this.name, this.type, });
 
-factory DeploymentBranchPolicy.fromJson(Map<String, dynamic> json) { return DeploymentBranchPolicy(
+factory DeploymentBranchPolicy.fromJson(Map<String, dynamic> json) {return DeploymentBranchPolicy(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   nodeId: json['node_id'] as String?,
   name: json['name'] as String?,
   type: json['type'] != null ? DeploymentBranchPolicyType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The unique identifier of the branch or tag policy.
 final int? id;
@@ -46,25 +46,25 @@ final String? name;
 /// Whether this rule targets a branch or tag.
 final DeploymentBranchPolicyType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'node_id': ?nodeId,
   'name': ?name,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'node_id', 'name', 'type'}.contains(key)); } 
-DeploymentBranchPolicy copyWith({int? Function()? id, String? Function()? nodeId, String? Function()? name, DeploymentBranchPolicyType? Function()? type, }) { return DeploymentBranchPolicy(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'node_id', 'name', 'type'}.contains(key));}
+DeploymentBranchPolicy copyWith({int? Function()? id, String? Function()? nodeId, String? Function()? name, DeploymentBranchPolicyType? Function()? type, }) {return DeploymentBranchPolicy(
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DeploymentBranchPolicy &&
           id == other.id &&
           nodeId == other.nodeId &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(id, nodeId, name, type); } 
-@override String toString() { return 'DeploymentBranchPolicy(id: $id, nodeId: $nodeId, name: $name, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(id, nodeId, name, type);}
+@override String toString() {return 'DeploymentBranchPolicy(id: $id, nodeId: $nodeId, name: $name, type: $type)';}
+}

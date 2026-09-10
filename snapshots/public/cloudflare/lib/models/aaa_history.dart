@@ -24,12 +24,12 @@ String toJson() => value;
 /// The type of mechanism to which the notification has been dispatched. This can be email/pagerduty/webhook based on the mechanism configured.
 @immutable final class AaaMechanismType {const AaaMechanismType._(this.value);
 
-factory AaaMechanismType.fromJson(String json) { return switch (json) {
+factory AaaMechanismType.fromJson(String json) {return switch (json) {
   'email' => email,
   'pagerduty' => pagerduty,
   'webhook' => webhook,
   _ => AaaMechanismType._(json),
-}; }
+};}
 
 static const AaaMechanismType email = AaaMechanismType._('email');
 
@@ -41,14 +41,14 @@ static const List<AaaMechanismType> values = [email, pagerduty, webhook];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AaaMechanismType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AaaMechanismType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AaaMechanismType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AaaMechanismType($value)';}
+}
 /// Type of notification that has been dispatched.
 extension type const AaaSchemasAlertType(String value) {
 factory AaaSchemasAlertType.fromJson(String json) => AaaSchemasAlertType(json);
@@ -65,7 +65,7 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class AaaHistory {const AaaHistory({this.alertBody, this.alertType, this.description, this.id, this.mechanism, this.mechanismType, this.name, this.policyId, this.sent, });
 
-factory AaaHistory.fromJson(Map<String, dynamic> json) { return AaaHistory(
+factory AaaHistory.fromJson(Map<String, dynamic> json) {return AaaHistory(
   alertBody: json['alert_body'] != null ? AaaAlertBody.fromJson(json['alert_body'] as String) : null,
   alertType: json['alert_type'] != null ? AaaSchemasAlertType.fromJson(json['alert_type'] as String) : null,
   description: json['description'] != null ? AaaComponentsSchemasDescription.fromJson(json['description'] as String) : null,
@@ -75,7 +75,7 @@ factory AaaHistory.fromJson(Map<String, dynamic> json) { return AaaHistory(
   name: json['name'] != null ? AaaSchemasName.fromJson(json['name'] as String) : null,
   policyId: json['policy_id'] != null ? AaaPolicyId.fromJson(json['policy_id'] as String) : null,
   sent: json['sent'] != null ? AaaSent.fromJson(json['sent'] as String) : null,
-); }
+);}
 
 /// Message body included in the notification sent.
 final AaaAlertBody? alertBody;
@@ -97,7 +97,7 @@ final AaaPolicyId? policyId;
 
 final AaaSent? sent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (alertBody != null) 'alert_body': alertBody?.toJson(),
   if (alertType != null) 'alert_type': alertType?.toJson(),
   if (description != null) 'description': description?.toJson(),
@@ -107,9 +107,9 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (policyId != null) 'policy_id': policyId?.toJson(),
   if (sent != null) 'sent': sent?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'alert_body', 'alert_type', 'description', 'id', 'mechanism', 'mechanism_type', 'name', 'policy_id', 'sent'}.contains(key)); } 
-AaaHistory copyWith({AaaAlertBody? Function()? alertBody, AaaSchemasAlertType? Function()? alertType, AaaComponentsSchemasDescription? Function()? description, AaaUuid? Function()? id, AaaMechanism? Function()? mechanism, AaaMechanismType? Function()? mechanismType, AaaSchemasName? Function()? name, AaaPolicyId? Function()? policyId, AaaSent? Function()? sent, }) { return AaaHistory(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'alert_body', 'alert_type', 'description', 'id', 'mechanism', 'mechanism_type', 'name', 'policy_id', 'sent'}.contains(key));}
+AaaHistory copyWith({AaaAlertBody? Function()? alertBody, AaaSchemasAlertType? Function()? alertType, AaaComponentsSchemasDescription? Function()? description, AaaUuid? Function()? id, AaaMechanism? Function()? mechanism, AaaMechanismType? Function()? mechanismType, AaaSchemasName? Function()? name, AaaPolicyId? Function()? policyId, AaaSent? Function()? sent, }) {return AaaHistory(
   alertBody: alertBody != null ? alertBody() : this.alertBody,
   alertType: alertType != null ? alertType() : this.alertType,
   description: description != null ? description() : this.description,
@@ -119,8 +119,8 @@ AaaHistory copyWith({AaaAlertBody? Function()? alertBody, AaaSchemasAlertType? F
   name: name != null ? name() : this.name,
   policyId: policyId != null ? policyId() : this.policyId,
   sent: sent != null ? sent() : this.sent,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AaaHistory &&
           alertBody == other.alertBody &&
           alertType == other.alertType &&
@@ -130,7 +130,7 @@ AaaHistory copyWith({AaaAlertBody? Function()? alertBody, AaaSchemasAlertType? F
           mechanismType == other.mechanismType &&
           name == other.name &&
           policyId == other.policyId &&
-          sent == other.sent; } 
-@override int get hashCode { return Object.hash(alertBody, alertType, description, id, mechanism, mechanismType, name, policyId, sent); } 
-@override String toString() { return 'AaaHistory(alertBody: $alertBody, alertType: $alertType, description: $description, id: $id, mechanism: $mechanism, mechanismType: $mechanismType, name: $name, policyId: $policyId, sent: $sent)'; } 
- }
+          sent == other.sent;}
+@override int get hashCode {return Object.hash(alertBody, alertType, description, id, mechanism, mechanismType, name, policyId, sent);}
+@override String toString() {return 'AaaHistory(alertBody: $alertBody, alertType: $alertType, description: $description, id: $id, mechanism: $mechanism, mechanismType: $mechanismType, name: $name, policyId: $policyId, sent: $sent)';}
+}

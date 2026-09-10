@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Location of the bucket.
 @immutable final class R2BucketLocation {const R2BucketLocation._(this.value);
 
-factory R2BucketLocation.fromJson(String json) { return switch (json) {
+factory R2BucketLocation.fromJson(String json) {return switch (json) {
   'apac' => apac,
   'eeur' => eeur,
   'enam' => enam,
@@ -11,7 +11,7 @@ factory R2BucketLocation.fromJson(String json) { return switch (json) {
   'wnam' => wnam,
   'oc' => oc,
   _ => R2BucketLocation._(json),
-}; }
+};}
 
 static const R2BucketLocation apac = R2BucketLocation._('apac');
 
@@ -29,11 +29,11 @@ static const List<R2BucketLocation> values = [apac, eeur, enam, weur, wnam, oc];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2BucketLocation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2BucketLocation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is R2BucketLocation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'R2BucketLocation($value)';}
+}

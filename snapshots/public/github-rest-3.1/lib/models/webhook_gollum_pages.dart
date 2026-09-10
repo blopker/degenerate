@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action that was performed on the page. Can be `created` or `edited`.
 @immutable final class WebhookGollumPagesAction {const WebhookGollumPagesAction._(this.value);
 
-factory WebhookGollumPagesAction.fromJson(String json) { return switch (json) {
+factory WebhookGollumPagesAction.fromJson(String json) {return switch (json) {
   'created' => created,
   'edited' => edited,
   _ => WebhookGollumPagesAction._(json),
-}; }
+};}
 
 static const WebhookGollumPagesAction created = WebhookGollumPagesAction._('created');
 
@@ -17,24 +17,24 @@ static const List<WebhookGollumPagesAction> values = [created, edited];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookGollumPagesAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookGollumPagesAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookGollumPagesAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookGollumPagesAction($value)';}
+}
 @immutable final class WebhookGollumPages {const WebhookGollumPages({required this.action, required this.htmlUrl, required this.pageName, required this.sha, required this.summary, required this.title, });
 
-factory WebhookGollumPages.fromJson(Map<String, dynamic> json) { return WebhookGollumPages(
+factory WebhookGollumPages.fromJson(Map<String, dynamic> json) {return WebhookGollumPages(
   action: WebhookGollumPagesAction.fromJson(json['action'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
   pageName: json['page_name'] as String,
   sha: json['sha'] as String,
   summary: json['summary'] as String?,
   title: json['title'] as String,
-); }
+);}
 
 /// The action that was performed on the page. Can be `created` or `edited`.
 final WebhookGollumPagesAction action;
@@ -53,36 +53,36 @@ final String? summary;
 /// The current page title.
 final String title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'html_url': htmlUrl.toString(),
   'page_name': pageName,
   'sha': sha,
   'summary': summary,
   'title': title,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('page_name') && json['page_name'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('summary') && (json['summary'] == null || json['summary'] is String) &&
-      json.containsKey('title') && json['title'] is String; } 
-WebhookGollumPages copyWith({WebhookGollumPagesAction? action, Uri? htmlUrl, String? pageName, String? sha, String? Function()? summary, String? title, }) { return WebhookGollumPages(
+      json.containsKey('title') && json['title'] is String;}
+WebhookGollumPages copyWith({WebhookGollumPagesAction? action, Uri? htmlUrl, String? pageName, String? sha, String? Function()? summary, String? title, }) {return WebhookGollumPages(
   action: action ?? this.action,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   pageName: pageName ?? this.pageName,
   sha: sha ?? this.sha,
   summary: summary != null ? summary() : this.summary,
   title: title ?? this.title,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookGollumPages &&
           action == other.action &&
           htmlUrl == other.htmlUrl &&
           pageName == other.pageName &&
           sha == other.sha &&
           summary == other.summary &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(action, htmlUrl, pageName, sha, summary, title); } 
-@override String toString() { return 'WebhookGollumPages(action: $action, htmlUrl: $htmlUrl, pageName: $pageName, sha: $sha, summary: $summary, title: $title)'; } 
- }
+          title == other.title;}
+@override int get hashCode {return Object.hash(action, htmlUrl, pageName, sha, summary, title);}
+@override String toString() {return 'WebhookGollumPages(action: $action, htmlUrl: $htmlUrl, pageName: $pageName, sha: $sha, summary: $summary, title: $title)';}
+}

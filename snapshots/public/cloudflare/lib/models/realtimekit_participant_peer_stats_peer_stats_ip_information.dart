@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitParticipantPeerStatsPeerStatsIpInformation {const RealtimekitParticipantPeerStatsPeerStatsIpInformation({this.city, this.country, this.ipLocation, this.ipv4, this.org, this.portal, this.region, this.timezone, });
 
-factory RealtimekitParticipantPeerStatsPeerStatsIpInformation.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantPeerStatsPeerStatsIpInformation(
+factory RealtimekitParticipantPeerStatsPeerStatsIpInformation.fromJson(Map<String, dynamic> json) {return RealtimekitParticipantPeerStatsPeerStatsIpInformation(
   city: json['city'] as String?,
   country: json['country'] as String?,
   ipLocation: json['ip_location'] as String?,
@@ -11,7 +11,7 @@ factory RealtimekitParticipantPeerStatsPeerStatsIpInformation.fromJson(Map<Strin
   portal: json['portal'] as String?,
   region: json['region'] as String?,
   timezone: json['timezone'] as String?,
-); }
+);}
 
 final String? city;
 
@@ -29,7 +29,7 @@ final String? region;
 
 final String? timezone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'city': ?city,
   'country': ?country,
   'ip_location': ?ipLocation,
@@ -38,9 +38,9 @@ Map<String, dynamic> toJson() { return {
   'portal': ?portal,
   'region': ?region,
   'timezone': ?timezone,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'country', 'ip_location', 'ipv4', 'org', 'portal', 'region', 'timezone'}.contains(key)); } 
-RealtimekitParticipantPeerStatsPeerStatsIpInformation copyWith({String? Function()? city, String? Function()? country, String? Function()? ipLocation, String? Function()? ipv4, String? Function()? org, String? Function()? portal, String? Function()? region, String? Function()? timezone, }) { return RealtimekitParticipantPeerStatsPeerStatsIpInformation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'city', 'country', 'ip_location', 'ipv4', 'org', 'portal', 'region', 'timezone'}.contains(key));}
+RealtimekitParticipantPeerStatsPeerStatsIpInformation copyWith({String? Function()? city, String? Function()? country, String? Function()? ipLocation, String? Function()? ipv4, String? Function()? org, String? Function()? portal, String? Function()? region, String? Function()? timezone, }) {return RealtimekitParticipantPeerStatsPeerStatsIpInformation(
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,
   ipLocation: ipLocation != null ? ipLocation() : this.ipLocation,
@@ -49,8 +49,8 @@ RealtimekitParticipantPeerStatsPeerStatsIpInformation copyWith({String? Function
   portal: portal != null ? portal() : this.portal,
   region: region != null ? region() : this.region,
   timezone: timezone != null ? timezone() : this.timezone,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitParticipantPeerStatsPeerStatsIpInformation &&
           city == other.city &&
           country == other.country &&
@@ -59,7 +59,7 @@ RealtimekitParticipantPeerStatsPeerStatsIpInformation copyWith({String? Function
           org == other.org &&
           portal == other.portal &&
           region == other.region &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(city, country, ipLocation, ipv4, org, portal, region, timezone); } 
-@override String toString() { return 'RealtimekitParticipantPeerStatsPeerStatsIpInformation(city: $city, country: $country, ipLocation: $ipLocation, ipv4: $ipv4, org: $org, portal: $portal, region: $region, timezone: $timezone)'; } 
- }
+          timezone == other.timezone;}
+@override int get hashCode {return Object.hash(city, country, ipLocation, ipv4, org, portal, region, timezone);}
+@override String toString() {return 'RealtimekitParticipantPeerStatsPeerStatsIpInformation(city: $city, country: $country, ipLocation: $ipLocation, ipv4: $ipv4, org: $org, portal: $portal, region: $region, timezone: $timezone)';}
+}

@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_disposition_label.dart';import 'email_security_get_message_response_result_findings.dart';import 'email_security_get_message_response_result_properties.dart';import 'email_security_get_message_response_result_validation.dart';import 'email_security_message_delivery_mode.dart';import 'email_security_postfix_id.dart';@immutable final class EmailSecurityGetMessageResponseResultPostDeliveryOperations {const EmailSecurityGetMessageResponseResultPostDeliveryOperations._(this.value);
 
-factory EmailSecurityGetMessageResponseResultPostDeliveryOperations.fromJson(String json) { return switch (json) {
+factory EmailSecurityGetMessageResponseResultPostDeliveryOperations.fromJson(String json) {return switch (json) {
   'PREVIEW' => preview,
   'QUARANTINE_RELEASE' => quarantineRelease,
   'SUBMISSION' => submission,
   'MOVE' => move,
   _ => EmailSecurityGetMessageResponseResultPostDeliveryOperations._(json),
-}; }
+};}
 
 static const EmailSecurityGetMessageResponseResultPostDeliveryOperations preview = EmailSecurityGetMessageResponseResultPostDeliveryOperations._('PREVIEW');
 
@@ -22,17 +22,17 @@ static const List<EmailSecurityGetMessageResponseResultPostDeliveryOperations> v
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityGetMessageResponseResultPostDeliveryOperations && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityGetMessageResponseResultPostDeliveryOperations($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailSecurityGetMessageResponseResultPostDeliveryOperations && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailSecurityGetMessageResponseResultPostDeliveryOperations($value)';}
+}
 @immutable final class EmailSecurityGetMessageResponseResult {const EmailSecurityGetMessageResponseResult({required this.actionLog, required this.clientRecipients, required this.detectionReasons, required this.isPhishSubmission, required this.isQuarantined, required this.postfixId, required this.properties, required this.ts, required this.id, this.alertId = const Omittable.absent(), this.deliveryMode = const Omittable.absent(), this.edfHash = const Omittable.absent(), this.envelopeFrom = const Omittable.absent(), this.envelopeTo = const Omittable.absent(), this.finalDisposition = const Omittable.absent(), this.findings = const Omittable.absent(), this.from = const Omittable.absent(), this.fromName = const Omittable.absent(), this.htmltextStructureHash = const Omittable.absent(), this.messageId = const Omittable.absent(), this.postDeliveryOperations, this.postfixIdOutbound = const Omittable.absent(), this.replyto = const Omittable.absent(), this.sentDate = const Omittable.absent(), this.subject = const Omittable.absent(), this.threatCategories = const Omittable.absent(), this.to = const Omittable.absent(), this.toName = const Omittable.absent(), this.validation = const Omittable.absent(), });
 
-factory EmailSecurityGetMessageResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityGetMessageResponseResult(
+factory EmailSecurityGetMessageResponseResult.fromJson(Map<String, dynamic> json) {return EmailSecurityGetMessageResponseResult(
   actionLog: json['action_log'],
   alertId: json.containsKey('alert_id') ? Omittable(json['alert_id'] as String?) : const Omittable.absent(),
   clientRecipients: (json['client_recipients'] as List<dynamic>).map((e) => e as String).toList(),
@@ -62,7 +62,7 @@ factory EmailSecurityGetMessageResponseResult.fromJson(Map<String, dynamic> json
   ts: json['ts'] as String,
   validation: json.containsKey('validation') ? Omittable(json['validation'] != null ? EmailSecurityGetMessageResponseResultValidation.fromJson(json['validation'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   id: json['id'] as String,
-); }
+);}
 
 final dynamic actionLog;
 
@@ -123,7 +123,7 @@ final Omittable<EmailSecurityGetMessageResponseResultValidation?> validation;
 
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action_log': actionLog,
   if (alertId.isPresent) 'alert_id': alertId.value,
   'client_recipients': clientRecipients,
@@ -153,8 +153,8 @@ Map<String, dynamic> toJson() { return {
   'ts': ts,
   if (validation.isPresent) 'validation': validation.value?.toJson(),
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action_log') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action_log') &&
       json.containsKey('client_recipients') &&
       json.containsKey('detection_reasons') &&
       json.containsKey('is_phish_submission') && json['is_phish_submission'] is bool &&
@@ -162,8 +162,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('postfix_id') &&
       json.containsKey('properties') &&
       json.containsKey('ts') && json['ts'] is String &&
-      json.containsKey('id') && json['id'] is String; } 
-EmailSecurityGetMessageResponseResult copyWith({dynamic Function()? actionLog, Omittable<String?>? alertId, List<String>? clientRecipients, Omittable<EmailSecurityMessageDeliveryMode?>? deliveryMode, List<String>? detectionReasons, Omittable<String?>? edfHash, Omittable<String?>? envelopeFrom, Omittable<List<String>?>? envelopeTo, Omittable<EmailSecurityDispositionLabel?>? finalDisposition, Omittable<List<EmailSecurityGetMessageResponseResultFindings>?>? findings, Omittable<String?>? from, Omittable<String?>? fromName, Omittable<String?>? htmltextStructureHash, bool? isPhishSubmission, bool? isQuarantined, Omittable<String?>? messageId, List<EmailSecurityGetMessageResponseResultPostDeliveryOperations>? Function()? postDeliveryOperations, EmailSecurityPostfixId? postfixId, Omittable<String?>? postfixIdOutbound, EmailSecurityGetMessageResponseResultProperties? properties, Omittable<String?>? replyto, Omittable<String?>? sentDate, Omittable<String?>? subject, Omittable<List<String>?>? threatCategories, Omittable<List<String>?>? to, Omittable<List<String>?>? toName, String? ts, Omittable<EmailSecurityGetMessageResponseResultValidation?>? validation, String? id, }) { return EmailSecurityGetMessageResponseResult(
+      json.containsKey('id') && json['id'] is String;}
+EmailSecurityGetMessageResponseResult copyWith({dynamic Function()? actionLog, Omittable<String?>? alertId, List<String>? clientRecipients, Omittable<EmailSecurityMessageDeliveryMode?>? deliveryMode, List<String>? detectionReasons, Omittable<String?>? edfHash, Omittable<String?>? envelopeFrom, Omittable<List<String>?>? envelopeTo, Omittable<EmailSecurityDispositionLabel?>? finalDisposition, Omittable<List<EmailSecurityGetMessageResponseResultFindings>?>? findings, Omittable<String?>? from, Omittable<String?>? fromName, Omittable<String?>? htmltextStructureHash, bool? isPhishSubmission, bool? isQuarantined, Omittable<String?>? messageId, List<EmailSecurityGetMessageResponseResultPostDeliveryOperations>? Function()? postDeliveryOperations, EmailSecurityPostfixId? postfixId, Omittable<String?>? postfixIdOutbound, EmailSecurityGetMessageResponseResultProperties? properties, Omittable<String?>? replyto, Omittable<String?>? sentDate, Omittable<String?>? subject, Omittable<List<String>?>? threatCategories, Omittable<List<String>?>? to, Omittable<List<String>?>? toName, String? ts, Omittable<EmailSecurityGetMessageResponseResultValidation?>? validation, String? id, }) {return EmailSecurityGetMessageResponseResult(
   actionLog: actionLog != null ? actionLog() : this.actionLog,
   alertId: alertId ?? this.alertId,
   clientRecipients: clientRecipients ?? this.clientRecipients,
@@ -193,8 +193,8 @@ EmailSecurityGetMessageResponseResult copyWith({dynamic Function()? actionLog, O
   ts: ts ?? this.ts,
   validation: validation ?? this.validation,
   id: id ?? this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSecurityGetMessageResponseResult &&
           actionLog == other.actionLog &&
           alertId == other.alertId &&
@@ -229,7 +229,7 @@ EmailSecurityGetMessageResponseResult copyWith({dynamic Function()? actionLog, O
           listEquals(toName.value, other.toName.value) &&
           ts == other.ts &&
           validation == other.validation &&
-          id == other.id; } 
-@override int get hashCode { return Object.hashAll([actionLog, alertId, Object.hashAll(clientRecipients), deliveryMode, Object.hashAll(detectionReasons), edfHash, envelopeFrom, Object.hashAll(envelopeTo.value ?? const []), finalDisposition, Object.hashAll(findings.value ?? const []), from, fromName, htmltextStructureHash, isPhishSubmission, isQuarantined, messageId, Object.hashAll(postDeliveryOperations ?? const []), postfixId, postfixIdOutbound, properties, replyto, sentDate, subject, Object.hashAll(threatCategories.value ?? const []), Object.hashAll(to.value ?? const []), Object.hashAll(toName.value ?? const []), ts, validation, id]); } 
-@override String toString() { return 'EmailSecurityGetMessageResponseResult(actionLog: $actionLog, alertId: $alertId, clientRecipients: $clientRecipients, deliveryMode: $deliveryMode, detectionReasons: $detectionReasons, edfHash: $edfHash, envelopeFrom: $envelopeFrom, envelopeTo: $envelopeTo, finalDisposition: $finalDisposition, findings: $findings, from: $from, fromName: $fromName, htmltextStructureHash: $htmltextStructureHash, isPhishSubmission: $isPhishSubmission, isQuarantined: $isQuarantined, messageId: $messageId, postDeliveryOperations: $postDeliveryOperations, postfixId: $postfixId, postfixIdOutbound: $postfixIdOutbound, properties: $properties, replyto: $replyto, sentDate: $sentDate, subject: $subject, threatCategories: $threatCategories, to: $to, toName: $toName, ts: $ts, validation: $validation, id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return Object.hashAll([actionLog, alertId, Object.hashAll(clientRecipients), deliveryMode, Object.hashAll(detectionReasons), edfHash, envelopeFrom, Object.hashAll(envelopeTo.value ?? const []), finalDisposition, Object.hashAll(findings.value ?? const []), from, fromName, htmltextStructureHash, isPhishSubmission, isQuarantined, messageId, Object.hashAll(postDeliveryOperations ?? const []), postfixId, postfixIdOutbound, properties, replyto, sentDate, subject, Object.hashAll(threatCategories.value ?? const []), Object.hashAll(to.value ?? const []), Object.hashAll(toName.value ?? const []), ts, validation, id]);}
+@override String toString() {return 'EmailSecurityGetMessageResponseResult(actionLog: $actionLog, alertId: $alertId, clientRecipients: $clientRecipients, deliveryMode: $deliveryMode, detectionReasons: $detectionReasons, edfHash: $edfHash, envelopeFrom: $envelopeFrom, envelopeTo: $envelopeTo, finalDisposition: $finalDisposition, findings: $findings, from: $from, fromName: $fromName, htmltextStructureHash: $htmltextStructureHash, isPhishSubmission: $isPhishSubmission, isQuarantined: $isQuarantined, messageId: $messageId, postDeliveryOperations: $postDeliveryOperations, postfixId: $postfixId, postfixIdOutbound: $postfixIdOutbound, properties: $properties, replyto: $replyto, sentDate: $sentDate, subject: $subject, threatCategories: $threatCategories, to: $to, toName: $toName, ts: $ts, validation: $validation, id: $id)';}
+}

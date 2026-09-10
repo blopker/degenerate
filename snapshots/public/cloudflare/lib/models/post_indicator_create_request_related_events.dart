@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIndicatorCreateRequestRelatedEvents {const PostIndicatorCreateRequestRelatedEvents({required this.datasetId, required this.eventId, });
 
-factory PostIndicatorCreateRequestRelatedEvents.fromJson(Map<String, dynamic> json) { return PostIndicatorCreateRequestRelatedEvents(
+factory PostIndicatorCreateRequestRelatedEvents.fromJson(Map<String, dynamic> json) {return PostIndicatorCreateRequestRelatedEvents(
   datasetId: json['datasetId'] as String,
   eventId: json['eventId'] as String,
-); }
+);}
 
 final String datasetId;
 
 final String eventId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'datasetId': datasetId,
   'eventId': eventId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('datasetId') && json['datasetId'] is String &&
-      json.containsKey('eventId') && json['eventId'] is String; } 
-PostIndicatorCreateRequestRelatedEvents copyWith({String? datasetId, String? eventId, }) { return PostIndicatorCreateRequestRelatedEvents(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('datasetId') && json['datasetId'] is String &&
+      json.containsKey('eventId') && json['eventId'] is String;}
+PostIndicatorCreateRequestRelatedEvents copyWith({String? datasetId, String? eventId, }) {return PostIndicatorCreateRequestRelatedEvents(
   datasetId: datasetId ?? this.datasetId,
   eventId: eventId ?? this.eventId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostIndicatorCreateRequestRelatedEvents &&
           datasetId == other.datasetId &&
-          eventId == other.eventId; } 
-@override int get hashCode { return Object.hash(datasetId, eventId); } 
-@override String toString() { return 'PostIndicatorCreateRequestRelatedEvents(datasetId: $datasetId, eventId: $eventId)'; } 
- }
+          eventId == other.eventId;}
+@override int get hashCode {return Object.hash(datasetId, eventId);}
+@override String toString() {return 'PostIndicatorCreateRequestRelatedEvents(datasetId: $datasetId, eventId: $eventId)';}
+}

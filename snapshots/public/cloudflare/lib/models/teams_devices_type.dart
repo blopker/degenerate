@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of device posture rule.
 @immutable final class TeamsDevicesType {const TeamsDevicesType._(this.value);
 
-factory TeamsDevicesType.fromJson(String json) { return switch (json) {
+factory TeamsDevicesType.fromJson(String json) {return switch (json) {
   'file' => file,
   'application' => application,
   'tanium' => tanium,
@@ -28,7 +28,7 @@ factory TeamsDevicesType.fromJson(String json) { return switch (json) {
   'sentinelone_s2s' => sentineloneS2s,
   'custom_s2s' => customS2s,
   _ => TeamsDevicesType._(json),
-}; }
+};}
 
 static const TeamsDevicesType file = TeamsDevicesType._('file');
 
@@ -80,11 +80,11 @@ static const List<TeamsDevicesType> values = [file, application, tanium, gateway
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamsDevicesType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamsDevicesType($value)';}
+}

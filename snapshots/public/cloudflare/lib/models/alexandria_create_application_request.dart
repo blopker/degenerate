@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alexandria_application_human_id.dart';import 'alexandria_application_name.dart';@immutable final class AlexandriaCreateApplicationRequest {const AlexandriaCreateApplicationRequest({required this.applicationTypeId, required this.humanId, required this.name, this.hostnames, this.ipSubnets, this.portProtocols, this.supportDomains, });
 
-factory AlexandriaCreateApplicationRequest.fromJson(Map<String, dynamic> json) { return AlexandriaCreateApplicationRequest(
+factory AlexandriaCreateApplicationRequest.fromJson(Map<String, dynamic> json) {return AlexandriaCreateApplicationRequest(
   applicationTypeId: json['application_type_id'] as String,
   hostnames: (json['hostnames'] as List<dynamic>?)?.map((e) => e as String).toList(),
   humanId: AlexandriaApplicationHumanId.fromJson(json['human_id'] as String),
@@ -10,7 +10,7 @@ factory AlexandriaCreateApplicationRequest.fromJson(Map<String, dynamic> json) {
   name: AlexandriaApplicationName.fromJson(json['name'] as String),
   portProtocols: (json['port_protocols'] as List<dynamic>?)?.map((e) => e as String).toList(),
   supportDomains: (json['support_domains'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Provide as string to perform a lookup to check if the source exists.
 final String applicationTypeId;
@@ -33,7 +33,7 @@ final List<String>? portProtocols;
 /// Returns the list of support domains for the application.
 final List<String>? supportDomains;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'application_type_id': applicationTypeId,
   'hostnames': ?hostnames,
   'human_id': humanId.toJson(),
@@ -41,11 +41,11 @@ Map<String, dynamic> toJson() { return {
   'name': name.toJson(),
   'port_protocols': ?portProtocols,
   'support_domains': ?supportDomains,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('application_type_id') && json['application_type_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('application_type_id') && json['application_type_id'] is String &&
       json.containsKey('human_id') &&
-      json.containsKey('name'); } 
-AlexandriaCreateApplicationRequest copyWith({String? applicationTypeId, List<String>? Function()? hostnames, AlexandriaApplicationHumanId? humanId, List<String>? Function()? ipSubnets, AlexandriaApplicationName? name, List<String>? Function()? portProtocols, List<String>? Function()? supportDomains, }) { return AlexandriaCreateApplicationRequest(
+      json.containsKey('name');}
+AlexandriaCreateApplicationRequest copyWith({String? applicationTypeId, List<String>? Function()? hostnames, AlexandriaApplicationHumanId? humanId, List<String>? Function()? ipSubnets, AlexandriaApplicationName? name, List<String>? Function()? portProtocols, List<String>? Function()? supportDomains, }) {return AlexandriaCreateApplicationRequest(
   applicationTypeId: applicationTypeId ?? this.applicationTypeId,
   hostnames: hostnames != null ? hostnames() : this.hostnames,
   humanId: humanId ?? this.humanId,
@@ -53,8 +53,8 @@ AlexandriaCreateApplicationRequest copyWith({String? applicationTypeId, List<Str
   name: name ?? this.name,
   portProtocols: portProtocols != null ? portProtocols() : this.portProtocols,
   supportDomains: supportDomains != null ? supportDomains() : this.supportDomains,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AlexandriaCreateApplicationRequest &&
           applicationTypeId == other.applicationTypeId &&
           listEquals(hostnames, other.hostnames) &&
@@ -62,7 +62,7 @@ AlexandriaCreateApplicationRequest copyWith({String? applicationTypeId, List<Str
           listEquals(ipSubnets, other.ipSubnets) &&
           name == other.name &&
           listEquals(portProtocols, other.portProtocols) &&
-          listEquals(supportDomains, other.supportDomains); } 
-@override int get hashCode { return Object.hash(applicationTypeId, Object.hashAll(hostnames ?? const []), humanId, Object.hashAll(ipSubnets ?? const []), name, Object.hashAll(portProtocols ?? const []), Object.hashAll(supportDomains ?? const [])); } 
-@override String toString() { return 'AlexandriaCreateApplicationRequest(applicationTypeId: $applicationTypeId, hostnames: $hostnames, humanId: $humanId, ipSubnets: $ipSubnets, name: $name, portProtocols: $portProtocols, supportDomains: $supportDomains)'; } 
- }
+          listEquals(supportDomains, other.supportDomains);}
+@override int get hashCode {return Object.hash(applicationTypeId, Object.hashAll(hostnames ?? const []), humanId, Object.hashAll(ipSubnets ?? const []), name, Object.hashAll(portProtocols ?? const []), Object.hashAll(supportDomains ?? const []));}
+@override String toString() {return 'AlexandriaCreateApplicationRequest(applicationTypeId: $applicationTypeId, hostnames: $hostnames, humanId: $humanId, ipSubnets: $ipSubnets, name: $name, portProtocols: $portProtocols, supportDomains: $supportDomains)';}
+}

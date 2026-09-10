@@ -13,7 +13,7 @@ final class ZeroTrustApplicationsReviewStatusApi with ApiExecutor {const ZeroTru
 /// Retrieve the statuses of your applications.
 ///
 /// `GET /accounts/{account_id}/gateway/apps/review_status`
-Future<ApiResult<ZeroTrustGatewayApplicationsReviewStatusResponseContent?, ZeroTrustApplicationsReviewStatusListResponse4xx>> zeroTrustApplicationsReviewStatusList({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayApplicationsReviewStatusResponseContent?, ZeroTrustApplicationsReviewStatusListResponse4xx>> zeroTrustApplicationsReviewStatusList({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update applications review statuses
 ///
 /// Update the statuses of your applications.
 ///
 /// `PUT /accounts/{account_id}/gateway/apps/review_status`
-Future<ApiResult<ZeroTrustGatewayApplicationsReviewStatusResponseContent?, ZeroTrustApplicationsReviewStatusUpdateResponse4xx>> zeroTrustApplicationsReviewStatusUpdate({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, required ZeroTrustApplicationsReviewStatusUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayApplicationsReviewStatusResponseContent?, ZeroTrustApplicationsReviewStatusUpdateResponse4xx>> zeroTrustApplicationsReviewStatusUpdate({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, required ZeroTrustApplicationsReviewStatusUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,5 +73,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

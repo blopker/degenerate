@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_state.dart';import 'container_user.dart';import 'resource_quantity.dart';import 'resource_requirements.dart';import 'resource_status.dart';import 'volume_mount_status.dart';/// ContainerStatus contains details for the current status of this container.
 @immutable final class ContainerStatus {const ContainerStatus({required this.image, required this.imageId, required this.name, required this.ready, required this.restartCount, this.allocatedResources, this.allocatedResourcesStatus, this.containerId, this.lastState, this.resources, this.started, this.state, this.stopSignal, this.user, this.volumeMounts, });
 
-factory ContainerStatus.fromJson(Map<String, dynamic> json) { return ContainerStatus(
+factory ContainerStatus.fromJson(Map<String, dynamic> json) {return ContainerStatus(
   allocatedResources: (json['allocatedResources'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),
   allocatedResourcesStatus: (json['allocatedResourcesStatus'] as List<dynamic>?)?.map((e) => ResourceStatus.fromJson(e as Map<String, dynamic>)).toList(),
   containerId: json['containerID'] as String?,
@@ -19,7 +19,7 @@ factory ContainerStatus.fromJson(Map<String, dynamic> json) { return ContainerSt
   stopSignal: json['stopSignal'] as String?,
   user: json['user'] != null ? ContainerUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   volumeMounts: (json['volumeMounts'] as List<dynamic>?)?.map((e) => VolumeMountStatus.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// AllocatedResources represents the compute resources allocated for this container by the node. Kubelet sets this value to Container.Resources.Requests upon successful pod admission and after successfully admitting desired pod resize.
 final Map<String,ResourceQuantity>? allocatedResources;
@@ -68,7 +68,7 @@ final ContainerUser? user;
 /// Status of volume mounts.
 final List<VolumeMountStatus>? volumeMounts;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allocatedResources != null) 'allocatedResources': allocatedResources?.map((k, v) => MapEntry(k, v.toJson())),
   if (allocatedResourcesStatus != null) 'allocatedResourcesStatus': allocatedResourcesStatus?.map((e) => e.toJson()).toList(),
   'containerID': ?containerId,
@@ -84,13 +84,13 @@ Map<String, dynamic> toJson() { return {
   'stopSignal': ?stopSignal,
   if (user != null) 'user': user?.toJson(),
   if (volumeMounts != null) 'volumeMounts': volumeMounts?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('image') && json['image'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('image') && json['image'] is String &&
       json.containsKey('imageID') && json['imageID'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('ready') && json['ready'] is bool &&
-      json.containsKey('restartCount') && json['restartCount'] is num; } 
-ContainerStatus copyWith({Map<String, ResourceQuantity>? Function()? allocatedResources, List<ResourceStatus>? Function()? allocatedResourcesStatus, String? Function()? containerId, String? image, String? imageId, ContainerState? Function()? lastState, String? name, bool? ready, ResourceRequirements? Function()? resources, int? restartCount, bool? Function()? started, ContainerState? Function()? state, String? Function()? stopSignal, ContainerUser? Function()? user, List<VolumeMountStatus>? Function()? volumeMounts, }) { return ContainerStatus(
+      json.containsKey('restartCount') && json['restartCount'] is num;}
+ContainerStatus copyWith({Map<String, ResourceQuantity>? Function()? allocatedResources, List<ResourceStatus>? Function()? allocatedResourcesStatus, String? Function()? containerId, String? image, String? imageId, ContainerState? Function()? lastState, String? name, bool? ready, ResourceRequirements? Function()? resources, int? restartCount, bool? Function()? started, ContainerState? Function()? state, String? Function()? stopSignal, ContainerUser? Function()? user, List<VolumeMountStatus>? Function()? volumeMounts, }) {return ContainerStatus(
   allocatedResources: allocatedResources != null ? allocatedResources() : this.allocatedResources,
   allocatedResourcesStatus: allocatedResourcesStatus != null ? allocatedResourcesStatus() : this.allocatedResourcesStatus,
   containerId: containerId != null ? containerId() : this.containerId,
@@ -106,8 +106,8 @@ ContainerStatus copyWith({Map<String, ResourceQuantity>? Function()? allocatedRe
   stopSignal: stopSignal != null ? stopSignal() : this.stopSignal,
   user: user != null ? user() : this.user,
   volumeMounts: volumeMounts != null ? volumeMounts() : this.volumeMounts,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ContainerStatus &&
           allocatedResources == other.allocatedResources &&
           listEquals(allocatedResourcesStatus, other.allocatedResourcesStatus) &&
@@ -123,7 +123,7 @@ ContainerStatus copyWith({Map<String, ResourceQuantity>? Function()? allocatedRe
           state == other.state &&
           stopSignal == other.stopSignal &&
           user == other.user &&
-          listEquals(volumeMounts, other.volumeMounts); } 
-@override int get hashCode { return Object.hash(allocatedResources, Object.hashAll(allocatedResourcesStatus ?? const []), containerId, image, imageId, lastState, name, ready, resources, restartCount, started, state, stopSignal, user, Object.hashAll(volumeMounts ?? const [])); } 
-@override String toString() { return 'ContainerStatus(allocatedResources: $allocatedResources, allocatedResourcesStatus: $allocatedResourcesStatus, containerId: $containerId, image: $image, imageId: $imageId, lastState: $lastState, name: $name, ready: $ready, resources: $resources, restartCount: $restartCount, started: $started, state: $state, stopSignal: $stopSignal, user: $user, volumeMounts: $volumeMounts)'; } 
- }
+          listEquals(volumeMounts, other.volumeMounts);}
+@override int get hashCode {return Object.hash(allocatedResources, Object.hashAll(allocatedResourcesStatus ?? const []), containerId, image, imageId, lastState, name, ready, resources, restartCount, started, state, stopSignal, user, Object.hashAll(volumeMounts ?? const []));}
+@override String toString() {return 'ContainerStatus(allocatedResources: $allocatedResources, allocatedResourcesStatus: $allocatedResourcesStatus, containerId: $containerId, image: $image, imageId: $imageId, lastState: $lastState, name: $name, ready: $ready, resources: $resources, restartCount: $restartCount, started: $started, state: $state, stopSignal: $stopSignal, user: $user, volumeMounts: $volumeMounts)';}
+}

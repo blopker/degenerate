@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Create the project with the specified data residency region. Your organization must have access to Data residency functionality in order to use. See [data residency controls](/docs/guides/your-data#data-residency-controls) to review the functionality and limitations of setting this field.
 @immutable final class ProjectCreateRequestGeography {const ProjectCreateRequestGeography._(this.value);
 
-factory ProjectCreateRequestGeography.fromJson(String json) { return switch (json) {
+factory ProjectCreateRequestGeography.fromJson(String json) {return switch (json) {
   'US' => us,
   'EU' => eu,
   'JP' => jp,
@@ -13,7 +13,7 @@ factory ProjectCreateRequestGeography.fromJson(String json) { return switch (jso
   'AU' => au,
   'SG' => sg,
   _ => ProjectCreateRequestGeography._(json),
-}; }
+};}
 
 static const ProjectCreateRequestGeography us = ProjectCreateRequestGeography._('US');
 
@@ -35,20 +35,20 @@ static const List<ProjectCreateRequestGeography> values = [us, eu, jp, $in, kr, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectCreateRequestGeography && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectCreateRequestGeography($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ProjectCreateRequestGeography && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ProjectCreateRequestGeography($value)';}
+}
 @immutable final class ProjectCreateRequest {const ProjectCreateRequest({required this.name, this.geography, });
 
-factory ProjectCreateRequest.fromJson(Map<String, dynamic> json) { return ProjectCreateRequest(
+factory ProjectCreateRequest.fromJson(Map<String, dynamic> json) {return ProjectCreateRequest(
   name: json['name'] as String,
   geography: json['geography'] != null ? ProjectCreateRequestGeography.fromJson(json['geography'] as String) : null,
-); }
+);}
 
 /// The friendly name of the project, this name appears in reports.
 final String name;
@@ -56,19 +56,19 @@ final String name;
 /// Create the project with the specified data residency region. Your organization must have access to Data residency functionality in order to use. See [data residency controls](/docs/guides/your-data#data-residency-controls) to review the functionality and limitations of setting this field.
 final ProjectCreateRequestGeography? geography;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   if (geography != null) 'geography': geography?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ProjectCreateRequest copyWith({String? name, ProjectCreateRequestGeography? Function()? geography, }) { return ProjectCreateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+ProjectCreateRequest copyWith({String? name, ProjectCreateRequestGeography? Function()? geography, }) {return ProjectCreateRequest(
   name: name ?? this.name,
   geography: geography != null ? geography() : this.geography,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ProjectCreateRequest &&
           name == other.name &&
-          geography == other.geography; } 
-@override int get hashCode { return Object.hash(name, geography); } 
-@override String toString() { return 'ProjectCreateRequest(name: $name, geography: $geography)'; } 
- }
+          geography == other.geography;}
+@override int get hashCode {return Object.hash(name, geography);}
+@override String toString() {return 'ProjectCreateRequest(name: $name, geography: $geography)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxRegistrationsRequestCountryOptionsKzType {const PostTaxRegistrationsRequestCountryOptionsKzType._(this.value);
 
-factory PostTaxRegistrationsRequestCountryOptionsKzType.fromJson(String json) { return switch (json) {
+factory PostTaxRegistrationsRequestCountryOptionsKzType.fromJson(String json) {return switch (json) {
   'simplified' => simplified,
   _ => PostTaxRegistrationsRequestCountryOptionsKzType._(json),
-}; }
+};}
 
 static const PostTaxRegistrationsRequestCountryOptionsKzType simplified = PostTaxRegistrationsRequestCountryOptionsKzType._('simplified');
 
@@ -13,32 +13,32 @@ static const List<PostTaxRegistrationsRequestCountryOptionsKzType> values = [sim
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTaxRegistrationsRequestCountryOptionsKzType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsKzType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTaxRegistrationsRequestCountryOptionsKzType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTaxRegistrationsRequestCountryOptionsKzType($value)';}
+}
 @immutable final class PostTaxRegistrationsRequestCountryOptionsKz {const PostTaxRegistrationsRequestCountryOptionsKz({required this.type});
 
-factory PostTaxRegistrationsRequestCountryOptionsKz.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptionsKz(
+factory PostTaxRegistrationsRequestCountryOptionsKz.fromJson(Map<String, dynamic> json) {return PostTaxRegistrationsRequestCountryOptionsKz(
   type: PostTaxRegistrationsRequestCountryOptionsKzType.fromJson(json['type'] as String),
-); }
+);}
 
 final PostTaxRegistrationsRequestCountryOptionsKzType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostTaxRegistrationsRequestCountryOptionsKz copyWith({PostTaxRegistrationsRequestCountryOptionsKzType? type}) { return PostTaxRegistrationsRequestCountryOptionsKz(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostTaxRegistrationsRequestCountryOptionsKz copyWith({PostTaxRegistrationsRequestCountryOptionsKzType? type}) {return PostTaxRegistrationsRequestCountryOptionsKz(
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTaxRegistrationsRequestCountryOptionsKz &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsKz(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'PostTaxRegistrationsRequestCountryOptionsKz(type: $type)';}
+}

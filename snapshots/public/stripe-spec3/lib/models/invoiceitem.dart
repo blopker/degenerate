@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoice_item_parents_invoice_item_parent.dart';import 'billing_bill_resource_invoicing_pricing_pricing.dart';import 'invoice_line_item_period.dart';import 'invoiceitem_customer.dart';import 'invoiceitem_discounts.dart';import 'invoiceitem_invoice.dart';import 'invoiceitem_test_clock.dart';import 'proration_details.dart';import 'tax_rate.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class InvoiceitemObject {const InvoiceitemObject._(this.value);
 
-factory InvoiceitemObject.fromJson(String json) { return switch (json) {
+factory InvoiceitemObject.fromJson(String json) {return switch (json) {
   'invoiceitem' => invoiceitem,
   _ => InvoiceitemObject._(json),
-}; }
+};}
 
 static const InvoiceitemObject invoiceitem = InvoiceitemObject._('invoiceitem');
 
@@ -14,14 +14,14 @@ static const List<InvoiceitemObject> values = [invoiceitem];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceitemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceitemObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoiceitemObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoiceitemObject($value)';}
+}
 /// Invoice Items represent the component lines of an [invoice](https://docs.stripe.com/api/invoices). When you create an invoice item with an `invoice` field, it is attached to the specified invoice and included as [an invoice line item](https://docs.stripe.com/api/invoices/line_item) within [invoice.lines](https://docs.stripe.com/api/invoices/object#invoice_object-lines).
 /// 
 /// Invoice Items can be created before you are ready to actually send the invoice. This can be particularly useful when combined
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guides: [Integrate with the Invoicing API](https://docs.stripe.com/invoicing/integration), [Subscription Invoices](https://docs.stripe.com/billing/invoices/subscription#adding-upcoming-invoice-items).
 @immutable final class Invoiceitem {const Invoiceitem({required this.amount, required this.currency, required this.customer, required this.date, required this.discountable, required this.id, required this.livemode, required this.object, required this.period, required this.proration, required this.quantity, this.customerAccount = const Omittable.absent(), this.description = const Omittable.absent(), this.discounts = const Omittable.absent(), this.invoice = const Omittable.absent(), this.metadata = const Omittable.absent(), this.netAmount, this.parent = const Omittable.absent(), this.pricing = const Omittable.absent(), this.prorationDetails, this.taxRates = const Omittable.absent(), this.testClock = const Omittable.absent(), });
 
-factory Invoiceitem.fromJson(Map<String, dynamic> json) { return Invoiceitem(
+factory Invoiceitem.fromJson(Map<String, dynamic> json) {return Invoiceitem(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   customer: InvoiceitemCustomer.fromJson(json['customer']),
@@ -55,7 +55,7 @@ factory Invoiceitem.fromJson(Map<String, dynamic> json) { return Invoiceitem(
   quantity: (json['quantity'] as num).toInt(),
   taxRates: json.containsKey('tax_rates') ? Omittable((json['tax_rates'] as List<dynamic>?)?.map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? InvoiceitemTestClock.fromJson(json['test_clock']) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Amount (in the `currency` specified) of the invoice item. This should always be equal to `unit_amount * quantity`.
 final int amount;
@@ -121,7 +121,7 @@ final Omittable<List<TaxRate>?> taxRates;
 /// ID of the test clock this invoice item belongs to.
 final Omittable<InvoiceitemTestClock?> testClock;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   'customer': customer.toJson(),
@@ -144,8 +144,8 @@ Map<String, dynamic> toJson() { return {
   'quantity': quantity,
   if (taxRates.isPresent) 'tax_rates': taxRates.value?.map((e) => e.toJson()).toList(),
   if (testClock.isPresent) 'test_clock': testClock.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('customer') &&
       json.containsKey('date') && json['date'] is num &&
@@ -155,8 +155,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('period') &&
       json.containsKey('proration') && json['proration'] is bool &&
-      json.containsKey('quantity') && json['quantity'] is num; } 
-Invoiceitem copyWith({int? amount, String? currency, InvoiceitemCustomer? customer, Omittable<String?>? customerAccount, int? date, Omittable<String?>? description, bool? discountable, Omittable<List<InvoiceitemDiscounts>?>? discounts, String? id, Omittable<InvoiceitemInvoice?>? invoice, bool? livemode, Omittable<Map<String,String>?>? metadata, int? Function()? netAmount, InvoiceitemObject? object, Omittable<BillingBillResourceInvoiceItemParentsInvoiceItemParent?>? parent, InvoiceLineItemPeriod? period, Omittable<BillingBillResourceInvoicingPricingPricing?>? pricing, bool? proration, ProrationDetails? Function()? prorationDetails, int? quantity, Omittable<List<TaxRate>?>? taxRates, Omittable<InvoiceitemTestClock?>? testClock, }) { return Invoiceitem(
+      json.containsKey('quantity') && json['quantity'] is num;}
+Invoiceitem copyWith({int? amount, String? currency, InvoiceitemCustomer? customer, Omittable<String?>? customerAccount, int? date, Omittable<String?>? description, bool? discountable, Omittable<List<InvoiceitemDiscounts>?>? discounts, String? id, Omittable<InvoiceitemInvoice?>? invoice, bool? livemode, Omittable<Map<String,String>?>? metadata, int? Function()? netAmount, InvoiceitemObject? object, Omittable<BillingBillResourceInvoiceItemParentsInvoiceItemParent?>? parent, InvoiceLineItemPeriod? period, Omittable<BillingBillResourceInvoicingPricingPricing?>? pricing, bool? proration, ProrationDetails? Function()? prorationDetails, int? quantity, Omittable<List<TaxRate>?>? taxRates, Omittable<InvoiceitemTestClock?>? testClock, }) {return Invoiceitem(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   customer: customer ?? this.customer,
@@ -179,8 +179,8 @@ Invoiceitem copyWith({int? amount, String? currency, InvoiceitemCustomer? custom
   quantity: quantity ?? this.quantity,
   taxRates: taxRates ?? this.taxRates,
   testClock: testClock ?? this.testClock,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Invoiceitem &&
           amount == other.amount &&
           currency == other.currency &&
@@ -205,7 +205,7 @@ Invoiceitem copyWith({int? amount, String? currency, InvoiceitemCustomer? custom
           quantity == other.quantity &&
           taxRates.isPresent == other.taxRates.isPresent &&
           listEquals(taxRates.value, other.taxRates.value) &&
-          testClock == other.testClock; } 
-@override int get hashCode { return Object.hashAll([amount, currency, customer, customerAccount, date, description, discountable, Object.hashAll(discounts.value ?? const []), id, invoice, livemode, metadata, netAmount, object, parent, period, pricing, proration, prorationDetails, quantity, Object.hashAll(taxRates.value ?? const []), testClock]); } 
-@override String toString() { return 'Invoiceitem(amount: $amount, currency: $currency, customer: $customer, customerAccount: $customerAccount, date: $date, description: $description, discountable: $discountable, discounts: $discounts, id: $id, invoice: $invoice, livemode: $livemode, metadata: $metadata, netAmount: $netAmount, object: $object, parent: $parent, period: $period, pricing: $pricing, proration: $proration, prorationDetails: $prorationDetails, quantity: $quantity, taxRates: $taxRates, testClock: $testClock)'; } 
- }
+          testClock == other.testClock;}
+@override int get hashCode {return Object.hashAll([amount, currency, customer, customerAccount, date, description, discountable, Object.hashAll(discounts.value ?? const []), id, invoice, livemode, metadata, netAmount, object, parent, period, pricing, proration, prorationDetails, quantity, Object.hashAll(taxRates.value ?? const []), testClock]);}
+@override String toString() {return 'Invoiceitem(amount: $amount, currency: $currency, customer: $customer, customerAccount: $customerAccount, date: $date, description: $description, discountable: $discountable, discounts: $discounts, id: $id, invoice: $invoice, livemode: $livemode, metadata: $metadata, netAmount: $netAmount, object: $object, parent: $parent, period: $period, pricing: $pricing, proration: $proration, prorationDetails: $prorationDetails, quantity: $quantity, taxRates: $taxRates, testClock: $testClock)';}
+}

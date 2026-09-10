@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The error code f
 /// 
 @immutable final class ResponseErrorCode {const ResponseErrorCode._(this.value);
 
-factory ResponseErrorCode.fromJson(String json) { return switch (json) {
+factory ResponseErrorCode.fromJson(String json) {return switch (json) {
   'server_error' => serverError,
   'rate_limit_exceeded' => rateLimitExceeded,
   'invalid_prompt' => invalidPrompt,
@@ -24,7 +24,7 @@ factory ResponseErrorCode.fromJson(String json) { return switch (json) {
   'failed_to_download_image' => failedToDownloadImage,
   'image_file_not_found' => imageFileNotFound,
   _ => ResponseErrorCode._(json),
-}; }
+};}
 
 static const ResponseErrorCode serverError = ResponseErrorCode._('server_error');
 
@@ -66,22 +66,22 @@ static const List<ResponseErrorCode> values = [serverError, rateLimitExceeded, i
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseErrorCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseErrorCode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResponseErrorCode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ResponseErrorCode($value)';}
+}
 /// An error object returned when the model fails to generate a Response.
 /// 
 @immutable final class ResponseError {const ResponseError({required this.code, required this.message, });
 
-factory ResponseError.fromJson(Map<String, dynamic> json) { return ResponseError(
+factory ResponseError.fromJson(Map<String, dynamic> json) {return ResponseError(
   code: ResponseErrorCode.fromJson(json['code'] as String),
   message: json['message'] as String,
-); }
+);}
 
 final ResponseErrorCode code;
 
@@ -89,20 +89,20 @@ final ResponseErrorCode code;
 /// 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code.toJson(),
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
-      json.containsKey('message') && json['message'] is String; } 
-ResponseError copyWith({ResponseErrorCode? code, String? message, }) { return ResponseError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') &&
+      json.containsKey('message') && json['message'] is String;}
+ResponseError copyWith({ResponseErrorCode? code, String? message, }) {return ResponseError(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseError &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'ResponseError(code: $code, message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return Object.hash(code, message);}
+@override String toString() {return 'ResponseError(code: $code, message: $message)';}
+}

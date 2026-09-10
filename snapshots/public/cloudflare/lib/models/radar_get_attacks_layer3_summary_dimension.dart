@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
 @immutable final class RadarGetAttacksLayer3SummaryDimension {const RadarGetAttacksLayer3SummaryDimension._(this.value);
 
-factory RadarGetAttacksLayer3SummaryDimension.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3SummaryDimension.fromJson(String json) {return switch (json) {
   'PROTOCOL' => protocol,
   'IP_VERSION' => ipVersion,
   'VECTOR' => vector,
@@ -12,7 +12,7 @@ factory RadarGetAttacksLayer3SummaryDimension.fromJson(String json) { return swi
   'VERTICAL' => vertical,
   'INDUSTRY' => industry,
   _ => RadarGetAttacksLayer3SummaryDimension._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3SummaryDimension protocol = RadarGetAttacksLayer3SummaryDimension._('PROTOCOL');
 
@@ -32,11 +32,11 @@ static const List<RadarGetAttacksLayer3SummaryDimension> values = [protocol, ipV
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer3SummaryDimension && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer3SummaryDimension($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer3SummaryDimension && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer3SummaryDimension($value)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscStatusInfoVariant1State {const NscStatusInfoVariant1State._(this.value);
 
-factory NscStatusInfoVariant1State.fromJson(String json) { return switch (json) {
+factory NscStatusInfoVariant1State.fromJson(String json) {return switch (json) {
   'Pending' => pending,
   _ => NscStatusInfoVariant1State._(json),
-}; }
+};}
 
 static const NscStatusInfoVariant1State pending = NscStatusInfoVariant1State._('Pending');
 
@@ -13,32 +13,32 @@ static const List<NscStatusInfoVariant1State> values = [pending];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NscStatusInfoVariant1State && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'NscStatusInfoVariant1State($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is NscStatusInfoVariant1State && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'NscStatusInfoVariant1State($value)';}
+}
 @immutable final class NscStatusInfoVariant1 {const NscStatusInfoVariant1({required this.state});
 
-factory NscStatusInfoVariant1.fromJson(Map<String, dynamic> json) { return NscStatusInfoVariant1(
+factory NscStatusInfoVariant1.fromJson(Map<String, dynamic> json) {return NscStatusInfoVariant1(
   state: NscStatusInfoVariant1State.fromJson(json['state'] as String),
-); }
+);}
 
 final NscStatusInfoVariant1State state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'state': state.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('state'); } 
-NscStatusInfoVariant1 copyWith({NscStatusInfoVariant1State? state}) { return NscStatusInfoVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('state');}
+NscStatusInfoVariant1 copyWith({NscStatusInfoVariant1State? state}) {return NscStatusInfoVariant1(
   state: state ?? this.state,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is NscStatusInfoVariant1 &&
-          state == other.state; } 
-@override int get hashCode { return state.hashCode; } 
-@override String toString() { return 'NscStatusInfoVariant1(state: $state)'; } 
- }
+          state == other.state;}
+@override int get hashCode {return state.hashCode;}
+@override String toString() {return 'NscStatusInfoVariant1(state: $state)';}
+}

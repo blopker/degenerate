@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupCompromised {const RadarGetLeakedCredentialChecksTimeseriesGroupCompromised._(this.value);
 
-factory RadarGetLeakedCredentialChecksTimeseriesGroupCompromised.fromJson(String json) { return switch (json) {
+factory RadarGetLeakedCredentialChecksTimeseriesGroupCompromised.fromJson(String json) {return switch (json) {
   'CLEAN' => clean,
   'COMPROMISED' => compromised,
   _ => RadarGetLeakedCredentialChecksTimeseriesGroupCompromised._(json),
-}; }
+};}
 
 static const RadarGetLeakedCredentialChecksTimeseriesGroupCompromised clean = RadarGetLeakedCredentialChecksTimeseriesGroupCompromised._('CLEAN');
 
@@ -16,11 +16,11 @@ static const List<RadarGetLeakedCredentialChecksTimeseriesGroupCompromised> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetLeakedCredentialChecksTimeseriesGroupCompromised && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetLeakedCredentialChecksTimeseriesGroupCompromised($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetLeakedCredentialChecksTimeseriesGroupCompromised && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetLeakedCredentialChecksTimeseriesGroupCompromised($value)';}
+}

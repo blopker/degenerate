@@ -9,7 +9,7 @@ String toJson() => value;
 }
 @immutable final class ObservatoryPageTest {const ObservatoryPageTest({this.date, this.desktopReport, this.id, this.mobileReport, this.region, this.scheduleFrequency, this.url, });
 
-factory ObservatoryPageTest.fromJson(Map<String, dynamic> json) { return ObservatoryPageTest(
+factory ObservatoryPageTest.fromJson(Map<String, dynamic> json) {return ObservatoryPageTest(
   date: json['date'] != null ? ObservatoryTimestamp.fromJson(json['date'] as String) : null,
   desktopReport: json['desktopReport'] != null ? ObservatoryLighthouseReport.fromJson(json['desktopReport'] as Map<String, dynamic>) : null,
   id: json['id'] != null ? ObservatoryUuid.fromJson(json['id'] as String) : null,
@@ -17,7 +17,7 @@ factory ObservatoryPageTest.fromJson(Map<String, dynamic> json) { return Observa
   region: json['region'] != null ? ObservatoryLabeledRegion.fromJson(json['region'] as Map<String, dynamic>) : null,
   scheduleFrequency: json['scheduleFrequency'] != null ? ObservatoryScheduleFrequency.fromJson(json['scheduleFrequency'] as String) : null,
   url: json['url'] != null ? ObservatoryUrl.fromJson(json['url'] as String) : null,
-); }
+);}
 
 final ObservatoryTimestamp? date;
 
@@ -33,7 +33,7 @@ final ObservatoryScheduleFrequency? scheduleFrequency;
 
 final ObservatoryUrl? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (date != null) 'date': date?.toJson(),
   if (desktopReport != null) 'desktopReport': desktopReport?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -41,9 +41,9 @@ Map<String, dynamic> toJson() { return {
   if (region != null) 'region': region?.toJson(),
   if (scheduleFrequency != null) 'scheduleFrequency': scheduleFrequency?.toJson(),
   if (url != null) 'url': url?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date', 'desktopReport', 'id', 'mobileReport', 'region', 'scheduleFrequency', 'url'}.contains(key)); } 
-ObservatoryPageTest copyWith({ObservatoryTimestamp? Function()? date, ObservatoryLighthouseReport? Function()? desktopReport, ObservatoryUuid? Function()? id, ObservatoryLighthouseReport? Function()? mobileReport, ObservatoryLabeledRegion? Function()? region, ObservatoryScheduleFrequency? Function()? scheduleFrequency, ObservatoryUrl? Function()? url, }) { return ObservatoryPageTest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'date', 'desktopReport', 'id', 'mobileReport', 'region', 'scheduleFrequency', 'url'}.contains(key));}
+ObservatoryPageTest copyWith({ObservatoryTimestamp? Function()? date, ObservatoryLighthouseReport? Function()? desktopReport, ObservatoryUuid? Function()? id, ObservatoryLighthouseReport? Function()? mobileReport, ObservatoryLabeledRegion? Function()? region, ObservatoryScheduleFrequency? Function()? scheduleFrequency, ObservatoryUrl? Function()? url, }) {return ObservatoryPageTest(
   date: date != null ? date() : this.date,
   desktopReport: desktopReport != null ? desktopReport() : this.desktopReport,
   id: id != null ? id() : this.id,
@@ -51,8 +51,8 @@ ObservatoryPageTest copyWith({ObservatoryTimestamp? Function()? date, Observator
   region: region != null ? region() : this.region,
   scheduleFrequency: scheduleFrequency != null ? scheduleFrequency() : this.scheduleFrequency,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ObservatoryPageTest &&
           date == other.date &&
           desktopReport == other.desktopReport &&
@@ -60,7 +60,7 @@ ObservatoryPageTest copyWith({ObservatoryTimestamp? Function()? date, Observator
           mobileReport == other.mobileReport &&
           region == other.region &&
           scheduleFrequency == other.scheduleFrequency &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(date, desktopReport, id, mobileReport, region, scheduleFrequency, url); } 
-@override String toString() { return 'ObservatoryPageTest(date: $date, desktopReport: $desktopReport, id: $id, mobileReport: $mobileReport, region: $region, scheduleFrequency: $scheduleFrequency, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(date, desktopReport, id, mobileReport, region, scheduleFrequency, url);}
+@override String toString() {return 'ObservatoryPageTest(date: $date, desktopReport: $desktopReport, id: $id, mobileReport: $mobileReport, region: $region, scheduleFrequency: $scheduleFrequency, url: $url)';}
+}

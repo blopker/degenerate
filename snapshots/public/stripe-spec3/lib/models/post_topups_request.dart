@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_topups_request_metadata.dart';@immutable final class PostTopupsRequest {const PostTopupsRequest({required this.amount, required this.currency, this.description, this.expand, this.metadata, this.source, this.statementDescriptor, this.transferGroup, });
 
-factory PostTopupsRequest.fromJson(Map<String, dynamic> json) { return PostTopupsRequest(
+factory PostTopupsRequest.fromJson(Map<String, dynamic> json) {return PostTopupsRequest(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
@@ -11,7 +11,7 @@ factory PostTopupsRequest.fromJson(Map<String, dynamic> json) { return PostTopup
   source: json['source'] as String?,
   statementDescriptor: json['statement_descriptor'] as String?,
   transferGroup: json['transfer_group'] as String?,
-); }
+);}
 
 /// A positive integer representing how much to transfer.
 final int amount;
@@ -37,7 +37,7 @@ final String? statementDescriptor;
 /// A string that identifies this top-up as part of a group.
 final String? transferGroup;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   'description': ?description,
@@ -46,10 +46,10 @@ Map<String, dynamic> toJson() { return {
   'source': ?source,
   'statement_descriptor': ?statementDescriptor,
   'transfer_group': ?transferGroup,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
-      json.containsKey('currency') && json['currency'] is String; } 
-PostTopupsRequest copyWith({int? amount, String? currency, String? Function()? description, List<String>? Function()? expand, PostTopupsRequestMetadata? Function()? metadata, String? Function()? source, String? Function()? statementDescriptor, String? Function()? transferGroup, }) { return PostTopupsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('currency') && json['currency'] is String;}
+PostTopupsRequest copyWith({int? amount, String? currency, String? Function()? description, List<String>? Function()? expand, PostTopupsRequestMetadata? Function()? metadata, String? Function()? source, String? Function()? statementDescriptor, String? Function()? transferGroup, }) {return PostTopupsRequest(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,
@@ -58,8 +58,8 @@ PostTopupsRequest copyWith({int? amount, String? currency, String? Function()? d
   source: source != null ? source() : this.source,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTopupsRequest &&
           amount == other.amount &&
           currency == other.currency &&
@@ -68,7 +68,7 @@ PostTopupsRequest copyWith({int? amount, String? currency, String? Function()? d
           metadata == other.metadata &&
           source == other.source &&
           statementDescriptor == other.statementDescriptor &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(amount, currency, description, Object.hashAll(expand ?? const []), metadata, source, statementDescriptor, transferGroup); } 
-@override String toString() { return 'PostTopupsRequest(amount: $amount, currency: $currency, description: $description, expand: $expand, metadata: $metadata, source: $source, statementDescriptor: $statementDescriptor, transferGroup: $transferGroup)'; } 
- }
+          transferGroup == other.transferGroup;}
+@override int get hashCode {return Object.hash(amount, currency, description, Object.hashAll(expand ?? const []), metadata, source, statementDescriptor, transferGroup);}
+@override String toString() {return 'PostTopupsRequest(amount: $amount, currency: $currency, description: $description, expand: $expand, metadata: $metadata, source: $source, statementDescriptor: $statementDescriptor, transferGroup: $transferGroup)';}
+}

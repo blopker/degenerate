@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostQuotesRequestFooterVariant2 {const PostQuotesRequestFooterVariant2._(this.value);
 
-factory PostQuotesRequestFooterVariant2.fromJson(String json) { return switch (json) {
+factory PostQuotesRequestFooterVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostQuotesRequestFooterVariant2._(json),
-}; }
+};}
 
 static const PostQuotesRequestFooterVariant2 $empty = PostQuotesRequestFooterVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostQuotesRequestFooterVariant2> values = [$empty];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostQuotesRequestFooterVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostQuotesRequestFooterVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostQuotesRequestFooterVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostQuotesRequestFooterVariant2($value)';}
+}
 /// A footer that will be displayed on the quote PDF. If no value is passed, the default footer configured in your [quote template settings](https://dashboard.stripe.com/settings/billing/quote) will be used.
 @immutable
 final class PostQuotesRequestFooter {

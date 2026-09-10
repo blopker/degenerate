@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Dimension to sort results by
 @immutable final class DigitalExperienceMonitoringSortBy {const DigitalExperienceMonitoringSortBy._(this.value);
 
-factory DigitalExperienceMonitoringSortBy.fromJson(String json) { return switch (json) {
+factory DigitalExperienceMonitoringSortBy.fromJson(String json) {return switch (json) {
   'colo' => colo,
   'device_id' => deviceId,
   'mode' => mode,
@@ -12,7 +12,7 @@ factory DigitalExperienceMonitoringSortBy.fromJson(String json) { return switch 
   'timestamp' => timestamp,
   'version' => version,
   _ => DigitalExperienceMonitoringSortBy._(json),
-}; }
+};}
 
 static const DigitalExperienceMonitoringSortBy colo = DigitalExperienceMonitoringSortBy._('colo');
 
@@ -32,11 +32,11 @@ static const List<DigitalExperienceMonitoringSortBy> values = [colo, deviceId, m
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DigitalExperienceMonitoringSortBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DigitalExperienceMonitoringSortBy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DigitalExperienceMonitoringSortBy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DigitalExperienceMonitoringSortBy($value)';}
+}

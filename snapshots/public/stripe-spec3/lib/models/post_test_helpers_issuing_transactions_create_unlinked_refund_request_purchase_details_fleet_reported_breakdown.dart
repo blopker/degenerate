@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_transactions_create_unlinked_refund_request_purchase_details_fleet_reported_breakdown_fuel.dart';import 'post_test_helpers_issuing_transactions_create_unlinked_refund_request_purchase_details_fleet_reported_breakdown_non_fuel.dart';import 'post_test_helpers_issuing_transactions_create_unlinked_refund_request_purchase_details_fleet_reported_breakdown_tax.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown({this.fuel, this.nonFuel, this.tax, });
 
-factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown(
+factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown(
   fuel: json['fuel'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownFuel.fromJson(json['fuel'] as Map<String, dynamic>) : null,
   nonFuel: json['non_fuel'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownNonFuel.fromJson(json['non_fuel'] as Map<String, dynamic>) : null,
   tax: json['tax'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownFuel? fuel;
 
@@ -14,22 +14,22 @@ final PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetai
 
 final PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownTax? tax;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (fuel != null) 'fuel': fuel?.toJson(),
   if (nonFuel != null) 'non_fuel': nonFuel?.toJson(),
   if (tax != null) 'tax': tax?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fuel', 'non_fuel', 'tax'}.contains(key)); } 
-PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown copyWith({PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownFuel? Function()? fuel, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownNonFuel? Function()? nonFuel, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownTax? Function()? tax, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'fuel', 'non_fuel', 'tax'}.contains(key));}
+PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown copyWith({PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownFuel? Function()? fuel, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownNonFuel? Function()? nonFuel, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownTax? Function()? tax, }) {return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown(
   fuel: fuel != null ? fuel() : this.fuel,
   nonFuel: nonFuel != null ? nonFuel() : this.nonFuel,
   tax: tax != null ? tax() : this.tax,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown &&
           fuel == other.fuel &&
           nonFuel == other.nonFuel &&
-          tax == other.tax; } 
-@override int get hashCode { return Object.hash(fuel, nonFuel, tax); } 
-@override String toString() { return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown(fuel: $fuel, nonFuel: $nonFuel, tax: $tax)'; } 
- }
+          tax == other.tax;}
+@override int get hashCode {return Object.hash(fuel, nonFuel, tax);}
+@override String toString() {return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown(fuel: $fuel, nonFuel: $nonFuel, tax: $tax)';}
+}

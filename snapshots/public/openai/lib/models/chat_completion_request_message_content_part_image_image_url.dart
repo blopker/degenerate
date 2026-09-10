@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision#low-or-high-fidelity-image-understanding).
 @immutable final class ChatCompletionRequestMessageContentPartImageImageUrlDetail {const ChatCompletionRequestMessageContentPartImageImageUrlDetail._(this.value);
 
-factory ChatCompletionRequestMessageContentPartImageImageUrlDetail.fromJson(String json) { return switch (json) {
+factory ChatCompletionRequestMessageContentPartImageImageUrlDetail.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'low' => low,
   'high' => high,
   _ => ChatCompletionRequestMessageContentPartImageImageUrlDetail._(json),
-}; }
+};}
 
 static const ChatCompletionRequestMessageContentPartImageImageUrlDetail auto = ChatCompletionRequestMessageContentPartImageImageUrlDetail._('auto');
 
@@ -20,20 +20,20 @@ static const List<ChatCompletionRequestMessageContentPartImageImageUrlDetail> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionRequestMessageContentPartImageImageUrlDetail && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestMessageContentPartImageImageUrlDetail($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ChatCompletionRequestMessageContentPartImageImageUrlDetail && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ChatCompletionRequestMessageContentPartImageImageUrlDetail($value)';}
+}
 @immutable final class ChatCompletionRequestMessageContentPartImageImageUrl {const ChatCompletionRequestMessageContentPartImageImageUrl({required this.url, this.detail, });
 
-factory ChatCompletionRequestMessageContentPartImageImageUrl.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageContentPartImageImageUrl(
+factory ChatCompletionRequestMessageContentPartImageImageUrl.fromJson(Map<String, dynamic> json) {return ChatCompletionRequestMessageContentPartImageImageUrl(
   url: Uri.parse(json['url'] as String),
   detail: json['detail'] != null ? ChatCompletionRequestMessageContentPartImageImageUrlDetail.fromJson(json['detail'] as String) : null,
-); }
+);}
 
 /// Either a URL of the image or the base64 encoded image data.
 final Uri url;
@@ -42,20 +42,20 @@ final Uri url;
 final ChatCompletionRequestMessageContentPartImageImageUrlDetail? detail;
 
 /// The value with the schema default applied when absent.
-ChatCompletionRequestMessageContentPartImageImageUrlDetail get detailOrDefault { return detail ?? ChatCompletionRequestMessageContentPartImageImageUrlDetail.fromJson('auto'); } 
-Map<String, dynamic> toJson() { return {
+ChatCompletionRequestMessageContentPartImageImageUrlDetail get detailOrDefault {return detail ?? ChatCompletionRequestMessageContentPartImageImageUrlDetail.fromJson('auto');}
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   if (detail != null) 'detail': detail?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-ChatCompletionRequestMessageContentPartImageImageUrl copyWith({Uri? url, ChatCompletionRequestMessageContentPartImageImageUrlDetail? Function()? detail, }) { return ChatCompletionRequestMessageContentPartImageImageUrl(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String;}
+ChatCompletionRequestMessageContentPartImageImageUrl copyWith({Uri? url, ChatCompletionRequestMessageContentPartImageImageUrlDetail? Function()? detail, }) {return ChatCompletionRequestMessageContentPartImageImageUrl(
   url: url ?? this.url,
   detail: detail != null ? detail() : this.detail,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ChatCompletionRequestMessageContentPartImageImageUrl &&
           url == other.url &&
-          detail == other.detail; } 
-@override int get hashCode { return Object.hash(url, detail); } 
-@override String toString() { return 'ChatCompletionRequestMessageContentPartImageImageUrl(url: $url, detail: $detail)'; } 
- }
+          detail == other.detail;}
+@override int get hashCode {return Object.hash(url, detail);}
+@override String toString() {return 'ChatCompletionRequestMessageContentPartImageImageUrl(url: $url, detail: $detail)';}
+}

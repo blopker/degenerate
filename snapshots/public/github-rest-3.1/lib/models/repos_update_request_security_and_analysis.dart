@@ -10,7 +10,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update
 /// You can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request.
 @immutable final class ReposUpdateRequestSecurityAndAnalysis {const ReposUpdateRequestSecurityAndAnalysis({this.advancedSecurity, this.codeSecurity, this.secretScanning, this.secretScanningPushProtection, this.secretScanningAiDetection, this.secretScanningNonProviderPatterns, this.secretScanningDelegatedAlertDismissal, this.secretScanningDelegatedBypass, this.secretScanningDelegatedBypassOptions, });
 
-factory ReposUpdateRequestSecurityAndAnalysis.fromJson(Map<String, dynamic> json) { return ReposUpdateRequestSecurityAndAnalysis(
+factory ReposUpdateRequestSecurityAndAnalysis.fromJson(Map<String, dynamic> json) {return ReposUpdateRequestSecurityAndAnalysis(
   advancedSecurity: json['advanced_security'] != null ? ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity.fromJson(json['advanced_security'] as Map<String, dynamic>) : null,
   codeSecurity: json['code_security'] != null ? ReposUpdateRequestSecurityAndAnalysisCodeSecurity.fromJson(json['code_security'] as Map<String, dynamic>) : null,
   secretScanning: json['secret_scanning'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanning.fromJson(json['secret_scanning'] as Map<String, dynamic>) : null,
@@ -20,7 +20,7 @@ factory ReposUpdateRequestSecurityAndAnalysis.fromJson(Map<String, dynamic> json
   secretScanningDelegatedAlertDismissal: json['secret_scanning_delegated_alert_dismissal'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedAlertDismissal.fromJson(json['secret_scanning_delegated_alert_dismissal'] as Map<String, dynamic>) : null,
   secretScanningDelegatedBypass: json['secret_scanning_delegated_bypass'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypass.fromJson(json['secret_scanning_delegated_bypass'] as Map<String, dynamic>) : null,
   secretScanningDelegatedBypassOptions: json['secret_scanning_delegated_bypass_options'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions.fromJson(json['secret_scanning_delegated_bypass_options'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Use the `status` property to enable or disable GitHub Advanced Security for this repository.
 /// For more information, see "[About GitHub Advanced
@@ -55,7 +55,7 @@ final ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypass? secret
 /// You can send this object in the same request as `secret_scanning_delegated_bypass`, or update just the options in a separate request.
 final ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions? secretScanningDelegatedBypassOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (advancedSecurity != null) 'advanced_security': advancedSecurity?.toJson(),
   if (codeSecurity != null) 'code_security': codeSecurity?.toJson(),
   if (secretScanning != null) 'secret_scanning': secretScanning?.toJson(),
@@ -65,9 +65,9 @@ Map<String, dynamic> toJson() { return {
   if (secretScanningDelegatedAlertDismissal != null) 'secret_scanning_delegated_alert_dismissal': secretScanningDelegatedAlertDismissal?.toJson(),
   if (secretScanningDelegatedBypass != null) 'secret_scanning_delegated_bypass': secretScanningDelegatedBypass?.toJson(),
   if (secretScanningDelegatedBypassOptions != null) 'secret_scanning_delegated_bypass_options': secretScanningDelegatedBypassOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'advanced_security', 'code_security', 'secret_scanning', 'secret_scanning_push_protection', 'secret_scanning_ai_detection', 'secret_scanning_non_provider_patterns', 'secret_scanning_delegated_alert_dismissal', 'secret_scanning_delegated_bypass', 'secret_scanning_delegated_bypass_options'}.contains(key)); } 
-ReposUpdateRequestSecurityAndAnalysis copyWith({ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity? Function()? advancedSecurity, ReposUpdateRequestSecurityAndAnalysisCodeSecurity? Function()? codeSecurity, ReposUpdateRequestSecurityAndAnalysisSecretScanning? Function()? secretScanning, ReposUpdateRequestSecurityAndAnalysisSecretScanningPushProtection? Function()? secretScanningPushProtection, ReposUpdateRequestSecurityAndAnalysisSecretScanningAiDetection? Function()? secretScanningAiDetection, ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns? Function()? secretScanningNonProviderPatterns, ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedAlertDismissal? Function()? secretScanningDelegatedAlertDismissal, ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypass? Function()? secretScanningDelegatedBypass, ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions? Function()? secretScanningDelegatedBypassOptions, }) { return ReposUpdateRequestSecurityAndAnalysis(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'advanced_security', 'code_security', 'secret_scanning', 'secret_scanning_push_protection', 'secret_scanning_ai_detection', 'secret_scanning_non_provider_patterns', 'secret_scanning_delegated_alert_dismissal', 'secret_scanning_delegated_bypass', 'secret_scanning_delegated_bypass_options'}.contains(key));}
+ReposUpdateRequestSecurityAndAnalysis copyWith({ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity? Function()? advancedSecurity, ReposUpdateRequestSecurityAndAnalysisCodeSecurity? Function()? codeSecurity, ReposUpdateRequestSecurityAndAnalysisSecretScanning? Function()? secretScanning, ReposUpdateRequestSecurityAndAnalysisSecretScanningPushProtection? Function()? secretScanningPushProtection, ReposUpdateRequestSecurityAndAnalysisSecretScanningAiDetection? Function()? secretScanningAiDetection, ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns? Function()? secretScanningNonProviderPatterns, ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedAlertDismissal? Function()? secretScanningDelegatedAlertDismissal, ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypass? Function()? secretScanningDelegatedBypass, ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions? Function()? secretScanningDelegatedBypassOptions, }) {return ReposUpdateRequestSecurityAndAnalysis(
   advancedSecurity: advancedSecurity != null ? advancedSecurity() : this.advancedSecurity,
   codeSecurity: codeSecurity != null ? codeSecurity() : this.codeSecurity,
   secretScanning: secretScanning != null ? secretScanning() : this.secretScanning,
@@ -77,8 +77,8 @@ ReposUpdateRequestSecurityAndAnalysis copyWith({ReposUpdateRequestSecurityAndAna
   secretScanningDelegatedAlertDismissal: secretScanningDelegatedAlertDismissal != null ? secretScanningDelegatedAlertDismissal() : this.secretScanningDelegatedAlertDismissal,
   secretScanningDelegatedBypass: secretScanningDelegatedBypass != null ? secretScanningDelegatedBypass() : this.secretScanningDelegatedBypass,
   secretScanningDelegatedBypassOptions: secretScanningDelegatedBypassOptions != null ? secretScanningDelegatedBypassOptions() : this.secretScanningDelegatedBypassOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReposUpdateRequestSecurityAndAnalysis &&
           advancedSecurity == other.advancedSecurity &&
           codeSecurity == other.codeSecurity &&
@@ -88,7 +88,7 @@ ReposUpdateRequestSecurityAndAnalysis copyWith({ReposUpdateRequestSecurityAndAna
           secretScanningNonProviderPatterns == other.secretScanningNonProviderPatterns &&
           secretScanningDelegatedAlertDismissal == other.secretScanningDelegatedAlertDismissal &&
           secretScanningDelegatedBypass == other.secretScanningDelegatedBypass &&
-          secretScanningDelegatedBypassOptions == other.secretScanningDelegatedBypassOptions; } 
-@override int get hashCode { return Object.hash(advancedSecurity, codeSecurity, secretScanning, secretScanningPushProtection, secretScanningAiDetection, secretScanningNonProviderPatterns, secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions); } 
-@override String toString() { return 'ReposUpdateRequestSecurityAndAnalysis(advancedSecurity: $advancedSecurity, codeSecurity: $codeSecurity, secretScanning: $secretScanning, secretScanningPushProtection: $secretScanningPushProtection, secretScanningAiDetection: $secretScanningAiDetection, secretScanningNonProviderPatterns: $secretScanningNonProviderPatterns, secretScanningDelegatedAlertDismissal: $secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass: $secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions: $secretScanningDelegatedBypassOptions)'; } 
- }
+          secretScanningDelegatedBypassOptions == other.secretScanningDelegatedBypassOptions;}
+@override int get hashCode {return Object.hash(advancedSecurity, codeSecurity, secretScanning, secretScanningPushProtection, secretScanningAiDetection, secretScanningNonProviderPatterns, secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions);}
+@override String toString() {return 'ReposUpdateRequestSecurityAndAnalysis(advancedSecurity: $advancedSecurity, codeSecurity: $codeSecurity, secretScanning: $secretScanning, secretScanningPushProtection: $secretScanningPushProtection, secretScanningAiDetection: $secretScanningAiDetection, secretScanningNonProviderPatterns: $secretScanningNonProviderPatterns, secretScanningDelegatedAlertDismissal: $secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass: $secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions: $secretScanningDelegatedBypassOptions)';}
+}

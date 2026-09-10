@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_network_token_network_data.dart';import 'issuing_token_card.dart';/// The token service provider / card network associated with the token.
 @immutable final class IssuingTokenNetwork {const IssuingTokenNetwork._(this.value);
 
-factory IssuingTokenNetwork.fromJson(String json) { return switch (json) {
+factory IssuingTokenNetwork.fromJson(String json) {return switch (json) {
   'mastercard' => mastercard,
   'visa' => visa,
   _ => IssuingTokenNetwork._(json),
-}; }
+};}
 
 static const IssuingTokenNetwork mastercard = IssuingTokenNetwork._('mastercard');
 
@@ -17,21 +17,21 @@ static const List<IssuingTokenNetwork> values = [mastercard, visa];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingTokenNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingTokenNetwork($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingTokenNetwork && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingTokenNetwork($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IssuingTokenObject {const IssuingTokenObject._(this.value);
 
-factory IssuingTokenObject.fromJson(String json) { return switch (json) {
+factory IssuingTokenObject.fromJson(String json) {return switch (json) {
   'issuing.token' => issuingToken,
   _ => IssuingTokenObject._(json),
-}; }
+};}
 
 static const IssuingTokenObject issuingToken = IssuingTokenObject._('issuing.token');
 
@@ -39,24 +39,24 @@ static const List<IssuingTokenObject> values = [issuingToken];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingTokenObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingTokenObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingTokenObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingTokenObject($value)';}
+}
 /// The usage state of the token.
 @immutable final class IssuingTokenStatus {const IssuingTokenStatus._(this.value);
 
-factory IssuingTokenStatus.fromJson(String json) { return switch (json) {
+factory IssuingTokenStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'deleted' => deleted,
   'requested' => requested,
   'suspended' => suspended,
   _ => IssuingTokenStatus._(json),
-}; }
+};}
 
 static const IssuingTokenStatus active = IssuingTokenStatus._('active');
 
@@ -70,23 +70,23 @@ static const List<IssuingTokenStatus> values = [active, deleted, requested, susp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingTokenStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingTokenStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingTokenStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingTokenStatus($value)';}
+}
 /// The digital wallet for this token, if one was used.
 @immutable final class IssuingTokenWalletProvider {const IssuingTokenWalletProvider._(this.value);
 
-factory IssuingTokenWalletProvider.fromJson(String json) { return switch (json) {
+factory IssuingTokenWalletProvider.fromJson(String json) {return switch (json) {
   'apple_pay' => applePay,
   'google_pay' => googlePay,
   'samsung_pay' => samsungPay,
   _ => IssuingTokenWalletProvider._(json),
-}; }
+};}
 
 static const IssuingTokenWalletProvider applePay = IssuingTokenWalletProvider._('apple_pay');
 
@@ -98,18 +98,18 @@ static const List<IssuingTokenWalletProvider> values = [applePay, googlePay, sam
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingTokenWalletProvider && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingTokenWalletProvider($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingTokenWalletProvider && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingTokenWalletProvider($value)';}
+}
 /// An issuing token object is created when an issued card is added to a digital wallet. As a [card issuer](https://docs.stripe.com/issuing), you can [view and manage these tokens](https://docs.stripe.com/issuing/controls/token-management) through Stripe.
 @immutable final class IssuingToken {const IssuingToken({required this.card, required this.created, required this.id, required this.livemode, required this.network, required this.networkUpdatedAt, required this.object, required this.status, this.deviceFingerprint = const Omittable.absent(), this.last4, this.networkData, this.walletProvider, });
 
-factory IssuingToken.fromJson(Map<String, dynamic> json) { return IssuingToken(
+factory IssuingToken.fromJson(Map<String, dynamic> json) {return IssuingToken(
   card: IssuingTokenCard.fromJson(json['card']),
   created: (json['created'] as num).toInt(),
   deviceFingerprint: json.containsKey('device_fingerprint') ? Omittable(json['device_fingerprint'] as String?) : const Omittable.absent(),
@@ -122,7 +122,7 @@ factory IssuingToken.fromJson(Map<String, dynamic> json) { return IssuingToken(
   object: IssuingTokenObject.fromJson(json['object'] as String),
   status: IssuingTokenStatus.fromJson(json['status'] as String),
   walletProvider: json['wallet_provider'] != null ? IssuingTokenWalletProvider.fromJson(json['wallet_provider'] as String) : null,
-); }
+);}
 
 /// Card associated with this token.
 final IssuingTokenCard card;
@@ -159,7 +159,7 @@ final IssuingTokenStatus status;
 /// The digital wallet for this token, if one was used.
 final IssuingTokenWalletProvider? walletProvider;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'card': card.toJson(),
   'created': created,
   if (deviceFingerprint.isPresent) 'device_fingerprint': deviceFingerprint.value,
@@ -172,16 +172,16 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'status': status.toJson(),
   if (walletProvider != null) 'wallet_provider': walletProvider?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('card') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('card') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('network') &&
       json.containsKey('network_updated_at') && json['network_updated_at'] is num &&
       json.containsKey('object') &&
-      json.containsKey('status'); } 
-IssuingToken copyWith({IssuingTokenCard? card, int? created, Omittable<String?>? deviceFingerprint, String? id, String? Function()? last4, bool? livemode, IssuingTokenNetwork? network, IssuingNetworkTokenNetworkData? Function()? networkData, int? networkUpdatedAt, IssuingTokenObject? object, IssuingTokenStatus? status, IssuingTokenWalletProvider? Function()? walletProvider, }) { return IssuingToken(
+      json.containsKey('status');}
+IssuingToken copyWith({IssuingTokenCard? card, int? created, Omittable<String?>? deviceFingerprint, String? id, String? Function()? last4, bool? livemode, IssuingTokenNetwork? network, IssuingNetworkTokenNetworkData? Function()? networkData, int? networkUpdatedAt, IssuingTokenObject? object, IssuingTokenStatus? status, IssuingTokenWalletProvider? Function()? walletProvider, }) {return IssuingToken(
   card: card ?? this.card,
   created: created ?? this.created,
   deviceFingerprint: deviceFingerprint ?? this.deviceFingerprint,
@@ -194,8 +194,8 @@ IssuingToken copyWith({IssuingTokenCard? card, int? created, Omittable<String?>?
   object: object ?? this.object,
   status: status ?? this.status,
   walletProvider: walletProvider != null ? walletProvider() : this.walletProvider,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingToken &&
           card == other.card &&
           created == other.created &&
@@ -208,7 +208,7 @@ IssuingToken copyWith({IssuingTokenCard? card, int? created, Omittable<String?>?
           networkUpdatedAt == other.networkUpdatedAt &&
           object == other.object &&
           status == other.status &&
-          walletProvider == other.walletProvider; } 
-@override int get hashCode { return Object.hash(card, created, deviceFingerprint, id, last4, livemode, network, networkData, networkUpdatedAt, object, status, walletProvider); } 
-@override String toString() { return 'IssuingToken(card: $card, created: $created, deviceFingerprint: $deviceFingerprint, id: $id, last4: $last4, livemode: $livemode, network: $network, networkData: $networkData, networkUpdatedAt: $networkUpdatedAt, object: $object, status: $status, walletProvider: $walletProvider)'; } 
- }
+          walletProvider == other.walletProvider;}
+@override int get hashCode {return Object.hash(card, created, deviceFingerprint, id, last4, livemode, network, networkData, networkUpdatedAt, object, status, walletProvider);}
+@override String toString() {return 'IssuingToken(card: $card, created: $created, deviceFingerprint: $deviceFingerprint, id: $id, last4: $last4, livemode: $livemode, network: $network, networkData: $networkData, networkUpdatedAt: $networkUpdatedAt, object: $object, status: $status, walletProvider: $walletProvider)';}
+}

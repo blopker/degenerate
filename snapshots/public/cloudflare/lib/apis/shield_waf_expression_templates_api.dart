@@ -13,7 +13,7 @@ final class ShieldWafExpressionTemplatesApi with ApiExecutor {const ShieldWafExp
 /// Creates an expression template fallthrough rule for API Shield. Used for configuring default behavior when no other expression templates match.
 ///
 /// `POST /zones/{zone_id}/api_gateway/expression-template/fallthrough`
-Future<ApiResult<ShieldResponseExpressionTemplatesFallthrough, ResponseCommonFailure7>> apiShieldExpressionTemplatesFallthrough({required ShieldIdentifier zoneId, required ShieldRequestExpressionTemplatesFallthrough body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldResponseExpressionTemplatesFallthrough, ResponseCommonFailure7>> apiShieldExpressionTemplatesFallthrough({required ShieldIdentifier zoneId, required ShieldRequestExpressionTemplatesFallthrough body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -41,5 +41,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

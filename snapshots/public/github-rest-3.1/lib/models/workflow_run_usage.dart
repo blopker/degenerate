@@ -3,28 +3,28 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workflow_run_usage_billable.dart';/// Workflow Run Usage
 @immutable final class WorkflowRunUsage {const WorkflowRunUsage({required this.billable, this.runDurationMs, });
 
-factory WorkflowRunUsage.fromJson(Map<String, dynamic> json) { return WorkflowRunUsage(
+factory WorkflowRunUsage.fromJson(Map<String, dynamic> json) {return WorkflowRunUsage(
   billable: WorkflowRunUsageBillable.fromJson(json['billable'] as Map<String, dynamic>),
   runDurationMs: json['run_duration_ms'] != null ? (json['run_duration_ms'] as num).toInt() : null,
-); }
+);}
 
 final WorkflowRunUsageBillable billable;
 
 final int? runDurationMs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'billable': billable.toJson(),
   'run_duration_ms': ?runDurationMs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('billable'); } 
-WorkflowRunUsage copyWith({WorkflowRunUsageBillable? billable, int? Function()? runDurationMs, }) { return WorkflowRunUsage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('billable');}
+WorkflowRunUsage copyWith({WorkflowRunUsageBillable? billable, int? Function()? runDurationMs, }) {return WorkflowRunUsage(
   billable: billable ?? this.billable,
   runDurationMs: runDurationMs != null ? runDurationMs() : this.runDurationMs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkflowRunUsage &&
           billable == other.billable &&
-          runDurationMs == other.runDurationMs; } 
-@override int get hashCode { return Object.hash(billable, runDurationMs); } 
-@override String toString() { return 'WorkflowRunUsage(billable: $billable, runDurationMs: $runDurationMs)'; } 
- }
+          runDurationMs == other.runDurationMs;}
+@override int get hashCode {return Object.hash(billable, runDurationMs);}
+@override String toString() {return 'WorkflowRunUsage(billable: $billable, runDurationMs: $runDurationMs)';}
+}

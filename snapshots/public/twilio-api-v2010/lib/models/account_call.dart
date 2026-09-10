@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'call_enum_status.dart';@immutable final class AccountCall {const AccountCall({this.sid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.parentCallSid = const Omittable.absent(), this.accountSid = const Omittable.absent(), this.to = const Omittable.absent(), this.toFormatted = const Omittable.absent(), this.from = const Omittable.absent(), this.fromFormatted = const Omittable.absent(), this.phoneNumberSid = const Omittable.absent(), this.status, this.startTime = const Omittable.absent(), this.endTime = const Omittable.absent(), this.duration = const Omittable.absent(), this.price = const Omittable.absent(), this.priceUnit = const Omittable.absent(), this.direction = const Omittable.absent(), this.answeredBy = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.forwardedFrom = const Omittable.absent(), this.groupSid = const Omittable.absent(), this.callerName = const Omittable.absent(), this.queueTime = const Omittable.absent(), this.trunkSid = const Omittable.absent(), this.uri = const Omittable.absent(), this.subresourceUris = const Omittable.absent(), });
 
-factory AccountCall.fromJson(Map<String, dynamic> json) { return AccountCall(
+factory AccountCall.fromJson(Map<String, dynamic> json) {return AccountCall(
   sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
   dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
   dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
@@ -29,7 +29,7 @@ factory AccountCall.fromJson(Map<String, dynamic> json) { return AccountCall(
   trunkSid: json.containsKey('trunk_sid') ? Omittable(json['trunk_sid'] as String?) : const Omittable.absent(),
   uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
   subresourceUris: json.containsKey('subresource_uris') ? Omittable(json['subresource_uris'] as Map<String, dynamic>?) : const Omittable.absent(),
-); }
+);}
 
 /// The unique string that we created to identify this Call resource.
 final Omittable<String?> sid;
@@ -108,7 +108,7 @@ final Omittable<String?> uri;
 /// A list of subresources available to this call, identified by their URIs relative to `https://api.twilio.com`.
 final Omittable<Map<String,dynamic>?> subresourceUris;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (sid.isPresent) 'sid': sid.value,
   if (dateCreated.isPresent) 'date_created': dateCreated.value,
   if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
@@ -135,9 +135,9 @@ Map<String, dynamic> toJson() { return {
   if (trunkSid.isPresent) 'trunk_sid': trunkSid.value,
   if (uri.isPresent) 'uri': uri.value,
   if (subresourceUris.isPresent) 'subresource_uris': subresourceUris.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'date_created', 'date_updated', 'parent_call_sid', 'account_sid', 'to', 'to_formatted', 'from', 'from_formatted', 'phone_number_sid', 'status', 'start_time', 'end_time', 'duration', 'price', 'price_unit', 'direction', 'answered_by', 'api_version', 'forwarded_from', 'group_sid', 'caller_name', 'queue_time', 'trunk_sid', 'uri', 'subresource_uris'}.contains(key)); } 
-AccountCall copyWith({Omittable<String?>? sid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? parentCallSid, Omittable<String?>? accountSid, Omittable<String?>? to, Omittable<String?>? toFormatted, Omittable<String?>? from, Omittable<String?>? fromFormatted, Omittable<String?>? phoneNumberSid, CallEnumStatus? Function()? status, Omittable<String?>? startTime, Omittable<String?>? endTime, Omittable<String?>? duration, Omittable<String?>? price, Omittable<String?>? priceUnit, Omittable<String?>? direction, Omittable<String?>? answeredBy, Omittable<String?>? apiVersion, Omittable<String?>? forwardedFrom, Omittable<String?>? groupSid, Omittable<String?>? callerName, Omittable<String?>? queueTime, Omittable<String?>? trunkSid, Omittable<String?>? uri, Omittable<Map<String,dynamic>?>? subresourceUris, }) { return AccountCall(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'sid', 'date_created', 'date_updated', 'parent_call_sid', 'account_sid', 'to', 'to_formatted', 'from', 'from_formatted', 'phone_number_sid', 'status', 'start_time', 'end_time', 'duration', 'price', 'price_unit', 'direction', 'answered_by', 'api_version', 'forwarded_from', 'group_sid', 'caller_name', 'queue_time', 'trunk_sid', 'uri', 'subresource_uris'}.contains(key));}
+AccountCall copyWith({Omittable<String?>? sid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? parentCallSid, Omittable<String?>? accountSid, Omittable<String?>? to, Omittable<String?>? toFormatted, Omittable<String?>? from, Omittable<String?>? fromFormatted, Omittable<String?>? phoneNumberSid, CallEnumStatus? Function()? status, Omittable<String?>? startTime, Omittable<String?>? endTime, Omittable<String?>? duration, Omittable<String?>? price, Omittable<String?>? priceUnit, Omittable<String?>? direction, Omittable<String?>? answeredBy, Omittable<String?>? apiVersion, Omittable<String?>? forwardedFrom, Omittable<String?>? groupSid, Omittable<String?>? callerName, Omittable<String?>? queueTime, Omittable<String?>? trunkSid, Omittable<String?>? uri, Omittable<Map<String,dynamic>?>? subresourceUris, }) {return AccountCall(
   sid: sid ?? this.sid,
   dateCreated: dateCreated ?? this.dateCreated,
   dateUpdated: dateUpdated ?? this.dateUpdated,
@@ -164,8 +164,8 @@ AccountCall copyWith({Omittable<String?>? sid, Omittable<String?>? dateCreated, 
   trunkSid: trunkSid ?? this.trunkSid,
   uri: uri ?? this.uri,
   subresourceUris: subresourceUris ?? this.subresourceUris,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountCall &&
           sid == other.sid &&
           dateCreated == other.dateCreated &&
@@ -192,7 +192,7 @@ AccountCall copyWith({Omittable<String?>? sid, Omittable<String?>? dateCreated, 
           queueTime == other.queueTime &&
           trunkSid == other.trunkSid &&
           uri == other.uri &&
-          subresourceUris == other.subresourceUris; } 
-@override int get hashCode { return Object.hashAll([sid, dateCreated, dateUpdated, parentCallSid, accountSid, to, toFormatted, from, fromFormatted, phoneNumberSid, status, startTime, endTime, duration, price, priceUnit, direction, answeredBy, apiVersion, forwardedFrom, groupSid, callerName, queueTime, trunkSid, uri, subresourceUris]); } 
-@override String toString() { return 'AccountCall(sid: $sid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, parentCallSid: $parentCallSid, accountSid: $accountSid, to: $to, toFormatted: $toFormatted, from: $from, fromFormatted: $fromFormatted, phoneNumberSid: $phoneNumberSid, status: $status, startTime: $startTime, endTime: $endTime, duration: $duration, price: $price, priceUnit: $priceUnit, direction: $direction, answeredBy: $answeredBy, apiVersion: $apiVersion, forwardedFrom: $forwardedFrom, groupSid: $groupSid, callerName: $callerName, queueTime: $queueTime, trunkSid: $trunkSid, uri: $uri, subresourceUris: $subresourceUris)'; } 
- }
+          subresourceUris == other.subresourceUris;}
+@override int get hashCode {return Object.hashAll([sid, dateCreated, dateUpdated, parentCallSid, accountSid, to, toFormatted, from, fromFormatted, phoneNumberSid, status, startTime, endTime, duration, price, priceUnit, direction, answeredBy, apiVersion, forwardedFrom, groupSid, callerName, queueTime, trunkSid, uri, subresourceUris]);}
+@override String toString() {return 'AccountCall(sid: $sid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, parentCallSid: $parentCallSid, accountSid: $accountSid, to: $to, toFormatted: $toFormatted, from: $from, fromFormatted: $fromFormatted, phoneNumberSid: $phoneNumberSid, status: $status, startTime: $startTime, endTime: $endTime, duration: $duration, price: $price, priceUnit: $priceUnit, direction: $direction, answeredBy: $answeredBy, apiVersion: $apiVersion, forwardedFrom: $forwardedFrom, groupSid: $groupSid, callerName: $callerName, queueTime: $queueTime, trunkSid: $trunkSid, uri: $uri, subresourceUris: $subresourceUris)';}
+}

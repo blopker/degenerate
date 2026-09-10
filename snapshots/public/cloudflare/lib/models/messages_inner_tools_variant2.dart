@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages_inner_tools_variant2_function.dart';@immutable final class MessagesInnerToolsVariant2 {const MessagesInnerToolsVariant2({required this.function, required this.type, });
 
-factory MessagesInnerToolsVariant2.fromJson(Map<String, dynamic> json) { return MessagesInnerToolsVariant2(
+factory MessagesInnerToolsVariant2.fromJson(Map<String, dynamic> json) {return MessagesInnerToolsVariant2(
   function: MessagesInnerToolsVariant2Function.fromJson(json['function'] as Map<String, dynamic>),
   type: json['type'] as String,
-); }
+);}
 
 /// Details of the function tool.
 final MessagesInnerToolsVariant2Function function;
@@ -13,20 +13,20 @@ final MessagesInnerToolsVariant2Function function;
 /// Specifies the type of tool (e.g., 'function').
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'function': function.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('function') &&
-      json.containsKey('type') && json['type'] is String; } 
-MessagesInnerToolsVariant2 copyWith({MessagesInnerToolsVariant2Function? function, String? type, }) { return MessagesInnerToolsVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('function') &&
+      json.containsKey('type') && json['type'] is String;}
+MessagesInnerToolsVariant2 copyWith({MessagesInnerToolsVariant2Function? function, String? type, }) {return MessagesInnerToolsVariant2(
   function: function ?? this.function,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MessagesInnerToolsVariant2 &&
           function == other.function &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(function, type); } 
-@override String toString() { return 'MessagesInnerToolsVariant2(function: $function, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(function, type);}
+@override String toString() {return 'MessagesInnerToolsVariant2(function: $function, type: $type)';}
+}

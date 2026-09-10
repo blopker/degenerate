@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Instruction for deleting an existing file via the apply_patch tool.
 @immutable final class ApplyPatchDeleteFileOperationParam {const ApplyPatchDeleteFileOperationParam({required this.type, required this.path, });
 
-factory ApplyPatchDeleteFileOperationParam.fromJson(Map<String, dynamic> json) { return ApplyPatchDeleteFileOperationParam(
+factory ApplyPatchDeleteFileOperationParam.fromJson(Map<String, dynamic> json) {return ApplyPatchDeleteFileOperationParam(
   type: json['type'] as String,
   path: json['path'] as String,
-); }
+);}
 
 /// The operation type. Always `delete_file`.
 final String type;
@@ -14,20 +14,20 @@ final String type;
 /// Path of the file to delete relative to the workspace root.
 final String path;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'path': path,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('path') && json['path'] is String; } 
-ApplyPatchDeleteFileOperationParam copyWith({String? type, String? path, }) { return ApplyPatchDeleteFileOperationParam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('path') && json['path'] is String;}
+ApplyPatchDeleteFileOperationParam copyWith({String? type, String? path, }) {return ApplyPatchDeleteFileOperationParam(
   type: type ?? this.type,
   path: path ?? this.path,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ApplyPatchDeleteFileOperationParam &&
           type == other.type &&
-          path == other.path; } 
-@override int get hashCode { return Object.hash(type, path); } 
-@override String toString() { return 'ApplyPatchDeleteFileOperationParam(type: $type, path: $path)'; } 
- }
+          path == other.path;}
+@override int get hashCode {return Object.hash(type, path);}
+@override String toString() {return 'ApplyPatchDeleteFileOperationParam(type: $type, path: $path)';}
+}

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// State of a code scanning alert.
 @immutable final class CodeScanningAlertState {const CodeScanningAlertState._(this.value);
 
-factory CodeScanningAlertState.fromJson(String json) { return switch (json) {
+factory CodeScanningAlertState.fromJson(String json) {return switch (json) {
   'open' => open,
   'dismissed' => dismissed,
   'fixed' => fixed,
   'null' => $null,
   _ => CodeScanningAlertState._(json),
-}; }
+};}
 
 static const CodeScanningAlertState open = CodeScanningAlertState._('open');
 
@@ -23,11 +23,11 @@ static const List<CodeScanningAlertState> values = [open, dismissed, fixed, $nul
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningAlertState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningAlertState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeScanningAlertState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeScanningAlertState($value)';}
+}

@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_indicator_list_response_properties_indicators_items.dart';@immutable final class GetIndicatorListResponsePropertiesIndicators {const GetIndicatorListResponsePropertiesIndicators({required this.items, required this.type, });
 
-factory GetIndicatorListResponsePropertiesIndicators.fromJson(Map<String, dynamic> json) { return GetIndicatorListResponsePropertiesIndicators(
+factory GetIndicatorListResponsePropertiesIndicators.fromJson(Map<String, dynamic> json) {return GetIndicatorListResponsePropertiesIndicators(
   items: GetIndicatorListResponsePropertiesIndicatorsItems.fromJson(json['items'] as Map<String, dynamic>),
   type: json['type'] as String,
-); }
+);}
 
 final GetIndicatorListResponsePropertiesIndicatorsItems items;
 
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'items': items.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('items') &&
-      json.containsKey('type') && json['type'] is String; } 
-GetIndicatorListResponsePropertiesIndicators copyWith({GetIndicatorListResponsePropertiesIndicatorsItems? items, String? type, }) { return GetIndicatorListResponsePropertiesIndicators(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('items') &&
+      json.containsKey('type') && json['type'] is String;}
+GetIndicatorListResponsePropertiesIndicators copyWith({GetIndicatorListResponsePropertiesIndicatorsItems? items, String? type, }) {return GetIndicatorListResponsePropertiesIndicators(
   items: items ?? this.items,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetIndicatorListResponsePropertiesIndicators &&
           items == other.items &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(items, type); } 
-@override String toString() { return 'GetIndicatorListResponsePropertiesIndicators(items: $items, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(items, type);}
+@override String toString() {return 'GetIndicatorListResponsePropertiesIndicators(items: $items, type: $type)';}
+}

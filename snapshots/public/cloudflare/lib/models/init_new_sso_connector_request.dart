@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_use_fedramp_language.dart';@immutable final class InitNewSsoConnectorRequest {const InitNewSsoConnectorRequest({required this.emailDomain, this.beginVerification, this.useFedrampLanguage, });
 
-factory InitNewSsoConnectorRequest.fromJson(Map<String, dynamic> json) { return InitNewSsoConnectorRequest(
+factory InitNewSsoConnectorRequest.fromJson(Map<String, dynamic> json) {return InitNewSsoConnectorRequest(
   beginVerification: json['begin_verification'] as bool?,
   emailDomain: json['email_domain'] as String,
   useFedrampLanguage: json['use_fedramp_language'] != null ? IamUseFedrampLanguage.fromJson(json['use_fedramp_language'] as bool) : null,
-); }
+);}
 
 /// Begin the verification process after creation
 final bool? beginVerification;
@@ -18,23 +18,23 @@ final String emailDomain;
 final IamUseFedrampLanguage? useFedrampLanguage;
 
 /// The value with the schema default applied when absent.
-bool get beginVerificationOrDefault { return beginVerification ?? true; } 
-Map<String, dynamic> toJson() { return {
+bool get beginVerificationOrDefault {return beginVerification ?? true;}
+Map<String, dynamic> toJson() {return {
   'begin_verification': ?beginVerification,
   'email_domain': emailDomain,
   if (useFedrampLanguage != null) 'use_fedramp_language': useFedrampLanguage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('email_domain') && json['email_domain'] is String; } 
-InitNewSsoConnectorRequest copyWith({bool? Function()? beginVerification, String? emailDomain, IamUseFedrampLanguage? Function()? useFedrampLanguage, }) { return InitNewSsoConnectorRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('email_domain') && json['email_domain'] is String;}
+InitNewSsoConnectorRequest copyWith({bool? Function()? beginVerification, String? emailDomain, IamUseFedrampLanguage? Function()? useFedrampLanguage, }) {return InitNewSsoConnectorRequest(
   beginVerification: beginVerification != null ? beginVerification() : this.beginVerification,
   emailDomain: emailDomain ?? this.emailDomain,
   useFedrampLanguage: useFedrampLanguage != null ? useFedrampLanguage() : this.useFedrampLanguage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InitNewSsoConnectorRequest &&
           beginVerification == other.beginVerification &&
           emailDomain == other.emailDomain &&
-          useFedrampLanguage == other.useFedrampLanguage; } 
-@override int get hashCode { return Object.hash(beginVerification, emailDomain, useFedrampLanguage); } 
-@override String toString() { return 'InitNewSsoConnectorRequest(beginVerification: $beginVerification, emailDomain: $emailDomain, useFedrampLanguage: $useFedrampLanguage)'; } 
- }
+          useFedrampLanguage == other.useFedrampLanguage;}
+@override int get hashCode {return Object.hash(beginVerification, emailDomain, useFedrampLanguage);}
+@override String toString() {return 'InitNewSsoConnectorRequest(beginVerification: $beginVerification, emailDomain: $emailDomain, useFedrampLanguage: $useFedrampLanguage)';}
+}

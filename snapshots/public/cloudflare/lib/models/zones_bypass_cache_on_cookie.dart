@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Bypass cache and
 /// 
 @immutable final class ZonesBypassCacheOnCookieId {const ZonesBypassCacheOnCookieId._(this.value);
 
-factory ZonesBypassCacheOnCookieId.fromJson(String json) { return switch (json) {
+factory ZonesBypassCacheOnCookieId.fromJson(String json) {return switch (json) {
   'bypass_cache_on_cookie' => bypassCacheOnCookie,
   _ => ZonesBypassCacheOnCookieId._(json),
-}; }
+};}
 
 static const ZonesBypassCacheOnCookieId bypassCacheOnCookie = ZonesBypassCacheOnCookieId._('bypass_cache_on_cookie');
 
@@ -16,20 +16,20 @@ static const List<ZonesBypassCacheOnCookieId> values = [bypassCacheOnCookie];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesBypassCacheOnCookieId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesBypassCacheOnCookieId($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesBypassCacheOnCookieId && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesBypassCacheOnCookieId($value)';}
+}
 @immutable final class ZonesBypassCacheOnCookie {const ZonesBypassCacheOnCookie({this.id, this.value, });
 
-factory ZonesBypassCacheOnCookie.fromJson(Map<String, dynamic> json) { return ZonesBypassCacheOnCookie(
+factory ZonesBypassCacheOnCookie.fromJson(Map<String, dynamic> json) {return ZonesBypassCacheOnCookie(
   id: json['id'] != null ? ZonesBypassCacheOnCookieId.fromJson(json['id'] as String) : null,
   value: json['value'] as String?,
-); }
+);}
 
 /// Bypass cache and fetch resources from the origin server if a regular
 /// expression matches against a cookie name present in the request.
@@ -43,19 +43,19 @@ final ZonesBypassCacheOnCookieId? id;
 /// 
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesBypassCacheOnCookie copyWith({ZonesBypassCacheOnCookieId? Function()? id, String? Function()? value, }) { return ZonesBypassCacheOnCookie(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'value'}.contains(key));}
+ZonesBypassCacheOnCookie copyWith({ZonesBypassCacheOnCookieId? Function()? id, String? Function()? value, }) {return ZonesBypassCacheOnCookie(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZonesBypassCacheOnCookie &&
           id == other.id &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, value); } 
-@override String toString() { return 'ZonesBypassCacheOnCookie(id: $id, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(id, value);}
+@override String toString() {return 'ZonesBypassCacheOnCookie(id: $id, value: $value)';}
+}

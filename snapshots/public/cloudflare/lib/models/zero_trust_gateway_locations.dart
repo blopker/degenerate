@@ -30,7 +30,7 @@ String toJson() => value;
 }
 @immutable final class ZeroTrustGatewayLocations {const ZeroTrustGatewayLocations({this.clientDefault, this.createdAt, this.dnsDestinationIpsId, this.dnsDestinationIpv6BlockId = const Omittable.absent(), this.dohSubdomain, this.ecsSupport, this.endpoints = const Omittable.absent(), this.id, this.ip, this.ipv4Destination, this.ipv4DestinationBackup, this.name, this.networks = const Omittable.absent(), this.updatedAt, });
 
-factory ZeroTrustGatewayLocations.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayLocations(
+factory ZeroTrustGatewayLocations.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayLocations(
   clientDefault: json['client_default'] != null ? ZeroTrustGatewayClientDefault.fromJson(json['client_default'] as bool) : null,
   createdAt: json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null,
   dnsDestinationIpsId: json['dns_destination_ips_id'] != null ? ZeroTrustGatewayDnsDestinationIpsIdRead.fromJson(json['dns_destination_ips_id'] as String) : null,
@@ -45,7 +45,7 @@ factory ZeroTrustGatewayLocations.fromJson(Map<String, dynamic> json) { return Z
   name: json['name'] != null ? ZeroTrustGatewaySchemasName.fromJson(json['name'] as String) : null,
   networks: json.containsKey('networks') ? Omittable((json['networks'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayIpv4Network.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   updatedAt: json['updated_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 /// Indicate whether this location is the default location.
 final ZeroTrustGatewayClientDefault? clientDefault;
@@ -83,7 +83,7 @@ final Omittable<List<ZeroTrustGatewayIpv4Network>?> networks;
 
 final ZeroTrustGatewayReadOnlyTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (clientDefault != null) 'client_default': clientDefault?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (dnsDestinationIpsId != null) 'dns_destination_ips_id': dnsDestinationIpsId?.toJson(),
@@ -98,9 +98,9 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (networks.isPresent) 'networks': networks.value?.map((e) => e.toJson()).toList(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_default', 'created_at', 'dns_destination_ips_id', 'dns_destination_ipv6_block_id', 'doh_subdomain', 'ecs_support', 'endpoints', 'id', 'ip', 'ipv4_destination', 'ipv4_destination_backup', 'name', 'networks', 'updated_at'}.contains(key)); } 
-ZeroTrustGatewayLocations copyWith({ZeroTrustGatewayClientDefault? Function()? clientDefault, ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayDnsDestinationIpsIdRead? Function()? dnsDestinationIpsId, Omittable<ZeroTrustGatewayDnsDestinationIpv6BlockId?>? dnsDestinationIpv6BlockId, ZeroTrustGatewaySubdomain? Function()? dohSubdomain, ZeroTrustGatewayEcsSupport? Function()? ecsSupport, Omittable<ZeroTrustGatewayEndpoints?>? endpoints, ZeroTrustGatewayComponentsSchemasUuid? Function()? id, ZeroTrustGatewayIp? Function()? ip, String? Function()? ipv4Destination, String? Function()? ipv4DestinationBackup, ZeroTrustGatewaySchemasName? Function()? name, Omittable<List<ZeroTrustGatewayIpv4Network>?>? networks, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) { return ZeroTrustGatewayLocations(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'client_default', 'created_at', 'dns_destination_ips_id', 'dns_destination_ipv6_block_id', 'doh_subdomain', 'ecs_support', 'endpoints', 'id', 'ip', 'ipv4_destination', 'ipv4_destination_backup', 'name', 'networks', 'updated_at'}.contains(key));}
+ZeroTrustGatewayLocations copyWith({ZeroTrustGatewayClientDefault? Function()? clientDefault, ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayDnsDestinationIpsIdRead? Function()? dnsDestinationIpsId, Omittable<ZeroTrustGatewayDnsDestinationIpv6BlockId?>? dnsDestinationIpv6BlockId, ZeroTrustGatewaySubdomain? Function()? dohSubdomain, ZeroTrustGatewayEcsSupport? Function()? ecsSupport, Omittable<ZeroTrustGatewayEndpoints?>? endpoints, ZeroTrustGatewayComponentsSchemasUuid? Function()? id, ZeroTrustGatewayIp? Function()? ip, String? Function()? ipv4Destination, String? Function()? ipv4DestinationBackup, ZeroTrustGatewaySchemasName? Function()? name, Omittable<List<ZeroTrustGatewayIpv4Network>?>? networks, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) {return ZeroTrustGatewayLocations(
   clientDefault: clientDefault != null ? clientDefault() : this.clientDefault,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   dnsDestinationIpsId: dnsDestinationIpsId != null ? dnsDestinationIpsId() : this.dnsDestinationIpsId,
@@ -115,8 +115,8 @@ ZeroTrustGatewayLocations copyWith({ZeroTrustGatewayClientDefault? Function()? c
   name: name != null ? name() : this.name,
   networks: networks ?? this.networks,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewayLocations &&
           clientDefault == other.clientDefault &&
           createdAt == other.createdAt &&
@@ -132,7 +132,7 @@ ZeroTrustGatewayLocations copyWith({ZeroTrustGatewayClientDefault? Function()? c
           name == other.name &&
           networks.isPresent == other.networks.isPresent &&
           listEquals(networks.value, other.networks.value) &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(clientDefault, createdAt, dnsDestinationIpsId, dnsDestinationIpv6BlockId, dohSubdomain, ecsSupport, endpoints, id, ip, ipv4Destination, ipv4DestinationBackup, name, Object.hashAll(networks.value ?? const []), updatedAt); } 
-@override String toString() { return 'ZeroTrustGatewayLocations(clientDefault: $clientDefault, createdAt: $createdAt, dnsDestinationIpsId: $dnsDestinationIpsId, dnsDestinationIpv6BlockId: $dnsDestinationIpv6BlockId, dohSubdomain: $dohSubdomain, ecsSupport: $ecsSupport, endpoints: $endpoints, id: $id, ip: $ip, ipv4Destination: $ipv4Destination, ipv4DestinationBackup: $ipv4DestinationBackup, name: $name, networks: $networks, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(clientDefault, createdAt, dnsDestinationIpsId, dnsDestinationIpv6BlockId, dohSubdomain, ecsSupport, endpoints, id, ip, ipv4Destination, ipv4DestinationBackup, name, Object.hashAll(networks.value ?? const []), updatedAt);}
+@override String toString() {return 'ZeroTrustGatewayLocations(clientDefault: $clientDefault, createdAt: $createdAt, dnsDestinationIpsId: $dnsDestinationIpsId, dnsDestinationIpv6BlockId: $dnsDestinationIpv6BlockId, dohSubdomain: $dohSubdomain, ecsSupport: $ecsSupport, endpoints: $endpoints, id: $id, ip: $ip, ipv4Destination: $ipv4Destination, ipv4DestinationBackup: $ipv4DestinationBackup, name: $name, networks: $networks, updatedAt: $updatedAt)';}
+}

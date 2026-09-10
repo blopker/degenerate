@@ -11,7 +11,7 @@ final class ModelsApi with ApiExecutor {const ModelsApi(this.apiConfig);
 /// Lists the currently available models, and provides basic information about each one such as the owner and availability.
 ///
 /// `GET /models`
-Future<ApiResult<ListModelsResponse, Never>> listModels({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListModelsResponse, Never>> listModels({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,11 +27,11 @@ final json = jsonDecode(response.body);
 return ListModelsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Retrieves a model instance, providing basic information about the model such as the owner and permissioning.
 ///
 /// `GET /models/{model}`
-Future<ApiResult<Model, Never>> retrieveModel({required String model, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Model, Never>> retrieveModel({required String model, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -47,11 +47,11 @@ final json = jsonDecode(response.body);
 return Model.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.
 ///
 /// `DELETE /models/{model}`
-Future<ApiResult<DeleteModelResponse, Never>> deleteModel({required String model, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteModelResponse, Never>> deleteModel({required String model, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -67,5 +67,5 @@ final json = jsonDecode(response.body);
 return DeleteModelResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

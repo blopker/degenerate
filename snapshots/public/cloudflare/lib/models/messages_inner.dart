@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages_inner_functions.dart';import 'messages_inner_messages.dart';import 'messages_inner_response_format.dart';import 'messages_inner_tools.dart';import 'messages_inner_tools_variant1.dart';import 'messages_inner_tools_variant2.dart';@immutable final class MessagesInner {const MessagesInner({required this.messages, this.frequencyPenalty, this.functions, this.guidedJson, this.maxTokens, this.presencePenalty, this.raw, this.repetitionPenalty, this.responseFormat, this.seed, this.stream, this.temperature, this.tools, this.topK, this.topP, });
 
-factory MessagesInner.fromJson(Map<String, dynamic> json) { return MessagesInner(
+factory MessagesInner.fromJson(Map<String, dynamic> json) {return MessagesInner(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => MessagesInnerFunctions.fromJson(e as Map<String, dynamic>)).toList(),
   guidedJson: json['guided_json'] as Map<String, dynamic>?,
@@ -18,7 +18,7 @@ factory MessagesInner.fromJson(Map<String, dynamic> json) { return MessagesInner
   tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => MessagesInnerToolsVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => MessagesInnerToolsVariant2.fromJson(v as Map<String, dynamic>),)).toList(),
   topK: json['top_k'] != null ? (json['top_k'] as num).toInt() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
-); }
+);}
 
 /// Decreases the likelihood of the model repeating the same lines verbatim.
 final double? frequencyPenalty;
@@ -64,14 +64,14 @@ final int? topK;
 final double? topP;
 
 /// The value with the schema default applied when absent.
-int get maxTokensOrDefault { return maxTokens ?? 256; } 
+int get maxTokensOrDefault {return maxTokens ?? 256;}
 /// The value with the schema default applied when absent.
-bool get rawOrDefault { return raw ?? false; } 
+bool get rawOrDefault {return raw ?? false;}
 /// The value with the schema default applied when absent.
-bool get streamOrDefault { return stream ?? false; } 
+bool get streamOrDefault {return stream ?? false;}
 /// The value with the schema default applied when absent.
-double get temperatureOrDefault { return temperature ?? 0.15; } 
-Map<String, dynamic> toJson() { return {
+double get temperatureOrDefault {return temperature ?? 0.15;}
+Map<String, dynamic> toJson() {return {
   'frequency_penalty': ?frequencyPenalty,
   if (functions != null) 'functions': functions?.map((e) => e.toJson()).toList(),
   'guided_json': ?guidedJson,
@@ -87,9 +87,9 @@ Map<String, dynamic> toJson() { return {
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
   'top_k': ?topK,
   'top_p': ?topP,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-MessagesInner copyWith({double? Function()? frequencyPenalty, List<MessagesInnerFunctions>? Function()? functions, Map<String, dynamic>? Function()? guidedJson, int? Function()? maxTokens, List<MessagesInnerMessages>? messages, double? Function()? presencePenalty, bool? Function()? raw, double? Function()? repetitionPenalty, MessagesInnerResponseFormat? Function()? responseFormat, int? Function()? seed, bool? Function()? stream, double? Function()? temperature, List<MessagesInnerTools>? Function()? tools, int? Function()? topK, double? Function()? topP, }) { return MessagesInner(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages');}
+MessagesInner copyWith({double? Function()? frequencyPenalty, List<MessagesInnerFunctions>? Function()? functions, Map<String, dynamic>? Function()? guidedJson, int? Function()? maxTokens, List<MessagesInnerMessages>? messages, double? Function()? presencePenalty, bool? Function()? raw, double? Function()? repetitionPenalty, MessagesInnerResponseFormat? Function()? responseFormat, int? Function()? seed, bool? Function()? stream, double? Function()? temperature, List<MessagesInnerTools>? Function()? tools, int? Function()? topK, double? Function()? topP, }) {return MessagesInner(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   functions: functions != null ? functions() : this.functions,
   guidedJson: guidedJson != null ? guidedJson() : this.guidedJson,
@@ -105,8 +105,8 @@ MessagesInner copyWith({double? Function()? frequencyPenalty, List<MessagesInner
   tools: tools != null ? tools() : this.tools,
   topK: topK != null ? topK() : this.topK,
   topP: topP != null ? topP() : this.topP,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MessagesInner &&
           frequencyPenalty == other.frequencyPenalty &&
           listEquals(functions, other.functions) &&
@@ -122,7 +122,7 @@ MessagesInner copyWith({double? Function()? frequencyPenalty, List<MessagesInner
           temperature == other.temperature &&
           listEquals(tools, other.tools) &&
           topK == other.topK &&
-          topP == other.topP; } 
-@override int get hashCode { return Object.hash(frequencyPenalty, Object.hashAll(functions ?? const []), guidedJson, maxTokens, Object.hashAll(messages), presencePenalty, raw, repetitionPenalty, responseFormat, seed, stream, temperature, Object.hashAll(tools ?? const []), topK, topP); } 
-@override String toString() { return 'MessagesInner(frequencyPenalty: $frequencyPenalty, functions: $functions, guidedJson: $guidedJson, maxTokens: $maxTokens, messages: $messages, presencePenalty: $presencePenalty, raw: $raw, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, tools: $tools, topK: $topK, topP: $topP)'; } 
- }
+          topP == other.topP;}
+@override int get hashCode {return Object.hash(frequencyPenalty, Object.hashAll(functions ?? const []), guidedJson, maxTokens, Object.hashAll(messages), presencePenalty, raw, repetitionPenalty, responseFormat, seed, stream, temperature, Object.hashAll(tools ?? const []), topK, topP);}
+@override String toString() {return 'MessagesInner(frequencyPenalty: $frequencyPenalty, functions: $functions, guidedJson: $guidedJson, maxTokens: $maxTokens, messages: $messages, presencePenalty: $presencePenalty, raw: $raw, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, tools: $tools, topK: $topK, topP: $topP)';}
+}

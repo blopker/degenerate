@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when an error occurs.
 @immutable final class ResponseErrorEvent {const ResponseErrorEvent({required this.type, required this.code, required this.message, required this.param, required this.sequenceNumber, });
 
-factory ResponseErrorEvent.fromJson(Map<String, dynamic> json) { return ResponseErrorEvent(
+factory ResponseErrorEvent.fromJson(Map<String, dynamic> json) {return ResponseErrorEvent(
   type: json['type'] as String,
   code: json['code'] as String?,
   message: json['message'] as String,
   param: json['param'] as String?,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
-); }
+);}
 
 /// The type of the event. Always `error`.
 /// 
@@ -30,32 +30,32 @@ final String? param;
 /// The sequence number of this event.
 final int sequenceNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'code': code,
   'message': message,
   'param': param,
   'sequence_number': sequenceNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('code') && (json['code'] == null || json['code'] is String) &&
       json.containsKey('message') && json['message'] is String &&
       json.containsKey('param') && (json['param'] == null || json['param'] is String) &&
-      json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseErrorEvent copyWith({String? type, String? Function()? code, String? message, String? Function()? param, int? sequenceNumber, }) { return ResponseErrorEvent(
+      json.containsKey('sequence_number') && json['sequence_number'] is num;}
+ResponseErrorEvent copyWith({String? type, String? Function()? code, String? message, String? Function()? param, int? sequenceNumber, }) {return ResponseErrorEvent(
   type: type ?? this.type,
   code: code != null ? code() : this.code,
   message: message ?? this.message,
   param: param != null ? param() : this.param,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseErrorEvent &&
           type == other.type &&
           code == other.code &&
           message == other.message &&
           param == other.param &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, code, message, param, sequenceNumber); } 
-@override String toString() { return 'ResponseErrorEvent(type: $type, code: $code, message: $message, param: $param, sequenceNumber: $sequenceNumber)'; } 
- }
+          sequenceNumber == other.sequenceNumber;}
+@override int get hashCode {return Object.hash(type, code, message, param, sequenceNumber);}
+@override String toString() {return 'ResponseErrorEvent(type: $type, code: $code, message: $message, param: $param, sequenceNumber: $sequenceNumber)';}
+}

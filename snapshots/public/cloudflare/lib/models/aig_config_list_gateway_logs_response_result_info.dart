@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListGatewayLogsResponseResultInfo {const AigConfigListGatewayLogsResponseResultInfo({this.count, this.maxCost, this.maxDuration, this.maxTokensIn, this.maxTokensOut, this.maxTotalTokens, this.minCost, this.minDuration, this.minTokensIn, this.minTokensOut, this.minTotalTokens, this.page, this.perPage, this.totalCount, });
 
-factory AigConfigListGatewayLogsResponseResultInfo.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayLogsResponseResultInfo(
+factory AigConfigListGatewayLogsResponseResultInfo.fromJson(Map<String, dynamic> json) {return AigConfigListGatewayLogsResponseResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,
   maxCost: json['max_cost'] != null ? (json['max_cost'] as num).toDouble() : null,
   maxDuration: json['max_duration'] != null ? (json['max_duration'] as num).toDouble() : null,
@@ -17,7 +17,7 @@ factory AigConfigListGatewayLogsResponseResultInfo.fromJson(Map<String, dynamic>
   page: json['page'] != null ? (json['page'] as num).toDouble() : null,
   perPage: json['per_page'] != null ? (json['per_page'] as num).toDouble() : null,
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toDouble() : null,
-); }
+);}
 
 final double? count;
 
@@ -47,7 +47,7 @@ final double? perPage;
 
 final double? totalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': ?count,
   'max_cost': ?maxCost,
   'max_duration': ?maxDuration,
@@ -62,9 +62,9 @@ Map<String, dynamic> toJson() { return {
   'page': ?page,
   'per_page': ?perPage,
   'total_count': ?totalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'max_cost', 'max_duration', 'max_tokens_in', 'max_tokens_out', 'max_total_tokens', 'min_cost', 'min_duration', 'min_tokens_in', 'min_tokens_out', 'min_total_tokens', 'page', 'per_page', 'total_count'}.contains(key)); } 
-AigConfigListGatewayLogsResponseResultInfo copyWith({double? Function()? count, double? Function()? maxCost, double? Function()? maxDuration, double? Function()? maxTokensIn, double? Function()? maxTokensOut, double? Function()? maxTotalTokens, double? Function()? minCost, double? Function()? minDuration, double? Function()? minTokensIn, double? Function()? minTokensOut, double? Function()? minTotalTokens, double? Function()? page, double? Function()? perPage, double? Function()? totalCount, }) { return AigConfigListGatewayLogsResponseResultInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'count', 'max_cost', 'max_duration', 'max_tokens_in', 'max_tokens_out', 'max_total_tokens', 'min_cost', 'min_duration', 'min_tokens_in', 'min_tokens_out', 'min_total_tokens', 'page', 'per_page', 'total_count'}.contains(key));}
+AigConfigListGatewayLogsResponseResultInfo copyWith({double? Function()? count, double? Function()? maxCost, double? Function()? maxDuration, double? Function()? maxTokensIn, double? Function()? maxTokensOut, double? Function()? maxTotalTokens, double? Function()? minCost, double? Function()? minDuration, double? Function()? minTokensIn, double? Function()? minTokensOut, double? Function()? minTotalTokens, double? Function()? page, double? Function()? perPage, double? Function()? totalCount, }) {return AigConfigListGatewayLogsResponseResultInfo(
   count: count != null ? count() : this.count,
   maxCost: maxCost != null ? maxCost() : this.maxCost,
   maxDuration: maxDuration != null ? maxDuration() : this.maxDuration,
@@ -79,8 +79,8 @@ AigConfigListGatewayLogsResponseResultInfo copyWith({double? Function()? count, 
   page: page != null ? page() : this.page,
   perPage: perPage != null ? perPage() : this.perPage,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigListGatewayLogsResponseResultInfo &&
           count == other.count &&
           maxCost == other.maxCost &&
@@ -95,7 +95,7 @@ AigConfigListGatewayLogsResponseResultInfo copyWith({double? Function()? count, 
           minTotalTokens == other.minTotalTokens &&
           page == other.page &&
           perPage == other.perPage &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(count, maxCost, maxDuration, maxTokensIn, maxTokensOut, maxTotalTokens, minCost, minDuration, minTokensIn, minTokensOut, minTotalTokens, page, perPage, totalCount); } 
-@override String toString() { return 'AigConfigListGatewayLogsResponseResultInfo(count: $count, maxCost: $maxCost, maxDuration: $maxDuration, maxTokensIn: $maxTokensIn, maxTokensOut: $maxTokensOut, maxTotalTokens: $maxTotalTokens, minCost: $minCost, minDuration: $minDuration, minTokensIn: $minTokensIn, minTokensOut: $minTokensOut, minTotalTokens: $minTotalTokens, page: $page, perPage: $perPage, totalCount: $totalCount)'; } 
- }
+          totalCount == other.totalCount;}
+@override int get hashCode {return Object.hash(count, maxCost, maxDuration, maxTokensIn, maxTokensOut, maxTotalTokens, minCost, minDuration, minTokensIn, minTokensOut, minTotalTokens, page, perPage, totalCount);}
+@override String toString() {return 'AigConfigListGatewayLogsResponseResultInfo(count: $count, maxCost: $maxCost, maxDuration: $maxDuration, maxTokensIn: $maxTokensIn, maxTokensOut: $maxTokensOut, maxTotalTokens: $maxTotalTokens, minCost: $minCost, minDuration: $minDuration, minTokensIn: $minTokensIn, minTokensOut: $minTokensOut, minTotalTokens: $minTotalTokens, page: $page, perPage: $perPage, totalCount: $totalCount)';}
+}

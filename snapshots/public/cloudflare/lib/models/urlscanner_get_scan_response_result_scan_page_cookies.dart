@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanPageCookies {const UrlscannerGetScanResponseResultScanPageCookies({required this.domain, required this.expires, required this.httpOnly, required this.name, required this.path, required this.sameParty, required this.secure, required this.session, required this.size, required this.sourcePort, required this.sourceScheme, required this.value, this.priority, });
 
-factory UrlscannerGetScanResponseResultScanPageCookies.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanPageCookies(
+factory UrlscannerGetScanResponseResultScanPageCookies.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponseResultScanPageCookies(
   domain: json['domain'] as String,
   expires: (json['expires'] as num).toDouble(),
   httpOnly: json['httpOnly'] as bool,
@@ -16,7 +16,7 @@ factory UrlscannerGetScanResponseResultScanPageCookies.fromJson(Map<String, dyna
   sourcePort: (json['sourcePort'] as num).toDouble(),
   sourceScheme: json['sourceScheme'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String domain;
 
@@ -44,7 +44,7 @@ final String sourceScheme;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'domain': domain,
   'expires': expires,
   'httpOnly': httpOnly,
@@ -58,8 +58,8 @@ Map<String, dynamic> toJson() { return {
   'sourcePort': sourcePort,
   'sourceScheme': sourceScheme,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') && json['domain'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('domain') && json['domain'] is String &&
       json.containsKey('expires') && json['expires'] is num &&
       json.containsKey('httpOnly') && json['httpOnly'] is bool &&
       json.containsKey('name') && json['name'] is String &&
@@ -70,8 +70,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('domai
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('sourcePort') && json['sourcePort'] is num &&
       json.containsKey('sourceScheme') && json['sourceScheme'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-UrlscannerGetScanResponseResultScanPageCookies copyWith({String? domain, double? expires, bool? httpOnly, String? name, String? path, String? Function()? priority, bool? sameParty, bool? secure, bool? session, double? size, double? sourcePort, String? sourceScheme, String? value, }) { return UrlscannerGetScanResponseResultScanPageCookies(
+      json.containsKey('value') && json['value'] is String;}
+UrlscannerGetScanResponseResultScanPageCookies copyWith({String? domain, double? expires, bool? httpOnly, String? name, String? path, String? Function()? priority, bool? sameParty, bool? secure, bool? session, double? size, double? sourcePort, String? sourceScheme, String? value, }) {return UrlscannerGetScanResponseResultScanPageCookies(
   domain: domain ?? this.domain,
   expires: expires ?? this.expires,
   httpOnly: httpOnly ?? this.httpOnly,
@@ -85,8 +85,8 @@ UrlscannerGetScanResponseResultScanPageCookies copyWith({String? domain, double?
   sourcePort: sourcePort ?? this.sourcePort,
   sourceScheme: sourceScheme ?? this.sourceScheme,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponseResultScanPageCookies &&
           domain == other.domain &&
           expires == other.expires &&
@@ -100,7 +100,7 @@ UrlscannerGetScanResponseResultScanPageCookies copyWith({String? domain, double?
           size == other.size &&
           sourcePort == other.sourcePort &&
           sourceScheme == other.sourceScheme &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(domain, expires, httpOnly, name, path, priority, sameParty, secure, session, size, sourcePort, sourceScheme, value); } 
-@override String toString() { return 'UrlscannerGetScanResponseResultScanPageCookies(domain: $domain, expires: $expires, httpOnly: $httpOnly, name: $name, path: $path, priority: $priority, sameParty: $sameParty, secure: $secure, session: $session, size: $size, sourcePort: $sourcePort, sourceScheme: $sourceScheme, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(domain, expires, httpOnly, name, path, priority, sameParty, secure, session, size, sourcePort, sourceScheme, value);}
+@override String toString() {return 'UrlscannerGetScanResponseResultScanPageCookies(domain: $domain, expires: $expires, httpOnly: $httpOnly, name: $name, path: $path, priority: $priority, sameParty: $sameParty, secure: $secure, session: $session, size: $size, sourcePort: $sourcePort, sourceScheme: $sourceScheme, value: $value)';}
+}

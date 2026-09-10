@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_registrations_request_active_from.dart';import 'post_tax_registrations_request_country_options.dart';@immutable final class PostTaxRegistrationsRequest {const PostTaxRegistrationsRequest({required this.activeFrom, required this.country, required this.countryOptions, this.expand, this.expiresAt, });
 
-factory PostTaxRegistrationsRequest.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequest(
+factory PostTaxRegistrationsRequest.fromJson(Map<String, dynamic> json) {return PostTaxRegistrationsRequest(
   activeFrom: PostTaxRegistrationsRequestActiveFrom.fromJson(json['active_from']),
   country: json['country'] as String,
   countryOptions: PostTaxRegistrationsRequestCountryOptions.fromJson(json['country_options'] as Map<String, dynamic>),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
-); }
+);}
 
 /// Time at which the Tax Registration becomes active. It can be either `now` to indicate the current time, or a future timestamp measured in seconds since the Unix epoch.
 final PostTaxRegistrationsRequestActiveFrom activeFrom;
@@ -25,30 +25,30 @@ final List<String>? expand;
 /// If set, the Tax Registration stops being active at this time. If not set, the Tax Registration will be active indefinitely. Timestamp measured in seconds since the Unix epoch.
 final int? expiresAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active_from': activeFrom.toJson(),
   'country': country,
   'country_options': countryOptions.toJson(),
   'expand': ?expand,
   'expires_at': ?expiresAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_from') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active_from') &&
       json.containsKey('country') && json['country'] is String &&
-      json.containsKey('country_options'); } 
-PostTaxRegistrationsRequest copyWith({PostTaxRegistrationsRequestActiveFrom? activeFrom, String? country, PostTaxRegistrationsRequestCountryOptions? countryOptions, List<String>? Function()? expand, int? Function()? expiresAt, }) { return PostTaxRegistrationsRequest(
+      json.containsKey('country_options');}
+PostTaxRegistrationsRequest copyWith({PostTaxRegistrationsRequestActiveFrom? activeFrom, String? country, PostTaxRegistrationsRequestCountryOptions? countryOptions, List<String>? Function()? expand, int? Function()? expiresAt, }) {return PostTaxRegistrationsRequest(
   activeFrom: activeFrom ?? this.activeFrom,
   country: country ?? this.country,
   countryOptions: countryOptions ?? this.countryOptions,
   expand: expand != null ? expand() : this.expand,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTaxRegistrationsRequest &&
           activeFrom == other.activeFrom &&
           country == other.country &&
           countryOptions == other.countryOptions &&
           listEquals(expand, other.expand) &&
-          expiresAt == other.expiresAt; } 
-@override int get hashCode { return Object.hash(activeFrom, country, countryOptions, Object.hashAll(expand ?? const []), expiresAt); } 
-@override String toString() { return 'PostTaxRegistrationsRequest(activeFrom: $activeFrom, country: $country, countryOptions: $countryOptions, expand: $expand, expiresAt: $expiresAt)'; } 
- }
+          expiresAt == other.expiresAt;}
+@override int get hashCode {return Object.hash(activeFrom, country, countryOptions, Object.hashAll(expand ?? const []), expiresAt);}
+@override String toString() {return 'PostTaxRegistrationsRequest(activeFrom: $activeFrom, country: $country, countryOptions: $countryOptions, expand: $expand, expiresAt: $expiresAt)';}
+}

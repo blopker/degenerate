@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_card_checks.dart';import 'payment_method_details_card_installments.dart';import 'payment_method_details_card_network_token.dart';import 'payment_method_details_card_wallet.dart';import 'resource_enterprise_features_extended_authorization_extended_authorization.dart';import 'resource_enterprise_features_incremental_authorization_incremental_authorization.dart';import 'resource_enterprise_features_overcapture_overcapture.dart';import 'resource_multicapture.dart';import 'three_d_secure_details_charge.dart';/// Status of a card based on the card issuer.
 @immutable final class PaymentMethodDetailsCardRegulatedStatus {const PaymentMethodDetailsCardRegulatedStatus._(this.value);
 
-factory PaymentMethodDetailsCardRegulatedStatus.fromJson(String json) { return switch (json) {
+factory PaymentMethodDetailsCardRegulatedStatus.fromJson(String json) {return switch (json) {
   'regulated' => regulated,
   'unregulated' => unregulated,
   _ => PaymentMethodDetailsCardRegulatedStatus._(json),
-}; }
+};}
 
 static const PaymentMethodDetailsCardRegulatedStatus regulated = PaymentMethodDetailsCardRegulatedStatus._('regulated');
 
@@ -17,18 +17,18 @@ static const List<PaymentMethodDetailsCardRegulatedStatus> values = [regulated, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsCardRegulatedStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsCardRegulatedStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodDetailsCardRegulatedStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodDetailsCardRegulatedStatus($value)';}
+}
 /// 
 @immutable final class PaymentMethodDetailsCard {const PaymentMethodDetailsCard({required this.expMonth, required this.expYear, this.amountAuthorized = const Omittable.absent(), this.authorizationCode = const Omittable.absent(), this.brand = const Omittable.absent(), this.captureBefore, this.checks = const Omittable.absent(), this.country = const Omittable.absent(), this.extendedAuthorization, this.fingerprint = const Omittable.absent(), this.funding = const Omittable.absent(), this.incrementalAuthorization, this.installments = const Omittable.absent(), this.last4 = const Omittable.absent(), this.mandate = const Omittable.absent(), this.multicapture, this.network = const Omittable.absent(), this.networkToken = const Omittable.absent(), this.networkTransactionId = const Omittable.absent(), this.overcapture, this.regulatedStatus = const Omittable.absent(), this.threeDSecure = const Omittable.absent(), this.wallet = const Omittable.absent(), });
 
-factory PaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCard(
+factory PaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsCard(
   amountAuthorized: json.containsKey('amount_authorized') ? Omittable(json['amount_authorized'] != null ? (json['amount_authorized'] as num).toInt() : null) : const Omittable.absent(),
   authorizationCode: json.containsKey('authorization_code') ? Omittable(json['authorization_code'] as String?) : const Omittable.absent(),
   brand: json.containsKey('brand') ? Omittable(json['brand'] as String?) : const Omittable.absent(),
@@ -52,7 +52,7 @@ factory PaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) { return Pa
   regulatedStatus: json.containsKey('regulated_status') ? Omittable(json['regulated_status'] != null ? PaymentMethodDetailsCardRegulatedStatus.fromJson(json['regulated_status'] as String) : null) : const Omittable.absent(),
   threeDSecure: json.containsKey('three_d_secure') ? Omittable(json['three_d_secure'] != null ? ThreeDSecureDetailsCharge.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   wallet: json.containsKey('wallet') ? Omittable(json['wallet'] != null ? PaymentMethodDetailsCardWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The authorized amount.
 final Omittable<int?> amountAuthorized;
@@ -123,7 +123,7 @@ final Omittable<ThreeDSecureDetailsCharge?> threeDSecure;
 /// If this Card is part of a card wallet, this contains the details of the card wallet.
 final Omittable<PaymentMethodDetailsCardWallet?> wallet;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amountAuthorized.isPresent) 'amount_authorized': amountAuthorized.value,
   if (authorizationCode.isPresent) 'authorization_code': authorizationCode.value,
   if (brand.isPresent) 'brand': brand.value,
@@ -147,10 +147,10 @@ Map<String, dynamic> toJson() { return {
   if (regulatedStatus.isPresent) 'regulated_status': regulatedStatus.value?.toJson(),
   if (threeDSecure.isPresent) 'three_d_secure': threeDSecure.value?.toJson(),
   if (wallet.isPresent) 'wallet': wallet.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
-      json.containsKey('exp_year') && json['exp_year'] is num; } 
-PaymentMethodDetailsCard copyWith({Omittable<int?>? amountAuthorized, Omittable<String?>? authorizationCode, Omittable<String?>? brand, int? Function()? captureBefore, Omittable<PaymentMethodDetailsCardChecks?>? checks, Omittable<String?>? country, int? expMonth, int? expYear, ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization? Function()? extendedAuthorization, Omittable<String?>? fingerprint, Omittable<String?>? funding, ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorization? Function()? incrementalAuthorization, Omittable<PaymentMethodDetailsCardInstallments?>? installments, Omittable<String?>? last4, Omittable<String?>? mandate, ResourceMulticapture? Function()? multicapture, Omittable<String?>? network, Omittable<PaymentMethodDetailsCardNetworkToken?>? networkToken, Omittable<String?>? networkTransactionId, ResourceEnterpriseFeaturesOvercaptureOvercapture? Function()? overcapture, Omittable<PaymentMethodDetailsCardRegulatedStatus?>? regulatedStatus, Omittable<ThreeDSecureDetailsCharge?>? threeDSecure, Omittable<PaymentMethodDetailsCardWallet?>? wallet, }) { return PaymentMethodDetailsCard(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('exp_month') && json['exp_month'] is num &&
+      json.containsKey('exp_year') && json['exp_year'] is num;}
+PaymentMethodDetailsCard copyWith({Omittable<int?>? amountAuthorized, Omittable<String?>? authorizationCode, Omittable<String?>? brand, int? Function()? captureBefore, Omittable<PaymentMethodDetailsCardChecks?>? checks, Omittable<String?>? country, int? expMonth, int? expYear, ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization? Function()? extendedAuthorization, Omittable<String?>? fingerprint, Omittable<String?>? funding, ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorization? Function()? incrementalAuthorization, Omittable<PaymentMethodDetailsCardInstallments?>? installments, Omittable<String?>? last4, Omittable<String?>? mandate, ResourceMulticapture? Function()? multicapture, Omittable<String?>? network, Omittable<PaymentMethodDetailsCardNetworkToken?>? networkToken, Omittable<String?>? networkTransactionId, ResourceEnterpriseFeaturesOvercaptureOvercapture? Function()? overcapture, Omittable<PaymentMethodDetailsCardRegulatedStatus?>? regulatedStatus, Omittable<ThreeDSecureDetailsCharge?>? threeDSecure, Omittable<PaymentMethodDetailsCardWallet?>? wallet, }) {return PaymentMethodDetailsCard(
   amountAuthorized: amountAuthorized ?? this.amountAuthorized,
   authorizationCode: authorizationCode ?? this.authorizationCode,
   brand: brand ?? this.brand,
@@ -174,8 +174,8 @@ PaymentMethodDetailsCard copyWith({Omittable<int?>? amountAuthorized, Omittable<
   regulatedStatus: regulatedStatus ?? this.regulatedStatus,
   threeDSecure: threeDSecure ?? this.threeDSecure,
   wallet: wallet ?? this.wallet,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodDetailsCard &&
           amountAuthorized == other.amountAuthorized &&
           authorizationCode == other.authorizationCode &&
@@ -199,7 +199,7 @@ PaymentMethodDetailsCard copyWith({Omittable<int?>? amountAuthorized, Omittable<
           overcapture == other.overcapture &&
           regulatedStatus == other.regulatedStatus &&
           threeDSecure == other.threeDSecure &&
-          wallet == other.wallet; } 
-@override int get hashCode { return Object.hashAll([amountAuthorized, authorizationCode, brand, captureBefore, checks, country, expMonth, expYear, extendedAuthorization, fingerprint, funding, incrementalAuthorization, installments, last4, mandate, multicapture, network, networkToken, networkTransactionId, overcapture, regulatedStatus, threeDSecure, wallet]); } 
-@override String toString() { return 'PaymentMethodDetailsCard(amountAuthorized: $amountAuthorized, authorizationCode: $authorizationCode, brand: $brand, captureBefore: $captureBefore, checks: $checks, country: $country, expMonth: $expMonth, expYear: $expYear, extendedAuthorization: $extendedAuthorization, fingerprint: $fingerprint, funding: $funding, incrementalAuthorization: $incrementalAuthorization, installments: $installments, last4: $last4, mandate: $mandate, multicapture: $multicapture, network: $network, networkToken: $networkToken, networkTransactionId: $networkTransactionId, overcapture: $overcapture, regulatedStatus: $regulatedStatus, threeDSecure: $threeDSecure, wallet: $wallet)'; } 
- }
+          wallet == other.wallet;}
+@override int get hashCode {return Object.hashAll([amountAuthorized, authorizationCode, brand, captureBefore, checks, country, expMonth, expYear, extendedAuthorization, fingerprint, funding, incrementalAuthorization, installments, last4, mandate, multicapture, network, networkToken, networkTransactionId, overcapture, regulatedStatus, threeDSecure, wallet]);}
+@override String toString() {return 'PaymentMethodDetailsCard(amountAuthorized: $amountAuthorized, authorizationCode: $authorizationCode, brand: $brand, captureBefore: $captureBefore, checks: $checks, country: $country, expMonth: $expMonth, expYear: $expYear, extendedAuthorization: $extendedAuthorization, fingerprint: $fingerprint, funding: $funding, incrementalAuthorization: $incrementalAuthorization, installments: $installments, last4: $last4, mandate: $mandate, multicapture: $multicapture, network: $network, networkToken: $networkToken, networkTransactionId: $networkTransactionId, overcapture: $overcapture, regulatedStatus: $regulatedStatus, threeDSecure: $threeDSecure, wallet: $wallet)';}
+}

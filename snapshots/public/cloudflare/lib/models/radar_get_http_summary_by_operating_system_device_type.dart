@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByOperatingSystemDeviceType {const RadarGetHttpSummaryByOperatingSystemDeviceType._(this.value);
 
-factory RadarGetHttpSummaryByOperatingSystemDeviceType.fromJson(String json) { return switch (json) {
+factory RadarGetHttpSummaryByOperatingSystemDeviceType.fromJson(String json) {return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
   'OTHER' => $other,
   _ => RadarGetHttpSummaryByOperatingSystemDeviceType._(json),
-}; }
+};}
 
 static const RadarGetHttpSummaryByOperatingSystemDeviceType desktop = RadarGetHttpSummaryByOperatingSystemDeviceType._('DESKTOP');
 
@@ -19,11 +19,11 @@ static const List<RadarGetHttpSummaryByOperatingSystemDeviceType> values = [desk
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpSummaryByOperatingSystemDeviceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpSummaryByOperatingSystemDeviceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpSummaryByOperatingSystemDeviceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpSummaryByOperatingSystemDeviceType($value)';}
+}

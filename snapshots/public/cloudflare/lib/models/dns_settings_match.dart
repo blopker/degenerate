@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to match
 /// 
 @immutable final class DnsSettingsMatch {const DnsSettingsMatch._(this.value);
 
-factory DnsSettingsMatch.fromJson(String json) { return switch (json) {
+factory DnsSettingsMatch.fromJson(String json) {return switch (json) {
   'any' => any,
   'all' => all,
   _ => DnsSettingsMatch._(json),
-}; }
+};}
 
 static const DnsSettingsMatch any = DnsSettingsMatch._('any');
 
@@ -18,11 +18,11 @@ static const List<DnsSettingsMatch> values = [any, all];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsSettingsMatch && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DnsSettingsMatch($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DnsSettingsMatch && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DnsSettingsMatch($value)';}
+}

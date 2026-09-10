@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListVectorStoreFilesFilter {const ListVectorStoreFilesFilter._(this.value);
 
-factory ListVectorStoreFilesFilter.fromJson(String json) { return switch (json) {
+factory ListVectorStoreFilesFilter.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'failed' => failed,
   'cancelled' => cancelled,
   _ => ListVectorStoreFilesFilter._(json),
-}; }
+};}
 
 static const ListVectorStoreFilesFilter inProgress = ListVectorStoreFilesFilter._('in_progress');
 
@@ -22,11 +22,11 @@ static const List<ListVectorStoreFilesFilter> values = [inProgress, completed, f
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ListVectorStoreFilesFilter && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ListVectorStoreFilesFilter($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ListVectorStoreFilesFilter && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ListVectorStoreFilesFilter($value)';}
+}

@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetPricesRecurringInterval {const GetPricesRecurringInterval._(this.value);
 
-factory GetPricesRecurringInterval.fromJson(String json) { return switch (json) {
+factory GetPricesRecurringInterval.fromJson(String json) {return switch (json) {
   'day' => day,
   'month' => month,
   'week' => week,
   'year' => year,
   _ => GetPricesRecurringInterval._(json),
-}; }
+};}
 
 static const GetPricesRecurringInterval day = GetPricesRecurringInterval._('day');
 
@@ -22,21 +22,21 @@ static const List<GetPricesRecurringInterval> values = [day, month, week, year];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetPricesRecurringInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetPricesRecurringInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetPricesRecurringInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetPricesRecurringInterval($value)';}
+}
 @immutable final class GetPricesRecurringUsageType {const GetPricesRecurringUsageType._(this.value);
 
-factory GetPricesRecurringUsageType.fromJson(String json) { return switch (json) {
+factory GetPricesRecurringUsageType.fromJson(String json) {return switch (json) {
   'licensed' => licensed,
   'metered' => metered,
   _ => GetPricesRecurringUsageType._(json),
-}; }
+};}
 
 static const GetPricesRecurringUsageType licensed = GetPricesRecurringUsageType._('licensed');
 
@@ -46,21 +46,21 @@ static const List<GetPricesRecurringUsageType> values = [licensed, metered];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetPricesRecurringUsageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetPricesRecurringUsageType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetPricesRecurringUsageType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetPricesRecurringUsageType($value)';}
+}
 @immutable final class GetPricesRecurring {const GetPricesRecurring({this.interval, this.meter, this.usageType, });
 
-factory GetPricesRecurring.fromJson(Map<String, dynamic> json) { return GetPricesRecurring(
+factory GetPricesRecurring.fromJson(Map<String, dynamic> json) {return GetPricesRecurring(
   interval: json['interval'] != null ? GetPricesRecurringInterval.fromJson(json['interval'] as String) : null,
   meter: json['meter'] as String?,
   usageType: json['usage_type'] != null ? GetPricesRecurringUsageType.fromJson(json['usage_type'] as String) : null,
-); }
+);}
 
 final GetPricesRecurringInterval? interval;
 
@@ -68,22 +68,22 @@ final String? meter;
 
 final GetPricesRecurringUsageType? usageType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (interval != null) 'interval': interval?.toJson(),
   'meter': ?meter,
   if (usageType != null) 'usage_type': usageType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'interval', 'meter', 'usage_type'}.contains(key)); } 
-GetPricesRecurring copyWith({GetPricesRecurringInterval? Function()? interval, String? Function()? meter, GetPricesRecurringUsageType? Function()? usageType, }) { return GetPricesRecurring(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'interval', 'meter', 'usage_type'}.contains(key));}
+GetPricesRecurring copyWith({GetPricesRecurringInterval? Function()? interval, String? Function()? meter, GetPricesRecurringUsageType? Function()? usageType, }) {return GetPricesRecurring(
   interval: interval != null ? interval() : this.interval,
   meter: meter != null ? meter() : this.meter,
   usageType: usageType != null ? usageType() : this.usageType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetPricesRecurring &&
           interval == other.interval &&
           meter == other.meter &&
-          usageType == other.usageType; } 
-@override int get hashCode { return Object.hash(interval, meter, usageType); } 
-@override String toString() { return 'GetPricesRecurring(interval: $interval, meter: $meter, usageType: $usageType)'; } 
- }
+          usageType == other.usageType;}
+@override int get hashCode {return Object.hash(interval, meter, usageType);}
+@override String toString() {return 'GetPricesRecurring(interval: $interval, meter: $meter, usageType: $usageType)';}
+}

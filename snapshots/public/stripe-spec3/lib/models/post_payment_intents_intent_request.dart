@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_request_amount_details.dart';import 'post_payment_intents_intent_request_application_fee_amount.dart';import 'post_payment_intents_intent_request_excluded_payment_method_types.dart';import 'post_payment_intents_intent_request_hooks.dart';import 'post_payment_intents_intent_request_metadata.dart';import 'post_payment_intents_intent_request_payment_details.dart';import 'post_payment_intents_intent_request_payment_method_data.dart';import 'post_payment_intents_intent_request_payment_method_options.dart';import 'post_payment_intents_intent_request_receipt_email.dart';import 'post_payment_intents_intent_request_shipping.dart';import 'post_payment_intents_intent_request_transfer_data.dart';/// Controls when the funds will be captured from the customer's account.
 @immutable final class PostPaymentIntentsIntentRequestCaptureMethod {const PostPaymentIntentsIntentRequestCaptureMethod._(this.value);
 
-factory PostPaymentIntentsIntentRequestCaptureMethod.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentRequestCaptureMethod.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'automatic_async' => automaticAsync,
   'manual' => manual,
   _ => PostPaymentIntentsIntentRequestCaptureMethod._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentRequestCaptureMethod automatic = PostPaymentIntentsIntentRequestCaptureMethod._('automatic');
 
@@ -20,14 +20,14 @@ static const List<PostPaymentIntentsIntentRequestCaptureMethod> values = [automa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentRequestCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentRequestCaptureMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentRequestCaptureMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentRequestCaptureMethod($value)';}
+}
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
 /// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
@@ -39,12 +39,12 @@ bool get isUnknown { return !values.contains(this); }
 /// If you've already set `setup_future_usage` and you're performing a request using a publishable key, you can only update the value from `on_session` to `off_session`.
 @immutable final class PostPaymentIntentsIntentRequestSetupFutureUsage {const PostPaymentIntentsIntentRequestSetupFutureUsage._(this.value);
 
-factory PostPaymentIntentsIntentRequestSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentRequestSetupFutureUsage.fromJson(String json) {return switch (json) {
   '' => $empty,
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PostPaymentIntentsIntentRequestSetupFutureUsage._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentRequestSetupFutureUsage $empty = PostPaymentIntentsIntentRequestSetupFutureUsage._('');
 
@@ -56,17 +56,17 @@ static const List<PostPaymentIntentsIntentRequestSetupFutureUsage> values = [$em
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentRequestSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentRequestSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentRequestSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentRequestSetupFutureUsage($value)';}
+}
 @immutable final class PostPaymentIntentsIntentRequest {const PostPaymentIntentsIntentRequest({this.amount, this.amountDetails, this.applicationFeeAmount, this.captureMethod, this.currency, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.expand, this.hooks, this.metadata, this.paymentDetails, this.paymentMethod, this.paymentMethodConfiguration, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, this.receiptEmail, this.setupFutureUsage, this.shipping, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
 
-factory PostPaymentIntentsIntentRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequest(
+factory PostPaymentIntentsIntentRequest.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   amountDetails: json['amount_details'] != null ? PostPaymentIntentsIntentRequestAmountDetails.fromJson(json['amount_details']) : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? PostPaymentIntentsIntentRequestApplicationFeeAmount.fromJson(json['application_fee_amount']) : null,
@@ -92,7 +92,7 @@ factory PostPaymentIntentsIntentRequest.fromJson(Map<String, dynamic> json) { re
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
   transferData: json['transfer_data'] != null ? PostPaymentIntentsIntentRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
-); }
+);}
 
 /// Amount intended to be collected by this PaymentIntent. A positive integer representing how much to charge in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal) (e.g., 100 cents to charge $1.00 or 100 to charge ¥100, a zero-decimal currency). The minimum amount is $0.50 US or [equivalent in charge currency](https://docs.stripe.com/currencies#minimum-and-maximum-charge-amounts). The amount value supports up to eight digits (e.g., a value of 99999999 for a USD charge of $999,999.99).
 final int? amount;
@@ -189,7 +189,7 @@ final PostPaymentIntentsIntentRequestTransferData? transferData;
 /// A string that identifies the resulting payment as part of a group. You can only provide `transfer_group` if it hasn't been set. Learn more about the [use case for connected accounts](https://docs.stripe.com/payments/connected-accounts).
 final String? transferGroup;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   if (amountDetails != null) 'amount_details': amountDetails?.toJson(),
   if (applicationFeeAmount != null) 'application_fee_amount': applicationFeeAmount?.toJson(),
@@ -215,9 +215,9 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor_suffix': ?statementDescriptorSuffix,
   if (transferData != null) 'transfer_data': transferData?.toJson(),
   'transfer_group': ?transferGroup,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_details', 'application_fee_amount', 'capture_method', 'currency', 'customer', 'customer_account', 'description', 'excluded_payment_method_types', 'expand', 'hooks', 'metadata', 'payment_details', 'payment_method', 'payment_method_configuration', 'payment_method_data', 'payment_method_options', 'payment_method_types', 'receipt_email', 'setup_future_usage', 'shipping', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data', 'transfer_group'}.contains(key)); } 
-PostPaymentIntentsIntentRequest copyWith({int? Function()? amount, PostPaymentIntentsIntentRequestAmountDetails? Function()? amountDetails, PostPaymentIntentsIntentRequestApplicationFeeAmount? Function()? applicationFeeAmount, PostPaymentIntentsIntentRequestCaptureMethod? Function()? captureMethod, String? Function()? currency, String? Function()? customer, String? Function()? customerAccount, String? Function()? description, PostPaymentIntentsIntentRequestExcludedPaymentMethodTypes? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, PostPaymentIntentsIntentRequestHooks? Function()? hooks, PostPaymentIntentsIntentRequestMetadata? Function()? metadata, PostPaymentIntentsIntentRequestPaymentDetails? Function()? paymentDetails, String? Function()? paymentMethod, String? Function()? paymentMethodConfiguration, PostPaymentIntentsIntentRequestPaymentMethodData? Function()? paymentMethodData, PostPaymentIntentsIntentRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? Function()? paymentMethodTypes, PostPaymentIntentsIntentRequestReceiptEmail? Function()? receiptEmail, PostPaymentIntentsIntentRequestSetupFutureUsage? Function()? setupFutureUsage, PostPaymentIntentsIntentRequestShipping? Function()? shipping, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostPaymentIntentsIntentRequestTransferData? Function()? transferData, String? Function()? transferGroup, }) { return PostPaymentIntentsIntentRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'amount_details', 'application_fee_amount', 'capture_method', 'currency', 'customer', 'customer_account', 'description', 'excluded_payment_method_types', 'expand', 'hooks', 'metadata', 'payment_details', 'payment_method', 'payment_method_configuration', 'payment_method_data', 'payment_method_options', 'payment_method_types', 'receipt_email', 'setup_future_usage', 'shipping', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data', 'transfer_group'}.contains(key));}
+PostPaymentIntentsIntentRequest copyWith({int? Function()? amount, PostPaymentIntentsIntentRequestAmountDetails? Function()? amountDetails, PostPaymentIntentsIntentRequestApplicationFeeAmount? Function()? applicationFeeAmount, PostPaymentIntentsIntentRequestCaptureMethod? Function()? captureMethod, String? Function()? currency, String? Function()? customer, String? Function()? customerAccount, String? Function()? description, PostPaymentIntentsIntentRequestExcludedPaymentMethodTypes? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, PostPaymentIntentsIntentRequestHooks? Function()? hooks, PostPaymentIntentsIntentRequestMetadata? Function()? metadata, PostPaymentIntentsIntentRequestPaymentDetails? Function()? paymentDetails, String? Function()? paymentMethod, String? Function()? paymentMethodConfiguration, PostPaymentIntentsIntentRequestPaymentMethodData? Function()? paymentMethodData, PostPaymentIntentsIntentRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? Function()? paymentMethodTypes, PostPaymentIntentsIntentRequestReceiptEmail? Function()? receiptEmail, PostPaymentIntentsIntentRequestSetupFutureUsage? Function()? setupFutureUsage, PostPaymentIntentsIntentRequestShipping? Function()? shipping, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostPaymentIntentsIntentRequestTransferData? Function()? transferData, String? Function()? transferGroup, }) {return PostPaymentIntentsIntentRequest(
   amount: amount != null ? amount() : this.amount,
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
@@ -243,8 +243,8 @@ PostPaymentIntentsIntentRequest copyWith({int? Function()? amount, PostPaymentIn
   statementDescriptorSuffix: statementDescriptorSuffix != null ? statementDescriptorSuffix() : this.statementDescriptorSuffix,
   transferData: transferData != null ? transferData() : this.transferData,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsIntentRequest &&
           amount == other.amount &&
           amountDetails == other.amountDetails &&
@@ -270,7 +270,7 @@ PostPaymentIntentsIntentRequest copyWith({int? Function()? amount, PostPaymentIn
           statementDescriptor == other.statementDescriptor &&
           statementDescriptorSuffix == other.statementDescriptorSuffix &&
           transferData == other.transferData &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hashAll([amount, amountDetails, applicationFeeAmount, captureMethod, currency, customer, customerAccount, description, excludedPaymentMethodTypes, Object.hashAll(expand ?? const []), hooks, metadata, paymentDetails, paymentMethod, paymentMethodConfiguration, paymentMethodData, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), receiptEmail, setupFutureUsage, shipping, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup]); } 
-@override String toString() { return 'PostPaymentIntentsIntentRequest(amount: $amount, amountDetails: $amountDetails, applicationFeeAmount: $applicationFeeAmount, captureMethod: $captureMethod, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, expand: $expand, hooks: $hooks, metadata: $metadata, paymentDetails: $paymentDetails, paymentMethod: $paymentMethod, paymentMethodConfiguration: $paymentMethodConfiguration, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, receiptEmail: $receiptEmail, setupFutureUsage: $setupFutureUsage, shipping: $shipping, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup)'; } 
- }
+          transferGroup == other.transferGroup;}
+@override int get hashCode {return Object.hashAll([amount, amountDetails, applicationFeeAmount, captureMethod, currency, customer, customerAccount, description, excludedPaymentMethodTypes, Object.hashAll(expand ?? const []), hooks, metadata, paymentDetails, paymentMethod, paymentMethodConfiguration, paymentMethodData, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), receiptEmail, setupFutureUsage, shipping, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup]);}
+@override String toString() {return 'PostPaymentIntentsIntentRequest(amount: $amount, amountDetails: $amountDetails, applicationFeeAmount: $applicationFeeAmount, captureMethod: $captureMethod, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, expand: $expand, hooks: $hooks, metadata: $metadata, paymentDetails: $paymentDetails, paymentMethod: $paymentMethod, paymentMethodConfiguration: $paymentMethodConfiguration, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, receiptEmail: $receiptEmail, setupFutureUsage: $setupFutureUsage, shipping: $shipping, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup)';}
+}

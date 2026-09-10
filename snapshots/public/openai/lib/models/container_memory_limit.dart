@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ContainerMemoryLimit {const ContainerMemoryLimit._(this.value);
 
-factory ContainerMemoryLimit.fromJson(String json) { return switch (json) {
+factory ContainerMemoryLimit.fromJson(String json) {return switch (json) {
   '1g' => $1g,
   '4g' => $4g,
   '16g' => $16g,
   '64g' => $64g,
   _ => ContainerMemoryLimit._(json),
-}; }
+};}
 
 static const ContainerMemoryLimit $1g = ContainerMemoryLimit._('1g');
 
@@ -22,11 +22,11 @@ static const List<ContainerMemoryLimit> values = [$1g, $4g, $16g, $64g];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContainerMemoryLimit && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContainerMemoryLimit($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ContainerMemoryLimit && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ContainerMemoryLimit($value)';}
+}

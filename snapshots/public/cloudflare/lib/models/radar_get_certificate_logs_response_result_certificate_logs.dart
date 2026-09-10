@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The API standard that the certificate log follows.
 @immutable final class RadarGetCertificateLogsResponseResultCertificateLogs2 {const RadarGetCertificateLogsResponseResultCertificateLogs2._(this.value);
 
-factory RadarGetCertificateLogsResponseResultCertificateLogs2.fromJson(String json) { return switch (json) {
+factory RadarGetCertificateLogsResponseResultCertificateLogs2.fromJson(String json) {return switch (json) {
   'RFC6962' => rfc6962,
   'STATIC' => $static,
   _ => RadarGetCertificateLogsResponseResultCertificateLogs2._(json),
-}; }
+};}
 
 static const RadarGetCertificateLogsResponseResultCertificateLogs2 rfc6962 = RadarGetCertificateLogsResponseResultCertificateLogs2._('RFC6962');
 
@@ -17,18 +17,18 @@ static const List<RadarGetCertificateLogsResponseResultCertificateLogs2> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCertificateLogsResponseResultCertificateLogs2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCertificateLogsResponseResultCertificateLogs2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCertificateLogsResponseResultCertificateLogs2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCertificateLogsResponseResultCertificateLogs2($value)';}
+}
 /// The current state of the certificate log. More details about log states can be found here: https://googlechrome.github.io/CertificateTransparency/log_states.html
 @immutable final class RadarGetCertificateLogsResponseResultCertificateLogsState {const RadarGetCertificateLogsResponseResultCertificateLogsState._(this.value);
 
-factory RadarGetCertificateLogsResponseResultCertificateLogsState.fromJson(String json) { return switch (json) {
+factory RadarGetCertificateLogsResponseResultCertificateLogsState.fromJson(String json) {return switch (json) {
   'USABLE' => usable,
   'PENDING' => pending,
   'QUALIFIED' => qualified,
@@ -36,7 +36,7 @@ factory RadarGetCertificateLogsResponseResultCertificateLogsState.fromJson(Strin
   'RETIRED' => retired,
   'REJECTED' => rejected,
   _ => RadarGetCertificateLogsResponseResultCertificateLogsState._(json),
-}; }
+};}
 
 static const RadarGetCertificateLogsResponseResultCertificateLogsState usable = RadarGetCertificateLogsResponseResultCertificateLogsState._('USABLE');
 
@@ -54,17 +54,17 @@ static const List<RadarGetCertificateLogsResponseResultCertificateLogsState> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCertificateLogsResponseResultCertificateLogsState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCertificateLogsResponseResultCertificateLogsState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCertificateLogsResponseResultCertificateLogsState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCertificateLogsResponseResultCertificateLogsState($value)';}
+}
 @immutable final class RadarGetCertificateLogsResponseResultCertificateLogs {const RadarGetCertificateLogsResponseResultCertificateLogs({required this.api, required this.description, required this.endExclusive, required this.$operator, required this.slug, required this.startInclusive, required this.state, required this.stateTimestamp, required this.url, });
 
-factory RadarGetCertificateLogsResponseResultCertificateLogs.fromJson(Map<String, dynamic> json) { return RadarGetCertificateLogsResponseResultCertificateLogs(
+factory RadarGetCertificateLogsResponseResultCertificateLogs.fromJson(Map<String, dynamic> json) {return RadarGetCertificateLogsResponseResultCertificateLogs(
   api: RadarGetCertificateLogsResponseResultCertificateLogs2.fromJson(json['api'] as String),
   description: json['description'] as String,
   endExclusive: DateTime.parse(json['endExclusive'] as String),
@@ -74,7 +74,7 @@ factory RadarGetCertificateLogsResponseResultCertificateLogs.fromJson(Map<String
   state: RadarGetCertificateLogsResponseResultCertificateLogsState.fromJson(json['state'] as String),
   stateTimestamp: DateTime.parse(json['stateTimestamp'] as String),
   url: json['url'] as String,
-); }
+);}
 
 /// The API standard that the certificate log follows.
 final RadarGetCertificateLogsResponseResultCertificateLogs2 api;
@@ -103,7 +103,7 @@ final DateTime stateTimestamp;
 /// The URL for the certificate log.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'api': api.toJson(),
   'description': description,
   'endExclusive': endExclusive.toIso8601String(),
@@ -113,8 +113,8 @@ Map<String, dynamic> toJson() { return {
   'state': state.toJson(),
   'stateTimestamp': stateTimestamp.toIso8601String(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('api') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('api') &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('endExclusive') && json['endExclusive'] is String &&
       json.containsKey('operator') && json['operator'] is String &&
@@ -122,8 +122,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('api')
       json.containsKey('startInclusive') && json['startInclusive'] is String &&
       json.containsKey('state') &&
       json.containsKey('stateTimestamp') && json['stateTimestamp'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-RadarGetCertificateLogsResponseResultCertificateLogs copyWith({RadarGetCertificateLogsResponseResultCertificateLogs2? api, String? description, DateTime? endExclusive, String? $operator, String? slug, DateTime? startInclusive, RadarGetCertificateLogsResponseResultCertificateLogsState? state, DateTime? stateTimestamp, String? url, }) { return RadarGetCertificateLogsResponseResultCertificateLogs(
+      json.containsKey('url') && json['url'] is String;}
+RadarGetCertificateLogsResponseResultCertificateLogs copyWith({RadarGetCertificateLogsResponseResultCertificateLogs2? api, String? description, DateTime? endExclusive, String? $operator, String? slug, DateTime? startInclusive, RadarGetCertificateLogsResponseResultCertificateLogsState? state, DateTime? stateTimestamp, String? url, }) {return RadarGetCertificateLogsResponseResultCertificateLogs(
   api: api ?? this.api,
   description: description ?? this.description,
   endExclusive: endExclusive ?? this.endExclusive,
@@ -133,8 +133,8 @@ RadarGetCertificateLogsResponseResultCertificateLogs copyWith({RadarGetCertifica
   state: state ?? this.state,
   stateTimestamp: stateTimestamp ?? this.stateTimestamp,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetCertificateLogsResponseResultCertificateLogs &&
           api == other.api &&
           description == other.description &&
@@ -144,7 +144,7 @@ RadarGetCertificateLogsResponseResultCertificateLogs copyWith({RadarGetCertifica
           startInclusive == other.startInclusive &&
           state == other.state &&
           stateTimestamp == other.stateTimestamp &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(api, description, endExclusive, $operator, slug, startInclusive, state, stateTimestamp, url); } 
-@override String toString() { return 'RadarGetCertificateLogsResponseResultCertificateLogs(api: $api, description: $description, endExclusive: $endExclusive, \$operator: ${$operator}, slug: $slug, startInclusive: $startInclusive, state: $state, stateTimestamp: $stateTimestamp, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(api, description, endExclusive, $operator, slug, startInclusive, state, stateTimestamp, url);}
+@override String toString() {return 'RadarGetCertificateLogsResponseResultCertificateLogs(api: $api, description: $description, endExclusive: $endExclusive, \$operator: ${$operator}, slug: $slug, startInclusive: $startInclusive, state: $state, stateTimestamp: $stateTimestamp, url: $url)';}
+}

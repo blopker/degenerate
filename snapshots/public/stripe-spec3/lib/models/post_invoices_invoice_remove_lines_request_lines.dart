@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceRemoveLinesRequestLinesBehavior {const PostInvoicesInvoiceRemoveLinesRequestLinesBehavior._(this.value);
 
-factory PostInvoicesInvoiceRemoveLinesRequestLinesBehavior.fromJson(String json) { return switch (json) {
+factory PostInvoicesInvoiceRemoveLinesRequestLinesBehavior.fromJson(String json) {return switch (json) {
   'delete' => delete,
   'unassign' => unassign,
   _ => PostInvoicesInvoiceRemoveLinesRequestLinesBehavior._(json),
-}; }
+};}
 
 static const PostInvoicesInvoiceRemoveLinesRequestLinesBehavior delete = PostInvoicesInvoiceRemoveLinesRequestLinesBehavior._('delete');
 
@@ -16,39 +16,39 @@ static const List<PostInvoicesInvoiceRemoveLinesRequestLinesBehavior> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesInvoiceRemoveLinesRequestLinesBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesInvoiceRemoveLinesRequestLinesBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesInvoiceRemoveLinesRequestLinesBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesInvoiceRemoveLinesRequestLinesBehavior($value)';}
+}
 @immutable final class PostInvoicesInvoiceRemoveLinesRequestLines {const PostInvoicesInvoiceRemoveLinesRequestLines({required this.behavior, required this.id, });
 
-factory PostInvoicesInvoiceRemoveLinesRequestLines.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRemoveLinesRequestLines(
+factory PostInvoicesInvoiceRemoveLinesRequestLines.fromJson(Map<String, dynamic> json) {return PostInvoicesInvoiceRemoveLinesRequestLines(
   behavior: PostInvoicesInvoiceRemoveLinesRequestLinesBehavior.fromJson(json['behavior'] as String),
   id: json['id'] as String,
-); }
+);}
 
 final PostInvoicesInvoiceRemoveLinesRequestLinesBehavior behavior;
 
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'behavior': behavior.toJson(),
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('behavior') &&
-      json.containsKey('id') && json['id'] is String; } 
-PostInvoicesInvoiceRemoveLinesRequestLines copyWith({PostInvoicesInvoiceRemoveLinesRequestLinesBehavior? behavior, String? id, }) { return PostInvoicesInvoiceRemoveLinesRequestLines(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('behavior') &&
+      json.containsKey('id') && json['id'] is String;}
+PostInvoicesInvoiceRemoveLinesRequestLines copyWith({PostInvoicesInvoiceRemoveLinesRequestLinesBehavior? behavior, String? id, }) {return PostInvoicesInvoiceRemoveLinesRequestLines(
   behavior: behavior ?? this.behavior,
   id: id ?? this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesInvoiceRemoveLinesRequestLines &&
           behavior == other.behavior &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(behavior, id); } 
-@override String toString() { return 'PostInvoicesInvoiceRemoveLinesRequestLines(behavior: $behavior, id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return Object.hash(behavior, id);}
+@override String toString() {return 'PostInvoicesInvoiceRemoveLinesRequestLines(behavior: $behavior, id: $id)';}
+}

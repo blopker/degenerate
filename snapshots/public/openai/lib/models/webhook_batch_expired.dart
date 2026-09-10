@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_batc
 /// 
 @immutable final class WebhookBatchExpiredObject {const WebhookBatchExpiredObject._(this.value);
 
-factory WebhookBatchExpiredObject.fromJson(String json) { return switch (json) {
+factory WebhookBatchExpiredObject.fromJson(String json) {return switch (json) {
   'event' => event,
   _ => WebhookBatchExpiredObject._(json),
-}; }
+};}
 
 static const WebhookBatchExpiredObject event = WebhookBatchExpiredObject._('event');
 
@@ -15,22 +15,22 @@ static const List<WebhookBatchExpiredObject> values = [event];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookBatchExpiredObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookBatchExpiredObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookBatchExpiredObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookBatchExpiredObject($value)';}
+}
 /// The type of the event. Always `batch.expired`.
 /// 
 @immutable final class WebhookBatchExpiredType {const WebhookBatchExpiredType._(this.value);
 
-factory WebhookBatchExpiredType.fromJson(String json) { return switch (json) {
+factory WebhookBatchExpiredType.fromJson(String json) {return switch (json) {
   'batch.expired' => batchExpired,
   _ => WebhookBatchExpiredType._(json),
-}; }
+};}
 
 static const WebhookBatchExpiredType batchExpired = WebhookBatchExpiredType._('batch.expired');
 
@@ -38,25 +38,25 @@ static const List<WebhookBatchExpiredType> values = [batchExpired];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookBatchExpiredType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookBatchExpiredType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookBatchExpiredType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookBatchExpiredType($value)';}
+}
 /// Sent when a batch API request has expired.
 /// 
 @immutable final class WebhookBatchExpired {const WebhookBatchExpired({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
-factory WebhookBatchExpired.fromJson(Map<String, dynamic> json) { return WebhookBatchExpired(
+factory WebhookBatchExpired.fromJson(Map<String, dynamic> json) {return WebhookBatchExpired(
   createdAt: (json['created_at'] as num).toInt(),
   id: json['id'] as String,
   data: WebhookBatchExpiredData.fromJson(json['data'] as Map<String, dynamic>),
   object: json['object'] != null ? WebhookBatchExpiredObject.fromJson(json['object'] as String) : null,
   type: WebhookBatchExpiredType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The Unix timestamp (in seconds) of when the batch API request expired.
 /// 
@@ -78,31 +78,31 @@ final WebhookBatchExpiredObject? object;
 /// 
 final WebhookBatchExpiredType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt,
   'id': id,
   'data': data.toJson(),
   if (object != null) 'object': object?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('data') &&
-      json.containsKey('type'); } 
-WebhookBatchExpired copyWith({int? createdAt, String? id, WebhookBatchExpiredData? data, WebhookBatchExpiredObject? Function()? object, WebhookBatchExpiredType? type, }) { return WebhookBatchExpired(
+      json.containsKey('type');}
+WebhookBatchExpired copyWith({int? createdAt, String? id, WebhookBatchExpiredData? data, WebhookBatchExpiredObject? Function()? object, WebhookBatchExpiredType? type, }) {return WebhookBatchExpired(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   data: data ?? this.data,
   object: object != null ? object() : this.object,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookBatchExpired &&
           createdAt == other.createdAt &&
           id == other.id &&
           data == other.data &&
           object == other.object &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, id, data, object, type); } 
-@override String toString() { return 'WebhookBatchExpired(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(createdAt, id, data, object, type);}
+@override String toString() {return 'WebhookBatchExpired(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)';}
+}

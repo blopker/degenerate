@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pause_collection_param2.dart';@immutable final class PostSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2 {const PostSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2._(this.value);
 
-factory PostSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2.fromJson(String json) { return switch (json) {
+factory PostSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2._(json),
-}; }
+};}
 
 static const PostSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2 $empty = PostSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSubscriptionsSubscriptionExposedIdRequestPauseCollectionVa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2($value)';}
+}
 /// If specified, payment collection for this subscription will be paused. Note that the subscription status will be unchanged and will not be updated to `paused`. Learn more about [pausing collection](https://docs.stripe.com/billing/subscriptions/pause-payment).
 @immutable
 final class PostSubscriptionsSubscriptionExposedIdRequestPauseCollection {

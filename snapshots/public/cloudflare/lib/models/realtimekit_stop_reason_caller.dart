@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type can be an App or a user. If the type is `user`, then only the `user_Id` and `name` are returned.
 @immutable final class RealtimekitStopReasonCallerType {const RealtimekitStopReasonCallerType._(this.value);
 
-factory RealtimekitStopReasonCallerType.fromJson(String json) { return switch (json) {
+factory RealtimekitStopReasonCallerType.fromJson(String json) {return switch (json) {
   'ORGANIZATION' => organization,
   'USER' => user,
   _ => RealtimekitStopReasonCallerType._(json),
-}; }
+};}
 
 static const RealtimekitStopReasonCallerType organization = RealtimekitStopReasonCallerType._('ORGANIZATION');
 
@@ -17,21 +17,21 @@ static const List<RealtimekitStopReasonCallerType> values = [organization, user]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitStopReasonCallerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitStopReasonCallerType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitStopReasonCallerType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitStopReasonCallerType($value)';}
+}
 @immutable final class RealtimekitStopReasonCaller {const RealtimekitStopReasonCaller({this.name, this.type, this.userId, });
 
-factory RealtimekitStopReasonCaller.fromJson(Map<String, dynamic> json) { return RealtimekitStopReasonCaller(
+factory RealtimekitStopReasonCaller.fromJson(Map<String, dynamic> json) {return RealtimekitStopReasonCaller(
   name: json['name'] as String?,
   type: json['type'] != null ? RealtimekitStopReasonCallerType.fromJson(json['type'] as String) : null,
   userId: json['user_Id'] as String?,
-); }
+);}
 
 /// Name of the user who stopped the recording.
 final String? name;
@@ -42,22 +42,22 @@ final RealtimekitStopReasonCallerType? type;
 /// The user ID of the person who stopped the recording.
 final String? userId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   if (type != null) 'type': type?.toJson(),
   'user_Id': ?userId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'type', 'user_Id'}.contains(key)); } 
-RealtimekitStopReasonCaller copyWith({String? Function()? name, RealtimekitStopReasonCallerType? Function()? type, String? Function()? userId, }) { return RealtimekitStopReasonCaller(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'type', 'user_Id'}.contains(key));}
+RealtimekitStopReasonCaller copyWith({String? Function()? name, RealtimekitStopReasonCallerType? Function()? type, String? Function()? userId, }) {return RealtimekitStopReasonCaller(
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,
   userId: userId != null ? userId() : this.userId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitStopReasonCaller &&
           name == other.name &&
           type == other.type &&
-          userId == other.userId; } 
-@override int get hashCode { return Object.hash(name, type, userId); } 
-@override String toString() { return 'RealtimekitStopReasonCaller(name: $name, type: $type, userId: $userId)'; } 
- }
+          userId == other.userId;}
+@override int get hashCode {return Object.hash(name, type, userId);}
+@override String toString() {return 'RealtimekitStopReasonCaller(name: $name, type: $type, userId: $userId)';}
+}

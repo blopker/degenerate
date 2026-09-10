@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the microdeposit sent to the customer. Used to distinguish between different verification methods.
 @immutable final class SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType {const SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType._(this.value);
 
-factory SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType.fromJson(String json) { return switch (json) {
+factory SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType.fromJson(String json) {return switch (json) {
   'amounts' => amounts,
   'descriptor_code' => descriptorCode,
   _ => SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType._(json),
-}; }
+};}
 
 static const SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType amounts = SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType._('amounts');
 
@@ -17,22 +17,22 @@ static const List<SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType($value)';}
+}
 /// 
 @immutable final class SetupIntentNextActionVerifyWithMicrodeposits {const SetupIntentNextActionVerifyWithMicrodeposits({required this.arrivalDate, required this.hostedVerificationUrl, this.microdepositType = const Omittable.absent(), });
 
-factory SetupIntentNextActionVerifyWithMicrodeposits.fromJson(Map<String, dynamic> json) { return SetupIntentNextActionVerifyWithMicrodeposits(
+factory SetupIntentNextActionVerifyWithMicrodeposits.fromJson(Map<String, dynamic> json) {return SetupIntentNextActionVerifyWithMicrodeposits(
   arrivalDate: (json['arrival_date'] as num).toInt(),
   hostedVerificationUrl: json['hosted_verification_url'] as String,
   microdepositType: json.containsKey('microdeposit_type') ? Omittable(json['microdeposit_type'] != null ? SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType.fromJson(json['microdeposit_type'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The timestamp when the microdeposits are expected to land.
 final int arrivalDate;
@@ -43,23 +43,23 @@ final String hostedVerificationUrl;
 /// The type of the microdeposit sent to the customer. Used to distinguish between different verification methods.
 final Omittable<SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType?> microdepositType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'arrival_date': arrivalDate,
   'hosted_verification_url': hostedVerificationUrl,
   if (microdepositType.isPresent) 'microdeposit_type': microdepositType.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('arrival_date') && json['arrival_date'] is num &&
-      json.containsKey('hosted_verification_url') && json['hosted_verification_url'] is String; } 
-SetupIntentNextActionVerifyWithMicrodeposits copyWith({int? arrivalDate, String? hostedVerificationUrl, Omittable<SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType?>? microdepositType, }) { return SetupIntentNextActionVerifyWithMicrodeposits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('arrival_date') && json['arrival_date'] is num &&
+      json.containsKey('hosted_verification_url') && json['hosted_verification_url'] is String;}
+SetupIntentNextActionVerifyWithMicrodeposits copyWith({int? arrivalDate, String? hostedVerificationUrl, Omittable<SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType?>? microdepositType, }) {return SetupIntentNextActionVerifyWithMicrodeposits(
   arrivalDate: arrivalDate ?? this.arrivalDate,
   hostedVerificationUrl: hostedVerificationUrl ?? this.hostedVerificationUrl,
   microdepositType: microdepositType ?? this.microdepositType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SetupIntentNextActionVerifyWithMicrodeposits &&
           arrivalDate == other.arrivalDate &&
           hostedVerificationUrl == other.hostedVerificationUrl &&
-          microdepositType == other.microdepositType; } 
-@override int get hashCode { return Object.hash(arrivalDate, hostedVerificationUrl, microdepositType); } 
-@override String toString() { return 'SetupIntentNextActionVerifyWithMicrodeposits(arrivalDate: $arrivalDate, hostedVerificationUrl: $hostedVerificationUrl, microdepositType: $microdepositType)'; } 
- }
+          microdepositType == other.microdepositType;}
+@override int get hashCode {return Object.hash(arrivalDate, hostedVerificationUrl, microdepositType);}
+@override String toString() {return 'SetupIntentNextActionVerifyWithMicrodeposits(arrivalDate: $arrivalDate, hostedVerificationUrl: $hostedVerificationUrl, microdepositType: $microdepositType)';}
+}

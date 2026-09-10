@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class InvoiceRenderingTemplateObject {const InvoiceRenderingTemplateObject._(this.value);
 
-factory InvoiceRenderingTemplateObject.fromJson(String json) { return switch (json) {
+factory InvoiceRenderingTemplateObject.fromJson(String json) {return switch (json) {
   'invoice_rendering_template' => invoiceRenderingTemplate,
   _ => InvoiceRenderingTemplateObject._(json),
-}; }
+};}
 
 static const InvoiceRenderingTemplateObject invoiceRenderingTemplate = InvoiceRenderingTemplateObject._('invoice_rendering_template');
 
@@ -14,22 +14,22 @@ static const List<InvoiceRenderingTemplateObject> values = [invoiceRenderingTemp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceRenderingTemplateObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceRenderingTemplateObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoiceRenderingTemplateObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoiceRenderingTemplateObject($value)';}
+}
 /// The status of the template, one of `active` or `archived`.
 @immutable final class InvoiceRenderingTemplateStatus {const InvoiceRenderingTemplateStatus._(this.value);
 
-factory InvoiceRenderingTemplateStatus.fromJson(String json) { return switch (json) {
+factory InvoiceRenderingTemplateStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'archived' => archived,
   _ => InvoiceRenderingTemplateStatus._(json),
-}; }
+};}
 
 static const InvoiceRenderingTemplateStatus active = InvoiceRenderingTemplateStatus._('active');
 
@@ -39,19 +39,19 @@ static const List<InvoiceRenderingTemplateStatus> values = [active, archived];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceRenderingTemplateStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceRenderingTemplateStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoiceRenderingTemplateStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoiceRenderingTemplateStatus($value)';}
+}
 /// Invoice Rendering Templates are used to configure how invoices are rendered on surfaces like the PDF. Invoice Rendering Templates
 /// can be created from within the Dashboard, and they can be used over the API when creating invoices.
 @immutable final class InvoiceRenderingTemplate {const InvoiceRenderingTemplate({required this.created, required this.id, required this.livemode, required this.object, required this.status, required this.version, this.metadata = const Omittable.absent(), this.nickname = const Omittable.absent(), });
 
-factory InvoiceRenderingTemplate.fromJson(Map<String, dynamic> json) { return InvoiceRenderingTemplate(
+factory InvoiceRenderingTemplate.fromJson(Map<String, dynamic> json) {return InvoiceRenderingTemplate(
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
@@ -60,7 +60,7 @@ factory InvoiceRenderingTemplate.fromJson(Map<String, dynamic> json) { return In
   object: InvoiceRenderingTemplateObject.fromJson(json['object'] as String),
   status: InvoiceRenderingTemplateStatus.fromJson(json['status'] as String),
   version: (json['version'] as num).toInt(),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -86,7 +86,7 @@ final InvoiceRenderingTemplateStatus status;
 /// Version of this template; version increases by one when an update on the template changes any field that controls invoice rendering
 final int version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'id': id,
   'livemode': livemode,
@@ -95,14 +95,14 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'status': status.toJson(),
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('status') &&
-      json.containsKey('version') && json['version'] is num; } 
-InvoiceRenderingTemplate copyWith({int? created, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<String?>? nickname, InvoiceRenderingTemplateObject? object, InvoiceRenderingTemplateStatus? status, int? version, }) { return InvoiceRenderingTemplate(
+      json.containsKey('version') && json['version'] is num;}
+InvoiceRenderingTemplate copyWith({int? created, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<String?>? nickname, InvoiceRenderingTemplateObject? object, InvoiceRenderingTemplateStatus? status, int? version, }) {return InvoiceRenderingTemplate(
   created: created ?? this.created,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
@@ -111,8 +111,8 @@ InvoiceRenderingTemplate copyWith({int? created, String? id, bool? livemode, Omi
   object: object ?? this.object,
   status: status ?? this.status,
   version: version ?? this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InvoiceRenderingTemplate &&
           created == other.created &&
           id == other.id &&
@@ -121,7 +121,7 @@ InvoiceRenderingTemplate copyWith({int? created, String? id, bool? livemode, Omi
           nickname == other.nickname &&
           object == other.object &&
           status == other.status &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(created, id, livemode, metadata, nickname, object, status, version); } 
-@override String toString() { return 'InvoiceRenderingTemplate(created: $created, id: $id, livemode: $livemode, metadata: $metadata, nickname: $nickname, object: $object, status: $status, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(created, id, livemode, metadata, nickname, object, status, version);}
+@override String toString() {return 'InvoiceRenderingTemplate(created: $created, id: $id, livemode: $livemode, metadata: $metadata, nickname: $nickname, object: $object, status: $status, version: $version)';}
+}

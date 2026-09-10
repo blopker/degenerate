@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A citation for a web resource used to generate a model response.
 @immutable final class UrlCitationBody {const UrlCitationBody({required this.type, required this.url, required this.startIndex, required this.endIndex, required this.title, });
 
-factory UrlCitationBody.fromJson(Map<String, dynamic> json) { return UrlCitationBody(
+factory UrlCitationBody.fromJson(Map<String, dynamic> json) {return UrlCitationBody(
   type: json['type'] as String,
   url: json['url'] as String,
   startIndex: (json['start_index'] as num).toInt(),
   endIndex: (json['end_index'] as num).toInt(),
   title: json['title'] as String,
-); }
+);}
 
 /// The type of the URL citation. Always `url_citation`.
 final String type;
@@ -26,32 +26,32 @@ final int endIndex;
 /// The title of the web resource.
 final String title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'url': url,
   'start_index': startIndex,
   'end_index': endIndex,
   'title': title,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('start_index') && json['start_index'] is num &&
       json.containsKey('end_index') && json['end_index'] is num &&
-      json.containsKey('title') && json['title'] is String; } 
-UrlCitationBody copyWith({String? type, String? url, int? startIndex, int? endIndex, String? title, }) { return UrlCitationBody(
+      json.containsKey('title') && json['title'] is String;}
+UrlCitationBody copyWith({String? type, String? url, int? startIndex, int? endIndex, String? title, }) {return UrlCitationBody(
   type: type ?? this.type,
   url: url ?? this.url,
   startIndex: startIndex ?? this.startIndex,
   endIndex: endIndex ?? this.endIndex,
   title: title ?? this.title,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlCitationBody &&
           type == other.type &&
           url == other.url &&
           startIndex == other.startIndex &&
           endIndex == other.endIndex &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(type, url, startIndex, endIndex, title); } 
-@override String toString() { return 'UrlCitationBody(type: $type, url: $url, startIndex: $startIndex, endIndex: $endIndex, title: $title)'; } 
- }
+          title == other.title;}
+@override int get hashCode {return Object.hash(type, url, startIndex, endIndex, title);}
+@override String toString() {return 'UrlCitationBody(type: $type, url: $url, startIndex: $startIndex, endIndex: $endIndex, title: $title)';}
+}

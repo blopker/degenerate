@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allowed values that can be passed to the exclude param.
 @immutable final class MigrationsGetStatusForOrgExclude {const MigrationsGetStatusForOrgExclude._(this.value);
 
-factory MigrationsGetStatusForOrgExclude.fromJson(String json) { return switch (json) {
+factory MigrationsGetStatusForOrgExclude.fromJson(String json) {return switch (json) {
   'repositories' => repositories,
   _ => MigrationsGetStatusForOrgExclude._(json),
-}; }
+};}
 
 static const MigrationsGetStatusForOrgExclude repositories = MigrationsGetStatusForOrgExclude._('repositories');
 
@@ -14,11 +14,11 @@ static const List<MigrationsGetStatusForOrgExclude> values = [repositories];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MigrationsGetStatusForOrgExclude && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MigrationsGetStatusForOrgExclude($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MigrationsGetStatusForOrgExclude && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MigrationsGetStatusForOrgExclude($value)';}
+}

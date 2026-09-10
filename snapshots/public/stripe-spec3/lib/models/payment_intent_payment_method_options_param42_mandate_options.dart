@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod {const PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod.fromJson(String json) {return switch (json) {
   '' => $empty,
   'paper' => paper,
   _ => PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod $empty = PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod._('');
 
@@ -16,32 +16,32 @@ static const List<PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollecti
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod($value)';}
+}
 @immutable final class PaymentIntentPaymentMethodOptionsParam42MandateOptions {const PaymentIntentPaymentMethodOptionsParam42MandateOptions({this.collectionMethod});
 
-factory PaymentIntentPaymentMethodOptionsParam42MandateOptions.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam42MandateOptions(
+factory PaymentIntentPaymentMethodOptionsParam42MandateOptions.fromJson(Map<String, dynamic> json) {return PaymentIntentPaymentMethodOptionsParam42MandateOptions(
   collectionMethod: json['collection_method'] != null ? PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod.fromJson(json['collection_method'] as String) : null,
-); }
+);}
 
 final PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod? collectionMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (collectionMethod != null) 'collection_method': collectionMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'collection_method'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam42MandateOptions copyWith({PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod? Function()? collectionMethod}) { return PaymentIntentPaymentMethodOptionsParam42MandateOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'collection_method'}.contains(key));}
+PaymentIntentPaymentMethodOptionsParam42MandateOptions copyWith({PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod? Function()? collectionMethod}) {return PaymentIntentPaymentMethodOptionsParam42MandateOptions(
   collectionMethod: collectionMethod != null ? collectionMethod() : this.collectionMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParam42MandateOptions &&
-          collectionMethod == other.collectionMethod; } 
-@override int get hashCode { return collectionMethod.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam42MandateOptions(collectionMethod: $collectionMethod)'; } 
- }
+          collectionMethod == other.collectionMethod;}
+@override int get hashCode {return collectionMethod.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam42MandateOptions(collectionMethod: $collectionMethod)';}
+}

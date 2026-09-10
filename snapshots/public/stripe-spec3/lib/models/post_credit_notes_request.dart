@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_credit_notes_request_lines.dart';import 'post_credit_notes_request_refunds.dart';import 'post_credit_notes_request_shipping_cost.dart';/// Type of email to send to the customer, one of `credit_note` or `none` and the default is `credit_note`.
 @immutable final class PostCreditNotesRequestEmailType {const PostCreditNotesRequestEmailType._(this.value);
 
-factory PostCreditNotesRequestEmailType.fromJson(String json) { return switch (json) {
+factory PostCreditNotesRequestEmailType.fromJson(String json) {return switch (json) {
   'credit_note' => creditNote,
   'none' => none,
   _ => PostCreditNotesRequestEmailType._(json),
-}; }
+};}
 
 static const PostCreditNotesRequestEmailType creditNote = PostCreditNotesRequestEmailType._('credit_note');
 
@@ -17,24 +17,24 @@ static const List<PostCreditNotesRequestEmailType> values = [creditNote, none];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCreditNotesRequestEmailType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCreditNotesRequestEmailType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCreditNotesRequestEmailType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCreditNotesRequestEmailType($value)';}
+}
 /// Reason for issuing this credit note, one of `duplicate`, `fraudulent`, `order_change`, or `product_unsatisfactory`
 @immutable final class PostCreditNotesRequestReason {const PostCreditNotesRequestReason._(this.value);
 
-factory PostCreditNotesRequestReason.fromJson(String json) { return switch (json) {
+factory PostCreditNotesRequestReason.fromJson(String json) {return switch (json) {
   'duplicate' => duplicate,
   'fraudulent' => fraudulent,
   'order_change' => orderChange,
   'product_unsatisfactory' => productUnsatisfactory,
   _ => PostCreditNotesRequestReason._(json),
-}; }
+};}
 
 static const PostCreditNotesRequestReason duplicate = PostCreditNotesRequestReason._('duplicate');
 
@@ -48,17 +48,17 @@ static const List<PostCreditNotesRequestReason> values = [duplicate, fraudulent,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCreditNotesRequestReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCreditNotesRequestReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCreditNotesRequestReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCreditNotesRequestReason($value)';}
+}
 @immutable final class PostCreditNotesRequest {const PostCreditNotesRequest({required this.invoice, this.amount, this.creditAmount, this.effectiveAt, this.emailType, this.expand, this.lines, this.memo, this.metadata, this.outOfBandAmount, this.reason, this.refundAmount, this.refunds, this.shippingCost, });
 
-factory PostCreditNotesRequest.fromJson(Map<String, dynamic> json) { return PostCreditNotesRequest(
+factory PostCreditNotesRequest.fromJson(Map<String, dynamic> json) {return PostCreditNotesRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   creditAmount: json['credit_amount'] != null ? (json['credit_amount'] as num).toInt() : null,
   effectiveAt: json['effective_at'] != null ? (json['effective_at'] as num).toInt() : null,
@@ -73,7 +73,7 @@ factory PostCreditNotesRequest.fromJson(Map<String, dynamic> json) { return Post
   refundAmount: json['refund_amount'] != null ? (json['refund_amount'] as num).toInt() : null,
   refunds: (json['refunds'] as List<dynamic>?)?.map((e) => PostCreditNotesRequestRefunds.fromJson(e as Map<String, dynamic>)).toList(),
   shippingCost: json['shipping_cost'] != null ? PostCreditNotesRequestShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The integer amount in cents (or local equivalent) representing the total amount of the credit note. One of `amount`, `lines`, or `shipping_cost` must be provided.
 final int? amount;
@@ -117,7 +117,7 @@ final List<PostCreditNotesRequestRefunds>? refunds;
 /// When shipping_cost contains the shipping_rate from the invoice, the shipping_cost is included in the credit note. One of `amount`, `lines`, or `shipping_cost` must be provided.
 final PostCreditNotesRequestShippingCost? shippingCost;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'credit_amount': ?creditAmount,
   'effective_at': ?effectiveAt,
@@ -132,9 +132,9 @@ Map<String, dynamic> toJson() { return {
   'refund_amount': ?refundAmount,
   if (refunds != null) 'refunds': refunds?.map((e) => e.toJson()).toList(),
   if (shippingCost != null) 'shipping_cost': shippingCost?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('invoice') && json['invoice'] is String; } 
-PostCreditNotesRequest copyWith({int? Function()? amount, int? Function()? creditAmount, int? Function()? effectiveAt, PostCreditNotesRequestEmailType? Function()? emailType, List<String>? Function()? expand, String? invoice, List<PostCreditNotesRequestLines>? Function()? lines, String? Function()? memo, Map<String, String>? Function()? metadata, int? Function()? outOfBandAmount, PostCreditNotesRequestReason? Function()? reason, int? Function()? refundAmount, List<PostCreditNotesRequestRefunds>? Function()? refunds, PostCreditNotesRequestShippingCost? Function()? shippingCost, }) { return PostCreditNotesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('invoice') && json['invoice'] is String;}
+PostCreditNotesRequest copyWith({int? Function()? amount, int? Function()? creditAmount, int? Function()? effectiveAt, PostCreditNotesRequestEmailType? Function()? emailType, List<String>? Function()? expand, String? invoice, List<PostCreditNotesRequestLines>? Function()? lines, String? Function()? memo, Map<String, String>? Function()? metadata, int? Function()? outOfBandAmount, PostCreditNotesRequestReason? Function()? reason, int? Function()? refundAmount, List<PostCreditNotesRequestRefunds>? Function()? refunds, PostCreditNotesRequestShippingCost? Function()? shippingCost, }) {return PostCreditNotesRequest(
   amount: amount != null ? amount() : this.amount,
   creditAmount: creditAmount != null ? creditAmount() : this.creditAmount,
   effectiveAt: effectiveAt != null ? effectiveAt() : this.effectiveAt,
@@ -149,8 +149,8 @@ PostCreditNotesRequest copyWith({int? Function()? amount, int? Function()? credi
   refundAmount: refundAmount != null ? refundAmount() : this.refundAmount,
   refunds: refunds != null ? refunds() : this.refunds,
   shippingCost: shippingCost != null ? shippingCost() : this.shippingCost,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCreditNotesRequest &&
           amount == other.amount &&
           creditAmount == other.creditAmount &&
@@ -165,7 +165,7 @@ PostCreditNotesRequest copyWith({int? Function()? amount, int? Function()? credi
           reason == other.reason &&
           refundAmount == other.refundAmount &&
           listEquals(refunds, other.refunds) &&
-          shippingCost == other.shippingCost; } 
-@override int get hashCode { return Object.hash(amount, creditAmount, effectiveAt, emailType, Object.hashAll(expand ?? const []), invoice, Object.hashAll(lines ?? const []), memo, metadata, outOfBandAmount, reason, refundAmount, Object.hashAll(refunds ?? const []), shippingCost); } 
-@override String toString() { return 'PostCreditNotesRequest(amount: $amount, creditAmount: $creditAmount, effectiveAt: $effectiveAt, emailType: $emailType, expand: $expand, invoice: $invoice, lines: $lines, memo: $memo, metadata: $metadata, outOfBandAmount: $outOfBandAmount, reason: $reason, refundAmount: $refundAmount, refunds: $refunds, shippingCost: $shippingCost)'; } 
- }
+          shippingCost == other.shippingCost;}
+@override int get hashCode {return Object.hash(amount, creditAmount, effectiveAt, emailType, Object.hashAll(expand ?? const []), invoice, Object.hashAll(lines ?? const []), memo, metadata, outOfBandAmount, reason, refundAmount, Object.hashAll(refunds ?? const []), shippingCost);}
+@override String toString() {return 'PostCreditNotesRequest(amount: $amount, creditAmount: $creditAmount, effectiveAt: $effectiveAt, emailType: $emailType, expand: $expand, invoice: $invoice, lines: $lines, memo: $memo, metadata: $metadata, outOfBandAmount: $outOfBandAmount, reason: $reason, refundAmount: $refundAmount, refunds: $refunds, shippingCost: $shippingCost)';}
+}

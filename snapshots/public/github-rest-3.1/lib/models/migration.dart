@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository.dart';import 'simple_user.dart';/// A migration.
 @immutable final class Migration {const Migration({required this.id, required this.owner, required this.guid, required this.state, required this.lockRepositories, required this.excludeMetadata, required this.excludeGitData, required this.excludeAttachments, required this.excludeReleases, required this.excludeOwnerProjects, required this.orgMetadataOnly, required this.repositories, required this.url, required this.createdAt, required this.updatedAt, required this.nodeId, this.archiveUrl, this.exclude, });
 
-factory Migration.fromJson(Map<String, dynamic> json) { return Migration(
+factory Migration.fromJson(Map<String, dynamic> json) {return Migration(
   id: (json['id'] as num).toInt(),
   owner: json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null,
   guid: json['guid'] as String,
@@ -22,7 +22,7 @@ factory Migration.fromJson(Map<String, dynamic> json) { return Migration(
   nodeId: json['node_id'] as String,
   archiveUrl: json['archive_url'] != null ? Uri.parse(json['archive_url'] as String) : null,
   exclude: (json['exclude'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final int id;
 
@@ -62,7 +62,7 @@ final Uri? archiveUrl;
 /// Exclude related items from being returned in the response in order to improve performance of the request. The array can include any of: `"repositories"`.
 final List<String>? exclude;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'owner': owner?.toJson(),
   'guid': guid,
@@ -81,8 +81,8 @@ Map<String, dynamic> toJson() { return {
   'node_id': nodeId,
   if (archiveUrl != null) 'archive_url': archiveUrl?.toString(),
   'exclude': ?exclude,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('owner') &&
       json.containsKey('guid') && json['guid'] is String &&
       json.containsKey('state') && json['state'] is String &&
@@ -97,8 +97,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('node_id') && json['node_id'] is String; } 
-Migration copyWith({int? id, SimpleUser? Function()? owner, String? guid, String? state, bool? lockRepositories, bool? excludeMetadata, bool? excludeGitData, bool? excludeAttachments, bool? excludeReleases, bool? excludeOwnerProjects, bool? orgMetadataOnly, List<Repository>? repositories, Uri? url, DateTime? createdAt, DateTime? updatedAt, String? nodeId, Uri? Function()? archiveUrl, List<String>? Function()? exclude, }) { return Migration(
+      json.containsKey('node_id') && json['node_id'] is String;}
+Migration copyWith({int? id, SimpleUser? Function()? owner, String? guid, String? state, bool? lockRepositories, bool? excludeMetadata, bool? excludeGitData, bool? excludeAttachments, bool? excludeReleases, bool? excludeOwnerProjects, bool? orgMetadataOnly, List<Repository>? repositories, Uri? url, DateTime? createdAt, DateTime? updatedAt, String? nodeId, Uri? Function()? archiveUrl, List<String>? Function()? exclude, }) {return Migration(
   id: id ?? this.id,
   owner: owner != null ? owner() : this.owner,
   guid: guid ?? this.guid,
@@ -117,8 +117,8 @@ Migration copyWith({int? id, SimpleUser? Function()? owner, String? guid, String
   nodeId: nodeId ?? this.nodeId,
   archiveUrl: archiveUrl != null ? archiveUrl() : this.archiveUrl,
   exclude: exclude != null ? exclude() : this.exclude,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Migration &&
           id == other.id &&
           owner == other.owner &&
@@ -137,7 +137,7 @@ Migration copyWith({int? id, SimpleUser? Function()? owner, String? guid, String
           updatedAt == other.updatedAt &&
           nodeId == other.nodeId &&
           archiveUrl == other.archiveUrl &&
-          listEquals(exclude, other.exclude); } 
-@override int get hashCode { return Object.hash(id, owner, guid, state, lockRepositories, excludeMetadata, excludeGitData, excludeAttachments, excludeReleases, excludeOwnerProjects, orgMetadataOnly, Object.hashAll(repositories), url, createdAt, updatedAt, nodeId, archiveUrl, Object.hashAll(exclude ?? const [])); } 
-@override String toString() { return 'Migration(id: $id, owner: $owner, guid: $guid, state: $state, lockRepositories: $lockRepositories, excludeMetadata: $excludeMetadata, excludeGitData: $excludeGitData, excludeAttachments: $excludeAttachments, excludeReleases: $excludeReleases, excludeOwnerProjects: $excludeOwnerProjects, orgMetadataOnly: $orgMetadataOnly, repositories: $repositories, url: $url, createdAt: $createdAt, updatedAt: $updatedAt, nodeId: $nodeId, archiveUrl: $archiveUrl, exclude: $exclude)'; } 
- }
+          listEquals(exclude, other.exclude);}
+@override int get hashCode {return Object.hash(id, owner, guid, state, lockRepositories, excludeMetadata, excludeGitData, excludeAttachments, excludeReleases, excludeOwnerProjects, orgMetadataOnly, Object.hashAll(repositories), url, createdAt, updatedAt, nodeId, archiveUrl, Object.hashAll(exclude ?? const []));}
+@override String toString() {return 'Migration(id: $id, owner: $owner, guid: $guid, state: $state, lockRepositories: $lockRepositories, excludeMetadata: $excludeMetadata, excludeGitData: $excludeGitData, excludeAttachments: $excludeAttachments, excludeReleases: $excludeReleases, excludeOwnerProjects: $excludeOwnerProjects, orgMetadataOnly: $orgMetadataOnly, repositories: $repositories, url: $url, createdAt: $createdAt, updatedAt: $updatedAt, nodeId: $nodeId, archiveUrl: $archiveUrl, exclude: $exclude)';}
+}

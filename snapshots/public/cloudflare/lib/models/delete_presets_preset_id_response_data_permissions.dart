@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_presets_preset_id_response_data_permissions_chat.dart';import 'delete_presets_preset_id_response_data_permissions_connected_meetings.dart';import 'delete_presets_preset_id_response_data_permissions_media.dart';import 'delete_presets_preset_id_response_data_permissions_plugins.dart';import 'delete_presets_preset_id_response_data_permissions_polls.dart';/// Type of the recording peer
 @immutable final class DeletePresetsPresetIdResponseDataPermissionsRecorderType {const DeletePresetsPresetIdResponseDataPermissionsRecorderType._(this.value);
 
-factory DeletePresetsPresetIdResponseDataPermissionsRecorderType.fromJson(String json) { return switch (json) {
+factory DeletePresetsPresetIdResponseDataPermissionsRecorderType.fromJson(String json) {return switch (json) {
   'RECORDER' => recorder,
   'LIVESTREAMER' => livestreamer,
   'NONE' => none,
   _ => DeletePresetsPresetIdResponseDataPermissionsRecorderType._(json),
-}; }
+};}
 
 static const DeletePresetsPresetIdResponseDataPermissionsRecorderType recorder = DeletePresetsPresetIdResponseDataPermissionsRecorderType._('RECORDER');
 
@@ -20,23 +20,23 @@ static const List<DeletePresetsPresetIdResponseDataPermissionsRecorderType> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeletePresetsPresetIdResponseDataPermissionsRecorderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeletePresetsPresetIdResponseDataPermissionsRecorderType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DeletePresetsPresetIdResponseDataPermissionsRecorderType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DeletePresetsPresetIdResponseDataPermissionsRecorderType($value)';}
+}
 /// Waiting room type
 @immutable final class DeletePresetsPresetIdResponseDataPermissionsWaitingRoomType {const DeletePresetsPresetIdResponseDataPermissionsWaitingRoomType._(this.value);
 
-factory DeletePresetsPresetIdResponseDataPermissionsWaitingRoomType.fromJson(String json) { return switch (json) {
+factory DeletePresetsPresetIdResponseDataPermissionsWaitingRoomType.fromJson(String json) {return switch (json) {
   'SKIP' => skip,
   'ON_PRIVILEGED_USER_ENTRY' => onPrivilegedUserEntry,
   'SKIP_ON_ACCEPT' => skipOnAccept,
   _ => DeletePresetsPresetIdResponseDataPermissionsWaitingRoomType._(json),
-}; }
+};}
 
 static const DeletePresetsPresetIdResponseDataPermissionsWaitingRoomType skip = DeletePresetsPresetIdResponseDataPermissionsWaitingRoomType._('SKIP');
 
@@ -48,17 +48,17 @@ static const List<DeletePresetsPresetIdResponseDataPermissionsWaitingRoomType> v
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeletePresetsPresetIdResponseDataPermissionsWaitingRoomType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeletePresetsPresetIdResponseDataPermissionsWaitingRoomType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DeletePresetsPresetIdResponseDataPermissionsWaitingRoomType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DeletePresetsPresetIdResponseDataPermissionsWaitingRoomType($value)';}
+}
 @immutable final class DeletePresetsPresetIdResponseDataPermissions {const DeletePresetsPresetIdResponseDataPermissions({required this.acceptWaitingRequests, required this.canAcceptProductionRequests, required this.canChangeParticipantPermissions, required this.canEditDisplayName, required this.canLivestream, required this.canRecord, required this.canSpotlight, required this.chat, required this.connectedMeetings, required this.disableParticipantAudio, required this.disableParticipantScreensharing, required this.disableParticipantVideo, required this.hiddenParticipant, required this.kickParticipant, required this.media, required this.pinParticipant, required this.plugins, required this.polls, required this.recorderType, required this.showParticipantList, required this.waitingRoomType, this.isRecorder, });
 
-factory DeletePresetsPresetIdResponseDataPermissions.fromJson(Map<String, dynamic> json) { return DeletePresetsPresetIdResponseDataPermissions(
+factory DeletePresetsPresetIdResponseDataPermissions.fromJson(Map<String, dynamic> json) {return DeletePresetsPresetIdResponseDataPermissions(
   acceptWaitingRequests: json['accept_waiting_requests'] as bool,
   canAcceptProductionRequests: json['can_accept_production_requests'] as bool,
   canChangeParticipantPermissions: json['can_change_participant_permissions'] as bool,
@@ -81,7 +81,7 @@ factory DeletePresetsPresetIdResponseDataPermissions.fromJson(Map<String, dynami
   recorderType: DeletePresetsPresetIdResponseDataPermissionsRecorderType.fromJson(json['recorder_type'] as String),
   showParticipantList: json['show_participant_list'] as bool,
   waitingRoomType: DeletePresetsPresetIdResponseDataPermissionsWaitingRoomType.fromJson(json['waiting_room_type'] as String),
-); }
+);}
 
 /// Whether this participant can accept waiting requests
 final bool acceptWaitingRequests;
@@ -136,8 +136,8 @@ final bool showParticipantList;
 final DeletePresetsPresetIdResponseDataPermissionsWaitingRoomType waitingRoomType;
 
 /// The value with the schema default applied when absent.
-bool get isRecorderOrDefault { return isRecorder ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get isRecorderOrDefault {return isRecorder ?? false;}
+Map<String, dynamic> toJson() {return {
   'accept_waiting_requests': acceptWaitingRequests,
   'can_accept_production_requests': canAcceptProductionRequests,
   'can_change_participant_permissions': canChangeParticipantPermissions,
@@ -160,8 +160,8 @@ Map<String, dynamic> toJson() { return {
   'recorder_type': recorderType.toJson(),
   'show_participant_list': showParticipantList,
   'waiting_room_type': waitingRoomType.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('accept_waiting_requests') && json['accept_waiting_requests'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('accept_waiting_requests') && json['accept_waiting_requests'] is bool &&
       json.containsKey('can_accept_production_requests') && json['can_accept_production_requests'] is bool &&
       json.containsKey('can_change_participant_permissions') && json['can_change_participant_permissions'] is bool &&
       json.containsKey('can_edit_display_name') && json['can_edit_display_name'] is bool &&
@@ -181,8 +181,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accep
       json.containsKey('polls') &&
       json.containsKey('recorder_type') &&
       json.containsKey('show_participant_list') && json['show_participant_list'] is bool &&
-      json.containsKey('waiting_room_type'); } 
-DeletePresetsPresetIdResponseDataPermissions copyWith({bool? acceptWaitingRequests, bool? canAcceptProductionRequests, bool? canChangeParticipantPermissions, bool? canEditDisplayName, bool? canLivestream, bool? canRecord, bool? canSpotlight, DeletePresetsPresetIdResponseDataPermissionsChat? chat, DeletePresetsPresetIdResponseDataPermissionsConnectedMeetings? connectedMeetings, bool? disableParticipantAudio, bool? disableParticipantScreensharing, bool? disableParticipantVideo, bool? hiddenParticipant, bool? Function()? isRecorder, bool? kickParticipant, DeletePresetsPresetIdResponseDataPermissionsMedia? media, bool? pinParticipant, DeletePresetsPresetIdResponseDataPermissionsPlugins? plugins, DeletePresetsPresetIdResponseDataPermissionsPolls? polls, DeletePresetsPresetIdResponseDataPermissionsRecorderType? recorderType, bool? showParticipantList, DeletePresetsPresetIdResponseDataPermissionsWaitingRoomType? waitingRoomType, }) { return DeletePresetsPresetIdResponseDataPermissions(
+      json.containsKey('waiting_room_type');}
+DeletePresetsPresetIdResponseDataPermissions copyWith({bool? acceptWaitingRequests, bool? canAcceptProductionRequests, bool? canChangeParticipantPermissions, bool? canEditDisplayName, bool? canLivestream, bool? canRecord, bool? canSpotlight, DeletePresetsPresetIdResponseDataPermissionsChat? chat, DeletePresetsPresetIdResponseDataPermissionsConnectedMeetings? connectedMeetings, bool? disableParticipantAudio, bool? disableParticipantScreensharing, bool? disableParticipantVideo, bool? hiddenParticipant, bool? Function()? isRecorder, bool? kickParticipant, DeletePresetsPresetIdResponseDataPermissionsMedia? media, bool? pinParticipant, DeletePresetsPresetIdResponseDataPermissionsPlugins? plugins, DeletePresetsPresetIdResponseDataPermissionsPolls? polls, DeletePresetsPresetIdResponseDataPermissionsRecorderType? recorderType, bool? showParticipantList, DeletePresetsPresetIdResponseDataPermissionsWaitingRoomType? waitingRoomType, }) {return DeletePresetsPresetIdResponseDataPermissions(
   acceptWaitingRequests: acceptWaitingRequests ?? this.acceptWaitingRequests,
   canAcceptProductionRequests: canAcceptProductionRequests ?? this.canAcceptProductionRequests,
   canChangeParticipantPermissions: canChangeParticipantPermissions ?? this.canChangeParticipantPermissions,
@@ -205,8 +205,8 @@ DeletePresetsPresetIdResponseDataPermissions copyWith({bool? acceptWaitingReques
   recorderType: recorderType ?? this.recorderType,
   showParticipantList: showParticipantList ?? this.showParticipantList,
   waitingRoomType: waitingRoomType ?? this.waitingRoomType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DeletePresetsPresetIdResponseDataPermissions &&
           acceptWaitingRequests == other.acceptWaitingRequests &&
           canAcceptProductionRequests == other.canAcceptProductionRequests &&
@@ -229,7 +229,7 @@ DeletePresetsPresetIdResponseDataPermissions copyWith({bool? acceptWaitingReques
           polls == other.polls &&
           recorderType == other.recorderType &&
           showParticipantList == other.showParticipantList &&
-          waitingRoomType == other.waitingRoomType; } 
-@override int get hashCode { return Object.hashAll([acceptWaitingRequests, canAcceptProductionRequests, canChangeParticipantPermissions, canEditDisplayName, canLivestream, canRecord, canSpotlight, chat, connectedMeetings, disableParticipantAudio, disableParticipantScreensharing, disableParticipantVideo, hiddenParticipant, isRecorder, kickParticipant, media, pinParticipant, plugins, polls, recorderType, showParticipantList, waitingRoomType]); } 
-@override String toString() { return 'DeletePresetsPresetIdResponseDataPermissions(acceptWaitingRequests: $acceptWaitingRequests, canAcceptProductionRequests: $canAcceptProductionRequests, canChangeParticipantPermissions: $canChangeParticipantPermissions, canEditDisplayName: $canEditDisplayName, canLivestream: $canLivestream, canRecord: $canRecord, canSpotlight: $canSpotlight, chat: $chat, connectedMeetings: $connectedMeetings, disableParticipantAudio: $disableParticipantAudio, disableParticipantScreensharing: $disableParticipantScreensharing, disableParticipantVideo: $disableParticipantVideo, hiddenParticipant: $hiddenParticipant, isRecorder: $isRecorder, kickParticipant: $kickParticipant, media: $media, pinParticipant: $pinParticipant, plugins: $plugins, polls: $polls, recorderType: $recorderType, showParticipantList: $showParticipantList, waitingRoomType: $waitingRoomType)'; } 
- }
+          waitingRoomType == other.waitingRoomType;}
+@override int get hashCode {return Object.hashAll([acceptWaitingRequests, canAcceptProductionRequests, canChangeParticipantPermissions, canEditDisplayName, canLivestream, canRecord, canSpotlight, chat, connectedMeetings, disableParticipantAudio, disableParticipantScreensharing, disableParticipantVideo, hiddenParticipant, isRecorder, kickParticipant, media, pinParticipant, plugins, polls, recorderType, showParticipantList, waitingRoomType]);}
+@override String toString() {return 'DeletePresetsPresetIdResponseDataPermissions(acceptWaitingRequests: $acceptWaitingRequests, canAcceptProductionRequests: $canAcceptProductionRequests, canChangeParticipantPermissions: $canChangeParticipantPermissions, canEditDisplayName: $canEditDisplayName, canLivestream: $canLivestream, canRecord: $canRecord, canSpotlight: $canSpotlight, chat: $chat, connectedMeetings: $connectedMeetings, disableParticipantAudio: $disableParticipantAudio, disableParticipantScreensharing: $disableParticipantScreensharing, disableParticipantVideo: $disableParticipantVideo, hiddenParticipant: $hiddenParticipant, isRecorder: $isRecorder, kickParticipant: $kickParticipant, media: $media, pinParticipant: $pinParticipant, plugins: $plugins, polls: $polls, recorderType: $recorderType, showParticipantList: $showParticipantList, waitingRoomType: $waitingRoomType)';}
+}

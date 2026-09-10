@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelSchemasIpRiskTypes {const IntelSchemasIpRiskTypes({this.id, this.name, this.superCategoryId, });
 
-factory IntelSchemasIpRiskTypes.fromJson(Map<String, dynamic> json) { return IntelSchemasIpRiskTypes(
+factory IntelSchemasIpRiskTypes.fromJson(Map<String, dynamic> json) {return IntelSchemasIpRiskTypes(
   id: json['id'] != null ? (json['id'] as num).toDouble() : null,
   name: json['name'] as String?,
   superCategoryId: json['super_category_id'] != null ? (json['super_category_id'] as num).toDouble() : null,
-); }
+);}
 
 final double? id;
 
@@ -14,22 +14,22 @@ final String? name;
 
 final double? superCategoryId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'name': ?name,
   'super_category_id': ?superCategoryId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'super_category_id'}.contains(key)); } 
-IntelSchemasIpRiskTypes copyWith({double? Function()? id, String? Function()? name, double? Function()? superCategoryId, }) { return IntelSchemasIpRiskTypes(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'name', 'super_category_id'}.contains(key));}
+IntelSchemasIpRiskTypes copyWith({double? Function()? id, String? Function()? name, double? Function()? superCategoryId, }) {return IntelSchemasIpRiskTypes(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   superCategoryId: superCategoryId != null ? superCategoryId() : this.superCategoryId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IntelSchemasIpRiskTypes &&
           id == other.id &&
           name == other.name &&
-          superCategoryId == other.superCategoryId; } 
-@override int get hashCode { return Object.hash(id, name, superCategoryId); } 
-@override String toString() { return 'IntelSchemasIpRiskTypes(id: $id, name: $name, superCategoryId: $superCategoryId)'; } 
- }
+          superCategoryId == other.superCategoryId;}
+@override int get hashCode {return Object.hash(id, name, superCategoryId);}
+@override String toString() {return 'IntelSchemasIpRiskTypes(id: $id, name: $name, superCategoryId: $superCategoryId)';}
+}

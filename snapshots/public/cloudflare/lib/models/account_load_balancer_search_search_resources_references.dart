@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of references to include. "*" to include both referral and referrer references. "" to not include any reference information.
 @immutable final class AccountLoadBalancerSearchSearchResourcesReferences {const AccountLoadBalancerSearchSearchResourcesReferences._(this.value);
 
-factory AccountLoadBalancerSearchSearchResourcesReferences.fromJson(String json) { return switch (json) {
+factory AccountLoadBalancerSearchSearchResourcesReferences.fromJson(String json) {return switch (json) {
   '' => $empty,
   '*' => $empty2,
   'referral' => referral,
   'referrer' => referrer,
   _ => AccountLoadBalancerSearchSearchResourcesReferences._(json),
-}; }
+};}
 
 static const AccountLoadBalancerSearchSearchResourcesReferences $empty = AccountLoadBalancerSearchSearchResourcesReferences._('');
 
@@ -23,11 +23,11 @@ static const List<AccountLoadBalancerSearchSearchResourcesReferences> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountLoadBalancerSearchSearchResourcesReferences && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountLoadBalancerSearchSearchResourcesReferences($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountLoadBalancerSearchSearchResourcesReferences && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountLoadBalancerSearchSearchResourcesReferences($value)';}
+}

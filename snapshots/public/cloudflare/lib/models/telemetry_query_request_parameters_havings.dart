@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TelemetryQueryRequestParametersHavingsOperation {const TelemetryQueryRequestParametersHavingsOperation._(this.value);
 
-factory TelemetryQueryRequestParametersHavingsOperation.fromJson(String json) { return switch (json) {
+factory TelemetryQueryRequestParametersHavingsOperation.fromJson(String json) {return switch (json) {
   'eq' => eq,
   'neq' => neq,
   'gt' => gt,
@@ -10,7 +10,7 @@ factory TelemetryQueryRequestParametersHavingsOperation.fromJson(String json) { 
   'lt' => lt,
   'lte' => lte,
   _ => TelemetryQueryRequestParametersHavingsOperation._(json),
-}; }
+};}
 
 static const TelemetryQueryRequestParametersHavingsOperation eq = TelemetryQueryRequestParametersHavingsOperation._('eq');
 
@@ -28,21 +28,21 @@ static const List<TelemetryQueryRequestParametersHavingsOperation> values = [eq,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TelemetryQueryRequestParametersHavingsOperation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TelemetryQueryRequestParametersHavingsOperation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TelemetryQueryRequestParametersHavingsOperation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TelemetryQueryRequestParametersHavingsOperation($value)';}
+}
 @immutable final class TelemetryQueryRequestParametersHavings {const TelemetryQueryRequestParametersHavings({required this.key, required this.operation, required this.value, });
 
-factory TelemetryQueryRequestParametersHavings.fromJson(Map<String, dynamic> json) { return TelemetryQueryRequestParametersHavings(
+factory TelemetryQueryRequestParametersHavings.fromJson(Map<String, dynamic> json) {return TelemetryQueryRequestParametersHavings(
   key: json['key'] as String,
   operation: TelemetryQueryRequestParametersHavingsOperation.fromJson(json['operation'] as String),
   value: (json['value'] as num).toDouble(),
-); }
+);}
 
 final String key;
 
@@ -50,24 +50,24 @@ final TelemetryQueryRequestParametersHavingsOperation operation;
 
 final double value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
   'operation': operation.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
       json.containsKey('operation') &&
-      json.containsKey('value') && json['value'] is num; } 
-TelemetryQueryRequestParametersHavings copyWith({String? key, TelemetryQueryRequestParametersHavingsOperation? operation, double? value, }) { return TelemetryQueryRequestParametersHavings(
+      json.containsKey('value') && json['value'] is num;}
+TelemetryQueryRequestParametersHavings copyWith({String? key, TelemetryQueryRequestParametersHavingsOperation? operation, double? value, }) {return TelemetryQueryRequestParametersHavings(
   key: key ?? this.key,
   operation: operation ?? this.operation,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TelemetryQueryRequestParametersHavings &&
           key == other.key &&
           operation == other.operation &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(key, operation, value); } 
-@override String toString() { return 'TelemetryQueryRequestParametersHavings(key: $key, operation: $operation, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(key, operation, value);}
+@override String toString() {return 'TelemetryQueryRequestParametersHavings(key: $key, operation: $operation, value: $value)';}
+}

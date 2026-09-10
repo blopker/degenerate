@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_registrations_resource_country_options.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TaxRegistrationObject {const TaxRegistrationObject._(this.value);
 
-factory TaxRegistrationObject.fromJson(String json) { return switch (json) {
+factory TaxRegistrationObject.fromJson(String json) {return switch (json) {
   'tax.registration' => taxRegistration,
   _ => TaxRegistrationObject._(json),
-}; }
+};}
 
 static const TaxRegistrationObject taxRegistration = TaxRegistrationObject._('tax.registration');
 
@@ -14,23 +14,23 @@ static const List<TaxRegistrationObject> values = [taxRegistration];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxRegistrationObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxRegistrationObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TaxRegistrationObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TaxRegistrationObject($value)';}
+}
 /// The status of the registration. This field is present for convenience and can be deduced from `active_from` and `expires_at`.
 @immutable final class TaxRegistrationStatus {const TaxRegistrationStatus._(this.value);
 
-factory TaxRegistrationStatus.fromJson(String json) { return switch (json) {
+factory TaxRegistrationStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'expired' => expired,
   'scheduled' => scheduled,
   _ => TaxRegistrationStatus._(json),
-}; }
+};}
 
 static const TaxRegistrationStatus active = TaxRegistrationStatus._('active');
 
@@ -42,14 +42,14 @@ static const List<TaxRegistrationStatus> values = [active, expired, scheduled];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxRegistrationStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxRegistrationStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TaxRegistrationStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TaxRegistrationStatus($value)';}
+}
 /// A Tax `Registration` lets us know that your business is registered to collect tax on payments within a region, enabling you to [automatically collect tax](https://docs.stripe.com/tax).
 /// 
 /// Stripe doesn't register on your behalf with the relevant authorities when you create a Tax `Registration` object. For more information on how to register to collect tax, see [our guide](https://docs.stripe.com/tax/registering).
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guide: [Using the Registrations API](https://docs.stripe.com/tax/registrations-api)
 @immutable final class TaxRegistration {const TaxRegistration({required this.activeFrom, required this.country, required this.countryOptions, required this.created, required this.id, required this.livemode, required this.object, required this.status, this.expiresAt = const Omittable.absent(), });
 
-factory TaxRegistration.fromJson(Map<String, dynamic> json) { return TaxRegistration(
+factory TaxRegistration.fromJson(Map<String, dynamic> json) {return TaxRegistration(
   activeFrom: (json['active_from'] as num).toInt(),
   country: json['country'] as String,
   countryOptions: TaxProductRegistrationsResourceCountryOptions.fromJson(json['country_options'] as Map<String, dynamic>),
@@ -67,7 +67,7 @@ factory TaxRegistration.fromJson(Map<String, dynamic> json) { return TaxRegistra
   livemode: json['livemode'] as bool,
   object: TaxRegistrationObject.fromJson(json['object'] as String),
   status: TaxRegistrationStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// Time at which the registration becomes active. Measured in seconds since the Unix epoch.
 final int activeFrom;
@@ -95,7 +95,7 @@ final TaxRegistrationObject object;
 /// The status of the registration. This field is present for convenience and can be deduced from `active_from` and `expires_at`.
 final TaxRegistrationStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active_from': activeFrom,
   'country': country,
   'country_options': countryOptions.toJson(),
@@ -105,16 +105,16 @@ Map<String, dynamic> toJson() { return {
   'livemode': livemode,
   'object': object.toJson(),
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_from') && json['active_from'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active_from') && json['active_from'] is num &&
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('country_options') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('status'); } 
-TaxRegistration copyWith({int? activeFrom, String? country, TaxProductRegistrationsResourceCountryOptions? countryOptions, int? created, Omittable<int?>? expiresAt, String? id, bool? livemode, TaxRegistrationObject? object, TaxRegistrationStatus? status, }) { return TaxRegistration(
+      json.containsKey('status');}
+TaxRegistration copyWith({int? activeFrom, String? country, TaxProductRegistrationsResourceCountryOptions? countryOptions, int? created, Omittable<int?>? expiresAt, String? id, bool? livemode, TaxRegistrationObject? object, TaxRegistrationStatus? status, }) {return TaxRegistration(
   activeFrom: activeFrom ?? this.activeFrom,
   country: country ?? this.country,
   countryOptions: countryOptions ?? this.countryOptions,
@@ -124,8 +124,8 @@ TaxRegistration copyWith({int? activeFrom, String? country, TaxProductRegistrati
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TaxRegistration &&
           activeFrom == other.activeFrom &&
           country == other.country &&
@@ -135,7 +135,7 @@ TaxRegistration copyWith({int? activeFrom, String? country, TaxProductRegistrati
           id == other.id &&
           livemode == other.livemode &&
           object == other.object &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(activeFrom, country, countryOptions, created, expiresAt, id, livemode, object, status); } 
-@override String toString() { return 'TaxRegistration(activeFrom: $activeFrom, country: $country, countryOptions: $countryOptions, created: $created, expiresAt: $expiresAt, id: $id, livemode: $livemode, object: $object, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(activeFrom, country, countryOptions, created, expiresAt, id, livemode, object, status);}
+@override String toString() {return 'TaxRegistration(activeFrom: $activeFrom, country: $country, countryOptions: $countryOptions, created: $created, expiresAt: $expiresAt, id: $id, livemode: $livemode, object: $object, status: $status)';}
+}

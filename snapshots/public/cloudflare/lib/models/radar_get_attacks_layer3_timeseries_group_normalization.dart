@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupNormalization {const RadarGetAttacksLayer3TimeseriesGroupNormalization._(this.value);
 
-factory RadarGetAttacksLayer3TimeseriesGroupNormalization.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3TimeseriesGroupNormalization.fromJson(String json) {return switch (json) {
   'PERCENTAGE' => percentage,
   'MIN0_MAX' => min0Max,
   _ => RadarGetAttacksLayer3TimeseriesGroupNormalization._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3TimeseriesGroupNormalization percentage = RadarGetAttacksLayer3TimeseriesGroupNormalization._('PERCENTAGE');
 
@@ -17,11 +17,11 @@ static const List<RadarGetAttacksLayer3TimeseriesGroupNormalization> values = [p
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer3TimeseriesGroupNormalization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupNormalization($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer3TimeseriesGroupNormalization && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer3TimeseriesGroupNormalization($value)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_asn.dart';import 'intel_count.dart';import 'intel_messages2.dart';import 'intel_page.dart';import 'intel_per_page.dart';@immutable final class AsnIntelligenceGetAsnSubnetsResponse4xx {const AsnIntelligenceGetAsnSubnetsResponse4xx({required this.errors, required this.messages, required this.result, required this.success, this.asn, this.count, this.ipCountTotal, this.page, this.perPage, this.subnets, });
 
-factory AsnIntelligenceGetAsnSubnetsResponse4xx.fromJson(Map<String, dynamic> json) { return AsnIntelligenceGetAsnSubnetsResponse4xx(
+factory AsnIntelligenceGetAsnSubnetsResponse4xx.fromJson(Map<String, dynamic> json) {return AsnIntelligenceGetAsnSubnetsResponse4xx(
   errors: (json['errors'] as List<dynamic>).map((e) => IntelMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => IntelMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as Map<String, dynamic>?,
@@ -13,7 +13,7 @@ factory AsnIntelligenceGetAsnSubnetsResponse4xx.fromJson(Map<String, dynamic> js
   page: json['page'] != null ? IntelPage.fromJson(json['page'] as num) : null,
   perPage: json['per_page'] != null ? IntelPerPage.fromJson(json['per_page'] as num) : null,
   subnets: (json['subnets'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final List<IntelMessages2> errors;
 
@@ -39,7 +39,7 @@ final IntelPerPage? perPage;
 
 final List<String>? subnets;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result,
@@ -50,12 +50,12 @@ Map<String, dynamic> toJson() { return {
   if (page != null) 'page': page?.toJson(),
   if (perPage != null) 'per_page': perPage?.toJson(),
   'subnets': ?subnets,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AsnIntelligenceGetAsnSubnetsResponse4xx copyWith({List<IntelMessages2>? errors, List<IntelMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, IntelAsn? Function()? asn, IntelCount? Function()? count, int? Function()? ipCountTotal, IntelPage? Function()? page, IntelPerPage? Function()? perPage, List<String>? Function()? subnets, }) { return AsnIntelligenceGetAsnSubnetsResponse4xx(
+      json.containsKey('success') && json['success'] is bool;}
+AsnIntelligenceGetAsnSubnetsResponse4xx copyWith({List<IntelMessages2>? errors, List<IntelMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, IntelAsn? Function()? asn, IntelCount? Function()? count, int? Function()? ipCountTotal, IntelPage? Function()? page, IntelPerPage? Function()? perPage, List<String>? Function()? subnets, }) {return AsnIntelligenceGetAsnSubnetsResponse4xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,
@@ -66,8 +66,8 @@ AsnIntelligenceGetAsnSubnetsResponse4xx copyWith({List<IntelMessages2>? errors, 
   page: page != null ? page() : this.page,
   perPage: perPage != null ? perPage() : this.perPage,
   subnets: subnets != null ? subnets() : this.subnets,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AsnIntelligenceGetAsnSubnetsResponse4xx &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
@@ -78,7 +78,7 @@ AsnIntelligenceGetAsnSubnetsResponse4xx copyWith({List<IntelMessages2>? errors, 
           ipCountTotal == other.ipCountTotal &&
           page == other.page &&
           perPage == other.perPage &&
-          listEquals(subnets, other.subnets); } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success, asn, count, ipCountTotal, page, perPage, Object.hashAll(subnets ?? const [])); } 
-@override String toString() { return 'AsnIntelligenceGetAsnSubnetsResponse4xx(errors: $errors, messages: $messages, result: $result, success: $success, asn: $asn, count: $count, ipCountTotal: $ipCountTotal, page: $page, perPage: $perPage, subnets: $subnets)'; } 
- }
+          listEquals(subnets, other.subnets);}
+@override int get hashCode {return Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success, asn, count, ipCountTotal, page, perPage, Object.hashAll(subnets ?? const []));}
+@override String toString() {return 'AsnIntelligenceGetAsnSubnetsResponse4xx(errors: $errors, messages: $messages, result: $result, success: $success, asn: $asn, count: $count, ipCountTotal: $ipCountTotal, page: $page, perPage: $perPage, subnets: $subnets)';}
+}

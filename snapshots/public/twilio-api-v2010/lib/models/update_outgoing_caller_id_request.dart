@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateOutgoingCallerIdRequest {const UpdateOutgoingCallerIdRequest({this.friendlyName});
 
-factory UpdateOutgoingCallerIdRequest.fromJson(Map<String, dynamic> json) { return UpdateOutgoingCallerIdRequest(
+factory UpdateOutgoingCallerIdRequest.fromJson(Map<String, dynamic> json) {return UpdateOutgoingCallerIdRequest(
   friendlyName: json['FriendlyName'] as String?,
-); }
+);}
 
 /// A descriptive string that you create to describe the resource. It can be up to 64 characters long.
 final String? friendlyName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'FriendlyName': ?friendlyName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'FriendlyName'}.contains(key)); } 
-UpdateOutgoingCallerIdRequest copyWith({String? Function()? friendlyName}) { return UpdateOutgoingCallerIdRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'FriendlyName'}.contains(key));}
+UpdateOutgoingCallerIdRequest copyWith({String? Function()? friendlyName}) {return UpdateOutgoingCallerIdRequest(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UpdateOutgoingCallerIdRequest &&
-          friendlyName == other.friendlyName; } 
-@override int get hashCode { return friendlyName.hashCode; } 
-@override String toString() { return 'UpdateOutgoingCallerIdRequest(friendlyName: $friendlyName)'; } 
- }
+          friendlyName == other.friendlyName;}
+@override int get hashCode {return friendlyName.hashCode;}
+@override String toString() {return 'UpdateOutgoingCallerIdRequest(friendlyName: $friendlyName)';}
+}

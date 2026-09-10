@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_shipping_param2_amount.dart';import 'amount_details_shipping_param2_from_postal_code.dart';import 'amount_details_shipping_param2_to_postal_code.dart';@immutable final class AmountDetailsShippingParam2 {const AmountDetailsShippingParam2({this.amount, this.fromPostalCode, this.toPostalCode, });
 
-factory AmountDetailsShippingParam2.fromJson(Map<String, dynamic> json) { return AmountDetailsShippingParam2(
+factory AmountDetailsShippingParam2.fromJson(Map<String, dynamic> json) {return AmountDetailsShippingParam2(
   amount: json['amount'] != null ? AmountDetailsShippingParam2Amount.fromJson(json['amount']) : null,
   fromPostalCode: json['from_postal_code'] != null ? AmountDetailsShippingParam2FromPostalCode.fromJson(json['from_postal_code']) : null,
   toPostalCode: json['to_postal_code'] != null ? AmountDetailsShippingParam2ToPostalCode.fromJson(json['to_postal_code']) : null,
-); }
+);}
 
 final AmountDetailsShippingParam2Amount? amount;
 
@@ -14,22 +14,22 @@ final AmountDetailsShippingParam2FromPostalCode? fromPostalCode;
 
 final AmountDetailsShippingParam2ToPostalCode? toPostalCode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amount != null) 'amount': amount?.toJson(),
   if (fromPostalCode != null) 'from_postal_code': fromPostalCode?.toJson(),
   if (toPostalCode != null) 'to_postal_code': toPostalCode?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'from_postal_code', 'to_postal_code'}.contains(key)); } 
-AmountDetailsShippingParam2 copyWith({AmountDetailsShippingParam2Amount? Function()? amount, AmountDetailsShippingParam2FromPostalCode? Function()? fromPostalCode, AmountDetailsShippingParam2ToPostalCode? Function()? toPostalCode, }) { return AmountDetailsShippingParam2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'from_postal_code', 'to_postal_code'}.contains(key));}
+AmountDetailsShippingParam2 copyWith({AmountDetailsShippingParam2Amount? Function()? amount, AmountDetailsShippingParam2FromPostalCode? Function()? fromPostalCode, AmountDetailsShippingParam2ToPostalCode? Function()? toPostalCode, }) {return AmountDetailsShippingParam2(
   amount: amount != null ? amount() : this.amount,
   fromPostalCode: fromPostalCode != null ? fromPostalCode() : this.fromPostalCode,
   toPostalCode: toPostalCode != null ? toPostalCode() : this.toPostalCode,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AmountDetailsShippingParam2 &&
           amount == other.amount &&
           fromPostalCode == other.fromPostalCode &&
-          toPostalCode == other.toPostalCode; } 
-@override int get hashCode { return Object.hash(amount, fromPostalCode, toPostalCode); } 
-@override String toString() { return 'AmountDetailsShippingParam2(amount: $amount, fromPostalCode: $fromPostalCode, toPostalCode: $toPostalCode)'; } 
- }
+          toPostalCode == other.toPostalCode;}
+@override int get hashCode {return Object.hash(amount, fromPostalCode, toPostalCode);}
+@override String toString() {return 'AmountDetailsShippingParam2(amount: $amount, fromPostalCode: $fromPostalCode, toPostalCode: $toPostalCode)';}
+}

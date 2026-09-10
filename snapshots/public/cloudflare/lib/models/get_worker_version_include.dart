@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to include the `modules` property of the version in the response, which contains code and sourcemap content and may add several megabytes to the response size.
 @immutable final class GetWorkerVersionInclude {const GetWorkerVersionInclude._(this.value);
 
-factory GetWorkerVersionInclude.fromJson(String json) { return switch (json) {
+factory GetWorkerVersionInclude.fromJson(String json) {return switch (json) {
   'modules' => modules,
   _ => GetWorkerVersionInclude._(json),
-}; }
+};}
 
 static const GetWorkerVersionInclude modules = GetWorkerVersionInclude._('modules');
 
@@ -14,11 +14,11 @@ static const List<GetWorkerVersionInclude> values = [modules];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetWorkerVersionInclude && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetWorkerVersionInclude($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetWorkerVersionInclude && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetWorkerVersionInclude($value)';}
+}

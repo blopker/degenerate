@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesDexTargetPolicy {const TeamsDevicesDexTargetPolicy({this.$default, this.id, this.name, });
 
-factory TeamsDevicesDexTargetPolicy.fromJson(Map<String, dynamic> json) { return TeamsDevicesDexTargetPolicy(
+factory TeamsDevicesDexTargetPolicy.fromJson(Map<String, dynamic> json) {return TeamsDevicesDexTargetPolicy(
   $default: json['default'] as bool?,
   id: json['id'] as String?,
   name: json['name'] as String?,
-); }
+);}
 
 /// Whether the profile is the account default.
 final bool? $default;
@@ -17,22 +17,22 @@ final String? id;
 /// The name of the device settings profile.
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'default': ?$default,
   'id': ?id,
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default', 'id', 'name'}.contains(key)); } 
-TeamsDevicesDexTargetPolicy copyWith({bool? Function()? $default, String? Function()? id, String? Function()? name, }) { return TeamsDevicesDexTargetPolicy(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'default', 'id', 'name'}.contains(key));}
+TeamsDevicesDexTargetPolicy copyWith({bool? Function()? $default, String? Function()? id, String? Function()? name, }) {return TeamsDevicesDexTargetPolicy(
   $default: $default != null ? $default() : this.$default,
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamsDevicesDexTargetPolicy &&
           $default == other.$default &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash($default, id, name); } 
-@override String toString() { return 'TeamsDevicesDexTargetPolicy(\$default: ${$default}, id: $id, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash($default, id, name);}
+@override String toString() {return 'TeamsDevicesDexTargetPolicy(\$default: ${$default}, id: $id, name: $name)';}
+}

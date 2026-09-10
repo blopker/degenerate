@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Parameters for remixing an existing generated video.
 @immutable final class CreateVideoRemixBody {const CreateVideoRemixBody({required this.prompt});
 
-factory CreateVideoRemixBody.fromJson(Map<String, dynamic> json) { return CreateVideoRemixBody(
+factory CreateVideoRemixBody.fromJson(Map<String, dynamic> json) {return CreateVideoRemixBody(
   prompt: json['prompt'] as String,
-); }
+);}
 
 /// Updated text prompt that directs the remix generation.
 final String prompt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'prompt': prompt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-CreateVideoRemixBody copyWith({String? prompt}) { return CreateVideoRemixBody(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
+CreateVideoRemixBody copyWith({String? prompt}) {return CreateVideoRemixBody(
   prompt: prompt ?? this.prompt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateVideoRemixBody &&
-          prompt == other.prompt; } 
-@override int get hashCode { return prompt.hashCode; } 
-@override String toString() { return 'CreateVideoRemixBody(prompt: $prompt)'; } 
- }
+          prompt == other.prompt;}
+@override int get hashCode {return prompt.hashCode;}
+@override String toString() {return 'CreateVideoRemixBody(prompt: $prompt)';}
+}

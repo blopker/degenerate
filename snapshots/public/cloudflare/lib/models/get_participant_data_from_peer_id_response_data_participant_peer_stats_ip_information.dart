@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_stats_ip_information_asn.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation {const GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation({this.asn, this.city, this.country, this.ipLocation, this.ipv4, this.org, this.region, this.timezone, });
 
-factory GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation(
+factory GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation.fromJson(Map<String, dynamic> json) {return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation(
   asn: json['asn'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformationAsn.fromJson(json['asn'] as Map<String, dynamic>) : null,
   city: json['city'] as String?,
   country: json['country'] as String?,
@@ -11,7 +11,7 @@ factory GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformatio
   org: json['org'] as String?,
   region: json['region'] as String?,
   timezone: json['timezone'] as String?,
-); }
+);}
 
 final GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformationAsn? asn;
 
@@ -29,7 +29,7 @@ final String? region;
 
 final String? timezone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (asn != null) 'asn': asn?.toJson(),
   'city': ?city,
   'country': ?country,
@@ -38,9 +38,9 @@ Map<String, dynamic> toJson() { return {
   'org': ?org,
   'region': ?region,
   'timezone': ?timezone,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'asn', 'city', 'country', 'ip_location', 'ipv4', 'org', 'region', 'timezone'}.contains(key)); } 
-GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation copyWith({GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformationAsn? Function()? asn, String? Function()? city, String? Function()? country, String? Function()? ipLocation, String? Function()? ipv4, String? Function()? org, String? Function()? region, String? Function()? timezone, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'asn', 'city', 'country', 'ip_location', 'ipv4', 'org', 'region', 'timezone'}.contains(key));}
+GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation copyWith({GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformationAsn? Function()? asn, String? Function()? city, String? Function()? country, String? Function()? ipLocation, String? Function()? ipv4, String? Function()? org, String? Function()? region, String? Function()? timezone, }) {return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation(
   asn: asn != null ? asn() : this.asn,
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,
@@ -49,8 +49,8 @@ GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation copyWi
   org: org != null ? org() : this.org,
   region: region != null ? region() : this.region,
   timezone: timezone != null ? timezone() : this.timezone,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation &&
           asn == other.asn &&
           city == other.city &&
@@ -59,7 +59,7 @@ GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation copyWi
           ipv4 == other.ipv4 &&
           org == other.org &&
           region == other.region &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(asn, city, country, ipLocation, ipv4, org, region, timezone); } 
-@override String toString() { return 'GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation(asn: $asn, city: $city, country: $country, ipLocation: $ipLocation, ipv4: $ipv4, org: $org, region: $region, timezone: $timezone)'; } 
- }
+          timezone == other.timezone;}
+@override int get hashCode {return Object.hash(asn, city, country, ipLocation, ipv4, org, region, timezone);}
+@override String toString() {return 'GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsIpInformation(asn: $asn, city: $city, country: $country, ipLocation: $ipLocation, ipv4: $ipv4, org: $org, region: $region, timezone: $timezone)';}
+}

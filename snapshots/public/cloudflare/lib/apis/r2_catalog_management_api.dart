@@ -16,7 +16,7 @@ final class R2CatalogManagementApi with ApiExecutor {const R2CatalogManagementAp
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog`
-Future<ApiResult<R2DataCatalogCatalogList?, ResponseCommonFailure55>> listCatalogs({required R2DataCatalogAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2DataCatalogCatalogList?, ResponseCommonFailure55>> listCatalogs({required R2DataCatalogAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -42,7 +42,7 @@ return null;
 
   },
 );
- } 
+}
 /// Get R2 catalog details
 ///
 /// Retrieve detailed information about a specific R2 catalog by bucket name.
@@ -50,7 +50,7 @@ return null;
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}`
-Future<ApiResult<R2DataCatalogCatalog?, ResponseCommonFailure55>> getCatalogDetails({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2DataCatalogCatalog?, ResponseCommonFailure55>> getCatalogDetails({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -76,7 +76,7 @@ return null;
 
   },
 );
- } 
+}
 /// Disable R2 catalog
 ///
 /// Disable an R2 bucket as a catalog. This operation deactivates the catalog
@@ -85,7 +85,7 @@ return null;
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/disable`
-Future<ApiResult<void, ResponseCommonFailure55>> disableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ResponseCommonFailure55>> disableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -108,7 +108,7 @@ return null;
 
   },
 );
- } 
+}
 /// Enable R2 bucket as a catalog
 ///
 /// Enable an R2 bucket as an Apache Iceberg catalog. This operation creates
@@ -117,7 +117,7 @@ return null;
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/enable`
-Future<ApiResult<R2DataCatalogCatalogActivationResponse?, ResponseCommonFailure55>> enableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2DataCatalogCatalogActivationResponse?, ResponseCommonFailure55>> enableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -143,5 +143,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

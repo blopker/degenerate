@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchDatasetUpdateResponse {const PatchDatasetUpdateResponse({required this.isPublic, required this.name, required this.uuid, });
 
-factory PatchDatasetUpdateResponse.fromJson(Map<String, dynamic> json) { return PatchDatasetUpdateResponse(
+factory PatchDatasetUpdateResponse.fromJson(Map<String, dynamic> json) {return PatchDatasetUpdateResponse(
   isPublic: json['isPublic'] as bool,
   name: json['name'] as String,
   uuid: json['uuid'] as String,
-); }
+);}
 
 final bool isPublic;
 
@@ -14,24 +14,24 @@ final String name;
 
 final String uuid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'isPublic': isPublic,
   'name': name,
   'uuid': uuid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('isPublic') && json['isPublic'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('isPublic') && json['isPublic'] is bool &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('uuid') && json['uuid'] is String; } 
-PatchDatasetUpdateResponse copyWith({bool? isPublic, String? name, String? uuid, }) { return PatchDatasetUpdateResponse(
+      json.containsKey('uuid') && json['uuid'] is String;}
+PatchDatasetUpdateResponse copyWith({bool? isPublic, String? name, String? uuid, }) {return PatchDatasetUpdateResponse(
   isPublic: isPublic ?? this.isPublic,
   name: name ?? this.name,
   uuid: uuid ?? this.uuid,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PatchDatasetUpdateResponse &&
           isPublic == other.isPublic &&
           name == other.name &&
-          uuid == other.uuid; } 
-@override int get hashCode { return Object.hash(isPublic, name, uuid); } 
-@override String toString() { return 'PatchDatasetUpdateResponse(isPublic: $isPublic, name: $name, uuid: $uuid)'; } 
- }
+          uuid == other.uuid;}
+@override int get hashCode {return Object.hash(isPublic, name, uuid);}
+@override String toString() {return 'PatchDatasetUpdateResponse(isPublic: $isPublic, name: $name, uuid: $uuid)';}
+}

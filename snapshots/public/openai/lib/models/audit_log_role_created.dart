@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for events with this `type`.
 @immutable final class AuditLogRoleCreated {const AuditLogRoleCreated({this.id, this.roleName, this.permissions, this.resourceType, this.resourceId, });
 
-factory AuditLogRoleCreated.fromJson(Map<String, dynamic> json) { return AuditLogRoleCreated(
+factory AuditLogRoleCreated.fromJson(Map<String, dynamic> json) {return AuditLogRoleCreated(
   id: json['id'] as String?,
   roleName: json['role_name'] as String?,
   permissions: (json['permissions'] as List<dynamic>?)?.map((e) => e as String).toList(),
   resourceType: json['resource_type'] as String?,
   resourceId: json['resource_id'] as String?,
-); }
+);}
 
 /// The role ID.
 final String? id;
@@ -26,28 +26,28 @@ final String? resourceType;
 /// The resource the role is scoped to.
 final String? resourceId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'role_name': ?roleName,
   'permissions': ?permissions,
   'resource_type': ?resourceType,
   'resource_id': ?resourceId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'role_name', 'permissions', 'resource_type', 'resource_id'}.contains(key)); } 
-AuditLogRoleCreated copyWith({String? Function()? id, String? Function()? roleName, List<String>? Function()? permissions, String? Function()? resourceType, String? Function()? resourceId, }) { return AuditLogRoleCreated(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'role_name', 'permissions', 'resource_type', 'resource_id'}.contains(key));}
+AuditLogRoleCreated copyWith({String? Function()? id, String? Function()? roleName, List<String>? Function()? permissions, String? Function()? resourceType, String? Function()? resourceId, }) {return AuditLogRoleCreated(
   id: id != null ? id() : this.id,
   roleName: roleName != null ? roleName() : this.roleName,
   permissions: permissions != null ? permissions() : this.permissions,
   resourceType: resourceType != null ? resourceType() : this.resourceType,
   resourceId: resourceId != null ? resourceId() : this.resourceId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AuditLogRoleCreated &&
           id == other.id &&
           roleName == other.roleName &&
           listEquals(permissions, other.permissions) &&
           resourceType == other.resourceType &&
-          resourceId == other.resourceId; } 
-@override int get hashCode { return Object.hash(id, roleName, Object.hashAll(permissions ?? const []), resourceType, resourceId); } 
-@override String toString() { return 'AuditLogRoleCreated(id: $id, roleName: $roleName, permissions: $permissions, resourceType: $resourceType, resourceId: $resourceId)'; } 
- }
+          resourceId == other.resourceId;}
+@override int get hashCode {return Object.hash(id, roleName, Object.hashAll(permissions ?? const []), resourceType, resourceId);}
+@override String toString() {return 'AuditLogRoleCreated(id: $id, roleName: $roleName, permissions: $permissions, resourceType: $resourceType, resourceId: $resourceId)';}
+}

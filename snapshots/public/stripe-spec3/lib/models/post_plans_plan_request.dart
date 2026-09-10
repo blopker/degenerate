@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_plans_plan_request_metadata.dart';@immutable final class PostPlansPlanRequest {const PostPlansPlanRequest({this.active, this.expand, this.metadata, this.nickname, this.product, this.trialPeriodDays, });
 
-factory PostPlansPlanRequest.fromJson(Map<String, dynamic> json) { return PostPlansPlanRequest(
+factory PostPlansPlanRequest.fromJson(Map<String, dynamic> json) {return PostPlansPlanRequest(
   active: json['active'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: json['metadata'] != null ? PostPlansPlanRequestMetadata.fromJson(json['metadata']) : null,
   nickname: json['nickname'] as String?,
   product: json['product'] as String?,
   trialPeriodDays: json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null,
-); }
+);}
 
 /// Whether the plan is currently available for new subscriptions.
 final bool? active;
@@ -29,31 +29,31 @@ final String? product;
 /// Default number of trial days when subscribing a customer to this plan using [`trial_from_plan=true`](https://docs.stripe.com/api#create_subscription-trial_from_plan).
 final int? trialPeriodDays;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'expand': ?expand,
   if (metadata != null) 'metadata': metadata?.toJson(),
   'nickname': ?nickname,
   'product': ?product,
   'trial_period_days': ?trialPeriodDays,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'expand', 'metadata', 'nickname', 'product', 'trial_period_days'}.contains(key)); } 
-PostPlansPlanRequest copyWith({bool? Function()? active, List<String>? Function()? expand, PostPlansPlanRequestMetadata? Function()? metadata, String? Function()? nickname, String? Function()? product, int? Function()? trialPeriodDays, }) { return PostPlansPlanRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'expand', 'metadata', 'nickname', 'product', 'trial_period_days'}.contains(key));}
+PostPlansPlanRequest copyWith({bool? Function()? active, List<String>? Function()? expand, PostPlansPlanRequestMetadata? Function()? metadata, String? Function()? nickname, String? Function()? product, int? Function()? trialPeriodDays, }) {return PostPlansPlanRequest(
   active: active != null ? active() : this.active,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   nickname: nickname != null ? nickname() : this.nickname,
   product: product != null ? product() : this.product,
   trialPeriodDays: trialPeriodDays != null ? trialPeriodDays() : this.trialPeriodDays,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPlansPlanRequest &&
           active == other.active &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
           nickname == other.nickname &&
           product == other.product &&
-          trialPeriodDays == other.trialPeriodDays; } 
-@override int get hashCode { return Object.hash(active, Object.hashAll(expand ?? const []), metadata, nickname, product, trialPeriodDays); } 
-@override String toString() { return 'PostPlansPlanRequest(active: $active, expand: $expand, metadata: $metadata, nickname: $nickname, product: $product, trialPeriodDays: $trialPeriodDays)'; } 
- }
+          trialPeriodDays == other.trialPeriodDays;}
+@override int get hashCode {return Object.hash(active, Object.hashAll(expand ?? const []), metadata, nickname, product, trialPeriodDays);}
+@override String toString() {return 'PostPlansPlanRequest(active: $active, expand: $expand, metadata: $metadata, nickname: $nickname, product: $product, trialPeriodDays: $trialPeriodDays)';}
+}

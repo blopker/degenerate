@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class User {const User({this.id, this.username, this.firstName, this.lastName, this.email, this.password, this.phone, this.userStatus, });
 
-factory User.fromJson(Map<String, dynamic> json) { return User(
+factory User.fromJson(Map<String, dynamic> json) {return User(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   username: json['username'] as String?,
   firstName: json['firstName'] as String?,
@@ -11,7 +11,7 @@ factory User.fromJson(Map<String, dynamic> json) { return User(
   password: json['password'] as String?,
   phone: json['phone'] as String?,
   userStatus: json['userStatus'] != null ? (json['userStatus'] as num).toInt() : null,
-); }
+);}
 
 final int? id;
 
@@ -30,7 +30,7 @@ final String? phone;
 /// User Status
 final int? userStatus;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'username': ?username,
   'firstName': ?firstName,
@@ -39,9 +39,9 @@ Map<String, dynamic> toJson() { return {
   'password': ?password,
   'phone': ?phone,
   'userStatus': ?userStatus,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'username', 'firstName', 'lastName', 'email', 'password', 'phone', 'userStatus'}.contains(key)); } 
-User copyWith({int? Function()? id, String? Function()? username, String? Function()? firstName, String? Function()? lastName, String? Function()? email, String? Function()? password, String? Function()? phone, int? Function()? userStatus, }) { return User(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'username', 'firstName', 'lastName', 'email', 'password', 'phone', 'userStatus'}.contains(key));}
+User copyWith({int? Function()? id, String? Function()? username, String? Function()? firstName, String? Function()? lastName, String? Function()? email, String? Function()? password, String? Function()? phone, int? Function()? userStatus, }) {return User(
   id: id != null ? id() : this.id,
   username: username != null ? username() : this.username,
   firstName: firstName != null ? firstName() : this.firstName,
@@ -50,8 +50,8 @@ User copyWith({int? Function()? id, String? Function()? username, String? Functi
   password: password != null ? password() : this.password,
   phone: phone != null ? phone() : this.phone,
   userStatus: userStatus != null ? userStatus() : this.userStatus,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is User &&
           id == other.id &&
           username == other.username &&
@@ -60,7 +60,7 @@ User copyWith({int? Function()? id, String? Function()? username, String? Functi
           email == other.email &&
           password == other.password &&
           phone == other.phone &&
-          userStatus == other.userStatus; } 
-@override int get hashCode { return Object.hash(id, username, firstName, lastName, email, password, phone, userStatus); } 
-@override String toString() { return 'User(id: $id, username: $username, firstName: $firstName, lastName: $lastName, email: $email, password: $password, phone: $phone, userStatus: $userStatus)'; } 
- }
+          userStatus == other.userStatus;}
+@override int get hashCode {return Object.hash(id, username, firstName, lastName, email, password, phone, userStatus);}
+@override String toString() {return 'User(id: $id, username: $username, firstName: $firstName, lastName: $lastName, email: $email, password: $password, phone: $phone, userStatus: $userStatus)';}
+}

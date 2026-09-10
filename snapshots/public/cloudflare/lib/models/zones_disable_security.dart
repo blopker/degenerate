@@ -9,10 +9,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Turn off
 /// 
 @immutable final class ZonesDisableSecurityId {const ZonesDisableSecurityId._(this.value);
 
-factory ZonesDisableSecurityId.fromJson(String json) { return switch (json) {
+factory ZonesDisableSecurityId.fromJson(String json) {return switch (json) {
   'disable_security' => disableSecurity,
   _ => ZonesDisableSecurityId._(json),
-}; }
+};}
 
 static const ZonesDisableSecurityId disableSecurity = ZonesDisableSecurityId._('disable_security');
 
@@ -20,19 +20,19 @@ static const List<ZonesDisableSecurityId> values = [disableSecurity];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesDisableSecurityId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesDisableSecurityId($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesDisableSecurityId && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesDisableSecurityId($value)';}
+}
 @immutable final class ZonesDisableSecurity {const ZonesDisableSecurity({this.id});
 
-factory ZonesDisableSecurity.fromJson(Map<String, dynamic> json) { return ZonesDisableSecurity(
+factory ZonesDisableSecurity.fromJson(Map<String, dynamic> json) {return ZonesDisableSecurity(
   id: json['id'] != null ? ZonesDisableSecurityId.fromJson(json['id'] as String) : null,
-); }
+);}
 
 /// Turn off
 /// [Email Obfuscation](https://developers.cloudflare.com/waf/tools/scrape-shield/email-address-obfuscation/),
@@ -43,16 +43,16 @@ factory ZonesDisableSecurity.fromJson(Map<String, dynamic> json) { return ZonesD
 /// 
 final ZonesDisableSecurityId? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-ZonesDisableSecurity copyWith({ZonesDisableSecurityId? Function()? id}) { return ZonesDisableSecurity(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id'}.contains(key));}
+ZonesDisableSecurity copyWith({ZonesDisableSecurityId? Function()? id}) {return ZonesDisableSecurity(
   id: id != null ? id() : this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZonesDisableSecurity &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'ZonesDisableSecurity(id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return id.hashCode;}
+@override String toString() {return 'ZonesDisableSecurity(id: $id)';}
+}

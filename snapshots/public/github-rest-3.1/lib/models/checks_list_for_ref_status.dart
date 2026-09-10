@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChecksListForRefStatus {const ChecksListForRefStatus._(this.value);
 
-factory ChecksListForRefStatus.fromJson(String json) { return switch (json) {
+factory ChecksListForRefStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'in_progress' => inProgress,
   'completed' => completed,
   _ => ChecksListForRefStatus._(json),
-}; }
+};}
 
 static const ChecksListForRefStatus queued = ChecksListForRefStatus._('queued');
 
@@ -19,11 +19,11 @@ static const List<ChecksListForRefStatus> values = [queued, inProgress, complete
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChecksListForRefStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChecksListForRefStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ChecksListForRefStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ChecksListForRefStatus($value)';}
+}

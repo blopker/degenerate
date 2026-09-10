@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkflowRunUsageBillableUbuntuJobRuns {const WorkflowRunUsageBillableUbuntuJobRuns({required this.jobId, required this.durationMs, });
 
-factory WorkflowRunUsageBillableUbuntuJobRuns.fromJson(Map<String, dynamic> json) { return WorkflowRunUsageBillableUbuntuJobRuns(
+factory WorkflowRunUsageBillableUbuntuJobRuns.fromJson(Map<String, dynamic> json) {return WorkflowRunUsageBillableUbuntuJobRuns(
   jobId: (json['job_id'] as num).toInt(),
   durationMs: (json['duration_ms'] as num).toInt(),
-); }
+);}
 
 final int jobId;
 
 final int durationMs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'job_id': jobId,
   'duration_ms': durationMs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('job_id') && json['job_id'] is num &&
-      json.containsKey('duration_ms') && json['duration_ms'] is num; } 
-WorkflowRunUsageBillableUbuntuJobRuns copyWith({int? jobId, int? durationMs, }) { return WorkflowRunUsageBillableUbuntuJobRuns(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('job_id') && json['job_id'] is num &&
+      json.containsKey('duration_ms') && json['duration_ms'] is num;}
+WorkflowRunUsageBillableUbuntuJobRuns copyWith({int? jobId, int? durationMs, }) {return WorkflowRunUsageBillableUbuntuJobRuns(
   jobId: jobId ?? this.jobId,
   durationMs: durationMs ?? this.durationMs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkflowRunUsageBillableUbuntuJobRuns &&
           jobId == other.jobId &&
-          durationMs == other.durationMs; } 
-@override int get hashCode { return Object.hash(jobId, durationMs); } 
-@override String toString() { return 'WorkflowRunUsageBillableUbuntuJobRuns(jobId: $jobId, durationMs: $durationMs)'; } 
- }
+          durationMs == other.durationMs;}
+@override int get hashCode {return Object.hash(jobId, durationMs);}
+@override String toString() {return 'WorkflowRunUsageBillableUbuntuJobRuns(jobId: $jobId, durationMs: $durationMs)';}
+}

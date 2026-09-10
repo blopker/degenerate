@@ -13,7 +13,7 @@ final class ZoneLevelAccessIdentityProvidersApi with ApiExecutor {const ZoneLeve
 /// Lists all configured identity providers.
 ///
 /// `GET /zones/{zone_id}/access/identity_providers`
-Future<ApiResult<List<AccessIdentityProvidersComponentsSchemasResponseCollectionResponseResult>?, ResponseCommonFailure4>> zoneLevelAccessIdentityProvidersListAccessIdentityProviders({required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessIdentityProvidersComponentsSchemasResponseCollectionResponseResult>?, ResponseCommonFailure4>> zoneLevelAccessIdentityProvidersListAccessIdentityProviders({required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Add an Access identity provider
 ///
 /// Adds a new identity provider to Access.
 ///
 /// `POST /zones/{zone_id}/access/identity_providers`
-Future<ApiResult<AccessSchemasIdentityProvidersResponse?, ResponseCommonFailure4>> zoneLevelAccessIdentityProvidersAddAnAccessIdentityProvider({required AccessIdentifier zoneId, required AccessSchemasIdentityProvidersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasIdentityProvidersResponse?, ResponseCommonFailure4>> zoneLevelAccessIdentityProvidersAddAnAccessIdentityProvider({required AccessIdentifier zoneId, required AccessSchemasIdentityProvidersRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get an Access identity provider
 ///
 /// Fetches a configured identity provider.
 ///
 /// `GET /zones/{zone_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<AccessSchemasIdentityProvidersResponse?, ResponseCommonFailure4>> zoneLevelAccessIdentityProvidersGetAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasIdentityProvidersResponse?, ResponseCommonFailure4>> zoneLevelAccessIdentityProvidersGetAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -105,13 +105,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update an Access identity provider
 ///
 /// Updates a configured identity provider.
 ///
 /// `PUT /zones/{zone_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<AccessSchemasIdentityProvidersResponse?, ResponseCommonFailure4>> zoneLevelAccessIdentityProvidersUpdateAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier zoneId, required AccessSchemasIdentityProvidersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasIdentityProvidersResponse?, ResponseCommonFailure4>> zoneLevelAccessIdentityProvidersUpdateAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier zoneId, required AccessSchemasIdentityProvidersRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,13 +139,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete an Access identity provider
 ///
 /// Deletes an identity provider from Access.
 ///
 /// `DELETE /zones/{zone_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<AccessIdResponseResult?, ResponseCommonFailure4>> zoneLevelAccessIdentityProvidersDeleteAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessIdResponseResult?, ResponseCommonFailure4>> zoneLevelAccessIdentityProvidersDeleteAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -171,5 +171,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

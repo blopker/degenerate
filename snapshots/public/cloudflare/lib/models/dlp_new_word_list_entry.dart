@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpNewWordListEntry {const DlpNewWordListEntry({required this.enabled, required this.name, required this.words, });
 
-factory DlpNewWordListEntry.fromJson(Map<String, dynamic> json) { return DlpNewWordListEntry(
+factory DlpNewWordListEntry.fromJson(Map<String, dynamic> json) {return DlpNewWordListEntry(
   enabled: json['enabled'] as bool,
   name: json['name'] as String,
   words: (json['words'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final bool enabled;
 
@@ -14,24 +14,24 @@ final String name;
 
 final List<String> words;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   'name': name,
   'words': words,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('words'); } 
-DlpNewWordListEntry copyWith({bool? enabled, String? name, List<String>? words, }) { return DlpNewWordListEntry(
+      json.containsKey('words');}
+DlpNewWordListEntry copyWith({bool? enabled, String? name, List<String>? words, }) {return DlpNewWordListEntry(
   enabled: enabled ?? this.enabled,
   name: name ?? this.name,
   words: words ?? this.words,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpNewWordListEntry &&
           enabled == other.enabled &&
           name == other.name &&
-          listEquals(words, other.words); } 
-@override int get hashCode { return Object.hash(enabled, name, Object.hashAll(words)); } 
-@override String toString() { return 'DlpNewWordListEntry(enabled: $enabled, name: $name, words: $words)'; } 
- }
+          listEquals(words, other.words);}
+@override int get hashCode {return Object.hash(enabled, name, Object.hashAll(words));}
+@override String toString() {return 'DlpNewWordListEntry(enabled: $enabled, name: $name, words: $words)';}
+}

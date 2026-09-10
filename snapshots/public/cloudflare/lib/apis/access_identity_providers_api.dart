@@ -13,7 +13,7 @@ final class AccessIdentityProvidersApi with ApiExecutor {const AccessIdentityPro
 /// Lists all configured identity providers.
 ///
 /// `GET /accounts/{account_id}/access/identity_providers`
-Future<ApiResult<List<AccessResponseCollectionResult>?, ResponseCommonFailure4>> accessIdentityProvidersListAccessIdentityProviders({required AccessIdentifier accountId, String? scimEnabled, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessResponseCollectionResult>?, ResponseCommonFailure4>> accessIdentityProvidersListAccessIdentityProviders({required AccessIdentifier accountId, String? scimEnabled, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (scimEnabled != null) {
   queryParameters['scim_enabled'] = scimEnabled;
@@ -53,13 +53,13 @@ return null;
 
   },
 );
- } 
+}
 /// Add an Access identity provider
 ///
 /// Adds a new identity provider to Access.
 ///
 /// `POST /accounts/{account_id}/access/identity_providers`
-Future<ApiResult<AccessIdentityProviders?, ResponseCommonFailure4>> accessIdentityProvidersAddAnAccessIdentityProvider({required AccessIdentifier accountId, required AccessIdentityProvidersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessIdentityProviders?, ResponseCommonFailure4>> accessIdentityProvidersAddAnAccessIdentityProvider({required AccessIdentifier accountId, required AccessIdentityProvidersRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,13 +87,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get an Access identity provider
 ///
 /// Fetches a configured identity provider.
 ///
 /// `GET /accounts/{account_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<AccessIdentityProviders?, ResponseCommonFailure4>> accessIdentityProvidersGetAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessIdentityProviders?, ResponseCommonFailure4>> accessIdentityProvidersGetAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -119,13 +119,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update an Access identity provider
 ///
 /// Updates a configured identity provider.
 ///
 /// `PUT /accounts/{account_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<AccessIdentityProviders?, ResponseCommonFailure4>> accessIdentityProvidersUpdateAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, required AccessIdentityProvidersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessIdentityProviders?, ResponseCommonFailure4>> accessIdentityProvidersUpdateAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, required AccessIdentityProvidersRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -153,13 +153,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete an Access identity provider
 ///
 /// Deletes an identity provider from Access.
 ///
 /// `DELETE /accounts/{account_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<AccessIdResponseResult?, ResponseCommonFailure4>> accessIdentityProvidersDeleteAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessIdResponseResult?, ResponseCommonFailure4>> accessIdentityProvidersDeleteAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -185,13 +185,13 @@ return null;
 
   },
 );
- } 
+}
 /// List SCIM Group resources
 ///
 /// Lists SCIM Group resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).
 ///
 /// `GET /accounts/{account_id}/access/identity_providers/{identity_provider_id}/scim/groups`
-Future<ApiResult<List<AccessGroups>?, ResponseCommonFailure4>> accessIdentityProvidersListScimGroupResources({required AccessUuid identityProviderId, required AccessIdentifier accountId, AccessCfResourceId? cfResourceId, AccessIdpResourceId? idpResourceId, AccessGroupsName? name, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessGroups>?, ResponseCommonFailure4>> accessIdentityProvidersListScimGroupResources({required AccessUuid identityProviderId, required AccessIdentifier accountId, AccessCfResourceId? cfResourceId, AccessIdpResourceId? idpResourceId, AccessGroupsName? name, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cfResourceId != null) {
   queryParameters['cf_resource_id'] = cfResourceId.toString();
@@ -237,13 +237,13 @@ return null;
 
   },
 );
- } 
+}
 /// List SCIM User resources
 ///
 /// Lists SCIM User resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).
 ///
 /// `GET /accounts/{account_id}/access/identity_providers/{identity_provider_id}/scim/users`
-Future<ApiResult<List<AccessUsers>?, ResponseCommonFailure4>> accessIdentityProvidersListScimUserResources({required AccessUuid identityProviderId, required AccessIdentifier accountId, AccessUsersCfResourceId? cfResourceId, AccessUsersIdpResourceId? idpResourceId, AccessUsername? username, AccessEmail? email, AccessUsersName? name, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessUsers>?, ResponseCommonFailure4>> accessIdentityProvidersListScimUserResources({required AccessUuid identityProviderId, required AccessIdentifier accountId, AccessUsersCfResourceId? cfResourceId, AccessUsersIdpResourceId? idpResourceId, AccessUsername? username, AccessEmail? email, AccessUsersName? name, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cfResourceId != null) {
   queryParameters['cf_resource_id'] = cfResourceId.toString();
@@ -295,5 +295,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

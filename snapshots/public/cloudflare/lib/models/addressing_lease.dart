@@ -37,7 +37,7 @@ String toJson() => value;
 }
 @immutable final class AddressingLease {const AddressingLease({this.activeFrom, this.cidrs, this.createdAt, this.id, this.modifiedAt, this.ownerId, this.purpose, });
 
-factory AddressingLease.fromJson(Map<String, dynamic> json) { return AddressingLease(
+factory AddressingLease.fromJson(Map<String, dynamic> json) {return AddressingLease(
   activeFrom: json['active_from'] != null ? DateTime.parse(json['active_from'] as String) : null,
   cidrs: (json['cidrs'] as List<dynamic>?)?.map((e) => AddressingSchemasCidr.fromJson(e as String)).toList(),
   createdAt: json['created_at'] != null ? AddressingCreatedAt.fromJson(json['created_at'] as String) : null,
@@ -45,7 +45,7 @@ factory AddressingLease.fromJson(Map<String, dynamic> json) { return AddressingL
   modifiedAt: json['modified_at'] != null ? AddressingModifiedAt.fromJson(json['modified_at'] as String) : null,
   ownerId: json['owner_id'] != null ? AddressingLeaseOwnerId.fromJson(json['owner_id'] as String) : null,
   purpose: json['purpose'] as String?,
-); }
+);}
 
 /// Timestamp of the moment the lease was created.
 /// 
@@ -66,7 +66,7 @@ final AddressingLeaseOwnerId? ownerId;
 /// Describes the purpose of the addresses.
 final String? purpose;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (activeFrom != null) 'active_from': activeFrom?.toIso8601String(),
   if (cidrs != null) 'cidrs': cidrs?.map((e) => e.toJson()).toList(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
@@ -74,9 +74,9 @@ Map<String, dynamic> toJson() { return {
   if (modifiedAt != null) 'modified_at': modifiedAt?.toJson(),
   if (ownerId != null) 'owner_id': ownerId?.toJson(),
   'purpose': ?purpose,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active_from', 'cidrs', 'created_at', 'id', 'modified_at', 'owner_id', 'purpose'}.contains(key)); } 
-AddressingLease copyWith({DateTime? Function()? activeFrom, List<AddressingSchemasCidr>? Function()? cidrs, AddressingCreatedAt? Function()? createdAt, AddressingLeaseId? Function()? id, AddressingModifiedAt? Function()? modifiedAt, AddressingLeaseOwnerId? Function()? ownerId, String? Function()? purpose, }) { return AddressingLease(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active_from', 'cidrs', 'created_at', 'id', 'modified_at', 'owner_id', 'purpose'}.contains(key));}
+AddressingLease copyWith({DateTime? Function()? activeFrom, List<AddressingSchemasCidr>? Function()? cidrs, AddressingCreatedAt? Function()? createdAt, AddressingLeaseId? Function()? id, AddressingModifiedAt? Function()? modifiedAt, AddressingLeaseOwnerId? Function()? ownerId, String? Function()? purpose, }) {return AddressingLease(
   activeFrom: activeFrom != null ? activeFrom() : this.activeFrom,
   cidrs: cidrs != null ? cidrs() : this.cidrs,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
@@ -84,8 +84,8 @@ AddressingLease copyWith({DateTime? Function()? activeFrom, List<AddressingSchem
   modifiedAt: modifiedAt != null ? modifiedAt() : this.modifiedAt,
   ownerId: ownerId != null ? ownerId() : this.ownerId,
   purpose: purpose != null ? purpose() : this.purpose,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AddressingLease &&
           activeFrom == other.activeFrom &&
           listEquals(cidrs, other.cidrs) &&
@@ -93,7 +93,7 @@ AddressingLease copyWith({DateTime? Function()? activeFrom, List<AddressingSchem
           id == other.id &&
           modifiedAt == other.modifiedAt &&
           ownerId == other.ownerId &&
-          purpose == other.purpose; } 
-@override int get hashCode { return Object.hash(activeFrom, Object.hashAll(cidrs ?? const []), createdAt, id, modifiedAt, ownerId, purpose); } 
-@override String toString() { return 'AddressingLease(activeFrom: $activeFrom, cidrs: $cidrs, createdAt: $createdAt, id: $id, modifiedAt: $modifiedAt, ownerId: $ownerId, purpose: $purpose)'; } 
- }
+          purpose == other.purpose;}
+@override int get hashCode {return Object.hash(activeFrom, Object.hashAll(cidrs ?? const []), createdAt, id, modifiedAt, ownerId, purpose);}
+@override String toString() {return 'AddressingLease(activeFrom: $activeFrom, cidrs: $cidrs, createdAt: $createdAt, id: $id, modifiedAt: $modifiedAt, ownerId: $ownerId, purpose: $purpose)';}
+}

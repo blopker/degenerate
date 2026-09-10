@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
 @immutable final class RadarGetDnsTimeseriesGroupDimension {const RadarGetDnsTimeseriesGroupDimension._(this.value);
 
-factory RadarGetDnsTimeseriesGroupDimension.fromJson(String json) { return switch (json) {
+factory RadarGetDnsTimeseriesGroupDimension.fromJson(String json) {return switch (json) {
   'AS' => $as,
   'CACHE_HIT' => cacheHit,
   'DNSSEC' => dnssec,
@@ -18,7 +18,7 @@ factory RadarGetDnsTimeseriesGroupDimension.fromJson(String json) { return switc
   'RESPONSE_TTL' => responseTtl,
   'TLD' => tld,
   _ => RadarGetDnsTimeseriesGroupDimension._(json),
-}; }
+};}
 
 static const RadarGetDnsTimeseriesGroupDimension $as = RadarGetDnsTimeseriesGroupDimension._('AS');
 
@@ -50,11 +50,11 @@ static const List<RadarGetDnsTimeseriesGroupDimension> values = [$as, cacheHit, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsTimeseriesGroupDimension && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsTimeseriesGroupDimension($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsTimeseriesGroupDimension && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsTimeseriesGroupDimension($value)';}
+}

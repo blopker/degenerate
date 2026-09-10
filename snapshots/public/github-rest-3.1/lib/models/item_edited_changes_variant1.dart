@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_edited_changes_variant1_field_value.dart';@immutable final class ItemEditedChangesVariant1 {const ItemEditedChangesVariant1({required this.fieldValue});
 
-factory ItemEditedChangesVariant1.fromJson(Map<String, dynamic> json) { return ItemEditedChangesVariant1(
+factory ItemEditedChangesVariant1.fromJson(Map<String, dynamic> json) {return ItemEditedChangesVariant1(
   fieldValue: ItemEditedChangesVariant1FieldValue.fromJson(json['field_value'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemEditedChangesVariant1FieldValue fieldValue;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'field_value': fieldValue.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('field_value'); } 
-ItemEditedChangesVariant1 copyWith({ItemEditedChangesVariant1FieldValue? fieldValue}) { return ItemEditedChangesVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('field_value');}
+ItemEditedChangesVariant1 copyWith({ItemEditedChangesVariant1FieldValue? fieldValue}) {return ItemEditedChangesVariant1(
   fieldValue: fieldValue ?? this.fieldValue,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ItemEditedChangesVariant1 &&
-          fieldValue == other.fieldValue; } 
-@override int get hashCode { return fieldValue.hashCode; } 
-@override String toString() { return 'ItemEditedChangesVariant1(fieldValue: $fieldValue)'; } 
- }
+          fieldValue == other.fieldValue;}
+@override int get hashCode {return fieldValue.hashCode;}
+@override String toString() {return 'ItemEditedChangesVariant1(fieldValue: $fieldValue)';}
+}

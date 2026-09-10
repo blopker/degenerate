@@ -9,29 +9,29 @@ String toJson() => value;
 }
 @immutable final class AaaPagerduty {const AaaPagerduty({this.id, this.name, });
 
-factory AaaPagerduty.fromJson(Map<String, dynamic> json) { return AaaPagerduty(
+factory AaaPagerduty.fromJson(Map<String, dynamic> json) {return AaaPagerduty(
   id: json['id'] != null ? AaaUuid.fromJson(json['id'] as String) : null,
   name: json['name'] != null ? AaaName.fromJson(json['name'] as String) : null,
-); }
+);}
 
 final AaaUuid? id;
 
 /// The name of the pagerduty service.
 final AaaName? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   if (name != null) 'name': name?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name'}.contains(key)); } 
-AaaPagerduty copyWith({AaaUuid? Function()? id, AaaName? Function()? name, }) { return AaaPagerduty(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'name'}.contains(key));}
+AaaPagerduty copyWith({AaaUuid? Function()? id, AaaName? Function()? name, }) {return AaaPagerduty(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AaaPagerduty &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(id, name); } 
-@override String toString() { return 'AaaPagerduty(id: $id, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(id, name);}
+@override String toString() {return 'AaaPagerduty(id: $id, name: $name)';}
+}

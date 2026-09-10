@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SnapshotJob {const SnapshotJob({required this.id, required this.correlator, this.htmlUrl, });
 
-factory SnapshotJob.fromJson(Map<String, dynamic> json) { return SnapshotJob(
+factory SnapshotJob.fromJson(Map<String, dynamic> json) {return SnapshotJob(
   id: json['id'] as String,
   correlator: json['correlator'] as String,
   htmlUrl: json['html_url'] as String?,
-); }
+);}
 
 /// The external ID of the job.
 final String id;
@@ -17,23 +17,23 @@ final String correlator;
 /// The url for the job.
 final String? htmlUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'correlator': correlator,
   'html_url': ?htmlUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('correlator') && json['correlator'] is String; } 
-SnapshotJob copyWith({String? id, String? correlator, String? Function()? htmlUrl, }) { return SnapshotJob(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('correlator') && json['correlator'] is String;}
+SnapshotJob copyWith({String? id, String? correlator, String? Function()? htmlUrl, }) {return SnapshotJob(
   id: id ?? this.id,
   correlator: correlator ?? this.correlator,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SnapshotJob &&
           id == other.id &&
           correlator == other.correlator &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(id, correlator, htmlUrl); } 
-@override String toString() { return 'SnapshotJob(id: $id, correlator: $correlator, htmlUrl: $htmlUrl)'; } 
- }
+          htmlUrl == other.htmlUrl;}
+@override int get hashCode {return Object.hash(id, correlator, htmlUrl);}
+@override String toString() {return 'SnapshotJob(id: $id, correlator: $correlator, htmlUrl: $htmlUrl)';}
+}

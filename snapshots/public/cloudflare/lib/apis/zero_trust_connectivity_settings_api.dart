@@ -13,7 +13,7 @@ final class ZeroTrustConnectivitySettingsApi with ApiExecutor {const ZeroTrustCo
 /// Gets the Zero Trust Connectivity Settings for the given account.
 ///
 /// `GET /accounts/{account_id}/zerotrust/connectivity_settings`
-Future<ApiResult<TunnelZeroTrustConnectivitySettingsResponseResult, ResponseCommonFailure72>> zeroTrustAccountsGetConnectivitySettings({required TunnelAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelZeroTrustConnectivitySettingsResponseResult, ResponseCommonFailure72>> zeroTrustAccountsGetConnectivitySettings({required TunnelAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Updates the Zero Trust Connectivity Settings
 ///
 /// Updates the Zero Trust Connectivity Settings for the given account.
 ///
 /// `PATCH /accounts/{account_id}/zerotrust/connectivity_settings`
-Future<ApiResult<TunnelZeroTrustConnectivitySettingsResponseResult, ResponseCommonFailure72>> zeroTrustAccountsPatchConnectivitySettings({required TunnelAccountId accountId, required ZeroTrustAccountsPatchConnectivitySettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelZeroTrustConnectivitySettingsResponseResult, ResponseCommonFailure72>> zeroTrustAccountsPatchConnectivitySettings({required TunnelAccountId accountId, required ZeroTrustAccountsPatchConnectivitySettingsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,5 +73,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_bancontact_display_preference.dart';/// Bancontact is the most popular online payment method in Belgium, with over 15 million cards in circulation. [Customers](https://docs.stripe.com/api/customers) use a Bancontact card or mobile app linked to a Belgian bank account to make online payments that are secure, guaranteed, and confirmed immediately. Check this [page](https://docs.stripe.com/payments/bancontact) for more details.
 @immutable final class PostPaymentMethodConfigurationsRequestBancontact {const PostPaymentMethodConfigurationsRequestBancontact({this.displayPreference});
 
-factory PostPaymentMethodConfigurationsRequestBancontact.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestBancontact(
+factory PostPaymentMethodConfigurationsRequestBancontact.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsRequestBancontact(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestBancontactDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsRequestBancontactDisplayPreference? displayPreference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsRequestBancontact copyWith({PostPaymentMethodConfigurationsRequestBancontactDisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsRequestBancontact(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_preference'}.contains(key));}
+PostPaymentMethodConfigurationsRequestBancontact copyWith({PostPaymentMethodConfigurationsRequestBancontactDisplayPreference? Function()? displayPreference}) {return PostPaymentMethodConfigurationsRequestBancontact(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsRequestBancontact &&
-          displayPreference == other.displayPreference; } 
-@override int get hashCode { return displayPreference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestBancontact(displayPreference: $displayPreference)'; } 
- }
+          displayPreference == other.displayPreference;}
+@override int get hashCode {return displayPreference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestBancontact(displayPreference: $displayPreference)';}
+}

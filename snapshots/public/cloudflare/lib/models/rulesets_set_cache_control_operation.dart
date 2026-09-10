@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The operation to perform on the cache-control directive.
 @immutable final class RulesetsSetCacheControlOperation {const RulesetsSetCacheControlOperation._(this.value);
 
-factory RulesetsSetCacheControlOperation.fromJson(String json) { return switch (json) {
+factory RulesetsSetCacheControlOperation.fromJson(String json) {return switch (json) {
   'set' => $set,
   'remove' => remove,
   _ => RulesetsSetCacheControlOperation._(json),
-}; }
+};}
 
 static const RulesetsSetCacheControlOperation $set = RulesetsSetCacheControlOperation._('set');
 
@@ -17,11 +17,11 @@ static const List<RulesetsSetCacheControlOperation> values = [$set, remove];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsSetCacheControlOperation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RulesetsSetCacheControlOperation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RulesetsSetCacheControlOperation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RulesetsSetCacheControlOperation($value)';}
+}

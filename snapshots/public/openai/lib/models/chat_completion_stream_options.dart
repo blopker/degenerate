@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Options for stre
 /// 
 @immutable final class ChatCompletionStreamOptions {const ChatCompletionStreamOptions({this.includeUsage, this.includeObfuscation, });
 
-factory ChatCompletionStreamOptions.fromJson(Map<String, dynamic> json) { return ChatCompletionStreamOptions(
+factory ChatCompletionStreamOptions.fromJson(Map<String, dynamic> json) {return ChatCompletionStreamOptions(
   includeUsage: json['include_usage'] as bool?,
   includeObfuscation: json['include_obfuscation'] as bool?,
-); }
+);}
 
 /// If set, an additional chunk will be streamed before the `data: [DONE]`
 /// message. The `usage` field on this chunk shows the token usage statistics
@@ -30,19 +30,19 @@ final bool? includeUsage;
 /// 
 final bool? includeObfuscation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'include_usage': ?includeUsage,
   'include_obfuscation': ?includeObfuscation,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'include_usage', 'include_obfuscation'}.contains(key)); } 
-ChatCompletionStreamOptions copyWith({bool? Function()? includeUsage, bool? Function()? includeObfuscation, }) { return ChatCompletionStreamOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'include_usage', 'include_obfuscation'}.contains(key));}
+ChatCompletionStreamOptions copyWith({bool? Function()? includeUsage, bool? Function()? includeObfuscation, }) {return ChatCompletionStreamOptions(
   includeUsage: includeUsage != null ? includeUsage() : this.includeUsage,
   includeObfuscation: includeObfuscation != null ? includeObfuscation() : this.includeObfuscation,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ChatCompletionStreamOptions &&
           includeUsage == other.includeUsage &&
-          includeObfuscation == other.includeObfuscation; } 
-@override int get hashCode { return Object.hash(includeUsage, includeObfuscation); } 
-@override String toString() { return 'ChatCompletionStreamOptions(includeUsage: $includeUsage, includeObfuscation: $includeObfuscation)'; } 
- }
+          includeObfuscation == other.includeObfuscation;}
+@override int get hashCode {return Object.hash(includeUsage, includeObfuscation);}
+@override String toString() {return 'ChatCompletionStreamOptions(includeUsage: $includeUsage, includeObfuscation: $includeObfuscation)';}
+}

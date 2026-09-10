@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_ai_search_response_result.dart';@immutable final class AutoragConfigAiSearchResponse {const AutoragConfigAiSearchResponse({required this.result, required this.success, });
 
-factory AutoragConfigAiSearchResponse.fromJson(Map<String, dynamic> json) { return AutoragConfigAiSearchResponse(
+factory AutoragConfigAiSearchResponse.fromJson(Map<String, dynamic> json) {return AutoragConfigAiSearchResponse(
   result: AutoragConfigAiSearchResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final AutoragConfigAiSearchResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AutoragConfigAiSearchResponse copyWith({AutoragConfigAiSearchResponseResult? result, bool? success, }) { return AutoragConfigAiSearchResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+AutoragConfigAiSearchResponse copyWith({AutoragConfigAiSearchResponseResult? result, bool? success, }) {return AutoragConfigAiSearchResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AutoragConfigAiSearchResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'AutoragConfigAiSearchResponse(result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(result, success);}
+@override String toString() {return 'AutoragConfigAiSearchResponse(result: $result, success: $success)';}
+}

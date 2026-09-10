@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InsightsGetRouteStatsByActorSort {const InsightsGetRouteStatsByActorSort._(this.value);
 
-factory InsightsGetRouteStatsByActorSort.fromJson(String json) { return switch (json) {
+factory InsightsGetRouteStatsByActorSort.fromJson(String json) {return switch (json) {
   'last_rate_limited_timestamp' => lastRateLimitedTimestamp,
   'last_request_timestamp' => lastRequestTimestamp,
   'rate_limited_request_count' => rateLimitedRequestCount,
@@ -10,7 +10,7 @@ factory InsightsGetRouteStatsByActorSort.fromJson(String json) { return switch (
   'api_route' => apiRoute,
   'total_request_count' => totalRequestCount,
   _ => InsightsGetRouteStatsByActorSort._(json),
-}; }
+};}
 
 static const InsightsGetRouteStatsByActorSort lastRateLimitedTimestamp = InsightsGetRouteStatsByActorSort._('last_rate_limited_timestamp');
 
@@ -28,11 +28,11 @@ static const List<InsightsGetRouteStatsByActorSort> values = [lastRateLimitedTim
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsGetRouteStatsByActorSort && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsGetRouteStatsByActorSort($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InsightsGetRouteStatsByActorSort && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InsightsGetRouteStatsByActorSort($value)';}
+}

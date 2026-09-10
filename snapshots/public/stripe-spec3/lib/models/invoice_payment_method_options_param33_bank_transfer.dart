@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param33_bank_transfer_eu_bank_transfer.dart';@immutable final class InvoicePaymentMethodOptionsParam33BankTransfer {const InvoicePaymentMethodOptionsParam33BankTransfer({this.euBankTransfer, this.type, });
 
-factory InvoicePaymentMethodOptionsParam33BankTransfer.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam33BankTransfer(
+factory InvoicePaymentMethodOptionsParam33BankTransfer.fromJson(Map<String, dynamic> json) {return InvoicePaymentMethodOptionsParam33BankTransfer(
   euBankTransfer: json['eu_bank_transfer'] != null ? InvoicePaymentMethodOptionsParam33BankTransferEuBankTransfer.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>) : null,
   type: json['type'] as String?,
-); }
+);}
 
 final InvoicePaymentMethodOptionsParam33BankTransferEuBankTransfer? euBankTransfer;
 
 final String? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (euBankTransfer != null) 'eu_bank_transfer': euBankTransfer?.toJson(),
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'eu_bank_transfer', 'type'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam33BankTransfer copyWith({InvoicePaymentMethodOptionsParam33BankTransferEuBankTransfer? Function()? euBankTransfer, String? Function()? type, }) { return InvoicePaymentMethodOptionsParam33BankTransfer(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'eu_bank_transfer', 'type'}.contains(key));}
+InvoicePaymentMethodOptionsParam33BankTransfer copyWith({InvoicePaymentMethodOptionsParam33BankTransferEuBankTransfer? Function()? euBankTransfer, String? Function()? type, }) {return InvoicePaymentMethodOptionsParam33BankTransfer(
   euBankTransfer: euBankTransfer != null ? euBankTransfer() : this.euBankTransfer,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InvoicePaymentMethodOptionsParam33BankTransfer &&
           euBankTransfer == other.euBankTransfer &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(euBankTransfer, type); } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam33BankTransfer(euBankTransfer: $euBankTransfer, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(euBankTransfer, type);}
+@override String toString() {return 'InvoicePaymentMethodOptionsParam33BankTransfer(euBankTransfer: $euBankTransfer, type: $type)';}
+}

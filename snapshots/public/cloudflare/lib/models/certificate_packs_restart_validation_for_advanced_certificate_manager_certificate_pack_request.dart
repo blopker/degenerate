@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_cloudflare_branding.dart';@immutable final class CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest {const CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest({this.cloudflareBranding});
 
-factory CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest.fromJson(Map<String, dynamic> json) { return CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest(
+factory CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest.fromJson(Map<String, dynamic> json) {return CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest(
   cloudflareBranding: json['cloudflare_branding'] != null ? TlsCertificatesAndHostnamesCloudflareBranding.fromJson(json['cloudflare_branding'] as bool) : null,
-); }
+);}
 
 /// Whether or not to add Cloudflare Branding for the order.  This will add a subdomain of sni.cloudflaressl.com as the Common Name if set to true.
 final TlsCertificatesAndHostnamesCloudflareBranding? cloudflareBranding;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cloudflareBranding != null) 'cloudflare_branding': cloudflareBranding?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cloudflare_branding'}.contains(key)); } 
-CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest copyWith({TlsCertificatesAndHostnamesCloudflareBranding? Function()? cloudflareBranding}) { return CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cloudflare_branding'}.contains(key));}
+CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest copyWith({TlsCertificatesAndHostnamesCloudflareBranding? Function()? cloudflareBranding}) {return CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest(
   cloudflareBranding: cloudflareBranding != null ? cloudflareBranding() : this.cloudflareBranding,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest &&
-          cloudflareBranding == other.cloudflareBranding; } 
-@override int get hashCode { return cloudflareBranding.hashCode; } 
-@override String toString() { return 'CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest(cloudflareBranding: $cloudflareBranding)'; } 
- }
+          cloudflareBranding == other.cloudflareBranding;}
+@override int get hashCode {return cloudflareBranding.hashCode;}
+@override String toString() {return 'CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest(cloudflareBranding: $cloudflareBranding)';}
+}

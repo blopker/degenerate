@@ -4,13 +4,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type
 /// 
 @immutable final class RealtimeConversationItemWithReferenceContentType {const RealtimeConversationItemWithReferenceContentType._(this.value);
 
-factory RealtimeConversationItemWithReferenceContentType.fromJson(String json) { return switch (json) {
+factory RealtimeConversationItemWithReferenceContentType.fromJson(String json) {return switch (json) {
   'input_audio' => inputAudio,
   'input_text' => inputText,
   'item_reference' => itemReference,
   'text' => text,
   _ => RealtimeConversationItemWithReferenceContentType._(json),
-}; }
+};}
 
 static const RealtimeConversationItemWithReferenceContentType inputAudio = RealtimeConversationItemWithReferenceContentType._('input_audio');
 
@@ -24,23 +24,23 @@ static const List<RealtimeConversationItemWithReferenceContentType> values = [in
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemWithReferenceContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemWithReferenceContentType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeConversationItemWithReferenceContentType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeConversationItemWithReferenceContentType($value)';}
+}
 @immutable final class RealtimeConversationItemWithReferenceContent {const RealtimeConversationItemWithReferenceContent({this.type, this.text, this.id, this.audio, this.transcript, });
 
-factory RealtimeConversationItemWithReferenceContent.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemWithReferenceContent(
+factory RealtimeConversationItemWithReferenceContent.fromJson(Map<String, dynamic> json) {return RealtimeConversationItemWithReferenceContent(
   type: json['type'] != null ? RealtimeConversationItemWithReferenceContentType.fromJson(json['type'] as String) : null,
   text: json['text'] as String?,
   id: json['id'] as String?,
   audio: json['audio'] as String?,
   transcript: json['transcript'] as String?,
-); }
+);}
 
 /// The content type (`input_text`, `input_audio`, `item_reference`, `text`).
 /// 
@@ -64,28 +64,28 @@ final String? audio;
 /// 
 final String? transcript;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   'text': ?text,
   'id': ?id,
   'audio': ?audio,
   'transcript': ?transcript,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'text', 'id', 'audio', 'transcript'}.contains(key)); } 
-RealtimeConversationItemWithReferenceContent copyWith({RealtimeConversationItemWithReferenceContentType? Function()? type, String? Function()? text, String? Function()? id, String? Function()? audio, String? Function()? transcript, }) { return RealtimeConversationItemWithReferenceContent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'text', 'id', 'audio', 'transcript'}.contains(key));}
+RealtimeConversationItemWithReferenceContent copyWith({RealtimeConversationItemWithReferenceContentType? Function()? type, String? Function()? text, String? Function()? id, String? Function()? audio, String? Function()? transcript, }) {return RealtimeConversationItemWithReferenceContent(
   type: type != null ? type() : this.type,
   text: text != null ? text() : this.text,
   id: id != null ? id() : this.id,
   audio: audio != null ? audio() : this.audio,
   transcript: transcript != null ? transcript() : this.transcript,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeConversationItemWithReferenceContent &&
           type == other.type &&
           text == other.text &&
           id == other.id &&
           audio == other.audio &&
-          transcript == other.transcript; } 
-@override int get hashCode { return Object.hash(type, text, id, audio, transcript); } 
-@override String toString() { return 'RealtimeConversationItemWithReferenceContent(type: $type, text: $text, id: $id, audio: $audio, transcript: $transcript)'; } 
- }
+          transcript == other.transcript;}
+@override int get hashCode {return Object.hash(type, text, id, audio, transcript);}
+@override String toString() {return 'RealtimeConversationItemWithReferenceContent(type: $type, text: $text, id: $id, audio: $audio, transcript: $transcript)';}
+}

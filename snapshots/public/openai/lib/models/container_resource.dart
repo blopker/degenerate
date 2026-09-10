@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_resource_expires_after.dart';import 'container_resource_network_policy.dart';/// The memory limit configured for the container.
 @immutable final class ContainerResourceMemoryLimit {const ContainerResourceMemoryLimit._(this.value);
 
-factory ContainerResourceMemoryLimit.fromJson(String json) { return switch (json) {
+factory ContainerResourceMemoryLimit.fromJson(String json) {return switch (json) {
   '1g' => $1g,
   '4g' => $4g,
   '16g' => $16g,
   '64g' => $64g,
   _ => ContainerResourceMemoryLimit._(json),
-}; }
+};}
 
 static const ContainerResourceMemoryLimit $1g = ContainerResourceMemoryLimit._('1g');
 
@@ -23,17 +23,17 @@ static const List<ContainerResourceMemoryLimit> values = [$1g, $4g, $16g, $64g];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContainerResourceMemoryLimit && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContainerResourceMemoryLimit($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ContainerResourceMemoryLimit && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ContainerResourceMemoryLimit($value)';}
+}
 @immutable final class ContainerResource {const ContainerResource({required this.id, required this.object, required this.name, required this.createdAt, required this.status, this.lastActiveAt, this.expiresAfter, this.memoryLimit, this.networkPolicy, });
 
-factory ContainerResource.fromJson(Map<String, dynamic> json) { return ContainerResource(
+factory ContainerResource.fromJson(Map<String, dynamic> json) {return ContainerResource(
   id: json['id'] as String,
   object: json['object'] as String,
   name: json['name'] as String,
@@ -43,7 +43,7 @@ factory ContainerResource.fromJson(Map<String, dynamic> json) { return Container
   expiresAfter: json['expires_after'] != null ? ContainerResourceExpiresAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
   memoryLimit: json['memory_limit'] != null ? ContainerResourceMemoryLimit.fromJson(json['memory_limit'] as String) : null,
   networkPolicy: json['network_policy'] != null ? ContainerResourceNetworkPolicy.fromJson(json['network_policy'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Unique identifier for the container.
 final String id;
@@ -75,7 +75,7 @@ final ContainerResourceMemoryLimit? memoryLimit;
 /// Network access policy for the container.
 final ContainerResourceNetworkPolicy? networkPolicy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object,
   'name': name,
@@ -85,13 +85,13 @@ Map<String, dynamic> toJson() { return {
   if (expiresAfter != null) 'expires_after': expiresAfter?.toJson(),
   if (memoryLimit != null) 'memory_limit': memoryLimit?.toJson(),
   if (networkPolicy != null) 'network_policy': networkPolicy?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') && json['object'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
-      json.containsKey('status') && json['status'] is String; } 
-ContainerResource copyWith({String? id, String? object, String? name, int? createdAt, String? status, int? Function()? lastActiveAt, ContainerResourceExpiresAfter? Function()? expiresAfter, ContainerResourceMemoryLimit? Function()? memoryLimit, ContainerResourceNetworkPolicy? Function()? networkPolicy, }) { return ContainerResource(
+      json.containsKey('status') && json['status'] is String;}
+ContainerResource copyWith({String? id, String? object, String? name, int? createdAt, String? status, int? Function()? lastActiveAt, ContainerResourceExpiresAfter? Function()? expiresAfter, ContainerResourceMemoryLimit? Function()? memoryLimit, ContainerResourceNetworkPolicy? Function()? networkPolicy, }) {return ContainerResource(
   id: id ?? this.id,
   object: object ?? this.object,
   name: name ?? this.name,
@@ -101,8 +101,8 @@ ContainerResource copyWith({String? id, String? object, String? name, int? creat
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,
   memoryLimit: memoryLimit != null ? memoryLimit() : this.memoryLimit,
   networkPolicy: networkPolicy != null ? networkPolicy() : this.networkPolicy,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ContainerResource &&
           id == other.id &&
           object == other.object &&
@@ -112,7 +112,7 @@ ContainerResource copyWith({String? id, String? object, String? name, int? creat
           lastActiveAt == other.lastActiveAt &&
           expiresAfter == other.expiresAfter &&
           memoryLimit == other.memoryLimit &&
-          networkPolicy == other.networkPolicy; } 
-@override int get hashCode { return Object.hash(id, object, name, createdAt, status, lastActiveAt, expiresAfter, memoryLimit, networkPolicy); } 
-@override String toString() { return 'ContainerResource(id: $id, object: $object, name: $name, createdAt: $createdAt, status: $status, lastActiveAt: $lastActiveAt, expiresAfter: $expiresAfter, memoryLimit: $memoryLimit, networkPolicy: $networkPolicy)'; } 
- }
+          networkPolicy == other.networkPolicy;}
+@override int get hashCode {return Object.hash(id, object, name, createdAt, status, lastActiveAt, expiresAfter, memoryLimit, networkPolicy);}
+@override String toString() {return 'ContainerResource(id: $id, object: $object, name: $name, createdAt: $createdAt, status: $status, lastActiveAt: $lastActiveAt, expiresAfter: $expiresAfter, memoryLimit: $memoryLimit, networkPolicy: $networkPolicy)';}
+}

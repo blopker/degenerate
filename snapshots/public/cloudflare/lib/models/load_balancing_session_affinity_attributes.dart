@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configures the SameSite attribute on session affinity cookie. Value "Auto" will be translated to "Lax" or "None" depending if Always Use HTTPS is enabled. Note: when using value "None", the secure attribute can not be set to "Never".
 @immutable final class LoadBalancingSessionAffinityAttributesSamesite {const LoadBalancingSessionAffinityAttributesSamesite._(this.value);
 
-factory LoadBalancingSessionAffinityAttributesSamesite.fromJson(String json) { return switch (json) {
+factory LoadBalancingSessionAffinityAttributesSamesite.fromJson(String json) {return switch (json) {
   'Auto' => auto,
   'Lax' => lax,
   'None' => none,
   'Strict' => strict,
   _ => LoadBalancingSessionAffinityAttributesSamesite._(json),
-}; }
+};}
 
 static const LoadBalancingSessionAffinityAttributesSamesite auto = LoadBalancingSessionAffinityAttributesSamesite._('Auto');
 
@@ -23,23 +23,23 @@ static const List<LoadBalancingSessionAffinityAttributesSamesite> values = [auto
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LoadBalancingSessionAffinityAttributesSamesite && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LoadBalancingSessionAffinityAttributesSamesite($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LoadBalancingSessionAffinityAttributesSamesite && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LoadBalancingSessionAffinityAttributesSamesite($value)';}
+}
 /// Configures the Secure attribute on session affinity cookie. Value "Always" indicates the Secure attribute will be set in the Set-Cookie header, "Never" indicates the Secure attribute will not be set, and "Auto" will set the Secure attribute depending if Always Use HTTPS is enabled.
 @immutable final class LoadBalancingSessionAffinityAttributesSecure {const LoadBalancingSessionAffinityAttributesSecure._(this.value);
 
-factory LoadBalancingSessionAffinityAttributesSecure.fromJson(String json) { return switch (json) {
+factory LoadBalancingSessionAffinityAttributesSecure.fromJson(String json) {return switch (json) {
   'Auto' => auto,
   'Always' => always,
   'Never' => never,
   _ => LoadBalancingSessionAffinityAttributesSecure._(json),
-}; }
+};}
 
 static const LoadBalancingSessionAffinityAttributesSecure auto = LoadBalancingSessionAffinityAttributesSecure._('Auto');
 
@@ -51,23 +51,23 @@ static const List<LoadBalancingSessionAffinityAttributesSecure> values = [auto, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LoadBalancingSessionAffinityAttributesSecure && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LoadBalancingSessionAffinityAttributesSecure($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LoadBalancingSessionAffinityAttributesSecure && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LoadBalancingSessionAffinityAttributesSecure($value)';}
+}
 /// Configures the zero-downtime failover between origins within a pool when session affinity is enabled. This feature is currently incompatible with Argo, Tiered Cache, and Bandwidth Alliance. The supported values are: - `"none"`: No failover takes place for sessions pinned to the origin (default). - `"temporary"`: Traffic will be sent to another other healthy origin until the originally pinned origin is available; note that this can potentially result in heavy origin flapping. - `"sticky"`: The session affinity cookie is updated and subsequent requests are sent to the new origin. Note: Zero-downtime failover with sticky sessions is currently not supported for session affinity by header.
 @immutable final class LoadBalancingSessionAffinityAttributesZeroDowntimeFailover {const LoadBalancingSessionAffinityAttributesZeroDowntimeFailover._(this.value);
 
-factory LoadBalancingSessionAffinityAttributesZeroDowntimeFailover.fromJson(String json) { return switch (json) {
+factory LoadBalancingSessionAffinityAttributesZeroDowntimeFailover.fromJson(String json) {return switch (json) {
   'none' => none,
   'temporary' => temporary,
   'sticky' => sticky,
   _ => LoadBalancingSessionAffinityAttributesZeroDowntimeFailover._(json),
-}; }
+};}
 
 static const LoadBalancingSessionAffinityAttributesZeroDowntimeFailover none = LoadBalancingSessionAffinityAttributesZeroDowntimeFailover._('none');
 
@@ -79,25 +79,25 @@ static const List<LoadBalancingSessionAffinityAttributesZeroDowntimeFailover> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LoadBalancingSessionAffinityAttributesZeroDowntimeFailover && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LoadBalancingSessionAffinityAttributesZeroDowntimeFailover($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LoadBalancingSessionAffinityAttributesZeroDowntimeFailover && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LoadBalancingSessionAffinityAttributesZeroDowntimeFailover($value)';}
+}
 /// Configures attributes for session affinity.
 @immutable final class LoadBalancingSessionAffinityAttributes {const LoadBalancingSessionAffinityAttributes({this.drainDuration, this.headers, this.requireAllHeaders, this.samesite, this.secure, this.zeroDowntimeFailover, });
 
-factory LoadBalancingSessionAffinityAttributes.fromJson(Map<String, dynamic> json) { return LoadBalancingSessionAffinityAttributes(
+factory LoadBalancingSessionAffinityAttributes.fromJson(Map<String, dynamic> json) {return LoadBalancingSessionAffinityAttributes(
   drainDuration: json['drain_duration'] != null ? (json['drain_duration'] as num).toDouble() : null,
   headers: (json['headers'] as List<dynamic>?)?.map((e) => e as String).toList(),
   requireAllHeaders: json['require_all_headers'] as bool?,
   samesite: json['samesite'] != null ? LoadBalancingSessionAffinityAttributesSamesite.fromJson(json['samesite'] as String) : null,
   secure: json['secure'] != null ? LoadBalancingSessionAffinityAttributesSecure.fromJson(json['secure'] as String) : null,
   zeroDowntimeFailover: json['zero_downtime_failover'] != null ? LoadBalancingSessionAffinityAttributesZeroDowntimeFailover.fromJson(json['zero_downtime_failover'] as String) : null,
-); }
+);}
 
 /// Configures the drain duration in seconds. This field is only used when session affinity is enabled on the load balancer.
 final double? drainDuration;
@@ -118,38 +118,38 @@ final LoadBalancingSessionAffinityAttributesSecure? secure;
 final LoadBalancingSessionAffinityAttributesZeroDowntimeFailover? zeroDowntimeFailover;
 
 /// The value with the schema default applied when absent.
-bool get requireAllHeadersOrDefault { return requireAllHeaders ?? false; } 
+bool get requireAllHeadersOrDefault {return requireAllHeaders ?? false;}
 /// The value with the schema default applied when absent.
-LoadBalancingSessionAffinityAttributesSamesite get samesiteOrDefault { return samesite ?? LoadBalancingSessionAffinityAttributesSamesite.fromJson('Auto'); } 
+LoadBalancingSessionAffinityAttributesSamesite get samesiteOrDefault {return samesite ?? LoadBalancingSessionAffinityAttributesSamesite.fromJson('Auto');}
 /// The value with the schema default applied when absent.
-LoadBalancingSessionAffinityAttributesSecure get secureOrDefault { return secure ?? LoadBalancingSessionAffinityAttributesSecure.fromJson('Auto'); } 
+LoadBalancingSessionAffinityAttributesSecure get secureOrDefault {return secure ?? LoadBalancingSessionAffinityAttributesSecure.fromJson('Auto');}
 /// The value with the schema default applied when absent.
-LoadBalancingSessionAffinityAttributesZeroDowntimeFailover get zeroDowntimeFailoverOrDefault { return zeroDowntimeFailover ?? LoadBalancingSessionAffinityAttributesZeroDowntimeFailover.fromJson('none'); } 
-Map<String, dynamic> toJson() { return {
+LoadBalancingSessionAffinityAttributesZeroDowntimeFailover get zeroDowntimeFailoverOrDefault {return zeroDowntimeFailover ?? LoadBalancingSessionAffinityAttributesZeroDowntimeFailover.fromJson('none');}
+Map<String, dynamic> toJson() {return {
   'drain_duration': ?drainDuration,
   'headers': ?headers,
   'require_all_headers': ?requireAllHeaders,
   if (samesite != null) 'samesite': samesite?.toJson(),
   if (secure != null) 'secure': secure?.toJson(),
   if (zeroDowntimeFailover != null) 'zero_downtime_failover': zeroDowntimeFailover?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'drain_duration', 'headers', 'require_all_headers', 'samesite', 'secure', 'zero_downtime_failover'}.contains(key)); } 
-LoadBalancingSessionAffinityAttributes copyWith({double? Function()? drainDuration, List<String>? Function()? headers, bool? Function()? requireAllHeaders, LoadBalancingSessionAffinityAttributesSamesite? Function()? samesite, LoadBalancingSessionAffinityAttributesSecure? Function()? secure, LoadBalancingSessionAffinityAttributesZeroDowntimeFailover? Function()? zeroDowntimeFailover, }) { return LoadBalancingSessionAffinityAttributes(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'drain_duration', 'headers', 'require_all_headers', 'samesite', 'secure', 'zero_downtime_failover'}.contains(key));}
+LoadBalancingSessionAffinityAttributes copyWith({double? Function()? drainDuration, List<String>? Function()? headers, bool? Function()? requireAllHeaders, LoadBalancingSessionAffinityAttributesSamesite? Function()? samesite, LoadBalancingSessionAffinityAttributesSecure? Function()? secure, LoadBalancingSessionAffinityAttributesZeroDowntimeFailover? Function()? zeroDowntimeFailover, }) {return LoadBalancingSessionAffinityAttributes(
   drainDuration: drainDuration != null ? drainDuration() : this.drainDuration,
   headers: headers != null ? headers() : this.headers,
   requireAllHeaders: requireAllHeaders != null ? requireAllHeaders() : this.requireAllHeaders,
   samesite: samesite != null ? samesite() : this.samesite,
   secure: secure != null ? secure() : this.secure,
   zeroDowntimeFailover: zeroDowntimeFailover != null ? zeroDowntimeFailover() : this.zeroDowntimeFailover,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LoadBalancingSessionAffinityAttributes &&
           drainDuration == other.drainDuration &&
           listEquals(headers, other.headers) &&
           requireAllHeaders == other.requireAllHeaders &&
           samesite == other.samesite &&
           secure == other.secure &&
-          zeroDowntimeFailover == other.zeroDowntimeFailover; } 
-@override int get hashCode { return Object.hash(drainDuration, Object.hashAll(headers ?? const []), requireAllHeaders, samesite, secure, zeroDowntimeFailover); } 
-@override String toString() { return 'LoadBalancingSessionAffinityAttributes(drainDuration: $drainDuration, headers: $headers, requireAllHeaders: $requireAllHeaders, samesite: $samesite, secure: $secure, zeroDowntimeFailover: $zeroDowntimeFailover)'; } 
- }
+          zeroDowntimeFailover == other.zeroDowntimeFailover;}
+@override int get hashCode {return Object.hash(drainDuration, Object.hashAll(headers ?? const []), requireAllHeaders, samesite, secure, zeroDowntimeFailover);}
+@override String toString() {return 'LoadBalancingSessionAffinityAttributes(drainDuration: $drainDuration, headers: $headers, requireAllHeaders: $requireAllHeaders, samesite: $samesite, secure: $secure, zeroDowntimeFailover: $zeroDowntimeFailover)';}
+}

@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResponseCommonFailure3Errors {const ResponseCommonFailure3Errors({required this.message});
 
-factory ResponseCommonFailure3Errors.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure3Errors(
+factory ResponseCommonFailure3Errors.fromJson(Map<String, dynamic> json) {return ResponseCommonFailure3Errors(
   message: json['message'] as String,
-); }
+);}
 
 /// A text description of this message.
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-ResponseCommonFailure3Errors copyWith({String? message}) { return ResponseCommonFailure3Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+ResponseCommonFailure3Errors copyWith({String? message}) {return ResponseCommonFailure3Errors(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseCommonFailure3Errors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'ResponseCommonFailure3Errors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'ResponseCommonFailure3Errors(message: $message)';}
+}

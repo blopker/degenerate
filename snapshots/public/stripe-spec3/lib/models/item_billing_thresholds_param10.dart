@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ItemBillingThresholdsParam10 {const ItemBillingThresholdsParam10({required this.usageGte});
 
-factory ItemBillingThresholdsParam10.fromJson(Map<String, dynamic> json) { return ItemBillingThresholdsParam10(
+factory ItemBillingThresholdsParam10.fromJson(Map<String, dynamic> json) {return ItemBillingThresholdsParam10(
   usageGte: (json['usage_gte'] as num).toInt(),
-); }
+);}
 
 final int usageGte;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'usage_gte': usageGte,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('usage_gte') && json['usage_gte'] is num; } 
-ItemBillingThresholdsParam10 copyWith({int? usageGte}) { return ItemBillingThresholdsParam10(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('usage_gte') && json['usage_gte'] is num;}
+ItemBillingThresholdsParam10 copyWith({int? usageGte}) {return ItemBillingThresholdsParam10(
   usageGte: usageGte ?? this.usageGte,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ItemBillingThresholdsParam10 &&
-          usageGte == other.usageGte; } 
-@override int get hashCode { return usageGte.hashCode; } 
-@override String toString() { return 'ItemBillingThresholdsParam10(usageGte: $usageGte)'; } 
- }
+          usageGte == other.usageGte;}
+@override int get hashCode {return usageGte.hashCode;}
+@override String toString() {return 'ItemBillingThresholdsParam10(usageGte: $usageGte)';}
+}

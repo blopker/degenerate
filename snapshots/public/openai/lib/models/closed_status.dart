@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status discriminator that is always `closed`.
 @immutable final class ClosedStatusType {const ClosedStatusType._(this.value);
 
-factory ClosedStatusType.fromJson(String json) { return switch (json) {
+factory ClosedStatusType.fromJson(String json) {return switch (json) {
   'closed' => closed,
   _ => ClosedStatusType._(json),
-}; }
+};}
 
 static const ClosedStatusType closed = ClosedStatusType._('closed');
 
@@ -14,21 +14,21 @@ static const List<ClosedStatusType> values = [closed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClosedStatusType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClosedStatusType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ClosedStatusType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ClosedStatusType($value)';}
+}
 /// Indicates that a thread has been closed.
 @immutable final class ClosedStatus {const ClosedStatus({required this.type, required this.reason, });
 
-factory ClosedStatus.fromJson(Map<String, dynamic> json) { return ClosedStatus(
+factory ClosedStatus.fromJson(Map<String, dynamic> json) {return ClosedStatus(
   type: ClosedStatusType.fromJson(json['type'] as String),
   reason: json['reason'] as String?,
-); }
+);}
 
 /// Status discriminator that is always `closed`.
 final ClosedStatusType type;
@@ -36,20 +36,20 @@ final ClosedStatusType type;
 /// Reason that the thread was closed. Defaults to null when no reason is recorded.
 final String? reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'reason': reason,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('reason') && (json['reason'] == null || json['reason'] is String); } 
-ClosedStatus copyWith({ClosedStatusType? type, String? Function()? reason, }) { return ClosedStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('reason') && (json['reason'] == null || json['reason'] is String);}
+ClosedStatus copyWith({ClosedStatusType? type, String? Function()? reason, }) {return ClosedStatus(
   type: type ?? this.type,
   reason: reason != null ? reason() : this.reason,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ClosedStatus &&
           type == other.type &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(type, reason); } 
-@override String toString() { return 'ClosedStatus(type: $type, reason: $reason)'; } 
- }
+          reason == other.reason;}
+@override int get hashCode {return Object.hash(type, reason);}
+@override String toString() {return 'ClosedStatus(type: $type, reason: $reason)';}
+}

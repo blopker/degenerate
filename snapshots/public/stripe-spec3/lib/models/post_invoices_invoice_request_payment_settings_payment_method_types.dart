@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 {const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._(this.value);
 
-factory PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1.fromJson(String json) { return switch (json) {
+factory PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1.fromJson(String json) {return switch (json) {
   'ach_credit_transfer' => achCreditTransfer,
   'ach_debit' => achDebit,
   'acss_debit' => acssDebit,
@@ -46,7 +46,7 @@ factory PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1.from
   'us_bank_account' => usBankAccount,
   'wechat_pay' => wechatPay,
   _ => PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._(json),
-}; }
+};}
 
 static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 achCreditTransfer = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('ach_credit_transfer');
 
@@ -136,20 +136,20 @@ static const List<PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVar
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1($value)';}
+}
 @immutable final class PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2 {const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2._(this.value);
 
-factory PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2.fromJson(String json) { return switch (json) {
+factory PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2._(json),
-}; }
+};}
 
 static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2 $empty = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2._('');
 
@@ -157,14 +157,14 @@ static const List<PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVar
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2($value)';}
+}
 
 @immutable
 final class PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypes {

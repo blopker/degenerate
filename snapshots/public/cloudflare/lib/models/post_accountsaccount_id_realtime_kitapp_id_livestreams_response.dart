@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accountsaccount_id_realtime_kitapp_id_livestreams_response_data.dart';@immutable final class PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse {const PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse({this.data, this.success, });
 
-factory PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse.fromJson(Map<String, dynamic> json) { return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse(
+factory PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse.fromJson(Map<String, dynamic> json) {return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse(
   data: json['data'] != null ? PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
-); }
+);}
 
 final PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData? data;
 
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (data != null) 'data': data?.toJson(),
   'success': ?success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'success'}.contains(key)); } 
-PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse copyWith({PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData? Function()? data, bool? Function()? success, }) { return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'data', 'success'}.contains(key));}
+PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse copyWith({PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData? Function()? data, bool? Function()? success, }) {return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse(
   data: data != null ? data() : this.data,
   success: success != null ? success() : this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse &&
           data == other.data &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(data, success); } 
-@override String toString() { return 'PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse(data: $data, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(data, success);}
+@override String toString() {return 'PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse(data: $data, success: $success)';}
+}

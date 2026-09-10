@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_tools_file_search_file_search.dart';/// The type of tool being defined: `file_search`
 @immutable final class AssistantToolsFileSearchType {const AssistantToolsFileSearchType._(this.value);
 
-factory AssistantToolsFileSearchType.fromJson(String json) { return switch (json) {
+factory AssistantToolsFileSearchType.fromJson(String json) {return switch (json) {
   'file_search' => fileSearch,
   _ => AssistantToolsFileSearchType._(json),
-}; }
+};}
 
 static const AssistantToolsFileSearchType fileSearch = AssistantToolsFileSearchType._('file_search');
 
@@ -14,20 +14,20 @@ static const List<AssistantToolsFileSearchType> values = [fileSearch];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AssistantToolsFileSearchType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AssistantToolsFileSearchType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AssistantToolsFileSearchType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AssistantToolsFileSearchType($value)';}
+}
 @immutable final class AssistantToolsFileSearch {const AssistantToolsFileSearch({required this.type, this.fileSearch, });
 
-factory AssistantToolsFileSearch.fromJson(Map<String, dynamic> json) { return AssistantToolsFileSearch(
+factory AssistantToolsFileSearch.fromJson(Map<String, dynamic> json) {return AssistantToolsFileSearch(
   type: AssistantToolsFileSearchType.fromJson(json['type'] as String),
   fileSearch: json['file_search'] != null ? AssistantToolsFileSearchFileSearch.fromJson(json['file_search'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The type of tool being defined: `file_search`
 final AssistantToolsFileSearchType type;
@@ -35,19 +35,19 @@ final AssistantToolsFileSearchType type;
 /// Overrides for the file search tool.
 final AssistantToolsFileSearchFileSearch? fileSearch;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (fileSearch != null) 'file_search': fileSearch?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-AssistantToolsFileSearch copyWith({AssistantToolsFileSearchType? type, AssistantToolsFileSearchFileSearch? Function()? fileSearch, }) { return AssistantToolsFileSearch(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+AssistantToolsFileSearch copyWith({AssistantToolsFileSearchType? type, AssistantToolsFileSearchFileSearch? Function()? fileSearch, }) {return AssistantToolsFileSearch(
   type: type ?? this.type,
   fileSearch: fileSearch != null ? fileSearch() : this.fileSearch,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AssistantToolsFileSearch &&
           type == other.type &&
-          fileSearch == other.fileSearch; } 
-@override int get hashCode { return Object.hash(type, fileSearch); } 
-@override String toString() { return 'AssistantToolsFileSearch(type: $type, fileSearch: $fileSearch)'; } 
- }
+          fileSearch == other.fileSearch;}
+@override int get hashCode {return Object.hash(type, fileSearch);}
+@override String toString() {return 'AssistantToolsFileSearch(type: $type, fileSearch: $fileSearch)';}
+}

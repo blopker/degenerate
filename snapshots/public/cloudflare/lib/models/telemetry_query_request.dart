@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'telemetry_query_request_parameters.dart';import 'telemetry_query_request_timeframe.dart';/// Type of pattern to search for when using pattern-based views
 @immutable final class TelemetryQueryRequestPatternType {const TelemetryQueryRequestPatternType._(this.value);
 
-factory TelemetryQueryRequestPatternType.fromJson(String json) { return switch (json) {
+factory TelemetryQueryRequestPatternType.fromJson(String json) {return switch (json) {
   'message' => message,
   'error' => error,
   _ => TelemetryQueryRequestPatternType._(json),
-}; }
+};}
 
 static const TelemetryQueryRequestPatternType message = TelemetryQueryRequestPatternType._('message');
 
@@ -17,18 +17,18 @@ static const List<TelemetryQueryRequestPatternType> values = [message, error];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TelemetryQueryRequestPatternType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TelemetryQueryRequestPatternType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TelemetryQueryRequestPatternType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TelemetryQueryRequestPatternType($value)';}
+}
 /// View type for presenting the query results.
 @immutable final class TelemetryQueryRequestView {const TelemetryQueryRequestView._(this.value);
 
-factory TelemetryQueryRequestView.fromJson(String json) { return switch (json) {
+factory TelemetryQueryRequestView.fromJson(String json) {return switch (json) {
   'traces' => traces,
   'events' => events,
   'calculations' => calculations,
@@ -36,7 +36,7 @@ factory TelemetryQueryRequestView.fromJson(String json) { return switch (json) {
   'requests' => requests,
   'patterns' => patterns,
   _ => TelemetryQueryRequestView._(json),
-}; }
+};}
 
 static const TelemetryQueryRequestView traces = TelemetryQueryRequestView._('traces');
 
@@ -54,17 +54,17 @@ static const List<TelemetryQueryRequestView> values = [traces, events, calculati
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TelemetryQueryRequestView && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TelemetryQueryRequestView($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TelemetryQueryRequestView && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TelemetryQueryRequestView($value)';}
+}
 @immutable final class TelemetryQueryRequest {const TelemetryQueryRequest({required this.queryId, required this.timeframe, this.chart, this.compare, this.dry, this.granularity, this.ignoreSeries, this.limit, this.offset, this.offsetBy, this.offsetDirection, this.parameters, this.patternType, this.view, });
 
-factory TelemetryQueryRequest.fromJson(Map<String, dynamic> json) { return TelemetryQueryRequest(
+factory TelemetryQueryRequest.fromJson(Map<String, dynamic> json) {return TelemetryQueryRequest(
   chart: json['chart'] as bool?,
   compare: json['compare'] as bool?,
   dry: json['dry'] as bool?,
@@ -79,7 +79,7 @@ factory TelemetryQueryRequest.fromJson(Map<String, dynamic> json) { return Telem
   queryId: json['queryId'] as String,
   timeframe: TelemetryQueryRequestTimeframe.fromJson(json['timeframe'] as Map<String, dynamic>),
   view: json['view'] != null ? TelemetryQueryRequestView.fromJson(json['view'] as String) : null,
-); }
+);}
 
 /// Whether to include timeseties data in the response
 final bool? chart;
@@ -124,14 +124,14 @@ final TelemetryQueryRequestTimeframe timeframe;
 final TelemetryQueryRequestView? view;
 
 /// The value with the schema default applied when absent.
-bool get dryOrDefault { return dry ?? false; } 
+bool get dryOrDefault {return dry ?? false;}
 /// The value with the schema default applied when absent.
-bool get ignoreSeriesOrDefault { return ignoreSeries ?? false; } 
+bool get ignoreSeriesOrDefault {return ignoreSeries ?? false;}
 /// The value with the schema default applied when absent.
-double get limitOrDefault { return limit ?? 50.0; } 
+double get limitOrDefault {return limit ?? 50.0;}
 /// The value with the schema default applied when absent.
-TelemetryQueryRequestView get viewOrDefault { return view ?? TelemetryQueryRequestView.fromJson('calculations'); } 
-Map<String, dynamic> toJson() { return {
+TelemetryQueryRequestView get viewOrDefault {return view ?? TelemetryQueryRequestView.fromJson('calculations');}
+Map<String, dynamic> toJson() {return {
   'chart': ?chart,
   'compare': ?compare,
   'dry': ?dry,
@@ -146,10 +146,10 @@ Map<String, dynamic> toJson() { return {
   'queryId': queryId,
   'timeframe': timeframe.toJson(),
   if (view != null) 'view': view?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('queryId') && json['queryId'] is String &&
-      json.containsKey('timeframe'); } 
-TelemetryQueryRequest copyWith({bool? Function()? chart, bool? Function()? compare, bool? Function()? dry, double? Function()? granularity, bool? Function()? ignoreSeries, double? Function()? limit, String? Function()? offset, double? Function()? offsetBy, String? Function()? offsetDirection, TelemetryQueryRequestParameters? Function()? parameters, TelemetryQueryRequestPatternType? Function()? patternType, String? queryId, TelemetryQueryRequestTimeframe? timeframe, TelemetryQueryRequestView? Function()? view, }) { return TelemetryQueryRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('queryId') && json['queryId'] is String &&
+      json.containsKey('timeframe');}
+TelemetryQueryRequest copyWith({bool? Function()? chart, bool? Function()? compare, bool? Function()? dry, double? Function()? granularity, bool? Function()? ignoreSeries, double? Function()? limit, String? Function()? offset, double? Function()? offsetBy, String? Function()? offsetDirection, TelemetryQueryRequestParameters? Function()? parameters, TelemetryQueryRequestPatternType? Function()? patternType, String? queryId, TelemetryQueryRequestTimeframe? timeframe, TelemetryQueryRequestView? Function()? view, }) {return TelemetryQueryRequest(
   chart: chart != null ? chart() : this.chart,
   compare: compare != null ? compare() : this.compare,
   dry: dry != null ? dry() : this.dry,
@@ -164,8 +164,8 @@ TelemetryQueryRequest copyWith({bool? Function()? chart, bool? Function()? compa
   queryId: queryId ?? this.queryId,
   timeframe: timeframe ?? this.timeframe,
   view: view != null ? view() : this.view,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TelemetryQueryRequest &&
           chart == other.chart &&
           compare == other.compare &&
@@ -180,7 +180,7 @@ TelemetryQueryRequest copyWith({bool? Function()? chart, bool? Function()? compa
           patternType == other.patternType &&
           queryId == other.queryId &&
           timeframe == other.timeframe &&
-          view == other.view; } 
-@override int get hashCode { return Object.hash(chart, compare, dry, granularity, ignoreSeries, limit, offset, offsetBy, offsetDirection, parameters, patternType, queryId, timeframe, view); } 
-@override String toString() { return 'TelemetryQueryRequest(chart: $chart, compare: $compare, dry: $dry, granularity: $granularity, ignoreSeries: $ignoreSeries, limit: $limit, offset: $offset, offsetBy: $offsetBy, offsetDirection: $offsetDirection, parameters: $parameters, patternType: $patternType, queryId: $queryId, timeframe: $timeframe, view: $view)'; } 
- }
+          view == other.view;}
+@override int get hashCode {return Object.hash(chart, compare, dry, granularity, ignoreSeries, limit, offset, offsetBy, offsetDirection, parameters, patternType, queryId, timeframe, view);}
+@override String toString() {return 'TelemetryQueryRequest(chart: $chart, compare: $compare, dry: $dry, granularity: $granularity, ignoreSeries: $ignoreSeries, limit: $limit, offset: $offset, offsetBy: $offsetBy, offsetDirection: $offsetDirection, parameters: $parameters, patternType: $patternType, queryId: $queryId, timeframe: $timeframe, view: $view)';}
+}

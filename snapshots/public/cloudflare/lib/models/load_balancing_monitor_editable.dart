@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_allow_insecure.dart';import 'load_balancing_consecutive_down.dart';import 'load_balancing_consecutive_up.dart';import 'load_balancing_description.dart';import 'load_balancing_expected_body.dart';import 'load_balancing_expected_codes.dart';import 'load_balancing_follow_redirects.dart';import 'load_balancing_interval.dart';import 'load_balancing_method.dart';import 'load_balancing_path.dart';import 'load_balancing_port.dart';import 'load_balancing_probe_zone.dart';import 'load_balancing_retries.dart';import 'load_balancing_timeout.dart';import 'load_balancing_type.dart';@immutable final class LoadBalancingMonitorEditable {const LoadBalancingMonitorEditable({this.allowInsecure, this.consecutiveDown, this.consecutiveUp, this.description, this.expectedBody, this.expectedCodes, this.followRedirects, this.header, this.interval, this.method, this.path, this.port = const Omittable.absent(), this.probeZone, this.retries, this.timeout, this.type, });
 
-factory LoadBalancingMonitorEditable.fromJson(Map<String, dynamic> json) { return LoadBalancingMonitorEditable(
+factory LoadBalancingMonitorEditable.fromJson(Map<String, dynamic> json) {return LoadBalancingMonitorEditable(
   allowInsecure: json['allow_insecure'] != null ? LoadBalancingAllowInsecure.fromJson(json['allow_insecure'] as bool) : null,
   consecutiveDown: json['consecutive_down'] != null ? LoadBalancingConsecutiveDown.fromJson(json['consecutive_down'] as num) : null,
   consecutiveUp: json['consecutive_up'] != null ? LoadBalancingConsecutiveUp.fromJson(json['consecutive_up'] as num) : null,
@@ -19,7 +19,7 @@ factory LoadBalancingMonitorEditable.fromJson(Map<String, dynamic> json) { retur
   retries: json['retries'] != null ? LoadBalancingRetries.fromJson(json['retries'] as num) : null,
   timeout: json['timeout'] != null ? LoadBalancingTimeout.fromJson(json['timeout'] as num) : null,
   type: json['type'] != null ? LoadBalancingType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// Do not validate the certificate when monitor use HTTPS. This parameter is currently only valid for HTTP and HTTPS monitors.
 final LoadBalancingAllowInsecure? allowInsecure;
@@ -63,7 +63,7 @@ final LoadBalancingTimeout? timeout;
 
 final LoadBalancingType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowInsecure != null) 'allow_insecure': allowInsecure?.toJson(),
   if (consecutiveDown != null) 'consecutive_down': consecutiveDown?.toJson(),
   if (consecutiveUp != null) 'consecutive_up': consecutiveUp?.toJson(),
@@ -80,9 +80,9 @@ Map<String, dynamic> toJson() { return {
   if (retries != null) 'retries': retries?.toJson(),
   if (timeout != null) 'timeout': timeout?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_insecure', 'consecutive_down', 'consecutive_up', 'description', 'expected_body', 'expected_codes', 'follow_redirects', 'header', 'interval', 'method', 'path', 'port', 'probe_zone', 'retries', 'timeout', 'type'}.contains(key)); } 
-LoadBalancingMonitorEditable copyWith({LoadBalancingAllowInsecure? Function()? allowInsecure, LoadBalancingConsecutiveDown? Function()? consecutiveDown, LoadBalancingConsecutiveUp? Function()? consecutiveUp, LoadBalancingDescription? Function()? description, LoadBalancingExpectedBody? Function()? expectedBody, LoadBalancingExpectedCodes? Function()? expectedCodes, LoadBalancingFollowRedirects? Function()? followRedirects, Map<String, List<String>>? Function()? header, LoadBalancingInterval? Function()? interval, LoadBalancingMethod? Function()? method, LoadBalancingPath? Function()? path, Omittable<LoadBalancingPort?>? port, LoadBalancingProbeZone? Function()? probeZone, LoadBalancingRetries? Function()? retries, LoadBalancingTimeout? Function()? timeout, LoadBalancingType? Function()? type, }) { return LoadBalancingMonitorEditable(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allow_insecure', 'consecutive_down', 'consecutive_up', 'description', 'expected_body', 'expected_codes', 'follow_redirects', 'header', 'interval', 'method', 'path', 'port', 'probe_zone', 'retries', 'timeout', 'type'}.contains(key));}
+LoadBalancingMonitorEditable copyWith({LoadBalancingAllowInsecure? Function()? allowInsecure, LoadBalancingConsecutiveDown? Function()? consecutiveDown, LoadBalancingConsecutiveUp? Function()? consecutiveUp, LoadBalancingDescription? Function()? description, LoadBalancingExpectedBody? Function()? expectedBody, LoadBalancingExpectedCodes? Function()? expectedCodes, LoadBalancingFollowRedirects? Function()? followRedirects, Map<String, List<String>>? Function()? header, LoadBalancingInterval? Function()? interval, LoadBalancingMethod? Function()? method, LoadBalancingPath? Function()? path, Omittable<LoadBalancingPort?>? port, LoadBalancingProbeZone? Function()? probeZone, LoadBalancingRetries? Function()? retries, LoadBalancingTimeout? Function()? timeout, LoadBalancingType? Function()? type, }) {return LoadBalancingMonitorEditable(
   allowInsecure: allowInsecure != null ? allowInsecure() : this.allowInsecure,
   consecutiveDown: consecutiveDown != null ? consecutiveDown() : this.consecutiveDown,
   consecutiveUp: consecutiveUp != null ? consecutiveUp() : this.consecutiveUp,
@@ -99,8 +99,8 @@ LoadBalancingMonitorEditable copyWith({LoadBalancingAllowInsecure? Function()? a
   retries: retries != null ? retries() : this.retries,
   timeout: timeout != null ? timeout() : this.timeout,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LoadBalancingMonitorEditable &&
           allowInsecure == other.allowInsecure &&
           consecutiveDown == other.consecutiveDown &&
@@ -117,7 +117,7 @@ LoadBalancingMonitorEditable copyWith({LoadBalancingAllowInsecure? Function()? a
           probeZone == other.probeZone &&
           retries == other.retries &&
           timeout == other.timeout &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(allowInsecure, consecutiveDown, consecutiveUp, description, expectedBody, expectedCodes, followRedirects, header, interval, method, path, port, probeZone, retries, timeout, type); } 
-@override String toString() { return 'LoadBalancingMonitorEditable(allowInsecure: $allowInsecure, consecutiveDown: $consecutiveDown, consecutiveUp: $consecutiveUp, description: $description, expectedBody: $expectedBody, expectedCodes: $expectedCodes, followRedirects: $followRedirects, header: $header, interval: $interval, method: $method, path: $path, port: $port, probeZone: $probeZone, retries: $retries, timeout: $timeout, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(allowInsecure, consecutiveDown, consecutiveUp, description, expectedBody, expectedCodes, followRedirects, header, interval, method, path, port, probeZone, retries, timeout, type);}
+@override String toString() {return 'LoadBalancingMonitorEditable(allowInsecure: $allowInsecure, consecutiveDown: $consecutiveDown, consecutiveUp: $consecutiveUp, description: $description, expectedBody: $expectedBody, expectedCodes: $expectedCodes, followRedirects: $followRedirects, header: $header, interval: $interval, method: $method, path: $path, port: $port, probeZone: $probeZone, retries: $retries, timeout: $timeout, type: $type)';}
+}

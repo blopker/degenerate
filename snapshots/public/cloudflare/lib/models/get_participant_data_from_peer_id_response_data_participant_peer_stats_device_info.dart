@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo {const GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo({this.browser, this.browserVersion, this.cpus, this.engine, this.isMobile, this.os, this.osVersion, this.sdkName, this.sdkVersion, this.userAgent, this.webglSupport, });
 
-factory GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo(
+factory GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo.fromJson(Map<String, dynamic> json) {return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo(
   browser: json['browser'] as String?,
   browserVersion: json['browser_version'] as String?,
   cpus: json['cpus'] != null ? (json['cpus'] as num).toInt() : null,
@@ -14,7 +14,7 @@ factory GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo.f
   sdkVersion: json['sdk_version'] as String?,
   userAgent: json['user_agent'] as String?,
   webglSupport: json['webgl_support'] as String?,
-); }
+);}
 
 final String? browser;
 
@@ -38,7 +38,7 @@ final String? userAgent;
 
 final String? webglSupport;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'browser': ?browser,
   'browser_version': ?browserVersion,
   'cpus': ?cpus,
@@ -50,9 +50,9 @@ Map<String, dynamic> toJson() { return {
   'sdk_version': ?sdkVersion,
   'user_agent': ?userAgent,
   'webgl_support': ?webglSupport,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'browser', 'browser_version', 'cpus', 'engine', 'is_mobile', 'os', 'os_version', 'sdk_name', 'sdk_version', 'user_agent', 'webgl_support'}.contains(key)); } 
-GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo copyWith({String? Function()? browser, String? Function()? browserVersion, int? Function()? cpus, String? Function()? engine, bool? Function()? isMobile, String? Function()? os, String? Function()? osVersion, String? Function()? sdkName, String? Function()? sdkVersion, String? Function()? userAgent, String? Function()? webglSupport, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'browser', 'browser_version', 'cpus', 'engine', 'is_mobile', 'os', 'os_version', 'sdk_name', 'sdk_version', 'user_agent', 'webgl_support'}.contains(key));}
+GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo copyWith({String? Function()? browser, String? Function()? browserVersion, int? Function()? cpus, String? Function()? engine, bool? Function()? isMobile, String? Function()? os, String? Function()? osVersion, String? Function()? sdkName, String? Function()? sdkVersion, String? Function()? userAgent, String? Function()? webglSupport, }) {return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo(
   browser: browser != null ? browser() : this.browser,
   browserVersion: browserVersion != null ? browserVersion() : this.browserVersion,
   cpus: cpus != null ? cpus() : this.cpus,
@@ -64,8 +64,8 @@ GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo copyWith(
   sdkVersion: sdkVersion != null ? sdkVersion() : this.sdkVersion,
   userAgent: userAgent != null ? userAgent() : this.userAgent,
   webglSupport: webglSupport != null ? webglSupport() : this.webglSupport,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo &&
           browser == other.browser &&
           browserVersion == other.browserVersion &&
@@ -77,7 +77,7 @@ GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo copyWith(
           sdkName == other.sdkName &&
           sdkVersion == other.sdkVersion &&
           userAgent == other.userAgent &&
-          webglSupport == other.webglSupport; } 
-@override int get hashCode { return Object.hash(browser, browserVersion, cpus, engine, isMobile, os, osVersion, sdkName, sdkVersion, userAgent, webglSupport); } 
-@override String toString() { return 'GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo(browser: $browser, browserVersion: $browserVersion, cpus: $cpus, engine: $engine, isMobile: $isMobile, os: $os, osVersion: $osVersion, sdkName: $sdkName, sdkVersion: $sdkVersion, userAgent: $userAgent, webglSupport: $webglSupport)'; } 
- }
+          webglSupport == other.webglSupport;}
+@override int get hashCode {return Object.hash(browser, browserVersion, cpus, engine, isMobile, os, osVersion, sdkName, sdkVersion, userAgent, webglSupport);}
+@override String toString() {return 'GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsDeviceInfo(browser: $browser, browserVersion: $browserVersion, cpus: $cpus, engine: $engine, isMobile: $isMobile, os: $os, osVersion: $osVersion, sdkName: $sdkName, sdkVersion: $sdkVersion, userAgent: $userAgent, webglSupport: $webglSupport)';}
+}

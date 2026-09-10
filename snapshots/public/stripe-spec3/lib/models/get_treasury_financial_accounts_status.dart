@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryFinancialAccountsStatus {const GetTreasuryFinancialAccountsStatus._(this.value);
 
-factory GetTreasuryFinancialAccountsStatus.fromJson(String json) { return switch (json) {
+factory GetTreasuryFinancialAccountsStatus.fromJson(String json) {return switch (json) {
   'closed' => closed,
   'open' => open,
   _ => GetTreasuryFinancialAccountsStatus._(json),
-}; }
+};}
 
 static const GetTreasuryFinancialAccountsStatus closed = GetTreasuryFinancialAccountsStatus._('closed');
 
@@ -16,11 +16,11 @@ static const List<GetTreasuryFinancialAccountsStatus> values = [closed, open];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetTreasuryFinancialAccountsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetTreasuryFinancialAccountsStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetTreasuryFinancialAccountsStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetTreasuryFinancialAccountsStatus($value)';}
+}

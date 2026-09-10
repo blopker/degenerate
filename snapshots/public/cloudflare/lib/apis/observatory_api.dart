@@ -13,7 +13,7 @@ final class ObservatoryApi with ApiExecutor {const ObservatoryApi(this.apiConfig
 /// Retrieves quota for all plans, as well as the current zone quota.
 ///
 /// `GET /zones/{zone_id}/speed_api/availabilities`
-Future<ApiResult<ObservatoryAvailabilities?, ResponseCommonFailure51>> speedGetAvailabilities({required ObservatoryIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ObservatoryAvailabilities?, ResponseCommonFailure51>> speedGetAvailabilities({required ObservatoryIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// List tested webpages
 ///
 /// Lists all webpages which have been tested.
 ///
 /// `GET /zones/{zone_id}/speed_api/pages`
-Future<ApiResult<List<ObservatoryPagesResponseCollectionResult>?, ResponseCommonFailure51>> speedListPages({required ObservatoryIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ObservatoryPagesResponseCollectionResult>?, ResponseCommonFailure51>> speedListPages({required ObservatoryIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,13 +71,13 @@ return null;
 
   },
 );
- } 
+}
 /// List page test history
 ///
 /// Test history (list of tests) for a specific webpage.
 ///
 /// `GET /zones/{zone_id}/speed_api/pages/{url}/tests`
-Future<ApiResult<List<ObservatoryPageTest>?, ResponseCommonFailure51>> speedListTestHistory({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, int? page, int? perPage, ObservatoryRegion? region, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ObservatoryPageTest>?, ResponseCommonFailure51>> speedListTestHistory({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, int? page, int? perPage, ObservatoryRegion? region, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -117,13 +117,13 @@ return null;
 
   },
 );
- } 
+}
 /// Start page test
 ///
 /// Starts a test for a specific webpage, in a specific region.
 ///
 /// `POST /zones/{zone_id}/speed_api/pages/{url}/tests`
-Future<ApiResult<ObservatoryPageTest?, ResponseCommonFailure51>> speedCreateTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, SpeedCreateTestRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ObservatoryPageTest?, ResponseCommonFailure51>> speedCreateTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, SpeedCreateTestRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -151,13 +151,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete all page tests
 ///
 /// Deletes all tests for a specific webpage from a specific region. Deleted tests are still counted as part of the quota.
 ///
 /// `DELETE /zones/{zone_id}/speed_api/pages/{url}/tests`
-Future<ApiResult<ObservatoryCountResponseResult?, ResponseCommonFailure51>> speedDeleteTests({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ObservatoryCountResponseResult?, ResponseCommonFailure51>> speedDeleteTests({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (region != null) {
   queryParameters['region'] = region.toJson();
@@ -191,13 +191,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get a page test result
 ///
 /// Retrieves the result of a specific test.
 ///
 /// `GET /zones/{zone_id}/speed_api/pages/{url}/tests/{test_id}`
-Future<ApiResult<ObservatoryPageTest?, ResponseCommonFailure51>> speedGetTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, required String testId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ObservatoryPageTest?, ResponseCommonFailure51>> speedGetTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, required String testId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -223,13 +223,13 @@ return null;
 
   },
 );
- } 
+}
 /// List core web vital metrics trend
 ///
 /// Lists the core web vital metrics trend over time for a specific page.
 ///
 /// `GET /zones/{zone_id}/speed_api/pages/{url}/trend`
-Future<ApiResult<ObservatoryTrend?, ResponseCommonFailure51>> speedListPageTrend({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, required ObservatoryRegion region, required ObservatoryDeviceType deviceType, required ObservatoryTimestamp start, required String tz, required String metrics, ObservatoryTimestamp? end, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ObservatoryTrend?, ResponseCommonFailure51>> speedListPageTrend({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, required ObservatoryRegion region, required ObservatoryDeviceType deviceType, required ObservatoryTimestamp start, required String tz, required String metrics, ObservatoryTimestamp? end, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['region'] = region.toJson();
 queryParameters['deviceType'] = deviceType.toJson();
@@ -268,13 +268,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get a page test schedule
 ///
 /// Retrieves the test schedule for a page in a specific region.
 ///
 /// `GET /zones/{zone_id}/speed_api/schedule/{url}`
-Future<ApiResult<ObservatorySchedule?, ResponseCommonFailure51>> speedGetScheduledTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ObservatorySchedule?, ResponseCommonFailure51>> speedGetScheduledTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (region != null) {
   queryParameters['region'] = region.toJson();
@@ -308,13 +308,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create scheduled page test
 ///
 /// Creates a scheduled test for a page.
 ///
 /// `POST /zones/{zone_id}/speed_api/schedule/{url}`
-Future<ApiResult<ObservatoryCreateScheduleResponseResult?, ResponseCommonFailure51>> speedCreateScheduledTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, ObservatoryScheduleFrequency? frequency, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ObservatoryCreateScheduleResponseResult?, ResponseCommonFailure51>> speedCreateScheduledTest({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, ObservatoryScheduleFrequency? frequency, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (region != null) {
   queryParameters['region'] = region.toJson();
@@ -351,13 +351,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete scheduled page test
 ///
 /// Deletes a scheduled test for a page.
 ///
 /// `DELETE /zones/{zone_id}/speed_api/schedule/{url}`
-Future<ApiResult<ObservatoryCountResponseResult?, ResponseCommonFailure51>> speedDeleteTestSchedule({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ObservatoryCountResponseResult?, ResponseCommonFailure51>> speedDeleteTestSchedule({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, ObservatoryRegion? region, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (region != null) {
   queryParameters['region'] = region.toJson();
@@ -391,5 +391,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

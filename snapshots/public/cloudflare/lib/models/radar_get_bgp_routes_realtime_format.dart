@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetBgpRoutesRealtimeFormat {const RadarGetBgpRoutesRealtimeFormat._(this.value);
 
-factory RadarGetBgpRoutesRealtimeFormat.fromJson(String json) { return switch (json) {
+factory RadarGetBgpRoutesRealtimeFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetBgpRoutesRealtimeFormat._(json),
-}; }
+};}
 
 static const RadarGetBgpRoutesRealtimeFormat $json = RadarGetBgpRoutesRealtimeFormat._('JSON');
 
@@ -17,11 +17,11 @@ static const List<RadarGetBgpRoutesRealtimeFormat> values = [$json, csv];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetBgpRoutesRealtimeFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetBgpRoutesRealtimeFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetBgpRoutesRealtimeFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetBgpRoutesRealtimeFormat($value)';}
+}

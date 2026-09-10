@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_bacs_debit_mandate_options_reference_prefix.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions {const PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions({this.referencePrefix});
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions(
+factory PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions(
   referencePrefix: json['reference_prefix'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix.fromJson(json['reference_prefix']) : null,
-); }
+);}
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix? referencePrefix;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (referencePrefix != null) 'reference_prefix': referencePrefix?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference_prefix'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix? Function()? referencePrefix}) { return PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'reference_prefix'}.contains(key));}
+PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix? Function()? referencePrefix}) {return PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions(
   referencePrefix: referencePrefix != null ? referencePrefix() : this.referencePrefix,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions &&
-          referencePrefix == other.referencePrefix; } 
-@override int get hashCode { return referencePrefix.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions(referencePrefix: $referencePrefix)'; } 
- }
+          referencePrefix == other.referencePrefix;}
+@override int get hashCode {return referencePrefix.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptions(referencePrefix: $referencePrefix)';}
+}

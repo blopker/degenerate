@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of payment being captured. One of `credit-card` or `ach-debit`. The default value is `credit-card`.
 @immutable final class PaymentsEnumPaymentMethod {const PaymentsEnumPaymentMethod._(this.value);
 
-factory PaymentsEnumPaymentMethod.fromJson(String json) { return switch (json) {
+factory PaymentsEnumPaymentMethod.fromJson(String json) {return switch (json) {
   'credit-card' => creditCard,
   'ach-debit' => achDebit,
   _ => PaymentsEnumPaymentMethod._(json),
-}; }
+};}
 
 static const PaymentsEnumPaymentMethod creditCard = PaymentsEnumPaymentMethod._('credit-card');
 
@@ -17,23 +17,23 @@ static const List<PaymentsEnumPaymentMethod> values = [creditCard, achDebit];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsEnumPaymentMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsEnumPaymentMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentsEnumPaymentMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentsEnumPaymentMethod($value)';}
+}
 /// Type of bank account if payment source is ACH. One of `consumer-checking`, `consumer-savings`, or `commercial-checking`. The default value is `consumer-checking`.
 @immutable final class PaymentsEnumBankAccountType {const PaymentsEnumBankAccountType._(this.value);
 
-factory PaymentsEnumBankAccountType.fromJson(String json) { return switch (json) {
+factory PaymentsEnumBankAccountType.fromJson(String json) {return switch (json) {
   'consumer-checking' => consumerChecking,
   'consumer-savings' => consumerSavings,
   'commercial-checking' => commercialChecking,
   _ => PaymentsEnumBankAccountType._(json),
-}; }
+};}
 
 static const PaymentsEnumBankAccountType consumerChecking = PaymentsEnumBankAccountType._('consumer-checking');
 
@@ -45,23 +45,23 @@ static const List<PaymentsEnumBankAccountType> values = [consumerChecking, consu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsEnumBankAccountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsEnumBankAccountType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentsEnumBankAccountType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentsEnumBankAccountType($value)';}
+}
 /// Indicates whether the payment method should be tokenized as a `one-time`, `reusable`, or `payment-method` token. The default value is `reusable`. Do not enter a charge amount when tokenizing. If a charge amount is entered, the payment method will be charged and not tokenized.
 @immutable final class PaymentsEnumTokenType {const PaymentsEnumTokenType._(this.value);
 
-factory PaymentsEnumTokenType.fromJson(String json) { return switch (json) {
+factory PaymentsEnumTokenType.fromJson(String json) {return switch (json) {
   'one-time' => oneTime,
   'reusable' => reusable,
   'payment-method' => paymentMethod,
   _ => PaymentsEnumTokenType._(json),
-}; }
+};}
 
 static const PaymentsEnumTokenType oneTime = PaymentsEnumTokenType._('one-time');
 
@@ -73,17 +73,17 @@ static const List<PaymentsEnumTokenType> values = [oneTime, reusable, paymentMet
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsEnumTokenType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsEnumTokenType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentsEnumTokenType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentsEnumTokenType($value)';}
+}
 @immutable final class CreatePaymentsRequest {const CreatePaymentsRequest({required this.idempotencyKey, required this.statusCallback, this.bankAccountType, this.chargeAmount, this.currency, this.description, this.input, this.minPostalCodeLength, this.parameter = const Omittable.absent(), this.paymentConnector, this.paymentMethod, this.postalCode, this.securityCode, this.timeout, this.tokenType, this.validCardTypes, });
 
-factory CreatePaymentsRequest.fromJson(Map<String, dynamic> json) { return CreatePaymentsRequest(
+factory CreatePaymentsRequest.fromJson(Map<String, dynamic> json) {return CreatePaymentsRequest(
   idempotencyKey: json['IdempotencyKey'] as String,
   statusCallback: Uri.parse(json['StatusCallback'] as String),
   bankAccountType: json['BankAccountType'] != null ? PaymentsEnumBankAccountType.fromJson(json['BankAccountType'] as String) : null,
@@ -100,7 +100,7 @@ factory CreatePaymentsRequest.fromJson(Map<String, dynamic> json) { return Creat
   timeout: json['Timeout'] != null ? (json['Timeout'] as num).toInt() : null,
   tokenType: json['TokenType'] != null ? PaymentsEnumTokenType.fromJson(json['TokenType'] as String) : null,
   validCardTypes: json['ValidCardTypes'] as String?,
-); }
+);}
 
 /// A unique token that will be used to ensure that multiple API calls with the same information do not result in multiple transactions. This should be a unique string value per API call and can be a randomly generated.
 final String idempotencyKey;
@@ -150,7 +150,7 @@ final PaymentsEnumTokenType? tokenType;
 /// Credit card types separated by space that Pay should accept. The default value is `visa mastercard amex`
 final String? validCardTypes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'IdempotencyKey': idempotencyKey,
   'StatusCallback': statusCallback.toString(),
   if (bankAccountType != null) 'BankAccountType': bankAccountType?.toJson(),
@@ -167,10 +167,10 @@ Map<String, dynamic> toJson() { return {
   'Timeout': ?timeout,
   if (tokenType != null) 'TokenType': tokenType?.toJson(),
   'ValidCardTypes': ?validCardTypes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('IdempotencyKey') && json['IdempotencyKey'] is String &&
-      json.containsKey('StatusCallback') && json['StatusCallback'] is String; } 
-CreatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, PaymentsEnumBankAccountType? Function()? bankAccountType, double? Function()? chargeAmount, String? Function()? currency, String? Function()? description, String? Function()? input, int? Function()? minPostalCodeLength, Omittable<dynamic>? parameter, String? Function()? paymentConnector, PaymentsEnumPaymentMethod? Function()? paymentMethod, bool? Function()? postalCode, bool? Function()? securityCode, int? Function()? timeout, PaymentsEnumTokenType? Function()? tokenType, String? Function()? validCardTypes, }) { return CreatePaymentsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('IdempotencyKey') && json['IdempotencyKey'] is String &&
+      json.containsKey('StatusCallback') && json['StatusCallback'] is String;}
+CreatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, PaymentsEnumBankAccountType? Function()? bankAccountType, double? Function()? chargeAmount, String? Function()? currency, String? Function()? description, String? Function()? input, int? Function()? minPostalCodeLength, Omittable<dynamic>? parameter, String? Function()? paymentConnector, PaymentsEnumPaymentMethod? Function()? paymentMethod, bool? Function()? postalCode, bool? Function()? securityCode, int? Function()? timeout, PaymentsEnumTokenType? Function()? tokenType, String? Function()? validCardTypes, }) {return CreatePaymentsRequest(
   idempotencyKey: idempotencyKey ?? this.idempotencyKey,
   statusCallback: statusCallback ?? this.statusCallback,
   bankAccountType: bankAccountType != null ? bankAccountType() : this.bankAccountType,
@@ -187,8 +187,8 @@ CreatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, Pay
   timeout: timeout != null ? timeout() : this.timeout,
   tokenType: tokenType != null ? tokenType() : this.tokenType,
   validCardTypes: validCardTypes != null ? validCardTypes() : this.validCardTypes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreatePaymentsRequest &&
           idempotencyKey == other.idempotencyKey &&
           statusCallback == other.statusCallback &&
@@ -205,7 +205,7 @@ CreatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, Pay
           securityCode == other.securityCode &&
           timeout == other.timeout &&
           tokenType == other.tokenType &&
-          validCardTypes == other.validCardTypes; } 
-@override int get hashCode { return Object.hash(idempotencyKey, statusCallback, bankAccountType, chargeAmount, currency, description, input, minPostalCodeLength, parameter, paymentConnector, paymentMethod, postalCode, securityCode, timeout, tokenType, validCardTypes); } 
-@override String toString() { return 'CreatePaymentsRequest(idempotencyKey: $idempotencyKey, statusCallback: $statusCallback, bankAccountType: $bankAccountType, chargeAmount: $chargeAmount, currency: $currency, description: $description, input: $input, minPostalCodeLength: $minPostalCodeLength, parameter: $parameter, paymentConnector: $paymentConnector, paymentMethod: $paymentMethod, postalCode: $postalCode, securityCode: $securityCode, timeout: $timeout, tokenType: $tokenType, validCardTypes: $validCardTypes)'; } 
- }
+          validCardTypes == other.validCardTypes;}
+@override int get hashCode {return Object.hash(idempotencyKey, statusCallback, bankAccountType, chargeAmount, currency, description, input, minPostalCodeLength, parameter, paymentConnector, paymentMethod, postalCode, securityCode, timeout, tokenType, validCardTypes);}
+@override String toString() {return 'CreatePaymentsRequest(idempotencyKey: $idempotencyKey, statusCallback: $statusCallback, bankAccountType: $bankAccountType, chargeAmount: $chargeAmount, currency: $currency, description: $description, input: $input, minPostalCodeLength: $minPostalCodeLength, parameter: $parameter, paymentConnector: $paymentConnector, paymentMethod: $paymentMethod, postalCode: $postalCode, securityCode: $securityCode, timeout: $timeout, tokenType: $tokenType, validCardTypes: $validCardTypes)';}
+}

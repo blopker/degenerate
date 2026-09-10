@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Issue Event Project Card
 @immutable final class IssueEventProjectCard {const IssueEventProjectCard({required this.url, required this.id, required this.projectUrl, required this.projectId, required this.columnName, this.previousColumnName, });
 
-factory IssueEventProjectCard.fromJson(Map<String, dynamic> json) { return IssueEventProjectCard(
+factory IssueEventProjectCard.fromJson(Map<String, dynamic> json) {return IssueEventProjectCard(
   url: Uri.parse(json['url'] as String),
   id: (json['id'] as num).toInt(),
   projectUrl: Uri.parse(json['project_url'] as String),
   projectId: (json['project_id'] as num).toInt(),
   columnName: json['column_name'] as String,
   previousColumnName: json['previous_column_name'] as String?,
-); }
+);}
 
 final Uri url;
 
@@ -24,35 +24,35 @@ final String columnName;
 
 final String? previousColumnName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'id': id,
   'project_url': projectUrl.toString(),
   'project_id': projectId,
   'column_name': columnName,
   'previous_column_name': ?previousColumnName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('project_url') && json['project_url'] is String &&
       json.containsKey('project_id') && json['project_id'] is num &&
-      json.containsKey('column_name') && json['column_name'] is String; } 
-IssueEventProjectCard copyWith({Uri? url, int? id, Uri? projectUrl, int? projectId, String? columnName, String? Function()? previousColumnName, }) { return IssueEventProjectCard(
+      json.containsKey('column_name') && json['column_name'] is String;}
+IssueEventProjectCard copyWith({Uri? url, int? id, Uri? projectUrl, int? projectId, String? columnName, String? Function()? previousColumnName, }) {return IssueEventProjectCard(
   url: url ?? this.url,
   id: id ?? this.id,
   projectUrl: projectUrl ?? this.projectUrl,
   projectId: projectId ?? this.projectId,
   columnName: columnName ?? this.columnName,
   previousColumnName: previousColumnName != null ? previousColumnName() : this.previousColumnName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssueEventProjectCard &&
           url == other.url &&
           id == other.id &&
           projectUrl == other.projectUrl &&
           projectId == other.projectId &&
           columnName == other.columnName &&
-          previousColumnName == other.previousColumnName; } 
-@override int get hashCode { return Object.hash(url, id, projectUrl, projectId, columnName, previousColumnName); } 
-@override String toString() { return 'IssueEventProjectCard(url: $url, id: $id, projectUrl: $projectUrl, projectId: $projectId, columnName: $columnName, previousColumnName: $previousColumnName)'; } 
- }
+          previousColumnName == other.previousColumnName;}
+@override int get hashCode {return Object.hash(url, id, projectUrl, projectId, columnName, previousColumnName);}
+@override String toString() {return 'IssueEventProjectCard(url: $url, id: $id, projectUrl: $projectUrl, projectId: $projectId, columnName: $columnName, previousColumnName: $previousColumnName)';}
+}

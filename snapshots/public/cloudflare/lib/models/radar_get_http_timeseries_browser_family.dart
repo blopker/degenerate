@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesBrowserFamily {const RadarGetHttpTimeseriesBrowserFamily._(this.value);
 
-factory RadarGetHttpTimeseriesBrowserFamily.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTimeseriesBrowserFamily.fromJson(String json) {return switch (json) {
   'CHROME' => chrome,
   'EDGE' => edge,
   'FIREFOX' => firefox,
   'SAFARI' => safari,
   _ => RadarGetHttpTimeseriesBrowserFamily._(json),
-}; }
+};}
 
 static const RadarGetHttpTimeseriesBrowserFamily chrome = RadarGetHttpTimeseriesBrowserFamily._('CHROME');
 
@@ -22,11 +22,11 @@ static const List<RadarGetHttpTimeseriesBrowserFamily> values = [chrome, edge, f
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTimeseriesBrowserFamily && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTimeseriesBrowserFamily($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTimeseriesBrowserFamily && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTimeseriesBrowserFamily($value)';}
+}

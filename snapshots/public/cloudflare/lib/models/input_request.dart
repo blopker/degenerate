@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_request_locations.dart';@immutable final class TeamsDevicesExtendedKeyUsageEnum {const TeamsDevicesExtendedKeyUsageEnum._(this.value);
 
-factory TeamsDevicesExtendedKeyUsageEnum.fromJson(String json) { return switch (json) {
+factory TeamsDevicesExtendedKeyUsageEnum.fromJson(String json) {return switch (json) {
   'clientAuth' => clientAuth,
   'emailProtection' => emailProtection,
   _ => TeamsDevicesExtendedKeyUsageEnum._(json),
-}; }
+};}
 
 static const TeamsDevicesExtendedKeyUsageEnum clientAuth = TeamsDevicesExtendedKeyUsageEnum._('clientAuth');
 
@@ -16,23 +16,23 @@ static const List<TeamsDevicesExtendedKeyUsageEnum> values = [clientAuth, emailP
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesExtendedKeyUsageEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesExtendedKeyUsageEnum($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamsDevicesExtendedKeyUsageEnum && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamsDevicesExtendedKeyUsageEnum($value)';}
+}
 /// Operating System.
 @immutable final class InputRequestOperatingSystem {const InputRequestOperatingSystem._(this.value);
 
-factory InputRequestOperatingSystem.fromJson(String json) { return switch (json) {
+factory InputRequestOperatingSystem.fromJson(String json) {return switch (json) {
   'windows' => windows,
   'mac' => mac,
   'linux' => linux,
   _ => InputRequestOperatingSystem._(json),
-}; }
+};}
 
 static const InputRequestOperatingSystem windows = InputRequestOperatingSystem._('windows');
 
@@ -44,17 +44,17 @@ static const List<InputRequestOperatingSystem> values = [windows, mac, linux];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputRequestOperatingSystem && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InputRequestOperatingSystem($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InputRequestOperatingSystem && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InputRequestOperatingSystem($value)';}
+}
 @immutable final class InputRequest {const InputRequest({required this.certificateId, required this.checkPrivateKey, required this.operatingSystem, this.cn, this.extendedKeyUsage, this.locations, this.subjectAlternativeNames, });
 
-factory InputRequest.fromJson(Map<String, dynamic> json) { return InputRequest(
+factory InputRequest.fromJson(Map<String, dynamic> json) {return InputRequest(
   certificateId: json['certificate_id'] as String,
   checkPrivateKey: json['check_private_key'] as bool,
   cn: json['cn'] as String?,
@@ -62,7 +62,7 @@ factory InputRequest.fromJson(Map<String, dynamic> json) { return InputRequest(
   locations: json['locations'] != null ? InputRequestLocations.fromJson(json['locations'] as Map<String, dynamic>) : null,
   operatingSystem: InputRequestOperatingSystem.fromJson(json['operating_system'] as String),
   subjectAlternativeNames: (json['subject_alternative_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// UUID of Cloudflare managed certificate.
 final String certificateId;
@@ -84,7 +84,7 @@ final InputRequestOperatingSystem operatingSystem;
 /// List of certificate Subject Alternative Names.
 final List<String>? subjectAlternativeNames;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'certificate_id': certificateId,
   'check_private_key': checkPrivateKey,
   'cn': ?cn,
@@ -92,11 +92,11 @@ Map<String, dynamic> toJson() { return {
   if (locations != null) 'locations': locations?.toJson(),
   'operating_system': operatingSystem.toJson(),
   'subject_alternative_names': ?subjectAlternativeNames,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate_id') && json['certificate_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificate_id') && json['certificate_id'] is String &&
       json.containsKey('check_private_key') && json['check_private_key'] is bool &&
-      json.containsKey('operating_system'); } 
-InputRequest copyWith({String? certificateId, bool? checkPrivateKey, String? Function()? cn, List<TeamsDevicesExtendedKeyUsageEnum>? Function()? extendedKeyUsage, InputRequestLocations? Function()? locations, InputRequestOperatingSystem? operatingSystem, List<String>? Function()? subjectAlternativeNames, }) { return InputRequest(
+      json.containsKey('operating_system');}
+InputRequest copyWith({String? certificateId, bool? checkPrivateKey, String? Function()? cn, List<TeamsDevicesExtendedKeyUsageEnum>? Function()? extendedKeyUsage, InputRequestLocations? Function()? locations, InputRequestOperatingSystem? operatingSystem, List<String>? Function()? subjectAlternativeNames, }) {return InputRequest(
   certificateId: certificateId ?? this.certificateId,
   checkPrivateKey: checkPrivateKey ?? this.checkPrivateKey,
   cn: cn != null ? cn() : this.cn,
@@ -104,8 +104,8 @@ InputRequest copyWith({String? certificateId, bool? checkPrivateKey, String? Fun
   locations: locations != null ? locations() : this.locations,
   operatingSystem: operatingSystem ?? this.operatingSystem,
   subjectAlternativeNames: subjectAlternativeNames != null ? subjectAlternativeNames() : this.subjectAlternativeNames,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InputRequest &&
           certificateId == other.certificateId &&
           checkPrivateKey == other.checkPrivateKey &&
@@ -113,7 +113,7 @@ InputRequest copyWith({String? certificateId, bool? checkPrivateKey, String? Fun
           listEquals(extendedKeyUsage, other.extendedKeyUsage) &&
           locations == other.locations &&
           operatingSystem == other.operatingSystem &&
-          listEquals(subjectAlternativeNames, other.subjectAlternativeNames); } 
-@override int get hashCode { return Object.hash(certificateId, checkPrivateKey, cn, Object.hashAll(extendedKeyUsage ?? const []), locations, operatingSystem, Object.hashAll(subjectAlternativeNames ?? const [])); } 
-@override String toString() { return 'InputRequest(certificateId: $certificateId, checkPrivateKey: $checkPrivateKey, cn: $cn, extendedKeyUsage: $extendedKeyUsage, locations: $locations, operatingSystem: $operatingSystem, subjectAlternativeNames: $subjectAlternativeNames)'; } 
- }
+          listEquals(subjectAlternativeNames, other.subjectAlternativeNames);}
+@override int get hashCode {return Object.hash(certificateId, checkPrivateKey, cn, Object.hashAll(extendedKeyUsage ?? const []), locations, operatingSystem, Object.hashAll(subjectAlternativeNames ?? const []));}
+@override String toString() {return 'InputRequest(certificateId: $certificateId, checkPrivateKey: $checkPrivateKey, cn: $cn, extendedKeyUsage: $extendedKeyUsage, locations: $locations, operatingSystem: $operatingSystem, subjectAlternativeNames: $subjectAlternativeNames)';}
+}

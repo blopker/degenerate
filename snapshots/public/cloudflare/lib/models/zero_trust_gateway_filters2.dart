@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the protocol or layer to use.
 @immutable final class ZeroTrustGatewayFilters2 {const ZeroTrustGatewayFilters2._(this.value);
 
-factory ZeroTrustGatewayFilters2.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayFilters2.fromJson(String json) {return switch (json) {
   'http' => http,
   'dns' => dns,
   'l4' => l4,
   'egress' => egress,
   'dns_resolver' => dnsResolver,
   _ => ZeroTrustGatewayFilters2._(json),
-}; }
+};}
 
 static const ZeroTrustGatewayFilters2 http = ZeroTrustGatewayFilters2._('http');
 
@@ -26,11 +26,11 @@ static const List<ZeroTrustGatewayFilters2> values = [http, dns, l4, egress, dns
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayFilters2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayFilters2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZeroTrustGatewayFilters2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayFilters2($value)';}
+}

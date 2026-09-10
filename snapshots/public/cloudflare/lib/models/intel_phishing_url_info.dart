@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_phishing_url_info_categorizations.dart';import 'intel_phishing_url_info_model_results.dart';import 'intel_phishing_url_info_rule_matches.dart';import 'intel_phishing_url_info_scan_status.dart';@immutable final class IntelPhishingUrlInfo {const IntelPhishingUrlInfo({this.categorizations, this.modelResults, this.ruleMatches, this.scanStatus, this.screenshotDownloadSignature, this.screenshotPath, this.url, });
 
-factory IntelPhishingUrlInfo.fromJson(Map<String, dynamic> json) { return IntelPhishingUrlInfo(
+factory IntelPhishingUrlInfo.fromJson(Map<String, dynamic> json) {return IntelPhishingUrlInfo(
   categorizations: (json['categorizations'] as List<dynamic>?)?.map((e) => IntelPhishingUrlInfoCategorizations.fromJson(e as Map<String, dynamic>)).toList(),
   modelResults: (json['model_results'] as List<dynamic>?)?.map((e) => IntelPhishingUrlInfoModelResults.fromJson(e as Map<String, dynamic>)).toList(),
   ruleMatches: (json['rule_matches'] as List<dynamic>?)?.map((e) => IntelPhishingUrlInfoRuleMatches.fromJson(e as Map<String, dynamic>)).toList(),
@@ -10,7 +10,7 @@ factory IntelPhishingUrlInfo.fromJson(Map<String, dynamic> json) { return IntelP
   screenshotDownloadSignature: json['screenshot_download_signature'] as String?,
   screenshotPath: json['screenshot_path'] as String?,
   url: json['url'] as String?,
-); }
+);}
 
 /// List of categorizations applied to this submission.
 final List<IntelPhishingUrlInfoCategorizations>? categorizations;
@@ -33,7 +33,7 @@ final String? screenshotPath;
 /// URL that was submitted.
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (categorizations != null) 'categorizations': categorizations?.map((e) => e.toJson()).toList(),
   if (modelResults != null) 'model_results': modelResults?.map((e) => e.toJson()).toList(),
   if (ruleMatches != null) 'rule_matches': ruleMatches?.map((e) => e.toJson()).toList(),
@@ -41,9 +41,9 @@ Map<String, dynamic> toJson() { return {
   'screenshot_download_signature': ?screenshotDownloadSignature,
   'screenshot_path': ?screenshotPath,
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'categorizations', 'model_results', 'rule_matches', 'scan_status', 'screenshot_download_signature', 'screenshot_path', 'url'}.contains(key)); } 
-IntelPhishingUrlInfo copyWith({List<IntelPhishingUrlInfoCategorizations>? Function()? categorizations, List<IntelPhishingUrlInfoModelResults>? Function()? modelResults, List<IntelPhishingUrlInfoRuleMatches>? Function()? ruleMatches, IntelPhishingUrlInfoScanStatus? Function()? scanStatus, String? Function()? screenshotDownloadSignature, String? Function()? screenshotPath, String? Function()? url, }) { return IntelPhishingUrlInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'categorizations', 'model_results', 'rule_matches', 'scan_status', 'screenshot_download_signature', 'screenshot_path', 'url'}.contains(key));}
+IntelPhishingUrlInfo copyWith({List<IntelPhishingUrlInfoCategorizations>? Function()? categorizations, List<IntelPhishingUrlInfoModelResults>? Function()? modelResults, List<IntelPhishingUrlInfoRuleMatches>? Function()? ruleMatches, IntelPhishingUrlInfoScanStatus? Function()? scanStatus, String? Function()? screenshotDownloadSignature, String? Function()? screenshotPath, String? Function()? url, }) {return IntelPhishingUrlInfo(
   categorizations: categorizations != null ? categorizations() : this.categorizations,
   modelResults: modelResults != null ? modelResults() : this.modelResults,
   ruleMatches: ruleMatches != null ? ruleMatches() : this.ruleMatches,
@@ -51,8 +51,8 @@ IntelPhishingUrlInfo copyWith({List<IntelPhishingUrlInfoCategorizations>? Functi
   screenshotDownloadSignature: screenshotDownloadSignature != null ? screenshotDownloadSignature() : this.screenshotDownloadSignature,
   screenshotPath: screenshotPath != null ? screenshotPath() : this.screenshotPath,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IntelPhishingUrlInfo &&
           listEquals(categorizations, other.categorizations) &&
           listEquals(modelResults, other.modelResults) &&
@@ -60,7 +60,7 @@ IntelPhishingUrlInfo copyWith({List<IntelPhishingUrlInfoCategorizations>? Functi
           scanStatus == other.scanStatus &&
           screenshotDownloadSignature == other.screenshotDownloadSignature &&
           screenshotPath == other.screenshotPath &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(categorizations ?? const []), Object.hashAll(modelResults ?? const []), Object.hashAll(ruleMatches ?? const []), scanStatus, screenshotDownloadSignature, screenshotPath, url); } 
-@override String toString() { return 'IntelPhishingUrlInfo(categorizations: $categorizations, modelResults: $modelResults, ruleMatches: $ruleMatches, scanStatus: $scanStatus, screenshotDownloadSignature: $screenshotDownloadSignature, screenshotPath: $screenshotPath, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(categorizations ?? const []), Object.hashAll(modelResults ?? const []), Object.hashAll(ruleMatches ?? const []), scanStatus, screenshotDownloadSignature, screenshotPath, url);}
+@override String toString() {return 'IntelPhishingUrlInfo(categorizations: $categorizations, modelResults: $modelResults, ruleMatches: $ruleMatches, scanStatus: $scanStatus, screenshotDownloadSignature: $screenshotDownloadSignature, screenshotPath: $screenshotPath, url: $url)';}
+}

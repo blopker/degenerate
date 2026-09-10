@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'funding_instructions_bank_transfer_aba_record.dart';import 'funding_instructions_bank_transfer_iban_record.dart';import 'funding_instructions_bank_transfer_sort_code_record.dart';import 'funding_instructions_bank_transfer_spei_record.dart';import 'funding_instructions_bank_transfer_swift_record.dart';import 'funding_instructions_bank_transfer_zengin_record.dart';@immutable final class FundingInstructionsBankTransferFinancialAddressSupportedNetworks {const FundingInstructionsBankTransferFinancialAddressSupportedNetworks._(this.value);
 
-factory FundingInstructionsBankTransferFinancialAddressSupportedNetworks.fromJson(String json) { return switch (json) {
+factory FundingInstructionsBankTransferFinancialAddressSupportedNetworks.fromJson(String json) {return switch (json) {
   'ach' => ach,
   'bacs' => bacs,
   'domestic_wire_us' => domesticWireUs,
@@ -12,7 +12,7 @@ factory FundingInstructionsBankTransferFinancialAddressSupportedNetworks.fromJso
   'swift' => swift,
   'zengin' => zengin,
   _ => FundingInstructionsBankTransferFinancialAddressSupportedNetworks._(json),
-}; }
+};}
 
 static const FundingInstructionsBankTransferFinancialAddressSupportedNetworks ach = FundingInstructionsBankTransferFinancialAddressSupportedNetworks._('ach');
 
@@ -34,18 +34,18 @@ static const List<FundingInstructionsBankTransferFinancialAddressSupportedNetwor
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FundingInstructionsBankTransferFinancialAddressSupportedNetworks && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FundingInstructionsBankTransferFinancialAddressSupportedNetworks($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FundingInstructionsBankTransferFinancialAddressSupportedNetworks && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FundingInstructionsBankTransferFinancialAddressSupportedNetworks($value)';}
+}
 /// The type of financial address
 @immutable final class FundingInstructionsBankTransferFinancialAddressType {const FundingInstructionsBankTransferFinancialAddressType._(this.value);
 
-factory FundingInstructionsBankTransferFinancialAddressType.fromJson(String json) { return switch (json) {
+factory FundingInstructionsBankTransferFinancialAddressType.fromJson(String json) {return switch (json) {
   'aba' => aba,
   'iban' => iban,
   'sort_code' => sortCode,
@@ -53,7 +53,7 @@ factory FundingInstructionsBankTransferFinancialAddressType.fromJson(String json
   'swift' => swift,
   'zengin' => zengin,
   _ => FundingInstructionsBankTransferFinancialAddressType._(json),
-}; }
+};}
 
 static const FundingInstructionsBankTransferFinancialAddressType aba = FundingInstructionsBankTransferFinancialAddressType._('aba');
 
@@ -71,18 +71,18 @@ static const List<FundingInstructionsBankTransferFinancialAddressType> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FundingInstructionsBankTransferFinancialAddressType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FundingInstructionsBankTransferFinancialAddressType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FundingInstructionsBankTransferFinancialAddressType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FundingInstructionsBankTransferFinancialAddressType($value)';}
+}
 /// FinancialAddresses contain identifying information that resolves to a FinancialAccount.
 @immutable final class FundingInstructionsBankTransferFinancialAddress {const FundingInstructionsBankTransferFinancialAddress({required this.type, this.aba, this.iban, this.sortCode, this.spei, this.supportedNetworks, this.swift, this.zengin, });
 
-factory FundingInstructionsBankTransferFinancialAddress.fromJson(Map<String, dynamic> json) { return FundingInstructionsBankTransferFinancialAddress(
+factory FundingInstructionsBankTransferFinancialAddress.fromJson(Map<String, dynamic> json) {return FundingInstructionsBankTransferFinancialAddress(
   aba: json['aba'] != null ? FundingInstructionsBankTransferAbaRecord.fromJson(json['aba'] as Map<String, dynamic>) : null,
   iban: json['iban'] != null ? FundingInstructionsBankTransferIbanRecord.fromJson(json['iban'] as Map<String, dynamic>) : null,
   sortCode: json['sort_code'] != null ? FundingInstructionsBankTransferSortCodeRecord.fromJson(json['sort_code'] as Map<String, dynamic>) : null,
@@ -91,7 +91,7 @@ factory FundingInstructionsBankTransferFinancialAddress.fromJson(Map<String, dyn
   swift: json['swift'] != null ? FundingInstructionsBankTransferSwiftRecord.fromJson(json['swift'] as Map<String, dynamic>) : null,
   type: FundingInstructionsBankTransferFinancialAddressType.fromJson(json['type'] as String),
   zengin: json['zengin'] != null ? FundingInstructionsBankTransferZenginRecord.fromJson(json['zengin'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final FundingInstructionsBankTransferAbaRecord? aba;
 
@@ -111,7 +111,7 @@ final FundingInstructionsBankTransferFinancialAddressType type;
 
 final FundingInstructionsBankTransferZenginRecord? zengin;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aba != null) 'aba': aba?.toJson(),
   if (iban != null) 'iban': iban?.toJson(),
   if (sortCode != null) 'sort_code': sortCode?.toJson(),
@@ -120,9 +120,9 @@ Map<String, dynamic> toJson() { return {
   if (swift != null) 'swift': swift?.toJson(),
   'type': type.toJson(),
   if (zengin != null) 'zengin': zengin?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-FundingInstructionsBankTransferFinancialAddress copyWith({FundingInstructionsBankTransferAbaRecord? Function()? aba, FundingInstructionsBankTransferIbanRecord? Function()? iban, FundingInstructionsBankTransferSortCodeRecord? Function()? sortCode, FundingInstructionsBankTransferSpeiRecord? Function()? spei, List<FundingInstructionsBankTransferFinancialAddressSupportedNetworks>? Function()? supportedNetworks, FundingInstructionsBankTransferSwiftRecord? Function()? swift, FundingInstructionsBankTransferFinancialAddressType? type, FundingInstructionsBankTransferZenginRecord? Function()? zengin, }) { return FundingInstructionsBankTransferFinancialAddress(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+FundingInstructionsBankTransferFinancialAddress copyWith({FundingInstructionsBankTransferAbaRecord? Function()? aba, FundingInstructionsBankTransferIbanRecord? Function()? iban, FundingInstructionsBankTransferSortCodeRecord? Function()? sortCode, FundingInstructionsBankTransferSpeiRecord? Function()? spei, List<FundingInstructionsBankTransferFinancialAddressSupportedNetworks>? Function()? supportedNetworks, FundingInstructionsBankTransferSwiftRecord? Function()? swift, FundingInstructionsBankTransferFinancialAddressType? type, FundingInstructionsBankTransferZenginRecord? Function()? zengin, }) {return FundingInstructionsBankTransferFinancialAddress(
   aba: aba != null ? aba() : this.aba,
   iban: iban != null ? iban() : this.iban,
   sortCode: sortCode != null ? sortCode() : this.sortCode,
@@ -131,8 +131,8 @@ FundingInstructionsBankTransferFinancialAddress copyWith({FundingInstructionsBan
   swift: swift != null ? swift() : this.swift,
   type: type ?? this.type,
   zengin: zengin != null ? zengin() : this.zengin,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FundingInstructionsBankTransferFinancialAddress &&
           aba == other.aba &&
           iban == other.iban &&
@@ -141,7 +141,7 @@ FundingInstructionsBankTransferFinancialAddress copyWith({FundingInstructionsBan
           listEquals(supportedNetworks, other.supportedNetworks) &&
           swift == other.swift &&
           type == other.type &&
-          zengin == other.zengin; } 
-@override int get hashCode { return Object.hash(aba, iban, sortCode, spei, Object.hashAll(supportedNetworks ?? const []), swift, type, zengin); } 
-@override String toString() { return 'FundingInstructionsBankTransferFinancialAddress(aba: $aba, iban: $iban, sortCode: $sortCode, spei: $spei, supportedNetworks: $supportedNetworks, swift: $swift, type: $type, zengin: $zengin)'; } 
- }
+          zengin == other.zengin;}
+@override int get hashCode {return Object.hash(aba, iban, sortCode, spei, Object.hashAll(supportedNetworks ?? const []), swift, type, zengin);}
+@override String toString() {return 'FundingInstructionsBankTransferFinancialAddress(aba: $aba, iban: $iban, sortCode: $sortCode, spei: $spei, supportedNetworks: $supportedNetworks, swift: $swift, type: $type, zengin: $zengin)';}
+}

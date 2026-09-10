@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_link_file.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class FileLinkObject {const FileLinkObject._(this.value);
 
-factory FileLinkObject.fromJson(String json) { return switch (json) {
+factory FileLinkObject.fromJson(String json) {return switch (json) {
   'file_link' => fileLink,
   _ => FileLinkObject._(json),
-}; }
+};}
 
 static const FileLinkObject fileLink = FileLinkObject._('file_link');
 
@@ -14,20 +14,20 @@ static const List<FileLinkObject> values = [fileLink];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FileLinkObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FileLinkObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FileLinkObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FileLinkObject($value)';}
+}
 /// To share the contents of a `File` object with non-Stripe users, you can
 /// create a `FileLink`. `FileLink`s contain a URL that you can use to
 /// retrieve the contents of the file without authentication.
 @immutable final class FileLink {const FileLink({required this.created, required this.expired, required this.file, required this.id, required this.livemode, required this.metadata, required this.object, this.expiresAt = const Omittable.absent(), this.url = const Omittable.absent(), });
 
-factory FileLink.fromJson(Map<String, dynamic> json) { return FileLink(
+factory FileLink.fromJson(Map<String, dynamic> json) {return FileLink(
   created: (json['created'] as num).toInt(),
   expired: json['expired'] as bool,
   expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
@@ -37,7 +37,7 @@ factory FileLink.fromJson(Map<String, dynamic> json) { return FileLink(
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: FileLinkObject.fromJson(json['object'] as String),
   url: json.containsKey('url') ? Omittable(json['url'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -66,7 +66,7 @@ final FileLinkObject object;
 /// The publicly accessible URL to download the file.
 final Omittable<String?> url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'expired': expired,
   if (expiresAt.isPresent) 'expires_at': expiresAt.value,
@@ -76,15 +76,15 @@ Map<String, dynamic> toJson() { return {
   'metadata': metadata,
   'object': object.toJson(),
   if (url.isPresent) 'url': url.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('expired') && json['expired'] is bool &&
       json.containsKey('file') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
-      json.containsKey('object'); } 
-FileLink copyWith({int? created, bool? expired, Omittable<int?>? expiresAt, FileLinkFile? file, String? id, bool? livemode, Map<String,String>? metadata, FileLinkObject? object, Omittable<String?>? url, }) { return FileLink(
+      json.containsKey('object');}
+FileLink copyWith({int? created, bool? expired, Omittable<int?>? expiresAt, FileLinkFile? file, String? id, bool? livemode, Map<String,String>? metadata, FileLinkObject? object, Omittable<String?>? url, }) {return FileLink(
   created: created ?? this.created,
   expired: expired ?? this.expired,
   expiresAt: expiresAt ?? this.expiresAt,
@@ -94,8 +94,8 @@ FileLink copyWith({int? created, bool? expired, Omittable<int?>? expiresAt, File
   metadata: metadata ?? this.metadata,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FileLink &&
           created == other.created &&
           expired == other.expired &&
@@ -105,7 +105,7 @@ FileLink copyWith({int? created, bool? expired, Omittable<int?>? expiresAt, File
           livemode == other.livemode &&
           metadata == other.metadata &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(created, expired, expiresAt, file, id, livemode, metadata, object, url); } 
-@override String toString() { return 'FileLink(created: $created, expired: $expired, expiresAt: $expiresAt, file: $file, id: $id, livemode: $livemode, metadata: $metadata, object: $object, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(created, expired, expiresAt, file, id, livemode, metadata, object, url);}
+@override String toString() {return 'FileLink(created: $created, expired: $expired, expiresAt: $expiresAt, file: $file, id: $id, livemode: $livemode, metadata: $metadata, object: $object, url: $url)';}
+}

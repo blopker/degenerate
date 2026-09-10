@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersSchemasSubdomain {const WorkersSchemasSubdomain({required this.subdomain});
 
-factory WorkersSchemasSubdomain.fromJson(Map<String, dynamic> json) { return WorkersSchemasSubdomain(
+factory WorkersSchemasSubdomain.fromJson(Map<String, dynamic> json) {return WorkersSchemasSubdomain(
   subdomain: json['subdomain'] as String,
-); }
+);}
 
 final String subdomain;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'subdomain': subdomain,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('subdomain') && json['subdomain'] is String; } 
-WorkersSchemasSubdomain copyWith({String? subdomain}) { return WorkersSchemasSubdomain(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('subdomain') && json['subdomain'] is String;}
+WorkersSchemasSubdomain copyWith({String? subdomain}) {return WorkersSchemasSubdomain(
   subdomain: subdomain ?? this.subdomain,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersSchemasSubdomain &&
-          subdomain == other.subdomain; } 
-@override int get hashCode { return subdomain.hashCode; } 
-@override String toString() { return 'WorkersSchemasSubdomain(subdomain: $subdomain)'; } 
- }
+          subdomain == other.subdomain;}
+@override int get hashCode {return subdomain.hashCode;}
+@override String toString() {return 'WorkersSchemasSubdomain(subdomain: $subdomain)';}
+}

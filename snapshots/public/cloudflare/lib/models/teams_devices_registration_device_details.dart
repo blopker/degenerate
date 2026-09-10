@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Device details embedded inside of a registration.
 @immutable final class TeamsDevicesRegistrationDeviceDetails {const TeamsDevicesRegistrationDeviceDetails({required this.id, required this.name, this.clientVersion, });
 
-factory TeamsDevicesRegistrationDeviceDetails.fromJson(Map<String, dynamic> json) { return TeamsDevicesRegistrationDeviceDetails(
+factory TeamsDevicesRegistrationDeviceDetails.fromJson(Map<String, dynamic> json) {return TeamsDevicesRegistrationDeviceDetails(
   clientVersion: json['client_version'] as String?,
   id: json['id'] as String,
   name: json['name'] as String,
-); }
+);}
 
 /// Version of the WARP client.
 final String? clientVersion;
@@ -18,23 +18,23 @@ final String id;
 /// The name of the device.
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_version': ?clientVersion,
   'id': id,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-TeamsDevicesRegistrationDeviceDetails copyWith({String? Function()? clientVersion, String? id, String? name, }) { return TeamsDevicesRegistrationDeviceDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+TeamsDevicesRegistrationDeviceDetails copyWith({String? Function()? clientVersion, String? id, String? name, }) {return TeamsDevicesRegistrationDeviceDetails(
   clientVersion: clientVersion != null ? clientVersion() : this.clientVersion,
   id: id ?? this.id,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamsDevicesRegistrationDeviceDetails &&
           clientVersion == other.clientVersion &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(clientVersion, id, name); } 
-@override String toString() { return 'TeamsDevicesRegistrationDeviceDetails(clientVersion: $clientVersion, id: $id, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(clientVersion, id, name);}
+@override String toString() {return 'TeamsDevicesRegistrationDeviceDetails(clientVersion: $clientVersion, id: $id, name: $name)';}
+}

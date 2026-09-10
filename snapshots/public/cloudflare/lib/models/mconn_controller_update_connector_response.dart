@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_coded_message.dart';@immutable final class MconnControllerUpdateConnectorResponse {const MconnControllerUpdateConnectorResponse({required this.messages, required this.success, required this.errors, required this.result, });
 
-factory MconnControllerUpdateConnectorResponse.fromJson(Map<String, dynamic> json) { return MconnControllerUpdateConnectorResponse(
+factory MconnControllerUpdateConnectorResponse.fromJson(Map<String, dynamic> json) {return MconnControllerUpdateConnectorResponse(
   messages: (json['messages'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   errors: (json['errors'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as Map<String, dynamic>,
-); }
+);}
 
 final List<MconnCodedMessage> messages;
 
@@ -17,28 +17,28 @@ final List<MconnCodedMessage> errors;
 
 final Map<String,dynamic> result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'errors': errors.map((e) => e.toJson()).toList(),
   'result': result,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('errors') &&
-      json.containsKey('result'); } 
-MconnControllerUpdateConnectorResponse copyWith({List<MconnCodedMessage>? messages, bool? success, List<MconnCodedMessage>? errors, Map<String,dynamic>? result, }) { return MconnControllerUpdateConnectorResponse(
+      json.containsKey('result');}
+MconnControllerUpdateConnectorResponse copyWith({List<MconnCodedMessage>? messages, bool? success, List<MconnCodedMessage>? errors, Map<String,dynamic>? result, }) {return MconnControllerUpdateConnectorResponse(
   messages: messages ?? this.messages,
   success: success ?? this.success,
   errors: errors ?? this.errors,
   result: result ?? this.result,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MconnControllerUpdateConnectorResponse &&
           listEquals(messages, other.messages) &&
           success == other.success &&
           listEquals(errors, other.errors) &&
-          result == other.result; } 
-@override int get hashCode { return Object.hash(Object.hashAll(messages), success, Object.hashAll(errors), result); } 
-@override String toString() { return 'MconnControllerUpdateConnectorResponse(messages: $messages, success: $success, errors: $errors, result: $result)'; } 
- }
+          result == other.result;}
+@override int get hashCode {return Object.hash(Object.hashAll(messages), success, Object.hashAll(errors), result);}
+@override String toString() {return 'MconnControllerUpdateConnectorResponse(messages: $messages, success: $success, errors: $errors, result: $result)';}
+}

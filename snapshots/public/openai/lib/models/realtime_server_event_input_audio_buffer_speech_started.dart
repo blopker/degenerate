@@ -13,12 +13,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sent by the serv
 /// 
 @immutable final class RealtimeServerEventInputAudioBufferSpeechStarted {const RealtimeServerEventInputAudioBufferSpeechStarted({required this.eventId, required this.type, required this.audioStartMs, required this.itemId, });
 
-factory RealtimeServerEventInputAudioBufferSpeechStarted.fromJson(Map<String, dynamic> json) { return RealtimeServerEventInputAudioBufferSpeechStarted(
+factory RealtimeServerEventInputAudioBufferSpeechStarted.fromJson(Map<String, dynamic> json) {return RealtimeServerEventInputAudioBufferSpeechStarted(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   audioStartMs: (json['audio_start_ms'] as num).toInt(),
   itemId: json['item_id'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -37,28 +37,28 @@ final int audioStartMs;
 /// 
 final String itemId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'audio_start_ms': audioStartMs,
   'item_id': itemId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('audio_start_ms') && json['audio_start_ms'] is num &&
-      json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeServerEventInputAudioBufferSpeechStarted copyWith({String? eventId, String? type, int? audioStartMs, String? itemId, }) { return RealtimeServerEventInputAudioBufferSpeechStarted(
+      json.containsKey('item_id') && json['item_id'] is String;}
+RealtimeServerEventInputAudioBufferSpeechStarted copyWith({String? eventId, String? type, int? audioStartMs, String? itemId, }) {return RealtimeServerEventInputAudioBufferSpeechStarted(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   audioStartMs: audioStartMs ?? this.audioStartMs,
   itemId: itemId ?? this.itemId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventInputAudioBufferSpeechStarted &&
           eventId == other.eventId &&
           type == other.type &&
           audioStartMs == other.audioStartMs &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, audioStartMs, itemId); } 
-@override String toString() { return 'RealtimeServerEventInputAudioBufferSpeechStarted(eventId: $eventId, type: $type, audioStartMs: $audioStartMs, itemId: $itemId)'; } 
- }
+          itemId == other.itemId;}
+@override int get hashCode {return Object.hash(eventId, type, audioStartMs, itemId);}
+@override String toString() {return 'RealtimeServerEventInputAudioBufferSpeechStarted(eventId: $eventId, type: $type, audioStartMs: $audioStartMs, itemId: $itemId)';}
+}

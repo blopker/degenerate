@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param28_mandate_options.dart';@immutable final class InvoicePaymentMethodOptionsParam28 {const InvoicePaymentMethodOptionsParam28({this.mandateOptions});
 
-factory InvoicePaymentMethodOptionsParam28.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam28(
+factory InvoicePaymentMethodOptionsParam28.fromJson(Map<String, dynamic> json) {return InvoicePaymentMethodOptionsParam28(
   mandateOptions: json['mandate_options'] != null ? InvoicePaymentMethodOptionsParam28MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final InvoicePaymentMethodOptionsParam28MandateOptions? mandateOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam28 copyWith({InvoicePaymentMethodOptionsParam28MandateOptions? Function()? mandateOptions}) { return InvoicePaymentMethodOptionsParam28(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mandate_options'}.contains(key));}
+InvoicePaymentMethodOptionsParam28 copyWith({InvoicePaymentMethodOptionsParam28MandateOptions? Function()? mandateOptions}) {return InvoicePaymentMethodOptionsParam28(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InvoicePaymentMethodOptionsParam28 &&
-          mandateOptions == other.mandateOptions; } 
-@override int get hashCode { return mandateOptions.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam28(mandateOptions: $mandateOptions)'; } 
- }
+          mandateOptions == other.mandateOptions;}
+@override int get hashCode {return mandateOptions.hashCode;}
+@override String toString() {return 'InvoicePaymentMethodOptionsParam28(mandateOptions: $mandateOptions)';}
+}

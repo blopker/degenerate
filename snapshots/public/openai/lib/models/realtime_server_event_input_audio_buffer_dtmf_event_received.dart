@@ -7,11 +7,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// **SIP Only:** Re
 /// 
 @immutable final class RealtimeServerEventInputAudioBufferDtmfEventReceived {const RealtimeServerEventInputAudioBufferDtmfEventReceived({required this.type, required this.event, required this.receivedAt, });
 
-factory RealtimeServerEventInputAudioBufferDtmfEventReceived.fromJson(Map<String, dynamic> json) { return RealtimeServerEventInputAudioBufferDtmfEventReceived(
+factory RealtimeServerEventInputAudioBufferDtmfEventReceived.fromJson(Map<String, dynamic> json) {return RealtimeServerEventInputAudioBufferDtmfEventReceived(
   type: json['type'] as String,
   event: json['event'] as String,
   receivedAt: (json['received_at'] as num).toInt(),
-); }
+);}
 
 /// The event type, must be `input_audio_buffer.dtmf_event_received`.
 final String type;
@@ -23,24 +23,24 @@ final String event;
 /// 
 final int receivedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'event': event,
   'received_at': receivedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('event') && json['event'] is String &&
-      json.containsKey('received_at') && json['received_at'] is num; } 
-RealtimeServerEventInputAudioBufferDtmfEventReceived copyWith({String? type, String? event, int? receivedAt, }) { return RealtimeServerEventInputAudioBufferDtmfEventReceived(
+      json.containsKey('received_at') && json['received_at'] is num;}
+RealtimeServerEventInputAudioBufferDtmfEventReceived copyWith({String? type, String? event, int? receivedAt, }) {return RealtimeServerEventInputAudioBufferDtmfEventReceived(
   type: type ?? this.type,
   event: event ?? this.event,
   receivedAt: receivedAt ?? this.receivedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventInputAudioBufferDtmfEventReceived &&
           type == other.type &&
           event == other.event &&
-          receivedAt == other.receivedAt; } 
-@override int get hashCode { return Object.hash(type, event, receivedAt); } 
-@override String toString() { return 'RealtimeServerEventInputAudioBufferDtmfEventReceived(type: $type, event: $event, receivedAt: $receivedAt)'; } 
- }
+          receivedAt == other.receivedAt;}
+@override int get hashCode {return Object.hash(type, event, receivedAt);}
+@override String toString() {return 'RealtimeServerEventInputAudioBufferDtmfEventReceived(type: $type, event: $event, receivedAt: $receivedAt)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupByArcResponseResultMetaDateRange {const RadarGetEmailRoutingTimeseriesGroupByArcResponseResultMetaDateRange({required this.endTime, required this.startTime, });
 
-factory RadarGetEmailRoutingTimeseriesGroupByArcResponseResultMetaDateRange.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingTimeseriesGroupByArcResponseResultMetaDateRange(
+factory RadarGetEmailRoutingTimeseriesGroupByArcResponseResultMetaDateRange.fromJson(Map<String, dynamic> json) {return RadarGetEmailRoutingTimeseriesGroupByArcResponseResultMetaDateRange(
   endTime: DateTime.parse(json['endTime'] as String),
   startTime: DateTime.parse(json['startTime'] as String),
-); }
+);}
 
 /// Adjusted end of date range.
 final DateTime endTime;
@@ -13,20 +13,20 @@ final DateTime endTime;
 /// Adjusted start of date range.
 final DateTime startTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'endTime': endTime.toIso8601String(),
   'startTime': startTime.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('endTime') && json['endTime'] is String &&
-      json.containsKey('startTime') && json['startTime'] is String; } 
-RadarGetEmailRoutingTimeseriesGroupByArcResponseResultMetaDateRange copyWith({DateTime? endTime, DateTime? startTime, }) { return RadarGetEmailRoutingTimeseriesGroupByArcResponseResultMetaDateRange(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('endTime') && json['endTime'] is String &&
+      json.containsKey('startTime') && json['startTime'] is String;}
+RadarGetEmailRoutingTimeseriesGroupByArcResponseResultMetaDateRange copyWith({DateTime? endTime, DateTime? startTime, }) {return RadarGetEmailRoutingTimeseriesGroupByArcResponseResultMetaDateRange(
   endTime: endTime ?? this.endTime,
   startTime: startTime ?? this.startTime,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetEmailRoutingTimeseriesGroupByArcResponseResultMetaDateRange &&
           endTime == other.endTime &&
-          startTime == other.startTime; } 
-@override int get hashCode { return Object.hash(endTime, startTime); } 
-@override String toString() { return 'RadarGetEmailRoutingTimeseriesGroupByArcResponseResultMetaDateRange(endTime: $endTime, startTime: $startTime)'; } 
- }
+          startTime == other.startTime;}
+@override int get hashCode {return Object.hash(endTime, startTime);}
+@override String toString() {return 'RadarGetEmailRoutingTimeseriesGroupByArcResponseResultMetaDateRange(endTime: $endTime, startTime: $startTime)';}
+}

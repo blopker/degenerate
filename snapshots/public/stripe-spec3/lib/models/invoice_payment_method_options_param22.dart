@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param22_financial_connections.dart';@immutable final class InvoicePaymentMethodOptionsParam22VerificationMethod {const InvoicePaymentMethodOptionsParam22VerificationMethod._(this.value);
 
-factory InvoicePaymentMethodOptionsParam22VerificationMethod.fromJson(String json) { return switch (json) {
+factory InvoicePaymentMethodOptionsParam22VerificationMethod.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'instant' => instant,
   'microdeposits' => microdeposits,
   _ => InvoicePaymentMethodOptionsParam22VerificationMethod._(json),
-}; }
+};}
 
 static const InvoicePaymentMethodOptionsParam22VerificationMethod automatic = InvoicePaymentMethodOptionsParam22VerificationMethod._('automatic');
 
@@ -19,38 +19,38 @@ static const List<InvoicePaymentMethodOptionsParam22VerificationMethod> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoicePaymentMethodOptionsParam22VerificationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam22VerificationMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoicePaymentMethodOptionsParam22VerificationMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoicePaymentMethodOptionsParam22VerificationMethod($value)';}
+}
 @immutable final class InvoicePaymentMethodOptionsParam22 {const InvoicePaymentMethodOptionsParam22({this.financialConnections, this.verificationMethod, });
 
-factory InvoicePaymentMethodOptionsParam22.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam22(
+factory InvoicePaymentMethodOptionsParam22.fromJson(Map<String, dynamic> json) {return InvoicePaymentMethodOptionsParam22(
   financialConnections: json['financial_connections'] != null ? InvoicePaymentMethodOptionsParam22FinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
   verificationMethod: json['verification_method'] != null ? InvoicePaymentMethodOptionsParam22VerificationMethod.fromJson(json['verification_method'] as String) : null,
-); }
+);}
 
 final InvoicePaymentMethodOptionsParam22FinancialConnections? financialConnections;
 
 final InvoicePaymentMethodOptionsParam22VerificationMethod? verificationMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (financialConnections != null) 'financial_connections': financialConnections?.toJson(),
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'verification_method'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam22 copyWith({InvoicePaymentMethodOptionsParam22FinancialConnections? Function()? financialConnections, InvoicePaymentMethodOptionsParam22VerificationMethod? Function()? verificationMethod, }) { return InvoicePaymentMethodOptionsParam22(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'financial_connections', 'verification_method'}.contains(key));}
+InvoicePaymentMethodOptionsParam22 copyWith({InvoicePaymentMethodOptionsParam22FinancialConnections? Function()? financialConnections, InvoicePaymentMethodOptionsParam22VerificationMethod? Function()? verificationMethod, }) {return InvoicePaymentMethodOptionsParam22(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InvoicePaymentMethodOptionsParam22 &&
           financialConnections == other.financialConnections &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(financialConnections, verificationMethod); } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam22(financialConnections: $financialConnections, verificationMethod: $verificationMethod)'; } 
- }
+          verificationMethod == other.verificationMethod;}
+@override int get hashCode {return Object.hash(financialConnections, verificationMethod);}
+@override String toString() {return 'InvoicePaymentMethodOptionsParam22(financialConnections: $financialConnections, verificationMethod: $verificationMethod)';}
+}

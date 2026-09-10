@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason given by cardholder for dispute.
 @immutable final class InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason._(this.value);
 
-factory InsightsResourcesPaymentEvaluationDisputeOpenedReason.fromJson(String json) { return switch (json) {
+factory InsightsResourcesPaymentEvaluationDisputeOpenedReason.fromJson(String json) {return switch (json) {
   'account_not_available' => accountNotAvailable,
   'credit_not_processed' => creditNotProcessed,
   'customer_initiated' => customerInitiated,
@@ -16,7 +16,7 @@ factory InsightsResourcesPaymentEvaluationDisputeOpenedReason.fromJson(String js
   'subscription_canceled' => subscriptionCanceled,
   'unrecognized' => unrecognized,
   _ => InsightsResourcesPaymentEvaluationDisputeOpenedReason._(json),
-}; }
+};}
 
 static const InsightsResourcesPaymentEvaluationDisputeOpenedReason accountNotAvailable = InsightsResourcesPaymentEvaluationDisputeOpenedReason._('account_not_available');
 
@@ -44,22 +44,22 @@ static const List<InsightsResourcesPaymentEvaluationDisputeOpenedReason> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationDisputeOpenedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationDisputeOpenedReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationDisputeOpenedReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationDisputeOpenedReason($value)';}
+}
 /// Dispute opened event details attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationDisputeOpened {const InsightsResourcesPaymentEvaluationDisputeOpened({required this.amount, required this.currency, required this.reason, });
 
-factory InsightsResourcesPaymentEvaluationDisputeOpened.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationDisputeOpened(
+factory InsightsResourcesPaymentEvaluationDisputeOpened.fromJson(Map<String, dynamic> json) {return InsightsResourcesPaymentEvaluationDisputeOpened(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   reason: InsightsResourcesPaymentEvaluationDisputeOpenedReason.fromJson(json['reason'] as String),
-); }
+);}
 
 /// Amount to dispute for this payment. A positive integer representing how much to charge in [the smallest currency unit](https://docs.stripe.com/currencies#zero-decimal) (for example, 100 cents to charge 1.00 USD or 100 to charge 100 Yen, a zero-decimal currency).
 final int amount;
@@ -70,24 +70,24 @@ final String currency;
 /// Reason given by cardholder for dispute.
 final InsightsResourcesPaymentEvaluationDisputeOpenedReason reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   'reason': reason.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
-      json.containsKey('reason'); } 
-InsightsResourcesPaymentEvaluationDisputeOpened copyWith({int? amount, String? currency, InsightsResourcesPaymentEvaluationDisputeOpenedReason? reason, }) { return InsightsResourcesPaymentEvaluationDisputeOpened(
+      json.containsKey('reason');}
+InsightsResourcesPaymentEvaluationDisputeOpened copyWith({int? amount, String? currency, InsightsResourcesPaymentEvaluationDisputeOpenedReason? reason, }) {return InsightsResourcesPaymentEvaluationDisputeOpened(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   reason: reason ?? this.reason,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationDisputeOpened &&
           amount == other.amount &&
           currency == other.currency &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(amount, currency, reason); } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationDisputeOpened(amount: $amount, currency: $currency, reason: $reason)'; } 
- }
+          reason == other.reason;}
+@override int get hashCode {return Object.hash(amount, currency, reason);}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationDisputeOpened(amount: $amount, currency: $currency, reason: $reason)';}
+}

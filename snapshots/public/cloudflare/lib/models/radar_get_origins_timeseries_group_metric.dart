@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the metric to retrieve.
 @immutable final class RadarGetOriginsTimeseriesGroupMetric {const RadarGetOriginsTimeseriesGroupMetric._(this.value);
 
-factory RadarGetOriginsTimeseriesGroupMetric.fromJson(String json) { return switch (json) {
+factory RadarGetOriginsTimeseriesGroupMetric.fromJson(String json) {return switch (json) {
   'CONNECTION_FAILURES' => connectionFailures,
   'REQUESTS' => requests,
   'RESPONSE_HEADER_RECEIVE_DURATION' => responseHeaderReceiveDuration,
@@ -11,7 +11,7 @@ factory RadarGetOriginsTimeseriesGroupMetric.fromJson(String json) { return swit
   'TCP_RTT' => tcpRtt,
   'TLS_HANDSHAKE_DURATION' => tlsHandshakeDuration,
   _ => RadarGetOriginsTimeseriesGroupMetric._(json),
-}; }
+};}
 
 static const RadarGetOriginsTimeseriesGroupMetric connectionFailures = RadarGetOriginsTimeseriesGroupMetric._('CONNECTION_FAILURES');
 
@@ -29,11 +29,11 @@ static const List<RadarGetOriginsTimeseriesGroupMetric> values = [connectionFail
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetOriginsTimeseriesGroupMetric && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetOriginsTimeseriesGroupMetric($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetOriginsTimeseriesGroupMetric && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetOriginsTimeseriesGroupMetric($value)';}
+}

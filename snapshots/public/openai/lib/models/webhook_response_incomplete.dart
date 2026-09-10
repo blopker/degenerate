@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_resp
 /// 
 @immutable final class WebhookResponseIncompleteObject {const WebhookResponseIncompleteObject._(this.value);
 
-factory WebhookResponseIncompleteObject.fromJson(String json) { return switch (json) {
+factory WebhookResponseIncompleteObject.fromJson(String json) {return switch (json) {
   'event' => event,
   _ => WebhookResponseIncompleteObject._(json),
-}; }
+};}
 
 static const WebhookResponseIncompleteObject event = WebhookResponseIncompleteObject._('event');
 
@@ -15,22 +15,22 @@ static const List<WebhookResponseIncompleteObject> values = [event];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookResponseIncompleteObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookResponseIncompleteObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookResponseIncompleteObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookResponseIncompleteObject($value)';}
+}
 /// The type of the event. Always `response.incomplete`.
 /// 
 @immutable final class WebhookResponseIncompleteType {const WebhookResponseIncompleteType._(this.value);
 
-factory WebhookResponseIncompleteType.fromJson(String json) { return switch (json) {
+factory WebhookResponseIncompleteType.fromJson(String json) {return switch (json) {
   'response.incomplete' => responseIncomplete,
   _ => WebhookResponseIncompleteType._(json),
-}; }
+};}
 
 static const WebhookResponseIncompleteType responseIncomplete = WebhookResponseIncompleteType._('response.incomplete');
 
@@ -38,25 +38,25 @@ static const List<WebhookResponseIncompleteType> values = [responseIncomplete];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookResponseIncompleteType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookResponseIncompleteType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookResponseIncompleteType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookResponseIncompleteType($value)';}
+}
 /// Sent when a background response has been interrupted.
 /// 
 @immutable final class WebhookResponseIncomplete {const WebhookResponseIncomplete({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
-factory WebhookResponseIncomplete.fromJson(Map<String, dynamic> json) { return WebhookResponseIncomplete(
+factory WebhookResponseIncomplete.fromJson(Map<String, dynamic> json) {return WebhookResponseIncomplete(
   createdAt: (json['created_at'] as num).toInt(),
   id: json['id'] as String,
   data: WebhookResponseIncompleteData.fromJson(json['data'] as Map<String, dynamic>),
   object: json['object'] != null ? WebhookResponseIncompleteObject.fromJson(json['object'] as String) : null,
   type: WebhookResponseIncompleteType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The Unix timestamp (in seconds) of when the model response was interrupted.
 /// 
@@ -78,31 +78,31 @@ final WebhookResponseIncompleteObject? object;
 /// 
 final WebhookResponseIncompleteType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt,
   'id': id,
   'data': data.toJson(),
   if (object != null) 'object': object?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('data') &&
-      json.containsKey('type'); } 
-WebhookResponseIncomplete copyWith({int? createdAt, String? id, WebhookResponseIncompleteData? data, WebhookResponseIncompleteObject? Function()? object, WebhookResponseIncompleteType? type, }) { return WebhookResponseIncomplete(
+      json.containsKey('type');}
+WebhookResponseIncomplete copyWith({int? createdAt, String? id, WebhookResponseIncompleteData? data, WebhookResponseIncompleteObject? Function()? object, WebhookResponseIncompleteType? type, }) {return WebhookResponseIncomplete(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   data: data ?? this.data,
   object: object != null ? object() : this.object,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookResponseIncomplete &&
           createdAt == other.createdAt &&
           id == other.id &&
           data == other.data &&
           object == other.object &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, id, data, object, type); } 
-@override String toString() { return 'WebhookResponseIncomplete(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(createdAt, id, data, object, type);}
+@override String toString() {return 'WebhookResponseIncomplete(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)';}
+}

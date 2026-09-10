@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2R2Action {const R2R2Action._(this.value);
 
-factory R2R2Action.fromJson(String json) { return switch (json) {
+factory R2R2Action.fromJson(String json) {return switch (json) {
   'PutObject' => putObject,
   'CopyObject' => copyObject,
   'DeleteObject' => deleteObject,
   'CompleteMultipartUpload' => completeMultipartUpload,
   'LifecycleDeletion' => lifecycleDeletion,
   _ => R2R2Action._(json),
-}; }
+};}
 
 static const R2R2Action putObject = R2R2Action._('PutObject');
 
@@ -25,11 +25,11 @@ static const List<R2R2Action> values = [putObject, copyObject, deleteObject, com
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2R2Action && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2R2Action($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is R2R2Action && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'R2R2Action($value)';}
+}

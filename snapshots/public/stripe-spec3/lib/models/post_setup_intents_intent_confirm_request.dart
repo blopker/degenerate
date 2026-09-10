@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_mandate_data.dart';import 'post_setup_intents_intent_confirm_request_payment_method_data.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options.dart';@immutable final class PostSetupIntentsIntentConfirmRequest {const PostSetupIntentsIntentConfirmRequest({this.clientSecret, this.confirmationToken, this.expand, this.mandateData, this.paymentMethod, this.paymentMethodData, this.paymentMethodOptions, this.returnUrl, this.useStripeSdk, });
 
-factory PostSetupIntentsIntentConfirmRequest.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequest(
+factory PostSetupIntentsIntentConfirmRequest.fromJson(Map<String, dynamic> json) {return PostSetupIntentsIntentConfirmRequest(
   clientSecret: json['client_secret'] as String?,
   confirmationToken: json['confirmation_token'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -12,7 +12,7 @@ factory PostSetupIntentsIntentConfirmRequest.fromJson(Map<String, dynamic> json)
   paymentMethodOptions: json['payment_method_options'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   returnUrl: json['return_url'] as String?,
   useStripeSdk: json['use_stripe_sdk'] as bool?,
-); }
+);}
 
 /// The client secret of the SetupIntent.
 final String? clientSecret;
@@ -45,7 +45,7 @@ final String? returnUrl;
 /// Set to `true` when confirming server-side and using Stripe.js, iOS, or Android client-side SDKs to handle the next actions.
 final bool? useStripeSdk;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_secret': ?clientSecret,
   'confirmation_token': ?confirmationToken,
   'expand': ?expand,
@@ -55,9 +55,9 @@ Map<String, dynamic> toJson() { return {
   if (paymentMethodOptions != null) 'payment_method_options': paymentMethodOptions?.toJson(),
   'return_url': ?returnUrl,
   'use_stripe_sdk': ?useStripeSdk,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_secret', 'confirmation_token', 'expand', 'mandate_data', 'payment_method', 'payment_method_data', 'payment_method_options', 'return_url', 'use_stripe_sdk'}.contains(key)); } 
-PostSetupIntentsIntentConfirmRequest copyWith({String? Function()? clientSecret, String? Function()? confirmationToken, List<String>? Function()? expand, PostSetupIntentsIntentConfirmRequestMandateData? Function()? mandateData, String? Function()? paymentMethod, PostSetupIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostSetupIntentsIntentConfirmRequestPaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? returnUrl, bool? Function()? useStripeSdk, }) { return PostSetupIntentsIntentConfirmRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'client_secret', 'confirmation_token', 'expand', 'mandate_data', 'payment_method', 'payment_method_data', 'payment_method_options', 'return_url', 'use_stripe_sdk'}.contains(key));}
+PostSetupIntentsIntentConfirmRequest copyWith({String? Function()? clientSecret, String? Function()? confirmationToken, List<String>? Function()? expand, PostSetupIntentsIntentConfirmRequestMandateData? Function()? mandateData, String? Function()? paymentMethod, PostSetupIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostSetupIntentsIntentConfirmRequestPaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? returnUrl, bool? Function()? useStripeSdk, }) {return PostSetupIntentsIntentConfirmRequest(
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   confirmationToken: confirmationToken != null ? confirmationToken() : this.confirmationToken,
   expand: expand != null ? expand() : this.expand,
@@ -67,8 +67,8 @@ PostSetupIntentsIntentConfirmRequest copyWith({String? Function()? clientSecret,
   paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
   useStripeSdk: useStripeSdk != null ? useStripeSdk() : this.useStripeSdk,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsIntentConfirmRequest &&
           clientSecret == other.clientSecret &&
           confirmationToken == other.confirmationToken &&
@@ -78,7 +78,7 @@ PostSetupIntentsIntentConfirmRequest copyWith({String? Function()? clientSecret,
           paymentMethodData == other.paymentMethodData &&
           paymentMethodOptions == other.paymentMethodOptions &&
           returnUrl == other.returnUrl &&
-          useStripeSdk == other.useStripeSdk; } 
-@override int get hashCode { return Object.hash(clientSecret, confirmationToken, Object.hashAll(expand ?? const []), mandateData, paymentMethod, paymentMethodData, paymentMethodOptions, returnUrl, useStripeSdk); } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequest(clientSecret: $clientSecret, confirmationToken: $confirmationToken, expand: $expand, mandateData: $mandateData, paymentMethod: $paymentMethod, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, returnUrl: $returnUrl, useStripeSdk: $useStripeSdk)'; } 
- }
+          useStripeSdk == other.useStripeSdk;}
+@override int get hashCode {return Object.hash(clientSecret, confirmationToken, Object.hashAll(expand ?? const []), mandateData, paymentMethod, paymentMethodData, paymentMethodOptions, returnUrl, useStripeSdk);}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequest(clientSecret: $clientSecret, confirmationToken: $confirmationToken, expand: $expand, mandateData: $mandateData, paymentMethod: $paymentMethod, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, returnUrl: $returnUrl, useStripeSdk: $useStripeSdk)';}
+}

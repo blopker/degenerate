@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCheckoutSessionsStatus {const GetCheckoutSessionsStatus._(this.value);
 
-factory GetCheckoutSessionsStatus.fromJson(String json) { return switch (json) {
+factory GetCheckoutSessionsStatus.fromJson(String json) {return switch (json) {
   'complete' => complete,
   'expired' => expired,
   'open' => open,
   _ => GetCheckoutSessionsStatus._(json),
-}; }
+};}
 
 static const GetCheckoutSessionsStatus complete = GetCheckoutSessionsStatus._('complete');
 
@@ -19,11 +19,11 @@ static const List<GetCheckoutSessionsStatus> values = [complete, expired, open];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetCheckoutSessionsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetCheckoutSessionsStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetCheckoutSessionsStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetCheckoutSessionsStatus($value)';}
+}

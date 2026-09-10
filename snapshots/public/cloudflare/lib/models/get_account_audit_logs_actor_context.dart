@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAccountAuditLogsActorContext {const GetAccountAuditLogsActorContext._(this.value);
 
-factory GetAccountAuditLogsActorContext.fromJson(String json) { return switch (json) {
+factory GetAccountAuditLogsActorContext.fromJson(String json) {return switch (json) {
   'api_key' => apiKey,
   'api_token' => apiToken,
   'dash' => dash,
   'oauth' => oauth,
   'origin_ca_key' => originCaKey,
   _ => GetAccountAuditLogsActorContext._(json),
-}; }
+};}
 
 static const GetAccountAuditLogsActorContext apiKey = GetAccountAuditLogsActorContext._('api_key');
 
@@ -25,11 +25,11 @@ static const List<GetAccountAuditLogsActorContext> values = [apiKey, apiToken, d
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetAccountAuditLogsActorContext && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetAccountAuditLogsActorContext($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetAccountAuditLogsActorContext && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetAccountAuditLogsActorContext($value)';}
+}

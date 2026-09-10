@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';/// Unassigned Issue Event
 @immutable final class UnassignedIssueEvent {const UnassignedIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.assignee, required this.assigner, });
 
-factory UnassignedIssueEvent.fromJson(Map<String, dynamic> json) { return UnassignedIssueEvent(
+factory UnassignedIssueEvent.fromJson(Map<String, dynamic> json) {return UnassignedIssueEvent(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: json['url'] as String,
@@ -15,7 +15,7 @@ factory UnassignedIssueEvent.fromJson(Map<String, dynamic> json) { return Unassi
   performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   assignee: SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>),
   assigner: SimpleUser.fromJson(json['assigner'] as Map<String, dynamic>),
-); }
+);}
 
 final int id;
 
@@ -39,7 +39,7 @@ final SimpleUser assignee;
 
 final SimpleUser assigner;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url,
@@ -51,8 +51,8 @@ Map<String, dynamic> toJson() { return {
   'performed_via_github_app': performedViaGithubApp?.toJson(),
   'assignee': assignee.toJson(),
   'assigner': assigner.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('actor') &&
@@ -62,8 +62,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('performed_via_github_app') &&
       json.containsKey('assignee') &&
-      json.containsKey('assigner'); } 
-UnassignedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, SimpleUser? assignee, SimpleUser? assigner, }) { return UnassignedIssueEvent(
+      json.containsKey('assigner');}
+UnassignedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, SimpleUser? assignee, SimpleUser? assigner, }) {return UnassignedIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -75,8 +75,8 @@ UnassignedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser?
   performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
   assignee: assignee ?? this.assignee,
   assigner: assigner ?? this.assigner,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UnassignedIssueEvent &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -88,7 +88,7 @@ UnassignedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser?
           createdAt == other.createdAt &&
           performedViaGithubApp == other.performedViaGithubApp &&
           assignee == other.assignee &&
-          assigner == other.assigner; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, assignee, assigner); } 
-@override String toString() { return 'UnassignedIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, assignee: $assignee, assigner: $assigner)'; } 
- }
+          assigner == other.assigner;}
+@override int get hashCode {return Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, assignee, assigner);}
+@override String toString() {return 'UnassignedIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, assignee: $assignee, assigner: $assigner)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'portal_subscription_cancellation_reason.dart';/// Whether to cancel subscriptions immediately or at the end of the billing period.
 @immutable final class PortalSubscriptionCancelMode {const PortalSubscriptionCancelMode._(this.value);
 
-factory PortalSubscriptionCancelMode.fromJson(String json) { return switch (json) {
+factory PortalSubscriptionCancelMode.fromJson(String json) {return switch (json) {
   'at_period_end' => atPeriodEnd,
   'immediately' => immediately,
   _ => PortalSubscriptionCancelMode._(json),
-}; }
+};}
 
 static const PortalSubscriptionCancelMode atPeriodEnd = PortalSubscriptionCancelMode._('at_period_end');
 
@@ -17,23 +17,23 @@ static const List<PortalSubscriptionCancelMode> values = [atPeriodEnd, immediate
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PortalSubscriptionCancelMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PortalSubscriptionCancelMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PortalSubscriptionCancelMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PortalSubscriptionCancelMode($value)';}
+}
 /// Whether to create prorations when canceling subscriptions. Possible values are `none` and `create_prorations`.
 @immutable final class PortalSubscriptionCancelProrationBehavior {const PortalSubscriptionCancelProrationBehavior._(this.value);
 
-factory PortalSubscriptionCancelProrationBehavior.fromJson(String json) { return switch (json) {
+factory PortalSubscriptionCancelProrationBehavior.fromJson(String json) {return switch (json) {
   'always_invoice' => alwaysInvoice,
   'create_prorations' => createProrations,
   'none' => none,
   _ => PortalSubscriptionCancelProrationBehavior._(json),
-}; }
+};}
 
 static const PortalSubscriptionCancelProrationBehavior alwaysInvoice = PortalSubscriptionCancelProrationBehavior._('always_invoice');
 
@@ -45,23 +45,23 @@ static const List<PortalSubscriptionCancelProrationBehavior> values = [alwaysInv
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PortalSubscriptionCancelProrationBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PortalSubscriptionCancelProrationBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PortalSubscriptionCancelProrationBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PortalSubscriptionCancelProrationBehavior($value)';}
+}
 /// 
 @immutable final class PortalSubscriptionCancel {const PortalSubscriptionCancel({required this.cancellationReason, required this.enabled, required this.mode, required this.prorationBehavior, });
 
-factory PortalSubscriptionCancel.fromJson(Map<String, dynamic> json) { return PortalSubscriptionCancel(
+factory PortalSubscriptionCancel.fromJson(Map<String, dynamic> json) {return PortalSubscriptionCancel(
   cancellationReason: PortalSubscriptionCancellationReason.fromJson(json['cancellation_reason'] as Map<String, dynamic>),
   enabled: json['enabled'] as bool,
   mode: PortalSubscriptionCancelMode.fromJson(json['mode'] as String),
   prorationBehavior: PortalSubscriptionCancelProrationBehavior.fromJson(json['proration_behavior'] as String),
-); }
+);}
 
 final PortalSubscriptionCancellationReason cancellationReason;
 
@@ -74,28 +74,28 @@ final PortalSubscriptionCancelMode mode;
 /// Whether to create prorations when canceling subscriptions. Possible values are `none` and `create_prorations`.
 final PortalSubscriptionCancelProrationBehavior prorationBehavior;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cancellation_reason': cancellationReason.toJson(),
   'enabled': enabled,
   'mode': mode.toJson(),
   'proration_behavior': prorationBehavior.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cancellation_reason') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cancellation_reason') &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('mode') &&
-      json.containsKey('proration_behavior'); } 
-PortalSubscriptionCancel copyWith({PortalSubscriptionCancellationReason? cancellationReason, bool? enabled, PortalSubscriptionCancelMode? mode, PortalSubscriptionCancelProrationBehavior? prorationBehavior, }) { return PortalSubscriptionCancel(
+      json.containsKey('proration_behavior');}
+PortalSubscriptionCancel copyWith({PortalSubscriptionCancellationReason? cancellationReason, bool? enabled, PortalSubscriptionCancelMode? mode, PortalSubscriptionCancelProrationBehavior? prorationBehavior, }) {return PortalSubscriptionCancel(
   cancellationReason: cancellationReason ?? this.cancellationReason,
   enabled: enabled ?? this.enabled,
   mode: mode ?? this.mode,
   prorationBehavior: prorationBehavior ?? this.prorationBehavior,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PortalSubscriptionCancel &&
           cancellationReason == other.cancellationReason &&
           enabled == other.enabled &&
           mode == other.mode &&
-          prorationBehavior == other.prorationBehavior; } 
-@override int get hashCode { return Object.hash(cancellationReason, enabled, mode, prorationBehavior); } 
-@override String toString() { return 'PortalSubscriptionCancel(cancellationReason: $cancellationReason, enabled: $enabled, mode: $mode, prorationBehavior: $prorationBehavior)'; } 
- }
+          prorationBehavior == other.prorationBehavior;}
+@override int get hashCode {return Object.hash(cancellationReason, enabled, mode, prorationBehavior);}
+@override String toString() {return 'PortalSubscriptionCancel(cancellationReason: $cancellationReason, enabled: $enabled, mode: $mode, prorationBehavior: $prorationBehavior)';}
+}

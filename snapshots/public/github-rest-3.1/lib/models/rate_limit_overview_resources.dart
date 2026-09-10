@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rate_limit.dart';@immutable final class RateLimitOverviewResources {const RateLimitOverviewResources({required this.core, required this.search, this.graphql, this.codeSearch, this.sourceImport, this.integrationManifest, this.codeScanningUpload, this.actionsRunnerRegistration, this.scim, this.dependencySnapshots, this.dependencySbom, this.codeScanningAutofix, });
 
-factory RateLimitOverviewResources.fromJson(Map<String, dynamic> json) { return RateLimitOverviewResources(
+factory RateLimitOverviewResources.fromJson(Map<String, dynamic> json) {return RateLimitOverviewResources(
   core: RateLimit.fromJson(json['core'] as Map<String, dynamic>),
   graphql: json['graphql'] != null ? RateLimit.fromJson(json['graphql'] as Map<String, dynamic>) : null,
   search: RateLimit.fromJson(json['search'] as Map<String, dynamic>),
@@ -15,7 +15,7 @@ factory RateLimitOverviewResources.fromJson(Map<String, dynamic> json) { return 
   dependencySnapshots: json['dependency_snapshots'] != null ? RateLimit.fromJson(json['dependency_snapshots'] as Map<String, dynamic>) : null,
   dependencySbom: json['dependency_sbom'] != null ? RateLimit.fromJson(json['dependency_sbom'] as Map<String, dynamic>) : null,
   codeScanningAutofix: json['code_scanning_autofix'] != null ? RateLimit.fromJson(json['code_scanning_autofix'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final RateLimit core;
 
@@ -41,7 +41,7 @@ final RateLimit? dependencySbom;
 
 final RateLimit? codeScanningAutofix;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'core': core.toJson(),
   if (graphql != null) 'graphql': graphql?.toJson(),
   'search': search.toJson(),
@@ -54,10 +54,10 @@ Map<String, dynamic> toJson() { return {
   if (dependencySnapshots != null) 'dependency_snapshots': dependencySnapshots?.toJson(),
   if (dependencySbom != null) 'dependency_sbom': dependencySbom?.toJson(),
   if (codeScanningAutofix != null) 'code_scanning_autofix': codeScanningAutofix?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('core') &&
-      json.containsKey('search'); } 
-RateLimitOverviewResources copyWith({RateLimit? core, RateLimit? Function()? graphql, RateLimit? search, RateLimit? Function()? codeSearch, RateLimit? Function()? sourceImport, RateLimit? Function()? integrationManifest, RateLimit? Function()? codeScanningUpload, RateLimit? Function()? actionsRunnerRegistration, RateLimit? Function()? scim, RateLimit? Function()? dependencySnapshots, RateLimit? Function()? dependencySbom, RateLimit? Function()? codeScanningAutofix, }) { return RateLimitOverviewResources(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('core') &&
+      json.containsKey('search');}
+RateLimitOverviewResources copyWith({RateLimit? core, RateLimit? Function()? graphql, RateLimit? search, RateLimit? Function()? codeSearch, RateLimit? Function()? sourceImport, RateLimit? Function()? integrationManifest, RateLimit? Function()? codeScanningUpload, RateLimit? Function()? actionsRunnerRegistration, RateLimit? Function()? scim, RateLimit? Function()? dependencySnapshots, RateLimit? Function()? dependencySbom, RateLimit? Function()? codeScanningAutofix, }) {return RateLimitOverviewResources(
   core: core ?? this.core,
   graphql: graphql != null ? graphql() : this.graphql,
   search: search ?? this.search,
@@ -70,8 +70,8 @@ RateLimitOverviewResources copyWith({RateLimit? core, RateLimit? Function()? gra
   dependencySnapshots: dependencySnapshots != null ? dependencySnapshots() : this.dependencySnapshots,
   dependencySbom: dependencySbom != null ? dependencySbom() : this.dependencySbom,
   codeScanningAutofix: codeScanningAutofix != null ? codeScanningAutofix() : this.codeScanningAutofix,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RateLimitOverviewResources &&
           core == other.core &&
           graphql == other.graphql &&
@@ -84,7 +84,7 @@ RateLimitOverviewResources copyWith({RateLimit? core, RateLimit? Function()? gra
           scim == other.scim &&
           dependencySnapshots == other.dependencySnapshots &&
           dependencySbom == other.dependencySbom &&
-          codeScanningAutofix == other.codeScanningAutofix; } 
-@override int get hashCode { return Object.hash(core, graphql, search, codeSearch, sourceImport, integrationManifest, codeScanningUpload, actionsRunnerRegistration, scim, dependencySnapshots, dependencySbom, codeScanningAutofix); } 
-@override String toString() { return 'RateLimitOverviewResources(core: $core, graphql: $graphql, search: $search, codeSearch: $codeSearch, sourceImport: $sourceImport, integrationManifest: $integrationManifest, codeScanningUpload: $codeScanningUpload, actionsRunnerRegistration: $actionsRunnerRegistration, scim: $scim, dependencySnapshots: $dependencySnapshots, dependencySbom: $dependencySbom, codeScanningAutofix: $codeScanningAutofix)'; } 
- }
+          codeScanningAutofix == other.codeScanningAutofix;}
+@override int get hashCode {return Object.hash(core, graphql, search, codeSearch, sourceImport, integrationManifest, codeScanningUpload, actionsRunnerRegistration, scim, dependencySnapshots, dependencySbom, codeScanningAutofix);}
+@override String toString() {return 'RateLimitOverviewResources(core: $core, graphql: $graphql, search: $search, codeSearch: $codeSearch, sourceImport: $sourceImport, integrationManifest: $integrationManifest, codeScanningUpload: $codeScanningUpload, actionsRunnerRegistration: $actionsRunnerRegistration, scim: $scim, dependencySnapshots: $dependencySnapshots, dependencySbom: $dependencySbom, codeScanningAutofix: $codeScanningAutofix)';}
+}

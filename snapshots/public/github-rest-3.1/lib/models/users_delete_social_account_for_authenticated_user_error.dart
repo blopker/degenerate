@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class UsersDeleteSocialAccountForAuthenticatedUserError {const UsersDeleteSocialAccountForAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static UsersDeleteSocialAccountForAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static UsersDeleteSocialAccountForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const UsersDeleteSocialAccountForAuthenticatedUserError304();
 case 401:
@@ -22,44 +22,44 @@ return UsersDeleteSocialAccountForAuthenticatedUserError422(ValidationError.from
 default:
 return UsersDeleteSocialAccountForAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class UsersDeleteSocialAccountForAuthenticatedUserError304 extends UsersDeleteSocialAccountForAuthenticatedUserError {const UsersDeleteSocialAccountForAuthenticatedUserError304();
 
- }
+}
 /// Response for 401 (application/json).
 final class UsersDeleteSocialAccountForAuthenticatedUserError401 extends UsersDeleteSocialAccountForAuthenticatedUserError {const UsersDeleteSocialAccountForAuthenticatedUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class UsersDeleteSocialAccountForAuthenticatedUserError403 extends UsersDeleteSocialAccountForAuthenticatedUserError {const UsersDeleteSocialAccountForAuthenticatedUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class UsersDeleteSocialAccountForAuthenticatedUserError404 extends UsersDeleteSocialAccountForAuthenticatedUserError {const UsersDeleteSocialAccountForAuthenticatedUserError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class UsersDeleteSocialAccountForAuthenticatedUserError422 extends UsersDeleteSocialAccountForAuthenticatedUserError {const UsersDeleteSocialAccountForAuthenticatedUserError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class UsersDeleteSocialAccountForAuthenticatedUserErrorUnknown extends UsersDeleteSocialAccountForAuthenticatedUserError {const UsersDeleteSocialAccountForAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

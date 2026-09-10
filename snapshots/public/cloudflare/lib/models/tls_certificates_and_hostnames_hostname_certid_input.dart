@@ -9,11 +9,11 @@ String toJson() => value;
 }
 @immutable final class TlsCertificatesAndHostnamesHostnameCertidInput {const TlsCertificatesAndHostnamesHostnameCertidInput({this.certId, this.enabled = const Omittable.absent(), this.hostname, });
 
-factory TlsCertificatesAndHostnamesHostnameCertidInput.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesHostnameCertidInput(
+factory TlsCertificatesAndHostnamesHostnameCertidInput.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesHostnameCertidInput(
   certId: json['cert_id'] != null ? TlsCertificatesAndHostnamesCertId.fromJson(json['cert_id'] as String) : null,
   enabled: json.containsKey('enabled') ? Omittable(json['enabled'] != null ? TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasEnabled.fromJson(json['enabled'] as bool) : null) : const Omittable.absent(),
   hostname: json['hostname'] != null ? TlsCertificatesAndHostnamesSchemasHostname.fromJson(json['hostname'] as String) : null,
-); }
+);}
 
 /// Certificate identifier tag.
 final TlsCertificatesAndHostnamesCertId? certId;
@@ -23,22 +23,22 @@ final Omittable<TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullCompon
 
 final TlsCertificatesAndHostnamesSchemasHostname? hostname;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (certId != null) 'cert_id': certId?.toJson(),
   if (enabled.isPresent) 'enabled': enabled.value?.toJson(),
   if (hostname != null) 'hostname': hostname?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cert_id', 'enabled', 'hostname'}.contains(key)); } 
-TlsCertificatesAndHostnamesHostnameCertidInput copyWith({TlsCertificatesAndHostnamesCertId? Function()? certId, Omittable<TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasEnabled?>? enabled, TlsCertificatesAndHostnamesSchemasHostname? Function()? hostname, }) { return TlsCertificatesAndHostnamesHostnameCertidInput(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cert_id', 'enabled', 'hostname'}.contains(key));}
+TlsCertificatesAndHostnamesHostnameCertidInput copyWith({TlsCertificatesAndHostnamesCertId? Function()? certId, Omittable<TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasEnabled?>? enabled, TlsCertificatesAndHostnamesSchemasHostname? Function()? hostname, }) {return TlsCertificatesAndHostnamesHostnameCertidInput(
   certId: certId != null ? certId() : this.certId,
   enabled: enabled ?? this.enabled,
   hostname: hostname != null ? hostname() : this.hostname,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TlsCertificatesAndHostnamesHostnameCertidInput &&
           certId == other.certId &&
           enabled == other.enabled &&
-          hostname == other.hostname; } 
-@override int get hashCode { return Object.hash(certId, enabled, hostname); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesHostnameCertidInput(certId: $certId, enabled: $enabled, hostname: $hostname)'; } 
- }
+          hostname == other.hostname;}
+@override int get hashCode {return Object.hash(certId, enabled, hostname);}
+@override String toString() {return 'TlsCertificatesAndHostnamesHostnameCertidInput(certId: $certId, enabled: $enabled, hostname: $hostname)';}
+}

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_business_profile.dart';import 'post_accounts_account_request_capabilities.dart';import 'post_accounts_account_request_company.dart';import 'post_accounts_account_request_documents.dart';import 'post_accounts_account_request_groups.dart';import 'post_accounts_account_request_individual.dart';import 'post_accounts_account_request_metadata.dart';import 'post_accounts_account_request_settings.dart';import 'post_accounts_account_request_tos_acceptance.dart';/// The business type. Once you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions), this property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts.
 @immutable final class PostAccountsAccountRequestBusinessType {const PostAccountsAccountRequestBusinessType._(this.value);
 
-factory PostAccountsAccountRequestBusinessType.fromJson(String json) { return switch (json) {
+factory PostAccountsAccountRequestBusinessType.fromJson(String json) {return switch (json) {
   'company' => company,
   'government_entity' => governmentEntity,
   'individual' => individual,
   'non_profit' => nonProfit,
   _ => PostAccountsAccountRequestBusinessType._(json),
-}; }
+};}
 
 static const PostAccountsAccountRequestBusinessType company = PostAccountsAccountRequestBusinessType._('company');
 
@@ -23,17 +23,17 @@ static const List<PostAccountsAccountRequestBusinessType> values = [company, gov
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsAccountRequestBusinessType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsAccountRequestBusinessType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountsAccountRequestBusinessType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountsAccountRequestBusinessType($value)';}
+}
 @immutable final class PostAccountsAccountRequest {const PostAccountsAccountRequest({this.accountToken, this.businessProfile, this.businessType, this.capabilities, this.company, this.defaultCurrency, this.documents, this.email, this.expand, this.externalAccount, this.groups, this.individual, this.metadata, this.settings, this.tosAcceptance, });
 
-factory PostAccountsAccountRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequest(
+factory PostAccountsAccountRequest.fromJson(Map<String, dynamic> json) {return PostAccountsAccountRequest(
   accountToken: json['account_token'] as String?,
   businessProfile: json['business_profile'] != null ? PostAccountsAccountRequestBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null,
   businessType: json['business_type'] != null ? PostAccountsAccountRequestBusinessType.fromJson(json['business_type'] as String) : null,
@@ -49,7 +49,7 @@ factory PostAccountsAccountRequest.fromJson(Map<String, dynamic> json) { return 
   metadata: json['metadata'] != null ? PostAccountsAccountRequestMetadata.fromJson(json['metadata']) : null,
   settings: json['settings'] != null ? PostAccountsAccountRequestSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   tosAcceptance: json['tos_acceptance'] != null ? PostAccountsAccountRequestTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// An [account token](https://api.stripe.com#create_account_token), used to securely provide details to the account.
 final String? accountToken;
@@ -103,7 +103,7 @@ final PostAccountsAccountRequestSettings? settings;
 /// Details on the account's acceptance of the [Stripe Services Agreement](/connect/updating-accounts#tos-acceptance). This property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts. This property defaults to a `full` service agreement when empty.
 final PostAccountsAccountRequestTosAcceptance? tosAcceptance;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_token': ?accountToken,
   if (businessProfile != null) 'business_profile': businessProfile?.toJson(),
   if (businessType != null) 'business_type': businessType?.toJson(),
@@ -119,9 +119,9 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (settings != null) 'settings': settings?.toJson(),
   if (tosAcceptance != null) 'tos_acceptance': tosAcceptance?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_token', 'business_profile', 'business_type', 'capabilities', 'company', 'default_currency', 'documents', 'email', 'expand', 'external_account', 'groups', 'individual', 'metadata', 'settings', 'tos_acceptance'}.contains(key)); } 
-PostAccountsAccountRequest copyWith({String? Function()? accountToken, PostAccountsAccountRequestBusinessProfile? Function()? businessProfile, PostAccountsAccountRequestBusinessType? Function()? businessType, PostAccountsAccountRequestCapabilities? Function()? capabilities, PostAccountsAccountRequestCompany? Function()? company, String? Function()? defaultCurrency, PostAccountsAccountRequestDocuments? Function()? documents, String? Function()? email, List<String>? Function()? expand, String? Function()? externalAccount, PostAccountsAccountRequestGroups? Function()? groups, PostAccountsAccountRequestIndividual? Function()? individual, PostAccountsAccountRequestMetadata? Function()? metadata, PostAccountsAccountRequestSettings? Function()? settings, PostAccountsAccountRequestTosAcceptance? Function()? tosAcceptance, }) { return PostAccountsAccountRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_token', 'business_profile', 'business_type', 'capabilities', 'company', 'default_currency', 'documents', 'email', 'expand', 'external_account', 'groups', 'individual', 'metadata', 'settings', 'tos_acceptance'}.contains(key));}
+PostAccountsAccountRequest copyWith({String? Function()? accountToken, PostAccountsAccountRequestBusinessProfile? Function()? businessProfile, PostAccountsAccountRequestBusinessType? Function()? businessType, PostAccountsAccountRequestCapabilities? Function()? capabilities, PostAccountsAccountRequestCompany? Function()? company, String? Function()? defaultCurrency, PostAccountsAccountRequestDocuments? Function()? documents, String? Function()? email, List<String>? Function()? expand, String? Function()? externalAccount, PostAccountsAccountRequestGroups? Function()? groups, PostAccountsAccountRequestIndividual? Function()? individual, PostAccountsAccountRequestMetadata? Function()? metadata, PostAccountsAccountRequestSettings? Function()? settings, PostAccountsAccountRequestTosAcceptance? Function()? tosAcceptance, }) {return PostAccountsAccountRequest(
   accountToken: accountToken != null ? accountToken() : this.accountToken,
   businessProfile: businessProfile != null ? businessProfile() : this.businessProfile,
   businessType: businessType != null ? businessType() : this.businessType,
@@ -137,8 +137,8 @@ PostAccountsAccountRequest copyWith({String? Function()? accountToken, PostAccou
   metadata: metadata != null ? metadata() : this.metadata,
   settings: settings != null ? settings() : this.settings,
   tosAcceptance: tosAcceptance != null ? tosAcceptance() : this.tosAcceptance,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountRequest &&
           accountToken == other.accountToken &&
           businessProfile == other.businessProfile &&
@@ -154,7 +154,7 @@ PostAccountsAccountRequest copyWith({String? Function()? accountToken, PostAccou
           individual == other.individual &&
           metadata == other.metadata &&
           settings == other.settings &&
-          tosAcceptance == other.tosAcceptance; } 
-@override int get hashCode { return Object.hash(accountToken, businessProfile, businessType, capabilities, company, defaultCurrency, documents, email, Object.hashAll(expand ?? const []), externalAccount, groups, individual, metadata, settings, tosAcceptance); } 
-@override String toString() { return 'PostAccountsAccountRequest(accountToken: $accountToken, businessProfile: $businessProfile, businessType: $businessType, capabilities: $capabilities, company: $company, defaultCurrency: $defaultCurrency, documents: $documents, email: $email, expand: $expand, externalAccount: $externalAccount, groups: $groups, individual: $individual, metadata: $metadata, settings: $settings, tosAcceptance: $tosAcceptance)'; } 
- }
+          tosAcceptance == other.tosAcceptance;}
+@override int get hashCode {return Object.hash(accountToken, businessProfile, businessType, capabilities, company, defaultCurrency, documents, email, Object.hashAll(expand ?? const []), externalAccount, groups, individual, metadata, settings, tosAcceptance);}
+@override String toString() {return 'PostAccountsAccountRequest(accountToken: $accountToken, businessProfile: $businessProfile, businessType: $businessType, capabilities: $capabilities, company: $company, defaultCurrency: $defaultCurrency, documents: $documents, email: $email, expand: $expand, externalAccount: $externalAccount, groups: $groups, individual: $individual, metadata: $metadata, settings: $settings, tosAcceptance: $tosAcceptance)';}
+}

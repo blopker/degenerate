@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialEndVariant1 {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialEndVariant1._(this.value);
 
-factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialEndVariant1.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialEndVariant1.fromJson(String json) {return switch (json) {
   'now' => now,
   _ => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialEndVariant1._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialEndVariant1 now = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialEndVariant1._('now');
 
@@ -13,14 +13,14 @@ static const List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialEndVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialEndVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialEndVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialEndVariant1($value)';}
+}
 /// Unix timestamp representing the end of the trial period the customer will get before being charged for the first time. This will always overwrite any trials that might apply via a subscribed plan. If set, trial_end will override the default trial period of the plan the customer is being subscribed to. The special value `now` can be provided to end the customer's trial immediately. Can be at most two years from `billing_cycle_anchor`.
 @immutable
 final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialEnd {

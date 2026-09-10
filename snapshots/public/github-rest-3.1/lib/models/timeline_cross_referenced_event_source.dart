@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue.dart';@immutable final class TimelineCrossReferencedEventSource {const TimelineCrossReferencedEventSource({this.type, this.issue, });
 
-factory TimelineCrossReferencedEventSource.fromJson(Map<String, dynamic> json) { return TimelineCrossReferencedEventSource(
+factory TimelineCrossReferencedEventSource.fromJson(Map<String, dynamic> json) {return TimelineCrossReferencedEventSource(
   type: json['type'] as String?,
   issue: json['issue'] != null ? Issue.fromJson(json['issue'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String? type;
 
 final Issue? issue;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': ?type,
   if (issue != null) 'issue': issue?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'issue'}.contains(key)); } 
-TimelineCrossReferencedEventSource copyWith({String? Function()? type, Issue? Function()? issue, }) { return TimelineCrossReferencedEventSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'issue'}.contains(key));}
+TimelineCrossReferencedEventSource copyWith({String? Function()? type, Issue? Function()? issue, }) {return TimelineCrossReferencedEventSource(
   type: type != null ? type() : this.type,
   issue: issue != null ? issue() : this.issue,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TimelineCrossReferencedEventSource &&
           type == other.type &&
-          issue == other.issue; } 
-@override int get hashCode { return Object.hash(type, issue); } 
-@override String toString() { return 'TimelineCrossReferencedEventSource(type: $type, issue: $issue)'; } 
- }
+          issue == other.issue;}
+@override int get hashCode {return Object.hash(type, issue);}
+@override String toString() {return 'TimelineCrossReferencedEventSource(type: $type, issue: $issue)';}
+}

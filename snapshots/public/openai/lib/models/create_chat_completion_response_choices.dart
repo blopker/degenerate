@@ -7,14 +7,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_complet
 /// 
 @immutable final class CreateChatCompletionResponseChoicesFinishReason {const CreateChatCompletionResponseChoicesFinishReason._(this.value);
 
-factory CreateChatCompletionResponseChoicesFinishReason.fromJson(String json) { return switch (json) {
+factory CreateChatCompletionResponseChoicesFinishReason.fromJson(String json) {return switch (json) {
   'stop' => stop,
   'length' => length,
   'tool_calls' => toolCalls,
   'content_filter' => contentFilter,
   'function_call' => functionCall,
   _ => CreateChatCompletionResponseChoicesFinishReason._(json),
-}; }
+};}
 
 static const CreateChatCompletionResponseChoicesFinishReason stop = CreateChatCompletionResponseChoicesFinishReason._('stop');
 
@@ -30,22 +30,22 @@ static const List<CreateChatCompletionResponseChoicesFinishReason> values = [sto
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateChatCompletionResponseChoicesFinishReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateChatCompletionResponseChoicesFinishReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateChatCompletionResponseChoicesFinishReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateChatCompletionResponseChoicesFinishReason($value)';}
+}
 @immutable final class CreateChatCompletionResponseChoices {const CreateChatCompletionResponseChoices({required this.finishReason, required this.index, required this.message, required this.logprobs, });
 
-factory CreateChatCompletionResponseChoices.fromJson(Map<String, dynamic> json) { return CreateChatCompletionResponseChoices(
+factory CreateChatCompletionResponseChoices.fromJson(Map<String, dynamic> json) {return CreateChatCompletionResponseChoices(
   finishReason: CreateChatCompletionResponseChoicesFinishReason.fromJson(json['finish_reason'] as String),
   index: (json['index'] as num).toInt(),
   message: ChatCompletionResponseMessage.fromJson(json['message'] as Map<String, dynamic>),
   logprobs: json['logprobs'] != null ? CreateChatCompletionResponseChoicesLogprobs.fromJson(json['logprobs'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,
 /// `length` if the maximum number of tokens specified in the request was reached,
@@ -62,28 +62,28 @@ final ChatCompletionResponseMessage message;
 /// Log probability information for the choice.
 final CreateChatCompletionResponseChoicesLogprobs? logprobs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'finish_reason': finishReason.toJson(),
   'index': index,
   'message': message.toJson(),
   'logprobs': logprobs?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('finish_reason') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('finish_reason') &&
       json.containsKey('index') && json['index'] is num &&
       json.containsKey('message') &&
-      json.containsKey('logprobs'); } 
-CreateChatCompletionResponseChoices copyWith({CreateChatCompletionResponseChoicesFinishReason? finishReason, int? index, ChatCompletionResponseMessage? message, CreateChatCompletionResponseChoicesLogprobs? Function()? logprobs, }) { return CreateChatCompletionResponseChoices(
+      json.containsKey('logprobs');}
+CreateChatCompletionResponseChoices copyWith({CreateChatCompletionResponseChoicesFinishReason? finishReason, int? index, ChatCompletionResponseMessage? message, CreateChatCompletionResponseChoicesLogprobs? Function()? logprobs, }) {return CreateChatCompletionResponseChoices(
   finishReason: finishReason ?? this.finishReason,
   index: index ?? this.index,
   message: message ?? this.message,
   logprobs: logprobs != null ? logprobs() : this.logprobs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateChatCompletionResponseChoices &&
           finishReason == other.finishReason &&
           index == other.index &&
           message == other.message &&
-          logprobs == other.logprobs; } 
-@override int get hashCode { return Object.hash(finishReason, index, message, logprobs); } 
-@override String toString() { return 'CreateChatCompletionResponseChoices(finishReason: $finishReason, index: $index, message: $message, logprobs: $logprobs)'; } 
- }
+          logprobs == other.logprobs;}
+@override int get hashCode {return Object.hash(finishReason, index, message, logprobs);}
+@override String toString() {return 'CreateChatCompletionResponseChoices(finishReason: $finishReason, index: $index, message: $message, logprobs: $logprobs)';}
+}

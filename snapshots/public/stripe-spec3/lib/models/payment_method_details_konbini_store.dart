@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The name of the convenience store chain where the payment was completed.
 @immutable final class PaymentMethodDetailsKonbiniStoreChain {const PaymentMethodDetailsKonbiniStoreChain._(this.value);
 
-factory PaymentMethodDetailsKonbiniStoreChain.fromJson(String json) { return switch (json) {
+factory PaymentMethodDetailsKonbiniStoreChain.fromJson(String json) {return switch (json) {
   'familymart' => familymart,
   'lawson' => lawson,
   'ministop' => ministop,
   'seicomart' => seicomart,
   _ => PaymentMethodDetailsKonbiniStoreChain._(json),
-}; }
+};}
 
 static const PaymentMethodDetailsKonbiniStoreChain familymart = PaymentMethodDetailsKonbiniStoreChain._('familymart');
 
@@ -23,34 +23,34 @@ static const List<PaymentMethodDetailsKonbiniStoreChain> values = [familymart, l
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsKonbiniStoreChain && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsKonbiniStoreChain($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodDetailsKonbiniStoreChain && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodDetailsKonbiniStoreChain($value)';}
+}
 /// 
 @immutable final class PaymentMethodDetailsKonbiniStore {const PaymentMethodDetailsKonbiniStore({this.chain = const Omittable.absent()});
 
-factory PaymentMethodDetailsKonbiniStore.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsKonbiniStore(
+factory PaymentMethodDetailsKonbiniStore.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsKonbiniStore(
   chain: json.containsKey('chain') ? Omittable(json['chain'] != null ? PaymentMethodDetailsKonbiniStoreChain.fromJson(json['chain'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The name of the convenience store chain where the payment was completed.
 final Omittable<PaymentMethodDetailsKonbiniStoreChain?> chain;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (chain.isPresent) 'chain': chain.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'chain'}.contains(key)); } 
-PaymentMethodDetailsKonbiniStore copyWith({Omittable<PaymentMethodDetailsKonbiniStoreChain?>? chain}) { return PaymentMethodDetailsKonbiniStore(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'chain'}.contains(key));}
+PaymentMethodDetailsKonbiniStore copyWith({Omittable<PaymentMethodDetailsKonbiniStoreChain?>? chain}) {return PaymentMethodDetailsKonbiniStore(
   chain: chain ?? this.chain,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodDetailsKonbiniStore &&
-          chain == other.chain; } 
-@override int get hashCode { return chain.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsKonbiniStore(chain: $chain)'; } 
- }
+          chain == other.chain;}
+@override int get hashCode {return chain.hashCode;}
+@override String toString() {return 'PaymentMethodDetailsKonbiniStore(chain: $chain)';}
+}

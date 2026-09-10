@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsDemoPaySetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsDemoPaySetupFutureUsage._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsDemoPaySetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsDemoPaySetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   'off_session' => offSession,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsDemoPaySetupFutureUsage._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsDemoPaySetupFutureUsage none = PostCheckoutSessionsRequestPaymentMethodOptionsDemoPaySetupFutureUsage._('none');
 
@@ -16,32 +16,32 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsDemoPaySetupFut
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsDemoPaySetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsDemoPaySetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsDemoPaySetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsDemoPaySetupFutureUsage($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsDemoPay {const PostCheckoutSessionsRequestPaymentMethodOptionsDemoPay({this.setupFutureUsage});
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsDemoPay.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsDemoPay(
+factory PostCheckoutSessionsRequestPaymentMethodOptionsDemoPay.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestPaymentMethodOptionsDemoPay(
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsDemoPaySetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsDemoPaySetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsDemoPay copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsDemoPaySetupFutureUsage? Function()? setupFutureUsage}) { return PostCheckoutSessionsRequestPaymentMethodOptionsDemoPay(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'setup_future_usage'}.contains(key));}
+PostCheckoutSessionsRequestPaymentMethodOptionsDemoPay copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsDemoPaySetupFutureUsage? Function()? setupFutureUsage}) {return PostCheckoutSessionsRequestPaymentMethodOptionsDemoPay(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsDemoPay &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return setupFutureUsage.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsDemoPay(setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return setupFutureUsage.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsDemoPay(setupFutureUsage: $setupFutureUsage)';}
+}

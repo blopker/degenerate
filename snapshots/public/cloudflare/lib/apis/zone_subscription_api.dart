@@ -13,7 +13,7 @@ final class ZoneSubscriptionApi with ApiExecutor {const ZoneSubscriptionApi(this
 /// Lists zone subscription details.
 ///
 /// `GET /zones/{zone_id}/subscription`
-Future<ApiResult<SubscriptionResponse, ZoneSubscriptionZoneSubscriptionDetailsResponse4xx>> zoneSubscriptionDetails({required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionResponse, ZoneSubscriptionZoneSubscriptionDetailsResponse4xx>> zoneSubscriptionDetails({required Identifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create Zone Subscription
 ///
 /// Create a zone subscription, either plan or add-ons.
 ///
 /// `POST /zones/{zone_id}/subscription`
-Future<ApiResult<SubscriptionResponse, ZoneSubscriptionCreateZoneSubscriptionResponse4xx>> zoneSubscriptionCreateZoneSubscription({required Identifier zoneId, required Request2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionResponse, ZoneSubscriptionCreateZoneSubscriptionResponse4xx>> zoneSubscriptionCreateZoneSubscription({required Identifier zoneId, required Request2 body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update Zone Subscription
 ///
 /// Updates zone subscriptions, either plan or add-ons.
 ///
 /// `PUT /zones/{zone_id}/subscription`
-Future<ApiResult<SubscriptionResponse, ZoneSubscriptionUpdateZoneSubscriptionResponse4xx>> zoneSubscriptionUpdateZoneSubscription({required Identifier zoneId, required Request2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionResponse, ZoneSubscriptionUpdateZoneSubscriptionResponse4xx>> zoneSubscriptionUpdateZoneSubscription({required Identifier zoneId, required Request2 body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,5 +107,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

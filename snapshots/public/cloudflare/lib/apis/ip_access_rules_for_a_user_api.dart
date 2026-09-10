@@ -13,7 +13,7 @@ final class IpAccessRulesForAUserApi with ApiExecutor {const IpAccessRulesForAUs
 /// Fetches IP Access rules of the user. You can filter the results using several optional parameters.
 ///
 /// `GET /user/firewall/access_rules/rules`
-Future<ApiResult<List<FirewallRule>, IpAccessRulesForAUserListIpAccessRulesResponse4xx>> ipAccessRulesForAUserListIpAccessRules({FirewallSchemasMode? mode, IpAccessRulesForAUserListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAUserListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAUserListIpAccessRulesOrder? order, IpAccessRulesForAUserListIpAccessRulesDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<FirewallRule>, IpAccessRulesForAUserListIpAccessRulesResponse4xx>> ipAccessRulesForAUserListIpAccessRules({FirewallSchemasMode? mode, IpAccessRulesForAUserListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAUserListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAUserListIpAccessRulesOrder? order, IpAccessRulesForAUserListIpAccessRulesDirection? direction, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (mode != null) {
   queryParameters['mode'] = mode.toJson();
@@ -71,7 +71,7 @@ return null;
 
   },
 );
- } 
+}
 /// Create an IP Access rule
 ///
 /// Creates a new IP Access rule for all zones owned by the current user.
@@ -79,7 +79,7 @@ return null;
 /// Note: To create an IP Access rule that applies to a specific zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.
 ///
 /// `POST /user/firewall/access_rules/rules`
-Future<ApiResult<FirewallRule, IpAccessRulesForAUserCreateAnIpAccessRuleResponse4xx>> ipAccessRulesForAUserCreateAnIpAccessRule({required IpAccessRulesForAUserCreateAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallRule, IpAccessRulesForAUserCreateAnIpAccessRuleResponse4xx>> ipAccessRulesForAUserCreateAnIpAccessRule({required IpAccessRulesForAUserCreateAnIpAccessRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,13 +107,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update an IP Access rule
 ///
 /// Updates an IP Access rule defined at the user level. You can only update the rule action (`mode` parameter) and notes.
 ///
 /// `PATCH /user/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<FirewallRule, IpAccessRulesForAUserUpdateAnIpAccessRuleResponse4xx>> ipAccessRulesForAUserUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required IpAccessRulesForAUserUpdateAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallRule, IpAccessRulesForAUserUpdateAnIpAccessRuleResponse4xx>> ipAccessRulesForAUserUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required IpAccessRulesForAUserUpdateAnIpAccessRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -141,7 +141,7 @@ return null;
 
   },
 );
- } 
+}
 /// Delete an IP Access rule
 ///
 /// Deletes an IP Access rule at the user level.
@@ -149,7 +149,7 @@ return null;
 /// Note: Deleting a user-level rule will affect all zones owned by the user.
 ///
 /// `DELETE /user/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<FirewallRuleSingleIdResponseResult, IpAccessRulesForAUserDeleteAnIpAccessRuleResponse4xx>> ipAccessRulesForAUserDeleteAnIpAccessRule({required FirewallRuleIdentifier ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallRuleSingleIdResponseResult, IpAccessRulesForAUserDeleteAnIpAccessRuleResponse4xx>> ipAccessRulesForAUserDeleteAnIpAccessRule({required FirewallRuleIdentifier ruleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -175,5 +175,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

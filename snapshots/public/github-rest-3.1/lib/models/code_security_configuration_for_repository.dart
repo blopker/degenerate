@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_security_configuration.dart';/// The attachment status of the code security configuration on the repository.
 @immutable final class CodeSecurityConfigurationForRepositoryStatus {const CodeSecurityConfigurationForRepositoryStatus._(this.value);
 
-factory CodeSecurityConfigurationForRepositoryStatus.fromJson(String json) { return switch (json) {
+factory CodeSecurityConfigurationForRepositoryStatus.fromJson(String json) {return switch (json) {
   'attached' => attached,
   'attaching' => attaching,
   'detached' => detached,
@@ -13,7 +13,7 @@ factory CodeSecurityConfigurationForRepositoryStatus.fromJson(String json) { ret
   'updating' => updating,
   'removed_by_enterprise' => removedByEnterprise,
   _ => CodeSecurityConfigurationForRepositoryStatus._(json),
-}; }
+};}
 
 static const CodeSecurityConfigurationForRepositoryStatus attached = CodeSecurityConfigurationForRepositoryStatus._('attached');
 
@@ -35,40 +35,40 @@ static const List<CodeSecurityConfigurationForRepositoryStatus> values = [attach
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityConfigurationForRepositoryStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityConfigurationForRepositoryStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityConfigurationForRepositoryStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityConfigurationForRepositoryStatus($value)';}
+}
 /// Code security configuration associated with a repository and attachment status
 @immutable final class CodeSecurityConfigurationForRepository {const CodeSecurityConfigurationForRepository({this.status, this.configuration, });
 
-factory CodeSecurityConfigurationForRepository.fromJson(Map<String, dynamic> json) { return CodeSecurityConfigurationForRepository(
+factory CodeSecurityConfigurationForRepository.fromJson(Map<String, dynamic> json) {return CodeSecurityConfigurationForRepository(
   status: json['status'] != null ? CodeSecurityConfigurationForRepositoryStatus.fromJson(json['status'] as String) : null,
   configuration: json['configuration'] != null ? CodeSecurityConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The attachment status of the code security configuration on the repository.
 final CodeSecurityConfigurationForRepositoryStatus? status;
 
 final CodeSecurityConfiguration? configuration;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (status != null) 'status': status?.toJson(),
   if (configuration != null) 'configuration': configuration?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status', 'configuration'}.contains(key)); } 
-CodeSecurityConfigurationForRepository copyWith({CodeSecurityConfigurationForRepositoryStatus? Function()? status, CodeSecurityConfiguration? Function()? configuration, }) { return CodeSecurityConfigurationForRepository(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'status', 'configuration'}.contains(key));}
+CodeSecurityConfigurationForRepository copyWith({CodeSecurityConfigurationForRepositoryStatus? Function()? status, CodeSecurityConfiguration? Function()? configuration, }) {return CodeSecurityConfigurationForRepository(
   status: status != null ? status() : this.status,
   configuration: configuration != null ? configuration() : this.configuration,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeSecurityConfigurationForRepository &&
           status == other.status &&
-          configuration == other.configuration; } 
-@override int get hashCode { return Object.hash(status, configuration); } 
-@override String toString() { return 'CodeSecurityConfigurationForRepository(status: $status, configuration: $configuration)'; } 
- }
+          configuration == other.configuration;}
+@override int get hashCode {return Object.hash(status, configuration);}
+@override String toString() {return 'CodeSecurityConfigurationForRepository(status: $status, configuration: $configuration)';}
+}

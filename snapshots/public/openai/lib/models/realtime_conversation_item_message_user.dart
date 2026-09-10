@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item_message_user_content.dart';/// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
 @immutable final class RealtimeConversationItemMessageUserObject {const RealtimeConversationItemMessageUserObject._(this.value);
 
-factory RealtimeConversationItemMessageUserObject.fromJson(String json) { return switch (json) {
+factory RealtimeConversationItemMessageUserObject.fromJson(String json) {return switch (json) {
   'realtime.item' => realtimeItem,
   _ => RealtimeConversationItemMessageUserObject._(json),
-}; }
+};}
 
 static const RealtimeConversationItemMessageUserObject realtimeItem = RealtimeConversationItemMessageUserObject._('realtime.item');
 
@@ -14,23 +14,23 @@ static const List<RealtimeConversationItemMessageUserObject> values = [realtimeI
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemMessageUserObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMessageUserObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeConversationItemMessageUserObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeConversationItemMessageUserObject($value)';}
+}
 /// The status of the item. Has no effect on the conversation.
 @immutable final class RealtimeConversationItemMessageUserStatus {const RealtimeConversationItemMessageUserStatus._(this.value);
 
-factory RealtimeConversationItemMessageUserStatus.fromJson(String json) { return switch (json) {
+factory RealtimeConversationItemMessageUserStatus.fromJson(String json) {return switch (json) {
   'completed' => completed,
   'incomplete' => incomplete,
   'in_progress' => inProgress,
   _ => RealtimeConversationItemMessageUserStatus._(json),
-}; }
+};}
 
 static const RealtimeConversationItemMessageUserStatus completed = RealtimeConversationItemMessageUserStatus._('completed');
 
@@ -42,21 +42,21 @@ static const List<RealtimeConversationItemMessageUserStatus> values = [completed
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemMessageUserStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMessageUserStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeConversationItemMessageUserStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeConversationItemMessageUserStatus($value)';}
+}
 /// The role of the message sender. Always `user`.
 @immutable final class RealtimeConversationItemMessageUserRole {const RealtimeConversationItemMessageUserRole._(this.value);
 
-factory RealtimeConversationItemMessageUserRole.fromJson(String json) { return switch (json) {
+factory RealtimeConversationItemMessageUserRole.fromJson(String json) {return switch (json) {
   'user' => user,
   _ => RealtimeConversationItemMessageUserRole._(json),
-}; }
+};}
 
 static const RealtimeConversationItemMessageUserRole user = RealtimeConversationItemMessageUserRole._('user');
 
@@ -64,25 +64,25 @@ static const List<RealtimeConversationItemMessageUserRole> values = [user];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemMessageUserRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMessageUserRole($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeConversationItemMessageUserRole && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeConversationItemMessageUserRole($value)';}
+}
 /// A user message item in a Realtime conversation.
 @immutable final class RealtimeConversationItemMessageUser {const RealtimeConversationItemMessageUser({required this.type, required this.role, required this.content, this.id, this.object, this.status, });
 
-factory RealtimeConversationItemMessageUser.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageUser(
+factory RealtimeConversationItemMessageUser.fromJson(Map<String, dynamic> json) {return RealtimeConversationItemMessageUser(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeConversationItemMessageUserObject.fromJson(json['object'] as String) : null,
   type: json['type'] as String,
   status: json['status'] != null ? RealtimeConversationItemMessageUserStatus.fromJson(json['status'] as String) : null,
   role: RealtimeConversationItemMessageUserRole.fromJson(json['role'] as String),
   content: (json['content'] as List<dynamic>).map((e) => RealtimeConversationItemMessageUserContent.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The unique ID of the item. This may be provided by the client or generated by the server.
 final String? id;
@@ -102,33 +102,33 @@ final RealtimeConversationItemMessageUserRole role;
 /// The content of the message.
 final List<RealtimeConversationItemMessageUserContent> content;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (object != null) 'object': object?.toJson(),
   'type': type,
   if (status != null) 'status': status?.toJson(),
   'role': role.toJson(),
   'content': content.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('role') &&
-      json.containsKey('content'); } 
-RealtimeConversationItemMessageUser copyWith({String? Function()? id, RealtimeConversationItemMessageUserObject? Function()? object, String? type, RealtimeConversationItemMessageUserStatus? Function()? status, RealtimeConversationItemMessageUserRole? role, List<RealtimeConversationItemMessageUserContent>? content, }) { return RealtimeConversationItemMessageUser(
+      json.containsKey('content');}
+RealtimeConversationItemMessageUser copyWith({String? Function()? id, RealtimeConversationItemMessageUserObject? Function()? object, String? type, RealtimeConversationItemMessageUserStatus? Function()? status, RealtimeConversationItemMessageUserRole? role, List<RealtimeConversationItemMessageUserContent>? content, }) {return RealtimeConversationItemMessageUser(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   type: type ?? this.type,
   status: status != null ? status() : this.status,
   role: role ?? this.role,
   content: content ?? this.content,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeConversationItemMessageUser &&
           id == other.id &&
           object == other.object &&
           type == other.type &&
           status == other.status &&
           role == other.role &&
-          listEquals(content, other.content); } 
-@override int get hashCode { return Object.hash(id, object, type, status, role, Object.hashAll(content)); } 
-@override String toString() { return 'RealtimeConversationItemMessageUser(id: $id, object: $object, type: $type, status: $status, role: $role, content: $content)'; } 
- }
+          listEquals(content, other.content);}
+@override int get hashCode {return Object.hash(id, object, type, status, role, Object.hashAll(content));}
+@override String toString() {return 'RealtimeConversationItemMessageUser(id: $id, object: $object, type: $type, status: $status, role: $role, content: $content)';}
+}

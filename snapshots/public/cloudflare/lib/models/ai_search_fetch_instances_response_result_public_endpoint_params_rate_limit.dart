@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique {const AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique._(this.value);
 
-factory AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique.fromJson(String json) { return switch (json) {
+factory AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique.fromJson(String json) {return switch (json) {
   'fixed' => fixed,
   'sliding' => sliding,
   _ => AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique._(json),
-}; }
+};}
 
 static const AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique fixed = AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique._('fixed');
 
@@ -16,21 +16,21 @@ static const List<AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique($value)';}
+}
 @immutable final class AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit {const AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit({this.periodMs, this.requests, this.technique, });
 
-factory AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit.fromJson(Map<String, dynamic> json) { return AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit(
+factory AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit.fromJson(Map<String, dynamic> json) {return AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit(
   periodMs: json['period_ms'] != null ? (json['period_ms'] as num).toInt() : null,
   requests: json['requests'] != null ? (json['requests'] as num).toInt() : null,
   technique: json['technique'] != null ? AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique.fromJson(json['technique'] as String) : null,
-); }
+);}
 
 final int? periodMs;
 
@@ -38,22 +38,22 @@ final int? requests;
 
 final AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique? technique;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'period_ms': ?periodMs,
   'requests': ?requests,
   if (technique != null) 'technique': technique?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'period_ms', 'requests', 'technique'}.contains(key)); } 
-AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit copyWith({int? Function()? periodMs, int? Function()? requests, AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique? Function()? technique, }) { return AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'period_ms', 'requests', 'technique'}.contains(key));}
+AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit copyWith({int? Function()? periodMs, int? Function()? requests, AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique? Function()? technique, }) {return AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit(
   periodMs: periodMs != null ? periodMs() : this.periodMs,
   requests: requests != null ? requests() : this.requests,
   technique: technique != null ? technique() : this.technique,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit &&
           periodMs == other.periodMs &&
           requests == other.requests &&
-          technique == other.technique; } 
-@override int get hashCode { return Object.hash(periodMs, requests, technique); } 
-@override String toString() { return 'AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit(periodMs: $periodMs, requests: $requests, technique: $technique)'; } 
- }
+          technique == other.technique;}
+@override int get hashCode {return Object.hash(periodMs, requests, technique);}
+@override String toString() {return 'AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit(periodMs: $periodMs, requests: $requests, technique: $technique)';}
+}

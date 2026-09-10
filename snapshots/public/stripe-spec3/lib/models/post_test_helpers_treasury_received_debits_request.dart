@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_treasury_received_debits_request_initiating_payment_method_details.dart';/// Specifies the network rails to be used. If not set, will default to the PaymentMethod's preferred network. See the [docs](https://docs.stripe.com/treasury/money-movement/timelines) to learn more about money movement timelines for each network type.
 @immutable final class PostTestHelpersTreasuryReceivedDebitsRequestNetwork {const PostTestHelpersTreasuryReceivedDebitsRequestNetwork._(this.value);
 
-factory PostTestHelpersTreasuryReceivedDebitsRequestNetwork.fromJson(String json) { return switch (json) {
+factory PostTestHelpersTreasuryReceivedDebitsRequestNetwork.fromJson(String json) {return switch (json) {
   'ach' => ach,
   _ => PostTestHelpersTreasuryReceivedDebitsRequestNetwork._(json),
-}; }
+};}
 
 static const PostTestHelpersTreasuryReceivedDebitsRequestNetwork ach = PostTestHelpersTreasuryReceivedDebitsRequestNetwork._('ach');
 
@@ -14,17 +14,17 @@ static const List<PostTestHelpersTreasuryReceivedDebitsRequestNetwork> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersTreasuryReceivedDebitsRequestNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersTreasuryReceivedDebitsRequestNetwork($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersTreasuryReceivedDebitsRequestNetwork && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersTreasuryReceivedDebitsRequestNetwork($value)';}
+}
 @immutable final class PostTestHelpersTreasuryReceivedDebitsRequest {const PostTestHelpersTreasuryReceivedDebitsRequest({required this.amount, required this.currency, required this.financialAccount, required this.network, this.description, this.expand, this.initiatingPaymentMethodDetails, });
 
-factory PostTestHelpersTreasuryReceivedDebitsRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryReceivedDebitsRequest(
+factory PostTestHelpersTreasuryReceivedDebitsRequest.fromJson(Map<String, dynamic> json) {return PostTestHelpersTreasuryReceivedDebitsRequest(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
@@ -32,7 +32,7 @@ factory PostTestHelpersTreasuryReceivedDebitsRequest.fromJson(Map<String, dynami
   financialAccount: json['financial_account'] as String,
   initiatingPaymentMethodDetails: json['initiating_payment_method_details'] != null ? PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetails.fromJson(json['initiating_payment_method_details'] as Map<String, dynamic>) : null,
   network: PostTestHelpersTreasuryReceivedDebitsRequestNetwork.fromJson(json['network'] as String),
-); }
+);}
 
 /// Amount (in cents) to be transferred.
 final int amount;
@@ -55,7 +55,7 @@ final PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetails
 /// Specifies the network rails to be used. If not set, will default to the PaymentMethod's preferred network. See the [docs](https://docs.stripe.com/treasury/money-movement/timelines) to learn more about money movement timelines for each network type.
 final PostTestHelpersTreasuryReceivedDebitsRequestNetwork network;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   'description': ?description,
@@ -63,12 +63,12 @@ Map<String, dynamic> toJson() { return {
   'financial_account': financialAccount,
   if (initiatingPaymentMethodDetails != null) 'initiating_payment_method_details': initiatingPaymentMethodDetails?.toJson(),
   'network': network.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('financial_account') && json['financial_account'] is String &&
-      json.containsKey('network'); } 
-PostTestHelpersTreasuryReceivedDebitsRequest copyWith({int? amount, String? currency, String? Function()? description, List<String>? Function()? expand, String? financialAccount, PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetails? Function()? initiatingPaymentMethodDetails, PostTestHelpersTreasuryReceivedDebitsRequestNetwork? network, }) { return PostTestHelpersTreasuryReceivedDebitsRequest(
+      json.containsKey('network');}
+PostTestHelpersTreasuryReceivedDebitsRequest copyWith({int? amount, String? currency, String? Function()? description, List<String>? Function()? expand, String? financialAccount, PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetails? Function()? initiatingPaymentMethodDetails, PostTestHelpersTreasuryReceivedDebitsRequestNetwork? network, }) {return PostTestHelpersTreasuryReceivedDebitsRequest(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,
@@ -76,8 +76,8 @@ PostTestHelpersTreasuryReceivedDebitsRequest copyWith({int? amount, String? curr
   financialAccount: financialAccount ?? this.financialAccount,
   initiatingPaymentMethodDetails: initiatingPaymentMethodDetails != null ? initiatingPaymentMethodDetails() : this.initiatingPaymentMethodDetails,
   network: network ?? this.network,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersTreasuryReceivedDebitsRequest &&
           amount == other.amount &&
           currency == other.currency &&
@@ -85,7 +85,7 @@ PostTestHelpersTreasuryReceivedDebitsRequest copyWith({int? amount, String? curr
           listEquals(expand, other.expand) &&
           financialAccount == other.financialAccount &&
           initiatingPaymentMethodDetails == other.initiatingPaymentMethodDetails &&
-          network == other.network; } 
-@override int get hashCode { return Object.hash(amount, currency, description, Object.hashAll(expand ?? const []), financialAccount, initiatingPaymentMethodDetails, network); } 
-@override String toString() { return 'PostTestHelpersTreasuryReceivedDebitsRequest(amount: $amount, currency: $currency, description: $description, expand: $expand, financialAccount: $financialAccount, initiatingPaymentMethodDetails: $initiatingPaymentMethodDetails, network: $network)'; } 
- }
+          network == other.network;}
+@override int get hashCode {return Object.hash(amount, currency, description, Object.hashAll(expand ?? const []), financialAccount, initiatingPaymentMethodDetails, network);}
+@override String toString() {return 'PostTestHelpersTreasuryReceivedDebitsRequest(amount: $amount, currency: $currency, description: $description, expand: $expand, financialAccount: $financialAccount, initiatingPaymentMethodDetails: $initiatingPaymentMethodDetails, network: $network)';}
+}

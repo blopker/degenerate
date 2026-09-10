@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullRequestReviewCommentEventCommentLinksHtml {const PullRequestReviewCommentEventCommentLinksHtml({required this.href});
 
-factory PullRequestReviewCommentEventCommentLinksHtml.fromJson(Map<String, dynamic> json) { return PullRequestReviewCommentEventCommentLinksHtml(
+factory PullRequestReviewCommentEventCommentLinksHtml.fromJson(Map<String, dynamic> json) {return PullRequestReviewCommentEventCommentLinksHtml(
   href: json['href'] as String,
-); }
+);}
 
 final String href;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'href': href,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String; } 
-PullRequestReviewCommentEventCommentLinksHtml copyWith({String? href}) { return PullRequestReviewCommentEventCommentLinksHtml(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('href') && json['href'] is String;}
+PullRequestReviewCommentEventCommentLinksHtml copyWith({String? href}) {return PullRequestReviewCommentEventCommentLinksHtml(
   href: href ?? this.href,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PullRequestReviewCommentEventCommentLinksHtml &&
-          href == other.href; } 
-@override int get hashCode { return href.hashCode; } 
-@override String toString() { return 'PullRequestReviewCommentEventCommentLinksHtml(href: $href)'; } 
- }
+          href == other.href;}
+@override int get hashCode {return href.hashCode;}
+@override String toString() {return 'PullRequestReviewCommentEventCommentLinksHtml(href: $href)';}
+}

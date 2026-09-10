@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class WebhookEndpointObject {const WebhookEndpointObject._(this.value);
 
-factory WebhookEndpointObject.fromJson(String json) { return switch (json) {
+factory WebhookEndpointObject.fromJson(String json) {return switch (json) {
   'webhook_endpoint' => webhookEndpoint,
   _ => WebhookEndpointObject._(json),
-}; }
+};}
 
 static const WebhookEndpointObject webhookEndpoint = WebhookEndpointObject._('webhook_endpoint');
 
@@ -14,14 +14,14 @@ static const List<WebhookEndpointObject> values = [webhookEndpoint];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookEndpointObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookEndpointObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookEndpointObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookEndpointObject($value)';}
+}
 /// You can configure [webhook endpoints](https://docs.stripe.com/webhooks/) via the API to be
 /// notified about events that happen in your Stripe account or connected
 /// accounts.
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guide: [Setting up webhooks](https://docs.stripe.com/webhooks/configure)
 @immutable final class WebhookEndpoint {const WebhookEndpoint({required this.created, required this.enabledEvents, required this.id, required this.livemode, required this.metadata, required this.object, required this.status, required this.url, this.apiVersion = const Omittable.absent(), this.application = const Omittable.absent(), this.description = const Omittable.absent(), this.secret, });
 
-factory WebhookEndpoint.fromJson(Map<String, dynamic> json) { return WebhookEndpoint(
+factory WebhookEndpoint.fromJson(Map<String, dynamic> json) {return WebhookEndpoint(
   apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
   application: json.containsKey('application') ? Omittable(json['application'] as String?) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
@@ -44,7 +44,7 @@ factory WebhookEndpoint.fromJson(Map<String, dynamic> json) { return WebhookEndp
   secret: json['secret'] as String?,
   status: json['status'] as String,
   url: json['url'] as String,
-); }
+);}
 
 /// The API version events are rendered as for this webhook endpoint.
 final Omittable<String?> apiVersion;
@@ -82,7 +82,7 @@ final String status;
 /// The URL of the webhook endpoint.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (apiVersion.isPresent) 'api_version': apiVersion.value,
   if (application.isPresent) 'application': application.value,
   'created': created,
@@ -95,16 +95,16 @@ Map<String, dynamic> toJson() { return {
   'secret': ?secret,
   'status': status,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('enabled_events') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookEndpoint copyWith({Omittable<String?>? apiVersion, Omittable<String?>? application, int? created, Omittable<String?>? description, List<String>? enabledEvents, String? id, bool? livemode, Map<String,String>? metadata, WebhookEndpointObject? object, String? Function()? secret, String? status, String? url, }) { return WebhookEndpoint(
+      json.containsKey('url') && json['url'] is String;}
+WebhookEndpoint copyWith({Omittable<String?>? apiVersion, Omittable<String?>? application, int? created, Omittable<String?>? description, List<String>? enabledEvents, String? id, bool? livemode, Map<String,String>? metadata, WebhookEndpointObject? object, String? Function()? secret, String? status, String? url, }) {return WebhookEndpoint(
   apiVersion: apiVersion ?? this.apiVersion,
   application: application ?? this.application,
   created: created ?? this.created,
@@ -117,8 +117,8 @@ WebhookEndpoint copyWith({Omittable<String?>? apiVersion, Omittable<String?>? ap
   secret: secret != null ? secret() : this.secret,
   status: status ?? this.status,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookEndpoint &&
           apiVersion == other.apiVersion &&
           application == other.application &&
@@ -131,7 +131,7 @@ WebhookEndpoint copyWith({Omittable<String?>? apiVersion, Omittable<String?>? ap
           object == other.object &&
           secret == other.secret &&
           status == other.status &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(apiVersion, application, created, description, Object.hashAll(enabledEvents), id, livemode, metadata, object, secret, status, url); } 
-@override String toString() { return 'WebhookEndpoint(apiVersion: $apiVersion, application: $application, created: $created, description: $description, enabledEvents: $enabledEvents, id: $id, livemode: $livemode, metadata: $metadata, object: $object, secret: $secret, status: $status, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(apiVersion, application, created, description, Object.hashAll(enabledEvents), id, livemode, metadata, object, secret, status, url);}
+@override String toString() {return 'WebhookEndpoint(apiVersion: $apiVersion, application: $application, created: $created, description: $description, enabledEvents: $enabledEvents, id: $id, livemode: $livemode, metadata: $metadata, object: $object, secret: $secret, status: $status, url: $url)';}
+}

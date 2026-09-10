@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileCommitCommitTree {const FileCommitCommitTree({this.url, this.sha, });
 
-factory FileCommitCommitTree.fromJson(Map<String, dynamic> json) { return FileCommitCommitTree(
+factory FileCommitCommitTree.fromJson(Map<String, dynamic> json) {return FileCommitCommitTree(
   url: json['url'] as String?,
   sha: json['sha'] as String?,
-); }
+);}
 
 final String? url;
 
 final String? sha;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': ?url,
   'sha': ?sha,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url', 'sha'}.contains(key)); } 
-FileCommitCommitTree copyWith({String? Function()? url, String? Function()? sha, }) { return FileCommitCommitTree(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'url', 'sha'}.contains(key));}
+FileCommitCommitTree copyWith({String? Function()? url, String? Function()? sha, }) {return FileCommitCommitTree(
   url: url != null ? url() : this.url,
   sha: sha != null ? sha() : this.sha,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FileCommitCommitTree &&
           url == other.url &&
-          sha == other.sha; } 
-@override int get hashCode { return Object.hash(url, sha); } 
-@override String toString() { return 'FileCommitCommitTree(url: $url, sha: $sha)'; } 
- }
+          sha == other.sha;}
+@override int get hashCode {return Object.hash(url, sha);}
+@override String toString() {return 'FileCommitCommitTree(url: $url, sha: $sha)';}
+}

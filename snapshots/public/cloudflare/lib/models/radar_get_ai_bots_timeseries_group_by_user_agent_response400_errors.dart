@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAiBotsTimeseriesGroupByUserAgentResponse400Errors {const RadarGetAiBotsTimeseriesGroupByUserAgentResponse400Errors({required this.message});
 
-factory RadarGetAiBotsTimeseriesGroupByUserAgentResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetAiBotsTimeseriesGroupByUserAgentResponse400Errors(
+factory RadarGetAiBotsTimeseriesGroupByUserAgentResponse400Errors.fromJson(Map<String, dynamic> json) {return RadarGetAiBotsTimeseriesGroupByUserAgentResponse400Errors(
   message: json['message'] as String,
-); }
+);}
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-RadarGetAiBotsTimeseriesGroupByUserAgentResponse400Errors copyWith({String? message}) { return RadarGetAiBotsTimeseriesGroupByUserAgentResponse400Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+RadarGetAiBotsTimeseriesGroupByUserAgentResponse400Errors copyWith({String? message}) {return RadarGetAiBotsTimeseriesGroupByUserAgentResponse400Errors(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetAiBotsTimeseriesGroupByUserAgentResponse400Errors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'RadarGetAiBotsTimeseriesGroupByUserAgentResponse400Errors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'RadarGetAiBotsTimeseriesGroupByUserAgentResponse400Errors(message: $message)';}
+}

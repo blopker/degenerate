@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError {const SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError();
 
 /// Decodes the payload for its declared status and content type.
-static SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError parse(ApiResponse response) { switch (response.statusCode) {
+static SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -30,47 +30,47 @@ return SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError422(ValidationEr
 default:
 return SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError400ApplicationJson extends SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError {const SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError400ApplicationJson(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 400 (application/scim+json).
 final class SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError400ApplicationScimJson extends SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError {const SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError400ApplicationScimJson(this.data);
 
 /// The decoded response payload.
 final ScimError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError403 extends SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError {const SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError404 extends SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError {const SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError422 extends SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError {const SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestErrorUnknown extends SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError {const SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

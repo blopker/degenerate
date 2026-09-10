@@ -38,14 +38,14 @@ bool toJson() => value;
 /// Show the state of your account, and the type or configuration error.
 @immutable final class EmailEmailSettingStatus {const EmailEmailSettingStatus._(this.value);
 
-factory EmailEmailSettingStatus.fromJson(String json) { return switch (json) {
+factory EmailEmailSettingStatus.fromJson(String json) {return switch (json) {
   'ready' => ready,
   'unconfigured' => unconfigured,
   'misconfigured' => misconfigured,
   'misconfigured/locked' => misconfiguredLocked,
   'unlocked' => unlocked,
   _ => EmailEmailSettingStatus._(json),
-}; }
+};}
 
 static const EmailEmailSettingStatus ready = EmailEmailSettingStatus._('ready');
 
@@ -61,14 +61,14 @@ static const List<EmailEmailSettingStatus> values = [ready, unconfigured, miscon
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailEmailSettingStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailEmailSettingStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailEmailSettingStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailEmailSettingStatus($value)';}
+}
 /// Email Routing settings tag. (Deprecated, replaced by Email Routing settings identifier)
 extension type const EmailEmailSettingTag(String value) {
 factory EmailEmailSettingTag.fromJson(String json) => EmailEmailSettingTag(json);
@@ -78,7 +78,7 @@ String toJson() => value;
 }
 @immutable final class EmailEmailSettingsProperties {const EmailEmailSettingsProperties({required this.enabled, required this.id, required this.name, this.created, this.modified, this.skipWizard, this.status, this.tag, });
 
-factory EmailEmailSettingsProperties.fromJson(Map<String, dynamic> json) { return EmailEmailSettingsProperties(
+factory EmailEmailSettingsProperties.fromJson(Map<String, dynamic> json) {return EmailEmailSettingsProperties(
   created: json['created'] != null ? EmailEmailSettingCreated.fromJson(json['created'] as String) : null,
   enabled: EmailEmailSettingEnabled.fromJson(json['enabled'] as bool),
   id: EmailEmailSettingIdentifier.fromJson(json['id'] as String),
@@ -87,7 +87,7 @@ factory EmailEmailSettingsProperties.fromJson(Map<String, dynamic> json) { retur
   skipWizard: json['skip_wizard'] != null ? EmailEmailSettingSkipWizard.fromJson(json['skip_wizard'] as bool) : null,
   status: json['status'] != null ? EmailEmailSettingStatus.fromJson(json['status'] as String) : null,
   tag: json['tag'] != null ? EmailEmailSettingTag.fromJson(json['tag'] as String) : null,
-); }
+);}
 
 /// The date and time the settings have been created.
 final EmailEmailSettingCreated? created;
@@ -113,7 +113,7 @@ final EmailEmailSettingStatus? status;
 /// Email Routing settings tag. (Deprecated, replaced by Email Routing settings identifier)
 final EmailEmailSettingTag? tag;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (created != null) 'created': created?.toJson(),
   'enabled': enabled.toJson(),
   'id': id.toJson(),
@@ -122,11 +122,11 @@ Map<String, dynamic> toJson() { return {
   if (skipWizard != null) 'skip_wizard': skipWizard?.toJson(),
   if (status != null) 'status': status?.toJson(),
   if (tag != null) 'tag': tag?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') &&
       json.containsKey('id') &&
-      json.containsKey('name'); } 
-EmailEmailSettingsProperties copyWith({EmailEmailSettingCreated? Function()? created, EmailEmailSettingEnabled? enabled, EmailEmailSettingIdentifier? id, EmailEmailSettingModified? Function()? modified, EmailEmailSettingName? name, EmailEmailSettingSkipWizard? Function()? skipWizard, EmailEmailSettingStatus? Function()? status, EmailEmailSettingTag? Function()? tag, }) { return EmailEmailSettingsProperties(
+      json.containsKey('name');}
+EmailEmailSettingsProperties copyWith({EmailEmailSettingCreated? Function()? created, EmailEmailSettingEnabled? enabled, EmailEmailSettingIdentifier? id, EmailEmailSettingModified? Function()? modified, EmailEmailSettingName? name, EmailEmailSettingSkipWizard? Function()? skipWizard, EmailEmailSettingStatus? Function()? status, EmailEmailSettingTag? Function()? tag, }) {return EmailEmailSettingsProperties(
   created: created != null ? created() : this.created,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
@@ -135,8 +135,8 @@ EmailEmailSettingsProperties copyWith({EmailEmailSettingCreated? Function()? cre
   skipWizard: skipWizard != null ? skipWizard() : this.skipWizard,
   status: status != null ? status() : this.status,
   tag: tag != null ? tag() : this.tag,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailEmailSettingsProperties &&
           created == other.created &&
           enabled == other.enabled &&
@@ -145,7 +145,7 @@ EmailEmailSettingsProperties copyWith({EmailEmailSettingCreated? Function()? cre
           name == other.name &&
           skipWizard == other.skipWizard &&
           status == other.status &&
-          tag == other.tag; } 
-@override int get hashCode { return Object.hash(created, enabled, id, modified, name, skipWizard, status, tag); } 
-@override String toString() { return 'EmailEmailSettingsProperties(created: $created, enabled: $enabled, id: $id, modified: $modified, name: $name, skipWizard: $skipWizard, status: $status, tag: $tag)'; } 
- }
+          tag == other.tag;}
+@override int get hashCode {return Object.hash(created, enabled, id, modified, name, skipWizard, status, tag);}
+@override String toString() {return 'EmailEmailSettingsProperties(created: $created, enabled: $enabled, id: $id, modified: $modified, name: $name, skipWizard: $skipWizard, status: $status, tag: $tag)';}
+}

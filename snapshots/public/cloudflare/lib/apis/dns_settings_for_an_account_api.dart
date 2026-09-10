@@ -13,7 +13,7 @@ final class DnsSettingsForAnAccountApi with ApiExecutor {const DnsSettingsForAnA
 /// Show DNS settings for an account
 ///
 /// `GET /accounts/{account_id}/dns_settings`
-Future<ApiResult<DnsSettingsAccountSettings, DnsSettingsForAnAccountListDnsSettingsResponse4xx>> dnsSettingsForAnAccountListDnsSettings({required DnsSettingsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsAccountSettings, DnsSettingsForAnAccountListDnsSettingsResponse4xx>> dnsSettingsForAnAccountListDnsSettings({required DnsSettingsIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update DNS Settings
 ///
 /// Update DNS settings for an account
 ///
 /// `PATCH /accounts/{account_id}/dns_settings`
-Future<ApiResult<DnsSettingsAccountSettings, DnsSettingsForAnAccountUpdateDnsSettingsResponse4xx>> dnsSettingsForAnAccountUpdateDnsSettings({required DnsSettingsIdentifier accountId, required DnsSettingsAccountSettingsPatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsAccountSettings, DnsSettingsForAnAccountUpdateDnsSettingsResponse4xx>> dnsSettingsForAnAccountUpdateDnsSettings({required DnsSettingsIdentifier accountId, required DnsSettingsAccountSettingsPatch body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,5 +73,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

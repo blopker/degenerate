@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateAddressRequest {const UpdateAddressRequest({this.friendlyName, this.customerName, this.street, this.city, this.region, this.postalCode, this.emergencyEnabled, this.autoCorrectAddress, this.streetSecondary, });
 
-factory UpdateAddressRequest.fromJson(Map<String, dynamic> json) { return UpdateAddressRequest(
+factory UpdateAddressRequest.fromJson(Map<String, dynamic> json) {return UpdateAddressRequest(
   friendlyName: json['FriendlyName'] as String?,
   customerName: json['CustomerName'] as String?,
   street: json['Street'] as String?,
@@ -12,7 +12,7 @@ factory UpdateAddressRequest.fromJson(Map<String, dynamic> json) { return Update
   emergencyEnabled: json['EmergencyEnabled'] as bool?,
   autoCorrectAddress: json['AutoCorrectAddress'] as bool?,
   streetSecondary: json['StreetSecondary'] as String?,
-); }
+);}
 
 /// A descriptive string that you create to describe the new address. It can be up to 64 characters long for Regulatory Compliance addresses and 32 characters long for Emergency addresses.
 final String? friendlyName;
@@ -41,7 +41,7 @@ final bool? autoCorrectAddress;
 /// The additional number and street address of the address.
 final String? streetSecondary;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'FriendlyName': ?friendlyName,
   'CustomerName': ?customerName,
   'Street': ?street,
@@ -51,9 +51,9 @@ Map<String, dynamic> toJson() { return {
   'EmergencyEnabled': ?emergencyEnabled,
   'AutoCorrectAddress': ?autoCorrectAddress,
   'StreetSecondary': ?streetSecondary,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'FriendlyName', 'CustomerName', 'Street', 'City', 'Region', 'PostalCode', 'EmergencyEnabled', 'AutoCorrectAddress', 'StreetSecondary'}.contains(key)); } 
-UpdateAddressRequest copyWith({String? Function()? friendlyName, String? Function()? customerName, String? Function()? street, String? Function()? city, String? Function()? region, String? Function()? postalCode, bool? Function()? emergencyEnabled, bool? Function()? autoCorrectAddress, String? Function()? streetSecondary, }) { return UpdateAddressRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'FriendlyName', 'CustomerName', 'Street', 'City', 'Region', 'PostalCode', 'EmergencyEnabled', 'AutoCorrectAddress', 'StreetSecondary'}.contains(key));}
+UpdateAddressRequest copyWith({String? Function()? friendlyName, String? Function()? customerName, String? Function()? street, String? Function()? city, String? Function()? region, String? Function()? postalCode, bool? Function()? emergencyEnabled, bool? Function()? autoCorrectAddress, String? Function()? streetSecondary, }) {return UpdateAddressRequest(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   customerName: customerName != null ? customerName() : this.customerName,
   street: street != null ? street() : this.street,
@@ -63,8 +63,8 @@ UpdateAddressRequest copyWith({String? Function()? friendlyName, String? Functio
   emergencyEnabled: emergencyEnabled != null ? emergencyEnabled() : this.emergencyEnabled,
   autoCorrectAddress: autoCorrectAddress != null ? autoCorrectAddress() : this.autoCorrectAddress,
   streetSecondary: streetSecondary != null ? streetSecondary() : this.streetSecondary,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UpdateAddressRequest &&
           friendlyName == other.friendlyName &&
           customerName == other.customerName &&
@@ -74,7 +74,7 @@ UpdateAddressRequest copyWith({String? Function()? friendlyName, String? Functio
           postalCode == other.postalCode &&
           emergencyEnabled == other.emergencyEnabled &&
           autoCorrectAddress == other.autoCorrectAddress &&
-          streetSecondary == other.streetSecondary; } 
-@override int get hashCode { return Object.hash(friendlyName, customerName, street, city, region, postalCode, emergencyEnabled, autoCorrectAddress, streetSecondary); } 
-@override String toString() { return 'UpdateAddressRequest(friendlyName: $friendlyName, customerName: $customerName, street: $street, city: $city, region: $region, postalCode: $postalCode, emergencyEnabled: $emergencyEnabled, autoCorrectAddress: $autoCorrectAddress, streetSecondary: $streetSecondary)'; } 
- }
+          streetSecondary == other.streetSecondary;}
+@override int get hashCode {return Object.hash(friendlyName, customerName, street, city, region, postalCode, emergencyEnabled, autoCorrectAddress, streetSecondary);}
+@override String toString() {return 'UpdateAddressRequest(friendlyName: $friendlyName, customerName: $customerName, street: $street, city: $city, region: $region, postalCode: $postalCode, emergencyEnabled: $emergencyEnabled, autoCorrectAddress: $autoCorrectAddress, streetSecondary: $streetSecondary)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_meta_deleted_hook_config.dart';@immutable final class WebhookMetaDeletedHookEvents {const WebhookMetaDeletedHookEvents._(this.value);
 
-factory WebhookMetaDeletedHookEvents.fromJson(String json) { return switch (json) {
+factory WebhookMetaDeletedHookEvents.fromJson(String json) {return switch (json) {
   '*' => $empty,
   'branch_protection_rule' => branchProtectionRule,
   'check_run' => checkRun,
@@ -56,7 +56,7 @@ factory WebhookMetaDeletedHookEvents.fromJson(String json) { return switch (json
   'repository_dispatch' => repositoryDispatch,
   'projects_v2_item' => projectsV2Item,
   _ => WebhookMetaDeletedHookEvents._(json),
-}; }
+};}
 
 static const WebhookMetaDeletedHookEvents $empty = WebhookMetaDeletedHookEvents._('*');
 
@@ -166,18 +166,18 @@ static const List<WebhookMetaDeletedHookEvents> values = [$empty, branchProtecti
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMetaDeletedHookEvents && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMetaDeletedHookEvents($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookMetaDeletedHookEvents && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookMetaDeletedHookEvents($value)';}
+}
 /// The deleted webhook. This will contain different keys based on the type of webhook it is: repository, organization, business, app, or GitHub Marketplace.
 @immutable final class WebhookMetaDeletedHook {const WebhookMetaDeletedHook({required this.active, required this.config, required this.createdAt, required this.events, required this.id, required this.name, required this.type, required this.updatedAt, });
 
-factory WebhookMetaDeletedHook.fromJson(Map<String, dynamic> json) { return WebhookMetaDeletedHook(
+factory WebhookMetaDeletedHook.fromJson(Map<String, dynamic> json) {return WebhookMetaDeletedHook(
   active: json['active'] as bool,
   config: WebhookMetaDeletedHookConfig.fromJson(json['config'] as Map<String, dynamic>),
   createdAt: json['created_at'] as String,
@@ -186,7 +186,7 @@ factory WebhookMetaDeletedHook.fromJson(Map<String, dynamic> json) { return Webh
   name: json['name'] as String,
   type: json['type'] as String,
   updatedAt: json['updated_at'] as String,
-); }
+);}
 
 final bool active;
 
@@ -205,7 +205,7 @@ final String type;
 
 final String updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active,
   'config': config.toJson(),
   'created_at': createdAt,
@@ -214,16 +214,16 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'type': type,
   'updated_at': updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('config') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('events') &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookMetaDeletedHook copyWith({bool? active, WebhookMetaDeletedHookConfig? config, String? createdAt, List<WebhookMetaDeletedHookEvents>? events, int? id, String? name, String? type, String? updatedAt, }) { return WebhookMetaDeletedHook(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+WebhookMetaDeletedHook copyWith({bool? active, WebhookMetaDeletedHookConfig? config, String? createdAt, List<WebhookMetaDeletedHookEvents>? events, int? id, String? name, String? type, String? updatedAt, }) {return WebhookMetaDeletedHook(
   active: active ?? this.active,
   config: config ?? this.config,
   createdAt: createdAt ?? this.createdAt,
@@ -232,8 +232,8 @@ WebhookMetaDeletedHook copyWith({bool? active, WebhookMetaDeletedHookConfig? con
   name: name ?? this.name,
   type: type ?? this.type,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookMetaDeletedHook &&
           active == other.active &&
           config == other.config &&
@@ -242,7 +242,7 @@ WebhookMetaDeletedHook copyWith({bool? active, WebhookMetaDeletedHookConfig? con
           id == other.id &&
           name == other.name &&
           type == other.type &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(active, config, createdAt, Object.hashAll(events), id, name, type, updatedAt); } 
-@override String toString() { return 'WebhookMetaDeletedHook(active: $active, config: $config, createdAt: $createdAt, events: $events, id: $id, name: $name, type: $type, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(active, config, createdAt, Object.hashAll(events), id, name, type, updatedAt);}
+@override String toString() {return 'WebhookMetaDeletedHook(active: $active, config: $config, createdAt: $createdAt, events: $events, id: $id, name: $name, type: $type, updatedAt: $updatedAt)';}
+}

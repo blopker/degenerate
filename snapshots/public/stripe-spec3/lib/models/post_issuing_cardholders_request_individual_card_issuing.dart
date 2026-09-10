@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cardholders_request_individual_card_issuing_user_terms_acceptance.dart';@immutable final class PostIssuingCardholdersRequestIndividualCardIssuing {const PostIssuingCardholdersRequestIndividualCardIssuing({this.userTermsAcceptance});
 
-factory PostIssuingCardholdersRequestIndividualCardIssuing.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersRequestIndividualCardIssuing(
+factory PostIssuingCardholdersRequestIndividualCardIssuing.fromJson(Map<String, dynamic> json) {return PostIssuingCardholdersRequestIndividualCardIssuing(
   userTermsAcceptance: json['user_terms_acceptance'] != null ? PostIssuingCardholdersRequestIndividualCardIssuingUserTermsAcceptance.fromJson(json['user_terms_acceptance'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostIssuingCardholdersRequestIndividualCardIssuingUserTermsAcceptance? userTermsAcceptance;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (userTermsAcceptance != null) 'user_terms_acceptance': userTermsAcceptance?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'user_terms_acceptance'}.contains(key)); } 
-PostIssuingCardholdersRequestIndividualCardIssuing copyWith({PostIssuingCardholdersRequestIndividualCardIssuingUserTermsAcceptance? Function()? userTermsAcceptance}) { return PostIssuingCardholdersRequestIndividualCardIssuing(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'user_terms_acceptance'}.contains(key));}
+PostIssuingCardholdersRequestIndividualCardIssuing copyWith({PostIssuingCardholdersRequestIndividualCardIssuingUserTermsAcceptance? Function()? userTermsAcceptance}) {return PostIssuingCardholdersRequestIndividualCardIssuing(
   userTermsAcceptance: userTermsAcceptance != null ? userTermsAcceptance() : this.userTermsAcceptance,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostIssuingCardholdersRequestIndividualCardIssuing &&
-          userTermsAcceptance == other.userTermsAcceptance; } 
-@override int get hashCode { return userTermsAcceptance.hashCode; } 
-@override String toString() { return 'PostIssuingCardholdersRequestIndividualCardIssuing(userTermsAcceptance: $userTermsAcceptance)'; } 
- }
+          userTermsAcceptance == other.userTermsAcceptance;}
+@override int get hashCode {return userTermsAcceptance.hashCode;}
+@override String toString() {return 'PostIssuingCardholdersRequestIndividualCardIssuing(userTermsAcceptance: $userTermsAcceptance)';}
+}

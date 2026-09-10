@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_tools_code.dart';import 'assistant_tools_file_search.dart';import 'assistant_tools_function.dart';import 'assistants_named_tool_choice.dart';import 'parallel_tool_calls.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_option.dart';import 'response_format_text.dart';import 'run_completion_usage.dart';import 'run_object_incomplete_details.dart';import 'run_object_last_error.dart';import 'run_object_required_action.dart';import 'run_object_tools.dart';import 'tool_choice_option.dart';import 'truncation_object.dart';/// The object type, which is always `thread.run`.
 @immutable final class RunObjectObject {const RunObjectObject._(this.value);
 
-factory RunObjectObject.fromJson(String json) { return switch (json) {
+factory RunObjectObject.fromJson(String json) {return switch (json) {
   'thread.run' => threadRun,
   _ => RunObjectObject._(json),
-}; }
+};}
 
 static const RunObjectObject threadRun = RunObjectObject._('thread.run');
 
@@ -14,18 +14,18 @@ static const List<RunObjectObject> values = [threadRun];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunObjectObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunObjectObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RunObjectObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RunObjectObject($value)';}
+}
 /// The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, `incomplete`, or `expired`.
 @immutable final class RunObjectStatus {const RunObjectStatus._(this.value);
 
-factory RunObjectStatus.fromJson(String json) { return switch (json) {
+factory RunObjectStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'in_progress' => inProgress,
   'requires_action' => requiresAction,
@@ -36,7 +36,7 @@ factory RunObjectStatus.fromJson(String json) { return switch (json) {
   'incomplete' => incomplete,
   'expired' => expired,
   _ => RunObjectStatus._(json),
-}; }
+};}
 
 static const RunObjectStatus queued = RunObjectStatus._('queued');
 
@@ -60,18 +60,18 @@ static const List<RunObjectStatus> values = [queued, inProgress, requiresAction,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunObjectStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunObjectStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RunObjectStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RunObjectStatus($value)';}
+}
 /// Represents an execution run on a [thread](/docs/api-reference/threads).
 @immutable final class RunObject {const RunObject({required this.id, required this.object, required this.createdAt, required this.threadId, required this.assistantId, required this.status, required this.requiredAction, required this.lastError, required this.expiresAt, required this.startedAt, required this.cancelledAt, required this.failedAt, required this.completedAt, required this.incompleteDetails, required this.model, required this.instructions, required this.tools, required this.metadata, required this.usage, required this.maxPromptTokens, required this.maxCompletionTokens, required this.truncationStrategy, required this.toolChoice, required this.parallelToolCalls, required this.responseFormat, this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), });
 
-factory RunObject.fromJson(Map<String, dynamic> json) { return RunObject(
+factory RunObject.fromJson(Map<String, dynamic> json) {return RunObject(
   id: json['id'] as String,
   object: RunObjectObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
@@ -99,7 +99,7 @@ factory RunObject.fromJson(Map<String, dynamic> json) { return RunObject(
   toolChoice: json['tool_choice'] != null ? OneOf2.parse(json['tool_choice'], fromA: (v) => ToolChoiceOptionVariant1.fromJson(v as String), fromB: (v) => AssistantsNamedToolChoice.fromJson(v as Map<String, dynamic>),) : null,
   parallelToolCalls: ParallelToolCalls.fromJson(json['parallel_tool_calls'] as bool),
   responseFormat: json['response_format'] != null ? OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),) : null,
-); }
+);}
 
 /// The identifier, which can be referenced in API endpoints.
 final String id;
@@ -186,7 +186,7 @@ final ParallelToolCalls parallelToolCalls;
 
 final ResponseFormatOption? responseFormat;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'created_at': createdAt,
@@ -214,8 +214,8 @@ Map<String, dynamic> toJson() { return {
   'tool_choice': toolChoice?.toJson(),
   'parallel_tool_calls': parallelToolCalls.toJson(),
   'response_format': responseFormat?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('thread_id') && json['thread_id'] is String &&
@@ -239,8 +239,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('truncation_strategy') &&
       json.containsKey('tool_choice') &&
       json.containsKey('parallel_tool_calls') &&
-      json.containsKey('response_format'); } 
-RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String? threadId, String? assistantId, RunObjectStatus? status, RunObjectRequiredAction? Function()? requiredAction, RunObjectLastError? Function()? lastError, int? Function()? expiresAt, int? Function()? startedAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, RunObjectIncompleteDetails? Function()? incompleteDetails, String? model, String? instructions, List<RunObjectTools>? tools, Map<String, String>? Function()? metadata, RunCompletionUsage? Function()? usage, Omittable<double?>? temperature, Omittable<double?>? topP, int? Function()? maxPromptTokens, int? Function()? maxCompletionTokens, TruncationObject? Function()? truncationStrategy, ToolChoiceOption? Function()? toolChoice, ParallelToolCalls? parallelToolCalls, ResponseFormatOption? Function()? responseFormat, }) { return RunObject(
+      json.containsKey('response_format');}
+RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String? threadId, String? assistantId, RunObjectStatus? status, RunObjectRequiredAction? Function()? requiredAction, RunObjectLastError? Function()? lastError, int? Function()? expiresAt, int? Function()? startedAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, RunObjectIncompleteDetails? Function()? incompleteDetails, String? model, String? instructions, List<RunObjectTools>? tools, Map<String, String>? Function()? metadata, RunCompletionUsage? Function()? usage, Omittable<double?>? temperature, Omittable<double?>? topP, int? Function()? maxPromptTokens, int? Function()? maxCompletionTokens, TruncationObject? Function()? truncationStrategy, ToolChoiceOption? Function()? toolChoice, ParallelToolCalls? parallelToolCalls, ResponseFormatOption? Function()? responseFormat, }) {return RunObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
@@ -268,8 +268,8 @@ RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String?
   toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
   parallelToolCalls: parallelToolCalls ?? this.parallelToolCalls,
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RunObject &&
           id == other.id &&
           object == other.object &&
@@ -297,7 +297,7 @@ RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String?
           truncationStrategy == other.truncationStrategy &&
           toolChoice == other.toolChoice &&
           parallelToolCalls == other.parallelToolCalls &&
-          responseFormat == other.responseFormat; } 
-@override int get hashCode { return Object.hashAll([id, object, createdAt, threadId, assistantId, status, requiredAction, lastError, expiresAt, startedAt, cancelledAt, failedAt, completedAt, incompleteDetails, model, instructions, Object.hashAll(tools), metadata, usage, temperature, topP, maxPromptTokens, maxCompletionTokens, truncationStrategy, toolChoice, parallelToolCalls, responseFormat]); } 
-@override String toString() { return 'RunObject(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, assistantId: $assistantId, status: $status, requiredAction: $requiredAction, lastError: $lastError, expiresAt: $expiresAt, startedAt: $startedAt, cancelledAt: $cancelledAt, failedAt: $failedAt, completedAt: $completedAt, incompleteDetails: $incompleteDetails, model: $model, instructions: $instructions, tools: $tools, metadata: $metadata, usage: $usage, temperature: $temperature, topP: $topP, maxPromptTokens: $maxPromptTokens, maxCompletionTokens: $maxCompletionTokens, truncationStrategy: $truncationStrategy, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, responseFormat: $responseFormat)'; } 
- }
+          responseFormat == other.responseFormat;}
+@override int get hashCode {return Object.hashAll([id, object, createdAt, threadId, assistantId, status, requiredAction, lastError, expiresAt, startedAt, cancelledAt, failedAt, completedAt, incompleteDetails, model, instructions, Object.hashAll(tools), metadata, usage, temperature, topP, maxPromptTokens, maxCompletionTokens, truncationStrategy, toolChoice, parallelToolCalls, responseFormat]);}
+@override String toString() {return 'RunObject(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, assistantId: $assistantId, status: $status, requiredAction: $requiredAction, lastError: $lastError, expiresAt: $expiresAt, startedAt: $startedAt, cancelledAt: $cancelledAt, failedAt: $failedAt, completedAt: $completedAt, incompleteDetails: $incompleteDetails, model: $model, instructions: $instructions, tools: $tools, metadata: $metadata, usage: $usage, temperature: $temperature, topP: $topP, maxPromptTokens: $maxPromptTokens, maxCompletionTokens: $maxCompletionTokens, truncationStrategy: $truncationStrategy, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, responseFormat: $responseFormat)';}
+}

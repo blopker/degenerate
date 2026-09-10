@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretsStoreSystemSecretsListDirection {const SecretsStoreSystemSecretsListDirection._(this.value);
 
-factory SecretsStoreSystemSecretsListDirection.fromJson(String json) { return switch (json) {
+factory SecretsStoreSystemSecretsListDirection.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   _ => SecretsStoreSystemSecretsListDirection._(json),
-}; }
+};}
 
 static const SecretsStoreSystemSecretsListDirection asc = SecretsStoreSystemSecretsListDirection._('asc');
 
@@ -16,11 +16,11 @@ static const List<SecretsStoreSystemSecretsListDirection> values = [asc, desc];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecretsStoreSystemSecretsListDirection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecretsStoreSystemSecretsListDirection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SecretsStoreSystemSecretsListDirection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SecretsStoreSystemSecretsListDirection($value)';}
+}

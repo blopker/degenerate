@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vector_store_file_content_response_data.dart';/// The object type, which is always `vector_store.file_content.page`
 @immutable final class VectorStoreFileContentResponseObject {const VectorStoreFileContentResponseObject._(this.value);
 
-factory VectorStoreFileContentResponseObject.fromJson(String json) { return switch (json) {
+factory VectorStoreFileContentResponseObject.fromJson(String json) {return switch (json) {
   'vector_store.file_content.page' => vectorStoreFileContentPage,
   _ => VectorStoreFileContentResponseObject._(json),
-}; }
+};}
 
 static const VectorStoreFileContentResponseObject vectorStoreFileContentPage = VectorStoreFileContentResponseObject._('vector_store.file_content.page');
 
@@ -14,23 +14,23 @@ static const List<VectorStoreFileContentResponseObject> values = [vectorStoreFil
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorStoreFileContentResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorStoreFileContentResponseObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is VectorStoreFileContentResponseObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'VectorStoreFileContentResponseObject($value)';}
+}
 /// Represents the parsed content of a vector store file.
 @immutable final class VectorStoreFileContentResponse {const VectorStoreFileContentResponse({required this.object, required this.data, required this.hasMore, required this.nextPage, });
 
-factory VectorStoreFileContentResponse.fromJson(Map<String, dynamic> json) { return VectorStoreFileContentResponse(
+factory VectorStoreFileContentResponse.fromJson(Map<String, dynamic> json) {return VectorStoreFileContentResponse(
   object: VectorStoreFileContentResponseObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => VectorStoreFileContentResponseData.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   nextPage: json['next_page'] as String?,
-); }
+);}
 
 /// The object type, which is always `vector_store.file_content.page`
 final VectorStoreFileContentResponseObject object;
@@ -44,28 +44,28 @@ final bool hasMore;
 /// The token for the next page, if any.
 final String? nextPage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'next_page': nextPage,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
-      json.containsKey('next_page') && (json['next_page'] == null || json['next_page'] is String); } 
-VectorStoreFileContentResponse copyWith({VectorStoreFileContentResponseObject? object, List<VectorStoreFileContentResponseData>? data, bool? hasMore, String? Function()? nextPage, }) { return VectorStoreFileContentResponse(
+      json.containsKey('next_page') && (json['next_page'] == null || json['next_page'] is String);}
+VectorStoreFileContentResponse copyWith({VectorStoreFileContentResponseObject? object, List<VectorStoreFileContentResponseData>? data, bool? hasMore, String? Function()? nextPage, }) {return VectorStoreFileContentResponse(
   object: object ?? this.object,
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   nextPage: nextPage != null ? nextPage() : this.nextPage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is VectorStoreFileContentResponse &&
           object == other.object &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
-          nextPage == other.nextPage; } 
-@override int get hashCode { return Object.hash(object, Object.hashAll(data), hasMore, nextPage); } 
-@override String toString() { return 'VectorStoreFileContentResponse(object: $object, data: $data, hasMore: $hasMore, nextPage: $nextPage)'; } 
- }
+          nextPage == other.nextPage;}
+@override int get hashCode {return Object.hash(object, Object.hashAll(data), hasMore, nextPage);}
+@override String toString() {return 'VectorStoreFileContentResponse(object: $object, data: $data, hasMore: $hasMore, nextPage: $nextPage)';}
+}

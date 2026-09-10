@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_mitigated_entity_type.dart';import 'abuse_reports_mitigation_status.dart';import 'abuse_reports_mitigation_type.dart';@immutable final class AbuseReportsMitigationListItem {const AbuseReportsMitigationListItem({required this.effectiveDate, required this.entityId, required this.entityType, required this.id, required this.status, required this.type, });
 
-factory AbuseReportsMitigationListItem.fromJson(Map<String, dynamic> json) { return AbuseReportsMitigationListItem(
+factory AbuseReportsMitigationListItem.fromJson(Map<String, dynamic> json) {return AbuseReportsMitigationListItem(
   effectiveDate: json['effective_date'] as String,
   entityId: json['entity_id'] as String,
   entityType: AbuseReportsMitigatedEntityType.fromJson(json['entity_type'] as String),
   id: json['id'] as String,
   status: AbuseReportsMitigationStatus.fromJson(json['status'] as String),
   type: AbuseReportsMitigationType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Date when the mitigation will become active. Time in RFC 3339 format (https://www.rfc-editor.org/rfc/rfc3339.html)
 final String effectiveDate;
@@ -25,36 +25,36 @@ final AbuseReportsMitigationStatus status;
 
 final AbuseReportsMitigationType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'effective_date': effectiveDate,
   'entity_id': entityId,
   'entity_type': entityType.toJson(),
   'id': id,
   'status': status.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('effective_date') && json['effective_date'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('effective_date') && json['effective_date'] is String &&
       json.containsKey('entity_id') && json['entity_id'] is String &&
       json.containsKey('entity_type') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('status') &&
-      json.containsKey('type'); } 
-AbuseReportsMitigationListItem copyWith({String? effectiveDate, String? entityId, AbuseReportsMitigatedEntityType? entityType, String? id, AbuseReportsMitigationStatus? status, AbuseReportsMitigationType? type, }) { return AbuseReportsMitigationListItem(
+      json.containsKey('type');}
+AbuseReportsMitigationListItem copyWith({String? effectiveDate, String? entityId, AbuseReportsMitigatedEntityType? entityType, String? id, AbuseReportsMitigationStatus? status, AbuseReportsMitigationType? type, }) {return AbuseReportsMitigationListItem(
   effectiveDate: effectiveDate ?? this.effectiveDate,
   entityId: entityId ?? this.entityId,
   entityType: entityType ?? this.entityType,
   id: id ?? this.id,
   status: status ?? this.status,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AbuseReportsMitigationListItem &&
           effectiveDate == other.effectiveDate &&
           entityId == other.entityId &&
           entityType == other.entityType &&
           id == other.id &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(effectiveDate, entityId, entityType, id, status, type); } 
-@override String toString() { return 'AbuseReportsMitigationListItem(effectiveDate: $effectiveDate, entityId: $entityId, entityType: $entityType, id: $id, status: $status, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(effectiveDate, entityId, entityType, id, status, type);}
+@override String toString() {return 'AbuseReportsMitigationListItem(effectiveDate: $effectiveDate, entityId: $entityId, entityType: $entityType, id: $id, status: $status, type: $type)';}
+}

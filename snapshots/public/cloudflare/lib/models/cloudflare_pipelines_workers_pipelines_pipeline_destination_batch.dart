@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch {const CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch({required this.maxBytes, required this.maxDurationS, required this.maxRows, });
 
-factory CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch(
+factory CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch.fromJson(Map<String, dynamic> json) {return CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch(
   maxBytes: (json['max_bytes'] as num).toInt(),
   maxDurationS: (json['max_duration_s'] as num).toDouble(),
   maxRows: (json['max_rows'] as num).toInt(),
-); }
+);}
 
 /// Specifies rough maximum size of files.
 final int maxBytes;
@@ -17,24 +17,24 @@ final double maxDurationS;
 /// Specifies rough maximum number of rows per file.
 final int maxRows;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'max_bytes': maxBytes,
   'max_duration_s': maxDurationS,
   'max_rows': maxRows,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('max_bytes') && json['max_bytes'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('max_bytes') && json['max_bytes'] is num &&
       json.containsKey('max_duration_s') && json['max_duration_s'] is num &&
-      json.containsKey('max_rows') && json['max_rows'] is num; } 
-CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch copyWith({int? maxBytes, double? maxDurationS, int? maxRows, }) { return CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch(
+      json.containsKey('max_rows') && json['max_rows'] is num;}
+CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch copyWith({int? maxBytes, double? maxDurationS, int? maxRows, }) {return CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch(
   maxBytes: maxBytes ?? this.maxBytes,
   maxDurationS: maxDurationS ?? this.maxDurationS,
   maxRows: maxRows ?? this.maxRows,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch &&
           maxBytes == other.maxBytes &&
           maxDurationS == other.maxDurationS &&
-          maxRows == other.maxRows; } 
-@override int get hashCode { return Object.hash(maxBytes, maxDurationS, maxRows); } 
-@override String toString() { return 'CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch(maxBytes: $maxBytes, maxDurationS: $maxDurationS, maxRows: $maxRows)'; } 
- }
+          maxRows == other.maxRows;}
+@override int get hashCode {return Object.hash(maxBytes, maxDurationS, maxRows);}
+@override String toString() {return 'CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch(maxBytes: $maxBytes, maxDurationS: $maxDurationS, maxRows: $maxRows)';}
+}

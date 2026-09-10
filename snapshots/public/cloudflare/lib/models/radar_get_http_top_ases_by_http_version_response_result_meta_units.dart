@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByHttpVersionResponseResultMetaUnits {const RadarGetHttpTopAsesByHttpVersionResponseResultMetaUnits({required this.name, required this.value, });
 
-factory RadarGetHttpTopAsesByHttpVersionResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopAsesByHttpVersionResponseResultMetaUnits(
+factory RadarGetHttpTopAsesByHttpVersionResponseResultMetaUnits.fromJson(Map<String, dynamic> json) {return RadarGetHttpTopAsesByHttpVersionResponseResultMetaUnits(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String name;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetHttpTopAsesByHttpVersionResponseResultMetaUnits copyWith({String? name, String? value, }) { return RadarGetHttpTopAsesByHttpVersionResponseResultMetaUnits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+RadarGetHttpTopAsesByHttpVersionResponseResultMetaUnits copyWith({String? name, String? value, }) {return RadarGetHttpTopAsesByHttpVersionResponseResultMetaUnits(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetHttpTopAsesByHttpVersionResponseResultMetaUnits &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'RadarGetHttpTopAsesByHttpVersionResponseResultMetaUnits(name: $name, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(name, value);}
+@override String toString() {return 'RadarGetHttpTopAsesByHttpVersionResponseResultMetaUnits(name: $name, value: $value)';}
+}

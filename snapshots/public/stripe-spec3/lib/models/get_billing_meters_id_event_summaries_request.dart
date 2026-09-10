@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBillingMetersIdEventSummariesRequest {const GetBillingMetersIdEventSummariesRequest();
 
-factory GetBillingMetersIdEventSummariesRequest.fromJson(Map<String, dynamic> _) { return const GetBillingMetersIdEventSummariesRequest(); }
+factory GetBillingMetersIdEventSummariesRequest.fromJson(Map<String, dynamic> _) {return const GetBillingMetersIdEventSummariesRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-GetBillingMetersIdEventSummariesRequest copyWith() { return const GetBillingMetersIdEventSummariesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+GetBillingMetersIdEventSummariesRequest copyWith() {return const GetBillingMetersIdEventSummariesRequest(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is GetBillingMetersIdEventSummariesRequest; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'GetBillingMetersIdEventSummariesRequest()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is GetBillingMetersIdEventSummariesRequest;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'GetBillingMetersIdEventSummariesRequest()';}
+}

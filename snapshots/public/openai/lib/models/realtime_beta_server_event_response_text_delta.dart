@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_text.delta`.
 @immutable final class RealtimeBetaServerEventResponseTextDeltaType {const RealtimeBetaServerEventResponseTextDeltaType._(this.value);
 
-factory RealtimeBetaServerEventResponseTextDeltaType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventResponseTextDeltaType.fromJson(String json) {return switch (json) {
   'response.output_text.delta' => responseOutputTextDelta,
   _ => RealtimeBetaServerEventResponseTextDeltaType._(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventResponseTextDeltaType responseOutputTextDelta = RealtimeBetaServerEventResponseTextDeltaType._('response.output_text.delta');
 
@@ -14,18 +14,18 @@ static const List<RealtimeBetaServerEventResponseTextDeltaType> values = [respon
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseTextDeltaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseTextDeltaType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeBetaServerEventResponseTextDeltaType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeBetaServerEventResponseTextDeltaType($value)';}
+}
 /// Returned when the text value of an "output_text" content part is updated.
 @immutable final class RealtimeBetaServerEventResponseTextDelta {const RealtimeBetaServerEventResponseTextDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, });
 
-factory RealtimeBetaServerEventResponseTextDelta.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseTextDelta(
+factory RealtimeBetaServerEventResponseTextDelta.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventResponseTextDelta(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventResponseTextDeltaType.fromJson(json['type'] as String),
   responseId: json['response_id'] as String,
@@ -33,7 +33,7 @@ factory RealtimeBetaServerEventResponseTextDelta.fromJson(Map<String, dynamic> j
   outputIndex: (json['output_index'] as num).toInt(),
   contentIndex: (json['content_index'] as num).toInt(),
   delta: json['delta'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -56,7 +56,7 @@ final int contentIndex;
 /// The text delta.
 final String delta;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'response_id': responseId,
@@ -64,15 +64,15 @@ Map<String, dynamic> toJson() { return {
   'output_index': outputIndex,
   'content_index': contentIndex,
   'delta': delta,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
-      json.containsKey('delta') && json['delta'] is String; } 
-RealtimeBetaServerEventResponseTextDelta copyWith({String? eventId, RealtimeBetaServerEventResponseTextDeltaType? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? delta, }) { return RealtimeBetaServerEventResponseTextDelta(
+      json.containsKey('delta') && json['delta'] is String;}
+RealtimeBetaServerEventResponseTextDelta copyWith({String? eventId, RealtimeBetaServerEventResponseTextDeltaType? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? delta, }) {return RealtimeBetaServerEventResponseTextDelta(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,
@@ -80,8 +80,8 @@ RealtimeBetaServerEventResponseTextDelta copyWith({String? eventId, RealtimeBeta
   outputIndex: outputIndex ?? this.outputIndex,
   contentIndex: contentIndex ?? this.contentIndex,
   delta: delta ?? this.delta,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeBetaServerEventResponseTextDelta &&
           eventId == other.eventId &&
           type == other.type &&
@@ -89,7 +89,7 @@ RealtimeBetaServerEventResponseTextDelta copyWith({String? eventId, RealtimeBeta
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           contentIndex == other.contentIndex &&
-          delta == other.delta; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, delta); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseTextDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta)'; } 
- }
+          delta == other.delta;}
+@override int get hashCode {return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, delta);}
+@override String toString() {return 'RealtimeBetaServerEventResponseTextDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta)';}
+}

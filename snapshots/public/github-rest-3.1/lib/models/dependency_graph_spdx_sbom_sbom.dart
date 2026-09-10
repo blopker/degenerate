@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependency_graph_spdx_sbom_sbom_creation_info.dart';import 'dependency_graph_spdx_sbom_sbom_packages.dart';import 'dependency_graph_spdx_sbom_sbom_relationships.dart';@immutable final class DependencyGraphSpdxSbomSbom {const DependencyGraphSpdxSbomSbom({required this.spdxid, required this.spdxVersion, required this.creationInfo, required this.name, required this.dataLicense, required this.documentNamespace, required this.packages, this.comment, this.relationships, });
 
-factory DependencyGraphSpdxSbomSbom.fromJson(Map<String, dynamic> json) { return DependencyGraphSpdxSbomSbom(
+factory DependencyGraphSpdxSbomSbom.fromJson(Map<String, dynamic> json) {return DependencyGraphSpdxSbomSbom(
   spdxid: json['SPDXID'] as String,
   spdxVersion: json['spdxVersion'] as String,
   comment: json['comment'] as String?,
@@ -12,7 +12,7 @@ factory DependencyGraphSpdxSbomSbom.fromJson(Map<String, dynamic> json) { return
   documentNamespace: json['documentNamespace'] as String,
   packages: (json['packages'] as List<dynamic>).map((e) => DependencyGraphSpdxSbomSbomPackages.fromJson(e as Map<String, dynamic>)).toList(),
   relationships: (json['relationships'] as List<dynamic>?)?.map((e) => DependencyGraphSpdxSbomSbomRelationships.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The SPDX identifier for the SPDX document.
 final String spdxid;
@@ -38,7 +38,7 @@ final List<DependencyGraphSpdxSbomSbomPackages> packages;
 
 final List<DependencyGraphSpdxSbomSbomRelationships>? relationships;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'SPDXID': spdxid,
   'spdxVersion': spdxVersion,
   'comment': ?comment,
@@ -48,15 +48,15 @@ Map<String, dynamic> toJson() { return {
   'documentNamespace': documentNamespace,
   'packages': packages.map((e) => e.toJson()).toList(),
   if (relationships != null) 'relationships': relationships?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('SPDXID') && json['SPDXID'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('SPDXID') && json['SPDXID'] is String &&
       json.containsKey('spdxVersion') && json['spdxVersion'] is String &&
       json.containsKey('creationInfo') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('dataLicense') && json['dataLicense'] is String &&
       json.containsKey('documentNamespace') && json['documentNamespace'] is String &&
-      json.containsKey('packages'); } 
-DependencyGraphSpdxSbomSbom copyWith({String? spdxid, String? spdxVersion, String? Function()? comment, DependencyGraphSpdxSbomSbomCreationInfo? creationInfo, String? name, String? dataLicense, String? documentNamespace, List<DependencyGraphSpdxSbomSbomPackages>? packages, List<DependencyGraphSpdxSbomSbomRelationships>? Function()? relationships, }) { return DependencyGraphSpdxSbomSbom(
+      json.containsKey('packages');}
+DependencyGraphSpdxSbomSbom copyWith({String? spdxid, String? spdxVersion, String? Function()? comment, DependencyGraphSpdxSbomSbomCreationInfo? creationInfo, String? name, String? dataLicense, String? documentNamespace, List<DependencyGraphSpdxSbomSbomPackages>? packages, List<DependencyGraphSpdxSbomSbomRelationships>? Function()? relationships, }) {return DependencyGraphSpdxSbomSbom(
   spdxid: spdxid ?? this.spdxid,
   spdxVersion: spdxVersion ?? this.spdxVersion,
   comment: comment != null ? comment() : this.comment,
@@ -66,8 +66,8 @@ DependencyGraphSpdxSbomSbom copyWith({String? spdxid, String? spdxVersion, Strin
   documentNamespace: documentNamespace ?? this.documentNamespace,
   packages: packages ?? this.packages,
   relationships: relationships != null ? relationships() : this.relationships,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DependencyGraphSpdxSbomSbom &&
           spdxid == other.spdxid &&
           spdxVersion == other.spdxVersion &&
@@ -77,7 +77,7 @@ DependencyGraphSpdxSbomSbom copyWith({String? spdxid, String? spdxVersion, Strin
           dataLicense == other.dataLicense &&
           documentNamespace == other.documentNamespace &&
           listEquals(packages, other.packages) &&
-          listEquals(relationships, other.relationships); } 
-@override int get hashCode { return Object.hash(spdxid, spdxVersion, comment, creationInfo, name, dataLicense, documentNamespace, Object.hashAll(packages), Object.hashAll(relationships ?? const [])); } 
-@override String toString() { return 'DependencyGraphSpdxSbomSbom(spdxid: $spdxid, spdxVersion: $spdxVersion, comment: $comment, creationInfo: $creationInfo, name: $name, dataLicense: $dataLicense, documentNamespace: $documentNamespace, packages: $packages, relationships: $relationships)'; } 
- }
+          listEquals(relationships, other.relationships);}
+@override int get hashCode {return Object.hash(spdxid, spdxVersion, comment, creationInfo, name, dataLicense, documentNamespace, Object.hashAll(packages), Object.hashAll(relationships ?? const []));}
+@override String toString() {return 'DependencyGraphSpdxSbomSbom(spdxid: $spdxid, spdxVersion: $spdxVersion, comment: $comment, creationInfo: $creationInfo, name: $name, dataLicense: $dataLicense, documentNamespace: $documentNamespace, packages: $packages, relationships: $relationships)';}
+}

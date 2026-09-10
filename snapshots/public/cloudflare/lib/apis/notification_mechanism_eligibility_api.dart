@@ -13,7 +13,7 @@ final class NotificationMechanismEligibilityApi with ApiExecutor {const Notifica
 /// Get a list of all delivery mechanism types for which an account is eligible.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/destinations/eligible`
-Future<ApiResult<Map<String, List<AaaEligibility>>?, ResponseCommonFailure2>> notificationMechanismEligibilityGetDeliveryMechanismEligibility({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, List<AaaEligibility>>?, ResponseCommonFailure2>> notificationMechanismEligibilityGetDeliveryMechanismEligibility({required AaaAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,5 +39,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

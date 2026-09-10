@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_fine
 /// 
 @immutable final class WebhookFineTuningJobSucceededObject {const WebhookFineTuningJobSucceededObject._(this.value);
 
-factory WebhookFineTuningJobSucceededObject.fromJson(String json) { return switch (json) {
+factory WebhookFineTuningJobSucceededObject.fromJson(String json) {return switch (json) {
   'event' => event,
   _ => WebhookFineTuningJobSucceededObject._(json),
-}; }
+};}
 
 static const WebhookFineTuningJobSucceededObject event = WebhookFineTuningJobSucceededObject._('event');
 
@@ -15,22 +15,22 @@ static const List<WebhookFineTuningJobSucceededObject> values = [event];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookFineTuningJobSucceededObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookFineTuningJobSucceededObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookFineTuningJobSucceededObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookFineTuningJobSucceededObject($value)';}
+}
 /// The type of the event. Always `fine_tuning.job.succeeded`.
 /// 
 @immutable final class WebhookFineTuningJobSucceededType {const WebhookFineTuningJobSucceededType._(this.value);
 
-factory WebhookFineTuningJobSucceededType.fromJson(String json) { return switch (json) {
+factory WebhookFineTuningJobSucceededType.fromJson(String json) {return switch (json) {
   'fine_tuning.job.succeeded' => fineTuningJobSucceeded,
   _ => WebhookFineTuningJobSucceededType._(json),
-}; }
+};}
 
 static const WebhookFineTuningJobSucceededType fineTuningJobSucceeded = WebhookFineTuningJobSucceededType._('fine_tuning.job.succeeded');
 
@@ -38,25 +38,25 @@ static const List<WebhookFineTuningJobSucceededType> values = [fineTuningJobSucc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookFineTuningJobSucceededType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookFineTuningJobSucceededType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookFineTuningJobSucceededType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookFineTuningJobSucceededType($value)';}
+}
 /// Sent when a fine-tuning job has succeeded.
 /// 
 @immutable final class WebhookFineTuningJobSucceeded {const WebhookFineTuningJobSucceeded({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
-factory WebhookFineTuningJobSucceeded.fromJson(Map<String, dynamic> json) { return WebhookFineTuningJobSucceeded(
+factory WebhookFineTuningJobSucceeded.fromJson(Map<String, dynamic> json) {return WebhookFineTuningJobSucceeded(
   createdAt: (json['created_at'] as num).toInt(),
   id: json['id'] as String,
   data: WebhookFineTuningJobSucceededData.fromJson(json['data'] as Map<String, dynamic>),
   object: json['object'] != null ? WebhookFineTuningJobSucceededObject.fromJson(json['object'] as String) : null,
   type: WebhookFineTuningJobSucceededType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The Unix timestamp (in seconds) of when the fine-tuning job succeeded.
 /// 
@@ -78,31 +78,31 @@ final WebhookFineTuningJobSucceededObject? object;
 /// 
 final WebhookFineTuningJobSucceededType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt,
   'id': id,
   'data': data.toJson(),
   if (object != null) 'object': object?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('data') &&
-      json.containsKey('type'); } 
-WebhookFineTuningJobSucceeded copyWith({int? createdAt, String? id, WebhookFineTuningJobSucceededData? data, WebhookFineTuningJobSucceededObject? Function()? object, WebhookFineTuningJobSucceededType? type, }) { return WebhookFineTuningJobSucceeded(
+      json.containsKey('type');}
+WebhookFineTuningJobSucceeded copyWith({int? createdAt, String? id, WebhookFineTuningJobSucceededData? data, WebhookFineTuningJobSucceededObject? Function()? object, WebhookFineTuningJobSucceededType? type, }) {return WebhookFineTuningJobSucceeded(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   data: data ?? this.data,
   object: object != null ? object() : this.object,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookFineTuningJobSucceeded &&
           createdAt == other.createdAt &&
           id == other.id &&
           data == other.data &&
           object == other.object &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, id, data, object, type); } 
-@override String toString() { return 'WebhookFineTuningJobSucceeded(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(createdAt, id, data, object, type);}
+@override String toString() {return 'WebhookFineTuningJobSucceeded(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByProtocolResponseResultSerie0 {const RadarGetDnsTimeseriesGroupByProtocolResponseResultSerie0({required this.https, required this.tcp, required this.tls, required this.udp, });
 
-factory RadarGetDnsTimeseriesGroupByProtocolResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByProtocolResponseResultSerie0(
+factory RadarGetDnsTimeseriesGroupByProtocolResponseResultSerie0.fromJson(Map<String, dynamic> json) {return RadarGetDnsTimeseriesGroupByProtocolResponseResultSerie0(
   https: (json['HTTPS'] as List<dynamic>).map((e) => e as String).toList(),
   tcp: (json['TCP'] as List<dynamic>).map((e) => e as String).toList(),
   tls: (json['TLS'] as List<dynamic>).map((e) => e as String).toList(),
   udp: (json['UDP'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> https;
 
@@ -17,28 +17,28 @@ final List<String> tls;
 
 final List<String> udp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'HTTPS': https,
   'TCP': tcp,
   'TLS': tls,
   'UDP': udp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('HTTPS') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('HTTPS') &&
       json.containsKey('TCP') &&
       json.containsKey('TLS') &&
-      json.containsKey('UDP'); } 
-RadarGetDnsTimeseriesGroupByProtocolResponseResultSerie0 copyWith({List<String>? https, List<String>? tcp, List<String>? tls, List<String>? udp, }) { return RadarGetDnsTimeseriesGroupByProtocolResponseResultSerie0(
+      json.containsKey('UDP');}
+RadarGetDnsTimeseriesGroupByProtocolResponseResultSerie0 copyWith({List<String>? https, List<String>? tcp, List<String>? tls, List<String>? udp, }) {return RadarGetDnsTimeseriesGroupByProtocolResponseResultSerie0(
   https: https ?? this.https,
   tcp: tcp ?? this.tcp,
   tls: tls ?? this.tls,
   udp: udp ?? this.udp,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetDnsTimeseriesGroupByProtocolResponseResultSerie0 &&
           listEquals(https, other.https) &&
           listEquals(tcp, other.tcp) &&
           listEquals(tls, other.tls) &&
-          listEquals(udp, other.udp); } 
-@override int get hashCode { return Object.hash(Object.hashAll(https), Object.hashAll(tcp), Object.hashAll(tls), Object.hashAll(udp)); } 
-@override String toString() { return 'RadarGetDnsTimeseriesGroupByProtocolResponseResultSerie0(https: $https, tcp: $tcp, tls: $tls, udp: $udp)'; } 
- }
+          listEquals(udp, other.udp);}
+@override int get hashCode {return Object.hash(Object.hashAll(https), Object.hashAll(tcp), Object.hashAll(tls), Object.hashAll(udp));}
+@override String toString() {return 'RadarGetDnsTimeseriesGroupByProtocolResponseResultSerie0(https: $https, tcp: $tcp, tls: $tls, udp: $udp)';}
+}

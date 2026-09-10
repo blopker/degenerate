@@ -3,24 +3,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Observability logging settings.
 @immutable final class CcObservabilityLogs {const CcObservabilityLogs({this.enabled});
 
-factory CcObservabilityLogs.fromJson(Map<String, dynamic> json) { return CcObservabilityLogs(
+factory CcObservabilityLogs.fromJson(Map<String, dynamic> json) {return CcObservabilityLogs(
   enabled: json['enabled'] as bool?,
-); }
+);}
 
 final bool? enabled;
 
 /// The value with the schema default applied when absent.
-bool get enabledOrDefault { return enabled ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get enabledOrDefault {return enabled ?? false;}
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled'}.contains(key)); } 
-CcObservabilityLogs copyWith({bool? Function()? enabled}) { return CcObservabilityLogs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled'}.contains(key));}
+CcObservabilityLogs copyWith({bool? Function()? enabled}) {return CcObservabilityLogs(
   enabled: enabled != null ? enabled() : this.enabled,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CcObservabilityLogs &&
-          enabled == other.enabled; } 
-@override int get hashCode { return enabled.hashCode; } 
-@override String toString() { return 'CcObservabilityLogs(enabled: $enabled)'; } 
- }
+          enabled == other.enabled;}
+@override int get hashCode {return enabled.hashCode;}
+@override String toString() {return 'CcObservabilityLogs(enabled: $enabled)';}
+}

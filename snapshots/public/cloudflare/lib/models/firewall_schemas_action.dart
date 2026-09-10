@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action to apply to a matched request. The `log` action is only available on an Enterprise plan.
 @immutable final class FirewallSchemasAction {const FirewallSchemasAction._(this.value);
 
-factory FirewallSchemasAction.fromJson(String json) { return switch (json) {
+factory FirewallSchemasAction.fromJson(String json) {return switch (json) {
   'block' => block,
   'challenge' => challenge,
   'js_challenge' => jsChallenge,
@@ -12,7 +12,7 @@ factory FirewallSchemasAction.fromJson(String json) { return switch (json) {
   'log' => log,
   'bypass' => bypass,
   _ => FirewallSchemasAction._(json),
-}; }
+};}
 
 static const FirewallSchemasAction block = FirewallSchemasAction._('block');
 
@@ -32,11 +32,11 @@ static const List<FirewallSchemasAction> values = [block, challenge, jsChallenge
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallSchemasAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallSchemasAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FirewallSchemasAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FirewallSchemasAction($value)';}
+}

@@ -23,7 +23,7 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class LogpushLogpushJob {const LogpushLogpushJob({this.dataset = const Omittable.absent(), this.destinationConf, this.enabled, this.errorMessage = const Omittable.absent(), this.frequency = const Omittable.absent(), this.id, this.kind, this.lastComplete = const Omittable.absent(), this.lastError = const Omittable.absent(), this.logpullOptions = const Omittable.absent(), this.maxUploadBytes = const Omittable.absent(), this.maxUploadIntervalSeconds = const Omittable.absent(), this.maxUploadRecords = const Omittable.absent(), this.name = const Omittable.absent(), this.outputOptions = const Omittable.absent(), });
 
-factory LogpushLogpushJob.fromJson(Map<String, dynamic> json) { return LogpushLogpushJob(
+factory LogpushLogpushJob.fromJson(Map<String, dynamic> json) {return LogpushLogpushJob(
   dataset: json.containsKey('dataset') ? Omittable(json['dataset'] != null ? LogpushDataset.fromJson(json['dataset'] as String) : null) : const Omittable.absent(),
   destinationConf: json['destination_conf'] != null ? LogpushDestinationConf.fromJson(json['destination_conf'] as String) : null,
   enabled: json['enabled'] != null ? LogpushEnabled.fromJson(json['enabled'] as bool) : null,
@@ -39,7 +39,7 @@ factory LogpushLogpushJob.fromJson(Map<String, dynamic> json) { return LogpushLo
   maxUploadRecords: json.containsKey('max_upload_records') ? Omittable(json['max_upload_records'] != null ? OneOf2.parse(json['max_upload_records'], fromA: (v) => LogpushMaxUploadRecordsVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null) : const Omittable.absent(),
   name: json.containsKey('name') ? Omittable(json['name'] != null ? LogpushName.fromJson(json['name'] as String) : null) : const Omittable.absent(),
   outputOptions: json.containsKey('output_options') ? Omittable(json['output_options'] != null ? LogpushOutputOptions.fromJson(json['output_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Name of the dataset. A list of supported datasets can be found on the [Developer Docs](https://developers.cloudflare.com/logs/reference/log-fields/).
 final Omittable<LogpushDataset?> dataset;
@@ -81,7 +81,7 @@ final Omittable<LogpushName?> name;
 
 final Omittable<LogpushOutputOptions?> outputOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (dataset.isPresent) 'dataset': dataset.value?.toJson(),
   if (destinationConf != null) 'destination_conf': destinationConf?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
@@ -97,9 +97,9 @@ Map<String, dynamic> toJson() { return {
   if (maxUploadRecords.isPresent) 'max_upload_records': maxUploadRecords.value?.toJson(),
   if (name.isPresent) 'name': name.value?.toJson(),
   if (outputOptions.isPresent) 'output_options': outputOptions.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dataset', 'destination_conf', 'enabled', 'error_message', 'frequency', 'id', 'kind', 'last_complete', 'last_error', 'logpull_options', 'max_upload_bytes', 'max_upload_interval_seconds', 'max_upload_records', 'name', 'output_options'}.contains(key)); } 
-LogpushLogpushJob copyWith({Omittable<LogpushDataset?>? dataset, LogpushDestinationConf? Function()? destinationConf, LogpushEnabled? Function()? enabled, Omittable<LogpushErrorMessage?>? errorMessage, Omittable<LogpushFrequency?>? frequency, LogpushId? Function()? id, LogpushKind? Function()? kind, Omittable<LogpushLastComplete?>? lastComplete, Omittable<LogpushLastError?>? lastError, Omittable<LogpushLogpullOptions?>? logpullOptions, Omittable<LogpushMaxUploadBytes?>? maxUploadBytes, Omittable<LogpushMaxUploadIntervalSeconds?>? maxUploadIntervalSeconds, Omittable<LogpushMaxUploadRecords?>? maxUploadRecords, Omittable<LogpushName?>? name, Omittable<LogpushOutputOptions?>? outputOptions, }) { return LogpushLogpushJob(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'dataset', 'destination_conf', 'enabled', 'error_message', 'frequency', 'id', 'kind', 'last_complete', 'last_error', 'logpull_options', 'max_upload_bytes', 'max_upload_interval_seconds', 'max_upload_records', 'name', 'output_options'}.contains(key));}
+LogpushLogpushJob copyWith({Omittable<LogpushDataset?>? dataset, LogpushDestinationConf? Function()? destinationConf, LogpushEnabled? Function()? enabled, Omittable<LogpushErrorMessage?>? errorMessage, Omittable<LogpushFrequency?>? frequency, LogpushId? Function()? id, LogpushKind? Function()? kind, Omittable<LogpushLastComplete?>? lastComplete, Omittable<LogpushLastError?>? lastError, Omittable<LogpushLogpullOptions?>? logpullOptions, Omittable<LogpushMaxUploadBytes?>? maxUploadBytes, Omittable<LogpushMaxUploadIntervalSeconds?>? maxUploadIntervalSeconds, Omittable<LogpushMaxUploadRecords?>? maxUploadRecords, Omittable<LogpushName?>? name, Omittable<LogpushOutputOptions?>? outputOptions, }) {return LogpushLogpushJob(
   dataset: dataset ?? this.dataset,
   destinationConf: destinationConf != null ? destinationConf() : this.destinationConf,
   enabled: enabled != null ? enabled() : this.enabled,
@@ -115,8 +115,8 @@ LogpushLogpushJob copyWith({Omittable<LogpushDataset?>? dataset, LogpushDestinat
   maxUploadRecords: maxUploadRecords ?? this.maxUploadRecords,
   name: name ?? this.name,
   outputOptions: outputOptions ?? this.outputOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LogpushLogpushJob &&
           dataset == other.dataset &&
           destinationConf == other.destinationConf &&
@@ -132,7 +132,7 @@ LogpushLogpushJob copyWith({Omittable<LogpushDataset?>? dataset, LogpushDestinat
           maxUploadIntervalSeconds == other.maxUploadIntervalSeconds &&
           maxUploadRecords == other.maxUploadRecords &&
           name == other.name &&
-          outputOptions == other.outputOptions; } 
-@override int get hashCode { return Object.hash(dataset, destinationConf, enabled, errorMessage, frequency, id, kind, lastComplete, lastError, logpullOptions, maxUploadBytes, maxUploadIntervalSeconds, maxUploadRecords, name, outputOptions); } 
-@override String toString() { return 'LogpushLogpushJob(dataset: $dataset, destinationConf: $destinationConf, enabled: $enabled, errorMessage: $errorMessage, frequency: $frequency, id: $id, kind: $kind, lastComplete: $lastComplete, lastError: $lastError, logpullOptions: $logpullOptions, maxUploadBytes: $maxUploadBytes, maxUploadIntervalSeconds: $maxUploadIntervalSeconds, maxUploadRecords: $maxUploadRecords, name: $name, outputOptions: $outputOptions)'; } 
- }
+          outputOptions == other.outputOptions;}
+@override int get hashCode {return Object.hash(dataset, destinationConf, enabled, errorMessage, frequency, id, kind, lastComplete, lastError, logpullOptions, maxUploadBytes, maxUploadIntervalSeconds, maxUploadRecords, name, outputOptions);}
+@override String toString() {return 'LogpushLogpushJob(dataset: $dataset, destinationConf: $destinationConf, enabled: $enabled, errorMessage: $errorMessage, frequency: $frequency, id: $id, kind: $kind, lastComplete: $lastComplete, lastError: $lastError, logpullOptions: $logpullOptions, maxUploadBytes: $maxUploadBytes, maxUploadIntervalSeconds: $maxUploadIntervalSeconds, maxUploadRecords: $maxUploadRecords, name: $name, outputOptions: $outputOptions)';}
+}

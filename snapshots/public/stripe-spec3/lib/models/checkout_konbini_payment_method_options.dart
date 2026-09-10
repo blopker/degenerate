@@ -9,10 +9,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates that y
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage {const CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage._(this.value);
 
-factory CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   _ => CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage._(json),
-}; }
+};}
 
 static const CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage none = CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage._('none');
 
@@ -20,21 +20,21 @@ static const List<CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage($value)';}
+}
 /// 
 @immutable final class CheckoutKonbiniPaymentMethodOptions {const CheckoutKonbiniPaymentMethodOptions({this.expiresAfterDays = const Omittable.absent(), this.setupFutureUsage, });
 
-factory CheckoutKonbiniPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutKonbiniPaymentMethodOptions(
+factory CheckoutKonbiniPaymentMethodOptions.fromJson(Map<String, dynamic> json) {return CheckoutKonbiniPaymentMethodOptions(
   expiresAfterDays: json.containsKey('expires_after_days') ? Omittable(json['expires_after_days'] != null ? (json['expires_after_days'] as num).toInt() : null) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// The number of calendar days (between 1 and 60) after which Konbini payment instructions will expire. For example, if a PaymentIntent is confirmed with Konbini and `expires_after_days` set to 2 on Monday JST, the instructions will expire on Wednesday 23:59:59 JST.
 final Omittable<int?> expiresAfterDays;
@@ -48,19 +48,19 @@ final Omittable<int?> expiresAfterDays;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (expiresAfterDays.isPresent) 'expires_after_days': expiresAfterDays.value,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expires_after_days', 'setup_future_usage'}.contains(key)); } 
-CheckoutKonbiniPaymentMethodOptions copyWith({Omittable<int?>? expiresAfterDays, CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return CheckoutKonbiniPaymentMethodOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expires_after_days', 'setup_future_usage'}.contains(key));}
+CheckoutKonbiniPaymentMethodOptions copyWith({Omittable<int?>? expiresAfterDays, CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) {return CheckoutKonbiniPaymentMethodOptions(
   expiresAfterDays: expiresAfterDays ?? this.expiresAfterDays,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CheckoutKonbiniPaymentMethodOptions &&
           expiresAfterDays == other.expiresAfterDays &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(expiresAfterDays, setupFutureUsage); } 
-@override String toString() { return 'CheckoutKonbiniPaymentMethodOptions(expiresAfterDays: $expiresAfterDays, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(expiresAfterDays, setupFutureUsage);}
+@override String toString() {return 'CheckoutKonbiniPaymentMethodOptions(expiresAfterDays: $expiresAfterDays, setupFutureUsage: $setupFutureUsage)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_schedule_details_phases_items_price_data_recurring.dart';@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataTaxBehavior {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataTaxBehavior._(this.value);
 
-factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataTaxBehavior.fromJson(String json) { return switch (json) {
+factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataTaxBehavior.fromJson(String json) {return switch (json) {
   'exclusive' => exclusive,
   'inclusive' => inclusive,
   'unspecified' => unspecified,
   _ => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataTaxBehavior._(json),
-}; }
+};}
 
 static const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataTaxBehavior exclusive = PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataTaxBehavior._('exclusive');
 
@@ -19,24 +19,24 @@ static const List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPric
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataTaxBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataTaxBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataTaxBehavior($value)';}
+}
 @immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData({required this.currency, required this.product, required this.recurring, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
 
-factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData(
+factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData.fromJson(Map<String, dynamic> json) {return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData(
   currency: json['currency'] as String,
   product: json['product'] as String,
   recurring: PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurring.fromJson(json['recurring'] as Map<String, dynamic>),
   taxBehavior: json['tax_behavior'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
-); }
+);}
 
 final String currency;
 
@@ -50,33 +50,33 @@ final int? unitAmount;
 
 final String? unitAmountDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'currency': currency,
   'product': product,
   'recurring': recurring.toJson(),
   if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
   'unit_amount': ?unitAmount,
   'unit_amount_decimal': ?unitAmountDecimal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('product') && json['product'] is String &&
-      json.containsKey('recurring'); } 
-PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData copyWith({String? currency, String? product, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurring? recurring, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataTaxBehavior? Function()? taxBehavior, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData(
+      json.containsKey('recurring');}
+PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData copyWith({String? currency, String? product, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurring? recurring, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataTaxBehavior? Function()? taxBehavior, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) {return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData(
   currency: currency ?? this.currency,
   product: product ?? this.product,
   recurring: recurring ?? this.recurring,
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData &&
           currency == other.currency &&
           product == other.product &&
           recurring == other.recurring &&
           taxBehavior == other.taxBehavior &&
           unitAmount == other.unitAmount &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(currency, product, recurring, taxBehavior, unitAmount, unitAmountDecimal); } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData(currency: $currency, product: $product, recurring: $recurring, taxBehavior: $taxBehavior, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
- }
+          unitAmountDecimal == other.unitAmountDecimal;}
+@override int get hashCode {return Object.hash(currency, product, recurring, taxBehavior, unitAmount, unitAmountDecimal);}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData(currency: $currency, product: $product, recurring: $recurring, taxBehavior: $taxBehavior, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';}
+}

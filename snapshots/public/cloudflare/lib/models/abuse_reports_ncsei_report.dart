@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Notification typ
 /// 
 @immutable final class AbuseReportsNcseiReportHostNotification {const AbuseReportsNcseiReportHostNotification._(this.value);
 
-factory AbuseReportsNcseiReportHostNotification.fromJson(String json) { return switch (json) {
+factory AbuseReportsNcseiReportHostNotification.fromJson(String json) {return switch (json) {
   'send' => send,
   'send-anon' => sendAnon,
   _ => AbuseReportsNcseiReportHostNotification._(json),
-}; }
+};}
 
 static const AbuseReportsNcseiReportHostNotification send = AbuseReportsNcseiReportHostNotification._('send');
 
@@ -18,24 +18,24 @@ static const List<AbuseReportsNcseiReportHostNotification> values = [send, sendA
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsNcseiReportHostNotification && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AbuseReportsNcseiReportHostNotification($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsNcseiReportHostNotification && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AbuseReportsNcseiReportHostNotification($value)';}
+}
 /// Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.
 /// 
 @immutable final class AbuseReportsNcseiReportOwnerNotification {const AbuseReportsNcseiReportOwnerNotification._(this.value);
 
-factory AbuseReportsNcseiReportOwnerNotification.fromJson(String json) { return switch (json) {
+factory AbuseReportsNcseiReportOwnerNotification.fromJson(String json) {return switch (json) {
   'send' => send,
   'send-anon' => sendAnon,
   'none' => none,
   _ => AbuseReportsNcseiReportOwnerNotification._(json),
-}; }
+};}
 
 static const AbuseReportsNcseiReportOwnerNotification send = AbuseReportsNcseiReportOwnerNotification._('send');
 
@@ -47,17 +47,17 @@ static const List<AbuseReportsNcseiReportOwnerNotification> values = [send, send
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsNcseiReportOwnerNotification && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AbuseReportsNcseiReportOwnerNotification($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsNcseiReportOwnerNotification && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AbuseReportsNcseiReportOwnerNotification($value)';}
+}
 @immutable final class AbuseReportsNcseiReport {const AbuseReportsNcseiReport({required this.act, required this.email, required this.email2, required this.name, required this.urls, required this.hostNotification, required this.ncseiSubjectRepresentation, required this.ownerNotification, this.comments, this.company, this.reportedCountry, this.reportedUserAgent, this.tele, this.title, this.country, });
 
-factory AbuseReportsNcseiReport.fromJson(Map<String, dynamic> json) { return AbuseReportsNcseiReport(
+factory AbuseReportsNcseiReport.fromJson(Map<String, dynamic> json) {return AbuseReportsNcseiReport(
   act: json['act'],
   comments: json['comments'] as String?,
   company: json['company'] as String?,
@@ -73,7 +73,7 @@ factory AbuseReportsNcseiReport.fromJson(Map<String, dynamic> json) { return Abu
   hostNotification: AbuseReportsNcseiReportHostNotification.fromJson(json['host_notification'] as String),
   ncseiSubjectRepresentation: json['ncsei_subject_representation'] as bool,
   ownerNotification: AbuseReportsNcseiReportOwnerNotification.fromJson(json['owner_notification'] as String),
-); }
+);}
 
 final dynamic act;
 
@@ -122,7 +122,7 @@ final bool ncseiSubjectRepresentation;
 /// 
 final AbuseReportsNcseiReportOwnerNotification ownerNotification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'act': act,
   'comments': ?comments,
   'company': ?company,
@@ -138,16 +138,16 @@ Map<String, dynamic> toJson() { return {
   'host_notification': hostNotification.toJson(),
   'ncsei_subject_representation': ncseiSubjectRepresentation,
   'owner_notification': ownerNotification.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('act') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('act') &&
       json.containsKey('email') && json['email'] is String &&
       json.containsKey('email2') && json['email2'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('urls') && json['urls'] is String &&
       json.containsKey('host_notification') &&
       json.containsKey('ncsei_subject_representation') && json['ncsei_subject_representation'] is bool &&
-      json.containsKey('owner_notification'); } 
-AbuseReportsNcseiReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? Function()? country, AbuseReportsNcseiReportHostNotification? hostNotification, bool? ncseiSubjectRepresentation, AbuseReportsNcseiReportOwnerNotification? ownerNotification, }) { return AbuseReportsNcseiReport(
+      json.containsKey('owner_notification');}
+AbuseReportsNcseiReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? Function()? country, AbuseReportsNcseiReportHostNotification? hostNotification, bool? ncseiSubjectRepresentation, AbuseReportsNcseiReportOwnerNotification? ownerNotification, }) {return AbuseReportsNcseiReport(
   act: act != null ? act() : this.act,
   comments: comments != null ? comments() : this.comments,
   company: company != null ? company() : this.company,
@@ -163,8 +163,8 @@ AbuseReportsNcseiReport copyWith({dynamic Function()? act, String? Function()? c
   hostNotification: hostNotification ?? this.hostNotification,
   ncseiSubjectRepresentation: ncseiSubjectRepresentation ?? this.ncseiSubjectRepresentation,
   ownerNotification: ownerNotification ?? this.ownerNotification,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AbuseReportsNcseiReport &&
           act == other.act &&
           comments == other.comments &&
@@ -180,7 +180,7 @@ AbuseReportsNcseiReport copyWith({dynamic Function()? act, String? Function()? c
           country == other.country &&
           hostNotification == other.hostNotification &&
           ncseiSubjectRepresentation == other.ncseiSubjectRepresentation &&
-          ownerNotification == other.ownerNotification; } 
-@override int get hashCode { return Object.hash(act, comments, company, email, email2, name, reportedCountry, reportedUserAgent, tele, title, urls, country, hostNotification, ncseiSubjectRepresentation, ownerNotification); } 
-@override String toString() { return 'AbuseReportsNcseiReport(act: $act, comments: $comments, company: $company, email: $email, email2: $email2, name: $name, reportedCountry: $reportedCountry, reportedUserAgent: $reportedUserAgent, tele: $tele, title: $title, urls: $urls, country: $country, hostNotification: $hostNotification, ncseiSubjectRepresentation: $ncseiSubjectRepresentation, ownerNotification: $ownerNotification)'; } 
- }
+          ownerNotification == other.ownerNotification;}
+@override int get hashCode {return Object.hash(act, comments, company, email, email2, name, reportedCountry, reportedUserAgent, tele, title, urls, country, hostNotification, ncseiSubjectRepresentation, ownerNotification);}
+@override String toString() {return 'AbuseReportsNcseiReport(act: $act, comments: $comments, company: $company, email: $email, email2: $email2, name: $name, reportedCountry: $reportedCountry, reportedUserAgent: $reportedUserAgent, tele: $tele, title: $title, urls: $urls, country: $country, hostNotification: $hostNotification, ncseiSubjectRepresentation: $ncseiSubjectRepresentation, ownerNotification: $ownerNotification)';}
+}

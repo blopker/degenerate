@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_milestone_edited_changes_description.dart';import 'webhook_milestone_edited_changes_due_on.dart';import 'webhook_milestone_edited_changes_title.dart';/// The changes to the milestone if the action was `edited`.
 @immutable final class WebhookMilestoneEditedChanges {const WebhookMilestoneEditedChanges({this.description, this.dueOn, this.title, });
 
-factory WebhookMilestoneEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookMilestoneEditedChanges(
+factory WebhookMilestoneEditedChanges.fromJson(Map<String, dynamic> json) {return WebhookMilestoneEditedChanges(
   description: json['description'] != null ? WebhookMilestoneEditedChangesDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
   dueOn: json['due_on'] != null ? WebhookMilestoneEditedChangesDueOn.fromJson(json['due_on'] as Map<String, dynamic>) : null,
   title: json['title'] != null ? WebhookMilestoneEditedChangesTitle.fromJson(json['title'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookMilestoneEditedChangesDescription? description;
 
@@ -15,22 +15,22 @@ final WebhookMilestoneEditedChangesDueOn? dueOn;
 
 final WebhookMilestoneEditedChangesTitle? title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description != null) 'description': description?.toJson(),
   if (dueOn != null) 'due_on': dueOn?.toJson(),
   if (title != null) 'title': title?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'due_on', 'title'}.contains(key)); } 
-WebhookMilestoneEditedChanges copyWith({WebhookMilestoneEditedChangesDescription? Function()? description, WebhookMilestoneEditedChangesDueOn? Function()? dueOn, WebhookMilestoneEditedChangesTitle? Function()? title, }) { return WebhookMilestoneEditedChanges(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'due_on', 'title'}.contains(key));}
+WebhookMilestoneEditedChanges copyWith({WebhookMilestoneEditedChangesDescription? Function()? description, WebhookMilestoneEditedChangesDueOn? Function()? dueOn, WebhookMilestoneEditedChangesTitle? Function()? title, }) {return WebhookMilestoneEditedChanges(
   description: description != null ? description() : this.description,
   dueOn: dueOn != null ? dueOn() : this.dueOn,
   title: title != null ? title() : this.title,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookMilestoneEditedChanges &&
           description == other.description &&
           dueOn == other.dueOn &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(description, dueOn, title); } 
-@override String toString() { return 'WebhookMilestoneEditedChanges(description: $description, dueOn: $dueOn, title: $title)'; } 
- }
+          title == other.title;}
+@override int get hashCode {return Object.hash(description, dueOn, title);}
+@override String toString() {return 'WebhookMilestoneEditedChanges(description: $description, dueOn: $dueOn, title: $title)';}
+}

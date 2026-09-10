@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryAdvisoryCwes {const RepositoryAdvisoryCwes({required this.cweId, required this.name, });
 
-factory RepositoryAdvisoryCwes.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryCwes(
+factory RepositoryAdvisoryCwes.fromJson(Map<String, dynamic> json) {return RepositoryAdvisoryCwes(
   cweId: json['cwe_id'] as String,
   name: json['name'] as String,
-); }
+);}
 
 /// The Common Weakness Enumeration (CWE) identifier.
 final String cweId;
@@ -13,20 +13,20 @@ final String cweId;
 /// The name of the CWE.
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cwe_id': cweId,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cwe_id') && json['cwe_id'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-RepositoryAdvisoryCwes copyWith({String? cweId, String? name, }) { return RepositoryAdvisoryCwes(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cwe_id') && json['cwe_id'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+RepositoryAdvisoryCwes copyWith({String? cweId, String? name, }) {return RepositoryAdvisoryCwes(
   cweId: cweId ?? this.cweId,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepositoryAdvisoryCwes &&
           cweId == other.cweId &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(cweId, name); } 
-@override String toString() { return 'RepositoryAdvisoryCwes(cweId: $cweId, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(cweId, name);}
+@override String toString() {return 'RepositoryAdvisoryCwes(cweId: $cweId, name: $name)';}
+}

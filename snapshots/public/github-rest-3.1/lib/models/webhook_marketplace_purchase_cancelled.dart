@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_marketplace_purchase.dart';import 'webhooks_previous_marketplace_purchase.dart';@immutable final class WebhookMarketplacePurchaseCancelledAction {const WebhookMarketplacePurchaseCancelledAction._(this.value);
 
-factory WebhookMarketplacePurchaseCancelledAction.fromJson(String json) { return switch (json) {
+factory WebhookMarketplacePurchaseCancelledAction.fromJson(String json) {return switch (json) {
   'cancelled' => cancelled,
   _ => WebhookMarketplacePurchaseCancelledAction._(json),
-}; }
+};}
 
 static const WebhookMarketplacePurchaseCancelledAction cancelled = WebhookMarketplacePurchaseCancelledAction._('cancelled');
 
@@ -13,17 +13,17 @@ static const List<WebhookMarketplacePurchaseCancelledAction> values = [cancelled
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMarketplacePurchaseCancelledAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMarketplacePurchaseCancelledAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookMarketplacePurchaseCancelledAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookMarketplacePurchaseCancelledAction($value)';}
+}
 @immutable final class WebhookMarketplacePurchaseCancelled {const WebhookMarketplacePurchaseCancelled({required this.action, required this.effectiveDate, required this.marketplacePurchase, required this.sender, this.enterprise, this.installation, this.organization, this.previousMarketplacePurchase, this.repository, });
 
-factory WebhookMarketplacePurchaseCancelled.fromJson(Map<String, dynamic> json) { return WebhookMarketplacePurchaseCancelled(
+factory WebhookMarketplacePurchaseCancelled.fromJson(Map<String, dynamic> json) {return WebhookMarketplacePurchaseCancelled(
   action: WebhookMarketplacePurchaseCancelledAction.fromJson(json['action'] as String),
   effectiveDate: json['effective_date'] as String,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -33,7 +33,7 @@ factory WebhookMarketplacePurchaseCancelled.fromJson(Map<String, dynamic> json) 
   previousMarketplacePurchase: json['previous_marketplace_purchase'] != null ? WebhooksPreviousMarketplacePurchase.fromJson(json['previous_marketplace_purchase'] as Map<String, dynamic>) : null,
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookMarketplacePurchaseCancelledAction action;
 
@@ -53,7 +53,7 @@ final RepositoryWebhooks? repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'effective_date': effectiveDate,
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -63,12 +63,12 @@ Map<String, dynamic> toJson() { return {
   if (previousMarketplacePurchase != null) 'previous_marketplace_purchase': previousMarketplacePurchase?.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('effective_date') && json['effective_date'] is String &&
       json.containsKey('marketplace_purchase') &&
-      json.containsKey('sender'); } 
-WebhookMarketplacePurchaseCancelled copyWith({WebhookMarketplacePurchaseCancelledAction? action, String? effectiveDate, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksMarketplacePurchase? marketplacePurchase, OrganizationSimpleWebhooks? Function()? organization, WebhooksPreviousMarketplacePurchase? Function()? previousMarketplacePurchase, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) { return WebhookMarketplacePurchaseCancelled(
+      json.containsKey('sender');}
+WebhookMarketplacePurchaseCancelled copyWith({WebhookMarketplacePurchaseCancelledAction? action, String? effectiveDate, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksMarketplacePurchase? marketplacePurchase, OrganizationSimpleWebhooks? Function()? organization, WebhooksPreviousMarketplacePurchase? Function()? previousMarketplacePurchase, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) {return WebhookMarketplacePurchaseCancelled(
   action: action ?? this.action,
   effectiveDate: effectiveDate ?? this.effectiveDate,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -78,8 +78,8 @@ WebhookMarketplacePurchaseCancelled copyWith({WebhookMarketplacePurchaseCancelle
   previousMarketplacePurchase: previousMarketplacePurchase != null ? previousMarketplacePurchase() : this.previousMarketplacePurchase,
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookMarketplacePurchaseCancelled &&
           action == other.action &&
           effectiveDate == other.effectiveDate &&
@@ -89,7 +89,7 @@ WebhookMarketplacePurchaseCancelled copyWith({WebhookMarketplacePurchaseCancelle
           organization == other.organization &&
           previousMarketplacePurchase == other.previousMarketplacePurchase &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, effectiveDate, enterprise, installation, marketplacePurchase, organization, previousMarketplacePurchase, repository, sender); } 
-@override String toString() { return 'WebhookMarketplacePurchaseCancelled(action: $action, effectiveDate: $effectiveDate, enterprise: $enterprise, installation: $installation, marketplacePurchase: $marketplacePurchase, organization: $organization, previousMarketplacePurchase: $previousMarketplacePurchase, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, effectiveDate, enterprise, installation, marketplacePurchase, organization, previousMarketplacePurchase, repository, sender);}
+@override String toString() {return 'WebhookMarketplacePurchaseCancelled(action: $action, effectiveDate: $effectiveDate, enterprise: $enterprise, installation: $installation, marketplacePurchase: $marketplacePurchase, organization: $organization, previousMarketplacePurchase: $previousMarketplacePurchase, repository: $repository, sender: $sender)';}
+}

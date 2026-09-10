@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class CodespacesRepoMachinesForAuthenticatedUserError {const CodespacesRepoMachinesForAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static CodespacesRepoMachinesForAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static CodespacesRepoMachinesForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const CodespacesRepoMachinesForAuthenticatedUserError304();
 case 401:
@@ -22,44 +22,44 @@ return CodespacesRepoMachinesForAuthenticatedUserError500(BasicError.fromJson(js
 default:
 return CodespacesRepoMachinesForAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class CodespacesRepoMachinesForAuthenticatedUserError304 extends CodespacesRepoMachinesForAuthenticatedUserError {const CodespacesRepoMachinesForAuthenticatedUserError304();
 
- }
+}
 /// Response for 401 (application/json).
 final class CodespacesRepoMachinesForAuthenticatedUserError401 extends CodespacesRepoMachinesForAuthenticatedUserError {const CodespacesRepoMachinesForAuthenticatedUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class CodespacesRepoMachinesForAuthenticatedUserError403 extends CodespacesRepoMachinesForAuthenticatedUserError {const CodespacesRepoMachinesForAuthenticatedUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class CodespacesRepoMachinesForAuthenticatedUserError404 extends CodespacesRepoMachinesForAuthenticatedUserError {const CodespacesRepoMachinesForAuthenticatedUserError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 500 (application/json).
 final class CodespacesRepoMachinesForAuthenticatedUserError500 extends CodespacesRepoMachinesForAuthenticatedUserError {const CodespacesRepoMachinesForAuthenticatedUserError500(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class CodespacesRepoMachinesForAuthenticatedUserErrorUnknown extends CodespacesRepoMachinesForAuthenticatedUserError {const CodespacesRepoMachinesForAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

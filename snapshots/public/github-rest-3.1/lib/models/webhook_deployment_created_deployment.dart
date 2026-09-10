@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_deployment_created_deployment_creator.dart';import 'webhook_deployment_created_deployment_payload.dart';import 'webhook_deployment_created_deployment_performed_via_github_app.dart';/// The [deployment](https://docs.github.com/rest/deployments/deployments#list-deployments).
 @immutable final class WebhookDeploymentCreatedDeployment {const WebhookDeploymentCreatedDeployment({required this.createdAt, required this.creator, required this.description, required this.environment, required this.id, required this.nodeId, required this.originalEnvironment, required this.payload, required this.ref, required this.repositoryUrl, required this.sha, required this.statusesUrl, required this.task, required this.updatedAt, required this.url, this.performedViaGithubApp = const Omittable.absent(), this.productionEnvironment, this.transientEnvironment, });
 
-factory WebhookDeploymentCreatedDeployment.fromJson(Map<String, dynamic> json) { return WebhookDeploymentCreatedDeployment(
+factory WebhookDeploymentCreatedDeployment.fromJson(Map<String, dynamic> json) {return WebhookDeploymentCreatedDeployment(
   createdAt: json['created_at'] as String,
   creator: json['creator'] != null ? WebhookDeploymentCreatedDeploymentCreator.fromJson(json['creator'] as Map<String, dynamic>) : null,
   description: json['description'] as String?,
@@ -22,7 +22,7 @@ factory WebhookDeploymentCreatedDeployment.fromJson(Map<String, dynamic> json) {
   transientEnvironment: json['transient_environment'] as bool?,
   updatedAt: json['updated_at'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final String createdAt;
 
@@ -61,7 +61,7 @@ final String updatedAt;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt,
   'creator': creator?.toJson(),
   'description': description,
@@ -80,8 +80,8 @@ Map<String, dynamic> toJson() { return {
   'transient_environment': ?transientEnvironment,
   'updated_at': updatedAt,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('creator') &&
       json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('environment') && json['environment'] is String &&
@@ -95,8 +95,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('statuses_url') && json['statuses_url'] is String &&
       json.containsKey('task') && json['task'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookDeploymentCreatedDeployment copyWith({String? createdAt, WebhookDeploymentCreatedDeploymentCreator? Function()? creator, String? Function()? description, String? environment, int? id, String? nodeId, String? originalEnvironment, WebhookDeploymentCreatedDeploymentPayload? payload, Omittable<WebhookDeploymentCreatedDeploymentPerformedViaGithubApp?>? performedViaGithubApp, bool? Function()? productionEnvironment, String? ref, Uri? repositoryUrl, String? sha, Uri? statusesUrl, String? task, bool? Function()? transientEnvironment, String? updatedAt, Uri? url, }) { return WebhookDeploymentCreatedDeployment(
+      json.containsKey('url') && json['url'] is String;}
+WebhookDeploymentCreatedDeployment copyWith({String? createdAt, WebhookDeploymentCreatedDeploymentCreator? Function()? creator, String? Function()? description, String? environment, int? id, String? nodeId, String? originalEnvironment, WebhookDeploymentCreatedDeploymentPayload? payload, Omittable<WebhookDeploymentCreatedDeploymentPerformedViaGithubApp?>? performedViaGithubApp, bool? Function()? productionEnvironment, String? ref, Uri? repositoryUrl, String? sha, Uri? statusesUrl, String? task, bool? Function()? transientEnvironment, String? updatedAt, Uri? url, }) {return WebhookDeploymentCreatedDeployment(
   createdAt: createdAt ?? this.createdAt,
   creator: creator != null ? creator() : this.creator,
   description: description != null ? description() : this.description,
@@ -115,8 +115,8 @@ WebhookDeploymentCreatedDeployment copyWith({String? createdAt, WebhookDeploymen
   transientEnvironment: transientEnvironment != null ? transientEnvironment() : this.transientEnvironment,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDeploymentCreatedDeployment &&
           createdAt == other.createdAt &&
           creator == other.creator &&
@@ -135,7 +135,7 @@ WebhookDeploymentCreatedDeployment copyWith({String? createdAt, WebhookDeploymen
           task == other.task &&
           transientEnvironment == other.transientEnvironment &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(createdAt, creator, description, environment, id, nodeId, originalEnvironment, payload, performedViaGithubApp, productionEnvironment, ref, repositoryUrl, sha, statusesUrl, task, transientEnvironment, updatedAt, url); } 
-@override String toString() { return 'WebhookDeploymentCreatedDeployment(createdAt: $createdAt, creator: $creator, description: $description, environment: $environment, id: $id, nodeId: $nodeId, originalEnvironment: $originalEnvironment, payload: $payload, performedViaGithubApp: $performedViaGithubApp, productionEnvironment: $productionEnvironment, ref: $ref, repositoryUrl: $repositoryUrl, sha: $sha, statusesUrl: $statusesUrl, task: $task, transientEnvironment: $transientEnvironment, updatedAt: $updatedAt, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(createdAt, creator, description, environment, id, nodeId, originalEnvironment, payload, performedViaGithubApp, productionEnvironment, ref, repositoryUrl, sha, statusesUrl, task, transientEnvironment, updatedAt, url);}
+@override String toString() {return 'WebhookDeploymentCreatedDeployment(createdAt: $createdAt, creator: $creator, description: $description, environment: $environment, id: $id, nodeId: $nodeId, originalEnvironment: $originalEnvironment, payload: $payload, performedViaGithubApp: $performedViaGithubApp, productionEnvironment: $productionEnvironment, ref: $ref, repositoryUrl: $repositoryUrl, sha: $sha, statusesUrl: $statusesUrl, task: $task, transientEnvironment: $transientEnvironment, updatedAt: $updatedAt, url: $url)';}
+}

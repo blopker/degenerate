@@ -13,7 +13,7 @@ final class DnsRecordsForAnAccountApi with ApiExecutor {const DnsRecordsForAnAcc
 /// Get the current DNS record usage and quota for an account. May include internal DNS usage and quota.
 ///
 /// `GET /accounts/{account_id}/dns_records/usage`
-Future<ApiResult<DnsRecordsDnsResponseAccountUsageResult?, DnsRecordsForAnAccountGetUsageResponse4xx>> dnsRecordsForAnAccountGetUsage({required DnsRecordsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsRecordsDnsResponseAccountUsageResult?, DnsRecordsForAnAccountGetUsageResponse4xx>> dnsRecordsForAnAccountGetUsage({required DnsRecordsIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,5 +39,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

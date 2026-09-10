@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ArtifactDeploymentRecordRuntimeRisks {const ArtifactDeploymentRecordRuntimeRisks._(this.value);
 
-factory ArtifactDeploymentRecordRuntimeRisks.fromJson(String json) { return switch (json) {
+factory ArtifactDeploymentRecordRuntimeRisks.fromJson(String json) {return switch (json) {
   'critical-resource' => criticalResource,
   'internet-exposed' => internetExposed,
   'lateral-movement' => lateralMovement,
   'sensitive-data' => sensitiveData,
   _ => ArtifactDeploymentRecordRuntimeRisks._(json),
-}; }
+};}
 
 static const ArtifactDeploymentRecordRuntimeRisks criticalResource = ArtifactDeploymentRecordRuntimeRisks._('critical-resource');
 
@@ -22,18 +22,18 @@ static const List<ArtifactDeploymentRecordRuntimeRisks> values = [criticalResour
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ArtifactDeploymentRecordRuntimeRisks && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ArtifactDeploymentRecordRuntimeRisks($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ArtifactDeploymentRecordRuntimeRisks && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ArtifactDeploymentRecordRuntimeRisks($value)';}
+}
 /// Artifact Metadata Deployment Record
 @immutable final class ArtifactDeploymentRecord {const ArtifactDeploymentRecord({this.id, this.digest, this.logicalEnvironment, this.physicalEnvironment, this.cluster, this.deploymentName, this.tags, this.runtimeRisks, this.createdAt, this.updatedAt, this.attestationId = const Omittable.absent(), });
 
-factory ArtifactDeploymentRecord.fromJson(Map<String, dynamic> json) { return ArtifactDeploymentRecord(
+factory ArtifactDeploymentRecord.fromJson(Map<String, dynamic> json) {return ArtifactDeploymentRecord(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   digest: json['digest'] as String?,
   logicalEnvironment: json['logical_environment'] as String?,
@@ -45,7 +45,7 @@ factory ArtifactDeploymentRecord.fromJson(Map<String, dynamic> json) { return Ar
   createdAt: json['created_at'] as String?,
   updatedAt: json['updated_at'] as String?,
   attestationId: json.containsKey('attestation_id') ? Omittable(json['attestation_id'] != null ? (json['attestation_id'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 final int? id;
 
@@ -71,7 +71,7 @@ final String? updatedAt;
 /// The ID of the provenance attestation associated with the deployment record.
 final Omittable<int?> attestationId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'digest': ?digest,
   'logical_environment': ?logicalEnvironment,
@@ -83,9 +83,9 @@ Map<String, dynamic> toJson() { return {
   'created_at': ?createdAt,
   'updated_at': ?updatedAt,
   if (attestationId.isPresent) 'attestation_id': attestationId.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'digest', 'logical_environment', 'physical_environment', 'cluster', 'deployment_name', 'tags', 'runtime_risks', 'created_at', 'updated_at', 'attestation_id'}.contains(key)); } 
-ArtifactDeploymentRecord copyWith({int? Function()? id, String? Function()? digest, String? Function()? logicalEnvironment, String? Function()? physicalEnvironment, String? Function()? cluster, String? Function()? deploymentName, Map<String, String>? Function()? tags, List<ArtifactDeploymentRecordRuntimeRisks>? Function()? runtimeRisks, String? Function()? createdAt, String? Function()? updatedAt, Omittable<int?>? attestationId, }) { return ArtifactDeploymentRecord(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'digest', 'logical_environment', 'physical_environment', 'cluster', 'deployment_name', 'tags', 'runtime_risks', 'created_at', 'updated_at', 'attestation_id'}.contains(key));}
+ArtifactDeploymentRecord copyWith({int? Function()? id, String? Function()? digest, String? Function()? logicalEnvironment, String? Function()? physicalEnvironment, String? Function()? cluster, String? Function()? deploymentName, Map<String, String>? Function()? tags, List<ArtifactDeploymentRecordRuntimeRisks>? Function()? runtimeRisks, String? Function()? createdAt, String? Function()? updatedAt, Omittable<int?>? attestationId, }) {return ArtifactDeploymentRecord(
   id: id != null ? id() : this.id,
   digest: digest != null ? digest() : this.digest,
   logicalEnvironment: logicalEnvironment != null ? logicalEnvironment() : this.logicalEnvironment,
@@ -97,8 +97,8 @@ ArtifactDeploymentRecord copyWith({int? Function()? id, String? Function()? dige
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   attestationId: attestationId ?? this.attestationId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ArtifactDeploymentRecord &&
           id == other.id &&
           digest == other.digest &&
@@ -110,7 +110,7 @@ ArtifactDeploymentRecord copyWith({int? Function()? id, String? Function()? dige
           listEquals(runtimeRisks, other.runtimeRisks) &&
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
-          attestationId == other.attestationId; } 
-@override int get hashCode { return Object.hash(id, digest, logicalEnvironment, physicalEnvironment, cluster, deploymentName, tags, Object.hashAll(runtimeRisks ?? const []), createdAt, updatedAt, attestationId); } 
-@override String toString() { return 'ArtifactDeploymentRecord(id: $id, digest: $digest, logicalEnvironment: $logicalEnvironment, physicalEnvironment: $physicalEnvironment, cluster: $cluster, deploymentName: $deploymentName, tags: $tags, runtimeRisks: $runtimeRisks, createdAt: $createdAt, updatedAt: $updatedAt, attestationId: $attestationId)'; } 
- }
+          attestationId == other.attestationId;}
+@override int get hashCode {return Object.hash(id, digest, logicalEnvironment, physicalEnvironment, cluster, deploymentName, tags, Object.hashAll(runtimeRisks ?? const []), createdAt, updatedAt, attestationId);}
+@override String toString() {return 'ArtifactDeploymentRecord(id: $id, digest: $digest, logicalEnvironment: $logicalEnvironment, physicalEnvironment: $physicalEnvironment, cluster: $cluster, deploymentName: $deploymentName, tags: $tags, runtimeRisks: $runtimeRisks, createdAt: $createdAt, updatedAt: $updatedAt, attestationId: $attestationId)';}
+}

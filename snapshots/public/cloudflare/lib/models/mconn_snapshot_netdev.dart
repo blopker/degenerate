@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Netdev
 @immutable final class MconnSnapshotNetdev {const MconnSnapshotNetdev({required this.name, required this.recvBytes, required this.recvCompressed, required this.recvDrop, required this.recvErrs, required this.recvFifo, required this.recvFrame, required this.recvMulticast, required this.recvPackets, required this.sentBytes, required this.sentCarrier, required this.sentColls, required this.sentCompressed, required this.sentDrop, required this.sentErrs, required this.sentFifo, required this.sentPackets, this.connectorId, });
 
-factory MconnSnapshotNetdev.fromJson(Map<String, dynamic> json) { return MconnSnapshotNetdev(
+factory MconnSnapshotNetdev.fromJson(Map<String, dynamic> json) {return MconnSnapshotNetdev(
   connectorId: json['connector_id'] as String?,
   name: json['name'] as String,
   recvBytes: (json['recv_bytes'] as num).toDouble(),
@@ -22,7 +22,7 @@ factory MconnSnapshotNetdev.fromJson(Map<String, dynamic> json) { return MconnSn
   sentErrs: (json['sent_errs'] as num).toDouble(),
   sentFifo: (json['sent_fifo'] as num).toDouble(),
   sentPackets: (json['sent_packets'] as num).toDouble(),
-); }
+);}
 
 /// Connector identifier
 final String? connectorId;
@@ -78,7 +78,7 @@ final double sentFifo;
 /// Total packets transmitted
 final double sentPackets;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'connector_id': ?connectorId,
   'name': name,
   'recv_bytes': recvBytes,
@@ -97,8 +97,8 @@ Map<String, dynamic> toJson() { return {
   'sent_errs': sentErrs,
   'sent_fifo': sentFifo,
   'sent_packets': sentPackets,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('recv_bytes') && json['recv_bytes'] is num &&
       json.containsKey('recv_compressed') && json['recv_compressed'] is num &&
       json.containsKey('recv_drop') && json['recv_drop'] is num &&
@@ -114,8 +114,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('sent_drop') && json['sent_drop'] is num &&
       json.containsKey('sent_errs') && json['sent_errs'] is num &&
       json.containsKey('sent_fifo') && json['sent_fifo'] is num &&
-      json.containsKey('sent_packets') && json['sent_packets'] is num; } 
-MconnSnapshotNetdev copyWith({String? Function()? connectorId, String? name, double? recvBytes, double? recvCompressed, double? recvDrop, double? recvErrs, double? recvFifo, double? recvFrame, double? recvMulticast, double? recvPackets, double? sentBytes, double? sentCarrier, double? sentColls, double? sentCompressed, double? sentDrop, double? sentErrs, double? sentFifo, double? sentPackets, }) { return MconnSnapshotNetdev(
+      json.containsKey('sent_packets') && json['sent_packets'] is num;}
+MconnSnapshotNetdev copyWith({String? Function()? connectorId, String? name, double? recvBytes, double? recvCompressed, double? recvDrop, double? recvErrs, double? recvFifo, double? recvFrame, double? recvMulticast, double? recvPackets, double? sentBytes, double? sentCarrier, double? sentColls, double? sentCompressed, double? sentDrop, double? sentErrs, double? sentFifo, double? sentPackets, }) {return MconnSnapshotNetdev(
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   name: name ?? this.name,
   recvBytes: recvBytes ?? this.recvBytes,
@@ -134,8 +134,8 @@ MconnSnapshotNetdev copyWith({String? Function()? connectorId, String? name, dou
   sentErrs: sentErrs ?? this.sentErrs,
   sentFifo: sentFifo ?? this.sentFifo,
   sentPackets: sentPackets ?? this.sentPackets,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MconnSnapshotNetdev &&
           connectorId == other.connectorId &&
           name == other.name &&
@@ -154,7 +154,7 @@ MconnSnapshotNetdev copyWith({String? Function()? connectorId, String? name, dou
           sentDrop == other.sentDrop &&
           sentErrs == other.sentErrs &&
           sentFifo == other.sentFifo &&
-          sentPackets == other.sentPackets; } 
-@override int get hashCode { return Object.hash(connectorId, name, recvBytes, recvCompressed, recvDrop, recvErrs, recvFifo, recvFrame, recvMulticast, recvPackets, sentBytes, sentCarrier, sentColls, sentCompressed, sentDrop, sentErrs, sentFifo, sentPackets); } 
-@override String toString() { return 'MconnSnapshotNetdev(connectorId: $connectorId, name: $name, recvBytes: $recvBytes, recvCompressed: $recvCompressed, recvDrop: $recvDrop, recvErrs: $recvErrs, recvFifo: $recvFifo, recvFrame: $recvFrame, recvMulticast: $recvMulticast, recvPackets: $recvPackets, sentBytes: $sentBytes, sentCarrier: $sentCarrier, sentColls: $sentColls, sentCompressed: $sentCompressed, sentDrop: $sentDrop, sentErrs: $sentErrs, sentFifo: $sentFifo, sentPackets: $sentPackets)'; } 
- }
+          sentPackets == other.sentPackets;}
+@override int get hashCode {return Object.hash(connectorId, name, recvBytes, recvCompressed, recvDrop, recvErrs, recvFifo, recvFrame, recvMulticast, recvPackets, sentBytes, sentCarrier, sentColls, sentCompressed, sentDrop, sentErrs, sentFifo, sentPackets);}
+@override String toString() {return 'MconnSnapshotNetdev(connectorId: $connectorId, name: $name, recvBytes: $recvBytes, recvCompressed: $recvCompressed, recvDrop: $recvDrop, recvErrs: $recvErrs, recvFifo: $recvFifo, recvFrame: $recvFrame, recvMulticast: $recvMulticast, recvPackets: $recvPackets, sentBytes: $sentBytes, sentCarrier: $sentCarrier, sentColls: $sentColls, sentCompressed: $sentCompressed, sentDrop: $sentDrop, sentErrs: $sentErrs, sentFifo: $sentFifo, sentPackets: $sentPackets)';}
+}

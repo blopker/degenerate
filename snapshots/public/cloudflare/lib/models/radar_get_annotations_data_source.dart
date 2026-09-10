@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by data source.
 @immutable final class RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource._(this.value);
 
-factory RadarGetAnnotationsDataSource.fromJson(String json) { return switch (json) {
+factory RadarGetAnnotationsDataSource.fromJson(String json) {return switch (json) {
   'ALL' => all,
   'AI_BOTS' => aiBots,
   'AI_GATEWAY' => aiGateway,
@@ -30,7 +30,7 @@ factory RadarGetAnnotationsDataSource.fromJson(String json) { return switch (jso
   'SPEED' => speed,
   'WORKERS_AI' => workersAi,
   _ => RadarGetAnnotationsDataSource._(json),
-}; }
+};}
 
 static const RadarGetAnnotationsDataSource all = RadarGetAnnotationsDataSource._('ALL');
 
@@ -86,11 +86,11 @@ static const List<RadarGetAnnotationsDataSource> values = [all, aiBots, aiGatewa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAnnotationsDataSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAnnotationsDataSource($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAnnotationsDataSource && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAnnotationsDataSource($value)';}
+}

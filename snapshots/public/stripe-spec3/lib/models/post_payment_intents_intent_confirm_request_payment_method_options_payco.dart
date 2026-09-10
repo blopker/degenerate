@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param100.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPaycoVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPaycoVariant2._(this.value);
 
-factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPaycoVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPaycoVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPaycoVariant2._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPaycoVariant2 $empty = PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPaycoVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPayc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPaycoVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPaycoVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPaycoVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPaycoVariant2($value)';}
+}
 
 @immutable
 final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPayco {

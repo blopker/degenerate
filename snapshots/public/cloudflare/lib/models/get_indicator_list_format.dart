@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Output format for indicator data. 'json' returns the default format, 'stix2' returns STIX 2.1 Indicator SDOs.
 @immutable final class GetIndicatorListFormat {const GetIndicatorListFormat._(this.value);
 
-factory GetIndicatorListFormat.fromJson(String json) { return switch (json) {
+factory GetIndicatorListFormat.fromJson(String json) {return switch (json) {
   'json' => $json,
   'stix2' => stix2,
   _ => GetIndicatorListFormat._(json),
-}; }
+};}
 
 static const GetIndicatorListFormat $json = GetIndicatorListFormat._('json');
 
@@ -17,11 +17,11 @@ static const List<GetIndicatorListFormat> values = [$json, stix2];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetIndicatorListFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetIndicatorListFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetIndicatorListFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetIndicatorListFormat($value)';}
+}

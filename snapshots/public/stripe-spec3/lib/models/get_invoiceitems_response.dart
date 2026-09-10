@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoiceitem.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
 @immutable final class GetInvoiceitemsResponseObject {const GetInvoiceitemsResponseObject._(this.value);
 
-factory GetInvoiceitemsResponseObject.fromJson(String json) { return switch (json) {
+factory GetInvoiceitemsResponseObject.fromJson(String json) {return switch (json) {
   'list' => list,
   _ => GetInvoiceitemsResponseObject._(json),
-}; }
+};}
 
 static const GetInvoiceitemsResponseObject list = GetInvoiceitemsResponseObject._('list');
 
@@ -14,23 +14,23 @@ static const List<GetInvoiceitemsResponseObject> values = [list];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetInvoiceitemsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetInvoiceitemsResponseObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetInvoiceitemsResponseObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetInvoiceitemsResponseObject($value)';}
+}
 /// 
 @immutable final class GetInvoiceitemsResponse {const GetInvoiceitemsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
-factory GetInvoiceitemsResponse.fromJson(Map<String, dynamic> json) { return GetInvoiceitemsResponse(
+factory GetInvoiceitemsResponse.fromJson(Map<String, dynamic> json) {return GetInvoiceitemsResponse(
   data: (json['data'] as List<dynamic>).map((e) => Invoiceitem.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   object: GetInvoiceitemsResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
-); }
+);}
 
 final List<Invoiceitem> data;
 
@@ -43,28 +43,28 @@ final GetInvoiceitemsResponseObject object;
 /// The URL where this list can be accessed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'object': object.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
-GetInvoiceitemsResponse copyWith({List<Invoiceitem>? data, bool? hasMore, GetInvoiceitemsResponseObject? object, String? url, }) { return GetInvoiceitemsResponse(
+      json.containsKey('url') && json['url'] is String;}
+GetInvoiceitemsResponse copyWith({List<Invoiceitem>? data, bool? hasMore, GetInvoiceitemsResponseObject? object, String? url, }) {return GetInvoiceitemsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetInvoiceitemsResponse &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, object, url); } 
-@override String toString() { return 'GetInvoiceitemsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(data), hasMore, object, url);}
+@override String toString() {return 'GetInvoiceitemsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)';}
+}

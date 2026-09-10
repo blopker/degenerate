@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Measurement units, eg. bytes.
 @immutable final class RadarGetAttacksLayer3TimeseriesByBytesMetric {const RadarGetAttacksLayer3TimeseriesByBytesMetric._(this.value);
 
-factory RadarGetAttacksLayer3TimeseriesByBytesMetric.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3TimeseriesByBytesMetric.fromJson(String json) {return switch (json) {
   'BYTES' => bytes,
   'BYTES_OLD' => bytesOld,
   _ => RadarGetAttacksLayer3TimeseriesByBytesMetric._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3TimeseriesByBytesMetric bytes = RadarGetAttacksLayer3TimeseriesByBytesMetric._('BYTES');
 
@@ -17,11 +17,11 @@ static const List<RadarGetAttacksLayer3TimeseriesByBytesMetric> values = [bytes,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer3TimeseriesByBytesMetric && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer3TimeseriesByBytesMetric($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer3TimeseriesByBytesMetric && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer3TimeseriesByBytesMetric($value)';}
+}

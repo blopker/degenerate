@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2SlurperJobLogResponseLogType {const R2SlurperJobLogResponseLogType._(this.value);
 
-factory R2SlurperJobLogResponseLogType.fromJson(String json) { return switch (json) {
+factory R2SlurperJobLogResponseLogType.fromJson(String json) {return switch (json) {
   'migrationStart' => migrationStart,
   'migrationComplete' => migrationComplete,
   'migrationAbort' => migrationAbort,
@@ -19,7 +19,7 @@ factory R2SlurperJobLogResponseLogType.fromJson(String json) { return switch (js
   'importSkippedInvalidMedia' => importSkippedInvalidMedia,
   'importSkippedRequiresRetrieval' => importSkippedRequiresRetrieval,
   _ => R2SlurperJobLogResponseLogType._(json),
-}; }
+};}
 
 static const R2SlurperJobLogResponseLogType migrationStart = R2SlurperJobLogResponseLogType._('migrationStart');
 
@@ -55,23 +55,23 @@ static const List<R2SlurperJobLogResponseLogType> values = [migrationStart, migr
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2SlurperJobLogResponseLogType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2SlurperJobLogResponseLogType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is R2SlurperJobLogResponseLogType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'R2SlurperJobLogResponseLogType($value)';}
+}
 @immutable final class R2SlurperJobLogResponse {const R2SlurperJobLogResponse({this.createdAt, this.job, this.logType, this.message = const Omittable.absent(), this.objectKey = const Omittable.absent(), });
 
-factory R2SlurperJobLogResponse.fromJson(Map<String, dynamic> json) { return R2SlurperJobLogResponse(
+factory R2SlurperJobLogResponse.fromJson(Map<String, dynamic> json) {return R2SlurperJobLogResponse(
   createdAt: json['createdAt'] as String?,
   job: json['job'] as String?,
   logType: json['logType'] != null ? R2SlurperJobLogResponseLogType.fromJson(json['logType'] as String) : null,
   message: json.containsKey('message') ? Omittable(json['message'] as String?) : const Omittable.absent(),
   objectKey: json.containsKey('objectKey') ? Omittable(json['objectKey'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final String? createdAt;
 
@@ -83,28 +83,28 @@ final Omittable<String?> message;
 
 final Omittable<String?> objectKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'createdAt': ?createdAt,
   'job': ?job,
   if (logType != null) 'logType': logType?.toJson(),
   if (message.isPresent) 'message': message.value,
   if (objectKey.isPresent) 'objectKey': objectKey.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'createdAt', 'job', 'logType', 'message', 'objectKey'}.contains(key)); } 
-R2SlurperJobLogResponse copyWith({String? Function()? createdAt, String? Function()? job, R2SlurperJobLogResponseLogType? Function()? logType, Omittable<String?>? message, Omittable<String?>? objectKey, }) { return R2SlurperJobLogResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'createdAt', 'job', 'logType', 'message', 'objectKey'}.contains(key));}
+R2SlurperJobLogResponse copyWith({String? Function()? createdAt, String? Function()? job, R2SlurperJobLogResponseLogType? Function()? logType, Omittable<String?>? message, Omittable<String?>? objectKey, }) {return R2SlurperJobLogResponse(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   job: job != null ? job() : this.job,
   logType: logType != null ? logType() : this.logType,
   message: message ?? this.message,
   objectKey: objectKey ?? this.objectKey,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is R2SlurperJobLogResponse &&
           createdAt == other.createdAt &&
           job == other.job &&
           logType == other.logType &&
           message == other.message &&
-          objectKey == other.objectKey; } 
-@override int get hashCode { return Object.hash(createdAt, job, logType, message, objectKey); } 
-@override String toString() { return 'R2SlurperJobLogResponse(createdAt: $createdAt, job: $job, logType: $logType, message: $message, objectKey: $objectKey)'; } 
- }
+          objectKey == other.objectKey;}
+@override int get hashCode {return Object.hash(createdAt, job, logType, message, objectKey);}
+@override String toString() {return 'R2SlurperJobLogResponse(createdAt: $createdAt, job: $job, logType: $logType, message: $message, objectKey: $objectKey)';}
+}

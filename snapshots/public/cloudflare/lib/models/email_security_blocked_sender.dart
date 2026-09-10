@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_blocked_sender_id.dart';import 'email_security_pattern_type.dart';@immutable final class EmailSecurityBlockedSender {const EmailSecurityBlockedSender({required this.isRegex, required this.pattern, required this.patternType, required this.createdAt, required this.id, required this.lastModified, this.comments = const Omittable.absent(), });
 
-factory EmailSecurityBlockedSender.fromJson(Map<String, dynamic> json) { return EmailSecurityBlockedSender(
+factory EmailSecurityBlockedSender.fromJson(Map<String, dynamic> json) {return EmailSecurityBlockedSender(
   comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isRegex: json['is_regex'] as bool,
   pattern: json['pattern'] as String,
@@ -10,7 +10,7 @@ factory EmailSecurityBlockedSender.fromJson(Map<String, dynamic> json) { return 
   createdAt: DateTime.parse(json['created_at'] as String),
   id: EmailSecurityBlockedSenderId.fromJson(json['id'] as num),
   lastModified: DateTime.parse(json['last_modified'] as String),
-); }
+);}
 
 final Omittable<String?> comments;
 
@@ -26,7 +26,7 @@ final EmailSecurityBlockedSenderId id;
 
 final DateTime lastModified;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comments.isPresent) 'comments': comments.value,
   'is_regex': isRegex,
   'pattern': pattern,
@@ -34,14 +34,14 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   'id': id.toJson(),
   'last_modified': lastModified.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_regex') && json['is_regex'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('is_regex') && json['is_regex'] is bool &&
       json.containsKey('pattern') && json['pattern'] is String &&
       json.containsKey('pattern_type') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') &&
-      json.containsKey('last_modified') && json['last_modified'] is String; } 
-EmailSecurityBlockedSender copyWith({Omittable<String?>? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, DateTime? createdAt, EmailSecurityBlockedSenderId? id, DateTime? lastModified, }) { return EmailSecurityBlockedSender(
+      json.containsKey('last_modified') && json['last_modified'] is String;}
+EmailSecurityBlockedSender copyWith({Omittable<String?>? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, DateTime? createdAt, EmailSecurityBlockedSenderId? id, DateTime? lastModified, }) {return EmailSecurityBlockedSender(
   comments: comments ?? this.comments,
   isRegex: isRegex ?? this.isRegex,
   pattern: pattern ?? this.pattern,
@@ -49,8 +49,8 @@ EmailSecurityBlockedSender copyWith({Omittable<String?>? comments, bool? isRegex
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   lastModified: lastModified ?? this.lastModified,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSecurityBlockedSender &&
           comments == other.comments &&
           isRegex == other.isRegex &&
@@ -58,7 +58,7 @@ EmailSecurityBlockedSender copyWith({Omittable<String?>? comments, bool? isRegex
           patternType == other.patternType &&
           createdAt == other.createdAt &&
           id == other.id &&
-          lastModified == other.lastModified; } 
-@override int get hashCode { return Object.hash(comments, isRegex, pattern, patternType, createdAt, id, lastModified); } 
-@override String toString() { return 'EmailSecurityBlockedSender(comments: $comments, isRegex: $isRegex, pattern: $pattern, patternType: $patternType, createdAt: $createdAt, id: $id, lastModified: $lastModified)'; } 
- }
+          lastModified == other.lastModified;}
+@override int get hashCode {return Object.hash(comments, isRegex, pattern, patternType, createdAt, id, lastModified);}
+@override String toString() {return 'EmailSecurityBlockedSender(comments: $comments, isRegex: $isRegex, pattern: $pattern, patternType: $patternType, createdAt: $createdAt, id: $id, lastModified: $lastModified)';}
+}

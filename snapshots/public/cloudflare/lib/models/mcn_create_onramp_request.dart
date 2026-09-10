@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_onramp_cloud_type.dart';import 'mcn_onramp_type.dart';import 'mcn_provider_id.dart';import 'mcn_resource_id.dart';@immutable final class McnCreateOnrampRequest {const McnCreateOnrampRequest({required this.cloudType, required this.dynamicRouting, required this.installRoutesInCloud, required this.installRoutesInMagicWan, required this.name, required this.type, this.adoptedHubId, this.attachedHubs, this.attachedVpcs, this.cloudAsn, this.description, this.hubProviderId, this.manageHubToHubAttachments, this.manageVpcToHubAttachments, this.region, this.vpc, });
 
-factory McnCreateOnrampRequest.fromJson(Map<String, dynamic> json) { return McnCreateOnrampRequest(
+factory McnCreateOnrampRequest.fromJson(Map<String, dynamic> json) {return McnCreateOnrampRequest(
   adoptedHubId: json['adopted_hub_id'] != null ? McnResourceId.fromJson(json['adopted_hub_id'] as String) : null,
   attachedHubs: (json['attached_hubs'] as List<dynamic>?)?.map((e) => McnResourceId.fromJson(e as String)).toList(),
   attachedVpcs: (json['attached_vpcs'] as List<dynamic>?)?.map((e) => McnResourceId.fromJson(e as String)).toList(),
@@ -19,7 +19,7 @@ factory McnCreateOnrampRequest.fromJson(Map<String, dynamic> json) { return McnC
   region: json['region'] as String?,
   type: McnOnrampType.fromJson(json['type'] as String),
   vpc: json['vpc'] != null ? McnResourceId.fromJson(json['vpc'] as String) : null,
-); }
+);}
 
 final McnResourceId? adoptedHubId;
 
@@ -55,7 +55,7 @@ final McnOnrampType type;
 
 final McnResourceId? vpc;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (adoptedHubId != null) 'adopted_hub_id': adoptedHubId?.toJson(),
   if (attachedHubs != null) 'attached_hubs': attachedHubs?.map((e) => e.toJson()).toList(),
   if (attachedVpcs != null) 'attached_vpcs': attachedVpcs?.map((e) => e.toJson()).toList(),
@@ -72,14 +72,14 @@ Map<String, dynamic> toJson() { return {
   'region': ?region,
   'type': type.toJson(),
   if (vpc != null) 'vpc': vpc?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cloud_type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cloud_type') &&
       json.containsKey('dynamic_routing') && json['dynamic_routing'] is bool &&
       json.containsKey('install_routes_in_cloud') && json['install_routes_in_cloud'] is bool &&
       json.containsKey('install_routes_in_magic_wan') && json['install_routes_in_magic_wan'] is bool &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('type'); } 
-McnCreateOnrampRequest copyWith({McnResourceId? Function()? adoptedHubId, List<McnResourceId>? Function()? attachedHubs, List<McnResourceId>? Function()? attachedVpcs, int? Function()? cloudAsn, McnOnrampCloudType? cloudType, String? Function()? description, bool? dynamicRouting, McnProviderId? Function()? hubProviderId, bool? installRoutesInCloud, bool? installRoutesInMagicWan, bool? Function()? manageHubToHubAttachments, bool? Function()? manageVpcToHubAttachments, String? name, String? Function()? region, McnOnrampType? type, McnResourceId? Function()? vpc, }) { return McnCreateOnrampRequest(
+      json.containsKey('type');}
+McnCreateOnrampRequest copyWith({McnResourceId? Function()? adoptedHubId, List<McnResourceId>? Function()? attachedHubs, List<McnResourceId>? Function()? attachedVpcs, int? Function()? cloudAsn, McnOnrampCloudType? cloudType, String? Function()? description, bool? dynamicRouting, McnProviderId? Function()? hubProviderId, bool? installRoutesInCloud, bool? installRoutesInMagicWan, bool? Function()? manageHubToHubAttachments, bool? Function()? manageVpcToHubAttachments, String? name, String? Function()? region, McnOnrampType? type, McnResourceId? Function()? vpc, }) {return McnCreateOnrampRequest(
   adoptedHubId: adoptedHubId != null ? adoptedHubId() : this.adoptedHubId,
   attachedHubs: attachedHubs != null ? attachedHubs() : this.attachedHubs,
   attachedVpcs: attachedVpcs != null ? attachedVpcs() : this.attachedVpcs,
@@ -96,8 +96,8 @@ McnCreateOnrampRequest copyWith({McnResourceId? Function()? adoptedHubId, List<M
   region: region != null ? region() : this.region,
   type: type ?? this.type,
   vpc: vpc != null ? vpc() : this.vpc,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is McnCreateOnrampRequest &&
           adoptedHubId == other.adoptedHubId &&
           listEquals(attachedHubs, other.attachedHubs) &&
@@ -114,7 +114,7 @@ McnCreateOnrampRequest copyWith({McnResourceId? Function()? adoptedHubId, List<M
           name == other.name &&
           region == other.region &&
           type == other.type &&
-          vpc == other.vpc; } 
-@override int get hashCode { return Object.hash(adoptedHubId, Object.hashAll(attachedHubs ?? const []), Object.hashAll(attachedVpcs ?? const []), cloudAsn, cloudType, description, dynamicRouting, hubProviderId, installRoutesInCloud, installRoutesInMagicWan, manageHubToHubAttachments, manageVpcToHubAttachments, name, region, type, vpc); } 
-@override String toString() { return 'McnCreateOnrampRequest(adoptedHubId: $adoptedHubId, attachedHubs: $attachedHubs, attachedVpcs: $attachedVpcs, cloudAsn: $cloudAsn, cloudType: $cloudType, description: $description, dynamicRouting: $dynamicRouting, hubProviderId: $hubProviderId, installRoutesInCloud: $installRoutesInCloud, installRoutesInMagicWan: $installRoutesInMagicWan, manageHubToHubAttachments: $manageHubToHubAttachments, manageVpcToHubAttachments: $manageVpcToHubAttachments, name: $name, region: $region, type: $type, vpc: $vpc)'; } 
- }
+          vpc == other.vpc;}
+@override int get hashCode {return Object.hash(adoptedHubId, Object.hashAll(attachedHubs ?? const []), Object.hashAll(attachedVpcs ?? const []), cloudAsn, cloudType, description, dynamicRouting, hubProviderId, installRoutesInCloud, installRoutesInMagicWan, manageHubToHubAttachments, manageVpcToHubAttachments, name, region, type, vpc);}
+@override String toString() {return 'McnCreateOnrampRequest(adoptedHubId: $adoptedHubId, attachedHubs: $attachedHubs, attachedVpcs: $attachedVpcs, cloudAsn: $cloudAsn, cloudType: $cloudType, description: $description, dynamicRouting: $dynamicRouting, hubProviderId: $hubProviderId, installRoutesInCloud: $installRoutesInCloud, installRoutesInMagicWan: $installRoutesInMagicWan, manageHubToHubAttachments: $manageHubToHubAttachments, manageVpcToHubAttachments: $manageVpcToHubAttachments, name: $name, region: $region, type: $type, vpc: $vpc)';}
+}

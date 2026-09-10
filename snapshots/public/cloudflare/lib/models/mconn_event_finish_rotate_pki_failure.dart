@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Failed PKI rotation
 @immutable final class MconnEventFinishRotatePkiFailureK {const MconnEventFinishRotatePkiFailureK._(this.value);
 
-factory MconnEventFinishRotatePkiFailureK.fromJson(String json) { return switch (json) {
+factory MconnEventFinishRotatePkiFailureK.fromJson(String json) {return switch (json) {
   'FinishRotatePkiFailure' => finishRotatePkiFailure,
   _ => MconnEventFinishRotatePkiFailureK._(json),
-}; }
+};}
 
 static const MconnEventFinishRotatePkiFailureK finishRotatePkiFailure = MconnEventFinishRotatePkiFailureK._('FinishRotatePkiFailure');
 
@@ -14,33 +14,33 @@ static const List<MconnEventFinishRotatePkiFailureK> values = [finishRotatePkiFa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventFinishRotatePkiFailureK && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MconnEventFinishRotatePkiFailureK($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MconnEventFinishRotatePkiFailureK && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MconnEventFinishRotatePkiFailureK($value)';}
+}
 @immutable final class MconnEventFinishRotatePkiFailure {const MconnEventFinishRotatePkiFailure({required this.k});
 
-factory MconnEventFinishRotatePkiFailure.fromJson(Map<String, dynamic> json) { return MconnEventFinishRotatePkiFailure(
+factory MconnEventFinishRotatePkiFailure.fromJson(Map<String, dynamic> json) {return MconnEventFinishRotatePkiFailure(
   k: MconnEventFinishRotatePkiFailureK.fromJson(json['k'] as String),
-); }
+);}
 
 /// Failed PKI rotation
 final MconnEventFinishRotatePkiFailureK k;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'k': k.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
-MconnEventFinishRotatePkiFailure copyWith({MconnEventFinishRotatePkiFailureK? k}) { return MconnEventFinishRotatePkiFailure(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('k');}
+MconnEventFinishRotatePkiFailure copyWith({MconnEventFinishRotatePkiFailureK? k}) {return MconnEventFinishRotatePkiFailure(
   k: k ?? this.k,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MconnEventFinishRotatePkiFailure &&
-          k == other.k; } 
-@override int get hashCode { return k.hashCode; } 
-@override String toString() { return 'MconnEventFinishRotatePkiFailure(k: $k)'; } 
- }
+          k == other.k;}
+@override int get hashCode {return k.hashCode;}
+@override String toString() {return 'MconnEventFinishRotatePkiFailure(k: $k)';}
+}

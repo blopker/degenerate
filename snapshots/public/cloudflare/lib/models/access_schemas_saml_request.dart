@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_components_schemas_name.dart';import 'access_schemas_saml_request_config.dart';import 'access_schemas_saml_request_scim_config.dart';import 'access_uuid.dart';/// The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
 @immutable final class AccessSchemasSamlRequestType {const AccessSchemasSamlRequestType._(this.value);
 
-factory AccessSchemasSamlRequestType.fromJson(String json) { return switch (json) {
+factory AccessSchemasSamlRequestType.fromJson(String json) {return switch (json) {
   'onetimepin' => onetimepin,
   'azureAD' => azureAd,
   'saml' => saml,
@@ -19,7 +19,7 @@ factory AccessSchemasSamlRequestType.fromJson(String json) { return switch (json
   'pingone' => pingone,
   'yandex' => yandex,
   _ => AccessSchemasSamlRequestType._(json),
-}; }
+};}
 
 static const AccessSchemasSamlRequestType onetimepin = AccessSchemasSamlRequestType._('onetimepin');
 
@@ -53,23 +53,23 @@ static const List<AccessSchemasSamlRequestType> values = [onetimepin, azureAd, s
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessSchemasSamlRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessSchemasSamlRequestType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessSchemasSamlRequestType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessSchemasSamlRequestType($value)';}
+}
 @immutable final class AccessSchemasSamlRequest {const AccessSchemasSamlRequest({required this.config, required this.name, required this.type, this.id, this.scimConfig, });
 
-factory AccessSchemasSamlRequest.fromJson(Map<String, dynamic> json) { return AccessSchemasSamlRequest(
+factory AccessSchemasSamlRequest.fromJson(Map<String, dynamic> json) {return AccessSchemasSamlRequest(
   config: AccessSchemasSamlRequestConfig.fromJson(json['config'] as Map<String, dynamic>),
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
   name: AccessComponentsSchemasName.fromJson(json['name'] as String),
   scimConfig: json['scim_config'] != null ? AccessSchemasSamlRequestScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
   type: AccessSchemasSamlRequestType.fromJson(json['type'] as String),
-); }
+);}
 
 final AccessSchemasSamlRequestConfig config;
 
@@ -85,30 +85,30 @@ final AccessSchemasSamlRequestScimConfig? scimConfig;
 /// The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
 final AccessSchemasSamlRequestType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'config': config.toJson(),
   if (id != null) 'id': id?.toJson(),
   'name': name.toJson(),
   if (scimConfig != null) 'scim_config': scimConfig?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('config') &&
       json.containsKey('name') &&
-      json.containsKey('type'); } 
-AccessSchemasSamlRequest copyWith({AccessSchemasSamlRequestConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessSchemasSamlRequestScimConfig? Function()? scimConfig, AccessSchemasSamlRequestType? type, }) { return AccessSchemasSamlRequest(
+      json.containsKey('type');}
+AccessSchemasSamlRequest copyWith({AccessSchemasSamlRequestConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessSchemasSamlRequestScimConfig? Function()? scimConfig, AccessSchemasSamlRequestType? type, }) {return AccessSchemasSamlRequest(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,
   scimConfig: scimConfig != null ? scimConfig() : this.scimConfig,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessSchemasSamlRequest &&
           config == other.config &&
           id == other.id &&
           name == other.name &&
           scimConfig == other.scimConfig &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(config, id, name, scimConfig, type); } 
-@override String toString() { return 'AccessSchemasSamlRequest(config: $config, id: $id, name: $name, scimConfig: $scimConfig, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(config, id, name, scimConfig, type);}
+@override String toString() {return 'AccessSchemasSamlRequest(config: $config, id: $id, name: $name, scimConfig: $scimConfig, type: $type)';}
+}

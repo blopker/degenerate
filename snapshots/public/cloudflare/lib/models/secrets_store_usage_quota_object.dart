@@ -16,10 +16,10 @@ num toJson() => value;
 }
 @immutable final class SecretsStoreUsageQuotaObject {const SecretsStoreUsageQuotaObject({required this.quota, required this.usage, });
 
-factory SecretsStoreUsageQuotaObject.fromJson(Map<String, dynamic> json) { return SecretsStoreUsageQuotaObject(
+factory SecretsStoreUsageQuotaObject.fromJson(Map<String, dynamic> json) {return SecretsStoreUsageQuotaObject(
   quota: SecretsStoreQuota.fromJson(json['quota'] as num),
   usage: SecretsStoreUsage.fromJson(json['usage'] as num),
-); }
+);}
 
 /// The number of secrets the account is entitlted to use
 final SecretsStoreQuota quota;
@@ -27,20 +27,20 @@ final SecretsStoreQuota quota;
 /// The number of secrets the account is currently using
 final SecretsStoreUsage usage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'quota': quota.toJson(),
   'usage': usage.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('quota') &&
-      json.containsKey('usage'); } 
-SecretsStoreUsageQuotaObject copyWith({SecretsStoreQuota? quota, SecretsStoreUsage? usage, }) { return SecretsStoreUsageQuotaObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('quota') &&
+      json.containsKey('usage');}
+SecretsStoreUsageQuotaObject copyWith({SecretsStoreQuota? quota, SecretsStoreUsage? usage, }) {return SecretsStoreUsageQuotaObject(
   quota: quota ?? this.quota,
   usage: usage ?? this.usage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecretsStoreUsageQuotaObject &&
           quota == other.quota &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(quota, usage); } 
-@override String toString() { return 'SecretsStoreUsageQuotaObject(quota: $quota, usage: $usage)'; } 
- }
+          usage == other.usage;}
+@override int get hashCode {return Object.hash(quota, usage);}
+@override String toString() {return 'SecretsStoreUsageQuotaObject(quota: $quota, usage: $usage)';}
+}

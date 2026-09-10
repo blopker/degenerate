@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class BrapiPostSnapshotError {const BrapiPostSnapshotError();
 
 /// Decodes the payload for its declared status and content type.
-static BrapiPostSnapshotError parse(ApiResponse response) { switch (response.statusCode) {
+static BrapiPostSnapshotError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
 return BrapiPostSnapshotError400(BrapiPostSnapshotResponse400.fromJson(json as Map<String, dynamic>));
@@ -20,40 +20,40 @@ return BrapiPostSnapshotError500(BrapiPostSnapshotResponse500.fromJson(json as M
 default:
 return BrapiPostSnapshotErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class BrapiPostSnapshotError400 extends BrapiPostSnapshotError {const BrapiPostSnapshotError400(this.data);
 
 /// The decoded response payload.
 final BrapiPostSnapshotResponse400 data;
 
- }
+}
 /// Response for 422 (application/json).
 final class BrapiPostSnapshotError422 extends BrapiPostSnapshotError {const BrapiPostSnapshotError422(this.data);
 
 /// The decoded response payload.
 final BrapiPostSnapshotResponse422 data;
 
- }
+}
 /// Response for 429 (application/json).
 final class BrapiPostSnapshotError429 extends BrapiPostSnapshotError {const BrapiPostSnapshotError429(this.data);
 
 /// The decoded response payload.
 final BrapiPostSnapshotResponse429 data;
 
- }
+}
 /// Response for 500 (application/json).
 final class BrapiPostSnapshotError500 extends BrapiPostSnapshotError {const BrapiPostSnapshotError500(this.data);
 
 /// The decoded response payload.
 final BrapiPostSnapshotResponse500 data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class BrapiPostSnapshotErrorUnknown extends BrapiPostSnapshotError {const BrapiPostSnapshotErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

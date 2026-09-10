@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Selects a key from a ConfigMap.
 @immutable final class ConfigMapKeySelector {const ConfigMapKeySelector({required this.key, this.name, this.optional, });
 
-factory ConfigMapKeySelector.fromJson(Map<String, dynamic> json) { return ConfigMapKeySelector(
+factory ConfigMapKeySelector.fromJson(Map<String, dynamic> json) {return ConfigMapKeySelector(
   key: json['key'] as String,
   name: json['name'] as String?,
   optional: json['optional'] as bool?,
-); }
+);}
 
 /// The key to select.
 final String key;
@@ -19,23 +19,23 @@ final String? name;
 final bool? optional;
 
 /// The value with the schema default applied when absent.
-String get nameOrDefault { return name ?? ''; } 
-Map<String, dynamic> toJson() { return {
+String get nameOrDefault {return name ?? '';}
+Map<String, dynamic> toJson() {return {
   'key': key,
   'name': ?name,
   'optional': ?optional,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
-ConfigMapKeySelector copyWith({String? key, String? Function()? name, bool? Function()? optional, }) { return ConfigMapKeySelector(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String;}
+ConfigMapKeySelector copyWith({String? key, String? Function()? name, bool? Function()? optional, }) {return ConfigMapKeySelector(
   key: key ?? this.key,
   name: name != null ? name() : this.name,
   optional: optional != null ? optional() : this.optional,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ConfigMapKeySelector &&
           key == other.key &&
           name == other.name &&
-          optional == other.optional; } 
-@override int get hashCode { return Object.hash(key, name, optional); } 
-@override String toString() { return 'ConfigMapKeySelector(key: $key, name: $name, optional: $optional)'; } 
- }
+          optional == other.optional;}
+@override int get hashCode {return Object.hash(key, name, optional);}
+@override String toString() {return 'ConfigMapKeySelector(key: $key, name: $name, optional: $optional)';}
+}

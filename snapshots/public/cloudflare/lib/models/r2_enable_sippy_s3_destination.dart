@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2EnableSippyS3DestinationProvider {const R2EnableSippyS3DestinationProvider._(this.value);
 
-factory R2EnableSippyS3DestinationProvider.fromJson(String json) { return switch (json) {
+factory R2EnableSippyS3DestinationProvider.fromJson(String json) {return switch (json) {
   'r2' => r2,
   _ => R2EnableSippyS3DestinationProvider._(json),
-}; }
+};}
 
 static const R2EnableSippyS3DestinationProvider r2 = R2EnableSippyS3DestinationProvider._('r2');
 
@@ -13,22 +13,22 @@ static const List<R2EnableSippyS3DestinationProvider> values = [r2];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2EnableSippyS3DestinationProvider && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2EnableSippyS3DestinationProvider($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is R2EnableSippyS3DestinationProvider && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'R2EnableSippyS3DestinationProvider($value)';}
+}
 /// R2 bucket to copy objects to.
 @immutable final class R2EnableSippyS3Destination {const R2EnableSippyS3Destination({this.accessKeyId, this.provider, this.secretAccessKey, });
 
-factory R2EnableSippyS3Destination.fromJson(Map<String, dynamic> json) { return R2EnableSippyS3Destination(
+factory R2EnableSippyS3Destination.fromJson(Map<String, dynamic> json) {return R2EnableSippyS3Destination(
   accessKeyId: json['accessKeyId'] as String?,
   provider: json['provider'] != null ? R2EnableSippyS3DestinationProvider.fromJson(json['provider'] as String) : null,
   secretAccessKey: json['secretAccessKey'] as String?,
-); }
+);}
 
 /// ID of a Cloudflare API token.
 /// This is the value labelled "Access Key ID" when creating an API.
@@ -50,22 +50,22 @@ final R2EnableSippyS3DestinationProvider? provider;
 /// 
 final String? secretAccessKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accessKeyId': ?accessKeyId,
   if (provider != null) 'provider': provider?.toJson(),
   'secretAccessKey': ?secretAccessKey,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessKeyId', 'provider', 'secretAccessKey'}.contains(key)); } 
-R2EnableSippyS3Destination copyWith({String? Function()? accessKeyId, R2EnableSippyS3DestinationProvider? Function()? provider, String? Function()? secretAccessKey, }) { return R2EnableSippyS3Destination(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'accessKeyId', 'provider', 'secretAccessKey'}.contains(key));}
+R2EnableSippyS3Destination copyWith({String? Function()? accessKeyId, R2EnableSippyS3DestinationProvider? Function()? provider, String? Function()? secretAccessKey, }) {return R2EnableSippyS3Destination(
   accessKeyId: accessKeyId != null ? accessKeyId() : this.accessKeyId,
   provider: provider != null ? provider() : this.provider,
   secretAccessKey: secretAccessKey != null ? secretAccessKey() : this.secretAccessKey,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is R2EnableSippyS3Destination &&
           accessKeyId == other.accessKeyId &&
           provider == other.provider &&
-          secretAccessKey == other.secretAccessKey; } 
-@override int get hashCode { return Object.hash(accessKeyId, provider, secretAccessKey); } 
-@override String toString() { return 'R2EnableSippyS3Destination(accessKeyId: $accessKeyId, provider: $provider, secretAccessKey: $secretAccessKey)'; } 
- }
+          secretAccessKey == other.secretAccessKey;}
+@override int get hashCode {return Object.hash(accessKeyId, provider, secretAccessKey);}
+@override String toString() {return 'R2EnableSippyS3Destination(accessKeyId: $accessKeyId, provider: $provider, secretAccessKey: $secretAccessKey)';}
+}

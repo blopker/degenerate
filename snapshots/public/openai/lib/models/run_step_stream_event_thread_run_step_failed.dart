@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_object.dart';@immutable final class RunStepStreamEventThreadRunStepFailedEvent {const RunStepStreamEventThreadRunStepFailedEvent._(this.value);
 
-factory RunStepStreamEventThreadRunStepFailedEvent.fromJson(String json) { return switch (json) {
+factory RunStepStreamEventThreadRunStepFailedEvent.fromJson(String json) {return switch (json) {
   'thread.run.step.failed' => threadRunStepFailed,
   _ => RunStepStreamEventThreadRunStepFailedEvent._(json),
-}; }
+};}
 
 static const RunStepStreamEventThreadRunStepFailedEvent threadRunStepFailed = RunStepStreamEventThreadRunStepFailedEvent._('thread.run.step.failed');
 
@@ -13,40 +13,40 @@ static const List<RunStepStreamEventThreadRunStepFailedEvent> values = [threadRu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepStreamEventThreadRunStepFailedEvent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepStreamEventThreadRunStepFailedEvent($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RunStepStreamEventThreadRunStepFailedEvent && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RunStepStreamEventThreadRunStepFailedEvent($value)';}
+}
 /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) fails.
 @immutable final class RunStepStreamEventThreadRunStepFailed {const RunStepStreamEventThreadRunStepFailed({required this.event, required this.data, });
 
-factory RunStepStreamEventThreadRunStepFailed.fromJson(Map<String, dynamic> json) { return RunStepStreamEventThreadRunStepFailed(
+factory RunStepStreamEventThreadRunStepFailed.fromJson(Map<String, dynamic> json) {return RunStepStreamEventThreadRunStepFailed(
   event: RunStepStreamEventThreadRunStepFailedEvent.fromJson(json['event'] as String),
   data: RunStepObject.fromJson(json['data'] as Map<String, dynamic>),
-); }
+);}
 
 final RunStepStreamEventThreadRunStepFailedEvent event;
 
 final RunStepObject data;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event': event.toJson(),
   'data': data.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') &&
-      json.containsKey('data'); } 
-RunStepStreamEventThreadRunStepFailed copyWith({RunStepStreamEventThreadRunStepFailedEvent? event, RunStepObject? data, }) { return RunStepStreamEventThreadRunStepFailed(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event') &&
+      json.containsKey('data');}
+RunStepStreamEventThreadRunStepFailed copyWith({RunStepStreamEventThreadRunStepFailedEvent? event, RunStepObject? data, }) {return RunStepStreamEventThreadRunStepFailed(
   event: event ?? this.event,
   data: data ?? this.data,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RunStepStreamEventThreadRunStepFailed &&
           event == other.event &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(event, data); } 
-@override String toString() { return 'RunStepStreamEventThreadRunStepFailed(event: $event, data: $data)'; } 
- }
+          data == other.data;}
+@override int get hashCode {return Object.hash(event, data);}
+@override String toString() {return 'RunStepStreamEventThreadRunStepFailed(event: $event, data: $data)';}
+}

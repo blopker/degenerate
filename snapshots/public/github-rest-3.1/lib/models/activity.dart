@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The type of the activity that was performed.
 @immutable final class ActivityActivityType {const ActivityActivityType._(this.value);
 
-factory ActivityActivityType.fromJson(String json) { return switch (json) {
+factory ActivityActivityType.fromJson(String json) {return switch (json) {
   'push' => push,
   'force_push' => forcePush,
   'branch_deletion' => branchDeletion,
@@ -11,7 +11,7 @@ factory ActivityActivityType.fromJson(String json) { return switch (json) {
   'pr_merge' => prMerge,
   'merge_queue_merge' => mergeQueueMerge,
   _ => ActivityActivityType._(json),
-}; }
+};}
 
 static const ActivityActivityType push = ActivityActivityType._('push');
 
@@ -29,18 +29,18 @@ static const List<ActivityActivityType> values = [push, forcePush, branchDeletio
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ActivityActivityType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ActivityActivityType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ActivityActivityType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ActivityActivityType($value)';}
+}
 /// Activity
 @immutable final class Activity {const Activity({required this.id, required this.nodeId, required this.before, required this.after, required this.ref, required this.timestamp, required this.activityType, required this.actor, });
 
-factory Activity.fromJson(Map<String, dynamic> json) { return Activity(
+factory Activity.fromJson(Map<String, dynamic> json) {return Activity(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   before: json['before'] as String,
@@ -49,7 +49,7 @@ factory Activity.fromJson(Map<String, dynamic> json) { return Activity(
   timestamp: DateTime.parse(json['timestamp'] as String),
   activityType: ActivityActivityType.fromJson(json['activity_type'] as String),
   actor: json['actor'] != null ? SimpleUser.fromJson(json['actor'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final int id;
 
@@ -72,7 +72,7 @@ final ActivityActivityType activityType;
 
 final SimpleUser? actor;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'before': before,
@@ -81,16 +81,16 @@ Map<String, dynamic> toJson() { return {
   'timestamp': timestamp.toIso8601String(),
   'activity_type': activityType.toJson(),
   'actor': actor?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('before') && json['before'] is String &&
       json.containsKey('after') && json['after'] is String &&
       json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('timestamp') && json['timestamp'] is String &&
       json.containsKey('activity_type') &&
-      json.containsKey('actor'); } 
-Activity copyWith({int? id, String? nodeId, String? before, String? after, String? ref, DateTime? timestamp, ActivityActivityType? activityType, SimpleUser? Function()? actor, }) { return Activity(
+      json.containsKey('actor');}
+Activity copyWith({int? id, String? nodeId, String? before, String? after, String? ref, DateTime? timestamp, ActivityActivityType? activityType, SimpleUser? Function()? actor, }) {return Activity(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   before: before ?? this.before,
@@ -99,8 +99,8 @@ Activity copyWith({int? id, String? nodeId, String? before, String? after, Strin
   timestamp: timestamp ?? this.timestamp,
   activityType: activityType ?? this.activityType,
   actor: actor != null ? actor() : this.actor,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Activity &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -109,7 +109,7 @@ Activity copyWith({int? id, String? nodeId, String? before, String? after, Strin
           ref == other.ref &&
           timestamp == other.timestamp &&
           activityType == other.activityType &&
-          actor == other.actor; } 
-@override int get hashCode { return Object.hash(id, nodeId, before, after, ref, timestamp, activityType, actor); } 
-@override String toString() { return 'Activity(id: $id, nodeId: $nodeId, before: $before, after: $after, ref: $ref, timestamp: $timestamp, activityType: $activityType, actor: $actor)'; } 
- }
+          actor == other.actor;}
+@override int get hashCode {return Object.hash(id, nodeId, before, after, ref, timestamp, activityType, actor);}
+@override String toString() {return 'Activity(id: $id, nodeId: $nodeId, before: $before, after: $after, ref: $ref, timestamp: $timestamp, activityType: $activityType, actor: $actor)';}
+}

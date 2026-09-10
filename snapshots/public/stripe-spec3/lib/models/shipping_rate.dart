@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_rate_delivery_estimate.dart';import 'shipping_rate_fixed_amount.dart';import 'shipping_rate_tax_code.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ShippingRateObject {const ShippingRateObject._(this.value);
 
-factory ShippingRateObject.fromJson(String json) { return switch (json) {
+factory ShippingRateObject.fromJson(String json) {return switch (json) {
   'shipping_rate' => shippingRate,
   _ => ShippingRateObject._(json),
-}; }
+};}
 
 static const ShippingRateObject shippingRate = ShippingRateObject._('shipping_rate');
 
@@ -14,23 +14,23 @@ static const List<ShippingRateObject> values = [shippingRate];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShippingRateObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShippingRateObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ShippingRateObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ShippingRateObject($value)';}
+}
 /// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
 @immutable final class ShippingRateTaxBehavior {const ShippingRateTaxBehavior._(this.value);
 
-factory ShippingRateTaxBehavior.fromJson(String json) { return switch (json) {
+factory ShippingRateTaxBehavior.fromJson(String json) {return switch (json) {
   'exclusive' => exclusive,
   'inclusive' => inclusive,
   'unspecified' => unspecified,
   _ => ShippingRateTaxBehavior._(json),
-}; }
+};}
 
 static const ShippingRateTaxBehavior exclusive = ShippingRateTaxBehavior._('exclusive');
 
@@ -42,21 +42,21 @@ static const List<ShippingRateTaxBehavior> values = [exclusive, inclusive, unspe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShippingRateTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShippingRateTaxBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ShippingRateTaxBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ShippingRateTaxBehavior($value)';}
+}
 /// The type of calculation to use on the shipping rate.
 @immutable final class ShippingRateType {const ShippingRateType._(this.value);
 
-factory ShippingRateType.fromJson(String json) { return switch (json) {
+factory ShippingRateType.fromJson(String json) {return switch (json) {
   'fixed_amount' => fixedAmount,
   _ => ShippingRateType._(json),
-}; }
+};}
 
 static const ShippingRateType fixedAmount = ShippingRateType._('fixed_amount');
 
@@ -64,19 +64,19 @@ static const List<ShippingRateType> values = [fixedAmount];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShippingRateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShippingRateType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ShippingRateType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ShippingRateType($value)';}
+}
 /// Shipping rates describe the price of shipping presented to your customers and
 /// applied to a purchase. For more information, see [Charge for shipping](https://docs.stripe.com/payments/during-payment/charge-shipping).
 @immutable final class ShippingRate {const ShippingRate({required this.active, required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.type, this.deliveryEstimate = const Omittable.absent(), this.displayName = const Omittable.absent(), this.fixedAmount, this.taxBehavior = const Omittable.absent(), this.taxCode = const Omittable.absent(), });
 
-factory ShippingRate.fromJson(Map<String, dynamic> json) { return ShippingRate(
+factory ShippingRate.fromJson(Map<String, dynamic> json) {return ShippingRate(
   active: json['active'] as bool,
   created: (json['created'] as num).toInt(),
   deliveryEstimate: json.containsKey('delivery_estimate') ? Omittable(json['delivery_estimate'] != null ? ShippingRateDeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null) : const Omittable.absent(),
@@ -89,7 +89,7 @@ factory ShippingRate.fromJson(Map<String, dynamic> json) { return ShippingRate(
   taxBehavior: json.containsKey('tax_behavior') ? Omittable(json['tax_behavior'] != null ? ShippingRateTaxBehavior.fromJson(json['tax_behavior'] as String) : null) : const Omittable.absent(),
   taxCode: json.containsKey('tax_code') ? Omittable(json['tax_code'] != null ? ShippingRateTaxCode.fromJson(json['tax_code']) : null) : const Omittable.absent(),
   type: ShippingRateType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Whether the shipping rate can be used for new purchases. Defaults to `true`.
 final bool active;
@@ -126,7 +126,7 @@ final Omittable<ShippingRateTaxCode?> taxCode;
 /// The type of calculation to use on the shipping rate.
 final ShippingRateType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active,
   'created': created,
   if (deliveryEstimate.isPresent) 'delivery_estimate': deliveryEstimate.value?.toJson(),
@@ -139,15 +139,15 @@ Map<String, dynamic> toJson() { return {
   if (taxBehavior.isPresent) 'tax_behavior': taxBehavior.value?.toJson(),
   if (taxCode.isPresent) 'tax_code': taxCode.value?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
       json.containsKey('object') &&
-      json.containsKey('type'); } 
-ShippingRate copyWith({bool? active, int? created, Omittable<ShippingRateDeliveryEstimate?>? deliveryEstimate, Omittable<String?>? displayName, ShippingRateFixedAmount? Function()? fixedAmount, String? id, bool? livemode, Map<String,String>? metadata, ShippingRateObject? object, Omittable<ShippingRateTaxBehavior?>? taxBehavior, Omittable<ShippingRateTaxCode?>? taxCode, ShippingRateType? type, }) { return ShippingRate(
+      json.containsKey('type');}
+ShippingRate copyWith({bool? active, int? created, Omittable<ShippingRateDeliveryEstimate?>? deliveryEstimate, Omittable<String?>? displayName, ShippingRateFixedAmount? Function()? fixedAmount, String? id, bool? livemode, Map<String,String>? metadata, ShippingRateObject? object, Omittable<ShippingRateTaxBehavior?>? taxBehavior, Omittable<ShippingRateTaxCode?>? taxCode, ShippingRateType? type, }) {return ShippingRate(
   active: active ?? this.active,
   created: created ?? this.created,
   deliveryEstimate: deliveryEstimate ?? this.deliveryEstimate,
@@ -160,8 +160,8 @@ ShippingRate copyWith({bool? active, int? created, Omittable<ShippingRateDeliver
   taxBehavior: taxBehavior ?? this.taxBehavior,
   taxCode: taxCode ?? this.taxCode,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShippingRate &&
           active == other.active &&
           created == other.created &&
@@ -174,7 +174,7 @@ ShippingRate copyWith({bool? active, int? created, Omittable<ShippingRateDeliver
           object == other.object &&
           taxBehavior == other.taxBehavior &&
           taxCode == other.taxCode &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(active, created, deliveryEstimate, displayName, fixedAmount, id, livemode, metadata, object, taxBehavior, taxCode, type); } 
-@override String toString() { return 'ShippingRate(active: $active, created: $created, deliveryEstimate: $deliveryEstimate, displayName: $displayName, fixedAmount: $fixedAmount, id: $id, livemode: $livemode, metadata: $metadata, object: $object, taxBehavior: $taxBehavior, taxCode: $taxCode, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(active, created, deliveryEstimate, displayName, fixedAmount, id, livemode, metadata, object, taxBehavior, taxCode, type);}
+@override String toString() {return 'ShippingRate(active: $active, created: $created, deliveryEstimate: $deliveryEstimate, displayName: $displayName, fixedAmount: $fixedAmount, id: $id, livemode: $livemode, metadata: $metadata, object: $object, taxBehavior: $taxBehavior, taxCode: $taxCode, type: $type)';}
+}

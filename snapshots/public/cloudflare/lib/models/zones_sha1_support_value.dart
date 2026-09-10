@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 @immutable final class ZonesSha1SupportValue {const ZonesSha1SupportValue._(this.value);
 
-factory ZonesSha1SupportValue.fromJson(String json) { return switch (json) {
+factory ZonesSha1SupportValue.fromJson(String json) {return switch (json) {
   'off' => off,
   'on' => $on,
   _ => ZonesSha1SupportValue._(json),
-}; }
+};}
 
 static const ZonesSha1SupportValue off = ZonesSha1SupportValue._('off');
 
@@ -17,11 +17,11 @@ static const List<ZonesSha1SupportValue> values = [off, $on];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSha1SupportValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesSha1SupportValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesSha1SupportValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesSha1SupportValue($value)';}
+}

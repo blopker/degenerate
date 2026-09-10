@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_webhook_endpoints_webhook_endpoint_request_description.dart';import 'post_webhook_endpoints_webhook_endpoint_request_metadata.dart';@immutable final class PostWebhookEndpointsWebhookEndpointRequestEnabledEvents {const PostWebhookEndpointsWebhookEndpointRequestEnabledEvents._(this.value);
 
-factory PostWebhookEndpointsWebhookEndpointRequestEnabledEvents.fromJson(String json) { return switch (json) {
+factory PostWebhookEndpointsWebhookEndpointRequestEnabledEvents.fromJson(String json) {return switch (json) {
   '*' => $empty,
   'account.application.authorized' => accountApplicationAuthorized,
   'account.application.deauthorized' => accountApplicationDeauthorized,
@@ -259,7 +259,7 @@ factory PostWebhookEndpointsWebhookEndpointRequestEnabledEvents.fromJson(String 
   'treasury.received_credit.succeeded' => treasuryReceivedCreditSucceeded,
   'treasury.received_debit.created' => treasuryReceivedDebitCreated,
   _ => PostWebhookEndpointsWebhookEndpointRequestEnabledEvents._(json),
-}; }
+};}
 
 static const PostWebhookEndpointsWebhookEndpointRequestEnabledEvents $empty = PostWebhookEndpointsWebhookEndpointRequestEnabledEvents._('*');
 
@@ -775,24 +775,24 @@ static const List<PostWebhookEndpointsWebhookEndpointRequestEnabledEvents> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostWebhookEndpointsWebhookEndpointRequestEnabledEvents && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostWebhookEndpointsWebhookEndpointRequestEnabledEvents($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostWebhookEndpointsWebhookEndpointRequestEnabledEvents && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostWebhookEndpointsWebhookEndpointRequestEnabledEvents($value)';}
+}
 @immutable final class PostWebhookEndpointsWebhookEndpointRequest {const PostWebhookEndpointsWebhookEndpointRequest({this.description, this.disabled, this.enabledEvents, this.expand, this.metadata, this.url, });
 
-factory PostWebhookEndpointsWebhookEndpointRequest.fromJson(Map<String, dynamic> json) { return PostWebhookEndpointsWebhookEndpointRequest(
+factory PostWebhookEndpointsWebhookEndpointRequest.fromJson(Map<String, dynamic> json) {return PostWebhookEndpointsWebhookEndpointRequest(
   description: json['description'] != null ? PostWebhookEndpointsWebhookEndpointRequestDescription.fromJson(json['description']) : null,
   disabled: json['disabled'] as bool?,
   enabledEvents: (json['enabled_events'] as List<dynamic>?)?.map((e) => PostWebhookEndpointsWebhookEndpointRequestEnabledEvents.fromJson(e as String)).toList(),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: json['metadata'] != null ? PostWebhookEndpointsWebhookEndpointRequestMetadata.fromJson(json['metadata']) : null,
   url: json['url'] as String?,
-); }
+);}
 
 /// An optional description of what the webhook is used for.
 final PostWebhookEndpointsWebhookEndpointRequestDescription? description;
@@ -812,31 +812,31 @@ final PostWebhookEndpointsWebhookEndpointRequestMetadata? metadata;
 /// The URL of the webhook endpoint.
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description != null) 'description': description?.toJson(),
   'disabled': ?disabled,
   if (enabledEvents != null) 'enabled_events': enabledEvents?.map((e) => e.toJson()).toList(),
   'expand': ?expand,
   if (metadata != null) 'metadata': metadata?.toJson(),
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'disabled', 'enabled_events', 'expand', 'metadata', 'url'}.contains(key)); } 
-PostWebhookEndpointsWebhookEndpointRequest copyWith({PostWebhookEndpointsWebhookEndpointRequestDescription? Function()? description, bool? Function()? disabled, List<PostWebhookEndpointsWebhookEndpointRequestEnabledEvents>? Function()? enabledEvents, List<String>? Function()? expand, PostWebhookEndpointsWebhookEndpointRequestMetadata? Function()? metadata, String? Function()? url, }) { return PostWebhookEndpointsWebhookEndpointRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'disabled', 'enabled_events', 'expand', 'metadata', 'url'}.contains(key));}
+PostWebhookEndpointsWebhookEndpointRequest copyWith({PostWebhookEndpointsWebhookEndpointRequestDescription? Function()? description, bool? Function()? disabled, List<PostWebhookEndpointsWebhookEndpointRequestEnabledEvents>? Function()? enabledEvents, List<String>? Function()? expand, PostWebhookEndpointsWebhookEndpointRequestMetadata? Function()? metadata, String? Function()? url, }) {return PostWebhookEndpointsWebhookEndpointRequest(
   description: description != null ? description() : this.description,
   disabled: disabled != null ? disabled() : this.disabled,
   enabledEvents: enabledEvents != null ? enabledEvents() : this.enabledEvents,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostWebhookEndpointsWebhookEndpointRequest &&
           description == other.description &&
           disabled == other.disabled &&
           listEquals(enabledEvents, other.enabledEvents) &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(description, disabled, Object.hashAll(enabledEvents ?? const []), Object.hashAll(expand ?? const []), metadata, url); } 
-@override String toString() { return 'PostWebhookEndpointsWebhookEndpointRequest(description: $description, disabled: $disabled, enabledEvents: $enabledEvents, expand: $expand, metadata: $metadata, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(description, disabled, Object.hashAll(enabledEvents ?? const []), Object.hashAll(expand ?? const []), metadata, url);}
+@override String toString() {return 'PostWebhookEndpointsWebhookEndpointRequest(description: $description, disabled: $disabled, enabledEvents: $enabledEvents, expand: $expand, metadata: $metadata, url: $url)';}
+}

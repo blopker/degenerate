@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class PackagesListPackagesForOrganizationError {const PackagesListPackagesForOrganizationError();
 
 /// Decodes the payload for its declared status and content type.
-static PackagesListPackagesForOrganizationError parse(ApiResponse response) { switch (response.statusCode) {
+static PackagesListPackagesForOrganizationError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 return const PackagesListPackagesForOrganizationError400();
 case 401:
@@ -16,30 +16,30 @@ return PackagesListPackagesForOrganizationError403(BasicError.fromJson(json as M
 default:
 return PackagesListPackagesForOrganizationErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400.
 final class PackagesListPackagesForOrganizationError400 extends PackagesListPackagesForOrganizationError {const PackagesListPackagesForOrganizationError400();
 
- }
+}
 /// Response for 401 (application/json).
 final class PackagesListPackagesForOrganizationError401 extends PackagesListPackagesForOrganizationError {const PackagesListPackagesForOrganizationError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class PackagesListPackagesForOrganizationError403 extends PackagesListPackagesForOrganizationError {const PackagesListPackagesForOrganizationError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class PackagesListPackagesForOrganizationErrorUnknown extends PackagesListPackagesForOrganizationError {const PackagesListPackagesForOrganizationErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the Canadian pre-authorized debits payments capability of the account, or whether the account can directly process Canadian pre-authorized debits charges.
 @immutable final class AccountCapabilitiesAcssDebitPayments {const AccountCapabilitiesAcssDebitPayments._(this.value);
 
-factory AccountCapabilitiesAcssDebitPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesAcssDebitPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesAcssDebitPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesAcssDebitPayments active = AccountCapabilitiesAcssDebitPayments._('active');
 
@@ -20,23 +20,23 @@ static const List<AccountCapabilitiesAcssDebitPayments> values = [active, inacti
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesAcssDebitPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesAcssDebitPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesAcssDebitPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesAcssDebitPayments($value)';}
+}
 /// The status of the Affirm capability of the account, or whether the account can directly process Affirm charges.
 @immutable final class AccountCapabilitiesAffirmPayments {const AccountCapabilitiesAffirmPayments._(this.value);
 
-factory AccountCapabilitiesAffirmPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesAffirmPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesAffirmPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesAffirmPayments active = AccountCapabilitiesAffirmPayments._('active');
 
@@ -48,23 +48,23 @@ static const List<AccountCapabilitiesAffirmPayments> values = [active, inactive,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesAffirmPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesAffirmPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesAffirmPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesAffirmPayments($value)';}
+}
 /// The status of the Afterpay Clearpay capability of the account, or whether the account can directly process Afterpay Clearpay charges.
 @immutable final class AccountCapabilitiesAfterpayClearpayPayments {const AccountCapabilitiesAfterpayClearpayPayments._(this.value);
 
-factory AccountCapabilitiesAfterpayClearpayPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesAfterpayClearpayPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesAfterpayClearpayPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesAfterpayClearpayPayments active = AccountCapabilitiesAfterpayClearpayPayments._('active');
 
@@ -76,23 +76,23 @@ static const List<AccountCapabilitiesAfterpayClearpayPayments> values = [active,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesAfterpayClearpayPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesAfterpayClearpayPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesAfterpayClearpayPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesAfterpayClearpayPayments($value)';}
+}
 /// The status of the Alma capability of the account, or whether the account can directly process Alma payments.
 @immutable final class AccountCapabilitiesAlmaPayments {const AccountCapabilitiesAlmaPayments._(this.value);
 
-factory AccountCapabilitiesAlmaPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesAlmaPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesAlmaPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesAlmaPayments active = AccountCapabilitiesAlmaPayments._('active');
 
@@ -104,23 +104,23 @@ static const List<AccountCapabilitiesAlmaPayments> values = [active, inactive, p
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesAlmaPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesAlmaPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesAlmaPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesAlmaPayments($value)';}
+}
 /// The status of the AmazonPay capability of the account, or whether the account can directly process AmazonPay payments.
 @immutable final class AccountCapabilitiesAmazonPayPayments {const AccountCapabilitiesAmazonPayPayments._(this.value);
 
-factory AccountCapabilitiesAmazonPayPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesAmazonPayPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesAmazonPayPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesAmazonPayPayments active = AccountCapabilitiesAmazonPayPayments._('active');
 
@@ -132,23 +132,23 @@ static const List<AccountCapabilitiesAmazonPayPayments> values = [active, inacti
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesAmazonPayPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesAmazonPayPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesAmazonPayPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesAmazonPayPayments($value)';}
+}
 /// The status of the BECS Direct Debit (AU) payments capability of the account, or whether the account can directly process BECS Direct Debit (AU) charges.
 @immutable final class AccountCapabilitiesAuBecsDebitPayments {const AccountCapabilitiesAuBecsDebitPayments._(this.value);
 
-factory AccountCapabilitiesAuBecsDebitPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesAuBecsDebitPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesAuBecsDebitPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesAuBecsDebitPayments active = AccountCapabilitiesAuBecsDebitPayments._('active');
 
@@ -160,23 +160,23 @@ static const List<AccountCapabilitiesAuBecsDebitPayments> values = [active, inac
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesAuBecsDebitPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesAuBecsDebitPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesAuBecsDebitPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesAuBecsDebitPayments($value)';}
+}
 /// The status of the Bacs Direct Debits payments capability of the account, or whether the account can directly process Bacs Direct Debits charges.
 @immutable final class AccountCapabilitiesBacsDebitPayments {const AccountCapabilitiesBacsDebitPayments._(this.value);
 
-factory AccountCapabilitiesBacsDebitPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesBacsDebitPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesBacsDebitPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesBacsDebitPayments active = AccountCapabilitiesBacsDebitPayments._('active');
 
@@ -188,23 +188,23 @@ static const List<AccountCapabilitiesBacsDebitPayments> values = [active, inacti
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesBacsDebitPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesBacsDebitPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesBacsDebitPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesBacsDebitPayments($value)';}
+}
 /// The status of the Bancontact payments capability of the account, or whether the account can directly process Bancontact charges.
 @immutable final class AccountCapabilitiesBancontactPayments {const AccountCapabilitiesBancontactPayments._(this.value);
 
-factory AccountCapabilitiesBancontactPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesBancontactPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesBancontactPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesBancontactPayments active = AccountCapabilitiesBancontactPayments._('active');
 
@@ -216,23 +216,23 @@ static const List<AccountCapabilitiesBancontactPayments> values = [active, inact
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesBancontactPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesBancontactPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesBancontactPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesBancontactPayments($value)';}
+}
 /// The status of the customer_balance payments capability of the account, or whether the account can directly process customer_balance charges.
 @immutable final class AccountCapabilitiesBankTransferPayments {const AccountCapabilitiesBankTransferPayments._(this.value);
 
-factory AccountCapabilitiesBankTransferPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesBankTransferPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesBankTransferPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesBankTransferPayments active = AccountCapabilitiesBankTransferPayments._('active');
 
@@ -244,23 +244,23 @@ static const List<AccountCapabilitiesBankTransferPayments> values = [active, ina
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesBankTransferPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesBankTransferPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesBankTransferPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesBankTransferPayments($value)';}
+}
 /// The status of the Billie capability of the account, or whether the account can directly process Billie payments.
 @immutable final class AccountCapabilitiesBilliePayments {const AccountCapabilitiesBilliePayments._(this.value);
 
-factory AccountCapabilitiesBilliePayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesBilliePayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesBilliePayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesBilliePayments active = AccountCapabilitiesBilliePayments._('active');
 
@@ -272,23 +272,23 @@ static const List<AccountCapabilitiesBilliePayments> values = [active, inactive,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesBilliePayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesBilliePayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesBilliePayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesBilliePayments($value)';}
+}
 /// The status of the blik payments capability of the account, or whether the account can directly process blik charges.
 @immutable final class AccountCapabilitiesBlikPayments {const AccountCapabilitiesBlikPayments._(this.value);
 
-factory AccountCapabilitiesBlikPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesBlikPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesBlikPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesBlikPayments active = AccountCapabilitiesBlikPayments._('active');
 
@@ -300,23 +300,23 @@ static const List<AccountCapabilitiesBlikPayments> values = [active, inactive, p
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesBlikPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesBlikPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesBlikPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesBlikPayments($value)';}
+}
 /// The status of the boleto payments capability of the account, or whether the account can directly process boleto charges.
 @immutable final class AccountCapabilitiesBoletoPayments {const AccountCapabilitiesBoletoPayments._(this.value);
 
-factory AccountCapabilitiesBoletoPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesBoletoPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesBoletoPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesBoletoPayments active = AccountCapabilitiesBoletoPayments._('active');
 
@@ -328,23 +328,23 @@ static const List<AccountCapabilitiesBoletoPayments> values = [active, inactive,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesBoletoPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesBoletoPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesBoletoPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesBoletoPayments($value)';}
+}
 /// The status of the card issuing capability of the account, or whether you can use Issuing to distribute funds on cards
 @immutable final class AccountCapabilitiesCardIssuing {const AccountCapabilitiesCardIssuing._(this.value);
 
-factory AccountCapabilitiesCardIssuing.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesCardIssuing.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesCardIssuing._(json),
-}; }
+};}
 
 static const AccountCapabilitiesCardIssuing active = AccountCapabilitiesCardIssuing._('active');
 
@@ -356,23 +356,23 @@ static const List<AccountCapabilitiesCardIssuing> values = [active, inactive, pe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesCardIssuing && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesCardIssuing($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesCardIssuing && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesCardIssuing($value)';}
+}
 /// The status of the card payments capability of the account, or whether the account can directly process credit and debit card charges.
 @immutable final class AccountCapabilitiesCardPayments {const AccountCapabilitiesCardPayments._(this.value);
 
-factory AccountCapabilitiesCardPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesCardPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesCardPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesCardPayments active = AccountCapabilitiesCardPayments._('active');
 
@@ -384,23 +384,23 @@ static const List<AccountCapabilitiesCardPayments> values = [active, inactive, p
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesCardPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesCardPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesCardPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesCardPayments($value)';}
+}
 /// The status of the Cartes Bancaires payments capability of the account, or whether the account can directly process Cartes Bancaires card charges in EUR currency.
 @immutable final class AccountCapabilitiesCartesBancairesPayments {const AccountCapabilitiesCartesBancairesPayments._(this.value);
 
-factory AccountCapabilitiesCartesBancairesPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesCartesBancairesPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesCartesBancairesPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesCartesBancairesPayments active = AccountCapabilitiesCartesBancairesPayments._('active');
 
@@ -412,23 +412,23 @@ static const List<AccountCapabilitiesCartesBancairesPayments> values = [active, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesCartesBancairesPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesCartesBancairesPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesCartesBancairesPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesCartesBancairesPayments($value)';}
+}
 /// The status of the Cash App Pay capability of the account, or whether the account can directly process Cash App Pay payments.
 @immutable final class AccountCapabilitiesCashappPayments {const AccountCapabilitiesCashappPayments._(this.value);
 
-factory AccountCapabilitiesCashappPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesCashappPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesCashappPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesCashappPayments active = AccountCapabilitiesCashappPayments._('active');
 
@@ -440,23 +440,23 @@ static const List<AccountCapabilitiesCashappPayments> values = [active, inactive
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesCashappPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesCashappPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesCashappPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesCashappPayments($value)';}
+}
 /// The status of the Crypto capability of the account, or whether the account can directly process Crypto payments.
 @immutable final class AccountCapabilitiesCryptoPayments {const AccountCapabilitiesCryptoPayments._(this.value);
 
-factory AccountCapabilitiesCryptoPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesCryptoPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesCryptoPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesCryptoPayments active = AccountCapabilitiesCryptoPayments._('active');
 
@@ -468,23 +468,23 @@ static const List<AccountCapabilitiesCryptoPayments> values = [active, inactive,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesCryptoPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesCryptoPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesCryptoPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesCryptoPayments($value)';}
+}
 /// The status of the EPS payments capability of the account, or whether the account can directly process EPS charges.
 @immutable final class AccountCapabilitiesEpsPayments {const AccountCapabilitiesEpsPayments._(this.value);
 
-factory AccountCapabilitiesEpsPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesEpsPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesEpsPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesEpsPayments active = AccountCapabilitiesEpsPayments._('active');
 
@@ -496,23 +496,23 @@ static const List<AccountCapabilitiesEpsPayments> values = [active, inactive, pe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesEpsPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesEpsPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesEpsPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesEpsPayments($value)';}
+}
 /// The status of the FPX payments capability of the account, or whether the account can directly process FPX charges.
 @immutable final class AccountCapabilitiesFpxPayments {const AccountCapabilitiesFpxPayments._(this.value);
 
-factory AccountCapabilitiesFpxPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesFpxPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesFpxPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesFpxPayments active = AccountCapabilitiesFpxPayments._('active');
 
@@ -524,23 +524,23 @@ static const List<AccountCapabilitiesFpxPayments> values = [active, inactive, pe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesFpxPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesFpxPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesFpxPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesFpxPayments($value)';}
+}
 /// The status of the GB customer_balance payments (GBP currency) capability of the account, or whether the account can directly process GB customer_balance charges.
 @immutable final class AccountCapabilitiesGbBankTransferPayments {const AccountCapabilitiesGbBankTransferPayments._(this.value);
 
-factory AccountCapabilitiesGbBankTransferPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesGbBankTransferPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesGbBankTransferPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesGbBankTransferPayments active = AccountCapabilitiesGbBankTransferPayments._('active');
 
@@ -552,23 +552,23 @@ static const List<AccountCapabilitiesGbBankTransferPayments> values = [active, i
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesGbBankTransferPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesGbBankTransferPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesGbBankTransferPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesGbBankTransferPayments($value)';}
+}
 /// The status of the giropay payments capability of the account, or whether the account can directly process giropay charges.
 @immutable final class AccountCapabilitiesGiropayPayments {const AccountCapabilitiesGiropayPayments._(this.value);
 
-factory AccountCapabilitiesGiropayPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesGiropayPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesGiropayPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesGiropayPayments active = AccountCapabilitiesGiropayPayments._('active');
 
@@ -580,23 +580,23 @@ static const List<AccountCapabilitiesGiropayPayments> values = [active, inactive
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesGiropayPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesGiropayPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesGiropayPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesGiropayPayments($value)';}
+}
 /// The status of the GrabPay payments capability of the account, or whether the account can directly process GrabPay charges.
 @immutable final class AccountCapabilitiesGrabpayPayments {const AccountCapabilitiesGrabpayPayments._(this.value);
 
-factory AccountCapabilitiesGrabpayPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesGrabpayPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesGrabpayPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesGrabpayPayments active = AccountCapabilitiesGrabpayPayments._('active');
 
@@ -608,23 +608,23 @@ static const List<AccountCapabilitiesGrabpayPayments> values = [active, inactive
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesGrabpayPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesGrabpayPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesGrabpayPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesGrabpayPayments($value)';}
+}
 /// The status of the iDEAL payments capability of the account, or whether the account can directly process iDEAL charges.
 @immutable final class AccountCapabilitiesIdealPayments {const AccountCapabilitiesIdealPayments._(this.value);
 
-factory AccountCapabilitiesIdealPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesIdealPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesIdealPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesIdealPayments active = AccountCapabilitiesIdealPayments._('active');
 
@@ -636,23 +636,23 @@ static const List<AccountCapabilitiesIdealPayments> values = [active, inactive, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesIdealPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesIdealPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesIdealPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesIdealPayments($value)';}
+}
 /// The status of the india_international_payments capability of the account, or whether the account can process international charges (non INR) in India.
 @immutable final class AccountCapabilitiesIndiaInternationalPayments {const AccountCapabilitiesIndiaInternationalPayments._(this.value);
 
-factory AccountCapabilitiesIndiaInternationalPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesIndiaInternationalPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesIndiaInternationalPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesIndiaInternationalPayments active = AccountCapabilitiesIndiaInternationalPayments._('active');
 
@@ -664,23 +664,23 @@ static const List<AccountCapabilitiesIndiaInternationalPayments> values = [activ
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesIndiaInternationalPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesIndiaInternationalPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesIndiaInternationalPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesIndiaInternationalPayments($value)';}
+}
 /// The status of the JCB payments capability of the account, or whether the account (Japan only) can directly process JCB credit card charges in JPY currency.
 @immutable final class AccountCapabilitiesJcbPayments {const AccountCapabilitiesJcbPayments._(this.value);
 
-factory AccountCapabilitiesJcbPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesJcbPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesJcbPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesJcbPayments active = AccountCapabilitiesJcbPayments._('active');
 
@@ -692,23 +692,23 @@ static const List<AccountCapabilitiesJcbPayments> values = [active, inactive, pe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesJcbPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesJcbPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesJcbPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesJcbPayments($value)';}
+}
 /// The status of the Japanese customer_balance payments (JPY currency) capability of the account, or whether the account can directly process Japanese customer_balance charges.
 @immutable final class AccountCapabilitiesJpBankTransferPayments {const AccountCapabilitiesJpBankTransferPayments._(this.value);
 
-factory AccountCapabilitiesJpBankTransferPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesJpBankTransferPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesJpBankTransferPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesJpBankTransferPayments active = AccountCapabilitiesJpBankTransferPayments._('active');
 
@@ -720,23 +720,23 @@ static const List<AccountCapabilitiesJpBankTransferPayments> values = [active, i
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesJpBankTransferPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesJpBankTransferPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesJpBankTransferPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesJpBankTransferPayments($value)';}
+}
 /// The status of the KakaoPay capability of the account, or whether the account can directly process KakaoPay payments.
 @immutable final class AccountCapabilitiesKakaoPayPayments {const AccountCapabilitiesKakaoPayPayments._(this.value);
 
-factory AccountCapabilitiesKakaoPayPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesKakaoPayPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesKakaoPayPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesKakaoPayPayments active = AccountCapabilitiesKakaoPayPayments._('active');
 
@@ -748,23 +748,23 @@ static const List<AccountCapabilitiesKakaoPayPayments> values = [active, inactiv
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesKakaoPayPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesKakaoPayPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesKakaoPayPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesKakaoPayPayments($value)';}
+}
 /// The status of the Klarna payments capability of the account, or whether the account can directly process Klarna charges.
 @immutable final class AccountCapabilitiesKlarnaPayments {const AccountCapabilitiesKlarnaPayments._(this.value);
 
-factory AccountCapabilitiesKlarnaPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesKlarnaPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesKlarnaPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesKlarnaPayments active = AccountCapabilitiesKlarnaPayments._('active');
 
@@ -776,23 +776,23 @@ static const List<AccountCapabilitiesKlarnaPayments> values = [active, inactive,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesKlarnaPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesKlarnaPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesKlarnaPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesKlarnaPayments($value)';}
+}
 /// The status of the konbini payments capability of the account, or whether the account can directly process konbini charges.
 @immutable final class AccountCapabilitiesKonbiniPayments {const AccountCapabilitiesKonbiniPayments._(this.value);
 
-factory AccountCapabilitiesKonbiniPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesKonbiniPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesKonbiniPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesKonbiniPayments active = AccountCapabilitiesKonbiniPayments._('active');
 
@@ -804,23 +804,23 @@ static const List<AccountCapabilitiesKonbiniPayments> values = [active, inactive
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesKonbiniPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesKonbiniPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesKonbiniPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesKonbiniPayments($value)';}
+}
 /// The status of the KrCard capability of the account, or whether the account can directly process KrCard payments.
 @immutable final class AccountCapabilitiesKrCardPayments {const AccountCapabilitiesKrCardPayments._(this.value);
 
-factory AccountCapabilitiesKrCardPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesKrCardPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesKrCardPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesKrCardPayments active = AccountCapabilitiesKrCardPayments._('active');
 
@@ -832,23 +832,23 @@ static const List<AccountCapabilitiesKrCardPayments> values = [active, inactive,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesKrCardPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesKrCardPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesKrCardPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesKrCardPayments($value)';}
+}
 /// The status of the legacy payments capability of the account.
 @immutable final class AccountCapabilitiesLegacyPayments {const AccountCapabilitiesLegacyPayments._(this.value);
 
-factory AccountCapabilitiesLegacyPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesLegacyPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesLegacyPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesLegacyPayments active = AccountCapabilitiesLegacyPayments._('active');
 
@@ -860,23 +860,23 @@ static const List<AccountCapabilitiesLegacyPayments> values = [active, inactive,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesLegacyPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesLegacyPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesLegacyPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesLegacyPayments($value)';}
+}
 /// The status of the link_payments capability of the account, or whether the account can directly process Link charges.
 @immutable final class AccountCapabilitiesLinkPayments {const AccountCapabilitiesLinkPayments._(this.value);
 
-factory AccountCapabilitiesLinkPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesLinkPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesLinkPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesLinkPayments active = AccountCapabilitiesLinkPayments._('active');
 
@@ -888,23 +888,23 @@ static const List<AccountCapabilitiesLinkPayments> values = [active, inactive, p
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesLinkPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesLinkPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesLinkPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesLinkPayments($value)';}
+}
 /// The status of the MB WAY payments capability of the account, or whether the account can directly process MB WAY charges.
 @immutable final class AccountCapabilitiesMbWayPayments {const AccountCapabilitiesMbWayPayments._(this.value);
 
-factory AccountCapabilitiesMbWayPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesMbWayPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesMbWayPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesMbWayPayments active = AccountCapabilitiesMbWayPayments._('active');
 
@@ -916,23 +916,23 @@ static const List<AccountCapabilitiesMbWayPayments> values = [active, inactive, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesMbWayPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesMbWayPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesMbWayPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesMbWayPayments($value)';}
+}
 /// The status of the MobilePay capability of the account, or whether the account can directly process MobilePay charges.
 @immutable final class AccountCapabilitiesMobilepayPayments {const AccountCapabilitiesMobilepayPayments._(this.value);
 
-factory AccountCapabilitiesMobilepayPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesMobilepayPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesMobilepayPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesMobilepayPayments active = AccountCapabilitiesMobilepayPayments._('active');
 
@@ -944,23 +944,23 @@ static const List<AccountCapabilitiesMobilepayPayments> values = [active, inacti
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesMobilepayPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesMobilepayPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesMobilepayPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesMobilepayPayments($value)';}
+}
 /// The status of the Multibanco payments capability of the account, or whether the account can directly process Multibanco charges.
 @immutable final class AccountCapabilitiesMultibancoPayments {const AccountCapabilitiesMultibancoPayments._(this.value);
 
-factory AccountCapabilitiesMultibancoPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesMultibancoPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesMultibancoPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesMultibancoPayments active = AccountCapabilitiesMultibancoPayments._('active');
 
@@ -972,23 +972,23 @@ static const List<AccountCapabilitiesMultibancoPayments> values = [active, inact
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesMultibancoPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesMultibancoPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesMultibancoPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesMultibancoPayments($value)';}
+}
 /// The status of the Mexican customer_balance payments (MXN currency) capability of the account, or whether the account can directly process Mexican customer_balance charges.
 @immutable final class AccountCapabilitiesMxBankTransferPayments {const AccountCapabilitiesMxBankTransferPayments._(this.value);
 
-factory AccountCapabilitiesMxBankTransferPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesMxBankTransferPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesMxBankTransferPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesMxBankTransferPayments active = AccountCapabilitiesMxBankTransferPayments._('active');
 
@@ -1000,23 +1000,23 @@ static const List<AccountCapabilitiesMxBankTransferPayments> values = [active, i
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesMxBankTransferPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesMxBankTransferPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesMxBankTransferPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesMxBankTransferPayments($value)';}
+}
 /// The status of the NaverPay capability of the account, or whether the account can directly process NaverPay payments.
 @immutable final class AccountCapabilitiesNaverPayPayments {const AccountCapabilitiesNaverPayPayments._(this.value);
 
-factory AccountCapabilitiesNaverPayPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesNaverPayPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesNaverPayPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesNaverPayPayments active = AccountCapabilitiesNaverPayPayments._('active');
 
@@ -1028,23 +1028,23 @@ static const List<AccountCapabilitiesNaverPayPayments> values = [active, inactiv
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesNaverPayPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesNaverPayPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesNaverPayPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesNaverPayPayments($value)';}
+}
 /// The status of the New Zealand BECS Direct Debit payments capability of the account, or whether the account can directly process New Zealand BECS Direct Debit charges.
 @immutable final class AccountCapabilitiesNzBankAccountBecsDebitPayments {const AccountCapabilitiesNzBankAccountBecsDebitPayments._(this.value);
 
-factory AccountCapabilitiesNzBankAccountBecsDebitPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesNzBankAccountBecsDebitPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesNzBankAccountBecsDebitPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesNzBankAccountBecsDebitPayments active = AccountCapabilitiesNzBankAccountBecsDebitPayments._('active');
 
@@ -1056,23 +1056,23 @@ static const List<AccountCapabilitiesNzBankAccountBecsDebitPayments> values = [a
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesNzBankAccountBecsDebitPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesNzBankAccountBecsDebitPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesNzBankAccountBecsDebitPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesNzBankAccountBecsDebitPayments($value)';}
+}
 /// The status of the OXXO payments capability of the account, or whether the account can directly process OXXO charges.
 @immutable final class AccountCapabilitiesOxxoPayments {const AccountCapabilitiesOxxoPayments._(this.value);
 
-factory AccountCapabilitiesOxxoPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesOxxoPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesOxxoPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesOxxoPayments active = AccountCapabilitiesOxxoPayments._('active');
 
@@ -1084,23 +1084,23 @@ static const List<AccountCapabilitiesOxxoPayments> values = [active, inactive, p
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesOxxoPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesOxxoPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesOxxoPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesOxxoPayments($value)';}
+}
 /// The status of the P24 payments capability of the account, or whether the account can directly process P24 charges.
 @immutable final class AccountCapabilitiesP24Payments {const AccountCapabilitiesP24Payments._(this.value);
 
-factory AccountCapabilitiesP24Payments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesP24Payments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesP24Payments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesP24Payments active = AccountCapabilitiesP24Payments._('active');
 
@@ -1112,23 +1112,23 @@ static const List<AccountCapabilitiesP24Payments> values = [active, inactive, pe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesP24Payments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesP24Payments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesP24Payments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesP24Payments($value)';}
+}
 /// The status of the pay_by_bank payments capability of the account, or whether the account can directly process pay_by_bank charges.
 @immutable final class AccountCapabilitiesPayByBankPayments {const AccountCapabilitiesPayByBankPayments._(this.value);
 
-factory AccountCapabilitiesPayByBankPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesPayByBankPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesPayByBankPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesPayByBankPayments active = AccountCapabilitiesPayByBankPayments._('active');
 
@@ -1140,23 +1140,23 @@ static const List<AccountCapabilitiesPayByBankPayments> values = [active, inacti
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesPayByBankPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesPayByBankPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesPayByBankPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesPayByBankPayments($value)';}
+}
 /// The status of the Payco capability of the account, or whether the account can directly process Payco payments.
 @immutable final class AccountCapabilitiesPaycoPayments {const AccountCapabilitiesPaycoPayments._(this.value);
 
-factory AccountCapabilitiesPaycoPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesPaycoPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesPaycoPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesPaycoPayments active = AccountCapabilitiesPaycoPayments._('active');
 
@@ -1168,23 +1168,23 @@ static const List<AccountCapabilitiesPaycoPayments> values = [active, inactive, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesPaycoPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesPaycoPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesPaycoPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesPaycoPayments($value)';}
+}
 /// The status of the paynow payments capability of the account, or whether the account can directly process paynow charges.
 @immutable final class AccountCapabilitiesPaynowPayments {const AccountCapabilitiesPaynowPayments._(this.value);
 
-factory AccountCapabilitiesPaynowPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesPaynowPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesPaynowPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesPaynowPayments active = AccountCapabilitiesPaynowPayments._('active');
 
@@ -1196,23 +1196,23 @@ static const List<AccountCapabilitiesPaynowPayments> values = [active, inactive,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesPaynowPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesPaynowPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesPaynowPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesPaynowPayments($value)';}
+}
 /// The status of the PayTo capability of the account, or whether the account can directly process PayTo charges.
 @immutable final class AccountCapabilitiesPaytoPayments {const AccountCapabilitiesPaytoPayments._(this.value);
 
-factory AccountCapabilitiesPaytoPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesPaytoPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesPaytoPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesPaytoPayments active = AccountCapabilitiesPaytoPayments._('active');
 
@@ -1224,23 +1224,23 @@ static const List<AccountCapabilitiesPaytoPayments> values = [active, inactive, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesPaytoPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesPaytoPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesPaytoPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesPaytoPayments($value)';}
+}
 /// The status of the pix payments capability of the account, or whether the account can directly process pix charges.
 @immutable final class AccountCapabilitiesPixPayments {const AccountCapabilitiesPixPayments._(this.value);
 
-factory AccountCapabilitiesPixPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesPixPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesPixPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesPixPayments active = AccountCapabilitiesPixPayments._('active');
 
@@ -1252,23 +1252,23 @@ static const List<AccountCapabilitiesPixPayments> values = [active, inactive, pe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesPixPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesPixPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesPixPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesPixPayments($value)';}
+}
 /// The status of the promptpay payments capability of the account, or whether the account can directly process promptpay charges.
 @immutable final class AccountCapabilitiesPromptpayPayments {const AccountCapabilitiesPromptpayPayments._(this.value);
 
-factory AccountCapabilitiesPromptpayPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesPromptpayPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesPromptpayPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesPromptpayPayments active = AccountCapabilitiesPromptpayPayments._('active');
 
@@ -1280,23 +1280,23 @@ static const List<AccountCapabilitiesPromptpayPayments> values = [active, inacti
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesPromptpayPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesPromptpayPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesPromptpayPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesPromptpayPayments($value)';}
+}
 /// The status of the RevolutPay capability of the account, or whether the account can directly process RevolutPay payments.
 @immutable final class AccountCapabilitiesRevolutPayPayments {const AccountCapabilitiesRevolutPayPayments._(this.value);
 
-factory AccountCapabilitiesRevolutPayPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesRevolutPayPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesRevolutPayPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesRevolutPayPayments active = AccountCapabilitiesRevolutPayPayments._('active');
 
@@ -1308,23 +1308,23 @@ static const List<AccountCapabilitiesRevolutPayPayments> values = [active, inact
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesRevolutPayPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesRevolutPayPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesRevolutPayPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesRevolutPayPayments($value)';}
+}
 /// The status of the SamsungPay capability of the account, or whether the account can directly process SamsungPay payments.
 @immutable final class AccountCapabilitiesSamsungPayPayments {const AccountCapabilitiesSamsungPayPayments._(this.value);
 
-factory AccountCapabilitiesSamsungPayPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesSamsungPayPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesSamsungPayPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesSamsungPayPayments active = AccountCapabilitiesSamsungPayPayments._('active');
 
@@ -1336,23 +1336,23 @@ static const List<AccountCapabilitiesSamsungPayPayments> values = [active, inact
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesSamsungPayPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesSamsungPayPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesSamsungPayPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesSamsungPayPayments($value)';}
+}
 /// The status of the Satispay capability of the account, or whether the account can directly process Satispay payments.
 @immutable final class AccountCapabilitiesSatispayPayments {const AccountCapabilitiesSatispayPayments._(this.value);
 
-factory AccountCapabilitiesSatispayPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesSatispayPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesSatispayPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesSatispayPayments active = AccountCapabilitiesSatispayPayments._('active');
 
@@ -1364,23 +1364,23 @@ static const List<AccountCapabilitiesSatispayPayments> values = [active, inactiv
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesSatispayPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesSatispayPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesSatispayPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesSatispayPayments($value)';}
+}
 /// The status of the SEPA customer_balance payments (EUR currency) capability of the account, or whether the account can directly process SEPA customer_balance charges.
 @immutable final class AccountCapabilitiesSepaBankTransferPayments {const AccountCapabilitiesSepaBankTransferPayments._(this.value);
 
-factory AccountCapabilitiesSepaBankTransferPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesSepaBankTransferPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesSepaBankTransferPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesSepaBankTransferPayments active = AccountCapabilitiesSepaBankTransferPayments._('active');
 
@@ -1392,23 +1392,23 @@ static const List<AccountCapabilitiesSepaBankTransferPayments> values = [active,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesSepaBankTransferPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesSepaBankTransferPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesSepaBankTransferPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesSepaBankTransferPayments($value)';}
+}
 /// The status of the SEPA Direct Debits payments capability of the account, or whether the account can directly process SEPA Direct Debits charges.
 @immutable final class AccountCapabilitiesSepaDebitPayments {const AccountCapabilitiesSepaDebitPayments._(this.value);
 
-factory AccountCapabilitiesSepaDebitPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesSepaDebitPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesSepaDebitPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesSepaDebitPayments active = AccountCapabilitiesSepaDebitPayments._('active');
 
@@ -1420,23 +1420,23 @@ static const List<AccountCapabilitiesSepaDebitPayments> values = [active, inacti
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesSepaDebitPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesSepaDebitPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesSepaDebitPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesSepaDebitPayments($value)';}
+}
 /// The status of the Sofort payments capability of the account, or whether the account can directly process Sofort charges.
 @immutable final class AccountCapabilitiesSofortPayments {const AccountCapabilitiesSofortPayments._(this.value);
 
-factory AccountCapabilitiesSofortPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesSofortPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesSofortPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesSofortPayments active = AccountCapabilitiesSofortPayments._('active');
 
@@ -1448,23 +1448,23 @@ static const List<AccountCapabilitiesSofortPayments> values = [active, inactive,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesSofortPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesSofortPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesSofortPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesSofortPayments($value)';}
+}
 /// The status of the Swish capability of the account, or whether the account can directly process Swish payments.
 @immutable final class AccountCapabilitiesSwishPayments {const AccountCapabilitiesSwishPayments._(this.value);
 
-factory AccountCapabilitiesSwishPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesSwishPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesSwishPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesSwishPayments active = AccountCapabilitiesSwishPayments._('active');
 
@@ -1476,23 +1476,23 @@ static const List<AccountCapabilitiesSwishPayments> values = [active, inactive, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesSwishPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesSwishPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesSwishPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesSwishPayments($value)';}
+}
 /// The status of the tax reporting 1099-K (US) capability of the account.
 @immutable final class AccountCapabilitiesTaxReportingUs1099K {const AccountCapabilitiesTaxReportingUs1099K._(this.value);
 
-factory AccountCapabilitiesTaxReportingUs1099K.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesTaxReportingUs1099K.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesTaxReportingUs1099K._(json),
-}; }
+};}
 
 static const AccountCapabilitiesTaxReportingUs1099K active = AccountCapabilitiesTaxReportingUs1099K._('active');
 
@@ -1504,23 +1504,23 @@ static const List<AccountCapabilitiesTaxReportingUs1099K> values = [active, inac
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesTaxReportingUs1099K && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesTaxReportingUs1099K($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesTaxReportingUs1099K && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesTaxReportingUs1099K($value)';}
+}
 /// The status of the tax reporting 1099-MISC (US) capability of the account.
 @immutable final class AccountCapabilitiesTaxReportingUs1099Misc {const AccountCapabilitiesTaxReportingUs1099Misc._(this.value);
 
-factory AccountCapabilitiesTaxReportingUs1099Misc.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesTaxReportingUs1099Misc.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesTaxReportingUs1099Misc._(json),
-}; }
+};}
 
 static const AccountCapabilitiesTaxReportingUs1099Misc active = AccountCapabilitiesTaxReportingUs1099Misc._('active');
 
@@ -1532,23 +1532,23 @@ static const List<AccountCapabilitiesTaxReportingUs1099Misc> values = [active, i
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesTaxReportingUs1099Misc && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesTaxReportingUs1099Misc($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesTaxReportingUs1099Misc && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesTaxReportingUs1099Misc($value)';}
+}
 /// The status of the transfers capability of the account, or whether your platform can transfer funds to the account.
 @immutable final class AccountCapabilitiesTransfers {const AccountCapabilitiesTransfers._(this.value);
 
-factory AccountCapabilitiesTransfers.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesTransfers.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesTransfers._(json),
-}; }
+};}
 
 static const AccountCapabilitiesTransfers active = AccountCapabilitiesTransfers._('active');
 
@@ -1560,23 +1560,23 @@ static const List<AccountCapabilitiesTransfers> values = [active, inactive, pend
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesTransfers && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesTransfers($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesTransfers && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesTransfers($value)';}
+}
 /// The status of the banking capability, or whether the account can have bank accounts.
 @immutable final class AccountCapabilitiesTreasury {const AccountCapabilitiesTreasury._(this.value);
 
-factory AccountCapabilitiesTreasury.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesTreasury.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesTreasury._(json),
-}; }
+};}
 
 static const AccountCapabilitiesTreasury active = AccountCapabilitiesTreasury._('active');
 
@@ -1588,23 +1588,23 @@ static const List<AccountCapabilitiesTreasury> values = [active, inactive, pendi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesTreasury && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesTreasury($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesTreasury && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesTreasury($value)';}
+}
 /// The status of the TWINT capability of the account, or whether the account can directly process TWINT charges.
 @immutable final class AccountCapabilitiesTwintPayments {const AccountCapabilitiesTwintPayments._(this.value);
 
-factory AccountCapabilitiesTwintPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesTwintPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesTwintPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesTwintPayments active = AccountCapabilitiesTwintPayments._('active');
 
@@ -1616,23 +1616,23 @@ static const List<AccountCapabilitiesTwintPayments> values = [active, inactive, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesTwintPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesTwintPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesTwintPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesTwintPayments($value)';}
+}
 /// The status of the US bank account ACH payments capability of the account, or whether the account can directly process US bank account charges.
 @immutable final class AccountCapabilitiesUsBankAccountAchPayments {const AccountCapabilitiesUsBankAccountAchPayments._(this.value);
 
-factory AccountCapabilitiesUsBankAccountAchPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesUsBankAccountAchPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesUsBankAccountAchPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesUsBankAccountAchPayments active = AccountCapabilitiesUsBankAccountAchPayments._('active');
 
@@ -1644,23 +1644,23 @@ static const List<AccountCapabilitiesUsBankAccountAchPayments> values = [active,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesUsBankAccountAchPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesUsBankAccountAchPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesUsBankAccountAchPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesUsBankAccountAchPayments($value)';}
+}
 /// The status of the US customer_balance payments (USD currency) capability of the account, or whether the account can directly process US customer_balance charges.
 @immutable final class AccountCapabilitiesUsBankTransferPayments {const AccountCapabilitiesUsBankTransferPayments._(this.value);
 
-factory AccountCapabilitiesUsBankTransferPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesUsBankTransferPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesUsBankTransferPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesUsBankTransferPayments active = AccountCapabilitiesUsBankTransferPayments._('active');
 
@@ -1672,23 +1672,23 @@ static const List<AccountCapabilitiesUsBankTransferPayments> values = [active, i
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesUsBankTransferPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesUsBankTransferPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesUsBankTransferPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesUsBankTransferPayments($value)';}
+}
 /// The status of the Zip capability of the account, or whether the account can directly process Zip charges.
 @immutable final class AccountCapabilitiesZipPayments {const AccountCapabilitiesZipPayments._(this.value);
 
-factory AccountCapabilitiesZipPayments.fromJson(String json) { return switch (json) {
+factory AccountCapabilitiesZipPayments.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => AccountCapabilitiesZipPayments._(json),
-}; }
+};}
 
 static const AccountCapabilitiesZipPayments active = AccountCapabilitiesZipPayments._('active');
 
@@ -1700,18 +1700,18 @@ static const List<AccountCapabilitiesZipPayments> values = [active, inactive, pe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilitiesZipPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilitiesZipPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilitiesZipPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilitiesZipPayments($value)';}
+}
 /// 
 @immutable final class AccountCapabilities {const AccountCapabilities({this.giropayPayments, this.affirmPayments, this.afterpayClearpayPayments, this.almaPayments, this.amazonPayPayments, this.auBecsDebitPayments, this.bacsDebitPayments, this.bancontactPayments, this.bankTransferPayments, this.billiePayments, this.blikPayments, this.boletoPayments, this.cardIssuing, this.cardPayments, this.cartesBancairesPayments, this.cashappPayments, this.cryptoPayments, this.epsPayments, this.fpxPayments, this.gbBankTransferPayments, this.acssDebitPayments, this.grabpayPayments, this.idealPayments, this.indiaInternationalPayments, this.jcbPayments, this.jpBankTransferPayments, this.kakaoPayPayments, this.klarnaPayments, this.konbiniPayments, this.krCardPayments, this.legacyPayments, this.linkPayments, this.mbWayPayments, this.mobilepayPayments, this.multibancoPayments, this.mxBankTransferPayments, this.naverPayPayments, this.nzBankAccountBecsDebitPayments, this.oxxoPayments, this.p24Payments, this.zipPayments, this.paycoPayments, this.paynowPayments, this.paytoPayments, this.pixPayments, this.promptpayPayments, this.revolutPayPayments, this.samsungPayPayments, this.satispayPayments, this.sepaBankTransferPayments, this.sepaDebitPayments, this.sofortPayments, this.swishPayments, this.taxReportingUs1099K, this.taxReportingUs1099Misc, this.transfers, this.treasury, this.twintPayments, this.usBankAccountAchPayments, this.usBankTransferPayments, this.payByBankPayments, });
 
-factory AccountCapabilities.fromJson(Map<String, dynamic> json) { return AccountCapabilities(
+factory AccountCapabilities.fromJson(Map<String, dynamic> json) {return AccountCapabilities(
   acssDebitPayments: json['acss_debit_payments'] != null ? AccountCapabilitiesAcssDebitPayments.fromJson(json['acss_debit_payments'] as String) : null,
   affirmPayments: json['affirm_payments'] != null ? AccountCapabilitiesAffirmPayments.fromJson(json['affirm_payments'] as String) : null,
   afterpayClearpayPayments: json['afterpay_clearpay_payments'] != null ? AccountCapabilitiesAfterpayClearpayPayments.fromJson(json['afterpay_clearpay_payments'] as String) : null,
@@ -1773,7 +1773,7 @@ factory AccountCapabilities.fromJson(Map<String, dynamic> json) { return Account
   usBankAccountAchPayments: json['us_bank_account_ach_payments'] != null ? AccountCapabilitiesUsBankAccountAchPayments.fromJson(json['us_bank_account_ach_payments'] as String) : null,
   usBankTransferPayments: json['us_bank_transfer_payments'] != null ? AccountCapabilitiesUsBankTransferPayments.fromJson(json['us_bank_transfer_payments'] as String) : null,
   zipPayments: json['zip_payments'] != null ? AccountCapabilitiesZipPayments.fromJson(json['zip_payments'] as String) : null,
-); }
+);}
 
 /// The status of the Canadian pre-authorized debits payments capability of the account, or whether the account can directly process Canadian pre-authorized debits charges.
 final AccountCapabilitiesAcssDebitPayments? acssDebitPayments;
@@ -1958,7 +1958,7 @@ final AccountCapabilitiesUsBankTransferPayments? usBankTransferPayments;
 /// The status of the Zip capability of the account, or whether the account can directly process Zip charges.
 final AccountCapabilitiesZipPayments? zipPayments;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (acssDebitPayments != null) 'acss_debit_payments': acssDebitPayments?.toJson(),
   if (affirmPayments != null) 'affirm_payments': affirmPayments?.toJson(),
   if (afterpayClearpayPayments != null) 'afterpay_clearpay_payments': afterpayClearpayPayments?.toJson(),
@@ -2020,9 +2020,9 @@ Map<String, dynamic> toJson() { return {
   if (usBankAccountAchPayments != null) 'us_bank_account_ach_payments': usBankAccountAchPayments?.toJson(),
   if (usBankTransferPayments != null) 'us_bank_transfer_payments': usBankTransferPayments?.toJson(),
   if (zipPayments != null) 'zip_payments': zipPayments?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acss_debit_payments', 'affirm_payments', 'afterpay_clearpay_payments', 'alma_payments', 'amazon_pay_payments', 'au_becs_debit_payments', 'bacs_debit_payments', 'bancontact_payments', 'bank_transfer_payments', 'billie_payments', 'blik_payments', 'boleto_payments', 'card_issuing', 'card_payments', 'cartes_bancaires_payments', 'cashapp_payments', 'crypto_payments', 'eps_payments', 'fpx_payments', 'gb_bank_transfer_payments', 'giropay_payments', 'grabpay_payments', 'ideal_payments', 'india_international_payments', 'jcb_payments', 'jp_bank_transfer_payments', 'kakao_pay_payments', 'klarna_payments', 'konbini_payments', 'kr_card_payments', 'legacy_payments', 'link_payments', 'mb_way_payments', 'mobilepay_payments', 'multibanco_payments', 'mx_bank_transfer_payments', 'naver_pay_payments', 'nz_bank_account_becs_debit_payments', 'oxxo_payments', 'p24_payments', 'pay_by_bank_payments', 'payco_payments', 'paynow_payments', 'payto_payments', 'pix_payments', 'promptpay_payments', 'revolut_pay_payments', 'samsung_pay_payments', 'satispay_payments', 'sepa_bank_transfer_payments', 'sepa_debit_payments', 'sofort_payments', 'swish_payments', 'tax_reporting_us_1099_k', 'tax_reporting_us_1099_misc', 'transfers', 'treasury', 'twint_payments', 'us_bank_account_ach_payments', 'us_bank_transfer_payments', 'zip_payments'}.contains(key)); } 
-AccountCapabilities copyWith({AccountCapabilitiesAcssDebitPayments? Function()? acssDebitPayments, AccountCapabilitiesAffirmPayments? Function()? affirmPayments, AccountCapabilitiesAfterpayClearpayPayments? Function()? afterpayClearpayPayments, AccountCapabilitiesAlmaPayments? Function()? almaPayments, AccountCapabilitiesAmazonPayPayments? Function()? amazonPayPayments, AccountCapabilitiesAuBecsDebitPayments? Function()? auBecsDebitPayments, AccountCapabilitiesBacsDebitPayments? Function()? bacsDebitPayments, AccountCapabilitiesBancontactPayments? Function()? bancontactPayments, AccountCapabilitiesBankTransferPayments? Function()? bankTransferPayments, AccountCapabilitiesBilliePayments? Function()? billiePayments, AccountCapabilitiesBlikPayments? Function()? blikPayments, AccountCapabilitiesBoletoPayments? Function()? boletoPayments, AccountCapabilitiesCardIssuing? Function()? cardIssuing, AccountCapabilitiesCardPayments? Function()? cardPayments, AccountCapabilitiesCartesBancairesPayments? Function()? cartesBancairesPayments, AccountCapabilitiesCashappPayments? Function()? cashappPayments, AccountCapabilitiesCryptoPayments? Function()? cryptoPayments, AccountCapabilitiesEpsPayments? Function()? epsPayments, AccountCapabilitiesFpxPayments? Function()? fpxPayments, AccountCapabilitiesGbBankTransferPayments? Function()? gbBankTransferPayments, AccountCapabilitiesGiropayPayments? Function()? giropayPayments, AccountCapabilitiesGrabpayPayments? Function()? grabpayPayments, AccountCapabilitiesIdealPayments? Function()? idealPayments, AccountCapabilitiesIndiaInternationalPayments? Function()? indiaInternationalPayments, AccountCapabilitiesJcbPayments? Function()? jcbPayments, AccountCapabilitiesJpBankTransferPayments? Function()? jpBankTransferPayments, AccountCapabilitiesKakaoPayPayments? Function()? kakaoPayPayments, AccountCapabilitiesKlarnaPayments? Function()? klarnaPayments, AccountCapabilitiesKonbiniPayments? Function()? konbiniPayments, AccountCapabilitiesKrCardPayments? Function()? krCardPayments, AccountCapabilitiesLegacyPayments? Function()? legacyPayments, AccountCapabilitiesLinkPayments? Function()? linkPayments, AccountCapabilitiesMbWayPayments? Function()? mbWayPayments, AccountCapabilitiesMobilepayPayments? Function()? mobilepayPayments, AccountCapabilitiesMultibancoPayments? Function()? multibancoPayments, AccountCapabilitiesMxBankTransferPayments? Function()? mxBankTransferPayments, AccountCapabilitiesNaverPayPayments? Function()? naverPayPayments, AccountCapabilitiesNzBankAccountBecsDebitPayments? Function()? nzBankAccountBecsDebitPayments, AccountCapabilitiesOxxoPayments? Function()? oxxoPayments, AccountCapabilitiesP24Payments? Function()? p24Payments, AccountCapabilitiesPayByBankPayments? Function()? payByBankPayments, AccountCapabilitiesPaycoPayments? Function()? paycoPayments, AccountCapabilitiesPaynowPayments? Function()? paynowPayments, AccountCapabilitiesPaytoPayments? Function()? paytoPayments, AccountCapabilitiesPixPayments? Function()? pixPayments, AccountCapabilitiesPromptpayPayments? Function()? promptpayPayments, AccountCapabilitiesRevolutPayPayments? Function()? revolutPayPayments, AccountCapabilitiesSamsungPayPayments? Function()? samsungPayPayments, AccountCapabilitiesSatispayPayments? Function()? satispayPayments, AccountCapabilitiesSepaBankTransferPayments? Function()? sepaBankTransferPayments, AccountCapabilitiesSepaDebitPayments? Function()? sepaDebitPayments, AccountCapabilitiesSofortPayments? Function()? sofortPayments, AccountCapabilitiesSwishPayments? Function()? swishPayments, AccountCapabilitiesTaxReportingUs1099K? Function()? taxReportingUs1099K, AccountCapabilitiesTaxReportingUs1099Misc? Function()? taxReportingUs1099Misc, AccountCapabilitiesTransfers? Function()? transfers, AccountCapabilitiesTreasury? Function()? treasury, AccountCapabilitiesTwintPayments? Function()? twintPayments, AccountCapabilitiesUsBankAccountAchPayments? Function()? usBankAccountAchPayments, AccountCapabilitiesUsBankTransferPayments? Function()? usBankTransferPayments, AccountCapabilitiesZipPayments? Function()? zipPayments, }) { return AccountCapabilities(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'acss_debit_payments', 'affirm_payments', 'afterpay_clearpay_payments', 'alma_payments', 'amazon_pay_payments', 'au_becs_debit_payments', 'bacs_debit_payments', 'bancontact_payments', 'bank_transfer_payments', 'billie_payments', 'blik_payments', 'boleto_payments', 'card_issuing', 'card_payments', 'cartes_bancaires_payments', 'cashapp_payments', 'crypto_payments', 'eps_payments', 'fpx_payments', 'gb_bank_transfer_payments', 'giropay_payments', 'grabpay_payments', 'ideal_payments', 'india_international_payments', 'jcb_payments', 'jp_bank_transfer_payments', 'kakao_pay_payments', 'klarna_payments', 'konbini_payments', 'kr_card_payments', 'legacy_payments', 'link_payments', 'mb_way_payments', 'mobilepay_payments', 'multibanco_payments', 'mx_bank_transfer_payments', 'naver_pay_payments', 'nz_bank_account_becs_debit_payments', 'oxxo_payments', 'p24_payments', 'pay_by_bank_payments', 'payco_payments', 'paynow_payments', 'payto_payments', 'pix_payments', 'promptpay_payments', 'revolut_pay_payments', 'samsung_pay_payments', 'satispay_payments', 'sepa_bank_transfer_payments', 'sepa_debit_payments', 'sofort_payments', 'swish_payments', 'tax_reporting_us_1099_k', 'tax_reporting_us_1099_misc', 'transfers', 'treasury', 'twint_payments', 'us_bank_account_ach_payments', 'us_bank_transfer_payments', 'zip_payments'}.contains(key));}
+AccountCapabilities copyWith({AccountCapabilitiesAcssDebitPayments? Function()? acssDebitPayments, AccountCapabilitiesAffirmPayments? Function()? affirmPayments, AccountCapabilitiesAfterpayClearpayPayments? Function()? afterpayClearpayPayments, AccountCapabilitiesAlmaPayments? Function()? almaPayments, AccountCapabilitiesAmazonPayPayments? Function()? amazonPayPayments, AccountCapabilitiesAuBecsDebitPayments? Function()? auBecsDebitPayments, AccountCapabilitiesBacsDebitPayments? Function()? bacsDebitPayments, AccountCapabilitiesBancontactPayments? Function()? bancontactPayments, AccountCapabilitiesBankTransferPayments? Function()? bankTransferPayments, AccountCapabilitiesBilliePayments? Function()? billiePayments, AccountCapabilitiesBlikPayments? Function()? blikPayments, AccountCapabilitiesBoletoPayments? Function()? boletoPayments, AccountCapabilitiesCardIssuing? Function()? cardIssuing, AccountCapabilitiesCardPayments? Function()? cardPayments, AccountCapabilitiesCartesBancairesPayments? Function()? cartesBancairesPayments, AccountCapabilitiesCashappPayments? Function()? cashappPayments, AccountCapabilitiesCryptoPayments? Function()? cryptoPayments, AccountCapabilitiesEpsPayments? Function()? epsPayments, AccountCapabilitiesFpxPayments? Function()? fpxPayments, AccountCapabilitiesGbBankTransferPayments? Function()? gbBankTransferPayments, AccountCapabilitiesGiropayPayments? Function()? giropayPayments, AccountCapabilitiesGrabpayPayments? Function()? grabpayPayments, AccountCapabilitiesIdealPayments? Function()? idealPayments, AccountCapabilitiesIndiaInternationalPayments? Function()? indiaInternationalPayments, AccountCapabilitiesJcbPayments? Function()? jcbPayments, AccountCapabilitiesJpBankTransferPayments? Function()? jpBankTransferPayments, AccountCapabilitiesKakaoPayPayments? Function()? kakaoPayPayments, AccountCapabilitiesKlarnaPayments? Function()? klarnaPayments, AccountCapabilitiesKonbiniPayments? Function()? konbiniPayments, AccountCapabilitiesKrCardPayments? Function()? krCardPayments, AccountCapabilitiesLegacyPayments? Function()? legacyPayments, AccountCapabilitiesLinkPayments? Function()? linkPayments, AccountCapabilitiesMbWayPayments? Function()? mbWayPayments, AccountCapabilitiesMobilepayPayments? Function()? mobilepayPayments, AccountCapabilitiesMultibancoPayments? Function()? multibancoPayments, AccountCapabilitiesMxBankTransferPayments? Function()? mxBankTransferPayments, AccountCapabilitiesNaverPayPayments? Function()? naverPayPayments, AccountCapabilitiesNzBankAccountBecsDebitPayments? Function()? nzBankAccountBecsDebitPayments, AccountCapabilitiesOxxoPayments? Function()? oxxoPayments, AccountCapabilitiesP24Payments? Function()? p24Payments, AccountCapabilitiesPayByBankPayments? Function()? payByBankPayments, AccountCapabilitiesPaycoPayments? Function()? paycoPayments, AccountCapabilitiesPaynowPayments? Function()? paynowPayments, AccountCapabilitiesPaytoPayments? Function()? paytoPayments, AccountCapabilitiesPixPayments? Function()? pixPayments, AccountCapabilitiesPromptpayPayments? Function()? promptpayPayments, AccountCapabilitiesRevolutPayPayments? Function()? revolutPayPayments, AccountCapabilitiesSamsungPayPayments? Function()? samsungPayPayments, AccountCapabilitiesSatispayPayments? Function()? satispayPayments, AccountCapabilitiesSepaBankTransferPayments? Function()? sepaBankTransferPayments, AccountCapabilitiesSepaDebitPayments? Function()? sepaDebitPayments, AccountCapabilitiesSofortPayments? Function()? sofortPayments, AccountCapabilitiesSwishPayments? Function()? swishPayments, AccountCapabilitiesTaxReportingUs1099K? Function()? taxReportingUs1099K, AccountCapabilitiesTaxReportingUs1099Misc? Function()? taxReportingUs1099Misc, AccountCapabilitiesTransfers? Function()? transfers, AccountCapabilitiesTreasury? Function()? treasury, AccountCapabilitiesTwintPayments? Function()? twintPayments, AccountCapabilitiesUsBankAccountAchPayments? Function()? usBankAccountAchPayments, AccountCapabilitiesUsBankTransferPayments? Function()? usBankTransferPayments, AccountCapabilitiesZipPayments? Function()? zipPayments, }) {return AccountCapabilities(
   acssDebitPayments: acssDebitPayments != null ? acssDebitPayments() : this.acssDebitPayments,
   affirmPayments: affirmPayments != null ? affirmPayments() : this.affirmPayments,
   afterpayClearpayPayments: afterpayClearpayPayments != null ? afterpayClearpayPayments() : this.afterpayClearpayPayments,
@@ -2084,8 +2084,8 @@ AccountCapabilities copyWith({AccountCapabilitiesAcssDebitPayments? Function()? 
   usBankAccountAchPayments: usBankAccountAchPayments != null ? usBankAccountAchPayments() : this.usBankAccountAchPayments,
   usBankTransferPayments: usBankTransferPayments != null ? usBankTransferPayments() : this.usBankTransferPayments,
   zipPayments: zipPayments != null ? zipPayments() : this.zipPayments,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountCapabilities &&
           acssDebitPayments == other.acssDebitPayments &&
           affirmPayments == other.affirmPayments &&
@@ -2147,7 +2147,7 @@ AccountCapabilities copyWith({AccountCapabilitiesAcssDebitPayments? Function()? 
           twintPayments == other.twintPayments &&
           usBankAccountAchPayments == other.usBankAccountAchPayments &&
           usBankTransferPayments == other.usBankTransferPayments &&
-          zipPayments == other.zipPayments; } 
-@override int get hashCode { return Object.hashAll([acssDebitPayments, affirmPayments, afterpayClearpayPayments, almaPayments, amazonPayPayments, auBecsDebitPayments, bacsDebitPayments, bancontactPayments, bankTransferPayments, billiePayments, blikPayments, boletoPayments, cardIssuing, cardPayments, cartesBancairesPayments, cashappPayments, cryptoPayments, epsPayments, fpxPayments, gbBankTransferPayments, giropayPayments, grabpayPayments, idealPayments, indiaInternationalPayments, jcbPayments, jpBankTransferPayments, kakaoPayPayments, klarnaPayments, konbiniPayments, krCardPayments, legacyPayments, linkPayments, mbWayPayments, mobilepayPayments, multibancoPayments, mxBankTransferPayments, naverPayPayments, nzBankAccountBecsDebitPayments, oxxoPayments, p24Payments, payByBankPayments, paycoPayments, paynowPayments, paytoPayments, pixPayments, promptpayPayments, revolutPayPayments, samsungPayPayments, satispayPayments, sepaBankTransferPayments, sepaDebitPayments, sofortPayments, swishPayments, taxReportingUs1099K, taxReportingUs1099Misc, transfers, treasury, twintPayments, usBankAccountAchPayments, usBankTransferPayments, zipPayments]); } 
-@override String toString() { return 'AccountCapabilities(acssDebitPayments: $acssDebitPayments, affirmPayments: $affirmPayments, afterpayClearpayPayments: $afterpayClearpayPayments, almaPayments: $almaPayments, amazonPayPayments: $amazonPayPayments, auBecsDebitPayments: $auBecsDebitPayments, bacsDebitPayments: $bacsDebitPayments, bancontactPayments: $bancontactPayments, bankTransferPayments: $bankTransferPayments, billiePayments: $billiePayments, blikPayments: $blikPayments, boletoPayments: $boletoPayments, cardIssuing: $cardIssuing, cardPayments: $cardPayments, cartesBancairesPayments: $cartesBancairesPayments, cashappPayments: $cashappPayments, cryptoPayments: $cryptoPayments, epsPayments: $epsPayments, fpxPayments: $fpxPayments, gbBankTransferPayments: $gbBankTransferPayments, giropayPayments: $giropayPayments, grabpayPayments: $grabpayPayments, idealPayments: $idealPayments, indiaInternationalPayments: $indiaInternationalPayments, jcbPayments: $jcbPayments, jpBankTransferPayments: $jpBankTransferPayments, kakaoPayPayments: $kakaoPayPayments, klarnaPayments: $klarnaPayments, konbiniPayments: $konbiniPayments, krCardPayments: $krCardPayments, legacyPayments: $legacyPayments, linkPayments: $linkPayments, mbWayPayments: $mbWayPayments, mobilepayPayments: $mobilepayPayments, multibancoPayments: $multibancoPayments, mxBankTransferPayments: $mxBankTransferPayments, naverPayPayments: $naverPayPayments, nzBankAccountBecsDebitPayments: $nzBankAccountBecsDebitPayments, oxxoPayments: $oxxoPayments, p24Payments: $p24Payments, payByBankPayments: $payByBankPayments, paycoPayments: $paycoPayments, paynowPayments: $paynowPayments, paytoPayments: $paytoPayments, pixPayments: $pixPayments, promptpayPayments: $promptpayPayments, revolutPayPayments: $revolutPayPayments, samsungPayPayments: $samsungPayPayments, satispayPayments: $satispayPayments, sepaBankTransferPayments: $sepaBankTransferPayments, sepaDebitPayments: $sepaDebitPayments, sofortPayments: $sofortPayments, swishPayments: $swishPayments, taxReportingUs1099K: $taxReportingUs1099K, taxReportingUs1099Misc: $taxReportingUs1099Misc, transfers: $transfers, treasury: $treasury, twintPayments: $twintPayments, usBankAccountAchPayments: $usBankAccountAchPayments, usBankTransferPayments: $usBankTransferPayments, zipPayments: $zipPayments)'; } 
- }
+          zipPayments == other.zipPayments;}
+@override int get hashCode {return Object.hashAll([acssDebitPayments, affirmPayments, afterpayClearpayPayments, almaPayments, amazonPayPayments, auBecsDebitPayments, bacsDebitPayments, bancontactPayments, bankTransferPayments, billiePayments, blikPayments, boletoPayments, cardIssuing, cardPayments, cartesBancairesPayments, cashappPayments, cryptoPayments, epsPayments, fpxPayments, gbBankTransferPayments, giropayPayments, grabpayPayments, idealPayments, indiaInternationalPayments, jcbPayments, jpBankTransferPayments, kakaoPayPayments, klarnaPayments, konbiniPayments, krCardPayments, legacyPayments, linkPayments, mbWayPayments, mobilepayPayments, multibancoPayments, mxBankTransferPayments, naverPayPayments, nzBankAccountBecsDebitPayments, oxxoPayments, p24Payments, payByBankPayments, paycoPayments, paynowPayments, paytoPayments, pixPayments, promptpayPayments, revolutPayPayments, samsungPayPayments, satispayPayments, sepaBankTransferPayments, sepaDebitPayments, sofortPayments, swishPayments, taxReportingUs1099K, taxReportingUs1099Misc, transfers, treasury, twintPayments, usBankAccountAchPayments, usBankTransferPayments, zipPayments]);}
+@override String toString() {return 'AccountCapabilities(acssDebitPayments: $acssDebitPayments, affirmPayments: $affirmPayments, afterpayClearpayPayments: $afterpayClearpayPayments, almaPayments: $almaPayments, amazonPayPayments: $amazonPayPayments, auBecsDebitPayments: $auBecsDebitPayments, bacsDebitPayments: $bacsDebitPayments, bancontactPayments: $bancontactPayments, bankTransferPayments: $bankTransferPayments, billiePayments: $billiePayments, blikPayments: $blikPayments, boletoPayments: $boletoPayments, cardIssuing: $cardIssuing, cardPayments: $cardPayments, cartesBancairesPayments: $cartesBancairesPayments, cashappPayments: $cashappPayments, cryptoPayments: $cryptoPayments, epsPayments: $epsPayments, fpxPayments: $fpxPayments, gbBankTransferPayments: $gbBankTransferPayments, giropayPayments: $giropayPayments, grabpayPayments: $grabpayPayments, idealPayments: $idealPayments, indiaInternationalPayments: $indiaInternationalPayments, jcbPayments: $jcbPayments, jpBankTransferPayments: $jpBankTransferPayments, kakaoPayPayments: $kakaoPayPayments, klarnaPayments: $klarnaPayments, konbiniPayments: $konbiniPayments, krCardPayments: $krCardPayments, legacyPayments: $legacyPayments, linkPayments: $linkPayments, mbWayPayments: $mbWayPayments, mobilepayPayments: $mobilepayPayments, multibancoPayments: $multibancoPayments, mxBankTransferPayments: $mxBankTransferPayments, naverPayPayments: $naverPayPayments, nzBankAccountBecsDebitPayments: $nzBankAccountBecsDebitPayments, oxxoPayments: $oxxoPayments, p24Payments: $p24Payments, payByBankPayments: $payByBankPayments, paycoPayments: $paycoPayments, paynowPayments: $paynowPayments, paytoPayments: $paytoPayments, pixPayments: $pixPayments, promptpayPayments: $promptpayPayments, revolutPayPayments: $revolutPayPayments, samsungPayPayments: $samsungPayPayments, satispayPayments: $satispayPayments, sepaBankTransferPayments: $sepaBankTransferPayments, sepaDebitPayments: $sepaDebitPayments, sofortPayments: $sofortPayments, swishPayments: $swishPayments, taxReportingUs1099K: $taxReportingUs1099K, taxReportingUs1099Misc: $taxReportingUs1099Misc, transfers: $transfers, treasury: $treasury, twintPayments: $twintPayments, usBankAccountAchPayments: $usBankAccountAchPayments, usBankTransferPayments: $usBankTransferPayments, zipPayments: $zipPayments)';}
+}

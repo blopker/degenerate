@@ -16,12 +16,12 @@ bool toJson() => value;
 }
 @immutable final class ResourceSharingShareRecipientResourceObject {const ResourceSharingShareRecipientResourceObject({required this.error, required this.resourceId, required this.resourceVersion, required this.terminal, });
 
-factory ResourceSharingShareRecipientResourceObject.fromJson(Map<String, dynamic> json) { return ResourceSharingShareRecipientResourceObject(
+factory ResourceSharingShareRecipientResourceObject.fromJson(Map<String, dynamic> json) {return ResourceSharingShareRecipientResourceObject(
   error: ResourceSharingRecipientResourceError.fromJson(json['error'] as String),
   resourceId: ResourceSharingResourceResourceId.fromJson(json['resource_id'] as String),
   resourceVersion: ResourceSharingResourceVersion.fromJson(json['resource_version'] as num),
   terminal: ResourceSharingRecipientResourceErrorTerminal.fromJson(json['terminal'] as bool),
-); }
+);}
 
 /// Share Recipient error message.
 final ResourceSharingRecipientResourceError error;
@@ -35,28 +35,28 @@ final ResourceSharingResourceVersion resourceVersion;
 /// Whether the error is terminal or will be continually retried.
 final ResourceSharingRecipientResourceErrorTerminal terminal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error': error.toJson(),
   'resource_id': resourceId.toJson(),
   'resource_version': resourceVersion.toJson(),
   'terminal': terminal.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('error') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('error') &&
       json.containsKey('resource_id') &&
       json.containsKey('resource_version') &&
-      json.containsKey('terminal'); } 
-ResourceSharingShareRecipientResourceObject copyWith({ResourceSharingRecipientResourceError? error, ResourceSharingResourceResourceId? resourceId, ResourceSharingResourceVersion? resourceVersion, ResourceSharingRecipientResourceErrorTerminal? terminal, }) { return ResourceSharingShareRecipientResourceObject(
+      json.containsKey('terminal');}
+ResourceSharingShareRecipientResourceObject copyWith({ResourceSharingRecipientResourceError? error, ResourceSharingResourceResourceId? resourceId, ResourceSharingResourceVersion? resourceVersion, ResourceSharingRecipientResourceErrorTerminal? terminal, }) {return ResourceSharingShareRecipientResourceObject(
   error: error ?? this.error,
   resourceId: resourceId ?? this.resourceId,
   resourceVersion: resourceVersion ?? this.resourceVersion,
   terminal: terminal ?? this.terminal,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResourceSharingShareRecipientResourceObject &&
           error == other.error &&
           resourceId == other.resourceId &&
           resourceVersion == other.resourceVersion &&
-          terminal == other.terminal; } 
-@override int get hashCode { return Object.hash(error, resourceId, resourceVersion, terminal); } 
-@override String toString() { return 'ResourceSharingShareRecipientResourceObject(error: $error, resourceId: $resourceId, resourceVersion: $resourceVersion, terminal: $terminal)'; } 
- }
+          terminal == other.terminal;}
+@override int get hashCode {return Object.hash(error, resourceId, resourceVersion, terminal);}
+@override String toString() {return 'ResourceSharingShareRecipientResourceObject(error: $error, resourceId: $resourceId, resourceVersion: $resourceVersion, terminal: $terminal)';}
+}

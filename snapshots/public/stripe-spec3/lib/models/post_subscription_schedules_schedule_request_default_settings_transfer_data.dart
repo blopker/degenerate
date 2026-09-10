@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transfer_data_specs6.dart';@immutable final class PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2 {const PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2._(this.value);
 
-factory PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2.fromJson(String json) { return switch (json) {
+factory PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2._(json),
-}; }
+};}
 
 static const PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2 $empty = PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransfe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2($value)';}
+}
 
 @immutable
 final class PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferData {

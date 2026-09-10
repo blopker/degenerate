@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShieldOldSchemaUploadLogEvent {const ShieldOldSchemaUploadLogEvent({required this.code, this.locations, this.message, });
 
-factory ShieldOldSchemaUploadLogEvent.fromJson(Map<String, dynamic> json) { return ShieldOldSchemaUploadLogEvent(
+factory ShieldOldSchemaUploadLogEvent.fromJson(Map<String, dynamic> json) {return ShieldOldSchemaUploadLogEvent(
   code: (json['code'] as num).toInt(),
   locations: (json['locations'] as List<dynamic>?)?.map((e) => e as String).toList(),
   message: json['message'] as String?,
-); }
+);}
 
 /// Code that identifies the event that occurred.
 final int code;
@@ -17,22 +17,22 @@ final List<String>? locations;
 /// Diagnostic message that describes the event.
 final String? message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'locations': ?locations,
   'message': ?message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num; } 
-ShieldOldSchemaUploadLogEvent copyWith({int? code, List<String>? Function()? locations, String? Function()? message, }) { return ShieldOldSchemaUploadLogEvent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is num;}
+ShieldOldSchemaUploadLogEvent copyWith({int? code, List<String>? Function()? locations, String? Function()? message, }) {return ShieldOldSchemaUploadLogEvent(
   code: code ?? this.code,
   locations: locations != null ? locations() : this.locations,
   message: message != null ? message() : this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShieldOldSchemaUploadLogEvent &&
           code == other.code &&
           listEquals(locations, other.locations) &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, Object.hashAll(locations ?? const []), message); } 
-@override String toString() { return 'ShieldOldSchemaUploadLogEvent(code: $code, locations: $locations, message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return Object.hash(code, Object.hashAll(locations ?? const []), message);}
+@override String toString() {return 'ShieldOldSchemaUploadLogEvent(code: $code, locations: $locations, message: $message)';}
+}

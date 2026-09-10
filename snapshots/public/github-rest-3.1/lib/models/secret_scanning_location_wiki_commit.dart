@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a 'wiki_commit' secret scanning location type. This location type shows that a secret was detected inside a commit to a repository wiki.
 @immutable final class SecretScanningLocationWikiCommit {const SecretScanningLocationWikiCommit({required this.path, required this.startLine, required this.endLine, required this.startColumn, required this.endColumn, required this.blobSha, required this.pageUrl, required this.commitSha, required this.commitUrl, });
 
-factory SecretScanningLocationWikiCommit.fromJson(Map<String, dynamic> json) { return SecretScanningLocationWikiCommit(
+factory SecretScanningLocationWikiCommit.fromJson(Map<String, dynamic> json) {return SecretScanningLocationWikiCommit(
   path: json['path'] as String,
   startLine: (json['start_line'] as num).toDouble(),
   endLine: (json['end_line'] as num).toDouble(),
@@ -13,7 +13,7 @@ factory SecretScanningLocationWikiCommit.fromJson(Map<String, dynamic> json) { r
   pageUrl: json['page_url'] as String,
   commitSha: json['commit_sha'] as String,
   commitUrl: json['commit_url'] as String,
-); }
+);}
 
 /// The file path of the wiki page
 final String path;
@@ -42,7 +42,7 @@ final String commitSha;
 /// The GitHub URL to get the associated wiki commit
 final String commitUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'path': path,
   'start_line': startLine,
   'end_line': endLine,
@@ -52,8 +52,8 @@ Map<String, dynamic> toJson() { return {
   'page_url': pageUrl,
   'commit_sha': commitSha,
   'commit_url': commitUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('path') && json['path'] is String &&
       json.containsKey('start_line') && json['start_line'] is num &&
       json.containsKey('end_line') && json['end_line'] is num &&
       json.containsKey('start_column') && json['start_column'] is num &&
@@ -61,8 +61,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('path'
       json.containsKey('blob_sha') && json['blob_sha'] is String &&
       json.containsKey('page_url') && json['page_url'] is String &&
       json.containsKey('commit_sha') && json['commit_sha'] is String &&
-      json.containsKey('commit_url') && json['commit_url'] is String; } 
-SecretScanningLocationWikiCommit copyWith({String? path, double? startLine, double? endLine, double? startColumn, double? endColumn, String? blobSha, String? pageUrl, String? commitSha, String? commitUrl, }) { return SecretScanningLocationWikiCommit(
+      json.containsKey('commit_url') && json['commit_url'] is String;}
+SecretScanningLocationWikiCommit copyWith({String? path, double? startLine, double? endLine, double? startColumn, double? endColumn, String? blobSha, String? pageUrl, String? commitSha, String? commitUrl, }) {return SecretScanningLocationWikiCommit(
   path: path ?? this.path,
   startLine: startLine ?? this.startLine,
   endLine: endLine ?? this.endLine,
@@ -72,8 +72,8 @@ SecretScanningLocationWikiCommit copyWith({String? path, double? startLine, doub
   pageUrl: pageUrl ?? this.pageUrl,
   commitSha: commitSha ?? this.commitSha,
   commitUrl: commitUrl ?? this.commitUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecretScanningLocationWikiCommit &&
           path == other.path &&
           startLine == other.startLine &&
@@ -83,7 +83,7 @@ SecretScanningLocationWikiCommit copyWith({String? path, double? startLine, doub
           blobSha == other.blobSha &&
           pageUrl == other.pageUrl &&
           commitSha == other.commitSha &&
-          commitUrl == other.commitUrl; } 
-@override int get hashCode { return Object.hash(path, startLine, endLine, startColumn, endColumn, blobSha, pageUrl, commitSha, commitUrl); } 
-@override String toString() { return 'SecretScanningLocationWikiCommit(path: $path, startLine: $startLine, endLine: $endLine, startColumn: $startColumn, endColumn: $endColumn, blobSha: $blobSha, pageUrl: $pageUrl, commitSha: $commitSha, commitUrl: $commitUrl)'; } 
- }
+          commitUrl == other.commitUrl;}
+@override int get hashCode {return Object.hash(path, startLine, endLine, startColumn, endColumn, blobSha, pageUrl, commitSha, commitUrl);}
+@override String toString() {return 'SecretScanningLocationWikiCommit(path: $path, startLine: $startLine, endLine: $endLine, startColumn: $startColumn, endColumn: $endColumn, blobSha: $blobSha, pageUrl: $pageUrl, commitSha: $commitSha, commitUrl: $commitUrl)';}
+}

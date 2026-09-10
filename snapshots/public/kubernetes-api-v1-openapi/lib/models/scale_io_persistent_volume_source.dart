@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_reference.dart';/// ScaleIOPersistentVolumeSource represents a persistent ScaleIO volume
 @immutable final class ScaleIoPersistentVolumeSource {const ScaleIoPersistentVolumeSource({required this.gateway, required this.secretRef, required this.system, this.fsType, this.protectionDomain, this.readOnly, this.sslEnabled, this.storageMode, this.storagePool, this.volumeName, });
 
-factory ScaleIoPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return ScaleIoPersistentVolumeSource(
+factory ScaleIoPersistentVolumeSource.fromJson(Map<String, dynamic> json) {return ScaleIoPersistentVolumeSource(
   fsType: json['fsType'] as String?,
   gateway: json['gateway'] as String,
   protectionDomain: json['protectionDomain'] as String?,
@@ -14,7 +14,7 @@ factory ScaleIoPersistentVolumeSource.fromJson(Map<String, dynamic> json) { retu
   storagePool: json['storagePool'] as String?,
   system: json['system'] as String,
   volumeName: json['volumeName'] as String?,
-); }
+);}
 
 /// fsType is the filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Default is "xfs"
 final String? fsType;
@@ -47,10 +47,10 @@ final String system;
 final String? volumeName;
 
 /// The value with the schema default applied when absent.
-String get fsTypeOrDefault { return fsType ?? 'xfs'; } 
+String get fsTypeOrDefault {return fsType ?? 'xfs';}
 /// The value with the schema default applied when absent.
-String get storageModeOrDefault { return storageMode ?? 'ThinProvisioned'; } 
-Map<String, dynamic> toJson() { return {
+String get storageModeOrDefault {return storageMode ?? 'ThinProvisioned';}
+Map<String, dynamic> toJson() {return {
   'fsType': ?fsType,
   'gateway': gateway,
   'protectionDomain': ?protectionDomain,
@@ -61,11 +61,11 @@ Map<String, dynamic> toJson() { return {
   'storagePool': ?storagePool,
   'system': system,
   'volumeName': ?volumeName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('gateway') && json['gateway'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('gateway') && json['gateway'] is String &&
       json.containsKey('secretRef') &&
-      json.containsKey('system') && json['system'] is String; } 
-ScaleIoPersistentVolumeSource copyWith({String? Function()? fsType, String? gateway, String? Function()? protectionDomain, bool? Function()? readOnly, SecretReference? secretRef, bool? Function()? sslEnabled, String? Function()? storageMode, String? Function()? storagePool, String? system, String? Function()? volumeName, }) { return ScaleIoPersistentVolumeSource(
+      json.containsKey('system') && json['system'] is String;}
+ScaleIoPersistentVolumeSource copyWith({String? Function()? fsType, String? gateway, String? Function()? protectionDomain, bool? Function()? readOnly, SecretReference? secretRef, bool? Function()? sslEnabled, String? Function()? storageMode, String? Function()? storagePool, String? system, String? Function()? volumeName, }) {return ScaleIoPersistentVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   gateway: gateway ?? this.gateway,
   protectionDomain: protectionDomain != null ? protectionDomain() : this.protectionDomain,
@@ -76,8 +76,8 @@ ScaleIoPersistentVolumeSource copyWith({String? Function()? fsType, String? gate
   storagePool: storagePool != null ? storagePool() : this.storagePool,
   system: system ?? this.system,
   volumeName: volumeName != null ? volumeName() : this.volumeName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ScaleIoPersistentVolumeSource &&
           fsType == other.fsType &&
           gateway == other.gateway &&
@@ -88,7 +88,7 @@ ScaleIoPersistentVolumeSource copyWith({String? Function()? fsType, String? gate
           storageMode == other.storageMode &&
           storagePool == other.storagePool &&
           system == other.system &&
-          volumeName == other.volumeName; } 
-@override int get hashCode { return Object.hash(fsType, gateway, protectionDomain, readOnly, secretRef, sslEnabled, storageMode, storagePool, system, volumeName); } 
-@override String toString() { return 'ScaleIoPersistentVolumeSource(fsType: $fsType, gateway: $gateway, protectionDomain: $protectionDomain, readOnly: $readOnly, secretRef: $secretRef, sslEnabled: $sslEnabled, storageMode: $storageMode, storagePool: $storagePool, system: $system, volumeName: $volumeName)'; } 
- }
+          volumeName == other.volumeName;}
+@override int get hashCode {return Object.hash(fsType, gateway, protectionDomain, readOnly, secretRef, sslEnabled, storageMode, storagePool, system, volumeName);}
+@override String toString() {return 'ScaleIoPersistentVolumeSource(fsType: $fsType, gateway: $gateway, protectionDomain: $protectionDomain, readOnly: $readOnly, secretRef: $secretRef, sslEnabled: $sslEnabled, storageMode: $storageMode, storagePool: $storagePool, system: $system, volumeName: $volumeName)';}
+}

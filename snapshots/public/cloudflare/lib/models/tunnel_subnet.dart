@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_created_at.dart';import 'tunnel_deleted_at.dart';import 'tunnel_subnet_comment.dart';import 'tunnel_subnet_id.dart';import 'tunnel_subnet_ip_network.dart';import 'tunnel_subnet_is_default_network.dart';import 'tunnel_subnet_name.dart';import 'tunnel_subnet_type.dart';@immutable final class TunnelSubnet {const TunnelSubnet({this.comment, this.createdAt, this.deletedAt, this.id, this.isDefaultNetwork, this.name, this.network, this.subnetType, });
 
-factory TunnelSubnet.fromJson(Map<String, dynamic> json) { return TunnelSubnet(
+factory TunnelSubnet.fromJson(Map<String, dynamic> json) {return TunnelSubnet(
   comment: json['comment'] != null ? TunnelSubnetComment.fromJson(json['comment'] as String) : null,
   createdAt: json['created_at'] != null ? TunnelCreatedAt.fromJson(json['created_at'] as String) : null,
   deletedAt: json['deleted_at'] != null ? TunnelDeletedAt.fromJson(json['deleted_at'] as String) : null,
@@ -11,7 +11,7 @@ factory TunnelSubnet.fromJson(Map<String, dynamic> json) { return TunnelSubnet(
   name: json['name'] != null ? TunnelSubnetName.fromJson(json['name'] as String) : null,
   network: json['network'] != null ? TunnelSubnetIpNetwork.fromJson(json['network'] as String) : null,
   subnetType: json['subnet_type'] != null ? TunnelSubnetType.fromJson(json['subnet_type'] as String) : null,
-); }
+);}
 
 final TunnelSubnetComment? comment;
 
@@ -31,7 +31,7 @@ final TunnelSubnetIpNetwork? network;
 
 final TunnelSubnetType? subnetType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment != null) 'comment': comment?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (deletedAt != null) 'deleted_at': deletedAt?.toJson(),
@@ -40,9 +40,9 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (network != null) 'network': network?.toJson(),
   if (subnetType != null) 'subnet_type': subnetType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'created_at', 'deleted_at', 'id', 'is_default_network', 'name', 'network', 'subnet_type'}.contains(key)); } 
-TunnelSubnet copyWith({TunnelSubnetComment? Function()? comment, TunnelCreatedAt? Function()? createdAt, TunnelDeletedAt? Function()? deletedAt, TunnelSubnetId? Function()? id, TunnelSubnetIsDefaultNetwork? Function()? isDefaultNetwork, TunnelSubnetName? Function()? name, TunnelSubnetIpNetwork? Function()? network, TunnelSubnetType? Function()? subnetType, }) { return TunnelSubnet(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'comment', 'created_at', 'deleted_at', 'id', 'is_default_network', 'name', 'network', 'subnet_type'}.contains(key));}
+TunnelSubnet copyWith({TunnelSubnetComment? Function()? comment, TunnelCreatedAt? Function()? createdAt, TunnelDeletedAt? Function()? deletedAt, TunnelSubnetId? Function()? id, TunnelSubnetIsDefaultNetwork? Function()? isDefaultNetwork, TunnelSubnetName? Function()? name, TunnelSubnetIpNetwork? Function()? network, TunnelSubnetType? Function()? subnetType, }) {return TunnelSubnet(
   comment: comment != null ? comment() : this.comment,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   deletedAt: deletedAt != null ? deletedAt() : this.deletedAt,
@@ -51,8 +51,8 @@ TunnelSubnet copyWith({TunnelSubnetComment? Function()? comment, TunnelCreatedAt
   name: name != null ? name() : this.name,
   network: network != null ? network() : this.network,
   subnetType: subnetType != null ? subnetType() : this.subnetType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TunnelSubnet &&
           comment == other.comment &&
           createdAt == other.createdAt &&
@@ -61,7 +61,7 @@ TunnelSubnet copyWith({TunnelSubnetComment? Function()? comment, TunnelCreatedAt
           isDefaultNetwork == other.isDefaultNetwork &&
           name == other.name &&
           network == other.network &&
-          subnetType == other.subnetType; } 
-@override int get hashCode { return Object.hash(comment, createdAt, deletedAt, id, isDefaultNetwork, name, network, subnetType); } 
-@override String toString() { return 'TunnelSubnet(comment: $comment, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, isDefaultNetwork: $isDefaultNetwork, name: $name, network: $network, subnetType: $subnetType)'; } 
- }
+          subnetType == other.subnetType;}
+@override int get hashCode {return Object.hash(comment, createdAt, deletedAt, id, isDefaultNetwork, name, network, subnetType);}
+@override String toString() {return 'TunnelSubnet(comment: $comment, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, isDefaultNetwork: $isDefaultNetwork, name: $name, network: $network, subnetType: $subnetType)';}
+}

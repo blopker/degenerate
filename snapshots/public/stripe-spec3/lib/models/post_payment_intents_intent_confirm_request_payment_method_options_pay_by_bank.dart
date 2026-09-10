@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param38.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPayByBankVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPayByBankVariant2._(this.value);
 
-factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPayByBankVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPayByBankVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPayByBankVariant2._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPayByBankVariant2 $empty = PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPayByBankVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPayB
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPayByBankVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPayByBankVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPayByBankVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPayByBankVariant2($value)';}
+}
 
 @immutable
 final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsPayByBank {

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies invoicing frequency. Either `day`, `week`, `month` or `year`.
 @immutable final class SubscriptionPendingInvoiceItemIntervalInterval {const SubscriptionPendingInvoiceItemIntervalInterval._(this.value);
 
-factory SubscriptionPendingInvoiceItemIntervalInterval.fromJson(String json) { return switch (json) {
+factory SubscriptionPendingInvoiceItemIntervalInterval.fromJson(String json) {return switch (json) {
   'day' => day,
   'month' => month,
   'week' => week,
   'year' => year,
   _ => SubscriptionPendingInvoiceItemIntervalInterval._(json),
-}; }
+};}
 
 static const SubscriptionPendingInvoiceItemIntervalInterval day = SubscriptionPendingInvoiceItemIntervalInterval._('day');
 
@@ -23,21 +23,21 @@ static const List<SubscriptionPendingInvoiceItemIntervalInterval> values = [day,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionPendingInvoiceItemIntervalInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionPendingInvoiceItemIntervalInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionPendingInvoiceItemIntervalInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionPendingInvoiceItemIntervalInterval($value)';}
+}
 /// 
 @immutable final class SubscriptionPendingInvoiceItemInterval {const SubscriptionPendingInvoiceItemInterval({required this.interval, required this.intervalCount, });
 
-factory SubscriptionPendingInvoiceItemInterval.fromJson(Map<String, dynamic> json) { return SubscriptionPendingInvoiceItemInterval(
+factory SubscriptionPendingInvoiceItemInterval.fromJson(Map<String, dynamic> json) {return SubscriptionPendingInvoiceItemInterval(
   interval: SubscriptionPendingInvoiceItemIntervalInterval.fromJson(json['interval'] as String),
   intervalCount: (json['interval_count'] as num).toInt(),
-); }
+);}
 
 /// Specifies invoicing frequency. Either `day`, `week`, `month` or `year`.
 final SubscriptionPendingInvoiceItemIntervalInterval interval;
@@ -45,20 +45,20 @@ final SubscriptionPendingInvoiceItemIntervalInterval interval;
 /// The number of intervals between invoices. For example, `interval=month` and `interval_count=3` bills every 3 months. Maximum of one year interval allowed (1 year, 12 months, or 52 weeks).
 final int intervalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'interval': interval.toJson(),
   'interval_count': intervalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval') &&
-      json.containsKey('interval_count') && json['interval_count'] is num; } 
-SubscriptionPendingInvoiceItemInterval copyWith({SubscriptionPendingInvoiceItemIntervalInterval? interval, int? intervalCount, }) { return SubscriptionPendingInvoiceItemInterval(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('interval') &&
+      json.containsKey('interval_count') && json['interval_count'] is num;}
+SubscriptionPendingInvoiceItemInterval copyWith({SubscriptionPendingInvoiceItemIntervalInterval? interval, int? intervalCount, }) {return SubscriptionPendingInvoiceItemInterval(
   interval: interval ?? this.interval,
   intervalCount: intervalCount ?? this.intervalCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SubscriptionPendingInvoiceItemInterval &&
           interval == other.interval &&
-          intervalCount == other.intervalCount; } 
-@override int get hashCode { return Object.hash(interval, intervalCount); } 
-@override String toString() { return 'SubscriptionPendingInvoiceItemInterval(interval: $interval, intervalCount: $intervalCount)'; } 
- }
+          intervalCount == other.intervalCount;}
+@override int get hashCode {return Object.hash(interval, intervalCount);}
+@override String toString() {return 'SubscriptionPendingInvoiceItemInterval(interval: $interval, intervalCount: $intervalCount)';}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_delta_content_image_url_object_image_url.dart';/// Always `image_url`.
 @immutable final class MessageDeltaContentImageUrlObjectType {const MessageDeltaContentImageUrlObjectType._(this.value);
 
-factory MessageDeltaContentImageUrlObjectType.fromJson(String json) { return switch (json) {
+factory MessageDeltaContentImageUrlObjectType.fromJson(String json) {return switch (json) {
   'image_url' => imageUrl,
   _ => MessageDeltaContentImageUrlObjectType._(json),
-}; }
+};}
 
 static const MessageDeltaContentImageUrlObjectType imageUrl = MessageDeltaContentImageUrlObjectType._('image_url');
 
@@ -14,22 +14,22 @@ static const List<MessageDeltaContentImageUrlObjectType> values = [imageUrl];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageDeltaContentImageUrlObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageDeltaContentImageUrlObjectType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageDeltaContentImageUrlObjectType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageDeltaContentImageUrlObjectType($value)';}
+}
 /// References an image URL in the content of a message.
 @immutable final class MessageDeltaContentImageUrlObject {const MessageDeltaContentImageUrlObject({required this.index, required this.type, this.imageUrl, });
 
-factory MessageDeltaContentImageUrlObject.fromJson(Map<String, dynamic> json) { return MessageDeltaContentImageUrlObject(
+factory MessageDeltaContentImageUrlObject.fromJson(Map<String, dynamic> json) {return MessageDeltaContentImageUrlObject(
   index: (json['index'] as num).toInt(),
   type: MessageDeltaContentImageUrlObjectType.fromJson(json['type'] as String),
   imageUrl: json['image_url'] != null ? MessageDeltaContentImageUrlObjectImageUrl.fromJson(json['image_url'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The index of the content part in the message.
 final int index;
@@ -39,23 +39,23 @@ final MessageDeltaContentImageUrlObjectType type;
 
 final MessageDeltaContentImageUrlObjectImageUrl? imageUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'index': index,
   'type': type.toJson(),
   if (imageUrl != null) 'image_url': imageUrl?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
-      json.containsKey('type'); } 
-MessageDeltaContentImageUrlObject copyWith({int? index, MessageDeltaContentImageUrlObjectType? type, MessageDeltaContentImageUrlObjectImageUrl? Function()? imageUrl, }) { return MessageDeltaContentImageUrlObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('index') && json['index'] is num &&
+      json.containsKey('type');}
+MessageDeltaContentImageUrlObject copyWith({int? index, MessageDeltaContentImageUrlObjectType? type, MessageDeltaContentImageUrlObjectImageUrl? Function()? imageUrl, }) {return MessageDeltaContentImageUrlObject(
   index: index ?? this.index,
   type: type ?? this.type,
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MessageDeltaContentImageUrlObject &&
           index == other.index &&
           type == other.type &&
-          imageUrl == other.imageUrl; } 
-@override int get hashCode { return Object.hash(index, type, imageUrl); } 
-@override String toString() { return 'MessageDeltaContentImageUrlObject(index: $index, type: $type, imageUrl: $imageUrl)'; } 
- }
+          imageUrl == other.imageUrl;}
+@override int get hashCode {return Object.hash(index, type, imageUrl);}
+@override String toString() {return 'MessageDeltaContentImageUrlObject(index: $index, type: $type, imageUrl: $imageUrl)';}
+}

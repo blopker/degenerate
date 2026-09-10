@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListProvidersResponseResult {const AigConfigListProvidersResponseResult({required this.alias, required this.defaultConfig, required this.gatewayId, required this.id, required this.modifiedAt, required this.providerSlug, required this.secretId, required this.secretPreview, this.rateLimit, this.rateLimitPeriod, });
 
-factory AigConfigListProvidersResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigListProvidersResponseResult(
+factory AigConfigListProvidersResponseResult.fromJson(Map<String, dynamic> json) {return AigConfigListProvidersResponseResult(
   alias: json['alias'] as String,
   defaultConfig: json['default_config'] as bool,
   gatewayId: json['gateway_id'] as String,
@@ -13,7 +13,7 @@ factory AigConfigListProvidersResponseResult.fromJson(Map<String, dynamic> json)
   rateLimitPeriod: json['rate_limit_period'] != null ? (json['rate_limit_period'] as num).toDouble() : null,
   secretId: json['secret_id'] as String,
   secretPreview: json['secret_preview'] as String,
-); }
+);}
 
 final String alias;
 
@@ -37,8 +37,8 @@ final String secretId;
 final String secretPreview;
 
 /// The value with the schema default applied when absent.
-double get rateLimitPeriodOrDefault { return rateLimitPeriod ?? 60.0; } 
-Map<String, dynamic> toJson() { return {
+double get rateLimitPeriodOrDefault {return rateLimitPeriod ?? 60.0;}
+Map<String, dynamic> toJson() {return {
   'alias': alias,
   'default_config': defaultConfig,
   'gateway_id': gatewayId,
@@ -49,16 +49,16 @@ Map<String, dynamic> toJson() { return {
   'rate_limit_period': ?rateLimitPeriod,
   'secret_id': secretId,
   'secret_preview': secretPreview,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias') && json['alias'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('alias') && json['alias'] is String &&
       json.containsKey('default_config') && json['default_config'] is bool &&
       json.containsKey('gateway_id') && json['gateway_id'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('provider_slug') && json['provider_slug'] is String &&
       json.containsKey('secret_id') && json['secret_id'] is String &&
-      json.containsKey('secret_preview') && json['secret_preview'] is String; } 
-AigConfigListProvidersResponseResult copyWith({String? alias, bool? defaultConfig, String? gatewayId, String? id, DateTime? modifiedAt, String? providerSlug, double? Function()? rateLimit, double? Function()? rateLimitPeriod, String? secretId, String? secretPreview, }) { return AigConfigListProvidersResponseResult(
+      json.containsKey('secret_preview') && json['secret_preview'] is String;}
+AigConfigListProvidersResponseResult copyWith({String? alias, bool? defaultConfig, String? gatewayId, String? id, DateTime? modifiedAt, String? providerSlug, double? Function()? rateLimit, double? Function()? rateLimitPeriod, String? secretId, String? secretPreview, }) {return AigConfigListProvidersResponseResult(
   alias: alias ?? this.alias,
   defaultConfig: defaultConfig ?? this.defaultConfig,
   gatewayId: gatewayId ?? this.gatewayId,
@@ -69,8 +69,8 @@ AigConfigListProvidersResponseResult copyWith({String? alias, bool? defaultConfi
   rateLimitPeriod: rateLimitPeriod != null ? rateLimitPeriod() : this.rateLimitPeriod,
   secretId: secretId ?? this.secretId,
   secretPreview: secretPreview ?? this.secretPreview,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigListProvidersResponseResult &&
           alias == other.alias &&
           defaultConfig == other.defaultConfig &&
@@ -81,7 +81,7 @@ AigConfigListProvidersResponseResult copyWith({String? alias, bool? defaultConfi
           rateLimit == other.rateLimit &&
           rateLimitPeriod == other.rateLimitPeriod &&
           secretId == other.secretId &&
-          secretPreview == other.secretPreview; } 
-@override int get hashCode { return Object.hash(alias, defaultConfig, gatewayId, id, modifiedAt, providerSlug, rateLimit, rateLimitPeriod, secretId, secretPreview); } 
-@override String toString() { return 'AigConfigListProvidersResponseResult(alias: $alias, defaultConfig: $defaultConfig, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, providerSlug: $providerSlug, rateLimit: $rateLimit, rateLimitPeriod: $rateLimitPeriod, secretId: $secretId, secretPreview: $secretPreview)'; } 
- }
+          secretPreview == other.secretPreview;}
+@override int get hashCode {return Object.hash(alias, defaultConfig, gatewayId, id, modifiedAt, providerSlug, rateLimit, rateLimitPeriod, secretId, secretPreview);}
+@override String toString() {return 'AigConfigListProvidersResponseResult(alias: $alias, defaultConfig: $defaultConfig, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, providerSlug: $providerSlug, rateLimit: $rateLimit, rateLimitPeriod: $rateLimitPeriod, secretId: $secretId, secretPreview: $secretPreview)';}
+}

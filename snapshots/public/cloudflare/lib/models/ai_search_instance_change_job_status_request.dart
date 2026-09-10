@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceChangeJobStatusRequestAction {const AiSearchInstanceChangeJobStatusRequestAction._(this.value);
 
-factory AiSearchInstanceChangeJobStatusRequestAction.fromJson(String json) { return switch (json) {
+factory AiSearchInstanceChangeJobStatusRequestAction.fromJson(String json) {return switch (json) {
   'cancel' => cancel,
   _ => AiSearchInstanceChangeJobStatusRequestAction._(json),
-}; }
+};}
 
 static const AiSearchInstanceChangeJobStatusRequestAction cancel = AiSearchInstanceChangeJobStatusRequestAction._('cancel');
 
@@ -13,32 +13,32 @@ static const List<AiSearchInstanceChangeJobStatusRequestAction> values = [cancel
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchInstanceChangeJobStatusRequestAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchInstanceChangeJobStatusRequestAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchInstanceChangeJobStatusRequestAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchInstanceChangeJobStatusRequestAction($value)';}
+}
 @immutable final class AiSearchInstanceChangeJobStatusRequest {const AiSearchInstanceChangeJobStatusRequest({required this.action});
 
-factory AiSearchInstanceChangeJobStatusRequest.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChangeJobStatusRequest(
+factory AiSearchInstanceChangeJobStatusRequest.fromJson(Map<String, dynamic> json) {return AiSearchInstanceChangeJobStatusRequest(
   action: AiSearchInstanceChangeJobStatusRequestAction.fromJson(json['action'] as String),
-); }
+);}
 
 final AiSearchInstanceChangeJobStatusRequestAction action;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action'); } 
-AiSearchInstanceChangeJobStatusRequest copyWith({AiSearchInstanceChangeJobStatusRequestAction? action}) { return AiSearchInstanceChangeJobStatusRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action');}
+AiSearchInstanceChangeJobStatusRequest copyWith({AiSearchInstanceChangeJobStatusRequestAction? action}) {return AiSearchInstanceChangeJobStatusRequest(
   action: action ?? this.action,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchInstanceChangeJobStatusRequest &&
-          action == other.action; } 
-@override int get hashCode { return action.hashCode; } 
-@override String toString() { return 'AiSearchInstanceChangeJobStatusRequest(action: $action)'; } 
- }
+          action == other.action;}
+@override int get hashCode {return action.hashCode;}
+@override String toString() {return 'AiSearchInstanceChangeJobStatusRequest(action: $action)';}
+}

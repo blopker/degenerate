@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosNewPrefix {const DosNewPrefix({required this.comment, required this.excluded, required this.prefix, });
 
-factory DosNewPrefix.fromJson(Map<String, dynamic> json) { return DosNewPrefix(
+factory DosNewPrefix.fromJson(Map<String, dynamic> json) {return DosNewPrefix(
   comment: json['comment'] as String,
   excluded: json['excluded'] as bool,
   prefix: json['prefix'] as String,
-); }
+);}
 
 /// A comment describing the prefix.
 final String comment;
@@ -17,24 +17,24 @@ final bool excluded;
 /// The prefix to add in CIDR format.
 final String prefix;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'comment': comment,
   'excluded': excluded,
   'prefix': prefix,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('comment') && json['comment'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('comment') && json['comment'] is String &&
       json.containsKey('excluded') && json['excluded'] is bool &&
-      json.containsKey('prefix') && json['prefix'] is String; } 
-DosNewPrefix copyWith({String? comment, bool? excluded, String? prefix, }) { return DosNewPrefix(
+      json.containsKey('prefix') && json['prefix'] is String;}
+DosNewPrefix copyWith({String? comment, bool? excluded, String? prefix, }) {return DosNewPrefix(
   comment: comment ?? this.comment,
   excluded: excluded ?? this.excluded,
   prefix: prefix ?? this.prefix,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DosNewPrefix &&
           comment == other.comment &&
           excluded == other.excluded &&
-          prefix == other.prefix; } 
-@override int get hashCode { return Object.hash(comment, excluded, prefix); } 
-@override String toString() { return 'DosNewPrefix(comment: $comment, excluded: $excluded, prefix: $prefix)'; } 
- }
+          prefix == other.prefix;}
+@override int get hashCode {return Object.hash(comment, excluded, prefix);}
+@override String toString() {return 'DosNewPrefix(comment: $comment, excluded: $excluded, prefix: $prefix)';}
+}

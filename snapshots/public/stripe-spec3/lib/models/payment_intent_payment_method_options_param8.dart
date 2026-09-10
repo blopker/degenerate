@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam8CaptureMethod {const PaymentIntentPaymentMethodOptionsParam8CaptureMethod._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsParam8CaptureMethod.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParam8CaptureMethod.fromJson(String json) {return switch (json) {
   '' => $empty,
   'manual' => manual,
   _ => PaymentIntentPaymentMethodOptionsParam8CaptureMethod._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsParam8CaptureMethod $empty = PaymentIntentPaymentMethodOptionsParam8CaptureMethod._('');
 
@@ -16,22 +16,22 @@ static const List<PaymentIntentPaymentMethodOptionsParam8CaptureMethod> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam8CaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam8CaptureMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam8CaptureMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam8CaptureMethod($value)';}
+}
 @immutable final class PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage.fromJson(String json) {return switch (json) {
   '' => $empty,
   'none' => none,
   'off_session' => offSession,
   _ => PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage $empty = PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage._('');
 
@@ -43,38 +43,38 @@ static const List<PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage($value)';}
+}
 @immutable final class PaymentIntentPaymentMethodOptionsParam8 {const PaymentIntentPaymentMethodOptionsParam8({this.captureMethod, this.setupFutureUsage, });
 
-factory PaymentIntentPaymentMethodOptionsParam8.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam8(
+factory PaymentIntentPaymentMethodOptionsParam8.fromJson(Map<String, dynamic> json) {return PaymentIntentPaymentMethodOptionsParam8(
   captureMethod: json['capture_method'] != null ? PaymentIntentPaymentMethodOptionsParam8CaptureMethod.fromJson(json['capture_method'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final PaymentIntentPaymentMethodOptionsParam8CaptureMethod? captureMethod;
 
 final PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam8 copyWith({PaymentIntentPaymentMethodOptionsParam8CaptureMethod? Function()? captureMethod, PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsParam8(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key));}
+PaymentIntentPaymentMethodOptionsParam8 copyWith({PaymentIntentPaymentMethodOptionsParam8CaptureMethod? Function()? captureMethod, PaymentIntentPaymentMethodOptionsParam8SetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentIntentPaymentMethodOptionsParam8(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParam8 &&
           captureMethod == other.captureMethod &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(captureMethod, setupFutureUsage); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam8(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(captureMethod, setupFutureUsage);}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam8(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)';}
+}

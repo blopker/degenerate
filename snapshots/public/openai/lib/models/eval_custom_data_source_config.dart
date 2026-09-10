@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of data source. Always `custom`.
 @immutable final class EvalCustomDataSourceConfigType {const EvalCustomDataSourceConfigType._(this.value);
 
-factory EvalCustomDataSourceConfigType.fromJson(String json) { return switch (json) {
+factory EvalCustomDataSourceConfigType.fromJson(String json) {return switch (json) {
   'custom' => custom,
   _ => EvalCustomDataSourceConfigType._(json),
-}; }
+};}
 
 static const EvalCustomDataSourceConfigType custom = EvalCustomDataSourceConfigType._('custom');
 
@@ -14,14 +14,14 @@ static const List<EvalCustomDataSourceConfigType> values = [custom];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalCustomDataSourceConfigType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalCustomDataSourceConfigType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EvalCustomDataSourceConfigType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EvalCustomDataSourceConfigType($value)';}
+}
 /// A CustomDataSourceConfig which specifies the schema of your `item` and optionally `sample` namespaces.
 /// The response schema defines the shape of the data that will be:
 /// - Used to define your testing criteria and
@@ -29,10 +29,10 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class EvalCustomDataSourceConfig {const EvalCustomDataSourceConfig({required this.type, required this.schema, });
 
-factory EvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) { return EvalCustomDataSourceConfig(
+factory EvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) {return EvalCustomDataSourceConfig(
   type: EvalCustomDataSourceConfigType.fromJson(json['type'] as String),
   schema: json['schema'] as Map<String, dynamic>,
-); }
+);}
 
 /// The type of data source. Always `custom`.
 final EvalCustomDataSourceConfigType type;
@@ -42,20 +42,20 @@ final EvalCustomDataSourceConfigType type;
 /// 
 final Map<String,dynamic> schema;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'schema': schema,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('schema'); } 
-EvalCustomDataSourceConfig copyWith({EvalCustomDataSourceConfigType? type, Map<String,dynamic>? schema, }) { return EvalCustomDataSourceConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('schema');}
+EvalCustomDataSourceConfig copyWith({EvalCustomDataSourceConfigType? type, Map<String,dynamic>? schema, }) {return EvalCustomDataSourceConfig(
   type: type ?? this.type,
   schema: schema ?? this.schema,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EvalCustomDataSourceConfig &&
           type == other.type &&
-          schema == other.schema; } 
-@override int get hashCode { return Object.hash(type, schema); } 
-@override String toString() { return 'EvalCustomDataSourceConfig(type: $type, schema: $schema)'; } 
- }
+          schema == other.schema;}
+@override int get hashCode {return Object.hash(type, schema);}
+@override String toString() {return 'EvalCustomDataSourceConfig(type: $type, schema: $schema)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param4.dart';@immutable final class PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2 {const PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2._(this.value);
 
-factory PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2 $empty = PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymen
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2($value)';}
+}
 
 @immutable
 final class PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbini {

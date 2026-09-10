@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'repository_webhooks.dart';@immutable final class WebhookDiscussionTransferredChanges {const WebhookDiscussionTransferredChanges({required this.newDiscussion, required this.newRepository, });
 
-factory WebhookDiscussionTransferredChanges.fromJson(Map<String, dynamic> json) { return WebhookDiscussionTransferredChanges(
+factory WebhookDiscussionTransferredChanges.fromJson(Map<String, dynamic> json) {return WebhookDiscussionTransferredChanges(
   newDiscussion: Discussion.fromJson(json['new_discussion'] as Map<String, dynamic>),
   newRepository: RepositoryWebhooks.fromJson(json['new_repository'] as Map<String, dynamic>),
-); }
+);}
 
 final Discussion newDiscussion;
 
 final RepositoryWebhooks newRepository;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'new_discussion': newDiscussion.toJson(),
   'new_repository': newRepository.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('new_discussion') &&
-      json.containsKey('new_repository'); } 
-WebhookDiscussionTransferredChanges copyWith({Discussion? newDiscussion, RepositoryWebhooks? newRepository, }) { return WebhookDiscussionTransferredChanges(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('new_discussion') &&
+      json.containsKey('new_repository');}
+WebhookDiscussionTransferredChanges copyWith({Discussion? newDiscussion, RepositoryWebhooks? newRepository, }) {return WebhookDiscussionTransferredChanges(
   newDiscussion: newDiscussion ?? this.newDiscussion,
   newRepository: newRepository ?? this.newRepository,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDiscussionTransferredChanges &&
           newDiscussion == other.newDiscussion &&
-          newRepository == other.newRepository; } 
-@override int get hashCode { return Object.hash(newDiscussion, newRepository); } 
-@override String toString() { return 'WebhookDiscussionTransferredChanges(newDiscussion: $newDiscussion, newRepository: $newRepository)'; } 
- }
+          newRepository == other.newRepository;}
+@override int get hashCode {return Object.hash(newDiscussion, newRepository);}
+@override String toString() {return 'WebhookDiscussionTransferredChanges(newDiscussion: $newDiscussion, newRepository: $newRepository)';}
+}

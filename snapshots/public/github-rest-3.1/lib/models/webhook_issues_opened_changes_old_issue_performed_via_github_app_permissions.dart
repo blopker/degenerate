@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsActions {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsActions._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsActions.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsActions.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsActions._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsActions read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsActions._('read');
 
@@ -16,21 +16,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsActions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsActions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsActions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsActions($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsAdministration {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsAdministration._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsAdministration.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsAdministration.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsAdministration._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsAdministration read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsAdministration._('read');
 
@@ -40,21 +40,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsAdministration && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsAdministration($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsAdministration && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsAdministration($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsChecks {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsChecks._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsChecks.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsChecks.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsChecks._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsChecks read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsChecks._('read');
 
@@ -64,21 +64,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsChecks && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsChecks($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsChecks && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsChecks($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContentReferences {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContentReferences._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContentReferences.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContentReferences.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContentReferences._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContentReferences read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContentReferences._('read');
 
@@ -88,21 +88,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContentReferences && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContentReferences($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContentReferences && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContentReferences($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContents {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContents._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContents.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContents.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContents._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContents read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContents._('read');
 
@@ -112,21 +112,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContents && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContents($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContents && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContents($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDeployments {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDeployments._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDeployments.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDeployments.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDeployments._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDeployments read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDeployments._('read');
 
@@ -136,21 +136,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDeployments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDeployments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDeployments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDeployments($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDiscussions {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDiscussions._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDiscussions.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDiscussions.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDiscussions._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDiscussions read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDiscussions._('read');
 
@@ -160,21 +160,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDiscussions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDiscussions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDiscussions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDiscussions($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEmails {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEmails._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEmails.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEmails.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEmails._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEmails read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEmails._('read');
 
@@ -184,21 +184,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEmails && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEmails($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEmails && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEmails($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments._('read');
 
@@ -208,21 +208,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsIssues {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsIssues._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsIssues.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsIssues.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsIssues._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsIssues read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsIssues._('read');
 
@@ -232,21 +232,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsIssues && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsIssues($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsIssues && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsIssues($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsKeys {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsKeys._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsKeys.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsKeys.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsKeys._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsKeys read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsKeys._('read');
 
@@ -256,21 +256,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsKeys && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsKeys($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsKeys && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsKeys($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMembers {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMembers._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMembers.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMembers.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMembers._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMembers read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMembers._('read');
 
@@ -280,21 +280,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMembers && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMembers($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMembers && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMembers($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMetadata {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMetadata._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMetadata.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMetadata.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMetadata._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMetadata read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMetadata._('read');
 
@@ -304,21 +304,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMetadata && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMetadata($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMetadata && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMetadata($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationAdministration {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationAdministration._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationAdministration.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationAdministration.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationAdministration._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationAdministration read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationAdministration._('read');
 
@@ -328,21 +328,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationAdministration && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationAdministration($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationAdministration && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationAdministration($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationHooks {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationHooks._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationHooks.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationHooks.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationHooks._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationHooks read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationHooks._('read');
 
@@ -352,21 +352,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationHooks && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationHooks($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationHooks && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationHooks($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPackages {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPackages._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPackages.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPackages.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPackages._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPackages read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPackages._('read');
 
@@ -376,21 +376,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPackages && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPackages($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPackages && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPackages($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPlan {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPlan._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPlan.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPlan.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPlan._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPlan read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPlan._('read');
 
@@ -400,21 +400,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPlan && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPlan($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPlan && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPlan($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationProjects {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationProjects._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationProjects.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationProjects.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationProjects._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationProjects read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationProjects._('read');
 
@@ -424,21 +424,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationProjects && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationProjects($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationProjects && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationProjects($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSecrets {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSecrets._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSecrets.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSecrets.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSecrets._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSecrets read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSecrets._('read');
 
@@ -448,21 +448,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSecrets && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSecrets($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSecrets && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSecrets($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners._('read');
 
@@ -472,21 +472,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking._('read');
 
@@ -496,21 +496,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages._('read');
 
@@ -520,21 +520,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages._('read');
 
@@ -544,21 +544,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests._('read');
 
@@ -568,21 +568,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks._('read');
 
@@ -592,21 +592,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects._('read');
 
@@ -616,21 +616,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts._('read');
 
@@ -640,21 +640,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets._('read');
 
@@ -664,21 +664,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents._('read');
 
@@ -688,21 +688,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert._('read');
 
@@ -712,21 +712,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile._('read');
 
@@ -736,21 +736,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses._('read');
 
@@ -760,21 +760,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts._('read');
 
@@ -784,21 +784,21 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts($value)';}
+}
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsWorkflows {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsWorkflows._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsWorkflows.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsWorkflows.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsWorkflows._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsWorkflows read = WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsWorkflows._('read');
 
@@ -808,18 +808,18 @@ static const List<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermiss
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsWorkflows && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsWorkflows($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsWorkflows && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsWorkflows($value)';}
+}
 /// The set of permissions for the GitHub app
 @immutable final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions {const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions({this.members, this.administration, this.checks, this.contentReferences, this.contents, this.deployments, this.discussions, this.emails, this.environments, this.issues, this.keys, this.actions, this.metadata, this.organizationAdministration, this.organizationHooks, this.organizationPackages, this.organizationPlan, this.organizationProjects, this.organizationSecrets, this.organizationSelfHostedRunners, this.organizationUserBlocking, this.workflows, this.pages, this.pullRequests, this.repositoryHooks, this.repositoryProjects, this.secretScanningAlerts, this.secrets, this.securityEvents, this.securityScanningAlert, this.singleFile, this.statuses, this.vulnerabilityAlerts, this.packages, });
 
-factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions.fromJson(Map<String, dynamic> json) { return WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions(
+factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions.fromJson(Map<String, dynamic> json) {return WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions(
   actions: json['actions'] != null ? WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsActions.fromJson(json['actions'] as String) : null,
   administration: json['administration'] != null ? WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsAdministration.fromJson(json['administration'] as String) : null,
   checks: json['checks'] != null ? WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsChecks.fromJson(json['checks'] as String) : null,
@@ -854,7 +854,7 @@ factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions.fromJ
   statuses: json['statuses'] != null ? WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses.fromJson(json['statuses'] as String) : null,
   vulnerabilityAlerts: json['vulnerability_alerts'] != null ? WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts.fromJson(json['vulnerability_alerts'] as String) : null,
   workflows: json['workflows'] != null ? WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsWorkflows.fromJson(json['workflows'] as String) : null,
-); }
+);}
 
 final WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsActions? actions;
 
@@ -924,7 +924,7 @@ final WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerab
 
 final WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsWorkflows? workflows;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (actions != null) 'actions': actions?.toJson(),
   if (administration != null) 'administration': administration?.toJson(),
   if (checks != null) 'checks': checks?.toJson(),
@@ -959,9 +959,9 @@ Map<String, dynamic> toJson() { return {
   if (statuses != null) 'statuses': statuses?.toJson(),
   if (vulnerabilityAlerts != null) 'vulnerability_alerts': vulnerabilityAlerts?.toJson(),
   if (workflows != null) 'workflows': workflows?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'actions', 'administration', 'checks', 'content_references', 'contents', 'deployments', 'discussions', 'emails', 'environments', 'issues', 'keys', 'members', 'metadata', 'organization_administration', 'organization_hooks', 'organization_packages', 'organization_plan', 'organization_projects', 'organization_secrets', 'organization_self_hosted_runners', 'organization_user_blocking', 'packages', 'pages', 'pull_requests', 'repository_hooks', 'repository_projects', 'secret_scanning_alerts', 'secrets', 'security_events', 'security_scanning_alert', 'single_file', 'statuses', 'vulnerability_alerts', 'workflows'}.contains(key)); } 
-WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions copyWith({WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsActions? Function()? actions, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsAdministration? Function()? administration, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsChecks? Function()? checks, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContentReferences? Function()? contentReferences, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContents? Function()? contents, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDeployments? Function()? deployments, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDiscussions? Function()? discussions, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEmails? Function()? emails, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments? Function()? environments, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsIssues? Function()? issues, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsKeys? Function()? keys, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMembers? Function()? members, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMetadata? Function()? metadata, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationAdministration? Function()? organizationAdministration, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationHooks? Function()? organizationHooks, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPackages? Function()? organizationPackages, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPlan? Function()? organizationPlan, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationProjects? Function()? organizationProjects, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSecrets? Function()? organizationSecrets, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners? Function()? organizationSelfHostedRunners, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking? Function()? organizationUserBlocking, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages? Function()? packages, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages? Function()? pages, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests? Function()? pullRequests, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks? Function()? repositoryHooks, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects? Function()? repositoryProjects, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts? Function()? secretScanningAlerts, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets? Function()? secrets, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents? Function()? securityEvents, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert? Function()? securityScanningAlert, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile? Function()? singleFile, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses? Function()? statuses, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts? Function()? vulnerabilityAlerts, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsWorkflows? Function()? workflows, }) { return WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'actions', 'administration', 'checks', 'content_references', 'contents', 'deployments', 'discussions', 'emails', 'environments', 'issues', 'keys', 'members', 'metadata', 'organization_administration', 'organization_hooks', 'organization_packages', 'organization_plan', 'organization_projects', 'organization_secrets', 'organization_self_hosted_runners', 'organization_user_blocking', 'packages', 'pages', 'pull_requests', 'repository_hooks', 'repository_projects', 'secret_scanning_alerts', 'secrets', 'security_events', 'security_scanning_alert', 'single_file', 'statuses', 'vulnerability_alerts', 'workflows'}.contains(key));}
+WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions copyWith({WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsActions? Function()? actions, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsAdministration? Function()? administration, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsChecks? Function()? checks, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContentReferences? Function()? contentReferences, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContents? Function()? contents, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDeployments? Function()? deployments, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDiscussions? Function()? discussions, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEmails? Function()? emails, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments? Function()? environments, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsIssues? Function()? issues, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsKeys? Function()? keys, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMembers? Function()? members, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMetadata? Function()? metadata, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationAdministration? Function()? organizationAdministration, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationHooks? Function()? organizationHooks, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPackages? Function()? organizationPackages, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPlan? Function()? organizationPlan, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationProjects? Function()? organizationProjects, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSecrets? Function()? organizationSecrets, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners? Function()? organizationSelfHostedRunners, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking? Function()? organizationUserBlocking, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages? Function()? packages, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages? Function()? pages, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests? Function()? pullRequests, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks? Function()? repositoryHooks, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects? Function()? repositoryProjects, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts? Function()? secretScanningAlerts, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets? Function()? secrets, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents? Function()? securityEvents, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert? Function()? securityScanningAlert, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile? Function()? singleFile, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses? Function()? statuses, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts? Function()? vulnerabilityAlerts, WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsWorkflows? Function()? workflows, }) {return WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions(
   actions: actions != null ? actions() : this.actions,
   administration: administration != null ? administration() : this.administration,
   checks: checks != null ? checks() : this.checks,
@@ -996,8 +996,8 @@ WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions copyWith({Web
   statuses: statuses != null ? statuses() : this.statuses,
   vulnerabilityAlerts: vulnerabilityAlerts != null ? vulnerabilityAlerts() : this.vulnerabilityAlerts,
   workflows: workflows != null ? workflows() : this.workflows,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions &&
           actions == other.actions &&
           administration == other.administration &&
@@ -1032,7 +1032,7 @@ WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions copyWith({Web
           singleFile == other.singleFile &&
           statuses == other.statuses &&
           vulnerabilityAlerts == other.vulnerabilityAlerts &&
-          workflows == other.workflows; } 
-@override int get hashCode { return Object.hashAll([actions, administration, checks, contentReferences, contents, deployments, discussions, emails, environments, issues, keys, members, metadata, organizationAdministration, organizationHooks, organizationPackages, organizationPlan, organizationProjects, organizationSecrets, organizationSelfHostedRunners, organizationUserBlocking, packages, pages, pullRequests, repositoryHooks, repositoryProjects, secretScanningAlerts, secrets, securityEvents, securityScanningAlert, singleFile, statuses, vulnerabilityAlerts, workflows]); } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions(actions: $actions, administration: $administration, checks: $checks, contentReferences: $contentReferences, contents: $contents, deployments: $deployments, discussions: $discussions, emails: $emails, environments: $environments, issues: $issues, keys: $keys, members: $members, metadata: $metadata, organizationAdministration: $organizationAdministration, organizationHooks: $organizationHooks, organizationPackages: $organizationPackages, organizationPlan: $organizationPlan, organizationProjects: $organizationProjects, organizationSecrets: $organizationSecrets, organizationSelfHostedRunners: $organizationSelfHostedRunners, organizationUserBlocking: $organizationUserBlocking, packages: $packages, pages: $pages, pullRequests: $pullRequests, repositoryHooks: $repositoryHooks, repositoryProjects: $repositoryProjects, secretScanningAlerts: $secretScanningAlerts, secrets: $secrets, securityEvents: $securityEvents, securityScanningAlert: $securityScanningAlert, singleFile: $singleFile, statuses: $statuses, vulnerabilityAlerts: $vulnerabilityAlerts, workflows: $workflows)'; } 
- }
+          workflows == other.workflows;}
+@override int get hashCode {return Object.hashAll([actions, administration, checks, contentReferences, contents, deployments, discussions, emails, environments, issues, keys, members, metadata, organizationAdministration, organizationHooks, organizationPackages, organizationPlan, organizationProjects, organizationSecrets, organizationSelfHostedRunners, organizationUserBlocking, packages, pages, pullRequests, repositoryHooks, repositoryProjects, secretScanningAlerts, secrets, securityEvents, securityScanningAlert, singleFile, statuses, vulnerabilityAlerts, workflows]);}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions(actions: $actions, administration: $administration, checks: $checks, contentReferences: $contentReferences, contents: $contents, deployments: $deployments, discussions: $discussions, emails: $emails, environments: $environments, issues: $issues, keys: $keys, members: $members, metadata: $metadata, organizationAdministration: $organizationAdministration, organizationHooks: $organizationHooks, organizationPackages: $organizationPackages, organizationPlan: $organizationPlan, organizationProjects: $organizationProjects, organizationSecrets: $organizationSecrets, organizationSelfHostedRunners: $organizationSelfHostedRunners, organizationUserBlocking: $organizationUserBlocking, packages: $packages, pages: $pages, pullRequests: $pullRequests, repositoryHooks: $repositoryHooks, repositoryProjects: $repositoryProjects, secretScanningAlerts: $secretScanningAlerts, secrets: $secrets, securityEvents: $securityEvents, securityScanningAlert: $securityScanningAlert, singleFile: $singleFile, statuses: $statuses, vulnerabilityAlerts: $vulnerabilityAlerts, workflows: $workflows)';}
+}

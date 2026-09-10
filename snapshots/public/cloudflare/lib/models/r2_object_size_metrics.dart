@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metrics on number of objects/amount of storage used.
 @immutable final class R2ObjectSizeMetrics {const R2ObjectSizeMetrics({this.metadataSize, this.objects, this.payloadSize, });
 
-factory R2ObjectSizeMetrics.fromJson(Map<String, dynamic> json) { return R2ObjectSizeMetrics(
+factory R2ObjectSizeMetrics.fromJson(Map<String, dynamic> json) {return R2ObjectSizeMetrics(
   metadataSize: json['metadataSize'] != null ? (json['metadataSize'] as num).toDouble() : null,
   objects: json['objects'] != null ? (json['objects'] as num).toDouble() : null,
   payloadSize: json['payloadSize'] != null ? (json['payloadSize'] as num).toDouble() : null,
-); }
+);}
 
 /// Amount of.
 final double? metadataSize;
@@ -18,22 +18,22 @@ final double? objects;
 /// Amount of storage used by object data.
 final double? payloadSize;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'metadataSize': ?metadataSize,
   'objects': ?objects,
   'payloadSize': ?payloadSize,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadataSize', 'objects', 'payloadSize'}.contains(key)); } 
-R2ObjectSizeMetrics copyWith({double? Function()? metadataSize, double? Function()? objects, double? Function()? payloadSize, }) { return R2ObjectSizeMetrics(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'metadataSize', 'objects', 'payloadSize'}.contains(key));}
+R2ObjectSizeMetrics copyWith({double? Function()? metadataSize, double? Function()? objects, double? Function()? payloadSize, }) {return R2ObjectSizeMetrics(
   metadataSize: metadataSize != null ? metadataSize() : this.metadataSize,
   objects: objects != null ? objects() : this.objects,
   payloadSize: payloadSize != null ? payloadSize() : this.payloadSize,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is R2ObjectSizeMetrics &&
           metadataSize == other.metadataSize &&
           objects == other.objects &&
-          payloadSize == other.payloadSize; } 
-@override int get hashCode { return Object.hash(metadataSize, objects, payloadSize); } 
-@override String toString() { return 'R2ObjectSizeMetrics(metadataSize: $metadataSize, objects: $objects, payloadSize: $payloadSize)'; } 
- }
+          payloadSize == other.payloadSize;}
+@override int get hashCode {return Object.hash(metadataSize, objects, payloadSize);}
+@override String toString() {return 'R2ObjectSizeMetrics(metadataSize: $metadataSize, objects: $objects, payloadSize: $payloadSize)';}
+}

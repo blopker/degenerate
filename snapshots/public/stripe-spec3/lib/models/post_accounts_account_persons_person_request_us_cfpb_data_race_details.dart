@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetailsRace {const PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetailsRace._(this.value);
 
-factory PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetailsRace.fromJson(String json) { return switch (json) {
+factory PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetailsRace.fromJson(String json) {return switch (json) {
   'african_american' => africanAmerican,
   'american_indian_or_alaska_native' => americanIndianOrAlaskaNative,
   'asian' => asian,
@@ -28,7 +28,7 @@ factory PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetailsRace.fromJso
   'vietnamese' => vietnamese,
   'white' => white,
   _ => PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetailsRace._(json),
-}; }
+};}
 
 static const PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetailsRace africanAmerican = PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetailsRace._('african_american');
 
@@ -82,38 +82,38 @@ static const List<PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetailsRa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetailsRace && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetailsRace($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetailsRace && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetailsRace($value)';}
+}
 @immutable final class PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetails {const PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetails({this.race, this.raceOther, });
 
-factory PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetails.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetails(
+factory PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetails.fromJson(Map<String, dynamic> json) {return PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetails(
   race: (json['race'] as List<dynamic>?)?.map((e) => PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetailsRace.fromJson(e as String)).toList(),
   raceOther: json['race_other'] as String?,
-); }
+);}
 
 final List<PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetailsRace>? race;
 
 final String? raceOther;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (race != null) 'race': race?.map((e) => e.toJson()).toList(),
   'race_other': ?raceOther,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'race', 'race_other'}.contains(key)); } 
-PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetails copyWith({List<PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetailsRace>? Function()? race, String? Function()? raceOther, }) { return PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'race', 'race_other'}.contains(key));}
+PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetails copyWith({List<PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetailsRace>? Function()? race, String? Function()? raceOther, }) {return PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetails(
   race: race != null ? race() : this.race,
   raceOther: raceOther != null ? raceOther() : this.raceOther,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetails &&
           listEquals(race, other.race) &&
-          raceOther == other.raceOther; } 
-@override int get hashCode { return Object.hash(Object.hashAll(race ?? const []), raceOther); } 
-@override String toString() { return 'PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetails(race: $race, raceOther: $raceOther)'; } 
- }
+          raceOther == other.raceOther;}
+@override int get hashCode {return Object.hash(Object.hashAll(race ?? const []), raceOther);}
+@override String toString() {return 'PostAccountsAccountPersonsPersonRequestUsCfpbDataRaceDetails(race: $race, raceOther: $raceOther)';}
+}

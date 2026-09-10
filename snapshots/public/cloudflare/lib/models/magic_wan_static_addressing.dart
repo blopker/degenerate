@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_cidr.dart';import 'magic_ip_address.dart';/// (optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode.
 @immutable final class MagicWanStaticAddressing {const MagicWanStaticAddressing({required this.address, required this.gatewayAddress, this.secondaryAddress, });
 
-factory MagicWanStaticAddressing.fromJson(Map<String, dynamic> json) { return MagicWanStaticAddressing(
+factory MagicWanStaticAddressing.fromJson(Map<String, dynamic> json) {return MagicWanStaticAddressing(
   address: MagicCidr.fromJson(json['address'] as String),
   gatewayAddress: MagicIpAddress.fromJson(json['gateway_address'] as String),
   secondaryAddress: json['secondary_address'] != null ? MagicCidr.fromJson(json['secondary_address'] as String) : null,
-); }
+);}
 
 /// A valid CIDR notation representing an IP range.
 final MagicCidr address;
@@ -18,23 +18,23 @@ final MagicIpAddress gatewayAddress;
 /// A valid CIDR notation representing an IP range.
 final MagicCidr? secondaryAddress;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
   'gateway_address': gatewayAddress.toJson(),
   if (secondaryAddress != null) 'secondary_address': secondaryAddress?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
-      json.containsKey('gateway_address'); } 
-MagicWanStaticAddressing copyWith({MagicCidr? address, MagicIpAddress? gatewayAddress, MagicCidr? Function()? secondaryAddress, }) { return MagicWanStaticAddressing(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address') &&
+      json.containsKey('gateway_address');}
+MagicWanStaticAddressing copyWith({MagicCidr? address, MagicIpAddress? gatewayAddress, MagicCidr? Function()? secondaryAddress, }) {return MagicWanStaticAddressing(
   address: address ?? this.address,
   gatewayAddress: gatewayAddress ?? this.gatewayAddress,
   secondaryAddress: secondaryAddress != null ? secondaryAddress() : this.secondaryAddress,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MagicWanStaticAddressing &&
           address == other.address &&
           gatewayAddress == other.gatewayAddress &&
-          secondaryAddress == other.secondaryAddress; } 
-@override int get hashCode { return Object.hash(address, gatewayAddress, secondaryAddress); } 
-@override String toString() { return 'MagicWanStaticAddressing(address: $address, gatewayAddress: $gatewayAddress, secondaryAddress: $secondaryAddress)'; } 
- }
+          secondaryAddress == other.secondaryAddress;}
+@override int get hashCode {return Object.hash(address, gatewayAddress, secondaryAddress);}
+@override String toString() {return 'MagicWanStaticAddressing(address: $address, gatewayAddress: $gatewayAddress, secondaryAddress: $secondaryAddress)';}
+}

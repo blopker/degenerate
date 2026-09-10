@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A description of the detector used.
 @immutable final class SnapshotDetector {const SnapshotDetector({required this.name, required this.version, required this.url, });
 
-factory SnapshotDetector.fromJson(Map<String, dynamic> json) { return SnapshotDetector(
+factory SnapshotDetector.fromJson(Map<String, dynamic> json) {return SnapshotDetector(
   name: json['name'] as String,
   version: json['version'] as String,
   url: json['url'] as String,
-); }
+);}
 
 /// The name of the detector used.
 final String name;
@@ -18,24 +18,24 @@ final String version;
 /// The url of the detector used.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'version': version,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('version') && json['version'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-SnapshotDetector copyWith({String? name, String? version, String? url, }) { return SnapshotDetector(
+      json.containsKey('url') && json['url'] is String;}
+SnapshotDetector copyWith({String? name, String? version, String? url, }) {return SnapshotDetector(
   name: name ?? this.name,
   version: version ?? this.version,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SnapshotDetector &&
           name == other.name &&
           version == other.version &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(name, version, url); } 
-@override String toString() { return 'SnapshotDetector(name: $name, version: $version, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(name, version, url);}
+@override String toString() {return 'SnapshotDetector(name: $name, version: $version, url: $url)';}
+}

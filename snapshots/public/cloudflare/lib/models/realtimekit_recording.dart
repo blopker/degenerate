@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current status of the recording.
 @immutable final class RealtimekitRecordingStatus {const RealtimekitRecordingStatus._(this.value);
 
-factory RealtimekitRecordingStatus.fromJson(String json) { return switch (json) {
+factory RealtimekitRecordingStatus.fromJson(String json) {return switch (json) {
   'INVOKED' => invoked,
   'RECORDING' => recording,
   'UPLOADING' => uploading,
@@ -11,7 +11,7 @@ factory RealtimekitRecordingStatus.fromJson(String json) { return switch (json) 
   'ERRORED' => errored,
   'PAUSED' => paused,
   _ => RealtimekitRecordingStatus._(json),
-}; }
+};}
 
 static const RealtimekitRecordingStatus invoked = RealtimekitRecordingStatus._('INVOKED');
 
@@ -29,17 +29,17 @@ static const List<RealtimekitRecordingStatus> values = [invoked, recording, uplo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitRecordingStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitRecordingStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitRecordingStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitRecordingStatus($value)';}
+}
 @immutable final class RealtimekitRecording {const RealtimekitRecording({required this.audioDownloadUrl, required this.downloadUrl, required this.downloadUrlExpiry, required this.fileSize, required this.id, required this.invokedTime, required this.outputFileName, required this.sessionId, required this.startedTime, required this.status, required this.stoppedTime, this.recordingDuration, });
 
-factory RealtimekitRecording.fromJson(Map<String, dynamic> json) { return RealtimekitRecording(
+factory RealtimekitRecording.fromJson(Map<String, dynamic> json) {return RealtimekitRecording(
   audioDownloadUrl: json['audio_download_url'] != null ? Uri.parse(json['audio_download_url'] as String) : null,
   downloadUrl: json['download_url'] != null ? Uri.parse(json['download_url'] as String) : null,
   downloadUrlExpiry: json['download_url_expiry'] != null ? DateTime.parse(json['download_url_expiry'] as String) : null,
@@ -52,7 +52,7 @@ factory RealtimekitRecording.fromJson(Map<String, dynamic> json) { return Realti
   startedTime: json['started_time'] != null ? DateTime.parse(json['started_time'] as String) : null,
   status: RealtimekitRecordingStatus.fromJson(json['status'] as String),
   stoppedTime: json['stopped_time'] != null ? DateTime.parse(json['stopped_time'] as String) : null,
-); }
+);}
 
 /// If the audio_config is passed, the URL for downloading the audio recording is returned.
 final Uri? audioDownloadUrl;
@@ -90,7 +90,7 @@ final RealtimekitRecordingStatus status;
 /// Timestamp when this recording was stopped. Optional; is present only when the recording has actually been stopped.
 final DateTime? stoppedTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'audio_download_url': audioDownloadUrl?.toString(),
   'download_url': downloadUrl?.toString(),
   'download_url_expiry': downloadUrlExpiry?.toIso8601String(),
@@ -103,8 +103,8 @@ Map<String, dynamic> toJson() { return {
   'started_time': startedTime?.toIso8601String(),
   'status': status.toJson(),
   'stopped_time': stoppedTime?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio_download_url') && (json['audio_download_url'] == null || json['audio_download_url'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('audio_download_url') && (json['audio_download_url'] == null || json['audio_download_url'] is String) &&
       json.containsKey('download_url') && (json['download_url'] == null || json['download_url'] is String) &&
       json.containsKey('download_url_expiry') && (json['download_url_expiry'] == null || json['download_url_expiry'] is String) &&
       json.containsKey('file_size') && (json['file_size'] == null || json['file_size'] is num) &&
@@ -114,8 +114,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio
       json.containsKey('session_id') && (json['session_id'] == null || json['session_id'] is String) &&
       json.containsKey('started_time') && (json['started_time'] == null || json['started_time'] is String) &&
       json.containsKey('status') &&
-      json.containsKey('stopped_time') && (json['stopped_time'] == null || json['stopped_time'] is String); } 
-RealtimekitRecording copyWith({Uri? Function()? audioDownloadUrl, Uri? Function()? downloadUrl, DateTime? Function()? downloadUrlExpiry, double? Function()? fileSize, String? id, DateTime? invokedTime, String? outputFileName, int? Function()? recordingDuration, String? Function()? sessionId, DateTime? Function()? startedTime, RealtimekitRecordingStatus? status, DateTime? Function()? stoppedTime, }) { return RealtimekitRecording(
+      json.containsKey('stopped_time') && (json['stopped_time'] == null || json['stopped_time'] is String);}
+RealtimekitRecording copyWith({Uri? Function()? audioDownloadUrl, Uri? Function()? downloadUrl, DateTime? Function()? downloadUrlExpiry, double? Function()? fileSize, String? id, DateTime? invokedTime, String? outputFileName, int? Function()? recordingDuration, String? Function()? sessionId, DateTime? Function()? startedTime, RealtimekitRecordingStatus? status, DateTime? Function()? stoppedTime, }) {return RealtimekitRecording(
   audioDownloadUrl: audioDownloadUrl != null ? audioDownloadUrl() : this.audioDownloadUrl,
   downloadUrl: downloadUrl != null ? downloadUrl() : this.downloadUrl,
   downloadUrlExpiry: downloadUrlExpiry != null ? downloadUrlExpiry() : this.downloadUrlExpiry,
@@ -128,8 +128,8 @@ RealtimekitRecording copyWith({Uri? Function()? audioDownloadUrl, Uri? Function(
   startedTime: startedTime != null ? startedTime() : this.startedTime,
   status: status ?? this.status,
   stoppedTime: stoppedTime != null ? stoppedTime() : this.stoppedTime,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitRecording &&
           audioDownloadUrl == other.audioDownloadUrl &&
           downloadUrl == other.downloadUrl &&
@@ -142,7 +142,7 @@ RealtimekitRecording copyWith({Uri? Function()? audioDownloadUrl, Uri? Function(
           sessionId == other.sessionId &&
           startedTime == other.startedTime &&
           status == other.status &&
-          stoppedTime == other.stoppedTime; } 
-@override int get hashCode { return Object.hash(audioDownloadUrl, downloadUrl, downloadUrlExpiry, fileSize, id, invokedTime, outputFileName, recordingDuration, sessionId, startedTime, status, stoppedTime); } 
-@override String toString() { return 'RealtimekitRecording(audioDownloadUrl: $audioDownloadUrl, downloadUrl: $downloadUrl, downloadUrlExpiry: $downloadUrlExpiry, fileSize: $fileSize, id: $id, invokedTime: $invokedTime, outputFileName: $outputFileName, recordingDuration: $recordingDuration, sessionId: $sessionId, startedTime: $startedTime, status: $status, stoppedTime: $stoppedTime)'; } 
- }
+          stoppedTime == other.stoppedTime;}
+@override int get hashCode {return Object.hash(audioDownloadUrl, downloadUrl, downloadUrlExpiry, fileSize, id, invokedTime, outputFileName, recordingDuration, sessionId, startedTime, status, stoppedTime);}
+@override String toString() {return 'RealtimekitRecording(audioDownloadUrl: $audioDownloadUrl, downloadUrl: $downloadUrl, downloadUrlExpiry: $downloadUrlExpiry, fileSize: $fileSize, id: $id, invokedTime: $invokedTime, outputFileName: $outputFileName, recordingDuration: $recordingDuration, sessionId: $sessionId, startedTime: $startedTime, status: $status, stoppedTime: $stoppedTime)';}
+}

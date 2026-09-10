@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customer_sessions_request_components_buy_button.dart';import 'post_customer_sessions_request_components_customer_sheet.dart';import 'post_customer_sessions_request_components_mobile_payment_element.dart';import 'post_customer_sessions_request_components_payment_element.dart';import 'post_customer_sessions_request_components_pricing_table.dart';/// Configuration for each component. At least 1 component must be enabled.
 @immutable final class PostCustomerSessionsRequestComponents {const PostCustomerSessionsRequestComponents({this.buyButton, this.customerSheet, this.mobilePaymentElement, this.paymentElement, this.pricingTable, });
 
-factory PostCustomerSessionsRequestComponents.fromJson(Map<String, dynamic> json) { return PostCustomerSessionsRequestComponents(
+factory PostCustomerSessionsRequestComponents.fromJson(Map<String, dynamic> json) {return PostCustomerSessionsRequestComponents(
   buyButton: json['buy_button'] != null ? PostCustomerSessionsRequestComponentsBuyButton.fromJson(json['buy_button'] as Map<String, dynamic>) : null,
   customerSheet: json['customer_sheet'] != null ? PostCustomerSessionsRequestComponentsCustomerSheet.fromJson(json['customer_sheet'] as Map<String, dynamic>) : null,
   mobilePaymentElement: json['mobile_payment_element'] != null ? PostCustomerSessionsRequestComponentsMobilePaymentElement.fromJson(json['mobile_payment_element'] as Map<String, dynamic>) : null,
   paymentElement: json['payment_element'] != null ? PostCustomerSessionsRequestComponentsPaymentElement.fromJson(json['payment_element'] as Map<String, dynamic>) : null,
   pricingTable: json['pricing_table'] != null ? PostCustomerSessionsRequestComponentsPricingTable.fromJson(json['pricing_table'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostCustomerSessionsRequestComponentsBuyButton? buyButton;
 
@@ -21,28 +21,28 @@ final PostCustomerSessionsRequestComponentsPaymentElement? paymentElement;
 
 final PostCustomerSessionsRequestComponentsPricingTable? pricingTable;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (buyButton != null) 'buy_button': buyButton?.toJson(),
   if (customerSheet != null) 'customer_sheet': customerSheet?.toJson(),
   if (mobilePaymentElement != null) 'mobile_payment_element': mobilePaymentElement?.toJson(),
   if (paymentElement != null) 'payment_element': paymentElement?.toJson(),
   if (pricingTable != null) 'pricing_table': pricingTable?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'buy_button', 'customer_sheet', 'mobile_payment_element', 'payment_element', 'pricing_table'}.contains(key)); } 
-PostCustomerSessionsRequestComponents copyWith({PostCustomerSessionsRequestComponentsBuyButton? Function()? buyButton, PostCustomerSessionsRequestComponentsCustomerSheet? Function()? customerSheet, PostCustomerSessionsRequestComponentsMobilePaymentElement? Function()? mobilePaymentElement, PostCustomerSessionsRequestComponentsPaymentElement? Function()? paymentElement, PostCustomerSessionsRequestComponentsPricingTable? Function()? pricingTable, }) { return PostCustomerSessionsRequestComponents(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'buy_button', 'customer_sheet', 'mobile_payment_element', 'payment_element', 'pricing_table'}.contains(key));}
+PostCustomerSessionsRequestComponents copyWith({PostCustomerSessionsRequestComponentsBuyButton? Function()? buyButton, PostCustomerSessionsRequestComponentsCustomerSheet? Function()? customerSheet, PostCustomerSessionsRequestComponentsMobilePaymentElement? Function()? mobilePaymentElement, PostCustomerSessionsRequestComponentsPaymentElement? Function()? paymentElement, PostCustomerSessionsRequestComponentsPricingTable? Function()? pricingTable, }) {return PostCustomerSessionsRequestComponents(
   buyButton: buyButton != null ? buyButton() : this.buyButton,
   customerSheet: customerSheet != null ? customerSheet() : this.customerSheet,
   mobilePaymentElement: mobilePaymentElement != null ? mobilePaymentElement() : this.mobilePaymentElement,
   paymentElement: paymentElement != null ? paymentElement() : this.paymentElement,
   pricingTable: pricingTable != null ? pricingTable() : this.pricingTable,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCustomerSessionsRequestComponents &&
           buyButton == other.buyButton &&
           customerSheet == other.customerSheet &&
           mobilePaymentElement == other.mobilePaymentElement &&
           paymentElement == other.paymentElement &&
-          pricingTable == other.pricingTable; } 
-@override int get hashCode { return Object.hash(buyButton, customerSheet, mobilePaymentElement, paymentElement, pricingTable); } 
-@override String toString() { return 'PostCustomerSessionsRequestComponents(buyButton: $buyButton, customerSheet: $customerSheet, mobilePaymentElement: $mobilePaymentElement, paymentElement: $paymentElement, pricingTable: $pricingTable)'; } 
- }
+          pricingTable == other.pricingTable;}
+@override int get hashCode {return Object.hash(buyButton, customerSheet, mobilePaymentElement, paymentElement, pricingTable);}
+@override String toString() {return 'PostCustomerSessionsRequestComponents(buyButton: $buyButton, customerSheet: $customerSheet, mobilePaymentElement: $mobilePaymentElement, paymentElement: $paymentElement, pricingTable: $pricingTable)';}
+}

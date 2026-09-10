@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProjectsUpdateItemForOrgRequestFields {const ProjectsUpdateItemForOrgRequestFields({required this.id, required this.value, });
 
-factory ProjectsUpdateItemForOrgRequestFields.fromJson(Map<String, dynamic> json) { return ProjectsUpdateItemForOrgRequestFields(
+factory ProjectsUpdateItemForOrgRequestFields.fromJson(Map<String, dynamic> json) {return ProjectsUpdateItemForOrgRequestFields(
   id: (json['id'] as num).toInt(),
   value: json['value'],
-); }
+);}
 
 /// The ID of the project field to update.
 final int id;
@@ -23,20 +23,20 @@ final int id;
 /// One of: String, double
 final dynamic value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('value'); } 
-ProjectsUpdateItemForOrgRequestFields copyWith({int? id, dynamic Function()? value, }) { return ProjectsUpdateItemForOrgRequestFields(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('value');}
+ProjectsUpdateItemForOrgRequestFields copyWith({int? id, dynamic Function()? value, }) {return ProjectsUpdateItemForOrgRequestFields(
   id: id ?? this.id,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ProjectsUpdateItemForOrgRequestFields &&
           id == other.id &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, value); } 
-@override String toString() { return 'ProjectsUpdateItemForOrgRequestFields(id: $id, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(id, value);}
+@override String toString() {return 'ProjectsUpdateItemForOrgRequestFields(id: $id, value: $value)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'orgs_list_attestations_bulk_response_attestations_subject_digests_value_bundle.dart';@immutable final class OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue {const OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue({this.bundle, this.repositoryId, this.bundleUrl, });
 
-factory OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue.fromJson(Map<String, dynamic> json) { return OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue(
+factory OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue.fromJson(Map<String, dynamic> json) {return OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue(
   bundle: json['bundle'] != null ? OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueBundle.fromJson(json['bundle'] as Map<String, dynamic>) : null,
   repositoryId: json['repository_id'] != null ? (json['repository_id'] as num).toInt() : null,
   bundleUrl: json['bundle_url'] as String?,
-); }
+);}
 
 /// The bundle of the attestation.
 final OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueBundle? bundle;
@@ -15,22 +15,22 @@ final int? repositoryId;
 
 final String? bundleUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bundle != null) 'bundle': bundle?.toJson(),
   'repository_id': ?repositoryId,
   'bundle_url': ?bundleUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bundle', 'repository_id', 'bundle_url'}.contains(key)); } 
-OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue copyWith({OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueBundle? Function()? bundle, int? Function()? repositoryId, String? Function()? bundleUrl, }) { return OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bundle', 'repository_id', 'bundle_url'}.contains(key));}
+OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue copyWith({OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueBundle? Function()? bundle, int? Function()? repositoryId, String? Function()? bundleUrl, }) {return OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue(
   bundle: bundle != null ? bundle() : this.bundle,
   repositoryId: repositoryId != null ? repositoryId() : this.repositoryId,
   bundleUrl: bundleUrl != null ? bundleUrl() : this.bundleUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue &&
           bundle == other.bundle &&
           repositoryId == other.repositoryId &&
-          bundleUrl == other.bundleUrl; } 
-@override int get hashCode { return Object.hash(bundle, repositoryId, bundleUrl); } 
-@override String toString() { return 'OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue(bundle: $bundle, repositoryId: $repositoryId, bundleUrl: $bundleUrl)'; } 
- }
+          bundleUrl == other.bundleUrl;}
+@override int get hashCode {return Object.hash(bundle, repositoryId, bundleUrl);}
+@override String toString() {return 'OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue(bundle: $bundle, repositoryId: $repositoryId, bundleUrl: $bundleUrl)';}
+}

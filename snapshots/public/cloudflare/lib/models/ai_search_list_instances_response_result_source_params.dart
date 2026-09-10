@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_list_instances_response_result_source_params_web_crawler.dart';@immutable final class AiSearchListInstancesResponseResultSourceParams {const AiSearchListInstancesResponseResultSourceParams({this.excludeItems, this.includeItems, this.prefix, this.r2Jurisdiction, this.webCrawler, });
 
-factory AiSearchListInstancesResponseResultSourceParams.fromJson(Map<String, dynamic> json) { return AiSearchListInstancesResponseResultSourceParams(
+factory AiSearchListInstancesResponseResultSourceParams.fromJson(Map<String, dynamic> json) {return AiSearchListInstancesResponseResultSourceParams(
   excludeItems: (json['exclude_items'] as List<dynamic>?)?.map((e) => e as String).toList(),
   includeItems: (json['include_items'] as List<dynamic>?)?.map((e) => e as String).toList(),
   prefix: json['prefix'] as String?,
   r2Jurisdiction: json['r2_jurisdiction'] as String?,
   webCrawler: json['web_crawler'] != null ? AiSearchListInstancesResponseResultSourceParamsWebCrawler.fromJson(json['web_crawler'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// List of path patterns to exclude. Uses micromatch glob syntax: * matches within a path segment, ** matches across path segments (e.g., /admin/** matches /admin/users and /admin/settings/advanced)
 final List<String>? excludeItems;
@@ -23,29 +23,29 @@ final String? r2Jurisdiction;
 final AiSearchListInstancesResponseResultSourceParamsWebCrawler? webCrawler;
 
 /// The value with the schema default applied when absent.
-String get r2JurisdictionOrDefault { return r2Jurisdiction ?? 'default'; } 
-Map<String, dynamic> toJson() { return {
+String get r2JurisdictionOrDefault {return r2Jurisdiction ?? 'default';}
+Map<String, dynamic> toJson() {return {
   'exclude_items': ?excludeItems,
   'include_items': ?includeItems,
   'prefix': ?prefix,
   'r2_jurisdiction': ?r2Jurisdiction,
   if (webCrawler != null) 'web_crawler': webCrawler?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exclude_items', 'include_items', 'prefix', 'r2_jurisdiction', 'web_crawler'}.contains(key)); } 
-AiSearchListInstancesResponseResultSourceParams copyWith({List<String>? Function()? excludeItems, List<String>? Function()? includeItems, String? Function()? prefix, String? Function()? r2Jurisdiction, AiSearchListInstancesResponseResultSourceParamsWebCrawler? Function()? webCrawler, }) { return AiSearchListInstancesResponseResultSourceParams(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'exclude_items', 'include_items', 'prefix', 'r2_jurisdiction', 'web_crawler'}.contains(key));}
+AiSearchListInstancesResponseResultSourceParams copyWith({List<String>? Function()? excludeItems, List<String>? Function()? includeItems, String? Function()? prefix, String? Function()? r2Jurisdiction, AiSearchListInstancesResponseResultSourceParamsWebCrawler? Function()? webCrawler, }) {return AiSearchListInstancesResponseResultSourceParams(
   excludeItems: excludeItems != null ? excludeItems() : this.excludeItems,
   includeItems: includeItems != null ? includeItems() : this.includeItems,
   prefix: prefix != null ? prefix() : this.prefix,
   r2Jurisdiction: r2Jurisdiction != null ? r2Jurisdiction() : this.r2Jurisdiction,
   webCrawler: webCrawler != null ? webCrawler() : this.webCrawler,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchListInstancesResponseResultSourceParams &&
           listEquals(excludeItems, other.excludeItems) &&
           listEquals(includeItems, other.includeItems) &&
           prefix == other.prefix &&
           r2Jurisdiction == other.r2Jurisdiction &&
-          webCrawler == other.webCrawler; } 
-@override int get hashCode { return Object.hash(Object.hashAll(excludeItems ?? const []), Object.hashAll(includeItems ?? const []), prefix, r2Jurisdiction, webCrawler); } 
-@override String toString() { return 'AiSearchListInstancesResponseResultSourceParams(excludeItems: $excludeItems, includeItems: $includeItems, prefix: $prefix, r2Jurisdiction: $r2Jurisdiction, webCrawler: $webCrawler)'; } 
- }
+          webCrawler == other.webCrawler;}
+@override int get hashCode {return Object.hash(Object.hashAll(excludeItems ?? const []), Object.hashAll(includeItems ?? const []), prefix, r2Jurisdiction, webCrawler);}
+@override String toString() {return 'AiSearchListInstancesResponseResultSourceParams(excludeItems: $excludeItems, includeItems: $includeItems, prefix: $prefix, r2Jurisdiction: $r2Jurisdiction, webCrawler: $webCrawler)';}
+}

@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_forwar
 /// 
 @immutable final class ZonesForwardingUrlId {const ZonesForwardingUrlId._(this.value);
 
-factory ZonesForwardingUrlId.fromJson(String json) { return switch (json) {
+factory ZonesForwardingUrlId.fromJson(String json) {return switch (json) {
   'forwarding_url' => forwardingUrl,
   _ => ZonesForwardingUrlId._(json),
-}; }
+};}
 
 static const ZonesForwardingUrlId forwardingUrl = ZonesForwardingUrlId._('forwarding_url');
 
@@ -16,20 +16,20 @@ static const List<ZonesForwardingUrlId> values = [forwardingUrl];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesForwardingUrlId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesForwardingUrlId($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesForwardingUrlId && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesForwardingUrlId($value)';}
+}
 @immutable final class ZonesForwardingUrl {const ZonesForwardingUrl({this.id, this.value, });
 
-factory ZonesForwardingUrl.fromJson(Map<String, dynamic> json) { return ZonesForwardingUrl(
+factory ZonesForwardingUrl.fromJson(Map<String, dynamic> json) {return ZonesForwardingUrl(
   id: json['id'] != null ? ZonesForwardingUrlId.fromJson(json['id'] as String) : null,
   value: json['value'] != null ? ZonesForwardingUrlValue.fromJson(json['value'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Redirects one URL to another using an `HTTP 301/302` redirect. Refer
 /// to [Wildcard matching and referencing](https://developers.cloudflare.com/rules/page-rules/reference/wildcard-matching/).
@@ -38,19 +38,19 @@ final ZonesForwardingUrlId? id;
 
 final ZonesForwardingUrlValue? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesForwardingUrl copyWith({ZonesForwardingUrlId? Function()? id, ZonesForwardingUrlValue? Function()? value, }) { return ZonesForwardingUrl(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'value'}.contains(key));}
+ZonesForwardingUrl copyWith({ZonesForwardingUrlId? Function()? id, ZonesForwardingUrlValue? Function()? value, }) {return ZonesForwardingUrl(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZonesForwardingUrl &&
           id == other.id &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, value); } 
-@override String toString() { return 'ZonesForwardingUrl(id: $id, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(id, value);}
+@override String toString() {return 'ZonesForwardingUrl(id: $id, value: $value)';}
+}

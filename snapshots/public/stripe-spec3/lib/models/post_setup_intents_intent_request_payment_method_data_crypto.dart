@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodDataCrypto {const PostSetupIntentsIntentRequestPaymentMethodDataCrypto();
 
-factory PostSetupIntentsIntentRequestPaymentMethodDataCrypto.fromJson(Map<String, dynamic> _) { return const PostSetupIntentsIntentRequestPaymentMethodDataCrypto(); }
+factory PostSetupIntentsIntentRequestPaymentMethodDataCrypto.fromJson(Map<String, dynamic> _) {return const PostSetupIntentsIntentRequestPaymentMethodDataCrypto();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PostSetupIntentsIntentRequestPaymentMethodDataCrypto copyWith() { return const PostSetupIntentsIntentRequestPaymentMethodDataCrypto(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PostSetupIntentsIntentRequestPaymentMethodDataCrypto copyWith() {return const PostSetupIntentsIntentRequestPaymentMethodDataCrypto(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is PostSetupIntentsIntentRequestPaymentMethodDataCrypto; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodDataCrypto()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is PostSetupIntentsIntentRequestPaymentMethodDataCrypto;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestPaymentMethodDataCrypto()';}
+}

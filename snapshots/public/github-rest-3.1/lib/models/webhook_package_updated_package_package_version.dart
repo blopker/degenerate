@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_package_updated_package_package_version_author.dart';import 'webhook_package_updated_package_package_version_docker_metadata.dart';import 'webhook_package_updated_package_package_version_package_files.dart';import 'webhook_package_updated_package_package_version_release.dart';import 'webhook_rubygems_metadata.dart';@immutable final class WebhookPackageUpdatedPackagePackageVersion {const WebhookPackageUpdatedPackagePackageVersion({required this.author, required this.body, required this.bodyHtml, required this.createdAt, required this.description, required this.htmlUrl, required this.id, required this.installationCommand, required this.metadata, required this.name, required this.packageFiles, required this.summary, required this.targetCommitish, required this.targetOid, required this.updatedAt, required this.version, this.dockerMetadata, this.draft, this.manifest, this.packageUrl, this.prerelease, this.release, this.rubygemsMetadata, this.sourceUrl, this.tagName, });
 
-factory WebhookPackageUpdatedPackagePackageVersion.fromJson(Map<String, dynamic> json) { return WebhookPackageUpdatedPackagePackageVersion(
+factory WebhookPackageUpdatedPackagePackageVersion.fromJson(Map<String, dynamic> json) {return WebhookPackageUpdatedPackagePackageVersion(
   author: json['author'] != null ? WebhookPackageUpdatedPackagePackageVersionAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
   body: json['body'] as String,
   bodyHtml: json['body_html'] as String,
@@ -28,7 +28,7 @@ factory WebhookPackageUpdatedPackagePackageVersion.fromJson(Map<String, dynamic>
   targetOid: json['target_oid'] as String,
   updatedAt: json['updated_at'] as String,
   version: json['version'] as String,
-); }
+);}
 
 final WebhookPackageUpdatedPackagePackageVersionAuthor? author;
 
@@ -80,7 +80,7 @@ final String updatedAt;
 
 final String version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author': author?.toJson(),
   'body': body,
   'body_html': bodyHtml,
@@ -106,8 +106,8 @@ Map<String, dynamic> toJson() { return {
   'target_oid': targetOid,
   'updated_at': updatedAt,
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('author') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('author') &&
       json.containsKey('body') && json['body'] is String &&
       json.containsKey('body_html') && json['body_html'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -122,8 +122,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('target_commitish') && json['target_commitish'] is String &&
       json.containsKey('target_oid') && json['target_oid'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('version') && json['version'] is String; } 
-WebhookPackageUpdatedPackagePackageVersion copyWith({WebhookPackageUpdatedPackagePackageVersionAuthor? Function()? author, String? body, String? bodyHtml, String? createdAt, String? description, List<WebhookPackageUpdatedPackagePackageVersionDockerMetadata>? Function()? dockerMetadata, bool? Function()? draft, Uri? htmlUrl, int? id, String? installationCommand, String? Function()? manifest, List<Map<String,dynamic>>? metadata, String? name, List<WebhookPackageUpdatedPackagePackageVersionPackageFiles>? packageFiles, String? Function()? packageUrl, bool? Function()? prerelease, WebhookPackageUpdatedPackagePackageVersionRelease? Function()? release, List<WebhookRubygemsMetadata>? Function()? rubygemsMetadata, Uri? Function()? sourceUrl, String? summary, String? Function()? tagName, String? targetCommitish, String? targetOid, String? updatedAt, String? version, }) { return WebhookPackageUpdatedPackagePackageVersion(
+      json.containsKey('version') && json['version'] is String;}
+WebhookPackageUpdatedPackagePackageVersion copyWith({WebhookPackageUpdatedPackagePackageVersionAuthor? Function()? author, String? body, String? bodyHtml, String? createdAt, String? description, List<WebhookPackageUpdatedPackagePackageVersionDockerMetadata>? Function()? dockerMetadata, bool? Function()? draft, Uri? htmlUrl, int? id, String? installationCommand, String? Function()? manifest, List<Map<String,dynamic>>? metadata, String? name, List<WebhookPackageUpdatedPackagePackageVersionPackageFiles>? packageFiles, String? Function()? packageUrl, bool? Function()? prerelease, WebhookPackageUpdatedPackagePackageVersionRelease? Function()? release, List<WebhookRubygemsMetadata>? Function()? rubygemsMetadata, Uri? Function()? sourceUrl, String? summary, String? Function()? tagName, String? targetCommitish, String? targetOid, String? updatedAt, String? version, }) {return WebhookPackageUpdatedPackagePackageVersion(
   author: author != null ? author() : this.author,
   body: body ?? this.body,
   bodyHtml: bodyHtml ?? this.bodyHtml,
@@ -149,8 +149,8 @@ WebhookPackageUpdatedPackagePackageVersion copyWith({WebhookPackageUpdatedPackag
   targetOid: targetOid ?? this.targetOid,
   updatedAt: updatedAt ?? this.updatedAt,
   version: version ?? this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPackageUpdatedPackagePackageVersion &&
           author == other.author &&
           body == other.body &&
@@ -176,7 +176,7 @@ WebhookPackageUpdatedPackagePackageVersion copyWith({WebhookPackageUpdatedPackag
           targetCommitish == other.targetCommitish &&
           targetOid == other.targetOid &&
           updatedAt == other.updatedAt &&
-          version == other.version; } 
-@override int get hashCode { return Object.hashAll([author, body, bodyHtml, createdAt, description, Object.hashAll(dockerMetadata ?? const []), draft, htmlUrl, id, installationCommand, manifest, Object.hashAll(metadata), name, Object.hashAll(packageFiles), packageUrl, prerelease, release, Object.hashAll(rubygemsMetadata ?? const []), sourceUrl, summary, tagName, targetCommitish, targetOid, updatedAt, version]); } 
-@override String toString() { return 'WebhookPackageUpdatedPackagePackageVersion(author: $author, body: $body, bodyHtml: $bodyHtml, createdAt: $createdAt, description: $description, dockerMetadata: $dockerMetadata, draft: $draft, htmlUrl: $htmlUrl, id: $id, installationCommand: $installationCommand, manifest: $manifest, metadata: $metadata, name: $name, packageFiles: $packageFiles, packageUrl: $packageUrl, prerelease: $prerelease, release: $release, rubygemsMetadata: $rubygemsMetadata, sourceUrl: $sourceUrl, summary: $summary, tagName: $tagName, targetCommitish: $targetCommitish, targetOid: $targetOid, updatedAt: $updatedAt, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hashAll([author, body, bodyHtml, createdAt, description, Object.hashAll(dockerMetadata ?? const []), draft, htmlUrl, id, installationCommand, manifest, Object.hashAll(metadata), name, Object.hashAll(packageFiles), packageUrl, prerelease, release, Object.hashAll(rubygemsMetadata ?? const []), sourceUrl, summary, tagName, targetCommitish, targetOid, updatedAt, version]);}
+@override String toString() {return 'WebhookPackageUpdatedPackagePackageVersion(author: $author, body: $body, bodyHtml: $bodyHtml, createdAt: $createdAt, description: $description, dockerMetadata: $dockerMetadata, draft: $draft, htmlUrl: $htmlUrl, id: $id, installationCommand: $installationCommand, manifest: $manifest, metadata: $metadata, name: $name, packageFiles: $packageFiles, packageUrl: $packageUrl, prerelease: $prerelease, release: $release, rubygemsMetadata: $rubygemsMetadata, sourceUrl: $sourceUrl, summary: $summary, tagName: $tagName, targetCommitish: $targetCommitish, targetOid: $targetOid, updatedAt: $updatedAt, version: $version)';}
+}

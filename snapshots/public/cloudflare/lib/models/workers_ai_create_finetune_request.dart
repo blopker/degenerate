@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiCreateFinetuneRequest {const WorkersAiCreateFinetuneRequest({required this.model, required this.name, this.description, this.public, });
 
-factory WorkersAiCreateFinetuneRequest.fromJson(Map<String, dynamic> json) { return WorkersAiCreateFinetuneRequest(
+factory WorkersAiCreateFinetuneRequest.fromJson(Map<String, dynamic> json) {return WorkersAiCreateFinetuneRequest(
   description: json['description'] as String?,
   model: json['model'] as String,
   name: json['name'] as String,
   public: json['public'] as bool?,
-); }
+);}
 
 final String? description;
 
@@ -18,27 +18,27 @@ final String name;
 final bool? public;
 
 /// The value with the schema default applied when absent.
-bool get publicOrDefault { return public ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get publicOrDefault {return public ?? false;}
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'model': model,
   'name': name,
   'public': ?public,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') && json['model'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-WorkersAiCreateFinetuneRequest copyWith({String? Function()? description, String? model, String? name, bool? Function()? public, }) { return WorkersAiCreateFinetuneRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('model') && json['model'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+WorkersAiCreateFinetuneRequest copyWith({String? Function()? description, String? model, String? name, bool? Function()? public, }) {return WorkersAiCreateFinetuneRequest(
   description: description != null ? description() : this.description,
   model: model ?? this.model,
   name: name ?? this.name,
   public: public != null ? public() : this.public,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersAiCreateFinetuneRequest &&
           description == other.description &&
           model == other.model &&
           name == other.name &&
-          public == other.public; } 
-@override int get hashCode { return Object.hash(description, model, name, public); } 
-@override String toString() { return 'WorkersAiCreateFinetuneRequest(description: $description, model: $model, name: $name, public: $public)'; } 
- }
+          public == other.public;}
+@override int get hashCode {return Object.hash(description, model, name, public);}
+@override String toString() {return 'WorkersAiCreateFinetuneRequest(description: $description, model: $model, name: $name, public: $public)';}
+}

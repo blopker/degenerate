@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_klarna_subscriptions_variant1.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2 {const PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2 $empty = PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscript
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2($value)';}
+}
 
 @immutable
 final class PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptions {

@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class ReposGetWebhookDeliveryError {const ReposGetWebhookDeliveryError();
 
 /// Decodes the payload for its declared status and content type.
-static ReposGetWebhookDeliveryError parse(ApiResponse response) { switch (response.statusCode) {
+static ReposGetWebhookDeliveryError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -24,33 +24,33 @@ return ReposGetWebhookDeliveryError422(ValidationError.fromJson(json as Map<Stri
 default:
 return ReposGetWebhookDeliveryErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class ReposGetWebhookDeliveryError400ApplicationJson extends ReposGetWebhookDeliveryError {const ReposGetWebhookDeliveryError400ApplicationJson(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 400 (application/scim+json).
 final class ReposGetWebhookDeliveryError400ApplicationScimJson extends ReposGetWebhookDeliveryError {const ReposGetWebhookDeliveryError400ApplicationScimJson(this.data);
 
 /// The decoded response payload.
 final ScimError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class ReposGetWebhookDeliveryError422 extends ReposGetWebhookDeliveryError {const ReposGetWebhookDeliveryError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class ReposGetWebhookDeliveryErrorUnknown extends ReposGetWebhookDeliveryError {const ReposGetWebhookDeliveryErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

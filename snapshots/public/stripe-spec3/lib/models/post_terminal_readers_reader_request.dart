@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_request_label.dart';import 'post_terminal_readers_reader_request_metadata.dart';@immutable final class PostTerminalReadersReaderRequest {const PostTerminalReadersReaderRequest({this.expand, this.label, this.metadata, });
 
-factory PostTerminalReadersReaderRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderRequest(
+factory PostTerminalReadersReaderRequest.fromJson(Map<String, dynamic> json) {return PostTerminalReadersReaderRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   label: json['label'] != null ? PostTerminalReadersReaderRequestLabel.fromJson(json['label']) : null,
   metadata: json['metadata'] != null ? PostTerminalReadersReaderRequestMetadata.fromJson(json['metadata']) : null,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -17,22 +17,22 @@ final PostTerminalReadersReaderRequestLabel? label;
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
 final PostTerminalReadersReaderRequestMetadata? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   if (label != null) 'label': label?.toJson(),
   if (metadata != null) 'metadata': metadata?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'label', 'metadata'}.contains(key)); } 
-PostTerminalReadersReaderRequest copyWith({List<String>? Function()? expand, PostTerminalReadersReaderRequestLabel? Function()? label, PostTerminalReadersReaderRequestMetadata? Function()? metadata, }) { return PostTerminalReadersReaderRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand', 'label', 'metadata'}.contains(key));}
+PostTerminalReadersReaderRequest copyWith({List<String>? Function()? expand, PostTerminalReadersReaderRequestLabel? Function()? label, PostTerminalReadersReaderRequestMetadata? Function()? metadata, }) {return PostTerminalReadersReaderRequest(
   expand: expand != null ? expand() : this.expand,
   label: label != null ? label() : this.label,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTerminalReadersReaderRequest &&
           listEquals(expand, other.expand) &&
           label == other.label &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), label, metadata); } 
-@override String toString() { return 'PostTerminalReadersReaderRequest(expand: $expand, label: $label, metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return Object.hash(Object.hashAll(expand ?? const []), label, metadata);}
+@override String toString() {return 'PostTerminalReadersReaderRequest(expand: $expand, label: $label, metadata: $metadata)';}
+}

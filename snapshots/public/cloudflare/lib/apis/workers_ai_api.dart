@@ -11,7 +11,7 @@ final class WorkersAiApi with ApiExecutor {const WorkersAiApi(this.apiConfig);
 /// Author Search
 ///
 /// `GET /accounts/{account_id}/ai/authors/search`
-Future<ApiResult<List<Map<String, dynamic>>, WorkersAiSearchAuthorResponse400>> workersAiSearchAuthor({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Map<String, dynamic>>, WorkersAiSearchAuthorResponse400>> workersAiSearchAuthor({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -37,13 +37,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get Model Schema
 ///
 /// Retrieves the input and output JSON schema definition for a Workers AI model.
 ///
 /// `GET /accounts/{account_id}/ai/models/schema`
-Future<ApiResult<WorkersAiGetModelSchemaResponseResult, WorkersAiGetModelSchemaResponse400>> workersAiGetModelSchema({required String accountId, required String model, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersAiGetModelSchemaResponseResult, WorkersAiGetModelSchemaResponse400>> workersAiGetModelSchema({required String accountId, required String model, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['model'] = model;
 
@@ -75,11 +75,11 @@ return null;
 
   },
 );
- } 
+}
 /// Model Search
 ///
 /// `GET /accounts/{account_id}/ai/models/search`
-Future<ApiResult<List<Map<String, dynamic>>, WorkersAiSearchModelResponse404>> workersAiSearchModel({required String accountId, int? perPage, int? page, String? task, String? author, double? source, bool? hideExperimental, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Map<String, dynamic>>, WorkersAiSearchModelResponse404>> workersAiSearchModel({required String accountId, int? perPage, int? page, String? task, String? author, double? source, bool? hideExperimental, String? search, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -131,7 +131,7 @@ return null;
 
   },
 );
- } 
+}
 /// Execute AI model
 ///
 /// This endpoint provides users with the capability to run specific AI models on-demand.
@@ -142,7 +142,7 @@ return null;
 /// Model specific inputs available in [Cloudflare Docs](https://developers.cloudflare.com/workers-ai/models/).
 ///
 /// `POST /accounts/{account_id}/ai/run/{model_name}`
-Future<ApiResult<WorkersAiPostRunModelResponseResult?, WorkersAiPostRunModelResponse400>> workersAiPostRunModel({required String accountId, required String modelName, WorkersAiPostRunModelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersAiPostRunModelResponseResult?, WorkersAiPostRunModelResponse400>> workersAiPostRunModel({required String accountId, required String modelName, WorkersAiPostRunModelRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -170,11 +170,11 @@ return null;
 
   },
 );
- } 
+}
 /// Task Search
 ///
 /// `GET /accounts/{account_id}/ai/tasks/search`
-Future<ApiResult<List<Map<String, dynamic>>, WorkersAiSearchTaskResponse404>> workersAiSearchTask({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Map<String, dynamic>>, WorkersAiSearchTaskResponse404>> workersAiSearchTask({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -200,13 +200,13 @@ return null;
 
   },
 );
- } 
+}
 /// Convert Files into Markdown
 ///
 /// Converts uploaded files into Markdown format using Workers AI.
 ///
 /// `POST /accounts/{account_id}/ai/tomarkdown`
-Future<ApiResult<List<WorkersAiPostToMarkdownResponseResult>, WorkersAiPostToMarkdownResponse400>> workersAiPostToMarkdown({required String accountId, WorkersAiPostToMarkdownRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<WorkersAiPostToMarkdownResponseResult>, WorkersAiPostToMarkdownResponse400>> workersAiPostToMarkdown({required String accountId, WorkersAiPostToMarkdownRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -236,13 +236,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get all converted formats supported
 ///
 /// Lists all file formats supported for conversion to Markdown.
 ///
 /// `GET /accounts/{account_id}/ai/tomarkdown/supported`
-Future<ApiResult<List<WorkersAiGetToMarkdownSupportedResponseResult>, WorkersAiGetToMarkdownSupportedResponse400>> workersAiGetToMarkdownSupported({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<WorkersAiGetToMarkdownSupportedResponseResult>, WorkersAiGetToMarkdownSupportedResponse400>> workersAiGetToMarkdownSupported({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -268,5 +268,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

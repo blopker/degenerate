@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class CodespacesCreateOrUpdateSecretForAuthenticatedUserError {const CodespacesCreateOrUpdateSecretForAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static CodespacesCreateOrUpdateSecretForAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static CodespacesCreateOrUpdateSecretForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
 return CodespacesCreateOrUpdateSecretForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
@@ -14,26 +14,26 @@ return CodespacesCreateOrUpdateSecretForAuthenticatedUserError422(ValidationErro
 default:
 return CodespacesCreateOrUpdateSecretForAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 404 (application/json).
 final class CodespacesCreateOrUpdateSecretForAuthenticatedUserError404 extends CodespacesCreateOrUpdateSecretForAuthenticatedUserError {const CodespacesCreateOrUpdateSecretForAuthenticatedUserError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class CodespacesCreateOrUpdateSecretForAuthenticatedUserError422 extends CodespacesCreateOrUpdateSecretForAuthenticatedUserError {const CodespacesCreateOrUpdateSecretForAuthenticatedUserError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class CodespacesCreateOrUpdateSecretForAuthenticatedUserErrorUnknown extends CodespacesCreateOrUpdateSecretForAuthenticatedUserError {const CodespacesCreateOrUpdateSecretForAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

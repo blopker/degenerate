@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityBatchSendingDomainRestrictionsRequestDeletes {const EmailSecurityBatchSendingDomainRestrictionsRequestDeletes({required this.id});
 
-factory EmailSecurityBatchSendingDomainRestrictionsRequestDeletes.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchSendingDomainRestrictionsRequestDeletes(
+factory EmailSecurityBatchSendingDomainRestrictionsRequestDeletes.fromJson(Map<String, dynamic> json) {return EmailSecurityBatchSendingDomainRestrictionsRequestDeletes(
   id: (json['id'] as num).toInt(),
-); }
+);}
 
 final int id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num; } 
-EmailSecurityBatchSendingDomainRestrictionsRequestDeletes copyWith({int? id}) { return EmailSecurityBatchSendingDomainRestrictionsRequestDeletes(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num;}
+EmailSecurityBatchSendingDomainRestrictionsRequestDeletes copyWith({int? id}) {return EmailSecurityBatchSendingDomainRestrictionsRequestDeletes(
   id: id ?? this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSecurityBatchSendingDomainRestrictionsRequestDeletes &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'EmailSecurityBatchSendingDomainRestrictionsRequestDeletes(id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return id.hashCode;}
+@override String toString() {return 'EmailSecurityBatchSendingDomainRestrictionsRequestDeletes(id: $id)';}
+}

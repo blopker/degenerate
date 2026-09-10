@@ -13,7 +13,7 @@ final class RadarLeakedCredentialChecksApi with ApiExecutor {const RadarLeakedCr
 /// Retrieves an aggregated summary of HTTP authentication requests grouped by the specified dimension.
 ///
 /// `GET /radar/leaked_credential_checks/summary/{dimension}`
-Future<ApiResult<RadarGetLeakedCredentialChecksSummaryResponseResult, RadarGetLeakedCredentialChecksSummaryResponse400>> radarGetLeakedCredentialChecksSummary({required RadarGetLeakedCredentialChecksSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetLeakedCredentialChecksSummaryBotClass>? botClass, List<RadarGetLeakedCredentialChecksSummaryCompromised>? compromised, int? limitPerGroup, RadarGetLeakedCredentialChecksSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetLeakedCredentialChecksSummaryResponseResult, RadarGetLeakedCredentialChecksSummaryResponse400>> radarGetLeakedCredentialChecksSummary({required RadarGetLeakedCredentialChecksSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetLeakedCredentialChecksSummaryBotClass>? botClass, List<RadarGetLeakedCredentialChecksSummaryCompromised>? compromised, int? limitPerGroup, RadarGetLeakedCredentialChecksSummaryFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -95,13 +95,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get time series distribution of HTTP authentication requests by dimension.
 ///
 /// Retrieves the distribution of HTTP authentication requests, grouped by the specified dimension over time.
 ///
 /// `GET /radar/leaked_credential_checks/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetLeakedCredentialChecksTimeseriesGroupResponseResult, RadarGetLeakedCredentialChecksTimeseriesGroupResponse400>> radarGetLeakedCredentialChecksTimeseriesGroup({required RadarGetLeakedCredentialChecksTimeseriesGroupDimension dimension, RadarGetLeakedCredentialChecksTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetLeakedCredentialChecksTimeseriesGroupBotClass>? botClass, List<RadarGetLeakedCredentialChecksTimeseriesGroupCompromised>? compromised, List<RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult>? checkResult, int? limitPerGroup, RadarGetLeakedCredentialChecksTimeseriesGroupNormalization? normalization, RadarGetLeakedCredentialChecksTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetLeakedCredentialChecksTimeseriesGroupResponseResult, RadarGetLeakedCredentialChecksTimeseriesGroupResponse400>> radarGetLeakedCredentialChecksTimeseriesGroup({required RadarGetLeakedCredentialChecksTimeseriesGroupDimension dimension, RadarGetLeakedCredentialChecksTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetLeakedCredentialChecksTimeseriesGroupBotClass>? botClass, List<RadarGetLeakedCredentialChecksTimeseriesGroupCompromised>? compromised, List<RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult>? checkResult, int? limitPerGroup, RadarGetLeakedCredentialChecksTimeseriesGroupNormalization? normalization, RadarGetLeakedCredentialChecksTimeseriesGroupFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -194,5 +194,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

@@ -13,7 +13,7 @@ final class DlpEntriesApi with ApiExecutor {const DlpEntriesApi(this.apiConfig);
 /// Lists all DLP entries in an account.
 ///
 /// `GET /accounts/{account_id}/dlp/entries`
-Future<ApiResult<List<DlpEntryWithUploadStatus>?, ResponseCommonFailure25>> dlpEntriesListAllEntries({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<DlpEntryWithUploadStatus>?, ResponseCommonFailure25>> dlpEntriesListAllEntries({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create custom entry
 ///
 /// Creates a DLP custom entry.
 ///
 /// `POST /accounts/{account_id}/dlp/entries`
-Future<ApiResult<DlpCustomEntry?, ResponseCommonFailure25>> dlpEntriesCreateEntry({required String accountId, required DlpNewEntry body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpCustomEntry?, ResponseCommonFailure25>> dlpEntriesCreateEntry({required String accountId, required DlpNewEntry body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get DLP Entry
 ///
 /// Fetches a DLP entry by ID.
 ///
 /// `GET /accounts/{account_id}/dlp/entries/{entry_id}`
-Future<ApiResult<DlpEntryWithSharedProfiles?, ResponseCommonFailure25>> dlpEntriesGetDlpEntry({required String accountId, required String entryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpEntryWithSharedProfiles?, ResponseCommonFailure25>> dlpEntriesGetDlpEntry({required String accountId, required String entryId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -105,13 +105,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update entry
 ///
 /// Updates a DLP entry.
 ///
 /// `PUT /accounts/{account_id}/dlp/entries/{entry_id}`
-Future<ApiResult<DlpEntry?, ResponseCommonFailure25>> dlpEntriesUpdateEntry({required String accountId, required String entryId, required DlpEntryUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpEntry?, ResponseCommonFailure25>> dlpEntriesUpdateEntry({required String accountId, required String entryId, required DlpEntryUpdate body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,13 +139,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete custom entry
 ///
 /// Deletes a DLP custom entry.
 ///
 /// `DELETE /accounts/{account_id}/dlp/entries/{entry_id}`
-Future<ApiResult<Map<String, dynamic>?, ResponseCommonFailure25>> dlpEntriesDeleteEntry({required String accountId, required String entryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, ResponseCommonFailure25>> dlpEntriesDeleteEntry({required String accountId, required String entryId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -171,13 +171,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update custom entry
 ///
 /// Updates a DLP custom entry.
 ///
 /// `PUT /accounts/{account_id}/dlp/entries/custom/{entry_id}`
-Future<ApiResult<DlpCustomEntry?, ResponseCommonFailure25>> dlpEntriesUpdateCustomEntry({required String accountId, required String entryId, required DlpCustomEntryUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpCustomEntry?, ResponseCommonFailure25>> dlpEntriesUpdateCustomEntry({required String accountId, required String entryId, required DlpCustomEntryUpdate body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -205,13 +205,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update predefined entry
 ///
 /// Updates a DLP entry.
 ///
 /// `PUT /accounts/{account_id}/dlp/entries/predefined/{entry_id}`
-Future<ApiResult<DlpPredefinedEntry?, ResponseCommonFailure25>> dlpEntriesUpdatePredefinedEntry({required String accountId, required String entryId, required DlpPredefinedEntryUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpPredefinedEntry?, ResponseCommonFailure25>> dlpEntriesUpdatePredefinedEntry({required String accountId, required String entryId, required DlpPredefinedEntryUpdate body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -239,5 +239,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

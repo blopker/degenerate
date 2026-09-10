@@ -4,12 +4,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zon
 /// Notes: Default value depends on the zone's plan level.
 @immutable final class ZonesTls13Value {const ZonesTls13Value._(this.value);
 
-factory ZonesTls13Value.fromJson(String json) { return switch (json) {
+factory ZonesTls13Value.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   'zrt' => zrt,
   _ => ZonesTls13Value._(json),
-}; }
+};}
 
 static const ZonesTls13Value $on = ZonesTls13Value._('on');
 
@@ -21,11 +21,11 @@ static const List<ZonesTls13Value> values = [$on, off, zrt];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesTls13Value && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesTls13Value($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesTls13Value && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesTls13Value($value)';}
+}

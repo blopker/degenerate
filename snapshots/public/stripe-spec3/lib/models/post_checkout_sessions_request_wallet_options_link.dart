@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestWalletOptionsLinkDisplay {const PostCheckoutSessionsRequestWalletOptionsLinkDisplay._(this.value);
 
-factory PostCheckoutSessionsRequestWalletOptionsLinkDisplay.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestWalletOptionsLinkDisplay.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'never' => never,
   _ => PostCheckoutSessionsRequestWalletOptionsLinkDisplay._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestWalletOptionsLinkDisplay auto = PostCheckoutSessionsRequestWalletOptionsLinkDisplay._('auto');
 
@@ -16,32 +16,32 @@ static const List<PostCheckoutSessionsRequestWalletOptionsLinkDisplay> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestWalletOptionsLinkDisplay && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestWalletOptionsLinkDisplay($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestWalletOptionsLinkDisplay && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestWalletOptionsLinkDisplay($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestWalletOptionsLink {const PostCheckoutSessionsRequestWalletOptionsLink({this.display});
 
-factory PostCheckoutSessionsRequestWalletOptionsLink.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestWalletOptionsLink(
+factory PostCheckoutSessionsRequestWalletOptionsLink.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestWalletOptionsLink(
   display: json['display'] != null ? PostCheckoutSessionsRequestWalletOptionsLinkDisplay.fromJson(json['display'] as String) : null,
-); }
+);}
 
 final PostCheckoutSessionsRequestWalletOptionsLinkDisplay? display;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (display != null) 'display': display?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display'}.contains(key)); } 
-PostCheckoutSessionsRequestWalletOptionsLink copyWith({PostCheckoutSessionsRequestWalletOptionsLinkDisplay? Function()? display}) { return PostCheckoutSessionsRequestWalletOptionsLink(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display'}.contains(key));}
+PostCheckoutSessionsRequestWalletOptionsLink copyWith({PostCheckoutSessionsRequestWalletOptionsLinkDisplay? Function()? display}) {return PostCheckoutSessionsRequestWalletOptionsLink(
   display: display != null ? display() : this.display,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestWalletOptionsLink &&
-          display == other.display; } 
-@override int get hashCode { return display.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestWalletOptionsLink(display: $display)'; } 
- }
+          display == other.display;}
+@override int get hashCode {return display.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestWalletOptionsLink(display: $display)';}
+}

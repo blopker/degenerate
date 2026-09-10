@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_tree_entries.dart';import 'content_tree_links.dart';/// Content Tree
 @immutable final class ContentTree {const ContentTree({required this.type, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, this.content, this.entries, this.encoding, });
 
-factory ContentTree.fromJson(Map<String, dynamic> json) { return ContentTree(
+factory ContentTree.fromJson(Map<String, dynamic> json) {return ContentTree(
   type: json['type'] as String,
   size: (json['size'] as num).toInt(),
   name: json['name'] as String,
@@ -17,7 +17,7 @@ factory ContentTree.fromJson(Map<String, dynamic> json) { return ContentTree(
   entries: (json['entries'] as List<dynamic>?)?.map((e) => ContentTreeEntries.fromJson(e as Map<String, dynamic>)).toList(),
   encoding: json['encoding'] as String?,
   links: ContentTreeLinks.fromJson(json['_links'] as Map<String, dynamic>),
-); }
+);}
 
 final String type;
 
@@ -45,7 +45,7 @@ final String? encoding;
 
 final ContentTreeLinks links;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'size': size,
   'name': name,
@@ -59,8 +59,8 @@ Map<String, dynamic> toJson() { return {
   if (entries != null) 'entries': entries?.map((e) => e.toJson()).toList(),
   'encoding': ?encoding,
   '_links': links.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('path') && json['path'] is String &&
@@ -69,8 +69,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('git_url') && (json['git_url'] == null || json['git_url'] is String) &&
       json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String) &&
       json.containsKey('download_url') && (json['download_url'] == null || json['download_url'] is String) &&
-      json.containsKey('_links'); } 
-ContentTree copyWith({String? type, int? size, String? name, String? path, String? sha, String? Function()? content, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, List<ContentTreeEntries>? Function()? entries, String? Function()? encoding, ContentTreeLinks? links, }) { return ContentTree(
+      json.containsKey('_links');}
+ContentTree copyWith({String? type, int? size, String? name, String? path, String? sha, String? Function()? content, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, List<ContentTreeEntries>? Function()? entries, String? Function()? encoding, ContentTreeLinks? links, }) {return ContentTree(
   type: type ?? this.type,
   size: size ?? this.size,
   name: name ?? this.name,
@@ -84,8 +84,8 @@ ContentTree copyWith({String? type, int? size, String? name, String? path, Strin
   entries: entries != null ? entries() : this.entries,
   encoding: encoding != null ? encoding() : this.encoding,
   links: links ?? this.links,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ContentTree &&
           type == other.type &&
           size == other.size &&
@@ -99,7 +99,7 @@ ContentTree copyWith({String? type, int? size, String? name, String? path, Strin
           downloadUrl == other.downloadUrl &&
           listEquals(entries, other.entries) &&
           encoding == other.encoding &&
-          links == other.links; } 
-@override int get hashCode { return Object.hash(type, size, name, path, sha, content, url, gitUrl, htmlUrl, downloadUrl, Object.hashAll(entries ?? const []), encoding, links); } 
-@override String toString() { return 'ContentTree(type: $type, size: $size, name: $name, path: $path, sha: $sha, content: $content, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, entries: $entries, encoding: $encoding, links: $links)'; } 
- }
+          links == other.links;}
+@override int get hashCode {return Object.hash(type, size, name, path, sha, content, url, gitUrl, htmlUrl, downloadUrl, Object.hashAll(entries ?? const []), encoding, links);}
+@override String toString() {return 'ContentTree(type: $type, size: $size, name: $name, path: $path, sha: $sha, content: $content, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, entries: $entries, encoding: $encoding, links: $links)';}
+}

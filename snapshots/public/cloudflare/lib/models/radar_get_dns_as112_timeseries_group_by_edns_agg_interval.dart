@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
 @immutable final class RadarGetDnsAs112TimeseriesGroupByEdnsAggInterval {const RadarGetDnsAs112TimeseriesGroupByEdnsAggInterval._(this.value);
 
-factory RadarGetDnsAs112TimeseriesGroupByEdnsAggInterval.fromJson(String json) { return switch (json) {
+factory RadarGetDnsAs112TimeseriesGroupByEdnsAggInterval.fromJson(String json) {return switch (json) {
   '15m' => $15m,
   '1h' => $1h,
   '1d' => $1d,
   '1w' => $1w,
   _ => RadarGetDnsAs112TimeseriesGroupByEdnsAggInterval._(json),
-}; }
+};}
 
 static const RadarGetDnsAs112TimeseriesGroupByEdnsAggInterval $15m = RadarGetDnsAs112TimeseriesGroupByEdnsAggInterval._('15m');
 
@@ -23,11 +23,11 @@ static const List<RadarGetDnsAs112TimeseriesGroupByEdnsAggInterval> values = [$1
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsAs112TimeseriesGroupByEdnsAggInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByEdnsAggInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsAs112TimeseriesGroupByEdnsAggInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsAs112TimeseriesGroupByEdnsAggInterval($value)';}
+}

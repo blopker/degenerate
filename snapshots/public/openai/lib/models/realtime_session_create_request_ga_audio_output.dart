@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_audio_formats.dart';import 'voice_ids_or_custom_voice.dart';@immutable final class RealtimeSessionCreateRequestGaAudioOutput {const RealtimeSessionCreateRequestGaAudioOutput({this.format, this.voice, this.speed, });
 
-factory RealtimeSessionCreateRequestGaAudioOutput.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequestGaAudioOutput(
+factory RealtimeSessionCreateRequestGaAudioOutput.fromJson(Map<String, dynamic> json) {return RealtimeSessionCreateRequestGaAudioOutput(
   format: json['format'] != null ? RealtimeAudioFormats.fromJson(json['format']) : null,
   voice: json['voice'] != null ? VoiceIdsOrCustomVoice.fromJson(json['voice']) : null,
   speed: json['speed'] != null ? (json['speed'] as num).toDouble() : null,
-); }
+);}
 
 /// The format of the output audio.
 final RealtimeAudioFormats? format;
@@ -29,23 +29,23 @@ final VoiceIdsOrCustomVoice? voice;
 final double? speed;
 
 /// The value with the schema default applied when absent.
-double get speedOrDefault { return speed ?? 1.0; } 
-Map<String, dynamic> toJson() { return {
+double get speedOrDefault {return speed ?? 1.0;}
+Map<String, dynamic> toJson() {return {
   if (format != null) 'format': format?.toJson(),
   if (voice != null) 'voice': voice?.toJson(),
   'speed': ?speed,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format', 'voice', 'speed'}.contains(key)); } 
-RealtimeSessionCreateRequestGaAudioOutput copyWith({RealtimeAudioFormats? Function()? format, VoiceIdsOrCustomVoice? Function()? voice, double? Function()? speed, }) { return RealtimeSessionCreateRequestGaAudioOutput(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'format', 'voice', 'speed'}.contains(key));}
+RealtimeSessionCreateRequestGaAudioOutput copyWith({RealtimeAudioFormats? Function()? format, VoiceIdsOrCustomVoice? Function()? voice, double? Function()? speed, }) {return RealtimeSessionCreateRequestGaAudioOutput(
   format: format != null ? format() : this.format,
   voice: voice != null ? voice() : this.voice,
   speed: speed != null ? speed() : this.speed,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeSessionCreateRequestGaAudioOutput &&
           format == other.format &&
           voice == other.voice &&
-          speed == other.speed; } 
-@override int get hashCode { return Object.hash(format, voice, speed); } 
-@override String toString() { return 'RealtimeSessionCreateRequestGaAudioOutput(format: $format, voice: $voice, speed: $speed)'; } 
- }
+          speed == other.speed;}
+@override int get hashCode {return Object.hash(format, voice, speed);}
+@override String toString() {return 'RealtimeSessionCreateRequestGaAudioOutput(format: $format, voice: $voice, speed: $speed)';}
+}

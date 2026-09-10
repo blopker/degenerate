@@ -7,13 +7,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role for the
 ///  * `reinstate` - The previous role assigned to the invitee before they were removed from your organization. Can be one of the roles listed above. Only works if the invitee was previously part of your organization.
 @immutable final class OrgsCreateInvitationRequestRole {const OrgsCreateInvitationRequestRole._(this.value);
 
-factory OrgsCreateInvitationRequestRole.fromJson(String json) { return switch (json) {
+factory OrgsCreateInvitationRequestRole.fromJson(String json) {return switch (json) {
   'admin' => admin,
   'direct_member' => directMember,
   'billing_manager' => billingManager,
   'reinstate' => reinstate,
   _ => OrgsCreateInvitationRequestRole._(json),
-}; }
+};}
 
 static const OrgsCreateInvitationRequestRole admin = OrgsCreateInvitationRequestRole._('admin');
 
@@ -27,22 +27,22 @@ static const List<OrgsCreateInvitationRequestRole> values = [admin, directMember
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsCreateInvitationRequestRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsCreateInvitationRequestRole($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgsCreateInvitationRequestRole && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrgsCreateInvitationRequestRole($value)';}
+}
 @immutable final class OrgsCreateInvitationRequest {const OrgsCreateInvitationRequest({this.inviteeId, this.email, this.role, this.teamIds, });
 
-factory OrgsCreateInvitationRequest.fromJson(Map<String, dynamic> json) { return OrgsCreateInvitationRequest(
+factory OrgsCreateInvitationRequest.fromJson(Map<String, dynamic> json) {return OrgsCreateInvitationRequest(
   inviteeId: json['invitee_id'] != null ? (json['invitee_id'] as num).toInt() : null,
   email: json['email'] as String?,
   role: json['role'] != null ? OrgsCreateInvitationRequestRole.fromJson(json['role'] as String) : null,
   teamIds: (json['team_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// **Required unless you provide `email`**. GitHub user ID for the person you are inviting.
 final int? inviteeId;
@@ -61,26 +61,26 @@ final OrgsCreateInvitationRequestRole? role;
 final List<int>? teamIds;
 
 /// The value with the schema default applied when absent.
-OrgsCreateInvitationRequestRole get roleOrDefault { return role ?? OrgsCreateInvitationRequestRole.fromJson('direct_member'); } 
-Map<String, dynamic> toJson() { return {
+OrgsCreateInvitationRequestRole get roleOrDefault {return role ?? OrgsCreateInvitationRequestRole.fromJson('direct_member');}
+Map<String, dynamic> toJson() {return {
   'invitee_id': ?inviteeId,
   'email': ?email,
   if (role != null) 'role': role?.toJson(),
   'team_ids': ?teamIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'invitee_id', 'email', 'role', 'team_ids'}.contains(key)); } 
-OrgsCreateInvitationRequest copyWith({int? Function()? inviteeId, String? Function()? email, OrgsCreateInvitationRequestRole? Function()? role, List<int>? Function()? teamIds, }) { return OrgsCreateInvitationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'invitee_id', 'email', 'role', 'team_ids'}.contains(key));}
+OrgsCreateInvitationRequest copyWith({int? Function()? inviteeId, String? Function()? email, OrgsCreateInvitationRequestRole? Function()? role, List<int>? Function()? teamIds, }) {return OrgsCreateInvitationRequest(
   inviteeId: inviteeId != null ? inviteeId() : this.inviteeId,
   email: email != null ? email() : this.email,
   role: role != null ? role() : this.role,
   teamIds: teamIds != null ? teamIds() : this.teamIds,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrgsCreateInvitationRequest &&
           inviteeId == other.inviteeId &&
           email == other.email &&
           role == other.role &&
-          listEquals(teamIds, other.teamIds); } 
-@override int get hashCode { return Object.hash(inviteeId, email, role, Object.hashAll(teamIds ?? const [])); } 
-@override String toString() { return 'OrgsCreateInvitationRequest(inviteeId: $inviteeId, email: $email, role: $role, teamIds: $teamIds)'; } 
- }
+          listEquals(teamIds, other.teamIds);}
+@override int get hashCode {return Object.hash(inviteeId, email, role, Object.hashAll(teamIds ?? const []));}
+@override String toString() {return 'OrgsCreateInvitationRequest(inviteeId: $inviteeId, email: $email, role: $role, teamIds: $teamIds)';}
+}

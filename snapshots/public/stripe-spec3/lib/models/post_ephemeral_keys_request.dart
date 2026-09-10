@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEphemeralKeysRequest {const PostEphemeralKeysRequest({this.customer, this.expand, this.issuingCard, this.nonce, this.verificationSession, });
 
-factory PostEphemeralKeysRequest.fromJson(Map<String, dynamic> json) { return PostEphemeralKeysRequest(
+factory PostEphemeralKeysRequest.fromJson(Map<String, dynamic> json) {return PostEphemeralKeysRequest(
   customer: json['customer'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   issuingCard: json['issuing_card'] as String?,
   nonce: json['nonce'] as String?,
   verificationSession: json['verification_session'] as String?,
-); }
+);}
 
 /// The ID of the Customer you'd like to modify using the resulting ephemeral key.
 final String? customer;
@@ -25,28 +25,28 @@ final String? nonce;
 /// The ID of the Identity VerificationSession you'd like to access using the resulting ephemeral key
 final String? verificationSession;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'customer': ?customer,
   'expand': ?expand,
   'issuing_card': ?issuingCard,
   'nonce': ?nonce,
   'verification_session': ?verificationSession,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer', 'expand', 'issuing_card', 'nonce', 'verification_session'}.contains(key)); } 
-PostEphemeralKeysRequest copyWith({String? Function()? customer, List<String>? Function()? expand, String? Function()? issuingCard, String? Function()? nonce, String? Function()? verificationSession, }) { return PostEphemeralKeysRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'customer', 'expand', 'issuing_card', 'nonce', 'verification_session'}.contains(key));}
+PostEphemeralKeysRequest copyWith({String? Function()? customer, List<String>? Function()? expand, String? Function()? issuingCard, String? Function()? nonce, String? Function()? verificationSession, }) {return PostEphemeralKeysRequest(
   customer: customer != null ? customer() : this.customer,
   expand: expand != null ? expand() : this.expand,
   issuingCard: issuingCard != null ? issuingCard() : this.issuingCard,
   nonce: nonce != null ? nonce() : this.nonce,
   verificationSession: verificationSession != null ? verificationSession() : this.verificationSession,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostEphemeralKeysRequest &&
           customer == other.customer &&
           listEquals(expand, other.expand) &&
           issuingCard == other.issuingCard &&
           nonce == other.nonce &&
-          verificationSession == other.verificationSession; } 
-@override int get hashCode { return Object.hash(customer, Object.hashAll(expand ?? const []), issuingCard, nonce, verificationSession); } 
-@override String toString() { return 'PostEphemeralKeysRequest(customer: $customer, expand: $expand, issuingCard: $issuingCard, nonce: $nonce, verificationSession: $verificationSession)'; } 
- }
+          verificationSession == other.verificationSession;}
+@override int get hashCode {return Object.hash(customer, Object.hashAll(expand ?? const []), issuingCard, nonce, verificationSession);}
+@override String toString() {return 'PostEphemeralKeysRequest(customer: $customer, expand: $expand, issuingCard: $issuingCard, nonce: $nonce, verificationSession: $verificationSession)';}
+}

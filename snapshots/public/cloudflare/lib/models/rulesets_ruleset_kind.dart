@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The kind of the ruleset.
 @immutable final class RulesetsRulesetKind {const RulesetsRulesetKind._(this.value);
 
-factory RulesetsRulesetKind.fromJson(String json) { return switch (json) {
+factory RulesetsRulesetKind.fromJson(String json) {return switch (json) {
   'managed' => managed,
   'custom' => custom,
   'root' => root,
   'zone' => zone,
   _ => RulesetsRulesetKind._(json),
-}; }
+};}
 
 static const RulesetsRulesetKind managed = RulesetsRulesetKind._('managed');
 
@@ -23,11 +23,11 @@ static const List<RulesetsRulesetKind> values = [managed, custom, root, zone];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRulesetKind && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RulesetsRulesetKind($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RulesetsRulesetKind && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RulesetsRulesetKind($value)';}
+}

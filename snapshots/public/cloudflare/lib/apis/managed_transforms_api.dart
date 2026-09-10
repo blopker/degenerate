@@ -13,7 +13,7 @@ final class ManagedTransformsApi with ApiExecutor {const ManagedTransformsApi(th
 /// Fetches a list of all Managed Transforms.
 ///
 /// `GET /zones/{zone_id}/managed_headers`
-Future<ApiResult<RulesetsManagedTransforms, ListManagedTransformsResponse4xx>> listManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RulesetsManagedTransforms, ListManagedTransformsResponse4xx>> listManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update Managed Transforms
 ///
 /// Updates the status of one or more Managed Transforms.
 ///
 /// `PATCH /zones/{zone_id}/managed_headers`
-Future<ApiResult<RulesetsManagedTransforms, UpdateManagedTransformsResponse4xx>> updateManagedTransforms({required RulesetsZoneId zoneId, required RulesetsManagedTransformsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RulesetsManagedTransforms, UpdateManagedTransformsResponse4xx>> updateManagedTransforms({required RulesetsZoneId zoneId, required RulesetsManagedTransformsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Managed Transforms
 ///
 /// Disables all Managed Transforms.
 ///
 /// `DELETE /zones/{zone_id}/managed_headers`
-Future<ApiResult<void, DeleteManagedTransformsResponse4xx>> deleteManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DeleteManagedTransformsResponse4xx>> deleteManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -102,5 +102,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

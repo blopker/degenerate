@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_tags_components_schemas_name.dart';import 'access_timestamp.dart';/// A tag
 @immutable final class AccessTagWithoutAppCount {const AccessTagWithoutAppCount({required this.name, this.createdAt, this.updatedAt, });
 
-factory AccessTagWithoutAppCount.fromJson(Map<String, dynamic> json) { return AccessTagWithoutAppCount(
+factory AccessTagWithoutAppCount.fromJson(Map<String, dynamic> json) {return AccessTagWithoutAppCount(
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   name: AccessTagsComponentsSchemasName.fromJson(json['name'] as String),
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 final AccessTimestamp? createdAt;
 
@@ -15,22 +15,22 @@ final AccessTagsComponentsSchemasName name;
 
 final AccessTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   'name': name.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-AccessTagWithoutAppCount copyWith({AccessTimestamp? Function()? createdAt, AccessTagsComponentsSchemasName? name, AccessTimestamp? Function()? updatedAt, }) { return AccessTagWithoutAppCount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name');}
+AccessTagWithoutAppCount copyWith({AccessTimestamp? Function()? createdAt, AccessTagsComponentsSchemasName? name, AccessTimestamp? Function()? updatedAt, }) {return AccessTagWithoutAppCount(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   name: name ?? this.name,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessTagWithoutAppCount &&
           createdAt == other.createdAt &&
           name == other.name &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, name, updatedAt); } 
-@override String toString() { return 'AccessTagWithoutAppCount(createdAt: $createdAt, name: $name, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(createdAt, name, updatedAt);}
+@override String toString() {return 'AccessTagWithoutAppCount(createdAt: $createdAt, name: $name, updatedAt: $updatedAt)';}
+}

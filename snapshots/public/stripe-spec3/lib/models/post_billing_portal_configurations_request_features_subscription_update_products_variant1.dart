@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_features_subscription_update_products_variant1_adjustable_quantity.dart';@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1 {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1({required this.prices, required this.product, this.adjustableQuantity, });
 
-factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1(
+factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1.fromJson(Map<String, dynamic> json) {return PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1(
   adjustableQuantity: json['adjustable_quantity'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
   prices: (json['prices'] as List<dynamic>).map((e) => e as String).toList(),
   product: json['product'] as String,
-); }
+);}
 
 final PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity? adjustableQuantity;
 
@@ -14,23 +14,23 @@ final List<String> prices;
 
 final String product;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (adjustableQuantity != null) 'adjustable_quantity': adjustableQuantity?.toJson(),
   'prices': prices,
   'product': product,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prices') &&
-      json.containsKey('product') && json['product'] is String; } 
-PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1 copyWith({PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity? Function()? adjustableQuantity, List<String>? prices, String? product, }) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prices') &&
+      json.containsKey('product') && json['product'] is String;}
+PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1 copyWith({PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity? Function()? adjustableQuantity, List<String>? prices, String? product, }) {return PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1(
   adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,
   prices: prices ?? this.prices,
   product: product ?? this.product,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1 &&
           adjustableQuantity == other.adjustableQuantity &&
           listEquals(prices, other.prices) &&
-          product == other.product; } 
-@override int get hashCode { return Object.hash(adjustableQuantity, Object.hashAll(prices), product); } 
-@override String toString() { return 'PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1(adjustableQuantity: $adjustableQuantity, prices: $prices, product: $product)'; } 
- }
+          product == other.product;}
+@override int get hashCode {return Object.hash(adjustableQuantity, Object.hashAll(prices), product);}
+@override String toString() {return 'PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1(adjustableQuantity: $adjustableQuantity, prices: $prices, product: $product)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2EnableSippyGcsSourceProvider {const R2EnableSippyGcsSourceProvider._(this.value);
 
-factory R2EnableSippyGcsSourceProvider.fromJson(String json) { return switch (json) {
+factory R2EnableSippyGcsSourceProvider.fromJson(String json) {return switch (json) {
   'gcs' => gcs,
   _ => R2EnableSippyGcsSourceProvider._(json),
-}; }
+};}
 
 static const R2EnableSippyGcsSourceProvider gcs = R2EnableSippyGcsSourceProvider._('gcs');
 
@@ -13,23 +13,23 @@ static const List<R2EnableSippyGcsSourceProvider> values = [gcs];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2EnableSippyGcsSourceProvider && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2EnableSippyGcsSourceProvider($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is R2EnableSippyGcsSourceProvider && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'R2EnableSippyGcsSourceProvider($value)';}
+}
 /// GCS bucket to copy objects from.
 @immutable final class R2EnableSippyGcsSource {const R2EnableSippyGcsSource({this.bucket, this.clientEmail, this.privateKey, this.provider, });
 
-factory R2EnableSippyGcsSource.fromJson(Map<String, dynamic> json) { return R2EnableSippyGcsSource(
+factory R2EnableSippyGcsSource.fromJson(Map<String, dynamic> json) {return R2EnableSippyGcsSource(
   bucket: json['bucket'] as String?,
   clientEmail: json['clientEmail'] as String?,
   privateKey: json['privateKey'] as String?,
   provider: json['provider'] != null ? R2EnableSippyGcsSourceProvider.fromJson(json['provider'] as String) : null,
-); }
+);}
 
 /// Name of the GCS bucket.
 final String? bucket;
@@ -42,25 +42,25 @@ final String? privateKey;
 
 final R2EnableSippyGcsSourceProvider? provider;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bucket': ?bucket,
   'clientEmail': ?clientEmail,
   'privateKey': ?privateKey,
   if (provider != null) 'provider': provider?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bucket', 'clientEmail', 'privateKey', 'provider'}.contains(key)); } 
-R2EnableSippyGcsSource copyWith({String? Function()? bucket, String? Function()? clientEmail, String? Function()? privateKey, R2EnableSippyGcsSourceProvider? Function()? provider, }) { return R2EnableSippyGcsSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bucket', 'clientEmail', 'privateKey', 'provider'}.contains(key));}
+R2EnableSippyGcsSource copyWith({String? Function()? bucket, String? Function()? clientEmail, String? Function()? privateKey, R2EnableSippyGcsSourceProvider? Function()? provider, }) {return R2EnableSippyGcsSource(
   bucket: bucket != null ? bucket() : this.bucket,
   clientEmail: clientEmail != null ? clientEmail() : this.clientEmail,
   privateKey: privateKey != null ? privateKey() : this.privateKey,
   provider: provider != null ? provider() : this.provider,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is R2EnableSippyGcsSource &&
           bucket == other.bucket &&
           clientEmail == other.clientEmail &&
           privateKey == other.privateKey &&
-          provider == other.provider; } 
-@override int get hashCode { return Object.hash(bucket, clientEmail, privateKey, provider); } 
-@override String toString() { return 'R2EnableSippyGcsSource(bucket: $bucket, clientEmail: $clientEmail, privateKey: $privateKey, provider: $provider)'; } 
- }
+          provider == other.provider;}
+@override int get hashCode {return Object.hash(bucket, clientEmail, privateKey, provider);}
+@override String toString() {return 'R2EnableSippyGcsSource(bucket: $bucket, clientEmail: $clientEmail, privateKey: $privateKey, provider: $provider)';}
+}

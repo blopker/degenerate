@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hovercard_contexts.dart';/// Hovercard
 @immutable final class Hovercard {const Hovercard({required this.contexts});
 
-factory Hovercard.fromJson(Map<String, dynamic> json) { return Hovercard(
+factory Hovercard.fromJson(Map<String, dynamic> json) {return Hovercard(
   contexts: (json['contexts'] as List<dynamic>).map((e) => HovercardContexts.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<HovercardContexts> contexts;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'contexts': contexts.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('contexts'); } 
-Hovercard copyWith({List<HovercardContexts>? contexts}) { return Hovercard(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('contexts');}
+Hovercard copyWith({List<HovercardContexts>? contexts}) {return Hovercard(
   contexts: contexts ?? this.contexts,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Hovercard &&
-          listEquals(contexts, other.contexts); } 
-@override int get hashCode { return Object.hashAll(contexts).hashCode; } 
-@override String toString() { return 'Hovercard(contexts: $contexts)'; } 
- }
+          listEquals(contexts, other.contexts);}
+@override int get hashCode {return Object.hashAll(contexts).hashCode;}
+@override String toString() {return 'Hovercard(contexts: $contexts)';}
+}

@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_post_reports_dataset_download_url_response_result_dataset.dart';@immutable final class RadarPostReportsDatasetDownloadUrlResponseResult {const RadarPostReportsDatasetDownloadUrlResponseResult({required this.dataset});
 
-factory RadarPostReportsDatasetDownloadUrlResponseResult.fromJson(Map<String, dynamic> json) { return RadarPostReportsDatasetDownloadUrlResponseResult(
+factory RadarPostReportsDatasetDownloadUrlResponseResult.fromJson(Map<String, dynamic> json) {return RadarPostReportsDatasetDownloadUrlResponseResult(
   dataset: RadarPostReportsDatasetDownloadUrlResponseResultDataset.fromJson(json['dataset'] as Map<String, dynamic>),
-); }
+);}
 
 final RadarPostReportsDatasetDownloadUrlResponseResultDataset dataset;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'dataset': dataset.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataset'); } 
-RadarPostReportsDatasetDownloadUrlResponseResult copyWith({RadarPostReportsDatasetDownloadUrlResponseResultDataset? dataset}) { return RadarPostReportsDatasetDownloadUrlResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dataset');}
+RadarPostReportsDatasetDownloadUrlResponseResult copyWith({RadarPostReportsDatasetDownloadUrlResponseResultDataset? dataset}) {return RadarPostReportsDatasetDownloadUrlResponseResult(
   dataset: dataset ?? this.dataset,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarPostReportsDatasetDownloadUrlResponseResult &&
-          dataset == other.dataset; } 
-@override int get hashCode { return dataset.hashCode; } 
-@override String toString() { return 'RadarPostReportsDatasetDownloadUrlResponseResult(dataset: $dataset)'; } 
- }
+          dataset == other.dataset;}
+@override int get hashCode {return dataset.hashCode;}
+@override String toString() {return 'RadarPostReportsDatasetDownloadUrlResponseResult(dataset: $dataset)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleDeletionType {const RepositoryRuleDeletionType._(this.value);
 
-factory RepositoryRuleDeletionType.fromJson(String json) { return switch (json) {
+factory RepositoryRuleDeletionType.fromJson(String json) {return switch (json) {
   'deletion' => deletion,
   _ => RepositoryRuleDeletionType._(json),
-}; }
+};}
 
 static const RepositoryRuleDeletionType deletion = RepositoryRuleDeletionType._('deletion');
 
@@ -13,33 +13,33 @@ static const List<RepositoryRuleDeletionType> values = [deletion];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDeletionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDeletionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryRuleDeletionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryRuleDeletionType($value)';}
+}
 /// Only allow users with bypass permissions to delete matching refs.
 @immutable final class RepositoryRuleDeletion {const RepositoryRuleDeletion({required this.type});
 
-factory RepositoryRuleDeletion.fromJson(Map<String, dynamic> json) { return RepositoryRuleDeletion(
+factory RepositoryRuleDeletion.fromJson(Map<String, dynamic> json) {return RepositoryRuleDeletion(
   type: RepositoryRuleDeletionType.fromJson(json['type'] as String),
-); }
+);}
 
 final RepositoryRuleDeletionType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RepositoryRuleDeletion copyWith({RepositoryRuleDeletionType? type}) { return RepositoryRuleDeletion(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+RepositoryRuleDeletion copyWith({RepositoryRuleDeletionType? type}) {return RepositoryRuleDeletion(
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepositoryRuleDeletion &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'RepositoryRuleDeletion(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'RepositoryRuleDeletion(type: $type)';}
+}

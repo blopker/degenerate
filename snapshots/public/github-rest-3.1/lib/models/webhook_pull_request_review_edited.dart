@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_edited_changes.dart';import 'webhook_pull_request_review_edited_pull_request.dart';import 'webhooks_review.dart';@immutable final class WebhookPullRequestReviewEditedAction {const WebhookPullRequestReviewEditedAction._(this.value);
 
-factory WebhookPullRequestReviewEditedAction.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewEditedAction.fromJson(String json) {return switch (json) {
   'edited' => edited,
   _ => WebhookPullRequestReviewEditedAction._(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewEditedAction edited = WebhookPullRequestReviewEditedAction._('edited');
 
@@ -13,17 +13,17 @@ static const List<WebhookPullRequestReviewEditedAction> values = [edited];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewEditedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewEditedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestReviewEditedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewEditedAction($value)';}
+}
 @immutable final class WebhookPullRequestReviewEdited {const WebhookPullRequestReviewEdited({required this.action, required this.changes, required this.pullRequest, required this.repository, required this.review, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookPullRequestReviewEdited.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewEdited(
+factory WebhookPullRequestReviewEdited.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewEdited(
   action: WebhookPullRequestReviewEditedAction.fromJson(json['action'] as String),
   changes: WebhookPullRequestReviewEditedChanges.fromJson(json['changes'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -33,7 +33,7 @@ factory WebhookPullRequestReviewEdited.fromJson(Map<String, dynamic> json) { ret
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   review: WebhooksReview.fromJson(json['review'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookPullRequestReviewEditedAction action;
 
@@ -53,7 +53,7 @@ final WebhooksReview review;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'changes': changes.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -63,14 +63,14 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   'review': review.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('changes') &&
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
       json.containsKey('review') &&
-      json.containsKey('sender'); } 
-WebhookPullRequestReviewEdited copyWith({WebhookPullRequestReviewEditedAction? action, WebhookPullRequestReviewEditedChanges? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestReviewEditedPullRequest? pullRequest, RepositoryWebhooks? repository, WebhooksReview? review, SimpleUser? sender, }) { return WebhookPullRequestReviewEdited(
+      json.containsKey('sender');}
+WebhookPullRequestReviewEdited copyWith({WebhookPullRequestReviewEditedAction? action, WebhookPullRequestReviewEditedChanges? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestReviewEditedPullRequest? pullRequest, RepositoryWebhooks? repository, WebhooksReview? review, SimpleUser? sender, }) {return WebhookPullRequestReviewEdited(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -80,8 +80,8 @@ WebhookPullRequestReviewEdited copyWith({WebhookPullRequestReviewEditedAction? a
   repository: repository ?? this.repository,
   review: review ?? this.review,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestReviewEdited &&
           action == other.action &&
           changes == other.changes &&
@@ -91,7 +91,7 @@ WebhookPullRequestReviewEdited copyWith({WebhookPullRequestReviewEditedAction? a
           pullRequest == other.pullRequest &&
           repository == other.repository &&
           review == other.review &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, changes, enterprise, installation, organization, pullRequest, repository, review, sender); } 
-@override String toString() { return 'WebhookPullRequestReviewEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, review: $review, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, changes, enterprise, installation, organization, pullRequest, repository, review, sender);}
+@override String toString() {return 'WebhookPullRequestReviewEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, review: $review, sender: $sender)';}
+}

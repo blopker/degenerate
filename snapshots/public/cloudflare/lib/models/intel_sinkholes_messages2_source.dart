@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelSinkholesMessages2Source {const IntelSinkholesMessages2Source({this.pointer});
 
-factory IntelSinkholesMessages2Source.fromJson(Map<String, dynamic> json) { return IntelSinkholesMessages2Source(
+factory IntelSinkholesMessages2Source.fromJson(Map<String, dynamic> json) {return IntelSinkholesMessages2Source(
   pointer: json['pointer'] as String?,
-); }
+);}
 
 final String? pointer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'pointer': ?pointer,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'pointer'}.contains(key)); } 
-IntelSinkholesMessages2Source copyWith({String? Function()? pointer}) { return IntelSinkholesMessages2Source(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'pointer'}.contains(key));}
+IntelSinkholesMessages2Source copyWith({String? Function()? pointer}) {return IntelSinkholesMessages2Source(
   pointer: pointer != null ? pointer() : this.pointer,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IntelSinkholesMessages2Source &&
-          pointer == other.pointer; } 
-@override int get hashCode { return pointer.hashCode; } 
-@override String toString() { return 'IntelSinkholesMessages2Source(pointer: $pointer)'; } 
- }
+          pointer == other.pointer;}
+@override int get hashCode {return pointer.hashCode;}
+@override String toString() {return 'IntelSinkholesMessages2Source(pointer: $pointer)';}
+}

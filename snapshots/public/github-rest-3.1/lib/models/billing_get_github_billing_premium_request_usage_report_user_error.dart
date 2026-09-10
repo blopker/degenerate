@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class BillingGetGithubBillingPremiumRequestUsageReportUserError {const BillingGetGithubBillingPremiumRequestUsageReportUserError();
 
 /// Decodes the payload for its declared status and content type.
-static BillingGetGithubBillingPremiumRequestUsageReportUserError parse(ApiResponse response) { switch (response.statusCode) {
+static BillingGetGithubBillingPremiumRequestUsageReportUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -33,54 +33,54 @@ return BillingGetGithubBillingPremiumRequestUsageReportUserError503(BillingGetGi
 default:
 return BillingGetGithubBillingPremiumRequestUsageReportUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class BillingGetGithubBillingPremiumRequestUsageReportUserError400ApplicationJson extends BillingGetGithubBillingPremiumRequestUsageReportUserError {const BillingGetGithubBillingPremiumRequestUsageReportUserError400ApplicationJson(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 400 (application/scim+json).
 final class BillingGetGithubBillingPremiumRequestUsageReportUserError400ApplicationScimJson extends BillingGetGithubBillingPremiumRequestUsageReportUserError {const BillingGetGithubBillingPremiumRequestUsageReportUserError400ApplicationScimJson(this.data);
 
 /// The decoded response payload.
 final ScimError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class BillingGetGithubBillingPremiumRequestUsageReportUserError403 extends BillingGetGithubBillingPremiumRequestUsageReportUserError {const BillingGetGithubBillingPremiumRequestUsageReportUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class BillingGetGithubBillingPremiumRequestUsageReportUserError404 extends BillingGetGithubBillingPremiumRequestUsageReportUserError {const BillingGetGithubBillingPremiumRequestUsageReportUserError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 500 (application/json).
 final class BillingGetGithubBillingPremiumRequestUsageReportUserError500 extends BillingGetGithubBillingPremiumRequestUsageReportUserError {const BillingGetGithubBillingPremiumRequestUsageReportUserError500(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 503 (application/json).
 final class BillingGetGithubBillingPremiumRequestUsageReportUserError503 extends BillingGetGithubBillingPremiumRequestUsageReportUserError {const BillingGetGithubBillingPremiumRequestUsageReportUserError503(this.data);
 
 /// The decoded response payload.
 final BillingGetGithubBillingPremiumRequestUsageReportUserResponse503 data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class BillingGetGithubBillingPremiumRequestUsageReportUserErrorUnknown extends BillingGetGithubBillingPremiumRequestUsageReportUserError {const BillingGetGithubBillingPremiumRequestUsageReportUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

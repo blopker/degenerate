@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// ManagedFieldsEntry is a workflow-id, a FieldSet and the group version of the resource that the fieldset applies to.
 @immutable final class ManagedFieldsEntry {const ManagedFieldsEntry({this.apiVersion, this.fieldsType, this.fieldsV1, this.manager, this.operation, this.subresource, this.time, });
 
-factory ManagedFieldsEntry.fromJson(Map<String, dynamic> json) { return ManagedFieldsEntry(
+factory ManagedFieldsEntry.fromJson(Map<String, dynamic> json) {return ManagedFieldsEntry(
   apiVersion: json['apiVersion'] as String?,
   fieldsType: json['fieldsType'] as String?,
   fieldsV1: json['fieldsV1'] as Map<String, dynamic>?,
@@ -11,7 +11,7 @@ factory ManagedFieldsEntry.fromJson(Map<String, dynamic> json) { return ManagedF
   operation: json['operation'] as String?,
   subresource: json['subresource'] as String?,
   time: json['time'] != null ? Time.fromJson(json['time'] as String) : null,
-); }
+);}
 
 /// APIVersion defines the version of this resource that this field set applies to. The format is "group/version" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted.
 final String? apiVersion;
@@ -40,7 +40,7 @@ final String? subresource;
 /// Time is the timestamp of when the ManagedFields entry was added. The timestamp will also be updated if a field is added, the manager changes any of the owned fields value or removes a field. The timestamp does not update when a field is removed from the entry because another manager took it over.
 final Time? time;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   'fieldsType': ?fieldsType,
   'fieldsV1': ?fieldsV1,
@@ -48,9 +48,9 @@ Map<String, dynamic> toJson() { return {
   'operation': ?operation,
   'subresource': ?subresource,
   if (time != null) 'time': time?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'fieldsType', 'fieldsV1', 'manager', 'operation', 'subresource', 'time'}.contains(key)); } 
-ManagedFieldsEntry copyWith({String? Function()? apiVersion, String? Function()? fieldsType, Map<String, dynamic>? Function()? fieldsV1, String? Function()? manager, String? Function()? operation, String? Function()? subresource, Time? Function()? time, }) { return ManagedFieldsEntry(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'apiVersion', 'fieldsType', 'fieldsV1', 'manager', 'operation', 'subresource', 'time'}.contains(key));}
+ManagedFieldsEntry copyWith({String? Function()? apiVersion, String? Function()? fieldsType, Map<String, dynamic>? Function()? fieldsV1, String? Function()? manager, String? Function()? operation, String? Function()? subresource, Time? Function()? time, }) {return ManagedFieldsEntry(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   fieldsType: fieldsType != null ? fieldsType() : this.fieldsType,
   fieldsV1: fieldsV1 != null ? fieldsV1() : this.fieldsV1,
@@ -58,8 +58,8 @@ ManagedFieldsEntry copyWith({String? Function()? apiVersion, String? Function()?
   operation: operation != null ? operation() : this.operation,
   subresource: subresource != null ? subresource() : this.subresource,
   time: time != null ? time() : this.time,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ManagedFieldsEntry &&
           apiVersion == other.apiVersion &&
           fieldsType == other.fieldsType &&
@@ -67,7 +67,7 @@ ManagedFieldsEntry copyWith({String? Function()? apiVersion, String? Function()?
           manager == other.manager &&
           operation == other.operation &&
           subresource == other.subresource &&
-          time == other.time; } 
-@override int get hashCode { return Object.hash(apiVersion, fieldsType, fieldsV1, manager, operation, subresource, time); } 
-@override String toString() { return 'ManagedFieldsEntry(apiVersion: $apiVersion, fieldsType: $fieldsType, fieldsV1: $fieldsV1, manager: $manager, operation: $operation, subresource: $subresource, time: $time)'; } 
- }
+          time == other.time;}
+@override int get hashCode {return Object.hash(apiVersion, fieldsType, fieldsV1, manager, operation, subresource, time);}
+@override String toString() {return 'ManagedFieldsEntry(apiVersion: $apiVersion, fieldsType: $fieldsType, fieldsV1: $fieldsV1, manager: $manager, operation: $operation, subresource: $subresource, time: $time)';}
+}

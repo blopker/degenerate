@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodDomainsPaymentMethodDomainRequest {const PostPaymentMethodDomainsPaymentMethodDomainRequest({this.enabled, this.expand, });
 
-factory PostPaymentMethodDomainsPaymentMethodDomainRequest.fromJson(Map<String, dynamic> json) { return PostPaymentMethodDomainsPaymentMethodDomainRequest(
+factory PostPaymentMethodDomainsPaymentMethodDomainRequest.fromJson(Map<String, dynamic> json) {return PostPaymentMethodDomainsPaymentMethodDomainRequest(
   enabled: json['enabled'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Whether this payment method domain is enabled. If the domain is not enabled, payment methods that require a payment method domain will not appear in Elements or Embedded Checkout.
 final bool? enabled;
@@ -13,19 +13,19 @@ final bool? enabled;
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   'expand': ?expand,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'expand'}.contains(key)); } 
-PostPaymentMethodDomainsPaymentMethodDomainRequest copyWith({bool? Function()? enabled, List<String>? Function()? expand, }) { return PostPaymentMethodDomainsPaymentMethodDomainRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'expand'}.contains(key));}
+PostPaymentMethodDomainsPaymentMethodDomainRequest copyWith({bool? Function()? enabled, List<String>? Function()? expand, }) {return PostPaymentMethodDomainsPaymentMethodDomainRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   expand: expand != null ? expand() : this.expand,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodDomainsPaymentMethodDomainRequest &&
           enabled == other.enabled &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(enabled, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostPaymentMethodDomainsPaymentMethodDomainRequest(enabled: $enabled, expand: $expand)'; } 
- }
+          listEquals(expand, other.expand);}
+@override int get hashCode {return Object.hash(enabled, Object.hashAll(expand ?? const []));}
+@override String toString() {return 'PostPaymentMethodDomainsPaymentMethodDomainRequest(enabled: $enabled, expand: $expand)';}
+}

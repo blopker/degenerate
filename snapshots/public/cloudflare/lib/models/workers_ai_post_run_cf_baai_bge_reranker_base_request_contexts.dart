@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts {const WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts({this.text});
 
-factory WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts(
+factory WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts(
   text: json['text'] as String?,
-); }
+);}
 
 /// One of the provided context content
 final String? text;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'text': ?text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'text'}.contains(key)); } 
-WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts copyWith({String? Function()? text}) { return WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'text'}.contains(key));}
+WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts copyWith({String? Function()? text}) {return WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts(
   text: text != null ? text() : this.text,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts &&
-          text == other.text; } 
-@override int get hashCode { return text.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts(text: $text)'; } 
- }
+          text == other.text;}
+@override int get hashCode {return text.hashCode;}
+@override String toString() {return 'WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts(text: $text)';}
+}

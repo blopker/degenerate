@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Order By Direction
 @immutable final class AiSearchListInstancesOrderByDirection {const AiSearchListInstancesOrderByDirection._(this.value);
 
-factory AiSearchListInstancesOrderByDirection.fromJson(String json) { return switch (json) {
+factory AiSearchListInstancesOrderByDirection.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   _ => AiSearchListInstancesOrderByDirection._(json),
-}; }
+};}
 
 static const AiSearchListInstancesOrderByDirection asc = AiSearchListInstancesOrderByDirection._('asc');
 
@@ -17,11 +17,11 @@ static const List<AiSearchListInstancesOrderByDirection> values = [asc, desc];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchListInstancesOrderByDirection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchListInstancesOrderByDirection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchListInstancesOrderByDirection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchListInstancesOrderByDirection($value)';}
+}

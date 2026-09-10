@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion {const WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion({this.id, this.message, this.tag, });
 
-factory WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion.fromJson(Map<String, dynamic> json) { return WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion(
+factory WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion.fromJson(Map<String, dynamic> json) {return WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion(
   id: json['id'] as String?,
   message: json['message'] as String?,
   tag: json['tag'] as String?,
-); }
+);}
 
 final String? id;
 
@@ -14,22 +14,22 @@ final String? message;
 
 final String? tag;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'message': ?message,
   'tag': ?tag,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'message', 'tag'}.contains(key)); } 
-WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion copyWith({String? Function()? id, String? Function()? message, String? Function()? tag, }) { return WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'message', 'tag'}.contains(key));}
+WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion copyWith({String? Function()? id, String? Function()? message, String? Function()? tag, }) {return WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion(
   id: id != null ? id() : this.id,
   message: message != null ? message() : this.message,
   tag: tag != null ? tag() : this.tag,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion &&
           id == other.id &&
           message == other.message &&
-          tag == other.tag; } 
-@override int get hashCode { return Object.hash(id, message, tag); } 
-@override String toString() { return 'WorkersObservabilityTelemetryEvent\$workersVariant2ScriptVersion(id: $id, message: $message, tag: $tag)'; } 
- }
+          tag == other.tag;}
+@override int get hashCode {return Object.hash(id, message, tag);}
+@override String toString() {return 'WorkersObservabilityTelemetryEvent\$workersVariant2ScriptVersion(id: $id, message: $message, tag: $tag)';}
+}

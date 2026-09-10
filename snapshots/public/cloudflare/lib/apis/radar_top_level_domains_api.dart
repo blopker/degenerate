@@ -13,7 +13,7 @@ final class RadarTopLevelDomainsApi with ApiExecutor {const RadarTopLevelDomains
 /// Retrieves a list of TLDs.
 ///
 /// `GET /radar/tlds`
-Future<ApiResult<RadarGetTldsResponseResult, RadarGetTldsResponse400>> radarGetTlds({int? limit, int? offset, String? tldManager, RadarGetTldsTldType? tldType, String? tld, RadarGetTldsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetTldsResponseResult, RadarGetTldsResponse400>> radarGetTlds({int? limit, int? offset, String? tldManager, RadarGetTldsTldType? tldType, String? tld, RadarGetTldsFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -62,13 +62,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get TLD details
 ///
 /// Retrieves the requested TLD information.
 ///
 /// `GET /radar/tlds/{tld}`
-Future<ApiResult<RadarGetTldDetailsResponseResult, RadarGetTldDetailsResponse404>> radarGetTldDetails({required String tld, RadarGetTldDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetTldDetailsResponseResult, RadarGetTldDetailsResponse404>> radarGetTldDetails({required String tld, RadarGetTldDetailsFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) {
   queryParameters['format'] = format.toJson();
@@ -102,5 +102,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

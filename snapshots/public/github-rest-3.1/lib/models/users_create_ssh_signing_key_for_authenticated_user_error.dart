@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class UsersCreateSshSigningKeyForAuthenticatedUserError {const UsersCreateSshSigningKeyForAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static UsersCreateSshSigningKeyForAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static UsersCreateSshSigningKeyForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const UsersCreateSshSigningKeyForAuthenticatedUserError304();
 case 401:
@@ -22,44 +22,44 @@ return UsersCreateSshSigningKeyForAuthenticatedUserError422(ValidationError.from
 default:
 return UsersCreateSshSigningKeyForAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class UsersCreateSshSigningKeyForAuthenticatedUserError304 extends UsersCreateSshSigningKeyForAuthenticatedUserError {const UsersCreateSshSigningKeyForAuthenticatedUserError304();
 
- }
+}
 /// Response for 401 (application/json).
 final class UsersCreateSshSigningKeyForAuthenticatedUserError401 extends UsersCreateSshSigningKeyForAuthenticatedUserError {const UsersCreateSshSigningKeyForAuthenticatedUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class UsersCreateSshSigningKeyForAuthenticatedUserError403 extends UsersCreateSshSigningKeyForAuthenticatedUserError {const UsersCreateSshSigningKeyForAuthenticatedUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class UsersCreateSshSigningKeyForAuthenticatedUserError404 extends UsersCreateSshSigningKeyForAuthenticatedUserError {const UsersCreateSshSigningKeyForAuthenticatedUserError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class UsersCreateSshSigningKeyForAuthenticatedUserError422 extends UsersCreateSshSigningKeyForAuthenticatedUserError {const UsersCreateSshSigningKeyForAuthenticatedUserError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class UsersCreateSshSigningKeyForAuthenticatedUserErrorUnknown extends UsersCreateSshSigningKeyForAuthenticatedUserError {const UsersCreateSshSigningKeyForAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

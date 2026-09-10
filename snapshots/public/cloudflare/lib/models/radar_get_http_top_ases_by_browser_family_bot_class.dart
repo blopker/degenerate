@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByBrowserFamilyBotClass {const RadarGetHttpTopAsesByBrowserFamilyBotClass._(this.value);
 
-factory RadarGetHttpTopAsesByBrowserFamilyBotClass.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopAsesByBrowserFamilyBotClass.fromJson(String json) {return switch (json) {
   'LIKELY_AUTOMATED' => likelyAutomated,
   'LIKELY_HUMAN' => likelyHuman,
   _ => RadarGetHttpTopAsesByBrowserFamilyBotClass._(json),
-}; }
+};}
 
 static const RadarGetHttpTopAsesByBrowserFamilyBotClass likelyAutomated = RadarGetHttpTopAsesByBrowserFamilyBotClass._('LIKELY_AUTOMATED');
 
@@ -16,11 +16,11 @@ static const List<RadarGetHttpTopAsesByBrowserFamilyBotClass> values = [likelyAu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTopAsesByBrowserFamilyBotClass && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTopAsesByBrowserFamilyBotClass($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTopAsesByBrowserFamilyBotClass && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTopAsesByBrowserFamilyBotClass($value)';}
+}

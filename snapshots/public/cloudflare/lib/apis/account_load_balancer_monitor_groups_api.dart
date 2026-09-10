@@ -13,7 +13,7 @@ final class AccountLoadBalancerMonitorGroupsApi with ApiExecutor {const AccountL
 /// List configured monitor groups.
 ///
 /// `GET /accounts/{account_id}/load_balancers/monitor_groups`
-Future<ApiResult<List<LoadBalancingMonitorGroup>, AccountLoadBalancerMonitorGroupsListMonitorGroupsResponse4xx>> accountLoadBalancerMonitorGroupsListMonitorGroups({required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<LoadBalancingMonitorGroup>, AccountLoadBalancerMonitorGroupsListMonitorGroupsResponse4xx>> accountLoadBalancerMonitorGroupsListMonitorGroups({required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create Monitor Group
 ///
 /// Create a new monitor group.
 ///
 /// `POST /accounts/{account_id}/load_balancers/monitor_groups`
-Future<ApiResult<LoadBalancingMonitorGroup, AccountLoadBalancerMonitorGroupsCreateMonitorGroupError>> accountLoadBalancerMonitorGroupsCreateMonitorGroup({required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorGroupRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitorGroup, AccountLoadBalancerMonitorGroupsCreateMonitorGroupError>> accountLoadBalancerMonitorGroupsCreateMonitorGroup({required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorGroupRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -64,13 +64,13 @@ return LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>
   },
   onError: AccountLoadBalancerMonitorGroupsCreateMonitorGroupError.parse,
 );
- } 
+}
 /// Monitor Group Details
 ///
 /// Fetch a single configured monitor group.
 ///
 /// `GET /accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}`
-Future<ApiResult<LoadBalancingMonitorGroup, AccountLoadBalancerMonitorGroupsMonitorGroupDetailsResponse4xx>> accountLoadBalancerMonitorGroupsMonitorGroupDetails({required LoadBalancingSchemasIdentifier monitorGroupId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitorGroup, AccountLoadBalancerMonitorGroupsMonitorGroupDetailsResponse4xx>> accountLoadBalancerMonitorGroupsMonitorGroupDetails({required LoadBalancingSchemasIdentifier monitorGroupId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -96,13 +96,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update Monitor Group
 ///
 /// Modify a configured monitor group.
 ///
 /// `PUT /accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}`
-Future<ApiResult<LoadBalancingMonitorGroup, AccountLoadBalancerMonitorGroupsUpdateMonitorGroupError>> accountLoadBalancerMonitorGroupsUpdateMonitorGroup({required LoadBalancingSchemasIdentifier monitorGroupId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorGroupRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitorGroup, AccountLoadBalancerMonitorGroupsUpdateMonitorGroupError>> accountLoadBalancerMonitorGroupsUpdateMonitorGroup({required LoadBalancingSchemasIdentifier monitorGroupId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorGroupRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -121,13 +121,13 @@ return LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>
   },
   onError: AccountLoadBalancerMonitorGroupsUpdateMonitorGroupError.parse,
 );
- } 
+}
 /// Patch Monitor Group
 ///
 /// Apply changes to an existing monitor group, overwriting the supplied properties.
 ///
 /// `PATCH /accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}`
-Future<ApiResult<LoadBalancingMonitorGroup, AccountLoadBalancerMonitorGroupsPatchMonitorGroupError>> accountLoadBalancerMonitorGroupsPatchMonitorGroup({required LoadBalancingSchemasIdentifier monitorGroupId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorGroupRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitorGroup, AccountLoadBalancerMonitorGroupsPatchMonitorGroupError>> accountLoadBalancerMonitorGroupsPatchMonitorGroup({required LoadBalancingSchemasIdentifier monitorGroupId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorGroupRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -146,13 +146,13 @@ return LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>
   },
   onError: AccountLoadBalancerMonitorGroupsPatchMonitorGroupError.parse,
 );
- } 
+}
 /// Delete Monitor Group
 ///
 /// Delete a configured monitor group.
 ///
 /// `DELETE /accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}`
-Future<ApiResult<LoadBalancingMonitorGroup, AccountLoadBalancerMonitorGroupsDeleteMonitorGroupError>> accountLoadBalancerMonitorGroupsDeleteMonitorGroup({required LoadBalancingSchemasIdentifier monitorGroupId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitorGroup, AccountLoadBalancerMonitorGroupsDeleteMonitorGroupError>> accountLoadBalancerMonitorGroupsDeleteMonitorGroup({required LoadBalancingSchemasIdentifier monitorGroupId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -169,13 +169,13 @@ return LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>
   },
   onError: AccountLoadBalancerMonitorGroupsDeleteMonitorGroupError.parse,
 );
- } 
+}
 /// List Monitor Group References
 ///
 /// Get the list of resources that reference the provided monitor group.
 ///
 /// `GET /accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}/references`
-Future<ApiResult<List<LoadBalancingMonitorGroupReferencesResponseResult>, AccountLoadBalancerMonitorGroupsListMonitorGroupReferencesResponse4xx>> accountLoadBalancerMonitorGroupsListMonitorGroupReferences({required LoadBalancingIdentifier monitorGroupId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<LoadBalancingMonitorGroupReferencesResponseResult>, AccountLoadBalancerMonitorGroupsListMonitorGroupReferencesResponse4xx>> accountLoadBalancerMonitorGroupsListMonitorGroupReferences({required LoadBalancingIdentifier monitorGroupId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -201,5 +201,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

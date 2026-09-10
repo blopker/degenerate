@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions._(this.value);
 
-factory PortalSubscriptionCancellationReasonOptions.fromJson(String json) { return switch (json) {
+factory PortalSubscriptionCancellationReasonOptions.fromJson(String json) {return switch (json) {
   'customer_service' => customerService,
   'low_quality' => lowQuality,
   'missing_features' => missingFeatures,
@@ -12,7 +12,7 @@ factory PortalSubscriptionCancellationReasonOptions.fromJson(String json) { retu
   'too_expensive' => tooExpensive,
   'unused' => unused,
   _ => PortalSubscriptionCancellationReasonOptions._(json),
-}; }
+};}
 
 static const PortalSubscriptionCancellationReasonOptions customerService = PortalSubscriptionCancellationReasonOptions._('customer_service');
 
@@ -34,21 +34,21 @@ static const List<PortalSubscriptionCancellationReasonOptions> values = [custome
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PortalSubscriptionCancellationReasonOptions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PortalSubscriptionCancellationReasonOptions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PortalSubscriptionCancellationReasonOptions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PortalSubscriptionCancellationReasonOptions($value)';}
+}
 /// 
 @immutable final class PortalSubscriptionCancellationReason {const PortalSubscriptionCancellationReason({required this.enabled, required this.options, });
 
-factory PortalSubscriptionCancellationReason.fromJson(Map<String, dynamic> json) { return PortalSubscriptionCancellationReason(
+factory PortalSubscriptionCancellationReason.fromJson(Map<String, dynamic> json) {return PortalSubscriptionCancellationReason(
   enabled: json['enabled'] as bool,
   options: (json['options'] as List<dynamic>).map((e) => PortalSubscriptionCancellationReasonOptions.fromJson(e as String)).toList(),
-); }
+);}
 
 /// Whether the feature is enabled.
 final bool enabled;
@@ -56,20 +56,20 @@ final bool enabled;
 /// Which cancellation reasons will be given as options to the customer.
 final List<PortalSubscriptionCancellationReasonOptions> options;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   'options': options.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('options'); } 
-PortalSubscriptionCancellationReason copyWith({bool? enabled, List<PortalSubscriptionCancellationReasonOptions>? options, }) { return PortalSubscriptionCancellationReason(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('options');}
+PortalSubscriptionCancellationReason copyWith({bool? enabled, List<PortalSubscriptionCancellationReasonOptions>? options, }) {return PortalSubscriptionCancellationReason(
   enabled: enabled ?? this.enabled,
   options: options ?? this.options,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PortalSubscriptionCancellationReason &&
           enabled == other.enabled &&
-          listEquals(options, other.options); } 
-@override int get hashCode { return Object.hash(enabled, Object.hashAll(options)); } 
-@override String toString() { return 'PortalSubscriptionCancellationReason(enabled: $enabled, options: $options)'; } 
- }
+          listEquals(options, other.options);}
+@override int get hashCode {return Object.hash(enabled, Object.hashAll(options));}
+@override String toString() {return 'PortalSubscriptionCancellationReason(enabled: $enabled, options: $options)';}
+}

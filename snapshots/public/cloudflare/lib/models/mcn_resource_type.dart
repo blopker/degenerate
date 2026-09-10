@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnResourceType {const McnResourceType._(this.value);
 
-factory McnResourceType.fromJson(String json) { return switch (json) {
+factory McnResourceType.fromJson(String json) {return switch (json) {
   'aws_customer_gateway' => awsCustomerGateway,
   'aws_egress_only_internet_gateway' => awsEgressOnlyInternetGateway,
   'aws_internet_gateway' => awsInternetGateway,
@@ -61,7 +61,7 @@ factory McnResourceType.fromJson(String json) { return switch (json) {
   'cloudflare_static_route' => cloudflareStaticRoute,
   'cloudflare_ipsec_tunnel' => cloudflareIpsecTunnel,
   _ => McnResourceType._(json),
-}; }
+};}
 
 static const McnResourceType awsCustomerGateway = McnResourceType._('aws_customer_gateway');
 
@@ -181,11 +181,11 @@ static const List<McnResourceType> values = [awsCustomerGateway, awsEgressOnlyIn
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnResourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'McnResourceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is McnResourceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'McnResourceType($value)';}
+}

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_next_action_cashapp_handle_redirect_or_display_qr_code.dart';import 'setup_intent_next_action_redirect_to_url.dart';import 'setup_intent_next_action_verify_with_microdeposits.dart';/// 
 @immutable final class SetupIntentNextAction {const SetupIntentNextAction({required this.type, this.cashappHandleRedirectOrDisplayQrCode, this.redirectToUrl, this.useStripeSdk, this.verifyWithMicrodeposits, });
 
-factory SetupIntentNextAction.fromJson(Map<String, dynamic> json) { return SetupIntentNextAction(
+factory SetupIntentNextAction.fromJson(Map<String, dynamic> json) {return SetupIntentNextAction(
   cashappHandleRedirectOrDisplayQrCode: json['cashapp_handle_redirect_or_display_qr_code'] != null ? PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode.fromJson(json['cashapp_handle_redirect_or_display_qr_code'] as Map<String, dynamic>) : null,
   redirectToUrl: json['redirect_to_url'] != null ? SetupIntentNextActionRedirectToUrl.fromJson(json['redirect_to_url'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
   useStripeSdk: json['use_stripe_sdk'] as Map<String, dynamic>?,
   verifyWithMicrodeposits: json['verify_with_microdeposits'] != null ? SetupIntentNextActionVerifyWithMicrodeposits.fromJson(json['verify_with_microdeposits'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode? cashappHandleRedirectOrDisplayQrCode;
 
@@ -23,28 +23,28 @@ final Map<String,dynamic>? useStripeSdk;
 
 final SetupIntentNextActionVerifyWithMicrodeposits? verifyWithMicrodeposits;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cashappHandleRedirectOrDisplayQrCode != null) 'cashapp_handle_redirect_or_display_qr_code': cashappHandleRedirectOrDisplayQrCode?.toJson(),
   if (redirectToUrl != null) 'redirect_to_url': redirectToUrl?.toJson(),
   'type': type,
   'use_stripe_sdk': ?useStripeSdk,
   if (verifyWithMicrodeposits != null) 'verify_with_microdeposits': verifyWithMicrodeposits?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-SetupIntentNextAction copyWith({PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode? Function()? cashappHandleRedirectOrDisplayQrCode, SetupIntentNextActionRedirectToUrl? Function()? redirectToUrl, String? type, Map<String, dynamic>? Function()? useStripeSdk, SetupIntentNextActionVerifyWithMicrodeposits? Function()? verifyWithMicrodeposits, }) { return SetupIntentNextAction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+SetupIntentNextAction copyWith({PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode? Function()? cashappHandleRedirectOrDisplayQrCode, SetupIntentNextActionRedirectToUrl? Function()? redirectToUrl, String? type, Map<String, dynamic>? Function()? useStripeSdk, SetupIntentNextActionVerifyWithMicrodeposits? Function()? verifyWithMicrodeposits, }) {return SetupIntentNextAction(
   cashappHandleRedirectOrDisplayQrCode: cashappHandleRedirectOrDisplayQrCode != null ? cashappHandleRedirectOrDisplayQrCode() : this.cashappHandleRedirectOrDisplayQrCode,
   redirectToUrl: redirectToUrl != null ? redirectToUrl() : this.redirectToUrl,
   type: type ?? this.type,
   useStripeSdk: useStripeSdk != null ? useStripeSdk() : this.useStripeSdk,
   verifyWithMicrodeposits: verifyWithMicrodeposits != null ? verifyWithMicrodeposits() : this.verifyWithMicrodeposits,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SetupIntentNextAction &&
           cashappHandleRedirectOrDisplayQrCode == other.cashappHandleRedirectOrDisplayQrCode &&
           redirectToUrl == other.redirectToUrl &&
           type == other.type &&
           useStripeSdk == other.useStripeSdk &&
-          verifyWithMicrodeposits == other.verifyWithMicrodeposits; } 
-@override int get hashCode { return Object.hash(cashappHandleRedirectOrDisplayQrCode, redirectToUrl, type, useStripeSdk, verifyWithMicrodeposits); } 
-@override String toString() { return 'SetupIntentNextAction(cashappHandleRedirectOrDisplayQrCode: $cashappHandleRedirectOrDisplayQrCode, redirectToUrl: $redirectToUrl, type: $type, useStripeSdk: $useStripeSdk, verifyWithMicrodeposits: $verifyWithMicrodeposits)'; } 
- }
+          verifyWithMicrodeposits == other.verifyWithMicrodeposits;}
+@override int get hashCode {return Object.hash(cashappHandleRedirectOrDisplayQrCode, redirectToUrl, type, useStripeSdk, verifyWithMicrodeposits);}
+@override String toString() {return 'SetupIntentNextAction(cashappHandleRedirectOrDisplayQrCode: $cashappHandleRedirectOrDisplayQrCode, redirectToUrl: $redirectToUrl, type: $type, useStripeSdk: $useStripeSdk, verifyWithMicrodeposits: $verifyWithMicrodeposits)';}
+}

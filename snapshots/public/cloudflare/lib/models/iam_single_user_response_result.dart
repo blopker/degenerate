@@ -9,7 +9,7 @@ bool toJson() => value;
 }
 @immutable final class IamSingleUserResponseResult {const IamSingleUserResponseResult({this.betas, this.country = const Omittable.absent(), this.firstName = const Omittable.absent(), this.hasBusinessZones, this.hasEnterpriseZones, this.hasProZones, this.id, this.lastName = const Omittable.absent(), this.organizations, this.suspended, this.telephone = const Omittable.absent(), this.twoFactorAuthenticationEnabled, this.twoFactorAuthenticationLocked, this.zipcode = const Omittable.absent(), });
 
-factory IamSingleUserResponseResult.fromJson(Map<String, dynamic> json) { return IamSingleUserResponseResult(
+factory IamSingleUserResponseResult.fromJson(Map<String, dynamic> json) {return IamSingleUserResponseResult(
   betas: (json['betas'] as List<dynamic>?)?.map((e) => e as String).toList(),
   country: json.containsKey('country') ? Omittable(json['country'] != null ? IamCountry.fromJson(json['country'] as String) : null) : const Omittable.absent(),
   firstName: json.containsKey('first_name') ? Omittable(json['first_name'] != null ? IamFirstName.fromJson(json['first_name'] as String) : null) : const Omittable.absent(),
@@ -24,7 +24,7 @@ factory IamSingleUserResponseResult.fromJson(Map<String, dynamic> json) { return
   twoFactorAuthenticationEnabled: json['two_factor_authentication_enabled'] != null ? IamTwoFactorAuthenticationEnabled.fromJson(json['two_factor_authentication_enabled'] as bool) : null,
   twoFactorAuthenticationLocked: json['two_factor_authentication_locked'] != null ? IamTwoFactorAuthenticationLocked.fromJson(json['two_factor_authentication_locked'] as bool) : null,
   zipcode: json.containsKey('zipcode') ? Omittable(json['zipcode'] != null ? IamZipcode.fromJson(json['zipcode'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Lists the betas that the user is participating in.
 final List<String>? betas;
@@ -64,14 +64,14 @@ final IamTwoFactorAuthenticationLocked? twoFactorAuthenticationLocked;
 final Omittable<IamZipcode?> zipcode;
 
 /// The value with the schema default applied when absent.
-bool get hasBusinessZonesOrDefault { return hasBusinessZones ?? false; } 
+bool get hasBusinessZonesOrDefault {return hasBusinessZones ?? false;}
 /// The value with the schema default applied when absent.
-bool get hasEnterpriseZonesOrDefault { return hasEnterpriseZones ?? false; } 
+bool get hasEnterpriseZonesOrDefault {return hasEnterpriseZones ?? false;}
 /// The value with the schema default applied when absent.
-bool get hasProZonesOrDefault { return hasProZones ?? false; } 
+bool get hasProZonesOrDefault {return hasProZones ?? false;}
 /// The value with the schema default applied when absent.
-bool get suspendedOrDefault { return suspended ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get suspendedOrDefault {return suspended ?? false;}
+Map<String, dynamic> toJson() {return {
   'betas': ?betas,
   if (country.isPresent) 'country': country.value?.toJson(),
   if (firstName.isPresent) 'first_name': firstName.value?.toJson(),
@@ -86,9 +86,9 @@ Map<String, dynamic> toJson() { return {
   if (twoFactorAuthenticationEnabled != null) 'two_factor_authentication_enabled': twoFactorAuthenticationEnabled?.toJson(),
   if (twoFactorAuthenticationLocked != null) 'two_factor_authentication_locked': twoFactorAuthenticationLocked?.toJson(),
   if (zipcode.isPresent) 'zipcode': zipcode.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'betas', 'country', 'first_name', 'has_business_zones', 'has_enterprise_zones', 'has_pro_zones', 'id', 'last_name', 'organizations', 'suspended', 'telephone', 'two_factor_authentication_enabled', 'two_factor_authentication_locked', 'zipcode'}.contains(key)); } 
-IamSingleUserResponseResult copyWith({List<String>? Function()? betas, Omittable<IamCountry?>? country, Omittable<IamFirstName?>? firstName, bool? Function()? hasBusinessZones, bool? Function()? hasEnterpriseZones, bool? Function()? hasProZones, String? Function()? id, Omittable<IamLastName?>? lastName, List<IamOrganization>? Function()? organizations, bool? Function()? suspended, Omittable<IamTelephone?>? telephone, IamTwoFactorAuthenticationEnabled? Function()? twoFactorAuthenticationEnabled, IamTwoFactorAuthenticationLocked? Function()? twoFactorAuthenticationLocked, Omittable<IamZipcode?>? zipcode, }) { return IamSingleUserResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'betas', 'country', 'first_name', 'has_business_zones', 'has_enterprise_zones', 'has_pro_zones', 'id', 'last_name', 'organizations', 'suspended', 'telephone', 'two_factor_authentication_enabled', 'two_factor_authentication_locked', 'zipcode'}.contains(key));}
+IamSingleUserResponseResult copyWith({List<String>? Function()? betas, Omittable<IamCountry?>? country, Omittable<IamFirstName?>? firstName, bool? Function()? hasBusinessZones, bool? Function()? hasEnterpriseZones, bool? Function()? hasProZones, String? Function()? id, Omittable<IamLastName?>? lastName, List<IamOrganization>? Function()? organizations, bool? Function()? suspended, Omittable<IamTelephone?>? telephone, IamTwoFactorAuthenticationEnabled? Function()? twoFactorAuthenticationEnabled, IamTwoFactorAuthenticationLocked? Function()? twoFactorAuthenticationLocked, Omittable<IamZipcode?>? zipcode, }) {return IamSingleUserResponseResult(
   betas: betas != null ? betas() : this.betas,
   country: country ?? this.country,
   firstName: firstName ?? this.firstName,
@@ -103,8 +103,8 @@ IamSingleUserResponseResult copyWith({List<String>? Function()? betas, Omittable
   twoFactorAuthenticationEnabled: twoFactorAuthenticationEnabled != null ? twoFactorAuthenticationEnabled() : this.twoFactorAuthenticationEnabled,
   twoFactorAuthenticationLocked: twoFactorAuthenticationLocked != null ? twoFactorAuthenticationLocked() : this.twoFactorAuthenticationLocked,
   zipcode: zipcode ?? this.zipcode,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IamSingleUserResponseResult &&
           listEquals(betas, other.betas) &&
           country == other.country &&
@@ -119,7 +119,7 @@ IamSingleUserResponseResult copyWith({List<String>? Function()? betas, Omittable
           telephone == other.telephone &&
           twoFactorAuthenticationEnabled == other.twoFactorAuthenticationEnabled &&
           twoFactorAuthenticationLocked == other.twoFactorAuthenticationLocked &&
-          zipcode == other.zipcode; } 
-@override int get hashCode { return Object.hash(Object.hashAll(betas ?? const []), country, firstName, hasBusinessZones, hasEnterpriseZones, hasProZones, id, lastName, Object.hashAll(organizations ?? const []), suspended, telephone, twoFactorAuthenticationEnabled, twoFactorAuthenticationLocked, zipcode); } 
-@override String toString() { return 'IamSingleUserResponseResult(betas: $betas, country: $country, firstName: $firstName, hasBusinessZones: $hasBusinessZones, hasEnterpriseZones: $hasEnterpriseZones, hasProZones: $hasProZones, id: $id, lastName: $lastName, organizations: $organizations, suspended: $suspended, telephone: $telephone, twoFactorAuthenticationEnabled: $twoFactorAuthenticationEnabled, twoFactorAuthenticationLocked: $twoFactorAuthenticationLocked, zipcode: $zipcode)'; } 
- }
+          zipcode == other.zipcode;}
+@override int get hashCode {return Object.hash(Object.hashAll(betas ?? const []), country, firstName, hasBusinessZones, hasEnterpriseZones, hasProZones, id, lastName, Object.hashAll(organizations ?? const []), suspended, telephone, twoFactorAuthenticationEnabled, twoFactorAuthenticationLocked, zipcode);}
+@override String toString() {return 'IamSingleUserResponseResult(betas: $betas, country: $country, firstName: $firstName, hasBusinessZones: $hasBusinessZones, hasEnterpriseZones: $hasEnterpriseZones, hasProZones: $hasProZones, id: $id, lastName: $lastName, organizations: $organizations, suspended: $suspended, telephone: $telephone, twoFactorAuthenticationEnabled: $twoFactorAuthenticationEnabled, twoFactorAuthenticationLocked: $twoFactorAuthenticationLocked, zipcode: $zipcode)';}
+}

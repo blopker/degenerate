@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the field used to sort returned rule groups.
 @immutable final class WafRuleGroupsListWafRuleGroupsOrder {const WafRuleGroupsListWafRuleGroupsOrder._(this.value);
 
-factory WafRuleGroupsListWafRuleGroupsOrder.fromJson(String json) { return switch (json) {
+factory WafRuleGroupsListWafRuleGroupsOrder.fromJson(String json) {return switch (json) {
   'mode' => mode,
   'rules_count' => rulesCount,
   _ => WafRuleGroupsListWafRuleGroupsOrder._(json),
-}; }
+};}
 
 static const WafRuleGroupsListWafRuleGroupsOrder mode = WafRuleGroupsListWafRuleGroupsOrder._('mode');
 
@@ -17,11 +17,11 @@ static const List<WafRuleGroupsListWafRuleGroupsOrder> values = [mode, rulesCoun
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WafRuleGroupsListWafRuleGroupsOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WafRuleGroupsListWafRuleGroupsOrder($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WafRuleGroupsListWafRuleGroupsOrder && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WafRuleGroupsListWafRuleGroupsOrder($value)';}
+}

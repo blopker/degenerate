@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpPredefinedProfileEntryUpdate {const DlpPredefinedProfileEntryUpdate({required this.enabled, required this.id, });
 
-factory DlpPredefinedProfileEntryUpdate.fromJson(Map<String, dynamic> json) { return DlpPredefinedProfileEntryUpdate(
+factory DlpPredefinedProfileEntryUpdate.fromJson(Map<String, dynamic> json) {return DlpPredefinedProfileEntryUpdate(
   enabled: json['enabled'] as bool,
   id: json['id'] as String,
-); }
+);}
 
 final bool enabled;
 
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('id') && json['id'] is String; } 
-DlpPredefinedProfileEntryUpdate copyWith({bool? enabled, String? id, }) { return DlpPredefinedProfileEntryUpdate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('id') && json['id'] is String;}
+DlpPredefinedProfileEntryUpdate copyWith({bool? enabled, String? id, }) {return DlpPredefinedProfileEntryUpdate(
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpPredefinedProfileEntryUpdate &&
           enabled == other.enabled &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(enabled, id); } 
-@override String toString() { return 'DlpPredefinedProfileEntryUpdate(enabled: $enabled, id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return Object.hash(enabled, id);}
+@override String toString() {return 'DlpPredefinedProfileEntryUpdate(enabled: $enabled, id: $id)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_settings_card_payments_decline_on.dart';import 'post_accounts_account_request_settings_card_payments_statement_descriptor_prefix_kana.dart';import 'post_accounts_account_request_settings_card_payments_statement_descriptor_prefix_kanji.dart';@immutable final class PostAccountsAccountRequestSettingsCardPayments {const PostAccountsAccountRequestSettingsCardPayments({this.declineOn, this.statementDescriptorPrefix, this.statementDescriptorPrefixKana, this.statementDescriptorPrefixKanji, });
 
-factory PostAccountsAccountRequestSettingsCardPayments.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestSettingsCardPayments(
+factory PostAccountsAccountRequestSettingsCardPayments.fromJson(Map<String, dynamic> json) {return PostAccountsAccountRequestSettingsCardPayments(
   declineOn: json['decline_on'] != null ? PostAccountsAccountRequestSettingsCardPaymentsDeclineOn.fromJson(json['decline_on'] as Map<String, dynamic>) : null,
   statementDescriptorPrefix: json['statement_descriptor_prefix'] as String?,
   statementDescriptorPrefixKana: json['statement_descriptor_prefix_kana'] != null ? PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKana.fromJson(json['statement_descriptor_prefix_kana']) : null,
   statementDescriptorPrefixKanji: json['statement_descriptor_prefix_kanji'] != null ? PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKanji.fromJson(json['statement_descriptor_prefix_kanji']) : null,
-); }
+);}
 
 final PostAccountsAccountRequestSettingsCardPaymentsDeclineOn? declineOn;
 
@@ -17,25 +17,25 @@ final PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKan
 
 final PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKanji? statementDescriptorPrefixKanji;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (declineOn != null) 'decline_on': declineOn?.toJson(),
   'statement_descriptor_prefix': ?statementDescriptorPrefix,
   if (statementDescriptorPrefixKana != null) 'statement_descriptor_prefix_kana': statementDescriptorPrefixKana?.toJson(),
   if (statementDescriptorPrefixKanji != null) 'statement_descriptor_prefix_kanji': statementDescriptorPrefixKanji?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'decline_on', 'statement_descriptor_prefix', 'statement_descriptor_prefix_kana', 'statement_descriptor_prefix_kanji'}.contains(key)); } 
-PostAccountsAccountRequestSettingsCardPayments copyWith({PostAccountsAccountRequestSettingsCardPaymentsDeclineOn? Function()? declineOn, String? Function()? statementDescriptorPrefix, PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKana? Function()? statementDescriptorPrefixKana, PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKanji? Function()? statementDescriptorPrefixKanji, }) { return PostAccountsAccountRequestSettingsCardPayments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'decline_on', 'statement_descriptor_prefix', 'statement_descriptor_prefix_kana', 'statement_descriptor_prefix_kanji'}.contains(key));}
+PostAccountsAccountRequestSettingsCardPayments copyWith({PostAccountsAccountRequestSettingsCardPaymentsDeclineOn? Function()? declineOn, String? Function()? statementDescriptorPrefix, PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKana? Function()? statementDescriptorPrefixKana, PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKanji? Function()? statementDescriptorPrefixKanji, }) {return PostAccountsAccountRequestSettingsCardPayments(
   declineOn: declineOn != null ? declineOn() : this.declineOn,
   statementDescriptorPrefix: statementDescriptorPrefix != null ? statementDescriptorPrefix() : this.statementDescriptorPrefix,
   statementDescriptorPrefixKana: statementDescriptorPrefixKana != null ? statementDescriptorPrefixKana() : this.statementDescriptorPrefixKana,
   statementDescriptorPrefixKanji: statementDescriptorPrefixKanji != null ? statementDescriptorPrefixKanji() : this.statementDescriptorPrefixKanji,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountRequestSettingsCardPayments &&
           declineOn == other.declineOn &&
           statementDescriptorPrefix == other.statementDescriptorPrefix &&
           statementDescriptorPrefixKana == other.statementDescriptorPrefixKana &&
-          statementDescriptorPrefixKanji == other.statementDescriptorPrefixKanji; } 
-@override int get hashCode { return Object.hash(declineOn, statementDescriptorPrefix, statementDescriptorPrefixKana, statementDescriptorPrefixKanji); } 
-@override String toString() { return 'PostAccountsAccountRequestSettingsCardPayments(declineOn: $declineOn, statementDescriptorPrefix: $statementDescriptorPrefix, statementDescriptorPrefixKana: $statementDescriptorPrefixKana, statementDescriptorPrefixKanji: $statementDescriptorPrefixKanji)'; } 
- }
+          statementDescriptorPrefixKanji == other.statementDescriptorPrefixKanji;}
+@override int get hashCode {return Object.hash(declineOn, statementDescriptorPrefix, statementDescriptorPrefixKana, statementDescriptorPrefixKanji);}
+@override String toString() {return 'PostAccountsAccountRequestSettingsCardPayments(declineOn: $declineOn, statementDescriptorPrefix: $statementDescriptorPrefix, statementDescriptorPrefixKana: $statementDescriptorPrefixKana, statementDescriptorPrefixKanji: $statementDescriptorPrefixKanji)';}
+}

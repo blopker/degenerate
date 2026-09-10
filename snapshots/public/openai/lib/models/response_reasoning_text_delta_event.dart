@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a delta is added to a reasoning text.
 @immutable final class ResponseReasoningTextDeltaEvent {const ResponseReasoningTextDeltaEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, required this.sequenceNumber, });
 
-factory ResponseReasoningTextDeltaEvent.fromJson(Map<String, dynamic> json) { return ResponseReasoningTextDeltaEvent(
+factory ResponseReasoningTextDeltaEvent.fromJson(Map<String, dynamic> json) {return ResponseReasoningTextDeltaEvent(
   type: json['type'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   contentIndex: (json['content_index'] as num).toInt(),
   delta: json['delta'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
-); }
+);}
 
 /// The type of the event. Always `response.reasoning_text.delta`.
 /// 
@@ -36,36 +36,36 @@ final String delta;
 /// 
 final int sequenceNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'item_id': itemId,
   'output_index': outputIndex,
   'content_index': contentIndex,
   'delta': delta,
   'sequence_number': sequenceNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('delta') && json['delta'] is String &&
-      json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseReasoningTextDeltaEvent copyWith({String? type, String? itemId, int? outputIndex, int? contentIndex, String? delta, int? sequenceNumber, }) { return ResponseReasoningTextDeltaEvent(
+      json.containsKey('sequence_number') && json['sequence_number'] is num;}
+ResponseReasoningTextDeltaEvent copyWith({String? type, String? itemId, int? outputIndex, int? contentIndex, String? delta, int? sequenceNumber, }) {return ResponseReasoningTextDeltaEvent(
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   outputIndex: outputIndex ?? this.outputIndex,
   contentIndex: contentIndex ?? this.contentIndex,
   delta: delta ?? this.delta,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseReasoningTextDeltaEvent &&
           type == other.type &&
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           contentIndex == other.contentIndex &&
           delta == other.delta &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, itemId, outputIndex, contentIndex, delta, sequenceNumber); } 
-@override String toString() { return 'ResponseReasoningTextDeltaEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta, sequenceNumber: $sequenceNumber)'; } 
- }
+          sequenceNumber == other.sequenceNumber;}
+@override int get hashCode {return Object.hash(type, itemId, outputIndex, contentIndex, delta, sequenceNumber);}
+@override String toString() {return 'ResponseReasoningTextDeltaEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta, sequenceNumber: $sequenceNumber)';}
+}

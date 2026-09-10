@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A URI path rewrite.
 @immutable final class RulesetsRewriteUriPath {const RulesetsRewriteUriPath({this.expression, this.value, });
 
-factory RulesetsRewriteUriPath.fromJson(Map<String, dynamic> json) { return RulesetsRewriteUriPath(
+factory RulesetsRewriteUriPath.fromJson(Map<String, dynamic> json) {return RulesetsRewriteUriPath(
   expression: json['expression'] as String?,
   value: json['value'] as String?,
-); }
+);}
 
 /// An expression that evaluates to a value to rewrite the URI path to.
 final String? expression;
@@ -14,19 +14,19 @@ final String? expression;
 /// A value to rewrite the URI path to.
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expression': ?expression,
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expression', 'value'}.contains(key)); } 
-RulesetsRewriteUriPath copyWith({String? Function()? expression, String? Function()? value, }) { return RulesetsRewriteUriPath(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expression', 'value'}.contains(key));}
+RulesetsRewriteUriPath copyWith({String? Function()? expression, String? Function()? value, }) {return RulesetsRewriteUriPath(
   expression: expression != null ? expression() : this.expression,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsRewriteUriPath &&
           expression == other.expression &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(expression, value); } 
-@override String toString() { return 'RulesetsRewriteUriPath(expression: $expression, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(expression, value);}
+@override String toString() {return 'RulesetsRewriteUriPath(expression: $expression, value: $value)';}
+}

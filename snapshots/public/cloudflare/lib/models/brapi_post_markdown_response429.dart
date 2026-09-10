@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_markdown_response429_errors.dart';@immutable final class BrapiPostMarkdownResponse429 {const BrapiPostMarkdownResponse429({required this.success, this.errors, });
 
-factory BrapiPostMarkdownResponse429.fromJson(Map<String, dynamic> json) { return BrapiPostMarkdownResponse429(
+factory BrapiPostMarkdownResponse429.fromJson(Map<String, dynamic> json) {return BrapiPostMarkdownResponse429(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => BrapiPostMarkdownResponse429Errors.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<BrapiPostMarkdownResponse429Errors>? errors;
 
 /// Response status
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
-BrapiPostMarkdownResponse429 copyWith({List<BrapiPostMarkdownResponse429Errors>? Function()? errors, bool? success, }) { return BrapiPostMarkdownResponse429(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('success') && json['success'] is bool;}
+BrapiPostMarkdownResponse429 copyWith({List<BrapiPostMarkdownResponse429Errors>? Function()? errors, bool? success, }) {return BrapiPostMarkdownResponse429(
   errors: errors != null ? errors() : this.errors,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BrapiPostMarkdownResponse429 &&
           listEquals(errors, other.errors) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors ?? const []), success); } 
-@override String toString() { return 'BrapiPostMarkdownResponse429(errors: $errors, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(Object.hashAll(errors ?? const []), success);}
+@override String toString() {return 'BrapiPostMarkdownResponse429(errors: $errors, success: $success)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Used to select time series resolution.
 @immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta._(this.value);
 
-factory SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta.fromJson(String json) { return switch (json) {
+factory SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta.fromJson(String json) {return switch (json) {
   'year' => year,
   'quarter' => quarter,
   'month' => month,
@@ -13,7 +13,7 @@ factory SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta.fromJson(String json)
   'dekaminute' => dekaminute,
   'minute' => minute,
   _ => SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta._(json),
-}; }
+};}
 
 static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta year = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta._('year');
 
@@ -35,11 +35,11 @@ static const List<SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta($value)';}
+}

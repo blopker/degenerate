@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package_version_metadata_container.dart';import 'package_version_metadata_docker.dart';@immutable final class PackageVersionMetadataPackageType {const PackageVersionMetadataPackageType._(this.value);
 
-factory PackageVersionMetadataPackageType.fromJson(String json) { return switch (json) {
+factory PackageVersionMetadataPackageType.fromJson(String json) {return switch (json) {
   'npm' => npm,
   'maven' => maven,
   'rubygems' => rubygems,
@@ -10,7 +10,7 @@ factory PackageVersionMetadataPackageType.fromJson(String json) { return switch 
   'nuget' => nuget,
   'container' => container,
   _ => PackageVersionMetadataPackageType._(json),
-}; }
+};}
 
 static const PackageVersionMetadataPackageType npm = PackageVersionMetadataPackageType._('npm');
 
@@ -28,21 +28,21 @@ static const List<PackageVersionMetadataPackageType> values = [npm, maven, rubyg
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PackageVersionMetadataPackageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PackageVersionMetadataPackageType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PackageVersionMetadataPackageType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PackageVersionMetadataPackageType($value)';}
+}
 @immutable final class PackageVersionMetadata {const PackageVersionMetadata({required this.packageType, this.container, this.docker, });
 
-factory PackageVersionMetadata.fromJson(Map<String, dynamic> json) { return PackageVersionMetadata(
+factory PackageVersionMetadata.fromJson(Map<String, dynamic> json) {return PackageVersionMetadata(
   packageType: PackageVersionMetadataPackageType.fromJson(json['package_type'] as String),
   container: json['container'] != null ? PackageVersionMetadataContainer.fromJson(json['container'] as Map<String, dynamic>) : null,
   docker: json['docker'] != null ? PackageVersionMetadataDocker.fromJson(json['docker'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PackageVersionMetadataPackageType packageType;
 
@@ -50,22 +50,22 @@ final PackageVersionMetadataContainer? container;
 
 final PackageVersionMetadataDocker? docker;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'package_type': packageType.toJson(),
   if (container != null) 'container': container?.toJson(),
   if (docker != null) 'docker': docker?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('package_type'); } 
-PackageVersionMetadata copyWith({PackageVersionMetadataPackageType? packageType, PackageVersionMetadataContainer? Function()? container, PackageVersionMetadataDocker? Function()? docker, }) { return PackageVersionMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('package_type');}
+PackageVersionMetadata copyWith({PackageVersionMetadataPackageType? packageType, PackageVersionMetadataContainer? Function()? container, PackageVersionMetadataDocker? Function()? docker, }) {return PackageVersionMetadata(
   packageType: packageType ?? this.packageType,
   container: container != null ? container() : this.container,
   docker: docker != null ? docker() : this.docker,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PackageVersionMetadata &&
           packageType == other.packageType &&
           container == other.container &&
-          docker == other.docker; } 
-@override int get hashCode { return Object.hash(packageType, container, docker); } 
-@override String toString() { return 'PackageVersionMetadata(packageType: $packageType, container: $container, docker: $docker)'; } 
- }
+          docker == other.docker;}
+@override int get hashCode {return Object.hash(packageType, container, docker);}
+@override String toString() {return 'PackageVersionMetadata(packageType: $packageType, container: $container, docker: $docker)';}
+}

@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GistSimpleForkOfFilesValue {const GistSimpleForkOfFilesValue({this.filename, this.type, this.language, this.rawUrl, this.size, });
 
-factory GistSimpleForkOfFilesValue.fromJson(Map<String, dynamic> json) { return GistSimpleForkOfFilesValue(
+factory GistSimpleForkOfFilesValue.fromJson(Map<String, dynamic> json) {return GistSimpleForkOfFilesValue(
   filename: json['filename'] as String?,
   type: json['type'] as String?,
   language: json['language'] as String?,
   rawUrl: json['raw_url'] as String?,
   size: json['size'] != null ? (json['size'] as num).toInt() : null,
-); }
+);}
 
 final String? filename;
 
@@ -20,28 +20,28 @@ final String? rawUrl;
 
 final int? size;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'filename': ?filename,
   'type': ?type,
   'language': ?language,
   'raw_url': ?rawUrl,
   'size': ?size,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filename', 'type', 'language', 'raw_url', 'size'}.contains(key)); } 
-GistSimpleForkOfFilesValue copyWith({String? Function()? filename, String? Function()? type, String? Function()? language, String? Function()? rawUrl, int? Function()? size, }) { return GistSimpleForkOfFilesValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'filename', 'type', 'language', 'raw_url', 'size'}.contains(key));}
+GistSimpleForkOfFilesValue copyWith({String? Function()? filename, String? Function()? type, String? Function()? language, String? Function()? rawUrl, int? Function()? size, }) {return GistSimpleForkOfFilesValue(
   filename: filename != null ? filename() : this.filename,
   type: type != null ? type() : this.type,
   language: language != null ? language() : this.language,
   rawUrl: rawUrl != null ? rawUrl() : this.rawUrl,
   size: size != null ? size() : this.size,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GistSimpleForkOfFilesValue &&
           filename == other.filename &&
           type == other.type &&
           language == other.language &&
           rawUrl == other.rawUrl &&
-          size == other.size; } 
-@override int get hashCode { return Object.hash(filename, type, language, rawUrl, size); } 
-@override String toString() { return 'GistSimpleForkOfFilesValue(filename: $filename, type: $type, language: $language, rawUrl: $rawUrl, size: $size)'; } 
- }
+          size == other.size;}
+@override int get hashCode {return Object.hash(filename, type, language, rawUrl, size);}
+@override String toString() {return 'GistSimpleForkOfFilesValue(filename: $filename, type: $type, language: $language, rawUrl: $rawUrl, size: $size)';}
+}

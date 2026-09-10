@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataMultibanco {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataMultibanco();
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataMultibanco.fromJson(Map<String, dynamic> _) { return const PostSetupIntentsIntentConfirmRequestPaymentMethodDataMultibanco(); }
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataMultibanco.fromJson(Map<String, dynamic> _) {return const PostSetupIntentsIntentConfirmRequestPaymentMethodDataMultibanco();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PostSetupIntentsIntentConfirmRequestPaymentMethodDataMultibanco copyWith() { return const PostSetupIntentsIntentConfirmRequestPaymentMethodDataMultibanco(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PostSetupIntentsIntentConfirmRequestPaymentMethodDataMultibanco copyWith() {return const PostSetupIntentsIntentConfirmRequestPaymentMethodDataMultibanco(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is PostSetupIntentsIntentConfirmRequestPaymentMethodDataMultibanco; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodDataMultibanco()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is PostSetupIntentsIntentConfirmRequestPaymentMethodDataMultibanco;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodDataMultibanco()';}
+}

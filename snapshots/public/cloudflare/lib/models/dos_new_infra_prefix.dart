@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosNewInfraPrefix {const DosNewInfraPrefix({required this.comment, required this.enabled, required this.prefix, });
 
-factory DosNewInfraPrefix.fromJson(Map<String, dynamic> json) { return DosNewInfraPrefix(
+factory DosNewInfraPrefix.fromJson(Map<String, dynamic> json) {return DosNewInfraPrefix(
   comment: json['comment'] as String,
   enabled: json['enabled'] as bool,
   prefix: json['prefix'] as String,
-); }
+);}
 
 /// An comment describing the allowlist prefix.
 final String comment;
@@ -17,24 +17,24 @@ final bool enabled;
 /// The allowlist prefix to add in CIDR format.
 final String prefix;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'comment': comment,
   'enabled': enabled,
   'prefix': prefix,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('comment') && json['comment'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('comment') && json['comment'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('prefix') && json['prefix'] is String; } 
-DosNewInfraPrefix copyWith({String? comment, bool? enabled, String? prefix, }) { return DosNewInfraPrefix(
+      json.containsKey('prefix') && json['prefix'] is String;}
+DosNewInfraPrefix copyWith({String? comment, bool? enabled, String? prefix, }) {return DosNewInfraPrefix(
   comment: comment ?? this.comment,
   enabled: enabled ?? this.enabled,
   prefix: prefix ?? this.prefix,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DosNewInfraPrefix &&
           comment == other.comment &&
           enabled == other.enabled &&
-          prefix == other.prefix; } 
-@override int get hashCode { return Object.hash(comment, enabled, prefix); } 
-@override String toString() { return 'DosNewInfraPrefix(comment: $comment, enabled: $enabled, prefix: $prefix)'; } 
- }
+          prefix == other.prefix;}
+@override int get hashCode {return Object.hash(comment, enabled, prefix);}
+@override String toString() {return 'DosNewInfraPrefix(comment: $comment, enabled: $enabled, prefix: $prefix)';}
+}

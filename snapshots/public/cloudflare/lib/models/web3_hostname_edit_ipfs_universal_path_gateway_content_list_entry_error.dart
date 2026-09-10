@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class Web3HostnameEditIpfsUniversalPathGatewayContentListEntryError {const Web3HostnameEditIpfsUniversalPathGatewayContentListEntryError();
 
 /// Decodes the payload for its declared status and content type.
-static Web3HostnameEditIpfsUniversalPathGatewayContentListEntryError parse(ApiResponse response) { switch (response.statusCode) {
+static Web3HostnameEditIpfsUniversalPathGatewayContentListEntryError parse(ApiResponse response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
 return Web3HostnameEditIpfsUniversalPathGatewayContentListEntryError4xx(Web3HostnameEditIpfsUniversalPathGatewayContentListEntryResponse4xx.fromJson(json as Map<String, dynamic>));
@@ -14,26 +14,26 @@ return Web3HostnameEditIpfsUniversalPathGatewayContentListEntryError5xx(Web3Host
 default:
 return Web3HostnameEditIpfsUniversalPathGatewayContentListEntryErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 4xx (application/json).
 final class Web3HostnameEditIpfsUniversalPathGatewayContentListEntryError4xx extends Web3HostnameEditIpfsUniversalPathGatewayContentListEntryError {const Web3HostnameEditIpfsUniversalPathGatewayContentListEntryError4xx(this.data);
 
 /// The decoded response payload.
 final Web3HostnameEditIpfsUniversalPathGatewayContentListEntryResponse4xx data;
 
- }
+}
 /// Response for 5xx (application/json).
 final class Web3HostnameEditIpfsUniversalPathGatewayContentListEntryError5xx extends Web3HostnameEditIpfsUniversalPathGatewayContentListEntryError {const Web3HostnameEditIpfsUniversalPathGatewayContentListEntryError5xx(this.data);
 
 /// The decoded response payload.
 final Web3HostnameEditIpfsUniversalPathGatewayContentListEntryResponse5xx data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class Web3HostnameEditIpfsUniversalPathGatewayContentListEntryErrorUnknown extends Web3HostnameEditIpfsUniversalPathGatewayContentListEntryError {const Web3HostnameEditIpfsUniversalPathGatewayContentListEntryErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

@@ -2,30 +2,30 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_origins_summary_response_result_meta.dart';@immutable final class RadarGetOriginsSummaryResponseResult {const RadarGetOriginsSummaryResponseResult({required this.meta, required this.summary0, });
 
-factory RadarGetOriginsSummaryResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetOriginsSummaryResponseResult(
+factory RadarGetOriginsSummaryResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetOriginsSummaryResponseResult(
   meta: RadarGetOriginsSummaryResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
   summary0: (json['summary_0'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// Metadata for the results.
 final RadarGetOriginsSummaryResponseResultMeta meta;
 
 final Map<String,String> summary0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'meta': meta.toJson(),
   'summary_0': summary0,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
-      json.containsKey('summary_0'); } 
-RadarGetOriginsSummaryResponseResult copyWith({RadarGetOriginsSummaryResponseResultMeta? meta, Map<String,String>? summary0, }) { return RadarGetOriginsSummaryResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('meta') &&
+      json.containsKey('summary_0');}
+RadarGetOriginsSummaryResponseResult copyWith({RadarGetOriginsSummaryResponseResultMeta? meta, Map<String,String>? summary0, }) {return RadarGetOriginsSummaryResponseResult(
   meta: meta ?? this.meta,
   summary0: summary0 ?? this.summary0,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetOriginsSummaryResponseResult &&
           meta == other.meta &&
-          summary0 == other.summary0; } 
-@override int get hashCode { return Object.hash(meta, summary0); } 
-@override String toString() { return 'RadarGetOriginsSummaryResponseResult(meta: $meta, summary0: $summary0)'; } 
- }
+          summary0 == other.summary0;}
+@override int get hashCode {return Object.hash(meta, summary0);}
+@override String toString() {return 'RadarGetOriginsSummaryResponseResult(meta: $meta, summary0: $summary0)';}
+}

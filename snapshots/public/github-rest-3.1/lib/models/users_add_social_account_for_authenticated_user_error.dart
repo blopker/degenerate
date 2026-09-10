@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class UsersAddSocialAccountForAuthenticatedUserError {const UsersAddSocialAccountForAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static UsersAddSocialAccountForAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static UsersAddSocialAccountForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const UsersAddSocialAccountForAuthenticatedUserError304();
 case 401:
@@ -22,44 +22,44 @@ return UsersAddSocialAccountForAuthenticatedUserError422(ValidationError.fromJso
 default:
 return UsersAddSocialAccountForAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class UsersAddSocialAccountForAuthenticatedUserError304 extends UsersAddSocialAccountForAuthenticatedUserError {const UsersAddSocialAccountForAuthenticatedUserError304();
 
- }
+}
 /// Response for 401 (application/json).
 final class UsersAddSocialAccountForAuthenticatedUserError401 extends UsersAddSocialAccountForAuthenticatedUserError {const UsersAddSocialAccountForAuthenticatedUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class UsersAddSocialAccountForAuthenticatedUserError403 extends UsersAddSocialAccountForAuthenticatedUserError {const UsersAddSocialAccountForAuthenticatedUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class UsersAddSocialAccountForAuthenticatedUserError404 extends UsersAddSocialAccountForAuthenticatedUserError {const UsersAddSocialAccountForAuthenticatedUserError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class UsersAddSocialAccountForAuthenticatedUserError422 extends UsersAddSocialAccountForAuthenticatedUserError {const UsersAddSocialAccountForAuthenticatedUserError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class UsersAddSocialAccountForAuthenticatedUserErrorUnknown extends UsersAddSocialAccountForAuthenticatedUserError {const UsersAddSocialAccountForAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

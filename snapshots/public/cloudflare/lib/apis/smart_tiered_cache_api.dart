@@ -13,7 +13,7 @@ final class SmartTieredCacheApi with ApiExecutor {const SmartTieredCacheApi(this
 /// Smart Tiered Cache dynamically selects the single closest upper tier for each of your website’s origins with no configuration required, using our in-house performance and routing data. Cloudflare collects latency data for each request to an origin, and uses the latency data to determine how well any upper-tier data center is connected with an origin. As a result, Cloudflare can select the data center with the lowest latency to be the upper-tier for an origin.
 ///
 /// `GET /zones/{zone_id}/cache/tiered_cache_smart_topology_enable`
-Future<ApiResult<SmartTieredCacheGetSmartTieredCacheSettingResponseResult?, ResponseCommonFailure14>> smartTieredCacheGetSmartTieredCacheSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartTieredCacheGetSmartTieredCacheSettingResponseResult?, ResponseCommonFailure14>> smartTieredCacheGetSmartTieredCacheSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Patch Smart Tiered Cache setting
 ///
 /// Smart Tiered Cache dynamically selects the single closest upper tier for each of your website’s origins with no configuration required, using our in-house performance and routing data. Cloudflare collects latency data for each request to an origin, and uses the latency data to determine how well any upper-tier data center is connected with an origin. As a result, Cloudflare can select the data center with the lowest latency to be the upper-tier for an origin.
 ///
 /// `PATCH /zones/{zone_id}/cache/tiered_cache_smart_topology_enable`
-Future<ApiResult<SmartTieredCachePatchSmartTieredCacheSettingResponseResult?, ResponseCommonFailure14>> smartTieredCachePatchSmartTieredCacheSetting({required CacheRulesIdentifier zoneId, required CacheRulesSmartTieredCachePatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartTieredCachePatchSmartTieredCacheSettingResponseResult?, ResponseCommonFailure14>> smartTieredCachePatchSmartTieredCacheSetting({required CacheRulesIdentifier zoneId, required CacheRulesSmartTieredCachePatch body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Smart Tiered Cache setting
 ///
 /// Smart Tiered Cache dynamically selects the single closest upper tier for each of your website’s origins with no configuration required, using our in-house performance and routing data. Cloudflare collects latency data for each request to an origin, and uses the latency data to determine how well any upper-tier data center is connected with an origin. As a result, Cloudflare can select the data center with the lowest latency to be the upper-tier for an origin.
 ///
 /// `DELETE /zones/{zone_id}/cache/tiered_cache_smart_topology_enable`
-Future<ApiResult<CacheRulesSmartTieredCache?, ResponseCommonFailure14>> smartTieredCacheDeleteSmartTieredCacheSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesSmartTieredCache?, ResponseCommonFailure14>> smartTieredCacheDeleteSmartTieredCacheSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -105,5 +105,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

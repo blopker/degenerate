@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_tools_custom_custom.dart';@immutable final class Prompt43ToolsCustomType {const Prompt43ToolsCustomType._(this.value);
 
-factory Prompt43ToolsCustomType.fromJson(String json) { return switch (json) {
+factory Prompt43ToolsCustomType.fromJson(String json) {return switch (json) {
   'custom' => custom,
   _ => Prompt43ToolsCustomType._(json),
-}; }
+};}
 
 static const Prompt43ToolsCustomType custom = Prompt43ToolsCustomType._('custom');
 
@@ -13,39 +13,39 @@ static const List<Prompt43ToolsCustomType> values = [custom];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Prompt43ToolsCustomType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Prompt43ToolsCustomType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Prompt43ToolsCustomType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Prompt43ToolsCustomType($value)';}
+}
 @immutable final class Prompt43ToolsCustom {const Prompt43ToolsCustom({required this.custom, required this.type, });
 
-factory Prompt43ToolsCustom.fromJson(Map<String, dynamic> json) { return Prompt43ToolsCustom(
+factory Prompt43ToolsCustom.fromJson(Map<String, dynamic> json) {return Prompt43ToolsCustom(
   custom: Prompt43ToolsCustomCustom.fromJson(json['custom'] as Map<String, dynamic>),
   type: Prompt43ToolsCustomType.fromJson(json['type'] as String),
-); }
+);}
 
 final Prompt43ToolsCustomCustom custom;
 
 final Prompt43ToolsCustomType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'custom': custom.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('custom') &&
-      json.containsKey('type'); } 
-Prompt43ToolsCustom copyWith({Prompt43ToolsCustomCustom? custom, Prompt43ToolsCustomType? type, }) { return Prompt43ToolsCustom(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('custom') &&
+      json.containsKey('type');}
+Prompt43ToolsCustom copyWith({Prompt43ToolsCustomCustom? custom, Prompt43ToolsCustomType? type, }) {return Prompt43ToolsCustom(
   custom: custom ?? this.custom,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Prompt43ToolsCustom &&
           custom == other.custom &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(custom, type); } 
-@override String toString() { return 'Prompt43ToolsCustom(custom: $custom, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(custom, type);}
+@override String toString() {return 'Prompt43ToolsCustom(custom: $custom, type: $type)';}
+}

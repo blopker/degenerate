@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofortCountry {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofortCountry._(this.value);
 
-factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofortCountry.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofortCountry.fromJson(String json) {return switch (json) {
   'AT' => at,
   'BE' => be,
   'DE' => de,
@@ -10,7 +10,7 @@ factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofortCountry.fro
   'IT' => it,
   'NL' => nl,
   _ => PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofortCountry._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofortCountry at = PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofortCountry._('AT');
 
@@ -28,32 +28,32 @@ static const List<PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofortC
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofortCountry && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofortCountry($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofortCountry && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofortCountry($value)';}
+}
 @immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofort {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofort({required this.country});
 
-factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofort.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofort(
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofort.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofort(
   country: PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofortCountry.fromJson(json['country'] as String),
-); }
+);}
 
 final PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofortCountry country;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'country': country.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('country'); } 
-PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofort copyWith({PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofortCountry? country}) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofort(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('country');}
+PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofort copyWith({PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofortCountry? country}) {return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofort(
   country: country ?? this.country,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofort &&
-          country == other.country; } 
-@override int get hashCode { return country.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofort(country: $country)'; } 
- }
+          country == other.country;}
+@override int get hashCode {return country.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSofort(country: $country)';}
+}

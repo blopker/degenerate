@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_pull_request5_links_comments.dart';import 'webhooks_pull_request5_links_commits.dart';import 'webhooks_pull_request5_links_html.dart';import 'webhooks_pull_request5_links_issue.dart';import 'webhooks_pull_request5_links_review_comment.dart';import 'webhooks_pull_request5_links_review_comments.dart';import 'webhooks_pull_request5_links_self.dart';import 'webhooks_pull_request5_links_statuses.dart';@immutable final class WebhooksPullRequest5Links {const WebhooksPullRequest5Links({required this.comments, required this.commits, required this.html, required this.issue, required this.reviewComment, required this.reviewComments, required this.self, required this.statuses, });
 
-factory WebhooksPullRequest5Links.fromJson(Map<String, dynamic> json) { return WebhooksPullRequest5Links(
+factory WebhooksPullRequest5Links.fromJson(Map<String, dynamic> json) {return WebhooksPullRequest5Links(
   comments: WebhooksPullRequest5LinksComments.fromJson(json['comments'] as Map<String, dynamic>),
   commits: WebhooksPullRequest5LinksCommits.fromJson(json['commits'] as Map<String, dynamic>),
   html: WebhooksPullRequest5LinksHtml.fromJson(json['html'] as Map<String, dynamic>),
@@ -11,7 +11,7 @@ factory WebhooksPullRequest5Links.fromJson(Map<String, dynamic> json) { return W
   reviewComments: WebhooksPullRequest5LinksReviewComments.fromJson(json['review_comments'] as Map<String, dynamic>),
   self: WebhooksPullRequest5LinksSelf.fromJson(json['self'] as Map<String, dynamic>),
   statuses: WebhooksPullRequest5LinksStatuses.fromJson(json['statuses'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhooksPullRequest5LinksComments comments;
 
@@ -29,7 +29,7 @@ final WebhooksPullRequest5LinksSelf self;
 
 final WebhooksPullRequest5LinksStatuses statuses;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'comments': comments.toJson(),
   'commits': commits.toJson(),
   'html': html.toJson(),
@@ -38,16 +38,16 @@ Map<String, dynamic> toJson() { return {
   'review_comments': reviewComments.toJson(),
   'self': self.toJson(),
   'statuses': statuses.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('comments') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('comments') &&
       json.containsKey('commits') &&
       json.containsKey('html') &&
       json.containsKey('issue') &&
       json.containsKey('review_comment') &&
       json.containsKey('review_comments') &&
       json.containsKey('self') &&
-      json.containsKey('statuses'); } 
-WebhooksPullRequest5Links copyWith({WebhooksPullRequest5LinksComments? comments, WebhooksPullRequest5LinksCommits? commits, WebhooksPullRequest5LinksHtml? html, WebhooksPullRequest5LinksIssue? issue, WebhooksPullRequest5LinksReviewComment? reviewComment, WebhooksPullRequest5LinksReviewComments? reviewComments, WebhooksPullRequest5LinksSelf? self, WebhooksPullRequest5LinksStatuses? statuses, }) { return WebhooksPullRequest5Links(
+      json.containsKey('statuses');}
+WebhooksPullRequest5Links copyWith({WebhooksPullRequest5LinksComments? comments, WebhooksPullRequest5LinksCommits? commits, WebhooksPullRequest5LinksHtml? html, WebhooksPullRequest5LinksIssue? issue, WebhooksPullRequest5LinksReviewComment? reviewComment, WebhooksPullRequest5LinksReviewComments? reviewComments, WebhooksPullRequest5LinksSelf? self, WebhooksPullRequest5LinksStatuses? statuses, }) {return WebhooksPullRequest5Links(
   comments: comments ?? this.comments,
   commits: commits ?? this.commits,
   html: html ?? this.html,
@@ -56,8 +56,8 @@ WebhooksPullRequest5Links copyWith({WebhooksPullRequest5LinksComments? comments,
   reviewComments: reviewComments ?? this.reviewComments,
   self: self ?? this.self,
   statuses: statuses ?? this.statuses,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhooksPullRequest5Links &&
           comments == other.comments &&
           commits == other.commits &&
@@ -66,7 +66,7 @@ WebhooksPullRequest5Links copyWith({WebhooksPullRequest5LinksComments? comments,
           reviewComment == other.reviewComment &&
           reviewComments == other.reviewComments &&
           self == other.self &&
-          statuses == other.statuses; } 
-@override int get hashCode { return Object.hash(comments, commits, html, issue, reviewComment, reviewComments, self, statuses); } 
-@override String toString() { return 'WebhooksPullRequest5Links(comments: $comments, commits: $commits, html: $html, issue: $issue, reviewComment: $reviewComment, reviewComments: $reviewComments, self: $self, statuses: $statuses)'; } 
- }
+          statuses == other.statuses;}
+@override int get hashCode {return Object.hash(comments, commits, html, issue, reviewComment, reviewComments, self, statuses);}
+@override String toString() {return 'WebhooksPullRequest5Links(comments: $comments, commits: $commits, html: $html, issue: $issue, reviewComment: $reviewComment, reviewComments: $reviewComments, self: $self, statuses: $statuses)';}
+}

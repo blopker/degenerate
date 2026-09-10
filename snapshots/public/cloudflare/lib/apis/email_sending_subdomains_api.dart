@@ -13,7 +13,7 @@ final class EmailSendingSubdomainsApi with ApiExecutor {const EmailSendingSubdom
 /// Lists all sending-enabled subdomains for the zone.
 ///
 /// `GET /zones/{zone_id}/email/sending/subdomains`
-Future<ApiResult<List<EmailSendingSubdomainProperties>?, Never>> emailSendingSubdomainsListSendingSubdomains({required EmailIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<EmailSendingSubdomainProperties>?, Never>> emailSendingSubdomainsListSendingSubdomains({required EmailIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,13 +29,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return (json['result'] as List<dynamic>?)?.map((e) => EmailSendingSubdomainProperties.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Create a sending subdomain
 ///
 /// Creates a new sending subdomain or re-enables sending on an existing subdomain that had it disabled.
 ///
 /// `POST /zones/{zone_id}/email/sending/subdomains`
-Future<ApiResult<EmailSendingSubdomainProperties?, Never>> emailSendingSubdomainsCreateSendingSubdomain({required EmailIdentifier zoneId, required EmailCreateSendingSubdomainProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSendingSubdomainProperties?, Never>> emailSendingSubdomainsCreateSendingSubdomain({required EmailIdentifier zoneId, required EmailCreateSendingSubdomainProperties body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,13 +53,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return json['result'] != null ? EmailSendingSubdomainProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
- } 
+}
 /// Get a sending subdomain
 ///
 /// Gets information for a specific sending subdomain.
 ///
 /// `GET /zones/{zone_id}/email/sending/subdomains/{subdomain_id}`
-Future<ApiResult<EmailSendingSubdomainProperties?, Never>> emailSendingSubdomainsGetSendingSubdomain({required EmailSendingSubdomainIdentifier subdomainId, required EmailIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSendingSubdomainProperties?, Never>> emailSendingSubdomainsGetSendingSubdomain({required EmailSendingSubdomainIdentifier subdomainId, required EmailIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -75,13 +75,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return json['result'] != null ? EmailSendingSubdomainProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
- } 
+}
 /// Delete a sending subdomain
 ///
 /// Disables sending on a subdomain and removes its DNS records. If routing is still active on the subdomain, only sending is disabled.
 ///
 /// `DELETE /zones/{zone_id}/email/sending/subdomains/{subdomain_id}`
-Future<ApiResult<ResponseCommon30, Never>> emailSendingSubdomainsDeleteSendingSubdomain({required EmailSendingSubdomainIdentifier subdomainId, required EmailIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon30, Never>> emailSendingSubdomainsDeleteSendingSubdomain({required EmailSendingSubdomainIdentifier subdomainId, required EmailIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -97,13 +97,13 @@ final json = jsonDecode(response.body);
 return ResponseCommon30.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Get sending subdomain DNS records
 ///
 /// Returns the expected DNS records for a sending subdomain.
 ///
 /// `GET /zones/{zone_id}/email/sending/subdomains/{subdomain_id}/dns`
-Future<ApiResult<List<EmailDnsRecord>?, Never>> emailSendingSubdomainsGetSendingSubdomainDns({required EmailSendingSubdomainIdentifier subdomainId, required EmailIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<EmailDnsRecord>?, Never>> emailSendingSubdomainsGetSendingSubdomainDns({required EmailSendingSubdomainIdentifier subdomainId, required EmailIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -119,5 +119,5 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return (json['result'] as List<dynamic>?)?.map((e) => EmailDnsRecord.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
- }
+}
+}

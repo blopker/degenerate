@@ -17,7 +17,7 @@ final class CampaignsApi with ApiExecutor {const CampaignsApi(this.apiConfig);
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/campaigns`
-Future<ApiResult<List<CampaignSummary>, CampaignsListOrgCampaignsError>> campaignsListOrgCampaigns({required String org, int? page, int? perPage, CampaignsListOrgCampaignsDirection? direction, CampaignState? state, CampaignsListOrgCampaignsSort? sort, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CampaignSummary>, CampaignsListOrgCampaignsError>> campaignsListOrgCampaigns({required String org, int? page, int? perPage, CampaignsListOrgCampaignsDirection? direction, CampaignState? state, CampaignsListOrgCampaignsSort? sort, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -54,7 +54,7 @@ return (json as List<dynamic>).map((e) => CampaignSummary.fromJson(e as Map<Stri
   },
   onError: CampaignsListOrgCampaignsError.parse,
 );
- } 
+}
 /// Create a campaign for an organization
 ///
 /// Create a campaign for an organization.
@@ -67,7 +67,7 @@ return (json as List<dynamic>).map((e) => CampaignSummary.fromJson(e as Map<Stri
 /// in the campaign.
 ///
 /// `POST /orgs/{org}/campaigns`
-Future<ApiResult<CampaignSummary, CampaignsCreateCampaignError>> campaignsCreateCampaign({required String org, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CampaignSummary, CampaignsCreateCampaignError>> campaignsCreateCampaign({required String org, required dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -86,7 +86,7 @@ return CampaignSummary.fromJson(json as Map<String, dynamic>);
   },
   onError: CampaignsCreateCampaignError.parse,
 );
- } 
+}
 /// Get a campaign for an organization
 ///
 /// Gets a campaign for an organization.
@@ -96,7 +96,7 @@ return CampaignSummary.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/campaigns/{campaign_number}`
-Future<ApiResult<CampaignSummary, CampaignsGetCampaignSummaryError>> campaignsGetCampaignSummary({required String org, required int campaignNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CampaignSummary, CampaignsGetCampaignSummaryError>> campaignsGetCampaignSummary({required String org, required int campaignNumber, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -113,7 +113,7 @@ return CampaignSummary.fromJson(json as Map<String, dynamic>);
   },
   onError: CampaignsGetCampaignSummaryError.parse,
 );
- } 
+}
 /// Update a campaign
 ///
 /// Updates a campaign in an organization.
@@ -123,7 +123,7 @@ return CampaignSummary.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/campaigns/{campaign_number}`
-Future<ApiResult<CampaignSummary, CampaignsUpdateCampaignError>> campaignsUpdateCampaign({required String org, required int campaignNumber, required CampaignsUpdateCampaignRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CampaignSummary, CampaignsUpdateCampaignError>> campaignsUpdateCampaign({required String org, required int campaignNumber, required CampaignsUpdateCampaignRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -142,7 +142,7 @@ return CampaignSummary.fromJson(json as Map<String, dynamic>);
   },
   onError: CampaignsUpdateCampaignError.parse,
 );
- } 
+}
 /// Delete a campaign for an organization
 ///
 /// Deletes a campaign in an organization.
@@ -152,7 +152,7 @@ return CampaignSummary.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/campaigns/{campaign_number}`
-Future<ApiResult<void, CampaignsDeleteCampaignError>> campaignsDeleteCampaign({required String org, required int campaignNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, CampaignsDeleteCampaignError>> campaignsDeleteCampaign({required String org, required int campaignNumber, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -166,5 +166,5 @@ return await execute(
   onSuccess: (_) {},
   onError: CampaignsDeleteCampaignError.parse,
 );
- } 
- }
+}
+}

@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class ActivityListReposStarredByAuthenticatedUserSuccess {const ActivityListReposStarredByAuthenticatedUserSuccess();
 
 /// Decodes the payload for its declared status and content type.
-static ActivityListReposStarredByAuthenticatedUserSuccess parse(ApiResponse response) { switch (response.statusCode) {
+static ActivityListReposStarredByAuthenticatedUserSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -21,26 +21,26 @@ return ActivityListReposStarredByAuthenticatedUserSuccess200ApplicationJson((jso
 default:
 return ActivityListReposStarredByAuthenticatedUserSuccessUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 200 (application/json).
 final class ActivityListReposStarredByAuthenticatedUserSuccess200ApplicationJson extends ActivityListReposStarredByAuthenticatedUserSuccess {const ActivityListReposStarredByAuthenticatedUserSuccess200ApplicationJson(this.data);
 
 /// The decoded response payload.
 final List<Repository> data;
 
- }
+}
 /// Response for 200 (application/vnd.github.v3.star+json).
 final class ActivityListReposStarredByAuthenticatedUserSuccess200StarJson extends ActivityListReposStarredByAuthenticatedUserSuccess {const ActivityListReposStarredByAuthenticatedUserSuccess200StarJson(this.data);
 
 /// The decoded response payload.
 final List<StarredRepository> data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class ActivityListReposStarredByAuthenticatedUserSuccessUnknown extends ActivityListReposStarredByAuthenticatedUserSuccess {const ActivityListReposStarredByAuthenticatedUserSuccessUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

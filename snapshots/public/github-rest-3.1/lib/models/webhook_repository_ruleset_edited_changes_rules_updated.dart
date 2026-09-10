@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule.dart';import 'webhook_repository_ruleset_edited_changes_rules_updated_changes.dart';@immutable final class WebhookRepositoryRulesetEditedChangesRulesUpdated {const WebhookRepositoryRulesetEditedChangesRulesUpdated({this.rule, this.changes, });
 
-factory WebhookRepositoryRulesetEditedChangesRulesUpdated.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRulesetEditedChangesRulesUpdated(
+factory WebhookRepositoryRulesetEditedChangesRulesUpdated.fromJson(Map<String, dynamic> json) {return WebhookRepositoryRulesetEditedChangesRulesUpdated(
   rule: json['rule'] != null ? RepositoryRule.fromJson(json['rule'] as Map<String, dynamic>) : null,
   changes: json['changes'] != null ? WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final RepositoryRule? rule;
 
 final WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges? changes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (rule != null) 'rule': rule?.toJson(),
   if (changes != null) 'changes': changes?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'rule', 'changes'}.contains(key)); } 
-WebhookRepositoryRulesetEditedChangesRulesUpdated copyWith({RepositoryRule? Function()? rule, WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges? Function()? changes, }) { return WebhookRepositoryRulesetEditedChangesRulesUpdated(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'rule', 'changes'}.contains(key));}
+WebhookRepositoryRulesetEditedChangesRulesUpdated copyWith({RepositoryRule? Function()? rule, WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges? Function()? changes, }) {return WebhookRepositoryRulesetEditedChangesRulesUpdated(
   rule: rule != null ? rule() : this.rule,
   changes: changes != null ? changes() : this.changes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRepositoryRulesetEditedChangesRulesUpdated &&
           rule == other.rule &&
-          changes == other.changes; } 
-@override int get hashCode { return Object.hash(rule, changes); } 
-@override String toString() { return 'WebhookRepositoryRulesetEditedChangesRulesUpdated(rule: $rule, changes: $changes)'; } 
- }
+          changes == other.changes;}
+@override int get hashCode {return Object.hash(rule, changes);}
+@override String toString() {return 'WebhookRepositoryRulesetEditedChangesRulesUpdated(rule: $rule, changes: $changes)';}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Create a new file with the provided diff.
 @immutable final class ApplyPatchCreateFileOperationType {const ApplyPatchCreateFileOperationType._(this.value);
 
-factory ApplyPatchCreateFileOperationType.fromJson(String json) { return switch (json) {
+factory ApplyPatchCreateFileOperationType.fromJson(String json) {return switch (json) {
   'create_file' => createFile,
   _ => ApplyPatchCreateFileOperationType._(json),
-}; }
+};}
 
 static const ApplyPatchCreateFileOperationType createFile = ApplyPatchCreateFileOperationType._('create_file');
 
@@ -14,22 +14,22 @@ static const List<ApplyPatchCreateFileOperationType> values = [createFile];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ApplyPatchCreateFileOperationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ApplyPatchCreateFileOperationType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ApplyPatchCreateFileOperationType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ApplyPatchCreateFileOperationType($value)';}
+}
 /// Instruction describing how to create a file via the apply_patch tool.
 @immutable final class ApplyPatchCreateFileOperation {const ApplyPatchCreateFileOperation({required this.type, required this.path, required this.diff, });
 
-factory ApplyPatchCreateFileOperation.fromJson(Map<String, dynamic> json) { return ApplyPatchCreateFileOperation(
+factory ApplyPatchCreateFileOperation.fromJson(Map<String, dynamic> json) {return ApplyPatchCreateFileOperation(
   type: ApplyPatchCreateFileOperationType.fromJson(json['type'] as String),
   path: json['path'] as String,
   diff: json['diff'] as String,
-); }
+);}
 
 /// Create a new file with the provided diff.
 final ApplyPatchCreateFileOperationType type;
@@ -40,24 +40,24 @@ final String path;
 /// Diff to apply.
 final String diff;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'path': path,
   'diff': diff,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('path') && json['path'] is String &&
-      json.containsKey('diff') && json['diff'] is String; } 
-ApplyPatchCreateFileOperation copyWith({ApplyPatchCreateFileOperationType? type, String? path, String? diff, }) { return ApplyPatchCreateFileOperation(
+      json.containsKey('diff') && json['diff'] is String;}
+ApplyPatchCreateFileOperation copyWith({ApplyPatchCreateFileOperationType? type, String? path, String? diff, }) {return ApplyPatchCreateFileOperation(
   type: type ?? this.type,
   path: path ?? this.path,
   diff: diff ?? this.diff,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ApplyPatchCreateFileOperation &&
           type == other.type &&
           path == other.path &&
-          diff == other.diff; } 
-@override int get hashCode { return Object.hash(type, path, diff); } 
-@override String toString() { return 'ApplyPatchCreateFileOperation(type: $type, path: $path, diff: $diff)'; } 
- }
+          diff == other.diff;}
+@override int get hashCode {return Object.hash(type, path, diff);}
+@override String toString() {return 'ApplyPatchCreateFileOperation(type: $type, path: $path, diff: $diff)';}
+}

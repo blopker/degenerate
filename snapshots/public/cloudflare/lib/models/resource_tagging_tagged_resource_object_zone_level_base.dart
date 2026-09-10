@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_etag.dart';import 'resource_tagging_identifier.dart';import 'resource_tagging_resource_id.dart';import 'resource_tagging_resource_name.dart';/// Base schema for zone-level resources (without type discriminator)
 @immutable final class ResourceTaggingTaggedResourceObjectZoneLevelBase {const ResourceTaggingTaggedResourceObjectZoneLevelBase({required this.etag, required this.id, required this.name, required this.tags, required this.zoneId, });
 
-factory ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectZoneLevelBase(
+factory ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectZoneLevelBase(
   etag: ResourceTaggingEtag.fromJson(json['etag'] as String),
   id: ResourceTaggingResourceId.fromJson(json['id'] as String),
   name: ResourceTaggingResourceName.fromJson(json['name'] as String),
   tags: (json['tags'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   zoneId: ResourceTaggingIdentifier.fromJson(json['zone_id'] as String),
-); }
+);}
 
 /// ETag identifier for optimistic concurrency control. Formatted as "v1:`<hash>`" where
 /// the hash is the base64url-encoded SHA-256 (truncated to 128 bits) of the tags map
@@ -28,32 +28,32 @@ final Map<String,String> tags;
 
 final ResourceTaggingIdentifier zoneId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'etag': etag.toJson(),
   'id': id.toJson(),
   'name': name.toJson(),
   'tags': tags,
   'zone_id': zoneId.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('etag') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('etag') &&
       json.containsKey('id') &&
       json.containsKey('name') &&
       json.containsKey('tags') &&
-      json.containsKey('zone_id'); } 
-ResourceTaggingTaggedResourceObjectZoneLevelBase copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, ResourceTaggingIdentifier? zoneId, }) { return ResourceTaggingTaggedResourceObjectZoneLevelBase(
+      json.containsKey('zone_id');}
+ResourceTaggingTaggedResourceObjectZoneLevelBase copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, ResourceTaggingIdentifier? zoneId, }) {return ResourceTaggingTaggedResourceObjectZoneLevelBase(
   etag: etag ?? this.etag,
   id: id ?? this.id,
   name: name ?? this.name,
   tags: tags ?? this.tags,
   zoneId: zoneId ?? this.zoneId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResourceTaggingTaggedResourceObjectZoneLevelBase &&
           etag == other.etag &&
           id == other.id &&
           name == other.name &&
           tags == other.tags &&
-          zoneId == other.zoneId; } 
-@override int get hashCode { return Object.hash(etag, id, name, tags, zoneId); } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectZoneLevelBase(etag: $etag, id: $id, name: $name, tags: $tags, zoneId: $zoneId)'; } 
- }
+          zoneId == other.zoneId;}
+@override int get hashCode {return Object.hash(etag, id, name, tags, zoneId);}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectZoneLevelBase(etag: $etag, id: $id, name: $name, tags: $tags, zoneId: $zoneId)';}
+}

@@ -3,96 +3,96 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_directory2.dart';import 'content_file.dart';import 'content_submodule.dart';import 'content_symlink.dart';sealed class ReposGetContentResponse {const ReposGetContentResponse();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
-factory ReposGetContentResponse.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+factory ReposGetContentResponse.fromJson(Map<String, dynamic> json) {return switch (json['type']) {
   'content-directory' => ReposGetContentResponseContentDirectory.fromJson(json),
   'file' => ReposGetContentResponseFile.fromJson(json),
   'symlink' => ReposGetContentResponseSymlink.fromJson(json),
   'submodule' => ReposGetContentResponseSubmodule.fromJson(json),
   'array' => ReposGetContentResponseArray.fromJson(json),
   _ => ReposGetContentResponse$Unknown(json),
-}; }
+};}
 
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ReposGetContentResponse$Unknown; } 
- }
+bool get isUnknown {return this is ReposGetContentResponse$Unknown;}
+}
 @immutable final class ReposGetContentResponseContentDirectory extends ReposGetContentResponse {const ReposGetContentResponseContentDirectory(this.listContentDirectory2);
 
-factory ReposGetContentResponseContentDirectory.fromJson(Map<String, dynamic> json) { return ReposGetContentResponseContentDirectory((json as List<dynamic>).map((e) => ContentDirectory2.fromJson(e as Map<String, dynamic>)).toList()); }
+factory ReposGetContentResponseContentDirectory.fromJson(Map<String, dynamic> json) {return ReposGetContentResponseContentDirectory((json as List<dynamic>).map((e) => ContentDirectory2.fromJson(e as Map<String, dynamic>)).toList());}
 
 final List<ContentDirectory2> listContentDirectory2;
 
-@override String get type { return 'content-directory'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, 'data': listContentDirectory2.map((e) => e.toJson()).toList()}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposGetContentResponseContentDirectory && listContentDirectory2 == other.listContentDirectory2; } 
-@override int get hashCode { return listContentDirectory2.hashCode; } 
-@override String toString() { return 'ReposGetContentResponseContentDirectory(listContentDirectory2: $listContentDirectory2)'; } 
- }
+@override String get type {return 'content-directory';}
+@override Map<String, dynamic> toJson() {return {'type': type, 'data': listContentDirectory2.map((e) => e.toJson()).toList()};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposGetContentResponseContentDirectory && listContentDirectory2 == other.listContentDirectory2;}
+@override int get hashCode {return listContentDirectory2.hashCode;}
+@override String toString() {return 'ReposGetContentResponseContentDirectory(listContentDirectory2: $listContentDirectory2)';}
+}
 @immutable final class ReposGetContentResponseFile extends ReposGetContentResponse {const ReposGetContentResponseFile(this.contentFile);
 
-factory ReposGetContentResponseFile.fromJson(Map<String, dynamic> json) { return ReposGetContentResponseFile(ContentFile.fromJson(json)); }
+factory ReposGetContentResponseFile.fromJson(Map<String, dynamic> json) {return ReposGetContentResponseFile(ContentFile.fromJson(json));}
 
 final ContentFile contentFile;
 
-@override String get type { return 'file'; } 
-@override Map<String, dynamic> toJson() { return {...contentFile.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposGetContentResponseFile && contentFile == other.contentFile; } 
-@override int get hashCode { return contentFile.hashCode; } 
-@override String toString() { return 'ReposGetContentResponseFile(contentFile: $contentFile)'; } 
- }
+@override String get type {return 'file';}
+@override Map<String, dynamic> toJson() {return {...contentFile.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposGetContentResponseFile && contentFile == other.contentFile;}
+@override int get hashCode {return contentFile.hashCode;}
+@override String toString() {return 'ReposGetContentResponseFile(contentFile: $contentFile)';}
+}
 @immutable final class ReposGetContentResponseSymlink extends ReposGetContentResponse {const ReposGetContentResponseSymlink(this.contentSymlink);
 
-factory ReposGetContentResponseSymlink.fromJson(Map<String, dynamic> json) { return ReposGetContentResponseSymlink(ContentSymlink.fromJson(json)); }
+factory ReposGetContentResponseSymlink.fromJson(Map<String, dynamic> json) {return ReposGetContentResponseSymlink(ContentSymlink.fromJson(json));}
 
 final ContentSymlink contentSymlink;
 
-@override String get type { return 'symlink'; } 
-@override Map<String, dynamic> toJson() { return {...contentSymlink.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposGetContentResponseSymlink && contentSymlink == other.contentSymlink; } 
-@override int get hashCode { return contentSymlink.hashCode; } 
-@override String toString() { return 'ReposGetContentResponseSymlink(contentSymlink: $contentSymlink)'; } 
- }
+@override String get type {return 'symlink';}
+@override Map<String, dynamic> toJson() {return {...contentSymlink.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposGetContentResponseSymlink && contentSymlink == other.contentSymlink;}
+@override int get hashCode {return contentSymlink.hashCode;}
+@override String toString() {return 'ReposGetContentResponseSymlink(contentSymlink: $contentSymlink)';}
+}
 @immutable final class ReposGetContentResponseSubmodule extends ReposGetContentResponse {const ReposGetContentResponseSubmodule(this.contentSubmodule);
 
-factory ReposGetContentResponseSubmodule.fromJson(Map<String, dynamic> json) { return ReposGetContentResponseSubmodule(ContentSubmodule.fromJson(json)); }
+factory ReposGetContentResponseSubmodule.fromJson(Map<String, dynamic> json) {return ReposGetContentResponseSubmodule(ContentSubmodule.fromJson(json));}
 
 final ContentSubmodule contentSubmodule;
 
-@override String get type { return 'submodule'; } 
-@override Map<String, dynamic> toJson() { return {...contentSubmodule.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposGetContentResponseSubmodule && contentSubmodule == other.contentSubmodule; } 
-@override int get hashCode { return contentSubmodule.hashCode; } 
-@override String toString() { return 'ReposGetContentResponseSubmodule(contentSubmodule: $contentSubmodule)'; } 
- }
+@override String get type {return 'submodule';}
+@override Map<String, dynamic> toJson() {return {...contentSubmodule.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposGetContentResponseSubmodule && contentSubmodule == other.contentSubmodule;}
+@override int get hashCode {return contentSubmodule.hashCode;}
+@override String toString() {return 'ReposGetContentResponseSubmodule(contentSubmodule: $contentSubmodule)';}
+}
 @immutable final class ReposGetContentResponseArray extends ReposGetContentResponse {const ReposGetContentResponseArray(this.listContentDirectory2);
 
-factory ReposGetContentResponseArray.fromJson(Map<String, dynamic> json) { return ReposGetContentResponseArray((json as List<dynamic>).map((e) => ContentDirectory2.fromJson(e as Map<String, dynamic>)).toList()); }
+factory ReposGetContentResponseArray.fromJson(Map<String, dynamic> json) {return ReposGetContentResponseArray((json as List<dynamic>).map((e) => ContentDirectory2.fromJson(e as Map<String, dynamic>)).toList());}
 
 final List<ContentDirectory2> listContentDirectory2;
 
-@override String get type { return 'array'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, 'data': listContentDirectory2.map((e) => e.toJson()).toList()}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposGetContentResponseArray && listContentDirectory2 == other.listContentDirectory2; } 
-@override int get hashCode { return listContentDirectory2.hashCode; } 
-@override String toString() { return 'ReposGetContentResponseArray(listContentDirectory2: $listContentDirectory2)'; } 
- }
+@override String get type {return 'array';}
+@override Map<String, dynamic> toJson() {return {'type': type, 'data': listContentDirectory2.map((e) => e.toJson()).toList()};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposGetContentResponseArray && listContentDirectory2 == other.listContentDirectory2;}
+@override int get hashCode {return listContentDirectory2.hashCode;}
+@override String toString() {return 'ReposGetContentResponseArray(listContentDirectory2: $listContentDirectory2)';}
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class ReposGetContentResponse$Unknown extends ReposGetContentResponse {const ReposGetContentResponse$Unknown(this.json);
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposGetContentResponse$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ReposGetContentResponse.unknown($json)'; } 
- }
+@override String get type {return json['type'] as String? ?? '';}
+@override Map<String, dynamic> toJson() {return json;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposGetContentResponse$Unknown && json == other.json;}
+@override int get hashCode {return json.hashCode;}
+@override String toString() {return 'ReposGetContentResponse.unknown($json)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetEmailRoutingTimeseriesGroupBySpfFormat {const RadarGetEmailRoutingTimeseriesGroupBySpfFormat._(this.value);
 
-factory RadarGetEmailRoutingTimeseriesGroupBySpfFormat.fromJson(String json) { return switch (json) {
+factory RadarGetEmailRoutingTimeseriesGroupBySpfFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEmailRoutingTimeseriesGroupBySpfFormat._(json),
-}; }
+};}
 
 static const RadarGetEmailRoutingTimeseriesGroupBySpfFormat $json = RadarGetEmailRoutingTimeseriesGroupBySpfFormat._('JSON');
 
@@ -17,11 +17,11 @@ static const List<RadarGetEmailRoutingTimeseriesGroupBySpfFormat> values = [$jso
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetEmailRoutingTimeseriesGroupBySpfFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetEmailRoutingTimeseriesGroupBySpfFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetEmailRoutingTimeseriesGroupBySpfFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetEmailRoutingTimeseriesGroupBySpfFormat($value)';}
+}

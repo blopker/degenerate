@@ -9,10 +9,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates that y
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class PaymentMethodOptionsKonbiniSetupFutureUsage {const PaymentMethodOptionsKonbiniSetupFutureUsage._(this.value);
 
-factory PaymentMethodOptionsKonbiniSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsKonbiniSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   _ => PaymentMethodOptionsKonbiniSetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsKonbiniSetupFutureUsage none = PaymentMethodOptionsKonbiniSetupFutureUsage._('none');
 
@@ -20,24 +20,24 @@ static const List<PaymentMethodOptionsKonbiniSetupFutureUsage> values = [none];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsKonbiniSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsKonbiniSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsKonbiniSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsKonbiniSetupFutureUsage($value)';}
+}
 /// 
 @immutable final class PaymentMethodOptionsKonbini {const PaymentMethodOptionsKonbini({this.confirmationNumber = const Omittable.absent(), this.expiresAfterDays = const Omittable.absent(), this.expiresAt = const Omittable.absent(), this.productDescription = const Omittable.absent(), this.setupFutureUsage, });
 
-factory PaymentMethodOptionsKonbini.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsKonbini(
+factory PaymentMethodOptionsKonbini.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsKonbini(
   confirmationNumber: json.containsKey('confirmation_number') ? Omittable(json['confirmation_number'] as String?) : const Omittable.absent(),
   expiresAfterDays: json.containsKey('expires_after_days') ? Omittable(json['expires_after_days'] != null ? (json['expires_after_days'] as num).toInt() : null) : const Omittable.absent(),
   expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
   productDescription: json.containsKey('product_description') ? Omittable(json['product_description'] as String?) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsKonbiniSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// An optional 10 to 11 digit numeric-only string determining the confirmation code at applicable convenience stores.
 final Omittable<String?> confirmationNumber;
@@ -60,28 +60,28 @@ final Omittable<String?> productDescription;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final PaymentMethodOptionsKonbiniSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (confirmationNumber.isPresent) 'confirmation_number': confirmationNumber.value,
   if (expiresAfterDays.isPresent) 'expires_after_days': expiresAfterDays.value,
   if (expiresAt.isPresent) 'expires_at': expiresAt.value,
   if (productDescription.isPresent) 'product_description': productDescription.value,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'confirmation_number', 'expires_after_days', 'expires_at', 'product_description', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsKonbini copyWith({Omittable<String?>? confirmationNumber, Omittable<int?>? expiresAfterDays, Omittable<int?>? expiresAt, Omittable<String?>? productDescription, PaymentMethodOptionsKonbiniSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsKonbini(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'confirmation_number', 'expires_after_days', 'expires_at', 'product_description', 'setup_future_usage'}.contains(key));}
+PaymentMethodOptionsKonbini copyWith({Omittable<String?>? confirmationNumber, Omittable<int?>? expiresAfterDays, Omittable<int?>? expiresAt, Omittable<String?>? productDescription, PaymentMethodOptionsKonbiniSetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsKonbini(
   confirmationNumber: confirmationNumber ?? this.confirmationNumber,
   expiresAfterDays: expiresAfterDays ?? this.expiresAfterDays,
   expiresAt: expiresAt ?? this.expiresAt,
   productDescription: productDescription ?? this.productDescription,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodOptionsKonbini &&
           confirmationNumber == other.confirmationNumber &&
           expiresAfterDays == other.expiresAfterDays &&
           expiresAt == other.expiresAt &&
           productDescription == other.productDescription &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(confirmationNumber, expiresAfterDays, expiresAt, productDescription, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsKonbini(confirmationNumber: $confirmationNumber, expiresAfterDays: $expiresAfterDays, expiresAt: $expiresAt, productDescription: $productDescription, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(confirmationNumber, expiresAfterDays, expiresAt, productDescription, setupFutureUsage);}
+@override String toString() {return 'PaymentMethodOptionsKonbini(confirmationNumber: $confirmationNumber, expiresAfterDays: $expiresAfterDays, expiresAt: $expiresAt, productDescription: $productDescription, setupFutureUsage: $setupFutureUsage)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default push protection setting for this pattern.
 @immutable final class SecretScanningPatternOverrideDefaultSetting {const SecretScanningPatternOverrideDefaultSetting._(this.value);
 
-factory SecretScanningPatternOverrideDefaultSetting.fromJson(String json) { return switch (json) {
+factory SecretScanningPatternOverrideDefaultSetting.fromJson(String json) {return switch (json) {
   'disabled' => disabled,
   'enabled' => enabled,
   _ => SecretScanningPatternOverrideDefaultSetting._(json),
-}; }
+};}
 
 static const SecretScanningPatternOverrideDefaultSetting disabled = SecretScanningPatternOverrideDefaultSetting._('disabled');
 
@@ -17,24 +17,24 @@ static const List<SecretScanningPatternOverrideDefaultSetting> values = [disable
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecretScanningPatternOverrideDefaultSetting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecretScanningPatternOverrideDefaultSetting($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SecretScanningPatternOverrideDefaultSetting && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SecretScanningPatternOverrideDefaultSetting($value)';}
+}
 /// The push protection setting for this pattern set at the enterprise level. Only present for partner patterns when the organization has a parent enterprise.
 @immutable final class SecretScanningPatternOverrideEnterpriseSetting {const SecretScanningPatternOverrideEnterpriseSetting._(this.value);
 
-factory SecretScanningPatternOverrideEnterpriseSetting.fromJson(String json) { return switch (json) {
+factory SecretScanningPatternOverrideEnterpriseSetting.fromJson(String json) {return switch (json) {
   'not-set' => notSet,
   'disabled' => disabled,
   'enabled' => enabled,
   'null' => $null,
   _ => SecretScanningPatternOverrideEnterpriseSetting._(json),
-}; }
+};}
 
 static const SecretScanningPatternOverrideEnterpriseSetting notSet = SecretScanningPatternOverrideEnterpriseSetting._('not-set');
 
@@ -48,23 +48,23 @@ static const List<SecretScanningPatternOverrideEnterpriseSetting> values = [notS
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecretScanningPatternOverrideEnterpriseSetting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecretScanningPatternOverrideEnterpriseSetting($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SecretScanningPatternOverrideEnterpriseSetting && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SecretScanningPatternOverrideEnterpriseSetting($value)';}
+}
 /// The current push protection setting for this pattern. If this is `not-set`, then it inherits either the enterprise setting if it exists or the default setting.
 @immutable final class SecretScanningPatternOverrideSetting {const SecretScanningPatternOverrideSetting._(this.value);
 
-factory SecretScanningPatternOverrideSetting.fromJson(String json) { return switch (json) {
+factory SecretScanningPatternOverrideSetting.fromJson(String json) {return switch (json) {
   'not-set' => notSet,
   'disabled' => disabled,
   'enabled' => enabled,
   _ => SecretScanningPatternOverrideSetting._(json),
-}; }
+};}
 
 static const SecretScanningPatternOverrideSetting notSet = SecretScanningPatternOverrideSetting._('not-set');
 
@@ -76,17 +76,17 @@ static const List<SecretScanningPatternOverrideSetting> values = [notSet, disabl
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecretScanningPatternOverrideSetting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecretScanningPatternOverrideSetting($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SecretScanningPatternOverrideSetting && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SecretScanningPatternOverrideSetting($value)';}
+}
 @immutable final class SecretScanningPatternOverride {const SecretScanningPatternOverride({this.tokenType, this.customPatternVersion = const Omittable.absent(), this.slug, this.displayName, this.alertTotal, this.alertTotalPercentage, this.falsePositives, this.falsePositiveRate, this.bypassRate, this.defaultSetting, this.enterpriseSetting = const Omittable.absent(), this.setting, });
 
-factory SecretScanningPatternOverride.fromJson(Map<String, dynamic> json) { return SecretScanningPatternOverride(
+factory SecretScanningPatternOverride.fromJson(Map<String, dynamic> json) {return SecretScanningPatternOverride(
   tokenType: json['token_type'] as String?,
   customPatternVersion: json.containsKey('custom_pattern_version') ? Omittable(json['custom_pattern_version'] as String?) : const Omittable.absent(),
   slug: json['slug'] as String?,
@@ -99,7 +99,7 @@ factory SecretScanningPatternOverride.fromJson(Map<String, dynamic> json) { retu
   defaultSetting: json['default_setting'] != null ? SecretScanningPatternOverrideDefaultSetting.fromJson(json['default_setting'] as String) : null,
   enterpriseSetting: json.containsKey('enterprise_setting') ? Omittable(json['enterprise_setting'] != null ? SecretScanningPatternOverrideEnterpriseSetting.fromJson(json['enterprise_setting'] as String) : null) : const Omittable.absent(),
   setting: json['setting'] != null ? SecretScanningPatternOverrideSetting.fromJson(json['setting'] as String) : null,
-); }
+);}
 
 /// The ID of the pattern.
 final String? tokenType;
@@ -137,7 +137,7 @@ final Omittable<SecretScanningPatternOverrideEnterpriseSetting?> enterpriseSetti
 /// The current push protection setting for this pattern. If this is `not-set`, then it inherits either the enterprise setting if it exists or the default setting.
 final SecretScanningPatternOverrideSetting? setting;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'token_type': ?tokenType,
   if (customPatternVersion.isPresent) 'custom_pattern_version': customPatternVersion.value,
   'slug': ?slug,
@@ -150,9 +150,9 @@ Map<String, dynamic> toJson() { return {
   if (defaultSetting != null) 'default_setting': defaultSetting?.toJson(),
   if (enterpriseSetting.isPresent) 'enterprise_setting': enterpriseSetting.value?.toJson(),
   if (setting != null) 'setting': setting?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'token_type', 'custom_pattern_version', 'slug', 'display_name', 'alert_total', 'alert_total_percentage', 'false_positives', 'false_positive_rate', 'bypass_rate', 'default_setting', 'enterprise_setting', 'setting'}.contains(key)); } 
-SecretScanningPatternOverride copyWith({String? Function()? tokenType, Omittable<String?>? customPatternVersion, String? Function()? slug, String? Function()? displayName, int? Function()? alertTotal, int? Function()? alertTotalPercentage, int? Function()? falsePositives, int? Function()? falsePositiveRate, int? Function()? bypassRate, SecretScanningPatternOverrideDefaultSetting? Function()? defaultSetting, Omittable<SecretScanningPatternOverrideEnterpriseSetting?>? enterpriseSetting, SecretScanningPatternOverrideSetting? Function()? setting, }) { return SecretScanningPatternOverride(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'token_type', 'custom_pattern_version', 'slug', 'display_name', 'alert_total', 'alert_total_percentage', 'false_positives', 'false_positive_rate', 'bypass_rate', 'default_setting', 'enterprise_setting', 'setting'}.contains(key));}
+SecretScanningPatternOverride copyWith({String? Function()? tokenType, Omittable<String?>? customPatternVersion, String? Function()? slug, String? Function()? displayName, int? Function()? alertTotal, int? Function()? alertTotalPercentage, int? Function()? falsePositives, int? Function()? falsePositiveRate, int? Function()? bypassRate, SecretScanningPatternOverrideDefaultSetting? Function()? defaultSetting, Omittable<SecretScanningPatternOverrideEnterpriseSetting?>? enterpriseSetting, SecretScanningPatternOverrideSetting? Function()? setting, }) {return SecretScanningPatternOverride(
   tokenType: tokenType != null ? tokenType() : this.tokenType,
   customPatternVersion: customPatternVersion ?? this.customPatternVersion,
   slug: slug != null ? slug() : this.slug,
@@ -165,8 +165,8 @@ SecretScanningPatternOverride copyWith({String? Function()? tokenType, Omittable
   defaultSetting: defaultSetting != null ? defaultSetting() : this.defaultSetting,
   enterpriseSetting: enterpriseSetting ?? this.enterpriseSetting,
   setting: setting != null ? setting() : this.setting,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecretScanningPatternOverride &&
           tokenType == other.tokenType &&
           customPatternVersion == other.customPatternVersion &&
@@ -179,7 +179,7 @@ SecretScanningPatternOverride copyWith({String? Function()? tokenType, Omittable
           bypassRate == other.bypassRate &&
           defaultSetting == other.defaultSetting &&
           enterpriseSetting == other.enterpriseSetting &&
-          setting == other.setting; } 
-@override int get hashCode { return Object.hash(tokenType, customPatternVersion, slug, displayName, alertTotal, alertTotalPercentage, falsePositives, falsePositiveRate, bypassRate, defaultSetting, enterpriseSetting, setting); } 
-@override String toString() { return 'SecretScanningPatternOverride(tokenType: $tokenType, customPatternVersion: $customPatternVersion, slug: $slug, displayName: $displayName, alertTotal: $alertTotal, alertTotalPercentage: $alertTotalPercentage, falsePositives: $falsePositives, falsePositiveRate: $falsePositiveRate, bypassRate: $bypassRate, defaultSetting: $defaultSetting, enterpriseSetting: $enterpriseSetting, setting: $setting)'; } 
- }
+          setting == other.setting;}
+@override int get hashCode {return Object.hash(tokenType, customPatternVersion, slug, displayName, alertTotal, alertTotalPercentage, falsePositives, falsePositiveRate, bypassRate, defaultSetting, enterpriseSetting, setting);}
+@override String toString() {return 'SecretScanningPatternOverride(tokenType: $tokenType, customPatternVersion: $customPatternVersion, slug: $slug, displayName: $displayName, alertTotal: $alertTotal, alertTotalPercentage: $alertTotalPercentage, falsePositives: $falsePositives, falsePositiveRate: $falsePositiveRate, bypassRate: $bypassRate, defaultSetting: $defaultSetting, enterpriseSetting: $enterpriseSetting, setting: $setting)';}
+}

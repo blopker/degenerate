@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchCreateInstancesResponseResultCustomMetadataDataType {const AiSearchCreateInstancesResponseResultCustomMetadataDataType._(this.value);
 
-factory AiSearchCreateInstancesResponseResultCustomMetadataDataType.fromJson(String json) { return switch (json) {
+factory AiSearchCreateInstancesResponseResultCustomMetadataDataType.fromJson(String json) {return switch (json) {
   'text' => text,
   'number' => number,
   'boolean' => boolean,
   _ => AiSearchCreateInstancesResponseResultCustomMetadataDataType._(json),
-}; }
+};}
 
 static const AiSearchCreateInstancesResponseResultCustomMetadataDataType text = AiSearchCreateInstancesResponseResultCustomMetadataDataType._('text');
 
@@ -19,39 +19,39 @@ static const List<AiSearchCreateInstancesResponseResultCustomMetadataDataType> v
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchCreateInstancesResponseResultCustomMetadataDataType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchCreateInstancesResponseResultCustomMetadataDataType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchCreateInstancesResponseResultCustomMetadataDataType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchCreateInstancesResponseResultCustomMetadataDataType($value)';}
+}
 @immutable final class AiSearchCreateInstancesResponseResultCustomMetadata {const AiSearchCreateInstancesResponseResultCustomMetadata({required this.dataType, required this.fieldName, });
 
-factory AiSearchCreateInstancesResponseResultCustomMetadata.fromJson(Map<String, dynamic> json) { return AiSearchCreateInstancesResponseResultCustomMetadata(
+factory AiSearchCreateInstancesResponseResultCustomMetadata.fromJson(Map<String, dynamic> json) {return AiSearchCreateInstancesResponseResultCustomMetadata(
   dataType: AiSearchCreateInstancesResponseResultCustomMetadataDataType.fromJson(json['data_type'] as String),
   fieldName: json['field_name'] as String,
-); }
+);}
 
 final AiSearchCreateInstancesResponseResultCustomMetadataDataType dataType;
 
 final String fieldName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data_type': dataType.toJson(),
   'field_name': fieldName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data_type') &&
-      json.containsKey('field_name') && json['field_name'] is String; } 
-AiSearchCreateInstancesResponseResultCustomMetadata copyWith({AiSearchCreateInstancesResponseResultCustomMetadataDataType? dataType, String? fieldName, }) { return AiSearchCreateInstancesResponseResultCustomMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data_type') &&
+      json.containsKey('field_name') && json['field_name'] is String;}
+AiSearchCreateInstancesResponseResultCustomMetadata copyWith({AiSearchCreateInstancesResponseResultCustomMetadataDataType? dataType, String? fieldName, }) {return AiSearchCreateInstancesResponseResultCustomMetadata(
   dataType: dataType ?? this.dataType,
   fieldName: fieldName ?? this.fieldName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchCreateInstancesResponseResultCustomMetadata &&
           dataType == other.dataType &&
-          fieldName == other.fieldName; } 
-@override int get hashCode { return Object.hash(dataType, fieldName); } 
-@override String toString() { return 'AiSearchCreateInstancesResponseResultCustomMetadata(dataType: $dataType, fieldName: $fieldName)'; } 
- }
+          fieldName == other.fieldName;}
+@override int get hashCode {return Object.hash(dataType, fieldName);}
+@override String toString() {return 'AiSearchCreateInstancesResponseResultCustomMetadata(dataType: $dataType, fieldName: $fieldName)';}
+}

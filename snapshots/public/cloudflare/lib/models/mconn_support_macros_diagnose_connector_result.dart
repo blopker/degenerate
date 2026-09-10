@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_support_connector.dart';import 'mconn_support_device.dart';import 'mconn_support_site.dart';@immutable final class MconnSupportMacrosDiagnoseConnectorResult {const MconnSupportMacrosDiagnoseConnectorResult({this.connector, this.device, this.site, });
 
-factory MconnSupportMacrosDiagnoseConnectorResult.fromJson(Map<String, dynamic> json) { return MconnSupportMacrosDiagnoseConnectorResult(
+factory MconnSupportMacrosDiagnoseConnectorResult.fromJson(Map<String, dynamic> json) {return MconnSupportMacrosDiagnoseConnectorResult(
   connector: json['connector'] != null ? MconnSupportConnector.fromJson(json['connector'] as Map<String, dynamic>) : null,
   device: json['device'] != null ? MconnSupportDevice.fromJson(json['device'] as Map<String, dynamic>) : null,
   site: json['site'] != null ? MconnSupportSite.fromJson(json['site'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final MconnSupportConnector? connector;
 
@@ -14,22 +14,22 @@ final MconnSupportDevice? device;
 
 final MconnSupportSite? site;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (connector != null) 'connector': connector?.toJson(),
   if (device != null) 'device': device?.toJson(),
   if (site != null) 'site': site?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'connector', 'device', 'site'}.contains(key)); } 
-MconnSupportMacrosDiagnoseConnectorResult copyWith({MconnSupportConnector? Function()? connector, MconnSupportDevice? Function()? device, MconnSupportSite? Function()? site, }) { return MconnSupportMacrosDiagnoseConnectorResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'connector', 'device', 'site'}.contains(key));}
+MconnSupportMacrosDiagnoseConnectorResult copyWith({MconnSupportConnector? Function()? connector, MconnSupportDevice? Function()? device, MconnSupportSite? Function()? site, }) {return MconnSupportMacrosDiagnoseConnectorResult(
   connector: connector != null ? connector() : this.connector,
   device: device != null ? device() : this.device,
   site: site != null ? site() : this.site,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MconnSupportMacrosDiagnoseConnectorResult &&
           connector == other.connector &&
           device == other.device &&
-          site == other.site; } 
-@override int get hashCode { return Object.hash(connector, device, site); } 
-@override String toString() { return 'MconnSupportMacrosDiagnoseConnectorResult(connector: $connector, device: $device, site: $site)'; } 
- }
+          site == other.site;}
+@override int get hashCode {return Object.hash(connector, device, site);}
+@override String toString() {return 'MconnSupportMacrosDiagnoseConnectorResult(connector: $connector, device: $device, site: $site)';}
+}

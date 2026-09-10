@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The customer's bank. Can be one of `ing`, `citi_handlowy`, `tmobile_usbugi_bankowe`, `plus_bank`, `etransfer_pocztowy24`, `banki_spbdzielcze`, `bank_nowy_bfg_sa`, `getin_bank`, `velobank`, `blik`, `noble_pay`, `ideabank`, `envelobank`, `santander_przelew24`, `nest_przelew`, `mbank_mtransfer`, `inteligo`, `pbac_z_ipko`, `bnp_paribas`, `credit_agricole`, `toyota_bank`, `bank_pekao_sa`, `volkswagen_bank`, `bank_millennium`, `alior_bank`, or `boz`.
 @immutable final class PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank._(this.value);
 
-factory PaymentMethodDetailsP24Bank.fromJson(String json) { return switch (json) {
+factory PaymentMethodDetailsP24Bank.fromJson(String json) {return switch (json) {
   'alior_bank' => aliorBank,
   'bank_millennium' => bankMillennium,
   'bank_nowy_bfg_sa' => bankNowyBfgSa,
@@ -31,7 +31,7 @@ factory PaymentMethodDetailsP24Bank.fromJson(String json) { return switch (json)
   'velobank' => velobank,
   'volkswagen_bank' => volkswagenBank,
   _ => PaymentMethodDetailsP24Bank._(json),
-}; }
+};}
 
 static const PaymentMethodDetailsP24Bank aliorBank = PaymentMethodDetailsP24Bank._('alior_bank');
 
@@ -89,22 +89,22 @@ static const List<PaymentMethodDetailsP24Bank> values = [aliorBank, bankMillenni
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsP24Bank && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsP24Bank($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodDetailsP24Bank && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodDetailsP24Bank($value)';}
+}
 /// 
 @immutable final class PaymentMethodDetailsP24 {const PaymentMethodDetailsP24({this.bank = const Omittable.absent(), this.reference = const Omittable.absent(), this.verifiedName = const Omittable.absent(), });
 
-factory PaymentMethodDetailsP24.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsP24(
+factory PaymentMethodDetailsP24.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsP24(
   bank: json.containsKey('bank') ? Omittable(json['bank'] != null ? PaymentMethodDetailsP24Bank.fromJson(json['bank'] as String) : null) : const Omittable.absent(),
   reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
   verifiedName: json.containsKey('verified_name') ? Omittable(json['verified_name'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The customer's bank. Can be one of `ing`, `citi_handlowy`, `tmobile_usbugi_bankowe`, `plus_bank`, `etransfer_pocztowy24`, `banki_spbdzielcze`, `bank_nowy_bfg_sa`, `getin_bank`, `velobank`, `blik`, `noble_pay`, `ideabank`, `envelobank`, `santander_przelew24`, `nest_przelew`, `mbank_mtransfer`, `inteligo`, `pbac_z_ipko`, `bnp_paribas`, `credit_agricole`, `toyota_bank`, `bank_pekao_sa`, `volkswagen_bank`, `bank_millennium`, `alior_bank`, or `boz`.
 final Omittable<PaymentMethodDetailsP24Bank?> bank;
@@ -117,22 +117,22 @@ final Omittable<String?> reference;
 /// Przelewy24 rarely provides this information so the attribute is usually empty.
 final Omittable<String?> verifiedName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bank.isPresent) 'bank': bank.value?.toJson(),
   if (reference.isPresent) 'reference': reference.value,
   if (verifiedName.isPresent) 'verified_name': verifiedName.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank', 'reference', 'verified_name'}.contains(key)); } 
-PaymentMethodDetailsP24 copyWith({Omittable<PaymentMethodDetailsP24Bank?>? bank, Omittable<String?>? reference, Omittable<String?>? verifiedName, }) { return PaymentMethodDetailsP24(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank', 'reference', 'verified_name'}.contains(key));}
+PaymentMethodDetailsP24 copyWith({Omittable<PaymentMethodDetailsP24Bank?>? bank, Omittable<String?>? reference, Omittable<String?>? verifiedName, }) {return PaymentMethodDetailsP24(
   bank: bank ?? this.bank,
   reference: reference ?? this.reference,
   verifiedName: verifiedName ?? this.verifiedName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodDetailsP24 &&
           bank == other.bank &&
           reference == other.reference &&
-          verifiedName == other.verifiedName; } 
-@override int get hashCode { return Object.hash(bank, reference, verifiedName); } 
-@override String toString() { return 'PaymentMethodDetailsP24(bank: $bank, reference: $reference, verifiedName: $verifiedName)'; } 
- }
+          verifiedName == other.verifiedName;}
+@override int get hashCode {return Object.hash(bank, reference, verifiedName);}
+@override String toString() {return 'PaymentMethodDetailsP24(bank: $bank, reference: $reference, verifiedName: $verifiedName)';}
+}

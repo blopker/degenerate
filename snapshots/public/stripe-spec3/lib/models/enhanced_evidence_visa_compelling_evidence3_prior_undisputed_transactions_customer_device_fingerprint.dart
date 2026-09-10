@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceFingerprintVariant2 {const EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceFingerprintVariant2._(this.value);
 
-factory EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceFingerprintVariant2.fromJson(String json) { return switch (json) {
+factory EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceFingerprintVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceFingerprintVariant2._(json),
-}; }
+};}
 
 static const EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceFingerprintVariant2 $empty = EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceFingerprintVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransact
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceFingerprintVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceFingerprintVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceFingerprintVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceFingerprintVariant2($value)';}
+}
 
 @immutable
 final class EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceFingerprint {

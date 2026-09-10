@@ -13,7 +13,7 @@ final class DiscoveryApi with ApiExecutor {const DiscoveryApi(this.apiConfig);
 /// Retrieve the most up to date view of discovered operations, rendered as OpenAPI schemas
 ///
 /// `GET /zones/{zone_id}/api_gateway/discovery`
-Future<ApiResult<ShieldSchemaResponseDiscoveryResult, DiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapiResponse4xx>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapi({required ShieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldSchemaResponseDiscoveryResult, DiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapiResponse4xx>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapi({required ShieldIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Retrieve discovered operations on a zone
 ///
 /// Retrieve the most up to date view of discovered operations
 ///
 /// `GET /zones/{zone_id}/api_gateway/discovery/operations`
-Future<ApiResult<List<ShieldDiscoveryOperation>, ResponseCommonFailure7>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZone({required ShieldIdentifier zoneId, int? page, int? perPage, List<String>? host, List<String>? method, String? endpoint, DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection? direction, DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder? order, bool? diff, DiscoveryOrigin? origin, DiscoveryState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ShieldDiscoveryOperation>, ResponseCommonFailure7>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZone({required ShieldIdentifier zoneId, int? page, int? perPage, List<String>? host, List<String>? method, String? endpoint, DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection? direction, DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder? order, bool? diff, DiscoveryOrigin? origin, DiscoveryState? state, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -110,13 +110,13 @@ return null;
 
   },
 );
- } 
+}
 /// Patch discovered operations
 ///
 /// Update the `state` on one or more discovered operations
 ///
 /// `PATCH /zones/{zone_id}/api_gateway/discovery/operations`
-Future<ApiResult<Map<String, DiscoveryPatchMultipleRequestEntry>, ResponseCommonFailure7>> apiShieldApiPatchDiscoveredOperations({required ShieldIdentifier zoneId, required Map<String,DiscoveryPatchMultipleRequestEntry> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, DiscoveryPatchMultipleRequestEntry>, ResponseCommonFailure7>> apiShieldApiPatchDiscoveredOperations({required ShieldIdentifier zoneId, required Map<String,DiscoveryPatchMultipleRequestEntry> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -144,13 +144,13 @@ return null;
 
   },
 );
- } 
+}
 /// Patch discovered operation
 ///
 /// Update the `state` on a discovered operation
 ///
 /// `PATCH /zones/{zone_id}/api_gateway/discovery/operations/{operation_id}`
-Future<ApiResult<ShieldPatchDiscoveryResponseResult, ResponseCommonFailure7>> apiShieldApiPatchDiscoveredOperation({required ShieldIdentifier zoneId, required ShieldUuid operationId, required PatchDiscoveredOperationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldPatchDiscoveryResponseResult, ResponseCommonFailure7>> apiShieldApiPatchDiscoveredOperation({required ShieldIdentifier zoneId, required ShieldUuid operationId, required PatchDiscoveredOperationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -178,5 +178,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

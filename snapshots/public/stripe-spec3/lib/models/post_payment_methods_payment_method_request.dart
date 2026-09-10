@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_methods_payment_method_request_billing_details.dart';import 'post_payment_methods_payment_method_request_card.dart';import 'post_payment_methods_payment_method_request_metadata.dart';import 'post_payment_methods_payment_method_request_payto.dart';import 'post_payment_methods_payment_method_request_us_bank_account.dart';/// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow. The field defaults to `unspecified`.
 @immutable final class PostPaymentMethodsPaymentMethodRequestAllowRedisplay {const PostPaymentMethodsPaymentMethodRequestAllowRedisplay._(this.value);
 
-factory PostPaymentMethodsPaymentMethodRequestAllowRedisplay.fromJson(String json) { return switch (json) {
+factory PostPaymentMethodsPaymentMethodRequestAllowRedisplay.fromJson(String json) {return switch (json) {
   'always' => always,
   'limited' => limited,
   'unspecified' => unspecified,
   _ => PostPaymentMethodsPaymentMethodRequestAllowRedisplay._(json),
-}; }
+};}
 
 static const PostPaymentMethodsPaymentMethodRequestAllowRedisplay always = PostPaymentMethodsPaymentMethodRequestAllowRedisplay._('always');
 
@@ -20,17 +20,17 @@ static const List<PostPaymentMethodsPaymentMethodRequestAllowRedisplay> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentMethodsPaymentMethodRequestAllowRedisplay && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentMethodsPaymentMethodRequestAllowRedisplay($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentMethodsPaymentMethodRequestAllowRedisplay && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentMethodsPaymentMethodRequestAllowRedisplay($value)';}
+}
 @immutable final class PostPaymentMethodsPaymentMethodRequest {const PostPaymentMethodsPaymentMethodRequest({this.allowRedisplay, this.billingDetails, this.card, this.expand, this.metadata, this.payto, this.usBankAccount, });
 
-factory PostPaymentMethodsPaymentMethodRequest.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsPaymentMethodRequest(
+factory PostPaymentMethodsPaymentMethodRequest.fromJson(Map<String, dynamic> json) {return PostPaymentMethodsPaymentMethodRequest(
   allowRedisplay: json['allow_redisplay'] != null ? PostPaymentMethodsPaymentMethodRequestAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,
   billingDetails: json['billing_details'] != null ? PostPaymentMethodsPaymentMethodRequestBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null,
   card: json['card'] != null ? PostPaymentMethodsPaymentMethodRequestCard.fromJson(json['card'] as Map<String, dynamic>) : null,
@@ -38,7 +38,7 @@ factory PostPaymentMethodsPaymentMethodRequest.fromJson(Map<String, dynamic> jso
   metadata: json['metadata'] != null ? PostPaymentMethodsPaymentMethodRequestMetadata.fromJson(json['metadata']) : null,
   payto: json['payto'] != null ? PostPaymentMethodsPaymentMethodRequestPayto.fromJson(json['payto'] as Map<String, dynamic>) : null,
   usBankAccount: json['us_bank_account'] != null ? PostPaymentMethodsPaymentMethodRequestUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow. The field defaults to `unspecified`.
 final PostPaymentMethodsPaymentMethodRequestAllowRedisplay? allowRedisplay;
@@ -61,7 +61,7 @@ final PostPaymentMethodsPaymentMethodRequestPayto? payto;
 /// If this is an `us_bank_account` PaymentMethod, this hash contains details about the US bank account payment method.
 final PostPaymentMethodsPaymentMethodRequestUsBankAccount? usBankAccount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowRedisplay != null) 'allow_redisplay': allowRedisplay?.toJson(),
   if (billingDetails != null) 'billing_details': billingDetails?.toJson(),
   if (card != null) 'card': card?.toJson(),
@@ -69,9 +69,9 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (payto != null) 'payto': payto?.toJson(),
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_redisplay', 'billing_details', 'card', 'expand', 'metadata', 'payto', 'us_bank_account'}.contains(key)); } 
-PostPaymentMethodsPaymentMethodRequest copyWith({PostPaymentMethodsPaymentMethodRequestAllowRedisplay? Function()? allowRedisplay, PostPaymentMethodsPaymentMethodRequestBillingDetails? Function()? billingDetails, PostPaymentMethodsPaymentMethodRequestCard? Function()? card, List<String>? Function()? expand, PostPaymentMethodsPaymentMethodRequestMetadata? Function()? metadata, PostPaymentMethodsPaymentMethodRequestPayto? Function()? payto, PostPaymentMethodsPaymentMethodRequestUsBankAccount? Function()? usBankAccount, }) { return PostPaymentMethodsPaymentMethodRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allow_redisplay', 'billing_details', 'card', 'expand', 'metadata', 'payto', 'us_bank_account'}.contains(key));}
+PostPaymentMethodsPaymentMethodRequest copyWith({PostPaymentMethodsPaymentMethodRequestAllowRedisplay? Function()? allowRedisplay, PostPaymentMethodsPaymentMethodRequestBillingDetails? Function()? billingDetails, PostPaymentMethodsPaymentMethodRequestCard? Function()? card, List<String>? Function()? expand, PostPaymentMethodsPaymentMethodRequestMetadata? Function()? metadata, PostPaymentMethodsPaymentMethodRequestPayto? Function()? payto, PostPaymentMethodsPaymentMethodRequestUsBankAccount? Function()? usBankAccount, }) {return PostPaymentMethodsPaymentMethodRequest(
   allowRedisplay: allowRedisplay != null ? allowRedisplay() : this.allowRedisplay,
   billingDetails: billingDetails != null ? billingDetails() : this.billingDetails,
   card: card != null ? card() : this.card,
@@ -79,8 +79,8 @@ PostPaymentMethodsPaymentMethodRequest copyWith({PostPaymentMethodsPaymentMethod
   metadata: metadata != null ? metadata() : this.metadata,
   payto: payto != null ? payto() : this.payto,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodsPaymentMethodRequest &&
           allowRedisplay == other.allowRedisplay &&
           billingDetails == other.billingDetails &&
@@ -88,7 +88,7 @@ PostPaymentMethodsPaymentMethodRequest copyWith({PostPaymentMethodsPaymentMethod
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
           payto == other.payto &&
-          usBankAccount == other.usBankAccount; } 
-@override int get hashCode { return Object.hash(allowRedisplay, billingDetails, card, Object.hashAll(expand ?? const []), metadata, payto, usBankAccount); } 
-@override String toString() { return 'PostPaymentMethodsPaymentMethodRequest(allowRedisplay: $allowRedisplay, billingDetails: $billingDetails, card: $card, expand: $expand, metadata: $metadata, payto: $payto, usBankAccount: $usBankAccount)'; } 
- }
+          usBankAccount == other.usBankAccount;}
+@override int get hashCode {return Object.hash(allowRedisplay, billingDetails, card, Object.hashAll(expand ?? const []), metadata, payto, usBankAccount);}
+@override String toString() {return 'PostPaymentMethodsPaymentMethodRequest(allowRedisplay: $allowRedisplay, billingDetails: $billingDetails, card: $card, expand: $expand, metadata: $metadata, payto: $payto, usBankAccount: $usBankAccount)';}
+}

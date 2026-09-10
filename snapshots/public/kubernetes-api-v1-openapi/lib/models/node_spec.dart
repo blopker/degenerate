@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_config_source.dart';import 'taint.dart';/// NodeSpec describes the attributes that a node is created with.
 @immutable final class NodeSpec {const NodeSpec({this.configSource, this.externalId, this.podCidr, this.podCidRs, this.providerId, this.taints, this.unschedulable, });
 
-factory NodeSpec.fromJson(Map<String, dynamic> json) { return NodeSpec(
+factory NodeSpec.fromJson(Map<String, dynamic> json) {return NodeSpec(
   configSource: json['configSource'] != null ? NodeConfigSource.fromJson(json['configSource'] as Map<String, dynamic>) : null,
   externalId: json['externalID'] as String?,
   podCidr: json['podCIDR'] as String?,
@@ -11,7 +11,7 @@ factory NodeSpec.fromJson(Map<String, dynamic> json) { return NodeSpec(
   providerId: json['providerID'] as String?,
   taints: (json['taints'] as List<dynamic>?)?.map((e) => Taint.fromJson(e as Map<String, dynamic>)).toList(),
   unschedulable: json['unschedulable'] as bool?,
-); }
+);}
 
 /// Deprecated: Previously used to specify the source of the node's configuration for the DynamicKubeletConfig feature. This feature is removed.
 final NodeConfigSource? configSource;
@@ -34,7 +34,7 @@ final List<Taint>? taints;
 /// Unschedulable controls node schedulability of new pods. By default, node is schedulable. More info: https://kubernetes.io/docs/concepts/nodes/node/#manual-node-administration
 final bool? unschedulable;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (configSource != null) 'configSource': configSource?.toJson(),
   'externalID': ?externalId,
   'podCIDR': ?podCidr,
@@ -42,9 +42,9 @@ Map<String, dynamic> toJson() { return {
   'providerID': ?providerId,
   if (taints != null) 'taints': taints?.map((e) => e.toJson()).toList(),
   'unschedulable': ?unschedulable,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configSource', 'externalID', 'podCIDR', 'podCIDRs', 'providerID', 'taints', 'unschedulable'}.contains(key)); } 
-NodeSpec copyWith({NodeConfigSource? Function()? configSource, String? Function()? externalId, String? Function()? podCidr, List<String>? Function()? podCidRs, String? Function()? providerId, List<Taint>? Function()? taints, bool? Function()? unschedulable, }) { return NodeSpec(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'configSource', 'externalID', 'podCIDR', 'podCIDRs', 'providerID', 'taints', 'unschedulable'}.contains(key));}
+NodeSpec copyWith({NodeConfigSource? Function()? configSource, String? Function()? externalId, String? Function()? podCidr, List<String>? Function()? podCidRs, String? Function()? providerId, List<Taint>? Function()? taints, bool? Function()? unschedulable, }) {return NodeSpec(
   configSource: configSource != null ? configSource() : this.configSource,
   externalId: externalId != null ? externalId() : this.externalId,
   podCidr: podCidr != null ? podCidr() : this.podCidr,
@@ -52,8 +52,8 @@ NodeSpec copyWith({NodeConfigSource? Function()? configSource, String? Function(
   providerId: providerId != null ? providerId() : this.providerId,
   taints: taints != null ? taints() : this.taints,
   unschedulable: unschedulable != null ? unschedulable() : this.unschedulable,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is NodeSpec &&
           configSource == other.configSource &&
           externalId == other.externalId &&
@@ -61,7 +61,7 @@ NodeSpec copyWith({NodeConfigSource? Function()? configSource, String? Function(
           listEquals(podCidRs, other.podCidRs) &&
           providerId == other.providerId &&
           listEquals(taints, other.taints) &&
-          unschedulable == other.unschedulable; } 
-@override int get hashCode { return Object.hash(configSource, externalId, podCidr, Object.hashAll(podCidRs ?? const []), providerId, Object.hashAll(taints ?? const []), unschedulable); } 
-@override String toString() { return 'NodeSpec(configSource: $configSource, externalId: $externalId, podCidr: $podCidr, podCidRs: $podCidRs, providerId: $providerId, taints: $taints, unschedulable: $unschedulable)'; } 
- }
+          unschedulable == other.unschedulable;}
+@override int get hashCode {return Object.hash(configSource, externalId, podCidr, Object.hashAll(podCidRs ?? const []), providerId, Object.hashAll(taints ?? const []), unschedulable);}
+@override String toString() {return 'NodeSpec(configSource: $configSource, externalId: $externalId, podCidr: $podCidr, podCidRs: $podCidRs, providerId: $providerId, taints: $taints, unschedulable: $unschedulable)';}
+}

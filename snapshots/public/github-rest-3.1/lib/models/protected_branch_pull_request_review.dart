@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'protected_branch_pull_request_review_bypass_pull_request_allowances.dart';import 'protected_branch_pull_request_review_dismissal_restrictions.dart';/// Protected Branch Pull Request Review
 @immutable final class ProtectedBranchPullRequestReview {const ProtectedBranchPullRequestReview({required this.dismissStaleReviews, required this.requireCodeOwnerReviews, this.url, this.dismissalRestrictions, this.bypassPullRequestAllowances, this.requiredApprovingReviewCount, this.requireLastPushApproval, });
 
-factory ProtectedBranchPullRequestReview.fromJson(Map<String, dynamic> json) { return ProtectedBranchPullRequestReview(
+factory ProtectedBranchPullRequestReview.fromJson(Map<String, dynamic> json) {return ProtectedBranchPullRequestReview(
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
   dismissalRestrictions: json['dismissal_restrictions'] != null ? ProtectedBranchPullRequestReviewDismissalRestrictions.fromJson(json['dismissal_restrictions'] as Map<String, dynamic>) : null,
   bypassPullRequestAllowances: json['bypass_pull_request_allowances'] != null ? ProtectedBranchPullRequestReviewBypassPullRequestAllowances.fromJson(json['bypass_pull_request_allowances'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory ProtectedBranchPullRequestReview.fromJson(Map<String, dynamic> json) { r
   requireCodeOwnerReviews: json['require_code_owner_reviews'] as bool,
   requiredApprovingReviewCount: json['required_approving_review_count'] != null ? (json['required_approving_review_count'] as num).toInt() : null,
   requireLastPushApproval: json['require_last_push_approval'] as bool?,
-); }
+);}
 
 final Uri? url;
 
@@ -30,8 +30,8 @@ final int? requiredApprovingReviewCount;
 final bool? requireLastPushApproval;
 
 /// The value with the schema default applied when absent.
-bool get requireLastPushApprovalOrDefault { return requireLastPushApproval ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get requireLastPushApprovalOrDefault {return requireLastPushApproval ?? false;}
+Map<String, dynamic> toJson() {return {
   if (url != null) 'url': url?.toString(),
   if (dismissalRestrictions != null) 'dismissal_restrictions': dismissalRestrictions?.toJson(),
   if (bypassPullRequestAllowances != null) 'bypass_pull_request_allowances': bypassPullRequestAllowances?.toJson(),
@@ -39,10 +39,10 @@ Map<String, dynamic> toJson() { return {
   'require_code_owner_reviews': requireCodeOwnerReviews,
   'required_approving_review_count': ?requiredApprovingReviewCount,
   'require_last_push_approval': ?requireLastPushApproval,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dismiss_stale_reviews') && json['dismiss_stale_reviews'] is bool &&
-      json.containsKey('require_code_owner_reviews') && json['require_code_owner_reviews'] is bool; } 
-ProtectedBranchPullRequestReview copyWith({Uri? Function()? url, ProtectedBranchPullRequestReviewDismissalRestrictions? Function()? dismissalRestrictions, ProtectedBranchPullRequestReviewBypassPullRequestAllowances? Function()? bypassPullRequestAllowances, bool? dismissStaleReviews, bool? requireCodeOwnerReviews, int? Function()? requiredApprovingReviewCount, bool? Function()? requireLastPushApproval, }) { return ProtectedBranchPullRequestReview(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dismiss_stale_reviews') && json['dismiss_stale_reviews'] is bool &&
+      json.containsKey('require_code_owner_reviews') && json['require_code_owner_reviews'] is bool;}
+ProtectedBranchPullRequestReview copyWith({Uri? Function()? url, ProtectedBranchPullRequestReviewDismissalRestrictions? Function()? dismissalRestrictions, ProtectedBranchPullRequestReviewBypassPullRequestAllowances? Function()? bypassPullRequestAllowances, bool? dismissStaleReviews, bool? requireCodeOwnerReviews, int? Function()? requiredApprovingReviewCount, bool? Function()? requireLastPushApproval, }) {return ProtectedBranchPullRequestReview(
   url: url != null ? url() : this.url,
   dismissalRestrictions: dismissalRestrictions != null ? dismissalRestrictions() : this.dismissalRestrictions,
   bypassPullRequestAllowances: bypassPullRequestAllowances != null ? bypassPullRequestAllowances() : this.bypassPullRequestAllowances,
@@ -50,8 +50,8 @@ ProtectedBranchPullRequestReview copyWith({Uri? Function()? url, ProtectedBranch
   requireCodeOwnerReviews: requireCodeOwnerReviews ?? this.requireCodeOwnerReviews,
   requiredApprovingReviewCount: requiredApprovingReviewCount != null ? requiredApprovingReviewCount() : this.requiredApprovingReviewCount,
   requireLastPushApproval: requireLastPushApproval != null ? requireLastPushApproval() : this.requireLastPushApproval,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ProtectedBranchPullRequestReview &&
           url == other.url &&
           dismissalRestrictions == other.dismissalRestrictions &&
@@ -59,7 +59,7 @@ ProtectedBranchPullRequestReview copyWith({Uri? Function()? url, ProtectedBranch
           dismissStaleReviews == other.dismissStaleReviews &&
           requireCodeOwnerReviews == other.requireCodeOwnerReviews &&
           requiredApprovingReviewCount == other.requiredApprovingReviewCount &&
-          requireLastPushApproval == other.requireLastPushApproval; } 
-@override int get hashCode { return Object.hash(url, dismissalRestrictions, bypassPullRequestAllowances, dismissStaleReviews, requireCodeOwnerReviews, requiredApprovingReviewCount, requireLastPushApproval); } 
-@override String toString() { return 'ProtectedBranchPullRequestReview(url: $url, dismissalRestrictions: $dismissalRestrictions, bypassPullRequestAllowances: $bypassPullRequestAllowances, dismissStaleReviews: $dismissStaleReviews, requireCodeOwnerReviews: $requireCodeOwnerReviews, requiredApprovingReviewCount: $requiredApprovingReviewCount, requireLastPushApproval: $requireLastPushApproval)'; } 
- }
+          requireLastPushApproval == other.requireLastPushApproval;}
+@override int get hashCode {return Object.hash(url, dismissalRestrictions, bypassPullRequestAllowances, dismissStaleReviews, requireCodeOwnerReviews, requiredApprovingReviewCount, requireLastPushApproval);}
+@override String toString() {return 'ProtectedBranchPullRequestReview(url: $url, dismissalRestrictions: $dismissalRestrictions, bypassPullRequestAllowances: $bypassPullRequestAllowances, dismissStaleReviews: $dismissStaleReviews, requireCodeOwnerReviews: $requireCodeOwnerReviews, requiredApprovingReviewCount: $requiredApprovingReviewCount, requireLastPushApproval: $requireLastPushApproval)';}
+}

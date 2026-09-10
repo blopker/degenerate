@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodDataGiropay {const PostSetupIntentsRequestPaymentMethodDataGiropay();
 
-factory PostSetupIntentsRequestPaymentMethodDataGiropay.fromJson(Map<String, dynamic> _) { return const PostSetupIntentsRequestPaymentMethodDataGiropay(); }
+factory PostSetupIntentsRequestPaymentMethodDataGiropay.fromJson(Map<String, dynamic> _) {return const PostSetupIntentsRequestPaymentMethodDataGiropay();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PostSetupIntentsRequestPaymentMethodDataGiropay copyWith() { return const PostSetupIntentsRequestPaymentMethodDataGiropay(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PostSetupIntentsRequestPaymentMethodDataGiropay copyWith() {return const PostSetupIntentsRequestPaymentMethodDataGiropay(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is PostSetupIntentsRequestPaymentMethodDataGiropay; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodDataGiropay()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is PostSetupIntentsRequestPaymentMethodDataGiropay;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodDataGiropay()';}
+}

@@ -13,7 +13,7 @@ final class ZoneSnippetsApi with ApiExecutor {const ZoneSnippetsApi(this.apiConf
 /// Fetches all snippets belonging to the zone.
 ///
 /// `GET /zones/{zone_id}/snippets`
-Future<ApiResult<List<SnippetsSnippet>, ListZoneSnippetsError>> listZoneSnippets({required SnippetsZoneId zoneId, SnippetsPage? page, SnippetsPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SnippetsSnippet>, ListZoneSnippetsError>> listZoneSnippets({required SnippetsZoneId zoneId, SnippetsPage? page, SnippetsPerPage? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -41,13 +41,13 @@ return (json['result'] as List<dynamic>).map((e) => SnippetsSnippet.fromJson(e a
   },
   onError: ListZoneSnippetsError.parse,
 );
- } 
+}
 /// Get a zone snippet
 ///
 /// Fetches a snippet belonging to the zone.
 ///
 /// `GET /zones/{zone_id}/snippets/{snippet_name}`
-Future<ApiResult<SnippetsSnippet, GetZoneSnippetError>> getZoneSnippet({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SnippetsSnippet, GetZoneSnippetError>> getZoneSnippet({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -64,13 +64,13 @@ return SnippetsSnippet.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: GetZoneSnippetError.parse,
 );
- } 
+}
 /// Update a zone snippet
 ///
 /// Creates or updates a snippet belonging to the zone.
 ///
 /// `PUT /zones/{zone_id}/snippets/{snippet_name}`
-Future<ApiResult<SnippetsSnippet, UpdateZoneSnippetError>> updateZoneSnippet({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, required UpdateZoneSnippetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SnippetsSnippet, UpdateZoneSnippetError>> updateZoneSnippet({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, required UpdateZoneSnippetRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -91,13 +91,13 @@ return SnippetsSnippet.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: UpdateZoneSnippetError.parse,
 );
- } 
+}
 /// Delete a zone snippet
 ///
 /// Deletes a snippet belonging to the zone.
 ///
 /// `DELETE /zones/{zone_id}/snippets/{snippet_name}`
-Future<ApiResult<Map<String, dynamic>?, DeleteZoneSnippetError>> deleteZoneSnippet({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, DeleteZoneSnippetError>> deleteZoneSnippet({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -114,13 +114,13 @@ return json['result'] as Map<String, dynamic>?;
   },
   onError: DeleteZoneSnippetError.parse,
 );
- } 
+}
 /// Get a zone snippet content
 ///
 /// Fetches the content of a snippet belonging to the zone.
 ///
 /// `GET /zones/{zone_id}/snippets/{snippet_name}/content`
-Future<ApiResult<Map<String, List<Uint8List>>, GetZoneSnippetContentError>> getZoneSnippetContent({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, List<Uint8List>>, GetZoneSnippetContentError>> getZoneSnippetContent({required SnippetsZoneId zoneId, required SnippetsSnippetName snippetName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -137,13 +137,13 @@ throw UnsupportedError('Cannot decode multipart/form-data response into Map<Stri
   },
   onError: GetZoneSnippetContentError.parse,
 );
- } 
+}
 /// List zone snippet rules
 ///
 /// Fetches all snippet rules belonging to the zone.
 ///
 /// `GET /zones/{zone_id}/snippets/snippet_rules`
-Future<ApiResult<List<SnippetsSnippetRules2>, ListZoneSnippetRulesError>> listZoneSnippetRules({required SnippetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SnippetsSnippetRules2>, ListZoneSnippetRulesError>> listZoneSnippetRules({required SnippetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -160,13 +160,13 @@ return (json['result'] as List<dynamic>).map((e) => SnippetsSnippetRules2.fromJs
   },
   onError: ListZoneSnippetRulesError.parse,
 );
- } 
+}
 /// Update zone snippet rules
 ///
 /// Updates all snippet rules belonging to the zone.
 ///
 /// `PUT /zones/{zone_id}/snippets/snippet_rules`
-Future<ApiResult<List<SnippetsSnippetRules2>, UpdateZoneSnippetRulesError>> updateZoneSnippetRules({required SnippetsZoneId zoneId, required UpdateZoneSnippetRulesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SnippetsSnippetRules2>, UpdateZoneSnippetRulesError>> updateZoneSnippetRules({required SnippetsZoneId zoneId, required UpdateZoneSnippetRulesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -185,13 +185,13 @@ return (json['result'] as List<dynamic>).map((e) => SnippetsSnippetRules2.fromJs
   },
   onError: UpdateZoneSnippetRulesError.parse,
 );
- } 
+}
 /// Delete zone snippet rules
 ///
 /// Deletes all snippet rules belonging to the zone.
 ///
 /// `DELETE /zones/{zone_id}/snippets/snippet_rules`
-Future<ApiResult<List<SnippetsSnippetRules2>, DeleteZoneSnippetRulesError>> deleteZoneSnippetRules({required SnippetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SnippetsSnippetRules2>, DeleteZoneSnippetRulesError>> deleteZoneSnippetRules({required SnippetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -208,5 +208,5 @@ return (json['result'] as List<dynamic>).map((e) => SnippetsSnippetRules2.fromJs
   },
   onError: DeleteZoneSnippetRulesError.parse,
 );
- } 
- }
+}
+}

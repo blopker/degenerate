@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_param2_discount_amount.dart';import 'amount_details_param2_line_items.dart';import 'amount_details_param2_shipping.dart';import 'amount_details_param2_tax.dart';@immutable final class AmountDetailsParam2 {const AmountDetailsParam2({this.discountAmount, this.enforceArithmeticValidation, this.lineItems, this.shipping, this.tax, });
 
-factory AmountDetailsParam2.fromJson(Map<String, dynamic> json) { return AmountDetailsParam2(
+factory AmountDetailsParam2.fromJson(Map<String, dynamic> json) {return AmountDetailsParam2(
   discountAmount: json['discount_amount'] != null ? AmountDetailsParam2DiscountAmount.fromJson(json['discount_amount']) : null,
   enforceArithmeticValidation: json['enforce_arithmetic_validation'] as bool?,
   lineItems: json['line_items'] != null ? AmountDetailsParam2LineItems.fromJson(json['line_items']) : null,
   shipping: json['shipping'] != null ? AmountDetailsParam2Shipping.fromJson(json['shipping']) : null,
   tax: json['tax'] != null ? AmountDetailsParam2Tax.fromJson(json['tax']) : null,
-); }
+);}
 
 final AmountDetailsParam2DiscountAmount? discountAmount;
 
@@ -20,28 +20,28 @@ final AmountDetailsParam2Shipping? shipping;
 
 final AmountDetailsParam2Tax? tax;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (discountAmount != null) 'discount_amount': discountAmount?.toJson(),
   'enforce_arithmetic_validation': ?enforceArithmeticValidation,
   if (lineItems != null) 'line_items': lineItems?.toJson(),
   if (shipping != null) 'shipping': shipping?.toJson(),
   if (tax != null) 'tax': tax?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'discount_amount', 'enforce_arithmetic_validation', 'line_items', 'shipping', 'tax'}.contains(key)); } 
-AmountDetailsParam2 copyWith({AmountDetailsParam2DiscountAmount? Function()? discountAmount, bool? Function()? enforceArithmeticValidation, AmountDetailsParam2LineItems? Function()? lineItems, AmountDetailsParam2Shipping? Function()? shipping, AmountDetailsParam2Tax? Function()? tax, }) { return AmountDetailsParam2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'discount_amount', 'enforce_arithmetic_validation', 'line_items', 'shipping', 'tax'}.contains(key));}
+AmountDetailsParam2 copyWith({AmountDetailsParam2DiscountAmount? Function()? discountAmount, bool? Function()? enforceArithmeticValidation, AmountDetailsParam2LineItems? Function()? lineItems, AmountDetailsParam2Shipping? Function()? shipping, AmountDetailsParam2Tax? Function()? tax, }) {return AmountDetailsParam2(
   discountAmount: discountAmount != null ? discountAmount() : this.discountAmount,
   enforceArithmeticValidation: enforceArithmeticValidation != null ? enforceArithmeticValidation() : this.enforceArithmeticValidation,
   lineItems: lineItems != null ? lineItems() : this.lineItems,
   shipping: shipping != null ? shipping() : this.shipping,
   tax: tax != null ? tax() : this.tax,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AmountDetailsParam2 &&
           discountAmount == other.discountAmount &&
           enforceArithmeticValidation == other.enforceArithmeticValidation &&
           lineItems == other.lineItems &&
           shipping == other.shipping &&
-          tax == other.tax; } 
-@override int get hashCode { return Object.hash(discountAmount, enforceArithmeticValidation, lineItems, shipping, tax); } 
-@override String toString() { return 'AmountDetailsParam2(discountAmount: $discountAmount, enforceArithmeticValidation: $enforceArithmeticValidation, lineItems: $lineItems, shipping: $shipping, tax: $tax)'; } 
- }
+          tax == other.tax;}
+@override int get hashCode {return Object.hash(discountAmount, enforceArithmeticValidation, lineItems, shipping, tax);}
+@override String toString() {return 'AmountDetailsParam2(discountAmount: $discountAmount, enforceArithmeticValidation: $enforceArithmeticValidation, lineItems: $lineItems, shipping: $shipping, tax: $tax)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_disposition_label.dart';@immutable final class EmailSecuritySubmissionCustomerStatus {const EmailSecuritySubmissionCustomerStatus._(this.value);
 
-factory EmailSecuritySubmissionCustomerStatus.fromJson(String json) { return switch (json) {
+factory EmailSecuritySubmissionCustomerStatus.fromJson(String json) {return switch (json) {
   'escalated' => escalated,
   'reviewed' => reviewed,
   'unreviewed' => unreviewed,
   _ => EmailSecuritySubmissionCustomerStatus._(json),
-}; }
+};}
 
 static const EmailSecuritySubmissionCustomerStatus escalated = EmailSecuritySubmissionCustomerStatus._('escalated');
 
@@ -19,17 +19,17 @@ static const List<EmailSecuritySubmissionCustomerStatus> values = [escalated, re
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecuritySubmissionCustomerStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecuritySubmissionCustomerStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailSecuritySubmissionCustomerStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailSecuritySubmissionCustomerStatus($value)';}
+}
 @immutable final class EmailSecuritySubmission {const EmailSecuritySubmission({required this.requestedTs, required this.submissionId, this.customerStatus, this.originalDisposition = const Omittable.absent(), this.originalEdfHash = const Omittable.absent(), this.outcome = const Omittable.absent(), this.outcomeDisposition = const Omittable.absent(), this.requestedBy = const Omittable.absent(), this.requestedDisposition = const Omittable.absent(), this.status = const Omittable.absent(), this.subject = const Omittable.absent(), this.type = const Omittable.absent(), });
 
-factory EmailSecuritySubmission.fromJson(Map<String, dynamic> json) { return EmailSecuritySubmission(
+factory EmailSecuritySubmission.fromJson(Map<String, dynamic> json) {return EmailSecuritySubmission(
   customerStatus: json['customer_status'] != null ? EmailSecuritySubmissionCustomerStatus.fromJson(json['customer_status'] as String) : null,
   originalDisposition: json.containsKey('original_disposition') ? Omittable(json['original_disposition'] != null ? EmailSecurityDispositionLabel.fromJson(json['original_disposition'] as String) : null) : const Omittable.absent(),
   originalEdfHash: json.containsKey('original_edf_hash') ? Omittable(json['original_edf_hash'] as String?) : const Omittable.absent(),
@@ -42,7 +42,7 @@ factory EmailSecuritySubmission.fromJson(Map<String, dynamic> json) { return Ema
   subject: json.containsKey('subject') ? Omittable(json['subject'] as String?) : const Omittable.absent(),
   submissionId: json['submission_id'] as String,
   type: json.containsKey('type') ? Omittable(json['type'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final EmailSecuritySubmissionCustomerStatus? customerStatus;
 
@@ -68,7 +68,7 @@ final String submissionId;
 
 final Omittable<String?> type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (customerStatus != null) 'customer_status': customerStatus?.toJson(),
   if (originalDisposition.isPresent) 'original_disposition': originalDisposition.value?.toJson(),
   if (originalEdfHash.isPresent) 'original_edf_hash': originalEdfHash.value,
@@ -81,10 +81,10 @@ Map<String, dynamic> toJson() { return {
   if (subject.isPresent) 'subject': subject.value,
   'submission_id': submissionId,
   if (type.isPresent) 'type': type.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('requested_ts') && json['requested_ts'] is String &&
-      json.containsKey('submission_id') && json['submission_id'] is String; } 
-EmailSecuritySubmission copyWith({EmailSecuritySubmissionCustomerStatus? Function()? customerStatus, Omittable<EmailSecurityDispositionLabel?>? originalDisposition, Omittable<String?>? originalEdfHash, Omittable<String?>? outcome, Omittable<EmailSecurityDispositionLabel?>? outcomeDisposition, Omittable<String?>? requestedBy, Omittable<EmailSecurityDispositionLabel?>? requestedDisposition, DateTime? requestedTs, Omittable<String?>? status, Omittable<String?>? subject, String? submissionId, Omittable<String?>? type, }) { return EmailSecuritySubmission(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('requested_ts') && json['requested_ts'] is String &&
+      json.containsKey('submission_id') && json['submission_id'] is String;}
+EmailSecuritySubmission copyWith({EmailSecuritySubmissionCustomerStatus? Function()? customerStatus, Omittable<EmailSecurityDispositionLabel?>? originalDisposition, Omittable<String?>? originalEdfHash, Omittable<String?>? outcome, Omittable<EmailSecurityDispositionLabel?>? outcomeDisposition, Omittable<String?>? requestedBy, Omittable<EmailSecurityDispositionLabel?>? requestedDisposition, DateTime? requestedTs, Omittable<String?>? status, Omittable<String?>? subject, String? submissionId, Omittable<String?>? type, }) {return EmailSecuritySubmission(
   customerStatus: customerStatus != null ? customerStatus() : this.customerStatus,
   originalDisposition: originalDisposition ?? this.originalDisposition,
   originalEdfHash: originalEdfHash ?? this.originalEdfHash,
@@ -97,8 +97,8 @@ EmailSecuritySubmission copyWith({EmailSecuritySubmissionCustomerStatus? Functio
   subject: subject ?? this.subject,
   submissionId: submissionId ?? this.submissionId,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSecuritySubmission &&
           customerStatus == other.customerStatus &&
           originalDisposition == other.originalDisposition &&
@@ -111,7 +111,7 @@ EmailSecuritySubmission copyWith({EmailSecuritySubmissionCustomerStatus? Functio
           status == other.status &&
           subject == other.subject &&
           submissionId == other.submissionId &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(customerStatus, originalDisposition, originalEdfHash, outcome, outcomeDisposition, requestedBy, requestedDisposition, requestedTs, status, subject, submissionId, type); } 
-@override String toString() { return 'EmailSecuritySubmission(customerStatus: $customerStatus, originalDisposition: $originalDisposition, originalEdfHash: $originalEdfHash, outcome: $outcome, outcomeDisposition: $outcomeDisposition, requestedBy: $requestedBy, requestedDisposition: $requestedDisposition, requestedTs: $requestedTs, status: $status, subject: $subject, submissionId: $submissionId, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(customerStatus, originalDisposition, originalEdfHash, outcome, outcomeDisposition, requestedBy, requestedDisposition, requestedTs, status, subject, submissionId, type);}
+@override String toString() {return 'EmailSecuritySubmission(customerStatus: $customerStatus, originalDisposition: $originalDisposition, originalEdfHash: $originalEdfHash, outcome: $outcome, outcomeDisposition: $outcomeDisposition, requestedBy: $requestedBy, requestedDisposition: $requestedDisposition, requestedTs: $requestedTs, status: $status, subject: $subject, submissionId: $submissionId, type: $type)';}
+}

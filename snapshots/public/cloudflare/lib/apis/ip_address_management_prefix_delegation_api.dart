@@ -13,7 +13,7 @@ final class IpAddressManagementPrefixDelegationApi with ApiExecutor {const IpAdd
 /// List all delegations for a given account IP prefix.
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/delegations`
-Future<ApiResult<List<AddressingIpamDelegations>?, IpAddressManagementPrefixDelegationListPrefixDelegationsResponse4xx>> ipAddressManagementPrefixDelegationListPrefixDelegations({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AddressingIpamDelegations>?, IpAddressManagementPrefixDelegationListPrefixDelegationsResponse4xx>> ipAddressManagementPrefixDelegationListPrefixDelegations({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create Prefix Delegation
 ///
 /// Create a new account delegation for a given IP prefix.
 ///
 /// `POST /accounts/{account_id}/addressing/prefixes/{prefix_id}/delegations`
-Future<ApiResult<AddressingIpamDelegations?, IpAddressManagementPrefixDelegationCreatePrefixDelegationResponse4xx>> ipAddressManagementPrefixDelegationCreatePrefixDelegation({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingIpamDelegations?, IpAddressManagementPrefixDelegationCreatePrefixDelegationResponse4xx>> ipAddressManagementPrefixDelegationCreatePrefixDelegation({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Prefix Delegation
 ///
 /// Delete an account delegation for a given IP prefix.
 ///
 /// `DELETE /accounts/{account_id}/addressing/prefixes/{prefix_id}/delegations/{delegation_id}`
-Future<ApiResult<AddressingIdResponseResult?, IpAddressManagementPrefixDelegationDeletePrefixDelegationResponse4xx>> ipAddressManagementPrefixDelegationDeletePrefixDelegation({required AddressingDelegationIdentifier delegationId, required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingIdResponseResult?, IpAddressManagementPrefixDelegationDeletePrefixDelegationResponse4xx>> ipAddressManagementPrefixDelegationDeletePrefixDelegation({required AddressingDelegationIdentifier delegationId, required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -105,5 +105,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

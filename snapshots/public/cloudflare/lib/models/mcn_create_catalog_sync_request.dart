@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_catalog_sync_destination_type.dart';import 'mcn_catalog_sync_update_mode.dart';@immutable final class McnCreateCatalogSyncRequest {const McnCreateCatalogSyncRequest({required this.destinationType, required this.name, required this.updateMode, this.description, this.policy, });
 
-factory McnCreateCatalogSyncRequest.fromJson(Map<String, dynamic> json) { return McnCreateCatalogSyncRequest(
+factory McnCreateCatalogSyncRequest.fromJson(Map<String, dynamic> json) {return McnCreateCatalogSyncRequest(
   description: json['description'] as String?,
   destinationType: McnCatalogSyncDestinationType.fromJson(json['destination_type'] as String),
   name: json['name'] as String,
   policy: json['policy'] as String?,
   updateMode: McnCatalogSyncUpdateMode.fromJson(json['update_mode'] as String),
-); }
+);}
 
 final String? description;
 
@@ -20,30 +20,30 @@ final String? policy;
 
 final McnCatalogSyncUpdateMode updateMode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'destination_type': destinationType.toJson(),
   'name': name,
   'policy': ?policy,
   'update_mode': updateMode.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination_type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('destination_type') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('update_mode'); } 
-McnCreateCatalogSyncRequest copyWith({String? Function()? description, McnCatalogSyncDestinationType? destinationType, String? name, String? Function()? policy, McnCatalogSyncUpdateMode? updateMode, }) { return McnCreateCatalogSyncRequest(
+      json.containsKey('update_mode');}
+McnCreateCatalogSyncRequest copyWith({String? Function()? description, McnCatalogSyncDestinationType? destinationType, String? name, String? Function()? policy, McnCatalogSyncUpdateMode? updateMode, }) {return McnCreateCatalogSyncRequest(
   description: description != null ? description() : this.description,
   destinationType: destinationType ?? this.destinationType,
   name: name ?? this.name,
   policy: policy != null ? policy() : this.policy,
   updateMode: updateMode ?? this.updateMode,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is McnCreateCatalogSyncRequest &&
           description == other.description &&
           destinationType == other.destinationType &&
           name == other.name &&
           policy == other.policy &&
-          updateMode == other.updateMode; } 
-@override int get hashCode { return Object.hash(description, destinationType, name, policy, updateMode); } 
-@override String toString() { return 'McnCreateCatalogSyncRequest(description: $description, destinationType: $destinationType, name: $name, policy: $policy, updateMode: $updateMode)'; } 
- }
+          updateMode == other.updateMode;}
+@override int get hashCode {return Object.hash(description, destinationType, name, policy, updateMode);}
+@override String toString() {return 'McnCreateCatalogSyncRequest(description: $description, destinationType: $destinationType, name: $name, policy: $policy, updateMode: $updateMode)';}
+}

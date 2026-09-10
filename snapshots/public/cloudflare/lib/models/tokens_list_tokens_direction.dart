@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order results.
 @immutable final class TokensListTokensDirection {const TokensListTokensDirection._(this.value);
 
-factory TokensListTokensDirection.fromJson(String json) { return switch (json) {
+factory TokensListTokensDirection.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   _ => TokensListTokensDirection._(json),
-}; }
+};}
 
 static const TokensListTokensDirection asc = TokensListTokensDirection._('asc');
 
@@ -17,11 +17,11 @@ static const List<TokensListTokensDirection> values = [asc, desc];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TokensListTokensDirection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TokensListTokensDirection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TokensListTokensDirection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TokensListTokensDirection($value)';}
+}

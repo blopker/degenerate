@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
 @immutable final class MqEventSourceWorkflowsWorkflowType {const MqEventSourceWorkflowsWorkflowType._(this.value);
 
-factory MqEventSourceWorkflowsWorkflowType.fromJson(String json) { return switch (json) {
+factory MqEventSourceWorkflowsWorkflowType.fromJson(String json) {return switch (json) {
   'workflows.workflow' => workflowsWorkflow,
   _ => MqEventSourceWorkflowsWorkflowType._(json),
-}; }
+};}
 
 static const MqEventSourceWorkflowsWorkflowType workflowsWorkflow = MqEventSourceWorkflowsWorkflowType._('workflows.workflow');
 
@@ -14,20 +14,20 @@ static const List<MqEventSourceWorkflowsWorkflowType> values = [workflowsWorkflo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MqEventSourceWorkflowsWorkflowType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MqEventSourceWorkflowsWorkflowType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MqEventSourceWorkflowsWorkflowType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MqEventSourceWorkflowsWorkflowType($value)';}
+}
 @immutable final class MqEventSourceWorkflowsWorkflow {const MqEventSourceWorkflowsWorkflow({this.type, this.workflowName, });
 
-factory MqEventSourceWorkflowsWorkflow.fromJson(Map<String, dynamic> json) { return MqEventSourceWorkflowsWorkflow(
+factory MqEventSourceWorkflowsWorkflow.fromJson(Map<String, dynamic> json) {return MqEventSourceWorkflowsWorkflow(
   type: json['type'] != null ? MqEventSourceWorkflowsWorkflowType.fromJson(json['type'] as String) : null,
   workflowName: json['workflow_name'] as String?,
-); }
+);}
 
 /// Type of source
 final MqEventSourceWorkflowsWorkflowType? type;
@@ -35,19 +35,19 @@ final MqEventSourceWorkflowsWorkflowType? type;
 /// Name of the workflow
 final String? workflowName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   'workflow_name': ?workflowName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'workflow_name'}.contains(key)); } 
-MqEventSourceWorkflowsWorkflow copyWith({MqEventSourceWorkflowsWorkflowType? Function()? type, String? Function()? workflowName, }) { return MqEventSourceWorkflowsWorkflow(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'workflow_name'}.contains(key));}
+MqEventSourceWorkflowsWorkflow copyWith({MqEventSourceWorkflowsWorkflowType? Function()? type, String? Function()? workflowName, }) {return MqEventSourceWorkflowsWorkflow(
   type: type != null ? type() : this.type,
   workflowName: workflowName != null ? workflowName() : this.workflowName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MqEventSourceWorkflowsWorkflow &&
           type == other.type &&
-          workflowName == other.workflowName; } 
-@override int get hashCode { return Object.hash(type, workflowName); } 
-@override String toString() { return 'MqEventSourceWorkflowsWorkflow(type: $type, workflowName: $workflowName)'; } 
- }
+          workflowName == other.workflowName;}
+@override int get hashCode {return Object.hash(type, workflowName);}
+@override String toString() {return 'MqEventSourceWorkflowsWorkflow(type: $type, workflowName: $workflowName)';}
+}

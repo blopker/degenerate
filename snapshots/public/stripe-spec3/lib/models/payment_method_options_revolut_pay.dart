@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls when the funds will be captured from the customer's account.
 @immutable final class PaymentMethodOptionsRevolutPayCaptureMethod {const PaymentMethodOptionsRevolutPayCaptureMethod._(this.value);
 
-factory PaymentMethodOptionsRevolutPayCaptureMethod.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsRevolutPayCaptureMethod.fromJson(String json) {return switch (json) {
   'manual' => manual,
   _ => PaymentMethodOptionsRevolutPayCaptureMethod._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsRevolutPayCaptureMethod manual = PaymentMethodOptionsRevolutPayCaptureMethod._('manual');
 
@@ -14,14 +14,14 @@ static const List<PaymentMethodOptionsRevolutPayCaptureMethod> values = [manual]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsRevolutPayCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsRevolutPayCaptureMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsRevolutPayCaptureMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsRevolutPayCaptureMethod($value)';}
+}
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
 /// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
@@ -31,11 +31,11 @@ bool get isUnknown { return !values.contains(this); }
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class PaymentMethodOptionsRevolutPaySetupFutureUsage {const PaymentMethodOptionsRevolutPaySetupFutureUsage._(this.value);
 
-factory PaymentMethodOptionsRevolutPaySetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsRevolutPaySetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   'off_session' => offSession,
   _ => PaymentMethodOptionsRevolutPaySetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsRevolutPaySetupFutureUsage none = PaymentMethodOptionsRevolutPaySetupFutureUsage._('none');
 
@@ -45,21 +45,21 @@ static const List<PaymentMethodOptionsRevolutPaySetupFutureUsage> values = [none
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsRevolutPaySetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsRevolutPaySetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsRevolutPaySetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsRevolutPaySetupFutureUsage($value)';}
+}
 /// 
 @immutable final class PaymentMethodOptionsRevolutPay {const PaymentMethodOptionsRevolutPay({this.captureMethod, this.setupFutureUsage, });
 
-factory PaymentMethodOptionsRevolutPay.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsRevolutPay(
+factory PaymentMethodOptionsRevolutPay.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsRevolutPay(
   captureMethod: json['capture_method'] != null ? PaymentMethodOptionsRevolutPayCaptureMethod.fromJson(json['capture_method'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsRevolutPaySetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// Controls when the funds will be captured from the customer's account.
 final PaymentMethodOptionsRevolutPayCaptureMethod? captureMethod;
@@ -73,19 +73,19 @@ final PaymentMethodOptionsRevolutPayCaptureMethod? captureMethod;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final PaymentMethodOptionsRevolutPaySetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsRevolutPay copyWith({PaymentMethodOptionsRevolutPayCaptureMethod? Function()? captureMethod, PaymentMethodOptionsRevolutPaySetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsRevolutPay(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key));}
+PaymentMethodOptionsRevolutPay copyWith({PaymentMethodOptionsRevolutPayCaptureMethod? Function()? captureMethod, PaymentMethodOptionsRevolutPaySetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsRevolutPay(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodOptionsRevolutPay &&
           captureMethod == other.captureMethod &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(captureMethod, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsRevolutPay(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(captureMethod, setupFutureUsage);}
+@override String toString() {return 'PaymentMethodOptionsRevolutPay(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)';}
+}

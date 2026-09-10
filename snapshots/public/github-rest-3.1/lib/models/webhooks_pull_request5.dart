@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team2.dart';import 'user.dart';import 'webhooks_pull_request5_assignee.dart';import 'webhooks_pull_request5_assignees.dart';import 'webhooks_pull_request5_auto_merge.dart';import 'webhooks_pull_request5_base.dart';import 'webhooks_pull_request5_head.dart';import 'webhooks_pull_request5_labels.dart';import 'webhooks_pull_request5_links.dart';import 'webhooks_pull_request5_merged_by.dart';import 'webhooks_pull_request5_milestone.dart';import 'webhooks_pull_request5_requested_reviewers.dart';import 'webhooks_pull_request5_requested_teams.dart';import 'webhooks_pull_request5_user.dart';@immutable final class WebhooksPullRequest5ActiveLockReason {const WebhooksPullRequest5ActiveLockReason._(this.value);
 
-factory WebhooksPullRequest5ActiveLockReason.fromJson(String json) { return switch (json) {
+factory WebhooksPullRequest5ActiveLockReason.fromJson(String json) {return switch (json) {
   'resolved' => resolved,
   'off-topic' => offTopic,
   'too heated' => tooHeated,
   'spam' => spam,
   'null' => $null,
   _ => WebhooksPullRequest5ActiveLockReason._(json),
-}; }
+};}
 
 static const WebhooksPullRequest5ActiveLockReason resolved = WebhooksPullRequest5ActiveLockReason._('resolved');
 
@@ -25,18 +25,18 @@ static const List<WebhooksPullRequest5ActiveLockReason> values = [resolved, offT
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksPullRequest5ActiveLockReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksPullRequest5ActiveLockReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhooksPullRequest5ActiveLockReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhooksPullRequest5ActiveLockReason($value)';}
+}
 /// How the author is associated with the repository.
 @immutable final class WebhooksPullRequest5AuthorAssociation {const WebhooksPullRequest5AuthorAssociation._(this.value);
 
-factory WebhooksPullRequest5AuthorAssociation.fromJson(String json) { return switch (json) {
+factory WebhooksPullRequest5AuthorAssociation.fromJson(String json) {return switch (json) {
   'COLLABORATOR' => collaborator,
   'CONTRIBUTOR' => contributor,
   'FIRST_TIMER' => firstTimer,
@@ -46,7 +46,7 @@ factory WebhooksPullRequest5AuthorAssociation.fromJson(String json) { return swi
   'NONE' => none,
   'OWNER' => owner,
   _ => WebhooksPullRequest5AuthorAssociation._(json),
-}; }
+};}
 
 static const WebhooksPullRequest5AuthorAssociation collaborator = WebhooksPullRequest5AuthorAssociation._('COLLABORATOR');
 
@@ -68,22 +68,22 @@ static const List<WebhooksPullRequest5AuthorAssociation> values = [collaborator,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksPullRequest5AuthorAssociation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksPullRequest5AuthorAssociation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhooksPullRequest5AuthorAssociation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhooksPullRequest5AuthorAssociation($value)';}
+}
 /// State of this Pull Request. Either `open` or `closed`.
 @immutable final class WebhooksPullRequest5State {const WebhooksPullRequest5State._(this.value);
 
-factory WebhooksPullRequest5State.fromJson(String json) { return switch (json) {
+factory WebhooksPullRequest5State.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   _ => WebhooksPullRequest5State._(json),
-}; }
+};}
 
 static const WebhooksPullRequest5State open = WebhooksPullRequest5State._('open');
 
@@ -93,17 +93,17 @@ static const List<WebhooksPullRequest5State> values = [open, closed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksPullRequest5State && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksPullRequest5State($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhooksPullRequest5State && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhooksPullRequest5State($value)';}
+}
 @immutable final class WebhooksPullRequest5 {const WebhooksPullRequest5({required this.createdAt, required this.activeLockReason, required this.url, required this.assignee, required this.assignees, required this.authorAssociation, required this.autoMerge, required this.base, required this.body, required this.updatedAt, required this.closedAt, required this.title, required this.commentsUrl, required this.statusesUrl, required this.commitsUrl, required this.links, required this.state, required this.diffUrl, required this.draft, required this.head, required this.htmlUrl, required this.id, required this.issueUrl, required this.labels, required this.locked, required this.reviewCommentsUrl, required this.mergeCommitSha, required this.requestedTeams, required this.requestedReviewers, required this.patchUrl, required this.mergedAt, required this.user, required this.milestone, required this.nodeId, required this.number, required this.reviewCommentUrl, this.rebaseable = const Omittable.absent(), this.mergeableState, this.mergeable = const Omittable.absent(), this.mergedBy = const Omittable.absent(), this.reviewComments, this.maintainerCanModify, this.deletions, this.commits, this.comments, this.changedFiles, this.additions, this.merged = const Omittable.absent(), });
 
-factory WebhooksPullRequest5.fromJson(Map<String, dynamic> json) { return WebhooksPullRequest5(
+factory WebhooksPullRequest5.fromJson(Map<String, dynamic> json) {return WebhooksPullRequest5(
   links: WebhooksPullRequest5Links.fromJson(json['_links'] as Map<String, dynamic>),
   activeLockReason: json['active_lock_reason'] != null ? WebhooksPullRequest5ActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
   additions: json['additions'] != null ? (json['additions'] as num).toInt() : null,
@@ -152,7 +152,7 @@ factory WebhooksPullRequest5.fromJson(Map<String, dynamic> json) { return Webhoo
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
   user: json['user'] != null ? WebhooksPullRequest5User.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhooksPullRequest5Links links;
 
@@ -258,7 +258,7 @@ final Uri url;
 
 final WebhooksPullRequest5User? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '_links': links.toJson(),
   'active_lock_reason': activeLockReason?.toJson(),
   'additions': ?additions,
@@ -307,8 +307,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('_links') &&
       json.containsKey('active_lock_reason') &&
       json.containsKey('assignee') &&
       json.containsKey('assignees') &&
@@ -343,8 +343,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('user'); } 
-WebhooksPullRequest5 copyWith({WebhooksPullRequest5Links? links, WebhooksPullRequest5ActiveLockReason? Function()? activeLockReason, int? Function()? additions, WebhooksPullRequest5Assignee? Function()? assignee, List<WebhooksPullRequest5Assignees?>? assignees, WebhooksPullRequest5AuthorAssociation? authorAssociation, WebhooksPullRequest5AutoMerge? Function()? autoMerge, WebhooksPullRequest5Base? base, String? Function()? body, int? Function()? changedFiles, DateTime? Function()? closedAt, int? Function()? comments, Uri? commentsUrl, int? Function()? commits, Uri? commitsUrl, DateTime? createdAt, int? Function()? deletions, Uri? diffUrl, bool? draft, WebhooksPullRequest5Head? head, Uri? htmlUrl, int? id, Uri? issueUrl, List<WebhooksPullRequest5Labels>? labels, bool? locked, bool? Function()? maintainerCanModify, String? Function()? mergeCommitSha, Omittable<bool?>? mergeable, String? Function()? mergeableState, Omittable<bool?>? merged, DateTime? Function()? mergedAt, Omittable<WebhooksPullRequest5MergedBy?>? mergedBy, WebhooksPullRequest5Milestone? Function()? milestone, String? nodeId, int? number, Uri? patchUrl, Omittable<bool?>? rebaseable, List<WebhooksPullRequest5RequestedReviewers>? requestedReviewers, List<WebhooksPullRequest5RequestedTeams>? requestedTeams, String? reviewCommentUrl, int? Function()? reviewComments, Uri? reviewCommentsUrl, WebhooksPullRequest5State? state, Uri? statusesUrl, String? title, DateTime? updatedAt, Uri? url, WebhooksPullRequest5User? Function()? user, }) { return WebhooksPullRequest5(
+      json.containsKey('user');}
+WebhooksPullRequest5 copyWith({WebhooksPullRequest5Links? links, WebhooksPullRequest5ActiveLockReason? Function()? activeLockReason, int? Function()? additions, WebhooksPullRequest5Assignee? Function()? assignee, List<WebhooksPullRequest5Assignees?>? assignees, WebhooksPullRequest5AuthorAssociation? authorAssociation, WebhooksPullRequest5AutoMerge? Function()? autoMerge, WebhooksPullRequest5Base? base, String? Function()? body, int? Function()? changedFiles, DateTime? Function()? closedAt, int? Function()? comments, Uri? commentsUrl, int? Function()? commits, Uri? commitsUrl, DateTime? createdAt, int? Function()? deletions, Uri? diffUrl, bool? draft, WebhooksPullRequest5Head? head, Uri? htmlUrl, int? id, Uri? issueUrl, List<WebhooksPullRequest5Labels>? labels, bool? locked, bool? Function()? maintainerCanModify, String? Function()? mergeCommitSha, Omittable<bool?>? mergeable, String? Function()? mergeableState, Omittable<bool?>? merged, DateTime? Function()? mergedAt, Omittable<WebhooksPullRequest5MergedBy?>? mergedBy, WebhooksPullRequest5Milestone? Function()? milestone, String? nodeId, int? number, Uri? patchUrl, Omittable<bool?>? rebaseable, List<WebhooksPullRequest5RequestedReviewers>? requestedReviewers, List<WebhooksPullRequest5RequestedTeams>? requestedTeams, String? reviewCommentUrl, int? Function()? reviewComments, Uri? reviewCommentsUrl, WebhooksPullRequest5State? state, Uri? statusesUrl, String? title, DateTime? updatedAt, Uri? url, WebhooksPullRequest5User? Function()? user, }) {return WebhooksPullRequest5(
   links: links ?? this.links,
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   additions: additions != null ? additions() : this.additions,
@@ -393,8 +393,8 @@ WebhooksPullRequest5 copyWith({WebhooksPullRequest5Links? links, WebhooksPullReq
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
   user: user != null ? user() : this.user,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhooksPullRequest5 &&
           links == other.links &&
           activeLockReason == other.activeLockReason &&
@@ -443,7 +443,7 @@ WebhooksPullRequest5 copyWith({WebhooksPullRequest5Links? links, WebhooksPullReq
           title == other.title &&
           updatedAt == other.updatedAt &&
           url == other.url &&
-          user == other.user; } 
-@override int get hashCode { return Object.hashAll([links, activeLockReason, additions, assignee, Object.hashAll(assignees), authorAssociation, autoMerge, base, body, changedFiles, closedAt, comments, commentsUrl, commits, commitsUrl, createdAt, deletions, diffUrl, draft, head, htmlUrl, id, issueUrl, Object.hashAll(labels), locked, maintainerCanModify, mergeCommitSha, mergeable, mergeableState, merged, mergedAt, mergedBy, milestone, nodeId, number, patchUrl, rebaseable, Object.hashAll(requestedReviewers), Object.hashAll(requestedTeams), reviewCommentUrl, reviewComments, reviewCommentsUrl, state, statusesUrl, title, updatedAt, url, user]); } 
-@override String toString() { return 'WebhooksPullRequest5(links: $links, activeLockReason: $activeLockReason, additions: $additions, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, autoMerge: $autoMerge, base: $base, body: $body, changedFiles: $changedFiles, closedAt: $closedAt, comments: $comments, commentsUrl: $commentsUrl, commits: $commits, commitsUrl: $commitsUrl, createdAt: $createdAt, deletions: $deletions, diffUrl: $diffUrl, draft: $draft, head: $head, htmlUrl: $htmlUrl, id: $id, issueUrl: $issueUrl, labels: $labels, locked: $locked, maintainerCanModify: $maintainerCanModify, mergeCommitSha: $mergeCommitSha, mergeable: $mergeable, mergeableState: $mergeableState, merged: $merged, mergedAt: $mergedAt, mergedBy: $mergedBy, milestone: $milestone, nodeId: $nodeId, number: $number, patchUrl: $patchUrl, rebaseable: $rebaseable, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, reviewCommentUrl: $reviewCommentUrl, reviewComments: $reviewComments, reviewCommentsUrl: $reviewCommentsUrl, state: $state, statusesUrl: $statusesUrl, title: $title, updatedAt: $updatedAt, url: $url, user: $user)'; } 
- }
+          user == other.user;}
+@override int get hashCode {return Object.hashAll([links, activeLockReason, additions, assignee, Object.hashAll(assignees), authorAssociation, autoMerge, base, body, changedFiles, closedAt, comments, commentsUrl, commits, commitsUrl, createdAt, deletions, diffUrl, draft, head, htmlUrl, id, issueUrl, Object.hashAll(labels), locked, maintainerCanModify, mergeCommitSha, mergeable, mergeableState, merged, mergedAt, mergedBy, milestone, nodeId, number, patchUrl, rebaseable, Object.hashAll(requestedReviewers), Object.hashAll(requestedTeams), reviewCommentUrl, reviewComments, reviewCommentsUrl, state, statusesUrl, title, updatedAt, url, user]);}
+@override String toString() {return 'WebhooksPullRequest5(links: $links, activeLockReason: $activeLockReason, additions: $additions, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, autoMerge: $autoMerge, base: $base, body: $body, changedFiles: $changedFiles, closedAt: $closedAt, comments: $comments, commentsUrl: $commentsUrl, commits: $commits, commitsUrl: $commitsUrl, createdAt: $createdAt, deletions: $deletions, diffUrl: $diffUrl, draft: $draft, head: $head, htmlUrl: $htmlUrl, id: $id, issueUrl: $issueUrl, labels: $labels, locked: $locked, maintainerCanModify: $maintainerCanModify, mergeCommitSha: $mergeCommitSha, mergeable: $mergeable, mergeableState: $mergeableState, merged: $merged, mergedAt: $mergedAt, mergedBy: $mergedBy, milestone: $milestone, nodeId: $nodeId, number: $number, patchUrl: $patchUrl, rebaseable: $rebaseable, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, reviewCommentUrl: $reviewCommentUrl, reviewComments: $reviewComments, reviewCommentsUrl: $reviewCommentsUrl, state: $state, statusesUrl: $statusesUrl, title: $title, updatedAt: $updatedAt, url: $url, user: $user)';}
+}

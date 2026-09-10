@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchTagUpdateRequest {const PatchTagUpdateRequest({this.activeDuration, this.actorCategory, this.aliasGroupNames, this.aliasGroupNamesInternal, this.analyticPriority, this.attributionConfidence, this.attributionOrganization, this.categoryUuid, this.externalReferenceLinks, this.internalDescription, this.motive, this.opsecLevel, this.originCountryIso, this.priority, this.sophisticationLevel, this.value, });
 
-factory PatchTagUpdateRequest.fromJson(Map<String, dynamic> json) { return PatchTagUpdateRequest(
+factory PatchTagUpdateRequest.fromJson(Map<String, dynamic> json) {return PatchTagUpdateRequest(
   activeDuration: json['activeDuration'] as String?,
   actorCategory: json['actorCategory'] as String?,
   aliasGroupNames: (json['aliasGroupNames'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -19,7 +19,7 @@ factory PatchTagUpdateRequest.fromJson(Map<String, dynamic> json) { return Patch
   priority: json['priority'] != null ? (json['priority'] as num).toDouble() : null,
   sophisticationLevel: json['sophisticationLevel'] as String?,
   value: json['value'] as String?,
-); }
+);}
 
 final String? activeDuration;
 
@@ -53,7 +53,7 @@ final String? sophisticationLevel;
 
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'activeDuration': ?activeDuration,
   'actorCategory': ?actorCategory,
   'aliasGroupNames': ?aliasGroupNames,
@@ -70,9 +70,9 @@ Map<String, dynamic> toJson() { return {
   'priority': ?priority,
   'sophisticationLevel': ?sophisticationLevel,
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'activeDuration', 'actorCategory', 'aliasGroupNames', 'aliasGroupNamesInternal', 'analyticPriority', 'attributionConfidence', 'attributionOrganization', 'categoryUuid', 'externalReferenceLinks', 'internalDescription', 'motive', 'opsecLevel', 'originCountryISO', 'priority', 'sophisticationLevel', 'value'}.contains(key)); } 
-PatchTagUpdateRequest copyWith({String? Function()? activeDuration, String? Function()? actorCategory, List<String>? Function()? aliasGroupNames, List<String>? Function()? aliasGroupNamesInternal, double? Function()? analyticPriority, String? Function()? attributionConfidence, String? Function()? attributionOrganization, String? Function()? categoryUuid, List<String>? Function()? externalReferenceLinks, String? Function()? internalDescription, String? Function()? motive, String? Function()? opsecLevel, String? Function()? originCountryIso, double? Function()? priority, String? Function()? sophisticationLevel, String? Function()? value, }) { return PatchTagUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'activeDuration', 'actorCategory', 'aliasGroupNames', 'aliasGroupNamesInternal', 'analyticPriority', 'attributionConfidence', 'attributionOrganization', 'categoryUuid', 'externalReferenceLinks', 'internalDescription', 'motive', 'opsecLevel', 'originCountryISO', 'priority', 'sophisticationLevel', 'value'}.contains(key));}
+PatchTagUpdateRequest copyWith({String? Function()? activeDuration, String? Function()? actorCategory, List<String>? Function()? aliasGroupNames, List<String>? Function()? aliasGroupNamesInternal, double? Function()? analyticPriority, String? Function()? attributionConfidence, String? Function()? attributionOrganization, String? Function()? categoryUuid, List<String>? Function()? externalReferenceLinks, String? Function()? internalDescription, String? Function()? motive, String? Function()? opsecLevel, String? Function()? originCountryIso, double? Function()? priority, String? Function()? sophisticationLevel, String? Function()? value, }) {return PatchTagUpdateRequest(
   activeDuration: activeDuration != null ? activeDuration() : this.activeDuration,
   actorCategory: actorCategory != null ? actorCategory() : this.actorCategory,
   aliasGroupNames: aliasGroupNames != null ? aliasGroupNames() : this.aliasGroupNames,
@@ -89,8 +89,8 @@ PatchTagUpdateRequest copyWith({String? Function()? activeDuration, String? Func
   priority: priority != null ? priority() : this.priority,
   sophisticationLevel: sophisticationLevel != null ? sophisticationLevel() : this.sophisticationLevel,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PatchTagUpdateRequest &&
           activeDuration == other.activeDuration &&
           actorCategory == other.actorCategory &&
@@ -107,7 +107,7 @@ PatchTagUpdateRequest copyWith({String? Function()? activeDuration, String? Func
           originCountryIso == other.originCountryIso &&
           priority == other.priority &&
           sophisticationLevel == other.sophisticationLevel &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(activeDuration, actorCategory, Object.hashAll(aliasGroupNames ?? const []), Object.hashAll(aliasGroupNamesInternal ?? const []), analyticPriority, attributionConfidence, attributionOrganization, categoryUuid, Object.hashAll(externalReferenceLinks ?? const []), internalDescription, motive, opsecLevel, originCountryIso, priority, sophisticationLevel, value); } 
-@override String toString() { return 'PatchTagUpdateRequest(activeDuration: $activeDuration, actorCategory: $actorCategory, aliasGroupNames: $aliasGroupNames, aliasGroupNamesInternal: $aliasGroupNamesInternal, analyticPriority: $analyticPriority, attributionConfidence: $attributionConfidence, attributionOrganization: $attributionOrganization, categoryUuid: $categoryUuid, externalReferenceLinks: $externalReferenceLinks, internalDescription: $internalDescription, motive: $motive, opsecLevel: $opsecLevel, originCountryIso: $originCountryIso, priority: $priority, sophisticationLevel: $sophisticationLevel, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(activeDuration, actorCategory, Object.hashAll(aliasGroupNames ?? const []), Object.hashAll(aliasGroupNamesInternal ?? const []), analyticPriority, attributionConfidence, attributionOrganization, categoryUuid, Object.hashAll(externalReferenceLinks ?? const []), internalDescription, motive, opsecLevel, originCountryIso, priority, sophisticationLevel, value);}
+@override String toString() {return 'PatchTagUpdateRequest(activeDuration: $activeDuration, actorCategory: $actorCategory, aliasGroupNames: $aliasGroupNames, aliasGroupNamesInternal: $aliasGroupNamesInternal, analyticPriority: $analyticPriority, attributionConfidence: $attributionConfidence, attributionOrganization: $attributionOrganization, categoryUuid: $categoryUuid, externalReferenceLinks: $externalReferenceLinks, internalDescription: $internalDescription, motive: $motive, opsecLevel: $opsecLevel, originCountryIso: $originCountryIso, priority: $priority, sophisticationLevel: $sophisticationLevel, value: $value)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the bypass reviewer
 @immutable final class SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType {const SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType._(this.value);
 
-factory SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType.fromJson(String json) { return switch (json) {
+factory SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType.fromJson(String json) {return switch (json) {
   'TEAM' => team,
   'ROLE' => role,
   _ => SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType._(json),
-}; }
+};}
 
 static const SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType team = SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType._('TEAM');
 
@@ -17,20 +17,20 @@ static const List<SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType($value)';}
+}
 @immutable final class SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers {const SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers({required this.reviewerId, required this.reviewerType, });
 
-factory SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers.fromJson(Map<String, dynamic> json) { return SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers(
+factory SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers.fromJson(Map<String, dynamic> json) {return SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers(
   reviewerId: (json['reviewer_id'] as num).toInt(),
   reviewerType: SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType.fromJson(json['reviewer_type'] as String),
-); }
+);}
 
 /// The ID of the team or role selected as a bypass reviewer
 final int reviewerId;
@@ -38,20 +38,20 @@ final int reviewerId;
 /// The type of the bypass reviewer
 final SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType reviewerType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'reviewer_id': reviewerId,
   'reviewer_type': reviewerType.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('reviewer_id') && json['reviewer_id'] is num &&
-      json.containsKey('reviewer_type'); } 
-SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers copyWith({int? reviewerId, SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType? reviewerType, }) { return SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('reviewer_id') && json['reviewer_id'] is num &&
+      json.containsKey('reviewer_type');}
+SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers copyWith({int? reviewerId, SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersReviewerType? reviewerType, }) {return SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers(
   reviewerId: reviewerId ?? this.reviewerId,
   reviewerType: reviewerType ?? this.reviewerType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers &&
           reviewerId == other.reviewerId &&
-          reviewerType == other.reviewerType; } 
-@override int get hashCode { return Object.hash(reviewerId, reviewerType); } 
-@override String toString() { return 'SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers(reviewerId: $reviewerId, reviewerType: $reviewerType)'; } 
- }
+          reviewerType == other.reviewerType;}
+@override int get hashCode {return Object.hash(reviewerId, reviewerType);}
+@override String toString() {return 'SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers(reviewerId: $reviewerId, reviewerType: $reviewerType)';}
+}

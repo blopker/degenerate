@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_managed_transforms_managed_request_headers.dart';import 'rulesets_managed_transforms_managed_response_headers.dart';/// A Managed Transforms object.
 @immutable final class RulesetsManagedTransforms {const RulesetsManagedTransforms({required this.managedRequestHeaders, required this.managedResponseHeaders, });
 
-factory RulesetsManagedTransforms.fromJson(Map<String, dynamic> json) { return RulesetsManagedTransforms(
+factory RulesetsManagedTransforms.fromJson(Map<String, dynamic> json) {return RulesetsManagedTransforms(
   managedRequestHeaders: (json['managed_request_headers'] as List<dynamic>).map((e) => RulesetsManagedTransformsManagedRequestHeaders.fromJson(e as Map<String, dynamic>)).toList(),
   managedResponseHeaders: (json['managed_response_headers'] as List<dynamic>).map((e) => RulesetsManagedTransformsManagedResponseHeaders.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The list of Managed Request Transforms.
 final List<RulesetsManagedTransformsManagedRequestHeaders> managedRequestHeaders;
@@ -14,20 +14,20 @@ final List<RulesetsManagedTransformsManagedRequestHeaders> managedRequestHeaders
 /// The list of Managed Response Transforms.
 final List<RulesetsManagedTransformsManagedResponseHeaders> managedResponseHeaders;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'managed_request_headers': managedRequestHeaders.map((e) => e.toJson()).toList(),
   'managed_response_headers': managedResponseHeaders.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('managed_request_headers') &&
-      json.containsKey('managed_response_headers'); } 
-RulesetsManagedTransforms copyWith({List<RulesetsManagedTransformsManagedRequestHeaders>? managedRequestHeaders, List<RulesetsManagedTransformsManagedResponseHeaders>? managedResponseHeaders, }) { return RulesetsManagedTransforms(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('managed_request_headers') &&
+      json.containsKey('managed_response_headers');}
+RulesetsManagedTransforms copyWith({List<RulesetsManagedTransformsManagedRequestHeaders>? managedRequestHeaders, List<RulesetsManagedTransformsManagedResponseHeaders>? managedResponseHeaders, }) {return RulesetsManagedTransforms(
   managedRequestHeaders: managedRequestHeaders ?? this.managedRequestHeaders,
   managedResponseHeaders: managedResponseHeaders ?? this.managedResponseHeaders,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsManagedTransforms &&
           listEquals(managedRequestHeaders, other.managedRequestHeaders) &&
-          listEquals(managedResponseHeaders, other.managedResponseHeaders); } 
-@override int get hashCode { return Object.hash(Object.hashAll(managedRequestHeaders), Object.hashAll(managedResponseHeaders)); } 
-@override String toString() { return 'RulesetsManagedTransforms(managedRequestHeaders: $managedRequestHeaders, managedResponseHeaders: $managedResponseHeaders)'; } 
- }
+          listEquals(managedResponseHeaders, other.managedResponseHeaders);}
+@override int get hashCode {return Object.hash(Object.hashAll(managedRequestHeaders), Object.hashAll(managedResponseHeaders));}
+@override String toString() {return 'RulesetsManagedTransforms(managedRequestHeaders: $managedRequestHeaders, managedResponseHeaders: $managedResponseHeaders)';}
+}

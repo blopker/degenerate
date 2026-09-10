@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityAndAnalysisSecretScanningNonProviderPatternsStatus {const SecurityAndAnalysisSecretScanningNonProviderPatternsStatus._(this.value);
 
-factory SecurityAndAnalysisSecretScanningNonProviderPatternsStatus.fromJson(String json) { return switch (json) {
+factory SecurityAndAnalysisSecretScanningNonProviderPatternsStatus.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   _ => SecurityAndAnalysisSecretScanningNonProviderPatternsStatus._(json),
-}; }
+};}
 
 static const SecurityAndAnalysisSecretScanningNonProviderPatternsStatus enabled = SecurityAndAnalysisSecretScanningNonProviderPatternsStatus._('enabled');
 
@@ -16,32 +16,32 @@ static const List<SecurityAndAnalysisSecretScanningNonProviderPatternsStatus> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecurityAndAnalysisSecretScanningNonProviderPatternsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecurityAndAnalysisSecretScanningNonProviderPatternsStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SecurityAndAnalysisSecretScanningNonProviderPatternsStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SecurityAndAnalysisSecretScanningNonProviderPatternsStatus($value)';}
+}
 @immutable final class SecurityAndAnalysisSecretScanningNonProviderPatterns {const SecurityAndAnalysisSecretScanningNonProviderPatterns({this.status});
 
-factory SecurityAndAnalysisSecretScanningNonProviderPatterns.fromJson(Map<String, dynamic> json) { return SecurityAndAnalysisSecretScanningNonProviderPatterns(
+factory SecurityAndAnalysisSecretScanningNonProviderPatterns.fromJson(Map<String, dynamic> json) {return SecurityAndAnalysisSecretScanningNonProviderPatterns(
   status: json['status'] != null ? SecurityAndAnalysisSecretScanningNonProviderPatternsStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 final SecurityAndAnalysisSecretScanningNonProviderPatternsStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
-SecurityAndAnalysisSecretScanningNonProviderPatterns copyWith({SecurityAndAnalysisSecretScanningNonProviderPatternsStatus? Function()? status}) { return SecurityAndAnalysisSecretScanningNonProviderPatterns(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'status'}.contains(key));}
+SecurityAndAnalysisSecretScanningNonProviderPatterns copyWith({SecurityAndAnalysisSecretScanningNonProviderPatternsStatus? Function()? status}) {return SecurityAndAnalysisSecretScanningNonProviderPatterns(
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecurityAndAnalysisSecretScanningNonProviderPatterns &&
-          status == other.status; } 
-@override int get hashCode { return status.hashCode; } 
-@override String toString() { return 'SecurityAndAnalysisSecretScanningNonProviderPatterns(status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return status.hashCode;}
+@override String toString() {return 'SecurityAndAnalysisSecretScanningNonProviderPatterns(status: $status)';}
+}

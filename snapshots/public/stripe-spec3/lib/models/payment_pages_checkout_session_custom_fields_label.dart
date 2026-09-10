@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the label.
 @immutable final class PaymentPagesCheckoutSessionCustomFieldsLabelType {const PaymentPagesCheckoutSessionCustomFieldsLabelType._(this.value);
 
-factory PaymentPagesCheckoutSessionCustomFieldsLabelType.fromJson(String json) { return switch (json) {
+factory PaymentPagesCheckoutSessionCustomFieldsLabelType.fromJson(String json) {return switch (json) {
   'custom' => custom,
   _ => PaymentPagesCheckoutSessionCustomFieldsLabelType._(json),
-}; }
+};}
 
 static const PaymentPagesCheckoutSessionCustomFieldsLabelType custom = PaymentPagesCheckoutSessionCustomFieldsLabelType._('custom');
 
@@ -14,21 +14,21 @@ static const List<PaymentPagesCheckoutSessionCustomFieldsLabelType> values = [cu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentPagesCheckoutSessionCustomFieldsLabelType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentPagesCheckoutSessionCustomFieldsLabelType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentPagesCheckoutSessionCustomFieldsLabelType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentPagesCheckoutSessionCustomFieldsLabelType($value)';}
+}
 /// 
 @immutable final class PaymentPagesCheckoutSessionCustomFieldsLabel {const PaymentPagesCheckoutSessionCustomFieldsLabel({required this.type, this.custom = const Omittable.absent(), });
 
-factory PaymentPagesCheckoutSessionCustomFieldsLabel.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomFieldsLabel(
+factory PaymentPagesCheckoutSessionCustomFieldsLabel.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionCustomFieldsLabel(
   custom: json.containsKey('custom') ? Omittable(json['custom'] as String?) : const Omittable.absent(),
   type: PaymentPagesCheckoutSessionCustomFieldsLabelType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Custom text for the label, displayed to the customer. Up to 50 characters.
 final Omittable<String?> custom;
@@ -36,19 +36,19 @@ final Omittable<String?> custom;
 /// The type of the label.
 final PaymentPagesCheckoutSessionCustomFieldsLabelType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (custom.isPresent) 'custom': custom.value,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentPagesCheckoutSessionCustomFieldsLabel copyWith({Omittable<String?>? custom, PaymentPagesCheckoutSessionCustomFieldsLabelType? type, }) { return PaymentPagesCheckoutSessionCustomFieldsLabel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PaymentPagesCheckoutSessionCustomFieldsLabel copyWith({Omittable<String?>? custom, PaymentPagesCheckoutSessionCustomFieldsLabelType? type, }) {return PaymentPagesCheckoutSessionCustomFieldsLabel(
   custom: custom ?? this.custom,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentPagesCheckoutSessionCustomFieldsLabel &&
           custom == other.custom &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(custom, type); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionCustomFieldsLabel(custom: $custom, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(custom, type);}
+@override String toString() {return 'PaymentPagesCheckoutSessionCustomFieldsLabel(custom: $custom, type: $type)';}
+}

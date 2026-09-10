@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order billing history by.
 @immutable final class UserBillingHistoryDeprecatedBillingHistoryDetailsOrder {const UserBillingHistoryDeprecatedBillingHistoryDetailsOrder._(this.value);
 
-factory UserBillingHistoryDeprecatedBillingHistoryDetailsOrder.fromJson(String json) { return switch (json) {
+factory UserBillingHistoryDeprecatedBillingHistoryDetailsOrder.fromJson(String json) {return switch (json) {
   'type' => type,
   'occurred_at' => occurredAt,
   'action' => action,
   _ => UserBillingHistoryDeprecatedBillingHistoryDetailsOrder._(json),
-}; }
+};}
 
 static const UserBillingHistoryDeprecatedBillingHistoryDetailsOrder type = UserBillingHistoryDeprecatedBillingHistoryDetailsOrder._('type');
 
@@ -20,11 +20,11 @@ static const List<UserBillingHistoryDeprecatedBillingHistoryDetailsOrder> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserBillingHistoryDeprecatedBillingHistoryDetailsOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UserBillingHistoryDeprecatedBillingHistoryDetailsOrder($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UserBillingHistoryDeprecatedBillingHistoryDetailsOrder && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UserBillingHistoryDeprecatedBillingHistoryDetailsOrder($value)';}
+}

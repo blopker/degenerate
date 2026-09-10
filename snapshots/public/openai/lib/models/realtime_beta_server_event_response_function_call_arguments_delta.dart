@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, 
 /// 
 @immutable final class RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType {const RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType._(this.value);
 
-factory RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType.fromJson(String json) {return switch (json) {
   'response.function_call_arguments.delta' => responseFunctionCallArgumentsDelta,
   _ => RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType._(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType responseFunctionCallArgumentsDelta = RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType._('response.function_call_arguments.delta');
 
@@ -15,19 +15,19 @@ static const List<RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType>
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType($value)';}
+}
 /// Returned when the model-generated function call arguments are updated.
 /// 
 @immutable final class RealtimeBetaServerEventResponseFunctionCallArgumentsDelta {const RealtimeBetaServerEventResponseFunctionCallArgumentsDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.callId, required this.delta, });
 
-factory RealtimeBetaServerEventResponseFunctionCallArgumentsDelta.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseFunctionCallArgumentsDelta(
+factory RealtimeBetaServerEventResponseFunctionCallArgumentsDelta.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventResponseFunctionCallArgumentsDelta(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType.fromJson(json['type'] as String),
   responseId: json['response_id'] as String,
@@ -35,7 +35,7 @@ factory RealtimeBetaServerEventResponseFunctionCallArgumentsDelta.fromJson(Map<S
   outputIndex: (json['output_index'] as num).toInt(),
   callId: json['call_id'] as String,
   delta: json['delta'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -59,7 +59,7 @@ final String callId;
 /// The arguments delta as a JSON string.
 final String delta;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'response_id': responseId,
@@ -67,15 +67,15 @@ Map<String, dynamic> toJson() { return {
   'output_index': outputIndex,
   'call_id': callId,
   'delta': delta,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('call_id') && json['call_id'] is String &&
-      json.containsKey('delta') && json['delta'] is String; } 
-RealtimeBetaServerEventResponseFunctionCallArgumentsDelta copyWith({String? eventId, RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType? type, String? responseId, String? itemId, int? outputIndex, String? callId, String? delta, }) { return RealtimeBetaServerEventResponseFunctionCallArgumentsDelta(
+      json.containsKey('delta') && json['delta'] is String;}
+RealtimeBetaServerEventResponseFunctionCallArgumentsDelta copyWith({String? eventId, RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType? type, String? responseId, String? itemId, int? outputIndex, String? callId, String? delta, }) {return RealtimeBetaServerEventResponseFunctionCallArgumentsDelta(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,
@@ -83,8 +83,8 @@ RealtimeBetaServerEventResponseFunctionCallArgumentsDelta copyWith({String? even
   outputIndex: outputIndex ?? this.outputIndex,
   callId: callId ?? this.callId,
   delta: delta ?? this.delta,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeBetaServerEventResponseFunctionCallArgumentsDelta &&
           eventId == other.eventId &&
           type == other.type &&
@@ -92,7 +92,7 @@ RealtimeBetaServerEventResponseFunctionCallArgumentsDelta copyWith({String? even
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           callId == other.callId &&
-          delta == other.delta; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, callId, delta); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseFunctionCallArgumentsDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, callId: $callId, delta: $delta)'; } 
- }
+          delta == other.delta;}
+@override int get hashCode {return Object.hash(eventId, type, responseId, itemId, outputIndex, callId, delta);}
+@override String toString() {return 'RealtimeBetaServerEventResponseFunctionCallArgumentsDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, callId: $callId, delta: $delta)';}
+}

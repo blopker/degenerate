@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteRadarValueListsValueListRequest {const DeleteRadarValueListsValueListRequest();
 
-factory DeleteRadarValueListsValueListRequest.fromJson(Map<String, dynamic> _) { return const DeleteRadarValueListsValueListRequest(); }
+factory DeleteRadarValueListsValueListRequest.fromJson(Map<String, dynamic> _) {return const DeleteRadarValueListsValueListRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-DeleteRadarValueListsValueListRequest copyWith() { return const DeleteRadarValueListsValueListRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+DeleteRadarValueListsValueListRequest copyWith() {return const DeleteRadarValueListsValueListRequest(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is DeleteRadarValueListsValueListRequest; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'DeleteRadarValueListsValueListRequest()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is DeleteRadarValueListsValueListRequest;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'DeleteRadarValueListsValueListRequest()';}
+}

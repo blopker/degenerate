@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_approval_group.dart';import 'access_approval_required.dart';import 'access_components_schemas_session_duration.dart';import 'access_connection_rules.dart';import 'access_decision.dart';import 'access_isolation_required.dart';import 'access_mfa_config.dart';import 'access_policy_components_schemas_name.dart';import 'access_precedence.dart';import 'access_purpose_justification_prompt.dart';import 'access_purpose_justification_required.dart';import 'access_rule.dart';import 'access_schemas_uuid.dart';/// An application-scoped policy JSON. If the policy does not yet exist, it will be created.
 @immutable final class BrowserIsolationPermissionsApplicationPoliciesVariant3 {const BrowserIsolationPermissionsApplicationPoliciesVariant3({required this.decision, required this.include, required this.name, this.precedence, this.approvalGroups, this.approvalRequired, this.connectionRules, this.isolationRequired, this.mfaConfig, this.purposeJustificationPrompt, this.purposeJustificationRequired, this.sessionDuration, this.exclude, this.require, this.id, });
 
-factory BrowserIsolationPermissionsApplicationPoliciesVariant3.fromJson(Map<String, dynamic> json) { return BrowserIsolationPermissionsApplicationPoliciesVariant3(
+factory BrowserIsolationPermissionsApplicationPoliciesVariant3.fromJson(Map<String, dynamic> json) {return BrowserIsolationPermissionsApplicationPoliciesVariant3(
   precedence: json['precedence'] != null ? AccessPrecedence.fromJson(json['precedence'] as num) : null,
   approvalGroups: (json['approval_groups'] as List<dynamic>?)?.map((e) => AccessApprovalGroup.fromJson(e as Map<String, dynamic>)).toList(),
   approvalRequired: json['approval_required'] != null ? AccessApprovalRequired.fromJson(json['approval_required'] as bool) : null,
@@ -19,7 +19,7 @@ factory BrowserIsolationPermissionsApplicationPoliciesVariant3.fromJson(Map<Stri
   name: AccessPolicyComponentsSchemasName.fromJson(json['name'] as String),
   require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
   id: json['id'] != null ? AccessSchemasUuid.fromJson(json['id'] as String) : null,
-); }
+);}
 
 final AccessPrecedence? precedence;
 
@@ -51,7 +51,7 @@ final List<AccessRule>? require;
 
 final AccessSchemasUuid? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (precedence != null) 'precedence': precedence?.toJson(),
   if (approvalGroups != null) 'approval_groups': approvalGroups?.map((e) => e.toJson()).toList(),
   if (approvalRequired != null) 'approval_required': approvalRequired?.toJson(),
@@ -67,11 +67,11 @@ Map<String, dynamic> toJson() { return {
   'name': name.toJson(),
   if (require != null) 'require': require?.map((e) => e.toJson()).toList(),
   if (id != null) 'id': id?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('decision') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('decision') &&
       json.containsKey('include') &&
-      json.containsKey('name'); } 
-BrowserIsolationPermissionsApplicationPoliciesVariant3 copyWith({AccessPrecedence? Function()? precedence, List<AccessApprovalGroup>? Function()? approvalGroups, AccessApprovalRequired? Function()? approvalRequired, AccessConnectionRules? Function()? connectionRules, AccessIsolationRequired? Function()? isolationRequired, AccessMfaConfig? Function()? mfaConfig, AccessPurposeJustificationPrompt? Function()? purposeJustificationPrompt, AccessPurposeJustificationRequired? Function()? purposeJustificationRequired, AccessComponentsSchemasSessionDuration? Function()? sessionDuration, AccessDecision? decision, List<AccessRule>? Function()? exclude, List<AccessRule>? include, AccessPolicyComponentsSchemasName? name, List<AccessRule>? Function()? require, AccessSchemasUuid? Function()? id, }) { return BrowserIsolationPermissionsApplicationPoliciesVariant3(
+      json.containsKey('name');}
+BrowserIsolationPermissionsApplicationPoliciesVariant3 copyWith({AccessPrecedence? Function()? precedence, List<AccessApprovalGroup>? Function()? approvalGroups, AccessApprovalRequired? Function()? approvalRequired, AccessConnectionRules? Function()? connectionRules, AccessIsolationRequired? Function()? isolationRequired, AccessMfaConfig? Function()? mfaConfig, AccessPurposeJustificationPrompt? Function()? purposeJustificationPrompt, AccessPurposeJustificationRequired? Function()? purposeJustificationRequired, AccessComponentsSchemasSessionDuration? Function()? sessionDuration, AccessDecision? decision, List<AccessRule>? Function()? exclude, List<AccessRule>? include, AccessPolicyComponentsSchemasName? name, List<AccessRule>? Function()? require, AccessSchemasUuid? Function()? id, }) {return BrowserIsolationPermissionsApplicationPoliciesVariant3(
   precedence: precedence != null ? precedence() : this.precedence,
   approvalGroups: approvalGroups != null ? approvalGroups() : this.approvalGroups,
   approvalRequired: approvalRequired != null ? approvalRequired() : this.approvalRequired,
@@ -87,8 +87,8 @@ BrowserIsolationPermissionsApplicationPoliciesVariant3 copyWith({AccessPrecedenc
   name: name ?? this.name,
   require: require != null ? require() : this.require,
   id: id != null ? id() : this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BrowserIsolationPermissionsApplicationPoliciesVariant3 &&
           precedence == other.precedence &&
           listEquals(approvalGroups, other.approvalGroups) &&
@@ -104,7 +104,7 @@ BrowserIsolationPermissionsApplicationPoliciesVariant3 copyWith({AccessPrecedenc
           listEquals(include, other.include) &&
           name == other.name &&
           listEquals(require, other.require) &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(precedence, Object.hashAll(approvalGroups ?? const []), approvalRequired, connectionRules, isolationRequired, mfaConfig, purposeJustificationPrompt, purposeJustificationRequired, sessionDuration, decision, Object.hashAll(exclude ?? const []), Object.hashAll(include), name, Object.hashAll(require ?? const []), id); } 
-@override String toString() { return 'BrowserIsolationPermissionsApplicationPoliciesVariant3(precedence: $precedence, approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, connectionRules: $connectionRules, isolationRequired: $isolationRequired, mfaConfig: $mfaConfig, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, sessionDuration: $sessionDuration, decision: $decision, exclude: $exclude, include: $include, name: $name, require: $require, id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return Object.hash(precedence, Object.hashAll(approvalGroups ?? const []), approvalRequired, connectionRules, isolationRequired, mfaConfig, purposeJustificationPrompt, purposeJustificationRequired, sessionDuration, decision, Object.hashAll(exclude ?? const []), Object.hashAll(include), name, Object.hashAll(require ?? const []), id);}
+@override String toString() {return 'BrowserIsolationPermissionsApplicationPoliciesVariant3(precedence: $precedence, approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, connectionRules: $connectionRules, isolationRequired: $isolationRequired, mfaConfig: $mfaConfig, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, sessionDuration: $sessionDuration, decision: $decision, exclude: $exclude, include: $include, name: $name, require: $require, id: $id)';}
+}

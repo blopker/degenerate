@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'local_object_reference.dart';/// Represents a Rados Block Device mount that lasts the lifetime of a pod. RBD volumes support ownership management and SELinux relabeling.
 @immutable final class RbdVolumeSource {const RbdVolumeSource({required this.image, required this.monitors, this.fsType, this.keyring, this.pool, this.readOnly, this.secretRef, this.user, });
 
-factory RbdVolumeSource.fromJson(Map<String, dynamic> json) { return RbdVolumeSource(
+factory RbdVolumeSource.fromJson(Map<String, dynamic> json) {return RbdVolumeSource(
   fsType: json['fsType'] as String?,
   image: json['image'] as String,
   keyring: json['keyring'] as String?,
@@ -12,7 +12,7 @@ factory RbdVolumeSource.fromJson(Map<String, dynamic> json) { return RbdVolumeSo
   readOnly: json['readOnly'] as bool?,
   secretRef: json['secretRef'] != null ? LocalObjectReference.fromJson(json['secretRef'] as Map<String, dynamic>) : null,
   user: json['user'] as String?,
-); }
+);}
 
 /// fsType is the filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#rbd
 final String? fsType;
@@ -39,12 +39,12 @@ final LocalObjectReference? secretRef;
 final String? user;
 
 /// The value with the schema default applied when absent.
-String get keyringOrDefault { return keyring ?? '/etc/ceph/keyring'; } 
+String get keyringOrDefault {return keyring ?? '/etc/ceph/keyring';}
 /// The value with the schema default applied when absent.
-String get poolOrDefault { return pool ?? 'rbd'; } 
+String get poolOrDefault {return pool ?? 'rbd';}
 /// The value with the schema default applied when absent.
-String get userOrDefault { return user ?? 'admin'; } 
-Map<String, dynamic> toJson() { return {
+String get userOrDefault {return user ?? 'admin';}
+Map<String, dynamic> toJson() {return {
   'fsType': ?fsType,
   'image': image,
   'keyring': ?keyring,
@@ -53,10 +53,10 @@ Map<String, dynamic> toJson() { return {
   'readOnly': ?readOnly,
   if (secretRef != null) 'secretRef': secretRef?.toJson(),
   'user': ?user,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('image') && json['image'] is String &&
-      json.containsKey('monitors'); } 
-RbdVolumeSource copyWith({String? Function()? fsType, String? image, String? Function()? keyring, List<String>? monitors, String? Function()? pool, bool? Function()? readOnly, LocalObjectReference? Function()? secretRef, String? Function()? user, }) { return RbdVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('image') && json['image'] is String &&
+      json.containsKey('monitors');}
+RbdVolumeSource copyWith({String? Function()? fsType, String? image, String? Function()? keyring, List<String>? monitors, String? Function()? pool, bool? Function()? readOnly, LocalObjectReference? Function()? secretRef, String? Function()? user, }) {return RbdVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   image: image ?? this.image,
   keyring: keyring != null ? keyring() : this.keyring,
@@ -65,8 +65,8 @@ RbdVolumeSource copyWith({String? Function()? fsType, String? image, String? Fun
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   secretRef: secretRef != null ? secretRef() : this.secretRef,
   user: user != null ? user() : this.user,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RbdVolumeSource &&
           fsType == other.fsType &&
           image == other.image &&
@@ -75,7 +75,7 @@ RbdVolumeSource copyWith({String? Function()? fsType, String? image, String? Fun
           pool == other.pool &&
           readOnly == other.readOnly &&
           secretRef == other.secretRef &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(fsType, image, keyring, Object.hashAll(monitors), pool, readOnly, secretRef, user); } 
-@override String toString() { return 'RbdVolumeSource(fsType: $fsType, image: $image, keyring: $keyring, monitors: $monitors, pool: $pool, readOnly: $readOnly, secretRef: $secretRef, user: $user)'; } 
- }
+          user == other.user;}
+@override int get hashCode {return Object.hash(fsType, image, keyring, Object.hashAll(monitors), pool, readOnly, secretRef, user);}
+@override String toString() {return 'RbdVolumeSource(fsType: $fsType, image: $image, keyring: $keyring, monitors: $monitors, pool: $pool, readOnly: $readOnly, secretRef: $secretRef, user: $user)';}
+}

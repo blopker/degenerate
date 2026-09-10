@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1 {const PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1._(this.value);
 
-factory PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1.fromJson(String json) {return switch (json) {
   'ach_credit_transfer' => achCreditTransfer,
   'ach_debit' => achDebit,
   'acss_debit' => acssDebit,
@@ -46,7 +46,7 @@ factory PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTyp
   'us_bank_account' => usBankAccount,
   'wechat_pay' => wechatPay,
   _ => PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1 achCreditTransfer = PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1._('ach_credit_transfer');
 
@@ -136,20 +136,20 @@ static const List<PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymen
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1($value)';}
+}
 @immutable final class PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2 {const PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2._(this.value);
 
-factory PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2 $empty = PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2._('');
 
@@ -157,14 +157,14 @@ static const List<PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymen
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2($value)';}
+}
 
 @immutable
 final class PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypes {

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'merge_group.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookMergeGroupDestroyedAction {const WebhookMergeGroupDestroyedAction._(this.value);
 
-factory WebhookMergeGroupDestroyedAction.fromJson(String json) { return switch (json) {
+factory WebhookMergeGroupDestroyedAction.fromJson(String json) {return switch (json) {
   'destroyed' => destroyed,
   _ => WebhookMergeGroupDestroyedAction._(json),
-}; }
+};}
 
 static const WebhookMergeGroupDestroyedAction destroyed = WebhookMergeGroupDestroyedAction._('destroyed');
 
@@ -13,23 +13,23 @@ static const List<WebhookMergeGroupDestroyedAction> values = [destroyed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMergeGroupDestroyedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMergeGroupDestroyedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookMergeGroupDestroyedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookMergeGroupDestroyedAction($value)';}
+}
 /// Explains why the merge group is being destroyed. The group could have been merged, removed from the queue (dequeued), or invalidated by an earlier queue entry being dequeued (invalidated).
 @immutable final class WebhookMergeGroupDestroyedReason {const WebhookMergeGroupDestroyedReason._(this.value);
 
-factory WebhookMergeGroupDestroyedReason.fromJson(String json) { return switch (json) {
+factory WebhookMergeGroupDestroyedReason.fromJson(String json) {return switch (json) {
   'merged' => merged,
   'invalidated' => invalidated,
   'dequeued' => dequeued,
   _ => WebhookMergeGroupDestroyedReason._(json),
-}; }
+};}
 
 static const WebhookMergeGroupDestroyedReason merged = WebhookMergeGroupDestroyedReason._('merged');
 
@@ -41,17 +41,17 @@ static const List<WebhookMergeGroupDestroyedReason> values = [merged, invalidate
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMergeGroupDestroyedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMergeGroupDestroyedReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookMergeGroupDestroyedReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookMergeGroupDestroyedReason($value)';}
+}
 @immutable final class WebhookMergeGroupDestroyed {const WebhookMergeGroupDestroyed({required this.action, required this.mergeGroup, this.reason, this.installation, this.organization, this.repository, this.sender, });
 
-factory WebhookMergeGroupDestroyed.fromJson(Map<String, dynamic> json) { return WebhookMergeGroupDestroyed(
+factory WebhookMergeGroupDestroyed.fromJson(Map<String, dynamic> json) {return WebhookMergeGroupDestroyed(
   action: WebhookMergeGroupDestroyedAction.fromJson(json['action'] as String),
   reason: json['reason'] != null ? WebhookMergeGroupDestroyedReason.fromJson(json['reason'] as String) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -59,7 +59,7 @@ factory WebhookMergeGroupDestroyed.fromJson(Map<String, dynamic> json) { return 
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookMergeGroupDestroyedAction action;
 
@@ -76,7 +76,7 @@ final RepositoryWebhooks? repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (reason != null) 'reason': reason?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -84,10 +84,10 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
-      json.containsKey('merge_group'); } 
-WebhookMergeGroupDestroyed copyWith({WebhookMergeGroupDestroyedAction? action, WebhookMergeGroupDestroyedReason? Function()? reason, SimpleInstallation? Function()? installation, MergeGroup? mergeGroup, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, }) { return WebhookMergeGroupDestroyed(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
+      json.containsKey('merge_group');}
+WebhookMergeGroupDestroyed copyWith({WebhookMergeGroupDestroyedAction? action, WebhookMergeGroupDestroyedReason? Function()? reason, SimpleInstallation? Function()? installation, MergeGroup? mergeGroup, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, }) {return WebhookMergeGroupDestroyed(
   action: action ?? this.action,
   reason: reason != null ? reason() : this.reason,
   installation: installation != null ? installation() : this.installation,
@@ -95,8 +95,8 @@ WebhookMergeGroupDestroyed copyWith({WebhookMergeGroupDestroyedAction? action, W
   organization: organization != null ? organization() : this.organization,
   repository: repository != null ? repository() : this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookMergeGroupDestroyed &&
           action == other.action &&
           reason == other.reason &&
@@ -104,7 +104,7 @@ WebhookMergeGroupDestroyed copyWith({WebhookMergeGroupDestroyedAction? action, W
           mergeGroup == other.mergeGroup &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, reason, installation, mergeGroup, organization, repository, sender); } 
-@override String toString() { return 'WebhookMergeGroupDestroyed(action: $action, reason: $reason, installation: $installation, mergeGroup: $mergeGroup, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, reason, installation, mergeGroup, organization, repository, sender);}
+@override String toString() {return 'WebhookMergeGroupDestroyed(action: $action, reason: $reason, installation: $installation, mergeGroup: $mergeGroup, organization: $organization, repository: $repository, sender: $sender)';}
+}

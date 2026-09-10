@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_as112_top_locations_by_edns_response_result_meta_confidence_info.dart';import 'radar_get_dns_as112_top_locations_by_edns_response_result_meta_date_range.dart';import 'radar_get_dns_as112_top_locations_by_edns_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 @immutable final class RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaNormalization {const RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaNormalization._(this.value);
 
-factory RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+factory RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaNormalization.fromJson(String json) {return switch (json) {
   'PERCENTAGE' => percentage,
   'MIN0_MAX' => min0Max,
   'MIN_MAX' => minMax,
@@ -13,7 +13,7 @@ factory RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaNormalization.fromJs
   'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
   'RATIO' => ratio,
   _ => RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaNormalization._(json),
-}; }
+};}
 
 static const RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaNormalization percentage = RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaNormalization._('PERCENTAGE');
 
@@ -35,24 +35,24 @@ static const List<RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaNormalizat
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaNormalization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaNormalization($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaNormalization && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaNormalization($value)';}
+}
 /// Metadata for the results.
 @immutable final class RadarGetDnsAs112TopLocationsByEdnsResponseResultMeta {const RadarGetDnsAs112TopLocationsByEdnsResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
-factory RadarGetDnsAs112TopLocationsByEdnsResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TopLocationsByEdnsResponseResultMeta(
+factory RadarGetDnsAs112TopLocationsByEdnsResponseResultMeta.fromJson(Map<String, dynamic> json) {return RadarGetDnsAs112TopLocationsByEdnsResponseResultMeta(
   confidenceInfo: json['confidenceInfo'] != null ? RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
   lastUpdated: DateTime.parse(json['lastUpdated'] as String),
   normalization: RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaNormalization.fromJson(json['normalization'] as String),
   units: (json['units'] as List<dynamic>).map((e) => RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaConfidenceInfo? confidenceInfo;
 
@@ -67,32 +67,32 @@ final RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaNormalization normaliz
 /// Measurement units for the results.
 final List<RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaUnits> units;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'confidenceInfo': confidenceInfo?.toJson(),
   'dateRange': dateRange.map((e) => e.toJson()).toList(),
   'lastUpdated': lastUpdated.toIso8601String(),
   'normalization': normalization.toJson(),
   'units': units.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('confidenceInfo') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('confidenceInfo') &&
       json.containsKey('dateRange') &&
       json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
       json.containsKey('normalization') &&
-      json.containsKey('units'); } 
-RadarGetDnsAs112TopLocationsByEdnsResponseResultMeta copyWith({RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaConfidenceInfo? Function()? confidenceInfo, List<RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaNormalization? normalization, List<RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaUnits>? units, }) { return RadarGetDnsAs112TopLocationsByEdnsResponseResultMeta(
+      json.containsKey('units');}
+RadarGetDnsAs112TopLocationsByEdnsResponseResultMeta copyWith({RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaConfidenceInfo? Function()? confidenceInfo, List<RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaNormalization? normalization, List<RadarGetDnsAs112TopLocationsByEdnsResponseResultMetaUnits>? units, }) {return RadarGetDnsAs112TopLocationsByEdnsResponseResultMeta(
   confidenceInfo: confidenceInfo != null ? confidenceInfo() : this.confidenceInfo,
   dateRange: dateRange ?? this.dateRange,
   lastUpdated: lastUpdated ?? this.lastUpdated,
   normalization: normalization ?? this.normalization,
   units: units ?? this.units,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetDnsAs112TopLocationsByEdnsResponseResultMeta &&
           confidenceInfo == other.confidenceInfo &&
           listEquals(dateRange, other.dateRange) &&
           lastUpdated == other.lastUpdated &&
           normalization == other.normalization &&
-          listEquals(units, other.units); } 
-@override int get hashCode { return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
-@override String toString() { return 'RadarGetDnsAs112TopLocationsByEdnsResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
- }
+          listEquals(units, other.units);}
+@override int get hashCode {return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units));}
+@override String toString() {return 'RadarGetDnsAs112TopLocationsByEdnsResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)';}
+}

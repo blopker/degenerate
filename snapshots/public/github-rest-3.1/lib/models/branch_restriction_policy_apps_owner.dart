@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BranchRestrictionPolicyAppsOwner {const BranchRestrictionPolicyAppsOwner({this.login, this.id, this.nodeId, this.url, this.reposUrl, this.eventsUrl, this.hooksUrl, this.issuesUrl, this.membersUrl, this.publicMembersUrl, this.avatarUrl, this.description, this.gravatarId, this.htmlUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.starredUrl, this.subscriptionsUrl, this.organizationsUrl, this.receivedEventsUrl, this.type, this.siteAdmin, this.userViewType, });
 
-factory BranchRestrictionPolicyAppsOwner.fromJson(Map<String, dynamic> json) { return BranchRestrictionPolicyAppsOwner(
+factory BranchRestrictionPolicyAppsOwner.fromJson(Map<String, dynamic> json) {return BranchRestrictionPolicyAppsOwner(
   login: json['login'] as String?,
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   nodeId: json['node_id'] as String?,
@@ -27,7 +27,7 @@ factory BranchRestrictionPolicyAppsOwner.fromJson(Map<String, dynamic> json) { r
   type: json['type'] as String?,
   siteAdmin: json['site_admin'] as bool?,
   userViewType: json['user_view_type'] as String?,
-); }
+);}
 
 final String? login;
 
@@ -77,7 +77,7 @@ final bool? siteAdmin;
 
 final String? userViewType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'login': ?login,
   'id': ?id,
   'node_id': ?nodeId,
@@ -102,9 +102,9 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   'site_admin': ?siteAdmin,
   'user_view_type': ?userViewType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'login', 'id', 'node_id', 'url', 'repos_url', 'events_url', 'hooks_url', 'issues_url', 'members_url', 'public_members_url', 'avatar_url', 'description', 'gravatar_id', 'html_url', 'followers_url', 'following_url', 'gists_url', 'starred_url', 'subscriptions_url', 'organizations_url', 'received_events_url', 'type', 'site_admin', 'user_view_type'}.contains(key)); } 
-BranchRestrictionPolicyAppsOwner copyWith({String? Function()? login, int? Function()? id, String? Function()? nodeId, String? Function()? url, String? Function()? reposUrl, String? Function()? eventsUrl, String? Function()? hooksUrl, String? Function()? issuesUrl, String? Function()? membersUrl, String? Function()? publicMembersUrl, String? Function()? avatarUrl, String? Function()? description, String? Function()? gravatarId, String? Function()? htmlUrl, String? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? starredUrl, String? Function()? subscriptionsUrl, String? Function()? organizationsUrl, String? Function()? receivedEventsUrl, String? Function()? type, bool? Function()? siteAdmin, String? Function()? userViewType, }) { return BranchRestrictionPolicyAppsOwner(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'login', 'id', 'node_id', 'url', 'repos_url', 'events_url', 'hooks_url', 'issues_url', 'members_url', 'public_members_url', 'avatar_url', 'description', 'gravatar_id', 'html_url', 'followers_url', 'following_url', 'gists_url', 'starred_url', 'subscriptions_url', 'organizations_url', 'received_events_url', 'type', 'site_admin', 'user_view_type'}.contains(key));}
+BranchRestrictionPolicyAppsOwner copyWith({String? Function()? login, int? Function()? id, String? Function()? nodeId, String? Function()? url, String? Function()? reposUrl, String? Function()? eventsUrl, String? Function()? hooksUrl, String? Function()? issuesUrl, String? Function()? membersUrl, String? Function()? publicMembersUrl, String? Function()? avatarUrl, String? Function()? description, String? Function()? gravatarId, String? Function()? htmlUrl, String? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? starredUrl, String? Function()? subscriptionsUrl, String? Function()? organizationsUrl, String? Function()? receivedEventsUrl, String? Function()? type, bool? Function()? siteAdmin, String? Function()? userViewType, }) {return BranchRestrictionPolicyAppsOwner(
   login: login != null ? login() : this.login,
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
@@ -129,8 +129,8 @@ BranchRestrictionPolicyAppsOwner copyWith({String? Function()? login, int? Funct
   type: type != null ? type() : this.type,
   siteAdmin: siteAdmin != null ? siteAdmin() : this.siteAdmin,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BranchRestrictionPolicyAppsOwner &&
           login == other.login &&
           id == other.id &&
@@ -155,7 +155,7 @@ BranchRestrictionPolicyAppsOwner copyWith({String? Function()? login, int? Funct
           receivedEventsUrl == other.receivedEventsUrl &&
           type == other.type &&
           siteAdmin == other.siteAdmin &&
-          userViewType == other.userViewType; } 
-@override int get hashCode { return Object.hashAll([login, id, nodeId, url, reposUrl, eventsUrl, hooksUrl, issuesUrl, membersUrl, publicMembersUrl, avatarUrl, description, gravatarId, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, receivedEventsUrl, type, siteAdmin, userViewType]); } 
-@override String toString() { return 'BranchRestrictionPolicyAppsOwner(login: $login, id: $id, nodeId: $nodeId, url: $url, reposUrl: $reposUrl, eventsUrl: $eventsUrl, hooksUrl: $hooksUrl, issuesUrl: $issuesUrl, membersUrl: $membersUrl, publicMembersUrl: $publicMembersUrl, avatarUrl: $avatarUrl, description: $description, gravatarId: $gravatarId, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, userViewType: $userViewType)'; } 
- }
+          userViewType == other.userViewType;}
+@override int get hashCode {return Object.hashAll([login, id, nodeId, url, reposUrl, eventsUrl, hooksUrl, issuesUrl, membersUrl, publicMembersUrl, avatarUrl, description, gravatarId, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, receivedEventsUrl, type, siteAdmin, userViewType]);}
+@override String toString() {return 'BranchRestrictionPolicyAppsOwner(login: $login, id: $id, nodeId: $nodeId, url: $url, reposUrl: $reposUrl, eventsUrl: $eventsUrl, hooksUrl: $hooksUrl, issuesUrl: $issuesUrl, membersUrl: $membersUrl, publicMembersUrl: $publicMembersUrl, avatarUrl: $avatarUrl, description: $description, gravatarId: $gravatarId, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, userViewType: $userViewType)';}
+}

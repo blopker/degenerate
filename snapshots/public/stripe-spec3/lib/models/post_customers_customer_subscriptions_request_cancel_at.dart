@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerSubscriptionsRequestCancelAtVariant2 {const PostCustomersCustomerSubscriptionsRequestCancelAtVariant2._(this.value);
 
-factory PostCustomersCustomerSubscriptionsRequestCancelAtVariant2.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsRequestCancelAtVariant2.fromJson(String json) {return switch (json) {
   'max_period_end' => maxPeriodEnd,
   'min_period_end' => minPeriodEnd,
   _ => PostCustomersCustomerSubscriptionsRequestCancelAtVariant2._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsRequestCancelAtVariant2 maxPeriodEnd = PostCustomersCustomerSubscriptionsRequestCancelAtVariant2._('max_period_end');
 
@@ -16,14 +16,14 @@ static const List<PostCustomersCustomerSubscriptionsRequestCancelAtVariant2> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsRequestCancelAtVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestCancelAtVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsRequestCancelAtVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsRequestCancelAtVariant2($value)';}
+}
 /// A timestamp at which the subscription should cancel. If set to a date before the current period ends, this will cause a proration if prorations have been enabled using `proration_behavior`. If set during a future period, this will always cause a proration for that period.
 @immutable
 final class PostCustomersCustomerSubscriptionsRequestCancelAt {

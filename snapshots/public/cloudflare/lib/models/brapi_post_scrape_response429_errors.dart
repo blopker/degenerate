@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostScrapeResponse429Errors {const BrapiPostScrapeResponse429Errors({required this.code, required this.message, });
 
-factory BrapiPostScrapeResponse429Errors.fromJson(Map<String, dynamic> json) { return BrapiPostScrapeResponse429Errors(
+factory BrapiPostScrapeResponse429Errors.fromJson(Map<String, dynamic> json) {return BrapiPostScrapeResponse429Errors(
   code: (json['code'] as num).toDouble(),
   message: json['message'] as String,
-); }
+);}
 
 /// Error code
 final double code;
@@ -13,20 +13,20 @@ final double code;
 /// Error Message
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
-      json.containsKey('message') && json['message'] is String; } 
-BrapiPostScrapeResponse429Errors copyWith({double? code, String? message, }) { return BrapiPostScrapeResponse429Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String;}
+BrapiPostScrapeResponse429Errors copyWith({double? code, String? message, }) {return BrapiPostScrapeResponse429Errors(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BrapiPostScrapeResponse429Errors &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'BrapiPostScrapeResponse429Errors(code: $code, message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return Object.hash(code, message);}
+@override String toString() {return 'BrapiPostScrapeResponse429Errors(code: $code, message: $message)';}
+}

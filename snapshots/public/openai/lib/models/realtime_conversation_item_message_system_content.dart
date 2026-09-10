@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type. Always `input_text` for system messages.
 @immutable final class RealtimeConversationItemMessageSystemContentType {const RealtimeConversationItemMessageSystemContentType._(this.value);
 
-factory RealtimeConversationItemMessageSystemContentType.fromJson(String json) { return switch (json) {
+factory RealtimeConversationItemMessageSystemContentType.fromJson(String json) {return switch (json) {
   'input_text' => inputText,
   _ => RealtimeConversationItemMessageSystemContentType._(json),
-}; }
+};}
 
 static const RealtimeConversationItemMessageSystemContentType inputText = RealtimeConversationItemMessageSystemContentType._('input_text');
 
@@ -14,20 +14,20 @@ static const List<RealtimeConversationItemMessageSystemContentType> values = [in
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemMessageSystemContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMessageSystemContentType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeConversationItemMessageSystemContentType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeConversationItemMessageSystemContentType($value)';}
+}
 @immutable final class RealtimeConversationItemMessageSystemContent {const RealtimeConversationItemMessageSystemContent({this.type, this.text, });
 
-factory RealtimeConversationItemMessageSystemContent.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageSystemContent(
+factory RealtimeConversationItemMessageSystemContent.fromJson(Map<String, dynamic> json) {return RealtimeConversationItemMessageSystemContent(
   type: json['type'] != null ? RealtimeConversationItemMessageSystemContentType.fromJson(json['type'] as String) : null,
   text: json['text'] as String?,
-); }
+);}
 
 /// The content type. Always `input_text` for system messages.
 final RealtimeConversationItemMessageSystemContentType? type;
@@ -35,19 +35,19 @@ final RealtimeConversationItemMessageSystemContentType? type;
 /// The text content.
 final String? text;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   'text': ?text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'text'}.contains(key)); } 
-RealtimeConversationItemMessageSystemContent copyWith({RealtimeConversationItemMessageSystemContentType? Function()? type, String? Function()? text, }) { return RealtimeConversationItemMessageSystemContent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'text'}.contains(key));}
+RealtimeConversationItemMessageSystemContent copyWith({RealtimeConversationItemMessageSystemContentType? Function()? type, String? Function()? text, }) {return RealtimeConversationItemMessageSystemContent(
   type: type != null ? type() : this.type,
   text: text != null ? text() : this.text,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeConversationItemMessageSystemContent &&
           type == other.type &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(type, text); } 
-@override String toString() { return 'RealtimeConversationItemMessageSystemContent(type: $type, text: $text)'; } 
- }
+          text == other.text;}
+@override int get hashCode {return Object.hash(type, text);}
+@override String toString() {return 'RealtimeConversationItemMessageSystemContent(type: $type, text: $text)';}
+}

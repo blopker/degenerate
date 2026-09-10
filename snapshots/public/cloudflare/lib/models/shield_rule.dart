@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_action.dart';import 'shield_enabled.dart';import 'shield_expression.dart';import 'shield_schemas_description.dart';import 'shield_schemas_title.dart';import 'shield_selector.dart';import 'shield_timestamp.dart';import 'shield_uuid.dart';/// A Token Validation rule that can enforce security policies using JWT Tokens.
 @immutable final class ShieldRule {const ShieldRule({required this.action, required this.description, required this.enabled, required this.expression, required this.selector, required this.title, this.createdAt, this.id, this.lastUpdated, });
 
-factory ShieldRule.fromJson(Map<String, dynamic> json) { return ShieldRule(
+factory ShieldRule.fromJson(Map<String, dynamic> json) {return ShieldRule(
   action: ShieldAction.fromJson(json['action'] as String),
   createdAt: json['created_at'] != null ? ShieldTimestamp.fromJson(json['created_at'] as String) : null,
   description: ShieldSchemasDescription.fromJson(json['description'] as String),
@@ -13,7 +13,7 @@ factory ShieldRule.fromJson(Map<String, dynamic> json) { return ShieldRule(
   lastUpdated: json['last_updated'] != null ? ShieldTimestamp.fromJson(json['last_updated'] as String) : null,
   selector: ShieldSelector.fromJson(json['selector'] as Map<String, dynamic>),
   title: ShieldSchemasTitle.fromJson(json['title'] as String),
-); }
+);}
 
 final ShieldAction action;
 
@@ -33,7 +33,7 @@ final ShieldSelector selector;
 
 final ShieldSchemasTitle title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   'description': description.toJson(),
@@ -43,14 +43,14 @@ Map<String, dynamic> toJson() { return {
   if (lastUpdated != null) 'last_updated': lastUpdated?.toJson(),
   'selector': selector.toJson(),
   'title': title.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('description') &&
       json.containsKey('enabled') &&
       json.containsKey('expression') &&
       json.containsKey('selector') &&
-      json.containsKey('title'); } 
-ShieldRule copyWith({ShieldAction? action, ShieldTimestamp? Function()? createdAt, ShieldSchemasDescription? description, ShieldEnabled? enabled, ShieldExpression? expression, ShieldUuid? Function()? id, ShieldTimestamp? Function()? lastUpdated, ShieldSelector? selector, ShieldSchemasTitle? title, }) { return ShieldRule(
+      json.containsKey('title');}
+ShieldRule copyWith({ShieldAction? action, ShieldTimestamp? Function()? createdAt, ShieldSchemasDescription? description, ShieldEnabled? enabled, ShieldExpression? expression, ShieldUuid? Function()? id, ShieldTimestamp? Function()? lastUpdated, ShieldSelector? selector, ShieldSchemasTitle? title, }) {return ShieldRule(
   action: action ?? this.action,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description ?? this.description,
@@ -60,8 +60,8 @@ ShieldRule copyWith({ShieldAction? action, ShieldTimestamp? Function()? createdA
   lastUpdated: lastUpdated != null ? lastUpdated() : this.lastUpdated,
   selector: selector ?? this.selector,
   title: title ?? this.title,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShieldRule &&
           action == other.action &&
           createdAt == other.createdAt &&
@@ -71,7 +71,7 @@ ShieldRule copyWith({ShieldAction? action, ShieldTimestamp? Function()? createdA
           id == other.id &&
           lastUpdated == other.lastUpdated &&
           selector == other.selector &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(action, createdAt, description, enabled, expression, id, lastUpdated, selector, title); } 
-@override String toString() { return 'ShieldRule(action: $action, createdAt: $createdAt, description: $description, enabled: $enabled, expression: $expression, id: $id, lastUpdated: $lastUpdated, selector: $selector, title: $title)'; } 
- }
+          title == other.title;}
+@override int get hashCode {return Object.hash(action, createdAt, description, enabled, expression, id, lastUpdated, selector, title);}
+@override String toString() {return 'ShieldRule(action: $action, createdAt: $createdAt, description: $description, enabled: $enabled, expression: $expression, id: $id, lastUpdated: $lastUpdated, selector: $selector, title: $title)';}
+}

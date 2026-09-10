@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// A log probabilit
 /// 
 @immutable final class LogProbProperties {const LogProbProperties({required this.token, required this.logprob, required this.bytes, });
 
-factory LogProbProperties.fromJson(Map<String, dynamic> json) { return LogProbProperties(
+factory LogProbProperties.fromJson(Map<String, dynamic> json) {return LogProbProperties(
   token: json['token'] as String,
   logprob: (json['logprob'] as num).toDouble(),
   bytes: (json['bytes'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// The token that was used to generate the log probability.
 /// 
@@ -22,24 +22,24 @@ final double logprob;
 /// 
 final List<int> bytes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'token': token,
   'logprob': logprob,
   'bytes': bytes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('token') && json['token'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('token') && json['token'] is String &&
       json.containsKey('logprob') && json['logprob'] is num &&
-      json.containsKey('bytes'); } 
-LogProbProperties copyWith({String? token, double? logprob, List<int>? bytes, }) { return LogProbProperties(
+      json.containsKey('bytes');}
+LogProbProperties copyWith({String? token, double? logprob, List<int>? bytes, }) {return LogProbProperties(
   token: token ?? this.token,
   logprob: logprob ?? this.logprob,
   bytes: bytes ?? this.bytes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LogProbProperties &&
           token == other.token &&
           logprob == other.logprob &&
-          listEquals(bytes, other.bytes); } 
-@override int get hashCode { return Object.hash(token, logprob, Object.hashAll(bytes)); } 
-@override String toString() { return 'LogProbProperties(token: $token, logprob: $logprob, bytes: $bytes)'; } 
- }
+          listEquals(bytes, other.bytes);}
+@override int get hashCode {return Object.hash(token, logprob, Object.hashAll(bytes));}
+@override String toString() {return 'LogProbProperties(token: $token, logprob: $logprob, bytes: $bytes)';}
+}

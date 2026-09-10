@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class UsersGetSshSigningKeyForAuthenticatedUserError {const UsersGetSshSigningKeyForAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static UsersGetSshSigningKeyForAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static UsersGetSshSigningKeyForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const UsersGetSshSigningKeyForAuthenticatedUserError304();
 case 401:
@@ -19,37 +19,37 @@ return UsersGetSshSigningKeyForAuthenticatedUserError404(BasicError.fromJson(jso
 default:
 return UsersGetSshSigningKeyForAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class UsersGetSshSigningKeyForAuthenticatedUserError304 extends UsersGetSshSigningKeyForAuthenticatedUserError {const UsersGetSshSigningKeyForAuthenticatedUserError304();
 
- }
+}
 /// Response for 401 (application/json).
 final class UsersGetSshSigningKeyForAuthenticatedUserError401 extends UsersGetSshSigningKeyForAuthenticatedUserError {const UsersGetSshSigningKeyForAuthenticatedUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class UsersGetSshSigningKeyForAuthenticatedUserError403 extends UsersGetSshSigningKeyForAuthenticatedUserError {const UsersGetSshSigningKeyForAuthenticatedUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class UsersGetSshSigningKeyForAuthenticatedUserError404 extends UsersGetSshSigningKeyForAuthenticatedUserError {const UsersGetSshSigningKeyForAuthenticatedUserError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class UsersGetSshSigningKeyForAuthenticatedUserErrorUnknown extends UsersGetSshSigningKeyForAuthenticatedUserError {const UsersGetSshSigningKeyForAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

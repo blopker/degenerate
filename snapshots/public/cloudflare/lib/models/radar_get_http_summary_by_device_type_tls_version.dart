@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByDeviceTypeTlsVersion {const RadarGetHttpSummaryByDeviceTypeTlsVersion._(this.value);
 
-factory RadarGetHttpSummaryByDeviceTypeTlsVersion.fromJson(String json) { return switch (json) {
+factory RadarGetHttpSummaryByDeviceTypeTlsVersion.fromJson(String json) {return switch (json) {
   'TLSv1_0' => tlSv10,
   'TLSv1_1' => tlSv11,
   'TLSv1_2' => tlSv12,
   'TLSv1_3' => tlSv13,
   'TLSvQUIC' => tlSvQuic,
   _ => RadarGetHttpSummaryByDeviceTypeTlsVersion._(json),
-}; }
+};}
 
 static const RadarGetHttpSummaryByDeviceTypeTlsVersion tlSv10 = RadarGetHttpSummaryByDeviceTypeTlsVersion._('TLSv1_0');
 
@@ -25,11 +25,11 @@ static const List<RadarGetHttpSummaryByDeviceTypeTlsVersion> values = [tlSv10, t
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpSummaryByDeviceTypeTlsVersion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpSummaryByDeviceTypeTlsVersion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpSummaryByDeviceTypeTlsVersion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpSummaryByDeviceTypeTlsVersion($value)';}
+}

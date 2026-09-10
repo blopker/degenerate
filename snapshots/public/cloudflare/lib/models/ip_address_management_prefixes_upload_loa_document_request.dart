@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IpAddressManagementPrefixesUploadLoaDocumentRequest {const IpAddressManagementPrefixesUploadLoaDocumentRequest({required this.loaDocument});
 
-factory IpAddressManagementPrefixesUploadLoaDocumentRequest.fromJson(Map<String, dynamic> json) { return IpAddressManagementPrefixesUploadLoaDocumentRequest(
+factory IpAddressManagementPrefixesUploadLoaDocumentRequest.fromJson(Map<String, dynamic> json) {return IpAddressManagementPrefixesUploadLoaDocumentRequest(
   loaDocument: json['loa_document'] as String,
-); }
+);}
 
 /// LOA document to upload.
 final String loaDocument;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'loa_document': loaDocument,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('loa_document') && json['loa_document'] is String; } 
-IpAddressManagementPrefixesUploadLoaDocumentRequest copyWith({String? loaDocument}) { return IpAddressManagementPrefixesUploadLoaDocumentRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('loa_document') && json['loa_document'] is String;}
+IpAddressManagementPrefixesUploadLoaDocumentRequest copyWith({String? loaDocument}) {return IpAddressManagementPrefixesUploadLoaDocumentRequest(
   loaDocument: loaDocument ?? this.loaDocument,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IpAddressManagementPrefixesUploadLoaDocumentRequest &&
-          loaDocument == other.loaDocument; } 
-@override int get hashCode { return loaDocument.hashCode; } 
-@override String toString() { return 'IpAddressManagementPrefixesUploadLoaDocumentRequest(loaDocument: $loaDocument)'; } 
- }
+          loaDocument == other.loaDocument;}
+@override int get hashCode {return loaDocument.hashCode;}
+@override String toString() {return 'IpAddressManagementPrefixesUploadLoaDocumentRequest(loaDocument: $loaDocument)';}
+}

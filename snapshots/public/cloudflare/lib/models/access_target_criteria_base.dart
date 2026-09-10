@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_port.dart';@immutable final class AccessTargetCriteriaBase {const AccessTargetCriteriaBase({required this.port, required this.targetAttributes, });
 
-factory AccessTargetCriteriaBase.fromJson(Map<String, dynamic> json) { return AccessTargetCriteriaBase(
+factory AccessTargetCriteriaBase.fromJson(Map<String, dynamic> json) {return AccessTargetCriteriaBase(
   port: AccessPort.fromJson(json['port'] as num),
   targetAttributes: (json['target_attributes'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList())),
-); }
+);}
 
 /// The port that the targets use for the chosen communication protocol. A port cannot be assigned to multiple protocols.
 final AccessPort port;
@@ -13,20 +13,20 @@ final AccessPort port;
 /// Contains a map of target attribute keys to target attribute values.
 final Map<String,List<String>> targetAttributes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'port': port.toJson(),
   'target_attributes': targetAttributes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('port') &&
-      json.containsKey('target_attributes'); } 
-AccessTargetCriteriaBase copyWith({AccessPort? port, Map<String,List<String>>? targetAttributes, }) { return AccessTargetCriteriaBase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('port') &&
+      json.containsKey('target_attributes');}
+AccessTargetCriteriaBase copyWith({AccessPort? port, Map<String,List<String>>? targetAttributes, }) {return AccessTargetCriteriaBase(
   port: port ?? this.port,
   targetAttributes: targetAttributes ?? this.targetAttributes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessTargetCriteriaBase &&
           port == other.port &&
-          targetAttributes == other.targetAttributes; } 
-@override int get hashCode { return Object.hash(port, targetAttributes); } 
-@override String toString() { return 'AccessTargetCriteriaBase(port: $port, targetAttributes: $targetAttributes)'; } 
- }
+          targetAttributes == other.targetAttributes;}
+@override int get hashCode {return Object.hash(port, targetAttributes);}
+@override String toString() {return 'AccessTargetCriteriaBase(port: $port, targetAttributes: $targetAttributes)';}
+}

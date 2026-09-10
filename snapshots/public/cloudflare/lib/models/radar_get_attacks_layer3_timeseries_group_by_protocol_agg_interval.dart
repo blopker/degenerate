@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupByProtocolAggInterval {const RadarGetAttacksLayer3TimeseriesGroupByProtocolAggInterval._(this.value);
 
-factory RadarGetAttacksLayer3TimeseriesGroupByProtocolAggInterval.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3TimeseriesGroupByProtocolAggInterval.fromJson(String json) {return switch (json) {
   '15m' => $15m,
   '1h' => $1h,
   '1d' => $1d,
   '1w' => $1w,
   _ => RadarGetAttacksLayer3TimeseriesGroupByProtocolAggInterval._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3TimeseriesGroupByProtocolAggInterval $15m = RadarGetAttacksLayer3TimeseriesGroupByProtocolAggInterval._('15m');
 
@@ -23,11 +23,11 @@ static const List<RadarGetAttacksLayer3TimeseriesGroupByProtocolAggInterval> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer3TimeseriesGroupByProtocolAggInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByProtocolAggInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer3TimeseriesGroupByProtocolAggInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer3TimeseriesGroupByProtocolAggInterval($value)';}
+}

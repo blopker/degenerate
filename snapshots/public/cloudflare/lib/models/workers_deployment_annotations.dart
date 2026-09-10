@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersDeploymentAnnotations {const WorkersDeploymentAnnotations({this.workersMessage, this.workersTriggeredBy, });
 
-factory WorkersDeploymentAnnotations.fromJson(Map<String, dynamic> json) { return WorkersDeploymentAnnotations(
+factory WorkersDeploymentAnnotations.fromJson(Map<String, dynamic> json) {return WorkersDeploymentAnnotations(
   workersMessage: json['workers/message'] as String?,
   workersTriggeredBy: json['workers/triggered_by'] as String?,
-); }
+);}
 
 /// Human-readable message about the deployment. Truncated to 100 bytes.
 final String? workersMessage;
@@ -13,19 +13,19 @@ final String? workersMessage;
 /// Operation that triggered the creation of the deployment.
 final String? workersTriggeredBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'workers/message': ?workersMessage,
   'workers/triggered_by': ?workersTriggeredBy,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'workers/message', 'workers/triggered_by'}.contains(key)); } 
-WorkersDeploymentAnnotations copyWith({String? Function()? workersMessage, String? Function()? workersTriggeredBy, }) { return WorkersDeploymentAnnotations(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'workers/message', 'workers/triggered_by'}.contains(key));}
+WorkersDeploymentAnnotations copyWith({String? Function()? workersMessage, String? Function()? workersTriggeredBy, }) {return WorkersDeploymentAnnotations(
   workersMessage: workersMessage != null ? workersMessage() : this.workersMessage,
   workersTriggeredBy: workersTriggeredBy != null ? workersTriggeredBy() : this.workersTriggeredBy,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersDeploymentAnnotations &&
           workersMessage == other.workersMessage &&
-          workersTriggeredBy == other.workersTriggeredBy; } 
-@override int get hashCode { return Object.hash(workersMessage, workersTriggeredBy); } 
-@override String toString() { return 'WorkersDeploymentAnnotations(workersMessage: $workersMessage, workersTriggeredBy: $workersTriggeredBy)'; } 
- }
+          workersTriggeredBy == other.workersTriggeredBy;}
+@override int get hashCode {return Object.hash(workersMessage, workersTriggeredBy);}
+@override String toString() {return 'WorkersDeploymentAnnotations(workersMessage: $workersMessage, workersTriggeredBy: $workersTriggeredBy)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The card network for this settlement report. One of `["visa", "maestro"]`
 @immutable final class IssuingSettlementNetwork {const IssuingSettlementNetwork._(this.value);
 
-factory IssuingSettlementNetwork.fromJson(String json) { return switch (json) {
+factory IssuingSettlementNetwork.fromJson(String json) {return switch (json) {
   'maestro' => maestro,
   'visa' => visa,
   _ => IssuingSettlementNetwork._(json),
-}; }
+};}
 
 static const IssuingSettlementNetwork maestro = IssuingSettlementNetwork._('maestro');
 
@@ -17,21 +17,21 @@ static const List<IssuingSettlementNetwork> values = [maestro, visa];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingSettlementNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingSettlementNetwork($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingSettlementNetwork && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingSettlementNetwork($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IssuingSettlementObject {const IssuingSettlementObject._(this.value);
 
-factory IssuingSettlementObject.fromJson(String json) { return switch (json) {
+factory IssuingSettlementObject.fromJson(String json) {return switch (json) {
   'issuing.settlement' => issuingSettlement,
   _ => IssuingSettlementObject._(json),
-}; }
+};}
 
 static const IssuingSettlementObject issuingSettlement = IssuingSettlementObject._('issuing.settlement');
 
@@ -39,22 +39,22 @@ static const List<IssuingSettlementObject> values = [issuingSettlement];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingSettlementObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingSettlementObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingSettlementObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingSettlementObject($value)';}
+}
 /// The current processing status of this settlement.
 @immutable final class IssuingSettlementStatus {const IssuingSettlementStatus._(this.value);
 
-factory IssuingSettlementStatus.fromJson(String json) { return switch (json) {
+factory IssuingSettlementStatus.fromJson(String json) {return switch (json) {
   'complete' => complete,
   'pending' => pending,
   _ => IssuingSettlementStatus._(json),
-}; }
+};}
 
 static const IssuingSettlementStatus complete = IssuingSettlementStatus._('complete');
 
@@ -64,18 +64,18 @@ static const List<IssuingSettlementStatus> values = [complete, pending];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingSettlementStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingSettlementStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingSettlementStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingSettlementStatus($value)';}
+}
 /// When a non-stripe BIN is used, any use of an [issued card](https://docs.stripe.com/issuing) must be settled directly with the card network. The net amount owed is represented by an Issuing `Settlement` object.
 @immutable final class IssuingSettlement {const IssuingSettlement({required this.bin, required this.clearingDate, required this.created, required this.currency, required this.id, required this.interchangeFeesAmount, required this.livemode, required this.metadata, required this.netTotalAmount, required this.network, required this.networkFeesAmount, required this.networkSettlementIdentifier, required this.object, required this.settlementService, required this.status, required this.transactionAmount, required this.transactionCount, });
 
-factory IssuingSettlement.fromJson(Map<String, dynamic> json) { return IssuingSettlement(
+factory IssuingSettlement.fromJson(Map<String, dynamic> json) {return IssuingSettlement(
   bin: json['bin'] as String,
   clearingDate: (json['clearing_date'] as num).toInt(),
   created: (json['created'] as num).toInt(),
@@ -93,7 +93,7 @@ factory IssuingSettlement.fromJson(Map<String, dynamic> json) { return IssuingSe
   status: IssuingSettlementStatus.fromJson(json['status'] as String),
   transactionAmount: (json['transaction_amount'] as num).toInt(),
   transactionCount: (json['transaction_count'] as num).toInt(),
-); }
+);}
 
 /// The Bank Identification Number reflecting this settlement record.
 final String bin;
@@ -146,7 +146,7 @@ final int transactionAmount;
 /// The total number of transactions reflected in this settlement.
 final int transactionCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bin': bin,
   'clearing_date': clearingDate,
   'created': created,
@@ -164,8 +164,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'transaction_amount': transactionAmount,
   'transaction_count': transactionCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bin') && json['bin'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bin') && json['bin'] is String &&
       json.containsKey('clearing_date') && json['clearing_date'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
@@ -181,8 +181,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bin')
       json.containsKey('settlement_service') && json['settlement_service'] is String &&
       json.containsKey('status') &&
       json.containsKey('transaction_amount') && json['transaction_amount'] is num &&
-      json.containsKey('transaction_count') && json['transaction_count'] is num; } 
-IssuingSettlement copyWith({String? bin, int? clearingDate, int? created, String? currency, String? id, int? interchangeFeesAmount, bool? livemode, Map<String,String>? metadata, int? netTotalAmount, IssuingSettlementNetwork? network, int? networkFeesAmount, String? networkSettlementIdentifier, IssuingSettlementObject? object, String? settlementService, IssuingSettlementStatus? status, int? transactionAmount, int? transactionCount, }) { return IssuingSettlement(
+      json.containsKey('transaction_count') && json['transaction_count'] is num;}
+IssuingSettlement copyWith({String? bin, int? clearingDate, int? created, String? currency, String? id, int? interchangeFeesAmount, bool? livemode, Map<String,String>? metadata, int? netTotalAmount, IssuingSettlementNetwork? network, int? networkFeesAmount, String? networkSettlementIdentifier, IssuingSettlementObject? object, String? settlementService, IssuingSettlementStatus? status, int? transactionAmount, int? transactionCount, }) {return IssuingSettlement(
   bin: bin ?? this.bin,
   clearingDate: clearingDate ?? this.clearingDate,
   created: created ?? this.created,
@@ -200,8 +200,8 @@ IssuingSettlement copyWith({String? bin, int? clearingDate, int? created, String
   status: status ?? this.status,
   transactionAmount: transactionAmount ?? this.transactionAmount,
   transactionCount: transactionCount ?? this.transactionCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingSettlement &&
           bin == other.bin &&
           clearingDate == other.clearingDate &&
@@ -219,7 +219,7 @@ IssuingSettlement copyWith({String? bin, int? clearingDate, int? created, String
           settlementService == other.settlementService &&
           status == other.status &&
           transactionAmount == other.transactionAmount &&
-          transactionCount == other.transactionCount; } 
-@override int get hashCode { return Object.hash(bin, clearingDate, created, currency, id, interchangeFeesAmount, livemode, metadata, netTotalAmount, network, networkFeesAmount, networkSettlementIdentifier, object, settlementService, status, transactionAmount, transactionCount); } 
-@override String toString() { return 'IssuingSettlement(bin: $bin, clearingDate: $clearingDate, created: $created, currency: $currency, id: $id, interchangeFeesAmount: $interchangeFeesAmount, livemode: $livemode, metadata: $metadata, netTotalAmount: $netTotalAmount, network: $network, networkFeesAmount: $networkFeesAmount, networkSettlementIdentifier: $networkSettlementIdentifier, object: $object, settlementService: $settlementService, status: $status, transactionAmount: $transactionAmount, transactionCount: $transactionCount)'; } 
- }
+          transactionCount == other.transactionCount;}
+@override int get hashCode {return Object.hash(bin, clearingDate, created, currency, id, interchangeFeesAmount, livemode, metadata, netTotalAmount, network, networkFeesAmount, networkSettlementIdentifier, object, settlementService, status, transactionAmount, transactionCount);}
+@override String toString() {return 'IssuingSettlement(bin: $bin, clearingDate: $clearingDate, created: $created, currency: $currency, id: $id, interchangeFeesAmount: $interchangeFeesAmount, livemode: $livemode, metadata: $metadata, netTotalAmount: $netTotalAmount, network: $network, networkFeesAmount: $networkFeesAmount, networkSettlementIdentifier: $networkSettlementIdentifier, object: $object, settlementService: $settlementService, status: $status, transactionAmount: $transactionAmount, transactionCount: $transactionCount)';}
+}

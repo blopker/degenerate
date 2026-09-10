@@ -9,12 +9,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_con
 /// 
 @immutable final class RealtimeServerEventConversationItemAdded {const RealtimeServerEventConversationItemAdded({required this.eventId, required this.type, required this.item, this.previousItemId = const Omittable.absent(), });
 
-factory RealtimeServerEventConversationItemAdded.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemAdded(
+factory RealtimeServerEventConversationItemAdded.fromJson(Map<String, dynamic> json) {return RealtimeServerEventConversationItemAdded(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   previousItemId: json.containsKey('previous_item_id') ? Omittable(json['previous_item_id'] as String?) : const Omittable.absent(),
   item: RealtimeConversationItem.fromJson(json['item'] as Map<String, dynamic>),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -29,27 +29,27 @@ final Omittable<String?> previousItemId;
 
 final RealtimeConversationItem item;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   if (previousItemId.isPresent) 'previous_item_id': previousItemId.value,
   'item': item.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('item'); } 
-RealtimeServerEventConversationItemAdded copyWith({String? eventId, String? type, Omittable<String?>? previousItemId, RealtimeConversationItem? item, }) { return RealtimeServerEventConversationItemAdded(
+      json.containsKey('item');}
+RealtimeServerEventConversationItemAdded copyWith({String? eventId, String? type, Omittable<String?>? previousItemId, RealtimeConversationItem? item, }) {return RealtimeServerEventConversationItemAdded(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   previousItemId: previousItemId ?? this.previousItemId,
   item: item ?? this.item,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventConversationItemAdded &&
           eventId == other.eventId &&
           type == other.type &&
           previousItemId == other.previousItemId &&
-          item == other.item; } 
-@override int get hashCode { return Object.hash(eventId, type, previousItemId, item); } 
-@override String toString() { return 'RealtimeServerEventConversationItemAdded(eventId: $eventId, type: $type, previousItemId: $previousItemId, item: $item)'; } 
- }
+          item == other.item;}
+@override int get hashCode {return Object.hash(eventId, type, previousItemId, item);}
+@override String toString() {return 'RealtimeServerEventConversationItemAdded(eventId: $eventId, type: $type, previousItemId: $previousItemId, item: $item)';}
+}

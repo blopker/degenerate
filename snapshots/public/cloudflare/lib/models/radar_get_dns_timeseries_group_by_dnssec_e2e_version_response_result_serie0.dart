@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultSerie0 {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultSerie0({required this.negative, required this.positive, });
 
-factory RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultSerie0(
+factory RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultSerie0.fromJson(Map<String, dynamic> json) {return RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultSerie0(
   negative: (json['NEGATIVE'] as List<dynamic>).map((e) => e as String).toList(),
   positive: (json['POSITIVE'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> negative;
 
 final List<String> positive;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'NEGATIVE': negative,
   'POSITIVE': positive,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('NEGATIVE') &&
-      json.containsKey('POSITIVE'); } 
-RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultSerie0 copyWith({List<String>? negative, List<String>? positive, }) { return RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultSerie0(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('NEGATIVE') &&
+      json.containsKey('POSITIVE');}
+RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultSerie0 copyWith({List<String>? negative, List<String>? positive, }) {return RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultSerie0(
   negative: negative ?? this.negative,
   positive: positive ?? this.positive,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultSerie0 &&
           listEquals(negative, other.negative) &&
-          listEquals(positive, other.positive); } 
-@override int get hashCode { return Object.hash(Object.hashAll(negative), Object.hashAll(positive)); } 
-@override String toString() { return 'RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultSerie0(negative: $negative, positive: $positive)'; } 
- }
+          listEquals(positive, other.positive);}
+@override int get hashCode {return Object.hash(Object.hashAll(negative), Object.hashAll(positive));}
+@override String toString() {return 'RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultSerie0(negative: $negative, positive: $positive)';}
+}

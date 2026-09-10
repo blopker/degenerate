@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_cash_balance.dart';import 'resource_credit_balance.dart';/// The `type` of the balance. An additional hash is included on the balance with a name matching this value.
 @immutable final class BankConnectionsResourceBalanceType {const BankConnectionsResourceBalanceType._(this.value);
 
-factory BankConnectionsResourceBalanceType.fromJson(String json) { return switch (json) {
+factory BankConnectionsResourceBalanceType.fromJson(String json) {return switch (json) {
   'cash' => cash,
   'credit' => credit,
   _ => BankConnectionsResourceBalanceType._(json),
-}; }
+};}
 
 static const BankConnectionsResourceBalanceType cash = BankConnectionsResourceBalanceType._('cash');
 
@@ -17,24 +17,24 @@ static const List<BankConnectionsResourceBalanceType> values = [cash, credit];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BankConnectionsResourceBalanceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BankConnectionsResourceBalanceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BankConnectionsResourceBalanceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BankConnectionsResourceBalanceType($value)';}
+}
 /// 
 @immutable final class BankConnectionsResourceBalance {const BankConnectionsResourceBalance({required this.asOf, required this.current, required this.type, this.cash, this.credit, });
 
-factory BankConnectionsResourceBalance.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceBalance(
+factory BankConnectionsResourceBalance.fromJson(Map<String, dynamic> json) {return BankConnectionsResourceBalance(
   asOf: (json['as_of'] as num).toInt(),
   cash: json['cash'] != null ? ResourceCashBalance.fromJson(json['cash'] as Map<String, dynamic>) : null,
   credit: json['credit'] != null ? ResourceCreditBalance.fromJson(json['credit'] as Map<String, dynamic>) : null,
   current: (json['current'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt())),
   type: BankConnectionsResourceBalanceType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The time that the external institution calculated this balance. Measured in seconds since the Unix epoch.
 final int asOf;
@@ -53,30 +53,30 @@ final Map<String,int> current;
 /// The `type` of the balance. An additional hash is included on the balance with a name matching this value.
 final BankConnectionsResourceBalanceType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'as_of': asOf,
   if (cash != null) 'cash': cash?.toJson(),
   if (credit != null) 'credit': credit?.toJson(),
   'current': current,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('as_of') && json['as_of'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('as_of') && json['as_of'] is num &&
       json.containsKey('current') &&
-      json.containsKey('type'); } 
-BankConnectionsResourceBalance copyWith({int? asOf, ResourceCashBalance? Function()? cash, ResourceCreditBalance? Function()? credit, Map<String,int>? current, BankConnectionsResourceBalanceType? type, }) { return BankConnectionsResourceBalance(
+      json.containsKey('type');}
+BankConnectionsResourceBalance copyWith({int? asOf, ResourceCashBalance? Function()? cash, ResourceCreditBalance? Function()? credit, Map<String,int>? current, BankConnectionsResourceBalanceType? type, }) {return BankConnectionsResourceBalance(
   asOf: asOf ?? this.asOf,
   cash: cash != null ? cash() : this.cash,
   credit: credit != null ? credit() : this.credit,
   current: current ?? this.current,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BankConnectionsResourceBalance &&
           asOf == other.asOf &&
           cash == other.cash &&
           credit == other.credit &&
           current == other.current &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(asOf, cash, credit, current, type); } 
-@override String toString() { return 'BankConnectionsResourceBalance(asOf: $asOf, cash: $cash, credit: $credit, current: $current, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(asOf, cash, credit, current, type);}
+@override String toString() {return 'BankConnectionsResourceBalance(asOf: $asOf, cash: $cash, credit: $credit, current: $current, type: $type)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_compatibility_date.dart';import 'workers_compatibility_flag.dart';import 'workers_created_on.dart';import 'workers_etag.dart';import 'workers_has_assets.dart';import 'workers_has_modules.dart';import 'workers_logpush.dart';import 'workers_modified_on.dart';import 'workers_observability.dart';import 'workers_placement_info.dart';import 'workers_placement_info_smart.dart';import 'workers_placement_info_targeted.dart';import 'workers_placement_info_targeted2.dart';import 'workers_placement_info_targeted3.dart';import 'workers_placement_info_targeted4.dart';import 'workers_placement_info_variant2.dart';import 'workers_placement_info_variant3.dart';import 'workers_placement_info_variant4.dart';import 'workers_placement_mode.dart';import 'workers_placement_status.dart';import 'workers_route.dart';import 'workers_script_response_collection_result_named_handlers.dart';import 'workers_tag.dart';import 'workers_tail_consumers_script.dart';import 'workers_usage_model.dart';@immutable final class WorkersScriptResponseCollectionResult {const WorkersScriptResponseCollectionResult({this.compatibilityDate, this.compatibilityFlags, this.createdOn, this.etag, this.handlers, this.hasAssets, this.hasModules, this.id, this.lastDeployedFrom, this.logpush, this.migrationTag, this.modifiedOn, this.namedHandlers, this.observability, this.placement, this.placementMode, this.placementStatus, this.tag, this.tags = const Omittable.absent(), this.tailConsumers = const Omittable.absent(), this.usageModel, this.routes = const Omittable.absent(), });
 
-factory WorkersScriptResponseCollectionResult.fromJson(Map<String, dynamic> json) { return WorkersScriptResponseCollectionResult(
+factory WorkersScriptResponseCollectionResult.fromJson(Map<String, dynamic> json) {return WorkersScriptResponseCollectionResult(
   compatibilityDate: json['compatibility_date'] != null ? WorkersCompatibilityDate.fromJson(json['compatibility_date'] as String) : null,
   compatibilityFlags: (json['compatibility_flags'] as List<dynamic>?)?.map((e) => WorkersCompatibilityFlag.fromJson(e as String)).toList(),
   createdOn: json['created_on'] != null ? WorkersCreatedOn.fromJson(json['created_on'] as String) : null,
@@ -25,7 +25,7 @@ factory WorkersScriptResponseCollectionResult.fromJson(Map<String, dynamic> json
   tailConsumers: json.containsKey('tail_consumers') ? Omittable((json['tail_consumers'] as List<dynamic>?)?.map((e) => WorkersTailConsumersScript.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,
   routes: json.containsKey('routes') ? Omittable((json['routes'] as List<dynamic>?)?.map((e) => WorkersRoute.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
-); }
+);}
 
 /// Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
 final WorkersCompatibilityDate? compatibilityDate;
@@ -88,7 +88,7 @@ final WorkersUsageModel? usageModel;
 /// Routes associated with the Worker.
 final Omittable<List<WorkersRoute>?> routes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (compatibilityDate != null) 'compatibility_date': compatibilityDate?.toJson(),
   if (compatibilityFlags != null) 'compatibility_flags': compatibilityFlags?.map((e) => e.toJson()).toList(),
   if (createdOn != null) 'created_on': createdOn?.toJson(),
@@ -111,9 +111,9 @@ Map<String, dynamic> toJson() { return {
   if (tailConsumers.isPresent) 'tail_consumers': tailConsumers.value?.map((e) => e.toJson()).toList(),
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
   if (routes.isPresent) 'routes': routes.value?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'compatibility_date', 'compatibility_flags', 'created_on', 'etag', 'handlers', 'has_assets', 'has_modules', 'id', 'last_deployed_from', 'logpush', 'migration_tag', 'modified_on', 'named_handlers', 'observability', 'placement', 'placement_mode', 'placement_status', 'tag', 'tags', 'tail_consumers', 'usage_model', 'routes'}.contains(key)); } 
-WorkersScriptResponseCollectionResult copyWith({WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersCreatedOn? Function()? createdOn, WorkersEtag? Function()? etag, List<String>? Function()? handlers, WorkersHasAssets? Function()? hasAssets, WorkersHasModules? Function()? hasModules, String? Function()? id, String? Function()? lastDeployedFrom, WorkersLogpush? Function()? logpush, String? Function()? migrationTag, WorkersModifiedOn? Function()? modifiedOn, List<WorkersScriptResponseCollectionResultNamedHandlers>? Function()? namedHandlers, WorkersObservability? Function()? observability, WorkersPlacementInfo? Function()? placement, WorkersPlacementMode? Function()? placementMode, WorkersPlacementStatus? Function()? placementStatus, String? Function()? tag, Omittable<List<WorkersTag>?>? tags, Omittable<List<WorkersTailConsumersScript>?>? tailConsumers, WorkersUsageModel? Function()? usageModel, Omittable<List<WorkersRoute>?>? routes, }) { return WorkersScriptResponseCollectionResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'compatibility_date', 'compatibility_flags', 'created_on', 'etag', 'handlers', 'has_assets', 'has_modules', 'id', 'last_deployed_from', 'logpush', 'migration_tag', 'modified_on', 'named_handlers', 'observability', 'placement', 'placement_mode', 'placement_status', 'tag', 'tags', 'tail_consumers', 'usage_model', 'routes'}.contains(key));}
+WorkersScriptResponseCollectionResult copyWith({WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersCreatedOn? Function()? createdOn, WorkersEtag? Function()? etag, List<String>? Function()? handlers, WorkersHasAssets? Function()? hasAssets, WorkersHasModules? Function()? hasModules, String? Function()? id, String? Function()? lastDeployedFrom, WorkersLogpush? Function()? logpush, String? Function()? migrationTag, WorkersModifiedOn? Function()? modifiedOn, List<WorkersScriptResponseCollectionResultNamedHandlers>? Function()? namedHandlers, WorkersObservability? Function()? observability, WorkersPlacementInfo? Function()? placement, WorkersPlacementMode? Function()? placementMode, WorkersPlacementStatus? Function()? placementStatus, String? Function()? tag, Omittable<List<WorkersTag>?>? tags, Omittable<List<WorkersTailConsumersScript>?>? tailConsumers, WorkersUsageModel? Function()? usageModel, Omittable<List<WorkersRoute>?>? routes, }) {return WorkersScriptResponseCollectionResult(
   compatibilityDate: compatibilityDate != null ? compatibilityDate() : this.compatibilityDate,
   compatibilityFlags: compatibilityFlags != null ? compatibilityFlags() : this.compatibilityFlags,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
@@ -136,8 +136,8 @@ WorkersScriptResponseCollectionResult copyWith({WorkersCompatibilityDate? Functi
   tailConsumers: tailConsumers ?? this.tailConsumers,
   usageModel: usageModel != null ? usageModel() : this.usageModel,
   routes: routes ?? this.routes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersScriptResponseCollectionResult &&
           compatibilityDate == other.compatibilityDate &&
           listEquals(compatibilityFlags, other.compatibilityFlags) &&
@@ -163,7 +163,7 @@ WorkersScriptResponseCollectionResult copyWith({WorkersCompatibilityDate? Functi
           listEquals(tailConsumers.value, other.tailConsumers.value) &&
           usageModel == other.usageModel &&
           routes.isPresent == other.routes.isPresent &&
-          listEquals(routes.value, other.routes.value); } 
-@override int get hashCode { return Object.hashAll([compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), createdOn, etag, Object.hashAll(handlers ?? const []), hasAssets, hasModules, id, lastDeployedFrom, logpush, migrationTag, modifiedOn, Object.hashAll(namedHandlers ?? const []), observability, placement, placementMode, placementStatus, tag, Object.hashAll(tags.value ?? const []), Object.hashAll(tailConsumers.value ?? const []), usageModel, Object.hashAll(routes.value ?? const [])]); } 
-@override String toString() { return 'WorkersScriptResponseCollectionResult(compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, createdOn: $createdOn, etag: $etag, handlers: $handlers, hasAssets: $hasAssets, hasModules: $hasModules, id: $id, lastDeployedFrom: $lastDeployedFrom, logpush: $logpush, migrationTag: $migrationTag, modifiedOn: $modifiedOn, namedHandlers: $namedHandlers, observability: $observability, placement: $placement, placementMode: $placementMode, placementStatus: $placementStatus, tag: $tag, tags: $tags, tailConsumers: $tailConsumers, usageModel: $usageModel, routes: $routes)'; } 
- }
+          listEquals(routes.value, other.routes.value);}
+@override int get hashCode {return Object.hashAll([compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), createdOn, etag, Object.hashAll(handlers ?? const []), hasAssets, hasModules, id, lastDeployedFrom, logpush, migrationTag, modifiedOn, Object.hashAll(namedHandlers ?? const []), observability, placement, placementMode, placementStatus, tag, Object.hashAll(tags.value ?? const []), Object.hashAll(tailConsumers.value ?? const []), usageModel, Object.hashAll(routes.value ?? const [])]);}
+@override String toString() {return 'WorkersScriptResponseCollectionResult(compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, createdOn: $createdOn, etag: $etag, handlers: $handlers, hasAssets: $hasAssets, hasModules: $hasModules, id: $id, lastDeployedFrom: $lastDeployedFrom, logpush: $logpush, migrationTag: $migrationTag, modifiedOn: $modifiedOn, namedHandlers: $namedHandlers, observability: $observability, placement: $placement, placementMode: $placementMode, placementStatus: $placementStatus, tag: $tag, tags: $tags, tailConsumers: $tailConsumers, usageModel: $usageModel, routes: $routes)';}
+}

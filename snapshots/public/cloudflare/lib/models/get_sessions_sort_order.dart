@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSessionsSortOrder {const GetSessionsSortOrder._(this.value);
 
-factory GetSessionsSortOrder.fromJson(String json) { return switch (json) {
+factory GetSessionsSortOrder.fromJson(String json) {return switch (json) {
   'ASC' => asc,
   'DESC' => desc,
   _ => GetSessionsSortOrder._(json),
-}; }
+};}
 
 static const GetSessionsSortOrder asc = GetSessionsSortOrder._('ASC');
 
@@ -16,11 +16,11 @@ static const List<GetSessionsSortOrder> values = [asc, desc];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetSessionsSortOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetSessionsSortOrder($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetSessionsSortOrder && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetSessionsSortOrder($value)';}
+}

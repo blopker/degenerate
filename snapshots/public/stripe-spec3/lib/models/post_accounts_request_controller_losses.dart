@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestControllerLossesPayments {const PostAccountsRequestControllerLossesPayments._(this.value);
 
-factory PostAccountsRequestControllerLossesPayments.fromJson(String json) { return switch (json) {
+factory PostAccountsRequestControllerLossesPayments.fromJson(String json) {return switch (json) {
   'application' => application,
   'stripe' => stripe,
   _ => PostAccountsRequestControllerLossesPayments._(json),
-}; }
+};}
 
 static const PostAccountsRequestControllerLossesPayments application = PostAccountsRequestControllerLossesPayments._('application');
 
@@ -16,32 +16,32 @@ static const List<PostAccountsRequestControllerLossesPayments> values = [applica
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsRequestControllerLossesPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsRequestControllerLossesPayments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountsRequestControllerLossesPayments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountsRequestControllerLossesPayments($value)';}
+}
 @immutable final class PostAccountsRequestControllerLosses {const PostAccountsRequestControllerLosses({this.payments});
 
-factory PostAccountsRequestControllerLosses.fromJson(Map<String, dynamic> json) { return PostAccountsRequestControllerLosses(
+factory PostAccountsRequestControllerLosses.fromJson(Map<String, dynamic> json) {return PostAccountsRequestControllerLosses(
   payments: json['payments'] != null ? PostAccountsRequestControllerLossesPayments.fromJson(json['payments'] as String) : null,
-); }
+);}
 
 final PostAccountsRequestControllerLossesPayments? payments;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (payments != null) 'payments': payments?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payments'}.contains(key)); } 
-PostAccountsRequestControllerLosses copyWith({PostAccountsRequestControllerLossesPayments? Function()? payments}) { return PostAccountsRequestControllerLosses(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'payments'}.contains(key));}
+PostAccountsRequestControllerLosses copyWith({PostAccountsRequestControllerLossesPayments? Function()? payments}) {return PostAccountsRequestControllerLosses(
   payments: payments != null ? payments() : this.payments,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsRequestControllerLosses &&
-          payments == other.payments; } 
-@override int get hashCode { return payments.hashCode; } 
-@override String toString() { return 'PostAccountsRequestControllerLosses(payments: $payments)'; } 
- }
+          payments == other.payments;}
+@override int get hashCode {return payments.hashCode;}
+@override String toString() {return 'PostAccountsRequestControllerLosses(payments: $payments)';}
+}

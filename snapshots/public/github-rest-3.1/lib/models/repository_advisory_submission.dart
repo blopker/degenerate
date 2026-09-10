@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryAdvisorySubmission {const RepositoryAdvisorySubmission({required this.accepted});
 
-factory RepositoryAdvisorySubmission.fromJson(Map<String, dynamic> json) { return RepositoryAdvisorySubmission(
+factory RepositoryAdvisorySubmission.fromJson(Map<String, dynamic> json) {return RepositoryAdvisorySubmission(
   accepted: json['accepted'] as bool,
-); }
+);}
 
 /// Whether a private vulnerability report was accepted by the repository's administrators.
 final bool accepted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accepted': accepted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('accepted') && json['accepted'] is bool; } 
-RepositoryAdvisorySubmission copyWith({bool? accepted}) { return RepositoryAdvisorySubmission(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('accepted') && json['accepted'] is bool;}
+RepositoryAdvisorySubmission copyWith({bool? accepted}) {return RepositoryAdvisorySubmission(
   accepted: accepted ?? this.accepted,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepositoryAdvisorySubmission &&
-          accepted == other.accepted; } 
-@override int get hashCode { return accepted.hashCode; } 
-@override String toString() { return 'RepositoryAdvisorySubmission(accepted: $accepted)'; } 
- }
+          accepted == other.accepted;}
+@override int get hashCode {return accepted.hashCode;}
+@override String toString() {return 'RepositoryAdvisorySubmission(accepted: $accepted)';}
+}

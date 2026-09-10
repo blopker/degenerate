@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEntitlementsFeaturesIdRequestMetadataVariant2 {const PostEntitlementsFeaturesIdRequestMetadataVariant2._(this.value);
 
-factory PostEntitlementsFeaturesIdRequestMetadataVariant2.fromJson(String json) { return switch (json) {
+factory PostEntitlementsFeaturesIdRequestMetadataVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostEntitlementsFeaturesIdRequestMetadataVariant2._(json),
-}; }
+};}
 
 static const PostEntitlementsFeaturesIdRequestMetadataVariant2 $empty = PostEntitlementsFeaturesIdRequestMetadataVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostEntitlementsFeaturesIdRequestMetadataVariant2> values = [$
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostEntitlementsFeaturesIdRequestMetadataVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostEntitlementsFeaturesIdRequestMetadataVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostEntitlementsFeaturesIdRequestMetadataVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostEntitlementsFeaturesIdRequestMetadataVariant2($value)';}
+}
 /// Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
 @immutable
 final class PostEntitlementsFeaturesIdRequestMetadata {

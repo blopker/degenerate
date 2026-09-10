@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'private_user_plan.dart';/// Private User
 @immutable final class PrivateUser {const PrivateUser({required this.reposUrl, required this.id, required this.twoFactorAuthentication, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.login, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, required this.name, required this.company, required this.blog, required this.location, required this.email, required this.collaborators, required this.hireable, required this.bio, required this.diskUsage, required this.ownedPrivateRepos, required this.publicGists, required this.followers, required this.following, required this.createdAt, required this.updatedAt, required this.privateGists, required this.totalPrivateRepos, required this.publicRepos, this.twitterUsername = const Omittable.absent(), this.notificationEmail = const Omittable.absent(), this.userViewType, this.plan, this.businessPlus, this.ldapDn, });
 
-factory PrivateUser.fromJson(Map<String, dynamic> json) { return PrivateUser(
+factory PrivateUser.fromJson(Map<String, dynamic> json) {return PrivateUser(
   login: json['login'] as String,
   id: (json['id'] as num).toInt(),
   userViewType: json['user_view_type'] as String?,
@@ -47,7 +47,7 @@ factory PrivateUser.fromJson(Map<String, dynamic> json) { return PrivateUser(
   plan: json['plan'] != null ? PrivateUserPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
   businessPlus: json['business_plus'] as bool?,
   ldapDn: json['ldap_dn'] as String?,
-); }
+);}
 
 final String login;
 
@@ -135,7 +135,7 @@ final bool? businessPlus;
 
 final String? ldapDn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'login': login,
   'id': id,
   'user_view_type': ?userViewType,
@@ -179,8 +179,8 @@ Map<String, dynamic> toJson() { return {
   if (plan != null) 'plan': plan?.toJson(),
   'business_plus': ?businessPlus,
   'ldap_dn': ?ldapDn,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('login') && json['login'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String &&
@@ -216,8 +216,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('owned_private_repos') && json['owned_private_repos'] is num &&
       json.containsKey('disk_usage') && json['disk_usage'] is num &&
       json.containsKey('collaborators') && json['collaborators'] is num &&
-      json.containsKey('two_factor_authentication') && json['two_factor_authentication'] is bool; } 
-PrivateUser copyWith({String? login, int? id, String? Function()? userViewType, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, Omittable<String?>? notificationEmail, bool? Function()? hireable, String? Function()? bio, Omittable<String?>? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, int? collaborators, bool? twoFactorAuthentication, PrivateUserPlan? Function()? plan, bool? Function()? businessPlus, String? Function()? ldapDn, }) { return PrivateUser(
+      json.containsKey('two_factor_authentication') && json['two_factor_authentication'] is bool;}
+PrivateUser copyWith({String? login, int? id, String? Function()? userViewType, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, Omittable<String?>? notificationEmail, bool? Function()? hireable, String? Function()? bio, Omittable<String?>? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, int? collaborators, bool? twoFactorAuthentication, PrivateUserPlan? Function()? plan, bool? Function()? businessPlus, String? Function()? ldapDn, }) {return PrivateUser(
   login: login ?? this.login,
   id: id ?? this.id,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
@@ -261,8 +261,8 @@ PrivateUser copyWith({String? login, int? id, String? Function()? userViewType, 
   plan: plan != null ? plan() : this.plan,
   businessPlus: businessPlus != null ? businessPlus() : this.businessPlus,
   ldapDn: ldapDn != null ? ldapDn() : this.ldapDn,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PrivateUser &&
           login == other.login &&
           id == other.id &&
@@ -306,7 +306,7 @@ PrivateUser copyWith({String? login, int? id, String? Function()? userViewType, 
           twoFactorAuthentication == other.twoFactorAuthentication &&
           plan == other.plan &&
           businessPlus == other.businessPlus &&
-          ldapDn == other.ldapDn; } 
-@override int get hashCode { return Object.hashAll([login, id, userViewType, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, reposUrl, eventsUrl, receivedEventsUrl, type, siteAdmin, name, company, blog, location, email, notificationEmail, hireable, bio, twitterUsername, publicRepos, publicGists, followers, following, createdAt, updatedAt, privateGists, totalPrivateRepos, ownedPrivateRepos, diskUsage, collaborators, twoFactorAuthentication, plan, businessPlus, ldapDn]); } 
-@override String toString() { return 'PrivateUser(login: $login, id: $id, userViewType: $userViewType, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, name: $name, company: $company, blog: $blog, location: $location, email: $email, notificationEmail: $notificationEmail, hireable: $hireable, bio: $bio, twitterUsername: $twitterUsername, publicRepos: $publicRepos, publicGists: $publicGists, followers: $followers, following: $following, createdAt: $createdAt, updatedAt: $updatedAt, privateGists: $privateGists, totalPrivateRepos: $totalPrivateRepos, ownedPrivateRepos: $ownedPrivateRepos, diskUsage: $diskUsage, collaborators: $collaborators, twoFactorAuthentication: $twoFactorAuthentication, plan: $plan, businessPlus: $businessPlus, ldapDn: $ldapDn)'; } 
- }
+          ldapDn == other.ldapDn;}
+@override int get hashCode {return Object.hashAll([login, id, userViewType, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, reposUrl, eventsUrl, receivedEventsUrl, type, siteAdmin, name, company, blog, location, email, notificationEmail, hireable, bio, twitterUsername, publicRepos, publicGists, followers, following, createdAt, updatedAt, privateGists, totalPrivateRepos, ownedPrivateRepos, diskUsage, collaborators, twoFactorAuthentication, plan, businessPlus, ldapDn]);}
+@override String toString() {return 'PrivateUser(login: $login, id: $id, userViewType: $userViewType, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, name: $name, company: $company, blog: $blog, location: $location, email: $email, notificationEmail: $notificationEmail, hireable: $hireable, bio: $bio, twitterUsername: $twitterUsername, publicRepos: $publicRepos, publicGists: $publicGists, followers: $followers, following: $following, createdAt: $createdAt, updatedAt: $updatedAt, privateGists: $privateGists, totalPrivateRepos: $totalPrivateRepos, ownedPrivateRepos: $ownedPrivateRepos, diskUsage: $diskUsage, collaborators: $collaborators, twoFactorAuthentication: $twoFactorAuthentication, plan: $plan, businessPlus: $businessPlus, ldapDn: $ldapDn)';}
+}

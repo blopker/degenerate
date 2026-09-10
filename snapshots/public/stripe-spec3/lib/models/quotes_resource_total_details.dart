@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'quotes_resource_total_details_resource_breakdown.dart';/// 
 @immutable final class QuotesResourceTotalDetails {const QuotesResourceTotalDetails({required this.amountDiscount, required this.amountTax, this.amountShipping = const Omittable.absent(), this.breakdown, });
 
-factory QuotesResourceTotalDetails.fromJson(Map<String, dynamic> json) { return QuotesResourceTotalDetails(
+factory QuotesResourceTotalDetails.fromJson(Map<String, dynamic> json) {return QuotesResourceTotalDetails(
   amountDiscount: (json['amount_discount'] as num).toInt(),
   amountShipping: json.containsKey('amount_shipping') ? Omittable(json['amount_shipping'] != null ? (json['amount_shipping'] as num).toInt() : null) : const Omittable.absent(),
   amountTax: (json['amount_tax'] as num).toInt(),
   breakdown: json['breakdown'] != null ? QuotesResourceTotalDetailsResourceBreakdown.fromJson(json['breakdown'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// This is the sum of all the discounts.
 final int amountDiscount;
@@ -21,26 +21,26 @@ final int amountTax;
 
 final QuotesResourceTotalDetailsResourceBreakdown? breakdown;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_discount': amountDiscount,
   if (amountShipping.isPresent) 'amount_shipping': amountShipping.value,
   'amount_tax': amountTax,
   if (breakdown != null) 'breakdown': breakdown?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_discount') && json['amount_discount'] is num &&
-      json.containsKey('amount_tax') && json['amount_tax'] is num; } 
-QuotesResourceTotalDetails copyWith({int? amountDiscount, Omittable<int?>? amountShipping, int? amountTax, QuotesResourceTotalDetailsResourceBreakdown? Function()? breakdown, }) { return QuotesResourceTotalDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_discount') && json['amount_discount'] is num &&
+      json.containsKey('amount_tax') && json['amount_tax'] is num;}
+QuotesResourceTotalDetails copyWith({int? amountDiscount, Omittable<int?>? amountShipping, int? amountTax, QuotesResourceTotalDetailsResourceBreakdown? Function()? breakdown, }) {return QuotesResourceTotalDetails(
   amountDiscount: amountDiscount ?? this.amountDiscount,
   amountShipping: amountShipping ?? this.amountShipping,
   amountTax: amountTax ?? this.amountTax,
   breakdown: breakdown != null ? breakdown() : this.breakdown,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is QuotesResourceTotalDetails &&
           amountDiscount == other.amountDiscount &&
           amountShipping == other.amountShipping &&
           amountTax == other.amountTax &&
-          breakdown == other.breakdown; } 
-@override int get hashCode { return Object.hash(amountDiscount, amountShipping, amountTax, breakdown); } 
-@override String toString() { return 'QuotesResourceTotalDetails(amountDiscount: $amountDiscount, amountShipping: $amountShipping, amountTax: $amountTax, breakdown: $breakdown)'; } 
- }
+          breakdown == other.breakdown;}
+@override int get hashCode {return Object.hash(amountDiscount, amountShipping, amountTax, breakdown);}
+@override String toString() {return 'QuotesResourceTotalDetails(amountDiscount: $amountDiscount, amountShipping: $amountShipping, amountTax: $amountTax, breakdown: $breakdown)';}
+}

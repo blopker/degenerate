@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_ideal_generated_sepa_debit.dart';import 'payment_method_details_ideal_generated_sepa_debit_mandate.dart';/// The customer's bank. Can be one of `abn_amro`, `adyen`, `asn_bank`, `bunq`, `buut`, `finom`, `handelsbanken`, `ing`, `knab`, `mollie`, `moneyou`, `n26`, `nn`, `rabobank`, `regiobank`, `revolut`, `sns_bank`, `triodos_bank`, `van_lanschot`, or `yoursafe`.
 @immutable final class PaymentMethodDetailsIdealBank {const PaymentMethodDetailsIdealBank._(this.value);
 
-factory PaymentMethodDetailsIdealBank.fromJson(String json) { return switch (json) {
+factory PaymentMethodDetailsIdealBank.fromJson(String json) {return switch (json) {
   'abn_amro' => abnAmro,
   'adyen' => adyen,
   'asn_bank' => asnBank,
@@ -25,7 +25,7 @@ factory PaymentMethodDetailsIdealBank.fromJson(String json) { return switch (jso
   'van_lanschot' => vanLanschot,
   'yoursafe' => yoursafe,
   _ => PaymentMethodDetailsIdealBank._(json),
-}; }
+};}
 
 static const PaymentMethodDetailsIdealBank abnAmro = PaymentMethodDetailsIdealBank._('abn_amro');
 
@@ -71,18 +71,18 @@ static const List<PaymentMethodDetailsIdealBank> values = [abnAmro, adyen, asnBa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsIdealBank && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsIdealBank($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodDetailsIdealBank && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodDetailsIdealBank($value)';}
+}
 /// The Bank Identifier Code of the customer's bank.
 @immutable final class PaymentMethodDetailsIdealBic {const PaymentMethodDetailsIdealBic._(this.value);
 
-factory PaymentMethodDetailsIdealBic.fromJson(String json) { return switch (json) {
+factory PaymentMethodDetailsIdealBic.fromJson(String json) {return switch (json) {
   'ABNANL2A' => abnanl2A,
   'ADYBNL2A' => adybnl2A,
   'ASNBNL21' => asnbnl21,
@@ -105,7 +105,7 @@ factory PaymentMethodDetailsIdealBic.fromJson(String json) { return switch (json
   'SNSBNL2A' => snsbnl2A,
   'TRIONL2U' => trionl2U,
   _ => PaymentMethodDetailsIdealBic._(json),
-}; }
+};}
 
 static const PaymentMethodDetailsIdealBic abnanl2A = PaymentMethodDetailsIdealBic._('ABNANL2A');
 
@@ -153,18 +153,18 @@ static const List<PaymentMethodDetailsIdealBic> values = [abnanl2A, adybnl2A, as
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsIdealBic && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsIdealBic($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodDetailsIdealBic && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodDetailsIdealBic($value)';}
+}
 /// 
 @immutable final class PaymentMethodDetailsIdeal {const PaymentMethodDetailsIdeal({this.bank = const Omittable.absent(), this.bic = const Omittable.absent(), this.generatedSepaDebit = const Omittable.absent(), this.generatedSepaDebitMandate = const Omittable.absent(), this.ibanLast4 = const Omittable.absent(), this.transactionId = const Omittable.absent(), this.verifiedName = const Omittable.absent(), });
 
-factory PaymentMethodDetailsIdeal.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsIdeal(
+factory PaymentMethodDetailsIdeal.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsIdeal(
   bank: json.containsKey('bank') ? Omittable(json['bank'] != null ? PaymentMethodDetailsIdealBank.fromJson(json['bank'] as String) : null) : const Omittable.absent(),
   bic: json.containsKey('bic') ? Omittable(json['bic'] != null ? PaymentMethodDetailsIdealBic.fromJson(json['bic'] as String) : null) : const Omittable.absent(),
   generatedSepaDebit: json.containsKey('generated_sepa_debit') ? Omittable(json['generated_sepa_debit'] != null ? PaymentMethodDetailsIdealGeneratedSepaDebit.fromJson(json['generated_sepa_debit']) : null) : const Omittable.absent(),
@@ -172,7 +172,7 @@ factory PaymentMethodDetailsIdeal.fromJson(Map<String, dynamic> json) { return P
   ibanLast4: json.containsKey('iban_last4') ? Omittable(json['iban_last4'] as String?) : const Omittable.absent(),
   transactionId: json.containsKey('transaction_id') ? Omittable(json['transaction_id'] as String?) : const Omittable.absent(),
   verifiedName: json.containsKey('verified_name') ? Omittable(json['verified_name'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The customer's bank. Can be one of `abn_amro`, `adyen`, `asn_bank`, `bunq`, `buut`, `finom`, `handelsbanken`, `ing`, `knab`, `mollie`, `moneyou`, `n26`, `nn`, `rabobank`, `regiobank`, `revolut`, `sns_bank`, `triodos_bank`, `van_lanschot`, or `yoursafe`.
 final Omittable<PaymentMethodDetailsIdealBank?> bank;
@@ -196,7 +196,7 @@ final Omittable<String?> transactionId;
 /// (if supported) at the time of authorization or settlement. They cannot be set or mutated.
 final Omittable<String?> verifiedName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bank.isPresent) 'bank': bank.value?.toJson(),
   if (bic.isPresent) 'bic': bic.value?.toJson(),
   if (generatedSepaDebit.isPresent) 'generated_sepa_debit': generatedSepaDebit.value?.toJson(),
@@ -204,9 +204,9 @@ Map<String, dynamic> toJson() { return {
   if (ibanLast4.isPresent) 'iban_last4': ibanLast4.value,
   if (transactionId.isPresent) 'transaction_id': transactionId.value,
   if (verifiedName.isPresent) 'verified_name': verifiedName.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank', 'bic', 'generated_sepa_debit', 'generated_sepa_debit_mandate', 'iban_last4', 'transaction_id', 'verified_name'}.contains(key)); } 
-PaymentMethodDetailsIdeal copyWith({Omittable<PaymentMethodDetailsIdealBank?>? bank, Omittable<PaymentMethodDetailsIdealBic?>? bic, Omittable<PaymentMethodDetailsIdealGeneratedSepaDebit?>? generatedSepaDebit, Omittable<PaymentMethodDetailsIdealGeneratedSepaDebitMandate?>? generatedSepaDebitMandate, Omittable<String?>? ibanLast4, Omittable<String?>? transactionId, Omittable<String?>? verifiedName, }) { return PaymentMethodDetailsIdeal(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank', 'bic', 'generated_sepa_debit', 'generated_sepa_debit_mandate', 'iban_last4', 'transaction_id', 'verified_name'}.contains(key));}
+PaymentMethodDetailsIdeal copyWith({Omittable<PaymentMethodDetailsIdealBank?>? bank, Omittable<PaymentMethodDetailsIdealBic?>? bic, Omittable<PaymentMethodDetailsIdealGeneratedSepaDebit?>? generatedSepaDebit, Omittable<PaymentMethodDetailsIdealGeneratedSepaDebitMandate?>? generatedSepaDebitMandate, Omittable<String?>? ibanLast4, Omittable<String?>? transactionId, Omittable<String?>? verifiedName, }) {return PaymentMethodDetailsIdeal(
   bank: bank ?? this.bank,
   bic: bic ?? this.bic,
   generatedSepaDebit: generatedSepaDebit ?? this.generatedSepaDebit,
@@ -214,8 +214,8 @@ PaymentMethodDetailsIdeal copyWith({Omittable<PaymentMethodDetailsIdealBank?>? b
   ibanLast4: ibanLast4 ?? this.ibanLast4,
   transactionId: transactionId ?? this.transactionId,
   verifiedName: verifiedName ?? this.verifiedName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodDetailsIdeal &&
           bank == other.bank &&
           bic == other.bic &&
@@ -223,7 +223,7 @@ PaymentMethodDetailsIdeal copyWith({Omittable<PaymentMethodDetailsIdealBank?>? b
           generatedSepaDebitMandate == other.generatedSepaDebitMandate &&
           ibanLast4 == other.ibanLast4 &&
           transactionId == other.transactionId &&
-          verifiedName == other.verifiedName; } 
-@override int get hashCode { return Object.hash(bank, bic, generatedSepaDebit, generatedSepaDebitMandate, ibanLast4, transactionId, verifiedName); } 
-@override String toString() { return 'PaymentMethodDetailsIdeal(bank: $bank, bic: $bic, generatedSepaDebit: $generatedSepaDebit, generatedSepaDebitMandate: $generatedSepaDebitMandate, ibanLast4: $ibanLast4, transactionId: $transactionId, verifiedName: $verifiedName)'; } 
- }
+          verifiedName == other.verifiedName;}
+@override int get hashCode {return Object.hash(bank, bic, generatedSepaDebit, generatedSepaDebitMandate, ibanLast4, transactionId, verifiedName);}
+@override String toString() {return 'PaymentMethodDetailsIdeal(bank: $bank, bic: $bic, generatedSepaDebit: $generatedSepaDebit, generatedSepaDebitMandate: $generatedSepaDebitMandate, ibanLast4: $ibanLast4, transactionId: $transactionId, verifiedName: $verifiedName)';}
+}

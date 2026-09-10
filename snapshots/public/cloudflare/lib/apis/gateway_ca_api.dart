@@ -13,7 +13,7 @@ final class GatewayCaApi with ApiExecutor {const GatewayCaApi(this.apiConfig);
 /// Lists SSH Certificate Authorities (CA).
 ///
 /// `GET /accounts/{account_id}/access/gateway_ca`
-Future<ApiResult<List<AccessSchemasCertificates>?, ResponseCommonFailure4>> accessGatewayCaListSshCa({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessSchemasCertificates>?, ResponseCommonFailure4>> accessGatewayCaListSshCa({required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Add a new SSH Certificate Authority (CA)
 ///
 /// Adds a new SSH Certificate Authority (CA).
 ///
 /// `POST /accounts/{account_id}/access/gateway_ca`
-Future<ApiResult<AccessSchemasCertificates?, ResponseCommonFailure4>> accessGatewayCaAddAnSshCa({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasCertificates?, ResponseCommonFailure4>> accessGatewayCaAddAnSshCa({required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -71,13 +71,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete an SSH Certificate Authority (CA)
 ///
 /// Deletes an SSH Certificate Authority.
 ///
 /// `DELETE /accounts/{account_id}/access/gateway_ca/{certificate_id}`
-Future<ApiResult<AccessIdResponseResult?, ResponseCommonFailure4>> accessGatewayCaDeleteAnSshCa({required AccessUuid certificateId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessIdResponseResult?, ResponseCommonFailure4>> accessGatewayCaDeleteAnSshCa({required AccessUuid certificateId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -103,5 +103,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

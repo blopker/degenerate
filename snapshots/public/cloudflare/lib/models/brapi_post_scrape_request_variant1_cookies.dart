@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostScrapeRequestVariant1CookiesPriority {const BrapiPostScrapeRequestVariant1CookiesPriority._(this.value);
 
-factory BrapiPostScrapeRequestVariant1CookiesPriority.fromJson(String json) { return switch (json) {
+factory BrapiPostScrapeRequestVariant1CookiesPriority.fromJson(String json) {return switch (json) {
   'Low' => low,
   'Medium' => medium,
   'High' => high,
   _ => BrapiPostScrapeRequestVariant1CookiesPriority._(json),
-}; }
+};}
 
 static const BrapiPostScrapeRequestVariant1CookiesPriority low = BrapiPostScrapeRequestVariant1CookiesPriority._('Low');
 
@@ -19,22 +19,22 @@ static const List<BrapiPostScrapeRequestVariant1CookiesPriority> values = [low, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostScrapeRequestVariant1CookiesPriority && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostScrapeRequestVariant1CookiesPriority($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostScrapeRequestVariant1CookiesPriority && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostScrapeRequestVariant1CookiesPriority($value)';}
+}
 @immutable final class BrapiPostScrapeRequestVariant1CookiesSameSite {const BrapiPostScrapeRequestVariant1CookiesSameSite._(this.value);
 
-factory BrapiPostScrapeRequestVariant1CookiesSameSite.fromJson(String json) { return switch (json) {
+factory BrapiPostScrapeRequestVariant1CookiesSameSite.fromJson(String json) {return switch (json) {
   'Strict' => strict,
   'Lax' => lax,
   'None' => none,
   _ => BrapiPostScrapeRequestVariant1CookiesSameSite._(json),
-}; }
+};}
 
 static const BrapiPostScrapeRequestVariant1CookiesSameSite strict = BrapiPostScrapeRequestVariant1CookiesSameSite._('Strict');
 
@@ -46,22 +46,22 @@ static const List<BrapiPostScrapeRequestVariant1CookiesSameSite> values = [stric
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostScrapeRequestVariant1CookiesSameSite && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostScrapeRequestVariant1CookiesSameSite($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostScrapeRequestVariant1CookiesSameSite && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostScrapeRequestVariant1CookiesSameSite($value)';}
+}
 @immutable final class BrapiPostScrapeRequestVariant1CookiesSourceScheme {const BrapiPostScrapeRequestVariant1CookiesSourceScheme._(this.value);
 
-factory BrapiPostScrapeRequestVariant1CookiesSourceScheme.fromJson(String json) { return switch (json) {
+factory BrapiPostScrapeRequestVariant1CookiesSourceScheme.fromJson(String json) {return switch (json) {
   'Unset' => unset,
   'NonSecure' => nonSecure,
   'Secure' => secure,
   _ => BrapiPostScrapeRequestVariant1CookiesSourceScheme._(json),
-}; }
+};}
 
 static const BrapiPostScrapeRequestVariant1CookiesSourceScheme unset = BrapiPostScrapeRequestVariant1CookiesSourceScheme._('Unset');
 
@@ -73,17 +73,17 @@ static const List<BrapiPostScrapeRequestVariant1CookiesSourceScheme> values = [u
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostScrapeRequestVariant1CookiesSourceScheme && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostScrapeRequestVariant1CookiesSourceScheme($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostScrapeRequestVariant1CookiesSourceScheme && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostScrapeRequestVariant1CookiesSourceScheme($value)';}
+}
 @immutable final class BrapiPostScrapeRequestVariant1Cookies {const BrapiPostScrapeRequestVariant1Cookies({required this.name, required this.value, this.domain, this.expires, this.httpOnly, this.partitionKey, this.path, this.priority, this.sameParty, this.sameSite, this.secure, this.sourcePort, this.sourceScheme, this.url, });
 
-factory BrapiPostScrapeRequestVariant1Cookies.fromJson(Map<String, dynamic> json) { return BrapiPostScrapeRequestVariant1Cookies(
+factory BrapiPostScrapeRequestVariant1Cookies.fromJson(Map<String, dynamic> json) {return BrapiPostScrapeRequestVariant1Cookies(
   domain: json['domain'] as String?,
   expires: json['expires'] != null ? (json['expires'] as num).toDouble() : null,
   httpOnly: json['httpOnly'] as bool?,
@@ -98,7 +98,7 @@ factory BrapiPostScrapeRequestVariant1Cookies.fromJson(Map<String, dynamic> json
   sourceScheme: json['sourceScheme'] != null ? BrapiPostScrapeRequestVariant1CookiesSourceScheme.fromJson(json['sourceScheme'] as String) : null,
   url: json['url'] as String?,
   value: json['value'] as String,
-); }
+);}
 
 final String? domain;
 
@@ -128,7 +128,7 @@ final String? url;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'domain': ?domain,
   'expires': ?expires,
   'httpOnly': ?httpOnly,
@@ -143,10 +143,10 @@ Map<String, dynamic> toJson() { return {
   if (sourceScheme != null) 'sourceScheme': sourceScheme?.toJson(),
   'url': ?url,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-BrapiPostScrapeRequestVariant1Cookies copyWith({String? Function()? domain, double? Function()? expires, bool? Function()? httpOnly, String? name, String? Function()? partitionKey, String? Function()? path, BrapiPostScrapeRequestVariant1CookiesPriority? Function()? priority, bool? Function()? sameParty, BrapiPostScrapeRequestVariant1CookiesSameSite? Function()? sameSite, bool? Function()? secure, double? Function()? sourcePort, BrapiPostScrapeRequestVariant1CookiesSourceScheme? Function()? sourceScheme, String? Function()? url, String? value, }) { return BrapiPostScrapeRequestVariant1Cookies(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+BrapiPostScrapeRequestVariant1Cookies copyWith({String? Function()? domain, double? Function()? expires, bool? Function()? httpOnly, String? name, String? Function()? partitionKey, String? Function()? path, BrapiPostScrapeRequestVariant1CookiesPriority? Function()? priority, bool? Function()? sameParty, BrapiPostScrapeRequestVariant1CookiesSameSite? Function()? sameSite, bool? Function()? secure, double? Function()? sourcePort, BrapiPostScrapeRequestVariant1CookiesSourceScheme? Function()? sourceScheme, String? Function()? url, String? value, }) {return BrapiPostScrapeRequestVariant1Cookies(
   domain: domain != null ? domain() : this.domain,
   expires: expires != null ? expires() : this.expires,
   httpOnly: httpOnly != null ? httpOnly() : this.httpOnly,
@@ -161,8 +161,8 @@ BrapiPostScrapeRequestVariant1Cookies copyWith({String? Function()? domain, doub
   sourceScheme: sourceScheme != null ? sourceScheme() : this.sourceScheme,
   url: url != null ? url() : this.url,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BrapiPostScrapeRequestVariant1Cookies &&
           domain == other.domain &&
           expires == other.expires &&
@@ -177,7 +177,7 @@ BrapiPostScrapeRequestVariant1Cookies copyWith({String? Function()? domain, doub
           sourcePort == other.sourcePort &&
           sourceScheme == other.sourceScheme &&
           url == other.url &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(domain, expires, httpOnly, name, partitionKey, path, priority, sameParty, sameSite, secure, sourcePort, sourceScheme, url, value); } 
-@override String toString() { return 'BrapiPostScrapeRequestVariant1Cookies(domain: $domain, expires: $expires, httpOnly: $httpOnly, name: $name, partitionKey: $partitionKey, path: $path, priority: $priority, sameParty: $sameParty, sameSite: $sameSite, secure: $secure, sourcePort: $sourcePort, sourceScheme: $sourceScheme, url: $url, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(domain, expires, httpOnly, name, partitionKey, path, priority, sameParty, sameSite, secure, sourcePort, sourceScheme, url, value);}
+@override String toString() {return 'BrapiPostScrapeRequestVariant1Cookies(domain: $domain, expires: $expires, httpOnly: $httpOnly, name: $name, partitionKey: $partitionKey, path: $path, priority: $priority, sameParty: $sameParty, sameSite: $sameSite, secure: $secure, sourcePort: $sourcePort, sourceScheme: $sourceScheme, url: $url, value: $value)';}
+}

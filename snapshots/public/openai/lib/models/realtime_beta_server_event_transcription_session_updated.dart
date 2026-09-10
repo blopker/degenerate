@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_transcription_session_create_response.dart';/// The event type, must be `transcription_session.updated`.
 @immutable final class RealtimeBetaServerEventTranscriptionSessionUpdatedType {const RealtimeBetaServerEventTranscriptionSessionUpdatedType._(this.value);
 
-factory RealtimeBetaServerEventTranscriptionSessionUpdatedType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventTranscriptionSessionUpdatedType.fromJson(String json) {return switch (json) {
   'transcription_session.updated' => transcriptionSessionUpdated,
   _ => RealtimeBetaServerEventTranscriptionSessionUpdatedType._(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventTranscriptionSessionUpdatedType transcriptionSessionUpdated = RealtimeBetaServerEventTranscriptionSessionUpdatedType._('transcription_session.updated');
 
@@ -14,24 +14,24 @@ static const List<RealtimeBetaServerEventTranscriptionSessionUpdatedType> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventTranscriptionSessionUpdatedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventTranscriptionSessionUpdatedType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeBetaServerEventTranscriptionSessionUpdatedType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeBetaServerEventTranscriptionSessionUpdatedType($value)';}
+}
 /// Returned when a transcription session is updated with a `transcription_session.update` event, unless
 /// there is an error.
 /// 
 @immutable final class RealtimeBetaServerEventTranscriptionSessionUpdated {const RealtimeBetaServerEventTranscriptionSessionUpdated({required this.eventId, required this.type, required this.session, });
 
-factory RealtimeBetaServerEventTranscriptionSessionUpdated.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventTranscriptionSessionUpdated(
+factory RealtimeBetaServerEventTranscriptionSessionUpdated.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventTranscriptionSessionUpdated(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventTranscriptionSessionUpdatedType.fromJson(json['type'] as String),
   session: RealtimeTranscriptionSessionCreateResponse.fromJson(json['session'] as Map<String, dynamic>),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -41,24 +41,24 @@ final RealtimeBetaServerEventTranscriptionSessionUpdatedType type;
 
 final RealtimeTranscriptionSessionCreateResponse session;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'session': session.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
-      json.containsKey('session'); } 
-RealtimeBetaServerEventTranscriptionSessionUpdated copyWith({String? eventId, RealtimeBetaServerEventTranscriptionSessionUpdatedType? type, RealtimeTranscriptionSessionCreateResponse? session, }) { return RealtimeBetaServerEventTranscriptionSessionUpdated(
+      json.containsKey('session');}
+RealtimeBetaServerEventTranscriptionSessionUpdated copyWith({String? eventId, RealtimeBetaServerEventTranscriptionSessionUpdatedType? type, RealtimeTranscriptionSessionCreateResponse? session, }) {return RealtimeBetaServerEventTranscriptionSessionUpdated(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   session: session ?? this.session,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeBetaServerEventTranscriptionSessionUpdated &&
           eventId == other.eventId &&
           type == other.type &&
-          session == other.session; } 
-@override int get hashCode { return Object.hash(eventId, type, session); } 
-@override String toString() { return 'RealtimeBetaServerEventTranscriptionSessionUpdated(eventId: $eventId, type: $type, session: $session)'; } 
- }
+          session == other.session;}
+@override int get hashCode {return Object.hash(eventId, type, session);}
+@override String toString() {return 'RealtimeBetaServerEventTranscriptionSessionUpdated(eventId: $eventId, type: $type, session: $session)';}
+}

@@ -13,7 +13,7 @@ final class NotificationWebhooksApi with ApiExecutor {const NotificationWebhooks
 /// Gets a list of all configured webhook destinations.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/destinations/webhooks`
-Future<ApiResult<List<AaaWebhooksResponse>?, NotificationWebhooksListWebhooksResponse4xx>> notificationWebhooksListWebhooks({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AaaWebhooksResponse>?, NotificationWebhooksListWebhooksResponse4xx>> notificationWebhooksListWebhooks({required AaaAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create a webhook
 ///
 /// Creates a new webhook destination.
 ///
 /// `POST /accounts/{account_id}/alerting/v3/destinations/webhooks`
-Future<ApiResult<AaaIdResponseResult?, NotificationWebhooksCreateAWebhookResponse4xx>> notificationWebhooksCreateAWebhook({required AaaAccountId accountId, required NotificationWebhooksCreateAWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, NotificationWebhooksCreateAWebhookResponse4xx>> notificationWebhooksCreateAWebhook({required AaaAccountId accountId, required NotificationWebhooksCreateAWebhookRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get a webhook
 ///
 /// Get details for a single webhooks destination.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}`
-Future<ApiResult<AaaWebhooksResponse?, NotificationWebhooksGetAWebhookResponse4xx>> notificationWebhooksGetAWebhook({required AaaAccountId accountId, required AaaWebhookId webhookId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaWebhooksResponse?, NotificationWebhooksGetAWebhookResponse4xx>> notificationWebhooksGetAWebhook({required AaaAccountId accountId, required AaaWebhookId webhookId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -105,13 +105,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update a webhook
 ///
 /// Update a webhook destination.
 ///
 /// `PUT /accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}`
-Future<ApiResult<AaaIdResponseResult?, NotificationWebhooksUpdateAWebhookResponse4xx>> notificationWebhooksUpdateAWebhook({required AaaWebhookId webhookId, required AaaAccountId accountId, required NotificationWebhooksUpdateAWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, NotificationWebhooksUpdateAWebhookResponse4xx>> notificationWebhooksUpdateAWebhook({required AaaWebhookId webhookId, required AaaAccountId accountId, required NotificationWebhooksUpdateAWebhookRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,13 +139,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a webhook
 ///
 /// Delete a configured webhook destination.
 ///
 /// `DELETE /accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}`
-Future<ApiResult<ResponseCommon2, ResponseCommonFailure2>> notificationWebhooksDeleteAWebhook({required AaaWebhookId webhookId, required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon2, ResponseCommonFailure2>> notificationWebhooksDeleteAWebhook({required AaaWebhookId webhookId, required AaaAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -171,5 +171,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

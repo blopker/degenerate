@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_value_list_item.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
 @immutable final class GetRadarValueListItemsResponseObject {const GetRadarValueListItemsResponseObject._(this.value);
 
-factory GetRadarValueListItemsResponseObject.fromJson(String json) { return switch (json) {
+factory GetRadarValueListItemsResponseObject.fromJson(String json) {return switch (json) {
   'list' => list,
   _ => GetRadarValueListItemsResponseObject._(json),
-}; }
+};}
 
 static const GetRadarValueListItemsResponseObject list = GetRadarValueListItemsResponseObject._('list');
 
@@ -14,23 +14,23 @@ static const List<GetRadarValueListItemsResponseObject> values = [list];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetRadarValueListItemsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetRadarValueListItemsResponseObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetRadarValueListItemsResponseObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetRadarValueListItemsResponseObject($value)';}
+}
 /// 
 @immutable final class GetRadarValueListItemsResponse {const GetRadarValueListItemsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
-factory GetRadarValueListItemsResponse.fromJson(Map<String, dynamic> json) { return GetRadarValueListItemsResponse(
+factory GetRadarValueListItemsResponse.fromJson(Map<String, dynamic> json) {return GetRadarValueListItemsResponse(
   data: (json['data'] as List<dynamic>).map((e) => RadarValueListItem.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   object: GetRadarValueListItemsResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
-); }
+);}
 
 final List<RadarValueListItem> data;
 
@@ -43,28 +43,28 @@ final GetRadarValueListItemsResponseObject object;
 /// The URL where this list can be accessed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'object': object.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
-GetRadarValueListItemsResponse copyWith({List<RadarValueListItem>? data, bool? hasMore, GetRadarValueListItemsResponseObject? object, String? url, }) { return GetRadarValueListItemsResponse(
+      json.containsKey('url') && json['url'] is String;}
+GetRadarValueListItemsResponse copyWith({List<RadarValueListItem>? data, bool? hasMore, GetRadarValueListItemsResponseObject? object, String? url, }) {return GetRadarValueListItemsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetRadarValueListItemsResponse &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, object, url); } 
-@override String toString() { return 'GetRadarValueListItemsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(data), hasMore, object, url);}
+@override String toString() {return 'GetRadarValueListItemsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)';}
+}

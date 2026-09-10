@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Record type.
 @immutable final class DnsRecordsType {const DnsRecordsType._(this.value);
 
-factory DnsRecordsType.fromJson(String json) { return switch (json) {
+factory DnsRecordsType.fromJson(String json) {return switch (json) {
   'A' => a,
   'AAAA' => aaaa,
   'CAA' => caa,
@@ -26,7 +26,7 @@ factory DnsRecordsType.fromJson(String json) { return switch (json) {
   'TXT' => txt,
   'URI' => uri,
   _ => DnsRecordsType._(json),
-}; }
+};}
 
 static const DnsRecordsType a = DnsRecordsType._('A');
 
@@ -74,11 +74,11 @@ static const List<DnsRecordsType> values = [a, aaaa, caa, cert, cname, dnskey, d
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DnsRecordsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DnsRecordsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DnsRecordsType($value)';}
+}

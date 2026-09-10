@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_calculations_request_ship_from_details_address_city.dart';import 'post_tax_calculations_request_ship_from_details_address_line1.dart';import 'post_tax_calculations_request_ship_from_details_address_line2.dart';import 'post_tax_calculations_request_ship_from_details_address_postal_code.dart';import 'post_tax_calculations_request_ship_from_details_address_state.dart';@immutable final class PostTaxCalculationsRequestShipFromDetailsAddress {const PostTaxCalculationsRequestShipFromDetailsAddress({required this.country, this.city, this.line1, this.line2, this.postalCode, this.state, });
 
-factory PostTaxCalculationsRequestShipFromDetailsAddress.fromJson(Map<String, dynamic> json) { return PostTaxCalculationsRequestShipFromDetailsAddress(
+factory PostTaxCalculationsRequestShipFromDetailsAddress.fromJson(Map<String, dynamic> json) {return PostTaxCalculationsRequestShipFromDetailsAddress(
   city: json['city'] != null ? PostTaxCalculationsRequestShipFromDetailsAddressCity.fromJson(json['city']) : null,
   country: json['country'] as String,
   line1: json['line1'] != null ? PostTaxCalculationsRequestShipFromDetailsAddressLine1.fromJson(json['line1']) : null,
   line2: json['line2'] != null ? PostTaxCalculationsRequestShipFromDetailsAddressLine2.fromJson(json['line2']) : null,
   postalCode: json['postal_code'] != null ? PostTaxCalculationsRequestShipFromDetailsAddressPostalCode.fromJson(json['postal_code']) : null,
   state: json['state'] != null ? PostTaxCalculationsRequestShipFromDetailsAddressState.fromJson(json['state']) : null,
-); }
+);}
 
 final PostTaxCalculationsRequestShipFromDetailsAddressCity? city;
 
@@ -23,31 +23,31 @@ final PostTaxCalculationsRequestShipFromDetailsAddressPostalCode? postalCode;
 
 final PostTaxCalculationsRequestShipFromDetailsAddressState? state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (city != null) 'city': city?.toJson(),
   'country': country,
   if (line1 != null) 'line1': line1?.toJson(),
   if (line2 != null) 'line2': line2?.toJson(),
   if (postalCode != null) 'postal_code': postalCode?.toJson(),
   if (state != null) 'state': state?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String; } 
-PostTaxCalculationsRequestShipFromDetailsAddress copyWith({PostTaxCalculationsRequestShipFromDetailsAddressCity? Function()? city, String? country, PostTaxCalculationsRequestShipFromDetailsAddressLine1? Function()? line1, PostTaxCalculationsRequestShipFromDetailsAddressLine2? Function()? line2, PostTaxCalculationsRequestShipFromDetailsAddressPostalCode? Function()? postalCode, PostTaxCalculationsRequestShipFromDetailsAddressState? Function()? state, }) { return PostTaxCalculationsRequestShipFromDetailsAddress(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('country') && json['country'] is String;}
+PostTaxCalculationsRequestShipFromDetailsAddress copyWith({PostTaxCalculationsRequestShipFromDetailsAddressCity? Function()? city, String? country, PostTaxCalculationsRequestShipFromDetailsAddressLine1? Function()? line1, PostTaxCalculationsRequestShipFromDetailsAddressLine2? Function()? line2, PostTaxCalculationsRequestShipFromDetailsAddressPostalCode? Function()? postalCode, PostTaxCalculationsRequestShipFromDetailsAddressState? Function()? state, }) {return PostTaxCalculationsRequestShipFromDetailsAddress(
   city: city != null ? city() : this.city,
   country: country ?? this.country,
   line1: line1 != null ? line1() : this.line1,
   line2: line2 != null ? line2() : this.line2,
   postalCode: postalCode != null ? postalCode() : this.postalCode,
   state: state != null ? state() : this.state,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTaxCalculationsRequestShipFromDetailsAddress &&
           city == other.city &&
           country == other.country &&
           line1 == other.line1 &&
           line2 == other.line2 &&
           postalCode == other.postalCode &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(city, country, line1, line2, postalCode, state); } 
-@override String toString() { return 'PostTaxCalculationsRequestShipFromDetailsAddress(city: $city, country: $country, line1: $line1, line2: $line2, postalCode: $postalCode, state: $state)'; } 
- }
+          state == other.state;}
+@override int get hashCode {return Object.hash(city, country, line1, line2, postalCode, state);}
+@override String toString() {return 'PostTaxCalculationsRequestShipFromDetailsAddress(city: $city, country: $country, line1: $line1, line2: $line2, postalCode: $postalCode, state: $state)';}
+}

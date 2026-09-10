@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A redirect based on a bulk list lookup.
 @immutable final class RulesetsRedirectFromList {const RulesetsRedirectFromList({required this.key, required this.name, });
 
-factory RulesetsRedirectFromList.fromJson(Map<String, dynamic> json) { return RulesetsRedirectFromList(
+factory RulesetsRedirectFromList.fromJson(Map<String, dynamic> json) {return RulesetsRedirectFromList(
   key: json['key'] as String,
   name: json['name'] as String,
-); }
+);}
 
 /// An expression that evaluates to the list lookup key.
 final String key;
@@ -14,20 +14,20 @@ final String key;
 /// The name of the list to match against.
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-RulesetsRedirectFromList copyWith({String? key, String? name, }) { return RulesetsRedirectFromList(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+RulesetsRedirectFromList copyWith({String? key, String? name, }) {return RulesetsRedirectFromList(
   key: key ?? this.key,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsRedirectFromList &&
           key == other.key &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(key, name); } 
-@override String toString() { return 'RulesetsRedirectFromList(key: $key, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(key, name);}
+@override String toString() {return 'RulesetsRedirectFromList(key: $key, name: $name)';}
+}

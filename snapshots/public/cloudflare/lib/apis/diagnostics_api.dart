@@ -13,7 +13,7 @@ final class DiagnosticsApi with ApiExecutor {const DiagnosticsApi(this.apiConfig
 /// Run traceroutes from Cloudflare colos.
 ///
 /// `POST /accounts/{account_id}/diagnostics/traceroute`
-Future<ApiResult<List<MagicTransitTargetResult>?, DiagnosticsTracerouteResponse4xx>> diagnosticsTraceroute({required MagicTransitIdentifier accountId, required DiagnosticsTracerouteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<MagicTransitTargetResult>?, DiagnosticsTracerouteResponse4xx>> diagnosticsTraceroute({required MagicTransitIdentifier accountId, required DiagnosticsTracerouteRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -41,5 +41,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

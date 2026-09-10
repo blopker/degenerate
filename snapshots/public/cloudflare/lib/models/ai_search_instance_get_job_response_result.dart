@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceGetJobResponseResultSource {const AiSearchInstanceGetJobResponseResultSource._(this.value);
 
-factory AiSearchInstanceGetJobResponseResultSource.fromJson(String json) { return switch (json) {
+factory AiSearchInstanceGetJobResponseResultSource.fromJson(String json) {return switch (json) {
   'user' => user,
   'schedule' => schedule,
   _ => AiSearchInstanceGetJobResponseResultSource._(json),
-}; }
+};}
 
 static const AiSearchInstanceGetJobResponseResultSource user = AiSearchInstanceGetJobResponseResultSource._('user');
 
@@ -16,17 +16,17 @@ static const List<AiSearchInstanceGetJobResponseResultSource> values = [user, sc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchInstanceGetJobResponseResultSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchInstanceGetJobResponseResultSource($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchInstanceGetJobResponseResultSource && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchInstanceGetJobResponseResultSource($value)';}
+}
 @immutable final class AiSearchInstanceGetJobResponseResult {const AiSearchInstanceGetJobResponseResult({required this.id, required this.source, this.description, this.endReason, this.endedAt, this.lastSeenAt, this.startedAt, });
 
-factory AiSearchInstanceGetJobResponseResult.fromJson(Map<String, dynamic> json) { return AiSearchInstanceGetJobResponseResult(
+factory AiSearchInstanceGetJobResponseResult.fromJson(Map<String, dynamic> json) {return AiSearchInstanceGetJobResponseResult(
   description: json['description'] as String?,
   endReason: json['end_reason'] as String?,
   endedAt: json['ended_at'] as String?,
@@ -34,7 +34,7 @@ factory AiSearchInstanceGetJobResponseResult.fromJson(Map<String, dynamic> json)
   lastSeenAt: json['last_seen_at'] as String?,
   source: AiSearchInstanceGetJobResponseResultSource.fromJson(json['source'] as String),
   startedAt: json['started_at'] as String?,
-); }
+);}
 
 final String? description;
 
@@ -50,7 +50,7 @@ final AiSearchInstanceGetJobResponseResultSource source;
 
 final String? startedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'end_reason': ?endReason,
   'ended_at': ?endedAt,
@@ -58,10 +58,10 @@ Map<String, dynamic> toJson() { return {
   'last_seen_at': ?lastSeenAt,
   'source': source.toJson(),
   'started_at': ?startedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('source'); } 
-AiSearchInstanceGetJobResponseResult copyWith({String? Function()? description, String? Function()? endReason, String? Function()? endedAt, String? id, String? Function()? lastSeenAt, AiSearchInstanceGetJobResponseResultSource? source, String? Function()? startedAt, }) { return AiSearchInstanceGetJobResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('source');}
+AiSearchInstanceGetJobResponseResult copyWith({String? Function()? description, String? Function()? endReason, String? Function()? endedAt, String? id, String? Function()? lastSeenAt, AiSearchInstanceGetJobResponseResultSource? source, String? Function()? startedAt, }) {return AiSearchInstanceGetJobResponseResult(
   description: description != null ? description() : this.description,
   endReason: endReason != null ? endReason() : this.endReason,
   endedAt: endedAt != null ? endedAt() : this.endedAt,
@@ -69,8 +69,8 @@ AiSearchInstanceGetJobResponseResult copyWith({String? Function()? description, 
   lastSeenAt: lastSeenAt != null ? lastSeenAt() : this.lastSeenAt,
   source: source ?? this.source,
   startedAt: startedAt != null ? startedAt() : this.startedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchInstanceGetJobResponseResult &&
           description == other.description &&
           endReason == other.endReason &&
@@ -78,7 +78,7 @@ AiSearchInstanceGetJobResponseResult copyWith({String? Function()? description, 
           id == other.id &&
           lastSeenAt == other.lastSeenAt &&
           source == other.source &&
-          startedAt == other.startedAt; } 
-@override int get hashCode { return Object.hash(description, endReason, endedAt, id, lastSeenAt, source, startedAt); } 
-@override String toString() { return 'AiSearchInstanceGetJobResponseResult(description: $description, endReason: $endReason, endedAt: $endedAt, id: $id, lastSeenAt: $lastSeenAt, source: $source, startedAt: $startedAt)'; } 
- }
+          startedAt == other.startedAt;}
+@override int get hashCode {return Object.hash(description, endReason, endedAt, id, lastSeenAt, source, startedAt);}
+@override String toString() {return 'AiSearchInstanceGetJobResponseResult(description: $description, endReason: $endReason, endedAt: $endedAt, id: $id, lastSeenAt: $lastSeenAt, source: $source, startedAt: $startedAt)';}
+}

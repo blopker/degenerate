@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Server-side voice activity detection (VAD) which flips on when user speech is detected and off after a period of silence.
 @immutable final class ServerVad {const ServerVad({required this.type, this.threshold, this.prefixPaddingMs, this.silenceDurationMs, this.createResponse, this.interruptResponse, this.idleTimeoutMs = const Omittable.absent(), });
 
-factory ServerVad.fromJson(Map<String, dynamic> json) { return ServerVad(
+factory ServerVad.fromJson(Map<String, dynamic> json) {return ServerVad(
   type: json['type'] as String,
   threshold: json['threshold'] != null ? (json['threshold'] as num).toDouble() : null,
   prefixPaddingMs: json['prefix_padding_ms'] != null ? (json['prefix_padding_ms'] as num).toInt() : null,
@@ -11,7 +11,7 @@ factory ServerVad.fromJson(Map<String, dynamic> json) { return ServerVad(
   createResponse: json['create_response'] as bool?,
   interruptResponse: json['interrupt_response'] as bool?,
   idleTimeoutMs: json.containsKey('idle_timeout_ms') ? Omittable(json['idle_timeout_ms'] != null ? (json['idle_timeout_ms'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// Type of turn detection, `server_vad` to turn on simple Server VAD.
 /// 
@@ -62,10 +62,10 @@ final bool? interruptResponse;
 final Omittable<int?> idleTimeoutMs;
 
 /// The value with the schema default applied when absent.
-bool get createResponseOrDefault { return createResponse ?? true; } 
+bool get createResponseOrDefault {return createResponse ?? true;}
 /// The value with the schema default applied when absent.
-bool get interruptResponseOrDefault { return interruptResponse ?? true; } 
-Map<String, dynamic> toJson() { return {
+bool get interruptResponseOrDefault {return interruptResponse ?? true;}
+Map<String, dynamic> toJson() {return {
   'type': type,
   'threshold': ?threshold,
   'prefix_padding_ms': ?prefixPaddingMs,
@@ -73,9 +73,9 @@ Map<String, dynamic> toJson() { return {
   'create_response': ?createResponse,
   'interrupt_response': ?interruptResponse,
   if (idleTimeoutMs.isPresent) 'idle_timeout_ms': idleTimeoutMs.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-ServerVad copyWith({String? type, double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, bool? Function()? createResponse, bool? Function()? interruptResponse, Omittable<int?>? idleTimeoutMs, }) { return ServerVad(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+ServerVad copyWith({String? type, double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, bool? Function()? createResponse, bool? Function()? interruptResponse, Omittable<int?>? idleTimeoutMs, }) {return ServerVad(
   type: type ?? this.type,
   threshold: threshold != null ? threshold() : this.threshold,
   prefixPaddingMs: prefixPaddingMs != null ? prefixPaddingMs() : this.prefixPaddingMs,
@@ -83,8 +83,8 @@ ServerVad copyWith({String? type, double? Function()? threshold, int? Function()
   createResponse: createResponse != null ? createResponse() : this.createResponse,
   interruptResponse: interruptResponse != null ? interruptResponse() : this.interruptResponse,
   idleTimeoutMs: idleTimeoutMs ?? this.idleTimeoutMs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ServerVad &&
           type == other.type &&
           threshold == other.threshold &&
@@ -92,7 +92,7 @@ ServerVad copyWith({String? type, double? Function()? threshold, int? Function()
           silenceDurationMs == other.silenceDurationMs &&
           createResponse == other.createResponse &&
           interruptResponse == other.interruptResponse &&
-          idleTimeoutMs == other.idleTimeoutMs; } 
-@override int get hashCode { return Object.hash(type, threshold, prefixPaddingMs, silenceDurationMs, createResponse, interruptResponse, idleTimeoutMs); } 
-@override String toString() { return 'ServerVad(type: $type, threshold: $threshold, prefixPaddingMs: $prefixPaddingMs, silenceDurationMs: $silenceDurationMs, createResponse: $createResponse, interruptResponse: $interruptResponse, idleTimeoutMs: $idleTimeoutMs)'; } 
- }
+          idleTimeoutMs == other.idleTimeoutMs;}
+@override int get hashCode {return Object.hash(type, threshold, prefixPaddingMs, silenceDurationMs, createResponse, interruptResponse, idleTimeoutMs);}
+@override String toString() {return 'ServerVad(type: $type, threshold: $threshold, prefixPaddingMs: $prefixPaddingMs, silenceDurationMs: $silenceDurationMs, createResponse: $createResponse, interruptResponse: $interruptResponse, idleTimeoutMs: $idleTimeoutMs)';}
+}

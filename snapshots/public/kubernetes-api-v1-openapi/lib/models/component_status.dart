@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'component_condition.dart';import 'object_meta.dart';/// ComponentStatus (and ComponentStatusList) holds the cluster validation info. Deprecated: This API is deprecated in v1.19+
 @immutable final class ComponentStatus {const ComponentStatus({this.apiVersion, this.conditions, this.kind, this.metadata, });
 
-factory ComponentStatus.fromJson(Map<String, dynamic> json) { return ComponentStatus(
+factory ComponentStatus.fromJson(Map<String, dynamic> json) {return ComponentStatus(
   apiVersion: json['apiVersion'] as String?,
   conditions: (json['conditions'] as List<dynamic>?)?.map((e) => ComponentCondition.fromJson(e as Map<String, dynamic>)).toList(),
   kind: json['kind'] as String?,
   metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 final String? apiVersion;
@@ -22,25 +22,25 @@ final String? kind;
 /// Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 final ObjectMeta? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   if (conditions != null) 'conditions': conditions?.map((e) => e.toJson()).toList(),
   'kind': ?kind,
   if (metadata != null) 'metadata': metadata?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'conditions', 'kind', 'metadata'}.contains(key)); } 
-ComponentStatus copyWith({String? Function()? apiVersion, List<ComponentCondition>? Function()? conditions, String? Function()? kind, ObjectMeta? Function()? metadata, }) { return ComponentStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'apiVersion', 'conditions', 'kind', 'metadata'}.contains(key));}
+ComponentStatus copyWith({String? Function()? apiVersion, List<ComponentCondition>? Function()? conditions, String? Function()? kind, ObjectMeta? Function()? metadata, }) {return ComponentStatus(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   conditions: conditions != null ? conditions() : this.conditions,
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ComponentStatus &&
           apiVersion == other.apiVersion &&
           listEquals(conditions, other.conditions) &&
           kind == other.kind &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(apiVersion, Object.hashAll(conditions ?? const []), kind, metadata); } 
-@override String toString() { return 'ComponentStatus(apiVersion: $apiVersion, conditions: $conditions, kind: $kind, metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return Object.hash(apiVersion, Object.hashAll(conditions ?? const []), kind, metadata);}
+@override String toString() {return 'ComponentStatus(apiVersion: $apiVersion, conditions: $conditions, kind: $kind, metadata: $metadata)';}
+}

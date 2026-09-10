@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param79.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPayVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPayVariant2._(this.value);
 
-factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPayVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPayVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPayVariant2._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPayVariant2 $empty = PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPayVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAmaz
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPayVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPayVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPayVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPayVariant2($value)';}
+}
 
 @immutable
 final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPay {

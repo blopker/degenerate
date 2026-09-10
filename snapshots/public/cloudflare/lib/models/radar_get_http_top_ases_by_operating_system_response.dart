@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_ases_by_operating_system_response_result.dart';@immutable final class RadarGetHttpTopAsesByOperatingSystemResponse {const RadarGetHttpTopAsesByOperatingSystemResponse({required this.result, required this.success, });
 
-factory RadarGetHttpTopAsesByOperatingSystemResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopAsesByOperatingSystemResponse(
+factory RadarGetHttpTopAsesByOperatingSystemResponse.fromJson(Map<String, dynamic> json) {return RadarGetHttpTopAsesByOperatingSystemResponse(
   result: RadarGetHttpTopAsesByOperatingSystemResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetHttpTopAsesByOperatingSystemResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetHttpTopAsesByOperatingSystemResponse copyWith({RadarGetHttpTopAsesByOperatingSystemResponseResult? result, bool? success, }) { return RadarGetHttpTopAsesByOperatingSystemResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetHttpTopAsesByOperatingSystemResponse copyWith({RadarGetHttpTopAsesByOperatingSystemResponseResult? result, bool? success, }) {return RadarGetHttpTopAsesByOperatingSystemResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetHttpTopAsesByOperatingSystemResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'RadarGetHttpTopAsesByOperatingSystemResponse(result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(result, success);}
+@override String toString() {return 'RadarGetHttpTopAsesByOperatingSystemResponse(result: $result, success: $success)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingPhysicalBundlesStatus {const GetIssuingPhysicalBundlesStatus._(this.value);
 
-factory GetIssuingPhysicalBundlesStatus.fromJson(String json) { return switch (json) {
+factory GetIssuingPhysicalBundlesStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'review' => review,
   _ => GetIssuingPhysicalBundlesStatus._(json),
-}; }
+};}
 
 static const GetIssuingPhysicalBundlesStatus active = GetIssuingPhysicalBundlesStatus._('active');
 
@@ -19,11 +19,11 @@ static const List<GetIssuingPhysicalBundlesStatus> values = [active, inactive, r
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetIssuingPhysicalBundlesStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetIssuingPhysicalBundlesStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetIssuingPhysicalBundlesStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetIssuingPhysicalBundlesStatus($value)';}
+}

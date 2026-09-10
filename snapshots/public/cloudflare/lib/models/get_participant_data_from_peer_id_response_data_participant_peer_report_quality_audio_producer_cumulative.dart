@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_quality_audio_producer_cumulative_packet_loss.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_quality_audio_producer_cumulative_quality_mos.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_quality_audio_producer_cumulative_rtt.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative({this.packetLoss, this.qualityMos, this.rtt, });
 
-factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative(
+factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative.fromJson(Map<String, dynamic> json) {return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative(
   packetLoss: json['packet_loss'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativePacketLoss.fromJson(json['packet_loss'] as Map<String, dynamic>) : null,
   qualityMos: json['quality_mos'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeQualityMos.fromJson(json['quality_mos'] as Map<String, dynamic>) : null,
   rtt: json['rtt'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeRtt.fromJson(json['rtt'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativePacketLoss? packetLoss;
 
@@ -14,22 +14,22 @@ final GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioP
 
 final GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeRtt? rtt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (packetLoss != null) 'packet_loss': packetLoss?.toJson(),
   if (qualityMos != null) 'quality_mos': qualityMos?.toJson(),
   if (rtt != null) 'rtt': rtt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'packet_loss', 'quality_mos', 'rtt'}.contains(key)); } 
-GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative copyWith({GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativePacketLoss? Function()? packetLoss, GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeQualityMos? Function()? qualityMos, GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeRtt? Function()? rtt, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'packet_loss', 'quality_mos', 'rtt'}.contains(key));}
+GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative copyWith({GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativePacketLoss? Function()? packetLoss, GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeQualityMos? Function()? qualityMos, GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeRtt? Function()? rtt, }) {return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative(
   packetLoss: packetLoss != null ? packetLoss() : this.packetLoss,
   qualityMos: qualityMos != null ? qualityMos() : this.qualityMos,
   rtt: rtt != null ? rtt() : this.rtt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative &&
           packetLoss == other.packetLoss &&
           qualityMos == other.qualityMos &&
-          rtt == other.rtt; } 
-@override int get hashCode { return Object.hash(packetLoss, qualityMos, rtt); } 
-@override String toString() { return 'GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative(packetLoss: $packetLoss, qualityMos: $qualityMos, rtt: $rtt)'; } 
- }
+          rtt == other.rtt;}
+@override int get hashCode {return Object.hash(packetLoss, qualityMos, rtt);}
+@override String toString() {return 'GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative(packetLoss: $packetLoss, qualityMos: $qualityMos, rtt: $rtt)';}
+}

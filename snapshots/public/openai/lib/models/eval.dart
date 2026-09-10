@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'eval_custom_data_source_config.dart';import 'eval_data_source_config.dart';import 'eval_grader_python.dart';import 'eval_grader_score_model.dart';import 'eval_grader_text_similarity.dart';import 'eval_logs_data_source_config.dart';import 'eval_stored_completions_data_source_config.dart';import 'eval_testing_criteria.dart';import 'grader_label_model.dart';import 'grader_string_check.dart';/// The object type.
 @immutable final class EvalObject {const EvalObject._(this.value);
 
-factory EvalObject.fromJson(String json) { return switch (json) {
+factory EvalObject.fromJson(String json) {return switch (json) {
   'eval' => eval,
   _ => EvalObject._(json),
-}; }
+};}
 
 static const EvalObject eval = EvalObject._('eval');
 
@@ -14,14 +14,14 @@ static const List<EvalObject> values = [eval];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EvalObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EvalObject($value)';}
+}
 /// An Eval object with a data source config and testing criteria.
 /// An Eval represents a task to be done for your LLM integration.
 /// Like:
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class Eval {const Eval({required this.object, required this.id, required this.name, required this.dataSourceConfig, required this.testingCriteria, required this.createdAt, required this.metadata, });
 
-factory Eval.fromJson(Map<String, dynamic> json) { return Eval(
+factory Eval.fromJson(Map<String, dynamic> json) {return Eval(
   object: EvalObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   name: json['name'] as String,
@@ -39,7 +39,7 @@ factory Eval.fromJson(Map<String, dynamic> json) { return Eval(
   testingCriteria: (json['testing_criteria'] as List<dynamic>).map((e) => OneOf5.parse(e, fromA: (v) => GraderLabelModel.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalGraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromD: (v) => EvalGraderPython.fromJson(v as Map<String, dynamic>), fromE: (v) => EvalGraderScoreModel.fromJson(v as Map<String, dynamic>),)).toList(),
   createdAt: (json['created_at'] as num).toInt(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// The object type.
 final EvalObject object;
@@ -61,7 +61,7 @@ final int createdAt;
 
 final Map<String,String>? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'id': id,
   'name': name,
@@ -69,15 +69,15 @@ Map<String, dynamic> toJson() { return {
   'testing_criteria': testingCriteria.map((e) => e.toJson()).toList(),
   'created_at': createdAt,
   'metadata': metadata,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('data_source_config') &&
       json.containsKey('testing_criteria') &&
       json.containsKey('created_at') && json['created_at'] is num &&
-      json.containsKey('metadata'); } 
-Eval copyWith({EvalObject? object, String? id, String? name, EvalDataSourceConfig? dataSourceConfig, List<EvalTestingCriteria>? testingCriteria, int? createdAt, Map<String, String>? Function()? metadata, }) { return Eval(
+      json.containsKey('metadata');}
+Eval copyWith({EvalObject? object, String? id, String? name, EvalDataSourceConfig? dataSourceConfig, List<EvalTestingCriteria>? testingCriteria, int? createdAt, Map<String, String>? Function()? metadata, }) {return Eval(
   object: object ?? this.object,
   id: id ?? this.id,
   name: name ?? this.name,
@@ -85,8 +85,8 @@ Eval copyWith({EvalObject? object, String? id, String? name, EvalDataSourceConfi
   testingCriteria: testingCriteria ?? this.testingCriteria,
   createdAt: createdAt ?? this.createdAt,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Eval &&
           object == other.object &&
           id == other.id &&
@@ -94,7 +94,7 @@ Eval copyWith({EvalObject? object, String? id, String? name, EvalDataSourceConfi
           dataSourceConfig == other.dataSourceConfig &&
           listEquals(testingCriteria, other.testingCriteria) &&
           createdAt == other.createdAt &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(object, id, name, dataSourceConfig, Object.hashAll(testingCriteria), createdAt, metadata); } 
-@override String toString() { return 'Eval(object: $object, id: $id, name: $name, dataSourceConfig: $dataSourceConfig, testingCriteria: $testingCriteria, createdAt: $createdAt, metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return Object.hash(object, id, name, dataSourceConfig, Object.hashAll(testingCriteria), createdAt, metadata);}
+@override String toString() {return 'Eval(object: $object, id: $id, name: $name, dataSourceConfig: $dataSourceConfig, testingCriteria: $testingCriteria, createdAt: $createdAt, metadata: $metadata)';}
+}

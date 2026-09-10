@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessOidcSaasAppCustomClaimsSource {const AccessOidcSaasAppCustomClaimsSource({this.name, this.nameByIdp, });
 
-factory AccessOidcSaasAppCustomClaimsSource.fromJson(Map<String, dynamic> json) { return AccessOidcSaasAppCustomClaimsSource(
+factory AccessOidcSaasAppCustomClaimsSource.fromJson(Map<String, dynamic> json) {return AccessOidcSaasAppCustomClaimsSource(
   name: json['name'] as String?,
   nameByIdp: (json['name_by_idp'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// The name of the IdP claim.
 final String? name;
@@ -13,19 +13,19 @@ final String? name;
 /// A mapping from IdP ID to claim name.
 final Map<String,String>? nameByIdp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'name_by_idp': ?nameByIdp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'name_by_idp'}.contains(key)); } 
-AccessOidcSaasAppCustomClaimsSource copyWith({String? Function()? name, Map<String, String>? Function()? nameByIdp, }) { return AccessOidcSaasAppCustomClaimsSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'name_by_idp'}.contains(key));}
+AccessOidcSaasAppCustomClaimsSource copyWith({String? Function()? name, Map<String, String>? Function()? nameByIdp, }) {return AccessOidcSaasAppCustomClaimsSource(
   name: name != null ? name() : this.name,
   nameByIdp: nameByIdp != null ? nameByIdp() : this.nameByIdp,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessOidcSaasAppCustomClaimsSource &&
           name == other.name &&
-          nameByIdp == other.nameByIdp; } 
-@override int get hashCode { return Object.hash(name, nameByIdp); } 
-@override String toString() { return 'AccessOidcSaasAppCustomClaimsSource(name: $name, nameByIdp: $nameByIdp)'; } 
- }
+          nameByIdp == other.nameByIdp;}
+@override int get hashCode {return Object.hash(name, nameByIdp);}
+@override String toString() {return 'AccessOidcSaasAppCustomClaimsSource(name: $name, nameByIdp: $nameByIdp)';}
+}

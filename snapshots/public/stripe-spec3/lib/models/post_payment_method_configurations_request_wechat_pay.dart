@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_wechat_pay_display_preference.dart';/// WeChat, owned by Tencent, is China's leading mobile app with over 1 billion monthly active users. Chinese consumers can use WeChat Pay to pay for goods and services inside of businesses' apps and websites. WeChat Pay users buy most frequently in gaming, e-commerce, travel, online education, and food/nutrition. Check this [page](https://docs.stripe.com/payments/wechat-pay) for more details.
 @immutable final class PostPaymentMethodConfigurationsRequestWechatPay {const PostPaymentMethodConfigurationsRequestWechatPay({this.displayPreference});
 
-factory PostPaymentMethodConfigurationsRequestWechatPay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestWechatPay(
+factory PostPaymentMethodConfigurationsRequestWechatPay.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsRequestWechatPay(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestWechatPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsRequestWechatPayDisplayPreference? displayPreference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsRequestWechatPay copyWith({PostPaymentMethodConfigurationsRequestWechatPayDisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsRequestWechatPay(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_preference'}.contains(key));}
+PostPaymentMethodConfigurationsRequestWechatPay copyWith({PostPaymentMethodConfigurationsRequestWechatPayDisplayPreference? Function()? displayPreference}) {return PostPaymentMethodConfigurationsRequestWechatPay(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsRequestWechatPay &&
-          displayPreference == other.displayPreference; } 
-@override int get hashCode { return displayPreference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestWechatPay(displayPreference: $displayPreference)'; } 
- }
+          displayPreference == other.displayPreference;}
+@override int get hashCode {return displayPreference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestWechatPay(displayPreference: $displayPreference)';}
+}

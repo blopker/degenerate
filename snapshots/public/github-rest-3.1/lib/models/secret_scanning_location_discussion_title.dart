@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a 'discussion_title' secret scanning location type. This location type shows that a secret was detected in the title of a discussion.
 @immutable final class SecretScanningLocationDiscussionTitle {const SecretScanningLocationDiscussionTitle({required this.discussionTitleUrl});
 
-factory SecretScanningLocationDiscussionTitle.fromJson(Map<String, dynamic> json) { return SecretScanningLocationDiscussionTitle(
+factory SecretScanningLocationDiscussionTitle.fromJson(Map<String, dynamic> json) {return SecretScanningLocationDiscussionTitle(
   discussionTitleUrl: Uri.parse(json['discussion_title_url'] as String),
-); }
+);}
 
 /// The URL to the discussion where the secret was detected.
 final Uri discussionTitleUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'discussion_title_url': discussionTitleUrl.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('discussion_title_url') && json['discussion_title_url'] is String; } 
-SecretScanningLocationDiscussionTitle copyWith({Uri? discussionTitleUrl}) { return SecretScanningLocationDiscussionTitle(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('discussion_title_url') && json['discussion_title_url'] is String;}
+SecretScanningLocationDiscussionTitle copyWith({Uri? discussionTitleUrl}) {return SecretScanningLocationDiscussionTitle(
   discussionTitleUrl: discussionTitleUrl ?? this.discussionTitleUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecretScanningLocationDiscussionTitle &&
-          discussionTitleUrl == other.discussionTitleUrl; } 
-@override int get hashCode { return discussionTitleUrl.hashCode; } 
-@override String toString() { return 'SecretScanningLocationDiscussionTitle(discussionTitleUrl: $discussionTitleUrl)'; } 
- }
+          discussionTitleUrl == other.discussionTitleUrl;}
+@override int get hashCode {return discussionTitleUrl.hashCode;}
+@override String toString() {return 'SecretScanningLocationDiscussionTitle(discussionTitleUrl: $discussionTitleUrl)';}
+}

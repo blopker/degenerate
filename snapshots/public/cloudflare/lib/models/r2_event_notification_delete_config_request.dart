@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2EventNotificationDeleteConfigRequest {const R2EventNotificationDeleteConfigRequest({this.ruleIds});
 
-factory R2EventNotificationDeleteConfigRequest.fromJson(Map<String, dynamic> json) { return R2EventNotificationDeleteConfigRequest(
+factory R2EventNotificationDeleteConfigRequest.fromJson(Map<String, dynamic> json) {return R2EventNotificationDeleteConfigRequest(
   ruleIds: (json['ruleIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Array of rule ids to delete.
 final List<String>? ruleIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ruleIds': ?ruleIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ruleIds'}.contains(key)); } 
-R2EventNotificationDeleteConfigRequest copyWith({List<String>? Function()? ruleIds}) { return R2EventNotificationDeleteConfigRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ruleIds'}.contains(key));}
+R2EventNotificationDeleteConfigRequest copyWith({List<String>? Function()? ruleIds}) {return R2EventNotificationDeleteConfigRequest(
   ruleIds: ruleIds != null ? ruleIds() : this.ruleIds,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is R2EventNotificationDeleteConfigRequest &&
-          listEquals(ruleIds, other.ruleIds); } 
-@override int get hashCode { return Object.hashAll(ruleIds ?? const []).hashCode; } 
-@override String toString() { return 'R2EventNotificationDeleteConfigRequest(ruleIds: $ruleIds)'; } 
- }
+          listEquals(ruleIds, other.ruleIds);}
+@override int get hashCode {return Object.hashAll(ruleIds ?? const []).hashCode;}
+@override String toString() {return 'R2EventNotificationDeleteConfigRequest(ruleIds: $ruleIds)';}
+}

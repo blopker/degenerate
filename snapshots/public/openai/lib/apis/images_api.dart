@@ -19,7 +19,7 @@ final class ImagesApi with ApiExecutor {const ImagesApi(this.apiConfig);
 /// 
 ///
 /// `POST /images/edits`
-Future<ApiResult<CreateImageEditSuccess, Never>> createImageEdit({required EditImageBodyJsonParam body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateImageEditSuccess, Never>> createImageEdit({required EditImageBodyJsonParam body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -34,12 +34,12 @@ return await execute(
   request,
   onSuccess: CreateImageEditSuccess.parse,
 );
- } 
+}
 /// Creates an image given a prompt. [Learn more](/docs/guides/images).
 /// 
 ///
 /// `POST /images/generations`
-Future<ApiResult<CreateImageSuccess, Never>> createImage({required CreateImageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateImageSuccess, Never>> createImage({required CreateImageRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -54,11 +54,11 @@ return await execute(
   request,
   onSuccess: CreateImageSuccess.parse,
 );
- } 
+}
 /// Creates a variation of a given image. This endpoint only supports `dall-e-2`.
 ///
 /// `POST /images/variations`
-Future<ApiResult<ImagesResponse, Never>> createImageVariation({required CreateImageVariationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ImagesResponse, Never>> createImageVariation({required CreateImageVariationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -88,11 +88,11 @@ final json = jsonDecode(response.body);
 return ImagesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models (`gpt-image-1.5`, `gpt-image-1`, `gpt-image-1-mini`, and `chatgpt-image-latest`) and `dall-e-2`. (streaming)
 ///
 /// `POST /images/edits`
-Stream<ImageEditStreamEvent> createImageEditStream({required EditImageBodyJsonParam body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<ImageEditStreamEvent> createImageEditStream({required EditImageBodyJsonParam body, RequestOptions? options, }) {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -109,12 +109,12 @@ return executeStreaming(
     return ImageEditStreamEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Creates an image given a prompt. [Learn more](/docs/guides/images).
 ///  (streaming)
 ///
 /// `POST /images/generations`
-Stream<ImageGenStreamEvent> createImageStream({required CreateImageRequest body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<ImageGenStreamEvent> createImageStream({required CreateImageRequest body, RequestOptions? options, }) {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -131,5 +131,5 @@ return executeStreaming(
     return ImageGenStreamEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesAddSubIssueRequest {const IssuesAddSubIssueRequest({required this.subIssueId, this.replaceParent, });
 
-factory IssuesAddSubIssueRequest.fromJson(Map<String, dynamic> json) { return IssuesAddSubIssueRequest(
+factory IssuesAddSubIssueRequest.fromJson(Map<String, dynamic> json) {return IssuesAddSubIssueRequest(
   subIssueId: (json['sub_issue_id'] as num).toInt(),
   replaceParent: json['replace_parent'] as bool?,
-); }
+);}
 
 /// The id of the sub-issue to add. The sub-issue must belong to the same repository owner as the parent issue
 final int subIssueId;
@@ -13,19 +13,19 @@ final int subIssueId;
 /// Option that, when true, instructs the operation to replace the sub-issues current parent issue
 final bool? replaceParent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'sub_issue_id': subIssueId,
   'replace_parent': ?replaceParent,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('sub_issue_id') && json['sub_issue_id'] is num; } 
-IssuesAddSubIssueRequest copyWith({int? subIssueId, bool? Function()? replaceParent, }) { return IssuesAddSubIssueRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('sub_issue_id') && json['sub_issue_id'] is num;}
+IssuesAddSubIssueRequest copyWith({int? subIssueId, bool? Function()? replaceParent, }) {return IssuesAddSubIssueRequest(
   subIssueId: subIssueId ?? this.subIssueId,
   replaceParent: replaceParent != null ? replaceParent() : this.replaceParent,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuesAddSubIssueRequest &&
           subIssueId == other.subIssueId &&
-          replaceParent == other.replaceParent; } 
-@override int get hashCode { return Object.hash(subIssueId, replaceParent); } 
-@override String toString() { return 'IssuesAddSubIssueRequest(subIssueId: $subIssueId, replaceParent: $replaceParent)'; } 
- }
+          replaceParent == other.replaceParent;}
+@override int get hashCode {return Object.hash(subIssueId, replaceParent);}
+@override String toString() {return 'IssuesAddSubIssueRequest(subIssueId: $subIssueId, replaceParent: $replaceParent)';}
+}

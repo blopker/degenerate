@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsUpdateHostedRunnerForOrgRequest {const ActionsUpdateHostedRunnerForOrgRequest({this.name, this.runnerGroupId, this.maximumRunners, this.enableStaticIp, this.size, this.imageId, this.imageVersion = const Omittable.absent(), });
 
-factory ActionsUpdateHostedRunnerForOrgRequest.fromJson(Map<String, dynamic> json) { return ActionsUpdateHostedRunnerForOrgRequest(
+factory ActionsUpdateHostedRunnerForOrgRequest.fromJson(Map<String, dynamic> json) {return ActionsUpdateHostedRunnerForOrgRequest(
   name: json['name'] as String?,
   runnerGroupId: json['runner_group_id'] != null ? (json['runner_group_id'] as num).toInt() : null,
   maximumRunners: json['maximum_runners'] != null ? (json['maximum_runners'] as num).toInt() : null,
@@ -10,7 +10,7 @@ factory ActionsUpdateHostedRunnerForOrgRequest.fromJson(Map<String, dynamic> jso
   size: json['size'] as String?,
   imageId: json['image_id'] as String?,
   imageVersion: json.containsKey('image_version') ? Omittable(json['image_version'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Name of the runner. Must be between 1 and 64 characters and may only contain upper and lowercase letters a-z, numbers 0-9, '.', '-', and '_'.
 final String? name;
@@ -33,7 +33,7 @@ final String? imageId;
 /// The version of the runner image to deploy. This is relevant only for runners using custom images.
 final Omittable<String?> imageVersion;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'runner_group_id': ?runnerGroupId,
   'maximum_runners': ?maximumRunners,
@@ -41,9 +41,9 @@ Map<String, dynamic> toJson() { return {
   'size': ?size,
   'image_id': ?imageId,
   if (imageVersion.isPresent) 'image_version': imageVersion.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'runner_group_id', 'maximum_runners', 'enable_static_ip', 'size', 'image_id', 'image_version'}.contains(key)); } 
-ActionsUpdateHostedRunnerForOrgRequest copyWith({String? Function()? name, int? Function()? runnerGroupId, int? Function()? maximumRunners, bool? Function()? enableStaticIp, String? Function()? size, String? Function()? imageId, Omittable<String?>? imageVersion, }) { return ActionsUpdateHostedRunnerForOrgRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'runner_group_id', 'maximum_runners', 'enable_static_ip', 'size', 'image_id', 'image_version'}.contains(key));}
+ActionsUpdateHostedRunnerForOrgRequest copyWith({String? Function()? name, int? Function()? runnerGroupId, int? Function()? maximumRunners, bool? Function()? enableStaticIp, String? Function()? size, String? Function()? imageId, Omittable<String?>? imageVersion, }) {return ActionsUpdateHostedRunnerForOrgRequest(
   name: name != null ? name() : this.name,
   runnerGroupId: runnerGroupId != null ? runnerGroupId() : this.runnerGroupId,
   maximumRunners: maximumRunners != null ? maximumRunners() : this.maximumRunners,
@@ -51,8 +51,8 @@ ActionsUpdateHostedRunnerForOrgRequest copyWith({String? Function()? name, int? 
   size: size != null ? size() : this.size,
   imageId: imageId != null ? imageId() : this.imageId,
   imageVersion: imageVersion ?? this.imageVersion,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ActionsUpdateHostedRunnerForOrgRequest &&
           name == other.name &&
           runnerGroupId == other.runnerGroupId &&
@@ -60,7 +60,7 @@ ActionsUpdateHostedRunnerForOrgRequest copyWith({String? Function()? name, int? 
           enableStaticIp == other.enableStaticIp &&
           size == other.size &&
           imageId == other.imageId &&
-          imageVersion == other.imageVersion; } 
-@override int get hashCode { return Object.hash(name, runnerGroupId, maximumRunners, enableStaticIp, size, imageId, imageVersion); } 
-@override String toString() { return 'ActionsUpdateHostedRunnerForOrgRequest(name: $name, runnerGroupId: $runnerGroupId, maximumRunners: $maximumRunners, enableStaticIp: $enableStaticIp, size: $size, imageId: $imageId, imageVersion: $imageVersion)'; } 
- }
+          imageVersion == other.imageVersion;}
+@override int get hashCode {return Object.hash(name, runnerGroupId, maximumRunners, enableStaticIp, size, imageId, imageVersion);}
+@override String toString() {return 'ActionsUpdateHostedRunnerForOrgRequest(name: $name, runnerGroupId: $runnerGroupId, maximumRunners: $maximumRunners, enableStaticIp: $enableStaticIp, size: $size, imageId: $imageId, imageVersion: $imageVersion)';}
+}

@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of this membership.
 @immutable final class UserSAccountMembershipsListMembershipsStatus {const UserSAccountMembershipsListMembershipsStatus._(this.value);
 
-factory UserSAccountMembershipsListMembershipsStatus.fromJson(String json) { return switch (json) {
+factory UserSAccountMembershipsListMembershipsStatus.fromJson(String json) {return switch (json) {
   'accepted' => accepted,
   'pending' => pending,
   'rejected' => rejected,
   _ => UserSAccountMembershipsListMembershipsStatus._(json),
-}; }
+};}
 
 static const UserSAccountMembershipsListMembershipsStatus accepted = UserSAccountMembershipsListMembershipsStatus._('accepted');
 
@@ -20,11 +20,11 @@ static const List<UserSAccountMembershipsListMembershipsStatus> values = [accept
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserSAccountMembershipsListMembershipsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UserSAccountMembershipsListMembershipsStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UserSAccountMembershipsListMembershipsStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UserSAccountMembershipsListMembershipsStatus($value)';}
+}

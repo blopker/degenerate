@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType._(this.value);
 
-factory RadarGetDnsAs112TimeseriesQueryType.fromJson(String json) { return switch (json) {
+factory RadarGetDnsAs112TimeseriesQueryType.fromJson(String json) {return switch (json) {
   'A' => a,
   'AAAA' => aaaa,
   'A6' => a6,
@@ -92,7 +92,7 @@ factory RadarGetDnsAs112TimeseriesQueryType.fromJson(String json) { return switc
   'X25' => x25,
   'ZONEMD' => zonemd,
   _ => RadarGetDnsAs112TimeseriesQueryType._(json),
-}; }
+};}
 
 static const RadarGetDnsAs112TimeseriesQueryType a = RadarGetDnsAs112TimeseriesQueryType._('A');
 
@@ -274,11 +274,11 @@ static const List<RadarGetDnsAs112TimeseriesQueryType> values = [a, aaaa, a6, af
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsAs112TimeseriesQueryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsAs112TimeseriesQueryType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsAs112TimeseriesQueryType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsAs112TimeseriesQueryType($value)';}
+}

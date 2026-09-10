@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// V4 public API Pagination/Cursor info.
 @immutable final class TeamsDevicesCursorResultInfo {const TeamsDevicesCursorResultInfo({required this.count, required this.cursor, required this.perPage, this.totalCount = const Omittable.absent(), });
 
-factory TeamsDevicesCursorResultInfo.fromJson(Map<String, dynamic> json) { return TeamsDevicesCursorResultInfo(
+factory TeamsDevicesCursorResultInfo.fromJson(Map<String, dynamic> json) {return TeamsDevicesCursorResultInfo(
   count: (json['count'] as num).toInt(),
   cursor: json['cursor'] as String,
   perPage: (json['per_page'] as num).toInt(),
   totalCount: json.containsKey('total_count') ? Omittable(json['total_count'] != null ? (json['total_count'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// Number of records in the response.
 final int count;
@@ -22,27 +22,27 @@ final int perPage;
 /// Total number of records available.
 final Omittable<int?> totalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': count,
   'cursor': cursor,
   'per_page': perPage,
   if (totalCount.isPresent) 'total_count': totalCount.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('count') && json['count'] is num &&
       json.containsKey('cursor') && json['cursor'] is String &&
-      json.containsKey('per_page') && json['per_page'] is num; } 
-TeamsDevicesCursorResultInfo copyWith({int? count, String? cursor, int? perPage, Omittable<int?>? totalCount, }) { return TeamsDevicesCursorResultInfo(
+      json.containsKey('per_page') && json['per_page'] is num;}
+TeamsDevicesCursorResultInfo copyWith({int? count, String? cursor, int? perPage, Omittable<int?>? totalCount, }) {return TeamsDevicesCursorResultInfo(
   count: count ?? this.count,
   cursor: cursor ?? this.cursor,
   perPage: perPage ?? this.perPage,
   totalCount: totalCount ?? this.totalCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamsDevicesCursorResultInfo &&
           count == other.count &&
           cursor == other.cursor &&
           perPage == other.perPage &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(count, cursor, perPage, totalCount); } 
-@override String toString() { return 'TeamsDevicesCursorResultInfo(count: $count, cursor: $cursor, perPage: $perPage, totalCount: $totalCount)'; } 
- }
+          totalCount == other.totalCount;}
+@override int get hashCode {return Object.hash(count, cursor, perPage, totalCount);}
+@override String toString() {return 'TeamsDevicesCursorResultInfo(count: $count, cursor: $cursor, perPage: $perPage, totalCount: $totalCount)';}
+}

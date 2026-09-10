@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookIssueCommentEditedIssueReactions {const WebhookIssueCommentEditedIssueReactions({this.plus1, this.minus1, this.confused, this.eyes, this.heart, this.hooray, this.laugh, this.rocket, this.totalCount, this.url, });
 
-factory WebhookIssueCommentEditedIssueReactions.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentEditedIssueReactions(
+factory WebhookIssueCommentEditedIssueReactions.fromJson(Map<String, dynamic> json) {return WebhookIssueCommentEditedIssueReactions(
   plus1: json['+1'] != null ? (json['+1'] as num).toInt() : null,
   minus1: json['-1'] != null ? (json['-1'] as num).toInt() : null,
   confused: json['confused'] != null ? (json['confused'] as num).toInt() : null,
@@ -13,7 +13,7 @@ factory WebhookIssueCommentEditedIssueReactions.fromJson(Map<String, dynamic> js
   rocket: json['rocket'] != null ? (json['rocket'] as num).toInt() : null,
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
   url: json['url'] as String?,
-); }
+);}
 
 final int? plus1;
 
@@ -35,7 +35,7 @@ final int? totalCount;
 
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '+1': ?plus1,
   '-1': ?minus1,
   'confused': ?confused,
@@ -46,9 +46,9 @@ Map<String, dynamic> toJson() { return {
   'rocket': ?rocket,
   'total_count': ?totalCount,
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'+1', '-1', 'confused', 'eyes', 'heart', 'hooray', 'laugh', 'rocket', 'total_count', 'url'}.contains(key)); } 
-WebhookIssueCommentEditedIssueReactions copyWith({int? Function()? plus1, int? Function()? minus1, int? Function()? confused, int? Function()? eyes, int? Function()? heart, int? Function()? hooray, int? Function()? laugh, int? Function()? rocket, int? Function()? totalCount, String? Function()? url, }) { return WebhookIssueCommentEditedIssueReactions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'+1', '-1', 'confused', 'eyes', 'heart', 'hooray', 'laugh', 'rocket', 'total_count', 'url'}.contains(key));}
+WebhookIssueCommentEditedIssueReactions copyWith({int? Function()? plus1, int? Function()? minus1, int? Function()? confused, int? Function()? eyes, int? Function()? heart, int? Function()? hooray, int? Function()? laugh, int? Function()? rocket, int? Function()? totalCount, String? Function()? url, }) {return WebhookIssueCommentEditedIssueReactions(
   plus1: plus1 != null ? plus1() : this.plus1,
   minus1: minus1 != null ? minus1() : this.minus1,
   confused: confused != null ? confused() : this.confused,
@@ -59,8 +59,8 @@ WebhookIssueCommentEditedIssueReactions copyWith({int? Function()? plus1, int? F
   rocket: rocket != null ? rocket() : this.rocket,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookIssueCommentEditedIssueReactions &&
           plus1 == other.plus1 &&
           minus1 == other.minus1 &&
@@ -71,7 +71,7 @@ WebhookIssueCommentEditedIssueReactions copyWith({int? Function()? plus1, int? F
           laugh == other.laugh &&
           rocket == other.rocket &&
           totalCount == other.totalCount &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(plus1, minus1, confused, eyes, heart, hooray, laugh, rocket, totalCount, url); } 
-@override String toString() { return 'WebhookIssueCommentEditedIssueReactions(plus1: $plus1, minus1: $minus1, confused: $confused, eyes: $eyes, heart: $heart, hooray: $hooray, laugh: $laugh, rocket: $rocket, totalCount: $totalCount, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(plus1, minus1, confused, eyes, heart, hooray, laugh, rocket, totalCount, url);}
+@override String toString() {return 'WebhookIssueCommentEditedIssueReactions(plus1: $plus1, minus1: $minus1, confused: $confused, eyes: $eyes, heart: $heart, hooray: $hooray, laugh: $laugh, rocket: $rocket, totalCount: $totalCount, url: $url)';}
+}

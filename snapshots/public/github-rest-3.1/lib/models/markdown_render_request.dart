@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The rendering mode.
 @immutable final class MarkdownRenderRequestMode {const MarkdownRenderRequestMode._(this.value);
 
-factory MarkdownRenderRequestMode.fromJson(String json) { return switch (json) {
+factory MarkdownRenderRequestMode.fromJson(String json) {return switch (json) {
   'markdown' => markdown,
   'gfm' => gfm,
   _ => MarkdownRenderRequestMode._(json),
-}; }
+};}
 
 static const MarkdownRenderRequestMode markdown = MarkdownRenderRequestMode._('markdown');
 
@@ -17,21 +17,21 @@ static const List<MarkdownRenderRequestMode> values = [markdown, gfm];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MarkdownRenderRequestMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MarkdownRenderRequestMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MarkdownRenderRequestMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MarkdownRenderRequestMode($value)';}
+}
 @immutable final class MarkdownRenderRequest {const MarkdownRenderRequest({required this.text, this.mode, this.context, });
 
-factory MarkdownRenderRequest.fromJson(Map<String, dynamic> json) { return MarkdownRenderRequest(
+factory MarkdownRenderRequest.fromJson(Map<String, dynamic> json) {return MarkdownRenderRequest(
   text: json['text'] as String,
   mode: json['mode'] != null ? MarkdownRenderRequestMode.fromJson(json['mode'] as String) : null,
   context: json['context'] as String?,
-); }
+);}
 
 /// The Markdown text to render in HTML.
 final String text;
@@ -43,23 +43,23 @@ final MarkdownRenderRequestMode? mode;
 final String? context;
 
 /// The value with the schema default applied when absent.
-MarkdownRenderRequestMode get modeOrDefault { return mode ?? MarkdownRenderRequestMode.fromJson('markdown'); } 
-Map<String, dynamic> toJson() { return {
+MarkdownRenderRequestMode get modeOrDefault {return mode ?? MarkdownRenderRequestMode.fromJson('markdown');}
+Map<String, dynamic> toJson() {return {
   'text': text,
   if (mode != null) 'mode': mode?.toJson(),
   'context': ?context,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
-MarkdownRenderRequest copyWith({String? text, MarkdownRenderRequestMode? Function()? mode, String? Function()? context, }) { return MarkdownRenderRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('text') && json['text'] is String;}
+MarkdownRenderRequest copyWith({String? text, MarkdownRenderRequestMode? Function()? mode, String? Function()? context, }) {return MarkdownRenderRequest(
   text: text ?? this.text,
   mode: mode != null ? mode() : this.mode,
   context: context != null ? context() : this.context,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MarkdownRenderRequest &&
           text == other.text &&
           mode == other.mode &&
-          context == other.context; } 
-@override int get hashCode { return Object.hash(text, mode, context); } 
-@override String toString() { return 'MarkdownRenderRequest(text: $text, mode: $mode, context: $context)'; } 
- }
+          context == other.context;}
+@override int get hashCode {return Object.hash(text, mode, context);}
+@override String toString() {return 'MarkdownRenderRequest(text: $text, mode: $mode, context: $context)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_issues_locked_issue_milestone_creator.dart';/// The state of the milestone.
 @immutable final class WebhookIssuesLockedIssueMilestoneState {const WebhookIssuesLockedIssueMilestoneState._(this.value);
 
-factory WebhookIssuesLockedIssueMilestoneState.fromJson(String json) { return switch (json) {
+factory WebhookIssuesLockedIssueMilestoneState.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   _ => WebhookIssuesLockedIssueMilestoneState._(json),
-}; }
+};}
 
 static const WebhookIssuesLockedIssueMilestoneState open = WebhookIssuesLockedIssueMilestoneState._('open');
 
@@ -17,18 +17,18 @@ static const List<WebhookIssuesLockedIssueMilestoneState> values = [open, closed
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesLockedIssueMilestoneState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesLockedIssueMilestoneState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesLockedIssueMilestoneState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesLockedIssueMilestoneState($value)';}
+}
 /// A collection of related issues and pull requests.
 @immutable final class WebhookIssuesLockedIssueMilestone {const WebhookIssuesLockedIssueMilestone({required this.closedAt, required this.closedIssues, required this.createdAt, required this.creator, required this.description, required this.dueOn, required this.htmlUrl, required this.id, required this.labelsUrl, required this.nodeId, required this.number, required this.openIssues, required this.state, required this.title, required this.updatedAt, required this.url, });
 
-factory WebhookIssuesLockedIssueMilestone.fromJson(Map<String, dynamic> json) { return WebhookIssuesLockedIssueMilestone(
+factory WebhookIssuesLockedIssueMilestone.fromJson(Map<String, dynamic> json) {return WebhookIssuesLockedIssueMilestone(
   closedAt: json['closed_at'] != null ? DateTime.parse(json['closed_at'] as String) : null,
   closedIssues: (json['closed_issues'] as num).toInt(),
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -45,7 +45,7 @@ factory WebhookIssuesLockedIssueMilestone.fromJson(Map<String, dynamic> json) { 
   title: json['title'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final DateTime? closedAt;
 
@@ -82,7 +82,7 @@ final DateTime updatedAt;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'closed_at': closedAt?.toIso8601String(),
   'closed_issues': closedIssues,
   'created_at': createdAt.toIso8601String(),
@@ -99,8 +99,8 @@ Map<String, dynamic> toJson() { return {
   'title': title,
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
       json.containsKey('closed_issues') && json['closed_issues'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('creator') &&
@@ -115,8 +115,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('close
       json.containsKey('state') &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookIssuesLockedIssueMilestone copyWith({DateTime? Function()? closedAt, int? closedIssues, DateTime? createdAt, WebhookIssuesLockedIssueMilestoneCreator? Function()? creator, String? Function()? description, DateTime? Function()? dueOn, Uri? htmlUrl, int? id, Uri? labelsUrl, String? nodeId, int? number, int? openIssues, WebhookIssuesLockedIssueMilestoneState? state, String? title, DateTime? updatedAt, Uri? url, }) { return WebhookIssuesLockedIssueMilestone(
+      json.containsKey('url') && json['url'] is String;}
+WebhookIssuesLockedIssueMilestone copyWith({DateTime? Function()? closedAt, int? closedIssues, DateTime? createdAt, WebhookIssuesLockedIssueMilestoneCreator? Function()? creator, String? Function()? description, DateTime? Function()? dueOn, Uri? htmlUrl, int? id, Uri? labelsUrl, String? nodeId, int? number, int? openIssues, WebhookIssuesLockedIssueMilestoneState? state, String? title, DateTime? updatedAt, Uri? url, }) {return WebhookIssuesLockedIssueMilestone(
   closedAt: closedAt != null ? closedAt() : this.closedAt,
   closedIssues: closedIssues ?? this.closedIssues,
   createdAt: createdAt ?? this.createdAt,
@@ -133,8 +133,8 @@ WebhookIssuesLockedIssueMilestone copyWith({DateTime? Function()? closedAt, int?
   title: title ?? this.title,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookIssuesLockedIssueMilestone &&
           closedAt == other.closedAt &&
           closedIssues == other.closedIssues &&
@@ -151,7 +151,7 @@ WebhookIssuesLockedIssueMilestone copyWith({DateTime? Function()? closedAt, int?
           state == other.state &&
           title == other.title &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(closedAt, closedIssues, createdAt, creator, description, dueOn, htmlUrl, id, labelsUrl, nodeId, number, openIssues, state, title, updatedAt, url); } 
-@override String toString() { return 'WebhookIssuesLockedIssueMilestone(closedAt: $closedAt, closedIssues: $closedIssues, createdAt: $createdAt, creator: $creator, description: $description, dueOn: $dueOn, htmlUrl: $htmlUrl, id: $id, labelsUrl: $labelsUrl, nodeId: $nodeId, number: $number, openIssues: $openIssues, state: $state, title: $title, updatedAt: $updatedAt, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(closedAt, closedIssues, createdAt, creator, description, dueOn, htmlUrl, id, labelsUrl, nodeId, number, openIssues, state, title, updatedAt, url);}
+@override String toString() {return 'WebhookIssuesLockedIssueMilestone(closedAt: $closedAt, closedIssues: $closedIssues, createdAt: $createdAt, creator: $creator, description: $description, dueOn: $dueOn, htmlUrl: $htmlUrl, id: $id, labelsUrl: $labelsUrl, nodeId: $nodeId, number: $number, openIssues: $openIssues, state: $state, title: $title, updatedAt: $updatedAt, url: $url)';}
+}

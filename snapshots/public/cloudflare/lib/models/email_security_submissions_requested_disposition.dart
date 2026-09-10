@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecuritySubmissionsRequestedDisposition {const EmailSecuritySubmissionsRequestedDisposition._(this.value);
 
-factory EmailSecuritySubmissionsRequestedDisposition.fromJson(String json) { return switch (json) {
+factory EmailSecuritySubmissionsRequestedDisposition.fromJson(String json) {return switch (json) {
   'MALICIOUS' => malicious,
   'SUSPICIOUS' => suspicious,
   'SPOOF' => spoof,
@@ -10,7 +10,7 @@ factory EmailSecuritySubmissionsRequestedDisposition.fromJson(String json) { ret
   'BULK' => bulk,
   'NONE' => none,
   _ => EmailSecuritySubmissionsRequestedDisposition._(json),
-}; }
+};}
 
 static const EmailSecuritySubmissionsRequestedDisposition malicious = EmailSecuritySubmissionsRequestedDisposition._('MALICIOUS');
 
@@ -28,11 +28,11 @@ static const List<EmailSecuritySubmissionsRequestedDisposition> values = [malici
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecuritySubmissionsRequestedDisposition && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecuritySubmissionsRequestedDisposition($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailSecuritySubmissionsRequestedDisposition && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailSecuritySubmissionsRequestedDisposition($value)';}
+}

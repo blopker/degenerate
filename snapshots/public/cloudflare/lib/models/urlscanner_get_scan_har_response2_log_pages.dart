@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response2_log_pages_page_timings.dart';@immutable final class UrlscannerGetScanHarResponse2LogPages {const UrlscannerGetScanHarResponse2LogPages({required this.id, required this.pageTimings, required this.startedDateTime, required this.title, });
 
-factory UrlscannerGetScanHarResponse2LogPages.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse2LogPages(
+factory UrlscannerGetScanHarResponse2LogPages.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanHarResponse2LogPages(
   id: json['id'] as String,
   pageTimings: UrlscannerGetScanHarResponse2LogPagesPageTimings.fromJson(json['pageTimings'] as Map<String, dynamic>),
   startedDateTime: json['startedDateTime'] as String,
   title: json['title'] as String,
-); }
+);}
 
 final String id;
 
@@ -17,28 +17,28 @@ final String startedDateTime;
 
 final String title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'pageTimings': pageTimings.toJson(),
   'startedDateTime': startedDateTime,
   'title': title,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('pageTimings') &&
       json.containsKey('startedDateTime') && json['startedDateTime'] is String &&
-      json.containsKey('title') && json['title'] is String; } 
-UrlscannerGetScanHarResponse2LogPages copyWith({String? id, UrlscannerGetScanHarResponse2LogPagesPageTimings? pageTimings, String? startedDateTime, String? title, }) { return UrlscannerGetScanHarResponse2LogPages(
+      json.containsKey('title') && json['title'] is String;}
+UrlscannerGetScanHarResponse2LogPages copyWith({String? id, UrlscannerGetScanHarResponse2LogPagesPageTimings? pageTimings, String? startedDateTime, String? title, }) {return UrlscannerGetScanHarResponse2LogPages(
   id: id ?? this.id,
   pageTimings: pageTimings ?? this.pageTimings,
   startedDateTime: startedDateTime ?? this.startedDateTime,
   title: title ?? this.title,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanHarResponse2LogPages &&
           id == other.id &&
           pageTimings == other.pageTimings &&
           startedDateTime == other.startedDateTime &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(id, pageTimings, startedDateTime, title); } 
-@override String toString() { return 'UrlscannerGetScanHarResponse2LogPages(id: $id, pageTimings: $pageTimings, startedDateTime: $startedDateTime, title: $title)'; } 
- }
+          title == other.title;}
+@override int get hashCode {return Object.hash(id, pageTimings, startedDateTime, title);}
+@override String toString() {return 'UrlscannerGetScanHarResponse2LogPages(id: $id, pageTimings: $pageTimings, startedDateTime: $startedDateTime, title: $title)';}
+}

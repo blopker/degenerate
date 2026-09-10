@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_groups_components_schemas_name2.dart';import 'access_rule.dart';@immutable final class ZoneLevelAccessGroupsCreateAnAccessGroupRequest {const ZoneLevelAccessGroupsCreateAnAccessGroupRequest({required this.include, required this.name, this.exclude, this.require, });
 
-factory ZoneLevelAccessGroupsCreateAnAccessGroupRequest.fromJson(Map<String, dynamic> json) { return ZoneLevelAccessGroupsCreateAnAccessGroupRequest(
+factory ZoneLevelAccessGroupsCreateAnAccessGroupRequest.fromJson(Map<String, dynamic> json) {return ZoneLevelAccessGroupsCreateAnAccessGroupRequest(
   exclude: (json['exclude'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
   include: (json['include'] as List<dynamic>).map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
   name: AccessGroupsComponentsSchemasName2.fromJson(json['name'] as String),
   require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Rules evaluated with a NOT logical operator. To match a policy, a user cannot meet any of the Exclude rules.
 final List<AccessRule>? exclude;
@@ -21,26 +21,26 @@ final AccessGroupsComponentsSchemasName2 name;
 /// Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules.
 final List<AccessRule>? require;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
   'include': include.map((e) => e.toJson()).toList(),
   'name': name.toJson(),
   if (require != null) 'require': require?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('include') &&
-      json.containsKey('name'); } 
-ZoneLevelAccessGroupsCreateAnAccessGroupRequest copyWith({List<AccessRule>? Function()? exclude, List<AccessRule>? include, AccessGroupsComponentsSchemasName2? name, List<AccessRule>? Function()? require, }) { return ZoneLevelAccessGroupsCreateAnAccessGroupRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('include') &&
+      json.containsKey('name');}
+ZoneLevelAccessGroupsCreateAnAccessGroupRequest copyWith({List<AccessRule>? Function()? exclude, List<AccessRule>? include, AccessGroupsComponentsSchemasName2? name, List<AccessRule>? Function()? require, }) {return ZoneLevelAccessGroupsCreateAnAccessGroupRequest(
   exclude: exclude != null ? exclude() : this.exclude,
   include: include ?? this.include,
   name: name ?? this.name,
   require: require != null ? require() : this.require,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZoneLevelAccessGroupsCreateAnAccessGroupRequest &&
           listEquals(exclude, other.exclude) &&
           listEquals(include, other.include) &&
           name == other.name &&
-          listEquals(require, other.require); } 
-@override int get hashCode { return Object.hash(Object.hashAll(exclude ?? const []), Object.hashAll(include), name, Object.hashAll(require ?? const [])); } 
-@override String toString() { return 'ZoneLevelAccessGroupsCreateAnAccessGroupRequest(exclude: $exclude, include: $include, name: $name, require: $require)'; } 
- }
+          listEquals(require, other.require);}
+@override int get hashCode {return Object.hash(Object.hashAll(exclude ?? const []), Object.hashAll(include), name, Object.hashAll(require ?? const []));}
+@override String toString() {return 'ZoneLevelAccessGroupsCreateAnAccessGroupRequest(exclude: $exclude, include: $include, name: $name, require: $require)';}
+}

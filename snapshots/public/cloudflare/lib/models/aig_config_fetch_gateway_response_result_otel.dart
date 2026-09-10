@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigFetchGatewayResponseResultOtelContentType {const AigConfigFetchGatewayResponseResultOtelContentType._(this.value);
 
-factory AigConfigFetchGatewayResponseResultOtelContentType.fromJson(String json) { return switch (json) {
+factory AigConfigFetchGatewayResponseResultOtelContentType.fromJson(String json) {return switch (json) {
   'json' => $json,
   'protobuf' => protobuf,
   _ => AigConfigFetchGatewayResponseResultOtelContentType._(json),
-}; }
+};}
 
 static const AigConfigFetchGatewayResponseResultOtelContentType $json = AigConfigFetchGatewayResponseResultOtelContentType._('json');
 
@@ -16,22 +16,22 @@ static const List<AigConfigFetchGatewayResponseResultOtelContentType> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigFetchGatewayResponseResultOtelContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigFetchGatewayResponseResultOtelContentType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigFetchGatewayResponseResultOtelContentType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigFetchGatewayResponseResultOtelContentType($value)';}
+}
 @immutable final class AigConfigFetchGatewayResponseResultOtel {const AigConfigFetchGatewayResponseResultOtel({required this.authorization, required this.headers, required this.url, this.contentType, });
 
-factory AigConfigFetchGatewayResponseResultOtel.fromJson(Map<String, dynamic> json) { return AigConfigFetchGatewayResponseResultOtel(
+factory AigConfigFetchGatewayResponseResultOtel.fromJson(Map<String, dynamic> json) {return AigConfigFetchGatewayResponseResultOtel(
   authorization: json['authorization'] as String,
   contentType: json['content_type'] != null ? AigConfigFetchGatewayResponseResultOtelContentType.fromJson(json['content_type'] as String) : null,
   headers: (json['headers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   url: json['url'] as String,
-); }
+);}
 
 final String authorization;
 
@@ -42,28 +42,28 @@ final Map<String,String> headers;
 final String url;
 
 /// The value with the schema default applied when absent.
-AigConfigFetchGatewayResponseResultOtelContentType get contentTypeOrDefault { return contentType ?? AigConfigFetchGatewayResponseResultOtelContentType.fromJson('json'); } 
-Map<String, dynamic> toJson() { return {
+AigConfigFetchGatewayResponseResultOtelContentType get contentTypeOrDefault {return contentType ?? AigConfigFetchGatewayResponseResultOtelContentType.fromJson('json');}
+Map<String, dynamic> toJson() {return {
   'authorization': authorization,
   if (contentType != null) 'content_type': contentType?.toJson(),
   'headers': headers,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('authorization') && json['authorization'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('authorization') && json['authorization'] is String &&
       json.containsKey('headers') &&
-      json.containsKey('url') && json['url'] is String; } 
-AigConfigFetchGatewayResponseResultOtel copyWith({String? authorization, AigConfigFetchGatewayResponseResultOtelContentType? Function()? contentType, Map<String,String>? headers, String? url, }) { return AigConfigFetchGatewayResponseResultOtel(
+      json.containsKey('url') && json['url'] is String;}
+AigConfigFetchGatewayResponseResultOtel copyWith({String? authorization, AigConfigFetchGatewayResponseResultOtelContentType? Function()? contentType, Map<String,String>? headers, String? url, }) {return AigConfigFetchGatewayResponseResultOtel(
   authorization: authorization ?? this.authorization,
   contentType: contentType != null ? contentType() : this.contentType,
   headers: headers ?? this.headers,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigFetchGatewayResponseResultOtel &&
           authorization == other.authorization &&
           contentType == other.contentType &&
           headers == other.headers &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(authorization, contentType, headers, url); } 
-@override String toString() { return 'AigConfigFetchGatewayResponseResultOtel(authorization: $authorization, contentType: $contentType, headers: $headers, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(authorization, contentType, headers, url);}
+@override String toString() {return 'AigConfigFetchGatewayResponseResultOtel(authorization: $authorization, contentType: $contentType, headers: $headers, url: $url)';}
+}

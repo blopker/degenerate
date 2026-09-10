@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetAsnsAsSetFormat {const RadarGetAsnsAsSetFormat._(this.value);
 
-factory RadarGetAsnsAsSetFormat.fromJson(String json) { return switch (json) {
+factory RadarGetAsnsAsSetFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAsnsAsSetFormat._(json),
-}; }
+};}
 
 static const RadarGetAsnsAsSetFormat $json = RadarGetAsnsAsSetFormat._('JSON');
 
@@ -17,11 +17,11 @@ static const List<RadarGetAsnsAsSetFormat> values = [$json, csv];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAsnsAsSetFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAsnsAsSetFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAsnsAsSetFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAsnsAsSetFormat($value)';}
+}

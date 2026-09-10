@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A scoped-resource selector requirement is a selector that contains values, a scope name, and an operator that relates the scope name and values.
 @immutable final class ScopedResourceSelectorRequirement {const ScopedResourceSelectorRequirement({required this.$operator, required this.scopeName, this.values, });
 
-factory ScopedResourceSelectorRequirement.fromJson(Map<String, dynamic> json) { return ScopedResourceSelectorRequirement(
+factory ScopedResourceSelectorRequirement.fromJson(Map<String, dynamic> json) {return ScopedResourceSelectorRequirement(
   $operator: json['operator'] as String,
   scopeName: json['scopeName'] as String,
   values: (json['values'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Represents a scope's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist.
 final String $operator;
@@ -18,23 +18,23 @@ final String scopeName;
 /// An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.
 final List<String>? values;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'operator': $operator,
   'scopeName': scopeName,
   'values': ?values,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('operator') && json['operator'] is String &&
-      json.containsKey('scopeName') && json['scopeName'] is String; } 
-ScopedResourceSelectorRequirement copyWith({String? $operator, String? scopeName, List<String>? Function()? values, }) { return ScopedResourceSelectorRequirement(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('operator') && json['operator'] is String &&
+      json.containsKey('scopeName') && json['scopeName'] is String;}
+ScopedResourceSelectorRequirement copyWith({String? $operator, String? scopeName, List<String>? Function()? values, }) {return ScopedResourceSelectorRequirement(
   $operator: $operator ?? this.$operator,
   scopeName: scopeName ?? this.scopeName,
   values: values != null ? values() : this.values,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ScopedResourceSelectorRequirement &&
           $operator == other.$operator &&
           scopeName == other.scopeName &&
-          listEquals(values, other.values); } 
-@override int get hashCode { return Object.hash($operator, scopeName, Object.hashAll(values ?? const [])); } 
-@override String toString() { return 'ScopedResourceSelectorRequirement(\$operator: ${$operator}, scopeName: $scopeName, values: $values)'; } 
- }
+          listEquals(values, other.values);}
+@override int get hashCode {return Object.hash($operator, scopeName, Object.hashAll(values ?? const []));}
+@override String toString() {return 'ScopedResourceSelectorRequirement(\$operator: ${$operator}, scopeName: $scopeName, values: $values)';}
+}

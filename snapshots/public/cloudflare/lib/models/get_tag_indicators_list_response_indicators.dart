@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_tag_indicators_list_response_indicators_related_events.dart';import 'get_tag_indicators_list_response_indicators_tags.dart';@immutable final class GetTagIndicatorsListResponseIndicators {const GetTagIndicatorsListResponseIndicators({required this.createdAt, required this.indicatorType, required this.updatedAt, required this.uuid, required this.value, this.datasetId, this.relatedEvents, this.tags, });
 
-factory GetTagIndicatorsListResponseIndicators.fromJson(Map<String, dynamic> json) { return GetTagIndicatorsListResponseIndicators(
+factory GetTagIndicatorsListResponseIndicators.fromJson(Map<String, dynamic> json) {return GetTagIndicatorsListResponseIndicators(
   createdAt: DateTime.parse(json['createdAt'] as String),
   datasetId: json['datasetId'] as String?,
   indicatorType: json['indicatorType'] as String,
@@ -11,7 +11,7 @@ factory GetTagIndicatorsListResponseIndicators.fromJson(Map<String, dynamic> jso
   updatedAt: DateTime.parse(json['updatedAt'] as String),
   uuid: json['uuid'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final DateTime createdAt;
 
@@ -30,7 +30,7 @@ final String uuid;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'createdAt': createdAt.toIso8601String(),
   'datasetId': ?datasetId,
   'indicatorType': indicatorType,
@@ -39,13 +39,13 @@ Map<String, dynamic> toJson() { return {
   'updatedAt': updatedAt.toIso8601String(),
   'uuid': uuid,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('createdAt') && json['createdAt'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('createdAt') && json['createdAt'] is String &&
       json.containsKey('indicatorType') && json['indicatorType'] is String &&
       json.containsKey('updatedAt') && json['updatedAt'] is String &&
       json.containsKey('uuid') && json['uuid'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-GetTagIndicatorsListResponseIndicators copyWith({DateTime? createdAt, String? Function()? datasetId, String? indicatorType, List<GetTagIndicatorsListResponseIndicatorsRelatedEvents>? Function()? relatedEvents, List<GetTagIndicatorsListResponseIndicatorsTags>? Function()? tags, DateTime? updatedAt, String? uuid, String? value, }) { return GetTagIndicatorsListResponseIndicators(
+      json.containsKey('value') && json['value'] is String;}
+GetTagIndicatorsListResponseIndicators copyWith({DateTime? createdAt, String? Function()? datasetId, String? indicatorType, List<GetTagIndicatorsListResponseIndicatorsRelatedEvents>? Function()? relatedEvents, List<GetTagIndicatorsListResponseIndicatorsTags>? Function()? tags, DateTime? updatedAt, String? uuid, String? value, }) {return GetTagIndicatorsListResponseIndicators(
   createdAt: createdAt ?? this.createdAt,
   datasetId: datasetId != null ? datasetId() : this.datasetId,
   indicatorType: indicatorType ?? this.indicatorType,
@@ -54,8 +54,8 @@ GetTagIndicatorsListResponseIndicators copyWith({DateTime? createdAt, String? Fu
   updatedAt: updatedAt ?? this.updatedAt,
   uuid: uuid ?? this.uuid,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetTagIndicatorsListResponseIndicators &&
           createdAt == other.createdAt &&
           datasetId == other.datasetId &&
@@ -64,7 +64,7 @@ GetTagIndicatorsListResponseIndicators copyWith({DateTime? createdAt, String? Fu
           listEquals(tags, other.tags) &&
           updatedAt == other.updatedAt &&
           uuid == other.uuid &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(createdAt, datasetId, indicatorType, Object.hashAll(relatedEvents ?? const []), Object.hashAll(tags ?? const []), updatedAt, uuid, value); } 
-@override String toString() { return 'GetTagIndicatorsListResponseIndicators(createdAt: $createdAt, datasetId: $datasetId, indicatorType: $indicatorType, relatedEvents: $relatedEvents, tags: $tags, updatedAt: $updatedAt, uuid: $uuid, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(createdAt, datasetId, indicatorType, Object.hashAll(relatedEvents ?? const []), Object.hashAll(tags ?? const []), updatedAt, uuid, value);}
+@override String toString() {return 'GetTagIndicatorsListResponseIndicators(createdAt: $createdAt, datasetId: $datasetId, indicatorType: $indicatorType, relatedEvents: $relatedEvents, tags: $tags, updatedAt: $updatedAt, uuid: $uuid, value: $value)';}
+}

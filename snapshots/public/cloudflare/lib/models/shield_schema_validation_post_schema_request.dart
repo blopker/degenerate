@@ -3,11 +3,11 @@
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_kind.dart';/// Flag whether schema is enabled for validation.
 @immutable final class ShieldSchemaValidationPostSchemaRequestValidationEnabled {const ShieldSchemaValidationPostSchemaRequestValidationEnabled._(this.value);
 
-factory ShieldSchemaValidationPostSchemaRequestValidationEnabled.fromJson(String json) { return switch (json) {
+factory ShieldSchemaValidationPostSchemaRequestValidationEnabled.fromJson(String json) {return switch (json) {
   'true' => $true,
   'false' => $false,
   _ => ShieldSchemaValidationPostSchemaRequestValidationEnabled._(json),
-}; }
+};}
 
 static const ShieldSchemaValidationPostSchemaRequestValidationEnabled $true = ShieldSchemaValidationPostSchemaRequestValidationEnabled._('true');
 
@@ -17,22 +17,22 @@ static const List<ShieldSchemaValidationPostSchemaRequestValidationEnabled> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldSchemaValidationPostSchemaRequestValidationEnabled && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldSchemaValidationPostSchemaRequestValidationEnabled($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ShieldSchemaValidationPostSchemaRequestValidationEnabled && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ShieldSchemaValidationPostSchemaRequestValidationEnabled($value)';}
+}
 @immutable final class ShieldSchemaValidationPostSchemaRequest {const ShieldSchemaValidationPostSchemaRequest({required this.file, required this.kind, this.name, this.validationEnabled, });
 
-factory ShieldSchemaValidationPostSchemaRequest.fromJson(Map<String, dynamic> json) { return ShieldSchemaValidationPostSchemaRequest(
+factory ShieldSchemaValidationPostSchemaRequest.fromJson(Map<String, dynamic> json) {return ShieldSchemaValidationPostSchemaRequest(
   file: base64Decode(json['file'] as String),
   kind: ShieldOldKind.fromJson(json['kind'] as String),
   name: json['name'] as String?,
   validationEnabled: json['validation_enabled'] != null ? ShieldSchemaValidationPostSchemaRequestValidationEnabled.fromJson(json['validation_enabled'] as String) : null,
-); }
+);}
 
 /// Schema file bytes
 final Uint8List file;
@@ -46,26 +46,26 @@ final String? name;
 /// Flag whether schema is enabled for validation.
 final ShieldSchemaValidationPostSchemaRequestValidationEnabled? validationEnabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'file': base64Encode(file),
   'kind': kind.toJson(),
   'name': ?name,
   if (validationEnabled != null) 'validation_enabled': validationEnabled?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
-      json.containsKey('kind'); } 
-ShieldSchemaValidationPostSchemaRequest copyWith({Uint8List? file, ShieldOldKind? kind, String? Function()? name, ShieldSchemaValidationPostSchemaRequestValidationEnabled? Function()? validationEnabled, }) { return ShieldSchemaValidationPostSchemaRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file') &&
+      json.containsKey('kind');}
+ShieldSchemaValidationPostSchemaRequest copyWith({Uint8List? file, ShieldOldKind? kind, String? Function()? name, ShieldSchemaValidationPostSchemaRequestValidationEnabled? Function()? validationEnabled, }) {return ShieldSchemaValidationPostSchemaRequest(
   file: file ?? this.file,
   kind: kind ?? this.kind,
   name: name != null ? name() : this.name,
   validationEnabled: validationEnabled != null ? validationEnabled() : this.validationEnabled,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShieldSchemaValidationPostSchemaRequest &&
           listEquals(file, other.file) &&
           kind == other.kind &&
           name == other.name &&
-          validationEnabled == other.validationEnabled; } 
-@override int get hashCode { return Object.hash(Object.hashAll(file), kind, name, validationEnabled); } 
-@override String toString() { return 'ShieldSchemaValidationPostSchemaRequest(file: $file, kind: $kind, name: $name, validationEnabled: $validationEnabled)'; } 
- }
+          validationEnabled == other.validationEnabled;}
+@override int get hashCode {return Object.hash(Object.hashAll(file), kind, name, validationEnabled);}
+@override String toString() {return 'ShieldSchemaValidationPostSchemaRequest(file: $file, kind: $kind, name: $name, validationEnabled: $validationEnabled)';}
+}

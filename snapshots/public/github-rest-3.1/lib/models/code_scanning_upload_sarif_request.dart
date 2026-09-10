@@ -17,7 +17,7 @@ String toJson() => value;
 }
 @immutable final class CodeScanningUploadSarifRequest {const CodeScanningUploadSarifRequest({required this.commitSha, required this.ref, required this.sarif, this.checkoutUri, this.startedAt, this.toolName, this.validate, });
 
-factory CodeScanningUploadSarifRequest.fromJson(Map<String, dynamic> json) { return CodeScanningUploadSarifRequest(
+factory CodeScanningUploadSarifRequest.fromJson(Map<String, dynamic> json) {return CodeScanningUploadSarifRequest(
   commitSha: CodeScanningAnalysisCommitSha.fromJson(json['commit_sha'] as String),
   ref: CodeScanningRefFull.fromJson(json['ref'] as String),
   sarif: CodeScanningAnalysisSarifFile.fromJson(json['sarif'] as String),
@@ -25,7 +25,7 @@ factory CodeScanningUploadSarifRequest.fromJson(Map<String, dynamic> json) { ret
   startedAt: json['started_at'] != null ? DateTime.parse(json['started_at'] as String) : null,
   toolName: json['tool_name'] as String?,
   validate: json['validate'] as bool?,
-); }
+);}
 
 /// The SHA of the commit to which the analysis you are uploading relates.
 final CodeScanningAnalysisCommitSha commitSha;
@@ -51,7 +51,7 @@ final String? toolName;
 /// This parameter is intended to help integrators ensure that the uploaded SARIF files are correctly rendered by code scanning.
 final bool? validate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'commit_sha': commitSha.toJson(),
   'ref': ref.toJson(),
   'sarif': sarif.toJson(),
@@ -59,11 +59,11 @@ Map<String, dynamic> toJson() { return {
   if (startedAt != null) 'started_at': startedAt?.toIso8601String(),
   'tool_name': ?toolName,
   'validate': ?validate,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('commit_sha') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('commit_sha') &&
       json.containsKey('ref') &&
-      json.containsKey('sarif'); } 
-CodeScanningUploadSarifRequest copyWith({CodeScanningAnalysisCommitSha? commitSha, CodeScanningRefFull? ref, CodeScanningAnalysisSarifFile? sarif, Uri? Function()? checkoutUri, DateTime? Function()? startedAt, String? Function()? toolName, bool? Function()? validate, }) { return CodeScanningUploadSarifRequest(
+      json.containsKey('sarif');}
+CodeScanningUploadSarifRequest copyWith({CodeScanningAnalysisCommitSha? commitSha, CodeScanningRefFull? ref, CodeScanningAnalysisSarifFile? sarif, Uri? Function()? checkoutUri, DateTime? Function()? startedAt, String? Function()? toolName, bool? Function()? validate, }) {return CodeScanningUploadSarifRequest(
   commitSha: commitSha ?? this.commitSha,
   ref: ref ?? this.ref,
   sarif: sarif ?? this.sarif,
@@ -71,8 +71,8 @@ CodeScanningUploadSarifRequest copyWith({CodeScanningAnalysisCommitSha? commitSh
   startedAt: startedAt != null ? startedAt() : this.startedAt,
   toolName: toolName != null ? toolName() : this.toolName,
   validate: validate != null ? validate() : this.validate,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeScanningUploadSarifRequest &&
           commitSha == other.commitSha &&
           ref == other.ref &&
@@ -80,7 +80,7 @@ CodeScanningUploadSarifRequest copyWith({CodeScanningAnalysisCommitSha? commitSh
           checkoutUri == other.checkoutUri &&
           startedAt == other.startedAt &&
           toolName == other.toolName &&
-          validate == other.validate; } 
-@override int get hashCode { return Object.hash(commitSha, ref, sarif, checkoutUri, startedAt, toolName, validate); } 
-@override String toString() { return 'CodeScanningUploadSarifRequest(commitSha: $commitSha, ref: $ref, sarif: $sarif, checkoutUri: $checkoutUri, startedAt: $startedAt, toolName: $toolName, validate: $validate)'; } 
- }
+          validate == other.validate;}
+@override int get hashCode {return Object.hash(commitSha, ref, sarif, checkoutUri, startedAt, toolName, validate);}
+@override String toString() {return 'CodeScanningUploadSarifRequest(commitSha: $commitSha, ref: $ref, sarif: $sarif, checkoutUri: $checkoutUri, startedAt: $startedAt, toolName: $toolName, validate: $validate)';}
+}

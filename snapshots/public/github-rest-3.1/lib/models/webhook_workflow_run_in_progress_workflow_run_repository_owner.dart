@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType {const WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType._(this.value);
 
-factory WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType.fromJson(String json) { return switch (json) {
+factory WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType.fromJson(String json) {return switch (json) {
   'Bot' => bot,
   'User' => user,
   'Organization' => organization,
   _ => WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType._(json),
-}; }
+};}
 
 static const WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType bot = WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType._('Bot');
 
@@ -19,17 +19,17 @@ static const List<WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType($value)';}
+}
 @immutable final class WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner {const WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner({required this.id, required this.login, this.avatarUrl, this.deleted, this.email = const Omittable.absent(), this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, });
 
-factory WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner(
+factory WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner.fromJson(Map<String, dynamic> json) {return WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,
   deleted: json['deleted'] as bool?,
   email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
@@ -51,7 +51,7 @@ factory WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner.fromJson(Map<Stri
   subscriptionsUrl: json['subscriptions_url'] != null ? Uri.parse(json['subscriptions_url'] as String) : null,
   type: json['type'] != null ? WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType.fromJson(json['type'] as String) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-); }
+);}
 
 final Uri? avatarUrl;
 
@@ -95,7 +95,7 @@ final WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType? type;
 
 final Uri? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (avatarUrl != null) 'avatar_url': avatarUrl?.toString(),
   'deleted': ?deleted,
   if (email.isPresent) 'email': email.value,
@@ -117,10 +117,10 @@ Map<String, dynamic> toJson() { return {
   if (subscriptionsUrl != null) 'subscriptions_url': subscriptionsUrl?.toString(),
   if (type != null) 'type': type?.toJson(),
   if (url != null) 'url': url?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('login') && json['login'] is String; } 
-WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner copyWith({Uri? Function()? avatarUrl, bool? Function()? deleted, Omittable<String?>? email, String? Function()? eventsUrl, Uri? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, Uri? Function()? htmlUrl, int? id, String? login, String? Function()? name, String? Function()? nodeId, Uri? Function()? organizationsUrl, Uri? Function()? receivedEventsUrl, Uri? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, Uri? Function()? subscriptionsUrl, WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType? Function()? type, Uri? Function()? url, }) { return WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('login') && json['login'] is String;}
+WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner copyWith({Uri? Function()? avatarUrl, bool? Function()? deleted, Omittable<String?>? email, String? Function()? eventsUrl, Uri? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, Uri? Function()? htmlUrl, int? id, String? login, String? Function()? name, String? Function()? nodeId, Uri? Function()? organizationsUrl, Uri? Function()? receivedEventsUrl, Uri? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, Uri? Function()? subscriptionsUrl, WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType? Function()? type, Uri? Function()? url, }) {return WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner(
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   deleted: deleted != null ? deleted() : this.deleted,
   email: email ?? this.email,
@@ -142,8 +142,8 @@ WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner copyWith({Uri? Function()
   subscriptionsUrl: subscriptionsUrl != null ? subscriptionsUrl() : this.subscriptionsUrl,
   type: type != null ? type() : this.type,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner &&
           avatarUrl == other.avatarUrl &&
           deleted == other.deleted &&
@@ -165,7 +165,7 @@ WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner copyWith({Uri? Function()
           starredUrl == other.starredUrl &&
           subscriptionsUrl == other.subscriptionsUrl &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hashAll([avatarUrl, deleted, email, eventsUrl, followersUrl, followingUrl, gistsUrl, gravatarId, htmlUrl, id, login, name, nodeId, organizationsUrl, receivedEventsUrl, reposUrl, siteAdmin, starredUrl, subscriptionsUrl, type, url]); } 
-@override String toString() { return 'WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner(avatarUrl: $avatarUrl, deleted: $deleted, email: $email, eventsUrl: $eventsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, htmlUrl: $htmlUrl, id: $id, login: $login, name: $name, nodeId: $nodeId, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hashAll([avatarUrl, deleted, email, eventsUrl, followersUrl, followingUrl, gistsUrl, gravatarId, htmlUrl, id, login, name, nodeId, organizationsUrl, receivedEventsUrl, reposUrl, siteAdmin, starredUrl, subscriptionsUrl, type, url]);}
+@override String toString() {return 'WebhookWorkflowRunInProgressWorkflowRunRepositoryOwner(avatarUrl: $avatarUrl, deleted: $deleted, email: $email, eventsUrl: $eventsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, htmlUrl: $htmlUrl, id: $id, login: $login, name: $name, nodeId: $nodeId, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, url: $url)';}
+}

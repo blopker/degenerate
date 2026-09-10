@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_request_phases_items_billing_thresholds.dart';import 'post_subscription_schedules_request_phases_items_discounts.dart';import 'post_subscription_schedules_request_phases_items_price_data.dart';import 'post_subscription_schedules_request_phases_items_tax_rates.dart';@immutable final class PostSubscriptionSchedulesRequestPhasesItems {const PostSubscriptionSchedulesRequestPhasesItems({this.billingThresholds, this.discounts, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
 
-factory PostSubscriptionSchedulesRequestPhasesItems.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestPhasesItems(
+factory PostSubscriptionSchedulesRequestPhasesItems.fromJson(Map<String, dynamic> json) {return PostSubscriptionSchedulesRequestPhasesItems(
   billingThresholds: json['billing_thresholds'] != null ? PostSubscriptionSchedulesRequestPhasesItemsBillingThresholds.fromJson(json['billing_thresholds']) : null,
   discounts: json['discounts'] != null ? PostSubscriptionSchedulesRequestPhasesItemsDiscounts.fromJson(json['discounts']) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -10,7 +10,7 @@ factory PostSubscriptionSchedulesRequestPhasesItems.fromJson(Map<String, dynamic
   priceData: json['price_data'] != null ? PostSubscriptionSchedulesRequestPhasesItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   taxRates: json['tax_rates'] != null ? PostSubscriptionSchedulesRequestPhasesItemsTaxRates.fromJson(json['tax_rates']) : null,
-); }
+);}
 
 final PostSubscriptionSchedulesRequestPhasesItemsBillingThresholds? billingThresholds;
 
@@ -26,7 +26,7 @@ final int? quantity;
 
 final PostSubscriptionSchedulesRequestPhasesItemsTaxRates? taxRates;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingThresholds != null) 'billing_thresholds': billingThresholds?.toJson(),
   if (discounts != null) 'discounts': discounts?.toJson(),
   'metadata': ?metadata,
@@ -34,9 +34,9 @@ Map<String, dynamic> toJson() { return {
   if (priceData != null) 'price_data': priceData?.toJson(),
   'quantity': ?quantity,
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_thresholds', 'discounts', 'metadata', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key)); } 
-PostSubscriptionSchedulesRequestPhasesItems copyWith({PostSubscriptionSchedulesRequestPhasesItemsBillingThresholds? Function()? billingThresholds, PostSubscriptionSchedulesRequestPhasesItemsDiscounts? Function()? discounts, Map<String, String>? Function()? metadata, String? Function()? price, PostSubscriptionSchedulesRequestPhasesItemsPriceData? Function()? priceData, int? Function()? quantity, PostSubscriptionSchedulesRequestPhasesItemsTaxRates? Function()? taxRates, }) { return PostSubscriptionSchedulesRequestPhasesItems(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'billing_thresholds', 'discounts', 'metadata', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key));}
+PostSubscriptionSchedulesRequestPhasesItems copyWith({PostSubscriptionSchedulesRequestPhasesItemsBillingThresholds? Function()? billingThresholds, PostSubscriptionSchedulesRequestPhasesItemsDiscounts? Function()? discounts, Map<String, String>? Function()? metadata, String? Function()? price, PostSubscriptionSchedulesRequestPhasesItemsPriceData? Function()? priceData, int? Function()? quantity, PostSubscriptionSchedulesRequestPhasesItemsTaxRates? Function()? taxRates, }) {return PostSubscriptionSchedulesRequestPhasesItems(
   billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
   discounts: discounts != null ? discounts() : this.discounts,
   metadata: metadata != null ? metadata() : this.metadata,
@@ -44,8 +44,8 @@ PostSubscriptionSchedulesRequestPhasesItems copyWith({PostSubscriptionSchedulesR
   priceData: priceData != null ? priceData() : this.priceData,
   quantity: quantity != null ? quantity() : this.quantity,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionSchedulesRequestPhasesItems &&
           billingThresholds == other.billingThresholds &&
           discounts == other.discounts &&
@@ -53,7 +53,7 @@ PostSubscriptionSchedulesRequestPhasesItems copyWith({PostSubscriptionSchedulesR
           price == other.price &&
           priceData == other.priceData &&
           quantity == other.quantity &&
-          taxRates == other.taxRates; } 
-@override int get hashCode { return Object.hash(billingThresholds, discounts, metadata, price, priceData, quantity, taxRates); } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestPhasesItems(billingThresholds: $billingThresholds, discounts: $discounts, metadata: $metadata, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)'; } 
- }
+          taxRates == other.taxRates;}
+@override int get hashCode {return Object.hash(billingThresholds, discounts, metadata, price, priceData, quantity, taxRates);}
+@override String toString() {return 'PostSubscriptionSchedulesRequestPhasesItems(billingThresholds: $billingThresholds, discounts: $discounts, metadata: $metadata, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)';}
+}

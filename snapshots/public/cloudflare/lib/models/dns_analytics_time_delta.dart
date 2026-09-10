@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Unit of time to group data by.
 @immutable final class DnsAnalyticsTimeDelta {const DnsAnalyticsTimeDelta._(this.value);
 
-factory DnsAnalyticsTimeDelta.fromJson(String json) { return switch (json) {
+factory DnsAnalyticsTimeDelta.fromJson(String json) {return switch (json) {
   'all' => all,
   'auto' => auto,
   'year' => year,
@@ -15,7 +15,7 @@ factory DnsAnalyticsTimeDelta.fromJson(String json) { return switch (json) {
   'dekaminute' => dekaminute,
   'minute' => minute,
   _ => DnsAnalyticsTimeDelta._(json),
-}; }
+};}
 
 static const DnsAnalyticsTimeDelta all = DnsAnalyticsTimeDelta._('all');
 
@@ -41,11 +41,11 @@ static const List<DnsAnalyticsTimeDelta> values = [all, auto, year, quarter, mon
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsAnalyticsTimeDelta && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DnsAnalyticsTimeDelta($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DnsAnalyticsTimeDelta && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DnsAnalyticsTimeDelta($value)';}
+}

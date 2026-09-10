@@ -13,7 +13,7 @@ final class EmojisApi with ApiExecutor {const EmojisApi(this.apiConfig);
 /// Lists all the emojis available to use on GitHub.
 ///
 /// `GET /emojis`
-Future<ApiResult<Map<String, String>, Never>> emojisGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, String>, Never>> emojisGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,5 +29,5 @@ final json = jsonDecode(response.body);
 return (json as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
   },
 );
- } 
- }
+}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateFineTuningJobRequestHyperparametersLearningRateMultiplierVariant1 {const CreateFineTuningJobRequestHyperparametersLearningRateMultiplierVariant1._(this.value);
 
-factory CreateFineTuningJobRequestHyperparametersLearningRateMultiplierVariant1.fromJson(String json) { return switch (json) {
+factory CreateFineTuningJobRequestHyperparametersLearningRateMultiplierVariant1.fromJson(String json) {return switch (json) {
   'auto' => auto,
   _ => CreateFineTuningJobRequestHyperparametersLearningRateMultiplierVariant1._(json),
-}; }
+};}
 
 static const CreateFineTuningJobRequestHyperparametersLearningRateMultiplierVariant1 auto = CreateFineTuningJobRequestHyperparametersLearningRateMultiplierVariant1._('auto');
 
@@ -13,12 +13,12 @@ static const List<CreateFineTuningJobRequestHyperparametersLearningRateMultiplie
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateFineTuningJobRequestHyperparametersLearningRateMultiplierVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateFineTuningJobRequestHyperparametersLearningRateMultiplierVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateFineTuningJobRequestHyperparametersLearningRateMultiplierVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateFineTuningJobRequestHyperparametersLearningRateMultiplierVariant1($value)';}
+}
 typedef CreateFineTuningJobRequestHyperparametersLearningRateMultiplier = OneOf2<CreateFineTuningJobRequestHyperparametersLearningRateMultiplierVariant1,double>;

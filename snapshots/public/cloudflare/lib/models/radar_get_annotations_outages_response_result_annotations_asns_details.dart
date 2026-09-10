@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_annotations_outages_response_result_annotations_asns_details_locations.dart';@immutable final class RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails {const RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails({required this.asn, required this.name, this.locations, });
 
-factory RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails.fromJson(Map<String, dynamic> json) { return RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails(
+factory RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails.fromJson(Map<String, dynamic> json) {return RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails(
   asn: json['asn'] as String,
   locations: json['locations'] != null ? RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetailsLocations.fromJson(json['locations'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
-); }
+);}
 
 final String asn;
 
@@ -14,23 +14,23 @@ final RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetailsLocations? l
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn,
   if (locations != null) 'locations': locations?.toJson(),
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails copyWith({String? asn, RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetailsLocations? Function()? locations, String? name, }) { return RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') && json['asn'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails copyWith({String? asn, RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetailsLocations? Function()? locations, String? name, }) {return RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails(
   asn: asn ?? this.asn,
   locations: locations != null ? locations() : this.locations,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails &&
           asn == other.asn &&
           locations == other.locations &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(asn, locations, name); } 
-@override String toString() { return 'RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails(asn: $asn, locations: $locations, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(asn, locations, name);}
+@override String toString() {return 'RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails(asn: $asn, locations: $locations, name: $name)';}
+}

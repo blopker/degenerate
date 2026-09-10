@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod {const PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod._(this.value);
 
-factory PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod.fromJson(String json) {return switch (json) {
   'cancel' => cancel,
   'create_invoice' => createInvoice,
   'pause' => pause,
   _ => PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod cancel = PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod._('cancel');
 
@@ -19,32 +19,32 @@ static const List<PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehav
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod($value)';}
+}
 @immutable final class PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior {const PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior({required this.missingPaymentMethod});
 
-factory PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior(
+factory PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior.fromJson(Map<String, dynamic> json) {return PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior(
   missingPaymentMethod: PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod.fromJson(json['missing_payment_method'] as String),
-); }
+);}
 
 final PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod missingPaymentMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'missing_payment_method': missingPaymentMethod.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('missing_payment_method'); } 
-PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior copyWith({PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod? missingPaymentMethod}) { return PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('missing_payment_method');}
+PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior copyWith({PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehaviorMissingPaymentMethod? missingPaymentMethod}) {return PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior(
   missingPaymentMethod: missingPaymentMethod ?? this.missingPaymentMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior &&
-          missingPaymentMethod == other.missingPaymentMethod; } 
-@override int get hashCode { return missingPaymentMethod.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior(missingPaymentMethod: $missingPaymentMethod)'; } 
- }
+          missingPaymentMethod == other.missingPaymentMethod;}
+@override int get hashCode {return missingPaymentMethod.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsRequestTrialSettingsEndBehavior(missingPaymentMethod: $missingPaymentMethod)';}
+}

@@ -9,11 +9,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mandate_opti
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class CheckoutPaytoPaymentMethodOptionsSetupFutureUsage {const CheckoutPaytoPaymentMethodOptionsSetupFutureUsage._(this.value);
 
-factory CheckoutPaytoPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory CheckoutPaytoPaymentMethodOptionsSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   'off_session' => offSession,
   _ => CheckoutPaytoPaymentMethodOptionsSetupFutureUsage._(json),
-}; }
+};}
 
 static const CheckoutPaytoPaymentMethodOptionsSetupFutureUsage none = CheckoutPaytoPaymentMethodOptionsSetupFutureUsage._('none');
 
@@ -23,21 +23,21 @@ static const List<CheckoutPaytoPaymentMethodOptionsSetupFutureUsage> values = [n
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutPaytoPaymentMethodOptionsSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutPaytoPaymentMethodOptionsSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckoutPaytoPaymentMethodOptionsSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckoutPaytoPaymentMethodOptionsSetupFutureUsage($value)';}
+}
 /// 
 @immutable final class CheckoutPaytoPaymentMethodOptions {const CheckoutPaytoPaymentMethodOptions({this.mandateOptions, this.setupFutureUsage, });
 
-factory CheckoutPaytoPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutPaytoPaymentMethodOptions(
+factory CheckoutPaytoPaymentMethodOptions.fromJson(Map<String, dynamic> json) {return CheckoutPaytoPaymentMethodOptions(
   mandateOptions: json['mandate_options'] != null ? MandateOptionsPayto.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutPaytoPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final MandateOptionsPayto? mandateOptions;
 
@@ -50,19 +50,19 @@ final MandateOptionsPayto? mandateOptions;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final CheckoutPaytoPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'setup_future_usage'}.contains(key)); } 
-CheckoutPaytoPaymentMethodOptions copyWith({MandateOptionsPayto? Function()? mandateOptions, CheckoutPaytoPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return CheckoutPaytoPaymentMethodOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mandate_options', 'setup_future_usage'}.contains(key));}
+CheckoutPaytoPaymentMethodOptions copyWith({MandateOptionsPayto? Function()? mandateOptions, CheckoutPaytoPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) {return CheckoutPaytoPaymentMethodOptions(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CheckoutPaytoPaymentMethodOptions &&
           mandateOptions == other.mandateOptions &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(mandateOptions, setupFutureUsage); } 
-@override String toString() { return 'CheckoutPaytoPaymentMethodOptions(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(mandateOptions, setupFutureUsage);}
+@override String toString() {return 'CheckoutPaytoPaymentMethodOptions(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage)';}
+}

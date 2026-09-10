@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_marketplace_purchase_account.dart';import 'webhooks_marketplace_purchase_plan.dart';@immutable final class WebhooksMarketplacePurchase {const WebhooksMarketplacePurchase({required this.account, required this.billingCycle, required this.freeTrialEndsOn, required this.nextBillingDate, required this.onFreeTrial, required this.plan, required this.unitCount, });
 
-factory WebhooksMarketplacePurchase.fromJson(Map<String, dynamic> json) { return WebhooksMarketplacePurchase(
+factory WebhooksMarketplacePurchase.fromJson(Map<String, dynamic> json) {return WebhooksMarketplacePurchase(
   account: WebhooksMarketplacePurchaseAccount.fromJson(json['account'] as Map<String, dynamic>),
   billingCycle: json['billing_cycle'] as String,
   freeTrialEndsOn: json['free_trial_ends_on'] as String?,
@@ -10,7 +10,7 @@ factory WebhooksMarketplacePurchase.fromJson(Map<String, dynamic> json) { return
   onFreeTrial: json['on_free_trial'] as bool,
   plan: WebhooksMarketplacePurchasePlan.fromJson(json['plan'] as Map<String, dynamic>),
   unitCount: (json['unit_count'] as num).toInt(),
-); }
+);}
 
 final WebhooksMarketplacePurchaseAccount account;
 
@@ -26,7 +26,7 @@ final WebhooksMarketplacePurchasePlan plan;
 
 final int unitCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account.toJson(),
   'billing_cycle': billingCycle,
   'free_trial_ends_on': freeTrialEndsOn,
@@ -34,15 +34,15 @@ Map<String, dynamic> toJson() { return {
   'on_free_trial': onFreeTrial,
   'plan': plan.toJson(),
   'unit_count': unitCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') &&
       json.containsKey('billing_cycle') && json['billing_cycle'] is String &&
       json.containsKey('free_trial_ends_on') && (json['free_trial_ends_on'] == null || json['free_trial_ends_on'] is String) &&
       json.containsKey('next_billing_date') && (json['next_billing_date'] == null || json['next_billing_date'] is String) &&
       json.containsKey('on_free_trial') && json['on_free_trial'] is bool &&
       json.containsKey('plan') &&
-      json.containsKey('unit_count') && json['unit_count'] is num; } 
-WebhooksMarketplacePurchase copyWith({WebhooksMarketplacePurchaseAccount? account, String? billingCycle, String? Function()? freeTrialEndsOn, String? Function()? nextBillingDate, bool? onFreeTrial, WebhooksMarketplacePurchasePlan? plan, int? unitCount, }) { return WebhooksMarketplacePurchase(
+      json.containsKey('unit_count') && json['unit_count'] is num;}
+WebhooksMarketplacePurchase copyWith({WebhooksMarketplacePurchaseAccount? account, String? billingCycle, String? Function()? freeTrialEndsOn, String? Function()? nextBillingDate, bool? onFreeTrial, WebhooksMarketplacePurchasePlan? plan, int? unitCount, }) {return WebhooksMarketplacePurchase(
   account: account ?? this.account,
   billingCycle: billingCycle ?? this.billingCycle,
   freeTrialEndsOn: freeTrialEndsOn != null ? freeTrialEndsOn() : this.freeTrialEndsOn,
@@ -50,8 +50,8 @@ WebhooksMarketplacePurchase copyWith({WebhooksMarketplacePurchaseAccount? accoun
   onFreeTrial: onFreeTrial ?? this.onFreeTrial,
   plan: plan ?? this.plan,
   unitCount: unitCount ?? this.unitCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhooksMarketplacePurchase &&
           account == other.account &&
           billingCycle == other.billingCycle &&
@@ -59,7 +59,7 @@ WebhooksMarketplacePurchase copyWith({WebhooksMarketplacePurchaseAccount? accoun
           nextBillingDate == other.nextBillingDate &&
           onFreeTrial == other.onFreeTrial &&
           plan == other.plan &&
-          unitCount == other.unitCount; } 
-@override int get hashCode { return Object.hash(account, billingCycle, freeTrialEndsOn, nextBillingDate, onFreeTrial, plan, unitCount); } 
-@override String toString() { return 'WebhooksMarketplacePurchase(account: $account, billingCycle: $billingCycle, freeTrialEndsOn: $freeTrialEndsOn, nextBillingDate: $nextBillingDate, onFreeTrial: $onFreeTrial, plan: $plan, unitCount: $unitCount)'; } 
- }
+          unitCount == other.unitCount;}
+@override int get hashCode {return Object.hash(account, billingCycle, freeTrialEndsOn, nextBillingDate, onFreeTrial, plan, unitCount);}
+@override String toString() {return 'WebhooksMarketplacePurchase(account: $account, billingCycle: $billingCycle, freeTrialEndsOn: $freeTrialEndsOn, nextBillingDate: $nextBillingDate, onFreeTrial: $onFreeTrial, plan: $plan, unitCount: $unitCount)';}
+}

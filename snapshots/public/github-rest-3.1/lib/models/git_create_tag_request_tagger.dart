@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An object with information about the individual creating the tag.
 @immutable final class GitCreateTagRequestTagger {const GitCreateTagRequestTagger({required this.name, required this.email, this.date, });
 
-factory GitCreateTagRequestTagger.fromJson(Map<String, dynamic> json) { return GitCreateTagRequestTagger(
+factory GitCreateTagRequestTagger.fromJson(Map<String, dynamic> json) {return GitCreateTagRequestTagger(
   name: json['name'] as String,
   email: json['email'] as String,
   date: json['date'] != null ? DateTime.parse(json['date'] as String) : null,
-); }
+);}
 
 /// The name of the author of the tag
 final String name;
@@ -18,23 +18,23 @@ final String email;
 /// When this object was tagged. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 final DateTime? date;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'email': email,
   if (date != null) 'date': date?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('email') && json['email'] is String; } 
-GitCreateTagRequestTagger copyWith({String? name, String? email, DateTime? Function()? date, }) { return GitCreateTagRequestTagger(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('email') && json['email'] is String;}
+GitCreateTagRequestTagger copyWith({String? name, String? email, DateTime? Function()? date, }) {return GitCreateTagRequestTagger(
   name: name ?? this.name,
   email: email ?? this.email,
   date: date != null ? date() : this.date,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GitCreateTagRequestTagger &&
           name == other.name &&
           email == other.email &&
-          date == other.date; } 
-@override int get hashCode { return Object.hash(name, email, date); } 
-@override String toString() { return 'GitCreateTagRequestTagger(name: $name, email: $email, date: $date)'; } 
- }
+          date == other.date;}
+@override int get hashCode {return Object.hash(name, email, date);}
+@override String toString() {return 'GitCreateTagRequestTagger(name: $name, email: $email, date: $date)';}
+}

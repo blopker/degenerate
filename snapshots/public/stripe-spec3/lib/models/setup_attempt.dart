@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'errors.dart';import 'setup_attempt_application.dart';import 'setup_attempt_customer.dart';import 'setup_attempt_on_behalf_of.dart';import 'setup_attempt_payment_method.dart';import 'setup_attempt_payment_method_details.dart';import 'setup_attempt_setup_intent.dart';@immutable final class SetupAttemptFlowDirections {const SetupAttemptFlowDirections._(this.value);
 
-factory SetupAttemptFlowDirections.fromJson(String json) { return switch (json) {
+factory SetupAttemptFlowDirections.fromJson(String json) {return switch (json) {
   'inbound' => inbound,
   'outbound' => outbound,
   _ => SetupAttemptFlowDirections._(json),
-}; }
+};}
 
 static const SetupAttemptFlowDirections inbound = SetupAttemptFlowDirections._('inbound');
 
@@ -16,21 +16,21 @@ static const List<SetupAttemptFlowDirections> values = [inbound, outbound];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupAttemptFlowDirections && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupAttemptFlowDirections($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SetupAttemptFlowDirections && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SetupAttemptFlowDirections($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class SetupAttemptObject {const SetupAttemptObject._(this.value);
 
-factory SetupAttemptObject.fromJson(String json) { return switch (json) {
+factory SetupAttemptObject.fromJson(String json) {return switch (json) {
   'setup_attempt' => setupAttempt,
   _ => SetupAttemptObject._(json),
-}; }
+};}
 
 static const SetupAttemptObject setupAttempt = SetupAttemptObject._('setup_attempt');
 
@@ -38,21 +38,21 @@ static const List<SetupAttemptObject> values = [setupAttempt];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupAttemptObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupAttemptObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SetupAttemptObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SetupAttemptObject($value)';}
+}
 /// A SetupAttempt describes one attempted confirmation of a SetupIntent,
 /// whether that confirmation is successful or unsuccessful. You can use
 /// SetupAttempts to inspect details of a specific attempt at setting up a
 /// payment method using a SetupIntent.
 @immutable final class SetupAttempt {const SetupAttempt({required this.created, required this.id, required this.livemode, required this.object, required this.paymentMethod, required this.paymentMethodDetails, required this.setupIntent, required this.status, required this.usage, this.application = const Omittable.absent(), this.attachToSelf, this.customer = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.flowDirections = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.setupError = const Omittable.absent(), });
 
-factory SetupAttempt.fromJson(Map<String, dynamic> json) { return SetupAttempt(
+factory SetupAttempt.fromJson(Map<String, dynamic> json) {return SetupAttempt(
   application: json.containsKey('application') ? Omittable(json['application'] != null ? SetupAttemptApplication.fromJson(json['application']) : null) : const Omittable.absent(),
   attachToSelf: json['attach_to_self'] as bool?,
   created: (json['created'] as num).toInt(),
@@ -69,7 +69,7 @@ factory SetupAttempt.fromJson(Map<String, dynamic> json) { return SetupAttempt(
   setupIntent: SetupAttemptSetupIntent.fromJson(json['setup_intent']),
   status: json['status'] as String,
   usage: json['usage'] as String,
-); }
+);}
 
 /// The value of [application](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-application) on the SetupIntent at the time of this confirmation.
 final Omittable<SetupAttemptApplication?> application;
@@ -122,7 +122,7 @@ final String status;
 /// The value of [usage](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-usage) on the SetupIntent at the time of this confirmation, one of `off_session` or `on_session`.
 final String usage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (application.isPresent) 'application': application.value?.toJson(),
   'attach_to_self': ?attachToSelf,
   'created': created,
@@ -139,8 +139,8 @@ Map<String, dynamic> toJson() { return {
   'setup_intent': setupIntent.toJson(),
   'status': status,
   'usage': usage,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
@@ -148,8 +148,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('payment_method_details') &&
       json.containsKey('setup_intent') &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('usage') && json['usage'] is String; } 
-SetupAttempt copyWith({Omittable<SetupAttemptApplication?>? application, bool? Function()? attachToSelf, int? created, Omittable<SetupAttemptCustomer?>? customer, Omittable<String?>? customerAccount, Omittable<List<SetupAttemptFlowDirections>?>? flowDirections, String? id, bool? livemode, SetupAttemptObject? object, Omittable<SetupAttemptOnBehalfOf?>? onBehalfOf, SetupAttemptPaymentMethod? paymentMethod, SetupAttemptPaymentMethodDetails? paymentMethodDetails, Omittable<Errors?>? setupError, SetupAttemptSetupIntent? setupIntent, String? status, String? usage, }) { return SetupAttempt(
+      json.containsKey('usage') && json['usage'] is String;}
+SetupAttempt copyWith({Omittable<SetupAttemptApplication?>? application, bool? Function()? attachToSelf, int? created, Omittable<SetupAttemptCustomer?>? customer, Omittable<String?>? customerAccount, Omittable<List<SetupAttemptFlowDirections>?>? flowDirections, String? id, bool? livemode, SetupAttemptObject? object, Omittable<SetupAttemptOnBehalfOf?>? onBehalfOf, SetupAttemptPaymentMethod? paymentMethod, SetupAttemptPaymentMethodDetails? paymentMethodDetails, Omittable<Errors?>? setupError, SetupAttemptSetupIntent? setupIntent, String? status, String? usage, }) {return SetupAttempt(
   application: application ?? this.application,
   attachToSelf: attachToSelf != null ? attachToSelf() : this.attachToSelf,
   created: created ?? this.created,
@@ -166,8 +166,8 @@ SetupAttempt copyWith({Omittable<SetupAttemptApplication?>? application, bool? F
   setupIntent: setupIntent ?? this.setupIntent,
   status: status ?? this.status,
   usage: usage ?? this.usage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SetupAttempt &&
           application == other.application &&
           attachToSelf == other.attachToSelf &&
@@ -185,7 +185,7 @@ SetupAttempt copyWith({Omittable<SetupAttemptApplication?>? application, bool? F
           setupError == other.setupError &&
           setupIntent == other.setupIntent &&
           status == other.status &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(application, attachToSelf, created, customer, customerAccount, Object.hashAll(flowDirections.value ?? const []), id, livemode, object, onBehalfOf, paymentMethod, paymentMethodDetails, setupError, setupIntent, status, usage); } 
-@override String toString() { return 'SetupAttempt(application: $application, attachToSelf: $attachToSelf, created: $created, customer: $customer, customerAccount: $customerAccount, flowDirections: $flowDirections, id: $id, livemode: $livemode, object: $object, onBehalfOf: $onBehalfOf, paymentMethod: $paymentMethod, paymentMethodDetails: $paymentMethodDetails, setupError: $setupError, setupIntent: $setupIntent, status: $status, usage: $usage)'; } 
- }
+          usage == other.usage;}
+@override int get hashCode {return Object.hash(application, attachToSelf, created, customer, customerAccount, Object.hashAll(flowDirections.value ?? const []), id, livemode, object, onBehalfOf, paymentMethod, paymentMethodDetails, setupError, setupIntent, status, usage);}
+@override String toString() {return 'SetupAttempt(application: $application, attachToSelf: $attachToSelf, created: $created, customer: $customer, customerAccount: $customerAccount, flowDirections: $flowDirections, id: $id, livemode: $livemode, object: $object, onBehalfOf: $onBehalfOf, paymentMethod: $paymentMethod, paymentMethodDetails: $paymentMethodDetails, setupError: $setupError, setupIntent: $setupIntent, status: $status, usage: $usage)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'overview_domains_actions_inbound.dart';import 'overview_domains_artifact_attestations.dart';@immutable final class OverviewDomains {const OverviewDomains({this.website, this.codespaces, this.copilot, this.packages, this.actions, this.actionsInbound, this.artifactAttestations, });
 
-factory OverviewDomains.fromJson(Map<String, dynamic> json) { return OverviewDomains(
+factory OverviewDomains.fromJson(Map<String, dynamic> json) {return OverviewDomains(
   website: (json['website'] as List<dynamic>?)?.map((e) => e as String).toList(),
   codespaces: (json['codespaces'] as List<dynamic>?)?.map((e) => e as String).toList(),
   copilot: (json['copilot'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -10,7 +10,7 @@ factory OverviewDomains.fromJson(Map<String, dynamic> json) { return OverviewDom
   actions: (json['actions'] as List<dynamic>?)?.map((e) => e as String).toList(),
   actionsInbound: json['actions_inbound'] != null ? OverviewDomainsActionsInbound.fromJson(json['actions_inbound'] as Map<String, dynamic>) : null,
   artifactAttestations: json['artifact_attestations'] != null ? OverviewDomainsArtifactAttestations.fromJson(json['artifact_attestations'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<String>? website;
 
@@ -26,7 +26,7 @@ final OverviewDomainsActionsInbound? actionsInbound;
 
 final OverviewDomainsArtifactAttestations? artifactAttestations;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'website': ?website,
   'codespaces': ?codespaces,
   'copilot': ?copilot,
@@ -34,9 +34,9 @@ Map<String, dynamic> toJson() { return {
   'actions': ?actions,
   if (actionsInbound != null) 'actions_inbound': actionsInbound?.toJson(),
   if (artifactAttestations != null) 'artifact_attestations': artifactAttestations?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'website', 'codespaces', 'copilot', 'packages', 'actions', 'actions_inbound', 'artifact_attestations'}.contains(key)); } 
-OverviewDomains copyWith({List<String>? Function()? website, List<String>? Function()? codespaces, List<String>? Function()? copilot, List<String>? Function()? packages, List<String>? Function()? actions, OverviewDomainsActionsInbound? Function()? actionsInbound, OverviewDomainsArtifactAttestations? Function()? artifactAttestations, }) { return OverviewDomains(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'website', 'codespaces', 'copilot', 'packages', 'actions', 'actions_inbound', 'artifact_attestations'}.contains(key));}
+OverviewDomains copyWith({List<String>? Function()? website, List<String>? Function()? codespaces, List<String>? Function()? copilot, List<String>? Function()? packages, List<String>? Function()? actions, OverviewDomainsActionsInbound? Function()? actionsInbound, OverviewDomainsArtifactAttestations? Function()? artifactAttestations, }) {return OverviewDomains(
   website: website != null ? website() : this.website,
   codespaces: codespaces != null ? codespaces() : this.codespaces,
   copilot: copilot != null ? copilot() : this.copilot,
@@ -44,8 +44,8 @@ OverviewDomains copyWith({List<String>? Function()? website, List<String>? Funct
   actions: actions != null ? actions() : this.actions,
   actionsInbound: actionsInbound != null ? actionsInbound() : this.actionsInbound,
   artifactAttestations: artifactAttestations != null ? artifactAttestations() : this.artifactAttestations,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OverviewDomains &&
           listEquals(website, other.website) &&
           listEquals(codespaces, other.codespaces) &&
@@ -53,7 +53,7 @@ OverviewDomains copyWith({List<String>? Function()? website, List<String>? Funct
           listEquals(packages, other.packages) &&
           listEquals(actions, other.actions) &&
           actionsInbound == other.actionsInbound &&
-          artifactAttestations == other.artifactAttestations; } 
-@override int get hashCode { return Object.hash(Object.hashAll(website ?? const []), Object.hashAll(codespaces ?? const []), Object.hashAll(copilot ?? const []), Object.hashAll(packages ?? const []), Object.hashAll(actions ?? const []), actionsInbound, artifactAttestations); } 
-@override String toString() { return 'OverviewDomains(website: $website, codespaces: $codespaces, copilot: $copilot, packages: $packages, actions: $actions, actionsInbound: $actionsInbound, artifactAttestations: $artifactAttestations)'; } 
- }
+          artifactAttestations == other.artifactAttestations;}
+@override int get hashCode {return Object.hash(Object.hashAll(website ?? const []), Object.hashAll(codespaces ?? const []), Object.hashAll(copilot ?? const []), Object.hashAll(packages ?? const []), Object.hashAll(actions ?? const []), actionsInbound, artifactAttestations);}
+@override String toString() {return 'OverviewDomains(website: $website, codespaces: $codespaces, copilot: $copilot, packages: $packages, actions: $actions, actionsInbound: $actionsInbound, artifactAttestations: $artifactAttestations)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksRuleAllowDeletionsEnforcementLevel {const WebhooksRuleAllowDeletionsEnforcementLevel._(this.value);
 
-factory WebhooksRuleAllowDeletionsEnforcementLevel.fromJson(String json) { return switch (json) {
+factory WebhooksRuleAllowDeletionsEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => WebhooksRuleAllowDeletionsEnforcementLevel._(json),
-}; }
+};}
 
 static const WebhooksRuleAllowDeletionsEnforcementLevel off = WebhooksRuleAllowDeletionsEnforcementLevel._('off');
 
@@ -19,22 +19,22 @@ static const List<WebhooksRuleAllowDeletionsEnforcementLevel> values = [off, non
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksRuleAllowDeletionsEnforcementLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksRuleAllowDeletionsEnforcementLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhooksRuleAllowDeletionsEnforcementLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhooksRuleAllowDeletionsEnforcementLevel($value)';}
+}
 @immutable final class WebhooksRuleAllowForcePushesEnforcementLevel {const WebhooksRuleAllowForcePushesEnforcementLevel._(this.value);
 
-factory WebhooksRuleAllowForcePushesEnforcementLevel.fromJson(String json) { return switch (json) {
+factory WebhooksRuleAllowForcePushesEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => WebhooksRuleAllowForcePushesEnforcementLevel._(json),
-}; }
+};}
 
 static const WebhooksRuleAllowForcePushesEnforcementLevel off = WebhooksRuleAllowForcePushesEnforcementLevel._('off');
 
@@ -46,22 +46,22 @@ static const List<WebhooksRuleAllowForcePushesEnforcementLevel> values = [off, n
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksRuleAllowForcePushesEnforcementLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksRuleAllowForcePushesEnforcementLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhooksRuleAllowForcePushesEnforcementLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhooksRuleAllowForcePushesEnforcementLevel($value)';}
+}
 @immutable final class WebhooksRuleLinearHistoryRequirementEnforcementLevel {const WebhooksRuleLinearHistoryRequirementEnforcementLevel._(this.value);
 
-factory WebhooksRuleLinearHistoryRequirementEnforcementLevel.fromJson(String json) { return switch (json) {
+factory WebhooksRuleLinearHistoryRequirementEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => WebhooksRuleLinearHistoryRequirementEnforcementLevel._(json),
-}; }
+};}
 
 static const WebhooksRuleLinearHistoryRequirementEnforcementLevel off = WebhooksRuleLinearHistoryRequirementEnforcementLevel._('off');
 
@@ -73,23 +73,23 @@ static const List<WebhooksRuleLinearHistoryRequirementEnforcementLevel> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksRuleLinearHistoryRequirementEnforcementLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksRuleLinearHistoryRequirementEnforcementLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhooksRuleLinearHistoryRequirementEnforcementLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhooksRuleLinearHistoryRequirementEnforcementLevel($value)';}
+}
 /// The enforcement level of the branch lock setting. `off` means the branch is not locked, `non_admins` means the branch is read-only for non_admins, and `everyone` means the branch is read-only for everyone.
 @immutable final class WebhooksRuleLockBranchEnforcementLevel {const WebhooksRuleLockBranchEnforcementLevel._(this.value);
 
-factory WebhooksRuleLockBranchEnforcementLevel.fromJson(String json) { return switch (json) {
+factory WebhooksRuleLockBranchEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => WebhooksRuleLockBranchEnforcementLevel._(json),
-}; }
+};}
 
 static const WebhooksRuleLockBranchEnforcementLevel off = WebhooksRuleLockBranchEnforcementLevel._('off');
 
@@ -101,22 +101,22 @@ static const List<WebhooksRuleLockBranchEnforcementLevel> values = [off, nonAdmi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksRuleLockBranchEnforcementLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksRuleLockBranchEnforcementLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhooksRuleLockBranchEnforcementLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhooksRuleLockBranchEnforcementLevel($value)';}
+}
 @immutable final class WebhooksRuleMergeQueueEnforcementLevel {const WebhooksRuleMergeQueueEnforcementLevel._(this.value);
 
-factory WebhooksRuleMergeQueueEnforcementLevel.fromJson(String json) { return switch (json) {
+factory WebhooksRuleMergeQueueEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => WebhooksRuleMergeQueueEnforcementLevel._(json),
-}; }
+};}
 
 static const WebhooksRuleMergeQueueEnforcementLevel off = WebhooksRuleMergeQueueEnforcementLevel._('off');
 
@@ -128,22 +128,22 @@ static const List<WebhooksRuleMergeQueueEnforcementLevel> values = [off, nonAdmi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksRuleMergeQueueEnforcementLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksRuleMergeQueueEnforcementLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhooksRuleMergeQueueEnforcementLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhooksRuleMergeQueueEnforcementLevel($value)';}
+}
 @immutable final class WebhooksRulePullRequestReviewsEnforcementLevel {const WebhooksRulePullRequestReviewsEnforcementLevel._(this.value);
 
-factory WebhooksRulePullRequestReviewsEnforcementLevel.fromJson(String json) { return switch (json) {
+factory WebhooksRulePullRequestReviewsEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => WebhooksRulePullRequestReviewsEnforcementLevel._(json),
-}; }
+};}
 
 static const WebhooksRulePullRequestReviewsEnforcementLevel off = WebhooksRulePullRequestReviewsEnforcementLevel._('off');
 
@@ -155,22 +155,22 @@ static const List<WebhooksRulePullRequestReviewsEnforcementLevel> values = [off,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksRulePullRequestReviewsEnforcementLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksRulePullRequestReviewsEnforcementLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhooksRulePullRequestReviewsEnforcementLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhooksRulePullRequestReviewsEnforcementLevel($value)';}
+}
 @immutable final class WebhooksRuleRequiredConversationResolutionLevel {const WebhooksRuleRequiredConversationResolutionLevel._(this.value);
 
-factory WebhooksRuleRequiredConversationResolutionLevel.fromJson(String json) { return switch (json) {
+factory WebhooksRuleRequiredConversationResolutionLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => WebhooksRuleRequiredConversationResolutionLevel._(json),
-}; }
+};}
 
 static const WebhooksRuleRequiredConversationResolutionLevel off = WebhooksRuleRequiredConversationResolutionLevel._('off');
 
@@ -182,22 +182,22 @@ static const List<WebhooksRuleRequiredConversationResolutionLevel> values = [off
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksRuleRequiredConversationResolutionLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksRuleRequiredConversationResolutionLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhooksRuleRequiredConversationResolutionLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhooksRuleRequiredConversationResolutionLevel($value)';}
+}
 @immutable final class WebhooksRuleRequiredDeploymentsEnforcementLevel {const WebhooksRuleRequiredDeploymentsEnforcementLevel._(this.value);
 
-factory WebhooksRuleRequiredDeploymentsEnforcementLevel.fromJson(String json) { return switch (json) {
+factory WebhooksRuleRequiredDeploymentsEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => WebhooksRuleRequiredDeploymentsEnforcementLevel._(json),
-}; }
+};}
 
 static const WebhooksRuleRequiredDeploymentsEnforcementLevel off = WebhooksRuleRequiredDeploymentsEnforcementLevel._('off');
 
@@ -209,22 +209,22 @@ static const List<WebhooksRuleRequiredDeploymentsEnforcementLevel> values = [off
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksRuleRequiredDeploymentsEnforcementLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksRuleRequiredDeploymentsEnforcementLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhooksRuleRequiredDeploymentsEnforcementLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhooksRuleRequiredDeploymentsEnforcementLevel($value)';}
+}
 @immutable final class WebhooksRuleRequiredStatusChecksEnforcementLevel {const WebhooksRuleRequiredStatusChecksEnforcementLevel._(this.value);
 
-factory WebhooksRuleRequiredStatusChecksEnforcementLevel.fromJson(String json) { return switch (json) {
+factory WebhooksRuleRequiredStatusChecksEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => WebhooksRuleRequiredStatusChecksEnforcementLevel._(json),
-}; }
+};}
 
 static const WebhooksRuleRequiredStatusChecksEnforcementLevel off = WebhooksRuleRequiredStatusChecksEnforcementLevel._('off');
 
@@ -236,22 +236,22 @@ static const List<WebhooksRuleRequiredStatusChecksEnforcementLevel> values = [of
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksRuleRequiredStatusChecksEnforcementLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksRuleRequiredStatusChecksEnforcementLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhooksRuleRequiredStatusChecksEnforcementLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhooksRuleRequiredStatusChecksEnforcementLevel($value)';}
+}
 @immutable final class WebhooksRuleSignatureRequirementEnforcementLevel {const WebhooksRuleSignatureRequirementEnforcementLevel._(this.value);
 
-factory WebhooksRuleSignatureRequirementEnforcementLevel.fromJson(String json) { return switch (json) {
+factory WebhooksRuleSignatureRequirementEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => WebhooksRuleSignatureRequirementEnforcementLevel._(json),
-}; }
+};}
 
 static const WebhooksRuleSignatureRequirementEnforcementLevel off = WebhooksRuleSignatureRequirementEnforcementLevel._('off');
 
@@ -263,18 +263,18 @@ static const List<WebhooksRuleSignatureRequirementEnforcementLevel> values = [of
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksRuleSignatureRequirementEnforcementLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksRuleSignatureRequirementEnforcementLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhooksRuleSignatureRequirementEnforcementLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhooksRuleSignatureRequirementEnforcementLevel($value)';}
+}
 /// The branch protection rule. Includes a `name` and all the [branch protection settings](https://docs.github.com/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#about-branch-protection-settings) applied to branches that match the name. Binary settings are boolean. Multi-level configurations are one of `off`, `non_admins`, or `everyone`. Actor and build lists are arrays of strings.
 @immutable final class WebhooksRule {const WebhooksRule({required this.adminEnforced, required this.allowDeletionsEnforcementLevel, required this.allowForcePushesEnforcementLevel, required this.authorizedActorNames, required this.authorizedActorsOnly, required this.authorizedDismissalActorsOnly, required this.createdAt, required this.dismissStaleReviewsOnPush, required this.id, required this.ignoreApprovalsFromContributors, required this.linearHistoryRequirementEnforcementLevel, required this.lockBranchEnforcementLevel, required this.mergeQueueEnforcementLevel, required this.name, required this.pullRequestReviewsEnforcementLevel, required this.repositoryId, required this.requireCodeOwnerReview, required this.requiredApprovingReviewCount, required this.requiredConversationResolutionLevel, required this.requiredDeploymentsEnforcementLevel, required this.requiredStatusChecks, required this.requiredStatusChecksEnforcementLevel, required this.signatureRequirementEnforcementLevel, required this.strictRequiredStatusChecksPolicy, required this.updatedAt, this.createProtected, this.lockAllowsForkSync, this.requireLastPushApproval, });
 
-factory WebhooksRule.fromJson(Map<String, dynamic> json) { return WebhooksRule(
+factory WebhooksRule.fromJson(Map<String, dynamic> json) {return WebhooksRule(
   adminEnforced: json['admin_enforced'] as bool,
   allowDeletionsEnforcementLevel: WebhooksRuleAllowDeletionsEnforcementLevel.fromJson(json['allow_deletions_enforcement_level'] as String),
   allowForcePushesEnforcementLevel: WebhooksRuleAllowForcePushesEnforcementLevel.fromJson(json['allow_force_pushes_enforcement_level'] as String),
@@ -303,7 +303,7 @@ factory WebhooksRule.fromJson(Map<String, dynamic> json) { return WebhooksRule(
   signatureRequirementEnforcementLevel: WebhooksRuleSignatureRequirementEnforcementLevel.fromJson(json['signature_requirement_enforcement_level'] as String),
   strictRequiredStatusChecksPolicy: json['strict_required_status_checks_policy'] as bool,
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 final bool adminEnforced;
 
@@ -364,7 +364,7 @@ final bool strictRequiredStatusChecksPolicy;
 
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'admin_enforced': adminEnforced,
   'allow_deletions_enforcement_level': allowDeletionsEnforcementLevel.toJson(),
   'allow_force_pushes_enforcement_level': allowForcePushesEnforcementLevel.toJson(),
@@ -393,8 +393,8 @@ Map<String, dynamic> toJson() { return {
   'signature_requirement_enforcement_level': signatureRequirementEnforcementLevel.toJson(),
   'strict_required_status_checks_policy': strictRequiredStatusChecksPolicy,
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('admin_enforced') && json['admin_enforced'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('admin_enforced') && json['admin_enforced'] is bool &&
       json.containsKey('allow_deletions_enforcement_level') &&
       json.containsKey('allow_force_pushes_enforcement_level') &&
       json.containsKey('authorized_actor_names') &&
@@ -418,8 +418,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('admin
       json.containsKey('required_status_checks_enforcement_level') &&
       json.containsKey('signature_requirement_enforcement_level') &&
       json.containsKey('strict_required_status_checks_policy') && json['strict_required_status_checks_policy'] is bool &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhooksRule copyWith({bool? adminEnforced, WebhooksRuleAllowDeletionsEnforcementLevel? allowDeletionsEnforcementLevel, WebhooksRuleAllowForcePushesEnforcementLevel? allowForcePushesEnforcementLevel, List<String>? authorizedActorNames, bool? authorizedActorsOnly, bool? authorizedDismissalActorsOnly, bool? Function()? createProtected, DateTime? createdAt, bool? dismissStaleReviewsOnPush, int? id, bool? ignoreApprovalsFromContributors, WebhooksRuleLinearHistoryRequirementEnforcementLevel? linearHistoryRequirementEnforcementLevel, WebhooksRuleLockBranchEnforcementLevel? lockBranchEnforcementLevel, bool? Function()? lockAllowsForkSync, WebhooksRuleMergeQueueEnforcementLevel? mergeQueueEnforcementLevel, String? name, WebhooksRulePullRequestReviewsEnforcementLevel? pullRequestReviewsEnforcementLevel, int? repositoryId, bool? requireCodeOwnerReview, bool? Function()? requireLastPushApproval, int? requiredApprovingReviewCount, WebhooksRuleRequiredConversationResolutionLevel? requiredConversationResolutionLevel, WebhooksRuleRequiredDeploymentsEnforcementLevel? requiredDeploymentsEnforcementLevel, List<String>? requiredStatusChecks, WebhooksRuleRequiredStatusChecksEnforcementLevel? requiredStatusChecksEnforcementLevel, WebhooksRuleSignatureRequirementEnforcementLevel? signatureRequirementEnforcementLevel, bool? strictRequiredStatusChecksPolicy, DateTime? updatedAt, }) { return WebhooksRule(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+WebhooksRule copyWith({bool? adminEnforced, WebhooksRuleAllowDeletionsEnforcementLevel? allowDeletionsEnforcementLevel, WebhooksRuleAllowForcePushesEnforcementLevel? allowForcePushesEnforcementLevel, List<String>? authorizedActorNames, bool? authorizedActorsOnly, bool? authorizedDismissalActorsOnly, bool? Function()? createProtected, DateTime? createdAt, bool? dismissStaleReviewsOnPush, int? id, bool? ignoreApprovalsFromContributors, WebhooksRuleLinearHistoryRequirementEnforcementLevel? linearHistoryRequirementEnforcementLevel, WebhooksRuleLockBranchEnforcementLevel? lockBranchEnforcementLevel, bool? Function()? lockAllowsForkSync, WebhooksRuleMergeQueueEnforcementLevel? mergeQueueEnforcementLevel, String? name, WebhooksRulePullRequestReviewsEnforcementLevel? pullRequestReviewsEnforcementLevel, int? repositoryId, bool? requireCodeOwnerReview, bool? Function()? requireLastPushApproval, int? requiredApprovingReviewCount, WebhooksRuleRequiredConversationResolutionLevel? requiredConversationResolutionLevel, WebhooksRuleRequiredDeploymentsEnforcementLevel? requiredDeploymentsEnforcementLevel, List<String>? requiredStatusChecks, WebhooksRuleRequiredStatusChecksEnforcementLevel? requiredStatusChecksEnforcementLevel, WebhooksRuleSignatureRequirementEnforcementLevel? signatureRequirementEnforcementLevel, bool? strictRequiredStatusChecksPolicy, DateTime? updatedAt, }) {return WebhooksRule(
   adminEnforced: adminEnforced ?? this.adminEnforced,
   allowDeletionsEnforcementLevel: allowDeletionsEnforcementLevel ?? this.allowDeletionsEnforcementLevel,
   allowForcePushesEnforcementLevel: allowForcePushesEnforcementLevel ?? this.allowForcePushesEnforcementLevel,
@@ -448,8 +448,8 @@ WebhooksRule copyWith({bool? adminEnforced, WebhooksRuleAllowDeletionsEnforcemen
   signatureRequirementEnforcementLevel: signatureRequirementEnforcementLevel ?? this.signatureRequirementEnforcementLevel,
   strictRequiredStatusChecksPolicy: strictRequiredStatusChecksPolicy ?? this.strictRequiredStatusChecksPolicy,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhooksRule &&
           adminEnforced == other.adminEnforced &&
           allowDeletionsEnforcementLevel == other.allowDeletionsEnforcementLevel &&
@@ -478,7 +478,7 @@ WebhooksRule copyWith({bool? adminEnforced, WebhooksRuleAllowDeletionsEnforcemen
           requiredStatusChecksEnforcementLevel == other.requiredStatusChecksEnforcementLevel &&
           signatureRequirementEnforcementLevel == other.signatureRequirementEnforcementLevel &&
           strictRequiredStatusChecksPolicy == other.strictRequiredStatusChecksPolicy &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hashAll([adminEnforced, allowDeletionsEnforcementLevel, allowForcePushesEnforcementLevel, Object.hashAll(authorizedActorNames), authorizedActorsOnly, authorizedDismissalActorsOnly, createProtected, createdAt, dismissStaleReviewsOnPush, id, ignoreApprovalsFromContributors, linearHistoryRequirementEnforcementLevel, lockBranchEnforcementLevel, lockAllowsForkSync, mergeQueueEnforcementLevel, name, pullRequestReviewsEnforcementLevel, repositoryId, requireCodeOwnerReview, requireLastPushApproval, requiredApprovingReviewCount, requiredConversationResolutionLevel, requiredDeploymentsEnforcementLevel, Object.hashAll(requiredStatusChecks), requiredStatusChecksEnforcementLevel, signatureRequirementEnforcementLevel, strictRequiredStatusChecksPolicy, updatedAt]); } 
-@override String toString() { return 'WebhooksRule(adminEnforced: $adminEnforced, allowDeletionsEnforcementLevel: $allowDeletionsEnforcementLevel, allowForcePushesEnforcementLevel: $allowForcePushesEnforcementLevel, authorizedActorNames: $authorizedActorNames, authorizedActorsOnly: $authorizedActorsOnly, authorizedDismissalActorsOnly: $authorizedDismissalActorsOnly, createProtected: $createProtected, createdAt: $createdAt, dismissStaleReviewsOnPush: $dismissStaleReviewsOnPush, id: $id, ignoreApprovalsFromContributors: $ignoreApprovalsFromContributors, linearHistoryRequirementEnforcementLevel: $linearHistoryRequirementEnforcementLevel, lockBranchEnforcementLevel: $lockBranchEnforcementLevel, lockAllowsForkSync: $lockAllowsForkSync, mergeQueueEnforcementLevel: $mergeQueueEnforcementLevel, name: $name, pullRequestReviewsEnforcementLevel: $pullRequestReviewsEnforcementLevel, repositoryId: $repositoryId, requireCodeOwnerReview: $requireCodeOwnerReview, requireLastPushApproval: $requireLastPushApproval, requiredApprovingReviewCount: $requiredApprovingReviewCount, requiredConversationResolutionLevel: $requiredConversationResolutionLevel, requiredDeploymentsEnforcementLevel: $requiredDeploymentsEnforcementLevel, requiredStatusChecks: $requiredStatusChecks, requiredStatusChecksEnforcementLevel: $requiredStatusChecksEnforcementLevel, signatureRequirementEnforcementLevel: $signatureRequirementEnforcementLevel, strictRequiredStatusChecksPolicy: $strictRequiredStatusChecksPolicy, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hashAll([adminEnforced, allowDeletionsEnforcementLevel, allowForcePushesEnforcementLevel, Object.hashAll(authorizedActorNames), authorizedActorsOnly, authorizedDismissalActorsOnly, createProtected, createdAt, dismissStaleReviewsOnPush, id, ignoreApprovalsFromContributors, linearHistoryRequirementEnforcementLevel, lockBranchEnforcementLevel, lockAllowsForkSync, mergeQueueEnforcementLevel, name, pullRequestReviewsEnforcementLevel, repositoryId, requireCodeOwnerReview, requireLastPushApproval, requiredApprovingReviewCount, requiredConversationResolutionLevel, requiredDeploymentsEnforcementLevel, Object.hashAll(requiredStatusChecks), requiredStatusChecksEnforcementLevel, signatureRequirementEnforcementLevel, strictRequiredStatusChecksPolicy, updatedAt]);}
+@override String toString() {return 'WebhooksRule(adminEnforced: $adminEnforced, allowDeletionsEnforcementLevel: $allowDeletionsEnforcementLevel, allowForcePushesEnforcementLevel: $allowForcePushesEnforcementLevel, authorizedActorNames: $authorizedActorNames, authorizedActorsOnly: $authorizedActorsOnly, authorizedDismissalActorsOnly: $authorizedDismissalActorsOnly, createProtected: $createProtected, createdAt: $createdAt, dismissStaleReviewsOnPush: $dismissStaleReviewsOnPush, id: $id, ignoreApprovalsFromContributors: $ignoreApprovalsFromContributors, linearHistoryRequirementEnforcementLevel: $linearHistoryRequirementEnforcementLevel, lockBranchEnforcementLevel: $lockBranchEnforcementLevel, lockAllowsForkSync: $lockAllowsForkSync, mergeQueueEnforcementLevel: $mergeQueueEnforcementLevel, name: $name, pullRequestReviewsEnforcementLevel: $pullRequestReviewsEnforcementLevel, repositoryId: $repositoryId, requireCodeOwnerReview: $requireCodeOwnerReview, requireLastPushApproval: $requireLastPushApproval, requiredApprovingReviewCount: $requiredApprovingReviewCount, requiredConversationResolutionLevel: $requiredConversationResolutionLevel, requiredDeploymentsEnforcementLevel: $requiredDeploymentsEnforcementLevel, requiredStatusChecks: $requiredStatusChecks, requiredStatusChecksEnforcementLevel: $requiredStatusChecksEnforcementLevel, signatureRequirementEnforcementLevel: $signatureRequirementEnforcementLevel, strictRequiredStatusChecksPolicy: $strictRequiredStatusChecksPolicy, updatedAt: $updatedAt)';}
+}

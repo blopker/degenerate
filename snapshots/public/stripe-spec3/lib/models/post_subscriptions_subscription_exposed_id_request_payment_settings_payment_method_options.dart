@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_subscription_exposed_id_request_payment_settings_payment_method_options_acss_debit.dart';import 'post_subscriptions_subscription_exposed_id_request_payment_settings_payment_method_options_bancontact.dart';import 'post_subscriptions_subscription_exposed_id_request_payment_settings_payment_method_options_card.dart';import 'post_subscriptions_subscription_exposed_id_request_payment_settings_payment_method_options_customer_balance.dart';import 'post_subscriptions_subscription_exposed_id_request_payment_settings_payment_method_options_konbini.dart';import 'post_subscriptions_subscription_exposed_id_request_payment_settings_payment_method_options_payto.dart';import 'post_subscriptions_subscription_exposed_id_request_payment_settings_payment_method_options_sepa_debit.dart';import 'post_subscriptions_subscription_exposed_id_request_payment_settings_payment_method_options_us_bank_account.dart';@immutable final class PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions {const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions({this.acssDebit, this.bancontact, this.card, this.customerBalance, this.konbini, this.payto, this.sepaDebit, this.usBankAccount, });
 
-factory PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions(
+factory PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions.fromJson(Map<String, dynamic> json) {return PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions(
   acssDebit: json['acss_debit'] != null ? PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsAcssDebit.fromJson(json['acss_debit']) : null,
   bancontact: json['bancontact'] != null ? PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsBancontact.fromJson(json['bancontact']) : null,
   card: json['card'] != null ? PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsCard.fromJson(json['card']) : null,
@@ -11,7 +11,7 @@ factory PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMetho
   payto: json['payto'] != null ? PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsPayto.fromJson(json['payto']) : null,
   sepaDebit: json['sepa_debit'] != null ? PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsSepaDebit.fromJson(json['sepa_debit']) : null,
   usBankAccount: json['us_bank_account'] != null ? PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsUsBankAccount.fromJson(json['us_bank_account']) : null,
-); }
+);}
 
 final PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsAcssDebit? acssDebit;
 
@@ -29,7 +29,7 @@ final PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodO
 
 final PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsUsBankAccount? usBankAccount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (acssDebit != null) 'acss_debit': acssDebit?.toJson(),
   if (bancontact != null) 'bancontact': bancontact?.toJson(),
   if (card != null) 'card': card?.toJson(),
@@ -38,9 +38,9 @@ Map<String, dynamic> toJson() { return {
   if (payto != null) 'payto': payto?.toJson(),
   if (sepaDebit != null) 'sepa_debit': sepaDebit?.toJson(),
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acss_debit', 'bancontact', 'card', 'customer_balance', 'konbini', 'payto', 'sepa_debit', 'us_bank_account'}.contains(key)); } 
-PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions copyWith({PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsAcssDebit? Function()? acssDebit, PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsBancontact? Function()? bancontact, PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsCard? Function()? card, PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsCustomerBalance? Function()? customerBalance, PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsKonbini? Function()? konbini, PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsPayto? Function()? payto, PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsSepaDebit? Function()? sepaDebit, PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsUsBankAccount? Function()? usBankAccount, }) { return PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'acss_debit', 'bancontact', 'card', 'customer_balance', 'konbini', 'payto', 'sepa_debit', 'us_bank_account'}.contains(key));}
+PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions copyWith({PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsAcssDebit? Function()? acssDebit, PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsBancontact? Function()? bancontact, PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsCard? Function()? card, PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsCustomerBalance? Function()? customerBalance, PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsKonbini? Function()? konbini, PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsPayto? Function()? payto, PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsSepaDebit? Function()? sepaDebit, PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptionsUsBankAccount? Function()? usBankAccount, }) {return PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   bancontact: bancontact != null ? bancontact() : this.bancontact,
   card: card != null ? card() : this.card,
@@ -49,8 +49,8 @@ PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions
   payto: payto != null ? payto() : this.payto,
   sepaDebit: sepaDebit != null ? sepaDebit() : this.sepaDebit,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions &&
           acssDebit == other.acssDebit &&
           bancontact == other.bancontact &&
@@ -59,7 +59,7 @@ PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions
           konbini == other.konbini &&
           payto == other.payto &&
           sepaDebit == other.sepaDebit &&
-          usBankAccount == other.usBankAccount; } 
-@override int get hashCode { return Object.hash(acssDebit, bancontact, card, customerBalance, konbini, payto, sepaDebit, usBankAccount); } 
-@override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions(acssDebit: $acssDebit, bancontact: $bancontact, card: $card, customerBalance: $customerBalance, konbini: $konbini, payto: $payto, sepaDebit: $sepaDebit, usBankAccount: $usBankAccount)'; } 
- }
+          usBankAccount == other.usBankAccount;}
+@override int get hashCode {return Object.hash(acssDebit, bancontact, card, customerBalance, konbini, payto, sepaDebit, usBankAccount);}
+@override String toString() {return 'PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions(acssDebit: $acssDebit, bancontact: $bancontact, card: $card, customerBalance: $customerBalance, konbini: $konbini, payto: $payto, sepaDebit: $sepaDebit, usBankAccount: $usBankAccount)';}
+}

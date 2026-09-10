@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_run_with_simple_check_suite_output.dart';import 'deployment_simple.dart';import 'integration.dart';import 'pull_request_minimal.dart';import 'simple_check_suite.dart';@immutable final class CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion._(this.value);
 
-factory CheckRunWithSimpleCheckSuiteConclusion.fromJson(String json) { return switch (json) {
+factory CheckRunWithSimpleCheckSuiteConclusion.fromJson(String json) {return switch (json) {
   'waiting' => waiting,
   'pending' => pending,
   'startup_failure' => startupFailure,
@@ -16,7 +16,7 @@ factory CheckRunWithSimpleCheckSuiteConclusion.fromJson(String json) { return sw
   'action_required' => actionRequired,
   'null' => $null,
   _ => CheckRunWithSimpleCheckSuiteConclusion._(json),
-}; }
+};}
 
 static const CheckRunWithSimpleCheckSuiteConclusion waiting = CheckRunWithSimpleCheckSuiteConclusion._('waiting');
 
@@ -46,24 +46,24 @@ static const List<CheckRunWithSimpleCheckSuiteConclusion> values = [waiting, pen
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckRunWithSimpleCheckSuiteConclusion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckRunWithSimpleCheckSuiteConclusion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckRunWithSimpleCheckSuiteConclusion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckRunWithSimpleCheckSuiteConclusion($value)';}
+}
 /// The phase of the lifecycle that the check is currently in.
 @immutable final class CheckRunWithSimpleCheckSuiteStatus {const CheckRunWithSimpleCheckSuiteStatus._(this.value);
 
-factory CheckRunWithSimpleCheckSuiteStatus.fromJson(String json) { return switch (json) {
+factory CheckRunWithSimpleCheckSuiteStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'in_progress' => inProgress,
   'completed' => completed,
   'pending' => pending,
   _ => CheckRunWithSimpleCheckSuiteStatus._(json),
-}; }
+};}
 
 static const CheckRunWithSimpleCheckSuiteStatus queued = CheckRunWithSimpleCheckSuiteStatus._('queued');
 
@@ -77,18 +77,18 @@ static const List<CheckRunWithSimpleCheckSuiteStatus> values = [queued, inProgre
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckRunWithSimpleCheckSuiteStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckRunWithSimpleCheckSuiteStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckRunWithSimpleCheckSuiteStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckRunWithSimpleCheckSuiteStatus($value)';}
+}
 /// A check performed on the code of a given code change
 @immutable final class CheckRunWithSimpleCheckSuite {const CheckRunWithSimpleCheckSuite({required this.app, required this.checkSuite, required this.completedAt, required this.conclusion, required this.detailsUrl, required this.externalId, required this.headSha, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.output, required this.pullRequests, required this.startedAt, required this.status, required this.url, this.deployment, });
 
-factory CheckRunWithSimpleCheckSuite.fromJson(Map<String, dynamic> json) { return CheckRunWithSimpleCheckSuite(
+factory CheckRunWithSimpleCheckSuite.fromJson(Map<String, dynamic> json) {return CheckRunWithSimpleCheckSuite(
   app: json['app'] != null ? Integration.fromJson(json['app'] as Map<String, dynamic>) : null,
   checkSuite: SimpleCheckSuite.fromJson(json['check_suite'] as Map<String, dynamic>),
   completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,
@@ -106,7 +106,7 @@ factory CheckRunWithSimpleCheckSuite.fromJson(Map<String, dynamic> json) { retur
   startedAt: DateTime.parse(json['started_at'] as String),
   status: CheckRunWithSimpleCheckSuiteStatus.fromJson(json['status'] as String),
   url: json['url'] as String,
-); }
+);}
 
 final Integration? app;
 
@@ -146,7 +146,7 @@ final CheckRunWithSimpleCheckSuiteStatus status;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'app': app?.toJson(),
   'check_suite': checkSuite.toJson(),
   'completed_at': completedAt?.toIso8601String(),
@@ -164,8 +164,8 @@ Map<String, dynamic> toJson() { return {
   'started_at': startedAt.toIso8601String(),
   'status': status.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('app') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('app') &&
       json.containsKey('check_suite') &&
       json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is String) &&
       json.containsKey('conclusion') &&
@@ -180,8 +180,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('app')
       json.containsKey('pull_requests') &&
       json.containsKey('started_at') && json['started_at'] is String &&
       json.containsKey('status') &&
-      json.containsKey('url') && json['url'] is String; } 
-CheckRunWithSimpleCheckSuite copyWith({Integration? Function()? app, SimpleCheckSuite? checkSuite, DateTime? Function()? completedAt, CheckRunWithSimpleCheckSuiteConclusion? Function()? conclusion, DeploymentSimple? Function()? deployment, String? detailsUrl, String? externalId, String? headSha, String? htmlUrl, int? id, String? name, String? nodeId, CheckRunWithSimpleCheckSuiteOutput? output, List<PullRequestMinimal>? pullRequests, DateTime? startedAt, CheckRunWithSimpleCheckSuiteStatus? status, String? url, }) { return CheckRunWithSimpleCheckSuite(
+      json.containsKey('url') && json['url'] is String;}
+CheckRunWithSimpleCheckSuite copyWith({Integration? Function()? app, SimpleCheckSuite? checkSuite, DateTime? Function()? completedAt, CheckRunWithSimpleCheckSuiteConclusion? Function()? conclusion, DeploymentSimple? Function()? deployment, String? detailsUrl, String? externalId, String? headSha, String? htmlUrl, int? id, String? name, String? nodeId, CheckRunWithSimpleCheckSuiteOutput? output, List<PullRequestMinimal>? pullRequests, DateTime? startedAt, CheckRunWithSimpleCheckSuiteStatus? status, String? url, }) {return CheckRunWithSimpleCheckSuite(
   app: app != null ? app() : this.app,
   checkSuite: checkSuite ?? this.checkSuite,
   completedAt: completedAt != null ? completedAt() : this.completedAt,
@@ -199,8 +199,8 @@ CheckRunWithSimpleCheckSuite copyWith({Integration? Function()? app, SimpleCheck
   startedAt: startedAt ?? this.startedAt,
   status: status ?? this.status,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CheckRunWithSimpleCheckSuite &&
           app == other.app &&
           checkSuite == other.checkSuite &&
@@ -218,7 +218,7 @@ CheckRunWithSimpleCheckSuite copyWith({Integration? Function()? app, SimpleCheck
           listEquals(pullRequests, other.pullRequests) &&
           startedAt == other.startedAt &&
           status == other.status &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(app, checkSuite, completedAt, conclusion, deployment, detailsUrl, externalId, headSha, htmlUrl, id, name, nodeId, output, Object.hashAll(pullRequests), startedAt, status, url); } 
-@override String toString() { return 'CheckRunWithSimpleCheckSuite(app: $app, checkSuite: $checkSuite, completedAt: $completedAt, conclusion: $conclusion, deployment: $deployment, detailsUrl: $detailsUrl, externalId: $externalId, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, output: $output, pullRequests: $pullRequests, startedAt: $startedAt, status: $status, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(app, checkSuite, completedAt, conclusion, deployment, detailsUrl, externalId, headSha, htmlUrl, id, name, nodeId, output, Object.hashAll(pullRequests), startedAt, status, url);}
+@override String toString() {return 'CheckRunWithSimpleCheckSuite(app: $app, checkSuite: $checkSuite, completedAt: $completedAt, conclusion: $conclusion, deployment: $deployment, detailsUrl: $detailsUrl, externalId: $externalId, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, output: $output, pullRequests: $pullRequests, startedAt: $startedAt, status: $status, url: $url)';}
+}

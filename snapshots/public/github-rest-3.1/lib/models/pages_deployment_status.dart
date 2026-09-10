@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The current status of the deployment.
 @immutable final class PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus._(this.value);
 
-factory PagesDeploymentStatusStatus.fromJson(String json) { return switch (json) {
+factory PagesDeploymentStatusStatus.fromJson(String json) {return switch (json) {
   'deployment_in_progress' => deploymentInProgress,
   'syncing_files' => syncingFiles,
   'finished_file_sync' => finishedFileSync,
@@ -16,7 +16,7 @@ factory PagesDeploymentStatusStatus.fromJson(String json) { return switch (json)
   'deployment_lost' => deploymentLost,
   'succeed' => succeed,
   _ => PagesDeploymentStatusStatus._(json),
-}; }
+};}
 
 static const PagesDeploymentStatusStatus deploymentInProgress = PagesDeploymentStatusStatus._('deployment_in_progress');
 
@@ -44,33 +44,33 @@ static const List<PagesDeploymentStatusStatus> values = [deploymentInProgress, s
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesDeploymentStatusStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesDeploymentStatusStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PagesDeploymentStatusStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PagesDeploymentStatusStatus($value)';}
+}
 @immutable final class PagesDeploymentStatus {const PagesDeploymentStatus({this.status});
 
-factory PagesDeploymentStatus.fromJson(Map<String, dynamic> json) { return PagesDeploymentStatus(
+factory PagesDeploymentStatus.fromJson(Map<String, dynamic> json) {return PagesDeploymentStatus(
   status: json['status'] != null ? PagesDeploymentStatusStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 /// The current status of the deployment.
 final PagesDeploymentStatusStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
-PagesDeploymentStatus copyWith({PagesDeploymentStatusStatus? Function()? status}) { return PagesDeploymentStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'status'}.contains(key));}
+PagesDeploymentStatus copyWith({PagesDeploymentStatusStatus? Function()? status}) {return PagesDeploymentStatus(
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PagesDeploymentStatus &&
-          status == other.status; } 
-@override int get hashCode { return status.hashCode; } 
-@override String toString() { return 'PagesDeploymentStatus(status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return status.hashCode;}
+@override String toString() {return 'PagesDeploymentStatus(status: $status)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// This field is deprecated. Please use `max_upload_*` parameters instead. . The frequency at which Cloudflare sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files.
 @immutable final class LogpushFrequency {const LogpushFrequency._(this.value);
 
-factory LogpushFrequency.fromJson(String json) { return switch (json) {
+factory LogpushFrequency.fromJson(String json) {return switch (json) {
   'high' => high,
   'low' => low,
   _ => LogpushFrequency._(json),
-}; }
+};}
 
 static const LogpushFrequency high = LogpushFrequency._('high');
 
@@ -17,11 +17,11 @@ static const List<LogpushFrequency> values = [high, low];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LogpushFrequency && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LogpushFrequency($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LogpushFrequency && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LogpushFrequency($value)';}
+}

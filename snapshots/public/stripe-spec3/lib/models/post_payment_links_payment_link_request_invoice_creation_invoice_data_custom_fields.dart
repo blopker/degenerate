@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_payment_link_request_invoice_creation_invoice_data_custom_fields_variant1.dart';@immutable final class PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant2 {const PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant2._(this.value);
 
-factory PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant2._(json),
-}; }
+};}
 
 static const PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant2 $empty = PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFieldsVariant2($value)';}
+}
 
 @immutable
 final class PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataCustomFields {

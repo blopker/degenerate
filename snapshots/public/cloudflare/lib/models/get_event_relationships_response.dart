@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEventRelationshipsResponse {const GetEventRelationshipsResponse({required this.attacker, required this.attackerCountry, required this.category, required this.datasetId, required this.date, required this.event, required this.hasChildren, required this.indicator, required this.indicatorType, required this.indicatorTypeId, required this.killChain, required this.mitreAttack, required this.numReferenced, required this.numReferences, required this.rawId, required this.referenced, required this.referencedIds, required this.references, required this.referencesIds, required this.tags, required this.targetCountry, required this.targetIndustry, required this.tlp, required this.uuid, this.insight, this.releasabilityId, });
 
-factory GetEventRelationshipsResponse.fromJson(Map<String, dynamic> json) { return GetEventRelationshipsResponse(
+factory GetEventRelationshipsResponse.fromJson(Map<String, dynamic> json) {return GetEventRelationshipsResponse(
   attacker: json['attacker'] as String,
   attackerCountry: json['attackerCountry'] as String,
   category: json['category'] as String,
@@ -29,7 +29,7 @@ factory GetEventRelationshipsResponse.fromJson(Map<String, dynamic> json) { retu
   targetIndustry: json['targetIndustry'] as String,
   tlp: json['tlp'] as String,
   uuid: json['uuid'] as String,
-); }
+);}
 
 final String attacker;
 
@@ -83,7 +83,7 @@ final String tlp;
 
 final String uuid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'attacker': attacker,
   'attackerCountry': attackerCountry,
   'category': category,
@@ -110,8 +110,8 @@ Map<String, dynamic> toJson() { return {
   'targetIndustry': targetIndustry,
   'tlp': tlp,
   'uuid': uuid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('attacker') && json['attacker'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('attacker') && json['attacker'] is String &&
       json.containsKey('attackerCountry') && json['attackerCountry'] is String &&
       json.containsKey('category') && json['category'] is String &&
       json.containsKey('datasetId') && json['datasetId'] is String &&
@@ -134,8 +134,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('attac
       json.containsKey('targetCountry') && json['targetCountry'] is String &&
       json.containsKey('targetIndustry') && json['targetIndustry'] is String &&
       json.containsKey('tlp') && json['tlp'] is String &&
-      json.containsKey('uuid') && json['uuid'] is String; } 
-GetEventRelationshipsResponse copyWith({String? attacker, String? attackerCountry, String? category, String? datasetId, String? date, String? event, bool? hasChildren, String? indicator, String? indicatorType, double? indicatorTypeId, String? Function()? insight, double? killChain, List<String>? mitreAttack, double? numReferenced, double? numReferences, String? rawId, List<String>? referenced, List<double>? referencedIds, List<String>? references, List<double>? referencesIds, String? Function()? releasabilityId, List<String>? tags, String? targetCountry, String? targetIndustry, String? tlp, String? uuid, }) { return GetEventRelationshipsResponse(
+      json.containsKey('uuid') && json['uuid'] is String;}
+GetEventRelationshipsResponse copyWith({String? attacker, String? attackerCountry, String? category, String? datasetId, String? date, String? event, bool? hasChildren, String? indicator, String? indicatorType, double? indicatorTypeId, String? Function()? insight, double? killChain, List<String>? mitreAttack, double? numReferenced, double? numReferences, String? rawId, List<String>? referenced, List<double>? referencedIds, List<String>? references, List<double>? referencesIds, String? Function()? releasabilityId, List<String>? tags, String? targetCountry, String? targetIndustry, String? tlp, String? uuid, }) {return GetEventRelationshipsResponse(
   attacker: attacker ?? this.attacker,
   attackerCountry: attackerCountry ?? this.attackerCountry,
   category: category ?? this.category,
@@ -162,8 +162,8 @@ GetEventRelationshipsResponse copyWith({String? attacker, String? attackerCountr
   targetIndustry: targetIndustry ?? this.targetIndustry,
   tlp: tlp ?? this.tlp,
   uuid: uuid ?? this.uuid,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetEventRelationshipsResponse &&
           attacker == other.attacker &&
           attackerCountry == other.attackerCountry &&
@@ -190,7 +190,7 @@ GetEventRelationshipsResponse copyWith({String? attacker, String? attackerCountr
           targetCountry == other.targetCountry &&
           targetIndustry == other.targetIndustry &&
           tlp == other.tlp &&
-          uuid == other.uuid; } 
-@override int get hashCode { return Object.hashAll([attacker, attackerCountry, category, datasetId, date, event, hasChildren, indicator, indicatorType, indicatorTypeId, insight, killChain, Object.hashAll(mitreAttack), numReferenced, numReferences, rawId, Object.hashAll(referenced), Object.hashAll(referencedIds), Object.hashAll(references), Object.hashAll(referencesIds), releasabilityId, Object.hashAll(tags), targetCountry, targetIndustry, tlp, uuid]); } 
-@override String toString() { return 'GetEventRelationshipsResponse(attacker: $attacker, attackerCountry: $attackerCountry, category: $category, datasetId: $datasetId, date: $date, event: $event, hasChildren: $hasChildren, indicator: $indicator, indicatorType: $indicatorType, indicatorTypeId: $indicatorTypeId, insight: $insight, killChain: $killChain, mitreAttack: $mitreAttack, numReferenced: $numReferenced, numReferences: $numReferences, rawId: $rawId, referenced: $referenced, referencedIds: $referencedIds, references: $references, referencesIds: $referencesIds, releasabilityId: $releasabilityId, tags: $tags, targetCountry: $targetCountry, targetIndustry: $targetIndustry, tlp: $tlp, uuid: $uuid)'; } 
- }
+          uuid == other.uuid;}
+@override int get hashCode {return Object.hashAll([attacker, attackerCountry, category, datasetId, date, event, hasChildren, indicator, indicatorType, indicatorTypeId, insight, killChain, Object.hashAll(mitreAttack), numReferenced, numReferences, rawId, Object.hashAll(referenced), Object.hashAll(referencedIds), Object.hashAll(references), Object.hashAll(referencesIds), releasabilityId, Object.hashAll(tags), targetCountry, targetIndustry, tlp, uuid]);}
+@override String toString() {return 'GetEventRelationshipsResponse(attacker: $attacker, attackerCountry: $attackerCountry, category: $category, datasetId: $datasetId, date: $date, event: $event, hasChildren: $hasChildren, indicator: $indicator, indicatorType: $indicatorType, indicatorTypeId: $indicatorTypeId, insight: $insight, killChain: $killChain, mitreAttack: $mitreAttack, numReferenced: $numReferenced, numReferences: $numReferences, rawId: $rawId, referenced: $referenced, referencedIds: $referencedIds, references: $references, referencesIds: $referencesIds, releasabilityId: $releasabilityId, tags: $tags, targetCountry: $targetCountry, targetIndustry: $targetIndustry, tlp: $tlp, uuid: $uuid)';}
+}

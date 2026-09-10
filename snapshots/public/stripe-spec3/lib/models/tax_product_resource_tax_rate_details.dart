@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_rate_flat_amount.dart';/// Indicates the type of tax rate applied to the taxable amount. This value can be `null` when no tax applies to the location. This field is only present for TaxRates created by Stripe Tax.
 @immutable final class TaxProductResourceTaxRateDetailsRateType {const TaxProductResourceTaxRateDetailsRateType._(this.value);
 
-factory TaxProductResourceTaxRateDetailsRateType.fromJson(String json) { return switch (json) {
+factory TaxProductResourceTaxRateDetailsRateType.fromJson(String json) {return switch (json) {
   'flat_amount' => flatAmount,
   'percentage' => percentage,
   _ => TaxProductResourceTaxRateDetailsRateType._(json),
-}; }
+};}
 
 static const TaxProductResourceTaxRateDetailsRateType flatAmount = TaxProductResourceTaxRateDetailsRateType._('flat_amount');
 
@@ -17,18 +17,18 @@ static const List<TaxProductResourceTaxRateDetailsRateType> values = [flatAmount
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxProductResourceTaxRateDetailsRateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxProductResourceTaxRateDetailsRateType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TaxProductResourceTaxRateDetailsRateType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TaxProductResourceTaxRateDetailsRateType($value)';}
+}
 /// The tax type, such as `vat` or `sales_tax`.
 @immutable final class TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType._(this.value);
 
-factory TaxProductResourceTaxRateDetailsTaxType.fromJson(String json) { return switch (json) {
+factory TaxProductResourceTaxRateDetailsTaxType.fromJson(String json) {return switch (json) {
   'amusement_tax' => amusementTax,
   'communications_tax' => communicationsTax,
   'gst' => gst,
@@ -44,7 +44,7 @@ factory TaxProductResourceTaxRateDetailsTaxType.fromJson(String json) { return s
   'service_tax' => serviceTax,
   'vat' => vat,
   _ => TaxProductResourceTaxRateDetailsTaxType._(json),
-}; }
+};}
 
 static const TaxProductResourceTaxRateDetailsTaxType amusementTax = TaxProductResourceTaxRateDetailsTaxType._('amusement_tax');
 
@@ -78,25 +78,25 @@ static const List<TaxProductResourceTaxRateDetailsTaxType> values = [amusementTa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxProductResourceTaxRateDetailsTaxType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxProductResourceTaxRateDetailsTaxType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TaxProductResourceTaxRateDetailsTaxType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TaxProductResourceTaxRateDetailsTaxType($value)';}
+}
 /// 
 @immutable final class TaxProductResourceTaxRateDetails {const TaxProductResourceTaxRateDetails({required this.percentageDecimal, this.country = const Omittable.absent(), this.flatAmount = const Omittable.absent(), this.rateType = const Omittable.absent(), this.state = const Omittable.absent(), this.taxType = const Omittable.absent(), });
 
-factory TaxProductResourceTaxRateDetails.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxRateDetails(
+factory TaxProductResourceTaxRateDetails.fromJson(Map<String, dynamic> json) {return TaxProductResourceTaxRateDetails(
   country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
   flatAmount: json.containsKey('flat_amount') ? Omittable(json['flat_amount'] != null ? TaxRateFlatAmount.fromJson(json['flat_amount'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   percentageDecimal: json['percentage_decimal'] as String,
   rateType: json.containsKey('rate_type') ? Omittable(json['rate_type'] != null ? TaxProductResourceTaxRateDetailsRateType.fromJson(json['rate_type'] as String) : null) : const Omittable.absent(),
   state: json.containsKey('state') ? Omittable(json['state'] as String?) : const Omittable.absent(),
   taxType: json.containsKey('tax_type') ? Omittable(json['tax_type'] != null ? TaxProductResourceTaxRateDetailsTaxType.fromJson(json['tax_type'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Two-letter country code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)).
 final Omittable<String?> country;
@@ -116,31 +116,31 @@ final Omittable<String?> state;
 /// The tax type, such as `vat` or `sales_tax`.
 final Omittable<TaxProductResourceTaxRateDetailsTaxType?> taxType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (country.isPresent) 'country': country.value,
   if (flatAmount.isPresent) 'flat_amount': flatAmount.value?.toJson(),
   'percentage_decimal': percentageDecimal,
   if (rateType.isPresent) 'rate_type': rateType.value?.toJson(),
   if (state.isPresent) 'state': state.value,
   if (taxType.isPresent) 'tax_type': taxType.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('percentage_decimal') && json['percentage_decimal'] is String; } 
-TaxProductResourceTaxRateDetails copyWith({Omittable<String?>? country, Omittable<TaxRateFlatAmount?>? flatAmount, String? percentageDecimal, Omittable<TaxProductResourceTaxRateDetailsRateType?>? rateType, Omittable<String?>? state, Omittable<TaxProductResourceTaxRateDetailsTaxType?>? taxType, }) { return TaxProductResourceTaxRateDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('percentage_decimal') && json['percentage_decimal'] is String;}
+TaxProductResourceTaxRateDetails copyWith({Omittable<String?>? country, Omittable<TaxRateFlatAmount?>? flatAmount, String? percentageDecimal, Omittable<TaxProductResourceTaxRateDetailsRateType?>? rateType, Omittable<String?>? state, Omittable<TaxProductResourceTaxRateDetailsTaxType?>? taxType, }) {return TaxProductResourceTaxRateDetails(
   country: country ?? this.country,
   flatAmount: flatAmount ?? this.flatAmount,
   percentageDecimal: percentageDecimal ?? this.percentageDecimal,
   rateType: rateType ?? this.rateType,
   state: state ?? this.state,
   taxType: taxType ?? this.taxType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TaxProductResourceTaxRateDetails &&
           country == other.country &&
           flatAmount == other.flatAmount &&
           percentageDecimal == other.percentageDecimal &&
           rateType == other.rateType &&
           state == other.state &&
-          taxType == other.taxType; } 
-@override int get hashCode { return Object.hash(country, flatAmount, percentageDecimal, rateType, state, taxType); } 
-@override String toString() { return 'TaxProductResourceTaxRateDetails(country: $country, flatAmount: $flatAmount, percentageDecimal: $percentageDecimal, rateType: $rateType, state: $state, taxType: $taxType)'; } 
- }
+          taxType == other.taxType;}
+@override int get hashCode {return Object.hash(country, flatAmount, percentageDecimal, rateType, state, taxType);}
+@override String toString() {return 'TaxProductResourceTaxRateDetails(country: $country, flatAmount: $flatAmount, percentageDecimal: $percentageDecimal, rateType: $rateType, state: $state, taxType: $taxType)';}
+}

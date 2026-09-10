@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuerType {const PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuerType._(this.value);
 
-factory PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuerType.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuerType.fromJson(String json) {return switch (json) {
   'account' => account,
   'self' => self,
   _ => PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuerType._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuerType account = PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuerType._('account');
 
@@ -16,38 +16,38 @@ static const List<PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuerType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuerType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuerType($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer {const PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer({required this.type, this.account, });
 
-factory PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer(
+factory PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer(
   account: json['account'] as String?,
   type: PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuerType.fromJson(json['type'] as String),
-); }
+);}
 
 final String? account;
 
 final PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuerType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': ?account,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer copyWith({String? Function()? account, PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuerType? type, }) { return PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer copyWith({String? Function()? account, PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuerType? type, }) {return PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer(
   account: account != null ? account() : this.account,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer &&
           account == other.account &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, type); } 
-@override String toString() { return 'PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer(account: $account, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(account, type);}
+@override String toString() {return 'PostCheckoutSessionsRequestSubscriptionDataInvoiceSettingsIssuer(account: $account, type: $type)';}
+}

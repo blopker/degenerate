@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_cloud_type.dart';import 'mcn_provider_discovery_status.dart';import 'mcn_provider_id.dart';import 'mcn_provider_lifecycle_state.dart';import 'mcn_provider_status.dart';@immutable final class McnProvider {const McnProvider({required this.cloudType, required this.friendlyName, required this.id, required this.lastUpdated, required this.lifecycleState, required this.state, required this.stateV2, this.awsArn, this.azureSubscriptionId, this.azureTenantId, this.description, this.gcpProjectId, this.gcpServiceAccountEmail, this.status, });
 
-factory McnProvider.fromJson(Map<String, dynamic> json) { return McnProvider(
+factory McnProvider.fromJson(Map<String, dynamic> json) {return McnProvider(
   awsArn: json['aws_arn'] as String?,
   azureSubscriptionId: json['azure_subscription_id'] as String?,
   azureTenantId: json['azure_tenant_id'] as String?,
@@ -17,7 +17,7 @@ factory McnProvider.fromJson(Map<String, dynamic> json) { return McnProvider(
   state: McnProviderDiscoveryStatus.fromJson(json['state'] as String),
   stateV2: McnProviderDiscoveryStatus.fromJson(json['state_v2'] as String),
   status: json['status'] != null ? McnProviderStatus.fromJson(json['status'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String? awsArn;
 
@@ -47,7 +47,7 @@ final McnProviderDiscoveryStatus stateV2;
 
 final McnProviderStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'aws_arn': ?awsArn,
   'azure_subscription_id': ?azureSubscriptionId,
   'azure_tenant_id': ?azureTenantId,
@@ -62,15 +62,15 @@ Map<String, dynamic> toJson() { return {
   'state': state.toJson(),
   'state_v2': stateV2.toJson(),
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cloud_type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cloud_type') &&
       json.containsKey('friendly_name') && json['friendly_name'] is String &&
       json.containsKey('id') &&
       json.containsKey('last_updated') && json['last_updated'] is String &&
       json.containsKey('lifecycle_state') &&
       json.containsKey('state') &&
-      json.containsKey('state_v2'); } 
-McnProvider copyWith({String? Function()? awsArn, String? Function()? azureSubscriptionId, String? Function()? azureTenantId, McnCloudType? cloudType, String? Function()? description, String? friendlyName, String? Function()? gcpProjectId, String? Function()? gcpServiceAccountEmail, McnProviderId? id, String? lastUpdated, McnProviderLifecycleState? lifecycleState, McnProviderDiscoveryStatus? state, McnProviderDiscoveryStatus? stateV2, McnProviderStatus? Function()? status, }) { return McnProvider(
+      json.containsKey('state_v2');}
+McnProvider copyWith({String? Function()? awsArn, String? Function()? azureSubscriptionId, String? Function()? azureTenantId, McnCloudType? cloudType, String? Function()? description, String? friendlyName, String? Function()? gcpProjectId, String? Function()? gcpServiceAccountEmail, McnProviderId? id, String? lastUpdated, McnProviderLifecycleState? lifecycleState, McnProviderDiscoveryStatus? state, McnProviderDiscoveryStatus? stateV2, McnProviderStatus? Function()? status, }) {return McnProvider(
   awsArn: awsArn != null ? awsArn() : this.awsArn,
   azureSubscriptionId: azureSubscriptionId != null ? azureSubscriptionId() : this.azureSubscriptionId,
   azureTenantId: azureTenantId != null ? azureTenantId() : this.azureTenantId,
@@ -85,8 +85,8 @@ McnProvider copyWith({String? Function()? awsArn, String? Function()? azureSubsc
   state: state ?? this.state,
   stateV2: stateV2 ?? this.stateV2,
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is McnProvider &&
           awsArn == other.awsArn &&
           azureSubscriptionId == other.azureSubscriptionId &&
@@ -101,7 +101,7 @@ McnProvider copyWith({String? Function()? awsArn, String? Function()? azureSubsc
           lifecycleState == other.lifecycleState &&
           state == other.state &&
           stateV2 == other.stateV2 &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(awsArn, azureSubscriptionId, azureTenantId, cloudType, description, friendlyName, gcpProjectId, gcpServiceAccountEmail, id, lastUpdated, lifecycleState, state, stateV2, status); } 
-@override String toString() { return 'McnProvider(awsArn: $awsArn, azureSubscriptionId: $azureSubscriptionId, azureTenantId: $azureTenantId, cloudType: $cloudType, description: $description, friendlyName: $friendlyName, gcpProjectId: $gcpProjectId, gcpServiceAccountEmail: $gcpServiceAccountEmail, id: $id, lastUpdated: $lastUpdated, lifecycleState: $lifecycleState, state: $state, stateV2: $stateV2, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(awsArn, azureSubscriptionId, azureTenantId, cloudType, description, friendlyName, gcpProjectId, gcpServiceAccountEmail, id, lastUpdated, lifecycleState, state, stateV2, status);}
+@override String toString() {return 'McnProvider(awsArn: $awsArn, azureSubscriptionId: $azureSubscriptionId, azureTenantId: $azureTenantId, cloudType: $cloudType, description: $description, friendlyName: $friendlyName, gcpProjectId: $gcpProjectId, gcpServiceAccountEmail: $gcpServiceAccountEmail, id: $id, lastUpdated: $lastUpdated, lifecycleState: $lifecycleState, state: $state, stateV2: $stateV2, status: $status)';}
+}

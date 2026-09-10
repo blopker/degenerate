@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grants_resource_scope.dart';/// 
 @immutable final class BillingCreditGrantsResourceApplicabilityConfig {const BillingCreditGrantsResourceApplicabilityConfig({required this.scope});
 
-factory BillingCreditGrantsResourceApplicabilityConfig.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceApplicabilityConfig(
+factory BillingCreditGrantsResourceApplicabilityConfig.fromJson(Map<String, dynamic> json) {return BillingCreditGrantsResourceApplicabilityConfig(
   scope: BillingCreditGrantsResourceScope.fromJson(json['scope'] as Map<String, dynamic>),
-); }
+);}
 
 final BillingCreditGrantsResourceScope scope;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'scope': scope.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('scope'); } 
-BillingCreditGrantsResourceApplicabilityConfig copyWith({BillingCreditGrantsResourceScope? scope}) { return BillingCreditGrantsResourceApplicabilityConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('scope');}
+BillingCreditGrantsResourceApplicabilityConfig copyWith({BillingCreditGrantsResourceScope? scope}) {return BillingCreditGrantsResourceApplicabilityConfig(
   scope: scope ?? this.scope,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BillingCreditGrantsResourceApplicabilityConfig &&
-          scope == other.scope; } 
-@override int get hashCode { return scope.hashCode; } 
-@override String toString() { return 'BillingCreditGrantsResourceApplicabilityConfig(scope: $scope)'; } 
- }
+          scope == other.scope;}
+@override int get hashCode {return scope.hashCode;}
+@override String toString() {return 'BillingCreditGrantsResourceApplicabilityConfig(scope: $scope)';}
+}

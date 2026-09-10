@@ -13,7 +13,7 @@ final class CustomPagesForAnAccountApi with ApiExecutor {const CustomPagesForAnA
 /// Fetches all the custom pages at the account level.
 ///
 /// `GET /accounts/{account_identifier}/custom_pages`
-Future<ApiResult<List<CustomPagesCustomPage>?, Never>> customPagesForAnAccountListCustomPages({required CustomPagesIdentifier accountIdentifier, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CustomPagesCustomPage>?, Never>> customPagesForAnAccountListCustomPages({required CustomPagesIdentifier accountIdentifier, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,13 +29,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return (json['result'] as List<dynamic>?)?.map((e) => CustomPagesCustomPage.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Get a custom page
 ///
 /// Fetches the details of a custom page.
 ///
 /// `GET /accounts/{account_identifier}/custom_pages/{identifier}`
-Future<ApiResult<CustomPagesCustomPage?, Never>> customPagesForAnAccountGetACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier accountIdentifier, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomPagesCustomPage?, Never>> customPagesForAnAccountGetACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier accountIdentifier, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -51,13 +51,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return json['result'] != null ? CustomPagesCustomPage.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
- } 
+}
 /// Update a custom page
 ///
 /// Updates the configuration of an existing custom page.
 ///
 /// `PUT /accounts/{account_identifier}/custom_pages/{identifier}`
-Future<ApiResult<CustomPagesCustomPage?, Never>> customPagesForAnAccountUpdateACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier accountIdentifier, required CustomPagesForAnAccountUpdateACustomPageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomPagesCustomPage?, Never>> customPagesForAnAccountUpdateACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier accountIdentifier, required CustomPagesForAnAccountUpdateACustomPageRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -75,5 +75,5 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return json['result'] != null ? CustomPagesCustomPage.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
- } 
- }
+}
+}

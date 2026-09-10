@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTerminalReadersStatus {const GetTerminalReadersStatus._(this.value);
 
-factory GetTerminalReadersStatus.fromJson(String json) { return switch (json) {
+factory GetTerminalReadersStatus.fromJson(String json) {return switch (json) {
   'offline' => offline,
   'online' => online,
   _ => GetTerminalReadersStatus._(json),
-}; }
+};}
 
 static const GetTerminalReadersStatus offline = GetTerminalReadersStatus._('offline');
 
@@ -16,11 +16,11 @@ static const List<GetTerminalReadersStatus> values = [offline, online];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetTerminalReadersStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetTerminalReadersStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetTerminalReadersStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetTerminalReadersStatus($value)';}
+}

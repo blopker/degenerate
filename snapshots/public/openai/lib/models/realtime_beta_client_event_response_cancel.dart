@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.cancel`.
 @immutable final class RealtimeBetaClientEventResponseCancelType {const RealtimeBetaClientEventResponseCancelType._(this.value);
 
-factory RealtimeBetaClientEventResponseCancelType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaClientEventResponseCancelType.fromJson(String json) {return switch (json) {
   'response.cancel' => responseCancel,
   _ => RealtimeBetaClientEventResponseCancelType._(json),
-}; }
+};}
 
 static const RealtimeBetaClientEventResponseCancelType responseCancel = RealtimeBetaClientEventResponseCancelType._('response.cancel');
 
@@ -14,25 +14,25 @@ static const List<RealtimeBetaClientEventResponseCancelType> values = [responseC
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaClientEventResponseCancelType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaClientEventResponseCancelType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeBetaClientEventResponseCancelType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeBetaClientEventResponseCancelType($value)';}
+}
 /// Send this event to cancel an in-progress response. The server will respond
 /// with a `response.done` event with a status of `response.status=cancelled`. If
 /// there is no response to cancel, the server will respond with an error.
 /// 
 @immutable final class RealtimeBetaClientEventResponseCancel {const RealtimeBetaClientEventResponseCancel({required this.type, this.eventId, this.responseId, });
 
-factory RealtimeBetaClientEventResponseCancel.fromJson(Map<String, dynamic> json) { return RealtimeBetaClientEventResponseCancel(
+factory RealtimeBetaClientEventResponseCancel.fromJson(Map<String, dynamic> json) {return RealtimeBetaClientEventResponseCancel(
   eventId: json['event_id'] as String?,
   type: RealtimeBetaClientEventResponseCancelType.fromJson(json['type'] as String),
   responseId: json['response_id'] as String?,
-); }
+);}
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
@@ -45,22 +45,22 @@ final RealtimeBetaClientEventResponseCancelType type;
 /// 
 final String? responseId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type.toJson(),
   'response_id': ?responseId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RealtimeBetaClientEventResponseCancel copyWith({String? Function()? eventId, RealtimeBetaClientEventResponseCancelType? type, String? Function()? responseId, }) { return RealtimeBetaClientEventResponseCancel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+RealtimeBetaClientEventResponseCancel copyWith({String? Function()? eventId, RealtimeBetaClientEventResponseCancelType? type, String? Function()? responseId, }) {return RealtimeBetaClientEventResponseCancel(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   responseId: responseId != null ? responseId() : this.responseId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeBetaClientEventResponseCancel &&
           eventId == other.eventId &&
           type == other.type &&
-          responseId == other.responseId; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId); } 
-@override String toString() { return 'RealtimeBetaClientEventResponseCancel(eventId: $eventId, type: $type, responseId: $responseId)'; } 
- }
+          responseId == other.responseId;}
+@override int get hashCode {return Object.hash(eventId, type, responseId);}
+@override String toString() {return 'RealtimeBetaClientEventResponseCancel(eventId: $eventId, type: $type, responseId: $responseId)';}
+}

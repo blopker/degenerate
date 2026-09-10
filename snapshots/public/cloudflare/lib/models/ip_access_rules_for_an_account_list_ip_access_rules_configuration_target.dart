@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the target to search in existing rules.
 @immutable final class IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget {const IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget._(this.value);
 
-factory IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget.fromJson(String json) { return switch (json) {
+factory IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget.fromJson(String json) {return switch (json) {
   'ip' => ip,
   'ip_range' => ipRange,
   'asn' => asn,
   'country' => country,
   _ => IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget._(json),
-}; }
+};}
 
 static const IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget ip = IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget._('ip');
 
@@ -23,11 +23,11 @@ static const List<IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget>
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget($value)';}
+}

@@ -16,7 +16,7 @@ final class NamespaceManagementApi with ApiExecutor {const NamespaceManagementAp
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}/namespaces`
-Future<ApiResult<R2DataCatalogNamespaceListResponse?, ResponseCommonFailure55>> listNamespaces({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, String? pageToken, int? pageSize, String? parent, bool? returnUuids, bool? returnDetails, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<R2DataCatalogNamespaceListResponse?, ResponseCommonFailure55>> listNamespaces({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, String? pageToken, int? pageSize, String? parent, bool? returnUuids, bool? returnDetails, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageToken != null) {
   queryParameters['page_token'] = pageToken;
@@ -62,5 +62,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

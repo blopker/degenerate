@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 @immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupNormalization {const RadarGetLeakedCredentialChecksTimeseriesGroupNormalization._(this.value);
 
-factory RadarGetLeakedCredentialChecksTimeseriesGroupNormalization.fromJson(String json) { return switch (json) {
+factory RadarGetLeakedCredentialChecksTimeseriesGroupNormalization.fromJson(String json) {return switch (json) {
   'PERCENTAGE_CHANGE' => percentageChange,
   'MIN0_MAX' => min0Max,
   _ => RadarGetLeakedCredentialChecksTimeseriesGroupNormalization._(json),
-}; }
+};}
 
 static const RadarGetLeakedCredentialChecksTimeseriesGroupNormalization percentageChange = RadarGetLeakedCredentialChecksTimeseriesGroupNormalization._('PERCENTAGE_CHANGE');
 
@@ -17,11 +17,11 @@ static const List<RadarGetLeakedCredentialChecksTimeseriesGroupNormalization> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetLeakedCredentialChecksTimeseriesGroupNormalization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetLeakedCredentialChecksTimeseriesGroupNormalization($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetLeakedCredentialChecksTimeseriesGroupNormalization && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetLeakedCredentialChecksTimeseriesGroupNormalization($value)';}
+}

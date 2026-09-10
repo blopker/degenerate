@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnDayOfWeek {const MconnDayOfWeek._(this.value);
 
-factory MconnDayOfWeek.fromJson(String json) { return switch (json) {
+factory MconnDayOfWeek.fromJson(String json) {return switch (json) {
   'Sunday' => sunday,
   'Monday' => monday,
   'Tuesday' => tuesday,
@@ -11,7 +11,7 @@ factory MconnDayOfWeek.fromJson(String json) { return switch (json) {
   'Friday' => friday,
   'Saturday' => saturday,
   _ => MconnDayOfWeek._(json),
-}; }
+};}
 
 static const MconnDayOfWeek sunday = MconnDayOfWeek._('Sunday');
 
@@ -31,11 +31,11 @@ static const List<MconnDayOfWeek> values = [sunday, monday, tuesday, wednesday, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnDayOfWeek && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MconnDayOfWeek($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MconnDayOfWeek && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MconnDayOfWeek($value)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesCreatePreviewRequestCustomerDetailsTaxIdsType {const PostInvoicesCreatePreviewRequestCustomerDetailsTaxIdsType._(this.value);
 
-factory PostInvoicesCreatePreviewRequestCustomerDetailsTaxIdsType.fromJson(String json) { return switch (json) {
+factory PostInvoicesCreatePreviewRequestCustomerDetailsTaxIdsType.fromJson(String json) {return switch (json) {
   'ad_nrt' => adNrt,
   'ae_trn' => aeTrn,
   'al_tin' => alTin,
@@ -116,7 +116,7 @@ factory PostInvoicesCreatePreviewRequestCustomerDetailsTaxIdsType.fromJson(Strin
   'zm_tin' => zmTin,
   'zw_tin' => zwTin,
   _ => PostInvoicesCreatePreviewRequestCustomerDetailsTaxIdsType._(json),
-}; }
+};}
 
 static const PostInvoicesCreatePreviewRequestCustomerDetailsTaxIdsType adNrt = PostInvoicesCreatePreviewRequestCustomerDetailsTaxIdsType._('ad_nrt');
 
@@ -346,39 +346,39 @@ static const List<PostInvoicesCreatePreviewRequestCustomerDetailsTaxIdsType> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestCustomerDetailsTaxIdsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestCustomerDetailsTaxIdsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestCustomerDetailsTaxIdsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestCustomerDetailsTaxIdsType($value)';}
+}
 @immutable final class PostInvoicesCreatePreviewRequestCustomerDetailsTaxIds {const PostInvoicesCreatePreviewRequestCustomerDetailsTaxIds({required this.type, required this.value, });
 
-factory PostInvoicesCreatePreviewRequestCustomerDetailsTaxIds.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestCustomerDetailsTaxIds(
+factory PostInvoicesCreatePreviewRequestCustomerDetailsTaxIds.fromJson(Map<String, dynamic> json) {return PostInvoicesCreatePreviewRequestCustomerDetailsTaxIds(
   type: PostInvoicesCreatePreviewRequestCustomerDetailsTaxIdsType.fromJson(json['type'] as String),
   value: json['value'] as String,
-); }
+);}
 
 final PostInvoicesCreatePreviewRequestCustomerDetailsTaxIdsType type;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('value') && json['value'] is String; } 
-PostInvoicesCreatePreviewRequestCustomerDetailsTaxIds copyWith({PostInvoicesCreatePreviewRequestCustomerDetailsTaxIdsType? type, String? value, }) { return PostInvoicesCreatePreviewRequestCustomerDetailsTaxIds(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('value') && json['value'] is String;}
+PostInvoicesCreatePreviewRequestCustomerDetailsTaxIds copyWith({PostInvoicesCreatePreviewRequestCustomerDetailsTaxIdsType? type, String? value, }) {return PostInvoicesCreatePreviewRequestCustomerDetailsTaxIds(
   type: type ?? this.type,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesCreatePreviewRequestCustomerDetailsTaxIds &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(type, value); } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestCustomerDetailsTaxIds(type: $type, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(type, value);}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestCustomerDetailsTaxIds(type: $type, value: $value)';}
+}

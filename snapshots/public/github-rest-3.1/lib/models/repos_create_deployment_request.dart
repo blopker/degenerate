@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_create_deployment_request_payload.dart';@immutable final class ReposCreateDeploymentRequest {const ReposCreateDeploymentRequest({required this.ref, this.task, this.autoMerge, this.requiredContexts, this.payload, this.environment, this.description = const Omittable.absent(), this.transientEnvironment, this.productionEnvironment, });
 
-factory ReposCreateDeploymentRequest.fromJson(Map<String, dynamic> json) { return ReposCreateDeploymentRequest(
+factory ReposCreateDeploymentRequest.fromJson(Map<String, dynamic> json) {return ReposCreateDeploymentRequest(
   ref: json['ref'] as String,
   task: json['task'] as String?,
   autoMerge: json['auto_merge'] as bool?,
@@ -12,7 +12,7 @@ factory ReposCreateDeploymentRequest.fromJson(Map<String, dynamic> json) { retur
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   transientEnvironment: json['transient_environment'] as bool?,
   productionEnvironment: json['production_environment'] as bool?,
-); }
+);}
 
 /// The ref to deploy. This can be a branch, tag, or SHA.
 final String ref;
@@ -41,16 +41,16 @@ final bool? transientEnvironment;
 final bool? productionEnvironment;
 
 /// The value with the schema default applied when absent.
-String get taskOrDefault { return task ?? 'deploy'; } 
+String get taskOrDefault {return task ?? 'deploy';}
 /// The value with the schema default applied when absent.
-bool get autoMergeOrDefault { return autoMerge ?? true; } 
+bool get autoMergeOrDefault {return autoMerge ?? true;}
 /// The value with the schema default applied when absent.
-String get environmentOrDefault { return environment ?? 'production'; } 
+String get environmentOrDefault {return environment ?? 'production';}
 /// The value with the schema default applied when absent.
-String? get descriptionOrDefault { return description.valueOr(''); } 
+String? get descriptionOrDefault {return description.valueOr('');}
 /// The value with the schema default applied when absent.
-bool get transientEnvironmentOrDefault { return transientEnvironment ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get transientEnvironmentOrDefault {return transientEnvironment ?? false;}
+Map<String, dynamic> toJson() {return {
   'ref': ref,
   'task': ?task,
   'auto_merge': ?autoMerge,
@@ -60,9 +60,9 @@ Map<String, dynamic> toJson() { return {
   if (description.isPresent) 'description': description.value,
   'transient_environment': ?transientEnvironment,
   'production_environment': ?productionEnvironment,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref') && json['ref'] is String; } 
-ReposCreateDeploymentRequest copyWith({String? ref, String? Function()? task, bool? Function()? autoMerge, List<String>? Function()? requiredContexts, ReposCreateDeploymentRequestPayload? Function()? payload, String? Function()? environment, Omittable<String?>? description, bool? Function()? transientEnvironment, bool? Function()? productionEnvironment, }) { return ReposCreateDeploymentRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ref') && json['ref'] is String;}
+ReposCreateDeploymentRequest copyWith({String? ref, String? Function()? task, bool? Function()? autoMerge, List<String>? Function()? requiredContexts, ReposCreateDeploymentRequestPayload? Function()? payload, String? Function()? environment, Omittable<String?>? description, bool? Function()? transientEnvironment, bool? Function()? productionEnvironment, }) {return ReposCreateDeploymentRequest(
   ref: ref ?? this.ref,
   task: task != null ? task() : this.task,
   autoMerge: autoMerge != null ? autoMerge() : this.autoMerge,
@@ -72,8 +72,8 @@ ReposCreateDeploymentRequest copyWith({String? ref, String? Function()? task, bo
   description: description ?? this.description,
   transientEnvironment: transientEnvironment != null ? transientEnvironment() : this.transientEnvironment,
   productionEnvironment: productionEnvironment != null ? productionEnvironment() : this.productionEnvironment,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReposCreateDeploymentRequest &&
           ref == other.ref &&
           task == other.task &&
@@ -83,7 +83,7 @@ ReposCreateDeploymentRequest copyWith({String? ref, String? Function()? task, bo
           environment == other.environment &&
           description == other.description &&
           transientEnvironment == other.transientEnvironment &&
-          productionEnvironment == other.productionEnvironment; } 
-@override int get hashCode { return Object.hash(ref, task, autoMerge, Object.hashAll(requiredContexts ?? const []), payload, environment, description, transientEnvironment, productionEnvironment); } 
-@override String toString() { return 'ReposCreateDeploymentRequest(ref: $ref, task: $task, autoMerge: $autoMerge, requiredContexts: $requiredContexts, payload: $payload, environment: $environment, description: $description, transientEnvironment: $transientEnvironment, productionEnvironment: $productionEnvironment)'; } 
- }
+          productionEnvironment == other.productionEnvironment;}
+@override int get hashCode {return Object.hash(ref, task, autoMerge, Object.hashAll(requiredContexts ?? const []), payload, environment, description, transientEnvironment, productionEnvironment);}
+@override String toString() {return 'ReposCreateDeploymentRequest(ref: $ref, task: $task, autoMerge: $autoMerge, requiredContexts: $requiredContexts, payload: $payload, environment: $environment, description: $description, transientEnvironment: $transientEnvironment, productionEnvironment: $productionEnvironment)';}
+}

@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'entitlement_allocation.dart';import 'feature.dart';@immutable final class Entitlement {const Entitlement({required this.allocation, required this.feature, });
 
-factory Entitlement.fromJson(Map<String, dynamic> json) { return Entitlement(
+factory Entitlement.fromJson(Map<String, dynamic> json) {return Entitlement(
   allocation: EntitlementAllocation.fromJson(json['allocation']),
   feature: Feature.fromJson(json['feature'] as Map<String, dynamic>),
-); }
+);}
 
 final EntitlementAllocation allocation;
 
 final Feature feature;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allocation': allocation.toJson(),
   'feature': feature.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('allocation') &&
-      json.containsKey('feature'); } 
-Entitlement copyWith({EntitlementAllocation? allocation, Feature? feature, }) { return Entitlement(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('allocation') &&
+      json.containsKey('feature');}
+Entitlement copyWith({EntitlementAllocation? allocation, Feature? feature, }) {return Entitlement(
   allocation: allocation ?? this.allocation,
   feature: feature ?? this.feature,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Entitlement &&
           allocation == other.allocation &&
-          feature == other.feature; } 
-@override int get hashCode { return Object.hash(allocation, feature); } 
-@override String toString() { return 'Entitlement(allocation: $allocation, feature: $feature)'; } 
- }
+          feature == other.feature;}
+@override int get hashCode {return Object.hash(allocation, feature);}
+@override String toString() {return 'Entitlement(allocation: $allocation, feature: $feature)';}
+}

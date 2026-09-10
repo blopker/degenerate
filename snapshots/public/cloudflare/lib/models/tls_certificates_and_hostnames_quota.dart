@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TlsCertificatesAndHostnamesQuota {const TlsCertificatesAndHostnamesQuota({this.allocated, this.used, });
 
-factory TlsCertificatesAndHostnamesQuota.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesQuota(
+factory TlsCertificatesAndHostnamesQuota.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesQuota(
   allocated: json['allocated'] != null ? (json['allocated'] as num).toInt() : null,
   used: json['used'] != null ? (json['used'] as num).toInt() : null,
-); }
+);}
 
 /// Quantity Allocated.
 final int? allocated;
@@ -13,19 +13,19 @@ final int? allocated;
 /// Quantity Used.
 final int? used;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allocated': ?allocated,
   'used': ?used,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allocated', 'used'}.contains(key)); } 
-TlsCertificatesAndHostnamesQuota copyWith({int? Function()? allocated, int? Function()? used, }) { return TlsCertificatesAndHostnamesQuota(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allocated', 'used'}.contains(key));}
+TlsCertificatesAndHostnamesQuota copyWith({int? Function()? allocated, int? Function()? used, }) {return TlsCertificatesAndHostnamesQuota(
   allocated: allocated != null ? allocated() : this.allocated,
   used: used != null ? used() : this.used,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TlsCertificatesAndHostnamesQuota &&
           allocated == other.allocated &&
-          used == other.used; } 
-@override int get hashCode { return Object.hash(allocated, used); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesQuota(allocated: $allocated, used: $used)'; } 
- }
+          used == other.used;}
+@override int get hashCode {return Object.hash(allocated, used);}
+@override String toString() {return 'TlsCertificatesAndHostnamesQuota(allocated: $allocated, used: $used)';}
+}

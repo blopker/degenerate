@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the HTTP3 setting.
 @immutable final class ZonesHttp3Value {const ZonesHttp3Value._(this.value);
 
-factory ZonesHttp3Value.fromJson(String json) { return switch (json) {
+factory ZonesHttp3Value.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   _ => ZonesHttp3Value._(json),
-}; }
+};}
 
 static const ZonesHttp3Value $on = ZonesHttp3Value._('on');
 
@@ -17,11 +17,11 @@ static const List<ZonesHttp3Value> values = [$on, off];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesHttp3Value && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesHttp3Value($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesHttp3Value && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesHttp3Value($value)';}
+}

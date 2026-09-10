@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_lockdowns_components_schemas_id.dart';@immutable final class ZoneLockdownDeleteAZoneLockdownRuleResponseResult {const ZoneLockdownDeleteAZoneLockdownRuleResponseResult({this.id});
 
-factory ZoneLockdownDeleteAZoneLockdownRuleResponseResult.fromJson(Map<String, dynamic> json) { return ZoneLockdownDeleteAZoneLockdownRuleResponseResult(
+factory ZoneLockdownDeleteAZoneLockdownRuleResponseResult.fromJson(Map<String, dynamic> json) {return ZoneLockdownDeleteAZoneLockdownRuleResponseResult(
   id: json['id'] != null ? FirewallLockdownsComponentsSchemasId.fromJson(json['id'] as String) : null,
-); }
+);}
 
 /// The unique identifier of the Zone Lockdown rule.
 final FirewallLockdownsComponentsSchemasId? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-ZoneLockdownDeleteAZoneLockdownRuleResponseResult copyWith({FirewallLockdownsComponentsSchemasId? Function()? id}) { return ZoneLockdownDeleteAZoneLockdownRuleResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id'}.contains(key));}
+ZoneLockdownDeleteAZoneLockdownRuleResponseResult copyWith({FirewallLockdownsComponentsSchemasId? Function()? id}) {return ZoneLockdownDeleteAZoneLockdownRuleResponseResult(
   id: id != null ? id() : this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZoneLockdownDeleteAZoneLockdownRuleResponseResult &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'ZoneLockdownDeleteAZoneLockdownRuleResponseResult(id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return id.hashCode;}
+@override String toString() {return 'ZoneLockdownDeleteAZoneLockdownRuleResponseResult(id: $id)';}
+}

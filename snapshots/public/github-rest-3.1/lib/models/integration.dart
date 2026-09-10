@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise.dart';import 'integration_owner.dart';import 'integration_permissions.dart';import 'simple_user.dart';/// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
 @immutable final class Integration {const Integration({required this.id, required this.nodeId, required this.owner, required this.name, required this.description, required this.externalUrl, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.permissions, required this.events, this.slug, this.clientId, this.installationsCount, });
 
-factory Integration.fromJson(Map<String, dynamic> json) { return Integration(
+factory Integration.fromJson(Map<String, dynamic> json) {return Integration(
   id: (json['id'] as num).toInt(),
   slug: json['slug'] as String?,
   nodeId: json['node_id'] as String,
@@ -18,7 +18,7 @@ factory Integration.fromJson(Map<String, dynamic> json) { return Integration(
   permissions: IntegrationPermissions.fromJson(json['permissions'] as Map<String, dynamic>),
   events: (json['events'] as List<dynamic>).map((e) => e as String).toList(),
   installationsCount: json['installations_count'] != null ? (json['installations_count'] as num).toInt() : null,
-); }
+);}
 
 /// Unique identifier of the GitHub app
 final int id;
@@ -54,7 +54,7 @@ final List<String> events;
 /// The number of installations associated with the GitHub app. Only returned when the integration is requesting details about itself.
 final int? installationsCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'slug': ?slug,
   'node_id': nodeId,
@@ -69,8 +69,8 @@ Map<String, dynamic> toJson() { return {
   'permissions': permissions.toJson(),
   'events': events,
   'installations_count': ?installationsCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('owner') &&
       json.containsKey('name') && json['name'] is String &&
@@ -80,8 +80,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('permissions') &&
-      json.containsKey('events'); } 
-Integration copyWith({int? id, String? Function()? slug, String? nodeId, String? Function()? clientId, IntegrationOwner? owner, String? name, String? Function()? description, Uri? externalUrl, Uri? htmlUrl, DateTime? createdAt, DateTime? updatedAt, IntegrationPermissions? permissions, List<String>? events, int? Function()? installationsCount, }) { return Integration(
+      json.containsKey('events');}
+Integration copyWith({int? id, String? Function()? slug, String? nodeId, String? Function()? clientId, IntegrationOwner? owner, String? name, String? Function()? description, Uri? externalUrl, Uri? htmlUrl, DateTime? createdAt, DateTime? updatedAt, IntegrationPermissions? permissions, List<String>? events, int? Function()? installationsCount, }) {return Integration(
   id: id ?? this.id,
   slug: slug != null ? slug() : this.slug,
   nodeId: nodeId ?? this.nodeId,
@@ -96,8 +96,8 @@ Integration copyWith({int? id, String? Function()? slug, String? nodeId, String?
   permissions: permissions ?? this.permissions,
   events: events ?? this.events,
   installationsCount: installationsCount != null ? installationsCount() : this.installationsCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Integration &&
           id == other.id &&
           slug == other.slug &&
@@ -112,7 +112,7 @@ Integration copyWith({int? id, String? Function()? slug, String? nodeId, String?
           updatedAt == other.updatedAt &&
           permissions == other.permissions &&
           listEquals(events, other.events) &&
-          installationsCount == other.installationsCount; } 
-@override int get hashCode { return Object.hash(id, slug, nodeId, clientId, owner, name, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events), installationsCount); } 
-@override String toString() { return 'Integration(id: $id, slug: $slug, nodeId: $nodeId, clientId: $clientId, owner: $owner, name: $name, description: $description, externalUrl: $externalUrl, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, events: $events, installationsCount: $installationsCount)'; } 
- }
+          installationsCount == other.installationsCount;}
+@override int get hashCode {return Object.hash(id, slug, nodeId, clientId, owner, name, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events), installationsCount);}
+@override String toString() {return 'Integration(id: $id, slug: $slug, nodeId: $nodeId, clientId: $clientId, owner: $owner, name: $name, description: $description, externalUrl: $externalUrl, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, events: $events, installationsCount: $installationsCount)';}
+}

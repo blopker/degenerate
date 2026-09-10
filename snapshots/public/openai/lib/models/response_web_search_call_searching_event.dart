@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a web search call is executing.
 @immutable final class ResponseWebSearchCallSearchingEvent {const ResponseWebSearchCallSearchingEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
 
-factory ResponseWebSearchCallSearchingEvent.fromJson(Map<String, dynamic> json) { return ResponseWebSearchCallSearchingEvent(
+factory ResponseWebSearchCallSearchingEvent.fromJson(Map<String, dynamic> json) {return ResponseWebSearchCallSearchingEvent(
   type: json['type'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   itemId: json['item_id'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
-); }
+);}
 
 /// The type of the event. Always `response.web_search_call.searching`.
 /// 
@@ -25,28 +25,28 @@ final String itemId;
 /// The sequence number of the web search call being processed.
 final int sequenceNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'output_index': outputIndex,
   'item_id': itemId,
   'sequence_number': sequenceNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('item_id') && json['item_id'] is String &&
-      json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseWebSearchCallSearchingEvent copyWith({String? type, int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseWebSearchCallSearchingEvent(
+      json.containsKey('sequence_number') && json['sequence_number'] is num;}
+ResponseWebSearchCallSearchingEvent copyWith({String? type, int? outputIndex, String? itemId, int? sequenceNumber, }) {return ResponseWebSearchCallSearchingEvent(
   type: type ?? this.type,
   outputIndex: outputIndex ?? this.outputIndex,
   itemId: itemId ?? this.itemId,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseWebSearchCallSearchingEvent &&
           type == other.type &&
           outputIndex == other.outputIndex &&
           itemId == other.itemId &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, outputIndex, itemId, sequenceNumber); } 
-@override String toString() { return 'ResponseWebSearchCallSearchingEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, sequenceNumber: $sequenceNumber)'; } 
- }
+          sequenceNumber == other.sequenceNumber;}
+@override int get hashCode {return Object.hash(type, outputIndex, itemId, sequenceNumber);}
+@override String toString() {return 'ResponseWebSearchCallSearchingEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, sequenceNumber: $sequenceNumber)';}
+}

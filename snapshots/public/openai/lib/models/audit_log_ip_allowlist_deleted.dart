@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for events with this `type`.
 @immutable final class AuditLogIpAllowlistDeleted {const AuditLogIpAllowlistDeleted({this.id, this.name, this.allowedIps, });
 
-factory AuditLogIpAllowlistDeleted.fromJson(Map<String, dynamic> json) { return AuditLogIpAllowlistDeleted(
+factory AuditLogIpAllowlistDeleted.fromJson(Map<String, dynamic> json) {return AuditLogIpAllowlistDeleted(
   id: json['id'] as String?,
   name: json['name'] as String?,
   allowedIps: (json['allowed_ips'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// The ID of the IP allowlist configuration.
 final String? id;
@@ -18,22 +18,22 @@ final String? name;
 /// The IP addresses or CIDR ranges that were in the configuration.
 final List<String>? allowedIps;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'name': ?name,
   'allowed_ips': ?allowedIps,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'allowed_ips'}.contains(key)); } 
-AuditLogIpAllowlistDeleted copyWith({String? Function()? id, String? Function()? name, List<String>? Function()? allowedIps, }) { return AuditLogIpAllowlistDeleted(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'name', 'allowed_ips'}.contains(key));}
+AuditLogIpAllowlistDeleted copyWith({String? Function()? id, String? Function()? name, List<String>? Function()? allowedIps, }) {return AuditLogIpAllowlistDeleted(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   allowedIps: allowedIps != null ? allowedIps() : this.allowedIps,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AuditLogIpAllowlistDeleted &&
           id == other.id &&
           name == other.name &&
-          listEquals(allowedIps, other.allowedIps); } 
-@override int get hashCode { return Object.hash(id, name, Object.hashAll(allowedIps ?? const [])); } 
-@override String toString() { return 'AuditLogIpAllowlistDeleted(id: $id, name: $name, allowedIps: $allowedIps)'; } 
- }
+          listEquals(allowedIps, other.allowedIps);}
+@override int get hashCode {return Object.hash(id, name, Object.hashAll(allowedIps ?? const []));}
+@override String toString() {return 'AuditLogIpAllowlistDeleted(id: $id, name: $name, allowedIps: $allowedIps)';}
+}

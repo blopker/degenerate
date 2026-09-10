@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The card network for this settlement. One of `["visa", "maestro"]`
 @immutable final class PostTestHelpersIssuingSettlementsRequestNetwork {const PostTestHelpersIssuingSettlementsRequestNetwork._(this.value);
 
-factory PostTestHelpersIssuingSettlementsRequestNetwork.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingSettlementsRequestNetwork.fromJson(String json) {return switch (json) {
   'maestro' => maestro,
   'visa' => visa,
   _ => PostTestHelpersIssuingSettlementsRequestNetwork._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingSettlementsRequestNetwork maestro = PostTestHelpersIssuingSettlementsRequestNetwork._('maestro');
 
@@ -17,17 +17,17 @@ static const List<PostTestHelpersIssuingSettlementsRequestNetwork> values = [mae
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingSettlementsRequestNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingSettlementsRequestNetwork($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingSettlementsRequestNetwork && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingSettlementsRequestNetwork($value)';}
+}
 @immutable final class PostTestHelpersIssuingSettlementsRequest {const PostTestHelpersIssuingSettlementsRequest({required this.bin, required this.clearingDate, required this.currency, required this.netTotalAmount, this.expand, this.interchangeFeesAmount, this.network, this.networkSettlementIdentifier, this.transactionAmount, this.transactionCount, });
 
-factory PostTestHelpersIssuingSettlementsRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingSettlementsRequest(
+factory PostTestHelpersIssuingSettlementsRequest.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingSettlementsRequest(
   bin: json['bin'] as String,
   clearingDate: (json['clearing_date'] as num).toInt(),
   currency: json['currency'] as String,
@@ -38,7 +38,7 @@ factory PostTestHelpersIssuingSettlementsRequest.fromJson(Map<String, dynamic> j
   networkSettlementIdentifier: json['network_settlement_identifier'] as String?,
   transactionAmount: json['transaction_amount'] != null ? (json['transaction_amount'] as num).toInt() : null,
   transactionCount: json['transaction_count'] != null ? (json['transaction_count'] as num).toInt() : null,
-); }
+);}
 
 /// The Bank Identification Number reflecting this settlement record.
 final String bin;
@@ -70,7 +70,7 @@ final int? transactionAmount;
 /// The total number of transactions reflected in this settlement.
 final int? transactionCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bin': bin,
   'clearing_date': clearingDate,
   'currency': currency,
@@ -81,12 +81,12 @@ Map<String, dynamic> toJson() { return {
   'network_settlement_identifier': ?networkSettlementIdentifier,
   'transaction_amount': ?transactionAmount,
   'transaction_count': ?transactionCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bin') && json['bin'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bin') && json['bin'] is String &&
       json.containsKey('clearing_date') && json['clearing_date'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
-      json.containsKey('net_total_amount') && json['net_total_amount'] is num; } 
-PostTestHelpersIssuingSettlementsRequest copyWith({String? bin, int? clearingDate, String? currency, List<String>? Function()? expand, int? Function()? interchangeFeesAmount, int? netTotalAmount, PostTestHelpersIssuingSettlementsRequestNetwork? Function()? network, String? Function()? networkSettlementIdentifier, int? Function()? transactionAmount, int? Function()? transactionCount, }) { return PostTestHelpersIssuingSettlementsRequest(
+      json.containsKey('net_total_amount') && json['net_total_amount'] is num;}
+PostTestHelpersIssuingSettlementsRequest copyWith({String? bin, int? clearingDate, String? currency, List<String>? Function()? expand, int? Function()? interchangeFeesAmount, int? netTotalAmount, PostTestHelpersIssuingSettlementsRequestNetwork? Function()? network, String? Function()? networkSettlementIdentifier, int? Function()? transactionAmount, int? Function()? transactionCount, }) {return PostTestHelpersIssuingSettlementsRequest(
   bin: bin ?? this.bin,
   clearingDate: clearingDate ?? this.clearingDate,
   currency: currency ?? this.currency,
@@ -97,8 +97,8 @@ PostTestHelpersIssuingSettlementsRequest copyWith({String? bin, int? clearingDat
   networkSettlementIdentifier: networkSettlementIdentifier != null ? networkSettlementIdentifier() : this.networkSettlementIdentifier,
   transactionAmount: transactionAmount != null ? transactionAmount() : this.transactionAmount,
   transactionCount: transactionCount != null ? transactionCount() : this.transactionCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersIssuingSettlementsRequest &&
           bin == other.bin &&
           clearingDate == other.clearingDate &&
@@ -109,7 +109,7 @@ PostTestHelpersIssuingSettlementsRequest copyWith({String? bin, int? clearingDat
           network == other.network &&
           networkSettlementIdentifier == other.networkSettlementIdentifier &&
           transactionAmount == other.transactionAmount &&
-          transactionCount == other.transactionCount; } 
-@override int get hashCode { return Object.hash(bin, clearingDate, currency, Object.hashAll(expand ?? const []), interchangeFeesAmount, netTotalAmount, network, networkSettlementIdentifier, transactionAmount, transactionCount); } 
-@override String toString() { return 'PostTestHelpersIssuingSettlementsRequest(bin: $bin, clearingDate: $clearingDate, currency: $currency, expand: $expand, interchangeFeesAmount: $interchangeFeesAmount, netTotalAmount: $netTotalAmount, network: $network, networkSettlementIdentifier: $networkSettlementIdentifier, transactionAmount: $transactionAmount, transactionCount: $transactionCount)'; } 
- }
+          transactionCount == other.transactionCount;}
+@override int get hashCode {return Object.hash(bin, clearingDate, currency, Object.hashAll(expand ?? const []), interchangeFeesAmount, netTotalAmount, network, networkSettlementIdentifier, transactionAmount, transactionCount);}
+@override String toString() {return 'PostTestHelpersIssuingSettlementsRequest(bin: $bin, clearingDate: $clearingDate, currency: $currency, expand: $expand, interchangeFeesAmount: $interchangeFeesAmount, netTotalAmount: $netTotalAmount, network: $network, networkSettlementIdentifier: $networkSettlementIdentifier, transactionAmount: $transactionAmount, transactionCount: $transactionCount)';}
+}

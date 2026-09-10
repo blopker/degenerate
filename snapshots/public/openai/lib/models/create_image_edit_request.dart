@@ -10,12 +10,12 @@ import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtim
 /// 
 @immutable final class CreateImageEditRequestBackground {const CreateImageEditRequestBackground._(this.value);
 
-factory CreateImageEditRequestBackground.fromJson(String json) { return switch (json) {
+factory CreateImageEditRequestBackground.fromJson(String json) {return switch (json) {
   'transparent' => transparent,
   'opaque' => opaque,
   'auto' => auto,
   _ => CreateImageEditRequestBackground._(json),
-}; }
+};}
 
 static const CreateImageEditRequestBackground transparent = CreateImageEditRequestBackground._('transparent');
 
@@ -27,18 +27,18 @@ static const List<CreateImageEditRequestBackground> values = [transparent, opaqu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageEditRequestBackground && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageEditRequestBackground($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateImageEditRequestBackground && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateImageEditRequestBackground($value)';}
+}
 /// The size of the generated images. Must be one of `1024x1024`, `1536x1024` (landscape), `1024x1536` (portrait), or `auto` (default value) for the GPT image models, and one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`.
 @immutable final class CreateImageEditRequestSize {const CreateImageEditRequestSize._(this.value);
 
-factory CreateImageEditRequestSize.fromJson(String json) { return switch (json) {
+factory CreateImageEditRequestSize.fromJson(String json) {return switch (json) {
   '256x256' => $256x256,
   '512x512' => $512x512,
   '1024x1024' => $1024x1024,
@@ -46,7 +46,7 @@ factory CreateImageEditRequestSize.fromJson(String json) { return switch (json) 
   '1024x1536' => $1024x1536,
   'auto' => auto,
   _ => CreateImageEditRequestSize._(json),
-}; }
+};}
 
 static const CreateImageEditRequestSize $256x256 = CreateImageEditRequestSize._('256x256');
 
@@ -64,22 +64,22 @@ static const List<CreateImageEditRequestSize> values = [$256x256, $512x512, $102
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageEditRequestSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageEditRequestSize($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateImageEditRequestSize && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateImageEditRequestSize($value)';}
+}
 /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter is only supported for `dall-e-2` (default is `url` for `dall-e-2`), as GPT image models always return base64-encoded images.
 @immutable final class CreateImageEditRequestResponseFormat {const CreateImageEditRequestResponseFormat._(this.value);
 
-factory CreateImageEditRequestResponseFormat.fromJson(String json) { return switch (json) {
+factory CreateImageEditRequestResponseFormat.fromJson(String json) {return switch (json) {
   'url' => url,
   'b64_json' => b64Json,
   _ => CreateImageEditRequestResponseFormat._(json),
-}; }
+};}
 
 static const CreateImageEditRequestResponseFormat url = CreateImageEditRequestResponseFormat._('url');
 
@@ -89,26 +89,26 @@ static const List<CreateImageEditRequestResponseFormat> values = [url, b64Json];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageEditRequestResponseFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageEditRequestResponseFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateImageEditRequestResponseFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateImageEditRequestResponseFormat($value)';}
+}
 /// The format in which the generated images are returned. This parameter is
 /// only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.
 /// The default value is `png`.
 /// 
 @immutable final class CreateImageEditRequestOutputFormat {const CreateImageEditRequestOutputFormat._(this.value);
 
-factory CreateImageEditRequestOutputFormat.fromJson(String json) { return switch (json) {
+factory CreateImageEditRequestOutputFormat.fromJson(String json) {return switch (json) {
   'png' => png,
   'jpeg' => jpeg,
   'webp' => webp,
   _ => CreateImageEditRequestOutputFormat._(json),
-}; }
+};}
 
 static const CreateImageEditRequestOutputFormat png = CreateImageEditRequestOutputFormat._('png');
 
@@ -120,26 +120,26 @@ static const List<CreateImageEditRequestOutputFormat> values = [png, jpeg, webp]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageEditRequestOutputFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageEditRequestOutputFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateImageEditRequestOutputFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateImageEditRequestOutputFormat($value)';}
+}
 /// The quality of the image that will be generated for GPT image models. Defaults to `auto`.
 /// 
 @immutable final class CreateImageEditRequestQuality {const CreateImageEditRequestQuality._(this.value);
 
-factory CreateImageEditRequestQuality.fromJson(String json) { return switch (json) {
+factory CreateImageEditRequestQuality.fromJson(String json) {return switch (json) {
   'standard' => standard,
   'low' => low,
   'medium' => medium,
   'high' => high,
   'auto' => auto,
   _ => CreateImageEditRequestQuality._(json),
-}; }
+};}
 
 static const CreateImageEditRequestQuality standard = CreateImageEditRequestQuality._('standard');
 
@@ -155,17 +155,17 @@ static const List<CreateImageEditRequestQuality> values = [standard, low, medium
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageEditRequestQuality && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageEditRequestQuality($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateImageEditRequestQuality && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateImageEditRequestQuality($value)';}
+}
 @immutable final class CreateImageEditRequest {const CreateImageEditRequest({required this.image, required this.prompt, this.mask, this.background = const Omittable.absent(), this.model = const Omittable.absent(), this.n = const Omittable.absent(), this.size = const Omittable.absent(), this.responseFormat = const Omittable.absent(), this.outputFormat = const Omittable.absent(), this.outputCompression = const Omittable.absent(), this.user, this.inputFidelity = const Omittable.absent(), this.stream = const Omittable.absent(), this.partialImages = const Omittable.absent(), this.quality = const Omittable.absent(), });
 
-factory CreateImageEditRequest.fromJson(Map<String, dynamic> json) { return CreateImageEditRequest(
+factory CreateImageEditRequest.fromJson(Map<String, dynamic> json) {return CreateImageEditRequest(
   image: CreateImageEditRequestImage.fromJson(json['image']),
   prompt: json['prompt'] as String,
   mask: json['mask'] != null ? base64Decode(json['mask'] as String) : null,
@@ -181,7 +181,7 @@ factory CreateImageEditRequest.fromJson(Map<String, dynamic> json) { return Crea
   stream: json.containsKey('stream') ? Omittable(json['stream'] as bool?) : const Omittable.absent(),
   partialImages: json.containsKey('partial_images') ? Omittable(json['partial_images'] != null ? PartialImages.fromJson(json['partial_images'] as num) : null) : const Omittable.absent(),
   quality: json.containsKey('quality') ? Omittable(json['quality'] != null ? CreateImageEditRequestQuality.fromJson(json['quality'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The image(s) to edit. Must be a supported image file or an array of images.
 /// 
@@ -252,20 +252,20 @@ final Omittable<PartialImages?> partialImages;
 final Omittable<CreateImageEditRequestQuality?> quality;
 
 /// The value with the schema default applied when absent.
-CreateImageEditRequestBackground? get backgroundOrDefault { return background.valueOr(CreateImageEditRequestBackground.fromJson('auto')); } 
+CreateImageEditRequestBackground? get backgroundOrDefault {return background.valueOr(CreateImageEditRequestBackground.fromJson('auto'));}
 /// The value with the schema default applied when absent.
-int? get nOrDefault { return n.valueOr(1); } 
+int? get nOrDefault {return n.valueOr(1);}
 /// The value with the schema default applied when absent.
-CreateImageEditRequestSize? get sizeOrDefault { return size.valueOr(CreateImageEditRequestSize.fromJson('1024x1024')); } 
+CreateImageEditRequestSize? get sizeOrDefault {return size.valueOr(CreateImageEditRequestSize.fromJson('1024x1024'));}
 /// The value with the schema default applied when absent.
-CreateImageEditRequestOutputFormat? get outputFormatOrDefault { return outputFormat.valueOr(CreateImageEditRequestOutputFormat.fromJson('png')); } 
+CreateImageEditRequestOutputFormat? get outputFormatOrDefault {return outputFormat.valueOr(CreateImageEditRequestOutputFormat.fromJson('png'));}
 /// The value with the schema default applied when absent.
-int? get outputCompressionOrDefault { return outputCompression.valueOr(100); } 
+int? get outputCompressionOrDefault {return outputCompression.valueOr(100);}
 /// The value with the schema default applied when absent.
-bool? get streamOrDefault { return stream.valueOr(false); } 
+bool? get streamOrDefault {return stream.valueOr(false);}
 /// The value with the schema default applied when absent.
-CreateImageEditRequestQuality? get qualityOrDefault { return quality.valueOr(CreateImageEditRequestQuality.fromJson('auto')); } 
-Map<String, dynamic> toJson() { return {
+CreateImageEditRequestQuality? get qualityOrDefault {return quality.valueOr(CreateImageEditRequestQuality.fromJson('auto'));}
+Map<String, dynamic> toJson() {return {
   'image': image.toJson(),
   'prompt': prompt,
   if (mask != null) 'mask': switch (mask) { final bytes? => base64Encode(bytes), _ => null },
@@ -281,10 +281,10 @@ Map<String, dynamic> toJson() { return {
   if (stream.isPresent) 'stream': stream.value,
   if (partialImages.isPresent) 'partial_images': partialImages.value?.toJson(),
   if (quality.isPresent) 'quality': quality.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('image') &&
-      json.containsKey('prompt') && json['prompt'] is String; } 
-CreateImageEditRequest copyWith({CreateImageEditRequestImage? image, String? prompt, Uint8List? Function()? mask, Omittable<CreateImageEditRequestBackground?>? background, Omittable<CreateImageEditRequestModel?>? model, Omittable<int?>? n, Omittable<CreateImageEditRequestSize?>? size, Omittable<CreateImageEditRequestResponseFormat?>? responseFormat, Omittable<CreateImageEditRequestOutputFormat?>? outputFormat, Omittable<int?>? outputCompression, String? Function()? user, Omittable<InputFidelity?>? inputFidelity, Omittable<bool?>? stream, Omittable<PartialImages?>? partialImages, Omittable<CreateImageEditRequestQuality?>? quality, }) { return CreateImageEditRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('image') &&
+      json.containsKey('prompt') && json['prompt'] is String;}
+CreateImageEditRequest copyWith({CreateImageEditRequestImage? image, String? prompt, Uint8List? Function()? mask, Omittable<CreateImageEditRequestBackground?>? background, Omittable<CreateImageEditRequestModel?>? model, Omittable<int?>? n, Omittable<CreateImageEditRequestSize?>? size, Omittable<CreateImageEditRequestResponseFormat?>? responseFormat, Omittable<CreateImageEditRequestOutputFormat?>? outputFormat, Omittable<int?>? outputCompression, String? Function()? user, Omittable<InputFidelity?>? inputFidelity, Omittable<bool?>? stream, Omittable<PartialImages?>? partialImages, Omittable<CreateImageEditRequestQuality?>? quality, }) {return CreateImageEditRequest(
   image: image ?? this.image,
   prompt: prompt ?? this.prompt,
   mask: mask != null ? mask() : this.mask,
@@ -300,8 +300,8 @@ CreateImageEditRequest copyWith({CreateImageEditRequestImage? image, String? pro
   stream: stream ?? this.stream,
   partialImages: partialImages ?? this.partialImages,
   quality: quality ?? this.quality,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateImageEditRequest &&
           image == other.image &&
           prompt == other.prompt &&
@@ -317,7 +317,7 @@ CreateImageEditRequest copyWith({CreateImageEditRequestImage? image, String? pro
           inputFidelity == other.inputFidelity &&
           stream == other.stream &&
           partialImages == other.partialImages &&
-          quality == other.quality; } 
-@override int get hashCode { return Object.hash(image, prompt, Object.hashAll(mask ?? const []), background, model, n, size, responseFormat, outputFormat, outputCompression, user, inputFidelity, stream, partialImages, quality); } 
-@override String toString() { return 'CreateImageEditRequest(image: $image, prompt: $prompt, mask: $mask, background: $background, model: $model, n: $n, size: $size, responseFormat: $responseFormat, outputFormat: $outputFormat, outputCompression: $outputCompression, user: $user, inputFidelity: $inputFidelity, stream: $stream, partialImages: $partialImages, quality: $quality)'; } 
- }
+          quality == other.quality;}
+@override int get hashCode {return Object.hash(image, prompt, Object.hashAll(mask ?? const []), background, model, n, size, responseFormat, outputFormat, outputCompression, user, inputFidelity, stream, partialImages, quality);}
+@override String toString() {return 'CreateImageEditRequest(image: $image, prompt: $prompt, mask: $mask, background: $background, model: $model, n: $n, size: $size, responseFormat: $responseFormat, outputFormat: $outputFormat, outputCompression: $outputCompression, user: $user, inputFidelity: $inputFidelity, stream: $stream, partialImages: $partialImages, quality: $quality)';}
+}

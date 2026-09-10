@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VoiceConsentDeletedResourceObject {const VoiceConsentDeletedResourceObject._(this.value);
 
-factory VoiceConsentDeletedResourceObject.fromJson(String json) { return switch (json) {
+factory VoiceConsentDeletedResourceObject.fromJson(String json) {return switch (json) {
   'audio.voice_consent' => audioVoiceConsent,
   _ => VoiceConsentDeletedResourceObject._(json),
-}; }
+};}
 
 static const VoiceConsentDeletedResourceObject audioVoiceConsent = VoiceConsentDeletedResourceObject._('audio.voice_consent');
 
@@ -13,21 +13,21 @@ static const List<VoiceConsentDeletedResourceObject> values = [audioVoiceConsent
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VoiceConsentDeletedResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VoiceConsentDeletedResourceObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is VoiceConsentDeletedResourceObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'VoiceConsentDeletedResourceObject($value)';}
+}
 @immutable final class VoiceConsentDeletedResource {const VoiceConsentDeletedResource({required this.id, required this.object, required this.deleted, });
 
-factory VoiceConsentDeletedResource.fromJson(Map<String, dynamic> json) { return VoiceConsentDeletedResource(
+factory VoiceConsentDeletedResource.fromJson(Map<String, dynamic> json) {return VoiceConsentDeletedResource(
   id: json['id'] as String,
   object: VoiceConsentDeletedResourceObject.fromJson(json['object'] as String),
   deleted: json['deleted'] as bool,
-); }
+);}
 
 /// The consent recording identifier.
 final String id;
@@ -36,24 +36,24 @@ final VoiceConsentDeletedResourceObject object;
 
 final bool deleted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'deleted': deleted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
-      json.containsKey('deleted') && json['deleted'] is bool; } 
-VoiceConsentDeletedResource copyWith({String? id, VoiceConsentDeletedResourceObject? object, bool? deleted, }) { return VoiceConsentDeletedResource(
+      json.containsKey('deleted') && json['deleted'] is bool;}
+VoiceConsentDeletedResource copyWith({String? id, VoiceConsentDeletedResourceObject? object, bool? deleted, }) {return VoiceConsentDeletedResource(
   id: id ?? this.id,
   object: object ?? this.object,
   deleted: deleted ?? this.deleted,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is VoiceConsentDeletedResource &&
           id == other.id &&
           object == other.object &&
-          deleted == other.deleted; } 
-@override int get hashCode { return Object.hash(id, object, deleted); } 
-@override String toString() { return 'VoiceConsentDeletedResource(id: $id, object: $object, deleted: $deleted)'; } 
- }
+          deleted == other.deleted;}
+@override int get hashCode {return Object.hash(id, object, deleted);}
+@override String toString() {return 'VoiceConsentDeletedResource(id: $id, object: $object, deleted: $deleted)';}
+}

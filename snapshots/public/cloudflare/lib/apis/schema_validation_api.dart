@@ -13,7 +13,7 @@ final class SchemaValidationApi with ApiExecutor {const SchemaValidationApi(this
 /// Lists all OpenAPI schemas uploaded to API Shield with pagination support.
 ///
 /// `GET /zones/{zone_id}/schema_validation/schemas`
-Future<ApiResult<List<ShieldPublicSchema>, ResponseCommonFailure7>> schemaValidationListSchemasPaginated({required ShieldIdentifier zoneId, int? page, int? perPage, bool? omitSource, bool? validationEnabled, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ShieldPublicSchema>, ResponseCommonFailure7>> schemaValidationListSchemasPaginated({required ShieldIdentifier zoneId, int? page, int? perPage, bool? omitSource, bool? validationEnabled, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -56,13 +56,13 @@ return null;
 
   },
 );
- } 
+}
 /// Upload a schema
 ///
 /// Uploads a new OpenAPI schema for API Shield schema validation. The schema defines expected request/response formats for API endpoints.
 ///
 /// `POST /zones/{zone_id}/schema_validation/schemas`
-Future<ApiResult<ShieldPublicSchema, SchemaValidationCreateSchemaResponse4xx>> schemaValidationCreateSchema({required ShieldIdentifier zoneId, required SchemaValidationCreateSchemaRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldPublicSchema, SchemaValidationCreateSchemaResponse4xx>> schemaValidationCreateSchema({required ShieldIdentifier zoneId, required SchemaValidationCreateSchemaRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -90,13 +90,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get details of a schema
 ///
 /// Gets the contents and metadata of a specific OpenAPI schema uploaded to API Shield.
 ///
 /// `GET /zones/{zone_id}/schema_validation/schemas/{schema_id}`
-Future<ApiResult<ShieldPublicSchema, ResponseCommonFailure7>> schemaValidationGetSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, bool? omitSource, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ShieldPublicSchema, ResponseCommonFailure7>> schemaValidationGetSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, bool? omitSource, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (omitSource != null) {
   queryParameters['omit_source'] = omitSource.toString();
@@ -130,13 +130,13 @@ return null;
 
   },
 );
- } 
+}
 /// Edit details of a schema to enable validation
 ///
 /// Modifies an existing OpenAPI schema in API Shield, updating the validation rules for associated API operations.
 ///
 /// `PATCH /zones/{zone_id}/schema_validation/schemas/{schema_id}`
-Future<ApiResult<ShieldPublicSchema, ResponseCommonFailure7>> schemaValidationEditSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, required SchemaValidationEditSchemaRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldPublicSchema, ResponseCommonFailure7>> schemaValidationEditSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, required SchemaValidationEditSchemaRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -164,13 +164,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a schema
 ///
 /// Permanently removes an uploaded OpenAPI schema from API Shield. Operations using this schema will lose their validation rules.
 ///
 /// `DELETE /zones/{zone_id}/schema_validation/schemas/{schema_id}`
-Future<ApiResult<SchemaValidationDeleteSchemaResponseResult, ResponseCommonFailure7>> schemaValidationDeleteSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SchemaValidationDeleteSchemaResponseResult, ResponseCommonFailure7>> schemaValidationDeleteSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -196,13 +196,13 @@ return null;
 
   },
 );
- } 
+}
 /// Retrieve all operations from the schema.
 ///
 /// Retrieves all operations from the schema. Operations that already exist in API Shield Endpoint Management will be returned as full operations.
 ///
 /// `GET /zones/{zone_id}/schema_validation/schemas/{schema_id}/operations`
-Future<ApiResult<List<SchemaValidationExtractOperationsFromSchemaResponseResult?>, ResponseCommonFailure7>> schemaValidationExtractOperationsFromSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, List<SchemaValidationExtractOperationsFromSchemaFeature>? feature, List<String>? host, List<String>? method, String? endpoint, int? page, int? perPage, SchemaValidationExtractOperationsFromSchemaOperationStatus? operationStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SchemaValidationExtractOperationsFromSchemaResponseResult?>, ResponseCommonFailure7>> schemaValidationExtractOperationsFromSchema({required ShieldIdentifier zoneId, required ShieldUuid schemaId, List<SchemaValidationExtractOperationsFromSchemaFeature>? feature, List<String>? host, List<String>? method, String? endpoint, int? page, int? perPage, SchemaValidationExtractOperationsFromSchemaOperationStatus? operationStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (feature != null) {
 for (final item in feature) {
@@ -260,13 +260,13 @@ return null;
 
   },
 );
- } 
+}
 /// List hosts covered by uploaded schemas
 ///
 /// Lists all unique hosts found in uploaded OpenAPI schemas for the zone.
 ///
 /// `GET /zones/{zone_id}/schema_validation/schemas/hosts`
-Future<ApiResult<List<ShieldSchemaHosts>, ResponseCommonFailure7>> schemaValidationListSchemaHosts({required ShieldIdentifier zoneId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ShieldSchemaHosts>, ResponseCommonFailure7>> schemaValidationListSchemaHosts({required ShieldIdentifier zoneId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -303,5 +303,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

@@ -13,7 +13,7 @@ final class AccessPolicyTesterApi with ApiExecutor {const AccessPolicyTesterApi(
 /// Starts an Access policy test.
 ///
 /// `POST /accounts/{account_id}/access/policy-tests`
-Future<ApiResult<AccessPolicyInitRespResult?, ResponseCommonFailure4>> accessPolicyTests({required AccessIdentifier accountId, required AccessPolicyInitReq body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessPolicyInitRespResult?, ResponseCommonFailure4>> accessPolicyTests({required AccessIdentifier accountId, required AccessPolicyInitReq body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -41,13 +41,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get the current status of a given Access policy test
 ///
 /// Fetches the current status of a given Access policy test.
 ///
 /// `GET /accounts/{account_id}/access/policy-tests/{policy_test_id}`
-Future<ApiResult<AccessPolicyUpdateRespResult?, ResponseCommonFailure4>> accessPolicyTestsGetAnUpdate({required AccessIdentifier accountId, required AccessPolicyTestId policyTestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessPolicyUpdateRespResult?, ResponseCommonFailure4>> accessPolicyTestsGetAnUpdate({required AccessIdentifier accountId, required AccessPolicyTestId policyTestId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get an Access policy test users page
 ///
 /// Fetches a single page of user results from an Access policy test.
 ///
 /// `GET /accounts/{account_id}/access/policy-tests/{policy_test_id}/users`
-Future<ApiResult<List<AccessPolicyUsers>?, ResponseCommonFailure4>> accessPolicyTestsGetAUserPage({required AccessIdentifier accountId, required AccessPolicyTestId policyTestId, int? page, int? perPage, AccessPolicyTestsGetAUserPageStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessPolicyUsers>?, ResponseCommonFailure4>> accessPolicyTestsGetAUserPage({required AccessIdentifier accountId, required AccessPolicyTestId policyTestId, int? page, int? perPage, AccessPolicyTestsGetAUserPageStatus? status, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -119,5 +119,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

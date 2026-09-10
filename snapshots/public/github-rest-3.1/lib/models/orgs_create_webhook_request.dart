@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'orgs_create_webhook_request_config.dart';@immutable final class OrgsCreateWebhookRequest {const OrgsCreateWebhookRequest({required this.name, required this.config, this.events, this.active, });
 
-factory OrgsCreateWebhookRequest.fromJson(Map<String, dynamic> json) { return OrgsCreateWebhookRequest(
+factory OrgsCreateWebhookRequest.fromJson(Map<String, dynamic> json) {return OrgsCreateWebhookRequest(
   name: json['name'] as String,
   config: OrgsCreateWebhookRequestConfig.fromJson(json['config'] as Map<String, dynamic>),
   events: (json['events'] as List<dynamic>?)?.map((e) => e as String).toList(),
   active: json['active'] as bool?,
-); }
+);}
 
 /// Must be passed as "web".
 final String name;
@@ -22,27 +22,27 @@ final List<String>? events;
 final bool? active;
 
 /// The value with the schema default applied when absent.
-bool get activeOrDefault { return active ?? true; } 
-Map<String, dynamic> toJson() { return {
+bool get activeOrDefault {return active ?? true;}
+Map<String, dynamic> toJson() {return {
   'name': name,
   'config': config.toJson(),
   'events': ?events,
   'active': ?active,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('config'); } 
-OrgsCreateWebhookRequest copyWith({String? name, OrgsCreateWebhookRequestConfig? config, List<String>? Function()? events, bool? Function()? active, }) { return OrgsCreateWebhookRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('config');}
+OrgsCreateWebhookRequest copyWith({String? name, OrgsCreateWebhookRequestConfig? config, List<String>? Function()? events, bool? Function()? active, }) {return OrgsCreateWebhookRequest(
   name: name ?? this.name,
   config: config ?? this.config,
   events: events != null ? events() : this.events,
   active: active != null ? active() : this.active,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrgsCreateWebhookRequest &&
           name == other.name &&
           config == other.config &&
           listEquals(events, other.events) &&
-          active == other.active; } 
-@override int get hashCode { return Object.hash(name, config, Object.hashAll(events ?? const []), active); } 
-@override String toString() { return 'OrgsCreateWebhookRequest(name: $name, config: $config, events: $events, active: $active)'; } 
- }
+          active == other.active;}
+@override int get hashCode {return Object.hash(name, config, Object.hashAll(events ?? const []), active);}
+@override String toString() {return 'OrgsCreateWebhookRequest(name: $name, config: $config, events: $events, active: $active)';}
+}

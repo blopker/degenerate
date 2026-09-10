@@ -9,7 +9,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_image
 /// 
 @immutable final class CreateImageRequestQuality {const CreateImageRequestQuality._(this.value);
 
-factory CreateImageRequestQuality.fromJson(String json) { return switch (json) {
+factory CreateImageRequestQuality.fromJson(String json) {return switch (json) {
   'standard' => standard,
   'hd' => hd,
   'low' => low,
@@ -17,7 +17,7 @@ factory CreateImageRequestQuality.fromJson(String json) { return switch (json) {
   'high' => high,
   'auto' => auto,
   _ => CreateImageRequestQuality._(json),
-}; }
+};}
 
 static const CreateImageRequestQuality standard = CreateImageRequestQuality._('standard');
 
@@ -35,22 +35,22 @@ static const List<CreateImageRequestQuality> values = [standard, hd, low, medium
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageRequestQuality && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageRequestQuality($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateImageRequestQuality && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateImageRequestQuality($value)';}
+}
 /// The format in which generated images with `dall-e-2` and `dall-e-3` are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter isn't supported for the GPT image models, which always return base64-encoded images.
 @immutable final class CreateImageRequestResponseFormat {const CreateImageRequestResponseFormat._(this.value);
 
-factory CreateImageRequestResponseFormat.fromJson(String json) { return switch (json) {
+factory CreateImageRequestResponseFormat.fromJson(String json) {return switch (json) {
   'url' => url,
   'b64_json' => b64Json,
   _ => CreateImageRequestResponseFormat._(json),
-}; }
+};}
 
 static const CreateImageRequestResponseFormat url = CreateImageRequestResponseFormat._('url');
 
@@ -60,23 +60,23 @@ static const List<CreateImageRequestResponseFormat> values = [url, b64Json];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageRequestResponseFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageRequestResponseFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateImageRequestResponseFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateImageRequestResponseFormat($value)';}
+}
 /// The format in which the generated images are returned. This parameter is only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.
 @immutable final class CreateImageRequestOutputFormat {const CreateImageRequestOutputFormat._(this.value);
 
-factory CreateImageRequestOutputFormat.fromJson(String json) { return switch (json) {
+factory CreateImageRequestOutputFormat.fromJson(String json) {return switch (json) {
   'png' => png,
   'jpeg' => jpeg,
   'webp' => webp,
   _ => CreateImageRequestOutputFormat._(json),
-}; }
+};}
 
 static const CreateImageRequestOutputFormat png = CreateImageRequestOutputFormat._('png');
 
@@ -88,18 +88,18 @@ static const List<CreateImageRequestOutputFormat> values = [png, jpeg, webp];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageRequestOutputFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageRequestOutputFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateImageRequestOutputFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateImageRequestOutputFormat($value)';}
+}
 /// The size of the generated images. Must be one of `1024x1024`, `1536x1024` (landscape), `1024x1536` (portrait), or `auto` (default value) for the GPT image models, one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`, and one of `1024x1024`, `1792x1024`, or `1024x1792` for `dall-e-3`.
 @immutable final class CreateImageRequestSize {const CreateImageRequestSize._(this.value);
 
-factory CreateImageRequestSize.fromJson(String json) { return switch (json) {
+factory CreateImageRequestSize.fromJson(String json) {return switch (json) {
   'auto' => auto,
   '1024x1024' => $1024x1024,
   '1536x1024' => $1536x1024,
@@ -109,7 +109,7 @@ factory CreateImageRequestSize.fromJson(String json) { return switch (json) {
   '1792x1024' => $1792x1024,
   '1024x1792' => $1024x1792,
   _ => CreateImageRequestSize._(json),
-}; }
+};}
 
 static const CreateImageRequestSize auto = CreateImageRequestSize._('auto');
 
@@ -131,22 +131,22 @@ static const List<CreateImageRequestSize> values = [auto, $1024x1024, $1536x1024
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageRequestSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageRequestSize($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateImageRequestSize && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateImageRequestSize($value)';}
+}
 /// Control the content-moderation level for images generated by the GPT image models. Must be either `low` for less restrictive filtering or `auto` (default value).
 @immutable final class CreateImageRequestModeration {const CreateImageRequestModeration._(this.value);
 
-factory CreateImageRequestModeration.fromJson(String json) { return switch (json) {
+factory CreateImageRequestModeration.fromJson(String json) {return switch (json) {
   'low' => low,
   'auto' => auto,
   _ => CreateImageRequestModeration._(json),
-}; }
+};}
 
 static const CreateImageRequestModeration low = CreateImageRequestModeration._('low');
 
@@ -156,14 +156,14 @@ static const List<CreateImageRequestModeration> values = [low, auto];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageRequestModeration && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageRequestModeration($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateImageRequestModeration && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateImageRequestModeration($value)';}
+}
 /// Allows to set transparency for the background of the generated image(s).
 /// This parameter is only supported for the GPT image models. Must be one of
 /// `transparent`, `opaque` or `auto` (default value). When `auto` is used, the
@@ -174,12 +174,12 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class CreateImageRequestBackground {const CreateImageRequestBackground._(this.value);
 
-factory CreateImageRequestBackground.fromJson(String json) { return switch (json) {
+factory CreateImageRequestBackground.fromJson(String json) {return switch (json) {
   'transparent' => transparent,
   'opaque' => opaque,
   'auto' => auto,
   _ => CreateImageRequestBackground._(json),
-}; }
+};}
 
 static const CreateImageRequestBackground transparent = CreateImageRequestBackground._('transparent');
 
@@ -191,22 +191,22 @@ static const List<CreateImageRequestBackground> values = [transparent, opaque, a
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageRequestBackground && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageRequestBackground($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateImageRequestBackground && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateImageRequestBackground($value)';}
+}
 /// The style of the generated images. This parameter is only supported for `dall-e-3`. Must be one of `vivid` or `natural`. Vivid causes the model to lean towards generating hyper-real and dramatic images. Natural causes the model to produce more natural, less hyper-real looking images.
 @immutable final class CreateImageRequestStyle {const CreateImageRequestStyle._(this.value);
 
-factory CreateImageRequestStyle.fromJson(String json) { return switch (json) {
+factory CreateImageRequestStyle.fromJson(String json) {return switch (json) {
   'vivid' => vivid,
   'natural' => natural,
   _ => CreateImageRequestStyle._(json),
-}; }
+};}
 
 static const CreateImageRequestStyle vivid = CreateImageRequestStyle._('vivid');
 
@@ -216,17 +216,17 @@ static const List<CreateImageRequestStyle> values = [vivid, natural];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageRequestStyle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageRequestStyle($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateImageRequestStyle && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateImageRequestStyle($value)';}
+}
 @immutable final class CreateImageRequest {const CreateImageRequest({required this.prompt, this.model = const Omittable.absent(), this.n = const Omittable.absent(), this.quality = const Omittable.absent(), this.responseFormat = const Omittable.absent(), this.outputFormat = const Omittable.absent(), this.outputCompression = const Omittable.absent(), this.stream = const Omittable.absent(), this.partialImages = const Omittable.absent(), this.size = const Omittable.absent(), this.moderation = const Omittable.absent(), this.background = const Omittable.absent(), this.style = const Omittable.absent(), this.user, });
 
-factory CreateImageRequest.fromJson(Map<String, dynamic> json) { return CreateImageRequest(
+factory CreateImageRequest.fromJson(Map<String, dynamic> json) {return CreateImageRequest(
   prompt: json['prompt'] as String,
   model: json.containsKey('model') ? Omittable(json['model'] != null ? CreateImageRequestModel.fromJson(json['model']) : null) : const Omittable.absent(),
   n: json.containsKey('n') ? Omittable(json['n'] != null ? (json['n'] as num).toInt() : null) : const Omittable.absent(),
@@ -241,7 +241,7 @@ factory CreateImageRequest.fromJson(Map<String, dynamic> json) { return CreateIm
   background: json.containsKey('background') ? Omittable(json['background'] != null ? CreateImageRequestBackground.fromJson(json['background'] as String) : null) : const Omittable.absent(),
   style: json.containsKey('style') ? Omittable(json['style'] != null ? CreateImageRequestStyle.fromJson(json['style'] as String) : null) : const Omittable.absent(),
   user: json['user'] as String?,
-); }
+);}
 
 /// A text description of the desired image(s). The maximum length is 32000 characters for the GPT image models, 1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`.
 final String prompt;
@@ -302,26 +302,26 @@ final Omittable<CreateImageRequestStyle?> style;
 final String? user;
 
 /// The value with the schema default applied when absent.
-int? get nOrDefault { return n.valueOr(1); } 
+int? get nOrDefault {return n.valueOr(1);}
 /// The value with the schema default applied when absent.
-CreateImageRequestQuality? get qualityOrDefault { return quality.valueOr(CreateImageRequestQuality.fromJson('auto')); } 
+CreateImageRequestQuality? get qualityOrDefault {return quality.valueOr(CreateImageRequestQuality.fromJson('auto'));}
 /// The value with the schema default applied when absent.
-CreateImageRequestResponseFormat? get responseFormatOrDefault { return responseFormat.valueOr(CreateImageRequestResponseFormat.fromJson('url')); } 
+CreateImageRequestResponseFormat? get responseFormatOrDefault {return responseFormat.valueOr(CreateImageRequestResponseFormat.fromJson('url'));}
 /// The value with the schema default applied when absent.
-CreateImageRequestOutputFormat? get outputFormatOrDefault { return outputFormat.valueOr(CreateImageRequestOutputFormat.fromJson('png')); } 
+CreateImageRequestOutputFormat? get outputFormatOrDefault {return outputFormat.valueOr(CreateImageRequestOutputFormat.fromJson('png'));}
 /// The value with the schema default applied when absent.
-int? get outputCompressionOrDefault { return outputCompression.valueOr(100); } 
+int? get outputCompressionOrDefault {return outputCompression.valueOr(100);}
 /// The value with the schema default applied when absent.
-bool? get streamOrDefault { return stream.valueOr(false); } 
+bool? get streamOrDefault {return stream.valueOr(false);}
 /// The value with the schema default applied when absent.
-CreateImageRequestSize? get sizeOrDefault { return size.valueOr(CreateImageRequestSize.fromJson('auto')); } 
+CreateImageRequestSize? get sizeOrDefault {return size.valueOr(CreateImageRequestSize.fromJson('auto'));}
 /// The value with the schema default applied when absent.
-CreateImageRequestModeration? get moderationOrDefault { return moderation.valueOr(CreateImageRequestModeration.fromJson('auto')); } 
+CreateImageRequestModeration? get moderationOrDefault {return moderation.valueOr(CreateImageRequestModeration.fromJson('auto'));}
 /// The value with the schema default applied when absent.
-CreateImageRequestBackground? get backgroundOrDefault { return background.valueOr(CreateImageRequestBackground.fromJson('auto')); } 
+CreateImageRequestBackground? get backgroundOrDefault {return background.valueOr(CreateImageRequestBackground.fromJson('auto'));}
 /// The value with the schema default applied when absent.
-CreateImageRequestStyle? get styleOrDefault { return style.valueOr(CreateImageRequestStyle.fromJson('vivid')); } 
-Map<String, dynamic> toJson() { return {
+CreateImageRequestStyle? get styleOrDefault {return style.valueOr(CreateImageRequestStyle.fromJson('vivid'));}
+Map<String, dynamic> toJson() {return {
   'prompt': prompt,
   if (model.isPresent) 'model': model.value?.toJson(),
   if (n.isPresent) 'n': n.value,
@@ -336,9 +336,9 @@ Map<String, dynamic> toJson() { return {
   if (background.isPresent) 'background': background.value?.toJson(),
   if (style.isPresent) 'style': style.value?.toJson(),
   'user': ?user,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-CreateImageRequest copyWith({String? prompt, Omittable<CreateImageRequestModel?>? model, Omittable<int?>? n, Omittable<CreateImageRequestQuality?>? quality, Omittable<CreateImageRequestResponseFormat?>? responseFormat, Omittable<CreateImageRequestOutputFormat?>? outputFormat, Omittable<int?>? outputCompression, Omittable<bool?>? stream, Omittable<PartialImages?>? partialImages, Omittable<CreateImageRequestSize?>? size, Omittable<CreateImageRequestModeration?>? moderation, Omittable<CreateImageRequestBackground?>? background, Omittable<CreateImageRequestStyle?>? style, String? Function()? user, }) { return CreateImageRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
+CreateImageRequest copyWith({String? prompt, Omittable<CreateImageRequestModel?>? model, Omittable<int?>? n, Omittable<CreateImageRequestQuality?>? quality, Omittable<CreateImageRequestResponseFormat?>? responseFormat, Omittable<CreateImageRequestOutputFormat?>? outputFormat, Omittable<int?>? outputCompression, Omittable<bool?>? stream, Omittable<PartialImages?>? partialImages, Omittable<CreateImageRequestSize?>? size, Omittable<CreateImageRequestModeration?>? moderation, Omittable<CreateImageRequestBackground?>? background, Omittable<CreateImageRequestStyle?>? style, String? Function()? user, }) {return CreateImageRequest(
   prompt: prompt ?? this.prompt,
   model: model ?? this.model,
   n: n ?? this.n,
@@ -353,8 +353,8 @@ CreateImageRequest copyWith({String? prompt, Omittable<CreateImageRequestModel?>
   background: background ?? this.background,
   style: style ?? this.style,
   user: user != null ? user() : this.user,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateImageRequest &&
           prompt == other.prompt &&
           model == other.model &&
@@ -369,7 +369,7 @@ CreateImageRequest copyWith({String? prompt, Omittable<CreateImageRequestModel?>
           moderation == other.moderation &&
           background == other.background &&
           style == other.style &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(prompt, model, n, quality, responseFormat, outputFormat, outputCompression, stream, partialImages, size, moderation, background, style, user); } 
-@override String toString() { return 'CreateImageRequest(prompt: $prompt, model: $model, n: $n, quality: $quality, responseFormat: $responseFormat, outputFormat: $outputFormat, outputCompression: $outputCompression, stream: $stream, partialImages: $partialImages, size: $size, moderation: $moderation, background: $background, style: $style, user: $user)'; } 
- }
+          user == other.user;}
+@override int get hashCode {return Object.hash(prompt, model, n, quality, responseFormat, outputFormat, outputCompression, stream, partialImages, size, moderation, background, style, user);}
+@override String toString() {return 'CreateImageRequest(prompt: $prompt, model: $model, n: $n, quality: $quality, responseFormat: $responseFormat, outputFormat: $outputFormat, outputCompression: $outputCompression, stream: $stream, partialImages: $partialImages, size: $size, moderation: $moderation, background: $background, style: $style, user: $user)';}
+}

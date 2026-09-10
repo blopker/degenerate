@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PagesDomainVerificationDataStatus {const PagesDomainVerificationDataStatus._(this.value);
 
-factory PagesDomainVerificationDataStatus.fromJson(String json) { return switch (json) {
+factory PagesDomainVerificationDataStatus.fromJson(String json) {return switch (json) {
   'pending' => pending,
   'active' => active,
   'deactivated' => deactivated,
   'blocked' => blocked,
   'error' => error,
   _ => PagesDomainVerificationDataStatus._(json),
-}; }
+};}
 
 static const PagesDomainVerificationDataStatus pending = PagesDomainVerificationDataStatus._('pending');
 
@@ -25,38 +25,38 @@ static const List<PagesDomainVerificationDataStatus> values = [pending, active, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesDomainVerificationDataStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesDomainVerificationDataStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PagesDomainVerificationDataStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PagesDomainVerificationDataStatus($value)';}
+}
 @immutable final class PagesDomainVerificationData {const PagesDomainVerificationData({required this.status, this.errorMessage, });
 
-factory PagesDomainVerificationData.fromJson(Map<String, dynamic> json) { return PagesDomainVerificationData(
+factory PagesDomainVerificationData.fromJson(Map<String, dynamic> json) {return PagesDomainVerificationData(
   errorMessage: json['error_message'] as String?,
   status: PagesDomainVerificationDataStatus.fromJson(json['status'] as String),
-); }
+);}
 
 final String? errorMessage;
 
 final PagesDomainVerificationDataStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error_message': ?errorMessage,
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-PagesDomainVerificationData copyWith({String? Function()? errorMessage, PagesDomainVerificationDataStatus? status, }) { return PagesDomainVerificationData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status');}
+PagesDomainVerificationData copyWith({String? Function()? errorMessage, PagesDomainVerificationDataStatus? status, }) {return PagesDomainVerificationData(
   errorMessage: errorMessage != null ? errorMessage() : this.errorMessage,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PagesDomainVerificationData &&
           errorMessage == other.errorMessage &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(errorMessage, status); } 
-@override String toString() { return 'PagesDomainVerificationData(errorMessage: $errorMessage, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(errorMessage, status);}
+@override String toString() {return 'PagesDomainVerificationData(errorMessage: $errorMessage, status: $status)';}
+}

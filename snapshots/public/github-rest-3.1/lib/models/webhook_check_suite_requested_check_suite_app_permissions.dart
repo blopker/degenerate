@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsActions {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsActions._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsActions.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsActions.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsActions._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsActions read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsActions._('read');
 
@@ -16,21 +16,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsActions> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsActions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsActions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsActions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsActions($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAdministration {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAdministration._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAdministration.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAdministration.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAdministration._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAdministration read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAdministration._('read');
 
@@ -40,21 +40,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAdministrati
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAdministration && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAdministration($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAdministration && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAdministration($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsArtifactMetadata {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsArtifactMetadata._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsArtifactMetadata.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsArtifactMetadata.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsArtifactMetadata._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsArtifactMetadata read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsArtifactMetadata._('read');
 
@@ -64,21 +64,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsArtifactMeta
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsArtifactMetadata && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsArtifactMetadata($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsArtifactMetadata && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsArtifactMetadata($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAttestations {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAttestations._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAttestations.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAttestations.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAttestations._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAttestations read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAttestations._('read');
 
@@ -88,21 +88,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAttestations
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAttestations && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAttestations($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAttestations && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAttestations($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsChecks {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsChecks._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsChecks.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsChecks.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsChecks._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsChecks read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsChecks._('read');
 
@@ -112,21 +112,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsChecks> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsChecks && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsChecks($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsChecks && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsChecks($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences._('read');
 
@@ -136,21 +136,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentRefer
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents._('read');
 
@@ -160,20 +160,20 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsCopilotRequests {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsCopilotRequests._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsCopilotRequests.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsCopilotRequests.fromJson(String json) {return switch (json) {
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsCopilotRequests._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsCopilotRequests write = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsCopilotRequests._('write');
 
@@ -181,21 +181,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsCopilotReque
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsCopilotRequests && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsCopilotRequests($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsCopilotRequests && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsCopilotRequests($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDeployments {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDeployments._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDeployments.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDeployments.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDeployments._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDeployments read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDeployments._('read');
 
@@ -205,21 +205,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDeployments>
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDeployments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDeployments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDeployments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDeployments($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDiscussions {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDiscussions._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDiscussions.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDiscussions.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDiscussions._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDiscussions read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDiscussions._('read');
 
@@ -229,21 +229,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDiscussions>
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDiscussions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDiscussions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDiscussions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDiscussions($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEmails {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEmails._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEmails.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEmails.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEmails._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEmails read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEmails._('read');
 
@@ -253,21 +253,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEmails> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEmails && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEmails($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEmails && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEmails($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEnvironments {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEnvironments._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEnvironments.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEnvironments.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEnvironments._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEnvironments read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEnvironments._('read');
 
@@ -277,21 +277,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEnvironments
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEnvironments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEnvironments($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEnvironments && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEnvironments($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsIssues {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsIssues._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsIssues.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsIssues.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsIssues._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsIssues read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsIssues._('read');
 
@@ -301,21 +301,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsIssues> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsIssues && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsIssues($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsIssues && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsIssues($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsKeys {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsKeys._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsKeys.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsKeys.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsKeys._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsKeys read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsKeys._('read');
 
@@ -325,21 +325,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsKeys> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsKeys && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsKeys($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsKeys && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsKeys($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMembers {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMembers._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMembers.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMembers.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMembers._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMembers read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMembers._('read');
 
@@ -349,21 +349,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMembers> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMembers && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMembers($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMembers && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMembers($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMergeQueues {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMergeQueues._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMergeQueues.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMergeQueues.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMergeQueues._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMergeQueues read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMergeQueues._('read');
 
@@ -373,21 +373,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMergeQueues>
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMergeQueues && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMergeQueues($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMergeQueues && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMergeQueues($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMetadata {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMetadata._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMetadata.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMetadata.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMetadata._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMetadata read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMetadata._('read');
 
@@ -397,21 +397,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMetadata> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMetadata && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMetadata($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMetadata && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMetadata($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsModels {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsModels._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsModels.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsModels.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsModels._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsModels read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsModels._('read');
 
@@ -421,21 +421,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsModels> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsModels && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsModels($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsModels && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsModels($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationAdministration {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationAdministration._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationAdministration.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationAdministration.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationAdministration._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationAdministration read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationAdministration._('read');
 
@@ -445,21 +445,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganization
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationAdministration && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationAdministration($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationAdministration && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationAdministration($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationHooks {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationHooks._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationHooks.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationHooks.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationHooks._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationHooks read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationHooks._('read');
 
@@ -469,21 +469,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganization
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationHooks && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationHooks($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationHooks && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationHooks($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPackages {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPackages._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPackages.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPackages.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPackages._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPackages read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPackages._('read');
 
@@ -493,21 +493,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganization
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPackages && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPackages($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPackages && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPackages($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPlan {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPlan._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPlan.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPlan.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPlan._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPlan read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPlan._('read');
 
@@ -517,22 +517,22 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganization
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPlan && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPlan($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPlan && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPlan($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationProjects {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationProjects._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationProjects.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationProjects.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   'admin' => admin,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationProjects._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationProjects read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationProjects._('read');
 
@@ -544,21 +544,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganization
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationProjects && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationProjects($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationProjects && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationProjects($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSecrets {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSecrets._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSecrets.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSecrets.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSecrets._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSecrets read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSecrets._('read');
 
@@ -568,21 +568,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganization
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSecrets && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSecrets($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSecrets && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSecrets($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners._('read');
 
@@ -592,21 +592,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganization
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationUserBlocking {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationUserBlocking._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationUserBlocking.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationUserBlocking.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationUserBlocking._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationUserBlocking read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationUserBlocking._('read');
 
@@ -616,21 +616,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganization
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationUserBlocking && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationUserBlocking($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationUserBlocking && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationUserBlocking($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPackages {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPackages._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPackages.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPackages.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPackages._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPackages read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPackages._('read');
 
@@ -640,21 +640,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPackages> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPackages && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPackages($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPackages && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPackages($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPages {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPages._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPages.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPages.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPages._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPages read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPages._('read');
 
@@ -664,21 +664,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPages> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPages && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPages($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPages && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPages($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPullRequests {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPullRequests._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPullRequests.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPullRequests.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPullRequests._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPullRequests read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPullRequests._('read');
 
@@ -688,21 +688,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPullRequests
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPullRequests && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPullRequests($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPullRequests && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPullRequests($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryHooks {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryHooks._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryHooks.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryHooks.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryHooks._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryHooks read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryHooks._('read');
 
@@ -712,22 +712,22 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryHo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryHooks && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryHooks($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryHooks && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryHooks($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryProjects {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryProjects._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryProjects.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryProjects.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   'admin' => admin,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryProjects._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryProjects read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryProjects._('read');
 
@@ -739,21 +739,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryPr
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryProjects && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryProjects($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryProjects && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryProjects($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecretScanningAlerts {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecretScanningAlerts._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecretScanningAlerts.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecretScanningAlerts.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecretScanningAlerts._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecretScanningAlerts read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecretScanningAlerts._('read');
 
@@ -763,21 +763,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecretScanni
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecretScanningAlerts && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecretScanningAlerts($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecretScanningAlerts && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecretScanningAlerts($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecrets {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecrets._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecrets.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecrets.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecrets._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecrets read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecrets._('read');
 
@@ -787,21 +787,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecrets> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecrets && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecrets($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecrets && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecrets($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityEvents {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityEvents._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityEvents.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityEvents.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityEvents._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityEvents read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityEvents._('read');
 
@@ -811,21 +811,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityEven
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityEvents && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityEvents($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityEvents && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityEvents($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityScanningAlert {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityScanningAlert._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityScanningAlert.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityScanningAlert.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityScanningAlert._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityScanningAlert read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityScanningAlert._('read');
 
@@ -835,21 +835,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityScan
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityScanningAlert && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityScanningAlert($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityScanningAlert && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityScanningAlert($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSingleFile {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSingleFile._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSingleFile.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSingleFile.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSingleFile._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSingleFile read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSingleFile._('read');
 
@@ -859,21 +859,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSingleFile> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSingleFile && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSingleFile($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSingleFile && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSingleFile($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsStatuses {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsStatuses._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsStatuses.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsStatuses.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsStatuses._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsStatuses read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsStatuses._('read');
 
@@ -883,21 +883,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsStatuses> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsStatuses && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsStatuses($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsStatuses && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsStatuses($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsVulnerabilityAlerts {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsVulnerabilityAlerts._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsVulnerabilityAlerts.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsVulnerabilityAlerts.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsVulnerabilityAlerts._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsVulnerabilityAlerts read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsVulnerabilityAlerts._('read');
 
@@ -907,21 +907,21 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsVulnerabilit
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsVulnerabilityAlerts && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsVulnerabilityAlerts($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsVulnerabilityAlerts && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsVulnerabilityAlerts($value)';}
+}
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsWorkflows {const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsWorkflows._(this.value);
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsWorkflows.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissionsWorkflows.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => WebhookCheckSuiteRequestedCheckSuiteAppPermissionsWorkflows._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedCheckSuiteAppPermissionsWorkflows read = WebhookCheckSuiteRequestedCheckSuiteAppPermissionsWorkflows._('read');
 
@@ -931,18 +931,18 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteAppPermissionsWorkflows> v
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsWorkflows && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsWorkflows($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedCheckSuiteAppPermissionsWorkflows && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissionsWorkflows($value)';}
+}
 /// The set of permissions for the GitHub app
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissions {const WebhookCheckSuiteRequestedCheckSuiteAppPermissions({this.keys, this.administration, this.artifactMetadata, this.attestations, this.checks, this.contentReferences, this.contents, this.copilotRequests, this.deployments, this.discussions, this.emails, this.environments, this.issues, this.actions, this.members, this.mergeQueues, this.metadata, this.models, this.organizationAdministration, this.organizationHooks, this.organizationPackages, this.organizationPlan, this.organizationProjects, this.organizationSecrets, this.organizationSelfHostedRunners, this.workflows, this.packages, this.pages, this.pullRequests, this.repositoryHooks, this.repositoryProjects, this.secretScanningAlerts, this.secrets, this.securityEvents, this.securityScanningAlert, this.singleFile, this.statuses, this.vulnerabilityAlerts, this.organizationUserBlocking, });
 
-factory WebhookCheckSuiteRequestedCheckSuiteAppPermissions.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteRequestedCheckSuiteAppPermissions(
+factory WebhookCheckSuiteRequestedCheckSuiteAppPermissions.fromJson(Map<String, dynamic> json) {return WebhookCheckSuiteRequestedCheckSuiteAppPermissions(
   actions: json['actions'] != null ? WebhookCheckSuiteRequestedCheckSuiteAppPermissionsActions.fromJson(json['actions'] as String) : null,
   administration: json['administration'] != null ? WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAdministration.fromJson(json['administration'] as String) : null,
   artifactMetadata: json['artifact_metadata'] != null ? WebhookCheckSuiteRequestedCheckSuiteAppPermissionsArtifactMetadata.fromJson(json['artifact_metadata'] as String) : null,
@@ -982,7 +982,7 @@ factory WebhookCheckSuiteRequestedCheckSuiteAppPermissions.fromJson(Map<String, 
   statuses: json['statuses'] != null ? WebhookCheckSuiteRequestedCheckSuiteAppPermissionsStatuses.fromJson(json['statuses'] as String) : null,
   vulnerabilityAlerts: json['vulnerability_alerts'] != null ? WebhookCheckSuiteRequestedCheckSuiteAppPermissionsVulnerabilityAlerts.fromJson(json['vulnerability_alerts'] as String) : null,
   workflows: json['workflows'] != null ? WebhookCheckSuiteRequestedCheckSuiteAppPermissionsWorkflows.fromJson(json['workflows'] as String) : null,
-); }
+);}
 
 final WebhookCheckSuiteRequestedCheckSuiteAppPermissionsActions? actions;
 
@@ -1062,7 +1062,7 @@ final WebhookCheckSuiteRequestedCheckSuiteAppPermissionsVulnerabilityAlerts? vul
 
 final WebhookCheckSuiteRequestedCheckSuiteAppPermissionsWorkflows? workflows;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (actions != null) 'actions': actions?.toJson(),
   if (administration != null) 'administration': administration?.toJson(),
   if (artifactMetadata != null) 'artifact_metadata': artifactMetadata?.toJson(),
@@ -1102,9 +1102,9 @@ Map<String, dynamic> toJson() { return {
   if (statuses != null) 'statuses': statuses?.toJson(),
   if (vulnerabilityAlerts != null) 'vulnerability_alerts': vulnerabilityAlerts?.toJson(),
   if (workflows != null) 'workflows': workflows?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'actions', 'administration', 'artifact_metadata', 'attestations', 'checks', 'content_references', 'contents', 'copilot_requests', 'deployments', 'discussions', 'emails', 'environments', 'issues', 'keys', 'members', 'merge_queues', 'metadata', 'models', 'organization_administration', 'organization_hooks', 'organization_packages', 'organization_plan', 'organization_projects', 'organization_secrets', 'organization_self_hosted_runners', 'organization_user_blocking', 'packages', 'pages', 'pull_requests', 'repository_hooks', 'repository_projects', 'secret_scanning_alerts', 'secrets', 'security_events', 'security_scanning_alert', 'single_file', 'statuses', 'vulnerability_alerts', 'workflows'}.contains(key)); } 
-WebhookCheckSuiteRequestedCheckSuiteAppPermissions copyWith({WebhookCheckSuiteRequestedCheckSuiteAppPermissionsActions? Function()? actions, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAdministration? Function()? administration, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsArtifactMetadata? Function()? artifactMetadata, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAttestations? Function()? attestations, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsChecks? Function()? checks, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences? Function()? contentReferences, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents? Function()? contents, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsCopilotRequests? Function()? copilotRequests, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDeployments? Function()? deployments, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDiscussions? Function()? discussions, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEmails? Function()? emails, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEnvironments? Function()? environments, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsIssues? Function()? issues, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsKeys? Function()? keys, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMembers? Function()? members, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMergeQueues? Function()? mergeQueues, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMetadata? Function()? metadata, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsModels? Function()? models, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationAdministration? Function()? organizationAdministration, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationHooks? Function()? organizationHooks, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPackages? Function()? organizationPackages, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPlan? Function()? organizationPlan, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationProjects? Function()? organizationProjects, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSecrets? Function()? organizationSecrets, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners? Function()? organizationSelfHostedRunners, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationUserBlocking? Function()? organizationUserBlocking, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPackages? Function()? packages, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPages? Function()? pages, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPullRequests? Function()? pullRequests, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryHooks? Function()? repositoryHooks, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryProjects? Function()? repositoryProjects, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecretScanningAlerts? Function()? secretScanningAlerts, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecrets? Function()? secrets, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityEvents? Function()? securityEvents, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityScanningAlert? Function()? securityScanningAlert, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSingleFile? Function()? singleFile, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsStatuses? Function()? statuses, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsVulnerabilityAlerts? Function()? vulnerabilityAlerts, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsWorkflows? Function()? workflows, }) { return WebhookCheckSuiteRequestedCheckSuiteAppPermissions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'actions', 'administration', 'artifact_metadata', 'attestations', 'checks', 'content_references', 'contents', 'copilot_requests', 'deployments', 'discussions', 'emails', 'environments', 'issues', 'keys', 'members', 'merge_queues', 'metadata', 'models', 'organization_administration', 'organization_hooks', 'organization_packages', 'organization_plan', 'organization_projects', 'organization_secrets', 'organization_self_hosted_runners', 'organization_user_blocking', 'packages', 'pages', 'pull_requests', 'repository_hooks', 'repository_projects', 'secret_scanning_alerts', 'secrets', 'security_events', 'security_scanning_alert', 'single_file', 'statuses', 'vulnerability_alerts', 'workflows'}.contains(key));}
+WebhookCheckSuiteRequestedCheckSuiteAppPermissions copyWith({WebhookCheckSuiteRequestedCheckSuiteAppPermissionsActions? Function()? actions, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAdministration? Function()? administration, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsArtifactMetadata? Function()? artifactMetadata, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsAttestations? Function()? attestations, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsChecks? Function()? checks, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences? Function()? contentReferences, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContents? Function()? contents, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsCopilotRequests? Function()? copilotRequests, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDeployments? Function()? deployments, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsDiscussions? Function()? discussions, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEmails? Function()? emails, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsEnvironments? Function()? environments, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsIssues? Function()? issues, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsKeys? Function()? keys, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMembers? Function()? members, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMergeQueues? Function()? mergeQueues, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsMetadata? Function()? metadata, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsModels? Function()? models, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationAdministration? Function()? organizationAdministration, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationHooks? Function()? organizationHooks, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPackages? Function()? organizationPackages, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationPlan? Function()? organizationPlan, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationProjects? Function()? organizationProjects, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSecrets? Function()? organizationSecrets, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners? Function()? organizationSelfHostedRunners, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsOrganizationUserBlocking? Function()? organizationUserBlocking, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPackages? Function()? packages, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPages? Function()? pages, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsPullRequests? Function()? pullRequests, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryHooks? Function()? repositoryHooks, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsRepositoryProjects? Function()? repositoryProjects, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecretScanningAlerts? Function()? secretScanningAlerts, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecrets? Function()? secrets, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityEvents? Function()? securityEvents, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSecurityScanningAlert? Function()? securityScanningAlert, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsSingleFile? Function()? singleFile, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsStatuses? Function()? statuses, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsVulnerabilityAlerts? Function()? vulnerabilityAlerts, WebhookCheckSuiteRequestedCheckSuiteAppPermissionsWorkflows? Function()? workflows, }) {return WebhookCheckSuiteRequestedCheckSuiteAppPermissions(
   actions: actions != null ? actions() : this.actions,
   administration: administration != null ? administration() : this.administration,
   artifactMetadata: artifactMetadata != null ? artifactMetadata() : this.artifactMetadata,
@@ -1144,8 +1144,8 @@ WebhookCheckSuiteRequestedCheckSuiteAppPermissions copyWith({WebhookCheckSuiteRe
   statuses: statuses != null ? statuses() : this.statuses,
   vulnerabilityAlerts: vulnerabilityAlerts != null ? vulnerabilityAlerts() : this.vulnerabilityAlerts,
   workflows: workflows != null ? workflows() : this.workflows,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookCheckSuiteRequestedCheckSuiteAppPermissions &&
           actions == other.actions &&
           administration == other.administration &&
@@ -1185,7 +1185,7 @@ WebhookCheckSuiteRequestedCheckSuiteAppPermissions copyWith({WebhookCheckSuiteRe
           singleFile == other.singleFile &&
           statuses == other.statuses &&
           vulnerabilityAlerts == other.vulnerabilityAlerts &&
-          workflows == other.workflows; } 
-@override int get hashCode { return Object.hashAll([actions, administration, artifactMetadata, attestations, checks, contentReferences, contents, copilotRequests, deployments, discussions, emails, environments, issues, keys, members, mergeQueues, metadata, models, organizationAdministration, organizationHooks, organizationPackages, organizationPlan, organizationProjects, organizationSecrets, organizationSelfHostedRunners, organizationUserBlocking, packages, pages, pullRequests, repositoryHooks, repositoryProjects, secretScanningAlerts, secrets, securityEvents, securityScanningAlert, singleFile, statuses, vulnerabilityAlerts, workflows]); } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissions(actions: $actions, administration: $administration, artifactMetadata: $artifactMetadata, attestations: $attestations, checks: $checks, contentReferences: $contentReferences, contents: $contents, copilotRequests: $copilotRequests, deployments: $deployments, discussions: $discussions, emails: $emails, environments: $environments, issues: $issues, keys: $keys, members: $members, mergeQueues: $mergeQueues, metadata: $metadata, models: $models, organizationAdministration: $organizationAdministration, organizationHooks: $organizationHooks, organizationPackages: $organizationPackages, organizationPlan: $organizationPlan, organizationProjects: $organizationProjects, organizationSecrets: $organizationSecrets, organizationSelfHostedRunners: $organizationSelfHostedRunners, organizationUserBlocking: $organizationUserBlocking, packages: $packages, pages: $pages, pullRequests: $pullRequests, repositoryHooks: $repositoryHooks, repositoryProjects: $repositoryProjects, secretScanningAlerts: $secretScanningAlerts, secrets: $secrets, securityEvents: $securityEvents, securityScanningAlert: $securityScanningAlert, singleFile: $singleFile, statuses: $statuses, vulnerabilityAlerts: $vulnerabilityAlerts, workflows: $workflows)'; } 
- }
+          workflows == other.workflows;}
+@override int get hashCode {return Object.hashAll([actions, administration, artifactMetadata, attestations, checks, contentReferences, contents, copilotRequests, deployments, discussions, emails, environments, issues, keys, members, mergeQueues, metadata, models, organizationAdministration, organizationHooks, organizationPackages, organizationPlan, organizationProjects, organizationSecrets, organizationSelfHostedRunners, organizationUserBlocking, packages, pages, pullRequests, repositoryHooks, repositoryProjects, secretScanningAlerts, secrets, securityEvents, securityScanningAlert, singleFile, statuses, vulnerabilityAlerts, workflows]);}
+@override String toString() {return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissions(actions: $actions, administration: $administration, artifactMetadata: $artifactMetadata, attestations: $attestations, checks: $checks, contentReferences: $contentReferences, contents: $contents, copilotRequests: $copilotRequests, deployments: $deployments, discussions: $discussions, emails: $emails, environments: $environments, issues: $issues, keys: $keys, members: $members, mergeQueues: $mergeQueues, metadata: $metadata, models: $models, organizationAdministration: $organizationAdministration, organizationHooks: $organizationHooks, organizationPackages: $organizationPackages, organizationPlan: $organizationPlan, organizationProjects: $organizationProjects, organizationSecrets: $organizationSecrets, organizationSelfHostedRunners: $organizationSelfHostedRunners, organizationUserBlocking: $organizationUserBlocking, packages: $packages, pages: $pages, pullRequests: $pullRequests, repositoryHooks: $repositoryHooks, repositoryProjects: $repositoryProjects, secretScanningAlerts: $secretScanningAlerts, secrets: $secrets, securityEvents: $securityEvents, securityScanningAlert: $securityScanningAlert, singleFile: $singleFile, statuses: $statuses, vulnerabilityAlerts: $vulnerabilityAlerts, workflows: $workflows)';}
+}

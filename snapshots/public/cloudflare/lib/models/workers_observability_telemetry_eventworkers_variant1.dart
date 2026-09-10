@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_telemetry_eventworkers_variant1_event_value.dart';import 'workers_observability_telemetry_eventworkers_variant1_script_version.dart';@immutable final class WorkersObservabilityTelemetryEvent$workersVariant1EventType {const WorkersObservabilityTelemetryEvent$workersVariant1EventType._(this.value);
 
-factory WorkersObservabilityTelemetryEvent$workersVariant1EventType.fromJson(String json) { return switch (json) {
+factory WorkersObservabilityTelemetryEvent$workersVariant1EventType.fromJson(String json) {return switch (json) {
   'fetch' => fetch,
   'scheduled' => scheduled,
   'alarm' => alarm,
@@ -14,7 +14,7 @@ factory WorkersObservabilityTelemetryEvent$workersVariant1EventType.fromJson(Str
   'websocket' => websocket,
   'unknown' => unknown,
   _ => WorkersObservabilityTelemetryEvent$workersVariant1EventType._(json),
-}; }
+};}
 
 static const WorkersObservabilityTelemetryEvent$workersVariant1EventType fetch = WorkersObservabilityTelemetryEvent$workersVariant1EventType._('fetch');
 
@@ -40,21 +40,21 @@ static const List<WorkersObservabilityTelemetryEvent$workersVariant1EventType> v
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersObservabilityTelemetryEvent$workersVariant1EventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersObservabilityTelemetryEvent\$workersVariant1EventType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersObservabilityTelemetryEvent$workersVariant1EventType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersObservabilityTelemetryEvent\$workersVariant1EventType($value)';}
+}
 @immutable final class WorkersObservabilityTelemetryEvent$workersVariant1ExecutionModel {const WorkersObservabilityTelemetryEvent$workersVariant1ExecutionModel._(this.value);
 
-factory WorkersObservabilityTelemetryEvent$workersVariant1ExecutionModel.fromJson(String json) { return switch (json) {
+factory WorkersObservabilityTelemetryEvent$workersVariant1ExecutionModel.fromJson(String json) {return switch (json) {
   'durableObject' => durableObject,
   'stateless' => stateless,
   _ => WorkersObservabilityTelemetryEvent$workersVariant1ExecutionModel._(json),
-}; }
+};}
 
 static const WorkersObservabilityTelemetryEvent$workersVariant1ExecutionModel durableObject = WorkersObservabilityTelemetryEvent$workersVariant1ExecutionModel._('durableObject');
 
@@ -64,17 +64,17 @@ static const List<WorkersObservabilityTelemetryEvent$workersVariant1ExecutionMod
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersObservabilityTelemetryEvent$workersVariant1ExecutionModel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersObservabilityTelemetryEvent\$workersVariant1ExecutionModel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersObservabilityTelemetryEvent$workersVariant1ExecutionModel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersObservabilityTelemetryEvent\$workersVariant1ExecutionModel($value)';}
+}
 @immutable final class WorkersObservabilityTelemetryEvent$workersVariant1 {const WorkersObservabilityTelemetryEvent$workersVariant1({required this.eventType, required this.requestId, required this.scriptName, this.durableObjectId, this.entrypoint, this.event, this.executionModel, this.outcome, this.scriptVersion, this.truncated, });
 
-factory WorkersObservabilityTelemetryEvent$workersVariant1.fromJson(Map<String, dynamic> json) { return WorkersObservabilityTelemetryEvent$workersVariant1(
+factory WorkersObservabilityTelemetryEvent$workersVariant1.fromJson(Map<String, dynamic> json) {return WorkersObservabilityTelemetryEvent$workersVariant1(
   durableObjectId: json['durableObjectId'] as String?,
   entrypoint: json['entrypoint'] as String?,
   event: (json['event'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, WorkersObservabilityTelemetryEvent$workersVariant1EventValue.fromJson(v))),
@@ -85,7 +85,7 @@ factory WorkersObservabilityTelemetryEvent$workersVariant1.fromJson(Map<String, 
   scriptName: json['scriptName'] as String,
   scriptVersion: json['scriptVersion'] != null ? WorkersObservabilityTelemetryEvent$workersVariant1ScriptVersion.fromJson(json['scriptVersion'] as Map<String, dynamic>) : null,
   truncated: json['truncated'] as bool?,
-); }
+);}
 
 final String? durableObjectId;
 
@@ -107,7 +107,7 @@ final WorkersObservabilityTelemetryEvent$workersVariant1ScriptVersion? scriptVer
 
 final bool? truncated;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'durableObjectId': ?durableObjectId,
   'entrypoint': ?entrypoint,
   if (event != null) 'event': event?.map((k, v) => MapEntry(k, v.toJson())),
@@ -118,11 +118,11 @@ Map<String, dynamic> toJson() { return {
   'scriptName': scriptName,
   if (scriptVersion != null) 'scriptVersion': scriptVersion?.toJson(),
   'truncated': ?truncated,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('eventType') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('eventType') &&
       json.containsKey('requestId') && json['requestId'] is String &&
-      json.containsKey('scriptName') && json['scriptName'] is String; } 
-WorkersObservabilityTelemetryEvent$workersVariant1 copyWith({String? Function()? durableObjectId, String? Function()? entrypoint, Map<String, WorkersObservabilityTelemetryEvent$workersVariant1EventValue>? Function()? event, WorkersObservabilityTelemetryEvent$workersVariant1EventType? eventType, WorkersObservabilityTelemetryEvent$workersVariant1ExecutionModel? Function()? executionModel, String? Function()? outcome, String? requestId, String? scriptName, WorkersObservabilityTelemetryEvent$workersVariant1ScriptVersion? Function()? scriptVersion, bool? Function()? truncated, }) { return WorkersObservabilityTelemetryEvent$workersVariant1(
+      json.containsKey('scriptName') && json['scriptName'] is String;}
+WorkersObservabilityTelemetryEvent$workersVariant1 copyWith({String? Function()? durableObjectId, String? Function()? entrypoint, Map<String, WorkersObservabilityTelemetryEvent$workersVariant1EventValue>? Function()? event, WorkersObservabilityTelemetryEvent$workersVariant1EventType? eventType, WorkersObservabilityTelemetryEvent$workersVariant1ExecutionModel? Function()? executionModel, String? Function()? outcome, String? requestId, String? scriptName, WorkersObservabilityTelemetryEvent$workersVariant1ScriptVersion? Function()? scriptVersion, bool? Function()? truncated, }) {return WorkersObservabilityTelemetryEvent$workersVariant1(
   durableObjectId: durableObjectId != null ? durableObjectId() : this.durableObjectId,
   entrypoint: entrypoint != null ? entrypoint() : this.entrypoint,
   event: event != null ? event() : this.event,
@@ -133,8 +133,8 @@ WorkersObservabilityTelemetryEvent$workersVariant1 copyWith({String? Function()?
   scriptName: scriptName ?? this.scriptName,
   scriptVersion: scriptVersion != null ? scriptVersion() : this.scriptVersion,
   truncated: truncated != null ? truncated() : this.truncated,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersObservabilityTelemetryEvent$workersVariant1 &&
           durableObjectId == other.durableObjectId &&
           entrypoint == other.entrypoint &&
@@ -145,7 +145,7 @@ WorkersObservabilityTelemetryEvent$workersVariant1 copyWith({String? Function()?
           requestId == other.requestId &&
           scriptName == other.scriptName &&
           scriptVersion == other.scriptVersion &&
-          truncated == other.truncated; } 
-@override int get hashCode { return Object.hash(durableObjectId, entrypoint, event, eventType, executionModel, outcome, requestId, scriptName, scriptVersion, truncated); } 
-@override String toString() { return 'WorkersObservabilityTelemetryEvent\$workersVariant1(durableObjectId: $durableObjectId, entrypoint: $entrypoint, event: $event, eventType: $eventType, executionModel: $executionModel, outcome: $outcome, requestId: $requestId, scriptName: $scriptName, scriptVersion: $scriptVersion, truncated: $truncated)'; } 
- }
+          truncated == other.truncated;}
+@override int get hashCode {return Object.hash(durableObjectId, entrypoint, event, eventType, executionModel, outcome, requestId, scriptName, scriptVersion, truncated);}
+@override String toString() {return 'WorkersObservabilityTelemetryEvent\$workersVariant1(durableObjectId: $durableObjectId, entrypoint: $entrypoint, event: $event, eventType: $eventType, executionModel: $executionModel, outcome: $outcome, requestId: $requestId, scriptName: $scriptName, scriptVersion: $scriptVersion, truncated: $truncated)';}
+}

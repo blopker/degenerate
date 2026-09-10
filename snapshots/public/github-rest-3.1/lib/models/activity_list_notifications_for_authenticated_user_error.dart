@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class ActivityListNotificationsForAuthenticatedUserError {const ActivityListNotificationsForAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static ActivityListNotificationsForAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static ActivityListNotificationsForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const ActivityListNotificationsForAuthenticatedUserError304();
 case 401:
@@ -19,37 +19,37 @@ return ActivityListNotificationsForAuthenticatedUserError422(ValidationError.fro
 default:
 return ActivityListNotificationsForAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class ActivityListNotificationsForAuthenticatedUserError304 extends ActivityListNotificationsForAuthenticatedUserError {const ActivityListNotificationsForAuthenticatedUserError304();
 
- }
+}
 /// Response for 401 (application/json).
 final class ActivityListNotificationsForAuthenticatedUserError401 extends ActivityListNotificationsForAuthenticatedUserError {const ActivityListNotificationsForAuthenticatedUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class ActivityListNotificationsForAuthenticatedUserError403 extends ActivityListNotificationsForAuthenticatedUserError {const ActivityListNotificationsForAuthenticatedUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class ActivityListNotificationsForAuthenticatedUserError422 extends ActivityListNotificationsForAuthenticatedUserError {const ActivityListNotificationsForAuthenticatedUserError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class ActivityListNotificationsForAuthenticatedUserErrorUnknown extends ActivityListNotificationsForAuthenticatedUserError {const ActivityListNotificationsForAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

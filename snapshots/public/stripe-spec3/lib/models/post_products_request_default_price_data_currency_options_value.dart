@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_products_request_default_price_data_currency_options_value_custom_unit_amount.dart';import 'post_products_request_default_price_data_currency_options_value_tiers.dart';@immutable final class PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior {const PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior._(this.value);
 
-factory PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior.fromJson(String json) { return switch (json) {
+factory PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior.fromJson(String json) {return switch (json) {
   'exclusive' => exclusive,
   'inclusive' => inclusive,
   'unspecified' => unspecified,
   _ => PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior._(json),
-}; }
+};}
 
 static const PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior exclusive = PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior._('exclusive');
 
@@ -19,23 +19,23 @@ static const List<PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBeha
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior($value)';}
+}
 @immutable final class PostProductsRequestDefaultPriceDataCurrencyOptionsValue {const PostProductsRequestDefaultPriceDataCurrencyOptionsValue({this.customUnitAmount, this.taxBehavior, this.tiers, this.unitAmount, this.unitAmountDecimal, });
 
-factory PostProductsRequestDefaultPriceDataCurrencyOptionsValue.fromJson(Map<String, dynamic> json) { return PostProductsRequestDefaultPriceDataCurrencyOptionsValue(
+factory PostProductsRequestDefaultPriceDataCurrencyOptionsValue.fromJson(Map<String, dynamic> json) {return PostProductsRequestDefaultPriceDataCurrencyOptionsValue(
   customUnitAmount: json['custom_unit_amount'] != null ? PostProductsRequestDefaultPriceDataCurrencyOptionsValueCustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>) : null,
   taxBehavior: json['tax_behavior'] != null ? PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiers.fromJson(e as Map<String, dynamic>)).toList(),
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
-); }
+);}
 
 final PostProductsRequestDefaultPriceDataCurrencyOptionsValueCustomUnitAmount? customUnitAmount;
 
@@ -47,28 +47,28 @@ final int? unitAmount;
 
 final String? unitAmountDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (customUnitAmount != null) 'custom_unit_amount': customUnitAmount?.toJson(),
   if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
   if (tiers != null) 'tiers': tiers?.map((e) => e.toJson()).toList(),
   'unit_amount': ?unitAmount,
   'unit_amount_decimal': ?unitAmountDecimal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_unit_amount', 'tax_behavior', 'tiers', 'unit_amount', 'unit_amount_decimal'}.contains(key)); } 
-PostProductsRequestDefaultPriceDataCurrencyOptionsValue copyWith({PostProductsRequestDefaultPriceDataCurrencyOptionsValueCustomUnitAmount? Function()? customUnitAmount, PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior? Function()? taxBehavior, List<PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiers>? Function()? tiers, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return PostProductsRequestDefaultPriceDataCurrencyOptionsValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'custom_unit_amount', 'tax_behavior', 'tiers', 'unit_amount', 'unit_amount_decimal'}.contains(key));}
+PostProductsRequestDefaultPriceDataCurrencyOptionsValue copyWith({PostProductsRequestDefaultPriceDataCurrencyOptionsValueCustomUnitAmount? Function()? customUnitAmount, PostProductsRequestDefaultPriceDataCurrencyOptionsValueTaxBehavior? Function()? taxBehavior, List<PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiers>? Function()? tiers, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) {return PostProductsRequestDefaultPriceDataCurrencyOptionsValue(
   customUnitAmount: customUnitAmount != null ? customUnitAmount() : this.customUnitAmount,
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
   tiers: tiers != null ? tiers() : this.tiers,
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostProductsRequestDefaultPriceDataCurrencyOptionsValue &&
           customUnitAmount == other.customUnitAmount &&
           taxBehavior == other.taxBehavior &&
           listEquals(tiers, other.tiers) &&
           unitAmount == other.unitAmount &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(customUnitAmount, taxBehavior, Object.hashAll(tiers ?? const []), unitAmount, unitAmountDecimal); } 
-@override String toString() { return 'PostProductsRequestDefaultPriceDataCurrencyOptionsValue(customUnitAmount: $customUnitAmount, taxBehavior: $taxBehavior, tiers: $tiers, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
- }
+          unitAmountDecimal == other.unitAmountDecimal;}
+@override int get hashCode {return Object.hash(customUnitAmount, taxBehavior, Object.hashAll(tiers ?? const []), unitAmount, unitAmountDecimal);}
+@override String toString() {return 'PostProductsRequestDefaultPriceDataCurrencyOptionsValue(customUnitAmount: $customUnitAmount, taxBehavior: $taxBehavior, tiers: $tiers, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';}
+}

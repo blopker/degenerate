@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// AzureFile represents an Azure File Service mount on the host and bind mount to the pod.
 @immutable final class AzureFilePersistentVolumeSource {const AzureFilePersistentVolumeSource({required this.secretName, required this.shareName, this.readOnly, this.secretNamespace, });
 
-factory AzureFilePersistentVolumeSource.fromJson(Map<String, dynamic> json) { return AzureFilePersistentVolumeSource(
+factory AzureFilePersistentVolumeSource.fromJson(Map<String, dynamic> json) {return AzureFilePersistentVolumeSource(
   readOnly: json['readOnly'] as bool?,
   secretName: json['secretName'] as String,
   secretNamespace: json['secretNamespace'] as String?,
   shareName: json['shareName'] as String,
-); }
+);}
 
 /// readOnly defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
 final bool? readOnly;
@@ -22,26 +22,26 @@ final String? secretNamespace;
 /// shareName is the azure Share Name
 final String shareName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'readOnly': ?readOnly,
   'secretName': secretName,
   'secretNamespace': ?secretNamespace,
   'shareName': shareName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('secretName') && json['secretName'] is String &&
-      json.containsKey('shareName') && json['shareName'] is String; } 
-AzureFilePersistentVolumeSource copyWith({bool? Function()? readOnly, String? secretName, String? Function()? secretNamespace, String? shareName, }) { return AzureFilePersistentVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('secretName') && json['secretName'] is String &&
+      json.containsKey('shareName') && json['shareName'] is String;}
+AzureFilePersistentVolumeSource copyWith({bool? Function()? readOnly, String? secretName, String? Function()? secretNamespace, String? shareName, }) {return AzureFilePersistentVolumeSource(
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   secretName: secretName ?? this.secretName,
   secretNamespace: secretNamespace != null ? secretNamespace() : this.secretNamespace,
   shareName: shareName ?? this.shareName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AzureFilePersistentVolumeSource &&
           readOnly == other.readOnly &&
           secretName == other.secretName &&
           secretNamespace == other.secretNamespace &&
-          shareName == other.shareName; } 
-@override int get hashCode { return Object.hash(readOnly, secretName, secretNamespace, shareName); } 
-@override String toString() { return 'AzureFilePersistentVolumeSource(readOnly: $readOnly, secretName: $secretName, secretNamespace: $secretNamespace, shareName: $shareName)'; } 
- }
+          shareName == other.shareName;}
+@override int get hashCode {return Object.hash(readOnly, secretName, secretNamespace, shareName);}
+@override String toString() {return 'AzureFilePersistentVolumeSource(readOnly: $readOnly, secretName: $secretName, secretNamespace: $secretNamespace, shareName: $shareName)';}
+}

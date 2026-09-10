@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataKrCard {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataKrCard();
 
-factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataKrCard.fromJson(Map<String, dynamic> _) { return const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataKrCard(); }
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataKrCard.fromJson(Map<String, dynamic> _) {return const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataKrCard();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentIntentsIntentConfirmRequestPaymentMethodDataKrCard copyWith() { return const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataKrCard(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PostPaymentIntentsIntentConfirmRequestPaymentMethodDataKrCard copyWith() {return const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataKrCard(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentIntentsIntentConfirmRequestPaymentMethodDataKrCard; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodDataKrCard()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is PostPaymentIntentsIntentConfirmRequestPaymentMethodDataKrCard;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodDataKrCard()';}
+}

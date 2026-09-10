@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateServersResponseResultAuthType {const CreateServersResponseResultAuthType._(this.value);
 
-factory CreateServersResponseResultAuthType.fromJson(String json) { return switch (json) {
+factory CreateServersResponseResultAuthType.fromJson(String json) {return switch (json) {
   'oauth' => oauth,
   'bearer' => bearer,
   'unauthenticated' => unauthenticated,
   _ => CreateServersResponseResultAuthType._(json),
-}; }
+};}
 
 static const CreateServersResponseResultAuthType oauth = CreateServersResponseResultAuthType._('oauth');
 
@@ -19,17 +19,17 @@ static const List<CreateServersResponseResultAuthType> values = [oauth, bearer, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateServersResponseResultAuthType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateServersResponseResultAuthType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateServersResponseResultAuthType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateServersResponseResultAuthType($value)';}
+}
 @immutable final class CreateServersResponseResult {const CreateServersResponseResult({required this.authType, required this.hostname, required this.id, required this.name, required this.prompts, required this.tools, this.createdAt, this.createdBy, this.description = const Omittable.absent(), this.error, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, this.status, });
 
-factory CreateServersResponseResult.fromJson(Map<String, dynamic> json) { return CreateServersResponseResult(
+factory CreateServersResponseResult.fromJson(Map<String, dynamic> json) {return CreateServersResponseResult(
   authType: CreateServersResponseResultAuthType.fromJson(json['auth_type'] as String),
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   createdBy: json['created_by'] as String?,
@@ -45,7 +45,7 @@ factory CreateServersResponseResult.fromJson(Map<String, dynamic> json) { return
   prompts: (json['prompts'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   status: json['status'] as String?,
   tools: (json['tools'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
-); }
+);}
 
 final CreateServersResponseResultAuthType authType;
 
@@ -79,8 +79,8 @@ final String? status;
 final List<Map<String,dynamic>> tools;
 
 /// The value with the schema default applied when absent.
-String get statusOrDefault { return status ?? 'waiting'; } 
-Map<String, dynamic> toJson() { return {
+String get statusOrDefault {return status ?? 'waiting';}
+Map<String, dynamic> toJson() {return {
   'auth_type': authType.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'created_by': ?createdBy,
@@ -96,14 +96,14 @@ Map<String, dynamic> toJson() { return {
   'prompts': prompts.map((e) => e).toList(),
   'status': ?status,
   'tools': tools.map((e) => e).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('auth_type') &&
       json.containsKey('hostname') && json['hostname'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('prompts') &&
-      json.containsKey('tools'); } 
-CreateServersResponseResult copyWith({CreateServersResponseResultAuthType? authType, DateTime? Function()? createdAt, String? Function()? createdBy, Omittable<String?>? description, String? Function()? error, Uri? hostname, String? id, DateTime? Function()? lastSuccessfulSync, DateTime? Function()? lastSynced, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, List<Map<String,dynamic>>? prompts, String? Function()? status, List<Map<String,dynamic>>? tools, }) { return CreateServersResponseResult(
+      json.containsKey('tools');}
+CreateServersResponseResult copyWith({CreateServersResponseResultAuthType? authType, DateTime? Function()? createdAt, String? Function()? createdBy, Omittable<String?>? description, String? Function()? error, Uri? hostname, String? id, DateTime? Function()? lastSuccessfulSync, DateTime? Function()? lastSynced, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, List<Map<String,dynamic>>? prompts, String? Function()? status, List<Map<String,dynamic>>? tools, }) {return CreateServersResponseResult(
   authType: authType ?? this.authType,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
@@ -119,8 +119,8 @@ CreateServersResponseResult copyWith({CreateServersResponseResultAuthType? authT
   prompts: prompts ?? this.prompts,
   status: status != null ? status() : this.status,
   tools: tools ?? this.tools,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateServersResponseResult &&
           authType == other.authType &&
           createdAt == other.createdAt &&
@@ -136,7 +136,7 @@ CreateServersResponseResult copyWith({CreateServersResponseResultAuthType? authT
           name == other.name &&
           listEquals(prompts, other.prompts) &&
           status == other.status &&
-          listEquals(tools, other.tools); } 
-@override int get hashCode { return Object.hash(authType, createdAt, createdBy, description, error, hostname, id, lastSuccessfulSync, lastSynced, modifiedAt, modifiedBy, name, Object.hashAll(prompts), status, Object.hashAll(tools)); } 
-@override String toString() { return 'CreateServersResponseResult(authType: $authType, createdAt: $createdAt, createdBy: $createdBy, description: $description, error: $error, hostname: $hostname, id: $id, lastSuccessfulSync: $lastSuccessfulSync, lastSynced: $lastSynced, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name, prompts: $prompts, status: $status, tools: $tools)'; } 
- }
+          listEquals(tools, other.tools);}
+@override int get hashCode {return Object.hash(authType, createdAt, createdBy, description, error, hostname, id, lastSuccessfulSync, lastSynced, modifiedAt, modifiedBy, name, Object.hashAll(prompts), status, Object.hashAll(tools));}
+@override String toString() {return 'CreateServersResponseResult(authType: $authType, createdAt: $createdAt, createdBy: $createdBy, description: $description, error: $error, hostname: $hostname, id: $id, lastSuccessfulSync: $lastSuccessfulSync, lastSynced: $lastSynced, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name, prompts: $prompts, status: $status, tools: $tools)';}
+}

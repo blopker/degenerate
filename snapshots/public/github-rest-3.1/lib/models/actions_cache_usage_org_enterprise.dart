@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsCacheUsageOrgEnterprise {const ActionsCacheUsageOrgEnterprise({required this.totalActiveCachesCount, required this.totalActiveCachesSizeInBytes, });
 
-factory ActionsCacheUsageOrgEnterprise.fromJson(Map<String, dynamic> json) { return ActionsCacheUsageOrgEnterprise(
+factory ActionsCacheUsageOrgEnterprise.fromJson(Map<String, dynamic> json) {return ActionsCacheUsageOrgEnterprise(
   totalActiveCachesCount: (json['total_active_caches_count'] as num).toInt(),
   totalActiveCachesSizeInBytes: (json['total_active_caches_size_in_bytes'] as num).toInt(),
-); }
+);}
 
 /// The count of active caches across all repositories of an enterprise or an organization.
 final int totalActiveCachesCount;
@@ -13,20 +13,20 @@ final int totalActiveCachesCount;
 /// The total size in bytes of all active cache items across all repositories of an enterprise or an organization.
 final int totalActiveCachesSizeInBytes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_active_caches_count': totalActiveCachesCount,
   'total_active_caches_size_in_bytes': totalActiveCachesSizeInBytes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_active_caches_count') && json['total_active_caches_count'] is num &&
-      json.containsKey('total_active_caches_size_in_bytes') && json['total_active_caches_size_in_bytes'] is num; } 
-ActionsCacheUsageOrgEnterprise copyWith({int? totalActiveCachesCount, int? totalActiveCachesSizeInBytes, }) { return ActionsCacheUsageOrgEnterprise(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_active_caches_count') && json['total_active_caches_count'] is num &&
+      json.containsKey('total_active_caches_size_in_bytes') && json['total_active_caches_size_in_bytes'] is num;}
+ActionsCacheUsageOrgEnterprise copyWith({int? totalActiveCachesCount, int? totalActiveCachesSizeInBytes, }) {return ActionsCacheUsageOrgEnterprise(
   totalActiveCachesCount: totalActiveCachesCount ?? this.totalActiveCachesCount,
   totalActiveCachesSizeInBytes: totalActiveCachesSizeInBytes ?? this.totalActiveCachesSizeInBytes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ActionsCacheUsageOrgEnterprise &&
           totalActiveCachesCount == other.totalActiveCachesCount &&
-          totalActiveCachesSizeInBytes == other.totalActiveCachesSizeInBytes; } 
-@override int get hashCode { return Object.hash(totalActiveCachesCount, totalActiveCachesSizeInBytes); } 
-@override String toString() { return 'ActionsCacheUsageOrgEnterprise(totalActiveCachesCount: $totalActiveCachesCount, totalActiveCachesSizeInBytes: $totalActiveCachesSizeInBytes)'; } 
- }
+          totalActiveCachesSizeInBytes == other.totalActiveCachesSizeInBytes;}
+@override int get hashCode {return Object.hash(totalActiveCachesCount, totalActiveCachesSizeInBytes);}
+@override String toString() {return 'ActionsCacheUsageOrgEnterprise(totalActiveCachesCount: $totalActiveCachesCount, totalActiveCachesSizeInBytes: $totalActiveCachesSizeInBytes)';}
+}

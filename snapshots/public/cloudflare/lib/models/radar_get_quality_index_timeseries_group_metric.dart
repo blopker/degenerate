@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines which metric to return (bandwidth, latency, or DNS response time).
 @immutable final class RadarGetQualityIndexTimeseriesGroupMetric {const RadarGetQualityIndexTimeseriesGroupMetric._(this.value);
 
-factory RadarGetQualityIndexTimeseriesGroupMetric.fromJson(String json) { return switch (json) {
+factory RadarGetQualityIndexTimeseriesGroupMetric.fromJson(String json) {return switch (json) {
   'BANDWIDTH' => bandwidth,
   'DNS' => dns,
   'LATENCY' => latency,
   _ => RadarGetQualityIndexTimeseriesGroupMetric._(json),
-}; }
+};}
 
 static const RadarGetQualityIndexTimeseriesGroupMetric bandwidth = RadarGetQualityIndexTimeseriesGroupMetric._('BANDWIDTH');
 
@@ -20,11 +20,11 @@ static const List<RadarGetQualityIndexTimeseriesGroupMetric> values = [bandwidth
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetQualityIndexTimeseriesGroupMetric && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetQualityIndexTimeseriesGroupMetric($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetQualityIndexTimeseriesGroupMetric && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetQualityIndexTimeseriesGroupMetric($value)';}
+}

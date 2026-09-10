@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookDeploymentCreatedWorkflowRunRepositoryOwner {const WebhookDeploymentCreatedWorkflowRunRepositoryOwner({this.avatarUrl, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.id, this.login, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, });
 
-factory WebhookDeploymentCreatedWorkflowRunRepositoryOwner.fromJson(Map<String, dynamic> json) { return WebhookDeploymentCreatedWorkflowRunRepositoryOwner(
+factory WebhookDeploymentCreatedWorkflowRunRepositoryOwner.fromJson(Map<String, dynamic> json) {return WebhookDeploymentCreatedWorkflowRunRepositoryOwner(
   avatarUrl: json['avatar_url'] as String?,
   eventsUrl: json['events_url'] as String?,
   followersUrl: json['followers_url'] as String?,
@@ -21,7 +21,7 @@ factory WebhookDeploymentCreatedWorkflowRunRepositoryOwner.fromJson(Map<String, 
   subscriptionsUrl: json['subscriptions_url'] as String?,
   type: json['type'] as String?,
   url: json['url'] as String?,
-); }
+);}
 
 final String? avatarUrl;
 
@@ -59,7 +59,7 @@ final String? type;
 
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'avatar_url': ?avatarUrl,
   'events_url': ?eventsUrl,
   'followers_url': ?followersUrl,
@@ -78,9 +78,9 @@ Map<String, dynamic> toJson() { return {
   'subscriptions_url': ?subscriptionsUrl,
   'type': ?type,
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'avatar_url', 'events_url', 'followers_url', 'following_url', 'gists_url', 'gravatar_id', 'html_url', 'id', 'login', 'node_id', 'organizations_url', 'received_events_url', 'repos_url', 'site_admin', 'starred_url', 'subscriptions_url', 'type', 'url'}.contains(key)); } 
-WebhookDeploymentCreatedWorkflowRunRepositoryOwner copyWith({String? Function()? avatarUrl, String? Function()? eventsUrl, String? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, String? Function()? htmlUrl, int? Function()? id, String? Function()? login, String? Function()? nodeId, String? Function()? organizationsUrl, String? Function()? receivedEventsUrl, String? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, String? Function()? subscriptionsUrl, String? Function()? type, String? Function()? url, }) { return WebhookDeploymentCreatedWorkflowRunRepositoryOwner(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'avatar_url', 'events_url', 'followers_url', 'following_url', 'gists_url', 'gravatar_id', 'html_url', 'id', 'login', 'node_id', 'organizations_url', 'received_events_url', 'repos_url', 'site_admin', 'starred_url', 'subscriptions_url', 'type', 'url'}.contains(key));}
+WebhookDeploymentCreatedWorkflowRunRepositoryOwner copyWith({String? Function()? avatarUrl, String? Function()? eventsUrl, String? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, String? Function()? htmlUrl, int? Function()? id, String? Function()? login, String? Function()? nodeId, String? Function()? organizationsUrl, String? Function()? receivedEventsUrl, String? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, String? Function()? subscriptionsUrl, String? Function()? type, String? Function()? url, }) {return WebhookDeploymentCreatedWorkflowRunRepositoryOwner(
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   eventsUrl: eventsUrl != null ? eventsUrl() : this.eventsUrl,
   followersUrl: followersUrl != null ? followersUrl() : this.followersUrl,
@@ -99,8 +99,8 @@ WebhookDeploymentCreatedWorkflowRunRepositoryOwner copyWith({String? Function()?
   subscriptionsUrl: subscriptionsUrl != null ? subscriptionsUrl() : this.subscriptionsUrl,
   type: type != null ? type() : this.type,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDeploymentCreatedWorkflowRunRepositoryOwner &&
           avatarUrl == other.avatarUrl &&
           eventsUrl == other.eventsUrl &&
@@ -119,7 +119,7 @@ WebhookDeploymentCreatedWorkflowRunRepositoryOwner copyWith({String? Function()?
           starredUrl == other.starredUrl &&
           subscriptionsUrl == other.subscriptionsUrl &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(avatarUrl, eventsUrl, followersUrl, followingUrl, gistsUrl, gravatarId, htmlUrl, id, login, nodeId, organizationsUrl, receivedEventsUrl, reposUrl, siteAdmin, starredUrl, subscriptionsUrl, type, url); } 
-@override String toString() { return 'WebhookDeploymentCreatedWorkflowRunRepositoryOwner(avatarUrl: $avatarUrl, eventsUrl: $eventsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, htmlUrl: $htmlUrl, id: $id, login: $login, nodeId: $nodeId, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(avatarUrl, eventsUrl, followersUrl, followingUrl, gistsUrl, gravatarId, htmlUrl, id, login, nodeId, organizationsUrl, receivedEventsUrl, reposUrl, siteAdmin, starredUrl, subscriptionsUrl, type, url);}
+@override String toString() {return 'WebhookDeploymentCreatedWorkflowRunRepositoryOwner(avatarUrl: $avatarUrl, eventsUrl: $eventsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, htmlUrl: $htmlUrl, id: $id, login: $login, nodeId: $nodeId, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, url: $url)';}
+}

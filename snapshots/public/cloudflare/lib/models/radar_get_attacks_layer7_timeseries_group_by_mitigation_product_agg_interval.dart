@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByMitigationProductAggInterval {const RadarGetAttacksLayer7TimeseriesGroupByMitigationProductAggInterval._(this.value);
 
-factory RadarGetAttacksLayer7TimeseriesGroupByMitigationProductAggInterval.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer7TimeseriesGroupByMitigationProductAggInterval.fromJson(String json) {return switch (json) {
   '15m' => $15m,
   '1h' => $1h,
   '1d' => $1d,
   '1w' => $1w,
   _ => RadarGetAttacksLayer7TimeseriesGroupByMitigationProductAggInterval._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer7TimeseriesGroupByMitigationProductAggInterval $15m = RadarGetAttacksLayer7TimeseriesGroupByMitigationProductAggInterval._('15m');
 
@@ -23,11 +23,11 @@ static const List<RadarGetAttacksLayer7TimeseriesGroupByMitigationProductAggInte
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer7TimeseriesGroupByMitigationProductAggInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer7TimeseriesGroupByMitigationProductAggInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer7TimeseriesGroupByMitigationProductAggInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer7TimeseriesGroupByMitigationProductAggInterval($value)';}
+}

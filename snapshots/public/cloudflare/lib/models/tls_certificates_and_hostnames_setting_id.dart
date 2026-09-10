@@ -6,12 +6,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The TLS Setting 
 /// - `http2`: value is `"on"` or `"off"`
 @immutable final class TlsCertificatesAndHostnamesSettingId {const TlsCertificatesAndHostnamesSettingId._(this.value);
 
-factory TlsCertificatesAndHostnamesSettingId.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesSettingId.fromJson(String json) {return switch (json) {
   'ciphers' => ciphers,
   'min_tls_version' => minTlsVersion,
   'http2' => http2,
   _ => TlsCertificatesAndHostnamesSettingId._(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesSettingId ciphers = TlsCertificatesAndHostnamesSettingId._('ciphers');
 
@@ -23,11 +23,11 @@ static const List<TlsCertificatesAndHostnamesSettingId> values = [ciphers, minTl
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSettingId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSettingId($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesSettingId && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesSettingId($value)';}
+}

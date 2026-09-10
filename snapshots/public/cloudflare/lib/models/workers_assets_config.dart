@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_assets_config_run_worker_first.dart';/// Determines the redirects and rewrites of requests for HTML content.
 @immutable final class WorkersAssetsConfigHtmlHandling {const WorkersAssetsConfigHtmlHandling._(this.value);
 
-factory WorkersAssetsConfigHtmlHandling.fromJson(String json) { return switch (json) {
+factory WorkersAssetsConfigHtmlHandling.fromJson(String json) {return switch (json) {
   'auto-trailing-slash' => autoTrailingSlash,
   'force-trailing-slash' => forceTrailingSlash,
   'drop-trailing-slash' => dropTrailingSlash,
   'none' => none,
   _ => WorkersAssetsConfigHtmlHandling._(json),
-}; }
+};}
 
 static const WorkersAssetsConfigHtmlHandling autoTrailingSlash = WorkersAssetsConfigHtmlHandling._('auto-trailing-slash');
 
@@ -23,23 +23,23 @@ static const List<WorkersAssetsConfigHtmlHandling> values = [autoTrailingSlash, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersAssetsConfigHtmlHandling && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersAssetsConfigHtmlHandling($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersAssetsConfigHtmlHandling && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersAssetsConfigHtmlHandling($value)';}
+}
 /// Determines the response when a request does not match a static asset, and there is no Worker script.
 @immutable final class WorkersAssetsConfigNotFoundHandling {const WorkersAssetsConfigNotFoundHandling._(this.value);
 
-factory WorkersAssetsConfigNotFoundHandling.fromJson(String json) { return switch (json) {
+factory WorkersAssetsConfigNotFoundHandling.fromJson(String json) {return switch (json) {
   'none' => none,
   '404-page' => $404Page,
   'single-page-application' => singlePageApplication,
   _ => WorkersAssetsConfigNotFoundHandling._(json),
-}; }
+};}
 
 static const WorkersAssetsConfigNotFoundHandling none = WorkersAssetsConfigNotFoundHandling._('none');
 
@@ -51,25 +51,25 @@ static const List<WorkersAssetsConfigNotFoundHandling> values = [none, $404Page,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersAssetsConfigNotFoundHandling && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersAssetsConfigNotFoundHandling($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersAssetsConfigNotFoundHandling && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersAssetsConfigNotFoundHandling($value)';}
+}
 /// Configuration for assets within a Worker.
 @immutable final class WorkersAssetsConfig {const WorkersAssetsConfig({this.headers, this.redirects, this.htmlHandling, this.notFoundHandling, this.runWorkerFirst, this.serveDirectly, });
 
-factory WorkersAssetsConfig.fromJson(Map<String, dynamic> json) { return WorkersAssetsConfig(
+factory WorkersAssetsConfig.fromJson(Map<String, dynamic> json) {return WorkersAssetsConfig(
   headers: json['_headers'] as String?,
   redirects: json['_redirects'] as String?,
   htmlHandling: json['html_handling'] != null ? WorkersAssetsConfigHtmlHandling.fromJson(json['html_handling'] as String) : null,
   notFoundHandling: json['not_found_handling'] != null ? WorkersAssetsConfigNotFoundHandling.fromJson(json['not_found_handling'] as String) : null,
   runWorkerFirst: json['run_worker_first'] != null ? OneOf2.parse(json['run_worker_first'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => v as bool,) : null,
   serveDirectly: json['serve_directly'] as bool?,
-); }
+);}
 
 /// The contents of a _headers file (used to attach custom headers on asset responses).
 final String? headers;
@@ -88,31 +88,31 @@ final WorkersAssetsConfigRunWorkerFirst? runWorkerFirst;
 /// When true and the incoming request matches an asset, that will be served instead of invoking the Worker script. When false, requests will always invoke the Worker script.
 final bool? serveDirectly;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '_headers': ?headers,
   '_redirects': ?redirects,
   if (htmlHandling != null) 'html_handling': htmlHandling?.toJson(),
   if (notFoundHandling != null) 'not_found_handling': notFoundHandling?.toJson(),
   if (runWorkerFirst != null) 'run_worker_first': runWorkerFirst?.toJson(),
   'serve_directly': ?serveDirectly,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'_headers', '_redirects', 'html_handling', 'not_found_handling', 'run_worker_first', 'serve_directly'}.contains(key)); } 
-WorkersAssetsConfig copyWith({String? Function()? headers, String? Function()? redirects, WorkersAssetsConfigHtmlHandling? Function()? htmlHandling, WorkersAssetsConfigNotFoundHandling? Function()? notFoundHandling, WorkersAssetsConfigRunWorkerFirst? Function()? runWorkerFirst, bool? Function()? serveDirectly, }) { return WorkersAssetsConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'_headers', '_redirects', 'html_handling', 'not_found_handling', 'run_worker_first', 'serve_directly'}.contains(key));}
+WorkersAssetsConfig copyWith({String? Function()? headers, String? Function()? redirects, WorkersAssetsConfigHtmlHandling? Function()? htmlHandling, WorkersAssetsConfigNotFoundHandling? Function()? notFoundHandling, WorkersAssetsConfigRunWorkerFirst? Function()? runWorkerFirst, bool? Function()? serveDirectly, }) {return WorkersAssetsConfig(
   headers: headers != null ? headers() : this.headers,
   redirects: redirects != null ? redirects() : this.redirects,
   htmlHandling: htmlHandling != null ? htmlHandling() : this.htmlHandling,
   notFoundHandling: notFoundHandling != null ? notFoundHandling() : this.notFoundHandling,
   runWorkerFirst: runWorkerFirst != null ? runWorkerFirst() : this.runWorkerFirst,
   serveDirectly: serveDirectly != null ? serveDirectly() : this.serveDirectly,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersAssetsConfig &&
           headers == other.headers &&
           redirects == other.redirects &&
           htmlHandling == other.htmlHandling &&
           notFoundHandling == other.notFoundHandling &&
           runWorkerFirst == other.runWorkerFirst &&
-          serveDirectly == other.serveDirectly; } 
-@override int get hashCode { return Object.hash(headers, redirects, htmlHandling, notFoundHandling, runWorkerFirst, serveDirectly); } 
-@override String toString() { return 'WorkersAssetsConfig(headers: $headers, redirects: $redirects, htmlHandling: $htmlHandling, notFoundHandling: $notFoundHandling, runWorkerFirst: $runWorkerFirst, serveDirectly: $serveDirectly)'; } 
- }
+          serveDirectly == other.serveDirectly;}
+@override int get hashCode {return Object.hash(headers, redirects, htmlHandling, notFoundHandling, runWorkerFirst, serveDirectly);}
+@override String toString() {return 'WorkersAssetsConfig(headers: $headers, redirects: $redirects, htmlHandling: $htmlHandling, notFoundHandling: $notFoundHandling, runWorkerFirst: $runWorkerFirst, serveDirectly: $serveDirectly)';}
+}

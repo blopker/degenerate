@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'merchandise_not_as_described2_additional_documentation.dart';import 'merchandise_not_as_described2_explanation.dart';import 'merchandise_not_as_described2_received_at.dart';import 'merchandise_not_as_described2_return_description.dart';import 'merchandise_not_as_described2_returned_at.dart';@immutable final class MerchandiseNotAsDescribed2ReturnStatus {const MerchandiseNotAsDescribed2ReturnStatus._(this.value);
 
-factory MerchandiseNotAsDescribed2ReturnStatus.fromJson(String json) { return switch (json) {
+factory MerchandiseNotAsDescribed2ReturnStatus.fromJson(String json) {return switch (json) {
   '' => $empty,
   'merchant_rejected' => merchantRejected,
   'successful' => successful,
   _ => MerchandiseNotAsDescribed2ReturnStatus._(json),
-}; }
+};}
 
 static const MerchandiseNotAsDescribed2ReturnStatus $empty = MerchandiseNotAsDescribed2ReturnStatus._('');
 
@@ -19,24 +19,24 @@ static const List<MerchandiseNotAsDescribed2ReturnStatus> values = [$empty, merc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MerchandiseNotAsDescribed2ReturnStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MerchandiseNotAsDescribed2ReturnStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MerchandiseNotAsDescribed2ReturnStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MerchandiseNotAsDescribed2ReturnStatus($value)';}
+}
 @immutable final class MerchandiseNotAsDescribed2 {const MerchandiseNotAsDescribed2({this.additionalDocumentation, this.explanation, this.receivedAt, this.returnDescription, this.returnStatus, this.returnedAt, });
 
-factory MerchandiseNotAsDescribed2.fromJson(Map<String, dynamic> json) { return MerchandiseNotAsDescribed2(
+factory MerchandiseNotAsDescribed2.fromJson(Map<String, dynamic> json) {return MerchandiseNotAsDescribed2(
   additionalDocumentation: json['additional_documentation'] != null ? MerchandiseNotAsDescribed2AdditionalDocumentation.fromJson(json['additional_documentation']) : null,
   explanation: json['explanation'] != null ? MerchandiseNotAsDescribed2Explanation.fromJson(json['explanation']) : null,
   receivedAt: json['received_at'] != null ? MerchandiseNotAsDescribed2ReceivedAt.fromJson(json['received_at']) : null,
   returnDescription: json['return_description'] != null ? MerchandiseNotAsDescribed2ReturnDescription.fromJson(json['return_description']) : null,
   returnStatus: json['return_status'] != null ? MerchandiseNotAsDescribed2ReturnStatus.fromJson(json['return_status'] as String) : null,
   returnedAt: json['returned_at'] != null ? MerchandiseNotAsDescribed2ReturnedAt.fromJson(json['returned_at']) : null,
-); }
+);}
 
 final MerchandiseNotAsDescribed2AdditionalDocumentation? additionalDocumentation;
 
@@ -50,31 +50,31 @@ final MerchandiseNotAsDescribed2ReturnStatus? returnStatus;
 
 final MerchandiseNotAsDescribed2ReturnedAt? returnedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (additionalDocumentation != null) 'additional_documentation': additionalDocumentation?.toJson(),
   if (explanation != null) 'explanation': explanation?.toJson(),
   if (receivedAt != null) 'received_at': receivedAt?.toJson(),
   if (returnDescription != null) 'return_description': returnDescription?.toJson(),
   if (returnStatus != null) 'return_status': returnStatus?.toJson(),
   if (returnedAt != null) 'returned_at': returnedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'explanation', 'received_at', 'return_description', 'return_status', 'returned_at'}.contains(key)); } 
-MerchandiseNotAsDescribed2 copyWith({MerchandiseNotAsDescribed2AdditionalDocumentation? Function()? additionalDocumentation, MerchandiseNotAsDescribed2Explanation? Function()? explanation, MerchandiseNotAsDescribed2ReceivedAt? Function()? receivedAt, MerchandiseNotAsDescribed2ReturnDescription? Function()? returnDescription, MerchandiseNotAsDescribed2ReturnStatus? Function()? returnStatus, MerchandiseNotAsDescribed2ReturnedAt? Function()? returnedAt, }) { return MerchandiseNotAsDescribed2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'additional_documentation', 'explanation', 'received_at', 'return_description', 'return_status', 'returned_at'}.contains(key));}
+MerchandiseNotAsDescribed2 copyWith({MerchandiseNotAsDescribed2AdditionalDocumentation? Function()? additionalDocumentation, MerchandiseNotAsDescribed2Explanation? Function()? explanation, MerchandiseNotAsDescribed2ReceivedAt? Function()? receivedAt, MerchandiseNotAsDescribed2ReturnDescription? Function()? returnDescription, MerchandiseNotAsDescribed2ReturnStatus? Function()? returnStatus, MerchandiseNotAsDescribed2ReturnedAt? Function()? returnedAt, }) {return MerchandiseNotAsDescribed2(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   explanation: explanation != null ? explanation() : this.explanation,
   receivedAt: receivedAt != null ? receivedAt() : this.receivedAt,
   returnDescription: returnDescription != null ? returnDescription() : this.returnDescription,
   returnStatus: returnStatus != null ? returnStatus() : this.returnStatus,
   returnedAt: returnedAt != null ? returnedAt() : this.returnedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MerchandiseNotAsDescribed2 &&
           additionalDocumentation == other.additionalDocumentation &&
           explanation == other.explanation &&
           receivedAt == other.receivedAt &&
           returnDescription == other.returnDescription &&
           returnStatus == other.returnStatus &&
-          returnedAt == other.returnedAt; } 
-@override int get hashCode { return Object.hash(additionalDocumentation, explanation, receivedAt, returnDescription, returnStatus, returnedAt); } 
-@override String toString() { return 'MerchandiseNotAsDescribed2(additionalDocumentation: $additionalDocumentation, explanation: $explanation, receivedAt: $receivedAt, returnDescription: $returnDescription, returnStatus: $returnStatus, returnedAt: $returnedAt)'; } 
- }
+          returnedAt == other.returnedAt;}
+@override int get hashCode {return Object.hash(additionalDocumentation, explanation, receivedAt, returnDescription, returnStatus, returnedAt);}
+@override String toString() {return 'MerchandiseNotAsDescribed2(additionalDocumentation: $additionalDocumentation, explanation: $explanation, receivedAt: $receivedAt, returnDescription: $returnDescription, returnStatus: $returnStatus, returnedAt: $returnedAt)';}
+}

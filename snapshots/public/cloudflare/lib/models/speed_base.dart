@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current value of the zone setting.
 @immutable final class SpeedBaseValue {const SpeedBaseValue._(this.value);
 
-factory SpeedBaseValue.fromJson(String json) { return switch (json) {
+factory SpeedBaseValue.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   _ => SpeedBaseValue._(json),
-}; }
+};}
 
 static const SpeedBaseValue $on = SpeedBaseValue._('on');
 
@@ -17,22 +17,22 @@ static const List<SpeedBaseValue> values = [$on, off];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpeedBaseValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpeedBaseValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SpeedBaseValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SpeedBaseValue($value)';}
+}
 @immutable final class SpeedBase {const SpeedBase({this.editable, this.id, this.modifiedOn = const Omittable.absent(), this.value, });
 
-factory SpeedBase.fromJson(Map<String, dynamic> json) { return SpeedBase(
+factory SpeedBase.fromJson(Map<String, dynamic> json) {return SpeedBase(
   editable: json['editable'] as bool?,
   id: json['id'] as String?,
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: json['value'] != null ? SpeedBaseValue.fromJson(json['value'] as String) : null,
-); }
+);}
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 final bool? editable;
@@ -47,26 +47,26 @@ final Omittable<DateTime?> modifiedOn;
 final SpeedBaseValue? value;
 
 /// The value with the schema default applied when absent.
-bool get editableOrDefault { return editable ?? true; } 
-Map<String, dynamic> toJson() { return {
+bool get editableOrDefault {return editable ?? true;}
+Map<String, dynamic> toJson() {return {
   'editable': ?editable,
   'id': ?id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   if (value != null) 'value': value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'editable', 'id', 'modified_on', 'value'}.contains(key)); } 
-SpeedBase copyWith({bool? Function()? editable, String? Function()? id, Omittable<DateTime?>? modifiedOn, SpeedBaseValue? Function()? value, }) { return SpeedBase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'editable', 'id', 'modified_on', 'value'}.contains(key));}
+SpeedBase copyWith({bool? Function()? editable, String? Function()? id, Omittable<DateTime?>? modifiedOn, SpeedBaseValue? Function()? value, }) {return SpeedBase(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SpeedBase &&
           editable == other.editable &&
           id == other.id &&
           modifiedOn == other.modifiedOn &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(editable, id, modifiedOn, value); } 
-@override String toString() { return 'SpeedBase(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(editable, id, modifiedOn, value);}
+@override String toString() {return 'SpeedBase(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)';}
+}

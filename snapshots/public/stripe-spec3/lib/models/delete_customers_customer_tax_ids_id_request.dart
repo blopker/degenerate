@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteCustomersCustomerTaxIdsIdRequest {const DeleteCustomersCustomerTaxIdsIdRequest();
 
-factory DeleteCustomersCustomerTaxIdsIdRequest.fromJson(Map<String, dynamic> _) { return const DeleteCustomersCustomerTaxIdsIdRequest(); }
+factory DeleteCustomersCustomerTaxIdsIdRequest.fromJson(Map<String, dynamic> _) {return const DeleteCustomersCustomerTaxIdsIdRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-DeleteCustomersCustomerTaxIdsIdRequest copyWith() { return const DeleteCustomersCustomerTaxIdsIdRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+DeleteCustomersCustomerTaxIdsIdRequest copyWith() {return const DeleteCustomersCustomerTaxIdsIdRequest(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is DeleteCustomersCustomerTaxIdsIdRequest; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'DeleteCustomersCustomerTaxIdsIdRequest()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is DeleteCustomersCustomerTaxIdsIdRequest;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'DeleteCustomersCustomerTaxIdsIdRequest()';}
+}

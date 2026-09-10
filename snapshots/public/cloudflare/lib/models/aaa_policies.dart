@@ -8,7 +8,7 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class AaaPolicies {const AaaPolicies({this.alertInterval, this.alertType, this.created, this.description, this.enabled, this.filters, this.id, this.mechanisms, this.modified, this.name, });
 
-factory AaaPolicies.fromJson(Map<String, dynamic> json) { return AaaPolicies(
+factory AaaPolicies.fromJson(Map<String, dynamic> json) {return AaaPolicies(
   alertInterval: json['alert_interval'] != null ? AaaAlertInterval.fromJson(json['alert_interval'] as String) : null,
   alertType: json['alert_type'] != null ? AaaAlertType.fromJson(json['alert_type'] as String) : null,
   created: json['created'] != null ? AaaTimestamp.fromJson(json['created'] as String) : null,
@@ -19,7 +19,7 @@ factory AaaPolicies.fromJson(Map<String, dynamic> json) { return AaaPolicies(
   mechanisms: json['mechanisms'] != null ? AaaMechanisms.fromJson(json['mechanisms'] as Map<String, dynamic>) : null,
   modified: json['modified'] != null ? AaaTimestamp.fromJson(json['modified'] as String) : null,
   name: json['name'] != null ? AaaSchemasName.fromJson(json['name'] as String) : null,
-); }
+);}
 
 /// Optional specification of how often to re-alert from the same incident, not support on all alert types.
 final AaaAlertInterval? alertInterval;
@@ -44,7 +44,7 @@ final AaaTimestamp? modified;
 
 final AaaSchemasName? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (alertInterval != null) 'alert_interval': alertInterval?.toJson(),
   if (alertType != null) 'alert_type': alertType?.toJson(),
   if (created != null) 'created': created?.toJson(),
@@ -55,9 +55,9 @@ Map<String, dynamic> toJson() { return {
   if (mechanisms != null) 'mechanisms': mechanisms?.toJson(),
   if (modified != null) 'modified': modified?.toJson(),
   if (name != null) 'name': name?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'alert_interval', 'alert_type', 'created', 'description', 'enabled', 'filters', 'id', 'mechanisms', 'modified', 'name'}.contains(key)); } 
-AaaPolicies copyWith({AaaAlertInterval? Function()? alertInterval, AaaAlertType? Function()? alertType, AaaTimestamp? Function()? created, AaaSchemasDescription? Function()? description, AaaEnabled? Function()? enabled, AaaFilters? Function()? filters, AaaPolicyId? Function()? id, AaaMechanisms? Function()? mechanisms, AaaTimestamp? Function()? modified, AaaSchemasName? Function()? name, }) { return AaaPolicies(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'alert_interval', 'alert_type', 'created', 'description', 'enabled', 'filters', 'id', 'mechanisms', 'modified', 'name'}.contains(key));}
+AaaPolicies copyWith({AaaAlertInterval? Function()? alertInterval, AaaAlertType? Function()? alertType, AaaTimestamp? Function()? created, AaaSchemasDescription? Function()? description, AaaEnabled? Function()? enabled, AaaFilters? Function()? filters, AaaPolicyId? Function()? id, AaaMechanisms? Function()? mechanisms, AaaTimestamp? Function()? modified, AaaSchemasName? Function()? name, }) {return AaaPolicies(
   alertInterval: alertInterval != null ? alertInterval() : this.alertInterval,
   alertType: alertType != null ? alertType() : this.alertType,
   created: created != null ? created() : this.created,
@@ -68,8 +68,8 @@ AaaPolicies copyWith({AaaAlertInterval? Function()? alertInterval, AaaAlertType?
   mechanisms: mechanisms != null ? mechanisms() : this.mechanisms,
   modified: modified != null ? modified() : this.modified,
   name: name != null ? name() : this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AaaPolicies &&
           alertInterval == other.alertInterval &&
           alertType == other.alertType &&
@@ -80,7 +80,7 @@ AaaPolicies copyWith({AaaAlertInterval? Function()? alertInterval, AaaAlertType?
           id == other.id &&
           mechanisms == other.mechanisms &&
           modified == other.modified &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(alertInterval, alertType, created, description, enabled, filters, id, mechanisms, modified, name); } 
-@override String toString() { return 'AaaPolicies(alertInterval: $alertInterval, alertType: $alertType, created: $created, description: $description, enabled: $enabled, filters: $filters, id: $id, mechanisms: $mechanisms, modified: $modified, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(alertInterval, alertType, created, description, enabled, filters, id, mechanisms, modified, name);}
+@override String toString() {return 'AaaPolicies(alertInterval: $alertInterval, alertType: $alertType, created: $created, description: $description, enabled: $enabled, filters: $filters, id: $id, mechanisms: $mechanisms, modified: $modified, name: $name)';}
+}

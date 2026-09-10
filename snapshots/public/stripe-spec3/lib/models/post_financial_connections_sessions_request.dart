@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_financial_connections_sessions_request_account_holder.dart';import 'post_financial_connections_sessions_request_filters.dart';@immutable final class PostFinancialConnectionsSessionsRequestPermissions {const PostFinancialConnectionsSessionsRequestPermissions._(this.value);
 
-factory PostFinancialConnectionsSessionsRequestPermissions.fromJson(String json) { return switch (json) {
+factory PostFinancialConnectionsSessionsRequestPermissions.fromJson(String json) {return switch (json) {
   'balances' => balances,
   'ownership' => ownership,
   'payment_method' => paymentMethod,
   'transactions' => transactions,
   _ => PostFinancialConnectionsSessionsRequestPermissions._(json),
-}; }
+};}
 
 static const PostFinancialConnectionsSessionsRequestPermissions balances = PostFinancialConnectionsSessionsRequestPermissions._('balances');
 
@@ -22,22 +22,22 @@ static const List<PostFinancialConnectionsSessionsRequestPermissions> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostFinancialConnectionsSessionsRequestPermissions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostFinancialConnectionsSessionsRequestPermissions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostFinancialConnectionsSessionsRequestPermissions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostFinancialConnectionsSessionsRequestPermissions($value)';}
+}
 @immutable final class PostFinancialConnectionsSessionsRequestPrefetch {const PostFinancialConnectionsSessionsRequestPrefetch._(this.value);
 
-factory PostFinancialConnectionsSessionsRequestPrefetch.fromJson(String json) { return switch (json) {
+factory PostFinancialConnectionsSessionsRequestPrefetch.fromJson(String json) {return switch (json) {
   'balances' => balances,
   'ownership' => ownership,
   'transactions' => transactions,
   _ => PostFinancialConnectionsSessionsRequestPrefetch._(json),
-}; }
+};}
 
 static const PostFinancialConnectionsSessionsRequestPrefetch balances = PostFinancialConnectionsSessionsRequestPrefetch._('balances');
 
@@ -49,24 +49,24 @@ static const List<PostFinancialConnectionsSessionsRequestPrefetch> values = [bal
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostFinancialConnectionsSessionsRequestPrefetch && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostFinancialConnectionsSessionsRequestPrefetch($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostFinancialConnectionsSessionsRequestPrefetch && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostFinancialConnectionsSessionsRequestPrefetch($value)';}
+}
 @immutable final class PostFinancialConnectionsSessionsRequest {const PostFinancialConnectionsSessionsRequest({required this.accountHolder, required this.permissions, this.expand, this.filters, this.prefetch, this.returnUrl, });
 
-factory PostFinancialConnectionsSessionsRequest.fromJson(Map<String, dynamic> json) { return PostFinancialConnectionsSessionsRequest(
+factory PostFinancialConnectionsSessionsRequest.fromJson(Map<String, dynamic> json) {return PostFinancialConnectionsSessionsRequest(
   accountHolder: PostFinancialConnectionsSessionsRequestAccountHolder.fromJson(json['account_holder'] as Map<String, dynamic>),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   filters: json['filters'] != null ? PostFinancialConnectionsSessionsRequestFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
   permissions: (json['permissions'] as List<dynamic>).map((e) => PostFinancialConnectionsSessionsRequestPermissions.fromJson(e as String)).toList(),
   prefetch: (json['prefetch'] as List<dynamic>?)?.map((e) => PostFinancialConnectionsSessionsRequestPrefetch.fromJson(e as String)).toList(),
   returnUrl: json['return_url'] as String?,
-); }
+);}
 
 /// The account holder to link accounts for.
 final PostFinancialConnectionsSessionsRequestAccountHolder accountHolder;
@@ -88,32 +88,32 @@ final List<PostFinancialConnectionsSessionsRequestPrefetch>? prefetch;
 /// For webview integrations only. Upon completing OAuth login in the native browser, the user will be redirected to this URL to return to your app.
 final String? returnUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_holder': accountHolder.toJson(),
   'expand': ?expand,
   if (filters != null) 'filters': filters?.toJson(),
   'permissions': permissions.map((e) => e.toJson()).toList(),
   if (prefetch != null) 'prefetch': prefetch?.map((e) => e.toJson()).toList(),
   'return_url': ?returnUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_holder') &&
-      json.containsKey('permissions'); } 
-PostFinancialConnectionsSessionsRequest copyWith({PostFinancialConnectionsSessionsRequestAccountHolder? accountHolder, List<String>? Function()? expand, PostFinancialConnectionsSessionsRequestFilters? Function()? filters, List<PostFinancialConnectionsSessionsRequestPermissions>? permissions, List<PostFinancialConnectionsSessionsRequestPrefetch>? Function()? prefetch, String? Function()? returnUrl, }) { return PostFinancialConnectionsSessionsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_holder') &&
+      json.containsKey('permissions');}
+PostFinancialConnectionsSessionsRequest copyWith({PostFinancialConnectionsSessionsRequestAccountHolder? accountHolder, List<String>? Function()? expand, PostFinancialConnectionsSessionsRequestFilters? Function()? filters, List<PostFinancialConnectionsSessionsRequestPermissions>? permissions, List<PostFinancialConnectionsSessionsRequestPrefetch>? Function()? prefetch, String? Function()? returnUrl, }) {return PostFinancialConnectionsSessionsRequest(
   accountHolder: accountHolder ?? this.accountHolder,
   expand: expand != null ? expand() : this.expand,
   filters: filters != null ? filters() : this.filters,
   permissions: permissions ?? this.permissions,
   prefetch: prefetch != null ? prefetch() : this.prefetch,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostFinancialConnectionsSessionsRequest &&
           accountHolder == other.accountHolder &&
           listEquals(expand, other.expand) &&
           filters == other.filters &&
           listEquals(permissions, other.permissions) &&
           listEquals(prefetch, other.prefetch) &&
-          returnUrl == other.returnUrl; } 
-@override int get hashCode { return Object.hash(accountHolder, Object.hashAll(expand ?? const []), filters, Object.hashAll(permissions), Object.hashAll(prefetch ?? const []), returnUrl); } 
-@override String toString() { return 'PostFinancialConnectionsSessionsRequest(accountHolder: $accountHolder, expand: $expand, filters: $filters, permissions: $permissions, prefetch: $prefetch, returnUrl: $returnUrl)'; } 
- }
+          returnUrl == other.returnUrl;}
+@override int get hashCode {return Object.hash(accountHolder, Object.hashAll(expand ?? const []), filters, Object.hashAll(permissions), Object.hashAll(prefetch ?? const []), returnUrl);}
+@override String toString() {return 'PostFinancialConnectionsSessionsRequest(accountHolder: $accountHolder, expand: $expand, filters: $filters, permissions: $permissions, prefetch: $prefetch, returnUrl: $returnUrl)';}
+}

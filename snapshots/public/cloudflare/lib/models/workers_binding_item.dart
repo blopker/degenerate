@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_bind
 sealed class WorkersBindingItem {const WorkersBindingItem();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
-factory WorkersBindingItem.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+factory WorkersBindingItem.fromJson(Map<String, dynamic> json) {return switch (json['type']) {
   'ai' => WorkersBindingItemAi.fromJson(json),
   'analytics_engine' => WorkersBindingItemAnalyticsEngine.fromJson(json),
   'assets' => WorkersBindingItemAssets.fromJson(json),
@@ -36,414 +36,414 @@ factory WorkersBindingItem.fromJson(Map<String, dynamic> json) { return switch (
   'wasm_module' => WorkersBindingItemWasmModule.fromJson(json),
   'workflow' => WorkersBindingItemWorkflow.fromJson(json),
   _ => WorkersBindingItem$Unknown(json),
-}; }
+};}
 
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WorkersBindingItem$Unknown; } 
- }
+bool get isUnknown {return this is WorkersBindingItem$Unknown;}
+}
 @immutable final class WorkersBindingItemAi extends WorkersBindingItem {const WorkersBindingItemAi(this.workersBindingKindAi);
 
-factory WorkersBindingItemAi.fromJson(Map<String, dynamic> json) { return WorkersBindingItemAi(WorkersBindingKindAi.fromJson(json)); }
+factory WorkersBindingItemAi.fromJson(Map<String, dynamic> json) {return WorkersBindingItemAi(WorkersBindingKindAi.fromJson(json));}
 
 final WorkersBindingKindAi workersBindingKindAi;
 
-@override String get type { return 'ai'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindAi.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemAi && workersBindingKindAi == other.workersBindingKindAi; } 
-@override int get hashCode { return workersBindingKindAi.hashCode; } 
-@override String toString() { return 'WorkersBindingItemAi(workersBindingKindAi: $workersBindingKindAi)'; } 
- }
+@override String get type {return 'ai';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindAi.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemAi && workersBindingKindAi == other.workersBindingKindAi;}
+@override int get hashCode {return workersBindingKindAi.hashCode;}
+@override String toString() {return 'WorkersBindingItemAi(workersBindingKindAi: $workersBindingKindAi)';}
+}
 @immutable final class WorkersBindingItemAnalyticsEngine extends WorkersBindingItem {const WorkersBindingItemAnalyticsEngine(this.workersBindingKindAnalyticsEngine);
 
-factory WorkersBindingItemAnalyticsEngine.fromJson(Map<String, dynamic> json) { return WorkersBindingItemAnalyticsEngine(WorkersBindingKindAnalyticsEngine.fromJson(json)); }
+factory WorkersBindingItemAnalyticsEngine.fromJson(Map<String, dynamic> json) {return WorkersBindingItemAnalyticsEngine(WorkersBindingKindAnalyticsEngine.fromJson(json));}
 
 final WorkersBindingKindAnalyticsEngine workersBindingKindAnalyticsEngine;
 
-@override String get type { return 'analytics_engine'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindAnalyticsEngine.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemAnalyticsEngine && workersBindingKindAnalyticsEngine == other.workersBindingKindAnalyticsEngine; } 
-@override int get hashCode { return workersBindingKindAnalyticsEngine.hashCode; } 
-@override String toString() { return 'WorkersBindingItemAnalyticsEngine(workersBindingKindAnalyticsEngine: $workersBindingKindAnalyticsEngine)'; } 
- }
+@override String get type {return 'analytics_engine';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindAnalyticsEngine.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemAnalyticsEngine && workersBindingKindAnalyticsEngine == other.workersBindingKindAnalyticsEngine;}
+@override int get hashCode {return workersBindingKindAnalyticsEngine.hashCode;}
+@override String toString() {return 'WorkersBindingItemAnalyticsEngine(workersBindingKindAnalyticsEngine: $workersBindingKindAnalyticsEngine)';}
+}
 @immutable final class WorkersBindingItemAssets extends WorkersBindingItem {const WorkersBindingItemAssets(this.workersBindingKindAssets);
 
-factory WorkersBindingItemAssets.fromJson(Map<String, dynamic> json) { return WorkersBindingItemAssets(WorkersBindingKindAssets.fromJson(json)); }
+factory WorkersBindingItemAssets.fromJson(Map<String, dynamic> json) {return WorkersBindingItemAssets(WorkersBindingKindAssets.fromJson(json));}
 
 final WorkersBindingKindAssets workersBindingKindAssets;
 
-@override String get type { return 'assets'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindAssets.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemAssets && workersBindingKindAssets == other.workersBindingKindAssets; } 
-@override int get hashCode { return workersBindingKindAssets.hashCode; } 
-@override String toString() { return 'WorkersBindingItemAssets(workersBindingKindAssets: $workersBindingKindAssets)'; } 
- }
+@override String get type {return 'assets';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindAssets.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemAssets && workersBindingKindAssets == other.workersBindingKindAssets;}
+@override int get hashCode {return workersBindingKindAssets.hashCode;}
+@override String toString() {return 'WorkersBindingItemAssets(workersBindingKindAssets: $workersBindingKindAssets)';}
+}
 @immutable final class WorkersBindingItemBrowser extends WorkersBindingItem {const WorkersBindingItemBrowser(this.workersBindingKindBrowser);
 
-factory WorkersBindingItemBrowser.fromJson(Map<String, dynamic> json) { return WorkersBindingItemBrowser(WorkersBindingKindBrowser.fromJson(json)); }
+factory WorkersBindingItemBrowser.fromJson(Map<String, dynamic> json) {return WorkersBindingItemBrowser(WorkersBindingKindBrowser.fromJson(json));}
 
 final WorkersBindingKindBrowser workersBindingKindBrowser;
 
-@override String get type { return 'browser'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindBrowser.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemBrowser && workersBindingKindBrowser == other.workersBindingKindBrowser; } 
-@override int get hashCode { return workersBindingKindBrowser.hashCode; } 
-@override String toString() { return 'WorkersBindingItemBrowser(workersBindingKindBrowser: $workersBindingKindBrowser)'; } 
- }
+@override String get type {return 'browser';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindBrowser.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemBrowser && workersBindingKindBrowser == other.workersBindingKindBrowser;}
+@override int get hashCode {return workersBindingKindBrowser.hashCode;}
+@override String toString() {return 'WorkersBindingItemBrowser(workersBindingKindBrowser: $workersBindingKindBrowser)';}
+}
 @immutable final class WorkersBindingItemD1 extends WorkersBindingItem {const WorkersBindingItemD1(this.workersBindingKindD1);
 
-factory WorkersBindingItemD1.fromJson(Map<String, dynamic> json) { return WorkersBindingItemD1(WorkersBindingKindD1.fromJson(json)); }
+factory WorkersBindingItemD1.fromJson(Map<String, dynamic> json) {return WorkersBindingItemD1(WorkersBindingKindD1.fromJson(json));}
 
 final WorkersBindingKindD1 workersBindingKindD1;
 
-@override String get type { return 'd1'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindD1.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemD1 && workersBindingKindD1 == other.workersBindingKindD1; } 
-@override int get hashCode { return workersBindingKindD1.hashCode; } 
-@override String toString() { return 'WorkersBindingItemD1(workersBindingKindD1: $workersBindingKindD1)'; } 
- }
+@override String get type {return 'd1';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindD1.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemD1 && workersBindingKindD1 == other.workersBindingKindD1;}
+@override int get hashCode {return workersBindingKindD1.hashCode;}
+@override String toString() {return 'WorkersBindingItemD1(workersBindingKindD1: $workersBindingKindD1)';}
+}
 @immutable final class WorkersBindingItemDataBlob extends WorkersBindingItem {const WorkersBindingItemDataBlob(this.workersBindingKindDataBlob);
 
-factory WorkersBindingItemDataBlob.fromJson(Map<String, dynamic> json) { return WorkersBindingItemDataBlob(WorkersBindingKindDataBlob.fromJson(json)); }
+factory WorkersBindingItemDataBlob.fromJson(Map<String, dynamic> json) {return WorkersBindingItemDataBlob(WorkersBindingKindDataBlob.fromJson(json));}
 
 final WorkersBindingKindDataBlob workersBindingKindDataBlob;
 
-@override String get type { return 'data_blob'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindDataBlob.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemDataBlob && workersBindingKindDataBlob == other.workersBindingKindDataBlob; } 
-@override int get hashCode { return workersBindingKindDataBlob.hashCode; } 
-@override String toString() { return 'WorkersBindingItemDataBlob(workersBindingKindDataBlob: $workersBindingKindDataBlob)'; } 
- }
+@override String get type {return 'data_blob';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindDataBlob.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemDataBlob && workersBindingKindDataBlob == other.workersBindingKindDataBlob;}
+@override int get hashCode {return workersBindingKindDataBlob.hashCode;}
+@override String toString() {return 'WorkersBindingItemDataBlob(workersBindingKindDataBlob: $workersBindingKindDataBlob)';}
+}
 @immutable final class WorkersBindingItemDispatchNamespace extends WorkersBindingItem {const WorkersBindingItemDispatchNamespace(this.workersBindingKindDispatchNamespace);
 
-factory WorkersBindingItemDispatchNamespace.fromJson(Map<String, dynamic> json) { return WorkersBindingItemDispatchNamespace(WorkersBindingKindDispatchNamespace.fromJson(json)); }
+factory WorkersBindingItemDispatchNamespace.fromJson(Map<String, dynamic> json) {return WorkersBindingItemDispatchNamespace(WorkersBindingKindDispatchNamespace.fromJson(json));}
 
 final WorkersBindingKindDispatchNamespace workersBindingKindDispatchNamespace;
 
-@override String get type { return 'dispatch_namespace'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindDispatchNamespace.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemDispatchNamespace && workersBindingKindDispatchNamespace == other.workersBindingKindDispatchNamespace; } 
-@override int get hashCode { return workersBindingKindDispatchNamespace.hashCode; } 
-@override String toString() { return 'WorkersBindingItemDispatchNamespace(workersBindingKindDispatchNamespace: $workersBindingKindDispatchNamespace)'; } 
- }
+@override String get type {return 'dispatch_namespace';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindDispatchNamespace.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemDispatchNamespace && workersBindingKindDispatchNamespace == other.workersBindingKindDispatchNamespace;}
+@override int get hashCode {return workersBindingKindDispatchNamespace.hashCode;}
+@override String toString() {return 'WorkersBindingItemDispatchNamespace(workersBindingKindDispatchNamespace: $workersBindingKindDispatchNamespace)';}
+}
 @immutable final class WorkersBindingItemDurableObjectNamespace extends WorkersBindingItem {const WorkersBindingItemDurableObjectNamespace(this.workersBindingKindDurableObjectNamespace);
 
-factory WorkersBindingItemDurableObjectNamespace.fromJson(Map<String, dynamic> json) { return WorkersBindingItemDurableObjectNamespace(WorkersBindingKindDurableObjectNamespace.fromJson(json)); }
+factory WorkersBindingItemDurableObjectNamespace.fromJson(Map<String, dynamic> json) {return WorkersBindingItemDurableObjectNamespace(WorkersBindingKindDurableObjectNamespace.fromJson(json));}
 
 final WorkersBindingKindDurableObjectNamespace workersBindingKindDurableObjectNamespace;
 
-@override String get type { return 'durable_object_namespace'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindDurableObjectNamespace.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemDurableObjectNamespace && workersBindingKindDurableObjectNamespace == other.workersBindingKindDurableObjectNamespace; } 
-@override int get hashCode { return workersBindingKindDurableObjectNamespace.hashCode; } 
-@override String toString() { return 'WorkersBindingItemDurableObjectNamespace(workersBindingKindDurableObjectNamespace: $workersBindingKindDurableObjectNamespace)'; } 
- }
+@override String get type {return 'durable_object_namespace';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindDurableObjectNamespace.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemDurableObjectNamespace && workersBindingKindDurableObjectNamespace == other.workersBindingKindDurableObjectNamespace;}
+@override int get hashCode {return workersBindingKindDurableObjectNamespace.hashCode;}
+@override String toString() {return 'WorkersBindingItemDurableObjectNamespace(workersBindingKindDurableObjectNamespace: $workersBindingKindDurableObjectNamespace)';}
+}
 @immutable final class WorkersBindingItemHyperdrive extends WorkersBindingItem {const WorkersBindingItemHyperdrive(this.workersBindingKindHyperdrive);
 
-factory WorkersBindingItemHyperdrive.fromJson(Map<String, dynamic> json) { return WorkersBindingItemHyperdrive(WorkersBindingKindHyperdrive.fromJson(json)); }
+factory WorkersBindingItemHyperdrive.fromJson(Map<String, dynamic> json) {return WorkersBindingItemHyperdrive(WorkersBindingKindHyperdrive.fromJson(json));}
 
 final WorkersBindingKindHyperdrive workersBindingKindHyperdrive;
 
-@override String get type { return 'hyperdrive'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindHyperdrive.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemHyperdrive && workersBindingKindHyperdrive == other.workersBindingKindHyperdrive; } 
-@override int get hashCode { return workersBindingKindHyperdrive.hashCode; } 
-@override String toString() { return 'WorkersBindingItemHyperdrive(workersBindingKindHyperdrive: $workersBindingKindHyperdrive)'; } 
- }
+@override String get type {return 'hyperdrive';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindHyperdrive.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemHyperdrive && workersBindingKindHyperdrive == other.workersBindingKindHyperdrive;}
+@override int get hashCode {return workersBindingKindHyperdrive.hashCode;}
+@override String toString() {return 'WorkersBindingItemHyperdrive(workersBindingKindHyperdrive: $workersBindingKindHyperdrive)';}
+}
 @immutable final class WorkersBindingItemImages extends WorkersBindingItem {const WorkersBindingItemImages(this.workersBindingKindImages);
 
-factory WorkersBindingItemImages.fromJson(Map<String, dynamic> json) { return WorkersBindingItemImages(WorkersBindingKindImages.fromJson(json)); }
+factory WorkersBindingItemImages.fromJson(Map<String, dynamic> json) {return WorkersBindingItemImages(WorkersBindingKindImages.fromJson(json));}
 
 final WorkersBindingKindImages workersBindingKindImages;
 
-@override String get type { return 'images'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindImages.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemImages && workersBindingKindImages == other.workersBindingKindImages; } 
-@override int get hashCode { return workersBindingKindImages.hashCode; } 
-@override String toString() { return 'WorkersBindingItemImages(workersBindingKindImages: $workersBindingKindImages)'; } 
- }
+@override String get type {return 'images';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindImages.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemImages && workersBindingKindImages == other.workersBindingKindImages;}
+@override int get hashCode {return workersBindingKindImages.hashCode;}
+@override String toString() {return 'WorkersBindingItemImages(workersBindingKindImages: $workersBindingKindImages)';}
+}
 @immutable final class WorkersBindingItemInherit extends WorkersBindingItem {const WorkersBindingItemInherit(this.workersBindingKindInherit);
 
-factory WorkersBindingItemInherit.fromJson(Map<String, dynamic> json) { return WorkersBindingItemInherit(WorkersBindingKindInherit.fromJson(json)); }
+factory WorkersBindingItemInherit.fromJson(Map<String, dynamic> json) {return WorkersBindingItemInherit(WorkersBindingKindInherit.fromJson(json));}
 
 final WorkersBindingKindInherit workersBindingKindInherit;
 
-@override String get type { return 'inherit'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindInherit.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemInherit && workersBindingKindInherit == other.workersBindingKindInherit; } 
-@override int get hashCode { return workersBindingKindInherit.hashCode; } 
-@override String toString() { return 'WorkersBindingItemInherit(workersBindingKindInherit: $workersBindingKindInherit)'; } 
- }
+@override String get type {return 'inherit';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindInherit.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemInherit && workersBindingKindInherit == other.workersBindingKindInherit;}
+@override int get hashCode {return workersBindingKindInherit.hashCode;}
+@override String toString() {return 'WorkersBindingItemInherit(workersBindingKindInherit: $workersBindingKindInherit)';}
+}
 @immutable final class WorkersBindingItemJson extends WorkersBindingItem {const WorkersBindingItemJson(this.workersBindingKindJson);
 
-factory WorkersBindingItemJson.fromJson(Map<String, dynamic> json) { return WorkersBindingItemJson(WorkersBindingKindJson.fromJson(json)); }
+factory WorkersBindingItemJson.fromJson(Map<String, dynamic> json) {return WorkersBindingItemJson(WorkersBindingKindJson.fromJson(json));}
 
 final WorkersBindingKindJson workersBindingKindJson;
 
-@override String get type { return 'json'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindJson.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemJson && workersBindingKindJson == other.workersBindingKindJson; } 
-@override int get hashCode { return workersBindingKindJson.hashCode; } 
-@override String toString() { return 'WorkersBindingItemJson(workersBindingKindJson: $workersBindingKindJson)'; } 
- }
+@override String get type {return 'json';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindJson.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemJson && workersBindingKindJson == other.workersBindingKindJson;}
+@override int get hashCode {return workersBindingKindJson.hashCode;}
+@override String toString() {return 'WorkersBindingItemJson(workersBindingKindJson: $workersBindingKindJson)';}
+}
 @immutable final class WorkersBindingItemKvNamespace extends WorkersBindingItem {const WorkersBindingItemKvNamespace(this.workersBindingKindKvNamespace);
 
-factory WorkersBindingItemKvNamespace.fromJson(Map<String, dynamic> json) { return WorkersBindingItemKvNamespace(WorkersBindingKindKvNamespace.fromJson(json)); }
+factory WorkersBindingItemKvNamespace.fromJson(Map<String, dynamic> json) {return WorkersBindingItemKvNamespace(WorkersBindingKindKvNamespace.fromJson(json));}
 
 final WorkersBindingKindKvNamespace workersBindingKindKvNamespace;
 
-@override String get type { return 'kv_namespace'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindKvNamespace.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemKvNamespace && workersBindingKindKvNamespace == other.workersBindingKindKvNamespace; } 
-@override int get hashCode { return workersBindingKindKvNamespace.hashCode; } 
-@override String toString() { return 'WorkersBindingItemKvNamespace(workersBindingKindKvNamespace: $workersBindingKindKvNamespace)'; } 
- }
+@override String get type {return 'kv_namespace';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindKvNamespace.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemKvNamespace && workersBindingKindKvNamespace == other.workersBindingKindKvNamespace;}
+@override int get hashCode {return workersBindingKindKvNamespace.hashCode;}
+@override String toString() {return 'WorkersBindingItemKvNamespace(workersBindingKindKvNamespace: $workersBindingKindKvNamespace)';}
+}
 @immutable final class WorkersBindingItemMtlsCertificate extends WorkersBindingItem {const WorkersBindingItemMtlsCertificate(this.workersBindingKindMtlsCertificate);
 
-factory WorkersBindingItemMtlsCertificate.fromJson(Map<String, dynamic> json) { return WorkersBindingItemMtlsCertificate(WorkersBindingKindMtlsCertificate.fromJson(json)); }
+factory WorkersBindingItemMtlsCertificate.fromJson(Map<String, dynamic> json) {return WorkersBindingItemMtlsCertificate(WorkersBindingKindMtlsCertificate.fromJson(json));}
 
 final WorkersBindingKindMtlsCertificate workersBindingKindMtlsCertificate;
 
-@override String get type { return 'mtls_certificate'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindMtlsCertificate.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemMtlsCertificate && workersBindingKindMtlsCertificate == other.workersBindingKindMtlsCertificate; } 
-@override int get hashCode { return workersBindingKindMtlsCertificate.hashCode; } 
-@override String toString() { return 'WorkersBindingItemMtlsCertificate(workersBindingKindMtlsCertificate: $workersBindingKindMtlsCertificate)'; } 
- }
+@override String get type {return 'mtls_certificate';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindMtlsCertificate.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemMtlsCertificate && workersBindingKindMtlsCertificate == other.workersBindingKindMtlsCertificate;}
+@override int get hashCode {return workersBindingKindMtlsCertificate.hashCode;}
+@override String toString() {return 'WorkersBindingItemMtlsCertificate(workersBindingKindMtlsCertificate: $workersBindingKindMtlsCertificate)';}
+}
 @immutable final class WorkersBindingItemPipelines extends WorkersBindingItem {const WorkersBindingItemPipelines(this.workersBindingKindPipelines);
 
-factory WorkersBindingItemPipelines.fromJson(Map<String, dynamic> json) { return WorkersBindingItemPipelines(WorkersBindingKindPipelines.fromJson(json)); }
+factory WorkersBindingItemPipelines.fromJson(Map<String, dynamic> json) {return WorkersBindingItemPipelines(WorkersBindingKindPipelines.fromJson(json));}
 
 final WorkersBindingKindPipelines workersBindingKindPipelines;
 
-@override String get type { return 'pipelines'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindPipelines.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemPipelines && workersBindingKindPipelines == other.workersBindingKindPipelines; } 
-@override int get hashCode { return workersBindingKindPipelines.hashCode; } 
-@override String toString() { return 'WorkersBindingItemPipelines(workersBindingKindPipelines: $workersBindingKindPipelines)'; } 
- }
+@override String get type {return 'pipelines';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindPipelines.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemPipelines && workersBindingKindPipelines == other.workersBindingKindPipelines;}
+@override int get hashCode {return workersBindingKindPipelines.hashCode;}
+@override String toString() {return 'WorkersBindingItemPipelines(workersBindingKindPipelines: $workersBindingKindPipelines)';}
+}
 @immutable final class WorkersBindingItemPlainText extends WorkersBindingItem {const WorkersBindingItemPlainText(this.workersBindingKindPlainText);
 
-factory WorkersBindingItemPlainText.fromJson(Map<String, dynamic> json) { return WorkersBindingItemPlainText(WorkersBindingKindPlainText.fromJson(json)); }
+factory WorkersBindingItemPlainText.fromJson(Map<String, dynamic> json) {return WorkersBindingItemPlainText(WorkersBindingKindPlainText.fromJson(json));}
 
 final WorkersBindingKindPlainText workersBindingKindPlainText;
 
-@override String get type { return 'plain_text'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindPlainText.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemPlainText && workersBindingKindPlainText == other.workersBindingKindPlainText; } 
-@override int get hashCode { return workersBindingKindPlainText.hashCode; } 
-@override String toString() { return 'WorkersBindingItemPlainText(workersBindingKindPlainText: $workersBindingKindPlainText)'; } 
- }
+@override String get type {return 'plain_text';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindPlainText.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemPlainText && workersBindingKindPlainText == other.workersBindingKindPlainText;}
+@override int get hashCode {return workersBindingKindPlainText.hashCode;}
+@override String toString() {return 'WorkersBindingItemPlainText(workersBindingKindPlainText: $workersBindingKindPlainText)';}
+}
 @immutable final class WorkersBindingItemQueue extends WorkersBindingItem {const WorkersBindingItemQueue(this.workersBindingKindQueue);
 
-factory WorkersBindingItemQueue.fromJson(Map<String, dynamic> json) { return WorkersBindingItemQueue(WorkersBindingKindQueue.fromJson(json)); }
+factory WorkersBindingItemQueue.fromJson(Map<String, dynamic> json) {return WorkersBindingItemQueue(WorkersBindingKindQueue.fromJson(json));}
 
 final WorkersBindingKindQueue workersBindingKindQueue;
 
-@override String get type { return 'queue'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindQueue.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemQueue && workersBindingKindQueue == other.workersBindingKindQueue; } 
-@override int get hashCode { return workersBindingKindQueue.hashCode; } 
-@override String toString() { return 'WorkersBindingItemQueue(workersBindingKindQueue: $workersBindingKindQueue)'; } 
- }
+@override String get type {return 'queue';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindQueue.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemQueue && workersBindingKindQueue == other.workersBindingKindQueue;}
+@override int get hashCode {return workersBindingKindQueue.hashCode;}
+@override String toString() {return 'WorkersBindingItemQueue(workersBindingKindQueue: $workersBindingKindQueue)';}
+}
 @immutable final class WorkersBindingItemR2Bucket extends WorkersBindingItem {const WorkersBindingItemR2Bucket(this.workersBindingKindR2Bucket);
 
-factory WorkersBindingItemR2Bucket.fromJson(Map<String, dynamic> json) { return WorkersBindingItemR2Bucket(WorkersBindingKindR2Bucket.fromJson(json)); }
+factory WorkersBindingItemR2Bucket.fromJson(Map<String, dynamic> json) {return WorkersBindingItemR2Bucket(WorkersBindingKindR2Bucket.fromJson(json));}
 
 final WorkersBindingKindR2Bucket workersBindingKindR2Bucket;
 
-@override String get type { return 'r2_bucket'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindR2Bucket.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemR2Bucket && workersBindingKindR2Bucket == other.workersBindingKindR2Bucket; } 
-@override int get hashCode { return workersBindingKindR2Bucket.hashCode; } 
-@override String toString() { return 'WorkersBindingItemR2Bucket(workersBindingKindR2Bucket: $workersBindingKindR2Bucket)'; } 
- }
+@override String get type {return 'r2_bucket';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindR2Bucket.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemR2Bucket && workersBindingKindR2Bucket == other.workersBindingKindR2Bucket;}
+@override int get hashCode {return workersBindingKindR2Bucket.hashCode;}
+@override String toString() {return 'WorkersBindingItemR2Bucket(workersBindingKindR2Bucket: $workersBindingKindR2Bucket)';}
+}
 @immutable final class WorkersBindingItemRatelimit extends WorkersBindingItem {const WorkersBindingItemRatelimit(this.workersBindingKindRatelimit);
 
-factory WorkersBindingItemRatelimit.fromJson(Map<String, dynamic> json) { return WorkersBindingItemRatelimit(WorkersBindingKindRatelimit.fromJson(json)); }
+factory WorkersBindingItemRatelimit.fromJson(Map<String, dynamic> json) {return WorkersBindingItemRatelimit(WorkersBindingKindRatelimit.fromJson(json));}
 
 final WorkersBindingKindRatelimit workersBindingKindRatelimit;
 
-@override String get type { return 'ratelimit'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindRatelimit.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemRatelimit && workersBindingKindRatelimit == other.workersBindingKindRatelimit; } 
-@override int get hashCode { return workersBindingKindRatelimit.hashCode; } 
-@override String toString() { return 'WorkersBindingItemRatelimit(workersBindingKindRatelimit: $workersBindingKindRatelimit)'; } 
- }
+@override String get type {return 'ratelimit';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindRatelimit.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemRatelimit && workersBindingKindRatelimit == other.workersBindingKindRatelimit;}
+@override int get hashCode {return workersBindingKindRatelimit.hashCode;}
+@override String toString() {return 'WorkersBindingItemRatelimit(workersBindingKindRatelimit: $workersBindingKindRatelimit)';}
+}
 @immutable final class WorkersBindingItemSecretKey extends WorkersBindingItem {const WorkersBindingItemSecretKey(this.workersBindingKindSecretKey);
 
-factory WorkersBindingItemSecretKey.fromJson(Map<String, dynamic> json) { return WorkersBindingItemSecretKey(WorkersBindingKindSecretKey.fromJson(json)); }
+factory WorkersBindingItemSecretKey.fromJson(Map<String, dynamic> json) {return WorkersBindingItemSecretKey(WorkersBindingKindSecretKey.fromJson(json));}
 
 final WorkersBindingKindSecretKey workersBindingKindSecretKey;
 
-@override String get type { return 'secret_key'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindSecretKey.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemSecretKey && workersBindingKindSecretKey == other.workersBindingKindSecretKey; } 
-@override int get hashCode { return workersBindingKindSecretKey.hashCode; } 
-@override String toString() { return 'WorkersBindingItemSecretKey(workersBindingKindSecretKey: $workersBindingKindSecretKey)'; } 
- }
+@override String get type {return 'secret_key';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindSecretKey.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemSecretKey && workersBindingKindSecretKey == other.workersBindingKindSecretKey;}
+@override int get hashCode {return workersBindingKindSecretKey.hashCode;}
+@override String toString() {return 'WorkersBindingItemSecretKey(workersBindingKindSecretKey: $workersBindingKindSecretKey)';}
+}
 @immutable final class WorkersBindingItemSecretText extends WorkersBindingItem {const WorkersBindingItemSecretText(this.workersBindingKindSecretText);
 
-factory WorkersBindingItemSecretText.fromJson(Map<String, dynamic> json) { return WorkersBindingItemSecretText(WorkersBindingKindSecretText.fromJson(json)); }
+factory WorkersBindingItemSecretText.fromJson(Map<String, dynamic> json) {return WorkersBindingItemSecretText(WorkersBindingKindSecretText.fromJson(json));}
 
 final WorkersBindingKindSecretText workersBindingKindSecretText;
 
-@override String get type { return 'secret_text'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindSecretText.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemSecretText && workersBindingKindSecretText == other.workersBindingKindSecretText; } 
-@override int get hashCode { return workersBindingKindSecretText.hashCode; } 
-@override String toString() { return 'WorkersBindingItemSecretText(workersBindingKindSecretText: $workersBindingKindSecretText)'; } 
- }
+@override String get type {return 'secret_text';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindSecretText.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemSecretText && workersBindingKindSecretText == other.workersBindingKindSecretText;}
+@override int get hashCode {return workersBindingKindSecretText.hashCode;}
+@override String toString() {return 'WorkersBindingItemSecretText(workersBindingKindSecretText: $workersBindingKindSecretText)';}
+}
 @immutable final class WorkersBindingItemSecretsStoreSecret extends WorkersBindingItem {const WorkersBindingItemSecretsStoreSecret(this.workersBindingKindSecretsStoreSecret);
 
-factory WorkersBindingItemSecretsStoreSecret.fromJson(Map<String, dynamic> json) { return WorkersBindingItemSecretsStoreSecret(WorkersBindingKindSecretsStoreSecret.fromJson(json)); }
+factory WorkersBindingItemSecretsStoreSecret.fromJson(Map<String, dynamic> json) {return WorkersBindingItemSecretsStoreSecret(WorkersBindingKindSecretsStoreSecret.fromJson(json));}
 
 final WorkersBindingKindSecretsStoreSecret workersBindingKindSecretsStoreSecret;
 
-@override String get type { return 'secrets_store_secret'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindSecretsStoreSecret.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemSecretsStoreSecret && workersBindingKindSecretsStoreSecret == other.workersBindingKindSecretsStoreSecret; } 
-@override int get hashCode { return workersBindingKindSecretsStoreSecret.hashCode; } 
-@override String toString() { return 'WorkersBindingItemSecretsStoreSecret(workersBindingKindSecretsStoreSecret: $workersBindingKindSecretsStoreSecret)'; } 
- }
+@override String get type {return 'secrets_store_secret';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindSecretsStoreSecret.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemSecretsStoreSecret && workersBindingKindSecretsStoreSecret == other.workersBindingKindSecretsStoreSecret;}
+@override int get hashCode {return workersBindingKindSecretsStoreSecret.hashCode;}
+@override String toString() {return 'WorkersBindingItemSecretsStoreSecret(workersBindingKindSecretsStoreSecret: $workersBindingKindSecretsStoreSecret)';}
+}
 @immutable final class WorkersBindingItemSendEmail extends WorkersBindingItem {const WorkersBindingItemSendEmail(this.workersBindingKindSendEmail);
 
-factory WorkersBindingItemSendEmail.fromJson(Map<String, dynamic> json) { return WorkersBindingItemSendEmail(WorkersBindingKindSendEmail.fromJson(json)); }
+factory WorkersBindingItemSendEmail.fromJson(Map<String, dynamic> json) {return WorkersBindingItemSendEmail(WorkersBindingKindSendEmail.fromJson(json));}
 
 final WorkersBindingKindSendEmail workersBindingKindSendEmail;
 
-@override String get type { return 'send_email'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindSendEmail.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemSendEmail && workersBindingKindSendEmail == other.workersBindingKindSendEmail; } 
-@override int get hashCode { return workersBindingKindSendEmail.hashCode; } 
-@override String toString() { return 'WorkersBindingItemSendEmail(workersBindingKindSendEmail: $workersBindingKindSendEmail)'; } 
- }
+@override String get type {return 'send_email';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindSendEmail.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemSendEmail && workersBindingKindSendEmail == other.workersBindingKindSendEmail;}
+@override int get hashCode {return workersBindingKindSendEmail.hashCode;}
+@override String toString() {return 'WorkersBindingItemSendEmail(workersBindingKindSendEmail: $workersBindingKindSendEmail)';}
+}
 @immutable final class WorkersBindingItemService extends WorkersBindingItem {const WorkersBindingItemService(this.workersBindingKindService);
 
-factory WorkersBindingItemService.fromJson(Map<String, dynamic> json) { return WorkersBindingItemService(WorkersBindingKindService.fromJson(json)); }
+factory WorkersBindingItemService.fromJson(Map<String, dynamic> json) {return WorkersBindingItemService(WorkersBindingKindService.fromJson(json));}
 
 final WorkersBindingKindService workersBindingKindService;
 
-@override String get type { return 'service'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindService.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemService && workersBindingKindService == other.workersBindingKindService; } 
-@override int get hashCode { return workersBindingKindService.hashCode; } 
-@override String toString() { return 'WorkersBindingItemService(workersBindingKindService: $workersBindingKindService)'; } 
- }
+@override String get type {return 'service';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindService.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemService && workersBindingKindService == other.workersBindingKindService;}
+@override int get hashCode {return workersBindingKindService.hashCode;}
+@override String toString() {return 'WorkersBindingItemService(workersBindingKindService: $workersBindingKindService)';}
+}
 @immutable final class WorkersBindingItemTextBlob extends WorkersBindingItem {const WorkersBindingItemTextBlob(this.workersBindingKindTextBlob);
 
-factory WorkersBindingItemTextBlob.fromJson(Map<String, dynamic> json) { return WorkersBindingItemTextBlob(WorkersBindingKindTextBlob.fromJson(json)); }
+factory WorkersBindingItemTextBlob.fromJson(Map<String, dynamic> json) {return WorkersBindingItemTextBlob(WorkersBindingKindTextBlob.fromJson(json));}
 
 final WorkersBindingKindTextBlob workersBindingKindTextBlob;
 
-@override String get type { return 'text_blob'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindTextBlob.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemTextBlob && workersBindingKindTextBlob == other.workersBindingKindTextBlob; } 
-@override int get hashCode { return workersBindingKindTextBlob.hashCode; } 
-@override String toString() { return 'WorkersBindingItemTextBlob(workersBindingKindTextBlob: $workersBindingKindTextBlob)'; } 
- }
+@override String get type {return 'text_blob';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindTextBlob.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemTextBlob && workersBindingKindTextBlob == other.workersBindingKindTextBlob;}
+@override int get hashCode {return workersBindingKindTextBlob.hashCode;}
+@override String toString() {return 'WorkersBindingItemTextBlob(workersBindingKindTextBlob: $workersBindingKindTextBlob)';}
+}
 @immutable final class WorkersBindingItemVectorize extends WorkersBindingItem {const WorkersBindingItemVectorize(this.workersBindingKindVectorize);
 
-factory WorkersBindingItemVectorize.fromJson(Map<String, dynamic> json) { return WorkersBindingItemVectorize(WorkersBindingKindVectorize.fromJson(json)); }
+factory WorkersBindingItemVectorize.fromJson(Map<String, dynamic> json) {return WorkersBindingItemVectorize(WorkersBindingKindVectorize.fromJson(json));}
 
 final WorkersBindingKindVectorize workersBindingKindVectorize;
 
-@override String get type { return 'vectorize'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindVectorize.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemVectorize && workersBindingKindVectorize == other.workersBindingKindVectorize; } 
-@override int get hashCode { return workersBindingKindVectorize.hashCode; } 
-@override String toString() { return 'WorkersBindingItemVectorize(workersBindingKindVectorize: $workersBindingKindVectorize)'; } 
- }
+@override String get type {return 'vectorize';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindVectorize.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemVectorize && workersBindingKindVectorize == other.workersBindingKindVectorize;}
+@override int get hashCode {return workersBindingKindVectorize.hashCode;}
+@override String toString() {return 'WorkersBindingItemVectorize(workersBindingKindVectorize: $workersBindingKindVectorize)';}
+}
 @immutable final class WorkersBindingItemVersionMetadata extends WorkersBindingItem {const WorkersBindingItemVersionMetadata(this.workersBindingKindVersionMetadata);
 
-factory WorkersBindingItemVersionMetadata.fromJson(Map<String, dynamic> json) { return WorkersBindingItemVersionMetadata(WorkersBindingKindVersionMetadata.fromJson(json)); }
+factory WorkersBindingItemVersionMetadata.fromJson(Map<String, dynamic> json) {return WorkersBindingItemVersionMetadata(WorkersBindingKindVersionMetadata.fromJson(json));}
 
 final WorkersBindingKindVersionMetadata workersBindingKindVersionMetadata;
 
-@override String get type { return 'version_metadata'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindVersionMetadata.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemVersionMetadata && workersBindingKindVersionMetadata == other.workersBindingKindVersionMetadata; } 
-@override int get hashCode { return workersBindingKindVersionMetadata.hashCode; } 
-@override String toString() { return 'WorkersBindingItemVersionMetadata(workersBindingKindVersionMetadata: $workersBindingKindVersionMetadata)'; } 
- }
+@override String get type {return 'version_metadata';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindVersionMetadata.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemVersionMetadata && workersBindingKindVersionMetadata == other.workersBindingKindVersionMetadata;}
+@override int get hashCode {return workersBindingKindVersionMetadata.hashCode;}
+@override String toString() {return 'WorkersBindingItemVersionMetadata(workersBindingKindVersionMetadata: $workersBindingKindVersionMetadata)';}
+}
 @immutable final class WorkersBindingItemVpcService extends WorkersBindingItem {const WorkersBindingItemVpcService(this.workersBindingKindVpcService);
 
-factory WorkersBindingItemVpcService.fromJson(Map<String, dynamic> json) { return WorkersBindingItemVpcService(WorkersBindingKindVpcService.fromJson(json)); }
+factory WorkersBindingItemVpcService.fromJson(Map<String, dynamic> json) {return WorkersBindingItemVpcService(WorkersBindingKindVpcService.fromJson(json));}
 
 final WorkersBindingKindVpcService workersBindingKindVpcService;
 
-@override String get type { return 'vpc_service'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindVpcService.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemVpcService && workersBindingKindVpcService == other.workersBindingKindVpcService; } 
-@override int get hashCode { return workersBindingKindVpcService.hashCode; } 
-@override String toString() { return 'WorkersBindingItemVpcService(workersBindingKindVpcService: $workersBindingKindVpcService)'; } 
- }
+@override String get type {return 'vpc_service';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindVpcService.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemVpcService && workersBindingKindVpcService == other.workersBindingKindVpcService;}
+@override int get hashCode {return workersBindingKindVpcService.hashCode;}
+@override String toString() {return 'WorkersBindingItemVpcService(workersBindingKindVpcService: $workersBindingKindVpcService)';}
+}
 @immutable final class WorkersBindingItemWasmModule extends WorkersBindingItem {const WorkersBindingItemWasmModule(this.workersBindingKindWasmModule);
 
-factory WorkersBindingItemWasmModule.fromJson(Map<String, dynamic> json) { return WorkersBindingItemWasmModule(WorkersBindingKindWasmModule.fromJson(json)); }
+factory WorkersBindingItemWasmModule.fromJson(Map<String, dynamic> json) {return WorkersBindingItemWasmModule(WorkersBindingKindWasmModule.fromJson(json));}
 
 final WorkersBindingKindWasmModule workersBindingKindWasmModule;
 
-@override String get type { return 'wasm_module'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindWasmModule.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemWasmModule && workersBindingKindWasmModule == other.workersBindingKindWasmModule; } 
-@override int get hashCode { return workersBindingKindWasmModule.hashCode; } 
-@override String toString() { return 'WorkersBindingItemWasmModule(workersBindingKindWasmModule: $workersBindingKindWasmModule)'; } 
- }
+@override String get type {return 'wasm_module';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindWasmModule.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemWasmModule && workersBindingKindWasmModule == other.workersBindingKindWasmModule;}
+@override int get hashCode {return workersBindingKindWasmModule.hashCode;}
+@override String toString() {return 'WorkersBindingItemWasmModule(workersBindingKindWasmModule: $workersBindingKindWasmModule)';}
+}
 @immutable final class WorkersBindingItemWorkflow extends WorkersBindingItem {const WorkersBindingItemWorkflow(this.workersBindingKindWorkflow);
 
-factory WorkersBindingItemWorkflow.fromJson(Map<String, dynamic> json) { return WorkersBindingItemWorkflow(WorkersBindingKindWorkflow.fromJson(json)); }
+factory WorkersBindingItemWorkflow.fromJson(Map<String, dynamic> json) {return WorkersBindingItemWorkflow(WorkersBindingKindWorkflow.fromJson(json));}
 
 final WorkersBindingKindWorkflow workersBindingKindWorkflow;
 
-@override String get type { return 'workflow'; } 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindWorkflow.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItemWorkflow && workersBindingKindWorkflow == other.workersBindingKindWorkflow; } 
-@override int get hashCode { return workersBindingKindWorkflow.hashCode; } 
-@override String toString() { return 'WorkersBindingItemWorkflow(workersBindingKindWorkflow: $workersBindingKindWorkflow)'; } 
- }
+@override String get type {return 'workflow';}
+@override Map<String, dynamic> toJson() {return {...workersBindingKindWorkflow.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItemWorkflow && workersBindingKindWorkflow == other.workersBindingKindWorkflow;}
+@override int get hashCode {return workersBindingKindWorkflow.hashCode;}
+@override String toString() {return 'WorkersBindingItemWorkflow(workersBindingKindWorkflow: $workersBindingKindWorkflow)';}
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class WorkersBindingItem$Unknown extends WorkersBindingItem {const WorkersBindingItem$Unknown(this.json);
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingItem$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'WorkersBindingItem.unknown($json)'; } 
- }
+@override String get type {return json['type'] as String? ?? '';}
+@override Map<String, dynamic> toJson() {return json;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersBindingItem$Unknown && json == other.json;}
+@override int get hashCode {return json.hashCode;}
+@override String toString() {return 'WorkersBindingItem.unknown($json)';}
+}

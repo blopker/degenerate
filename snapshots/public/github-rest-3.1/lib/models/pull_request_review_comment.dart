@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'pull_request_review_comment_links.dart';import 'reaction_rollup.dart';import 'simple_user.dart';/// The side of the first line of the range for a multi-line comment.
 @immutable final class PullRequestReviewCommentStartSide {const PullRequestReviewCommentStartSide._(this.value);
 
-factory PullRequestReviewCommentStartSide.fromJson(String json) { return switch (json) {
+factory PullRequestReviewCommentStartSide.fromJson(String json) {return switch (json) {
   'LEFT' => left,
   'RIGHT' => right,
   'null' => $null,
   _ => PullRequestReviewCommentStartSide._(json),
-}; }
+};}
 
 static const PullRequestReviewCommentStartSide left = PullRequestReviewCommentStartSide._('LEFT');
 
@@ -20,22 +20,22 @@ static const List<PullRequestReviewCommentStartSide> values = [left, right, $nul
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestReviewCommentStartSide && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestReviewCommentStartSide($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PullRequestReviewCommentStartSide && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PullRequestReviewCommentStartSide($value)';}
+}
 /// The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment
 @immutable final class PullRequestReviewCommentSide {const PullRequestReviewCommentSide._(this.value);
 
-factory PullRequestReviewCommentSide.fromJson(String json) { return switch (json) {
+factory PullRequestReviewCommentSide.fromJson(String json) {return switch (json) {
   'LEFT' => left,
   'RIGHT' => right,
   _ => PullRequestReviewCommentSide._(json),
-}; }
+};}
 
 static const PullRequestReviewCommentSide left = PullRequestReviewCommentSide._('LEFT');
 
@@ -45,22 +45,22 @@ static const List<PullRequestReviewCommentSide> values = [left, right];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestReviewCommentSide && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestReviewCommentSide($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PullRequestReviewCommentSide && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PullRequestReviewCommentSide($value)';}
+}
 /// The level at which the comment is targeted, can be a diff line or a file.
 @immutable final class PullRequestReviewCommentSubjectType {const PullRequestReviewCommentSubjectType._(this.value);
 
-factory PullRequestReviewCommentSubjectType.fromJson(String json) { return switch (json) {
+factory PullRequestReviewCommentSubjectType.fromJson(String json) {return switch (json) {
   'line' => line,
   'file' => file,
   _ => PullRequestReviewCommentSubjectType._(json),
-}; }
+};}
 
 static const PullRequestReviewCommentSubjectType line = PullRequestReviewCommentSubjectType._('line');
 
@@ -70,18 +70,18 @@ static const List<PullRequestReviewCommentSubjectType> values = [line, file];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestReviewCommentSubjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestReviewCommentSubjectType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PullRequestReviewCommentSubjectType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PullRequestReviewCommentSubjectType($value)';}
+}
 /// Pull Request Review Comments are comments on a portion of the Pull Request's diff.
 @immutable final class PullRequestReviewComment {const PullRequestReviewComment({required this.url, required this.pullRequestReviewId, required this.id, required this.nodeId, required this.diffHunk, required this.path, required this.commitId, required this.originalCommitId, required this.user, required this.body, required this.createdAt, required this.updatedAt, required this.htmlUrl, required this.pullRequestUrl, required this.authorAssociation, required this.links, this.position, this.originalPosition, this.inReplyToId, this.startLine = const Omittable.absent(), this.originalStartLine = const Omittable.absent(), this.startSide = const Omittable.absent(), this.line, this.originalLine, this.side, this.subjectType, this.reactions, this.bodyHtml, this.bodyText, });
 
-factory PullRequestReviewComment.fromJson(Map<String, dynamic> json) { return PullRequestReviewComment(
+factory PullRequestReviewComment.fromJson(Map<String, dynamic> json) {return PullRequestReviewComment(
   url: json['url'] as String,
   pullRequestReviewId: json['pull_request_review_id'] != null ? (json['pull_request_review_id'] as num).toInt() : null,
   id: (json['id'] as num).toInt(),
@@ -111,7 +111,7 @@ factory PullRequestReviewComment.fromJson(Map<String, dynamic> json) { return Pu
   reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
   bodyHtml: json['body_html'] as String?,
   bodyText: json['body_text'] as String?,
-); }
+);}
 
 /// URL for the pull request review comment
 final String url;
@@ -194,10 +194,10 @@ final String? bodyHtml;
 final String? bodyText;
 
 /// The value with the schema default applied when absent.
-PullRequestReviewCommentStartSide? get startSideOrDefault { return startSide.valueOr(PullRequestReviewCommentStartSide.fromJson('RIGHT')); } 
+PullRequestReviewCommentStartSide? get startSideOrDefault {return startSide.valueOr(PullRequestReviewCommentStartSide.fromJson('RIGHT'));}
 /// The value with the schema default applied when absent.
-PullRequestReviewCommentSide get sideOrDefault { return side ?? PullRequestReviewCommentSide.fromJson('RIGHT'); } 
-Map<String, dynamic> toJson() { return {
+PullRequestReviewCommentSide get sideOrDefault {return side ?? PullRequestReviewCommentSide.fromJson('RIGHT');}
+Map<String, dynamic> toJson() {return {
   'url': url,
   'pull_request_review_id': pullRequestReviewId,
   'id': id,
@@ -227,8 +227,8 @@ Map<String, dynamic> toJson() { return {
   if (reactions != null) 'reactions': reactions?.toJson(),
   'body_html': ?bodyHtml,
   'body_text': ?bodyText,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('pull_request_review_id') && (json['pull_request_review_id'] == null || json['pull_request_review_id'] is num) &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
@@ -243,8 +243,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('pull_request_url') && json['pull_request_url'] is String &&
       json.containsKey('author_association') &&
-      json.containsKey('_links'); } 
-PullRequestReviewComment copyWith({String? url, int? Function()? pullRequestReviewId, int? id, String? nodeId, String? diffHunk, String? path, int? Function()? position, int? Function()? originalPosition, String? commitId, String? originalCommitId, int? Function()? inReplyToId, SimpleUser? Function()? user, String? body, DateTime? createdAt, DateTime? updatedAt, Uri? htmlUrl, Uri? pullRequestUrl, AuthorAssociation? authorAssociation, PullRequestReviewCommentLinks? links, Omittable<int?>? startLine, Omittable<int?>? originalStartLine, Omittable<PullRequestReviewCommentStartSide?>? startSide, int? Function()? line, int? Function()? originalLine, PullRequestReviewCommentSide? Function()? side, PullRequestReviewCommentSubjectType? Function()? subjectType, ReactionRollup? Function()? reactions, String? Function()? bodyHtml, String? Function()? bodyText, }) { return PullRequestReviewComment(
+      json.containsKey('_links');}
+PullRequestReviewComment copyWith({String? url, int? Function()? pullRequestReviewId, int? id, String? nodeId, String? diffHunk, String? path, int? Function()? position, int? Function()? originalPosition, String? commitId, String? originalCommitId, int? Function()? inReplyToId, SimpleUser? Function()? user, String? body, DateTime? createdAt, DateTime? updatedAt, Uri? htmlUrl, Uri? pullRequestUrl, AuthorAssociation? authorAssociation, PullRequestReviewCommentLinks? links, Omittable<int?>? startLine, Omittable<int?>? originalStartLine, Omittable<PullRequestReviewCommentStartSide?>? startSide, int? Function()? line, int? Function()? originalLine, PullRequestReviewCommentSide? Function()? side, PullRequestReviewCommentSubjectType? Function()? subjectType, ReactionRollup? Function()? reactions, String? Function()? bodyHtml, String? Function()? bodyText, }) {return PullRequestReviewComment(
   url: url ?? this.url,
   pullRequestReviewId: pullRequestReviewId != null ? pullRequestReviewId() : this.pullRequestReviewId,
   id: id ?? this.id,
@@ -274,8 +274,8 @@ PullRequestReviewComment copyWith({String? url, int? Function()? pullRequestRevi
   reactions: reactions != null ? reactions() : this.reactions,
   bodyHtml: bodyHtml != null ? bodyHtml() : this.bodyHtml,
   bodyText: bodyText != null ? bodyText() : this.bodyText,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PullRequestReviewComment &&
           url == other.url &&
           pullRequestReviewId == other.pullRequestReviewId &&
@@ -305,7 +305,7 @@ PullRequestReviewComment copyWith({String? url, int? Function()? pullRequestRevi
           subjectType == other.subjectType &&
           reactions == other.reactions &&
           bodyHtml == other.bodyHtml &&
-          bodyText == other.bodyText; } 
-@override int get hashCode { return Object.hashAll([url, pullRequestReviewId, id, nodeId, diffHunk, path, position, originalPosition, commitId, originalCommitId, inReplyToId, user, body, createdAt, updatedAt, htmlUrl, pullRequestUrl, authorAssociation, links, startLine, originalStartLine, startSide, line, originalLine, side, subjectType, reactions, bodyHtml, bodyText]); } 
-@override String toString() { return 'PullRequestReviewComment(url: $url, pullRequestReviewId: $pullRequestReviewId, id: $id, nodeId: $nodeId, diffHunk: $diffHunk, path: $path, position: $position, originalPosition: $originalPosition, commitId: $commitId, originalCommitId: $originalCommitId, inReplyToId: $inReplyToId, user: $user, body: $body, createdAt: $createdAt, updatedAt: $updatedAt, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, authorAssociation: $authorAssociation, links: $links, startLine: $startLine, originalStartLine: $originalStartLine, startSide: $startSide, line: $line, originalLine: $originalLine, side: $side, subjectType: $subjectType, reactions: $reactions, bodyHtml: $bodyHtml, bodyText: $bodyText)'; } 
- }
+          bodyText == other.bodyText;}
+@override int get hashCode {return Object.hashAll([url, pullRequestReviewId, id, nodeId, diffHunk, path, position, originalPosition, commitId, originalCommitId, inReplyToId, user, body, createdAt, updatedAt, htmlUrl, pullRequestUrl, authorAssociation, links, startLine, originalStartLine, startSide, line, originalLine, side, subjectType, reactions, bodyHtml, bodyText]);}
+@override String toString() {return 'PullRequestReviewComment(url: $url, pullRequestReviewId: $pullRequestReviewId, id: $id, nodeId: $nodeId, diffHunk: $diffHunk, path: $path, position: $position, originalPosition: $originalPosition, commitId: $commitId, originalCommitId: $originalCommitId, inReplyToId: $inReplyToId, user: $user, body: $body, createdAt: $createdAt, updatedAt: $updatedAt, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, authorAssociation: $authorAssociation, links: $links, startLine: $startLine, originalStartLine: $originalStartLine, startSide: $startSide, line: $line, originalLine: $originalLine, side: $side, subjectType: $subjectType, reactions: $reactions, bodyHtml: $bodyHtml, bodyText: $bodyText)';}
+}

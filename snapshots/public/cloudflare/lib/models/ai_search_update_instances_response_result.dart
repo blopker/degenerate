@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_update_instances_response_result_ai_search_model.dart';import 'ai_search_update_instances_response_result_custom_metadata.dart';import 'ai_search_update_instances_response_result_embedding_model.dart';import 'ai_search_update_instances_response_result_metadata.dart';import 'ai_search_update_instances_response_result_public_endpoint_params.dart';import 'ai_search_update_instances_response_result_retrieval_options.dart';import 'ai_search_update_instances_response_result_rewrite_model.dart';import 'ai_search_update_instances_response_result_source_params.dart';@immutable final class AiSearchUpdateInstancesResponseResultRerankingModel {const AiSearchUpdateInstancesResponseResultRerankingModel._(this.value);
 
-factory AiSearchUpdateInstancesResponseResultRerankingModel.fromJson(String json) { return switch (json) {
+factory AiSearchUpdateInstancesResponseResultRerankingModel.fromJson(String json) {return switch (json) {
   '@cf/baai/bge-reranker-base' => cfBaaiBgeRerankerBase,
   '' => $empty,
   _ => AiSearchUpdateInstancesResponseResultRerankingModel._(json),
-}; }
+};}
 
 static const AiSearchUpdateInstancesResponseResultRerankingModel cfBaaiBgeRerankerBase = AiSearchUpdateInstancesResponseResultRerankingModel._('@cf/baai/bge-reranker-base');
 
@@ -16,23 +16,23 @@ static const List<AiSearchUpdateInstancesResponseResultRerankingModel> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchUpdateInstancesResponseResultRerankingModel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchUpdateInstancesResponseResultRerankingModel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchUpdateInstancesResponseResultRerankingModel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchUpdateInstancesResponseResultRerankingModel($value)';}
+}
 @immutable final class AiSearchUpdateInstancesResponseResultCacheThreshold {const AiSearchUpdateInstancesResponseResultCacheThreshold._(this.value);
 
-factory AiSearchUpdateInstancesResponseResultCacheThreshold.fromJson(String json) { return switch (json) {
+factory AiSearchUpdateInstancesResponseResultCacheThreshold.fromJson(String json) {return switch (json) {
   'super_strict_match' => superStrictMatch,
   'close_enough' => closeEnough,
   'flexible_friend' => flexibleFriend,
   'anything_goes' => anythingGoes,
   _ => AiSearchUpdateInstancesResponseResultCacheThreshold._(json),
-}; }
+};}
 
 static const AiSearchUpdateInstancesResponseResultCacheThreshold superStrictMatch = AiSearchUpdateInstancesResponseResultCacheThreshold._('super_strict_match');
 
@@ -46,21 +46,21 @@ static const List<AiSearchUpdateInstancesResponseResultCacheThreshold> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchUpdateInstancesResponseResultCacheThreshold && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchUpdateInstancesResponseResultCacheThreshold($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchUpdateInstancesResponseResultCacheThreshold && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchUpdateInstancesResponseResultCacheThreshold($value)';}
+}
 @immutable final class AiSearchUpdateInstancesResponseResultFusionMethod {const AiSearchUpdateInstancesResponseResultFusionMethod._(this.value);
 
-factory AiSearchUpdateInstancesResponseResultFusionMethod.fromJson(String json) { return switch (json) {
+factory AiSearchUpdateInstancesResponseResultFusionMethod.fromJson(String json) {return switch (json) {
   'max' => max,
   'rrf' => rrf,
   _ => AiSearchUpdateInstancesResponseResultFusionMethod._(json),
-}; }
+};}
 
 static const AiSearchUpdateInstancesResponseResultFusionMethod max = AiSearchUpdateInstancesResponseResultFusionMethod._('max');
 
@@ -70,21 +70,21 @@ static const List<AiSearchUpdateInstancesResponseResultFusionMethod> values = [m
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchUpdateInstancesResponseResultFusionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchUpdateInstancesResponseResultFusionMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchUpdateInstancesResponseResultFusionMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchUpdateInstancesResponseResultFusionMethod($value)';}
+}
 @immutable final class AiSearchUpdateInstancesResponseResultType {const AiSearchUpdateInstancesResponseResultType._(this.value);
 
-factory AiSearchUpdateInstancesResponseResultType.fromJson(String json) { return switch (json) {
+factory AiSearchUpdateInstancesResponseResultType.fromJson(String json) {return switch (json) {
   'r2' => r2,
   'web-crawler' => webCrawler,
   _ => AiSearchUpdateInstancesResponseResultType._(json),
-}; }
+};}
 
 static const AiSearchUpdateInstancesResponseResultType r2 = AiSearchUpdateInstancesResponseResultType._('r2');
 
@@ -94,17 +94,17 @@ static const List<AiSearchUpdateInstancesResponseResultType> values = [r2, webCr
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchUpdateInstancesResponseResultType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchUpdateInstancesResponseResultType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchUpdateInstancesResponseResultType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchUpdateInstancesResponseResultType($value)';}
+}
 @immutable final class AiSearchUpdateInstancesResponseResult {const AiSearchUpdateInstancesResponseResult({required this.vectorizeName, required this.createdAt, required this.id, required this.modifiedAt, this.fusionMethod, this.chunkSize, this.aiSearchModel, this.createdBy = const Omittable.absent(), this.customMetadata, this.embeddingModel, this.enable, this.aiGatewayId = const Omittable.absent(), this.hybridSearchEnabled, this.cache, this.lastActivity = const Omittable.absent(), this.maxNumResults, this.metadata, this.cacheThreshold, this.modifiedBy = const Omittable.absent(), this.paused, this.publicEndpointId = const Omittable.absent(), this.chunkOverlap, this.reranking, this.rerankingModel, this.retrievalOptions = const Omittable.absent(), this.rewriteModel, this.rewriteQuery, this.scoreThreshold, this.source, this.sourceParams = const Omittable.absent(), this.status, this.tokenId, this.type, this.publicEndpointParams, });
 
-factory AiSearchUpdateInstancesResponseResult.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesResponseResult(
+factory AiSearchUpdateInstancesResponseResult.fromJson(Map<String, dynamic> json) {return AiSearchUpdateInstancesResponseResult(
   aiGatewayId: json.containsKey('ai_gateway_id') ? Omittable(json['ai_gateway_id'] as String?) : const Omittable.absent(),
   aiSearchModel: json['ai_search_model'] != null ? AiSearchUpdateInstancesResponseResultAiSearchModel.fromJson(json['ai_search_model']) : null,
   cache: json['cache'] as bool?,
@@ -139,7 +139,7 @@ factory AiSearchUpdateInstancesResponseResult.fromJson(Map<String, dynamic> json
   tokenId: json['token_id'] as String?,
   type: json['type'] != null ? AiSearchUpdateInstancesResponseResultType.fromJson(json['type'] as String) : null,
   vectorizeName: json['vectorize_name'] as String,
-); }
+);}
 
 final Omittable<String?> aiGatewayId;
 
@@ -211,32 +211,32 @@ final AiSearchUpdateInstancesResponseResultType? type;
 final String vectorizeName;
 
 /// The value with the schema default applied when absent.
-bool get cacheOrDefault { return cache ?? true; } 
+bool get cacheOrDefault {return cache ?? true;}
 /// The value with the schema default applied when absent.
-AiSearchUpdateInstancesResponseResultCacheThreshold get cacheThresholdOrDefault { return cacheThreshold ?? AiSearchUpdateInstancesResponseResultCacheThreshold.fromJson('close_enough'); } 
+AiSearchUpdateInstancesResponseResultCacheThreshold get cacheThresholdOrDefault {return cacheThreshold ?? AiSearchUpdateInstancesResponseResultCacheThreshold.fromJson('close_enough');}
 /// The value with the schema default applied when absent.
-int get chunkOverlapOrDefault { return chunkOverlap ?? 10; } 
+int get chunkOverlapOrDefault {return chunkOverlap ?? 10;}
 /// The value with the schema default applied when absent.
-int get chunkSizeOrDefault { return chunkSize ?? 256; } 
+int get chunkSizeOrDefault {return chunkSize ?? 256;}
 /// The value with the schema default applied when absent.
-bool get enableOrDefault { return enable ?? true; } 
+bool get enableOrDefault {return enable ?? true;}
 /// The value with the schema default applied when absent.
-AiSearchUpdateInstancesResponseResultFusionMethod get fusionMethodOrDefault { return fusionMethod ?? AiSearchUpdateInstancesResponseResultFusionMethod.fromJson('rrf'); } 
+AiSearchUpdateInstancesResponseResultFusionMethod get fusionMethodOrDefault {return fusionMethod ?? AiSearchUpdateInstancesResponseResultFusionMethod.fromJson('rrf');}
 /// The value with the schema default applied when absent.
-bool get hybridSearchEnabledOrDefault { return hybridSearchEnabled ?? false; } 
+bool get hybridSearchEnabledOrDefault {return hybridSearchEnabled ?? false;}
 /// The value with the schema default applied when absent.
-int get maxNumResultsOrDefault { return maxNumResults ?? 10; } 
+int get maxNumResultsOrDefault {return maxNumResults ?? 10;}
 /// The value with the schema default applied when absent.
-bool get pausedOrDefault { return paused ?? false; } 
+bool get pausedOrDefault {return paused ?? false;}
 /// The value with the schema default applied when absent.
-bool get rerankingOrDefault { return reranking ?? false; } 
+bool get rerankingOrDefault {return reranking ?? false;}
 /// The value with the schema default applied when absent.
-bool get rewriteQueryOrDefault { return rewriteQuery ?? false; } 
+bool get rewriteQueryOrDefault {return rewriteQuery ?? false;}
 /// The value with the schema default applied when absent.
-double get scoreThresholdOrDefault { return scoreThreshold ?? 0.4; } 
+double get scoreThresholdOrDefault {return scoreThreshold ?? 0.4;}
 /// The value with the schema default applied when absent.
-String get statusOrDefault { return status ?? 'waiting'; } 
-Map<String, dynamic> toJson() { return {
+String get statusOrDefault {return status ?? 'waiting';}
+Map<String, dynamic> toJson() {return {
   if (aiGatewayId.isPresent) 'ai_gateway_id': aiGatewayId.value,
   if (aiSearchModel != null) 'ai_search_model': aiSearchModel?.toJson(),
   'cache': ?cache,
@@ -271,12 +271,12 @@ Map<String, dynamic> toJson() { return {
   'token_id': ?tokenId,
   if (type != null) 'type': type?.toJson(),
   'vectorize_name': vectorizeName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
-      json.containsKey('vectorize_name') && json['vectorize_name'] is String; } 
-AiSearchUpdateInstancesResponseResult copyWith({Omittable<String?>? aiGatewayId, AiSearchUpdateInstancesResponseResultAiSearchModel? Function()? aiSearchModel, bool? Function()? cache, AiSearchUpdateInstancesResponseResultCacheThreshold? Function()? cacheThreshold, int? Function()? chunkOverlap, int? Function()? chunkSize, DateTime? createdAt, Omittable<String?>? createdBy, List<AiSearchUpdateInstancesResponseResultCustomMetadata>? Function()? customMetadata, AiSearchUpdateInstancesResponseResultEmbeddingModel? Function()? embeddingModel, bool? Function()? enable, AiSearchUpdateInstancesResponseResultFusionMethod? Function()? fusionMethod, bool? Function()? hybridSearchEnabled, String? id, Omittable<DateTime?>? lastActivity, int? Function()? maxNumResults, AiSearchUpdateInstancesResponseResultMetadata? Function()? metadata, DateTime? modifiedAt, Omittable<String?>? modifiedBy, bool? Function()? paused, Omittable<String?>? publicEndpointId, AiSearchUpdateInstancesResponseResultPublicEndpointParams? Function()? publicEndpointParams, bool? Function()? reranking, AiSearchUpdateInstancesResponseResultRerankingModel? Function()? rerankingModel, Omittable<AiSearchUpdateInstancesResponseResultRetrievalOptions?>? retrievalOptions, AiSearchUpdateInstancesResponseResultRewriteModel? Function()? rewriteModel, bool? Function()? rewriteQuery, double? Function()? scoreThreshold, String? Function()? source, Omittable<AiSearchUpdateInstancesResponseResultSourceParams?>? sourceParams, String? Function()? status, String? Function()? tokenId, AiSearchUpdateInstancesResponseResultType? Function()? type, String? vectorizeName, }) { return AiSearchUpdateInstancesResponseResult(
+      json.containsKey('vectorize_name') && json['vectorize_name'] is String;}
+AiSearchUpdateInstancesResponseResult copyWith({Omittable<String?>? aiGatewayId, AiSearchUpdateInstancesResponseResultAiSearchModel? Function()? aiSearchModel, bool? Function()? cache, AiSearchUpdateInstancesResponseResultCacheThreshold? Function()? cacheThreshold, int? Function()? chunkOverlap, int? Function()? chunkSize, DateTime? createdAt, Omittable<String?>? createdBy, List<AiSearchUpdateInstancesResponseResultCustomMetadata>? Function()? customMetadata, AiSearchUpdateInstancesResponseResultEmbeddingModel? Function()? embeddingModel, bool? Function()? enable, AiSearchUpdateInstancesResponseResultFusionMethod? Function()? fusionMethod, bool? Function()? hybridSearchEnabled, String? id, Omittable<DateTime?>? lastActivity, int? Function()? maxNumResults, AiSearchUpdateInstancesResponseResultMetadata? Function()? metadata, DateTime? modifiedAt, Omittable<String?>? modifiedBy, bool? Function()? paused, Omittable<String?>? publicEndpointId, AiSearchUpdateInstancesResponseResultPublicEndpointParams? Function()? publicEndpointParams, bool? Function()? reranking, AiSearchUpdateInstancesResponseResultRerankingModel? Function()? rerankingModel, Omittable<AiSearchUpdateInstancesResponseResultRetrievalOptions?>? retrievalOptions, AiSearchUpdateInstancesResponseResultRewriteModel? Function()? rewriteModel, bool? Function()? rewriteQuery, double? Function()? scoreThreshold, String? Function()? source, Omittable<AiSearchUpdateInstancesResponseResultSourceParams?>? sourceParams, String? Function()? status, String? Function()? tokenId, AiSearchUpdateInstancesResponseResultType? Function()? type, String? vectorizeName, }) {return AiSearchUpdateInstancesResponseResult(
   aiGatewayId: aiGatewayId ?? this.aiGatewayId,
   aiSearchModel: aiSearchModel != null ? aiSearchModel() : this.aiSearchModel,
   cache: cache != null ? cache() : this.cache,
@@ -311,8 +311,8 @@ AiSearchUpdateInstancesResponseResult copyWith({Omittable<String?>? aiGatewayId,
   tokenId: tokenId != null ? tokenId() : this.tokenId,
   type: type != null ? type() : this.type,
   vectorizeName: vectorizeName ?? this.vectorizeName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchUpdateInstancesResponseResult &&
           aiGatewayId == other.aiGatewayId &&
           aiSearchModel == other.aiSearchModel &&
@@ -347,7 +347,7 @@ AiSearchUpdateInstancesResponseResult copyWith({Omittable<String?>? aiGatewayId,
           status == other.status &&
           tokenId == other.tokenId &&
           type == other.type &&
-          vectorizeName == other.vectorizeName; } 
-@override int get hashCode { return Object.hashAll([aiGatewayId, aiSearchModel, cache, cacheThreshold, chunkOverlap, chunkSize, createdAt, createdBy, Object.hashAll(customMetadata ?? const []), embeddingModel, enable, fusionMethod, hybridSearchEnabled, id, lastActivity, maxNumResults, metadata, modifiedAt, modifiedBy, paused, publicEndpointId, publicEndpointParams, reranking, rerankingModel, retrievalOptions, rewriteModel, rewriteQuery, scoreThreshold, source, sourceParams, status, tokenId, type, vectorizeName]); } 
-@override String toString() { return 'AiSearchUpdateInstancesResponseResult(aiGatewayId: $aiGatewayId, aiSearchModel: $aiSearchModel, cache: $cache, cacheThreshold: $cacheThreshold, chunkOverlap: $chunkOverlap, chunkSize: $chunkSize, createdAt: $createdAt, createdBy: $createdBy, customMetadata: $customMetadata, embeddingModel: $embeddingModel, enable: $enable, fusionMethod: $fusionMethod, hybridSearchEnabled: $hybridSearchEnabled, id: $id, lastActivity: $lastActivity, maxNumResults: $maxNumResults, metadata: $metadata, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, paused: $paused, publicEndpointId: $publicEndpointId, publicEndpointParams: $publicEndpointParams, reranking: $reranking, rerankingModel: $rerankingModel, retrievalOptions: $retrievalOptions, rewriteModel: $rewriteModel, rewriteQuery: $rewriteQuery, scoreThreshold: $scoreThreshold, source: $source, sourceParams: $sourceParams, status: $status, tokenId: $tokenId, type: $type, vectorizeName: $vectorizeName)'; } 
- }
+          vectorizeName == other.vectorizeName;}
+@override int get hashCode {return Object.hashAll([aiGatewayId, aiSearchModel, cache, cacheThreshold, chunkOverlap, chunkSize, createdAt, createdBy, Object.hashAll(customMetadata ?? const []), embeddingModel, enable, fusionMethod, hybridSearchEnabled, id, lastActivity, maxNumResults, metadata, modifiedAt, modifiedBy, paused, publicEndpointId, publicEndpointParams, reranking, rerankingModel, retrievalOptions, rewriteModel, rewriteQuery, scoreThreshold, source, sourceParams, status, tokenId, type, vectorizeName]);}
+@override String toString() {return 'AiSearchUpdateInstancesResponseResult(aiGatewayId: $aiGatewayId, aiSearchModel: $aiSearchModel, cache: $cache, cacheThreshold: $cacheThreshold, chunkOverlap: $chunkOverlap, chunkSize: $chunkSize, createdAt: $createdAt, createdBy: $createdBy, customMetadata: $customMetadata, embeddingModel: $embeddingModel, enable: $enable, fusionMethod: $fusionMethod, hybridSearchEnabled: $hybridSearchEnabled, id: $id, lastActivity: $lastActivity, maxNumResults: $maxNumResults, metadata: $metadata, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, paused: $paused, publicEndpointId: $publicEndpointId, publicEndpointParams: $publicEndpointParams, reranking: $reranking, rerankingModel: $rerankingModel, retrievalOptions: $retrievalOptions, rewriteModel: $rewriteModel, rewriteQuery: $rewriteQuery, scoreThreshold: $scoreThreshold, source: $source, sourceParams: $sourceParams, status: $status, tokenId: $tokenId, type: $type, vectorizeName: $vectorizeName)';}
+}

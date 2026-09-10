@@ -3,16 +3,16 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class SetupAttemptPaymentMethodDetailsBacsDebit {const SetupAttemptPaymentMethodDetailsBacsDebit();
 
-factory SetupAttemptPaymentMethodDetailsBacsDebit.fromJson(Map<String, dynamic> _) { return const SetupAttemptPaymentMethodDetailsBacsDebit(); }
+factory SetupAttemptPaymentMethodDetailsBacsDebit.fromJson(Map<String, dynamic> _) {return const SetupAttemptPaymentMethodDetailsBacsDebit();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-SetupAttemptPaymentMethodDetailsBacsDebit copyWith() { return const SetupAttemptPaymentMethodDetailsBacsDebit(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+SetupAttemptPaymentMethodDetailsBacsDebit copyWith() {return const SetupAttemptPaymentMethodDetailsBacsDebit(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is SetupAttemptPaymentMethodDetailsBacsDebit; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'SetupAttemptPaymentMethodDetailsBacsDebit()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is SetupAttemptPaymentMethodDetailsBacsDebit;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'SetupAttemptPaymentMethodDetailsBacsDebit()';}
+}

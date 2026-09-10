@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'automatic_thread_titling_param.dart';import 'file_upload_param.dart';import 'history_param.dart';/// Optional per-session configuration settings for ChatKit behavior.
 @immutable final class ChatkitConfigurationParam {const ChatkitConfigurationParam({this.automaticThreadTitling, this.fileUpload, this.history, });
 
-factory ChatkitConfigurationParam.fromJson(Map<String, dynamic> json) { return ChatkitConfigurationParam(
+factory ChatkitConfigurationParam.fromJson(Map<String, dynamic> json) {return ChatkitConfigurationParam(
   automaticThreadTitling: json['automatic_thread_titling'] != null ? AutomaticThreadTitlingParam.fromJson(json['automatic_thread_titling'] as Map<String, dynamic>) : null,
   fileUpload: json['file_upload'] != null ? FileUploadParam.fromJson(json['file_upload'] as Map<String, dynamic>) : null,
   history: json['history'] != null ? HistoryParam.fromJson(json['history'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Configuration for automatic thread titling. When omitted, automatic thread titling is enabled by default.
 final AutomaticThreadTitlingParam? automaticThreadTitling;
@@ -18,22 +18,22 @@ final FileUploadParam? fileUpload;
 /// Configuration for chat history retention. When omitted, history is enabled by default with no limit on recent_threads (null).
 final HistoryParam? history;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (automaticThreadTitling != null) 'automatic_thread_titling': automaticThreadTitling?.toJson(),
   if (fileUpload != null) 'file_upload': fileUpload?.toJson(),
   if (history != null) 'history': history?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'automatic_thread_titling', 'file_upload', 'history'}.contains(key)); } 
-ChatkitConfigurationParam copyWith({AutomaticThreadTitlingParam? Function()? automaticThreadTitling, FileUploadParam? Function()? fileUpload, HistoryParam? Function()? history, }) { return ChatkitConfigurationParam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'automatic_thread_titling', 'file_upload', 'history'}.contains(key));}
+ChatkitConfigurationParam copyWith({AutomaticThreadTitlingParam? Function()? automaticThreadTitling, FileUploadParam? Function()? fileUpload, HistoryParam? Function()? history, }) {return ChatkitConfigurationParam(
   automaticThreadTitling: automaticThreadTitling != null ? automaticThreadTitling() : this.automaticThreadTitling,
   fileUpload: fileUpload != null ? fileUpload() : this.fileUpload,
   history: history != null ? history() : this.history,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ChatkitConfigurationParam &&
           automaticThreadTitling == other.automaticThreadTitling &&
           fileUpload == other.fileUpload &&
-          history == other.history; } 
-@override int get hashCode { return Object.hash(automaticThreadTitling, fileUpload, history); } 
-@override String toString() { return 'ChatkitConfigurationParam(automaticThreadTitling: $automaticThreadTitling, fileUpload: $fileUpload, history: $history)'; } 
- }
+          history == other.history;}
+@override int get hashCode {return Object.hash(automaticThreadTitling, fileUpload, history);}
+@override String toString() {return 'ChatkitConfigurationParam(automaticThreadTitling: $automaticThreadTitling, fileUpload: $fileUpload, history: $history)';}
+}

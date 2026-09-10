@@ -11,7 +11,7 @@ final class Api20100401NotificationApi with ApiExecutor {const Api20100401Notifi
 /// Fetch a notification belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Notifications/{Sid}.json`
-Future<ApiResult<AccountNotificationInstance, Never>> fetchNotification({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountNotificationInstance, Never>> fetchNotification({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,11 +27,11 @@ final json = jsonDecode(response.body);
 return AccountNotificationInstance.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Retrieve a list of notifications belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Notifications.json`
-Future<ApiResult<ListNotificationResponse, Never>> listNotification({required String accountSid, int? log, String? messageDate, String? messageDateBefore, String? messageDateAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListNotificationResponse, Never>> listNotification({required String accountSid, int? log, String? messageDate, String? messageDateBefore, String? messageDateAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (log != null) {
   queryParameters['Log'] = log.toString();
@@ -73,5 +73,5 @@ final json = jsonDecode(response.body);
 return ListNotificationResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

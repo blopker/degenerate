@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class BalanceAmountBySourceType {const BalanceAmountBySourceType({this.bankAccount, this.card, this.fpx, });
 
-factory BalanceAmountBySourceType.fromJson(Map<String, dynamic> json) { return BalanceAmountBySourceType(
+factory BalanceAmountBySourceType.fromJson(Map<String, dynamic> json) {return BalanceAmountBySourceType(
   bankAccount: json['bank_account'] != null ? (json['bank_account'] as num).toInt() : null,
   card: json['card'] != null ? (json['card'] as num).toInt() : null,
   fpx: json['fpx'] != null ? (json['fpx'] as num).toInt() : null,
-); }
+);}
 
 /// Amount coming from [legacy US ACH payments](https://docs.stripe.com/ach-deprecated).
 final int? bankAccount;
@@ -18,22 +18,22 @@ final int? card;
 /// Amount coming from [FPX](https://docs.stripe.com/payments/fpx), a Malaysian payment method.
 final int? fpx;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bank_account': ?bankAccount,
   'card': ?card,
   'fpx': ?fpx,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_account', 'card', 'fpx'}.contains(key)); } 
-BalanceAmountBySourceType copyWith({int? Function()? bankAccount, int? Function()? card, int? Function()? fpx, }) { return BalanceAmountBySourceType(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank_account', 'card', 'fpx'}.contains(key));}
+BalanceAmountBySourceType copyWith({int? Function()? bankAccount, int? Function()? card, int? Function()? fpx, }) {return BalanceAmountBySourceType(
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
   card: card != null ? card() : this.card,
   fpx: fpx != null ? fpx() : this.fpx,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BalanceAmountBySourceType &&
           bankAccount == other.bankAccount &&
           card == other.card &&
-          fpx == other.fpx; } 
-@override int get hashCode { return Object.hash(bankAccount, card, fpx); } 
-@override String toString() { return 'BalanceAmountBySourceType(bankAccount: $bankAccount, card: $card, fpx: $fpx)'; } 
- }
+          fpx == other.fpx;}
+@override int get hashCode {return Object.hash(bankAccount, card, fpx);}
+@override String toString() {return 'BalanceAmountBySourceType(bankAccount: $bankAccount, card: $card, fpx: $fpx)';}
+}

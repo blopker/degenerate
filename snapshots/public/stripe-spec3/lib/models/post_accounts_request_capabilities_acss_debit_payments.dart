@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestCapabilitiesAcssDebitPayments {const PostAccountsRequestCapabilitiesAcssDebitPayments({this.requested});
 
-factory PostAccountsRequestCapabilitiesAcssDebitPayments.fromJson(Map<String, dynamic> json) { return PostAccountsRequestCapabilitiesAcssDebitPayments(
+factory PostAccountsRequestCapabilitiesAcssDebitPayments.fromJson(Map<String, dynamic> json) {return PostAccountsRequestCapabilitiesAcssDebitPayments(
   requested: json['requested'] as bool?,
-); }
+);}
 
 final bool? requested;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'requested': ?requested,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested'}.contains(key)); } 
-PostAccountsRequestCapabilitiesAcssDebitPayments copyWith({bool? Function()? requested}) { return PostAccountsRequestCapabilitiesAcssDebitPayments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'requested'}.contains(key));}
+PostAccountsRequestCapabilitiesAcssDebitPayments copyWith({bool? Function()? requested}) {return PostAccountsRequestCapabilitiesAcssDebitPayments(
   requested: requested != null ? requested() : this.requested,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsRequestCapabilitiesAcssDebitPayments &&
-          requested == other.requested; } 
-@override int get hashCode { return requested.hashCode; } 
-@override String toString() { return 'PostAccountsRequestCapabilitiesAcssDebitPayments(requested: $requested)'; } 
- }
+          requested == other.requested;}
+@override int get hashCode {return requested.hashCode;}
+@override String toString() {return 'PostAccountsRequestCapabilitiesAcssDebitPayments(requested: $requested)';}
+}

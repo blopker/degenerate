@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'public_user.dart';@immutable final class GistSimpleForks {const GistSimpleForks({this.id, this.url, this.user, this.createdAt, this.updatedAt, });
 
-factory GistSimpleForks.fromJson(Map<String, dynamic> json) { return GistSimpleForks(
+factory GistSimpleForks.fromJson(Map<String, dynamic> json) {return GistSimpleForks(
   id: json['id'] as String?,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
   user: json['user'] != null ? PublicUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+);}
 
 final String? id;
 
@@ -20,28 +20,28 @@ final DateTime? createdAt;
 
 final DateTime? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (url != null) 'url': url?.toString(),
   if (user != null) 'user': user?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'url', 'user', 'created_at', 'updated_at'}.contains(key)); } 
-GistSimpleForks copyWith({String? Function()? id, Uri? Function()? url, PublicUser? Function()? user, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, }) { return GistSimpleForks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'url', 'user', 'created_at', 'updated_at'}.contains(key));}
+GistSimpleForks copyWith({String? Function()? id, Uri? Function()? url, PublicUser? Function()? user, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, }) {return GistSimpleForks(
   id: id != null ? id() : this.id,
   url: url != null ? url() : this.url,
   user: user != null ? user() : this.user,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GistSimpleForks &&
           id == other.id &&
           url == other.url &&
           user == other.user &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, url, user, createdAt, updatedAt); } 
-@override String toString() { return 'GistSimpleForks(id: $id, url: $url, user: $user, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(id, url, user, createdAt, updatedAt);}
+@override String toString() {return 'GistSimpleForks(id: $id, url: $url, user: $user, createdAt: $createdAt, updatedAt: $updatedAt)';}
+}

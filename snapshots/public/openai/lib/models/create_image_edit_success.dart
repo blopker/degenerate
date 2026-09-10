@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class CreateImageEditSuccess {const CreateImageEditSuccess();
 
 /// Decodes the payload for its declared status and content type.
-static CreateImageEditSuccess parse(ApiResponse response) { switch (response.statusCode) {
+static CreateImageEditSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -21,26 +21,26 @@ return CreateImageEditSuccess200ApplicationJson(ImagesResponse.fromJson(json as 
 default:
 return CreateImageEditSuccessUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 200 (application/json).
 final class CreateImageEditSuccess200ApplicationJson extends CreateImageEditSuccess {const CreateImageEditSuccess200ApplicationJson(this.data);
 
 /// The decoded response payload.
 final ImagesResponse data;
 
- }
+}
 /// Response for 200 (text/event-stream).
 final class CreateImageEditSuccess200TextEventStream extends CreateImageEditSuccess {const CreateImageEditSuccess200TextEventStream(this.data);
 
 /// The decoded response payload.
 final ImageEditStreamEvent data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class CreateImageEditSuccessUnknown extends CreateImageEditSuccess {const CreateImageEditSuccessUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

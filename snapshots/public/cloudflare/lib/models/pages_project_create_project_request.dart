@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_project_create_project_request_build_config.dart';import 'pages_project_create_project_request_deployment_configs.dart';import 'pages_project_create_project_request_source.dart';@immutable final class PagesProjectCreateProjectRequest {const PagesProjectCreateProjectRequest({required this.name, required this.productionBranch, this.buildConfig, this.deploymentConfigs, this.source, });
 
-factory PagesProjectCreateProjectRequest.fromJson(Map<String, dynamic> json) { return PagesProjectCreateProjectRequest(
+factory PagesProjectCreateProjectRequest.fromJson(Map<String, dynamic> json) {return PagesProjectCreateProjectRequest(
   buildConfig: json['build_config'] != null ? PagesProjectCreateProjectRequestBuildConfig.fromJson(json['build_config'] as Map<String, dynamic>) : null,
   deploymentConfigs: json['deployment_configs'] != null ? PagesProjectCreateProjectRequestDeploymentConfigs.fromJson(json['deployment_configs'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
   productionBranch: json['production_branch'] as String,
   source: json['source'] != null ? PagesProjectCreateProjectRequestSource.fromJson(json['source'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Configs for the project build process.
 final PagesProjectCreateProjectRequestBuildConfig? buildConfig;
@@ -25,29 +25,29 @@ final String productionBranch;
 /// Configs for the project source control.
 final PagesProjectCreateProjectRequestSource? source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (buildConfig != null) 'build_config': buildConfig?.toJson(),
   if (deploymentConfigs != null) 'deployment_configs': deploymentConfigs?.toJson(),
   'name': name,
   'production_branch': productionBranch,
   if (source != null) 'source': source?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('production_branch') && json['production_branch'] is String; } 
-PagesProjectCreateProjectRequest copyWith({PagesProjectCreateProjectRequestBuildConfig? Function()? buildConfig, PagesProjectCreateProjectRequestDeploymentConfigs? Function()? deploymentConfigs, String? name, String? productionBranch, PagesProjectCreateProjectRequestSource? Function()? source, }) { return PagesProjectCreateProjectRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('production_branch') && json['production_branch'] is String;}
+PagesProjectCreateProjectRequest copyWith({PagesProjectCreateProjectRequestBuildConfig? Function()? buildConfig, PagesProjectCreateProjectRequestDeploymentConfigs? Function()? deploymentConfigs, String? name, String? productionBranch, PagesProjectCreateProjectRequestSource? Function()? source, }) {return PagesProjectCreateProjectRequest(
   buildConfig: buildConfig != null ? buildConfig() : this.buildConfig,
   deploymentConfigs: deploymentConfigs != null ? deploymentConfigs() : this.deploymentConfigs,
   name: name ?? this.name,
   productionBranch: productionBranch ?? this.productionBranch,
   source: source != null ? source() : this.source,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PagesProjectCreateProjectRequest &&
           buildConfig == other.buildConfig &&
           deploymentConfigs == other.deploymentConfigs &&
           name == other.name &&
           productionBranch == other.productionBranch &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(buildConfig, deploymentConfigs, name, productionBranch, source); } 
-@override String toString() { return 'PagesProjectCreateProjectRequest(buildConfig: $buildConfig, deploymentConfigs: $deploymentConfigs, name: $name, productionBranch: $productionBranch, source: $source)'; } 
- }
+          source == other.source;}
+@override int get hashCode {return Object.hash(buildConfig, deploymentConfigs, name, productionBranch, source);}
+@override String toString() {return 'PagesProjectCreateProjectRequest(buildConfig: $buildConfig, deploymentConfigs: $deploymentConfigs, name: $name, productionBranch: $productionBranch, source: $source)';}
+}

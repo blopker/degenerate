@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_attempt_payment_method_details_card_checks.dart';import 'setup_attempt_payment_method_details_card_wallet.dart';import 'three_d_secure_details.dart';/// 
 @immutable final class SetupAttemptPaymentMethodDetailsCard {const SetupAttemptPaymentMethodDetailsCard({this.brand = const Omittable.absent(), this.checks = const Omittable.absent(), this.country = const Omittable.absent(), this.expMonth = const Omittable.absent(), this.expYear = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.funding = const Omittable.absent(), this.last4 = const Omittable.absent(), this.network = const Omittable.absent(), this.threeDSecure = const Omittable.absent(), this.wallet = const Omittable.absent(), });
 
-factory SetupAttemptPaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsCard(
+factory SetupAttemptPaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) {return SetupAttemptPaymentMethodDetailsCard(
   brand: json.containsKey('brand') ? Omittable(json['brand'] as String?) : const Omittable.absent(),
   checks: json.containsKey('checks') ? Omittable(json['checks'] != null ? SetupAttemptPaymentMethodDetailsCardChecks.fromJson(json['checks'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
@@ -15,7 +15,7 @@ factory SetupAttemptPaymentMethodDetailsCard.fromJson(Map<String, dynamic> json)
   network: json.containsKey('network') ? Omittable(json['network'] as String?) : const Omittable.absent(),
   threeDSecure: json.containsKey('three_d_secure') ? Omittable(json['three_d_secure'] != null ? ThreeDSecureDetails.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   wallet: json.containsKey('wallet') ? Omittable(json['wallet'] != null ? SetupAttemptPaymentMethodDetailsCardWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.
 final Omittable<String?> brand;
@@ -52,7 +52,7 @@ final Omittable<ThreeDSecureDetails?> threeDSecure;
 /// If this Card is part of a card wallet, this contains the details of the card wallet.
 final Omittable<SetupAttemptPaymentMethodDetailsCardWallet?> wallet;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (brand.isPresent) 'brand': brand.value,
   if (checks.isPresent) 'checks': checks.value?.toJson(),
   if (country.isPresent) 'country': country.value,
@@ -64,9 +64,9 @@ Map<String, dynamic> toJson() { return {
   if (network.isPresent) 'network': network.value,
   if (threeDSecure.isPresent) 'three_d_secure': threeDSecure.value?.toJson(),
   if (wallet.isPresent) 'wallet': wallet.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'brand', 'checks', 'country', 'exp_month', 'exp_year', 'fingerprint', 'funding', 'last4', 'network', 'three_d_secure', 'wallet'}.contains(key)); } 
-SetupAttemptPaymentMethodDetailsCard copyWith({Omittable<String?>? brand, Omittable<SetupAttemptPaymentMethodDetailsCardChecks?>? checks, Omittable<String?>? country, Omittable<int?>? expMonth, Omittable<int?>? expYear, Omittable<String?>? fingerprint, Omittable<String?>? funding, Omittable<String?>? last4, Omittable<String?>? network, Omittable<ThreeDSecureDetails?>? threeDSecure, Omittable<SetupAttemptPaymentMethodDetailsCardWallet?>? wallet, }) { return SetupAttemptPaymentMethodDetailsCard(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'brand', 'checks', 'country', 'exp_month', 'exp_year', 'fingerprint', 'funding', 'last4', 'network', 'three_d_secure', 'wallet'}.contains(key));}
+SetupAttemptPaymentMethodDetailsCard copyWith({Omittable<String?>? brand, Omittable<SetupAttemptPaymentMethodDetailsCardChecks?>? checks, Omittable<String?>? country, Omittable<int?>? expMonth, Omittable<int?>? expYear, Omittable<String?>? fingerprint, Omittable<String?>? funding, Omittable<String?>? last4, Omittable<String?>? network, Omittable<ThreeDSecureDetails?>? threeDSecure, Omittable<SetupAttemptPaymentMethodDetailsCardWallet?>? wallet, }) {return SetupAttemptPaymentMethodDetailsCard(
   brand: brand ?? this.brand,
   checks: checks ?? this.checks,
   country: country ?? this.country,
@@ -78,8 +78,8 @@ SetupAttemptPaymentMethodDetailsCard copyWith({Omittable<String?>? brand, Omitta
   network: network ?? this.network,
   threeDSecure: threeDSecure ?? this.threeDSecure,
   wallet: wallet ?? this.wallet,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SetupAttemptPaymentMethodDetailsCard &&
           brand == other.brand &&
           checks == other.checks &&
@@ -91,7 +91,7 @@ SetupAttemptPaymentMethodDetailsCard copyWith({Omittable<String?>? brand, Omitta
           last4 == other.last4 &&
           network == other.network &&
           threeDSecure == other.threeDSecure &&
-          wallet == other.wallet; } 
-@override int get hashCode { return Object.hash(brand, checks, country, expMonth, expYear, fingerprint, funding, last4, network, threeDSecure, wallet); } 
-@override String toString() { return 'SetupAttemptPaymentMethodDetailsCard(brand: $brand, checks: $checks, country: $country, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, last4: $last4, network: $network, threeDSecure: $threeDSecure, wallet: $wallet)'; } 
- }
+          wallet == other.wallet;}
+@override int get hashCode {return Object.hash(brand, checks, country, expMonth, expYear, fingerprint, funding, last4, network, threeDSecure, wallet);}
+@override String toString() {return 'SetupAttemptPaymentMethodDetailsCard(brand: $brand, checks: $checks, country: $country, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, last4: $last4, network: $network, threeDSecure: $threeDSecure, wallet: $wallet)';}
+}

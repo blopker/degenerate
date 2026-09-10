@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_request_removed_review_request_removed_pull_request_head_repo.dart';import 'webhook_pull_request_review_request_removed_review_request_removed_pull_request_head_user.dart';@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHead {const WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
 
-factory WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHead.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHead(
+factory WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHead.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHead(
   label: json['label'] as String,
   ref: json['ref'] as String,
   repo: WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHeadRepo.fromJson(json['repo'] as Map<String, dynamic>),
   sha: json['sha'] as String,
   user: json['user'] != null ? WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHeadUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String label;
 
@@ -21,32 +21,32 @@ final String sha;
 
 final WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHeadUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'label': label,
   'ref': ref,
   'repo': repo.toJson(),
   'sha': sha,
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('label') && json['label'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('label') && json['label'] is String &&
       json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('repo') &&
       json.containsKey('sha') && json['sha'] is String &&
-      json.containsKey('user'); } 
-WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHead copyWith({String? label, String? ref, WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHeadRepo? repo, String? sha, WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHeadUser? Function()? user, }) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHead(
+      json.containsKey('user');}
+WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHead copyWith({String? label, String? ref, WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHeadRepo? repo, String? sha, WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHeadUser? Function()? user, }) {return WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHead(
   label: label ?? this.label,
   ref: ref ?? this.ref,
   repo: repo ?? this.repo,
   sha: sha ?? this.sha,
   user: user != null ? user() : this.user,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHead &&
           label == other.label &&
           ref == other.ref &&
           repo == other.repo &&
           sha == other.sha &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(label, ref, repo, sha, user); } 
-@override String toString() { return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHead(label: $label, ref: $ref, repo: $repo, sha: $sha, user: $user)'; } 
- }
+          user == other.user;}
+@override int get hashCode {return Object.hash(label, ref, repo, sha, user);}
+@override String toString() {return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestHead(label: $label, ref: $ref, repo: $repo, sha: $sha, user: $user)';}
+}

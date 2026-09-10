@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_optional_items_adjustable_quantity.dart';@immutable final class PostCheckoutSessionsRequestOptionalItems {const PostCheckoutSessionsRequestOptionalItems({required this.price, required this.quantity, this.adjustableQuantity, });
 
-factory PostCheckoutSessionsRequestOptionalItems.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestOptionalItems(
+factory PostCheckoutSessionsRequestOptionalItems.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestOptionalItems(
   adjustableQuantity: json['adjustable_quantity'] != null ? PostCheckoutSessionsRequestOptionalItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
   price: json['price'] as String,
   quantity: (json['quantity'] as num).toInt(),
-); }
+);}
 
 final PostCheckoutSessionsRequestOptionalItemsAdjustableQuantity? adjustableQuantity;
 
@@ -14,23 +14,23 @@ final String price;
 
 final int quantity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (adjustableQuantity != null) 'adjustable_quantity': adjustableQuantity?.toJson(),
   'price': price,
   'quantity': quantity,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('price') && json['price'] is String &&
-      json.containsKey('quantity') && json['quantity'] is num; } 
-PostCheckoutSessionsRequestOptionalItems copyWith({PostCheckoutSessionsRequestOptionalItemsAdjustableQuantity? Function()? adjustableQuantity, String? price, int? quantity, }) { return PostCheckoutSessionsRequestOptionalItems(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('price') && json['price'] is String &&
+      json.containsKey('quantity') && json['quantity'] is num;}
+PostCheckoutSessionsRequestOptionalItems copyWith({PostCheckoutSessionsRequestOptionalItemsAdjustableQuantity? Function()? adjustableQuantity, String? price, int? quantity, }) {return PostCheckoutSessionsRequestOptionalItems(
   adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,
   price: price ?? this.price,
   quantity: quantity ?? this.quantity,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestOptionalItems &&
           adjustableQuantity == other.adjustableQuantity &&
           price == other.price &&
-          quantity == other.quantity; } 
-@override int get hashCode { return Object.hash(adjustableQuantity, price, quantity); } 
-@override String toString() { return 'PostCheckoutSessionsRequestOptionalItems(adjustableQuantity: $adjustableQuantity, price: $price, quantity: $quantity)'; } 
- }
+          quantity == other.quantity;}
+@override int get hashCode {return Object.hash(adjustableQuantity, price, quantity);}
+@override String toString() {return 'PostCheckoutSessionsRequestOptionalItems(adjustableQuantity: $adjustableQuantity, price: $price, quantity: $quantity)';}
+}

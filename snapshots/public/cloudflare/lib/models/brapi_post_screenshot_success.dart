@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class BrapiPostScreenshotSuccess {const BrapiPostScreenshotSuccess();
 
 /// Decodes the payload for its declared status and content type.
-static BrapiPostScreenshotSuccess parse(ApiResponse response) { switch (response.statusCode) {
+static BrapiPostScreenshotSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -33,26 +33,26 @@ return BrapiPostScreenshotSuccess200ApplicationJson(BrapiPostScreenshotResponse.
 default:
 return BrapiPostScreenshotSuccessUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 200 (application/json).
 final class BrapiPostScreenshotSuccess200ApplicationJson extends BrapiPostScreenshotSuccess {const BrapiPostScreenshotSuccess200ApplicationJson(this.data);
 
 /// The decoded response payload.
 final BrapiPostScreenshotResponse data;
 
- }
+}
 /// Response for 200 (image/jpg).
 final class BrapiPostScreenshotSuccess200ImageJpg extends BrapiPostScreenshotSuccess {const BrapiPostScreenshotSuccess200ImageJpg(this.data);
 
 /// The decoded response payload.
 final String data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class BrapiPostScreenshotSuccessUnknown extends BrapiPostScreenshotSuccess {const BrapiPostScreenshotSuccessUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

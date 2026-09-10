@@ -13,7 +13,7 @@ final class UniversalSslSettingsForAZoneApi with ApiExecutor {const UniversalSsl
 /// Get Universal SSL Settings for a Zone.
 ///
 /// `GET /zones/{zone_id}/ssl/universal/settings`
-Future<ApiResult<TlsCertificatesAndHostnamesUniversal?, UniversalSslSettingsForAZoneUniversalSslSettingsDetailsResponse4xx>> universalSslSettingsForAZoneUniversalSslSettingsDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesUniversal?, UniversalSslSettingsForAZoneUniversalSslSettingsDetailsResponse4xx>> universalSslSettingsForAZoneUniversalSslSettingsDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Edit Universal SSL Settings
 ///
 /// Patch Universal SSL Settings for a Zone.
 ///
 /// `PATCH /zones/{zone_id}/ssl/universal/settings`
-Future<ApiResult<TlsCertificatesAndHostnamesUniversal?, UniversalSslSettingsForAZoneEditUniversalSslSettingsResponse4xx>> universalSslSettingsForAZoneEditUniversalSslSettings({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesUniversal body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesUniversal?, UniversalSslSettingsForAZoneEditUniversalSslSettingsResponse4xx>> universalSslSettingsForAZoneEditUniversalSslSettings({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesUniversal body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,5 +73,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

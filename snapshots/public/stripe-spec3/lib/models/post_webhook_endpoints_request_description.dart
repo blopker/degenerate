@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostWebhookEndpointsRequestDescriptionVariant2 {const PostWebhookEndpointsRequestDescriptionVariant2._(this.value);
 
-factory PostWebhookEndpointsRequestDescriptionVariant2.fromJson(String json) { return switch (json) {
+factory PostWebhookEndpointsRequestDescriptionVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostWebhookEndpointsRequestDescriptionVariant2._(json),
-}; }
+};}
 
 static const PostWebhookEndpointsRequestDescriptionVariant2 $empty = PostWebhookEndpointsRequestDescriptionVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostWebhookEndpointsRequestDescriptionVariant2> values = [$emp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostWebhookEndpointsRequestDescriptionVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostWebhookEndpointsRequestDescriptionVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostWebhookEndpointsRequestDescriptionVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostWebhookEndpointsRequestDescriptionVariant2($value)';}
+}
 /// An optional description of what the webhook is used for.
 @immutable
 final class PostWebhookEndpointsRequestDescription {

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 @immutable final class ZonesSettingToggle {const ZonesSettingToggle._(this.value);
 
-factory ZonesSettingToggle.fromJson(String json) { return switch (json) {
+factory ZonesSettingToggle.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   _ => ZonesSettingToggle._(json),
-}; }
+};}
 
 static const ZonesSettingToggle $on = ZonesSettingToggle._('on');
 
@@ -17,11 +17,11 @@ static const List<ZonesSettingToggle> values = [$on, off];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingToggle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesSettingToggle($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesSettingToggle && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesSettingToggle($value)';}
+}

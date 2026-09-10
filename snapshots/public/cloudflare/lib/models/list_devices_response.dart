@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_message.dart';import 'teams_devices_cursor_result_info.dart';import 'teams_devices_physical_device.dart';@immutable final class ListDevicesResponse {const ListDevicesResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
-factory ListDevicesResponse.fromJson(Map<String, dynamic> json) { return ListDevicesResponse(
+factory ListDevicesResponse.fromJson(Map<String, dynamic> json) {return ListDevicesResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => TeamsDevicesPhysicalDevice.fromJson(e as Map<String, dynamic>)).toList(),
   resultInfo: json['result_info'] != null ? TeamsDevicesCursorResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
-); }
+);}
 
 final List<ResponseMessage> errors;
 
@@ -21,31 +21,31 @@ final TeamsDevicesCursorResultInfo? resultInfo;
 /// Whether the API call was successful.
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.map((e) => e.toJson()).toList(),
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ListDevicesResponse copyWith({List<ResponseMessage>? errors, List<ResponseMessage>? messages, List<TeamsDevicesPhysicalDevice>? result, TeamsDevicesCursorResultInfo? Function()? resultInfo, bool? success, }) { return ListDevicesResponse(
+      json.containsKey('success') && json['success'] is bool;}
+ListDevicesResponse copyWith({List<ResponseMessage>? errors, List<ResponseMessage>? messages, List<TeamsDevicesPhysicalDevice>? result, TeamsDevicesCursorResultInfo? Function()? resultInfo, bool? success, }) {return ListDevicesResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ListDevicesResponse &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           listEquals(result, other.result) &&
           resultInfo == other.resultInfo &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), Object.hashAll(result), resultInfo, success); } 
-@override String toString() { return 'ListDevicesResponse(errors: $errors, messages: $messages, result: $result, resultInfo: $resultInfo, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(Object.hashAll(errors), Object.hashAll(messages), Object.hashAll(result), resultInfo, success);}
+@override String toString() {return 'ListDevicesResponse(errors: $errors, messages: $messages, result: $result, resultInfo: $resultInfo, success: $success)';}
+}

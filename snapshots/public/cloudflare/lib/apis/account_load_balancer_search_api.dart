@@ -13,7 +13,7 @@ final class AccountLoadBalancerSearchApi with ApiExecutor {const AccountLoadBala
 /// Search for Load Balancing resources.
 ///
 /// `GET /accounts/{account_id}/load_balancers/search`
-Future<ApiResult<LoadBalancingSearch, ResponseCommonFailure43>> accountLoadBalancerSearchResources({required LoadBalancingComponentsSchemasIdentifier accountId, String? query, AccountLoadBalancerSearchSearchResourcesReferences? references, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<LoadBalancingSearch, ResponseCommonFailure43>> accountLoadBalancerSearchResources({required LoadBalancingComponentsSchemasIdentifier accountId, String? query, AccountLoadBalancerSearchSearchResourcesReferences? references, double? page, double? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (query != null) {
   queryParameters['query'] = query;
@@ -56,5 +56,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

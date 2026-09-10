@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_vector_identifier.dart';@immutable final class VectorizeIndexGetVectorsByIdResponse2 {const VectorizeIndexGetVectorsByIdResponse2({this.id, this.metadata, this.namespace = const Omittable.absent(), this.values, });
 
-factory VectorizeIndexGetVectorsByIdResponse2.fromJson(Map<String, dynamic> json) { return VectorizeIndexGetVectorsByIdResponse2(
+factory VectorizeIndexGetVectorsByIdResponse2.fromJson(Map<String, dynamic> json) {return VectorizeIndexGetVectorsByIdResponse2(
   id: json['id'] != null ? VectorizeVectorIdentifier.fromJson(json['id'] as String) : null,
   metadata: json['metadata'] as Map<String, dynamic>?,
   namespace: json.containsKey('namespace') ? Omittable(json['namespace'] as String?) : const Omittable.absent(),
   values: (json['values'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
-); }
+);}
 
 final VectorizeVectorIdentifier? id;
 
@@ -17,25 +17,25 @@ final Omittable<String?> namespace;
 
 final List<double>? values;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   'metadata': ?metadata,
   if (namespace.isPresent) 'namespace': namespace.value,
   'values': ?values,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'metadata', 'namespace', 'values'}.contains(key)); } 
-VectorizeIndexGetVectorsByIdResponse2 copyWith({VectorizeVectorIdentifier? Function()? id, Map<String, dynamic>? Function()? metadata, Omittable<String?>? namespace, List<double>? Function()? values, }) { return VectorizeIndexGetVectorsByIdResponse2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'metadata', 'namespace', 'values'}.contains(key));}
+VectorizeIndexGetVectorsByIdResponse2 copyWith({VectorizeVectorIdentifier? Function()? id, Map<String, dynamic>? Function()? metadata, Omittable<String?>? namespace, List<double>? Function()? values, }) {return VectorizeIndexGetVectorsByIdResponse2(
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,
   namespace: namespace ?? this.namespace,
   values: values != null ? values() : this.values,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is VectorizeIndexGetVectorsByIdResponse2 &&
           id == other.id &&
           metadata == other.metadata &&
           namespace == other.namespace &&
-          listEquals(values, other.values); } 
-@override int get hashCode { return Object.hash(id, metadata, namespace, Object.hashAll(values ?? const [])); } 
-@override String toString() { return 'VectorizeIndexGetVectorsByIdResponse2(id: $id, metadata: $metadata, namespace: $namespace, values: $values)'; } 
- }
+          listEquals(values, other.values);}
+@override int get hashCode {return Object.hash(id, metadata, namespace, Object.hashAll(values ?? const []));}
+@override String toString() {return 'VectorizeIndexGetVectorsByIdResponse2(id: $id, metadata: $metadata, namespace: $namespace, values: $values)';}
+}

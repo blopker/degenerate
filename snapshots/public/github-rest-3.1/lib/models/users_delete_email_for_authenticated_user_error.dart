@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class UsersDeleteEmailForAuthenticatedUserError {const UsersDeleteEmailForAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static UsersDeleteEmailForAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static UsersDeleteEmailForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const UsersDeleteEmailForAuthenticatedUserError304();
 case 401:
@@ -22,44 +22,44 @@ return UsersDeleteEmailForAuthenticatedUserError422(ValidationError.fromJson(jso
 default:
 return UsersDeleteEmailForAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class UsersDeleteEmailForAuthenticatedUserError304 extends UsersDeleteEmailForAuthenticatedUserError {const UsersDeleteEmailForAuthenticatedUserError304();
 
- }
+}
 /// Response for 401 (application/json).
 final class UsersDeleteEmailForAuthenticatedUserError401 extends UsersDeleteEmailForAuthenticatedUserError {const UsersDeleteEmailForAuthenticatedUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class UsersDeleteEmailForAuthenticatedUserError403 extends UsersDeleteEmailForAuthenticatedUserError {const UsersDeleteEmailForAuthenticatedUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class UsersDeleteEmailForAuthenticatedUserError404 extends UsersDeleteEmailForAuthenticatedUserError {const UsersDeleteEmailForAuthenticatedUserError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class UsersDeleteEmailForAuthenticatedUserError422 extends UsersDeleteEmailForAuthenticatedUserError {const UsersDeleteEmailForAuthenticatedUserError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class UsersDeleteEmailForAuthenticatedUserErrorUnknown extends UsersDeleteEmailForAuthenticatedUserError {const UsersDeleteEmailForAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

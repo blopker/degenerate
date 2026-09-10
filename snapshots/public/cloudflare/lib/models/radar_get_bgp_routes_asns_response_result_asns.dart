@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRoutesAsnsResponseResultAsns {const RadarGetBgpRoutesAsnsResponseResultAsns({required this.asn, required this.coneSize, required this.country, required this.ipv4Count, required this.ipv6Count, required this.name, required this.pfxsCount, required this.rpkiInvalid, required this.rpkiUnknown, required this.rpkiValid, });
 
-factory RadarGetBgpRoutesAsnsResponseResultAsns.fromJson(Map<String, dynamic> json) { return RadarGetBgpRoutesAsnsResponseResultAsns(
+factory RadarGetBgpRoutesAsnsResponseResultAsns.fromJson(Map<String, dynamic> json) {return RadarGetBgpRoutesAsnsResponseResultAsns(
   asn: (json['asn'] as num).toInt(),
   coneSize: (json['coneSize'] as num).toInt(),
   country: json['country'] as String,
@@ -13,7 +13,7 @@ factory RadarGetBgpRoutesAsnsResponseResultAsns.fromJson(Map<String, dynamic> js
   rpkiInvalid: (json['rpkiInvalid'] as num).toInt(),
   rpkiUnknown: (json['rpkiUnknown'] as num).toInt(),
   rpkiValid: (json['rpkiValid'] as num).toInt(),
-); }
+);}
 
 final int asn;
 
@@ -44,7 +44,7 @@ final int rpkiUnknown;
 /// Number of RPKI valid prefixes originated by the AS.
 final int rpkiValid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn,
   'coneSize': coneSize,
   'country': country,
@@ -55,8 +55,8 @@ Map<String, dynamic> toJson() { return {
   'rpkiInvalid': rpkiInvalid,
   'rpkiUnknown': rpkiUnknown,
   'rpkiValid': rpkiValid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') && json['asn'] is num &&
       json.containsKey('coneSize') && json['coneSize'] is num &&
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('ipv4Count') && json['ipv4Count'] is num &&
@@ -65,8 +65,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn')
       json.containsKey('pfxsCount') && json['pfxsCount'] is num &&
       json.containsKey('rpkiInvalid') && json['rpkiInvalid'] is num &&
       json.containsKey('rpkiUnknown') && json['rpkiUnknown'] is num &&
-      json.containsKey('rpkiValid') && json['rpkiValid'] is num; } 
-RadarGetBgpRoutesAsnsResponseResultAsns copyWith({int? asn, int? coneSize, String? country, int? ipv4Count, String? ipv6Count, String? name, int? pfxsCount, int? rpkiInvalid, int? rpkiUnknown, int? rpkiValid, }) { return RadarGetBgpRoutesAsnsResponseResultAsns(
+      json.containsKey('rpkiValid') && json['rpkiValid'] is num;}
+RadarGetBgpRoutesAsnsResponseResultAsns copyWith({int? asn, int? coneSize, String? country, int? ipv4Count, String? ipv6Count, String? name, int? pfxsCount, int? rpkiInvalid, int? rpkiUnknown, int? rpkiValid, }) {return RadarGetBgpRoutesAsnsResponseResultAsns(
   asn: asn ?? this.asn,
   coneSize: coneSize ?? this.coneSize,
   country: country ?? this.country,
@@ -77,8 +77,8 @@ RadarGetBgpRoutesAsnsResponseResultAsns copyWith({int? asn, int? coneSize, Strin
   rpkiInvalid: rpkiInvalid ?? this.rpkiInvalid,
   rpkiUnknown: rpkiUnknown ?? this.rpkiUnknown,
   rpkiValid: rpkiValid ?? this.rpkiValid,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetBgpRoutesAsnsResponseResultAsns &&
           asn == other.asn &&
           coneSize == other.coneSize &&
@@ -89,7 +89,7 @@ RadarGetBgpRoutesAsnsResponseResultAsns copyWith({int? asn, int? coneSize, Strin
           pfxsCount == other.pfxsCount &&
           rpkiInvalid == other.rpkiInvalid &&
           rpkiUnknown == other.rpkiUnknown &&
-          rpkiValid == other.rpkiValid; } 
-@override int get hashCode { return Object.hash(asn, coneSize, country, ipv4Count, ipv6Count, name, pfxsCount, rpkiInvalid, rpkiUnknown, rpkiValid); } 
-@override String toString() { return 'RadarGetBgpRoutesAsnsResponseResultAsns(asn: $asn, coneSize: $coneSize, country: $country, ipv4Count: $ipv4Count, ipv6Count: $ipv6Count, name: $name, pfxsCount: $pfxsCount, rpkiInvalid: $rpkiInvalid, rpkiUnknown: $rpkiUnknown, rpkiValid: $rpkiValid)'; } 
- }
+          rpkiValid == other.rpkiValid;}
+@override int get hashCode {return Object.hash(asn, coneSize, country, ipv4Count, ipv6Count, name, pfxsCount, rpkiInvalid, rpkiUnknown, rpkiValid);}
+@override String toString() {return 'RadarGetBgpRoutesAsnsResponseResultAsns(asn: $asn, coneSize: $coneSize, country: $country, ipv4Count: $ipv4Count, ipv6Count: $ipv6Count, name: $name, pfxsCount: $pfxsCount, rpkiInvalid: $rpkiInvalid, rpkiUnknown: $rpkiUnknown, rpkiValid: $rpkiValid)';}
+}

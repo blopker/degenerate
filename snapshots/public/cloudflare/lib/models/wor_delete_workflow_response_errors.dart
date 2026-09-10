@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorDeleteWorkflowResponseErrors {const WorDeleteWorkflowResponseErrors({required this.code, required this.message, });
 
-factory WorDeleteWorkflowResponseErrors.fromJson(Map<String, dynamic> json) { return WorDeleteWorkflowResponseErrors(
+factory WorDeleteWorkflowResponseErrors.fromJson(Map<String, dynamic> json) {return WorDeleteWorkflowResponseErrors(
   code: (json['code'] as num).toDouble(),
   message: json['message'] as String,
-); }
+);}
 
 final double code;
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
-      json.containsKey('message') && json['message'] is String; } 
-WorDeleteWorkflowResponseErrors copyWith({double? code, String? message, }) { return WorDeleteWorkflowResponseErrors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String;}
+WorDeleteWorkflowResponseErrors copyWith({double? code, String? message, }) {return WorDeleteWorkflowResponseErrors(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorDeleteWorkflowResponseErrors &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'WorDeleteWorkflowResponseErrors(code: $code, message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return Object.hash(code, message);}
+@override String toString() {return 'WorDeleteWorkflowResponseErrors(code: $code, message: $message)';}
+}

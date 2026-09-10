@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of the hostname's activation.
 @immutable final class TlsCertificatesAndHostnamesComponentsSchemasStatus {const TlsCertificatesAndHostnamesComponentsSchemasStatus._(this.value);
 
-factory TlsCertificatesAndHostnamesComponentsSchemasStatus.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesComponentsSchemasStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'pending' => pending,
   'active_redeploying' => activeRedeploying,
@@ -21,7 +21,7 @@ factory TlsCertificatesAndHostnamesComponentsSchemasStatus.fromJson(String json)
   'provisioned' => provisioned,
   'blocked' => blocked,
   _ => TlsCertificatesAndHostnamesComponentsSchemasStatus._(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesComponentsSchemasStatus active = TlsCertificatesAndHostnamesComponentsSchemasStatus._('active');
 
@@ -59,11 +59,11 @@ static const List<TlsCertificatesAndHostnamesComponentsSchemasStatus> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesComponentsSchemasStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesComponentsSchemasStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesComponentsSchemasStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesComponentsSchemasStatus($value)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookRepositoryImportStatus {const WebhookRepositoryImportStatus._(this.value);
 
-factory WebhookRepositoryImportStatus.fromJson(String json) { return switch (json) {
+factory WebhookRepositoryImportStatus.fromJson(String json) {return switch (json) {
   'success' => success,
   'cancelled' => cancelled,
   'failure' => failure,
   _ => WebhookRepositoryImportStatus._(json),
-}; }
+};}
 
 static const WebhookRepositoryImportStatus success = WebhookRepositoryImportStatus._('success');
 
@@ -19,24 +19,24 @@ static const List<WebhookRepositoryImportStatus> values = [success, cancelled, f
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookRepositoryImportStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookRepositoryImportStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookRepositoryImportStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookRepositoryImportStatus($value)';}
+}
 @immutable final class WebhookRepositoryImport {const WebhookRepositoryImport({required this.repository, required this.sender, required this.status, this.enterprise, this.installation, this.organization, });
 
-factory WebhookRepositoryImport.fromJson(Map<String, dynamic> json) { return WebhookRepositoryImport(
+factory WebhookRepositoryImport.fromJson(Map<String, dynamic> json) {return WebhookRepositoryImport(
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   status: WebhookRepositoryImportStatus.fromJson(json['status'] as String),
-); }
+);}
 
 final EnterpriseWebhooks? enterprise;
 
@@ -50,33 +50,33 @@ final SimpleUser sender;
 
 final WebhookRepositoryImportStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('repository') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('repository') &&
       json.containsKey('sender') &&
-      json.containsKey('status'); } 
-WebhookRepositoryImport copyWith({EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhookRepositoryImportStatus? status, }) { return WebhookRepositoryImport(
+      json.containsKey('status');}
+WebhookRepositoryImport copyWith({EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhookRepositoryImportStatus? status, }) {return WebhookRepositoryImport(
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRepositoryImport &&
           enterprise == other.enterprise &&
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
           sender == other.sender &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(enterprise, installation, organization, repository, sender, status); } 
-@override String toString() { return 'WebhookRepositoryImport(enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(enterprise, installation, organization, repository, sender, status);}
+@override String toString() {return 'WebhookRepositoryImport(enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, status: $status)';}
+}

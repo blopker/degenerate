@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes._(this.value);
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes.fromJson(String json) {return switch (json) {
   'india' => india,
   _ => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes india = PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes._('india');
 
@@ -13,21 +13,21 @@ static const List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes($value)';}
+}
 @immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsAmountType {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsAmountType._(this.value);
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsAmountType.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsAmountType.fromJson(String json) {return switch (json) {
   'fixed' => fixed,
   'maximum' => maximum,
   _ => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsAmountType._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsAmountType fixed = PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsAmountType._('fixed');
 
@@ -37,24 +37,24 @@ static const List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsAmountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsAmountType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsAmountType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsAmountType($value)';}
+}
 @immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsInterval {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsInterval._(this.value);
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsInterval.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsInterval.fromJson(String json) {return switch (json) {
   'day' => day,
   'month' => month,
   'sporadic' => sporadic,
   'week' => week,
   'year' => year,
   _ => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsInterval._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsInterval day = PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsInterval._('day');
 
@@ -70,17 +70,17 @@ static const List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsInterval($value)';}
+}
 @immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptions {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptions({required this.amount, required this.amountType, required this.currency, required this.interval, required this.reference, required this.startDate, this.description, this.endDate, this.intervalCount, this.supportedTypes, });
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptions(
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptions.fromJson(Map<String, dynamic> json) {return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptions(
   amount: (json['amount'] as num).toInt(),
   amountType: PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsAmountType.fromJson(json['amount_type'] as String),
   currency: json['currency'] as String,
@@ -91,7 +91,7 @@ factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptio
   reference: json['reference'] as String,
   startDate: (json['start_date'] as num).toInt(),
   supportedTypes: (json['supported_types'] as List<dynamic>?)?.map((e) => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes.fromJson(e as String)).toList(),
-); }
+);}
 
 final int amount;
 
@@ -113,7 +113,7 @@ final int startDate;
 
 final List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes>? supportedTypes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'amount_type': amountType.toJson(),
   'currency': currency,
@@ -124,14 +124,14 @@ Map<String, dynamic> toJson() { return {
   'reference': reference,
   'start_date': startDate,
   if (supportedTypes != null) 'supported_types': supportedTypes?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('amount_type') &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('interval') &&
       json.containsKey('reference') && json['reference'] is String &&
-      json.containsKey('start_date') && json['start_date'] is num; } 
-PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptions copyWith({int? amount, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsAmountType? amountType, String? currency, String? Function()? description, int? Function()? endDate, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsInterval? interval, int? Function()? intervalCount, String? reference, int? startDate, List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes>? Function()? supportedTypes, }) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptions(
+      json.containsKey('start_date') && json['start_date'] is num;}
+PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptions copyWith({int? amount, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsAmountType? amountType, String? currency, String? Function()? description, int? Function()? endDate, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsInterval? interval, int? Function()? intervalCount, String? reference, int? startDate, List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes>? Function()? supportedTypes, }) {return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptions(
   amount: amount ?? this.amount,
   amountType: amountType ?? this.amountType,
   currency: currency ?? this.currency,
@@ -142,8 +142,8 @@ PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptions copyW
   reference: reference ?? this.reference,
   startDate: startDate ?? this.startDate,
   supportedTypes: supportedTypes != null ? supportedTypes() : this.supportedTypes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptions &&
           amount == other.amount &&
           amountType == other.amountType &&
@@ -154,7 +154,7 @@ PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptions copyW
           intervalCount == other.intervalCount &&
           reference == other.reference &&
           startDate == other.startDate &&
-          listEquals(supportedTypes, other.supportedTypes); } 
-@override int get hashCode { return Object.hash(amount, amountType, currency, description, endDate, interval, intervalCount, reference, startDate, Object.hashAll(supportedTypes ?? const [])); } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptions(amount: $amount, amountType: $amountType, currency: $currency, description: $description, endDate: $endDate, interval: $interval, intervalCount: $intervalCount, reference: $reference, startDate: $startDate, supportedTypes: $supportedTypes)'; } 
- }
+          listEquals(supportedTypes, other.supportedTypes);}
+@override int get hashCode {return Object.hash(amount, amountType, currency, description, endDate, interval, intervalCount, reference, startDate, Object.hashAll(supportedTypes ?? const []));}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardMandateOptions(amount: $amount, amountType: $amountType, currency: $currency, description: $description, endDate: $endDate, interval: $interval, intervalCount: $intervalCount, reference: $reference, startDate: $startDate, supportedTypes: $supportedTypes)';}
+}

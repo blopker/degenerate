@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InsightsUserStats2 {const InsightsUserStats2({this.actorType, this.actorName, this.actorId, this.integrationId = const Omittable.absent(), this.oauthApplicationId = const Omittable.absent(), this.totalRequestCount, this.rateLimitedRequestCount, this.lastRateLimitedTimestamp = const Omittable.absent(), this.lastRequestTimestamp, });
 
-factory InsightsUserStats2.fromJson(Map<String, dynamic> json) { return InsightsUserStats2(
+factory InsightsUserStats2.fromJson(Map<String, dynamic> json) {return InsightsUserStats2(
   actorType: json['actor_type'] as String?,
   actorName: json['actor_name'] as String?,
   actorId: json['actor_id'] != null ? (json['actor_id'] as num).toInt() : null,
@@ -12,7 +12,7 @@ factory InsightsUserStats2.fromJson(Map<String, dynamic> json) { return Insights
   rateLimitedRequestCount: json['rate_limited_request_count'] != null ? (json['rate_limited_request_count'] as num).toInt() : null,
   lastRateLimitedTimestamp: json.containsKey('last_rate_limited_timestamp') ? Omittable(json['last_rate_limited_timestamp'] as String?) : const Omittable.absent(),
   lastRequestTimestamp: json['last_request_timestamp'] as String?,
-); }
+);}
 
 final String? actorType;
 
@@ -32,7 +32,7 @@ final Omittable<String?> lastRateLimitedTimestamp;
 
 final String? lastRequestTimestamp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'actor_type': ?actorType,
   'actor_name': ?actorName,
   'actor_id': ?actorId,
@@ -42,9 +42,9 @@ Map<String, dynamic> toJson() { return {
   'rate_limited_request_count': ?rateLimitedRequestCount,
   if (lastRateLimitedTimestamp.isPresent) 'last_rate_limited_timestamp': lastRateLimitedTimestamp.value,
   'last_request_timestamp': ?lastRequestTimestamp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'actor_type', 'actor_name', 'actor_id', 'integration_id', 'oauth_application_id', 'total_request_count', 'rate_limited_request_count', 'last_rate_limited_timestamp', 'last_request_timestamp'}.contains(key)); } 
-InsightsUserStats2 copyWith({String? Function()? actorType, String? Function()? actorName, int? Function()? actorId, Omittable<int?>? integrationId, Omittable<int?>? oauthApplicationId, int? Function()? totalRequestCount, int? Function()? rateLimitedRequestCount, Omittable<String?>? lastRateLimitedTimestamp, String? Function()? lastRequestTimestamp, }) { return InsightsUserStats2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'actor_type', 'actor_name', 'actor_id', 'integration_id', 'oauth_application_id', 'total_request_count', 'rate_limited_request_count', 'last_rate_limited_timestamp', 'last_request_timestamp'}.contains(key));}
+InsightsUserStats2 copyWith({String? Function()? actorType, String? Function()? actorName, int? Function()? actorId, Omittable<int?>? integrationId, Omittable<int?>? oauthApplicationId, int? Function()? totalRequestCount, int? Function()? rateLimitedRequestCount, Omittable<String?>? lastRateLimitedTimestamp, String? Function()? lastRequestTimestamp, }) {return InsightsUserStats2(
   actorType: actorType != null ? actorType() : this.actorType,
   actorName: actorName != null ? actorName() : this.actorName,
   actorId: actorId != null ? actorId() : this.actorId,
@@ -54,8 +54,8 @@ InsightsUserStats2 copyWith({String? Function()? actorType, String? Function()? 
   rateLimitedRequestCount: rateLimitedRequestCount != null ? rateLimitedRequestCount() : this.rateLimitedRequestCount,
   lastRateLimitedTimestamp: lastRateLimitedTimestamp ?? this.lastRateLimitedTimestamp,
   lastRequestTimestamp: lastRequestTimestamp != null ? lastRequestTimestamp() : this.lastRequestTimestamp,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InsightsUserStats2 &&
           actorType == other.actorType &&
           actorName == other.actorName &&
@@ -65,7 +65,7 @@ InsightsUserStats2 copyWith({String? Function()? actorType, String? Function()? 
           totalRequestCount == other.totalRequestCount &&
           rateLimitedRequestCount == other.rateLimitedRequestCount &&
           lastRateLimitedTimestamp == other.lastRateLimitedTimestamp &&
-          lastRequestTimestamp == other.lastRequestTimestamp; } 
-@override int get hashCode { return Object.hash(actorType, actorName, actorId, integrationId, oauthApplicationId, totalRequestCount, rateLimitedRequestCount, lastRateLimitedTimestamp, lastRequestTimestamp); } 
-@override String toString() { return 'InsightsUserStats2(actorType: $actorType, actorName: $actorName, actorId: $actorId, integrationId: $integrationId, oauthApplicationId: $oauthApplicationId, totalRequestCount: $totalRequestCount, rateLimitedRequestCount: $rateLimitedRequestCount, lastRateLimitedTimestamp: $lastRateLimitedTimestamp, lastRequestTimestamp: $lastRequestTimestamp)'; } 
- }
+          lastRequestTimestamp == other.lastRequestTimestamp;}
+@override int get hashCode {return Object.hash(actorType, actorName, actorId, integrationId, oauthApplicationId, totalRequestCount, rateLimitedRequestCount, lastRateLimitedTimestamp, lastRequestTimestamp);}
+@override String toString() {return 'InsightsUserStats2(actorType: $actorType, actorName: $actorName, actorId: $actorId, integrationId: $integrationId, oauthApplicationId: $oauthApplicationId, totalRequestCount: $totalRequestCount, rateLimitedRequestCount: $rateLimitedRequestCount, lastRateLimitedTimestamp: $lastRateLimitedTimestamp, lastRequestTimestamp: $lastRequestTimestamp)';}
+}

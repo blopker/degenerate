@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostFileLinksLinkRequestExpiresAtVariant1 {const PostFileLinksLinkRequestExpiresAtVariant1._(this.value);
 
-factory PostFileLinksLinkRequestExpiresAtVariant1.fromJson(String json) { return switch (json) {
+factory PostFileLinksLinkRequestExpiresAtVariant1.fromJson(String json) {return switch (json) {
   'now' => now,
   _ => PostFileLinksLinkRequestExpiresAtVariant1._(json),
-}; }
+};}
 
 static const PostFileLinksLinkRequestExpiresAtVariant1 now = PostFileLinksLinkRequestExpiresAtVariant1._('now');
 
@@ -13,20 +13,20 @@ static const List<PostFileLinksLinkRequestExpiresAtVariant1> values = [now];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostFileLinksLinkRequestExpiresAtVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostFileLinksLinkRequestExpiresAtVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostFileLinksLinkRequestExpiresAtVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostFileLinksLinkRequestExpiresAtVariant1($value)';}
+}
 @immutable final class PostFileLinksLinkRequestExpiresAtVariant3 {const PostFileLinksLinkRequestExpiresAtVariant3._(this.value);
 
-factory PostFileLinksLinkRequestExpiresAtVariant3.fromJson(String json) { return switch (json) {
+factory PostFileLinksLinkRequestExpiresAtVariant3.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostFileLinksLinkRequestExpiresAtVariant3._(json),
-}; }
+};}
 
 static const PostFileLinksLinkRequestExpiresAtVariant3 $empty = PostFileLinksLinkRequestExpiresAtVariant3._('');
 
@@ -34,14 +34,14 @@ static const List<PostFileLinksLinkRequestExpiresAtVariant3> values = [$empty];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostFileLinksLinkRequestExpiresAtVariant3 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostFileLinksLinkRequestExpiresAtVariant3($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostFileLinksLinkRequestExpiresAtVariant3 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostFileLinksLinkRequestExpiresAtVariant3($value)';}
+}
 /// A future timestamp after which the link will no longer be usable, or `now` to expire the link immediately.
 @immutable
 final class PostFileLinksLinkRequestExpiresAt {

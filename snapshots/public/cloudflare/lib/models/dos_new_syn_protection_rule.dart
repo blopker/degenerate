@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosNewSynProtectionRule {const DosNewSynProtectionRule({required this.burstSensitivity, required this.mode, required this.name, required this.rateSensitivity, required this.scope, this.mitigationType, });
 
-factory DosNewSynProtectionRule.fromJson(Map<String, dynamic> json) { return DosNewSynProtectionRule(
+factory DosNewSynProtectionRule.fromJson(Map<String, dynamic> json) {return DosNewSynProtectionRule(
   burstSensitivity: json['burst_sensitivity'] as String,
   mitigationType: json['mitigation_type'] as String?,
   mode: json['mode'] as String,
   name: json['name'] as String,
   rateSensitivity: json['rate_sensitivity'] as String,
   scope: json['scope'] as String,
-); }
+);}
 
 /// The burst sensitivity. Must be one of 'low', 'medium', 'high'.
 final String burstSensitivity;
@@ -29,35 +29,35 @@ final String rateSensitivity;
 /// The scope for the SYN Protection rule. Must be one of 'global', 'region', or 'datacenter'.
 final String scope;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'burst_sensitivity': burstSensitivity,
   'mitigation_type': ?mitigationType,
   'mode': mode,
   'name': name,
   'rate_sensitivity': rateSensitivity,
   'scope': scope,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('burst_sensitivity') && json['burst_sensitivity'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('burst_sensitivity') && json['burst_sensitivity'] is String &&
       json.containsKey('mode') && json['mode'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('rate_sensitivity') && json['rate_sensitivity'] is String &&
-      json.containsKey('scope') && json['scope'] is String; } 
-DosNewSynProtectionRule copyWith({String? burstSensitivity, String? Function()? mitigationType, String? mode, String? name, String? rateSensitivity, String? scope, }) { return DosNewSynProtectionRule(
+      json.containsKey('scope') && json['scope'] is String;}
+DosNewSynProtectionRule copyWith({String? burstSensitivity, String? Function()? mitigationType, String? mode, String? name, String? rateSensitivity, String? scope, }) {return DosNewSynProtectionRule(
   burstSensitivity: burstSensitivity ?? this.burstSensitivity,
   mitigationType: mitigationType != null ? mitigationType() : this.mitigationType,
   mode: mode ?? this.mode,
   name: name ?? this.name,
   rateSensitivity: rateSensitivity ?? this.rateSensitivity,
   scope: scope ?? this.scope,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DosNewSynProtectionRule &&
           burstSensitivity == other.burstSensitivity &&
           mitigationType == other.mitigationType &&
           mode == other.mode &&
           name == other.name &&
           rateSensitivity == other.rateSensitivity &&
-          scope == other.scope; } 
-@override int get hashCode { return Object.hash(burstSensitivity, mitigationType, mode, name, rateSensitivity, scope); } 
-@override String toString() { return 'DosNewSynProtectionRule(burstSensitivity: $burstSensitivity, mitigationType: $mitigationType, mode: $mode, name: $name, rateSensitivity: $rateSensitivity, scope: $scope)'; } 
- }
+          scope == other.scope;}
+@override int get hashCode {return Object.hash(burstSensitivity, mitigationType, mode, name, rateSensitivity, scope);}
+@override String toString() {return 'DosNewSynProtectionRule(burstSensitivity: $burstSensitivity, mitigationType: $mitigationType, mode: $mode, name: $name, rateSensitivity: $rateSensitivity, scope: $scope)';}
+}

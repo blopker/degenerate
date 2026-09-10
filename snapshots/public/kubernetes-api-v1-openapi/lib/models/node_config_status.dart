@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_config_source.dart';/// NodeConfigStatus describes the status of the config assigned by Node.Spec.ConfigSource.
 @immutable final class NodeConfigStatus {const NodeConfigStatus({this.active, this.assigned, this.error, this.lastKnownGood, });
 
-factory NodeConfigStatus.fromJson(Map<String, dynamic> json) { return NodeConfigStatus(
+factory NodeConfigStatus.fromJson(Map<String, dynamic> json) {return NodeConfigStatus(
   active: json['active'] != null ? NodeConfigSource.fromJson(json['active'] as Map<String, dynamic>) : null,
   assigned: json['assigned'] != null ? NodeConfigSource.fromJson(json['assigned'] as Map<String, dynamic>) : null,
   error: json['error'] as String?,
   lastKnownGood: json['lastKnownGood'] != null ? NodeConfigSource.fromJson(json['lastKnownGood'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Active reports the checkpointed config the node is actively using. Active will represent either the current version of the Assigned config, or the current LastKnownGood config, depending on whether attempting to use the Assigned config results in an error.
 final NodeConfigSource? active;
@@ -22,25 +22,25 @@ final String? error;
 /// LastKnownGood reports the checkpointed config the node will fall back to when it encounters an error attempting to use the Assigned config. The Assigned config becomes the LastKnownGood config when the node determines that the Assigned config is stable and correct. This is currently implemented as a 10-minute soak period starting when the local record of Assigned config is updated. If the Assigned config is Active at the end of this period, it becomes the LastKnownGood. Note that if Spec.ConfigSource is reset to nil (use local defaults), the LastKnownGood is also immediately reset to nil, because the local default config is always assumed good. You should not make assumptions about the node's method of determining config stability and correctness, as this may change or become configurable in the future.
 final NodeConfigSource? lastKnownGood;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (active != null) 'active': active?.toJson(),
   if (assigned != null) 'assigned': assigned?.toJson(),
   'error': ?error,
   if (lastKnownGood != null) 'lastKnownGood': lastKnownGood?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'assigned', 'error', 'lastKnownGood'}.contains(key)); } 
-NodeConfigStatus copyWith({NodeConfigSource? Function()? active, NodeConfigSource? Function()? assigned, String? Function()? error, NodeConfigSource? Function()? lastKnownGood, }) { return NodeConfigStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'assigned', 'error', 'lastKnownGood'}.contains(key));}
+NodeConfigStatus copyWith({NodeConfigSource? Function()? active, NodeConfigSource? Function()? assigned, String? Function()? error, NodeConfigSource? Function()? lastKnownGood, }) {return NodeConfigStatus(
   active: active != null ? active() : this.active,
   assigned: assigned != null ? assigned() : this.assigned,
   error: error != null ? error() : this.error,
   lastKnownGood: lastKnownGood != null ? lastKnownGood() : this.lastKnownGood,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is NodeConfigStatus &&
           active == other.active &&
           assigned == other.assigned &&
           error == other.error &&
-          lastKnownGood == other.lastKnownGood; } 
-@override int get hashCode { return Object.hash(active, assigned, error, lastKnownGood); } 
-@override String toString() { return 'NodeConfigStatus(active: $active, assigned: $assigned, error: $error, lastKnownGood: $lastKnownGood)'; } 
- }
+          lastKnownGood == other.lastKnownGood;}
+@override int get hashCode {return Object.hash(active, assigned, error, lastKnownGood);}
+@override String toString() {return 'NodeConfigStatus(active: $active, assigned: $assigned, error: $error, lastKnownGood: $lastKnownGood)';}
+}

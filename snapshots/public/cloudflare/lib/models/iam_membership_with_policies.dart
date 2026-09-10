@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_enabled.dart';import 'iam_account.dart';import 'iam_list_member_policy.dart';import 'iam_membership_components_schemas_identifier.dart';import 'iam_permissions.dart';import 'iam_schemas_status.dart';@immutable final class IamMembershipWithPolicies {const IamMembershipWithPolicies({this.account, this.apiAccessEnabled = const Omittable.absent(), this.id, this.permissions, this.policies, this.roles, this.status, });
 
-factory IamMembershipWithPolicies.fromJson(Map<String, dynamic> json) { return IamMembershipWithPolicies(
+factory IamMembershipWithPolicies.fromJson(Map<String, dynamic> json) {return IamMembershipWithPolicies(
   account: json['account'] != null ? IamAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
   apiAccessEnabled: json.containsKey('api_access_enabled') ? Omittable(json['api_access_enabled'] != null ? AccessEnabled.fromJson(json['api_access_enabled'] as bool) : null) : const Omittable.absent(),
   id: json['id'] != null ? IamMembershipComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,
@@ -10,7 +10,7 @@ factory IamMembershipWithPolicies.fromJson(Map<String, dynamic> json) { return I
   policies: (json['policies'] as List<dynamic>?)?.map((e) => IamListMemberPolicy.fromJson(e as Map<String, dynamic>)).toList(),
   roles: (json['roles'] as List<dynamic>?)?.map((e) => e as String).toList(),
   status: json['status'] != null ? IamSchemasStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 final IamAccount? account;
 
@@ -29,7 +29,7 @@ final List<String>? roles;
 
 final IamSchemasStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (account != null) 'account': account?.toJson(),
   if (apiAccessEnabled.isPresent) 'api_access_enabled': apiAccessEnabled.value?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -37,9 +37,9 @@ Map<String, dynamic> toJson() { return {
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
   'roles': ?roles,
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account', 'api_access_enabled', 'id', 'permissions', 'policies', 'roles', 'status'}.contains(key)); } 
-IamMembershipWithPolicies copyWith({IamAccount? Function()? account, Omittable<AccessEnabled?>? apiAccessEnabled, IamMembershipComponentsSchemasIdentifier? Function()? id, IamPermissions? Function()? permissions, List<IamListMemberPolicy>? Function()? policies, List<String>? Function()? roles, IamSchemasStatus? Function()? status, }) { return IamMembershipWithPolicies(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account', 'api_access_enabled', 'id', 'permissions', 'policies', 'roles', 'status'}.contains(key));}
+IamMembershipWithPolicies copyWith({IamAccount? Function()? account, Omittable<AccessEnabled?>? apiAccessEnabled, IamMembershipComponentsSchemasIdentifier? Function()? id, IamPermissions? Function()? permissions, List<IamListMemberPolicy>? Function()? policies, List<String>? Function()? roles, IamSchemasStatus? Function()? status, }) {return IamMembershipWithPolicies(
   account: account != null ? account() : this.account,
   apiAccessEnabled: apiAccessEnabled ?? this.apiAccessEnabled,
   id: id != null ? id() : this.id,
@@ -47,8 +47,8 @@ IamMembershipWithPolicies copyWith({IamAccount? Function()? account, Omittable<A
   policies: policies != null ? policies() : this.policies,
   roles: roles != null ? roles() : this.roles,
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IamMembershipWithPolicies &&
           account == other.account &&
           apiAccessEnabled == other.apiAccessEnabled &&
@@ -56,7 +56,7 @@ IamMembershipWithPolicies copyWith({IamAccount? Function()? account, Omittable<A
           permissions == other.permissions &&
           listEquals(policies, other.policies) &&
           listEquals(roles, other.roles) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(account, apiAccessEnabled, id, permissions, Object.hashAll(policies ?? const []), Object.hashAll(roles ?? const []), status); } 
-@override String toString() { return 'IamMembershipWithPolicies(account: $account, apiAccessEnabled: $apiAccessEnabled, id: $id, permissions: $permissions, policies: $policies, roles: $roles, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(account, apiAccessEnabled, id, permissions, Object.hashAll(policies ?? const []), Object.hashAll(roles ?? const []), status);}
+@override String toString() {return 'IamMembershipWithPolicies(account: $account, apiAccessEnabled: $apiAccessEnabled, id: $id, permissions: $permissions, policies: $policies, roles: $roles, status: $status)';}
+}

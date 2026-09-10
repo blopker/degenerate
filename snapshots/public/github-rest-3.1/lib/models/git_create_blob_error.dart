@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class GitCreateBlobError {const GitCreateBlobError();
 
 /// Decodes the payload for its declared status and content type.
-static GitCreateBlobError parse(ApiResponse response) { switch (response.statusCode) {
+static GitCreateBlobError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
 return GitCreateBlobError403(BasicError.fromJson(json as Map<String, dynamic>));
@@ -20,40 +20,40 @@ return GitCreateBlobError422(OneOf2.parse(json, fromA: (v) => ValidationError.fr
 default:
 return GitCreateBlobErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 403 (application/json).
 final class GitCreateBlobError403 extends GitCreateBlobError {const GitCreateBlobError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class GitCreateBlobError404 extends GitCreateBlobError {const GitCreateBlobError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 409 (application/json).
 final class GitCreateBlobError409 extends GitCreateBlobError {const GitCreateBlobError409(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class GitCreateBlobError422 extends GitCreateBlobError {const GitCreateBlobError422(this.data);
 
 /// The decoded response payload.
 final GitCreateBlobResponse422 data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class GitCreateBlobErrorUnknown extends GitCreateBlobError {const GitCreateBlobErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

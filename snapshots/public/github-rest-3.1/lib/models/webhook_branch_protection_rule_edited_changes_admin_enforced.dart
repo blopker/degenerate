@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookBranchProtectionRuleEditedChangesAdminEnforced {const WebhookBranchProtectionRuleEditedChangesAdminEnforced({required this.from});
 
-factory WebhookBranchProtectionRuleEditedChangesAdminEnforced.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChangesAdminEnforced(
+factory WebhookBranchProtectionRuleEditedChangesAdminEnforced.fromJson(Map<String, dynamic> json) {return WebhookBranchProtectionRuleEditedChangesAdminEnforced(
   from: json['from'] as bool?,
-); }
+);}
 
 final bool? from;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'from': from,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && (json['from'] == null || json['from'] is bool); } 
-WebhookBranchProtectionRuleEditedChangesAdminEnforced copyWith({bool? Function()? from}) { return WebhookBranchProtectionRuleEditedChangesAdminEnforced(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('from') && (json['from'] == null || json['from'] is bool);}
+WebhookBranchProtectionRuleEditedChangesAdminEnforced copyWith({bool? Function()? from}) {return WebhookBranchProtectionRuleEditedChangesAdminEnforced(
   from: from != null ? from() : this.from,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookBranchProtectionRuleEditedChangesAdminEnforced &&
-          from == other.from; } 
-@override int get hashCode { return from.hashCode; } 
-@override String toString() { return 'WebhookBranchProtectionRuleEditedChangesAdminEnforced(from: $from)'; } 
- }
+          from == other.from;}
+@override int get hashCode {return from.hashCode;}
+@override String toString() {return 'WebhookBranchProtectionRuleEditedChangesAdminEnforced(from: $from)';}
+}

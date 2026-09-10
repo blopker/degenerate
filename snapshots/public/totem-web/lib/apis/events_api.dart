@@ -11,7 +11,7 @@ final class EventsApi with ApiExecutor {const EventsApi(this.apiConfig);
 /// List Events
 ///
 /// `GET /api/v1/spaces/`
-Future<ApiResult<PagedSessionListSchema, Never>> totemSpacesApiListEvents({required String? category, required String? author, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PagedSessionListSchema, Never>> totemSpacesApiListEvents({required String? category, required String? author, int? limit, int? offset, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (category != null) {
   queryParameters['category'] = category;
@@ -44,11 +44,11 @@ final json = jsonDecode(response.body);
 return PagedSessionListSchema.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Filter Options
 ///
 /// `GET /api/v1/spaces/filter-options`
-Future<ApiResult<FilterOptionsSchema, Never>> totemSpacesApiFilterOptions({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FilterOptionsSchema, Never>> totemSpacesApiFilterOptions({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -64,11 +64,11 @@ final json = jsonDecode(response.body);
 return FilterOptionsSchema.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Event Detail
 ///
 /// `GET /api/v1/spaces/event/{event_slug}`
-Future<ApiResult<SessionDetailSchema, Never>> totemSpacesApiEventDetail({required String eventSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SessionDetailSchema, Never>> totemSpacesApiEventDetail({required String eventSlug, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -84,11 +84,11 @@ final json = jsonDecode(response.body);
 return SessionDetailSchema.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Upcoming Events
 ///
 /// `GET /api/v1/spaces/calendar`
-Future<ApiResult<List<EventCalendarSchema>, Never>> totemSpacesApiUpcomingEvents({String? spaceSlug, int? month, int? year, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<EventCalendarSchema>, Never>> totemSpacesApiUpcomingEvents({String? spaceSlug, int? month, int? year, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (spaceSlug != null) {
   queryParameters['space_slug'] = spaceSlug;
@@ -118,5 +118,5 @@ final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => EventCalendarSchema.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
- }
+}
+}

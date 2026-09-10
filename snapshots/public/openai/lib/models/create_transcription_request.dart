@@ -4,7 +4,7 @@ import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtim
 /// 
 @immutable final class AudioResponseFormat {const AudioResponseFormat._(this.value);
 
-factory AudioResponseFormat.fromJson(String json) { return switch (json) {
+factory AudioResponseFormat.fromJson(String json) {return switch (json) {
   'json' => $json,
   'text' => text,
   'srt' => srt,
@@ -12,7 +12,7 @@ factory AudioResponseFormat.fromJson(String json) { return switch (json) {
   'vtt' => vtt,
   'diarized_json' => diarizedJson,
   _ => AudioResponseFormat._(json),
-}; }
+};}
 
 static const AudioResponseFormat $json = AudioResponseFormat._('json');
 
@@ -30,20 +30,20 @@ static const List<AudioResponseFormat> values = [$json, text, srt, verboseJson, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AudioResponseFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AudioResponseFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AudioResponseFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AudioResponseFormat($value)';}
+}
 @immutable final class TranscriptionInclude {const TranscriptionInclude._(this.value);
 
-factory TranscriptionInclude.fromJson(String json) { return switch (json) {
+factory TranscriptionInclude.fromJson(String json) {return switch (json) {
   'logprobs' => logprobs,
   _ => TranscriptionInclude._(json),
-}; }
+};}
 
 static const TranscriptionInclude logprobs = TranscriptionInclude._('logprobs');
 
@@ -51,21 +51,21 @@ static const List<TranscriptionInclude> values = [logprobs];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TranscriptionInclude && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TranscriptionInclude($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TranscriptionInclude && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TranscriptionInclude($value)';}
+}
 @immutable final class CreateTranscriptionRequestTimestampGranularities {const CreateTranscriptionRequestTimestampGranularities._(this.value);
 
-factory CreateTranscriptionRequestTimestampGranularities.fromJson(String json) { return switch (json) {
+factory CreateTranscriptionRequestTimestampGranularities.fromJson(String json) {return switch (json) {
   'word' => word,
   'segment' => segment,
   _ => CreateTranscriptionRequestTimestampGranularities._(json),
-}; }
+};}
 
 static const CreateTranscriptionRequestTimestampGranularities word = CreateTranscriptionRequestTimestampGranularities._('word');
 
@@ -75,17 +75,17 @@ static const List<CreateTranscriptionRequestTimestampGranularities> values = [wo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateTranscriptionRequestTimestampGranularities && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateTranscriptionRequestTimestampGranularities($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateTranscriptionRequestTimestampGranularities && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateTranscriptionRequestTimestampGranularities($value)';}
+}
 @immutable final class CreateTranscriptionRequest {const CreateTranscriptionRequest({required this.file, required this.model, this.language, this.prompt, this.responseFormat, this.temperature, this.include, this.timestampGranularities, this.stream = const Omittable.absent(), this.chunkingStrategy = const Omittable.absent(), this.knownSpeakerNames, this.knownSpeakerReferences, });
 
-factory CreateTranscriptionRequest.fromJson(Map<String, dynamic> json) { return CreateTranscriptionRequest(
+factory CreateTranscriptionRequest.fromJson(Map<String, dynamic> json) {return CreateTranscriptionRequest(
   file: base64Decode(json['file'] as String),
   model: CreateTranscriptionRequestModel.fromJson(json['model']),
   language: json['language'] as String?,
@@ -98,7 +98,7 @@ factory CreateTranscriptionRequest.fromJson(Map<String, dynamic> json) { return 
   chunkingStrategy: json.containsKey('chunking_strategy') ? Omittable(json['chunking_strategy'] != null ? CreateTranscriptionRequestChunkingStrategy.fromJson(json['chunking_strategy']) : null) : const Omittable.absent(),
   knownSpeakerNames: (json['known_speaker_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
   knownSpeakerReferences: (json['known_speaker_references'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
 /// 
@@ -158,8 +158,8 @@ final List<String>? knownSpeakerNames;
 final List<String>? knownSpeakerReferences;
 
 /// The value with the schema default applied when absent.
-double get temperatureOrDefault { return temperature ?? 0.0; } 
-Map<String, dynamic> toJson() { return {
+double get temperatureOrDefault {return temperature ?? 0.0;}
+Map<String, dynamic> toJson() {return {
   'file': base64Encode(file),
   'model': model.toJson(),
   'language': ?language,
@@ -172,10 +172,10 @@ Map<String, dynamic> toJson() { return {
   if (chunkingStrategy.isPresent) 'chunking_strategy': chunkingStrategy.value?.toJson(),
   'known_speaker_names': ?knownSpeakerNames,
   'known_speaker_references': ?knownSpeakerReferences,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
-      json.containsKey('model'); } 
-CreateTranscriptionRequest copyWith({Uint8List? file, CreateTranscriptionRequestModel? model, String? Function()? language, String? Function()? prompt, AudioResponseFormat? Function()? responseFormat, double? Function()? temperature, List<TranscriptionInclude>? Function()? include, List<CreateTranscriptionRequestTimestampGranularities>? Function()? timestampGranularities, Omittable<bool?>? stream, Omittable<CreateTranscriptionRequestChunkingStrategy?>? chunkingStrategy, List<String>? Function()? knownSpeakerNames, List<String>? Function()? knownSpeakerReferences, }) { return CreateTranscriptionRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file') &&
+      json.containsKey('model');}
+CreateTranscriptionRequest copyWith({Uint8List? file, CreateTranscriptionRequestModel? model, String? Function()? language, String? Function()? prompt, AudioResponseFormat? Function()? responseFormat, double? Function()? temperature, List<TranscriptionInclude>? Function()? include, List<CreateTranscriptionRequestTimestampGranularities>? Function()? timestampGranularities, Omittable<bool?>? stream, Omittable<CreateTranscriptionRequestChunkingStrategy?>? chunkingStrategy, List<String>? Function()? knownSpeakerNames, List<String>? Function()? knownSpeakerReferences, }) {return CreateTranscriptionRequest(
   file: file ?? this.file,
   model: model ?? this.model,
   language: language != null ? language() : this.language,
@@ -188,8 +188,8 @@ CreateTranscriptionRequest copyWith({Uint8List? file, CreateTranscriptionRequest
   chunkingStrategy: chunkingStrategy ?? this.chunkingStrategy,
   knownSpeakerNames: knownSpeakerNames != null ? knownSpeakerNames() : this.knownSpeakerNames,
   knownSpeakerReferences: knownSpeakerReferences != null ? knownSpeakerReferences() : this.knownSpeakerReferences,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateTranscriptionRequest &&
           listEquals(file, other.file) &&
           model == other.model &&
@@ -202,7 +202,7 @@ CreateTranscriptionRequest copyWith({Uint8List? file, CreateTranscriptionRequest
           stream == other.stream &&
           chunkingStrategy == other.chunkingStrategy &&
           listEquals(knownSpeakerNames, other.knownSpeakerNames) &&
-          listEquals(knownSpeakerReferences, other.knownSpeakerReferences); } 
-@override int get hashCode { return Object.hash(Object.hashAll(file), model, language, prompt, responseFormat, temperature, Object.hashAll(include ?? const []), Object.hashAll(timestampGranularities ?? const []), stream, chunkingStrategy, Object.hashAll(knownSpeakerNames ?? const []), Object.hashAll(knownSpeakerReferences ?? const [])); } 
-@override String toString() { return 'CreateTranscriptionRequest(file: $file, model: $model, language: $language, prompt: $prompt, responseFormat: $responseFormat, temperature: $temperature, include: $include, timestampGranularities: $timestampGranularities, stream: $stream, chunkingStrategy: $chunkingStrategy, knownSpeakerNames: $knownSpeakerNames, knownSpeakerReferences: $knownSpeakerReferences)'; } 
- }
+          listEquals(knownSpeakerReferences, other.knownSpeakerReferences);}
+@override int get hashCode {return Object.hash(Object.hashAll(file), model, language, prompt, responseFormat, temperature, Object.hashAll(include ?? const []), Object.hashAll(timestampGranularities ?? const []), stream, chunkingStrategy, Object.hashAll(knownSpeakerNames ?? const []), Object.hashAll(knownSpeakerReferences ?? const []));}
+@override String toString() {return 'CreateTranscriptionRequest(file: $file, model: $model, language: $language, prompt: $prompt, responseFormat: $responseFormat, temperature: $temperature, include: $include, timestampGranularities: $timestampGranularities, stream: $stream, chunkingStrategy: $chunkingStrategy, knownSpeakerNames: $knownSpeakerNames, knownSpeakerReferences: $knownSpeakerReferences)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesIntuneConfigRequest {const TeamsDevicesIntuneConfigRequest({required this.clientId, required this.clientSecret, required this.customerId, });
 
-factory TeamsDevicesIntuneConfigRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesIntuneConfigRequest(
+factory TeamsDevicesIntuneConfigRequest.fromJson(Map<String, dynamic> json) {return TeamsDevicesIntuneConfigRequest(
   clientId: json['client_id'] as String,
   clientSecret: json['client_secret'] as String,
   customerId: json['customer_id'] as String,
-); }
+);}
 
 /// The Intune client ID.
 final String clientId;
@@ -17,24 +17,24 @@ final String clientSecret;
 /// The Intune customer ID.
 final String customerId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_id': clientId,
   'client_secret': clientSecret,
   'customer_id': customerId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_id') && json['client_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('client_id') && json['client_id'] is String &&
       json.containsKey('client_secret') && json['client_secret'] is String &&
-      json.containsKey('customer_id') && json['customer_id'] is String; } 
-TeamsDevicesIntuneConfigRequest copyWith({String? clientId, String? clientSecret, String? customerId, }) { return TeamsDevicesIntuneConfigRequest(
+      json.containsKey('customer_id') && json['customer_id'] is String;}
+TeamsDevicesIntuneConfigRequest copyWith({String? clientId, String? clientSecret, String? customerId, }) {return TeamsDevicesIntuneConfigRequest(
   clientId: clientId ?? this.clientId,
   clientSecret: clientSecret ?? this.clientSecret,
   customerId: customerId ?? this.customerId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamsDevicesIntuneConfigRequest &&
           clientId == other.clientId &&
           clientSecret == other.clientSecret &&
-          customerId == other.customerId; } 
-@override int get hashCode { return Object.hash(clientId, clientSecret, customerId); } 
-@override String toString() { return 'TeamsDevicesIntuneConfigRequest(clientId: $clientId, clientSecret: $clientSecret, customerId: $customerId)'; } 
- }
+          customerId == other.customerId;}
+@override int get hashCode {return Object.hash(clientId, clientSecret, customerId);}
+@override String toString() {return 'TeamsDevicesIntuneConfigRequest(clientId: $clientId, clientSecret: $clientSecret, customerId: $customerId)';}
+}

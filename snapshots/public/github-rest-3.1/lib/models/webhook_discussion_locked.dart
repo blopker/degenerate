@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookDiscussionLockedAction {const WebhookDiscussionLockedAction._(this.value);
 
-factory WebhookDiscussionLockedAction.fromJson(String json) { return switch (json) {
+factory WebhookDiscussionLockedAction.fromJson(String json) {return switch (json) {
   'locked' => locked,
   _ => WebhookDiscussionLockedAction._(json),
-}; }
+};}
 
 static const WebhookDiscussionLockedAction locked = WebhookDiscussionLockedAction._('locked');
 
@@ -13,17 +13,17 @@ static const List<WebhookDiscussionLockedAction> values = [locked];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDiscussionLockedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDiscussionLockedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookDiscussionLockedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookDiscussionLockedAction($value)';}
+}
 @immutable final class WebhookDiscussionLocked {const WebhookDiscussionLocked({required this.action, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookDiscussionLocked.fromJson(Map<String, dynamic> json) { return WebhookDiscussionLocked(
+factory WebhookDiscussionLocked.fromJson(Map<String, dynamic> json) {return WebhookDiscussionLocked(
   action: WebhookDiscussionLockedAction.fromJson(json['action'] as String),
   discussion: Discussion.fromJson(json['discussion'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookDiscussionLocked.fromJson(Map<String, dynamic> json) { return Web
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookDiscussionLockedAction action;
 
@@ -47,7 +47,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'discussion': discussion.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -55,12 +55,12 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('discussion') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookDiscussionLocked copyWith({WebhookDiscussionLockedAction? action, Discussion? discussion, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDiscussionLocked(
+      json.containsKey('sender');}
+WebhookDiscussionLocked copyWith({WebhookDiscussionLockedAction? action, Discussion? discussion, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookDiscussionLocked(
   action: action ?? this.action,
   discussion: discussion ?? this.discussion,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -68,8 +68,8 @@ WebhookDiscussionLocked copyWith({WebhookDiscussionLockedAction? action, Discuss
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDiscussionLocked &&
           action == other.action &&
           discussion == other.discussion &&
@@ -77,7 +77,7 @@ WebhookDiscussionLocked copyWith({WebhookDiscussionLockedAction? action, Discuss
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, discussion, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookDiscussionLocked(action: $action, discussion: $discussion, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, discussion, enterprise, installation, organization, repository, sender);}
+@override String toString() {return 'WebhookDiscussionLocked(action: $action, discussion: $discussion, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';}
+}

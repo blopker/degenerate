@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_sources_data.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
 @immutable final class CustomerSourcesObject {const CustomerSourcesObject._(this.value);
 
-factory CustomerSourcesObject.fromJson(String json) { return switch (json) {
+factory CustomerSourcesObject.fromJson(String json) {return switch (json) {
   'list' => list,
   _ => CustomerSourcesObject._(json),
-}; }
+};}
 
 static const CustomerSourcesObject list = CustomerSourcesObject._('list');
 
@@ -14,23 +14,23 @@ static const List<CustomerSourcesObject> values = [list];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerSourcesObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerSourcesObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CustomerSourcesObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CustomerSourcesObject($value)';}
+}
 /// The customer's payment sources, if any.
 @immutable final class CustomerSources {const CustomerSources({required this.data, required this.hasMore, required this.object, required this.url, });
 
-factory CustomerSources.fromJson(Map<String, dynamic> json) { return CustomerSources(
+factory CustomerSources.fromJson(Map<String, dynamic> json) {return CustomerSources(
   data: (json['data'] as List<dynamic>).map(CustomerSourcesData.fromJson).toList(),
   hasMore: json['has_more'] as bool,
   object: CustomerSourcesObject.fromJson(json['object'] as String),
   url: json['url'] as String,
-); }
+);}
 
 /// Details about each object.
 final List<CustomerSourcesData> data;
@@ -44,28 +44,28 @@ final CustomerSourcesObject object;
 /// The URL where this list can be accessed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'object': object.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
-CustomerSources copyWith({List<CustomerSourcesData>? data, bool? hasMore, CustomerSourcesObject? object, String? url, }) { return CustomerSources(
+      json.containsKey('url') && json['url'] is String;}
+CustomerSources copyWith({List<CustomerSourcesData>? data, bool? hasMore, CustomerSourcesObject? object, String? url, }) {return CustomerSources(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomerSources &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, object, url); } 
-@override String toString() { return 'CustomerSources(data: $data, hasMore: $hasMore, object: $object, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(data), hasMore, object, url);}
+@override String toString() {return 'CustomerSources(data: $data, hasMore: $hasMore, object: $object, url: $url)';}
+}

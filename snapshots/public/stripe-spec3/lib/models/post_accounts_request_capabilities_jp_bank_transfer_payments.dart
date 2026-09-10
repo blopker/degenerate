@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestCapabilitiesJpBankTransferPayments {const PostAccountsRequestCapabilitiesJpBankTransferPayments({this.requested});
 
-factory PostAccountsRequestCapabilitiesJpBankTransferPayments.fromJson(Map<String, dynamic> json) { return PostAccountsRequestCapabilitiesJpBankTransferPayments(
+factory PostAccountsRequestCapabilitiesJpBankTransferPayments.fromJson(Map<String, dynamic> json) {return PostAccountsRequestCapabilitiesJpBankTransferPayments(
   requested: json['requested'] as bool?,
-); }
+);}
 
 final bool? requested;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'requested': ?requested,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested'}.contains(key)); } 
-PostAccountsRequestCapabilitiesJpBankTransferPayments copyWith({bool? Function()? requested}) { return PostAccountsRequestCapabilitiesJpBankTransferPayments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'requested'}.contains(key));}
+PostAccountsRequestCapabilitiesJpBankTransferPayments copyWith({bool? Function()? requested}) {return PostAccountsRequestCapabilitiesJpBankTransferPayments(
   requested: requested != null ? requested() : this.requested,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsRequestCapabilitiesJpBankTransferPayments &&
-          requested == other.requested; } 
-@override int get hashCode { return requested.hashCode; } 
-@override String toString() { return 'PostAccountsRequestCapabilitiesJpBankTransferPayments(requested: $requested)'; } 
- }
+          requested == other.requested;}
+@override int get hashCode {return requested.hashCode;}
+@override String toString() {return 'PostAccountsRequestCapabilitiesJpBankTransferPayments(requested: $requested)';}
+}

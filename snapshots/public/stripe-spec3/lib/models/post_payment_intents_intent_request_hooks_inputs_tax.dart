@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_request_hooks_inputs_tax_calculation.dart';@immutable final class PostPaymentIntentsIntentRequestHooksInputsTax {const PostPaymentIntentsIntentRequestHooksInputsTax({required this.calculation});
 
-factory PostPaymentIntentsIntentRequestHooksInputsTax.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestHooksInputsTax(
+factory PostPaymentIntentsIntentRequestHooksInputsTax.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentRequestHooksInputsTax(
   calculation: PostPaymentIntentsIntentRequestHooksInputsTaxCalculation.fromJson(json['calculation']),
-); }
+);}
 
 final PostPaymentIntentsIntentRequestHooksInputsTaxCalculation calculation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'calculation': calculation.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('calculation'); } 
-PostPaymentIntentsIntentRequestHooksInputsTax copyWith({PostPaymentIntentsIntentRequestHooksInputsTaxCalculation? calculation}) { return PostPaymentIntentsIntentRequestHooksInputsTax(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('calculation');}
+PostPaymentIntentsIntentRequestHooksInputsTax copyWith({PostPaymentIntentsIntentRequestHooksInputsTaxCalculation? calculation}) {return PostPaymentIntentsIntentRequestHooksInputsTax(
   calculation: calculation ?? this.calculation,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsIntentRequestHooksInputsTax &&
-          calculation == other.calculation; } 
-@override int get hashCode { return calculation.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentRequestHooksInputsTax(calculation: $calculation)'; } 
- }
+          calculation == other.calculation;}
+@override int get hashCode {return calculation.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentRequestHooksInputsTax(calculation: $calculation)';}
+}

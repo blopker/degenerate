@@ -16,7 +16,7 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class MagicRoute {const MagicRoute({required this.id, required this.nexthop, required this.prefix, required this.priority, this.createdOn, this.description, this.modifiedOn, this.scope, this.weight, });
 
-factory MagicRoute.fromJson(Map<String, dynamic> json) { return MagicRoute(
+factory MagicRoute.fromJson(Map<String, dynamic> json) {return MagicRoute(
   createdOn: json['created_on'] != null ? MagicCreatedOn.fromJson(json['created_on'] as String) : null,
   description: json['description'] != null ? MagicDescription.fromJson(json['description'] as String) : null,
   id: MagicIdentifier.fromJson(json['id'] as String),
@@ -26,7 +26,7 @@ factory MagicRoute.fromJson(Map<String, dynamic> json) { return MagicRoute(
   priority: MagicPriority.fromJson(json['priority'] as num),
   scope: json['scope'] != null ? MagicScope.fromJson(json['scope'] as Map<String, dynamic>) : null,
   weight: json['weight'] != null ? MagicWeight.fromJson(json['weight'] as num) : null,
-); }
+);}
 
 /// When the route was created.
 final MagicCreatedOn? createdOn;
@@ -53,7 +53,7 @@ final MagicScope? scope;
 
 final MagicWeight? weight;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdOn != null) 'created_on': createdOn?.toJson(),
   if (description != null) 'description': description?.toJson(),
   'id': id.toJson(),
@@ -63,12 +63,12 @@ Map<String, dynamic> toJson() { return {
   'priority': priority.toJson(),
   if (scope != null) 'scope': scope?.toJson(),
   if (weight != null) 'weight': weight?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
       json.containsKey('nexthop') &&
       json.containsKey('prefix') &&
-      json.containsKey('priority'); } 
-MagicRoute copyWith({MagicCreatedOn? Function()? createdOn, MagicDescription? Function()? description, MagicIdentifier? id, MagicModifiedOn? Function()? modifiedOn, MagicNexthop? nexthop, MagicPrefix? prefix, MagicPriority? priority, MagicScope? Function()? scope, MagicWeight? Function()? weight, }) { return MagicRoute(
+      json.containsKey('priority');}
+MagicRoute copyWith({MagicCreatedOn? Function()? createdOn, MagicDescription? Function()? description, MagicIdentifier? id, MagicModifiedOn? Function()? modifiedOn, MagicNexthop? nexthop, MagicPrefix? prefix, MagicPriority? priority, MagicScope? Function()? scope, MagicWeight? Function()? weight, }) {return MagicRoute(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   description: description != null ? description() : this.description,
   id: id ?? this.id,
@@ -78,8 +78,8 @@ MagicRoute copyWith({MagicCreatedOn? Function()? createdOn, MagicDescription? Fu
   priority: priority ?? this.priority,
   scope: scope != null ? scope() : this.scope,
   weight: weight != null ? weight() : this.weight,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MagicRoute &&
           createdOn == other.createdOn &&
           description == other.description &&
@@ -89,7 +89,7 @@ MagicRoute copyWith({MagicCreatedOn? Function()? createdOn, MagicDescription? Fu
           prefix == other.prefix &&
           priority == other.priority &&
           scope == other.scope &&
-          weight == other.weight; } 
-@override int get hashCode { return Object.hash(createdOn, description, id, modifiedOn, nexthop, prefix, priority, scope, weight); } 
-@override String toString() { return 'MagicRoute(createdOn: $createdOn, description: $description, id: $id, modifiedOn: $modifiedOn, nexthop: $nexthop, prefix: $prefix, priority: $priority, scope: $scope, weight: $weight)'; } 
- }
+          weight == other.weight;}
+@override int get hashCode {return Object.hash(createdOn, description, id, modifiedOn, nexthop, prefix, priority, scope, weight);}
+@override String toString() {return 'MagicRoute(createdOn: $createdOn, description: $description, id: $id, modifiedOn: $modifiedOn, nexthop: $nexthop, prefix: $prefix, priority: $priority, scope: $scope, weight: $weight)';}
+}

@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class AiSearchUpdateInstancesError {const AiSearchUpdateInstancesError();
 
 /// Decodes the payload for its declared status and content type.
-static AiSearchUpdateInstancesError parse(ApiResponse response) { switch (response.statusCode) {
+static AiSearchUpdateInstancesError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
 return AiSearchUpdateInstancesError400(AiSearchUpdateInstancesResponse400.fromJson(json as Map<String, dynamic>));
@@ -14,26 +14,26 @@ return AiSearchUpdateInstancesError404(AiSearchUpdateInstancesResponse404.fromJs
 default:
 return AiSearchUpdateInstancesErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class AiSearchUpdateInstancesError400 extends AiSearchUpdateInstancesError {const AiSearchUpdateInstancesError400(this.data);
 
 /// The decoded response payload.
 final AiSearchUpdateInstancesResponse400 data;
 
- }
+}
 /// Response for 404 (application/json).
 final class AiSearchUpdateInstancesError404 extends AiSearchUpdateInstancesError {const AiSearchUpdateInstancesError404(this.data);
 
 /// The decoded response payload.
 final AiSearchUpdateInstancesResponse404 data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class AiSearchUpdateInstancesErrorUnknown extends AiSearchUpdateInstancesError {const AiSearchUpdateInstancesErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_setting_quote_setting.dart';import 'quote_application.dart';import 'quote_customer.dart';import 'quote_default_tax_rates.dart';import 'quote_discounts.dart';import 'quote_invoice.dart';import 'quote_line_items.dart';import 'quote_on_behalf_of.dart';import 'quote_subscription.dart';import 'quote_subscription_schedule.dart';import 'quote_test_clock.dart';import 'quotes_resource_automatic_tax.dart';import 'quotes_resource_computed.dart';import 'quotes_resource_from_quote.dart';import 'quotes_resource_status_transitions.dart';import 'quotes_resource_subscription_data_subscription_data.dart';import 'quotes_resource_total_details.dart';import 'quotes_resource_transfer_data.dart';/// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay invoices at the end of the subscription cycle or on finalization using the default payment method attached to the subscription or customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`. Defaults to `charge_automatically`.
 @immutable final class QuoteCollectionMethod {const QuoteCollectionMethod._(this.value);
 
-factory QuoteCollectionMethod.fromJson(String json) { return switch (json) {
+factory QuoteCollectionMethod.fromJson(String json) {return switch (json) {
   'charge_automatically' => chargeAutomatically,
   'send_invoice' => sendInvoice,
   _ => QuoteCollectionMethod._(json),
-}; }
+};}
 
 static const QuoteCollectionMethod chargeAutomatically = QuoteCollectionMethod._('charge_automatically');
 
@@ -17,21 +17,21 @@ static const List<QuoteCollectionMethod> values = [chargeAutomatically, sendInvo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is QuoteCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'QuoteCollectionMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is QuoteCollectionMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'QuoteCollectionMethod($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class QuoteObject {const QuoteObject._(this.value);
 
-factory QuoteObject.fromJson(String json) { return switch (json) {
+factory QuoteObject.fromJson(String json) {return switch (json) {
   'quote' => quote,
   _ => QuoteObject._(json),
-}; }
+};}
 
 static const QuoteObject quote = QuoteObject._('quote');
 
@@ -39,24 +39,24 @@ static const List<QuoteObject> values = [quote];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is QuoteObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'QuoteObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is QuoteObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'QuoteObject($value)';}
+}
 /// The status of the quote.
 @immutable final class QuoteStatus {const QuoteStatus._(this.value);
 
-factory QuoteStatus.fromJson(String json) { return switch (json) {
+factory QuoteStatus.fromJson(String json) {return switch (json) {
   'accepted' => accepted,
   'canceled' => canceled,
   'draft' => draft,
   'open' => open,
   _ => QuoteStatus._(json),
-}; }
+};}
 
 static const QuoteStatus accepted = QuoteStatus._('accepted');
 
@@ -70,19 +70,19 @@ static const List<QuoteStatus> values = [accepted, canceled, draft, open];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is QuoteStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'QuoteStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is QuoteStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'QuoteStatus($value)';}
+}
 /// A Quote is a way to model prices that you'd like to provide to a customer.
 /// Once accepted, it will automatically create an invoice, subscription or subscription schedule.
 @immutable final class Quote {const Quote({required this.statusTransitions, required this.amountTotal, required this.automaticTax, required this.collectionMethod, required this.computed, required this.created, required this.amountSubtotal, required this.discounts, required this.expiresAt, required this.object, required this.metadata, required this.subscriptionData, required this.invoiceSettings, required this.id, required this.status, required this.totalDetails, required this.livemode, this.footer = const Omittable.absent(), this.header = const Omittable.absent(), this.description = const Omittable.absent(), this.invoice = const Omittable.absent(), this.defaultTaxRates, this.lineItems, this.transferData = const Omittable.absent(), this.customer = const Omittable.absent(), this.number = const Omittable.absent(), this.currency = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.applicationFeePercent = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.subscription = const Omittable.absent(), this.applicationFeeAmount = const Omittable.absent(), this.subscriptionSchedule = const Omittable.absent(), this.testClock = const Omittable.absent(), this.application = const Omittable.absent(), this.fromQuote = const Omittable.absent(), });
 
-factory Quote.fromJson(Map<String, dynamic> json) { return Quote(
+factory Quote.fromJson(Map<String, dynamic> json) {return Quote(
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
   application: json.containsKey('application') ? Omittable(json['application'] != null ? QuoteApplication.fromJson(json['application']) : null) : const Omittable.absent(),
@@ -119,7 +119,7 @@ factory Quote.fromJson(Map<String, dynamic> json) { return Quote(
   testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? QuoteTestClock.fromJson(json['test_clock']) : null) : const Omittable.absent(),
   totalDetails: QuotesResourceTotalDetails.fromJson(json['total_details'] as Map<String, dynamic>),
   transferData: json.containsKey('transfer_data') ? Omittable(json['transfer_data'] != null ? QuotesResourceTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Total before any discounts or taxes are applied.
 final int amountSubtotal;
@@ -223,7 +223,7 @@ final QuotesResourceTotalDetails totalDetails;
 /// The account (if any) the payments will be attributed to for tax reporting, and where funds from each payment will be transferred to for each of the invoices.
 final Omittable<QuotesResourceTransferData?> transferData;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_subtotal': amountSubtotal,
   'amount_total': amountTotal,
   if (application.isPresent) 'application': application.value?.toJson(),
@@ -260,8 +260,8 @@ Map<String, dynamic> toJson() { return {
   if (testClock.isPresent) 'test_clock': testClock.value?.toJson(),
   'total_details': totalDetails.toJson(),
   if (transferData.isPresent) 'transfer_data': transferData.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
       json.containsKey('amount_total') && json['amount_total'] is num &&
       json.containsKey('automatic_tax') &&
       json.containsKey('collection_method') &&
@@ -277,8 +277,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status') &&
       json.containsKey('status_transitions') &&
       json.containsKey('subscription_data') &&
-      json.containsKey('total_details'); } 
-Quote copyWith({int? amountSubtotal, int? amountTotal, Omittable<QuoteApplication?>? application, Omittable<int?>? applicationFeeAmount, Omittable<double?>? applicationFeePercent, QuotesResourceAutomaticTax? automaticTax, QuoteCollectionMethod? collectionMethod, QuotesResourceComputed? computed, int? created, Omittable<String?>? currency, Omittable<QuoteCustomer?>? customer, Omittable<String?>? customerAccount, List<QuoteDefaultTaxRates>? Function()? defaultTaxRates, Omittable<String?>? description, List<QuoteDiscounts>? discounts, int? expiresAt, Omittable<String?>? footer, Omittable<QuotesResourceFromQuote?>? fromQuote, Omittable<String?>? header, String? id, Omittable<QuoteInvoice?>? invoice, InvoiceSettingQuoteSetting? invoiceSettings, QuoteLineItems? Function()? lineItems, bool? livemode, Map<String,String>? metadata, Omittable<String?>? number, QuoteObject? object, Omittable<QuoteOnBehalfOf?>? onBehalfOf, QuoteStatus? status, QuotesResourceStatusTransitions? statusTransitions, Omittable<QuoteSubscription?>? subscription, QuotesResourceSubscriptionDataSubscriptionData? subscriptionData, Omittable<QuoteSubscriptionSchedule?>? subscriptionSchedule, Omittable<QuoteTestClock?>? testClock, QuotesResourceTotalDetails? totalDetails, Omittable<QuotesResourceTransferData?>? transferData, }) { return Quote(
+      json.containsKey('total_details');}
+Quote copyWith({int? amountSubtotal, int? amountTotal, Omittable<QuoteApplication?>? application, Omittable<int?>? applicationFeeAmount, Omittable<double?>? applicationFeePercent, QuotesResourceAutomaticTax? automaticTax, QuoteCollectionMethod? collectionMethod, QuotesResourceComputed? computed, int? created, Omittable<String?>? currency, Omittable<QuoteCustomer?>? customer, Omittable<String?>? customerAccount, List<QuoteDefaultTaxRates>? Function()? defaultTaxRates, Omittable<String?>? description, List<QuoteDiscounts>? discounts, int? expiresAt, Omittable<String?>? footer, Omittable<QuotesResourceFromQuote?>? fromQuote, Omittable<String?>? header, String? id, Omittable<QuoteInvoice?>? invoice, InvoiceSettingQuoteSetting? invoiceSettings, QuoteLineItems? Function()? lineItems, bool? livemode, Map<String,String>? metadata, Omittable<String?>? number, QuoteObject? object, Omittable<QuoteOnBehalfOf?>? onBehalfOf, QuoteStatus? status, QuotesResourceStatusTransitions? statusTransitions, Omittable<QuoteSubscription?>? subscription, QuotesResourceSubscriptionDataSubscriptionData? subscriptionData, Omittable<QuoteSubscriptionSchedule?>? subscriptionSchedule, Omittable<QuoteTestClock?>? testClock, QuotesResourceTotalDetails? totalDetails, Omittable<QuotesResourceTransferData?>? transferData, }) {return Quote(
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTotal: amountTotal ?? this.amountTotal,
   application: application ?? this.application,
@@ -315,8 +315,8 @@ Quote copyWith({int? amountSubtotal, int? amountTotal, Omittable<QuoteApplicatio
   testClock: testClock ?? this.testClock,
   totalDetails: totalDetails ?? this.totalDetails,
   transferData: transferData ?? this.transferData,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Quote &&
           amountSubtotal == other.amountSubtotal &&
           amountTotal == other.amountTotal &&
@@ -353,7 +353,7 @@ Quote copyWith({int? amountSubtotal, int? amountTotal, Omittable<QuoteApplicatio
           subscriptionSchedule == other.subscriptionSchedule &&
           testClock == other.testClock &&
           totalDetails == other.totalDetails &&
-          transferData == other.transferData; } 
-@override int get hashCode { return Object.hashAll([amountSubtotal, amountTotal, application, applicationFeeAmount, applicationFeePercent, automaticTax, collectionMethod, computed, created, currency, customer, customerAccount, Object.hashAll(defaultTaxRates ?? const []), description, Object.hashAll(discounts), expiresAt, footer, fromQuote, header, id, invoice, invoiceSettings, lineItems, livemode, metadata, number, object, onBehalfOf, status, statusTransitions, subscription, subscriptionData, subscriptionSchedule, testClock, totalDetails, transferData]); } 
-@override String toString() { return 'Quote(amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, application: $application, applicationFeeAmount: $applicationFeeAmount, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, collectionMethod: $collectionMethod, computed: $computed, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, expiresAt: $expiresAt, footer: $footer, fromQuote: $fromQuote, header: $header, id: $id, invoice: $invoice, invoiceSettings: $invoiceSettings, lineItems: $lineItems, livemode: $livemode, metadata: $metadata, number: $number, object: $object, onBehalfOf: $onBehalfOf, status: $status, statusTransitions: $statusTransitions, subscription: $subscription, subscriptionData: $subscriptionData, subscriptionSchedule: $subscriptionSchedule, testClock: $testClock, totalDetails: $totalDetails, transferData: $transferData)'; } 
- }
+          transferData == other.transferData;}
+@override int get hashCode {return Object.hashAll([amountSubtotal, amountTotal, application, applicationFeeAmount, applicationFeePercent, automaticTax, collectionMethod, computed, created, currency, customer, customerAccount, Object.hashAll(defaultTaxRates ?? const []), description, Object.hashAll(discounts), expiresAt, footer, fromQuote, header, id, invoice, invoiceSettings, lineItems, livemode, metadata, number, object, onBehalfOf, status, statusTransitions, subscription, subscriptionData, subscriptionSchedule, testClock, totalDetails, transferData]);}
+@override String toString() {return 'Quote(amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, application: $application, applicationFeeAmount: $applicationFeeAmount, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, collectionMethod: $collectionMethod, computed: $computed, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, expiresAt: $expiresAt, footer: $footer, fromQuote: $fromQuote, header: $header, id: $id, invoice: $invoice, invoiceSettings: $invoiceSettings, lineItems: $lineItems, livemode: $livemode, metadata: $metadata, number: $number, object: $object, onBehalfOf: $onBehalfOf, status: $status, statusTransitions: $statusTransitions, subscription: $subscription, subscriptionData: $subscriptionData, subscriptionSchedule: $subscriptionSchedule, testClock: $testClock, totalDetails: $totalDetails, transferData: $transferData)';}
+}

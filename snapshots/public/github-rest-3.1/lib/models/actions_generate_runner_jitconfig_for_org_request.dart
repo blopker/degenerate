@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsGenerateRunnerJitconfigForOrgRequest {const ActionsGenerateRunnerJitconfigForOrgRequest({required this.name, required this.runnerGroupId, required this.labels, this.workFolder, });
 
-factory ActionsGenerateRunnerJitconfigForOrgRequest.fromJson(Map<String, dynamic> json) { return ActionsGenerateRunnerJitconfigForOrgRequest(
+factory ActionsGenerateRunnerJitconfigForOrgRequest.fromJson(Map<String, dynamic> json) {return ActionsGenerateRunnerJitconfigForOrgRequest(
   name: json['name'] as String,
   runnerGroupId: (json['runner_group_id'] as num).toInt(),
   labels: (json['labels'] as List<dynamic>).map((e) => e as String).toList(),
   workFolder: json['work_folder'] as String?,
-); }
+);}
 
 /// The name of the new runner.
 final String name;
@@ -22,28 +22,28 @@ final List<String> labels;
 final String? workFolder;
 
 /// The value with the schema default applied when absent.
-String get workFolderOrDefault { return workFolder ?? '_work'; } 
-Map<String, dynamic> toJson() { return {
+String get workFolderOrDefault {return workFolder ?? '_work';}
+Map<String, dynamic> toJson() {return {
   'name': name,
   'runner_group_id': runnerGroupId,
   'labels': labels,
   'work_folder': ?workFolder,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('runner_group_id') && json['runner_group_id'] is num &&
-      json.containsKey('labels'); } 
-ActionsGenerateRunnerJitconfigForOrgRequest copyWith({String? name, int? runnerGroupId, List<String>? labels, String? Function()? workFolder, }) { return ActionsGenerateRunnerJitconfigForOrgRequest(
+      json.containsKey('labels');}
+ActionsGenerateRunnerJitconfigForOrgRequest copyWith({String? name, int? runnerGroupId, List<String>? labels, String? Function()? workFolder, }) {return ActionsGenerateRunnerJitconfigForOrgRequest(
   name: name ?? this.name,
   runnerGroupId: runnerGroupId ?? this.runnerGroupId,
   labels: labels ?? this.labels,
   workFolder: workFolder != null ? workFolder() : this.workFolder,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ActionsGenerateRunnerJitconfigForOrgRequest &&
           name == other.name &&
           runnerGroupId == other.runnerGroupId &&
           listEquals(labels, other.labels) &&
-          workFolder == other.workFolder; } 
-@override int get hashCode { return Object.hash(name, runnerGroupId, Object.hashAll(labels), workFolder); } 
-@override String toString() { return 'ActionsGenerateRunnerJitconfigForOrgRequest(name: $name, runnerGroupId: $runnerGroupId, labels: $labels, workFolder: $workFolder)'; } 
- }
+          workFolder == other.workFolder;}
+@override int get hashCode {return Object.hash(name, runnerGroupId, Object.hashAll(labels), workFolder);}
+@override String toString() {return 'ActionsGenerateRunnerJitconfigForOrgRequest(name: $name, runnerGroupId: $runnerGroupId, labels: $labels, workFolder: $workFolder)';}
+}

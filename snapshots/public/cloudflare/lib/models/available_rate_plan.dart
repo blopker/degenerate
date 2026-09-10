@@ -44,7 +44,7 @@ num toJson() => value;
 }
 @immutable final class AvailableRatePlan {const AvailableRatePlan({this.canSubscribe, this.currency, this.externallyManaged, this.frequency, this.id, this.isSubscribed, this.legacyDiscount, this.legacyId, this.name, this.price, });
 
-factory AvailableRatePlan.fromJson(Map<String, dynamic> json) { return AvailableRatePlan(
+factory AvailableRatePlan.fromJson(Map<String, dynamic> json) {return AvailableRatePlan(
   canSubscribe: json['can_subscribe'] != null ? CanSubscribe.fromJson(json['can_subscribe'] as bool) : null,
   currency: json['currency'] != null ? Currency.fromJson(json['currency'] as String) : null,
   externallyManaged: json['externally_managed'] != null ? ExternallyManaged.fromJson(json['externally_managed'] as bool) : null,
@@ -55,7 +55,7 @@ factory AvailableRatePlan.fromJson(Map<String, dynamic> json) { return Available
   legacyId: json['legacy_id'] != null ? LegacyId.fromJson(json['legacy_id'] as String) : null,
   name: json['name'] != null ? SchemasName.fromJson(json['name'] as String) : null,
   price: json['price'] != null ? SchemasPrice.fromJson(json['price'] as num) : null,
-); }
+);}
 
 final CanSubscribe? canSubscribe;
 
@@ -77,7 +77,7 @@ final SchemasName? name;
 
 final SchemasPrice? price;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (canSubscribe != null) 'can_subscribe': canSubscribe?.toJson(),
   if (currency != null) 'currency': currency?.toJson(),
   if (externallyManaged != null) 'externally_managed': externallyManaged?.toJson(),
@@ -88,9 +88,9 @@ Map<String, dynamic> toJson() { return {
   if (legacyId != null) 'legacy_id': legacyId?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (price != null) 'price': price?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_subscribe', 'currency', 'externally_managed', 'frequency', 'id', 'is_subscribed', 'legacy_discount', 'legacy_id', 'name', 'price'}.contains(key)); } 
-AvailableRatePlan copyWith({CanSubscribe? Function()? canSubscribe, Currency? Function()? currency, ExternallyManaged? Function()? externallyManaged, SchemasFrequency? Function()? frequency, Identifier? Function()? id, IsSubscribed? Function()? isSubscribed, LegacyDiscount? Function()? legacyDiscount, LegacyId? Function()? legacyId, SchemasName? Function()? name, SchemasPrice? Function()? price, }) { return AvailableRatePlan(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'can_subscribe', 'currency', 'externally_managed', 'frequency', 'id', 'is_subscribed', 'legacy_discount', 'legacy_id', 'name', 'price'}.contains(key));}
+AvailableRatePlan copyWith({CanSubscribe? Function()? canSubscribe, Currency? Function()? currency, ExternallyManaged? Function()? externallyManaged, SchemasFrequency? Function()? frequency, Identifier? Function()? id, IsSubscribed? Function()? isSubscribed, LegacyDiscount? Function()? legacyDiscount, LegacyId? Function()? legacyId, SchemasName? Function()? name, SchemasPrice? Function()? price, }) {return AvailableRatePlan(
   canSubscribe: canSubscribe != null ? canSubscribe() : this.canSubscribe,
   currency: currency != null ? currency() : this.currency,
   externallyManaged: externallyManaged != null ? externallyManaged() : this.externallyManaged,
@@ -101,8 +101,8 @@ AvailableRatePlan copyWith({CanSubscribe? Function()? canSubscribe, Currency? Fu
   legacyId: legacyId != null ? legacyId() : this.legacyId,
   name: name != null ? name() : this.name,
   price: price != null ? price() : this.price,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AvailableRatePlan &&
           canSubscribe == other.canSubscribe &&
           currency == other.currency &&
@@ -113,7 +113,7 @@ AvailableRatePlan copyWith({CanSubscribe? Function()? canSubscribe, Currency? Fu
           legacyDiscount == other.legacyDiscount &&
           legacyId == other.legacyId &&
           name == other.name &&
-          price == other.price; } 
-@override int get hashCode { return Object.hash(canSubscribe, currency, externallyManaged, frequency, id, isSubscribed, legacyDiscount, legacyId, name, price); } 
-@override String toString() { return 'AvailableRatePlan(canSubscribe: $canSubscribe, currency: $currency, externallyManaged: $externallyManaged, frequency: $frequency, id: $id, isSubscribed: $isSubscribed, legacyDiscount: $legacyDiscount, legacyId: $legacyId, name: $name, price: $price)'; } 
- }
+          price == other.price;}
+@override int get hashCode {return Object.hash(canSubscribe, currency, externallyManaged, frequency, id, isSubscribed, legacyDiscount, legacyId, name, price);}
+@override String toString() {return 'AvailableRatePlan(canSubscribe: $canSubscribe, currency: $currency, externallyManaged: $externallyManaged, frequency: $frequency, id: $id, isSubscribed: $isSubscribed, legacyDiscount: $legacyDiscount, legacyId: $legacyId, name: $name, price: $price)';}
+}

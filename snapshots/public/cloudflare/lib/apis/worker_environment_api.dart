@@ -13,7 +13,7 @@ final class WorkerEnvironmentApi with ApiExecutor {const WorkerEnvironmentApi(th
 /// Get script content from a worker with an environment.
 ///
 /// `GET /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content`
-Future<ApiResult<String, ResponseCommonFailure82>> workerEnvironmentGetScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, ResponseCommonFailure82>> workerEnvironmentGetScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -38,13 +38,13 @@ return null;
 
   },
 );
- } 
+}
 /// Put script content
 ///
 /// Put script content from a worker with an environment.
 ///
 /// `PUT /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content`
-Future<ApiResult<WorkersScriptResponse, ResponseCommonFailure82>> workerEnvironmentPutScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, required WorkerEnvironmentPutScriptContentRequest body, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptResponse, ResponseCommonFailure82>> workerEnvironmentPutScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, required WorkerEnvironmentPutScriptContentRequest body, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 if (cfWorkerBodyPart != null) {
   headers['CF-WORKER-BODY-PART'] = cfWorkerBodyPart;
 }
@@ -82,13 +82,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get Script Settings
 ///
 /// Get script settings from a worker with an environment.
 ///
 /// `GET /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings`
-Future<ApiResult<WorkersScriptSettingsItem, ResponseCommonFailure82>> workerScriptEnvironmentGetSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptSettingsItem, ResponseCommonFailure82>> workerScriptEnvironmentGetSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -114,13 +114,13 @@ return null;
 
   },
 );
- } 
+}
 /// Patch Script Settings
 ///
 /// Patch script metadata, such as bindings.
 ///
 /// `PATCH /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings`
-Future<ApiResult<WorkersScriptSettingsItem, ResponseCommonFailure82>> workerScriptEnvironmentPatchSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, required WorkersScriptSettingsResponse body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptSettingsItem, ResponseCommonFailure82>> workerScriptEnvironmentPatchSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, required WorkersScriptSettingsResponse body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -148,5 +148,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

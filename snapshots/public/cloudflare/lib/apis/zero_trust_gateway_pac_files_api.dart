@@ -13,7 +13,7 @@ final class ZeroTrustGatewayPacFilesApi with ApiExecutor {const ZeroTrustGateway
 /// List all Zero Trust Gateway PAC files for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/pacfiles`
-Future<ApiResult<List<ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult>?, ZeroTrustGatewayPacfilesListResponse4xx>> zeroTrustGatewayPacfilesList({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult>?, ZeroTrustGatewayPacfilesListResponse4xx>> zeroTrustGatewayPacfilesList({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create a PAC file
 ///
 /// Create a new Zero Trust Gateway PAC file.
 ///
 /// `POST /accounts/{account_id}/gateway/pacfiles`
-Future<ApiResult<ZeroTrustGatewayPacfile?, ZeroTrustGatewayPacfilesCreatePacfileResponse4xx>> zeroTrustGatewayPacfilesCreatePacfile({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayPacfilesCreatePacfileRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayPacfile?, ZeroTrustGatewayPacfilesCreatePacfileResponse4xx>> zeroTrustGatewayPacfilesCreatePacfile({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayPacfilesCreatePacfileRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get a PAC file
 ///
 /// Get a single Zero Trust Gateway PAC file.
 ///
 /// `GET /accounts/{account_id}/gateway/pacfiles/{pacfile_id}`
-Future<ApiResult<ZeroTrustGatewayPacfile?, ZeroTrustGatewayPacfilesDetailsResponse4xx>> zeroTrustGatewayPacfilesDetails({required ZeroTrustGatewayComponentsSchemasUuid pacfileId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayPacfile?, ZeroTrustGatewayPacfilesDetailsResponse4xx>> zeroTrustGatewayPacfilesDetails({required ZeroTrustGatewayComponentsSchemasUuid pacfileId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -105,13 +105,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update a Zero Trust Gateway PAC file
 ///
 /// Update a configured Zero Trust Gateway PAC file.
 ///
 /// `PUT /accounts/{account_id}/gateway/pacfiles/{pacfile_id}`
-Future<ApiResult<ZeroTrustGatewayPacfile?, ZeroTrustGatewayPacfilesUpdateResponse4xx>> zeroTrustGatewayPacfilesUpdate({required ZeroTrustGatewayComponentsSchemasUuid pacfileId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayPacfilesUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayPacfile?, ZeroTrustGatewayPacfilesUpdateResponse4xx>> zeroTrustGatewayPacfilesUpdate({required ZeroTrustGatewayComponentsSchemasUuid pacfileId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayPacfilesUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,13 +139,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a PAC file
 ///
 /// Delete a configured Zero Trust Gateway PAC file.
 ///
 /// `DELETE /accounts/{account_id}/gateway/pacfiles/{pacfile_id}`
-Future<ApiResult<Map<String, dynamic>?, ZeroTrustGatewayPacfilesDeleteResponse4xx>> zeroTrustGatewayPacfilesDelete({required ZeroTrustGatewayComponentsSchemasUuid pacfileId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, ZeroTrustGatewayPacfilesDeleteResponse4xx>> zeroTrustGatewayPacfilesDelete({required ZeroTrustGatewayComponentsSchemasUuid pacfileId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -171,5 +171,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

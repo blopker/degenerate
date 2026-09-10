@@ -4,22 +4,22 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_githu
 /// Requires a Github identity provider.
 @immutable final class AccessGithubOrganizationRule {const AccessGithubOrganizationRule({required this.githubOrganization});
 
-factory AccessGithubOrganizationRule.fromJson(Map<String, dynamic> json) { return AccessGithubOrganizationRule(
+factory AccessGithubOrganizationRule.fromJson(Map<String, dynamic> json) {return AccessGithubOrganizationRule(
   githubOrganization: AccessGithubOrganizationRuleGithubOrganization.fromJson(json['github-organization'] as Map<String, dynamic>),
-); }
+);}
 
 final AccessGithubOrganizationRuleGithubOrganization githubOrganization;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'github-organization': githubOrganization.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('github-organization'); } 
-AccessGithubOrganizationRule copyWith({AccessGithubOrganizationRuleGithubOrganization? githubOrganization}) { return AccessGithubOrganizationRule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('github-organization');}
+AccessGithubOrganizationRule copyWith({AccessGithubOrganizationRuleGithubOrganization? githubOrganization}) {return AccessGithubOrganizationRule(
   githubOrganization: githubOrganization ?? this.githubOrganization,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessGithubOrganizationRule &&
-          githubOrganization == other.githubOrganization; } 
-@override int get hashCode { return githubOrganization.hashCode; } 
-@override String toString() { return 'AccessGithubOrganizationRule(githubOrganization: $githubOrganization)'; } 
- }
+          githubOrganization == other.githubOrganization;}
+@override int get hashCode {return githubOrganization.hashCode;}
+@override String toString() {return 'AccessGithubOrganizationRule(githubOrganization: $githubOrganization)';}
+}

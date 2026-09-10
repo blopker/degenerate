@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Preferred language of the Bancontact authorization page that the customer is redirected to.
 @immutable final class InvoicePaymentMethodOptionsBancontactPreferredLanguage {const InvoicePaymentMethodOptionsBancontactPreferredLanguage._(this.value);
 
-factory InvoicePaymentMethodOptionsBancontactPreferredLanguage.fromJson(String json) { return switch (json) {
+factory InvoicePaymentMethodOptionsBancontactPreferredLanguage.fromJson(String json) {return switch (json) {
   'de' => de,
   'en' => en,
   'fr' => fr,
   'nl' => nl,
   _ => InvoicePaymentMethodOptionsBancontactPreferredLanguage._(json),
-}; }
+};}
 
 static const InvoicePaymentMethodOptionsBancontactPreferredLanguage de = InvoicePaymentMethodOptionsBancontactPreferredLanguage._('de');
 
@@ -23,34 +23,34 @@ static const List<InvoicePaymentMethodOptionsBancontactPreferredLanguage> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoicePaymentMethodOptionsBancontactPreferredLanguage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsBancontactPreferredLanguage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoicePaymentMethodOptionsBancontactPreferredLanguage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoicePaymentMethodOptionsBancontactPreferredLanguage($value)';}
+}
 /// 
 @immutable final class InvoicePaymentMethodOptionsBancontact {const InvoicePaymentMethodOptionsBancontact({required this.preferredLanguage});
 
-factory InvoicePaymentMethodOptionsBancontact.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsBancontact(
+factory InvoicePaymentMethodOptionsBancontact.fromJson(Map<String, dynamic> json) {return InvoicePaymentMethodOptionsBancontact(
   preferredLanguage: InvoicePaymentMethodOptionsBancontactPreferredLanguage.fromJson(json['preferred_language'] as String),
-); }
+);}
 
 /// Preferred language of the Bancontact authorization page that the customer is redirected to.
 final InvoicePaymentMethodOptionsBancontactPreferredLanguage preferredLanguage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'preferred_language': preferredLanguage.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('preferred_language'); } 
-InvoicePaymentMethodOptionsBancontact copyWith({InvoicePaymentMethodOptionsBancontactPreferredLanguage? preferredLanguage}) { return InvoicePaymentMethodOptionsBancontact(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('preferred_language');}
+InvoicePaymentMethodOptionsBancontact copyWith({InvoicePaymentMethodOptionsBancontactPreferredLanguage? preferredLanguage}) {return InvoicePaymentMethodOptionsBancontact(
   preferredLanguage: preferredLanguage ?? this.preferredLanguage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InvoicePaymentMethodOptionsBancontact &&
-          preferredLanguage == other.preferredLanguage; } 
-@override int get hashCode { return preferredLanguage.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsBancontact(preferredLanguage: $preferredLanguage)'; } 
- }
+          preferredLanguage == other.preferredLanguage;}
+@override int get hashCode {return preferredLanguage.hashCode;}
+@override String toString() {return 'InvoicePaymentMethodOptionsBancontact(preferredLanguage: $preferredLanguage)';}
+}

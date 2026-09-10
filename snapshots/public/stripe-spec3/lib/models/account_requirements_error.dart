@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The code for the type of error.
 @immutable final class AccountRequirementsErrorCode {const AccountRequirementsErrorCode._(this.value);
 
-factory AccountRequirementsErrorCode.fromJson(String json) { return switch (json) {
+factory AccountRequirementsErrorCode.fromJson(String json) {return switch (json) {
   'external_request' => externalRequest,
   'information_missing' => informationMissing,
   'invalid_address_city_state_postal_code' => invalidAddressCityStatePostalCode,
@@ -101,7 +101,7 @@ factory AccountRequirementsErrorCode.fromJson(String json) { return switch (json
   'verification_requires_additional_proof_of_registration' => verificationRequiresAdditionalProofOfRegistration,
   'verification_supportability' => verificationSupportability,
   _ => AccountRequirementsErrorCode._(json),
-}; }
+};}
 
 static const AccountRequirementsErrorCode externalRequest = AccountRequirementsErrorCode._('external_request');
 
@@ -299,22 +299,22 @@ static const List<AccountRequirementsErrorCode> values = [externalRequest, infor
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountRequirementsErrorCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountRequirementsErrorCode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountRequirementsErrorCode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountRequirementsErrorCode($value)';}
+}
 /// 
 @immutable final class AccountRequirementsError {const AccountRequirementsError({required this.code, required this.reason, required this.requirement, });
 
-factory AccountRequirementsError.fromJson(Map<String, dynamic> json) { return AccountRequirementsError(
+factory AccountRequirementsError.fromJson(Map<String, dynamic> json) {return AccountRequirementsError(
   code: AccountRequirementsErrorCode.fromJson(json['code'] as String),
   reason: json['reason'] as String,
   requirement: json['requirement'] as String,
-); }
+);}
 
 /// The code for the type of error.
 final AccountRequirementsErrorCode code;
@@ -325,24 +325,24 @@ final String reason;
 /// The specific user onboarding requirement field (in the requirements hash) that needs to be resolved.
 final String requirement;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code.toJson(),
   'reason': reason,
   'requirement': requirement,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') &&
       json.containsKey('reason') && json['reason'] is String &&
-      json.containsKey('requirement') && json['requirement'] is String; } 
-AccountRequirementsError copyWith({AccountRequirementsErrorCode? code, String? reason, String? requirement, }) { return AccountRequirementsError(
+      json.containsKey('requirement') && json['requirement'] is String;}
+AccountRequirementsError copyWith({AccountRequirementsErrorCode? code, String? reason, String? requirement, }) {return AccountRequirementsError(
   code: code ?? this.code,
   reason: reason ?? this.reason,
   requirement: requirement ?? this.requirement,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountRequirementsError &&
           code == other.code &&
           reason == other.reason &&
-          requirement == other.requirement; } 
-@override int get hashCode { return Object.hash(code, reason, requirement); } 
-@override String toString() { return 'AccountRequirementsError(code: $code, reason: $reason, requirement: $requirement)'; } 
- }
+          requirement == other.requirement;}
+@override int get hashCode {return Object.hash(code, reason, requirement);}
+@override String toString() {return 'AccountRequirementsError(code: $code, reason: $reason, requirement: $requirement)';}
+}

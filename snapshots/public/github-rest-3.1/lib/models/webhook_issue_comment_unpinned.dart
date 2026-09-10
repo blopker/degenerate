@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issue_comment_unpinned_issue.dart';import 'webhooks_issue_comment.dart';@immutable final class WebhookIssueCommentUnpinnedAction {const WebhookIssueCommentUnpinnedAction._(this.value);
 
-factory WebhookIssueCommentUnpinnedAction.fromJson(String json) { return switch (json) {
+factory WebhookIssueCommentUnpinnedAction.fromJson(String json) {return switch (json) {
   'unpinned' => unpinned,
   _ => WebhookIssueCommentUnpinnedAction._(json),
-}; }
+};}
 
 static const WebhookIssueCommentUnpinnedAction unpinned = WebhookIssueCommentUnpinnedAction._('unpinned');
 
@@ -13,17 +13,17 @@ static const List<WebhookIssueCommentUnpinnedAction> values = [unpinned];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssueCommentUnpinnedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssueCommentUnpinnedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssueCommentUnpinnedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssueCommentUnpinnedAction($value)';}
+}
 @immutable final class WebhookIssueCommentUnpinned {const WebhookIssueCommentUnpinned({required this.action, required this.comment, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookIssueCommentUnpinned.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentUnpinned(
+factory WebhookIssueCommentUnpinned.fromJson(Map<String, dynamic> json) {return WebhookIssueCommentUnpinned(
   action: WebhookIssueCommentUnpinnedAction.fromJson(json['action'] as String),
   comment: WebhooksIssueComment.fromJson(json['comment'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -32,7 +32,7 @@ factory WebhookIssueCommentUnpinned.fromJson(Map<String, dynamic> json) { return
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookIssueCommentUnpinnedAction action;
 
@@ -53,7 +53,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'comment': comment.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -62,13 +62,13 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('comment') &&
       json.containsKey('issue') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookIssueCommentUnpinned copyWith({WebhookIssueCommentUnpinnedAction? action, WebhooksIssueComment? comment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhookIssueCommentUnpinnedIssue? issue, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssueCommentUnpinned(
+      json.containsKey('sender');}
+WebhookIssueCommentUnpinned copyWith({WebhookIssueCommentUnpinnedAction? action, WebhooksIssueComment? comment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhookIssueCommentUnpinnedIssue? issue, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookIssueCommentUnpinned(
   action: action ?? this.action,
   comment: comment ?? this.comment,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -77,8 +77,8 @@ WebhookIssueCommentUnpinned copyWith({WebhookIssueCommentUnpinnedAction? action,
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookIssueCommentUnpinned &&
           action == other.action &&
           comment == other.comment &&
@@ -87,7 +87,7 @@ WebhookIssueCommentUnpinned copyWith({WebhookIssueCommentUnpinnedAction? action,
           issue == other.issue &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, comment, enterprise, installation, issue, organization, repository, sender); } 
-@override String toString() { return 'WebhookIssueCommentUnpinned(action: $action, comment: $comment, enterprise: $enterprise, installation: $installation, issue: $issue, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, comment, enterprise, installation, issue, organization, repository, sender);}
+@override String toString() {return 'WebhookIssueCommentUnpinned(action: $action, comment: $comment, enterprise: $enterprise, installation: $installation, issue: $issue, organization: $organization, repository: $repository, sender: $sender)';}
+}

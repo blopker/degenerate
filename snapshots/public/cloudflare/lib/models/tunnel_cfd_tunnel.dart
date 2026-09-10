@@ -10,7 +10,7 @@ bool toJson() => value;
 /// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
 @immutable final class TunnelCfdTunnel {const TunnelCfdTunnel({this.accountTag, this.configSrc, this.connections, this.connsActiveAt, this.connsInactiveAt, this.createdAt, this.deletedAt, this.id, this.metadata, this.name, this.remoteConfig, this.status, this.tunType, });
 
-factory TunnelCfdTunnel.fromJson(Map<String, dynamic> json) { return TunnelCfdTunnel(
+factory TunnelCfdTunnel.fromJson(Map<String, dynamic> json) {return TunnelCfdTunnel(
   accountTag: json['account_tag'] != null ? TunnelAccountId.fromJson(json['account_tag'] as String) : null,
   configSrc: json['config_src'] != null ? TunnelConfigSrc.fromJson(json['config_src'] as String) : null,
   connections: (json['connections'] as List<dynamic>?)?.map((e) => TunnelSchemasConnection.fromJson(e as Map<String, dynamic>)).toList(),
@@ -24,7 +24,7 @@ factory TunnelCfdTunnel.fromJson(Map<String, dynamic> json) { return TunnelCfdTu
   remoteConfig: json['remote_config'] != null ? TunnelRemoteConfig.fromJson(json['remote_config'] as bool) : null,
   status: json['status'] != null ? TunnelStatus.fromJson(json['status'] as String) : null,
   tunType: json['tun_type'] != null ? TunnelTunnelType.fromJson(json['tun_type'] as String) : null,
-); }
+);}
 
 /// Cloudflare account ID
 final TunnelAccountId? accountTag;
@@ -53,7 +53,7 @@ final TunnelStatus? status;
 
 final TunnelTunnelType? tunType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountTag != null) 'account_tag': accountTag?.toJson(),
   if (configSrc != null) 'config_src': configSrc?.toJson(),
   if (connections != null) 'connections': connections?.map((e) => e.toJson()).toList(),
@@ -67,9 +67,9 @@ Map<String, dynamic> toJson() { return {
   if (remoteConfig != null) 'remote_config': remoteConfig?.toJson(),
   if (status != null) 'status': status?.toJson(),
   if (tunType != null) 'tun_type': tunType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tag', 'config_src', 'connections', 'conns_active_at', 'conns_inactive_at', 'created_at', 'deleted_at', 'id', 'metadata', 'name', 'remote_config', 'status', 'tun_type'}.contains(key)); } 
-TunnelCfdTunnel copyWith({TunnelAccountId? Function()? accountTag, TunnelConfigSrc? Function()? configSrc, List<TunnelSchemasConnection>? Function()? connections, TunnelConnsActiveAt? Function()? connsActiveAt, TunnelConnsInactiveAt? Function()? connsInactiveAt, TunnelCreatedAt? Function()? createdAt, TunnelDeletedAt? Function()? deletedAt, TunnelTunnelId? Function()? id, Map<String, dynamic>? Function()? metadata, TunnelTunnelName? Function()? name, TunnelRemoteConfig? Function()? remoteConfig, TunnelStatus? Function()? status, TunnelTunnelType? Function()? tunType, }) { return TunnelCfdTunnel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_tag', 'config_src', 'connections', 'conns_active_at', 'conns_inactive_at', 'created_at', 'deleted_at', 'id', 'metadata', 'name', 'remote_config', 'status', 'tun_type'}.contains(key));}
+TunnelCfdTunnel copyWith({TunnelAccountId? Function()? accountTag, TunnelConfigSrc? Function()? configSrc, List<TunnelSchemasConnection>? Function()? connections, TunnelConnsActiveAt? Function()? connsActiveAt, TunnelConnsInactiveAt? Function()? connsInactiveAt, TunnelCreatedAt? Function()? createdAt, TunnelDeletedAt? Function()? deletedAt, TunnelTunnelId? Function()? id, Map<String, dynamic>? Function()? metadata, TunnelTunnelName? Function()? name, TunnelRemoteConfig? Function()? remoteConfig, TunnelStatus? Function()? status, TunnelTunnelType? Function()? tunType, }) {return TunnelCfdTunnel(
   accountTag: accountTag != null ? accountTag() : this.accountTag,
   configSrc: configSrc != null ? configSrc() : this.configSrc,
   connections: connections != null ? connections() : this.connections,
@@ -83,8 +83,8 @@ TunnelCfdTunnel copyWith({TunnelAccountId? Function()? accountTag, TunnelConfigS
   remoteConfig: remoteConfig != null ? remoteConfig() : this.remoteConfig,
   status: status != null ? status() : this.status,
   tunType: tunType != null ? tunType() : this.tunType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TunnelCfdTunnel &&
           accountTag == other.accountTag &&
           configSrc == other.configSrc &&
@@ -98,7 +98,7 @@ TunnelCfdTunnel copyWith({TunnelAccountId? Function()? accountTag, TunnelConfigS
           name == other.name &&
           remoteConfig == other.remoteConfig &&
           status == other.status &&
-          tunType == other.tunType; } 
-@override int get hashCode { return Object.hash(accountTag, configSrc, Object.hashAll(connections ?? const []), connsActiveAt, connsInactiveAt, createdAt, deletedAt, id, metadata, name, remoteConfig, status, tunType); } 
-@override String toString() { return 'TunnelCfdTunnel(accountTag: $accountTag, configSrc: $configSrc, connections: $connections, connsActiveAt: $connsActiveAt, connsInactiveAt: $connsInactiveAt, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, metadata: $metadata, name: $name, remoteConfig: $remoteConfig, status: $status, tunType: $tunType)'; } 
- }
+          tunType == other.tunType;}
+@override int get hashCode {return Object.hash(accountTag, configSrc, Object.hashAll(connections ?? const []), connsActiveAt, connsInactiveAt, createdAt, deletedAt, id, metadata, name, remoteConfig, status, tunType);}
+@override String toString() {return 'TunnelCfdTunnel(accountTag: $accountTag, configSrc: $configSrc, connections: $connections, connsActiveAt: $connsActiveAt, connsInactiveAt: $connsInactiveAt, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, metadata: $metadata, name: $name, remoteConfig: $remoteConfig, status: $status, tunType: $tunType)';}
+}

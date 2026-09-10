@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_organizations_components_schemas_name.dart';import 'access_schemas_auth_domain.dart';import 'access_schemas_is_ui_read_only.dart';import 'access_schemas_login_design.dart';import 'access_schemas_user_seat_expiration_inactive_time.dart';import 'access_ui_read_only_toggle_reason.dart';@immutable final class ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest {const ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest({this.authDomain, this.isUiReadOnly, this.loginDesign, this.name, this.uiReadOnlyToggleReason, this.userSeatExpirationInactiveTime, });
 
-factory ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest.fromJson(Map<String, dynamic> json) { return ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest(
+factory ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest.fromJson(Map<String, dynamic> json) {return ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest(
   authDomain: json['auth_domain'] != null ? AccessSchemasAuthDomain.fromJson(json['auth_domain'] as String) : null,
   isUiReadOnly: json['is_ui_read_only'] != null ? AccessSchemasIsUiReadOnly.fromJson(json['is_ui_read_only'] as bool) : null,
   loginDesign: json['login_design'] != null ? AccessSchemasLoginDesign.fromJson(json['login_design'] as Map<String, dynamic>) : null,
   name: json['name'] != null ? AccessOrganizationsComponentsSchemasName.fromJson(json['name'] as String) : null,
   uiReadOnlyToggleReason: json['ui_read_only_toggle_reason'] != null ? AccessUiReadOnlyToggleReason.fromJson(json['ui_read_only_toggle_reason'] as String) : null,
   userSeatExpirationInactiveTime: json['user_seat_expiration_inactive_time'] != null ? AccessSchemasUserSeatExpirationInactiveTime.fromJson(json['user_seat_expiration_inactive_time'] as String) : null,
-); }
+);}
 
 /// The unique subdomain assigned to your Zero Trust organization.
 final AccessSchemasAuthDomain? authDomain;
@@ -28,31 +28,31 @@ final AccessUiReadOnlyToggleReason? uiReadOnlyToggleReason;
 /// The amount of time a user seat is inactive before it expires. When the user seat exceeds the set time of inactivity, the user is removed as an active seat and no longer counts against your Teams seat count. Must be in the format `300ms` or `2h45m`. Valid time units are: `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.
 final AccessSchemasUserSeatExpirationInactiveTime? userSeatExpirationInactiveTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (authDomain != null) 'auth_domain': authDomain?.toJson(),
   if (isUiReadOnly != null) 'is_ui_read_only': isUiReadOnly?.toJson(),
   if (loginDesign != null) 'login_design': loginDesign?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (uiReadOnlyToggleReason != null) 'ui_read_only_toggle_reason': uiReadOnlyToggleReason?.toJson(),
   if (userSeatExpirationInactiveTime != null) 'user_seat_expiration_inactive_time': userSeatExpirationInactiveTime?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auth_domain', 'is_ui_read_only', 'login_design', 'name', 'ui_read_only_toggle_reason', 'user_seat_expiration_inactive_time'}.contains(key)); } 
-ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest copyWith({AccessSchemasAuthDomain? Function()? authDomain, AccessSchemasIsUiReadOnly? Function()? isUiReadOnly, AccessSchemasLoginDesign? Function()? loginDesign, AccessOrganizationsComponentsSchemasName? Function()? name, AccessUiReadOnlyToggleReason? Function()? uiReadOnlyToggleReason, AccessSchemasUserSeatExpirationInactiveTime? Function()? userSeatExpirationInactiveTime, }) { return ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'auth_domain', 'is_ui_read_only', 'login_design', 'name', 'ui_read_only_toggle_reason', 'user_seat_expiration_inactive_time'}.contains(key));}
+ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest copyWith({AccessSchemasAuthDomain? Function()? authDomain, AccessSchemasIsUiReadOnly? Function()? isUiReadOnly, AccessSchemasLoginDesign? Function()? loginDesign, AccessOrganizationsComponentsSchemasName? Function()? name, AccessUiReadOnlyToggleReason? Function()? uiReadOnlyToggleReason, AccessSchemasUserSeatExpirationInactiveTime? Function()? userSeatExpirationInactiveTime, }) {return ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest(
   authDomain: authDomain != null ? authDomain() : this.authDomain,
   isUiReadOnly: isUiReadOnly != null ? isUiReadOnly() : this.isUiReadOnly,
   loginDesign: loginDesign != null ? loginDesign() : this.loginDesign,
   name: name != null ? name() : this.name,
   uiReadOnlyToggleReason: uiReadOnlyToggleReason != null ? uiReadOnlyToggleReason() : this.uiReadOnlyToggleReason,
   userSeatExpirationInactiveTime: userSeatExpirationInactiveTime != null ? userSeatExpirationInactiveTime() : this.userSeatExpirationInactiveTime,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest &&
           authDomain == other.authDomain &&
           isUiReadOnly == other.isUiReadOnly &&
           loginDesign == other.loginDesign &&
           name == other.name &&
           uiReadOnlyToggleReason == other.uiReadOnlyToggleReason &&
-          userSeatExpirationInactiveTime == other.userSeatExpirationInactiveTime; } 
-@override int get hashCode { return Object.hash(authDomain, isUiReadOnly, loginDesign, name, uiReadOnlyToggleReason, userSeatExpirationInactiveTime); } 
-@override String toString() { return 'ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest(authDomain: $authDomain, isUiReadOnly: $isUiReadOnly, loginDesign: $loginDesign, name: $name, uiReadOnlyToggleReason: $uiReadOnlyToggleReason, userSeatExpirationInactiveTime: $userSeatExpirationInactiveTime)'; } 
- }
+          userSeatExpirationInactiveTime == other.userSeatExpirationInactiveTime;}
+@override int get hashCode {return Object.hash(authDomain, isUiReadOnly, loginDesign, name, uiReadOnlyToggleReason, userSeatExpirationInactiveTime);}
+@override String toString() {return 'ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest(authDomain: $authDomain, isUiReadOnly: $isUiReadOnly, loginDesign: $loginDesign, name: $name, uiReadOnlyToggleReason: $uiReadOnlyToggleReason, userSeatExpirationInactiveTime: $userSeatExpirationInactiveTime)';}
+}

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_video_config_watermark_size.dart';/// Position of the watermark
 @immutable final class RealtimekitVideoConfigWatermarkPosition {const RealtimekitVideoConfigWatermarkPosition._(this.value);
 
-factory RealtimekitVideoConfigWatermarkPosition.fromJson(String json) { return switch (json) {
+factory RealtimekitVideoConfigWatermarkPosition.fromJson(String json) {return switch (json) {
   'left top' => leftTop,
   'right top' => rightTop,
   'left bottom' => leftBottom,
   'right bottom' => rightBottom,
   _ => RealtimekitVideoConfigWatermarkPosition._(json),
-}; }
+};}
 
 static const RealtimekitVideoConfigWatermarkPosition leftTop = RealtimekitVideoConfigWatermarkPosition._('left top');
 
@@ -23,22 +23,22 @@ static const List<RealtimekitVideoConfigWatermarkPosition> values = [leftTop, ri
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitVideoConfigWatermarkPosition && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitVideoConfigWatermarkPosition($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitVideoConfigWatermarkPosition && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitVideoConfigWatermarkPosition($value)';}
+}
 /// Watermark to be added to the recording
 @immutable final class RealtimekitVideoConfigWatermark {const RealtimekitVideoConfigWatermark({this.position, this.size, this.url, });
 
-factory RealtimekitVideoConfigWatermark.fromJson(Map<String, dynamic> json) { return RealtimekitVideoConfigWatermark(
+factory RealtimekitVideoConfigWatermark.fromJson(Map<String, dynamic> json) {return RealtimekitVideoConfigWatermark(
   position: json['position'] != null ? RealtimekitVideoConfigWatermarkPosition.fromJson(json['position'] as String) : null,
   size: json['size'] != null ? RealtimekitVideoConfigWatermarkSize.fromJson(json['size'] as Map<String, dynamic>) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-); }
+);}
 
 /// Position of the watermark
 final RealtimekitVideoConfigWatermarkPosition? position;
@@ -50,23 +50,23 @@ final RealtimekitVideoConfigWatermarkSize? size;
 final Uri? url;
 
 /// The value with the schema default applied when absent.
-RealtimekitVideoConfigWatermarkPosition get positionOrDefault { return position ?? RealtimekitVideoConfigWatermarkPosition.fromJson('left top'); } 
-Map<String, dynamic> toJson() { return {
+RealtimekitVideoConfigWatermarkPosition get positionOrDefault {return position ?? RealtimekitVideoConfigWatermarkPosition.fromJson('left top');}
+Map<String, dynamic> toJson() {return {
   if (position != null) 'position': position?.toJson(),
   if (size != null) 'size': size?.toJson(),
   if (url != null) 'url': url?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'position', 'size', 'url'}.contains(key)); } 
-RealtimekitVideoConfigWatermark copyWith({RealtimekitVideoConfigWatermarkPosition? Function()? position, RealtimekitVideoConfigWatermarkSize? Function()? size, Uri? Function()? url, }) { return RealtimekitVideoConfigWatermark(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'position', 'size', 'url'}.contains(key));}
+RealtimekitVideoConfigWatermark copyWith({RealtimekitVideoConfigWatermarkPosition? Function()? position, RealtimekitVideoConfigWatermarkSize? Function()? size, Uri? Function()? url, }) {return RealtimekitVideoConfigWatermark(
   position: position != null ? position() : this.position,
   size: size != null ? size() : this.size,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitVideoConfigWatermark &&
           position == other.position &&
           size == other.size &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(position, size, url); } 
-@override String toString() { return 'RealtimekitVideoConfigWatermark(position: $position, size: $size, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(position, size, url);}
+@override String toString() {return 'RealtimekitVideoConfigWatermark(position: $position, size: $size, url: $url)';}
+}

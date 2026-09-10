@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval {const PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval._(this.value);
 
-factory PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval.fromJson(String json) { return switch (json) {
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval.fromJson(String json) {return switch (json) {
   'month' => month,
   _ => PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval._(json),
-}; }
+};}
 
 static const PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval month = PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval._('month');
 
@@ -13,22 +13,22 @@ static const List<PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval($value)';}
+}
 @immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType {const PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType._(this.value);
 
-factory PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType.fromJson(String json) { return switch (json) {
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType.fromJson(String json) {return switch (json) {
   'bonus' => bonus,
   'fixed_count' => fixedCount,
   'revolving' => revolving,
   _ => PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType._(json),
-}; }
+};}
 
 static const PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType bonus = PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType._('bonus');
 
@@ -40,21 +40,21 @@ static const List<PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType($value)';}
+}
 @immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan {const PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan({required this.type, this.count, this.interval, });
 
-factory PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan(
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan.fromJson(Map<String, dynamic> json) {return PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,
   interval: json['interval'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval.fromJson(json['interval'] as String) : null,
   type: PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType.fromJson(json['type'] as String),
-); }
+);}
 
 final int? count;
 
@@ -62,22 +62,22 @@ final PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmen
 
 final PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': ?count,
   if (interval != null) 'interval': interval?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan copyWith({int? Function()? count, PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval? Function()? interval, PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType? type, }) { return PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan copyWith({int? Function()? count, PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval? Function()? interval, PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType? type, }) {return PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan(
   count: count != null ? count() : this.count,
   interval: interval != null ? interval() : this.interval,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan &&
           count == other.count &&
           interval == other.interval &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(count, interval, type); } 
-@override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan(count: $count, interval: $interval, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(count, interval, type);}
+@override String toString() {return 'PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan(count: $count, interval: $interval, type: $type)';}
+}

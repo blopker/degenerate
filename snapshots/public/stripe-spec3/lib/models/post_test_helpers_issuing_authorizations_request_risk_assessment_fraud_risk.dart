@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel {const PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel._(this.value);
 
-factory PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel.fromJson(String json) {return switch (json) {
   'elevated' => elevated,
   'highest' => highest,
   'low' => low,
@@ -10,7 +10,7 @@ factory PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel.
   'not_assessed' => notAssessed,
   'unknown' => unknown,
   _ => PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel elevated = PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel._('elevated');
 
@@ -28,38 +28,38 @@ static const List<PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraud
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel($value)';}
+}
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk {const PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk({required this.level, this.score, });
 
-factory PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk(
+factory PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk(
   level: PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel.fromJson(json['level'] as String),
   score: json['score'] != null ? (json['score'] as num).toDouble() : null,
-); }
+);}
 
 final PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel level;
 
 final double? score;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'level': level.toJson(),
   'score': ?score,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('level'); } 
-PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk copyWith({PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel? level, double? Function()? score, }) { return PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('level');}
+PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk copyWith({PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel? level, double? Function()? score, }) {return PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk(
   level: level ?? this.level,
   score: score != null ? score() : this.score,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk &&
           level == other.level &&
-          score == other.score; } 
-@override int get hashCode { return Object.hash(level, score); } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk(level: $level, score: $score)'; } 
- }
+          score == other.score;}
+@override int get hashCode {return Object.hash(level, score);}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk(level: $level, score: $score)';}
+}

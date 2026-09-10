@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class WorChangeStatusWorkflowInstanceError {const WorChangeStatusWorkflowInstanceError();
 
 /// Decodes the payload for its declared status and content type.
-static WorChangeStatusWorkflowInstanceError parse(ApiResponse response) { switch (response.statusCode) {
+static WorChangeStatusWorkflowInstanceError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
 return WorChangeStatusWorkflowInstanceError400(WorChangeStatusWorkflowInstanceResponse400.fromJson(json as Map<String, dynamic>));
@@ -17,33 +17,33 @@ return WorChangeStatusWorkflowInstanceError409(WorChangeStatusWorkflowInstanceRe
 default:
 return WorChangeStatusWorkflowInstanceErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class WorChangeStatusWorkflowInstanceError400 extends WorChangeStatusWorkflowInstanceError {const WorChangeStatusWorkflowInstanceError400(this.data);
 
 /// The decoded response payload.
 final WorChangeStatusWorkflowInstanceResponse400 data;
 
- }
+}
 /// Response for 404 (application/json).
 final class WorChangeStatusWorkflowInstanceError404 extends WorChangeStatusWorkflowInstanceError {const WorChangeStatusWorkflowInstanceError404(this.data);
 
 /// The decoded response payload.
 final WorChangeStatusWorkflowInstanceResponse404 data;
 
- }
+}
 /// Response for 409 (application/json).
 final class WorChangeStatusWorkflowInstanceError409 extends WorChangeStatusWorkflowInstanceError {const WorChangeStatusWorkflowInstanceError409(this.data);
 
 /// The decoded response payload.
 final WorChangeStatusWorkflowInstanceResponse409 data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class WorChangeStatusWorkflowInstanceErrorUnknown extends WorChangeStatusWorkflowInstanceError {const WorChangeStatusWorkflowInstanceErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_create_scan_response4292_errors.dart';@immutable final class UrlscannerCreateScanResponse4292 {const UrlscannerCreateScanResponse4292({required this.errors, required this.message, required this.status, this.description, });
 
-factory UrlscannerCreateScanResponse4292.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanResponse4292(
+factory UrlscannerCreateScanResponse4292.fromJson(Map<String, dynamic> json) {return UrlscannerCreateScanResponse4292(
   description: json['description'] as String?,
   errors: (json['errors'] as List<dynamic>).map((e) => UrlscannerCreateScanResponse4292Errors.fromJson(e as Map<String, dynamic>)).toList(),
   message: json['message'] as String,
   status: (json['status'] as num).toDouble(),
-); }
+);}
 
 final String? description;
 
@@ -17,27 +17,27 @@ final String message;
 
 final double status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'errors': errors.map((e) => e.toJson()).toList(),
   'message': message,
   'status': status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('message') && json['message'] is String &&
-      json.containsKey('status') && json['status'] is num; } 
-UrlscannerCreateScanResponse4292 copyWith({String? Function()? description, List<UrlscannerCreateScanResponse4292Errors>? errors, String? message, double? status, }) { return UrlscannerCreateScanResponse4292(
+      json.containsKey('status') && json['status'] is num;}
+UrlscannerCreateScanResponse4292 copyWith({String? Function()? description, List<UrlscannerCreateScanResponse4292Errors>? errors, String? message, double? status, }) {return UrlscannerCreateScanResponse4292(
   description: description != null ? description() : this.description,
   errors: errors ?? this.errors,
   message: message ?? this.message,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerCreateScanResponse4292 &&
           description == other.description &&
           listEquals(errors, other.errors) &&
           message == other.message &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(description, Object.hashAll(errors), message, status); } 
-@override String toString() { return 'UrlscannerCreateScanResponse4292(description: $description, errors: $errors, message: $message, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(description, Object.hashAll(errors), message, status);}
+@override String toString() {return 'UrlscannerCreateScanResponse4292(description: $description, errors: $errors, message: $message, status: $status)';}
+}

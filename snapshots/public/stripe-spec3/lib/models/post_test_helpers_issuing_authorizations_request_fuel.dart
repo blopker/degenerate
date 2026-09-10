@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsRequestFuelType {const PostTestHelpersIssuingAuthorizationsRequestFuelType._(this.value);
 
-factory PostTestHelpersIssuingAuthorizationsRequestFuelType.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingAuthorizationsRequestFuelType.fromJson(String json) {return switch (json) {
   'diesel' => diesel,
   'other' => $other,
   'unleaded_plus' => unleadedPlus,
   'unleaded_regular' => unleadedRegular,
   'unleaded_super' => unleadedSuper,
   _ => PostTestHelpersIssuingAuthorizationsRequestFuelType._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingAuthorizationsRequestFuelType diesel = PostTestHelpersIssuingAuthorizationsRequestFuelType._('diesel');
 
@@ -25,17 +25,17 @@ static const List<PostTestHelpersIssuingAuthorizationsRequestFuelType> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsRequestFuelType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestFuelType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingAuthorizationsRequestFuelType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestFuelType($value)';}
+}
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestFuelUnit {const PostTestHelpersIssuingAuthorizationsRequestFuelUnit._(this.value);
 
-factory PostTestHelpersIssuingAuthorizationsRequestFuelUnit.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingAuthorizationsRequestFuelUnit.fromJson(String json) {return switch (json) {
   'charging_minute' => chargingMinute,
   'imperial_gallon' => imperialGallon,
   'kilogram' => kilogram,
@@ -45,7 +45,7 @@ factory PostTestHelpersIssuingAuthorizationsRequestFuelUnit.fromJson(String json
   'pound' => pound,
   'us_gallon' => usGallon,
   _ => PostTestHelpersIssuingAuthorizationsRequestFuelUnit._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingAuthorizationsRequestFuelUnit chargingMinute = PostTestHelpersIssuingAuthorizationsRequestFuelUnit._('charging_minute');
 
@@ -67,24 +67,24 @@ static const List<PostTestHelpersIssuingAuthorizationsRequestFuelUnit> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsRequestFuelUnit && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestFuelUnit($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingAuthorizationsRequestFuelUnit && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestFuelUnit($value)';}
+}
 /// Information about fuel that was purchased with this transaction.
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestFuel {const PostTestHelpersIssuingAuthorizationsRequestFuel({this.industryProductCode, this.quantityDecimal, this.type, this.unit, this.unitCostDecimal, });
 
-factory PostTestHelpersIssuingAuthorizationsRequestFuel.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestFuel(
+factory PostTestHelpersIssuingAuthorizationsRequestFuel.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingAuthorizationsRequestFuel(
   industryProductCode: json['industry_product_code'] as String?,
   quantityDecimal: json['quantity_decimal'] as String?,
   type: json['type'] != null ? PostTestHelpersIssuingAuthorizationsRequestFuelType.fromJson(json['type'] as String) : null,
   unit: json['unit'] != null ? PostTestHelpersIssuingAuthorizationsRequestFuelUnit.fromJson(json['unit'] as String) : null,
   unitCostDecimal: json['unit_cost_decimal'] as String?,
-); }
+);}
 
 final String? industryProductCode;
 
@@ -96,28 +96,28 @@ final PostTestHelpersIssuingAuthorizationsRequestFuelUnit? unit;
 
 final String? unitCostDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'industry_product_code': ?industryProductCode,
   'quantity_decimal': ?quantityDecimal,
   if (type != null) 'type': type?.toJson(),
   if (unit != null) 'unit': unit?.toJson(),
   'unit_cost_decimal': ?unitCostDecimal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'industry_product_code', 'quantity_decimal', 'type', 'unit', 'unit_cost_decimal'}.contains(key)); } 
-PostTestHelpersIssuingAuthorizationsRequestFuel copyWith({String? Function()? industryProductCode, String? Function()? quantityDecimal, PostTestHelpersIssuingAuthorizationsRequestFuelType? Function()? type, PostTestHelpersIssuingAuthorizationsRequestFuelUnit? Function()? unit, String? Function()? unitCostDecimal, }) { return PostTestHelpersIssuingAuthorizationsRequestFuel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'industry_product_code', 'quantity_decimal', 'type', 'unit', 'unit_cost_decimal'}.contains(key));}
+PostTestHelpersIssuingAuthorizationsRequestFuel copyWith({String? Function()? industryProductCode, String? Function()? quantityDecimal, PostTestHelpersIssuingAuthorizationsRequestFuelType? Function()? type, PostTestHelpersIssuingAuthorizationsRequestFuelUnit? Function()? unit, String? Function()? unitCostDecimal, }) {return PostTestHelpersIssuingAuthorizationsRequestFuel(
   industryProductCode: industryProductCode != null ? industryProductCode() : this.industryProductCode,
   quantityDecimal: quantityDecimal != null ? quantityDecimal() : this.quantityDecimal,
   type: type != null ? type() : this.type,
   unit: unit != null ? unit() : this.unit,
   unitCostDecimal: unitCostDecimal != null ? unitCostDecimal() : this.unitCostDecimal,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersIssuingAuthorizationsRequestFuel &&
           industryProductCode == other.industryProductCode &&
           quantityDecimal == other.quantityDecimal &&
           type == other.type &&
           unit == other.unit &&
-          unitCostDecimal == other.unitCostDecimal; } 
-@override int get hashCode { return Object.hash(industryProductCode, quantityDecimal, type, unit, unitCostDecimal); } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestFuel(industryProductCode: $industryProductCode, quantityDecimal: $quantityDecimal, type: $type, unit: $unit, unitCostDecimal: $unitCostDecimal)'; } 
- }
+          unitCostDecimal == other.unitCostDecimal;}
+@override int get hashCode {return Object.hash(industryProductCode, quantityDecimal, type, unit, unitCostDecimal);}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestFuel(industryProductCode: $industryProductCode, quantityDecimal: $quantityDecimal, type: $type, unit: $unit, unitCostDecimal: $unitCostDecimal)';}
+}

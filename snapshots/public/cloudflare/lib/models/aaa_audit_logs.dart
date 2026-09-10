@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_audit_logs_action.dart';import 'aaa_audit_logs_actor.dart';import 'aaa_audit_logs_owner.dart';import 'aaa_audit_logs_resource.dart';@immutable final class AaaAuditLogs {const AaaAuditLogs({this.action, this.actor, this.id, this.$interface, this.metadata, this.newValue, this.oldValue, this.owner, this.resource, this.when, });
 
-factory AaaAuditLogs.fromJson(Map<String, dynamic> json) { return AaaAuditLogs(
+factory AaaAuditLogs.fromJson(Map<String, dynamic> json) {return AaaAuditLogs(
   action: json['action'] != null ? AaaAuditLogsAction.fromJson(json['action'] as Map<String, dynamic>) : null,
   actor: json['actor'] != null ? AaaAuditLogsActor.fromJson(json['actor'] as Map<String, dynamic>) : null,
   id: json['id'] as String?,
@@ -13,7 +13,7 @@ factory AaaAuditLogs.fromJson(Map<String, dynamic> json) { return AaaAuditLogs(
   owner: json['owner'] != null ? AaaAuditLogsOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
   resource: json['resource'] != null ? AaaAuditLogsResource.fromJson(json['resource'] as Map<String, dynamic>) : null,
   when: json['when'] != null ? DateTime.parse(json['when'] as String) : null,
-); }
+);}
 
 final AaaAuditLogsAction? action;
 
@@ -41,7 +41,7 @@ final AaaAuditLogsResource? resource;
 /// A UTC RFC3339 timestamp that specifies when the action being logged occured.
 final DateTime? when;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
   if (actor != null) 'actor': actor?.toJson(),
   'id': ?id,
@@ -52,9 +52,9 @@ Map<String, dynamic> toJson() { return {
   if (owner != null) 'owner': owner?.toJson(),
   if (resource != null) 'resource': resource?.toJson(),
   if (when != null) 'when': when?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'actor', 'id', 'interface', 'metadata', 'newValue', 'oldValue', 'owner', 'resource', 'when'}.contains(key)); } 
-AaaAuditLogs copyWith({AaaAuditLogsAction? Function()? action, AaaAuditLogsActor? Function()? actor, String? Function()? id, String? Function()? $interface, Map<String, dynamic>? Function()? metadata, String? Function()? newValue, String? Function()? oldValue, AaaAuditLogsOwner? Function()? owner, AaaAuditLogsResource? Function()? resource, DateTime? Function()? when, }) { return AaaAuditLogs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'action', 'actor', 'id', 'interface', 'metadata', 'newValue', 'oldValue', 'owner', 'resource', 'when'}.contains(key));}
+AaaAuditLogs copyWith({AaaAuditLogsAction? Function()? action, AaaAuditLogsActor? Function()? actor, String? Function()? id, String? Function()? $interface, Map<String, dynamic>? Function()? metadata, String? Function()? newValue, String? Function()? oldValue, AaaAuditLogsOwner? Function()? owner, AaaAuditLogsResource? Function()? resource, DateTime? Function()? when, }) {return AaaAuditLogs(
   action: action != null ? action() : this.action,
   actor: actor != null ? actor() : this.actor,
   id: id != null ? id() : this.id,
@@ -65,8 +65,8 @@ AaaAuditLogs copyWith({AaaAuditLogsAction? Function()? action, AaaAuditLogsActor
   owner: owner != null ? owner() : this.owner,
   resource: resource != null ? resource() : this.resource,
   when: when != null ? when() : this.when,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AaaAuditLogs &&
           action == other.action &&
           actor == other.actor &&
@@ -77,7 +77,7 @@ AaaAuditLogs copyWith({AaaAuditLogsAction? Function()? action, AaaAuditLogsActor
           oldValue == other.oldValue &&
           owner == other.owner &&
           resource == other.resource &&
-          when == other.when; } 
-@override int get hashCode { return Object.hash(action, actor, id, $interface, metadata, newValue, oldValue, owner, resource, when); } 
-@override String toString() { return 'AaaAuditLogs(action: $action, actor: $actor, id: $id, \$interface: ${$interface}, metadata: $metadata, newValue: $newValue, oldValue: $oldValue, owner: $owner, resource: $resource, when: $when)'; } 
- }
+          when == other.when;}
+@override int get hashCode {return Object.hash(action, actor, id, $interface, metadata, newValue, oldValue, owner, resource, when);}
+@override String toString() {return 'AaaAuditLogs(action: $action, actor: $actor, id: $id, \$interface: ${$interface}, metadata: $metadata, newValue: $newValue, oldValue: $oldValue, owner: $owner, resource: $resource, when: $when)';}
+}

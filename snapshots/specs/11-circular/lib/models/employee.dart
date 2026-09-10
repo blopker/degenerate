@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'department.dart';@immutable final class Employee {const Employee({required this.id, required this.name, this.department, this.manager, });
 
-factory Employee.fromJson(Map<String, dynamic> json) { return Employee(
+factory Employee.fromJson(Map<String, dynamic> json) {return Employee(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   department: json['department'] != null ? Department.fromJson(json['department'] as Map<String, dynamic>) : null,
   manager: json['manager'] != null ? Employee.fromJson(json['manager'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final int id;
 
@@ -17,26 +17,26 @@ final Department? department;
 
 final Employee? manager;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   if (department != null) 'department': department?.toJson(),
   if (manager != null) 'manager': manager?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('name') && json['name'] is String; } 
-Employee copyWith({int? id, String? name, Department? Function()? department, Employee? Function()? manager, }) { return Employee(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('name') && json['name'] is String;}
+Employee copyWith({int? id, String? name, Department? Function()? department, Employee? Function()? manager, }) {return Employee(
   id: id ?? this.id,
   name: name ?? this.name,
   department: department != null ? department() : this.department,
   manager: manager != null ? manager() : this.manager,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Employee &&
           id == other.id &&
           name == other.name &&
           department == other.department &&
-          manager == other.manager; } 
-@override int get hashCode { return Object.hash(id, name, department, manager); } 
-@override String toString() { return 'Employee(id: $id, name: $name, department: $department, manager: $manager)'; } 
- }
+          manager == other.manager;}
+@override int get hashCode {return Object.hash(id, name, department, manager);}
+@override String toString() {return 'Employee(id: $id, name: $name, department: $department, manager: $manager)';}
+}

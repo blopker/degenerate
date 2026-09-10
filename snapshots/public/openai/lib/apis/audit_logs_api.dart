@@ -11,7 +11,7 @@ final class AuditLogsApi with ApiExecutor {const AuditLogsApi(this.apiConfig);
 /// List user actions and configuration changes within this organization.
 ///
 /// `GET /organization/audit_logs`
-Future<ApiResult<ListAuditLogsResponse, Never>> listAuditLogs({ListAuditLogsEffectiveAt? effectiveAt, List<String>? projectIds, List<AuditLogEventType>? eventTypes, List<String>? actorIds, List<String>? actorEmails, List<String>? resourceIds, int? limit, String? after, String? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListAuditLogsResponse, Never>> listAuditLogs({ListAuditLogsEffectiveAt? effectiveAt, List<String>? projectIds, List<AuditLogEventType>? eventTypes, List<String>? actorIds, List<String>? actorEmails, List<String>? resourceIds, int? limit, String? after, String? before, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (effectiveAt != null) {
 if (effectiveAt.gt case final gt$?) { queryParametersList.add(ApiQueryParameter(name: 'gt', value: gt$.toString())); }
@@ -72,5 +72,5 @@ final json = jsonDecode(response.body);
 return ListAuditLogsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

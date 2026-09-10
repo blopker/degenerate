@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transfer_balance_transaction.dart';import 'transfer_destination.dart';import 'transfer_destination_payment.dart';import 'transfer_reversals.dart';import 'transfer_source_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TransferObject {const TransferObject._(this.value);
 
-factory TransferObject.fromJson(String json) { return switch (json) {
+factory TransferObject.fromJson(String json) {return switch (json) {
   'transfer' => transfer,
   _ => TransferObject._(json),
-}; }
+};}
 
 static const TransferObject transfer = TransferObject._('transfer');
 
@@ -14,14 +14,14 @@ static const List<TransferObject> values = [transfer];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TransferObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TransferObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TransferObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TransferObject($value)';}
+}
 /// A `Transfer` object is created when you move funds between Stripe accounts as
 /// part of Connect.
 /// 
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guide: [Creating separate charges and transfers](https://docs.stripe.com/connect/separate-charges-and-transfers)
 @immutable final class Transfer {const Transfer({required this.amount, required this.amountReversed, required this.created, required this.currency, required this.id, required this.livemode, required this.metadata, required this.object, required this.reversals, required this.reversed, this.balanceTransaction = const Omittable.absent(), this.description = const Omittable.absent(), this.destination = const Omittable.absent(), this.destinationPayment, this.sourceTransaction = const Omittable.absent(), this.sourceType, this.transferGroup = const Omittable.absent(), });
 
-factory Transfer.fromJson(Map<String, dynamic> json) { return Transfer(
+factory Transfer.fromJson(Map<String, dynamic> json) {return Transfer(
   amount: (json['amount'] as num).toInt(),
   amountReversed: (json['amount_reversed'] as num).toInt(),
   balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? TransferBalanceTransaction.fromJson(json['balance_transaction']) : null) : const Omittable.absent(),
@@ -52,7 +52,7 @@ factory Transfer.fromJson(Map<String, dynamic> json) { return Transfer(
   sourceTransaction: json.containsKey('source_transaction') ? Omittable(json['source_transaction'] != null ? TransferSourceTransaction.fromJson(json['source_transaction']) : null) : const Omittable.absent(),
   sourceType: json['source_type'] as String?,
   transferGroup: json.containsKey('transfer_group') ? Omittable(json['transfer_group'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Amount in cents (or local equivalent) to be transferred.
 final int amount;
@@ -105,7 +105,7 @@ final String? sourceType;
 /// A string that identifies this transaction as part of a group. See the [Connect documentation](https://docs.stripe.com/connect/separate-charges-and-transfers#transfer-options) for details.
 final Omittable<String?> transferGroup;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'amount_reversed': amountReversed,
   if (balanceTransaction.isPresent) 'balance_transaction': balanceTransaction.value?.toJson(),
@@ -123,8 +123,8 @@ Map<String, dynamic> toJson() { return {
   if (sourceTransaction.isPresent) 'source_transaction': sourceTransaction.value?.toJson(),
   'source_type': ?sourceType,
   if (transferGroup.isPresent) 'transfer_group': transferGroup.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('amount_reversed') && json['amount_reversed'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
@@ -133,8 +133,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('reversals') &&
-      json.containsKey('reversed') && json['reversed'] is bool; } 
-Transfer copyWith({int? amount, int? amountReversed, Omittable<TransferBalanceTransaction?>? balanceTransaction, int? created, String? currency, Omittable<String?>? description, Omittable<TransferDestination?>? destination, TransferDestinationPayment? Function()? destinationPayment, String? id, bool? livemode, Map<String,String>? metadata, TransferObject? object, TransferReversals? reversals, bool? reversed, Omittable<TransferSourceTransaction?>? sourceTransaction, String? Function()? sourceType, Omittable<String?>? transferGroup, }) { return Transfer(
+      json.containsKey('reversed') && json['reversed'] is bool;}
+Transfer copyWith({int? amount, int? amountReversed, Omittable<TransferBalanceTransaction?>? balanceTransaction, int? created, String? currency, Omittable<String?>? description, Omittable<TransferDestination?>? destination, TransferDestinationPayment? Function()? destinationPayment, String? id, bool? livemode, Map<String,String>? metadata, TransferObject? object, TransferReversals? reversals, bool? reversed, Omittable<TransferSourceTransaction?>? sourceTransaction, String? Function()? sourceType, Omittable<String?>? transferGroup, }) {return Transfer(
   amount: amount ?? this.amount,
   amountReversed: amountReversed ?? this.amountReversed,
   balanceTransaction: balanceTransaction ?? this.balanceTransaction,
@@ -152,8 +152,8 @@ Transfer copyWith({int? amount, int? amountReversed, Omittable<TransferBalanceTr
   sourceTransaction: sourceTransaction ?? this.sourceTransaction,
   sourceType: sourceType != null ? sourceType() : this.sourceType,
   transferGroup: transferGroup ?? this.transferGroup,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Transfer &&
           amount == other.amount &&
           amountReversed == other.amountReversed &&
@@ -171,7 +171,7 @@ Transfer copyWith({int? amount, int? amountReversed, Omittable<TransferBalanceTr
           reversed == other.reversed &&
           sourceTransaction == other.sourceTransaction &&
           sourceType == other.sourceType &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(amount, amountReversed, balanceTransaction, created, currency, description, destination, destinationPayment, id, livemode, metadata, object, reversals, reversed, sourceTransaction, sourceType, transferGroup); } 
-@override String toString() { return 'Transfer(amount: $amount, amountReversed: $amountReversed, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, description: $description, destination: $destination, destinationPayment: $destinationPayment, id: $id, livemode: $livemode, metadata: $metadata, object: $object, reversals: $reversals, reversed: $reversed, sourceTransaction: $sourceTransaction, sourceType: $sourceType, transferGroup: $transferGroup)'; } 
- }
+          transferGroup == other.transferGroup;}
+@override int get hashCode {return Object.hash(amount, amountReversed, balanceTransaction, created, currency, description, destination, destinationPayment, id, livemode, metadata, object, reversals, reversed, sourceTransaction, sourceType, transferGroup);}
+@override String toString() {return 'Transfer(amount: $amount, amountReversed: $amountReversed, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, description: $description, destination: $destination, destinationPayment: $destinationPayment, id: $id, livemode: $livemode, metadata: $metadata, object: $object, reversals: $reversals, reversed: $reversed, sourceTransaction: $sourceTransaction, sourceType: $sourceType, transferGroup: $transferGroup)';}
+}

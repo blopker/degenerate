@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enables Tiered Caching.
 @immutable final class CacheRulesValue {const CacheRulesValue._(this.value);
 
-factory CacheRulesValue.fromJson(String json) { return switch (json) {
+factory CacheRulesValue.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   _ => CacheRulesValue._(json),
-}; }
+};}
 
 static const CacheRulesValue $on = CacheRulesValue._('on');
 
@@ -17,33 +17,33 @@ static const List<CacheRulesValue> values = [$on, off];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CacheRulesValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CacheRulesValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CacheRulesValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CacheRulesValue($value)';}
+}
 /// Update enablement of Tiered Caching.
 @immutable final class CacheRulesPatch {const CacheRulesPatch({required this.value});
 
-factory CacheRulesPatch.fromJson(Map<String, dynamic> json) { return CacheRulesPatch(
+factory CacheRulesPatch.fromJson(Map<String, dynamic> json) {return CacheRulesPatch(
   value: CacheRulesValue.fromJson(json['value'] as String),
-); }
+);}
 
 final CacheRulesValue value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('value'); } 
-CacheRulesPatch copyWith({CacheRulesValue? value}) { return CacheRulesPatch(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('value');}
+CacheRulesPatch copyWith({CacheRulesValue? value}) {return CacheRulesPatch(
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CacheRulesPatch &&
-          value == other.value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CacheRulesPatch(value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CacheRulesPatch(value: $value)';}
+}

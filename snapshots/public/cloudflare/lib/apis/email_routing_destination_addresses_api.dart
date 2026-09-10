@@ -13,7 +13,7 @@ final class EmailRoutingDestinationAddressesApi with ApiExecutor {const EmailRou
 /// Lists existing destination addresses.
 ///
 /// `GET /accounts/{account_id}/email/routing/addresses`
-Future<ApiResult<List<EmailDestinationAddressProperties>?, Never>> emailRoutingDestinationAddressesListDestinationAddresses({required EmailIdentifier accountId, double? page, double? perPage, EmailRoutingDestinationAddressesListDestinationAddressesDirection? direction, bool? verified, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<EmailDestinationAddressProperties>?, Never>> emailRoutingDestinationAddressesListDestinationAddresses({required EmailIdentifier accountId, double? page, double? perPage, EmailRoutingDestinationAddressesListDestinationAddressesDirection? direction, bool? verified, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -46,13 +46,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return (json['result'] as List<dynamic>?)?.map((e) => EmailDestinationAddressProperties.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Create a destination address
 ///
 /// Create a destination address to forward your emails to. Destination addresses need to be verified before they can be used.
 ///
 /// `POST /accounts/{account_id}/email/routing/addresses`
-Future<ApiResult<EmailDestinationAddressProperties?, Never>> emailRoutingDestinationAddressesCreateADestinationAddress({required EmailIdentifier accountId, required EmailCreateDestinationAddressProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailDestinationAddressProperties?, Never>> emailRoutingDestinationAddressesCreateADestinationAddress({required EmailIdentifier accountId, required EmailCreateDestinationAddressProperties body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -70,13 +70,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return json['result'] != null ? EmailDestinationAddressProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
- } 
+}
 /// Get a destination address
 ///
 /// Gets information for a specific destination email already created.
 ///
 /// `GET /accounts/{account_id}/email/routing/addresses/{destination_address_identifier}`
-Future<ApiResult<EmailDestinationAddressProperties?, Never>> emailRoutingDestinationAddressesGetADestinationAddress({required EmailDestinationAddressIdentifier destinationAddressIdentifier, required EmailIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailDestinationAddressProperties?, Never>> emailRoutingDestinationAddressesGetADestinationAddress({required EmailDestinationAddressIdentifier destinationAddressIdentifier, required EmailIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -92,13 +92,13 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return json['result'] != null ? EmailDestinationAddressProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
- } 
+}
 /// Delete destination address
 ///
 /// Deletes a specific destination address.
 ///
 /// `DELETE /accounts/{account_id}/email/routing/addresses/{destination_address_identifier}`
-Future<ApiResult<EmailDestinationAddressProperties?, Never>> emailRoutingDestinationAddressesDeleteDestinationAddress({required EmailDestinationAddressIdentifier destinationAddressIdentifier, required EmailIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailDestinationAddressProperties?, Never>> emailRoutingDestinationAddressesDeleteDestinationAddress({required EmailDestinationAddressIdentifier destinationAddressIdentifier, required EmailIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -114,5 +114,5 @@ final json = jsonDecode(response.body) as Map<String, dynamic>;
 return json['result'] != null ? EmailDestinationAddressProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
- } 
- }
+}
+}

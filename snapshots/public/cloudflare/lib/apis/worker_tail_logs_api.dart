@@ -13,7 +13,7 @@ final class WorkerTailLogsApi with ApiExecutor {const WorkerTailLogsApi(this.api
 /// Get list of tails currently deployed on a Worker.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/tails`
-Future<ApiResult<WorkersTail, ResponseCommonFailure82>> getAccountsWorkersScriptsTails({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersTail, ResponseCommonFailure82>> getAccountsWorkersScriptsTails({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Start Tail
 ///
 /// Starts a tail that receives logs and exception from a Worker.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/tails`
-Future<ApiResult<WorkersTail, ResponseCommonFailure82>> workerTailLogsStartTail({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersTail, ResponseCommonFailure82>> workerTailLogsStartTail({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -71,13 +71,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Tail
 ///
 /// Deletes a tail from a Worker.
 ///
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}/tails/{id}`
-Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> workerTailLogsDeleteTail({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersIdentifier id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> workerTailLogsDeleteTail({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersIdentifier id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -103,5 +103,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

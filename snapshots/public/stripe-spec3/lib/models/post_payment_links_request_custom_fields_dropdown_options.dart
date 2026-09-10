@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksRequestCustomFieldsDropdownOptions {const PostPaymentLinksRequestCustomFieldsDropdownOptions({required this.label, required this.value, });
 
-factory PostPaymentLinksRequestCustomFieldsDropdownOptions.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestCustomFieldsDropdownOptions(
+factory PostPaymentLinksRequestCustomFieldsDropdownOptions.fromJson(Map<String, dynamic> json) {return PostPaymentLinksRequestCustomFieldsDropdownOptions(
   label: json['label'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String label;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'label': label,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('label') && json['label'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-PostPaymentLinksRequestCustomFieldsDropdownOptions copyWith({String? label, String? value, }) { return PostPaymentLinksRequestCustomFieldsDropdownOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('label') && json['label'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+PostPaymentLinksRequestCustomFieldsDropdownOptions copyWith({String? label, String? value, }) {return PostPaymentLinksRequestCustomFieldsDropdownOptions(
   label: label ?? this.label,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentLinksRequestCustomFieldsDropdownOptions &&
           label == other.label &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(label, value); } 
-@override String toString() { return 'PostPaymentLinksRequestCustomFieldsDropdownOptions(label: $label, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(label, value);}
+@override String toString() {return 'PostPaymentLinksRequestCustomFieldsDropdownOptions(label: $label, value: $value)';}
+}

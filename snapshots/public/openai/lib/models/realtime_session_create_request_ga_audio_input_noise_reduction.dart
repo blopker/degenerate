@@ -6,24 +6,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'noise_reduct
 /// 
 @immutable final class RealtimeSessionCreateRequestGaAudioInputNoiseReduction {const RealtimeSessionCreateRequestGaAudioInputNoiseReduction({this.type});
 
-factory RealtimeSessionCreateRequestGaAudioInputNoiseReduction.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequestGaAudioInputNoiseReduction(
+factory RealtimeSessionCreateRequestGaAudioInputNoiseReduction.fromJson(Map<String, dynamic> json) {return RealtimeSessionCreateRequestGaAudioInputNoiseReduction(
   type: json['type'] != null ? NoiseReductionType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// Type of noise reduction. `near_field` is for close-talking microphones such as headphones, `far_field` is for far-field microphones such as laptop or conference room microphones.
 /// 
 final NoiseReductionType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type'}.contains(key)); } 
-RealtimeSessionCreateRequestGaAudioInputNoiseReduction copyWith({NoiseReductionType? Function()? type}) { return RealtimeSessionCreateRequestGaAudioInputNoiseReduction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type'}.contains(key));}
+RealtimeSessionCreateRequestGaAudioInputNoiseReduction copyWith({NoiseReductionType? Function()? type}) {return RealtimeSessionCreateRequestGaAudioInputNoiseReduction(
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeSessionCreateRequestGaAudioInputNoiseReduction &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'RealtimeSessionCreateRequestGaAudioInputNoiseReduction(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'RealtimeSessionCreateRequestGaAudioInputNoiseReduction(type: $type)';}
+}

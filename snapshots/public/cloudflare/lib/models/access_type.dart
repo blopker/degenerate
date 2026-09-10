@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The application type.
 @immutable final class AccessType {const AccessType._(this.value);
 
-factory AccessType.fromJson(String json) { return switch (json) {
+factory AccessType.fromJson(String json) {return switch (json) {
   'self_hosted' => selfHosted,
   'saas' => saas,
   'ssh' => ssh,
@@ -19,7 +19,7 @@ factory AccessType.fromJson(String json) { return switch (json) {
   'mcp_portal' => mcpPortal,
   'proxy_endpoint' => proxyEndpoint,
   _ => AccessType._(json),
-}; }
+};}
 
 static const AccessType selfHosted = AccessType._('self_hosted');
 
@@ -53,11 +53,11 @@ static const List<AccessType> values = [selfHosted, saas, ssh, vnc, appLauncher,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessType($value)';}
+}

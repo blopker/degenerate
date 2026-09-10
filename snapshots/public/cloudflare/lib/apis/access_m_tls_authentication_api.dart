@@ -13,7 +13,7 @@ final class AccessMTlsAuthenticationApi with ApiExecutor {const AccessMTlsAuthen
 /// Lists all mTLS root certificates.
 ///
 /// `GET /accounts/{account_id}/access/certificates`
-Future<ApiResult<List<AccessCertificates>?, ResponseCommonFailure4>> accessMtlsAuthenticationListMtlsCertificates({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessCertificates>?, ResponseCommonFailure4>> accessMtlsAuthenticationListMtlsCertificates({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -50,13 +50,13 @@ return null;
 
   },
 );
- } 
+}
 /// Add an mTLS certificate
 ///
 /// Adds a new mTLS root certificate to Access.
 ///
 /// `POST /accounts/{account_id}/access/certificates`
-Future<ApiResult<AccessCertificates?, ResponseCommonFailure4>> accessMtlsAuthenticationAddAnMtlsCertificate({required AccessIdentifier accountId, required AccessMtlsAuthenticationAddAnMtlsCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessCertificates?, ResponseCommonFailure4>> accessMtlsAuthenticationAddAnMtlsCertificate({required AccessIdentifier accountId, required AccessMtlsAuthenticationAddAnMtlsCertificateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -84,13 +84,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get an mTLS certificate
 ///
 /// Fetches a single mTLS certificate.
 ///
 /// `GET /accounts/{account_id}/access/certificates/{certificate_id}`
-Future<ApiResult<AccessCertificates?, ResponseCommonFailure4>> accessMtlsAuthenticationGetAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessCertificates?, ResponseCommonFailure4>> accessMtlsAuthenticationGetAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -116,13 +116,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update an mTLS certificate
 ///
 /// Updates a configured mTLS certificate.
 ///
 /// `PUT /accounts/{account_id}/access/certificates/{certificate_id}`
-Future<ApiResult<AccessCertificates?, ResponseCommonFailure4>> accessMtlsAuthenticationUpdateAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier accountId, required AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessCertificates?, ResponseCommonFailure4>> accessMtlsAuthenticationUpdateAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier accountId, required AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -150,13 +150,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete an mTLS certificate
 ///
 /// Deletes an mTLS certificate.
 ///
 /// `DELETE /accounts/{account_id}/access/certificates/{certificate_id}`
-Future<ApiResult<AccessComponentsSchemasIdResponseResult?, ResponseCommonFailure4>> accessMtlsAuthenticationDeleteAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessComponentsSchemasIdResponseResult?, ResponseCommonFailure4>> accessMtlsAuthenticationDeleteAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -182,13 +182,13 @@ return null;
 
   },
 );
- } 
+}
 /// List all mTLS hostname settings
 ///
 /// List all mTLS hostname settings for this account.
 ///
 /// `GET /accounts/{account_id}/access/certificates/settings`
-Future<ApiResult<List<AccessSettings>?, ResponseCommonFailure4>> accessMtlsAuthenticationListMtlsCertificatesHostnameSettings({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessSettings>?, ResponseCommonFailure4>> accessMtlsAuthenticationListMtlsCertificatesHostnameSettings({required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -214,13 +214,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update an mTLS certificate's hostname settings
 ///
 /// Updates an mTLS certificate's hostname settings.
 ///
 /// `PUT /accounts/{account_id}/access/certificates/settings`
-Future<ApiResult<List<AccessSettings>?, ResponseCommonFailure4>> accessMtlsAuthenticationUpdateAnMtlsCertificateSettings({required AccessIdentifier accountId, required AccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessSettings>?, ResponseCommonFailure4>> accessMtlsAuthenticationUpdateAnMtlsCertificateSettings({required AccessIdentifier accountId, required AccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -248,5 +248,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

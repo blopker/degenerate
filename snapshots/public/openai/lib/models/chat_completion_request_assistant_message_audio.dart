@@ -5,24 +5,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data about a pre
 /// 
 @immutable final class ChatCompletionRequestAssistantMessageAudio {const ChatCompletionRequestAssistantMessageAudio({required this.id});
 
-factory ChatCompletionRequestAssistantMessageAudio.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestAssistantMessageAudio(
+factory ChatCompletionRequestAssistantMessageAudio.fromJson(Map<String, dynamic> json) {return ChatCompletionRequestAssistantMessageAudio(
   id: json['id'] as String,
-); }
+);}
 
 /// Unique identifier for a previous audio response from the model.
 /// 
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-ChatCompletionRequestAssistantMessageAudio copyWith({String? id}) { return ChatCompletionRequestAssistantMessageAudio(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
+ChatCompletionRequestAssistantMessageAudio copyWith({String? id}) {return ChatCompletionRequestAssistantMessageAudio(
   id: id ?? this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ChatCompletionRequestAssistantMessageAudio &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestAssistantMessageAudio(id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return id.hashCode;}
+@override String toString() {return 'ChatCompletionRequestAssistantMessageAudio(id: $id)';}
+}

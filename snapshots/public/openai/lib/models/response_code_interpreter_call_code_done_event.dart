@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when the code snippet is finalized by the code interpreter.
 @immutable final class ResponseCodeInterpreterCallCodeDoneEvent {const ResponseCodeInterpreterCallCodeDoneEvent({required this.type, required this.outputIndex, required this.itemId, required this.code, required this.sequenceNumber, });
 
-factory ResponseCodeInterpreterCallCodeDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseCodeInterpreterCallCodeDoneEvent(
+factory ResponseCodeInterpreterCallCodeDoneEvent.fromJson(Map<String, dynamic> json) {return ResponseCodeInterpreterCallCodeDoneEvent(
   type: json['type'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   itemId: json['item_id'] as String,
   code: json['code'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
-); }
+);}
 
 /// The type of the event. Always `response.code_interpreter_call_code.done`.
 final String type;
@@ -26,32 +26,32 @@ final String code;
 /// The sequence number of this event, used to order streaming events.
 final int sequenceNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'output_index': outputIndex,
   'item_id': itemId,
   'code': code,
   'sequence_number': sequenceNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('code') && json['code'] is String &&
-      json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseCodeInterpreterCallCodeDoneEvent copyWith({String? type, int? outputIndex, String? itemId, String? code, int? sequenceNumber, }) { return ResponseCodeInterpreterCallCodeDoneEvent(
+      json.containsKey('sequence_number') && json['sequence_number'] is num;}
+ResponseCodeInterpreterCallCodeDoneEvent copyWith({String? type, int? outputIndex, String? itemId, String? code, int? sequenceNumber, }) {return ResponseCodeInterpreterCallCodeDoneEvent(
   type: type ?? this.type,
   outputIndex: outputIndex ?? this.outputIndex,
   itemId: itemId ?? this.itemId,
   code: code ?? this.code,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseCodeInterpreterCallCodeDoneEvent &&
           type == other.type &&
           outputIndex == other.outputIndex &&
           itemId == other.itemId &&
           code == other.code &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, outputIndex, itemId, code, sequenceNumber); } 
-@override String toString() { return 'ResponseCodeInterpreterCallCodeDoneEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, code: $code, sequenceNumber: $sequenceNumber)'; } 
- }
+          sequenceNumber == other.sequenceNumber;}
+@override int get hashCode {return Object.hash(type, outputIndex, itemId, code, sequenceNumber);}
+@override String toString() {return 'ResponseCodeInterpreterCallCodeDoneEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, code: $code, sequenceNumber: $sequenceNumber)';}
+}

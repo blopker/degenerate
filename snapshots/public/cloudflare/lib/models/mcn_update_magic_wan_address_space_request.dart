@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_cidr_prefix.dart';@immutable final class McnUpdateMagicWanAddressSpaceRequest {const McnUpdateMagicWanAddressSpaceRequest({required this.prefixes});
 
-factory McnUpdateMagicWanAddressSpaceRequest.fromJson(Map<String, dynamic> json) { return McnUpdateMagicWanAddressSpaceRequest(
+factory McnUpdateMagicWanAddressSpaceRequest.fromJson(Map<String, dynamic> json) {return McnUpdateMagicWanAddressSpaceRequest(
   prefixes: (json['prefixes'] as List<dynamic>).map((e) => McnCidrPrefix.fromJson(e as String)).toList(),
-); }
+);}
 
 final List<McnCidrPrefix> prefixes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'prefixes': prefixes.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prefixes'); } 
-McnUpdateMagicWanAddressSpaceRequest copyWith({List<McnCidrPrefix>? prefixes}) { return McnUpdateMagicWanAddressSpaceRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prefixes');}
+McnUpdateMagicWanAddressSpaceRequest copyWith({List<McnCidrPrefix>? prefixes}) {return McnUpdateMagicWanAddressSpaceRequest(
   prefixes: prefixes ?? this.prefixes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is McnUpdateMagicWanAddressSpaceRequest &&
-          listEquals(prefixes, other.prefixes); } 
-@override int get hashCode { return Object.hashAll(prefixes).hashCode; } 
-@override String toString() { return 'McnUpdateMagicWanAddressSpaceRequest(prefixes: $prefixes)'; } 
- }
+          listEquals(prefixes, other.prefixes);}
+@override int get hashCode {return Object.hashAll(prefixes).hashCode;}
+@override String toString() {return 'McnUpdateMagicWanAddressSpaceRequest(prefixes: $prefixes)';}
+}

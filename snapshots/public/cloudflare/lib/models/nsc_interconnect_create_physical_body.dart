@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscInterconnectCreatePhysicalBody {const NscInterconnectCreatePhysicalBody({required this.account, required this.type, required this.slotId, this.speed = const Omittable.absent(), });
 
-factory NscInterconnectCreatePhysicalBody.fromJson(Map<String, dynamic> json) { return NscInterconnectCreatePhysicalBody(
+factory NscInterconnectCreatePhysicalBody.fromJson(Map<String, dynamic> json) {return NscInterconnectCreatePhysicalBody(
   account: json['account'] as String,
   type: json['type'] as String,
   slotId: json['slot_id'] as String,
   speed: json.containsKey('speed') ? Omittable(json['speed'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final String account;
 
@@ -17,27 +17,27 @@ final String slotId;
 
 final Omittable<String?> speed;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account,
   'type': type,
   'slot_id': slotId,
   if (speed.isPresent) 'speed': speed.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') && json['account'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('slot_id') && json['slot_id'] is String; } 
-NscInterconnectCreatePhysicalBody copyWith({String? account, String? type, String? slotId, Omittable<String?>? speed, }) { return NscInterconnectCreatePhysicalBody(
+      json.containsKey('slot_id') && json['slot_id'] is String;}
+NscInterconnectCreatePhysicalBody copyWith({String? account, String? type, String? slotId, Omittable<String?>? speed, }) {return NscInterconnectCreatePhysicalBody(
   account: account ?? this.account,
   type: type ?? this.type,
   slotId: slotId ?? this.slotId,
   speed: speed ?? this.speed,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is NscInterconnectCreatePhysicalBody &&
           account == other.account &&
           type == other.type &&
           slotId == other.slotId &&
-          speed == other.speed; } 
-@override int get hashCode { return Object.hash(account, type, slotId, speed); } 
-@override String toString() { return 'NscInterconnectCreatePhysicalBody(account: $account, type: $type, slotId: $slotId, speed: $speed)'; } 
- }
+          speed == other.speed;}
+@override int get hashCode {return Object.hash(account, type, slotId, speed);}
+@override String toString() {return 'NscInterconnectCreatePhysicalBody(account: $account, type: $type, slotId: $slotId, speed: $speed)';}
+}

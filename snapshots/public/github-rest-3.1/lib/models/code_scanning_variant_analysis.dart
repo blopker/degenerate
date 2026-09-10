@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_variant_analysis_scanned_repositories.dart';import 'code_scanning_variant_analysis_skipped_repositories.dart';import 'simple_repository.dart';import 'simple_user.dart';/// The language targeted by the CodeQL query
 @immutable final class CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage._(this.value);
 
-factory CodeScanningVariantAnalysisLanguage.fromJson(String json) { return switch (json) {
+factory CodeScanningVariantAnalysisLanguage.fromJson(String json) {return switch (json) {
   'actions' => actions,
   'cpp' => cpp,
   'csharp' => csharp,
@@ -15,7 +15,7 @@ factory CodeScanningVariantAnalysisLanguage.fromJson(String json) { return switc
   'rust' => rust,
   'swift' => swift,
   _ => CodeScanningVariantAnalysisLanguage._(json),
-}; }
+};}
 
 static const CodeScanningVariantAnalysisLanguage actions = CodeScanningVariantAnalysisLanguage._('actions');
 
@@ -41,23 +41,23 @@ static const List<CodeScanningVariantAnalysisLanguage> values = [actions, cpp, c
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningVariantAnalysisLanguage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningVariantAnalysisLanguage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeScanningVariantAnalysisLanguage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeScanningVariantAnalysisLanguage($value)';}
+}
 @immutable final class CodeScanningVariantAnalysisStatus2 {const CodeScanningVariantAnalysisStatus2._(this.value);
 
-factory CodeScanningVariantAnalysisStatus2.fromJson(String json) { return switch (json) {
+factory CodeScanningVariantAnalysisStatus2.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'succeeded' => succeeded,
   'failed' => failed,
   'cancelled' => cancelled,
   _ => CodeScanningVariantAnalysisStatus2._(json),
-}; }
+};}
 
 static const CodeScanningVariantAnalysisStatus2 inProgress = CodeScanningVariantAnalysisStatus2._('in_progress');
 
@@ -71,23 +71,23 @@ static const List<CodeScanningVariantAnalysisStatus2> values = [inProgress, succ
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningVariantAnalysisStatus2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningVariantAnalysisStatus2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeScanningVariantAnalysisStatus2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeScanningVariantAnalysisStatus2($value)';}
+}
 /// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
 @immutable final class CodeScanningVariantAnalysisFailureReason {const CodeScanningVariantAnalysisFailureReason._(this.value);
 
-factory CodeScanningVariantAnalysisFailureReason.fromJson(String json) { return switch (json) {
+factory CodeScanningVariantAnalysisFailureReason.fromJson(String json) {return switch (json) {
   'no_repos_queried' => noReposQueried,
   'actions_workflow_run_failed' => actionsWorkflowRunFailed,
   'internal_error' => internalError,
   _ => CodeScanningVariantAnalysisFailureReason._(json),
-}; }
+};}
 
 static const CodeScanningVariantAnalysisFailureReason noReposQueried = CodeScanningVariantAnalysisFailureReason._('no_repos_queried');
 
@@ -99,18 +99,18 @@ static const List<CodeScanningVariantAnalysisFailureReason> values = [noReposQue
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningVariantAnalysisFailureReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningVariantAnalysisFailureReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeScanningVariantAnalysisFailureReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeScanningVariantAnalysisFailureReason($value)';}
+}
 /// A run of a CodeQL query against one or more repositories.
 @immutable final class CodeScanningVariantAnalysis {const CodeScanningVariantAnalysis({required this.id, required this.controllerRepo, required this.actor, required this.queryLanguage, required this.queryPackUrl, required this.status, this.createdAt, this.updatedAt, this.completedAt = const Omittable.absent(), this.actionsWorkflowRunId, this.failureReason, this.scannedRepositories, this.skippedRepositories, });
 
-factory CodeScanningVariantAnalysis.fromJson(Map<String, dynamic> json) { return CodeScanningVariantAnalysis(
+factory CodeScanningVariantAnalysis.fromJson(Map<String, dynamic> json) {return CodeScanningVariantAnalysis(
   id: (json['id'] as num).toInt(),
   controllerRepo: SimpleRepository.fromJson(json['controller_repo'] as Map<String, dynamic>),
   actor: SimpleUser.fromJson(json['actor'] as Map<String, dynamic>),
@@ -124,7 +124,7 @@ factory CodeScanningVariantAnalysis.fromJson(Map<String, dynamic> json) { return
   failureReason: json['failure_reason'] != null ? CodeScanningVariantAnalysisFailureReason.fromJson(json['failure_reason'] as String) : null,
   scannedRepositories: (json['scanned_repositories'] as List<dynamic>?)?.map((e) => CodeScanningVariantAnalysisScannedRepositories.fromJson(e as Map<String, dynamic>)).toList(),
   skippedRepositories: json['skipped_repositories'] != null ? CodeScanningVariantAnalysisSkippedRepositories.fromJson(json['skipped_repositories'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The ID of the variant analysis.
 final int id;
@@ -161,7 +161,7 @@ final List<CodeScanningVariantAnalysisScannedRepositories>? scannedRepositories;
 /// Information about repositories that were skipped from processing. This information is only available to the user that initiated the variant analysis.
 final CodeScanningVariantAnalysisSkippedRepositories? skippedRepositories;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'controller_repo': controllerRepo.toJson(),
   'actor': actor.toJson(),
@@ -175,14 +175,14 @@ Map<String, dynamic> toJson() { return {
   if (failureReason != null) 'failure_reason': failureReason?.toJson(),
   if (scannedRepositories != null) 'scanned_repositories': scannedRepositories?.map((e) => e.toJson()).toList(),
   if (skippedRepositories != null) 'skipped_repositories': skippedRepositories?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('controller_repo') &&
       json.containsKey('actor') &&
       json.containsKey('query_language') &&
       json.containsKey('query_pack_url') && json['query_pack_url'] is String &&
-      json.containsKey('status'); } 
-CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo, SimpleUser? actor, CodeScanningVariantAnalysisLanguage? queryLanguage, String? queryPackUrl, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Omittable<DateTime?>? completedAt, CodeScanningVariantAnalysisStatus2? status, int? Function()? actionsWorkflowRunId, CodeScanningVariantAnalysisFailureReason? Function()? failureReason, List<CodeScanningVariantAnalysisScannedRepositories>? Function()? scannedRepositories, CodeScanningVariantAnalysisSkippedRepositories? Function()? skippedRepositories, }) { return CodeScanningVariantAnalysis(
+      json.containsKey('status');}
+CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo, SimpleUser? actor, CodeScanningVariantAnalysisLanguage? queryLanguage, String? queryPackUrl, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Omittable<DateTime?>? completedAt, CodeScanningVariantAnalysisStatus2? status, int? Function()? actionsWorkflowRunId, CodeScanningVariantAnalysisFailureReason? Function()? failureReason, List<CodeScanningVariantAnalysisScannedRepositories>? Function()? scannedRepositories, CodeScanningVariantAnalysisSkippedRepositories? Function()? skippedRepositories, }) {return CodeScanningVariantAnalysis(
   id: id ?? this.id,
   controllerRepo: controllerRepo ?? this.controllerRepo,
   actor: actor ?? this.actor,
@@ -196,8 +196,8 @@ CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo,
   failureReason: failureReason != null ? failureReason() : this.failureReason,
   scannedRepositories: scannedRepositories != null ? scannedRepositories() : this.scannedRepositories,
   skippedRepositories: skippedRepositories != null ? skippedRepositories() : this.skippedRepositories,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeScanningVariantAnalysis &&
           id == other.id &&
           controllerRepo == other.controllerRepo &&
@@ -211,7 +211,7 @@ CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo,
           actionsWorkflowRunId == other.actionsWorkflowRunId &&
           failureReason == other.failureReason &&
           listEquals(scannedRepositories, other.scannedRepositories) &&
-          skippedRepositories == other.skippedRepositories; } 
-@override int get hashCode { return Object.hash(id, controllerRepo, actor, queryLanguage, queryPackUrl, createdAt, updatedAt, completedAt, status, actionsWorkflowRunId, failureReason, Object.hashAll(scannedRepositories ?? const []), skippedRepositories); } 
-@override String toString() { return 'CodeScanningVariantAnalysis(id: $id, controllerRepo: $controllerRepo, actor: $actor, queryLanguage: $queryLanguage, queryPackUrl: $queryPackUrl, createdAt: $createdAt, updatedAt: $updatedAt, completedAt: $completedAt, status: $status, actionsWorkflowRunId: $actionsWorkflowRunId, failureReason: $failureReason, scannedRepositories: $scannedRepositories, skippedRepositories: $skippedRepositories)'; } 
- }
+          skippedRepositories == other.skippedRepositories;}
+@override int get hashCode {return Object.hash(id, controllerRepo, actor, queryLanguage, queryPackUrl, createdAt, updatedAt, completedAt, status, actionsWorkflowRunId, failureReason, Object.hashAll(scannedRepositories ?? const []), skippedRepositories);}
+@override String toString() {return 'CodeScanningVariantAnalysis(id: $id, controllerRepo: $controllerRepo, actor: $actor, queryLanguage: $queryLanguage, queryPackUrl: $queryPackUrl, createdAt: $createdAt, updatedAt: $updatedAt, completedAt: $completedAt, status: $status, actionsWorkflowRunId: $actionsWorkflowRunId, failureReason: $failureReason, scannedRepositories: $scannedRepositories, skippedRepositories: $skippedRepositories)';}
+}

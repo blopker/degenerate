@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListDevicesActiveRegistrations {const ListDevicesActiveRegistrations._(this.value);
 
-factory ListDevicesActiveRegistrations.fromJson(String json) { return switch (json) {
+factory ListDevicesActiveRegistrations.fromJson(String json) {return switch (json) {
   'include' => include,
   'only' => only,
   'exclude' => exclude,
   _ => ListDevicesActiveRegistrations._(json),
-}; }
+};}
 
 static const ListDevicesActiveRegistrations include = ListDevicesActiveRegistrations._('include');
 
@@ -19,11 +19,11 @@ static const List<ListDevicesActiveRegistrations> values = [include, only, exclu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ListDevicesActiveRegistrations && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ListDevicesActiveRegistrations($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ListDevicesActiveRegistrations && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ListDevicesActiveRegistrations($value)';}
+}

@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class ActivityListReposStarredByAuthenticatedUserError {const ActivityListReposStarredByAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static ActivityListReposStarredByAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static ActivityListReposStarredByAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const ActivityListReposStarredByAuthenticatedUserError304();
 case 401:
@@ -16,30 +16,30 @@ return ActivityListReposStarredByAuthenticatedUserError403(BasicError.fromJson(j
 default:
 return ActivityListReposStarredByAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class ActivityListReposStarredByAuthenticatedUserError304 extends ActivityListReposStarredByAuthenticatedUserError {const ActivityListReposStarredByAuthenticatedUserError304();
 
- }
+}
 /// Response for 401 (application/json).
 final class ActivityListReposStarredByAuthenticatedUserError401 extends ActivityListReposStarredByAuthenticatedUserError {const ActivityListReposStarredByAuthenticatedUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class ActivityListReposStarredByAuthenticatedUserError403 extends ActivityListReposStarredByAuthenticatedUserError {const ActivityListReposStarredByAuthenticatedUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class ActivityListReposStarredByAuthenticatedUserErrorUnknown extends ActivityListReposStarredByAuthenticatedUserError {const ActivityListReposStarredByAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

@@ -11,7 +11,7 @@ final class Api20100401MediaApi with ApiExecutor {const Api20100401MediaApi(this
 /// Read a list of Media resources associated with a specific Message resource
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Messages/{MessageSid}/Media.json`
-Future<ApiResult<ListMediaResponse, Never>> listMedia({required String accountSid, required String messageSid, DateTime? dateCreated, DateTime? dateCreatedBefore, DateTime? dateCreatedAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListMediaResponse, Never>> listMedia({required String accountSid, required String messageSid, DateTime? dateCreated, DateTime? dateCreatedBefore, DateTime? dateCreatedAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dateCreated != null) {
   queryParameters['DateCreated'] = dateCreated.toIso8601String();
@@ -50,5 +50,5 @@ final json = jsonDecode(response.body);
 return ListMediaResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_repository_renamed_changes_repository_name.dart';@immutable final class WebhookRepositoryRenamedChangesRepository {const WebhookRepositoryRenamedChangesRepository({required this.name});
 
-factory WebhookRepositoryRenamedChangesRepository.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRenamedChangesRepository(
+factory WebhookRepositoryRenamedChangesRepository.fromJson(Map<String, dynamic> json) {return WebhookRepositoryRenamedChangesRepository(
   name: WebhookRepositoryRenamedChangesRepositoryName.fromJson(json['name'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookRepositoryRenamedChangesRepositoryName name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-WebhookRepositoryRenamedChangesRepository copyWith({WebhookRepositoryRenamedChangesRepositoryName? name}) { return WebhookRepositoryRenamedChangesRepository(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name');}
+WebhookRepositoryRenamedChangesRepository copyWith({WebhookRepositoryRenamedChangesRepositoryName? name}) {return WebhookRepositoryRenamedChangesRepository(
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRepositoryRenamedChangesRepository &&
-          name == other.name; } 
-@override int get hashCode { return name.hashCode; } 
-@override String toString() { return 'WebhookRepositoryRenamedChangesRepository(name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return name.hashCode;}
+@override String toString() {return 'WebhookRepositoryRenamedChangesRepository(name: $name)';}
+}

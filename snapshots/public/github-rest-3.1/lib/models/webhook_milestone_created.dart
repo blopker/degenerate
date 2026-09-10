@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_milestone3.dart';@immutable final class WebhookMilestoneCreatedAction {const WebhookMilestoneCreatedAction._(this.value);
 
-factory WebhookMilestoneCreatedAction.fromJson(String json) { return switch (json) {
+factory WebhookMilestoneCreatedAction.fromJson(String json) {return switch (json) {
   'created' => created,
   _ => WebhookMilestoneCreatedAction._(json),
-}; }
+};}
 
 static const WebhookMilestoneCreatedAction created = WebhookMilestoneCreatedAction._('created');
 
@@ -13,17 +13,17 @@ static const List<WebhookMilestoneCreatedAction> values = [created];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMilestoneCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMilestoneCreatedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookMilestoneCreatedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookMilestoneCreatedAction($value)';}
+}
 @immutable final class WebhookMilestoneCreated {const WebhookMilestoneCreated({required this.action, required this.milestone, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookMilestoneCreated.fromJson(Map<String, dynamic> json) { return WebhookMilestoneCreated(
+factory WebhookMilestoneCreated.fromJson(Map<String, dynamic> json) {return WebhookMilestoneCreated(
   action: WebhookMilestoneCreatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookMilestoneCreated.fromJson(Map<String, dynamic> json) { return Web
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookMilestoneCreatedAction action;
 
@@ -47,7 +47,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -55,12 +55,12 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('milestone') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookMilestoneCreated copyWith({WebhookMilestoneCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksMilestone3? milestone, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookMilestoneCreated(
+      json.containsKey('sender');}
+WebhookMilestoneCreated copyWith({WebhookMilestoneCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksMilestone3? milestone, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookMilestoneCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -68,8 +68,8 @@ WebhookMilestoneCreated copyWith({WebhookMilestoneCreatedAction? action, Enterpr
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookMilestoneCreated &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -77,7 +77,7 @@ WebhookMilestoneCreated copyWith({WebhookMilestoneCreatedAction? action, Enterpr
           milestone == other.milestone &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, milestone, organization, repository, sender); } 
-@override String toString() { return 'WebhookMilestoneCreated(action: $action, enterprise: $enterprise, installation: $installation, milestone: $milestone, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, milestone, organization, repository, sender);}
+@override String toString() {return 'WebhookMilestoneCreated(action: $action, enterprise: $enterprise, installation: $installation, milestone: $milestone, organization: $organization, repository: $repository, sender: $sender)';}
+}

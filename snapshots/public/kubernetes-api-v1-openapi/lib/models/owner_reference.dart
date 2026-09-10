@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// OwnerReference contains enough information to let you identify an owning object. An owning object must be in the same namespace as the dependent, or be cluster-scoped, so there is no namespace field.
 @immutable final class OwnerReference {const OwnerReference({required this.apiVersion, required this.kind, required this.name, required this.uid, this.blockOwnerDeletion, this.controller, });
 
-factory OwnerReference.fromJson(Map<String, dynamic> json) { return OwnerReference(
+factory OwnerReference.fromJson(Map<String, dynamic> json) {return OwnerReference(
   apiVersion: json['apiVersion'] as String,
   blockOwnerDeletion: json['blockOwnerDeletion'] as bool?,
   controller: json['controller'] as bool?,
   kind: json['kind'] as String,
   name: json['name'] as String,
   uid: json['uid'] as String,
-); }
+);}
 
 /// API version of the referent.
 final String apiVersion;
@@ -30,34 +30,34 @@ final String name;
 /// UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
 final String uid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': apiVersion,
   'blockOwnerDeletion': ?blockOwnerDeletion,
   'controller': ?controller,
   'kind': kind,
   'name': name,
   'uid': uid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('apiVersion') && json['apiVersion'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('apiVersion') && json['apiVersion'] is String &&
       json.containsKey('kind') && json['kind'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('uid') && json['uid'] is String; } 
-OwnerReference copyWith({String? apiVersion, bool? Function()? blockOwnerDeletion, bool? Function()? controller, String? kind, String? name, String? uid, }) { return OwnerReference(
+      json.containsKey('uid') && json['uid'] is String;}
+OwnerReference copyWith({String? apiVersion, bool? Function()? blockOwnerDeletion, bool? Function()? controller, String? kind, String? name, String? uid, }) {return OwnerReference(
   apiVersion: apiVersion ?? this.apiVersion,
   blockOwnerDeletion: blockOwnerDeletion != null ? blockOwnerDeletion() : this.blockOwnerDeletion,
   controller: controller != null ? controller() : this.controller,
   kind: kind ?? this.kind,
   name: name ?? this.name,
   uid: uid ?? this.uid,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OwnerReference &&
           apiVersion == other.apiVersion &&
           blockOwnerDeletion == other.blockOwnerDeletion &&
           controller == other.controller &&
           kind == other.kind &&
           name == other.name &&
-          uid == other.uid; } 
-@override int get hashCode { return Object.hash(apiVersion, blockOwnerDeletion, controller, kind, name, uid); } 
-@override String toString() { return 'OwnerReference(apiVersion: $apiVersion, blockOwnerDeletion: $blockOwnerDeletion, controller: $controller, kind: $kind, name: $name, uid: $uid)'; } 
- }
+          uid == other.uid;}
+@override int get hashCode {return Object.hash(apiVersion, blockOwnerDeletion, controller, kind, name, uid);}
+@override String toString() {return 'OwnerReference(apiVersion: $apiVersion, blockOwnerDeletion: $blockOwnerDeletion, controller: $controller, kind: $kind, name: $name, uid: $uid)';}
+}

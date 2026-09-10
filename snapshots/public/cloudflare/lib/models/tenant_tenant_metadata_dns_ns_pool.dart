@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TenantTenantMetadataDnsNsPool {const TenantTenantMetadataDnsNsPool({this.primary, this.secondary, });
 
-factory TenantTenantMetadataDnsNsPool.fromJson(Map<String, dynamic> json) { return TenantTenantMetadataDnsNsPool(
+factory TenantTenantMetadataDnsNsPool.fromJson(Map<String, dynamic> json) {return TenantTenantMetadataDnsNsPool(
   primary: json['primary'] as String?,
   secondary: json['secondary'] as String?,
-); }
+);}
 
 final String? primary;
 
 final String? secondary;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'primary': ?primary,
   'secondary': ?secondary,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'primary', 'secondary'}.contains(key)); } 
-TenantTenantMetadataDnsNsPool copyWith({String? Function()? primary, String? Function()? secondary, }) { return TenantTenantMetadataDnsNsPool(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'primary', 'secondary'}.contains(key));}
+TenantTenantMetadataDnsNsPool copyWith({String? Function()? primary, String? Function()? secondary, }) {return TenantTenantMetadataDnsNsPool(
   primary: primary != null ? primary() : this.primary,
   secondary: secondary != null ? secondary() : this.secondary,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TenantTenantMetadataDnsNsPool &&
           primary == other.primary &&
-          secondary == other.secondary; } 
-@override int get hashCode { return Object.hash(primary, secondary); } 
-@override String toString() { return 'TenantTenantMetadataDnsNsPool(primary: $primary, secondary: $secondary)'; } 
- }
+          secondary == other.secondary;}
+@override int get hashCode {return Object.hash(primary, secondary);}
+@override String toString() {return 'TenantTenantMetadataDnsNsPool(primary: $primary, secondary: $secondary)';}
+}

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_set_config_autominify.dart';/// The Polish level to configure.
 @immutable final class RulesetsSetConfigRuleActionParametersPolish {const RulesetsSetConfigRuleActionParametersPolish._(this.value);
 
-factory RulesetsSetConfigRuleActionParametersPolish.fromJson(String json) { return switch (json) {
+factory RulesetsSetConfigRuleActionParametersPolish.fromJson(String json) {return switch (json) {
   'off' => off,
   'lossless' => lossless,
   'lossy' => lossy,
   'webp' => webp,
   _ => RulesetsSetConfigRuleActionParametersPolish._(json),
-}; }
+};}
 
 static const RulesetsSetConfigRuleActionParametersPolish off = RulesetsSetConfigRuleActionParametersPolish._('off');
 
@@ -23,23 +23,23 @@ static const List<RulesetsSetConfigRuleActionParametersPolish> values = [off, lo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsSetConfigRuleActionParametersPolish && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RulesetsSetConfigRuleActionParametersPolish($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RulesetsSetConfigRuleActionParametersPolish && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RulesetsSetConfigRuleActionParametersPolish($value)';}
+}
 /// The request body buffering mode.
 @immutable final class RulesetsSetConfigRuleActionParametersRequestBodyBuffering {const RulesetsSetConfigRuleActionParametersRequestBodyBuffering._(this.value);
 
-factory RulesetsSetConfigRuleActionParametersRequestBodyBuffering.fromJson(String json) { return switch (json) {
+factory RulesetsSetConfigRuleActionParametersRequestBodyBuffering.fromJson(String json) {return switch (json) {
   'none' => none,
   'standard' => standard,
   'full' => full,
   _ => RulesetsSetConfigRuleActionParametersRequestBodyBuffering._(json),
-}; }
+};}
 
 static const RulesetsSetConfigRuleActionParametersRequestBodyBuffering none = RulesetsSetConfigRuleActionParametersRequestBodyBuffering._('none');
 
@@ -51,22 +51,22 @@ static const List<RulesetsSetConfigRuleActionParametersRequestBodyBuffering> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsSetConfigRuleActionParametersRequestBodyBuffering && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RulesetsSetConfigRuleActionParametersRequestBodyBuffering($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RulesetsSetConfigRuleActionParametersRequestBodyBuffering && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RulesetsSetConfigRuleActionParametersRequestBodyBuffering($value)';}
+}
 /// The response body buffering mode.
 @immutable final class RulesetsSetConfigRuleActionParametersResponseBodyBuffering {const RulesetsSetConfigRuleActionParametersResponseBodyBuffering._(this.value);
 
-factory RulesetsSetConfigRuleActionParametersResponseBodyBuffering.fromJson(String json) { return switch (json) {
+factory RulesetsSetConfigRuleActionParametersResponseBodyBuffering.fromJson(String json) {return switch (json) {
   'none' => none,
   'standard' => standard,
   _ => RulesetsSetConfigRuleActionParametersResponseBodyBuffering._(json),
-}; }
+};}
 
 static const RulesetsSetConfigRuleActionParametersResponseBodyBuffering none = RulesetsSetConfigRuleActionParametersResponseBodyBuffering._('none');
 
@@ -76,18 +76,18 @@ static const List<RulesetsSetConfigRuleActionParametersResponseBodyBuffering> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsSetConfigRuleActionParametersResponseBodyBuffering && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RulesetsSetConfigRuleActionParametersResponseBodyBuffering($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RulesetsSetConfigRuleActionParametersResponseBodyBuffering && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RulesetsSetConfigRuleActionParametersResponseBodyBuffering($value)';}
+}
 /// The Security Level to configure.
 @immutable final class RulesetsSetConfigRuleActionParametersSecurityLevel {const RulesetsSetConfigRuleActionParametersSecurityLevel._(this.value);
 
-factory RulesetsSetConfigRuleActionParametersSecurityLevel.fromJson(String json) { return switch (json) {
+factory RulesetsSetConfigRuleActionParametersSecurityLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'essentially_off' => essentiallyOff,
   'low' => low,
@@ -95,7 +95,7 @@ factory RulesetsSetConfigRuleActionParametersSecurityLevel.fromJson(String json)
   'high' => high,
   'under_attack' => underAttack,
   _ => RulesetsSetConfigRuleActionParametersSecurityLevel._(json),
-}; }
+};}
 
 static const RulesetsSetConfigRuleActionParametersSecurityLevel off = RulesetsSetConfigRuleActionParametersSecurityLevel._('off');
 
@@ -113,25 +113,25 @@ static const List<RulesetsSetConfigRuleActionParametersSecurityLevel> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsSetConfigRuleActionParametersSecurityLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RulesetsSetConfigRuleActionParametersSecurityLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RulesetsSetConfigRuleActionParametersSecurityLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RulesetsSetConfigRuleActionParametersSecurityLevel($value)';}
+}
 /// The SSL level to configure.
 @immutable final class RulesetsSetConfigRuleActionParametersSsl {const RulesetsSetConfigRuleActionParametersSsl._(this.value);
 
-factory RulesetsSetConfigRuleActionParametersSsl.fromJson(String json) { return switch (json) {
+factory RulesetsSetConfigRuleActionParametersSsl.fromJson(String json) {return switch (json) {
   'off' => off,
   'flexible' => flexible,
   'full' => full,
   'strict' => strict,
   'origin_pull' => originPull,
   _ => RulesetsSetConfigRuleActionParametersSsl._(json),
-}; }
+};}
 
 static const RulesetsSetConfigRuleActionParametersSsl off = RulesetsSetConfigRuleActionParametersSsl._('off');
 
@@ -147,17 +147,17 @@ static const List<RulesetsSetConfigRuleActionParametersSsl> values = [off, flexi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsSetConfigRuleActionParametersSsl && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RulesetsSetConfigRuleActionParametersSsl($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RulesetsSetConfigRuleActionParametersSsl && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RulesetsSetConfigRuleActionParametersSsl($value)';}
+}
 @immutable final class RulesetsSetConfigRuleActionParameters {const RulesetsSetConfigRuleActionParameters({this.automaticHttpsRewrites, this.autominify, this.bic, this.contentConverter, this.disableApps, this.disablePayPerCrawl, this.disableRum, this.disableZaraz, this.emailObfuscation, this.fonts, this.hotlinkProtection, this.mirage, this.opportunisticEncryption, this.polish, this.requestBodyBuffering, this.responseBodyBuffering, this.rocketLoader, this.securityLevel, this.serverSideExcludes, this.ssl, this.sxg, });
 
-factory RulesetsSetConfigRuleActionParameters.fromJson(Map<String, dynamic> json) { return RulesetsSetConfigRuleActionParameters(
+factory RulesetsSetConfigRuleActionParameters.fromJson(Map<String, dynamic> json) {return RulesetsSetConfigRuleActionParameters(
   automaticHttpsRewrites: json['automatic_https_rewrites'] as bool?,
   autominify: json['autominify'] != null ? RulesetsSetConfigAutominify.fromJson(json['autominify'] as Map<String, dynamic>) : null,
   bic: json['bic'] as bool?,
@@ -179,7 +179,7 @@ factory RulesetsSetConfigRuleActionParameters.fromJson(Map<String, dynamic> json
   serverSideExcludes: json['server_side_excludes'] as bool?,
   ssl: json['ssl'] != null ? RulesetsSetConfigRuleActionParametersSsl.fromJson(json['ssl'] as String) : null,
   sxg: json['sxg'] as bool?,
-); }
+);}
 
 /// Whether to enable Automatic HTTPS Rewrites.
 final bool? automaticHttpsRewrites;
@@ -243,7 +243,7 @@ final RulesetsSetConfigRuleActionParametersSsl? ssl;
 /// Whether to enable Signed Exchanges (SXG).
 final bool? sxg;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'automatic_https_rewrites': ?automaticHttpsRewrites,
   if (autominify != null) 'autominify': autominify?.toJson(),
   'bic': ?bic,
@@ -265,9 +265,9 @@ Map<String, dynamic> toJson() { return {
   'server_side_excludes': ?serverSideExcludes,
   if (ssl != null) 'ssl': ssl?.toJson(),
   'sxg': ?sxg,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'automatic_https_rewrites', 'autominify', 'bic', 'content_converter', 'disable_apps', 'disable_pay_per_crawl', 'disable_rum', 'disable_zaraz', 'email_obfuscation', 'fonts', 'hotlink_protection', 'mirage', 'opportunistic_encryption', 'polish', 'request_body_buffering', 'response_body_buffering', 'rocket_loader', 'security_level', 'server_side_excludes', 'ssl', 'sxg'}.contains(key)); } 
-RulesetsSetConfigRuleActionParameters copyWith({bool? Function()? automaticHttpsRewrites, RulesetsSetConfigAutominify? Function()? autominify, bool? Function()? bic, bool? Function()? contentConverter, bool? Function()? disableApps, bool? Function()? disablePayPerCrawl, bool? Function()? disableRum, bool? Function()? disableZaraz, bool? Function()? emailObfuscation, bool? Function()? fonts, bool? Function()? hotlinkProtection, bool? Function()? mirage, bool? Function()? opportunisticEncryption, RulesetsSetConfigRuleActionParametersPolish? Function()? polish, RulesetsSetConfigRuleActionParametersRequestBodyBuffering? Function()? requestBodyBuffering, RulesetsSetConfigRuleActionParametersResponseBodyBuffering? Function()? responseBodyBuffering, bool? Function()? rocketLoader, RulesetsSetConfigRuleActionParametersSecurityLevel? Function()? securityLevel, bool? Function()? serverSideExcludes, RulesetsSetConfigRuleActionParametersSsl? Function()? ssl, bool? Function()? sxg, }) { return RulesetsSetConfigRuleActionParameters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'automatic_https_rewrites', 'autominify', 'bic', 'content_converter', 'disable_apps', 'disable_pay_per_crawl', 'disable_rum', 'disable_zaraz', 'email_obfuscation', 'fonts', 'hotlink_protection', 'mirage', 'opportunistic_encryption', 'polish', 'request_body_buffering', 'response_body_buffering', 'rocket_loader', 'security_level', 'server_side_excludes', 'ssl', 'sxg'}.contains(key));}
+RulesetsSetConfigRuleActionParameters copyWith({bool? Function()? automaticHttpsRewrites, RulesetsSetConfigAutominify? Function()? autominify, bool? Function()? bic, bool? Function()? contentConverter, bool? Function()? disableApps, bool? Function()? disablePayPerCrawl, bool? Function()? disableRum, bool? Function()? disableZaraz, bool? Function()? emailObfuscation, bool? Function()? fonts, bool? Function()? hotlinkProtection, bool? Function()? mirage, bool? Function()? opportunisticEncryption, RulesetsSetConfigRuleActionParametersPolish? Function()? polish, RulesetsSetConfigRuleActionParametersRequestBodyBuffering? Function()? requestBodyBuffering, RulesetsSetConfigRuleActionParametersResponseBodyBuffering? Function()? responseBodyBuffering, bool? Function()? rocketLoader, RulesetsSetConfigRuleActionParametersSecurityLevel? Function()? securityLevel, bool? Function()? serverSideExcludes, RulesetsSetConfigRuleActionParametersSsl? Function()? ssl, bool? Function()? sxg, }) {return RulesetsSetConfigRuleActionParameters(
   automaticHttpsRewrites: automaticHttpsRewrites != null ? automaticHttpsRewrites() : this.automaticHttpsRewrites,
   autominify: autominify != null ? autominify() : this.autominify,
   bic: bic != null ? bic() : this.bic,
@@ -289,8 +289,8 @@ RulesetsSetConfigRuleActionParameters copyWith({bool? Function()? automaticHttps
   serverSideExcludes: serverSideExcludes != null ? serverSideExcludes() : this.serverSideExcludes,
   ssl: ssl != null ? ssl() : this.ssl,
   sxg: sxg != null ? sxg() : this.sxg,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsSetConfigRuleActionParameters &&
           automaticHttpsRewrites == other.automaticHttpsRewrites &&
           autominify == other.autominify &&
@@ -312,7 +312,7 @@ RulesetsSetConfigRuleActionParameters copyWith({bool? Function()? automaticHttps
           securityLevel == other.securityLevel &&
           serverSideExcludes == other.serverSideExcludes &&
           ssl == other.ssl &&
-          sxg == other.sxg; } 
-@override int get hashCode { return Object.hashAll([automaticHttpsRewrites, autominify, bic, contentConverter, disableApps, disablePayPerCrawl, disableRum, disableZaraz, emailObfuscation, fonts, hotlinkProtection, mirage, opportunisticEncryption, polish, requestBodyBuffering, responseBodyBuffering, rocketLoader, securityLevel, serverSideExcludes, ssl, sxg]); } 
-@override String toString() { return 'RulesetsSetConfigRuleActionParameters(automaticHttpsRewrites: $automaticHttpsRewrites, autominify: $autominify, bic: $bic, contentConverter: $contentConverter, disableApps: $disableApps, disablePayPerCrawl: $disablePayPerCrawl, disableRum: $disableRum, disableZaraz: $disableZaraz, emailObfuscation: $emailObfuscation, fonts: $fonts, hotlinkProtection: $hotlinkProtection, mirage: $mirage, opportunisticEncryption: $opportunisticEncryption, polish: $polish, requestBodyBuffering: $requestBodyBuffering, responseBodyBuffering: $responseBodyBuffering, rocketLoader: $rocketLoader, securityLevel: $securityLevel, serverSideExcludes: $serverSideExcludes, ssl: $ssl, sxg: $sxg)'; } 
- }
+          sxg == other.sxg;}
+@override int get hashCode {return Object.hashAll([automaticHttpsRewrites, autominify, bic, contentConverter, disableApps, disablePayPerCrawl, disableRum, disableZaraz, emailObfuscation, fonts, hotlinkProtection, mirage, opportunisticEncryption, polish, requestBodyBuffering, responseBodyBuffering, rocketLoader, securityLevel, serverSideExcludes, ssl, sxg]);}
+@override String toString() {return 'RulesetsSetConfigRuleActionParameters(automaticHttpsRewrites: $automaticHttpsRewrites, autominify: $autominify, bic: $bic, contentConverter: $contentConverter, disableApps: $disableApps, disablePayPerCrawl: $disablePayPerCrawl, disableRum: $disableRum, disableZaraz: $disableZaraz, emailObfuscation: $emailObfuscation, fonts: $fonts, hotlinkProtection: $hotlinkProtection, mirage: $mirage, opportunisticEncryption: $opportunisticEncryption, polish: $polish, requestBodyBuffering: $requestBodyBuffering, responseBodyBuffering: $responseBodyBuffering, rocketLoader: $rocketLoader, securityLevel: $securityLevel, serverSideExcludes: $serverSideExcludes, ssl: $ssl, sxg: $sxg)';}
+}

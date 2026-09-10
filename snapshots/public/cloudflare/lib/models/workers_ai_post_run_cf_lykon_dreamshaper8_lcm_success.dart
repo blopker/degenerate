@@ -4,7 +4,7 @@ import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtim
 sealed class WorkersAiPostRunCfLykonDreamshaper8LcmSuccess {const WorkersAiPostRunCfLykonDreamshaper8LcmSuccess();
 
 /// Decodes the payload for its declared status and content type.
-static WorkersAiPostRunCfLykonDreamshaper8LcmSuccess parse(ApiResponse response) { switch (response.statusCode) {
+static WorkersAiPostRunCfLykonDreamshaper8LcmSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -21,26 +21,26 @@ return WorkersAiPostRunCfLykonDreamshaper8LcmSuccess200ApplicationJson(json as M
 default:
 return WorkersAiPostRunCfLykonDreamshaper8LcmSuccessUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 200 (application/json).
 final class WorkersAiPostRunCfLykonDreamshaper8LcmSuccess200ApplicationJson extends WorkersAiPostRunCfLykonDreamshaper8LcmSuccess {const WorkersAiPostRunCfLykonDreamshaper8LcmSuccess200ApplicationJson(this.data);
 
 /// The decoded response payload.
 final Map<String, dynamic> data;
 
- }
+}
 /// Response for 200 (image/png).
 final class WorkersAiPostRunCfLykonDreamshaper8LcmSuccess200ImagePng extends WorkersAiPostRunCfLykonDreamshaper8LcmSuccess {const WorkersAiPostRunCfLykonDreamshaper8LcmSuccess200ImagePng(this.data);
 
 /// The decoded response payload.
 final Uint8List data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class WorkersAiPostRunCfLykonDreamshaper8LcmSuccessUnknown extends WorkersAiPostRunCfLykonDreamshaper8LcmSuccess {const WorkersAiPostRunCfLykonDreamshaper8LcmSuccessUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

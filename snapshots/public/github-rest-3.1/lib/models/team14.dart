@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team14_parent.dart';@immutable final class Team14Privacy {const Team14Privacy._(this.value);
 
-factory Team14Privacy.fromJson(String json) { return switch (json) {
+factory Team14Privacy.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   'secret' => secret,
   _ => Team14Privacy._(json),
-}; }
+};}
 
 static const Team14Privacy open = Team14Privacy._('open');
 
@@ -19,18 +19,18 @@ static const List<Team14Privacy> values = [open, closed, secret];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Team14Privacy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Team14Privacy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Team14Privacy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Team14Privacy($value)';}
+}
 /// Groups of organization members that gives permissions on specified repositories.
 @immutable final class Team14 {const Team14({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, this.deleted, this.parent = const Omittable.absent(), });
 
-factory Team14.fromJson(Map<String, dynamic> json) { return Team14(
+factory Team14.fromJson(Map<String, dynamic> json) {return Team14(
   deleted: json['deleted'] as bool?,
   description: json['description'] as String?,
   htmlUrl: Uri.parse(json['html_url'] as String),
@@ -44,7 +44,7 @@ factory Team14.fromJson(Map<String, dynamic> json) { return Team14(
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),
   slug: json['slug'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final bool? deleted;
 
@@ -77,7 +77,7 @@ final String slug;
 /// URL for the team
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deleted': ?deleted,
   'description': description,
   'html_url': htmlUrl.toString(),
@@ -91,8 +91,8 @@ Map<String, dynamic> toJson() { return {
   'repositories_url': repositoriesUrl.toString(),
   'slug': slug,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('members_url') && json['members_url'] is String &&
@@ -102,8 +102,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('privacy') &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-Team14 copyWith({bool? Function()? deleted, String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, Omittable<Team14Parent?>? parent, String? permission, Team14Privacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) { return Team14(
+      json.containsKey('url') && json['url'] is String;}
+Team14 copyWith({bool? Function()? deleted, String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, Omittable<Team14Parent?>? parent, String? permission, Team14Privacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) {return Team14(
   deleted: deleted != null ? deleted() : this.deleted,
   description: description != null ? description() : this.description,
   htmlUrl: htmlUrl ?? this.htmlUrl,
@@ -117,8 +117,8 @@ Team14 copyWith({bool? Function()? deleted, String? Function()? description, Uri
   repositoriesUrl: repositoriesUrl ?? this.repositoriesUrl,
   slug: slug ?? this.slug,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Team14 &&
           deleted == other.deleted &&
           description == other.description &&
@@ -132,7 +132,7 @@ Team14 copyWith({bool? Function()? deleted, String? Function()? description, Uri
           privacy == other.privacy &&
           repositoriesUrl == other.repositoriesUrl &&
           slug == other.slug &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(deleted, description, htmlUrl, id, membersUrl, name, nodeId, parent, permission, privacy, repositoriesUrl, slug, url); } 
-@override String toString() { return 'Team14(deleted: $deleted, description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, parent: $parent, permission: $permission, privacy: $privacy, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(deleted, description, htmlUrl, id, membersUrl, name, nodeId, parent, permission, privacy, repositoriesUrl, slug, url);}
+@override String toString() {return 'Team14(deleted: $deleted, description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, parent: $parent, permission: $permission, privacy: $privacy, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url)';}
+}

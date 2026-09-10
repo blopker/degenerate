@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sets the target file size for compaction in megabytes. Defaults to "128".
 @immutable final class R2DataCatalogCatalogTargetFileSize {const R2DataCatalogCatalogTargetFileSize._(this.value);
 
-factory R2DataCatalogCatalogTargetFileSize.fromJson(String json) { return switch (json) {
+factory R2DataCatalogCatalogTargetFileSize.fromJson(String json) {return switch (json) {
   '64' => $64,
   '128' => $128,
   '256' => $256,
   '512' => $512,
   _ => R2DataCatalogCatalogTargetFileSize._(json),
-}; }
+};}
 
 static const R2DataCatalogCatalogTargetFileSize $64 = R2DataCatalogCatalogTargetFileSize._('64');
 
@@ -23,11 +23,11 @@ static const List<R2DataCatalogCatalogTargetFileSize> values = [$64, $128, $256,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2DataCatalogCatalogTargetFileSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2DataCatalogCatalogTargetFileSize($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is R2DataCatalogCatalogTargetFileSize && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'R2DataCatalogCatalogTargetFileSize($value)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The system role from which this role inherits permissions.
 @immutable final class OrganizationRoleBaseRole {const OrganizationRoleBaseRole._(this.value);
 
-factory OrganizationRoleBaseRole.fromJson(String json) { return switch (json) {
+factory OrganizationRoleBaseRole.fromJson(String json) {return switch (json) {
   'read' => read,
   'triage' => triage,
   'write' => write,
@@ -11,7 +11,7 @@ factory OrganizationRoleBaseRole.fromJson(String json) { return switch (json) {
   'admin' => admin,
   'null' => $null,
   _ => OrganizationRoleBaseRole._(json),
-}; }
+};}
 
 static const OrganizationRoleBaseRole read = OrganizationRoleBaseRole._('read');
 
@@ -29,24 +29,24 @@ static const List<OrganizationRoleBaseRole> values = [read, triage, write, maint
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationRoleBaseRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationRoleBaseRole($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrganizationRoleBaseRole && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrganizationRoleBaseRole($value)';}
+}
 /// Source answers the question, "where did this role come from?"
 @immutable final class OrganizationRoleSource {const OrganizationRoleSource._(this.value);
 
-factory OrganizationRoleSource.fromJson(String json) { return switch (json) {
+factory OrganizationRoleSource.fromJson(String json) {return switch (json) {
   'Organization' => organization,
   'Enterprise' => enterprise,
   'Predefined' => predefined,
   'null' => $null,
   _ => OrganizationRoleSource._(json),
-}; }
+};}
 
 static const OrganizationRoleSource organization = OrganizationRoleSource._('Organization');
 
@@ -60,18 +60,18 @@ static const List<OrganizationRoleSource> values = [organization, enterprise, pr
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationRoleSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationRoleSource($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrganizationRoleSource && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrganizationRoleSource($value)';}
+}
 /// Organization roles
 @immutable final class OrganizationRole {const OrganizationRole({required this.id, required this.name, required this.permissions, required this.organization, required this.createdAt, required this.updatedAt, this.description = const Omittable.absent(), this.baseRole = const Omittable.absent(), this.source = const Omittable.absent(), });
 
-factory OrganizationRole.fromJson(Map<String, dynamic> json) { return OrganizationRole(
+factory OrganizationRole.fromJson(Map<String, dynamic> json) {return OrganizationRole(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
@@ -81,7 +81,7 @@ factory OrganizationRole.fromJson(Map<String, dynamic> json) { return Organizati
   organization: json['organization'] != null ? SimpleUser.fromJson(json['organization'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 /// The unique identifier of the role.
 final int id;
@@ -109,7 +109,7 @@ final DateTime createdAt;
 /// The date and time the role was last updated.
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   if (description.isPresent) 'description': description.value,
@@ -119,14 +119,14 @@ Map<String, dynamic> toJson() { return {
   'organization': organization?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('permissions') &&
       json.containsKey('organization') &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-OrganizationRole copyWith({int? id, String? name, Omittable<String?>? description, Omittable<OrganizationRoleBaseRole?>? baseRole, Omittable<OrganizationRoleSource?>? source, List<String>? permissions, SimpleUser? Function()? organization, DateTime? createdAt, DateTime? updatedAt, }) { return OrganizationRole(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+OrganizationRole copyWith({int? id, String? name, Omittable<String?>? description, Omittable<OrganizationRoleBaseRole?>? baseRole, Omittable<OrganizationRoleSource?>? source, List<String>? permissions, SimpleUser? Function()? organization, DateTime? createdAt, DateTime? updatedAt, }) {return OrganizationRole(
   id: id ?? this.id,
   name: name ?? this.name,
   description: description ?? this.description,
@@ -136,8 +136,8 @@ OrganizationRole copyWith({int? id, String? name, Omittable<String?>? descriptio
   organization: organization != null ? organization() : this.organization,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrganizationRole &&
           id == other.id &&
           name == other.name &&
@@ -147,7 +147,7 @@ OrganizationRole copyWith({int? id, String? name, Omittable<String?>? descriptio
           listEquals(permissions, other.permissions) &&
           organization == other.organization &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, name, description, baseRole, source, Object.hashAll(permissions), organization, createdAt, updatedAt); } 
-@override String toString() { return 'OrganizationRole(id: $id, name: $name, description: $description, baseRole: $baseRole, source: $source, permissions: $permissions, organization: $organization, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(id, name, description, baseRole, source, Object.hashAll(permissions), organization, createdAt, updatedAt);}
+@override String toString() {return 'OrganizationRole(id: $id, name: $name, description: $description, baseRole: $baseRole, source: $source, permissions: $permissions, organization: $organization, createdAt: $createdAt, updatedAt: $updatedAt)';}
+}

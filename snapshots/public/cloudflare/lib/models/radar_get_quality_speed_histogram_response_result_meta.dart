@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_quality_speed_histogram_response_result_meta_confidence_info.dart';import 'radar_get_quality_speed_histogram_response_result_meta_date_range.dart';import 'radar_get_quality_speed_histogram_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 @immutable final class RadarGetQualitySpeedHistogramResponseResultMetaNormalization {const RadarGetQualitySpeedHistogramResponseResultMetaNormalization._(this.value);
 
-factory RadarGetQualitySpeedHistogramResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+factory RadarGetQualitySpeedHistogramResponseResultMetaNormalization.fromJson(String json) {return switch (json) {
   'PERCENTAGE' => percentage,
   'MIN0_MAX' => min0Max,
   'MIN_MAX' => minMax,
@@ -13,7 +13,7 @@ factory RadarGetQualitySpeedHistogramResponseResultMetaNormalization.fromJson(St
   'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
   'RATIO' => ratio,
   _ => RadarGetQualitySpeedHistogramResponseResultMetaNormalization._(json),
-}; }
+};}
 
 static const RadarGetQualitySpeedHistogramResponseResultMetaNormalization percentage = RadarGetQualitySpeedHistogramResponseResultMetaNormalization._('PERCENTAGE');
 
@@ -35,18 +35,18 @@ static const List<RadarGetQualitySpeedHistogramResponseResultMetaNormalization> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetQualitySpeedHistogramResponseResultMetaNormalization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetQualitySpeedHistogramResponseResultMetaNormalization($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetQualitySpeedHistogramResponseResultMetaNormalization && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetQualitySpeedHistogramResponseResultMetaNormalization($value)';}
+}
 /// Metadata for the results.
 @immutable final class RadarGetQualitySpeedHistogramResponseResultMeta {const RadarGetQualitySpeedHistogramResponseResultMeta({required this.bucketSize, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.totalTests, required this.units, });
 
-factory RadarGetQualitySpeedHistogramResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetQualitySpeedHistogramResponseResultMeta(
+factory RadarGetQualitySpeedHistogramResponseResultMeta.fromJson(Map<String, dynamic> json) {return RadarGetQualitySpeedHistogramResponseResultMeta(
   bucketSize: (json['bucketSize'] as num).toInt(),
   confidenceInfo: RadarGetQualitySpeedHistogramResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetQualitySpeedHistogramResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
@@ -54,7 +54,7 @@ factory RadarGetQualitySpeedHistogramResponseResultMeta.fromJson(Map<String, dyn
   normalization: RadarGetQualitySpeedHistogramResponseResultMetaNormalization.fromJson(json['normalization'] as String),
   totalTests: (json['totalTests'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
   units: (json['units'] as List<dynamic>).map((e) => RadarGetQualitySpeedHistogramResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The width for every bucket in the histogram.
 final int bucketSize;
@@ -74,7 +74,7 @@ final List<int> totalTests;
 /// Measurement units for the results.
 final List<RadarGetQualitySpeedHistogramResponseResultMetaUnits> units;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bucketSize': bucketSize,
   'confidenceInfo': confidenceInfo.toJson(),
   'dateRange': dateRange.map((e) => e.toJson()).toList(),
@@ -82,15 +82,15 @@ Map<String, dynamic> toJson() { return {
   'normalization': normalization.toJson(),
   'totalTests': totalTests,
   'units': units.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucketSize') && json['bucketSize'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bucketSize') && json['bucketSize'] is num &&
       json.containsKey('confidenceInfo') &&
       json.containsKey('dateRange') &&
       json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
       json.containsKey('normalization') &&
       json.containsKey('totalTests') &&
-      json.containsKey('units'); } 
-RadarGetQualitySpeedHistogramResponseResultMeta copyWith({int? bucketSize, RadarGetQualitySpeedHistogramResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetQualitySpeedHistogramResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetQualitySpeedHistogramResponseResultMetaNormalization? normalization, List<int>? totalTests, List<RadarGetQualitySpeedHistogramResponseResultMetaUnits>? units, }) { return RadarGetQualitySpeedHistogramResponseResultMeta(
+      json.containsKey('units');}
+RadarGetQualitySpeedHistogramResponseResultMeta copyWith({int? bucketSize, RadarGetQualitySpeedHistogramResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetQualitySpeedHistogramResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetQualitySpeedHistogramResponseResultMetaNormalization? normalization, List<int>? totalTests, List<RadarGetQualitySpeedHistogramResponseResultMetaUnits>? units, }) {return RadarGetQualitySpeedHistogramResponseResultMeta(
   bucketSize: bucketSize ?? this.bucketSize,
   confidenceInfo: confidenceInfo ?? this.confidenceInfo,
   dateRange: dateRange ?? this.dateRange,
@@ -98,8 +98,8 @@ RadarGetQualitySpeedHistogramResponseResultMeta copyWith({int? bucketSize, Radar
   normalization: normalization ?? this.normalization,
   totalTests: totalTests ?? this.totalTests,
   units: units ?? this.units,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetQualitySpeedHistogramResponseResultMeta &&
           bucketSize == other.bucketSize &&
           confidenceInfo == other.confidenceInfo &&
@@ -107,7 +107,7 @@ RadarGetQualitySpeedHistogramResponseResultMeta copyWith({int? bucketSize, Radar
           lastUpdated == other.lastUpdated &&
           normalization == other.normalization &&
           listEquals(totalTests, other.totalTests) &&
-          listEquals(units, other.units); } 
-@override int get hashCode { return Object.hash(bucketSize, confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(totalTests), Object.hashAll(units)); } 
-@override String toString() { return 'RadarGetQualitySpeedHistogramResponseResultMeta(bucketSize: $bucketSize, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, totalTests: $totalTests, units: $units)'; } 
- }
+          listEquals(units, other.units);}
+@override int get hashCode {return Object.hash(bucketSize, confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(totalTests), Object.hashAll(units));}
+@override String toString() {return 'RadarGetQualitySpeedHistogramResponseResultMeta(bucketSize: $bucketSize, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, totalTests: $totalTests, units: $units)';}
+}

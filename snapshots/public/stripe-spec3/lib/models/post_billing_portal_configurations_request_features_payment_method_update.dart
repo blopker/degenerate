@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_features_payment_method_update_payment_method_configuration.dart';@immutable final class PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdate {const PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdate({required this.enabled, this.paymentMethodConfiguration, });
 
-factory PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdate.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdate(
+factory PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdate.fromJson(Map<String, dynamic> json) {return PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdate(
   enabled: json['enabled'] as bool,
   paymentMethodConfiguration: json['payment_method_configuration'] != null ? PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdatePaymentMethodConfiguration.fromJson(json['payment_method_configuration']) : null,
-); }
+);}
 
 final bool enabled;
 
 final PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdatePaymentMethodConfiguration? paymentMethodConfiguration;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   if (paymentMethodConfiguration != null) 'payment_method_configuration': paymentMethodConfiguration?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdate copyWith({bool? enabled, PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdatePaymentMethodConfiguration? Function()? paymentMethodConfiguration, }) { return PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdate copyWith({bool? enabled, PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdatePaymentMethodConfiguration? Function()? paymentMethodConfiguration, }) {return PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdate(
   enabled: enabled ?? this.enabled,
   paymentMethodConfiguration: paymentMethodConfiguration != null ? paymentMethodConfiguration() : this.paymentMethodConfiguration,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdate &&
           enabled == other.enabled &&
-          paymentMethodConfiguration == other.paymentMethodConfiguration; } 
-@override int get hashCode { return Object.hash(enabled, paymentMethodConfiguration); } 
-@override String toString() { return 'PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdate(enabled: $enabled, paymentMethodConfiguration: $paymentMethodConfiguration)'; } 
- }
+          paymentMethodConfiguration == other.paymentMethodConfiguration;}
+@override int get hashCode {return Object.hash(enabled, paymentMethodConfiguration);}
+@override String toString() {return 'PostBillingPortalConfigurationsRequestFeaturesPaymentMethodUpdate(enabled: $enabled, paymentMethodConfiguration: $paymentMethodConfiguration)';}
+}

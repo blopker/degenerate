@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_account_id.dart';import 'mconn_day_of_week.dart';import 'mconn_embargo_date.dart';import 'mconn_uuid.dart';@immutable final class MconnSupportConnector {const MconnSupportConnector({required this.accountId, required this.activated, required this.id, required this.interruptWindowDaysOfWeek, required this.interruptWindowDurationHours, required this.interruptWindowEmbargoDates, required this.interruptWindowHourOfDay, required this.lastUpdated, required this.notes, required this.timezone, required this.upgradeAsap, this.cohortId, this.desiredVersion, this.deviceId, this.lastHeartbeat, this.lastSeenVersion, });
 
-factory MconnSupportConnector.fromJson(Map<String, dynamic> json) { return MconnSupportConnector(
+factory MconnSupportConnector.fromJson(Map<String, dynamic> json) {return MconnSupportConnector(
   accountId: MconnAccountId.fromJson(json['account_id'] as String),
   activated: json['activated'] as bool,
   cohortId: json['cohort_id'] != null ? MconnUuid.fromJson(json['cohort_id'] as String) : null,
@@ -19,7 +19,7 @@ factory MconnSupportConnector.fromJson(Map<String, dynamic> json) { return Mconn
   notes: json['notes'] as String,
   timezone: json['timezone'] as String,
   upgradeAsap: json['upgrade_asap'] as bool,
-); }
+);}
 
 /// Account identifier
 final MconnAccountId accountId;
@@ -54,7 +54,7 @@ final String timezone;
 
 final bool upgradeAsap;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_id': accountId.toJson(),
   'activated': activated,
   if (cohortId != null) 'cohort_id': cohortId?.toJson(),
@@ -71,8 +71,8 @@ Map<String, dynamic> toJson() { return {
   'notes': notes,
   'timezone': timezone,
   'upgrade_asap': upgradeAsap,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_id') &&
       json.containsKey('activated') && json['activated'] is bool &&
       json.containsKey('id') &&
       json.containsKey('interrupt_window_days_of_week') &&
@@ -82,8 +82,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('last_updated') && json['last_updated'] is String &&
       json.containsKey('notes') && json['notes'] is String &&
       json.containsKey('timezone') && json['timezone'] is String &&
-      json.containsKey('upgrade_asap') && json['upgrade_asap'] is bool; } 
-MconnSupportConnector copyWith({MconnAccountId? accountId, bool? activated, MconnUuid? Function()? cohortId, String? Function()? desiredVersion, MconnUuid? Function()? deviceId, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String? Function()? lastHeartbeat, String? Function()? lastSeenVersion, String? lastUpdated, String? notes, String? timezone, bool? upgradeAsap, }) { return MconnSupportConnector(
+      json.containsKey('upgrade_asap') && json['upgrade_asap'] is bool;}
+MconnSupportConnector copyWith({MconnAccountId? accountId, bool? activated, MconnUuid? Function()? cohortId, String? Function()? desiredVersion, MconnUuid? Function()? deviceId, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String? Function()? lastHeartbeat, String? Function()? lastSeenVersion, String? lastUpdated, String? notes, String? timezone, bool? upgradeAsap, }) {return MconnSupportConnector(
   accountId: accountId ?? this.accountId,
   activated: activated ?? this.activated,
   cohortId: cohortId != null ? cohortId() : this.cohortId,
@@ -100,8 +100,8 @@ MconnSupportConnector copyWith({MconnAccountId? accountId, bool? activated, Mcon
   notes: notes ?? this.notes,
   timezone: timezone ?? this.timezone,
   upgradeAsap: upgradeAsap ?? this.upgradeAsap,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MconnSupportConnector &&
           accountId == other.accountId &&
           activated == other.activated &&
@@ -118,7 +118,7 @@ MconnSupportConnector copyWith({MconnAccountId? accountId, bool? activated, Mcon
           lastUpdated == other.lastUpdated &&
           notes == other.notes &&
           timezone == other.timezone &&
-          upgradeAsap == other.upgradeAsap; } 
-@override int get hashCode { return Object.hash(accountId, activated, cohortId, desiredVersion, deviceId, id, Object.hashAll(interruptWindowDaysOfWeek), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates), interruptWindowHourOfDay, lastHeartbeat, lastSeenVersion, lastUpdated, notes, timezone, upgradeAsap); } 
-@override String toString() { return 'MconnSupportConnector(accountId: $accountId, activated: $activated, cohortId: $cohortId, desiredVersion: $desiredVersion, deviceId: $deviceId, id: $id, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, lastHeartbeat: $lastHeartbeat, lastSeenVersion: $lastSeenVersion, lastUpdated: $lastUpdated, notes: $notes, timezone: $timezone, upgradeAsap: $upgradeAsap)'; } 
- }
+          upgradeAsap == other.upgradeAsap;}
+@override int get hashCode {return Object.hash(accountId, activated, cohortId, desiredVersion, deviceId, id, Object.hashAll(interruptWindowDaysOfWeek), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates), interruptWindowHourOfDay, lastHeartbeat, lastSeenVersion, lastUpdated, notes, timezone, upgradeAsap);}
+@override String toString() {return 'MconnSupportConnector(accountId: $accountId, activated: $activated, cohortId: $cohortId, desiredVersion: $desiredVersion, deviceId: $deviceId, id: $id, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, lastHeartbeat: $lastHeartbeat, lastSeenVersion: $lastSeenVersion, lastUpdated: $lastUpdated, notes: $notes, timezone: $timezone, upgradeAsap: $upgradeAsap)';}
+}

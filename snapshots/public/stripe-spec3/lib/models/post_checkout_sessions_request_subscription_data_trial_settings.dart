@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_subscription_data_trial_settings_end_behavior.dart';@immutable final class PostCheckoutSessionsRequestSubscriptionDataTrialSettings {const PostCheckoutSessionsRequestSubscriptionDataTrialSettings({required this.endBehavior});
 
-factory PostCheckoutSessionsRequestSubscriptionDataTrialSettings.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestSubscriptionDataTrialSettings(
+factory PostCheckoutSessionsRequestSubscriptionDataTrialSettings.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestSubscriptionDataTrialSettings(
   endBehavior: PostCheckoutSessionsRequestSubscriptionDataTrialSettingsEndBehavior.fromJson(json['end_behavior'] as Map<String, dynamic>),
-); }
+);}
 
 final PostCheckoutSessionsRequestSubscriptionDataTrialSettingsEndBehavior endBehavior;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end_behavior': endBehavior.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('end_behavior'); } 
-PostCheckoutSessionsRequestSubscriptionDataTrialSettings copyWith({PostCheckoutSessionsRequestSubscriptionDataTrialSettingsEndBehavior? endBehavior}) { return PostCheckoutSessionsRequestSubscriptionDataTrialSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('end_behavior');}
+PostCheckoutSessionsRequestSubscriptionDataTrialSettings copyWith({PostCheckoutSessionsRequestSubscriptionDataTrialSettingsEndBehavior? endBehavior}) {return PostCheckoutSessionsRequestSubscriptionDataTrialSettings(
   endBehavior: endBehavior ?? this.endBehavior,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestSubscriptionDataTrialSettings &&
-          endBehavior == other.endBehavior; } 
-@override int get hashCode { return endBehavior.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestSubscriptionDataTrialSettings(endBehavior: $endBehavior)'; } 
- }
+          endBehavior == other.endBehavior;}
+@override int get hashCode {return endBehavior.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestSubscriptionDataTrialSettings(endBehavior: $endBehavior)';}
+}

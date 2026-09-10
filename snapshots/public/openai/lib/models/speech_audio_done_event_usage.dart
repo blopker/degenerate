@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Token usage stat
 /// 
 @immutable final class SpeechAudioDoneEventUsage {const SpeechAudioDoneEventUsage({required this.inputTokens, required this.outputTokens, required this.totalTokens, });
 
-factory SpeechAudioDoneEventUsage.fromJson(Map<String, dynamic> json) { return SpeechAudioDoneEventUsage(
+factory SpeechAudioDoneEventUsage.fromJson(Map<String, dynamic> json) {return SpeechAudioDoneEventUsage(
   inputTokens: (json['input_tokens'] as num).toInt(),
   outputTokens: (json['output_tokens'] as num).toInt(),
   totalTokens: (json['total_tokens'] as num).toInt(),
-); }
+);}
 
 /// Number of input tokens in the prompt.
 final int inputTokens;
@@ -19,24 +19,24 @@ final int outputTokens;
 /// Total number of tokens used (input + output).
 final int totalTokens;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'input_tokens': inputTokens,
   'output_tokens': outputTokens,
   'total_tokens': totalTokens,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('input_tokens') && json['input_tokens'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('input_tokens') && json['input_tokens'] is num &&
       json.containsKey('output_tokens') && json['output_tokens'] is num &&
-      json.containsKey('total_tokens') && json['total_tokens'] is num; } 
-SpeechAudioDoneEventUsage copyWith({int? inputTokens, int? outputTokens, int? totalTokens, }) { return SpeechAudioDoneEventUsage(
+      json.containsKey('total_tokens') && json['total_tokens'] is num;}
+SpeechAudioDoneEventUsage copyWith({int? inputTokens, int? outputTokens, int? totalTokens, }) {return SpeechAudioDoneEventUsage(
   inputTokens: inputTokens ?? this.inputTokens,
   outputTokens: outputTokens ?? this.outputTokens,
   totalTokens: totalTokens ?? this.totalTokens,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SpeechAudioDoneEventUsage &&
           inputTokens == other.inputTokens &&
           outputTokens == other.outputTokens &&
-          totalTokens == other.totalTokens; } 
-@override int get hashCode { return Object.hash(inputTokens, outputTokens, totalTokens); } 
-@override String toString() { return 'SpeechAudioDoneEventUsage(inputTokens: $inputTokens, outputTokens: $outputTokens, totalTokens: $totalTokens)'; } 
- }
+          totalTokens == other.totalTokens;}
+@override int get hashCode {return Object.hash(inputTokens, outputTokens, totalTokens);}
+@override String toString() {return 'SpeechAudioDoneEventUsage(inputTokens: $inputTokens, outputTokens: $outputTokens, totalTokens: $totalTokens)';}
+}

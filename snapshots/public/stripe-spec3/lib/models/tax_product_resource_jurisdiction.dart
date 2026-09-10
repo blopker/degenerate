@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates the level of the jurisdiction imposing the tax.
 @immutable final class TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel._(this.value);
 
-factory TaxProductResourceJurisdictionLevel.fromJson(String json) { return switch (json) {
+factory TaxProductResourceJurisdictionLevel.fromJson(String json) {return switch (json) {
   'city' => city,
   'country' => country,
   'county' => county,
   'district' => district,
   'state' => state,
   _ => TaxProductResourceJurisdictionLevel._(json),
-}; }
+};}
 
 static const TaxProductResourceJurisdictionLevel city = TaxProductResourceJurisdictionLevel._('city');
 
@@ -26,23 +26,23 @@ static const List<TaxProductResourceJurisdictionLevel> values = [city, country, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxProductResourceJurisdictionLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxProductResourceJurisdictionLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TaxProductResourceJurisdictionLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TaxProductResourceJurisdictionLevel($value)';}
+}
 /// 
 @immutable final class TaxProductResourceJurisdiction {const TaxProductResourceJurisdiction({required this.country, required this.displayName, required this.level, this.state = const Omittable.absent(), });
 
-factory TaxProductResourceJurisdiction.fromJson(Map<String, dynamic> json) { return TaxProductResourceJurisdiction(
+factory TaxProductResourceJurisdiction.fromJson(Map<String, dynamic> json) {return TaxProductResourceJurisdiction(
   country: json['country'] as String,
   displayName: json['display_name'] as String,
   level: TaxProductResourceJurisdictionLevel.fromJson(json['level'] as String),
   state: json.containsKey('state') ? Omittable(json['state'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Two-letter country code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)).
 final String country;
@@ -56,27 +56,27 @@ final TaxProductResourceJurisdictionLevel level;
 /// [ISO 3166-2 subdivision code](https://en.wikipedia.org/wiki/ISO_3166-2), without country prefix. For example, "NY" for New York, United States.
 final Omittable<String?> state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'country': country,
   'display_name': displayName,
   'level': level.toJson(),
   if (state.isPresent) 'state': state.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('country') && json['country'] is String &&
       json.containsKey('display_name') && json['display_name'] is String &&
-      json.containsKey('level'); } 
-TaxProductResourceJurisdiction copyWith({String? country, String? displayName, TaxProductResourceJurisdictionLevel? level, Omittable<String?>? state, }) { return TaxProductResourceJurisdiction(
+      json.containsKey('level');}
+TaxProductResourceJurisdiction copyWith({String? country, String? displayName, TaxProductResourceJurisdictionLevel? level, Omittable<String?>? state, }) {return TaxProductResourceJurisdiction(
   country: country ?? this.country,
   displayName: displayName ?? this.displayName,
   level: level ?? this.level,
   state: state ?? this.state,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TaxProductResourceJurisdiction &&
           country == other.country &&
           displayName == other.displayName &&
           level == other.level &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(country, displayName, level, state); } 
-@override String toString() { return 'TaxProductResourceJurisdiction(country: $country, displayName: $displayName, level: $level, state: $state)'; } 
- }
+          state == other.state;}
+@override int get hashCode {return Object.hash(country, displayName, level, state);}
+@override String toString() {return 'TaxProductResourceJurisdiction(country: $country, displayName: $displayName, level: $level, state: $state)';}
+}

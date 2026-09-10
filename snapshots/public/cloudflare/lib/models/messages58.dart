@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages58_functions.dart';import 'messages58_messages.dart';import 'messages58_response_format.dart';import 'messages58_tools.dart';import 'messages58_tools_variant1.dart';import 'messages58_tools_variant2.dart';@immutable final class Messages58 {const Messages58({required this.messages, this.frequencyPenalty, this.functions, this.maxTokens, this.presencePenalty, this.raw, this.repetitionPenalty, this.responseFormat, this.seed, this.stream, this.temperature, this.tools, this.topK, this.topP, });
 
-factory Messages58.fromJson(Map<String, dynamic> json) { return Messages58(
+factory Messages58.fromJson(Map<String, dynamic> json) {return Messages58(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => Messages58Functions.fromJson(e as Map<String, dynamic>)).toList(),
   maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
@@ -17,7 +17,7 @@ factory Messages58.fromJson(Map<String, dynamic> json) { return Messages58(
   tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => Messages58ToolsVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => Messages58ToolsVariant2.fromJson(v as Map<String, dynamic>),)).toList(),
   topK: json['top_k'] != null ? (json['top_k'] as num).toInt() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
-); }
+);}
 
 /// Decreases the likelihood of the model repeating the same lines verbatim.
 final double? frequencyPenalty;
@@ -60,14 +60,14 @@ final int? topK;
 final double? topP;
 
 /// The value with the schema default applied when absent.
-int get maxTokensOrDefault { return maxTokens ?? 256; } 
+int get maxTokensOrDefault {return maxTokens ?? 256;}
 /// The value with the schema default applied when absent.
-bool get rawOrDefault { return raw ?? false; } 
+bool get rawOrDefault {return raw ?? false;}
 /// The value with the schema default applied when absent.
-bool get streamOrDefault { return stream ?? false; } 
+bool get streamOrDefault {return stream ?? false;}
 /// The value with the schema default applied when absent.
-double get temperatureOrDefault { return temperature ?? 0.6; } 
-Map<String, dynamic> toJson() { return {
+double get temperatureOrDefault {return temperature ?? 0.6;}
+Map<String, dynamic> toJson() {return {
   'frequency_penalty': ?frequencyPenalty,
   if (functions != null) 'functions': functions?.map((e) => e.toJson()).toList(),
   'max_tokens': ?maxTokens,
@@ -82,9 +82,9 @@ Map<String, dynamic> toJson() { return {
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
   'top_k': ?topK,
   'top_p': ?topP,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-Messages58 copyWith({double? Function()? frequencyPenalty, List<Messages58Functions>? Function()? functions, int? Function()? maxTokens, List<Messages58Messages>? messages, double? Function()? presencePenalty, bool? Function()? raw, double? Function()? repetitionPenalty, Messages58ResponseFormat? Function()? responseFormat, int? Function()? seed, bool? Function()? stream, double? Function()? temperature, List<Messages58Tools>? Function()? tools, int? Function()? topK, double? Function()? topP, }) { return Messages58(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages');}
+Messages58 copyWith({double? Function()? frequencyPenalty, List<Messages58Functions>? Function()? functions, int? Function()? maxTokens, List<Messages58Messages>? messages, double? Function()? presencePenalty, bool? Function()? raw, double? Function()? repetitionPenalty, Messages58ResponseFormat? Function()? responseFormat, int? Function()? seed, bool? Function()? stream, double? Function()? temperature, List<Messages58Tools>? Function()? tools, int? Function()? topK, double? Function()? topP, }) {return Messages58(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   functions: functions != null ? functions() : this.functions,
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,
@@ -99,8 +99,8 @@ Messages58 copyWith({double? Function()? frequencyPenalty, List<Messages58Functi
   tools: tools != null ? tools() : this.tools,
   topK: topK != null ? topK() : this.topK,
   topP: topP != null ? topP() : this.topP,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Messages58 &&
           frequencyPenalty == other.frequencyPenalty &&
           listEquals(functions, other.functions) &&
@@ -115,7 +115,7 @@ Messages58 copyWith({double? Function()? frequencyPenalty, List<Messages58Functi
           temperature == other.temperature &&
           listEquals(tools, other.tools) &&
           topK == other.topK &&
-          topP == other.topP; } 
-@override int get hashCode { return Object.hash(frequencyPenalty, Object.hashAll(functions ?? const []), maxTokens, Object.hashAll(messages), presencePenalty, raw, repetitionPenalty, responseFormat, seed, stream, temperature, Object.hashAll(tools ?? const []), topK, topP); } 
-@override String toString() { return 'Messages58(frequencyPenalty: $frequencyPenalty, functions: $functions, maxTokens: $maxTokens, messages: $messages, presencePenalty: $presencePenalty, raw: $raw, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, tools: $tools, topK: $topK, topP: $topP)'; } 
- }
+          topP == other.topP;}
+@override int get hashCode {return Object.hash(frequencyPenalty, Object.hashAll(functions ?? const []), maxTokens, Object.hashAll(messages), presencePenalty, raw, repetitionPenalty, responseFormat, seed, stream, temperature, Object.hashAll(tools ?? const []), topK, topP);}
+@override String toString() {return 'Messages58(frequencyPenalty: $frequencyPenalty, functions: $functions, maxTokens: $maxTokens, messages: $messages, presencePenalty: $presencePenalty, raw: $raw, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, tools: $tools, topK: $topK, topP: $topP)';}
+}

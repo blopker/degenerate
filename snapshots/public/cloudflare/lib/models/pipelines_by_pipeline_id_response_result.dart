@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pipelines_by_pipeline_id_response_result_tables.dart';@immutable final class PipelinesByPipelineIdResponseResult {const PipelinesByPipelineIdResponseResult({required this.createdAt, required this.id, required this.modifiedAt, required this.name, required this.sql, required this.status, required this.tables, });
 
-factory PipelinesByPipelineIdResponseResult.fromJson(Map<String, dynamic> json) { return PipelinesByPipelineIdResponseResult(
+factory PipelinesByPipelineIdResponseResult.fromJson(Map<String, dynamic> json) {return PipelinesByPipelineIdResponseResult(
   createdAt: json['created_at'] as String,
   id: json['id'] as String,
   modifiedAt: json['modified_at'] as String,
@@ -10,7 +10,7 @@ factory PipelinesByPipelineIdResponseResult.fromJson(Map<String, dynamic> json) 
   sql: json['sql'] as String,
   status: json['status'] as String,
   tables: (json['tables'] as List<dynamic>).map((e) => PipelinesByPipelineIdResponseResultTables.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final String createdAt;
 
@@ -31,7 +31,7 @@ final String status;
 /// List of streams and sinks used by this pipeline.
 final List<PipelinesByPipelineIdResponseResultTables> tables;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt,
   'id': id,
   'modified_at': modifiedAt,
@@ -39,15 +39,15 @@ Map<String, dynamic> toJson() { return {
   'sql': sql,
   'status': status,
   'tables': tables.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('sql') && json['sql'] is String &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('tables'); } 
-PipelinesByPipelineIdResponseResult copyWith({String? createdAt, String? id, String? modifiedAt, String? name, String? sql, String? status, List<PipelinesByPipelineIdResponseResultTables>? tables, }) { return PipelinesByPipelineIdResponseResult(
+      json.containsKey('tables');}
+PipelinesByPipelineIdResponseResult copyWith({String? createdAt, String? id, String? modifiedAt, String? name, String? sql, String? status, List<PipelinesByPipelineIdResponseResultTables>? tables, }) {return PipelinesByPipelineIdResponseResult(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   modifiedAt: modifiedAt ?? this.modifiedAt,
@@ -55,8 +55,8 @@ PipelinesByPipelineIdResponseResult copyWith({String? createdAt, String? id, Str
   sql: sql ?? this.sql,
   status: status ?? this.status,
   tables: tables ?? this.tables,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PipelinesByPipelineIdResponseResult &&
           createdAt == other.createdAt &&
           id == other.id &&
@@ -64,7 +64,7 @@ PipelinesByPipelineIdResponseResult copyWith({String? createdAt, String? id, Str
           name == other.name &&
           sql == other.sql &&
           status == other.status &&
-          listEquals(tables, other.tables); } 
-@override int get hashCode { return Object.hash(createdAt, id, modifiedAt, name, sql, status, Object.hashAll(tables)); } 
-@override String toString() { return 'PipelinesByPipelineIdResponseResult(createdAt: $createdAt, id: $id, modifiedAt: $modifiedAt, name: $name, sql: $sql, status: $status, tables: $tables)'; } 
- }
+          listEquals(tables, other.tables);}
+@override int get hashCode {return Object.hash(createdAt, id, modifiedAt, name, sql, status, Object.hashAll(tables));}
+@override String toString() {return 'PipelinesByPipelineIdResponseResult(createdAt: $createdAt, id: $id, modifiedAt: $modifiedAt, name: $name, sql: $sql, status: $status, tables: $tables)';}
+}

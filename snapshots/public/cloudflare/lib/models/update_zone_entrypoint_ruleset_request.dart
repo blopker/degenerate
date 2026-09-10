@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_request_rule_request.dart';@immutable final class UpdateZoneEntrypointRulesetRequest {const UpdateZoneEntrypointRulesetRequest({this.description, this.name, this.rules, });
 
-factory UpdateZoneEntrypointRulesetRequest.fromJson(Map<String, dynamic> json) { return UpdateZoneEntrypointRulesetRequest(
+factory UpdateZoneEntrypointRulesetRequest.fromJson(Map<String, dynamic> json) {return UpdateZoneEntrypointRulesetRequest(
   description: json['description'] as String?,
   name: json['name'] as String?,
   rules: (json['rules'] as List<dynamic>?)?.map((e) => RulesetsRequestRuleRequest.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// An informative description of the ruleset.
 final String? description;
@@ -18,23 +18,23 @@ final String? name;
 final List<RulesetsRequestRuleRequest>? rules;
 
 /// The value with the schema default applied when absent.
-String get descriptionOrDefault { return description ?? ''; } 
-Map<String, dynamic> toJson() { return {
+String get descriptionOrDefault {return description ?? '';}
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'name': ?name,
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'name', 'rules'}.contains(key)); } 
-UpdateZoneEntrypointRulesetRequest copyWith({String? Function()? description, String? Function()? name, List<RulesetsRequestRuleRequest>? Function()? rules, }) { return UpdateZoneEntrypointRulesetRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'name', 'rules'}.contains(key));}
+UpdateZoneEntrypointRulesetRequest copyWith({String? Function()? description, String? Function()? name, List<RulesetsRequestRuleRequest>? Function()? rules, }) {return UpdateZoneEntrypointRulesetRequest(
   description: description != null ? description() : this.description,
   name: name != null ? name() : this.name,
   rules: rules != null ? rules() : this.rules,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UpdateZoneEntrypointRulesetRequest &&
           description == other.description &&
           name == other.name &&
-          listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hash(description, name, Object.hashAll(rules ?? const [])); } 
-@override String toString() { return 'UpdateZoneEntrypointRulesetRequest(description: $description, name: $name, rules: $rules)'; } 
- }
+          listEquals(rules, other.rules);}
+@override int get hashCode {return Object.hash(description, name, Object.hashAll(rules ?? const []));}
+@override String toString() {return 'UpdateZoneEntrypointRulesetRequest(description: $description, name: $name, rules: $rules)';}
+}

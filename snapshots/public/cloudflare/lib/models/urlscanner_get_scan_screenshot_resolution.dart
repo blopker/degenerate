@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Target device type.
 @immutable final class UrlscannerGetScanScreenshotResolution {const UrlscannerGetScanScreenshotResolution._(this.value);
 
-factory UrlscannerGetScanScreenshotResolution.fromJson(String json) { return switch (json) {
+factory UrlscannerGetScanScreenshotResolution.fromJson(String json) {return switch (json) {
   'desktop' => desktop,
   'mobile' => mobile,
   'tablet' => tablet,
   _ => UrlscannerGetScanScreenshotResolution._(json),
-}; }
+};}
 
 static const UrlscannerGetScanScreenshotResolution desktop = UrlscannerGetScanScreenshotResolution._('desktop');
 
@@ -20,11 +20,11 @@ static const List<UrlscannerGetScanScreenshotResolution> values = [desktop, mobi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UrlscannerGetScanScreenshotResolution && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UrlscannerGetScanScreenshotResolution($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UrlscannerGetScanScreenshotResolution && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UrlscannerGetScanScreenshotResolution($value)';}
+}

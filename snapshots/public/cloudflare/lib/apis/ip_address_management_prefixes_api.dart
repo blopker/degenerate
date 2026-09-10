@@ -13,7 +13,7 @@ final class IpAddressManagementPrefixesApi with ApiExecutor {const IpAddressMana
 /// Submit LOA document (pdf format) under the account.
 ///
 /// `POST /accounts/{account_id}/addressing/loa_documents`
-Future<ApiResult<AddressingLoaUploadResponseResult?, IpAddressManagementPrefixesUploadLoaDocumentResponse4xx>> ipAddressManagementPrefixesUploadLoaDocument({required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixesUploadLoaDocumentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingLoaUploadResponseResult?, IpAddressManagementPrefixesUploadLoaDocumentResponse4xx>> ipAddressManagementPrefixesUploadLoaDocument({required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixesUploadLoaDocumentRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -43,13 +43,13 @@ return null;
 
   },
 );
- } 
+}
 /// Download LOA Document
 ///
 /// Download specified LOA document under the account.
 ///
 /// `GET /accounts/{account_id}/addressing/loa_documents/{loa_document_id}/download`
-Future<ApiResult<Uint8List, ResponseCommonFailure5>> ipAddressManagementPrefixesDownloadLoaDocument({required AddressingLoaDocumentIdentifier loaDocumentId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Uint8List, ResponseCommonFailure5>> ipAddressManagementPrefixesDownloadLoaDocument({required AddressingLoaDocumentIdentifier loaDocumentId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -74,13 +74,13 @@ return null;
 
   },
 );
- } 
+}
 /// List Prefixes
 ///
 /// List all prefixes owned by the account.
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes`
-Future<ApiResult<List<AddressingIpamPrefixes>?, IpAddressManagementPrefixesListPrefixesResponse4xx>> ipAddressManagementPrefixesListPrefixes({required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AddressingIpamPrefixes>?, IpAddressManagementPrefixesListPrefixesResponse4xx>> ipAddressManagementPrefixesListPrefixes({required AddressingAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -106,13 +106,13 @@ return null;
 
   },
 );
- } 
+}
 /// Add Prefix
 ///
 /// Add a new prefix under the account.
 ///
 /// `POST /accounts/{account_id}/addressing/prefixes`
-Future<ApiResult<AddressingIpamPrefixes?, IpAddressManagementPrefixesAddPrefixResponse4xx>> ipAddressManagementPrefixesAddPrefix({required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixesAddPrefixRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingIpamPrefixes?, IpAddressManagementPrefixesAddPrefixResponse4xx>> ipAddressManagementPrefixesAddPrefix({required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixesAddPrefixRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -140,13 +140,13 @@ return null;
 
   },
 );
- } 
+}
 /// Prefix Details
 ///
 /// List a particular prefix owned by the account.
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}`
-Future<ApiResult<AddressingIpamPrefixes?, IpAddressManagementPrefixesPrefixDetailsResponse4xx>> ipAddressManagementPrefixesPrefixDetails({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingIpamPrefixes?, IpAddressManagementPrefixesPrefixDetailsResponse4xx>> ipAddressManagementPrefixesPrefixDetails({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -172,13 +172,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update Prefix Description
 ///
 /// Modify the description for a prefix owned by the account.
 ///
 /// `PATCH /accounts/{account_id}/addressing/prefixes/{prefix_id}`
-Future<ApiResult<AddressingIpamPrefixes?, IpAddressManagementPrefixesUpdatePrefixDescriptionResponse4xx>> ipAddressManagementPrefixesUpdatePrefixDescription({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixesUpdatePrefixDescriptionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingIpamPrefixes?, IpAddressManagementPrefixesUpdatePrefixDescriptionResponse4xx>> ipAddressManagementPrefixesUpdatePrefixDescription({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, required IpAddressManagementPrefixesUpdatePrefixDescriptionRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -206,13 +206,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Prefix
 ///
 /// Delete an unapproved prefix owned by the account.
 ///
 /// `DELETE /accounts/{account_id}/addressing/prefixes/{prefix_id}`
-Future<ApiResult<ResponseCommon4, IpAddressManagementPrefixesDeletePrefixResponse4xx>> ipAddressManagementPrefixesDeletePrefix({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon4, IpAddressManagementPrefixesDeletePrefixResponse4xx>> ipAddressManagementPrefixesDeletePrefix({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -238,13 +238,13 @@ return null;
 
   },
 );
- } 
+}
 /// Validate Prefix
 ///
 /// Triggers a new prefix validation. The checks are run asynchronously and include IRR, RPKI, and prefix ownership.
 ///
 /// `POST /accounts/{account_id}/addressing/prefixes/{prefix_id}/validate`
-Future<ApiResult<AddressingIpamPrefixes?, IpAddressManagementPrefixesValidatePrefixResponse4xx>> ipAddressManagementPrefixesValidatePrefix({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingIpamPrefixes?, IpAddressManagementPrefixesValidatePrefixResponse4xx>> ipAddressManagementPrefixesValidatePrefix({required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -270,5 +270,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

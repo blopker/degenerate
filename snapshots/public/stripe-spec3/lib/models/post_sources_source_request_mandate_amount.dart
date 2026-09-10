@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSourcesSourceRequestMandateAmountVariant2 {const PostSourcesSourceRequestMandateAmountVariant2._(this.value);
 
-factory PostSourcesSourceRequestMandateAmountVariant2.fromJson(String json) { return switch (json) {
+factory PostSourcesSourceRequestMandateAmountVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSourcesSourceRequestMandateAmountVariant2._(json),
-}; }
+};}
 
 static const PostSourcesSourceRequestMandateAmountVariant2 $empty = PostSourcesSourceRequestMandateAmountVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSourcesSourceRequestMandateAmountVariant2> values = [$empt
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSourcesSourceRequestMandateAmountVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSourcesSourceRequestMandateAmountVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSourcesSourceRequestMandateAmountVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSourcesSourceRequestMandateAmountVariant2($value)';}
+}
 
 @immutable
 final class PostSourcesSourceRequestMandateAmount {

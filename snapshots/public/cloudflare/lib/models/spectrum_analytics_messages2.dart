@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_analytics_messages2_source.dart';@immutable final class SpectrumAnalyticsMessages2 {const SpectrumAnalyticsMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
-factory SpectrumAnalyticsMessages2.fromJson(Map<String, dynamic> json) { return SpectrumAnalyticsMessages2(
+factory SpectrumAnalyticsMessages2.fromJson(Map<String, dynamic> json) {return SpectrumAnalyticsMessages2(
   code: (json['code'] as num).toInt(),
   documentationUrl: json['documentation_url'] as String?,
   message: json['message'] as String,
   source: json['source'] != null ? SpectrumAnalyticsMessages2Source.fromJson(json['source'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final int code;
 
@@ -17,26 +17,26 @@ final String message;
 
 final SpectrumAnalyticsMessages2Source? source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'documentation_url': ?documentationUrl,
   'message': message,
   if (source != null) 'source': source?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
-      json.containsKey('message') && json['message'] is String; } 
-SpectrumAnalyticsMessages2 copyWith({int? code, String? Function()? documentationUrl, String? message, SpectrumAnalyticsMessages2Source? Function()? source, }) { return SpectrumAnalyticsMessages2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String;}
+SpectrumAnalyticsMessages2 copyWith({int? code, String? Function()? documentationUrl, String? message, SpectrumAnalyticsMessages2Source? Function()? source, }) {return SpectrumAnalyticsMessages2(
   code: code ?? this.code,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
   message: message ?? this.message,
   source: source != null ? source() : this.source,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SpectrumAnalyticsMessages2 &&
           code == other.code &&
           documentationUrl == other.documentationUrl &&
           message == other.message &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(code, documentationUrl, message, source); } 
-@override String toString() { return 'SpectrumAnalyticsMessages2(code: $code, documentationUrl: $documentationUrl, message: $message, source: $source)'; } 
- }
+          source == other.source;}
+@override int get hashCode {return Object.hash(code, documentationUrl, message, source);}
+@override String toString() {return 'SpectrumAnalyticsMessages2(code: $code, documentationUrl: $documentationUrl, message: $message, source: $source)';}
+}

@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AaaFiltersIncidentImpact {const AaaFiltersIncidentImpact._(this.value);
 
-factory AaaFiltersIncidentImpact.fromJson(String json) { return switch (json) {
+factory AaaFiltersIncidentImpact.fromJson(String json) {return switch (json) {
   'INCIDENT_IMPACT_NONE' => incidentImpactNone,
   'INCIDENT_IMPACT_MINOR' => incidentImpactMinor,
   'INCIDENT_IMPACT_MAJOR' => incidentImpactMajor,
   'INCIDENT_IMPACT_CRITICAL' => incidentImpactCritical,
   _ => AaaFiltersIncidentImpact._(json),
-}; }
+};}
 
 static const AaaFiltersIncidentImpact incidentImpactNone = AaaFiltersIncidentImpact._('INCIDENT_IMPACT_NONE');
 
@@ -22,20 +22,20 @@ static const List<AaaFiltersIncidentImpact> values = [incidentImpactNone, incide
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AaaFiltersIncidentImpact && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AaaFiltersIncidentImpact($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AaaFiltersIncidentImpact && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AaaFiltersIncidentImpact($value)';}
+}
 @immutable final class AaaFiltersTrafficExclusions {const AaaFiltersTrafficExclusions._(this.value);
 
-factory AaaFiltersTrafficExclusions.fromJson(String json) { return switch (json) {
+factory AaaFiltersTrafficExclusions.fromJson(String json) {return switch (json) {
   'security_events' => securityEvents,
   _ => AaaFiltersTrafficExclusions._(json),
-}; }
+};}
 
 static const AaaFiltersTrafficExclusions securityEvents = AaaFiltersTrafficExclusions._('security_events');
 
@@ -43,18 +43,18 @@ static const List<AaaFiltersTrafficExclusions> values = [securityEvents];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AaaFiltersTrafficExclusions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AaaFiltersTrafficExclusions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AaaFiltersTrafficExclusions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AaaFiltersTrafficExclusions($value)';}
+}
 /// Optional filters that allow you to be alerted only on a subset of events for that alert type based on some criteria. This is only available for select alert types. See alert type documentation for more details.
 @immutable final class AaaFilters {const AaaFilters({this.incidentImpact, this.affectedAsns, this.affectedComponents, this.affectedLocations, this.airportCode, this.alertTriggerPreferences, this.alertTriggerPreferencesValue, this.enabled, this.environment, this.event, this.eventSource, this.eventType, this.groupBy, this.healthCheckId, this.actions, this.inputId, this.insightClass, this.limit, this.logoTag, this.megabitsPerSecond, this.newHealth, this.newStatus, this.packetsPerSecond, this.poolId, this.popNames, this.product, this.projectId, this.protocol, this.zones, this.requestsPerSecond, this.selectors, this.services, this.slo, this.status, this.targetHostname, this.targetIp, this.targetZoneName, this.trafficExclusions, this.tunnelId, this.tunnelName, this.type, this.where, this.queryTag, });
 
-factory AaaFilters.fromJson(Map<String, dynamic> json) { return AaaFilters(
+factory AaaFilters.fromJson(Map<String, dynamic> json) {return AaaFilters(
   actions: (json['actions'] as List<dynamic>?)?.map((e) => e as String).toList(),
   affectedAsns: (json['affected_asns'] as List<dynamic>?)?.map((e) => e as String).toList(),
   affectedComponents: (json['affected_components'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -98,7 +98,7 @@ factory AaaFilters.fromJson(Map<String, dynamic> json) { return AaaFilters(
   type: (json['type'] as List<dynamic>?)?.map((e) => e as String).toList(),
   where: (json['where'] as List<dynamic>?)?.map((e) => e as String).toList(),
   zones: (json['zones'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Usage depends on specific alert type
 final List<String>? actions;
@@ -229,7 +229,7 @@ final List<String>? where;
 /// Usage depends on specific alert type
 final List<String>? zones;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'actions': ?actions,
   'affected_asns': ?affectedAsns,
   'affected_components': ?affectedComponents,
@@ -273,9 +273,9 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   'where': ?where,
   'zones': ?zones,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'actions', 'affected_asns', 'affected_components', 'affected_locations', 'airport_code', 'alert_trigger_preferences', 'alert_trigger_preferences_value', 'enabled', 'environment', 'event', 'event_source', 'event_type', 'group_by', 'health_check_id', 'incident_impact', 'input_id', 'insight_class', 'limit', 'logo_tag', 'megabits_per_second', 'new_health', 'new_status', 'packets_per_second', 'pool_id', 'pop_names', 'product', 'project_id', 'protocol', 'query_tag', 'requests_per_second', 'selectors', 'services', 'slo', 'status', 'target_hostname', 'target_ip', 'target_zone_name', 'traffic_exclusions', 'tunnel_id', 'tunnel_name', 'type', 'where', 'zones'}.contains(key)); } 
-AaaFilters copyWith({List<String>? Function()? actions, List<String>? Function()? affectedAsns, List<String>? Function()? affectedComponents, List<String>? Function()? affectedLocations, List<String>? Function()? airportCode, List<String>? Function()? alertTriggerPreferences, List<String>? Function()? alertTriggerPreferencesValue, List<String>? Function()? enabled, List<String>? Function()? environment, List<String>? Function()? event, List<String>? Function()? eventSource, List<String>? Function()? eventType, List<String>? Function()? groupBy, List<String>? Function()? healthCheckId, List<AaaFiltersIncidentImpact>? Function()? incidentImpact, List<String>? Function()? inputId, List<String>? Function()? insightClass, List<String>? Function()? limit, List<String>? Function()? logoTag, List<String>? Function()? megabitsPerSecond, List<String>? Function()? newHealth, List<String>? Function()? newStatus, List<String>? Function()? packetsPerSecond, List<String>? Function()? poolId, List<String>? Function()? popNames, List<String>? Function()? product, List<String>? Function()? projectId, List<String>? Function()? protocol, List<String>? Function()? queryTag, List<String>? Function()? requestsPerSecond, List<String>? Function()? selectors, List<String>? Function()? services, List<String>? Function()? slo, List<String>? Function()? status, List<String>? Function()? targetHostname, List<String>? Function()? targetIp, List<String>? Function()? targetZoneName, List<AaaFiltersTrafficExclusions>? Function()? trafficExclusions, List<String>? Function()? tunnelId, List<String>? Function()? tunnelName, List<String>? Function()? type, List<String>? Function()? where, List<String>? Function()? zones, }) { return AaaFilters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'actions', 'affected_asns', 'affected_components', 'affected_locations', 'airport_code', 'alert_trigger_preferences', 'alert_trigger_preferences_value', 'enabled', 'environment', 'event', 'event_source', 'event_type', 'group_by', 'health_check_id', 'incident_impact', 'input_id', 'insight_class', 'limit', 'logo_tag', 'megabits_per_second', 'new_health', 'new_status', 'packets_per_second', 'pool_id', 'pop_names', 'product', 'project_id', 'protocol', 'query_tag', 'requests_per_second', 'selectors', 'services', 'slo', 'status', 'target_hostname', 'target_ip', 'target_zone_name', 'traffic_exclusions', 'tunnel_id', 'tunnel_name', 'type', 'where', 'zones'}.contains(key));}
+AaaFilters copyWith({List<String>? Function()? actions, List<String>? Function()? affectedAsns, List<String>? Function()? affectedComponents, List<String>? Function()? affectedLocations, List<String>? Function()? airportCode, List<String>? Function()? alertTriggerPreferences, List<String>? Function()? alertTriggerPreferencesValue, List<String>? Function()? enabled, List<String>? Function()? environment, List<String>? Function()? event, List<String>? Function()? eventSource, List<String>? Function()? eventType, List<String>? Function()? groupBy, List<String>? Function()? healthCheckId, List<AaaFiltersIncidentImpact>? Function()? incidentImpact, List<String>? Function()? inputId, List<String>? Function()? insightClass, List<String>? Function()? limit, List<String>? Function()? logoTag, List<String>? Function()? megabitsPerSecond, List<String>? Function()? newHealth, List<String>? Function()? newStatus, List<String>? Function()? packetsPerSecond, List<String>? Function()? poolId, List<String>? Function()? popNames, List<String>? Function()? product, List<String>? Function()? projectId, List<String>? Function()? protocol, List<String>? Function()? queryTag, List<String>? Function()? requestsPerSecond, List<String>? Function()? selectors, List<String>? Function()? services, List<String>? Function()? slo, List<String>? Function()? status, List<String>? Function()? targetHostname, List<String>? Function()? targetIp, List<String>? Function()? targetZoneName, List<AaaFiltersTrafficExclusions>? Function()? trafficExclusions, List<String>? Function()? tunnelId, List<String>? Function()? tunnelName, List<String>? Function()? type, List<String>? Function()? where, List<String>? Function()? zones, }) {return AaaFilters(
   actions: actions != null ? actions() : this.actions,
   affectedAsns: affectedAsns != null ? affectedAsns() : this.affectedAsns,
   affectedComponents: affectedComponents != null ? affectedComponents() : this.affectedComponents,
@@ -319,8 +319,8 @@ AaaFilters copyWith({List<String>? Function()? actions, List<String>? Function()
   type: type != null ? type() : this.type,
   where: where != null ? where() : this.where,
   zones: zones != null ? zones() : this.zones,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AaaFilters &&
           listEquals(actions, other.actions) &&
           listEquals(affectedAsns, other.affectedAsns) &&
@@ -364,7 +364,7 @@ AaaFilters copyWith({List<String>? Function()? actions, List<String>? Function()
           listEquals(tunnelName, other.tunnelName) &&
           listEquals(type, other.type) &&
           listEquals(where, other.where) &&
-          listEquals(zones, other.zones); } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(actions ?? const []), Object.hashAll(affectedAsns ?? const []), Object.hashAll(affectedComponents ?? const []), Object.hashAll(affectedLocations ?? const []), Object.hashAll(airportCode ?? const []), Object.hashAll(alertTriggerPreferences ?? const []), Object.hashAll(alertTriggerPreferencesValue ?? const []), Object.hashAll(enabled ?? const []), Object.hashAll(environment ?? const []), Object.hashAll(event ?? const []), Object.hashAll(eventSource ?? const []), Object.hashAll(eventType ?? const []), Object.hashAll(groupBy ?? const []), Object.hashAll(healthCheckId ?? const []), Object.hashAll(incidentImpact ?? const []), Object.hashAll(inputId ?? const []), Object.hashAll(insightClass ?? const []), Object.hashAll(limit ?? const []), Object.hashAll(logoTag ?? const []), Object.hashAll(megabitsPerSecond ?? const []), Object.hashAll(newHealth ?? const []), Object.hashAll(newStatus ?? const []), Object.hashAll(packetsPerSecond ?? const []), Object.hashAll(poolId ?? const []), Object.hashAll(popNames ?? const []), Object.hashAll(product ?? const []), Object.hashAll(projectId ?? const []), Object.hashAll(protocol ?? const []), Object.hashAll(queryTag ?? const []), Object.hashAll(requestsPerSecond ?? const []), Object.hashAll(selectors ?? const []), Object.hashAll(services ?? const []), Object.hashAll(slo ?? const []), Object.hashAll(status ?? const []), Object.hashAll(targetHostname ?? const []), Object.hashAll(targetIp ?? const []), Object.hashAll(targetZoneName ?? const []), Object.hashAll(trafficExclusions ?? const []), Object.hashAll(tunnelId ?? const []), Object.hashAll(tunnelName ?? const []), Object.hashAll(type ?? const []), Object.hashAll(where ?? const []), Object.hashAll(zones ?? const [])]); } 
-@override String toString() { return 'AaaFilters(actions: $actions, affectedAsns: $affectedAsns, affectedComponents: $affectedComponents, affectedLocations: $affectedLocations, airportCode: $airportCode, alertTriggerPreferences: $alertTriggerPreferences, alertTriggerPreferencesValue: $alertTriggerPreferencesValue, enabled: $enabled, environment: $environment, event: $event, eventSource: $eventSource, eventType: $eventType, groupBy: $groupBy, healthCheckId: $healthCheckId, incidentImpact: $incidentImpact, inputId: $inputId, insightClass: $insightClass, limit: $limit, logoTag: $logoTag, megabitsPerSecond: $megabitsPerSecond, newHealth: $newHealth, newStatus: $newStatus, packetsPerSecond: $packetsPerSecond, poolId: $poolId, popNames: $popNames, product: $product, projectId: $projectId, protocol: $protocol, queryTag: $queryTag, requestsPerSecond: $requestsPerSecond, selectors: $selectors, services: $services, slo: $slo, status: $status, targetHostname: $targetHostname, targetIp: $targetIp, targetZoneName: $targetZoneName, trafficExclusions: $trafficExclusions, tunnelId: $tunnelId, tunnelName: $tunnelName, type: $type, where: $where, zones: $zones)'; } 
- }
+          listEquals(zones, other.zones);}
+@override int get hashCode {return Object.hashAll([Object.hashAll(actions ?? const []), Object.hashAll(affectedAsns ?? const []), Object.hashAll(affectedComponents ?? const []), Object.hashAll(affectedLocations ?? const []), Object.hashAll(airportCode ?? const []), Object.hashAll(alertTriggerPreferences ?? const []), Object.hashAll(alertTriggerPreferencesValue ?? const []), Object.hashAll(enabled ?? const []), Object.hashAll(environment ?? const []), Object.hashAll(event ?? const []), Object.hashAll(eventSource ?? const []), Object.hashAll(eventType ?? const []), Object.hashAll(groupBy ?? const []), Object.hashAll(healthCheckId ?? const []), Object.hashAll(incidentImpact ?? const []), Object.hashAll(inputId ?? const []), Object.hashAll(insightClass ?? const []), Object.hashAll(limit ?? const []), Object.hashAll(logoTag ?? const []), Object.hashAll(megabitsPerSecond ?? const []), Object.hashAll(newHealth ?? const []), Object.hashAll(newStatus ?? const []), Object.hashAll(packetsPerSecond ?? const []), Object.hashAll(poolId ?? const []), Object.hashAll(popNames ?? const []), Object.hashAll(product ?? const []), Object.hashAll(projectId ?? const []), Object.hashAll(protocol ?? const []), Object.hashAll(queryTag ?? const []), Object.hashAll(requestsPerSecond ?? const []), Object.hashAll(selectors ?? const []), Object.hashAll(services ?? const []), Object.hashAll(slo ?? const []), Object.hashAll(status ?? const []), Object.hashAll(targetHostname ?? const []), Object.hashAll(targetIp ?? const []), Object.hashAll(targetZoneName ?? const []), Object.hashAll(trafficExclusions ?? const []), Object.hashAll(tunnelId ?? const []), Object.hashAll(tunnelName ?? const []), Object.hashAll(type ?? const []), Object.hashAll(where ?? const []), Object.hashAll(zones ?? const [])]);}
+@override String toString() {return 'AaaFilters(actions: $actions, affectedAsns: $affectedAsns, affectedComponents: $affectedComponents, affectedLocations: $affectedLocations, airportCode: $airportCode, alertTriggerPreferences: $alertTriggerPreferences, alertTriggerPreferencesValue: $alertTriggerPreferencesValue, enabled: $enabled, environment: $environment, event: $event, eventSource: $eventSource, eventType: $eventType, groupBy: $groupBy, healthCheckId: $healthCheckId, incidentImpact: $incidentImpact, inputId: $inputId, insightClass: $insightClass, limit: $limit, logoTag: $logoTag, megabitsPerSecond: $megabitsPerSecond, newHealth: $newHealth, newStatus: $newStatus, packetsPerSecond: $packetsPerSecond, poolId: $poolId, popNames: $popNames, product: $product, projectId: $projectId, protocol: $protocol, queryTag: $queryTag, requestsPerSecond: $requestsPerSecond, selectors: $selectors, services: $services, slo: $slo, status: $status, targetHostname: $targetHostname, targetIp: $targetIp, targetZoneName: $targetZoneName, trafficExclusions: $trafficExclusions, tunnelId: $tunnelId, tunnelName: $tunnelName, type: $type, where: $where, zones: $zones)';}
+}

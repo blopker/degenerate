@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of the certificate activation.
 @immutable final class TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus._(this.value);
 
-factory TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus.fromJson(String json) {return switch (json) {
   'initializing' => initializing,
   'pending_deployment' => pendingDeployment,
   'pending_deletion' => pendingDeletion,
@@ -12,7 +12,7 @@ factory TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasS
   'deployment_timed_out' => deploymentTimedOut,
   'deletion_timed_out' => deletionTimedOut,
   _ => TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus._(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus initializing = TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus._('initializing');
 
@@ -32,11 +32,11 @@ static const List<TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponen
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus($value)';}
+}

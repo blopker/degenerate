@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_request_hooks_inputs_tax_calculation.dart';@immutable final class PostPaymentIntentsRequestHooksInputsTax {const PostPaymentIntentsRequestHooksInputsTax({required this.calculation});
 
-factory PostPaymentIntentsRequestHooksInputsTax.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestHooksInputsTax(
+factory PostPaymentIntentsRequestHooksInputsTax.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsRequestHooksInputsTax(
   calculation: PostPaymentIntentsRequestHooksInputsTaxCalculation.fromJson(json['calculation']),
-); }
+);}
 
 final PostPaymentIntentsRequestHooksInputsTaxCalculation calculation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'calculation': calculation.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('calculation'); } 
-PostPaymentIntentsRequestHooksInputsTax copyWith({PostPaymentIntentsRequestHooksInputsTaxCalculation? calculation}) { return PostPaymentIntentsRequestHooksInputsTax(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('calculation');}
+PostPaymentIntentsRequestHooksInputsTax copyWith({PostPaymentIntentsRequestHooksInputsTaxCalculation? calculation}) {return PostPaymentIntentsRequestHooksInputsTax(
   calculation: calculation ?? this.calculation,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsRequestHooksInputsTax &&
-          calculation == other.calculation; } 
-@override int get hashCode { return calculation.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsRequestHooksInputsTax(calculation: $calculation)'; } 
- }
+          calculation == other.calculation;}
+@override int get hashCode {return calculation.hashCode;}
+@override String toString() {return 'PostPaymentIntentsRequestHooksInputsTax(calculation: $calculation)';}
+}

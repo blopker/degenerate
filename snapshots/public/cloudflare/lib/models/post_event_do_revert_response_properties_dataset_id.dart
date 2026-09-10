@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventDoRevertResponsePropertiesDatasetId {const PostEventDoRevertResponsePropertiesDatasetId({required this.type});
 
-factory PostEventDoRevertResponsePropertiesDatasetId.fromJson(Map<String, dynamic> json) { return PostEventDoRevertResponsePropertiesDatasetId(
+factory PostEventDoRevertResponsePropertiesDatasetId.fromJson(Map<String, dynamic> json) {return PostEventDoRevertResponsePropertiesDatasetId(
   type: json['type'] as String,
-); }
+);}
 
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-PostEventDoRevertResponsePropertiesDatasetId copyWith({String? type}) { return PostEventDoRevertResponsePropertiesDatasetId(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+PostEventDoRevertResponsePropertiesDatasetId copyWith({String? type}) {return PostEventDoRevertResponsePropertiesDatasetId(
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostEventDoRevertResponsePropertiesDatasetId &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'PostEventDoRevertResponsePropertiesDatasetId(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'PostEventDoRevertResponsePropertiesDatasetId(type: $type)';}
+}

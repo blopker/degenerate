@@ -11,7 +11,7 @@ final class Api20100401MemberApi with ApiExecutor {const Api20100401MemberApi(th
 /// Fetch a specific member from the queue
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}/Members/{CallSid}.json`
-Future<ApiResult<AccountQueueMember, Never>> fetchMember({required String accountSid, required String queueSid, required String callSid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountQueueMember, Never>> fetchMember({required String accountSid, required String queueSid, required String callSid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,11 +27,11 @@ final json = jsonDecode(response.body);
 return AccountQueueMember.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Dequeue a member from a queue and have the member's call begin executing the TwiML document at that URL
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}/Members/{CallSid}.json`
-Future<ApiResult<AccountQueueMember, Never>> updateMember({required String accountSid, required String queueSid, required String callSid, UpdateMemberRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountQueueMember, Never>> updateMember({required String accountSid, required String queueSid, required String callSid, UpdateMemberRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -53,11 +53,11 @@ final json = jsonDecode(response.body);
 return AccountQueueMember.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Retrieve the members of the queue
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}/Members.json`
-Future<ApiResult<ListMemberResponse, Never>> listMember({required String accountSid, required String queueSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListMemberResponse, Never>> listMember({required String accountSid, required String queueSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -87,5 +87,5 @@ final json = jsonDecode(response.body);
 return ListMemberResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

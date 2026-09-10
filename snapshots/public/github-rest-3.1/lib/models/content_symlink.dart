@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_symlink_links.dart';@immutable final class ContentSymlinkType {const ContentSymlinkType._(this.value);
 
-factory ContentSymlinkType.fromJson(String json) { return switch (json) {
+factory ContentSymlinkType.fromJson(String json) {return switch (json) {
   'symlink' => symlink,
   _ => ContentSymlinkType._(json),
-}; }
+};}
 
 static const ContentSymlinkType symlink = ContentSymlinkType._('symlink');
 
@@ -13,18 +13,18 @@ static const List<ContentSymlinkType> values = [symlink];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContentSymlinkType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContentSymlinkType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ContentSymlinkType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ContentSymlinkType($value)';}
+}
 /// An object describing a symlink
 @immutable final class ContentSymlink {const ContentSymlink({required this.type, required this.target, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, });
 
-factory ContentSymlink.fromJson(Map<String, dynamic> json) { return ContentSymlink(
+factory ContentSymlink.fromJson(Map<String, dynamic> json) {return ContentSymlink(
   type: ContentSymlinkType.fromJson(json['type'] as String),
   target: json['target'] as String,
   size: (json['size'] as num).toInt(),
@@ -36,7 +36,7 @@ factory ContentSymlink.fromJson(Map<String, dynamic> json) { return ContentSymli
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
   downloadUrl: json['download_url'] != null ? Uri.parse(json['download_url'] as String) : null,
   links: ContentSymlinkLinks.fromJson(json['_links'] as Map<String, dynamic>),
-); }
+);}
 
 final ContentSymlinkType type;
 
@@ -60,7 +60,7 @@ final Uri? downloadUrl;
 
 final ContentSymlinkLinks links;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'target': target,
   'size': size,
@@ -72,8 +72,8 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl?.toString(),
   'download_url': downloadUrl?.toString(),
   '_links': links.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('target') && json['target'] is String &&
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('name') && json['name'] is String &&
@@ -83,8 +83,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('git_url') && (json['git_url'] == null || json['git_url'] is String) &&
       json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String) &&
       json.containsKey('download_url') && (json['download_url'] == null || json['download_url'] is String) &&
-      json.containsKey('_links'); } 
-ContentSymlink copyWith({ContentSymlinkType? type, String? target, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentSymlinkLinks? links, }) { return ContentSymlink(
+      json.containsKey('_links');}
+ContentSymlink copyWith({ContentSymlinkType? type, String? target, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentSymlinkLinks? links, }) {return ContentSymlink(
   type: type ?? this.type,
   target: target ?? this.target,
   size: size ?? this.size,
@@ -96,8 +96,8 @@ ContentSymlink copyWith({ContentSymlinkType? type, String? target, int? size, St
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   downloadUrl: downloadUrl != null ? downloadUrl() : this.downloadUrl,
   links: links ?? this.links,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ContentSymlink &&
           type == other.type &&
           target == other.target &&
@@ -109,7 +109,7 @@ ContentSymlink copyWith({ContentSymlinkType? type, String? target, int? size, St
           gitUrl == other.gitUrl &&
           htmlUrl == other.htmlUrl &&
           downloadUrl == other.downloadUrl &&
-          links == other.links; } 
-@override int get hashCode { return Object.hash(type, target, size, name, path, sha, url, gitUrl, htmlUrl, downloadUrl, links); } 
-@override String toString() { return 'ContentSymlink(type: $type, target: $target, size: $size, name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links)'; } 
- }
+          links == other.links;}
+@override int get hashCode {return Object.hash(type, target, size, name, path, sha, url, gitUrl, htmlUrl, downloadUrl, links);}
+@override String toString() {return 'ContentSymlink(type: $type, target: $target, size: $size, name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links)';}
+}

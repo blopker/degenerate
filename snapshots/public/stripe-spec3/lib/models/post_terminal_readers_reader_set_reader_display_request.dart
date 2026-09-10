@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_set_reader_display_request_cart.dart';/// Type of information to display. Only `cart` is currently supported.
 @immutable final class PostTerminalReadersReaderSetReaderDisplayRequestType {const PostTerminalReadersReaderSetReaderDisplayRequestType._(this.value);
 
-factory PostTerminalReadersReaderSetReaderDisplayRequestType.fromJson(String json) { return switch (json) {
+factory PostTerminalReadersReaderSetReaderDisplayRequestType.fromJson(String json) {return switch (json) {
   'cart' => cart,
   _ => PostTerminalReadersReaderSetReaderDisplayRequestType._(json),
-}; }
+};}
 
 static const PostTerminalReadersReaderSetReaderDisplayRequestType cart = PostTerminalReadersReaderSetReaderDisplayRequestType._('cart');
 
@@ -14,21 +14,21 @@ static const List<PostTerminalReadersReaderSetReaderDisplayRequestType> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTerminalReadersReaderSetReaderDisplayRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTerminalReadersReaderSetReaderDisplayRequestType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTerminalReadersReaderSetReaderDisplayRequestType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTerminalReadersReaderSetReaderDisplayRequestType($value)';}
+}
 @immutable final class PostTerminalReadersReaderSetReaderDisplayRequest {const PostTerminalReadersReaderSetReaderDisplayRequest({required this.type, this.cart, this.expand, });
 
-factory PostTerminalReadersReaderSetReaderDisplayRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderSetReaderDisplayRequest(
+factory PostTerminalReadersReaderSetReaderDisplayRequest.fromJson(Map<String, dynamic> json) {return PostTerminalReadersReaderSetReaderDisplayRequest(
   cart: json['cart'] != null ? PostTerminalReadersReaderSetReaderDisplayRequestCart.fromJson(json['cart'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: PostTerminalReadersReaderSetReaderDisplayRequestType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Cart details to display on the reader screen, including line items, amounts, and currency.
 final PostTerminalReadersReaderSetReaderDisplayRequestCart? cart;
@@ -39,22 +39,22 @@ final List<String>? expand;
 /// Type of information to display. Only `cart` is currently supported.
 final PostTerminalReadersReaderSetReaderDisplayRequestType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cart != null) 'cart': cart?.toJson(),
   'expand': ?expand,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostTerminalReadersReaderSetReaderDisplayRequest copyWith({PostTerminalReadersReaderSetReaderDisplayRequestCart? Function()? cart, List<String>? Function()? expand, PostTerminalReadersReaderSetReaderDisplayRequestType? type, }) { return PostTerminalReadersReaderSetReaderDisplayRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostTerminalReadersReaderSetReaderDisplayRequest copyWith({PostTerminalReadersReaderSetReaderDisplayRequestCart? Function()? cart, List<String>? Function()? expand, PostTerminalReadersReaderSetReaderDisplayRequestType? type, }) {return PostTerminalReadersReaderSetReaderDisplayRequest(
   cart: cart != null ? cart() : this.cart,
   expand: expand != null ? expand() : this.expand,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTerminalReadersReaderSetReaderDisplayRequest &&
           cart == other.cart &&
           listEquals(expand, other.expand) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(cart, Object.hashAll(expand ?? const []), type); } 
-@override String toString() { return 'PostTerminalReadersReaderSetReaderDisplayRequest(cart: $cart, expand: $expand, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(cart, Object.hashAll(expand ?? const []), type);}
+@override String toString() {return 'PostTerminalReadersReaderSetReaderDisplayRequest(cart: $cart, expand: $expand, type: $type)';}
+}

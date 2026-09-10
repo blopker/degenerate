@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityInvestigateMessageAction {const EmailSecurityInvestigateMessageAction._(this.value);
 
-factory EmailSecurityInvestigateMessageAction.fromJson(String json) { return switch (json) {
+factory EmailSecurityInvestigateMessageAction.fromJson(String json) {return switch (json) {
   'PREVIEW' => preview,
   'QUARANTINE_RELEASED' => quarantineReleased,
   'MOVED' => moved,
   _ => EmailSecurityInvestigateMessageAction._(json),
-}; }
+};}
 
 static const EmailSecurityInvestigateMessageAction preview = EmailSecurityInvestigateMessageAction._('PREVIEW');
 
@@ -19,11 +19,11 @@ static const List<EmailSecurityInvestigateMessageAction> values = [preview, quar
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityInvestigateMessageAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityInvestigateMessageAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailSecurityInvestigateMessageAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailSecurityInvestigateMessageAction($value)';}
+}

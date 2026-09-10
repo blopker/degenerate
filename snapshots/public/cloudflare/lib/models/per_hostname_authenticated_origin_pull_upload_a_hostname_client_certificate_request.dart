@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_certificate.dart';import 'tls_certificates_and_hostnames_schemas_private_key.dart';@immutable final class PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest {const PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest({required this.certificate, required this.privateKey, });
 
-factory PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest.fromJson(Map<String, dynamic> json) { return PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest(
+factory PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest.fromJson(Map<String, dynamic> json) {return PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest(
   certificate: TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificate.fromJson(json['certificate'] as String),
   privateKey: TlsCertificatesAndHostnamesSchemasPrivateKey.fromJson(json['private_key'] as String),
-); }
+);}
 
 /// The hostname certificate.
 final TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificate certificate;
@@ -13,20 +13,20 @@ final TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchema
 /// The hostname certificate's private key.
 final TlsCertificatesAndHostnamesSchemasPrivateKey privateKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'certificate': certificate.toJson(),
   'private_key': privateKey.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate') &&
-      json.containsKey('private_key'); } 
-PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest copyWith({TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificate? certificate, TlsCertificatesAndHostnamesSchemasPrivateKey? privateKey, }) { return PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificate') &&
+      json.containsKey('private_key');}
+PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest copyWith({TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificate? certificate, TlsCertificatesAndHostnamesSchemasPrivateKey? privateKey, }) {return PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest(
   certificate: certificate ?? this.certificate,
   privateKey: privateKey ?? this.privateKey,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest &&
           certificate == other.certificate &&
-          privateKey == other.privateKey; } 
-@override int get hashCode { return Object.hash(certificate, privateKey); } 
-@override String toString() { return 'PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest(certificate: $certificate, privateKey: $privateKey)'; } 
- }
+          privateKey == other.privateKey;}
+@override int get hashCode {return Object.hash(certificate, privateKey);}
+@override String toString() {return 'PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest(certificate: $certificate, privateKey: $privateKey)';}
+}

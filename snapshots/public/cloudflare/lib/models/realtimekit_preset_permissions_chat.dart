@@ -3,29 +3,29 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_preset_permissions_chat_private.dart';import 'realtimekit_preset_permissions_chat_public.dart';/// Chat permissions
 @immutable final class RealtimekitPresetPermissionsChat {const RealtimekitPresetPermissionsChat({required this.private, required this.public, });
 
-factory RealtimekitPresetPermissionsChat.fromJson(Map<String, dynamic> json) { return RealtimekitPresetPermissionsChat(
+factory RealtimekitPresetPermissionsChat.fromJson(Map<String, dynamic> json) {return RealtimekitPresetPermissionsChat(
   private: RealtimekitPresetPermissionsChatPrivate.fromJson(json['private'] as Map<String, dynamic>),
   public: RealtimekitPresetPermissionsChatPublic.fromJson(json['public'] as Map<String, dynamic>),
-); }
+);}
 
 final RealtimekitPresetPermissionsChatPrivate private;
 
 final RealtimekitPresetPermissionsChatPublic public;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'private': private.toJson(),
   'public': public.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('private') &&
-      json.containsKey('public'); } 
-RealtimekitPresetPermissionsChat copyWith({RealtimekitPresetPermissionsChatPrivate? private, RealtimekitPresetPermissionsChatPublic? public, }) { return RealtimekitPresetPermissionsChat(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('private') &&
+      json.containsKey('public');}
+RealtimekitPresetPermissionsChat copyWith({RealtimekitPresetPermissionsChatPrivate? private, RealtimekitPresetPermissionsChatPublic? public, }) {return RealtimekitPresetPermissionsChat(
   private: private ?? this.private,
   public: public ?? this.public,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitPresetPermissionsChat &&
           private == other.private &&
-          public == other.public; } 
-@override int get hashCode { return Object.hash(private, public); } 
-@override String toString() { return 'RealtimekitPresetPermissionsChat(private: $private, public: $public)'; } 
- }
+          public == other.public;}
+@override int get hashCode {return Object.hash(private, public);}
+@override String toString() {return 'RealtimekitPresetPermissionsChat(private: $private, public: $public)';}
+}

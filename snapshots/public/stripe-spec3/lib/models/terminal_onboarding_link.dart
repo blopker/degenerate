@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_onboarding_link_link_options.dart';/// The type of link being generated.
 @immutable final class TerminalOnboardingLinkLinkType {const TerminalOnboardingLinkLinkType._(this.value);
 
-factory TerminalOnboardingLinkLinkType.fromJson(String json) { return switch (json) {
+factory TerminalOnboardingLinkLinkType.fromJson(String json) {return switch (json) {
   'apple_terms_and_conditions' => appleTermsAndConditions,
   _ => TerminalOnboardingLinkLinkType._(json),
-}; }
+};}
 
 static const TerminalOnboardingLinkLinkType appleTermsAndConditions = TerminalOnboardingLinkLinkType._('apple_terms_and_conditions');
 
@@ -14,20 +14,20 @@ static const List<TerminalOnboardingLinkLinkType> values = [appleTermsAndConditi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalOnboardingLinkLinkType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalOnboardingLinkLinkType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TerminalOnboardingLinkLinkType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TerminalOnboardingLinkLinkType($value)';}
+}
 @immutable final class TerminalOnboardingLinkObject {const TerminalOnboardingLinkObject._(this.value);
 
-factory TerminalOnboardingLinkObject.fromJson(String json) { return switch (json) {
+factory TerminalOnboardingLinkObject.fromJson(String json) {return switch (json) {
   'terminal.onboarding_link' => terminalOnboardingLink,
   _ => TerminalOnboardingLinkObject._(json),
-}; }
+};}
 
 static const TerminalOnboardingLinkObject terminalOnboardingLink = TerminalOnboardingLinkObject._('terminal.onboarding_link');
 
@@ -35,24 +35,24 @@ static const List<TerminalOnboardingLinkObject> values = [terminalOnboardingLink
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalOnboardingLinkObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalOnboardingLinkObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TerminalOnboardingLinkObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TerminalOnboardingLinkObject($value)';}
+}
 /// Returns redirect links used for onboarding onto Tap to Pay on iPhone.
 @immutable final class TerminalOnboardingLink {const TerminalOnboardingLink({required this.linkOptions, required this.linkType, required this.object, required this.redirectUrl, this.onBehalfOf = const Omittable.absent(), });
 
-factory TerminalOnboardingLink.fromJson(Map<String, dynamic> json) { return TerminalOnboardingLink(
+factory TerminalOnboardingLink.fromJson(Map<String, dynamic> json) {return TerminalOnboardingLink(
   linkOptions: TerminalOnboardingLinkLinkOptions.fromJson(json['link_options'] as Map<String, dynamic>),
   linkType: TerminalOnboardingLinkLinkType.fromJson(json['link_type'] as String),
   object: TerminalOnboardingLinkObject.fromJson(json['object'] as String),
   onBehalfOf: json.containsKey('on_behalf_of') ? Omittable(json['on_behalf_of'] as String?) : const Omittable.absent(),
   redirectUrl: json['redirect_url'] as String,
-); }
+);}
 
 final TerminalOnboardingLinkLinkOptions linkOptions;
 
@@ -67,31 +67,31 @@ final Omittable<String?> onBehalfOf;
 /// The link passed back to the user for their onboarding.
 final String redirectUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'link_options': linkOptions.toJson(),
   'link_type': linkType.toJson(),
   'object': object.toJson(),
   if (onBehalfOf.isPresent) 'on_behalf_of': onBehalfOf.value,
   'redirect_url': redirectUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('link_options') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('link_options') &&
       json.containsKey('link_type') &&
       json.containsKey('object') &&
-      json.containsKey('redirect_url') && json['redirect_url'] is String; } 
-TerminalOnboardingLink copyWith({TerminalOnboardingLinkLinkOptions? linkOptions, TerminalOnboardingLinkLinkType? linkType, TerminalOnboardingLinkObject? object, Omittable<String?>? onBehalfOf, String? redirectUrl, }) { return TerminalOnboardingLink(
+      json.containsKey('redirect_url') && json['redirect_url'] is String;}
+TerminalOnboardingLink copyWith({TerminalOnboardingLinkLinkOptions? linkOptions, TerminalOnboardingLinkLinkType? linkType, TerminalOnboardingLinkObject? object, Omittable<String?>? onBehalfOf, String? redirectUrl, }) {return TerminalOnboardingLink(
   linkOptions: linkOptions ?? this.linkOptions,
   linkType: linkType ?? this.linkType,
   object: object ?? this.object,
   onBehalfOf: onBehalfOf ?? this.onBehalfOf,
   redirectUrl: redirectUrl ?? this.redirectUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TerminalOnboardingLink &&
           linkOptions == other.linkOptions &&
           linkType == other.linkType &&
           object == other.object &&
           onBehalfOf == other.onBehalfOf &&
-          redirectUrl == other.redirectUrl; } 
-@override int get hashCode { return Object.hash(linkOptions, linkType, object, onBehalfOf, redirectUrl); } 
-@override String toString() { return 'TerminalOnboardingLink(linkOptions: $linkOptions, linkType: $linkType, object: $object, onBehalfOf: $onBehalfOf, redirectUrl: $redirectUrl)'; } 
- }
+          redirectUrl == other.redirectUrl;}
+@override int get hashCode {return Object.hash(linkOptions, linkType, object, onBehalfOf, redirectUrl);}
+@override String toString() {return 'TerminalOnboardingLink(linkOptions: $linkOptions, linkType: $linkType, object: $object, onBehalfOf: $onBehalfOf, redirectUrl: $redirectUrl)';}
+}

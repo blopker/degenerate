@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the mandate on the Bacs network. Can be one of `pending`, `revoked`, `refused`, or `accepted`.
 @immutable final class MandateBacsDebitNetworkStatus {const MandateBacsDebitNetworkStatus._(this.value);
 
-factory MandateBacsDebitNetworkStatus.fromJson(String json) { return switch (json) {
+factory MandateBacsDebitNetworkStatus.fromJson(String json) {return switch (json) {
   'accepted' => accepted,
   'pending' => pending,
   'refused' => refused,
   'revoked' => revoked,
   _ => MandateBacsDebitNetworkStatus._(json),
-}; }
+};}
 
 static const MandateBacsDebitNetworkStatus accepted = MandateBacsDebitNetworkStatus._('accepted');
 
@@ -23,25 +23,25 @@ static const List<MandateBacsDebitNetworkStatus> values = [accepted, pending, re
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MandateBacsDebitNetworkStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MandateBacsDebitNetworkStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MandateBacsDebitNetworkStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MandateBacsDebitNetworkStatus($value)';}
+}
 /// When the mandate is revoked on the Bacs network this field displays the reason for the revocation.
 @immutable final class MandateBacsDebitRevocationReason {const MandateBacsDebitRevocationReason._(this.value);
 
-factory MandateBacsDebitRevocationReason.fromJson(String json) { return switch (json) {
+factory MandateBacsDebitRevocationReason.fromJson(String json) {return switch (json) {
   'account_closed' => accountClosed,
   'bank_account_restricted' => bankAccountRestricted,
   'bank_ownership_changed' => bankOwnershipChanged,
   'could_not_process' => couldNotProcess,
   'debit_not_authorized' => debitNotAuthorized,
   _ => MandateBacsDebitRevocationReason._(json),
-}; }
+};}
 
 static const MandateBacsDebitRevocationReason accountClosed = MandateBacsDebitRevocationReason._('account_closed');
 
@@ -57,25 +57,25 @@ static const List<MandateBacsDebitRevocationReason> values = [accountClosed, ban
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MandateBacsDebitRevocationReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MandateBacsDebitRevocationReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MandateBacsDebitRevocationReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MandateBacsDebitRevocationReason($value)';}
+}
 /// 
 @immutable final class MandateBacsDebit {const MandateBacsDebit({required this.networkStatus, required this.reference, required this.url, this.displayName = const Omittable.absent(), this.revocationReason = const Omittable.absent(), this.serviceUserNumber = const Omittable.absent(), });
 
-factory MandateBacsDebit.fromJson(Map<String, dynamic> json) { return MandateBacsDebit(
+factory MandateBacsDebit.fromJson(Map<String, dynamic> json) {return MandateBacsDebit(
   displayName: json.containsKey('display_name') ? Omittable(json['display_name'] as String?) : const Omittable.absent(),
   networkStatus: MandateBacsDebitNetworkStatus.fromJson(json['network_status'] as String),
   reference: json['reference'] as String,
   revocationReason: json.containsKey('revocation_reason') ? Omittable(json['revocation_reason'] != null ? MandateBacsDebitRevocationReason.fromJson(json['revocation_reason'] as String) : null) : const Omittable.absent(),
   serviceUserNumber: json.containsKey('service_user_number') ? Omittable(json['service_user_number'] as String?) : const Omittable.absent(),
   url: json['url'] as String,
-); }
+);}
 
 /// The display name for the account on this mandate.
 final Omittable<String?> displayName;
@@ -95,33 +95,33 @@ final Omittable<String?> serviceUserNumber;
 /// The URL that will contain the mandate that the customer has signed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayName.isPresent) 'display_name': displayName.value,
   'network_status': networkStatus.toJson(),
   'reference': reference,
   if (revocationReason.isPresent) 'revocation_reason': revocationReason.value?.toJson(),
   if (serviceUserNumber.isPresent) 'service_user_number': serviceUserNumber.value,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('network_status') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('network_status') &&
       json.containsKey('reference') && json['reference'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-MandateBacsDebit copyWith({Omittable<String?>? displayName, MandateBacsDebitNetworkStatus? networkStatus, String? reference, Omittable<MandateBacsDebitRevocationReason?>? revocationReason, Omittable<String?>? serviceUserNumber, String? url, }) { return MandateBacsDebit(
+      json.containsKey('url') && json['url'] is String;}
+MandateBacsDebit copyWith({Omittable<String?>? displayName, MandateBacsDebitNetworkStatus? networkStatus, String? reference, Omittable<MandateBacsDebitRevocationReason?>? revocationReason, Omittable<String?>? serviceUserNumber, String? url, }) {return MandateBacsDebit(
   displayName: displayName ?? this.displayName,
   networkStatus: networkStatus ?? this.networkStatus,
   reference: reference ?? this.reference,
   revocationReason: revocationReason ?? this.revocationReason,
   serviceUserNumber: serviceUserNumber ?? this.serviceUserNumber,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MandateBacsDebit &&
           displayName == other.displayName &&
           networkStatus == other.networkStatus &&
           reference == other.reference &&
           revocationReason == other.revocationReason &&
           serviceUserNumber == other.serviceUserNumber &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(displayName, networkStatus, reference, revocationReason, serviceUserNumber, url); } 
-@override String toString() { return 'MandateBacsDebit(displayName: $displayName, networkStatus: $networkStatus, reference: $reference, revocationReason: $revocationReason, serviceUserNumber: $serviceUserNumber, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(displayName, networkStatus, reference, revocationReason, serviceUserNumber, url);}
+@override String toString() {return 'MandateBacsDebit(displayName: $displayName, networkStatus: $networkStatus, reference: $reference, revocationReason: $revocationReason, serviceUserNumber: $serviceUserNumber, url: $url)';}
+}

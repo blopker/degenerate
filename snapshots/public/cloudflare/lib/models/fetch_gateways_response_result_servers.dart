@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FetchGatewaysResponseResultServersAuthType {const FetchGatewaysResponseResultServersAuthType._(this.value);
 
-factory FetchGatewaysResponseResultServersAuthType.fromJson(String json) { return switch (json) {
+factory FetchGatewaysResponseResultServersAuthType.fromJson(String json) {return switch (json) {
   'oauth' => oauth,
   'bearer' => bearer,
   'unauthenticated' => unauthenticated,
   _ => FetchGatewaysResponseResultServersAuthType._(json),
-}; }
+};}
 
 static const FetchGatewaysResponseResultServersAuthType oauth = FetchGatewaysResponseResultServersAuthType._('oauth');
 
@@ -19,17 +19,17 @@ static const List<FetchGatewaysResponseResultServersAuthType> values = [oauth, b
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FetchGatewaysResponseResultServersAuthType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FetchGatewaysResponseResultServersAuthType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FetchGatewaysResponseResultServersAuthType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FetchGatewaysResponseResultServersAuthType($value)';}
+}
 @immutable final class FetchGatewaysResponseResultServers {const FetchGatewaysResponseResultServers({required this.authType, required this.hostname, required this.id, required this.name, required this.prompts, required this.tools, required this.updatedPrompts, required this.updatedTools, this.createdAt, this.createdBy, this.defaultDisabled, this.description = const Omittable.absent(), this.error, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, this.onBehalf, this.status, });
 
-factory FetchGatewaysResponseResultServers.fromJson(Map<String, dynamic> json) { return FetchGatewaysResponseResultServers(
+factory FetchGatewaysResponseResultServers.fromJson(Map<String, dynamic> json) {return FetchGatewaysResponseResultServers(
   authType: FetchGatewaysResponseResultServersAuthType.fromJson(json['auth_type'] as String),
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   createdBy: json['created_by'] as String?,
@@ -49,7 +49,7 @@ factory FetchGatewaysResponseResultServers.fromJson(Map<String, dynamic> json) {
   tools: (json['tools'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   updatedPrompts: (json['updated_prompts'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   updatedTools: (json['updated_tools'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
-); }
+);}
 
 final FetchGatewaysResponseResultServersAuthType authType;
 
@@ -91,12 +91,12 @@ final List<Map<String,dynamic>> updatedPrompts;
 final List<Map<String,dynamic>> updatedTools;
 
 /// The value with the schema default applied when absent.
-bool get defaultDisabledOrDefault { return defaultDisabled ?? false; } 
+bool get defaultDisabledOrDefault {return defaultDisabled ?? false;}
 /// The value with the schema default applied when absent.
-bool get onBehalfOrDefault { return onBehalf ?? true; } 
+bool get onBehalfOrDefault {return onBehalf ?? true;}
 /// The value with the schema default applied when absent.
-String get statusOrDefault { return status ?? 'waiting'; } 
-Map<String, dynamic> toJson() { return {
+String get statusOrDefault {return status ?? 'waiting';}
+Map<String, dynamic> toJson() {return {
   'auth_type': authType.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'created_by': ?createdBy,
@@ -116,16 +116,16 @@ Map<String, dynamic> toJson() { return {
   'tools': tools.map((e) => e).toList(),
   'updated_prompts': updatedPrompts.map((e) => e).toList(),
   'updated_tools': updatedTools.map((e) => e).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('auth_type') &&
       json.containsKey('hostname') && json['hostname'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('prompts') &&
       json.containsKey('tools') &&
       json.containsKey('updated_prompts') &&
-      json.containsKey('updated_tools'); } 
-FetchGatewaysResponseResultServers copyWith({FetchGatewaysResponseResultServersAuthType? authType, DateTime? Function()? createdAt, String? Function()? createdBy, bool? Function()? defaultDisabled, Omittable<String?>? description, String? Function()? error, Uri? hostname, String? id, DateTime? Function()? lastSuccessfulSync, DateTime? Function()? lastSynced, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, bool? Function()? onBehalf, List<Map<String,dynamic>>? prompts, String? Function()? status, List<Map<String,dynamic>>? tools, List<Map<String,dynamic>>? updatedPrompts, List<Map<String,dynamic>>? updatedTools, }) { return FetchGatewaysResponseResultServers(
+      json.containsKey('updated_tools');}
+FetchGatewaysResponseResultServers copyWith({FetchGatewaysResponseResultServersAuthType? authType, DateTime? Function()? createdAt, String? Function()? createdBy, bool? Function()? defaultDisabled, Omittable<String?>? description, String? Function()? error, Uri? hostname, String? id, DateTime? Function()? lastSuccessfulSync, DateTime? Function()? lastSynced, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, bool? Function()? onBehalf, List<Map<String,dynamic>>? prompts, String? Function()? status, List<Map<String,dynamic>>? tools, List<Map<String,dynamic>>? updatedPrompts, List<Map<String,dynamic>>? updatedTools, }) {return FetchGatewaysResponseResultServers(
   authType: authType ?? this.authType,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
@@ -145,8 +145,8 @@ FetchGatewaysResponseResultServers copyWith({FetchGatewaysResponseResultServersA
   tools: tools ?? this.tools,
   updatedPrompts: updatedPrompts ?? this.updatedPrompts,
   updatedTools: updatedTools ?? this.updatedTools,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FetchGatewaysResponseResultServers &&
           authType == other.authType &&
           createdAt == other.createdAt &&
@@ -166,7 +166,7 @@ FetchGatewaysResponseResultServers copyWith({FetchGatewaysResponseResultServersA
           status == other.status &&
           listEquals(tools, other.tools) &&
           listEquals(updatedPrompts, other.updatedPrompts) &&
-          listEquals(updatedTools, other.updatedTools); } 
-@override int get hashCode { return Object.hash(authType, createdAt, createdBy, defaultDisabled, description, error, hostname, id, lastSuccessfulSync, lastSynced, modifiedAt, modifiedBy, name, onBehalf, Object.hashAll(prompts), status, Object.hashAll(tools), Object.hashAll(updatedPrompts), Object.hashAll(updatedTools)); } 
-@override String toString() { return 'FetchGatewaysResponseResultServers(authType: $authType, createdAt: $createdAt, createdBy: $createdBy, defaultDisabled: $defaultDisabled, description: $description, error: $error, hostname: $hostname, id: $id, lastSuccessfulSync: $lastSuccessfulSync, lastSynced: $lastSynced, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name, onBehalf: $onBehalf, prompts: $prompts, status: $status, tools: $tools, updatedPrompts: $updatedPrompts, updatedTools: $updatedTools)'; } 
- }
+          listEquals(updatedTools, other.updatedTools);}
+@override int get hashCode {return Object.hash(authType, createdAt, createdBy, defaultDisabled, description, error, hostname, id, lastSuccessfulSync, lastSynced, modifiedAt, modifiedBy, name, onBehalf, Object.hashAll(prompts), status, Object.hashAll(tools), Object.hashAll(updatedPrompts), Object.hashAll(updatedTools));}
+@override String toString() {return 'FetchGatewaysResponseResultServers(authType: $authType, createdAt: $createdAt, createdBy: $createdBy, defaultDisabled: $defaultDisabled, description: $description, error: $error, hostname: $hostname, id: $id, lastSuccessfulSync: $lastSuccessfulSync, lastSynced: $lastSynced, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name, onBehalf: $onBehalf, prompts: $prompts, status: $status, tools: $tools, updatedPrompts: $updatedPrompts, updatedTools: $updatedTools)';}
+}

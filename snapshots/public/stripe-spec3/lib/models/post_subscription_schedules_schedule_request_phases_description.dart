@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2 {const PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2._(this.value);
 
-factory PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2.fromJson(String json) { return switch (json) {
+factory PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2._(json),
-}; }
+};}
 
 static const PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2 $empty = PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVaria
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2($value)';}
+}
 
 @immutable
 final class PostSubscriptionSchedulesScheduleRequestPhasesDescription {

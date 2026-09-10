@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersPlacementInfoVariant2 {const WorkersPlacementInfoVariant2({required this.region});
 
-factory WorkersPlacementInfoVariant2.fromJson(Map<String, dynamic> json) { return WorkersPlacementInfoVariant2(
+factory WorkersPlacementInfoVariant2.fromJson(Map<String, dynamic> json) {return WorkersPlacementInfoVariant2(
   region: json['region'] as String,
-); }
+);}
 
 /// Cloud region for targeted placement in format 'provider:region'.
 final String region;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'region': region,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('region') && json['region'] is String; } 
-WorkersPlacementInfoVariant2 copyWith({String? region}) { return WorkersPlacementInfoVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('region') && json['region'] is String;}
+WorkersPlacementInfoVariant2 copyWith({String? region}) {return WorkersPlacementInfoVariant2(
   region: region ?? this.region,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersPlacementInfoVariant2 &&
-          region == other.region; } 
-@override int get hashCode { return region.hashCode; } 
-@override String toString() { return 'WorkersPlacementInfoVariant2(region: $region)'; } 
- }
+          region == other.region;}
+@override int get hashCode {return region.hashCode;}
+@override String toString() {return 'WorkersPlacementInfoVariant2(region: $region)';}
+}

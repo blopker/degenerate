@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'branch_protection_allow_deletions.dart';import 'branch_protection_allow_force_pushes.dart';import 'branch_protection_allow_fork_syncing.dart';import 'branch_protection_block_creations.dart';import 'branch_protection_lock_branch.dart';import 'branch_protection_required_conversation_resolution.dart';import 'branch_protection_required_linear_history.dart';import 'branch_protection_required_signatures.dart';import 'branch_restriction_policy.dart';import 'protected_branch_admin_enforced.dart';import 'protected_branch_pull_request_review.dart';import 'protected_branch_required_status_check.dart';/// Branch Protection
 @immutable final class BranchProtection {const BranchProtection({this.url, this.enabled, this.requiredStatusChecks, this.enforceAdmins, this.requiredPullRequestReviews, this.restrictions, this.requiredLinearHistory, this.allowForcePushes, this.allowDeletions, this.blockCreations, this.requiredConversationResolution, this.name, this.protectionUrl, this.requiredSignatures, this.lockBranch, this.allowForkSyncing, });
 
-factory BranchProtection.fromJson(Map<String, dynamic> json) { return BranchProtection(
+factory BranchProtection.fromJson(Map<String, dynamic> json) {return BranchProtection(
   url: json['url'] as String?,
   enabled: json['enabled'] as bool?,
   requiredStatusChecks: json['required_status_checks'] != null ? ProtectedBranchRequiredStatusCheck.fromJson(json['required_status_checks'] as Map<String, dynamic>) : null,
@@ -20,7 +20,7 @@ factory BranchProtection.fromJson(Map<String, dynamic> json) { return BranchProt
   requiredSignatures: json['required_signatures'] != null ? BranchProtectionRequiredSignatures.fromJson(json['required_signatures'] as Map<String, dynamic>) : null,
   lockBranch: json['lock_branch'] != null ? BranchProtectionLockBranch.fromJson(json['lock_branch'] as Map<String, dynamic>) : null,
   allowForkSyncing: json['allow_fork_syncing'] != null ? BranchProtectionAllowForkSyncing.fromJson(json['allow_fork_syncing'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String? url;
 
@@ -56,7 +56,7 @@ final BranchProtectionLockBranch? lockBranch;
 /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing.
 final BranchProtectionAllowForkSyncing? allowForkSyncing;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': ?url,
   'enabled': ?enabled,
   if (requiredStatusChecks != null) 'required_status_checks': requiredStatusChecks?.toJson(),
@@ -73,9 +73,9 @@ Map<String, dynamic> toJson() { return {
   if (requiredSignatures != null) 'required_signatures': requiredSignatures?.toJson(),
   if (lockBranch != null) 'lock_branch': lockBranch?.toJson(),
   if (allowForkSyncing != null) 'allow_fork_syncing': allowForkSyncing?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url', 'enabled', 'required_status_checks', 'enforce_admins', 'required_pull_request_reviews', 'restrictions', 'required_linear_history', 'allow_force_pushes', 'allow_deletions', 'block_creations', 'required_conversation_resolution', 'name', 'protection_url', 'required_signatures', 'lock_branch', 'allow_fork_syncing'}.contains(key)); } 
-BranchProtection copyWith({String? Function()? url, bool? Function()? enabled, ProtectedBranchRequiredStatusCheck? Function()? requiredStatusChecks, ProtectedBranchAdminEnforced? Function()? enforceAdmins, ProtectedBranchPullRequestReview? Function()? requiredPullRequestReviews, BranchRestrictionPolicy? Function()? restrictions, BranchProtectionRequiredLinearHistory? Function()? requiredLinearHistory, BranchProtectionAllowForcePushes? Function()? allowForcePushes, BranchProtectionAllowDeletions? Function()? allowDeletions, BranchProtectionBlockCreations? Function()? blockCreations, BranchProtectionRequiredConversationResolution? Function()? requiredConversationResolution, String? Function()? name, String? Function()? protectionUrl, BranchProtectionRequiredSignatures? Function()? requiredSignatures, BranchProtectionLockBranch? Function()? lockBranch, BranchProtectionAllowForkSyncing? Function()? allowForkSyncing, }) { return BranchProtection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'url', 'enabled', 'required_status_checks', 'enforce_admins', 'required_pull_request_reviews', 'restrictions', 'required_linear_history', 'allow_force_pushes', 'allow_deletions', 'block_creations', 'required_conversation_resolution', 'name', 'protection_url', 'required_signatures', 'lock_branch', 'allow_fork_syncing'}.contains(key));}
+BranchProtection copyWith({String? Function()? url, bool? Function()? enabled, ProtectedBranchRequiredStatusCheck? Function()? requiredStatusChecks, ProtectedBranchAdminEnforced? Function()? enforceAdmins, ProtectedBranchPullRequestReview? Function()? requiredPullRequestReviews, BranchRestrictionPolicy? Function()? restrictions, BranchProtectionRequiredLinearHistory? Function()? requiredLinearHistory, BranchProtectionAllowForcePushes? Function()? allowForcePushes, BranchProtectionAllowDeletions? Function()? allowDeletions, BranchProtectionBlockCreations? Function()? blockCreations, BranchProtectionRequiredConversationResolution? Function()? requiredConversationResolution, String? Function()? name, String? Function()? protectionUrl, BranchProtectionRequiredSignatures? Function()? requiredSignatures, BranchProtectionLockBranch? Function()? lockBranch, BranchProtectionAllowForkSyncing? Function()? allowForkSyncing, }) {return BranchProtection(
   url: url != null ? url() : this.url,
   enabled: enabled != null ? enabled() : this.enabled,
   requiredStatusChecks: requiredStatusChecks != null ? requiredStatusChecks() : this.requiredStatusChecks,
@@ -92,8 +92,8 @@ BranchProtection copyWith({String? Function()? url, bool? Function()? enabled, P
   requiredSignatures: requiredSignatures != null ? requiredSignatures() : this.requiredSignatures,
   lockBranch: lockBranch != null ? lockBranch() : this.lockBranch,
   allowForkSyncing: allowForkSyncing != null ? allowForkSyncing() : this.allowForkSyncing,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BranchProtection &&
           url == other.url &&
           enabled == other.enabled &&
@@ -110,7 +110,7 @@ BranchProtection copyWith({String? Function()? url, bool? Function()? enabled, P
           protectionUrl == other.protectionUrl &&
           requiredSignatures == other.requiredSignatures &&
           lockBranch == other.lockBranch &&
-          allowForkSyncing == other.allowForkSyncing; } 
-@override int get hashCode { return Object.hash(url, enabled, requiredStatusChecks, enforceAdmins, requiredPullRequestReviews, restrictions, requiredLinearHistory, allowForcePushes, allowDeletions, blockCreations, requiredConversationResolution, name, protectionUrl, requiredSignatures, lockBranch, allowForkSyncing); } 
-@override String toString() { return 'BranchProtection(url: $url, enabled: $enabled, requiredStatusChecks: $requiredStatusChecks, enforceAdmins: $enforceAdmins, requiredPullRequestReviews: $requiredPullRequestReviews, restrictions: $restrictions, requiredLinearHistory: $requiredLinearHistory, allowForcePushes: $allowForcePushes, allowDeletions: $allowDeletions, blockCreations: $blockCreations, requiredConversationResolution: $requiredConversationResolution, name: $name, protectionUrl: $protectionUrl, requiredSignatures: $requiredSignatures, lockBranch: $lockBranch, allowForkSyncing: $allowForkSyncing)'; } 
- }
+          allowForkSyncing == other.allowForkSyncing;}
+@override int get hashCode {return Object.hash(url, enabled, requiredStatusChecks, enforceAdmins, requiredPullRequestReviews, restrictions, requiredLinearHistory, allowForcePushes, allowDeletions, blockCreations, requiredConversationResolution, name, protectionUrl, requiredSignatures, lockBranch, allowForkSyncing);}
+@override String toString() {return 'BranchProtection(url: $url, enabled: $enabled, requiredStatusChecks: $requiredStatusChecks, enforceAdmins: $enforceAdmins, requiredPullRequestReviews: $requiredPullRequestReviews, restrictions: $restrictions, requiredLinearHistory: $requiredLinearHistory, allowForcePushes: $allowForcePushes, allowDeletions: $allowDeletions, blockCreations: $blockCreations, requiredConversationResolution: $requiredConversationResolution, name: $name, protectionUrl: $protectionUrl, requiredSignatures: $requiredSignatures, lockBranch: $lockBranch, allowForkSyncing: $allowForkSyncing)';}
+}

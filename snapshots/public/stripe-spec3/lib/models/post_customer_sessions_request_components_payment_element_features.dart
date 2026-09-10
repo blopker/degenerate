@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodAllowRedisplayFilters {const PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodAllowRedisplayFilters._(this.value);
 
-factory PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodAllowRedisplayFilters.fromJson(String json) { return switch (json) {
+factory PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodAllowRedisplayFilters.fromJson(String json) {return switch (json) {
   'always' => always,
   'limited' => limited,
   'unspecified' => unspecified,
   _ => PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodAllowRedisplayFilters._(json),
-}; }
+};}
 
 static const PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodAllowRedisplayFilters always = PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodAllowRedisplayFilters._('always');
 
@@ -19,21 +19,21 @@ static const List<PostCustomerSessionsRequestComponentsPaymentElementFeaturesPay
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodAllowRedisplayFilters && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodAllowRedisplayFilters($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodAllowRedisplayFilters && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodAllowRedisplayFilters($value)';}
+}
 @immutable final class PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRedisplay {const PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRedisplay._(this.value);
 
-factory PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRedisplay.fromJson(String json) { return switch (json) {
+factory PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRedisplay.fromJson(String json) {return switch (json) {
   'disabled' => disabled,
   'enabled' => enabled,
   _ => PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRedisplay._(json),
-}; }
+};}
 
 static const PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRedisplay disabled = PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRedisplay._('disabled');
 
@@ -43,21 +43,21 @@ static const List<PostCustomerSessionsRequestComponentsPaymentElementFeaturesPay
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRedisplay && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRedisplay($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRedisplay && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRedisplay($value)';}
+}
 @immutable final class PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRemove {const PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRemove._(this.value);
 
-factory PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRemove.fromJson(String json) { return switch (json) {
+factory PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRemove.fromJson(String json) {return switch (json) {
   'disabled' => disabled,
   'enabled' => enabled,
   _ => PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRemove._(json),
-}; }
+};}
 
 static const PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRemove disabled = PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRemove._('disabled');
 
@@ -67,21 +67,21 @@ static const List<PostCustomerSessionsRequestComponentsPaymentElementFeaturesPay
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRemove && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRemove($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRemove && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRemove($value)';}
+}
 @immutable final class PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSave {const PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSave._(this.value);
 
-factory PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSave.fromJson(String json) { return switch (json) {
+factory PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSave.fromJson(String json) {return switch (json) {
   'disabled' => disabled,
   'enabled' => enabled,
   _ => PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSave._(json),
-}; }
+};}
 
 static const PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSave disabled = PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSave._('disabled');
 
@@ -91,21 +91,21 @@ static const List<PostCustomerSessionsRequestComponentsPaymentElementFeaturesPay
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSave && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSave($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSave && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSave($value)';}
+}
 @immutable final class PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSaveUsage {const PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSaveUsage._(this.value);
 
-factory PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSaveUsage.fromJson(String json) { return switch (json) {
+factory PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSaveUsage.fromJson(String json) {return switch (json) {
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSaveUsage._(json),
-}; }
+};}
 
 static const PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSaveUsage offSession = PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSaveUsage._('off_session');
 
@@ -115,24 +115,24 @@ static const List<PostCustomerSessionsRequestComponentsPaymentElementFeaturesPay
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSaveUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSaveUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSaveUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSaveUsage($value)';}
+}
 @immutable final class PostCustomerSessionsRequestComponentsPaymentElementFeatures {const PostCustomerSessionsRequestComponentsPaymentElementFeatures({this.paymentMethodAllowRedisplayFilters, this.paymentMethodRedisplay, this.paymentMethodRedisplayLimit, this.paymentMethodRemove, this.paymentMethodSave, this.paymentMethodSaveUsage, });
 
-factory PostCustomerSessionsRequestComponentsPaymentElementFeatures.fromJson(Map<String, dynamic> json) { return PostCustomerSessionsRequestComponentsPaymentElementFeatures(
+factory PostCustomerSessionsRequestComponentsPaymentElementFeatures.fromJson(Map<String, dynamic> json) {return PostCustomerSessionsRequestComponentsPaymentElementFeatures(
   paymentMethodAllowRedisplayFilters: (json['payment_method_allow_redisplay_filters'] as List<dynamic>?)?.map((e) => PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodAllowRedisplayFilters.fromJson(e as String)).toList(),
   paymentMethodRedisplay: json['payment_method_redisplay'] != null ? PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRedisplay.fromJson(json['payment_method_redisplay'] as String) : null,
   paymentMethodRedisplayLimit: json['payment_method_redisplay_limit'] != null ? (json['payment_method_redisplay_limit'] as num).toInt() : null,
   paymentMethodRemove: json['payment_method_remove'] != null ? PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRemove.fromJson(json['payment_method_remove'] as String) : null,
   paymentMethodSave: json['payment_method_save'] != null ? PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSave.fromJson(json['payment_method_save'] as String) : null,
   paymentMethodSaveUsage: json['payment_method_save_usage'] != null ? PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSaveUsage.fromJson(json['payment_method_save_usage'] as String) : null,
-); }
+);}
 
 final List<PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodAllowRedisplayFilters>? paymentMethodAllowRedisplayFilters;
 
@@ -146,31 +146,31 @@ final PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSa
 
 final PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSaveUsage? paymentMethodSaveUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (paymentMethodAllowRedisplayFilters != null) 'payment_method_allow_redisplay_filters': paymentMethodAllowRedisplayFilters?.map((e) => e.toJson()).toList(),
   if (paymentMethodRedisplay != null) 'payment_method_redisplay': paymentMethodRedisplay?.toJson(),
   'payment_method_redisplay_limit': ?paymentMethodRedisplayLimit,
   if (paymentMethodRemove != null) 'payment_method_remove': paymentMethodRemove?.toJson(),
   if (paymentMethodSave != null) 'payment_method_save': paymentMethodSave?.toJson(),
   if (paymentMethodSaveUsage != null) 'payment_method_save_usage': paymentMethodSaveUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payment_method_allow_redisplay_filters', 'payment_method_redisplay', 'payment_method_redisplay_limit', 'payment_method_remove', 'payment_method_save', 'payment_method_save_usage'}.contains(key)); } 
-PostCustomerSessionsRequestComponentsPaymentElementFeatures copyWith({List<PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodAllowRedisplayFilters>? Function()? paymentMethodAllowRedisplayFilters, PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRedisplay? Function()? paymentMethodRedisplay, int? Function()? paymentMethodRedisplayLimit, PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRemove? Function()? paymentMethodRemove, PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSave? Function()? paymentMethodSave, PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSaveUsage? Function()? paymentMethodSaveUsage, }) { return PostCustomerSessionsRequestComponentsPaymentElementFeatures(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'payment_method_allow_redisplay_filters', 'payment_method_redisplay', 'payment_method_redisplay_limit', 'payment_method_remove', 'payment_method_save', 'payment_method_save_usage'}.contains(key));}
+PostCustomerSessionsRequestComponentsPaymentElementFeatures copyWith({List<PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodAllowRedisplayFilters>? Function()? paymentMethodAllowRedisplayFilters, PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRedisplay? Function()? paymentMethodRedisplay, int? Function()? paymentMethodRedisplayLimit, PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodRemove? Function()? paymentMethodRemove, PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSave? Function()? paymentMethodSave, PostCustomerSessionsRequestComponentsPaymentElementFeaturesPaymentMethodSaveUsage? Function()? paymentMethodSaveUsage, }) {return PostCustomerSessionsRequestComponentsPaymentElementFeatures(
   paymentMethodAllowRedisplayFilters: paymentMethodAllowRedisplayFilters != null ? paymentMethodAllowRedisplayFilters() : this.paymentMethodAllowRedisplayFilters,
   paymentMethodRedisplay: paymentMethodRedisplay != null ? paymentMethodRedisplay() : this.paymentMethodRedisplay,
   paymentMethodRedisplayLimit: paymentMethodRedisplayLimit != null ? paymentMethodRedisplayLimit() : this.paymentMethodRedisplayLimit,
   paymentMethodRemove: paymentMethodRemove != null ? paymentMethodRemove() : this.paymentMethodRemove,
   paymentMethodSave: paymentMethodSave != null ? paymentMethodSave() : this.paymentMethodSave,
   paymentMethodSaveUsage: paymentMethodSaveUsage != null ? paymentMethodSaveUsage() : this.paymentMethodSaveUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCustomerSessionsRequestComponentsPaymentElementFeatures &&
           listEquals(paymentMethodAllowRedisplayFilters, other.paymentMethodAllowRedisplayFilters) &&
           paymentMethodRedisplay == other.paymentMethodRedisplay &&
           paymentMethodRedisplayLimit == other.paymentMethodRedisplayLimit &&
           paymentMethodRemove == other.paymentMethodRemove &&
           paymentMethodSave == other.paymentMethodSave &&
-          paymentMethodSaveUsage == other.paymentMethodSaveUsage; } 
-@override int get hashCode { return Object.hash(Object.hashAll(paymentMethodAllowRedisplayFilters ?? const []), paymentMethodRedisplay, paymentMethodRedisplayLimit, paymentMethodRemove, paymentMethodSave, paymentMethodSaveUsage); } 
-@override String toString() { return 'PostCustomerSessionsRequestComponentsPaymentElementFeatures(paymentMethodAllowRedisplayFilters: $paymentMethodAllowRedisplayFilters, paymentMethodRedisplay: $paymentMethodRedisplay, paymentMethodRedisplayLimit: $paymentMethodRedisplayLimit, paymentMethodRemove: $paymentMethodRemove, paymentMethodSave: $paymentMethodSave, paymentMethodSaveUsage: $paymentMethodSaveUsage)'; } 
- }
+          paymentMethodSaveUsage == other.paymentMethodSaveUsage;}
+@override int get hashCode {return Object.hash(Object.hashAll(paymentMethodAllowRedisplayFilters ?? const []), paymentMethodRedisplay, paymentMethodRedisplayLimit, paymentMethodRemove, paymentMethodSave, paymentMethodSaveUsage);}
+@override String toString() {return 'PostCustomerSessionsRequestComponentsPaymentElementFeatures(paymentMethodAllowRedisplayFilters: $paymentMethodAllowRedisplayFilters, paymentMethodRedisplay: $paymentMethodRedisplay, paymentMethodRedisplayLimit: $paymentMethodRedisplayLimit, paymentMethodRemove: $paymentMethodRemove, paymentMethodSave: $paymentMethodSave, paymentMethodSaveUsage: $paymentMethodSaveUsage)';}
+}

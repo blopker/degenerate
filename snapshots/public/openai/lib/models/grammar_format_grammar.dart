@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The syntax of the grammar definition. One of `lark` or `regex`.
 @immutable final class GrammarFormatGrammarSyntax {const GrammarFormatGrammarSyntax._(this.value);
 
-factory GrammarFormatGrammarSyntax.fromJson(String json) { return switch (json) {
+factory GrammarFormatGrammarSyntax.fromJson(String json) {return switch (json) {
   'lark' => lark,
   'regex' => regex,
   _ => GrammarFormatGrammarSyntax._(json),
-}; }
+};}
 
 static const GrammarFormatGrammarSyntax lark = GrammarFormatGrammarSyntax._('lark');
 
@@ -17,21 +17,21 @@ static const List<GrammarFormatGrammarSyntax> values = [lark, regex];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GrammarFormatGrammarSyntax && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GrammarFormatGrammarSyntax($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GrammarFormatGrammarSyntax && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GrammarFormatGrammarSyntax($value)';}
+}
 /// Your chosen grammar.
 @immutable final class GrammarFormatGrammar {const GrammarFormatGrammar({required this.definition, required this.syntax, });
 
-factory GrammarFormatGrammar.fromJson(Map<String, dynamic> json) { return GrammarFormatGrammar(
+factory GrammarFormatGrammar.fromJson(Map<String, dynamic> json) {return GrammarFormatGrammar(
   definition: json['definition'] as String,
   syntax: GrammarFormatGrammarSyntax.fromJson(json['syntax'] as String),
-); }
+);}
 
 /// The grammar definition.
 final String definition;
@@ -39,20 +39,20 @@ final String definition;
 /// The syntax of the grammar definition. One of `lark` or `regex`.
 final GrammarFormatGrammarSyntax syntax;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'definition': definition,
   'syntax': syntax.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('definition') && json['definition'] is String &&
-      json.containsKey('syntax'); } 
-GrammarFormatGrammar copyWith({String? definition, GrammarFormatGrammarSyntax? syntax, }) { return GrammarFormatGrammar(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('definition') && json['definition'] is String &&
+      json.containsKey('syntax');}
+GrammarFormatGrammar copyWith({String? definition, GrammarFormatGrammarSyntax? syntax, }) {return GrammarFormatGrammar(
   definition: definition ?? this.definition,
   syntax: syntax ?? this.syntax,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GrammarFormatGrammar &&
           definition == other.definition &&
-          syntax == other.syntax; } 
-@override int get hashCode { return Object.hash(definition, syntax); } 
-@override String toString() { return 'GrammarFormatGrammar(definition: $definition, syntax: $syntax)'; } 
- }
+          syntax == other.syntax;}
+@override int get hashCode {return Object.hash(definition, syntax);}
+@override String toString() {return 'GrammarFormatGrammar(definition: $definition, syntax: $syntax)';}
+}

@@ -3,7 +3,7 @@
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_files_request_file_link_data.dart';/// The [purpose](https://docs.stripe.com/file-upload#uploading-a-file) of the uploaded file.
 @immutable final class PostFilesRequestPurpose {const PostFilesRequestPurpose._(this.value);
 
-factory PostFilesRequestPurpose.fromJson(String json) { return switch (json) {
+factory PostFilesRequestPurpose.fromJson(String json) {return switch (json) {
   'account_requirement' => accountRequirement,
   'additional_verification' => additionalVerification,
   'business_icon' => businessIcon,
@@ -20,7 +20,7 @@ factory PostFilesRequestPurpose.fromJson(String json) { return switch (json) {
   'terminal_wifi_certificate' => terminalWifiCertificate,
   'terminal_wifi_private_key' => terminalWifiPrivateKey,
   _ => PostFilesRequestPurpose._(json),
-}; }
+};}
 
 static const PostFilesRequestPurpose accountRequirement = PostFilesRequestPurpose._('account_requirement');
 
@@ -56,22 +56,22 @@ static const List<PostFilesRequestPurpose> values = [accountRequirement, additio
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostFilesRequestPurpose && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostFilesRequestPurpose($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostFilesRequestPurpose && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostFilesRequestPurpose($value)';}
+}
 @immutable final class PostFilesRequest {const PostFilesRequest({required this.file, required this.purpose, this.expand, this.fileLinkData, });
 
-factory PostFilesRequest.fromJson(Map<String, dynamic> json) { return PostFilesRequest(
+factory PostFilesRequest.fromJson(Map<String, dynamic> json) {return PostFilesRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   file: base64Decode(json['file'] as String),
   fileLinkData: json['file_link_data'] != null ? PostFilesRequestFileLinkData.fromJson(json['file_link_data'] as Map<String, dynamic>) : null,
   purpose: PostFilesRequestPurpose.fromJson(json['purpose'] as String),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -85,26 +85,26 @@ final PostFilesRequestFileLinkData? fileLinkData;
 /// The [purpose](https://docs.stripe.com/file-upload#uploading-a-file) of the uploaded file.
 final PostFilesRequestPurpose purpose;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'file': base64Encode(file),
   if (fileLinkData != null) 'file_link_data': fileLinkData?.toJson(),
   'purpose': purpose.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
-      json.containsKey('purpose'); } 
-PostFilesRequest copyWith({List<String>? Function()? expand, Uint8List? file, PostFilesRequestFileLinkData? Function()? fileLinkData, PostFilesRequestPurpose? purpose, }) { return PostFilesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file') &&
+      json.containsKey('purpose');}
+PostFilesRequest copyWith({List<String>? Function()? expand, Uint8List? file, PostFilesRequestFileLinkData? Function()? fileLinkData, PostFilesRequestPurpose? purpose, }) {return PostFilesRequest(
   expand: expand != null ? expand() : this.expand,
   file: file ?? this.file,
   fileLinkData: fileLinkData != null ? fileLinkData() : this.fileLinkData,
   purpose: purpose ?? this.purpose,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostFilesRequest &&
           listEquals(expand, other.expand) &&
           listEquals(file, other.file) &&
           fileLinkData == other.fileLinkData &&
-          purpose == other.purpose; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), Object.hashAll(file), fileLinkData, purpose); } 
-@override String toString() { return 'PostFilesRequest(expand: $expand, file: $file, fileLinkData: $fileLinkData, purpose: $purpose)'; } 
- }
+          purpose == other.purpose;}
+@override int get hashCode {return Object.hash(Object.hashAll(expand ?? const []), Object.hashAll(file), fileLinkData, purpose);}
+@override String toString() {return 'PostFilesRequest(expand: $expand, file: $file, fileLinkData: $fileLinkData, purpose: $purpose)';}
+}

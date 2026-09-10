@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'smartshield_address.dart';import 'smartshield_check_regions2.dart';import 'smartshield_consecutive_fails.dart';import 'smartshield_consecutive_successes.dart';import 'smartshield_description.dart';import 'smartshield_http_config.dart';import 'smartshield_interval.dart';import 'smartshield_name.dart';import 'smartshield_retries.dart';import 'smartshield_suspended.dart';import 'smartshield_tcp_config.dart';import 'smartshield_timeout.dart';import 'smartshield_type.dart';@immutable final class SmartshieldQueryHealthcheck {const SmartshieldQueryHealthcheck({required this.address, required this.name, this.checkRegions = const Omittable.absent(), this.consecutiveFails, this.consecutiveSuccesses, this.description, this.httpConfig = const Omittable.absent(), this.interval, this.retries, this.suspended, this.tcpConfig = const Omittable.absent(), this.timeout, this.type, });
 
-factory SmartshieldQueryHealthcheck.fromJson(Map<String, dynamic> json) { return SmartshieldQueryHealthcheck(
+factory SmartshieldQueryHealthcheck.fromJson(Map<String, dynamic> json) {return SmartshieldQueryHealthcheck(
   address: SmartshieldAddress.fromJson(json['address'] as String),
   checkRegions: json.containsKey('check_regions') ? Omittable((json['check_regions'] as List<dynamic>?)?.map((e) => SmartshieldCheckRegions2.fromJson(e as String)).toList()) : const Omittable.absent(),
   consecutiveFails: json['consecutive_fails'] != null ? SmartshieldConsecutiveFails.fromJson(json['consecutive_fails'] as num) : null,
@@ -16,7 +16,7 @@ factory SmartshieldQueryHealthcheck.fromJson(Map<String, dynamic> json) { return
   tcpConfig: json.containsKey('tcp_config') ? Omittable(json['tcp_config'] != null ? SmartshieldTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   timeout: json['timeout'] != null ? SmartshieldTimeout.fromJson(json['timeout'] as num) : null,
   type: json['type'] != null ? SmartshieldType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The hostname or IP address of the origin server to run health checks on.
 final SmartshieldAddress address;
@@ -51,7 +51,7 @@ final SmartshieldTimeout? timeout;
 
 final SmartshieldType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
   if (checkRegions.isPresent) 'check_regions': checkRegions.value?.map((e) => e.toJson()).toList(),
   if (consecutiveFails != null) 'consecutive_fails': consecutiveFails?.toJson(),
@@ -65,10 +65,10 @@ Map<String, dynamic> toJson() { return {
   if (tcpConfig.isPresent) 'tcp_config': tcpConfig.value?.toJson(),
   if (timeout != null) 'timeout': timeout?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
-      json.containsKey('name'); } 
-SmartshieldQueryHealthcheck copyWith({SmartshieldAddress? address, Omittable<List<SmartshieldCheckRegions2>?>? checkRegions, SmartshieldConsecutiveFails? Function()? consecutiveFails, SmartshieldConsecutiveSuccesses? Function()? consecutiveSuccesses, SmartshieldDescription? Function()? description, Omittable<SmartshieldHttpConfig?>? httpConfig, SmartshieldInterval? Function()? interval, SmartshieldName? name, SmartshieldRetries? Function()? retries, SmartshieldSuspended? Function()? suspended, Omittable<SmartshieldTcpConfig?>? tcpConfig, SmartshieldTimeout? Function()? timeout, SmartshieldType? Function()? type, }) { return SmartshieldQueryHealthcheck(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address') &&
+      json.containsKey('name');}
+SmartshieldQueryHealthcheck copyWith({SmartshieldAddress? address, Omittable<List<SmartshieldCheckRegions2>?>? checkRegions, SmartshieldConsecutiveFails? Function()? consecutiveFails, SmartshieldConsecutiveSuccesses? Function()? consecutiveSuccesses, SmartshieldDescription? Function()? description, Omittable<SmartshieldHttpConfig?>? httpConfig, SmartshieldInterval? Function()? interval, SmartshieldName? name, SmartshieldRetries? Function()? retries, SmartshieldSuspended? Function()? suspended, Omittable<SmartshieldTcpConfig?>? tcpConfig, SmartshieldTimeout? Function()? timeout, SmartshieldType? Function()? type, }) {return SmartshieldQueryHealthcheck(
   address: address ?? this.address,
   checkRegions: checkRegions ?? this.checkRegions,
   consecutiveFails: consecutiveFails != null ? consecutiveFails() : this.consecutiveFails,
@@ -82,8 +82,8 @@ SmartshieldQueryHealthcheck copyWith({SmartshieldAddress? address, Omittable<Lis
   tcpConfig: tcpConfig ?? this.tcpConfig,
   timeout: timeout != null ? timeout() : this.timeout,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SmartshieldQueryHealthcheck &&
           address == other.address &&
           checkRegions.isPresent == other.checkRegions.isPresent &&
@@ -98,7 +98,7 @@ SmartshieldQueryHealthcheck copyWith({SmartshieldAddress? address, Omittable<Lis
           suspended == other.suspended &&
           tcpConfig == other.tcpConfig &&
           timeout == other.timeout &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(address, Object.hashAll(checkRegions.value ?? const []), consecutiveFails, consecutiveSuccesses, description, httpConfig, interval, name, retries, suspended, tcpConfig, timeout, type); } 
-@override String toString() { return 'SmartshieldQueryHealthcheck(address: $address, checkRegions: $checkRegions, consecutiveFails: $consecutiveFails, consecutiveSuccesses: $consecutiveSuccesses, description: $description, httpConfig: $httpConfig, interval: $interval, name: $name, retries: $retries, suspended: $suspended, tcpConfig: $tcpConfig, timeout: $timeout, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(address, Object.hashAll(checkRegions.value ?? const []), consecutiveFails, consecutiveSuccesses, description, httpConfig, interval, name, retries, suspended, tcpConfig, timeout, type);}
+@override String toString() {return 'SmartshieldQueryHealthcheck(address: $address, checkRegions: $checkRegions, consecutiveFails: $consecutiveFails, consecutiveSuccesses: $consecutiveSuccesses, description: $description, httpConfig: $httpConfig, interval: $interval, name: $name, retries: $retries, suspended: $suspended, tcpConfig: $tcpConfig, timeout: $timeout, type: $type)';}
+}

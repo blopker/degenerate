@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_network_token_device.dart';import 'issuing_network_token_mastercard.dart';import 'issuing_network_token_visa.dart';import 'issuing_network_token_wallet_provider.dart';/// The network that the token is associated with. An additional hash is included with a name matching this value, containing tokenization data specific to the card network.
 @immutable final class IssuingNetworkTokenNetworkDataType {const IssuingNetworkTokenNetworkDataType._(this.value);
 
-factory IssuingNetworkTokenNetworkDataType.fromJson(String json) { return switch (json) {
+factory IssuingNetworkTokenNetworkDataType.fromJson(String json) {return switch (json) {
   'mastercard' => mastercard,
   'visa' => visa,
   _ => IssuingNetworkTokenNetworkDataType._(json),
-}; }
+};}
 
 static const IssuingNetworkTokenNetworkDataType mastercard = IssuingNetworkTokenNetworkDataType._('mastercard');
 
@@ -17,24 +17,24 @@ static const List<IssuingNetworkTokenNetworkDataType> values = [mastercard, visa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingNetworkTokenNetworkDataType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingNetworkTokenNetworkDataType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingNetworkTokenNetworkDataType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingNetworkTokenNetworkDataType($value)';}
+}
 /// 
 @immutable final class IssuingNetworkTokenNetworkData {const IssuingNetworkTokenNetworkData({required this.type, this.device, this.mastercard, this.visa, this.walletProvider, });
 
-factory IssuingNetworkTokenNetworkData.fromJson(Map<String, dynamic> json) { return IssuingNetworkTokenNetworkData(
+factory IssuingNetworkTokenNetworkData.fromJson(Map<String, dynamic> json) {return IssuingNetworkTokenNetworkData(
   device: json['device'] != null ? IssuingNetworkTokenDevice.fromJson(json['device'] as Map<String, dynamic>) : null,
   mastercard: json['mastercard'] != null ? IssuingNetworkTokenMastercard.fromJson(json['mastercard'] as Map<String, dynamic>) : null,
   type: IssuingNetworkTokenNetworkDataType.fromJson(json['type'] as String),
   visa: json['visa'] != null ? IssuingNetworkTokenVisa.fromJson(json['visa'] as Map<String, dynamic>) : null,
   walletProvider: json['wallet_provider'] != null ? IssuingNetworkTokenWalletProvider.fromJson(json['wallet_provider'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final IssuingNetworkTokenDevice? device;
 
@@ -47,28 +47,28 @@ final IssuingNetworkTokenVisa? visa;
 
 final IssuingNetworkTokenWalletProvider? walletProvider;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (device != null) 'device': device?.toJson(),
   if (mastercard != null) 'mastercard': mastercard?.toJson(),
   'type': type.toJson(),
   if (visa != null) 'visa': visa?.toJson(),
   if (walletProvider != null) 'wallet_provider': walletProvider?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-IssuingNetworkTokenNetworkData copyWith({IssuingNetworkTokenDevice? Function()? device, IssuingNetworkTokenMastercard? Function()? mastercard, IssuingNetworkTokenNetworkDataType? type, IssuingNetworkTokenVisa? Function()? visa, IssuingNetworkTokenWalletProvider? Function()? walletProvider, }) { return IssuingNetworkTokenNetworkData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+IssuingNetworkTokenNetworkData copyWith({IssuingNetworkTokenDevice? Function()? device, IssuingNetworkTokenMastercard? Function()? mastercard, IssuingNetworkTokenNetworkDataType? type, IssuingNetworkTokenVisa? Function()? visa, IssuingNetworkTokenWalletProvider? Function()? walletProvider, }) {return IssuingNetworkTokenNetworkData(
   device: device != null ? device() : this.device,
   mastercard: mastercard != null ? mastercard() : this.mastercard,
   type: type ?? this.type,
   visa: visa != null ? visa() : this.visa,
   walletProvider: walletProvider != null ? walletProvider() : this.walletProvider,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingNetworkTokenNetworkData &&
           device == other.device &&
           mastercard == other.mastercard &&
           type == other.type &&
           visa == other.visa &&
-          walletProvider == other.walletProvider; } 
-@override int get hashCode { return Object.hash(device, mastercard, type, visa, walletProvider); } 
-@override String toString() { return 'IssuingNetworkTokenNetworkData(device: $device, mastercard: $mastercard, type: $type, visa: $visa, walletProvider: $walletProvider)'; } 
- }
+          walletProvider == other.walletProvider;}
+@override int get hashCode {return Object.hash(device, mastercard, type, visa, walletProvider);}
+@override String toString() {return 'IssuingNetworkTokenNetworkData(device: $device, mastercard: $mastercard, type: $type, visa: $visa, walletProvider: $walletProvider)';}
+}

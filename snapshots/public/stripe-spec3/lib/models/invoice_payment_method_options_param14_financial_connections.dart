@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param14_financial_connections_filters.dart';@immutable final class InvoicePaymentMethodOptionsParam14FinancialConnectionsPermissions {const InvoicePaymentMethodOptionsParam14FinancialConnectionsPermissions._(this.value);
 
-factory InvoicePaymentMethodOptionsParam14FinancialConnectionsPermissions.fromJson(String json) { return switch (json) {
+factory InvoicePaymentMethodOptionsParam14FinancialConnectionsPermissions.fromJson(String json) {return switch (json) {
   'balances' => balances,
   'ownership' => ownership,
   'payment_method' => paymentMethod,
   'transactions' => transactions,
   _ => InvoicePaymentMethodOptionsParam14FinancialConnectionsPermissions._(json),
-}; }
+};}
 
 static const InvoicePaymentMethodOptionsParam14FinancialConnectionsPermissions balances = InvoicePaymentMethodOptionsParam14FinancialConnectionsPermissions._('balances');
 
@@ -22,22 +22,22 @@ static const List<InvoicePaymentMethodOptionsParam14FinancialConnectionsPermissi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoicePaymentMethodOptionsParam14FinancialConnectionsPermissions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam14FinancialConnectionsPermissions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoicePaymentMethodOptionsParam14FinancialConnectionsPermissions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoicePaymentMethodOptionsParam14FinancialConnectionsPermissions($value)';}
+}
 @immutable final class InvoicePaymentMethodOptionsParam14FinancialConnectionsPrefetch {const InvoicePaymentMethodOptionsParam14FinancialConnectionsPrefetch._(this.value);
 
-factory InvoicePaymentMethodOptionsParam14FinancialConnectionsPrefetch.fromJson(String json) { return switch (json) {
+factory InvoicePaymentMethodOptionsParam14FinancialConnectionsPrefetch.fromJson(String json) {return switch (json) {
   'balances' => balances,
   'ownership' => ownership,
   'transactions' => transactions,
   _ => InvoicePaymentMethodOptionsParam14FinancialConnectionsPrefetch._(json),
-}; }
+};}
 
 static const InvoicePaymentMethodOptionsParam14FinancialConnectionsPrefetch balances = InvoicePaymentMethodOptionsParam14FinancialConnectionsPrefetch._('balances');
 
@@ -49,21 +49,21 @@ static const List<InvoicePaymentMethodOptionsParam14FinancialConnectionsPrefetch
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoicePaymentMethodOptionsParam14FinancialConnectionsPrefetch && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam14FinancialConnectionsPrefetch($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoicePaymentMethodOptionsParam14FinancialConnectionsPrefetch && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoicePaymentMethodOptionsParam14FinancialConnectionsPrefetch($value)';}
+}
 @immutable final class InvoicePaymentMethodOptionsParam14FinancialConnections {const InvoicePaymentMethodOptionsParam14FinancialConnections({this.filters, this.permissions, this.prefetch, });
 
-factory InvoicePaymentMethodOptionsParam14FinancialConnections.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam14FinancialConnections(
+factory InvoicePaymentMethodOptionsParam14FinancialConnections.fromJson(Map<String, dynamic> json) {return InvoicePaymentMethodOptionsParam14FinancialConnections(
   filters: json['filters'] != null ? InvoicePaymentMethodOptionsParam14FinancialConnectionsFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
   permissions: (json['permissions'] as List<dynamic>?)?.map((e) => InvoicePaymentMethodOptionsParam14FinancialConnectionsPermissions.fromJson(e as String)).toList(),
   prefetch: (json['prefetch'] as List<dynamic>?)?.map((e) => InvoicePaymentMethodOptionsParam14FinancialConnectionsPrefetch.fromJson(e as String)).toList(),
-); }
+);}
 
 final InvoicePaymentMethodOptionsParam14FinancialConnectionsFilters? filters;
 
@@ -71,22 +71,22 @@ final List<InvoicePaymentMethodOptionsParam14FinancialConnectionsPermissions>? p
 
 final List<InvoicePaymentMethodOptionsParam14FinancialConnectionsPrefetch>? prefetch;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (filters != null) 'filters': filters?.toJson(),
   if (permissions != null) 'permissions': permissions?.map((e) => e.toJson()).toList(),
   if (prefetch != null) 'prefetch': prefetch?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filters', 'permissions', 'prefetch'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam14FinancialConnections copyWith({InvoicePaymentMethodOptionsParam14FinancialConnectionsFilters? Function()? filters, List<InvoicePaymentMethodOptionsParam14FinancialConnectionsPermissions>? Function()? permissions, List<InvoicePaymentMethodOptionsParam14FinancialConnectionsPrefetch>? Function()? prefetch, }) { return InvoicePaymentMethodOptionsParam14FinancialConnections(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'filters', 'permissions', 'prefetch'}.contains(key));}
+InvoicePaymentMethodOptionsParam14FinancialConnections copyWith({InvoicePaymentMethodOptionsParam14FinancialConnectionsFilters? Function()? filters, List<InvoicePaymentMethodOptionsParam14FinancialConnectionsPermissions>? Function()? permissions, List<InvoicePaymentMethodOptionsParam14FinancialConnectionsPrefetch>? Function()? prefetch, }) {return InvoicePaymentMethodOptionsParam14FinancialConnections(
   filters: filters != null ? filters() : this.filters,
   permissions: permissions != null ? permissions() : this.permissions,
   prefetch: prefetch != null ? prefetch() : this.prefetch,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InvoicePaymentMethodOptionsParam14FinancialConnections &&
           filters == other.filters &&
           listEquals(permissions, other.permissions) &&
-          listEquals(prefetch, other.prefetch); } 
-@override int get hashCode { return Object.hash(filters, Object.hashAll(permissions ?? const []), Object.hashAll(prefetch ?? const [])); } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam14FinancialConnections(filters: $filters, permissions: $permissions, prefetch: $prefetch)'; } 
- }
+          listEquals(prefetch, other.prefetch);}
+@override int get hashCode {return Object.hash(filters, Object.hashAll(permissions ?? const []), Object.hashAll(prefetch ?? const []));}
+@override String toString() {return 'InvoicePaymentMethodOptionsParam14FinancialConnections(filters: $filters, permissions: $permissions, prefetch: $prefetch)';}
+}

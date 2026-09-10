@@ -11,7 +11,7 @@ final class InvitesApi with ApiExecutor {const InvitesApi(this.apiConfig);
 /// Returns a list of invites in the organization.
 ///
 /// `GET /organization/invites`
-Future<ApiResult<InviteListResponse, Never>> listInvites({int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<InviteListResponse, Never>> listInvites({int? limit, String? after, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -38,11 +38,11 @@ final json = jsonDecode(response.body);
 return InviteListResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create an invite for a user to the organization. The invite must be accepted by the user before they have access to the organization.
 ///
 /// `POST /organization/invites`
-Future<ApiResult<Invite, Never>> inviteUser({required InviteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invite, Never>> inviteUser({required InviteRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -60,11 +60,11 @@ final json = jsonDecode(response.body);
 return Invite.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Retrieves an invite.
 ///
 /// `GET /organization/invites/{invite_id}`
-Future<ApiResult<Invite, Never>> retrieveInvite({required String inviteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invite, Never>> retrieveInvite({required String inviteId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -80,11 +80,11 @@ final json = jsonDecode(response.body);
 return Invite.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete an invite. If the invite has already been accepted, it cannot be deleted.
 ///
 /// `DELETE /organization/invites/{invite_id}`
-Future<ApiResult<InviteDeleteResponse, Never>> deleteInvite({required String inviteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InviteDeleteResponse, Never>> deleteInvite({required String inviteId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -100,5 +100,5 @@ final json = jsonDecode(response.body);
 return InviteDeleteResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

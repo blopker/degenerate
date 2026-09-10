@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages {const WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages({required this.content, required this.role, });
 
-factory WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages(
+factory WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages(
   content: json['content'] as String,
   role: json['role'],
-); }
+);}
 
 /// The content of the message as a string.
 final String content;
@@ -13,20 +13,20 @@ final String content;
 /// The role of the message sender must alternate between 'user' and 'assistant'.
 final dynamic role;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content,
   'role': role,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String &&
-      json.containsKey('role'); } 
-WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages copyWith({String? content, dynamic Function()? role, }) { return WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') && json['content'] is String &&
+      json.containsKey('role');}
+WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages copyWith({String? content, dynamic Function()? role, }) {return WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages(
   content: content ?? this.content,
   role: role != null ? role() : this.role,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages &&
           content == other.content &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(content, role); } 
-@override String toString() { return 'WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages(content: $content, role: $role)'; } 
- }
+          role == other.role;}
+@override int get hashCode {return Object.hash(content, role);}
+@override String toString() {return 'WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages(content: $content, role: $role)';}
+}

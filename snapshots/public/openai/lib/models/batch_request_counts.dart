@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The request counts for different statuses within the batch.
 @immutable final class BatchRequestCounts {const BatchRequestCounts({required this.total, required this.completed, required this.failed, });
 
-factory BatchRequestCounts.fromJson(Map<String, dynamic> json) { return BatchRequestCounts(
+factory BatchRequestCounts.fromJson(Map<String, dynamic> json) {return BatchRequestCounts(
   total: (json['total'] as num).toInt(),
   completed: (json['completed'] as num).toInt(),
   failed: (json['failed'] as num).toInt(),
-); }
+);}
 
 /// Total number of requests in the batch.
 final int total;
@@ -18,24 +18,24 @@ final int completed;
 /// Number of requests that have failed.
 final int failed;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total': total,
   'completed': completed,
   'failed': failed,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total') && json['total'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total') && json['total'] is num &&
       json.containsKey('completed') && json['completed'] is num &&
-      json.containsKey('failed') && json['failed'] is num; } 
-BatchRequestCounts copyWith({int? total, int? completed, int? failed, }) { return BatchRequestCounts(
+      json.containsKey('failed') && json['failed'] is num;}
+BatchRequestCounts copyWith({int? total, int? completed, int? failed, }) {return BatchRequestCounts(
   total: total ?? this.total,
   completed: completed ?? this.completed,
   failed: failed ?? this.failed,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BatchRequestCounts &&
           total == other.total &&
           completed == other.completed &&
-          failed == other.failed; } 
-@override int get hashCode { return Object.hash(total, completed, failed); } 
-@override String toString() { return 'BatchRequestCounts(total: $total, completed: $completed, failed: $failed)'; } 
- }
+          failed == other.failed;}
+@override int get hashCode {return Object.hash(total, completed, failed);}
+@override String toString() {return 'BatchRequestCounts(total: $total, completed: $completed, failed: $failed)';}
+}

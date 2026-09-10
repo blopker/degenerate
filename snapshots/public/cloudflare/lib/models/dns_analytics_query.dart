@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_analytics_filters.dart';import 'dns_analytics_limit.dart';import 'dns_analytics_since.dart';import 'dns_analytics_until.dart';@immutable final class DnsAnalyticsQuery {const DnsAnalyticsQuery({required this.dimensions, required this.limit, required this.metrics, required this.since, required this.until, this.filters, this.sort, });
 
-factory DnsAnalyticsQuery.fromJson(Map<String, dynamic> json) { return DnsAnalyticsQuery(
+factory DnsAnalyticsQuery.fromJson(Map<String, dynamic> json) {return DnsAnalyticsQuery(
   dimensions: (json['dimensions'] as List<dynamic>).map((e) => e as String).toList(),
   filters: json['filters'] != null ? DnsAnalyticsFilters.fromJson(json['filters'] as String) : null,
   limit: DnsAnalyticsLimit.fromJson(json['limit'] as num),
@@ -10,7 +10,7 @@ factory DnsAnalyticsQuery.fromJson(Map<String, dynamic> json) { return DnsAnalyt
   since: DnsAnalyticsSince.fromJson(json['since'] as String),
   sort: (json['sort'] as List<dynamic>?)?.map((e) => e as String).toList(),
   until: DnsAnalyticsUntil.fromJson(json['until'] as String),
-); }
+);}
 
 /// Array of dimension names.
 final List<String> dimensions;
@@ -31,7 +31,7 @@ final List<String>? sort;
 
 final DnsAnalyticsUntil until;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'dimensions': dimensions,
   if (filters != null) 'filters': filters?.toJson(),
   'limit': limit.toJson(),
@@ -39,13 +39,13 @@ Map<String, dynamic> toJson() { return {
   'since': since.toJson(),
   'sort': ?sort,
   'until': until.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dimensions') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dimensions') &&
       json.containsKey('limit') &&
       json.containsKey('metrics') &&
       json.containsKey('since') &&
-      json.containsKey('until'); } 
-DnsAnalyticsQuery copyWith({List<String>? dimensions, DnsAnalyticsFilters? Function()? filters, DnsAnalyticsLimit? limit, List<String>? metrics, DnsAnalyticsSince? since, List<String>? Function()? sort, DnsAnalyticsUntil? until, }) { return DnsAnalyticsQuery(
+      json.containsKey('until');}
+DnsAnalyticsQuery copyWith({List<String>? dimensions, DnsAnalyticsFilters? Function()? filters, DnsAnalyticsLimit? limit, List<String>? metrics, DnsAnalyticsSince? since, List<String>? Function()? sort, DnsAnalyticsUntil? until, }) {return DnsAnalyticsQuery(
   dimensions: dimensions ?? this.dimensions,
   filters: filters != null ? filters() : this.filters,
   limit: limit ?? this.limit,
@@ -53,8 +53,8 @@ DnsAnalyticsQuery copyWith({List<String>? dimensions, DnsAnalyticsFilters? Funct
   since: since ?? this.since,
   sort: sort != null ? sort() : this.sort,
   until: until ?? this.until,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnsAnalyticsQuery &&
           listEquals(dimensions, other.dimensions) &&
           filters == other.filters &&
@@ -62,7 +62,7 @@ DnsAnalyticsQuery copyWith({List<String>? dimensions, DnsAnalyticsFilters? Funct
           listEquals(metrics, other.metrics) &&
           since == other.since &&
           listEquals(sort, other.sort) &&
-          until == other.until; } 
-@override int get hashCode { return Object.hash(Object.hashAll(dimensions), filters, limit, Object.hashAll(metrics), since, Object.hashAll(sort ?? const []), until); } 
-@override String toString() { return 'DnsAnalyticsQuery(dimensions: $dimensions, filters: $filters, limit: $limit, metrics: $metrics, since: $since, sort: $sort, until: $until)'; } 
- }
+          until == other.until;}
+@override int get hashCode {return Object.hash(Object.hashAll(dimensions), filters, limit, Object.hashAll(metrics), since, Object.hashAll(sort ?? const []), until);}
+@override String toString() {return 'DnsAnalyticsQuery(dimensions: $dimensions, filters: $filters, limit: $limit, metrics: $metrics, since: $since, sort: $sort, until: $until)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryArc {const RadarGetEmailRoutingSummaryArc._(this.value);
 
-factory RadarGetEmailRoutingSummaryArc.fromJson(String json) { return switch (json) {
+factory RadarGetEmailRoutingSummaryArc.fromJson(String json) {return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
   _ => RadarGetEmailRoutingSummaryArc._(json),
-}; }
+};}
 
 static const RadarGetEmailRoutingSummaryArc pass = RadarGetEmailRoutingSummaryArc._('PASS');
 
@@ -19,11 +19,11 @@ static const List<RadarGetEmailRoutingSummaryArc> values = [pass, none, fail];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetEmailRoutingSummaryArc && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetEmailRoutingSummaryArc($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetEmailRoutingSummaryArc && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetEmailRoutingSummaryArc($value)';}
+}

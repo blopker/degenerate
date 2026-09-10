@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is `skill.version`.
 @immutable final class SkillVersionResourceObject {const SkillVersionResourceObject._(this.value);
 
-factory SkillVersionResourceObject.fromJson(String json) { return switch (json) {
+factory SkillVersionResourceObject.fromJson(String json) {return switch (json) {
   'skill.version' => skillVersion,
   _ => SkillVersionResourceObject._(json),
-}; }
+};}
 
 static const SkillVersionResourceObject skillVersion = SkillVersionResourceObject._('skill.version');
 
@@ -14,17 +14,17 @@ static const List<SkillVersionResourceObject> values = [skillVersion];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SkillVersionResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SkillVersionResourceObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SkillVersionResourceObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SkillVersionResourceObject($value)';}
+}
 @immutable final class SkillVersionResource {const SkillVersionResource({required this.object, required this.id, required this.skillId, required this.version, required this.createdAt, required this.name, required this.description, });
 
-factory SkillVersionResource.fromJson(Map<String, dynamic> json) { return SkillVersionResource(
+factory SkillVersionResource.fromJson(Map<String, dynamic> json) {return SkillVersionResource(
   object: SkillVersionResourceObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   skillId: json['skill_id'] as String,
@@ -32,7 +32,7 @@ factory SkillVersionResource.fromJson(Map<String, dynamic> json) { return SkillV
   createdAt: (json['created_at'] as num).toInt(),
   name: json['name'] as String,
   description: json['description'] as String,
-); }
+);}
 
 /// The object type, which is `skill.version`.
 final SkillVersionResourceObject object;
@@ -55,7 +55,7 @@ final String name;
 /// Description of the skill version.
 final String description;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'id': id,
   'skill_id': skillId,
@@ -63,15 +63,15 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'name': name,
   'description': description,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('skill_id') && json['skill_id'] is String &&
       json.containsKey('version') && json['version'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('description') && json['description'] is String; } 
-SkillVersionResource copyWith({SkillVersionResourceObject? object, String? id, String? skillId, String? version, int? createdAt, String? name, String? description, }) { return SkillVersionResource(
+      json.containsKey('description') && json['description'] is String;}
+SkillVersionResource copyWith({SkillVersionResourceObject? object, String? id, String? skillId, String? version, int? createdAt, String? name, String? description, }) {return SkillVersionResource(
   object: object ?? this.object,
   id: id ?? this.id,
   skillId: skillId ?? this.skillId,
@@ -79,8 +79,8 @@ SkillVersionResource copyWith({SkillVersionResourceObject? object, String? id, S
   createdAt: createdAt ?? this.createdAt,
   name: name ?? this.name,
   description: description ?? this.description,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SkillVersionResource &&
           object == other.object &&
           id == other.id &&
@@ -88,7 +88,7 @@ SkillVersionResource copyWith({SkillVersionResourceObject? object, String? id, S
           version == other.version &&
           createdAt == other.createdAt &&
           name == other.name &&
-          description == other.description; } 
-@override int get hashCode { return Object.hash(object, id, skillId, version, createdAt, name, description); } 
-@override String toString() { return 'SkillVersionResource(object: $object, id: $id, skillId: $skillId, version: $version, createdAt: $createdAt, name: $name, description: $description)'; } 
- }
+          description == other.description;}
+@override int get hashCode {return Object.hash(object, id, skillId, version, createdAt, name, description);}
+@override String toString() {return 'SkillVersionResource(object: $object, id: $id, skillId: $skillId, version: $version, createdAt: $createdAt, name: $name, description: $description)';}
+}

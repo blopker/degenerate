@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2 {const PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2._(this.value);
 
-factory PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2.fromJson(String json) { return switch (json) {
+factory PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2._(json),
-}; }
+};}
 
 static const PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2 $empty = PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxR
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2($value)';}
+}
 
 @immutable
 final class PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRates {

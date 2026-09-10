@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_request_phases_add_invoice_items.dart';import 'post_subscription_schedules_request_phases_automatic_tax.dart';import 'post_subscription_schedules_request_phases_billing_thresholds.dart';import 'post_subscription_schedules_request_phases_default_tax_rates.dart';import 'post_subscription_schedules_request_phases_description.dart';import 'post_subscription_schedules_request_phases_discounts.dart';import 'post_subscription_schedules_request_phases_duration.dart';import 'post_subscription_schedules_request_phases_invoice_settings.dart';import 'post_subscription_schedules_request_phases_items.dart';import 'post_subscription_schedules_request_phases_transfer_data.dart';@immutable final class PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor {const PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor._(this.value);
 
-factory PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor.fromJson(String json) { return switch (json) {
+factory PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'phase_start' => phaseStart,
   _ => PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor._(json),
-}; }
+};}
 
 static const PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor automatic = PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor._('automatic');
 
@@ -16,21 +16,21 @@ static const List<PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor($value)';}
+}
 @immutable final class PostSubscriptionSchedulesRequestPhasesCollectionMethod {const PostSubscriptionSchedulesRequestPhasesCollectionMethod._(this.value);
 
-factory PostSubscriptionSchedulesRequestPhasesCollectionMethod.fromJson(String json) { return switch (json) {
+factory PostSubscriptionSchedulesRequestPhasesCollectionMethod.fromJson(String json) {return switch (json) {
   'charge_automatically' => chargeAutomatically,
   'send_invoice' => sendInvoice,
   _ => PostSubscriptionSchedulesRequestPhasesCollectionMethod._(json),
-}; }
+};}
 
 static const PostSubscriptionSchedulesRequestPhasesCollectionMethod chargeAutomatically = PostSubscriptionSchedulesRequestPhasesCollectionMethod._('charge_automatically');
 
@@ -40,22 +40,22 @@ static const List<PostSubscriptionSchedulesRequestPhasesCollectionMethod> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesRequestPhasesCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestPhasesCollectionMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionSchedulesRequestPhasesCollectionMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionSchedulesRequestPhasesCollectionMethod($value)';}
+}
 @immutable final class PostSubscriptionSchedulesRequestPhasesProrationBehavior {const PostSubscriptionSchedulesRequestPhasesProrationBehavior._(this.value);
 
-factory PostSubscriptionSchedulesRequestPhasesProrationBehavior.fromJson(String json) { return switch (json) {
+factory PostSubscriptionSchedulesRequestPhasesProrationBehavior.fromJson(String json) {return switch (json) {
   'always_invoice' => alwaysInvoice,
   'create_prorations' => createProrations,
   'none' => none,
   _ => PostSubscriptionSchedulesRequestPhasesProrationBehavior._(json),
-}; }
+};}
 
 static const PostSubscriptionSchedulesRequestPhasesProrationBehavior alwaysInvoice = PostSubscriptionSchedulesRequestPhasesProrationBehavior._('always_invoice');
 
@@ -67,17 +67,17 @@ static const List<PostSubscriptionSchedulesRequestPhasesProrationBehavior> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesRequestPhasesProrationBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestPhasesProrationBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionSchedulesRequestPhasesProrationBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionSchedulesRequestPhasesProrationBehavior($value)';}
+}
 @immutable final class PostSubscriptionSchedulesRequestPhases {const PostSubscriptionSchedulesRequestPhases({required this.items, this.addInvoiceItems, this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, this.currency, this.defaultPaymentMethod, this.defaultTaxRates, this.description, this.discounts, this.duration, this.endDate, this.invoiceSettings, this.metadata, this.onBehalfOf, this.prorationBehavior, this.transferData, this.trial, this.trialEnd, });
 
-factory PostSubscriptionSchedulesRequestPhases.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestPhases(
+factory PostSubscriptionSchedulesRequestPhases.fromJson(Map<String, dynamic> json) {return PostSubscriptionSchedulesRequestPhases(
   addInvoiceItems: (json['add_invoice_items'] as List<dynamic>?)?.map((e) => PostSubscriptionSchedulesRequestPhasesAddInvoiceItems.fromJson(e as Map<String, dynamic>)).toList(),
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   automaticTax: json['automatic_tax'] != null ? PostSubscriptionSchedulesRequestPhasesAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
@@ -99,7 +99,7 @@ factory PostSubscriptionSchedulesRequestPhases.fromJson(Map<String, dynamic> jso
   transferData: json['transfer_data'] != null ? PostSubscriptionSchedulesRequestPhasesTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   trial: json['trial'] as bool?,
   trialEnd: json['trial_end'] != null ? (json['trial_end'] as num).toInt() : null,
-); }
+);}
 
 final List<PostSubscriptionSchedulesRequestPhasesAddInvoiceItems>? addInvoiceItems;
 
@@ -143,7 +143,7 @@ final bool? trial;
 
 final int? trialEnd;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (addInvoiceItems != null) 'add_invoice_items': addInvoiceItems?.map((e) => e.toJson()).toList(),
   'application_fee_percent': ?applicationFeePercent,
   if (automaticTax != null) 'automatic_tax': automaticTax?.toJson(),
@@ -165,9 +165,9 @@ Map<String, dynamic> toJson() { return {
   if (transferData != null) 'transfer_data': transferData?.toJson(),
   'trial': ?trial,
   'trial_end': ?trialEnd,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('items'); } 
-PostSubscriptionSchedulesRequestPhases copyWith({List<PostSubscriptionSchedulesRequestPhasesAddInvoiceItems>? Function()? addInvoiceItems, double? Function()? applicationFeePercent, PostSubscriptionSchedulesRequestPhasesAutomaticTax? Function()? automaticTax, PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor? Function()? billingCycleAnchor, PostSubscriptionSchedulesRequestPhasesBillingThresholds? Function()? billingThresholds, PostSubscriptionSchedulesRequestPhasesCollectionMethod? Function()? collectionMethod, String? Function()? currency, String? Function()? defaultPaymentMethod, PostSubscriptionSchedulesRequestPhasesDefaultTaxRates? Function()? defaultTaxRates, PostSubscriptionSchedulesRequestPhasesDescription? Function()? description, PostSubscriptionSchedulesRequestPhasesDiscounts? Function()? discounts, PostSubscriptionSchedulesRequestPhasesDuration? Function()? duration, int? Function()? endDate, PostSubscriptionSchedulesRequestPhasesInvoiceSettings? Function()? invoiceSettings, List<PostSubscriptionSchedulesRequestPhasesItems>? items, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, PostSubscriptionSchedulesRequestPhasesProrationBehavior? Function()? prorationBehavior, PostSubscriptionSchedulesRequestPhasesTransferData? Function()? transferData, bool? Function()? trial, int? Function()? trialEnd, }) { return PostSubscriptionSchedulesRequestPhases(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('items');}
+PostSubscriptionSchedulesRequestPhases copyWith({List<PostSubscriptionSchedulesRequestPhasesAddInvoiceItems>? Function()? addInvoiceItems, double? Function()? applicationFeePercent, PostSubscriptionSchedulesRequestPhasesAutomaticTax? Function()? automaticTax, PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor? Function()? billingCycleAnchor, PostSubscriptionSchedulesRequestPhasesBillingThresholds? Function()? billingThresholds, PostSubscriptionSchedulesRequestPhasesCollectionMethod? Function()? collectionMethod, String? Function()? currency, String? Function()? defaultPaymentMethod, PostSubscriptionSchedulesRequestPhasesDefaultTaxRates? Function()? defaultTaxRates, PostSubscriptionSchedulesRequestPhasesDescription? Function()? description, PostSubscriptionSchedulesRequestPhasesDiscounts? Function()? discounts, PostSubscriptionSchedulesRequestPhasesDuration? Function()? duration, int? Function()? endDate, PostSubscriptionSchedulesRequestPhasesInvoiceSettings? Function()? invoiceSettings, List<PostSubscriptionSchedulesRequestPhasesItems>? items, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, PostSubscriptionSchedulesRequestPhasesProrationBehavior? Function()? prorationBehavior, PostSubscriptionSchedulesRequestPhasesTransferData? Function()? transferData, bool? Function()? trial, int? Function()? trialEnd, }) {return PostSubscriptionSchedulesRequestPhases(
   addInvoiceItems: addInvoiceItems != null ? addInvoiceItems() : this.addInvoiceItems,
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
@@ -189,8 +189,8 @@ PostSubscriptionSchedulesRequestPhases copyWith({List<PostSubscriptionSchedulesR
   transferData: transferData != null ? transferData() : this.transferData,
   trial: trial != null ? trial() : this.trial,
   trialEnd: trialEnd != null ? trialEnd() : this.trialEnd,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionSchedulesRequestPhases &&
           listEquals(addInvoiceItems, other.addInvoiceItems) &&
           applicationFeePercent == other.applicationFeePercent &&
@@ -212,7 +212,7 @@ PostSubscriptionSchedulesRequestPhases copyWith({List<PostSubscriptionSchedulesR
           prorationBehavior == other.prorationBehavior &&
           transferData == other.transferData &&
           trial == other.trial &&
-          trialEnd == other.trialEnd; } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(addInvoiceItems ?? const []), applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, collectionMethod, currency, defaultPaymentMethod, defaultTaxRates, description, discounts, duration, endDate, invoiceSettings, Object.hashAll(items), metadata, onBehalfOf, prorationBehavior, transferData, trial, trialEnd]); } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestPhases(addInvoiceItems: $addInvoiceItems, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, collectionMethod: $collectionMethod, currency: $currency, defaultPaymentMethod: $defaultPaymentMethod, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, duration: $duration, endDate: $endDate, invoiceSettings: $invoiceSettings, items: $items, metadata: $metadata, onBehalfOf: $onBehalfOf, prorationBehavior: $prorationBehavior, transferData: $transferData, trial: $trial, trialEnd: $trialEnd)'; } 
- }
+          trialEnd == other.trialEnd;}
+@override int get hashCode {return Object.hashAll([Object.hashAll(addInvoiceItems ?? const []), applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, collectionMethod, currency, defaultPaymentMethod, defaultTaxRates, description, discounts, duration, endDate, invoiceSettings, Object.hashAll(items), metadata, onBehalfOf, prorationBehavior, transferData, trial, trialEnd]);}
+@override String toString() {return 'PostSubscriptionSchedulesRequestPhases(addInvoiceItems: $addInvoiceItems, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, collectionMethod: $collectionMethod, currency: $currency, defaultPaymentMethod: $defaultPaymentMethod, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, duration: $duration, endDate: $endDate, invoiceSettings: $invoiceSettings, items: $items, metadata: $metadata, onBehalfOf: $onBehalfOf, prorationBehavior: $prorationBehavior, transferData: $transferData, trial: $trial, trialEnd: $trialEnd)';}
+}

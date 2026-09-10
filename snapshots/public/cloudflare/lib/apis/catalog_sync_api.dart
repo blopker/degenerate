@@ -13,7 +13,7 @@ final class CatalogSyncApi with ApiExecutor {const CatalogSyncApi(this.apiConfig
 /// List Catalog Syncs (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/catalog-syncs`
-Future<ApiResult<List<McnCatalogSync>, McnBadResponse>> catalogSyncsList({required McnAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<McnCatalogSync>, McnBadResponse>> catalogSyncsList({required McnAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create Catalog Sync
 ///
 /// Create a new Catalog Sync (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/catalog-syncs`
-Future<ApiResult<McnCatalogSync, McnBadResponse>> catalogSyncsCreate({required McnAccountId accountId, required McnCreateCatalogSyncRequest body, String? forwarded, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnCatalogSync, McnBadResponse>> catalogSyncsCreate({required McnAccountId accountId, required McnCreateCatalogSyncRequest body, String? forwarded, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (forwarded != null) {
   headers['forwarded'] = forwarded;
@@ -76,13 +76,13 @@ return null;
 
   },
 );
- } 
+}
 /// Read Catalog Sync
 ///
 /// Read a Catalog Sync (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}`
-Future<ApiResult<McnCatalogSync, McnBadResponse>> catalogSyncsRead({required McnAccountId accountId, required McnCatalogSyncId syncId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnCatalogSync, McnBadResponse>> catalogSyncsRead({required McnAccountId accountId, required McnCatalogSyncId syncId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -108,13 +108,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update Catalog Sync
 ///
 /// Update a Catalog Sync (Closed Beta).
 ///
 /// `PUT /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}`
-Future<ApiResult<McnCatalogSync, McnBadResponse>> catalogSyncsUpdate({required McnAccountId accountId, required McnCatalogSyncId syncId, required McnUpdateCatalogSyncRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnCatalogSync, McnBadResponse>> catalogSyncsUpdate({required McnAccountId accountId, required McnCatalogSyncId syncId, required McnUpdateCatalogSyncRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -142,13 +142,13 @@ return null;
 
   },
 );
- } 
+}
 /// Patch Catalog Sync
 ///
 /// Update a Catalog Sync (Closed Beta).
 ///
 /// `PATCH /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}`
-Future<ApiResult<McnCatalogSync, McnBadResponse>> catalogSyncsPatch({required McnAccountId accountId, required McnCatalogSyncId syncId, required McnUpdateCatalogSyncRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnCatalogSync, McnBadResponse>> catalogSyncsPatch({required McnAccountId accountId, required McnCatalogSyncId syncId, required McnUpdateCatalogSyncRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -176,13 +176,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete Catalog Sync
 ///
 /// Delete a Catalog Sync (Closed Beta).
 ///
 /// `DELETE /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}`
-Future<ApiResult<McnDeletedCatalogSync, McnBadResponse>> catalogSyncsDelete({required McnAccountId accountId, required McnCatalogSyncId syncId, bool? deleteDestination, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<McnDeletedCatalogSync, McnBadResponse>> catalogSyncsDelete({required McnAccountId accountId, required McnCatalogSyncId syncId, bool? deleteDestination, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deleteDestination != null) {
   queryParameters['delete_destination'] = deleteDestination.toString();
@@ -216,13 +216,13 @@ return null;
 
   },
 );
- } 
+}
 /// Run Catalog Sync
 ///
 /// Refresh a Catalog Sync's destination by running the sync policy against latest resource catalog (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}/refresh`
-Future<ApiResult<McnPolicyResult, McnBadResponse>> catalogSyncsRefresh({required McnAccountId accountId, required McnCatalogSyncId syncId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnPolicyResult, McnBadResponse>> catalogSyncsRefresh({required McnAccountId accountId, required McnCatalogSyncId syncId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -248,13 +248,13 @@ return null;
 
   },
 );
- } 
+}
 /// List Prebuilt Policies
 ///
 /// List prebuilt catalog sync policies (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/catalog-syncs/prebuilt-policies`
-Future<ApiResult<List<McnCatalogSyncsPrebuiltPolicy>, McnBadResponse>> catalogSyncsPrebuiltPoliciesList({required McnAccountId accountId, McnCatalogSyncDestinationType? destinationType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<McnCatalogSyncsPrebuiltPolicy>, McnBadResponse>> catalogSyncsPrebuiltPoliciesList({required McnAccountId accountId, McnCatalogSyncDestinationType? destinationType, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (destinationType != null) {
   queryParameters['destination_type'] = destinationType.toJson();
@@ -288,5 +288,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus {const SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus._(this.value);
 
-factory SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus.fromJson(String json) { return switch (json) {
+factory SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   _ => SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus._(json),
-}; }
+};}
 
 static const SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus enabled = SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus._('enabled');
 
@@ -16,32 +16,32 @@ static const List<SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus($value)';}
+}
 @immutable final class SecurityAndAnalysisSecretScanningDelegatedAlertDismissal {const SecurityAndAnalysisSecretScanningDelegatedAlertDismissal({this.status});
 
-factory SecurityAndAnalysisSecretScanningDelegatedAlertDismissal.fromJson(Map<String, dynamic> json) { return SecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
+factory SecurityAndAnalysisSecretScanningDelegatedAlertDismissal.fromJson(Map<String, dynamic> json) {return SecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
   status: json['status'] != null ? SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 final SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
-SecurityAndAnalysisSecretScanningDelegatedAlertDismissal copyWith({SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus? Function()? status}) { return SecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'status'}.contains(key));}
+SecurityAndAnalysisSecretScanningDelegatedAlertDismissal copyWith({SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus? Function()? status}) {return SecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecurityAndAnalysisSecretScanningDelegatedAlertDismissal &&
-          status == other.status; } 
-@override int get hashCode { return status.hashCode; } 
-@override String toString() { return 'SecurityAndAnalysisSecretScanningDelegatedAlertDismissal(status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return status.hashCode;}
+@override String toString() {return 'SecurityAndAnalysisSecretScanningDelegatedAlertDismissal(status: $status)';}
+}

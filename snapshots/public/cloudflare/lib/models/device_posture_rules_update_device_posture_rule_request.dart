@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_description.dart';import 'teams_devices_expiration.dart';import 'teams_devices_input.dart';import 'teams_devices_match_item.dart';import 'teams_devices_name.dart';import 'teams_devices_schedule.dart';import 'teams_devices_type.dart';@immutable final class DevicePostureRulesUpdateDevicePostureRuleRequest {const DevicePostureRulesUpdateDevicePostureRuleRequest({required this.name, required this.type, this.description, this.expiration, this.input, this.match, this.schedule, });
 
-factory DevicePostureRulesUpdateDevicePostureRuleRequest.fromJson(Map<String, dynamic> json) { return DevicePostureRulesUpdateDevicePostureRuleRequest(
+factory DevicePostureRulesUpdateDevicePostureRuleRequest.fromJson(Map<String, dynamic> json) {return DevicePostureRulesUpdateDevicePostureRuleRequest(
   description: json['description'] != null ? TeamsDevicesDescription.fromJson(json['description'] as String) : null,
   expiration: json['expiration'] != null ? TeamsDevicesExpiration.fromJson(json['expiration'] as String) : null,
   input: json['input'] != null ? TeamsDevicesInput.fromJson(json['input'] as Map<String, dynamic>) : null,
@@ -10,7 +10,7 @@ factory DevicePostureRulesUpdateDevicePostureRuleRequest.fromJson(Map<String, dy
   name: TeamsDevicesName.fromJson(json['name'] as String),
   schedule: json['schedule'] != null ? TeamsDevicesSchedule.fromJson(json['schedule'] as String) : null,
   type: TeamsDevicesType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The description of the device posture rule.
 final TeamsDevicesDescription? description;
@@ -32,7 +32,7 @@ final TeamsDevicesSchedule? schedule;
 /// The type of device posture rule.
 final TeamsDevicesType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description != null) 'description': description?.toJson(),
   if (expiration != null) 'expiration': expiration?.toJson(),
   if (input != null) 'input': input?.toJson(),
@@ -40,10 +40,10 @@ Map<String, dynamic> toJson() { return {
   'name': name.toJson(),
   if (schedule != null) 'schedule': schedule?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
-      json.containsKey('type'); } 
-DevicePostureRulesUpdateDevicePostureRuleRequest copyWith({TeamsDevicesDescription? Function()? description, TeamsDevicesExpiration? Function()? expiration, TeamsDevicesInput? Function()? input, List<TeamsDevicesMatchItem>? Function()? match, TeamsDevicesName? name, TeamsDevicesSchedule? Function()? schedule, TeamsDevicesType? type, }) { return DevicePostureRulesUpdateDevicePostureRuleRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') &&
+      json.containsKey('type');}
+DevicePostureRulesUpdateDevicePostureRuleRequest copyWith({TeamsDevicesDescription? Function()? description, TeamsDevicesExpiration? Function()? expiration, TeamsDevicesInput? Function()? input, List<TeamsDevicesMatchItem>? Function()? match, TeamsDevicesName? name, TeamsDevicesSchedule? Function()? schedule, TeamsDevicesType? type, }) {return DevicePostureRulesUpdateDevicePostureRuleRequest(
   description: description != null ? description() : this.description,
   expiration: expiration != null ? expiration() : this.expiration,
   input: input != null ? input() : this.input,
@@ -51,8 +51,8 @@ DevicePostureRulesUpdateDevicePostureRuleRequest copyWith({TeamsDevicesDescripti
   name: name ?? this.name,
   schedule: schedule != null ? schedule() : this.schedule,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DevicePostureRulesUpdateDevicePostureRuleRequest &&
           description == other.description &&
           expiration == other.expiration &&
@@ -60,7 +60,7 @@ DevicePostureRulesUpdateDevicePostureRuleRequest copyWith({TeamsDevicesDescripti
           listEquals(match, other.match) &&
           name == other.name &&
           schedule == other.schedule &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(description, expiration, input, Object.hashAll(match ?? const []), name, schedule, type); } 
-@override String toString() { return 'DevicePostureRulesUpdateDevicePostureRuleRequest(description: $description, expiration: $expiration, input: $input, match: $match, name: $name, schedule: $schedule, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(description, expiration, input, Object.hashAll(match ?? const []), name, schedule, type);}
+@override String toString() {return 'DevicePostureRulesUpdateDevicePostureRuleRequest(description: $description, expiration: $expiration, input: $input, match: $match, name: $name, schedule: $schedule, type: $type)';}
+}

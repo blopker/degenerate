@@ -11,7 +11,7 @@ final class GroupsApi with ApiExecutor {const GroupsApi(this.apiConfig);
 /// Lists all groups in the organization.
 ///
 /// `GET /organization/groups`
-Future<ApiResult<GroupListResource, Never>> listGroups({int? limit, String? after, ListGroupsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GroupListResource, Never>> listGroups({int? limit, String? after, ListGroupsOrder? order, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -41,11 +41,11 @@ final json = jsonDecode(response.body);
 return GroupListResource.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Creates a new group in the organization.
 ///
 /// `POST /organization/groups`
-Future<ApiResult<GroupResponse, Never>> createGroup({required CreateGroupBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GroupResponse, Never>> createGroup({required CreateGroupBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -63,11 +63,11 @@ final json = jsonDecode(response.body);
 return GroupResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Updates a group's information.
 ///
 /// `POST /organization/groups/{group_id}`
-Future<ApiResult<GroupResourceWithSuccess, Never>> updateGroup({required String groupId, required UpdateGroupBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GroupResourceWithSuccess, Never>> updateGroup({required String groupId, required UpdateGroupBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -85,11 +85,11 @@ final json = jsonDecode(response.body);
 return GroupResourceWithSuccess.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Deletes a group from the organization.
 ///
 /// `DELETE /organization/groups/{group_id}`
-Future<ApiResult<GroupDeletedResource, Never>> deleteGroup({required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GroupDeletedResource, Never>> deleteGroup({required String groupId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -105,5 +105,5 @@ final json = jsonDecode(response.body);
 return GroupDeletedResource.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

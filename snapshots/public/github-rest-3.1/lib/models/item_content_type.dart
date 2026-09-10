@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of content tracked in a project item
 @immutable final class ItemContentType {const ItemContentType._(this.value);
 
-factory ItemContentType.fromJson(String json) { return switch (json) {
+factory ItemContentType.fromJson(String json) {return switch (json) {
   'Issue' => issue,
   'PullRequest' => pullRequest,
   'DraftIssue' => draftIssue,
   _ => ItemContentType._(json),
-}; }
+};}
 
 static const ItemContentType issue = ItemContentType._('Issue');
 
@@ -20,11 +20,11 @@ static const List<ItemContentType> values = [issue, pullRequest, draftIssue];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ItemContentType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ItemContentType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ItemContentType($value)';}
+}

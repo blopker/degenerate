@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries {const PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries._(this.value);
 
-factory PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries.fromJson(String json) { return switch (json) {
+factory PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries.fromJson(String json) {return switch (json) {
   'AC' => ac,
   'AD' => ad,
   'AE' => ae,
@@ -242,7 +242,7 @@ factory PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries.fro
   'ZW' => zw,
   'ZZ' => zz,
   _ => PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries._(json),
-}; }
+};}
 
 static const PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries ac = PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries._('AC');
 
@@ -724,35 +724,35 @@ static const List<PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCou
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries($value)';}
+}
 /// 
 @immutable final class PaymentPagesCheckoutSessionShippingAddressCollection {const PaymentPagesCheckoutSessionShippingAddressCollection({required this.allowedCountries});
 
-factory PaymentPagesCheckoutSessionShippingAddressCollection.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionShippingAddressCollection(
+factory PaymentPagesCheckoutSessionShippingAddressCollection.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionShippingAddressCollection(
   allowedCountries: (json['allowed_countries'] as List<dynamic>).map((e) => PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries.fromJson(e as String)).toList(),
-); }
+);}
 
 /// An array of two-letter ISO country codes representing which countries Checkout should provide as options for
 /// shipping locations. Unsupported country codes: `AS, CX, CC, CU, HM, IR, KP, MH, FM, NF, MP, PW, SY, UM, VI`.
 final List<PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries> allowedCountries;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowed_countries': allowedCountries.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed_countries'); } 
-PaymentPagesCheckoutSessionShippingAddressCollection copyWith({List<PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries>? allowedCountries}) { return PaymentPagesCheckoutSessionShippingAddressCollection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('allowed_countries');}
+PaymentPagesCheckoutSessionShippingAddressCollection copyWith({List<PaymentPagesCheckoutSessionShippingAddressCollectionAllowedCountries>? allowedCountries}) {return PaymentPagesCheckoutSessionShippingAddressCollection(
   allowedCountries: allowedCountries ?? this.allowedCountries,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentPagesCheckoutSessionShippingAddressCollection &&
-          listEquals(allowedCountries, other.allowedCountries); } 
-@override int get hashCode { return Object.hashAll(allowedCountries).hashCode; } 
-@override String toString() { return 'PaymentPagesCheckoutSessionShippingAddressCollection(allowedCountries: $allowedCountries)'; } 
- }
+          listEquals(allowedCountries, other.allowedCountries);}
+@override int get hashCode {return Object.hashAll(allowedCountries).hashCode;}
+@override String toString() {return 'PaymentPagesCheckoutSessionShippingAddressCollection(allowedCountries: $allowedCountries)';}
+}

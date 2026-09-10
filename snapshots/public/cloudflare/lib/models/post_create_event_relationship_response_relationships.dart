@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of relationship between the events
 @immutable final class PostCreateEventRelationshipResponseRelationshipsRelationshipType {const PostCreateEventRelationshipResponseRelationshipsRelationshipType._(this.value);
 
-factory PostCreateEventRelationshipResponseRelationshipsRelationshipType.fromJson(String json) { return switch (json) {
+factory PostCreateEventRelationshipResponseRelationshipsRelationshipType.fromJson(String json) {return switch (json) {
   'related_to' => relatedTo,
   'caused_by' => causedBy,
   'attributed_to' => attributedTo,
   _ => PostCreateEventRelationshipResponseRelationshipsRelationshipType._(json),
-}; }
+};}
 
 static const PostCreateEventRelationshipResponseRelationshipsRelationshipType relatedTo = PostCreateEventRelationshipResponseRelationshipsRelationshipType._('related_to');
 
@@ -20,23 +20,23 @@ static const List<PostCreateEventRelationshipResponseRelationshipsRelationshipTy
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCreateEventRelationshipResponseRelationshipsRelationshipType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCreateEventRelationshipResponseRelationshipsRelationshipType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCreateEventRelationshipResponseRelationshipsRelationshipType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCreateEventRelationshipResponseRelationshipsRelationshipType($value)';}
+}
 @immutable final class PostCreateEventRelationshipResponseRelationships {const PostCreateEventRelationshipResponseRelationships({required this.childDatasetId, required this.childId, required this.parentDatasetId, required this.parentId, required this.relationshipType, });
 
-factory PostCreateEventRelationshipResponseRelationships.fromJson(Map<String, dynamic> json) { return PostCreateEventRelationshipResponseRelationships(
+factory PostCreateEventRelationshipResponseRelationships.fromJson(Map<String, dynamic> json) {return PostCreateEventRelationshipResponseRelationships(
   childDatasetId: json['childDatasetId'] as String,
   childId: json['childId'] as String,
   parentDatasetId: json['parentDatasetId'] as String,
   parentId: json['parentId'] as String,
   relationshipType: PostCreateEventRelationshipResponseRelationshipsRelationshipType.fromJson(json['relationshipType'] as String),
-); }
+);}
 
 /// Dataset ID where the child event resides
 final String childDatasetId;
@@ -53,32 +53,32 @@ final String parentId;
 /// Type of relationship between the events
 final PostCreateEventRelationshipResponseRelationshipsRelationshipType relationshipType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'childDatasetId': childDatasetId,
   'childId': childId,
   'parentDatasetId': parentDatasetId,
   'parentId': parentId,
   'relationshipType': relationshipType.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('childDatasetId') && json['childDatasetId'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('childDatasetId') && json['childDatasetId'] is String &&
       json.containsKey('childId') && json['childId'] is String &&
       json.containsKey('parentDatasetId') && json['parentDatasetId'] is String &&
       json.containsKey('parentId') && json['parentId'] is String &&
-      json.containsKey('relationshipType'); } 
-PostCreateEventRelationshipResponseRelationships copyWith({String? childDatasetId, String? childId, String? parentDatasetId, String? parentId, PostCreateEventRelationshipResponseRelationshipsRelationshipType? relationshipType, }) { return PostCreateEventRelationshipResponseRelationships(
+      json.containsKey('relationshipType');}
+PostCreateEventRelationshipResponseRelationships copyWith({String? childDatasetId, String? childId, String? parentDatasetId, String? parentId, PostCreateEventRelationshipResponseRelationshipsRelationshipType? relationshipType, }) {return PostCreateEventRelationshipResponseRelationships(
   childDatasetId: childDatasetId ?? this.childDatasetId,
   childId: childId ?? this.childId,
   parentDatasetId: parentDatasetId ?? this.parentDatasetId,
   parentId: parentId ?? this.parentId,
   relationshipType: relationshipType ?? this.relationshipType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCreateEventRelationshipResponseRelationships &&
           childDatasetId == other.childDatasetId &&
           childId == other.childId &&
           parentDatasetId == other.parentDatasetId &&
           parentId == other.parentId &&
-          relationshipType == other.relationshipType; } 
-@override int get hashCode { return Object.hash(childDatasetId, childId, parentDatasetId, parentId, relationshipType); } 
-@override String toString() { return 'PostCreateEventRelationshipResponseRelationships(childDatasetId: $childDatasetId, childId: $childId, parentDatasetId: $parentDatasetId, parentId: $parentId, relationshipType: $relationshipType)'; } 
- }
+          relationshipType == other.relationshipType;}
+@override int get hashCode {return Object.hash(childDatasetId, childId, parentDatasetId, parentId, relationshipType);}
+@override String toString() {return 'PostCreateEventRelationshipResponseRelationships(childDatasetId: $childDatasetId, childId: $childId, parentDatasetId: $parentDatasetId, parentId: $parentId, relationshipType: $relationshipType)';}
+}

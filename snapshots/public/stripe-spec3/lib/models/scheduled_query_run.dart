@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'sigma_scheduled_query_run_error.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ScheduledQueryRunObject {const ScheduledQueryRunObject._(this.value);
 
-factory ScheduledQueryRunObject.fromJson(String json) { return switch (json) {
+factory ScheduledQueryRunObject.fromJson(String json) {return switch (json) {
   'scheduled_query_run' => scheduledQueryRun,
   _ => ScheduledQueryRunObject._(json),
-}; }
+};}
 
 static const ScheduledQueryRunObject scheduledQueryRun = ScheduledQueryRunObject._('scheduled_query_run');
 
@@ -14,21 +14,21 @@ static const List<ScheduledQueryRunObject> values = [scheduledQueryRun];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ScheduledQueryRunObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ScheduledQueryRunObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ScheduledQueryRunObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ScheduledQueryRunObject($value)';}
+}
 /// If you have [scheduled a Sigma query](https://docs.stripe.com/sigma/scheduled-queries), you'll
 /// receive a `sigma.scheduled_query_run.created` webhook each time the query
 /// runs. The webhook contains a `ScheduledQueryRun` object, which you can use to
 /// retrieve the query results.
 @immutable final class ScheduledQueryRun {const ScheduledQueryRun({required this.created, required this.dataLoadTime, required this.id, required this.livemode, required this.object, required this.resultAvailableUntil, required this.sql, required this.status, required this.title, this.error, this.file = const Omittable.absent(), });
 
-factory ScheduledQueryRun.fromJson(Map<String, dynamic> json) { return ScheduledQueryRun(
+factory ScheduledQueryRun.fromJson(Map<String, dynamic> json) {return ScheduledQueryRun(
   created: (json['created'] as num).toInt(),
   dataLoadTime: (json['data_load_time'] as num).toInt(),
   error: json['error'] != null ? SigmaScheduledQueryRunError.fromJson(json['error'] as Map<String, dynamic>) : null,
@@ -40,7 +40,7 @@ factory ScheduledQueryRun.fromJson(Map<String, dynamic> json) { return Scheduled
   sql: json['sql'] as String,
   status: json['status'] as String,
   title: json['title'] as String,
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -74,7 +74,7 @@ final String status;
 /// Title of the query.
 final String title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'data_load_time': dataLoadTime,
   if (error != null) 'error': error?.toJson(),
@@ -86,8 +86,8 @@ Map<String, dynamic> toJson() { return {
   'sql': sql,
   'status': status,
   'title': title,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('data_load_time') && json['data_load_time'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
@@ -95,8 +95,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('result_available_until') && json['result_available_until'] is num &&
       json.containsKey('sql') && json['sql'] is String &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('title') && json['title'] is String; } 
-ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQueryRunError? Function()? error, Omittable<File?>? file, String? id, bool? livemode, ScheduledQueryRunObject? object, int? resultAvailableUntil, String? sql, String? status, String? title, }) { return ScheduledQueryRun(
+      json.containsKey('title') && json['title'] is String;}
+ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQueryRunError? Function()? error, Omittable<File?>? file, String? id, bool? livemode, ScheduledQueryRunObject? object, int? resultAvailableUntil, String? sql, String? status, String? title, }) {return ScheduledQueryRun(
   created: created ?? this.created,
   dataLoadTime: dataLoadTime ?? this.dataLoadTime,
   error: error != null ? error() : this.error,
@@ -108,8 +108,8 @@ ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQuery
   sql: sql ?? this.sql,
   status: status ?? this.status,
   title: title ?? this.title,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ScheduledQueryRun &&
           created == other.created &&
           dataLoadTime == other.dataLoadTime &&
@@ -121,7 +121,7 @@ ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQuery
           resultAvailableUntil == other.resultAvailableUntil &&
           sql == other.sql &&
           status == other.status &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(created, dataLoadTime, error, file, id, livemode, object, resultAvailableUntil, sql, status, title); } 
-@override String toString() { return 'ScheduledQueryRun(created: $created, dataLoadTime: $dataLoadTime, error: $error, file: $file, id: $id, livemode: $livemode, object: $object, resultAvailableUntil: $resultAvailableUntil, sql: $sql, status: $status, title: $title)'; } 
- }
+          title == other.title;}
+@override int get hashCode {return Object.hash(created, dataLoadTime, error, file, id, livemode, object, resultAvailableUntil, sql, status, title);}
+@override String toString() {return 'ScheduledQueryRun(created: $created, dataLoadTime: $dataLoadTime, error: $error, file: $file, id: $id, livemode: $livemode, object: $object, resultAvailableUntil: $resultAvailableUntil, sql: $sql, status: $status, title: $title)';}
+}

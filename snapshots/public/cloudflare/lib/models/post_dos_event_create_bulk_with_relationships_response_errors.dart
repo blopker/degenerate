@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostDosEventCreateBulkWithRelationshipsResponseErrors {const PostDosEventCreateBulkWithRelationshipsResponseErrors({required this.error, required this.eventIndex, });
 
-factory PostDosEventCreateBulkWithRelationshipsResponseErrors.fromJson(Map<String, dynamic> json) { return PostDosEventCreateBulkWithRelationshipsResponseErrors(
+factory PostDosEventCreateBulkWithRelationshipsResponseErrors.fromJson(Map<String, dynamic> json) {return PostDosEventCreateBulkWithRelationshipsResponseErrors(
   error: json['error'] as String,
   eventIndex: (json['eventIndex'] as num).toDouble(),
-); }
+);}
 
 /// Error message
 final String error;
@@ -13,20 +13,20 @@ final String error;
 /// Index of the event that caused the error
 final double eventIndex;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error': error,
   'eventIndex': eventIndex,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('error') && json['error'] is String &&
-      json.containsKey('eventIndex') && json['eventIndex'] is num; } 
-PostDosEventCreateBulkWithRelationshipsResponseErrors copyWith({String? error, double? eventIndex, }) { return PostDosEventCreateBulkWithRelationshipsResponseErrors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('error') && json['error'] is String &&
+      json.containsKey('eventIndex') && json['eventIndex'] is num;}
+PostDosEventCreateBulkWithRelationshipsResponseErrors copyWith({String? error, double? eventIndex, }) {return PostDosEventCreateBulkWithRelationshipsResponseErrors(
   error: error ?? this.error,
   eventIndex: eventIndex ?? this.eventIndex,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostDosEventCreateBulkWithRelationshipsResponseErrors &&
           error == other.error &&
-          eventIndex == other.eventIndex; } 
-@override int get hashCode { return Object.hash(error, eventIndex); } 
-@override String toString() { return 'PostDosEventCreateBulkWithRelationshipsResponseErrors(error: $error, eventIndex: $eventIndex)'; } 
- }
+          eventIndex == other.eventIndex;}
+@override int get hashCode {return Object.hash(error, eventIndex);}
+@override String toString() {return 'PostDosEventCreateBulkWithRelationshipsResponseErrors(error: $error, eventIndex: $eventIndex)';}
+}

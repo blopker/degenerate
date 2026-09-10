@@ -16,10 +16,10 @@ String toJson() => value;
 }
 @immutable final class FirewallCustomResponseVariant1 {const FirewallCustomResponseVariant1({this.body, this.contentType, });
 
-factory FirewallCustomResponseVariant1.fromJson(Map<String, dynamic> json) { return FirewallCustomResponseVariant1(
+factory FirewallCustomResponseVariant1.fromJson(Map<String, dynamic> json) {return FirewallCustomResponseVariant1(
   body: json['body'] != null ? FirewallBody.fromJson(json['body'] as String) : null,
   contentType: json['content_type'] != null ? FirewallContentType.fromJson(json['content_type'] as String) : null,
-); }
+);}
 
 /// The response body to return. The value must conform to the configured content type.
 final FirewallBody? body;
@@ -27,19 +27,19 @@ final FirewallBody? body;
 /// The content type of the body. Must be one of the following: `text/plain`, `text/xml`, or `application/json`.
 final FirewallContentType? contentType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (body != null) 'body': body?.toJson(),
   if (contentType != null) 'content_type': contentType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body', 'content_type'}.contains(key)); } 
-FirewallCustomResponseVariant1 copyWith({FirewallBody? Function()? body, FirewallContentType? Function()? contentType, }) { return FirewallCustomResponseVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'body', 'content_type'}.contains(key));}
+FirewallCustomResponseVariant1 copyWith({FirewallBody? Function()? body, FirewallContentType? Function()? contentType, }) {return FirewallCustomResponseVariant1(
   body: body != null ? body() : this.body,
   contentType: contentType != null ? contentType() : this.contentType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FirewallCustomResponseVariant1 &&
           body == other.body &&
-          contentType == other.contentType; } 
-@override int get hashCode { return Object.hash(body, contentType); } 
-@override String toString() { return 'FirewallCustomResponseVariant1(body: $body, contentType: $contentType)'; } 
- }
+          contentType == other.contentType;}
+@override int get hashCode {return Object.hash(body, contentType);}
+@override String toString() {return 'FirewallCustomResponseVariant1(body: $body, contentType: $contentType)';}
+}

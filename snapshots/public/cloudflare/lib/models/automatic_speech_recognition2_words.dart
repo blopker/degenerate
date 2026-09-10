@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutomaticSpeechRecognition2Words {const AutomaticSpeechRecognition2Words({this.end, this.start, this.word, });
 
-factory AutomaticSpeechRecognition2Words.fromJson(Map<String, dynamic> json) { return AutomaticSpeechRecognition2Words(
+factory AutomaticSpeechRecognition2Words.fromJson(Map<String, dynamic> json) {return AutomaticSpeechRecognition2Words(
   end: json['end'] != null ? (json['end'] as num).toDouble() : null,
   start: json['start'] != null ? (json['start'] as num).toDouble() : null,
   word: json['word'] as String?,
-); }
+);}
 
 /// The ending second when the word completes
 final double? end;
@@ -16,22 +16,22 @@ final double? start;
 
 final String? word;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end': ?end,
   'start': ?start,
   'word': ?word,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'end', 'start', 'word'}.contains(key)); } 
-AutomaticSpeechRecognition2Words copyWith({double? Function()? end, double? Function()? start, String? Function()? word, }) { return AutomaticSpeechRecognition2Words(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'end', 'start', 'word'}.contains(key));}
+AutomaticSpeechRecognition2Words copyWith({double? Function()? end, double? Function()? start, String? Function()? word, }) {return AutomaticSpeechRecognition2Words(
   end: end != null ? end() : this.end,
   start: start != null ? start() : this.start,
   word: word != null ? word() : this.word,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AutomaticSpeechRecognition2Words &&
           end == other.end &&
           start == other.start &&
-          word == other.word; } 
-@override int get hashCode { return Object.hash(end, start, word); } 
-@override String toString() { return 'AutomaticSpeechRecognition2Words(end: $end, start: $start, word: $word)'; } 
- }
+          word == other.word;}
+@override int get hashCode {return Object.hash(end, start, word);}
+@override String toString() {return 'AutomaticSpeechRecognition2Words(end: $end, start: $start, word: $word)';}
+}

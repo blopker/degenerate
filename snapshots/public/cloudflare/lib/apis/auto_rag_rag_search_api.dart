@@ -11,7 +11,7 @@ final class AutoRagRagSearchApi with ApiExecutor {const AutoRagRagSearchApi(this
 /// AI Search
 ///
 /// `POST /accounts/{account_id}/autorag/rags/{id}/ai-search`
-Future<ApiResult<AutoragConfigAiSearchResponseResult, AutoragConfigAiSearchResponse404>> autoragConfigAiSearch({required String id, required String accountId, AutoragConfigAiSearchRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AutoragConfigAiSearchResponseResult, AutoragConfigAiSearchResponse404>> autoragConfigAiSearch({required String id, required String accountId, AutoragConfigAiSearchRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -39,11 +39,11 @@ return null;
 
   },
 );
- } 
+}
 /// Search
 ///
 /// `POST /accounts/{account_id}/autorag/rags/{id}/search`
-Future<ApiResult<AutoragConfigSearchResponseResult, AutoragConfigSearchResponse404>> autoragConfigSearch({required String id, required String accountId, AutoragConfigSearchRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AutoragConfigSearchResponseResult, AutoragConfigSearchResponse404>> autoragConfigSearch({required String id, required String accountId, AutoragConfigSearchRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -71,5 +71,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

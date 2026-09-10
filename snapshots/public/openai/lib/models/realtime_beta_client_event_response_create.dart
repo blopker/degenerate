@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_beta_response_create_params.dart';/// The event type, must be `response.create`.
 @immutable final class RealtimeBetaClientEventResponseCreateType {const RealtimeBetaClientEventResponseCreateType._(this.value);
 
-factory RealtimeBetaClientEventResponseCreateType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaClientEventResponseCreateType.fromJson(String json) {return switch (json) {
   'response.create' => responseCreate,
   _ => RealtimeBetaClientEventResponseCreateType._(json),
-}; }
+};}
 
 static const RealtimeBetaClientEventResponseCreateType responseCreate = RealtimeBetaClientEventResponseCreateType._('response.create');
 
@@ -14,14 +14,14 @@ static const List<RealtimeBetaClientEventResponseCreateType> values = [responseC
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaClientEventResponseCreateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaClientEventResponseCreateType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeBetaClientEventResponseCreateType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeBetaClientEventResponseCreateType($value)';}
+}
 /// This event instructs the server to create a Response, which means triggering
 /// model inference. When in Server VAD mode, the server will create Responses
 /// automatically.
@@ -49,11 +49,11 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class RealtimeBetaClientEventResponseCreate {const RealtimeBetaClientEventResponseCreate({required this.type, this.eventId, this.response, });
 
-factory RealtimeBetaClientEventResponseCreate.fromJson(Map<String, dynamic> json) { return RealtimeBetaClientEventResponseCreate(
+factory RealtimeBetaClientEventResponseCreate.fromJson(Map<String, dynamic> json) {return RealtimeBetaClientEventResponseCreate(
   eventId: json['event_id'] as String?,
   type: RealtimeBetaClientEventResponseCreateType.fromJson(json['type'] as String),
   response: json['response'] != null ? RealtimeBetaResponseCreateParams.fromJson(json['response'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
@@ -63,22 +63,22 @@ final RealtimeBetaClientEventResponseCreateType type;
 
 final RealtimeBetaResponseCreateParams? response;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type.toJson(),
   if (response != null) 'response': response?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RealtimeBetaClientEventResponseCreate copyWith({String? Function()? eventId, RealtimeBetaClientEventResponseCreateType? type, RealtimeBetaResponseCreateParams? Function()? response, }) { return RealtimeBetaClientEventResponseCreate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+RealtimeBetaClientEventResponseCreate copyWith({String? Function()? eventId, RealtimeBetaClientEventResponseCreateType? type, RealtimeBetaResponseCreateParams? Function()? response, }) {return RealtimeBetaClientEventResponseCreate(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   response: response != null ? response() : this.response,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeBetaClientEventResponseCreate &&
           eventId == other.eventId &&
           type == other.type &&
-          response == other.response; } 
-@override int get hashCode { return Object.hash(eventId, type, response); } 
-@override String toString() { return 'RealtimeBetaClientEventResponseCreate(eventId: $eventId, type: $type, response: $response)'; } 
- }
+          response == other.response;}
+@override int get hashCode {return Object.hash(eventId, type, response);}
+@override String toString() {return 'RealtimeBetaClientEventResponseCreate(eventId: $eventId, type: $type, response: $response)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of the tax ID, one of `ad_nrt`, `ae_trn`, `al_tin`, `am_tin`, `ao_tin`, `ar_cuit`, `au_abn`, `au_arn`, `aw_tin`, `az_tin`, `ba_tin`, `bb_tin`, `bd_bin`, `bf_ifu`, `bg_uic`, `bh_vat`, `bj_ifu`, `bo_tin`, `br_cnpj`, `br_cpf`, `bs_tin`, `by_tin`, `ca_bn`, `ca_gst_hst`, `ca_pst_bc`, `ca_pst_mb`, `ca_pst_sk`, `ca_qst`, `cd_nif`, `ch_uid`, `ch_vat`, `cl_tin`, `cm_niu`, `cn_tin`, `co_nit`, `cr_tin`, `cv_nif`, `de_stn`, `do_rcn`, `ec_ruc`, `eg_tin`, `es_cif`, `et_tin`, `eu_oss_vat`, `eu_vat`, `gb_vat`, `ge_vat`, `gn_nif`, `hk_br`, `hr_oib`, `hu_tin`, `id_npwp`, `il_vat`, `in_gst`, `is_vat`, `jp_cn`, `jp_rn`, `jp_trn`, `ke_pin`, `kg_tin`, `kh_tin`, `kr_brn`, `kz_bin`, `la_tin`, `li_uid`, `li_vat`, `lk_vat`, `ma_vat`, `md_vat`, `me_pib`, `mk_vat`, `mr_nif`, `mx_rfc`, `my_frp`, `my_itn`, `my_sst`, `ng_tin`, `no_vat`, `no_voec`, `np_pan`, `nz_gst`, `om_vat`, `pe_ruc`, `ph_tin`, `pl_nip`, `ro_tin`, `rs_pib`, `ru_inn`, `ru_kpp`, `sa_vat`, `sg_gst`, `sg_uen`, `si_tin`, `sn_ninea`, `sr_fin`, `sv_nit`, `th_vat`, `tj_tin`, `tr_tin`, `tw_vat`, `tz_vat`, `ua_vat`, `ug_tin`, `us_ein`, `uy_ruc`, `uz_tin`, `uz_vat`, `ve_rif`, `vn_tin`, `za_vat`, `zm_tin`, or `zw_tin`
 @immutable final class PostCustomersCustomerTaxIdsRequestType {const PostCustomersCustomerTaxIdsRequestType._(this.value);
 
-factory PostCustomersCustomerTaxIdsRequestType.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerTaxIdsRequestType.fromJson(String json) {return switch (json) {
   'ad_nrt' => adNrt,
   'ae_trn' => aeTrn,
   'al_tin' => alTin,
@@ -117,7 +117,7 @@ factory PostCustomersCustomerTaxIdsRequestType.fromJson(String json) { return sw
   'zm_tin' => zmTin,
   'zw_tin' => zwTin,
   _ => PostCustomersCustomerTaxIdsRequestType._(json),
-}; }
+};}
 
 static const PostCustomersCustomerTaxIdsRequestType adNrt = PostCustomersCustomerTaxIdsRequestType._('ad_nrt');
 
@@ -347,21 +347,21 @@ static const List<PostCustomersCustomerTaxIdsRequestType> values = [adNrt, aeTrn
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerTaxIdsRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerTaxIdsRequestType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerTaxIdsRequestType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerTaxIdsRequestType($value)';}
+}
 @immutable final class PostCustomersCustomerTaxIdsRequest {const PostCustomersCustomerTaxIdsRequest({required this.type, required this.value, this.expand, });
 
-factory PostCustomersCustomerTaxIdsRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerTaxIdsRequest(
+factory PostCustomersCustomerTaxIdsRequest.fromJson(Map<String, dynamic> json) {return PostCustomersCustomerTaxIdsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: PostCustomersCustomerTaxIdsRequestType.fromJson(json['type'] as String),
   value: json['value'] as String,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -372,23 +372,23 @@ final PostCustomersCustomerTaxIdsRequestType type;
 /// Value of the tax ID.
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'type': type.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('value') && json['value'] is String; } 
-PostCustomersCustomerTaxIdsRequest copyWith({List<String>? Function()? expand, PostCustomersCustomerTaxIdsRequestType? type, String? value, }) { return PostCustomersCustomerTaxIdsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('value') && json['value'] is String;}
+PostCustomersCustomerTaxIdsRequest copyWith({List<String>? Function()? expand, PostCustomersCustomerTaxIdsRequestType? type, String? value, }) {return PostCustomersCustomerTaxIdsRequest(
   expand: expand != null ? expand() : this.expand,
   type: type ?? this.type,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCustomersCustomerTaxIdsRequest &&
           listEquals(expand, other.expand) &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), type, value); } 
-@override String toString() { return 'PostCustomersCustomerTaxIdsRequest(expand: $expand, type: $type, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(Object.hashAll(expand ?? const []), type, value);}
+@override String toString() {return 'PostCustomersCustomerTaxIdsRequest(expand: $expand, type: $type, value: $value)';}
+}

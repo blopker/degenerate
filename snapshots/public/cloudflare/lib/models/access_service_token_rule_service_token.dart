@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessServiceTokenRuleServiceToken {const AccessServiceTokenRuleServiceToken({required this.tokenId});
 
-factory AccessServiceTokenRuleServiceToken.fromJson(Map<String, dynamic> json) { return AccessServiceTokenRuleServiceToken(
+factory AccessServiceTokenRuleServiceToken.fromJson(Map<String, dynamic> json) {return AccessServiceTokenRuleServiceToken(
   tokenId: json['token_id'] as String,
-); }
+);}
 
 /// The ID of a Service Token.
 final String tokenId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'token_id': tokenId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('token_id') && json['token_id'] is String; } 
-AccessServiceTokenRuleServiceToken copyWith({String? tokenId}) { return AccessServiceTokenRuleServiceToken(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('token_id') && json['token_id'] is String;}
+AccessServiceTokenRuleServiceToken copyWith({String? tokenId}) {return AccessServiceTokenRuleServiceToken(
   tokenId: tokenId ?? this.tokenId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessServiceTokenRuleServiceToken &&
-          tokenId == other.tokenId; } 
-@override int get hashCode { return tokenId.hashCode; } 
-@override String toString() { return 'AccessServiceTokenRuleServiceToken(tokenId: $tokenId)'; } 
- }
+          tokenId == other.tokenId;}
+@override int get hashCode {return tokenId.hashCode;}
+@override String toString() {return 'AccessServiceTokenRuleServiceToken(tokenId: $tokenId)';}
+}

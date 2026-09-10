@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_groups_components_schemas_name2.dart';import 'access_rule.dart';import 'access_timestamp.dart';import 'access_uuid.dart';@immutable final class AccessComponentsSchemasGroups {const AccessComponentsSchemasGroups({this.createdAt, this.exclude, this.id, this.include, this.name, this.require, this.updatedAt, });
 
-factory AccessComponentsSchemasGroups.fromJson(Map<String, dynamic> json) { return AccessComponentsSchemasGroups(
+factory AccessComponentsSchemasGroups.fromJson(Map<String, dynamic> json) {return AccessComponentsSchemasGroups(
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   exclude: (json['exclude'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
@@ -10,7 +10,7 @@ factory AccessComponentsSchemasGroups.fromJson(Map<String, dynamic> json) { retu
   name: json['name'] != null ? AccessGroupsComponentsSchemasName2.fromJson(json['name'] as String) : null,
   require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 final AccessTimestamp? createdAt;
 
@@ -26,7 +26,7 @@ final List<AccessRule>? require;
 
 final AccessTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
   if (id != null) 'id': id?.toJson(),
@@ -34,9 +34,9 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (require != null) 'require': require?.map((e) => e.toJson()).toList(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'exclude', 'id', 'include', 'name', 'require', 'updated_at'}.contains(key)); } 
-AccessComponentsSchemasGroups copyWith({AccessTimestamp? Function()? createdAt, List<AccessRule>? Function()? exclude, AccessUuid? Function()? id, List<AccessRule>? Function()? include, AccessGroupsComponentsSchemasName2? Function()? name, List<AccessRule>? Function()? require, AccessTimestamp? Function()? updatedAt, }) { return AccessComponentsSchemasGroups(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'exclude', 'id', 'include', 'name', 'require', 'updated_at'}.contains(key));}
+AccessComponentsSchemasGroups copyWith({AccessTimestamp? Function()? createdAt, List<AccessRule>? Function()? exclude, AccessUuid? Function()? id, List<AccessRule>? Function()? include, AccessGroupsComponentsSchemasName2? Function()? name, List<AccessRule>? Function()? require, AccessTimestamp? Function()? updatedAt, }) {return AccessComponentsSchemasGroups(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   exclude: exclude != null ? exclude() : this.exclude,
   id: id != null ? id() : this.id,
@@ -44,8 +44,8 @@ AccessComponentsSchemasGroups copyWith({AccessTimestamp? Function()? createdAt, 
   name: name != null ? name() : this.name,
   require: require != null ? require() : this.require,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessComponentsSchemasGroups &&
           createdAt == other.createdAt &&
           listEquals(exclude, other.exclude) &&
@@ -53,7 +53,7 @@ AccessComponentsSchemasGroups copyWith({AccessTimestamp? Function()? createdAt, 
           listEquals(include, other.include) &&
           name == other.name &&
           listEquals(require, other.require) &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), name, Object.hashAll(require ?? const []), updatedAt); } 
-@override String toString() { return 'AccessComponentsSchemasGroups(createdAt: $createdAt, exclude: $exclude, id: $id, include: $include, name: $name, require: $require, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(createdAt, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), name, Object.hashAll(require ?? const []), updatedAt);}
+@override String toString() {return 'AccessComponentsSchemasGroups(createdAt: $createdAt, exclude: $exclude, id: $id, include: $include, name: $name, require: $require, updatedAt: $updatedAt)';}
+}

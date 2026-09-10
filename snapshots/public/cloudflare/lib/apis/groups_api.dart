@@ -11,7 +11,7 @@ final class GroupsApi with ApiExecutor {const GroupsApi(this.apiConfig);
 /// List groups for an account
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/-/groups`
-Future<ApiResult<List<GetGroupListResponse>, GetGroupListResponse400>> getGroupList({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<GetGroupListResponse>, GetGroupListResponse400>> getGroupList({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -37,11 +37,11 @@ return null;
 
   },
 );
- } 
+}
 /// Create a group
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/-/groups`
-Future<ApiResult<PostGroupCreateResponse, PostGroupCreateResponse400>> postGroupCreate({required String accountId, PostGroupCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostGroupCreateResponse, PostGroupCreateResponse400>> postGroupCreate({required String accountId, PostGroupCreateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -69,11 +69,11 @@ return null;
 
   },
 );
- } 
+}
 /// Read a group for an account
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}`
-Future<ApiResult<GetGroupReadResponse, GetGroupReadResponse400>> getGroupRead({required String accountId, required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetGroupReadResponse, GetGroupReadResponse400>> getGroupRead({required String accountId, required String groupId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -99,11 +99,11 @@ return null;
 
   },
 );
- } 
+}
 /// Update a group
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}`
-Future<ApiResult<PutGroupUpdateResponse, PutGroupUpdateResponse400>> putGroupUpdate({required String accountId, required String groupId, PutGroupUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PutGroupUpdateResponse, PutGroupUpdateResponse400>> putGroupUpdate({required String accountId, required String groupId, PutGroupUpdateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -131,11 +131,11 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a group for an account
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}`
-Future<ApiResult<DeleteGroupDeleteResponse, DeleteGroupDeleteResponse400>> deleteGroupDelete({required String accountId, required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteGroupDeleteResponse, DeleteGroupDeleteResponse400>> deleteGroupDelete({required String accountId, required String groupId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -161,11 +161,11 @@ return null;
 
   },
 );
- } 
+}
 /// List group members
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members`
-Future<ApiResult<List<GetGroupMemberListResponse>, GetGroupMemberListResponse400>> getGroupMemberList({required String accountId, required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<GetGroupMemberListResponse>, GetGroupMemberListResponse400>> getGroupMemberList({required String accountId, required String groupId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -191,11 +191,11 @@ return null;
 
   },
 );
- } 
+}
 /// Create a group member
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members`
-Future<ApiResult<PostGroupMemberCreateResponse, PostGroupMemberCreateResponse400>> postGroupMemberCreate({required String accountId, required String groupId, PostGroupMemberCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostGroupMemberCreateResponse, PostGroupMemberCreateResponse400>> postGroupMemberCreate({required String accountId, required String groupId, PostGroupMemberCreateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -223,11 +223,11 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a group member
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members/{member_id}`
-Future<ApiResult<DeleteGroupMemberDeleteResponse, DeleteGroupMemberDeleteResponse400>> deleteGroupMemberDelete({required String accountId, required String groupId, required String memberId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteGroupMemberDeleteResponse, DeleteGroupMemberDeleteResponse400>> deleteGroupMemberDelete({required String accountId, required String groupId, required String memberId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -253,5 +253,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

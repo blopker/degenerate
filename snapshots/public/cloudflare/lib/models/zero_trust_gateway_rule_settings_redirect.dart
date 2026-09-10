@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Apply settings to redirect rules. Settable only for `http` rules with the action set to `redirect`.
 @immutable final class ZeroTrustGatewayRuleSettingsRedirect {const ZeroTrustGatewayRuleSettingsRedirect({required this.targetUri, this.includeContext, this.preservePathAndQuery, });
 
-factory ZeroTrustGatewayRuleSettingsRedirect.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsRedirect(
+factory ZeroTrustGatewayRuleSettingsRedirect.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayRuleSettingsRedirect(
   includeContext: json['include_context'] as bool?,
   preservePathAndQuery: json['preserve_path_and_query'] as bool?,
   targetUri: Uri.parse(json['target_uri'] as String),
-); }
+);}
 
 /// Specify whether to pass the context information as query parameters.
 final bool? includeContext;
@@ -18,22 +18,22 @@ final bool? preservePathAndQuery;
 /// Specify the URI to which the user is redirected.
 final Uri targetUri;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'include_context': ?includeContext,
   'preserve_path_and_query': ?preservePathAndQuery,
   'target_uri': targetUri.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_uri') && json['target_uri'] is String; } 
-ZeroTrustGatewayRuleSettingsRedirect copyWith({bool? Function()? includeContext, bool? Function()? preservePathAndQuery, Uri? targetUri, }) { return ZeroTrustGatewayRuleSettingsRedirect(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('target_uri') && json['target_uri'] is String;}
+ZeroTrustGatewayRuleSettingsRedirect copyWith({bool? Function()? includeContext, bool? Function()? preservePathAndQuery, Uri? targetUri, }) {return ZeroTrustGatewayRuleSettingsRedirect(
   includeContext: includeContext != null ? includeContext() : this.includeContext,
   preservePathAndQuery: preservePathAndQuery != null ? preservePathAndQuery() : this.preservePathAndQuery,
   targetUri: targetUri ?? this.targetUri,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewayRuleSettingsRedirect &&
           includeContext == other.includeContext &&
           preservePathAndQuery == other.preservePathAndQuery &&
-          targetUri == other.targetUri; } 
-@override int get hashCode { return Object.hash(includeContext, preservePathAndQuery, targetUri); } 
-@override String toString() { return 'ZeroTrustGatewayRuleSettingsRedirect(includeContext: $includeContext, preservePathAndQuery: $preservePathAndQuery, targetUri: $targetUri)'; } 
- }
+          targetUri == other.targetUri;}
+@override int get hashCode {return Object.hash(includeContext, preservePathAndQuery, targetUri);}
+@override String toString() {return 'ZeroTrustGatewayRuleSettingsRedirect(includeContext: $includeContext, preservePathAndQuery: $preservePathAndQuery, targetUri: $targetUri)';}
+}

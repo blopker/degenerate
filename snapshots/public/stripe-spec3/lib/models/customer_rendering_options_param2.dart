@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomerRenderingOptionsParam2AmountTaxDisplay {const CustomerRenderingOptionsParam2AmountTaxDisplay._(this.value);
 
-factory CustomerRenderingOptionsParam2AmountTaxDisplay.fromJson(String json) { return switch (json) {
+factory CustomerRenderingOptionsParam2AmountTaxDisplay.fromJson(String json) {return switch (json) {
   '' => $empty,
   'exclude_tax' => excludeTax,
   'include_inclusive_tax' => includeInclusiveTax,
   _ => CustomerRenderingOptionsParam2AmountTaxDisplay._(json),
-}; }
+};}
 
 static const CustomerRenderingOptionsParam2AmountTaxDisplay $empty = CustomerRenderingOptionsParam2AmountTaxDisplay._('');
 
@@ -19,38 +19,38 @@ static const List<CustomerRenderingOptionsParam2AmountTaxDisplay> values = [$emp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerRenderingOptionsParam2AmountTaxDisplay && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerRenderingOptionsParam2AmountTaxDisplay($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CustomerRenderingOptionsParam2AmountTaxDisplay && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CustomerRenderingOptionsParam2AmountTaxDisplay($value)';}
+}
 @immutable final class CustomerRenderingOptionsParam2 {const CustomerRenderingOptionsParam2({this.amountTaxDisplay, this.template, });
 
-factory CustomerRenderingOptionsParam2.fromJson(Map<String, dynamic> json) { return CustomerRenderingOptionsParam2(
+factory CustomerRenderingOptionsParam2.fromJson(Map<String, dynamic> json) {return CustomerRenderingOptionsParam2(
   amountTaxDisplay: json['amount_tax_display'] != null ? CustomerRenderingOptionsParam2AmountTaxDisplay.fromJson(json['amount_tax_display'] as String) : null,
   template: json['template'] as String?,
-); }
+);}
 
 final CustomerRenderingOptionsParam2AmountTaxDisplay? amountTaxDisplay;
 
 final String? template;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amountTaxDisplay != null) 'amount_tax_display': amountTaxDisplay?.toJson(),
   'template': ?template,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_tax_display', 'template'}.contains(key)); } 
-CustomerRenderingOptionsParam2 copyWith({CustomerRenderingOptionsParam2AmountTaxDisplay? Function()? amountTaxDisplay, String? Function()? template, }) { return CustomerRenderingOptionsParam2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount_tax_display', 'template'}.contains(key));}
+CustomerRenderingOptionsParam2 copyWith({CustomerRenderingOptionsParam2AmountTaxDisplay? Function()? amountTaxDisplay, String? Function()? template, }) {return CustomerRenderingOptionsParam2(
   amountTaxDisplay: amountTaxDisplay != null ? amountTaxDisplay() : this.amountTaxDisplay,
   template: template != null ? template() : this.template,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomerRenderingOptionsParam2 &&
           amountTaxDisplay == other.amountTaxDisplay &&
-          template == other.template; } 
-@override int get hashCode { return Object.hash(amountTaxDisplay, template); } 
-@override String toString() { return 'CustomerRenderingOptionsParam2(amountTaxDisplay: $amountTaxDisplay, template: $template)'; } 
- }
+          template == other.template;}
+@override int get hashCode {return Object.hash(amountTaxDisplay, template);}
+@override String toString() {return 'CustomerRenderingOptionsParam2(amountTaxDisplay: $amountTaxDisplay, template: $template)';}
+}

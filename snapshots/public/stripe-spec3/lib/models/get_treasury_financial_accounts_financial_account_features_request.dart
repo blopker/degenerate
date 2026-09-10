@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest {const GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest();
 
-factory GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest.fromJson(Map<String, dynamic> _) { return const GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest(); }
+factory GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest.fromJson(Map<String, dynamic> _) {return const GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest copyWith() { return const GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest copyWith() {return const GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest()';}
+}

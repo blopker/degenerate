@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchCreateInstancesRequestPublicEndpointParamsRateLimitTechnique {const AiSearchCreateInstancesRequestPublicEndpointParamsRateLimitTechnique._(this.value);
 
-factory AiSearchCreateInstancesRequestPublicEndpointParamsRateLimitTechnique.fromJson(String json) { return switch (json) {
+factory AiSearchCreateInstancesRequestPublicEndpointParamsRateLimitTechnique.fromJson(String json) {return switch (json) {
   'fixed' => fixed,
   'sliding' => sliding,
   _ => AiSearchCreateInstancesRequestPublicEndpointParamsRateLimitTechnique._(json),
-}; }
+};}
 
 static const AiSearchCreateInstancesRequestPublicEndpointParamsRateLimitTechnique fixed = AiSearchCreateInstancesRequestPublicEndpointParamsRateLimitTechnique._('fixed');
 
@@ -16,21 +16,21 @@ static const List<AiSearchCreateInstancesRequestPublicEndpointParamsRateLimitTec
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchCreateInstancesRequestPublicEndpointParamsRateLimitTechnique && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchCreateInstancesRequestPublicEndpointParamsRateLimitTechnique($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchCreateInstancesRequestPublicEndpointParamsRateLimitTechnique && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchCreateInstancesRequestPublicEndpointParamsRateLimitTechnique($value)';}
+}
 @immutable final class AiSearchCreateInstancesRequestPublicEndpointParamsRateLimit {const AiSearchCreateInstancesRequestPublicEndpointParamsRateLimit({this.periodMs, this.requests, this.technique, });
 
-factory AiSearchCreateInstancesRequestPublicEndpointParamsRateLimit.fromJson(Map<String, dynamic> json) { return AiSearchCreateInstancesRequestPublicEndpointParamsRateLimit(
+factory AiSearchCreateInstancesRequestPublicEndpointParamsRateLimit.fromJson(Map<String, dynamic> json) {return AiSearchCreateInstancesRequestPublicEndpointParamsRateLimit(
   periodMs: json['period_ms'] != null ? (json['period_ms'] as num).toInt() : null,
   requests: json['requests'] != null ? (json['requests'] as num).toInt() : null,
   technique: json['technique'] != null ? AiSearchCreateInstancesRequestPublicEndpointParamsRateLimitTechnique.fromJson(json['technique'] as String) : null,
-); }
+);}
 
 final int? periodMs;
 
@@ -38,22 +38,22 @@ final int? requests;
 
 final AiSearchCreateInstancesRequestPublicEndpointParamsRateLimitTechnique? technique;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'period_ms': ?periodMs,
   'requests': ?requests,
   if (technique != null) 'technique': technique?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'period_ms', 'requests', 'technique'}.contains(key)); } 
-AiSearchCreateInstancesRequestPublicEndpointParamsRateLimit copyWith({int? Function()? periodMs, int? Function()? requests, AiSearchCreateInstancesRequestPublicEndpointParamsRateLimitTechnique? Function()? technique, }) { return AiSearchCreateInstancesRequestPublicEndpointParamsRateLimit(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'period_ms', 'requests', 'technique'}.contains(key));}
+AiSearchCreateInstancesRequestPublicEndpointParamsRateLimit copyWith({int? Function()? periodMs, int? Function()? requests, AiSearchCreateInstancesRequestPublicEndpointParamsRateLimitTechnique? Function()? technique, }) {return AiSearchCreateInstancesRequestPublicEndpointParamsRateLimit(
   periodMs: periodMs != null ? periodMs() : this.periodMs,
   requests: requests != null ? requests() : this.requests,
   technique: technique != null ? technique() : this.technique,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchCreateInstancesRequestPublicEndpointParamsRateLimit &&
           periodMs == other.periodMs &&
           requests == other.requests &&
-          technique == other.technique; } 
-@override int get hashCode { return Object.hash(periodMs, requests, technique); } 
-@override String toString() { return 'AiSearchCreateInstancesRequestPublicEndpointParamsRateLimit(periodMs: $periodMs, requests: $requests, technique: $technique)'; } 
- }
+          technique == other.technique;}
+@override int get hashCode {return Object.hash(periodMs, requests, technique);}
+@override String toString() {return 'AiSearchCreateInstancesRequestPublicEndpointParamsRateLimit(periodMs: $periodMs, requests: $requests, technique: $technique)';}
+}

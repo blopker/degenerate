@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_user.dart';@immutable final class WebhookOrgBlockBlockedAction {const WebhookOrgBlockBlockedAction._(this.value);
 
-factory WebhookOrgBlockBlockedAction.fromJson(String json) { return switch (json) {
+factory WebhookOrgBlockBlockedAction.fromJson(String json) {return switch (json) {
   'blocked' => blocked,
   _ => WebhookOrgBlockBlockedAction._(json),
-}; }
+};}
 
 static const WebhookOrgBlockBlockedAction blocked = WebhookOrgBlockBlockedAction._('blocked');
 
@@ -13,17 +13,17 @@ static const List<WebhookOrgBlockBlockedAction> values = [blocked];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookOrgBlockBlockedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookOrgBlockBlockedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookOrgBlockBlockedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookOrgBlockBlockedAction($value)';}
+}
 @immutable final class WebhookOrgBlockBlocked {const WebhookOrgBlockBlocked({required this.action, required this.blockedUser, required this.organization, required this.sender, this.enterprise, this.installation, this.repository, });
 
-factory WebhookOrgBlockBlocked.fromJson(Map<String, dynamic> json) { return WebhookOrgBlockBlocked(
+factory WebhookOrgBlockBlocked.fromJson(Map<String, dynamic> json) {return WebhookOrgBlockBlocked(
   action: WebhookOrgBlockBlockedAction.fromJson(json['action'] as String),
   blockedUser: json['blocked_user'] != null ? WebhooksUser.fromJson(json['blocked_user'] as Map<String, dynamic>) : null,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookOrgBlockBlocked.fromJson(Map<String, dynamic> json) { return Webh
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookOrgBlockBlockedAction action;
 
@@ -47,7 +47,7 @@ final RepositoryWebhooks? repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'blocked_user': blockedUser?.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -55,12 +55,12 @@ Map<String, dynamic> toJson() { return {
   'organization': organization.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('blocked_user') &&
       json.containsKey('organization') &&
-      json.containsKey('sender'); } 
-WebhookOrgBlockBlocked copyWith({WebhookOrgBlockBlockedAction? action, WebhooksUser? Function()? blockedUser, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) { return WebhookOrgBlockBlocked(
+      json.containsKey('sender');}
+WebhookOrgBlockBlocked copyWith({WebhookOrgBlockBlockedAction? action, WebhooksUser? Function()? blockedUser, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) {return WebhookOrgBlockBlocked(
   action: action ?? this.action,
   blockedUser: blockedUser != null ? blockedUser() : this.blockedUser,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -68,8 +68,8 @@ WebhookOrgBlockBlocked copyWith({WebhookOrgBlockBlockedAction? action, WebhooksU
   organization: organization ?? this.organization,
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookOrgBlockBlocked &&
           action == other.action &&
           blockedUser == other.blockedUser &&
@@ -77,7 +77,7 @@ WebhookOrgBlockBlocked copyWith({WebhookOrgBlockBlockedAction? action, WebhooksU
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, blockedUser, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookOrgBlockBlocked(action: $action, blockedUser: $blockedUser, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, blockedUser, enterprise, installation, organization, repository, sender);}
+@override String toString() {return 'WebhookOrgBlockBlocked(action: $action, blockedUser: $blockedUser, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';}
+}

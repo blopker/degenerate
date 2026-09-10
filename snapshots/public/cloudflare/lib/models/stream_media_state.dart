@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the processing status for all quality levels for a video.
 @immutable final class StreamMediaState {const StreamMediaState._(this.value);
 
-factory StreamMediaState.fromJson(String json) { return switch (json) {
+factory StreamMediaState.fromJson(String json) {return switch (json) {
   'pendingupload' => pendingupload,
   'downloading' => downloading,
   'queued' => queued,
@@ -12,7 +12,7 @@ factory StreamMediaState.fromJson(String json) { return switch (json) {
   'error' => error,
   'live-inprogress' => liveInprogress,
   _ => StreamMediaState._(json),
-}; }
+};}
 
 static const StreamMediaState pendingupload = StreamMediaState._('pendingupload');
 
@@ -32,11 +32,11 @@ static const List<StreamMediaState> values = [pendingupload, downloading, queued
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StreamMediaState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StreamMediaState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is StreamMediaState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'StreamMediaState($value)';}
+}

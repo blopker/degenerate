@@ -17,12 +17,12 @@ bool toJson() => value;
 /// Determines type of delivery mechanism.
 @immutable final class AaaSchemasType {const AaaSchemasType._(this.value);
 
-factory AaaSchemasType.fromJson(String json) { return switch (json) {
+factory AaaSchemasType.fromJson(String json) {return switch (json) {
   'email' => email,
   'pagerduty' => pagerduty,
   'webhook' => webhook,
   _ => AaaSchemasType._(json),
-}; }
+};}
 
 static const AaaSchemasType email = AaaSchemasType._('email');
 
@@ -34,21 +34,21 @@ static const List<AaaSchemasType> values = [email, pagerduty, webhook];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AaaSchemasType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AaaSchemasType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AaaSchemasType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AaaSchemasType($value)';}
+}
 @immutable final class AaaEligibility {const AaaEligibility({this.eligible, this.ready, this.type, });
 
-factory AaaEligibility.fromJson(Map<String, dynamic> json) { return AaaEligibility(
+factory AaaEligibility.fromJson(Map<String, dynamic> json) {return AaaEligibility(
   eligible: json['eligible'] != null ? AaaEligible.fromJson(json['eligible'] as bool) : null,
   ready: json['ready'] != null ? AaaReady.fromJson(json['ready'] as bool) : null,
   type: json['type'] != null ? AaaSchemasType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final AaaEligible? eligible;
 
@@ -56,22 +56,22 @@ final AaaReady? ready;
 
 final AaaSchemasType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (eligible != null) 'eligible': eligible?.toJson(),
   if (ready != null) 'ready': ready?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'eligible', 'ready', 'type'}.contains(key)); } 
-AaaEligibility copyWith({AaaEligible? Function()? eligible, AaaReady? Function()? ready, AaaSchemasType? Function()? type, }) { return AaaEligibility(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'eligible', 'ready', 'type'}.contains(key));}
+AaaEligibility copyWith({AaaEligible? Function()? eligible, AaaReady? Function()? ready, AaaSchemasType? Function()? type, }) {return AaaEligibility(
   eligible: eligible != null ? eligible() : this.eligible,
   ready: ready != null ? ready() : this.ready,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AaaEligibility &&
           eligible == other.eligible &&
           ready == other.ready &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(eligible, ready, type); } 
-@override String toString() { return 'AaaEligibility(eligible: $eligible, ready: $ready, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(eligible, ready, type);}
+@override String toString() {return 'AaaEligibility(eligible: $eligible, ready: $ready, type: $type)';}
+}

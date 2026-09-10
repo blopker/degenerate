@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class CreateTranscriptionSuccess {const CreateTranscriptionSuccess();
 
 /// Decodes the payload for its declared status and content type.
-static CreateTranscriptionSuccess parse(ApiResponse response) { switch (response.statusCode) {
+static CreateTranscriptionSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -21,26 +21,26 @@ return CreateTranscriptionSuccess200ApplicationJson(OneOf3.parse(json, fromA: (v
 default:
 return CreateTranscriptionSuccessUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 200 (application/json).
 final class CreateTranscriptionSuccess200ApplicationJson extends CreateTranscriptionSuccess {const CreateTranscriptionSuccess200ApplicationJson(this.data);
 
 /// The decoded response payload.
 final CreateTranscriptionResponse data;
 
- }
+}
 /// Response for 200 (text/event-stream).
 final class CreateTranscriptionSuccess200TextEventStream extends CreateTranscriptionSuccess {const CreateTranscriptionSuccess200TextEventStream(this.data);
 
 /// The decoded response payload.
 final CreateTranscriptionResponseStreamEvent data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class CreateTranscriptionSuccessUnknown extends CreateTranscriptionSuccess {const CreateTranscriptionSuccessUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

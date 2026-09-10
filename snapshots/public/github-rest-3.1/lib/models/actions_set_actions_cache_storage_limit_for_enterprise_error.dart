@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class ActionsSetActionsCacheStorageLimitForEnterpriseError {const ActionsSetActionsCacheStorageLimitForEnterpriseError();
 
 /// Decodes the payload for its declared status and content type.
-static ActionsSetActionsCacheStorageLimitForEnterpriseError parse(ApiResponse response) { switch (response.statusCode) {
+static ActionsSetActionsCacheStorageLimitForEnterpriseError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -27,40 +27,40 @@ return ActionsSetActionsCacheStorageLimitForEnterpriseError404(BasicError.fromJs
 default:
 return ActionsSetActionsCacheStorageLimitForEnterpriseErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class ActionsSetActionsCacheStorageLimitForEnterpriseError400ApplicationJson extends ActionsSetActionsCacheStorageLimitForEnterpriseError {const ActionsSetActionsCacheStorageLimitForEnterpriseError400ApplicationJson(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 400 (application/scim+json).
 final class ActionsSetActionsCacheStorageLimitForEnterpriseError400ApplicationScimJson extends ActionsSetActionsCacheStorageLimitForEnterpriseError {const ActionsSetActionsCacheStorageLimitForEnterpriseError400ApplicationScimJson(this.data);
 
 /// The decoded response payload.
 final ScimError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class ActionsSetActionsCacheStorageLimitForEnterpriseError403 extends ActionsSetActionsCacheStorageLimitForEnterpriseError {const ActionsSetActionsCacheStorageLimitForEnterpriseError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class ActionsSetActionsCacheStorageLimitForEnterpriseError404 extends ActionsSetActionsCacheStorageLimitForEnterpriseError {const ActionsSetActionsCacheStorageLimitForEnterpriseError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class ActionsSetActionsCacheStorageLimitForEnterpriseErrorUnknown extends ActionsSetActionsCacheStorageLimitForEnterpriseError {const ActionsSetActionsCacheStorageLimitForEnterpriseErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

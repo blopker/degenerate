@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The frequency of a recurring UsageTrigger.  Can be: `daily`, `monthly`, or `yearly` for recurring triggers or empty for non-recurring triggers. A trigger will only fire once during each period. Recurring times are in GMT.
 @immutable final class UsageTriggerEnumRecurring {const UsageTriggerEnumRecurring._(this.value);
 
-factory UsageTriggerEnumRecurring.fromJson(String json) { return switch (json) {
+factory UsageTriggerEnumRecurring.fromJson(String json) {return switch (json) {
   'daily' => daily,
   'monthly' => monthly,
   'yearly' => yearly,
   'alltime' => alltime,
   _ => UsageTriggerEnumRecurring._(json),
-}; }
+};}
 
 static const UsageTriggerEnumRecurring daily = UsageTriggerEnumRecurring._('daily');
 
@@ -23,11 +23,11 @@ static const List<UsageTriggerEnumRecurring> values = [daily, monthly, yearly, a
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageTriggerEnumRecurring && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageTriggerEnumRecurring($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UsageTriggerEnumRecurring && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UsageTriggerEnumRecurring($value)';}
+}

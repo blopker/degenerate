@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTopAsesProtocol {const RadarGetDnsTopAsesProtocol._(this.value);
 
-factory RadarGetDnsTopAsesProtocol.fromJson(String json) { return switch (json) {
+factory RadarGetDnsTopAsesProtocol.fromJson(String json) {return switch (json) {
   'UDP' => udp,
   'TCP' => tcp,
   'HTTPS' => https,
   'TLS' => tls,
   _ => RadarGetDnsTopAsesProtocol._(json),
-}; }
+};}
 
 static const RadarGetDnsTopAsesProtocol udp = RadarGetDnsTopAsesProtocol._('UDP');
 
@@ -22,11 +22,11 @@ static const List<RadarGetDnsTopAsesProtocol> values = [udp, tcp, https, tls];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsTopAsesProtocol && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsTopAsesProtocol($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsTopAsesProtocol && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsTopAsesProtocol($value)';}
+}

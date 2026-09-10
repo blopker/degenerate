@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'usage_trigger_enum_recurring.dart';import 'usage_trigger_enum_trigger_field.dart';/// The HTTP method we use to call `callback_url`. Can be: `GET` or `POST`.
 @immutable final class AccountUsageUsageTriggerCallbackMethod {const AccountUsageUsageTriggerCallbackMethod._(this.value);
 
-factory AccountUsageUsageTriggerCallbackMethod.fromJson(String json) { return switch (json) {
+factory AccountUsageUsageTriggerCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => AccountUsageUsageTriggerCallbackMethod._(json),
-}; }
+};}
 
 static const AccountUsageUsageTriggerCallbackMethod $get = AccountUsageUsageTriggerCallbackMethod._('GET');
 
@@ -17,17 +17,17 @@ static const List<AccountUsageUsageTriggerCallbackMethod> values = [$get, post];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountUsageUsageTriggerCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountUsageUsageTriggerCallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountUsageUsageTriggerCallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountUsageUsageTriggerCallbackMethod($value)';}
+}
 @immutable final class AccountUsageUsageTrigger {const AccountUsageUsageTrigger({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.callbackMethod = const Omittable.absent(), this.callbackUrl = const Omittable.absent(), this.currentValue = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateFired = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.recurring, this.sid = const Omittable.absent(), this.triggerBy, this.triggerValue = const Omittable.absent(), this.uri = const Omittable.absent(), this.usageCategory = const Omittable.absent(), this.usageRecordUri = const Omittable.absent(), });
 
-factory AccountUsageUsageTrigger.fromJson(Map<String, dynamic> json) { return AccountUsageUsageTrigger(
+factory AccountUsageUsageTrigger.fromJson(Map<String, dynamic> json) {return AccountUsageUsageTrigger(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
   callbackMethod: json.containsKey('callback_method') ? Omittable(json['callback_method'] != null ? AccountUsageUsageTriggerCallbackMethod.fromJson(json['callback_method'] as String) : null) : const Omittable.absent(),
@@ -44,7 +44,7 @@ factory AccountUsageUsageTrigger.fromJson(Map<String, dynamic> json) { return Ac
   uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
   usageCategory: json.containsKey('usage_category') ? Omittable(json['usage_category'] as String?) : const Omittable.absent(),
   usageRecordUri: json.containsKey('usage_record_uri') ? Omittable(json['usage_record_uri'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that the trigger monitors.
 final Omittable<String?> accountSid;
@@ -92,7 +92,7 @@ final Omittable<String?> usageCategory;
 /// The URI of the [UsageRecord](https://www.twilio.com/docs/usage/api/usage-record) resource this trigger watches, relative to `https://api.twilio.com`.
 final Omittable<String?> usageRecordUri;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (apiVersion.isPresent) 'api_version': apiVersion.value,
   if (callbackMethod.isPresent) 'callback_method': callbackMethod.value?.toJson(),
@@ -109,9 +109,9 @@ Map<String, dynamic> toJson() { return {
   if (uri.isPresent) 'uri': uri.value,
   if (usageCategory.isPresent) 'usage_category': usageCategory.value,
   if (usageRecordUri.isPresent) 'usage_record_uri': usageRecordUri.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'callback_method', 'callback_url', 'current_value', 'date_created', 'date_fired', 'date_updated', 'friendly_name', 'recurring', 'sid', 'trigger_by', 'trigger_value', 'uri', 'usage_category', 'usage_record_uri'}.contains(key)); } 
-AccountUsageUsageTrigger copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<AccountUsageUsageTriggerCallbackMethod?>? callbackMethod, Omittable<Uri?>? callbackUrl, Omittable<String?>? currentValue, Omittable<String?>? dateCreated, Omittable<String?>? dateFired, Omittable<String?>? dateUpdated, Omittable<String?>? friendlyName, UsageTriggerEnumRecurring? Function()? recurring, Omittable<String?>? sid, UsageTriggerEnumTriggerField? Function()? triggerBy, Omittable<String?>? triggerValue, Omittable<String?>? uri, Omittable<String?>? usageCategory, Omittable<String?>? usageRecordUri, }) { return AccountUsageUsageTrigger(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'api_version', 'callback_method', 'callback_url', 'current_value', 'date_created', 'date_fired', 'date_updated', 'friendly_name', 'recurring', 'sid', 'trigger_by', 'trigger_value', 'uri', 'usage_category', 'usage_record_uri'}.contains(key));}
+AccountUsageUsageTrigger copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<AccountUsageUsageTriggerCallbackMethod?>? callbackMethod, Omittable<Uri?>? callbackUrl, Omittable<String?>? currentValue, Omittable<String?>? dateCreated, Omittable<String?>? dateFired, Omittable<String?>? dateUpdated, Omittable<String?>? friendlyName, UsageTriggerEnumRecurring? Function()? recurring, Omittable<String?>? sid, UsageTriggerEnumTriggerField? Function()? triggerBy, Omittable<String?>? triggerValue, Omittable<String?>? uri, Omittable<String?>? usageCategory, Omittable<String?>? usageRecordUri, }) {return AccountUsageUsageTrigger(
   accountSid: accountSid ?? this.accountSid,
   apiVersion: apiVersion ?? this.apiVersion,
   callbackMethod: callbackMethod ?? this.callbackMethod,
@@ -128,8 +128,8 @@ AccountUsageUsageTrigger copyWith({Omittable<String?>? accountSid, Omittable<Str
   uri: uri ?? this.uri,
   usageCategory: usageCategory ?? this.usageCategory,
   usageRecordUri: usageRecordUri ?? this.usageRecordUri,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountUsageUsageTrigger &&
           accountSid == other.accountSid &&
           apiVersion == other.apiVersion &&
@@ -146,7 +146,7 @@ AccountUsageUsageTrigger copyWith({Omittable<String?>? accountSid, Omittable<Str
           triggerValue == other.triggerValue &&
           uri == other.uri &&
           usageCategory == other.usageCategory &&
-          usageRecordUri == other.usageRecordUri; } 
-@override int get hashCode { return Object.hash(accountSid, apiVersion, callbackMethod, callbackUrl, currentValue, dateCreated, dateFired, dateUpdated, friendlyName, recurring, sid, triggerBy, triggerValue, uri, usageCategory, usageRecordUri); } 
-@override String toString() { return 'AccountUsageUsageTrigger(accountSid: $accountSid, apiVersion: $apiVersion, callbackMethod: $callbackMethod, callbackUrl: $callbackUrl, currentValue: $currentValue, dateCreated: $dateCreated, dateFired: $dateFired, dateUpdated: $dateUpdated, friendlyName: $friendlyName, recurring: $recurring, sid: $sid, triggerBy: $triggerBy, triggerValue: $triggerValue, uri: $uri, usageCategory: $usageCategory, usageRecordUri: $usageRecordUri)'; } 
- }
+          usageRecordUri == other.usageRecordUri;}
+@override int get hashCode {return Object.hash(accountSid, apiVersion, callbackMethod, callbackUrl, currentValue, dateCreated, dateFired, dateUpdated, friendlyName, recurring, sid, triggerBy, triggerValue, uri, usageCategory, usageRecordUri);}
+@override String toString() {return 'AccountUsageUsageTrigger(accountSid: $accountSid, apiVersion: $apiVersion, callbackMethod: $callbackMethod, callbackUrl: $callbackUrl, currentValue: $currentValue, dateCreated: $dateCreated, dateFired: $dateFired, dateUpdated: $dateUpdated, friendlyName: $friendlyName, recurring: $recurring, sid: $sid, triggerBy: $triggerBy, triggerValue: $triggerValue, uri: $uri, usageCategory: $usageCategory, usageRecordUri: $usageRecordUri)';}
+}

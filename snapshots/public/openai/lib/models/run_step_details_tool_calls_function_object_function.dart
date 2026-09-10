@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The definition of the function that was called.
 @immutable final class RunStepDetailsToolCallsFunctionObjectFunction {const RunStepDetailsToolCallsFunctionObjectFunction({required this.name, required this.arguments, required this.output, });
 
-factory RunStepDetailsToolCallsFunctionObjectFunction.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsFunctionObjectFunction(
+factory RunStepDetailsToolCallsFunctionObjectFunction.fromJson(Map<String, dynamic> json) {return RunStepDetailsToolCallsFunctionObjectFunction(
   name: json['name'] as String,
   arguments: json['arguments'] as String,
   output: json['output'] as String?,
-); }
+);}
 
 /// The name of the function.
 final String name;
@@ -18,24 +18,24 @@ final String arguments;
 /// The output of the function. This will be `null` if the outputs have not been [submitted](/docs/api-reference/runs/submitToolOutputs) yet.
 final String? output;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'arguments': arguments,
   'output': output,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('arguments') && json['arguments'] is String &&
-      json.containsKey('output') && (json['output'] == null || json['output'] is String); } 
-RunStepDetailsToolCallsFunctionObjectFunction copyWith({String? name, String? arguments, String? Function()? output, }) { return RunStepDetailsToolCallsFunctionObjectFunction(
+      json.containsKey('output') && (json['output'] == null || json['output'] is String);}
+RunStepDetailsToolCallsFunctionObjectFunction copyWith({String? name, String? arguments, String? Function()? output, }) {return RunStepDetailsToolCallsFunctionObjectFunction(
   name: name ?? this.name,
   arguments: arguments ?? this.arguments,
   output: output != null ? output() : this.output,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RunStepDetailsToolCallsFunctionObjectFunction &&
           name == other.name &&
           arguments == other.arguments &&
-          output == other.output; } 
-@override int get hashCode { return Object.hash(name, arguments, output); } 
-@override String toString() { return 'RunStepDetailsToolCallsFunctionObjectFunction(name: $name, arguments: $arguments, output: $output)'; } 
- }
+          output == other.output;}
+@override int get hashCode {return Object.hash(name, arguments, output);}
+@override String toString() {return 'RunStepDetailsToolCallsFunctionObjectFunction(name: $name, arguments: $arguments, output: $output)';}
+}

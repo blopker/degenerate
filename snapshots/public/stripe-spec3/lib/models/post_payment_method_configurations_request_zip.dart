@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_zip_display_preference.dart';/// Zip gives your customers a way to split purchases over a series of payments. Check this [page](https://docs.stripe.com/payments/zip) for more details like country availability.
 @immutable final class PostPaymentMethodConfigurationsRequestZip {const PostPaymentMethodConfigurationsRequestZip({this.displayPreference});
 
-factory PostPaymentMethodConfigurationsRequestZip.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestZip(
+factory PostPaymentMethodConfigurationsRequestZip.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsRequestZip(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestZipDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsRequestZipDisplayPreference? displayPreference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsRequestZip copyWith({PostPaymentMethodConfigurationsRequestZipDisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsRequestZip(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_preference'}.contains(key));}
+PostPaymentMethodConfigurationsRequestZip copyWith({PostPaymentMethodConfigurationsRequestZipDisplayPreference? Function()? displayPreference}) {return PostPaymentMethodConfigurationsRequestZip(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsRequestZip &&
-          displayPreference == other.displayPreference; } 
-@override int get hashCode { return displayPreference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestZip(displayPreference: $displayPreference)'; } 
- }
+          displayPreference == other.displayPreference;}
+@override int get hashCode {return displayPreference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestZip(displayPreference: $displayPreference)';}
+}

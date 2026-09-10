@@ -9,12 +9,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'linked_accou
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage {const CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage._(this.value);
 
-factory CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   'off_session' => offSession,
   'on_session' => onSession,
   _ => CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage._(json),
-}; }
+};}
 
 static const CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage none = CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage._('none');
 
@@ -26,22 +26,22 @@ static const List<CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage($value)';}
+}
 /// Bank account verification method.
 @immutable final class CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod {const CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod._(this.value);
 
-factory CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod.fromJson(String json) { return switch (json) {
+factory CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'instant' => instant,
   _ => CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod._(json),
-}; }
+};}
 
 static const CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod automatic = CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod._('automatic');
 
@@ -51,23 +51,23 @@ static const List<CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod> v
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod($value)';}
+}
 /// 
 @immutable final class CheckoutUsBankAccountPaymentMethodOptions {const CheckoutUsBankAccountPaymentMethodOptions({this.financialConnections, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
 
-factory CheckoutUsBankAccountPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutUsBankAccountPaymentMethodOptions(
+factory CheckoutUsBankAccountPaymentMethodOptions.fromJson(Map<String, dynamic> json) {return CheckoutUsBankAccountPaymentMethodOptions(
   financialConnections: json['financial_connections'] != null ? LinkedAccountOptionsCommon.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
   verificationMethod: json['verification_method'] != null ? CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod.fromJson(json['verification_method'] as String) : null,
-); }
+);}
 
 final LinkedAccountOptionsCommon? financialConnections;
 
@@ -86,25 +86,25 @@ final String? targetDate;
 /// Bank account verification method.
 final CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod? verificationMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (financialConnections != null) 'financial_connections': financialConnections?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
   'target_date': ?targetDate,
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'setup_future_usage', 'target_date', 'verification_method'}.contains(key)); } 
-CheckoutUsBankAccountPaymentMethodOptions copyWith({LinkedAccountOptionsCommon? Function()? financialConnections, CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod? Function()? verificationMethod, }) { return CheckoutUsBankAccountPaymentMethodOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'financial_connections', 'setup_future_usage', 'target_date', 'verification_method'}.contains(key));}
+CheckoutUsBankAccountPaymentMethodOptions copyWith({LinkedAccountOptionsCommon? Function()? financialConnections, CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod? Function()? verificationMethod, }) {return CheckoutUsBankAccountPaymentMethodOptions(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CheckoutUsBankAccountPaymentMethodOptions &&
           financialConnections == other.financialConnections &&
           setupFutureUsage == other.setupFutureUsage &&
           targetDate == other.targetDate &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(financialConnections, setupFutureUsage, targetDate, verificationMethod); } 
-@override String toString() { return 'CheckoutUsBankAccountPaymentMethodOptions(financialConnections: $financialConnections, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate, verificationMethod: $verificationMethod)'; } 
- }
+          verificationMethod == other.verificationMethod;}
+@override int get hashCode {return Object.hash(financialConnections, setupFutureUsage, targetDate, verificationMethod);}
+@override String toString() {return 'CheckoutUsBankAccountPaymentMethodOptions(financialConnections: $financialConnections, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate, verificationMethod: $verificationMethod)';}
+}

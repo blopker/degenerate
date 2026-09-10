@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class ReposRemoveStatusCheckContextsError {const ReposRemoveStatusCheckContextsError();
 
 /// Decodes the payload for its declared status and content type.
-static ReposRemoveStatusCheckContextsError parse(ApiResponse response) { switch (response.statusCode) {
+static ReposRemoveStatusCheckContextsError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
 return ReposRemoveStatusCheckContextsError404(BasicError.fromJson(json as Map<String, dynamic>));
@@ -14,26 +14,26 @@ return ReposRemoveStatusCheckContextsError422(ValidationError.fromJson(json as M
 default:
 return ReposRemoveStatusCheckContextsErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 404 (application/json).
 final class ReposRemoveStatusCheckContextsError404 extends ReposRemoveStatusCheckContextsError {const ReposRemoveStatusCheckContextsError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class ReposRemoveStatusCheckContextsError422 extends ReposRemoveStatusCheckContextsError {const ReposRemoveStatusCheckContextsError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class ReposRemoveStatusCheckContextsErrorUnknown extends ReposRemoveStatusCheckContextsError {const ReposRemoveStatusCheckContextsErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the recording. Can be: `processing`, `completed` and `absent`. For more detailed statuses on in-progress recordings, check out how to [Update a Recording Resource](https://www.twilio.com/docs/voice/api/recording#update-a-recording-resource).
 @immutable final class CallRecordingEnumStatus {const CallRecordingEnumStatus._(this.value);
 
-factory CallRecordingEnumStatus.fromJson(String json) { return switch (json) {
+factory CallRecordingEnumStatus.fromJson(String json) {return switch (json) {
   'in-progress' => inProgress,
   'paused' => paused,
   'stopped' => stopped,
@@ -11,7 +11,7 @@ factory CallRecordingEnumStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
   'absent' => absent,
   _ => CallRecordingEnumStatus._(json),
-}; }
+};}
 
 static const CallRecordingEnumStatus inProgress = CallRecordingEnumStatus._('in-progress');
 
@@ -29,11 +29,11 @@ static const List<CallRecordingEnumStatus> values = [inProgress, paused, stopped
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CallRecordingEnumStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CallRecordingEnumStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CallRecordingEnumStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CallRecordingEnumStatus($value)';}
+}

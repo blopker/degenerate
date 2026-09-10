@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType {const RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType._(this.value);
 
-factory RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType.fromJson(String json) {return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
   'OTHER' => $other,
   _ => RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType._(json),
-}; }
+};}
 
 static const RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType desktop = RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType._('DESKTOP');
 
@@ -19,11 +19,11 @@ static const List<RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTimeseriesGroupByBrowserFamiliesDeviceType($value)';}
+}

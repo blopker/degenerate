@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue_comment.dart';import 'issue_dependencies_summary.dart';import 'issue_field_value.dart';import 'issue_type.dart';import 'sub_issues_summary.dart';import 'webhook_issues_opened_changes_old_issue_assignee.dart';import 'webhook_issues_opened_changes_old_issue_assignees.dart';import 'webhook_issues_opened_changes_old_issue_labels.dart';import 'webhook_issues_opened_changes_old_issue_milestone.dart';import 'webhook_issues_opened_changes_old_issue_performed_via_github_app.dart';import 'webhook_issues_opened_changes_old_issue_pull_request.dart';import 'webhook_issues_opened_changes_old_issue_reactions.dart';import 'webhook_issues_opened_changes_old_issue_user.dart';@immutable final class WebhookIssuesOpenedChangesOldIssueActiveLockReason {const WebhookIssuesOpenedChangesOldIssueActiveLockReason._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssueActiveLockReason.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssueActiveLockReason.fromJson(String json) {return switch (json) {
   'resolved' => resolved,
   'off-topic' => offTopic,
   'too heated' => tooHeated,
   'spam' => spam,
   'null' => $null,
   _ => WebhookIssuesOpenedChangesOldIssueActiveLockReason._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssueActiveLockReason resolved = WebhookIssuesOpenedChangesOldIssueActiveLockReason._('resolved');
 
@@ -25,18 +25,18 @@ static const List<WebhookIssuesOpenedChangesOldIssueActiveLockReason> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssueActiveLockReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssueActiveLockReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssueActiveLockReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssueActiveLockReason($value)';}
+}
 /// How the author is associated with the repository.
 @immutable final class WebhookIssuesOpenedChangesOldIssueAuthorAssociation {const WebhookIssuesOpenedChangesOldIssueAuthorAssociation._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssueAuthorAssociation.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssueAuthorAssociation.fromJson(String json) {return switch (json) {
   'COLLABORATOR' => collaborator,
   'CONTRIBUTOR' => contributor,
   'FIRST_TIMER' => firstTimer,
@@ -46,7 +46,7 @@ factory WebhookIssuesOpenedChangesOldIssueAuthorAssociation.fromJson(String json
   'NONE' => none,
   'OWNER' => owner,
   _ => WebhookIssuesOpenedChangesOldIssueAuthorAssociation._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssueAuthorAssociation collaborator = WebhookIssuesOpenedChangesOldIssueAuthorAssociation._('COLLABORATOR');
 
@@ -68,22 +68,22 @@ static const List<WebhookIssuesOpenedChangesOldIssueAuthorAssociation> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssueAuthorAssociation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssueAuthorAssociation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssueAuthorAssociation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssueAuthorAssociation($value)';}
+}
 /// State of the issue; either 'open' or 'closed'
 @immutable final class WebhookIssuesOpenedChangesOldIssueState {const WebhookIssuesOpenedChangesOldIssueState._(this.value);
 
-factory WebhookIssuesOpenedChangesOldIssueState.fromJson(String json) { return switch (json) {
+factory WebhookIssuesOpenedChangesOldIssueState.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   _ => WebhookIssuesOpenedChangesOldIssueState._(json),
-}; }
+};}
 
 static const WebhookIssuesOpenedChangesOldIssueState open = WebhookIssuesOpenedChangesOldIssueState._('open');
 
@@ -93,18 +93,18 @@ static const List<WebhookIssuesOpenedChangesOldIssueState> values = [open, close
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedChangesOldIssueState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssueState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesOpenedChangesOldIssueState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssueState($value)';}
+}
 /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
 @immutable final class WebhookIssuesOpenedChangesOldIssue {const WebhookIssuesOpenedChangesOldIssue({required this.number, required this.id, this.closedAt = const Omittable.absent(), this.authorAssociation, this.body = const Omittable.absent(), this.assignee = const Omittable.absent(), this.comments, this.commentsUrl, this.createdAt, this.draft, this.eventsUrl, this.htmlUrl, this.activeLockReason = const Omittable.absent(), this.labels, this.labelsUrl, this.locked, this.milestone = const Omittable.absent(), this.nodeId, this.assignees, this.performedViaGithubApp = const Omittable.absent(), this.pullRequest, this.reactions, this.type = const Omittable.absent(), this.subIssuesSummary, this.issueDependenciesSummary, this.issueFieldValues, this.state, this.stateReason = const Omittable.absent(), this.timelineUrl, this.title, this.updatedAt, this.url, this.pinnedComment = const Omittable.absent(), this.user = const Omittable.absent(), this.repositoryUrl, });
 
-factory WebhookIssuesOpenedChangesOldIssue.fromJson(Map<String, dynamic> json) { return WebhookIssuesOpenedChangesOldIssue(
+factory WebhookIssuesOpenedChangesOldIssue.fromJson(Map<String, dynamic> json) {return WebhookIssuesOpenedChangesOldIssue(
   activeLockReason: json.containsKey('active_lock_reason') ? Omittable(json['active_lock_reason'] != null ? WebhookIssuesOpenedChangesOldIssueActiveLockReason.fromJson(json['active_lock_reason'] as String) : null) : const Omittable.absent(),
   assignee: json.containsKey('assignee') ? Omittable(json['assignee'] != null ? WebhookIssuesOpenedChangesOldIssueAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => e == null ? null : WebhookIssuesOpenedChangesOldIssueAssignees.fromJson(e as Map<String, dynamic>)).toList(),
@@ -140,7 +140,7 @@ factory WebhookIssuesOpenedChangesOldIssue.fromJson(Map<String, dynamic> json) {
   pinnedComment: json.containsKey('pinned_comment') ? Omittable(json['pinned_comment'] != null ? IssueComment.fromJson(json['pinned_comment'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   user: json.containsKey('user') ? Omittable(json['user'] != null ? WebhookIssuesOpenedChangesOldIssueUser.fromJson(json['user'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: json.containsKey('type') ? Omittable(json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 final Omittable<WebhookIssuesOpenedChangesOldIssueActiveLockReason?> activeLockReason;
 
@@ -219,7 +219,7 @@ final Omittable<WebhookIssuesOpenedChangesOldIssueUser?> user;
 
 final Omittable<IssueType?> type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (activeLockReason.isPresent) 'active_lock_reason': activeLockReason.value?.toJson(),
   if (assignee.isPresent) 'assignee': assignee.value?.toJson(),
   if (assignees != null) 'assignees': assignees?.map((e) => e?.toJson()).toList(),
@@ -255,10 +255,10 @@ Map<String, dynamic> toJson() { return {
   if (pinnedComment.isPresent) 'pinned_comment': pinnedComment.value?.toJson(),
   if (user.isPresent) 'user': user.value?.toJson(),
   if (type.isPresent) 'type': type.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('number') && json['number'] is num; } 
-WebhookIssuesOpenedChangesOldIssue copyWith({Omittable<WebhookIssuesOpenedChangesOldIssueActiveLockReason?>? activeLockReason, Omittable<WebhookIssuesOpenedChangesOldIssueAssignee?>? assignee, List<WebhookIssuesOpenedChangesOldIssueAssignees?>? Function()? assignees, WebhookIssuesOpenedChangesOldIssueAuthorAssociation? Function()? authorAssociation, Omittable<String?>? body, Omittable<DateTime?>? closedAt, int? Function()? comments, Uri? Function()? commentsUrl, DateTime? Function()? createdAt, bool? Function()? draft, Uri? Function()? eventsUrl, Uri? Function()? htmlUrl, int? id, List<WebhookIssuesOpenedChangesOldIssueLabels>? Function()? labels, String? Function()? labelsUrl, bool? Function()? locked, Omittable<WebhookIssuesOpenedChangesOldIssueMilestone?>? milestone, String? Function()? nodeId, int? number, Omittable<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubApp?>? performedViaGithubApp, WebhookIssuesOpenedChangesOldIssuePullRequest? Function()? pullRequest, WebhookIssuesOpenedChangesOldIssueReactions? Function()? reactions, Uri? Function()? repositoryUrl, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, WebhookIssuesOpenedChangesOldIssueState? Function()? state, Omittable<String?>? stateReason, Uri? Function()? timelineUrl, String? Function()? title, DateTime? Function()? updatedAt, Uri? Function()? url, Omittable<IssueComment?>? pinnedComment, Omittable<WebhookIssuesOpenedChangesOldIssueUser?>? user, Omittable<IssueType?>? type, }) { return WebhookIssuesOpenedChangesOldIssue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('number') && json['number'] is num;}
+WebhookIssuesOpenedChangesOldIssue copyWith({Omittable<WebhookIssuesOpenedChangesOldIssueActiveLockReason?>? activeLockReason, Omittable<WebhookIssuesOpenedChangesOldIssueAssignee?>? assignee, List<WebhookIssuesOpenedChangesOldIssueAssignees?>? Function()? assignees, WebhookIssuesOpenedChangesOldIssueAuthorAssociation? Function()? authorAssociation, Omittable<String?>? body, Omittable<DateTime?>? closedAt, int? Function()? comments, Uri? Function()? commentsUrl, DateTime? Function()? createdAt, bool? Function()? draft, Uri? Function()? eventsUrl, Uri? Function()? htmlUrl, int? id, List<WebhookIssuesOpenedChangesOldIssueLabels>? Function()? labels, String? Function()? labelsUrl, bool? Function()? locked, Omittable<WebhookIssuesOpenedChangesOldIssueMilestone?>? milestone, String? Function()? nodeId, int? number, Omittable<WebhookIssuesOpenedChangesOldIssuePerformedViaGithubApp?>? performedViaGithubApp, WebhookIssuesOpenedChangesOldIssuePullRequest? Function()? pullRequest, WebhookIssuesOpenedChangesOldIssueReactions? Function()? reactions, Uri? Function()? repositoryUrl, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, WebhookIssuesOpenedChangesOldIssueState? Function()? state, Omittable<String?>? stateReason, Uri? Function()? timelineUrl, String? Function()? title, DateTime? Function()? updatedAt, Uri? Function()? url, Omittable<IssueComment?>? pinnedComment, Omittable<WebhookIssuesOpenedChangesOldIssueUser?>? user, Omittable<IssueType?>? type, }) {return WebhookIssuesOpenedChangesOldIssue(
   activeLockReason: activeLockReason ?? this.activeLockReason,
   assignee: assignee ?? this.assignee,
   assignees: assignees != null ? assignees() : this.assignees,
@@ -294,8 +294,8 @@ WebhookIssuesOpenedChangesOldIssue copyWith({Omittable<WebhookIssuesOpenedChange
   pinnedComment: pinnedComment ?? this.pinnedComment,
   user: user ?? this.user,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookIssuesOpenedChangesOldIssue &&
           activeLockReason == other.activeLockReason &&
           assignee == other.assignee &&
@@ -331,7 +331,7 @@ WebhookIssuesOpenedChangesOldIssue copyWith({Omittable<WebhookIssuesOpenedChange
           url == other.url &&
           pinnedComment == other.pinnedComment &&
           user == other.user &&
-          type == other.type; } 
-@override int get hashCode { return Object.hashAll([activeLockReason, assignee, Object.hashAll(assignees ?? const []), authorAssociation, body, closedAt, comments, commentsUrl, createdAt, draft, eventsUrl, htmlUrl, id, Object.hashAll(labels ?? const []), labelsUrl, locked, milestone, nodeId, number, performedViaGithubApp, pullRequest, reactions, repositoryUrl, subIssuesSummary, issueDependenciesSummary, Object.hashAll(issueFieldValues ?? const []), state, stateReason, timelineUrl, title, updatedAt, url, pinnedComment, user, type]); } 
-@override String toString() { return 'WebhookIssuesOpenedChangesOldIssue(activeLockReason: $activeLockReason, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, body: $body, closedAt: $closedAt, comments: $comments, commentsUrl: $commentsUrl, createdAt: $createdAt, draft: $draft, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, id: $id, labels: $labels, labelsUrl: $labelsUrl, locked: $locked, milestone: $milestone, nodeId: $nodeId, number: $number, performedViaGithubApp: $performedViaGithubApp, pullRequest: $pullRequest, reactions: $reactions, repositoryUrl: $repositoryUrl, subIssuesSummary: $subIssuesSummary, issueDependenciesSummary: $issueDependenciesSummary, issueFieldValues: $issueFieldValues, state: $state, stateReason: $stateReason, timelineUrl: $timelineUrl, title: $title, updatedAt: $updatedAt, url: $url, pinnedComment: $pinnedComment, user: $user, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hashAll([activeLockReason, assignee, Object.hashAll(assignees ?? const []), authorAssociation, body, closedAt, comments, commentsUrl, createdAt, draft, eventsUrl, htmlUrl, id, Object.hashAll(labels ?? const []), labelsUrl, locked, milestone, nodeId, number, performedViaGithubApp, pullRequest, reactions, repositoryUrl, subIssuesSummary, issueDependenciesSummary, Object.hashAll(issueFieldValues ?? const []), state, stateReason, timelineUrl, title, updatedAt, url, pinnedComment, user, type]);}
+@override String toString() {return 'WebhookIssuesOpenedChangesOldIssue(activeLockReason: $activeLockReason, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, body: $body, closedAt: $closedAt, comments: $comments, commentsUrl: $commentsUrl, createdAt: $createdAt, draft: $draft, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, id: $id, labels: $labels, labelsUrl: $labelsUrl, locked: $locked, milestone: $milestone, nodeId: $nodeId, number: $number, performedViaGithubApp: $performedViaGithubApp, pullRequest: $pullRequest, reactions: $reactions, repositoryUrl: $repositoryUrl, subIssuesSummary: $subIssuesSummary, issueDependenciesSummary: $issueDependenciesSummary, issueFieldValues: $issueFieldValues, state: $state, stateReason: $stateReason, timelineUrl: $timelineUrl, title: $title, updatedAt: $updatedAt, url: $url, pinnedComment: $pinnedComment, user: $user, type: $type)';}
+}

@@ -11,7 +11,7 @@ final class AccessCustomPagesApi with ApiExecutor {const AccessCustomPagesApi(th
 /// List custom pages
 ///
 /// `GET /accounts/{account_id}/access/custom_pages`
-Future<ApiResult<List<AccessCustomPageWithoutHtml>?, ResponseCommonFailure4>> accessCustomPagesListCustomPages({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessCustomPageWithoutHtml>?, ResponseCommonFailure4>> accessCustomPagesListCustomPages({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -48,11 +48,11 @@ return null;
 
   },
 );
- } 
+}
 /// Create a custom page
 ///
 /// `POST /accounts/{account_id}/access/custom_pages`
-Future<ApiResult<AccessCustomPageWithoutHtml?, ResponseCommonFailure4>> accessCustomPagesCreateACustomPage({required AccessIdentifier accountId, AccessCustomPage? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessCustomPageWithoutHtml?, ResponseCommonFailure4>> accessCustomPagesCreateACustomPage({required AccessIdentifier accountId, AccessCustomPage? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -80,13 +80,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get a custom page
 ///
 /// Fetches a custom page and also returns its HTML.
 ///
 /// `GET /accounts/{account_id}/access/custom_pages/{custom_page_id}`
-Future<ApiResult<AccessCustomPage?, ResponseCommonFailure4>> accessCustomPagesGetACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessCustomPage?, ResponseCommonFailure4>> accessCustomPagesGetACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -112,11 +112,11 @@ return null;
 
   },
 );
- } 
+}
 /// Update a custom page
 ///
 /// `PUT /accounts/{account_id}/access/custom_pages/{custom_page_id}`
-Future<ApiResult<AccessCustomPageWithoutHtml?, ResponseCommonFailure4>> accessCustomPagesUpdateACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, AccessCustomPage? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessCustomPageWithoutHtml?, ResponseCommonFailure4>> accessCustomPagesUpdateACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, AccessCustomPage? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -144,11 +144,11 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a custom page
 ///
 /// `DELETE /accounts/{account_id}/access/custom_pages/{custom_page_id}`
-Future<ApiResult<AccessComponentsSchemasIdResponseResult?, ResponseCommonFailure4>> accessCustomPagesDeleteACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessComponentsSchemasIdResponseResult?, ResponseCommonFailure4>> accessCustomPagesDeleteACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -174,5 +174,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

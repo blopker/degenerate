@@ -4,12 +4,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when an 
 /// 
 @immutable final class ResponseImageGenCallCompletedEvent {const ResponseImageGenCallCompletedEvent({required this.type, required this.outputIndex, required this.sequenceNumber, required this.itemId, });
 
-factory ResponseImageGenCallCompletedEvent.fromJson(Map<String, dynamic> json) { return ResponseImageGenCallCompletedEvent(
+factory ResponseImageGenCallCompletedEvent.fromJson(Map<String, dynamic> json) {return ResponseImageGenCallCompletedEvent(
   type: json['type'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   sequenceNumber: (json['sequence_number'] as num).toInt(),
   itemId: json['item_id'] as String,
-); }
+);}
 
 /// The type of the event. Always 'response.image_generation_call.completed'.
 final String type;
@@ -23,28 +23,28 @@ final int sequenceNumber;
 /// The unique identifier of the image generation item being processed.
 final String itemId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'output_index': outputIndex,
   'sequence_number': sequenceNumber,
   'item_id': itemId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
-      json.containsKey('item_id') && json['item_id'] is String; } 
-ResponseImageGenCallCompletedEvent copyWith({String? type, int? outputIndex, int? sequenceNumber, String? itemId, }) { return ResponseImageGenCallCompletedEvent(
+      json.containsKey('item_id') && json['item_id'] is String;}
+ResponseImageGenCallCompletedEvent copyWith({String? type, int? outputIndex, int? sequenceNumber, String? itemId, }) {return ResponseImageGenCallCompletedEvent(
   type: type ?? this.type,
   outputIndex: outputIndex ?? this.outputIndex,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   itemId: itemId ?? this.itemId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseImageGenCallCompletedEvent &&
           type == other.type &&
           outputIndex == other.outputIndex &&
           sequenceNumber == other.sequenceNumber &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(type, outputIndex, sequenceNumber, itemId); } 
-@override String toString() { return 'ResponseImageGenCallCompletedEvent(type: $type, outputIndex: $outputIndex, sequenceNumber: $sequenceNumber, itemId: $itemId)'; } 
- }
+          itemId == other.itemId;}
+@override int get hashCode {return Object.hash(type, outputIndex, sequenceNumber, itemId);}
+@override String toString() {return 'ResponseImageGenCallCompletedEvent(type: $type, outputIndex: $outputIndex, sequenceNumber: $sequenceNumber, itemId: $itemId)';}
+}

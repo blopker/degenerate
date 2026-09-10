@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the commit comment.
 @immutable final class ReactionsCreateForCommitCommentRequestContent {const ReactionsCreateForCommitCommentRequestContent._(this.value);
 
-factory ReactionsCreateForCommitCommentRequestContent.fromJson(String json) { return switch (json) {
+factory ReactionsCreateForCommitCommentRequestContent.fromJson(String json) {return switch (json) {
   '+1' => plus1,
   '-1' => minus1,
   'laugh' => laugh,
@@ -13,7 +13,7 @@ factory ReactionsCreateForCommitCommentRequestContent.fromJson(String json) { re
   'rocket' => rocket,
   'eyes' => eyes,
   _ => ReactionsCreateForCommitCommentRequestContent._(json),
-}; }
+};}
 
 static const ReactionsCreateForCommitCommentRequestContent plus1 = ReactionsCreateForCommitCommentRequestContent._('+1');
 
@@ -35,33 +35,33 @@ static const List<ReactionsCreateForCommitCommentRequestContent> values = [plus1
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReactionsCreateForCommitCommentRequestContent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReactionsCreateForCommitCommentRequestContent($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReactionsCreateForCommitCommentRequestContent && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReactionsCreateForCommitCommentRequestContent($value)';}
+}
 @immutable final class ReactionsCreateForCommitCommentRequest {const ReactionsCreateForCommitCommentRequest({required this.content});
 
-factory ReactionsCreateForCommitCommentRequest.fromJson(Map<String, dynamic> json) { return ReactionsCreateForCommitCommentRequest(
+factory ReactionsCreateForCommitCommentRequest.fromJson(Map<String, dynamic> json) {return ReactionsCreateForCommitCommentRequest(
   content: ReactionsCreateForCommitCommentRequestContent.fromJson(json['content'] as String),
-); }
+);}
 
 /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the commit comment.
 final ReactionsCreateForCommitCommentRequestContent content;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content'); } 
-ReactionsCreateForCommitCommentRequest copyWith({ReactionsCreateForCommitCommentRequestContent? content}) { return ReactionsCreateForCommitCommentRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content');}
+ReactionsCreateForCommitCommentRequest copyWith({ReactionsCreateForCommitCommentRequestContent? content}) {return ReactionsCreateForCommitCommentRequest(
   content: content ?? this.content,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReactionsCreateForCommitCommentRequest &&
-          content == other.content; } 
-@override int get hashCode { return content.hashCode; } 
-@override String toString() { return 'ReactionsCreateForCommitCommentRequest(content: $content)'; } 
- }
+          content == other.content;}
+@override int get hashCode {return content.hashCode;}
+@override String toString() {return 'ReactionsCreateForCommitCommentRequest(content: $content)';}
+}

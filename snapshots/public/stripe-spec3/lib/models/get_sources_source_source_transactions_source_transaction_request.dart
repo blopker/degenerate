@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSourcesSourceSourceTransactionsSourceTransactionRequest {const GetSourcesSourceSourceTransactionsSourceTransactionRequest();
 
-factory GetSourcesSourceSourceTransactionsSourceTransactionRequest.fromJson(Map<String, dynamic> _) { return const GetSourcesSourceSourceTransactionsSourceTransactionRequest(); }
+factory GetSourcesSourceSourceTransactionsSourceTransactionRequest.fromJson(Map<String, dynamic> _) {return const GetSourcesSourceSourceTransactionsSourceTransactionRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-GetSourcesSourceSourceTransactionsSourceTransactionRequest copyWith() { return const GetSourcesSourceSourceTransactionsSourceTransactionRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+GetSourcesSourceSourceTransactionsSourceTransactionRequest copyWith() {return const GetSourcesSourceSourceTransactionsSourceTransactionRequest(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is GetSourcesSourceSourceTransactionsSourceTransactionRequest; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'GetSourcesSourceSourceTransactionsSourceTransactionRequest()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is GetSourcesSourceSourceTransactionsSourceTransactionRequest;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'GetSourcesSourceSourceTransactionsSourceTransactionRequest()';}
+}

@@ -13,7 +13,7 @@ final class AccessShortLivedCertificateCAsApi with ApiExecutor {const AccessShor
 /// Fetches a short-lived certificate CA and its public key.
 ///
 /// `GET /accounts/{account_id}/access/apps/{app_id}/ca`
-Future<ApiResult<AccessCa?, ResponseCommonFailure4>> accessShortLivedCertificateCAsGetAShortLivedCertificateCa({required AccessUuid appId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessCa?, ResponseCommonFailure4>> accessShortLivedCertificateCAsGetAShortLivedCertificateCa({required AccessUuid appId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create a short-lived certificate CA
 ///
 /// Generates a new short-lived certificate CA and public key.
 ///
 /// `POST /accounts/{account_id}/access/apps/{app_id}/ca`
-Future<ApiResult<AccessCa?, ResponseCommonFailure4>> accessShortLivedCertificateCAsCreateAShortLivedCertificateCa({required AccessUuid appId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessCa?, ResponseCommonFailure4>> accessShortLivedCertificateCAsCreateAShortLivedCertificateCa({required AccessUuid appId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -71,13 +71,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete a short-lived certificate CA
 ///
 /// Deletes a short-lived certificate CA.
 ///
 /// `DELETE /accounts/{account_id}/access/apps/{app_id}/ca`
-Future<ApiResult<AccessSchemasIdResponseResult?, ResponseCommonFailure4>> accessShortLivedCertificateCAsDeleteAShortLivedCertificateCa({required AccessUuid appId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasIdResponseResult?, ResponseCommonFailure4>> accessShortLivedCertificateCAsDeleteAShortLivedCertificateCa({required AccessUuid appId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -103,13 +103,13 @@ return null;
 
   },
 );
- } 
+}
 /// List short-lived certificate CAs
 ///
 /// Lists short-lived certificate CAs and their public keys.
 ///
 /// `GET /accounts/{account_id}/access/apps/ca`
-Future<ApiResult<List<AccessCa>?, ResponseCommonFailure4>> accessShortLivedCertificateCAsListShortLivedCertificateCAs({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessCa>?, ResponseCommonFailure4>> accessShortLivedCertificateCAsListShortLivedCertificateCAs({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -146,5 +146,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

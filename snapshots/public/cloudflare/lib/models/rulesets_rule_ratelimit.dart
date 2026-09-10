@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An object configuring the rule's rate limit behavior.
 @immutable final class RulesetsRuleRatelimit {const RulesetsRuleRatelimit({required this.characteristics, required this.period, this.countingExpression, this.mitigationTimeout, this.requestsPerPeriod, this.requestsToOrigin, this.scorePerPeriod, this.scoreResponseHeaderName, });
 
-factory RulesetsRuleRatelimit.fromJson(Map<String, dynamic> json) { return RulesetsRuleRatelimit(
+factory RulesetsRuleRatelimit.fromJson(Map<String, dynamic> json) {return RulesetsRuleRatelimit(
   characteristics: (json['characteristics'] as List<dynamic>).map((e) => e as String).toList(),
   countingExpression: json['counting_expression'] as String?,
   mitigationTimeout: json['mitigation_timeout'] != null ? (json['mitigation_timeout'] as num).toInt() : null,
@@ -12,7 +12,7 @@ factory RulesetsRuleRatelimit.fromJson(Map<String, dynamic> json) { return Rules
   requestsToOrigin: json['requests_to_origin'] as bool?,
   scorePerPeriod: json['score_per_period'] != null ? (json['score_per_period'] as num).toInt() : null,
   scoreResponseHeaderName: json['score_response_header_name'] as String?,
-); }
+);}
 
 /// Characteristics of the request on which the rate limit counter will be incremented.
 final List<String> characteristics;
@@ -39,8 +39,8 @@ final int? scorePerPeriod;
 final String? scoreResponseHeaderName;
 
 /// The value with the schema default applied when absent.
-bool get requestsToOriginOrDefault { return requestsToOrigin ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get requestsToOriginOrDefault {return requestsToOrigin ?? false;}
+Map<String, dynamic> toJson() {return {
   'characteristics': characteristics,
   'counting_expression': ?countingExpression,
   'mitigation_timeout': ?mitigationTimeout,
@@ -49,10 +49,10 @@ Map<String, dynamic> toJson() { return {
   'requests_to_origin': ?requestsToOrigin,
   'score_per_period': ?scorePerPeriod,
   'score_response_header_name': ?scoreResponseHeaderName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('characteristics') &&
-      json.containsKey('period') && json['period'] is num; } 
-RulesetsRuleRatelimit copyWith({List<String>? characteristics, String? Function()? countingExpression, int? Function()? mitigationTimeout, int? period, int? Function()? requestsPerPeriod, bool? Function()? requestsToOrigin, int? Function()? scorePerPeriod, String? Function()? scoreResponseHeaderName, }) { return RulesetsRuleRatelimit(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('characteristics') &&
+      json.containsKey('period') && json['period'] is num;}
+RulesetsRuleRatelimit copyWith({List<String>? characteristics, String? Function()? countingExpression, int? Function()? mitigationTimeout, int? period, int? Function()? requestsPerPeriod, bool? Function()? requestsToOrigin, int? Function()? scorePerPeriod, String? Function()? scoreResponseHeaderName, }) {return RulesetsRuleRatelimit(
   characteristics: characteristics ?? this.characteristics,
   countingExpression: countingExpression != null ? countingExpression() : this.countingExpression,
   mitigationTimeout: mitigationTimeout != null ? mitigationTimeout() : this.mitigationTimeout,
@@ -61,8 +61,8 @@ RulesetsRuleRatelimit copyWith({List<String>? characteristics, String? Function(
   requestsToOrigin: requestsToOrigin != null ? requestsToOrigin() : this.requestsToOrigin,
   scorePerPeriod: scorePerPeriod != null ? scorePerPeriod() : this.scorePerPeriod,
   scoreResponseHeaderName: scoreResponseHeaderName != null ? scoreResponseHeaderName() : this.scoreResponseHeaderName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsRuleRatelimit &&
           listEquals(characteristics, other.characteristics) &&
           countingExpression == other.countingExpression &&
@@ -71,7 +71,7 @@ RulesetsRuleRatelimit copyWith({List<String>? characteristics, String? Function(
           requestsPerPeriod == other.requestsPerPeriod &&
           requestsToOrigin == other.requestsToOrigin &&
           scorePerPeriod == other.scorePerPeriod &&
-          scoreResponseHeaderName == other.scoreResponseHeaderName; } 
-@override int get hashCode { return Object.hash(Object.hashAll(characteristics), countingExpression, mitigationTimeout, period, requestsPerPeriod, requestsToOrigin, scorePerPeriod, scoreResponseHeaderName); } 
-@override String toString() { return 'RulesetsRuleRatelimit(characteristics: $characteristics, countingExpression: $countingExpression, mitigationTimeout: $mitigationTimeout, period: $period, requestsPerPeriod: $requestsPerPeriod, requestsToOrigin: $requestsToOrigin, scorePerPeriod: $scorePerPeriod, scoreResponseHeaderName: $scoreResponseHeaderName)'; } 
- }
+          scoreResponseHeaderName == other.scoreResponseHeaderName;}
+@override int get hashCode {return Object.hash(Object.hashAll(characteristics), countingExpression, mitigationTimeout, period, requestsPerPeriod, requestsToOrigin, scorePerPeriod, scoreResponseHeaderName);}
+@override String toString() {return 'RulesetsRuleRatelimit(characteristics: $characteristics, countingExpression: $countingExpression, mitigationTimeout: $mitigationTimeout, period: $period, requestsPerPeriod: $requestsPerPeriod, requestsToOrigin: $requestsToOrigin, scorePerPeriod: $scorePerPeriod, scoreResponseHeaderName: $scoreResponseHeaderName)';}
+}

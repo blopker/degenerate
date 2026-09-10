@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentParam3MandateOptionsSupportedTypes {const PaymentIntentParam3MandateOptionsSupportedTypes._(this.value);
 
-factory PaymentIntentParam3MandateOptionsSupportedTypes.fromJson(String json) { return switch (json) {
+factory PaymentIntentParam3MandateOptionsSupportedTypes.fromJson(String json) {return switch (json) {
   'india' => india,
   _ => PaymentIntentParam3MandateOptionsSupportedTypes._(json),
-}; }
+};}
 
 static const PaymentIntentParam3MandateOptionsSupportedTypes india = PaymentIntentParam3MandateOptionsSupportedTypes._('india');
 
@@ -13,21 +13,21 @@ static const List<PaymentIntentParam3MandateOptionsSupportedTypes> values = [ind
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentParam3MandateOptionsSupportedTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentParam3MandateOptionsSupportedTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentParam3MandateOptionsSupportedTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentParam3MandateOptionsSupportedTypes($value)';}
+}
 @immutable final class PaymentIntentParam3MandateOptionsAmountType {const PaymentIntentParam3MandateOptionsAmountType._(this.value);
 
-factory PaymentIntentParam3MandateOptionsAmountType.fromJson(String json) { return switch (json) {
+factory PaymentIntentParam3MandateOptionsAmountType.fromJson(String json) {return switch (json) {
   'fixed' => fixed,
   'maximum' => maximum,
   _ => PaymentIntentParam3MandateOptionsAmountType._(json),
-}; }
+};}
 
 static const PaymentIntentParam3MandateOptionsAmountType fixed = PaymentIntentParam3MandateOptionsAmountType._('fixed');
 
@@ -37,24 +37,24 @@ static const List<PaymentIntentParam3MandateOptionsAmountType> values = [fixed, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentParam3MandateOptionsAmountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentParam3MandateOptionsAmountType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentParam3MandateOptionsAmountType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentParam3MandateOptionsAmountType($value)';}
+}
 @immutable final class PaymentIntentParam3MandateOptionsInterval {const PaymentIntentParam3MandateOptionsInterval._(this.value);
 
-factory PaymentIntentParam3MandateOptionsInterval.fromJson(String json) { return switch (json) {
+factory PaymentIntentParam3MandateOptionsInterval.fromJson(String json) {return switch (json) {
   'day' => day,
   'month' => month,
   'sporadic' => sporadic,
   'week' => week,
   'year' => year,
   _ => PaymentIntentParam3MandateOptionsInterval._(json),
-}; }
+};}
 
 static const PaymentIntentParam3MandateOptionsInterval day = PaymentIntentParam3MandateOptionsInterval._('day');
 
@@ -70,17 +70,17 @@ static const List<PaymentIntentParam3MandateOptionsInterval> values = [day, mont
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentParam3MandateOptionsInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentParam3MandateOptionsInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentParam3MandateOptionsInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentParam3MandateOptionsInterval($value)';}
+}
 @immutable final class PaymentIntentParam3MandateOptions {const PaymentIntentParam3MandateOptions({required this.amount, required this.amountType, required this.interval, required this.reference, required this.startDate, this.description, this.endDate, this.intervalCount, this.supportedTypes, });
 
-factory PaymentIntentParam3MandateOptions.fromJson(Map<String, dynamic> json) { return PaymentIntentParam3MandateOptions(
+factory PaymentIntentParam3MandateOptions.fromJson(Map<String, dynamic> json) {return PaymentIntentParam3MandateOptions(
   amount: (json['amount'] as num).toInt(),
   amountType: PaymentIntentParam3MandateOptionsAmountType.fromJson(json['amount_type'] as String),
   description: json['description'] as String?,
@@ -90,7 +90,7 @@ factory PaymentIntentParam3MandateOptions.fromJson(Map<String, dynamic> json) { 
   reference: json['reference'] as String,
   startDate: (json['start_date'] as num).toInt(),
   supportedTypes: (json['supported_types'] as List<dynamic>?)?.map((e) => PaymentIntentParam3MandateOptionsSupportedTypes.fromJson(e as String)).toList(),
-); }
+);}
 
 final int amount;
 
@@ -110,7 +110,7 @@ final int startDate;
 
 final List<PaymentIntentParam3MandateOptionsSupportedTypes>? supportedTypes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'amount_type': amountType.toJson(),
   'description': ?description,
@@ -120,13 +120,13 @@ Map<String, dynamic> toJson() { return {
   'reference': reference,
   'start_date': startDate,
   if (supportedTypes != null) 'supported_types': supportedTypes?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('amount_type') &&
       json.containsKey('interval') &&
       json.containsKey('reference') && json['reference'] is String &&
-      json.containsKey('start_date') && json['start_date'] is num; } 
-PaymentIntentParam3MandateOptions copyWith({int? amount, PaymentIntentParam3MandateOptionsAmountType? amountType, String? Function()? description, int? Function()? endDate, PaymentIntentParam3MandateOptionsInterval? interval, int? Function()? intervalCount, String? reference, int? startDate, List<PaymentIntentParam3MandateOptionsSupportedTypes>? Function()? supportedTypes, }) { return PaymentIntentParam3MandateOptions(
+      json.containsKey('start_date') && json['start_date'] is num;}
+PaymentIntentParam3MandateOptions copyWith({int? amount, PaymentIntentParam3MandateOptionsAmountType? amountType, String? Function()? description, int? Function()? endDate, PaymentIntentParam3MandateOptionsInterval? interval, int? Function()? intervalCount, String? reference, int? startDate, List<PaymentIntentParam3MandateOptionsSupportedTypes>? Function()? supportedTypes, }) {return PaymentIntentParam3MandateOptions(
   amount: amount ?? this.amount,
   amountType: amountType ?? this.amountType,
   description: description != null ? description() : this.description,
@@ -136,8 +136,8 @@ PaymentIntentParam3MandateOptions copyWith({int? amount, PaymentIntentParam3Mand
   reference: reference ?? this.reference,
   startDate: startDate ?? this.startDate,
   supportedTypes: supportedTypes != null ? supportedTypes() : this.supportedTypes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentParam3MandateOptions &&
           amount == other.amount &&
           amountType == other.amountType &&
@@ -147,7 +147,7 @@ PaymentIntentParam3MandateOptions copyWith({int? amount, PaymentIntentParam3Mand
           intervalCount == other.intervalCount &&
           reference == other.reference &&
           startDate == other.startDate &&
-          listEquals(supportedTypes, other.supportedTypes); } 
-@override int get hashCode { return Object.hash(amount, amountType, description, endDate, interval, intervalCount, reference, startDate, Object.hashAll(supportedTypes ?? const [])); } 
-@override String toString() { return 'PaymentIntentParam3MandateOptions(amount: $amount, amountType: $amountType, description: $description, endDate: $endDate, interval: $interval, intervalCount: $intervalCount, reference: $reference, startDate: $startDate, supportedTypes: $supportedTypes)'; } 
- }
+          listEquals(supportedTypes, other.supportedTypes);}
+@override int get hashCode {return Object.hash(amount, amountType, description, endDate, interval, intervalCount, reference, startDate, Object.hashAll(supportedTypes ?? const []));}
+@override String toString() {return 'PaymentIntentParam3MandateOptions(amount: $amount, amountType: $amountType, description: $description, endDate: $endDate, interval: $interval, intervalCount: $intervalCount, reference: $reference, startDate: $startDate, supportedTypes: $supportedTypes)';}
+}

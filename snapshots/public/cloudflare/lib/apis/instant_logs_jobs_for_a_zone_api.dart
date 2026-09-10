@@ -13,7 +13,7 @@ final class InstantLogsJobsForAZoneApi with ApiExecutor {const InstantLogsJobsFo
 /// Lists Instant Logs jobs for a zone.
 ///
 /// `GET /zones/{zone_id}/logpush/edge/jobs`
-Future<ApiResult<List<LogpushInstantLogsJob?>?, GetZonesZoneIdLogpushEdgeJobsResponse4xx>> getZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<LogpushInstantLogsJob?>?, GetZonesZoneIdLogpushEdgeJobsResponse4xx>> getZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create Instant Logs job
 ///
 /// Creates a new Instant Logs job for a zone.
 ///
 /// `POST /zones/{zone_id}/logpush/edge/jobs`
-Future<ApiResult<LogpushInstantLogsJob?, PostZonesZoneIdLogpushEdgeJobsResponse4xx>> postZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushEdgeJobsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogpushInstantLogsJob?, PostZonesZoneIdLogpushEdgeJobsResponse4xx>> postZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushEdgeJobsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,5 +73,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

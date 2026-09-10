@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Updates the default version pointer for a skill.
 @immutable final class SetDefaultSkillVersionBody {const SetDefaultSkillVersionBody({required this.defaultVersion});
 
-factory SetDefaultSkillVersionBody.fromJson(Map<String, dynamic> json) { return SetDefaultSkillVersionBody(
+factory SetDefaultSkillVersionBody.fromJson(Map<String, dynamic> json) {return SetDefaultSkillVersionBody(
   defaultVersion: json['default_version'] as String,
-); }
+);}
 
 /// The skill version number to set as default.
 final String defaultVersion;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'default_version': defaultVersion,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('default_version') && json['default_version'] is String; } 
-SetDefaultSkillVersionBody copyWith({String? defaultVersion}) { return SetDefaultSkillVersionBody(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('default_version') && json['default_version'] is String;}
+SetDefaultSkillVersionBody copyWith({String? defaultVersion}) {return SetDefaultSkillVersionBody(
   defaultVersion: defaultVersion ?? this.defaultVersion,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SetDefaultSkillVersionBody &&
-          defaultVersion == other.defaultVersion; } 
-@override int get hashCode { return defaultVersion.hashCode; } 
-@override String toString() { return 'SetDefaultSkillVersionBody(defaultVersion: $defaultVersion)'; } 
- }
+          defaultVersion == other.defaultVersion;}
+@override int get hashCode {return defaultVersion.hashCode;}
+@override String toString() {return 'SetDefaultSkillVersionBody(defaultVersion: $defaultVersion)';}
+}

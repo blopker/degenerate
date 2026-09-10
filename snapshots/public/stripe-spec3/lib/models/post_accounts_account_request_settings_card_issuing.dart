@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_settings_card_issuing_tos_acceptance.dart';@immutable final class PostAccountsAccountRequestSettingsCardIssuing {const PostAccountsAccountRequestSettingsCardIssuing({this.tosAcceptance});
 
-factory PostAccountsAccountRequestSettingsCardIssuing.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestSettingsCardIssuing(
+factory PostAccountsAccountRequestSettingsCardIssuing.fromJson(Map<String, dynamic> json) {return PostAccountsAccountRequestSettingsCardIssuing(
   tosAcceptance: json['tos_acceptance'] != null ? PostAccountsAccountRequestSettingsCardIssuingTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostAccountsAccountRequestSettingsCardIssuingTosAcceptance? tosAcceptance;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (tosAcceptance != null) 'tos_acceptance': tosAcceptance?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tos_acceptance'}.contains(key)); } 
-PostAccountsAccountRequestSettingsCardIssuing copyWith({PostAccountsAccountRequestSettingsCardIssuingTosAcceptance? Function()? tosAcceptance}) { return PostAccountsAccountRequestSettingsCardIssuing(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'tos_acceptance'}.contains(key));}
+PostAccountsAccountRequestSettingsCardIssuing copyWith({PostAccountsAccountRequestSettingsCardIssuingTosAcceptance? Function()? tosAcceptance}) {return PostAccountsAccountRequestSettingsCardIssuing(
   tosAcceptance: tosAcceptance != null ? tosAcceptance() : this.tosAcceptance,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountRequestSettingsCardIssuing &&
-          tosAcceptance == other.tosAcceptance; } 
-@override int get hashCode { return tosAcceptance.hashCode; } 
-@override String toString() { return 'PostAccountsAccountRequestSettingsCardIssuing(tosAcceptance: $tosAcceptance)'; } 
- }
+          tosAcceptance == other.tosAcceptance;}
+@override int get hashCode {return tosAcceptance.hashCode;}
+@override String toString() {return 'PostAccountsAccountRequestSettingsCardIssuing(tosAcceptance: $tosAcceptance)';}
+}

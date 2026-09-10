@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_subscription_details_billing_cycle_anchor.dart';import 'post_invoices_create_preview_request_subscription_details_billing_mode.dart';import 'post_invoices_create_preview_request_subscription_details_cancel_at.dart';import 'post_invoices_create_preview_request_subscription_details_default_tax_rates.dart';import 'post_invoices_create_preview_request_subscription_details_items.dart';import 'post_invoices_create_preview_request_subscription_details_trial_end.dart';@immutable final class PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior {const PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior._(this.value);
 
-factory PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior.fromJson(String json) { return switch (json) {
+factory PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior.fromJson(String json) {return switch (json) {
   'always_invoice' => alwaysInvoice,
   'create_prorations' => createProrations,
   'none' => none,
   _ => PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior._(json),
-}; }
+};}
 
 static const PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior alwaysInvoice = PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior._('always_invoice');
 
@@ -19,20 +19,20 @@ static const List<PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior($value)';}
+}
 @immutable final class PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt {const PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt._(this.value);
 
-factory PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt.fromJson(String json) { return switch (json) {
+factory PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt.fromJson(String json) {return switch (json) {
   'now' => now,
   _ => PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt._(json),
-}; }
+};}
 
 static const PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt now = PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt._('now');
 
@@ -40,18 +40,18 @@ static const List<PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt> v
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt($value)';}
+}
 /// The subscription creation or modification params to apply as a preview. Cannot be used with `schedule` or `schedule_details` fields.
 @immutable final class PostInvoicesCreatePreviewRequestSubscriptionDetails {const PostInvoicesCreatePreviewRequestSubscriptionDetails({this.billingCycleAnchor, this.billingMode, this.cancelAt, this.cancelAtPeriodEnd, this.cancelNow, this.defaultTaxRates, this.items, this.prorationBehavior, this.prorationDate, this.resumeAt, this.startDate, this.trialEnd, });
 
-factory PostInvoicesCreatePreviewRequestSubscriptionDetails.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestSubscriptionDetails(
+factory PostInvoicesCreatePreviewRequestSubscriptionDetails.fromJson(Map<String, dynamic> json) {return PostInvoicesCreatePreviewRequestSubscriptionDetails(
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingCycleAnchor.fromJson(json['billing_cycle_anchor']) : null,
   billingMode: json['billing_mode'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>) : null,
   cancelAt: json['cancel_at'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsCancelAt.fromJson(json['cancel_at']) : null,
@@ -64,7 +64,7 @@ factory PostInvoicesCreatePreviewRequestSubscriptionDetails.fromJson(Map<String,
   resumeAt: json['resume_at'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt.fromJson(json['resume_at'] as String) : null,
   startDate: json['start_date'] != null ? (json['start_date'] as num).toInt() : null,
   trialEnd: json['trial_end'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsTrialEnd.fromJson(json['trial_end']) : null,
-); }
+);}
 
 final PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingCycleAnchor? billingCycleAnchor;
 
@@ -90,7 +90,7 @@ final int? startDate;
 
 final PostInvoicesCreatePreviewRequestSubscriptionDetailsTrialEnd? trialEnd;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingCycleAnchor != null) 'billing_cycle_anchor': billingCycleAnchor?.toJson(),
   if (billingMode != null) 'billing_mode': billingMode?.toJson(),
   if (cancelAt != null) 'cancel_at': cancelAt?.toJson(),
@@ -103,9 +103,9 @@ Map<String, dynamic> toJson() { return {
   if (resumeAt != null) 'resume_at': resumeAt?.toJson(),
   'start_date': ?startDate,
   if (trialEnd != null) 'trial_end': trialEnd?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_cycle_anchor', 'billing_mode', 'cancel_at', 'cancel_at_period_end', 'cancel_now', 'default_tax_rates', 'items', 'proration_behavior', 'proration_date', 'resume_at', 'start_date', 'trial_end'}.contains(key)); } 
-PostInvoicesCreatePreviewRequestSubscriptionDetails copyWith({PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingCycleAnchor? Function()? billingCycleAnchor, PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingMode? Function()? billingMode, PostInvoicesCreatePreviewRequestSubscriptionDetailsCancelAt? Function()? cancelAt, bool? Function()? cancelAtPeriodEnd, bool? Function()? cancelNow, PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRates? Function()? defaultTaxRates, List<PostInvoicesCreatePreviewRequestSubscriptionDetailsItems>? Function()? items, PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior? Function()? prorationBehavior, int? Function()? prorationDate, PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt? Function()? resumeAt, int? Function()? startDate, PostInvoicesCreatePreviewRequestSubscriptionDetailsTrialEnd? Function()? trialEnd, }) { return PostInvoicesCreatePreviewRequestSubscriptionDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'billing_cycle_anchor', 'billing_mode', 'cancel_at', 'cancel_at_period_end', 'cancel_now', 'default_tax_rates', 'items', 'proration_behavior', 'proration_date', 'resume_at', 'start_date', 'trial_end'}.contains(key));}
+PostInvoicesCreatePreviewRequestSubscriptionDetails copyWith({PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingCycleAnchor? Function()? billingCycleAnchor, PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingMode? Function()? billingMode, PostInvoicesCreatePreviewRequestSubscriptionDetailsCancelAt? Function()? cancelAt, bool? Function()? cancelAtPeriodEnd, bool? Function()? cancelNow, PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRates? Function()? defaultTaxRates, List<PostInvoicesCreatePreviewRequestSubscriptionDetailsItems>? Function()? items, PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior? Function()? prorationBehavior, int? Function()? prorationDate, PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt? Function()? resumeAt, int? Function()? startDate, PostInvoicesCreatePreviewRequestSubscriptionDetailsTrialEnd? Function()? trialEnd, }) {return PostInvoicesCreatePreviewRequestSubscriptionDetails(
   billingCycleAnchor: billingCycleAnchor != null ? billingCycleAnchor() : this.billingCycleAnchor,
   billingMode: billingMode != null ? billingMode() : this.billingMode,
   cancelAt: cancelAt != null ? cancelAt() : this.cancelAt,
@@ -118,8 +118,8 @@ PostInvoicesCreatePreviewRequestSubscriptionDetails copyWith({PostInvoicesCreate
   resumeAt: resumeAt != null ? resumeAt() : this.resumeAt,
   startDate: startDate != null ? startDate() : this.startDate,
   trialEnd: trialEnd != null ? trialEnd() : this.trialEnd,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesCreatePreviewRequestSubscriptionDetails &&
           billingCycleAnchor == other.billingCycleAnchor &&
           billingMode == other.billingMode &&
@@ -132,7 +132,7 @@ PostInvoicesCreatePreviewRequestSubscriptionDetails copyWith({PostInvoicesCreate
           prorationDate == other.prorationDate &&
           resumeAt == other.resumeAt &&
           startDate == other.startDate &&
-          trialEnd == other.trialEnd; } 
-@override int get hashCode { return Object.hash(billingCycleAnchor, billingMode, cancelAt, cancelAtPeriodEnd, cancelNow, defaultTaxRates, Object.hashAll(items ?? const []), prorationBehavior, prorationDate, resumeAt, startDate, trialEnd); } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestSubscriptionDetails(billingCycleAnchor: $billingCycleAnchor, billingMode: $billingMode, cancelAt: $cancelAt, cancelAtPeriodEnd: $cancelAtPeriodEnd, cancelNow: $cancelNow, defaultTaxRates: $defaultTaxRates, items: $items, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate, resumeAt: $resumeAt, startDate: $startDate, trialEnd: $trialEnd)'; } 
- }
+          trialEnd == other.trialEnd;}
+@override int get hashCode {return Object.hash(billingCycleAnchor, billingMode, cancelAt, cancelAtPeriodEnd, cancelNow, defaultTaxRates, Object.hashAll(items ?? const []), prorationBehavior, prorationDate, resumeAt, startDate, trialEnd);}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestSubscriptionDetails(billingCycleAnchor: $billingCycleAnchor, billingMode: $billingMode, cancelAt: $cancelAt, cancelAtPeriodEnd: $cancelAtPeriodEnd, cancelNow: $cancelNow, defaultTaxRates: $defaultTaxRates, items: $items, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate, resumeAt: $resumeAt, startDate: $startDate, trialEnd: $trialEnd)';}
+}

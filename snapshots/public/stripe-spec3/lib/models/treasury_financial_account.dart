@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_account_features.dart';import 'treasury_financial_accounts_resource_balance.dart';import 'treasury_financial_accounts_resource_financial_address.dart';import 'treasury_financial_accounts_resource_platform_restrictions.dart';import 'treasury_financial_accounts_resource_status_details.dart';@immutable final class TreasuryFinancialAccountActiveFeatures {const TreasuryFinancialAccountActiveFeatures._(this.value);
 
-factory TreasuryFinancialAccountActiveFeatures.fromJson(String json) { return switch (json) {
+factory TreasuryFinancialAccountActiveFeatures.fromJson(String json) {return switch (json) {
   'card_issuing' => cardIssuing,
   'deposit_insurance' => depositInsurance,
   'financial_addresses.aba' => financialAddressesAba,
@@ -15,7 +15,7 @@ factory TreasuryFinancialAccountActiveFeatures.fromJson(String json) { return sw
   'outbound_transfers.us_domestic_wire' => outboundTransfersUsDomesticWire,
   'remote_deposit_capture' => remoteDepositCapture,
   _ => TreasuryFinancialAccountActiveFeatures._(json),
-}; }
+};}
 
 static const TreasuryFinancialAccountActiveFeatures cardIssuing = TreasuryFinancialAccountActiveFeatures._('card_issuing');
 
@@ -43,21 +43,21 @@ static const List<TreasuryFinancialAccountActiveFeatures> values = [cardIssuing,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountActiveFeatures && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountActiveFeatures($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryFinancialAccountActiveFeatures && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryFinancialAccountActiveFeatures($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryFinancialAccountObject {const TreasuryFinancialAccountObject._(this.value);
 
-factory TreasuryFinancialAccountObject.fromJson(String json) { return switch (json) {
+factory TreasuryFinancialAccountObject.fromJson(String json) {return switch (json) {
   'treasury.financial_account' => treasuryFinancialAccount,
   _ => TreasuryFinancialAccountObject._(json),
-}; }
+};}
 
 static const TreasuryFinancialAccountObject treasuryFinancialAccount = TreasuryFinancialAccountObject._('treasury.financial_account');
 
@@ -65,17 +65,17 @@ static const List<TreasuryFinancialAccountObject> values = [treasuryFinancialAcc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryFinancialAccountObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryFinancialAccountObject($value)';}
+}
 @immutable final class TreasuryFinancialAccountPendingFeatures {const TreasuryFinancialAccountPendingFeatures._(this.value);
 
-factory TreasuryFinancialAccountPendingFeatures.fromJson(String json) { return switch (json) {
+factory TreasuryFinancialAccountPendingFeatures.fromJson(String json) {return switch (json) {
   'card_issuing' => cardIssuing,
   'deposit_insurance' => depositInsurance,
   'financial_addresses.aba' => financialAddressesAba,
@@ -88,7 +88,7 @@ factory TreasuryFinancialAccountPendingFeatures.fromJson(String json) { return s
   'outbound_transfers.us_domestic_wire' => outboundTransfersUsDomesticWire,
   'remote_deposit_capture' => remoteDepositCapture,
   _ => TreasuryFinancialAccountPendingFeatures._(json),
-}; }
+};}
 
 static const TreasuryFinancialAccountPendingFeatures cardIssuing = TreasuryFinancialAccountPendingFeatures._('card_issuing');
 
@@ -116,17 +116,17 @@ static const List<TreasuryFinancialAccountPendingFeatures> values = [cardIssuing
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountPendingFeatures && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountPendingFeatures($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryFinancialAccountPendingFeatures && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryFinancialAccountPendingFeatures($value)';}
+}
 @immutable final class TreasuryFinancialAccountRestrictedFeatures {const TreasuryFinancialAccountRestrictedFeatures._(this.value);
 
-factory TreasuryFinancialAccountRestrictedFeatures.fromJson(String json) { return switch (json) {
+factory TreasuryFinancialAccountRestrictedFeatures.fromJson(String json) {return switch (json) {
   'card_issuing' => cardIssuing,
   'deposit_insurance' => depositInsurance,
   'financial_addresses.aba' => financialAddressesAba,
@@ -139,7 +139,7 @@ factory TreasuryFinancialAccountRestrictedFeatures.fromJson(String json) { retur
   'outbound_transfers.us_domestic_wire' => outboundTransfersUsDomesticWire,
   'remote_deposit_capture' => remoteDepositCapture,
   _ => TreasuryFinancialAccountRestrictedFeatures._(json),
-}; }
+};}
 
 static const TreasuryFinancialAccountRestrictedFeatures cardIssuing = TreasuryFinancialAccountRestrictedFeatures._('card_issuing');
 
@@ -167,22 +167,22 @@ static const List<TreasuryFinancialAccountRestrictedFeatures> values = [cardIssu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountRestrictedFeatures && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountRestrictedFeatures($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryFinancialAccountRestrictedFeatures && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryFinancialAccountRestrictedFeatures($value)';}
+}
 /// Status of this FinancialAccount.
 @immutable final class TreasuryFinancialAccountStatus {const TreasuryFinancialAccountStatus._(this.value);
 
-factory TreasuryFinancialAccountStatus.fromJson(String json) { return switch (json) {
+factory TreasuryFinancialAccountStatus.fromJson(String json) {return switch (json) {
   'closed' => closed,
   'open' => open,
   _ => TreasuryFinancialAccountStatus._(json),
-}; }
+};}
 
 static const TreasuryFinancialAccountStatus closed = TreasuryFinancialAccountStatus._('closed');
 
@@ -192,19 +192,19 @@ static const List<TreasuryFinancialAccountStatus> values = [closed, open];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryFinancialAccountStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryFinancialAccountStatus($value)';}
+}
 /// Stripe Treasury provides users with a container for money called a FinancialAccount that is separate from their Payments balance.
 /// FinancialAccounts serve as the source and destination of Treasury’s money movement APIs.
 @immutable final class TreasuryFinancialAccount {const TreasuryFinancialAccount({required this.balance, required this.country, required this.created, required this.financialAddresses, required this.id, required this.livemode, required this.object, required this.status, required this.statusDetails, required this.supportedCurrencies, this.activeFeatures, this.features, this.isDefault, this.metadata = const Omittable.absent(), this.nickname = const Omittable.absent(), this.pendingFeatures, this.platformRestrictions = const Omittable.absent(), this.restrictedFeatures, });
 
-factory TreasuryFinancialAccount.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccount(
+factory TreasuryFinancialAccount.fromJson(Map<String, dynamic> json) {return TreasuryFinancialAccount(
   activeFeatures: (json['active_features'] as List<dynamic>?)?.map((e) => TreasuryFinancialAccountActiveFeatures.fromJson(e as String)).toList(),
   balance: TreasuryFinancialAccountsResourceBalance.fromJson(json['balance'] as Map<String, dynamic>),
   country: json['country'] as String,
@@ -223,7 +223,7 @@ factory TreasuryFinancialAccount.fromJson(Map<String, dynamic> json) { return Tr
   status: TreasuryFinancialAccountStatus.fromJson(json['status'] as String),
   statusDetails: TreasuryFinancialAccountsResourceStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>),
   supportedCurrencies: (json['supported_currencies'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// The array of paths to active Features in the Features hash.
 final List<TreasuryFinancialAccountActiveFeatures>? activeFeatures;
@@ -275,7 +275,7 @@ final TreasuryFinancialAccountsResourceStatusDetails statusDetails;
 /// The currencies the FinancialAccount can hold a balance in. Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase.
 final List<String> supportedCurrencies;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (activeFeatures != null) 'active_features': activeFeatures?.map((e) => e.toJson()).toList(),
   'balance': balance.toJson(),
   'country': country,
@@ -294,8 +294,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'status_details': statusDetails.toJson(),
   'supported_currencies': supportedCurrencies,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('balance') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('balance') &&
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('financial_addresses') &&
@@ -304,8 +304,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('balan
       json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('status_details') &&
-      json.containsKey('supported_currencies'); } 
-TreasuryFinancialAccount copyWith({List<TreasuryFinancialAccountActiveFeatures>? Function()? activeFeatures, TreasuryFinancialAccountsResourceBalance? balance, String? country, int? created, TreasuryFinancialAccountFeatures? Function()? features, List<TreasuryFinancialAccountsResourceFinancialAddress>? financialAddresses, String? id, bool? Function()? isDefault, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<String?>? nickname, TreasuryFinancialAccountObject? object, List<TreasuryFinancialAccountPendingFeatures>? Function()? pendingFeatures, Omittable<TreasuryFinancialAccountsResourcePlatformRestrictions?>? platformRestrictions, List<TreasuryFinancialAccountRestrictedFeatures>? Function()? restrictedFeatures, TreasuryFinancialAccountStatus? status, TreasuryFinancialAccountsResourceStatusDetails? statusDetails, List<String>? supportedCurrencies, }) { return TreasuryFinancialAccount(
+      json.containsKey('supported_currencies');}
+TreasuryFinancialAccount copyWith({List<TreasuryFinancialAccountActiveFeatures>? Function()? activeFeatures, TreasuryFinancialAccountsResourceBalance? balance, String? country, int? created, TreasuryFinancialAccountFeatures? Function()? features, List<TreasuryFinancialAccountsResourceFinancialAddress>? financialAddresses, String? id, bool? Function()? isDefault, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<String?>? nickname, TreasuryFinancialAccountObject? object, List<TreasuryFinancialAccountPendingFeatures>? Function()? pendingFeatures, Omittable<TreasuryFinancialAccountsResourcePlatformRestrictions?>? platformRestrictions, List<TreasuryFinancialAccountRestrictedFeatures>? Function()? restrictedFeatures, TreasuryFinancialAccountStatus? status, TreasuryFinancialAccountsResourceStatusDetails? statusDetails, List<String>? supportedCurrencies, }) {return TreasuryFinancialAccount(
   activeFeatures: activeFeatures != null ? activeFeatures() : this.activeFeatures,
   balance: balance ?? this.balance,
   country: country ?? this.country,
@@ -324,8 +324,8 @@ TreasuryFinancialAccount copyWith({List<TreasuryFinancialAccountActiveFeatures>?
   status: status ?? this.status,
   statusDetails: statusDetails ?? this.statusDetails,
   supportedCurrencies: supportedCurrencies ?? this.supportedCurrencies,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TreasuryFinancialAccount &&
           listEquals(activeFeatures, other.activeFeatures) &&
           balance == other.balance &&
@@ -344,7 +344,7 @@ TreasuryFinancialAccount copyWith({List<TreasuryFinancialAccountActiveFeatures>?
           listEquals(restrictedFeatures, other.restrictedFeatures) &&
           status == other.status &&
           statusDetails == other.statusDetails &&
-          listEquals(supportedCurrencies, other.supportedCurrencies); } 
-@override int get hashCode { return Object.hash(Object.hashAll(activeFeatures ?? const []), balance, country, created, features, Object.hashAll(financialAddresses), id, isDefault, livemode, metadata, nickname, object, Object.hashAll(pendingFeatures ?? const []), platformRestrictions, Object.hashAll(restrictedFeatures ?? const []), status, statusDetails, Object.hashAll(supportedCurrencies)); } 
-@override String toString() { return 'TreasuryFinancialAccount(activeFeatures: $activeFeatures, balance: $balance, country: $country, created: $created, features: $features, financialAddresses: $financialAddresses, id: $id, isDefault: $isDefault, livemode: $livemode, metadata: $metadata, nickname: $nickname, object: $object, pendingFeatures: $pendingFeatures, platformRestrictions: $platformRestrictions, restrictedFeatures: $restrictedFeatures, status: $status, statusDetails: $statusDetails, supportedCurrencies: $supportedCurrencies)'; } 
- }
+          listEquals(supportedCurrencies, other.supportedCurrencies);}
+@override int get hashCode {return Object.hash(Object.hashAll(activeFeatures ?? const []), balance, country, created, features, Object.hashAll(financialAddresses), id, isDefault, livemode, metadata, nickname, object, Object.hashAll(pendingFeatures ?? const []), platformRestrictions, Object.hashAll(restrictedFeatures ?? const []), status, statusDetails, Object.hashAll(supportedCurrencies));}
+@override String toString() {return 'TreasuryFinancialAccount(activeFeatures: $activeFeatures, balance: $balance, country: $country, created: $created, features: $features, financialAddresses: $financialAddresses, id: $id, isDefault: $isDefault, livemode: $livemode, metadata: $metadata, nickname: $nickname, object: $object, pendingFeatures: $pendingFeatures, platformRestrictions: $platformRestrictions, restrictedFeatures: $restrictedFeatures, status: $status, statusDetails: $statusDetails, supportedCurrencies: $supportedCurrencies)';}
+}

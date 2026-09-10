@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Count Operator.
 @immutable final class TeamsDevicesKolideInputRequestCountOperator {const TeamsDevicesKolideInputRequestCountOperator._(this.value);
 
-factory TeamsDevicesKolideInputRequestCountOperator.fromJson(String json) { return switch (json) {
+factory TeamsDevicesKolideInputRequestCountOperator.fromJson(String json) {return switch (json) {
   '<' => $empty,
   '<=' => $empty2,
   '>' => $empty3,
   '>=' => $empty4,
   '==' => $empty5,
   _ => TeamsDevicesKolideInputRequestCountOperator._(json),
-}; }
+};}
 
 static const TeamsDevicesKolideInputRequestCountOperator $empty = TeamsDevicesKolideInputRequestCountOperator._('<');
 
@@ -26,21 +26,21 @@ static const List<TeamsDevicesKolideInputRequestCountOperator> values = [$empty,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesKolideInputRequestCountOperator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesKolideInputRequestCountOperator($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamsDevicesKolideInputRequestCountOperator && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamsDevicesKolideInputRequestCountOperator($value)';}
+}
 @immutable final class TeamsDevicesKolideInputRequest {const TeamsDevicesKolideInputRequest({required this.connectionId, required this.countOperator, required this.issueCount, });
 
-factory TeamsDevicesKolideInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesKolideInputRequest(
+factory TeamsDevicesKolideInputRequest.fromJson(Map<String, dynamic> json) {return TeamsDevicesKolideInputRequest(
   connectionId: json['connection_id'] as String,
   countOperator: TeamsDevicesKolideInputRequestCountOperator.fromJson(json['countOperator'] as String),
   issueCount: json['issue_count'] as String,
-); }
+);}
 
 /// Posture Integration ID.
 final String connectionId;
@@ -51,24 +51,24 @@ final TeamsDevicesKolideInputRequestCountOperator countOperator;
 /// The Number of Issues.
 final String issueCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'connection_id': connectionId,
   'countOperator': countOperator.toJson(),
   'issue_count': issueCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('connection_id') && json['connection_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('connection_id') && json['connection_id'] is String &&
       json.containsKey('countOperator') &&
-      json.containsKey('issue_count') && json['issue_count'] is String; } 
-TeamsDevicesKolideInputRequest copyWith({String? connectionId, TeamsDevicesKolideInputRequestCountOperator? countOperator, String? issueCount, }) { return TeamsDevicesKolideInputRequest(
+      json.containsKey('issue_count') && json['issue_count'] is String;}
+TeamsDevicesKolideInputRequest copyWith({String? connectionId, TeamsDevicesKolideInputRequestCountOperator? countOperator, String? issueCount, }) {return TeamsDevicesKolideInputRequest(
   connectionId: connectionId ?? this.connectionId,
   countOperator: countOperator ?? this.countOperator,
   issueCount: issueCount ?? this.issueCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamsDevicesKolideInputRequest &&
           connectionId == other.connectionId &&
           countOperator == other.countOperator &&
-          issueCount == other.issueCount; } 
-@override int get hashCode { return Object.hash(connectionId, countOperator, issueCount); } 
-@override String toString() { return 'TeamsDevicesKolideInputRequest(connectionId: $connectionId, countOperator: $countOperator, issueCount: $issueCount)'; } 
- }
+          issueCount == other.issueCount;}
+@override int get hashCode {return Object.hash(connectionId, countOperator, issueCount);}
+@override String toString() {return 'TeamsDevicesKolideInputRequest(connectionId: $connectionId, countOperator: $countOperator, issueCount: $issueCount)';}
+}

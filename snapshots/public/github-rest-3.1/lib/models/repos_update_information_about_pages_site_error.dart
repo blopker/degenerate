@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class ReposUpdateInformationAboutPagesSiteError {const ReposUpdateInformationAboutPagesSiteError();
 
 /// Decodes the payload for its declared status and content type.
-static ReposUpdateInformationAboutPagesSiteError parse(ApiResponse response) { switch (response.statusCode) {
+static ReposUpdateInformationAboutPagesSiteError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -27,40 +27,40 @@ return ReposUpdateInformationAboutPagesSiteError422(ValidationError.fromJson(jso
 default:
 return ReposUpdateInformationAboutPagesSiteErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class ReposUpdateInformationAboutPagesSiteError400ApplicationJson extends ReposUpdateInformationAboutPagesSiteError {const ReposUpdateInformationAboutPagesSiteError400ApplicationJson(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 400 (application/scim+json).
 final class ReposUpdateInformationAboutPagesSiteError400ApplicationScimJson extends ReposUpdateInformationAboutPagesSiteError {const ReposUpdateInformationAboutPagesSiteError400ApplicationScimJson(this.data);
 
 /// The decoded response payload.
 final ScimError data;
 
- }
+}
 /// Response for 409 (application/json).
 final class ReposUpdateInformationAboutPagesSiteError409 extends ReposUpdateInformationAboutPagesSiteError {const ReposUpdateInformationAboutPagesSiteError409(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class ReposUpdateInformationAboutPagesSiteError422 extends ReposUpdateInformationAboutPagesSiteError {const ReposUpdateInformationAboutPagesSiteError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class ReposUpdateInformationAboutPagesSiteErrorUnknown extends ReposUpdateInformationAboutPagesSiteError {const ReposUpdateInformationAboutPagesSiteErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

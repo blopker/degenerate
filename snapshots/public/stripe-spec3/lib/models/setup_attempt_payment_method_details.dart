@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_attempt_payment_method_details_acss_debit.dart';import 'setup_attempt_payment_method_details_amazon_pay.dart';import 'setup_attempt_payment_method_details_au_becs_debit.dart';import 'setup_attempt_payment_method_details_bacs_debit.dart';import 'setup_attempt_payment_method_details_bancontact.dart';import 'setup_attempt_payment_method_details_boleto.dart';import 'setup_attempt_payment_method_details_card.dart';import 'setup_attempt_payment_method_details_card_present.dart';import 'setup_attempt_payment_method_details_cashapp.dart';import 'setup_attempt_payment_method_details_ideal.dart';import 'setup_attempt_payment_method_details_kakao_pay.dart';import 'setup_attempt_payment_method_details_klarna.dart';import 'setup_attempt_payment_method_details_kr_card.dart';import 'setup_attempt_payment_method_details_link.dart';import 'setup_attempt_payment_method_details_naver_pay.dart';import 'setup_attempt_payment_method_details_nz_bank_account.dart';import 'setup_attempt_payment_method_details_paypal.dart';import 'setup_attempt_payment_method_details_payto.dart';import 'setup_attempt_payment_method_details_revolut_pay.dart';import 'setup_attempt_payment_method_details_sepa_debit.dart';import 'setup_attempt_payment_method_details_sofort.dart';import 'setup_attempt_payment_method_details_us_bank_account.dart';/// 
 @immutable final class SetupAttemptPaymentMethodDetails {const SetupAttemptPaymentMethodDetails({required this.type, this.acssDebit, this.amazonPay, this.auBecsDebit, this.bacsDebit, this.bancontact, this.boleto, this.card, this.cardPresent, this.cashapp, this.ideal, this.kakaoPay, this.klarna, this.krCard, this.link, this.naverPay, this.nzBankAccount, this.paypal, this.payto, this.revolutPay, this.sepaDebit, this.sofort, this.usBankAccount, });
 
-factory SetupAttemptPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetails(
+factory SetupAttemptPaymentMethodDetails.fromJson(Map<String, dynamic> json) {return SetupAttemptPaymentMethodDetails(
   acssDebit: json['acss_debit'] != null ? SetupAttemptPaymentMethodDetailsAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
   amazonPay: json['amazon_pay'] != null ? SetupAttemptPaymentMethodDetailsAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,
   auBecsDebit: json['au_becs_debit'] != null ? SetupAttemptPaymentMethodDetailsAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>) : null,
@@ -27,7 +27,7 @@ factory SetupAttemptPaymentMethodDetails.fromJson(Map<String, dynamic> json) { r
   sofort: json['sofort'] != null ? SetupAttemptPaymentMethodDetailsSofort.fromJson(json['sofort'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
   usBankAccount: json['us_bank_account'] != null ? SetupAttemptPaymentMethodDetailsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final SetupAttemptPaymentMethodDetailsAcssDebit? acssDebit;
 
@@ -76,7 +76,7 @@ final String type;
 
 final SetupAttemptPaymentMethodDetailsUsBankAccount? usBankAccount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (acssDebit != null) 'acss_debit': acssDebit?.toJson(),
   if (amazonPay != null) 'amazon_pay': amazonPay?.toJson(),
   if (auBecsDebit != null) 'au_becs_debit': auBecsDebit?.toJson(),
@@ -100,9 +100,9 @@ Map<String, dynamic> toJson() { return {
   if (sofort != null) 'sofort': sofort?.toJson(),
   'type': type,
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-SetupAttemptPaymentMethodDetails copyWith({SetupAttemptPaymentMethodDetailsAcssDebit? Function()? acssDebit, SetupAttemptPaymentMethodDetailsAmazonPay? Function()? amazonPay, SetupAttemptPaymentMethodDetailsAuBecsDebit? Function()? auBecsDebit, SetupAttemptPaymentMethodDetailsBacsDebit? Function()? bacsDebit, SetupAttemptPaymentMethodDetailsBancontact? Function()? bancontact, SetupAttemptPaymentMethodDetailsBoleto? Function()? boleto, SetupAttemptPaymentMethodDetailsCard? Function()? card, SetupAttemptPaymentMethodDetailsCardPresent? Function()? cardPresent, SetupAttemptPaymentMethodDetailsCashapp? Function()? cashapp, SetupAttemptPaymentMethodDetailsIdeal? Function()? ideal, SetupAttemptPaymentMethodDetailsKakaoPay? Function()? kakaoPay, SetupAttemptPaymentMethodDetailsKlarna? Function()? klarna, SetupAttemptPaymentMethodDetailsKrCard? Function()? krCard, SetupAttemptPaymentMethodDetailsLink? Function()? link, SetupAttemptPaymentMethodDetailsNaverPay? Function()? naverPay, SetupAttemptPaymentMethodDetailsNzBankAccount? Function()? nzBankAccount, SetupAttemptPaymentMethodDetailsPaypal? Function()? paypal, SetupAttemptPaymentMethodDetailsPayto? Function()? payto, SetupAttemptPaymentMethodDetailsRevolutPay? Function()? revolutPay, SetupAttemptPaymentMethodDetailsSepaDebit? Function()? sepaDebit, SetupAttemptPaymentMethodDetailsSofort? Function()? sofort, String? type, SetupAttemptPaymentMethodDetailsUsBankAccount? Function()? usBankAccount, }) { return SetupAttemptPaymentMethodDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+SetupAttemptPaymentMethodDetails copyWith({SetupAttemptPaymentMethodDetailsAcssDebit? Function()? acssDebit, SetupAttemptPaymentMethodDetailsAmazonPay? Function()? amazonPay, SetupAttemptPaymentMethodDetailsAuBecsDebit? Function()? auBecsDebit, SetupAttemptPaymentMethodDetailsBacsDebit? Function()? bacsDebit, SetupAttemptPaymentMethodDetailsBancontact? Function()? bancontact, SetupAttemptPaymentMethodDetailsBoleto? Function()? boleto, SetupAttemptPaymentMethodDetailsCard? Function()? card, SetupAttemptPaymentMethodDetailsCardPresent? Function()? cardPresent, SetupAttemptPaymentMethodDetailsCashapp? Function()? cashapp, SetupAttemptPaymentMethodDetailsIdeal? Function()? ideal, SetupAttemptPaymentMethodDetailsKakaoPay? Function()? kakaoPay, SetupAttemptPaymentMethodDetailsKlarna? Function()? klarna, SetupAttemptPaymentMethodDetailsKrCard? Function()? krCard, SetupAttemptPaymentMethodDetailsLink? Function()? link, SetupAttemptPaymentMethodDetailsNaverPay? Function()? naverPay, SetupAttemptPaymentMethodDetailsNzBankAccount? Function()? nzBankAccount, SetupAttemptPaymentMethodDetailsPaypal? Function()? paypal, SetupAttemptPaymentMethodDetailsPayto? Function()? payto, SetupAttemptPaymentMethodDetailsRevolutPay? Function()? revolutPay, SetupAttemptPaymentMethodDetailsSepaDebit? Function()? sepaDebit, SetupAttemptPaymentMethodDetailsSofort? Function()? sofort, String? type, SetupAttemptPaymentMethodDetailsUsBankAccount? Function()? usBankAccount, }) {return SetupAttemptPaymentMethodDetails(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   amazonPay: amazonPay != null ? amazonPay() : this.amazonPay,
   auBecsDebit: auBecsDebit != null ? auBecsDebit() : this.auBecsDebit,
@@ -126,8 +126,8 @@ SetupAttemptPaymentMethodDetails copyWith({SetupAttemptPaymentMethodDetailsAcssD
   sofort: sofort != null ? sofort() : this.sofort,
   type: type ?? this.type,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SetupAttemptPaymentMethodDetails &&
           acssDebit == other.acssDebit &&
           amazonPay == other.amazonPay &&
@@ -151,7 +151,7 @@ SetupAttemptPaymentMethodDetails copyWith({SetupAttemptPaymentMethodDetailsAcssD
           sepaDebit == other.sepaDebit &&
           sofort == other.sofort &&
           type == other.type &&
-          usBankAccount == other.usBankAccount; } 
-@override int get hashCode { return Object.hashAll([acssDebit, amazonPay, auBecsDebit, bacsDebit, bancontact, boleto, card, cardPresent, cashapp, ideal, kakaoPay, klarna, krCard, link, naverPay, nzBankAccount, paypal, payto, revolutPay, sepaDebit, sofort, type, usBankAccount]); } 
-@override String toString() { return 'SetupAttemptPaymentMethodDetails(acssDebit: $acssDebit, amazonPay: $amazonPay, auBecsDebit: $auBecsDebit, bacsDebit: $bacsDebit, bancontact: $bancontact, boleto: $boleto, card: $card, cardPresent: $cardPresent, cashapp: $cashapp, ideal: $ideal, kakaoPay: $kakaoPay, klarna: $klarna, krCard: $krCard, link: $link, naverPay: $naverPay, nzBankAccount: $nzBankAccount, paypal: $paypal, payto: $payto, revolutPay: $revolutPay, sepaDebit: $sepaDebit, sofort: $sofort, type: $type, usBankAccount: $usBankAccount)'; } 
- }
+          usBankAccount == other.usBankAccount;}
+@override int get hashCode {return Object.hashAll([acssDebit, amazonPay, auBecsDebit, bacsDebit, bancontact, boleto, card, cardPresent, cashapp, ideal, kakaoPay, klarna, krCard, link, naverPay, nzBankAccount, paypal, payto, revolutPay, sepaDebit, sofort, type, usBankAccount]);}
+@override String toString() {return 'SetupAttemptPaymentMethodDetails(acssDebit: $acssDebit, amazonPay: $amazonPay, auBecsDebit: $auBecsDebit, bacsDebit: $bacsDebit, bancontact: $bancontact, boleto: $boleto, card: $card, cardPresent: $cardPresent, cashapp: $cashapp, ideal: $ideal, kakaoPay: $kakaoPay, klarna: $klarna, krCard: $krCard, link: $link, naverPay: $naverPay, nzBankAccount: $nzBankAccount, paypal: $paypal, payto: $payto, revolutPay: $revolutPay, sepaDebit: $sepaDebit, sofort: $sofort, type: $type, usBankAccount: $usBankAccount)';}
+}

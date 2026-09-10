@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A link to additional advisory information.
 @immutable final class DependabotAlertSecurityAdvisoryReferences {const DependabotAlertSecurityAdvisoryReferences({required this.url});
 
-factory DependabotAlertSecurityAdvisoryReferences.fromJson(Map<String, dynamic> json) { return DependabotAlertSecurityAdvisoryReferences(
+factory DependabotAlertSecurityAdvisoryReferences.fromJson(Map<String, dynamic> json) {return DependabotAlertSecurityAdvisoryReferences(
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 /// The URL of the reference.
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-DependabotAlertSecurityAdvisoryReferences copyWith({Uri? url}) { return DependabotAlertSecurityAdvisoryReferences(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String;}
+DependabotAlertSecurityAdvisoryReferences copyWith({Uri? url}) {return DependabotAlertSecurityAdvisoryReferences(
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DependabotAlertSecurityAdvisoryReferences &&
-          url == other.url; } 
-@override int get hashCode { return url.hashCode; } 
-@override String toString() { return 'DependabotAlertSecurityAdvisoryReferences(url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return url.hashCode;}
+@override String toString() {return 'DependabotAlertSecurityAdvisoryReferences(url: $url)';}
+}

@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiListFinetunesResponseResult {const WorkersAiListFinetunesResponseResult({required this.createdAt, required this.id, required this.model, required this.modifiedAt, required this.name, this.description, });
 
-factory WorkersAiListFinetunesResponseResult.fromJson(Map<String, dynamic> json) { return WorkersAiListFinetunesResponseResult(
+factory WorkersAiListFinetunesResponseResult.fromJson(Map<String, dynamic> json) {return WorkersAiListFinetunesResponseResult(
   createdAt: DateTime.parse(json['created_at'] as String),
   description: json['description'] as String?,
   id: json['id'] as String,
   model: json['model'] as String,
   modifiedAt: DateTime.parse(json['modified_at'] as String),
   name: json['name'] as String,
-); }
+);}
 
 final DateTime createdAt;
 
@@ -23,35 +23,35 @@ final DateTime modifiedAt;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'description': ?description,
   'id': id,
   'model': model,
   'modified_at': modifiedAt.toIso8601String(),
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-WorkersAiListFinetunesResponseResult copyWith({DateTime? createdAt, String? Function()? description, String? id, String? model, DateTime? modifiedAt, String? name, }) { return WorkersAiListFinetunesResponseResult(
+      json.containsKey('name') && json['name'] is String;}
+WorkersAiListFinetunesResponseResult copyWith({DateTime? createdAt, String? Function()? description, String? id, String? model, DateTime? modifiedAt, String? name, }) {return WorkersAiListFinetunesResponseResult(
   createdAt: createdAt ?? this.createdAt,
   description: description != null ? description() : this.description,
   id: id ?? this.id,
   model: model ?? this.model,
   modifiedAt: modifiedAt ?? this.modifiedAt,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersAiListFinetunesResponseResult &&
           createdAt == other.createdAt &&
           description == other.description &&
           id == other.id &&
           model == other.model &&
           modifiedAt == other.modifiedAt &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(createdAt, description, id, model, modifiedAt, name); } 
-@override String toString() { return 'WorkersAiListFinetunesResponseResult(createdAt: $createdAt, description: $description, id: $id, model: $model, modifiedAt: $modifiedAt, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(createdAt, description, id, model, modifiedAt, name);}
+@override String toString() {return 'WorkersAiListFinetunesResponseResult(createdAt: $createdAt, description: $description, id: $id, model: $model, modifiedAt: $modifiedAt, name: $name)';}
+}

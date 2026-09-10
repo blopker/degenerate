@@ -17,13 +17,13 @@ String toJson() => value;
 /// The type of DNS record associated with the origin. "" is used to specify a combination of A/AAAA records.
 @immutable final class SpectrumConfigOriginDnsType {const SpectrumConfigOriginDnsType._(this.value);
 
-factory SpectrumConfigOriginDnsType.fromJson(String json) { return switch (json) {
+factory SpectrumConfigOriginDnsType.fromJson(String json) {return switch (json) {
   '' => $empty,
   'A' => a,
   'AAAA' => aaaa,
   'SRV' => srv,
   _ => SpectrumConfigOriginDnsType._(json),
-}; }
+};}
 
 static const SpectrumConfigOriginDnsType $empty = SpectrumConfigOriginDnsType._('');
 
@@ -37,22 +37,22 @@ static const List<SpectrumConfigOriginDnsType> values = [$empty, a, aaaa, srv];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpectrumConfigOriginDnsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpectrumConfigOriginDnsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SpectrumConfigOriginDnsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SpectrumConfigOriginDnsType($value)';}
+}
 /// The name and type of DNS record for the Spectrum application.
 @immutable final class SpectrumConfigOriginDns {const SpectrumConfigOriginDns({this.name, this.ttl, this.type, });
 
-factory SpectrumConfigOriginDns.fromJson(Map<String, dynamic> json) { return SpectrumConfigOriginDns(
+factory SpectrumConfigOriginDns.fromJson(Map<String, dynamic> json) {return SpectrumConfigOriginDns(
   name: json['name'] != null ? SpectrumConfigOriginDnsName.fromJson(json['name'] as String) : null,
   ttl: json['ttl'] != null ? SpectrumConfigDnsTtl.fromJson(json['ttl'] as num) : null,
   type: json['type'] != null ? SpectrumConfigOriginDnsType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final SpectrumConfigOriginDnsName? name;
 
@@ -61,22 +61,22 @@ final SpectrumConfigDnsTtl? ttl;
 
 final SpectrumConfigOriginDnsType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (name != null) 'name': name?.toJson(),
   if (ttl != null) 'ttl': ttl?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'ttl', 'type'}.contains(key)); } 
-SpectrumConfigOriginDns copyWith({SpectrumConfigOriginDnsName? Function()? name, SpectrumConfigDnsTtl? Function()? ttl, SpectrumConfigOriginDnsType? Function()? type, }) { return SpectrumConfigOriginDns(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'ttl', 'type'}.contains(key));}
+SpectrumConfigOriginDns copyWith({SpectrumConfigOriginDnsName? Function()? name, SpectrumConfigDnsTtl? Function()? ttl, SpectrumConfigOriginDnsType? Function()? type, }) {return SpectrumConfigOriginDns(
   name: name != null ? name() : this.name,
   ttl: ttl != null ? ttl() : this.ttl,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SpectrumConfigOriginDns &&
           name == other.name &&
           ttl == other.ttl &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, ttl, type); } 
-@override String toString() { return 'SpectrumConfigOriginDns(name: $name, ttl: $ttl, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(name, ttl, type);}
+@override String toString() {return 'SpectrumConfigOriginDns(name: $name, ttl: $ttl, type: $type)';}
+}

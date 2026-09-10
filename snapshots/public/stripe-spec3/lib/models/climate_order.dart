@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'climate_order_product.dart';import 'climate_removals_beneficiary.dart';import 'climate_removals_order_deliveries.dart';/// Reason for the cancellation of this order.
 @immutable final class ClimateOrderCancellationReason {const ClimateOrderCancellationReason._(this.value);
 
-factory ClimateOrderCancellationReason.fromJson(String json) { return switch (json) {
+factory ClimateOrderCancellationReason.fromJson(String json) {return switch (json) {
   'expired' => expired,
   'product_unavailable' => productUnavailable,
   'requested' => requested,
   _ => ClimateOrderCancellationReason._(json),
-}; }
+};}
 
 static const ClimateOrderCancellationReason expired = ClimateOrderCancellationReason._('expired');
 
@@ -20,21 +20,21 @@ static const List<ClimateOrderCancellationReason> values = [expired, productUnav
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClimateOrderCancellationReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClimateOrderCancellationReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ClimateOrderCancellationReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ClimateOrderCancellationReason($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ClimateOrderObject {const ClimateOrderObject._(this.value);
 
-factory ClimateOrderObject.fromJson(String json) { return switch (json) {
+factory ClimateOrderObject.fromJson(String json) {return switch (json) {
   'climate.order' => climateOrder,
   _ => ClimateOrderObject._(json),
-}; }
+};}
 
 static const ClimateOrderObject climateOrder = ClimateOrderObject._('climate.order');
 
@@ -42,25 +42,25 @@ static const List<ClimateOrderObject> values = [climateOrder];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClimateOrderObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClimateOrderObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ClimateOrderObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ClimateOrderObject($value)';}
+}
 /// The current status of this order.
 @immutable final class ClimateOrderStatus {const ClimateOrderStatus._(this.value);
 
-factory ClimateOrderStatus.fromJson(String json) { return switch (json) {
+factory ClimateOrderStatus.fromJson(String json) {return switch (json) {
   'awaiting_funds' => awaitingFunds,
   'canceled' => canceled,
   'confirmed' => confirmed,
   'delivered' => delivered,
   'open' => open,
   _ => ClimateOrderStatus._(json),
-}; }
+};}
 
 static const ClimateOrderStatus awaitingFunds = ClimateOrderStatus._('awaiting_funds');
 
@@ -76,19 +76,19 @@ static const List<ClimateOrderStatus> values = [awaitingFunds, canceled, confirm
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClimateOrderStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClimateOrderStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ClimateOrderStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ClimateOrderStatus($value)';}
+}
 /// Orders represent your intent to purchase a particular Climate product. When you create an order, the
 /// payment is deducted from your merchant balance.
 @immutable final class ClimateOrder {const ClimateOrder({required this.amountFees, required this.amountSubtotal, required this.amountTotal, required this.created, required this.currency, required this.deliveryDetails, required this.expectedDeliveryYear, required this.id, required this.livemode, required this.metadata, required this.metricTons, required this.object, required this.product, required this.status, this.beneficiary, this.canceledAt = const Omittable.absent(), this.cancellationReason = const Omittable.absent(), this.certificate = const Omittable.absent(), this.confirmedAt = const Omittable.absent(), this.delayedAt = const Omittable.absent(), this.deliveredAt = const Omittable.absent(), this.productSubstitutedAt = const Omittable.absent(), });
 
-factory ClimateOrder.fromJson(Map<String, dynamic> json) { return ClimateOrder(
+factory ClimateOrder.fromJson(Map<String, dynamic> json) {return ClimateOrder(
   amountFees: (json['amount_fees'] as num).toInt(),
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
@@ -111,7 +111,7 @@ factory ClimateOrder.fromJson(Map<String, dynamic> json) { return ClimateOrder(
   product: ClimateOrderProduct.fromJson(json['product']),
   productSubstitutedAt: json.containsKey('product_substituted_at') ? Omittable(json['product_substituted_at'] != null ? (json['product_substituted_at'] as num).toInt() : null) : const Omittable.absent(),
   status: ClimateOrderStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// Total amount of [Frontier](https://frontierclimate.com/)'s service fees in the currency's smallest unit.
 final int amountFees;
@@ -178,7 +178,7 @@ final Omittable<int?> productSubstitutedAt;
 /// The current status of this order.
 final ClimateOrderStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_fees': amountFees,
   'amount_subtotal': amountSubtotal,
   'amount_total': amountTotal,
@@ -201,8 +201,8 @@ Map<String, dynamic> toJson() { return {
   'product': product.toJson(),
   if (productSubstitutedAt.isPresent) 'product_substituted_at': productSubstitutedAt.value,
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_fees') && json['amount_fees'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_fees') && json['amount_fees'] is num &&
       json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
       json.containsKey('amount_total') && json['amount_total'] is num &&
       json.containsKey('created') && json['created'] is num &&
@@ -215,8 +215,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('metric_tons') && json['metric_tons'] is String &&
       json.containsKey('object') &&
       json.containsKey('product') &&
-      json.containsKey('status'); } 
-ClimateOrder copyWith({int? amountFees, int? amountSubtotal, int? amountTotal, ClimateRemovalsBeneficiary? Function()? beneficiary, Omittable<int?>? canceledAt, Omittable<ClimateOrderCancellationReason?>? cancellationReason, Omittable<String?>? certificate, Omittable<int?>? confirmedAt, int? created, String? currency, Omittable<int?>? delayedAt, Omittable<int?>? deliveredAt, List<ClimateRemovalsOrderDeliveries>? deliveryDetails, int? expectedDeliveryYear, String? id, bool? livemode, Map<String,String>? metadata, String? metricTons, ClimateOrderObject? object, ClimateOrderProduct? product, Omittable<int?>? productSubstitutedAt, ClimateOrderStatus? status, }) { return ClimateOrder(
+      json.containsKey('status');}
+ClimateOrder copyWith({int? amountFees, int? amountSubtotal, int? amountTotal, ClimateRemovalsBeneficiary? Function()? beneficiary, Omittable<int?>? canceledAt, Omittable<ClimateOrderCancellationReason?>? cancellationReason, Omittable<String?>? certificate, Omittable<int?>? confirmedAt, int? created, String? currency, Omittable<int?>? delayedAt, Omittable<int?>? deliveredAt, List<ClimateRemovalsOrderDeliveries>? deliveryDetails, int? expectedDeliveryYear, String? id, bool? livemode, Map<String,String>? metadata, String? metricTons, ClimateOrderObject? object, ClimateOrderProduct? product, Omittable<int?>? productSubstitutedAt, ClimateOrderStatus? status, }) {return ClimateOrder(
   amountFees: amountFees ?? this.amountFees,
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTotal: amountTotal ?? this.amountTotal,
@@ -239,8 +239,8 @@ ClimateOrder copyWith({int? amountFees, int? amountSubtotal, int? amountTotal, C
   product: product ?? this.product,
   productSubstitutedAt: productSubstitutedAt ?? this.productSubstitutedAt,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ClimateOrder &&
           amountFees == other.amountFees &&
           amountSubtotal == other.amountSubtotal &&
@@ -263,7 +263,7 @@ ClimateOrder copyWith({int? amountFees, int? amountSubtotal, int? amountTotal, C
           object == other.object &&
           product == other.product &&
           productSubstitutedAt == other.productSubstitutedAt &&
-          status == other.status; } 
-@override int get hashCode { return Object.hashAll([amountFees, amountSubtotal, amountTotal, beneficiary, canceledAt, cancellationReason, certificate, confirmedAt, created, currency, delayedAt, deliveredAt, Object.hashAll(deliveryDetails), expectedDeliveryYear, id, livemode, metadata, metricTons, object, product, productSubstitutedAt, status]); } 
-@override String toString() { return 'ClimateOrder(amountFees: $amountFees, amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, beneficiary: $beneficiary, canceledAt: $canceledAt, cancellationReason: $cancellationReason, certificate: $certificate, confirmedAt: $confirmedAt, created: $created, currency: $currency, delayedAt: $delayedAt, deliveredAt: $deliveredAt, deliveryDetails: $deliveryDetails, expectedDeliveryYear: $expectedDeliveryYear, id: $id, livemode: $livemode, metadata: $metadata, metricTons: $metricTons, object: $object, product: $product, productSubstitutedAt: $productSubstitutedAt, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hashAll([amountFees, amountSubtotal, amountTotal, beneficiary, canceledAt, cancellationReason, certificate, confirmedAt, created, currency, delayedAt, deliveredAt, Object.hashAll(deliveryDetails), expectedDeliveryYear, id, livemode, metadata, metricTons, object, product, productSubstitutedAt, status]);}
+@override String toString() {return 'ClimateOrder(amountFees: $amountFees, amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, beneficiary: $beneficiary, canceledAt: $canceledAt, cancellationReason: $cancellationReason, certificate: $certificate, confirmedAt: $confirmedAt, created: $created, currency: $currency, delayedAt: $delayedAt, deliveredAt: $deliveredAt, deliveryDetails: $deliveryDetails, expectedDeliveryYear: $expectedDeliveryYear, id: $id, livemode: $livemode, metadata: $metadata, metricTons: $metricTons, object: $object, product: $product, productSubstitutedAt: $productSubstitutedAt, status: $status)';}
+}

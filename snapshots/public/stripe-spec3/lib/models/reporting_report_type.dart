@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ReportingReportTypeObject {const ReportingReportTypeObject._(this.value);
 
-factory ReportingReportTypeObject.fromJson(String json) { return switch (json) {
+factory ReportingReportTypeObject.fromJson(String json) {return switch (json) {
   'reporting.report_type' => reportingReportType,
   _ => ReportingReportTypeObject._(json),
-}; }
+};}
 
 static const ReportingReportTypeObject reportingReportType = ReportingReportTypeObject._('reporting.report_type');
 
@@ -14,14 +14,14 @@ static const List<ReportingReportTypeObject> values = [reportingReportType];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReportingReportTypeObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReportingReportTypeObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReportingReportTypeObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReportingReportTypeObject($value)';}
+}
 /// The Report Type resource corresponds to a particular type of report, such as
 /// the "Activity summary" or "Itemized payouts" reports. These objects are
 /// identified by an ID belonging to a set of enumerated values. See
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 /// data), and will error when queried without a [live-mode API key](https://docs.stripe.com/keys#test-live-modes).
 @immutable final class ReportingReportType {const ReportingReportType({required this.dataAvailableEnd, required this.dataAvailableStart, required this.id, required this.livemode, required this.name, required this.object, required this.updated, required this.version, this.defaultColumns = const Omittable.absent(), });
 
-factory ReportingReportType.fromJson(Map<String, dynamic> json) { return ReportingReportType(
+factory ReportingReportType.fromJson(Map<String, dynamic> json) {return ReportingReportType(
   dataAvailableEnd: (json['data_available_end'] as num).toInt(),
   dataAvailableStart: (json['data_available_start'] as num).toInt(),
   defaultColumns: json.containsKey('default_columns') ? Omittable((json['default_columns'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
@@ -42,7 +42,7 @@ factory ReportingReportType.fromJson(Map<String, dynamic> json) { return Reporti
   object: ReportingReportTypeObject.fromJson(json['object'] as String),
   updated: (json['updated'] as num).toInt(),
   version: (json['version'] as num).toInt(),
-); }
+);}
 
 /// Most recent time for which this Report Type is available. Measured in seconds since the Unix epoch.
 final int dataAvailableEnd;
@@ -71,7 +71,7 @@ final int updated;
 /// Version of the Report Type. Different versions report with the same ID will have the same purpose, but may take different run parameters or have different result schemas.
 final int version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data_available_end': dataAvailableEnd,
   'data_available_start': dataAvailableStart,
   if (defaultColumns.isPresent) 'default_columns': defaultColumns.value,
@@ -81,16 +81,16 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'updated': updated,
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data_available_end') && json['data_available_end'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data_available_end') && json['data_available_end'] is num &&
       json.containsKey('data_available_start') && json['data_available_start'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('object') &&
       json.containsKey('updated') && json['updated'] is num &&
-      json.containsKey('version') && json['version'] is num; } 
-ReportingReportType copyWith({int? dataAvailableEnd, int? dataAvailableStart, Omittable<List<String>?>? defaultColumns, String? id, bool? livemode, String? name, ReportingReportTypeObject? object, int? updated, int? version, }) { return ReportingReportType(
+      json.containsKey('version') && json['version'] is num;}
+ReportingReportType copyWith({int? dataAvailableEnd, int? dataAvailableStart, Omittable<List<String>?>? defaultColumns, String? id, bool? livemode, String? name, ReportingReportTypeObject? object, int? updated, int? version, }) {return ReportingReportType(
   dataAvailableEnd: dataAvailableEnd ?? this.dataAvailableEnd,
   dataAvailableStart: dataAvailableStart ?? this.dataAvailableStart,
   defaultColumns: defaultColumns ?? this.defaultColumns,
@@ -100,8 +100,8 @@ ReportingReportType copyWith({int? dataAvailableEnd, int? dataAvailableStart, Om
   object: object ?? this.object,
   updated: updated ?? this.updated,
   version: version ?? this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReportingReportType &&
           dataAvailableEnd == other.dataAvailableEnd &&
           dataAvailableStart == other.dataAvailableStart &&
@@ -112,7 +112,7 @@ ReportingReportType copyWith({int? dataAvailableEnd, int? dataAvailableStart, Om
           name == other.name &&
           object == other.object &&
           updated == other.updated &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(dataAvailableEnd, dataAvailableStart, Object.hashAll(defaultColumns.value ?? const []), id, livemode, name, object, updated, version); } 
-@override String toString() { return 'ReportingReportType(dataAvailableEnd: $dataAvailableEnd, dataAvailableStart: $dataAvailableStart, defaultColumns: $defaultColumns, id: $id, livemode: $livemode, name: $name, object: $object, updated: $updated, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(dataAvailableEnd, dataAvailableStart, Object.hashAll(defaultColumns.value ?? const []), id, livemode, name, object, updated, version);}
+@override String toString() {return 'ReportingReportType(dataAvailableEnd: $dataAvailableEnd, dataAvailableStart: $dataAvailableStart, defaultColumns: $defaultColumns, id: $id, livemode: $livemode, name: $name, object: $object, updated: $updated, version: $version)';}
+}

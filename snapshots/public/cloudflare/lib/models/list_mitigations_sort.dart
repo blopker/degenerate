@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListMitigationsSort {const ListMitigationsSort._(this.value);
 
-factory ListMitigationsSort.fromJson(String json) { return switch (json) {
+factory ListMitigationsSort.fromJson(String json) {return switch (json) {
   'type,asc' => typeasc,
   'type,desc' => typedesc,
   'effective_date,asc' => effectiveDateasc,
@@ -12,7 +12,7 @@ factory ListMitigationsSort.fromJson(String json) { return switch (json) {
   'entity_type,asc' => entityTypeasc,
   'entity_type,desc' => entityTypedesc,
   _ => ListMitigationsSort._(json),
-}; }
+};}
 
 static const ListMitigationsSort typeasc = ListMitigationsSort._('type,asc');
 
@@ -34,11 +34,11 @@ static const List<ListMitigationsSort> values = [typeasc, typedesc, effectiveDat
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ListMitigationsSort && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ListMitigationsSort($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ListMitigationsSort && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ListMitigationsSort($value)';}
+}

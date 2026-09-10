@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookIssueCommentCreatedCommentReactions {const WebhookIssueCommentCreatedCommentReactions({required this.plus1, required this.minus1, required this.confused, required this.eyes, required this.heart, required this.hooray, required this.laugh, required this.rocket, required this.totalCount, required this.url, });
 
-factory WebhookIssueCommentCreatedCommentReactions.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentCreatedCommentReactions(
+factory WebhookIssueCommentCreatedCommentReactions.fromJson(Map<String, dynamic> json) {return WebhookIssueCommentCreatedCommentReactions(
   plus1: (json['+1'] as num).toInt(),
   minus1: (json['-1'] as num).toInt(),
   confused: (json['confused'] as num).toInt(),
@@ -13,7 +13,7 @@ factory WebhookIssueCommentCreatedCommentReactions.fromJson(Map<String, dynamic>
   rocket: (json['rocket'] as num).toInt(),
   totalCount: (json['total_count'] as num).toInt(),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final int plus1;
 
@@ -35,7 +35,7 @@ final int totalCount;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '+1': plus1,
   '-1': minus1,
   'confused': confused,
@@ -46,8 +46,8 @@ Map<String, dynamic> toJson() { return {
   'rocket': rocket,
   'total_count': totalCount,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('+1') && json['+1'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('+1') && json['+1'] is num &&
       json.containsKey('-1') && json['-1'] is num &&
       json.containsKey('confused') && json['confused'] is num &&
       json.containsKey('eyes') && json['eyes'] is num &&
@@ -56,8 +56,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('+1') 
       json.containsKey('laugh') && json['laugh'] is num &&
       json.containsKey('rocket') && json['rocket'] is num &&
       json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookIssueCommentCreatedCommentReactions copyWith({int? plus1, int? minus1, int? confused, int? eyes, int? heart, int? hooray, int? laugh, int? rocket, int? totalCount, Uri? url, }) { return WebhookIssueCommentCreatedCommentReactions(
+      json.containsKey('url') && json['url'] is String;}
+WebhookIssueCommentCreatedCommentReactions copyWith({int? plus1, int? minus1, int? confused, int? eyes, int? heart, int? hooray, int? laugh, int? rocket, int? totalCount, Uri? url, }) {return WebhookIssueCommentCreatedCommentReactions(
   plus1: plus1 ?? this.plus1,
   minus1: minus1 ?? this.minus1,
   confused: confused ?? this.confused,
@@ -68,8 +68,8 @@ WebhookIssueCommentCreatedCommentReactions copyWith({int? plus1, int? minus1, in
   rocket: rocket ?? this.rocket,
   totalCount: totalCount ?? this.totalCount,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookIssueCommentCreatedCommentReactions &&
           plus1 == other.plus1 &&
           minus1 == other.minus1 &&
@@ -80,7 +80,7 @@ WebhookIssueCommentCreatedCommentReactions copyWith({int? plus1, int? minus1, in
           laugh == other.laugh &&
           rocket == other.rocket &&
           totalCount == other.totalCount &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(plus1, minus1, confused, eyes, heart, hooray, laugh, rocket, totalCount, url); } 
-@override String toString() { return 'WebhookIssueCommentCreatedCommentReactions(plus1: $plus1, minus1: $minus1, confused: $confused, eyes: $eyes, heart: $heart, hooray: $hooray, laugh: $laugh, rocket: $rocket, totalCount: $totalCount, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(plus1, minus1, confused, eyes, heart, hooray, laugh, rocket, totalCount, url);}
+@override String toString() {return 'WebhookIssueCommentCreatedCommentReactions(plus1: $plus1, minus1: $minus1, confused: $confused, eyes: $eyes, heart: $heart, hooray: $hooray, laugh: $laugh, rocket: $rocket, totalCount: $totalCount, url: $url)';}
+}

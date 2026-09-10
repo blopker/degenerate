@@ -13,7 +13,7 @@ final class ImageRegistriesApi with ApiExecutor {const ImageRegistriesApi(this.a
 /// Generates temporary credentials for accessing Cloudflare's container image registry. Used for pulling and pushing container images.
 ///
 /// `POST /accounts/{account_id}/containers/registries/{domain}/credentials`
-Future<ApiResult<CcAccountRegistryToken, BaseErrorResponse>> generateImageRegistryCredentials({required String accountId, required String domain, required CcImageRegistryCredentialsConfiguration body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CcAccountRegistryToken, BaseErrorResponse>> generateImageRegistryCredentials({required String accountId, required String domain, required CcImageRegistryCredentialsConfiguration body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -41,5 +41,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

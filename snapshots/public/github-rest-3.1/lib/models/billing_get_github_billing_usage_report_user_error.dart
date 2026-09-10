@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class BillingGetGithubBillingUsageReportUserError {const BillingGetGithubBillingUsageReportUserError();
 
 /// Decodes the payload for its declared status and content type.
-static BillingGetGithubBillingUsageReportUserError parse(ApiResponse response) { switch (response.statusCode) {
+static BillingGetGithubBillingUsageReportUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -30,47 +30,47 @@ return BillingGetGithubBillingUsageReportUserError503(BillingGetGithubBillingUsa
 default:
 return BillingGetGithubBillingUsageReportUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class BillingGetGithubBillingUsageReportUserError400ApplicationJson extends BillingGetGithubBillingUsageReportUserError {const BillingGetGithubBillingUsageReportUserError400ApplicationJson(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 400 (application/scim+json).
 final class BillingGetGithubBillingUsageReportUserError400ApplicationScimJson extends BillingGetGithubBillingUsageReportUserError {const BillingGetGithubBillingUsageReportUserError400ApplicationScimJson(this.data);
 
 /// The decoded response payload.
 final ScimError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class BillingGetGithubBillingUsageReportUserError403 extends BillingGetGithubBillingUsageReportUserError {const BillingGetGithubBillingUsageReportUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 500 (application/json).
 final class BillingGetGithubBillingUsageReportUserError500 extends BillingGetGithubBillingUsageReportUserError {const BillingGetGithubBillingUsageReportUserError500(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 503 (application/json).
 final class BillingGetGithubBillingUsageReportUserError503 extends BillingGetGithubBillingUsageReportUserError {const BillingGetGithubBillingUsageReportUserError503(this.data);
 
 /// The decoded response payload.
 final BillingGetGithubBillingUsageReportUserResponse503 data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class BillingGetGithubBillingUsageReportUserErrorUnknown extends BillingGetGithubBillingUsageReportUserError {const BillingGetGithubBillingUsageReportUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

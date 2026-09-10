@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Default permission level members have for organization repositories.
 @immutable final class OrgsUpdateRequestDefaultRepositoryPermission {const OrgsUpdateRequestDefaultRepositoryPermission._(this.value);
 
-factory OrgsUpdateRequestDefaultRepositoryPermission.fromJson(String json) { return switch (json) {
+factory OrgsUpdateRequestDefaultRepositoryPermission.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   'admin' => admin,
   'none' => none,
   _ => OrgsUpdateRequestDefaultRepositoryPermission._(json),
-}; }
+};}
 
 static const OrgsUpdateRequestDefaultRepositoryPermission read = OrgsUpdateRequestDefaultRepositoryPermission._('read');
 
@@ -23,24 +23,24 @@ static const List<OrgsUpdateRequestDefaultRepositoryPermission> values = [read, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsUpdateRequestDefaultRepositoryPermission && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsUpdateRequestDefaultRepositoryPermission($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgsUpdateRequestDefaultRepositoryPermission && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrgsUpdateRequestDefaultRepositoryPermission($value)';}
+}
 /// Specifies which types of repositories non-admin organization members can create. `private` is only available to repositories that are part of an organization on GitHub Enterprise Cloud.
 /// **Note:** This parameter is closing down and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in `members_can_create_repositories`. See the parameter deprecation notice in the operation description for details.
 @immutable final class OrgsUpdateRequestMembersAllowedRepositoryCreationType {const OrgsUpdateRequestMembersAllowedRepositoryCreationType._(this.value);
 
-factory OrgsUpdateRequestMembersAllowedRepositoryCreationType.fromJson(String json) { return switch (json) {
+factory OrgsUpdateRequestMembersAllowedRepositoryCreationType.fromJson(String json) {return switch (json) {
   'all' => all,
   'private' => private,
   'none' => none,
   _ => OrgsUpdateRequestMembersAllowedRepositoryCreationType._(json),
-}; }
+};}
 
 static const OrgsUpdateRequestMembersAllowedRepositoryCreationType all = OrgsUpdateRequestMembersAllowedRepositoryCreationType._('all');
 
@@ -52,17 +52,17 @@ static const List<OrgsUpdateRequestMembersAllowedRepositoryCreationType> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsUpdateRequestMembersAllowedRepositoryCreationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsUpdateRequestMembersAllowedRepositoryCreationType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgsUpdateRequestMembersAllowedRepositoryCreationType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrgsUpdateRequestMembersAllowedRepositoryCreationType($value)';}
+}
 @immutable final class OrgsUpdateRequest {const OrgsUpdateRequest({this.billingEmail, this.company, this.email, this.twitterUsername, this.location, this.name, this.description, this.hasOrganizationProjects, this.hasRepositoryProjects, this.defaultRepositoryPermission, this.membersCanCreateRepositories, this.membersCanCreateInternalRepositories, this.membersCanCreatePrivateRepositories, this.membersCanCreatePublicRepositories, this.membersAllowedRepositoryCreationType, this.membersCanCreatePages, this.membersCanCreatePublicPages, this.membersCanCreatePrivatePages, this.membersCanForkPrivateRepositories, this.webCommitSignoffRequired, this.blog, this.advancedSecurityEnabledForNewRepositories, this.dependabotAlertsEnabledForNewRepositories, this.dependabotSecurityUpdatesEnabledForNewRepositories, this.dependencyGraphEnabledForNewRepositories, this.secretScanningEnabledForNewRepositories, this.secretScanningPushProtectionEnabledForNewRepositories, this.secretScanningPushProtectionCustomLinkEnabled, this.secretScanningPushProtectionCustomLink, this.deployKeysEnabledForRepositories, });
 
-factory OrgsUpdateRequest.fromJson(Map<String, dynamic> json) { return OrgsUpdateRequest(
+factory OrgsUpdateRequest.fromJson(Map<String, dynamic> json) {return OrgsUpdateRequest(
   billingEmail: json['billing_email'] as String?,
   company: json['company'] as String?,
   email: json['email'] as String?,
@@ -93,7 +93,7 @@ factory OrgsUpdateRequest.fromJson(Map<String, dynamic> json) { return OrgsUpdat
   secretScanningPushProtectionCustomLinkEnabled: json['secret_scanning_push_protection_custom_link_enabled'] as bool?,
   secretScanningPushProtectionCustomLink: json['secret_scanning_push_protection_custom_link'] as String?,
   deployKeysEnabledForRepositories: json['deploy_keys_enabled_for_repositories'] as bool?,
-); }
+);}
 
 /// Billing email address. This address is not publicized.
 final String? billingEmail;
@@ -222,20 +222,20 @@ final String? secretScanningPushProtectionCustomLink;
 final bool? deployKeysEnabledForRepositories;
 
 /// The value with the schema default applied when absent.
-OrgsUpdateRequestDefaultRepositoryPermission get defaultRepositoryPermissionOrDefault { return defaultRepositoryPermission ?? OrgsUpdateRequestDefaultRepositoryPermission.fromJson('read'); } 
+OrgsUpdateRequestDefaultRepositoryPermission get defaultRepositoryPermissionOrDefault {return defaultRepositoryPermission ?? OrgsUpdateRequestDefaultRepositoryPermission.fromJson('read');}
 /// The value with the schema default applied when absent.
-bool get membersCanCreateRepositoriesOrDefault { return membersCanCreateRepositories ?? true; } 
+bool get membersCanCreateRepositoriesOrDefault {return membersCanCreateRepositories ?? true;}
 /// The value with the schema default applied when absent.
-bool get membersCanCreatePagesOrDefault { return membersCanCreatePages ?? true; } 
+bool get membersCanCreatePagesOrDefault {return membersCanCreatePages ?? true;}
 /// The value with the schema default applied when absent.
-bool get membersCanCreatePublicPagesOrDefault { return membersCanCreatePublicPages ?? true; } 
+bool get membersCanCreatePublicPagesOrDefault {return membersCanCreatePublicPages ?? true;}
 /// The value with the schema default applied when absent.
-bool get membersCanCreatePrivatePagesOrDefault { return membersCanCreatePrivatePages ?? true; } 
+bool get membersCanCreatePrivatePagesOrDefault {return membersCanCreatePrivatePages ?? true;}
 /// The value with the schema default applied when absent.
-bool get membersCanForkPrivateRepositoriesOrDefault { return membersCanForkPrivateRepositories ?? false; } 
+bool get membersCanForkPrivateRepositoriesOrDefault {return membersCanForkPrivateRepositories ?? false;}
 /// The value with the schema default applied when absent.
-bool get webCommitSignoffRequiredOrDefault { return webCommitSignoffRequired ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get webCommitSignoffRequiredOrDefault {return webCommitSignoffRequired ?? false;}
+Map<String, dynamic> toJson() {return {
   'billing_email': ?billingEmail,
   'company': ?company,
   'email': ?email,
@@ -266,9 +266,9 @@ Map<String, dynamic> toJson() { return {
   'secret_scanning_push_protection_custom_link_enabled': ?secretScanningPushProtectionCustomLinkEnabled,
   'secret_scanning_push_protection_custom_link': ?secretScanningPushProtectionCustomLink,
   'deploy_keys_enabled_for_repositories': ?deployKeysEnabledForRepositories,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_email', 'company', 'email', 'twitter_username', 'location', 'name', 'description', 'has_organization_projects', 'has_repository_projects', 'default_repository_permission', 'members_can_create_repositories', 'members_can_create_internal_repositories', 'members_can_create_private_repositories', 'members_can_create_public_repositories', 'members_allowed_repository_creation_type', 'members_can_create_pages', 'members_can_create_public_pages', 'members_can_create_private_pages', 'members_can_fork_private_repositories', 'web_commit_signoff_required', 'blog', 'advanced_security_enabled_for_new_repositories', 'dependabot_alerts_enabled_for_new_repositories', 'dependabot_security_updates_enabled_for_new_repositories', 'dependency_graph_enabled_for_new_repositories', 'secret_scanning_enabled_for_new_repositories', 'secret_scanning_push_protection_enabled_for_new_repositories', 'secret_scanning_push_protection_custom_link_enabled', 'secret_scanning_push_protection_custom_link', 'deploy_keys_enabled_for_repositories'}.contains(key)); } 
-OrgsUpdateRequest copyWith({String? Function()? billingEmail, String? Function()? company, String? Function()? email, String? Function()? twitterUsername, String? Function()? location, String? Function()? name, String? Function()? description, bool? Function()? hasOrganizationProjects, bool? Function()? hasRepositoryProjects, OrgsUpdateRequestDefaultRepositoryPermission? Function()? defaultRepositoryPermission, bool? Function()? membersCanCreateRepositories, bool? Function()? membersCanCreateInternalRepositories, bool? Function()? membersCanCreatePrivateRepositories, bool? Function()? membersCanCreatePublicRepositories, OrgsUpdateRequestMembersAllowedRepositoryCreationType? Function()? membersAllowedRepositoryCreationType, bool? Function()? membersCanCreatePages, bool? Function()? membersCanCreatePublicPages, bool? Function()? membersCanCreatePrivatePages, bool? Function()? membersCanForkPrivateRepositories, bool? Function()? webCommitSignoffRequired, String? Function()? blog, bool? Function()? advancedSecurityEnabledForNewRepositories, bool? Function()? dependabotAlertsEnabledForNewRepositories, bool? Function()? dependabotSecurityUpdatesEnabledForNewRepositories, bool? Function()? dependencyGraphEnabledForNewRepositories, bool? Function()? secretScanningEnabledForNewRepositories, bool? Function()? secretScanningPushProtectionEnabledForNewRepositories, bool? Function()? secretScanningPushProtectionCustomLinkEnabled, String? Function()? secretScanningPushProtectionCustomLink, bool? Function()? deployKeysEnabledForRepositories, }) { return OrgsUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'billing_email', 'company', 'email', 'twitter_username', 'location', 'name', 'description', 'has_organization_projects', 'has_repository_projects', 'default_repository_permission', 'members_can_create_repositories', 'members_can_create_internal_repositories', 'members_can_create_private_repositories', 'members_can_create_public_repositories', 'members_allowed_repository_creation_type', 'members_can_create_pages', 'members_can_create_public_pages', 'members_can_create_private_pages', 'members_can_fork_private_repositories', 'web_commit_signoff_required', 'blog', 'advanced_security_enabled_for_new_repositories', 'dependabot_alerts_enabled_for_new_repositories', 'dependabot_security_updates_enabled_for_new_repositories', 'dependency_graph_enabled_for_new_repositories', 'secret_scanning_enabled_for_new_repositories', 'secret_scanning_push_protection_enabled_for_new_repositories', 'secret_scanning_push_protection_custom_link_enabled', 'secret_scanning_push_protection_custom_link', 'deploy_keys_enabled_for_repositories'}.contains(key));}
+OrgsUpdateRequest copyWith({String? Function()? billingEmail, String? Function()? company, String? Function()? email, String? Function()? twitterUsername, String? Function()? location, String? Function()? name, String? Function()? description, bool? Function()? hasOrganizationProjects, bool? Function()? hasRepositoryProjects, OrgsUpdateRequestDefaultRepositoryPermission? Function()? defaultRepositoryPermission, bool? Function()? membersCanCreateRepositories, bool? Function()? membersCanCreateInternalRepositories, bool? Function()? membersCanCreatePrivateRepositories, bool? Function()? membersCanCreatePublicRepositories, OrgsUpdateRequestMembersAllowedRepositoryCreationType? Function()? membersAllowedRepositoryCreationType, bool? Function()? membersCanCreatePages, bool? Function()? membersCanCreatePublicPages, bool? Function()? membersCanCreatePrivatePages, bool? Function()? membersCanForkPrivateRepositories, bool? Function()? webCommitSignoffRequired, String? Function()? blog, bool? Function()? advancedSecurityEnabledForNewRepositories, bool? Function()? dependabotAlertsEnabledForNewRepositories, bool? Function()? dependabotSecurityUpdatesEnabledForNewRepositories, bool? Function()? dependencyGraphEnabledForNewRepositories, bool? Function()? secretScanningEnabledForNewRepositories, bool? Function()? secretScanningPushProtectionEnabledForNewRepositories, bool? Function()? secretScanningPushProtectionCustomLinkEnabled, String? Function()? secretScanningPushProtectionCustomLink, bool? Function()? deployKeysEnabledForRepositories, }) {return OrgsUpdateRequest(
   billingEmail: billingEmail != null ? billingEmail() : this.billingEmail,
   company: company != null ? company() : this.company,
   email: email != null ? email() : this.email,
@@ -299,8 +299,8 @@ OrgsUpdateRequest copyWith({String? Function()? billingEmail, String? Function()
   secretScanningPushProtectionCustomLinkEnabled: secretScanningPushProtectionCustomLinkEnabled != null ? secretScanningPushProtectionCustomLinkEnabled() : this.secretScanningPushProtectionCustomLinkEnabled,
   secretScanningPushProtectionCustomLink: secretScanningPushProtectionCustomLink != null ? secretScanningPushProtectionCustomLink() : this.secretScanningPushProtectionCustomLink,
   deployKeysEnabledForRepositories: deployKeysEnabledForRepositories != null ? deployKeysEnabledForRepositories() : this.deployKeysEnabledForRepositories,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrgsUpdateRequest &&
           billingEmail == other.billingEmail &&
           company == other.company &&
@@ -331,7 +331,7 @@ OrgsUpdateRequest copyWith({String? Function()? billingEmail, String? Function()
           secretScanningPushProtectionEnabledForNewRepositories == other.secretScanningPushProtectionEnabledForNewRepositories &&
           secretScanningPushProtectionCustomLinkEnabled == other.secretScanningPushProtectionCustomLinkEnabled &&
           secretScanningPushProtectionCustomLink == other.secretScanningPushProtectionCustomLink &&
-          deployKeysEnabledForRepositories == other.deployKeysEnabledForRepositories; } 
-@override int get hashCode { return Object.hashAll([billingEmail, company, email, twitterUsername, location, name, description, hasOrganizationProjects, hasRepositoryProjects, defaultRepositoryPermission, membersCanCreateRepositories, membersCanCreateInternalRepositories, membersCanCreatePrivateRepositories, membersCanCreatePublicRepositories, membersAllowedRepositoryCreationType, membersCanCreatePages, membersCanCreatePublicPages, membersCanCreatePrivatePages, membersCanForkPrivateRepositories, webCommitSignoffRequired, blog, advancedSecurityEnabledForNewRepositories, dependabotAlertsEnabledForNewRepositories, dependabotSecurityUpdatesEnabledForNewRepositories, dependencyGraphEnabledForNewRepositories, secretScanningEnabledForNewRepositories, secretScanningPushProtectionEnabledForNewRepositories, secretScanningPushProtectionCustomLinkEnabled, secretScanningPushProtectionCustomLink, deployKeysEnabledForRepositories]); } 
-@override String toString() { return 'OrgsUpdateRequest(billingEmail: $billingEmail, company: $company, email: $email, twitterUsername: $twitterUsername, location: $location, name: $name, description: $description, hasOrganizationProjects: $hasOrganizationProjects, hasRepositoryProjects: $hasRepositoryProjects, defaultRepositoryPermission: $defaultRepositoryPermission, membersCanCreateRepositories: $membersCanCreateRepositories, membersCanCreateInternalRepositories: $membersCanCreateInternalRepositories, membersCanCreatePrivateRepositories: $membersCanCreatePrivateRepositories, membersCanCreatePublicRepositories: $membersCanCreatePublicRepositories, membersAllowedRepositoryCreationType: $membersAllowedRepositoryCreationType, membersCanCreatePages: $membersCanCreatePages, membersCanCreatePublicPages: $membersCanCreatePublicPages, membersCanCreatePrivatePages: $membersCanCreatePrivatePages, membersCanForkPrivateRepositories: $membersCanForkPrivateRepositories, webCommitSignoffRequired: $webCommitSignoffRequired, blog: $blog, advancedSecurityEnabledForNewRepositories: $advancedSecurityEnabledForNewRepositories, dependabotAlertsEnabledForNewRepositories: $dependabotAlertsEnabledForNewRepositories, dependabotSecurityUpdatesEnabledForNewRepositories: $dependabotSecurityUpdatesEnabledForNewRepositories, dependencyGraphEnabledForNewRepositories: $dependencyGraphEnabledForNewRepositories, secretScanningEnabledForNewRepositories: $secretScanningEnabledForNewRepositories, secretScanningPushProtectionEnabledForNewRepositories: $secretScanningPushProtectionEnabledForNewRepositories, secretScanningPushProtectionCustomLinkEnabled: $secretScanningPushProtectionCustomLinkEnabled, secretScanningPushProtectionCustomLink: $secretScanningPushProtectionCustomLink, deployKeysEnabledForRepositories: $deployKeysEnabledForRepositories)'; } 
- }
+          deployKeysEnabledForRepositories == other.deployKeysEnabledForRepositories;}
+@override int get hashCode {return Object.hashAll([billingEmail, company, email, twitterUsername, location, name, description, hasOrganizationProjects, hasRepositoryProjects, defaultRepositoryPermission, membersCanCreateRepositories, membersCanCreateInternalRepositories, membersCanCreatePrivateRepositories, membersCanCreatePublicRepositories, membersAllowedRepositoryCreationType, membersCanCreatePages, membersCanCreatePublicPages, membersCanCreatePrivatePages, membersCanForkPrivateRepositories, webCommitSignoffRequired, blog, advancedSecurityEnabledForNewRepositories, dependabotAlertsEnabledForNewRepositories, dependabotSecurityUpdatesEnabledForNewRepositories, dependencyGraphEnabledForNewRepositories, secretScanningEnabledForNewRepositories, secretScanningPushProtectionEnabledForNewRepositories, secretScanningPushProtectionCustomLinkEnabled, secretScanningPushProtectionCustomLink, deployKeysEnabledForRepositories]);}
+@override String toString() {return 'OrgsUpdateRequest(billingEmail: $billingEmail, company: $company, email: $email, twitterUsername: $twitterUsername, location: $location, name: $name, description: $description, hasOrganizationProjects: $hasOrganizationProjects, hasRepositoryProjects: $hasRepositoryProjects, defaultRepositoryPermission: $defaultRepositoryPermission, membersCanCreateRepositories: $membersCanCreateRepositories, membersCanCreateInternalRepositories: $membersCanCreateInternalRepositories, membersCanCreatePrivateRepositories: $membersCanCreatePrivateRepositories, membersCanCreatePublicRepositories: $membersCanCreatePublicRepositories, membersAllowedRepositoryCreationType: $membersAllowedRepositoryCreationType, membersCanCreatePages: $membersCanCreatePages, membersCanCreatePublicPages: $membersCanCreatePublicPages, membersCanCreatePrivatePages: $membersCanCreatePrivatePages, membersCanForkPrivateRepositories: $membersCanForkPrivateRepositories, webCommitSignoffRequired: $webCommitSignoffRequired, blog: $blog, advancedSecurityEnabledForNewRepositories: $advancedSecurityEnabledForNewRepositories, dependabotAlertsEnabledForNewRepositories: $dependabotAlertsEnabledForNewRepositories, dependabotSecurityUpdatesEnabledForNewRepositories: $dependabotSecurityUpdatesEnabledForNewRepositories, dependencyGraphEnabledForNewRepositories: $dependencyGraphEnabledForNewRepositories, secretScanningEnabledForNewRepositories: $secretScanningEnabledForNewRepositories, secretScanningPushProtectionEnabledForNewRepositories: $secretScanningPushProtectionEnabledForNewRepositories, secretScanningPushProtectionCustomLinkEnabled: $secretScanningPushProtectionCustomLinkEnabled, secretScanningPushProtectionCustomLink: $secretScanningPushProtectionCustomLink, deployKeysEnabledForRepositories: $deployKeysEnabledForRepositories)';}
+}

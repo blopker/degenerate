@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryByDkimArc {const RadarGetEmailRoutingSummaryByDkimArc._(this.value);
 
-factory RadarGetEmailRoutingSummaryByDkimArc.fromJson(String json) { return switch (json) {
+factory RadarGetEmailRoutingSummaryByDkimArc.fromJson(String json) {return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
   _ => RadarGetEmailRoutingSummaryByDkimArc._(json),
-}; }
+};}
 
 static const RadarGetEmailRoutingSummaryByDkimArc pass = RadarGetEmailRoutingSummaryByDkimArc._('PASS');
 
@@ -19,11 +19,11 @@ static const List<RadarGetEmailRoutingSummaryByDkimArc> values = [pass, none, fa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetEmailRoutingSummaryByDkimArc && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetEmailRoutingSummaryByDkimArc($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetEmailRoutingSummaryByDkimArc && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetEmailRoutingSummaryByDkimArc($value)';}
+}

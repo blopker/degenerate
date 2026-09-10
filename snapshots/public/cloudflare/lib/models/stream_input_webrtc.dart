@@ -10,22 +10,22 @@ String toJson() => value;
 /// Details for streaming to a live input using WebRTC.
 @immutable final class StreamInputWebrtc {const StreamInputWebrtc({this.url});
 
-factory StreamInputWebrtc.fromJson(Map<String, dynamic> json) { return StreamInputWebrtc(
+factory StreamInputWebrtc.fromJson(Map<String, dynamic> json) {return StreamInputWebrtc(
   url: json['url'] != null ? StreamInputWebrtcUrl.fromJson(json['url'] as String) : null,
-); }
+);}
 
 final StreamInputWebrtcUrl? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (url != null) 'url': url?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url'}.contains(key)); } 
-StreamInputWebrtc copyWith({StreamInputWebrtcUrl? Function()? url}) { return StreamInputWebrtc(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'url'}.contains(key));}
+StreamInputWebrtc copyWith({StreamInputWebrtcUrl? Function()? url}) {return StreamInputWebrtc(
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is StreamInputWebrtc &&
-          url == other.url; } 
-@override int get hashCode { return url.hashCode; } 
-@override String toString() { return 'StreamInputWebrtc(url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return url.hashCode;}
+@override String toString() {return 'StreamInputWebrtc(url: $url)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tune_supervised_hyperparameters_batch_size.dart';import 'fine_tune_supervised_hyperparameters_learning_rate_multiplier.dart';import 'fine_tune_supervised_hyperparameters_n_epochs.dart';/// The hyperparameters used for the fine-tuning job.
 @immutable final class FineTuneSupervisedHyperparameters {const FineTuneSupervisedHyperparameters({this.batchSize, this.learningRateMultiplier, this.nEpochs, });
 
-factory FineTuneSupervisedHyperparameters.fromJson(Map<String, dynamic> json) { return FineTuneSupervisedHyperparameters(
+factory FineTuneSupervisedHyperparameters.fromJson(Map<String, dynamic> json) {return FineTuneSupervisedHyperparameters(
   batchSize: json['batch_size'] != null ? OneOf2.parse(json['batch_size'], fromA: (v) => FineTuneSupervisedHyperparametersBatchSizeVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
   learningRateMultiplier: json['learning_rate_multiplier'] != null ? OneOf2.parse(json['learning_rate_multiplier'], fromA: (v) => FineTuneSupervisedHyperparametersLearningRateMultiplierVariant1.fromJson(v as String), fromB: (v) => (v as num).toDouble(),) : null,
   nEpochs: json['n_epochs'] != null ? OneOf2.parse(json['n_epochs'], fromA: (v) => FineTuneSupervisedHyperparametersNEpochsVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
-); }
+);}
 
 /// Number of examples in each batch. A larger batch size means that model parameters are updated less frequently, but with lower variance.
 /// 
@@ -21,22 +21,22 @@ final FineTuneSupervisedHyperparametersLearningRateMultiplier? learningRateMulti
 /// 
 final FineTuneSupervisedHyperparametersNEpochs? nEpochs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (batchSize != null) 'batch_size': batchSize?.toJson(),
   if (learningRateMultiplier != null) 'learning_rate_multiplier': learningRateMultiplier?.toJson(),
   if (nEpochs != null) 'n_epochs': nEpochs?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'batch_size', 'learning_rate_multiplier', 'n_epochs'}.contains(key)); } 
-FineTuneSupervisedHyperparameters copyWith({FineTuneSupervisedHyperparametersBatchSize? Function()? batchSize, FineTuneSupervisedHyperparametersLearningRateMultiplier? Function()? learningRateMultiplier, FineTuneSupervisedHyperparametersNEpochs? Function()? nEpochs, }) { return FineTuneSupervisedHyperparameters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'batch_size', 'learning_rate_multiplier', 'n_epochs'}.contains(key));}
+FineTuneSupervisedHyperparameters copyWith({FineTuneSupervisedHyperparametersBatchSize? Function()? batchSize, FineTuneSupervisedHyperparametersLearningRateMultiplier? Function()? learningRateMultiplier, FineTuneSupervisedHyperparametersNEpochs? Function()? nEpochs, }) {return FineTuneSupervisedHyperparameters(
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   learningRateMultiplier: learningRateMultiplier != null ? learningRateMultiplier() : this.learningRateMultiplier,
   nEpochs: nEpochs != null ? nEpochs() : this.nEpochs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FineTuneSupervisedHyperparameters &&
           batchSize == other.batchSize &&
           learningRateMultiplier == other.learningRateMultiplier &&
-          nEpochs == other.nEpochs; } 
-@override int get hashCode { return Object.hash(batchSize, learningRateMultiplier, nEpochs); } 
-@override String toString() { return 'FineTuneSupervisedHyperparameters(batchSize: $batchSize, learningRateMultiplier: $learningRateMultiplier, nEpochs: $nEpochs)'; } 
- }
+          nEpochs == other.nEpochs;}
+@override int get hashCode {return Object.hash(batchSize, learningRateMultiplier, nEpochs);}
+@override String toString() {return 'FineTuneSupervisedHyperparameters(batchSize: $batchSize, learningRateMultiplier: $learningRateMultiplier, nEpochs: $nEpochs)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_request_billing_mode_flexible.dart';@immutable final class PostSubscriptionSchedulesRequestBillingModeType {const PostSubscriptionSchedulesRequestBillingModeType._(this.value);
 
-factory PostSubscriptionSchedulesRequestBillingModeType.fromJson(String json) { return switch (json) {
+factory PostSubscriptionSchedulesRequestBillingModeType.fromJson(String json) {return switch (json) {
   'classic' => classic,
   'flexible' => flexible,
   _ => PostSubscriptionSchedulesRequestBillingModeType._(json),
-}; }
+};}
 
 static const PostSubscriptionSchedulesRequestBillingModeType classic = PostSubscriptionSchedulesRequestBillingModeType._('classic');
 
@@ -16,39 +16,39 @@ static const List<PostSubscriptionSchedulesRequestBillingModeType> values = [cla
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesRequestBillingModeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestBillingModeType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionSchedulesRequestBillingModeType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionSchedulesRequestBillingModeType($value)';}
+}
 /// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
 @immutable final class PostSubscriptionSchedulesRequestBillingMode {const PostSubscriptionSchedulesRequestBillingMode({required this.type, this.flexible, });
 
-factory PostSubscriptionSchedulesRequestBillingMode.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestBillingMode(
+factory PostSubscriptionSchedulesRequestBillingMode.fromJson(Map<String, dynamic> json) {return PostSubscriptionSchedulesRequestBillingMode(
   flexible: json['flexible'] != null ? PostSubscriptionSchedulesRequestBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>) : null,
   type: PostSubscriptionSchedulesRequestBillingModeType.fromJson(json['type'] as String),
-); }
+);}
 
 final PostSubscriptionSchedulesRequestBillingModeFlexible? flexible;
 
 final PostSubscriptionSchedulesRequestBillingModeType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (flexible != null) 'flexible': flexible?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostSubscriptionSchedulesRequestBillingMode copyWith({PostSubscriptionSchedulesRequestBillingModeFlexible? Function()? flexible, PostSubscriptionSchedulesRequestBillingModeType? type, }) { return PostSubscriptionSchedulesRequestBillingMode(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostSubscriptionSchedulesRequestBillingMode copyWith({PostSubscriptionSchedulesRequestBillingModeFlexible? Function()? flexible, PostSubscriptionSchedulesRequestBillingModeType? type, }) {return PostSubscriptionSchedulesRequestBillingMode(
   flexible: flexible != null ? flexible() : this.flexible,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionSchedulesRequestBillingMode &&
           flexible == other.flexible &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(flexible, type); } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestBillingMode(flexible: $flexible, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(flexible, type);}
+@override String toString() {return 'PostSubscriptionSchedulesRequestBillingMode(flexible: $flexible, type: $type)';}
+}

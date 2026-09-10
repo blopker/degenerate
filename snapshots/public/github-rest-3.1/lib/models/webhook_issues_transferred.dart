@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issues_transferred_changes.dart';import 'webhooks_issue2.dart';@immutable final class WebhookIssuesTransferredAction {const WebhookIssuesTransferredAction._(this.value);
 
-factory WebhookIssuesTransferredAction.fromJson(String json) { return switch (json) {
+factory WebhookIssuesTransferredAction.fromJson(String json) {return switch (json) {
   'transferred' => transferred,
   _ => WebhookIssuesTransferredAction._(json),
-}; }
+};}
 
 static const WebhookIssuesTransferredAction transferred = WebhookIssuesTransferredAction._('transferred');
 
@@ -13,17 +13,17 @@ static const List<WebhookIssuesTransferredAction> values = [transferred];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesTransferredAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesTransferredAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesTransferredAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesTransferredAction($value)';}
+}
 @immutable final class WebhookIssuesTransferred {const WebhookIssuesTransferred({required this.action, required this.changes, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookIssuesTransferred.fromJson(Map<String, dynamic> json) { return WebhookIssuesTransferred(
+factory WebhookIssuesTransferred.fromJson(Map<String, dynamic> json) {return WebhookIssuesTransferred(
   action: WebhookIssuesTransferredAction.fromJson(json['action'] as String),
   changes: WebhookIssuesTransferredChanges.fromJson(json['changes'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -32,7 +32,7 @@ factory WebhookIssuesTransferred.fromJson(Map<String, dynamic> json) { return We
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookIssuesTransferredAction action;
 
@@ -50,7 +50,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'changes': changes.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -59,13 +59,13 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('changes') &&
       json.containsKey('issue') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookIssuesTransferred copyWith({WebhookIssuesTransferredAction? action, WebhookIssuesTransferredChanges? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksIssue2? issue, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesTransferred(
+      json.containsKey('sender');}
+WebhookIssuesTransferred copyWith({WebhookIssuesTransferredAction? action, WebhookIssuesTransferredChanges? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksIssue2? issue, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookIssuesTransferred(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -74,8 +74,8 @@ WebhookIssuesTransferred copyWith({WebhookIssuesTransferredAction? action, Webho
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookIssuesTransferred &&
           action == other.action &&
           changes == other.changes &&
@@ -84,7 +84,7 @@ WebhookIssuesTransferred copyWith({WebhookIssuesTransferredAction? action, Webho
           issue == other.issue &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, changes, enterprise, installation, issue, organization, repository, sender); } 
-@override String toString() { return 'WebhookIssuesTransferred(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, issue: $issue, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, changes, enterprise, installation, issue, organization, repository, sender);}
+@override String toString() {return 'WebhookIssuesTransferred(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, issue: $issue, organization: $organization, repository: $repository, sender: $sender)';}
+}

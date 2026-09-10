@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_requirements_alternative.dart';import 'account_requirements_error.dart';/// This is typed as an enum for consistency with `requirements.disabled_reason`, but it safe to assume `future_requirements.disabled_reason` is null because fields in `future_requirements` will never disable the account.
 @immutable final class AccountCapabilityFutureRequirementsDisabledReason {const AccountCapabilityFutureRequirementsDisabledReason._(this.value);
 
-factory AccountCapabilityFutureRequirementsDisabledReason.fromJson(String json) { return switch (json) {
+factory AccountCapabilityFutureRequirementsDisabledReason.fromJson(String json) {return switch (json) {
   'other' => $other,
   'paused.inactivity' => pausedInactivity,
   'pending.onboarding' => pendingOnboarding,
@@ -15,7 +15,7 @@ factory AccountCapabilityFutureRequirementsDisabledReason.fromJson(String json) 
   'rejected.unsupported_business' => rejectedUnsupportedBusiness,
   'requirements.fields_needed' => requirementsFieldsNeeded,
   _ => AccountCapabilityFutureRequirementsDisabledReason._(json),
-}; }
+};}
 
 static const AccountCapabilityFutureRequirementsDisabledReason $other = AccountCapabilityFutureRequirementsDisabledReason._('other');
 
@@ -41,18 +41,18 @@ static const List<AccountCapabilityFutureRequirementsDisabledReason> values = [$
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountCapabilityFutureRequirementsDisabledReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountCapabilityFutureRequirementsDisabledReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountCapabilityFutureRequirementsDisabledReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountCapabilityFutureRequirementsDisabledReason($value)';}
+}
 /// 
 @immutable final class AccountCapabilityFutureRequirements {const AccountCapabilityFutureRequirements({required this.currentlyDue, required this.errors, required this.eventuallyDue, required this.pastDue, required this.pendingVerification, this.alternatives = const Omittable.absent(), this.currentDeadline = const Omittable.absent(), this.disabledReason = const Omittable.absent(), });
 
-factory AccountCapabilityFutureRequirements.fromJson(Map<String, dynamic> json) { return AccountCapabilityFutureRequirements(
+factory AccountCapabilityFutureRequirements.fromJson(Map<String, dynamic> json) {return AccountCapabilityFutureRequirements(
   alternatives: json.containsKey('alternatives') ? Omittable((json['alternatives'] as List<dynamic>?)?.map((e) => AccountRequirementsAlternative.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   currentDeadline: json.containsKey('current_deadline') ? Omittable(json['current_deadline'] != null ? (json['current_deadline'] as num).toInt() : null) : const Omittable.absent(),
   currentlyDue: (json['currently_due'] as List<dynamic>).map((e) => e as String).toList(),
@@ -61,7 +61,7 @@ factory AccountCapabilityFutureRequirements.fromJson(Map<String, dynamic> json) 
   eventuallyDue: (json['eventually_due'] as List<dynamic>).map((e) => e as String).toList(),
   pastDue: (json['past_due'] as List<dynamic>).map((e) => e as String).toList(),
   pendingVerification: (json['pending_verification'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// Fields that are due and can be resolved by providing the corresponding alternative fields instead. Multiple alternatives can reference the same `original_fields_due`. When this happens, any of these alternatives can serve as a pathway for attempting to resolve the fields. Additionally, providing `original_fields_due` again also serves as a pathway for attempting to resolve the fields.
 final Omittable<List<AccountRequirementsAlternative>?> alternatives;
@@ -87,7 +87,7 @@ final List<String> pastDue;
 /// Fields that are being reviewed, or might become required depending on the results of a review. If the review fails, these fields can move to `eventually_due`, `currently_due`, `past_due` or `alternatives`. Fields might appear in `eventually_due`, `currently_due`, `past_due` or `alternatives` and in `pending_verification` if one verification fails but another is still pending.
 final List<String> pendingVerification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (alternatives.isPresent) 'alternatives': alternatives.value?.map((e) => e.toJson()).toList(),
   if (currentDeadline.isPresent) 'current_deadline': currentDeadline.value,
   'currently_due': currentlyDue,
@@ -96,13 +96,13 @@ Map<String, dynamic> toJson() { return {
   'eventually_due': eventuallyDue,
   'past_due': pastDue,
   'pending_verification': pendingVerification,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('currently_due') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('currently_due') &&
       json.containsKey('errors') &&
       json.containsKey('eventually_due') &&
       json.containsKey('past_due') &&
-      json.containsKey('pending_verification'); } 
-AccountCapabilityFutureRequirements copyWith({Omittable<List<AccountRequirementsAlternative>?>? alternatives, Omittable<int?>? currentDeadline, List<String>? currentlyDue, Omittable<AccountCapabilityFutureRequirementsDisabledReason?>? disabledReason, List<AccountRequirementsError>? errors, List<String>? eventuallyDue, List<String>? pastDue, List<String>? pendingVerification, }) { return AccountCapabilityFutureRequirements(
+      json.containsKey('pending_verification');}
+AccountCapabilityFutureRequirements copyWith({Omittable<List<AccountRequirementsAlternative>?>? alternatives, Omittable<int?>? currentDeadline, List<String>? currentlyDue, Omittable<AccountCapabilityFutureRequirementsDisabledReason?>? disabledReason, List<AccountRequirementsError>? errors, List<String>? eventuallyDue, List<String>? pastDue, List<String>? pendingVerification, }) {return AccountCapabilityFutureRequirements(
   alternatives: alternatives ?? this.alternatives,
   currentDeadline: currentDeadline ?? this.currentDeadline,
   currentlyDue: currentlyDue ?? this.currentlyDue,
@@ -111,8 +111,8 @@ AccountCapabilityFutureRequirements copyWith({Omittable<List<AccountRequirements
   eventuallyDue: eventuallyDue ?? this.eventuallyDue,
   pastDue: pastDue ?? this.pastDue,
   pendingVerification: pendingVerification ?? this.pendingVerification,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountCapabilityFutureRequirements &&
           alternatives.isPresent == other.alternatives.isPresent &&
           listEquals(alternatives.value, other.alternatives.value) &&
@@ -122,7 +122,7 @@ AccountCapabilityFutureRequirements copyWith({Omittable<List<AccountRequirements
           listEquals(errors, other.errors) &&
           listEquals(eventuallyDue, other.eventuallyDue) &&
           listEquals(pastDue, other.pastDue) &&
-          listEquals(pendingVerification, other.pendingVerification); } 
-@override int get hashCode { return Object.hash(Object.hashAll(alternatives.value ?? const []), currentDeadline, Object.hashAll(currentlyDue), disabledReason, Object.hashAll(errors), Object.hashAll(eventuallyDue), Object.hashAll(pastDue), Object.hashAll(pendingVerification)); } 
-@override String toString() { return 'AccountCapabilityFutureRequirements(alternatives: $alternatives, currentDeadline: $currentDeadline, currentlyDue: $currentlyDue, disabledReason: $disabledReason, errors: $errors, eventuallyDue: $eventuallyDue, pastDue: $pastDue, pendingVerification: $pendingVerification)'; } 
- }
+          listEquals(pendingVerification, other.pendingVerification);}
+@override int get hashCode {return Object.hash(Object.hashAll(alternatives.value ?? const []), currentDeadline, Object.hashAll(currentlyDue), disabledReason, Object.hashAll(errors), Object.hashAll(eventuallyDue), Object.hashAll(pastDue), Object.hashAll(pendingVerification));}
+@override String toString() {return 'AccountCapabilityFutureRequirements(alternatives: $alternatives, currentDeadline: $currentDeadline, currentlyDue: $currentlyDue, disabledReason: $disabledReason, errors: $errors, eventuallyDue: $eventuallyDue, pastDue: $pastDue, pendingVerification: $pendingVerification)';}
+}

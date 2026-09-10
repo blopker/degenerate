@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason for canceling this SetupIntent. Possible values are: `abandoned`, `requested_by_customer`, or `duplicate`
 @immutable final class PostSetupIntentsIntentCancelRequestCancellationReason {const PostSetupIntentsIntentCancelRequestCancellationReason._(this.value);
 
-factory PostSetupIntentsIntentCancelRequestCancellationReason.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentCancelRequestCancellationReason.fromJson(String json) {return switch (json) {
   'abandoned' => abandoned,
   'duplicate' => duplicate,
   'requested_by_customer' => requestedByCustomer,
   _ => PostSetupIntentsIntentCancelRequestCancellationReason._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentCancelRequestCancellationReason abandoned = PostSetupIntentsIntentCancelRequestCancellationReason._('abandoned');
 
@@ -20,20 +20,20 @@ static const List<PostSetupIntentsIntentCancelRequestCancellationReason> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentCancelRequestCancellationReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentCancelRequestCancellationReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentCancelRequestCancellationReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentCancelRequestCancellationReason($value)';}
+}
 @immutable final class PostSetupIntentsIntentCancelRequest {const PostSetupIntentsIntentCancelRequest({this.cancellationReason, this.expand, });
 
-factory PostSetupIntentsIntentCancelRequest.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentCancelRequest(
+factory PostSetupIntentsIntentCancelRequest.fromJson(Map<String, dynamic> json) {return PostSetupIntentsIntentCancelRequest(
   cancellationReason: json['cancellation_reason'] != null ? PostSetupIntentsIntentCancelRequestCancellationReason.fromJson(json['cancellation_reason'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Reason for canceling this SetupIntent. Possible values are: `abandoned`, `requested_by_customer`, or `duplicate`
 final PostSetupIntentsIntentCancelRequestCancellationReason? cancellationReason;
@@ -41,19 +41,19 @@ final PostSetupIntentsIntentCancelRequestCancellationReason? cancellationReason;
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cancellationReason != null) 'cancellation_reason': cancellationReason?.toJson(),
   'expand': ?expand,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cancellation_reason', 'expand'}.contains(key)); } 
-PostSetupIntentsIntentCancelRequest copyWith({PostSetupIntentsIntentCancelRequestCancellationReason? Function()? cancellationReason, List<String>? Function()? expand, }) { return PostSetupIntentsIntentCancelRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cancellation_reason', 'expand'}.contains(key));}
+PostSetupIntentsIntentCancelRequest copyWith({PostSetupIntentsIntentCancelRequestCancellationReason? Function()? cancellationReason, List<String>? Function()? expand, }) {return PostSetupIntentsIntentCancelRequest(
   cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,
   expand: expand != null ? expand() : this.expand,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsIntentCancelRequest &&
           cancellationReason == other.cancellationReason &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(cancellationReason, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostSetupIntentsIntentCancelRequest(cancellationReason: $cancellationReason, expand: $expand)'; } 
- }
+          listEquals(expand, other.expand);}
+@override int get hashCode {return Object.hash(cancellationReason, Object.hashAll(expand ?? const []));}
+@override String toString() {return 'PostSetupIntentsIntentCancelRequest(cancellationReason: $cancellationReason, expand: $expand)';}
+}

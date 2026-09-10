@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_registry_package_published_registry_package_package_version_npm_metadata_author.dart';import 'webhook_registry_package_published_registry_package_package_version_npm_metadata_bugs.dart';import 'webhook_registry_package_published_registry_package_package_version_npm_metadata_directories.dart';import 'webhook_registry_package_published_registry_package_package_version_npm_metadata_dist.dart';import 'webhook_registry_package_published_registry_package_package_version_npm_metadata_repository.dart';@immutable final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata {const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata({this.homepage, this.version, this.npmUser, this.author = const Omittable.absent(), this.bugs = const Omittable.absent(), this.dependencies, this.devDependencies, this.peerDependencies, this.optionalDependencies, this.description, this.dist = const Omittable.absent(), this.gitHead, this.name, this.license, this.main, this.repository = const Omittable.absent(), this.scripts, this.id, this.nodeVersion, this.npmVersion, this.hasShrinkwrap, this.maintainers, this.contributors, this.engines, this.deletedById, this.files, this.bin, this.man, this.directories = const Omittable.absent(), this.os, this.cpu, this.readme, this.installationCommand, this.releaseId, this.commitOid, this.publishedViaActions, this.keywords, });
 
-factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata(
+factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata.fromJson(Map<String, dynamic> json) {return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata(
   name: json['name'] as String?,
   version: json['version'] as String?,
   npmUser: json['npm_user'] as String?,
@@ -40,7 +40,7 @@ factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata.
   commitOid: json['commit_oid'] as String?,
   publishedViaActions: json['published_via_actions'] as bool?,
   deletedById: json['deleted_by_id'] != null ? (json['deleted_by_id'] as num).toInt() : null,
-); }
+);}
 
 final String? name;
 
@@ -116,7 +116,7 @@ final bool? publishedViaActions;
 
 final int? deletedById;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'version': ?version,
   'npm_user': ?npmUser,
@@ -154,9 +154,9 @@ Map<String, dynamic> toJson() { return {
   'commit_oid': ?commitOid,
   'published_via_actions': ?publishedViaActions,
   'deleted_by_id': ?deletedById,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'version', 'npm_user', 'author', 'bugs', 'dependencies', 'dev_dependencies', 'peer_dependencies', 'optional_dependencies', 'description', 'dist', 'git_head', 'homepage', 'license', 'main', 'repository', 'scripts', 'id', 'node_version', 'npm_version', 'has_shrinkwrap', 'maintainers', 'contributors', 'engines', 'keywords', 'files', 'bin', 'man', 'directories', 'os', 'cpu', 'readme', 'installation_command', 'release_id', 'commit_oid', 'published_via_actions', 'deleted_by_id'}.contains(key)); } 
-WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata copyWith({String? Function()? name, String? Function()? version, String? Function()? npmUser, Omittable<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor?>? author, Omittable<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataBugs?>? bugs, Map<String, dynamic>? Function()? dependencies, Map<String, dynamic>? Function()? devDependencies, Map<String, dynamic>? Function()? peerDependencies, Map<String, dynamic>? Function()? optionalDependencies, String? Function()? description, Omittable<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist?>? dist, String? Function()? gitHead, String? Function()? homepage, String? Function()? license, String? Function()? main, Omittable<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataRepository?>? repository, Map<String, dynamic>? Function()? scripts, String? Function()? id, String? Function()? nodeVersion, String? Function()? npmVersion, bool? Function()? hasShrinkwrap, List<String>? Function()? maintainers, List<String>? Function()? contributors, Map<String, dynamic>? Function()? engines, List<String>? Function()? keywords, List<String>? Function()? files, Map<String, dynamic>? Function()? bin, Map<String, dynamic>? Function()? man, Omittable<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories?>? directories, List<String>? Function()? os, List<String>? Function()? cpu, String? Function()? readme, String? Function()? installationCommand, int? Function()? releaseId, String? Function()? commitOid, bool? Function()? publishedViaActions, int? Function()? deletedById, }) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'version', 'npm_user', 'author', 'bugs', 'dependencies', 'dev_dependencies', 'peer_dependencies', 'optional_dependencies', 'description', 'dist', 'git_head', 'homepage', 'license', 'main', 'repository', 'scripts', 'id', 'node_version', 'npm_version', 'has_shrinkwrap', 'maintainers', 'contributors', 'engines', 'keywords', 'files', 'bin', 'man', 'directories', 'os', 'cpu', 'readme', 'installation_command', 'release_id', 'commit_oid', 'published_via_actions', 'deleted_by_id'}.contains(key));}
+WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata copyWith({String? Function()? name, String? Function()? version, String? Function()? npmUser, Omittable<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor?>? author, Omittable<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataBugs?>? bugs, Map<String, dynamic>? Function()? dependencies, Map<String, dynamic>? Function()? devDependencies, Map<String, dynamic>? Function()? peerDependencies, Map<String, dynamic>? Function()? optionalDependencies, String? Function()? description, Omittable<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist?>? dist, String? Function()? gitHead, String? Function()? homepage, String? Function()? license, String? Function()? main, Omittable<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataRepository?>? repository, Map<String, dynamic>? Function()? scripts, String? Function()? id, String? Function()? nodeVersion, String? Function()? npmVersion, bool? Function()? hasShrinkwrap, List<String>? Function()? maintainers, List<String>? Function()? contributors, Map<String, dynamic>? Function()? engines, List<String>? Function()? keywords, List<String>? Function()? files, Map<String, dynamic>? Function()? bin, Map<String, dynamic>? Function()? man, Omittable<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories?>? directories, List<String>? Function()? os, List<String>? Function()? cpu, String? Function()? readme, String? Function()? installationCommand, int? Function()? releaseId, String? Function()? commitOid, bool? Function()? publishedViaActions, int? Function()? deletedById, }) {return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata(
   name: name != null ? name() : this.name,
   version: version != null ? version() : this.version,
   npmUser: npmUser != null ? npmUser() : this.npmUser,
@@ -194,8 +194,8 @@ WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata copyWith
   commitOid: commitOid != null ? commitOid() : this.commitOid,
   publishedViaActions: publishedViaActions != null ? publishedViaActions() : this.publishedViaActions,
   deletedById: deletedById != null ? deletedById() : this.deletedById,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata &&
           name == other.name &&
           version == other.version &&
@@ -233,7 +233,7 @@ WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata copyWith
           releaseId == other.releaseId &&
           commitOid == other.commitOid &&
           publishedViaActions == other.publishedViaActions &&
-          deletedById == other.deletedById; } 
-@override int get hashCode { return Object.hashAll([name, version, npmUser, author, bugs, dependencies, devDependencies, peerDependencies, optionalDependencies, description, dist, gitHead, homepage, license, main, repository, scripts, id, nodeVersion, npmVersion, hasShrinkwrap, Object.hashAll(maintainers ?? const []), Object.hashAll(contributors ?? const []), engines, Object.hashAll(keywords ?? const []), Object.hashAll(files ?? const []), bin, man, directories, Object.hashAll(os ?? const []), Object.hashAll(cpu ?? const []), readme, installationCommand, releaseId, commitOid, publishedViaActions, deletedById]); } 
-@override String toString() { return 'WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata(name: $name, version: $version, npmUser: $npmUser, author: $author, bugs: $bugs, dependencies: $dependencies, devDependencies: $devDependencies, peerDependencies: $peerDependencies, optionalDependencies: $optionalDependencies, description: $description, dist: $dist, gitHead: $gitHead, homepage: $homepage, license: $license, main: $main, repository: $repository, scripts: $scripts, id: $id, nodeVersion: $nodeVersion, npmVersion: $npmVersion, hasShrinkwrap: $hasShrinkwrap, maintainers: $maintainers, contributors: $contributors, engines: $engines, keywords: $keywords, files: $files, bin: $bin, man: $man, directories: $directories, os: $os, cpu: $cpu, readme: $readme, installationCommand: $installationCommand, releaseId: $releaseId, commitOid: $commitOid, publishedViaActions: $publishedViaActions, deletedById: $deletedById)'; } 
- }
+          deletedById == other.deletedById;}
+@override int get hashCode {return Object.hashAll([name, version, npmUser, author, bugs, dependencies, devDependencies, peerDependencies, optionalDependencies, description, dist, gitHead, homepage, license, main, repository, scripts, id, nodeVersion, npmVersion, hasShrinkwrap, Object.hashAll(maintainers ?? const []), Object.hashAll(contributors ?? const []), engines, Object.hashAll(keywords ?? const []), Object.hashAll(files ?? const []), bin, man, directories, Object.hashAll(os ?? const []), Object.hashAll(cpu ?? const []), readme, installationCommand, releaseId, commitOid, publishedViaActions, deletedById]);}
+@override String toString() {return 'WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata(name: $name, version: $version, npmUser: $npmUser, author: $author, bugs: $bugs, dependencies: $dependencies, devDependencies: $devDependencies, peerDependencies: $peerDependencies, optionalDependencies: $optionalDependencies, description: $description, dist: $dist, gitHead: $gitHead, homepage: $homepage, license: $license, main: $main, repository: $repository, scripts: $scripts, id: $id, nodeVersion: $nodeVersion, npmVersion: $npmVersion, hasShrinkwrap: $hasShrinkwrap, maintainers: $maintainers, contributors: $contributors, engines: $engines, keywords: $keywords, files: $files, bin: $bin, man: $man, directories: $directories, os: $os, cpu: $cpu, readme: $readme, installationCommand: $installationCommand, releaseId: $releaseId, commitOid: $commitOid, publishedViaActions: $publishedViaActions, deletedById: $deletedById)';}
+}

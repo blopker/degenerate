@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_policy_id.dart';@immutable final class AaaSilenceCreateRequest {const AaaSilenceCreateRequest({this.endTime, this.policyId, this.startTime, });
 
-factory AaaSilenceCreateRequest.fromJson(Map<String, dynamic> json) { return AaaSilenceCreateRequest(
+factory AaaSilenceCreateRequest.fromJson(Map<String, dynamic> json) {return AaaSilenceCreateRequest(
   endTime: json['end_time'] as String?,
   policyId: json['policy_id'] != null ? AaaPolicyId.fromJson(json['policy_id'] as String) : null,
   startTime: json['start_time'] as String?,
-); }
+);}
 
 /// When the silence ends.
 final String? endTime;
@@ -17,22 +17,22 @@ final AaaPolicyId? policyId;
 /// When the silence starts.
 final String? startTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end_time': ?endTime,
   if (policyId != null) 'policy_id': policyId?.toJson(),
   'start_time': ?startTime,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'end_time', 'policy_id', 'start_time'}.contains(key)); } 
-AaaSilenceCreateRequest copyWith({String? Function()? endTime, AaaPolicyId? Function()? policyId, String? Function()? startTime, }) { return AaaSilenceCreateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'end_time', 'policy_id', 'start_time'}.contains(key));}
+AaaSilenceCreateRequest copyWith({String? Function()? endTime, AaaPolicyId? Function()? policyId, String? Function()? startTime, }) {return AaaSilenceCreateRequest(
   endTime: endTime != null ? endTime() : this.endTime,
   policyId: policyId != null ? policyId() : this.policyId,
   startTime: startTime != null ? startTime() : this.startTime,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AaaSilenceCreateRequest &&
           endTime == other.endTime &&
           policyId == other.policyId &&
-          startTime == other.startTime; } 
-@override int get hashCode { return Object.hash(endTime, policyId, startTime); } 
-@override String toString() { return 'AaaSilenceCreateRequest(endTime: $endTime, policyId: $policyId, startTime: $startTime)'; } 
- }
+          startTime == other.startTime;}
+@override int get hashCode {return Object.hash(endTime, policyId, startTime);}
+@override String toString() {return 'AaaSilenceCreateRequest(endTime: $endTime, policyId: $policyId, startTime: $startTime)';}
+}

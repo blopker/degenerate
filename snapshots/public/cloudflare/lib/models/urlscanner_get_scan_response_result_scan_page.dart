@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_page_console.dart';import 'urlscanner_get_scan_response_result_scan_page_cookies.dart';import 'urlscanner_get_scan_response_result_scan_page_headers.dart';import 'urlscanner_get_scan_response_result_scan_page_js.dart';import 'urlscanner_get_scan_response_result_scan_page_security_violations.dart';@immutable final class UrlscannerGetScanResponseResultScanPage {const UrlscannerGetScanResponseResultScanPage({required this.asn, required this.asnLocationAlpha2, required this.asnname, required this.console, required this.cookies, required this.country, required this.countryLocationAlpha2, required this.domain, required this.headers, required this.ip, required this.js, required this.securityViolations, required this.status, required this.subdivision1Name, required this.subdivision2name, required this.url, });
 
-factory UrlscannerGetScanResponseResultScanPage.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanPage(
+factory UrlscannerGetScanResponseResultScanPage.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponseResultScanPage(
   asn: json['asn'] as String,
   asnLocationAlpha2: json['asnLocationAlpha2'] as String,
   asnname: json['asnname'] as String,
@@ -19,7 +19,7 @@ factory UrlscannerGetScanResponseResultScanPage.fromJson(Map<String, dynamic> js
   subdivision1Name: json['subdivision1Name'] as String,
   subdivision2name: json['subdivision2name'] as String,
   url: json['url'] as String,
-); }
+);}
 
 final String asn;
 
@@ -53,7 +53,7 @@ final String subdivision2name;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn,
   'asnLocationAlpha2': asnLocationAlpha2,
   'asnname': asnname,
@@ -70,8 +70,8 @@ Map<String, dynamic> toJson() { return {
   'subdivision1Name': subdivision1Name,
   'subdivision2name': subdivision2name,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') && json['asn'] is String &&
       json.containsKey('asnLocationAlpha2') && json['asnLocationAlpha2'] is String &&
       json.containsKey('asnname') && json['asnname'] is String &&
       json.containsKey('console') &&
@@ -86,8 +86,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn')
       json.containsKey('status') && json['status'] is num &&
       json.containsKey('subdivision1Name') && json['subdivision1Name'] is String &&
       json.containsKey('subdivision2name') && json['subdivision2name'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-UrlscannerGetScanResponseResultScanPage copyWith({String? asn, String? asnLocationAlpha2, String? asnname, List<UrlscannerGetScanResponseResultScanPageConsole>? console, List<UrlscannerGetScanResponseResultScanPageCookies>? cookies, String? country, String? countryLocationAlpha2, String? domain, List<UrlscannerGetScanResponseResultScanPageHeaders>? headers, String? ip, UrlscannerGetScanResponseResultScanPageJs? js, List<UrlscannerGetScanResponseResultScanPageSecurityViolations>? securityViolations, double? status, String? subdivision1Name, String? subdivision2name, String? url, }) { return UrlscannerGetScanResponseResultScanPage(
+      json.containsKey('url') && json['url'] is String;}
+UrlscannerGetScanResponseResultScanPage copyWith({String? asn, String? asnLocationAlpha2, String? asnname, List<UrlscannerGetScanResponseResultScanPageConsole>? console, List<UrlscannerGetScanResponseResultScanPageCookies>? cookies, String? country, String? countryLocationAlpha2, String? domain, List<UrlscannerGetScanResponseResultScanPageHeaders>? headers, String? ip, UrlscannerGetScanResponseResultScanPageJs? js, List<UrlscannerGetScanResponseResultScanPageSecurityViolations>? securityViolations, double? status, String? subdivision1Name, String? subdivision2name, String? url, }) {return UrlscannerGetScanResponseResultScanPage(
   asn: asn ?? this.asn,
   asnLocationAlpha2: asnLocationAlpha2 ?? this.asnLocationAlpha2,
   asnname: asnname ?? this.asnname,
@@ -104,8 +104,8 @@ UrlscannerGetScanResponseResultScanPage copyWith({String? asn, String? asnLocati
   subdivision1Name: subdivision1Name ?? this.subdivision1Name,
   subdivision2name: subdivision2name ?? this.subdivision2name,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponseResultScanPage &&
           asn == other.asn &&
           asnLocationAlpha2 == other.asnLocationAlpha2 &&
@@ -122,7 +122,7 @@ UrlscannerGetScanResponseResultScanPage copyWith({String? asn, String? asnLocati
           status == other.status &&
           subdivision1Name == other.subdivision1Name &&
           subdivision2name == other.subdivision2name &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(asn, asnLocationAlpha2, asnname, Object.hashAll(console), Object.hashAll(cookies), country, countryLocationAlpha2, domain, Object.hashAll(headers), ip, js, Object.hashAll(securityViolations), status, subdivision1Name, subdivision2name, url); } 
-@override String toString() { return 'UrlscannerGetScanResponseResultScanPage(asn: $asn, asnLocationAlpha2: $asnLocationAlpha2, asnname: $asnname, console: $console, cookies: $cookies, country: $country, countryLocationAlpha2: $countryLocationAlpha2, domain: $domain, headers: $headers, ip: $ip, js: $js, securityViolations: $securityViolations, status: $status, subdivision1Name: $subdivision1Name, subdivision2name: $subdivision2name, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(asn, asnLocationAlpha2, asnname, Object.hashAll(console), Object.hashAll(cookies), country, countryLocationAlpha2, domain, Object.hashAll(headers), ip, js, Object.hashAll(securityViolations), status, subdivision1Name, subdivision2name, url);}
+@override String toString() {return 'UrlscannerGetScanResponseResultScanPage(asn: $asn, asnLocationAlpha2: $asnLocationAlpha2, asnname: $asnname, console: $console, cookies: $cookies, country: $country, countryLocationAlpha2: $countryLocationAlpha2, domain: $domain, headers: $headers, ip: $ip, js: $js, securityViolations: $securityViolations, status: $status, subdivision1Name: $subdivision1Name, subdivision2name: $subdivision2name, url: $url)';}
+}

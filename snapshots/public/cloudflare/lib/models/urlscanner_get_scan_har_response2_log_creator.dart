@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanHarResponse2LogCreator {const UrlscannerGetScanHarResponse2LogCreator({required this.comment, required this.name, required this.version, });
 
-factory UrlscannerGetScanHarResponse2LogCreator.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse2LogCreator(
+factory UrlscannerGetScanHarResponse2LogCreator.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanHarResponse2LogCreator(
   comment: json['comment'] as String,
   name: json['name'] as String,
   version: json['version'] as String,
-); }
+);}
 
 final String comment;
 
@@ -14,24 +14,24 @@ final String name;
 
 final String version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'comment': comment,
   'name': name,
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('comment') && json['comment'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('comment') && json['comment'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('version') && json['version'] is String; } 
-UrlscannerGetScanHarResponse2LogCreator copyWith({String? comment, String? name, String? version, }) { return UrlscannerGetScanHarResponse2LogCreator(
+      json.containsKey('version') && json['version'] is String;}
+UrlscannerGetScanHarResponse2LogCreator copyWith({String? comment, String? name, String? version, }) {return UrlscannerGetScanHarResponse2LogCreator(
   comment: comment ?? this.comment,
   name: name ?? this.name,
   version: version ?? this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanHarResponse2LogCreator &&
           comment == other.comment &&
           name == other.name &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(comment, name, version); } 
-@override String toString() { return 'UrlscannerGetScanHarResponse2LogCreator(comment: $comment, name: $name, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(comment, name, version);}
+@override String toString() {return 'UrlscannerGetScanHarResponse2LogCreator(comment: $comment, name: $name, version: $version)';}
+}

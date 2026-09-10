@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RateLimit {const RateLimit({required this.limit, required this.remaining, required this.reset, required this.used, });
 
-factory RateLimit.fromJson(Map<String, dynamic> json) { return RateLimit(
+factory RateLimit.fromJson(Map<String, dynamic> json) {return RateLimit(
   limit: (json['limit'] as num).toInt(),
   remaining: (json['remaining'] as num).toInt(),
   reset: (json['reset'] as num).toInt(),
   used: (json['used'] as num).toInt(),
-); }
+);}
 
 final int limit;
 
@@ -17,28 +17,28 @@ final int reset;
 
 final int used;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'limit': limit,
   'remaining': remaining,
   'reset': reset,
   'used': used,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('limit') && json['limit'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('limit') && json['limit'] is num &&
       json.containsKey('remaining') && json['remaining'] is num &&
       json.containsKey('reset') && json['reset'] is num &&
-      json.containsKey('used') && json['used'] is num; } 
-RateLimit copyWith({int? limit, int? remaining, int? reset, int? used, }) { return RateLimit(
+      json.containsKey('used') && json['used'] is num;}
+RateLimit copyWith({int? limit, int? remaining, int? reset, int? used, }) {return RateLimit(
   limit: limit ?? this.limit,
   remaining: remaining ?? this.remaining,
   reset: reset ?? this.reset,
   used: used ?? this.used,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RateLimit &&
           limit == other.limit &&
           remaining == other.remaining &&
           reset == other.reset &&
-          used == other.used; } 
-@override int get hashCode { return Object.hash(limit, remaining, reset, used); } 
-@override String toString() { return 'RateLimit(limit: $limit, remaining: $remaining, reset: $reset, used: $used)'; } 
- }
+          used == other.used;}
+@override int get hashCode {return Object.hash(limit, remaining, reset, used);}
+@override String toString() {return 'RateLimit(limit: $limit, remaining: $remaining, reset: $reset, used: $used)';}
+}

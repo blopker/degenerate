@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operator.
 @immutable final class TeamsDevicesCustomS2sInputRequestOperator {const TeamsDevicesCustomS2sInputRequestOperator._(this.value);
 
-factory TeamsDevicesCustomS2sInputRequestOperator.fromJson(String json) { return switch (json) {
+factory TeamsDevicesCustomS2sInputRequestOperator.fromJson(String json) {return switch (json) {
   '<' => $empty,
   '<=' => $empty2,
   '>' => $empty3,
   '>=' => $empty4,
   '==' => $empty5,
   _ => TeamsDevicesCustomS2sInputRequestOperator._(json),
-}; }
+};}
 
 static const TeamsDevicesCustomS2sInputRequestOperator $empty = TeamsDevicesCustomS2sInputRequestOperator._('<');
 
@@ -26,21 +26,21 @@ static const List<TeamsDevicesCustomS2sInputRequestOperator> values = [$empty, $
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesCustomS2sInputRequestOperator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesCustomS2sInputRequestOperator($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamsDevicesCustomS2sInputRequestOperator && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamsDevicesCustomS2sInputRequestOperator($value)';}
+}
 @immutable final class TeamsDevicesCustomS2sInputRequest {const TeamsDevicesCustomS2sInputRequest({required this.connectionId, required this.$operator, required this.score, });
 
-factory TeamsDevicesCustomS2sInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesCustomS2sInputRequest(
+factory TeamsDevicesCustomS2sInputRequest.fromJson(Map<String, dynamic> json) {return TeamsDevicesCustomS2sInputRequest(
   connectionId: json['connection_id'] as String,
   $operator: TeamsDevicesCustomS2sInputRequestOperator.fromJson(json['operator'] as String),
   score: (json['score'] as num).toDouble(),
-); }
+);}
 
 /// Posture Integration ID.
 final String connectionId;
@@ -51,24 +51,24 @@ final TeamsDevicesCustomS2sInputRequestOperator $operator;
 /// A value between 0-100 assigned to devices set by the 3rd party posture provider.
 final double score;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'connection_id': connectionId,
   'operator': $operator.toJson(),
   'score': score,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('connection_id') && json['connection_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('connection_id') && json['connection_id'] is String &&
       json.containsKey('operator') &&
-      json.containsKey('score') && json['score'] is num; } 
-TeamsDevicesCustomS2sInputRequest copyWith({String? connectionId, TeamsDevicesCustomS2sInputRequestOperator? $operator, double? score, }) { return TeamsDevicesCustomS2sInputRequest(
+      json.containsKey('score') && json['score'] is num;}
+TeamsDevicesCustomS2sInputRequest copyWith({String? connectionId, TeamsDevicesCustomS2sInputRequestOperator? $operator, double? score, }) {return TeamsDevicesCustomS2sInputRequest(
   connectionId: connectionId ?? this.connectionId,
   $operator: $operator ?? this.$operator,
   score: score ?? this.score,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamsDevicesCustomS2sInputRequest &&
           connectionId == other.connectionId &&
           $operator == other.$operator &&
-          score == other.score; } 
-@override int get hashCode { return Object.hash(connectionId, $operator, score); } 
-@override String toString() { return 'TeamsDevicesCustomS2sInputRequest(connectionId: $connectionId, \$operator: ${$operator}, score: $score)'; } 
- }
+          score == other.score;}
+@override int get hashCode {return Object.hash(connectionId, $operator, score);}
+@override String toString() {return 'TeamsDevicesCustomS2sInputRequest(connectionId: $connectionId, \$operator: ${$operator}, score: $score)';}
+}

@@ -13,7 +13,7 @@ final class LoadBalancerHealthcheckEventsApi with ApiExecutor {const LoadBalance
 /// List origin health changes.
 ///
 /// `GET /user/load_balancing_analytics/events`
-Future<ApiResult<List<LoadBalancingAnalytics>, LoadBalancerHealthcheckEventsListHealthcheckEventsResponse4xx>> loadBalancerHealthcheckEventsListHealthcheckEvents({LoadBalancingUntil? until, LoadBalancingPoolName? poolName, LoadBalancingOriginHealthy2? originHealthy, LoadBalancingSchemasIdentifier? poolId, DateTime? since, String? originName, bool? poolHealthy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<LoadBalancingAnalytics>, LoadBalancerHealthcheckEventsListHealthcheckEventsResponse4xx>> loadBalancerHealthcheckEventsListHealthcheckEvents({LoadBalancingUntil? until, LoadBalancingPoolName? poolName, LoadBalancingOriginHealthy2? originHealthy, LoadBalancingSchemasIdentifier? poolId, DateTime? since, String? originName, bool? poolHealthy, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (until != null) {
   queryParameters['until'] = until.toString();
@@ -65,5 +65,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

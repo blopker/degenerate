@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_meter_resource_aggregation_settings.dart';import 'billing_meter_resource_billing_meter_status_transitions.dart';import 'billing_meter_resource_billing_meter_value.dart';import 'billing_meter_resource_customer_mapping_settings.dart';/// The time window which meter events have been pre-aggregated for, if any.
 @immutable final class BillingMeterEventTimeWindow {const BillingMeterEventTimeWindow._(this.value);
 
-factory BillingMeterEventTimeWindow.fromJson(String json) { return switch (json) {
+factory BillingMeterEventTimeWindow.fromJson(String json) {return switch (json) {
   'day' => day,
   'hour' => hour,
   _ => BillingMeterEventTimeWindow._(json),
-}; }
+};}
 
 static const BillingMeterEventTimeWindow day = BillingMeterEventTimeWindow._('day');
 
@@ -17,21 +17,21 @@ static const List<BillingMeterEventTimeWindow> values = [day, hour];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingMeterEventTimeWindow && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingMeterEventTimeWindow($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BillingMeterEventTimeWindow && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BillingMeterEventTimeWindow($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingMeterObject {const BillingMeterObject._(this.value);
 
-factory BillingMeterObject.fromJson(String json) { return switch (json) {
+factory BillingMeterObject.fromJson(String json) {return switch (json) {
   'billing.meter' => billingMeter,
   _ => BillingMeterObject._(json),
-}; }
+};}
 
 static const BillingMeterObject billingMeter = BillingMeterObject._('billing.meter');
 
@@ -39,22 +39,22 @@ static const List<BillingMeterObject> values = [billingMeter];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingMeterObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingMeterObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BillingMeterObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BillingMeterObject($value)';}
+}
 /// The meter's status.
 @immutable final class BillingMeterStatus {const BillingMeterStatus._(this.value);
 
-factory BillingMeterStatus.fromJson(String json) { return switch (json) {
+factory BillingMeterStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   _ => BillingMeterStatus._(json),
-}; }
+};}
 
 static const BillingMeterStatus active = BillingMeterStatus._('active');
 
@@ -64,20 +64,20 @@ static const List<BillingMeterStatus> values = [active, inactive];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingMeterStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingMeterStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BillingMeterStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BillingMeterStatus($value)';}
+}
 /// Meters specify how to aggregate meter events over a billing period. Meter events represent the actions that customers take in your system. Meters attach to prices and form the basis of the bill.
 /// 
 /// Related guide: [Usage based billing](https://docs.stripe.com/billing/subscriptions/usage-based)
 @immutable final class BillingMeter {const BillingMeter({required this.created, required this.customerMapping, required this.defaultAggregation, required this.displayName, required this.eventName, required this.id, required this.livemode, required this.object, required this.status, required this.statusTransitions, required this.updated, required this.valueSettings, this.eventTimeWindow = const Omittable.absent(), });
 
-factory BillingMeter.fromJson(Map<String, dynamic> json) { return BillingMeter(
+factory BillingMeter.fromJson(Map<String, dynamic> json) {return BillingMeter(
   created: (json['created'] as num).toInt(),
   customerMapping: BillingMeterResourceCustomerMappingSettings.fromJson(json['customer_mapping'] as Map<String, dynamic>),
   defaultAggregation: BillingMeterResourceAggregationSettings.fromJson(json['default_aggregation'] as Map<String, dynamic>),
@@ -91,7 +91,7 @@ factory BillingMeter.fromJson(Map<String, dynamic> json) { return BillingMeter(
   statusTransitions: BillingMeterResourceBillingMeterStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
   updated: (json['updated'] as num).toInt(),
   valueSettings: BillingMeterResourceBillingMeterValue.fromJson(json['value_settings'] as Map<String, dynamic>),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -128,7 +128,7 @@ final int updated;
 
 final BillingMeterResourceBillingMeterValue valueSettings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'customer_mapping': customerMapping.toJson(),
   'default_aggregation': defaultAggregation.toJson(),
@@ -142,8 +142,8 @@ Map<String, dynamic> toJson() { return {
   'status_transitions': statusTransitions.toJson(),
   'updated': updated,
   'value_settings': valueSettings.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('customer_mapping') &&
       json.containsKey('default_aggregation') &&
       json.containsKey('display_name') && json['display_name'] is String &&
@@ -154,8 +154,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('status') &&
       json.containsKey('status_transitions') &&
       json.containsKey('updated') && json['updated'] is num &&
-      json.containsKey('value_settings'); } 
-BillingMeter copyWith({int? created, BillingMeterResourceCustomerMappingSettings? customerMapping, BillingMeterResourceAggregationSettings? defaultAggregation, String? displayName, String? eventName, Omittable<BillingMeterEventTimeWindow?>? eventTimeWindow, String? id, bool? livemode, BillingMeterObject? object, BillingMeterStatus? status, BillingMeterResourceBillingMeterStatusTransitions? statusTransitions, int? updated, BillingMeterResourceBillingMeterValue? valueSettings, }) { return BillingMeter(
+      json.containsKey('value_settings');}
+BillingMeter copyWith({int? created, BillingMeterResourceCustomerMappingSettings? customerMapping, BillingMeterResourceAggregationSettings? defaultAggregation, String? displayName, String? eventName, Omittable<BillingMeterEventTimeWindow?>? eventTimeWindow, String? id, bool? livemode, BillingMeterObject? object, BillingMeterStatus? status, BillingMeterResourceBillingMeterStatusTransitions? statusTransitions, int? updated, BillingMeterResourceBillingMeterValue? valueSettings, }) {return BillingMeter(
   created: created ?? this.created,
   customerMapping: customerMapping ?? this.customerMapping,
   defaultAggregation: defaultAggregation ?? this.defaultAggregation,
@@ -169,8 +169,8 @@ BillingMeter copyWith({int? created, BillingMeterResourceCustomerMappingSettings
   statusTransitions: statusTransitions ?? this.statusTransitions,
   updated: updated ?? this.updated,
   valueSettings: valueSettings ?? this.valueSettings,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BillingMeter &&
           created == other.created &&
           customerMapping == other.customerMapping &&
@@ -184,7 +184,7 @@ BillingMeter copyWith({int? created, BillingMeterResourceCustomerMappingSettings
           status == other.status &&
           statusTransitions == other.statusTransitions &&
           updated == other.updated &&
-          valueSettings == other.valueSettings; } 
-@override int get hashCode { return Object.hash(created, customerMapping, defaultAggregation, displayName, eventName, eventTimeWindow, id, livemode, object, status, statusTransitions, updated, valueSettings); } 
-@override String toString() { return 'BillingMeter(created: $created, customerMapping: $customerMapping, defaultAggregation: $defaultAggregation, displayName: $displayName, eventName: $eventName, eventTimeWindow: $eventTimeWindow, id: $id, livemode: $livemode, object: $object, status: $status, statusTransitions: $statusTransitions, updated: $updated, valueSettings: $valueSettings)'; } 
- }
+          valueSettings == other.valueSettings;}
+@override int get hashCode {return Object.hash(created, customerMapping, defaultAggregation, displayName, eventName, eventTimeWindow, id, livemode, object, status, statusTransitions, updated, valueSettings);}
+@override String toString() {return 'BillingMeter(created: $created, customerMapping: $customerMapping, defaultAggregation: $defaultAggregation, displayName: $displayName, eventName: $eventName, eventTimeWindow: $eventTimeWindow, id: $id, livemode: $livemode, object: $object, status: $status, statusTransitions: $statusTransitions, updated: $updated, valueSettings: $valueSettings)';}
+}

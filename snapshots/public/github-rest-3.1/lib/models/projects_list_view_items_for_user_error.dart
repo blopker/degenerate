@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class ProjectsListViewItemsForUserError {const ProjectsListViewItemsForUserError();
 
 /// Decodes the payload for its declared status and content type.
-static ProjectsListViewItemsForUserError parse(ApiResponse response) { switch (response.statusCode) {
+static ProjectsListViewItemsForUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const ProjectsListViewItemsForUserError304();
 case 401:
@@ -19,37 +19,37 @@ return ProjectsListViewItemsForUserError404(BasicError.fromJson(json as Map<Stri
 default:
 return ProjectsListViewItemsForUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class ProjectsListViewItemsForUserError304 extends ProjectsListViewItemsForUserError {const ProjectsListViewItemsForUserError304();
 
- }
+}
 /// Response for 401 (application/json).
 final class ProjectsListViewItemsForUserError401 extends ProjectsListViewItemsForUserError {const ProjectsListViewItemsForUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class ProjectsListViewItemsForUserError403 extends ProjectsListViewItemsForUserError {const ProjectsListViewItemsForUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class ProjectsListViewItemsForUserError404 extends ProjectsListViewItemsForUserError {const ProjectsListViewItemsForUserError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class ProjectsListViewItemsForUserErrorUnknown extends ProjectsListViewItemsForUserError {const ProjectsListViewItemsForUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

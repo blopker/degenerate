@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TimelineCommittedEventParents {const TimelineCommittedEventParents({required this.sha, required this.url, required this.htmlUrl, });
 
-factory TimelineCommittedEventParents.fromJson(Map<String, dynamic> json) { return TimelineCommittedEventParents(
+factory TimelineCommittedEventParents.fromJson(Map<String, dynamic> json) {return TimelineCommittedEventParents(
   sha: json['sha'] as String,
   url: Uri.parse(json['url'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
-); }
+);}
 
 /// SHA for the commit
 final String sha;
@@ -15,24 +15,24 @@ final Uri url;
 
 final Uri htmlUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'sha': sha,
   'url': url.toString(),
   'html_url': htmlUrl.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('html_url') && json['html_url'] is String; } 
-TimelineCommittedEventParents copyWith({String? sha, Uri? url, Uri? htmlUrl, }) { return TimelineCommittedEventParents(
+      json.containsKey('html_url') && json['html_url'] is String;}
+TimelineCommittedEventParents copyWith({String? sha, Uri? url, Uri? htmlUrl, }) {return TimelineCommittedEventParents(
   sha: sha ?? this.sha,
   url: url ?? this.url,
   htmlUrl: htmlUrl ?? this.htmlUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TimelineCommittedEventParents &&
           sha == other.sha &&
           url == other.url &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(sha, url, htmlUrl); } 
-@override String toString() { return 'TimelineCommittedEventParents(sha: $sha, url: $url, htmlUrl: $htmlUrl)'; } 
- }
+          htmlUrl == other.htmlUrl;}
+@override int get hashCode {return Object.hash(sha, url, htmlUrl);}
+@override String toString() {return 'TimelineCommittedEventParents(sha: $sha, url: $url, htmlUrl: $htmlUrl)';}
+}

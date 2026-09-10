@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AmountDetailsParam2LineItemsVariant1Tax {const AmountDetailsParam2LineItemsVariant1Tax({required this.totalTaxAmount});
 
-factory AmountDetailsParam2LineItemsVariant1Tax.fromJson(Map<String, dynamic> json) { return AmountDetailsParam2LineItemsVariant1Tax(
+factory AmountDetailsParam2LineItemsVariant1Tax.fromJson(Map<String, dynamic> json) {return AmountDetailsParam2LineItemsVariant1Tax(
   totalTaxAmount: (json['total_tax_amount'] as num).toInt(),
-); }
+);}
 
 final int totalTaxAmount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_tax_amount': totalTaxAmount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_tax_amount') && json['total_tax_amount'] is num; } 
-AmountDetailsParam2LineItemsVariant1Tax copyWith({int? totalTaxAmount}) { return AmountDetailsParam2LineItemsVariant1Tax(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_tax_amount') && json['total_tax_amount'] is num;}
+AmountDetailsParam2LineItemsVariant1Tax copyWith({int? totalTaxAmount}) {return AmountDetailsParam2LineItemsVariant1Tax(
   totalTaxAmount: totalTaxAmount ?? this.totalTaxAmount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AmountDetailsParam2LineItemsVariant1Tax &&
-          totalTaxAmount == other.totalTaxAmount; } 
-@override int get hashCode { return totalTaxAmount.hashCode; } 
-@override String toString() { return 'AmountDetailsParam2LineItemsVariant1Tax(totalTaxAmount: $totalTaxAmount)'; } 
- }
+          totalTaxAmount == other.totalTaxAmount;}
+@override int get hashCode {return totalTaxAmount.hashCode;}
+@override String toString() {return 'AmountDetailsParam2LineItemsVariant1Tax(totalTaxAmount: $totalTaxAmount)';}
+}

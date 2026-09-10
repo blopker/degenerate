@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookTeamEditedChangesRepositoryPermissionsFrom {const WebhookTeamEditedChangesRepositoryPermissionsFrom({this.admin, this.pull, this.push, });
 
-factory WebhookTeamEditedChangesRepositoryPermissionsFrom.fromJson(Map<String, dynamic> json) { return WebhookTeamEditedChangesRepositoryPermissionsFrom(
+factory WebhookTeamEditedChangesRepositoryPermissionsFrom.fromJson(Map<String, dynamic> json) {return WebhookTeamEditedChangesRepositoryPermissionsFrom(
   admin: json['admin'] as bool?,
   pull: json['pull'] as bool?,
   push: json['push'] as bool?,
-); }
+);}
 
 /// The previous version of the team member's `admin` permission on a repository, if the action was `edited`.
 final bool? admin;
@@ -17,22 +17,22 @@ final bool? pull;
 /// The previous version of the team member's `push` permission on a repository, if the action was `edited`.
 final bool? push;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'admin': ?admin,
   'pull': ?pull,
   'push': ?push,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'admin', 'pull', 'push'}.contains(key)); } 
-WebhookTeamEditedChangesRepositoryPermissionsFrom copyWith({bool? Function()? admin, bool? Function()? pull, bool? Function()? push, }) { return WebhookTeamEditedChangesRepositoryPermissionsFrom(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'admin', 'pull', 'push'}.contains(key));}
+WebhookTeamEditedChangesRepositoryPermissionsFrom copyWith({bool? Function()? admin, bool? Function()? pull, bool? Function()? push, }) {return WebhookTeamEditedChangesRepositoryPermissionsFrom(
   admin: admin != null ? admin() : this.admin,
   pull: pull != null ? pull() : this.pull,
   push: push != null ? push() : this.push,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookTeamEditedChangesRepositoryPermissionsFrom &&
           admin == other.admin &&
           pull == other.pull &&
-          push == other.push; } 
-@override int get hashCode { return Object.hash(admin, pull, push); } 
-@override String toString() { return 'WebhookTeamEditedChangesRepositoryPermissionsFrom(admin: $admin, pull: $pull, push: $push)'; } 
- }
+          push == other.push;}
+@override int get hashCode {return Object.hash(admin, pull, push);}
+@override String toString() {return 'WebhookTeamEditedChangesRepositoryPermissionsFrom(admin: $admin, pull: $pull, push: $push)';}
+}

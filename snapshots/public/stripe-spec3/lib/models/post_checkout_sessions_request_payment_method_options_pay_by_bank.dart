@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank {const PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank();
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank.fromJson(Map<String, dynamic> _) { return const PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank(); }
+factory PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank.fromJson(Map<String, dynamic> _) {return const PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank copyWith() { return const PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank copyWith() {return const PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsPayByBank()';}
+}

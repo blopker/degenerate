@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_collect_payment_method_request_collect_config_tipping.dart';@immutable final class PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay {const PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay._(this.value);
 
-factory PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay.fromJson(String json) { return switch (json) {
+factory PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay.fromJson(String json) {return switch (json) {
   'always' => always,
   'limited' => limited,
   'unspecified' => unspecified,
   _ => PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay._(json),
-}; }
+};}
 
 static const PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay always = PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay._('always');
 
@@ -19,23 +19,23 @@ static const List<PostTerminalReadersReaderCollectPaymentMethodRequestCollectCon
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay($value)';}
+}
 /// Configuration overrides for this collection, such as tipping, surcharging, and customer cancellation settings.
 @immutable final class PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig {const PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig({this.allowRedisplay, this.enableCustomerCancellation, this.skipTipping, this.tipping, });
 
-factory PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig(
+factory PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig.fromJson(Map<String, dynamic> json) {return PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig(
   allowRedisplay: json['allow_redisplay'] != null ? PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,
   enableCustomerCancellation: json['enable_customer_cancellation'] as bool?,
   skipTipping: json['skip_tipping'] as bool?,
   tipping: json['tipping'] != null ? PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigTipping.fromJson(json['tipping'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay? allowRedisplay;
 
@@ -45,25 +45,25 @@ final bool? skipTipping;
 
 final PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigTipping? tipping;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowRedisplay != null) 'allow_redisplay': allowRedisplay?.toJson(),
   'enable_customer_cancellation': ?enableCustomerCancellation,
   'skip_tipping': ?skipTipping,
   if (tipping != null) 'tipping': tipping?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_redisplay', 'enable_customer_cancellation', 'skip_tipping', 'tipping'}.contains(key)); } 
-PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig copyWith({PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay? Function()? allowRedisplay, bool? Function()? enableCustomerCancellation, bool? Function()? skipTipping, PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigTipping? Function()? tipping, }) { return PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allow_redisplay', 'enable_customer_cancellation', 'skip_tipping', 'tipping'}.contains(key));}
+PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig copyWith({PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay? Function()? allowRedisplay, bool? Function()? enableCustomerCancellation, bool? Function()? skipTipping, PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigTipping? Function()? tipping, }) {return PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig(
   allowRedisplay: allowRedisplay != null ? allowRedisplay() : this.allowRedisplay,
   enableCustomerCancellation: enableCustomerCancellation != null ? enableCustomerCancellation() : this.enableCustomerCancellation,
   skipTipping: skipTipping != null ? skipTipping() : this.skipTipping,
   tipping: tipping != null ? tipping() : this.tipping,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig &&
           allowRedisplay == other.allowRedisplay &&
           enableCustomerCancellation == other.enableCustomerCancellation &&
           skipTipping == other.skipTipping &&
-          tipping == other.tipping; } 
-@override int get hashCode { return Object.hash(allowRedisplay, enableCustomerCancellation, skipTipping, tipping); } 
-@override String toString() { return 'PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig(allowRedisplay: $allowRedisplay, enableCustomerCancellation: $enableCustomerCancellation, skipTipping: $skipTipping, tipping: $tipping)'; } 
- }
+          tipping == other.tipping;}
+@override int get hashCode {return Object.hash(allowRedisplay, enableCustomerCancellation, skipTipping, tipping);}
+@override String toString() {return 'PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig(allowRedisplay: $allowRedisplay, enableCustomerCancellation: $enableCustomerCancellation, skipTipping: $skipTipping, tipping: $tipping)';}
+}

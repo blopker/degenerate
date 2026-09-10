@@ -13,7 +13,7 @@ final class AccessKeyConfigurationApi with ApiExecutor {const AccessKeyConfigura
 /// Gets the Access key rotation settings for an account.
 ///
 /// `GET /accounts/{account_id}/access/keys`
-Future<ApiResult<AccessKeyConfig?, ResponseCommonFailure4>> accessKeyConfigurationGetTheAccessKeyConfiguration({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessKeyConfig?, ResponseCommonFailure4>> accessKeyConfigurationGetTheAccessKeyConfiguration({required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update the Access key configuration
 ///
 /// Updates the Access key rotation settings for an account.
 ///
 /// `PUT /accounts/{account_id}/access/keys`
-Future<ApiResult<AccessKeyConfig?, ResponseCommonFailure4>> accessKeyConfigurationUpdateTheAccessKeyConfiguration({required AccessIdentifier accountId, required AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessKeyConfig?, ResponseCommonFailure4>> accessKeyConfigurationUpdateTheAccessKeyConfiguration({required AccessIdentifier accountId, required AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Rotate Access keys
 ///
 /// Perfoms a key rotation for an account.
 ///
 /// `POST /accounts/{account_id}/access/keys/rotate`
-Future<ApiResult<AccessKeyConfig?, ResponseCommonFailure4>> accessKeyConfigurationRotateAccessKeys({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessKeyConfig?, ResponseCommonFailure4>> accessKeyConfigurationRotateAccessKeys({required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -105,5 +105,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class CreateChatCompletionSuccess {const CreateChatCompletionSuccess();
 
 /// Decodes the payload for its declared status and content type.
-static CreateChatCompletionSuccess parse(ApiResponse response) { switch (response.statusCode) {
+static CreateChatCompletionSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -21,26 +21,26 @@ return CreateChatCompletionSuccess200ApplicationJson(CreateChatCompletionRespons
 default:
 return CreateChatCompletionSuccessUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 200 (application/json).
 final class CreateChatCompletionSuccess200ApplicationJson extends CreateChatCompletionSuccess {const CreateChatCompletionSuccess200ApplicationJson(this.data);
 
 /// The decoded response payload.
 final CreateChatCompletionResponse data;
 
- }
+}
 /// Response for 200 (text/event-stream).
 final class CreateChatCompletionSuccess200TextEventStream extends CreateChatCompletionSuccess {const CreateChatCompletionSuccess200TextEventStream(this.data);
 
 /// The decoded response payload.
 final CreateChatCompletionStreamResponse data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class CreateChatCompletionSuccessUnknown extends CreateChatCompletionSuccess {const CreateChatCompletionSuccessUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

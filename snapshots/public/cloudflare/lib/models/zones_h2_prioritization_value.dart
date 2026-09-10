@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 @immutable final class ZonesH2PrioritizationValue {const ZonesH2PrioritizationValue._(this.value);
 
-factory ZonesH2PrioritizationValue.fromJson(String json) { return switch (json) {
+factory ZonesH2PrioritizationValue.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   'custom' => custom,
   _ => ZonesH2PrioritizationValue._(json),
-}; }
+};}
 
 static const ZonesH2PrioritizationValue $on = ZonesH2PrioritizationValue._('on');
 
@@ -20,11 +20,11 @@ static const List<ZonesH2PrioritizationValue> values = [$on, off, custom];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesH2PrioritizationValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesH2PrioritizationValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesH2PrioritizationValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesH2PrioritizationValue($value)';}
+}

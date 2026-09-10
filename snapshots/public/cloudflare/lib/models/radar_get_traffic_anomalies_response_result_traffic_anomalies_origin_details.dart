@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesOriginDetails {const RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesOriginDetails({required this.name, required this.origin, });
 
-factory RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesOriginDetails.fromJson(Map<String, dynamic> json) { return RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesOriginDetails(
+factory RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesOriginDetails.fromJson(Map<String, dynamic> json) {return RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesOriginDetails(
   name: json['name'] as String,
   origin: json['origin'] as String,
-); }
+);}
 
 final String name;
 
 final String origin;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'origin': origin,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('origin') && json['origin'] is String; } 
-RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesOriginDetails copyWith({String? name, String? origin, }) { return RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesOriginDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('origin') && json['origin'] is String;}
+RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesOriginDetails copyWith({String? name, String? origin, }) {return RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesOriginDetails(
   name: name ?? this.name,
   origin: origin ?? this.origin,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesOriginDetails &&
           name == other.name &&
-          origin == other.origin; } 
-@override int get hashCode { return Object.hash(name, origin); } 
-@override String toString() { return 'RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesOriginDetails(name: $name, origin: $origin)'; } 
- }
+          origin == other.origin;}
+@override int get hashCode {return Object.hash(name, origin);}
+@override String toString() {return 'RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesOriginDetails(name: $name, origin: $origin)';}
+}

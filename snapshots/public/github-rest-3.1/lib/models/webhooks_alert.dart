@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_alert_dismisser.dart';@immutable final class WebhooksAlertState {const WebhooksAlertState._(this.value);
 
-factory WebhooksAlertState.fromJson(String json) { return switch (json) {
+factory WebhooksAlertState.fromJson(String json) {return switch (json) {
   'auto_dismissed' => autoDismissed,
   'open' => open,
   _ => WebhooksAlertState._(json),
-}; }
+};}
 
 static const WebhooksAlertState autoDismissed = WebhooksAlertState._('auto_dismissed');
 
@@ -16,18 +16,18 @@ static const List<WebhooksAlertState> values = [autoDismissed, open];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksAlertState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksAlertState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhooksAlertState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhooksAlertState($value)';}
+}
 /// The security alert of the vulnerable dependency.
 @immutable final class WebhooksAlert {const WebhooksAlert({required this.affectedPackageName, required this.affectedRange, required this.createdAt, required this.externalIdentifier, required this.externalReference, required this.ghsaId, required this.id, required this.nodeId, required this.number, required this.severity, required this.state, this.dismissReason, this.dismissedAt, this.dismisser = const Omittable.absent(), this.fixReason, this.fixedAt, this.fixedIn, });
 
-factory WebhooksAlert.fromJson(Map<String, dynamic> json) { return WebhooksAlert(
+factory WebhooksAlert.fromJson(Map<String, dynamic> json) {return WebhooksAlert(
   affectedPackageName: json['affected_package_name'] as String,
   affectedRange: json['affected_range'] as String,
   createdAt: json['created_at'] as String,
@@ -45,7 +45,7 @@ factory WebhooksAlert.fromJson(Map<String, dynamic> json) { return WebhooksAlert
   number: (json['number'] as num).toInt(),
   severity: json['severity'] as String,
   state: WebhooksAlertState.fromJson(json['state'] as String),
-); }
+);}
 
 final String affectedPackageName;
 
@@ -81,7 +81,7 @@ final String severity;
 
 final WebhooksAlertState state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'affected_package_name': affectedPackageName,
   'affected_range': affectedRange,
   'created_at': createdAt,
@@ -99,8 +99,8 @@ Map<String, dynamic> toJson() { return {
   'number': number,
   'severity': severity,
   'state': state.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('affected_package_name') && json['affected_package_name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('affected_package_name') && json['affected_package_name'] is String &&
       json.containsKey('affected_range') && json['affected_range'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('external_identifier') && json['external_identifier'] is String &&
@@ -110,8 +110,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('affec
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('severity') && json['severity'] is String &&
-      json.containsKey('state'); } 
-WebhooksAlert copyWith({String? affectedPackageName, String? affectedRange, String? createdAt, String? Function()? dismissReason, String? Function()? dismissedAt, Omittable<WebhooksAlertDismisser?>? dismisser, String? externalIdentifier, Uri? Function()? externalReference, String? Function()? fixReason, DateTime? Function()? fixedAt, String? Function()? fixedIn, String? ghsaId, int? id, String? nodeId, int? number, String? severity, WebhooksAlertState? state, }) { return WebhooksAlert(
+      json.containsKey('state');}
+WebhooksAlert copyWith({String? affectedPackageName, String? affectedRange, String? createdAt, String? Function()? dismissReason, String? Function()? dismissedAt, Omittable<WebhooksAlertDismisser?>? dismisser, String? externalIdentifier, Uri? Function()? externalReference, String? Function()? fixReason, DateTime? Function()? fixedAt, String? Function()? fixedIn, String? ghsaId, int? id, String? nodeId, int? number, String? severity, WebhooksAlertState? state, }) {return WebhooksAlert(
   affectedPackageName: affectedPackageName ?? this.affectedPackageName,
   affectedRange: affectedRange ?? this.affectedRange,
   createdAt: createdAt ?? this.createdAt,
@@ -129,8 +129,8 @@ WebhooksAlert copyWith({String? affectedPackageName, String? affectedRange, Stri
   number: number ?? this.number,
   severity: severity ?? this.severity,
   state: state ?? this.state,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhooksAlert &&
           affectedPackageName == other.affectedPackageName &&
           affectedRange == other.affectedRange &&
@@ -148,7 +148,7 @@ WebhooksAlert copyWith({String? affectedPackageName, String? affectedRange, Stri
           nodeId == other.nodeId &&
           number == other.number &&
           severity == other.severity &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(affectedPackageName, affectedRange, createdAt, dismissReason, dismissedAt, dismisser, externalIdentifier, externalReference, fixReason, fixedAt, fixedIn, ghsaId, id, nodeId, number, severity, state); } 
-@override String toString() { return 'WebhooksAlert(affectedPackageName: $affectedPackageName, affectedRange: $affectedRange, createdAt: $createdAt, dismissReason: $dismissReason, dismissedAt: $dismissedAt, dismisser: $dismisser, externalIdentifier: $externalIdentifier, externalReference: $externalReference, fixReason: $fixReason, fixedAt: $fixedAt, fixedIn: $fixedIn, ghsaId: $ghsaId, id: $id, nodeId: $nodeId, number: $number, severity: $severity, state: $state)'; } 
- }
+          state == other.state;}
+@override int get hashCode {return Object.hash(affectedPackageName, affectedRange, createdAt, dismissReason, dismissedAt, dismisser, externalIdentifier, externalReference, fixReason, fixedAt, fixedIn, ghsaId, id, nodeId, number, severity, state);}
+@override String toString() {return 'WebhooksAlert(affectedPackageName: $affectedPackageName, affectedRange: $affectedRange, createdAt: $createdAt, dismissReason: $dismissReason, dismissedAt: $dismissedAt, dismisser: $dismisser, externalIdentifier: $externalIdentifier, externalReference: $externalReference, fixReason: $fixReason, fixedAt: $fixedAt, fixedIn: $fixedIn, ghsaId: $ghsaId, id: $id, nodeId: $nodeId, number: $number, severity: $severity, state: $state)';}
+}

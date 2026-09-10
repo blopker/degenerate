@@ -3,68 +3,68 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'easy_input_message.dart';import 'item.dart';import 'item_reference_param.dart';sealed class InputItem {const InputItem();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
-factory InputItem.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+factory InputItem.fromJson(Map<String, dynamic> json) {return switch (json['type']) {
   'message' => InputItemMessage.fromJson(json),
   'Item' => InputItemItem.fromJson(json),
   'ItemReferenceParam' => InputItemItemReferenceParam.fromJson(json),
   _ => InputItem$Unknown(json),
-}; }
+};}
 
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InputItem$Unknown; } 
- }
+bool get isUnknown {return this is InputItem$Unknown;}
+}
 @immutable final class InputItemMessage extends InputItem {const InputItemMessage(this.easyInputMessage);
 
-factory InputItemMessage.fromJson(Map<String, dynamic> json) { return InputItemMessage(EasyInputMessage.fromJson(json)); }
+factory InputItemMessage.fromJson(Map<String, dynamic> json) {return InputItemMessage(EasyInputMessage.fromJson(json));}
 
 final EasyInputMessage easyInputMessage;
 
-@override String get type { return 'message'; } 
-@override Map<String, dynamic> toJson() { return {...easyInputMessage.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputItemMessage && easyInputMessage == other.easyInputMessage; } 
-@override int get hashCode { return easyInputMessage.hashCode; } 
-@override String toString() { return 'InputItemMessage(easyInputMessage: $easyInputMessage)'; } 
- }
+@override String get type {return 'message';}
+@override Map<String, dynamic> toJson() {return {...easyInputMessage.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InputItemMessage && easyInputMessage == other.easyInputMessage;}
+@override int get hashCode {return easyInputMessage.hashCode;}
+@override String toString() {return 'InputItemMessage(easyInputMessage: $easyInputMessage)';}
+}
 @immutable final class InputItemItem extends InputItem {const InputItemItem(this.item);
 
-factory InputItemItem.fromJson(Map<String, dynamic> json) { return InputItemItem(Item.fromJson(json)); }
+factory InputItemItem.fromJson(Map<String, dynamic> json) {return InputItemItem(Item.fromJson(json));}
 
 final Item item;
 
-@override String get type { return 'Item'; } 
-@override Map<String, dynamic> toJson() { return {...item.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputItemItem && item == other.item; } 
-@override int get hashCode { return item.hashCode; } 
-@override String toString() { return 'InputItemItem(item: $item)'; } 
- }
+@override String get type {return 'Item';}
+@override Map<String, dynamic> toJson() {return {...item.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InputItemItem && item == other.item;}
+@override int get hashCode {return item.hashCode;}
+@override String toString() {return 'InputItemItem(item: $item)';}
+}
 @immutable final class InputItemItemReferenceParam extends InputItem {const InputItemItemReferenceParam(this.itemReferenceParam);
 
-factory InputItemItemReferenceParam.fromJson(Map<String, dynamic> json) { return InputItemItemReferenceParam(ItemReferenceParam.fromJson(json)); }
+factory InputItemItemReferenceParam.fromJson(Map<String, dynamic> json) {return InputItemItemReferenceParam(ItemReferenceParam.fromJson(json));}
 
 final ItemReferenceParam itemReferenceParam;
 
-@override String get type { return 'ItemReferenceParam'; } 
-@override Map<String, dynamic> toJson() { return {...itemReferenceParam.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputItemItemReferenceParam && itemReferenceParam == other.itemReferenceParam; } 
-@override int get hashCode { return itemReferenceParam.hashCode; } 
-@override String toString() { return 'InputItemItemReferenceParam(itemReferenceParam: $itemReferenceParam)'; } 
- }
+@override String get type {return 'ItemReferenceParam';}
+@override Map<String, dynamic> toJson() {return {...itemReferenceParam.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InputItemItemReferenceParam && itemReferenceParam == other.itemReferenceParam;}
+@override int get hashCode {return itemReferenceParam.hashCode;}
+@override String toString() {return 'InputItemItemReferenceParam(itemReferenceParam: $itemReferenceParam)';}
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class InputItem$Unknown extends InputItem {const InputItem$Unknown(this.json);
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputItem$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'InputItem.unknown($json)'; } 
- }
+@override String get type {return json['type'] as String? ?? '';}
+@override Map<String, dynamic> toJson() {return json;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InputItem$Unknown && json == other.json;}
+@override int get hashCode {return json.hashCode;}
+@override String toString() {return 'InputItem.unknown($json)';}
+}

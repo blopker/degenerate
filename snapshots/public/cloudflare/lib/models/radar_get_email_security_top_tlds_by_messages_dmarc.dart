@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTopTldsByMessagesDmarc {const RadarGetEmailSecurityTopTldsByMessagesDmarc._(this.value);
 
-factory RadarGetEmailSecurityTopTldsByMessagesDmarc.fromJson(String json) { return switch (json) {
+factory RadarGetEmailSecurityTopTldsByMessagesDmarc.fromJson(String json) {return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
   _ => RadarGetEmailSecurityTopTldsByMessagesDmarc._(json),
-}; }
+};}
 
 static const RadarGetEmailSecurityTopTldsByMessagesDmarc pass = RadarGetEmailSecurityTopTldsByMessagesDmarc._('PASS');
 
@@ -19,11 +19,11 @@ static const List<RadarGetEmailSecurityTopTldsByMessagesDmarc> values = [pass, n
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetEmailSecurityTopTldsByMessagesDmarc && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetEmailSecurityTopTldsByMessagesDmarc($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetEmailSecurityTopTldsByMessagesDmarc && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetEmailSecurityTopTldsByMessagesDmarc($value)';}
+}

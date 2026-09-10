@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByArcResponseResultSerie0 {const RadarGetEmailSecurityTimeseriesGroupByArcResponseResultSerie0({required this.fail, required this.none, required this.pass, });
 
-factory RadarGetEmailSecurityTimeseriesGroupByArcResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupByArcResponseResultSerie0(
+factory RadarGetEmailSecurityTimeseriesGroupByArcResponseResultSerie0.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecurityTimeseriesGroupByArcResponseResultSerie0(
   fail: (json['FAIL'] as List<dynamic>).map((e) => e as String).toList(),
   none: (json['NONE'] as List<dynamic>).map((e) => e as String).toList(),
   pass: (json['PASS'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> fail;
 
@@ -14,24 +14,24 @@ final List<String> none;
 
 final List<String> pass;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'FAIL': fail,
   'NONE': none,
   'PASS': pass,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('FAIL') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('FAIL') &&
       json.containsKey('NONE') &&
-      json.containsKey('PASS'); } 
-RadarGetEmailSecurityTimeseriesGroupByArcResponseResultSerie0 copyWith({List<String>? fail, List<String>? none, List<String>? pass, }) { return RadarGetEmailSecurityTimeseriesGroupByArcResponseResultSerie0(
+      json.containsKey('PASS');}
+RadarGetEmailSecurityTimeseriesGroupByArcResponseResultSerie0 copyWith({List<String>? fail, List<String>? none, List<String>? pass, }) {return RadarGetEmailSecurityTimeseriesGroupByArcResponseResultSerie0(
   fail: fail ?? this.fail,
   none: none ?? this.none,
   pass: pass ?? this.pass,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetEmailSecurityTimeseriesGroupByArcResponseResultSerie0 &&
           listEquals(fail, other.fail) &&
           listEquals(none, other.none) &&
-          listEquals(pass, other.pass); } 
-@override int get hashCode { return Object.hash(Object.hashAll(fail), Object.hashAll(none), Object.hashAll(pass)); } 
-@override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByArcResponseResultSerie0(fail: $fail, none: $none, pass: $pass)'; } 
- }
+          listEquals(pass, other.pass);}
+@override int get hashCode {return Object.hash(Object.hashAll(fail), Object.hashAll(none), Object.hashAll(pass));}
+@override String toString() {return 'RadarGetEmailSecurityTimeseriesGroupByArcResponseResultSerie0(fail: $fail, none: $none, pass: $pass)';}
+}

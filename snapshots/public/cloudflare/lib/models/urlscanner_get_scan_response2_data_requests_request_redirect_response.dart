@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_data_requests_request_redirect_response_security_headers.dart';@immutable final class UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse {const UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse({required this.charset, required this.mimeType, required this.protocol, required this.remoteIpAddress, required this.remotePort, required this.securityHeaders, required this.securityState, required this.status, required this.statusText, required this.url, this.headers, });
 
-factory UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse(
+factory UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse(
   charset: json['charset'] as String,
   headers: json['headers'] as Map<String, dynamic>?,
   mimeType: json['mimeType'] as String,
@@ -14,7 +14,7 @@ factory UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse.fromJson(M
   status: (json['status'] as num).toDouble(),
   statusText: json['statusText'] as String,
   url: json['url'] as String,
-); }
+);}
 
 final String charset;
 
@@ -38,7 +38,7 @@ final String statusText;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'charset': charset,
   'headers': ?headers,
   'mimeType': mimeType,
@@ -50,8 +50,8 @@ Map<String, dynamic> toJson() { return {
   'status': status,
   'statusText': statusText,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('charset') && json['charset'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('charset') && json['charset'] is String &&
       json.containsKey('mimeType') && json['mimeType'] is String &&
       json.containsKey('protocol') && json['protocol'] is String &&
       json.containsKey('remoteIPAddress') && json['remoteIPAddress'] is String &&
@@ -60,8 +60,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('chars
       json.containsKey('securityState') && json['securityState'] is String &&
       json.containsKey('status') && json['status'] is num &&
       json.containsKey('statusText') && json['statusText'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse copyWith({String? charset, Map<String, dynamic>? Function()? headers, String? mimeType, String? protocol, String? remoteIpAddress, double? remotePort, List<UrlscannerGetScanResponse2DataRequestsRequestRedirectResponseSecurityHeaders>? securityHeaders, String? securityState, double? status, String? statusText, String? url, }) { return UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse(
+      json.containsKey('url') && json['url'] is String;}
+UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse copyWith({String? charset, Map<String, dynamic>? Function()? headers, String? mimeType, String? protocol, String? remoteIpAddress, double? remotePort, List<UrlscannerGetScanResponse2DataRequestsRequestRedirectResponseSecurityHeaders>? securityHeaders, String? securityState, double? status, String? statusText, String? url, }) {return UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse(
   charset: charset ?? this.charset,
   headers: headers != null ? headers() : this.headers,
   mimeType: mimeType ?? this.mimeType,
@@ -73,8 +73,8 @@ UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse copyWith({String? 
   status: status ?? this.status,
   statusText: statusText ?? this.statusText,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse &&
           charset == other.charset &&
           headers == other.headers &&
@@ -86,7 +86,7 @@ UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse copyWith({String? 
           securityState == other.securityState &&
           status == other.status &&
           statusText == other.statusText &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(charset, headers, mimeType, protocol, remoteIpAddress, remotePort, Object.hashAll(securityHeaders), securityState, status, statusText, url); } 
-@override String toString() { return 'UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse(charset: $charset, headers: $headers, mimeType: $mimeType, protocol: $protocol, remoteIpAddress: $remoteIpAddress, remotePort: $remotePort, securityHeaders: $securityHeaders, securityState: $securityState, status: $status, statusText: $statusText, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(charset, headers, mimeType, protocol, remoteIpAddress, remotePort, Object.hashAll(securityHeaders), securityState, status, statusText, url);}
+@override String toString() {return 'UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse(charset: $charset, headers: $headers, mimeType: $mimeType, protocol: $protocol, remoteIpAddress: $remoteIpAddress, remotePort: $remotePort, securityHeaders: $securityHeaders, securityState: $securityState, status: $status, statusText: $statusText, url: $url)';}
+}

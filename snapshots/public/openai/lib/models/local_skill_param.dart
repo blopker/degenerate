@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LocalSkillParam {const LocalSkillParam({required this.name, required this.description, required this.path, });
 
-factory LocalSkillParam.fromJson(Map<String, dynamic> json) { return LocalSkillParam(
+factory LocalSkillParam.fromJson(Map<String, dynamic> json) {return LocalSkillParam(
   name: json['name'] as String,
   description: json['description'] as String,
   path: json['path'] as String,
-); }
+);}
 
 /// The name of the skill.
 final String name;
@@ -17,24 +17,24 @@ final String description;
 /// The path to the directory containing the skill.
 final String path;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'description': description,
   'path': path,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('description') && json['description'] is String &&
-      json.containsKey('path') && json['path'] is String; } 
-LocalSkillParam copyWith({String? name, String? description, String? path, }) { return LocalSkillParam(
+      json.containsKey('path') && json['path'] is String;}
+LocalSkillParam copyWith({String? name, String? description, String? path, }) {return LocalSkillParam(
   name: name ?? this.name,
   description: description ?? this.description,
   path: path ?? this.path,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LocalSkillParam &&
           name == other.name &&
           description == other.description &&
-          path == other.path; } 
-@override int get hashCode { return Object.hash(name, description, path); } 
-@override String toString() { return 'LocalSkillParam(name: $name, description: $description, path: $path)'; } 
- }
+          path == other.path;}
+@override int get hashCode {return Object.hash(name, description, path);}
+@override String toString() {return 'LocalSkillParam(name: $name, description: $description, path: $path)';}
+}

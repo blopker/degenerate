@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_intent_payment_method_options_mandate_options_sepa_debit.dart';/// 
 @immutable final class SetupIntentPaymentMethodOptionsSepaDebit {const SetupIntentPaymentMethodOptionsSepaDebit({this.mandateOptions});
 
-factory SetupIntentPaymentMethodOptionsSepaDebit.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsSepaDebit(
+factory SetupIntentPaymentMethodOptionsSepaDebit.fromJson(Map<String, dynamic> json) {return SetupIntentPaymentMethodOptionsSepaDebit(
   mandateOptions: json['mandate_options'] != null ? SetupIntentPaymentMethodOptionsMandateOptionsSepaDebit.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final SetupIntentPaymentMethodOptionsMandateOptionsSepaDebit? mandateOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options'}.contains(key)); } 
-SetupIntentPaymentMethodOptionsSepaDebit copyWith({SetupIntentPaymentMethodOptionsMandateOptionsSepaDebit? Function()? mandateOptions}) { return SetupIntentPaymentMethodOptionsSepaDebit(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mandate_options'}.contains(key));}
+SetupIntentPaymentMethodOptionsSepaDebit copyWith({SetupIntentPaymentMethodOptionsMandateOptionsSepaDebit? Function()? mandateOptions}) {return SetupIntentPaymentMethodOptionsSepaDebit(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SetupIntentPaymentMethodOptionsSepaDebit &&
-          mandateOptions == other.mandateOptions; } 
-@override int get hashCode { return mandateOptions.hashCode; } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsSepaDebit(mandateOptions: $mandateOptions)'; } 
- }
+          mandateOptions == other.mandateOptions;}
+@override int get hashCode {return mandateOptions.hashCode;}
+@override String toString() {return 'SetupIntentPaymentMethodOptionsSepaDebit(mandateOptions: $mandateOptions)';}
+}

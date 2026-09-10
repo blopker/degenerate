@@ -13,7 +13,7 @@ final class ZeroTrustGatewayCategoriesApi with ApiExecutor {const ZeroTrustGatew
 /// List all categories.
 ///
 /// `GET /accounts/{account_id}/gateway/categories`
-Future<ApiResult<List<ZeroTrustGatewayCategories>?, ZeroTrustGatewayCategoriesListCategoriesResponse4xx>> zeroTrustGatewayCategoriesListCategories({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ZeroTrustGatewayCategories>?, ZeroTrustGatewayCategoriesListCategoriesResponse4xx>> zeroTrustGatewayCategoriesListCategories({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,5 +39,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

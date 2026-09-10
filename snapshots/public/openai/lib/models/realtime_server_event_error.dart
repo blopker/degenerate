@@ -6,11 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_ser
 /// 
 @immutable final class RealtimeServerEventError {const RealtimeServerEventError({required this.eventId, required this.type, required this.error, });
 
-factory RealtimeServerEventError.fromJson(Map<String, dynamic> json) { return RealtimeServerEventError(
+factory RealtimeServerEventError.fromJson(Map<String, dynamic> json) {return RealtimeServerEventError(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   error: RealtimeServerEventErrorError.fromJson(json['error'] as Map<String, dynamic>),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -21,24 +21,24 @@ final String type;
 /// Details of the error.
 final RealtimeServerEventErrorError error;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'error': error.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('error'); } 
-RealtimeServerEventError copyWith({String? eventId, String? type, RealtimeServerEventErrorError? error, }) { return RealtimeServerEventError(
+      json.containsKey('error');}
+RealtimeServerEventError copyWith({String? eventId, String? type, RealtimeServerEventErrorError? error, }) {return RealtimeServerEventError(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   error: error ?? this.error,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventError &&
           eventId == other.eventId &&
           type == other.type &&
-          error == other.error; } 
-@override int get hashCode { return Object.hash(eventId, type, error); } 
-@override String toString() { return 'RealtimeServerEventError(eventId: $eventId, type: $type, error: $error)'; } 
- }
+          error == other.error;}
+@override int get hashCode {return Object.hash(eventId, type, error);}
+@override String toString() {return 'RealtimeServerEventError(eventId: $eventId, type: $type, error: $error)';}
+}

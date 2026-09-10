@@ -13,7 +13,7 @@ final class ContainersApi with ApiExecutor {const ContainersApi(this.apiConfig);
 /// Lists all the container applications that are associated with your account.
 ///
 /// `GET /accounts/{account_id}/containers`
-Future<ApiResult<List<CcPublicApplication>, BaseErrorResponse>> publicListApplications({required String accountId, String? name, String? image, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CcPublicApplication>, BaseErrorResponse>> publicListApplications({required String accountId, String? name, String? image, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -50,5 +50,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

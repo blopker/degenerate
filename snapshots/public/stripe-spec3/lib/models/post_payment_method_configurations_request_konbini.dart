@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_konbini_display_preference.dart';/// Konbini allows customers in Japan to pay for bills and online purchases at convenience stores with cash. Check this [page](https://docs.stripe.com/payments/konbini) for more details.
 @immutable final class PostPaymentMethodConfigurationsRequestKonbini {const PostPaymentMethodConfigurationsRequestKonbini({this.displayPreference});
 
-factory PostPaymentMethodConfigurationsRequestKonbini.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestKonbini(
+factory PostPaymentMethodConfigurationsRequestKonbini.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsRequestKonbini(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestKonbiniDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsRequestKonbiniDisplayPreference? displayPreference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsRequestKonbini copyWith({PostPaymentMethodConfigurationsRequestKonbiniDisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsRequestKonbini(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_preference'}.contains(key));}
+PostPaymentMethodConfigurationsRequestKonbini copyWith({PostPaymentMethodConfigurationsRequestKonbiniDisplayPreference? Function()? displayPreference}) {return PostPaymentMethodConfigurationsRequestKonbini(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsRequestKonbini &&
-          displayPreference == other.displayPreference; } 
-@override int get hashCode { return displayPreference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestKonbini(displayPreference: $displayPreference)'; } 
- }
+          displayPreference == other.displayPreference;}
+@override int get hashCode {return displayPreference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestKonbini(displayPreference: $displayPreference)';}
+}

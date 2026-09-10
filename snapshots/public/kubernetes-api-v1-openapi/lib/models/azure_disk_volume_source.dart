@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// AzureDisk represents an Azure Data Disk mount on the host and bind mount to the pod.
 @immutable final class AzureDiskVolumeSource {const AzureDiskVolumeSource({required this.diskName, required this.diskUri, this.cachingMode, this.fsType, this.kind, this.readOnly, });
 
-factory AzureDiskVolumeSource.fromJson(Map<String, dynamic> json) { return AzureDiskVolumeSource(
+factory AzureDiskVolumeSource.fromJson(Map<String, dynamic> json) {return AzureDiskVolumeSource(
   cachingMode: json['cachingMode'] as String?,
   diskName: json['diskName'] as String,
   diskUri: json['diskURI'] as String,
   fsType: json['fsType'] as String?,
   kind: json['kind'] as String?,
   readOnly: json['readOnly'] as bool?,
-); }
+);}
 
 /// cachingMode is the Host Caching mode: None, Read Only, Read Write.
 final String? cachingMode;
@@ -31,39 +31,39 @@ final String? kind;
 final bool? readOnly;
 
 /// The value with the schema default applied when absent.
-String get cachingModeOrDefault { return cachingMode ?? 'ReadWrite'; } 
+String get cachingModeOrDefault {return cachingMode ?? 'ReadWrite';}
 /// The value with the schema default applied when absent.
-String get fsTypeOrDefault { return fsType ?? 'ext4'; } 
+String get fsTypeOrDefault {return fsType ?? 'ext4';}
 /// The value with the schema default applied when absent.
-String get kindOrDefault { return kind ?? 'Shared'; } 
+String get kindOrDefault {return kind ?? 'Shared';}
 /// The value with the schema default applied when absent.
-bool get readOnlyOrDefault { return readOnly ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get readOnlyOrDefault {return readOnly ?? false;}
+Map<String, dynamic> toJson() {return {
   'cachingMode': ?cachingMode,
   'diskName': diskName,
   'diskURI': diskUri,
   'fsType': ?fsType,
   'kind': ?kind,
   'readOnly': ?readOnly,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('diskName') && json['diskName'] is String &&
-      json.containsKey('diskURI') && json['diskURI'] is String; } 
-AzureDiskVolumeSource copyWith({String? Function()? cachingMode, String? diskName, String? diskUri, String? Function()? fsType, String? Function()? kind, bool? Function()? readOnly, }) { return AzureDiskVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('diskName') && json['diskName'] is String &&
+      json.containsKey('diskURI') && json['diskURI'] is String;}
+AzureDiskVolumeSource copyWith({String? Function()? cachingMode, String? diskName, String? diskUri, String? Function()? fsType, String? Function()? kind, bool? Function()? readOnly, }) {return AzureDiskVolumeSource(
   cachingMode: cachingMode != null ? cachingMode() : this.cachingMode,
   diskName: diskName ?? this.diskName,
   diskUri: diskUri ?? this.diskUri,
   fsType: fsType != null ? fsType() : this.fsType,
   kind: kind != null ? kind() : this.kind,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AzureDiskVolumeSource &&
           cachingMode == other.cachingMode &&
           diskName == other.diskName &&
           diskUri == other.diskUri &&
           fsType == other.fsType &&
           kind == other.kind &&
-          readOnly == other.readOnly; } 
-@override int get hashCode { return Object.hash(cachingMode, diskName, diskUri, fsType, kind, readOnly); } 
-@override String toString() { return 'AzureDiskVolumeSource(cachingMode: $cachingMode, diskName: $diskName, diskUri: $diskUri, fsType: $fsType, kind: $kind, readOnly: $readOnly)'; } 
- }
+          readOnly == other.readOnly;}
+@override int get hashCode {return Object.hash(cachingMode, diskName, diskUri, fsType, kind, readOnly);}
+@override String toString() {return 'AzureDiskVolumeSource(cachingMode: $cachingMode, diskName: $diskName, diskUri: $diskUri, fsType: $fsType, kind: $kind, readOnly: $readOnly)';}
+}

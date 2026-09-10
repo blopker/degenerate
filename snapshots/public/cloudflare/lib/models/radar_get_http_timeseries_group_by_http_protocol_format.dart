@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetHttpTimeseriesGroupByHttpProtocolFormat {const RadarGetHttpTimeseriesGroupByHttpProtocolFormat._(this.value);
 
-factory RadarGetHttpTimeseriesGroupByHttpProtocolFormat.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTimeseriesGroupByHttpProtocolFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetHttpTimeseriesGroupByHttpProtocolFormat._(json),
-}; }
+};}
 
 static const RadarGetHttpTimeseriesGroupByHttpProtocolFormat $json = RadarGetHttpTimeseriesGroupByHttpProtocolFormat._('JSON');
 
@@ -17,11 +17,11 @@ static const List<RadarGetHttpTimeseriesGroupByHttpProtocolFormat> values = [$js
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTimeseriesGroupByHttpProtocolFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTimeseriesGroupByHttpProtocolFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupByHttpProtocolFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTimeseriesGroupByHttpProtocolFormat($value)';}
+}

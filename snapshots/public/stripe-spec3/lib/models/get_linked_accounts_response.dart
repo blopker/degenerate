@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'financial_connections_account.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
 @immutable final class GetLinkedAccountsResponseObject {const GetLinkedAccountsResponseObject._(this.value);
 
-factory GetLinkedAccountsResponseObject.fromJson(String json) { return switch (json) {
+factory GetLinkedAccountsResponseObject.fromJson(String json) {return switch (json) {
   'list' => list,
   _ => GetLinkedAccountsResponseObject._(json),
-}; }
+};}
 
 static const GetLinkedAccountsResponseObject list = GetLinkedAccountsResponseObject._('list');
 
@@ -14,23 +14,23 @@ static const List<GetLinkedAccountsResponseObject> values = [list];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetLinkedAccountsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetLinkedAccountsResponseObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetLinkedAccountsResponseObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetLinkedAccountsResponseObject($value)';}
+}
 /// 
 @immutable final class GetLinkedAccountsResponse {const GetLinkedAccountsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
-factory GetLinkedAccountsResponse.fromJson(Map<String, dynamic> json) { return GetLinkedAccountsResponse(
+factory GetLinkedAccountsResponse.fromJson(Map<String, dynamic> json) {return GetLinkedAccountsResponse(
   data: (json['data'] as List<dynamic>).map((e) => FinancialConnectionsAccount.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   object: GetLinkedAccountsResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
-); }
+);}
 
 /// Details about each object.
 final List<FinancialConnectionsAccount> data;
@@ -44,28 +44,28 @@ final GetLinkedAccountsResponseObject object;
 /// The URL where this list can be accessed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'object': object.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
-GetLinkedAccountsResponse copyWith({List<FinancialConnectionsAccount>? data, bool? hasMore, GetLinkedAccountsResponseObject? object, String? url, }) { return GetLinkedAccountsResponse(
+      json.containsKey('url') && json['url'] is String;}
+GetLinkedAccountsResponse copyWith({List<FinancialConnectionsAccount>? data, bool? hasMore, GetLinkedAccountsResponseObject? object, String? url, }) {return GetLinkedAccountsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetLinkedAccountsResponse &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, object, url); } 
-@override String toString() { return 'GetLinkedAccountsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(data), hasMore, object, url);}
+@override String toString() {return 'GetLinkedAccountsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)';}
+}

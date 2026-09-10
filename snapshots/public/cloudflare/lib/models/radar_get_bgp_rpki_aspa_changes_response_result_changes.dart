@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_rpki_aspa_changes_response_result_changes_entries.dart';@immutable final class RadarGetBgpRpkiAspaChangesResponseResultChanges {const RadarGetBgpRpkiAspaChangesResponseResultChanges({required this.customersAdded, required this.customersRemoved, required this.date, required this.entries, required this.providersAdded, required this.providersRemoved, required this.totalCount, });
 
-factory RadarGetBgpRpkiAspaChangesResponseResultChanges.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaChangesResponseResultChanges(
+factory RadarGetBgpRpkiAspaChangesResponseResultChanges.fromJson(Map<String, dynamic> json) {return RadarGetBgpRpkiAspaChangesResponseResultChanges(
   customersAdded: (json['customersAdded'] as num).toInt(),
   customersRemoved: (json['customersRemoved'] as num).toInt(),
   date: DateTime.parse(json['date'] as String),
@@ -10,7 +10,7 @@ factory RadarGetBgpRpkiAspaChangesResponseResultChanges.fromJson(Map<String, dyn
   providersAdded: (json['providersAdded'] as num).toInt(),
   providersRemoved: (json['providersRemoved'] as num).toInt(),
   totalCount: (json['totalCount'] as num).toInt(),
-); }
+);}
 
 /// Number of new ASPA objects created.
 final int customersAdded;
@@ -32,7 +32,7 @@ final int providersRemoved;
 /// Running total of active ASPA objects after this day.
 final int totalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'customersAdded': customersAdded,
   'customersRemoved': customersRemoved,
   'date': date.toIso8601String(),
@@ -40,15 +40,15 @@ Map<String, dynamic> toJson() { return {
   'providersAdded': providersAdded,
   'providersRemoved': providersRemoved,
   'totalCount': totalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('customersAdded') && json['customersAdded'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('customersAdded') && json['customersAdded'] is num &&
       json.containsKey('customersRemoved') && json['customersRemoved'] is num &&
       json.containsKey('date') && json['date'] is String &&
       json.containsKey('entries') &&
       json.containsKey('providersAdded') && json['providersAdded'] is num &&
       json.containsKey('providersRemoved') && json['providersRemoved'] is num &&
-      json.containsKey('totalCount') && json['totalCount'] is num; } 
-RadarGetBgpRpkiAspaChangesResponseResultChanges copyWith({int? customersAdded, int? customersRemoved, DateTime? date, List<RadarGetBgpRpkiAspaChangesResponseResultChangesEntries>? entries, int? providersAdded, int? providersRemoved, int? totalCount, }) { return RadarGetBgpRpkiAspaChangesResponseResultChanges(
+      json.containsKey('totalCount') && json['totalCount'] is num;}
+RadarGetBgpRpkiAspaChangesResponseResultChanges copyWith({int? customersAdded, int? customersRemoved, DateTime? date, List<RadarGetBgpRpkiAspaChangesResponseResultChangesEntries>? entries, int? providersAdded, int? providersRemoved, int? totalCount, }) {return RadarGetBgpRpkiAspaChangesResponseResultChanges(
   customersAdded: customersAdded ?? this.customersAdded,
   customersRemoved: customersRemoved ?? this.customersRemoved,
   date: date ?? this.date,
@@ -56,8 +56,8 @@ RadarGetBgpRpkiAspaChangesResponseResultChanges copyWith({int? customersAdded, i
   providersAdded: providersAdded ?? this.providersAdded,
   providersRemoved: providersRemoved ?? this.providersRemoved,
   totalCount: totalCount ?? this.totalCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetBgpRpkiAspaChangesResponseResultChanges &&
           customersAdded == other.customersAdded &&
           customersRemoved == other.customersRemoved &&
@@ -65,7 +65,7 @@ RadarGetBgpRpkiAspaChangesResponseResultChanges copyWith({int? customersAdded, i
           listEquals(entries, other.entries) &&
           providersAdded == other.providersAdded &&
           providersRemoved == other.providersRemoved &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(customersAdded, customersRemoved, date, Object.hashAll(entries), providersAdded, providersRemoved, totalCount); } 
-@override String toString() { return 'RadarGetBgpRpkiAspaChangesResponseResultChanges(customersAdded: $customersAdded, customersRemoved: $customersRemoved, date: $date, entries: $entries, providersAdded: $providersAdded, providersRemoved: $providersRemoved, totalCount: $totalCount)'; } 
- }
+          totalCount == other.totalCount;}
+@override int get hashCode {return Object.hash(customersAdded, customersRemoved, date, Object.hashAll(entries), providersAdded, providersRemoved, totalCount);}
+@override String toString() {return 'RadarGetBgpRpkiAspaChangesResponseResultChanges(customersAdded: $customersAdded, customersRemoved: $customersRemoved, date: $date, entries: $entries, providersAdded: $providersAdded, providersRemoved: $providersRemoved, totalCount: $totalCount)';}
+}

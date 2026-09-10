@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audit_log_user_added_data.dart';/// The details for events with this `type`.
 @immutable final class AuditLogUserAdded {const AuditLogUserAdded({this.id, this.data, });
 
-factory AuditLogUserAdded.fromJson(Map<String, dynamic> json) { return AuditLogUserAdded(
+factory AuditLogUserAdded.fromJson(Map<String, dynamic> json) {return AuditLogUserAdded(
   id: json['id'] as String?,
   data: json['data'] != null ? AuditLogUserAddedData.fromJson(json['data'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The user ID.
 final String? id;
@@ -14,19 +14,19 @@ final String? id;
 /// The payload used to add the user to the project.
 final AuditLogUserAddedData? data;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (data != null) 'data': data?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'data'}.contains(key)); } 
-AuditLogUserAdded copyWith({String? Function()? id, AuditLogUserAddedData? Function()? data, }) { return AuditLogUserAdded(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'data'}.contains(key));}
+AuditLogUserAdded copyWith({String? Function()? id, AuditLogUserAddedData? Function()? data, }) {return AuditLogUserAdded(
   id: id != null ? id() : this.id,
   data: data != null ? data() : this.data,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AuditLogUserAdded &&
           id == other.id &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(id, data); } 
-@override String toString() { return 'AuditLogUserAdded(id: $id, data: $data)'; } 
- }
+          data == other.data;}
+@override int get hashCode {return Object.hash(id, data);}
+@override String toString() {return 'AuditLogUserAdded(id: $id, data: $data)';}
+}

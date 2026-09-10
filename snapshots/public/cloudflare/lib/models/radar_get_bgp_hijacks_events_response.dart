@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_hijacks_events_response_result.dart';import 'radar_get_bgp_hijacks_events_response_result_info.dart';@immutable final class RadarGetBgpHijacksEventsResponse {const RadarGetBgpHijacksEventsResponse({required this.result, required this.resultInfo, required this.success, });
 
-factory RadarGetBgpHijacksEventsResponse.fromJson(Map<String, dynamic> json) { return RadarGetBgpHijacksEventsResponse(
+factory RadarGetBgpHijacksEventsResponse.fromJson(Map<String, dynamic> json) {return RadarGetBgpHijacksEventsResponse(
   result: RadarGetBgpHijacksEventsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   resultInfo: RadarGetBgpHijacksEventsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetBgpHijacksEventsResponseResult result;
 
@@ -14,24 +14,24 @@ final RadarGetBgpHijacksEventsResponseResultInfo resultInfo;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'result_info': resultInfo.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
       json.containsKey('result_info') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetBgpHijacksEventsResponse copyWith({RadarGetBgpHijacksEventsResponseResult? result, RadarGetBgpHijacksEventsResponseResultInfo? resultInfo, bool? success, }) { return RadarGetBgpHijacksEventsResponse(
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetBgpHijacksEventsResponse copyWith({RadarGetBgpHijacksEventsResponseResult? result, RadarGetBgpHijacksEventsResponseResultInfo? resultInfo, bool? success, }) {return RadarGetBgpHijacksEventsResponse(
   result: result ?? this.result,
   resultInfo: resultInfo ?? this.resultInfo,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetBgpHijacksEventsResponse &&
           result == other.result &&
           resultInfo == other.resultInfo &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, resultInfo, success); } 
-@override String toString() { return 'RadarGetBgpHijacksEventsResponse(result: $result, resultInfo: $resultInfo, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(result, resultInfo, success);}
+@override String toString() {return 'RadarGetBgpHijacksEventsResponse(result: $result, resultInfo: $resultInfo, success: $success)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt24_response_format.dart';@immutable final class Prompt24 {const Prompt24({required this.prompt, this.frequencyPenalty, this.guidedJson, this.maxTokens, this.presencePenalty, this.raw, this.repetitionPenalty, this.responseFormat, this.seed, this.stream, this.temperature, this.topK, this.topP, });
 
-factory Prompt24.fromJson(Map<String, dynamic> json) { return Prompt24(
+factory Prompt24.fromJson(Map<String, dynamic> json) {return Prompt24(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   guidedJson: json['guided_json'] as Map<String, dynamic>?,
   maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
@@ -16,7 +16,7 @@ factory Prompt24.fromJson(Map<String, dynamic> json) { return Prompt24(
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   topK: json['top_k'] != null ? (json['top_k'] as num).toInt() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
-); }
+);}
 
 /// Decreases the likelihood of the model repeating the same lines verbatim.
 final double? frequencyPenalty;
@@ -57,14 +57,14 @@ final int? topK;
 final double? topP;
 
 /// The value with the schema default applied when absent.
-int get maxTokensOrDefault { return maxTokens ?? 256; } 
+int get maxTokensOrDefault {return maxTokens ?? 256;}
 /// The value with the schema default applied when absent.
-bool get rawOrDefault { return raw ?? false; } 
+bool get rawOrDefault {return raw ?? false;}
 /// The value with the schema default applied when absent.
-bool get streamOrDefault { return stream ?? false; } 
+bool get streamOrDefault {return stream ?? false;}
 /// The value with the schema default applied when absent.
-double get temperatureOrDefault { return temperature ?? 0.15; } 
-Map<String, dynamic> toJson() { return {
+double get temperatureOrDefault {return temperature ?? 0.15;}
+Map<String, dynamic> toJson() {return {
   'frequency_penalty': ?frequencyPenalty,
   'guided_json': ?guidedJson,
   'max_tokens': ?maxTokens,
@@ -78,9 +78,9 @@ Map<String, dynamic> toJson() { return {
   'temperature': ?temperature,
   'top_k': ?topK,
   'top_p': ?topP,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-Prompt24 copyWith({double? Function()? frequencyPenalty, Map<String, dynamic>? Function()? guidedJson, int? Function()? maxTokens, double? Function()? presencePenalty, String? prompt, bool? Function()? raw, double? Function()? repetitionPenalty, Prompt24ResponseFormat? Function()? responseFormat, int? Function()? seed, bool? Function()? stream, double? Function()? temperature, int? Function()? topK, double? Function()? topP, }) { return Prompt24(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
+Prompt24 copyWith({double? Function()? frequencyPenalty, Map<String, dynamic>? Function()? guidedJson, int? Function()? maxTokens, double? Function()? presencePenalty, String? prompt, bool? Function()? raw, double? Function()? repetitionPenalty, Prompt24ResponseFormat? Function()? responseFormat, int? Function()? seed, bool? Function()? stream, double? Function()? temperature, int? Function()? topK, double? Function()? topP, }) {return Prompt24(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   guidedJson: guidedJson != null ? guidedJson() : this.guidedJson,
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,
@@ -94,8 +94,8 @@ Prompt24 copyWith({double? Function()? frequencyPenalty, Map<String, dynamic>? F
   temperature: temperature != null ? temperature() : this.temperature,
   topK: topK != null ? topK() : this.topK,
   topP: topP != null ? topP() : this.topP,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Prompt24 &&
           frequencyPenalty == other.frequencyPenalty &&
           guidedJson == other.guidedJson &&
@@ -109,7 +109,7 @@ Prompt24 copyWith({double? Function()? frequencyPenalty, Map<String, dynamic>? F
           stream == other.stream &&
           temperature == other.temperature &&
           topK == other.topK &&
-          topP == other.topP; } 
-@override int get hashCode { return Object.hash(frequencyPenalty, guidedJson, maxTokens, presencePenalty, prompt, raw, repetitionPenalty, responseFormat, seed, stream, temperature, topK, topP); } 
-@override String toString() { return 'Prompt24(frequencyPenalty: $frequencyPenalty, guidedJson: $guidedJson, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, raw: $raw, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, topK: $topK, topP: $topP)'; } 
- }
+          topP == other.topP;}
+@override int get hashCode {return Object.hash(frequencyPenalty, guidedJson, maxTokens, presencePenalty, prompt, raw, repetitionPenalty, responseFormat, seed, stream, temperature, topK, topP);}
+@override String toString() {return 'Prompt24(frequencyPenalty: $frequencyPenalty, guidedJson: $guidedJson, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, raw: $raw, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, topK: $topK, topP: $topP)';}
+}

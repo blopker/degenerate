@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'turbo_request_audio.dart';@immutable final class TurboRequest {const TurboRequest({required this.audio, this.beamSize, this.compressionRatioThreshold, this.conditionOnPreviousText, this.hallucinationSilenceThreshold, this.initialPrompt, this.language, this.logProbThreshold, this.noSpeechThreshold, this.prefix, this.task, this.vadFilter, });
 
-factory TurboRequest.fromJson(Map<String, dynamic> json) { return TurboRequest(
+factory TurboRequest.fromJson(Map<String, dynamic> json) {return TurboRequest(
   audio: TurboRequestAudio.fromJson(json['audio']),
   beamSize: json['beam_size'] != null ? (json['beam_size'] as num).toInt() : null,
   compressionRatioThreshold: json['compression_ratio_threshold'] != null ? (json['compression_ratio_threshold'] as num).toDouble() : null,
@@ -15,7 +15,7 @@ factory TurboRequest.fromJson(Map<String, dynamic> json) { return TurboRequest(
   prefix: json['prefix'] as String?,
   task: json['task'] as String?,
   vadFilter: json['vad_filter'] as bool?,
-); }
+);}
 
 final TurboRequestAudio audio;
 
@@ -53,20 +53,20 @@ final String? task;
 final bool? vadFilter;
 
 /// The value with the schema default applied when absent.
-int get beamSizeOrDefault { return beamSize ?? 5; } 
+int get beamSizeOrDefault {return beamSize ?? 5;}
 /// The value with the schema default applied when absent.
-double get compressionRatioThresholdOrDefault { return compressionRatioThreshold ?? 2.4; } 
+double get compressionRatioThresholdOrDefault {return compressionRatioThreshold ?? 2.4;}
 /// The value with the schema default applied when absent.
-bool get conditionOnPreviousTextOrDefault { return conditionOnPreviousText ?? true; } 
+bool get conditionOnPreviousTextOrDefault {return conditionOnPreviousText ?? true;}
 /// The value with the schema default applied when absent.
-double get logProbThresholdOrDefault { return logProbThreshold ?? -1.0; } 
+double get logProbThresholdOrDefault {return logProbThreshold ?? -1.0;}
 /// The value with the schema default applied when absent.
-double get noSpeechThresholdOrDefault { return noSpeechThreshold ?? 0.6; } 
+double get noSpeechThresholdOrDefault {return noSpeechThreshold ?? 0.6;}
 /// The value with the schema default applied when absent.
-String get taskOrDefault { return task ?? 'transcribe'; } 
+String get taskOrDefault {return task ?? 'transcribe';}
 /// The value with the schema default applied when absent.
-bool get vadFilterOrDefault { return vadFilter ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get vadFilterOrDefault {return vadFilter ?? false;}
+Map<String, dynamic> toJson() {return {
   'audio': audio.toJson(),
   'beam_size': ?beamSize,
   'compression_ratio_threshold': ?compressionRatioThreshold,
@@ -79,9 +79,9 @@ Map<String, dynamic> toJson() { return {
   'prefix': ?prefix,
   'task': ?task,
   'vad_filter': ?vadFilter,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio'); } 
-TurboRequest copyWith({TurboRequestAudio? audio, int? Function()? beamSize, double? Function()? compressionRatioThreshold, bool? Function()? conditionOnPreviousText, double? Function()? hallucinationSilenceThreshold, String? Function()? initialPrompt, String? Function()? language, double? Function()? logProbThreshold, double? Function()? noSpeechThreshold, String? Function()? prefix, String? Function()? task, bool? Function()? vadFilter, }) { return TurboRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('audio');}
+TurboRequest copyWith({TurboRequestAudio? audio, int? Function()? beamSize, double? Function()? compressionRatioThreshold, bool? Function()? conditionOnPreviousText, double? Function()? hallucinationSilenceThreshold, String? Function()? initialPrompt, String? Function()? language, double? Function()? logProbThreshold, double? Function()? noSpeechThreshold, String? Function()? prefix, String? Function()? task, bool? Function()? vadFilter, }) {return TurboRequest(
   audio: audio ?? this.audio,
   beamSize: beamSize != null ? beamSize() : this.beamSize,
   compressionRatioThreshold: compressionRatioThreshold != null ? compressionRatioThreshold() : this.compressionRatioThreshold,
@@ -94,8 +94,8 @@ TurboRequest copyWith({TurboRequestAudio? audio, int? Function()? beamSize, doub
   prefix: prefix != null ? prefix() : this.prefix,
   task: task != null ? task() : this.task,
   vadFilter: vadFilter != null ? vadFilter() : this.vadFilter,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TurboRequest &&
           audio == other.audio &&
           beamSize == other.beamSize &&
@@ -108,7 +108,7 @@ TurboRequest copyWith({TurboRequestAudio? audio, int? Function()? beamSize, doub
           noSpeechThreshold == other.noSpeechThreshold &&
           prefix == other.prefix &&
           task == other.task &&
-          vadFilter == other.vadFilter; } 
-@override int get hashCode { return Object.hash(audio, beamSize, compressionRatioThreshold, conditionOnPreviousText, hallucinationSilenceThreshold, initialPrompt, language, logProbThreshold, noSpeechThreshold, prefix, task, vadFilter); } 
-@override String toString() { return 'TurboRequest(audio: $audio, beamSize: $beamSize, compressionRatioThreshold: $compressionRatioThreshold, conditionOnPreviousText: $conditionOnPreviousText, hallucinationSilenceThreshold: $hallucinationSilenceThreshold, initialPrompt: $initialPrompt, language: $language, logProbThreshold: $logProbThreshold, noSpeechThreshold: $noSpeechThreshold, prefix: $prefix, task: $task, vadFilter: $vadFilter)'; } 
- }
+          vadFilter == other.vadFilter;}
+@override int get hashCode {return Object.hash(audio, beamSize, compressionRatioThreshold, conditionOnPreviousText, hallucinationSilenceThreshold, initialPrompt, language, logProbThreshold, noSpeechThreshold, prefix, task, vadFilter);}
+@override String toString() {return 'TurboRequest(audio: $audio, beamSize: $beamSize, compressionRatioThreshold: $compressionRatioThreshold, conditionOnPreviousText: $conditionOnPreviousText, hallucinationSilenceThreshold: $hallucinationSilenceThreshold, initialPrompt: $initialPrompt, language: $language, logProbThreshold: $logProbThreshold, noSpeechThreshold: $noSpeechThreshold, prefix: $prefix, task: $task, vadFilter: $vadFilter)';}
+}

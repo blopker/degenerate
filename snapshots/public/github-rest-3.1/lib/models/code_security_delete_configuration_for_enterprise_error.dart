@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class CodeSecurityDeleteConfigurationForEnterpriseError {const CodeSecurityDeleteConfigurationForEnterpriseError();
 
 /// Decodes the payload for its declared status and content type.
-static CodeSecurityDeleteConfigurationForEnterpriseError parse(ApiResponse response) { switch (response.statusCode) {
+static CodeSecurityDeleteConfigurationForEnterpriseError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
 if (responseMediaTypeMatches(contentType, 'application/json')) {
@@ -30,47 +30,47 @@ return CodeSecurityDeleteConfigurationForEnterpriseError409(BasicError.fromJson(
 default:
 return CodeSecurityDeleteConfigurationForEnterpriseErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 400 (application/json).
 final class CodeSecurityDeleteConfigurationForEnterpriseError400ApplicationJson extends CodeSecurityDeleteConfigurationForEnterpriseError {const CodeSecurityDeleteConfigurationForEnterpriseError400ApplicationJson(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 400 (application/scim+json).
 final class CodeSecurityDeleteConfigurationForEnterpriseError400ApplicationScimJson extends CodeSecurityDeleteConfigurationForEnterpriseError {const CodeSecurityDeleteConfigurationForEnterpriseError400ApplicationScimJson(this.data);
 
 /// The decoded response payload.
 final ScimError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class CodeSecurityDeleteConfigurationForEnterpriseError403 extends CodeSecurityDeleteConfigurationForEnterpriseError {const CodeSecurityDeleteConfigurationForEnterpriseError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 404 (application/json).
 final class CodeSecurityDeleteConfigurationForEnterpriseError404 extends CodeSecurityDeleteConfigurationForEnterpriseError {const CodeSecurityDeleteConfigurationForEnterpriseError404(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 409 (application/json).
 final class CodeSecurityDeleteConfigurationForEnterpriseError409 extends CodeSecurityDeleteConfigurationForEnterpriseError {const CodeSecurityDeleteConfigurationForEnterpriseError409(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class CodeSecurityDeleteConfigurationForEnterpriseErrorUnknown extends CodeSecurityDeleteConfigurationForEnterpriseError {const CodeSecurityDeleteConfigurationForEnterpriseErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

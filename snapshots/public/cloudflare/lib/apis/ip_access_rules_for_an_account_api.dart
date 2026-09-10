@@ -13,7 +13,7 @@ final class IpAccessRulesForAnAccountApi with ApiExecutor {const IpAccessRulesFo
 /// Fetches IP Access rules of an account. These rules apply to all the zones in the account. You can filter the results using several optional parameters.
 ///
 /// `GET /accounts/{account_id}/firewall/access_rules/rules`
-Future<ApiResult<List<FirewallSchemasRule>, IpAccessRulesForAnAccountListIpAccessRulesResponse4xx>> ipAccessRulesForAnAccountListIpAccessRules({required FirewallAccountIdentifier accountId, FirewallSchemasMode? mode, IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAnAccountListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAnAccountListIpAccessRulesOrder? order, IpAccessRulesForAnAccountListIpAccessRulesDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<FirewallSchemasRule>, IpAccessRulesForAnAccountListIpAccessRulesResponse4xx>> ipAccessRulesForAnAccountListIpAccessRules({required FirewallAccountIdentifier accountId, FirewallSchemasMode? mode, IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAnAccountListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAnAccountListIpAccessRulesOrder? order, IpAccessRulesForAnAccountListIpAccessRulesDirection? direction, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (mode != null) {
   queryParameters['mode'] = mode.toJson();
@@ -71,7 +71,7 @@ return null;
 
   },
 );
- } 
+}
 /// Create an IP Access rule
 ///
 /// Creates a new IP Access rule for an account. The rule will apply to all zones in the account.
@@ -79,7 +79,7 @@ return null;
 /// Note: To create an IP Access rule that applies to a single zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.
 ///
 /// `POST /accounts/{account_id}/firewall/access_rules/rules`
-Future<ApiResult<FirewallSchemasRule, IpAccessRulesForAnAccountCreateAnIpAccessRuleResponse4xx>> ipAccessRulesForAnAccountCreateAnIpAccessRule({required FirewallAccountIdentifier accountId, required IpAccessRulesForAnAccountCreateAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallSchemasRule, IpAccessRulesForAnAccountCreateAnIpAccessRuleResponse4xx>> ipAccessRulesForAnAccountCreateAnIpAccessRule({required FirewallAccountIdentifier accountId, required IpAccessRulesForAnAccountCreateAnIpAccessRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,13 +107,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get an IP Access rule
 ///
 /// Fetches the details of an IP Access rule defined at the account level.
 ///
 /// `GET /accounts/{account_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<FirewallSchemasRule, IpAccessRulesForAnAccountGetAnIpAccessRuleResponse4xx>> ipAccessRulesForAnAccountGetAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallSchemasRule, IpAccessRulesForAnAccountGetAnIpAccessRuleResponse4xx>> ipAccessRulesForAnAccountGetAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -139,7 +139,7 @@ return null;
 
   },
 );
- } 
+}
 /// Update an IP Access rule
 ///
 /// Updates an IP Access rule defined at the account level.
@@ -147,7 +147,7 @@ return null;
 /// Note: This operation will affect all zones in the account.
 ///
 /// `PATCH /accounts/{account_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<FirewallSchemasRule, IpAccessRulesForAnAccountUpdateAnIpAccessRuleResponse4xx>> ipAccessRulesForAnAccountUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, required FirewallRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallSchemasRule, IpAccessRulesForAnAccountUpdateAnIpAccessRuleResponse4xx>> ipAccessRulesForAnAccountUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, required FirewallRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -175,7 +175,7 @@ return null;
 
   },
 );
- } 
+}
 /// Delete an IP Access rule
 ///
 /// Deletes an existing IP Access rule defined at the account level.
@@ -183,7 +183,7 @@ return null;
 /// Note: This operation will affect all zones in the account.
 ///
 /// `DELETE /accounts/{account_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<ResponseSingleId3Result?, IpAccessRulesForAnAccountDeleteAnIpAccessRuleResponse4xx>> ipAccessRulesForAnAccountDeleteAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId3Result?, IpAccessRulesForAnAccountDeleteAnIpAccessRuleResponse4xx>> ipAccessRulesForAnAccountDeleteAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -209,5 +209,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

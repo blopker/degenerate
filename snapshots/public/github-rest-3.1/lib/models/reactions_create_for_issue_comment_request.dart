@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue comment.
 @immutable final class ReactionsCreateForIssueCommentRequestContent {const ReactionsCreateForIssueCommentRequestContent._(this.value);
 
-factory ReactionsCreateForIssueCommentRequestContent.fromJson(String json) { return switch (json) {
+factory ReactionsCreateForIssueCommentRequestContent.fromJson(String json) {return switch (json) {
   '+1' => plus1,
   '-1' => minus1,
   'laugh' => laugh,
@@ -13,7 +13,7 @@ factory ReactionsCreateForIssueCommentRequestContent.fromJson(String json) { ret
   'rocket' => rocket,
   'eyes' => eyes,
   _ => ReactionsCreateForIssueCommentRequestContent._(json),
-}; }
+};}
 
 static const ReactionsCreateForIssueCommentRequestContent plus1 = ReactionsCreateForIssueCommentRequestContent._('+1');
 
@@ -35,33 +35,33 @@ static const List<ReactionsCreateForIssueCommentRequestContent> values = [plus1,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReactionsCreateForIssueCommentRequestContent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReactionsCreateForIssueCommentRequestContent($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReactionsCreateForIssueCommentRequestContent && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReactionsCreateForIssueCommentRequestContent($value)';}
+}
 @immutable final class ReactionsCreateForIssueCommentRequest {const ReactionsCreateForIssueCommentRequest({required this.content});
 
-factory ReactionsCreateForIssueCommentRequest.fromJson(Map<String, dynamic> json) { return ReactionsCreateForIssueCommentRequest(
+factory ReactionsCreateForIssueCommentRequest.fromJson(Map<String, dynamic> json) {return ReactionsCreateForIssueCommentRequest(
   content: ReactionsCreateForIssueCommentRequestContent.fromJson(json['content'] as String),
-); }
+);}
 
 /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue comment.
 final ReactionsCreateForIssueCommentRequestContent content;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content'); } 
-ReactionsCreateForIssueCommentRequest copyWith({ReactionsCreateForIssueCommentRequestContent? content}) { return ReactionsCreateForIssueCommentRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content');}
+ReactionsCreateForIssueCommentRequest copyWith({ReactionsCreateForIssueCommentRequestContent? content}) {return ReactionsCreateForIssueCommentRequest(
   content: content ?? this.content,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReactionsCreateForIssueCommentRequest &&
-          content == other.content; } 
-@override int get hashCode { return content.hashCode; } 
-@override String toString() { return 'ReactionsCreateForIssueCommentRequest(content: $content)'; } 
- }
+          content == other.content;}
+@override int get hashCode {return content.hashCode;}
+@override String toString() {return 'ReactionsCreateForIssueCommentRequest(content: $content)';}
+}

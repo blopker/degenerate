@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cluster_trust_bundle_projection.dart';import 'config_map_projection.dart';import 'pod_certificate_projection.dart';import 'projection.dart';import 'secret_projection.dart';import 'service_account_token_projection.dart';/// Projection that may be projected along with other supported volume types. Exactly one of these fields must be set.
 @immutable final class VolumeProjection {const VolumeProjection({this.clusterTrustBundle, this.configMap, this.downwardApi, this.podCertificate, this.secret, this.serviceAccountToken, });
 
-factory VolumeProjection.fromJson(Map<String, dynamic> json) { return VolumeProjection(
+factory VolumeProjection.fromJson(Map<String, dynamic> json) {return VolumeProjection(
   clusterTrustBundle: json['clusterTrustBundle'] != null ? ClusterTrustBundleProjection.fromJson(json['clusterTrustBundle'] as Map<String, dynamic>) : null,
   configMap: json['configMap'] != null ? ConfigMapProjection.fromJson(json['configMap'] as Map<String, dynamic>) : null,
   downwardApi: json['downwardAPI'] != null ? Projection.fromJson(json['downwardAPI'] as Map<String, dynamic>) : null,
   podCertificate: json['podCertificate'] != null ? PodCertificateProjection.fromJson(json['podCertificate'] as Map<String, dynamic>) : null,
   secret: json['secret'] != null ? SecretProjection.fromJson(json['secret'] as Map<String, dynamic>) : null,
   serviceAccountToken: json['serviceAccountToken'] != null ? ServiceAccountTokenProjection.fromJson(json['serviceAccountToken'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// ClusterTrustBundle allows a pod to access the `.spec.trustBundle` field of ClusterTrustBundle objects in an auto-updating file.
 /// 
@@ -48,31 +48,31 @@ final SecretProjection? secret;
 /// serviceAccountToken is information about the serviceAccountToken data to project
 final ServiceAccountTokenProjection? serviceAccountToken;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (clusterTrustBundle != null) 'clusterTrustBundle': clusterTrustBundle?.toJson(),
   if (configMap != null) 'configMap': configMap?.toJson(),
   if (downwardApi != null) 'downwardAPI': downwardApi?.toJson(),
   if (podCertificate != null) 'podCertificate': podCertificate?.toJson(),
   if (secret != null) 'secret': secret?.toJson(),
   if (serviceAccountToken != null) 'serviceAccountToken': serviceAccountToken?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'clusterTrustBundle', 'configMap', 'downwardAPI', 'podCertificate', 'secret', 'serviceAccountToken'}.contains(key)); } 
-VolumeProjection copyWith({ClusterTrustBundleProjection? Function()? clusterTrustBundle, ConfigMapProjection? Function()? configMap, Projection? Function()? downwardApi, PodCertificateProjection? Function()? podCertificate, SecretProjection? Function()? secret, ServiceAccountTokenProjection? Function()? serviceAccountToken, }) { return VolumeProjection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'clusterTrustBundle', 'configMap', 'downwardAPI', 'podCertificate', 'secret', 'serviceAccountToken'}.contains(key));}
+VolumeProjection copyWith({ClusterTrustBundleProjection? Function()? clusterTrustBundle, ConfigMapProjection? Function()? configMap, Projection? Function()? downwardApi, PodCertificateProjection? Function()? podCertificate, SecretProjection? Function()? secret, ServiceAccountTokenProjection? Function()? serviceAccountToken, }) {return VolumeProjection(
   clusterTrustBundle: clusterTrustBundle != null ? clusterTrustBundle() : this.clusterTrustBundle,
   configMap: configMap != null ? configMap() : this.configMap,
   downwardApi: downwardApi != null ? downwardApi() : this.downwardApi,
   podCertificate: podCertificate != null ? podCertificate() : this.podCertificate,
   secret: secret != null ? secret() : this.secret,
   serviceAccountToken: serviceAccountToken != null ? serviceAccountToken() : this.serviceAccountToken,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is VolumeProjection &&
           clusterTrustBundle == other.clusterTrustBundle &&
           configMap == other.configMap &&
           downwardApi == other.downwardApi &&
           podCertificate == other.podCertificate &&
           secret == other.secret &&
-          serviceAccountToken == other.serviceAccountToken; } 
-@override int get hashCode { return Object.hash(clusterTrustBundle, configMap, downwardApi, podCertificate, secret, serviceAccountToken); } 
-@override String toString() { return 'VolumeProjection(clusterTrustBundle: $clusterTrustBundle, configMap: $configMap, downwardApi: $downwardApi, podCertificate: $podCertificate, secret: $secret, serviceAccountToken: $serviceAccountToken)'; } 
- }
+          serviceAccountToken == other.serviceAccountToken;}
+@override int get hashCode {return Object.hash(clusterTrustBundle, configMap, downwardApi, podCertificate, secret, serviceAccountToken);}
+@override String toString() {return 'VolumeProjection(clusterTrustBundle: $clusterTrustBundle, configMap: $configMap, downwardApi: $downwardApi, podCertificate: $podCertificate, secret: $secret, serviceAccountToken: $serviceAccountToken)';}
+}

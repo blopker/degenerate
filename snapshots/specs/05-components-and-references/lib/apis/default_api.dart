@@ -10,7 +10,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 
 ///
 /// `GET /users`
-Future<ApiResult<List<User>, Never>> listUsers({int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<User>, Never>> listUsers({int? limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -34,10 +34,10 @@ final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => User.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 ///
 /// `POST /users`
-Future<ApiResult<void, Never>> createUser({required User body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> createUser({required User body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,10 +52,10 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 ///
 /// `GET /users/{userId}`
-Future<ApiResult<User, Never>> getUserById({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<User, Never>> getUserById({required String userId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,5 +71,5 @@ final json = jsonDecode(response.body);
 return User.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

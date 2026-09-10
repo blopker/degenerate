@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'personal_access_token_request.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookPersonalAccessTokenRequestApprovedAction {const WebhookPersonalAccessTokenRequestApprovedAction._(this.value);
 
-factory WebhookPersonalAccessTokenRequestApprovedAction.fromJson(String json) { return switch (json) {
+factory WebhookPersonalAccessTokenRequestApprovedAction.fromJson(String json) {return switch (json) {
   'approved' => approved,
   _ => WebhookPersonalAccessTokenRequestApprovedAction._(json),
-}; }
+};}
 
 static const WebhookPersonalAccessTokenRequestApprovedAction approved = WebhookPersonalAccessTokenRequestApprovedAction._('approved');
 
@@ -13,24 +13,24 @@ static const List<WebhookPersonalAccessTokenRequestApprovedAction> values = [app
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPersonalAccessTokenRequestApprovedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPersonalAccessTokenRequestApprovedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPersonalAccessTokenRequestApprovedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPersonalAccessTokenRequestApprovedAction($value)';}
+}
 @immutable final class WebhookPersonalAccessTokenRequestApproved {const WebhookPersonalAccessTokenRequestApproved({required this.action, required this.personalAccessTokenRequest, required this.organization, required this.sender, required this.installation, this.enterprise, });
 
-factory WebhookPersonalAccessTokenRequestApproved.fromJson(Map<String, dynamic> json) { return WebhookPersonalAccessTokenRequestApproved(
+factory WebhookPersonalAccessTokenRequestApproved.fromJson(Map<String, dynamic> json) {return WebhookPersonalAccessTokenRequestApproved(
   action: WebhookPersonalAccessTokenRequestApprovedAction.fromJson(json['action'] as String),
   personalAccessTokenRequest: PersonalAccessTokenRequest.fromJson(json['personal_access_token_request'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   installation: SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookPersonalAccessTokenRequestApprovedAction action;
 
@@ -44,35 +44,35 @@ final SimpleUser sender;
 
 final SimpleInstallation installation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'personal_access_token_request': personalAccessTokenRequest.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'organization': organization.toJson(),
   'sender': sender.toJson(),
   'installation': installation.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('personal_access_token_request') &&
       json.containsKey('organization') &&
       json.containsKey('sender') &&
-      json.containsKey('installation'); } 
-WebhookPersonalAccessTokenRequestApproved copyWith({WebhookPersonalAccessTokenRequestApprovedAction? action, PersonalAccessTokenRequest? personalAccessTokenRequest, EnterpriseWebhooks? Function()? enterprise, OrganizationSimpleWebhooks? organization, SimpleUser? sender, SimpleInstallation? installation, }) { return WebhookPersonalAccessTokenRequestApproved(
+      json.containsKey('installation');}
+WebhookPersonalAccessTokenRequestApproved copyWith({WebhookPersonalAccessTokenRequestApprovedAction? action, PersonalAccessTokenRequest? personalAccessTokenRequest, EnterpriseWebhooks? Function()? enterprise, OrganizationSimpleWebhooks? organization, SimpleUser? sender, SimpleInstallation? installation, }) {return WebhookPersonalAccessTokenRequestApproved(
   action: action ?? this.action,
   personalAccessTokenRequest: personalAccessTokenRequest ?? this.personalAccessTokenRequest,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   organization: organization ?? this.organization,
   sender: sender ?? this.sender,
   installation: installation ?? this.installation,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPersonalAccessTokenRequestApproved &&
           action == other.action &&
           personalAccessTokenRequest == other.personalAccessTokenRequest &&
           enterprise == other.enterprise &&
           organization == other.organization &&
           sender == other.sender &&
-          installation == other.installation; } 
-@override int get hashCode { return Object.hash(action, personalAccessTokenRequest, enterprise, organization, sender, installation); } 
-@override String toString() { return 'WebhookPersonalAccessTokenRequestApproved(action: $action, personalAccessTokenRequest: $personalAccessTokenRequest, enterprise: $enterprise, organization: $organization, sender: $sender, installation: $installation)'; } 
- }
+          installation == other.installation;}
+@override int get hashCode {return Object.hash(action, personalAccessTokenRequest, enterprise, organization, sender, installation);}
+@override String toString() {return 'WebhookPersonalAccessTokenRequestApproved(action: $action, personalAccessTokenRequest: $personalAccessTokenRequest, enterprise: $enterprise, organization: $organization, sender: $sender, installation: $installation)';}
+}

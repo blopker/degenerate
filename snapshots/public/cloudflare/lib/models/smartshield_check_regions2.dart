@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
 @immutable final class SmartshieldCheckRegions2 {const SmartshieldCheckRegions2._(this.value);
 
-factory SmartshieldCheckRegions2.fromJson(String json) { return switch (json) {
+factory SmartshieldCheckRegions2.fromJson(String json) {return switch (json) {
   'WNAM' => wnam,
   'ENAM' => enam,
   'WEU' => weu,
@@ -19,7 +19,7 @@ factory SmartshieldCheckRegions2.fromJson(String json) { return switch (json) {
   'NEAS' => neas,
   'ALL_REGIONS' => allRegions,
   _ => SmartshieldCheckRegions2._(json),
-}; }
+};}
 
 static const SmartshieldCheckRegions2 wnam = SmartshieldCheckRegions2._('WNAM');
 
@@ -53,11 +53,11 @@ static const List<SmartshieldCheckRegions2> values = [wnam, enam, weu, eeu, nsam
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SmartshieldCheckRegions2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SmartshieldCheckRegions2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SmartshieldCheckRegions2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SmartshieldCheckRegions2($value)';}
+}

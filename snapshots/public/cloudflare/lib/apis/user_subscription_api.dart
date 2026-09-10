@@ -13,7 +13,7 @@ final class UserSubscriptionApi with ApiExecutor {const UserSubscriptionApi(this
 /// Lists all of a user's subscriptions.
 ///
 /// `GET /user/subscriptions`
-Future<ApiResult<List<Subscription2>, UserSubscriptionGetUserSubscriptionsResponse4xx>> userSubscriptionGetUserSubscriptions({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Subscription2>, UserSubscriptionGetUserSubscriptionsResponse4xx>> userSubscriptionGetUserSubscriptions({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -39,13 +39,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update User Subscription
 ///
 /// Updates a user's subscriptions.
 ///
 /// `PUT /user/subscriptions/{identifier}`
-Future<ApiResult<Map<String, dynamic>, UserSubscriptionUpdateUserSubscriptionResponse4xx>> userSubscriptionUpdateUserSubscription({required SchemasIdentifier identifier, required Request2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, UserSubscriptionUpdateUserSubscriptionResponse4xx>> userSubscriptionUpdateUserSubscription({required SchemasIdentifier identifier, required Request2 body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return null;
 
   },
 );
- } 
+}
 /// Delete User Subscription
 ///
 /// Deletes a user's subscription.
 ///
 /// `DELETE /user/subscriptions/{identifier}`
-Future<ApiResult<UserSubscriptionDeleteUserSubscriptionResponse, UserSubscriptionDeleteUserSubscriptionResponse4xx>> userSubscriptionDeleteUserSubscription({required SchemasIdentifier identifier, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UserSubscriptionDeleteUserSubscriptionResponse, UserSubscriptionDeleteUserSubscriptionResponse4xx>> userSubscriptionDeleteUserSubscription({required SchemasIdentifier identifier, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -105,5 +105,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

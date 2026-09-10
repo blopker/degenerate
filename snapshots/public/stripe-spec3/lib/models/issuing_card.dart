@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_card_authorization_controls.dart';import 'issuing_card_fraud_warning.dart';import 'issuing_card_personalization_design.dart';import 'issuing_card_replaced_by.dart';import 'issuing_card_replacement_for.dart';import 'issuing_card_shipping.dart';import 'issuing_card_wallets.dart';import 'issuing_cardholder.dart';/// The reason why the card was canceled.
 @immutable final class IssuingCardCancellationReason {const IssuingCardCancellationReason._(this.value);
 
-factory IssuingCardCancellationReason.fromJson(String json) { return switch (json) {
+factory IssuingCardCancellationReason.fromJson(String json) {return switch (json) {
   'design_rejected' => designRejected,
   'lost' => lost,
   'stolen' => stolen,
   _ => IssuingCardCancellationReason._(json),
-}; }
+};}
 
 static const IssuingCardCancellationReason designRejected = IssuingCardCancellationReason._('design_rejected');
 
@@ -20,21 +20,21 @@ static const List<IssuingCardCancellationReason> values = [designRejected, lost,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardCancellationReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardCancellationReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingCardCancellationReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingCardCancellationReason($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IssuingCardObject {const IssuingCardObject._(this.value);
 
-factory IssuingCardObject.fromJson(String json) { return switch (json) {
+factory IssuingCardObject.fromJson(String json) {return switch (json) {
   'issuing.card' => issuingCard,
   _ => IssuingCardObject._(json),
-}; }
+};}
 
 static const IssuingCardObject issuingCard = IssuingCardObject._('issuing.card');
 
@@ -42,24 +42,24 @@ static const List<IssuingCardObject> values = [issuingCard];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingCardObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingCardObject($value)';}
+}
 /// The reason why the previous card needed to be replaced.
 @immutable final class IssuingCardReplacementReason {const IssuingCardReplacementReason._(this.value);
 
-factory IssuingCardReplacementReason.fromJson(String json) { return switch (json) {
+factory IssuingCardReplacementReason.fromJson(String json) {return switch (json) {
   'damaged' => damaged,
   'expired' => expired,
   'lost' => lost,
   'stolen' => stolen,
   _ => IssuingCardReplacementReason._(json),
-}; }
+};}
 
 static const IssuingCardReplacementReason damaged = IssuingCardReplacementReason._('damaged');
 
@@ -73,23 +73,23 @@ static const List<IssuingCardReplacementReason> values = [damaged, expired, lost
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardReplacementReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardReplacementReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingCardReplacementReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingCardReplacementReason($value)';}
+}
 /// Whether authorizations can be approved on this card. May be blocked from activating cards depending on past-due Cardholder requirements. Defaults to `inactive`.
 @immutable final class IssuingCardStatus {const IssuingCardStatus._(this.value);
 
-factory IssuingCardStatus.fromJson(String json) { return switch (json) {
+factory IssuingCardStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'canceled' => canceled,
   'inactive' => inactive,
   _ => IssuingCardStatus._(json),
-}; }
+};}
 
 static const IssuingCardStatus active = IssuingCardStatus._('active');
 
@@ -101,22 +101,22 @@ static const List<IssuingCardStatus> values = [active, canceled, inactive];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingCardStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingCardStatus($value)';}
+}
 /// The type of the card.
 @immutable final class IssuingCardType {const IssuingCardType._(this.value);
 
-factory IssuingCardType.fromJson(String json) { return switch (json) {
+factory IssuingCardType.fromJson(String json) {return switch (json) {
   'physical' => physical,
   'virtual' => virtual,
   _ => IssuingCardType._(json),
-}; }
+};}
 
 static const IssuingCardType physical = IssuingCardType._('physical');
 
@@ -126,18 +126,18 @@ static const List<IssuingCardType> values = [physical, virtual];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingCardType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingCardType($value)';}
+}
 /// You can [create physical or virtual cards](https://docs.stripe.com/issuing) that are issued to cardholders.
 @immutable final class IssuingCard {const IssuingCard({required this.brand, required this.cardholder, required this.created, required this.currency, required this.expMonth, required this.expYear, required this.id, required this.last4, required this.livemode, required this.metadata, required this.object, required this.spendingControls, required this.status, required this.type, this.cancellationReason = const Omittable.absent(), this.cvc, this.financialAccount = const Omittable.absent(), this.latestFraudWarning = const Omittable.absent(), this.number, this.personalizationDesign = const Omittable.absent(), this.replacedBy = const Omittable.absent(), this.replacementFor = const Omittable.absent(), this.replacementReason = const Omittable.absent(), this.secondLine = const Omittable.absent(), this.shipping = const Omittable.absent(), this.wallets = const Omittable.absent(), });
 
-factory IssuingCard.fromJson(Map<String, dynamic> json) { return IssuingCard(
+factory IssuingCard.fromJson(Map<String, dynamic> json) {return IssuingCard(
   brand: json['brand'] as String,
   cancellationReason: json.containsKey('cancellation_reason') ? Omittable(json['cancellation_reason'] != null ? IssuingCardCancellationReason.fromJson(json['cancellation_reason'] as String) : null) : const Omittable.absent(),
   cardholder: IssuingCardholder.fromJson(json['cardholder'] as Map<String, dynamic>),
@@ -164,7 +164,7 @@ factory IssuingCard.fromJson(Map<String, dynamic> json) { return IssuingCard(
   status: IssuingCardStatus.fromJson(json['status'] as String),
   type: IssuingCardType.fromJson(json['type'] as String),
   wallets: json.containsKey('wallets') ? Omittable(json['wallets'] != null ? IssuingCardWallets.fromJson(json['wallets'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The brand of the card.
 final String brand;
@@ -242,7 +242,7 @@ final IssuingCardType type;
 /// Information relating to digital wallets (like Apple Pay and Google Pay).
 final Omittable<IssuingCardWallets?> wallets;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'brand': brand,
   if (cancellationReason.isPresent) 'cancellation_reason': cancellationReason.value?.toJson(),
   'cardholder': cardholder.toJson(),
@@ -269,8 +269,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'type': type.toJson(),
   if (wallets.isPresent) 'wallets': wallets.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand') && json['brand'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('brand') && json['brand'] is String &&
       json.containsKey('cardholder') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
@@ -283,8 +283,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('object') &&
       json.containsKey('spending_controls') &&
       json.containsKey('status') &&
-      json.containsKey('type'); } 
-IssuingCard copyWith({String? brand, Omittable<IssuingCardCancellationReason?>? cancellationReason, IssuingCardholder? cardholder, int? created, String? currency, String? Function()? cvc, int? expMonth, int? expYear, Omittable<String?>? financialAccount, String? id, String? last4, Omittable<IssuingCardFraudWarning?>? latestFraudWarning, bool? livemode, Map<String,String>? metadata, String? Function()? number, IssuingCardObject? object, Omittable<IssuingCardPersonalizationDesign?>? personalizationDesign, Omittable<IssuingCardReplacedBy?>? replacedBy, Omittable<IssuingCardReplacementFor?>? replacementFor, Omittable<IssuingCardReplacementReason?>? replacementReason, Omittable<String?>? secondLine, Omittable<IssuingCardShipping?>? shipping, IssuingCardAuthorizationControls? spendingControls, IssuingCardStatus? status, IssuingCardType? type, Omittable<IssuingCardWallets?>? wallets, }) { return IssuingCard(
+      json.containsKey('type');}
+IssuingCard copyWith({String? brand, Omittable<IssuingCardCancellationReason?>? cancellationReason, IssuingCardholder? cardholder, int? created, String? currency, String? Function()? cvc, int? expMonth, int? expYear, Omittable<String?>? financialAccount, String? id, String? last4, Omittable<IssuingCardFraudWarning?>? latestFraudWarning, bool? livemode, Map<String,String>? metadata, String? Function()? number, IssuingCardObject? object, Omittable<IssuingCardPersonalizationDesign?>? personalizationDesign, Omittable<IssuingCardReplacedBy?>? replacedBy, Omittable<IssuingCardReplacementFor?>? replacementFor, Omittable<IssuingCardReplacementReason?>? replacementReason, Omittable<String?>? secondLine, Omittable<IssuingCardShipping?>? shipping, IssuingCardAuthorizationControls? spendingControls, IssuingCardStatus? status, IssuingCardType? type, Omittable<IssuingCardWallets?>? wallets, }) {return IssuingCard(
   brand: brand ?? this.brand,
   cancellationReason: cancellationReason ?? this.cancellationReason,
   cardholder: cardholder ?? this.cardholder,
@@ -311,8 +311,8 @@ IssuingCard copyWith({String? brand, Omittable<IssuingCardCancellationReason?>? 
   status: status ?? this.status,
   type: type ?? this.type,
   wallets: wallets ?? this.wallets,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingCard &&
           brand == other.brand &&
           cancellationReason == other.cancellationReason &&
@@ -339,7 +339,7 @@ IssuingCard copyWith({String? brand, Omittable<IssuingCardCancellationReason?>? 
           spendingControls == other.spendingControls &&
           status == other.status &&
           type == other.type &&
-          wallets == other.wallets; } 
-@override int get hashCode { return Object.hashAll([brand, cancellationReason, cardholder, created, currency, cvc, expMonth, expYear, financialAccount, id, last4, latestFraudWarning, livemode, metadata, number, object, personalizationDesign, replacedBy, replacementFor, replacementReason, secondLine, shipping, spendingControls, status, type, wallets]); } 
-@override String toString() { return 'IssuingCard(brand: $brand, cancellationReason: $cancellationReason, cardholder: $cardholder, created: $created, currency: $currency, cvc: $cvc, expMonth: $expMonth, expYear: $expYear, financialAccount: $financialAccount, id: $id, last4: $last4, latestFraudWarning: $latestFraudWarning, livemode: $livemode, metadata: $metadata, number: $number, object: $object, personalizationDesign: $personalizationDesign, replacedBy: $replacedBy, replacementFor: $replacementFor, replacementReason: $replacementReason, secondLine: $secondLine, shipping: $shipping, spendingControls: $spendingControls, status: $status, type: $type, wallets: $wallets)'; } 
- }
+          wallets == other.wallets;}
+@override int get hashCode {return Object.hashAll([brand, cancellationReason, cardholder, created, currency, cvc, expMonth, expYear, financialAccount, id, last4, latestFraudWarning, livemode, metadata, number, object, personalizationDesign, replacedBy, replacementFor, replacementReason, secondLine, shipping, spendingControls, status, type, wallets]);}
+@override String toString() {return 'IssuingCard(brand: $brand, cancellationReason: $cancellationReason, cardholder: $cardholder, created: $created, currency: $currency, cvc: $cvc, expMonth: $expMonth, expYear: $expYear, financialAccount: $financialAccount, id: $id, last4: $last4, latestFraudWarning: $latestFraudWarning, livemode: $livemode, metadata: $metadata, number: $number, object: $object, personalizationDesign: $personalizationDesign, replacedBy: $replacedBy, replacementFor: $replacementFor, replacementReason: $replacementReason, secondLine: $secondLine, shipping: $shipping, spendingControls: $spendingControls, status: $status, type: $type, wallets: $wallets)';}
+}

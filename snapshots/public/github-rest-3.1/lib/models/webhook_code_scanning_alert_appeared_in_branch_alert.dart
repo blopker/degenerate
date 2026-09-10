@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_alert_dismissed_comment.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_appeared_in_branch_alert_dismissed_by.dart';import 'webhook_code_scanning_alert_appeared_in_branch_alert_most_recent_instance.dart';import 'webhook_code_scanning_alert_appeared_in_branch_alert_rule.dart';import 'webhook_code_scanning_alert_appeared_in_branch_alert_tool.dart';/// The reason for dismissing or closing the alert.
 @immutable final class WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason {const WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason._(this.value);
 
-factory WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason.fromJson(String json) { return switch (json) {
+factory WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason.fromJson(String json) {return switch (json) {
   'false positive' => falsePositive,
   "won't fix" => wontFix,
   'used in tests' => usedInTests,
   'null' => $null,
   _ => WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason._(json),
-}; }
+};}
 
 static const WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason falsePositive = WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason._('false positive');
 
@@ -23,24 +23,24 @@ static const List<WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason($value)';}
+}
 /// State of a code scanning alert. Events for alerts found outside the default branch will return a `null` value until they are dismissed or fixed.
 @immutable final class WebhookCodeScanningAlertAppearedInBranchAlertState {const WebhookCodeScanningAlertAppearedInBranchAlertState._(this.value);
 
-factory WebhookCodeScanningAlertAppearedInBranchAlertState.fromJson(String json) { return switch (json) {
+factory WebhookCodeScanningAlertAppearedInBranchAlertState.fromJson(String json) {return switch (json) {
   'open' => open,
   'dismissed' => dismissed,
   'fixed' => fixed,
   'null' => $null,
   _ => WebhookCodeScanningAlertAppearedInBranchAlertState._(json),
-}; }
+};}
 
 static const WebhookCodeScanningAlertAppearedInBranchAlertState open = WebhookCodeScanningAlertAppearedInBranchAlertState._('open');
 
@@ -54,18 +54,18 @@ static const List<WebhookCodeScanningAlertAppearedInBranchAlertState> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCodeScanningAlertAppearedInBranchAlertState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertAppearedInBranchAlertState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCodeScanningAlertAppearedInBranchAlertState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCodeScanningAlertAppearedInBranchAlertState($value)';}
+}
 /// The code scanning alert involved in the event.
 @immutable final class WebhookCodeScanningAlertAppearedInBranchAlert {const WebhookCodeScanningAlertAppearedInBranchAlert({required this.createdAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.htmlUrl, required this.number, required this.rule, required this.state, required this.tool, required this.url, this.assignees, this.dismissedComment = const Omittable.absent(), this.fixedAt = const Omittable.absent(), this.mostRecentInstance = const Omittable.absent(), });
 
-factory WebhookCodeScanningAlertAppearedInBranchAlert.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertAppearedInBranchAlert(
+factory WebhookCodeScanningAlertAppearedInBranchAlert.fromJson(Map<String, dynamic> json) {return WebhookCodeScanningAlertAppearedInBranchAlert(
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: DateTime.parse(json['created_at'] as String),
   dismissedAt: json['dismissed_at'] != null ? DateTime.parse(json['dismissed_at'] as String) : null,
@@ -80,7 +80,7 @@ factory WebhookCodeScanningAlertAppearedInBranchAlert.fromJson(Map<String, dynam
   state: json['state'] != null ? WebhookCodeScanningAlertAppearedInBranchAlertState.fromJson(json['state'] as String) : null,
   tool: WebhookCodeScanningAlertAppearedInBranchAlertTool.fromJson(json['tool'] as Map<String, dynamic>),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final List<SimpleUser>? assignees;
 
@@ -118,7 +118,7 @@ final WebhookCodeScanningAlertAppearedInBranchAlertTool tool;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
   'created_at': createdAt.toIso8601String(),
   'dismissed_at': dismissedAt?.toIso8601String(),
@@ -133,8 +133,8 @@ Map<String, dynamic> toJson() { return {
   'state': state?.toJson(),
   'tool': tool.toJson(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('dismissed_at') && (json['dismissed_at'] == null || json['dismissed_at'] is String) &&
       json.containsKey('dismissed_by') &&
       json.containsKey('dismissed_reason') &&
@@ -143,8 +143,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('rule') &&
       json.containsKey('state') &&
       json.containsKey('tool') &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookCodeScanningAlertAppearedInBranchAlert copyWith({List<SimpleUser>? Function()? assignees, DateTime? createdAt, DateTime? Function()? dismissedAt, WebhookCodeScanningAlertAppearedInBranchAlertDismissedBy? Function()? dismissedBy, Omittable<CodeScanningAlertDismissedComment?>? dismissedComment, WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason? Function()? dismissedReason, Omittable<dynamic>? fixedAt, Uri? htmlUrl, Omittable<WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance?>? mostRecentInstance, int? number, WebhookCodeScanningAlertAppearedInBranchAlertRule? rule, WebhookCodeScanningAlertAppearedInBranchAlertState? Function()? state, WebhookCodeScanningAlertAppearedInBranchAlertTool? tool, Uri? url, }) { return WebhookCodeScanningAlertAppearedInBranchAlert(
+      json.containsKey('url') && json['url'] is String;}
+WebhookCodeScanningAlertAppearedInBranchAlert copyWith({List<SimpleUser>? Function()? assignees, DateTime? createdAt, DateTime? Function()? dismissedAt, WebhookCodeScanningAlertAppearedInBranchAlertDismissedBy? Function()? dismissedBy, Omittable<CodeScanningAlertDismissedComment?>? dismissedComment, WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason? Function()? dismissedReason, Omittable<dynamic>? fixedAt, Uri? htmlUrl, Omittable<WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance?>? mostRecentInstance, int? number, WebhookCodeScanningAlertAppearedInBranchAlertRule? rule, WebhookCodeScanningAlertAppearedInBranchAlertState? Function()? state, WebhookCodeScanningAlertAppearedInBranchAlertTool? tool, Uri? url, }) {return WebhookCodeScanningAlertAppearedInBranchAlert(
   assignees: assignees != null ? assignees() : this.assignees,
   createdAt: createdAt ?? this.createdAt,
   dismissedAt: dismissedAt != null ? dismissedAt() : this.dismissedAt,
@@ -159,8 +159,8 @@ WebhookCodeScanningAlertAppearedInBranchAlert copyWith({List<SimpleUser>? Functi
   state: state != null ? state() : this.state,
   tool: tool ?? this.tool,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookCodeScanningAlertAppearedInBranchAlert &&
           listEquals(assignees, other.assignees) &&
           createdAt == other.createdAt &&
@@ -175,7 +175,7 @@ WebhookCodeScanningAlertAppearedInBranchAlert copyWith({List<SimpleUser>? Functi
           rule == other.rule &&
           state == other.state &&
           tool == other.tool &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(assignees ?? const []), createdAt, dismissedAt, dismissedBy, dismissedComment, dismissedReason, fixedAt, htmlUrl, mostRecentInstance, number, rule, state, tool, url); } 
-@override String toString() { return 'WebhookCodeScanningAlertAppearedInBranchAlert(assignees: $assignees, createdAt: $createdAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedComment: $dismissedComment, dismissedReason: $dismissedReason, fixedAt: $fixedAt, htmlUrl: $htmlUrl, mostRecentInstance: $mostRecentInstance, number: $number, rule: $rule, state: $state, tool: $tool, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(assignees ?? const []), createdAt, dismissedAt, dismissedBy, dismissedComment, dismissedReason, fixedAt, htmlUrl, mostRecentInstance, number, rule, state, tool, url);}
+@override String toString() {return 'WebhookCodeScanningAlertAppearedInBranchAlert(assignees: $assignees, createdAt: $createdAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedComment: $dismissedComment, dismissedReason: $dismissedReason, fixedAt: $fixedAt, htmlUrl: $htmlUrl, mostRecentInstance: $mostRecentInstance, number: $number, rule: $rule, state: $state, tool: $tool, url: $url)';}
+}

@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cvss_severities.dart';import 'global_advisory_credits.dart';import 'global_advisory_cvss.dart';import 'global_advisory_cwes.dart';import 'global_advisory_identifiers.dart';import 'security_advisory_epss.dart';import 'vulnerability.dart';/// The type of advisory.
 @immutable final class GlobalAdvisoryType {const GlobalAdvisoryType._(this.value);
 
-factory GlobalAdvisoryType.fromJson(String json) { return switch (json) {
+factory GlobalAdvisoryType.fromJson(String json) {return switch (json) {
   'reviewed' => reviewed,
   'unreviewed' => unreviewed,
   'malware' => malware,
   _ => GlobalAdvisoryType._(json),
-}; }
+};}
 
 static const GlobalAdvisoryType reviewed = GlobalAdvisoryType._('reviewed');
 
@@ -20,25 +20,25 @@ static const List<GlobalAdvisoryType> values = [reviewed, unreviewed, malware];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GlobalAdvisoryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GlobalAdvisoryType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GlobalAdvisoryType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GlobalAdvisoryType($value)';}
+}
 /// The severity of the advisory.
 @immutable final class GlobalAdvisorySeverity {const GlobalAdvisorySeverity._(this.value);
 
-factory GlobalAdvisorySeverity.fromJson(String json) { return switch (json) {
+factory GlobalAdvisorySeverity.fromJson(String json) {return switch (json) {
   'critical' => critical,
   'high' => high,
   'medium' => medium,
   'low' => low,
   'unknown' => unknown,
   _ => GlobalAdvisorySeverity._(json),
-}; }
+};}
 
 static const GlobalAdvisorySeverity critical = GlobalAdvisorySeverity._('critical');
 
@@ -54,18 +54,18 @@ static const List<GlobalAdvisorySeverity> values = [critical, high, medium, low,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GlobalAdvisorySeverity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GlobalAdvisorySeverity($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GlobalAdvisorySeverity && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GlobalAdvisorySeverity($value)';}
+}
 /// A GitHub Security Advisory.
 @immutable final class GlobalAdvisory {const GlobalAdvisory({required this.ghsaId, required this.cveId, required this.url, required this.htmlUrl, required this.repositoryAdvisoryUrl, required this.summary, required this.description, required this.type, required this.severity, required this.sourceCodeLocation, required this.identifiers, required this.references, required this.publishedAt, required this.updatedAt, required this.githubReviewedAt, required this.nvdPublishedAt, required this.withdrawnAt, required this.vulnerabilities, required this.cvss, required this.cwes, required this.credits, this.cvssSeverities = const Omittable.absent(), this.epss = const Omittable.absent(), });
 
-factory GlobalAdvisory.fromJson(Map<String, dynamic> json) { return GlobalAdvisory(
+factory GlobalAdvisory.fromJson(Map<String, dynamic> json) {return GlobalAdvisory(
   ghsaId: json['ghsa_id'] as String,
   cveId: json['cve_id'] as String?,
   url: json['url'] as String,
@@ -89,7 +89,7 @@ factory GlobalAdvisory.fromJson(Map<String, dynamic> json) { return GlobalAdviso
   epss: json.containsKey('epss') ? Omittable(json['epss'] != null ? SecurityAdvisoryEpss.fromJson(json['epss'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   cwes: (json['cwes'] as List<dynamic>?)?.map((e) => GlobalAdvisoryCwes.fromJson(e as Map<String, dynamic>)).toList(),
   credits: (json['credits'] as List<dynamic>?)?.map((e) => GlobalAdvisoryCredits.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The GitHub Security Advisory ID.
 final String ghsaId;
@@ -155,7 +155,7 @@ final List<GlobalAdvisoryCwes>? cwes;
 /// The users who contributed to the advisory.
 final List<GlobalAdvisoryCredits>? credits;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ghsa_id': ghsaId,
   'cve_id': cveId,
   'url': url,
@@ -179,8 +179,8 @@ Map<String, dynamic> toJson() { return {
   if (epss.isPresent) 'epss': epss.value?.toJson(),
   'cwes': cwes?.map((e) => e.toJson()).toList(),
   'credits': credits?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
       json.containsKey('cve_id') && (json['cve_id'] == null || json['cve_id'] is String) &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -200,8 +200,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('vulnerabilities') &&
       json.containsKey('cvss') &&
       json.containsKey('cwes') &&
-      json.containsKey('credits'); } 
-GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url, Uri? htmlUrl, Uri? Function()? repositoryAdvisoryUrl, String? summary, String? Function()? description, GlobalAdvisoryType? type, GlobalAdvisorySeverity? severity, Uri? Function()? sourceCodeLocation, List<GlobalAdvisoryIdentifiers>? Function()? identifiers, List<String>? Function()? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? githubReviewedAt, DateTime? Function()? nvdPublishedAt, DateTime? Function()? withdrawnAt, List<Vulnerability>? Function()? vulnerabilities, GlobalAdvisoryCvss? Function()? cvss, Omittable<CvssSeverities?>? cvssSeverities, Omittable<SecurityAdvisoryEpss?>? epss, List<GlobalAdvisoryCwes>? Function()? cwes, List<GlobalAdvisoryCredits>? Function()? credits, }) { return GlobalAdvisory(
+      json.containsKey('credits');}
+GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url, Uri? htmlUrl, Uri? Function()? repositoryAdvisoryUrl, String? summary, String? Function()? description, GlobalAdvisoryType? type, GlobalAdvisorySeverity? severity, Uri? Function()? sourceCodeLocation, List<GlobalAdvisoryIdentifiers>? Function()? identifiers, List<String>? Function()? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? githubReviewedAt, DateTime? Function()? nvdPublishedAt, DateTime? Function()? withdrawnAt, List<Vulnerability>? Function()? vulnerabilities, GlobalAdvisoryCvss? Function()? cvss, Omittable<CvssSeverities?>? cvssSeverities, Omittable<SecurityAdvisoryEpss?>? epss, List<GlobalAdvisoryCwes>? Function()? cwes, List<GlobalAdvisoryCredits>? Function()? credits, }) {return GlobalAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,
   url: url ?? this.url,
@@ -225,8 +225,8 @@ GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url,
   epss: epss ?? this.epss,
   cwes: cwes != null ? cwes() : this.cwes,
   credits: credits != null ? credits() : this.credits,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GlobalAdvisory &&
           ghsaId == other.ghsaId &&
           cveId == other.cveId &&
@@ -250,7 +250,7 @@ GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url,
           cvssSeverities == other.cvssSeverities &&
           epss == other.epss &&
           listEquals(cwes, other.cwes) &&
-          listEquals(credits, other.credits); } 
-@override int get hashCode { return Object.hashAll([ghsaId, cveId, url, htmlUrl, repositoryAdvisoryUrl, summary, description, type, severity, sourceCodeLocation, Object.hashAll(identifiers ?? const []), Object.hashAll(references ?? const []), publishedAt, updatedAt, githubReviewedAt, nvdPublishedAt, withdrawnAt, Object.hashAll(vulnerabilities ?? const []), cvss, cvssSeverities, epss, Object.hashAll(cwes ?? const []), Object.hashAll(credits ?? const [])]); } 
-@override String toString() { return 'GlobalAdvisory(ghsaId: $ghsaId, cveId: $cveId, url: $url, htmlUrl: $htmlUrl, repositoryAdvisoryUrl: $repositoryAdvisoryUrl, summary: $summary, description: $description, type: $type, severity: $severity, sourceCodeLocation: $sourceCodeLocation, identifiers: $identifiers, references: $references, publishedAt: $publishedAt, updatedAt: $updatedAt, githubReviewedAt: $githubReviewedAt, nvdPublishedAt: $nvdPublishedAt, withdrawnAt: $withdrawnAt, vulnerabilities: $vulnerabilities, cvss: $cvss, cvssSeverities: $cvssSeverities, epss: $epss, cwes: $cwes, credits: $credits)'; } 
- }
+          listEquals(credits, other.credits);}
+@override int get hashCode {return Object.hashAll([ghsaId, cveId, url, htmlUrl, repositoryAdvisoryUrl, summary, description, type, severity, sourceCodeLocation, Object.hashAll(identifiers ?? const []), Object.hashAll(references ?? const []), publishedAt, updatedAt, githubReviewedAt, nvdPublishedAt, withdrawnAt, Object.hashAll(vulnerabilities ?? const []), cvss, cvssSeverities, epss, Object.hashAll(cwes ?? const []), Object.hashAll(credits ?? const [])]);}
+@override String toString() {return 'GlobalAdvisory(ghsaId: $ghsaId, cveId: $cveId, url: $url, htmlUrl: $htmlUrl, repositoryAdvisoryUrl: $repositoryAdvisoryUrl, summary: $summary, description: $description, type: $type, severity: $severity, sourceCodeLocation: $sourceCodeLocation, identifiers: $identifiers, references: $references, publishedAt: $publishedAt, updatedAt: $updatedAt, githubReviewedAt: $githubReviewedAt, nvdPublishedAt: $nvdPublishedAt, withdrawnAt: $withdrawnAt, vulnerabilities: $vulnerabilities, cvss: $cvss, cvssSeverities: $cvssSeverities, epss: $epss, cwes: $cwes, credits: $credits)';}
+}

@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'auto_code_in
 /// 
 @immutable final class CodeInterpreterTool {const CodeInterpreterTool({required this.type, required this.container, });
 
-factory CodeInterpreterTool.fromJson(Map<String, dynamic> json) { return CodeInterpreterTool(
+factory CodeInterpreterTool.fromJson(Map<String, dynamic> json) {return CodeInterpreterTool(
   type: json['type'] as String,
   container: OneOf2.parse(json['container'], fromA: (v) => v as String, fromB: (v) => AutoCodeInterpreterToolParam.fromJson(v as Map<String, dynamic>),),
-); }
+);}
 
 /// The type of the code interpreter tool. Always `code_interpreter`.
 /// 
@@ -19,20 +19,20 @@ final String type;
 /// 
 final CodeInterpreterToolContainer container;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'container': container.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('container'); } 
-CodeInterpreterTool copyWith({String? type, CodeInterpreterToolContainer? container, }) { return CodeInterpreterTool(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('container');}
+CodeInterpreterTool copyWith({String? type, CodeInterpreterToolContainer? container, }) {return CodeInterpreterTool(
   type: type ?? this.type,
   container: container ?? this.container,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeInterpreterTool &&
           type == other.type &&
-          container == other.container; } 
-@override int get hashCode { return Object.hash(type, container); } 
-@override String toString() { return 'CodeInterpreterTool(type: $type, container: $container)'; } 
- }
+          container == other.container;}
+@override int get hashCode {return Object.hash(type, container);}
+@override String toString() {return 'CodeInterpreterTool(type: $type, container: $container)';}
+}

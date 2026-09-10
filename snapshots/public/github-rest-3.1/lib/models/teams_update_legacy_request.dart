@@ -8,11 +8,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of pri
 ///  * `closed` - visible to all members of this organization.
 @immutable final class TeamsUpdateLegacyRequestPrivacy {const TeamsUpdateLegacyRequestPrivacy._(this.value);
 
-factory TeamsUpdateLegacyRequestPrivacy.fromJson(String json) { return switch (json) {
+factory TeamsUpdateLegacyRequestPrivacy.fromJson(String json) {return switch (json) {
   'secret' => secret,
   'closed' => closed,
   _ => TeamsUpdateLegacyRequestPrivacy._(json),
-}; }
+};}
 
 static const TeamsUpdateLegacyRequestPrivacy secret = TeamsUpdateLegacyRequestPrivacy._('secret');
 
@@ -22,24 +22,24 @@ static const List<TeamsUpdateLegacyRequestPrivacy> values = [secret, closed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsUpdateLegacyRequestPrivacy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsUpdateLegacyRequestPrivacy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamsUpdateLegacyRequestPrivacy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamsUpdateLegacyRequestPrivacy($value)';}
+}
 /// The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are:
 ///  * `notifications_enabled` - team members receive notifications when the team is @mentioned.
 ///  * `notifications_disabled` - no one receives notifications.
 @immutable final class TeamsUpdateLegacyRequestNotificationSetting {const TeamsUpdateLegacyRequestNotificationSetting._(this.value);
 
-factory TeamsUpdateLegacyRequestNotificationSetting.fromJson(String json) { return switch (json) {
+factory TeamsUpdateLegacyRequestNotificationSetting.fromJson(String json) {return switch (json) {
   'notifications_enabled' => notificationsEnabled,
   'notifications_disabled' => notificationsDisabled,
   _ => TeamsUpdateLegacyRequestNotificationSetting._(json),
-}; }
+};}
 
 static const TeamsUpdateLegacyRequestNotificationSetting notificationsEnabled = TeamsUpdateLegacyRequestNotificationSetting._('notifications_enabled');
 
@@ -49,23 +49,23 @@ static const List<TeamsUpdateLegacyRequestNotificationSetting> values = [notific
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsUpdateLegacyRequestNotificationSetting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsUpdateLegacyRequestNotificationSetting($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamsUpdateLegacyRequestNotificationSetting && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamsUpdateLegacyRequestNotificationSetting($value)';}
+}
 /// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
 @immutable final class TeamsUpdateLegacyRequestPermission {const TeamsUpdateLegacyRequestPermission._(this.value);
 
-factory TeamsUpdateLegacyRequestPermission.fromJson(String json) { return switch (json) {
+factory TeamsUpdateLegacyRequestPermission.fromJson(String json) {return switch (json) {
   'pull' => pull,
   'push' => push,
   'admin' => admin,
   _ => TeamsUpdateLegacyRequestPermission._(json),
-}; }
+};}
 
 static const TeamsUpdateLegacyRequestPermission pull = TeamsUpdateLegacyRequestPermission._('pull');
 
@@ -77,24 +77,24 @@ static const List<TeamsUpdateLegacyRequestPermission> values = [pull, push, admi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsUpdateLegacyRequestPermission && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsUpdateLegacyRequestPermission($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamsUpdateLegacyRequestPermission && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamsUpdateLegacyRequestPermission($value)';}
+}
 @immutable final class TeamsUpdateLegacyRequest {const TeamsUpdateLegacyRequest({required this.name, this.description, this.privacy, this.notificationSetting, this.permission, this.parentTeamId = const Omittable.absent(), });
 
-factory TeamsUpdateLegacyRequest.fromJson(Map<String, dynamic> json) { return TeamsUpdateLegacyRequest(
+factory TeamsUpdateLegacyRequest.fromJson(Map<String, dynamic> json) {return TeamsUpdateLegacyRequest(
   name: json['name'] as String,
   description: json['description'] as String?,
   privacy: json['privacy'] != null ? TeamsUpdateLegacyRequestPrivacy.fromJson(json['privacy'] as String) : null,
   notificationSetting: json['notification_setting'] != null ? TeamsUpdateLegacyRequestNotificationSetting.fromJson(json['notification_setting'] as String) : null,
   permission: json['permission'] != null ? TeamsUpdateLegacyRequestPermission.fromJson(json['permission'] as String) : null,
   parentTeamId: json.containsKey('parent_team_id') ? Omittable(json['parent_team_id'] != null ? (json['parent_team_id'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// The name of the team.
 final String name;
@@ -122,32 +122,32 @@ final TeamsUpdateLegacyRequestPermission? permission;
 final Omittable<int?> parentTeamId;
 
 /// The value with the schema default applied when absent.
-TeamsUpdateLegacyRequestPermission get permissionOrDefault { return permission ?? TeamsUpdateLegacyRequestPermission.fromJson('pull'); } 
-Map<String, dynamic> toJson() { return {
+TeamsUpdateLegacyRequestPermission get permissionOrDefault {return permission ?? TeamsUpdateLegacyRequestPermission.fromJson('pull');}
+Map<String, dynamic> toJson() {return {
   'name': name,
   'description': ?description,
   if (privacy != null) 'privacy': privacy?.toJson(),
   if (notificationSetting != null) 'notification_setting': notificationSetting?.toJson(),
   if (permission != null) 'permission': permission?.toJson(),
   if (parentTeamId.isPresent) 'parent_team_id': parentTeamId.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-TeamsUpdateLegacyRequest copyWith({String? name, String? Function()? description, TeamsUpdateLegacyRequestPrivacy? Function()? privacy, TeamsUpdateLegacyRequestNotificationSetting? Function()? notificationSetting, TeamsUpdateLegacyRequestPermission? Function()? permission, Omittable<int?>? parentTeamId, }) { return TeamsUpdateLegacyRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+TeamsUpdateLegacyRequest copyWith({String? name, String? Function()? description, TeamsUpdateLegacyRequestPrivacy? Function()? privacy, TeamsUpdateLegacyRequestNotificationSetting? Function()? notificationSetting, TeamsUpdateLegacyRequestPermission? Function()? permission, Omittable<int?>? parentTeamId, }) {return TeamsUpdateLegacyRequest(
   name: name ?? this.name,
   description: description != null ? description() : this.description,
   privacy: privacy != null ? privacy() : this.privacy,
   notificationSetting: notificationSetting != null ? notificationSetting() : this.notificationSetting,
   permission: permission != null ? permission() : this.permission,
   parentTeamId: parentTeamId ?? this.parentTeamId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamsUpdateLegacyRequest &&
           name == other.name &&
           description == other.description &&
           privacy == other.privacy &&
           notificationSetting == other.notificationSetting &&
           permission == other.permission &&
-          parentTeamId == other.parentTeamId; } 
-@override int get hashCode { return Object.hash(name, description, privacy, notificationSetting, permission, parentTeamId); } 
-@override String toString() { return 'TeamsUpdateLegacyRequest(name: $name, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, parentTeamId: $parentTeamId)'; } 
- }
+          parentTeamId == other.parentTeamId;}
+@override int get hashCode {return Object.hash(name, description, privacy, notificationSetting, permission, parentTeamId);}
+@override String toString() {return 'TeamsUpdateLegacyRequest(name: $name, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, parentTeamId: $parentTeamId)';}
+}

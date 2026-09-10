@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McpToolCallStatus {const McpToolCallStatus._(this.value);
 
-factory McpToolCallStatus.fromJson(String json) { return switch (json) {
+factory McpToolCallStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
   'calling' => calling,
   'failed' => failed,
   _ => McpToolCallStatus._(json),
-}; }
+};}
 
 static const McpToolCallStatus inProgress = McpToolCallStatus._('in_progress');
 
@@ -25,19 +25,19 @@ static const List<McpToolCallStatus> values = [inProgress, completed, incomplete
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McpToolCallStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'McpToolCallStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is McpToolCallStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'McpToolCallStatus($value)';}
+}
 /// An invocation of a tool on an MCP server.
 /// 
 @immutable final class McpToolCall {const McpToolCall({required this.type, required this.id, required this.serverLabel, required this.name, required this.arguments, this.output = const Omittable.absent(), this.error = const Omittable.absent(), this.status, this.approvalRequestId = const Omittable.absent(), });
 
-factory McpToolCall.fromJson(Map<String, dynamic> json) { return McpToolCall(
+factory McpToolCall.fromJson(Map<String, dynamic> json) {return McpToolCall(
   type: json['type'] as String,
   id: json['id'] as String,
   serverLabel: json['server_label'] as String,
@@ -47,7 +47,7 @@ factory McpToolCall.fromJson(Map<String, dynamic> json) { return McpToolCall(
   error: json.containsKey('error') ? Omittable(json['error'] as String?) : const Omittable.absent(),
   status: json['status'] != null ? McpToolCallStatus.fromJson(json['status'] as String) : null,
   approvalRequestId: json.containsKey('approval_request_id') ? Omittable(json['approval_request_id'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The type of the item. Always `mcp_call`.
 /// 
@@ -86,7 +86,7 @@ final McpToolCallStatus? status;
 /// 
 final Omittable<String?> approvalRequestId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'server_label': serverLabel,
@@ -96,13 +96,13 @@ Map<String, dynamic> toJson() { return {
   if (error.isPresent) 'error': error.value,
   if (status != null) 'status': status?.toJson(),
   if (approvalRequestId.isPresent) 'approval_request_id': approvalRequestId.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('server_label') && json['server_label'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('arguments') && json['arguments'] is String; } 
-McpToolCall copyWith({String? type, String? id, String? serverLabel, String? name, String? arguments, Omittable<String?>? output, Omittable<String?>? error, McpToolCallStatus? Function()? status, Omittable<String?>? approvalRequestId, }) { return McpToolCall(
+      json.containsKey('arguments') && json['arguments'] is String;}
+McpToolCall copyWith({String? type, String? id, String? serverLabel, String? name, String? arguments, Omittable<String?>? output, Omittable<String?>? error, McpToolCallStatus? Function()? status, Omittable<String?>? approvalRequestId, }) {return McpToolCall(
   type: type ?? this.type,
   id: id ?? this.id,
   serverLabel: serverLabel ?? this.serverLabel,
@@ -112,8 +112,8 @@ McpToolCall copyWith({String? type, String? id, String? serverLabel, String? nam
   error: error ?? this.error,
   status: status != null ? status() : this.status,
   approvalRequestId: approvalRequestId ?? this.approvalRequestId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is McpToolCall &&
           type == other.type &&
           id == other.id &&
@@ -123,7 +123,7 @@ McpToolCall copyWith({String? type, String? id, String? serverLabel, String? nam
           output == other.output &&
           error == other.error &&
           status == other.status &&
-          approvalRequestId == other.approvalRequestId; } 
-@override int get hashCode { return Object.hash(type, id, serverLabel, name, arguments, output, error, status, approvalRequestId); } 
-@override String toString() { return 'McpToolCall(type: $type, id: $id, serverLabel: $serverLabel, name: $name, arguments: $arguments, output: $output, error: $error, status: $status, approvalRequestId: $approvalRequestId)'; } 
- }
+          approvalRequestId == other.approvalRequestId;}
+@override int get hashCode {return Object.hash(type, id, serverLabel, name, arguments, output, error, status, approvalRequestId);}
+@override String toString() {return 'McpToolCall(type: $type, id: $id, serverLabel: $serverLabel, name: $name, arguments: $arguments, output: $output, error: $error, status: $status, approvalRequestId: $approvalRequestId)';}
+}

@@ -15,7 +15,7 @@ final class MigrationsApi with ApiExecutor {const MigrationsApi(this.apiConfig);
 /// A list of `repositories` is only returned for export migrations.
 ///
 /// `GET /orgs/{org}/migrations`
-Future<ApiResult<List<Migration>, Never>> migrationsListForOrg({required String org, int? perPage, int? page, List<MigrationsListForOrgExclude>? exclude, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Migration>, Never>> migrationsListForOrg({required String org, int? perPage, int? page, List<MigrationsListForOrgExclude>? exclude, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -47,13 +47,13 @@ final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => Migration.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Start an organization migration
 ///
 /// Initiates the generation of a migration archive.
 ///
 /// `POST /orgs/{org}/migrations`
-Future<ApiResult<Migration, MigrationsStartForOrgError>> migrationsStartForOrg({required String org, required MigrationsStartForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Migration, MigrationsStartForOrgError>> migrationsStartForOrg({required String org, required MigrationsStartForOrgRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -72,7 +72,7 @@ return Migration.fromJson(json as Map<String, dynamic>);
   },
   onError: MigrationsStartForOrgError.parse,
 );
- } 
+}
 /// Get an organization migration status
 ///
 /// Fetches the status of a migration.
@@ -85,7 +85,7 @@ return Migration.fromJson(json as Map<String, dynamic>);
 /// *   `failed`, which means the migration failed.
 ///
 /// `GET /orgs/{org}/migrations/{migration_id}`
-Future<ApiResult<Migration, BasicError>> migrationsGetStatusForOrg({required String org, required int migrationId, List<MigrationsGetStatusForOrgExclude>? exclude, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Migration, BasicError>> migrationsGetStatusForOrg({required String org, required int migrationId, List<MigrationsGetStatusForOrgExclude>? exclude, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (exclude != null) {
 for (final item in exclude) {
@@ -121,13 +121,13 @@ return null;
 
   },
 );
- } 
+}
 /// Download an organization migration archive
 ///
 /// Fetches the URL to a migration archive.
 ///
 /// `GET /orgs/{org}/migrations/{migration_id}/archive`
-Future<ApiResult<void, MigrationsDownloadArchiveForOrgError>> migrationsDownloadArchiveForOrg({required String org, required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, MigrationsDownloadArchiveForOrgError>> migrationsDownloadArchiveForOrg({required String org, required int migrationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -141,13 +141,13 @@ return await execute(
   onSuccess: (_) {},
   onError: MigrationsDownloadArchiveForOrgError.parse,
 );
- } 
+}
 /// Delete an organization migration archive
 ///
 /// Deletes a previous migration archive. Migration archives are automatically deleted after seven days.
 ///
 /// `DELETE /orgs/{org}/migrations/{migration_id}/archive`
-Future<ApiResult<void, BasicError>> migrationsDeleteArchiveForOrg({required String org, required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, BasicError>> migrationsDeleteArchiveForOrg({required String org, required int migrationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -170,13 +170,13 @@ return null;
 
   },
 );
- } 
+}
 /// Unlock an organization repository
 ///
 /// Unlocks a repository that was locked for migration. You should unlock each migrated repository and [delete them](https://docs.github.com/rest/repos/repos#delete-a-repository) when the migration is complete and you no longer need the source data.
 ///
 /// `DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock`
-Future<ApiResult<void, BasicError>> migrationsUnlockRepoForOrg({required String org, required int migrationId, required String repoName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, BasicError>> migrationsUnlockRepoForOrg({required String org, required int migrationId, required String repoName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -199,13 +199,13 @@ return null;
 
   },
 );
- } 
+}
 /// List repositories in an organization migration
 ///
 /// List all the repositories for this organization migration.
 ///
 /// `GET /orgs/{org}/migrations/{migration_id}/repositories`
-Future<ApiResult<List<MinimalRepository>, BasicError>> migrationsListReposForOrg({required String org, required int migrationId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<MinimalRepository>, BasicError>> migrationsListReposForOrg({required String org, required int migrationId, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -242,13 +242,13 @@ return null;
 
   },
 );
- } 
+}
 /// List user migrations
 ///
 /// Lists all migrations a user has started.
 ///
 /// `GET /user/migrations`
-Future<ApiResult<List<Migration>, MigrationsListForAuthenticatedUserError>> migrationsListForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Migration>, MigrationsListForAuthenticatedUserError>> migrationsListForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -276,13 +276,13 @@ return (json as List<dynamic>).map((e) => Migration.fromJson(e as Map<String, dy
   },
   onError: MigrationsListForAuthenticatedUserError.parse,
 );
- } 
+}
 /// Start a user migration
 ///
 /// Initiates the generation of a user migration archive.
 ///
 /// `POST /user/migrations`
-Future<ApiResult<Migration, MigrationsStartForAuthenticatedUserError>> migrationsStartForAuthenticatedUser({required MigrationsStartForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Migration, MigrationsStartForAuthenticatedUserError>> migrationsStartForAuthenticatedUser({required MigrationsStartForAuthenticatedUserRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -301,7 +301,7 @@ return Migration.fromJson(json as Map<String, dynamic>);
   },
   onError: MigrationsStartForAuthenticatedUserError.parse,
 );
- } 
+}
 /// Get a user migration status
 ///
 /// Fetches a single user migration. The response includes the `state` of the migration, which can be one of the following values:
@@ -314,7 +314,7 @@ return Migration.fromJson(json as Map<String, dynamic>);
 /// Once the migration has been `exported` you can [download the migration archive](https://docs.github.com/rest/migrations/users#download-a-user-migration-archive).
 ///
 /// `GET /user/migrations/{migration_id}`
-Future<ApiResult<Migration, MigrationsGetStatusForAuthenticatedUserError>> migrationsGetStatusForAuthenticatedUser({required int migrationId, List<String>? exclude, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Migration, MigrationsGetStatusForAuthenticatedUserError>> migrationsGetStatusForAuthenticatedUser({required int migrationId, List<String>? exclude, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (exclude != null) {
 for (final item in exclude) {
@@ -341,7 +341,7 @@ return Migration.fromJson(json as Map<String, dynamic>);
   },
   onError: MigrationsGetStatusForAuthenticatedUserError.parse,
 );
- } 
+}
 /// Download a user migration archive
 ///
 /// Fetches the URL to download the migration archive as a `tar.gz` file. Depending on the resources your repository uses, the migration archive can contain JSON files with data for these objects:
@@ -367,7 +367,7 @@ return Migration.fromJson(json as Map<String, dynamic>);
 /// The archive will also contain an `attachments` directory that includes all attachment files uploaded to GitHub.com and a `repositories` directory that contains the repository's Git data.
 ///
 /// `GET /user/migrations/{migration_id}/archive`
-Future<ApiResult<void, MigrationsGetArchiveForAuthenticatedUserError>> migrationsGetArchiveForAuthenticatedUser({required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, MigrationsGetArchiveForAuthenticatedUserError>> migrationsGetArchiveForAuthenticatedUser({required int migrationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -381,13 +381,13 @@ return await execute(
   onSuccess: (_) {},
   onError: MigrationsGetArchiveForAuthenticatedUserError.parse,
 );
- } 
+}
 /// Delete a user migration archive
 ///
 /// Deletes a previous migration archive. Downloadable migration archives are automatically deleted after seven days. Migration metadata, which is returned in the [List user migrations](https://docs.github.com/rest/migrations/users#list-user-migrations) and [Get a user migration status](https://docs.github.com/rest/migrations/users#get-a-user-migration-status) endpoints, will continue to be available even after an archive is deleted.
 ///
 /// `DELETE /user/migrations/{migration_id}/archive`
-Future<ApiResult<void, MigrationsDeleteArchiveForAuthenticatedUserError>> migrationsDeleteArchiveForAuthenticatedUser({required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, MigrationsDeleteArchiveForAuthenticatedUserError>> migrationsDeleteArchiveForAuthenticatedUser({required int migrationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -401,13 +401,13 @@ return await execute(
   onSuccess: (_) {},
   onError: MigrationsDeleteArchiveForAuthenticatedUserError.parse,
 );
- } 
+}
 /// Unlock a user repository
 ///
 /// Unlocks a repository. You can lock repositories when you [start a user migration](https://docs.github.com/rest/migrations/users#start-a-user-migration). Once the migration is complete you can unlock each repository to begin using it again or [delete the repository](https://docs.github.com/rest/repos/repos#delete-a-repository) if you no longer need the source data. Returns a status of `404 Not Found` if the repository is not locked.
 ///
 /// `DELETE /user/migrations/{migration_id}/repos/{repo_name}/lock`
-Future<ApiResult<void, MigrationsUnlockRepoForAuthenticatedUserError>> migrationsUnlockRepoForAuthenticatedUser({required int migrationId, required String repoName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, MigrationsUnlockRepoForAuthenticatedUserError>> migrationsUnlockRepoForAuthenticatedUser({required int migrationId, required String repoName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -421,13 +421,13 @@ return await execute(
   onSuccess: (_) {},
   onError: MigrationsUnlockRepoForAuthenticatedUserError.parse,
 );
- } 
+}
 /// List repositories for a user migration
 ///
 /// Lists all the repositories for this user migration.
 ///
 /// `GET /user/migrations/{migration_id}/repositories`
-Future<ApiResult<List<MinimalRepository>, BasicError>> migrationsListReposForAuthenticatedUser({required int migrationId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<MinimalRepository>, BasicError>> migrationsListReposForAuthenticatedUser({required int migrationId, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -464,5 +464,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

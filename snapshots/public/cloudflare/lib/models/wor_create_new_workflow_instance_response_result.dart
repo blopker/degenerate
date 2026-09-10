@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorCreateNewWorkflowInstanceResponseResultStatus {const WorCreateNewWorkflowInstanceResponseResultStatus._(this.value);
 
-factory WorCreateNewWorkflowInstanceResponseResultStatus.fromJson(String json) { return switch (json) {
+factory WorCreateNewWorkflowInstanceResponseResultStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'running' => running,
   'paused' => paused,
@@ -12,7 +12,7 @@ factory WorCreateNewWorkflowInstanceResponseResultStatus.fromJson(String json) {
   'waitingForPause' => waitingForPause,
   'waiting' => waiting,
   _ => WorCreateNewWorkflowInstanceResponseResultStatus._(json),
-}; }
+};}
 
 static const WorCreateNewWorkflowInstanceResponseResultStatus queued = WorCreateNewWorkflowInstanceResponseResultStatus._('queued');
 
@@ -34,22 +34,22 @@ static const List<WorCreateNewWorkflowInstanceResponseResultStatus> values = [qu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorCreateNewWorkflowInstanceResponseResultStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorCreateNewWorkflowInstanceResponseResultStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorCreateNewWorkflowInstanceResponseResultStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorCreateNewWorkflowInstanceResponseResultStatus($value)';}
+}
 @immutable final class WorCreateNewWorkflowInstanceResponseResult {const WorCreateNewWorkflowInstanceResponseResult({required this.id, required this.status, required this.versionId, required this.workflowId, });
 
-factory WorCreateNewWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> json) { return WorCreateNewWorkflowInstanceResponseResult(
+factory WorCreateNewWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> json) {return WorCreateNewWorkflowInstanceResponseResult(
   id: json['id'] as String,
   status: WorCreateNewWorkflowInstanceResponseResultStatus.fromJson(json['status'] as String),
   versionId: json['version_id'] as String,
   workflowId: json['workflow_id'] as String,
-); }
+);}
 
 final String id;
 
@@ -59,28 +59,28 @@ final String versionId;
 
 final String workflowId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'status': status.toJson(),
   'version_id': versionId,
   'workflow_id': workflowId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('status') &&
       json.containsKey('version_id') && json['version_id'] is String &&
-      json.containsKey('workflow_id') && json['workflow_id'] is String; } 
-WorCreateNewWorkflowInstanceResponseResult copyWith({String? id, WorCreateNewWorkflowInstanceResponseResultStatus? status, String? versionId, String? workflowId, }) { return WorCreateNewWorkflowInstanceResponseResult(
+      json.containsKey('workflow_id') && json['workflow_id'] is String;}
+WorCreateNewWorkflowInstanceResponseResult copyWith({String? id, WorCreateNewWorkflowInstanceResponseResultStatus? status, String? versionId, String? workflowId, }) {return WorCreateNewWorkflowInstanceResponseResult(
   id: id ?? this.id,
   status: status ?? this.status,
   versionId: versionId ?? this.versionId,
   workflowId: workflowId ?? this.workflowId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorCreateNewWorkflowInstanceResponseResult &&
           id == other.id &&
           status == other.status &&
           versionId == other.versionId &&
-          workflowId == other.workflowId; } 
-@override int get hashCode { return Object.hash(id, status, versionId, workflowId); } 
-@override String toString() { return 'WorCreateNewWorkflowInstanceResponseResult(id: $id, status: $status, versionId: $versionId, workflowId: $workflowId)'; } 
- }
+          workflowId == other.workflowId;}
+@override int get hashCode {return Object.hash(id, status, versionId, workflowId);}
+@override String toString() {return 'WorCreateNewWorkflowInstanceResponseResult(id: $id, status: $status, versionId: $versionId, workflowId: $workflowId)';}
+}

@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_access_rules.dart';@immutable final class StreamSignedTokenRequest {const StreamSignedTokenRequest({this.accessRules, this.downloadable, this.exp, this.id, this.nbf, this.pem, });
 
-factory StreamSignedTokenRequest.fromJson(Map<String, dynamic> json) { return StreamSignedTokenRequest(
+factory StreamSignedTokenRequest.fromJson(Map<String, dynamic> json) {return StreamSignedTokenRequest(
   accessRules: (json['accessRules'] as List<dynamic>?)?.map((e) => StreamAccessRules.fromJson(e as Map<String, dynamic>)).toList(),
   downloadable: json['downloadable'] as bool?,
   exp: json['exp'] != null ? (json['exp'] as num).toInt() : null,
   id: json['id'] as String?,
   nbf: json['nbf'] != null ? (json['nbf'] as num).toInt() : null,
   pem: json['pem'] as String?,
-); }
+);}
 
 /// The optional list of access rule constraints on the token. Access can be blocked or allowed based on an IP, IP range, or by country. Access rules are evaluated from first to last. If a rule matches, the associated action is applied and no further rules are evaluated.
 final List<StreamAccessRules>? accessRules;
@@ -30,32 +30,32 @@ final int? nbf;
 final String? pem;
 
 /// The value with the schema default applied when absent.
-bool get downloadableOrDefault { return downloadable ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get downloadableOrDefault {return downloadable ?? false;}
+Map<String, dynamic> toJson() {return {
   if (accessRules != null) 'accessRules': accessRules?.map((e) => e.toJson()).toList(),
   'downloadable': ?downloadable,
   'exp': ?exp,
   'id': ?id,
   'nbf': ?nbf,
   'pem': ?pem,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessRules', 'downloadable', 'exp', 'id', 'nbf', 'pem'}.contains(key)); } 
-StreamSignedTokenRequest copyWith({List<StreamAccessRules>? Function()? accessRules, bool? Function()? downloadable, int? Function()? exp, String? Function()? id, int? Function()? nbf, String? Function()? pem, }) { return StreamSignedTokenRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'accessRules', 'downloadable', 'exp', 'id', 'nbf', 'pem'}.contains(key));}
+StreamSignedTokenRequest copyWith({List<StreamAccessRules>? Function()? accessRules, bool? Function()? downloadable, int? Function()? exp, String? Function()? id, int? Function()? nbf, String? Function()? pem, }) {return StreamSignedTokenRequest(
   accessRules: accessRules != null ? accessRules() : this.accessRules,
   downloadable: downloadable != null ? downloadable() : this.downloadable,
   exp: exp != null ? exp() : this.exp,
   id: id != null ? id() : this.id,
   nbf: nbf != null ? nbf() : this.nbf,
   pem: pem != null ? pem() : this.pem,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is StreamSignedTokenRequest &&
           listEquals(accessRules, other.accessRules) &&
           downloadable == other.downloadable &&
           exp == other.exp &&
           id == other.id &&
           nbf == other.nbf &&
-          pem == other.pem; } 
-@override int get hashCode { return Object.hash(Object.hashAll(accessRules ?? const []), downloadable, exp, id, nbf, pem); } 
-@override String toString() { return 'StreamSignedTokenRequest(accessRules: $accessRules, downloadable: $downloadable, exp: $exp, id: $id, nbf: $nbf, pem: $pem)'; } 
- }
+          pem == other.pem;}
+@override int get hashCode {return Object.hash(Object.hashAll(accessRules ?? const []), downloadable, exp, id, nbf, pem);}
+@override String toString() {return 'StreamSignedTokenRequest(accessRules: $accessRules, downloadable: $downloadable, exp: $exp, id: $id, nbf: $nbf, pem: $pem)';}
+}

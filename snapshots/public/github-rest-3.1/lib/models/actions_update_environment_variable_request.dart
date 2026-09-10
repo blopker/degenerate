@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsUpdateEnvironmentVariableRequest {const ActionsUpdateEnvironmentVariableRequest({this.name, this.value, });
 
-factory ActionsUpdateEnvironmentVariableRequest.fromJson(Map<String, dynamic> json) { return ActionsUpdateEnvironmentVariableRequest(
+factory ActionsUpdateEnvironmentVariableRequest.fromJson(Map<String, dynamic> json) {return ActionsUpdateEnvironmentVariableRequest(
   name: json['name'] as String?,
   value: json['value'] as String?,
-); }
+);}
 
 /// The name of the variable.
 final String? name;
@@ -13,19 +13,19 @@ final String? name;
 /// The value of the variable.
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'value'}.contains(key)); } 
-ActionsUpdateEnvironmentVariableRequest copyWith({String? Function()? name, String? Function()? value, }) { return ActionsUpdateEnvironmentVariableRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'value'}.contains(key));}
+ActionsUpdateEnvironmentVariableRequest copyWith({String? Function()? name, String? Function()? value, }) {return ActionsUpdateEnvironmentVariableRequest(
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ActionsUpdateEnvironmentVariableRequest &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'ActionsUpdateEnvironmentVariableRequest(name: $name, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(name, value);}
+@override String toString() {return 'ActionsUpdateEnvironmentVariableRequest(name: $name, value: $value)';}
+}

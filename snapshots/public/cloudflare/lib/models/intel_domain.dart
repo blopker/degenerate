@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_additional_information.dart';import 'intel_application.dart';import 'intel_category_with_super_category_id.dart';import 'intel_content_categories2.dart';import 'intel_domain_name.dart';import 'intel_inherited_from.dart';import 'intel_popularity_rank.dart';import 'intel_resolves_to_ref.dart';import 'intel_risk_score.dart';@immutable final class IntelDomain {const IntelDomain({this.additionalInformation, this.application, this.contentCategories, this.domain, this.inheritedContentCategories, this.inheritedFrom, this.inheritedRiskTypes, this.popularityRank, this.resolvesToRefs, this.riskScore, this.riskTypes, });
 
-factory IntelDomain.fromJson(Map<String, dynamic> json) { return IntelDomain(
+factory IntelDomain.fromJson(Map<String, dynamic> json) {return IntelDomain(
   additionalInformation: json['additional_information'] != null ? IntelAdditionalInformation.fromJson(json['additional_information'] as Map<String, dynamic>) : null,
   application: json['application'] != null ? IntelApplication.fromJson(json['application'] as Map<String, dynamic>) : null,
   contentCategories: (json['content_categories'] as List<dynamic>?)?.map((e) => IntelContentCategories2.fromJson(e as Map<String, dynamic>)).toList(),
@@ -14,7 +14,7 @@ factory IntelDomain.fromJson(Map<String, dynamic> json) { return IntelDomain(
   resolvesToRefs: (json['resolves_to_refs'] as List<dynamic>?)?.map((e) => IntelResolvesToRef.fromJson(e as Map<String, dynamic>)).toList(),
   riskScore: json['risk_score'] != null ? IntelRiskScore.fromJson(json['risk_score'] as num) : null,
   riskTypes: (json['risk_types'] as List<dynamic>?)?.map((e) => IntelCategoryWithSuperCategoryId.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final IntelAdditionalInformation? additionalInformation;
 
@@ -38,7 +38,7 @@ final IntelRiskScore? riskScore;
 
 final List<IntelCategoryWithSuperCategoryId>? riskTypes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (additionalInformation != null) 'additional_information': additionalInformation?.toJson(),
   if (application != null) 'application': application?.toJson(),
   if (contentCategories != null) 'content_categories': contentCategories?.map((e) => e.toJson()).toList(),
@@ -50,9 +50,9 @@ Map<String, dynamic> toJson() { return {
   if (resolvesToRefs != null) 'resolves_to_refs': resolvesToRefs?.map((e) => e.toJson()).toList(),
   if (riskScore != null) 'risk_score': riskScore?.toJson(),
   if (riskTypes != null) 'risk_types': riskTypes?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_information', 'application', 'content_categories', 'domain', 'inherited_content_categories', 'inherited_from', 'inherited_risk_types', 'popularity_rank', 'resolves_to_refs', 'risk_score', 'risk_types'}.contains(key)); } 
-IntelDomain copyWith({IntelAdditionalInformation? Function()? additionalInformation, IntelApplication? Function()? application, List<IntelContentCategories2>? Function()? contentCategories, IntelDomainName? Function()? domain, List<IntelCategoryWithSuperCategoryId>? Function()? inheritedContentCategories, IntelInheritedFrom? Function()? inheritedFrom, List<IntelCategoryWithSuperCategoryId>? Function()? inheritedRiskTypes, IntelPopularityRank? Function()? popularityRank, List<IntelResolvesToRef>? Function()? resolvesToRefs, IntelRiskScore? Function()? riskScore, List<IntelCategoryWithSuperCategoryId>? Function()? riskTypes, }) { return IntelDomain(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'additional_information', 'application', 'content_categories', 'domain', 'inherited_content_categories', 'inherited_from', 'inherited_risk_types', 'popularity_rank', 'resolves_to_refs', 'risk_score', 'risk_types'}.contains(key));}
+IntelDomain copyWith({IntelAdditionalInformation? Function()? additionalInformation, IntelApplication? Function()? application, List<IntelContentCategories2>? Function()? contentCategories, IntelDomainName? Function()? domain, List<IntelCategoryWithSuperCategoryId>? Function()? inheritedContentCategories, IntelInheritedFrom? Function()? inheritedFrom, List<IntelCategoryWithSuperCategoryId>? Function()? inheritedRiskTypes, IntelPopularityRank? Function()? popularityRank, List<IntelResolvesToRef>? Function()? resolvesToRefs, IntelRiskScore? Function()? riskScore, List<IntelCategoryWithSuperCategoryId>? Function()? riskTypes, }) {return IntelDomain(
   additionalInformation: additionalInformation != null ? additionalInformation() : this.additionalInformation,
   application: application != null ? application() : this.application,
   contentCategories: contentCategories != null ? contentCategories() : this.contentCategories,
@@ -64,8 +64,8 @@ IntelDomain copyWith({IntelAdditionalInformation? Function()? additionalInformat
   resolvesToRefs: resolvesToRefs != null ? resolvesToRefs() : this.resolvesToRefs,
   riskScore: riskScore != null ? riskScore() : this.riskScore,
   riskTypes: riskTypes != null ? riskTypes() : this.riskTypes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IntelDomain &&
           additionalInformation == other.additionalInformation &&
           application == other.application &&
@@ -77,7 +77,7 @@ IntelDomain copyWith({IntelAdditionalInformation? Function()? additionalInformat
           popularityRank == other.popularityRank &&
           listEquals(resolvesToRefs, other.resolvesToRefs) &&
           riskScore == other.riskScore &&
-          listEquals(riskTypes, other.riskTypes); } 
-@override int get hashCode { return Object.hash(additionalInformation, application, Object.hashAll(contentCategories ?? const []), domain, Object.hashAll(inheritedContentCategories ?? const []), inheritedFrom, Object.hashAll(inheritedRiskTypes ?? const []), popularityRank, Object.hashAll(resolvesToRefs ?? const []), riskScore, Object.hashAll(riskTypes ?? const [])); } 
-@override String toString() { return 'IntelDomain(additionalInformation: $additionalInformation, application: $application, contentCategories: $contentCategories, domain: $domain, inheritedContentCategories: $inheritedContentCategories, inheritedFrom: $inheritedFrom, inheritedRiskTypes: $inheritedRiskTypes, popularityRank: $popularityRank, resolvesToRefs: $resolvesToRefs, riskScore: $riskScore, riskTypes: $riskTypes)'; } 
- }
+          listEquals(riskTypes, other.riskTypes);}
+@override int get hashCode {return Object.hash(additionalInformation, application, Object.hashAll(contentCategories ?? const []), domain, Object.hashAll(inheritedContentCategories ?? const []), inheritedFrom, Object.hashAll(inheritedRiskTypes ?? const []), popularityRank, Object.hashAll(resolvesToRefs ?? const []), riskScore, Object.hashAll(riskTypes ?? const []));}
+@override String toString() {return 'IntelDomain(additionalInformation: $additionalInformation, application: $application, contentCategories: $contentCategories, domain: $domain, inheritedContentCategories: $inheritedContentCategories, inheritedFrom: $inheritedFrom, inheritedRiskTypes: $inheritedRiskTypes, popularityRank: $popularityRank, resolvesToRefs: $resolvesToRefs, riskScore: $riskScore, riskTypes: $riskTypes)';}
+}

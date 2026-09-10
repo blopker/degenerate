@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_alert_classification.dart';import 'code_scanning_alert_environment.dart';import 'code_scanning_alert_instance_list_message.dart';import 'code_scanning_alert_location.dart';import 'code_scanning_analysis_analysis_key.dart';import 'code_scanning_analysis_category.dart';import 'code_scanning_ref.dart';/// State of a code scanning alert instance.
 @immutable final class CodeScanningAlertInstanceState {const CodeScanningAlertInstanceState._(this.value);
 
-factory CodeScanningAlertInstanceState.fromJson(String json) { return switch (json) {
+factory CodeScanningAlertInstanceState.fromJson(String json) {return switch (json) {
   'open' => open,
   'fixed' => fixed,
   'null' => $null,
   _ => CodeScanningAlertInstanceState._(json),
-}; }
+};}
 
 static const CodeScanningAlertInstanceState open = CodeScanningAlertInstanceState._('open');
 
@@ -20,17 +20,17 @@ static const List<CodeScanningAlertInstanceState> values = [open, fixed, $null];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningAlertInstanceState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningAlertInstanceState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeScanningAlertInstanceState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeScanningAlertInstanceState($value)';}
+}
 @immutable final class CodeScanningAlertInstanceList {const CodeScanningAlertInstanceList({this.ref, this.analysisKey, this.environment, this.category, this.state = const Omittable.absent(), this.commitSha, this.message, this.location, this.htmlUrl, this.classifications, });
 
-factory CodeScanningAlertInstanceList.fromJson(Map<String, dynamic> json) { return CodeScanningAlertInstanceList(
+factory CodeScanningAlertInstanceList.fromJson(Map<String, dynamic> json) {return CodeScanningAlertInstanceList(
   ref: json['ref'] != null ? CodeScanningRef.fromJson(json['ref'] as String) : null,
   analysisKey: json['analysis_key'] != null ? CodeScanningAnalysisAnalysisKey.fromJson(json['analysis_key'] as String) : null,
   environment: json['environment'] != null ? CodeScanningAlertEnvironment.fromJson(json['environment'] as String) : null,
@@ -41,7 +41,7 @@ factory CodeScanningAlertInstanceList.fromJson(Map<String, dynamic> json) { retu
   location: json['location'] != null ? CodeScanningAlertLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
   htmlUrl: json['html_url'] as String?,
   classifications: (json['classifications'] as List<dynamic>?)?.map((e) => e == null ? null : CodeScanningAlertClassification.fromJson(e as String)).toList(),
-); }
+);}
 
 /// The Git reference, formatted as `refs/pull/<number>/merge`, `refs/pull/<number>/head`,
 /// `refs/heads/<branch name>` or simply `<branch name>`.
@@ -71,7 +71,7 @@ final String? htmlUrl;
 /// For example identifying it as documentation, or a generated file.
 final List<CodeScanningAlertClassification?>? classifications;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (ref != null) 'ref': ref?.toJson(),
   if (analysisKey != null) 'analysis_key': analysisKey?.toJson(),
   if (environment != null) 'environment': environment?.toJson(),
@@ -82,9 +82,9 @@ Map<String, dynamic> toJson() { return {
   if (location != null) 'location': location?.toJson(),
   'html_url': ?htmlUrl,
   if (classifications != null) 'classifications': classifications?.map((e) => e?.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ref', 'analysis_key', 'environment', 'category', 'state', 'commit_sha', 'message', 'location', 'html_url', 'classifications'}.contains(key)); } 
-CodeScanningAlertInstanceList copyWith({CodeScanningRef? Function()? ref, CodeScanningAnalysisAnalysisKey? Function()? analysisKey, CodeScanningAlertEnvironment? Function()? environment, CodeScanningAnalysisCategory? Function()? category, Omittable<CodeScanningAlertInstanceState?>? state, String? Function()? commitSha, CodeScanningAlertInstanceListMessage? Function()? message, CodeScanningAlertLocation? Function()? location, String? Function()? htmlUrl, List<CodeScanningAlertClassification?>? Function()? classifications, }) { return CodeScanningAlertInstanceList(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ref', 'analysis_key', 'environment', 'category', 'state', 'commit_sha', 'message', 'location', 'html_url', 'classifications'}.contains(key));}
+CodeScanningAlertInstanceList copyWith({CodeScanningRef? Function()? ref, CodeScanningAnalysisAnalysisKey? Function()? analysisKey, CodeScanningAlertEnvironment? Function()? environment, CodeScanningAnalysisCategory? Function()? category, Omittable<CodeScanningAlertInstanceState?>? state, String? Function()? commitSha, CodeScanningAlertInstanceListMessage? Function()? message, CodeScanningAlertLocation? Function()? location, String? Function()? htmlUrl, List<CodeScanningAlertClassification?>? Function()? classifications, }) {return CodeScanningAlertInstanceList(
   ref: ref != null ? ref() : this.ref,
   analysisKey: analysisKey != null ? analysisKey() : this.analysisKey,
   environment: environment != null ? environment() : this.environment,
@@ -95,8 +95,8 @@ CodeScanningAlertInstanceList copyWith({CodeScanningRef? Function()? ref, CodeSc
   location: location != null ? location() : this.location,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   classifications: classifications != null ? classifications() : this.classifications,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeScanningAlertInstanceList &&
           ref == other.ref &&
           analysisKey == other.analysisKey &&
@@ -107,7 +107,7 @@ CodeScanningAlertInstanceList copyWith({CodeScanningRef? Function()? ref, CodeSc
           message == other.message &&
           location == other.location &&
           htmlUrl == other.htmlUrl &&
-          listEquals(classifications, other.classifications); } 
-@override int get hashCode { return Object.hash(ref, analysisKey, environment, category, state, commitSha, message, location, htmlUrl, Object.hashAll(classifications ?? const [])); } 
-@override String toString() { return 'CodeScanningAlertInstanceList(ref: $ref, analysisKey: $analysisKey, environment: $environment, category: $category, state: $state, commitSha: $commitSha, message: $message, location: $location, htmlUrl: $htmlUrl, classifications: $classifications)'; } 
- }
+          listEquals(classifications, other.classifications);}
+@override int get hashCode {return Object.hash(ref, analysisKey, environment, category, state, commitSha, message, location, htmlUrl, Object.hashAll(classifications ?? const []));}
+@override String toString() {return 'CodeScanningAlertInstanceList(ref: $ref, analysisKey: $analysisKey, environment: $environment, category: $category, state: $state, commitSha: $commitSha, message: $message, location: $location, htmlUrl: $htmlUrl, classifications: $classifications)';}
+}

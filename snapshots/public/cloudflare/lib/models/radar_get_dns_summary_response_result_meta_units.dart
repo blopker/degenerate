@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryResponseResultMetaUnits {const RadarGetDnsSummaryResponseResultMetaUnits({required this.name, required this.value, });
 
-factory RadarGetDnsSummaryResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryResponseResultMetaUnits(
+factory RadarGetDnsSummaryResponseResultMetaUnits.fromJson(Map<String, dynamic> json) {return RadarGetDnsSummaryResponseResultMetaUnits(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String name;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetDnsSummaryResponseResultMetaUnits copyWith({String? name, String? value, }) { return RadarGetDnsSummaryResponseResultMetaUnits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+RadarGetDnsSummaryResponseResultMetaUnits copyWith({String? name, String? value, }) {return RadarGetDnsSummaryResponseResultMetaUnits(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetDnsSummaryResponseResultMetaUnits &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'RadarGetDnsSummaryResponseResultMetaUnits(name: $name, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(name, value);}
+@override String toString() {return 'RadarGetDnsSummaryResponseResultMetaUnits(name: $name, value: $value)';}
+}

@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The hosted login page for this configuration. Learn more about the portal login page in our [integration docs](https://stripe.com/docs/billing/subscriptions/integrating-customer-portal#share).
 @immutable final class PostBillingPortalConfigurationsConfigurationRequestLoginPage {const PostBillingPortalConfigurationsConfigurationRequestLoginPage({required this.enabled});
 
-factory PostBillingPortalConfigurationsConfigurationRequestLoginPage.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestLoginPage(
+factory PostBillingPortalConfigurationsConfigurationRequestLoginPage.fromJson(Map<String, dynamic> json) {return PostBillingPortalConfigurationsConfigurationRequestLoginPage(
   enabled: json['enabled'] as bool,
-); }
+);}
 
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostBillingPortalConfigurationsConfigurationRequestLoginPage copyWith({bool? enabled}) { return PostBillingPortalConfigurationsConfigurationRequestLoginPage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+PostBillingPortalConfigurationsConfigurationRequestLoginPage copyWith({bool? enabled}) {return PostBillingPortalConfigurationsConfigurationRequestLoginPage(
   enabled: enabled ?? this.enabled,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostBillingPortalConfigurationsConfigurationRequestLoginPage &&
-          enabled == other.enabled; } 
-@override int get hashCode { return enabled.hashCode; } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestLoginPage(enabled: $enabled)'; } 
- }
+          enabled == other.enabled;}
+@override int get hashCode {return enabled.hashCode;}
+@override String toString() {return 'PostBillingPortalConfigurationsConfigurationRequestLoginPage(enabled: $enabled)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_treasury_outbound_payments_id_request_tracking_details_ach.dart';import 'post_test_helpers_treasury_outbound_payments_id_request_tracking_details_us_domestic_wire.dart';@immutable final class PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType {const PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType._(this.value);
 
-factory PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType.fromJson(String json) { return switch (json) {
+factory PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType.fromJson(String json) {return switch (json) {
   'ach' => ach,
   'us_domestic_wire' => usDomesticWire,
   _ => PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType._(json),
-}; }
+};}
 
 static const PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType ach = PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType._('ach');
 
@@ -16,22 +16,22 @@ static const List<PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetail
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType($value)';}
+}
 /// Details about network-specific tracking information.
 @immutable final class PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails {const PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails({required this.type, this.ach, this.usDomesticWire, });
 
-factory PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails(
+factory PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails.fromJson(Map<String, dynamic> json) {return PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails(
   ach: json['ach'] != null ? PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsAch.fromJson(json['ach'] as Map<String, dynamic>) : null,
   type: PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType.fromJson(json['type'] as String),
   usDomesticWire: json['us_domestic_wire'] != null ? PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsUsDomesticWire.fromJson(json['us_domestic_wire'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsAch? ach;
 
@@ -39,22 +39,22 @@ final PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType type;
 
 final PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsUsDomesticWire? usDomesticWire;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (ach != null) 'ach': ach?.toJson(),
   'type': type.toJson(),
   if (usDomesticWire != null) 'us_domestic_wire': usDomesticWire?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails copyWith({PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsAch? Function()? ach, PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType? type, PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsUsDomesticWire? Function()? usDomesticWire, }) { return PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails copyWith({PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsAch? Function()? ach, PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType? type, PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsUsDomesticWire? Function()? usDomesticWire, }) {return PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails(
   ach: ach != null ? ach() : this.ach,
   type: type ?? this.type,
   usDomesticWire: usDomesticWire != null ? usDomesticWire() : this.usDomesticWire,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails &&
           ach == other.ach &&
           type == other.type &&
-          usDomesticWire == other.usDomesticWire; } 
-@override int get hashCode { return Object.hash(ach, type, usDomesticWire); } 
-@override String toString() { return 'PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails(ach: $ach, type: $type, usDomesticWire: $usDomesticWire)'; } 
- }
+          usDomesticWire == other.usDomesticWire;}
+@override int get hashCode {return Object.hash(ach, type, usDomesticWire);}
+@override String toString() {return 'PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails(ach: $ach, type: $type, usDomesticWire: $usDomesticWire)';}
+}

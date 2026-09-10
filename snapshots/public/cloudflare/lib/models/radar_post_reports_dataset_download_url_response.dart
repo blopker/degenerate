@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_post_reports_dataset_download_url_response_result.dart';@immutable final class RadarPostReportsDatasetDownloadUrlResponse {const RadarPostReportsDatasetDownloadUrlResponse({required this.result});
 
-factory RadarPostReportsDatasetDownloadUrlResponse.fromJson(Map<String, dynamic> json) { return RadarPostReportsDatasetDownloadUrlResponse(
+factory RadarPostReportsDatasetDownloadUrlResponse.fromJson(Map<String, dynamic> json) {return RadarPostReportsDatasetDownloadUrlResponse(
   result: RadarPostReportsDatasetDownloadUrlResponseResult.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 final RadarPostReportsDatasetDownloadUrlResponseResult result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result'); } 
-RadarPostReportsDatasetDownloadUrlResponse copyWith({RadarPostReportsDatasetDownloadUrlResponseResult? result}) { return RadarPostReportsDatasetDownloadUrlResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result');}
+RadarPostReportsDatasetDownloadUrlResponse copyWith({RadarPostReportsDatasetDownloadUrlResponseResult? result}) {return RadarPostReportsDatasetDownloadUrlResponse(
   result: result ?? this.result,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarPostReportsDatasetDownloadUrlResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'RadarPostReportsDatasetDownloadUrlResponse(result: $result)'; } 
- }
+          result == other.result;}
+@override int get hashCode {return result.hashCode;}
+@override String toString() {return 'RadarPostReportsDatasetDownloadUrlResponse(result: $result)';}
+}

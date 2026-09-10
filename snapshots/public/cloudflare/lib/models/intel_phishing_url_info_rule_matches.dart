@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelPhishingUrlInfoRuleMatches {const IntelPhishingUrlInfoRuleMatches({this.banning, this.blocking, this.description, this.name, });
 
-factory IntelPhishingUrlInfoRuleMatches.fromJson(Map<String, dynamic> json) { return IntelPhishingUrlInfoRuleMatches(
+factory IntelPhishingUrlInfoRuleMatches.fromJson(Map<String, dynamic> json) {return IntelPhishingUrlInfoRuleMatches(
   banning: json['banning'] as bool?,
   blocking: json['blocking'] as bool?,
   description: json['description'] as String?,
   name: json['name'] as String?,
-); }
+);}
 
 /// For internal use.
 final bool? banning;
@@ -21,25 +21,25 @@ final String? description;
 /// Name of the signature that matched.
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'banning': ?banning,
   'blocking': ?blocking,
   'description': ?description,
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'banning', 'blocking', 'description', 'name'}.contains(key)); } 
-IntelPhishingUrlInfoRuleMatches copyWith({bool? Function()? banning, bool? Function()? blocking, String? Function()? description, String? Function()? name, }) { return IntelPhishingUrlInfoRuleMatches(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'banning', 'blocking', 'description', 'name'}.contains(key));}
+IntelPhishingUrlInfoRuleMatches copyWith({bool? Function()? banning, bool? Function()? blocking, String? Function()? description, String? Function()? name, }) {return IntelPhishingUrlInfoRuleMatches(
   banning: banning != null ? banning() : this.banning,
   blocking: blocking != null ? blocking() : this.blocking,
   description: description != null ? description() : this.description,
   name: name != null ? name() : this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IntelPhishingUrlInfoRuleMatches &&
           banning == other.banning &&
           blocking == other.blocking &&
           description == other.description &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(banning, blocking, description, name); } 
-@override String toString() { return 'IntelPhishingUrlInfoRuleMatches(banning: $banning, blocking: $blocking, description: $description, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(banning, blocking, description, name);}
+@override String toString() {return 'IntelPhishingUrlInfoRuleMatches(banning: $banning, blocking: $blocking, description: $description, name: $name)';}
+}

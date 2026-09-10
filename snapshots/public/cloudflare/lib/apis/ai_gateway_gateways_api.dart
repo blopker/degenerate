@@ -13,7 +13,7 @@ final class AiGatewayGatewaysApi with ApiExecutor {const AiGatewayGatewaysApi(th
 /// Lists all AI Gateway evaluator types configured for the account.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways`
-Future<ApiResult<List<AigConfigListGatewayResponseResult>, AigConfigListGatewayResponse400>> aigConfigListGateway({required String accountId, int? page, int? perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AigConfigListGatewayResponseResult>, AigConfigListGatewayResponse400>> aigConfigListGateway({required String accountId, int? page, int? perPage, String? search, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -53,13 +53,13 @@ return null;
 
   },
 );
- } 
+}
 /// Create a new Gateway
 ///
 /// Creates a new AI Gateway.
 ///
 /// `POST /accounts/{account_id}/ai-gateway/gateways`
-Future<ApiResult<AigConfigCreateGatewayResponseResult, AigConfigCreateGatewayResponse400>> aigConfigCreateGateway({required String accountId, AigConfigCreateGatewayRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigCreateGatewayResponseResult, AigConfigCreateGatewayResponse400>> aigConfigCreateGateway({required String accountId, AigConfigCreateGatewayRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,13 +87,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get Gateway URL
 ///
 /// Retrieves the endpoint URL for an AI Gateway.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/url/{provider}`
-Future<ApiResult<String, AigConfigGetGatewayUrlResponse400>> aigConfigGetGatewayUrl({required String gatewayId, required String accountId, required String provider, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, AigConfigGetGatewayUrlResponse400>> aigConfigGetGatewayUrl({required String gatewayId, required String accountId, required String provider, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -119,13 +119,13 @@ return null;
 
   },
 );
- } 
+}
 /// Fetch a Gateway
 ///
 /// Retrieves details for a specific AI Gateway dataset.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{id}`
-Future<ApiResult<AigConfigFetchGatewayResponseResult, AigConfigFetchGatewayResponse404>> aigConfigFetchGateway({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigFetchGatewayResponseResult, AigConfigFetchGatewayResponse404>> aigConfigFetchGateway({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -151,13 +151,13 @@ return null;
 
   },
 );
- } 
+}
 /// Update a Gateway
 ///
 /// Updates an existing AI Gateway dataset.
 ///
 /// `PUT /accounts/{account_id}/ai-gateway/gateways/{id}`
-Future<ApiResult<AigConfigUpdateGatewayResponseResult, AigConfigUpdateGatewayError>> aigConfigUpdateGateway({required String accountId, required String id, AigConfigUpdateGatewayRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigUpdateGatewayResponseResult, AigConfigUpdateGatewayError>> aigConfigUpdateGateway({required String accountId, required String id, AigConfigUpdateGatewayRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -176,13 +176,13 @@ return AigConfigUpdateGatewayResponseResult.fromJson(json['result'] as Map<Strin
   },
   onError: AigConfigUpdateGatewayError.parse,
 );
- } 
+}
 /// Delete a Gateway
 ///
 /// Deletes an AI Gateway dataset.
 ///
 /// `DELETE /accounts/{account_id}/ai-gateway/gateways/{id}`
-Future<ApiResult<AigConfigDeleteGatewayResponseResult, AigConfigDeleteGatewayResponse404>> aigConfigDeleteGateway({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigDeleteGatewayResponseResult, AigConfigDeleteGatewayResponse404>> aigConfigDeleteGateway({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -208,5 +208,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

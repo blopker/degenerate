@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
 @immutable final class RadarGetAiBotsTimeseriesGroupDimension {const RadarGetAiBotsTimeseriesGroupDimension._(this.value);
 
-factory RadarGetAiBotsTimeseriesGroupDimension.fromJson(String json) { return switch (json) {
+factory RadarGetAiBotsTimeseriesGroupDimension.fromJson(String json) {return switch (json) {
   'USER_AGENT' => userAgent,
   'CRAWL_PURPOSE' => crawlPurpose,
   'INDUSTRY' => industry,
   'VERTICAL' => vertical,
   'CONTENT_TYPE' => contentType,
   _ => RadarGetAiBotsTimeseriesGroupDimension._(json),
-}; }
+};}
 
 static const RadarGetAiBotsTimeseriesGroupDimension userAgent = RadarGetAiBotsTimeseriesGroupDimension._('USER_AGENT');
 
@@ -26,11 +26,11 @@ static const List<RadarGetAiBotsTimeseriesGroupDimension> values = [userAgent, c
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAiBotsTimeseriesGroupDimension && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAiBotsTimeseriesGroupDimension($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAiBotsTimeseriesGroupDimension && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAiBotsTimeseriesGroupDimension($value)';}
+}

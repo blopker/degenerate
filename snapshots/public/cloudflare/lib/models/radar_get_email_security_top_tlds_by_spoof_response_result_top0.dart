@@ -2,30 +2,30 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0 {const RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0({required this.name, required this.value, });
 
-factory RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0(
+factory RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String name;
 
 /// A numeric string.
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0 copyWith({String? name, String? value, }) { return RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0 copyWith({String? name, String? value, }) {return RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0 &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0(name: $name, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(name, value);}
+@override String toString() {return 'RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0(name: $name, value: $value)';}
+}

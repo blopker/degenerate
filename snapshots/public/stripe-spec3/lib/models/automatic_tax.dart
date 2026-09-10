@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';/// If Stripe disabled automatic tax, this enum describes why.
 @immutable final class AutomaticTaxDisabledReason {const AutomaticTaxDisabledReason._(this.value);
 
-factory AutomaticTaxDisabledReason.fromJson(String json) { return switch (json) {
+factory AutomaticTaxDisabledReason.fromJson(String json) {return switch (json) {
   'finalization_requires_location_inputs' => finalizationRequiresLocationInputs,
   'finalization_system_error' => finalizationSystemError,
   _ => AutomaticTaxDisabledReason._(json),
-}; }
+};}
 
 static const AutomaticTaxDisabledReason finalizationRequiresLocationInputs = AutomaticTaxDisabledReason._('finalization_requires_location_inputs');
 
@@ -17,23 +17,23 @@ static const List<AutomaticTaxDisabledReason> values = [finalizationRequiresLoca
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AutomaticTaxDisabledReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AutomaticTaxDisabledReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AutomaticTaxDisabledReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AutomaticTaxDisabledReason($value)';}
+}
 /// The status of the most recent automated tax calculation for this invoice.
 @immutable final class AutomaticTaxStatus {const AutomaticTaxStatus._(this.value);
 
-factory AutomaticTaxStatus.fromJson(String json) { return switch (json) {
+factory AutomaticTaxStatus.fromJson(String json) {return switch (json) {
   'complete' => complete,
   'failed' => failed,
   'requires_location_inputs' => requiresLocationInputs,
   _ => AutomaticTaxStatus._(json),
-}; }
+};}
 
 static const AutomaticTaxStatus complete = AutomaticTaxStatus._('complete');
 
@@ -45,24 +45,24 @@ static const List<AutomaticTaxStatus> values = [complete, failed, requiresLocati
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AutomaticTaxStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AutomaticTaxStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AutomaticTaxStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AutomaticTaxStatus($value)';}
+}
 /// 
 @immutable final class AutomaticTax {const AutomaticTax({required this.enabled, this.disabledReason = const Omittable.absent(), this.liability = const Omittable.absent(), this.provider = const Omittable.absent(), this.status = const Omittable.absent(), });
 
-factory AutomaticTax.fromJson(Map<String, dynamic> json) { return AutomaticTax(
+factory AutomaticTax.fromJson(Map<String, dynamic> json) {return AutomaticTax(
   disabledReason: json.containsKey('disabled_reason') ? Omittable(json['disabled_reason'] != null ? AutomaticTaxDisabledReason.fromJson(json['disabled_reason'] as String) : null) : const Omittable.absent(),
   enabled: json['enabled'] as bool,
   liability: json.containsKey('liability') ? Omittable(json['liability'] != null ? ConnectAccountReference.fromJson(json['liability'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   provider: json.containsKey('provider') ? Omittable(json['provider'] as String?) : const Omittable.absent(),
   status: json.containsKey('status') ? Omittable(json['status'] != null ? AutomaticTaxStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// If Stripe disabled automatic tax, this enum describes why.
 final Omittable<AutomaticTaxDisabledReason?> disabledReason;
@@ -79,28 +79,28 @@ final Omittable<String?> provider;
 /// The status of the most recent automated tax calculation for this invoice.
 final Omittable<AutomaticTaxStatus?> status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (disabledReason.isPresent) 'disabled_reason': disabledReason.value?.toJson(),
   'enabled': enabled,
   if (liability.isPresent) 'liability': liability.value?.toJson(),
   if (provider.isPresent) 'provider': provider.value,
   if (status.isPresent) 'status': status.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-AutomaticTax copyWith({Omittable<AutomaticTaxDisabledReason?>? disabledReason, bool? enabled, Omittable<ConnectAccountReference?>? liability, Omittable<String?>? provider, Omittable<AutomaticTaxStatus?>? status, }) { return AutomaticTax(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+AutomaticTax copyWith({Omittable<AutomaticTaxDisabledReason?>? disabledReason, bool? enabled, Omittable<ConnectAccountReference?>? liability, Omittable<String?>? provider, Omittable<AutomaticTaxStatus?>? status, }) {return AutomaticTax(
   disabledReason: disabledReason ?? this.disabledReason,
   enabled: enabled ?? this.enabled,
   liability: liability ?? this.liability,
   provider: provider ?? this.provider,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AutomaticTax &&
           disabledReason == other.disabledReason &&
           enabled == other.enabled &&
           liability == other.liability &&
           provider == other.provider &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(disabledReason, enabled, liability, provider, status); } 
-@override String toString() { return 'AutomaticTax(disabledReason: $disabledReason, enabled: $enabled, liability: $liability, provider: $provider, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(disabledReason, enabled, liability, provider, status);}
+@override String toString() {return 'AutomaticTax(disabledReason: $disabledReason, enabled: $enabled, liability: $liability, provider: $provider, status: $status)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestBrandingSettingsLogoType {const PostCheckoutSessionsRequestBrandingSettingsLogoType._(this.value);
 
-factory PostCheckoutSessionsRequestBrandingSettingsLogoType.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestBrandingSettingsLogoType.fromJson(String json) {return switch (json) {
   'file' => file,
   'url' => url,
   _ => PostCheckoutSessionsRequestBrandingSettingsLogoType._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestBrandingSettingsLogoType file = PostCheckoutSessionsRequestBrandingSettingsLogoType._('file');
 
@@ -16,21 +16,21 @@ static const List<PostCheckoutSessionsRequestBrandingSettingsLogoType> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestBrandingSettingsLogoType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestBrandingSettingsLogoType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestBrandingSettingsLogoType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestBrandingSettingsLogoType($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestBrandingSettingsLogo {const PostCheckoutSessionsRequestBrandingSettingsLogo({required this.type, this.file, this.url, });
 
-factory PostCheckoutSessionsRequestBrandingSettingsLogo.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestBrandingSettingsLogo(
+factory PostCheckoutSessionsRequestBrandingSettingsLogo.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestBrandingSettingsLogo(
   file: json['file'] as String?,
   type: PostCheckoutSessionsRequestBrandingSettingsLogoType.fromJson(json['type'] as String),
   url: json['url'] as String?,
-); }
+);}
 
 final String? file;
 
@@ -38,22 +38,22 @@ final PostCheckoutSessionsRequestBrandingSettingsLogoType type;
 
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'file': ?file,
   'type': type.toJson(),
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostCheckoutSessionsRequestBrandingSettingsLogo copyWith({String? Function()? file, PostCheckoutSessionsRequestBrandingSettingsLogoType? type, String? Function()? url, }) { return PostCheckoutSessionsRequestBrandingSettingsLogo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostCheckoutSessionsRequestBrandingSettingsLogo copyWith({String? Function()? file, PostCheckoutSessionsRequestBrandingSettingsLogoType? type, String? Function()? url, }) {return PostCheckoutSessionsRequestBrandingSettingsLogo(
   file: file != null ? file() : this.file,
   type: type ?? this.type,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestBrandingSettingsLogo &&
           file == other.file &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(file, type, url); } 
-@override String toString() { return 'PostCheckoutSessionsRequestBrandingSettingsLogo(file: $file, type: $type, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(file, type, url);}
+@override String toString() {return 'PostCheckoutSessionsRequestBrandingSettingsLogo(file: $file, type: $type, url: $url)';}
+}

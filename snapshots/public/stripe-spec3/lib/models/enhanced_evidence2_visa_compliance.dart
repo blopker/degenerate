@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EnhancedEvidence2VisaCompliance {const EnhancedEvidence2VisaCompliance({this.feeAcknowledged});
 
-factory EnhancedEvidence2VisaCompliance.fromJson(Map<String, dynamic> json) { return EnhancedEvidence2VisaCompliance(
+factory EnhancedEvidence2VisaCompliance.fromJson(Map<String, dynamic> json) {return EnhancedEvidence2VisaCompliance(
   feeAcknowledged: json['fee_acknowledged'] as bool?,
-); }
+);}
 
 final bool? feeAcknowledged;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fee_acknowledged': ?feeAcknowledged,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fee_acknowledged'}.contains(key)); } 
-EnhancedEvidence2VisaCompliance copyWith({bool? Function()? feeAcknowledged}) { return EnhancedEvidence2VisaCompliance(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'fee_acknowledged'}.contains(key));}
+EnhancedEvidence2VisaCompliance copyWith({bool? Function()? feeAcknowledged}) {return EnhancedEvidence2VisaCompliance(
   feeAcknowledged: feeAcknowledged != null ? feeAcknowledged() : this.feeAcknowledged,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EnhancedEvidence2VisaCompliance &&
-          feeAcknowledged == other.feeAcknowledged; } 
-@override int get hashCode { return feeAcknowledged.hashCode; } 
-@override String toString() { return 'EnhancedEvidence2VisaCompliance(feeAcknowledged: $feeAcknowledged)'; } 
- }
+          feeAcknowledged == other.feeAcknowledged;}
+@override int get hashCode {return feeAcknowledged.hashCode;}
+@override String toString() {return 'EnhancedEvidence2VisaCompliance(feeAcknowledged: $feeAcknowledged)';}
+}

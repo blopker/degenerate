@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_request_payment_method_options_sepa_debit_mandate_options_reference_prefix.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptions {const PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptions({this.referencePrefix});
 
-factory PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptions(
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptions.fromJson(Map<String, dynamic> json) {return PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptions(
   referencePrefix: json['reference_prefix'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefix.fromJson(json['reference_prefix']) : null,
-); }
+);}
 
 final PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefix? referencePrefix;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (referencePrefix != null) 'reference_prefix': referencePrefix?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference_prefix'}.contains(key)); } 
-PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptions copyWith({PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefix? Function()? referencePrefix}) { return PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'reference_prefix'}.contains(key));}
+PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptions copyWith({PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefix? Function()? referencePrefix}) {return PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptions(
   referencePrefix: referencePrefix != null ? referencePrefix() : this.referencePrefix,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptions &&
-          referencePrefix == other.referencePrefix; } 
-@override int get hashCode { return referencePrefix.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptions(referencePrefix: $referencePrefix)'; } 
- }
+          referencePrefix == other.referencePrefix;}
+@override int get hashCode {return referencePrefix.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptions(referencePrefix: $referencePrefix)';}
+}

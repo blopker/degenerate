@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_summary_by_threat_category_response_result.dart';@immutable final class RadarGetEmailSecuritySummaryByThreatCategoryResponse {const RadarGetEmailSecuritySummaryByThreatCategoryResponse({required this.result, required this.success, });
 
-factory RadarGetEmailSecuritySummaryByThreatCategoryResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryByThreatCategoryResponse(
+factory RadarGetEmailSecuritySummaryByThreatCategoryResponse.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecuritySummaryByThreatCategoryResponse(
   result: RadarGetEmailSecuritySummaryByThreatCategoryResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetEmailSecuritySummaryByThreatCategoryResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailSecuritySummaryByThreatCategoryResponse copyWith({RadarGetEmailSecuritySummaryByThreatCategoryResponseResult? result, bool? success, }) { return RadarGetEmailSecuritySummaryByThreatCategoryResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetEmailSecuritySummaryByThreatCategoryResponse copyWith({RadarGetEmailSecuritySummaryByThreatCategoryResponseResult? result, bool? success, }) {return RadarGetEmailSecuritySummaryByThreatCategoryResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetEmailSecuritySummaryByThreatCategoryResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'RadarGetEmailSecuritySummaryByThreatCategoryResponse(result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(result, success);}
+@override String toString() {return 'RadarGetEmailSecuritySummaryByThreatCategoryResponse(result: $result, success: $success)';}
+}

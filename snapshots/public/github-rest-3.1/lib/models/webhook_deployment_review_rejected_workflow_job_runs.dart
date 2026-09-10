@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookDeploymentReviewRejectedWorkflowJobRuns {const WebhookDeploymentReviewRejectedWorkflowJobRuns({this.conclusion = const Omittable.absent(), this.createdAt, this.environment, this.htmlUrl, this.id, this.name = const Omittable.absent(), this.status, this.updatedAt, });
 
-factory WebhookDeploymentReviewRejectedWorkflowJobRuns.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewRejectedWorkflowJobRuns(
+factory WebhookDeploymentReviewRejectedWorkflowJobRuns.fromJson(Map<String, dynamic> json) {return WebhookDeploymentReviewRejectedWorkflowJobRuns(
   conclusion: json.containsKey('conclusion') ? Omittable(json['conclusion'] as String?) : const Omittable.absent(),
   createdAt: json['created_at'] as String?,
   environment: json['environment'] as String?,
@@ -11,7 +11,7 @@ factory WebhookDeploymentReviewRejectedWorkflowJobRuns.fromJson(Map<String, dyna
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   status: json['status'] as String?,
   updatedAt: json['updated_at'] as String?,
-); }
+);}
 
 final Omittable<String?> conclusion;
 
@@ -29,7 +29,7 @@ final String? status;
 
 final String? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (conclusion.isPresent) 'conclusion': conclusion.value,
   'created_at': ?createdAt,
   'environment': ?environment,
@@ -38,9 +38,9 @@ Map<String, dynamic> toJson() { return {
   if (name.isPresent) 'name': name.value,
   'status': ?status,
   'updated_at': ?updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'conclusion', 'created_at', 'environment', 'html_url', 'id', 'name', 'status', 'updated_at'}.contains(key)); } 
-WebhookDeploymentReviewRejectedWorkflowJobRuns copyWith({Omittable<String?>? conclusion, String? Function()? createdAt, String? Function()? environment, String? Function()? htmlUrl, int? Function()? id, Omittable<String?>? name, String? Function()? status, String? Function()? updatedAt, }) { return WebhookDeploymentReviewRejectedWorkflowJobRuns(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'conclusion', 'created_at', 'environment', 'html_url', 'id', 'name', 'status', 'updated_at'}.contains(key));}
+WebhookDeploymentReviewRejectedWorkflowJobRuns copyWith({Omittable<String?>? conclusion, String? Function()? createdAt, String? Function()? environment, String? Function()? htmlUrl, int? Function()? id, Omittable<String?>? name, String? Function()? status, String? Function()? updatedAt, }) {return WebhookDeploymentReviewRejectedWorkflowJobRuns(
   conclusion: conclusion ?? this.conclusion,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   environment: environment != null ? environment() : this.environment,
@@ -49,8 +49,8 @@ WebhookDeploymentReviewRejectedWorkflowJobRuns copyWith({Omittable<String?>? con
   name: name ?? this.name,
   status: status != null ? status() : this.status,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDeploymentReviewRejectedWorkflowJobRuns &&
           conclusion == other.conclusion &&
           createdAt == other.createdAt &&
@@ -59,7 +59,7 @@ WebhookDeploymentReviewRejectedWorkflowJobRuns copyWith({Omittable<String?>? con
           id == other.id &&
           name == other.name &&
           status == other.status &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(conclusion, createdAt, environment, htmlUrl, id, name, status, updatedAt); } 
-@override String toString() { return 'WebhookDeploymentReviewRejectedWorkflowJobRuns(conclusion: $conclusion, createdAt: $createdAt, environment: $environment, htmlUrl: $htmlUrl, id: $id, name: $name, status: $status, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(conclusion, createdAt, environment, htmlUrl, id, name, status, updatedAt);}
+@override String toString() {return 'WebhookDeploymentReviewRejectedWorkflowJobRuns(conclusion: $conclusion, createdAt: $createdAt, environment: $environment, htmlUrl: $htmlUrl, id: $id, name: $name, status: $status, updatedAt: $updatedAt)';}
+}

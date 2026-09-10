@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_tool_choice_variant1_allowed_tools.dart';import 'prompt43_tool_choice_variant1_custom.dart';import 'prompt43_tool_choice_variant1_function.dart';@immutable final class Prompt43ToolChoiceVariant1Variant1 {const Prompt43ToolChoiceVariant1Variant1._(this.value);
 
-factory Prompt43ToolChoiceVariant1Variant1.fromJson(String json) { return switch (json) {
+factory Prompt43ToolChoiceVariant1Variant1.fromJson(String json) {return switch (json) {
   'none' => none,
   'auto' => auto,
   'required' => $required,
   _ => Prompt43ToolChoiceVariant1Variant1._(json),
-}; }
+};}
 
 static const Prompt43ToolChoiceVariant1Variant1 none = Prompt43ToolChoiceVariant1Variant1._('none');
 
@@ -19,12 +19,12 @@ static const List<Prompt43ToolChoiceVariant1Variant1> values = [none, auto, $req
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Prompt43ToolChoiceVariant1Variant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Prompt43ToolChoiceVariant1Variant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Prompt43ToolChoiceVariant1Variant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Prompt43ToolChoiceVariant1Variant1($value)';}
+}
 typedef Prompt43ToolChoiceVariant1 = OneOf4<Prompt43ToolChoiceVariant1Variant1,Prompt43ToolChoiceVariant1Function,Prompt43ToolChoiceVariant1Custom,Prompt43ToolChoiceVariant1AllowedTools>;

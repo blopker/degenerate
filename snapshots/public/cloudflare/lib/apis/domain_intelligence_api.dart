@@ -13,7 +13,7 @@ final class DomainIntelligenceApi with ApiExecutor {const DomainIntelligenceApi(
 /// Gets security details and statistics about a domain.
 ///
 /// `GET /accounts/{account_id}/intel/domain`
-Future<ApiResult<IntelDomain?, DomainIntelligenceGetDomainDetailsResponse4xx>> domainIntelligenceGetDomainDetails({required IntelIdentifier accountId, String? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IntelDomain?, DomainIntelligenceGetDomainDetailsResponse4xx>> domainIntelligenceGetDomainDetails({required IntelIdentifier accountId, String? domain, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (domain != null) {
   queryParameters['domain'] = domain;
@@ -47,13 +47,13 @@ return null;
 
   },
 );
- } 
+}
 /// Get Multiple Domain Details
 ///
 /// Same as summary.
 ///
 /// `GET /accounts/{account_id}/intel/domain/bulk`
-Future<ApiResult<List<IntelCollectionResponseResult>, DomainIntelligenceGetMultipleDomainDetailsResponse4xx>> domainIntelligenceGetMultipleDomainDetails({required IntelIdentifier accountId, List<String>? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IntelCollectionResponseResult>, DomainIntelligenceGetMultipleDomainDetailsResponse4xx>> domainIntelligenceGetMultipleDomainDetails({required IntelIdentifier accountId, List<String>? domain, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (domain != null) {
 for (final item in domain) {
@@ -89,5 +89,5 @@ return null;
 
   },
 );
- } 
- }
+}
+}

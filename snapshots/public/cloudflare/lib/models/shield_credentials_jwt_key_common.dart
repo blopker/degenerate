@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShieldCredentialsJwtKeyCommon {const ShieldCredentialsJwtKeyCommon({required this.kid});
 
-factory ShieldCredentialsJwtKeyCommon.fromJson(Map<String, dynamic> json) { return ShieldCredentialsJwtKeyCommon(
+factory ShieldCredentialsJwtKeyCommon.fromJson(Map<String, dynamic> json) {return ShieldCredentialsJwtKeyCommon(
   kid: json['kid'] as String,
-); }
+);}
 
 /// Key ID
 final String kid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'kid': kid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kid') && json['kid'] is String; } 
-ShieldCredentialsJwtKeyCommon copyWith({String? kid}) { return ShieldCredentialsJwtKeyCommon(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('kid') && json['kid'] is String;}
+ShieldCredentialsJwtKeyCommon copyWith({String? kid}) {return ShieldCredentialsJwtKeyCommon(
   kid: kid ?? this.kid,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShieldCredentialsJwtKeyCommon &&
-          kid == other.kid; } 
-@override int get hashCode { return kid.hashCode; } 
-@override String toString() { return 'ShieldCredentialsJwtKeyCommon(kid: $kid)'; } 
- }
+          kid == other.kid;}
+@override int get hashCode {return kid.hashCode;}
+@override String toString() {return 'ShieldCredentialsJwtKeyCommon(kid: $kid)';}
+}

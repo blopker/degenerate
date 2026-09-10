@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_update_budget_org_response_budget.dart';@immutable final class BillingUpdateBudgetOrgResponse {const BillingUpdateBudgetOrgResponse({this.message, this.budget, });
 
-factory BillingUpdateBudgetOrgResponse.fromJson(Map<String, dynamic> json) { return BillingUpdateBudgetOrgResponse(
+factory BillingUpdateBudgetOrgResponse.fromJson(Map<String, dynamic> json) {return BillingUpdateBudgetOrgResponse(
   message: json['message'] as String?,
   budget: json['budget'] != null ? BillingUpdateBudgetOrgResponseBudget.fromJson(json['budget'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String? message;
 
 final BillingUpdateBudgetOrgResponseBudget? budget;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': ?message,
   if (budget != null) 'budget': budget?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message', 'budget'}.contains(key)); } 
-BillingUpdateBudgetOrgResponse copyWith({String? Function()? message, BillingUpdateBudgetOrgResponseBudget? Function()? budget, }) { return BillingUpdateBudgetOrgResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'message', 'budget'}.contains(key));}
+BillingUpdateBudgetOrgResponse copyWith({String? Function()? message, BillingUpdateBudgetOrgResponseBudget? Function()? budget, }) {return BillingUpdateBudgetOrgResponse(
   message: message != null ? message() : this.message,
   budget: budget != null ? budget() : this.budget,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BillingUpdateBudgetOrgResponse &&
           message == other.message &&
-          budget == other.budget; } 
-@override int get hashCode { return Object.hash(message, budget); } 
-@override String toString() { return 'BillingUpdateBudgetOrgResponse(message: $message, budget: $budget)'; } 
- }
+          budget == other.budget;}
+@override int get hashCode {return Object.hash(message, budget);}
+@override String toString() {return 'BillingUpdateBudgetOrgResponse(message: $message, budget: $budget)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_gateway_dynamic_route_response400_route_elements.dart';import 'aig_config_update_gateway_dynamic_route_response400_route_elements_conditional.dart';import 'aig_config_update_gateway_dynamic_route_response400_route_elements_end.dart';import 'aig_config_update_gateway_dynamic_route_response400_route_elements_model.dart';import 'aig_config_update_gateway_dynamic_route_response400_route_elements_percentage.dart';import 'aig_config_update_gateway_dynamic_route_response400_route_elements_rate.dart';import 'aig_config_update_gateway_dynamic_route_response400_route_elements_start.dart';@immutable final class AigConfigUpdateGatewayDynamicRouteResponse400Route {const AigConfigUpdateGatewayDynamicRouteResponse400Route({required this.accountTag, required this.createdAt, required this.elements, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, });
 
-factory AigConfigUpdateGatewayDynamicRouteResponse400Route.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayDynamicRouteResponse400Route(
+factory AigConfigUpdateGatewayDynamicRouteResponse400Route.fromJson(Map<String, dynamic> json) {return AigConfigUpdateGatewayDynamicRouteResponse400Route(
   accountTag: json['account_tag'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   elements: (json['elements'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsStart.fromJson(v as Map<String, dynamic>), fromB: (v) => AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsConditional.fromJson(v as Map<String, dynamic>), fromC: (v) => AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsPercentage.fromJson(v as Map<String, dynamic>), fromD: (v) => AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsRate.fromJson(v as Map<String, dynamic>), fromE: (v) => AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModel.fromJson(v as Map<String, dynamic>), fromF: (v) => AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsEnd.fromJson(v as Map<String, dynamic>),)).toList(),
@@ -10,7 +10,7 @@ factory AigConfigUpdateGatewayDynamicRouteResponse400Route.fromJson(Map<String, 
   id: json['id'] as String,
   modifiedAt: DateTime.parse(json['modified_at'] as String),
   name: json['name'] as String,
-); }
+);}
 
 final String accountTag;
 
@@ -26,7 +26,7 @@ final DateTime modifiedAt;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_tag': accountTag,
   'created_at': createdAt.toIso8601String(),
   'elements': elements.map((e) => e.toJson()).toList(),
@@ -34,15 +34,15 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'modified_at': modifiedAt.toIso8601String(),
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_tag') && json['account_tag'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_tag') && json['account_tag'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('elements') &&
       json.containsKey('gateway_id') && json['gateway_id'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-AigConfigUpdateGatewayDynamicRouteResponse400Route copyWith({String? accountTag, DateTime? createdAt, List<AigConfigUpdateGatewayDynamicRouteResponse400RouteElements>? elements, String? gatewayId, String? id, DateTime? modifiedAt, String? name, }) { return AigConfigUpdateGatewayDynamicRouteResponse400Route(
+      json.containsKey('name') && json['name'] is String;}
+AigConfigUpdateGatewayDynamicRouteResponse400Route copyWith({String? accountTag, DateTime? createdAt, List<AigConfigUpdateGatewayDynamicRouteResponse400RouteElements>? elements, String? gatewayId, String? id, DateTime? modifiedAt, String? name, }) {return AigConfigUpdateGatewayDynamicRouteResponse400Route(
   accountTag: accountTag ?? this.accountTag,
   createdAt: createdAt ?? this.createdAt,
   elements: elements ?? this.elements,
@@ -50,8 +50,8 @@ AigConfigUpdateGatewayDynamicRouteResponse400Route copyWith({String? accountTag,
   id: id ?? this.id,
   modifiedAt: modifiedAt ?? this.modifiedAt,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigUpdateGatewayDynamicRouteResponse400Route &&
           accountTag == other.accountTag &&
           createdAt == other.createdAt &&
@@ -59,7 +59,7 @@ AigConfigUpdateGatewayDynamicRouteResponse400Route copyWith({String? accountTag,
           gatewayId == other.gatewayId &&
           id == other.id &&
           modifiedAt == other.modifiedAt &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(accountTag, createdAt, Object.hashAll(elements), gatewayId, id, modifiedAt, name); } 
-@override String toString() { return 'AigConfigUpdateGatewayDynamicRouteResponse400Route(accountTag: $accountTag, createdAt: $createdAt, elements: $elements, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(accountTag, createdAt, Object.hashAll(elements), gatewayId, id, modifiedAt, name);}
+@override String toString() {return 'AigConfigUpdateGatewayDynamicRouteResponse400Route(accountTag: $accountTag, createdAt: $createdAt, elements: $elements, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name)';}
+}

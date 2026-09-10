@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class OrgsListMembershipsForAuthenticatedUserError {const OrgsListMembershipsForAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static OrgsListMembershipsForAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static OrgsListMembershipsForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const OrgsListMembershipsForAuthenticatedUserError304();
 case 401:
@@ -19,37 +19,37 @@ return OrgsListMembershipsForAuthenticatedUserError422(ValidationError.fromJson(
 default:
 return OrgsListMembershipsForAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class OrgsListMembershipsForAuthenticatedUserError304 extends OrgsListMembershipsForAuthenticatedUserError {const OrgsListMembershipsForAuthenticatedUserError304();
 
- }
+}
 /// Response for 401 (application/json).
 final class OrgsListMembershipsForAuthenticatedUserError401 extends OrgsListMembershipsForAuthenticatedUserError {const OrgsListMembershipsForAuthenticatedUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class OrgsListMembershipsForAuthenticatedUserError403 extends OrgsListMembershipsForAuthenticatedUserError {const OrgsListMembershipsForAuthenticatedUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 422 (application/json).
 final class OrgsListMembershipsForAuthenticatedUserError422 extends OrgsListMembershipsForAuthenticatedUserError {const OrgsListMembershipsForAuthenticatedUserError422(this.data);
 
 /// The decoded response payload.
 final ValidationError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class OrgsListMembershipsForAuthenticatedUserErrorUnknown extends OrgsListMembershipsForAuthenticatedUserError {const OrgsListMembershipsForAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

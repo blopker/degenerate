@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// `no-store` (equi
 /// 
 @immutable final class ZonesCacheTtlByStatusValueValueVariant1 {const ZonesCacheTtlByStatusValueValueVariant1._(this.value);
 
-factory ZonesCacheTtlByStatusValueValueVariant1.fromJson(String json) { return switch (json) {
+factory ZonesCacheTtlByStatusValueValueVariant1.fromJson(String json) {return switch (json) {
   'no-cache' => noCache,
   'no-store' => noStore,
   _ => ZonesCacheTtlByStatusValueValueVariant1._(json),
-}; }
+};}
 
 static const ZonesCacheTtlByStatusValueValueVariant1 noCache = ZonesCacheTtlByStatusValueValueVariant1._('no-cache');
 
@@ -18,14 +18,14 @@ static const List<ZonesCacheTtlByStatusValueValueVariant1> values = [noCache, no
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesCacheTtlByStatusValueValueVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesCacheTtlByStatusValueValueVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesCacheTtlByStatusValueValueVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesCacheTtlByStatusValueValueVariant1($value)';}
+}
 
 @immutable
 final class ZonesCacheTtlByStatusValueValue {

@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityPostMessageMoveRequestDestination {const EmailSecurityPostMessageMoveRequestDestination._(this.value);
 
-factory EmailSecurityPostMessageMoveRequestDestination.fromJson(String json) { return switch (json) {
+factory EmailSecurityPostMessageMoveRequestDestination.fromJson(String json) {return switch (json) {
   'Inbox' => inbox,
   'JunkEmail' => junkEmail,
   'DeletedItems' => deletedItems,
   'RecoverableItemsDeletions' => recoverableItemsDeletions,
   'RecoverableItemsPurges' => recoverableItemsPurges,
   _ => EmailSecurityPostMessageMoveRequestDestination._(json),
-}; }
+};}
 
 static const EmailSecurityPostMessageMoveRequestDestination inbox = EmailSecurityPostMessageMoveRequestDestination._('Inbox');
 
@@ -25,32 +25,32 @@ static const List<EmailSecurityPostMessageMoveRequestDestination> values = [inbo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityPostMessageMoveRequestDestination && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityPostMessageMoveRequestDestination($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailSecurityPostMessageMoveRequestDestination && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailSecurityPostMessageMoveRequestDestination($value)';}
+}
 @immutable final class EmailSecurityPostMessageMoveRequest {const EmailSecurityPostMessageMoveRequest({required this.destination});
 
-factory EmailSecurityPostMessageMoveRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityPostMessageMoveRequest(
+factory EmailSecurityPostMessageMoveRequest.fromJson(Map<String, dynamic> json) {return EmailSecurityPostMessageMoveRequest(
   destination: EmailSecurityPostMessageMoveRequestDestination.fromJson(json['destination'] as String),
-); }
+);}
 
 final EmailSecurityPostMessageMoveRequestDestination destination;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'destination': destination.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination'); } 
-EmailSecurityPostMessageMoveRequest copyWith({EmailSecurityPostMessageMoveRequestDestination? destination}) { return EmailSecurityPostMessageMoveRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('destination');}
+EmailSecurityPostMessageMoveRequest copyWith({EmailSecurityPostMessageMoveRequestDestination? destination}) {return EmailSecurityPostMessageMoveRequest(
   destination: destination ?? this.destination,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSecurityPostMessageMoveRequest &&
-          destination == other.destination; } 
-@override int get hashCode { return destination.hashCode; } 
-@override String toString() { return 'EmailSecurityPostMessageMoveRequest(destination: $destination)'; } 
- }
+          destination == other.destination;}
+@override int get hashCode {return destination.hashCode;}
+@override String toString() {return 'EmailSecurityPostMessageMoveRequest(destination: $destination)';}
+}

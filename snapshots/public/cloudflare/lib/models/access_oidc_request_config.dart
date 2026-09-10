@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessOidcRequestConfig {const AccessOidcRequestConfig({this.clientId, this.clientSecret, this.claims, this.emailClaimName, this.authUrl, this.certsUrl, this.pkceEnabled, this.scopes, this.tokenUrl, });
 
-factory AccessOidcRequestConfig.fromJson(Map<String, dynamic> json) { return AccessOidcRequestConfig(
+factory AccessOidcRequestConfig.fromJson(Map<String, dynamic> json) {return AccessOidcRequestConfig(
   clientId: json['client_id'] as String?,
   clientSecret: json['client_secret'] as String?,
   claims: (json['claims'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -12,7 +12,7 @@ factory AccessOidcRequestConfig.fromJson(Map<String, dynamic> json) { return Acc
   pkceEnabled: json['pkce_enabled'] as bool?,
   scopes: (json['scopes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   tokenUrl: json['token_url'] as String?,
-); }
+);}
 
 /// Your OAuth Client ID
 final String? clientId;
@@ -41,7 +41,7 @@ final List<String>? scopes;
 /// The token_endpoint URL of your IdP
 final String? tokenUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_id': ?clientId,
   'client_secret': ?clientSecret,
   'claims': ?claims,
@@ -51,9 +51,9 @@ Map<String, dynamic> toJson() { return {
   'pkce_enabled': ?pkceEnabled,
   'scopes': ?scopes,
   'token_url': ?tokenUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_secret', 'claims', 'email_claim_name', 'auth_url', 'certs_url', 'pkce_enabled', 'scopes', 'token_url'}.contains(key)); } 
-AccessOidcRequestConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, List<String>? Function()? claims, String? Function()? emailClaimName, String? Function()? authUrl, String? Function()? certsUrl, bool? Function()? pkceEnabled, List<String>? Function()? scopes, String? Function()? tokenUrl, }) { return AccessOidcRequestConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'client_id', 'client_secret', 'claims', 'email_claim_name', 'auth_url', 'certs_url', 'pkce_enabled', 'scopes', 'token_url'}.contains(key));}
+AccessOidcRequestConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, List<String>? Function()? claims, String? Function()? emailClaimName, String? Function()? authUrl, String? Function()? certsUrl, bool? Function()? pkceEnabled, List<String>? Function()? scopes, String? Function()? tokenUrl, }) {return AccessOidcRequestConfig(
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   claims: claims != null ? claims() : this.claims,
@@ -63,8 +63,8 @@ AccessOidcRequestConfig copyWith({String? Function()? clientId, String? Function
   pkceEnabled: pkceEnabled != null ? pkceEnabled() : this.pkceEnabled,
   scopes: scopes != null ? scopes() : this.scopes,
   tokenUrl: tokenUrl != null ? tokenUrl() : this.tokenUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessOidcRequestConfig &&
           clientId == other.clientId &&
           clientSecret == other.clientSecret &&
@@ -74,7 +74,7 @@ AccessOidcRequestConfig copyWith({String? Function()? clientId, String? Function
           certsUrl == other.certsUrl &&
           pkceEnabled == other.pkceEnabled &&
           listEquals(scopes, other.scopes) &&
-          tokenUrl == other.tokenUrl; } 
-@override int get hashCode { return Object.hash(clientId, clientSecret, Object.hashAll(claims ?? const []), emailClaimName, authUrl, certsUrl, pkceEnabled, Object.hashAll(scopes ?? const []), tokenUrl); } 
-@override String toString() { return 'AccessOidcRequestConfig(clientId: $clientId, clientSecret: $clientSecret, claims: $claims, emailClaimName: $emailClaimName, authUrl: $authUrl, certsUrl: $certsUrl, pkceEnabled: $pkceEnabled, scopes: $scopes, tokenUrl: $tokenUrl)'; } 
- }
+          tokenUrl == other.tokenUrl;}
+@override int get hashCode {return Object.hash(clientId, clientSecret, Object.hashAll(claims ?? const []), emailClaimName, authUrl, certsUrl, pkceEnabled, Object.hashAll(scopes ?? const []), tokenUrl);}
+@override String toString() {return 'AccessOidcRequestConfig(clientId: $clientId, clientSecret: $clientSecret, claims: $claims, emailClaimName: $emailClaimName, authUrl: $authUrl, certsUrl: $certsUrl, pkceEnabled: $pkceEnabled, scopes: $scopes, tokenUrl: $tokenUrl)';}
+}

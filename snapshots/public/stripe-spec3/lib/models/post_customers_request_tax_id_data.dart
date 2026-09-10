@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersRequestTaxIdDataType {const PostCustomersRequestTaxIdDataType._(this.value);
 
-factory PostCustomersRequestTaxIdDataType.fromJson(String json) { return switch (json) {
+factory PostCustomersRequestTaxIdDataType.fromJson(String json) {return switch (json) {
   'ad_nrt' => adNrt,
   'ae_trn' => aeTrn,
   'al_tin' => alTin,
@@ -116,7 +116,7 @@ factory PostCustomersRequestTaxIdDataType.fromJson(String json) { return switch 
   'zm_tin' => zmTin,
   'zw_tin' => zwTin,
   _ => PostCustomersRequestTaxIdDataType._(json),
-}; }
+};}
 
 static const PostCustomersRequestTaxIdDataType adNrt = PostCustomersRequestTaxIdDataType._('ad_nrt');
 
@@ -346,39 +346,39 @@ static const List<PostCustomersRequestTaxIdDataType> values = [adNrt, aeTrn, alT
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersRequestTaxIdDataType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersRequestTaxIdDataType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersRequestTaxIdDataType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersRequestTaxIdDataType($value)';}
+}
 @immutable final class PostCustomersRequestTaxIdData {const PostCustomersRequestTaxIdData({required this.type, required this.value, });
 
-factory PostCustomersRequestTaxIdData.fromJson(Map<String, dynamic> json) { return PostCustomersRequestTaxIdData(
+factory PostCustomersRequestTaxIdData.fromJson(Map<String, dynamic> json) {return PostCustomersRequestTaxIdData(
   type: PostCustomersRequestTaxIdDataType.fromJson(json['type'] as String),
   value: json['value'] as String,
-); }
+);}
 
 final PostCustomersRequestTaxIdDataType type;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('value') && json['value'] is String; } 
-PostCustomersRequestTaxIdData copyWith({PostCustomersRequestTaxIdDataType? type, String? value, }) { return PostCustomersRequestTaxIdData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('value') && json['value'] is String;}
+PostCustomersRequestTaxIdData copyWith({PostCustomersRequestTaxIdDataType? type, String? value, }) {return PostCustomersRequestTaxIdData(
   type: type ?? this.type,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCustomersRequestTaxIdData &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(type, value); } 
-@override String toString() { return 'PostCustomersRequestTaxIdData(type: $type, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(type, value);}
+@override String toString() {return 'PostCustomersRequestTaxIdData(type: $type, value: $value)';}
+}

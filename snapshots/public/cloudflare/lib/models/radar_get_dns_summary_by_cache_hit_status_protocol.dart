@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByCacheHitStatusProtocol {const RadarGetDnsSummaryByCacheHitStatusProtocol._(this.value);
 
-factory RadarGetDnsSummaryByCacheHitStatusProtocol.fromJson(String json) { return switch (json) {
+factory RadarGetDnsSummaryByCacheHitStatusProtocol.fromJson(String json) {return switch (json) {
   'UDP' => udp,
   'TCP' => tcp,
   'HTTPS' => https,
   'TLS' => tls,
   _ => RadarGetDnsSummaryByCacheHitStatusProtocol._(json),
-}; }
+};}
 
 static const RadarGetDnsSummaryByCacheHitStatusProtocol udp = RadarGetDnsSummaryByCacheHitStatusProtocol._('UDP');
 
@@ -22,11 +22,11 @@ static const List<RadarGetDnsSummaryByCacheHitStatusProtocol> values = [udp, tcp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsSummaryByCacheHitStatusProtocol && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsSummaryByCacheHitStatusProtocol($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsSummaryByCacheHitStatusProtocol && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsSummaryByCacheHitStatusProtocol($value)';}
+}

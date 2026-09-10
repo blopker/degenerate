@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Conditions that apply to all transitions of this rule.
 @immutable final class R2LifecycleRuleConditions {const R2LifecycleRuleConditions({required this.prefix});
 
-factory R2LifecycleRuleConditions.fromJson(Map<String, dynamic> json) { return R2LifecycleRuleConditions(
+factory R2LifecycleRuleConditions.fromJson(Map<String, dynamic> json) {return R2LifecycleRuleConditions(
   prefix: json['prefix'] as String,
-); }
+);}
 
 /// Transitions will only apply to objects/uploads in the bucket that start with the given prefix, an empty prefix can be provided to scope rule to all objects/uploads.
 final String prefix;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'prefix': prefix,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prefix') && json['prefix'] is String; } 
-R2LifecycleRuleConditions copyWith({String? prefix}) { return R2LifecycleRuleConditions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prefix') && json['prefix'] is String;}
+R2LifecycleRuleConditions copyWith({String? prefix}) {return R2LifecycleRuleConditions(
   prefix: prefix ?? this.prefix,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is R2LifecycleRuleConditions &&
-          prefix == other.prefix; } 
-@override int get hashCode { return prefix.hashCode; } 
-@override String toString() { return 'R2LifecycleRuleConditions(prefix: $prefix)'; } 
- }
+          prefix == other.prefix;}
+@override int get hashCode {return prefix.hashCode;}
+@override String toString() {return 'R2LifecycleRuleConditions(prefix: $prefix)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_annotations_response_result_annotations_asns_details_locations.dart';@immutable final class RadarGetAnnotationsResponseResultAnnotationsAsnsDetails {const RadarGetAnnotationsResponseResultAnnotationsAsnsDetails({required this.asn, required this.name, this.locations, });
 
-factory RadarGetAnnotationsResponseResultAnnotationsAsnsDetails.fromJson(Map<String, dynamic> json) { return RadarGetAnnotationsResponseResultAnnotationsAsnsDetails(
+factory RadarGetAnnotationsResponseResultAnnotationsAsnsDetails.fromJson(Map<String, dynamic> json) {return RadarGetAnnotationsResponseResultAnnotationsAsnsDetails(
   asn: json['asn'] as String,
   locations: json['locations'] != null ? RadarGetAnnotationsResponseResultAnnotationsAsnsDetailsLocations.fromJson(json['locations'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
-); }
+);}
 
 final String asn;
 
@@ -14,23 +14,23 @@ final RadarGetAnnotationsResponseResultAnnotationsAsnsDetailsLocations? location
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn,
   if (locations != null) 'locations': locations?.toJson(),
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-RadarGetAnnotationsResponseResultAnnotationsAsnsDetails copyWith({String? asn, RadarGetAnnotationsResponseResultAnnotationsAsnsDetailsLocations? Function()? locations, String? name, }) { return RadarGetAnnotationsResponseResultAnnotationsAsnsDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') && json['asn'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+RadarGetAnnotationsResponseResultAnnotationsAsnsDetails copyWith({String? asn, RadarGetAnnotationsResponseResultAnnotationsAsnsDetailsLocations? Function()? locations, String? name, }) {return RadarGetAnnotationsResponseResultAnnotationsAsnsDetails(
   asn: asn ?? this.asn,
   locations: locations != null ? locations() : this.locations,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetAnnotationsResponseResultAnnotationsAsnsDetails &&
           asn == other.asn &&
           locations == other.locations &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(asn, locations, name); } 
-@override String toString() { return 'RadarGetAnnotationsResponseResultAnnotationsAsnsDetails(asn: $asn, locations: $locations, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(asn, locations, name);}
+@override String toString() {return 'RadarGetAnnotationsResponseResultAnnotationsAsnsDetails(asn: $asn, locations: $locations, name: $name)';}
+}

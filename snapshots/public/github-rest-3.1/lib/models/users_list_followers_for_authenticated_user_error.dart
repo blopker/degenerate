@@ -4,7 +4,7 @@ import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart
 sealed class UsersListFollowersForAuthenticatedUserError {const UsersListFollowersForAuthenticatedUserError();
 
 /// Decodes the payload for its declared status and content type.
-static UsersListFollowersForAuthenticatedUserError parse(ApiResponse response) { switch (response.statusCode) {
+static UsersListFollowersForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
 return const UsersListFollowersForAuthenticatedUserError304();
 case 401:
@@ -16,30 +16,30 @@ return UsersListFollowersForAuthenticatedUserError403(BasicError.fromJson(json a
 default:
 return UsersListFollowersForAuthenticatedUserErrorUnknown(response);
 }
- } 
- }
+}
+}
 /// Response for 304.
 final class UsersListFollowersForAuthenticatedUserError304 extends UsersListFollowersForAuthenticatedUserError {const UsersListFollowersForAuthenticatedUserError304();
 
- }
+}
 /// Response for 401 (application/json).
 final class UsersListFollowersForAuthenticatedUserError401 extends UsersListFollowersForAuthenticatedUserError {const UsersListFollowersForAuthenticatedUserError401(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// Response for 403 (application/json).
 final class UsersListFollowersForAuthenticatedUserError403 extends UsersListFollowersForAuthenticatedUserError {const UsersListFollowersForAuthenticatedUserError403(this.data);
 
 /// The decoded response payload.
 final BasicError data;
 
- }
+}
 /// An undeclared status. The complete response is retained for manual handling.
 final class UsersListFollowersForAuthenticatedUserErrorUnknown extends UsersListFollowersForAuthenticatedUserError {const UsersListFollowersForAuthenticatedUserErrorUnknown(this.response);
 
 /// The original status, headers, and body bytes.
 final ApiResponse response;
 
- }
+}

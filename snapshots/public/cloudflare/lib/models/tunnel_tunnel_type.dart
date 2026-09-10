@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of tunnel.
 @immutable final class TunnelTunnelType {const TunnelTunnelType._(this.value);
 
-factory TunnelTunnelType.fromJson(String json) { return switch (json) {
+factory TunnelTunnelType.fromJson(String json) {return switch (json) {
   'cfd_tunnel' => cfdTunnel,
   'warp_connector' => warpConnector,
   'warp' => warp,
@@ -12,7 +12,7 @@ factory TunnelTunnelType.fromJson(String json) { return switch (json) {
   'gre' => gre,
   'cni' => cni,
   _ => TunnelTunnelType._(json),
-}; }
+};}
 
 static const TunnelTunnelType cfdTunnel = TunnelTunnelType._('cfd_tunnel');
 
@@ -32,11 +32,11 @@ static const List<TunnelTunnelType> values = [cfdTunnel, warpConnector, warp, ma
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TunnelTunnelType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TunnelTunnelType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TunnelTunnelType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TunnelTunnelType($value)';}
+}

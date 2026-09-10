@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SpeedCloudflareSpeedBrainResponse {const SpeedCloudflareSpeedBrainResponse({this.editable, this.id, this.modifiedOn = const Omittable.absent(), this.value, });
 
-factory SpeedCloudflareSpeedBrainResponse.fromJson(Map<String, dynamic> json) { return SpeedCloudflareSpeedBrainResponse(
+factory SpeedCloudflareSpeedBrainResponse.fromJson(Map<String, dynamic> json) {return SpeedCloudflareSpeedBrainResponse(
   editable: json['editable'] as bool?,
   id: json['id'] as String?,
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: json['value'] as String?,
-); }
+);}
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 final bool? editable;
@@ -24,26 +24,26 @@ final Omittable<DateTime?> modifiedOn;
 final String? value;
 
 /// The value with the schema default applied when absent.
-bool get editableOrDefault { return editable ?? true; } 
-Map<String, dynamic> toJson() { return {
+bool get editableOrDefault {return editable ?? true;}
+Map<String, dynamic> toJson() {return {
   'editable': ?editable,
   'id': ?id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'editable', 'id', 'modified_on', 'value'}.contains(key)); } 
-SpeedCloudflareSpeedBrainResponse copyWith({bool? Function()? editable, String? Function()? id, Omittable<DateTime?>? modifiedOn, String? Function()? value, }) { return SpeedCloudflareSpeedBrainResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'editable', 'id', 'modified_on', 'value'}.contains(key));}
+SpeedCloudflareSpeedBrainResponse copyWith({bool? Function()? editable, String? Function()? id, Omittable<DateTime?>? modifiedOn, String? Function()? value, }) {return SpeedCloudflareSpeedBrainResponse(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SpeedCloudflareSpeedBrainResponse &&
           editable == other.editable &&
           id == other.id &&
           modifiedOn == other.modifiedOn &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(editable, id, modifiedOn, value); } 
-@override String toString() { return 'SpeedCloudflareSpeedBrainResponse(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(editable, id, modifiedOn, value);}
+@override String toString() {return 'SpeedCloudflareSpeedBrainResponse(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)';}
+}

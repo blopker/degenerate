@@ -11,7 +11,7 @@ final class Api20100401IncomingPhoneNumberTollFreeApi with ApiExecutor {const Ap
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/TollFree.json`
-Future<ApiResult<ListIncomingPhoneNumberTollFreeResponse, Never>> listIncomingPhoneNumberTollFree({required String accountSid, bool? beta, String? friendlyName, String? phoneNumber, String? origin, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListIncomingPhoneNumberTollFreeResponse, Never>> listIncomingPhoneNumberTollFree({required String accountSid, bool? beta, String? friendlyName, String? phoneNumber, String? origin, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (beta != null) {
   queryParameters['Beta'] = beta.toString();
@@ -53,11 +53,11 @@ final json = jsonDecode(response.body);
 return ListIncomingPhoneNumberTollFreeResponse.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
+}
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/TollFree.json`
-Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberTollFree, Never>> createIncomingPhoneNumberTollFree({required String accountSid, CreateIncomingPhoneNumberTollFreeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberTollFree, Never>> createIncomingPhoneNumberTollFree({required String accountSid, CreateIncomingPhoneNumberTollFreeRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -121,5 +121,5 @@ final json = jsonDecode(response.body);
 return AccountIncomingPhoneNumberIncomingPhoneNumberTollFree.fromJson(json as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

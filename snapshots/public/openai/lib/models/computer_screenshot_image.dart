@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the ev
 /// 
 @immutable final class ComputerScreenshotImageType {const ComputerScreenshotImageType._(this.value);
 
-factory ComputerScreenshotImageType.fromJson(String json) { return switch (json) {
+factory ComputerScreenshotImageType.fromJson(String json) {return switch (json) {
   'computer_screenshot' => computerScreenshot,
   _ => ComputerScreenshotImageType._(json),
-}; }
+};}
 
 static const ComputerScreenshotImageType computerScreenshot = ComputerScreenshotImageType._('computer_screenshot');
 
@@ -16,23 +16,23 @@ static const List<ComputerScreenshotImageType> values = [computerScreenshot];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerScreenshotImageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ComputerScreenshotImageType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ComputerScreenshotImageType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ComputerScreenshotImageType($value)';}
+}
 /// A computer screenshot image used with the computer use tool.
 /// 
 @immutable final class ComputerScreenshotImage {const ComputerScreenshotImage({required this.type, this.imageUrl, this.fileId, });
 
-factory ComputerScreenshotImage.fromJson(Map<String, dynamic> json) { return ComputerScreenshotImage(
+factory ComputerScreenshotImage.fromJson(Map<String, dynamic> json) {return ComputerScreenshotImage(
   type: ComputerScreenshotImageType.fromJson(json['type'] as String),
   imageUrl: json['image_url'] as String?,
   fileId: json['file_id'] as String?,
-); }
+);}
 
 /// Specifies the event type. For a computer screenshot, this property is
 /// always set to `computer_screenshot`.
@@ -45,22 +45,22 @@ final String? imageUrl;
 /// The identifier of an uploaded file that contains the screenshot.
 final String? fileId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'image_url': ?imageUrl,
   'file_id': ?fileId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-ComputerScreenshotImage copyWith({ComputerScreenshotImageType? type, String? Function()? imageUrl, String? Function()? fileId, }) { return ComputerScreenshotImage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+ComputerScreenshotImage copyWith({ComputerScreenshotImageType? type, String? Function()? imageUrl, String? Function()? fileId, }) {return ComputerScreenshotImage(
   type: type ?? this.type,
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   fileId: fileId != null ? fileId() : this.fileId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ComputerScreenshotImage &&
           type == other.type &&
           imageUrl == other.imageUrl &&
-          fileId == other.fileId; } 
-@override int get hashCode { return Object.hash(type, imageUrl, fileId); } 
-@override String toString() { return 'ComputerScreenshotImage(type: $type, imageUrl: $imageUrl, fileId: $fileId)'; } 
- }
+          fileId == other.fileId;}
+@override int get hashCode {return Object.hash(type, imageUrl, fileId);}
+@override String toString() {return 'ComputerScreenshotImage(type: $type, imageUrl: $imageUrl, fileId: $fileId)';}
+}

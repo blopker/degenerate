@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TreasuryOutboundPaymentsResourceAchTrackingDetails {const TreasuryOutboundPaymentsResourceAchTrackingDetails({required this.traceId});
 
-factory TreasuryOutboundPaymentsResourceAchTrackingDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundPaymentsResourceAchTrackingDetails(
+factory TreasuryOutboundPaymentsResourceAchTrackingDetails.fromJson(Map<String, dynamic> json) {return TreasuryOutboundPaymentsResourceAchTrackingDetails(
   traceId: json['trace_id'] as String,
-); }
+);}
 
 /// ACH trace ID of the OutboundPayment for payments sent over the `ach` network.
 final String traceId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'trace_id': traceId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('trace_id') && json['trace_id'] is String; } 
-TreasuryOutboundPaymentsResourceAchTrackingDetails copyWith({String? traceId}) { return TreasuryOutboundPaymentsResourceAchTrackingDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('trace_id') && json['trace_id'] is String;}
+TreasuryOutboundPaymentsResourceAchTrackingDetails copyWith({String? traceId}) {return TreasuryOutboundPaymentsResourceAchTrackingDetails(
   traceId: traceId ?? this.traceId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TreasuryOutboundPaymentsResourceAchTrackingDetails &&
-          traceId == other.traceId; } 
-@override int get hashCode { return traceId.hashCode; } 
-@override String toString() { return 'TreasuryOutboundPaymentsResourceAchTrackingDetails(traceId: $traceId)'; } 
- }
+          traceId == other.traceId;}
+@override int get hashCode {return traceId.hashCode;}
+@override String toString() {return 'TreasuryOutboundPaymentsResourceAchTrackingDetails(traceId: $traceId)';}
+}

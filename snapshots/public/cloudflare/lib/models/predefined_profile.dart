@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_entry.dart';import 'dlp_confidence.dart';import 'dlp_context_awareness.dart';import 'dlp_entry.dart';import 'document_fingerprint_entry.dart';import 'exact_data_entry.dart';import 'integration_entry.dart';import 'predefined_entry.dart';import 'word_list_entry.dart';@immutable final class PredefinedProfileType {const PredefinedProfileType._(this.value);
 
-factory PredefinedProfileType.fromJson(String json) { return switch (json) {
+factory PredefinedProfileType.fromJson(String json) {return switch (json) {
   'predefined' => predefined,
   _ => PredefinedProfileType._(json),
-}; }
+};}
 
 static const PredefinedProfileType predefined = PredefinedProfileType._('predefined');
 
@@ -13,17 +13,17 @@ static const List<PredefinedProfileType> values = [predefined];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PredefinedProfileType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PredefinedProfileType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PredefinedProfileType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PredefinedProfileType($value)';}
+}
 @immutable final class PredefinedProfile {const PredefinedProfile({required this.allowedMatchCount, required this.entries, required this.id, required this.name, required this.type, this.aiContextEnabled, this.confidenceThreshold, this.contextAwareness, this.ocrEnabled, this.openAccess, });
 
-factory PredefinedProfile.fromJson(Map<String, dynamic> json) { return PredefinedProfile(
+factory PredefinedProfile.fromJson(Map<String, dynamic> json) {return PredefinedProfile(
   aiContextEnabled: json['ai_context_enabled'] as bool?,
   allowedMatchCount: (json['allowed_match_count'] as num).toInt(),
   confidenceThreshold: json['confidence_threshold'] != null ? DlpConfidence.fromJson(json['confidence_threshold'] as String) : null,
@@ -34,7 +34,7 @@ factory PredefinedProfile.fromJson(Map<String, dynamic> json) { return Predefine
   ocrEnabled: json['ocr_enabled'] as bool?,
   openAccess: json['open_access'] as bool?,
   type: PredefinedProfileType.fromJson(json['type'] as String),
-); }
+);}
 
 final bool? aiContextEnabled;
 
@@ -60,12 +60,12 @@ final bool? openAccess;
 final PredefinedProfileType type;
 
 /// The value with the schema default applied when absent.
-bool get aiContextEnabledOrDefault { return aiContextEnabled ?? false; } 
+bool get aiContextEnabledOrDefault {return aiContextEnabled ?? false;}
 /// The value with the schema default applied when absent.
-DlpConfidence get confidenceThresholdOrDefault { return confidenceThreshold ?? DlpConfidence.fromJson('low'); } 
+DlpConfidence get confidenceThresholdOrDefault {return confidenceThreshold ?? DlpConfidence.fromJson('low');}
 /// The value with the schema default applied when absent.
-bool get ocrEnabledOrDefault { return ocrEnabled ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get ocrEnabledOrDefault {return ocrEnabled ?? false;}
+Map<String, dynamic> toJson() {return {
   'ai_context_enabled': ?aiContextEnabled,
   'allowed_match_count': allowedMatchCount,
   if (confidenceThreshold != null) 'confidence_threshold': confidenceThreshold?.toJson(),
@@ -76,13 +76,13 @@ Map<String, dynamic> toJson() { return {
   'ocr_enabled': ?ocrEnabled,
   'open_access': ?openAccess,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed_match_count') && json['allowed_match_count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('allowed_match_count') && json['allowed_match_count'] is num &&
       json.containsKey('entries') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('type'); } 
-PredefinedProfile copyWith({bool? Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence? Function()? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, List<DlpEntry>? entries, String? id, String? name, bool? Function()? ocrEnabled, bool? Function()? openAccess, PredefinedProfileType? type, }) { return PredefinedProfile(
+      json.containsKey('type');}
+PredefinedProfile copyWith({bool? Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence? Function()? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, List<DlpEntry>? entries, String? id, String? name, bool? Function()? ocrEnabled, bool? Function()? openAccess, PredefinedProfileType? type, }) {return PredefinedProfile(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount ?? this.allowedMatchCount,
   confidenceThreshold: confidenceThreshold != null ? confidenceThreshold() : this.confidenceThreshold,
@@ -93,8 +93,8 @@ PredefinedProfile copyWith({bool? Function()? aiContextEnabled, int? allowedMatc
   ocrEnabled: ocrEnabled != null ? ocrEnabled() : this.ocrEnabled,
   openAccess: openAccess != null ? openAccess() : this.openAccess,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PredefinedProfile &&
           aiContextEnabled == other.aiContextEnabled &&
           allowedMatchCount == other.allowedMatchCount &&
@@ -105,7 +105,7 @@ PredefinedProfile copyWith({bool? Function()? aiContextEnabled, int? allowedMatc
           name == other.name &&
           ocrEnabled == other.ocrEnabled &&
           openAccess == other.openAccess &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, contextAwareness, Object.hashAll(entries), id, name, ocrEnabled, openAccess, type); } 
-@override String toString() { return 'PredefinedProfile(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, entries: $entries, id: $id, name: $name, ocrEnabled: $ocrEnabled, openAccess: $openAccess, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, contextAwareness, Object.hashAll(entries), id, name, ocrEnabled, openAccess, type);}
+@override String toString() {return 'PredefinedProfile(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, entries: $entries, id: $id, name: $name, ocrEnabled: $ocrEnabled, openAccess: $openAccess, type: $type)';}
+}

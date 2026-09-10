@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_team_deleted_repository_license.dart';import 'webhook_team_deleted_repository_owner.dart';import 'webhook_team_deleted_repository_permissions.dart';@immutable final class WebhookTeamDeletedRepositoryVisibility {const WebhookTeamDeletedRepositoryVisibility._(this.value);
 
-factory WebhookTeamDeletedRepositoryVisibility.fromJson(String json) { return switch (json) {
+factory WebhookTeamDeletedRepositoryVisibility.fromJson(String json) {return switch (json) {
   'public' => public,
   'private' => private,
   'internal' => internal,
   _ => WebhookTeamDeletedRepositoryVisibility._(json),
-}; }
+};}
 
 static const WebhookTeamDeletedRepositoryVisibility public = WebhookTeamDeletedRepositoryVisibility._('public');
 
@@ -19,18 +19,18 @@ static const List<WebhookTeamDeletedRepositoryVisibility> values = [public, priv
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookTeamDeletedRepositoryVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookTeamDeletedRepositoryVisibility($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookTeamDeletedRepositoryVisibility && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookTeamDeletedRepositoryVisibility($value)';}
+}
 /// A git repository
 @immutable final class WebhookTeamDeletedRepository {const WebhookTeamDeletedRepository({required this.forksCount, required this.watchers, required this.visibility, required this.url, required this.updatedAt, required this.treesUrl, required this.archiveUrl, required this.archived, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.cloneUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.createdAt, required this.topics, required this.defaultBranch, required this.teamsUrl, required this.deploymentsUrl, required this.description, required this.tagsUrl, required this.downloadsUrl, required this.eventsUrl, required this.fork, required this.forks, required this.svnUrl, required this.forksUrl, required this.fullName, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.gitUrl, required this.hasDownloads, required this.hasIssues, required this.hasPages, required this.hasProjects, required this.hasWiki, required this.homepage, required this.hooksUrl, required this.htmlUrl, required this.id, required this.subscriptionUrl, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.language, required this.languagesUrl, required this.license, required this.subscribersUrl, required this.mergesUrl, required this.milestonesUrl, required this.mirrorUrl, required this.name, required this.watchersCount, required this.notificationsUrl, required this.openIssues, required this.openIssuesCount, required this.statusesUrl, required this.owner, required this.stargazersUrl, required this.private, required this.stargazersCount, required this.pullsUrl, required this.pushedAt, required this.releasesUrl, required this.sshUrl, required this.size, required this.nodeId, this.stargazers, this.public, this.permissions, this.organization, this.masterBranch, this.isTemplate, this.allowAutoMerge, this.disabled, this.deleteBranchOnMerge, this.customProperties, this.allowUpdateBranch, this.allowSquashMerge, this.allowRebaseMerge, this.allowMergeCommit, this.allowForking, this.roleName = const Omittable.absent(), });
 
-factory WebhookTeamDeletedRepository.fromJson(Map<String, dynamic> json) { return WebhookTeamDeletedRepository(
+factory WebhookTeamDeletedRepository.fromJson(Map<String, dynamic> json) {return WebhookTeamDeletedRepository(
   allowAutoMerge: json['allow_auto_merge'] as bool?,
   allowForking: json['allow_forking'] as bool?,
   allowMergeCommit: json['allow_merge_commit'] as bool?,
@@ -121,7 +121,7 @@ factory WebhookTeamDeletedRepository.fromJson(Map<String, dynamic> json) { retur
   visibility: WebhookTeamDeletedRepositoryVisibility.fromJson(json['visibility'] as String),
   watchers: (json['watchers'] as num).toInt(),
   watchersCount: (json['watchers_count'] as num).toInt(),
-); }
+);}
 
 /// Whether to allow auto-merge for pull requests.
 final bool? allowAutoMerge;
@@ -323,16 +323,16 @@ final int watchers;
 final int watchersCount;
 
 /// The value with the schema default applied when absent.
-bool get allowAutoMergeOrDefault { return allowAutoMerge ?? false; } 
+bool get allowAutoMergeOrDefault {return allowAutoMerge ?? false;}
 /// The value with the schema default applied when absent.
-bool get allowMergeCommitOrDefault { return allowMergeCommit ?? true; } 
+bool get allowMergeCommitOrDefault {return allowMergeCommit ?? true;}
 /// The value with the schema default applied when absent.
-bool get allowRebaseMergeOrDefault { return allowRebaseMerge ?? true; } 
+bool get allowRebaseMergeOrDefault {return allowRebaseMerge ?? true;}
 /// The value with the schema default applied when absent.
-bool get allowSquashMergeOrDefault { return allowSquashMerge ?? true; } 
+bool get allowSquashMergeOrDefault {return allowSquashMerge ?? true;}
 /// The value with the schema default applied when absent.
-bool get deleteBranchOnMergeOrDefault { return deleteBranchOnMerge ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get deleteBranchOnMergeOrDefault {return deleteBranchOnMerge ?? false;}
+Map<String, dynamic> toJson() {return {
   'allow_auto_merge': ?allowAutoMerge,
   'allow_forking': ?allowForking,
   'allow_merge_commit': ?allowMergeCommit,
@@ -423,8 +423,8 @@ Map<String, dynamic> toJson() { return {
   'visibility': visibility.toJson(),
   'watchers': watchers,
   'watchers_count': watchersCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('archive_url') && json['archive_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('archive_url') && json['archive_url'] is String &&
       json.containsKey('archived') && json['archived'] is bool &&
       json.containsKey('assignees_url') && json['assignees_url'] is String &&
       json.containsKey('blobs_url') && json['blobs_url'] is String &&
@@ -497,8 +497,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('visibility') &&
       json.containsKey('watchers') && json['watchers'] is num &&
-      json.containsKey('watchers_count') && json['watchers_count'] is num; } 
-WebhookTeamDeletedRepository copyWith({bool? Function()? allowAutoMerge, bool? Function()? allowForking, bool? Function()? allowMergeCommit, bool? Function()? allowRebaseMerge, bool? Function()? allowSquashMerge, bool? Function()? allowUpdateBranch, String? archiveUrl, bool? archived, String? assigneesUrl, String? blobsUrl, String? branchesUrl, Uri? cloneUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, dynamic createdAt, Map<String, dynamic>? Function()? customProperties, String? defaultBranch, bool? Function()? deleteBranchOnMerge, Uri? deploymentsUrl, String? Function()? description, bool? Function()? disabled, Uri? downloadsUrl, Uri? eventsUrl, bool? fork, int? forks, int? forksCount, Uri? forksUrl, String? fullName, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, Uri? gitUrl, bool? hasDownloads, bool? hasIssues, bool? hasPages, bool? hasProjects, bool? hasWiki, String? Function()? homepage, Uri? hooksUrl, Uri? htmlUrl, int? id, bool? Function()? isTemplate, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, String? Function()? language, Uri? languagesUrl, WebhookTeamDeletedRepositoryLicense? Function()? license, String? Function()? masterBranch, Uri? mergesUrl, String? milestonesUrl, Uri? Function()? mirrorUrl, String? name, String? nodeId, String? notificationsUrl, int? openIssues, int? openIssuesCount, String? Function()? organization, WebhookTeamDeletedRepositoryOwner? Function()? owner, WebhookTeamDeletedRepositoryPermissions? Function()? permissions, bool? private, bool? Function()? public, String? pullsUrl, dynamic Function()? pushedAt, String? releasesUrl, Omittable<String?>? roleName, int? size, String? sshUrl, int? Function()? stargazers, int? stargazersCount, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? svnUrl, Uri? tagsUrl, Uri? teamsUrl, List<String>? topics, String? treesUrl, DateTime? updatedAt, Uri? url, WebhookTeamDeletedRepositoryVisibility? visibility, int? watchers, int? watchersCount, }) { return WebhookTeamDeletedRepository(
+      json.containsKey('watchers_count') && json['watchers_count'] is num;}
+WebhookTeamDeletedRepository copyWith({bool? Function()? allowAutoMerge, bool? Function()? allowForking, bool? Function()? allowMergeCommit, bool? Function()? allowRebaseMerge, bool? Function()? allowSquashMerge, bool? Function()? allowUpdateBranch, String? archiveUrl, bool? archived, String? assigneesUrl, String? blobsUrl, String? branchesUrl, Uri? cloneUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, dynamic createdAt, Map<String, dynamic>? Function()? customProperties, String? defaultBranch, bool? Function()? deleteBranchOnMerge, Uri? deploymentsUrl, String? Function()? description, bool? Function()? disabled, Uri? downloadsUrl, Uri? eventsUrl, bool? fork, int? forks, int? forksCount, Uri? forksUrl, String? fullName, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, Uri? gitUrl, bool? hasDownloads, bool? hasIssues, bool? hasPages, bool? hasProjects, bool? hasWiki, String? Function()? homepage, Uri? hooksUrl, Uri? htmlUrl, int? id, bool? Function()? isTemplate, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, String? Function()? language, Uri? languagesUrl, WebhookTeamDeletedRepositoryLicense? Function()? license, String? Function()? masterBranch, Uri? mergesUrl, String? milestonesUrl, Uri? Function()? mirrorUrl, String? name, String? nodeId, String? notificationsUrl, int? openIssues, int? openIssuesCount, String? Function()? organization, WebhookTeamDeletedRepositoryOwner? Function()? owner, WebhookTeamDeletedRepositoryPermissions? Function()? permissions, bool? private, bool? Function()? public, String? pullsUrl, dynamic Function()? pushedAt, String? releasesUrl, Omittable<String?>? roleName, int? size, String? sshUrl, int? Function()? stargazers, int? stargazersCount, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? svnUrl, Uri? tagsUrl, Uri? teamsUrl, List<String>? topics, String? treesUrl, DateTime? updatedAt, Uri? url, WebhookTeamDeletedRepositoryVisibility? visibility, int? watchers, int? watchersCount, }) {return WebhookTeamDeletedRepository(
   allowAutoMerge: allowAutoMerge != null ? allowAutoMerge() : this.allowAutoMerge,
   allowForking: allowForking != null ? allowForking() : this.allowForking,
   allowMergeCommit: allowMergeCommit != null ? allowMergeCommit() : this.allowMergeCommit,
@@ -589,8 +589,8 @@ WebhookTeamDeletedRepository copyWith({bool? Function()? allowAutoMerge, bool? F
   visibility: visibility ?? this.visibility,
   watchers: watchers ?? this.watchers,
   watchersCount: watchersCount ?? this.watchersCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookTeamDeletedRepository &&
           allowAutoMerge == other.allowAutoMerge &&
           allowForking == other.allowForking &&
@@ -681,7 +681,7 @@ WebhookTeamDeletedRepository copyWith({bool? Function()? allowAutoMerge, bool? F
           url == other.url &&
           visibility == other.visibility &&
           watchers == other.watchers &&
-          watchersCount == other.watchersCount; } 
-@override int get hashCode { return Object.hashAll([allowAutoMerge, allowForking, allowMergeCommit, allowRebaseMerge, allowSquashMerge, allowUpdateBranch, archiveUrl, archived, assigneesUrl, blobsUrl, branchesUrl, cloneUrl, collaboratorsUrl, commentsUrl, commitsUrl, compareUrl, contentsUrl, contributorsUrl, createdAt, customProperties, defaultBranch, deleteBranchOnMerge, deploymentsUrl, description, disabled, downloadsUrl, eventsUrl, fork, forks, forksCount, forksUrl, fullName, gitCommitsUrl, gitRefsUrl, gitTagsUrl, gitUrl, hasDownloads, hasIssues, hasPages, hasProjects, hasWiki, homepage, hooksUrl, htmlUrl, id, isTemplate, issueCommentUrl, issueEventsUrl, issuesUrl, keysUrl, labelsUrl, language, languagesUrl, license, masterBranch, mergesUrl, milestonesUrl, mirrorUrl, name, nodeId, notificationsUrl, openIssues, openIssuesCount, organization, owner, permissions, private, public, pullsUrl, pushedAt, releasesUrl, roleName, size, sshUrl, stargazers, stargazersCount, stargazersUrl, statusesUrl, subscribersUrl, subscriptionUrl, svnUrl, tagsUrl, teamsUrl, Object.hashAll(topics), treesUrl, updatedAt, url, visibility, watchers, watchersCount]); } 
-@override String toString() { return 'WebhookTeamDeletedRepository(allowAutoMerge: $allowAutoMerge, allowForking: $allowForking, allowMergeCommit: $allowMergeCommit, allowRebaseMerge: $allowRebaseMerge, allowSquashMerge: $allowSquashMerge, allowUpdateBranch: $allowUpdateBranch, archiveUrl: $archiveUrl, archived: $archived, assigneesUrl: $assigneesUrl, blobsUrl: $blobsUrl, branchesUrl: $branchesUrl, cloneUrl: $cloneUrl, collaboratorsUrl: $collaboratorsUrl, commentsUrl: $commentsUrl, commitsUrl: $commitsUrl, compareUrl: $compareUrl, contentsUrl: $contentsUrl, contributorsUrl: $contributorsUrl, createdAt: $createdAt, customProperties: $customProperties, defaultBranch: $defaultBranch, deleteBranchOnMerge: $deleteBranchOnMerge, deploymentsUrl: $deploymentsUrl, description: $description, disabled: $disabled, downloadsUrl: $downloadsUrl, eventsUrl: $eventsUrl, fork: $fork, forks: $forks, forksCount: $forksCount, forksUrl: $forksUrl, fullName: $fullName, gitCommitsUrl: $gitCommitsUrl, gitRefsUrl: $gitRefsUrl, gitTagsUrl: $gitTagsUrl, gitUrl: $gitUrl, hasDownloads: $hasDownloads, hasIssues: $hasIssues, hasPages: $hasPages, hasProjects: $hasProjects, hasWiki: $hasWiki, homepage: $homepage, hooksUrl: $hooksUrl, htmlUrl: $htmlUrl, id: $id, isTemplate: $isTemplate, issueCommentUrl: $issueCommentUrl, issueEventsUrl: $issueEventsUrl, issuesUrl: $issuesUrl, keysUrl: $keysUrl, labelsUrl: $labelsUrl, language: $language, languagesUrl: $languagesUrl, license: $license, masterBranch: $masterBranch, mergesUrl: $mergesUrl, milestonesUrl: $milestonesUrl, mirrorUrl: $mirrorUrl, name: $name, nodeId: $nodeId, notificationsUrl: $notificationsUrl, openIssues: $openIssues, openIssuesCount: $openIssuesCount, organization: $organization, owner: $owner, permissions: $permissions, private: $private, public: $public, pullsUrl: $pullsUrl, pushedAt: $pushedAt, releasesUrl: $releasesUrl, roleName: $roleName, size: $size, sshUrl: $sshUrl, stargazers: $stargazers, stargazersCount: $stargazersCount, stargazersUrl: $stargazersUrl, statusesUrl: $statusesUrl, subscribersUrl: $subscribersUrl, subscriptionUrl: $subscriptionUrl, svnUrl: $svnUrl, tagsUrl: $tagsUrl, teamsUrl: $teamsUrl, topics: $topics, treesUrl: $treesUrl, updatedAt: $updatedAt, url: $url, visibility: $visibility, watchers: $watchers, watchersCount: $watchersCount)'; } 
- }
+          watchersCount == other.watchersCount;}
+@override int get hashCode {return Object.hashAll([allowAutoMerge, allowForking, allowMergeCommit, allowRebaseMerge, allowSquashMerge, allowUpdateBranch, archiveUrl, archived, assigneesUrl, blobsUrl, branchesUrl, cloneUrl, collaboratorsUrl, commentsUrl, commitsUrl, compareUrl, contentsUrl, contributorsUrl, createdAt, customProperties, defaultBranch, deleteBranchOnMerge, deploymentsUrl, description, disabled, downloadsUrl, eventsUrl, fork, forks, forksCount, forksUrl, fullName, gitCommitsUrl, gitRefsUrl, gitTagsUrl, gitUrl, hasDownloads, hasIssues, hasPages, hasProjects, hasWiki, homepage, hooksUrl, htmlUrl, id, isTemplate, issueCommentUrl, issueEventsUrl, issuesUrl, keysUrl, labelsUrl, language, languagesUrl, license, masterBranch, mergesUrl, milestonesUrl, mirrorUrl, name, nodeId, notificationsUrl, openIssues, openIssuesCount, organization, owner, permissions, private, public, pullsUrl, pushedAt, releasesUrl, roleName, size, sshUrl, stargazers, stargazersCount, stargazersUrl, statusesUrl, subscribersUrl, subscriptionUrl, svnUrl, tagsUrl, teamsUrl, Object.hashAll(topics), treesUrl, updatedAt, url, visibility, watchers, watchersCount]);}
+@override String toString() {return 'WebhookTeamDeletedRepository(allowAutoMerge: $allowAutoMerge, allowForking: $allowForking, allowMergeCommit: $allowMergeCommit, allowRebaseMerge: $allowRebaseMerge, allowSquashMerge: $allowSquashMerge, allowUpdateBranch: $allowUpdateBranch, archiveUrl: $archiveUrl, archived: $archived, assigneesUrl: $assigneesUrl, blobsUrl: $blobsUrl, branchesUrl: $branchesUrl, cloneUrl: $cloneUrl, collaboratorsUrl: $collaboratorsUrl, commentsUrl: $commentsUrl, commitsUrl: $commitsUrl, compareUrl: $compareUrl, contentsUrl: $contentsUrl, contributorsUrl: $contributorsUrl, createdAt: $createdAt, customProperties: $customProperties, defaultBranch: $defaultBranch, deleteBranchOnMerge: $deleteBranchOnMerge, deploymentsUrl: $deploymentsUrl, description: $description, disabled: $disabled, downloadsUrl: $downloadsUrl, eventsUrl: $eventsUrl, fork: $fork, forks: $forks, forksCount: $forksCount, forksUrl: $forksUrl, fullName: $fullName, gitCommitsUrl: $gitCommitsUrl, gitRefsUrl: $gitRefsUrl, gitTagsUrl: $gitTagsUrl, gitUrl: $gitUrl, hasDownloads: $hasDownloads, hasIssues: $hasIssues, hasPages: $hasPages, hasProjects: $hasProjects, hasWiki: $hasWiki, homepage: $homepage, hooksUrl: $hooksUrl, htmlUrl: $htmlUrl, id: $id, isTemplate: $isTemplate, issueCommentUrl: $issueCommentUrl, issueEventsUrl: $issueEventsUrl, issuesUrl: $issuesUrl, keysUrl: $keysUrl, labelsUrl: $labelsUrl, language: $language, languagesUrl: $languagesUrl, license: $license, masterBranch: $masterBranch, mergesUrl: $mergesUrl, milestonesUrl: $milestonesUrl, mirrorUrl: $mirrorUrl, name: $name, nodeId: $nodeId, notificationsUrl: $notificationsUrl, openIssues: $openIssues, openIssuesCount: $openIssuesCount, organization: $organization, owner: $owner, permissions: $permissions, private: $private, public: $public, pullsUrl: $pullsUrl, pushedAt: $pushedAt, releasesUrl: $releasesUrl, roleName: $roleName, size: $size, sshUrl: $sshUrl, stargazers: $stargazers, stargazersCount: $stargazersCount, stargazersUrl: $stargazersUrl, statusesUrl: $statusesUrl, subscribersUrl: $subscribersUrl, subscriptionUrl: $subscriptionUrl, svnUrl: $svnUrl, tagsUrl: $tagsUrl, teamsUrl: $teamsUrl, topics: $topics, treesUrl: $treesUrl, updatedAt: $updatedAt, url: $url, visibility: $visibility, watchers: $watchers, watchersCount: $watchersCount)';}
+}

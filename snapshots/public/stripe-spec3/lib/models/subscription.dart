@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cancellation_details.dart';import 'subscription_application.dart';import 'subscription_automatic_tax.dart';import 'subscription_billing_thresholds.dart';import 'subscription_customer.dart';import 'subscription_default_payment_method.dart';import 'subscription_default_source.dart';import 'subscription_discounts.dart';import 'subscription_items.dart';import 'subscription_latest_invoice.dart';import 'subscription_on_behalf_of.dart';import 'subscription_pending_invoice_item_interval.dart';import 'subscription_pending_setup_intent.dart';import 'subscription_schedule2.dart';import 'subscription_test_clock.dart';import 'subscription_transfer_data.dart';import 'subscriptions_resource_billing_cycle_anchor_config.dart';import 'subscriptions_resource_billing_mode.dart';import 'subscriptions_resource_pause_collection.dart';import 'subscriptions_resource_payment_settings.dart';import 'subscriptions_resource_pending_update.dart';import 'subscriptions_resource_subscription_invoice_settings.dart';import 'subscriptions_resource_trial_settings_trial_settings.dart';import 'tax_rate.dart';/// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay this subscription at the end of the cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`.
 @immutable final class SubscriptionCollectionMethod {const SubscriptionCollectionMethod._(this.value);
 
-factory SubscriptionCollectionMethod.fromJson(String json) { return switch (json) {
+factory SubscriptionCollectionMethod.fromJson(String json) {return switch (json) {
   'charge_automatically' => chargeAutomatically,
   'send_invoice' => sendInvoice,
   _ => SubscriptionCollectionMethod._(json),
-}; }
+};}
 
 static const SubscriptionCollectionMethod chargeAutomatically = SubscriptionCollectionMethod._('charge_automatically');
 
@@ -17,21 +17,21 @@ static const List<SubscriptionCollectionMethod> values = [chargeAutomatically, s
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionCollectionMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionCollectionMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionCollectionMethod($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class SubscriptionObject {const SubscriptionObject._(this.value);
 
-factory SubscriptionObject.fromJson(String json) { return switch (json) {
+factory SubscriptionObject.fromJson(String json) {return switch (json) {
   'subscription' => subscription,
   _ => SubscriptionObject._(json),
-}; }
+};}
 
 static const SubscriptionObject subscription = SubscriptionObject._('subscription');
 
@@ -39,14 +39,14 @@ static const List<SubscriptionObject> values = [subscription];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionObject($value)';}
+}
 /// Possible values are `incomplete`, `incomplete_expired`, `trialing`, `active`, `past_due`, `canceled`, `unpaid`, or `paused`.
 /// 
 /// For `collection_method=charge_automatically` a subscription moves into `incomplete` if the initial payment attempt fails. A subscription in this status can only have metadata and default_source updated. Once the first invoice is paid, the subscription moves into an `active` status. If the first invoice is not paid within 23 hours, the subscription transitions to `incomplete_expired`. This is a terminal status, the open invoice will be voided and no further invoices will be generated.
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 /// If subscription `collection_method=send_invoice` it becomes `past_due` when its invoice is not paid by the due date, and `canceled` or `unpaid` if it is still not paid by an additional deadline after that. Note that when a subscription has a status of `unpaid`, no subsequent invoices will be attempted (invoices will be created, but then immediately automatically closed). After receiving updated payment information from a customer, you may choose to reopen and pay their closed invoices.
 @immutable final class SubscriptionStatus {const SubscriptionStatus._(this.value);
 
-factory SubscriptionStatus.fromJson(String json) { return switch (json) {
+factory SubscriptionStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'canceled' => canceled,
   'incomplete' => incomplete,
@@ -70,7 +70,7 @@ factory SubscriptionStatus.fromJson(String json) { return switch (json) {
   'trialing' => trialing,
   'unpaid' => unpaid,
   _ => SubscriptionStatus._(json),
-}; }
+};}
 
 static const SubscriptionStatus active = SubscriptionStatus._('active');
 
@@ -92,20 +92,20 @@ static const List<SubscriptionStatus> values = [active, canceled, incomplete, in
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionStatus($value)';}
+}
 /// Subscriptions allow you to charge a customer on a recurring basis.
 /// 
 /// Related guide: [Creating subscriptions](https://docs.stripe.com/billing/subscriptions/creating)
 @immutable final class Subscription {const Subscription({required this.status, required this.automaticTax, required this.billingCycleAnchor, required this.billingMode, required this.cancelAtPeriodEnd, required this.collectionMethod, required this.created, required this.currency, required this.customer, required this.discounts, required this.id, required this.invoiceSettings, required this.items, required this.livemode, required this.metadata, required this.object, required this.startDate, this.customerAccount = const Omittable.absent(), this.defaultSource = const Omittable.absent(), this.defaultTaxRates = const Omittable.absent(), this.description = const Omittable.absent(), this.canceledAt = const Omittable.absent(), this.endedAt = const Omittable.absent(), this.cancellationDetails = const Omittable.absent(), this.applicationFeePercent = const Omittable.absent(), this.billingThresholds = const Omittable.absent(), this.latestInvoice = const Omittable.absent(), this.cancelAt = const Omittable.absent(), this.billingCycleAnchorConfig = const Omittable.absent(), this.trialStart = const Omittable.absent(), this.application = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.pauseCollection = const Omittable.absent(), this.paymentSettings = const Omittable.absent(), this.pendingInvoiceItemInterval = const Omittable.absent(), this.pendingSetupIntent = const Omittable.absent(), this.pendingUpdate = const Omittable.absent(), this.schedule = const Omittable.absent(), this.daysUntilDue = const Omittable.absent(), this.defaultPaymentMethod = const Omittable.absent(), this.testClock = const Omittable.absent(), this.transferData = const Omittable.absent(), this.trialEnd = const Omittable.absent(), this.trialSettings = const Omittable.absent(), this.nextPendingInvoiceItemInvoice = const Omittable.absent(), });
 
-factory Subscription.fromJson(Map<String, dynamic> json) { return Subscription(
+factory Subscription.fromJson(Map<String, dynamic> json) {return Subscription(
   application: json.containsKey('application') ? Omittable(json['application'] != null ? SubscriptionApplication.fromJson(json['application']) : null) : const Omittable.absent(),
   applicationFeePercent: json.containsKey('application_fee_percent') ? Omittable(json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null) : const Omittable.absent(),
   automaticTax: SubscriptionAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>),
@@ -151,7 +151,7 @@ factory Subscription.fromJson(Map<String, dynamic> json) { return Subscription(
   trialEnd: json.containsKey('trial_end') ? Omittable(json['trial_end'] != null ? (json['trial_end'] as num).toInt() : null) : const Omittable.absent(),
   trialSettings: json.containsKey('trial_settings') ? Omittable(json['trial_settings'] != null ? SubscriptionsResourceTrialSettingsTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   trialStart: json.containsKey('trial_start') ? Omittable(json['trial_start'] != null ? (json['trial_start'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// ID of the Connect Application that created the subscription.
 final Omittable<SubscriptionApplication?> application;
@@ -295,7 +295,7 @@ final Omittable<SubscriptionsResourceTrialSettingsTrialSettings?> trialSettings;
 /// If the subscription has a trial, the beginning of that trial.
 final Omittable<int?> trialStart;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (application.isPresent) 'application': application.value?.toJson(),
   if (applicationFeePercent.isPresent) 'application_fee_percent': applicationFeePercent.value,
   'automatic_tax': automaticTax.toJson(),
@@ -341,8 +341,8 @@ Map<String, dynamic> toJson() { return {
   if (trialEnd.isPresent) 'trial_end': trialEnd.value,
   if (trialSettings.isPresent) 'trial_settings': trialSettings.value?.toJson(),
   if (trialStart.isPresent) 'trial_start': trialStart.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('automatic_tax') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('automatic_tax') &&
       json.containsKey('billing_cycle_anchor') && json['billing_cycle_anchor'] is num &&
       json.containsKey('billing_mode') &&
       json.containsKey('cancel_at_period_end') && json['cancel_at_period_end'] is bool &&
@@ -358,8 +358,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autom
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('start_date') && json['start_date'] is num &&
-      json.containsKey('status'); } 
-Subscription copyWith({Omittable<SubscriptionApplication?>? application, Omittable<double?>? applicationFeePercent, SubscriptionAutomaticTax? automaticTax, int? billingCycleAnchor, Omittable<SubscriptionsResourceBillingCycleAnchorConfig?>? billingCycleAnchorConfig, SubscriptionsResourceBillingMode? billingMode, Omittable<SubscriptionBillingThresholds?>? billingThresholds, Omittable<int?>? cancelAt, bool? cancelAtPeriodEnd, Omittable<int?>? canceledAt, Omittable<CancellationDetails?>? cancellationDetails, SubscriptionCollectionMethod? collectionMethod, int? created, String? currency, SubscriptionCustomer? customer, Omittable<String?>? customerAccount, Omittable<int?>? daysUntilDue, Omittable<SubscriptionDefaultPaymentMethod?>? defaultPaymentMethod, Omittable<SubscriptionDefaultSource?>? defaultSource, Omittable<List<TaxRate>?>? defaultTaxRates, Omittable<String?>? description, List<SubscriptionDiscounts>? discounts, Omittable<int?>? endedAt, String? id, SubscriptionsResourceSubscriptionInvoiceSettings? invoiceSettings, SubscriptionItems? items, Omittable<SubscriptionLatestInvoice?>? latestInvoice, bool? livemode, Map<String,String>? metadata, Omittable<int?>? nextPendingInvoiceItemInvoice, SubscriptionObject? object, Omittable<SubscriptionOnBehalfOf?>? onBehalfOf, Omittable<SubscriptionsResourcePauseCollection?>? pauseCollection, Omittable<SubscriptionsResourcePaymentSettings?>? paymentSettings, Omittable<SubscriptionPendingInvoiceItemInterval?>? pendingInvoiceItemInterval, Omittable<SubscriptionPendingSetupIntent?>? pendingSetupIntent, Omittable<SubscriptionsResourcePendingUpdate?>? pendingUpdate, Omittable<SubscriptionSchedule2?>? schedule, int? startDate, SubscriptionStatus? status, Omittable<SubscriptionTestClock?>? testClock, Omittable<SubscriptionTransferData?>? transferData, Omittable<int?>? trialEnd, Omittable<SubscriptionsResourceTrialSettingsTrialSettings?>? trialSettings, Omittable<int?>? trialStart, }) { return Subscription(
+      json.containsKey('status');}
+Subscription copyWith({Omittable<SubscriptionApplication?>? application, Omittable<double?>? applicationFeePercent, SubscriptionAutomaticTax? automaticTax, int? billingCycleAnchor, Omittable<SubscriptionsResourceBillingCycleAnchorConfig?>? billingCycleAnchorConfig, SubscriptionsResourceBillingMode? billingMode, Omittable<SubscriptionBillingThresholds?>? billingThresholds, Omittable<int?>? cancelAt, bool? cancelAtPeriodEnd, Omittable<int?>? canceledAt, Omittable<CancellationDetails?>? cancellationDetails, SubscriptionCollectionMethod? collectionMethod, int? created, String? currency, SubscriptionCustomer? customer, Omittable<String?>? customerAccount, Omittable<int?>? daysUntilDue, Omittable<SubscriptionDefaultPaymentMethod?>? defaultPaymentMethod, Omittable<SubscriptionDefaultSource?>? defaultSource, Omittable<List<TaxRate>?>? defaultTaxRates, Omittable<String?>? description, List<SubscriptionDiscounts>? discounts, Omittable<int?>? endedAt, String? id, SubscriptionsResourceSubscriptionInvoiceSettings? invoiceSettings, SubscriptionItems? items, Omittable<SubscriptionLatestInvoice?>? latestInvoice, bool? livemode, Map<String,String>? metadata, Omittable<int?>? nextPendingInvoiceItemInvoice, SubscriptionObject? object, Omittable<SubscriptionOnBehalfOf?>? onBehalfOf, Omittable<SubscriptionsResourcePauseCollection?>? pauseCollection, Omittable<SubscriptionsResourcePaymentSettings?>? paymentSettings, Omittable<SubscriptionPendingInvoiceItemInterval?>? pendingInvoiceItemInterval, Omittable<SubscriptionPendingSetupIntent?>? pendingSetupIntent, Omittable<SubscriptionsResourcePendingUpdate?>? pendingUpdate, Omittable<SubscriptionSchedule2?>? schedule, int? startDate, SubscriptionStatus? status, Omittable<SubscriptionTestClock?>? testClock, Omittable<SubscriptionTransferData?>? transferData, Omittable<int?>? trialEnd, Omittable<SubscriptionsResourceTrialSettingsTrialSettings?>? trialSettings, Omittable<int?>? trialStart, }) {return Subscription(
   application: application ?? this.application,
   applicationFeePercent: applicationFeePercent ?? this.applicationFeePercent,
   automaticTax: automaticTax ?? this.automaticTax,
@@ -405,8 +405,8 @@ Subscription copyWith({Omittable<SubscriptionApplication?>? application, Omittab
   trialEnd: trialEnd ?? this.trialEnd,
   trialSettings: trialSettings ?? this.trialSettings,
   trialStart: trialStart ?? this.trialStart,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Subscription &&
           application == other.application &&
           applicationFeePercent == other.applicationFeePercent &&
@@ -453,7 +453,7 @@ Subscription copyWith({Omittable<SubscriptionApplication?>? application, Omittab
           transferData == other.transferData &&
           trialEnd == other.trialEnd &&
           trialSettings == other.trialSettings &&
-          trialStart == other.trialStart; } 
-@override int get hashCode { return Object.hashAll([application, applicationFeePercent, automaticTax, billingCycleAnchor, billingCycleAnchorConfig, billingMode, billingThresholds, cancelAt, cancelAtPeriodEnd, canceledAt, cancellationDetails, collectionMethod, created, currency, customer, customerAccount, daysUntilDue, defaultPaymentMethod, defaultSource, Object.hashAll(defaultTaxRates.value ?? const []), description, Object.hashAll(discounts), endedAt, id, invoiceSettings, items, latestInvoice, livemode, metadata, nextPendingInvoiceItemInvoice, object, onBehalfOf, pauseCollection, paymentSettings, pendingInvoiceItemInterval, pendingSetupIntent, pendingUpdate, schedule, startDate, status, testClock, transferData, trialEnd, trialSettings, trialStart]); } 
-@override String toString() { return 'Subscription(application: $application, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingCycleAnchorConfig: $billingCycleAnchorConfig, billingMode: $billingMode, billingThresholds: $billingThresholds, cancelAt: $cancelAt, cancelAtPeriodEnd: $cancelAtPeriodEnd, canceledAt: $canceledAt, cancellationDetails: $cancellationDetails, collectionMethod: $collectionMethod, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, daysUntilDue: $daysUntilDue, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, endedAt: $endedAt, id: $id, invoiceSettings: $invoiceSettings, items: $items, latestInvoice: $latestInvoice, livemode: $livemode, metadata: $metadata, nextPendingInvoiceItemInvoice: $nextPendingInvoiceItemInvoice, object: $object, onBehalfOf: $onBehalfOf, pauseCollection: $pauseCollection, paymentSettings: $paymentSettings, pendingInvoiceItemInterval: $pendingInvoiceItemInterval, pendingSetupIntent: $pendingSetupIntent, pendingUpdate: $pendingUpdate, schedule: $schedule, startDate: $startDate, status: $status, testClock: $testClock, transferData: $transferData, trialEnd: $trialEnd, trialSettings: $trialSettings, trialStart: $trialStart)'; } 
- }
+          trialStart == other.trialStart;}
+@override int get hashCode {return Object.hashAll([application, applicationFeePercent, automaticTax, billingCycleAnchor, billingCycleAnchorConfig, billingMode, billingThresholds, cancelAt, cancelAtPeriodEnd, canceledAt, cancellationDetails, collectionMethod, created, currency, customer, customerAccount, daysUntilDue, defaultPaymentMethod, defaultSource, Object.hashAll(defaultTaxRates.value ?? const []), description, Object.hashAll(discounts), endedAt, id, invoiceSettings, items, latestInvoice, livemode, metadata, nextPendingInvoiceItemInvoice, object, onBehalfOf, pauseCollection, paymentSettings, pendingInvoiceItemInterval, pendingSetupIntent, pendingUpdate, schedule, startDate, status, testClock, transferData, trialEnd, trialSettings, trialStart]);}
+@override String toString() {return 'Subscription(application: $application, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingCycleAnchorConfig: $billingCycleAnchorConfig, billingMode: $billingMode, billingThresholds: $billingThresholds, cancelAt: $cancelAt, cancelAtPeriodEnd: $cancelAtPeriodEnd, canceledAt: $canceledAt, cancellationDetails: $cancellationDetails, collectionMethod: $collectionMethod, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, daysUntilDue: $daysUntilDue, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, endedAt: $endedAt, id: $id, invoiceSettings: $invoiceSettings, items: $items, latestInvoice: $latestInvoice, livemode: $livemode, metadata: $metadata, nextPendingInvoiceItemInvoice: $nextPendingInvoiceItemInvoice, object: $object, onBehalfOf: $onBehalfOf, pauseCollection: $pauseCollection, paymentSettings: $paymentSettings, pendingInvoiceItemInterval: $pendingInvoiceItemInterval, pendingSetupIntent: $pendingSetupIntent, pendingUpdate: $pendingUpdate, schedule: $schedule, startDate: $startDate, status: $status, testClock: $testClock, transferData: $transferData, trialEnd: $trialEnd, trialSettings: $trialSettings, trialStart: $trialStart)';}
+}

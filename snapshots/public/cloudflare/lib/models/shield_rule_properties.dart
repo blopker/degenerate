@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_action.dart';import 'shield_enabled.dart';import 'shield_expression.dart';import 'shield_schemas_description.dart';import 'shield_schemas_title.dart';import 'shield_selector.dart';@immutable final class ShieldRuleProperties {const ShieldRuleProperties({this.action, this.description, this.enabled, this.expression, this.selector, this.title, });
 
-factory ShieldRuleProperties.fromJson(Map<String, dynamic> json) { return ShieldRuleProperties(
+factory ShieldRuleProperties.fromJson(Map<String, dynamic> json) {return ShieldRuleProperties(
   action: json['action'] != null ? ShieldAction.fromJson(json['action'] as String) : null,
   description: json['description'] != null ? ShieldSchemasDescription.fromJson(json['description'] as String) : null,
   enabled: json['enabled'] != null ? ShieldEnabled.fromJson(json['enabled'] as bool) : null,
   expression: json['expression'] != null ? ShieldExpression.fromJson(json['expression'] as String) : null,
   selector: json['selector'] != null ? ShieldSelector.fromJson(json['selector'] as Map<String, dynamic>) : null,
   title: json['title'] != null ? ShieldSchemasTitle.fromJson(json['title'] as String) : null,
-); }
+);}
 
 /// Action to take on requests that match operations included in `selector` and fail `expression`.
 final ShieldAction? action;
@@ -29,31 +29,31 @@ final ShieldSelector? selector;
 
 final ShieldSchemasTitle? title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
   if (expression != null) 'expression': expression?.toJson(),
   if (selector != null) 'selector': selector?.toJson(),
   if (title != null) 'title': title?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'description', 'enabled', 'expression', 'selector', 'title'}.contains(key)); } 
-ShieldRuleProperties copyWith({ShieldAction? Function()? action, ShieldSchemasDescription? Function()? description, ShieldEnabled? Function()? enabled, ShieldExpression? Function()? expression, ShieldSelector? Function()? selector, ShieldSchemasTitle? Function()? title, }) { return ShieldRuleProperties(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'action', 'description', 'enabled', 'expression', 'selector', 'title'}.contains(key));}
+ShieldRuleProperties copyWith({ShieldAction? Function()? action, ShieldSchemasDescription? Function()? description, ShieldEnabled? Function()? enabled, ShieldExpression? Function()? expression, ShieldSelector? Function()? selector, ShieldSchemasTitle? Function()? title, }) {return ShieldRuleProperties(
   action: action != null ? action() : this.action,
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,
   expression: expression != null ? expression() : this.expression,
   selector: selector != null ? selector() : this.selector,
   title: title != null ? title() : this.title,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShieldRuleProperties &&
           action == other.action &&
           description == other.description &&
           enabled == other.enabled &&
           expression == other.expression &&
           selector == other.selector &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(action, description, enabled, expression, selector, title); } 
-@override String toString() { return 'ShieldRuleProperties(action: $action, description: $description, enabled: $enabled, expression: $expression, selector: $selector, title: $title)'; } 
- }
+          title == other.title;}
+@override int get hashCode {return Object.hash(action, description, enabled, expression, selector, title);}
+@override String toString() {return 'ShieldRuleProperties(action: $action, description: $description, enabled: $enabled, expression: $expression, selector: $selector, title: $title)';}
+}

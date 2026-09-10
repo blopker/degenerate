@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Certificate's required validation record.
 @immutable final class TlsCertificatesAndHostnamesValidationRecord {const TlsCertificatesAndHostnamesValidationRecord({this.cname, this.cnameTarget, this.emails, this.httpBody, this.httpUrl, this.status, this.txtName, this.txtValue, });
 
-factory TlsCertificatesAndHostnamesValidationRecord.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesValidationRecord(
+factory TlsCertificatesAndHostnamesValidationRecord.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesValidationRecord(
   cname: json['cname'] as String?,
   cnameTarget: json['cname_target'] as String?,
   emails: (json['emails'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -12,7 +12,7 @@ factory TlsCertificatesAndHostnamesValidationRecord.fromJson(Map<String, dynamic
   status: json['status'] as String?,
   txtName: json['txt_name'] as String?,
   txtValue: json['txt_value'] as String?,
-); }
+);}
 
 /// The CNAME record hostname for DCV delegation.
 final String? cname;
@@ -38,7 +38,7 @@ final String? txtName;
 /// The TXT record that the certificate authority (CA) will check during domain validation.
 final String? txtValue;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cname': ?cname,
   'cname_target': ?cnameTarget,
   'emails': ?emails,
@@ -47,9 +47,9 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
   'txt_name': ?txtName,
   'txt_value': ?txtValue,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cname', 'cname_target', 'emails', 'http_body', 'http_url', 'status', 'txt_name', 'txt_value'}.contains(key)); } 
-TlsCertificatesAndHostnamesValidationRecord copyWith({String? Function()? cname, String? Function()? cnameTarget, List<String>? Function()? emails, String? Function()? httpBody, String? Function()? httpUrl, String? Function()? status, String? Function()? txtName, String? Function()? txtValue, }) { return TlsCertificatesAndHostnamesValidationRecord(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cname', 'cname_target', 'emails', 'http_body', 'http_url', 'status', 'txt_name', 'txt_value'}.contains(key));}
+TlsCertificatesAndHostnamesValidationRecord copyWith({String? Function()? cname, String? Function()? cnameTarget, List<String>? Function()? emails, String? Function()? httpBody, String? Function()? httpUrl, String? Function()? status, String? Function()? txtName, String? Function()? txtValue, }) {return TlsCertificatesAndHostnamesValidationRecord(
   cname: cname != null ? cname() : this.cname,
   cnameTarget: cnameTarget != null ? cnameTarget() : this.cnameTarget,
   emails: emails != null ? emails() : this.emails,
@@ -58,8 +58,8 @@ TlsCertificatesAndHostnamesValidationRecord copyWith({String? Function()? cname,
   status: status != null ? status() : this.status,
   txtName: txtName != null ? txtName() : this.txtName,
   txtValue: txtValue != null ? txtValue() : this.txtValue,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TlsCertificatesAndHostnamesValidationRecord &&
           cname == other.cname &&
           cnameTarget == other.cnameTarget &&
@@ -68,7 +68,7 @@ TlsCertificatesAndHostnamesValidationRecord copyWith({String? Function()? cname,
           httpUrl == other.httpUrl &&
           status == other.status &&
           txtName == other.txtName &&
-          txtValue == other.txtValue; } 
-@override int get hashCode { return Object.hash(cname, cnameTarget, Object.hashAll(emails ?? const []), httpBody, httpUrl, status, txtName, txtValue); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesValidationRecord(cname: $cname, cnameTarget: $cnameTarget, emails: $emails, httpBody: $httpBody, httpUrl: $httpUrl, status: $status, txtName: $txtName, txtValue: $txtValue)'; } 
- }
+          txtValue == other.txtValue;}
+@override int get hashCode {return Object.hash(cname, cnameTarget, Object.hashAll(emails ?? const []), httpBody, httpUrl, status, txtName, txtValue);}
+@override String toString() {return 'TlsCertificatesAndHostnamesValidationRecord(cname: $cname, cnameTarget: $cnameTarget, emails: $emails, httpBody: $httpBody, httpUrl: $httpUrl, status: $status, txtName: $txtName, txtValue: $txtValue)';}
+}

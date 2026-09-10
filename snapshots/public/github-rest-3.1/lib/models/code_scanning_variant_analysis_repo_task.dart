@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_variant_analysis_status.dart';import 'simple_repository.dart';@immutable final class CodeScanningVariantAnalysisRepoTask {const CodeScanningVariantAnalysisRepoTask({required this.repository, required this.analysisStatus, this.artifactSizeInBytes, this.resultCount, this.failureMessage, this.databaseCommitSha, this.sourceLocationPrefix, this.artifactUrl, });
 
-factory CodeScanningVariantAnalysisRepoTask.fromJson(Map<String, dynamic> json) { return CodeScanningVariantAnalysisRepoTask(
+factory CodeScanningVariantAnalysisRepoTask.fromJson(Map<String, dynamic> json) {return CodeScanningVariantAnalysisRepoTask(
   repository: SimpleRepository.fromJson(json['repository'] as Map<String, dynamic>),
   analysisStatus: CodeScanningVariantAnalysisStatus.fromJson(json['analysis_status'] as String),
   artifactSizeInBytes: json['artifact_size_in_bytes'] != null ? (json['artifact_size_in_bytes'] as num).toInt() : null,
@@ -11,7 +11,7 @@ factory CodeScanningVariantAnalysisRepoTask.fromJson(Map<String, dynamic> json) 
   databaseCommitSha: json['database_commit_sha'] as String?,
   sourceLocationPrefix: json['source_location_prefix'] as String?,
   artifactUrl: json['artifact_url'] as String?,
-); }
+);}
 
 final SimpleRepository repository;
 
@@ -36,7 +36,7 @@ final String? sourceLocationPrefix;
 /// The URL of the artifact. This is only available for successful analyses.
 final String? artifactUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'repository': repository.toJson(),
   'analysis_status': analysisStatus.toJson(),
   'artifact_size_in_bytes': ?artifactSizeInBytes,
@@ -45,10 +45,10 @@ Map<String, dynamic> toJson() { return {
   'database_commit_sha': ?databaseCommitSha,
   'source_location_prefix': ?sourceLocationPrefix,
   'artifact_url': ?artifactUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('repository') &&
-      json.containsKey('analysis_status'); } 
-CodeScanningVariantAnalysisRepoTask copyWith({SimpleRepository? repository, CodeScanningVariantAnalysisStatus? analysisStatus, int? Function()? artifactSizeInBytes, int? Function()? resultCount, String? Function()? failureMessage, String? Function()? databaseCommitSha, String? Function()? sourceLocationPrefix, String? Function()? artifactUrl, }) { return CodeScanningVariantAnalysisRepoTask(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('repository') &&
+      json.containsKey('analysis_status');}
+CodeScanningVariantAnalysisRepoTask copyWith({SimpleRepository? repository, CodeScanningVariantAnalysisStatus? analysisStatus, int? Function()? artifactSizeInBytes, int? Function()? resultCount, String? Function()? failureMessage, String? Function()? databaseCommitSha, String? Function()? sourceLocationPrefix, String? Function()? artifactUrl, }) {return CodeScanningVariantAnalysisRepoTask(
   repository: repository ?? this.repository,
   analysisStatus: analysisStatus ?? this.analysisStatus,
   artifactSizeInBytes: artifactSizeInBytes != null ? artifactSizeInBytes() : this.artifactSizeInBytes,
@@ -57,8 +57,8 @@ CodeScanningVariantAnalysisRepoTask copyWith({SimpleRepository? repository, Code
   databaseCommitSha: databaseCommitSha != null ? databaseCommitSha() : this.databaseCommitSha,
   sourceLocationPrefix: sourceLocationPrefix != null ? sourceLocationPrefix() : this.sourceLocationPrefix,
   artifactUrl: artifactUrl != null ? artifactUrl() : this.artifactUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeScanningVariantAnalysisRepoTask &&
           repository == other.repository &&
           analysisStatus == other.analysisStatus &&
@@ -67,7 +67,7 @@ CodeScanningVariantAnalysisRepoTask copyWith({SimpleRepository? repository, Code
           failureMessage == other.failureMessage &&
           databaseCommitSha == other.databaseCommitSha &&
           sourceLocationPrefix == other.sourceLocationPrefix &&
-          artifactUrl == other.artifactUrl; } 
-@override int get hashCode { return Object.hash(repository, analysisStatus, artifactSizeInBytes, resultCount, failureMessage, databaseCommitSha, sourceLocationPrefix, artifactUrl); } 
-@override String toString() { return 'CodeScanningVariantAnalysisRepoTask(repository: $repository, analysisStatus: $analysisStatus, artifactSizeInBytes: $artifactSizeInBytes, resultCount: $resultCount, failureMessage: $failureMessage, databaseCommitSha: $databaseCommitSha, sourceLocationPrefix: $sourceLocationPrefix, artifactUrl: $artifactUrl)'; } 
- }
+          artifactUrl == other.artifactUrl;}
+@override int get hashCode {return Object.hash(repository, analysisStatus, artifactSizeInBytes, resultCount, failureMessage, databaseCommitSha, sourceLocationPrefix, artifactUrl);}
+@override String toString() {return 'CodeScanningVariantAnalysisRepoTask(repository: $repository, analysisStatus: $analysisStatus, artifactSizeInBytes: $artifactSizeInBytes, resultCount: $resultCount, failureMessage: $failureMessage, databaseCommitSha: $databaseCommitSha, sourceLocationPrefix: $sourceLocationPrefix, artifactUrl: $artifactUrl)';}
+}
